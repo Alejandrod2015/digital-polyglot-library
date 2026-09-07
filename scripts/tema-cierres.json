@@ -1336,5 +1336,447 @@
         }
       ]
     }
+  },
+  "cmtq5n9a50007j8812p9lzxjr#brasilia": {
+    "cerrado": "2026-09-06T20:43:04.622Z",
+    "hash": "29082b73ea37ec9d",
+    "historias": [
+      "brasilia#0 senha-b-quarenta-e-dois",
+      "brasilia#1 o-andar-certo",
+      "brasilia#2 deferido-no-diario"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"administrativo y paciente: numeros de turno, ventanillas, frases de manual dichas por gente cansada\", espina \"Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. El ano se le parte en dos, y aqui descubre cual es la mitad que sostiene la otra: sin el papel de esta oficina no hay ruta ninguna.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"pergunta\" 33%)",
+      "arranques de parrafo variados (mas repetido \"o\", 16%)",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Rafaela): senha-b-quarenta-e-dois, o-andar-certo, deferido-no-diario",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.06 sobre 51 plazas · 47 salen una sola vez | ancladas: 11/62 (18%) | cola: 47/51 portables con un solo encuentro (92%, tope 80%)",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b1",
+      "variante": "brazil",
+      "registro": "administrativo y paciente: numeros de turno, ventanillas, frases de manual dichas por gente cansada",
+      "espina": "Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. El ano se le parte en dos, y aqui descubre cual es la mitad que sostiene la otra: sin el papel de esta oficina no hay ruta ninguna.",
+      "recursos": "B1: reversa cosida y cambio de ritmo. Heredados: repeticion ritmica, contraste con pero e imagen concreta (A0); causalidad explicita, humor de situacion y gancho final literal (A1); simil simple y espejo concreto (A2). Sin ironia, subtexto, aforismo ni elipsis, que son B2.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "renovar el registro de la agencia en una manana y coger el vuelo de las seis",
+          "impide": "una pendencia de hace dos anos que nadie le habia dicho",
+          "cuesta": "el vuelo y la manana entera, con el numero de turno en la mano",
+          "cambia": "deja de creer que esto se resuelve con paciencia y pregunta por un despachante",
+          "emocion": "rabia fria; alisa el papel del numero contra la pierna hasta que se rompe por el doblez"
+        },
+        {
+          "slot": "2",
+          "quiere": "entender el sistema para no depender de nadie el ano que viene",
+          "impide": "el sistema no se entiende, se conoce; y quien lo conoce cobra por ello",
+          "cuesta": "la idea de hacerlo sola, y el dinero de la comision del despachante",
+          "cambia": "mete el gasto en el presupuesto del ano como una linea mas",
+          "emocion": "humillacion que se le pasa; se rie cuando el despachante acierta la ventanilla a la primera"
+        },
+        {
+          "slot": "3",
+          "quiere": "salir de Brasilia con el registro deferido y la ruta cerrada",
+          "impide": "el resultado sale en el diario oficial y no avisa a nadie",
+          "cuesta": "la costumbre de improvisar: ahora su ano empieza en una fecha de oficina",
+          "cambia": "escribe el calendario del ano al reves, empezando por los tramites",
+          "emocion": "alivio serio; guarda el comprobante en la ficha y no en el bolsillo"
+        }
+      ]
+    }
+  },
+  "cmtq5n9a50007j8812p9lzxjr#chapada-diamantina": {
+    "cerrado": "2026-09-06T20:22:21.988Z",
+    "hash": "60c743c8daa8e28d",
+    "historias": [
+      "chapada-diamantina#0 oito-nao-quinze",
+      "chapada-diamantina#1 tornozelo-na-subida",
+      "chapada-diamantina#2 regra-no-lugar-da-foto"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"seco y de montana: instrucciones cortas, silencio entre frases, gente que mide el riesgo en voz baja\", espina \"Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. Aqui descubre que lo que vende en la agencia y lo que pasa en la trilla no se parecen, y que quien manda en su ruta no es ella.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"adverte\" 20%)",
+      "arranques de parrafo variados (mas repetido \"rafaela\", 18%)",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.08 sobre 50 plazas · 47 salen una sola vez | ancladas: 10/60 (17%) | cola: 47/50 portables con un solo encuentro (94%, tope 80%)",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b1",
+      "variante": "brazil",
+      "registro": "seco y de montana: instrucciones cortas, silencio entre frases, gente que mide el riesgo en voz baja",
+      "espina": "Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. Aqui descubre que lo que vende en la agencia y lo que pasa en la trilla no se parecen, y que quien manda en su ruta no es ella.",
+      "recursos": "B1: reversa cosida y cambio de ritmo. Heredados: repeticion ritmica, contraste con pero e imagen concreta (A0); causalidad explicita, humor de situacion y gancho final literal (A1); simil simple y espejo concreto (A2). Sin ironia, subtexto, aforismo ni elipsis, que son B2.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "cerrar la trilla para grupos de quince, que es lo que ya vendio en el folleto",
+          "impide": "la guia no sube con mas de ocho y no lo discute",
+          "cuesta": "los siete lugares vendidos, que la agencia tiene que devolver",
+          "cambia": "acepta el tope y entiende que no lo pone la guia, lo pone la piedra mojada",
+          "emocion": "orgullo herido; dobla el folleto en cuatro y se lo guarda sin volver a mirarlo"
+        },
+        {
+          "slot": "2",
+          "quiere": "llegar al mirador con el grupo entero para la foto que promete el folleto",
+          "impide": "una tobillera torcida a mitad de subida y una radio que no engancha",
+          "cuesta": "el mirador: bajan todos, y la foto no existe",
+          "cambia": "ve lo que de verdad esta comprando su cliente, y no es la vista",
+          "emocion": "miedo que no ensena; sostiene la cantimplora con las dos manos para que no le tiemble"
+        },
+        {
+          "slot": "3",
+          "quiere": "irse con una frase buena para el folleto nuevo",
+          "impide": "la guia le dicta reglas, que en un folleto quedan feas",
+          "cuesta": "la palabra aventura, que era lo que mejor vendia",
+          "cambia": "escribe las reglas tal cual y descubre que se vende igual o mejor",
+          "emocion": "resignacion que se vuelve gusto; tacha la palabra dos veces y se rie sola de la tachadura"
+        }
+      ]
+    }
+  },
+  "cmtq5n9a50007j8812p9lzxjr#curitiba": {
+    "cerrado": "2026-09-06T20:28:43.413Z",
+    "hash": "51599b790eea53b4",
+    "historias": [
+      "curitiba#0 garoa-no-corredor",
+      "curitiba#1 estacao-tubo-as-seis",
+      "curitiba#2 pinhao-no-barigui"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"frio y cortes: conversacion de pasillo, ciudad ordenada, gente que pregunta mucho y no se mete\", espina \"Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. Aqui estrena la ruta que nadie quiso: la del interior. La ciudad no la trata como turista y ella todavia no sabe pedir ayuda.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"avisa\" 30%)",
+      "arranques de parrafo variados (mas repetido \"o\", 20%)",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.12 sobre 51 plazas · 44 salen una sola vez | ancladas: 9/60 (15%) | cola: 44/51 portables con un solo encuentro (86%, tope 80%)",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: curitiba (Rafaela, Cristiane)"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b1",
+      "variante": "brazil",
+      "registro": "frio y cortes: conversacion de pasillo, ciudad ordenada, gente que pregunta mucho y no se mete",
+      "espina": "Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. Aqui estrena la ruta que nadie quiso: la del interior. La ciudad no la trata como turista y ella todavia no sabe pedir ayuda.",
+      "recursos": "B1: reversa cosida y cambio de ritmo. Heredados: repeticion ritmica, contraste con pero e imagen concreta (A0); causalidad explicita, humor de situacion y gancho final literal (A1); simil simple y espejo concreto (A2). Sin ironia, subtexto, aforismo ni elipsis, que son B2.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "terminar la llamada con la agencia, que es donde le confirman la primera visita",
+          "impide": "la vecina abre la puerta con dos cafes y no espera a que cuelgue",
+          "cuesta": "la llamada: la agencia cuelga y esa noche ya no habla con nadie",
+          "cambia": "la charla que le costo la llamada le da el dato que ninguna ficha traia",
+          "emocion": "impaciencia que se traga por educacion; se le ve en que deja el telefono en la oreja mas tiempo del que hace falta"
+        },
+        {
+          "slot": "2",
+          "quiere": "coger el autobus de las seis, que es el unico que llega a tiempo al cliente",
+          "impide": "el billete no tiene saldo y la maquina solo admite monedas",
+          "cuesta": "el autobus y el dinero: acaba pagando tres veces en una furgoneta",
+          "cambia": "deja de adivinar y empieza a preguntar antes",
+          "emocion": "verguenza delante de la cola; cuenta las monedas dos veces sin levantar la cabeza"
+        },
+        {
+          "slot": "3",
+          "quiere": "irse de la ciudad sin deberle nada a nadie",
+          "impide": "la vecina se toma la ultima manana libre para llevarla al parque",
+          "cuesta": "la idea de que esta ruta era un castigo; no la recupera",
+          "cambia": "escribe el nombre de la vecina en la ficha de la ruta, que hasta hoy solo tenia horarios",
+          "emocion": "una ternura que la incomoda; se le ve en que se quema el dedo y se rie en vez de quejarse"
+        }
+      ]
+    }
+  },
+  "cmtq5n9a50007j8812p9lzxjr#fernando-de-noronha": {
+    "cerrado": "2026-09-06T20:42:49.948Z",
+    "hash": "c23c66091802dd2f",
+    "historias": [
+      "fernando-de-noronha#0 a-cota-do-dia",
+      "fernando-de-noronha#1 tartaruga-na-desova",
+      "fernando-de-noronha#2 sorteio-para-dezembro"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"claro y submarino: instrucciones antes de entrar al agua, silencio dentro, reglas que nadie discute\", espina \"Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. En la isla aprende que la ruta que vende tiene cupo, y que el cupo es lo que la mantiene vendible el ano que viene.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 88% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"o\", 13%)",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.02 sobre 52 plazas · 51 salen una sola vez | ancladas: 8/60 (13%) | cola: 51/52 portables con un solo encuentro (98%, tope 80%)",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b1",
+      "variante": "brazil",
+      "registro": "claro y submarino: instrucciones antes de entrar al agua, silencio dentro, reglas que nadie discute",
+      "espina": "Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. En la isla aprende que la ruta que vende tiene cupo, y que el cupo es lo que la mantiene vendible el ano que viene.",
+      "recursos": "B1: reversa cosida y cambio de ritmo. Heredados: repeticion ritmica, contraste con pero e imagen concreta (A0); causalidad explicita, humor de situacion y gancho final literal (A1); simil simple y espejo concreto (A2). Sin ironia, subtexto, aforismo ni elipsis, que son B2.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "reservar veinte plazas de buceo para la temporada alta",
+          "impide": "la cuota diaria de la isla y un credenciamiento que ella no tiene",
+          "cuesta": "la mitad de las plazas y dos dias de tramite que no factura",
+          "cambia": "deja de vender la isla como un sitio y empieza a venderla como una cita",
+          "emocion": "impaciencia que se le nota en que rellena el formulario de pie, sin sentarse"
+        },
+        {
+          "slot": "2",
+          "quiere": "bajar con el grupo y ver el arrecife que sale en su folleto",
+          "impide": "una regla de distancia y una tortuga en desove que cambia el punto de inmersion",
+          "cuesta": "el arrecife de la foto: bucean en otro sitio, mas pobre y mas cerca",
+          "cambia": "entiende que la foto no es la promesa; la promesa es que siga habiendo tortuga",
+          "emocion": "frustracion que se traga bajo el agua, donde nadie puede hablar; sube y no dice nada"
+        },
+        {
+          "slot": "3",
+          "quiere": "cerrar el ano con la isla dentro de su ruta fija",
+          "impide": "el cupo del ano que viene sale por sorteo y ella no controla nada",
+          "cuesta": "la ilusion de controlar su propia ruta",
+          "cambia": "acepta el sorteo y prepara una alternativa, que es lo que nunca habia hecho",
+          "emocion": "resignacion activa; escribe dos rutas en la ficha y tacha la palabra seguro"
+        }
+      ]
+    }
+  },
+  "cmtq5n9a50007j8812p9lzxjr#paraty": {
+    "cerrado": "2026-09-06T20:42:35.538Z",
+    "hash": "e7d5b786919fbd93",
+    "historias": [
+      "paraty#0 a-mare-leva-a-lancha",
+      "paraty#1 dinheiro-na-mao-errada",
+      "paraty#2 o-telefone-sublinhado"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"seco y maritimo: mareas, favores que no se cobran, frases cortas de gente que se ve todos los meses\", espina \"Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. En esta parada descubre que en su ruta nueva no se paga con dinero, y que deber algo es la forma que tiene la gente de asegurarse de que vuelvas.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 88% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"a\", 13%)",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.04 sobre 52 plazas · 50 salen una sola vez | ancladas: 8/60 (13%) | cola: 50/52 portables con un solo encuentro (96%, tope 80%)",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b1",
+      "variante": "brazil",
+      "registro": "seco y maritimo: mareas, favores que no se cobran, frases cortas de gente que se ve todos los meses",
+      "espina": "Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. En esta parada descubre que en su ruta nueva no se paga con dinero, y que deber algo es la forma que tiene la gente de asegurarse de que vuelvas.",
+      "recursos": "B1: reversa cosida y cambio de ritmo. Heredados: repeticion ritmica, contraste con pero e imagen concreta (A0); causalidad explicita, humor de situacion y gancho final literal (A1); simil simple y espejo concreto (A2). Sin ironia, subtexto, aforismo ni elipsis, que son B2.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "cruzar a la isla y volver el mismo dia para no pagar otra noche",
+          "impide": "la lancha de linea no sale con marea baja y ella no lo sabia",
+          "cuesta": "los cuarenta reales de la noche extra, que ya no recupera",
+          "cambia": "acepta que un desconocido la cruce gratis, cosa que no habria hecho en Sao Paulo",
+          "emocion": "incomodidad de deber algo; se le ve en que insiste tres veces con el dinero en la mano"
+        },
+        {
+          "slot": "2",
+          "quiere": "pagar el favor de ayer y quedar en paz",
+          "impide": "aqui el dinero por un favor ofende, y ella no conoce la moneda con la que se paga",
+          "cuesta": "su idea de estar en paz con la gente de la ruta; se queda debiendo y tiene que aguantarlo",
+          "cambia": "entiende que la deuda no se cierra, se devuelve mas tarde y de otra forma",
+          "emocion": "frustracion contenida; guarda los billetes doblados y se queda mirando el agua"
+        },
+        {
+          "slot": "3",
+          "quiere": "devolver el favor antes de irse, ahora que sabe como",
+          "impide": "no tiene barco, ni casa, ni nada que ofrecer en esta ciudad",
+          "cuesta": "la comodidad de no mezclar el trabajo con la gente: mete a Ivo en su ficha de rutas",
+          "cambia": "el favor se devuelve con clientes, y la deuda deja de pesarle",
+          "emocion": "alivio con algo de orgullo; escribe el telefono de el con letra grande y lo subraya"
+        }
+      ]
+    }
+  },
+  "cmtq5n9a50007j8812p9lzxjr#sao-paulo": {
+    "cerrado": "2026-09-06T20:23:56.854Z",
+    "hash": "ebb10bca855891e9",
+    "historias": [
+      "sao-paulo#0 a-caucao-volta-dia-trinta",
+      "sao-paulo#1 chuva-na-marginal",
+      "sao-paulo#2 tchau-no-engarrafamento"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"urbano y seco: ruido de calle, prisa y dinero contado; frases cortas entre dos que se conocen demasiado\", espina \"Rafaela vuelve del mes de viaje y no cabe en la vida que dejo: vende destinos que ahora si ha pisado, y el ano se le parte entre la agencia y los sitios de verdad. En este tema paga la primera factura de haberse ido: no tiene donde dormir.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"diz\" 20%)",
+      "arranques de parrafo variados (mas repetido \"o\", 20%)",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 0.94 sobre 54 plazas · 51 salen una sola vez | ancladas: 6/60 (10%) | cola: 51/54 portables con un solo encuentro (94%, tope 80%)",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: sao-paulo (Rafaela, Matheus)"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b1",
+      "variante": "brazil",
+      "registro": "urbano y seco: ruido de calle, prisa y dinero contado; frases cortas entre dos que se conocen demasiado",
+      "espina": "Rafaela vuelve del mes de viaje y no cabe en la vida que dejo: vende destinos que ahora si ha pisado, y el ano se le parte entre la agencia y los sitios de verdad. En este tema paga la primera factura de haberse ido: no tiene donde dormir.",
+      "recursos": "B1: reversa cosida y cambio de ritmo. Heredados: repeticion ritmica, contraste con pero e imagen concreta (A0); causalidad explicita, humor de situacion y gancho final literal (A1); simil simple y espejo concreto (A2). Sin ironia, subtexto, aforismo ni elipsis, que son B2.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "dormir esta noche en su propio cuarto, que subalquilo para pagarse el mes de viaje",
+          "impide": "el contrato de la inquilina corre hasta fin de mes y la inquilina no se mueve",
+          "cuesta": "el deposito con el que contaba, y el cuarto: acaba en el sofa de Matheus, que esta de paso",
+          "cambia": "acepta buscar un cuarto alquilado y deja de repetir que el viaje no le costo nada",
+          "emocion": "verguenza de volver sin sitio delante del hermano que si se mudo a proposito; se le ve en que ordena la mochila que no hace falta ordenar"
+        },
+        {
+          "slot": "2",
+          "quiere": "llegar a la agencia a tiempo para pedir la ruta del Norte, la unica que ahora conoce por dentro",
+          "impide": "dos horas de transito bajo lluvia; entra con la reunion empezada",
+          "cuesta": "la ruta ya esta dada a otro, y con ella el argumento de haber estado alli",
+          "cambia": "se queda con la ruta del interior, que no quiere nadie, y descubre que la prefiere",
+          "emocion": "rabia contenida que no descarga en nadie; aprieta el paraguas mojado contra la pierna y contesta bajito"
+        },
+        {
+          "slot": "3",
+          "quiere": "despedir a Matheus con calma antes de que el vuelva a Manaus",
+          "impide": "el vuelo de el es a las seis y el turno de ella empieza a las siete",
+          "cuesta": "la despedida: se despiden dentro del coche, en un atasco, sin bajarse",
+          "cambia": "le pide sitio en Manaus para diciembre, y el ano partido deja de ser una queja y pasa a ser un plan",
+          "emocion": "alivio y pena a la vez; se rie de algo que no tiene gracia para no decir lo otro"
+        }
+      ]
+    }
+  },
+  "cmtq5n9a50007j8812p9lzxjr#serra-gaucha": {
+    "cerrado": "2026-09-06T20:31:12.207Z",
+    "hash": "30c61977c0525323",
+    "historias": [
+      "serra-gaucha#0 galeto-antes-do-preco",
+      "serra-gaucha#1 mais-um-pouquinho",
+      "serra-gaucha#2 a-caixa-para-a-estrada"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"calido y ruidoso: mesa larga, comida que no para de llegar, gente que insiste hasta que aceptas\", espina \"Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. Con la ruta del interior aprende que el trato no se cierra en la oficina sino en la mesa, y eso la obliga a quedarse mas de lo que tenia previsto.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"pergunta\" 20%)",
+      "arranques de parrafo variados (mas repetido \"rosane\", 13%)",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.04 sobre 55 plazas · 51 salen una sola vez | ancladas: 6/61 (10%) | cola: 51/55 portables con un solo encuentro (93%, tope 80%)",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b1",
+      "variante": "brazil",
+      "registro": "calido y ruidoso: mesa larga, comida que no para de llegar, gente que insiste hasta que aceptas",
+      "espina": "Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. Con la ruta del interior aprende que el trato no se cierra en la oficina sino en la mesa, y eso la obliga a quedarse mas de lo que tenia previsto.",
+      "recursos": "B1: reversa cosida y cambio de ritmo. Heredados: repeticion ritmica, contraste con pero e imagen concreta (A0); causalidad explicita, humor de situacion y gancho final literal (A1); simil simple y espejo concreto (A2). Sin ironia, subtexto, aforismo ni elipsis, que son B2.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "cerrar el acuerdo con la posada y coger el autobus de las dos",
+          "impide": "la duena no habla de precios antes de comer, y ya estan poniendo la mesa",
+          "cuesta": "el autobus de las dos, y con el la noche en su propia cama",
+          "cambia": "entiende que aqui el trato se firma despues del cafe, no antes",
+          "emocion": "prisa disimulada; mira el reloj por debajo de la mesa y se rie de un chiste que no ha entendido"
+        },
+        {
+          "slot": "2",
+          "quiere": "quedar bien sin comer mas, porque lleva dos horas comiendo",
+          "impide": "en esta mesa rechazar un plato es rechazar a quien lo hizo",
+          "cuesta": "la tarde entera y la ropa que le queda apretada para el vuelo",
+          "cambia": "aprende la formula exacta para decir que no sin ofender",
+          "emocion": "agobio con carino; se afloja el cinturon por debajo del mantel y sigue sonriendo"
+        },
+        {
+          "slot": "3",
+          "quiere": "irse con el acuerdo firmado y nada mas",
+          "impide": "la familia le prepara una caja de comida para el camino",
+          "cuesta": "el orgullo de no deber nada: acepta la caja y no puede devolver el gesto",
+          "cambia": "apunta la posada como parada fija de la ruta, no como cliente suelto",
+          "emocion": "verguenza agradecida; carga la caja con las dos manos y no encuentra donde mirar"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
   }
 }

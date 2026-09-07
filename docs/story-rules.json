@@ -89,7 +89,14 @@
       "id": "journey-vocab-recirculation",
       "gate": "journey",
       "check": "journey-vocab-recirculation",
-      "rule": "Cada plaza de vocab se reencuentra: media de 2 apariciones o mas a lo largo del journey",
+      "rule": "Cada plaza de vocab se reencuentra: media de 2 apariciones o mas a lo largo del journey; el suelo de B1 (media 1,2 y cola 80%) es PROVISIONAL, remedir contra el primer B1 publicado y sustituir por el numero medido",
+      "memory": "project_vocab_recirculation_ladder"
+    },
+    {
+      "id": "journey-vocab-level-floor",
+      "gate": "journey",
+      "check": "journey-vocab-level-floor",
+      "rule": "Un journey de nivel B1 ensena vocabulario de B1: al menos el 30% de sus plazas por encima de A1/A2 (suelo PROVISIONAL, remedir contra el primer B1 de portugues publicado)",
       "memory": "project_vocab_recirculation_ladder"
     },
     {
@@ -232,8 +239,9 @@
     {
       "id": "topics-grounded",
       "gate": "hook",
-      "rule": "Cada tema cita una motivacion real escrita por un solicitante",
-      "memory": "project_topic_naming_rule"
+      "rule": "Cada tema cita una motivacion real escrita por un solicitante; en un idioma con menos frases de proposito que temas, el porton admite el modo journey-level declarado (minimo 2 citas verbatim de 2 personas distintas para el journey entero)",
+      "memory": "project_topic_naming_rule",
+      "hook": "pre-topic-guard.sh"
     },
     {
       "id": "canonical-validation-gate",

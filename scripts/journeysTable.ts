@@ -12,12 +12,17 @@
  *   npx tsx scripts/journeysTable.ts                   todos los journeys
  *   npx tsx scripts/journeysTable.ts --journey <id>    uno, por temas y por historias
  *   npx tsx scripts/journeysTable.ts --archived        incluye los archivados
- *   npx tsx scripts/journeysTable.ts --idioma spanish  solo un idioma
+ *   npx tsx scripts/journeysTable.ts --idioma spanish  solo un idioma (--language
+ *                                                      tambien vale, y acepta
+ *                                                      "portugues", "es", "de"...)
+ *   npx tsx scripts/journeysTable.ts --crudo           la linea de barras de antes
  *
  * La salida del catalogo es MARKDOWN (tabla GitHub), igual que las dos tablas
  * por journey: pegada en el chat se renderiza como tabla. La version anterior
  * imprimia pipes sin separador ni bordes y en el chat se envolvia en un bloque
- * ilegible de lineas partidas (usuario, 2026-09-07).
+ * ilegible de lineas partidas (usuario, 2026-09-07). `--crudo` conserva la
+ * linea de barras para lo que la parsee. Una sola tabla, con idioma y variante
+ * en columnas propias (usuario, 2026-09-06).
  *
  * Columnas (catálogo): Estado | Journey | Idioma/Variante | Nivel | Estructura |
  *           Estilo | %Citado | No nativos | Voz narrador | Voz práctica |
@@ -51,6 +56,35 @@ const flag = (n: string) => process.argv.includes(`--${n}`);
 /** live + draft, y archived SOLO si se pide. Regla dura del proyecto. */
 const ESTADOS = (): ("active" | "draft" | "archived")[] =>
   flag("archived") ? ["active", "draft", "archived"] : ["active", "draft"];
+
+/**
+ * Filtro por idioma, para "la tabla de journeys, solo portugues". Se anade el
+ * 2026-09-06 porque el usuario lo pidio dos veces seguidas y la alternativa era
+ * recortar a ojo la salida del generador, que es exactamente lo que prohibe la
+ * seccion "Pedir una vez" de .claude/CLAUDE.md: una tabla filtrada a mano no se
+ * distingue de una inventada. Acepta el nombre tal cual lo guarda la base
+ * ("portuguese") y tambien el castellano corriente ("portugues"), porque quien
+ * pide la tabla no tiene por que saber como se llama la columna.
+ */
+const IDIOMAS: Record<string, string> = {
+  portugues: "portuguese", portugués: "portuguese", pt: "portuguese",
+  espanol: "spanish", español: "spanish", es: "spanish",
+  aleman: "german", alemán: "german", de: "german",
+  italiano: "italian", it: "italian",
+  frances: "french", francés: "french", fr: "french",
+  polaco: "polish", pl: "polish",
+  coreano: "korean", ko: "korean",
+  arabe: "arabic", árabe: "arabic", ar: "arabic",
+};
+const idiomaPedido = (): string | undefined => {
+  const raw = (arg("language") ?? arg("idioma"))?.toLowerCase().trim();
+  if (!raw) return undefined;
+  return IDIOMAS[raw] ?? raw;
+};
+const filtroIdioma = () => {
+  const l = idiomaPedido();
+  return l ? { language: l } : {};
+};
 
 /**
  * Los cuatro estilos de comillas del corpus: angulares «» (ES/IT), bajas
@@ -154,9 +188,18 @@ const mode = (arr: (string | null)[]) => {
   return [...m.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? null;
 };
 
+/*
+ * COMO SE IMPRIME EL CATALOGO (2026-09-06/07). Quince columnas de barras sin
+ * alinear se leen fatal: en el chat la fila se parte por donde cabe y las
+ * cabeceras dejan de estar encima de sus datos. Literal del usuario: "esa es
+ * una mierda, a partir de ahora esta prohibido que me des una tabla asi". Por
+ * eso el catalogo sale como UNA tabla markdown (idioma y variante en columnas
+ * propias, pedido del 2026-09-06) y `--crudo` conserva la linea de barras para
+ * lo que la parsee.
+ */
 async function main() {
   const js = await p.journey.findMany({
-    where: { status: { in: ESTADOS() } }, // live + draft; archived solo con --archived
+    where: { status: { in: ESTADOS() }, ...filtroIdioma() }, // live + draft; archived solo con --archived
     select: {
       id: true, name: true, language: true, variant: true, status: true, levels: true,
       topics: true, storiesPerTopic: true,
@@ -183,20 +226,24 @@ async function main() {
     a.name.localeCompare(b.name) ||
     (nivelDe(a.levels) - nivelDe(b.levels))
   );
-  const idioma = (arg("idioma") ?? arg("lang"))?.toLowerCase();
-  const lista = idioma ? js.filter((j) => j.language.toLowerCase().startsWith(idioma)) : js;
-  if (idioma && lista.length === 0)
+  const idioma = idiomaPedido();
+  const crudo = flag("crudo");
+  if (idioma && js.length === 0)
     throw new Error(`ningun journey live+draft con idioma "${idioma}"`);
   console.log(
     (flag("archived")
       ? "AVISO: incluye ARCHIVED porque se pidio con --archived. Sin ese flag, solo live + draft."
       : "live + draft (los archivados quedan fuera; --archived los incluye)") +
-    (idioma ? ` · filtrado: idioma ${idioma}` : "") + "\n"
+    (idioma ? ` · filtrado: idioma ${idioma}` : "") + (crudo ? "" : "\n")
   );
-  console.log("| Estado | Idioma | Variante | Tipo | Nivel | Estructura | Estilo | %Citado | NoNativos | Voz narrador | Voz práctica | Hist.pub | Narr | Covers | Ambient | Clips |");
-  console.log("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|");
+  if (crudo) {
+    console.log("Estado|Idioma|Variante|Tipo|Nivel|Estructura|Estilo|%Citado|NoNativos|Voz narrador|Voz práctica|Hist.pub|Narr|Covers|Ambient|Clips");
+  } else {
+    console.log("| Estado | Idioma | Variante | Tipo | Nivel | Estructura | Estilo | %Citado | NoNativos | Voz narrador | Voz práctica | Hist.pub | Narr | Covers | Ambient | Clips |");
+    console.log("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|");
+  }
   const notas: string[] = [];
-  for (const j of lista) {
+  for (const j of js) {
     const S = j.stories;
     const pub = S.filter((s) => s.status === "published").length;
     const narr = S.filter((s) => (s.audioUrl ?? "").trim()).length;
@@ -225,7 +272,11 @@ async function main() {
     // El estado desempata las dos filas que comparten tipo, idioma, variante y
     // nivel (los dos Expat alemanes C1: Berlín live, Hamburgo draft).
     if (nn.n) notas.push(`${est} ${j.name} ${j.language}/${j.variant} ${j.levels.join("/")}: ${nn.who}`);
-    console.log(`| ${est} | ${j.language} | ${j.variant} | ${j.name} | ${j.levels.join("/") || "-"} | ${estructura} | ${estilo} | ${citado} | ${nn.n} | ${vname(mode(S.map((s) => s.voiceId)))} | ${vname(mode(S.map((s) => s.practiceVoiceId)))} | ${pub}/${S.length} | ${narr} | ${cov} | ${amb}/${S.length} | ${clips} |`);
+    const campos = [est, j.language, j.variant, j.name, j.levels.join("/") || "-",
+      estructura, estilo, citado, String(nn.n), vname(mode(S.map((s) => s.voiceId))),
+      vname(mode(S.map((s) => s.practiceVoiceId))), `${pub}/${S.length}`, String(narr),
+      String(cov), `${amb}/${S.length}`, String(clips)];
+    console.log(crudo ? campos.join("|") : `| ${campos.join(" | ")} |`);
   }
   if (notas.length) {
     console.log(`\nNo nativos (regla dura: el objetivo es 0). Quiénes son:`);

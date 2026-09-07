@@ -1215,6 +1215,49 @@
         "popayán",
         "tucumán"
       ]
+    },
+    "portuguese-traveler-brazil-b1": {
+      "articles": [
+        "a",
+        "as",
+        "o",
+        "os",
+        "um",
+        "uma",
+        "uns",
+        "umas"
+      ],
+      "characterNames": [
+        "cristiane",
+        "ivo",
+        "jussara",
+        "matheus",
+        "nara",
+        "noronha",
+        "rafa",
+        "rafaela",
+        "rosane",
+        "wagner"
+      ],
+      "numerals": [
+        "cinco",
+        "dez",
+        "dois",
+        "duas",
+        "mil",
+        "nove",
+        "oitenta",
+        "oito",
+        "onze",
+        "quarenta",
+        "quatro",
+        "quinze",
+        "seis",
+        "sete",
+        "trinta",
+        "três",
+        "vinte"
+      ]
     }
   }
 }

@@ -45,6 +45,11 @@
  */
 import rulesDoc from "../../docs/story-rules.json";
 import { renderedParagraphs } from "@/lib/readerParagraphs";
+import { isSpanishUpToLevel } from "@/lib/cefr/spanishLevels";
+import { isPortugueseA1A2 } from "@/lib/cefr/portugueseA1A2";
+import { isItalianA1A2 } from "@/lib/cefr/italianA1A2";
+import { isGermanA1A2 } from "@/lib/cefr/germanA1A2";
+import { isFrenchA1A2 } from "@/lib/cefr/frenchA1A2";
 
 export type JourneyStoryInput = {
   slug: string;
@@ -750,6 +755,72 @@ export function validateJourneyStories(
     }
   }
 
+  // ── 12bis. El SUELO de nivel: un B1 ensena palabras de B1 ───
+  //
+  // POR QUE (2026-09-06). `vocab-level-frequency` mide el TECHO: que ninguna
+  // palabra pase del nivel. En A0-A2 con eso basta, porque el fallo tipico es
+  // la palabra rara colada de arriba. De B1 en adelante el fallo se INVIERTE:
+  // lo facil es escribir un texto de A1, llamarlo B1 y que todos los checks
+  // pasen, porque una palabra de A1 nunca esta "por encima" de B1. Medido: la
+  // historia publicada del Traveler PT-BR A1, declarada `b1`, pasaba 31 de 31.
+  //
+  // Por eso es de CONJUNTO y no por historia. Las historias sueltas de los dos
+  // B1 de espanol ya escritos bajan al 5% (`la-deuda-tenia-cara`) y al 15%
+  // (`dos-precios-un-techo`) de plazas por encima de A1/A2; un suelo por
+  // historia rechazaria historias que la propia referencia contiene. Sobre el
+  // journey entero la cifra se estabiliza.
+  //
+  // EL NUMERO, medido el 2026-09-06 con este mismo criterio (plazas cuya
+  // palabra NO cae en la lista A1/A2 del idioma, sobre las 420 del journey):
+  //
+  //   Traveler ES spain b1   42%      Traveler ES latam b1   37%
+  //   Traveler ES spain b2   48%      Traveler ES latam b2   78%
+  //   Traveler PT brazil a1   2%   <- el patron oro de lo que NO es un B1
+  //
+  // Suelo = 0,30, por DEBAJO de las dos referencias B1 (el mismo criterio con
+  // el que se pusieron los suelos de recirculacion) y muy por encima del 2% del
+  // A1. A proposito NO es el 37% de la referencia mas baja: calibrar la vara
+  // sobre lo que tiene que aprobar no mide nada.
+  //
+  // PROVISIONAL para portugues: su lista A1/A2 esta engordada con palabras de
+  // las propias historias del A0 y el A1 (ver el encabezado de
+  // portugueseA1A2.ts), asi que en PT cuenta como "dentro de A1/A2" mas de lo
+  // que contaria una lista neutra, y el suelo sale MAS dificil, no mas facil.
+  // Se remide contra el primer B1 de portugues publicado; la fila del
+  // inventario lo lleva marcado.
+  if (level === "B1") {
+    const DENTRO_A1A2: Record<string, (w: string) => boolean> = {
+      ES: (w) => isSpanishUpToLevel(w, "a2"),
+      PT: isPortugueseA1A2,
+      IT: isItalianA1A2,
+      DE: isGermanA1A2,
+      FR: isFrenchA1A2,
+    };
+    const SUELO_NIVEL_B1 = 0.30;
+    const dentro = DENTRO_A1A2[lang];
+    if (!dentro) {
+      noImplSet("journey-vocab-level-floor", "Un journey B1 ensena vocabulario de B1",
+        `No hay lista A1/A2 de ${lang || "?"}, asi que no se puede saber que plaza esta por encima de A1/A2.`);
+    } else if (!stories.some((s) => s.vocab && s.vocab.length)) {
+      noImplSet("journey-vocab-level-floor", "Un journey B1 ensena vocabulario de B1",
+        "Las historias llegaron sin vocab.");
+    } else {
+      let tot = 0;
+      const deNivel: string[] = [];
+      for (const s of stories) for (const v of s.vocab ?? []) {
+        tot++;
+        if (!dentro(String(v.word))) deNivel.push(String(v.word));
+      }
+      const cuota = tot ? deNivel.length / tot : 0;
+      pushSet("journey-vocab-level-floor",
+        `Un journey B1 ensena vocabulario de B1 (${Math.round(SUELO_NIVEL_B1 * 100)}% de las plazas por encima de A1/A2)`,
+        cuota >= SUELO_NIVEL_B1,
+        `${deNivel.length}/${tot} plazas por encima de A1/A2 (${Math.round(cuota * 100)}%, suelo ${Math.round(SUELO_NIVEL_B1 * 100)}%)` +
+        ` · referencias medidas: ES spain b1 42%, ES latam b1 37%, PT brazil a1 2%` +
+        (deNivel.length ? ` · de nivel: ${deNivel.slice(0, 8).join(", ")}` : ""));
+    }
+  }
+
   // ── 13. El RENDER, no el texto ─────────────────────────────
   //
   // Todos los demas checks miden el texto guardado. Este mide lo que el lector
@@ -778,7 +849,9 @@ export function validateJourneyStories(
     const declaradas = (rulesDoc.rules as Array<{ id: string; gate: string }>)
       .filter((r) => r.gate === "journey").map((r) => r.id);
     const implementadas = new Set(out.map((c) => c.id));
-    const sinCheck = declaradas.filter((id) => !implementadas.has(id) && !(id === "journey-a0-floor" && level !== "A0"));
+    const sinCheck = declaradas.filter((id) => !implementadas.has(id)
+      && !(id === "journey-a0-floor" && level !== "A0")
+      && !(id === "journey-vocab-level-floor" && level !== "B1"));
     push("journey-rules-inventory", "Toda regla de docs/story-rules.json tiene su check",
       sinCheck.length === 0,
       `Declaradas en docs/story-rules.json y sin implementar: ${sinCheck.join(", ")}`);

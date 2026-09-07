@@ -43,8 +43,9 @@ export type TopicProposal = {
   label: string;
   /** slug con el que se guardará; tiene que derivar del label */
   slug?: string;
-  /** citas VERBATIM de BetaSignup.motivation o .applicationReason */
-  evidence: string[];
+  /** citas VERBATIM de BetaSignup.motivation o .applicationReason. Opcional
+   *  solo en modo journey-level, donde las citas se declaran una vez arriba. */
+  evidence?: string[];
 };
 
 export class TopicEvidenceError extends Error {}
@@ -54,6 +55,26 @@ export async function assertTopicsGrounded(opts: {
   proposals: TopicProposal[];
   /** labels que ya usan otros journeys del mismo idioma, para comparar */
   existingLabels?: string[];
+  /**
+   * MODO JOURNEY-LEVEL para corpus chicos (2026-09-06, aprobado por el usuario
+   * via el chat de planificacion). Citas VERBATIM que sostienen el journey
+   * ENTERO; los temas son los dominios de esas citas y no citan por separado.
+   *
+   * POR QUE. El modo por tema da por hecho que hay al menos una frase escrita
+   * por tema, y en un idioma con poca demanda eso es falso: en portugues, de 9
+   * solicitantes solo dos escribieron sobre su vida (Alison y Jean-Pierre); los
+   * otros siete escribieron sobre la app. Con el modo por tema, siete temas
+   * acaban citando dos frases repartidas, que es EXACTAMENTE el anti-patron del
+   * Expat frances (seis temas citando la misma cadena "move abroad") solo que
+   * escrito con frases de verdad. La diferencia que hace este modo es que la
+   * escasez se DECLARA en vez de disimularse: las citas se declaran una vez, a
+   * nivel de journey, y quedan impresas con cuanta gente hay detras.
+   *
+   * No abre la mano en nada mas: las citas siguen siendo verbatim, siguen
+   * teniendo largo minimo, siguen sin contar los clics del desplegable, y las
+   * reglas de nombre de los temas se comprueban igual.
+   */
+  journeyEvidence?: string[];
   prisma?: PrismaClient;
 }): Promise<void> {
   const prisma = opts.prisma ?? new PrismaClient();
@@ -73,6 +94,8 @@ export async function assertTopicsGrounded(opts: {
   let cannedClicks = 0;
   const writtenMotivations: string[] = [];
   const reasons: string[] = [];
+  /** Lo que escribio CADA persona, para poder contar personas y no frases. */
+  const porPersona: string[][] = [];
   for (const r of rows) {
     // Antes del 2026-08-19, elegir "Other" guardaba el texto AQUÍ; desde
     // entonces vive en `learningGoal` y este campo es siempre el clic.
@@ -89,6 +112,8 @@ export async function assertTopicsGrounded(opts: {
     if (g) writtenMotivations.push(g);
     const a = String(r.applicationReason ?? "").trim();
     if (a) reasons.push(a);
+    const suyas = [m && !isCannedMotivation(m) ? m : "", g, a].filter(Boolean).map(norm);
+    if (suyas.length) porPersona.push(suyas);
   }
   const written = writtenMotivations.concat(reasons);
   const corpus = written.map(norm);
@@ -99,6 +124,51 @@ export async function assertTopicsGrounded(opts: {
       `${cannedClicks} motivaciones son clics del desplegable y ninguna dice de qué habla la ` +
       `persona. Sin datos no se eligen temas.`,
     );
+  }
+
+  // ── Modo journey-level ──────────────────────────────────────
+  //
+  // El UMBRAL, comentado como se pidio: este modo es para idiomas con menos
+  // frases de PROPOSITO que temas tiene el journey, o sea menos de 7. En
+  // portugues, a 2026-09-06, son 2 (Alison y Jean-Pierre). Que una frase sea
+  // "de proposito" y no opinion sobre la app no lo puede decidir el codigo:
+  // "Curious about the new app" pasa cualquier medida de largo y no sostiene
+  // ningun tema. Esa lectura es humana y va en el plan del journey.
+  //
+  // Lo que SI comprueba la maquina, para que el modo no sea una puerta de
+  // atras: dos citas como minimo, de dos personas distintas como minimo, cada
+  // una verbatim y con el largo minimo de siempre. Y se niega a activarse si
+  // hay tantas citas declaradas como temas, porque entonces el corpus da para
+  // citar tema por tema y este modo no pinta nada.
+  const MIN_JOURNEY_QUOTES = 2;
+  const MIN_JOURNEY_PEOPLE = 2;
+  const modoJourney = Boolean(opts.journeyEvidence?.length);
+  const problemasJourney: string[] = [];
+  let personasDetras = 0;
+  if (modoJourney) {
+    const citas = opts.journeyEvidence!;
+    if (citas.length < MIN_JOURNEY_QUOTES)
+      problemasJourney.push(`el modo journey-level pide ${MIN_JOURNEY_QUOTES} citas como minimo y hay ${citas.length}`);
+    if (citas.length >= opts.proposals.length)
+      problemasJourney.push(
+        `hay ${citas.length} citas para ${opts.proposals.length} temas: con eso se cita tema por tema, ` +
+        `que es mas fuerte. El modo journey-level es para cuando NO alcanza.`,
+      );
+    const cortas = citas.filter((q) => quoteTooShort(q));
+    if (cortas.length)
+      problemasJourney.push(
+        `citas demasiado cortas (minimo ${MIN_QUOTE_WORDS} palabras y ${MIN_QUOTE_CHARS} caracteres): ${cortas.join(" / ")}`,
+      );
+    const inventadas = citas.filter((q) => !quoteTooShort(q)).filter((q) => !corpus.some((c) => c.includes(norm(q))));
+    if (inventadas.length) problemasJourney.push(`citas que nadie escribio en BetaSignup: ${inventadas.join(" / ")}`);
+    personasDetras = porPersona.filter((ps) =>
+      citas.some((q) => !quoteTooShort(q) && ps.some((p) => p.includes(norm(q)))),
+    ).length;
+    if (personasDetras < MIN_JOURNEY_PEOPLE)
+      problemasJourney.push(
+        `las citas son de ${personasDetras} persona(s) y hacen falta ${MIN_JOURNEY_PEOPLE}: ` +
+        `una sola persona no decide siete temas.`,
+      );
   }
 
   // Reglas de nombre comprobables desde la cadena. Las de criterio (que nombre
@@ -122,7 +192,7 @@ export async function assertTopicsGrounded(opts: {
     return out.length ? [`"${p.label}": ${out.join("; ")}`] : [];
   });
 
-  const bad = nameProblems.concat(opts.proposals.flatMap((p) => {
+  const bad = nameProblems.concat(problemasJourney).concat(modoJourney ? [] : opts.proposals.flatMap((p) => {
     if (!p.evidence?.length) return [`"${p.label}": ninguna cita de usuario`];
     const out: string[] = [];
     const short = p.evidence.filter((q) => quoteTooShort(q));
@@ -150,11 +220,21 @@ export async function assertTopicsGrounded(opts: {
     `(${writtenMotivations.length} escritas a mano + ${reasons.length} applicationReason; ` +
     `${cannedClicks} clics del desplegable descartados)`,
   );
-  for (const p of opts.proposals) {
-    const n = p.evidence
-      .filter((q) => !quoteTooShort(q))
-      .reduce((acc, q) => acc + corpus.filter((c) => c.includes(norm(q))).length, 0);
-    console.log(`  ${p.label.padEnd(30)} ${String(n).padStart(3)} solicitantes  <- ${p.evidence.join(" / ")}`);
+  if (modoJourney) {
+    // La escasez, dicha en voz alta: una cabecera con las citas del journey y
+    // cuanta gente hay detras, y debajo los temas como lo que son, dominios de
+    // esas citas. Que se vea el numero es medio motivo de que exista el modo.
+    console.log(`  MODO JOURNEY-LEVEL · ${personasDetras} persona(s) detras de todo el journey`);
+    for (const q of opts.journeyEvidence!) console.log(`    <- ${q}`);
+    console.log("");
+    for (const p of opts.proposals) console.log(`  ${p.label.padEnd(30)} dominio`);
+  } else {
+    for (const p of opts.proposals) {
+      const n = (p.evidence ?? [])
+        .filter((q) => !quoteTooShort(q))
+        .reduce((acc, q) => acc + corpus.filter((c) => c.includes(norm(q))).length, 0);
+      console.log(`  ${p.label.padEnd(30)} ${String(n).padStart(3)} solicitantes  <- ${(p.evidence ?? []).join(" / ")}`);
+    }
   }
   if (opts.existingLabels?.length) {
     console.log(`\n  Ya cubierto en ${opts.language}: ${opts.existingLabels.join(" · ")}`);

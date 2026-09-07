@@ -9086,5 +9086,1871 @@
       "g": "bet placed, agreed (apostar)",
       "t": "verb"
     }
+  },
+  "portuguese-traveler-brazil-b1": {
+    "inquilina": {
+      "g": "The woman renting the room, with a contract until the thirtieth.",
+      "t": "noun"
+    },
+    "contrato": {
+      "g": "The rental agreement that fixes the dates and the money.",
+      "t": "noun"
+    },
+    "prazo": {
+      "g": "The time limit the contract sets before it ends.",
+      "t": "noun"
+    },
+    "caução": {
+      "g": "The deposit left with the landlord, returned when the contract ends.",
+      "t": "noun"
+    },
+    "diária": {
+      "g": "The price of one night in the rented room.",
+      "t": "noun"
+    },
+    "metrô": {
+      "g": "The underground city train she now lives beside.",
+      "t": "noun"
+    },
+    "resolvo": {
+      "g": "I sort it out (resolver), said with more confidence than she has.",
+      "t": "verb"
+    },
+    "resolve": {
+      "g": "You sort out (resolver), here as a question about how.",
+      "t": "verb"
+    },
+    "gastou": {
+      "g": "Spent, used up all the money (gastar).",
+      "t": "verb"
+    },
+    "arruma": {
+      "g": "Tidies, puts in order (arrumar); here, what is already tidy.",
+      "t": "verb"
+    },
+    "arrumado": {
+      "g": "Already tidy, in order; the past participle of arrumar.",
+      "t": "adjective"
+    },
+    "quebram": {
+      "g": "Break, and about money, leave someone with nothing (quebrar).",
+      "t": "verb"
+    },
+    "levantar": {
+      "g": "To raise, here to raise the voice in anger.",
+      "t": "verb"
+    },
+    "vejo": {
+      "g": "I see, I look at it (ver); here, I will deal with it tomorrow.",
+      "t": "verb"
+    },
+    "segunda-feira": {
+      "g": "Monday, the first working day of the Brazilian week.",
+      "t": "noun"
+    },
+    "reunião": {
+      "g": "The work meeting where the routes are given out.",
+      "t": "noun"
+    },
+    "reuniões": {
+      "g": "Work meetings.",
+      "t": "noun"
+    },
+    "rotas": {
+      "g": "The travel routes the agency sells, each with its towns.",
+      "t": "noun"
+    },
+    "rota": {
+      "g": "The travel route a seller is given to sell.",
+      "t": "noun"
+    },
+    "às": {
+      "g": "At, used with the hour: at nine, at seven.",
+      "t": "expression"
+    },
+    "agência": {
+      "g": "The travel agency where she sells trips.",
+      "t": "noun"
+    },
+    "pasta": {
+      "g": "The flat case she carries the work papers in.",
+      "t": "noun"
+    },
+    "marginal": {
+      "g": "The wide fast road along the river in São Paulo.",
+      "t": "noun"
+    },
+    "trânsito": {
+      "g": "The traffic, all the cars moving or stopped.",
+      "t": "noun"
+    },
+    "motoboy": {
+      "g": "A courier on a motorbike, weaving between the cars.",
+      "t": "noun"
+    },
+    "retrovisor": {
+      "g": "The car mirror that shows what comes from behind.",
+      "t": "noun"
+    },
+    "abriu": {
+      "g": "Opened, and about traffic, started moving again (abrir).",
+      "t": "verb"
+    },
+    "adiante": {
+      "g": "Further ahead, further along the road.",
+      "t": "adverb"
+    },
+    "assim": {
+      "g": "Like this, in this way.",
+      "t": "adverb"
+    },
+    "bainha": {
+      "g": "The folded edge at the bottom of her trousers.",
+      "t": "noun"
+    },
+    "calça": {
+      "g": "Trousers, covering the legs from waist to feet.",
+      "t": "noun"
+    },
+    "encharcada": {
+      "g": "Soaked through, with the water inside the cloth.",
+      "t": "adjective"
+    },
+    "norte": {
+      "g": "The north of the country, the route she wanted.",
+      "t": "noun"
+    },
+    "chefe": {
+      "g": "The boss who runs the meeting and hands out routes.",
+      "t": "noun"
+    },
+    "pauta": {
+      "g": "The list of points the meeting has to get through.",
+      "t": "noun"
+    },
+    "subi": {
+      "g": "I went up, here up the river (subir).",
+      "t": "verb"
+    },
+    "conheço": {
+      "g": "I know, from having been there (conhecer).",
+      "t": "verb"
+    },
+    "chegou": {
+      "g": "Arrived, got there (chegar); here, too late.",
+      "t": "verb"
+    },
+    "sobrou": {
+      "g": "Was left over, nobody else wanted it (sobrar).",
+      "t": "verb"
+    },
+    "interior": {
+      "g": "The inland towns, away from the coast and the capital.",
+      "t": "noun"
+    },
+    "quiser": {
+      "g": "If you want, said about a choice still open (querer).",
+      "t": "verb"
+    },
+    "hotel": {
+      "g": "The place travellers sleep, here one without a pool.",
+      "t": "noun"
+    },
+    "piscina": {
+      "g": "A swimming pool, the thing this hotel does not have.",
+      "t": "noun"
+    },
+    "guarda-chuva": {
+      "g": "The umbrella she opens against the rain.",
+      "t": "noun"
+    },
+    "perna": {
+      "g": "The leg, where she presses the wet umbrella.",
+      "t": "noun"
+    },
+    "mapa": {
+      "g": "The map she opens to count the towns.",
+      "t": "noun"
+    },
+    "cidades": {
+      "g": "Towns, the eleven she has never sold.",
+      "t": "noun"
+    },
+    "vendeu": {
+      "g": "Sold, gave to a buyer for money (vender).",
+      "t": "verb"
+    },
+    "olhando": {
+      "g": "Looking at, keeping her eyes on it (olhar).",
+      "t": "verb"
+    },
+    "gosta": {
+      "g": "Likes it, and here it is the whole ending (gostar).",
+      "t": "verb"
+    },
+    "turno": {
+      "g": "The work shift she starts at seven.",
+      "t": "noun"
+    },
+    "emprestado": {
+      "g": "Borrowed, lent to her for the trip and to give back.",
+      "t": "adjective"
+    },
+    "colega": {
+      "g": "A workmate, someone she works with but not a close friend.",
+      "t": "noun"
+    },
+    "caminhão": {
+      "g": "A lorry, the big vehicle that fell across the road.",
+      "t": "noun"
+    },
+    "tombou": {
+      "g": "Fell over onto its side and stayed there (tombar).",
+      "t": "verb"
+    },
+    "engarrafamento": {
+      "g": "The traffic jam, cars in a line that does not move.",
+      "t": "noun"
+    },
+    "der": {
+      "g": "If it works out in time, from dar, about having enough time.",
+      "t": "verb"
+    },
+    "pego": {
+      "g": "I take, I catch, here a later flight (pegar).",
+      "t": "verb"
+    },
+    "temporada": {
+      "g": "The season, the months when the rain comes every year.",
+      "t": "noun"
+    },
+    "despedida": {
+      "g": "The goodbye, the moment before someone leaves.",
+      "t": "noun"
+    },
+    "vou": {
+      "g": "I go, I am going (ir); here, on foot.",
+      "t": "verb"
+    },
+    "chego": {
+      "g": "I arrive, I get there (chegar); here, sooner walking.",
+      "t": "verb"
+    },
+    "pisca-alerta": {
+      "g": "The blinking car lights that warn the drivers behind.",
+      "t": "noun"
+    },
+    "desce": {
+      "g": "Gets out, gets down from the car (descer).",
+      "t": "verb"
+    },
+    "acostamento": {
+      "g": "The strip at the side of the road where cars stop.",
+      "t": "noun"
+    },
+    "buzina": {
+      "g": "Sounds the horn (buzinar); the car behind is impatient.",
+      "t": "verb"
+    },
+    "graça": {
+      "g": "The funny side of something; here there is none.",
+      "t": "noun"
+    },
+    "guarda": {
+      "g": "Keep it for me, save it (guardar); said as a request.",
+      "t": "verb"
+    },
+    "dezembro": {
+      "g": "December, the month she asks him to keep a place for.",
+      "t": "noun"
+    },
+    "tchau": {
+      "g": "Bye, the everyday Brazilian goodbye.",
+      "t": "expression"
+    },
+    "garoa": {
+      "g": "Fine cold drizzle that soaks you slowly.",
+      "t": "noun"
+    },
+    "curitiba": {
+      "g": "Curitiba, a cold, orderly city in the south of Brazil.",
+      "t": "noun"
+    },
+    "encharca": {
+      "g": "Soaks it through (encharcar), slowly and completely.",
+      "t": "verb"
+    },
+    "pensão": {
+      "g": "A cheap guest house with rooms rented by the night.",
+      "t": "noun"
+    },
+    "nova": {
+      "g": "New, the one she has just been given (novo).",
+      "t": "adjective"
+    },
+    "cobradora": {
+      "g": "The woman who takes the fares at the bus station.",
+      "t": "noun"
+    },
+    "terminal": {
+      "g": "The big station where the city bus lines start.",
+      "t": "noun"
+    },
+    "sinal": {
+      "g": "The phone signal, which her room does not get.",
+      "t": "noun"
+    },
+    "copos": {
+      "g": "Cups, the two she brings out to the corridor (copo).",
+      "t": "noun"
+    },
+    "sou": {
+      "g": "I am (ser); here, yes, that is me.",
+      "t": "verb"
+    },
+    "aparelho": {
+      "g": "The phone itself, the thing held to the ear.",
+      "t": "noun"
+    },
+    "ouvido": {
+      "g": "The ear, where she keeps the phone too long.",
+      "t": "noun"
+    },
+    "toma": {
+      "g": "Have some, take it (tomar); an offer, not an order.",
+      "t": "verb"
+    },
+    "cafezinho": {
+      "g": "Small strong coffee offered to anyone who comes by.",
+      "t": "noun"
+    },
+    "estou": {
+      "g": "I am, right now (estar); here, in the middle of a call.",
+      "t": "verb"
+    },
+    "ligação": {
+      "g": "A phone call, from the moment it starts until it ends.",
+      "t": "noun"
+    },
+    "espero": {
+      "g": "I will wait (esperar), said by someone who does not.",
+      "t": "verb"
+    },
+    "orelha": {
+      "g": "The outer ear, against which the phone stays.",
+      "t": "noun"
+    },
+    "estação-tubo": {
+      "g": "Curitiba's glass tube stop, where buses are boarded.",
+      "t": "noun"
+    },
+    "ia": {
+      "g": "Was going to (ir); here, was about to miss it.",
+      "t": "verb"
+    },
+    "anota": {
+      "g": "Writes it down (anotar) so as not to forget.",
+      "t": "verb"
+    },
+    "cartão": {
+      "g": "The plastic card you touch to pay for the bus.",
+      "t": "noun"
+    },
+    "catraca": {
+      "g": "The metal bar you push through once you have paid.",
+      "t": "noun"
+    },
+    "saldo": {
+      "g": "The money left on a travel card.",
+      "t": "noun"
+    },
+    "recarrega": {
+      "g": "Top it up (recarregar), put credit on the card.",
+      "t": "verb"
+    },
+    "real": {
+      "g": "The Brazilian currency; here, the one coin she is short.",
+      "t": "noun"
+    },
+    "troca": {
+      "g": "Changes a note into coins (trocar).",
+      "t": "verb"
+    },
+    "quentinho": {
+      "g": "Nice and warm, said of bread straight from the oven.",
+      "t": "adjective"
+    },
+    "saiu": {
+      "g": "Left, went out (sair); here, the bus is gone.",
+      "t": "verb"
+    },
+    "próximo": {
+      "g": "The next one, the one that comes after this.",
+      "t": "adjective"
+    },
+    "van": {
+      "g": "A small shared van that charges more than the bus.",
+      "t": "noun"
+    },
+    "lotada": {
+      "g": "Completely full, with no space left inside (lotado).",
+      "t": "adjective"
+    },
+    "viaja": {
+      "g": "Travels, makes the journey (viajar).",
+      "t": "verb"
+    },
+    "tubo": {
+      "g": "Short for the tube stop, what everyone here calls it.",
+      "t": "noun"
+    },
+    "veste": {
+      "g": "Puts on a coat or clothes (vestir).",
+      "t": "verb"
+    },
+    "casaco": {
+      "g": "A warm coat for going out into the cold.",
+      "t": "noun"
+    },
+    "chave": {
+      "g": "The small metal thing that opens a door or gate.",
+      "t": "noun"
+    },
+    "barigui": {
+      "g": "Barigui, the big park with a lake in Curitiba.",
+      "t": "noun"
+    },
+    "parque": {
+      "g": "Green public space where people walk and rest.",
+      "t": "noun"
+    },
+    "geada": {
+      "g": "Thin white frost that covers the ground at dawn.",
+      "t": "noun"
+    },
+    "pinhão": {
+      "g": "Pine nut, roasted and eaten hot in southern Brazil.",
+      "t": "noun"
+    },
+    "assado": {
+      "g": "Roasted, cooked over heat until it is done.",
+      "t": "adjective"
+    },
+    "endurece": {
+      "g": "Goes hard (endurecer), so you cannot bite it.",
+      "t": "verb"
+    },
+    "dente": {
+      "g": "A tooth, used here to break the shell open.",
+      "t": "noun"
+    },
+    "disse": {
+      "g": "Said, told (dizer); here, nobody said it.",
+      "t": "verb"
+    },
+    "aprende": {
+      "g": "Learns by doing it (aprender), the way everyone does.",
+      "t": "verb"
+    },
+    "junho": {
+      "g": "June, the middle of the southern winter.",
+      "t": "noun"
+    },
+    "serra": {
+      "g": "The cold hill country away from the coast.",
+      "t": "noun"
+    },
+    "recebe": {
+      "g": "Receives, welcomes someone in (receber).",
+      "t": "verb"
+    },
+    "pátio": {
+      "g": "Open yard beside the house, where the fire is lit.",
+      "t": "noun"
+    },
+    "trouxe": {
+      "g": "Brought it with her (trazer).",
+      "t": "verb"
+    },
+    "tabela": {
+      "g": "A sheet with the prices set out in rows.",
+      "t": "noun"
+    },
+    "preços": {
+      "g": "Prices, what each thing costs (preço).",
+      "t": "noun"
+    },
+    "fumaça": {
+      "g": "Grey smoke rising from the fire, carrying the smell.",
+      "t": "noun"
+    },
+    "brasa": {
+      "g": "Red hot coal under the meat, with no flame.",
+      "t": "noun"
+    },
+    "cozinha": {
+      "g": "The room where the food is cooked.",
+      "t": "noun"
+    },
+    "galeto": {
+      "g": "Young chicken grilled on a spit, the Sunday dish here.",
+      "t": "noun"
+    },
+    "gira": {
+      "g": "Turns round and round (girar), here over the fire.",
+      "t": "verb"
+    },
+    "espeto": {
+      "g": "Long metal stick the meat is turned on.",
+      "t": "noun"
+    },
+    "família": {
+      "g": "The people you belong to, here all at one table.",
+      "t": "noun"
+    },
+    "comprida": {
+      "g": "Long, made for many people to sit along (comprido).",
+      "t": "adjective"
+    },
+    "genro": {
+      "g": "The man married to somebody's daughter.",
+      "t": "noun"
+    },
+    "piada": {
+      "g": "Short funny story told to make people laugh.",
+      "t": "noun"
+    },
+    "dialeto": {
+      "g": "The local way of speaking, brought by the old families.",
+      "t": "noun"
+    },
+    "atrasada": {
+      "g": "Late, behind the others by a moment (atrasado).",
+      "t": "adjective"
+    },
+    "percebe": {
+      "g": "Notices something the others do not see (perceber).",
+      "t": "verb"
+    },
+    "entendeu": {
+      "g": "Did you understand? (entender), asked straight out.",
+      "t": "verb"
+    },
+    "palavra": {
+      "g": "A single word, the smallest thing you can say.",
+      "t": "noun"
+    },
+    "admite": {
+      "g": "Says something true that makes her look bad (admitir).",
+      "t": "verb"
+    },
+    "traz": {
+      "g": "Brings it to the table (trazer).",
+      "t": "verb"
+    },
+    "assina": {
+      "g": "Writes her name to agree (assinar).",
+      "t": "verb"
+    },
+    "travessa": {
+      "g": "Wide dish that food is carried to the table in.",
+      "t": "noun"
+    },
+    "prateleira": {
+      "g": "Shelf on the wall where the dishes are kept.",
+      "t": "noun"
+    },
+    "baixado": {
+      "g": "Put down, lowered (baixar); here the knife and fork.",
+      "t": "verb"
+    },
+    "talher": {
+      "g": "Knife, fork and spoon, the tools you eat with.",
+      "t": "noun"
+    },
+    "pouquinho": {
+      "g": "A tiny bit more, said when offering food again.",
+      "t": "noun"
+    },
+    "obrigada": {
+      "g": "Thank you, said by a woman.",
+      "t": "expression"
+    },
+    "sério": {
+      "g": "Honestly, really; she means the no.",
+      "t": "adverb"
+    },
+    "tia": {
+      "g": "Aunt, and any older woman of the family.",
+      "t": "noun"
+    },
+    "frase": {
+      "g": "Sentence, the words somebody says in one go.",
+      "t": "noun"
+    },
+    "molho": {
+      "g": "Thick liquid poured over meat or pasta.",
+      "t": "noun"
+    },
+    "afrouxa": {
+      "g": "Loosens something that got too tight (afrouxar).",
+      "t": "verb"
+    },
+    "cinto": {
+      "g": "Strap around the waist that holds trousers up.",
+      "t": "noun"
+    },
+    "vinho": {
+      "g": "Wine, made here in the valley by the families.",
+      "t": "noun"
+    },
+    "jarra": {
+      "g": "Big open jug that a drink is poured from.",
+      "t": "noun"
+    },
+    "rótulo": {
+      "g": "Paper label on a bottle saying what is inside.",
+      "t": "noun"
+    },
+    "próprio": {
+      "g": "His or her own, belonging to that person.",
+      "t": "adjective"
+    },
+    "aconselha": {
+      "g": "Tells her what she should do (aconselhar).",
+      "t": "verb"
+    },
+    "estava": {
+      "g": "It was, in the past (estar); here, praise for the dish.",
+      "t": "verb"
+    },
+    "ótimo": {
+      "g": "Very good, the word used to praise a dish.",
+      "t": "adjective"
+    },
+    "ofende": {
+      "g": "Hurts somebody's feelings (ofender).",
+      "t": "verb"
+    },
+    "fome": {
+      "g": "The feeling of needing to eat soon.",
+      "t": "noun"
+    },
+    "elogiar": {
+      "g": "To say out loud that something was very good.",
+      "t": "verb"
+    },
+    "colheradas": {
+      "g": "Spoonfuls, as much as a spoon holds (colherada).",
+      "t": "noun"
+    },
+    "elogia": {
+      "g": "Praises it out loud (elogiar).",
+      "t": "verb"
+    },
+    "gesto": {
+      "g": "A movement of the hand or body that says something.",
+      "t": "noun"
+    },
+    "valia": {
+      "g": "Was worth more (valer), counted for more.",
+      "t": "verb"
+    },
+    "escrito": {
+      "g": "Written down, in letters on paper or a lid.",
+      "t": "adjective"
+    },
+    "barbante": {
+      "g": "Thin string used to tie a box shut.",
+      "t": "noun"
+    },
+    "através": {
+      "g": "Through, coming out from the other side.",
+      "t": "adverb"
+    },
+    "protesta": {
+      "g": "Says out loud that it is far too much (protestar).",
+      "t": "verb"
+    },
+    "volto": {
+      "g": "I come back (voltar), said as a promise.",
+      "t": "verb"
+    },
+    "comida": {
+      "g": "Food, what you eat.",
+      "t": "noun"
+    },
+    "salame": {
+      "g": "Dry sausage in thin slices, made in these valleys.",
+      "t": "noun"
+    },
+    "colonial": {
+      "g": "Farm made, the old way of the settler families.",
+      "t": "adjective"
+    },
+    "geleia": {
+      "g": "Sweet fruit spread kept in a glass jar.",
+      "t": "noun"
+    },
+    "tampinha": {
+      "g": "Small lid that screws onto the top of a jar.",
+      "t": "noun"
+    },
+    "cuca": {
+      "g": "Sweet crumb cake from the German and Italian south.",
+      "t": "noun"
+    },
+    "volume": {
+      "g": "How much space a piece of luggage takes up.",
+      "t": "noun"
+    },
+    "quilos": {
+      "g": "Kilos, what the scales count in (quilo).",
+      "t": "noun"
+    },
+    "excesso": {
+      "g": "More weight than the airline allows.",
+      "t": "noun"
+    },
+    "informa": {
+      "g": "Tells her the fact she needs (informar).",
+      "t": "verb"
+    },
+    "despacho": {
+      "g": "Handing luggage over so it flies in the hold.",
+      "t": "noun"
+    },
+    "comissão": {
+      "g": "The part of the sale the seller keeps.",
+      "t": "noun"
+    },
+    "etiqueta": {
+      "g": "Small printed label stuck on a bag before a flight.",
+      "t": "noun"
+    },
+    "alça": {
+      "g": "The handle you hold a bag or a box by.",
+      "t": "noun"
+    },
+    "contar": {
+      "g": "To tell somebody what happened.",
+      "t": "verb"
+    },
+    "fixa": {
+      "g": "Fixed, always the same from now on (fixo).",
+      "t": "adjective"
+    },
+    "cais": {
+      "g": "The stone edge of the town where boats tie up.",
+      "t": "noun"
+    },
+    "pesca": {
+      "g": "Fishes, catches fish (pescar); here before dawn.",
+      "t": "verb"
+    },
+    "ilhas": {
+      "g": "Islands, the land out in the bay (ilha).",
+      "t": "noun"
+    },
+    "vaga": {
+      "g": "A free place, one more seat on the boat.",
+      "t": "noun"
+    },
+    "maresia": {
+      "g": "The salt smell the sea leaves on everything near it.",
+      "t": "noun"
+    },
+    "casco": {
+      "g": "The body of a boat, the part in the water.",
+      "t": "noun"
+    },
+    "encostado": {
+      "g": "Leaning against the pier, resting there and still.",
+      "t": "adjective"
+    },
+    "píer": {
+      "g": "Wooden walkway going out over the water.",
+      "t": "noun"
+    },
+    "cabo": {
+      "g": "Thick rope that holds a boat against the pier.",
+      "t": "noun"
+    },
+    "range": {
+      "g": "Makes a dry rubbing noise (ranger).",
+      "t": "verb"
+    },
+    "calcula": {
+      "g": "Works the numbers out in her head (calcular).",
+      "t": "verb"
+    },
+    "carona": {
+      "g": "A free ride somebody gives you in their boat or car.",
+      "t": "noun"
+    },
+    "enrolando": {
+      "g": "Winding the rope into a coil (enrolar).",
+      "t": "verb"
+    },
+    "âncora": {
+      "g": "Heavy metal hook that holds a boat in one place.",
+      "t": "noun"
+    },
+    "incomodada": {
+      "g": "Uneasy, not comfortable with what just happened.",
+      "t": "adjective"
+    },
+    "travessia": {
+      "g": "The crossing from one shore over to the other.",
+      "t": "noun"
+    },
+    "boia": {
+      "g": "Floating marker showing where the deep water runs.",
+      "t": "noun"
+    },
+    "queixo": {
+      "g": "Chin, used here instead of pointing a finger.",
+      "t": "noun"
+    },
+    "trajeto": {
+      "g": "The way taken from one place to another.",
+      "t": "noun"
+    },
+    "encurta": {
+      "g": "Makes it shorter (encurtar), here the crossing.",
+      "t": "verb"
+    },
+    "dobrados": {
+      "g": "Folded over, the notes kept in a pocket (dobrado).",
+      "t": "adjective"
+    },
+    "canal": {
+      "g": "Channel of water, what the street becomes at high tide.",
+      "t": "noun"
+    },
+    "limo": {
+      "g": "Green slime the water leaves on stone and wood.",
+      "t": "noun"
+    },
+    "ontem": {
+      "g": "Yesterday, the day just before today.",
+      "t": "adverb"
+    },
+    "peguei": {
+      "g": "I caught it (pegar); here, a fish.",
+      "t": "verb"
+    },
+    "robalo": {
+      "g": "Sea bass, the fish these boats bring in at dawn.",
+      "t": "noun"
+    },
+    "venda": {
+      "g": "Small corner shop that sells a bit of everything.",
+      "t": "noun"
+    },
+    "assiste": {
+      "g": "Watches without joining in (assistir).",
+      "t": "verb"
+    },
+    "derrotada": {
+      "g": "Beaten, having given up trying to win (derrotado).",
+      "t": "adjective"
+    },
+    "favor": {
+      "g": "Something helpful done with nothing asked back.",
+      "t": "noun"
+    },
+    "devolver": {
+      "g": "To give a thing back to the person it came from.",
+      "t": "verb"
+    },
+    "presente": {
+      "g": "Something given without being paid for.",
+      "t": "noun"
+    },
+    "retribui": {
+      "g": "Pays a favour back with another favour (retribuir).",
+      "t": "verb"
+    },
+    "esquecer": {
+      "g": "To stop having a thing in your mind at all.",
+      "t": "verb"
+    },
+    "esquece": {
+      "g": "Forgets it (esquecer); here, nobody does.",
+      "t": "verb"
+    },
+    "gentileza": {
+      "g": "A kind act done with nothing asked back.",
+      "t": "noun"
+    },
+    "pescador": {
+      "g": "Man who lives by catching fish from a small boat.",
+      "t": "noun"
+    },
+    "apelido": {
+      "g": "Short name friends use instead of the real one.",
+      "t": "noun"
+    },
+    "rotina": {
+      "g": "The same thing happening again at the same hours.",
+      "t": "noun"
+    },
+    "cobrança": {
+      "g": "Asking somebody for the money that they owe.",
+      "t": "noun"
+    },
+    "deve": {
+      "g": "Owes it still, has not given it back (dever).",
+      "t": "verb"
+    },
+    "esfria": {
+      "g": "Gets cold, the way coffee does when left (esfriar).",
+      "t": "verb"
+    },
+    "torrado": {
+      "g": "Toasted, browned by heat until it is crisp.",
+      "t": "adjective"
+    },
+    "movimento": {
+      "g": "How many customers come into a shop or a hotel.",
+      "t": "noun"
+    },
+    "fraco": {
+      "g": "Weak, with far fewer people than usual.",
+      "t": "adjective"
+    },
+    "maio": {
+      "g": "May, a quiet month between the busy seasons.",
+      "t": "noun"
+    },
+    "planilha": {
+      "g": "Sheet of rows and numbers used to track the money.",
+      "t": "noun"
+    },
+    "ilha": {
+      "g": "Island, the land people cross the bay to reach.",
+      "t": "noun"
+    },
+    "marmita": {
+      "g": "Packed lunch carried in a tin or plastic box.",
+      "t": "noun"
+    },
+    "sublinha": {
+      "g": "Draws a line under it so it stands out (sublinhar).",
+      "t": "verb"
+    },
+    "reserva": {
+      "g": "A place kept for somebody in advance.",
+      "t": "noun"
+    },
+    "falha": {
+      "g": "Lets somebody down, does not turn up (falhar).",
+      "t": "verb"
+    },
+    "compromisso": {
+      "g": "Something promised for an agreed time.",
+      "t": "noun"
+    },
+    "ganho": {
+      "g": "I get in return (ganhar); here, nothing.",
+      "t": "verb"
+    },
+    "caderno": {
+      "g": "Notebook with lined pages for writing things down.",
+      "t": "noun"
+    },
+    "açougueiro": {
+      "g": "The man who cuts and sells the meat in town.",
+      "t": "noun"
+    },
+    "embarque": {
+      "g": "The moment when passengers get onto the plane.",
+      "t": "noun"
+    },
+    "mensagem": {
+      "g": "Short written message sent from one phone to another.",
+      "t": "noun"
+    },
+    "curta": {
+      "g": "Short, said of an answer with very few words.",
+      "t": "adjective"
+    },
+    "pago": {
+      "g": "Paid, settled; here the debt is over.",
+      "t": "adjective"
+    },
+    "sublinhado": {
+      "g": "Underlined, with a line drawn under it.",
+      "t": "adjective"
+    },
+    "folheto": {
+      "g": "Printed sheet an agency uses to sell a trip.",
+      "t": "noun"
+    },
+    "subo": {
+      "g": "I go up (subir), here with the group.",
+      "t": "verb"
+    },
+    "adverte": {
+      "g": "Warns her before it goes wrong (advertir).",
+      "t": "verb"
+    },
+    "cantil": {
+      "g": "Metal water bottle carried on a long walk.",
+      "t": "noun"
+    },
+    "furado": {
+      "g": "Full of holes, so it cannot be trusted.",
+      "t": "adjective"
+    },
+    "lotação": {
+      "g": "The most people a trip can safely take.",
+      "t": "noun"
+    },
+    "posto": {
+      "g": "Small station at the start of the trail.",
+      "t": "noun"
+    },
+    "capacidade": {
+      "g": "How many people it can hold at one time.",
+      "t": "noun"
+    },
+    "pintada": {
+      "g": "Painted on with a brush (pintado).",
+      "t": "adjective"
+    },
+    "descascando": {
+      "g": "Flaking off, the way old paint does (descascar).",
+      "t": "verb"
+    },
+    "autorização": {
+      "g": "Written permission to take groups into the park.",
+      "t": "noun"
+    },
+    "assinada": {
+      "g": "Signed by hand, so it counts (assinado).",
+      "t": "adjective"
+    },
+    "vistoria": {
+      "g": "Official check that everything is as it should be.",
+      "t": "noun"
+    },
+    "norma": {
+      "g": "Rule that everybody working here has to keep.",
+      "t": "noun"
+    },
+    "penalidade": {
+      "g": "What you pay if you break the rule.",
+      "t": "noun"
+    },
+    "exigência": {
+      "g": "Something demanded before you are allowed to go.",
+      "t": "noun"
+    },
+    "pagas": {
+      "g": "Paid for already, by people who are waiting.",
+      "t": "adjective"
+    },
+    "responsabilidade": {
+      "g": "Being the one who answers if things go wrong.",
+      "t": "noun"
+    },
+    "prejuízo": {
+      "g": "Money lost on a deal that did not work.",
+      "t": "noun"
+    },
+    "viva": {
+      "g": "Alive, in one piece at the end of the day.",
+      "t": "adjective"
+    },
+    "estorna": {
+      "g": "Pays the money back for a cancelled booking (estornar).",
+      "t": "verb"
+    },
+    "naquela": {
+      "g": "On that one, in that same afternoon.",
+      "t": "adverb"
+    },
+    "multa": {
+      "g": "Money you must pay for breaking a rule.",
+      "t": "noun"
+    },
+    "cume": {
+      "g": "The very top of the mountain.",
+      "t": "noun"
+    },
+    "animado": {
+      "g": "Cheerful and full of energy at the start.",
+      "t": "adjective"
+    },
+    "pisa": {
+      "g": "Puts her foot down on it (pisar).",
+      "t": "verb"
+    },
+    "raiz": {
+      "g": "Part of a tree that comes up through the path.",
+      "t": "noun"
+    },
+    "ajoelha": {
+      "g": "Goes down on her knees beside her (ajoelhar).",
+      "t": "verb"
+    },
+    "apalpa": {
+      "g": "Feels the hurt place with her fingers (apalpar).",
+      "t": "verb"
+    },
+    "calada": {
+      "g": "Saying nothing on purpose for a while (calado).",
+      "t": "adjective"
+    },
+    "entorse": {
+      "g": "A twisted joint, hurt but with no bone broken.",
+      "t": "noun"
+    },
+    "feias": {
+      "g": "Bad ones, worse than they look (feio).",
+      "t": "adjective"
+    },
+    "incham": {
+      "g": "Swell up after being hurt (inchar).",
+      "t": "verb"
+    },
+    "chia": {
+      "g": "Makes a hissing noise instead of a voice (chiar).",
+      "t": "verb"
+    },
+    "engancha": {
+      "g": "Catches the signal, connects (enganchar).",
+      "t": "verb"
+    },
+    "chamo": {
+      "g": "Shall I call? (chamar), asked in the moment.",
+      "t": "verb"
+    },
+    "socorro": {
+      "g": "Help, called for when somebody is badly hurt.",
+      "t": "noun"
+    },
+    "chamada": {
+      "g": "A call made from a phone or a radio.",
+      "t": "noun"
+    },
+    "resgate": {
+      "g": "A team coming up to carry an injured walker down.",
+      "t": "noun"
+    },
+    "maca": {
+      "g": "Flat bed with handles for carrying a hurt person.",
+      "t": "noun"
+    },
+    "dupla": {
+      "g": "Two people working together on the same job.",
+      "t": "noun"
+    },
+    "improvisa": {
+      "g": "Makes it on the spot from what is there (improvisar).",
+      "t": "verb"
+    },
+    "tala": {
+      "g": "Stiff piece tied on to stop a joint moving.",
+      "t": "noun"
+    },
+    "galhos": {
+      "g": "Branches broken off a tree (galho).",
+      "t": "noun"
+    },
+    "compressa": {
+      "g": "Cold wet cloth pressed onto a swollen place.",
+      "t": "noun"
+    },
+    "repartido": {
+      "g": "Shared out, carried by more than one person.",
+      "t": "adjective"
+    },
+    "inchaço": {
+      "g": "The swelling that comes up after a joint is hurt.",
+      "t": "noun"
+    },
+    "bota": {
+      "g": "Strong closed shoe for walking on wet rock.",
+      "t": "noun"
+    },
+    "enfermaria": {
+      "g": "Small room where hurt people are looked after.",
+      "t": "noun"
+    },
+    "curativo": {
+      "g": "Bandage put on to hold or cover an injury.",
+      "t": "noun"
+    },
+    "pronto": {
+      "g": "Ready, done and in place at last.",
+      "t": "adjective"
+    },
+    "seguro": {
+      "g": "Insurance, what pays when something goes wrong.",
+      "t": "noun"
+    },
+    "apólice": {
+      "g": "The paper that says what the insurance pays for.",
+      "t": "noun"
+    },
+    "alívio": {
+      "g": "The good feeling when a worry goes away.",
+      "t": "noun"
+    },
+    "tornozelo": {
+      "g": "The joint between the leg and the foot.",
+      "t": "noun"
+    },
+    "folha": {
+      "g": "Sheet of paper waiting empty on the table.",
+      "t": "noun"
+    },
+    "passado": {
+      "g": "Just made, poured through the filter (passar).",
+      "t": "adjective"
+    },
+    "dita": {
+      "g": "Says the words out loud for her to write (ditar).",
+      "t": "verb"
+    },
+    "enrola": {
+      "g": "Winds the rope into a coil (enrolar).",
+      "t": "verb"
+    },
+    "rascunho": {
+      "g": "Rough first version written before the final one.",
+      "t": "noun"
+    },
+    "revisão": {
+      "g": "Going over a text again to correct it.",
+      "t": "noun"
+    },
+    "gráfica": {
+      "g": "The shop that prints the sheets and posters.",
+      "t": "noun"
+    },
+    "imprima": {
+      "g": "Let them print it (imprimir).",
+      "t": "verb"
+    },
+    "botar": {
+      "g": "To put a word in, to add it to the text.",
+      "t": "verb"
+    },
+    "cachoeira": {
+      "g": "Falling water on a river, where walkers swim.",
+      "t": "noun"
+    },
+    "aventura": {
+      "g": "Exciting trip with some danger; the word that sold.",
+      "t": "noun"
+    },
+    "gruta": {
+      "g": "Cave in the rock that walkers go into with lamps.",
+      "t": "noun"
+    },
+    "caneta": {
+      "g": "Pen, the one whose ink goes through the paper.",
+      "t": "noun"
+    },
+    "lista": {
+      "g": "Set of short lines written one under the other.",
+      "t": "noun"
+    },
+    "duplo": {
+      "g": "Double, done twice over the very same place.",
+      "t": "adjective"
+    },
+    "impressas": {
+      "g": "Printed onto the paper by a machine (impresso).",
+      "t": "adjective"
+    },
+    "reclamação": {
+      "g": "A customer saying out loud that something was wrong.",
+      "t": "noun"
+    },
+    "esperava": {
+      "g": "Was expecting it to come (esperar).",
+      "t": "verb"
+    },
+    "fechar": {
+      "g": "To close, here the boot over a swollen foot.",
+      "t": "verb"
+    },
+    "embarcação": {
+      "g": "Boat that carries divers out to the dive points.",
+      "t": "noun"
+    },
+    "ouve": {
+      "g": "Listens to it (ouvir), here the safety talk.",
+      "t": "verb"
+    },
+    "briefing": {
+      "g": "Short talk before a dive, saying what will happen.",
+      "t": "noun"
+    },
+    "desenha": {
+      "g": "Draws the point on the board (desenhar).",
+      "t": "verb"
+    },
+    "prancheta": {
+      "g": "Flat board you write and draw on by hand.",
+      "t": "noun"
+    },
+    "antigo": {
+      "g": "Old, the one that was there before.",
+      "t": "adjective"
+    },
+    "aviso": {
+      "g": "Short notice telling people what has changed.",
+      "t": "noun"
+    },
+    "preso": {
+      "g": "Fixed in place, pinned so it does not fall.",
+      "t": "adjective"
+    },
+    "vamos": {
+      "g": "We go (ir); here, where the group will not go.",
+      "t": "verb"
+    },
+    "recife": {
+      "g": "Line of rock and coral under the sea near shore.",
+      "t": "noun"
+    },
+    "tartaruga": {
+      "g": "Sea animal with a hard shell that lays eggs ashore.",
+      "t": "noun"
+    },
+    "desova": {
+      "g": "When a turtle lays her eggs in the sand.",
+      "t": "noun"
+    },
+    "proibido": {
+      "g": "Not allowed, closed off by a rule for now.",
+      "t": "adjective"
+    },
+    "pulseira": {
+      "g": "Band worn on the wrist to show you may enter.",
+      "t": "noun"
+    },
+    "credencial": {
+      "g": "Card that shows who you are and what you may do.",
+      "t": "noun"
+    },
+    "libera": {
+      "g": "Lets them through, clears them to go (liberar).",
+      "t": "verb"
+    },
+    "lote": {
+      "g": "Group of places handed out together.",
+      "t": "noun"
+    },
+    "bolha": {
+      "g": "Ball of air that rises from a diver.",
+      "t": "noun"
+    },
+    "cardume": {
+      "g": "Group of fish swimming together in one shape.",
+      "t": "noun"
+    },
+    "visibilidade": {
+      "g": "How far you can see through the water.",
+      "t": "noun"
+    },
+    "superfície": {
+      "g": "The top of the water, where you can breathe.",
+      "t": "noun"
+    },
+    "máscara": {
+      "g": "Glass piece over eyes and nose for seeing underwater.",
+      "t": "noun"
+    },
+    "golfinho": {
+      "g": "Grey sea animal that swims beside the boats.",
+      "t": "noun"
+    },
+    "corrige": {
+      "g": "Puts somebody right (corrigir); here she does not.",
+      "t": "verb"
+    },
+    "menciona": {
+      "g": "Says the name of a thing out loud (mencionar).",
+      "t": "verb"
+    },
+    "ninho": {
+      "g": "Hole in the sand where the eggs are left.",
+      "t": "noun"
+    },
+    "abril": {
+      "g": "April, when she started selling this route.",
+      "t": "noun"
+    },
+    "março": {
+      "g": "March, when she started selling this route.",
+      "t": "noun"
+    },
+    "meses": {
+      "g": "Months, the two she has been selling it (mês).",
+      "t": "noun"
+    },
+    "instrutora": {
+      "g": "Woman who teaches and leads people under water.",
+      "t": "noun"
+    },
+    "mergulho": {
+      "g": "Going down under the water with air on your back.",
+      "t": "noun"
+    },
+    "cilindro": {
+      "g": "Metal bottle of air carried on a diver's back.",
+      "t": "noun"
+    },
+    "pingando": {
+      "g": "Dripping water, drop after drop (pingar).",
+      "t": "verb"
+    },
+    "cota": {
+      "g": "The number of people allowed in on one day.",
+      "t": "noun"
+    },
+    "dividir": {
+      "g": "To split one group up into smaller parts.",
+      "t": "verb"
+    },
+    "credenciamento": {
+      "g": "Official paper that lets an agency sell trips here.",
+      "t": "noun"
+    },
+    "úteis": {
+      "g": "Working days, counted Monday to Friday (útil).",
+      "t": "adjective"
+    },
+    "taxa": {
+      "g": "Small fixed sum you have to pay to enter.",
+      "t": "noun"
+    },
+    "preservação": {
+      "g": "Keeping a place as it is so that it lasts.",
+      "t": "noun"
+    },
+    "preenche": {
+      "g": "Writes her details into the boxes (preencher).",
+      "t": "verb"
+    },
+    "formulário": {
+      "g": "Printed page with boxes you have to fill in.",
+      "t": "noun"
+    },
+    "apoiada": {
+      "g": "Leaning on something to stay upright (apoiado).",
+      "t": "adjective"
+    },
+    "bancada": {
+      "g": "Long high counter that you stand at.",
+      "t": "noun"
+    },
+    "mural": {
+      "g": "Board on a wall where notices are pinned up.",
+      "t": "noun"
+    },
+    "edital": {
+      "g": "Official notice that lists who is allowed in.",
+      "t": "noun"
+    },
+    "agências": {
+      "g": "Travel offices like hers (agência).",
+      "t": "noun"
+    },
+    "vinha": {
+      "g": "Used to come (vir), before the rule existed.",
+      "t": "verb"
+    },
+    "coral": {
+      "g": "Hard living rock under the sea that fish live around.",
+      "t": "noun"
+    },
+    "marcada": {
+      "g": "Fixed in advance, with a set day and hour (marcado).",
+      "t": "adjective"
+    },
+    "sorteio": {
+      "g": "Drawing names by chance to decide who gets in.",
+      "t": "noun"
+    },
+    "resultado": {
+      "g": "What comes out at the end of the drawing.",
+      "t": "noun"
+    },
+    "agosto": {
+      "g": "August, when the result comes out.",
+      "t": "noun"
+    },
+    "galpão": {
+      "g": "Big shed with a metal roof, used for storage.",
+      "t": "noun"
+    },
+    "garantida": {
+      "g": "Certain, promised in advance (garantido).",
+      "t": "adjective"
+    },
+    "inscrição": {
+      "g": "Putting your name down to take part.",
+      "t": "noun"
+    },
+    "convocação": {
+      "g": "Official call telling those chosen to come.",
+      "t": "noun"
+    },
+    "parapeito": {
+      "g": "Low wall along the edge of a balcony.",
+      "t": "noun"
+    },
+    "pregada": {
+      "g": "Pinned onto a wall or a board (pregado).",
+      "t": "adjective"
+    },
+    "percevejo": {
+      "g": "Short pin used to fix paper to a board.",
+      "t": "noun"
+    },
+    "saíram": {
+      "g": "Came out in the draw (sair); here, were chosen.",
+      "t": "verb"
+    },
+    "riscada": {
+      "g": "Crossed out with a line through it (riscado).",
+      "t": "adjective"
+    },
+    "atendente": {
+      "g": "Person behind the counter who deals with you.",
+      "t": "noun"
+    },
+    "comunicado": {
+      "g": "Short official message telling everybody the same.",
+      "t": "noun"
+    },
+    "julho": {
+      "g": "July, the other month she could come back.",
+      "t": "noun"
+    },
+    "escrever": {
+      "g": "To put words down on paper with a pen.",
+      "t": "verb"
+    },
+    "data": {
+      "g": "The day and month written down for something.",
+      "t": "noun"
+    },
+    "alternativa": {
+      "g": "Second choice, ready in case the first fails.",
+      "t": "adjective"
+    },
+    "estado": {
+      "g": "One of the parts the country is divided into.",
+      "t": "noun"
+    },
+    "plano": {
+      "g": "What you decide to do before you do it.",
+      "t": "noun"
+    },
+    "repartição": {
+      "g": "Government office where the public is served.",
+      "t": "noun"
+    },
+    "requentado": {
+      "g": "Warmed up again, said of coffee left standing.",
+      "t": "adjective"
+    },
+    "portaria": {
+      "g": "Desk at the door where visitors sign in.",
+      "t": "noun"
+    },
+    "segurança": {
+      "g": "The guard at the door of a building.",
+      "t": "noun"
+    },
+    "crachá": {
+      "g": "Card with your name that you wear inside.",
+      "t": "noun"
+    },
+    "visitante": {
+      "g": "Person from outside who comes in for one visit.",
+      "t": "noun"
+    },
+    "viagens": {
+      "g": "Trips, what she sells for a living (viagem).",
+      "t": "noun"
+    },
+    "senha": {
+      "g": "Paper with a number that says when it is your turn.",
+      "t": "noun"
+    },
+    "processo": {
+      "g": "The set of papers about one case, kept together.",
+      "t": "noun"
+    },
+    "painel": {
+      "g": "Screen on the wall showing the number being called.",
+      "t": "noun"
+    },
+    "renovação": {
+      "g": "Doing again the paperwork that has run out.",
+      "t": "noun"
+    },
+    "registro": {
+      "g": "Official record that says the business may operate.",
+      "t": "noun"
+    },
+    "escritório": {
+      "g": "Room where somebody does office work.",
+      "t": "noun"
+    },
+    "teclea": {
+      "g": "Types on the keyboard (teclear).",
+      "t": "verb"
+    },
+    "tela": {
+      "g": "The screen the clerk turns round to show her.",
+      "t": "noun"
+    },
+    "pendência": {
+      "g": "Something left unfinished that blocks the rest.",
+      "t": "noun"
+    },
+    "renova": {
+      "g": "Renews it (renovar); here, it cannot be done.",
+      "t": "verb"
+    },
+    "publicado": {
+      "g": "Printed where anybody can read it, not sent out.",
+      "t": "adjective"
+    },
+    "diário": {
+      "g": "The official daily paper where decisions appear.",
+      "t": "noun"
+    },
+    "despachante": {
+      "g": "Person paid to push papers through the offices.",
+      "t": "noun"
+    },
+    "alisa": {
+      "g": "Smooths the paper flat with her hand (alisar).",
+      "t": "verb"
+    },
+    "rasgar": {
+      "g": "To tear paper so that it comes apart.",
+      "t": "verb"
+    },
+    "vinco": {
+      "g": "The line left in paper where it was folded.",
+      "t": "noun"
+    },
+    "setor": {
+      "g": "One part of an office that handles one kind of case.",
+      "t": "noun"
+    },
+    "expediente": {
+      "g": "The hours an office is open to the public.",
+      "t": "noun"
+    },
+    "situação": {
+      "g": "How a case stands in the system right now.",
+      "t": "noun"
+    },
+    "trâmite": {
+      "g": "The steps a paper goes through inside the office.",
+      "t": "noun"
+    },
+    "procuração": {
+      "g": "Paper that lets somebody act in your name.",
+      "t": "noun"
+    },
+    "firma": {
+      "g": "Your signature as the office recognises it.",
+      "t": "noun"
+    },
+    "reconhecida": {
+      "g": "Checked and stamped by a notary office.",
+      "t": "adjective"
+    },
+    "cartório": {
+      "g": "Office that checks signatures and keeps copies.",
+      "t": "noun"
+    },
+    "certidão": {
+      "g": "Official paper stating what the records say.",
+      "t": "noun"
+    },
+    "negativa": {
+      "g": "Stating that nothing is owed and nothing is pending.",
+      "t": "adjective"
+    },
+    "arquivo": {
+      "g": "Metal cabinet where the old papers are stored.",
+      "t": "noun"
+    },
+    "estante": {
+      "g": "Set of shelves where the files are lined up.",
+      "t": "noun"
+    },
+    "processos": {
+      "g": "Cases, each one a folder of papers (processo).",
+      "t": "noun"
+    },
+    "bebedouro": {
+      "g": "Machine in a corridor that gives cold water.",
+      "t": "noun"
+    },
+    "elevador": {
+      "g": "Small moving room that carries people between floors.",
+      "t": "noun"
+    },
+    "risada": {
+      "g": "A laugh, the sound of laughing once.",
+      "t": "noun"
+    },
+    "triagem": {
+      "g": "First desk, the one that decides where to send you.",
+      "t": "noun"
+    },
+    "protocolo": {
+      "g": "Numbered receipt proving they took your papers.",
+      "t": "noun"
+    },
+    "grampo": {
+      "g": "Small metal clip that holds sheets together.",
+      "t": "noun"
+    },
+    "validade": {
+      "g": "The time during which a paper still counts.",
+      "t": "noun"
+    },
+    "fotografa": {
+      "g": "Takes a picture of it with her phone (fotografar).",
+      "t": "verb"
+    },
+    "comprovante": {
+      "g": "Paper that proves a thing was paid or handed in.",
+      "t": "noun"
+    },
+    "mete": {
+      "g": "Puts it in (meter), here into the budget.",
+      "t": "verb"
+    },
+    "despesa": {
+      "g": "Money that has to be spent on something.",
+      "t": "noun"
+    },
+    "orçamento": {
+      "g": "Plan of what money comes in and goes out.",
+      "t": "noun"
+    },
+    "carta": {
+      "g": "Letter on paper, sent by post to your address.",
+      "t": "noun"
+    },
+    "sabendo": {
+      "g": "Knowing about it (saber); here, not knowing.",
+      "t": "verb"
+    },
+    "vir": {
+      "g": "To see it (ver), if she happens to look.",
+      "t": "verb"
+    },
+    "recomeça": {
+      "g": "Starts the whole thing again (recomeçar).",
+      "t": "verb"
+    },
+    "indeferido": {
+      "g": "Refused, said of a request they say no to.",
+      "t": "adjective"
+    },
+    "cópia": {
+      "g": "Second copy of a paper, kept just in case.",
+      "t": "noun"
+    },
+    "mandam": {
+      "g": "They send it (mandar); this one they do send.",
+      "t": "verb"
+    },
+    "mormaço": {
+      "g": "Heavy still heat with no wind at all.",
+      "t": "noun"
+    },
+    "reflexo": {
+      "g": "The light bouncing off the screen into her eyes.",
+      "t": "noun"
+    },
+    "zumbido": {
+      "g": "Low steady noise, here from the engine.",
+      "t": "noun"
+    },
+    "quinta-feira": {
+      "g": "Thursday, the fourth working day of the week.",
+      "t": "noun"
+    },
+    "relação": {
+      "g": "Official list of the cases decided that day.",
+      "t": "noun"
+    },
+    "deferido": {
+      "g": "Granted, said of a request they have approved.",
+      "t": "adjective"
+    },
+    "trecho": {
+      "g": "The short part of a text that matters to you.",
+      "t": "noun"
+    },
+    "planeja": {
+      "g": "Plans it out in advance (planejar).",
+      "t": "verb"
+    },
+    "imprime": {
+      "g": "Prints it onto paper (imprimir).",
+      "t": "verb"
+    },
+    "junta": {
+      "g": "Puts it together with the rest (juntar).",
+      "t": "verb"
+    },
+    "papelada": {
+      "g": "A lot of paperwork, more than anybody wants.",
+      "t": "noun"
+    },
+    "calendário": {
+      "g": "Page of months where you write what happens when.",
+      "t": "noun"
+    },
+    "contrário": {
+      "g": "The other way round, from the end backwards.",
+      "t": "noun"
+    },
+    "pro": {
+      "g": "Short for 'para o', to the.",
+      "t": "expression"
+    },
+    "plano b": {
+      "g": "A second plan, ready if the first one fails.",
+      "t": "expression"
+    },
+    "b": {
+      "g": "The letter B, the queue her ticket belongs to.",
+      "t": "noun"
+    },
+    "tecla": {
+      "g": "Types on the keyboard (teclar).",
+      "t": "verb"
+    },
+    "dobrado": {
+      "g": "Folded over so it takes less space.",
+      "t": "adjective"
+    },
+    "conferem": {
+      "g": "They check it together (conferir).",
+      "t": "verb"
+    }
   }
 }
