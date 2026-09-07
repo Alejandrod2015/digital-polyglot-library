@@ -12,6 +12,12 @@
  *   npx tsx scripts/journeysTable.ts                   todos los journeys
  *   npx tsx scripts/journeysTable.ts --journey <id>    uno, por temas y por historias
  *   npx tsx scripts/journeysTable.ts --archived        incluye los archivados
+ *   npx tsx scripts/journeysTable.ts --idioma spanish  solo un idioma
+ *
+ * La salida del catalogo es MARKDOWN (tabla GitHub), igual que las dos tablas
+ * por journey: pegada en el chat se renderiza como tabla. La version anterior
+ * imprimia pipes sin separador ni bordes y en el chat se envolvia en un bloque
+ * ilegible de lineas partidas (usuario, 2026-09-07).
  *
  * Columnas (catálogo): Estado | Journey | Idioma/Variante | Nivel | Estructura |
  *           Estilo | %Citado | No nativos | Voz narrador | Voz práctica |
@@ -177,14 +183,20 @@ async function main() {
     a.name.localeCompare(b.name) ||
     (nivelDe(a.levels) - nivelDe(b.levels))
   );
+  const idioma = (arg("idioma") ?? arg("lang"))?.toLowerCase();
+  const lista = idioma ? js.filter((j) => j.language.toLowerCase().startsWith(idioma)) : js;
+  if (idioma && lista.length === 0)
+    throw new Error(`ningun journey live+draft con idioma "${idioma}"`);
   console.log(
-    flag("archived")
+    (flag("archived")
       ? "AVISO: incluye ARCHIVED porque se pidio con --archived. Sin ese flag, solo live + draft."
-      : "live + draft (los archivados quedan fuera; --archived los incluye)"
+      : "live + draft (los archivados quedan fuera; --archived los incluye)") +
+    (idioma ? ` · filtrado: idioma ${idioma}` : "") + "\n"
   );
-  console.log("Estado|Idioma|Variante|Tipo|Nivel|Estructura|Estilo|%Citado|NoNativos|Voz narrador|Voz práctica|Hist.pub|Narr|Covers|Ambient|Clips");
+  console.log("| Estado | Idioma | Variante | Tipo | Nivel | Estructura | Estilo | %Citado | NoNativos | Voz narrador | Voz práctica | Hist.pub | Narr | Covers | Ambient | Clips |");
+  console.log("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|");
   const notas: string[] = [];
-  for (const j of js) {
+  for (const j of lista) {
     const S = j.stories;
     const pub = S.filter((s) => s.status === "published").length;
     const narr = S.filter((s) => (s.audioUrl ?? "").trim()).length;
@@ -213,7 +225,7 @@ async function main() {
     // El estado desempata las dos filas que comparten tipo, idioma, variante y
     // nivel (los dos Expat alemanes C1: Berlín live, Hamburgo draft).
     if (nn.n) notas.push(`${est} ${j.name} ${j.language}/${j.variant} ${j.levels.join("/")}: ${nn.who}`);
-    console.log(`${est}|${j.language}|${j.variant}|${j.name}|${j.levels.join("/") || "-"}|${estructura}|${estilo}|${citado}|${nn.n}|${vname(mode(S.map((s) => s.voiceId)))}|${vname(mode(S.map((s) => s.practiceVoiceId)))}|${pub}/${S.length}|${narr}|${cov}|${amb}/${S.length}|${clips}`);
+    console.log(`| ${est} | ${j.language} | ${j.variant} | ${j.name} | ${j.levels.join("/") || "-"} | ${estructura} | ${estilo} | ${citado} | ${nn.n} | ${vname(mode(S.map((s) => s.voiceId)))} | ${vname(mode(S.map((s) => s.practiceVoiceId)))} | ${pub}/${S.length} | ${narr} | ${cov} | ${amb}/${S.length} | ${clips} |`);
   }
   if (notas.length) {
     console.log(`\nNo nativos (regla dura: el objetivo es 0). Quiénes son:`);
