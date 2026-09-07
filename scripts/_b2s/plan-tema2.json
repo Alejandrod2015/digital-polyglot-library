@@ -1,0 +1,34 @@
+{
+  "tipo": "Traveler",
+  "nivel": "b2",
+  "variante": "spain",
+  "registro": "de guasa abierta y replica rapida: la pena vacila y espera vacile de vuelta",
+  "espina": "Claudia tiene tres meses para digitalizar el archivo antes de la mudanza; este tema le da el idioma del humor local y le revela por que la mudanza duele: al local lo echan, no se van",
+  "recursos": "ironia de personaje y subtexto de dialogo (B2), humor de situacion y gancho final literal (A1), simil simple (A2), cambio de ritmo (B1)",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "que dejen de vacilarla mientras trabaja y que Carla la trate como a una companera",
+      "impide": "la pena entera funciona a vacile, y ella lee cada broma como un empujon hacia fuera",
+      "cuesta": "la manana de trabajo que pierde leyendo coplas viejas que no tocaban",
+      "cambia": "descubre que la copla de hace decadas y la guasa de hoy estan cortadas por el mismo patron: aqui se vacila a quien ya esta dentro",
+      "emocion": "pique que se deshace en risa cuando cae en que la broma la cuenta dentro; se ve cuando apunta la broma del domingo en la libreta de las quejas"
+    },
+    {
+      "slot": "2",
+      "quiere": "devolver una broma por primera vez, delante de todos",
+      "impide": "no conoce el mapa de lo que duele: elige justo la mudanza, que es la herida de Marcos",
+      "cuesta": "la ligereza de esa tarde, que ya no vuelve por mucho que dure el cafe",
+      "cambia": "aprende que la regla del vacile tenia un mapa debajo, y que seguirla al pie de la letra sin mapa hace dano",
+      "emocion": "el silencio le cae encima como un mantel mojado, porque ha herido sin querer al que la defendia; se ve cuando apila platos que nadie le ha pedido apilar"
+    },
+    {
+      "slot": "3",
+      "quiere": "arreglar lo de ayer sin convertirlo en un drama",
+      "impide": "no sabe como se pide perdon en el idioma de la guasa",
+      "cuesta": "la inocencia sobre la mudanza: ahora sabe que al local lo echan y que su trabajo corre contra eso",
+      "cambia": "Marcos le devuelve su propia broma sobre el candado y ese vacile vale por un perdon entero: de lo que duele bromea su dueno",
+      "emocion": "alivio con un resto de culpa que se hace pequena cuando la broma vuelve devuelta; se ve cuando se rie con ganas y vuelve al escaner con otra prisa"
+    }
+  ]
+}

@@ -509,6 +509,7 @@ const PREVIEW_JOURNEY_IDS = [
   "cmt09ehi60000320qf9efrypu", // Expat FR A0 lyon (en obra, 2026-08)
   "cmt70xfyt000l3283gxd70wck", // Traveler ES A2 spain (en obra, 2026-08)
   "cmt5x67ze000l320cpgunu5vi", // Traveler ES B1 spain (en obra, 2026-08)
+  "cmtplpfum0007j8c6piegwt31", // Traveler ES B2 spain (en obra, 2026-09)
   "cmrqn1s5s000032tj3kq0gykb", // Friends ES C1 argentina (en obra, 2026-08)
 ];
 const PREVIEW_DRAFTS = process.env.NODE_ENV !== "production";

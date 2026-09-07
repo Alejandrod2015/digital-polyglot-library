@@ -929,8 +929,12 @@ export async function validateGeneratedStory(
   // mismo minuto de lectura, no un A1 mas largo... manten esa banda y sube la
   // gramatica dentro", asi que B1 es tier de un minuto por decision del
   // usuario. Al anadir un nivel aqui, ANADELO, no lo sustituyas.
+  // B2 entra el 2026-09-06, al escribirse el primer B2 (Traveler ES/spain):
+  // la decision ya estaba tomada en el commit del B1 latam ("banda de
+  // palabras UNA para todos los niveles, la del A0") y en la tabla del spec
+  // (B2 = 140-166 palabras); el nivel solo faltaba en esta lista.
   const isOneMinuteTier =
-    isA0 || ["A1", "A2", "B1"].includes((context.level ?? "").toUpperCase());
+    isA0 || ["A1", "A2", "B1", "B2"].includes((context.level ?? "").toUpperCase());
   const [bwHardLo, bwHardHi, bwSoftLo, bwSoftHi] = isOneMinuteTier
     ? [100, 190, 115, 170]
     : [180, 320, 220, 280];

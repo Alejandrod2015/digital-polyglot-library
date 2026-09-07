@@ -1,0 +1,241 @@
+[
+  {
+    "topic": "visits-and-old-friends",
+    "slotIndex": 1,
+    "title": "Quien baja del tren",
+    "slug": "quien-baja-del-tren",
+    "arcType": "recurring-character-callback",
+    "synopsis": "Medio año después, la mejor amiga de Vitoria baja del tren con una maleta y un rescate inesperado: el calendario semanal que Claudia dejó olvidado en su vida anterior. El paseo de bienvenida enseña más de lo que Claudia cuenta, y la agenda de antes se lee como la de una desconocida.",
+    "text": "Quien baja del tren es Paula, la mejor amiga que Vitoria manda a Cádiz. Claudia es hoy comité de bienvenida: la espera con tiempo de sobra en el andén que huele a tren. Se abrazan dos veces, cosa rara en ella.\n\nEl paseo de bienvenida sale solo: plaza, kiosco, bar de abajo. Claudia pide dos cafés sin abrir la boca. “¿Desde cuándo pides tú sin hablar, como los de toda la vida?”, se ríe Paula.\n\n“Desde que soy de la barra de abajo, y ya van seis meses”, contesta Claudia. Paula saca un paquete del bolso: el calendario semanal, olvidado en Vitoria. “Te lo traigo por si lo echabas de menos; pesa más que mi maleta”, explica.\n\nClaudia lo hojea como se hojea la agenda de una desconocida. Cada hora tiene su casilla y nada de eso le cabe ya. Le da las gracias de verdad, sin saber bien por qué.\n\n“Quédatelo tú, que a ti todavía te funciona”, decide, y Paula lo guarda riéndose. La vida de antes no era peor; era de otra talla. El viernes hay mudanza y a Paula le tocará cargar.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "andén",
+        "definition": "Platform; where you wait for trains to arrive."
+      },
+      {
+        "type": "noun",
+        "word": "maleta",
+        "definition": "Suitcase; the luggage a visitor drags from the train."
+      },
+      {
+        "type": "noun",
+        "word": "paquete",
+        "definition": "Package, parcel; something wrapped to be handed over."
+      },
+      {
+        "type": "noun",
+        "word": "agenda",
+        "definition": "Planner, diary; the book that holds your appointments."
+      },
+      {
+        "type": "noun",
+        "word": "casilla",
+        "definition": "Box, slot; one square on a printed planner."
+      },
+      {
+        "type": "noun",
+        "word": "talla",
+        "definition": "Size; the fit of clothes, or of a life."
+      },
+      {
+        "type": "noun",
+        "word": "bienvenida",
+        "definition": "Welcome; the first walk you give a visitor."
+      },
+      {
+        "type": "verb",
+        "word": "abrazarse",
+        "surface": "se abrazan",
+        "definition": "To hug each other, arms around a dear friend."
+      },
+      {
+        "type": "verb",
+        "word": "hojear",
+        "surface": "hojea",
+        "definition": "To leaf through pages quickly, without really reading."
+      },
+      {
+        "type": "verb",
+        "word": "funcionar",
+        "surface": "funciona",
+        "definition": "To work, to still do its job properly."
+      },
+      {
+        "type": "verb",
+        "word": "traer",
+        "surface": "traigo",
+        "definition": "To bring something along with you for someone else."
+      },
+      {
+        "type": "adjective",
+        "word": "raro",
+        "surface": "rara",
+        "definition": "Strange, odd; not at all like her usual self."
+      },
+      {
+        "type": "expression",
+        "word": "dar las gracias",
+        "surface": "da las gracias",
+        "definition": "To say thank you, expressing your real gratitude."
+      },
+      {
+        "type": "adjective",
+        "word": "olvidado",
+        "definition": "Forgotten; left behind and out of mind for months."
+      },
+      {
+        "type": "adjective",
+        "word": "desconocido",
+        "surface": "desconocida",
+        "definition": "Unknown, a stranger; someone you do not recognise."
+      },
+      {
+        "type": "expression",
+        "word": "de sobra",
+        "definition": "More than enough; with plenty of margin to spare."
+      },
+      {
+        "type": "expression",
+        "word": "por si",
+        "definition": "Just in case; in the event that it were true."
+      },
+      {
+        "type": "expression",
+        "word": "de toda la vida",
+        "definition": "Lifelong; the way locals have always done it."
+      },
+      {
+        "type": "expression",
+        "word": "sin abrir la boca",
+        "definition": "Without opening your mouth; saying nothing at all."
+      },
+      {
+        "type": "expression",
+        "word": "de verdad",
+        "definition": "Truly, for real; meant with complete and full sincerity."
+      }
+    ]
+  },
+  {
+    "topic": "visits-and-old-friends",
+    "slotIndex": 2,
+    "title": "La última llave",
+    "slug": "la-ultima-llave",
+    "arcType": "reframe-turn",
+    "synopsis": "El día de la mudanza amanece con poniente, tal y como estaba negociado con el viento. Claudia teme que suene a funeral y suena a peña entera subiendo y bajando cajas, con Paula reclutada al primer descuido. Al final solo queda el candado, y la broma más torpe del primer mes vuelve convertida en regalo.",
+    "text": "La mudanza amanece con poniente, tal y como estaba negociado. Marcos reparte entre Claudia y Paula, de visita, que carga una caja en los brazos al primer descuido. “En esta casa el que mira, carga; y el que carga, cena”, le informa Marcos.\n\nClaudia teme que el día suene a funeral. Suena a peña subiendo y bajando, a bromas con eco en la escalera. Nadie carga solo ni un cajón.\n\nEl local se queda sin sillas y sin coplas. “Cierra tú, que el último clic es tuyo”, ofrece Marcos delante del candado. Claudia lo cierra despacio, y el clic se oye entero.\n\n“Te lo dije el primer mes: al final te lo ibas a quedar tú”, recuerda Marcos, poniéndoselo en la mano. La broma de entonces vuelve como regalo, con la herida ya curada. Claudia aprieta el candado hasta que se le pasa el nudo.\n\n“¿Siempre son así las mudanzas aquí, o me ha tocado la buena?”, pregunta Paula, sudada y contenta. “Solo cuando se muda una casa entera”, contesta Claudia, mirando el camión lleno. Nadie dice adiós al local viejo: no hace falta, porque nadie se queda atrás.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "funeral",
+        "definition": "Funeral; the sad ceremony a moving day could resemble."
+      },
+      {
+        "type": "noun",
+        "word": "eco",
+        "definition": "Echo; sound bouncing back in an emptied room."
+      },
+      {
+        "type": "noun",
+        "word": "cajón",
+        "definition": "Drawer, crate; a heavy box nobody lifts alone."
+      },
+      {
+        "type": "noun",
+        "word": "clic",
+        "definition": "Click; the small sharp sound of a lock closing."
+      },
+      {
+        "type": "noun",
+        "word": "regalo",
+        "definition": "Gift; something painful returned to you made kind."
+      },
+      {
+        "type": "noun",
+        "word": "camión",
+        "definition": "Lorry, truck; the vehicle that carries the move."
+      },
+      {
+        "type": "adjective",
+        "word": "contento",
+        "surface": "contenta",
+        "definition": "Happy, pleased; glad to have been part of it."
+      },
+      {
+        "type": "verb",
+        "word": "temer",
+        "surface": "teme",
+        "definition": "To fear; to expect something painful before it happens."
+      },
+      {
+        "type": "verb",
+        "word": "oírse",
+        "surface": "se oye",
+        "definition": "To be heard; a sound carrying through the silence."
+      },
+      {
+        "type": "verb",
+        "word": "informar",
+        "surface": "informa",
+        "definition": "To inform; to state a house rule with a straight face."
+      },
+      {
+        "type": "verb",
+        "word": "recordar",
+        "surface": "recuerda",
+        "definition": "To remind; to bring an old promise back up."
+      },
+      {
+        "type": "verb",
+        "word": "curar",
+        "surface": "curada",
+        "definition": "To heal; a wound that no longer hurts."
+      },
+      {
+        "type": "verb",
+        "word": "mudarse",
+        "surface": "se muda",
+        "definition": "To move house; to change your home for another one."
+      },
+      {
+        "type": "adjective",
+        "word": "sudado",
+        "surface": "sudada",
+        "definition": "Sweaty; worn out from carrying under the sun."
+      },
+      {
+        "type": "noun",
+        "word": "descuido",
+        "definition": "Moment of carelessness; the instant a guest gets recruited."
+      },
+      {
+        "type": "expression",
+        "word": "en los brazos",
+        "definition": "In your arms; carrying something whether you chose it or not."
+      },
+      {
+        "type": "expression",
+        "word": "tal y como",
+        "definition": "Exactly as; just the way it was agreed."
+      },
+      {
+        "type": "expression",
+        "word": "de visita",
+        "definition": "On a visit; staying as a guest, not living there."
+      },
+      {
+        "type": "expression",
+        "word": "quedarse atrás",
+        "surface": "se queda atrás",
+        "definition": "To be left behind while the others move on."
+      },
+      {
+        "type": "expression",
+        "word": "hacer falta",
+        "surface": "hace falta",
+        "definition": "To be necessary; needed for things to work."
+      }
+    ]
+  }
+]

@@ -1,0 +1,442 @@
+{
+ "copla": {
+  "es": "una copla con su nombre",
+  "en": "a song with her name in it"
+ },
+ "con": {
+  "es": "una copla con su nombre",
+  "en": "a song with her name in it"
+ },
+ "su": {
+  "es": "una copla con su nombre",
+  "en": "a song with her name in it"
+ },
+ "nombre": {
+  "es": "viene con nombre",
+  "en": "comes with a name in it"
+ },
+ "local": {
+  "es": "el local nuevo estrena luz",
+  "en": "the new clubhouse shows off new light"
+ },
+ "nuevo": {
+  "es": "el local nuevo",
+  "en": "the new clubhouse"
+ },
+ "estrena": {
+  "es": "estrena luz y olor a pintura",
+  "en": "shows off new light and fresh paint"
+ },
+ "luz": {
+  "es": "estrena luz",
+  "en": "shows off new light"
+ },
+ "y": {
+  "es": "luz y olor a pintura",
+  "en": "light and the smell of paint"
+ },
+ "olor": {
+  "es": "olor a pintura",
+  "en": "the smell of paint"
+ },
+ "a": {
+  "es": "olor a pintura",
+  "en": "the smell of paint"
+ },
+ "pintura": {
+  "es": "olor a pintura",
+  "en": "the smell of paint"
+ },
+ "biblioteca": {
+  "es": "con la biblioteca ya en su pared",
+  "en": "with the library already on its wall"
+ },
+ "ya": {
+  "es": "ya en su pared",
+  "en": "already on its wall"
+ },
+ "en": {
+  "es": "en su pared",
+  "en": "on its wall"
+ },
+ "pared": {
+  "es": "ya en su pared",
+  "en": "already on its wall"
+ },
+ "guarda": {
+  "es": "claudia guarda el archivo completo",
+  "en": "Claudia saves the complete archive"
+ },
+ "archivo": {
+  "es": "el archivo completo",
+  "en": "the complete archive"
+ },
+ "completo": {
+  "es": "el archivo completo",
+  "en": "the complete archive"
+ },
+ "todas": {
+  "es": "todas las cajas hechas memoria",
+  "en": "every box turned into memory"
+ },
+ "cajas": {
+  "es": "todas las cajas hechas memoria",
+  "en": "every box turned into memory"
+ },
+ "hechas": {
+  "es": "cajas hechas memoria",
+  "en": "boxes turned into memory"
+ },
+ "memoria": {
+  "es": "de memoria",
+  "en": "by heart"
+ },
+ "discute": {
+  "es": "marcos discute con media peña",
+  "en": "Marcos argues with half the club"
+ },
+ "media": {
+  "es": "con media peña",
+  "en": "with half the club"
+ },
+ "peña": {
+  "es": "con media peña",
+  "en": "with half the club"
+ },
+ "dónde": {
+  "es": "dónde cuelga el candado viejo",
+  "en": "where the old padlock hangs"
+ },
+ "cuelga": {
+  "es": "dónde cuelga el candado viejo",
+  "en": "where the old padlock hangs"
+ },
+ "candado": {
+  "es": "el candado viejo",
+  "en": "the old padlock"
+ },
+ "viejo": {
+  "es": "el candado viejo",
+  "en": "the old padlock"
+ },
+ "aquí": {
+  "es": "aquí, donde se vea",
+  "en": "here, where it can be seen"
+ },
+ "donde": {
+  "es": "donde se vea desde la barra",
+  "en": "where it can be seen from the counter"
+ },
+ "se": {
+  "es": "donde se vea",
+  "en": "where it can be seen"
+ },
+ "vea": {
+  "es": "donde se vea desde la barra",
+  "en": "where it can be seen from the counter"
+ },
+ "desde": {
+  "es": "desde la barra",
+  "en": "from the counter"
+ },
+ "barra": {
+  "es": "desde la barra",
+  "en": "from the counter"
+ },
+ "decide": {
+  "es": "decide marcos",
+  "en": "Marcos decides"
+ },
+ "lo": {
+  "es": "lo cuelga con dos clavos",
+  "en": "hangs it with two nails"
+ },
+ "clavos": {
+  "es": "con dos clavos",
+  "en": "with two nails"
+ },
+ "no": {
+  "es": "ya no cierra nada",
+  "en": "no longer locks anything"
+ },
+ "cierra": {
+  "es": "ya no cierra nada",
+  "en": "no longer locks anything"
+ },
+ "nada": {
+  "es": "ya no cierra nada",
+  "en": "no longer locks anything"
+ },
+ "ahora": {
+  "es": "ahora cuenta algo",
+  "en": "now it tells something"
+ },
+ "cuenta": {
+  "es": "ahora cuenta algo",
+  "en": "now it tells something"
+ },
+ "algo": {
+  "es": "ahora cuenta algo",
+  "en": "now it tells something"
+ },
+ "esa": {
+  "es": "esa diferencia",
+  "en": "that difference"
+ },
+ "diferencia": {
+  "es": "esa diferencia",
+  "en": "that difference"
+ },
+ "le": {
+  "es": "le parece el resumen del año",
+  "en": "seems to her the summary of the year"
+ },
+ "parece": {
+  "es": "le parece el resumen del año",
+  "en": "seems to her the summary of the year"
+ },
+ "resumen": {
+  "es": "el resumen del año",
+  "en": "the summary of the year"
+ },
+ "del": {
+  "es": "el resumen del año",
+  "en": "the summary of the year"
+ },
+ "año": {
+  "es": "el resumen del año",
+  "en": "the summary of the year"
+ },
+ "vasos": {
+  "es": "con los vasos servidos",
+  "en": "with the glasses poured"
+ },
+ "servidos": {
+  "es": "con los vasos servidos",
+  "en": "with the glasses poured"
+ },
+ "pide": {
+  "es": "pide silencio",
+  "en": "asks for quiet"
+ },
+ "silencio": {
+  "es": "pide silencio",
+  "en": "asks for quiet"
+ },
+ "subiéndose": {
+  "es": "subiéndose a una silla",
+  "en": "climbing onto a chair"
+ },
+ "silla": {
+  "es": "subiéndose a una silla",
+  "en": "climbing onto a chair"
+ },
+ "hay": {
+  "es": "hay copla nueva",
+  "en": "there is a new song"
+ },
+ "nueva": {
+  "es": "hay copla nueva",
+  "en": "there is a new song"
+ },
+ "viene": {
+  "es": "viene con nombre",
+  "en": "comes with a name"
+ },
+ "que": {
+  "es": "el que se pique",
+  "en": "whoever takes offence"
+ },
+ "pique": {
+  "es": "el que se pique",
+  "en": "whoever takes offence"
+ },
+ "aguante": {
+  "es": "que se aguante",
+  "en": "has to put up with it"
+ },
+ "anuncia": {
+  "es": "anuncia, desdoblando un papel",
+  "en": "she announces, unfolding a paper"
+ },
+ "desdoblando": {
+  "es": "desdoblando un papel",
+  "en": "unfolding a paper"
+ },
+ "papel": {
+  "es": "desdoblando un papel",
+  "en": "unfolding a paper"
+ },
+ "tarda": {
+  "es": "tarda un verso en reconocerse",
+  "en": "takes one line to recognise herself"
+ },
+ "verso": {
+  "es": "tarda un verso en reconocerse",
+  "en": "takes one line to recognise herself"
+ },
+ "reconocerse": {
+  "es": "tarda un verso en reconocerse",
+  "en": "takes one line to recognise herself"
+ },
+ "retrata": {
+  "es": "el primer verso ya la retrata",
+  "en": "the first line already portrays her"
+ },
+ "vino": {
+  "es": "vino de fuera con libreta",
+  "en": "came from elsewhere with a notebook"
+ },
+ "de": {
+  "es": "vino de fuera",
+  "en": "came from elsewhere"
+ },
+ "fuera": {
+  "es": "vino de fuera",
+  "en": "came from elsewhere"
+ },
+ "libreta": {
+  "es": "vino de fuera con libreta",
+  "en": "came from elsewhere with a notebook"
+ },
+ "aprendió": {
+  "es": "aprendió a pedir sin hablar",
+  "en": "learned to order without speaking"
+ },
+ "pedir": {
+  "es": "aprendió a pedir sin hablar",
+  "en": "learned to order without speaking"
+ },
+ "sin": {
+  "es": "a pedir sin hablar",
+  "en": "to order without speaking"
+ },
+ "hablar": {
+  "es": "a pedir sin hablar",
+  "en": "to order without speaking"
+ },
+ "ríe": {
+  "es": "la peña se ríe y la mira",
+  "en": "the club laughs and looks at her"
+ },
+ "mira": {
+  "es": "se ríe y la mira",
+  "en": "laughs and looks at her"
+ },
+ "ella": {
+  "es": "ella se deja querer",
+  "en": "she enjoys the attention"
+ },
+ "deja": {
+  "es": "ella se deja querer",
+  "en": "she enjoys the attention"
+ },
+ "querer": {
+  "es": "ella se deja querer",
+  "en": "she enjoys the attention"
+ },
+ "canta": {
+  "es": "la peña canta el estribillo",
+  "en": "the club sings the chorus"
+ },
+ "estribillo": {
+  "es": "canta el estribillo",
+  "en": "sings the chorus"
+ },
+ "como": {
+  "es": "como si lo hubiera cantado siempre",
+  "en": "as if it had always sung it"
+ },
+ "si": {
+  "es": "como si lo hubiera cantado siempre",
+  "en": "as if it had always sung it"
+ },
+ "hubiera": {
+  "es": "como si lo hubiera cantado siempre",
+  "en": "as if it had always sung it"
+ },
+ "cantado": {
+  "es": "como si lo hubiera cantado siempre",
+  "en": "as if it had always sung it"
+ },
+ "siempre": {
+  "es": "lo hubiera cantado siempre",
+  "en": "had always sung it"
+ },
+ "me": {
+  "es": "me lo he ganado",
+  "en": "I have earned it"
+ },
+ "he": {
+  "es": "me lo he ganado",
+  "en": "I have earned it"
+ },
+ "ganado": {
+  "es": "me lo he ganado, entonces",
+  "en": "so I have earned it"
+ },
+ "entonces": {
+  "es": "me lo he ganado, entonces",
+  "en": "so I have earned it"
+ },
+ "dice": {
+  "es": "dice claudia",
+  "en": "says Claudia"
+ },
+ "cuando": {
+  "es": "cuando acaba el aplauso",
+  "en": "when the applause ends"
+ },
+ "acaba": {
+  "es": "cuando acaba el aplauso",
+  "en": "when the applause ends"
+ },
+ "aplauso": {
+  "es": "cuando acaba el aplauso",
+  "en": "when the applause ends"
+ },
+ "día": {
+  "es": "desde el primer día",
+  "en": "since the first day"
+ },
+ "pero": {
+  "es": "pero en esta casa",
+  "en": "but in this house"
+ },
+ "esta": {
+  "es": "en esta casa",
+  "en": "in this house"
+ },
+ "casa": {
+  "es": "en esta casa",
+  "en": "in this house"
+ },
+ "había": {
+  "es": "había que hacerte esperar",
+  "en": "we had to make you wait"
+ },
+ "hacerte": {
+  "es": "había que hacerte esperar",
+  "en": "we had to make you wait"
+ },
+ "esperar": {
+  "es": "había que hacerte esperar",
+  "en": "we had to make you wait"
+ },
+ "contesta": {
+  "es": "contesta marcos desde la silla",
+  "en": "Marcos answers from the chair"
+ },
+ "vez": {
+  "es": "esta vez no apunta nada",
+  "en": "this time she writes nothing down"
+ },
+ "apunta": {
+  "es": "no apunta nada",
+  "en": "writes nothing down"
+ },
+ "sabe": {
+  "es": "ya se la sabe de memoria",
+  "en": "already knows it by heart"
+ }
+}

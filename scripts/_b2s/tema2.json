@@ -1,0 +1,368 @@
+[
+  {
+    "topic": "humour-and-comebacks",
+    "slotIndex": 1,
+    "title": "La copla ya lo decía",
+    "slug": "la-copla-ya-lo-decia",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "Claudia abre la caja más vieja del archivo y Carla, la que escribe las letras de la peña, la recibe con un vacile de domingo. El pique le dura hasta que una copla de otra época le enseña el truco: aquí las bromas están cortadas por el mismo patrón desde siempre, y no se le cantan a cualquiera. Ser el blanco es otra forma de estar dentro.",
+    "text": "En el archivo las coplas viven en cajas, y Claudia abre la más vieja. Quien manda en las letras es Carla, que escribe las nuevas. Huele a papel húmedo y a tinta.\n\n“¿La de Vitoria también trabaja en domingo, o el domingo descansa de nosotros?”, suelta Carla. Claudia se pica y lo disimula mal. “Muy graciosa”, contesta, y le sale flojo.\n\nEn la caja aparece una copla contra un socio que barría hasta en Carnaval. “Al de la escoba le cantaron tres Carnavales seguidos; era el más querido de la casa”, dice Carla por encima del hombro. Claudia la lee dos veces y se le escapa la risa.\n\nLa copla de entonces y la guasa de ahora están cortadas por el mismo patrón. Aquí nadie se ríe de ti para dejarte fuera; se vacila a quien está dentro. El pique se le deshace sin avisar.\n\n“Ponme en una copla cuando me lo haya ganado”, propone Claudia, y esta vez la frase es suya. “Mírala, ya le va saliendo la guasa”, admite Carla, con media sonrisa. En la libreta de las quejas apunta la broma del domingo.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "copla",
+        "register": "cultural",
+        "definition": "Satirical carnival song; Cádiz sets its wit and memory to music."
+      },
+      {
+        "type": "noun",
+        "word": "guasa",
+        "register": "colloquial",
+        "definition": "Playful mocking humour; the teasing tone Cádiz is famous for."
+      },
+      {
+        "type": "noun",
+        "word": "pique",
+        "register": "colloquial",
+        "definition": "Small sting of irritation when a joke lands on you."
+      },
+      {
+        "type": "noun",
+        "word": "letra",
+        "definition": "Lyrics; the words of a song rather than its music."
+      },
+      {
+        "type": "noun",
+        "word": "socio",
+        "definition": "Member; someone who belongs to a club and pays dues."
+      },
+      {
+        "type": "noun",
+        "word": "escoba",
+        "definition": "Broom; the long brush used for sweeping floors."
+      },
+      {
+        "type": "noun",
+        "word": "tinta",
+        "definition": "Ink; the liquid that pens and old prints are made with."
+      },
+      {
+        "type": "verb",
+        "word": "picarse",
+        "surface": "se pica",
+        "register": "colloquial",
+        "definition": "To get stung and touchy when a joke hits home."
+      },
+      {
+        "type": "verb",
+        "word": "disimular",
+        "surface": "disimula",
+        "definition": "To hide what you feel so others cannot see it."
+      },
+      {
+        "type": "verb",
+        "word": "vacilar",
+        "surface": "vacila",
+        "register": "colloquial",
+        "definition": "To tease someone playfully, expecting them to tease back."
+      },
+      {
+        "type": "verb",
+        "word": "barrer",
+        "surface": "barría",
+        "definition": "To sweep the floor clean using a long-handled broom."
+      },
+      {
+        "type": "verb",
+        "word": "proponer",
+        "surface": "propone",
+        "definition": "To suggest a plan or deal for others to accept."
+      },
+      {
+        "type": "verb",
+        "word": "mandar",
+        "surface": "manda",
+        "definition": "To be in charge; to be the one who decides."
+      },
+      {
+        "type": "adjective",
+        "word": "húmedo",
+        "definition": "Damp, slightly wet; like old paper kept by the sea."
+      },
+      {
+        "type": "adjective",
+        "word": "flojo",
+        "register": "colloquial",
+        "definition": "Weak, feeble; a comeback with no strength in it."
+      },
+      {
+        "type": "adjective",
+        "word": "querido",
+        "definition": "Beloved, dear; someone the whole group holds close."
+      },
+      {
+        "type": "adjective",
+        "word": "gracioso",
+        "surface": "graciosa",
+        "definition": "Funny; someone who makes people laugh, sometimes said ironically."
+      },
+      {
+        "type": "expression",
+        "word": "cortar por el mismo patrón",
+        "surface": "cortadas por el mismo patrón",
+        "definition": "Cut from the same cloth; made exactly the same way."
+      },
+      {
+        "type": "expression",
+        "word": "por encima del hombro",
+        "definition": "Over your shoulder, glancing back while doing something else."
+      },
+      {
+        "type": "expression",
+        "word": "media sonrisa",
+        "definition": "Half smile; approval given without fully admitting it."
+      }
+    ]
+  },
+  {
+    "topic": "humour-and-comebacks",
+    "slotIndex": 2,
+    "title": "La broma se queda sola",
+    "slug": "la-broma-se-queda-sola",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "Animada por su primer sábado de guasa, Claudia se atreve por fin a devolver una broma en la sobremesa. Elige el peor blanco posible sin saberlo, y el silencio que sigue le enseña que la regla del vacile tenía un mapa debajo. Marcos se va al patio, Carla aplaza la explicación y la tarde ligera no vuelve.",
+    "text": "A la sobremesa del sábado se llega ligero, con la fruta y el café por medio. Carla afila la primera: “A ver si este año la chirigota te saca a ti, que material das”. Marcos se deja querer y hace teatro.\n\nClaudia ve el hueco y se lanza. “Pues cuando os echen del local, el candado me lo quedo yo de recuerdo”, dispara, contenta de atreverse. Nadie se ríe.\n\nEl silencio le cae encima como un mantel mojado. Marcos deja la servilleta doblada, se levanta y sale al patio sin mirar a nadie. Carla rescata la mesa: “Bueno, ¿alguien quiere más café, o lo mato ya?”.\n\nClaudia apila platos que nadie le ha pedido apilar, con la cabeza en el patio. Ha seguido la regla al pie de la letra, pero la regla tenía un mapa. “¿Qué he dicho?”, pregunta en voz baja.\n\n“Mañana te lo cuento, aquí no”, contesta Carla, y le aprieta el brazo al pasar. La tarde ligera no vuelve, por mucho que el café dure. Nadie más le explica nada.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "chirigota",
+        "register": "cultural",
+        "definition": "Carnival group from Cádiz that sings witty satirical songs in costume."
+      },
+      {
+        "type": "noun",
+        "word": "servilleta",
+        "definition": "Napkin; the cloth or paper you wipe your mouth with."
+      },
+      {
+        "type": "noun",
+        "word": "mantel",
+        "definition": "Tablecloth; the cloth that covers the table at meals."
+      },
+      {
+        "type": "noun",
+        "word": "patio",
+        "register": "regional",
+        "definition": "Inner courtyard; the open heart of an Andalusian house."
+      },
+      {
+        "type": "noun",
+        "word": "hueco",
+        "definition": "Gap, opening; here, the pause a joke can slip into."
+      },
+      {
+        "type": "verb",
+        "word": "afilar",
+        "surface": "afila",
+        "definition": "To sharpen; here, to open the teasing with an edge."
+      },
+      {
+        "type": "verb",
+        "word": "lanzarse",
+        "surface": "se lanza",
+        "definition": "To throw yourself into something, daring at last to act."
+      },
+      {
+        "type": "verb",
+        "word": "disparar",
+        "surface": "dispara",
+        "definition": "To fire off; to deliver words fast like a shot."
+      },
+      {
+        "type": "verb",
+        "word": "apilar",
+        "surface": "apila",
+        "definition": "To stack things one on top of another."
+      },
+      {
+        "type": "verb",
+        "word": "rescatar",
+        "surface": "rescata",
+        "definition": "To rescue; to save a situation that was sinking."
+      },
+      {
+        "type": "verb",
+        "word": "atreverse",
+        "definition": "To dare to do something that scares you a little."
+      },
+      {
+        "type": "verb",
+        "word": "apretar",
+        "surface": "aprieta",
+        "definition": "To squeeze or press, like a hand on an arm."
+      },
+      {
+        "type": "verb",
+        "word": "echar",
+        "surface": "echen",
+        "definition": "To throw someone out of a place they belonged to."
+      },
+      {
+        "type": "adjective",
+        "word": "ligero",
+        "surface": "ligera",
+        "definition": "Light, easy; an afternoon with no weight on it."
+      },
+      {
+        "type": "adjective",
+        "word": "mojado",
+        "definition": "Wet, soaked; heavy with water like a used cloth."
+      },
+      {
+        "type": "adjective",
+        "word": "doblado",
+        "surface": "doblada",
+        "definition": "Folded; bent neatly over itself, like a napkin."
+      },
+      {
+        "type": "expression",
+        "word": "dejarse querer",
+        "surface": "se deja querer",
+        "definition": "To enjoy the attention and play along with it."
+      },
+      {
+        "type": "expression",
+        "word": "al pie de la letra",
+        "definition": "To the letter; following a rule exactly as stated."
+      },
+      {
+        "type": "expression",
+        "word": "por medio",
+        "definition": "In between, in the middle of what is going on."
+      },
+      {
+        "type": "expression",
+        "word": "de recuerdo",
+        "definition": "As a keepsake; something kept to remember a place."
+      }
+    ]
+  },
+  {
+    "topic": "humour-and-comebacks",
+    "slotIndex": 3,
+    "title": "De eso se ríe Marcos",
+    "slug": "de-eso-se-rie-marcos",
+    "arcType": "reframe-turn",
+    "synopsis": "Carla paga la explicación pendiente: al local de la peña lo echan después del verano, y de esa herida solo bromea su dueño. Con la regla completa, Claudia baja al archivo sin saber cómo se pide perdón en el idioma de la guasa. No hace falta: Marcos se lo concede devolviéndole su propia broma del candado.",
+    "text": "Dos cafés la esperan el domingo en el mostrador, y Carla detrás. “Al dueño le han comprado el edificio; después del verano, fuera”, explica sin rodeos. “Y de eso, de momento, solo se ríe Marcos”.\n\nLa regla entra sola: de lo que duele hace broma su dueño, y los demás esperan turno. La broma de ayer no era mala; era de otro. A Claudia se le queda la culpa más pequeña, aunque no desaparezca.\n\nEn el archivo, el lunes huele a polvo y a cinta nueva. Marcos aparece con el candado en la mano y lo deja sobre el escáner. “Al final te lo vas a quedar tú; aquí ya no va a cerrar nada”, suelta, con la ceja levantada.\n\nEs su broma de ayer, devuelta en su idioma, y vale por un perdón entero. Claudia se ríe con ganas, sin culpa ya. La mudanza duele, pero ya se puede nombrar.\n\n“Trato hecho, pero lo cuelgo en Vitoria”, remata ella. “Eso ya es una copla”, concede Marcos, y se pone a desmontar la primera estantería. Claudia vuelve al escáner sabiendo para quién trabaja.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "mostrador",
+        "definition": "Counter; the long bar surface you are served across."
+      },
+      {
+        "type": "noun",
+        "word": "dueño",
+        "definition": "Owner; the person a place or thing belongs to."
+      },
+      {
+        "type": "noun",
+        "word": "estantería",
+        "definition": "Shelving unit; a set of shelves for books and boxes."
+      },
+      {
+        "type": "noun",
+        "word": "ceja",
+        "definition": "Eyebrow; raised here to show the joke is deliberate."
+      },
+      {
+        "type": "noun",
+        "word": "perdón",
+        "definition": "Forgiveness; being excused for the harm you caused."
+      },
+      {
+        "type": "noun",
+        "word": "broma",
+        "definition": "Joke; something said to make people laugh, sometimes risky."
+      },
+      {
+        "type": "noun",
+        "word": "culpa",
+        "definition": "Guilt; the weight you carry after hurting someone."
+      },
+      {
+        "type": "noun",
+        "word": "cinta",
+        "definition": "Tape; the sticky strip used to close boxes."
+      },
+      {
+        "type": "verb",
+        "word": "devolver",
+        "surface": "devuelta",
+        "definition": "To give back; here, a joke returned to its maker."
+      },
+      {
+        "type": "verb",
+        "word": "colgar",
+        "surface": "cuelgo",
+        "definition": "To hang something up on a wall or hook."
+      },
+      {
+        "type": "verb",
+        "word": "conceder",
+        "surface": "concede",
+        "definition": "To grant or admit something, giving the point to someone."
+      },
+      {
+        "type": "verb",
+        "word": "desmontar",
+        "definition": "To take apart; to dismantle something piece by piece."
+      },
+      {
+        "type": "verb",
+        "word": "desaparecer",
+        "surface": "desaparezca",
+        "definition": "To disappear; to stop being there at all."
+      },
+      {
+        "type": "verb",
+        "word": "valer",
+        "surface": "vale",
+        "definition": "To be worth; to count as something of equal value."
+      },
+      {
+        "type": "adjective",
+        "word": "levantado",
+        "surface": "levantada",
+        "definition": "Raised, lifted up; an eyebrow arched on purpose to signal something."
+      },
+      {
+        "type": "expression",
+        "word": "sin rodeos",
+        "definition": "Straight out, plainly, without circling around the uncomfortable subject."
+      },
+      {
+        "type": "expression",
+        "word": "trato hecho",
+        "definition": "Deal done; the phrase that seals an agreement."
+      },
+      {
+        "type": "expression",
+        "word": "de momento",
+        "definition": "For now; true at present but maybe not later."
+      },
+      {
+        "type": "expression",
+        "word": "con ganas",
+        "definition": "Wholeheartedly, with real appetite and energy for it."
+      },
+      {
+        "type": "expression",
+        "word": "ponerse a",
+        "surface": "se pone a",
+        "definition": "To get started on a task right away."
+      }
+    ]
+  }
+]

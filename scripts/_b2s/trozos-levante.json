@@ -1,0 +1,418 @@
+{
+ "levante": {
+  "es": "el levante manda",
+  "en": "the east wind rules"
+ },
+ "manda": {
+  "es": "el levante manda",
+  "en": "the east wind rules"
+ },
+ "llega": {
+  "es": "llega el jueves",
+  "en": "arrives on Thursday"
+ },
+ "jueves": {
+  "es": "llega el jueves",
+  "en": "arrives on Thursday"
+ },
+ "puntual": {
+  "es": "puntual como todo lo que estropea planes",
+  "en": "punctual like everything that ruins plans"
+ },
+ "como": {
+  "es": "como todo lo que estropea planes",
+  "en": "like everything that ruins plans"
+ },
+ "todo": {
+  "es": "todo lo que estropea planes",
+  "en": "everything that ruins plans"
+ },
+ "lo": {
+  "es": "lo que estropea planes",
+  "en": "what ruins plans"
+ },
+ "que": {
+  "es": "lo que estropea planes",
+  "en": "what ruins plans"
+ },
+ "estropea": {
+  "es": "lo que estropea planes",
+  "en": "what ruins plans"
+ },
+ "planes": {
+  "es": "lo que estropea planes",
+  "en": "what ruins plans"
+ },
+ "y": {
+  "es": "claudia y marcos miran el muelle",
+  "en": "Claudia and Marcos watch the dock"
+ },
+ "miran": {
+  "es": "miran el muelle",
+  "en": "watch the dock"
+ },
+ "muelle": {
+  "es": "miran el muelle",
+  "en": "watch the dock"
+ },
+ "amarra": {
+  "es": "alba amarra doble",
+  "en": "Alba double-moors the boat"
+ },
+ "doble": {
+  "es": "amarra doble",
+  "en": "moors it double"
+ },
+ "aplaza": {
+  "es": "aplaza sin discutir",
+  "en": "postpones without arguing"
+ },
+ "sin": {
+  "es": "aplaza sin discutir",
+  "en": "postpones without arguing"
+ },
+ "discutir": {
+  "es": "aplaza sin discutir",
+  "en": "postpones without arguing"
+ },
+ "con": {
+  "es": "con levante no salgo",
+  "en": "with an east wind I do not go out"
+ },
+ "salgo": {
+  "es": "con levante no salgo ni a nadar",
+  "en": "with this wind I would not even swim"
+ },
+ "ni": {
+  "es": "ni a nadar",
+  "en": "not even to swim"
+ },
+ "nadar": {
+  "es": "ni a nadar",
+  "en": "not even to swim"
+ },
+ "os": {
+  "es": "os debo una tarde entera",
+  "en": "I owe you a whole afternoon"
+ },
+ "debo": {
+  "es": "os debo una tarde entera",
+  "en": "I owe you a whole afternoon"
+ },
+ "tarde": {
+  "es": "os debo una tarde entera",
+  "en": "I owe you a whole afternoon"
+ },
+ "entera": {
+  "es": "una tarde entera",
+  "en": "a whole afternoon"
+ },
+ "avisa": {
+  "es": "avisa",
+  "en": "she warns"
+ },
+ "ahora": {
+  "es": "y ahora qué hacemos",
+  "en": "and now what do we do"
+ },
+ "qué": {
+  "es": "qué hacemos con la tarde libre",
+  "en": "what do we do with the free afternoon"
+ },
+ "hacemos": {
+  "es": "qué hacemos con la tarde libre",
+  "en": "what do we do with the free afternoon"
+ },
+ "libre": {
+  "es": "la tarde libre",
+  "en": "the free afternoon"
+ },
+ "pregunta": {
+  "es": "pregunta claudia",
+  "en": "asks Claudia"
+ },
+ "viendo": {
+  "es": "viendo la lona dar golpes",
+  "en": "watching the canvas slap about"
+ },
+ "lona": {
+  "es": "viendo la lona dar golpes",
+  "en": "watching the canvas slap about"
+ },
+ "dar": {
+  "es": "la lona dar golpes",
+  "en": "the canvas slapping about"
+ },
+ "golpes": {
+  "es": "la lona dar golpes",
+  "en": "the canvas slapping about"
+ },
+ "azotea": {
+  "es": "ahora, azotea",
+  "en": "rooftop it is, then"
+ },
+ "plan": {
+  "es": "el plan b siempre tiene vistas",
+  "en": "plan B always has a view"
+ },
+ "b": {
+  "es": "el plan b",
+  "en": "plan B"
+ },
+ "en": {
+  "es": "en esta casa",
+  "en": "in this house"
+ },
+ "esta": {
+  "es": "en esta casa",
+  "en": "in this house"
+ },
+ "casa": {
+  "es": "en esta casa",
+  "en": "in this house"
+ },
+ "siempre": {
+  "es": "siempre tiene vistas",
+  "en": "always has a view"
+ },
+ "tiene": {
+  "es": "siempre tiene vistas",
+  "en": "always has a view"
+ },
+ "vistas": {
+  "es": "siempre tiene vistas",
+  "en": "always has a view"
+ },
+ "decide": {
+  "es": "decide marcos",
+  "en": "Marcos decides"
+ },
+ "excursión": {
+  "es": "la excursión se queda sin fecha",
+  "en": "the outing is left without a date"
+ },
+ "se": {
+  "es": "se queda sin fecha",
+  "en": "is left without a date"
+ },
+ "queda": {
+  "es": "se queda sin fecha",
+  "en": "is left without a date"
+ },
+ "fecha": {
+  "es": "se queda sin fecha",
+  "en": "is left without a date"
+ },
+ "aguanta": {
+  "es": "aguanta el viento mejor que el ánimo",
+  "en": "stands the wind better than morale does"
+ },
+ "viento": {
+  "es": "aguanta el viento",
+  "en": "stands the wind"
+ },
+ "mejor": {
+  "es": "mejor que el ánimo",
+  "en": "better than morale"
+ },
+ "ánimo": {
+  "es": "mejor que el ánimo",
+  "en": "better than morale"
+ },
+ "peña": {
+  "es": "la peña sube sillas",
+  "en": "the club carries chairs up"
+ },
+ "sube": {
+  "es": "la peña sube sillas",
+  "en": "the club carries chairs up"
+ },
+ "sillas": {
+  "es": "sube sillas",
+  "en": "carries chairs up"
+ },
+ "nevera": {
+  "es": "una nevera y una guitarra",
+  "en": "a cool box and a guitar"
+ },
+ "guitarra": {
+  "es": "una nevera y una guitarra",
+  "en": "a cool box and a guitar"
+ },
+ "canta": {
+  "es": "se canta bajito",
+  "en": "people sing softly"
+ },
+ "bajito": {
+  "es": "se canta bajito",
+  "en": "people sing softly"
+ },
+ "servilletas": {
+  "es": "las servilletas vuelan",
+  "en": "the napkins fly off"
+ },
+ "vuelan": {
+  "es": "las servilletas vuelan",
+  "en": "the napkins fly off"
+ },
+ "si": {
+  "es": "si nadie las sujeta",
+  "en": "if nobody holds them down"
+ },
+ "nadie": {
+  "es": "si nadie las sujeta",
+  "en": "if nobody holds them down"
+ },
+ "sujeta": {
+  "es": "si nadie las sujeta",
+  "en": "if nobody holds them down"
+ },
+ "silba": {
+  "es": "el levante silba en las antenas",
+  "en": "the wind whistles in the aerials"
+ },
+ "antenas": {
+  "es": "silba en las antenas",
+  "en": "whistles in the aerials"
+ },
+ "le": {
+  "es": "nadie le hace caso",
+  "en": "nobody pays it any attention"
+ },
+ "hace": {
+  "es": "nadie le hace caso",
+  "en": "nobody pays it any attention"
+ },
+ "caso": {
+  "es": "nadie le hace caso",
+  "en": "nobody pays it any attention"
+ },
+ "sale": {
+  "es": "el plan b sale mejor",
+  "en": "plan B turns out better"
+ },
+ "muchos": {
+  "es": "mejor que muchos planes a",
+  "en": "better than many plan As"
+ },
+ "aquí": {
+  "es": "aquí nadie se sorprende",
+  "en": "here nobody is surprised"
+ },
+ "sorprende": {
+  "es": "aquí nadie se sorprende",
+  "en": "here nobody is surprised"
+ },
+ "paciencia": {
+  "es": "azotea y paciencia",
+  "en": "rooftop and patience"
+ },
+ "contra": {
+  "es": "contra el levante no se pelea",
+  "en": "you do not fight the east wind"
+ },
+ "pelea": {
+  "es": "contra el levante no se pelea",
+  "en": "you do not fight the east wind"
+ },
+ "dice": {
+  "es": "lo dice todo el que vive aquí",
+  "en": "everyone who lives here says so"
+ },
+ "vive": {
+  "es": "todo el que vive aquí",
+  "en": "everyone who lives here"
+ },
+ "suelta": {
+  "es": "suelta marcos",
+  "en": "Marcos lets out"
+ },
+ "suena": {
+  "es": "suena a refrán",
+  "en": "sounds like a proverb"
+ },
+ "refrán": {
+  "es": "suena a refrán de andar por casa",
+  "en": "sounds like a homespun proverb"
+ },
+ "andar": {
+  "es": "de andar por casa",
+  "en": "homespun, everyday"
+ },
+ "por": {
+  "es": "de andar por casa",
+  "en": "homespun, everyday"
+ },
+ "de": {
+  "es": "de andar por casa",
+  "en": "homespun, everyday"
+ },
+ "barco": {
+  "es": "la tarde de barco no vuelve",
+  "en": "the boat afternoon is not coming back"
+ },
+ "no": {
+  "es": "no vuelve",
+  "en": "is not coming back"
+ },
+ "vuelve": {
+  "es": "no vuelve",
+  "en": "is not coming back"
+ },
+ "llora": {
+  "es": "nadie la llora demasiado",
+  "en": "nobody mourns it much"
+ },
+ "demasiado": {
+  "es": "nadie la llora demasiado",
+  "en": "nobody mourns it much"
+ },
+ "desde": {
+  "es": "desde arriba",
+  "en": "from up high"
+ },
+ "arriba": {
+  "es": "desde arriba",
+  "en": "from up high"
+ },
+ "ciudad": {
+  "es": "la ciudad entera aguanta",
+  "en": "the whole city holds up"
+ },
+ "mismo": {
+  "es": "el mismo viento",
+  "en": "the same wind"
+ },
+ "eso": {
+  "es": "y eso hermana",
+  "en": "and that brings people together"
+ },
+ "hermana": {
+  "es": "y eso hermana",
+  "en": "and that brings people together"
+ },
+ "baja": {
+  "es": "claudia baja la última",
+  "en": "Claudia comes down last"
+ },
+ "última": {
+  "es": "baja la última",
+  "en": "comes down last"
+ },
+ "despeinada": {
+  "es": "despeinada y contenta",
+  "en": "windswept and happy"
+ },
+ "contenta": {
+  "es": "despeinada y contenta",
+  "en": "windswept and happy"
+ },
+ "echar": {
+  "es": "sin echar de menos el barco",
+  "en": "without missing the boat"
+ },
+ "menos": {
+  "es": "sin echar de menos el barco",
+  "en": "without missing the boat"
+ }
+}

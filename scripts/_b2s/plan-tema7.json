@@ -1,0 +1,34 @@
+{
+  "tipo": "Traveler",
+  "nivel": "b2",
+  "variante": "spain",
+  "registro": "de puertas abiertas y despedidas que no lo son: se cierra un candado viejo y se abre una casa nueva",
+  "espina": "la visita de Paula pone espejo a lo andado, la mudanza cierra el local viejo sin cerrar la pena, y el journey se paga entero: el archivo completo, el candado de la broma convertido en regalo y la copla que Claudia pidio ganarse en el tema dos",
+  "recursos": "espejo concreto (A2), ironia de personaje y subtexto (B2), elipsis temporal (B2, el salto al viernes de mudanza), reversa cosida (B1), gancho final literal (A1)",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "ensenarle Cadiz a Paula como una local y que su mejor amiga reconozca su vida nueva",
+      "impide": "Paula le trae de Vitoria el calendario semanal olvidado: la vida de antes reclama su sitio en la maleta",
+      "cuesta": "la vida de otra talla: reconoce delante de Paula que el calendario ya no le vale, y se lo regala; esa version de si misma no vuelve",
+      "cambia": "el espejo de fuera confirma lo que ella sospechaba: pide sin hablar, es de la barra, y lo de antes no era peor, era de otra talla",
+      "emocion": "extraneza dulce al hojear su propia agenda como la de una desconocida; se ve cuando da las gracias sin saber por que y se lo regala a Paula"
+    },
+    {
+      "slot": "2",
+      "quiere": "que el dia de la mudanza no suene a funeral",
+      "impide": "el local viejo se vacia pieza a pieza y al final solo queda el candado en la puerta, esperando su ultimo turno",
+      "cuesta": "el local viejo se entrega: el clic del ultimo cierre no se lo devuelve nadie",
+      "cambia": "el reframe: la pena no era el local, y la broma cruel del primer mes vuelve convertida en regalo cuando Marcos le pone el candado en la mano",
+      "emocion": "nudo al cerrar por ultima vez que se deshace apretando el candado; se ve en que nadie dice adios porque nadie se queda atras"
+    },
+    {
+      "slot": "3",
+      "quiere": "entregar el archivo completo y estrenar el local nuevo como una mas",
+      "impide": "Carla pide silencio, desdobla un papel y anuncia copla nueva con nombre: el suyo",
+      "cuesta": "el anonimato de la observadora, ya del todo: la copla la retrata delante de la pena entera y de Paula",
+      "cambia": "el pago de la promesa del tema dos: pidio que la pusieran en una copla cuando se lo ganara, y la pena decide que se lo gano desde el primer dia",
+      "emocion": "el pique del tema dos vuelto orgullo; se ve en que esta vez no apunta nada porque la copla ya se la sabe de memoria"
+    }
+  ]
+}

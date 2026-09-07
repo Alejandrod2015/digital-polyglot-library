@@ -1,0 +1,434 @@
+{
+ "a": {
+  "es": "a la sobremesa del sábado",
+  "en": "at the Saturday table talk"
+ },
+ "sobremesa": {
+  "es": "a la sobremesa del sábado",
+  "en": "at the Saturday table talk"
+ },
+ "del": {
+  "es": "la sobremesa del sábado",
+  "en": "the Saturday table talk"
+ },
+ "sábado": {
+  "es": "la sobremesa del sábado",
+  "en": "the Saturday table talk"
+ },
+ "se": {
+  "es": "se llega ligero",
+  "en": "you arrive travelling light"
+ },
+ "llega": {
+  "es": "se llega ligero",
+  "en": "you arrive travelling light"
+ },
+ "ligero": {
+  "es": "se llega ligero",
+  "en": "you arrive travelling light"
+ },
+ "con": {
+  "es": "con la fruta y el café",
+  "en": "with the fruit and the coffee"
+ },
+ "fruta": {
+  "es": "la fruta y el café por medio",
+  "en": "the fruit and coffee still going round"
+ },
+ "y": {
+  "es": "la fruta y el café",
+  "en": "the fruit and the coffee"
+ },
+ "café": {
+  "es": "la fruta y el café",
+  "en": "the fruit and the coffee"
+ },
+ "por": {
+  "es": "por medio",
+  "en": "in between"
+ },
+ "medio": {
+  "es": "por medio",
+  "en": "in between"
+ },
+ "afila": {
+  "es": "carla afila la primera",
+  "en": "Carla sharpens the first one"
+ },
+ "primera": {
+  "es": "carla afila la primera",
+  "en": "Carla sharpens the first one"
+ },
+ "ver": {
+  "es": "a ver si este año",
+  "en": "let us see if this year"
+ },
+ "si": {
+  "es": "a ver si este año",
+  "en": "let us see if this year"
+ },
+ "este": {
+  "es": "este año",
+  "en": "this year"
+ },
+ "año": {
+  "es": "este año",
+  "en": "this year"
+ },
+ "chirigota": {
+  "es": "la chirigota te saca a ti",
+  "en": "the carnival group sings about you"
+ },
+ "te": {
+  "es": "te saca a ti",
+  "en": "puts you in the songs"
+ },
+ "saca": {
+  "es": "la chirigota te saca a ti",
+  "en": "the carnival group sings about you"
+ },
+ "ti": {
+  "es": "te saca a ti",
+  "en": "puts you in the songs"
+ },
+ "que": {
+  "es": "que material das",
+  "en": "you do give them material"
+ },
+ "material": {
+  "es": "que material das",
+  "en": "you do give them material"
+ },
+ "das": {
+  "es": "que material das",
+  "en": "you do give them material"
+ },
+ "deja": {
+  "es": "se deja querer",
+  "en": "enjoys the attention"
+ },
+ "querer": {
+  "es": "se deja querer",
+  "en": "enjoys the attention"
+ },
+ "hace": {
+  "es": "hace teatro",
+  "en": "plays it up"
+ },
+ "teatro": {
+  "es": "hace teatro",
+  "en": "plays it up"
+ },
+ "ve": {
+  "es": "claudia ve el hueco",
+  "en": "Claudia sees the opening"
+ },
+ "hueco": {
+  "es": "claudia ve el hueco",
+  "en": "Claudia sees the opening"
+ },
+ "lanza": {
+  "es": "se lanza",
+  "en": "throws herself in"
+ },
+ "pues": {
+  "es": "pues cuando os echen del local",
+  "en": "well, when they throw you out"
+ },
+ "cuando": {
+  "es": "cuando os echen del local",
+  "en": "when they throw you out of the place"
+ },
+ "os": {
+  "es": "cuando os echen del local",
+  "en": "when they throw you out of the place"
+ },
+ "echen": {
+  "es": "cuando os echen del local",
+  "en": "when they throw you out of the place"
+ },
+ "local": {
+  "es": "os echen del local",
+  "en": "throw you out of the clubhouse"
+ },
+ "candado": {
+  "es": "el candado me lo quedo yo",
+  "en": "I am keeping the padlock"
+ },
+ "me": {
+  "es": "me lo quedo yo",
+  "en": "I am keeping it"
+ },
+ "lo": {
+  "es": "me lo quedo yo",
+  "en": "I am keeping it"
+ },
+ "quedo": {
+  "es": "me lo quedo yo",
+  "en": "I am keeping it"
+ },
+ "yo": {
+  "es": "me lo quedo yo",
+  "en": "I am keeping it"
+ },
+ "de": {
+  "es": "de recuerdo",
+  "en": "as a keepsake"
+ },
+ "recuerdo": {
+  "es": "de recuerdo",
+  "en": "as a keepsake"
+ },
+ "dispara": {
+  "es": "dispara",
+  "en": "she fires off"
+ },
+ "contenta": {
+  "es": "contenta de atreverse",
+  "en": "pleased with her own daring"
+ },
+ "atreverse": {
+  "es": "contenta de atreverse",
+  "en": "pleased with her own daring"
+ },
+ "nadie": {
+  "es": "nadie se ríe",
+  "en": "nobody laughs"
+ },
+ "ríe": {
+  "es": "nadie se ríe",
+  "en": "nobody laughs"
+ },
+ "silencio": {
+  "es": "el silencio le cae encima",
+  "en": "the silence falls on her"
+ },
+ "le": {
+  "es": "el silencio le cae encima",
+  "en": "the silence falls on her"
+ },
+ "cae": {
+  "es": "el silencio le cae encima",
+  "en": "the silence falls on her"
+ },
+ "encima": {
+  "es": "le cae encima",
+  "en": "falls on top of her"
+ },
+ "como": {
+  "es": "como un mantel mojado",
+  "en": "like a wet tablecloth"
+ },
+ "mantel": {
+  "es": "como un mantel mojado",
+  "en": "like a wet tablecloth"
+ },
+ "mojado": {
+  "es": "como un mantel mojado",
+  "en": "like a wet tablecloth"
+ },
+ "servilleta": {
+  "es": "deja la servilleta doblada",
+  "en": "leaves his napkin folded"
+ },
+ "doblada": {
+  "es": "la servilleta doblada",
+  "en": "the napkin folded"
+ },
+ "sale": {
+  "es": "sale al patio",
+  "en": "goes out to the courtyard"
+ },
+ "al": {
+  "es": "sale al patio",
+  "en": "goes out to the courtyard"
+ },
+ "patio": {
+  "es": "sale al patio",
+  "en": "goes out to the courtyard"
+ },
+ "sin": {
+  "es": "sin mirar a nadie",
+  "en": "without looking at anyone"
+ },
+ "mirar": {
+  "es": "sin mirar a nadie",
+  "en": "without looking at anyone"
+ },
+ "rescata": {
+  "es": "carla rescata la mesa",
+  "en": "Carla rescues the table"
+ },
+ "mesa": {
+  "es": "carla rescata la mesa",
+  "en": "Carla rescues the table"
+ },
+ "bueno": {
+  "es": "bueno",
+  "en": "well then"
+ },
+ "alguien": {
+  "es": "alguien quiere más café",
+  "en": "does anyone want more coffee"
+ },
+ "quiere": {
+  "es": "alguien quiere más café",
+  "en": "does anyone want more coffee"
+ },
+ "más": {
+  "es": "quiere más café",
+  "en": "wants more coffee"
+ },
+ "o": {
+  "es": "o lo mato ya",
+  "en": "or shall I finish it off"
+ },
+ "mato": {
+  "es": "o lo mato ya",
+  "en": "or shall I finish it off"
+ },
+ "ya": {
+  "es": "o lo mato ya",
+  "en": "or shall I finish it off"
+ },
+ "apila": {
+  "es": "claudia apila platos",
+  "en": "Claudia stacks plates"
+ },
+ "platos": {
+  "es": "claudia apila platos",
+  "en": "Claudia stacks plates"
+ },
+ "ha": {
+  "es": "nadie le ha pedido",
+  "en": "nobody has asked her"
+ },
+ "pedido": {
+  "es": "nadie le ha pedido apilar",
+  "en": "nobody has asked her to stack"
+ },
+ "apilar": {
+  "es": "nadie le ha pedido apilar",
+  "en": "nobody has asked her to stack"
+ },
+ "cabeza": {
+  "es": "con la cabeza en el patio",
+  "en": "with her mind out in the courtyard"
+ },
+ "en": {
+  "es": "en el patio",
+  "en": "in the courtyard"
+ },
+ "seguido": {
+  "es": "ha seguido la regla",
+  "en": "she has followed the rule"
+ },
+ "regla": {
+  "es": "ha seguido la regla",
+  "en": "she has followed the rule"
+ },
+ "pie": {
+  "es": "al pie de la letra",
+  "en": "to the letter"
+ },
+ "letra": {
+  "es": "al pie de la letra",
+  "en": "to the letter"
+ },
+ "pero": {
+  "es": "pero la regla tenía un mapa",
+  "en": "but the rule had a map"
+ },
+ "tenía": {
+  "es": "la regla tenía un mapa",
+  "en": "the rule had a map"
+ },
+ "mapa": {
+  "es": "la regla tenía un mapa",
+  "en": "the rule had a map"
+ },
+ "qué": {
+  "es": "qué he dicho",
+  "en": "what did I say"
+ },
+ "he": {
+  "es": "qué he dicho",
+  "en": "what did I say"
+ },
+ "dicho": {
+  "es": "qué he dicho",
+  "en": "what did I say"
+ },
+ "pregunta": {
+  "es": "pregunta en voz baja",
+  "en": "she asks under her breath"
+ },
+ "voz": {
+  "es": "en voz baja",
+  "en": "under her breath"
+ },
+ "baja": {
+  "es": "en voz baja",
+  "en": "under her breath"
+ },
+ "mañana": {
+  "es": "mañana te lo cuento",
+  "en": "I will tell you tomorrow"
+ },
+ "cuento": {
+  "es": "mañana te lo cuento",
+  "en": "I will tell you tomorrow"
+ },
+ "aquí": {
+  "es": "aquí no",
+  "en": "not here"
+ },
+ "no": {
+  "es": "aquí no",
+  "en": "not here"
+ },
+ "contesta": {
+  "es": "contesta carla",
+  "en": "Carla answers"
+ },
+ "aprieta": {
+  "es": "le aprieta el brazo",
+  "en": "squeezes her arm"
+ },
+ "brazo": {
+  "es": "le aprieta el brazo",
+  "en": "squeezes her arm"
+ },
+ "pasar": {
+  "es": "al pasar",
+  "en": "as she goes by"
+ },
+ "tarde": {
+  "es": "la tarde ligera no vuelve",
+  "en": "the light afternoon does not return"
+ },
+ "ligera": {
+  "es": "la tarde ligera",
+  "en": "the light afternoon"
+ },
+ "vuelve": {
+  "es": "la tarde ligera no vuelve",
+  "en": "the light afternoon does not return"
+ },
+ "mucho": {
+  "es": "por mucho que el café dure",
+  "en": "however long the coffee lasts"
+ },
+ "dure": {
+  "es": "por mucho que el café dure",
+  "en": "however long the coffee lasts"
+ },
+ "explica": {
+  "es": "nadie más le explica nada",
+  "en": "nobody else explains anything to her"
+ },
+ "nada": {
+  "es": "nadie más le explica nada",
+  "en": "nobody else explains anything to her"
+ }
+}

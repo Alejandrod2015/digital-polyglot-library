@@ -1,0 +1,34 @@
+{
+  "tipo": "Traveler",
+  "nivel": "b2",
+  "variante": "spain",
+  "registro": "curioso y con guasa suave: la ciudad pregunta mas de lo que responde, y el narrador toma partido por Claudia",
+  "espina": "Claudia tiene tres meses para digitalizar el archivo de la pena antes de la mudanza del local; lo que de verdad se juega es dejar de ser la de fuera, y cada tema le da un trozo de ciudad y le cobra otro",
+  "recursos": "ironia de personaje y subtexto de dialogo (B2), narrador con opinion (B2), aforismo de personaje con cuentagotas (B2, uno en el tema), reversa cosida y cambio de ritmo (B1), imagen concreta (A0)",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "que Marcos le entregue las llaves y el archivo, y empezar a trabajar el primer dia",
+      "impide": "en la pena nadie habla de trabajo: toda la manana es gente preguntandole quien es y de donde viene",
+      "cuesta": "la manana entera y las llaves, que ese dia no llegan",
+      "cambia": "entiende que las preguntas no eran cortesia sino el examen de entrada: aqui el trabajo empieza por dejarse conocer",
+      "emocion": "impaciencia que se agria a verguenza cuando cae en que trataba a la pena como un tramite; se ve cuando se le calienta la cara, tapa el boligrafo y cierra la libreta"
+    },
+    {
+      "slot": "2",
+      "quiere": "hacer la compra en el mercado de abastos como una mas, sin que se le note lo de fuera",
+      "impide": "en una ciudad chica el anonimato no existe: la conocian desde el primer dia, con nombre de ciudad incluido",
+      "cuesta": "la ilusion de camuflarse; el anonimato lo pierde ese dia y no lo recupera",
+      "cambia": "descubre que la trataban bien no porque pareciera de alli sino porque ya sabian quien era; pasar por local nunca fue la puerta",
+      "emocion": "apuro que se vuelve alivio porque la risa gana antes de que ella decida reirse; se ve cuando decide volver manana sin ensayar la frase"
+    },
+    {
+      "slot": "3",
+      "quiere": "quedarse una tarde de sabado en la mesa sin justificar por que no esta trabajando",
+      "impide": "su propio reflejo de irse: lleva semanas midiendo cada hora contra el archivo",
+      "cuesta": "la tarde de trabajo que pensaba adelantar; ese retraso ya no se recupera",
+      "cambia": "acepta el sitio que le guardan: se puede ser de un sitio sin haber nacido en el, y la sobremesa es donde se firma",
+      "emocion": "gratitud con nudo al ver la silla guardada y el vaso lleno; se ve cuando acerca la silla y deja la libreta en el fondo del bolso"
+    }
+  ]
+}

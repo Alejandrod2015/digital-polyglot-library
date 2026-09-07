@@ -1,0 +1,2574 @@
+{
+ "la-sobremesa": {
+  "sobremesa": {
+   "es": "la sobremesa",
+   "en": ""
+  },
+  "hay": {
+   "es": "hay mesas de las que",
+   "en": ""
+  },
+  "mesas": {
+   "es": "hay mesas de las que",
+   "en": ""
+  },
+  "de": {
+   "es": "hay mesas de las que",
+   "en": ""
+  },
+  "que": {
+   "es": "de las que uno se",
+   "en": ""
+  },
+  "uno": {
+   "es": "las que uno se levanta",
+   "en": ""
+  },
+  "se": {
+   "es": "que uno se levanta pronto",
+   "en": ""
+  },
+  "levanta": {
+   "es": "uno se levanta pronto y",
+   "en": ""
+  },
+  "pronto": {
+   "es": "se levanta pronto y mesas",
+   "en": ""
+  },
+  "y": {
+   "es": "levanta pronto y mesas que",
+   "en": ""
+  },
+  "no": {
+   "es": "y mesas que no sueltan",
+   "en": ""
+  },
+  "sueltan": {
+   "es": "y mesas que no sueltan",
+   "en": ""
+  },
+  "del": {
+   "es": "la del sábado en la",
+   "en": ""
+  },
+  "sábado": {
+   "es": "la del sábado en la",
+   "en": ""
+  },
+  "en": {
+   "es": "del sábado en la peña",
+   "en": ""
+  },
+  "peña": {
+   "es": "en la peña es de",
+   "en": ""
+  },
+  "es": {
+   "es": "la sobremesa",
+   "en": ""
+  },
+  "segundas": {
+   "es": "peña es de las segundas",
+   "en": ""
+  },
+  "llega": {
+   "es": "claudia llega con la libreta",
+   "en": ""
+  },
+  "con": {
+   "es": "claudia llega con la libreta",
+   "en": ""
+  },
+  "libreta": {
+   "es": "con la libreta y quiere",
+   "en": ""
+  },
+  "quiere": {
+   "es": "libreta y quiere irse a",
+   "en": ""
+  },
+  "irse": {
+   "es": "y quiere irse a las",
+   "en": ""
+  },
+  "a": {
+   "es": "la sobremesa",
+   "en": ""
+  },
+  "come": {
+   "es": "se come y se discute",
+   "en": ""
+  },
+  "discute": {
+   "es": "come y se discute despacio",
+   "en": ""
+  },
+  "despacio": {
+   "es": "come y se discute despacio",
+   "en": ""
+  },
+  "fútbol": {
+   "es": "fútbol",
+   "en": ""
+  },
+  "obras": {
+   "es": "obras",
+   "en": ""
+  },
+  "pregón": {
+   "es": "un pregón antiguo",
+   "en": ""
+  },
+  "antiguo": {
+   "es": "un pregón antiguo",
+   "en": ""
+  },
+  "comedor": {
+   "es": "el comedor huele a arroz",
+   "en": ""
+  },
+  "huele": {
+   "es": "el comedor huele a arroz",
+   "en": ""
+  },
+  "arroz": {
+   "es": "huele a arroz y a",
+   "en": ""
+  },
+  "laurel": {
+   "es": "a arroz y a laurel",
+   "en": ""
+  },
+  "ve": {
+   "es": "marcos la ve mirar el",
+   "en": ""
+  },
+  "mirar": {
+   "es": "la ve mirar el reloj",
+   "en": ""
+  },
+  "reloj": {
+   "es": "mirar el reloj y dice",
+   "en": ""
+  },
+  "dice": {
+   "es": "mirar el reloj y dice",
+   "en": ""
+  },
+  "tú": {
+   "es": "tú come",
+   "en": ""
+  },
+  "archivo": {
+   "es": "que el archivo no tiene",
+   "en": ""
+  },
+  "tiene": {
+   "es": "archivo no tiene hambre y",
+   "en": ""
+  },
+  "hambre": {
+   "es": "no tiene hambre y tú",
+   "en": ""
+  },
+  "sí": {
+   "es": "tiene hambre y tú sí",
+   "en": ""
+  },
+  "avisa": {
+   "es": "claudia avisa",
+   "en": ""
+  },
+  "me": {
+   "es": "la sobremesa",
+   "en": ""
+  },
+  "tendría": {
+   "es": "me tendría que ir",
+   "en": ""
+  },
+  "ir": {
+   "es": "claudia llega con la libreta",
+   "en": ""
+  },
+  "tengo": {
+   "es": "tengo la tarde contada y",
+   "en": ""
+  },
+  "tarde": {
+   "es": "tengo la tarde contada y",
+   "en": ""
+  },
+  "contada": {
+   "es": "la tarde contada y el",
+   "en": ""
+  },
+  "medias": {
+   "es": "y el archivo a medias",
+   "en": ""
+  },
+  "ya": {
+   "es": "ya estás trabajando",
+   "en": ""
+  },
+  "estás": {
+   "es": "ya estás trabajando",
+   "en": ""
+  },
+  "trabajando": {
+   "es": "ya estás trabajando",
+   "en": ""
+  },
+  "sin": {
+   "es": "sin esta mesa no hay",
+   "en": ""
+  },
+  "esta": {
+   "es": "sin esta mesa no hay",
+   "en": ""
+  },
+  "mesa": {
+   "es": "la sobremesa",
+   "en": ""
+  },
+  "valga": {
+   "es": "no hay archivo que valga",
+   "en": ""
+  },
+  "contesta": {
+   "es": "contesta marcos",
+   "en": ""
+  },
+  "sigue": {
+   "es": "a las cinco sigue allí",
+   "en": ""
+  },
+  "allí": {
+   "es": "a las cinco sigue allí",
+   "en": ""
+  },
+  "aunque": {
+   "es": "aunque le cueste",
+   "en": ""
+  },
+  "le": {
+   "es": "hay mesas de las que",
+   "en": ""
+  },
+  "cueste": {
+   "es": "aunque le cueste",
+   "en": ""
+  },
+  "aquí": {
+   "es": "aquí lo importante se dice",
+   "en": ""
+  },
+  "lo": {
+   "es": "marcos la ve mirar el",
+   "en": ""
+  },
+  "importante": {
+   "es": "aquí lo importante se dice",
+   "en": ""
+  },
+  "platos": {
+   "es": "dice con los platos vacíos",
+   "en": ""
+  },
+  "vacíos": {
+   "es": "dice con los platos vacíos",
+   "en": ""
+  },
+  "suelta": {
+   "es": "hay mesas de las que",
+   "en": ""
+  },
+  "cuando": {
+   "es": "suelta marcos cuando recogen la",
+   "en": ""
+  },
+  "recogen": {
+   "es": "marcos cuando recogen la fuente",
+   "en": ""
+  },
+  "fuente": {
+   "es": "marcos cuando recogen la fuente",
+   "en": ""
+  },
+  "sube": {
+   "es": "claudia le sube un nudo",
+   "en": ""
+  },
+  "nudo": {
+   "es": "le sube un nudo agradecido",
+   "en": ""
+  },
+  "agradecido": {
+   "es": "le sube un nudo agradecido",
+   "en": ""
+  },
+  "silla": {
+   "es": "la silla guardada vale lo",
+   "en": ""
+  },
+  "guardada": {
+   "es": "la silla guardada vale lo",
+   "en": ""
+  },
+  "vale": {
+   "es": "silla guardada vale lo mismo",
+   "en": ""
+  },
+  "mismo": {
+   "es": "vale lo mismo sin palabras",
+   "en": ""
+  },
+  "palabras": {
+   "es": "vale lo mismo sin palabras",
+   "en": ""
+  },
+  "por": {
+   "es": "aquí lo importante se dice",
+   "en": ""
+  },
+  "adelantar": {
+   "es": "tarde por adelantar se queda",
+   "en": ""
+  },
+  "queda": {
+   "es": "adelantar se queda en la",
+   "en": ""
+  },
+  "deja": {
+   "es": "la deja ir",
+   "en": ""
+  },
+  "pues": {
+   "es": "pues por una vez no",
+   "en": ""
+  },
+  "vez": {
+   "es": "por una vez no apunto",
+   "en": ""
+  },
+  "apunto": {
+   "es": "una vez no apunto nada",
+   "en": ""
+  },
+  "nada": {
+   "es": "una vez no apunto nada",
+   "en": ""
+  },
+  "bolso": {
+   "es": "la libreta en el bolso",
+   "en": ""
+  },
+  "estira": {
+   "es": "sobremesa se estira hasta la",
+   "en": ""
+  },
+  "hasta": {
+   "es": "se estira hasta la noche",
+   "en": ""
+  },
+  "noche": {
+   "es": "se estira hasta la noche",
+   "en": ""
+  },
+  "da": {
+   "es": "la del sábado en la",
+   "en": ""
+  },
+  "igual": {
+   "es": "y le da igual",
+   "en": ""
+  },
+  "acerca": {
+   "es": "acerca la silla",
+   "en": ""
+  },
+  "está": {
+   "es": "ya estás trabajando",
+   "en": ""
+  },
+  "poco": {
+   "es": "está un poco menos de",
+   "en": ""
+  },
+  "menos": {
+   "es": "un poco menos de fuera",
+   "en": ""
+  },
+  "fuera": {
+   "es": "un poco menos de fuera",
+   "en": ""
+  }
+ },
+ "las-llaves-de-la-pena": {
+  "llaves": {
+   "es": "las llaves de la peña",
+   "en": ""
+  },
+  "de": {
+   "es": "las llaves de la peña",
+   "en": ""
+  },
+  "peña": {
+   "es": "las llaves de la peña",
+   "en": ""
+  },
+  "documentalista": {
+   "es": "una documentalista de vitoria",
+   "en": ""
+  },
+  "vitoria": {
+   "es": "una documentalista de vitoria",
+   "en": ""
+  },
+  "llega": {
+   "es": "llega a cádiz",
+   "en": ""
+  },
+  "a": {
+   "es": "las llaves de la peña",
+   "en": ""
+  },
+  "cádiz": {
+   "es": "llega a cádiz",
+   "en": ""
+  },
+  "en": {
+   "es": "en el sur de españa",
+   "en": ""
+  },
+  "sur": {
+   "es": "en el sur de españa",
+   "en": ""
+  },
+  "españa": {
+   "es": "en el sur de españa",
+   "en": ""
+  },
+  "le": {
+   "es": "llega a cádiz",
+   "en": ""
+  },
+  "ha": {
+   "es": "peña le ha encargado que",
+   "en": ""
+  },
+  "encargado": {
+   "es": "le ha encargado que digitalice",
+   "en": ""
+  },
+  "que": {
+   "es": "ha encargado que digitalice su",
+   "en": ""
+  },
+  "digitalice": {
+   "es": "encargado que digitalice su archivo",
+   "en": ""
+  },
+  "su": {
+   "es": "en el sur de españa",
+   "en": ""
+  },
+  "archivo": {
+   "es": "digitalice su archivo antes de",
+   "en": ""
+  },
+  "antes": {
+   "es": "su archivo antes de la",
+   "en": ""
+  },
+  "mudanza": {
+   "es": "archivo antes de la mudanza",
+   "en": ""
+  },
+  "espera": {
+   "es": "la espera marcos",
+   "en": ""
+  },
+  "archivero": {
+   "es": "el archivero",
+   "en": ""
+  },
+  "candado": {
+   "es": "candado en mano",
+   "en": ""
+  },
+  "mano": {
+   "es": "candado en mano",
+   "en": ""
+  },
+  "dentro": {
+   "es": "dentro huele a café y",
+   "en": ""
+  },
+  "huele": {
+   "es": "dentro huele a café y",
+   "en": ""
+  },
+  "café": {
+   "es": "huele a café y a",
+   "en": ""
+  },
+  "y": {
+   "es": "a café y a madera",
+   "en": ""
+  },
+  "madera": {
+   "es": "café y a madera vieja",
+   "en": ""
+  },
+  "vieja": {
+   "es": "café y a madera vieja",
+   "en": ""
+  },
+  "barra": {
+   "es": "la barra pregunta",
+   "en": ""
+  },
+  "pregunta": {
+   "es": "la barra pregunta",
+   "en": ""
+  },
+  "dónde": {
+   "es": "que de dónde viene",
+   "en": ""
+  },
+  "viene": {
+   "es": "que de dónde viene",
+   "en": ""
+  },
+  "cuánto": {
+   "es": "que cuánto se queda",
+   "en": ""
+  },
+  "se": {
+   "es": "que cuánto se queda",
+   "en": ""
+  },
+  "queda": {
+   "es": "que cuánto se queda",
+   "en": ""
+  },
+  "si": {
+   "es": "que si se aburre",
+   "en": ""
+  },
+  "aburre": {
+   "es": "que si se aburre",
+   "en": ""
+  },
+  "hoy": {
+   "es": "hoy conoces la casa y",
+   "en": ""
+  },
+  "conoces": {
+   "es": "hoy conoces la casa y",
+   "en": ""
+  },
+  "casa": {
+   "es": "conoces la casa y mañana",
+   "en": ""
+  },
+  "mañana": {
+   "es": "casa y mañana te doy",
+   "en": ""
+  },
+  "te": {
+   "es": "la peña le ha encargado",
+   "en": ""
+  },
+  "doy": {
+   "es": "mañana te doy el papel",
+   "en": ""
+  },
+  "papel": {
+   "es": "mañana te doy el papel",
+   "en": ""
+  },
+  "avisa": {
+   "es": "avisa marcos",
+   "en": ""
+  },
+  "sin": {
+   "es": "sin prisa",
+   "en": ""
+  },
+  "prisa": {
+   "es": "sin prisa",
+   "en": ""
+  },
+  "me": {
+   "es": "una documentalista de vitoria",
+   "en": ""
+  },
+  "puedes": {
+   "es": "me puedes dar las llaves",
+   "en": ""
+  },
+  "dar": {
+   "es": "me puedes dar las llaves",
+   "en": ""
+  },
+  "dice": {
+   "es": "dice claudia",
+   "en": ""
+  },
+  "como": {
+   "es": "como quien despacha un trámite",
+   "en": ""
+  },
+  "quien": {
+   "es": "como quien despacha un trámite",
+   "en": ""
+  },
+  "despacha": {
+   "es": "como quien despacha un trámite",
+   "en": ""
+  },
+  "trámite": {
+   "es": "como quien despacha un trámite",
+   "en": ""
+  },
+  "ese": {
+   "es": "ese archivo lleva cuarenta años",
+   "en": ""
+  },
+  "lleva": {
+   "es": "ese archivo lleva cuarenta años",
+   "en": ""
+  },
+  "años": {
+   "es": "archivo lleva cuarenta años quieto",
+   "en": ""
+  },
+  "quieto": {
+   "es": "archivo lleva cuarenta años quieto",
+   "en": ""
+  },
+  "tarde": {
+   "es": "una tarde más no lo",
+   "en": ""
+  },
+  "más": {
+   "es": "una tarde más no lo",
+   "en": ""
+  },
+  "no": {
+   "es": "candado en mano",
+   "en": ""
+  },
+  "lo": {
+   "es": "tarde más no lo mata",
+   "en": ""
+  },
+  "mata": {
+   "es": "tarde más no lo mata",
+   "en": ""
+  },
+  "contesta": {
+   "es": "contesta marcos",
+   "en": ""
+  },
+  "gustaría": {
+   "es": "claudia le gustaría que cádiz",
+   "en": ""
+  },
+  "cupiera": {
+   "es": "que cádiz cupiera en su",
+   "en": ""
+  },
+  "calendario": {
+   "es": "cádiz cupiera en su calendario",
+   "en": ""
+  },
+  "cabe": {
+   "es": "no cabe",
+   "en": ""
+  },
+  "vez": {
+   "es": "la tercera vez cae en",
+   "en": ""
+  },
+  "cae": {
+   "es": "tercera vez cae en la",
+   "en": ""
+  },
+  "cuenta": {
+   "es": "vez cae en la cuenta",
+   "en": ""
+  },
+  "golpe": {
+   "es": "de golpe",
+   "en": ""
+  },
+  "calienta": {
+   "es": "se le calienta la cara",
+   "en": ""
+  },
+  "cara": {
+   "es": "se le calienta la cara",
+   "en": ""
+  },
+  "era": {
+   "es": "la espera marcos",
+   "en": ""
+  },
+  "cortesía": {
+   "es": "no era cortesía",
+   "en": ""
+  },
+  "entrada": {
+   "es": "era la entrada",
+   "en": ""
+  },
+  "ella": {
+   "es": "y ella miraba el reloj",
+   "en": ""
+  },
+  "miraba": {
+   "es": "y ella miraba el reloj",
+   "en": ""
+  },
+  "reloj": {
+   "es": "y ella miraba el reloj",
+   "en": ""
+  },
+  "tapa": {
+   "es": "tapa el bolígrafo",
+   "en": ""
+  },
+  "bolígrafo": {
+   "es": "tapa el bolígrafo",
+   "en": ""
+  },
+  "cierra": {
+   "es": "cierra la libreta y responde",
+   "en": ""
+  },
+  "libreta": {
+   "es": "cierra la libreta y responde",
+   "en": ""
+  },
+  "responde": {
+   "es": "la libreta y responde despacio",
+   "en": ""
+  },
+  "despacio": {
+   "es": "la libreta y responde despacio",
+   "en": ""
+  },
+  "entera": {
+   "es": "entera",
+   "en": ""
+  },
+  "está": {
+   "es": "y me está gustando más",
+   "en": ""
+  },
+  "gustando": {
+   "es": "me está gustando más de",
+   "en": ""
+  },
+  "pensaba": {
+   "es": "más de lo que pensaba",
+   "en": ""
+  },
+  "llegan": {
+   "es": "llaves no llegan y ya",
+   "en": ""
+  },
+  "ya": {
+   "es": "llegan y ya no le",
+   "en": ""
+  },
+  "parece": {
+   "es": "no le parece una derrota",
+   "en": ""
+  },
+  "derrota": {
+   "es": "no le parece una derrota",
+   "en": ""
+  },
+  "abro": {
+   "es": "a las nueve abro yo",
+   "en": ""
+  },
+  "yo": {
+   "es": "a las nueve abro yo",
+   "en": ""
+  },
+  "pones": {
+   "es": "el café lo pones tú",
+   "en": ""
+  },
+  "tú": {
+   "es": "el café lo pones tú",
+   "en": ""
+  },
+  "apunta": {
+   "es": "claudia apunta la hora y",
+   "en": ""
+  },
+  "hora": {
+   "es": "claudia apunta la hora y",
+   "en": ""
+  },
+  "debajo": {
+   "es": "debajo",
+   "en": ""
+  }
+ },
+ "le-habian-guardado-tomates": {
+  "le": {
+   "es": "le habían guardado tomates",
+   "en": ""
+  },
+  "habían": {
+   "es": "le habían guardado tomates",
+   "en": ""
+  },
+  "guardado": {
+   "es": "le habían guardado tomates",
+   "en": ""
+  },
+  "tomates": {
+   "es": "le habían guardado tomates",
+   "en": ""
+  },
+  "lista": {
+   "es": "la lista de la compra",
+   "en": ""
+  },
+  "de": {
+   "es": "la lista de la compra",
+   "en": ""
+  },
+  "compra": {
+   "es": "de la compra de claudia",
+   "en": ""
+  },
+  "tiene": {
+   "es": "de claudia tiene dos columnas",
+   "en": ""
+  },
+  "columnas": {
+   "es": "de claudia tiene dos columnas",
+   "en": ""
+  },
+  "lo": {
+   "es": "lo que necesita y cómo",
+   "en": ""
+  },
+  "que": {
+   "es": "lo que necesita y cómo",
+   "en": ""
+  },
+  "necesita": {
+   "es": "lo que necesita y cómo",
+   "en": ""
+  },
+  "y": {
+   "es": "que necesita y cómo se",
+   "en": ""
+  },
+  "cómo": {
+   "es": "necesita y cómo se pide",
+   "en": ""
+  },
+  "se": {
+   "es": "necesita y cómo se pide",
+   "en": ""
+  },
+  "pide": {
+   "es": "necesita y cómo se pide",
+   "en": ""
+  },
+  "lleva": {
+   "es": "lleva días oyendo pedir a",
+   "en": ""
+  },
+  "días": {
+   "es": "lleva días oyendo pedir a",
+   "en": ""
+  },
+  "oyendo": {
+   "es": "lleva días oyendo pedir a",
+   "en": ""
+  },
+  "pedir": {
+   "es": "días oyendo pedir a los",
+   "en": ""
+  },
+  "a": {
+   "es": "le habían guardado tomates",
+   "en": ""
+  },
+  "demás": {
+   "es": "a los demás en el",
+   "en": ""
+  },
+  "en": {
+   "es": "la lista de la compra",
+   "en": ""
+  },
+  "mercado": {
+   "es": "en el mercado de abastos",
+   "en": ""
+  },
+  "abastos": {
+   "es": "en el mercado de abastos",
+   "en": ""
+  },
+  "esta": {
+   "es": "esta mañana le toca",
+   "en": ""
+  },
+  "mañana": {
+   "es": "esta mañana le toca",
+   "en": ""
+  },
+  "toca": {
+   "es": "esta mañana le toca",
+   "en": ""
+  },
+  "puerta": {
+   "es": "en la puerta ensaya la",
+   "en": ""
+  },
+  "ensaya": {
+   "es": "la puerta ensaya la frase",
+   "en": ""
+  },
+  "frase": {
+   "es": "ensaya la frase en voz",
+   "en": ""
+  },
+  "voz": {
+   "es": "la frase en voz baja",
+   "en": ""
+  },
+  "baja": {
+   "es": "la frase en voz baja",
+   "en": ""
+  },
+  "puesto": {
+   "es": "en el puesto",
+   "en": ""
+  },
+  "entre": {
+   "es": "entre el olor a hierbabuena",
+   "en": ""
+  },
+  "olor": {
+   "es": "entre el olor a hierbabuena",
+   "en": ""
+  },
+  "hierbabuena": {
+   "es": "olor a hierbabuena y a",
+   "en": ""
+  },
+  "pescado": {
+   "es": "hierbabuena y a pescado fresco",
+   "en": ""
+  },
+  "fresco": {
+   "es": "hierbabuena y a pescado fresco",
+   "en": ""
+  },
+  "deja": {
+   "es": "deja que le elijan la",
+   "en": ""
+  },
+  "elijan": {
+   "es": "que le elijan la fruta",
+   "en": ""
+  },
+  "fruta": {
+   "es": "le elijan la fruta madura",
+   "en": ""
+  },
+  "madura": {
+   "es": "le elijan la fruta madura",
+   "en": ""
+  },
+  "nadie": {
+   "es": "nadie la mira de más",
+   "en": ""
+  },
+  "mira": {
+   "es": "nadie la mira de más",
+   "en": ""
+  },
+  "más": {
+   "es": "lleva días oyendo pedir a",
+   "en": ""
+  },
+  "sale": {
+   "es": "sale con la bolsa llena",
+   "en": ""
+  },
+  "con": {
+   "es": "sale con la bolsa llena",
+   "en": ""
+  },
+  "bolsa": {
+   "es": "con la bolsa llena y",
+   "en": ""
+  },
+  "llena": {
+   "es": "la bolsa llena y la",
+   "en": ""
+  },
+  "sensación": {
+   "es": "y la sensación de haberse",
+   "en": ""
+  },
+  "haberse": {
+   "es": "sensación de haberse salido con",
+   "en": ""
+  },
+  "salido": {
+   "es": "de haberse salido con la",
+   "en": ""
+  },
+  "suya": {
+   "es": "haberse salido con la suya",
+   "en": ""
+  },
+  "cuenta": {
+   "es": "se lo cuenta a marcos",
+   "en": ""
+  },
+  "como": {
+   "es": "la bolsa como prueba y",
+   "en": ""
+  },
+  "prueba": {
+   "es": "bolsa como prueba y la",
+   "en": ""
+  },
+  "redondeada": {
+   "es": "prueba y la cuenta redondeada",
+   "en": ""
+  },
+  "hoy": {
+   "es": "hoy nadie me ha tomado",
+   "en": ""
+  },
+  "me": {
+   "es": "lleva días oyendo pedir a",
+   "en": ""
+  },
+  "ha": {
+   "es": "le habían guardado tomates",
+   "en": ""
+  },
+  "tomado": {
+   "es": "me ha tomado por turista",
+   "en": ""
+  },
+  "por": {
+   "es": "me ha tomado por turista",
+   "en": ""
+  },
+  "turista": {
+   "es": "me ha tomado por turista",
+   "en": ""
+  },
+  "he": {
+   "es": "he pedido como una más",
+   "en": ""
+  },
+  "pedido": {
+   "es": "he pedido como una más",
+   "en": ""
+  },
+  "presume": {
+   "es": "presume claudia",
+   "en": ""
+  },
+  "has": {
+   "es": "bolsa la has pagado en",
+   "en": ""
+  },
+  "pagado": {
+   "es": "la has pagado en euros",
+   "en": ""
+  },
+  "euros": {
+   "es": "pagado en euros o en",
+   "en": ""
+  },
+  "o": {
+   "es": "le habían guardado tomates",
+   "en": ""
+  },
+  "aplausos": {
+   "es": "en euros o en aplausos",
+   "en": ""
+  },
+  "pregunta": {
+   "es": "pregunta marcos",
+   "en": ""
+  },
+  "luego": {
+   "es": "luego le traduce la mañana",
+   "en": ""
+  },
+  "traduce": {
+   "es": "luego le traduce la mañana",
+   "en": ""
+  },
+  "frutera": {
+   "es": "la frutera me ha preguntado",
+   "en": ""
+  },
+  "preguntado": {
+   "es": "me ha preguntado si la",
+   "en": ""
+  },
+  "si": {
+   "es": "lo que necesita y cómo",
+   "en": ""
+  },
+  "vitoria": {
+   "es": "la de vitoria vuelve el",
+   "en": ""
+  },
+  "vuelve": {
+   "es": "de vitoria vuelve el sábado",
+   "en": ""
+  },
+  "sábado": {
+   "es": "de vitoria vuelve el sábado",
+   "en": ""
+  },
+  "guardados": {
+   "es": "le tiene guardados tomates de",
+   "en": ""
+  },
+  "buenos": {
+   "es": "guardados tomates de los buenos",
+   "en": ""
+  },
+  "suelta": {
+   "es": "suelta",
+   "en": ""
+  },
+  "sin": {
+   "es": "sin darle importancia",
+   "en": ""
+  },
+  "darle": {
+   "es": "sin darle importancia",
+   "en": ""
+  },
+  "importancia": {
+   "es": "sin darle importancia",
+   "en": ""
+  },
+  "conocían": {
+   "es": "la conocían desde el primer",
+   "en": ""
+  },
+  "desde": {
+   "es": "la conocían desde el primer",
+   "en": ""
+  },
+  "día": {
+   "es": "lleva días oyendo pedir a",
+   "en": ""
+  },
+  "nunca": {
+   "es": "nunca hubo nada que colar",
+   "en": ""
+  },
+  "hubo": {
+   "es": "nunca hubo nada que colar",
+   "en": ""
+  },
+  "nada": {
+   "es": "nunca hubo nada que colar",
+   "en": ""
+  },
+  "colar": {
+   "es": "nunca hubo nada que colar",
+   "en": ""
+  },
+  "vergüenza": {
+   "es": "la vergüenza le dura poco",
+   "en": ""
+  },
+  "dura": {
+   "es": "deja que le elijan la",
+   "en": ""
+  },
+  "poco": {
+   "es": "la vergüenza le dura poco",
+   "en": ""
+  },
+  "risa": {
+   "es": "la risa gana antes de",
+   "en": ""
+  },
+  "gana": {
+   "es": "la risa gana antes de",
+   "en": ""
+  },
+  "antes": {
+   "es": "risa gana antes de que",
+   "en": ""
+  },
+  "ella": {
+   "es": "de que ella decida reírse",
+   "en": ""
+  },
+  "decida": {
+   "es": "de que ella decida reírse",
+   "en": ""
+  },
+  "reírse": {
+   "es": "de que ella decida reírse",
+   "en": ""
+  },
+  "pues": {
+   "es": "en el puesto",
+   "en": ""
+  },
+  "guarden": {
+   "es": "que me guarden lo que",
+   "en": ""
+  },
+  "quieran": {
+   "es": "me guarden lo que quieran",
+   "en": ""
+  },
+  "contesta": {
+   "es": "contesta",
+   "en": ""
+  },
+  "reparte": {
+   "es": "y reparte la fruta en",
+   "en": ""
+  },
+  "cocina": {
+   "es": "la fruta en la cocina",
+   "en": ""
+  }
+ },
+ "la-copla-ya-lo-decia": {
+  "copla": {
+   "es": "la copla ya lo decía",
+   "en": ""
+  },
+  "ya": {
+   "es": "la copla ya lo decía",
+   "en": ""
+  },
+  "lo": {
+   "es": "la copla ya lo decía",
+   "en": ""
+  },
+  "decía": {
+   "es": "la copla ya lo decía",
+   "en": ""
+  },
+  "en": {
+   "es": "en el archivo las coplas",
+   "en": ""
+  },
+  "archivo": {
+   "es": "en el archivo las coplas",
+   "en": ""
+  },
+  "coplas": {
+   "es": "archivo las coplas viven en",
+   "en": ""
+  },
+  "viven": {
+   "es": "las coplas viven en cajas",
+   "en": ""
+  },
+  "cajas": {
+   "es": "las coplas viven en cajas",
+   "en": ""
+  },
+  "y": {
+   "es": "la copla ya lo decía",
+   "en": ""
+  },
+  "abre": {
+   "es": "y claudia abre la más",
+   "en": ""
+  },
+  "más": {
+   "es": "claudia abre la más vieja",
+   "en": ""
+  },
+  "vieja": {
+   "es": "claudia abre la más vieja",
+   "en": ""
+  },
+  "quien": {
+   "es": "quien manda en las letras",
+   "en": ""
+  },
+  "manda": {
+   "es": "quien manda en las letras",
+   "en": ""
+  },
+  "letras": {
+   "es": "en las letras es carla",
+   "en": ""
+  },
+  "es": {
+   "es": "en las letras es carla",
+   "en": ""
+  },
+  "que": {
+   "es": "que escribe las nuevas",
+   "en": ""
+  },
+  "escribe": {
+   "es": "que escribe las nuevas",
+   "en": ""
+  },
+  "nuevas": {
+   "es": "que escribe las nuevas",
+   "en": ""
+  },
+  "huele": {
+   "es": "huele a papel húmedo y",
+   "en": ""
+  },
+  "a": {
+   "es": "la copla ya lo decía",
+   "en": ""
+  },
+  "papel": {
+   "es": "huele a papel húmedo y",
+   "en": ""
+  },
+  "húmedo": {
+   "es": "a papel húmedo y a",
+   "en": ""
+  },
+  "tinta": {
+   "es": "papel húmedo y a tinta",
+   "en": ""
+  },
+  "de": {
+   "es": "la copla ya lo decía",
+   "en": ""
+  },
+  "vitoria": {
+   "es": "la de vitoria también trabaja",
+   "en": ""
+  },
+  "también": {
+   "es": "de vitoria también trabaja en",
+   "en": ""
+  },
+  "trabaja": {
+   "es": "vitoria también trabaja en domingo",
+   "en": ""
+  },
+  "domingo": {
+   "es": "vitoria también trabaja en domingo",
+   "en": ""
+  },
+  "o": {
+   "es": "la copla ya lo decía",
+   "en": ""
+  },
+  "descansa": {
+   "es": "el domingo descansa de nosotros",
+   "en": ""
+  },
+  "nosotros": {
+   "es": "el domingo descansa de nosotros",
+   "en": ""
+  },
+  "suelta": {
+   "es": "suelta carla",
+   "en": ""
+  },
+  "se": {
+   "es": "claudia se pica y lo",
+   "en": ""
+  },
+  "pica": {
+   "es": "claudia se pica y lo",
+   "en": ""
+  },
+  "disimula": {
+   "es": "pica y lo disimula mal",
+   "en": ""
+  },
+  "mal": {
+   "es": "pica y lo disimula mal",
+   "en": ""
+  },
+  "muy": {
+   "es": "muy graciosa",
+   "en": ""
+  },
+  "graciosa": {
+   "es": "muy graciosa",
+   "en": ""
+  },
+  "contesta": {
+   "es": "contesta",
+   "en": ""
+  },
+  "le": {
+   "es": "quien manda en las letras",
+   "en": ""
+  },
+  "sale": {
+   "es": "y le sale flojo",
+   "en": ""
+  },
+  "flojo": {
+   "es": "y le sale flojo",
+   "en": ""
+  },
+  "caja": {
+   "es": "en el archivo las coplas",
+   "en": ""
+  },
+  "aparece": {
+   "es": "la caja aparece una copla",
+   "en": ""
+  },
+  "contra": {
+   "es": "una copla contra un socio",
+   "en": ""
+  },
+  "socio": {
+   "es": "contra un socio que barría",
+   "en": ""
+  },
+  "barría": {
+   "es": "socio que barría hasta en",
+   "en": ""
+  },
+  "hasta": {
+   "es": "que barría hasta en carnaval",
+   "en": ""
+  },
+  "carnaval": {
+   "es": "que barría hasta en carnaval",
+   "en": ""
+  },
+  "al": {
+   "es": "claudia se pica y lo",
+   "en": ""
+  },
+  "escoba": {
+   "es": "de la escoba le cantaron",
+   "en": ""
+  },
+  "cantaron": {
+   "es": "escoba le cantaron tres carnavales",
+   "en": ""
+  },
+  "carnavales": {
+   "es": "le cantaron tres carnavales seguidos",
+   "en": ""
+  },
+  "seguidos": {
+   "es": "le cantaron tres carnavales seguidos",
+   "en": ""
+  },
+  "era": {
+   "es": "era el más querido de",
+   "en": ""
+  },
+  "querido": {
+   "es": "el más querido de la",
+   "en": ""
+  },
+  "casa": {
+   "es": "más querido de la casa",
+   "en": ""
+  },
+  "dice": {
+   "es": "dice carla por encima del",
+   "en": ""
+  },
+  "por": {
+   "es": "dice carla por encima del",
+   "en": ""
+  },
+  "encima": {
+   "es": "carla por encima del hombro",
+   "en": ""
+  },
+  "del": {
+   "es": "carla por encima del hombro",
+   "en": ""
+  },
+  "hombro": {
+   "es": "carla por encima del hombro",
+   "en": ""
+  },
+  "lee": {
+   "es": "claudia la lee dos veces",
+   "en": ""
+  },
+  "veces": {
+   "es": "lee dos veces y se",
+   "en": ""
+  },
+  "escapa": {
+   "es": "se le escapa la risa",
+   "en": ""
+  },
+  "risa": {
+   "es": "se le escapa la risa",
+   "en": ""
+  },
+  "entonces": {
+   "es": "copla de entonces y la",
+   "en": ""
+  },
+  "guasa": {
+   "es": "y la guasa de ahora",
+   "en": ""
+  },
+  "ahora": {
+   "es": "guasa de ahora están cortadas",
+   "en": ""
+  },
+  "están": {
+   "es": "de ahora están cortadas por",
+   "en": ""
+  },
+  "cortadas": {
+   "es": "ahora están cortadas por el",
+   "en": ""
+  },
+  "mismo": {
+   "es": "cortadas por el mismo patrón",
+   "en": ""
+  },
+  "patrón": {
+   "es": "cortadas por el mismo patrón",
+   "en": ""
+  },
+  "aquí": {
+   "es": "aquí nadie se ríe de",
+   "en": ""
+  },
+  "nadie": {
+   "es": "aquí nadie se ríe de",
+   "en": ""
+  },
+  "ríe": {
+   "es": "nadie se ríe de ti",
+   "en": ""
+  },
+  "ti": {
+   "es": "huele a papel húmedo y",
+   "en": ""
+  },
+  "para": {
+   "es": "de ti para dejarte fuera",
+   "en": ""
+  },
+  "dejarte": {
+   "es": "de ti para dejarte fuera",
+   "en": ""
+  },
+  "fuera": {
+   "es": "de ti para dejarte fuera",
+   "en": ""
+  },
+  "vacila": {
+   "es": "se vacila a quien está",
+   "en": ""
+  },
+  "está": {
+   "es": "la copla de entonces y",
+   "en": ""
+  },
+  "dentro": {
+   "es": "vacila a quien está dentro",
+   "en": ""
+  },
+  "pique": {
+   "es": "el pique se le deshace",
+   "en": ""
+  },
+  "deshace": {
+   "es": "se le deshace sin avisar",
+   "en": ""
+  },
+  "sin": {
+   "es": "se le deshace sin avisar",
+   "en": ""
+  },
+  "avisar": {
+   "es": "se le deshace sin avisar",
+   "en": ""
+  },
+  "ponme": {
+   "es": "ponme en una copla cuando",
+   "en": ""
+  },
+  "cuando": {
+   "es": "una copla cuando me lo",
+   "en": ""
+  },
+  "me": {
+   "es": "huele a papel húmedo y",
+   "en": ""
+  },
+  "haya": {
+   "es": "cuando me lo haya ganado",
+   "en": ""
+  },
+  "ganado": {
+   "es": "cuando me lo haya ganado",
+   "en": ""
+  },
+  "propone": {
+   "es": "propone claudia",
+   "en": ""
+  },
+  "esta": {
+   "es": "contesta",
+   "en": ""
+  },
+  "vez": {
+   "es": "y esta vez la frase",
+   "en": ""
+  },
+  "frase": {
+   "es": "vez la frase es suya",
+   "en": ""
+  },
+  "suya": {
+   "es": "vez la frase es suya",
+   "en": ""
+  },
+  "mírala": {
+   "es": "mírala",
+   "en": ""
+  },
+  "va": {
+   "es": "que escribe las nuevas",
+   "en": ""
+  },
+  "saliendo": {
+   "es": "le va saliendo la guasa",
+   "en": ""
+  },
+  "admite": {
+   "es": "admite carla",
+   "en": ""
+  },
+  "con": {
+   "es": "contesta",
+   "en": ""
+  },
+  "media": {
+   "es": "con media sonrisa",
+   "en": ""
+  },
+  "sonrisa": {
+   "es": "con media sonrisa",
+   "en": ""
+  },
+  "libreta": {
+   "es": "en la libreta de las",
+   "en": ""
+  },
+  "quejas": {
+   "es": "de las quejas apunta la",
+   "en": ""
+  },
+  "apunta": {
+   "es": "las quejas apunta la broma",
+   "en": ""
+  },
+  "broma": {
+   "es": "apunta la broma del domingo",
+   "en": ""
+  }
+ },
+ "la-broma-se-queda-sola": {
+  "broma": {
+   "es": "la broma se queda sola",
+   "en": ""
+  },
+  "se": {
+   "es": "la broma se queda sola",
+   "en": ""
+  },
+  "queda": {
+   "es": "la broma se queda sola",
+   "en": ""
+  },
+  "sola": {
+   "es": "la broma se queda sola",
+   "en": ""
+  },
+  "a": {
+   "es": "la broma se queda sola",
+   "en": ""
+  },
+  "sobremesa": {
+   "es": "a la sobremesa del sábado",
+   "en": ""
+  },
+  "del": {
+   "es": "la sobremesa del sábado se",
+   "en": ""
+  },
+  "sábado": {
+   "es": "sobremesa del sábado se llega",
+   "en": ""
+  },
+  "llega": {
+   "es": "del sábado se llega ligero",
+   "en": ""
+  },
+  "ligero": {
+   "es": "del sábado se llega ligero",
+   "en": ""
+  },
+  "con": {
+   "es": "con la fruta y el",
+   "en": ""
+  },
+  "fruta": {
+   "es": "con la fruta y el",
+   "en": ""
+  },
+  "y": {
+   "es": "la fruta y el café",
+   "en": ""
+  },
+  "café": {
+   "es": "y el café por medio",
+   "en": ""
+  },
+  "por": {
+   "es": "y el café por medio",
+   "en": ""
+  },
+  "medio": {
+   "es": "y el café por medio",
+   "en": ""
+  },
+  "afila": {
+   "es": "carla afila la primera",
+   "en": ""
+  },
+  "primera": {
+   "es": "carla afila la primera",
+   "en": ""
+  },
+  "ver": {
+   "es": "a ver si este año",
+   "en": ""
+  },
+  "si": {
+   "es": "a ver si este año",
+   "en": ""
+  },
+  "este": {
+   "es": "ver si este año la",
+   "en": ""
+  },
+  "año": {
+   "es": "si este año la chirigota",
+   "en": ""
+  },
+  "chirigota": {
+   "es": "año la chirigota te saca",
+   "en": ""
+  },
+  "te": {
+   "es": "la chirigota te saca a",
+   "en": ""
+  },
+  "saca": {
+   "es": "chirigota te saca a ti",
+   "en": ""
+  },
+  "ti": {
+   "es": "chirigota te saca a ti",
+   "en": ""
+  },
+  "que": {
+   "es": "la broma se queda sola",
+   "en": ""
+  },
+  "material": {
+   "es": "que material das",
+   "en": ""
+  },
+  "das": {
+   "es": "que material das",
+   "en": ""
+  },
+  "deja": {
+   "es": "marcos se deja querer y",
+   "en": ""
+  },
+  "querer": {
+   "es": "se deja querer y hace",
+   "en": ""
+  },
+  "hace": {
+   "es": "deja querer y hace teatro",
+   "en": ""
+  },
+  "teatro": {
+   "es": "deja querer y hace teatro",
+   "en": ""
+  },
+  "ve": {
+   "es": "a ver si este año",
+   "en": ""
+  },
+  "hueco": {
+   "es": "ve el hueco y se",
+   "en": ""
+  },
+  "lanza": {
+   "es": "el hueco y se lanza",
+   "en": ""
+  },
+  "pues": {
+   "es": "pues cuando os echen del",
+   "en": ""
+  },
+  "cuando": {
+   "es": "pues cuando os echen del",
+   "en": ""
+  },
+  "os": {
+   "es": "marcos se deja querer y",
+   "en": ""
+  },
+  "echen": {
+   "es": "cuando os echen del local",
+   "en": ""
+  },
+  "local": {
+   "es": "cuando os echen del local",
+   "en": ""
+  },
+  "candado": {
+   "es": "el candado me lo quedo",
+   "en": ""
+  },
+  "me": {
+   "es": "a la sobremesa del sábado",
+   "en": ""
+  },
+  "lo": {
+   "es": "candado me lo quedo yo",
+   "en": ""
+  },
+  "quedo": {
+   "es": "me lo quedo yo de",
+   "en": ""
+  },
+  "yo": {
+   "es": "lo quedo yo de recuerdo",
+   "en": ""
+  },
+  "de": {
+   "es": "a la sobremesa del sábado",
+   "en": ""
+  },
+  "recuerdo": {
+   "es": "lo quedo yo de recuerdo",
+   "en": ""
+  },
+  "dispara": {
+   "es": "dispara",
+   "en": ""
+  },
+  "contenta": {
+   "es": "contenta de atreverse",
+   "en": ""
+  },
+  "atreverse": {
+   "es": "contenta de atreverse",
+   "en": ""
+  },
+  "nadie": {
+   "es": "nadie se ríe",
+   "en": ""
+  },
+  "ríe": {
+   "es": "nadie se ríe",
+   "en": ""
+  },
+  "silencio": {
+   "es": "el silencio le cae encima",
+   "en": ""
+  },
+  "le": {
+   "es": "a la sobremesa del sábado",
+   "en": ""
+  },
+  "cae": {
+   "es": "silencio le cae encima como",
+   "en": ""
+  },
+  "encima": {
+   "es": "le cae encima como un",
+   "en": ""
+  },
+  "como": {
+   "es": "cae encima como un mantel",
+   "en": ""
+  },
+  "mantel": {
+   "es": "encima como un mantel mojado",
+   "en": ""
+  },
+  "mojado": {
+   "es": "encima como un mantel mojado",
+   "en": ""
+  },
+  "servilleta": {
+   "es": "marcos deja la servilleta doblada",
+   "en": ""
+  },
+  "doblada": {
+   "es": "marcos deja la servilleta doblada",
+   "en": ""
+  },
+  "levanta": {
+   "es": "se levanta y sale al",
+   "en": ""
+  },
+  "sale": {
+   "es": "levanta y sale al patio",
+   "en": ""
+  },
+  "al": {
+   "es": "que material das",
+   "en": ""
+  },
+  "patio": {
+   "es": "sale al patio sin mirar",
+   "en": ""
+  },
+  "sin": {
+   "es": "al patio sin mirar a",
+   "en": ""
+  },
+  "mirar": {
+   "es": "patio sin mirar a nadie",
+   "en": ""
+  },
+  "rescata": {
+   "es": "carla rescata la mesa",
+   "en": ""
+  },
+  "mesa": {
+   "es": "a la sobremesa del sábado",
+   "en": ""
+  },
+  "bueno": {
+   "es": "bueno",
+   "en": ""
+  },
+  "alguien": {
+   "es": "alguien quiere más café",
+   "en": ""
+  },
+  "quiere": {
+   "es": "alguien quiere más café",
+   "en": ""
+  },
+  "más": {
+   "es": "alguien quiere más café",
+   "en": ""
+  },
+  "o": {
+   "es": "la broma se queda sola",
+   "en": ""
+  },
+  "mato": {
+   "es": "o lo mato ya",
+   "en": ""
+  },
+  "ya": {
+   "es": "o lo mato ya",
+   "en": ""
+  },
+  "apila": {
+   "es": "claudia apila platos que nadie",
+   "en": ""
+  },
+  "platos": {
+   "es": "claudia apila platos que nadie",
+   "en": ""
+  },
+  "ha": {
+   "es": "marcos se deja querer y",
+   "en": ""
+  },
+  "pedido": {
+   "es": "nadie le ha pedido apilar",
+   "en": ""
+  },
+  "apilar": {
+   "es": "nadie le ha pedido apilar",
+   "en": ""
+  },
+  "cabeza": {
+   "es": "con la cabeza en el",
+   "en": ""
+  },
+  "en": {
+   "es": "pues cuando os echen del",
+   "en": ""
+  },
+  "seguido": {
+   "es": "ha seguido la regla al",
+   "en": ""
+  },
+  "regla": {
+   "es": "seguido la regla al pie",
+   "en": ""
+  },
+  "pie": {
+   "es": "regla al pie de la",
+   "en": ""
+  },
+  "letra": {
+   "es": "al pie de la letra",
+   "en": ""
+  },
+  "pero": {
+   "es": "pero la regla tenía un",
+   "en": ""
+  },
+  "tenía": {
+   "es": "la regla tenía un mapa",
+   "en": ""
+  },
+  "mapa": {
+   "es": "la regla tenía un mapa",
+   "en": ""
+  },
+  "qué": {
+   "es": "qué he dicho",
+   "en": ""
+  },
+  "he": {
+   "es": "pues cuando os echen del",
+   "en": ""
+  },
+  "dicho": {
+   "es": "qué he dicho",
+   "en": ""
+  },
+  "pregunta": {
+   "es": "pregunta en voz baja",
+   "en": ""
+  },
+  "voz": {
+   "es": "pregunta en voz baja",
+   "en": ""
+  },
+  "baja": {
+   "es": "pregunta en voz baja",
+   "en": ""
+  },
+  "mañana": {
+   "es": "mañana te lo cuento",
+   "en": ""
+  },
+  "cuento": {
+   "es": "mañana te lo cuento",
+   "en": ""
+  },
+  "aquí": {
+   "es": "aquí no",
+   "en": ""
+  },
+  "no": {
+   "es": "bueno",
+   "en": ""
+  },
+  "contesta": {
+   "es": "contesta carla",
+   "en": ""
+  },
+  "aprieta": {
+   "es": "y le aprieta el brazo",
+   "en": ""
+  },
+  "brazo": {
+   "es": "aprieta el brazo al pasar",
+   "en": ""
+  },
+  "pasar": {
+   "es": "aprieta el brazo al pasar",
+   "en": ""
+  },
+  "tarde": {
+   "es": "la tarde ligera no vuelve",
+   "en": ""
+  },
+  "ligera": {
+   "es": "la tarde ligera no vuelve",
+   "en": ""
+  },
+  "vuelve": {
+   "es": "la tarde ligera no vuelve",
+   "en": ""
+  },
+  "mucho": {
+   "es": "por mucho que el café",
+   "en": ""
+  },
+  "dure": {
+   "es": "mucho que el café dure",
+   "en": ""
+  },
+  "explica": {
+   "es": "nadie más le explica nada",
+   "en": ""
+  },
+  "nada": {
+   "es": "nadie más le explica nada",
+   "en": ""
+  }
+ },
+ "de-eso-se-rie-marcos": {
+  "de": {
+   "es": "de eso se ríe marcos",
+   "en": ""
+  },
+  "eso": {
+   "es": "de eso se ríe marcos",
+   "en": ""
+  },
+  "se": {
+   "es": "de eso se ríe marcos",
+   "en": ""
+  },
+  "ríe": {
+   "es": "de eso se ríe marcos",
+   "en": ""
+  },
+  "cafés": {
+   "es": "dos cafés la esperan el",
+   "en": ""
+  },
+  "esperan": {
+   "es": "cafés la esperan el domingo",
+   "en": ""
+  },
+  "domingo": {
+   "es": "esperan el domingo en el",
+   "en": ""
+  },
+  "en": {
+   "es": "el domingo en el mostrador",
+   "en": ""
+  },
+  "mostrador": {
+   "es": "el domingo en el mostrador",
+   "en": ""
+  },
+  "y": {
+   "es": "y carla detrás",
+   "en": ""
+  },
+  "detrás": {
+   "es": "y carla detrás",
+   "en": ""
+  },
+  "al": {
+   "es": "al dueño le han comprado",
+   "en": ""
+  },
+  "dueño": {
+   "es": "al dueño le han comprado",
+   "en": ""
+  },
+  "le": {
+   "es": "al dueño le han comprado",
+   "en": ""
+  },
+  "han": {
+   "es": "dueño le han comprado el",
+   "en": ""
+  },
+  "comprado": {
+   "es": "le han comprado el edificio",
+   "en": ""
+  },
+  "edificio": {
+   "es": "le han comprado el edificio",
+   "en": ""
+  },
+  "después": {
+   "es": "después del verano",
+   "en": ""
+  },
+  "del": {
+   "es": "después del verano",
+   "en": ""
+  },
+  "verano": {
+   "es": "después del verano",
+   "en": ""
+  },
+  "fuera": {
+   "es": "fuera",
+   "en": ""
+  },
+  "explica": {
+   "es": "explica sin rodeos",
+   "en": ""
+  },
+  "sin": {
+   "es": "explica sin rodeos",
+   "en": ""
+  },
+  "rodeos": {
+   "es": "explica sin rodeos",
+   "en": ""
+  },
+  "momento": {
+   "es": "de momento",
+   "en": ""
+  },
+  "solo": {
+   "es": "solo se ríe marcos",
+   "en": ""
+  },
+  "regla": {
+   "es": "la regla entra sola",
+   "en": ""
+  },
+  "entra": {
+   "es": "la regla entra sola",
+   "en": ""
+  },
+  "sola": {
+   "es": "la regla entra sola",
+   "en": ""
+  },
+  "lo": {
+   "es": "solo se ríe marcos",
+   "en": ""
+  },
+  "que": {
+   "es": "de lo que duele hace",
+   "en": ""
+  },
+  "duele": {
+   "es": "lo que duele hace broma",
+   "en": ""
+  },
+  "hace": {
+   "es": "que duele hace broma su",
+   "en": ""
+  },
+  "broma": {
+   "es": "duele hace broma su dueño",
+   "en": ""
+  },
+  "su": {
+   "es": "duele hace broma su dueño",
+   "en": ""
+  },
+  "demás": {
+   "es": "y los demás esperan turno",
+   "en": ""
+  },
+  "turno": {
+   "es": "y los demás esperan turno",
+   "en": ""
+  },
+  "ayer": {
+   "es": "broma de ayer no era",
+   "en": ""
+  },
+  "no": {
+   "es": "después del verano",
+   "en": ""
+  },
+  "era": {
+   "es": "dos cafés la esperan el",
+   "en": ""
+  },
+  "mala": {
+   "es": "de ayer no era mala",
+   "en": ""
+  },
+  "otro": {
+   "es": "era de otro",
+   "en": ""
+  },
+  "a": {
+   "es": "de eso se ríe marcos",
+   "en": ""
+  },
+  "queda": {
+   "es": "se le queda la culpa",
+   "en": ""
+  },
+  "culpa": {
+   "es": "queda la culpa más pequeña",
+   "en": ""
+  },
+  "más": {
+   "es": "y los demás esperan turno",
+   "en": ""
+  },
+  "pequeña": {
+   "es": "queda la culpa más pequeña",
+   "en": ""
+  },
+  "aunque": {
+   "es": "aunque no desaparezca",
+   "en": ""
+  },
+  "desaparezca": {
+   "es": "aunque no desaparezca",
+   "en": ""
+  },
+  "archivo": {
+   "es": "en el archivo",
+   "en": ""
+  },
+  "lunes": {
+   "es": "el lunes huele a polvo",
+   "en": ""
+  },
+  "huele": {
+   "es": "el lunes huele a polvo",
+   "en": ""
+  },
+  "polvo": {
+   "es": "huele a polvo y a",
+   "en": ""
+  },
+  "cinta": {
+   "es": "polvo y a cinta nueva",
+   "en": ""
+  },
+  "nueva": {
+   "es": "polvo y a cinta nueva",
+   "en": ""
+  },
+  "aparece": {
+   "es": "marcos aparece con el candado",
+   "en": ""
+  },
+  "con": {
+   "es": "marcos aparece con el candado",
+   "en": ""
+  },
+  "candado": {
+   "es": "con el candado en la",
+   "en": ""
+  },
+  "mano": {
+   "es": "en la mano y lo",
+   "en": ""
+  },
+  "deja": {
+   "es": "y lo deja sobre el",
+   "en": ""
+  },
+  "sobre": {
+   "es": "lo deja sobre el escáner",
+   "en": ""
+  },
+  "escáner": {
+   "es": "lo deja sobre el escáner",
+   "en": ""
+  },
+  "final": {
+   "es": "al final te lo vas",
+   "en": ""
+  },
+  "te": {
+   "es": "al final te lo vas",
+   "en": ""
+  },
+  "vas": {
+   "es": "te lo vas a quedar",
+   "en": ""
+  },
+  "quedar": {
+   "es": "lo vas a quedar tú",
+   "en": ""
+  },
+  "tú": {
+   "es": "lo vas a quedar tú",
+   "en": ""
+  },
+  "aquí": {
+   "es": "aquí ya no va a",
+   "en": ""
+  },
+  "ya": {
+   "es": "aquí ya no va a",
+   "en": ""
+  },
+  "va": {
+   "es": "el lunes huele a polvo",
+   "en": ""
+  },
+  "cerrar": {
+   "es": "no va a cerrar nada",
+   "en": ""
+  },
+  "nada": {
+   "es": "no va a cerrar nada",
+   "en": ""
+  },
+  "suelta": {
+   "es": "suelta",
+   "en": ""
+  },
+  "ceja": {
+   "es": "con la ceja levantada",
+   "en": ""
+  },
+  "levantada": {
+   "es": "con la ceja levantada",
+   "en": ""
+  },
+  "es": {
+   "es": "de eso se ríe marcos",
+   "en": ""
+  },
+  "devuelta": {
+   "es": "devuelta en su idioma",
+   "en": ""
+  },
+  "idioma": {
+   "es": "devuelta en su idioma",
+   "en": ""
+  },
+  "vale": {
+   "es": "y vale por un perdón",
+   "en": ""
+  },
+  "por": {
+   "es": "y vale por un perdón",
+   "en": ""
+  },
+  "perdón": {
+   "es": "vale por un perdón entero",
+   "en": ""
+  },
+  "entero": {
+   "es": "vale por un perdón entero",
+   "en": ""
+  },
+  "ganas": {
+   "es": "claudia se ríe con ganas",
+   "en": ""
+  },
+  "mudanza": {
+   "es": "la mudanza duele",
+   "en": ""
+  },
+  "pero": {
+   "es": "pero ya se puede nombrar",
+   "en": ""
+  },
+  "puede": {
+   "es": "pero ya se puede nombrar",
+   "en": ""
+  },
+  "nombrar": {
+   "es": "pero ya se puede nombrar",
+   "en": ""
+  },
+  "trato": {
+   "es": "trato hecho",
+   "en": ""
+  },
+  "hecho": {
+   "es": "trato hecho",
+   "en": ""
+  },
+  "cuelgo": {
+   "es": "pero lo cuelgo en vitoria",
+   "en": ""
+  },
+  "vitoria": {
+   "es": "pero lo cuelgo en vitoria",
+   "en": ""
+  },
+  "remata": {
+   "es": "remata ella",
+   "en": ""
+  },
+  "ella": {
+   "es": "remata ella",
+   "en": ""
+  },
+  "copla": {
+   "es": "eso ya es una copla",
+   "en": ""
+  },
+  "concede": {
+   "es": "concede marcos",
+   "en": ""
+  },
+  "pone": {
+   "es": "y se pone a desmontar",
+   "en": ""
+  },
+  "desmontar": {
+   "es": "pone a desmontar la primera",
+   "en": ""
+  },
+  "primera": {
+   "es": "a desmontar la primera estantería",
+   "en": ""
+  },
+  "estantería": {
+   "es": "a desmontar la primera estantería",
+   "en": ""
+  },
+  "vuelve": {
+   "es": "claudia vuelve al escáner sabiendo",
+   "en": ""
+  },
+  "sabiendo": {
+   "es": "al escáner sabiendo para quién",
+   "en": ""
+  },
+  "para": {
+   "es": "escáner sabiendo para quién trabaja",
+   "en": ""
+  },
+  "quién": {
+   "es": "escáner sabiendo para quién trabaja",
+   "en": ""
+  },
+  "trabaja": {
+   "es": "escáner sabiendo para quién trabaja",
+   "en": ""
+  }
+ }
+}
