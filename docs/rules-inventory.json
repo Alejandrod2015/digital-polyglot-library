@@ -512,7 +512,7 @@
       "id": "project_feedback_channels_reality",
       "domain": "comms",
       "rule": "Todo el feedback de la beta viene del formulario web por correo; la hoja in-app no ha producido ni una fila desde que se lanzo el 2026-07-30.",
-      "gate": "none",
+      "gate": "process",
       "source": "memory:project_feedback_channels_reality.md"
     },
     {
@@ -932,7 +932,7 @@
       "id": "project_subscription_model_2026_09",
       "domain": "journey",
       "rule": "\"Modelo de suscripción DEFINITIVO (2026-09-06): muro duro + trial 7 días; free=historia del día sin cuenta, basic=tema 1, sin goteo\"",
-      "gate": "none",
+      "gate": "process",
       "source": "memory:project_subscription_model_2026_09.md"
     },
     {
@@ -1338,7 +1338,7 @@
       "id": "project_insider_group_plan",
       "domain": "process",
       "rule": "\"Grupo insider post-launch decidido 2026-09-06: 15-20 miembros, premium gratis a cambio de feedback, se forma al acercarse el fin de la gracia (2027-03-31)\"",
-      "gate": "none",
+      "gate": "process",
       "source": "memory:project_insider_group_plan.md"
     },
     {
@@ -1366,7 +1366,7 @@
       "id": "project_metro_flat_lookup_shadowing",
       "domain": "process",
       "rule": "\"apps/mobile/metro.config.js lleva disableHierarchicalLookup; si npm deja en la raiz una version vieja de un paquete que otro lleva anidado, gana la vieja y la app crashea al arrancar. Paso con @se...",
-      "gate": "none",
+      "gate": "process",
       "source": "memory:project_metro_flat_lookup_shadowing.md"
     },
     {
