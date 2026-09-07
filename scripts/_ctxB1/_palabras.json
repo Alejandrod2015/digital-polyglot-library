@@ -1,0 +1,61 @@
+{
+  "tartaruga-na-desova": {
+    "descem": { "es": "Descem, e embaixo da água ninguém fala", "en": "They go down, and underwater nobody speaks" }
+  },
+  "a-caixa-para-a-estrada": {
+    "e": { "es": "um barbante por cima e cheiro de queijo", "en": "string over the top and a smell of cheese" },
+    "leva": { "es": "Leva", "en": "Take it" },
+    "cobra": { "es": "Cobra", "en": "Charge me" }
+  },
+  "galeto-antes-do-preco": {
+    "depois": { "es": "Depois", "en": "Later" },
+    "senta": { "es": "Senta", "en": "Sit down" },
+    "entendeu": { "es": "Entendeu", "en": "Got it" }
+  },
+  "mais-um-pouquinho": {
+    "sério": { "es": "Não, obrigada, sério", "en": "No, thank you, really" },
+    "tudo": { "es": "com molho e tudo", "en": "sauce and all" }
+  },
+  "a-mare-leva-a-lancha": {
+    "diz": { "es": "aponta a boia com o queixo e diz", "en": "points at the buoy with his chin and says" }
+  },
+  "a-caucao-volta-dia-trinta": {
+    "e": { "es": "na estrada e o quarto", "en": "on the road and the room" },
+    "que": { "es": "arruma o que já está arrumado", "en": "tidies what is already tidy" }
+  },
+  "chuva-na-marginal": {
+    "moça": { "es": "Foi mal, moça", "en": "My bad, love" },
+    "quero": { "es": "Quero, aceita baixinho", "en": "I do, she accepts quietly" },
+    "gosta": { "es": "Gosta", "en": "She likes it" }
+  },
+  "tchau-no-engarrafamento": {
+    "que": { "es": "uma coisa que não tem graça", "en": "something that is not funny" }
+  },
+  "estacao-tubo-as-seis": {
+    "moço": { "es": "Não dá tempo, moço", "en": "There is no time, love" },
+    "tubo": { "es": "Estação-tubo às seis", "en": "Tube station at six" }
+  },
+  "pinhao-no-barigui": {
+    "moça": { "es": "Com o dente, moça", "en": "With your teeth, love" }
+  },
+  "o-telefone-sublinhado": {
+    "que": { "es": "não tem com que pagar", "en": "she has nothing to pay with" },
+    "pagar": { "es": "não tem com que pagar", "en": "she has nothing to pay with" }
+  },
+  "senha-b-quarenta-e-dois": {
+    "para": { "es": "A atendente do escritório tecla, para", "en": "The office clerk types, stops" },
+    "moça": { "es": "Foi publicado no diário, moça", "en": "It was published in the gazette, love" }
+  },
+  "o-andar-certo": {
+    "térreo": { "es": "Térreo, do lado do café", "en": "Ground floor, next to the café" },
+    "que": { "es": "um bebedouro que ninguém usa", "en": "a water cooler nobody uses" }
+  },
+  "deferido-no-diario": {
+    "saiu": { "es": "Saiu", "en": "It came out" }
+  },
+  "garoa-no-corredor": {
+    "pergunta": { "es": "Você é a moça de São Paulo?, pergunta", "en": "Are you the woman from São Paulo?, she asks" },
+    "sou": { "es": "Sou, responde Rafaela", "en": "I am, Rafaela answers" },
+    "precisa": { "es": "na orelha mais tempo do que precisa", "en": "at her ear longer than she needs to" }
+  }
+}
