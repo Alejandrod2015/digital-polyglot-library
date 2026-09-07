@@ -11225,6 +11225,254 @@
     "bastante": {
       "g": "enough, as much as it takes",
       "t": "adverb"
+    },
+    "pescoço": {
+      "g": "neck",
+      "t": "noun"
+    },
+    "dormiu": {
+      "g": "slept",
+      "t": "verb"
+    },
+    "remédio": {
+      "g": "medicine",
+      "t": "noun"
+    },
+    "ombro": {
+      "g": "shoulder",
+      "t": "noun"
+    },
+    "desiste": {
+      "g": "gives up",
+      "t": "verb"
+    },
+    "frasco": {
+      "g": "small bottle of medicine",
+      "t": "noun"
+    },
+    "embalagem": {
+      "g": "the box a product comes in",
+      "t": "noun"
+    },
+    "recomendo": {
+      "g": "I recommend",
+      "t": "verb"
+    },
+    "este": {
+      "g": "this one",
+      "t": "pronoun"
+    },
+    "amargo": {
+      "g": "bitter",
+      "t": "adjective"
+    },
+    "dor": {
+      "g": "pain",
+      "t": "noun"
+    },
+    "doença": {
+      "g": "illness",
+      "t": "noun"
+    },
+    "cama": {
+      "g": "bed",
+      "t": "noun"
+    },
+    "toma": {
+      "g": "takes, as in takes a pill",
+      "t": "verb"
+    },
+    "discutir": {
+      "g": "to argue about something",
+      "t": "verb"
+    },
+    "colchão": {
+      "g": "mattress",
+      "t": "noun"
+    },
+    "afunda": {
+      "g": "sinks in the middle",
+      "t": "verb"
+    },
+    "almofada": {
+      "g": "cushion, pillow",
+      "t": "noun"
+    },
+    "deita": {
+      "g": "lies down",
+      "t": "verb"
+    },
+    "sono": {
+      "g": "sleep, the need to sleep",
+      "t": "noun"
+    },
+    "barriga": {
+      "g": "belly",
+      "t": "noun"
+    },
+    "estômago": {
+      "g": "stomach",
+      "t": "noun"
+    },
+    "nervoso": {
+      "g": "nerves, being on edge",
+      "t": "noun"
+    },
+    "jaqueta": {
+      "g": "jacket",
+      "t": "noun"
+    },
+    "desce": {
+      "g": "goes down, downstairs",
+      "t": "verb"
+    },
+    "surpreender": {
+      "g": "to be surprised by it",
+      "t": "verb"
+    },
+    "aguento": {
+      "g": "I can put up with",
+      "t": "verb"
+    },
+    "durmo": {
+      "g": "I sleep",
+      "t": "verb"
+    },
+    "virando": {
+      "g": "turning over and over in bed",
+      "t": "verb"
+    },
+    "contando": {
+      "g": "counting",
+      "t": "verb"
+    },
+    "ouviu": {
+      "g": "heard, was told",
+      "t": "verb"
+    },
+    "pesar": {
+      "g": "to feel heavy",
+      "t": "verb"
+    },
+    "triste": {
+      "g": "sad",
+      "t": "adjective"
+    },
+    "enrolada": {
+      "g": "wrapped up in cloth",
+      "t": "adjective"
+    },
+    "machucou": {
+      "g": "hurt herself",
+      "t": "verb"
+    },
+    "caiu": {
+      "g": "fell",
+      "t": "verb"
+    },
+    "inchou": {
+      "g": "swelled up",
+      "t": "verb"
+    },
+    "osso": {
+      "g": "bone",
+      "t": "noun"
+    },
+    "pancada": {
+      "g": "a knock, a blow",
+      "t": "noun"
+    },
+    "sangue": {
+      "g": "blood",
+      "t": "noun"
+    },
+    "dobrar": {
+      "g": "to bend it",
+      "t": "verb"
+    },
+    "nariz": {
+      "g": "nose",
+      "t": "noun"
+    },
+    "enruga": {
+      "g": "wrinkles up",
+      "t": "verb"
+    },
+    "formiga": {
+      "g": "it tingles, pins and needles",
+      "t": "verb"
+    },
+    "engulo": {
+      "g": "I swallow",
+      "t": "verb"
+    },
+    "comprimido": {
+      "g": "a tablet, a pill",
+      "t": "noun"
+    },
+    "conheço": {
+      "g": "I know it, I have seen it before",
+      "t": "verb"
+    },
+    "devolvendo": {
+      "g": "giving it back",
+      "t": "verb"
+    },
+    "hospital": {
+      "g": "hospital",
+      "t": "noun"
+    },
+    "quadras": {
+      "g": "blocks, city blocks",
+      "t": "noun"
+    },
+    "cuido": {
+      "g": "I look after",
+      "t": "verb"
+    },
+    "prefiro": {
+      "g": "I prefer",
+      "t": "verb"
+    },
+    "discutem": {
+      "g": "they argue",
+      "t": "verb"
+    },
+    "calmas": {
+      "g": "calm, without raising their voices",
+      "t": "adjective"
+    },
+    "protegido": {
+      "g": "protected, held safe",
+      "t": "adjective"
+    },
+    "vermelha": {
+      "g": "red",
+      "t": "adjective"
+    },
+    "sermão": {
+      "g": "a telling off",
+      "t": "noun"
+    },
+    "fraturou": {
+      "g": "it is broken, it fractured",
+      "t": "verb"
+    },
+    "tranquila": {
+      "g": "calm and settled",
+      "t": "adjective"
+    },
+    "bebem": {
+      "g": "they drink",
+      "t": "verb"
+    },
+    "horário": {
+      "g": "the usual opening time",
+      "t": "noun"
+    },
+    "escolas": {
+      "g": "schools",
+      "t": "noun"
     }
   }
 }

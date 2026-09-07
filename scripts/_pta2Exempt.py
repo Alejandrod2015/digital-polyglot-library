@@ -1,4 +1,4 @@
-"""Anade la fila del A2 PT a la lista de exentos del lookup de glosas.
+"""Anade (o pone al dia) la fila del A2 PT en la lista de exentos del lookup.
 
 Exento NO quiere decir "sin glosa que valga": quiere decir que el lector no
 envuelve esa palabra en un span tocable, asi que no deja un toque muerto.
@@ -13,7 +13,7 @@ d["bundles"]["portuguese-traveler-brazil-a2"] = {
     "articles": ["a", "as", "o", "os", "um", "uma", "uns", "umas", "às"],
     # "alegre" es el segundo trozo de Porto Alegre, igual que "noronha" en el
     # B1: nombre propio del mapa, no una palabra que alguien vaya a tocar.
-    "characterNames": ["renata", "gilson", "alegre"],
+    "characterNames": ["renata", "gilson", "alegre", "nilza"],
     "numerals": ["dezoito", "dois", "seis", "três"],
 }
 json.dump(d, open(RUTA, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
