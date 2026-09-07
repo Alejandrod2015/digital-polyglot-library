@@ -306,6 +306,30 @@ async function aprieta(bundle: string, dir: string) {
   console.log(`ingleses reescritos en sitio: ${n}`);
 }
 
+/** Las palabras glosadas que NO caen en ningún trozo, cada una con la oración
+ *  donde sale. Son las que el troceador se deja: aparecen en una frase de una
+ *  sola palabra tocable, o en un trozo que el filtro descartó. Se escriben a
+ *  mano en el fichero que come `palabras`. */
+async function sueltas(bundle: string) {
+  const { filas, global, historias } = await cargar(bundle);
+  let n = 0;
+  for (const h of historias) {
+    const propia = filas.find((f) => f.slug === h.slug)?.glosses ?? {};
+    const texto = `${h.title}. ${h.text}`;
+    const faltan = [...tocablesDe(texto, global)]
+      .filter((w) => !(propia[w] as { c?: unknown } | undefined)?.c);
+    if (!faltan.length) continue;
+    console.log(`\n── ${h.slug}`);
+    for (const w of faltan) {
+      const re = new RegExp(`(?<!\\p{L})${w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?!\\p{L})`, "iu");
+      const frase = texto.split(/(?<=[.!?…][”"]?)\s+|\n+/).find((f) => re.test(f)) ?? "(no la encuentro)";
+      console.log(`  ${w}\n    ${frase.trim()}`);
+      n++;
+    }
+  }
+  console.log(`\npalabras sueltas: ${n}`);
+}
+
 async function huerfanas(bundle: string, fix: boolean) {
   const { filas, historias } = await cargar(bundle);
   let n = 0;
@@ -357,6 +381,7 @@ if (require.main === module) {
     else if (cmd === "escribe") await escribe(bundle, arg, flag("rehaz"));
     else if (cmd === "palabras") await palabras(bundle, arg);
     else if (cmd === "aprieta") await aprieta(bundle, arg);
+    else if (cmd === "sueltas") await sueltas(bundle);
     else if (cmd === "huerfanas") await huerfanas(bundle, flag("fix"));
     else if (cmd === "largos") await largos(bundle);
     else throw new Error(`no conozco el comando "${cmd}"`);
