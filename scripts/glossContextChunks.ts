@@ -279,6 +279,33 @@ function saleLiteral(texto: string, clave: string): boolean {
   return new RegExp(`(?<![\\p{L}\\p{M}])${esc}(?![\\p{L}\\p{M}])`, "u").test(texto);
 }
 
+/** Reescribe el inglés de los trozos QUE YA ESTÁN, sin tocar el resto de la
+ *  capa. Es lo que hay que usar cuando un trozo ya escrito se pasa de largo:
+ *  `escribe` no pisa lo que ya tiene `c`, y `--rehaz` arrasa tambien la capa
+ *  que escribió otra sesión. */
+async function aprieta(bundle: string, dir: string) {
+  const { filas } = await cargar(bundle);
+  let n = 0;
+  for (const f of filas) {
+    if (!f.slug) continue;
+    const fichero = `${dir}/${f.slug}.json`;
+    if (!fs.existsSync(fichero)) continue;
+    const EN = JSON.parse(fs.readFileSync(fichero, "utf8")) as Record<string, string>;
+    let tocada = false;
+    for (const v of Object.values(f.glosses) as Array<{ c?: { es?: string; en?: string } }>) {
+      const es = v?.c?.es;
+      if (!es || !EN[es] || EN[es] === v.c!.en) continue;
+      v.c!.en = EN[es];
+      tocada = true; n++;
+    }
+    if (!tocada) continue;
+    await prisma.tapGlossSet.update({
+      where: { bundle_slug: { bundle, slug: f.slug } }, data: { glosses: f.glosses as never },
+    });
+  }
+  console.log(`ingleses reescritos en sitio: ${n}`);
+}
+
 async function huerfanas(bundle: string, fix: boolean) {
   const { filas, historias } = await cargar(bundle);
   let n = 0;
@@ -323,12 +350,13 @@ if (require.main === module) {
   (async () => {
     const [cmd, bundle, arg] = process.argv.slice(2);
     const flag = (n: string) => process.argv.includes(`--${n}`);
-    if (!cmd || !bundle) throw new Error("uso: glossContextChunks.ts <cuenta|trozos|faltan|escribe|palabras|huerfanas|largos> <bundle> [...]");
+    if (!cmd || !bundle) throw new Error("uso: glossContextChunks.ts <cuenta|trozos|faltan|escribe|aprieta|palabras|huerfanas|largos> <bundle> [...]");
     if (cmd === "cuenta") await cuenta(bundle);
     else if (cmd === "trozos") await trozos(bundle, arg, flag("json"));
     else if (cmd === "faltan") await faltanCmd(bundle, arg);
     else if (cmd === "escribe") await escribe(bundle, arg, flag("rehaz"));
     else if (cmd === "palabras") await palabras(bundle, arg);
+    else if (cmd === "aprieta") await aprieta(bundle, arg);
     else if (cmd === "huerfanas") await huerfanas(bundle, flag("fix"));
     else if (cmd === "largos") await largos(bundle);
     else throw new Error(`no conozco el comando "${cmd}"`);
