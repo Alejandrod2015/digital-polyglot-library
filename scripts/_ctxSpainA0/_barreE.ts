@@ -15,8 +15,17 @@ const saleLiteral = (texto: string, clave: string) =>
 
 (async () => {
   const filas = await p.tapGlossSet.findMany({ select: { bundle: true, slug: true, glosses: true } });
-  const hs = await p.journeyStory.findMany({ select: { slug: true, title: true, text: true } });
+  const hs = await p.journeyStory.findMany({ select: { slug: true, title: true, text: true, vocab: true } });
   const texto = new Map(hs.map((h) => [h.slug, `${h.title}. ${h.text}`.toLowerCase()]));
+  // La segunda puerta: VocabPanel busca por superficie Y POR LEMA, asi que una
+  // clave que no sale en el texto puede estar viva en el panel.
+  const vocabDe = new Map(hs.map((h) => [
+    h.slug,
+    new Set(((h.vocab ?? []) as Array<{ word?: string; surface?: string }>)
+      .flatMap((v) => [v.word, v.surface])
+      .filter((x): x is string => Boolean(x))
+      .map((x) => x.trim().toLowerCase())),
+  ]));
 
   const porBundle = new Map<string, { total: number; conteo: Map<string, number>; porHistoria: Map<string, number> }>();
   for (const f of filas) {
@@ -24,8 +33,9 @@ const saleLiteral = (texto: string, clave: string) =>
     const t = texto.get(f.slug);
     if (!t) continue;
     const enTexto = new Set([...t.matchAll(TOCABLE)].map((m) => m[0]));
+    const enVocab = vocabDe.get(f.slug) ?? new Set<string>();
     for (const w of Object.keys(f.glosses as object)) {
-      if (enTexto.has(w) || saleLiteral(t, w)) continue;
+      if (enTexto.has(w) || saleLiteral(t, w) || enVocab.has(w)) continue;
       const b = porBundle.get(f.bundle) ?? { total: 0, conteo: new Map(), porHistoria: new Map() };
       b.total++; b.conteo.set(w, (b.conteo.get(w) ?? 0) + 1);
       b.porHistoria.set(f.slug, (b.porHistoria.get(f.slug) ?? 0) + 1);

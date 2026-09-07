@@ -341,6 +341,25 @@ async function sueltas(bundle: string) {
 
 async function huerfanas(bundle: string, fix: boolean) {
   const { filas, historias } = await cargar(bundle);
+  // El VOCABULARIO de la historia es la segunda puerta. VocabPanel busca la
+  // entrada por superficie Y POR LEMA (src/components/VocabPanel.tsx), asi que
+  // una clave que el lector de tap no alcanza jamas ("pedir silencio", "caer
+  // en la cuenta") si la alcanza el panel al pulsar esa palabra. Mirar solo el
+  // texto las daba por muertas: con esa lectura borre 57 vivas, y once se
+  // quedaron sin ninguna llave.
+  const vocabDe = new Map(
+    (await prisma.journeyStory.findMany({
+      where: { slug: { in: historias.map((h) => h.slug) } }, select: { slug: true, vocab: true },
+    })).map((h) => [
+      h.slug,
+      new Set(
+        ((h.vocab ?? []) as Array<{ word?: string; surface?: string }>)
+          .flatMap((v) => [v.word, v.surface])
+          .filter((x): x is string => Boolean(x))
+          .map((x) => x.trim().toLowerCase())
+      ),
+    ])
+  );
   let n = 0;
   for (const f of filas) {
     if (!f.slug) continue;
@@ -348,7 +367,9 @@ async function huerfanas(bundle: string, fix: boolean) {
     if (!h) continue;
     const texto = `${h.title}. ${h.text}`.toLowerCase();
     const enTexto = new Set([...texto.matchAll(TOCABLE)].map((m) => m[0]));
-    const fuera = Object.keys(f.glosses).filter((w) => !enTexto.has(w) && !saleLiteral(texto, w));
+    const enVocab = vocabDe.get(f.slug) ?? new Set<string>();
+    const fuera = Object.keys(f.glosses)
+      .filter((w) => !enTexto.has(w) && !saleLiteral(texto, w) && !enVocab.has(w));
     if (!fuera.length) continue;
     n += fuera.length;
     console.log(`${f.slug}: ${fuera.join(", ")}`);

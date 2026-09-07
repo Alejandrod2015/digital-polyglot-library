@@ -1254,10 +1254,6 @@
       "g": "more expensive (teuer)",
       "t": "adjective"
     },
-    "lichtern": {
-      "g": "lights (die Lichter)",
-      "t": "noun"
-    },
     "schachtel": {
       "g": "small box (die Schachtel)",
       "t": "noun"
@@ -3299,10 +3295,6 @@
     "settembre": {
       "g": "September",
       "t": "noun"
-    },
-    "lasciata": {
-      "g": "left (lasciare)",
-      "t": "verb"
     },
     "nebbia": {
       "g": "fog (la nebbia)",
@@ -5598,10 +5590,6 @@
       "g": "to find out",
       "t": "verb"
     },
-    "firmo": {
-      "g": "I sign (firmar)",
-      "t": "verb"
-    },
     "corbata": {
       "g": "a tie",
       "t": "noun"
@@ -5629,10 +5617,6 @@
     "sorbete": {
       "g": "a sorbet, a fruit ice",
       "t": "noun"
-    },
-    "cuídese": {
-      "g": "take care (cuidarse)",
-      "t": "verb"
     },
     "siéntese": {
       "g": "sit down (sentarse)",
@@ -5726,20 +5710,8 @@
       "g": "debts",
       "t": "noun"
     },
-    "llamara": {
-      "g": "called him (llamar)",
-      "t": "verb"
-    },
-    "conste": {
-      "g": "let it be clear (constar)",
-      "t": "verb"
-    },
     "hablé": {
       "g": "I spoke (hablar)",
-      "t": "verb"
-    },
-    "contárselo": {
-      "g": "telling it to them (contar)",
       "t": "verb"
     },
     "anotar": {
@@ -5764,10 +5736,6 @@
     },
     "trabajaba": {
       "g": "used to work (trabajar)",
-      "t": "verb"
-    },
-    "cobro": {
-      "g": "I charge for it (cobrar)",
       "t": "verb"
     },
     "cose": {
