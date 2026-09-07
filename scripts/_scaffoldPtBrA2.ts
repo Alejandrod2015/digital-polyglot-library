@@ -47,7 +47,7 @@ const CITAS_DEL_JOURNEY = [A, D, C];
  *   la casa compartida y su turno          -> jericoacoara
  *   el plan que se moja                    -> lencois-maranhenses
  *   la noche que se pasa viajando          -> campo-grande
- *   lo que se manda y no llega             -> petropolis
+ *   el trabajo que viaja con ella          -> petropolis
  *   el frio que nadie le habia dicho       -> gramado
  */
 const TEMAS: Array<{ slug: string; label: string }> = [
@@ -56,7 +56,7 @@ const TEMAS: Array<{ slug: string; label: string }> = [
   { slug: "jericoacoara",         label: "Kitchens & Chores" },
   { slug: "lencois-maranhenses",  label: "Storms & Changed Plans" },
   { slug: "campo-grande",         label: "Buses & Night Rides" },
-  { slug: "petropolis",           label: "Post & Parcels" },
+  { slug: "petropolis",           label: "Laptops & Deadlines" },
   { slug: "gramado",              label: "Laundry & Cold Nights" },
 ];
 

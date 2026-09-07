@@ -12,8 +12,13 @@ const PORT = new Set(["verb", "adjective", "adverb", "expression"]);
 
 (async () => {
   const plan = JSON.parse(fs.readFileSync("scripts/pt-a2-vocab-plan.json", "utf8"));
+  // El propio A2 queda FUERA: en cuanto se guarda un tema, sus palabras
+  // aparecerian aqui como "ya enseñadas por otro journey" y el plan se
+  // denunciaria a si mismo. La repeticion DENTRO del journey ya la vigila
+  // `vocab-repetition` al guardar, y la unicidad global de las 420 la
+  // comprueba este mismo script mas abajo.
   const st = await p.journeyStory.findMany({
-    where: { journey: { language: "portuguese" } },
+    where: { journey: { language: "portuguese" }, journeyId: { not: "cmtrcpgso00073232h8vaf7na" } },
     select: { vocab: true },
   });
   /** lema -> tipo con el que lo enseño quien lo enseño */

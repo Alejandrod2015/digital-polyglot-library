@@ -1971,6 +1971,70 @@
       ]
     }
   },
+  "cmtrcpgso00073232h8vaf7na#petropolis": {
+    "cerrado": "2026-09-07T20:00:20.323Z",
+    "hash": "59ecf2cdec86c32c",
+    "historias": [
+      "petropolis#0 o-carregador-queimou",
+      "petropolis#1 quatro-meses-nao-dois",
+      "petropolis#2 quinze-folhas-e-barbante"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"práctico y algo tenso, con un aliado que no cobra por ayudar\", espina \"Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.\")",
+      "validador canonico: 3/3 (perfil narrador)",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"diz\" 30%)",
+      "arranques de parrafo variados (mas repetido \"wilson\", 18%)",
+      "densidad 10.3 palabras por oracion (techo 13 en a2)",
+      "seguidilla 12/44 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.17 sobre 42 plazas · 35 salen una sola vez | ancladas: 18/60 (30%) | cola: 35/42 portables con un solo encuentro (83%, tope 80%) | de un solo encuentro: funcionar, liga, desliga, compra, recebe, enviava, confere, caro, barato, novo, velho, fechado, conecta, digita, mostra, paga, cobra, escolhe, deixa, agradece, má, rica, pobre, embrulha, Amarra, dobra, empresta, manda, vendo, aberta…",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "traveler",
+      "nivel": "a2",
+      "variante": "brazil",
+      "registro": "práctico y algo tenso, con un aliado que no cobra por ayudar",
+      "espina": "Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.",
+      "recursos": "A2: símil simple y contraste con pero, más causalidad explícita (el cable roto explica la reunión, la reunión explica el informe). El remate de cada historia es una imagen concreta: la luz verde, el café en la mesa prestada, el frío en la calle con el abrigo abierto. Sin espejo concreto, que ya cargaron los temas 2 y 3, y sin nada de B1 o superior.",
+      "historias": [
+        {
+          "slot": "petropolis#0",
+          "quiere": "Renata quiere un cargador hoy, antes de la reunión de mañana.",
+          "impide": "El suyo se quemó anoche, el repuesto está en el correo y el correo cierra al mediodía en sábado.",
+          "cuesta": "Pagar el triple por un genérico sabiendo que el barato dura tres meses.",
+          "cambia": "Deja de esperar al que pidió y compra el que hay; se guarda el viejo por si acaso.",
+          "emocion": "agobio que se resuelve pagando"
+        },
+        {
+          "slot": "petropolis#1",
+          "quiere": "Renata quiere conservar el trabajo sin aceptar el doble de encargo por el mismo sueldo.",
+          "impide": "Se le cae la conexión diez minutos antes y las dos salidas que le ofrecen son malas.",
+          "cuesta": "Proponer una tercera en voz alta y aguantar el silencio que viene después.",
+          "cambia": "Se lo aceptan, y ella descubre que lo que estaba negociando no era dinero sino calendario.",
+          "emocion": "miedo que se atreve"
+        },
+        {
+          "slot": "petropolis#2",
+          "quiere": "Renata quiere mandar el informe en papel antes de las cinco.",
+          "impide": "La impresora se atasca, el paquete pesa demasiado para un sobre y el envío al extranjero no sale hoy.",
+          "cuesta": "Depender otra vez de la tienda de alguien que no le cobra por ayudar.",
+          "cambia": "Lo manda igual sabiendo que sale el lunes, y sale a la calle con el abrigo abierto porque ya da lo mismo.",
+          "emocion": "tensión que se afloja"
+        }
+      ]
+    }
+  },
   "cmtrcpgso00073232h8vaf7na#recife": {
     "cerrado": "2026-09-07T15:04:31.858Z",
     "hash": "7a43b946344c545a",
