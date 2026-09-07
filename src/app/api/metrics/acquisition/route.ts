@@ -75,6 +75,19 @@ type RecentSignup = {
    * la cohorte manda y este distintivo solo describe.
    */
   bought: boolean;
+  /**
+   * Práctica. Van los tres campos crudos en vez de una cadena ya montada
+   * porque "4/5 · 90%" y "no ha practicado nunca" no son la misma ausencia,
+   * y quien pinta la tabla necesita poder distinguirlas.
+   *
+   * `practiceStarted` nunca es menor que `practiceCompleted`: la app móvil
+   * manda el evento de fin de una práctica de historia sin el de inicio que
+   * sí escribe la web, y el denominador se corrige al mayor de los dos.
+   */
+  practiceStarted: number;
+  practiceCompleted: number;
+  /** Media de `accuracyPercent` de las sesiones TERMINADAS. null si ninguna. */
+  practiceAccuracy: number | null;
   platform: "ios" | "android" | "web" | null;
 };
 
@@ -147,7 +160,15 @@ export async function GET(req: NextRequest): Promise<Response> {
     const ids = cohort.map((u) => u.id);
 
     // ── DB cross-reference (single round of grouped queries) ──
-    const [audioEvents, plansEvents, continueRows, entitlements, claimRows, activityRows] = await Promise.all([
+    const [
+      audioEvents,
+      plansEvents,
+      continueRows,
+      entitlements,
+      claimRows,
+      activityRows,
+      practiceRows,
+    ] = await Promise.all([
       ids.length
         ? prisma.userMetric.findMany({
             where: { userId: { in: ids }, eventType: { in: ["story_opened", "audio_play", "audio_complete", "audio_pause", "continue_listening"] } },
@@ -193,6 +214,20 @@ export async function GET(req: NextRequest): Promise<Response> {
             },
             select: { userId: true, createdAt: true },
             take: 200000,
+          })
+        : Promise.resolve([]),
+      // Practica: las dos mitades del mismo gesto. Empezar una sesion y
+      // terminarla son eventos distintos a proposito, y la distancia entre
+      // ambos es la mitad de lo que dice la columna: quien empieza cinco y
+      // acaba dos no esta practicando, esta abandonando.
+      ids.length
+        ? prisma.userMetric.findMany({
+            where: {
+              userId: { in: ids },
+              eventType: { in: ["practice_session_started", "practice_session_completed"] },
+            },
+            select: { userId: true, eventType: true, metadata: true },
+            take: 100000,
           })
         : Promise.resolve([]),
     ]);
@@ -431,6 +466,45 @@ export async function GET(req: NextRequest): Promise<Response> {
       return undefined;
     };
 
+    // ── Practica por persona ──
+    // `accuracyPercent` viene dentro del `metadata` de cada sesion terminada.
+    // La media es de las sesiones terminadas y solo de esas: una sesion que
+    // se abandona no deja nota, y contarla como cero diria que fallo cuando
+    // lo que hizo fue irse.
+    type PracticeAgg = { started: number; completed: number; accuracy: number | null };
+    const practiceBy = new Map<string, PracticeAgg>();
+    const accuracyByUser = new Map<string, number[]>();
+    for (const row of practiceRows) {
+      const agg = practiceBy.get(row.userId) ?? { started: 0, completed: 0, accuracy: null };
+      if (row.eventType === "practice_session_started") agg.started += 1;
+      else {
+        agg.completed += 1;
+        const meta =
+          row.metadata && typeof row.metadata === "object"
+            ? (row.metadata as Record<string, unknown>)
+            : null;
+        if (typeof meta?.accuracyPercent === "number" && Number.isFinite(meta.accuracyPercent)) {
+          const list = accuracyByUser.get(row.userId) ?? [];
+          list.push(meta.accuracyPercent);
+          accuracyByUser.set(row.userId, list);
+        }
+      }
+      practiceBy.set(row.userId, agg);
+    }
+    for (const [userId, list] of accuracyByUser) {
+      const agg = practiceBy.get(userId);
+      if (agg && list.length) {
+        agg.accuracy = Math.round(list.reduce((sum, v) => sum + v, 0) / list.length);
+      }
+    }
+    // Terminar sin haber empezado pasa: la app movil manda el `completed` de
+    // una practica de historia sin el `started` que la web si escribe. La
+    // columna diria "2/0", asi que el denominador es el mayor de los dos.
+    const practiceFor = (userId: string): PracticeAgg => {
+      const agg = practiceBy.get(userId) ?? { started: 0, completed: 0, accuracy: null };
+      return { ...agg, started: Math.max(agg.started, agg.completed) };
+    };
+
     const recent: RecentSignup[] = cohort
       .sort((a, b) => b.createdAt - a.createdAt)
       .map((u) => {
@@ -442,6 +516,7 @@ export async function GET(req: NextRequest): Promise<Response> {
         const declaredLevel = typeof md.preferredLevel === "string" ? (md.preferredLevel as string) : null;
         const clerkName = [u.firstName, u.lastName].filter(Boolean).join(" ") || null;
         const betaName = beta?.firstName?.trim() || null;
+        const practice = practiceFor(u.id);
         return {
           userId: u.id,
           name: clerkName ?? betaName,
@@ -464,6 +539,9 @@ export async function GET(req: NextRequest): Promise<Response> {
           viewedPlans: plansBy.has(u.id),
           paid: paidBy.has(u.id),
           bought: boughtBy.has(u.id),
+          practiceStarted: practice.started,
+          practiceCompleted: practice.completed,
+          practiceAccuracy: practice.accuracy,
           platform: platformFor(u),
         };
       });

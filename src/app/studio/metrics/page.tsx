@@ -1002,6 +1002,11 @@ type AcquisitionPayload = {
     paid: boolean;
     /** Redimió un claim de libro o tiene suscripción viva. */
     bought?: boolean;
+    /** Práctica. Falta en respuestas cacheadas de antes de la columna. */
+    practiceStarted?: number;
+    practiceCompleted?: number;
+    /** Media de aciertos de las sesiones terminadas. */
+    practiceAccuracy?: number | null;
     platform: "ios" | "android" | "web" | null;
   }>;
   clerkInstance: string;
@@ -1784,6 +1789,7 @@ function AcquisitionView({
                   <th style={{ padding: "4px 6px" }}>Onb.</th>
                   <th style={{ padding: "4px 6px" }}>Abrió</th>
                   <th style={{ padding: "4px 6px" }}>Escuchó</th>
+                  <th style={{ padding: "4px 6px" }}>Practicó</th>
                   <th style={{ padding: "4px 6px" }}>Precios</th>
                   <th style={{ padding: "4px 6px" }}>Pagó</th>
                 </tr>
@@ -1911,6 +1917,30 @@ function AcquisitionView({
                         "-"
                       )}
                     </td>
+                    <td style={{ padding: "4px 6px" }}>
+                      {/* Terminadas/empezadas y la nota media. Las dos cifras
+                          juntas porque por separado engañan: cinco sesiones
+                          empezadas parece uso y puede ser abandono, y un 95%
+                          sobre una sola sesión no es una nota, es una tirada. */}
+                      {(r.practiceStarted ?? 0) > 0 ? (
+                        <span
+                          style={{ cursor: "help", fontVariantNumeric: "tabular-nums" }}
+                          title={[
+                            `${r.practiceCompleted ?? 0} sesiones terminadas de ${r.practiceStarted} empezadas.`,
+                            typeof r.practiceAccuracy === "number"
+                              ? `Media de aciertos de las terminadas: ${r.practiceAccuracy}%.`
+                              : "Ninguna terminada, así que no hay nota.",
+                          ].join(" ")}
+                        >
+                          {r.practiceCompleted ?? 0}/{r.practiceStarted}
+                          {typeof r.practiceAccuracy === "number" && (
+                            <span style={{ opacity: 0.7 }}> · {r.practiceAccuracy}%</span>
+                          )}
+                        </span>
+                      ) : (
+                        "-"
+                      )}
+                    </td>
                     <td style={{ padding: "4px 6px" }}>{r.viewedPlans ? "✓" : "-"}</td>
                     <td style={{ padding: "4px 6px" }}>{r.paid ? "✓" : "-"}</td>
                   </tr>
@@ -1924,6 +1954,10 @@ function AcquisitionView({
             al menos una. <span>*</span> = el valor incluye algún checkpoint, que se graba a saltos de
             ~20s, así que es un suelo. <span>▶?</span> = dio play pero se fue antes del primer
             checkpoint, así que no hay nada medido.
+            <br />
+            <strong style={{ fontWeight: 600 }}>Practicó</strong>: sesiones terminadas de las
+            empezadas, y la media de aciertos de las terminadas. Una sesión abandonada no deja
+            nota, así que no cuenta en la media.
           </p>
         </div>
       )}
