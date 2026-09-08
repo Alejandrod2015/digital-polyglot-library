@@ -804,7 +804,7 @@ function slugify(s: string): string {
       }))?.typeSlug ?? null;
       const jc = validateJourneyStories(todas, {
         language: ctx.language, level: ctx.level, realPeople, conjuntoCompleto: completo,
-        journeyType: tipoJourney,
+        journeyType: tipoJourney, journeyId,
       });
       const malos = jc.filter((c) => c.status === "fail" || c.status === "not-implemented");
       const enEspera = jc.filter((c) => c.status === "pending-set");
@@ -836,7 +836,7 @@ function slugify(s: string): string {
         // posterior se leía como EMPEORA por la primera linea de empeora().
         const antes = validateJourneyStories(base, {
           language: ctx.language, level: ctx.level, realPeople,
-          conjuntoCompleto: completo, journeyType: tipoJourney,
+          conjuntoCompleto: completo, journeyType: tipoJourney, journeyId,
         });
         const porId = new Map(antes.map((c) => [c.id, c]));
         const slugs = todas.map((t) => t.slug);

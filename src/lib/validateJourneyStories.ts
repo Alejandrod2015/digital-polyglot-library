@@ -47,6 +47,7 @@ import rulesDoc from "../../docs/story-rules.json";
 import { renderedParagraphs } from "@/lib/readerParagraphs";
 import { isSpanishUpToLevel } from "@/lib/cefr/spanishLevels";
 import { esHuecoDelLexico } from "@/lib/cefr/spanishLexiconGaps";
+import { sueloDeNivel } from "@/lib/journeyVocabFloorBaseline";
 import { isPortugueseA1A2 } from "@/lib/cefr/portugueseA1A2";
 import { isItalianA1A2 } from "@/lib/cefr/italianA1A2";
 import { isGermanA1A2 } from "@/lib/cefr/germanA1A2";
@@ -348,6 +349,9 @@ export function validateJourneyStories(
      *  mismo umbral de siempre (7), para que quien ya llamaba a este checker
      *  siga midiendo exactamente lo que medía. */
     conjuntoCompleto?: boolean;
+    /** Id del journey. Solo lo usa el suelo de nivel, para saber si este
+     *  journey tiene linea base congelada (src/lib/journeyVocabFloorBaseline). */
+    journeyId?: string | null;
     /** Tipo del journey (`typeSlug`: traveler, friends, expat...). Lo necesita
      *  `journey-vocab-worth-teaching`, que solo gatea a los Traveler: en los
      *  Friends la jerga coloquial ES el producto. Sin el, ese check mide e
@@ -835,7 +839,11 @@ export function validateJourneyStories(
     // los cuatro drafts flojos a 28-32%, y el B2 latam ya reescrito a 67%.
     // Se queda en 60 y no en 70 porque en B1 apretar mas empuja a plazas
     // rebuscadas, que es el error contrario.
-    const SUELO_NIVEL_B1 = 0.60;
+    const SUELO_GENERAL = 0.60;
+    // Los journeys escritos contra el suelo viejo del 30% no pueden llegar al
+    // 60% sin reescribir su prosa (techo medido: 42-50%), asi que llevan su
+    // porcentaje congelado y solo pueden subir. Ver el fichero de la linea base.
+    const SUELO_NIVEL_B1 = sueloDeNivel(ctx.journeyId, SUELO_GENERAL);
     const dentro = DENTRO_A1A2[lang];
     if (!dentro) {
       noImplSet("journey-vocab-level-floor", `Un journey ${level} ensena vocabulario de su nivel`,
@@ -855,6 +863,7 @@ export function validateJourneyStories(
         `Un journey ${level} ensena vocabulario de su nivel (${Math.round(SUELO_NIVEL_B1 * 100)}% de las plazas por encima de A1/A2)`,
         cuota >= SUELO_NIVEL_B1,
         `${deNivel.length}/${tot} plazas por encima de A1/A2 (${Math.round(cuota * 100)}%, suelo ${Math.round(SUELO_NIVEL_B1 * 100)}%)` +
+        `${SUELO_NIVEL_B1 < SUELO_GENERAL ? ` · linea base congelada de este journey; el suelo general es ${Math.round(SUELO_GENERAL * 100)}%` : ""}` +
         ` · referencias medidas: C1 publicados 70% y 81%, B2 latam 67%` +
         (deNivel.length ? ` · de nivel: ${deNivel.slice(0, 8).join(", ")}` : ""),
         { valor: cuota, mejor: "alta" });
