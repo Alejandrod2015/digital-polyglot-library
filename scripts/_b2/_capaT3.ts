@@ -4,7 +4,7 @@ import { PrismaClient } from "../../src/generated/prisma";
 const B = "spanish-traveler-latam-b2";
 type E = { claves: string[]; g: string; t: string; es: string; en: string };
 const CAPA: Record<string, E[]> = {
-  "un-chirrido-nuevo": [
+  "la-once-con-chirrido": [
     { claves: ["maestro"], t: "noun", g: "master (Chilean address for a tradesman)", es: "¿Y ese ruido nuevo, maestro?", en: "and that new noise, maestro" },
     { claves: ["mantención"], t: "noun", g: "maintenance (Chile)", es: "La mantención, por la rejilla, se ve así", en: "the maintenance, through the grille, looks like this" },
     { claves: ["al tiro"], t: "expression", g: "right away (Chile)", es: "Al tiro le pongo grasa", en: "I will grease it right away" },
@@ -26,7 +26,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["quedarse callado", "se queda callada"], t: "expression", g: "stays silent", es: "y se queda callada", en: "and stays silent" },
     { claves: ["a simple vista"], t: "expression", g: "at first glance", es: "salta a simple vista", en: "leaps out at first glance" }
   ],
-  "la-vista-gorda": [
+  "la-licitacion-desierta": [
     { claves: ["harto"], t: "adjective", g: "a lot of (Chile)", es: "con harto pasaje", en: "with plenty of passengers" },
     { claves: ["no más", "no mas"], t: "expression", g: "just, go ahead (Southern Cone)", es: "Haz la vista gorda, no más", en: "just turn a blind eye" },
     { claves: ["licitación"], t: "noun", g: "public tender", es: "la licitación de la estación entera", en: "the tender for the whole station" },
@@ -48,7 +48,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["valer la pena", "valió la pena"], t: "expression", g: "be worth it", es: "sin saber si valió la pena", en: "not knowing if it was worth it" },
     { claves: ["en blanco"], t: "expression", g: "blank", es: "entrega en blanco", en: "hands it in blank" }
   ],
-  "la-pared-que-nadie-encargo": [
+  "tres-veces-por-escrito": [
     { claves: ["freno"], t: "noun", g: "brake", es: "que el freno agarró", en: "the brake caught" },
     { claves: ["manivela"], t: "noun", g: "crank", es: "Te bajo a manivela", en: "I will crank you down by hand" },
     { claves: ["rechinar", "rechina"], t: "verb", g: "grinds (rechinar)", es: "La manivela rechina", en: "the crank grinds" },

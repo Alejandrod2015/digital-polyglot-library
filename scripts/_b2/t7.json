@@ -2,8 +2,8 @@
   {
     "topic": "tales-and-tall-stories",
     "slotIndex": 1,
-    "title": "Pescados de dos metros",
-    "slug": "pescados-de-dos-metros",
+    "title": "De medio metro, y gracias",
+    "slug": "de-medio-metro-y-gracias",
     "arcType": "juxtaposition-discovery",
     "synopsis": "Every evening the porch of Ofelia's guesthouse in Aracataca fills with backpackers, and Baldomero tells them about the two-metre fish of the marsh. Ofelia corrects him with the exact figures, the travellers keep buying the tale anyway, and the evening ends with a bet that costs the storyteller his roofed corner.",
     "text": "Una tarde cualquiera, el corredor se llena solo: mochileros, guarapo frío con hielo y Baldomero en la mecedora.\n\nLos de afuera se acomodan.\n\nBaldomero es el cuentero de Aracataca, Colombia, y presume de cuarenta años agrandando el pueblo. Quien lleva el orden es Ofelia, dueña del hospedaje: saca la cuenta de todo, paciencia en otra parte, y con los cuentos no hace la vista gorda.\n\n“De la ciénaga sacaban pescados gigantes, de dos metros”, arranca él. “Los cargaban entre cuatro, y camarón de a libra.”\n\n“De medio metro”, corrige Ofelia, como si nada. “Medio metro, y gracias.”\n\n“Por eso el cuento no es suyo”, contesta Baldomero, y agranda el pescado medio metro más, mirándola.\n\nLos mochileros se ríen y piden ronda: nadie viaja hasta acá por medio metro de pescado. La verdad vende menos que el guarapo.\n\n“Vamos a subir la apuesta”, dice Ofelia. “La historia que salga cierta le abre el de adentro. Mientras tanto, me cuenta afuera.”\n\n“Apostado”, dice él, sin saber qué firma.\n\nEsa noche cuenta desde el andén, sin techo, libreta en rodilla. Echar carreta afuera también es arte; el cielo no avisa.",
@@ -63,10 +63,10 @@
         "definition": "To spin yarns, talk long and entertainingly about anything."
       },
       {
-        "word": "arrancar",
-        "surface": "arranca",
+        "word": "firmar",
+        "surface": "firma",
         "type": "verb",
-        "definition": "To start off, launch into a story or a task."
+        "definition": "To sign, formally agreeing to something with your name."
       },
       {
         "word": "corregir",
@@ -134,8 +134,8 @@
   {
     "topic": "tales-and-tall-stories",
     "slotIndex": 2,
-    "title": "El aguacero",
-    "slug": "el-aguacero",
+    "title": "La carreta mojada",
+    "slug": "la-carreta-mojada",
     "arcType": "mini-cliffhanger",
     "synopsis": "The rain arrives without warning, as it always does in town, and it catches Baldomero telling stories outside, where the bet has left him. The notebook with forty years of tales gets soaked through, the ink lets go of the paper page by page, and for the first time anyone can remember, the porch spends the whole evening in silence.",
     "text": "El aguacero llega sin aviso. Baldomero está en el andén, con la rueda de mochileros armada y la libreta; Ofelia mira el cielo.\n\n“¡Adentro, Baldomero, que se moja!”, grita Ofelia.\n\n“¡Primero las hojas, que la gente se seca sola!”, contesta Baldomero, manoteando el aguacero.\n\nTodos corren adentro, sillas en alto. Él corre detrás, tarde; cuando llega al corredor techado la libreta ya va empapada.\n\n“Déjenla, que la plancha no resucita tinta”, corta Ofelia, con toallas. “El agua ya hizo lo suyo.”\n\n“Ya lo sé”, dice él a nadie. La rueda se desinfla sola.\n\nLa tinta se suelta del papel de a poco, hoja por hoja: el pescado gigante, el tren amarillo, la boda de tres días.\n\nTodo vuelto agua sucia entre los dedos.\n\n“Cuarenta años de carreta mojada”, dice Baldomero, nada más.\n\nPone las hojas a secar, piedritas encima, una por una, sin decir palabra, de espaldas al corredor.\n\nA la hora de cerrar no hay bulla, y el silencio de Baldomero, descubre Ofelia, es peor que sus cuentos.\n\n“Mañana me cuenta una de memoria, de las suyas. Y más seguido”, le dice al apagar. “Invita la casa, cuentero.”",
@@ -261,8 +261,8 @@
   {
     "topic": "tales-and-tall-stories",
     "slotIndex": 3,
-    "title": "Tal cual la contaba",
-    "slug": "tal-cual-la-contaba",
+    "title": "La historia sin agrandar",
+    "slug": "la-historia-sin-agrandar",
     "arcType": "recurring-character-callback",
     "synopsis": "Without his notebook, Baldomero doubts his own stories, and the porch misses him. Going through the guesthouse's old album, Ofelia finds a yellowed photograph: the yellow train loaded with fish, exactly as he always told it. She brings it out in front of everyone, opens the inside porch she once bet against him, and asks him for the one story nobody has ever told: the story of the guesthouse.",
     "text": "Sin libreta, el cuentero cuenta poco y duda mucho. Baldomero se frena a media historia: los cuentos, sin papel, no se desempolvan.\n\nOfelia hojea a escondidas el álbum del hospedaje y encuentra lo que no buscaba: un retrato amarillento, pegado con esquinas negras. Un tren amarillo, cargado de pescado hasta el techo, y un hombre sonriendo al lado.\n\nOfelia no dice nada todavía.\n\nLo saca una tarde llena, a plena luz.\n\n“Cuente la del tren, de una”, pide, y levanta el retrato para todos.\n\nBaldomero mira la foto y le sostiene la mirada.\n\n“¿Tal cual, o mejorada, digamos?”, pregunta, sonrisa chueca.\n\n“Tal cual la contaba usted”, contesta Ofelia. “Salió cierta, al pie de la letra.”\n\n“La apuesta es suya. Bienvenido al corredor de adentro.”\n\nLos mochileros aplauden.\n\nBaldomero recibe la foto, la mira largo y, en vez de decir se lo dije, pregunta si se la puede quedar.\n\nSe hace un silencio bueno.\n\n“Con una condición”, deja caer ella. “La próxima historia es la de este hospedaje. Sin agrandar.”\n\n“La verdad también necesita quien la cuente bonito”, contesta el cuentero, y arrastra la mecedora puerta adentro, sin pensarlo.",

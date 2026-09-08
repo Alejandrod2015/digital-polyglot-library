@@ -4,7 +4,7 @@ import { PrismaClient } from "../../src/generated/prisma";
 const B = "spanish-traveler-latam-b2";
 type E = { claves: string[]; g: string; t: string; es: string; en: string };
 const CAPA: Record<string, E[]> = {
-  "nadie-falta-nunca": [
+  "la-otra-columna": [
     { claves: ["pizarrón"], t: "noun", g: "blackboard (Latin America)", es: "borra el pizarrón sin apuro", en: "wipes the blackboard without hurry" },
     { claves: ["subte"], t: "noun", g: "Buenos Aires underground", es: "baja del subte", en: "comes off the underground" },
     { claves: ["laburo"], t: "noun", g: "work (Buenos Aires slang)", es: "llega después del laburo", en: "arrives after work" },
@@ -26,7 +26,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["tragarse el orgullo", "traga el orgullo"], t: "expression", g: "swallow your pride", es: "Se traga el orgullo", en: "she swallows her pride" },
     { claves: ["levantar la vista"], t: "expression", g: "look up", es: "sin levantar la vista", en: "without looking up" }
   ],
-  "la-carta-sin-abrir": [
+  "buena-suerte-en-porteno": [
     { claves: ["porteño"], t: "adjective", g: "from Buenos Aires", es: "buena suerte en porteño", en: "good luck in Buenos Aires Spanish" },
     { claves: ["che"], t: "expression", g: "hey (Argentina)", es: "dónde encontrarme, che", en: "where to find me, che" },
     { claves: ["recreo"], t: "noun", g: "break", es: "en el recreo", en: "during the break" },
@@ -48,7 +48,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["sin apuro"], t: "expression", g: "without hurry", es: "Toma lista sin apuro", en: "calls the roll without hurry" },
     { claves: ["al pasar"], t: "expression", g: "in passing", es: "dicha al pasar", en: "said in passing" }
   ],
-  "una-idea-de-ariel": [
+  "que-buena-idea-ariel": [
     { claves: ["matrícula", "matrículas"], t: "noun", g: "enrolment", es: "caen tres matrículas", en: "three enrolments land" },
     { claves: ["ficha"], t: "noun", g: "form", es: "en la ficha de inscripción", en: "on the registration form" },
     { claves: ["inscripción"], t: "noun", g: "registration", es: "la ficha de inscripción", en: "the registration form" },

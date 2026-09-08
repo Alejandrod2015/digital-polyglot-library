@@ -4,7 +4,7 @@ import { PrismaClient } from "../../src/generated/prisma";
 const B = "spanish-traveler-latam-b2";
 type E = { claves: string[]; g: string; t: string; es: string; en: string };
 const CAPA: Record<string, E[]> = {
-  "el-vino-equivocado": [
+  "vitel-tone-con-blanco": [
     { claves: ["rotisería"], t: "noun", g: "Argentine prepared-food shop", es: "la dueña de la rotisería", en: "the owner of the rotisería" },
     { claves: ["vitel toné", "vitel", "toné"], t: "noun", g: "cold veal in tuna sauce", es: "el vitel toné se lleva con blanco", en: "vitel toné goes with white wine" },
     { claves: ["nene"], t: "noun", g: "kid, dear (Argentina)", es: "Pero se agradece, nene", en: "but much appreciated, dear" },
@@ -26,7 +26,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["como nadie"], t: "expression", g: "like nobody else", es: "lavar los platos como nadie", en: "wash dishes like nobody else" },
     { claves: ["en la puerta"], t: "expression", g: "at the door", es: "promete en la puerta", en: "promises at the door" }
   ],
-  "la-tanda-quemada": [
+  "aca-los-errores-se-pagan": [
     { claves: ["franco", "de franco"], t: "noun", g: "day off (Argentina)", es: "De franco en su laburo", en: "on his day off from work" },
     { claves: ["milanesa", "milanesas"], t: "noun", g: "breaded cutlet", es: "la primera tanda de milanesas", en: "the first batch of milanesas" },
     { claves: ["pan rallado", "rallado"], t: "expression", g: "breadcrumbs", es: "Harina, huevo, pan rallado", en: "flour, egg, breadcrumbs" },
@@ -48,7 +48,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["abrir la caja", "abre la caja"], t: "expression", g: "open the till", es: "abre la caja", en: "opens the till" },
     { claves: ["salir de tu bolsillo", "sale de tu bolsillo"], t: "expression", g: "come out of your pocket", es: "Esto sale de tu bolsillo", en: "this comes out of your pocket" }
   ],
-  "sabado-de-franco": [
+  "la-ultima-dorada": [
     { claves: ["a cargo"], t: "expression", g: "in charge", es: "Vos quedás a cargo del negocio", en: "you are in charge of the shop" },
     { claves: ["campanita"], t: "noun", g: "little doorbell", es: "la campanita de la puerta suena", en: "the little doorbell rings" },
     { claves: ["desatarse", "se desata"], t: "verb", g: "unties (desatarse)", es: "se desata el delantal", en: "unties her apron" },

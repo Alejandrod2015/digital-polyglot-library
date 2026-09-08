@@ -4,19 +4,19 @@ import { PrismaClient } from "../../src/generated/prisma";
 const B = "spanish-traveler-latam-b2";
 type E = { claves: string[]; g: string; t: string; es: string; en: string };
 const CAPA: Record<string, E[]> = {
-  "pescados-de-dos-metros": [
+  "de-medio-metro-y-gracias": [
     { claves: ["cuentero"], t: "noun", g: "storyteller (Colombia)", es: "Baldomero es el cuentero de Aracataca", en: "Baldomero is Aracataca's storyteller" },
-    { claves: ["hospedaje"], t: "noun", g: "guesthouse", es: "el corredor del hospedaje?? no: dueña del hospedaje", en: "owner of the guesthouse" },
+    { claves: ["hospedaje"], t: "noun", g: "guesthouse", es: "dueña del hospedaje", en: "owner of the guesthouse" },
     { claves: ["ciénaga"], t: "noun", g: "marsh", es: "De la ciénaga sacaban pescados", en: "they pulled fish out of the marsh" },
     { claves: ["mochilero", "mochileros"], t: "noun", g: "backpacker", es: "mochileros, guarapo frío con hielo", en: "backpackers, cold guarapo with ice" },
     { claves: ["guarapo"], t: "noun", g: "sugarcane drink", es: "guarapo frío con hielo", en: "cold guarapo with ice" },
     { claves: ["mecedora"], t: "noun", g: "rocking chair", es: "Baldomero en la mecedora", en: "Baldomero in the rocking chair" },
     { claves: ["agrandar", "agrandando"], t: "verb", g: "makes bigger (agrandar)", es: "cuarenta años agrandando el pueblo", en: "forty years making the town bigger" },
     { claves: ["echar carreta"], t: "expression", g: "spin yarns (Colombia)", es: "Echar carreta afuera también es arte", en: "spinning yarns outside is also an art" },
-    { claves: ["arrancar", "arranca"], t: "verb", g: "launches into (arrancar)", es: "arranca él", en: "he launches in" },
+    { claves: ["firmar", "firma"], t: "verb", g: "signs (firmar)", es: "sin saber qué firma", en: "without knowing what he is signing" },
     { claves: ["corregir", "corrige"], t: "verb", g: "corrects (corregir)", es: "corrige Ofelia, como si nada", en: "Ofelia corrects, as if it were nothing" },
     { claves: ["cargar", "cargaban"], t: "verb", g: "they carried (cargar)", es: "Los cargaban entre cuatro", en: "it took four to carry them" },
-    { claves: ["apostar", "apostemos"], t: "verb", g: "let us bet (apostar)", es: "Apostemos: vamos a subir la apuesta", en: "let us bet: let us raise the stakes" },
+    { claves: ["apostar", "apostado"], t: "verb", g: "it is a bet (apostar)", es: "Apostado", en: "it is a bet" },
     { claves: ["rodilla"], t: "noun", g: "knee", es: "libreta en rodilla", en: "notebook on his knee" },
     { claves: ["techo"], t: "noun", g: "roof", es: "desde el andén, sin techo", en: "from the sidewalk, with no roof" },
     { claves: ["cielo"], t: "noun", g: "sky", es: "el cielo no avisa", en: "the sky gives no warning" },
@@ -26,7 +26,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["y gracias"], t: "expression", g: "and nothing more", es: "medio metro, y gracias", en: "half a metre, and that is being generous" },
     { claves: ["en otra parte"], t: "expression", g: "somewhere else", es: "paciencia en otra parte", en: "her patience somewhere else" }
   ],
-  "el-aguacero": [
+  "la-carreta-mojada": [
     { claves: ["aguacero"], t: "noun", g: "tropical downpour", es: "El aguacero llega sin aviso", en: "the downpour arrives without warning" },
     { claves: ["bulla"], t: "noun", g: "happy noise (Colombia)", es: "no hay bulla", en: "there is no happy noise" },
     { claves: ["empapado", "empapada"], t: "adjective", g: "soaked through", es: "la libreta ya va empapada", en: "the notebook is already soaked" },
@@ -48,7 +48,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["sin decir palabra"], t: "expression", g: "without a word", es: "una por una, sin decir palabra", en: "one by one, without a word" },
     { claves: ["invita la casa"], t: "expression", g: "on the house", es: "Invita la casa, cuentero", en: "it is on the house, storyteller" }
   ],
-  "tal-cual-la-contaba": [
+  "la-historia-sin-agrandar": [
     { claves: ["álbum"], t: "noun", g: "photo album", es: "hojea a escondidas el álbum", en: "leafs secretly through the album" },
     { claves: ["retrato"], t: "noun", g: "photograph", es: "un retrato amarillento", en: "a yellowed photograph" },
     { claves: ["amarillento"], t: "adjective", g: "yellowed", es: "un retrato amarillento", en: "a yellowed photograph" },

@@ -6,7 +6,7 @@ import { PrismaClient } from "../../src/generated/prisma";
 const B = "spanish-traveler-latam-b2";
 type E = { claves: string[]; g: string; t: string; es: string; en: string };
 const CAPA: Record<string, E[]> = {
-  "se-rieron-antes-que-ella": [
+  "los-aguanto-de-dos-en-dos": [
     { claves: ["cantina"], t: "noun", g: "cantina, traditional Mexican bar", es: "la barra de una cantina", en: "the bar of a cantina" },
     { claves: ["birria"], t: "noun", g: "birria, spicy meat stew from Jalisco", es: "huele a birria desde temprano", en: "smells of birria from early on" },
     { claves: ["tejuino"], t: "noun", g: "tejuino, cold fermented corn drink", es: "de tejuino y pocas palabras", en: "of tejuino and few words" },
@@ -28,7 +28,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["sin despeinarse"], t: "expression", g: "without breaking a sweat", es: "Contesta sin despeinarse", en: "answers without breaking a sweat" },
     { claves: ["doble sentido"], t: "expression", g: "double meaning", es: "de doble sentido escondido", en: "with a hidden double meaning" }
   ],
-  "era-la-lista-del-mandado": [
+  "de-pura-muina": [
     { claves: ["tianguis"], t: "noun", g: "tianguis, open-air street market", es: "al carnicero del tianguis", en: "the butcher at the street market" },
     { claves: ["botana"], t: "noun", g: "bar snack", es: "rebana jícama para la botana", en: "slices jicama for the bar snack" },
     { claves: ["mandado"], t: "noun", g: "groceries, everyday shopping", es: "Es la lista del mandado", en: "it is the grocery list" },
@@ -50,7 +50,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["sostener la mirada", "sostiene la mirada"], t: "expression", g: "hold someone's gaze", es: "sostiene la mirada", en: "holds his gaze" },
     { claves: ["poner fecha", "pone fecha"], t: "expression", g: "set the date", es: "Y le pone fecha", en: "and sets the date" }
   ],
-  "el-albur-que-llego-tarde": [
+  "el-chiste-tan-suyo": [
     { claves: ["desquite"], t: "noun", g: "payback, rematch", es: "se juega el desquite", en: "the payback match is on" },
     { claves: ["nomás"], t: "adverb", g: "just, only (Mexican)", es: "Nomás que usted no había preguntado", en: "only you had never asked" },
     { claves: ["la casa invita", "la casa no invita"], t: "expression", g: "on the house", es: "La casa no invita", en: "it is not on the house" },

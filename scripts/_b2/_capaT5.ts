@@ -4,7 +4,7 @@ import { PrismaClient } from "../../src/generated/prisma";
 const B = "spanish-traveler-latam-b2";
 type E = { claves: string[]; g: string; t: string; es: string; en: string };
 const CAPA: Record<string, E[]> = {
-  "se-le-escapan-las-palabras": [
+  "aqui-se-dice-arrendando": [
     { claves: ["lulada"], t: "noun", g: "Cali drink of lulo, ice and lime", es: "lo espera con lulada y mecato", en: "waits for him with lulada and snacks" },
     { claves: ["mecato"], t: "noun", g: "snacks (Colombia)", es: "con lulada y mecato", en: "with lulada and snacks" },
     { claves: ["caleño"], t: "adjective", g: "from Cali", es: "el caleño no se olvida", en: "your Cali Spanish is not forgotten" },
@@ -26,7 +26,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["de toda la vida"], t: "expression", g: "lifelong", es: "la socia de toda la vida", en: "his lifelong partner" },
     { claves: ["en ninguna parte"], t: "expression", g: "nowhere", es: "la mitad en ninguna parte", en: "half of it nowhere at all" }
   ],
-  "de-una": [
+  "el-trasteo-ajeno": [
     { claves: ["de una"], t: "expression", g: "right away (Colombia)", es: "hágale de una", en: "go ahead, right away" },
     { claves: ["hágale"], t: "expression", g: "go ahead (Colombia)", es: "remata con un hágale de una", en: "closes with a go-ahead-right-now" },
     { claves: ["trasteo"], t: "noun", g: "house move (Colombia)", es: "amanece con trasteo ajeno", en: "wakes up to someone else's move" },
@@ -48,7 +48,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["bienvenido"], t: "expression", g: "welcome", es: "Bienvenido a empezar de nuevo", en: "welcome to starting over" },
     { claves: ["sin más"], t: "expression", g: "just like that", es: "guarda las llaves sin más", en: "puts the keys away, just like that" }
   ],
-  "volvio-a-hablar-caleno": [
+  "la-napa-del-dueno": [
     { claves: ["cholado"], t: "noun", g: "Cali shaved-ice dessert", es: "reparte cholado dulce", en: "hands out sweet cholado" },
     { claves: ["guayaba"], t: "noun", g: "guava", es: "guayaba pelada", en: "peeled guava" },
     { claves: ["plaza de mercado"], t: "expression", g: "market hall (Colombia)", es: "plaza de mercado, dominó", en: "market mornings, dominoes" },

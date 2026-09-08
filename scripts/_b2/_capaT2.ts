@@ -4,7 +4,7 @@ import { PrismaClient } from "../../src/generated/prisma";
 const B = "spanish-traveler-latam-b2";
 type E = { claves: string[]; g: string; t: string; es: string; en: string };
 const CAPA: Record<string, E[]> = {
-  "lo-conversamos": [
+  "la-cortesia-mas-cara": [
     { claves: ["chifa"], t: "noun", g: "Peruvian-Chinese restaurant", es: "en un chifa del jirón Ucayali", en: "in a chifa on Ucayali street" },
     { claves: ["wantán"], t: "noun", g: "fried wonton", es: "Pidió wantán de memoria", en: "ordered wonton from memory" },
     { claves: ["jirón"], t: "noun", g: "street (Lima word)", es: "del jirón Ucayali", en: "on Ucayali street" },
@@ -26,7 +26,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["quedar en nada", "quedó en nada"], t: "expression", g: "came to nothing", es: "nadie quedó en nada", en: "nobody agreed on anything" },
     { claves: ["a la altura de", "a la altura del"], t: "expression", g: "when passing", es: "a la altura del mercado", en: "when passing the market" }
   ],
-  "el-telefono-boca-abajo": [
+  "yo-no-fallo": [
     { claves: ["al toque"], t: "expression", g: "right away (Peruvian)", es: "¿Me lo tiene al toque, señora?", en: "will you have it for me right away, madam" },
     { claves: ["casera"], t: "noun", g: "loyal customer (Peru)", es: "Su casera de los jueves", en: "her loyal Thursday customer" },
     { claves: ["emoliente"], t: "noun", g: "warm herbal street drink", es: "con el emoliente enfriándose", en: "with the emoliente getting cold" },
@@ -48,7 +48,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["dejar plantado", "dejó plantada"], t: "expression", g: "stood her up", es: "La dejó plantada una vez", en: "she stood her up once" },
     { claves: ["boca abajo"], t: "expression", g: "face down", es: "el teléfono boca abajo", en: "the phone face down" }
   ],
-  "una-yapa-para-cerrar": [
+  "una-yapa-de-sobremesa": [
     { claves: ["chaufa"], t: "noun", g: "Peruvian-Chinese fried rice", es: "trae el chaufa sin que nadie lo pida", en: "brings the fried rice without being asked" },
     { claves: ["yapa"], t: "noun", g: "the free little extra", es: "¿Y mi yapa?", en: "and my little extra" },
     { claves: ["mozo"], t: "noun", g: "waiter", es: "El mozo grita el pedido", en: "the waiter shouts the order" },
