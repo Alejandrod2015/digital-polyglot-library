@@ -741,12 +741,15 @@ export function validateJourneyStories(
       const lema = String(v.word).toLowerCase();
       return textos.filter((t) => t.includes(k) || t.includes(lema)).length;
     };
+    // `word` viaja aqui porque el mensaje de la cola NOMBRA las plazas que
+    // solo salen una vez. Sin ella, el `.map((x) => x.word)` de mas abajo no
+    // compila y el build de produccion cae entero en el typecheck.
     const todas: Array<{ n: number; anchor: boolean; word: string }> = [];
     for (const s of stories) for (const v of s.vocab ?? [])
       todas.push({
         n: encuentros(v),
         anchor: Boolean((v as { anchor?: boolean }).anchor),
-        word: String(v.surface ?? v.word),
+        word: String((v as { surface?: string | null }).surface ?? v.word),
       });
     const marca = todas.some((x) => x.anchor);
     if (!marca) {

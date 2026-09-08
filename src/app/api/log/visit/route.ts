@@ -12,6 +12,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createHash, randomBytes } from "crypto";
 import { prisma } from "@/lib/prisma";
+import {
+  FIRST_TOUCH_COOKIE,
+  FIRST_TOUCH_MAX_AGE_SECONDS,
+  encodeFirstTouch,
+  firstTouchFromVisit,
+} from "@/lib/signupSource";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -111,6 +117,12 @@ export async function POST(req: NextRequest) {
   const existingSession = req.cookies.get(SESSION_COOKIE)?.value;
   const sessionId = existingSession ?? randomBytes(16).toString("base64url");
 
+  // Primer toque. Se escribe una vez y no se pisa nunca, asi que cuando esta
+  // persona se de de alta (hoy o dentro de dos meses) sabremos por donde
+  // entro. Sin esto el origen vive solo en la tabla de visitas, que no sabe
+  // quien es nadie, y la tabla de altas solo puede decir "beta" o "compro".
+  const existingFirstTouch = req.cookies.get(FIRST_TOUCH_COOKIE)?.value;
+
   const ipHashed = hashIp(pickClientIp(req));
 
   await prisma.pageVisit.create({
@@ -140,6 +152,25 @@ export async function POST(req: NextRequest) {
   });
 
   const res = NextResponse.json({ ok: true });
+  if (!existingFirstTouch) {
+    res.cookies.set(
+      FIRST_TOUCH_COOKIE,
+      encodeFirstTouch(
+        firstTouchFromVisit({
+          utmSource: asTrimmedString(body.utmSource, 200),
+          utmCampaign: asTrimmedString(body.utmCampaign, 200),
+          referrer: asTrimmedString(body.referrer, 500),
+        }),
+      ),
+      {
+        httpOnly: true,
+        secure: true,
+        sameSite: "lax",
+        path: "/",
+        maxAge: FIRST_TOUCH_MAX_AGE_SECONDS,
+      },
+    );
+  }
   if (!existingSession) {
     res.cookies.set(SESSION_COOKIE, sessionId, {
       httpOnly: true,

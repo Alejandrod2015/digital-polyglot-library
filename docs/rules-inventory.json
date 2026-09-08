@@ -421,7 +421,7 @@
       "id": "feedback_check_every_email_link",
       "domain": "comms",
       "rule": "Ningún correo se da por listo sin pedir cada uno de sus enlaces contra producción; el comprobador es scripts/checkEmailLinks.ts",
-      "gate": "pre-bash-guard.sh",
+      "gate": "scripts/checkEmailLinks.ts",
       "source": "memory:feedback_check_every_email_link.md"
     },
     {

@@ -7,6 +7,7 @@ import { useCallback, useState } from "react";
 import {
   ActivityIndicator,
   Image,
+  Keyboard,
   KeyboardAvoidingView,
   Platform,
   Pressable,
@@ -80,7 +81,9 @@ function withTimeout<T>(promise: Promise<T>, label: string): Promise<T> {
 type ScreenState =
   | { kind: "initial" }
   | { kind: "email-form"; mode: "signIn" | "signUp" }
-  | { kind: "verify-code"; email: string; mode: "signIn" | "signUp" };
+  | { kind: "verify-code"; email: string; mode: "signIn" | "signUp" }
+  | { kind: "reset-code"; email: string }
+  | { kind: "reset-password"; email: string };
 
 export function AuthScreen(args: {
   onAuthenticated: (token: string) => void;
@@ -95,6 +98,8 @@ export function AuthScreen(args: {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [code, setCode] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [showNewPassword, setShowNewPassword] = useState(false);
 
   const { setActive } = useClerk();
   const { startSSOFlow } = useSSO();
@@ -234,6 +239,133 @@ export function AuthScreen(args: {
     }
   }, [signUp, email, password]);
 
+  // ── Forgot Password ────────────────────────────────────
+  // La web usa el <SignIn> de Clerk, que trae esto de serie; esta pantalla es
+  // nuestra y no lo tenia. El plan B de codigo por correo de arriba solo salta
+  // cuando la cuenta NO tiene contrasena, asi que quien tenia una y la olvido
+  // se quedaba sin ninguna salida. Lo reporto un tester de la beta el
+  // 2026-09-06, y tenia razon tambien en lo otro que decia: le iba a pasar a
+  // todo el mundo.
+  const handleForgotPassword = useCallback(async () => {
+    // Con el teclado subido, el aviso de abajo queda tapado y el boton parece
+    // muerto. Bajarlo es parte del arreglo, no un adorno.
+    Keyboard.dismiss();
+    if (!signIn) {
+      setError("Sign-in isn't ready yet. Close the app and open it again.");
+      return;
+    }
+    const identifier = email.trim();
+    if (!identifier) {
+      setError("Enter your email first, then tap Forgot password.");
+      return;
+    }
+    setError(null);
+    setSubmitting("forgot");
+    try {
+      const { error: createError } = await withTimeout(
+        signIn.create({ identifier }),
+        "create reset sign-in",
+      );
+      if (createError) {
+        setError(clerkErrorMessage(createError));
+        return;
+      }
+
+      // Sin esta comprobacion, una cuenta que solo existe via OAuth se comeria
+      // el `sendCode` y dejaria al usuario esperando un correo que no llega.
+      const resetSupported = signIn.supportedFirstFactors?.some(
+        (f) => f.strategy === "reset_password_email_code"
+      );
+      if (!resetSupported) {
+        setError(
+          "This account has no email password to reset. Try Google, Facebook or Apple above, or write to support@digitalpolyglot.com.",
+        );
+        return;
+      }
+
+      const { error: sendError } = await withTimeout(
+        signIn.resetPasswordEmailCode.sendCode(),
+        "send reset code",
+      );
+      if (sendError) {
+        setError(clerkErrorMessage(sendError));
+        return;
+      }
+      setCode("");
+      setScreen({ kind: "reset-code", email: identifier });
+    } catch (err) {
+      console.error("[auth] Forgot-password error:", err);
+      setError(toErrorMessage(err));
+    } finally {
+      setSubmitting(null);
+    }
+  }, [signIn, email]);
+
+  const handleVerifyResetCode = useCallback(async () => {
+    if (!signIn || screen.kind !== "reset-code") return;
+    setError(null);
+    setSubmitting("reset-verify");
+    try {
+      const { error: verifyError } = await withTimeout(
+        signIn.resetPasswordEmailCode.verifyCode({ code: code.trim() }),
+        "verify reset code",
+      );
+      if (verifyError) {
+        setError(clerkErrorMessage(verifyError));
+        return;
+      }
+      if (signIn.status !== "needs_new_password") {
+        setError("Verification incomplete.");
+        return;
+      }
+      setNewPassword("");
+      setScreen({ kind: "reset-password", email: screen.email });
+    } catch (err) {
+      console.error("[auth] Reset-code error:", err);
+      setError(toErrorMessage(err));
+    } finally {
+      setSubmitting(null);
+    }
+  }, [signIn, screen, code]);
+
+  const handleSubmitNewPassword = useCallback(async () => {
+    if (!signIn) return;
+    setError(null);
+    setSubmitting("reset-submit");
+    try {
+      const { error: submitError } = await withTimeout(
+        signIn.resetPasswordEmailCode.submitPassword({ password: newPassword }),
+        "submit new password",
+      );
+      if (submitError) {
+        setError(clerkErrorMessage(submitError));
+        return;
+      }
+      // La contrasena YA esta cambiada aqui. Si el estado no es `complete` es
+      // que la cuenta pide un segundo factor, y esta pantalla no tiene interfaz
+      // para uno: hay que decirlo, no dejar un spinner ni un error generico.
+      if (signIn.status !== "complete") {
+        setError(
+          "Your password was changed, but this account needs another verification step to sign in. Please write to support@digitalpolyglot.com.",
+        );
+        return;
+      }
+      const { error: finalizeError } = await withTimeout(signIn.finalize(), "finalize reset");
+      if (finalizeError) {
+        setError(clerkErrorMessage(finalizeError));
+        return;
+      }
+      setPassword("");
+      setNewPassword("");
+      onClerkSessionCreated();
+    } catch (err) {
+      console.error("[auth] New-password error:", err);
+      setError(toErrorMessage(err));
+    } finally {
+      setSubmitting(null);
+    }
+  }, [signIn, newPassword, onClerkSessionCreated]);
+
   // ── Verify Email Code ───────────────────────────────────────────────
   const handleVerifyCode = useCallback(async () => {
     setError(null);
@@ -280,6 +412,90 @@ export function AuthScreen(args: {
       setSubmitting(null);
     }
   }, [screen, signIn, signUp, code, onClerkSessionCreated]);
+
+  // ── Reset: Code Screen ──────────────────────────────────────────────
+  if (screen.kind === "reset-code") {
+    return (
+      <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} style={{ flex: 1, justifyContent: "center" }}>
+        <View style={styles.card}>
+          <Header />
+          <Text style={styles.headline}>Check your email</Text>
+          <Text style={styles.subtext}>We sent a password reset code to {screen.email}</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Reset code"
+            placeholderTextColor="#4e6a8a"
+            value={code}
+            onChangeText={setCode}
+            keyboardType="number-pad"
+            textContentType="oneTimeCode"
+            autoFocus
+          />
+          <View style={styles.actions}>
+            <PrimaryButton
+              label="Continue"
+              loading={submitting === "reset-verify"}
+              disabled={!code.trim()}
+              onPress={() => void handleVerifyResetCode()}
+            />
+            <GhostButton label="Back" onPress={() => { setScreen({ kind: "email-form", mode: "signIn" }); setCode(""); setError(null); }} />
+          </View>
+          {error ? <Text style={styles.errorText}>{error}</Text> : null}
+        </View>
+      </KeyboardAvoidingView>
+    );
+  }
+
+  // ── Reset: New Password Screen ──────────────────────────────────────
+  if (screen.kind === "reset-password") {
+    return (
+      <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} style={{ flex: 1 }}>
+        <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: "center" }} keyboardShouldPersistTaps="handled" bounces={false}>
+        <View style={styles.card}>
+          <Header />
+          <Text style={styles.headline}>New password</Text>
+          <Text style={styles.subtext}>Choose a new password for {screen.email}</Text>
+          <View style={styles.passwordRow}>
+            <TextInput
+              style={styles.passwordInput}
+              placeholder="New password"
+              placeholderTextColor="#4e6a8a"
+              value={newPassword}
+              onChangeText={setNewPassword}
+              secureTextEntry={!showNewPassword}
+              autoCapitalize="none"
+              autoCorrect={false}
+              autoComplete="new-password"
+              textContentType="newPassword"
+              returnKeyType="go"
+              autoFocus
+              onSubmitEditing={() => { if (newPassword) void handleSubmitNewPassword(); }}
+            />
+            <Pressable
+              onPress={() => setShowNewPassword((v) => !v)}
+              hitSlop={10}
+              style={styles.passwordToggle}
+              accessibilityRole="button"
+              accessibilityLabel={showNewPassword ? "Hide password" : "Show password"}
+            >
+              <Feather name={showNewPassword ? "eye-off" : "eye"} size={20} color="#7a95b3" />
+            </Pressable>
+          </View>
+          <View style={styles.actions}>
+            <PrimaryButton
+              label="Save and sign in"
+              loading={submitting === "reset-submit"}
+              disabled={!newPassword}
+              onPress={() => void handleSubmitNewPassword()}
+            />
+            <GhostButton label="Back" onPress={() => { setScreen({ kind: "email-form", mode: "signIn" }); setNewPassword(""); setError(null); }} />
+          </View>
+          {error ? <Text style={styles.errorText}>{error}</Text> : null}
+        </View>
+        </ScrollView>
+      </KeyboardAvoidingView>
+    );
+  }
 
   // ── Verify Code Screen ──────────────────────────────────────────────
   if (screen.kind === "verify-code") {
@@ -364,6 +580,20 @@ export function AuthScreen(args: {
               <Feather name={showPassword ? "eye-off" : "eye"} size={20} color="#7a95b3" />
             </Pressable>
           </View>
+          {error ? <Text style={styles.errorTextTop}>{error}</Text> : null}
+          {!isSignUp ? (
+            <Pressable
+              disabled={submitting !== null}
+              onPress={() => void handleForgotPassword()}
+              hitSlop={8}
+              style={[styles.forgotLink, submitting !== null && styles.buttonDisabled]}
+              accessibilityRole="button"
+            >
+              <Text style={styles.forgotLinkText}>
+                {submitting === "forgot" ? "Sending code..." : "Forgot password?"}
+              </Text>
+            </Pressable>
+          ) : null}
           <View style={styles.actions}>
             <PrimaryButton
               label={isSignUp ? "Create account" : "Sign in"}
@@ -373,7 +603,6 @@ export function AuthScreen(args: {
             />
             <GhostButton label="Back" onPress={() => { setScreen({ kind: "initial" }); setError(null); }} />
           </View>
-          {error ? <Text style={styles.errorText}>{error}</Text> : null}
         </View>
         </ScrollView>
       </KeyboardAvoidingView>
@@ -545,10 +774,13 @@ const styles = StyleSheet.create({
   secondaryButtonText: { color: "#c8d8ee", fontSize: 15, fontWeight: "700" },
   tertiaryButton: { paddingVertical: 15, alignItems: "center" },
   tertiaryButtonText: { color: "#7a95b3", fontSize: 15, fontWeight: "600" },
+  forgotLink: { alignSelf: "flex-end", paddingVertical: 4, marginBottom: 8 },
+  forgotLinkText: { color: "#7a95b3", fontSize: 14, fontWeight: "600" },
   ghostButton: { paddingVertical: 12, alignItems: "center" },
   ghostButtonText: { color: "#4e6a8a", fontSize: 14, fontWeight: "600" },
   buttonDisabled: { opacity: 0.5 },
   errorText: { color: "#ffb4ab", fontSize: 13, lineHeight: 18, marginTop: 12 },
+  errorTextTop: { color: "#ffb4ab", fontSize: 13, lineHeight: 18, marginBottom: 10 },
   input: { backgroundColor: "#132238", borderRadius: 14, borderWidth: 1, borderColor: "#27405f", paddingHorizontal: 16, paddingVertical: 14, color: "#f5f7fb", fontSize: 16, marginBottom: 12 },
   passwordRow: { position: "relative", justifyContent: "center", marginBottom: 12 },
   passwordInput: { backgroundColor: "#132238", borderRadius: 14, borderWidth: 1, borderColor: "#27405f", paddingLeft: 16, paddingRight: 52, paddingVertical: 14, color: "#f5f7fb", fontSize: 16 },

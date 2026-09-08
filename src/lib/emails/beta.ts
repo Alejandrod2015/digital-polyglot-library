@@ -254,7 +254,17 @@ function betaShell(opts: Parameters<typeof shell>[0]): string {
 export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
   const b = base(data);
   const name = firstNameOr(data, "there");
-  const tfUrl = data?.testflightUrl ?? "https://apps.apple.com/app/testflight/id899247664";
+  // Apple does not hand out a per tester invitation URL: the invitation IS the
+  // email it sends to the Apple ID, and the only link we can put here is the
+  // App Store page for TestFlight itself. So the label has to follow the link.
+  // Ben, 2026-09-07: "Cant open from testflight. Its prompting me for a code".
+  // A button reading "Open TestFlight" next to a link that INSTALLS TestFlight
+  // invites exactly that: skip Apple's email, land in TestFlight with nothing
+  // pending, get asked for a code. It also outranked step 2, which is the step
+  // that works. Demoted to secondary, and named after what it does.
+  const tfInvite = data?.testflightUrl ?? null;
+  const tfUrl = tfInvite ?? "https://apps.apple.com/app/testflight/id899247664";
+  const tfLabel = tfInvite ? "Open TestFlight" : "Install TestFlight";
 
   // The one email in the program that has to tell someone how to install, and
   // the only one of the four store-aware emails that did not look at
@@ -350,7 +360,12 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
         ]
       : android
         ? []
-        : [block(cta("Open TestFlight", tfUrl), "24px 24px 0")]),
+        : [
+            block(
+              tfInvite ? cta(tfLabel, tfUrl) : ctaSecondary(tfLabel, tfUrl),
+              "24px 24px 0",
+            ),
+          ]),
     block(perks, "24px 24px 0", false),
     block(ask, "16px 24px 0", false),
     block(
@@ -416,7 +431,7 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
               "  2. Open the invite Apple just sent and tap Accept.",
               "  3. Install Digital Polyglot from there, and sign in with this email address.",
               "",
-              `TestFlight: ${tfUrl}`,
+              `${tfLabel}: ${tfUrl}`,
               "",
             ]),
       "Every language, every story and the audio are open to you. Pick a language when you open the app. You can change it whenever you want.",

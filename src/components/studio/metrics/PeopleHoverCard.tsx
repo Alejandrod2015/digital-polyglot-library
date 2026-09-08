@@ -5,7 +5,7 @@
  *
  * Un "4" en DAU no dice si son cuatro caras nuevas o las mismas de siempre, y
  * esa es la pregunta que sigue siempre a la cifra cuando hay cuatro. Aquí se
- * responde con nombres, cuántos eventos puso cada uno y cuándo fue el último.
+ * responde con nombres, cuánto audio escuchó cada uno y cuándo fue lo último.
  *
  * Va en `position: fixed` pegada al cursor y con `pointer-events: none`, así
  * que no se puede hacer clic en ella ni tapa lo que hay debajo.
@@ -22,6 +22,20 @@ const NAME_LIMIT = 8;
  */
 export function kpiUserLabel(u: MetricsKpiUser): string {
   return u.name || u.email || u.userId.slice(-8);
+}
+
+/**
+ * Qué hizo esa persona, en una sola cifra. Los minutos de audio van primero
+ * porque son lo único que dice cuánto rato estuvo: un "1 ev" no distingue a
+ * quien escuchó una historia entera de quien tocó una palabra y se fue. Cuando
+ * no hay audio (una sesión de práctica, un par de palabras) se cae al recuento
+ * de eventos, que al menos no miente sobre lo que hay.
+ */
+export function activityLabel(u: MetricsKpiUser): string {
+  const min = u.minutes ?? 0;
+  if (min >= 1) return `${Math.round(min)} min`;
+  if (min > 0) return "<1 min";
+  return `${u.events} ev`;
 }
 
 /** "hace 5 min", "hace 3 h", "hace 2 d". Sin fecha, cadena vacía. */
@@ -95,7 +109,7 @@ export function PeopleHoverCard({
                 {kpiUserLabel(u)}
               </span>
               <span style={{ opacity: 0.75, whiteSpace: "nowrap", fontVariantNumeric: "tabular-nums" }}>
-                {u.events} ev · {sinceLabel(u.lastAt)}
+                {activityLabel(u)} · {sinceLabel(u.lastAt)}
               </span>
             </li>
           ))}

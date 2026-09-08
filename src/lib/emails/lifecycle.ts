@@ -85,6 +85,43 @@ function base(data?: LifecycleData): string {
   return publicBaseUrl(data?.baseUrl);
 }
 
+/**
+ * El destino de CUALQUIER boton que lleve a una historia. Con slug real,
+ * la historia; sin el, el catalogo.
+ *
+ * NUNCA un slug literal. El 2026-09-07 una lectora recibio la bienvenida con
+ * el boton apuntando a `mole-en-san-angel`, que es una de las historias de
+ * demostracion de este archivo: esta en `needs_review`, la ruta la filtra por
+ * `status: "published"` y pinta el 404 de Next. Pulso el boton 21 veces en
+ * media hora y escribio a soporte. La linea que lo hizo era
+ * `s.id ? url(s.id) : url(SAMPLE_STORIES.mole.id)`, repetida en los ocho
+ * builders, y ese segundo brazo no era un caso raro: el webhook mandaba sin
+ * datos, asi que era el UNICO camino.
+ *
+ * Un enlace de demostracion no puede vivir en el mismo sitio que uno que se
+ * envia. `SAMPLE_STORIES` se queda para el texto y las portadas de la
+ * previsualizacion; para un href, no.
+ */
+function storyHref(b: string, id?: string): string {
+  return id && !isSampleStoryId(id) ? `${b}/stories/${id}` : `${b}/explore`;
+}
+
+/**
+ * Los slugs de `SAMPLE_STORIES`, que NO pueden salir dentro de un enlace.
+ *
+ * No basta con arreglar los `const href = ...`: varios builders rellenan la
+ * historia entera con un objeto de demostracion (`data?.nextStories?.[0] ??
+ * SAMPLE_STORIES.canela`) para tener titulo y portada, y ese objeto trae su
+ * `id`. El enlace salia entonces "legitimo" y apuntaba igual a una historia
+ * que no existe: `domingo-con-papa` ni siquiera esta en la base de datos.
+ *
+ * Por eso el filtro esta en el unico sitio por el que pasan todos, y no en
+ * cada llamada: asi no depende de que nadie se acuerde.
+ */
+function isSampleStoryId(id: string): boolean {
+  return SAMPLE_STORY_IDS.has(id);
+}
+
 function assetBase(data?: LifecycleData): string {
   return data?.assetBase ?? EMAIL_ASSET_BASE;
 }
@@ -145,24 +182,37 @@ const SAMPLE_STORIES = {
   },
 } as const;
 
+/** Ver `isSampleStoryId`. Se deriva del objeto, no se escribe a mano, para que
+ *  anadir una historia de demostracion no abra un agujero nuevo. */
+const SAMPLE_STORY_IDS: ReadonlySet<string> = new Set(
+  Object.values(SAMPLE_STORIES).map((s) => s.id)
+);
+
 /* ============================================================ 1 · WELCOME */
 export function buildWelcomeEmail(data?: LifecycleData): BuiltEmail {
   const b = base(data);
   const ab = assetBase(data);
-  const s = data?.firstStory ?? SAMPLE_STORIES.mole;
-  const href = s.id ? `${b}/stories/${s.id}` : `${b}/stories/${SAMPLE_STORIES.mole.id}`;
+  // La bienvenida es el UNICO correo que puede salir sin datos del usuario, asi
+  // que no promete una eleccion que no ha hecho nadie. Con historia real, el
+  // boton la nombra; sin ella, lleva al catalogo y lo dice.
+  const picked = data?.firstStory;
+  const href = storyHref(b, picked?.id);
 
   // Hero = the real reader moment: an authentic sentence where ONE word was just
   // tapped (its card opened), the others still highlighted and waiting. Shows
   // the product, doesn't dump every meaning, leaves curiosity. No GIF.
+  //
+  // La tarjeta es una DEMOSTRACION del mecanismo, y se presenta como tal. Antes
+  // se titulaba "Your first story" y ponia el titulo real encima de dos frases
+  // en espanol que siempre eran las mismas: a una lectora de portugues le
+  // prometia su historia y le ensenaba otra.
   const tapped = (w: string) =>
     `<span style="background:${DPE.gold};color:${DPE.goldInk};border-radius:5px;padding:1px 6px;font-weight:900;box-shadow:0 0 0 2px rgba(252,211,77,0.35);">${esc(
       w
     )}</span>`;
 
   const heroCard = `<div style="background:${DPE.screen};border:1px solid ${DPE.cardLine};border-radius:18px;padding:22px;text-align:left;box-shadow:0 20px 44px -22px rgba(0,0,0,0.7);">
-    <div style="font-family:${DPE.font};font-weight:800;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:${DPE.faint};margin-bottom:6px;">Your first story</div>
-    <div style="font-family:${DPE.font};font-weight:900;font-size:17px;color:${DPE.fg};letter-spacing:-0.015em;margin-bottom:14px;">${esc(s.title)}</div>
+    <div style="font-family:${DPE.font};font-weight:800;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:${DPE.faint};margin-bottom:14px;">How it works</div>
     <p style="margin:0 0 9px;font-family:${DPE.font};font-weight:700;font-size:17px;line-height:1.7;color:${DPE.fg};">La ${tapped(
     "fonda"
   )} de San Ángel está abierta y huele a ${hi("mole")}.</p>
@@ -181,13 +231,15 @@ export function buildWelcomeEmail(data?: LifecycleData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow("Welcome to Digital Polyglot")}${head(`The ${gold("real")} language,<br/>from word one.`, 40)}${lead(
-        "We picked a short story at your level. Tap any word to see what it means and hear it spoken. It's the everyday language locals actually use, learned in context, not the stuff from a textbook."
+        picked
+          ? "We picked a short story at your level. Tap any word to see what it means and hear it spoken. It's the everyday language locals actually use, learned in context, not the stuff from a textbook."
+          : "Pick a short story and start reading. Tap any word to see what it means and hear it spoken. It's the everyday language locals actually use, learned in context, not the stuff from a textbook."
       )}`,
       "40px 44px 0"
     ),
     block(heroCard, "28px 44px 0", false),
     block(
-      `${cta("Start your first story", href)}<div style="margin-top:13px;font-family:${DPE.font};font-weight:700;font-size:12.5px;color:${DPE.muted};">4 minutes · pick up anytime</div>`,
+      `${cta(picked ? "Start your first story" : "Browse the library", href)}<div style="margin-top:13px;font-family:${DPE.font};font-weight:700;font-size:12.5px;color:${DPE.muted};">4 minutes · pick up anytime</div>`,
       "24px 44px 0"
     ),
   ];
@@ -204,9 +256,11 @@ export function buildWelcomeEmail(data?: LifecycleData): BuiltEmail {
     text: [
       "Welcome to Digital Polyglot.",
       "",
-      "We picked a short story at your level. Tap any word to see what it means and hear it spoken. It's the everyday language locals actually use, not textbook stuff.",
+      picked
+        ? "We picked a short story at your level. Tap any word to see what it means and hear it spoken. It's the everyday language locals actually use, not textbook stuff."
+        : "Pick a short story and start reading. Tap any word to see what it means and hear it spoken. It's the everyday language locals actually use, not textbook stuff.",
       "",
-      `Start your first story: ${href}`,
+      `${picked ? "Start your first story" : "Browse the library"}: ${href}`,
       "4 minutes.",
       "",
       "Digital Polyglot",
@@ -223,7 +277,7 @@ export function buildNudgeEmail(data?: LifecycleData): BuiltEmail {
     percentRead: 38,
     minutesLeft: 2,
   };
-  const href = s.id ? `${b}/stories/${s.id}` : `${b}/stories/${SAMPLE_STORIES.mole.id}`;
+  const href = storyHref(b, s.id);
   const pct = s.percentRead ?? 38;
 
   const blocks = [
@@ -277,10 +331,15 @@ export function buildCelebrationEmail(data?: LifecycleData): BuiltEmail {
   const ab = assetBase(data);
   const s = data?.firstStory ?? SAMPLE_STORIES.mole;
   const nextStory = data?.nextStories?.[0] ?? SAMPLE_STORIES.canela;
-  const href = nextStory.id ? `${b}/stories/${nextStory.id}` : `${b}/stories/${SAMPLE_STORIES.canela.id}`;
+  const href = storyHref(b, nextStory.id);
   // Practice the words from the story they just finished.
-  const storySlug = (s as { id?: string }).id ?? SAMPLE_STORIES.mole.id;
-  const practiceHref = `${b}/practice?source=story&storySlug=${encodeURIComponent(storySlug)}&storyTitle=${encodeURIComponent(s.title)}`;
+  // Mismo criterio que `storyHref`: sin historia real no se pasa el slug de
+  // demostracion, se abre la practica sin filtro.
+  const storySlug = (s as { id?: string }).id;
+  const practiceHref =
+    storySlug && !isSampleStoryId(storySlug)
+      ? `${b}/practice?source=story&storySlug=${encodeURIComponent(storySlug)}&storyTitle=${encodeURIComponent(s.title)}`
+      : `${b}/practice`;
   // No default: "47 words you didn't know yesterday" to someone whose real
   // count is zero is a fabricated compliment. Unknown means the tile and the
   // number in the subject are dropped.
@@ -381,7 +440,7 @@ export function buildRecapEmail(data?: LifecycleData): BuiltEmail {
   const b = base(data);
   const ab = assetBase(data);
   const nextStory = data?.nextStories?.[0] ?? SAMPLE_STORIES.canela;
-  const href = nextStory.id ? `${b}/stories/${nextStory.id}` : `${b}/stories/${SAMPLE_STORIES.canela.id}`;
+  const href = storyHref(b, nextStory.id);
   // No fallbacks here on purpose. Every one of these is a claim about what
   // THIS person did last week; a default is a lie with a number on it. When a
   // figure is unknown the block that would state it is dropped instead.
@@ -490,7 +549,7 @@ export function buildNextEmail(data?: LifecycleData): BuiltEmail {
   const b = base(data);
   const ab = assetBase(data);
   const nextStory = data?.nextStories?.[0] ?? SAMPLE_STORIES.domingo;
-  const href = nextStory.id ? `${b}/stories/${nextStory.id}` : `${b}/stories/${SAMPLE_STORIES.domingo.id}`;
+  const href = storyHref(b, nextStory.id);
   // Cumulative totals (the proof that an identity shifted, not a weekly count).
   const storiesCount = data?.stats?.storiesCount ?? 6;
   const wordsCount = data?.stats?.wordsCount ?? 240;
@@ -565,7 +624,7 @@ export function buildWinReminderEmail(data?: LifecycleData): BuiltEmail {
   const b = base(data);
   const ab = assetBase(data);
   const s = data?.firstStory ?? { ...SAMPLE_STORIES.mole, percentRead: 38, minutesLeft: 2 };
-  const href = s.id ? `${b}/stories/${s.id}` : `${b}/stories/${SAMPLE_STORIES.mole.id}`;
+  const href = storyHref(b, s.id);
   const pct = s.percentRead ?? 38;
   const vocab = (s as { vocab?: VocabItem[] }).vocab ?? [];
   const glossary = vocab.slice(0, 3).map((v) => ({ word: v.word, meaning: v.definition }));
@@ -644,7 +703,7 @@ export function buildWinValueEmail(data?: LifecycleData): BuiltEmail {
   // a real sentence that they already read the language for real. No new content
   // pitch, no invented loss. Resumes THEIR own path (low commitment).
   const s = data?.firstStory ?? SAMPLE_STORIES.mole;
-  const href = s.id ? `${b}/stories/${s.id}` : `${b}/stories/${SAMPLE_STORIES.mole.id}`;
+  const href = storyHref(b, s.id);
   // A real line from a story they read: tangible proof they already read it.
   const provenSentence =
     (s as { teaser?: string }).teaser ?? "Es jueves al mediodía. La fonda de San Ángel huele a mole.";

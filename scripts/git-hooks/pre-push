@@ -117,6 +117,7 @@ checkGlossMoods      db
 checkGlossVariants   db
 checkVocabLayer      db
 checkReleaseReadiness -
+checkEmailLinks      red
 checkTypes           -
 "
 
@@ -198,6 +199,25 @@ EOM
   el icono SVG que toque, o reusa uno que ya exista.
 
   Comprueba con:  npm run lint:no-emojis
+======================================================================
+
+EOM
+      ;;
+    checkEmailLinks)
+      cat >&2 <<'EOM'
+
+======================================================================
+  PUSH BLOCKED: un correo lleva un enlace roto
+
+  Arriba sale cada URL con su codigo y en que correos aparece. Las
+  marcadas "wait" estan excusadas (ruta sin desplegar, app sin publicar);
+  las "FAIL" no.
+
+  OJO con los 200: un 200 que trae el 404 de Next en el cuerpo cuenta
+  como roto. Asi se colo el boton de la bienvenida, que llevo a 23
+  personas a una historia sin publicar durante cuatro semanas.
+
+  Comprueba con:  npm run lint:email-links
 ======================================================================
 
 EOM
@@ -388,6 +408,12 @@ EOM
 #   checkVocabLayer      Una plaza de vocab es una entrada de glosa con
 #                        etiqueta: sin contexto, sin formas del verbo o sin
 #                        `surface`, ensena menos que la glosa de al lado.
+#   checkEmailLinks      Pide contra produccion cada href y cada src de los
+#                        correos de la beta y de los ocho del ciclo de vida.
+#                        Un enlace de un correo no se puede corregir despues
+#                        de mandarlo. Unico candado que necesita RED: si no
+#                        responde ninguno, no comprueba y deja pasar; si
+#                        fallan algunos, bloquea.
 #
 # Reglas del bucle:
 #   1. El script no existe   -> push BLOQUEADO (ausencia no es permiso).

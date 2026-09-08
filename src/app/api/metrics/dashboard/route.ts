@@ -7,6 +7,7 @@ import { getInternalUserIds, isMetricsAccessAllowed } from "@/lib/metricsAccess"
 import { buildMetricsUserScope, parseMetricsCohort } from "@/lib/metricsCohort";
 import { resolveUserEmails, resolveUserIdentities } from "@/lib/metricsUserEmails";
 import { localDayKey, startOfLocalDay, startOfLocalDaysAgo } from "@/lib/metricsTime";
+import { ACTIVITY_EVENT_WHERE, isProgressEvent } from "@/lib/metricsActivity";
 import { books } from "@/data/books";
 import { getStandaloneStoriesByIds, getStandaloneStoriesBySlugs } from "@/lib/standaloneStories";
 import {
@@ -91,8 +92,10 @@ type MetricsKpiUser = {
   userId: string;
   name: string | null;
   email: string | null;
-  /** Eventos suyos en la ventana de la tarjeta (24h en DAU, 7d en WAU). */
+  /** Eventos suyos en la ventana de la tarjeta (hoy en DAU, 7d en WAU). */
   events: number;
+  /** Minutos de audio en esa ventana: lo que un recuento de eventos no dice. */
+  minutes: number;
   /** Su última señal, para poder ordenar por quién sigue ahí. */
   lastAt: string | null;
 };
@@ -900,36 +903,41 @@ export async function GET(req: NextRequest): Promise<Response> {
       orderBy: { createdAt: "asc" },
       take: 20000,
     }) : Promise.resolve([]),
-    // Agrupado en vez de `distinct`: cuesta lo mismo y de paso trae cuántos
-    // eventos puso cada uno y cuándo fue el último, que es lo que la tarjeta
-    // enseña al pasar el cursor. La cifra sigue siendo el número de filas.
+    // Filas crudas en vez de un `groupBy`: la tarjeta que sale al pasar el
+    // cursor ya no enseña cuántos eventos puso cada uno (un "1 ev" no dice si
+    // esa persona escuchó o solo tocó una palabra) sino cuántos minutos de
+    // audio lleva, y eso hay que calcularlo sobre el progreso de cada historia.
+    // Las dos ventanas son pequeñas por definición: hoy, y los últimos 7 días.
+    //
+    // `ACTIVITY_EVENT_WHERE` deja fuera los `*_sent`, que los escriben los
+    // crons al MANDAR un correo o un empujón; ver `src/lib/metricsActivity.ts`.
     //
     // DAU = día de CALENDARIO en el huso del panel, no las últimas 24 horas.
     // Con la ventana móvil la cifra bajaba sola a media tarde, cuando a alguien
     // se le cumplían las 24 h desde su último evento, y eso no es que se haya
     // ido nadie: es que el reloj se movió.
-    needsOverviewData ? prisma.userMetric.groupBy({
-      by: ["userId"],
+    needsOverviewData ? prisma.userMetric.findMany({
       where: {
         ...userScope,
+        ...ACTIVITY_EVENT_WHERE,
         createdAt: { gte: startOfLocalDay(now), lte: now },
         ...(storySlug ? { storySlug } : {}),
         ...(bookSlug ? { bookSlug } : {}),
       },
-      _count: { _all: true },
-      _max: { createdAt: true },
+      select: { userId: true, storySlug: true, eventType: true, value: true, metadata: true, createdAt: true },
+      take: 50000,
     }) : Promise.resolve([]),
     // WAU = los siete días de calendario que acaban hoy, hoy incluido.
-    needsOverviewData ? prisma.userMetric.groupBy({
-      by: ["userId"],
+    needsOverviewData ? prisma.userMetric.findMany({
       where: {
         ...userScope,
+        ...ACTIVITY_EVENT_WHERE,
         createdAt: { gte: startOfLocalDaysAgo(now, 6), lte: now },
         ...(storySlug ? { storySlug } : {}),
         ...(bookSlug ? { bookSlug } : {}),
       },
-      _count: { _all: true },
-      _max: { createdAt: true },
+      select: { userId: true, storySlug: true, eventType: true, value: true, metadata: true, createdAt: true },
+      take: 50000,
     }) : Promise.resolve([]),
     needsProgressData ? prisma.userMetric.findMany({
       where: {
@@ -1847,27 +1855,61 @@ export async function GET(req: NextRequest): Promise<Response> {
   // Los ids se resuelven contra Clerk una sola vez para los dos conjuntos:
   // el WAU contiene al DAU, así que pedirlos por separado repetiría
   // llamadas. La caché de `resolveUserIdentities` hace el resto.
-  type KpiGroupRow = { userId: string; _count: { _all: number }; _max: { createdAt: Date | null } };
-  const dauGroups = dauRows as unknown as KpiGroupRow[];
-  const wauGroups = wauRows as unknown as KpiGroupRow[];
+  type KpiRawRow = {
+    userId: string;
+    storySlug: string;
+    eventType: string;
+    value: number | null;
+    metadata: unknown;
+    createdAt: Date;
+  };
+  const dauRaw = dauRows as unknown as KpiRawRow[];
+  const wauRaw = wauRows as unknown as KpiRawRow[];
   const kpiIdentities = needsOverviewData
-    ? await resolveUserIdentities([...wauGroups, ...dauGroups].map((r) => r.userId))
+    ? await resolveUserIdentities([...wauRaw, ...dauRaw].map((r) => r.userId))
     : new Map<string, { name: string | null; email: string | null }>();
-  const toKpiUsers = (rows: KpiGroupRow[]): MetricsKpiUser[] =>
-    rows
-      .map((row) => {
-        const who = kpiIdentities.get(row.userId);
+  const toKpiUsers = (rows: KpiRawRow[]): MetricsKpiUser[] => {
+    type Acc = { events: number; last: Date; minutos: number };
+    const porPersona = new Map<string, Acc>();
+    // De cada historia cuenta el punto MÁS LEJANO alcanzado, no la suma de los
+    // eventos: quien retrocede y reescucha no ha escuchado dos veces. Es el
+    // mismo criterio que la tabla por persona de la pestaña Audiencia.
+    const masLejano = new Map<string, number>();
+    for (const f of rows) {
+      const acc = porPersona.get(f.userId) ?? { events: 0, last: f.createdAt, minutos: 0 };
+      acc.events += 1;
+      if (f.createdAt > acc.last) acc.last = f.createdAt;
+      if (isProgressEvent(f.eventType)) {
+        const segundos = getProgressValue(f as ProgressRow);
+        if (Number.isFinite(segundos) && segundos > 0) {
+          const clave = `${f.userId}::${f.storySlug}`;
+          if (segundos > (masLejano.get(clave) ?? 0)) masLejano.set(clave, segundos);
+        }
+      }
+      porPersona.set(f.userId, acc);
+    }
+    for (const [clave, segundos] of masLejano) {
+      const acc = porPersona.get(clave.split("::")[0]);
+      if (acc) acc.minutos += segundos / 60;
+    }
+    return Array.from(porPersona.entries())
+      .map(([userId, acc]) => {
+        const who = kpiIdentities.get(userId);
         return {
-          userId: row.userId,
+          userId,
           name: who?.name ?? null,
           email: who?.email ?? null,
-          events: row._count._all,
-          lastAt: row._max.createdAt ? row._max.createdAt.toISOString() : null,
+          events: acc.events,
+          minutes: Math.round(acc.minutos * 10) / 10,
+          lastAt: acc.last.toISOString(),
         };
       })
       // El más reciente arriba: en una lista recortada, quien acaba de dar
       // señal dice más que quien pasó por ahí hace seis días.
       .sort((a, b) => (b.lastAt ?? "").localeCompare(a.lastAt ?? ""));
+  };
+  const dauUsers = toKpiUsers(dauRaw);
+  const wauUsers = toKpiUsers(wauRaw);
 
   // ── Una fila por persona ──
   // Se calcula sobre filas crudas de las dos ventanas porque cada columna sale
@@ -1976,10 +2018,10 @@ export async function GET(req: NextRequest): Promise<Response> {
           prevKpis: prevKpisPayload,
         }
       : {}),
-    kpiUsers: { dau: toKpiUsers(dauGroups), wau: toKpiUsers(wauGroups) },
+    kpiUsers: { dau: dauUsers, wau: wauUsers },
     kpis: {
-      dau: dauRows.length,
-      wau: wauRows.length,
+      dau: dauUsers.length,
+      wau: wauUsers.length,
       activeUsersInRange,
       plays,
       completions,
