@@ -1898,7 +1898,7 @@
       "id": "feedback_cultural_anchor_always_vocab",
       "domain": "vocab",
       "rule": "\"La palabra cultural ancla (mole, fonda, epazote…) SIEMPRE va en el vocab; nunca dejarla fuera por frecuencia. La banda puede extenderse a 30.\"",
-      "gate": "src/lib/validateJourneyStories.ts",
+      "gate": "npm run lint:hard-rules",
       "source": "memory:feedback_cultural_anchor_always_vocab.md"
     },
     {

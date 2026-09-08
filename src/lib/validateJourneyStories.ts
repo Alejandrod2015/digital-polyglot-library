@@ -71,6 +71,14 @@ export type JourneyCheck = {
    *  journey esta a medias. NO es un aprobado; se lista, no se calla. */
   status: "pass" | "fail" | "not-implemented" | "pending-set";
   detail?: string;
+  /** Magnitud comparable de la regla, para el trinquete de --no-regression.
+   *  Sin esto, una regla que se arregla POR ACUMULACION no se puede reparar a
+   *  plazos: el trinquete compara los slugs citados en el detalle, y en estas
+   *  reglas esa lista CAMBIA justo al arreglarlas (al bajar las cuatro peores
+   *  historias aparecen otras cuatro y se leen como infractoras nuevas).
+   *  `mejor` dice hacia donde se mejora: una media de color baja, un suelo de
+   *  nivel sube. */
+  magnitud?: { valor: number; mejor: "alta" | "baja" };
 };
 
 const QUOTE_OPEN = "“";
@@ -371,9 +379,16 @@ export function validateJourneyStories(
   const enEspera = (detail?: string) =>
     `pendiente de conjunto: ${stories.length} historia(s) a la vista` +
     (detail ? ` · medida provisional: ${detail}` : "");
-  const pushSet = (id: string, label: string, ok: boolean, detail?: string) => {
-    if (!parcial) return push(id, label, ok, detail);
-    out.push({ id, label, status: "pending-set", detail: enEspera(ok ? undefined : detail) });
+  const pushSet = (
+    id: string, label: string, ok: boolean, detail?: string,
+    magnitud?: { valor: number; mejor: "alta" | "baja" },
+  ) => {
+    if (!parcial) {
+      push(id, label, ok, detail);
+      if (magnitud) out[out.length - 1].magnitud = magnitud;
+      return;
+    }
+    out.push({ id, label, status: "pending-set", detail: enEspera(ok ? undefined : detail), magnitud });
   };
   const noImplSet = (id: string, label: string, why: string) => {
     if (!parcial) return noImpl(id, label, why);
@@ -798,7 +813,12 @@ export function validateJourneyStories(
   // que contaria una lista neutra, y el suelo sale MAS dificil, no mas facil.
   // Se remide contra el primer B1 de portugues publicado; la fila del
   // inventario lo lleva marcado.
-  if (level === "B1") {
+  // Desde el 2026-09-08 corre tambien en B2 y C1: el suelo solo miraba B1 y
+  // por eso el Traveler ES/spain B2 podia gastar el 68% de sus plazas en
+  // palabras de A1 sin que nadie dijera nada. Los C1 publicados pasan de
+  // sobra (70% y 81%), asi que no es una vara nueva para ellos, es la que ya
+  // cumplen.
+  if (["B1", "B2", "C1"].includes(level)) {
     const DENTRO_A1A2: Record<string, (w: string) => boolean> = {
       ES: (w) => isSpanishUpToLevel(w, "a2"),
       PT: isPortugueseA1A2,
@@ -806,13 +826,22 @@ export function validateJourneyStories(
       DE: isGermanA1A2,
       FR: isFrenchA1A2,
     };
-    const SUELO_NIVEL_B1 = 0.30;
+    // 0,60 desde el 2026-09-08 (antes 0,30). El 30% dejaba que DOS TERCIOS de
+    // las plazas fueran palabras que el alumno ya tiene: medido, el B1 latam
+    // gastaba 274 de 420 plazas en `agua`, `mesa`, `domingo`, `plato`,
+    // `puerta`. El usuario lo dijo entero: las plazas alimentan los
+    // ejercicios, asi que tienen que ser palabras que a ese nivel haya que
+    // aprender. Calibrado con el catalogo: los C1 publicados van a 70% y 81%,
+    // los cuatro drafts flojos a 28-32%, y el B2 latam ya reescrito a 67%.
+    // Se queda en 60 y no en 70 porque en B1 apretar mas empuja a plazas
+    // rebuscadas, que es el error contrario.
+    const SUELO_NIVEL_B1 = 0.60;
     const dentro = DENTRO_A1A2[lang];
     if (!dentro) {
-      noImplSet("journey-vocab-level-floor", "Un journey B1 ensena vocabulario de B1",
+      noImplSet("journey-vocab-level-floor", `Un journey ${level} ensena vocabulario de su nivel`,
         `No hay lista A1/A2 de ${lang || "?"}, asi que no se puede saber que plaza esta por encima de A1/A2.`);
     } else if (!stories.some((s) => s.vocab && s.vocab.length)) {
-      noImplSet("journey-vocab-level-floor", "Un journey B1 ensena vocabulario de B1",
+      noImplSet("journey-vocab-level-floor", `Un journey ${level} ensena vocabulario de su nivel`,
         "Las historias llegaron sin vocab.");
     } else {
       let tot = 0;
@@ -823,11 +852,12 @@ export function validateJourneyStories(
       }
       const cuota = tot ? deNivel.length / tot : 0;
       pushSet("journey-vocab-level-floor",
-        `Un journey B1 ensena vocabulario de B1 (${Math.round(SUELO_NIVEL_B1 * 100)}% de las plazas por encima de A1/A2)`,
+        `Un journey ${level} ensena vocabulario de su nivel (${Math.round(SUELO_NIVEL_B1 * 100)}% de las plazas por encima de A1/A2)`,
         cuota >= SUELO_NIVEL_B1,
         `${deNivel.length}/${tot} plazas por encima de A1/A2 (${Math.round(cuota * 100)}%, suelo ${Math.round(SUELO_NIVEL_B1 * 100)}%)` +
-        ` · referencias medidas: ES spain b1 42%, ES latam b1 37%, PT brazil a1 2%` +
-        (deNivel.length ? ` · de nivel: ${deNivel.slice(0, 8).join(", ")}` : ""));
+        ` · referencias medidas: C1 publicados 70% y 81%, B2 latam 67%` +
+        (deNivel.length ? ` · de nivel: ${deNivel.slice(0, 8).join(", ")}` : ""),
+        { valor: cuota, mejor: "alta" });
     }
   }
 
@@ -903,7 +933,8 @@ export function validateJourneyStories(
       pushSet("journey-vocab-worth-teaching",
         `Cada plaza merece ensenarse (media ${TOPE_MEDIA} o menos de palabras fuera del lexico graduado)`,
         gateado ? media <= TOPE_MEDIA : true,
-        detalle);
+        detalle,
+        { valor: media, mejor: "baja" });
     }
   }
 
