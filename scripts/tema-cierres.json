@@ -1780,8 +1780,8 @@
     ]
   },
   "cmtrcpgso00073232h8vaf7na#campo-grande": {
-    "cerrado": "2026-09-07T20:50:34.574Z",
-    "hash": "35efe3ed04c7b27b",
+    "cerrado": "2026-09-08T09:12:20.722Z",
+    "hash": "aef00a0da5ddd750",
     "historias": [
       "campo-grande#0 tres-guiches-abertos",
       "campo-grande#1 o-homem-que-ronca-atras",
@@ -1789,7 +1789,7 @@
     ],
     "checks": [
       "plan del tema completo (registro \"cansado y atento, con la cortesía de quien pide favores\", espina \"Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.\")",
-      "validador canonico: 3/3 (perfil narrador)",
+      "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 92% (solo avisa)",
       "acotacion dominante bajo tope (\"responde\" 35%)",
@@ -1844,8 +1844,8 @@
     }
   },
   "cmtrcpgso00073232h8vaf7na#gramado": {
-    "cerrado": "2026-09-07T20:51:36.783Z",
-    "hash": "136669325e5f330e",
+    "cerrado": "2026-09-08T09:13:47.887Z",
+    "hash": "b04b23e44e9cc075",
     "historias": [
       "gramado#0 nada-aqui-serve",
       "gramado#1 uma-lampada-so",
@@ -1853,7 +1853,7 @@
     ],
     "checks": [
       "plan del tema completo (registro \"cálido y de despedida, sin sentimentalismo\", espina \"Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella. Aquí la espina se cierra: en la última historia dice en voz alta lo que en Salvador no habría sabido decir.\")",
-      "validador canonico: 3/3 (perfil narrador)",
+      "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 88% (solo avisa)",
       "acotacion dominante bajo tope (\"diz\" 40%)",
@@ -1908,8 +1908,8 @@
     }
   },
   "cmtrcpgso00073232h8vaf7na#jericoacoara": {
-    "cerrado": "2026-09-07T20:43:28.498Z",
-    "hash": "216697f4e863305f",
+    "cerrado": "2026-09-08T09:10:59.576Z",
+    "hash": "e2348604619d9234",
     "historias": [
       "jericoacoara#0 ninguem-lava-nada-aqui",
       "jericoacoara#1 feijao-salgado-demais",
@@ -1917,7 +1917,7 @@
     ],
     "checks": [
       "plan del tema completo (registro \"doméstico y algo terco, con humor de convivencia\", espina \"Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.\")",
-      "validador canonico: 3/3 (perfil narrador)",
+      "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 92% (solo avisa)",
       "acotacion dominante bajo tope (\"diz\" 31%)",
@@ -1972,8 +1972,8 @@
     }
   },
   "cmtrcpgso00073232h8vaf7na#lencois-maranhenses": {
-    "cerrado": "2026-09-07T15:23:02.013Z",
-    "hash": "899c83f01a59c61e",
+    "cerrado": "2026-09-08T09:11:37.642Z",
+    "hash": "29ddc72047a6d7ce",
     "historias": [
       "lencois-maranhenses#0 chove-sobre-a-excursao",
       "lencois-maranhenses#1 no-meio-do-rio",
@@ -1981,7 +1981,7 @@
     ],
     "checks": [
       "plan del tema completo (registro \"sobrio y paciente, sin dramatismo\", espina \"Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.\")",
-      "validador canonico: 3/3 (perfil narrador)",
+      "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"responde\" 20%)",
@@ -1992,7 +1992,7 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 12 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.05 sobre 42 plazas · 39 salen una sola vez | ancladas: 18/60 (30%) | cola: 39/42 portables con un solo encuentro (93%, tope 80%) | de un solo encuentro: pinga, desistir, decide, demora, esfria, acontece, aparece, esconde, cinza, úmido, contente, longe, rema, atravessam, balança, escorrega, empurra, puxa, arrasta, salva, sobe, Desceu, alto, curvada, torta, irregular, caminha, Pesco, cava, salta…",
@@ -2036,8 +2036,8 @@
     }
   },
   "cmtrcpgso00073232h8vaf7na#petropolis": {
-    "cerrado": "2026-09-07T20:51:30.846Z",
-    "hash": "74d9ec2f1c9b14e3",
+    "cerrado": "2026-09-08T09:13:02.462Z",
+    "hash": "d6204c22e8179e4f",
     "historias": [
       "petropolis#0 o-carregador-queimou",
       "petropolis#1 quatro-meses-nao-dois",
@@ -2045,7 +2045,7 @@
     ],
     "checks": [
       "plan del tema completo (registro \"práctico y algo tenso, con un aliado que no cobra por ayudar\", espina \"Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.\")",
-      "validador canonico: 3/3 (perfil narrador)",
+      "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"diz\" 30%)",
@@ -2100,8 +2100,8 @@
     }
   },
   "cmtrcpgso00073232h8vaf7na#recife": {
-    "cerrado": "2026-09-07T20:43:17.067Z",
-    "hash": "aa709b2d5d4c0d7a",
+    "cerrado": "2026-09-08T09:10:19.189Z",
+    "hash": "837fccb27f815665",
     "historias": [
       "recife#0 o-frasco-mais-barato",
       "recife#1 o-colchao-vence",
@@ -2109,7 +2109,7 @@
     ],
     "checks": [
       "plan del tema completo (registro \"seco y práctico, con humor de situación\", espina \"Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.\")",
-      "validador canonico: 3/3 (perfil narrador)",
+      "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"diz\" 38%)",
@@ -2164,8 +2164,8 @@
     }
   },
   "cmtrcpgso00073232h8vaf7na#salvador": {
-    "cerrado": "2026-09-07T20:50:28.476Z",
-    "hash": "15c68e22bddd026a",
+    "cerrado": "2026-09-08T09:09:27.896Z",
+    "hash": "8d8e734b85f04856",
     "historias": [
       "salvador#0 a-caixa-que-nao-chegou",
       "salvador#1 um-livro-de-contos",
@@ -2173,7 +2173,7 @@
     ],
     "checks": [
       "plan del tema completo (registro \"cálido y terco, sin ironía\", espina \"Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.\")",
-      "validador canonico: 3/3 (perfil narrador)",
+      "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"responde\" 29%)",
