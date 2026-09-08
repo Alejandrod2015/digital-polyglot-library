@@ -14,8 +14,10 @@ const MAPA = JSON.parse(fs.readFileSync(process.env.TITULOS!, "utf8")) as Record
     select: { topic: true, slotIndex: true, slug: true, title: true, synopsis: true, text: true, vocab: true, arcType: true },
     orderBy: { slotIndex: "asc" },
   });
+  const SLUGS = JSON.parse(fs.readFileSync(process.env.SLUGS!, "utf8")) as Record<string, string>;
   const data = st.map((s) => ({
-    topic: s.topic, slotIndex: s.slotIndex, slug: s.slug,
+    topic: s.topic, slotIndex: s.slotIndex,
+    slug: (s.slug && SLUGS[s.slug]) ? SLUGS[s.slug] : s.slug,
     title: (s.slug && MAPA[s.slug]) ? MAPA[s.slug]! : s.title,
     synopsis: s.synopsis, text: s.text, vocab: s.vocab, arcType: s.arcType,
   }));

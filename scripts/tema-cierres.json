@@ -443,12 +443,12 @@
     }
   },
   "cmtmylg7k0007321h6t7njesx#advice-and-opinions": {
-    "cerrado": "2026-09-08T08:59:40.701Z",
+    "cerrado": "2026-09-08T09:11:04.591Z",
     "hash": "de1ab77c163d3367",
     "historias": [
       "advice-and-opinions#1 un-tinto-que-nadie-pidio",
-      "advice-and-opinions#2 la-pasilla-del-jueves",
-      "advice-and-opinions#3 la-fila-daba-la-vuelta"
+      "advice-and-opinions#2 la-greca-fria",
+      "advice-and-opinions#3 yo-no-dije-nada"
     ],
     "checks": [
       "plan del tema completo (registro \"conversado y de mostrador: trato corto, precio y clientela\", espina \"un consejo que nadie pidio y que resulta ser el bueno\")",
@@ -506,12 +506,12 @@
     }
   },
   "cmtmylg7k0007321h6t7njesx#animals-and-farms": {
-    "cerrado": "2026-09-08T09:00:08.130Z",
+    "cerrado": "2026-09-08T09:11:41.152Z",
     "hash": "f55ff9fe98f4d8d5",
     "historias": [
-      "animals-and-farms#1 dos-ovejas-en-el-cerco",
+      "animals-and-farms#1 la-casilla-en-blanco",
       "animals-and-farms#2 quiltro-con-dueno",
-      "animals-and-farms#3 nadie-gana-un-juicio"
+      "animals-and-farms#3 me-quedo-con-el-bote"
     ],
     "checks": [
       "plan del tema completo (registro \"seco y a la intemperie: viento, barro y frases cortas\", espina \"un dano con dueno conocido que nadie del campo quiere nombrar en voz alta\")",
@@ -569,12 +569,12 @@
     }
   },
   "cmtmylg7k0007321h6t7njesx#distance-and-homecoming": {
-    "cerrado": "2026-09-08T09:00:50.408Z",
+    "cerrado": "2026-09-08T09:12:32.808Z",
     "hash": "86b61c4ab5ab71e8",
     "historias": [
-      "distance-and-homecoming#1 su-cuarto-era-despensa",
-      "distance-and-homecoming#2 le-corrigieron-la-sal",
-      "distance-and-homecoming#3 dejo-la-llave-en-la-mesa"
+      "distance-and-homecoming#1 su-pieza-con-estantes",
+      "distance-and-homecoming#2 le-falta-sal",
+      "distance-and-homecoming#3 el-chontaduro-del-viaje"
     ],
     "checks": [
       "plan del tema completo (registro \"quieto y cortes, de casa con horarios: pasos, puertas y trato de usted\", espina \"una casa que siguio funcionando sin ella y no le guardo sitio\")",
@@ -589,7 +589,7 @@
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Teresa): su-cuarto-era-despensa, le-corrigieron-la-sal, dejo-la-llave-en-la-mesa",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Teresa): su-pieza-con-estantes, le-falta-sal, el-chontaduro-del-viaje",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.04 sobre 47 plazas · 45 salen una sola vez | ancladas: 13/60 (22%) | cola: 45/47 portables con un solo encuentro (96%, tope 80%) | de un solo encuentro: maleta, estantes, techo, pieza, guardar, sofá, sala, manta, puerta, abre, da al, entra, blanca, propia, olla, pica, prueba, caldo, gesto, sal, sopa, por separado, cuchara, taburete, ajena, acaban, levanta, vida, todavía, bolso…",
       "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 13/60 plazas por encima de A1/A2 (22%, suelo 30%) · referencias medidas: ES spain b1 42%, ES latam b1 37%, PT brazil a1 2% · de nivel: pieza, dar a, zaguán, teja, alacena, despensa, por separado, pipián",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
@@ -632,12 +632,12 @@
     }
   },
   "cmtmylg7k0007321h6t7njesx#faith-and-devotion": {
-    "cerrado": "2026-09-08T08:59:54.243Z",
+    "cerrado": "2026-09-08T09:11:23.990Z",
     "hash": "6a38929c42304ad3",
     "historias": [
-      "faith-and-devotion#1 prometio-cargar-el-anda",
-      "faith-and-devotion#2 cera-en-las-manos",
-      "faith-and-devotion#3 madera-para-el-bastidor"
+      "faith-and-devotion#1 la-tabla-delgada",
+      "faith-and-devotion#2 no-voy-a-llegar-tarde",
+      "faith-and-devotion#3 el-velon-de-delia"
     ],
     "checks": [
       "plan del tema completo (registro \"solemne y contenido, de taller: madera, aguja y poca voz\", espina \"una deuda que nadie le reclama y que por eso no puede pagar\")",
@@ -695,12 +695,12 @@
     }
   },
   "cmtmylg7k0007321h6t7njesx#games-and-bets": {
-    "cerrado": "2026-09-08T09:00:21.975Z",
+    "cerrado": "2026-09-08T09:11:58.569Z",
     "hash": "738e0e27dc961f80",
     "historias": [
-      "games-and-bets#1 le-fiaron-en-el-palenque",
-      "games-and-bets#2 gano-y-no-cobro",
-      "games-and-bets#3 la-deuda-tenia-cara"
+      "games-and-bets#1 el-gallo-colorado",
+      "games-and-bets#2 pase-manana",
+      "games-and-bets#3 el-cuaderno-abierto"
     ],
     "checks": [
       "plan del tema completo (registro \"rapido y ruidoso, de feria: pregones, musica y cuentas dichas a gritos\", espina \"una deuda de juego que no se anota en ningun lado y que todos recuerdan igual\")",
@@ -715,7 +715,7 @@
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Hugo): le-fiaron-en-el-palenque, gano-y-no-cobro, la-deuda-tenia-cara",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Hugo): el-gallo-colorado, pase-manana, el-cuaderno-abierto",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.13 sobre 48 plazas · 42 salen una sola vez | ancladas: 12/60 (20%) | cola: 42/48 portables con un solo encuentro (88%, tope 80%) | de un solo encuentro: permiso, faltan, fío, Métase, boleto, dobla, espalda, ruido, esconde, repite, empezar, cortina, cruzada, caja, cajero, premio, ganancia, a gritos, enseña, bonito, responda por, abajo, sombrero, manera, parado, billete, cerré, callado, entera, cuaderno…",
       "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 10/60 plazas por encima de A1/A2 (17%, suelo 30%) · referencias medidas: ES spain b1 42%, ES latam b1 37%, PT brazil a1 2% · de nivel: permiso, dar fiado, pelea, palenque, colorado, ganancia, a gritos, responder por",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
@@ -758,12 +758,12 @@
     }
   },
   "cmtmylg7k0007321h6t7njesx#pride-and-envy": {
-    "cerrado": "2026-09-08T09:00:36.168Z",
+    "cerrado": "2026-09-08T09:12:15.730Z",
     "hash": "15306af63805ebf5",
     "historias": [
-      "pride-and-envy#1 contaba-las-bolsas-ajenas",
+      "pride-and-envy#1 antes-eran-mias",
       "pride-and-envy#2 el-mismo-pan-dulce",
-      "pride-and-envy#3 nadie-pidio-perdon"
+      "pride-and-envy#3 la-fuente-en-la-vereda"
     ],
     "checks": [
       "plan del tema completo (registro \"caliente y cerrado, de obrador de noche: harina, horno y frases que se dicen dos veces\", espina \"un orgullo que no deja decir en voz alta que lo del otro estaba bueno\")",
@@ -778,7 +778,7 @@
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Adrián): contaba-las-bolsas-ajenas, el-mismo-pan-dulce, nadie-pidio-perdon",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Adrián): antes-eran-mias, el-mismo-pan-dulce, la-fuente-en-la-vereda",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.06 sobre 50 plazas · 46 salen una sola vez | ancladas: 10/60 (17%) | cola: 46/50 portables con un solo encuentro (92%, tope 80%) | de un solo encuentro: amasa, bolsas, cuñada, ayudante, envidia, en voz baja, ventana, tocar, media hora, sábados, muerde, reconoce, tragar, receta, darse cuenta, admitirlo, levanta la mesa, almuerzo, gas, de frente, igualito, nueces, gasto, plato, año, cosa, nuevo, fuente, vacía, copiaste…",
       "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 16/60 plazas por encima de A1/A2 (27%, suelo 30%) · referencias medidas: ES spain b1 42%, ES latam b1 37%, PT brazil a1 2% · de nivel: ayudante, envidia, en voz baja, cayote, media hora, razón, admitir, levantar la mesa",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
@@ -821,12 +821,12 @@
     }
   },
   "cmtmylg7k0007321h6t7njesx#promises-and-excuses": {
-    "cerrado": "2026-09-08T08:59:26.947Z",
+    "cerrado": "2026-09-08T09:10:45.158Z",
     "hash": "a89643234298500b",
     "historias": [
-      "promises-and-excuses#1 le-puso-el-ojo-al-cuartel",
-      "promises-and-excuses#2 el-motor-arrancaba-bien",
-      "promises-and-excuses#3 los-sarmientos-amontonados"
+      "promises-and-excuses#1 le-puse-el-ojo",
+      "promises-and-excuses#2 el-pretexto-armado",
+      "promises-and-excuses#3 los-changarines"
     ],
     "checks": [
       "plan del tema completo (registro \"seco y de finca: poda, plazos y frases dichas sin levantar la vista\", espina \"una promesa dicha en voz alta que ya no se puede deshacer\")",
