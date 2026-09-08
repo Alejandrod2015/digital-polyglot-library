@@ -21,6 +21,7 @@ config({ path: ".env", quiet: true });
 import { PrismaClient } from "../src/generated/prisma";
 import { generateAndUploadMultiVoiceAudio } from "../src/lib/elevenlabs";
 import { generateWordTimingsForStory } from "../src/lib/audioWordTimings";
+import { rapidasDe, informe } from "./checkNarrationPace";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -128,4 +129,19 @@ const prisma = new PrismaClient();
 
   try { await generateWordTimingsForStory(s.id); console.log("alineacion OK"); }
   catch (e: any) { console.warn("alineacion FALLO:", e.message?.slice(0, 140)); }
+
+  // RITMO POR ORACION (2026-09-08). Cada oracion se sintetiza aparte y sale con
+  // su propio ritmo; el desnivel DENTRO de una historia no lo miraba nadie
+  // (normalizeAudioPace empareja historias enteras entre si, que es otra cosa)
+  // hasta que el usuario oyo una frase disparada a 3,45 w/s en una historia de
+  // mediana 2,31. Se mide AQUI, recien narrada y con los tiempos frescos,
+  // porque arreglarlo ahora cuesta re-tirar UNA oracion y descubrirlo mas
+  // tarde cuesta el master entero. Imprime el comando de arreglo ya calculado.
+  {
+    const fin = await prisma.journeyStory.findUnique({
+      where: { id: s.id }, select: { audioSegments: true, audioFragments: true },
+    });
+    const rapidas = rapidasDe((fin?.audioSegments as any) ?? [], (fin?.audioFragments as any) ?? []);
+    console.log(informe(s.slug ?? "", rapidas));
+  }
 })().finally(() => prisma.$disconnect());
