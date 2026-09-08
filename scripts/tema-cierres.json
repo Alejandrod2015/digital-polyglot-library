@@ -443,8 +443,8 @@
     }
   },
   "cmtplpfum0007j8c6piegwt31#books-and-bookshops": {
-    "cerrado": "2026-09-06T11:20:55.656Z",
-    "hash": "16d0f01fa89e8fce",
+    "cerrado": "2026-09-08T09:15:03.691Z",
+    "hash": "684a5106d411febd",
     "historias": [
       "books-and-bookshops#1 de-trabajo-o-de-vivir",
       "books-and-bookshops#2 este-no-todavia",
@@ -461,10 +461,10 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B2; poner uno seria inventarlo.",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.08 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 55/60 salen una sola vez · sin marcar ancladas",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: books-and-bookshops (Claudia, Martina)"
@@ -508,8 +508,8 @@
     ]
   },
   "cmtplpfum0007j8c6piegwt31#humour-and-comebacks": {
-    "cerrado": "2026-09-06T10:20:48.031Z",
-    "hash": "197ab6aaf0194a51",
+    "cerrado": "2026-09-08T09:14:25.111Z",
+    "hash": "76915194adbf58ed",
     "historias": [
       "humour-and-comebacks#1 la-copla-ya-lo-decia",
       "humour-and-comebacks#2 la-broma-se-queda-sola",
@@ -526,10 +526,10 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 6 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B2; poner uno seria inventarlo.",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.03 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 58/60 salen una sola vez · sin marcar ancladas",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
@@ -573,8 +573,8 @@
     ]
   },
   "cmtplpfum0007j8c6piegwt31#locals-and-outsiders": {
-    "cerrado": "2026-09-06T10:04:42.338Z",
-    "hash": "2b6d82429bf63708",
+    "cerrado": "2026-09-08T09:14:12.921Z",
+    "hash": "d74783423ddc7527",
     "historias": [
       "locals-and-outsiders#1 las-llaves-de-la-pena",
       "locals-and-outsiders#2 le-habian-guardado-tomates",
@@ -591,10 +591,10 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 3 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B2; poner uno seria inventarlo.",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.08 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 55/60 salen una sola vez · sin marcar ancladas",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: locals-and-outsiders (Marcos, Claudia)"
@@ -638,8 +638,8 @@
     ]
   },
   "cmtplpfum0007j8c6piegwt31#news-and-headlines": {
-    "cerrado": "2026-09-06T10:55:46.122Z",
-    "hash": "2497679e140657e2",
+    "cerrado": "2026-09-08T09:14:50.453Z",
+    "hash": "6f1b87bc7447ee2a",
     "historias": [
       "news-and-headlines#1 el-ano-que-falta",
       "news-and-headlines#2 decide-tu",
@@ -656,10 +656,10 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 12 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B2; poner uno seria inventarlo.",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.07 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 56/60 salen una sola vez · sin marcar ancladas",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: news-and-headlines (Hugo, Claudia)"
@@ -703,8 +703,8 @@
     ]
   },
   "cmtplpfum0007j8c6piegwt31#rounds-and-regulars": {
-    "cerrado": "2026-09-06T10:39:11.631Z",
-    "hash": "33e9f0767469b66e",
+    "cerrado": "2026-09-08T09:14:37.983Z",
+    "hash": "8fe5e6b63ce75e50",
     "historias": [
       "rounds-and-regulars#1 lo-de-siempre-cadiz-b2",
       "rounds-and-regulars#2 aqui-se-apunta",
@@ -721,10 +721,10 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B2; poner uno seria inventarlo.",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.05 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 57/60 salen una sola vez · sin marcar ancladas",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: rounds-and-regulars (Pablo, Claudia)"
@@ -768,8 +768,8 @@
     ]
   },
   "cmtplpfum0007j8c6piegwt31#visits-and-old-friends": {
-    "cerrado": "2026-09-06T12:22:39.605Z",
-    "hash": "10495638893b12ed",
+    "cerrado": "2026-09-08T09:15:15.825Z",
+    "hash": "1206caf24ebe5b24",
     "historias": [
       "visits-and-old-friends#1 quien-baja-del-tren",
       "visits-and-old-friends#2 la-ultima-llave",
@@ -833,8 +833,8 @@
     ]
   },
   "cmtplpfum0007j8c6piegwt31#wind-and-plans": {
-    "cerrado": "2026-09-06T11:09:50.359Z",
-    "hash": "e8b8882cc2a56185",
+    "cerrado": "2026-09-08T09:15:56.608Z",
+    "hash": "238d571f50cf3b5c",
     "historias": [
       "wind-and-plans#1 un-barco-para-la-pena",
       "wind-and-plans#2 el-levante-manda",
@@ -851,10 +851,10 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B2; poner uno seria inventarlo.",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.08 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 56/60 salen una sola vez · sin marcar ancladas",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: wind-and-plans (Marcos, Claudia)"

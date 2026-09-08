@@ -1,0 +1,246 @@
+### b1-t1-rooms-and-landlords.json slot1 [Celia no dice que sí] (celia-no-dice-que-si)
+Celia, una traductora de Madrid, se ha mudado a Granada, en el sur de España. La habitación que le han enseñado está en un cuarto sin ascensor, sobre una tienda. Quien la espera es Emilio, el casero.
+
+“El alquiler es de mes en mes, y el primero por adelantado”, dice Emilio. “Y arriba se oye de todo, ya lo irá viendo”, explica. Celia ha comprobado el armario y sabe que no cierra a la primera.
+
+El colchón huele a nuevo, aunque el interruptor no encienda nada. Emilio mueve un enchufe y tarda en contestarle. Ella calla.
+
+“La calefacción va por horas y en enero no subiría hasta aquí”, avisa. “Si le faltara, en el mueble del pasillo hay una estufa”, ofrece. Celia lo acepta y apunta la cifra en el billete.
+
+En la sala hay una mancha blanda encima de la mesa. El alquiler es la mitad que en Madrid y ella lo sabe. “La cerradura la cambio yo el jueves”, dice Celia desde la puerta, y baja los cuatro pisos sin decir nada más.
+
+### b1-t1-rooms-and-landlords.json slot2 [Arriba vive alguien] (arriba-vive-alguien)
+Emilio ha pegado una hoja en la puerta con cinta. Son once normas y la primera es que la lavadora se apunta. Celia la lee entera, poco a poco.
+
+“El reciclaje lo mira el portal, no se escapa nadie”, avisa Emilio. “Y para la antena haría falta permiso de todos, en serio”, cuenta. Ella ha colgado tres perchas y estira una alfombra que no tapa el suelo.
+
+La bombilla parpadea y un cable cuelga mojado del techo. Abre la ducha y el agua suena hueca dentro de la pared. Emilio pasa el dedo por el polvo y calla.
+
+“Si le faltara una manta, arriba hay dos en el altillo”, ofrece. “Y el cepillo duro se lo presto, aunque me lo devuelva sin falta”, insiste. Celia lo acepta y va a dejarlo junto a la puerta.
+
+A las once alguien ha arrastrado algo arriba, de golpe, y calla. No es ruido de obra: es alguien que vive ahí desde antes que ella. “¿A las once siempre?”, pregunta Celia. De momento apunta la hora y la herramienta que Emilio promete.
+
+### b1-t1-rooms-and-landlords.json slot3 [La mayoría decide el techo] (la-mayoria-decide-el-techo)
+El anuncio de la reunión lleva tres días en el portal, y huele a cola. Berta, la presidenta de la comunidad, ha bajado la primera. Celia baja con el portátil y una copia.
+
+“El orden del día es corto: el techo y poco más”, abre Berta. “Y saldrá o no saldrá por mayoría, no por quien grite”, explica. Luego lo revisa todo en voz alta, sin prisa.
+
+Celia ofrece pagar su parte y la frase le sale corta. Nadie contesta. Emilio levanta la mano y pide que conste su voto.
+
+“Taparlo con plástico es inútil, ya lo hemos probado”, corta Berta. “Hay que firmar los tres y de una vez, para que la obra empiece en abril”, pide. Ella apunta la fecha y busca dónde va la firma.
+
+Al final llega el sello, y Berta les resume el acta a cada uno. “Entonces firmo hoy”, dice Celia, y busca dónde va la firma. La obra ya no depende de ella ni de Emilio por su cuenta, y sube los cuatro pisos con la copia doblada.
+
+### b1-t2-jobs-and-wages.json slot1 [Nuria no negocia] (nuria-no-negocia)
+En Granada las oficinas pequeñas abren tarde y huelen a papel guardado. Hace un mes que Celia, la traductora del cuarto, busca trabajo fijo. Nuria, la encargada de la casa, la hace pasar sin levantarse.
+
+“La tarifa no se negocia, es la misma para todos los clientes”, afirma Nuria. “Ahora bien, esto no es Madrid y aquí competimos con mucho menos que allí”, explica. Celia escucha y no dice nada todavía.
+
+El plazo de entrega son dos semanas y el compromiso va firmado. Nadie le aconseja rebajar su trabajo, pero la calidad tampoco le aumenta el precio este año. El cargo de la oficina sale de ese mismo número.
+
+“Este oficio se aprende corrigiendo, no discutiendo”, dice Nuria. “Y quien no confirma el encargo por correo, después no cobra”, insiste. Celia admite que en Madrid tampoco era tan distinto.
+
+Nuria se queda calmada delante de sus papeles, capaz de decir un número y callarse. En Madrid el precio se discutía; aquí simplemente existe. “Entonces empiezo el lunes”, dice Celia, y firma. Sale a la calle con las dos cosas.
+
+### b1-t2-jobs-and-wages.json slot2 [La cuota no espera] (la-cuota-no-espera)
+La luz de octubre entra plana por la ventana y da sobre la mesa. Celia declara su trabajo y guarda el contrato en una carpeta azul. El calendario de la pared tiene el mes entero en blanco.
+
+“Aquí se paga la cuota antes de ingresar el primer euro”, advierte Emilio. “Y el impuesto llega igual, tengas trabajo este mes o no lo tengas”, repite. Celia agenda los dos pagos y sigue con la cuenta.
+
+El ahorro de Madrid es corto y la deuda del primer mes es cercana. Ella es paciente con los números. La causa no está en lo que gana.
+
+“Yo cedí muchas veces y aprendí tarde”, admite Emilio. “Ahora alerto a todo el mundo, aunque sea breve y no me escuchen”, pide. Celia deduce que él habla de sus propios años.
+
+El último día del mes lo ve con certeza al mirar la lista entera. “No es que gane poco: cobro tarde y pago pronto”, dice Celia en voz alta, sola en la cocina. Le hace falta un mes de aire. Separa las fechas en dos columnas y se sienta a cenar tranquila.
+
+### b1-t2-jobs-and-wages.json slot3 [Cobrar es otro trabajo] (cobrar-es-otro-trabajo)
+Dos semanas después de la factura, el teléfono suena en la escalera y nadie lo coge. Celia no sabe todavía si escribir. Nuria la llama desde la oficina a media mañana.
+
+“Pedir lo tuyo no es criticar a nadie, es tu trabajo”, comunica Nuria. “Quien no lo hace, en este mundo cobra siempre el último”, cuenta. Celia analiza otra vez el correo que tiene a medias.
+
+Emilio sube con la compra y se para en el descansillo. Cuenta una obra del portal que tardó cuatro meses en pagarse. Él colaboró llamando cada lunes, sin desconfiar de nadie.
+
+“Demuestra la fecha y ya está, y no defiendas nada más”, aconseja Emilio. “Y aprovecha que aún es pronto para poder ser razonable”, concluye. Celia cuestiona dos frases suyas y las quita.
+
+“Cuatro líneas y la fecha, nada más”, dice Celia, y confía en que baste. La respuesta llega esa misma tarde, seca y correcta, con la fecha del pago. Ella la apunta debajo de la factura, con el trato y el empleo en la misma línea.
+
+### b1-t3-meetings-and-deadlines.json slot1 [Tres horas por un punto] (tres-horas-por-un-punto)
+Cuando Celia llega, la sala de espera ya está llena y huele a café recalentado. Rosa, que coordina los encargos de la agencia, la saluda con la carpeta abierta. En el ordenador hay un orden del día de nueve puntos.
+
+“Vamos punto por punto, que si no nos perdemos”, comienza Rosa. “Y la entrega no se mueve, eso lo dejo claro antes que nada”, explica. Celia mira la hora y hace la cuenta.
+
+El primer punto ocupa media reunión y nadie lo dice. Hay desacuerdo sobre una palabra del título.
+
+“Esto es así, y de vez en cuando sale un tema de verdad”, admite Rosa. “Tú termina lo tuyo cuanto antes, que lo demás se arregla”, pide. Celia guarda el texto y cierra el ordenador.
+
+En la calle todavía hay luz y la fecha sigue donde estaba. “Entonces la entrega es el día quince”, dice Celia antes de salir. Desde luego la reunión no le ha quitado trabajo, solo tres horas: el acuerdo fue cambiar una palabra por otra parecida, y mientras tanto el encargo la espera igual.
+
+### b1-t3-meetings-and-deadlines.json slot2 [El retraso no es suyo] (el-retraso-no-es-suyo)
+Una semana antes de la entrega, los textos todavía no han llegado. Celia tiene el ordenador encendido desde las ocho y la pantalla en blanco. Emilio la ve por la ventana del rellano y sube.
+
+“En las obras pasaba igual, el material llegaba tarde y el plazo no”, cuenta Emilio. “Y el retrasado acababa siendo el último que tocaba la pared”, avisa. Celia lo escucha con el café frío.
+
+El desorden no lo ha hecho ella y lo está pagando ella. La urgencia se hereda hacia abajo, de quien manda a quien trabaja. Hasta cierto punto, eso es una costumbre y no una ley.
+
+“Tú determina la fecha nueva y mándala tú”, aconseja Emilio. “Que si esperas a que la pongan, la ponen mala”, insiste. Celia abre el correo y empieza a escribir despacio.
+
+La respuesta llega en media hora y acepta la fecha sin discutir. “El retraso era suyo desde el principio”, dice Celia en la escalera. Por lo pronto tiene una semana entera.
+
+### b1-t3-meetings-and-deadlines.json slot3 [Reunión sin orden del día] (reunion-sin-orden-del-dia)
+Su correo del jueves convoca una reunión y no dice para qué. Son cuatro líneas, sin orden del día y sin una hora exacta. Ella lo lee dos veces y se queda con la última.
+
+“Aquí eso no se hace nunca, siempre va el orden delante”, comenta Rosa. “Y cuando no va, es que alguien prefiere decirlo en persona”, responde. Celia guarda el correo y no contesta.
+
+El viernes está en el calendario y el aviso llega tardío. Nadie dice nada en la oficina, y ese silencio pesa más que el correo. Desde su punto de vista, la esperanza y el miedo caben en la misma frase.
+
+“Yo iría tranquila, que tampoco es la primera vez”, aconseja Rosa. “Y si es lo que piensas, mejor saberlo ya que la próxima semana”, insiste. Celia apunta la hora y cierra el ordenador.
+
+El jueves por la noche llega un segundo correo, todavía más corto. “¿Mañana, tan pronto como abran, y yo sola?”, escribe Celia. Nadie contesta, y Celia mira la pantalla sin apagar la luz.
+
+### b1-t4-repeating-and-rephrasing.json slot1 [El técnico habla rápido] (el-tecnico-habla-rapido)
+Un hombre con una caja de herramientas llama a las cinco a la puerta de Celia, la traductora del cuarto. Quique, el técnico del gas, se pone un guante y mira el piloto azul, que huele a cerrado desde el verano.
+
+“Esto se enciende aquí, y si se apaga miras la presión y ya está, que esto no tiene mucho más misterio”, dice Quique sin volverse. “Y el manual está dentro del cajón, aunque nadie lo lee nunca, es decir, nadie”, sigue. Celia asiente con la cabeza.
+
+Ella se gana la vida con las palabras y ahora no le llegan. No ha cogido ni la mitad de la explicación. Aprieta el bolígrafo sin escribir y deja pasar un minuto entero, insegura, hasta que lo dice con la voz más baja de lo que quería.
+
+“Perdona, ¿me lo repites más despacio y desde el principio, por favor?”, pide Celia. Quique se gira y lo cuenta otra vez, señalando cada tubo con el guante puesto.
+
+Ahora sí lo comprende. La tarde se ha ido, pero el piloto se queda encendido y la presión, donde tiene que estar.
+
+### b1-t4-repeating-and-rephrasing.json slot2 [Con mis propias palabras] (con-mis-propias-palabras)
+Celia baja a por el correo y Emilio, el casero, la para en el portal, con la compra en el suelo y tres asuntos en la voz. Le indica el sobre del banco antes de saludarla. Huele a lejía recién echada y la escalera está mojada todavía.
+
+“Lo del agua es del martes, lo de la obra de abril, y el banco pide papeles”, suelta Emilio. Celia se pierde en el segundo.
+
+“Y si no los llevas tú, los llevo yo, pero alguien los lleva”, sigue.
+
+Antes callaba, porque callarse era cómodo y no costaba nada. “A ver si te sigo: el agua el martes, la obra en abril, y los papeles esta semana”, repite Celia.
+
+Le sale torpe, con un susurro en medio, y baja la cabeza al terminar.
+
+“Casi: los papeles son para el lunes, lo demás sí”, contesta Emilio sin darle importancia.
+
+La confusión se deshace con sus propias palabras, no con las de Emilio. Celia recoge el sobre del suelo, se lo guarda en el bolsillo y sube riéndose sola.
+
+### b1-t4-repeating-and-rephrasing.json slot3 [La línea se corta] (la-linea-se-corta)
+Celia marca el número de Emilio y el teléfono suena con un murmullo de fondo. Él contesta desde la calle, donde hace viento, y se oye la mitad.
+
+“El día veinte, si el del techo no nos falla otra vez como en marzo”, grita Emilio. “¿El veinte o el veintiuno?”, pregunta ella. La línea se corta antes de la respuesta.
+
+Marca de nuevo, y el minuto que tarda en dar señal se le hace largo. No lo deja, porque esa fecha decide si trabaja en casa todo el mes, y apoya la frente en la pared fría.
+
+“Perdona, otra vez yo, ¿el veinte?”, repite Celia. “El veinte, sí, a las ocho, y con el portal abierto”, contesta él, ya sin viento detrás. Ella deja de pedir perdón y pregunta lo que falta: la hora, el portal, quién abre. Con seguridad, y sin dar las gracias dos veces.
+
+### b1-t5-sayings-and-nicknames.json slot1 [Por qué le dicen Chispa] (por-que-le-dicen-chispa)
+Mientras espera el ascensor, Celia, la traductora del cuarto, oye tres veces el mismo nombre. Paco, el electricista del segundo, sube con dos bolsas, y Emilio, el casero, le grita desde el buzón.
+
+“Chispa, que te dejas la puerta”, avisa Emilio. “Ya voy, ya voy, que llevo las dos manos ocupadas”, contesta él sin girarse.
+
+Ella lo deduce en la cabeza, sin preguntar a nadie. Será por lo simpático, se dice.
+
+Porque el hombre saluda a todo el mundo y tiene gracia. Repite la broma el jueves, con las mismas palabras que ha oído.
+
+Le sale plana. Se le sube el color a la cara delante de tres vecinos, así que se ríe ella primero, antes de que se rían ellos.
+
+“¿De dónde viene lo de Chispa?”, pregunta Celia por fin, ya sin rodeos.
+
+“De que dejó el portal a oscuras dos días, en agosto”, aclara Emilio. “Y el mote se le quedó antes que la factura”, sigue. “Y al del quinto, el que arrastra cajas a las once, le dicen el Mudanzas”, remata Emilio. Paco levanta la mano desde arriba, sin enfadarse, como quien se enteró hace años.
+
+### b1-t5-sayings-and-nicknames.json slot2 [El horno y los bollos] (el-horno-y-los-bollos)
+Una mañana de lunes Celia baja con el favor preparado y dos frases pensadas. Huele a fregona y a lejía, y Emilio friega el portal con la cara de otro día.
+
+“Hoy no está el horno para bollos, Celia, ya te lo digo yo”, suelta Emilio sin levantar la vista. “El del tercero ha vuelto a dejar la basura fuera, y van tres veces este mes”, sigue. “Así que hoy me pides lo que quieras, pero mañana”, remata sin levantar la vista.
+
+“¿Qué horno, el de la panadería?”, pregunta Celia, y busca uno con la mirada, porque en su cabeza las palabras van una a una. No hay horno, ni bollos, ni nada que se le acerque.
+
+Cierra los labios cuando entiende, cinco segundos tarde. El favor se queda sin pedir y no pasa nada.
+
+Antes de subir, anota la frase hecha entera en el móvil, no palabra por palabra. La escribe con el horno y los bollos dentro, tal cual la ha oído, y se lo guarda en el bolsillo, junto a la llave del portal.
+
+### b1-t5-sayings-and-nicknames.json slot3 [La nueva ya tiene mote] (la-nueva-ya-tiene-mote)
+Nadie la llama Celia en el portal, y ya lleva medio año viviendo aquí. Es la nueva, la del cuarto, la que trabaja en casa.
+
+El nombre de uno aquí lo ponen los demás, y eso le molesta. En Madrid era Celia y nada más.
+
+Emilio, el casero, está en el buzón con el sobre del agua en la mano.
+
+“Mira, la Apuntadora, que ya viene con su cuaderno”, dice asomando la cabeza. “Y con la llave en la mano, como siempre”, añade para el buzón vacío. Celia se para en el escalón frío, con la llave en la mano.
+
+“Se lo he puesto yo, por lo del cuaderno”, le explica Emilio. Es verdad: anota horas, fechas y motes. No le suena a burla, aunque se lo pusieran sin permiso.
+
+“Aquí estoy, y con el cuaderno, sí”, contesta ella enseguida, sin averiguar quién se lo puso. “Y el jueves te apunto a ti lo del agua, que se te olvida”, le dice desde el escalón. Sube los cuatro pisos, abre el cuaderno y escribe el mote debajo de los otros tres. Luego lo guarda, con la fecha al lado.
+
+### b1-t6-deals-and-estimates.json slot1 [Dos precios, un techo] (dos-precios-un-techo)
+Dos papeles con el mismo techo dentro, y el doble de diferencia entre ellos. Celia, la traductora del cuarto, los lleva doblados en el bolsillo. Toño, el albañil que lleva la obra, llega tarde a la acera y descarga una escalera del coche.
+
+“El de la otra empresa es barato porque no toca el tejado entero, solo la mitad”, dice Toño. “Y el mío es caro porque sí lo toca entero, así de simple”, añade con la calculadora en la mano.
+
+Celia mira los dos totales y duda: no le salen las cuentas. Le sube el calor a las orejas: la mañana se le ha ido en la acera y sigue sin entender nada.
+
+“¿Me lo divides en partes, con lo que cuesta cada una y cuánto lleva?”, pide Celia, bajando la voz.
+
+Toño se apoya en el coche y escribe seis líneas con un lápiz. Ya no se pueden comparar: uno pone cemento y ladrillo, el otro pintura y el resto en blanco.
+
+### b1-t6-deals-and-estimates.json slot2 [En mano y sin factura] (en-mano-y-sin-factura)
+Quien firma por los tres es Celia, la traductora del cuarto. Aunque el precio ya estaba cerrado, Loli, la comercial de la otra empresa, llama el martes con una rebaja. Sale más barato en mano, sin papel de por medio.
+
+“Así te ahorras un buen dinero y empezamos ya la semana que viene, sin esperas”, propone Loli al teléfono. Celia mira la copia encima de la mesa.
+
+La decisión es de Emilio, de Berta y suya. Es la nueva y va a rechazar el trato más barato, así que respira una vez y lo dice mirando el papel.
+
+“Sin factura no puedo, porque el dinero no es mío, es de los tres”, contesta Celia. “Y lo que firmo lo tengo que poder enseñar a los otros dos”, añade, ya más firme.
+
+Al otro lado no contesta nadie durante un rato largo. Luego Loli dice que lo mira y que llama mañana. Celia se queda con el papel abierto.
+
+### b1-t6-deals-and-estimates.json slot3 [El papel donde se ve] (el-papel-donde-se-ve)
+En el portal huele a lejía y hay tres personas alrededor de un papel, encima del buzón. Emilio quiere el barato, el del tercero quiere que empiece antes de abril, y Celia quiere uno que se pueda enseñar.
+
+“Cuatrocientos más entre tres son ciento treinta y tres cada uno”, cuenta Emilio con la calculadora del móvil.
+
+“Yo esos ciento treinta y tres no los tenía pensados para este mes”, admite Emilio, y se toca el cuello con la mano.
+
+Celia no levanta la voz. Reparte el resto en tres partes iguales.
+
+“Yo pago mi parte el día uno, y lo pongo por escrito aquí mismo, en el margen”, dice Celia.
+
+Le tiembla el bolígrafo en la primera letra, porque nunca ha firmado nada por otros dos.
+
+Firma la primera y pasa el papel. Emilio firma después y el del tercero el último, con la fecha al lado. El papel se queda en el tablón, donde lo ve todo el que entra.
+
+### b1-t7-trust-and-rumours.json slot1 [Lo que corre por el portal] (lo-que-corre-por-el-portal)
+Desde el lunes la miran de un modo raro y nadie le explica nada. Celia, la traductora del cuarto, sube y baja dos veces con la excusa del correo.
+
+Sole vive en el bajo y la para con la bolsa de la compra en el suelo.
+
+“Oye, ¿tú te vas en junio o no te vas?”, pregunta Sole, sin adornarlo. Celia se queda con la llave a medio girar.
+
+“Yo no he dicho eso”, contesta Celia con la excusa del correo en la mano, y se da cuenta de que sí lo dijo.
+
+“Se lo dije a alguien en la escalera, hace dos semanas”, se acuerda en voz alta. “Dije que en junio se me acaba el contrato, y ya está”.
+
+Junta quién ha hablado con quién y le lleva la tarde entera. Al final todo sale de un comentario suyo.
+
+La frase era suya y ahora no la reconoce. Se le queda algo pesado debajo del estómago. “Lo dije yo, palabra por palabra”, repasa, sentada en el escalón.
+
+### b1-t7-trust-and-rumours.json slot2 [Se lo digo yo primero] (se-lo-digo-yo-primero)
+Sole se lo ha contado a Emilio antes que ella, y eso pesa más que el dato.
+
+Sube los dos pisos sin coger el ascensor. Llama al timbre con la mano abierta, no con el nudillo, y le sale la voz más rápida de lo que quería.
+
+“Lo del viernes era un encargo largo, y por eso sigo hasta junio”, empieza Celia. “Se lo digo yo, y se lo digo ahora”, añade. “No me voy todavía, y si me voy, lo sabrá usted primero”, añade.
+
+Emilio la escucha en el marco de la puerta, sin invitarla a pasar. Se queda callado más de lo que se quedaba antes.
+
+“Yo prefiero saberlo aquí y no en el buzón”, dice él, y afloja un poco la cara. La confianza no vuelve entera esa tarde, pero vuelve algo. Celia baja sin prisa y deja la puerta del rellano abierta.
+
+### b1-t7-trust-and-rumours.json slot3 [Eso no lo repito] (eso-no-lo-repito)
+Cuando Sole baja con dos bolsas, Celia ya está en el rellano con la llave fuera. La pregunta viene hecha: el caso es la oficina y quien la lleva, y las dos saben lo mismo: poco y de oídas.
+
+“Tú que trabajas allí, ¿es verdad lo que dicen?”, pregunta Sole, bajando la voz.
+
+Decir que sí es lo fácil. “¿Y tú dónde lo has oído?”, pregunta Celia, y se acuerda de junio.
+
+“No lo sé, y aunque lo supiera, eso yo no lo cuento por ahí”, contesta Celia. Sale sin adornarlo y sin pedir perdón, que es lo que antes le costaba.
+
+“Pues nada, ya me enteraré yo por otro lado, no te preocupes”, dice Sole. Se encoge de hombros, sigue bajando con sus bolsas y se va con las manos como vino. Esperaba temblar y no tiembla. Se queda un rato en el rellano, con el aire frío de la calle entrando.

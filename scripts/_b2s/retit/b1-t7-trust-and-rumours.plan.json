@@ -1,0 +1,34 @@
+{
+ "tipo": "Traveler",
+ "nivel": "b1",
+ "variante": "spain",
+ "registro": "de rellano y media frase: lo que se dice bajito y lo que se calla",
+ "espina": "Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella",
+ "recursos": "Imagen concreta, Contraste con pero, Causalidad explicita, Repeticion ritmica, Espejo concreto, Reversa cosida",
+ "historias": [
+  {
+   "slot": "1",
+   "quiere": "saber por que en el portal la miran raro desde el lunes",
+   "impide": "nadie se lo dice de frente, y lo que corre es que se va del piso en junio",
+   "cuesta": "la tarde que pierde reconstruyendo quien dijo que",
+   "cambia": "descubre que el rumor sale de una frase suya, dicha sin pensar",
+   "emocion": "vergüenza que se le queda en el estomago: la frase era suya y ahora no la reconoce, asi que se sienta en el escalon y repasa lo que dijo"
+  },
+  {
+   "slot": "2",
+   "quiere": "que Emilio no crea que se marcha sin avisar",
+   "impide": "el se ha enterado por Sole y no por ella, y eso pesa mas que el dato",
+   "cuesta": "la confianza facil que tenian, que ya no vuelve entera",
+   "cambia": "deja de esperar a que le pregunten y va ella a contarlo",
+   "emocion": "prisa nerviosa: sube dos pisos sin ascensor por decirlo antes de que se lo cuenten, y le sale la voz mas rapida de lo que queria"
+  },
+  {
+   "slot": "3",
+   "quiere": "cerrar el año en el portal sin deberle una explicacion a nadie",
+   "impide": "Sole le pide que confirme un rumor sobre Nuria, y confirmarlo seria facil",
+   "cuesta": "quedar bien con Sole, que se va con las manos vacias",
+   "cambia": "dice que no lo sabe y que no lo va a repetir, y lo dice sin adornarlo",
+   "emocion": "calma nueva, que le sorprende: esperaba temblar y no tiembla, asi que se queda un rato mas en el rellano antes de subir"
+  }
+ ]
+}

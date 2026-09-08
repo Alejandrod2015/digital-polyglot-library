@@ -1,0 +1,395 @@
+[
+ {
+  "topic": "repeating-and-rephrasing",
+  "slotIndex": 1,
+  "title": "El piloto azul",
+  "slug": "el-tecnico-habla-rapido",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Quique viene a mirar la caldera y explica en dos minutos, de espaldas y sin parar. Celia asiente por costumbre y se da cuenta de que no ha entendido la mitad, que es lo que más le pesa: se gana la vida con las palabras. Le cuesta un rato pedirle que lo repita, y cuando lo hace la explicación entra a la primera.",
+  "text": "Un hombre con una caja de herramientas llama a las cinco a la puerta de Celia, la traductora del cuarto. Quique, el técnico del gas, se pone un guante y mira el piloto azul, que huele a cerrado desde el verano.\n\n“Esto se enciende aquí, y si se apaga miras la presión y ya está, que esto no tiene mucho más misterio”, dice Quique sin volverse. “Y el manual está dentro del cajón, aunque nadie lo lee nunca, es decir, nadie”, sigue. Celia asiente con la cabeza.\n\nElla se gana la vida con las palabras y ahora no le llegan. No ha cogido ni la mitad de la explicación. Aprieta el bolígrafo sin escribir y deja pasar un minuto entero, insegura, hasta que lo dice con la voz más baja de lo que quería.\n\n“Perdona, ¿me lo repites más despacio y desde el principio, por favor?”, pide Celia. Quique se gira y lo cuenta otra vez, señalando cada tubo con el guante puesto.\n\nAhora sí lo comprende. La tarde se ha ido, pero el piloto se queda encendido y la presión, donde tiene que estar.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "técnico",
+    "surface": "técnico",
+    "definition": "Technician; the person who comes to repair a machine."
+   },
+   {
+    "type": "noun",
+    "word": "gas",
+    "surface": "gas",
+    "definition": "Gas; the fuel that heats water and cooks food."
+   },
+   {
+    "type": "noun",
+    "word": "piloto",
+    "surface": "piloto",
+    "definition": "Pilot light; the small flame that keeps a boiler ready."
+   },
+   {
+    "type": "noun",
+    "word": "manual",
+    "surface": "manual",
+    "definition": "Manual; the booklet that explains how a machine works."
+   },
+   {
+    "type": "noun",
+    "word": "guante",
+    "surface": "guante",
+    "definition": "Glove; the cover you wear to protect your hand at work."
+   },
+   {
+    "type": "noun",
+    "word": "traductor",
+    "surface": "traductora",
+    "definition": "Translator; somebody whose job is turning words into another language."
+   },
+   {
+    "type": "noun",
+    "word": "explicación",
+    "surface": "explicación",
+    "definition": "Explanation; the words used to make something clear."
+   },
+   {
+    "type": "noun",
+    "word": "presión",
+    "surface": "presión",
+    "definition": "Pressure; the force of water or gas inside a system."
+   },
+   {
+    "type": "verb",
+    "word": "asentir",
+    "surface": "asiente",
+    "definition": "To nod; to move your head to show you agree."
+   },
+   {
+    "type": "verb",
+    "word": "apretar",
+    "surface": "Aprieta",
+    "definition": "To grip; to press something hard with your hand."
+   },
+   {
+    "type": "verb",
+    "word": "girarse",
+    "surface": "se gira",
+    "definition": "To turn round; to move so you face the other way."
+   },
+   {
+    "type": "verb",
+    "word": "señalar",
+    "surface": "señalando",
+    "definition": "To point at; to show something with your finger."
+   },
+   {
+    "type": "verb",
+    "word": "comprender",
+    "surface": "comprende",
+    "definition": "To understand; to see clearly what somebody means."
+   },
+   {
+    "type": "adverb",
+    "word": "despacio",
+    "surface": "despacio",
+    "definition": "Slowly; leaving time between one word and the next."
+   },
+   {
+    "type": "noun",
+    "word": "tubo",
+    "surface": "tubo",
+    "definition": "Pipe; the tube that carries gas or water along."
+   },
+   {
+    "type": "adjective",
+    "word": "inseguro",
+    "surface": "insegura",
+    "definition": "Unsure; not confident about what you are doing."
+   },
+   {
+    "type": "expression",
+    "word": "es decir",
+    "surface": "es decir",
+    "definition": "That is to say; used to say the same thing again more clearly."
+   },
+   {
+    "type": "expression",
+    "word": "sin volverse",
+    "surface": "sin volverse",
+    "definition": "Without turning round; talking with his back still turned."
+   },
+   {
+    "type": "noun",
+    "word": "minuto",
+    "surface": "minuto",
+    "definition": "Minute; sixty seconds, here the time she takes to speak."
+   },
+   {
+    "type": "expression",
+    "word": "otra vez",
+    "surface": "otra vez",
+    "definition": "Again; one more time after the first one."
+   }
+  ]
+ },
+ {
+  "topic": "repeating-and-rephrasing",
+  "slotIndex": 2,
+  "title": "A ver si te sigo",
+  "slug": "con-mis-propias-palabras",
+  "arcType": "harmonic-close",
+  "synopsis": "Emilio le cuenta tres asuntos del portal en una sola frase y Celia se pierde en el segundo. En vez de callarse, prueba a repetir en voz alta lo que ha entendido, con sus palabras. Le sale torcido la primera vez, Emilio se lo corrige sin darle importancia, y Celia descubre que preguntar así cuesta menos que fingir.",
+  "text": "Celia baja a por el correo y Emilio, el casero, la para en el portal, con la compra en el suelo y tres asuntos en la voz. Le indica el sobre del banco antes de saludarla. Huele a lejía recién echada y la escalera está mojada todavía.\n\n“Lo del agua es del martes, lo de la obra de abril, y el banco pide papeles”, suelta Emilio. Celia se pierde en el segundo.\n\n“Y si no los llevas tú, los llevo yo, pero alguien los lleva”, sigue.\n\nAntes callaba, porque callarse era cómodo y no costaba nada. “A ver si te sigo: el agua el martes, la obra en abril, y los papeles esta semana”, repite Celia.\n\nLe sale torpe, con un susurro en medio, y baja la cabeza al terminar.\n\n“Casi: los papeles son para el lunes, lo demás sí”, contesta Emilio sin darle importancia.\n\nLa confusión se deshace con sus propias palabras, no con las de Emilio. Celia recoge el sobre del suelo, se lo guarda en el bolsillo y sube riéndose sola.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "susurro",
+    "surface": "susurro",
+    "definition": "Whisper; words said so quietly they are hard to hear."
+   },
+   {
+    "type": "noun",
+    "word": "confusión",
+    "surface": "confusión",
+    "definition": "Confusion; not being sure which thing is which."
+   },
+   {
+    "type": "verb",
+    "word": "seguir",
+    "surface": "sigue",
+    "definition": "To go on; to keep speaking without stopping."
+   },
+   {
+    "type": "verb",
+    "word": "sentido",
+    "surface": "sigo",
+    "definition": "To follow; to keep up with what somebody is saying."
+   },
+   {
+    "type": "noun",
+    "word": "importancia",
+    "surface": "importancia",
+    "definition": "Importance; how much weight somebody gives to a thing."
+   },
+   {
+    "type": "noun",
+    "word": "abril",
+    "surface": "abril",
+    "definition": "April; the fourth month, when the building work starts."
+   },
+   {
+    "type": "verb",
+    "word": "soltar",
+    "surface": "suelta",
+    "definition": "To come out with; to say it all quickly in one go."
+   },
+   {
+    "type": "adjective",
+    "word": "torpe",
+    "surface": "torpe",
+    "definition": "Clumsy; coming out awkwardly instead of smooth and sure."
+   },
+   {
+    "type": "verb",
+    "word": "contestar",
+    "surface": "contesta",
+    "definition": "To answer; to say something back to what you just heard."
+   },
+   {
+    "type": "verb",
+    "word": "callarse",
+    "surface": "callarse",
+    "definition": "To keep quiet; to say nothing when you could speak."
+   },
+   {
+    "type": "verb",
+    "word": "reírse",
+    "surface": "riéndose",
+    "definition": "To laugh; to make the sound that shows you are amused."
+   },
+   {
+    "type": "verb",
+    "word": "perderse",
+    "surface": "se pierde",
+    "definition": "To lose the thread; to stop following what somebody says."
+   },
+   {
+    "type": "verb",
+    "word": "indicar",
+    "surface": "indica",
+    "definition": "To point out; to show somebody a thing without naming it."
+   },
+   {
+    "type": "noun",
+    "word": "martes",
+    "surface": "martes",
+    "definition": "Tuesday; the day the water is going to be cut off."
+   },
+   {
+    "type": "adjective",
+    "word": "cómodo",
+    "surface": "cómodo",
+    "definition": "Comfortable; easy and needing no effort from you."
+   },
+   {
+    "type": "adjective",
+    "word": "propio",
+    "surface": "propias",
+    "definition": "Own; belonging to that person and nobody else."
+   },
+   {
+    "type": "expression",
+    "word": "a ver si",
+    "surface": "A ver si",
+    "definition": "Let us see if; used before checking that you got it right."
+   },
+   {
+    "type": "expression",
+    "word": "sin darle importancia",
+    "surface": "sin darle importancia",
+    "definition": "Without making a fuss; treating it as a small thing."
+   },
+   {
+    "type": "expression",
+    "word": "en medio",
+    "surface": "en medio",
+    "definition": "In the middle; between the start and the end."
+   },
+   {
+    "type": "expression",
+    "word": "lo demás",
+    "surface": "lo demás",
+    "definition": "The rest; everything else that has not been named."
+   }
+  ]
+ },
+ {
+  "topic": "repeating-and-rephrasing",
+  "slotIndex": 3,
+  "title": "La fecha que decide",
+  "slug": "la-linea-se-corta",
+  "arcType": "recurring-character-callback",
+  "synopsis": "Celia llama a Emilio para cerrar la fecha de la obra y la línea se corta tres veces seguidas. Cada uno repite media frase y la conversación no avanza. Ella quiere colgar y no cuelga, porque la fecha importa, y a la tercera deja de pedir perdón por preguntar y pregunta y ya.",
+  "text": "Celia marca el número de Emilio y el teléfono suena con un murmullo de fondo. Él contesta desde la calle, donde hace viento, y se oye la mitad.\n\n“El día veinte, si el del techo no nos falla otra vez como en marzo”, grita Emilio. “¿El veinte o el veintiuno?”, pregunta ella. La línea se corta antes de la respuesta.\n\nMarca de nuevo, y el minuto que tarda en dar señal se le hace largo. No lo deja, porque esa fecha decide si trabaja en casa todo el mes, y apoya la frente en la pared fría.\n\n“Perdona, otra vez yo, ¿el veinte?”, repite Celia. “El veinte, sí, a las ocho, y con el portal abierto”, contesta él, ya sin viento detrás. Ella deja de pedir perdón y pregunta lo que falta: la hora, el portal, quién abre. Con seguridad, y sin dar las gracias dos veces.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "murmullo",
+    "surface": "murmullo",
+    "definition": "Murmur; a low sound of voices behind somebody speaking."
+   },
+   {
+    "type": "noun",
+    "word": "techo",
+    "surface": "techo",
+    "definition": "Roof; the top part of a building, above the flats."
+   },
+   {
+    "type": "noun",
+    "word": "viento",
+    "surface": "viento",
+    "definition": "Wind; moving air that makes a voice hard to hear."
+   },
+   {
+    "type": "verb",
+    "word": "apoyo",
+    "surface": "apoya",
+    "definition": "To rest; to put a part of your body against something firm."
+   },
+   {
+    "type": "noun",
+    "word": "seguridad",
+    "surface": "seguridad",
+    "definition": "Confidence; the steady feeling of knowing what to ask for."
+   },
+   {
+    "type": "verb",
+    "word": "cortarse",
+    "surface": "se corta",
+    "definition": "To cut out; when a phone line stops working suddenly."
+   },
+   {
+    "type": "verb",
+    "word": "marcar",
+    "surface": "Marca",
+    "definition": "To dial; to press the numbers to make a call."
+   },
+   {
+    "type": "noun",
+    "word": "minuto",
+    "surface": "minuto",
+    "definition": "Minute; sixty seconds of a call that keeps cutting out."
+   },
+   {
+    "type": "verb",
+    "word": "gritar",
+    "surface": "grita",
+    "definition": "To shout; to speak very loudly so you are heard."
+   },
+   {
+    "type": "noun",
+    "word": "veces",
+    "surface": "veces",
+    "definition": "Times; the number of occasions that something happens."
+   },
+   {
+    "type": "verb",
+    "word": "fallar",
+    "surface": "falla",
+    "definition": "To fail; to not do what was expected of you."
+   },
+   {
+    "type": "verb",
+    "word": "apoyar",
+    "surface": "apoya",
+    "definition": "To rest; to put a part of your body against something."
+   },
+   {
+    "type": "verb",
+    "word": "sonar",
+    "surface": "suena",
+    "definition": "To ring; to make the sound a phone makes."
+   },
+   {
+    "type": "verb",
+    "word": "oírse",
+    "surface": "se oye",
+    "definition": "To be heard; to reach somebody's ear clearly or not."
+   },
+   {
+    "type": "adjective",
+    "word": "frío",
+    "surface": "fría",
+    "definition": "Cold; low in temperature when you touch it."
+   },
+   {
+    "type": "expression",
+    "word": "veintiuno",
+    "surface": "veintiuno",
+    "definition": "Twenty one; the day after the twentieth of the month."
+   },
+   {
+    "type": "expression",
+    "word": "de nuevo",
+    "surface": "de nuevo",
+    "definition": "Again; one more time, starting from the beginning."
+   },
+   {
+    "type": "expression",
+    "word": "dar las gracias",
+    "surface": "dar las gracias",
+    "definition": "To thank; to tell somebody you are grateful to them."
+   },
+   {
+    "type": "adverb",
+    "word": "detrás",
+    "surface": "detrás",
+    "definition": "Behind; at the back of somebody or something."
+   },
+   {
+    "type": "expression",
+    "word": "a las ocho",
+    "surface": "A las ocho",
+    "definition": "At eight; at eight o'clock in the morning."
+   }
+  ]
+ }
+]

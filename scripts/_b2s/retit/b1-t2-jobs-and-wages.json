@@ -1,0 +1,395 @@
+[
+ {
+  "topic": "jobs-and-wages",
+  "slotIndex": 1,
+  "title": "El precio que existe",
+  "slug": "nuria-no-negocia",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Celia entra en una oficina de traducción de Granada esperando discutir el precio de su trabajo, como hacía en Madrid, y se encuentra con que allí la tarifa es la misma para todo el mundo. Nuria se la dice sin bajar la voz y sin pedir perdón. Celia sale con menos dinero del que quería y con una idea nueva de cómo se cobra en su oficio.",
+  "text": "En Granada las oficinas pequeñas abren tarde y huelen a papel guardado. Hace un mes que Celia, la traductora del cuarto, busca trabajo fijo. Nuria, la encargada de la casa, la hace pasar sin levantarse.\n\n“La tarifa no se negocia, es la misma para todos los clientes”, afirma Nuria. “Ahora bien, esto no es Madrid y aquí competimos con mucho menos que allí”, explica. Celia escucha y no dice nada todavía.\n\nEl plazo de entrega son dos semanas y el compromiso va firmado. Nadie le aconseja rebajar su trabajo, pero la calidad tampoco le aumenta el precio este año. El cargo de la oficina sale de ese mismo número.\n\n“Este oficio se aprende corrigiendo, no discutiendo”, dice Nuria. “Y quien no confirma el encargo por correo, después no cobra”, insiste. Celia admite que en Madrid tampoco era tan distinto.\n\nNuria se queda calmada delante de sus papeles, capaz de decir un número y callarse. En Madrid el precio se discutía; aquí simplemente existe. “Entonces empiezo el lunes”, dice Celia, y firma. Sale a la calle con las dos cosas.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "tarifa",
+    "surface": "tarifa",
+    "definition": "Rate; the fixed price charged for each unit of work done."
+   },
+   {
+    "type": "noun",
+    "word": "cliente",
+    "surface": "clientes",
+    "definition": "Client; a person or company that pays you for your work."
+   },
+   {
+    "type": "noun",
+    "word": "plazo",
+    "surface": "plazo",
+    "definition": "Deadline; the date by which the work must be delivered."
+   },
+   {
+    "type": "noun",
+    "word": "encargado",
+    "surface": "encargada",
+    "definition": "Manager; the person in charge of a shop or an office."
+   },
+   {
+    "type": "noun",
+    "word": "compromiso",
+    "surface": "compromiso",
+    "definition": "Commitment; a promise you agree to keep, often in writing."
+   },
+   {
+    "type": "noun",
+    "word": "oficio",
+    "surface": "oficio",
+    "definition": "Trade; the skilled work somebody does for a living."
+   },
+   {
+    "type": "noun",
+    "word": "calidad",
+    "surface": "calidad",
+    "definition": "Quality; how good a piece of work actually is."
+   },
+   {
+    "type": "noun",
+    "word": "cargo",
+    "surface": "cargo",
+    "definition": "Charge; the part of the money the office keeps for itself."
+   },
+   {
+    "type": "verb",
+    "word": "negociar",
+    "surface": "negocia",
+    "definition": "To negotiate; to discuss a price until both sides agree."
+   },
+   {
+    "type": "verb",
+    "word": "rebajar",
+    "surface": "rebajar",
+    "definition": "To lower; to bring a price down from what it was."
+   },
+   {
+    "type": "verb",
+    "word": "confirmar",
+    "surface": "confirma",
+    "definition": "To confirm; to say clearly that something has been agreed."
+   },
+   {
+    "type": "verb",
+    "word": "afirmar",
+    "surface": "afirma",
+    "definition": "To state; to say something as a fact, without doubting it."
+   },
+   {
+    "type": "verb",
+    "word": "aconsejar",
+    "surface": "aconseja",
+    "definition": "To advise; to tell somebody what you think they should do."
+   },
+   {
+    "type": "verb",
+    "word": "admitir",
+    "surface": "admite",
+    "definition": "To admit; to accept that something is true, even reluctantly."
+   },
+   {
+    "type": "verb",
+    "word": "competir",
+    "surface": "competimos",
+    "definition": "To compete; to try to win the same clients as others."
+   },
+   {
+    "type": "verb",
+    "word": "aumentar",
+    "surface": "aumenta",
+    "definition": "To raise; to make an amount bigger than it was."
+   },
+   {
+    "type": "verb",
+    "word": "corregir",
+    "surface": "corrigiendo",
+    "definition": "To correct; to fix the mistakes in a piece of work."
+   },
+   {
+    "type": "adjective",
+    "word": "capaz",
+    "surface": "capaz",
+    "definition": "Able; having the confidence or skill to do something."
+   },
+   {
+    "type": "adjective",
+    "word": "calmado",
+    "surface": "calmada",
+    "definition": "Calm; quiet and steady, without nerves or hurry."
+   },
+   {
+    "type": "expression",
+    "word": "ahora bien",
+    "surface": "Ahora bien",
+    "definition": "That said; used to add a condition to what you just said."
+   }
+  ]
+ },
+ {
+  "topic": "jobs-and-wages",
+  "slotIndex": 2,
+  "title": "Cobro tarde y pago pronto",
+  "slug": "la-cuota-no-espera",
+  "arcType": "late-reveal",
+  "synopsis": "Celia hace números para saber si el trabajo de la oficina le da para vivir, y va apuntando lo que entra y lo que sale a lo largo del mes. Emilio le habla en la escalera de lo que él aprendió cobrando alquileres. Solo al final del mes descubre que el problema no era cuánto gana, sino el día en que cada cosa se paga.",
+  "text": "La luz de octubre entra plana por la ventana y da sobre la mesa. Celia declara su trabajo y guarda el contrato en una carpeta azul. El calendario de la pared tiene el mes entero en blanco.\n\n“Aquí se paga la cuota antes de ingresar el primer euro”, advierte Emilio. “Y el impuesto llega igual, tengas trabajo este mes o no lo tengas”, repite. Celia agenda los dos pagos y sigue con la cuenta.\n\nEl ahorro de Madrid es corto y la deuda del primer mes es cercana. Ella es paciente con los números. La causa no está en lo que gana.\n\n“Yo cedí muchas veces y aprendí tarde”, admite Emilio. “Ahora alerto a todo el mundo, aunque sea breve y no me escuchen”, pide. Celia deduce que él habla de sus propios años.\n\nEl último día del mes lo ve con certeza al mirar la lista entera. “No es que gane poco: cobro tarde y pago pronto”, dice Celia en voz alta, sola en la cocina. Le hace falta un mes de aire. Separa las fechas en dos columnas y se sienta a cenar tranquila.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "cuota",
+    "surface": "cuota",
+    "definition": "Monthly fee; a fixed sum you must pay every single month."
+   },
+   {
+    "type": "noun",
+    "word": "impuesto",
+    "surface": "impuesto",
+    "definition": "Tax; money the state takes from what you earn."
+   },
+   {
+    "type": "noun",
+    "word": "deuda",
+    "surface": "deuda",
+    "definition": "Debt; money you owe and still have to pay back."
+   },
+   {
+    "type": "noun",
+    "word": "ahorro",
+    "surface": "ahorro",
+    "definition": "Savings; the money you keep instead of spending it."
+   },
+   {
+    "type": "noun",
+    "word": "contrato",
+    "surface": "contrato",
+    "definition": "Contract; the signed paper that sets out the work agreed."
+   },
+   {
+    "type": "noun",
+    "word": "calendario",
+    "surface": "calendario",
+    "definition": "Calendar; the sheet showing the days of the month."
+   },
+   {
+    "type": "noun",
+    "word": "causa",
+    "surface": "causa",
+    "definition": "Cause; the real reason why something is happening."
+   },
+   {
+    "type": "noun",
+    "word": "certeza",
+    "surface": "certeza",
+    "definition": "Certainty; the feeling of knowing something without any doubt."
+   },
+   {
+    "type": "verb",
+    "word": "ingresar",
+    "surface": "ingresar",
+    "definition": "To take in; to receive money into your bank account."
+   },
+   {
+    "type": "verb",
+    "word": "advertir",
+    "surface": "advierte",
+    "definition": "To warn; to tell somebody about a problem before it arrives."
+   },
+   {
+    "type": "verb",
+    "word": "agendar",
+    "surface": "agenda",
+    "definition": "To schedule; to write something down for a future date."
+   },
+   {
+    "type": "verb",
+    "word": "ceder",
+    "surface": "cedí",
+    "definition": "To give in; to stop insisting and accept the other side."
+   },
+   {
+    "type": "verb",
+    "word": "declarar",
+    "surface": "declara",
+    "definition": "To declare; to tell the state officially what you earn."
+   },
+   {
+    "type": "verb",
+    "word": "separar",
+    "surface": "Separa",
+    "definition": "To separate; to put things into two groups apart."
+   },
+   {
+    "type": "verb",
+    "word": "alertar",
+    "surface": "alerto",
+    "definition": "To alert; to warn people quickly about something important."
+   },
+   {
+    "type": "adjective",
+    "word": "cercano",
+    "surface": "cercana",
+    "definition": "Close; near in time, only a few days away now."
+   },
+   {
+    "type": "adjective",
+    "word": "paciente",
+    "surface": "paciente",
+    "definition": "Patient; able to wait calmly without getting annoyed."
+   },
+   {
+    "type": "adjective",
+    "word": "breve",
+    "surface": "breve",
+    "definition": "Brief; short, lasting or using very little time."
+   },
+   {
+    "type": "expression",
+    "word": "hacer falta",
+    "surface": "hace falta",
+    "definition": "To be needed; to be necessary for somebody right now."
+   },
+   {
+    "type": "verb",
+    "word": "cenar",
+    "surface": "cenar",
+    "definition": "To have dinner; to eat the last meal of the day."
+   }
+  ]
+ },
+ {
+  "topic": "jobs-and-wages",
+  "slotIndex": 3,
+  "title": "El descansillo aconseja",
+  "slug": "cobrar-es-otro-trabajo",
+  "arcType": "recurring-character-callback",
+  "synopsis": "La primera factura de Celia lleva dos semanas sin respuesta y ella duda entre callarse o escribir. Rosa le enseña cómo se pide el dinero sin romper con el cliente, y Emilio le cuenta lo que hizo él durante una obra que nadie pagaba. Celia manda cuatro líneas y entiende que pedir lo suyo forma parte del trabajo, no viene después.",
+  "text": "Dos semanas después de la factura, el teléfono suena en la escalera y nadie lo coge. Celia no sabe todavía si escribir. Nuria la llama desde la oficina a media mañana.\n\n“Pedir lo tuyo no es criticar a nadie, es tu trabajo”, comunica Nuria. “Quien no lo hace, en este mundo cobra siempre el último”, cuenta. Celia analiza otra vez el correo que tiene a medias.\n\nEmilio sube con la compra y se para en el descansillo. Cuenta una obra del portal que tardó cuatro meses en pagarse. Él colaboró llamando cada lunes, sin desconfiar de nadie.\n\n“Demuestra la fecha y ya está, y no defiendas nada más”, aconseja Emilio. “Y aprovecha que aún es pronto para poder ser razonable”, concluye. Celia cuestiona dos frases suyas y las quita.\n\n“Cuatro líneas y la fecha, nada más”, dice Celia, y confía en que baste. La respuesta llega esa misma tarde, seca y correcta, con la fecha del pago. Ella la apunta debajo de la factura, con el trato y el empleo en la misma línea.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "empleo",
+    "surface": "empleo",
+    "definition": "Job; paid work that somebody does for a living."
+   },
+   {
+    "type": "noun",
+    "word": "trato",
+    "surface": "trato",
+    "definition": "Deal; what two people agree to do for each other."
+   },
+   {
+    "type": "noun",
+    "word": "mundo",
+    "surface": "mundo",
+    "definition": "World; here, the trade and the people working in it."
+   },
+   {
+    "type": "noun",
+    "word": "obra",
+    "surface": "obra",
+    "definition": "Building work; repairs being done on a house or street."
+   },
+   {
+    "type": "noun",
+    "word": "descansillo",
+    "surface": "descansillo",
+    "definition": "Landing; the flat space between two flights of stairs."
+   },
+   {
+    "type": "verb",
+    "word": "comunicar",
+    "surface": "comunica",
+    "definition": "To tell; to pass a message clearly to another person."
+   },
+   {
+    "type": "verb",
+    "word": "analizar",
+    "surface": "analiza",
+    "definition": "To look closely at something to understand it properly."
+   },
+   {
+    "type": "verb",
+    "word": "colaborar",
+    "surface": "colaboró",
+    "definition": "To help; to work together with others on the same thing."
+   },
+   {
+    "type": "verb",
+    "word": "desconfiar",
+    "surface": "desconfiar",
+    "definition": "To distrust; to think somebody may not be honest with you."
+   },
+   {
+    "type": "verb",
+    "word": "demostrar",
+    "surface": "Demuestra",
+    "definition": "To show; to prove something is true with a fact."
+   },
+   {
+    "type": "verb",
+    "word": "defender",
+    "surface": "defiendas",
+    "definition": "To defend; to argue in favour of yourself or your work."
+   },
+   {
+    "type": "verb",
+    "word": "aprovechar",
+    "surface": "aprovecha",
+    "definition": "To make the most of; to use a good moment while it lasts."
+   },
+   {
+    "type": "verb",
+    "word": "concluir",
+    "surface": "concluye",
+    "definition": "To conclude; to say the last thing and close the matter."
+   },
+   {
+    "type": "verb",
+    "word": "cuestionar",
+    "surface": "cuestiona",
+    "definition": "To question; to doubt whether something is right or needed."
+   },
+   {
+    "type": "verb",
+    "word": "criticar",
+    "surface": "criticar",
+    "definition": "To criticise; to say what is wrong with somebody or something."
+   },
+   {
+    "type": "verb",
+    "word": "confiar",
+    "surface": "confía",
+    "definition": "To trust; to believe that something will turn out well."
+   },
+   {
+    "type": "adjective",
+    "word": "razonable",
+    "surface": "razonable",
+    "definition": "Reasonable; fair and sensible, not asking for too much."
+   },
+   {
+    "type": "adjective",
+    "word": "correcto",
+    "surface": "correcta",
+    "definition": "Correct; right and polite, with nothing out of place."
+   },
+   {
+    "type": "expression",
+    "word": "a media mañana",
+    "surface": "a media mañana",
+    "definition": "Mid morning; partway through the first half of the day."
+   },
+   {
+    "type": "expression",
+    "word": "lo tuyo",
+    "surface": "lo tuyo",
+    "definition": "What is yours; the money or thing you have a right to."
+   }
+  ]
+ }
+]

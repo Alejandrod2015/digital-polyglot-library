@@ -1,0 +1,34 @@
+{
+ "tipo": "Traveler",
+ "nivel": "b1",
+ "variante": "spain",
+ "registro": "seco y de tramite: frases cortas, cifras y condiciones, sin adorno",
+ "espina": "Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella",
+ "recursos": "Imagen concreta, Contraste con pero, Causalidad explicita, Cambio de ritmo",
+ "historias": [
+  {
+   "slot": "1",
+   "quiere": "un sitio donde vivir que pueda pagar",
+   "impide": "el piso tiene fallos y Emilio los cuenta como normales",
+   "cuesta": "el primer mes por adelantado y aceptar un armario que no cierra",
+   "cambia": "decide cambiar la cerradura sin pedirle permiso a nadie",
+   "emocion": "cansancio que no quiere enseñar: calla delante de Emilio y baja los cuatro pisos sin decir nada"
+  },
+  {
+   "slot": "2",
+   "quiere": "entender como funciona la casa antes de instalarse",
+   "impide": "once normas pegadas en la puerta y un ruido arriba que nadie explica",
+   "cuesta": "la tranquilidad de su primera noche, que ya no recupera",
+   "cambia": "deja de preguntar y empieza a apuntar",
+   "emocion": "inquietud contenida: no dice nada del ruido, pero apunta la hora y la herramienta prometida"
+  },
+  {
+   "slot": "3",
+   "quiere": "que se arregle el techo antes del invierno",
+   "impide": "hace falta mayoria y su voz es la mas nueva del portal",
+   "cuesta": "su parte del dinero, que paga sin discutir",
+   "cambia": "firma, y la decision deja de depender de ella sola",
+   "emocion": "alivio fisico: la frase le sale corta al ofrecerse, y sube los cuatro pisos mas tranquila"
+  }
+ ]
+}

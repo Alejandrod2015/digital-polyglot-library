@@ -1,0 +1,395 @@
+[
+ {
+  "topic": "deals-and-estimates",
+  "slotIndex": 1,
+  "title": "El tejado a la mitad",
+  "slug": "dos-precios-un-techo",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Celia pide dos presupuestos para el techo del portal y le llegan con el doble de diferencia. Espera a Toño en la acera toda la mañana para que se lo explique y no saca nada del total. Cuando le pide que lo divida en partidas, los dos papeles dejan de parecerse en algo más que el número final.",
+  "text": "Dos papeles con el mismo techo dentro, y el doble de diferencia entre ellos. Celia, la traductora del cuarto, los lleva doblados en el bolsillo. Toño, el albañil que lleva la obra, llega tarde a la acera y descarga una escalera del coche.\n\n“El de la otra empresa es barato porque no toca el tejado entero, solo la mitad”, dice Toño. “Y el mío es caro porque sí lo toca entero, así de simple”, añade con la calculadora en la mano.\n\nCelia mira los dos totales y duda: no le salen las cuentas. Le sube el calor a las orejas: la mañana se le ha ido en la acera y sigue sin entender nada.\n\n“¿Me lo divides en partes, con lo que cuesta cada una y cuánto lleva?”, pide Celia, bajando la voz.\n\nToño se apoya en el coche y escribe seis líneas con un lápiz. Ya no se pueden comparar: uno pone cemento y ladrillo, el otro pintura y el resto en blanco.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "albañil",
+    "surface": "albañil",
+    "definition": "Builder; the worker who repairs walls, roofs and floors."
+   },
+   {
+    "type": "noun",
+    "word": "tejado",
+    "surface": "tejado",
+    "definition": "Roof; the tiled top of a building, seen from outside."
+   },
+   {
+    "type": "noun",
+    "word": "calculadora",
+    "surface": "calculadora",
+    "definition": "Calculator; the small machine that adds numbers for you."
+   },
+   {
+    "type": "noun",
+    "word": "cemento",
+    "surface": "cemento",
+    "definition": "Cement; the grey paste that holds bricks together."
+   },
+   {
+    "type": "noun",
+    "word": "ladrillo",
+    "surface": "ladrillo",
+    "definition": "Brick; the baked clay block a wall is built from."
+   },
+   {
+    "type": "noun",
+    "word": "oreja",
+    "surface": "orejas",
+    "definition": "Ear; the part of the head that goes red with shame."
+   },
+   {
+    "type": "noun",
+    "word": "lápiz",
+    "surface": "lápiz",
+    "definition": "Pencil; the wooden stick you write with and can rub out."
+   },
+   {
+    "type": "noun",
+    "word": "resto",
+    "surface": "resto",
+    "definition": "Rest; what is left of the work after one part is done."
+   },
+   {
+    "type": "adjective",
+    "word": "barato",
+    "surface": "barato",
+    "definition": "Cheap; costing less money than the other option does."
+   },
+   {
+    "type": "adjective",
+    "word": "caro",
+    "surface": "caro",
+    "definition": "Expensive; costing more money than you expected to pay."
+   },
+   {
+    "type": "verb",
+    "word": "descargar",
+    "surface": "descarga",
+    "definition": "To unload; to take things down from a vehicle."
+   },
+   {
+    "type": "verb",
+    "word": "dividir",
+    "surface": "divides",
+    "definition": "To split; to break a total into smaller parts."
+   },
+   {
+    "type": "verb",
+    "word": "dudar",
+    "surface": "duda",
+    "definition": "To doubt; to be unsure whether something is right."
+   },
+   {
+    "type": "verb",
+    "word": "apoyarse",
+    "surface": "se apoya",
+    "definition": "To lean; to rest your weight against something solid."
+   },
+   {
+    "type": "verb",
+    "word": "tocar",
+    "surface": "toca",
+    "definition": "To do work on; to touch a part of the building."
+   },
+   {
+    "type": "verb",
+    "word": "comparar",
+    "surface": "comparar",
+    "definition": "To compare; to hold two things side by side to judge."
+   },
+   {
+    "type": "expression",
+    "word": "en partes",
+    "surface": "en partes",
+    "definition": "Into parts; broken down instead of given as one figure."
+   },
+   {
+    "type": "expression",
+    "word": "así de simple",
+    "surface": "así de simple",
+    "definition": "As simple as that; with nothing more to explain."
+   },
+   {
+    "type": "noun",
+    "word": "blanco",
+    "surface": "blanco",
+    "definition": "Blank; the empty space where nothing has been written."
+   },
+   {
+    "type": "expression",
+    "word": "el doble",
+    "surface": "el doble",
+    "definition": "Twice as much; two times the other amount."
+   }
+  ]
+ },
+ {
+  "topic": "deals-and-estimates",
+  "slotIndex": 2,
+  "title": "La rebaja en mano",
+  "slug": "en-mano-y-sin-factura",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "El presupuesto barato sale aún más barato si se paga en mano y sin factura, y Celia está a punto de aceptarlo para acabar de una vez. Se acuerda de que no firma por ella sola, sino por tres vecinos. Lo dice en voz alta, sabiendo que es la nueva del portal, y se queda esperando la respuesta.",
+  "text": "Quien firma por los tres es Celia, la traductora del cuarto. Aunque el precio ya estaba cerrado, Loli, la comercial de la otra empresa, llama el martes con una rebaja. Sale más barato en mano, sin papel de por medio.\n\n“Así te ahorras un buen dinero y empezamos ya la semana que viene, sin esperas”, propone Loli al teléfono. Celia mira la copia encima de la mesa.\n\nLa decisión es de Emilio, de Berta y suya. Es la nueva y va a rechazar el trato más barato, así que respira una vez y lo dice mirando el papel.\n\n“Sin factura no puedo, porque el dinero no es mío, es de los tres”, contesta Celia. “Y lo que firmo lo tengo que poder enseñar a los otros dos”, añade, ya más firme.\n\nAl otro lado no contesta nadie durante un rato largo. Luego Loli dice que lo mira y que llama mañana. Celia se queda con el papel abierto.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "rebaja",
+    "surface": "rebaja",
+    "definition": "Discount; money taken off the price already agreed."
+   },
+   {
+    "type": "noun",
+    "word": "decisión",
+    "surface": "decisión",
+    "definition": "Decision; the choice that has already been made together."
+   },
+   {
+    "type": "noun",
+    "word": "dinero",
+    "surface": "dinero",
+    "definition": "Money; the coins and notes people pay each other with."
+   },
+   {
+    "type": "verb",
+    "word": "respirar",
+    "surface": "respira",
+    "definition": "To breathe; to take one breath before saying something hard."
+   },
+   {
+    "type": "noun",
+    "word": "empresa",
+    "surface": "empresa",
+    "definition": "Company; a business that sells work or goods."
+   },
+   {
+    "type": "noun",
+    "word": "rato",
+    "surface": "rato",
+    "definition": "While; a short stretch of time with nothing happening."
+   },
+   {
+    "type": "noun",
+    "word": "copia",
+    "surface": "copia",
+    "definition": "Copy; a second version of a paper, kept as proof."
+   },
+   {
+    "type": "verb",
+    "word": "ahorrarse",
+    "surface": "ahorras",
+    "definition": "To save; to avoid paying money you would have paid."
+   },
+   {
+    "type": "verb",
+    "word": "proponer",
+    "surface": "propone",
+    "definition": "To propose; to offer an arrangement to somebody."
+   },
+   {
+    "type": "adjective",
+    "word": "cerrado",
+    "surface": "cerrado",
+    "definition": "Closed; already agreed and not open to more talk."
+   },
+   {
+    "type": "verb",
+    "word": "rechazar",
+    "surface": "rechazar",
+    "definition": "To turn down; to say no to an offer you were given."
+   },
+   {
+    "type": "verb",
+    "word": "mirar",
+    "surface": "mira",
+    "definition": "To look into; to check a matter before answering."
+   },
+   {
+    "type": "verb",
+    "word": "enseñar",
+    "surface": "enseñar",
+    "definition": "To show; to let another person see the paper."
+   },
+   {
+    "type": "verb",
+    "word": "firmar",
+    "surface": "firmo",
+    "definition": "To sign; to write your name to accept something."
+   },
+   {
+    "type": "adjective",
+    "word": "firme",
+    "surface": "firme",
+    "definition": "Steady; sounding sure and not likely to change."
+   },
+   {
+    "type": "adjective",
+    "word": "largo",
+    "surface": "largo",
+    "definition": "Long; lasting more time than is comfortable to wait."
+   },
+   {
+    "type": "expression",
+    "word": "en mano",
+    "surface": "en mano",
+    "definition": "In cash; paid directly, with no bank and no paper."
+   },
+   {
+    "type": "expression",
+    "word": "de por medio",
+    "surface": "de por medio",
+    "definition": "In between; involved in the arrangement as a middle step."
+   },
+   {
+    "type": "expression",
+    "word": "la semana que viene",
+    "surface": "la semana que viene",
+    "definition": "Next week; the week that comes after this one."
+   },
+   {
+    "type": "expression",
+    "word": "al otro lado",
+    "surface": "Al otro lado",
+    "definition": "At the other end; the person on the far side of a call."
+   }
+  ]
+ },
+ {
+  "topic": "deals-and-estimates",
+  "slotIndex": 3,
+  "title": "Lo pongo por escrito",
+  "slug": "el-papel-donde-se-ve",
+  "arcType": "harmonic-close",
+  "synopsis": "Los tres tienen que firmar el mismo presupuesto y cada uno quiere otra cosa: Emilio el barato, Emilio acabar antes de abril, Celia uno que se pueda enseñar. Cuesta cuatrocientos euros más, repartidos entre los tres. Celia pide su parte por escrito, firma la primera y deja el papel en el corcho del portal.",
+  "text": "En el portal huele a lejía y hay tres personas alrededor de un papel, encima del buzón. Emilio quiere el barato, el del tercero quiere que empiece antes de abril, y Celia quiere uno que se pueda enseñar.\n\n“Cuatrocientos más entre tres son ciento treinta y tres cada uno”, cuenta Emilio con la calculadora del móvil.\n\n“Yo esos ciento treinta y tres no los tenía pensados para este mes”, admite Emilio, y se toca el cuello con la mano.\n\nCelia no levanta la voz. Reparte el resto en tres partes iguales.\n\n“Yo pago mi parte el día uno, y lo pongo por escrito aquí mismo, en el margen”, dice Celia.\n\nLe tiembla el bolígrafo en la primera letra, porque nunca ha firmado nada por otros dos.\n\nFirma la primera y pasa el papel. Emilio firma después y el del tercero el último, con la fecha al lado. El papel se queda en el tablón, donde lo ve todo el que entra.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "cuello",
+    "surface": "cuello",
+    "definition": "Neck; the part between the head and the shoulders."
+   },
+   {
+    "type": "adverb",
+    "word": "alrededor",
+    "surface": "alrededor",
+    "definition": "Around; standing in a ring about the same thing."
+   },
+   {
+    "type": "noun",
+    "word": "margen",
+    "surface": "margen",
+    "definition": "Margin; the empty edge at the side of a page."
+   },
+   {
+    "type": "noun",
+    "word": "letra",
+    "surface": "letra",
+    "definition": "Letter; one of the signs you write a word with."
+   },
+   {
+    "type": "noun",
+    "word": "persona",
+    "surface": "personas",
+    "definition": "Person; one human being among the others there."
+   },
+   {
+    "type": "noun",
+    "word": "parte",
+    "surface": "parte",
+    "definition": "Share; the amount of money that falls to one person."
+   },
+   {
+    "type": "verb",
+    "word": "tocarse",
+    "surface": "se toca",
+    "definition": "To touch; to put a hand on a part of your body."
+   },
+   {
+    "type": "verb",
+    "word": "temblar",
+    "surface": "tiembla",
+    "definition": "To shake; to move a little without meaning to."
+   },
+   {
+    "type": "verb",
+    "word": "repartir",
+    "surface": "reparte",
+    "definition": "To share out; to divide an amount among several people."
+   },
+   {
+    "type": "verb",
+    "word": "pasar",
+    "surface": "pasa",
+    "definition": "To hand over; to give a thing to the next person."
+   },
+   {
+    "type": "adverb",
+    "word": "nunca",
+    "surface": "nunca",
+    "definition": "Never; at no moment before this one in her life."
+   },
+   {
+    "type": "adjective",
+    "word": "igual",
+    "surface": "iguales",
+    "definition": "Equal; the same size or amount as the others."
+   },
+   {
+    "type": "expression",
+    "word": "cuatrocientos",
+    "surface": "Cuatrocientos",
+    "definition": "Four hundred; the extra euros the good estimate costs."
+   },
+   {
+    "type": "expression",
+    "word": "por escrito",
+    "surface": "por escrito",
+    "definition": "In writing; written down, not only agreed out loud."
+   },
+   {
+    "type": "expression",
+    "word": "en tres partes",
+    "surface": "en tres partes",
+    "definition": "Into three parts; split equally among three people."
+   },
+   {
+    "type": "expression",
+    "word": "aquí mismo",
+    "surface": "aquí mismo",
+    "definition": "Right here; in this very place, with no delay."
+   },
+   {
+    "type": "expression",
+    "word": "el día uno",
+    "surface": "el día uno",
+    "definition": "On the first; on the first day of the month."
+   },
+   {
+    "type": "expression",
+    "word": "el último",
+    "surface": "el último",
+    "definition": "The last one; after everybody else has signed."
+   },
+   {
+    "type": "expression",
+    "word": "encima de",
+    "surface": "encima del",
+    "definition": "On top of; resting on the surface of something."
+   },
+   {
+    "type": "expression",
+    "word": "todo el que entra",
+    "surface": "todo el que entra",
+    "definition": "Everyone who comes in; each person entering the building."
+   }
+  ]
+ }
+]

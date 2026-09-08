@@ -1,0 +1,34 @@
+{
+ "tipo": "Traveler",
+ "nivel": "b1",
+ "variante": "spain",
+ "registro": "cuentas en voz baja: fechas, importes y plazos dichos sin dramatismo",
+ "espina": "Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella",
+ "recursos": "Imagen concreta, Contraste con pero, Espejo concreto, Reversa cosida",
+ "historias": [
+  {
+   "slot": "1",
+   "quiere": "trabajo estable y a un precio parecido al de Madrid",
+   "impide": "en la agencia la tarifa es la misma para todos y no se discute",
+   "cuesta": "la diferencia de precio, que no recupera: firma por menos",
+   "cambia": "deja de esperar que el precio se negocie y aprende a mirar el plazo",
+   "emocion": "quiere replicar y no lo hace: suma en la cabeza mientras escucha, y firma sin levantar la voz"
+  },
+  {
+   "slot": "2",
+   "quiere": "saber si el trabajo le da para vivir",
+   "impide": "la cuota y el impuesto se pagan antes de que entre el primer euro",
+   "cuesta": "el ahorro que trajo de Madrid, que se va en el primer mes",
+   "cambia": "entiende que el problema es el orden de los pagos, no la cifra",
+   "emocion": "susto que se calma al verlo escrito: mira el importe sin decir nada, apunta las fechas y respira"
+  },
+  {
+   "slot": "3",
+   "quiere": "cobrar una factura que lleva dos semanas sin respuesta",
+   "impide": "cree que reclamar es pelear y que pelear le cuesta el cliente",
+   "cuesta": "dos semanas de espera que ya no vuelven",
+   "cambia": "reclamar pasa a ser parte del trabajo y no algo posterior",
+   "emocion": "verguenza que se convierte en decision: escribe tres borradores y los borra, y al final manda cuatro lineas"
+  }
+ ]
+}

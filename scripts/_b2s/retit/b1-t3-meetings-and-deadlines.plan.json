@@ -1,0 +1,34 @@
+{
+ "tipo": "Traveler",
+ "nivel": "b1",
+ "variante": "spain",
+ "registro": "sala de oficina: orden del dia, silencios y correos de cuatro lineas",
+ "espina": "Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella",
+ "recursos": "Imagen concreta, Cambio de ritmo, Espejo concreto, Gancho final literal",
+ "historias": [
+  {
+   "slot": "1",
+   "quiere": "salir de la reunion con la fecha de entrega clara",
+   "impide": "la reunion se va en detalles y la fecha no se toca",
+   "cuesta": "tres horas de trabajo que no recupera",
+   "cambia": "habla por primera vez y pregunta la fecha en voz alta",
+   "emocion": "impaciencia que aguanta: mira la hora y hace la cuenta, y solo al final dice lo que necesita"
+  },
+  {
+   "slot": "2",
+   "quiere": "entregar a tiempo el encargo",
+   "impide": "los textos llegan una semana tarde y el plazo sigue igual",
+   "cuesta": "una semana entera de calendario, que nadie le devuelve",
+   "cambia": "pone ella la fecha nueva en vez de esperar a que se la pongan",
+   "emocion": "enfado que no grita: escucha con el cafe frio, y escribe despacio en vez de contestar caliente"
+  },
+  {
+   "slot": "3",
+   "quiere": "saber para que la llaman el viernes",
+   "impide": "el correo no trae orden del dia y nadie en la oficina comenta nada",
+   "cuesta": "la noche del jueves, que pasa sin dormir",
+   "cambia": "pregunta por escrito en vez de esperar callada",
+   "emocion": "miedo que se queda sin respuesta: escribe la pregunta, nadie contesta, y no apaga la luz"
+  }
+ ]
+}

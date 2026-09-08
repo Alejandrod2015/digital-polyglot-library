@@ -1,0 +1,395 @@
+[
+ {
+  "topic": "meetings-and-deadlines",
+  "slotIndex": 1,
+  "title": "La reunión de un punto",
+  "slug": "tres-horas-por-un-punto",
+  "arcType": "daily-encounter",
+  "synopsis": "Celia va a su primera reunión de proyecto en la agencia y descubre que allí las horas se van en detalles pequeños mientras la fecha de entrega no se toca. Rosa, que coordina los encargos, lleva el orden del día punto por punto sin prisa. Celia aprende que el calendario de la reunión y el calendario del trabajo no son el mismo.",
+  "text": "Cuando Celia llega, la sala de espera ya está llena y huele a café recalentado. Rosa, que coordina los encargos de la agencia, la saluda con la carpeta abierta. En el ordenador hay un orden del día de nueve puntos.\n\n“Vamos punto por punto, que si no nos perdemos”, comienza Rosa. “Y la entrega no se mueve, eso lo dejo claro antes que nada”, explica. Celia mira la hora y hace la cuenta.\n\nEl primer punto ocupa media reunión y nadie lo dice. Hay desacuerdo sobre una palabra del título.\n\n“Esto es así, y de vez en cuando sale un tema de verdad”, admite Rosa. “Tú termina lo tuyo cuanto antes, que lo demás se arregla”, pide. Celia guarda el texto y cierra el ordenador.\n\nEn la calle todavía hay luz y la fecha sigue donde estaba. “Entonces la entrega es el día quince”, dice Celia antes de salir. Desde luego la reunión no le ha quitado trabajo, solo tres horas: el acuerdo fue cambiar una palabra por otra parecida, y mientras tanto el encargo la espera igual.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "sala de espera",
+    "surface": "sala de espera",
+    "definition": "Waiting room; the room where people sit before being seen."
+   },
+   {
+    "type": "noun",
+    "word": "ordenador",
+    "surface": "ordenador",
+    "definition": "Computer; the machine you work on, as called in Spain."
+   },
+   {
+    "type": "noun",
+    "word": "punto",
+    "surface": "punto",
+    "definition": "Item; one thing on a list to be discussed."
+   },
+   {
+    "type": "noun",
+    "word": "acuerdo",
+    "surface": "acuerdo",
+    "definition": "Agreement; what a group finally decides to do together."
+   },
+   {
+    "type": "noun",
+    "word": "desacuerdo",
+    "surface": "desacuerdo",
+    "definition": "Disagreement; when people do not think the same thing."
+   },
+   {
+    "type": "noun",
+    "word": "entrega",
+    "surface": "entrega",
+    "definition": "Delivery; handing the finished work in on the agreed day."
+   },
+   {
+    "type": "noun",
+    "word": "título",
+    "surface": "título",
+    "definition": "Title; the name given to a text or a piece of work."
+   },
+   {
+    "type": "verb",
+    "word": "saludar",
+    "surface": "saluda",
+    "definition": "To greet; to say hello when somebody arrives."
+   },
+   {
+    "type": "verb",
+    "word": "comenzar",
+    "surface": "comienza",
+    "definition": "To begin; to start a meeting or a piece of work."
+   },
+   {
+    "type": "verb",
+    "word": "ocupar",
+    "surface": "ocupa",
+    "definition": "To take up; to fill time or space completely."
+   },
+   {
+    "type": "verb",
+    "word": "terminar",
+    "surface": "termina",
+    "definition": "To finish; to bring a piece of work to its end."
+   },
+   {
+    "type": "adjective",
+    "word": "parecido",
+    "surface": "parecida",
+    "definition": "Similar; almost the same as the other thing."
+   },
+   {
+    "type": "noun",
+    "word": "texto",
+    "surface": "texto",
+    "definition": "Text; the words of a document you have to work on."
+   },
+   {
+    "type": "adjective",
+    "word": "claro",
+    "surface": "claro",
+    "definition": "Clear; easy to understand, with no doubt left."
+   },
+   {
+    "type": "expression",
+    "word": "antes que nada",
+    "surface": "antes que nada",
+    "definition": "First of all; before anything else is discussed."
+   },
+   {
+    "type": "expression",
+    "word": "cuanto antes",
+    "surface": "cuanto antes",
+    "definition": "As soon as possible; without waiting any longer than needed."
+   },
+   {
+    "type": "expression",
+    "word": "de vez en cuando",
+    "surface": "de vez en cuando",
+    "definition": "From time to time; now and then, not often."
+   },
+   {
+    "type": "expression",
+    "word": "mientras tanto",
+    "surface": "Mientras tanto",
+    "definition": "Meanwhile; during that same time, somewhere else entirely."
+   },
+   {
+    "type": "expression",
+    "word": "tres horas",
+    "surface": "Tres horas",
+    "definition": "Three hours; used here for a meeting that ran long."
+   },
+   {
+    "type": "expression",
+    "word": "desde luego",
+    "surface": "desde luego",
+    "definition": "Of course; used to mark something as obvious to everyone."
+   }
+  ]
+ },
+ {
+  "topic": "meetings-and-deadlines",
+  "slotIndex": 2,
+  "title": "La ventana del rellano",
+  "slug": "el-retraso-no-es-suyo",
+  "arcType": "reframe-turn",
+  "synopsis": "Los textos que Celia tiene que traducir llegan una semana tarde, pero la fecha de entrega sigue siendo la misma para ella. Emilio le cuenta cómo funcionaba eso en las obras del barrio. Celia entiende que el retraso de otro se convierte en urgencia suya solo si ella lo deja, y escribe para mover la fecha.",
+  "text": "Una semana antes de la entrega, los textos todavía no han llegado. Celia tiene el ordenador encendido desde las ocho y la pantalla en blanco. Emilio la ve por la ventana del rellano y sube.\n\n“En las obras pasaba igual, el material llegaba tarde y el plazo no”, cuenta Emilio. “Y el retrasado acababa siendo el último que tocaba la pared”, avisa. Celia lo escucha con el café frío.\n\nEl desorden no lo ha hecho ella y lo está pagando ella. La urgencia se hereda hacia abajo, de quien manda a quien trabaja. Hasta cierto punto, eso es una costumbre y no una ley.\n\n“Tú determina la fecha nueva y mándala tú”, aconseja Emilio. “Que si esperas a que la pongan, la ponen mala”, insiste. Celia abre el correo y empieza a escribir despacio.\n\nLa respuesta llega en media hora y acepta la fecha sin discutir. “El retraso era suyo desde el principio”, dice Celia en la escalera. Por lo pronto tiene una semana entera.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "urgencia",
+    "surface": "urgencia",
+    "definition": "Urgency; the pressure to have something done right now."
+   },
+   {
+    "type": "noun",
+    "word": "desorden",
+    "surface": "desorden",
+    "definition": "Mess; when things are not organised as they should be."
+   },
+   {
+    "type": "noun",
+    "word": "material",
+    "surface": "material",
+    "definition": "Materials; the things you need in order to work."
+   },
+   {
+    "type": "noun",
+    "word": "pared",
+    "surface": "pared",
+    "definition": "Wall; the flat side of a room or a building."
+   },
+   {
+    "type": "noun",
+    "word": "ley",
+    "surface": "ley",
+    "definition": "Law; a rule that everybody has to obey."
+   },
+   {
+    "type": "verb",
+    "word": "heredar",
+    "surface": "hereda",
+    "definition": "To inherit; to receive something passed down from others."
+   },
+   {
+    "type": "verb",
+    "word": "determinar",
+    "surface": "determina",
+    "definition": "To set; to decide something firmly and say it."
+   },
+   {
+    "type": "verb",
+    "word": "esperar",
+    "surface": "esperas",
+    "definition": "To wait; to stay where you are until something happens."
+   },
+   {
+    "type": "verb",
+    "word": "mandar",
+    "surface": "manda",
+    "definition": "To be in charge; to give the orders in a place."
+   },
+   {
+    "type": "verb",
+    "word": "tocar",
+    "surface": "tocaba",
+    "definition": "To touch; to put your hand or tool on something."
+   },
+   {
+    "type": "verb",
+    "word": "acabar",
+    "surface": "acababa",
+    "definition": "To end up; to finish in a situation you did not choose."
+   },
+   {
+    "type": "verb",
+    "word": "discutir",
+    "surface": "discutir",
+    "definition": "To argue; to disagree out loud with somebody."
+   },
+   {
+    "type": "adjective",
+    "word": "retrasado",
+    "surface": "retrasado",
+    "definition": "Behind schedule; arriving later than the day agreed."
+   },
+   {
+    "type": "adjective",
+    "word": "encendido",
+    "surface": "encendido",
+    "definition": "Switched on; working and ready to be used."
+   },
+   {
+    "type": "adverb",
+    "word": "despacio",
+    "surface": "despacio",
+    "definition": "Slowly; taking your time over it instead of hurrying."
+   },
+   {
+    "type": "expression",
+    "word": "hasta cierto punto",
+    "surface": "Hasta cierto punto",
+    "definition": "Up to a point; true in part, but not completely."
+   },
+   {
+    "type": "expression",
+    "word": "por lo pronto",
+    "surface": "Por lo pronto",
+    "definition": "For now; as things stand at this moment."
+   },
+   {
+    "type": "expression",
+    "word": "media hora",
+    "surface": "media hora",
+    "definition": "Half an hour; thirty minutes, a short wait."
+   },
+   {
+    "type": "expression",
+    "word": "desde el principio",
+    "surface": "desde el principio",
+    "definition": "From the start; since the very first moment."
+   },
+   {
+    "type": "expression",
+    "word": "hacia abajo",
+    "surface": "hacia abajo",
+    "definition": "Downwards; from the people above to those below."
+   }
+  ]
+ },
+ {
+  "topic": "meetings-and-deadlines",
+  "slotIndex": 3,
+  "title": "Mañana y yo sola",
+  "slug": "reunion-sin-orden-del-dia",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "Rosa convoca una reunión para el viernes y no dice de qué va, y en la agencia nadie recuerda que eso haya pasado antes. Celia pregunta a Rosa y no saca nada claro. Termina la semana con la fecha apuntada y sin saber si la llaman para darle más trabajo o para quitárselo.",
+  "text": "Su correo del jueves convoca una reunión y no dice para qué. Son cuatro líneas, sin orden del día y sin una hora exacta. Ella lo lee dos veces y se queda con la última.\n\n“Aquí eso no se hace nunca, siempre va el orden delante”, comenta Rosa. “Y cuando no va, es que alguien prefiere decirlo en persona”, responde. Celia guarda el correo y no contesta.\n\nEl viernes está en el calendario y el aviso llega tardío. Nadie dice nada en la oficina, y ese silencio pesa más que el correo. Desde su punto de vista, la esperanza y el miedo caben en la misma frase.\n\n“Yo iría tranquila, que tampoco es la primera vez”, aconseja Rosa. “Y si es lo que piensas, mejor saberlo ya que la próxima semana”, insiste. Celia apunta la hora y cierra el ordenador.\n\nEl jueves por la noche llega un segundo correo, todavía más corto. “¿Mañana, tan pronto como abran, y yo sola?”, escribe Celia. Nadie contesta, y Celia mira la pantalla sin apagar la luz.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "esperanza",
+    "surface": "esperanza",
+    "definition": "Hope; the feeling that something good may still happen."
+   },
+   {
+    "type": "noun",
+    "word": "miedo",
+    "surface": "miedo",
+    "definition": "Fear; the feeling that something bad is coming."
+   },
+   {
+    "type": "noun",
+    "word": "silencio",
+    "surface": "silencio",
+    "definition": "Silence; when nobody in the room says anything."
+   },
+   {
+    "type": "adjective",
+    "word": "tardío",
+    "surface": "tardío",
+    "definition": "Late; arriving later than it normally would have."
+   },
+   {
+    "type": "noun",
+    "word": "aviso",
+    "surface": "aviso",
+    "definition": "Notice; a short message telling you something will happen."
+   },
+   {
+    "type": "adjective",
+    "word": "exacta",
+    "surface": "exacta",
+    "definition": "Exact; precise, with no room left for doubt."
+   },
+   {
+    "type": "expression",
+    "word": "punto de vista",
+    "surface": "punto de vista",
+    "definition": "Point of view; the way one person sees a situation."
+   },
+   {
+    "type": "verb",
+    "word": "preferir",
+    "surface": "prefiere",
+    "definition": "To prefer; to want one thing rather than another."
+   },
+   {
+    "type": "verb",
+    "word": "caber",
+    "surface": "caben",
+    "definition": "To fit; to have enough room inside something."
+   },
+   {
+    "type": "expression",
+    "word": "la próxima semana",
+    "surface": "la próxima semana",
+    "definition": "Next week; the week that comes after this one."
+   },
+   {
+    "type": "verb",
+    "word": "apagar",
+    "surface": "apaga",
+    "definition": "To turn off; to stop a light or a machine."
+   },
+   {
+    "type": "verb",
+    "word": "pensar",
+    "surface": "piensas",
+    "definition": "To think; to have an idea or an opinion about something."
+   },
+   {
+    "type": "adjective",
+    "word": "tranquilo",
+    "surface": "tranquila",
+    "definition": "Calm; not worried, even when something is uncertain."
+   },
+   {
+    "type": "adjective",
+    "word": "segundo",
+    "surface": "segundo",
+    "definition": "Second; the one that comes after the first."
+   },
+   {
+    "type": "adjective",
+    "word": "sola",
+    "surface": "sola",
+    "definition": "Alone; with nobody else there to go in with you."
+   },
+   {
+    "type": "expression",
+    "word": "orden del día",
+    "surface": "orden del día",
+    "definition": "Agenda; the list of things a meeting will discuss."
+   },
+   {
+    "type": "expression",
+    "word": "en persona",
+    "surface": "en persona",
+    "definition": "In person; face to face, not by message."
+   },
+   {
+    "type": "expression",
+    "word": "tan pronto como",
+    "surface": "tan pronto como",
+    "definition": "As soon as; at the very first moment that it is possible."
+   },
+   {
+    "type": "expression",
+    "word": "por la noche",
+    "surface": "por la noche",
+    "definition": "At night; during the dark hours of the day."
+   },
+   {
+    "type": "expression",
+    "word": "dos veces",
+    "surface": "dos veces",
+    "definition": "Twice; on two separate occasions, one after the other."
+   }
+  ]
+ }
+]

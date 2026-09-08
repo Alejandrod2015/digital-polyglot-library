@@ -1,0 +1,34 @@
+{
+ "tipo": "Traveler",
+ "nivel": "b1",
+ "variante": "spain",
+ "registro": "de portal y broma: frases hechas que no quieren decir lo que dicen",
+ "espina": "Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella",
+ "recursos": "Repeticion ritmica, Imagen concreta, Contraste con pero, Humor de situacion, Simil simple, Cambio de ritmo",
+ "historias": [
+  {
+   "slot": "1",
+   "quiere": "entender por que al vecino del segundo todos lo llaman Chispa",
+   "impide": "nadie explica un mote, porque para ellos es obvio desde hace años",
+   "cuesta": "quedar en evidencia delante de tres vecinos al usarlo mal",
+   "cambia": "deja de deducir por su cuenta y pregunta de frente",
+   "emocion": "apuro que se le sube a la cara: lo dice mal y se le nota, asi que se rie ella primero para que no se rian antes"
+  },
+  {
+   "slot": "2",
+   "quiere": "pedirle un favor a Berta en buen momento",
+   "impide": "Berta le suelta que no esta el horno para bollos y Celia lo entiende al pie de la letra",
+   "cuesta": "el favor, que ya no pide ese dia",
+   "cambia": "aprende que una frase hecha se traduce entera o no se traduce",
+   "emocion": "desconcierto callado: busca el horno con la mirada y entiende tarde, asi que aprieta los labios y anota la frase"
+  },
+  {
+   "slot": "3",
+   "quiere": "que la dejen de llamar la nueva",
+   "impide": "lleva medio año y en el portal el nombre de uno lo ponen los demas",
+   "cuesta": "el nombre que traia de Madrid, que aqui ya no usa nadie",
+   "cambia": "acepta el mote que le ponen y lo usa ella primero",
+   "emocion": "orgullo pequeño y tardio: le molesta que se lo pongan sin permiso, pero cuando Emilio lo dice en voz alta ella contesta a la primera"
+  }
+ ]
+}

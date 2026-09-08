@@ -1,0 +1,395 @@
+[
+ {
+  "topic": "trust-and-rumours",
+  "slotIndex": 1,
+  "title": "Palabra por palabra",
+  "slug": "lo-que-corre-por-el-portal",
+  "arcType": "late-reveal",
+  "synopsis": "Desde el lunes la miran raro en el portal y nadie le dice por qué. Celia pierde la tarde reconstruyendo quién ha hablado con quién, hasta que Sole le suelta que se va del piso en junio. La frase venía de ella misma, dicha sin pensar en la escalera, y ya no la reconoce.",
+  "text": "Desde el lunes la miran de un modo raro y nadie le explica nada. Celia, la traductora del cuarto, sube y baja dos veces con la excusa del correo.\n\nSole vive en el bajo y la para con la bolsa de la compra en el suelo.\n\n“Oye, ¿tú te vas en junio o no te vas?”, pregunta Sole, sin adornarlo. Celia se queda con la llave a medio girar.\n\n“Yo no he dicho eso”, contesta Celia con la excusa del correo en la mano, y se da cuenta de que sí lo dijo.\n\n“Se lo dije a alguien en la escalera, hace dos semanas”, se acuerda en voz alta. “Dije que en junio se me acaba el contrato, y ya está”.\n\nJunta quién ha hablado con quién y le lleva la tarde entera. Al final todo sale de un comentario suyo.\n\nLa frase era suya y ahora no la reconoce. Se le queda algo pesado debajo del estómago. “Lo dije yo, palabra por palabra”, repasa, sentada en el escalón.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "comentario",
+    "surface": "comentario",
+    "definition": "Remark; something said in passing, without much thought."
+   },
+   {
+    "type": "noun",
+    "word": "excusa",
+    "surface": "excusa",
+    "definition": "Excuse; the reason you give instead of the real one."
+   },
+   {
+    "type": "noun",
+    "word": "junio",
+    "surface": "junio",
+    "definition": "June; the sixth month, when the contract runs out."
+   },
+   {
+    "type": "noun",
+    "word": "bajo",
+    "surface": "bajo",
+    "definition": "Ground floor; the flat at street level in a block."
+   },
+   {
+    "type": "noun",
+    "word": "modo",
+    "surface": "modo",
+    "definition": "Way; the manner in which something is done."
+   },
+   {
+    "type": "verb",
+    "word": "juntar",
+    "surface": "junta",
+    "definition": "To put together; to fit separate pieces into one picture."
+   },
+   {
+    "type": "verb",
+    "word": "adornar",
+    "surface": "adornarlo",
+    "definition": "To dress up; to make words softer than they really are."
+   },
+   {
+    "type": "verb",
+    "word": "reconocer",
+    "surface": "reconoce",
+    "definition": "To recognise; to know a thing as your own when you meet it."
+   },
+   {
+    "type": "verb",
+    "word": "repasar",
+    "surface": "repasa",
+    "definition": "To go over; to check something again from the start."
+   },
+   {
+    "type": "verb",
+    "word": "girar",
+    "surface": "girar",
+    "definition": "To turn; to move a key or a handle round."
+   },
+   {
+    "type": "verb",
+    "word": "acabarse",
+    "surface": "se me acaba",
+    "definition": "To run out; to come to its end at a fixed date."
+   },
+   {
+    "type": "verb",
+    "word": "explicar",
+    "surface": "explica",
+    "definition": "To explain; to tell somebody why something is happening."
+   },
+   {
+    "type": "adjective",
+    "word": "raro",
+    "surface": "raro",
+    "definition": "Strange; not the usual way of looking at somebody."
+   },
+   {
+    "type": "adjective",
+    "word": "pesado",
+    "surface": "pesado",
+    "definition": "Heavy; sitting inside you like a weight you carry."
+   },
+   {
+    "type": "adjective",
+    "word": "entera",
+    "surface": "entera",
+    "definition": "Whole; the complete afternoon, with nothing left of it."
+   },
+   {
+    "type": "expression",
+    "word": "debajo de",
+    "surface": "debajo del",
+    "definition": "Under; below the thing that has just been named."
+   },
+   {
+    "type": "expression",
+    "word": "a medio girar",
+    "surface": "a medio girar",
+    "definition": "Half turned; stopped in the middle of the movement."
+   },
+   {
+    "type": "expression",
+    "word": "hace dos semanas",
+    "surface": "hace dos semanas",
+    "definition": "Two weeks ago; at a point in the recent past."
+   },
+   {
+    "type": "expression",
+    "word": "palabra por palabra",
+    "surface": "palabra por palabra",
+    "definition": "Word for word; going through each one separately."
+   },
+   {
+    "type": "expression",
+    "word": "al final",
+    "surface": "Al final",
+    "definition": "In the end; after everything else has been tried."
+   }
+  ]
+ },
+ {
+  "topic": "trust-and-rumours",
+  "slotIndex": 2,
+  "title": "La voz más rápida",
+  "slug": "se-lo-digo-yo-primero",
+  "arcType": "recurring-character-callback",
+  "synopsis": "Emilio se ha enterado por Sole de que Celia deja el piso en junio, y eso le pesa más que la noticia. Celia sube los dos pisos sin esperar el ascensor para contárselo ella, y le sale la voz más rápida de lo que quería. La confianza fácil que tenían no vuelve entera esa tarde.",
+  "text": "Sole se lo ha contado a Emilio antes que ella, y eso pesa más que el dato.\n\nSube los dos pisos sin coger el ascensor. Llama al timbre con la mano abierta, no con el nudillo, y le sale la voz más rápida de lo que quería.\n\n“Lo del viernes era un encargo largo, y por eso sigo hasta junio”, empieza Celia. “Se lo digo yo, y se lo digo ahora”, añade. “No me voy todavía, y si me voy, lo sabrá usted primero”, añade.\n\nEmilio la escucha en el marco de la puerta, sin invitarla a pasar. Se queda callado más de lo que se quedaba antes.\n\n“Yo prefiero saberlo aquí y no en el buzón”, dice él, y afloja un poco la cara. La confianza no vuelve entera esa tarde, pero vuelve algo. Celia baja sin prisa y deja la puerta del rellano abierta.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "confianza",
+    "surface": "confianza",
+    "definition": "Trust; the easy feeling of believing what somebody says."
+   },
+   {
+    "type": "noun",
+    "word": "timbre",
+    "surface": "timbre",
+    "definition": "Doorbell; the button that rings inside the flat."
+   },
+   {
+    "type": "noun",
+    "word": "nudillo",
+    "surface": "nudillo",
+    "definition": "Knuckle; the bone you knock a door with."
+   },
+   {
+    "type": "noun",
+    "word": "marco",
+    "surface": "marco",
+    "definition": "Frame; the wooden edge around a door or a window."
+   },
+   {
+    "type": "noun",
+    "word": "dato",
+    "surface": "dato",
+    "definition": "Fact; the piece of information itself, without the feeling."
+   },
+   {
+    "type": "verb",
+    "word": "saber",
+    "surface": "saberlo",
+    "definition": "To know; to be told a thing rather than hear it around."
+   },
+   {
+    "type": "verb",
+    "word": "aflojar",
+    "surface": "afloja",
+    "definition": "To soften; to let a tight face relax a little."
+   },
+   {
+    "type": "verb",
+    "word": "invitar",
+    "surface": "invitarla",
+    "definition": "To invite; to ask somebody to come in or join you."
+   },
+   {
+    "type": "verb",
+    "word": "coger",
+    "surface": "coger",
+    "definition": "To take; to get into a lift instead of the stairs."
+   },
+   {
+    "type": "verb",
+    "word": "quedarse",
+    "surface": "queda",
+    "definition": "To stay; to remain in a state longer than before."
+   },
+   {
+    "type": "verb",
+    "word": "llamar",
+    "surface": "Llama",
+    "definition": "To ring; to press a bell so that somebody comes."
+   },
+   {
+    "type": "verb",
+    "word": "pesar",
+    "surface": "pesa",
+    "definition": "To weigh; to matter more than the facts themselves."
+   },
+   {
+    "type": "adjective",
+    "word": "abierta",
+    "surface": "abierta",
+    "definition": "Open; the flat hand instead of the closed fist."
+   },
+   {
+    "type": "adjective",
+    "word": "rápida",
+    "surface": "rápida",
+    "definition": "Fast; coming out quicker than you meant it to."
+   },
+   {
+    "type": "noun",
+    "word": "prisa",
+    "surface": "prisa",
+    "definition": "Hurry; the need to do a thing faster than normal."
+   },
+   {
+    "type": "expression",
+    "word": "antes que ella",
+    "surface": "antes que ella",
+    "definition": "Before her; sooner than the person it concerned."
+   },
+   {
+    "type": "expression",
+    "word": "se lo digo yo",
+    "surface": "se lo digo yo",
+    "definition": "I will tell him myself; taking the news in person."
+   },
+   {
+    "type": "expression",
+    "word": "todavía no",
+    "surface": "No me voy todavía",
+    "definition": "Not yet; the thing has not happened up to now."
+   },
+   {
+    "type": "expression",
+    "word": "un poco",
+    "surface": "un poco",
+    "definition": "A little; a small amount, not a lot."
+   },
+   {
+    "type": "expression",
+    "word": "más que",
+    "surface": "más que",
+    "definition": "More than; to a greater degree than the other thing."
+   }
+  ]
+ },
+ {
+  "topic": "trust-and-rumours",
+  "slotIndex": 3,
+  "title": "Poco y de oídas",
+  "slug": "eso-no-lo-repito",
+  "arcType": "harmonic-close",
+  "synopsis": "Sole le pide a Celia que confirme un rumor sobre la oficina y confirmarlo sería lo fácil, porque las dos saben lo mismo. Celia dice que no lo sabe y que no lo va a repetir, sin adornarlo y sin pedir perdón. Sole se va con las manos vacías y Celia se queda un rato más en el rellano, tranquila.",
+  "text": "Cuando Sole baja con dos bolsas, Celia ya está en el rellano con la llave fuera. La pregunta viene hecha: el caso es la oficina y quien la lleva, y las dos saben lo mismo: poco y de oídas.\n\n“Tú que trabajas allí, ¿es verdad lo que dicen?”, pregunta Sole, bajando la voz.\n\nDecir que sí es lo fácil. “¿Y tú dónde lo has oído?”, pregunta Celia, y se acuerda de junio.\n\n“No lo sé, y aunque lo supiera, eso yo no lo cuento por ahí”, contesta Celia. Sale sin adornarlo y sin pedir perdón, que es lo que antes le costaba.\n\n“Pues nada, ya me enteraré yo por otro lado, no te preocupes”, dice Sole. Se encoge de hombros, sigue bajando con sus bolsas y se va con las manos como vino. Esperaba temblar y no tiembla. Se queda un rato en el rellano, con el aire frío de la calle entrando.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "hombro",
+    "surface": "hombros",
+    "definition": "Shoulder; the part you lift to show you do not know."
+   },
+   {
+    "type": "noun",
+    "word": "caso",
+    "surface": "caso",
+    "definition": "Case; the matter people are talking about right now."
+   },
+   {
+    "type": "noun",
+    "word": "perdón",
+    "surface": "perdón",
+    "definition": "Sorry; the word you add when you feel you owe one."
+   },
+   {
+    "type": "noun",
+    "word": "pregunta",
+    "surface": "pregunta",
+    "definition": "Question; what somebody asks in order to know."
+   },
+   {
+    "type": "verb",
+    "word": "encogerse",
+    "surface": "se encoge",
+    "definition": "To shrug; to raise the shoulders instead of answering."
+   },
+   {
+    "type": "verb",
+    "word": "contar",
+    "surface": "cuento",
+    "definition": "To tell; to pass a thing on to another person."
+   },
+   {
+    "type": "verb",
+    "word": "acordarse",
+    "surface": "se acuerda",
+    "definition": "To remember; to bring a past moment back to mind."
+   },
+   {
+    "type": "verb",
+    "word": "saber",
+    "surface": "supiera",
+    "definition": "To know; to have a piece of information in your head."
+   },
+   {
+    "type": "verb",
+    "word": "volver",
+    "surface": "vino",
+    "definition": "To come; to arrive at the place where somebody waits."
+   },
+   {
+    "type": "verb",
+    "word": "bajar",
+    "surface": "baja",
+    "definition": "To come down; to go down the stairs of a building."
+   },
+   {
+    "type": "verb",
+    "word": "costar",
+    "surface": "costaba",
+    "definition": "To be hard; to demand effort from the person doing it."
+   },
+   {
+    "type": "verb",
+    "word": "trabajar",
+    "surface": "trabajas",
+    "definition": "To work; to do a paid job with or for somebody."
+   },
+   {
+    "type": "adjective",
+    "word": "hecha",
+    "surface": "hecha",
+    "definition": "Ready made; prepared before the person even arrives."
+   },
+   {
+    "type": "adjective",
+    "word": "fácil",
+    "surface": "fácil",
+    "definition": "Easy; asking little effort from whoever does it."
+   },
+   {
+    "type": "expression",
+    "word": "de oídas",
+    "surface": "de oídas",
+    "definition": "By hearsay; known only because somebody said so."
+   },
+   {
+    "type": "expression",
+    "word": "aunque lo supiera",
+    "surface": "aunque lo supiera",
+    "definition": "Even if I knew; used to refuse before the fact matters."
+   },
+   {
+    "type": "expression",
+    "word": "sin adornarlo",
+    "surface": "sin adornarlo",
+    "definition": "Plainly; without softening the words to please anybody."
+   },
+   {
+    "type": "expression",
+    "word": "como vino",
+    "surface": "como vino",
+    "definition": "As she came; with nothing more than she arrived with."
+   },
+   {
+    "type": "expression",
+    "word": "un rato",
+    "surface": "un rato",
+    "definition": "A while; a short stretch of time with no hurry."
+   },
+   {
+    "type": "expression",
+    "word": "es verdad",
+    "surface": "es verdad",
+    "definition": "Is it true; asking somebody to confirm what is said."
+   }
+  ]
+ }
+]

@@ -1,0 +1,34 @@
+{
+ "tipo": "Traveler",
+ "nivel": "b1",
+ "variante": "spain",
+ "registro": "hablado y con ruido: frases que empiezan dos veces, palabras que vuelven",
+ "espina": "Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella",
+ "recursos": "Repeticion ritmica, Imagen concreta, Contraste con pero, Causalidad explicita, Cambio de ritmo, Reversa cosida",
+ "historias": [
+  {
+   "slot": "1",
+   "quiere": "entender de una vez como funciona la caldera",
+   "impide": "Quique lo explica en dos minutos, deprisa y de espaldas",
+   "cuesta": "la tarde entera y admitir delante de un desconocido que no le ha entendido",
+   "cambia": "deja de asentir por costumbre y le pide que lo repita",
+   "emocion": "verguenza que se traga: es traductora y no ha cogido la mitad, asi que aprieta el boligrafo y tarda en preguntar"
+  },
+  {
+   "slot": "2",
+   "quiere": "quedar bien en la conversacion del portal sin fingir",
+   "impide": "Berta habla rapido y encadena tres asuntos en una frase",
+   "cuesta": "la comodidad de callarse, que era mas facil",
+   "cambia": "repite en voz alta lo que ha entendido, con sus palabras",
+   "emocion": "alivio pequeño: le sale mal la primera vez, pero Berta le dice que si, y ella se rie sola en la escalera"
+  },
+  {
+   "slot": "3",
+   "quiere": "cerrar por telefono la fecha de la obra con Emilio",
+   "impide": "la linea se corta y cada uno repite media frase",
+   "cuesta": "tres llamadas y la ultima hora de la tarde",
+   "cambia": "deja de pedir perdon por preguntar y pregunta directamente",
+   "emocion": "impaciencia contenida: quiere colgar y no cuelga porque la fecha importa, asi que apoya la frente en la pared y vuelve a marcar"
+  }
+ ]
+}

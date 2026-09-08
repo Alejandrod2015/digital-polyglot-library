@@ -1,0 +1,34 @@
+{
+ "tipo": "Traveler",
+ "nivel": "b1",
+ "variante": "spain",
+ "registro": "de obra y acera: se habla de pie, con el papel en la mano y ruido de calle",
+ "espina": "Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella",
+ "recursos": "Imagen concreta, Contraste con pero, Causalidad explicita, Espejo concreto, Cambio de ritmo, Reversa cosida",
+ "historias": [
+  {
+   "slot": "1",
+   "quiere": "un precio fiable para arreglar el techo del portal",
+   "impide": "los dos presupuestos que pide se llevan el doble uno del otro y ninguno explica por que",
+   "cuesta": "la mañana de trabajo que pierde esperando a Toño en la acera",
+   "cambia": "deja de comparar solo el total y empieza a leer las partidas",
+   "emocion": "desconfianza que no quiere enseñar: los numeros no le cuadran y le sube el calor a las orejas, asi que baja la voz y pide que se lo desglose"
+  },
+  {
+   "slot": "2",
+   "quiere": "cerrar con el mas barato y acabar de una vez",
+   "impide": "ese le pide el pago en mano y sin factura, y ella firma por tres vecinos",
+   "cuesta": "el ahorro que suponia el presupuesto barato, que ya no puede aceptar",
+   "cambia": "pasa de decidir sola a decir en voz alta lo que no va a firmar",
+   "emocion": "miedo a quedar de rara: es la nueva y esta a punto de tumbar el trato, asi que traga saliva y lo dice mirando el papel"
+  },
+  {
+   "slot": "3",
+   "quiere": "que los tres firmen el presupuesto que si se puede defender",
+   "impide": "Emilio quiere el barato y Berta quiere acabar antes de abril",
+   "cuesta": "cuatrocientos euros mas, repartidos entre los tres",
+   "cambia": "pide su parte por escrito y la consigue sin levantar la voz",
+   "emocion": "alivio con un punto de orgullo: le tiembla el boligrafo al firmar la primera, pero firma antes que nadie y deja el papel donde se ve"
+  }
+ ]
+}
