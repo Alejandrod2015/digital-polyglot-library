@@ -1338,12 +1338,12 @@
     }
   },
   "cmtq5n9a50007j8812p9lzxjr#brasilia": {
-    "cerrado": "2026-09-08T09:19:15.878Z",
+    "cerrado": "2026-09-08T09:34:00.157Z",
     "hash": "de04e5cd26cff897",
     "historias": [
-      "brasilia#0 senha-b-quarenta-e-dois",
-      "brasilia#1 o-andar-certo",
-      "brasilia#2 deferido-no-diario"
+      "brasilia#0 o-painel-que-nao-chama",
+      "brasilia#1 como-voce-sabe-qual",
+      "brasilia#2 o-diario-no-mormaco"
     ],
     "checks": [
       "plan del tema completo (registro \"administrativo y paciente: numeros de turno, ventanillas, frases de manual dichas por gente cansada\", espina \"Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. El ano se le parte en dos, y aqui descubre cual es la mitad que sostiene la otra: sin el papel de esta oficina no hay ruta ninguna.\")",
@@ -1358,7 +1358,7 @@
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Rafaela): senha-b-quarenta-e-dois, o-andar-certo, deferido-no-diario",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Rafaela): o-painel-que-nao-chama, como-voce-sabe-qual, o-diario-no-mormaco",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.06 sobre 51 plazas · 47 salen una sola vez | ancladas: 11/62 (18%) | cola: 47/51 portables con un solo encuentro (92%, tope 80%) | de un solo encuentro: painel, registro, baixa, alisa, rasgar, vinco, setor, expediente, situação, trâmite, escritório, portaria, crachá, visitante, senhora, negativa, triagem, comprovante, orçamento, despesa, validade, elevador, Acerta, risada, fotografa, arquivo, estante, bebedouro, grampo, seca…",
       "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
@@ -1401,12 +1401,12 @@
     }
   },
   "cmtq5n9a50007j8812p9lzxjr#chapada-diamantina": {
-    "cerrado": "2026-09-08T09:26:30.204Z",
+    "cerrado": "2026-09-08T09:33:49.873Z",
     "hash": "e93c763ea8343903",
     "historias": [
-      "chapada-diamantina#0 oito-nao-quinze",
-      "chapada-diamantina#1 tornozelo-na-subida",
-      "chapada-diamantina#2 regra-no-lugar-da-foto"
+      "chapada-diamantina#0 a-minha-e-gente-viva",
+      "chapada-diamantina#1 a-compressa-do-cantil",
+      "chapada-diamantina#2 a-folha-em-branco-na-mesa"
     ],
     "checks": [
       "plan del tema completo (registro \"seco y de montana: instrucciones cortas, silencio entre frases, gente que mide el riesgo en voz baja\", espina \"Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. Aqui descubre que lo que vende en la agencia y lo que pasa en la trilla no se parecen, y que quien manda en su ruta no es ella.\")",
@@ -1464,12 +1464,12 @@
     }
   },
   "cmtq5n9a50007j8812p9lzxjr#curitiba": {
-    "cerrado": "2026-09-08T09:15:55.798Z",
+    "cerrado": "2026-09-08T09:33:30.936Z",
     "hash": "a4bd7063ab0ddb1c",
     "historias": [
-      "curitiba#0 garoa-no-corredor",
-      "curitiba#1 estacao-tubo-as-seis",
-      "curitiba#2 pinhao-no-barigui"
+      "curitiba#0 toma-um-cafezinho",
+      "curitiba#1 o-cartao-na-catraca",
+      "curitiba#2 o-pinhao-que-endurece"
     ],
     "checks": [
       "plan del tema completo (registro \"frio y cortes: conversacion de pasillo, ciudad ordenada, gente que pregunta mucho y no se mete\", espina \"Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. Aqui estrena la ruta que nadie quiso: la del interior. La ciudad no la trata como turista y ella todavia no sabe pedir ayuda.\")",
@@ -1527,12 +1527,12 @@
     }
   },
   "cmtq5n9a50007j8812p9lzxjr#fernando-de-noronha": {
-    "cerrado": "2026-09-08T09:18:40.921Z",
+    "cerrado": "2026-09-08T09:33:54.978Z",
     "hash": "52bd764088990dcf",
     "historias": [
-      "fernando-de-noronha#0 a-cota-do-dia",
-      "fernando-de-noronha#1 tartaruga-na-desova",
-      "fernando-de-noronha#2 sorteio-para-dezembro"
+      "fernando-de-noronha#0 a-cota-e-oito-por-ponto",
+      "fernando-de-noronha#1 o-recife-do-folheto",
+      "fernando-de-noronha#2 ninguem-tem-vaga-garantida"
     ],
     "checks": [
       "plan del tema completo (registro \"claro y submarino: instrucciones antes de entrar al agua, silencio dentro, reglas que nadie discute\", espina \"Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. En la isla aprende que la ruta que vende tiene cupo, y que el cupo es lo que la mantiene vendible el ano que viene.\")",
@@ -1589,12 +1589,12 @@
     }
   },
   "cmtq5n9a50007j8812p9lzxjr#paraty": {
-    "cerrado": "2026-09-08T09:26:06.928Z",
+    "cerrado": "2026-09-08T09:33:41.007Z",
     "hash": "f919d09b2c210585",
     "historias": [
-      "paraty#0 a-mare-leva-a-lancha",
-      "paraty#1 dinheiro-na-mao-errada",
-      "paraty#2 o-telefone-sublinhado"
+      "paraty#0 o-cais-sem-sombra",
+      "paraty#1 nao-se-paga-se-retribui",
+      "paraty#2 leva-marmita-se-pedir"
     ],
     "checks": [
       "plan del tema completo (registro \"seco y maritimo: mareas, favores que no se cobran, frases cortas de gente que se ve todos los meses\", espina \"Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. En esta parada descubre que en su ruta nueva no se paga con dinero, y que deber algo es la forma que tiene la gente de asegurarse de que vuelvas.\")",
@@ -1651,12 +1651,12 @@
     }
   },
   "cmtq5n9a50007j8812p9lzxjr#sao-paulo": {
-    "cerrado": "2026-09-08T09:15:16.595Z",
+    "cerrado": "2026-09-08T09:33:18.263Z",
     "hash": "e2f45555881fc212",
     "historias": [
-      "sao-paulo#0 a-caucao-volta-dia-trinta",
-      "sao-paulo#1 chuva-na-marginal",
-      "sao-paulo#2 tchau-no-engarrafamento"
+      "sao-paulo#0 o-quarto-que-nao-e-dela",
+      "sao-paulo#1 sobrou-a-do-interior",
+      "sao-paulo#2 desce-no-acostamento"
     ],
     "checks": [
       "plan del tema completo (registro \"urbano y seco: ruido de calle, prisa y dinero contado; frases cortas entre dos que se conocen demasiado\", espina \"Rafaela vuelve del mes de viaje y no cabe en la vida que dejo: vende destinos que ahora si ha pisado, y el ano se le parte entre la agencia y los sitios de verdad. En este tema paga la primera factura de haberse ido: no tiene donde dormir.\")",
@@ -1714,12 +1714,12 @@
     }
   },
   "cmtq5n9a50007j8812p9lzxjr#serra-gaucha": {
-    "cerrado": "2026-09-08T09:16:35.343Z",
+    "cerrado": "2026-09-08T09:33:36.031Z",
     "hash": "f12392644deeba1a",
     "historias": [
-      "serra-gaucha#0 galeto-antes-do-preco",
-      "serra-gaucha#1 mais-um-pouquinho",
-      "serra-gaucha#2 a-caixa-para-a-estrada"
+      "serra-gaucha#0 a-piada-em-dialeto",
+      "serra-gaucha#1 a-segunda-travessa",
+      "serra-gaucha#2 e-o-que-sobrou"
     ],
     "checks": [
       "plan del tema completo (registro \"calido y ruidoso: mesa larga, comida que no para de llegar, gente que insiste hasta que aceptas\", espina \"Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. Con la ruta del interior aprende que el trato no se cierra en la oficina sino en la mesa, y eso la obliga a quedarse mas de lo que tenia previsto.\")",
@@ -1780,12 +1780,12 @@
     ]
   },
   "cmtrcpgso00073232h8vaf7na#campo-grande": {
-    "cerrado": "2026-09-08T09:12:20.722Z",
+    "cerrado": "2026-09-08T09:33:03.144Z",
     "hash": "aef00a0da5ddd750",
     "historias": [
-      "campo-grande#0 tres-guiches-abertos",
-      "campo-grande#1 o-homem-que-ronca-atras",
-      "campo-grande#2 volto-pelo-caderno"
+      "campo-grande#0 um-papel-que-ja-nao-vale",
+      "campo-grande#1 a-senhora-nao-dorme",
+      "campo-grande#2 sete-minutos-de-moto"
     ],
     "checks": [
       "plan del tema completo (registro \"cansado y atento, con la cortesía de quien pide favores\", espina \"Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.\")",
@@ -1844,12 +1844,12 @@
     }
   },
   "cmtrcpgso00073232h8vaf7na#gramado": {
-    "cerrado": "2026-09-08T09:13:47.887Z",
+    "cerrado": "2026-09-08T09:33:13.257Z",
     "hash": "b04b23e44e9cc075",
     "historias": [
-      "gramado#0 nada-aqui-serve",
-      "gramado#1 uma-lampada-so",
-      "gramado#2 a-ultima-pagina"
+      "gramado#0 nada-minha-filha",
+      "gramado#1 a-fronha-gelada",
+      "gramado#2 o-desfile-na-ultima-manha"
     ],
     "checks": [
       "plan del tema completo (registro \"cálido y de despedida, sin sentimentalismo\", espina \"Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella. Aquí la espina se cierra: en la última historia dice en voz alta lo que en Salvador no habría sabido decir.\")",
@@ -1866,7 +1866,7 @@
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Renata): nada-aqui-serve, uma-lampada-so, a-ultima-pagina",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Renata): nada-minha-filha, a-fronha-gelada, o-desfile-na-ultima-manha",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.05 sobre 42 plazas · 40 salen una sola vez | ancladas: 18/60 (30%) | cola: 40/42 portables con un solo encuentro (95%, tope 80%) | de un solo encuentro: vestir, despe, pendura, convida, Cansa, Vem, Faz, molhado, seca, marrom, congelada, de repente, acende, Apaga, mora, Permanece, vivem, pensei, alugado, grosso, macia, amarela, roxa, azul, vivo, a pé, rindo, canta, dança, brincam…",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
@@ -1908,12 +1908,12 @@
     }
   },
   "cmtrcpgso00073232h8vaf7na#jericoacoara": {
-    "cerrado": "2026-09-08T09:10:59.576Z",
+    "cerrado": "2026-09-08T09:32:46.457Z",
     "hash": "e2348604619d9234",
     "historias": [
-      "jericoacoara#0 ninguem-lava-nada-aqui",
-      "jericoacoara#1 feijao-salgado-demais",
-      "jericoacoara#2 a-panela-que-grudou"
+      "jericoacoara#0 o-fogao-de-quatro-bocas",
+      "jericoacoara#1 a-batata-crua-no-feijao",
+      "jericoacoara#2 a-regra-vale-ou-nao-vale"
     ],
     "checks": [
       "plan del tema completo (registro \"doméstico y algo terco, con humor de convivencia\", espina \"Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.\")",
@@ -1972,12 +1972,12 @@
     }
   },
   "cmtrcpgso00073232h8vaf7na#lencois-maranhenses": {
-    "cerrado": "2026-09-08T09:11:37.642Z",
+    "cerrado": "2026-09-08T09:32:51.590Z",
     "hash": "29ddc72047a6d7ce",
     "historias": [
-      "lencois-maranhenses#0 chove-sobre-a-excursao",
-      "lencois-maranhenses#1 no-meio-do-rio",
-      "lencois-maranhenses#2 antes-do-sol"
+      "lencois-maranhenses#0 a-passagem-ja-comprada",
+      "lencois-maranhenses#1 se-puxar-a-gente-vira",
+      "lencois-maranhenses#2 a-lagoa-entre-as-dunas"
     ],
     "checks": [
       "plan del tema completo (registro \"sobrio y paciente, sin dramatismo\", espina \"Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.\")",
@@ -2036,12 +2036,12 @@
     }
   },
   "cmtrcpgso00073232h8vaf7na#petropolis": {
-    "cerrado": "2026-09-08T09:13:02.462Z",
+    "cerrado": "2026-09-08T09:33:08.228Z",
     "hash": "d6204c22e8179e4f",
     "historias": [
-      "petropolis#0 o-carregador-queimou",
-      "petropolis#1 quatro-meses-nao-dois",
-      "petropolis#2 quinze-folhas-e-barbante"
+      "petropolis#0 um-generico-ate-segunda",
+      "petropolis#1 tem-uma-solucao-mas-e-ma",
+      "petropolis#2 o-barbante-de-um-real"
     ],
     "checks": [
       "plan del tema completo (registro \"práctico y algo tenso, con un aliado que no cobra por ayudar\", espina \"Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.\")",
@@ -2100,12 +2100,12 @@
     }
   },
   "cmtrcpgso00073232h8vaf7na#recife": {
-    "cerrado": "2026-09-08T09:10:19.189Z",
+    "cerrado": "2026-09-08T09:32:41.372Z",
     "hash": "837fccb27f815665",
     "historias": [
-      "recife#0 o-frasco-mais-barato",
-      "recife#1 o-colchao-vence",
-      "recife#2 nilza-fecha-vinte-minutos"
+      "recife#0 a-dor-nao-e-doenca",
+      "recife#1 o-quarto-morno-da-pousada",
+      "recife#2 o-pano-com-sangue-seco"
     ],
     "checks": [
       "plan del tema completo (registro \"seco y práctico, con humor de situación\", espina \"Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.\")",
@@ -2164,12 +2164,12 @@
     }
   },
   "cmtrcpgso00073232h8vaf7na#salvador": {
-    "cerrado": "2026-09-08T09:09:27.896Z",
+    "cerrado": "2026-09-08T09:32:36.024Z",
     "hash": "8d8e734b85f04856",
     "historias": [
-      "salvador#0 a-caixa-que-nao-chegou",
-      "salvador#1 um-livro-de-contos",
-      "salvador#2 ninguem-sabe-do-exame"
+      "salvador#0 a-lousa-e-nenhum-livro",
+      "salvador#1 o-preco-nao-a-ideia",
+      "salvador#2 a-ladeira-na-sexta"
     ],
     "checks": [
       "plan del tema completo (registro \"cálido y terco, sin ironía\", espina \"Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.\")",
