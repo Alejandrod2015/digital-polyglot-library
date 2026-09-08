@@ -252,6 +252,39 @@ function ffprobeDurationFile(path: string): number {
  * edited span changes. One re-encode (filter requires decode), at a clean
  * bitrate. aformat unifies streams so concat never glitches.
  */
+/**
+ * Los [startSec,endSec] guardados tienen que caer en el SILENCIO entre
+ * secciones del master de verdad. Cuando no caen, el corte se queda corto y la
+ * cola de la toma vieja sobrevive pegada a la nueva: en los-changarines se oia
+ * "ofrece, apurada, apurada", y antes de eso el A0 portugues salia con restos
+ * de palabra ("l--", "n--") en la costura. Los offsets que deja el pipeline de
+ * narracion ya vienen desviados hasta medio segundo (el hueco tras el titulo y
+ * el loudnorm los mueven despues de medirlos), asi que esto no es un caso raro:
+ * es el caso por defecto. Se comprueba ANTES de cortar, que es cuando todavia
+ * se puede arreglar sin gastar nada.
+ */
+function assertCorteEnSilencio(masterPath: string, startSec: number, endSec: number): void {
+  const r = spawnSync("ffmpeg", ["-i", masterPath, "-af", "silencedetect=noise=-35dB:d=0.12", "-f", "null", "-"], { encoding: "utf8" });
+  const err = String(r.stderr ?? "");
+  if (!err.includes("silencedetect")) return; // sin ffmpeg utilizable: no se estorba
+  const huecos: Array<[number, number]> = [];
+  let ini: number | null = null;
+  for (const m of err.matchAll(/silence_(start|end): ([0-9.]+)/g)) {
+    if (m[1] === "start") ini = Number(m[2]);
+    else if (ini !== null) { huecos.push([ini, Number(m[2])]); ini = null; }
+  }
+  const TOL = 0.08;
+  const dentro = (t: number) => huecos.some(([a, b]) => t >= a - TOL && t <= b + TOL);
+  const malas = ([["inicio", startSec], ["final", endSec]] as Array<[string, number]>)
+    .filter(([, t]) => t > 0.05 && !dentro(t));
+  if (malas.length) {
+    throw new Error(
+      `Los tiempos guardados no describen el master: ${malas.map(([q, t]) => `${q} ${t.toFixed(2)}s cae sobre voz`).join(", ")}. ` +
+      `Cortar ahi dejaria cola de la toma vieja. Re-mide primero:  npx tsx scripts/_remeasureFragments.ts <slug> --apply`
+    );
+  }
+}
+
 async function spliceInPlace(masterBuffer: Buffer, sectionBuffer: Buffer, startSec: number, endSec: number): Promise<Buffer> {
   const dir = mkdtempSync(join(tmpdir(), "splice-"));
   try {
@@ -260,6 +293,7 @@ async function spliceInPlace(masterBuffer: Buffer, sectionBuffer: Buffer, startS
     const outPath = join(dir, "out.mp3");
     writeFileSync(masterPath, masterBuffer);
     writeFileSync(segPath, sectionBuffer);
+    assertCorteEnSilencio(masterPath, startSec, endSec);
     const masterDur = ffprobeDurationFile(masterPath);
     const hasBefore = startSec > 0.02;
     const hasAfter = endSec < masterDur - 0.02;
