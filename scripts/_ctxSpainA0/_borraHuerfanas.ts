@@ -36,8 +36,15 @@ const saleLiteral = (texto: string, clave: string) =>
   const tocados = new Map<string, Set<string>>();   // bundle → claves borradas
   let n = 0;
 
+  // Sin argumentos barre todo menos el excluido; con ellos, SOLO esos bundles.
+  // Acotar importa: un barrido general mete en el mismo saco huerfanas de
+  // bundles que no son del encargo, y esa es justo la puerta por la que se
+  // borra algo vivo.
+  const soloEstos = process.argv.slice(2).filter((a) => !a.startsWith("--"));
+
   for (const f of filas) {
     if (!f.slug || f.bundle === EXCLUIDO) continue;
+    if (soloEstos.length && !soloEstos.includes(f.bundle)) continue;
     const t = texto.get(f.slug);
     if (!t) continue;
     const enTexto = new Set([...t.matchAll(TOCABLE)].map((m) => m[0]));

@@ -1,0 +1,369 @@
+[
+  {
+    "slug": "galeto-antes-do-preco",
+    "topic": "serra-gaucha",
+    "slotIndex": 0,
+    "title": "A piada em dialeto",
+    "synopsis": "Una posada de la sierra, un acuerdo que cabe en diez minutos y un autobus a las dos. La duena no habla de dinero con la mesa puesta, y la mesa ya esta puesta. Lo que Rafaela pierde esa tarde le ensena como se cierran de verdad los tratos en esta ruta.",
+    "text": "Rosane, uma dona de pousada da serra, recebe no pátio com as mãos na massa. Rafaela vende a rota da serra desde abril. O ônibus de volta é às duas.\n\n“Trouxe a tabela de preços”, diz Rafaela. “Depois. Primeiro come.” “É que o meu ônibus sai às duas.” “Tem outro às seis. Senta.” A fumaça da brasa entra pelo pátio e o cheiro fica na roupa.\n\nNa cozinha o galeto gira no espeto e a família põe a mesa comprida. “Quem é o senhor do fundo?”, pergunta Rafaela. “Meu genro. Fala mais do que trabalha.”\n\nO genro conta uma piada em dialeto e todo mundo ri. Rafaela ri também, meio segundo atrasada, e ninguém percebe. “Entendeu?” “Nem uma palavra”, admite ela, e a mesa ri de novo.\n\nÀs quatro Rosane traz o café e o contrato. “Agora sim. Quanto fica para você?” Rafaela assina entre a xícara e a travessa do meio. Perdeu o das duas, e fechou o acordo.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "galeto",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Young chicken grilled on a spit, the Sunday dish here."
+      },
+      {
+        "type": "noun",
+        "word": "espeto",
+        "anchor": true,
+        "definition": "Long metal stick that meat is turned on over the fire."
+      },
+      {
+        "type": "noun",
+        "word": "pátio",
+        "definition": "Open yard beside the house, where the fire is lit."
+      },
+      {
+        "type": "noun",
+        "word": "serra",
+        "definition": "Hill country, the cold high land away from the coast."
+      },
+      {
+        "type": "adjective",
+        "word": "comprido",
+        "surface": "comprida",
+        "definition": "Long, made for many people to sit along it."
+      },
+      {
+        "type": "noun",
+        "word": "genro",
+        "definition": "The man who is married to somebody's daughter."
+      },
+      {
+        "type": "noun",
+        "word": "piada",
+        "definition": "Short funny story told out loud to make people laugh."
+      },
+      {
+        "type": "noun",
+        "word": "dialeto",
+        "definition": "Local way of speaking, brought by the old families."
+      },
+      {
+        "type": "noun",
+        "word": "travessa",
+        "definition": "Wide dish that food is carried to the table in."
+      },
+      {
+        "type": "noun",
+        "word": "acordo",
+        "definition": "Agreement that two sides reach and then write down."
+      },
+      {
+        "type": "verb",
+        "word": "assinar",
+        "surface": "assina",
+        "definition": "To write your name to show that you agree."
+      },
+      {
+        "type": "verb",
+        "word": "girar",
+        "surface": "gira",
+        "definition": "To turn round and round, here over the fire."
+      },
+      {
+        "type": "verb",
+        "word": "perceber",
+        "surface": "percebe",
+        "definition": "To notice something that other people do not see."
+      },
+      {
+        "type": "adjective",
+        "word": "atrasado",
+        "surface": "atrasada",
+        "definition": "Late, coming after the moment it should have come."
+      },
+      {
+        "type": "verb",
+        "word": "admitir",
+        "surface": "admite",
+        "definition": "To say something true that makes you look bad."
+      },
+      {
+        "type": "expression",
+        "word": "com as mãos na massa",
+        "register": "colloquial",
+        "definition": "Busy working with your hands, in the middle of it."
+      },
+      {
+        "type": "noun",
+        "word": "tabela",
+        "definition": "Sheet with the prices set out in rows and columns."
+      },
+      {
+        "type": "noun",
+        "word": "fumaça",
+        "definition": "Grey smoke that rises from a fire and carries the smell."
+      },
+      {
+        "type": "noun",
+        "word": "brasa",
+        "definition": "Red hot coal under the meat, without any flame."
+      },
+      {
+        "type": "noun",
+        "word": "fundo",
+        "definition": "The far end of a room, the part furthest from you."
+      },
+      {
+        "type": "noun",
+        "word": "palavra",
+        "definition": "A single word, the smallest thing you can say."
+      }
+    ],
+    "arcType": "recurring-character-callback"
+  },
+  {
+    "slug": "mais-um-pouquinho",
+    "topic": "serra-gaucha",
+    "slotIndex": 1,
+    "title": "A segunda travessa",
+    "synopsis": "Dos horas comiendo y la comida sigue llegando. En esta mesa decir que no a un plato es decir que no a quien lo hizo, y Rafaela no encuentra la formula. La encuentra al final, y no es una palabra: es un gesto que aqui todos entienden y ella no conocia.",
+    "text": "A segunda travessa chega da prateleira quando Rafaela já tinha baixado o talher. Ninguém pergunta se ela quer.\n\n“Mais um pouquinho.” “Não, obrigada, sério”, repete Rafaela. “Um pouquinho só.” A tia serve antes do fim da frase, e a massa cai no prato com molho e tudo.\n\nRafaela afrouxa o cinto por baixo da mesa. O vinho da casa vem em jarra, sem rótulo, e ninguém enche o próprio copo: cada um enche o do vizinho.\n\n“Come devagar que sobra tempo”, aconselha Rosane. “E se eu não der conta?” “Aí você deixa no prato e diz que estava ótimo.” “E ninguém se ofende?” “Ninguém. O que ofende é sair com fome.”\n\nÉ isso: deixar no prato e elogiar alto. Rafaela deixa duas colheradas, elogia a massa, e a tia sorri e leva a travessa para o outro lado. O gesto valia mais que a palavra.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "pouquinho",
+        "anchor": true,
+        "register": "colloquial",
+        "definition": "A tiny bit more, said when offering food again."
+      },
+      {
+        "type": "noun",
+        "word": "tia",
+        "definition": "Aunt, and also any older woman of the family."
+      },
+      {
+        "type": "noun",
+        "word": "molho",
+        "definition": "Thick liquid that is poured over meat or over pasta."
+      },
+      {
+        "type": "verb",
+        "word": "afrouxar",
+        "surface": "afrouxa",
+        "definition": "To loosen something that has become too tight."
+      },
+      {
+        "type": "noun",
+        "word": "cinto",
+        "definition": "Strap around the waist that holds the trousers up."
+      },
+      {
+        "type": "noun",
+        "word": "vinho",
+        "definition": "Wine, made here in the valley by the families."
+      },
+      {
+        "type": "noun",
+        "word": "jarra",
+        "definition": "Big open jug that a drink is poured from."
+      },
+      {
+        "type": "noun",
+        "word": "rótulo",
+        "definition": "Paper label on a bottle saying what is inside."
+      },
+      {
+        "type": "verb",
+        "word": "aconselhar",
+        "surface": "aconselha",
+        "definition": "To tell someone what you think they should do."
+      },
+      {
+        "type": "verb",
+        "word": "ofender",
+        "surface": "ofende",
+        "definition": "To hurt someone's feelings by what you say or do."
+      },
+      {
+        "type": "verb",
+        "word": "elogiar",
+        "surface": "elogiar",
+        "definition": "To say out loud that something was very good."
+      },
+      {
+        "type": "noun",
+        "word": "colherada",
+        "surface": "colheradas",
+        "definition": "As much food as one spoon can hold at once."
+      },
+      {
+        "type": "adjective",
+        "word": "ótimo",
+        "definition": "Very good, the word you use to praise a dish."
+      },
+      {
+        "type": "noun",
+        "word": "frase",
+        "definition": "Sentence, the words somebody says in one go."
+      },
+      {
+        "type": "expression",
+        "word": "obrigada",
+        "definition": "Thank you, said by a woman when refusing or accepting."
+      },
+      {
+        "type": "noun",
+        "word": "talher",
+        "definition": "Knife, fork and spoon, the tools you eat with."
+      },
+      {
+        "type": "noun",
+        "word": "gesto",
+        "definition": "Movement of the hand or body that says something."
+      },
+      {
+        "type": "verb",
+        "word": "baixar",
+        "surface": "baixado",
+        "definition": "To put something down, here the knife and fork."
+      },
+      {
+        "type": "noun",
+        "word": "tempo",
+        "definition": "Time, the hours you still have in front of you."
+      },
+      {
+        "type": "noun",
+        "word": "prateleira",
+        "definition": "Shelf on the wall where the jars are lined up."
+      }
+    ],
+    "arcType": "juxtaposition-discovery"
+  },
+  {
+    "slug": "a-caixa-para-a-estrada",
+    "topic": "serra-gaucha",
+    "slotIndex": 2,
+    "title": "É o que sobrou",
+    "synopsis": "El acuerdo esta firmado y Rafaela solo quiere irse sin deber nada a nadie. La familia tiene otra idea y la prepara mientras ella se despide. Lo que se lleva pesa cuatro kilos y le cambia una linea de la ficha: la posada deja de ser un cliente y pasa a ser una parada.",
+    "text": "Rosane deixa uma caixa de papelão na porta, com o nome de Rafaela escrito na tampa, um barbante por cima e cheiro de queijo através do papelão.\n\n“Isso é muito”, protesta ela. “É o que sobrou”, responde Rosane, que sabe que não sobrou nada. “Leva. Na estrada dá fome.” “Eu volto em junho.” “Traz o contrato de novo.”\n\n“O que é isso tudo?”, pergunta Rafaela. “Comida de estrada”, responde Rosane: salame, queijo colonial, um vidro de geleia com a tampinha nova e um bom pedaço da cuca.\n\nNo aeroporto o peso não importa tanto quanto o volume. “Quatro quilos de excesso”, informa a moça. “O despacho sai por quanto?” “Oitenta.” “Cobra.”\n\nRafaela paga oitenta da própria comissão, cola a etiqueta na alça e não liga para Rosane para contar. No avião abre a ficha e muda uma linha: a pousada da serra vira parada fixa, chegar cedo e falar de dinheiro só depois do café.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "salame",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Dry sausage cut in thin slices, made in these valleys."
+      },
+      {
+        "type": "noun",
+        "word": "queijo colonial",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Farm cheese made the way the old families made it."
+      },
+      {
+        "type": "noun",
+        "word": "cuca",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Sweet crumb cake from the German and Italian south."
+      },
+      {
+        "type": "noun",
+        "word": "geleia",
+        "definition": "Sweet fruit spread that is kept in a glass jar."
+      },
+      {
+        "type": "noun",
+        "word": "barbante",
+        "definition": "Thin string used to tie a box or a parcel shut."
+      },
+      {
+        "type": "adjective",
+        "word": "escrito",
+        "definition": "Written down, put in letters on paper or a lid."
+      },
+      {
+        "type": "noun",
+        "word": "fome",
+        "definition": "The feeling of needing to eat something quite soon."
+      },
+      {
+        "type": "noun",
+        "word": "volume",
+        "definition": "How much space a piece of luggage takes up."
+      },
+      {
+        "type": "noun",
+        "word": "excesso",
+        "definition": "More than the weight or the amount that is allowed."
+      },
+      {
+        "type": "noun",
+        "word": "etiqueta",
+        "definition": "Small printed label stuck on a bag before a flight."
+      },
+      {
+        "type": "noun",
+        "word": "alça",
+        "definition": "The handle that you hold a bag or a box by."
+      },
+      {
+        "type": "adjective",
+        "word": "fixo",
+        "surface": "fixa",
+        "definition": "Fixed, always the same and not chosen again."
+      },
+      {
+        "type": "verb",
+        "word": "protestar",
+        "surface": "protesta",
+        "definition": "To say out loud that something is far too much."
+      },
+      {
+        "type": "verb",
+        "word": "informar",
+        "surface": "informa",
+        "definition": "To tell someone a fact that they need to know."
+      },
+      {
+        "type": "noun",
+        "word": "despacho",
+        "definition": "Handing luggage over so that it flies in the hold."
+      },
+      {
+        "type": "verb",
+        "word": "importar",
+        "surface": "importa",
+        "definition": "To matter, to make a difference to the result."
+      },
+      {
+        "type": "verb",
+        "word": "ligar",
+        "surface": "liga",
+        "definition": "To call somebody on the phone to tell them something."
+      },
+      {
+        "type": "noun",
+        "word": "comissão",
+        "definition": "The part of the sale that the seller keeps."
+      },
+      {
+        "type": "expression",
+        "word": "por cima",
+        "definition": "Over the top of something, lying above it."
+      },
+      {
+        "type": "noun",
+        "word": "tampinha",
+        "definition": "Small lid that screws onto the top of a jar."
+      }
+    ],
+    "arcType": "harmonic-close"
+  }
+]

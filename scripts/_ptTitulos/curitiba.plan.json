@@ -1,0 +1,34 @@
+{
+  "tipo": "Traveler",
+  "nivel": "b1",
+  "variante": "brazil",
+  "registro": "frio y cortes: conversacion de pasillo, ciudad ordenada, gente que pregunta mucho y no se mete",
+  "espina": "Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. Aqui estrena la ruta que nadie quiso: la del interior. La ciudad no la trata como turista y ella todavia no sabe pedir ayuda.",
+  "recursos": "B1: reversa cosida y cambio de ritmo. Heredados: repeticion ritmica, contraste con pero e imagen concreta (A0); causalidad explicita, humor de situacion y gancho final literal (A1); simil simple y espejo concreto (A2). Sin ironia, subtexto, aforismo ni elipsis, que son B2.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "terminar la llamada con la agencia, que es donde le confirman la primera visita",
+      "impide": "la vecina abre la puerta con dos cafes y no espera a que cuelgue",
+      "cuesta": "la llamada: la agencia cuelga y esa noche ya no habla con nadie",
+      "cambia": "la charla que le costo la llamada le da el dato que ninguna ficha traia",
+      "emocion": "impaciencia que se traga por educacion; se le ve en que deja el telefono en la oreja mas tiempo del que hace falta"
+    },
+    {
+      "slot": "2",
+      "quiere": "coger el autobus de las seis, que es el unico que llega a tiempo al cliente",
+      "impide": "el billete no tiene saldo y la maquina solo admite monedas",
+      "cuesta": "el autobus y el dinero: acaba pagando tres veces en una furgoneta",
+      "cambia": "deja de adivinar y empieza a preguntar antes",
+      "emocion": "verguenza delante de la cola; cuenta las monedas dos veces sin levantar la cabeza"
+    },
+    {
+      "slot": "3",
+      "quiere": "irse de la ciudad sin deberle nada a nadie",
+      "impide": "la vecina se toma la ultima manana libre para llevarla al parque",
+      "cuesta": "la idea de que esta ruta era un castigo; no la recupera",
+      "cambia": "escribe el nombre de la vecina en la ficha de la ruta, que hasta hoy solo tenia horarios",
+      "emocion": "una ternura que la incomoda; se le ve en que se quema el dedo y se rie en vez de quejarse"
+    }
+  ]
+}

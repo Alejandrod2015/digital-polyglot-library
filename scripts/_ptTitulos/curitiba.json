@@ -1,0 +1,369 @@
+[
+  {
+    "slug": "garoa-no-corredor",
+    "topic": "curitiba",
+    "slotIndex": 0,
+    "title": "Toma um cafezinho",
+    "synopsis": "Primera noche en una ciudad que no la trata como turista, y una llamada de trabajo que decide la visita del dia siguiente. La vecina llega con dos cafes y no espera a que cuelgue. Lo que le cuesta esa charla y lo que le da acaban siendo la misma cosa, y ella tarda un rato en verlo.",
+    "text": "A garoa de Curitiba não molha, encharca devagar. Rafaela vende rotas e chega à pensão às nove da noite, com a ficha da rota nova na mão. Quem mora ali é Cristiane, cobradora no terminal.\n\nO sinal não pega no quarto, e Rafaela liga para a agência no corredor. Cristiane abre a porta com dois copos. “Você é a moça de São Paulo?”, pergunta. “Sou”, responde Rafaela, com o aparelho no ouvido.\n\n“Toma um cafezinho. Aqui todo mundo toma às nove.” “Estou no meio de uma ligação.” “Eu espero.” Cristiane não espera: conta do frio, do terminal, do ônibus que sai às seis.\n\nQuando Rafaela olha o telefone, a agência já desligou. Ela fica com o aparelho na orelha mais tempo do que precisa.\n\n“O ônibus do interior não sai do terminal”, avisa Cristiane, já na porta. “Sai da estação-tubo da praça. Você ia perder.” Rafaela anota o nome da praça atrás da ficha e toma o café, que já está frio.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "garoa",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Fine cold rain that does not fall, it just soaks you."
+      },
+      {
+        "type": "verb",
+        "word": "encharcar",
+        "surface": "encharca",
+        "definition": "To soak something until the water goes right through."
+      },
+      {
+        "type": "noun",
+        "word": "pensão",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Cheap guest house with rooms rented by the night."
+      },
+      {
+        "type": "noun",
+        "word": "ficha",
+        "definition": "Small card with the notes and times of a route."
+      },
+      {
+        "type": "noun",
+        "word": "cobradora",
+        "definition": "Woman who takes the fares on a bus or at a station."
+      },
+      {
+        "type": "noun",
+        "word": "terminal",
+        "definition": "Big station where the city bus lines start and end."
+      },
+      {
+        "type": "noun",
+        "word": "estação-tubo",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Glass tube stop where Curitiba buses are boarded."
+      },
+      {
+        "type": "noun",
+        "word": "cafezinho",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Small strong coffee, offered to anyone who comes by."
+      },
+      {
+        "type": "noun",
+        "word": "copo",
+        "definition": "Glass or small cup that you drink coffee from."
+      },
+      {
+        "type": "noun",
+        "word": "sinal",
+        "definition": "Phone signal, the thing her room does not get."
+      },
+      {
+        "type": "noun",
+        "word": "ligação",
+        "definition": "Phone call, from the moment it starts to the end."
+      },
+      {
+        "type": "noun",
+        "word": "aparelho",
+        "definition": "The phone itself, the thing she holds to her ear."
+      },
+      {
+        "type": "verb",
+        "word": "desligar",
+        "surface": "desligou",
+        "definition": "To hang up, to end the call at the other side."
+      },
+      {
+        "type": "verb",
+        "word": "anotar",
+        "surface": "anota",
+        "definition": "To write something down so you do not forget."
+      },
+      {
+        "type": "noun",
+        "word": "praça",
+        "definition": "Open square in the middle of a town or district."
+      },
+      {
+        "type": "expression",
+        "word": "todo mundo",
+        "register": "colloquial",
+        "definition": "Everybody here, all the people in the building."
+      },
+      {
+        "type": "expression",
+        "word": "no meio de",
+        "definition": "In the middle of something you have not finished."
+      },
+      {
+        "type": "noun",
+        "word": "agência",
+        "definition": "The travel office she works for back in the city."
+      },
+      {
+        "type": "noun",
+        "word": "ônibus",
+        "definition": "The bus that takes people between towns and cities."
+      },
+      {
+        "type": "noun",
+        "word": "ouvido",
+        "definition": "The ear, where she keeps the phone too long."
+      }
+    ],
+    "arcType": "daily-encounter"
+  },
+  {
+    "slug": "estacao-tubo-as-seis",
+    "topic": "curitiba",
+    "slotIndex": 1,
+    "title": "O cartão na catraca",
+    "synopsis": "El unico autobus que llega a tiempo sale a las seis, y entre ella y ese autobus hay un billete sin saldo y una maquina que solo traga monedas. La cola detras no ayuda. Lo que pierde esa manana no es el autobus, es la costumbre de adivinar en vez de preguntar.",
+    "text": "Às cinco e quarenta a praça está escura e a estação-tubo já tem fila no degrau. O cartão de Rafaela não passa na catraca.\n\n“Sem saldo”, avisa a moça da cabine. “Recarrega ali.” “A máquina aceita cartão?” “Só moeda.” “E a senhora tem troco de dez?” “Ninguém tem troco às seis da manhã.” Rafaela conta as moedas duas vezes, sem levantar a cabeça, e falta um real.\n\nNa padaria da esquina ela troca a nota e leva um pão que não vai comer. “Leva quentinho, saiu agora”, oferece o rapaz. “Não dá tempo, moço, meu ônibus é às seis”, responde ela, já na porta. “Então corre.” Quando volta, o ônibus das seis saiu. O próximo é às nove; o cliente, às oito.\n\nSobra a van da esquina, que cobra três vezes. “Vai lotada”, avisa o motorista. “Tudo bem, eu vou em pé.” Rafaela viaja com a pasta contra o peito. Chega na hora, e na ficha da rota escreve uma linha nova: tubo, não terminal, e moeda no bolso.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "catraca",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Metal bar you push through once you have paid."
+      },
+      {
+        "type": "noun",
+        "word": "saldo",
+        "definition": "Money left on a travel card or a phone."
+      },
+      {
+        "type": "verb",
+        "word": "recarregar",
+        "surface": "Recarrega",
+        "definition": "To put more money onto a card so it works."
+      },
+      {
+        "type": "noun",
+        "word": "cartão",
+        "definition": "Plastic card you touch to pay for the bus."
+      },
+      {
+        "type": "noun",
+        "word": "moeda",
+        "definition": "A coin, the metal money this machine will take."
+      },
+      {
+        "type": "noun",
+        "word": "troco",
+        "definition": "Coins you get back when you pay with a note."
+      },
+      {
+        "type": "noun",
+        "word": "padaria",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Bakery on the corner, open before anything else."
+      },
+      {
+        "type": "noun",
+        "word": "van",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Small shared van that carries people for a higher fare."
+      },
+      {
+        "type": "adjective",
+        "word": "lotado",
+        "surface": "lotada",
+        "definition": "Completely full, with no free space left inside."
+      },
+      {
+        "type": "noun",
+        "word": "esquina",
+        "definition": "The corner where one street meets another street."
+      },
+      {
+        "type": "noun",
+        "word": "peito",
+        "definition": "Chest, the front of the body above the stomach."
+      },
+      {
+        "type": "adjective",
+        "word": "escuro",
+        "surface": "escura",
+        "definition": "Dark, with no daylight in the sky yet."
+      },
+      {
+        "type": "adjective",
+        "word": "quentinho",
+        "register": "colloquial",
+        "definition": "Nice and warm, said of bread just out of the oven."
+      },
+      {
+        "type": "noun",
+        "word": "nota",
+        "definition": "Paper money, the note she needs to break."
+      },
+      {
+        "type": "verb",
+        "word": "trocar",
+        "surface": "troca",
+        "definition": "To change a note into coins you can use."
+      },
+      {
+        "type": "noun",
+        "word": "pão",
+        "definition": "Bread roll, the thing she buys only for the change."
+      },
+      {
+        "type": "verb",
+        "word": "viajar",
+        "surface": "viaja",
+        "definition": "To travel, to go from one place to another."
+      },
+      {
+        "type": "noun",
+        "word": "fila",
+        "definition": "Line of people waiting one behind the other."
+      },
+      {
+        "type": "verb",
+        "word": "passar",
+        "surface": "passa",
+        "definition": "To go through, here for a card that is refused."
+      },
+      {
+        "type": "noun",
+        "word": "degrau",
+        "definition": "Step you stand on at the entrance to something."
+      }
+    ],
+    "arcType": "mini-cliffhanger"
+  },
+  {
+    "slug": "pinhao-no-barigui",
+    "topic": "curitiba",
+    "slotIndex": 2,
+    "title": "O pinhão que endurece",
+    "synopsis": "Una hora libre antes del vuelo y una vecina que gasta su manana libre en acompanarla. Frio, humo y una comida que hay que abrir con los dientes. Lo que se le cae ahi no es el frio ni el avion: es la idea con la que llego, de que esta ruta era un castigo.",
+    "text": "Uma hora livre antes do voo, e Cristiane veste o casaco, pega a chave do portão e leva Rafaela ao Barigui.\n\nO parque está branco de geada. Perto do lago, uma barraca vende pinhão assado e o vapor sai do saco de papel.\n\n“Come quente, senão endurece”, ensina Cristiane. “E como é que abre?” “Com o dente, moça. Assim.”\n\nRafaela queima o dedo, sopra e ri. “Ninguém me disse que era assim”, ri Rafaela. “Ninguém conta. Todo mundo aprende.”\n\n“Você volta em junho?”, pergunta Cristiane, no portão do parque. “A rota é minha até dezembro.” “Então volta.”\n\nNo avião, Rafaela abre a ficha e escreve, embaixo da linha das seis: a praça, o pinhão e o nome de Cristiane. A rota do interior deixa de ser a que ninguém quis.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "pinhão",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Pine nut roasted and eaten hot in the south."
+      },
+      {
+        "type": "noun",
+        "word": "geada",
+        "anchor": true,
+        "definition": "Thin white frost that covers the ground at dawn."
+      },
+      {
+        "type": "adjective",
+        "word": "assado",
+        "definition": "Roasted, cooked over heat until it is done."
+      },
+      {
+        "type": "verb",
+        "word": "endurecer",
+        "surface": "endurece",
+        "definition": "To go hard, so you can no longer bite it."
+      },
+      {
+        "type": "noun",
+        "word": "dente",
+        "definition": "A tooth, used here to break the hard shell."
+      },
+      {
+        "type": "verb",
+        "word": "queimar",
+        "surface": "queima",
+        "definition": "To burn, here a finger on something too hot."
+      },
+      {
+        "type": "verb",
+        "word": "soprar",
+        "surface": "sopra",
+        "definition": "To blow air onto something to cool it."
+      },
+      {
+        "type": "noun",
+        "word": "dedo",
+        "definition": "A finger, the part of the hand she burns."
+      },
+      {
+        "type": "noun",
+        "word": "parque",
+        "definition": "Green public space where people walk and rest."
+      },
+      {
+        "type": "noun",
+        "word": "portão",
+        "definition": "Big gate at the entrance of a park or house."
+      },
+      {
+        "type": "verb",
+        "word": "ensinar",
+        "surface": "ensina",
+        "definition": "To show someone how a thing is done properly."
+      },
+      {
+        "type": "verb",
+        "word": "aprender",
+        "surface": "aprende",
+        "definition": "To learn something by doing it or being shown."
+      },
+      {
+        "type": "adjective",
+        "word": "quente",
+        "definition": "Hot, still warm from the fire that cooked it."
+      },
+      {
+        "type": "noun",
+        "word": "junho",
+        "definition": "June, the coldest month of the year down south."
+      },
+      {
+        "type": "noun",
+        "word": "linha",
+        "definition": "Line of writing on a card or page."
+      },
+      {
+        "type": "verb",
+        "word": "escrever",
+        "surface": "escreve",
+        "definition": "To put words down on paper with a pen."
+      },
+      {
+        "type": "noun",
+        "word": "nome",
+        "definition": "The word people call a person or a place by."
+      },
+      {
+        "type": "noun",
+        "word": "casaco",
+        "definition": "Warm coat you put on before going outside."
+      },
+      {
+        "type": "noun",
+        "word": "chave",
+        "definition": "Small metal thing that opens a door or a gate."
+      },
+      {
+        "type": "noun",
+        "word": "vapor",
+        "definition": "White steam that comes off something very hot."
+      }
+    ],
+    "arcType": "harmonic-close"
+  }
+]
