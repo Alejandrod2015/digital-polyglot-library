@@ -46,6 +46,7 @@
 import rulesDoc from "../../docs/story-rules.json";
 import { renderedParagraphs } from "@/lib/readerParagraphs";
 import { isSpanishUpToLevel } from "@/lib/cefr/spanishLevels";
+import { esHuecoDelLexico } from "@/lib/cefr/spanishLexiconGaps";
 import { isPortugueseA1A2 } from "@/lib/cefr/portugueseA1A2";
 import { isItalianA1A2 } from "@/lib/cefr/italianA1A2";
 import { isGermanA1A2 } from "@/lib/cefr/germanA1A2";
@@ -863,6 +864,10 @@ export function validateJourneyStories(
       const fueraDelLexico = (w: string): boolean => {
         const x = w.trim().toLowerCase();
         if (!x || x.includes(" ")) return false; // las expresiones se juzgan aparte
+        // Espanol corriente que la lista graduada no tiene (teja, alacena,
+        // yema...). Sin esto el gate empuja a cambiar buenas palabras por
+        // peores; ver src/lib/cefr/spanishLexiconGaps.ts.
+        if (esHuecoDelLexico(x)) return false;
         const formas = [x];
         if (x.endsWith("es") && x.length > 4) formas.push(x.slice(0, -2));
         if (x.endsWith("s") && x.length > 3) formas.push(x.slice(0, -1));
