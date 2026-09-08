@@ -51,6 +51,7 @@ import { validateGeneratedStory, extractStoryMotifs, extractProperNouns, type Ex
 import { renderedParagraphs } from "@/lib/readerParagraphs";
 import { validateJourneyStories, type JourneyStoryInput, type JourneyCheck } from "@/lib/validateJourneyStories";
 import { candadoCierrePrevio, type HistoriaCierre } from "./temaCierres";
+import { empeora } from "./journeyRatchet";
 
 /** Build the cross-story summary the canonical validator needs to run its
  *  repetition / rotation / opening-rhythm / motif checks against siblings. */
@@ -75,38 +76,6 @@ function summarize(d: any): ExistingStorySummary {
     openingFirstSentence: firstSentence,
     motifTags: extractStoryMotifs(String(d.text)),
   };
-}
-
-/**
- * ¿La edición empeora esta regla de conjunto respecto a como estaba?
- *
- * Conservador a propósito: devuelve "empeora" siempre que no pueda demostrar
- * lo contrario. Cuatro casos y ninguno más:
- *
- *   1. Antes pasaba y ahora no        -> EMPEORA. Sin excepción.
- *   2. El detalle es idéntico          -> igual. La edición no la tocó.
- *   3. Los dos detallan historias, y   -> igual o mejor. Ninguna historia
- *      las de ahora son un subconjunto    nueva entra en la lista de fallos.
- *      de las de antes
- *   4. Cualquier otra cosa             -> EMPEORA.
- *
- * Se compara por SLUG y no por los números del detalle porque el sentido de
- * un número depende de la regla: en `journey-quoted-speech-band` un 3% es
- * peor que un 7%, y en `journey-closing-alone` 17 es peor que 12. El conjunto
- * de historias señaladas, en cambio, significa lo mismo en todas.
- */
-function empeora(antes: JourneyCheck | undefined, ahora: JourneyCheck, slugs: string[]): boolean {
-  if (!antes || antes.status === "pass") return true;
-  const da = (antes.detail ?? "").trim();
-  const dh = (ahora.detail ?? "").trim();
-  if (da === dh) return false;
-  const mencionadas = (d: string) => new Set(slugs.filter((s) => d.includes(s)));
-  const A = mencionadas(da);
-  const H = mencionadas(dh);
-  if (A.size === 0 || H.size === 0) return true;
-  if (H.size > A.size) return true;
-  for (const s of H) if (!A.has(s)) return true;
-  return false;
 }
 
 function arg(name: string, fallback?: string): string | undefined {
@@ -860,7 +829,15 @@ function slugify(s: string): string {
           console.error(`   El trinquete solo sirve para EDITAR lo que ya existe. NOTHING WRITTEN.`);
           process.exit(1);
         }
-        const antes = validateJourneyStories(base, { language: ctx.language, level: ctx.level, realPeople });
+        // MISMO contexto que el "ahora", tipo y completitud incluidos. Sin
+        // ellos el antes se medía con otras reglas activas: los checks que
+        // solo gatean a cierto tipo (journey-vocab-worth-teaching) salían
+        // "pass" en la base por no saber el tipo, y entonces cualquier fallo
+        // posterior se leía como EMPEORA por la primera linea de empeora().
+        const antes = validateJourneyStories(base, {
+          language: ctx.language, level: ctx.level, realPeople,
+          conjuntoCompleto: completo, journeyType: tipoJourney,
+        });
         const porId = new Map(antes.map((c) => [c.id, c]));
         const slugs = todas.map((t) => t.slug);
         const peores = malos.filter((c) => empeora(porId.get(c.id), c, slugs));
