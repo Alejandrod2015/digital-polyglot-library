@@ -38,6 +38,7 @@ const CASES: Array<{ kind: BetaEmailKind; data: BetaEmailData }> = [
   { kind: "waitlist", data: common },
   { kind: "declined", data: common },
   { kind: "install_nudge", data: common },
+  { kind: "install_nudge", data: { ...common, platform: "android" } },
   { kind: "feedback_ask", data: common },
   { kind: "stuck_ask", data: common },
   { kind: "mid_survey", data: common },
