@@ -1,0 +1,425 @@
+[
+  {
+    "slug": "su-pieza-con-estantes",
+    "topic": "distance-and-homecoming",
+    "slotIndex": 1,
+    "title": "Su pieza con estantes",
+    "synopsis": "Teresa has lived far away for eight years and today she comes back to the family house in Popayán, where the entrance passage and the white wall are exactly as she left them. Inside, the kitchen has moved and the room she used to sleep in is now shelves up to the roof. Her brother-in-law explains it kindly: nobody slept there, and the house needed somewhere to put things. She finds herself asking permission to open her own cupboard, and that night she sleeps on the sofa.",
+    "text": "Teresa vive lejos desde hace ocho años y hoy vuelve a la casa de su familia, en Popayán, Colombia. El zaguán está igual, con la misma tapia blanca, y huele a la humedad de siempre bajo las tejas.\n\nWilson, el cuñado que se quedó a cargo, le abre y le carga la maleta.\n\n“Siga, siga, que está haciendo frío afuera”, le ofrece él.\n\nTeresa entra y busca la cocina donde estaba, pero ahora la cocina da al patio y su cuarto de antes tiene estantes hasta el techo.\n\n“¿Y mi pieza?”, pregunta ella.\n\n“¿Y las cosas que estaban ahí?”, sigue Teresa.\n\n“Están en cajas, arriba”, aclara Wilson. “La pieza la volvimos despensa. Nadie dormía ahí en ocho años, y la casa necesitaba dónde guardar.”\n\nElla abre la alacena y se queda con la mano en la puerta.\n\n“¿Puedo?”, pide permiso, en su propia cocina.\n\n“Claro que puede, Teresa, no pregunte eso”, responde él, y no entiende por qué lo pregunta.\n\nEsa noche Teresa duerme en el sofá de la sala, tapada con una manta que no reconoce.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "maleta",
+        "anchor": false,
+        "definition": "The bag with wheels that you travel with, packed full."
+      },
+      {
+        "type": "noun",
+        "word": "estante",
+        "anchor": false,
+        "surface": "estantes",
+        "definition": "The flat board on a wall where things are stored."
+      },
+      {
+        "type": "noun",
+        "word": "techo",
+        "anchor": false,
+        "definition": "The top of the room, the part above your head."
+      },
+      {
+        "type": "noun",
+        "word": "pieza",
+        "anchor": false,
+        "definition": "The room where you sleep, in the Colombian word for it."
+      },
+      {
+        "type": "verb",
+        "word": "guardar",
+        "anchor": false,
+        "definition": "To put things away in a place kept for them."
+      },
+      {
+        "type": "noun",
+        "word": "sofá",
+        "anchor": false,
+        "definition": "The long soft seat in the living room, for two or three."
+      },
+      {
+        "type": "noun",
+        "word": "sala",
+        "anchor": false,
+        "definition": "The room of the house where visitors are received."
+      },
+      {
+        "type": "noun",
+        "word": "manta",
+        "anchor": false,
+        "definition": "The thick cloth you sleep under when the night is cold."
+      },
+      {
+        "type": "noun",
+        "word": "cajón",
+        "anchor": false,
+        "surface": "puerta",
+        "definition": "The drawer of a cupboard, that slides out and in."
+      },
+      {
+        "type": "verb",
+        "word": "abrir",
+        "anchor": false,
+        "surface": "abre",
+        "definition": "To make a door or a cupboard open so you can see inside."
+      },
+      {
+        "type": "expression",
+        "word": "dar a",
+        "anchor": false,
+        "surface": "da al",
+        "definition": "To open onto a place, said of a window or a room."
+      },
+      {
+        "type": "verb",
+        "word": "entrar",
+        "anchor": false,
+        "surface": "entra",
+        "definition": "To go inside a house through its door."
+      },
+      {
+        "type": "adjective",
+        "word": "blanco",
+        "anchor": false,
+        "surface": "blanca",
+        "definition": "Of the colour of milk, which is the colour of this city."
+      },
+      {
+        "type": "adjective",
+        "word": "propio",
+        "anchor": false,
+        "surface": "propia",
+        "definition": "Belonging to you and to nobody else at all."
+      },
+      {
+        "type": "noun",
+        "word": "zaguán",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The covered entrance passage of an old colonial house."
+      },
+      {
+        "type": "noun",
+        "word": "tapia",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The thick white wall that closes a house in Popayan."
+      },
+      {
+        "type": "noun",
+        "word": "teja",
+        "anchor": true,
+        "surface": "tejas",
+        "register": "cultural",
+        "definition": "The curved clay tile of the roofs of the old town."
+      },
+      {
+        "type": "noun",
+        "word": "alacena",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The built-in kitchen cupboard where the plates are kept."
+      },
+      {
+        "type": "noun",
+        "word": "despensa",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The small room where the food of the house is stored."
+      },
+      {
+        "type": "noun",
+        "word": "patio",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The open square in the middle of the house, with plants."
+      }
+    ],
+    "arcType": "reframe-turn"
+  },
+  {
+    "slug": "le-falta-sal",
+    "topic": "distance-and-homecoming",
+    "slotIndex": 2,
+    "title": "Le falta sal",
+    "synopsis": "On the one morning she has, Teresa gets up early to make the family soup, which is the one thing she is sure is still hers to do. In this house the pot goes on at eleven, and it is barely nine. Wilson helps: he moves the pot two fingers, tastes the broth, and tells her it needs salt now that the maize sheet is served on its own. Nobody sends her out of the kitchen, and she ends up on the stool watching them finish it.",
+    "text": "El domingo Teresa se levanta temprano para hacer la comida, que es lo único que sabe que sigue siendo suyo.\n\nPone la olla, pica y prueba. En esta casa el pipián se hace a las once, y todavía son las nueve.\n\n“Yo la ayudo”, le ofrece Wilson, y le mueve la olla dos centímetros.\n\n“Está bien así”, contesta ella. “Yo la puse ahí toda la vida.”\n\n“Es que ahí no calienta igual”, insiste Wilson.\n\nTeresa sigue picando, más despacio.\n\nWilson prueba el caldo con una cuchara y hace un gesto corto con la boca.\n\n“Le falta sal”, le señala.\n\n“Le puse la que siempre le pongo”, responde Teresa.\n\n“Sí, pero ahora la carantanta va por separado, y no le da sal a la sopa.”\n\n“Terminen ustedes”, dice ella.\n\nDeja la cuchara y se sienta en el taburete a mirar cómo acaban su sancocho.\n\nDesde el taburete ve su cocina como se ve una cocina ajena.",
+    "vocab": [
+      {
+        "type": "adverb",
+        "word": "despacio",
+        "definition": "Slowly; taking your time instead of rushing the movement."
+      },
+      {
+        "type": "verb",
+        "word": "picar",
+        "anchor": false,
+        "surface": "pica",
+        "definition": "To cut food into very small pieces with a knife."
+      },
+      {
+        "type": "noun",
+        "word": "olla",
+        "definition": "Pot; the deep pan you cook a stew or soup in."
+      },
+      {
+        "type": "noun",
+        "word": "caldo",
+        "anchor": false,
+        "definition": "The hot liquid of a soup, before the rest goes in."
+      },
+      {
+        "type": "noun",
+        "word": "gesto",
+        "anchor": false,
+        "definition": "The small movement of the face that says what you think."
+      },
+      {
+        "type": "noun",
+        "word": "sal",
+        "anchor": false,
+        "definition": "The white grains that make food taste of something."
+      },
+      {
+        "type": "adjective",
+        "word": "único",
+        "definition": "Only; the single one of its kind, with no other beside it."
+      },
+      {
+        "type": "expression",
+        "word": "por separado",
+        "anchor": false,
+        "surface": "por separado",
+        "definition": "Each thing on its own, not mixed with the rest."
+      },
+      {
+        "type": "noun",
+        "word": "cuchara",
+        "anchor": false,
+        "definition": "The round tool you eat soup and taste sauces with."
+      },
+      {
+        "type": "noun",
+        "word": "taburete",
+        "anchor": false,
+        "definition": "The low wooden stool you sit on in a kitchen."
+      },
+      {
+        "type": "adjective",
+        "word": "ajeno",
+        "anchor": false,
+        "surface": "ajena",
+        "definition": "Belonging to somebody else, not yours any more."
+      },
+      {
+        "type": "verb",
+        "word": "acabar",
+        "anchor": false,
+        "surface": "acaban",
+        "definition": "To finish the thing that somebody else had started."
+      },
+      {
+        "type": "adverb",
+        "word": "igual",
+        "anchor": false,
+        "definition": "In the same way, with no difference at all."
+      },
+      {
+        "type": "verb",
+        "word": "levantarse",
+        "anchor": false,
+        "surface": "levanta",
+        "definition": "To get out of bed and start the day."
+      },
+      {
+        "type": "noun",
+        "word": "vida",
+        "anchor": false,
+        "surface": "vida",
+        "definition": "All the years a person has lived until now."
+      },
+      {
+        "type": "adverb",
+        "word": "todavía",
+        "anchor": false,
+        "surface": "todavía",
+        "definition": "Still, at a moment when you expected it to be over."
+      },
+      {
+        "type": "verb",
+        "word": "probar",
+        "definition": "To taste; to try a little of the food to check it.",
+        "surface": "prueba"
+      },
+      {
+        "type": "noun",
+        "word": "sopa",
+        "definition": "Soup; the hot liquid dish you eat with a spoon."
+      },
+      {
+        "type": "noun",
+        "word": "sancocho",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The thick Sunday soup that a whole family eats together."
+      },
+      {
+        "type": "noun",
+        "word": "cocina",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The room of the house where the food is made."
+      }
+    ],
+    "arcType": "juxtaposition-discovery"
+  },
+  {
+    "slug": "el-chontaduro-del-viaje",
+    "topic": "distance-and-homecoming",
+    "slotIndex": 3,
+    "title": "El chontaduro del viaje",
+    "synopsis": "Teresa's bag has been waiting by the door since the morning and the taxi comes at four. Her brother-in-law walks her out to the pavement with the house key in his hand and tells her to keep it, because this is her house too. Eight years ago she left with that same key in her pocket, came back with it, and never once used it. She tells him that if she keeps it she will walk in without knocking, and that is no longer something she can do.",
+    "text": "El bolso de Teresa espera desde temprano. El carro que la lleva al terminal pasa a las cuatro.\n\nWilson sale con ella hasta el andén, sin prisa, y trae la llave en la mano.\n\n“Quédese con ella”, le dice él.\n\n“No hace falta.”\n\n“Sí hace falta. Esta también es su casa.”\n\n“Lo sé”, contesta ella. “Pero una llave que no se usa pesa distinto.”\n\nHace ocho años ella se fue con esa misma llave guardada, volvió con ella, y no la usó ni una vez.\n\n“Si me la quedo, voy a entrar sin tocar, y ya no se puede”, contesta Teresa.\n\nWilson se queda callado, porque sabe que es verdad y no sabe qué se contesta a eso.\n\nTeresa deja la llave en la mesa del zaguán, al lado del chontaduro que él le envolvió para el viaje.\n\n“Nos vemos”, se despide, y cierra el portón despacio.\n\nNo quiere hacer ruido en una casa que ya tiene su horario.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "bolso",
+        "anchor": false,
+        "definition": "The soft bag you carry your things in when you travel."
+      },
+      {
+        "type": "noun",
+        "word": "carro",
+        "anchor": false,
+        "definition": "The car that takes you to the bus station, in Colombian Spanish."
+      },
+      {
+        "type": "noun",
+        "word": "terminal",
+        "anchor": false,
+        "definition": "The station where the long buses leave from."
+      },
+      {
+        "type": "noun",
+        "word": "prisa",
+        "anchor": false,
+        "definition": "The hurry of someone with no time left at all."
+      },
+      {
+        "type": "noun",
+        "word": "llave",
+        "anchor": false,
+        "definition": "The small metal piece that opens the door of a house."
+      },
+      {
+        "type": "verb",
+        "word": "quedarse",
+        "anchor": false,
+        "surface": "Quédese",
+        "definition": "To keep a thing instead of giving it back."
+      },
+      {
+        "type": "adjective",
+        "word": "guardado",
+        "anchor": false,
+        "surface": "guardada",
+        "definition": "Put away somewhere safe, out of sight and out of use."
+      },
+      {
+        "type": "verb",
+        "word": "usar",
+        "anchor": false,
+        "surface": "usó",
+        "definition": "To make use of a thing for what it is meant for."
+      },
+      {
+        "type": "noun",
+        "word": "verdad",
+        "anchor": false,
+        "definition": "The way things really are, whether we like it or not."
+      },
+      {
+        "type": "verb",
+        "word": "envolver",
+        "anchor": false,
+        "surface": "envolvió",
+        "definition": "To wrap food or a gift so that it travels well."
+      },
+      {
+        "type": "verb",
+        "word": "despedirse",
+        "anchor": false,
+        "surface": "despide",
+        "definition": "To say goodbye before you leave a place or a person."
+      },
+      {
+        "type": "adverb",
+        "word": "despacio",
+        "anchor": false,
+        "definition": "Slowly and softly, taking care not to be heard."
+      },
+      {
+        "type": "noun",
+        "word": "horario",
+        "anchor": false,
+        "definition": "The fixed hours at which a house or a shop does things."
+      },
+      {
+        "type": "noun",
+        "word": "viaje",
+        "anchor": false,
+        "definition": "The trip from one place to another, and back again."
+      },
+      {
+        "type": "verb",
+        "word": "pesar",
+        "anchor": false,
+        "surface": "pesa",
+        "definition": "To be heavy, in the hand or on the mind."
+      },
+      {
+        "type": "expression",
+        "word": "hacer falta",
+        "anchor": false,
+        "surface": "hace falta",
+        "definition": "To be needed, when something is missing without it."
+      },
+      {
+        "type": "noun",
+        "word": "andén",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The pavement of the street, in the Colombian word."
+      },
+      {
+        "type": "noun",
+        "word": "chontaduro",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The orange palm fruit sold on the streets of the Cauca."
+      },
+      {
+        "type": "noun",
+        "word": "lado",
+        "anchor": false,
+        "surface": "lado",
+        "definition": "The place right next to a thing or a person."
+      },
+      {
+        "type": "noun",
+        "word": "portón",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The big heavy street door of an old colonial house."
+      }
+    ],
+    "arcType": "late-reveal"
+  }
+]

@@ -443,8 +443,8 @@
     }
   },
   "cmtmylg7k0007321h6t7njesx#advice-and-opinions": {
-    "cerrado": "2026-09-08T09:11:04.591Z",
-    "hash": "de1ab77c163d3367",
+    "cerrado": "2026-09-08T11:36:06.051Z",
+    "hash": "83060ba6c43d79f8",
     "historias": [
       "advice-and-opinions#1 un-tinto-que-nadie-pidio",
       "advice-and-opinions#2 la-greca-fria",
@@ -457,15 +457,16 @@
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"dice\" 33%)",
       "arranques de parrafo variados (mas repetido \"yo\", 9%)",
-      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.19 sobre 42 plazas · 35 salen una sola vez | ancladas: 18/60 (30%) | cola: 35/42 portables con un solo encuentro (83%, tope 80%) | de un solo encuentro: opina, aconsejaría, consejo, se decide, arrepentirse, da vueltas, gastado, insiste, tapa, barrio, mitad, servía, apunta, aguanta, discute, Mezcla, dure, disimula, cartón, terca, siguen de largo, fila, darle la razón, tuviera razón, cambiado de idea, se calla, señala, nota, de mala gana, esquina…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: advice-and-opinions (Rocío, Esteban)"
@@ -506,8 +507,8 @@
     }
   },
   "cmtmylg7k0007321h6t7njesx#animals-and-farms": {
-    "cerrado": "2026-09-08T09:11:41.152Z",
-    "hash": "f55ff9fe98f4d8d5",
+    "cerrado": "2026-09-08T11:36:51.326Z",
+    "hash": "d5963be9d08da90e",
     "historias": [
       "animals-and-farms#1 la-casilla-en-blanco",
       "animals-and-farms#2 quiltro-con-dueno",
@@ -520,15 +521,16 @@
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"contesta\" 22%)",
       "arranques de parrafo variados (mas repetido \"y\", 11%)",
-      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.09 sobre 44 plazas · 40 salen una sola vez | ancladas: 16/60 (27%) | cola: 40/44 portables con un solo encuentro (91%, tope 80%) | de un solo encuentro: alambre, se agacha, marca, pisada, torcida, casilla, línea, en blanco, anoche, tapa, ayer, niega, repisa, correa, aprieta, mueve, da rabia, pone el precio, estaban sanas, Saca a la mesa, dormido, invierno, número, cuida, quedamos a mano, andar suelto, papeles, firma, tranquilo, conforme…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.10 sobre 48 plazas · 43 salen una sola vez | ancladas: 12/60 (20%) | cola: 43/48 portables con un solo encuentro (90%, tope 80%) | de un solo encuentro: alambre, se agacha, marca, pisada, torcida, casilla, línea, en blanco, anoche, tapa, viento, ayer, niega, repisa, correa, aprieta, mueve, da rabia, pone el precio, estaban sanas, Saca a la mesa, dormido, invierno, número, cuida, plata, quedamos a mano, andar suelto, papeles, firma…",
       "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
@@ -569,8 +571,8 @@
     }
   },
   "cmtmylg7k0007321h6t7njesx#distance-and-homecoming": {
-    "cerrado": "2026-09-08T09:12:32.808Z",
-    "hash": "86b61c4ab5ab71e8",
+    "cerrado": "2026-09-08T11:40:30.446Z",
+    "hash": "df0a4d77efb30881",
     "historias": [
       "distance-and-homecoming#1 su-pieza-con-estantes",
       "distance-and-homecoming#2 le-falta-sal",
@@ -583,15 +585,16 @@
       "acotacion 84% (solo avisa)",
       "acotacion dominante bajo tope (\"le\" 25%)",
       "arranques de parrafo variados (mas repetido \"teresa\", 11%)",
-      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Teresa): su-pieza-con-estantes, le-falta-sal, el-chontaduro-del-viaje",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.04 sobre 47 plazas · 45 salen una sola vez | ancladas: 13/60 (22%) | cola: 45/47 portables con un solo encuentro (96%, tope 80%) | de un solo encuentro: maleta, estantes, techo, pieza, guardar, sofá, sala, manta, puerta, abre, da al, entra, blanca, propia, olla, pica, prueba, caldo, gesto, sal, sopa, por separado, cuchara, taburete, ajena, acaban, levanta, vida, todavía, bolso…",
-      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 13/60 plazas por encima de A1/A2 (22%, suelo 30%) · referencias medidas: ES spain b1 42%, ES latam b1 37%, PT brazil a1 2% · de nivel: pieza, dar a, zaguán, teja, alacena, despensa, por separado, pipián",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.06 sobre 49 plazas · 46 salen una sola vez | ancladas: 11/60 (18%) | cola: 46/49 portables con un solo encuentro (94%, tope 80%) | de un solo encuentro: maleta, estantes, techo, pieza, guardar, sofá, sala, manta, puerta, abre, da al, entra, blanca, propia, pica, olla, caldo, gesto, sal, único, por separado, cuchara, taburete, ajena, acaban, levanta, vida, todavía, prueba, sopa…",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 11/60 plazas por encima de A1/A2 (18%, suelo 30%) · referencias medidas: ES spain b1 42%, ES latam b1 37%, PT brazil a1 2% · de nivel: pieza, dar a, zaguán, teja, alacena, despensa, por separado, sancocho",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
@@ -758,8 +761,8 @@
     }
   },
   "cmtmylg7k0007321h6t7njesx#pride-and-envy": {
-    "cerrado": "2026-09-08T09:12:15.730Z",
-    "hash": "15306af63805ebf5",
+    "cerrado": "2026-09-08T11:38:08.742Z",
+    "hash": "2c0bc35b2132624e",
     "historias": [
       "pride-and-envy#1 antes-eran-mias",
       "pride-and-envy#2 el-mismo-pan-dulce",
@@ -772,15 +775,16 @@
       "acotacion 95% (solo avisa)",
       "acotacion dominante bajo tope (\"le\" 22%)",
       "arranques de parrafo variados (mas repetido \"adrián\", 8%)",
-      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Adrián): antes-eran-mias, el-mismo-pan-dulce, la-fuente-en-la-vereda",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.06 sobre 50 plazas · 46 salen una sola vez | ancladas: 10/60 (17%) | cola: 46/50 portables con un solo encuentro (92%, tope 80%) | de un solo encuentro: amasa, bolsas, cuñada, ayudante, envidia, en voz baja, ventana, tocar, media hora, sábados, muerde, reconoce, tragar, receta, darse cuenta, admitirlo, levanta la mesa, almuerzo, gas, de frente, igualito, nueces, gasto, plato, año, cosa, nuevo, fuente, vacía, copiaste…",
-      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 16/60 plazas por encima de A1/A2 (27%, suelo 30%) · referencias medidas: ES spain b1 42%, ES latam b1 37%, PT brazil a1 2% · de nivel: ayudante, envidia, en voz baja, cayote, media hora, razón, admitir, levantar la mesa",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.06 sobre 51 plazas · 47 salen una sola vez | ancladas: 9/60 (15%) | cola: 47/51 portables con un solo encuentro (92%, tope 80%) | de un solo encuentro: amasa, frío, cuñada, ayudante, envidia, en voz baja, ventana, tocar, bolsas, media hora, sábados, muerde, reconoce, tragar, receta, darse cuenta, admitirlo, levanta la mesa, almuerzo, gas, de frente, igualito, nueces, gasto, plato, año, cosa, nuevo, fuente, vacía…",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 15/60 plazas por encima de A1/A2 (25%, suelo 30%) · referencias medidas: ES spain b1 42%, ES latam b1 37%, PT brazil a1 2% · de nivel: ayudante, envidia, en voz baja, media hora, razón, admitir, levantar la mesa, gas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
@@ -821,8 +825,8 @@
     }
   },
   "cmtmylg7k0007321h6t7njesx#promises-and-excuses": {
-    "cerrado": "2026-09-08T09:10:45.158Z",
-    "hash": "a89643234298500b",
+    "cerrado": "2026-09-08T11:34:53.968Z",
+    "hash": "8d5baec9532f5ea8",
     "historias": [
       "promises-and-excuses#1 le-puse-el-ojo",
       "promises-and-excuses#2 el-pretexto-armado",
@@ -835,15 +839,16 @@
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"dice\" 29%)",
       "arranques de parrafo variados (mas repetido \"no\", 16%)",
-      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.09 sobre 43 plazas · 39 salen una sola vez | ancladas: 17/60 (28%) | cola: 39/43 portables con un solo encuentro (91%, tope 80%) | de un solo encuentro: poda, podar, capataz, cuadrilla, promesa, cumplo, Calculaste, Apurarse, duda, atraso, madrugo, lentitud, pusiste el ojo, pretexto, armado, motor, mecánico, adelanta, cortante, reclamo, demora, inventadas, exijo, sin aviso, enojo, amanecer, vendado, amontonados, Contraté, reemplazaran…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.09 sobre 44 plazas · 40 salen una sola vez | ancladas: 16/60 (27%) | cola: 40/44 portables con un solo encuentro (91%, tope 80%) | de un solo encuentro: poda, podar, capataz, cuadrilla, promesa, cumplo, Calculaste, Apurarse, duda, atraso, madrugo, lentitud, pusiste el ojo, arrancaba, pretexto, armado, motor, mecánico, adelanta, cortante, reclamo, demora, inventadas, exijo, sin aviso, enojo, amanecer, vendado, amontonados, Contraté…",
       "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
