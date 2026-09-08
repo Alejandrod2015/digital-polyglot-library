@@ -5,7 +5,7 @@ const B = "spanish-traveler-latam-b2";
 type E = { claves: string[]; g: string; t: string; es: string; en: string };
 const CAPA: Record<string, E[]> = {
   "aqui-se-dice-arrendando": [
-    { claves: ["recibir", "recibe"], t: "verb", g: "takes him in (recibir)", es: "El barrio lo recibe como si nada", en: "the neighbourhood takes him in as if nothing" },
+    { claves: ["llegar", "llega"], t: "verb", g: "arrives (llegar)", es: "llega al barrio Obrero de Cali", en: "arrives at the Obrero neighbourhood in Cali" },
     { claves: ["olvidar", "olvida"], t: "verb", g: "is forgotten (olvidar)", es: "el caleño no se olvida", en: "your Cali Spanish is not forgotten" },
     { claves: ["lulada"], t: "noun", g: "Cali drink of lulo, ice and lime", es: "lo espera con lulada y mecato", en: "waits for him with lulada and snacks" },
     { claves: ["mecato"], t: "noun", g: "snacks (Colombia)", es: "con lulada y mecato", en: "with lulada and snacks" },
