@@ -66,6 +66,12 @@ async function main() {
   const index = Number(process.argv[3]);
   const takes = Number(arg("--takes", "3"));
   const tempo = Number(arg("--tempo", String(DEFAULT_NARRATION_TEMPO)));
+  // VELOCIDAD NATIVA (2026-09-08). Cuando el problema es que el parrafo salio
+  // disparado, se re-sintetiza mas despacio, no se estira despues: `atempo`
+  // sobre una toma buena se oye (paso en los-changarines con un 14%). ElevenLabs
+  // acepta `speed` entre 0,7 y 1,2; el catalogo narra a 0,9.
+  const speed = Number(arg("--speed", String(DEFAULT_VOICE_SETTINGS.speed)));
+  if (speed < 0.7 || speed > 1.2) throw new Error("--speed fuera de rango (0.7 a 1.2)");
   const apply = process.argv.includes("--apply");
   // `--use-candidate` empalma el candidato que YA está en disco, sin sintetizar
   // otro.
@@ -149,6 +155,7 @@ async function main() {
   console.log(`fragment [${index}] voice=${frag.voiceId} span=${spanSec.toFixed(2)}s en el máster`);
   console.log(`texto    ${ttsText.slice(0, 90)}${ttsText.length > 90 ? "…" : ""}`);
   console.log(`tempo    ${tempo} (se aplica al take nuevo para igualar el máster)`);
+  console.log(`speed    ${speed} (velocidad nativa de la voz)`);
   console.log(`takes    hasta ${takes}, gate F0 statement, umbral +${UPTALK_ST} st\n`);
 
   const dir = mkdtempSync(path.join(tmpdir(), "reroll-"));
@@ -161,7 +168,7 @@ async function main() {
       body: JSON.stringify({
         text: softenPunctuationForTts(ttsText),
         model_id: "eleven_multilingual_v2",
-        voice_settings: DEFAULT_VOICE_SETTINGS,
+        voice_settings: { ...DEFAULT_VOICE_SETTINGS, speed },
         next_text: " ", // seam-breath suppression, disableStitching parity
       }),
     });
