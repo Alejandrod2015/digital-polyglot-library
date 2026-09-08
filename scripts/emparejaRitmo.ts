@@ -1,50 +1,46 @@
 /**
- * EMPAREJA EL RITMO de una historia narrada, parrafo a parrafo, SIN gastar
- * creditos: estira el audio que ya existe.
+ * MIDE EL RITMO parrafo a parrafo de una historia narrada y dice que parrafos
+ * desentonan con la propia historia.
  *
- *   npx tsx scripts/emparejaRitmo.ts <slug>            mide y dice que haria
- *   NODE_OPTIONS="--conditions=react-server" npx tsx scripts/emparejaRitmo.ts <slug> --apply
+ *   npx tsx scripts/emparejaRitmo.ts <slug>
  *
  * POR QUE (2026-09-08). Cada oracion se sintetiza por separado y ElevenLabs le
  * da su propio ritmo. El usuario oyo "Afuera pasa una chiva llena de cajas" a
  * 3,45 palabras/s en una historia cuya mediana era 2,31 y pregunto por que iba
- * tan rapida. Con la voz no se puede garantizar: el motor decide el ritmo en
- * cada toma y no lo dice antes de cobrarla. Con el audio YA RENDERIZADO si,
- * porque estirar es determinista: `atempo` alarga sin tocar el tono.
+ * tan rapida. `normalizeAudioPace` empareja historias ENTERAS entre si, asi que
+ * el desnivel DENTRO de una historia no lo miraba nadie.
  *
- * QUE HACE: mide palabras/segundo por parrafo, toma la MEDIANA de la historia
- * como objetivo, y estira los parrafos que van por encima hasta dejarlos en la
- * banda. Reutiliza el empalme por secciones que ya existe (cada parrafo vive
- * como su propia seccion), asi que el corte cae donde ya caia y el master se
- * reconstruye con la maquinaria de siempre. Despues re-alinea el karaoke.
+ * ESTIRAR EL AUDIO YA RENDERIZADO NO VALE, y aqui esta la prueba. Este script
+ * lo hizo durante una tarde: `atempo` alarga sin tocar el tono, es determinista
+ * y no gasta creditos, asi que parecia la respuesta. Se aplico a las tres
+ * historias del primer tema del B1 latam con un tope del 15% que declare
+ * conservador "porque 0,80 y 0,85 pasan desapercibidos". Eso no lo habia
+ * comprobado nadie: era una suposicion mia escrita como si fuera una medida.
+ * El usuario senalo de oido una sola frase, "Te lo saldo con dos jornadas
+ * mias", que es justo la que se habia estirado un 14%. Las nueve secciones
+ * estiradas de las tres historias volvieron a su toma original.
  *
- * TOPE DEL 15% (`MAX_ESTIRADO`), y es conservador a proposito: estirar mucho
- * suena metalico, y donde empieza a oirse no lo hemos medido nosotros; hoy
- * comprobamos de oido que 0,80 y 0,85 pasan desapercibidos. Lo que pida mas
- * del 15% NO se estira: se lista para re-tirarlo con _rerollSection, que
- * cuesta una oracion. Cuando midamos el punto real, se sube el tope aqui.
+ * Encima el empalme re-codificaba con `-q:a 2`, que en MONO son ~117 kbps
+ * frente a los 197 que entrega ElevenLabs: perdida de generacion sumada al
+ * estirado. Dos defectos en el mismo paso.
+ *
+ * QUE QUEDA: medir, que es lo que si sirve, y arreglar RE-SINTETIZANDO la
+ * seccion con `_rerollSection --tempo`, que cuesta una oracion y sale con el
+ * ritmo pedido de fabrica en vez de deformar una toma buena. El comando sale
+ * ya calculado abajo. La regla general: el ritmo se arregla en la sintesis,
+ * nunca estirando el master.
  */
 import { config } from "dotenv";
 config({ path: ".env.local", quiet: true }); config({ path: ".env", quiet: true });
-import { execFile } from "child_process";
-import { mkdtempSync, readFileSync, writeFileSync } from "fs";
-import { tmpdir } from "os";
-import path from "path";
-import { promisify } from "util";
 import { PrismaClient } from "../src/generated/prisma";
 
-const execFileAsync = promisify(execFile);
 const prisma = new PrismaClient();
-
-/** Mas alla de esto no se estira: se re-tira. */
-export const MAX_ESTIRADO = 0.15;
 
 const palabras = (t: string) => t.trim().split(/\s+/).filter(Boolean).length;
 
 (async () => {
   const slug = process.argv[2];
-  const apply = process.argv.includes("--apply");
-  if (!slug) throw new Error("uso: emparejaRitmo.ts <slug> [--apply]");
+  if (!slug) throw new Error("uso: emparejaRitmo.ts <slug>");
 
   const s = await prisma.journeyStory.findFirst({
     where: { slug }, select: { id: true, slug: true, audioUrl: true, audioFragments: true },
@@ -56,7 +52,7 @@ const palabras = (t: string) => t.trim().split(/\s+/).filter(Boolean).length;
   const filas = frags.map((f, i) => {
     const dur = (f.endSec ?? 0) - (f.startSec ?? 0);
     const w = palabras(String(f.text ?? ""));
-    return { i, w, dur, ws: dur > 0 ? w / dur : 0, url: String(f.url), texto: String(f.text ?? "") };
+    return { i, w, dur, ws: dur > 0 ? w / dur : 0, texto: String(f.text ?? "") };
   });
   const orden = filas.map((f) => f.ws).filter((x) => x > 0).sort((a, b) => a - b);
   const objetivo = orden[Math.floor(orden.length / 2)];
@@ -64,48 +60,13 @@ const palabras = (t: string) => t.trim().split(/\s+/).filter(Boolean).length;
   const tocar = filas
     .filter((f) => f.ws > objetivo && f.w >= 8)
     .map((f) => ({ ...f, factor: objetivo / f.ws }))
-    .filter((f) => f.factor < 0.98);
+    .filter((f) => f.factor < 0.9);
 
   console.log(`${slug}: objetivo ${objetivo.toFixed(2)} w/s (mediana de ${filas.length} parrafos)`);
-  const estirables = tocar.filter((f) => 1 - f.factor <= MAX_ESTIRADO);
-  const duros = tocar.filter((f) => 1 - f.factor > MAX_ESTIRADO);
+  if (!tocar.length) console.log("  ningun parrafo desentona");
   for (const f of tocar) {
-    const pct = Math.round((1 - f.factor) * 100);
-    console.log(
-      `  [${f.i}] ${f.ws.toFixed(2)} w/s → estirar ${pct}%` +
-      (1 - f.factor > MAX_ESTIRADO ? "  (PASA DEL TOPE: re-tirar)" : "") +
-      ` · ${f.texto.slice(0, 52)}`
-    );
+    console.log(`  [${f.i}] ${f.ws.toFixed(2)} w/s · ${f.texto.slice(0, 52)}`);
+    console.log(`     DPL_AUDIO_FULL_OK=1 NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_rerollSection.ts ${slug} ${f.i} --tempo ${f.factor.toFixed(2)} --apply`);
   }
-  if (!tocar.length) console.log("  nada que emparejar");
-  if (duros.length) {
-    console.log(`\n  ${duros.length} parrafo(s) piden mas del ${Math.round(MAX_ESTIRADO * 100)}%; para esos:`);
-    for (const f of duros)
-      console.log(`    DPL_AUDIO_FULL_OK=1 NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_rerollSection.ts ${slug} ${f.i} --tempo ${f.factor.toFixed(2)} --apply`);
-  }
-  if (!apply || !estirables.length) {
-    if (!apply && estirables.length) console.log("\n--apply para empalmarlos (no gasta creditos).");
-    await prisma.$disconnect();
-    return;
-  }
-
-  const { replaceSectionAndRebuild } = await import("../src/lib/audioEditorSections");
-  const dir = mkdtempSync(path.join(tmpdir(), "ritmo-"));
-  for (const f of estirables) {
-    const src = path.join(dir, `s${f.i}.mp3`);
-    const out = path.join(dir, `s${f.i}_lento.mp3`);
-    const res = await fetch(f.url);
-    if (!res.ok) throw new Error(`no puedo bajar la seccion ${f.i}`);
-    writeFileSync(src, Buffer.from(await res.arrayBuffer()));
-    await execFileAsync("ffmpeg", ["-y", "-i", src, "-filter:a", `atempo=${f.factor.toFixed(3)}`, "-c:a", "libmp3lame", "-q:a", "2", out]);
-    await replaceSectionAndRebuild({
-      storyId: s.id, fragmentIndex: f.i, newSectionBuffer: readFileSync(out), normalizeSection: false,
-    });
-    console.log(`  [${f.i}] empalmado a ${f.factor.toFixed(3)}`);
-  }
-
-  const { generateWordTimingsForStory } = await import("../src/lib/audioWordTimings");
-  await generateWordTimingsForStory(s.id);
-  console.log("re-alineado; el karaoke describe el master nuevo");
   await prisma.$disconnect();
 })();
