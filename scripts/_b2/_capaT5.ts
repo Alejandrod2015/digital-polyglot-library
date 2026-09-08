@@ -5,6 +5,8 @@ const B = "spanish-traveler-latam-b2";
 type E = { claves: string[]; g: string; t: string; es: string; en: string };
 const CAPA: Record<string, E[]> = {
   "aqui-se-dice-arrendando": [
+    { claves: ["recibir", "recibe"], t: "verb", g: "takes him in (recibir)", es: "El barrio lo recibe como si nada", en: "the neighbourhood takes him in as if nothing" },
+    { claves: ["olvidar", "olvida"], t: "verb", g: "is forgotten (olvidar)", es: "el caleño no se olvida", en: "your Cali Spanish is not forgotten" },
     { claves: ["lulada"], t: "noun", g: "Cali drink of lulo, ice and lime", es: "lo espera con lulada y mecato", en: "waits for him with lulada and snacks" },
     { claves: ["mecato"], t: "noun", g: "snacks (Colombia)", es: "con lulada y mecato", en: "with lulada and snacks" },
     { claves: ["caleño"], t: "adjective", g: "from Cali", es: "el caleño no se olvida", en: "your Cali Spanish is not forgotten" },
@@ -12,8 +14,8 @@ const CAPA: Record<string, E[]> = {
     { claves: ["mija"], t: "noun", g: "my dear (Colombia)", es: "Quince inviernos, mija", en: "fifteen winters, my dear" },
     { claves: ["oxidarse", "oxidado"], t: "verb", g: "rusted (oxidarse)", es: "Está oxidado no más", en: "it is just rusty" },
     { claves: ["escaparse", "se le escapa"], t: "verb", g: "slips away (escaparse)", es: "el chiste se le escapa", en: "the joke slips away from him" },
-    { claves: ["parquear"], t: "verb", g: "to park (loan word)", es: "Voy a parquear el carro", en: "I am going to park the car" },
-    { claves: ["rentar", "rentando"], t: "verb", g: "renting (loan word)", es: "estuve rentando un puesto", en: "I was renting a stall" },
+    { claves: ["parquear"], t: "verb", g: "to park, a loan word (parquear)", es: "Voy a parquear el carro", en: "I am going to park the car" },
+    { claves: ["rentar", "rentando"], t: "verb", g: "renting, a loan word (rentar)", es: "estuve rentando un puesto", en: "I was renting a stall" },
     { claves: ["arrendar", "arrendando"], t: "verb", g: "renting (arrendar)", es: "Aquí se dice arrendando", en: "here we say arrendando" },
     { claves: ["desempolvar", "se desempolva"], t: "verb", g: "gets dusted off (desempolvar)", es: "Eso se desempolva", en: "that gets dusted off" },
     { claves: ["dar pena", "da pena"], t: "expression", g: "embarrasses (Colombia)", es: "A Jairo le da pena", en: "Jairo feels embarrassed" },
@@ -27,6 +29,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["en ninguna parte"], t: "expression", g: "nowhere", es: "la mitad en ninguna parte", en: "half of it nowhere at all" }
   ],
   "el-trasteo-ajeno": [
+    { claves: ["decidido"], t: "adjective", g: "set on it", es: "Viene decidido, o eso cree", en: "he comes set on it, or so he thinks" },
     { claves: ["de una"], t: "expression", g: "right away (Colombia)", es: "hágale de una", en: "go ahead, right away" },
     { claves: ["hágale"], t: "expression", g: "go ahead (Colombia)", es: "remata con un hágale de una", en: "closes with a go-ahead-right-now" },
     { claves: ["trasteo"], t: "noun", g: "house move (Colombia)", es: "amanece con trasteo ajeno", en: "wakes up to someone else's move" },
@@ -49,6 +52,8 @@ const CAPA: Record<string, E[]> = {
     { claves: ["sin más"], t: "expression", g: "just like that", es: "guarda las llaves sin más", en: "puts the keys away, just like that" }
   ],
   "la-napa-del-dueno": [
+    { claves: ["descansar", "descansa"], t: "verb", g: "does not rest (descansar)", es: "la licuadora no descansa", en: "the blender never rests" },
+    { claves: ["perder", "perdiste"], t: "verb", g: "you lost (perder)", es: "Lo que perdiste fue un local", en: "what you lost was a shop" },
     { claves: ["cholado"], t: "noun", g: "Cali shaved-ice dessert", es: "reparte cholado dulce", en: "hands out sweet cholado" },
     { claves: ["guayaba"], t: "noun", g: "guava", es: "guayaba pelada", en: "peeled guava" },
     { claves: ["plaza de mercado"], t: "expression", g: "market hall (Colombia)", es: "plaza de mercado, dominó", en: "market mornings, dominoes" },

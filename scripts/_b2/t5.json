@@ -9,18 +9,16 @@
     "text": "Jairo, un caleño de vuelta tras quince años en Nueva Jersey, llega al barrio Obrero de Cali, Colombia, con un negocio en mente. El barrio lo recibe como si nada.\n\nLa esquina de siempre, el calor pegado a la espalda.\n\nYamileth, la socia de toda la vida, lo espera con lulada y mecato. “¿Qué más pues? ¿Cómo te fue por allá?”, saluda.\n\n“Quince inviernos, mija. Ni uno más”, contesta.\n\n“Bien. Allá estuve rentando un puesto de comida”, sigue Jairo. “Rentando”, repite Yamileth, sonrisa chueca. “Aquí se dice arrendando, gringo.”\n\nEn la mesa, la familia de Yamileth pone sancocho y preguntas.\n\n“Voy a parquear el carro”, avisa, y lo dice así: parquear. Cuando busca el chiste que cerraba su mejor cuento, el chiste se le escapa: sale la mitad en caleño y la mitad en ninguna parte.\n\nLa mesa se ríe igual, pero de otra cosa. A Jairo le da pena: se queda con el vaso de lulada a medio camino, sonriendo, mientras el turno de contar pasa al siguiente.\n\n“Tranquilo, ve, que el caleño no se olvida”, le dice Yamileth en la puerta. “Está oxidado no más. Eso se desempolva.”",
     "vocab": [
       {
-        "word": "lulada",
-        "type": "noun",
-        "register": "cultural",
-        "anchor": true,
-        "definition": "Cold Cali drink of lulo fruit, ice and lime."
+        "word": "recibir",
+        "type": "verb",
+        "definition": "To be given something, taking what someone hands to you.",
+        "surface": "recibe"
       },
       {
-        "word": "mecato",
-        "type": "noun",
-        "register": "cultural",
-        "anchor": true,
-        "definition": "Snacks, treats; the Colombian word for nibbles between meals."
+        "word": "olvidar",
+        "type": "verb",
+        "definition": "To forget, losing from memory what you once knew.",
+        "surface": "olvida"
       },
       {
         "word": "caleño",
@@ -156,11 +154,10 @@
         "definition": "Go ahead, do it; the Colombian push to action."
       },
       {
-        "word": "trasteo",
-        "type": "noun",
-        "register": "cultural",
-        "anchor": true,
-        "definition": "House move; the Colombian word for moving your things."
+        "word": "decidido",
+        "type": "adjective",
+        "definition": "Set on doing something, with your mind already made up.",
+        "surface": "decidido"
       },
       {
         "word": "arriendo",
@@ -270,11 +267,10 @@
     "text": "Tres meses después, Jairo ya no traduce: piensa en caleño. Fueron meses de rebusque: plaza de mercado, dominó, guayaba pelada.\n\nNadie pregunta ya de dónde viene.\n\nLos jugos salen exprimidos al momento y la licuadora no descansa. Yamileth atiende la caja del local nuevo, a dos cuadras del que el dueño no arrendó.\n\n“Ya tienes caseros, ve”, le dice Yamileth. “Lo que perdiste fue un local, no el año.”\n\nUn sábado, ese dueño aparece por el puesto, prueba la lulada y pide ñapa.\n\n“Tengo otro local, mejor esquina”, dice el dueño, yendo al grano. “Si le interesa, hágale...”\n\n“De una”, contesta Jairo, antes del punto final. “Mañana le llevo el arriendo.”\n\nEl dueño se ríe. “Aprendió rápido, don Jairo. La próxima me deja regatear.”\n\n“Camarón que se duerme...”, contesta Jairo, y el refrán no hace falta terminarlo.\n\nEn la mesa, Jairo pide el turno. “Y yo ahí, contando billetes como turista...”, arranca, y la mesa se ríe con él. Le piden otro.\n\nLas palabras no estaban perdidas: estaban en la gente. Jairo raspa hielo, reparte cholado dulce y levanta el vaso en alto, como quien brinda por dentro.",
     "vocab": [
       {
-        "word": "cholado",
-        "type": "noun",
-        "register": "cultural",
-        "anchor": true,
-        "definition": "Cali dessert of shaved ice, fruit and condensed milk."
+        "word": "descansar",
+        "type": "verb",
+        "definition": "To rest, stopping the work for a while.",
+        "surface": "descansa"
       },
       {
         "word": "guayaba",
@@ -291,11 +287,10 @@
         "definition": "Market hall; where Colombian cities buy their fruit."
       },
       {
-        "word": "rebusque",
-        "type": "noun",
-        "register": "cultural",
-        "anchor": true,
-        "definition": "Hustle; the Colombian art of making a living anyhow."
+        "word": "perder",
+        "type": "verb",
+        "definition": "To lose something you had, often for good.",
+        "surface": "perdiste"
       },
       {
         "word": "ñapa",
