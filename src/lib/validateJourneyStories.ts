@@ -339,6 +339,11 @@ export function validateJourneyStories(
      *  mismo umbral de siempre (7), para que quien ya llamaba a este checker
      *  siga midiendo exactamente lo que medía. */
     conjuntoCompleto?: boolean;
+    /** Tipo del journey (`typeSlug`: traveler, friends, expat...). Lo necesita
+     *  `journey-vocab-worth-teaching`, que solo gatea a los Traveler: en los
+     *  Friends la jerga coloquial ES el producto. Sin el, ese check mide e
+     *  informa pero no bloquea, que es lo prudente cuando no se sabe el tipo. */
+    journeyType?: string | null;
   }
 ): JourneyCheck[] {
   const out: JourneyCheck[] = [];
@@ -822,6 +827,78 @@ export function validateJourneyStories(
         `${deNivel.length}/${tot} plazas por encima de A1/A2 (${Math.round(cuota * 100)}%, suelo ${Math.round(SUELO_NIVEL_B1 * 100)}%)` +
         ` · referencias medidas: ES spain b1 42%, ES latam b1 37%, PT brazil a1 2%` +
         (deNivel.length ? ` · de nivel: ${deNivel.slice(0, 8).join(", ")}` : ""));
+    }
+  }
+
+  // ── 12ter. La plaza tiene que MERECER ensenarse ────────────
+  //
+  // POR QUE (2026-09-08, el usuario tocando `zonda` en el B1 latam: "yo ni
+  // siquiera sabia que queria decir, y soy hablante nativo"). El techo mide
+  // que ninguna plaza pase del nivel y el suelo que no sean todas de A1. Las
+  // dos miran DIFICULTAD; ninguna mira UTILIDAD. Por ahi entraron a plazas de
+  // pleno derecho `zonda`, `sarmiento`, `changarin`, `acequia`, `parral`,
+  // `surco` o `greca`: color local de la escena, no vocabulario. Y la plaza no
+  // se queda en la tarjeta: alimenta el panel, los ejercicios y los clips de
+  // practica, asi que el usuario acaba eligiendo entre distractores para
+  // `sarmiento`.
+  //
+  // Como se mide sin opinar: una palabra que no esta en el lexico graduado NI
+  // SIQUIERA A NIVEL C1 no es vocabulario del idioma, es color. Se prueba
+  // tambien sin plural, porque la lista no los resuelve y `rojas` o `plumas`
+  // salian falsamente fuera.
+  //
+  // Calibrado contra el catalogo PUBLICADO, que es la referencia (regla
+  // `feedback_calibrate_gates_to_gold_standard`): en los Traveler live la
+  // media por historia es 0,0-1,0 y la peor historia tiene 3. De ahi el tope.
+  // Los Friends NO se gatean igual y no es una excepcion comoda: su premisa es
+  // la conversacion coloquial entre amigos, donde la jerga ES el producto (el
+  // Friends latam C1 publicado va a 9,8 de media). Ahi el color local SI
+  // merece plaza, asi que el check informa y no bloquea.
+  if (stories.some((s) => s.vocab && s.vocab.length)) {
+    const idiomaEs = lang === "ES";
+    if (!idiomaEs) {
+      noImplSet("journey-vocab-worth-teaching", "Cada plaza merece ensenarse",
+        `Solo hay lexico graduado hasta C1 en espanol; en ${lang || "?"} no se puede medir la utilidad de una plaza.`);
+    } else {
+      const fueraDelLexico = (w: string): boolean => {
+        const x = w.trim().toLowerCase();
+        if (!x || x.includes(" ")) return false; // las expresiones se juzgan aparte
+        const formas = [x];
+        if (x.endsWith("es") && x.length > 4) formas.push(x.slice(0, -2));
+        if (x.endsWith("s") && x.length > 3) formas.push(x.slice(0, -1));
+        return !formas.some((f) => isSpanishUpToLevel(f, "c1"));
+      };
+      // Se juzga por la MEDIA del journey, no por historia suelta, y no es
+      // laxitud: el lexico graduado tiene lagunas (`flojo`, `mozo`, `rellano`
+      // o `heladera` salen marcados sin ser color local), asi que una historia
+      // puede caer por dos errores de lista. Sobre 400 plazas ese ruido se
+      // lava y la media separa limpio: Traveler publicados 0,0-1,0, los tres
+      // drafts señalados 2,4-2,8. Las historias con mas color se listan para
+      // orientar a quien arregla, que JUZGA cada palabra en vez de obedecer.
+      const TOPE_HISTORIA = 3;   // solo para listar, no para fallar
+      const TOPE_MEDIA = 1.5;    // el gate: el doble de la peor media publicada (1,0)
+      const porHistoria = stories.map((s) => ({
+        slug: s.slug,
+        fuera: (s.vocab ?? []).map((v) => String(v.word)).filter(fueraDelLexico),
+      }));
+      const total = porHistoria.reduce((n, x) => n + x.fuera.length, 0);
+      const media = total / (porHistoria.length || 1);
+      const pasadas = porHistoria.filter((x) => x.fuera.length > TOPE_HISTORIA);
+      const tipo = (ctx.journeyType ?? "").trim().toLowerCase();
+      const gateado = tipo === "traveler";
+      const detalle =
+        `media ${media.toFixed(1)} plazas de color por historia (tope ${TOPE_MEDIA})` +
+        ` · donde mas se acumula` +
+        (pasadas.length
+          ? `: ${pasadas.slice(0, 4).map((x) => `${x.slug} (${x.fuera.join(", ")})`).join(" · ")}`
+          : ": en ninguna historia pasa de 3") +
+        ` · el lexico tiene lagunas (flojo, mozo, rellano salen marcados sin serlo): JUZGA cada palabra` +
+        ` · referencias publicadas: Traveler live 0,0-1,0 de media` +
+        (gateado ? "" : ` · tipo ${tipo || "desconocido"}: medido pero NO gateado (en Friends la jerga es el producto; el Friends latam C1 publicado va a 9,8)`);
+      pushSet("journey-vocab-worth-teaching",
+        `Cada plaza merece ensenarse (media ${TOPE_MEDIA} o menos de palabras fuera del lexico graduado)`,
+        gateado ? media <= TOPE_MEDIA : true,
+        detalle);
     }
   }
 

@@ -30,8 +30,10 @@
  *
  * Columnas (un journey): por TEMA, cuántas historias del tema están escritas
  *           con vocab, con glosas tap, con práctica, con audio y con portada;
- *           por HISTORIA, arco, palabras, % citado, vocab, solape con otros
- *           journeys y con este, cobertura de glosas, portables y ancladas,
+ *           por HISTORIA, arco, palabras, % citado, vocab, repetido dentro del
+ *           journey (el solape con otros journeys salio el 2026-09-08 a pedido
+ *           del usuario: lo vigila el gate al guardar), cobertura de glosas,
+ *           portables y ancladas,
  *           encuentros antes y después, escalera, fragmentos de audio, portada.
  *
  * Las columnas de estructura y ambient vienen de _journeysTable2 y
@@ -386,19 +388,21 @@ async function tablaDeUnJourney(id: string) {
   });
   console.log(`| | **journey** | **${T[0]}/${filas.length}** | **${T[1]}/${filas.length}** | **${T[2]}/${filas.length}** | **${T[3]}/${filas.length}** | **${T[4]}/${filas.length}** |`);
 
-  console.log("\n| # | Tema | Historia | Arco | Pal. | %Citado | Vocab | Ya en otro journey | Ya en este | Glosas | Portables | Ancladas | Vistas antes | Vuelven después | Escalera | Frag | Cover |");
-  console.log("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|");
+  // "Ya en otro journey" salio de la tabla el 2026-09-08 por orden del usuario
+  // ("lo hace demasiado denso"): el solape entre journeys lo vigila el gate de
+  // vocab al guardar, no esta tabla.
+  console.log("\n| # | Tema | Historia | Arco | Pal. | %Citado | Vocab | Ya en este | Glosas | Portables | Ancladas | Vistas antes | Vuelven después | Escalera | Frag | Cover |");
+  console.log("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|");
   const escaleras: number[] = [];
   filas.forEach((s, i) => {
     const tema = etiquetas.get(s.topic) ?? s.topic;
     if (!String(s.text ?? "").trim()) {
-      console.log(`| ${i + 1} | ${tema} | (vacía) #${s.slotIndex} | - | - | - | - | - | - | - | - | - | - | - | - | - | - |`);
+      console.log(`| ${i + 1} | ${tema} | (vacía) #${s.slotIndex} | - | - | - | - | - | - | - | - | - | - | - | - | - |`);
       return;
     }
     const texto = String(s.text);
     const sp = spokenWords(texto);
     const voc = (s.vocab as Array<{ word?: unknown; surface?: unknown }>) ?? [];
-    const off = voc.filter((v) => fuera.has(String(v?.word ?? "").toLowerCase())).map((v) => String(v?.word));
     const rep = voc.filter((v) => (cuenta.get(String(v?.word ?? "").toLowerCase()) ?? 0) > 1).map((v) => String(v?.word));
     const formas = new Set<string>();
     for (const src of [String(s.title ?? ""), extractStoryPlainText(texto)])
@@ -420,12 +424,12 @@ async function tablaDeUnJourney(id: string) {
     console.log(
       `| ${i + 1} | ${tema} | [${s.title}](http://localhost:3000/stories/${s.slug}) | ${s.arcType ?? "-"} | ` +
       `${W(texto)} | ${sp.total ? Math.round((sp.spoken / sp.total) * 100) : 0}% | ${voc.length} | ` +
-      `${off.join(", ") || "0"} | ${rep.join(", ") || "0"} | ${conGlosa}/${formas.size} | ${port} | ${anc} | ` +
+      `${rep.join(", ") || "0"} | ${conGlosa}/${formas.size} | ${port} | ${anc} | ` +
       `${antes} | ${despues} | ${escalera.toFixed(2)} | ${frag || (s.audioUrl ? "NO" : "-")} | ${s.coverUrl ? "sí" : "no"} |`
     );
   });
   const media = escaleras.length ? escaleras.reduce((a, b) => a + b, 0) / escaleras.length : 0;
-  console.log(`| | **journey** | | | | | | | | | | | | | **${media.toFixed(2)}** | | |`);
+  console.log(`| | **journey** | | | | | | | | | | | | **${media.toFixed(2)}** | | |`);
   console.log(`\nhistorias con texto ${escritas.length}/${filas.length} · publicadas ${filas.filter((r) => r.status === "published").length}` +
     `${bundle ? ` · bundle de glosas ${bundle}` : " · sin bundle de glosas"}`);
   await p.$disconnect();

@@ -25,8 +25,19 @@ import * as path from "path";
 import { PrismaClient } from "../src/generated/prisma";
 import { generateAndUploadMultiVoiceAudio } from "../src/lib/elevenlabs";
 import { VOZ_POR_TEMA } from "./_a2Voces";
+import { VOZ_POR_TEMA_B1_LATAM } from "./_b1LatamVoces";
 
-const JOURNEY = "cmtgelq560007j84n3ujx9bpd";
+// Ampliado el 2026-09-07 para el B1 latam (pedir-una-vez: se amplia el script
+// en un commit, no se clona): --journey b1-latam usa su journey y su mapa de
+// voces; sin flag, el A2 de siempre.
+const PERFILES: Record<string, { journey: string; voces: Record<string, string> }> = {
+  a2: { journey: "cmtgelq560007j84n3ujx9bpd", voces: VOZ_POR_TEMA },
+  "b1-latam": { journey: "cmtmylg7k0007321h6t7njesx", voces: VOZ_POR_TEMA_B1_LATAM },
+};
+const pi = process.argv.indexOf("--journey");
+const PERFIL = PERFILES[pi >= 0 ? process.argv[pi + 1] : "a2"];
+if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam");
+const JOURNEY = PERFIL.journey;
 const REGISTRO = path.join(__dirname, "a2-muestras.json");
 
 const prisma = new PrismaClient();
@@ -41,7 +52,7 @@ const prisma = new PrismaClient();
   });
   if (!s?.text) throw new Error(`no encuentro la historia ${slug}`);
 
-  const voiceId = VOZ_POR_TEMA[s.topic];
+  const voiceId = PERFIL.voces[s.topic];
   if (!voiceId) throw new Error(`sin narrador para el tema ${s.topic}`);
 
   const parrafo = s.text.split(/\n\n+/)[0].trim();
