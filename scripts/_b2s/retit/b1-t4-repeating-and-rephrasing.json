@@ -3,7 +3,6 @@
   "topic": "repeating-and-rephrasing",
   "slotIndex": 1,
   "title": "El piloto azul",
-  "slug": "el-tecnico-habla-rapido",
   "arcType": "juxtaposition-discovery",
   "synopsis": "Quique viene a mirar la caldera y explica en dos minutos, de espaldas y sin parar. Celia asiente por costumbre y se da cuenta de que no ha entendido la mitad, que es lo que más le pesa: se gana la vida con las palabras. Le cuesta un rato pedirle que lo repita, y cuando lo hace la explicación entra a la primera.",
   "text": "Un hombre con una caja de herramientas llama a las cinco a la puerta de Celia, la traductora del cuarto. Quique, el técnico del gas, se pone un guante y mira el piloto azul, que huele a cerrado desde el verano.\n\n“Esto se enciende aquí, y si se apaga miras la presión y ya está, que esto no tiene mucho más misterio”, dice Quique sin volverse. “Y el manual está dentro del cajón, aunque nadie lo lee nunca, es decir, nadie”, sigue. Celia asiente con la cabeza.\n\nElla se gana la vida con las palabras y ahora no le llegan. No ha cogido ni la mitad de la explicación. Aprieta el bolígrafo sin escribir y deja pasar un minuto entero, insegura, hasta que lo dice con la voz más baja de lo que quería.\n\n“Perdona, ¿me lo repites más despacio y desde el principio, por favor?”, pide Celia. Quique se gira y lo cuenta otra vez, señalando cada tubo con el guante puesto.\n\nAhora sí lo comprende. La tarde se ha ido, pero el piloto se queda encendido y la presión, donde tiene que estar.",
@@ -87,10 +86,9 @@
     "definition": "To understand; to see clearly what somebody means."
    },
    {
-    "type": "adverb",
-    "word": "despacio",
-    "surface": "despacio",
-    "definition": "Slowly; leaving time between one word and the next."
+    "type": "noun",
+    "word": "misterio",
+    "definition": "Mystery; something strange that nobody can explain to you yet."
    },
    {
     "type": "noun",
@@ -134,7 +132,6 @@
   "topic": "repeating-and-rephrasing",
   "slotIndex": 2,
   "title": "A ver si te sigo",
-  "slug": "con-mis-propias-palabras",
   "arcType": "harmonic-close",
   "synopsis": "Emilio le cuenta tres asuntos del portal en una sola frase y Celia se pierde en el segundo. En vez de callarse, prueba a repetir en voz alta lo que ha entendido, con sus palabras. Le sale torcido la primera vez, Emilio se lo corrige sin darle importancia, y Celia descubre que preguntar así cuesta menos que fingir.",
   "text": "Celia baja a por el correo y Emilio, el casero, la para en el portal, con la compra en el suelo y tres asuntos en la voz. Le indica el sobre del banco antes de saludarla. Huele a lejía recién echada y la escalera está mojada todavía.\n\n“Lo del agua es del martes, lo de la obra de abril, y el banco pide papeles”, suelta Emilio. Celia se pierde en el segundo.\n\n“Y si no los llevas tú, los llevo yo, pero alguien los lleva”, sigue.\n\nAntes callaba, porque callarse era cómodo y no costaba nada. “A ver si te sigo: el agua el martes, la obra en abril, y los papeles esta semana”, repite Celia.\n\nLe sale torpe, con un susurro en medio, y baja la cabeza al terminar.\n\n“Casi: los papeles son para el lunes, lo demás sí”, contesta Emilio sin darle importancia.\n\nLa confusión se deshace con sus propias palabras, no con las de Emilio. Celia recoge el sobre del suelo, se lo guarda en el bolsillo y sube riéndose sola.",
@@ -265,7 +262,6 @@
   "topic": "repeating-and-rephrasing",
   "slotIndex": 3,
   "title": "La fecha que decide",
-  "slug": "la-linea-se-corta",
   "arcType": "recurring-character-callback",
   "synopsis": "Celia llama a Emilio para cerrar la fecha de la obra y la línea se corta tres veces seguidas. Cada uno repite media frase y la conversación no avanza. Ella quiere colgar y no cuelga, porque la fecha importa, y a la tercera deja de pedir perdón por preguntar y pregunta y ya.",
   "text": "Celia marca el número de Emilio y el teléfono suena con un murmullo de fondo. Él contesta desde la calle, donde hace viento, y se oye la mitad.\n\n“El día veinte, si el del techo no nos falla otra vez como en marzo”, grita Emilio. “¿El veinte o el veintiuno?”, pregunta ella. La línea se corta antes de la respuesta.\n\nMarca de nuevo, y el minuto que tarda en dar señal se le hace largo. No lo deja, porque esa fecha decide si trabaja en casa todo el mes, y apoya la frente en la pared fría.\n\n“Perdona, otra vez yo, ¿el veinte?”, repite Celia. “El veinte, sí, a las ocho, y con el portal abierto”, contesta él, ya sin viento detrás. Ella deja de pedir perdón y pregunta lo que falta: la hora, el portal, quién abre. Con seguridad, y sin dar las gracias dos veces.",

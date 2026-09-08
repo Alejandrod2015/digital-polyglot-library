@@ -378,4 +378,8 @@ export const SPANISH_B1_LEMMAS: ReadonlySet<string> = new Set([
   "ojos","ojeras","oreja","órgano","palma","párpado","pulmón","reumatismo","riñón","rodilla",
   "sangrado","sensibilidad","sequía","sobrepeso","sudor","tendinitis","tobillo","tos","tristeza","úlcera",
   "uretra","vejiga","vértebra","vesícula",
+  // Lemas cotidianos que el juez list-only mandaba a C2 (2026-09-08, retitulado
+  // y arbitraje de plazas del B1 de España): misterio ya tenía a misterioso en
+  // la lista, y buzón es léxico diario de portal.
+  "misterio","buzón",
 ]);

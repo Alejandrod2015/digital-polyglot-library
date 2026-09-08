@@ -3,7 +3,6 @@
   "topic": "sayings-and-nicknames",
   "slotIndex": 1,
   "title": "Lo de Chispa",
-  "slug": "por-que-le-dicen-chispa",
   "arcType": "late-reveal",
   "synopsis": "En el portal todos llaman Chispa al vecino del segundo y Celia deduce que será por lo simpático que es. Lo usa delante de tres vecinos y se le nota en la cara que no sabe de dónde viene. Cuando por fin pregunta de frente, la respuesta no tiene nada que ver con el carácter de Paco.",
   "text": "Mientras espera el ascensor, Celia, la traductora del cuarto, oye tres veces el mismo nombre. Paco, el electricista del segundo, sube con dos bolsas, y Emilio, el casero, le grita desde el buzón.\n\n“Chispa, que te dejas la puerta”, avisa Emilio. “Ya voy, ya voy, que llevo las dos manos ocupadas”, contesta él sin girarse.\n\nElla lo deduce en la cabeza, sin preguntar a nadie. Será por lo simpático, se dice.\n\nPorque el hombre saluda a todo el mundo y tiene gracia. Repite la broma el jueves, con las mismas palabras que ha oído.\n\nLe sale plana. Se le sube el color a la cara delante de tres vecinos, así que se ríe ella primero, antes de que se rían ellos.\n\n“¿De dónde viene lo de Chispa?”, pregunta Celia por fin, ya sin rodeos.\n\n“De que dejó el portal a oscuras dos días, en agosto”, aclara Emilio. “Y el mote se le quedó antes que la factura”, sigue. “Y al del quinto, el que arrastra cajas a las once, le dicen el Mudanzas”, remata Emilio. Paco levanta la mano desde arriba, sin enfadarse, como quien se enteró hace años.",
@@ -135,7 +134,6 @@
   "topic": "sayings-and-nicknames",
   "slotIndex": 2,
   "title": "Un favor sin pedir",
-  "slug": "el-horno-y-los-bollos",
   "arcType": "daily-encounter",
   "synopsis": "Celia baja a pedirle un favor a Emilio y se encuentra con que no está el horno para bollos. Como es traductora, entiende la frase palabra por palabra y busca el horno con la mirada. Entiende tarde, no pide el favor ese día, y se lleva a casa la frase entera apuntada en el móvil.",
   "text": "Una mañana de lunes Celia baja con el favor preparado y dos frases pensadas. Huele a fregona y a lejía, y Emilio friega el portal con la cara de otro día.\n\n“Hoy no está el horno para bollos, Celia, ya te lo digo yo”, suelta Emilio sin levantar la vista. “El del tercero ha vuelto a dejar la basura fuera, y van tres veces este mes”, sigue. “Así que hoy me pides lo que quieras, pero mañana”, remata sin levantar la vista.\n\n“¿Qué horno, el de la panadería?”, pregunta Celia, y busca uno con la mirada, porque en su cabeza las palabras van una a una. No hay horno, ni bollos, ni nada que se le acerque.\n\nCierra los labios cuando entiende, cinco segundos tarde. El favor se queda sin pedir y no pasa nada.\n\nAntes de subir, anota la frase hecha entera en el móvil, no palabra por palabra. La escribe con el horno y los bollos dentro, tal cual la ha oído, y se lo guarda en el bolsillo, junto a la llave del portal.",
@@ -238,9 +236,8 @@
    },
    {
     "type": "expression",
-    "word": "palabra por palabra",
-    "surface": "palabra por palabra",
-    "definition": "Word for word; translating each word on its own."
+    "word": "tal cual",
+    "definition": "Just as it is; exactly the same, with nothing changed at all."
    },
    {
     "type": "expression",
@@ -266,7 +263,6 @@
   "topic": "sayings-and-nicknames",
   "slotIndex": 3,
   "title": "Mira, la Apuntadora",
-  "slug": "la-nueva-ya-tiene-mote",
   "arcType": "reframe-turn",
   "synopsis": "Celia lleva medio año en el portal y sigue siendo la nueva para todo el mundo. Le molesta que el nombre de uno lo decidan los demás, hasta que oye el que le han puesto y descubre que dice algo cierto de ella. Cuando Emilio lo usa en voz alta, contesta a la primera y deja de corregir a nadie.",
   "text": "Nadie la llama Celia en el portal, y ya lleva medio año viviendo aquí. Es la nueva, la del cuarto, la que trabaja en casa.\n\nEl nombre de uno aquí lo ponen los demás, y eso le molesta. En Madrid era Celia y nada más.\n\nEmilio, el casero, está en el buzón con el sobre del agua en la mano.\n\n“Mira, la Apuntadora, que ya viene con su cuaderno”, dice asomando la cabeza. “Y con la llave en la mano, como siempre”, añade para el buzón vacío. Celia se para en el escalón frío, con la llave en la mano.\n\n“Se lo he puesto yo, por lo del cuaderno”, le explica Emilio. Es verdad: anota horas, fechas y motes. No le suena a burla, aunque se lo pusieran sin permiso.\n\n“Aquí estoy, y con el cuaderno, sí”, contesta ella enseguida, sin averiguar quién se lo puso. “Y el jueves te apunto a ti lo del agua, que se te olvida”, le dice desde el escalón. Sube los cuatro pisos, abre el cuaderno y escribe el mote debajo de los otros tres. Luego lo guarda, con la fecha al lado.",
@@ -326,10 +322,9 @@
     "definition": "To write; to put words down on paper."
    },
    {
-    "type": "verb",
-    "word": "explicar",
-    "surface": "explica",
-    "definition": "To explain; to say why a thing is the way it is."
+    "type": "noun",
+    "word": "buzón",
+    "definition": "Letterbox; the box at the door where your letters arrive."
    },
    {
     "type": "verb",

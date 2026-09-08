@@ -3,7 +3,6 @@
   "topic": "deals-and-estimates",
   "slotIndex": 1,
   "title": "El tejado a la mitad",
-  "slug": "dos-precios-un-techo",
   "arcType": "juxtaposition-discovery",
   "synopsis": "Celia pide dos presupuestos para el techo del portal y le llegan con el doble de diferencia. Espera a Toño en la acera toda la mañana para que se lo explique y no saca nada del total. Cuando le pide que lo divida en partidas, los dos papeles dejan de parecerse en algo más que el número final.",
   "text": "Dos papeles con el mismo techo dentro, y el doble de diferencia entre ellos. Celia, la traductora del cuarto, los lleva doblados en el bolsillo. Toño, el albañil que lleva la obra, llega tarde a la acera y descarga una escalera del coche.\n\n“El de la otra empresa es barato porque no toca el tejado entero, solo la mitad”, dice Toño. “Y el mío es caro porque sí lo toca entero, así de simple”, añade con la calculadora en la mano.\n\nCelia mira los dos totales y duda: no le salen las cuentas. Le sube el calor a las orejas: la mañana se le ha ido en la acera y sigue sin entender nada.\n\n“¿Me lo divides en partes, con lo que cuesta cada una y cuánto lleva?”, pide Celia, bajando la voz.\n\nToño se apoya en el coche y escribe seis líneas con un lápiz. Ya no se pueden comparar: uno pone cemento y ladrillo, el otro pintura y el resto en blanco.",
@@ -93,10 +92,10 @@
     "definition": "To lean; to rest your weight against something solid."
    },
    {
-    "type": "verb",
-    "word": "tocar",
-    "surface": "toca",
-    "definition": "To do work on; to touch a part of the building."
+    "type": "expression",
+    "word": "salir las cuentas",
+    "surface": "salen las cuentas",
+    "definition": "To add up; when the numbers make sense once you count them."
    },
    {
     "type": "verb",
@@ -134,7 +133,6 @@
   "topic": "deals-and-estimates",
   "slotIndex": 2,
   "title": "La rebaja en mano",
-  "slug": "en-mano-y-sin-factura",
   "arcType": "mini-cliffhanger",
   "synopsis": "El presupuesto barato sale aún más barato si se paga en mano y sin factura, y Celia está a punto de aceptarlo para acabar de una vez. Se acuerda de que no firma por ella sola, sino por tres vecinos. Lo dice en voz alta, sabiendo que es la nueva del portal, y se queda esperando la respuesta.",
   "text": "Quien firma por los tres es Celia, la traductora del cuarto. Aunque el precio ya estaba cerrado, Loli, la comercial de la otra empresa, llama el martes con una rebaja. Sale más barato en mano, sin papel de por medio.\n\n“Así te ahorras un buen dinero y empezamos ya la semana que viene, sin esperas”, propone Loli al teléfono. Celia mira la copia encima de la mesa.\n\nLa decisión es de Emilio, de Berta y suya. Es la nueva y va a rechazar el trato más barato, así que respira una vez y lo dice mirando el papel.\n\n“Sin factura no puedo, porque el dinero no es mío, es de los tres”, contesta Celia. “Y lo que firmo lo tengo que poder enseñar a los otros dos”, añade, ya más firme.\n\nAl otro lado no contesta nadie durante un rato largo. Luego Loli dice que lo mira y que llama mañana. Celia se queda con el papel abierto.",
@@ -265,7 +263,6 @@
   "topic": "deals-and-estimates",
   "slotIndex": 3,
   "title": "Lo pongo por escrito",
-  "slug": "el-papel-donde-se-ve",
   "arcType": "harmonic-close",
   "synopsis": "Los tres tienen que firmar el mismo presupuesto y cada uno quiere otra cosa: Emilio el barato, Emilio acabar antes de abril, Celia uno que se pueda enseñar. Cuesta cuatrocientos euros más, repartidos entre los tres. Celia pide su parte por escrito, firma la primera y deja el papel en el corcho del portal.",
   "text": "En el portal huele a lejía y hay tres personas alrededor de un papel, encima del buzón. Emilio quiere el barato, el del tercero quiere que empiece antes de abril, y Celia quiere uno que se pueda enseñar.\n\n“Cuatrocientos más entre tres son ciento treinta y tres cada uno”, cuenta Emilio con la calculadora del móvil.\n\n“Yo esos ciento treinta y tres no los tenía pensados para este mes”, admite Emilio, y se toca el cuello con la mano.\n\nCelia no levanta la voz. Reparte el resto en tres partes iguales.\n\n“Yo pago mi parte el día uno, y lo pongo por escrito aquí mismo, en el margen”, dice Celia.\n\nLe tiembla el bolígrafo en la primera letra, porque nunca ha firmado nada por otros dos.\n\nFirma la primera y pasa el papel. Emilio firma después y el del tercero el último, con la fecha al lado. El papel se queda en el tablón, donde lo ve todo el que entra.",
