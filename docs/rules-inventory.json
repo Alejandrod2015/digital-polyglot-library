@@ -425,6 +425,13 @@
       "source": "memory:feedback_check_every_email_link.md"
     },
     {
+      "id": "feedback_diagnosis_belongs_in_the_commit",
+      "domain": "comms",
+      "rule": "\"El diagnostico largo va en el mensaje del commit, nunca en la ficha de una persona; BetaSignup.notes no es un cuaderno\"",
+      "gate": "process",
+      "source": "memory:feedback_diagnosis_belongs_in_the_commit.md"
+    },
+    {
       "id": "feedback_emails_speak_as_we",
       "domain": "comms",
       "rule": "\"Los correos hablan siempre en \\\"we\\\", nunca en primera persona del singular; la firma es el único sitio donde aparece una persona\"",
@@ -472,6 +479,13 @@
       "rule": "El triaje automatico nunca invita solo; Alejandro revisa y aprueba cada solicitante a mano. Decision firme del 2026-08-21.",
       "gate": "pre-bash-guard.sh",
       "source": "memory:project_beta_autoinvite_never.md"
+    },
+    {
+      "id": "project_beta_dropoff_is_normal",
+      "domain": "comms",
+      "rule": "\"El 40% de invitados que nunca entran es abandono normal, no un fallo del flujo de invitacion; Android cae igual sin TestFlight\"",
+      "gate": "process",
+      "source": "memory:project_beta_dropoff_is_normal.md"
     },
     {
       "id": "project_beta_feedback_table",
@@ -828,6 +842,13 @@
       "domain": "journey",
       "rule": "Toda regla de docs/story-rules.json tiene su check",
       "gate": "src/lib/validateJourneyStories.ts#journey-rules-inventory",
+      "source": "validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "journey-vocab-worth-teaching",
+      "domain": "journey",
+      "rule": "Cada plaza merece ensenarse",
+      "gate": "src/lib/validateJourneyStories.ts#journey-vocab-worth-teaching",
       "source": "validator:src/lib/validateJourneyStories.ts"
     },
     {

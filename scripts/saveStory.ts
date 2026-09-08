@@ -830,8 +830,12 @@ function slugify(s: string): string {
       // juzgarse (o a `not-implemented`, que bloquea igual) con menos de la
       // mitad del material. Se mide contra los huecos que el journey declara.
       const completo = esperadas > 0 ? todas.length >= esperadas : todas.length >= 7;
+      const tipoJourney = (await p3.journey.findUnique({
+        where: { id: journeyId }, select: { typeSlug: true },
+      }))?.typeSlug ?? null;
       const jc = validateJourneyStories(todas, {
         language: ctx.language, level: ctx.level, realPeople, conjuntoCompleto: completo,
+        journeyType: tipoJourney,
       });
       const malos = jc.filter((c) => c.status === "fail" || c.status === "not-implemented");
       const enEspera = jc.filter((c) => c.status === "pending-set");
