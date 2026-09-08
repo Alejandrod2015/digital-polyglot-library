@@ -2753,6 +2753,61 @@ export async function validateGeneratedStory(
       shared.length / Math.max(titleTokens.length, otherTokens.length) > 0.5
     );
   });
+  // CRUCE DE VOCAB CON LO YA ENSENADO. Vive FUERA del bloque `existing.length`
+  // desde el 2026-09-08: depende de `context.taughtSameType` /
+  // `taughtElsewhere`, que los pasa el saver desde la base, no de las hermanas
+  // de la tanda. Estando dentro, la PRIMERA historia de cada tanda quedaba
+  // exenta del cruce y por ahi se colaron dos plazas dobles en el B2 latam
+  // (`arrancar` y `recibir`): la colision solo aparecia al validar OTRO tema,
+  // dos pasos despues, y para entonces ya estaba guardada.
+    const lema = (w: string) =>
+      stripPrefix(w.toLowerCase(), context.language).normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+    // Mismo tipo de journey (incluido este journey en otra tanda): cero.
+    //
+    // POR QUÉ el corte por tipo (2026-08-19). Con la regla de cero contra
+    // TODO el idioma, escribir el A1 brasileño obligó a meter 222 lemas
+    // nuevos en la lista de nivel mientras `praça`, `chuva`, `porta` y
+    // `calçada` seguían bloqueadas por el A0: el journey acababa enseñando
+    // `lasca` y `avental` antes que "plaza". Entre tipos distintos el
+    // reencuentro de una palabra en otra escena es justo lo que la fija, así
+    // que ahí se toleran dos; dentro del mismo tipo, ninguna.
+    const mismoTipo = new Set((context.taughtSameType ?? []).map(lema));
+    if (mismoTipo.size > 0 && parsed.vocab.length > 0) {
+      const repes = parsed.vocab.map((v) => v.word).filter((w) => mismoTipo.has(lema(w)));
+      checks.push({
+        id: "vocab-taught-same-type",
+        label: "Vocab not already taught by this journey or another of the same type (zero)",
+        status: repes.length > 0 ? "fail" : "pass",
+        detail: repes.length
+          ? `${repes.length}/${parsed.vocab.length} ya enseñadas: ${repes.slice(0, 8).join(", ")}${repes.length > 8 ? ` …+${repes.length - 8}` : ""}`
+          : undefined,
+      });
+    }
+
+    const yaEnsenado = new Set((context.taughtElsewhere ?? []).map(lema));
+    if (yaEnsenado.size > 0 && parsed.vocab.length > 0) {
+      const repetidas = parsed.vocab
+        .map((v) => v.word)
+        .filter((w) => yaEnsenado.has(lema(w)));
+      const pct = Math.round((100 * repetidas.length) / parsed.vocab.length);
+      // CERO, no un porcentaje (2026-08-18). Un slot de vocab es la promesa
+      // "llévate esta palabra"; si otro journey del idioma ya la enseñó, el
+      // lector ya la tiene en su repaso y el slot está tirado. La única
+      // excepción legítima es la palabra que en esta escena significa OTRA
+      // cosa, y esa se justifica en su propia glosa, no en el umbral. Se
+      // toleran dos como colchón de lematización (plural, participio) antes de
+      // bloquear, pero cualquiera avisa.
+      checks.push({
+        id: "vocab-taught-elsewhere",
+        label: "Vocab repeated from a DIFFERENT journey type: max 2 per story",
+        status: repetidas.length > 2 ? "fail" : repetidas.length > 0 ? "warn" : "pass",
+        detail:
+          repetidas.length > 0
+            ? `${repetidas.length}/${parsed.vocab.length} (${pct}%) ya enseñadas: ${repetidas.slice(0, 8).join(", ")}${repetidas.length > 8 ? ` …+${repetidas.length - 8}` : ""}`
+            : undefined,
+      });
+    }
+
   if (existing.length) {
     checks.push({
       id: "title-uniqueness",
@@ -3010,54 +3065,6 @@ export async function validateGeneratedStory(
     // se avisa al 25% y se bloquea al 35%.
     // Mismo criterio que el resto del archivo: minúsculas sin tildes, y el
     // prefijo del idioma fuera (el artículo alemán, por ejemplo).
-    const lema = (w: string) =>
-      stripPrefix(w.toLowerCase(), context.language).normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
-    // Mismo tipo de journey (incluido este journey en otra tanda): cero.
-    //
-    // POR QUÉ el corte por tipo (2026-08-19). Con la regla de cero contra
-    // TODO el idioma, escribir el A1 brasileño obligó a meter 222 lemas
-    // nuevos en la lista de nivel mientras `praça`, `chuva`, `porta` y
-    // `calçada` seguían bloqueadas por el A0: el journey acababa enseñando
-    // `lasca` y `avental` antes que "plaza". Entre tipos distintos el
-    // reencuentro de una palabra en otra escena es justo lo que la fija, así
-    // que ahí se toleran dos; dentro del mismo tipo, ninguna.
-    const mismoTipo = new Set((context.taughtSameType ?? []).map(lema));
-    if (mismoTipo.size > 0 && parsed.vocab.length > 0) {
-      const repes = parsed.vocab.map((v) => v.word).filter((w) => mismoTipo.has(lema(w)));
-      checks.push({
-        id: "vocab-taught-same-type",
-        label: "Vocab not already taught by this journey or another of the same type (zero)",
-        status: repes.length > 0 ? "fail" : "pass",
-        detail: repes.length
-          ? `${repes.length}/${parsed.vocab.length} ya enseñadas: ${repes.slice(0, 8).join(", ")}${repes.length > 8 ? ` …+${repes.length - 8}` : ""}`
-          : undefined,
-      });
-    }
-
-    const yaEnsenado = new Set((context.taughtElsewhere ?? []).map(lema));
-    if (yaEnsenado.size > 0 && parsed.vocab.length > 0) {
-      const repetidas = parsed.vocab
-        .map((v) => v.word)
-        .filter((w) => yaEnsenado.has(lema(w)));
-      const pct = Math.round((100 * repetidas.length) / parsed.vocab.length);
-      // CERO, no un porcentaje (2026-08-18). Un slot de vocab es la promesa
-      // "llévate esta palabra"; si otro journey del idioma ya la enseñó, el
-      // lector ya la tiene en su repaso y el slot está tirado. La única
-      // excepción legítima es la palabra que en esta escena significa OTRA
-      // cosa, y esa se justifica en su propia glosa, no en el umbral. Se
-      // toleran dos como colchón de lematización (plural, participio) antes de
-      // bloquear, pero cualquiera avisa.
-      checks.push({
-        id: "vocab-taught-elsewhere",
-        label: "Vocab repeated from a DIFFERENT journey type: max 2 per story",
-        status: repetidas.length > 2 ? "fail" : repetidas.length > 0 ? "warn" : "pass",
-        detail:
-          repetidas.length > 0
-            ? `${repetidas.length}/${parsed.vocab.length} (${pct}%) ya enseñadas: ${repetidas.slice(0, 8).join(", ")}${repetidas.length > 8 ? ` …+${repetidas.length - 8}` : ""}`
-            : undefined,
-      });
-    }
-
     checks.push({
       id: "names-cross-story",
       label: "Character names not reused from prior stories",
