@@ -6,6 +6,7 @@ import { analyzeDeliveryQuality, analyzeTranscriptQuality, type AudioQaResult } 
 import { alignAudioOnModal } from "@/lib/audioWordTimings";
 import { getPublicObjectUrl, uploadPublicObject } from "@/lib/objectStorage";
 import { assertVoiceApproved } from "@/lib/approvedVoices";
+import { assertNarradorPermitido } from "@/lib/bannedNarrators";
 
 // Default ElevenLabs voice settings used across all journey TTS calls.
 //   stability=0.9        más alta que 0.8 anterior. Bajaba la incidencia
@@ -662,6 +663,7 @@ export async function generateAndUploadAudio(
     // 🧠 Llamar a ElevenLabs API
     // HARD GATE: production audio only with a user-approved voice.
     assertVoiceApproved(selectedVoice, `narration:${normalizedLang}:${normalizedRegion}`);
+    assertNarradorPermitido(selectedVoice, `narration:${normalizedLang}:${normalizedRegion}`);
     const response = await fetch(
       `https://api.elevenlabs.io/v1/text-to-speech/${selectedVoice}`,
       {
@@ -1759,6 +1761,10 @@ export async function generateAndUploadMultiVoiceAudio(args: {
     console.error("[elevenlabs] voiceMap is missing the required 'narrator' key");
     return null;
   }
+  // El veto de narrador se comprueba AQUI, donde se resuelve quien lleva la
+  // historia, y no en cada mapa de voces por tema: esos viven repartidos por
+  // scripts/ y cualquiera podria saltarselo.
+  assertNarradorPermitido(narratorVoice, "multivoice:narrator");
 
   // ── HARD GUARANTEE against the seam-breath ("aire") ─────────────────────
   // The breath comes from request stitching (previous_text/next_text with real
