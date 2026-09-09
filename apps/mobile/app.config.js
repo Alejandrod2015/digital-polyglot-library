@@ -58,6 +58,12 @@ const config = {
   // belongs to). DPL is solely under the personal account.
   owner: "delcarpio321",
   slug: "digital-polyglot-mobile",
+  // Fijas, y no por gusto: sin esta linea Expo las deduce del entorno y aqui
+  // deducia ["android","ios","web"] mientras el servidor de EAS deducia
+  // ["android","ios"]. `platforms` entra en el fingerprint de expo-updates, asi
+  // que esa diferencia sola basta para que el runtimeVersion calculado aqui no
+  // sea el mismo que el de alla, y el build 317 murio por eso.
+  platforms: ["android", "ios"],
   scheme: "digitalpolyglot",
   version: "1.0",
   newArchEnabled: false,
