@@ -2,12 +2,11 @@
 //
 //   npx tsx scripts/ratingsTable.ts
 //
-// Cuatro cosas, y las cuatro partidas entre lo de casa y lo de fuera:
+// Tres cosas, y las tres partidas entre lo de casa y lo de fuera:
 //   1. Pulgares (StoryRating), por superficie y plataforma.
 //   2. Comentarios escritos junto al pulgar.
 //   3. Impresiones de la fila de valorar (UserMetric "rating_prompt_shown"),
 //      que son el DENOMINADOR: sin ellas un cero de votos no se puede leer.
-//   4. Feedback escrito (BetaFeedback), por canal.
 //
 // Existe porque el 2026-08-21 se reportaron "6 pulgares" como senal de testers
 // y los seis eran del equipo; y porque el 2026-09-05 los dos unicos "de
@@ -35,10 +34,6 @@ for (const file of [".env.local", ".env"]) {
 
 const fecha = (d: Date) => d.toISOString().slice(0, 16).replace("T", " ");
 const oNada = (s: string | null | undefined) => (s && s.trim() ? s.trim() : "-");
-const primeraLinea = (s: string, max = 90) => {
-  const l = s.split("\n").map((x) => x.trim()).find((x) => x.length > 0) ?? "";
-  return l.length > max ? `${l.slice(0, max - 1)}...` : l;
-};
 /** Una barra vertical sin escapar parte una celda de Markdown en dos. */
 const celda = (s: string) => s.replace(/\|/g, "\\|");
 
@@ -77,7 +72,6 @@ async function main() {
     where: { eventType: "rating_prompt_shown" },
     orderBy: { createdAt: "asc" },
   });
-  const feedback = await prisma.betaFeedback.findMany({ orderBy: { createdAt: "asc" } });
 
   // ---------------------------------------------------------------- pulgares
   //
@@ -158,13 +152,6 @@ async function main() {
   const votosSinImpresion = votosFuera.filter(
     (v) => !oportunidades.has(claveOportunidad(v.userId, v.storySlug, v.surface ?? "story")),
   ).length;
-
-  // ---------------------------------------------------------------- feedback
-  const { external: fbFuera, internal: fbCasa } = await splitInternal(feedback, (r) => r.email);
-  // El formulario al que llevan los correos escribe `platform: "web"`; la hoja
-  // in-app escribe el sistema real del telefono. Ese es el canal.
-  const canalDe = (r: (typeof feedback)[number]) =>
-    r.platform === "web" ? "formulario web" : "hoja in-app";
 
   // ------------------------------------------------------------------ salida
   const out: string[] = [];
@@ -322,37 +309,6 @@ async function main() {
     `- Impresiones sobre algo ya votado, fuera del denominador: ${oportunidades.size - frias.length}.`,
   );
   p(`- Votos de testers sin impresion registrada: ${votosSinImpresion}.`);
-  p();
-
-  p("## 4. Feedback escrito (`BetaFeedback`)");
-  p();
-  p(
-    tabla(
-      ["canal", "de testers", "del equipo"],
-      [...new Set(feedback.map(canalDe))].map((canal) => [
-        canal,
-        `${fbFuera.filter((r) => canalDe(r) === canal).length}`,
-        `${fbCasa.filter((r) => canalDe(r) === canal).length}`,
-      ]),
-    ),
-  );
-  p();
-  p(
-    tabla(
-      ["fecha", "canal", "sistema", "tipo", "nota", "pantalla", "build", "quien", "primera linea"],
-      fbFuera.map((r) => [
-        fecha(r.createdAt),
-        canalDe(r),
-        r.platform,
-        r.kind,
-        r.rating === null || r.rating === undefined ? "-" : `${r.rating}`,
-        oNada(r.screen),
-        oNada(r.buildNumber),
-        r.email,
-        primeraLinea(r.message),
-      ]),
-    ),
-  );
 
   console.log(out.join("\n"));
   await prisma.$disconnect();
