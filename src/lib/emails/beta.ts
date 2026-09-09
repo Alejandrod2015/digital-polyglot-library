@@ -686,6 +686,7 @@ export function buildBetaInstallNudgeEmail(data?: BetaEmailData): BuiltEmail {
   const android = data?.platform === "android";
   const tfUrl = data?.testflightUrl ?? "https://apps.apple.com/app/testflight/id899247664";
   const optInUrl = data?.playOptInUrl ?? null;
+  const joinUrl = data?.playGroupJoinUrl ?? null;
 
   // The two ways each store loses a tester, and they have nothing in common.
   // On iOS the invitation is an email that landed somewhere they do not read.
@@ -693,7 +694,13 @@ export function buildBetaInstallNudgeEmail(data?: BetaEmailData): BuiltEmail {
   // page: wrong Google account, or the Play Store app swallowing the link.
   const reasons = android
     ? [
-        "You are signed in with a different Google account than the one on the testers list. The page just says the app is not available, with no hint that this is why.",
+        ...(joinUrl
+          ? [
+              "You never joined the testers group, or joined it with a different Google account than the one your phone uses. Either way the page just says the app is not available, with no hint that this is why. Joining takes one tap.",
+            ]
+          : [
+              "You are signed in with a different Google account than the one on the testers list. The page just says the app is not available, with no hint that this is why.",
+            ]),
         "Tapping the link opened the Play Store app instead of a browser, and it showed an empty grey card. Paste the link into Chrome instead.",
       ]
     : [
@@ -701,8 +708,13 @@ export function buildBetaInstallNudgeEmail(data?: BetaEmailData): BuiltEmail {
         "TestFlight itself was never installed. It is a free Apple app, and the invite link does nothing without it.",
       ];
 
+  // Android needs both links, and in this order. The first cause we name is
+  // not being on the testers list, and the only thing that puts a person on it
+  // is the group link, so shipping the nudge with the opt-in link alone sends
+  // them back to the same page that already told them nothing.
   const ctaUrl = android ? optInUrl : tfUrl;
   const ctaLabel = android ? "Open the tester link" : "Install TestFlight";
+  const androidJoin = android ? joinUrl : null;
 
   const blocks = [
     block(
@@ -714,7 +726,15 @@ export function buildBetaInstallNudgeEmail(data?: BetaEmailData): BuiltEmail {
       "40px 24px 0",
     ),
     block(card(`${cardTitle("The two things that go wrong")}${bullets(reasons)}`), "28px 24px 0", false),
-    ...(ctaUrl ? [block(cta(ctaLabel, ctaUrl), "24px 24px 0")] : []),
+    ...(androidJoin ? [block(cta("Join the testers group", androidJoin), "24px 24px 0")] : []),
+    ...(ctaUrl
+      ? [
+          block(
+            androidJoin ? ctaSecondary(ctaLabel, ctaUrl) : cta(ctaLabel, ctaUrl),
+            androidJoin ? "12px 24px 0" : "24px 24px 0",
+          ),
+        ]
+      : []),
     block(
       note(
         android
@@ -728,9 +748,11 @@ export function buildBetaInstallNudgeEmail(data?: BetaEmailData): BuiltEmail {
   return {
     subject: "Your beta spot is still open",
     html: betaShell({
-      preheader: android
-        ? "It is almost always the wrong Google account."
-        : "The invite is usually sitting in your Apple ID inbox.",
+      preheader: androidJoin
+        ? "Join the testers group, then open the link in Chrome."
+        : android
+          ? "It is almost always the wrong Google account."
+          : "The invite is usually sitting in your Apple ID inbox.",
       blocks,
       baseUrl: b,
       assetBase: assetBase(data),
@@ -745,6 +767,7 @@ export function buildBetaInstallNudgeEmail(data?: BetaEmailData): BuiltEmail {
       "",
       ...reasons.map((r, i) => `  ${i + 1}. ${r}`),
       "",
+      ...(androidJoin ? [`Join the testers group first: ${androidJoin}`] : []),
       ...(ctaUrl ? [`${ctaLabel}: ${ctaUrl}`] : []),
       "",
       android
