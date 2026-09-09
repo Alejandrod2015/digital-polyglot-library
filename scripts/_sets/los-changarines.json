@@ -1,0 +1,453 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "sarmiento,surco,racimo,riego",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "sarmiento",
+     "answer": "a cut vine branch",
+     "options": [
+      "a cut vine branch",
+      "a furrow in the soil",
+      "a bunch of grapes",
+      "the watering of a field"
+     ]
+    },
+    {
+     "word": "surco",
+     "answer": "a furrow in the soil",
+     "options": [
+      "a cut vine branch",
+      "a furrow in the soil",
+      "a bunch of grapes",
+      "the watering of a field"
+     ]
+    },
+    {
+     "word": "racimo",
+     "answer": "a bunch of grapes",
+     "options": [
+      "a cut vine branch",
+      "a furrow in the soil",
+      "a bunch of grapes",
+      "the watering of a field"
+     ]
+    },
+    {
+     "word": "riego",
+     "answer": "the watering of a field",
+     "options": [
+      "a cut vine branch",
+      "a furrow in the soil",
+      "a bunch of grapes",
+      "the watering of a field"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "changarín",
+  "sentence": "Contrató dos [[changarines]] para terminar el cuartel.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "casual day labourers",
+   "options": [
+    "casual day labourers",
+    "foremen",
+    "mechanics",
+    "neighbours"
+   ],
+   "audioClip": {
+    "storySlug": "los-changarines",
+    "storySource": "journey",
+    "sentence": "Contrató dos changarines para terminar el cuartel.",
+    "targetWord": "changarín",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "helada",
+  "sentence": "La [[helada]] entró el domingo y no encontró nada abierto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the frost",
+   "options": [
+    "the frost",
+    "the rain",
+    "the wind",
+    "the harvest"
+   ],
+   "audioClip": {
+    "storySlug": "los-changarines",
+    "storySource": "journey",
+    "sentence": "La helada entró el domingo y no encontró nada abierto.",
+    "targetWord": "helada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "amanecer",
+  "sentence": "Valentina llega al _____ con el hombro vendado.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "amanecer",
+   "options": [
+    "amanecer",
+    "mediodía",
+    "invierno",
+    "jornal"
+   ],
+   "translation": "Valentina arrives at _____ with her shoulder bandaged.",
+   "optionTranslations": [
+    "daybreak",
+    "midday",
+    "winter",
+    "a day's wage"
+   ],
+   "audioClip": {
+    "storySlug": "los-changarines",
+    "storySource": "journey",
+    "sentence": "Valentina llega al amanecer con el hombro vendado.",
+    "targetWord": "amanecer",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vendado",
+  "sentence": "Llega con el hombro [[vendado]] desde el lunes.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bandaged",
+   "options": [
+    "bandaged",
+    "broken",
+    "wet",
+    "free"
+   ],
+   "audioClip": {
+    "storySlug": "los-changarines",
+    "storySource": "journey",
+    "sentence": "Llega con el hombro vendado desde el lunes.",
+    "targetWord": "vendado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "amontonar",
+  "sentence": "Los sarmientos quedan _____ en el surco.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "amontonar",
+   "options": [
+    "amontonar",
+    "podados",
+    "medidos",
+    "vendidos"
+   ],
+   "translation": "The cut branches are left _____ in the furrow.",
+   "optionTranslations": [
+    "piled up",
+    "pruned",
+    "measured",
+    "sold"
+   ],
+   "audioClip": {
+    "storySlug": "los-changarines",
+    "storySource": "journey",
+    "sentence": "Los sarmientos quedan amontonar en el surco.",
+    "targetWord": "amontonar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "contratar",
+  "sentence": "Damián decidió _____ a dos hombres por el día.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "contratar",
+   "options": [
+    "contratar",
+    "esperar",
+    "despedir",
+    "pagarle"
+   ],
+   "translation": "Damián decided to _____ two men for the day.",
+   "optionTranslations": [
+    "hire",
+    "wait for",
+    "dismiss",
+    "pay"
+   ],
+   "audioClip": {
+    "storySlug": "los-changarines",
+    "storySource": "journey",
+    "sentence": "Damián decidió contratar a dos hombres por el día.",
+    "targetWord": "contratar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "reemplazar",
+  "sentence": "Que la [[reemplazaran]] salió barato.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "replacing her",
+   "options": [
+    "replacing her",
+    "paying her",
+    "waiting for her",
+    "hiring her"
+   ],
+   "audioClip": {
+    "storySlug": "los-changarines",
+    "storySource": "journey",
+    "sentence": "Que la reemplazaran salió barato.",
+    "targetWord": "reemplazar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "saldar",
+  "sentence": "Ofrece _____ la deuda con dos jornadas suyas.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "saldar",
+   "options": [
+    "saldar",
+    "dudar",
+    "tachar",
+    "medir"
+   ],
+   "translation": "She offers to _____ the debt with two days of her own.",
+   "optionTranslations": [
+    "settle",
+    "hesitate",
+    "cross out",
+    "measure"
+   ],
+   "audioClip": {
+    "storySlug": "los-changarines",
+    "storySource": "journey",
+    "sentence": "Ofrece saldar la deuda con dos jornadas suyas.",
+    "targetWord": "saldar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "confesar",
+  "sentence": "[[Confiesa]] que estaba lastimada desde el lunes.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "she admits",
+   "options": [
+    "she admits",
+    "she denies",
+    "she asks",
+    "she promises"
+   ],
+   "audioClip": {
+    "storySlug": "los-changarines",
+    "storySource": "journey",
+    "sentence": "Confiesa que estaba lastimada desde el lunes.",
+    "targetWord": "confesar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lastimado",
+  "sentence": "Estaba [[lastimada]] y no quiso decirlo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hurt",
+   "options": [
+    "hurt",
+    "tired",
+    "late",
+    "angry"
+   ],
+   "audioClip": {
+    "storySlug": "los-changarines",
+    "storySource": "journey",
+    "sentence": "Estaba lastimada y no quiso decirlo.",
+    "targetWord": "lastimado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "agotado",
+  "sentence": "“[[Agotada]] estabas”, contesta él sin reprocharle nada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "exhausted",
+   "options": [
+    "exhausted",
+    "distracted",
+    "careless",
+    "cheerful"
+   ],
+   "audioClip": {
+    "storySlug": "los-changarines",
+    "storySource": "journey",
+    "sentence": "“Agotada estabas”, contesta él sin reprocharle nada.",
+    "targetWord": "agotado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "justificar",
+  "sentence": "Esta vez Valentina no _____ nada.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "justificar",
+   "options": [
+    "justificar",
+    "mide",
+    "poda",
+    "cobra"
+   ],
+   "translation": "This time Valentina does not _____ anything.",
+   "optionTranslations": [
+    "justify",
+    "measure",
+    "prune",
+    "charge"
+   ],
+   "audioClip": {
+    "storySlug": "los-changarines",
+    "storySource": "journey",
+    "sentence": "Esta vez Valentina no justificar nada.",
+    "targetWord": "justificar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "medir",
+  "sentence": "El lunes vuelve a _____ el cuartel entero.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "medir",
+   "options": [
+    "medir",
+    "podar",
+    "regar",
+    "cobrar"
+   ],
+   "translation": "On Monday she goes back to _____ the whole block.",
+   "optionTranslations": [
+    "measure",
+    "prune",
+    "water",
+    "charge"
+   ],
+   "audioClip": {
+    "storySlug": "los-changarines",
+    "storySource": "journey",
+    "sentence": "El lunes vuelve a medir el cuartel entero.",
+    "targetWord": "medir",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tachar",
+  "sentence": "Mide el cuartel y [[tacha]] el número viejo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "crosses out",
+   "options": [
+    "crosses out",
+    "copies",
+    "reads",
+    "pays"
+   ],
+   "audioClip": {
+    "storySlug": "los-changarines",
+    "storySource": "journey",
+    "sentence": "Mide el cuartel y tacha el número viejo.",
+    "targetWord": "tachar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "disculpa",
+  "sentence": "Damián guarda la [[disculpa]] que ella no llegó a pedirle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the apology",
+   "options": [
+    "the apology",
+    "the payment",
+    "the promise",
+    "the warning"
+   ],
+   "audioClip": {
+    "storySlug": "los-changarines",
+    "storySource": "journey",
+    "sentence": "Damián guarda la disculpa que ella no llegó a pedirle.",
+    "targetWord": "disculpa",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cansancio",
+  "sentence": "“Se te veía el [[cansancio]] desde la otra punta.”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the tiredness",
+   "options": [
+    "the tiredness",
+    "the anger",
+    "the shame",
+    "the hurry"
+   ],
+   "audioClip": {
+    "storySlug": "los-changarines",
+    "storySource": "journey",
+    "sentence": "“Se te veía el cansancio desde la otra punta.”",
+    "targetWord": "cansancio",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

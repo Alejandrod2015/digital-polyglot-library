@@ -1,0 +1,439 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "cera,retablo,cargador,taller",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "cera",
+     "answer": "wax for thread and candles",
+     "options": [
+      "wax for thread and candles",
+      "a carved wooden box from Ayacucho",
+      "a man who carries the platform",
+      "the workshop room"
+     ]
+    },
+    {
+     "word": "retablo",
+     "answer": "a carved wooden box from Ayacucho",
+     "options": [
+      "wax for thread and candles",
+      "a carved wooden box from Ayacucho",
+      "a man who carries the platform",
+      "the workshop room"
+     ]
+    },
+    {
+     "word": "cargador",
+     "answer": "a man who carries the platform",
+     "options": [
+      "wax for thread and candles",
+      "a carved wooden box from Ayacucho",
+      "a man who carries the platform",
+      "the workshop room"
+     ]
+    },
+    {
+     "word": "taller",
+     "answer": "the workshop room",
+     "options": [
+      "wax for thread and candles",
+      "a carved wooden box from Ayacucho",
+      "a man who carries the platform",
+      "the workshop room"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pedido",
+  "sentence": "El jueves sube al camión con el [[pedido]] de Lima.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the order",
+   "options": [
+    "the order",
+    "the payment",
+    "the tool",
+    "the message"
+   ],
+   "audioClip": {
+    "storySlug": "no-voy-a-llegar-tarde",
+    "storySource": "journey",
+    "sentence": "El jueves sube al camión con el pedido de Lima.",
+    "targetWord": "pedido",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "coser",
+  "sentence": "Delia pasa el hilo por la cera antes de _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "coser",
+   "options": [
+    "coser",
+    "lijar",
+    "cargar",
+    "pagar"
+   ],
+   "translation": "Delia runs the thread through the wax before _____.",
+   "optionTranslations": [
+    "sewing",
+    "sanding",
+    "carrying",
+    "paying"
+   ],
+   "audioClip": {
+    "storySlug": "no-voy-a-llegar-tarde",
+    "storySource": "journey",
+    "sentence": "Delia pasa el hilo por la cera antes de coser.",
+    "targetWord": "coser",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hilo",
+  "sentence": "Pasa el [[hilo]] por la cera antes de coser el manto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the thread",
+   "options": [
+    "the thread",
+    "the wax",
+    "the cloth",
+    "the needle"
+   ],
+   "audioClip": {
+    "storySlug": "no-voy-a-llegar-tarde",
+    "storySource": "journey",
+    "sentence": "Pasa el hilo por la cera antes de coser el manto.",
+    "targetWord": "hilo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "juntarse",
+  "sentence": "“Los cargadores se _____ a las cinco y media.”",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "juntarse",
+   "options": [
+    "juntarse",
+    "pagan",
+    "cosen",
+    "miden"
+   ],
+   "translation": "“The carriers _____ at half past five.”",
+   "optionTranslations": [
+    "gather",
+    "pay",
+    "sew",
+    "measure"
+   ],
+   "audioClip": {
+    "storySlug": "no-voy-a-llegar-tarde",
+    "storySource": "journey",
+    "sentence": "“Los cargadores se juntarse a las cinco y media.”",
+    "targetWord": "juntarse",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "costar",
+  "sentence": "El billete es la mitad de lo que [[costó]] faltar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "what it cost",
+   "options": [
+    "what it cost",
+    "what it paid",
+    "what it weighed",
+    "what it lasted"
+   ],
+   "audioClip": {
+    "storySlug": "no-voy-a-llegar-tarde",
+    "storySource": "journey",
+    "sentence": "El billete es la mitad de lo que costó faltar.",
+    "targetWord": "costar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a tiempo",
+  "sentence": "Le pagan la mitad porque el retablo no llegó [[a tiempo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on time",
+   "options": [
+    "on time",
+    "by truck",
+    "in person",
+    "by mistake"
+   ],
+   "audioClip": {
+    "storySlug": "no-voy-a-llegar-tarde",
+    "storySource": "journey",
+    "sentence": "Le pagan la mitad porque el retablo no llegó a tiempo.",
+    "targetWord": "a tiempo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fuera de hora",
+  "sentence": "La entrega llega [[fuera de hora]] igual.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "after the agreed time",
+   "options": [
+    "after the agreed time",
+    "without the papers",
+    "at the wrong place",
+    "in poor condition"
+   ],
+   "audioClip": {
+    "storySlug": "no-voy-a-llegar-tarde",
+    "storySource": "journey",
+    "sentence": "La entrega llega fuera de hora igual.",
+    "targetWord": "fuera de hora",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "temprano",
+  "sentence": "“Llego _____, antes de que se junten los cargadores.”",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "temprano",
+   "options": [
+    "temprano",
+    "tarde",
+    "despacio",
+    "igual"
+   ],
+   "translation": "“I get there _____, before the carriers gather.”",
+   "optionTranslations": [
+    "early",
+    "late",
+    "slowly",
+    "all the same"
+   ],
+   "audioClip": {
+    "storySlug": "no-voy-a-llegar-tarde",
+    "storySource": "journey",
+    "sentence": "“Llego temprano, antes de que se junten los cargadores.”",
+    "targetWord": "temprano",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ojalá",
+  "sentence": "“[[Ojalá]]”, contesta Delia sin levantar la vista.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I hope so",
+   "options": [
+    "I hope so",
+    "of course",
+    "never",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "no-voy-a-llegar-tarde",
+    "storySource": "journey",
+    "sentence": "“Ojalá”, contesta Delia sin levantar la vista.",
+    "targetWord": "ojalá",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cara",
+  "sentence": "Le contesta a la madera en vez de a la [[cara]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "her face",
+   "options": [
+    "her face",
+    "her hand",
+    "her name",
+    "her work"
+   ],
+   "audioClip": {
+    "storySlug": "no-voy-a-llegar-tarde",
+    "storySource": "journey",
+    "sentence": "Le contesta a la madera en vez de a la cara.",
+    "targetWord": "cara",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "camión",
+  "sentence": "A esa misma hora sale su [[camión]] para Lima.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "his truck",
+   "options": [
+    "his truck",
+    "his workshop",
+    "his order",
+    "his money"
+   ],
+   "audioClip": {
+    "storySlug": "no-voy-a-llegar-tarde",
+    "storySource": "journey",
+    "sentence": "A esa misma hora sale su camión para Lima.",
+    "targetWord": "camión",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caliente",
+  "sentence": "Huele a cera [[caliente]] en el taller esa mañana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hot",
+   "options": [
+    "hot",
+    "old",
+    "clean",
+    "cheap"
+   ],
+   "audioClip": {
+    "storySlug": "no-voy-a-llegar-tarde",
+    "storySource": "journey",
+    "sentence": "Huele a cera caliente en el taller esa mañana.",
+    "targetWord": "caliente",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "madera",
+  "sentence": "Le contesta a la [[madera]], no a Delia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the wood",
+   "options": [
+    "the wood",
+    "the door",
+    "the floor",
+    "the cloth"
+   ],
+   "audioClip": {
+    "storySlug": "no-voy-a-llegar-tarde",
+    "storySource": "journey",
+    "sentence": "Le contesta a la madera, no a Delia.",
+    "targetWord": "madera",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "contar",
+  "sentence": "Guarda el billete sin _____ lo que le dieron.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "contar",
+   "options": [
+    "contar",
+    "coser",
+    "cargar",
+    "lijar"
+   ],
+   "translation": "He keeps the note without _____ what they gave him.",
+   "optionTranslations": [
+    "counting",
+    "sewing",
+    "carrying",
+    "sanding"
+   ],
+   "audioClip": {
+    "storySlug": "no-voy-a-llegar-tarde",
+    "storySource": "journey",
+    "sentence": "Guarda el billete sin contar lo que le dieron.",
+    "targetWord": "contar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "plaza",
+  "sentence": "El anda se levanta en la [[plaza]] a las seis.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the square",
+   "options": [
+    "the square",
+    "the workshop",
+    "the church",
+    "the market"
+   ],
+   "audioClip": {
+    "storySlug": "no-voy-a-llegar-tarde",
+    "storySource": "journey",
+    "sentence": "El anda se levanta en la plaza a las seis.",
+    "targetWord": "plaza",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cinco",
+  "sentence": "Los cargadores se juntan a las [[cinco]] y media.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "five",
+   "options": [
+    "five",
+    "four",
+    "nine",
+    "twelve"
+   ],
+   "audioClip": {
+    "storySlug": "no-voy-a-llegar-tarde",
+    "storySource": "journey",
+    "sentence": "Los cargadores se juntan a las cinco y media.",
+    "targetWord": "cinco",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

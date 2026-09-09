@@ -1,0 +1,439 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "pasilla,tostión,arriero,cartón",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "pasilla",
+     "answer": "lower-grade coffee beans",
+     "options": [
+      "lower-grade coffee beans",
+      "the roasting of the coffee",
+      "a mule driver of the coffee hills",
+      "a piece of thick paper"
+     ]
+    },
+    {
+     "word": "tostión",
+     "answer": "the roasting of the coffee",
+     "options": [
+      "lower-grade coffee beans",
+      "the roasting of the coffee",
+      "a mule driver of the coffee hills",
+      "a piece of thick paper"
+     ]
+    },
+    {
+     "word": "arriero",
+     "answer": "a mule driver of the coffee hills",
+     "options": [
+      "lower-grade coffee beans",
+      "the roasting of the coffee",
+      "a mule driver of the coffee hills",
+      "a piece of thick paper"
+     ]
+    },
+    {
+     "word": "cartón",
+     "answer": "a piece of thick paper",
+     "options": [
+      "lower-grade coffee beans",
+      "the roasting of the coffee",
+      "a mule driver of the coffee hills",
+      "a piece of thick paper"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mitad",
+  "sentence": "“Me escuchó a la [[mitad]]”, dice Esteban.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "halfway",
+   "options": [
+    "halfway",
+    "twice",
+    "at once",
+    "too late"
+   ],
+   "audioClip": {
+    "storySlug": "la-greca-fria",
+    "storySource": "journey",
+    "sentence": "“Me escuchó a la mitad”, dice Esteban.",
+    "targetWord": "mitad",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "servir",
+  "sentence": "“Lo hice donde me _____”, contesta Rocío.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "servir",
+   "options": [
+    "servir",
+    "dolía",
+    "sobraba",
+    "tapaba"
+   ],
+   "translation": "“I did it where it _____ me”, Rocío answers.",
+   "optionTranslations": [
+    "suited",
+    "hurt",
+    "was left over",
+    "covered"
+   ],
+   "audioClip": {
+    "storySlug": "la-greca-fria",
+    "storySource": "journey",
+    "sentence": "“Lo hice donde me servir”, contesta Rocío.",
+    "targetWord": "servir",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "señalar",
+  "sentence": "Esteban le [[apunta]] que hoy tendría treinta pesos más.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "points out to her",
+   "options": [
+    "points out to her",
+    "promises her",
+    "forgives her",
+    "charges her"
+   ],
+   "audioClip": {
+    "storySlug": "la-greca-fria",
+    "storySource": "journey",
+    "sentence": "Esteban le apunta que hoy tendría treinta pesos más.",
+    "targetWord": "señalar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "aguantar",
+  "sentence": "“Subir y avisar el mismo día no lo _____ nadie.”",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aguantar",
+   "options": [
+    "aguantar",
+    "paga",
+    "mide",
+    "poda"
+   ],
+   "translation": "“Raising the price and announcing it the same day, nobody _____ it.”",
+   "optionTranslations": [
+    "puts up with",
+    "pays",
+    "measures",
+    "prunes"
+   ],
+   "audioClip": {
+    "storySlug": "la-greca-fria",
+    "storySource": "journey",
+    "sentence": "“Subir y avisar el mismo día no lo aguantar nadie.”",
+    "targetWord": "aguantar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "discutir",
+  "sentence": "Ella no [[discute]] y se pone a mezclar el café.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "she does not argue",
+   "options": [
+    "she does not argue",
+    "she does not pay",
+    "she does not listen",
+    "she does not open"
+   ],
+   "audioClip": {
+    "storySlug": "la-greca-fria",
+    "storySource": "journey",
+    "sentence": "Ella no discute y se pone a mezclar el café.",
+    "targetWord": "discutir",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "mezclar",
+  "sentence": "_____ la pasilla con el café bueno para que dure.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mezclar",
+   "options": [
+    "mezclar",
+    "Tapar",
+    "Cobrar",
+    "Servir"
+   ],
+   "translation": "She _____ the low-grade beans with the good coffee so it lasts.",
+   "optionTranslations": [
+    "mixes",
+    "covers",
+    "charges",
+    "serves"
+   ],
+   "audioClip": {
+    "storySlug": "la-greca-fria",
+    "storySource": "journey",
+    "sentence": "mezclar la pasilla con el café bueno para que dure.",
+    "targetWord": "mezclar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "durar",
+  "sentence": "Mezcla la pasilla para que el café _____ más.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "durar",
+   "options": [
+    "durar",
+    "cueste",
+    "huela",
+    "suba"
+   ],
+   "translation": "She mixes in the low-grade beans so the coffee _____ longer.",
+   "optionTranslations": [
+    "lasts",
+    "costs",
+    "smells",
+    "goes up"
+   ],
+   "audioClip": {
+    "storySlug": "la-greca-fria",
+    "storySource": "journey",
+    "sentence": "Mezcla la pasilla para que el café durar más.",
+    "targetWord": "durar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "disimular",
+  "sentence": "Ella lo [[disimula]] abriendo la puerta del café.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "she hides it",
+   "options": [
+    "she hides it",
+    "she announces it",
+    "she repeats it",
+    "she pays for it"
+   ],
+   "audioClip": {
+    "storySlug": "la-greca-fria",
+    "storySource": "journey",
+    "sentence": "Ella lo disimula abriendo la puerta del café.",
+    "targetWord": "disimular",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cuenta",
+  "sentence": "Un cliente de años pide la [[cuenta]] y no vuelve.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the bill",
+   "options": [
+    "the bill",
+    "the coffee",
+    "the sign",
+    "the change"
+   ],
+   "audioClip": {
+    "storySlug": "la-greca-fria",
+    "storySource": "journey",
+    "sentence": "Un cliente de años pide la cuenta y no vuelve.",
+    "targetWord": "cuenta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "terco",
+  "sentence": "“No me lo diga dos veces”, contesta ella, [[terca]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stubborn",
+   "options": [
+    "stubborn",
+    "grateful",
+    "frightened",
+    "amused"
+   ],
+   "audioClip": {
+    "storySlug": "la-greca-fria",
+    "storySource": "journey",
+    "sentence": "“No me lo diga dos veces”, contesta ella, terca.",
+    "targetWord": "terco",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "precio",
+  "sentence": "El cartón lleva el [[precio]] nuevo desde el jueves.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the price",
+   "options": [
+    "the price",
+    "the name",
+    "the hour",
+    "the address"
+   ],
+   "audioClip": {
+    "storySlug": "la-greca-fria",
+    "storySource": "journey",
+    "sentence": "El cartón lleva el precio nuevo desde el jueves.",
+    "targetWord": "precio",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "olor",
+  "sentence": "El [[olor]] de la tostión la delata igual.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the smell",
+   "options": [
+    "the smell",
+    "the noise",
+    "the heat",
+    "the colour"
+   ],
+   "audioClip": {
+    "storySlug": "la-greca-fria",
+    "storySource": "journey",
+    "sentence": "El olor de la tostión la delata igual.",
+    "targetWord": "olor",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "seguir de largo",
+  "sentence": "Dos arrieros miran el cartón y [[siguen de largo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "they walk straight past",
+   "options": [
+    "they walk straight past",
+    "they come in",
+    "they complain",
+    "they pay"
+   ],
+   "audioClip": {
+    "storySlug": "la-greca-fria",
+    "storySource": "journey",
+    "sentence": "Dos arrieros miran el cartón y siguen de largo.",
+    "targetWord": "seguir de largo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mostrador",
+  "sentence": "La panela del día sigue entera sobre el [[mostrador]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the counter",
+   "options": [
+    "the counter",
+    "the shelf",
+    "the floor",
+    "the window"
+   ],
+   "audioClip": {
+    "storySlug": "la-greca-fria",
+    "storySource": "journey",
+    "sentence": "La panela del día sigue entera sobre el mostrador.",
+    "targetWord": "mostrador",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "letrero",
+  "sentence": "El [[letrero]] es lo único que Esteban le pidió poner.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the sign",
+   "options": [
+    "the sign",
+    "the price",
+    "the coffee",
+    "the chair"
+   ],
+   "audioClip": {
+    "storySlug": "la-greca-fria",
+    "storySource": "journey",
+    "sentence": "El letrero es lo único que Esteban le pidió poner.",
+    "targetWord": "letrero",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cliente",
+  "sentence": "Un [[cliente]] de años no vuelve en toda la semana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a customer",
+   "options": [
+    "a customer",
+    "a waiter",
+    "a supplier",
+    "a driver"
+   ],
+   "audioClip": {
+    "storySlug": "la-greca-fria",
+    "storySource": "journey",
+    "sentence": "Un cliente de años no vuelve en toda la semana.",
+    "targetWord": "cliente",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

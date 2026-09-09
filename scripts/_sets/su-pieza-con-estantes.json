@@ -1,0 +1,425 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "zaguán,tapia,teja,alacena",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "zaguán",
+     "answer": "the covered entrance passage",
+     "options": [
+      "the covered entrance passage",
+      "the thick white wall of the house",
+      "the curved clay roof tile",
+      "the built-in kitchen cupboard"
+     ]
+    },
+    {
+     "word": "tapia",
+     "answer": "the thick white wall of the house",
+     "options": [
+      "the covered entrance passage",
+      "the thick white wall of the house",
+      "the curved clay roof tile",
+      "the built-in kitchen cupboard"
+     ]
+    },
+    {
+     "word": "teja",
+     "answer": "the curved clay roof tile",
+     "options": [
+      "the covered entrance passage",
+      "the thick white wall of the house",
+      "the curved clay roof tile",
+      "the built-in kitchen cupboard"
+     ]
+    },
+    {
+     "word": "alacena",
+     "answer": "the built-in kitchen cupboard",
+     "options": [
+      "the covered entrance passage",
+      "the thick white wall of the house",
+      "the curved clay roof tile",
+      "the built-in kitchen cupboard"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "maleta",
+  "sentence": "Wilson le abre y le carga la [[maleta]] hasta adentro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the suitcase",
+   "options": [
+    "the suitcase",
+    "the door",
+    "the box",
+    "the coat"
+   ],
+   "audioClip": {
+    "storySlug": "su-pieza-con-estantes",
+    "storySource": "journey",
+    "sentence": "Wilson le abre y le carga la maleta hasta adentro.",
+    "targetWord": "maleta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "estante",
+  "sentence": "Su cuarto de antes tiene [[estantes]] hasta el techo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shelves",
+   "options": [
+    "shelves",
+    "windows",
+    "beds",
+    "plants"
+   ],
+   "audioClip": {
+    "storySlug": "su-pieza-con-estantes",
+    "storySource": "journey",
+    "sentence": "Su cuarto de antes tiene estantes hasta el techo.",
+    "targetWord": "estante",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pieza",
+  "sentence": "“¿Y mi [[pieza]]?”, pregunta ella al entrar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "my room",
+   "options": [
+    "my room",
+    "my key",
+    "my bag",
+    "my chair"
+   ],
+   "audioClip": {
+    "storySlug": "su-pieza-con-estantes",
+    "storySource": "journey",
+    "sentence": "“¿Y mi pieza?”, pregunta ella al entrar.",
+    "targetWord": "pieza",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "despensa",
+  "sentence": "“La pieza la volvimos [[despensa]]”, aclara Wilson.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a pantry",
+   "options": [
+    "a pantry",
+    "a bedroom",
+    "a workshop",
+    "a garage"
+   ],
+   "audioClip": {
+    "storySlug": "su-pieza-con-estantes",
+    "storySource": "journey",
+    "sentence": "“La pieza la volvimos despensa”, aclara Wilson.",
+    "targetWord": "despensa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "guardar",
+  "sentence": "“La casa necesitaba dónde _____”, explica él.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "guardar",
+   "options": [
+    "guardar",
+    "dormir",
+    "cocinar",
+    "entrar"
+   ],
+   "translation": "“The house needed somewhere to _____ things”, he explains.",
+   "optionTranslations": [
+    "store",
+    "sleep",
+    "cook",
+    "come in"
+   ],
+   "audioClip": {
+    "storySlug": "su-pieza-con-estantes",
+    "storySource": "journey",
+    "sentence": "“La casa necesitaba dónde guardar”, explica él.",
+    "targetWord": "guardar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sofá",
+  "sentence": "Esa noche Teresa duerme en el [[sofá]] de la sala.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the sofa",
+   "options": [
+    "the sofa",
+    "the floor",
+    "the bed",
+    "the patio"
+   ],
+   "audioClip": {
+    "storySlug": "su-pieza-con-estantes",
+    "storySource": "journey",
+    "sentence": "Esa noche Teresa duerme en el sofá de la sala.",
+    "targetWord": "sofá",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "abrir",
+  "sentence": "Ella _____ la alacena y se queda con la mano ahí.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "abrir",
+   "options": [
+    "abrir",
+    "cierra",
+    "carga",
+    "guarda"
+   ],
+   "translation": "She _____ the cupboard and leaves her hand on it.",
+   "optionTranslations": [
+    "opens",
+    "closes",
+    "carries",
+    "stores"
+   ],
+   "audioClip": {
+    "storySlug": "su-pieza-con-estantes",
+    "storySource": "journey",
+    "sentence": "Ella abrir la alacena y se queda con la mano ahí.",
+    "targetWord": "abrir",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dar a",
+  "sentence": "Ahora la cocina [[da al]] patio y no a la calle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "opens onto",
+   "options": [
+    "opens onto",
+    "is bigger than",
+    "is next to",
+    "looks like"
+   ],
+   "audioClip": {
+    "storySlug": "su-pieza-con-estantes",
+    "storySource": "journey",
+    "sentence": "Ahora la cocina da al patio y no a la calle.",
+    "targetWord": "dar a",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "propio",
+  "sentence": "Pide permiso en su [[propia]] cocina, y él no lo entiende.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "her own",
+   "options": [
+    "her own",
+    "her old",
+    "her sister's",
+    "her new"
+   ],
+   "audioClip": {
+    "storySlug": "su-pieza-con-estantes",
+    "storySource": "journey",
+    "sentence": "Pide permiso en su propia cocina, y él no lo entiende.",
+    "targetWord": "propio",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "techo",
+  "sentence": "Los estantes llegan hasta el [[techo]] de la pieza.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the ceiling",
+   "options": [
+    "the ceiling",
+    "the door",
+    "the floor",
+    "the window"
+   ],
+   "audioClip": {
+    "storySlug": "su-pieza-con-estantes",
+    "storySource": "journey",
+    "sentence": "Los estantes llegan hasta el techo de la pieza.",
+    "targetWord": "techo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sala",
+  "sentence": "Duerme en el sofá de la [[sala]], tapada con una manta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the living room",
+   "options": [
+    "the living room",
+    "the kitchen",
+    "the pantry",
+    "the patio"
+   ],
+   "audioClip": {
+    "storySlug": "su-pieza-con-estantes",
+    "storySource": "journey",
+    "sentence": "Duerme en el sofá de la sala, tapada con una manta.",
+    "targetWord": "sala",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "manta",
+  "sentence": "Duerme tapada con una [[manta]] que no reconoce.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a blanket",
+   "options": [
+    "a blanket",
+    "a coat",
+    "a curtain",
+    "a towel"
+   ],
+   "audioClip": {
+    "storySlug": "su-pieza-con-estantes",
+    "storySource": "journey",
+    "sentence": "Duerme tapada con una manta que no reconoce.",
+    "targetWord": "manta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cajón",
+  "sentence": "Se queda con la mano en la [[puerta]] de la alacena.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the door of the cupboard",
+   "options": [
+    "the door of the cupboard",
+    "the drawer of the desk",
+    "the lid of the pot",
+    "the gate of the patio"
+   ],
+   "audioClip": {
+    "storySlug": "su-pieza-con-estantes",
+    "storySource": "journey",
+    "sentence": "Se queda con la mano en la puerta de la alacena.",
+    "targetWord": "cajón",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "entrar",
+  "sentence": "Teresa [[entra]] y busca la cocina donde estaba.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "goes in",
+   "options": [
+    "goes in",
+    "goes out",
+    "waits",
+    "knocks"
+   ],
+   "audioClip": {
+    "storySlug": "su-pieza-con-estantes",
+    "storySource": "journey",
+    "sentence": "Teresa entra y busca la cocina donde estaba.",
+    "targetWord": "entrar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "blanco",
+  "sentence": "El zaguán sigue con la misma tapia [[blanca]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "white",
+   "options": [
+    "white",
+    "broken",
+    "tall",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "su-pieza-con-estantes",
+    "storySource": "journey",
+    "sentence": "El zaguán sigue con la misma tapia blanca.",
+    "targetWord": "blanco",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "patio",
+  "sentence": "Ahora la cocina da al [[patio]] de la casa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the courtyard",
+   "options": [
+    "the courtyard",
+    "the street",
+    "the roof",
+    "the shop"
+   ],
+   "audioClip": {
+    "storySlug": "su-pieza-con-estantes",
+    "storySource": "journey",
+    "sentence": "Ahora la cocina da al patio de la casa.",
+    "targetWord": "patio",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

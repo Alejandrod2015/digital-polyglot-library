@@ -1,0 +1,446 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "cinto,acequia,brote,cordillera",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "cinto",
+     "answer": "a work belt",
+     "options": [
+      "a work belt",
+      "an irrigation ditch",
+      "a new shoot",
+      "a mountain range"
+     ]
+    },
+    {
+     "word": "acequia",
+     "answer": "an irrigation ditch",
+     "options": [
+      "a work belt",
+      "an irrigation ditch",
+      "a new shoot",
+      "a mountain range"
+     ]
+    },
+    {
+     "word": "brote",
+     "answer": "a new shoot",
+     "options": [
+      "a work belt",
+      "an irrigation ditch",
+      "a new shoot",
+      "a mountain range"
+     ]
+    },
+    {
+     "word": "cordillera",
+     "answer": "a mountain range",
+     "options": [
+      "a work belt",
+      "an irrigation ditch",
+      "a new shoot",
+      "a mountain range"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pretexto",
+  "sentence": "Llega tarde con el [[pretexto]] que había armado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a reason that is not the real one",
+   "options": [
+    "a reason that is not the real one",
+    "a good excuse accepted by all",
+    "a written permit",
+    "a short delay"
+   ],
+   "audioClip": {
+    "storySlug": "el-pretexto-armado",
+    "storySource": "journey",
+    "sentence": "Llega tarde con el pretexto que había armado.",
+    "targetWord": "pretexto",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "armar",
+  "sentence": "Tuvo toda la noche para _____ la excusa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "armar",
+   "options": [
+    "armar",
+    "podar",
+    "cobrar",
+    "medir"
+   ],
+   "translation": "She had all night to _____ the excuse.",
+   "optionTranslations": [
+    "put together",
+    "prune",
+    "get paid",
+    "measure"
+   ],
+   "audioClip": {
+    "storySlug": "el-pretexto-armado",
+    "storySource": "journey",
+    "sentence": "Tuvo toda la noche para armar la excusa.",
+    "targetWord": "armar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "motor",
+  "sentence": "Dice que no arrancaba el [[motor]] de la camioneta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the engine",
+   "options": [
+    "the engine",
+    "the door",
+    "the radio",
+    "the mirror"
+   ],
+   "audioClip": {
+    "storySlug": "el-pretexto-armado",
+    "storySource": "journey",
+    "sentence": "Dice que no arrancaba el motor de la camioneta.",
+    "targetWord": "motor",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mecánico",
+  "sentence": "Cuenta que esperó al [[mecánico]] toda la mañana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the mechanic",
+   "options": [
+    "the mechanic",
+    "the foreman",
+    "the driver",
+    "the neighbour"
+   ],
+   "audioClip": {
+    "storySlug": "el-pretexto-armado",
+    "storySource": "journey",
+    "sentence": "Cuenta que esperó al mecánico toda la mañana.",
+    "targetWord": "mecánico",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "arrancar",
+  "sentence": "La camioneta no quiso _____ esa mañana.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "arrancar",
+   "options": [
+    "arrancar",
+    "frenar",
+    "cargar",
+    "llegar"
+   ],
+   "translation": "The pickup would not _____ that morning.",
+   "optionTranslations": [
+    "start up",
+    "brake",
+    "load",
+    "arrive"
+   ],
+   "audioClip": {
+    "storySlug": "el-pretexto-armado",
+    "storySource": "journey",
+    "sentence": "La camioneta no quiso arrancar esa mañana.",
+    "targetWord": "arrancar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "excusarse",
+  "sentence": "Se [[excusa]] mirando el suelo, no a Damián.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "she makes an excuse",
+   "options": [
+    "she makes an excuse",
+    "she apologises fully",
+    "she complains",
+    "she laughs"
+   ],
+   "audioClip": {
+    "storySlug": "el-pretexto-armado",
+    "storySource": "journey",
+    "sentence": "Se excusa mirando el suelo, no a Damián.",
+    "targetWord": "excusarse",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "demora",
+  "sentence": "Damián le reclama la [[demora]] sin aviso.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the hold-up",
+   "options": [
+    "the hold-up",
+    "the mistake",
+    "the payment",
+    "the noise"
+   ],
+   "audioClip": {
+    "storySlug": "el-pretexto-armado",
+    "storySource": "journey",
+    "sentence": "Damián le reclama la demora sin aviso.",
+    "targetWord": "demora",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "reclamar",
+  "sentence": "No le _____ las hileras, le reclama el aviso.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "reclamar",
+   "options": [
+    "reclamar",
+    "agrega",
+    "guarda",
+    "mide"
+   ],
+   "translation": "He does not _____ about the rows, he complains about the warning.",
+   "optionTranslations": [
+    "complain",
+    "add",
+    "keep",
+    "measure"
+   ],
+   "audioClip": {
+    "storySlug": "el-pretexto-armado",
+    "storySource": "journey",
+    "sentence": "No le reclamar las hileras, le reclama el aviso.",
+    "targetWord": "reclamar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cortante",
+  "sentence": "Contesta [[cortante]], sin levantar la vista del cuadernillo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "curt",
+   "options": [
+    "curt",
+    "cheerful",
+    "slow",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "el-pretexto-armado",
+    "storySource": "journey",
+    "sentence": "Contesta cortante, sin levantar la vista del cuadernillo.",
+    "targetWord": "cortante",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "inventar",
+  "sentence": "Se le ocurren tres frases y las tres son _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "inventar",
+   "options": [
+    "inventar",
+    "ciertas",
+    "cortas",
+    "viejas"
+   ],
+   "translation": "Three sentences come to her and all three are _____.",
+   "optionTranslations": [
+    "made up",
+    "true",
+    "short",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "el-pretexto-armado",
+    "storySource": "journey",
+    "sentence": "Se le ocurren tres frases y las tres son inventar.",
+    "targetWord": "inventar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "exigir",
+  "sentence": "“Te _____ una cosa: avisá antes”, agrega él.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "exigir",
+   "options": [
+    "exigir",
+    "ofrezco",
+    "perdono",
+    "cuento"
+   ],
+   "translation": "“I _____ one thing of you: tell me first”, he adds.",
+   "optionTranslations": [
+    "demand",
+    "offer",
+    "forgive",
+    "tell"
+   ],
+   "audioClip": {
+    "storySlug": "el-pretexto-armado",
+    "storySource": "journey",
+    "sentence": "“Te exigir una cosa: avisá antes”, agrega él.",
+    "targetWord": "exigir",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "adelantarse",
+  "sentence": "La voz se le [[adelanta]] a la cabeza.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gets ahead of her",
+   "options": [
+    "gets ahead of her",
+    "falls behind her",
+    "fails her",
+    "calms her"
+   ],
+   "audioClip": {
+    "storySlug": "el-pretexto-armado",
+    "storySource": "journey",
+    "sentence": "La voz se le adelanta a la cabeza.",
+    "targetWord": "adelantarse",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cuadernillo",
+  "sentence": "Damián no levanta la vista del [[cuadernillo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the small notebook",
+   "options": [
+    "the small notebook",
+    "the newspaper",
+    "the toolbox",
+    "the window"
+   ],
+   "audioClip": {
+    "storySlug": "el-pretexto-armado",
+    "storySource": "journey",
+    "sentence": "Damián no levanta la vista del cuadernillo.",
+    "targetWord": "cuadernillo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jornal",
+  "sentence": "Se va a la hilera doce con un [[jornal]] menos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a day's wage",
+   "options": [
+    "a day's wage",
+    "a tool",
+    "a row",
+    "a warning"
+   ],
+   "audioClip": {
+    "storySlug": "el-pretexto-armado",
+    "storySource": "journey",
+    "sentence": "Se va a la hilera doce con un jornal menos.",
+    "targetWord": "jornal",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "enojo",
+  "sentence": "Se va con el [[enojo]] mal puesto y sigue podando.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "anger",
+   "options": [
+    "anger",
+    "hunger",
+    "hope",
+    "doubt"
+   ],
+   "audioClip": {
+    "storySlug": "el-pretexto-armado",
+    "storySource": "journey",
+    "sentence": "Se va con el enojo mal puesto y sigue podando.",
+    "targetWord": "enojo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sin aviso",
+  "sentence": "Le reclama haber faltado [[sin aviso]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "without warning",
+   "options": [
+    "without warning",
+    "without payment",
+    "without reason",
+    "without help"
+   ],
+   "audioClip": {
+    "storySlug": "el-pretexto-armado",
+    "storySource": "journey",
+    "sentence": "Le reclama haber faltado sin aviso.",
+    "targetWord": "sin aviso",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

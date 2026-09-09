@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "taquilla,verbena,pan de fiesta,cajero",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "taquilla",
+     "answer": "the window where prizes are paid",
+     "options": [
+      "the window where prizes are paid",
+      "the night music of a Mexican fair",
+      "the sweet bread sold at fairs",
+      "the man who pays the money out"
+     ]
+    },
+    {
+     "word": "verbena",
+     "answer": "the night music of a Mexican fair",
+     "options": [
+      "the window where prizes are paid",
+      "the night music of a Mexican fair",
+      "the sweet bread sold at fairs",
+      "the man who pays the money out"
+     ]
+    },
+    {
+     "word": "pan de fiesta",
+     "answer": "the sweet bread sold at fairs",
+     "options": [
+      "the window where prizes are paid",
+      "the night music of a Mexican fair",
+      "the sweet bread sold at fairs",
+      "the man who pays the money out"
+     ]
+    },
+    {
+     "word": "cajero",
+     "answer": "the man who pays the money out",
+     "options": [
+      "the window where prizes are paid",
+      "the night music of a Mexican fair",
+      "the sweet bread sold at fairs",
+      "the man who pays the money out"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cortina",
+  "sentence": "La taquilla tiene la [[cortina]] abajo desde hace dos horas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the metal shutter",
+   "options": [
+    "the metal shutter",
+    "the curtain of a room",
+    "the queue of people",
+    "the price list"
+   ],
+   "audioClip": {
+    "storySlug": "pase-manana",
+    "storySource": "journey",
+    "sentence": "La taquilla tiene la cortina abajo desde hace dos horas.",
+    "targetWord": "cortina",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cruzado",
+  "sentence": "Tiene una tabla [[cruzada]] sobre la ventanilla.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "placed across it",
+   "options": [
+    "placed across it",
+    "freshly painted",
+    "already broken",
+    "hanging loose"
+   ],
+   "audioClip": {
+    "storySlug": "pase-manana",
+    "storySource": "journey",
+    "sentence": "Tiene una tabla cruzada sobre la ventanilla.",
+    "targetWord": "cruzado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cerrar",
+  "sentence": "“Pase mañana, ya _____ la caja”, le avisa Nico.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cerrar",
+   "options": [
+    "cerrar",
+    "abrí",
+    "conté",
+    "pagué"
+   ],
+   "translation": "“Come by tomorrow, I have already _____ the till”, Nico tells him.",
+   "optionTranslations": [
+    "closed",
+    "opened",
+    "counted",
+    "paid"
+   ],
+   "audioClip": {
+    "storySlug": "pase-manana",
+    "storySource": "journey",
+    "sentence": "“Pase mañana, ya cerrar la caja”, le avisa Nico.",
+    "targetWord": "cerrar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caja",
+  "sentence": "Nico dice que ya cerró la [[caja]] de la taquilla.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the till",
+   "options": [
+    "the till",
+    "the box of tools",
+    "the door",
+    "the book"
+   ],
+   "audioClip": {
+    "storySlug": "pase-manana",
+    "storySource": "journey",
+    "sentence": "Nico dice que ya cerró la caja de la taquilla.",
+    "targetWord": "caja",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "premio",
+  "sentence": "No hay quien responda por ese [[premio]] al otro día.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "that prize",
+   "options": [
+    "that prize",
+    "that stall",
+    "that ticket",
+    "that noise"
+   ],
+   "audioClip": {
+    "storySlug": "pase-manana",
+    "storySource": "journey",
+    "sentence": "No hay quien responda por ese premio al otro día.",
+    "targetWord": "premio",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ganancia",
+  "sentence": "La [[ganancia]] existió dos horas y nadie la nombró más.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the winnings",
+   "options": [
+    "the winnings",
+    "the crowd",
+    "the fair",
+    "the debt"
+   ],
+   "audioClip": {
+    "storySlug": "pase-manana",
+    "storySource": "journey",
+    "sentence": "La ganancia existió dos horas y nadie la nombró más.",
+    "targetWord": "ganancia",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a gritos",
+  "sentence": "Ya lo había contado [[a gritos]] por todo el puesto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at the top of his voice",
+   "options": [
+    "at the top of his voice",
+    "in writing",
+    "in secret",
+    "by mistake"
+   ],
+   "audioClip": {
+    "storySlug": "pase-manana",
+    "storySource": "journey",
+    "sentence": "Ya lo había contado a gritos por todo el puesto.",
+    "targetWord": "a gritos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "responder por",
+  "sentence": "Al otro día no hay quien _____ ese premio.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "responder por",
+   "options": [
+    "responder por",
+    "cierre",
+    "doble",
+    "cuente"
+   ],
+   "translation": "The next day there is nobody to _____ that prize.",
+   "optionTranslations": [
+    "answer for",
+    "close",
+    "fold",
+    "count"
+   ],
+   "audioClip": {
+    "storySlug": "pase-manana",
+    "storySource": "journey",
+    "sentence": "Al otro día no hay quien responder por ese premio.",
+    "targetWord": "responder por",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "enseñar",
+  "sentence": "Lo contó a gritos, como quien _____ un billete nuevo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "enseñar",
+   "options": [
+    "enseñar",
+    "esconde",
+    "dobla",
+    "cobra"
+   ],
+   "translation": "He told it out loud, like someone _____ a new banknote.",
+   "optionTranslations": [
+    "showing off",
+    "hiding",
+    "folding",
+    "charging"
+   ],
+   "audioClip": {
+    "storySlug": "pase-manana",
+    "storySource": "journey",
+    "sentence": "Lo contó a gritos, como quien enseñar un billete nuevo.",
+    "targetWord": "enseñar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bonito",
+  "sentence": "“Ganó [[bonito]], según me contaron”, le dice Brenda.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nicely",
+   "options": [
+    "nicely",
+    "barely",
+    "by luck",
+    "yesterday"
+   ],
+   "audioClip": {
+    "storySlug": "pase-manana",
+    "storySource": "journey",
+    "sentence": "“Ganó bonito, según me contaron”, le dice Brenda.",
+    "targetWord": "bonito",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "abajo",
+  "sentence": "La cortina lleva dos horas [[abajo]] y nadie abre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "down",
+   "options": [
+    "down",
+    "open",
+    "broken",
+    "painted"
+   ],
+   "audioClip": {
+    "storySlug": "pase-manana",
+    "storySource": "journey",
+    "sentence": "La cortina lleva dos horas abajo y nadie abre.",
+    "targetWord": "abajo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sombrero",
+  "sentence": "Se mete el papel en el [[sombrero]] y no lo enseña.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "his hat",
+   "options": [
+    "his hat",
+    "his pocket",
+    "his bag",
+    "his shoe"
+   ],
+   "audioClip": {
+    "storySlug": "pase-manana",
+    "storySource": "journey",
+    "sentence": "Se mete el papel en el sombrero y no lo enseña.",
+    "targetWord": "sombrero",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "manera",
+  "sentence": "No preguntar es su [[manera]] de preguntar cómo le fue.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "her way",
+   "options": [
+    "her way",
+    "her turn",
+    "her fault",
+    "her word"
+   ],
+   "audioClip": {
+    "storySlug": "pase-manana",
+    "storySource": "journey",
+    "sentence": "No preguntar es su manera de preguntar cómo le fue.",
+    "targetWord": "manera",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "parado",
+  "sentence": "Brenda lo ve [[parado]] al lado de Nico, sin moverse.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "standing",
+   "options": [
+    "standing",
+    "sitting",
+    "running",
+    "hidden"
+   ],
+   "audioClip": {
+    "storySlug": "pase-manana",
+    "storySource": "journey",
+    "sentence": "Brenda lo ve parado al lado de Nico, sin moverse.",
+    "targetWord": "parado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "billete",
+  "sentence": "Lo contó como quien enseña un [[billete]] nuevo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a banknote",
+   "options": [
+    "a banknote",
+    "a ticket",
+    "a letter",
+    "a photo"
+   ],
+   "audioClip": {
+    "storySlug": "pase-manana",
+    "storySource": "journey",
+    "sentence": "Lo contó como quien enseña un billete nuevo.",
+    "targetWord": "billete",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tempranito",
+  "sentence": "“Pase [[tempranito]], antes de que carguen todo.”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nice and early",
+   "options": [
+    "nice and early",
+    "much later",
+    "some other day",
+    "after lunch"
+   ],
+   "audioClip": {
+    "storySlug": "pase-manana",
+    "storySource": "journey",
+    "sentence": "“Pase tempranito, antes de que carguen todo.”",
+    "targetWord": "tempranito",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

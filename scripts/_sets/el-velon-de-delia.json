@@ -1,0 +1,446 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "velón,capilla,mayordomo,pollera",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "velón",
+     "answer": "a thick tall procession candle",
+     "options": [
+      "a thick tall procession candle",
+      "a very small church",
+      "the neighbour in charge for the year",
+      "a wide long Andean skirt"
+     ]
+    },
+    {
+     "word": "capilla",
+     "answer": "a very small church",
+     "options": [
+      "a thick tall procession candle",
+      "a very small church",
+      "the neighbour in charge for the year",
+      "a wide long Andean skirt"
+     ]
+    },
+    {
+     "word": "mayordomo",
+     "answer": "the neighbour in charge for the year",
+     "options": [
+      "a thick tall procession candle",
+      "a very small church",
+      "the neighbour in charge for the year",
+      "a wide long Andean skirt"
+     ]
+    },
+    {
+     "word": "pollera",
+     "answer": "a wide long Andean skirt",
+     "options": [
+      "a thick tall procession candle",
+      "a very small church",
+      "the neighbour in charge for the year",
+      "a wide long Andean skirt"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "anotar",
+  "sentence": "El mayordomo la _____ y le dio un velón.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "anotar",
+   "options": [
+    "anotar",
+    "cargó",
+    "cosió",
+    "midió"
+   ],
+   "translation": "The steward _____ her down and gave her a tall candle.",
+   "optionTranslations": [
+    "wrote",
+    "carried",
+    "sewed",
+    "measured"
+   ],
+   "audioClip": {
+    "storySlug": "el-velon-de-delia",
+    "storySource": "journey",
+    "sentence": "El mayordomo la anotar y le dio un velón.",
+    "targetWord": "anotar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "alivio",
+  "sentence": "Siente [[alivio]] y vergüenza juntos, y no dice nada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "relief",
+   "options": [
+    "relief",
+    "hunger",
+    "anger",
+    "doubt"
+   ],
+   "audioClip": {
+    "storySlug": "el-velon-de-delia",
+    "storySource": "journey",
+    "sentence": "Siente alivio y vergüenza juntos, y no dice nada.",
+    "targetWord": "alivio",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pasar la cuenta",
+  "sentence": "Ella no le [[pasa la cuenta]] por lo del jueves.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ask him to pay for it",
+   "options": [
+    "ask him to pay for it",
+    "thank him for it",
+    "remind him of it",
+    "explain it to him"
+   ],
+   "audioClip": {
+    "storySlug": "el-velon-de-delia",
+    "storySource": "journey",
+    "sentence": "Ella no le pasa la cuenta por lo del jueves.",
+    "targetWord": "pasar la cuenta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "deber",
+  "sentence": "“Le _____ el jueves, y eso no lo paga una tabla.”",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "deber",
+   "options": [
+    "deber",
+    "cobro",
+    "cargo",
+    "borro"
+   ],
+   "translation": "“I _____ you Thursday, and a board does not pay that.”",
+   "optionTranslations": [
+    "owe",
+    "charge",
+    "carry",
+    "erase"
+   ],
+   "audioClip": {
+    "storySlug": "el-velon-de-delia",
+    "storySource": "journey",
+    "sentence": "“Le deber el jueves, y eso no lo paga una tabla.”",
+    "targetWord": "deber",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "debajo",
+  "sentence": "Delia está [[debajo]], con el hombro en la madera.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "underneath it",
+   "options": [
+    "underneath it",
+    "beside it",
+    "behind it",
+    "in front of it"
+   ],
+   "audioClip": {
+    "storySlug": "el-velon-de-delia",
+    "storySource": "journey",
+    "sentence": "Delia está debajo, con el hombro en la madera.",
+    "targetWord": "debajo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "medida",
+  "sentence": "Deja la madera cortada a la [[medida]] del bastidor.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the exact size",
+   "options": [
+    "the exact size",
+    "the same price",
+    "the usual place",
+    "the right day"
+   ],
+   "audioClip": {
+    "storySlug": "el-velon-de-delia",
+    "storySource": "journey",
+    "sentence": "Deja la madera cortada a la medida del bastidor.",
+    "targetWord": "medida",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "apoyar",
+  "sentence": "Deja la madera _____ contra el bastidor.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "apoyar",
+   "options": [
+    "apoyar",
+    "cortada",
+    "cosida",
+    "cargada"
+   ],
+   "translation": "He leaves the wood _____ against the frame.",
+   "optionTranslations": [
+    "leaning",
+    "cut",
+    "sewn",
+    "loaded"
+   ],
+   "audioClip": {
+    "storySlug": "el-velon-de-delia",
+    "storySource": "journey",
+    "sentence": "Deja la madera apoyar contra el bastidor.",
+    "targetWord": "apoyar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cortar",
+  "sentence": "Le lleva la madera ya _____ a la medida.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cortar",
+   "options": [
+    "cortar",
+    "bordada",
+    "apoyada",
+    "anotada"
+   ],
+   "translation": "He brings her the wood already _____ to size.",
+   "optionTranslations": [
+    "cut",
+    "embroidered",
+    "leaning",
+    "written down"
+   ],
+   "audioClip": {
+    "storySlug": "el-velon-de-delia",
+    "storySource": "journey",
+    "sentence": "Le lleva la madera ya cortar a la medida.",
+    "targetWord": "cortar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "peso",
+  "sentence": "“El [[peso]] no se reparte solo”, contesta Delia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the weight",
+   "options": [
+    "the weight",
+    "the money",
+    "the blame",
+    "the candle"
+   ],
+   "audioClip": {
+    "storySlug": "el-velon-de-delia",
+    "storySource": "journey",
+    "sentence": "“El peso no se reparte solo”, contesta Delia.",
+    "targetWord": "peso",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "juntos",
+  "sentence": "Siente alivio y vergüenza [[juntos]] a la vez.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "together",
+   "options": [
+    "together",
+    "separately",
+    "later",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "el-velon-de-delia",
+    "storySource": "journey",
+    "sentence": "Siente alivio y vergüenza juntos a la vez.",
+    "targetWord": "juntos",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vista",
+  "sentence": "Delia borda sin levantar la [[vista]] del bastidor.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "her eyes",
+   "options": [
+    "her eyes",
+    "her hand",
+    "her voice",
+    "her needle"
+   ],
+   "audioClip": {
+    "storySlug": "el-velon-de-delia",
+    "storySource": "journey",
+    "sentence": "Delia borda sin levantar la vista del bastidor.",
+    "targetWord": "vista",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "siguiente",
+  "sentence": "Al día [[siguiente]] le lleva la madera al taller.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the next",
+   "options": [
+    "the next",
+    "the same",
+    "the last",
+    "the third"
+   ],
+   "audioClip": {
+    "storySlug": "el-velon-de-delia",
+    "storySource": "journey",
+    "sentence": "Al día siguiente le lleva la madera al taller.",
+    "targetWord": "siguiente",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "humo",
+  "sentence": "Cuando levantan el anda huele a cera y a [[humo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "smoke",
+   "options": [
+    "smoke",
+    "rain",
+    "bread",
+    "dust"
+   ],
+   "audioClip": {
+    "storySlug": "el-velon-de-delia",
+    "storySource": "journey",
+    "sentence": "Cuando levantan el anda huele a cera y a humo.",
+    "targetWord": "humo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ponerse",
+  "sentence": "El jueves pasado ella dijo que [[se ponía]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "she would take the place",
+   "options": [
+    "she would take the place",
+    "she would pay",
+    "she would leave",
+    "she would ask"
+   ],
+   "audioClip": {
+    "storySlug": "el-velon-de-delia",
+    "storySource": "journey",
+    "sentence": "El jueves pasado ella dijo que se ponía.",
+    "targetWord": "ponerse",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cargado",
+  "sentence": "El lado de Nicanor ya va [[cargado]] cuando él llega.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "already carried",
+   "options": [
+    "already carried",
+    "still empty",
+    "badly built",
+    "newly painted"
+   ],
+   "audioClip": {
+    "storySlug": "el-velon-de-delia",
+    "storySource": "journey",
+    "sentence": "El lado de Nicanor ya va cargado cuando él llega.",
+    "targetWord": "cargado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "bordar",
+  "sentence": "Delia se queda a _____ sin levantar la vista.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bordar",
+   "options": [
+    "bordar",
+    "cargar",
+    "anotar",
+    "cortar"
+   ],
+   "translation": "Delia stays to _____ without looking up.",
+   "optionTranslations": [
+    "embroider",
+    "carry",
+    "write down",
+    "cut"
+   ],
+   "audioClip": {
+    "storySlug": "el-velon-de-delia",
+    "storySource": "journey",
+    "sentence": "Delia se queda a bordar sin levantar la vista.",
+    "targetWord": "bordar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

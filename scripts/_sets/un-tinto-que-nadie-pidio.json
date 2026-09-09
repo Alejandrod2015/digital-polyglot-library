@@ -1,0 +1,446 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "greca,tinto,mostrador,barra",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "greca",
+     "answer": "a tall coffee machine",
+     "options": [
+      "a tall coffee machine",
+      "a small black coffee",
+      "the serving counter",
+      "a high stand-up counter"
+     ]
+    },
+    {
+     "word": "tinto",
+     "answer": "a small black coffee",
+     "options": [
+      "a tall coffee machine",
+      "a small black coffee",
+      "the serving counter",
+      "a high stand-up counter"
+     ]
+    },
+    {
+     "word": "mostrador",
+     "answer": "the serving counter",
+     "options": [
+      "a tall coffee machine",
+      "a small black coffee",
+      "the serving counter",
+      "a high stand-up counter"
+     ]
+    },
+    {
+     "word": "barra",
+     "answer": "a high stand-up counter",
+     "options": [
+      "a tall coffee machine",
+      "a small black coffee",
+      "the serving counter",
+      "a high stand-up counter"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "opinar",
+  "sentence": "“¿Usted qué [[opina]] si quito las mesas?”, pregunta Rocío.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "what do you think",
+   "options": [
+    "what do you think",
+    "what do you sell",
+    "what do you pay",
+    "what do you hear"
+   ],
+   "audioClip": {
+    "storySlug": "un-tinto-que-nadie-pidio",
+    "storySource": "journey",
+    "sentence": "“¿Usted qué opina si quito las mesas?”, pregunta Rocío.",
+    "targetWord": "opinar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "aconsejar",
+  "sentence": "“Yo no le _____ eso”, contesta Esteban.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aconsejar",
+   "options": [
+    "aconsejar",
+    "cobraría",
+    "serviría",
+    "tapaba"
+   ],
+   "translation": "“I would not _____ you that”, Esteban answers.",
+   "optionTranslations": [
+    "advise",
+    "charge",
+    "serve",
+    "cover"
+   ],
+   "audioClip": {
+    "storySlug": "un-tinto-que-nadie-pidio",
+    "storySource": "journey",
+    "sentence": "“Yo no le aconsejar eso”, contesta Esteban.",
+    "targetWord": "aconsejar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "consejo",
+  "sentence": "“Nadie le pidió [[consejo]]”, dice ella, y se ríe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "advice",
+   "options": [
+    "advice",
+    "change",
+    "a coffee",
+    "a favour"
+   ],
+   "audioClip": {
+    "storySlug": "un-tinto-que-nadie-pidio",
+    "storySource": "journey",
+    "sentence": "“Nadie le pidió consejo”, dice ella, y se ríe.",
+    "targetWord": "consejo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "letrero",
+  "sentence": "“Ponga el [[letrero]] afuera antes de tocar nada.”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the sign",
+   "options": [
+    "the sign",
+    "the counter",
+    "the chair",
+    "the door"
+   ],
+   "audioClip": {
+    "storySlug": "un-tinto-que-nadie-pidio",
+    "storySource": "journey",
+    "sentence": "“Ponga el letrero afuera antes de tocar nada.”",
+    "targetWord": "letrero",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "decidirse",
+  "sentence": "Ella no se _____ a cambiar nada del café.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "decidirse",
+   "options": [
+    "decidirse",
+    "arrepiente",
+    "apura",
+    "excusa"
+   ],
+   "translation": "She cannot _____ to change anything in the cafe.",
+   "optionTranslations": [
+    "make up her mind",
+    "regret",
+    "hurry",
+    "make excuses"
+   ],
+   "audioClip": {
+    "storySlug": "un-tinto-que-nadie-pidio",
+    "storySource": "journey",
+    "sentence": "Ella no se decidirse a cambiar nada del café.",
+    "targetWord": "decidirse",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "arrepentirse",
+  "sentence": "“Un letrero es más barato que _____.”",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "arrepentirse",
+   "options": [
+    "arrepentirse",
+    "opinar",
+    "insistir",
+    "desayunar"
+   ],
+   "translation": "“A sign is cheaper than _____.”",
+   "optionTranslations": [
+    "regretting it",
+    "giving an opinion",
+    "insisting",
+    "having breakfast"
+   ],
+   "audioClip": {
+    "storySlug": "un-tinto-que-nadie-pidio",
+    "storySource": "journey",
+    "sentence": "“Un letrero es más barato que arrepentirse.”",
+    "targetWord": "arrepentirse",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dar vueltas",
+  "sentence": "Lleva tres semanas dándole [[vueltas]] al mismo cambio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "going over it again and again",
+   "options": [
+    "going over it again and again",
+    "finishing it quickly",
+    "paying for it",
+    "forgetting it"
+   ],
+   "audioClip": {
+    "storySlug": "un-tinto-que-nadie-pidio",
+    "storySource": "journey",
+    "sentence": "Lleva tres semanas dándole vueltas al mismo cambio.",
+    "targetWord": "dar vueltas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gastado",
+  "sentence": "El mostrador de bahareque ya se ve [[gastado]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "worn out",
+   "options": [
+    "worn out",
+    "brand new",
+    "very clean",
+    "freshly painted"
+   ],
+   "audioClip": {
+    "storySlug": "un-tinto-que-nadie-pidio",
+    "storySource": "journey",
+    "sentence": "El mostrador de bahareque ya se ve gastado.",
+    "targetWord": "gastado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "insistir",
+  "sentence": "“Un letrero es más barato”, _____ Esteban desde la silla.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "insistir",
+   "options": [
+    "insistir",
+    "duda",
+    "calla",
+    "paga"
+   ],
+   "translation": "“A sign is cheaper”, Esteban _____ from the chair.",
+   "optionTranslations": [
+    "insists",
+    "doubts",
+    "goes quiet",
+    "pays"
+   ],
+   "audioClip": {
+    "storySlug": "un-tinto-que-nadie-pidio",
+    "storySource": "journey",
+    "sentence": "“Un letrero es más barato”, insistir Esteban desde la silla.",
+    "targetWord": "insistir",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tapar",
+  "sentence": "El ruido de la chiva [[tapa]] lo que él dice después.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "covers up",
+   "options": [
+    "covers up",
+    "repeats",
+    "explains",
+    "answers"
+   ],
+   "audioClip": {
+    "storySlug": "un-tinto-que-nadie-pidio",
+    "storySource": "journey",
+    "sentence": "El ruido de la chiva tapa lo que él dice después.",
+    "targetWord": "tapar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "clientes",
+  "sentence": "Perdería a los [[clientes]] que se quedan una hora.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the customers",
+   "options": [
+    "the customers",
+    "the waiters",
+    "the neighbours",
+    "the drivers"
+   ],
+   "audioClip": {
+    "storySlug": "un-tinto-que-nadie-pidio",
+    "storySource": "journey",
+    "sentence": "Perdería a los clientes que se quedan una hora.",
+    "targetWord": "clientes",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "barrio",
+  "sentence": "Rocío tiene un café de [[barrio]] en Manizales.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a neighbourhood",
+   "options": [
+    "a neighbourhood",
+    "a market",
+    "a hotel",
+    "an office"
+   ],
+   "audioClip": {
+    "storySlug": "un-tinto-que-nadie-pidio",
+    "storySource": "journey",
+    "sentence": "Rocío tiene un café de barrio en Manizales.",
+    "targetWord": "barrio",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "taxista",
+  "sentence": "Esteban es el [[taxista]] que desayuna ahí cada día.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the taxi driver",
+   "options": [
+    "the taxi driver",
+    "the baker",
+    "the postman",
+    "the owner"
+   ],
+   "audioClip": {
+    "storySlug": "un-tinto-que-nadie-pidio",
+    "storySource": "journey",
+    "sentence": "Esteban es el taxista que desayuna ahí cada día.",
+    "targetWord": "taxista",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "desayunar",
+  "sentence": "Esteban entra a _____ a la misma hora todos los días.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "desayunar",
+   "options": [
+    "desayunar",
+    "cerrar",
+    "cobrar",
+    "dudar"
+   ],
+   "translation": "Esteban comes in to _____ at the same time every day.",
+   "optionTranslations": [
+    "have breakfast",
+    "close",
+    "charge",
+    "hesitate"
+   ],
+   "audioClip": {
+    "storySlug": "un-tinto-que-nadie-pidio",
+    "storySource": "journey",
+    "sentence": "Esteban entra a desayunar a la misma hora todos los días.",
+    "targetWord": "desayunar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ruido",
+  "sentence": "Afuera pasa una chiva y el [[ruido]] entra al café.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the noise",
+   "options": [
+    "the noise",
+    "the smell",
+    "the light",
+    "the cold"
+   ],
+   "audioClip": {
+    "storySlug": "un-tinto-que-nadie-pidio",
+    "storySource": "journey",
+    "sentence": "Afuera pasa una chiva y el ruido entra al café.",
+    "targetWord": "ruido",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vuelta",
+  "sentence": "La chiva da la [[vuelta]] a la esquina sin parar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the turn",
+   "options": [
+    "the turn",
+    "the price",
+    "the queue",
+    "the wait"
+   ],
+   "audioClip": {
+    "storySlug": "un-tinto-que-nadie-pidio",
+    "storySource": "journey",
+    "sentence": "La chiva da la vuelta a la esquina sin parar.",
+    "targetWord": "vuelta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

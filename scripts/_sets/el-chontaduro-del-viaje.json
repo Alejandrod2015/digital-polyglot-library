@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "chontaduro,andén,portón,terminal",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "chontaduro",
+     "answer": "the orange palm fruit of the Cauca",
+     "options": [
+      "the orange palm fruit of the Cauca",
+      "the pavement, in Colombian Spanish",
+      "the big street door of an old house",
+      "the station the long buses leave from"
+     ]
+    },
+    {
+     "word": "andén",
+     "answer": "the pavement, in Colombian Spanish",
+     "options": [
+      "the orange palm fruit of the Cauca",
+      "the pavement, in Colombian Spanish",
+      "the big street door of an old house",
+      "the station the long buses leave from"
+     ]
+    },
+    {
+     "word": "portón",
+     "answer": "the big street door of an old house",
+     "options": [
+      "the orange palm fruit of the Cauca",
+      "the pavement, in Colombian Spanish",
+      "the big street door of an old house",
+      "the station the long buses leave from"
+     ]
+    },
+    {
+     "word": "terminal",
+     "answer": "the station the long buses leave from",
+     "options": [
+      "the orange palm fruit of the Cauca",
+      "the pavement, in Colombian Spanish",
+      "the big street door of an old house",
+      "the station the long buses leave from"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bolso",
+  "sentence": "El [[bolso]] de Teresa espera en el zaguán desde temprano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the travel bag",
+   "options": [
+    "the travel bag",
+    "the key",
+    "the box",
+    "the coat"
+   ],
+   "audioClip": {
+    "storySlug": "el-chontaduro-del-viaje",
+    "storySource": "journey",
+    "sentence": "El bolso de Teresa espera en el zaguán desde temprano.",
+    "targetWord": "bolso",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "carro",
+  "sentence": "El [[carro]] que la lleva al terminal pasa a las cuatro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the car",
+   "options": [
+    "the car",
+    "the bus",
+    "the boat",
+    "the cart"
+   ],
+   "audioClip": {
+    "storySlug": "el-chontaduro-del-viaje",
+    "storySource": "journey",
+    "sentence": "El carro que la lleva al terminal pasa a las cuatro.",
+    "targetWord": "carro",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prisa",
+  "sentence": "Wilson sale con ella hasta el andén, sin [[prisa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hurry",
+   "options": [
+    "hurry",
+    "a coat",
+    "a word",
+    "a key"
+   ],
+   "audioClip": {
+    "storySlug": "el-chontaduro-del-viaje",
+    "storySource": "journey",
+    "sentence": "Wilson sale con ella hasta el andén, sin prisa.",
+    "targetWord": "prisa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "llave",
+  "sentence": "Trae la [[llave]] de la casa en la mano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the key",
+   "options": [
+    "the key",
+    "the fruit",
+    "the bag",
+    "the letter"
+   ],
+   "audioClip": {
+    "storySlug": "el-chontaduro-del-viaje",
+    "storySource": "journey",
+    "sentence": "Trae la llave de la casa en la mano.",
+    "targetWord": "llave",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "quedarse",
+  "sentence": "“_____ con ella”, le dice él, y le ofrece la llave.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "quedarse",
+   "options": [
+    "quedarse",
+    "Váyase",
+    "Págueme",
+    "Ábrala"
+   ],
+   "translation": "“_____ it”, he tells her, offering her the key.",
+   "optionTranslations": [
+    "Keep",
+    "Leave",
+    "Pay me for",
+    "Open"
+   ],
+   "audioClip": {
+    "storySlug": "el-chontaduro-del-viaje",
+    "storySource": "journey",
+    "sentence": "“quedarse con ella”, le dice él, y le ofrece la llave.",
+    "targetWord": "quedarse",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "guardado",
+  "sentence": "Se fue con esa misma llave [[guardada]] ocho años.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "put away",
+   "options": [
+    "put away",
+    "broken",
+    "lost",
+    "copied"
+   ],
+   "audioClip": {
+    "storySlug": "el-chontaduro-del-viaje",
+    "storySource": "journey",
+    "sentence": "Se fue con esa misma llave guardada ocho años.",
+    "targetWord": "guardado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "usar",
+  "sentence": "Volvió con la llave y no la _____ ni una vez.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "usar",
+   "options": [
+    "usar",
+    "envolvió",
+    "pesó",
+    "despidió"
+   ],
+   "translation": "She came back with the key and did not _____ it once.",
+   "optionTranslations": [
+    "use",
+    "wrap",
+    "weigh",
+    "say goodbye to"
+   ],
+   "audioClip": {
+    "storySlug": "el-chontaduro-del-viaje",
+    "storySource": "journey",
+    "sentence": "Volvió con la llave y no la usar ni una vez.",
+    "targetWord": "usar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "verdad",
+  "sentence": "Wilson se queda callado porque sabe que es [[verdad]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "true",
+   "options": [
+    "true",
+    "late",
+    "enough",
+    "his fault"
+   ],
+   "audioClip": {
+    "storySlug": "el-chontaduro-del-viaje",
+    "storySource": "journey",
+    "sentence": "Wilson se queda callado porque sabe que es verdad.",
+    "targetWord": "verdad",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pesar",
+  "sentence": "“Una llave que no se usa [[pesa]] distinto.”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "weighs",
+   "options": [
+    "weighs",
+    "opens",
+    "costs",
+    "sounds"
+   ],
+   "audioClip": {
+    "storySlug": "el-chontaduro-del-viaje",
+    "storySource": "journey",
+    "sentence": "“Una llave que no se usa pesa distinto.”",
+    "targetWord": "pesar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "envolver",
+  "sentence": "Le _____ el chontaduro para que aguante el viaje.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "envolver",
+   "options": [
+    "envolver",
+    "pesó",
+    "usó",
+    "cerró"
+   ],
+   "translation": "He _____ the palm fruit for her so it survives the journey.",
+   "optionTranslations": [
+    "wrapped",
+    "weighed",
+    "used",
+    "closed"
+   ],
+   "audioClip": {
+    "storySlug": "el-chontaduro-del-viaje",
+    "storySource": "journey",
+    "sentence": "Le envolver el chontaduro para que aguante el viaje.",
+    "targetWord": "envolver",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "despedirse",
+  "sentence": "“Nos vemos”, [[se despide]], y cierra el portón.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "she says goodbye",
+   "options": [
+    "she says goodbye",
+    "she complains",
+    "she promises",
+    "she asks"
+   ],
+   "audioClip": {
+    "storySlug": "el-chontaduro-del-viaje",
+    "storySource": "journey",
+    "sentence": "“Nos vemos”, se despide, y cierra el portón.",
+    "targetWord": "despedirse",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "despacio",
+  "sentence": "Cierra el portón [[despacio]] para no hacer ruido.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "slowly",
+   "options": [
+    "slowly",
+    "at once",
+    "by mistake",
+    "from outside"
+   ],
+   "audioClip": {
+    "storySlug": "el-chontaduro-del-viaje",
+    "storySource": "journey",
+    "sentence": "Cierra el portón despacio para no hacer ruido.",
+    "targetWord": "despacio",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "horario",
+  "sentence": "No quiere hacer ruido en una casa que ya tiene su [[horario]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "its own timetable",
+   "options": [
+    "its own timetable",
+    "its own owner",
+    "its own smell",
+    "its own door"
+   ],
+   "audioClip": {
+    "storySlug": "el-chontaduro-del-viaje",
+    "storySource": "journey",
+    "sentence": "No quiere hacer ruido en una casa que ya tiene su horario.",
+    "targetWord": "horario",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "viaje",
+  "sentence": "Le envolvió el chontaduro para el [[viaje]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the journey",
+   "options": [
+    "the journey",
+    "the party",
+    "the market",
+    "the winter"
+   ],
+   "audioClip": {
+    "storySlug": "el-chontaduro-del-viaje",
+    "storySource": "journey",
+    "sentence": "Le envolvió el chontaduro para el viaje.",
+    "targetWord": "viaje",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hacer falta",
+  "sentence": "“No [[hace falta]]”, contesta ella cuando le ofrece la llave.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "there is no need",
+   "options": [
+    "there is no need",
+    "there is no time",
+    "it is not mine",
+    "it is too late"
+   ],
+   "audioClip": {
+    "storySlug": "el-chontaduro-del-viaje",
+    "storySource": "journey",
+    "sentence": "“No hace falta”, contesta ella cuando le ofrece la llave.",
+    "targetWord": "hacer falta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lado",
+  "sentence": "Deja la llave al [[lado]] del chontaduro, en la mesa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "next to",
+   "options": [
+    "next to",
+    "instead of",
+    "under",
+    "far from"
+   ],
+   "audioClip": {
+    "storySlug": "el-chontaduro-del-viaje",
+    "storySource": "journey",
+    "sentence": "Deja la llave al lado del chontaduro, en la mesa.",
+    "targetWord": "lado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

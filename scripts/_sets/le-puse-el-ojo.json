@@ -1,0 +1,453 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "hilera,yema,vid,parral",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "hilera",
+     "answer": "a row of vines",
+     "options": [
+      "a row of vines",
+      "a bud on the vine",
+      "a grapevine",
+      "a vine arbour"
+     ]
+    },
+    {
+     "word": "yema",
+     "answer": "a bud on the vine",
+     "options": [
+      "a row of vines",
+      "a bud on the vine",
+      "a grapevine",
+      "a vine arbour"
+     ]
+    },
+    {
+     "word": "vid",
+     "answer": "a grapevine",
+     "options": [
+      "a row of vines",
+      "a bud on the vine",
+      "a grapevine",
+      "a vine arbour"
+     ]
+    },
+    {
+     "word": "parral",
+     "answer": "a vine arbour",
+     "options": [
+      "a row of vines",
+      "a bud on the vine",
+      "a grapevine",
+      "a vine arbour"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cuartel",
+  "sentence": "Valentina todavía no ha contado el [[cuartel]] entero.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a block of vineyard",
+   "options": [
+    "a block of vineyard",
+    "a barracks",
+    "a quarter of an hour",
+    "a bedroom"
+   ],
+   "audioClip": {
+    "storySlug": "le-puse-el-ojo",
+    "storySource": "journey",
+    "sentence": "Valentina todavía no ha contado el cuartel entero.",
+    "targetWord": "cuartel",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "capataz",
+  "sentence": "El [[capataz]] lleva el cuadernillo abierto toda la mañana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the foreman",
+   "options": [
+    "the foreman",
+    "the owner",
+    "the driver",
+    "the neighbour"
+   ],
+   "audioClip": {
+    "storySlug": "le-puse-el-ojo",
+    "storySource": "journey",
+    "sentence": "El capataz lleva el cuadernillo abierto toda la mañana.",
+    "targetWord": "capataz",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "poda",
+  "sentence": "La [[poda]] de invierno decide la cosecha del año.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the winter pruning",
+   "options": [
+    "the winter pruning",
+    "the harvest",
+    "the watering",
+    "the planting"
+   ],
+   "audioClip": {
+    "storySlug": "le-puse-el-ojo",
+    "storySource": "journey",
+    "sentence": "La poda de invierno decide la cosecha del año.",
+    "targetWord": "poda",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "podar",
+  "sentence": "Hay que _____ las vides antes de la helada.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "podar",
+   "options": [
+    "podar",
+    "regar",
+    "vender",
+    "contar"
+   ],
+   "translation": "You have to _____ the vines before the frost.",
+   "optionTranslations": [
+    "prune",
+    "water",
+    "sell",
+    "count"
+   ],
+   "audioClip": {
+    "storySlug": "le-puse-el-ojo",
+    "storySource": "journey",
+    "sentence": "Hay que podar las vides antes de la helada.",
+    "targetWord": "podar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cuadrilla",
+  "sentence": "Damián puede pedir una _____ si hay atraso.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cuadrilla",
+   "options": [
+    "cuadrilla",
+    "cosecha",
+    "tijera",
+    "helada"
+   ],
+   "translation": "Damián can ask for a _____ if there is a delay.",
+   "optionTranslations": [
+    "work gang",
+    "harvest",
+    "pruning shears",
+    "frost"
+   ],
+   "audioClip": {
+    "storySlug": "le-puse-el-ojo",
+    "storySource": "journey",
+    "sentence": "Damián puede pedir una cuadrilla si hay atraso.",
+    "targetWord": "cuadrilla",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "promesa",
+  "sentence": "La [[promesa]] ya no es solo suya.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "something you said you would do",
+   "options": [
+    "something you said you would do",
+    "a doubt",
+    "a delay",
+    "a payment"
+   ],
+   "audioClip": {
+    "storySlug": "le-puse-el-ojo",
+    "storySource": "journey",
+    "sentence": "La promesa ya no es solo suya.",
+    "targetWord": "promesa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cumplir",
+  "sentence": "Mañana madrugo y lo voy a _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cumplir",
+   "options": [
+    "cumplir",
+    "dudar",
+    "tapar",
+    "perder"
+   ],
+   "translation": "Tomorrow I get up early and I am going to _____ it.",
+   "optionTranslations": [
+    "keep my word",
+    "hesitate",
+    "cover",
+    "lose"
+   ],
+   "audioClip": {
+    "storySlug": "le-puse-el-ojo",
+    "storySource": "journey",
+    "sentence": "Mañana madrugo y lo voy a cumplir.",
+    "targetWord": "cumplir",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "calcular",
+  "sentence": "Nadie sabe si llegó a _____ las hileras.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "calcular",
+   "options": [
+    "calcular",
+    "podar",
+    "guardar",
+    "vender"
+   ],
+   "translation": "Nobody knows whether she got to _____ the rows.",
+   "optionTranslations": [
+    "work out",
+    "prune",
+    "keep",
+    "sell"
+   ],
+   "audioClip": {
+    "storySlug": "le-puse-el-ojo",
+    "storySource": "journey",
+    "sentence": "Nadie sabe si llegó a calcular las hileras.",
+    "targetWord": "calcular",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "atraso",
+  "sentence": "Si va con [[atraso]], tiene que avisar hoy.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "behind schedule",
+   "options": [
+    "behind schedule",
+    "ahead of time",
+    "in a hurry",
+    "by mistake"
+   ],
+   "audioClip": {
+    "storySlug": "le-puse-el-ojo",
+    "storySource": "journey",
+    "sentence": "Si va con atraso, tiene que avisar hoy.",
+    "targetWord": "atraso",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "apurarse",
+  "sentence": "Podar mal sería peor que _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "apurarse",
+   "options": [
+    "apurarse",
+    "esperar",
+    "medir",
+    "avisar"
+   ],
+   "translation": "Pruning badly would be worse than _____.",
+   "optionTranslations": [
+    "hurrying",
+    "waiting",
+    "measuring",
+    "warning"
+   ],
+   "audioClip": {
+    "storySlug": "le-puse-el-ojo",
+    "storySource": "journey",
+    "sentence": "Podar mal sería peor que apurarse.",
+    "targetWord": "apurarse",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dudar",
+  "sentence": "Contesta que no hace falta, y [[duda]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hesitate",
+   "options": [
+    "to hesitate",
+    "to shout",
+    "to agree",
+    "to leave"
+   ],
+   "audioClip": {
+    "storySlug": "le-puse-el-ojo",
+    "storySource": "journey",
+    "sentence": "Contesta que no hace falta, y duda.",
+    "targetWord": "dudar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "madrugar",
+  "sentence": "Prometió _____ para terminar las cuatro hileras.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "madrugar",
+   "options": [
+    "madrugar",
+    "descansar",
+    "cobrar",
+    "dudar"
+   ],
+   "translation": "She promised to _____ to finish the four rows.",
+   "optionTranslations": [
+    "get up very early",
+    "rest",
+    "get paid",
+    "hesitate"
+   ],
+   "audioClip": {
+    "storySlug": "le-puse-el-ojo",
+    "storySource": "journey",
+    "sentence": "Prometió madrugar para terminar las cuatro hileras.",
+    "targetWord": "madrugar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "agregar",
+  "sentence": "“Le puse el ojo”, [[agrega]] ella sin levantar la vista.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "she adds",
+   "options": [
+    "she adds",
+    "she asks",
+    "she denies",
+    "she repeats"
+   ],
+   "audioClip": {
+    "storySlug": "le-puse-el-ojo",
+    "storySource": "journey",
+    "sentence": "“Le puse el ojo”, agrega ella sin levantar la vista.",
+    "targetWord": "agregar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lentitud",
+  "sentence": "Guarda la tijera con una [[lentitud]] que se nota.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "slowness",
+   "options": [
+    "slowness",
+    "anger",
+    "care",
+    "fear"
+   ],
+   "audioClip": {
+    "storySlug": "le-puse-el-ojo",
+    "storySource": "journey",
+    "sentence": "Guarda la tijera con una lentitud que se nota.",
+    "targetWord": "lentitud",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "galpón",
+  "sentence": "Se promete en el [[galpón]] que mañana cumple.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the farm shed",
+   "options": [
+    "the farm shed",
+    "the kitchen",
+    "the office",
+    "the market"
+   ],
+   "audioClip": {
+    "storySlug": "le-puse-el-ojo",
+    "storySource": "journey",
+    "sentence": "Se promete en el galpón que mañana cumple.",
+    "targetWord": "galpón",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "poner el ojo",
+  "sentence": "No midió el cuartel: le [[puso el ojo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "judged it by eye",
+   "options": [
+    "judged it by eye",
+    "measured it exactly",
+    "forgot about it",
+    "paid for it"
+   ],
+   "audioClip": {
+    "storySlug": "le-puse-el-ojo",
+    "storySource": "journey",
+    "sentence": "No midió el cuartel: le puso el ojo.",
+    "targetWord": "poner el ojo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

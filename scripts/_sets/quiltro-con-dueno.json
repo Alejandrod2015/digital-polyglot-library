@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "fogón,camioneta,repisa,plata",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "fogón",
+     "answer": "the open wood fire of the house",
+     "options": [
+      "the open wood fire of the house",
+      "the small truck of a country vet",
+      "a narrow shelf on the wall",
+      "the everyday word for cash"
+     ]
+    },
+    {
+     "word": "camioneta",
+     "answer": "the small truck of a country vet",
+     "options": [
+      "the open wood fire of the house",
+      "the small truck of a country vet",
+      "a narrow shelf on the wall",
+      "the everyday word for cash"
+     ]
+    },
+    {
+     "word": "repisa",
+     "answer": "a narrow shelf on the wall",
+     "options": [
+      "the open wood fire of the house",
+      "the small truck of a country vet",
+      "a narrow shelf on the wall",
+      "the everyday word for cash"
+     ]
+    },
+    {
+     "word": "plata",
+     "answer": "the everyday word for cash",
+     "options": [
+      "the open wood fire of the house",
+      "the small truck of a country vet",
+      "a narrow shelf on the wall",
+      "the everyday word for cash"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "negar",
+  "sentence": "Óscar cuida esos cercos y no _____ nada.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "negar",
+   "options": [
+    "negar",
+    "cobra",
+    "mueve",
+    "aprieta"
+   ],
+   "translation": "Óscar looks after those fences and _____ nothing.",
+   "optionTranslations": [
+    "denies",
+    "charges",
+    "moves",
+    "grips"
+   ],
+   "audioClip": {
+    "storySlug": "quiltro-con-dueno",
+    "storySource": "journey",
+    "sentence": "Óscar cuida esos cercos y no negar nada.",
+    "targetWord": "negar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "correa",
+  "sentence": "Aprieta la [[correa]] del maletín sin soltarla.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the strap",
+   "options": [
+    "the strap",
+    "the fence",
+    "the belt of the truck",
+    "the rope of the boat"
+   ],
+   "audioClip": {
+    "storySlug": "quiltro-con-dueno",
+    "storySource": "journey",
+    "sentence": "Aprieta la correa del maletín sin soltarla.",
+    "targetWord": "correa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "apretar",
+  "sentence": "Le da rabia y _____ la correa sin soltarla.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "apretar",
+   "options": [
+    "apretar",
+    "suelta",
+    "paga",
+    "mide"
+   ],
+   "translation": "It makes her angry and she _____ the strap without letting go.",
+   "optionTranslations": [
+    "grips",
+    "lets go of",
+    "pays",
+    "measures"
+   ],
+   "audioClip": {
+    "storySlug": "quiltro-con-dueno",
+    "storySource": "journey",
+    "sentence": "Le da rabia y apretar la correa sin soltarla.",
+    "targetWord": "apretar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mover",
+  "sentence": "De ahí no lo [[mueve]] nadie en toda la tarde.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "moves him",
+   "options": [
+    "moves him",
+    "pays him",
+    "believes him",
+    "hears him"
+   ],
+   "audioClip": {
+    "storySlug": "quiltro-con-dueno",
+    "storySource": "journey",
+    "sentence": "De ahí no lo mueve nadie en toda la tarde.",
+    "targetWord": "mover",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dar rabia",
+  "sentence": "Le [[da rabia]] que saque a la mesa aquel favor.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it makes her angry",
+   "options": [
+    "it makes her angry",
+    "it makes her laugh",
+    "it surprises her",
+    "it relieves her"
+   ],
+   "audioClip": {
+    "storySlug": "quiltro-con-dueno",
+    "storySource": "journey",
+    "sentence": "Le da rabia que saque a la mesa aquel favor.",
+    "targetWord": "dar rabia",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "poner el precio",
+  "sentence": "“El precio lo [[pongo]] yo”, contesta Ximena.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I set it",
+   "options": [
+    "I set it",
+    "I pay it",
+    "I lower it",
+    "I forget it"
+   ],
+   "audioClip": {
+    "storySlug": "quiltro-con-dueno",
+    "storySource": "journey",
+    "sentence": "“El precio lo pongo yo”, contesta Ximena.",
+    "targetWord": "poner el precio",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "estar sana",
+  "sentence": "“[[Estaban sanas]] cuando pasé”, contesta ella.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "they were healthy",
+   "options": [
+    "they were healthy",
+    "they were counted",
+    "they were sold",
+    "they were fenced"
+   ],
+   "audioClip": {
+    "storySlug": "quiltro-con-dueno",
+    "storySource": "journey",
+    "sentence": "“Estaban sanas cuando pasé”, contesta ella.",
+    "targetWord": "estar sana",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sacar a la mesa",
+  "sentence": "[[Saca a la mesa]] la camioneta que le arregló.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "brings up",
+   "options": [
+    "brings up",
+    "repairs again",
+    "pays for",
+    "sells back"
+   ],
+   "audioClip": {
+    "storySlug": "quiltro-con-dueno",
+    "storySource": "journey",
+    "sentence": "Saca a la mesa la camioneta que le arregló.",
+    "targetWord": "sacar a la mesa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cuidar",
+  "sentence": "Óscar _____ esos cercos desde hace veinte años.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cuidar",
+   "options": [
+    "cuidar",
+    "vende",
+    "pierde",
+    "mide"
+   ],
+   "translation": "Óscar has _____ those fences for twenty years.",
+   "optionTranslations": [
+    "looked after",
+    "sold",
+    "lost",
+    "measured"
+   ],
+   "audioClip": {
+    "storySlug": "quiltro-con-dueno",
+    "storySource": "journey",
+    "sentence": "Óscar cuidar esos cercos desde hace veinte años.",
+    "targetWord": "cuidar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dormido",
+  "sentence": "Un perro [[dormido]] descansa al lado del fogón.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "asleep",
+   "options": [
+    "asleep",
+    "hungry",
+    "tied up",
+    "barking"
+   ],
+   "audioClip": {
+    "storySlug": "quiltro-con-dueno",
+    "storySource": "journey",
+    "sentence": "Un perro dormido descansa al lado del fogón.",
+    "targetWord": "dormido",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "invierno",
+  "sentence": "Le arregló la camioneta el [[invierno]] pasado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "winter",
+   "options": [
+    "winter",
+    "summer",
+    "market day",
+    "harvest"
+   ],
+   "audioClip": {
+    "storySlug": "quiltro-con-dueno",
+    "storySource": "journey",
+    "sentence": "Le arregló la camioneta el invierno pasado.",
+    "targetWord": "invierno",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "número",
+  "sentence": "Ella escribe el [[número]] entero por las dos ovejas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the figure",
+   "options": [
+    "the figure",
+    "the name",
+    "the date",
+    "the address"
+   ],
+   "audioClip": {
+    "storySlug": "quiltro-con-dueno",
+    "storySource": "journey",
+    "sentence": "Ella escribe el número entero por las dos ovejas.",
+    "targetWord": "número",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mesa",
+  "sentence": "Deja los papeles sobre la [[mesa]], y huelen a humo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the table",
+   "options": [
+    "the table",
+    "the shelf",
+    "the floor",
+    "the truck"
+   ],
+   "audioClip": {
+    "storySlug": "quiltro-con-dueno",
+    "storySource": "journey",
+    "sentence": "Deja los papeles sobre la mesa, y huelen a humo.",
+    "targetWord": "mesa",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quedar a mano",
+  "sentence": "“Le pago hoy y [[quedamos a mano]].”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "we are even",
+   "options": [
+    "we are even",
+    "we are finished",
+    "we are late",
+    "we are friends"
+   ],
+   "audioClip": {
+    "storySlug": "quiltro-con-dueno",
+    "storySource": "journey",
+    "sentence": "“Le pago hoy y quedamos a mano.”",
+    "targetWord": "quedar a mano",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "andar suelto",
+  "sentence": "“Y el perro no vuelve a [[andar suelto]].”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go around free",
+   "options": [
+    "to go around free",
+    "to work the field",
+    "to sleep inside",
+    "to be sold"
+   ],
+   "audioClip": {
+    "storySlug": "quiltro-con-dueno",
+    "storySource": "journey",
+    "sentence": "“Y el perro no vuelve a andar suelto.”",
+    "targetWord": "andar suelto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "papel",
+  "sentence": "Deja los [[papeles]] sobre la mesa y huelen a humo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the notes",
+   "options": [
+    "the notes",
+    "the tools",
+    "the boots",
+    "the plates"
+   ],
+   "audioClip": {
+    "storySlug": "quiltro-con-dueno",
+    "storySource": "journey",
+    "sentence": "Deja los papeles sobre la mesa y huelen a humo.",
+    "targetWord": "papel",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]
