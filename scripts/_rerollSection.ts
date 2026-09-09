@@ -141,7 +141,6 @@ async function main() {
       );
     }
     console.log(`fronteras del fragmento ${index} en silencio ✓ (${sils.length} silencios en el máster)`);
-    console.log(`offsets  desfase ${drift.toFixed(2)}s frente al máster (tolerancia 0.30s) ✓`);
   }
 
   const apiKey = process.env.ELEVENLABS_API_KEY;
