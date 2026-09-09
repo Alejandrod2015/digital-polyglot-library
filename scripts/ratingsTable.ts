@@ -33,21 +33,8 @@ for (const file of [".env.local", ".env"]) {
 }
 
 const fecha = (d: Date) => d.toISOString().slice(0, 16).replace("T", " ");
-const oNada = (s: string | null | undefined) => (s && s.trim() ? s.trim() : "-");
 /** Una barra vertical sin escapar parte una celda de Markdown en dos. */
 const celda = (s: string) => s.replace(/\|/g, "\\|");
-
-/** Agrupa por clave conservando el orden de aparicion. */
-function porClave<T>(rows: T[], key: (r: T) => string): Map<string, T[]> {
-  const out = new Map<string, T[]>();
-  for (const r of rows) {
-    const k = key(r);
-    const prev = out.get(k);
-    if (prev) prev.push(r);
-    else out.set(k, [r]);
-  }
-  return out;
-}
 
 function tabla(cabeceras: string[], filas: string[][]): string {
   const cuerpo = filas.length > 0 ? filas : [cabeceras.map(() => "-")];
@@ -94,7 +81,12 @@ async function main() {
     where: { clerkUserId: { not: null } },
     select: { clerkUserId: true, email: true },
   });
+  const prefs = await prisma.emailPreference.findMany({
+    where: { userId: { not: null } },
+    select: { userId: true, email: true },
+  });
   const correoDe = new Map<string, string>();
+  for (const e of prefs) if (e.userId) correoDe.set(e.userId, e.email);
   for (const s of signups) if (s.clerkUserId) correoDe.set(s.clerkUserId, s.email);
   for (const r of ratings) if (r.email) correoDe.set(r.userId, r.email);
 
@@ -154,161 +146,117 @@ async function main() {
   ).length;
 
   // ------------------------------------------------------------------ salida
+  //
+  // UNA tabla, una fila por tester. La pregunta que hay que poder contestar de
+  // un vistazo es "de los que ven la fila, cuantos la contestan", y eso se lee
+  // por persona: cinco cuadros de totales por superficie la escondian.
   const out: string[] = [];
   const p = (s = "") => out.push(s);
 
-  p(`# Senal de la beta  (${fecha(new Date())} UTC)`);
-  p();
-  p("Todo partido entre **testers** y **equipo** con `splitInternal`, que excluye");
-  p("a los de `StudioMember` y a todo `@digitalpolyglot.com`.");
-  p();
+  const personas = [...new Set([...impFuera.map((r) => r.userId), ...votosFuera.map((r) => r.userId)])];
+  // Un userId sin correo en ninguna de nuestras tablas (solo lo sabe Clerk) cae
+  // del lado de fuera por defecto, que es exactamente como el 2026-09-05
+  // review@ paso por tester. Se marca en la fila en vez de darlo por bueno.
+  const quien = (userId: string) => correoDe.get(userId) ?? `sin correo (${userId.slice(-6)}) [?]`;
 
-  p("## 1. Pulgares (`StoryRating`)");
-  p();
-  p(
-    tabla(
-      ["", "filas", "arriba", "abajo"],
-      (
-        [
-          ["**testers**", votosFuera],
-          ["equipo (excluido)", votosCasa],
-          ["total en la tabla", ratings],
-        ] as [string, typeof ratings][]
-      ).map(([etiqueta, rows]) => [
-        etiqueta,
-        `${rows.length}`,
-        `${rows.filter((r) => r.liked).length}`,
-        `${rows.filter((r) => !r.liked).length}`,
+  /** "vistas -> votos" de una persona en una superficie. */
+  const celdaSuperficie = (userId: string, surface: string) => {
+    const vistas = [...oportunidades].filter(
+      ([k, o]) => k.startsWith(`${userId}::`) && o.surface === surface && !o.yaVotada,
+    );
+    const votos = votosFuera.filter((v) => v.userId === userId && (v.surface ?? "story") === surface);
+    return `${vistas.length} -> ${votos.length}`;
+  };
+
+  const sistemasDe = (userId: string) =>
+    [
+      ...new Set([
+        ...impFuera.filter((r) => r.userId === userId).map((r) => plataformaDe(meta(r))),
+        ...votosFuera.filter((r) => r.userId === userId).map((r) => r.platform ?? "?"),
       ]),
-    ),
-  );
-  p();
-  p("Pulgares de testers por superficie y plataforma:");
-  p();
-  p(
-    tabla(
-      ["superficie", "plataforma", "arriba", "abajo", "total"],
-      [...porClave(votosFuera, (r) => `${r.surface ?? "story"}\t${r.platform ?? "?"}`)].map(
-        ([k, rows]) => {
-          const [surface, platform] = k.split("\t");
-          return [
-            surface,
-            platform,
-            `${rows.filter((r) => r.liked).length}`,
-            `${rows.filter((r) => !r.liked).length}`,
-            `${rows.length}`,
-          ];
-        },
-      ),
-    ),
-  );
-  p();
-  p("Uno por uno, los de testers:");
-  p();
-  p(
-    tabla(
-      ["fecha", "voto", "superficie", "historia", "plataforma", "quien"],
-      votosFuera.map((r) => [
-        fecha(r.createdAt),
-        r.liked ? "arriba" : "abajo",
-        r.surface ?? "story",
-        r.storySlug,
-        oNada(r.platform),
-        oNada(r.email),
-      ]),
-    ),
-  );
-  p();
+    ].join(", ");
+
+  const totalVistas = (surface: string) =>
+    frias.filter((o) => o.surface === surface).length;
+  const totalVotos = (surface: string) =>
+    votosFuera.filter((v) => (v.surface ?? "story") === surface).length;
 
   const comentariosFuera = votosFuera.filter((r) => r.comment && r.comment.trim());
-  const comentariosCasa = votosCasa.filter((r) => r.comment && r.comment.trim());
-  p("## 2. Comentarios junto al pulgar");
-  p();
-  p(
-    `De testers: **${comentariosFuera.length}** sobre ${votosFuera.length} ` +
-      `${votosFuera.length === 1 ? "pulgar" : "pulgares"}. ` +
-      `Del equipo (excluidos): ${comentariosCasa.length}.`,
-  );
-  p();
-  p(
-    tabla(
-      ["fecha", "voto", "superficie", "historia", "quien", "comentario"],
-      comentariosFuera.map((r) => [
-        fecha(r.createdAt),
-        r.liked ? "arriba" : "abajo",
-        r.surface ?? "story",
-        r.storySlug,
-        oNada(r.email),
-        (r.comment ?? "").replace(/\s+/g, " ").trim(),
-      ]),
-    ),
-  );
-  p();
 
-  p("## 3. Impresiones de la fila de valorar (`rating_prompt_shown`)");
+  p(`# Los testers y la fila de valorar  (${fecha(new Date())} UTC)`);
   p();
   p(
-    tabla(
-      ["", "impresiones", "personas"],
-      (
-        [
-          ["**testers**", impFuera],
-          ["equipo (excluido)", impCasa],
-          ["total en la tabla", impresionesRaw],
-        ] as [string, typeof impresionesRaw][]
-      ).map(([etiqueta, rows]) => [
-        etiqueta,
-        `${rows.length}`,
-        `${new Set(rows.map((r) => r.userId)).size}`,
-      ]),
-    ),
+    "`vistas -> votos`: cuantas veces se le pinto la pregunta y cuantas la contesto. " +
+      "Una vista es `(persona, cosa, superficie)`, no una impresion suelta: " +
+      "cinco veces el mismo panel es una sola pregunta.",
   );
   p();
-  p("Impresiones de testers por superficie y plataforma:");
-  p();
   p(
     tabla(
-      ["superficie", "plataforma", "impresiones", "personas"],
-      [...porClave(impFuera, (r) => `${superficieDe(meta(r))}\t${plataformaDe(meta(r))}`)].map(
-        ([k, rows]) => {
-          const [surface, platform] = k.split("\t");
-          return [surface, platform, `${rows.length}`, `${new Set(rows.map((r) => r.userId)).size}`];
-        },
-      ),
-    ),
-  );
-  p();
-  p("**Conversion impresion a voto**, por superficie. Una oportunidad es");
-  p("`(persona, cosa, superficie)`, la misma clave unica que tiene el voto:");
-  p();
-  const porSuperficie = new Map<string, { total: number; votadas: number }>();
-  for (const o of frias) {
-    const acc = porSuperficie.get(o.surface) ?? { total: 0, votadas: 0 };
-    acc.total += 1;
-    if (o.votada) acc.votadas += 1;
-    porSuperficie.set(o.surface, acc);
-  }
-  p(
-    tabla(
-      ["superficie", "oportunidades", "votadas", "conversion"],
+      ["tester", "sistema", "historia", "practica", "arriba", "abajo", "comentarios"],
       [
-        ...[...porSuperficie].map(([s, a]) => [
-          s,
-          `${a.total}`,
-          `${a.votadas}`,
-          pct(a.votadas, a.total),
+        ...personas.map((u) => [
+          quien(u),
+          sistemasDe(u),
+          celdaSuperficie(u, "story"),
+          celdaSuperficie(u, "practice"),
+          `${votosFuera.filter((v) => v.userId === u && v.liked).length}`,
+          `${votosFuera.filter((v) => v.userId === u && !v.liked).length}`,
+          `${comentariosFuera.filter((v) => v.userId === u).length}`,
         ]),
-        ["**todas**", `${frias.length}`, `${convertidas}`, pct(convertidas, frias.length)],
+        [
+          `**${personas.length} testers**`,
+          "",
+          `**${totalVistas("story")} -> ${totalVotos("story")}**`,
+          `**${totalVistas("practice")} -> ${totalVotos("practice")}**`,
+          `**${votosFuera.filter((v) => v.liked).length}**`,
+          `**${votosFuera.filter((v) => !v.liked).length}**`,
+          `**${comentariosFuera.length}**`,
+        ],
       ],
     ),
   );
   p();
-  p(`- Ven la pregunta y pasan: **${frias.length - convertidas}** de ${frias.length}.`);
-  p(`- Impresiones repetidas de la misma oportunidad: ${impFuera.length - oportunidades.size}.`);
   p(
-    `- Impresiones sobre algo ya votado, fuera del denominador: ${oportunidades.size - frias.length}.`,
+    `**${frias.length - convertidas} de ${frias.length}** preguntas se quedan sin contestar ` +
+      `(conversion ${pct(convertidas, frias.length)}).`,
   );
-  p(`- Votos de testers sin impresion registrada: ${votosSinImpresion}.`);
+  p();
+
+  if (comentariosFuera.length === 0) {
+    p("Ningun tester ha escrito un comentario todavia.");
+  } else {
+    p("Lo que han escrito:");
+    p();
+    p(
+      tabla(
+        ["fecha", "quien", "voto", "historia", "comentario"],
+        comentariosFuera.map((r) => [
+          fecha(r.createdAt),
+          quien(r.userId),
+          r.liked ? "arriba" : "abajo",
+          r.storySlug,
+          (r.comment ?? "").replace(/\s+/g, " ").trim(),
+        ]),
+      ),
+    );
+  }
+  p();
+  const sinCorreo = personas.filter((u) => !correoDe.has(u));
+  if (sinCorreo.length > 0) {
+    p(
+      `**[?]**: ${sinCorreo.length} cuenta(s) sin correo en nuestras tablas, solo en Clerk. ` +
+        "`splitInternal` las da por testers por defecto, que es como el 2026-09-05 " +
+        "review@digitalpolyglot.com se conto como tester. Sin confirmar.",
+    );
+    p();
+  }
+  p(
+    "Excluido por `splitInternal` (`StudioMember` y `@digitalpolyglot.com`): " +
+      `${votosCasa.length} pulgares y ${impCasa.length} impresiones, de ` +
+      `${new Set(impCasa.map((r) => r.userId)).size} cuentas de casa. ` +
+      `Votos de testers sin impresion registrada: ${votosSinImpresion}.`,
+  );
 
   console.log(out.join("\n"));
   await prisma.$disconnect();
