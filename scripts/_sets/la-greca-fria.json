@@ -67,19 +67,20 @@
     "storySource": "journey",
     "sentence": "“Me escuchó a la mitad”, dice Esteban.",
     "targetWord": "mitad",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/772849f09f9a3402.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "servir",
+  "word": "servía",
   "sentence": "“Lo hice donde me _____”, contesta Rocío.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "servir",
+   "answer": "servía",
    "options": [
-    "servir",
+    "servía",
     "dolía",
     "sobraba",
     "tapaba"
@@ -94,9 +95,10 @@
    "audioClip": {
     "storySlug": "la-greca-fria",
     "storySource": "journey",
-    "sentence": "“Lo hice donde me servir”, contesta Rocío.",
-    "targetWord": "servir",
-    "language": "spanish"
+    "sentence": "“Lo hice donde me servía”, contesta Rocío.",
+    "targetWord": "servía",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e5b1095e7c7160e1.mp3"
    }
   }
  },
@@ -118,19 +120,20 @@
     "storySource": "journey",
     "sentence": "Esteban le apunta que hoy tendría treinta pesos más.",
     "targetWord": "señalar",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aea7ebb22e5d10e2.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "aguantar",
+  "word": "aguanta",
   "sentence": "“Subir y avisar el mismo día no lo _____ nadie.”",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "aguantar",
+   "answer": "aguanta",
    "options": [
-    "aguantar",
+    "aguanta",
     "paga",
     "mide",
     "poda"
@@ -145,9 +148,10 @@
    "audioClip": {
     "storySlug": "la-greca-fria",
     "storySource": "journey",
-    "sentence": "“Subir y avisar el mismo día no lo aguantar nadie.”",
-    "targetWord": "aguantar",
-    "language": "spanish"
+    "sentence": "“Subir y avisar el mismo día no lo aguanta nadie.”",
+    "targetWord": "aguanta",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fedb7b4a361a7d64.mp3"
    }
   }
  },
@@ -169,7 +173,8 @@
     "storySource": "journey",
     "sentence": "Ella no discute y se pone a mezclar el café.",
     "targetWord": "discutir",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36fddc0593b6d3b7.mp3"
    }
   }
  },
@@ -198,19 +203,20 @@
     "storySource": "journey",
     "sentence": "mezclar la pasilla con el café bueno para que dure.",
     "targetWord": "mezclar",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1eb6a09adf0b076e.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "durar",
+  "word": "dure",
   "sentence": "Mezcla la pasilla para que el café _____ más.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "durar",
+   "answer": "dure",
    "options": [
-    "durar",
+    "dure",
     "cueste",
     "huela",
     "suba"
@@ -225,9 +231,10 @@
    "audioClip": {
     "storySlug": "la-greca-fria",
     "storySource": "journey",
-    "sentence": "Mezcla la pasilla para que el café durar más.",
-    "targetWord": "durar",
-    "language": "spanish"
+    "sentence": "Mezcla la pasilla para que el café dure más.",
+    "targetWord": "dure",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/765aff9009eae771.mp3"
    }
   }
  },
@@ -249,7 +256,8 @@
     "storySource": "journey",
     "sentence": "Ella lo disimula abriendo la puerta del café.",
     "targetWord": "disimular",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/afa3256f61620567.mp3"
    }
   }
  },
@@ -271,7 +279,8 @@
     "storySource": "journey",
     "sentence": "Un cliente de años pide la cuenta y no vuelve.",
     "targetWord": "cuenta",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/63b01a4e407dfab9.mp3"
    }
   }
  },

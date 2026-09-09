@@ -67,7 +67,8 @@
     "storySource": "journey",
     "sentence": "La taquilla tiene la cortina abajo desde hace dos horas.",
     "targetWord": "cortina",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0804732befb20a00.mp3"
    }
   }
  },
@@ -89,19 +90,20 @@
     "storySource": "journey",
     "sentence": "Tiene una tabla cruzada sobre la ventanilla.",
     "targetWord": "cruzado",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1d2c74d678ecebec.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "cerrar",
+  "word": "cerré",
   "sentence": "“Pase mañana, ya _____ la caja”, le avisa Nico.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "cerrar",
+   "answer": "cerré",
    "options": [
-    "cerrar",
+    "cerré",
     "abrí",
     "conté",
     "pagué"
@@ -116,9 +118,10 @@
    "audioClip": {
     "storySlug": "pase-manana",
     "storySource": "journey",
-    "sentence": "“Pase mañana, ya cerrar la caja”, le avisa Nico.",
-    "targetWord": "cerrar",
-    "language": "spanish"
+    "sentence": "“Pase mañana, ya cerré la caja”, le avisa Nico.",
+    "targetWord": "cerré",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3b23338de26fc609.mp3"
    }
   }
  },
@@ -140,7 +143,8 @@
     "storySource": "journey",
     "sentence": "Nico dice que ya cerró la caja de la taquilla.",
     "targetWord": "caja",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6189ee2419ec65fd.mp3"
    }
   }
  },
@@ -162,7 +166,8 @@
     "storySource": "journey",
     "sentence": "No hay quien responda por ese premio al otro día.",
     "targetWord": "premio",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7da78d8610bf6d39.mp3"
    }
   }
  },
@@ -184,7 +189,8 @@
     "storySource": "journey",
     "sentence": "La ganancia existió dos horas y nadie la nombró más.",
     "targetWord": "ganancia",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c9c7ea03297a2f6e.mp3"
    }
   }
  },
@@ -206,24 +212,25 @@
     "storySource": "journey",
     "sentence": "Ya lo había contado a gritos por todo el puesto.",
     "targetWord": "a gritos",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1a54d886d93e6d91.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "responder por",
-  "sentence": "Al otro día no hay quien _____ ese premio.",
+  "word": "responda",
+  "sentence": "Al otro día no hay quien _____ por ese premio.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "responder por",
+   "answer": "responda",
    "options": [
-    "responder por",
+    "responda",
     "cierre",
     "doble",
     "cuente"
    ],
-   "translation": "The next day there is nobody to _____ that prize.",
+   "translation": "The next day there is nobody who _____ for that prize.",
    "optionTranslations": [
     "answer for",
     "close",
@@ -233,21 +240,22 @@
    "audioClip": {
     "storySlug": "pase-manana",
     "storySource": "journey",
-    "sentence": "Al otro día no hay quien responder por ese premio.",
-    "targetWord": "responder por",
-    "language": "spanish"
+    "sentence": "Al otro día no hay quien responda por ese premio.",
+    "targetWord": "responda",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8be098062994e9e3.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "enseñar",
+  "word": "enseña",
   "sentence": "Lo contó a gritos, como quien _____ un billete nuevo.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "enseñar",
+   "answer": "enseña",
    "options": [
-    "enseñar",
+    "enseña",
     "esconde",
     "dobla",
     "cobra"
@@ -262,9 +270,10 @@
    "audioClip": {
     "storySlug": "pase-manana",
     "storySource": "journey",
-    "sentence": "Lo contó a gritos, como quien enseñar un billete nuevo.",
-    "targetWord": "enseñar",
-    "language": "spanish"
+    "sentence": "Lo contó a gritos, como quien enseña un billete nuevo.",
+    "targetWord": "enseña",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d4912b2422327c2f.mp3"
    }
   }
  },

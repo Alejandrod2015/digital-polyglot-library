@@ -67,7 +67,8 @@
     "storySource": "journey",
     "sentence": "Llega tarde con el pretexto que había armado.",
     "targetWord": "pretexto",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3fa3438482dd5440.mp3"
    }
   }
  },
@@ -96,7 +97,8 @@
     "storySource": "journey",
     "sentence": "Tuvo toda la noche para armar la excusa.",
     "targetWord": "armar",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e3cb5d64a4f65501.mp3"
    }
   }
  },
@@ -118,7 +120,8 @@
     "storySource": "journey",
     "sentence": "Dice que no arrancaba el motor de la camioneta.",
     "targetWord": "motor",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b07e875879b6655.mp3"
    }
   }
  },
@@ -140,7 +143,8 @@
     "storySource": "journey",
     "sentence": "Cuenta que esperó al mecánico toda la mañana.",
     "targetWord": "mecánico",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cab4da28f5f75347.mp3"
    }
   }
  },
@@ -169,7 +173,8 @@
     "storySource": "journey",
     "sentence": "La camioneta no quiso arrancar esa mañana.",
     "targetWord": "arrancar",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bab64062349d3e8e.mp3"
    }
   }
  },
@@ -191,7 +196,8 @@
     "storySource": "journey",
     "sentence": "Se excusa mirando el suelo, no a Damián.",
     "targetWord": "excusarse",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7ffa8ecca056825d.mp3"
    }
   }
  },
@@ -213,19 +219,20 @@
     "storySource": "journey",
     "sentence": "Damián le reclama la demora sin aviso.",
     "targetWord": "demora",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2c5141dd8b01c44b.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "reclamar",
+  "word": "reclamo",
   "sentence": "No le _____ las hileras, le reclama el aviso.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "reclamar",
+   "answer": "reclamo",
    "options": [
-    "reclamar",
+    "reclamo",
     "agrega",
     "guarda",
     "mide"
@@ -240,9 +247,10 @@
    "audioClip": {
     "storySlug": "el-pretexto-armado",
     "storySource": "journey",
-    "sentence": "No le reclamar las hileras, le reclama el aviso.",
-    "targetWord": "reclamar",
-    "language": "spanish"
+    "sentence": "No le reclamo las hileras, le reclama el aviso.",
+    "targetWord": "reclamo",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b3b2a21620138ea6.mp3"
    }
   }
  },
@@ -264,19 +272,20 @@
     "storySource": "journey",
     "sentence": "Contesta cortante, sin levantar la vista del cuadernillo.",
     "targetWord": "cortante",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/87186367be85f45d.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "inventar",
+  "word": "inventadas",
   "sentence": "Se le ocurren tres frases y las tres son _____.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "inventar",
+   "answer": "inventadas",
    "options": [
-    "inventar",
+    "inventadas",
     "ciertas",
     "cortas",
     "viejas"
@@ -291,8 +300,8 @@
    "audioClip": {
     "storySlug": "el-pretexto-armado",
     "storySource": "journey",
-    "sentence": "Se le ocurren tres frases y las tres son inventar.",
-    "targetWord": "inventar",
+    "sentence": "Se le ocurren tres frases y las tres son inventadas.",
+    "targetWord": "inventadas",
     "language": "spanish"
    }
   },
@@ -300,13 +309,13 @@
  },
  {
   "type": "fill_blank",
-  "word": "exigir",
+  "word": "exijo",
   "sentence": "“Te _____ una cosa: avisá antes”, agrega él.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "exigir",
+   "answer": "exijo",
    "options": [
-    "exigir",
+    "exijo",
     "ofrezco",
     "perdono",
     "cuento"
@@ -321,8 +330,8 @@
    "audioClip": {
     "storySlug": "el-pretexto-armado",
     "storySource": "journey",
-    "sentence": "“Te exigir una cosa: avisá antes”, agrega él.",
-    "targetWord": "exigir",
+    "sentence": "“Te exijo una cosa: avisá antes”, agrega él.",
+    "targetWord": "exijo",
     "language": "spanish"
    }
   },

@@ -67,7 +67,8 @@
     "storySource": "journey",
     "sentence": "Contrató dos changarines para terminar el cuartel.",
     "targetWord": "changarín",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/04c304fd4dd643b2.mp3"
    }
   }
  },
@@ -89,7 +90,8 @@
     "storySource": "journey",
     "sentence": "La helada entró el domingo y no encontró nada abierto.",
     "targetWord": "helada",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4aabfc243a272cc6.mp3"
    }
   }
  },
@@ -118,7 +120,8 @@
     "storySource": "journey",
     "sentence": "Valentina llega al amanecer con el hombro vendado.",
     "targetWord": "amanecer",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/176aa13f59acbdaf.mp3"
    }
   }
  },
@@ -140,19 +143,20 @@
     "storySource": "journey",
     "sentence": "Llega con el hombro vendado desde el lunes.",
     "targetWord": "vendado",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2c2d044dc45ec792.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "amontonar",
+  "word": "amontonados",
   "sentence": "Los sarmientos quedan _____ en el surco.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "amontonar",
+   "answer": "amontonados",
    "options": [
-    "amontonar",
+    "amontonados",
     "podados",
     "medidos",
     "vendidos"
@@ -167,9 +171,10 @@
    "audioClip": {
     "storySlug": "los-changarines",
     "storySource": "journey",
-    "sentence": "Los sarmientos quedan amontonar en el surco.",
-    "targetWord": "amontonar",
-    "language": "spanish"
+    "sentence": "Los sarmientos quedan amontonados en el surco.",
+    "targetWord": "amontonados",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d41342bce9315aa9.mp3"
    }
   }
  },
@@ -198,7 +203,8 @@
     "storySource": "journey",
     "sentence": "Damián decidió contratar a dos hombres por el día.",
     "targetWord": "contratar",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5dca7d7fcd15b138.mp3"
    }
   }
  },
@@ -220,7 +226,8 @@
     "storySource": "journey",
     "sentence": "Que la reemplazaran salió barato.",
     "targetWord": "reemplazar",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d6925b9e71e49221.mp3"
    }
   }
  },
@@ -249,7 +256,8 @@
     "storySource": "journey",
     "sentence": "Ofrece saldar la deuda con dos jornadas suyas.",
     "targetWord": "saldar",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2760bbdb521e0318.mp3"
    }
   }
  },
@@ -271,7 +279,8 @@
     "storySource": "journey",
     "sentence": "Confiesa que estaba lastimada desde el lunes.",
     "targetWord": "confesar",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/27d60a6f9a6596c3.mp3"
    }
   }
  },
@@ -323,13 +332,13 @@
  },
  {
   "type": "fill_blank",
-  "word": "justificar",
+  "word": "justifica",
   "sentence": "Esta vez Valentina no _____ nada.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "justificar",
+   "answer": "justifica",
    "options": [
-    "justificar",
+    "justifica",
     "mide",
     "poda",
     "cobra"
@@ -344,8 +353,8 @@
    "audioClip": {
     "storySlug": "los-changarines",
     "storySource": "journey",
-    "sentence": "Esta vez Valentina no justificar nada.",
-    "targetWord": "justificar",
+    "sentence": "Esta vez Valentina no justifica nada.",
+    "targetWord": "justifica",
     "language": "spanish"
    }
   },

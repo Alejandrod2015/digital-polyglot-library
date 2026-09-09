@@ -51,13 +51,13 @@
  },
  {
   "type": "fill_blank",
-  "word": "morder",
+  "word": "muerde",
   "sentence": "Silvana _____ el pan dulce y se queda quieta.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "morder",
+   "answer": "muerde",
    "options": [
-    "morder",
+    "muerde",
     "amasa",
     "cobra",
     "guarda"
@@ -72,9 +72,10 @@
    "audioClip": {
     "storySlug": "el-mismo-pan-dulce",
     "storySource": "journey",
-    "sentence": "Silvana morder el pan dulce y se queda quieta.",
-    "targetWord": "morder",
-    "language": "spanish"
+    "sentence": "Silvana muerde el pan dulce y se queda quieta.",
+    "targetWord": "muerde",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3f949b5fafb0a61a.mp3"
    }
   }
  },
@@ -96,7 +97,8 @@
     "storySource": "journey",
     "sentence": "Silvana reconoce su propia receta antes de tragar.",
     "targetWord": "reconocer",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/56cc6284283810bb.mp3"
    }
   }
  },
@@ -125,7 +127,8 @@
     "storySource": "journey",
     "sentence": "Reconoce su propia receta antes de tragar.",
     "targetWord": "tragar",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e9a31406c10a83b.mp3"
    }
   }
  },
@@ -147,7 +150,8 @@
     "storySource": "journey",
     "sentence": "Habla de cualquier cosa que no sea la receta.",
     "targetWord": "receta",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f24d2de9dac3c133.mp3"
    }
   }
  },
@@ -169,7 +173,8 @@
     "storySource": "journey",
     "sentence": "Sube la voz sin darse cuenta delante de todos.",
     "targetWord": "darse cuenta",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ebbd66f2ca16db1d.mp3"
    }
   }
  },
@@ -191,7 +196,8 @@
     "storySource": "journey",
     "sentence": "En esa mesa subir la voz es admitirlo todo.",
     "targetWord": "admitir",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c086751d084b573.mp3"
    }
   }
  },
@@ -213,7 +219,8 @@
     "storySource": "journey",
     "sentence": "Nadie levanta la mesa temprano ese día.",
     "targetWord": "levantar la mesa",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1e3152858d2389ce.mp3"
    }
   }
  },
@@ -235,7 +242,8 @@
     "storySource": "journey",
     "sentence": "Adrián no vuelve a mirarla de frente en todo el almuerzo.",
     "targetWord": "de frente",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bbd24d5c25d7aaa9.mp3"
    }
   }
  },
@@ -264,7 +272,8 @@
     "storySource": "journey",
     "sentence": "Habla del gasto y de la chapa que se calienta.",
     "targetWord": "gasto",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4cf7edf33b980e5e.mp3"
    }
   }
  },

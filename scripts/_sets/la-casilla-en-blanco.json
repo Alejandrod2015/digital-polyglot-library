@@ -67,19 +67,20 @@
     "storySource": "journey",
     "sentence": "Ximena se agacha a abrir el parte en el barro.",
     "targetWord": "parte",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e7f2450559341ab2.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "agacharse",
+  "word": "agacha",
   "sentence": "Ximena se _____ a abrir el parte junto al cerco.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "agacharse",
+   "answer": "agacha",
    "options": [
-    "agacharse",
+    "agacha",
     "levanta",
     "aleja",
     "apura"
@@ -94,9 +95,10 @@
    "audioClip": {
     "storySlug": "la-casilla-en-blanco",
     "storySource": "journey",
-    "sentence": "Ximena se agacharse a abrir el parte junto al cerco.",
-    "targetWord": "agacharse",
-    "language": "spanish"
+    "sentence": "Ximena se agacha a abrir el parte junto al cerco.",
+    "targetWord": "agacha",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5cdc6fb0a7ba4f60.mp3"
    }
   }
  },
@@ -118,7 +120,8 @@
     "storySource": "journey",
     "sentence": "Ella conoce la marca que deja ese perro.",
     "targetWord": "marca",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb0a13b97c8b79cd.mp3"
    }
   }
  },
@@ -140,7 +143,8 @@
     "storySource": "journey",
     "sentence": "Deja siempre la misma pisada torcida en el barro.",
     "targetWord": "pisada",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aef3a01e40697f9a.mp3"
    }
   }
  },
@@ -162,7 +166,8 @@
     "storySource": "journey",
     "sentence": "Deja la misma pisada torcida todas las mañanas.",
     "targetWord": "torcido",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/efff86f2c1268188.mp3"
    }
   }
  },
@@ -191,7 +196,8 @@
     "storySource": "journey",
     "sentence": "El parte se va con la casilla del dueño en blanco.",
     "targetWord": "casilla",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a26329e3d39f5473.mp3"
    }
   }
  },
@@ -213,7 +219,8 @@
     "storySource": "journey",
     "sentence": "La casilla del dueño se queda en blanco.",
     "targetWord": "en blanco",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa36b14c4681ac79.mp3"
    }
   }
  },
@@ -242,7 +249,8 @@
     "storySource": "journey",
     "sentence": "Guarda el cuaderno antes de terminar la línea.",
     "targetWord": "línea",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9d42356d51caa91.mp3"
    }
   }
  },
@@ -264,7 +272,8 @@
     "storySource": "journey",
     "sentence": "El vecino espera en el barro, con el viento en contra.",
     "targetWord": "barro",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1e9482e29ee1fe57.mp3"
    }
   }
  },

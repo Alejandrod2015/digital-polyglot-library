@@ -67,19 +67,20 @@
     "storySource": "journey",
     "sentence": "Hugo pierde callado, en la última pelea de la tarde.",
     "targetWord": "callado",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bb6d513c3dde158f.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "enterarse",
+  "word": "entera",
   "sentence": "Nadie se _____, y él cuenta con eso.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "enterarse",
+   "answer": "entera",
    "options": [
-    "enterarse",
+    "entera",
     "esconde",
     "aclara",
     "enseña"
@@ -94,9 +95,10 @@
    "audioClip": {
     "storySlug": "el-cuaderno-abierto",
     "storySource": "journey",
-    "sentence": "Nadie se enterarse, y él cuenta con eso.",
-    "targetWord": "enterarse",
-    "language": "spanish"
+    "sentence": "Nadie se entera, y él cuenta con eso.",
+    "targetWord": "entera",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/035383d4ffce0138.mp3"
    }
   }
  },
@@ -118,7 +120,8 @@
     "storySource": "journey",
     "sentence": "Le da gusto que ella no lo diga fuerte.",
     "targetWord": "gusto",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bfd9400b44f32c4b.mp3"
    }
   }
  },
@@ -140,19 +143,20 @@
     "storySource": "journey",
     "sentence": "Le da gusto que ella no lo diga fuerte.",
     "targetWord": "fuerte",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bfd9400b44f32c4b.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "pagar",
+  "word": "pago",
   "sentence": "“Se lo _____ en un mes, aunque venda el puesto.”",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "pagar",
+   "answer": "pago",
    "options": [
-    "pagar",
+    "pago",
     "cobro",
     "aclaro",
     "enseño"
@@ -167,9 +171,10 @@
    "audioClip": {
     "storySlug": "el-cuaderno-abierto",
     "storySource": "journey",
-    "sentence": "“Se lo pagar en un mes, aunque venda el puesto.”",
-    "targetWord": "pagar",
-    "language": "spanish"
+    "sentence": "“Se lo pago en un mes, aunque venda el puesto.”",
+    "targetWord": "pago",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6f9274a211b0f8c7.mp3"
    }
   }
  },
@@ -191,7 +196,8 @@
     "storySource": "journey",
     "sentence": "Hugo pierde callado en la última pelea del día.",
     "targetWord": "perder",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85ee15e59f682a5e.mp3"
    }
   }
  },
@@ -213,7 +219,8 @@
     "storySource": "journey",
     "sentence": "“El corredor puso mi dinero”, aclara Brenda.",
     "targetWord": "aclarar",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae2992e441493e77.mp3"
    }
   }
  },
@@ -235,19 +242,20 @@
     "storySource": "journey",
     "sentence": "Se queda con el cuaderno abierto delante.",
     "targetWord": "delante",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b43eea7c2890d0ee.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "mirar",
+  "word": "mirando",
   "sentence": "Se queda _____ el jardín donde bajan las luces.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "mirar",
+   "answer": "mirando",
    "options": [
-    "mirar",
+    "mirando",
     "cerrando",
     "cobrando",
     "doblando"
@@ -262,21 +270,22 @@
    "audioClip": {
     "storySlug": "el-cuaderno-abierto",
     "storySource": "journey",
-    "sentence": "Se queda mirar el jardín donde bajan las luces.",
-    "targetWord": "mirar",
-    "language": "spanish"
+    "sentence": "Se queda mirando el jardín donde bajan las luces.",
+    "targetWord": "mirando",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1a61521e468d4ce3.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "bajar",
+  "word": "bajando",
   "sentence": "Ya están _____ las luces de colores del jardín.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "bajar",
+   "answer": "bajando",
    "options": [
-    "bajar",
+    "bajando",
     "contando",
     "pagando",
     "abriendo"
@@ -291,8 +300,8 @@
    "audioClip": {
     "storySlug": "el-cuaderno-abierto",
     "storySource": "journey",
-    "sentence": "Ya están bajar las luces de colores del jardín.",
-    "targetWord": "bajar",
+    "sentence": "Ya están bajando las luces de colores del jardín.",
+    "targetWord": "bajando",
     "language": "spanish"
    }
   },

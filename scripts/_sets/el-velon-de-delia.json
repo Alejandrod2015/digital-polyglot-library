@@ -51,13 +51,13 @@
  },
  {
   "type": "fill_blank",
-  "word": "anotar",
+  "word": "anotó",
   "sentence": "El mayordomo la _____ y le dio un velón.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "anotar",
+   "answer": "anotó",
    "options": [
-    "anotar",
+    "anotó",
     "cargó",
     "cosió",
     "midió"
@@ -72,9 +72,10 @@
    "audioClip": {
     "storySlug": "el-velon-de-delia",
     "storySource": "journey",
-    "sentence": "El mayordomo la anotar y le dio un velón.",
-    "targetWord": "anotar",
-    "language": "spanish"
+    "sentence": "El mayordomo la anotó y le dio un velón.",
+    "targetWord": "anotó",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f70a98c74116786f.mp3"
    }
   }
  },
@@ -96,7 +97,8 @@
     "storySource": "journey",
     "sentence": "Siente alivio y vergüenza juntos, y no dice nada.",
     "targetWord": "alivio",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/80c489575d134bca.mp3"
    }
   }
  },
@@ -118,19 +120,20 @@
     "storySource": "journey",
     "sentence": "Ella no le pasa la cuenta por lo del jueves.",
     "targetWord": "pasar la cuenta",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/11969c2902125e44.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "deber",
+  "word": "debo",
   "sentence": "“Le _____ el jueves, y eso no lo paga una tabla.”",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "deber",
+   "answer": "debo",
    "options": [
-    "deber",
+    "debo",
     "cobro",
     "cargo",
     "borro"
@@ -145,9 +148,10 @@
    "audioClip": {
     "storySlug": "el-velon-de-delia",
     "storySource": "journey",
-    "sentence": "“Le deber el jueves, y eso no lo paga una tabla.”",
-    "targetWord": "deber",
-    "language": "spanish"
+    "sentence": "“Le debo el jueves, y eso no lo paga una tabla.”",
+    "targetWord": "debo",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/54356978d685e00c.mp3"
    }
   }
  },
@@ -169,7 +173,8 @@
     "storySource": "journey",
     "sentence": "Delia está debajo, con el hombro en la madera.",
     "targetWord": "debajo",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/46031dcd112c8ef0.mp3"
    }
   }
  },
@@ -191,19 +196,20 @@
     "storySource": "journey",
     "sentence": "Deja la madera cortada a la medida del bastidor.",
     "targetWord": "medida",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6c694eaeab5e62b5.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "apoyar",
+  "word": "apoyada",
   "sentence": "Deja la madera _____ contra el bastidor.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "apoyar",
+   "answer": "apoyada",
    "options": [
-    "apoyar",
+    "apoyada",
     "cortada",
     "cosida",
     "cargada"
@@ -218,21 +224,22 @@
    "audioClip": {
     "storySlug": "el-velon-de-delia",
     "storySource": "journey",
-    "sentence": "Deja la madera apoyar contra el bastidor.",
-    "targetWord": "apoyar",
-    "language": "spanish"
+    "sentence": "Deja la madera apoyada contra el bastidor.",
+    "targetWord": "apoyada",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d7a9c636ba6fca06.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "cortar",
+  "word": "cortada",
   "sentence": "Le lleva la madera ya _____ a la medida.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "cortar",
+   "answer": "cortada",
    "options": [
-    "cortar",
+    "cortada",
     "bordada",
     "apoyada",
     "anotada"
@@ -247,8 +254,8 @@
    "audioClip": {
     "storySlug": "el-velon-de-delia",
     "storySource": "journey",
-    "sentence": "Le lleva la madera ya cortar a la medida.",
-    "targetWord": "cortar",
+    "sentence": "Le lleva la madera ya cortada a la medida.",
+    "targetWord": "cortada",
     "language": "spanish"
    }
   }
@@ -271,7 +278,8 @@
     "storySource": "journey",
     "sentence": "“El peso no se reparte solo”, contesta Delia.",
     "targetWord": "peso",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f5c2bcbf9ff40335.mp3"
    }
   }
  },

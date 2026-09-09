@@ -67,7 +67,8 @@
     "storySource": "journey",
     "sentence": "Wilson le abre y le carga la maleta hasta adentro.",
     "targetWord": "maleta",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/347cd4f120225021.mp3"
    }
   }
  },
@@ -89,7 +90,8 @@
     "storySource": "journey",
     "sentence": "Su cuarto de antes tiene estantes hasta el techo.",
     "targetWord": "estante",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b65714d5a9926a2d.mp3"
    }
   }
  },
@@ -111,7 +113,8 @@
     "storySource": "journey",
     "sentence": "“¿Y mi pieza?”, pregunta ella al entrar.",
     "targetWord": "pieza",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4017989eaebdc655.mp3"
    }
   }
  },
@@ -133,7 +136,8 @@
     "storySource": "journey",
     "sentence": "“La pieza la volvimos despensa”, aclara Wilson.",
     "targetWord": "despensa",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a6c0dd06ac36319a.mp3"
    }
   }
  },
@@ -162,7 +166,8 @@
     "storySource": "journey",
     "sentence": "“La casa necesitaba dónde guardar”, explica él.",
     "targetWord": "guardar",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f942bd572f3bb57a.mp3"
    }
   }
  },
@@ -184,19 +189,20 @@
     "storySource": "journey",
     "sentence": "Esa noche Teresa duerme en el sofá de la sala.",
     "targetWord": "sofá",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d4ad015ab89f1af.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "abrir",
+  "word": "abre",
   "sentence": "Ella _____ la alacena y se queda con la mano ahí.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "abrir",
+   "answer": "abre",
    "options": [
-    "abrir",
+    "abre",
     "cierra",
     "carga",
     "guarda"
@@ -211,9 +217,10 @@
    "audioClip": {
     "storySlug": "su-pieza-con-estantes",
     "storySource": "journey",
-    "sentence": "Ella abrir la alacena y se queda con la mano ahí.",
-    "targetWord": "abrir",
-    "language": "spanish"
+    "sentence": "Ella abre la alacena y se queda con la mano ahí.",
+    "targetWord": "abre",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1f7890dcfa4d21bf.mp3"
    }
   }
  },
@@ -235,7 +242,8 @@
     "storySource": "journey",
     "sentence": "Ahora la cocina da al patio y no a la calle.",
     "targetWord": "dar a",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ea156dbdc4d7d28d.mp3"
    }
   }
  },
@@ -257,7 +265,8 @@
     "storySource": "journey",
     "sentence": "Pide permiso en su propia cocina, y él no lo entiende.",
     "targetWord": "propio",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6dbe1eac99f4007d.mp3"
    }
   }
  },

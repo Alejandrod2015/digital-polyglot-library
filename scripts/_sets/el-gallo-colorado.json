@@ -67,19 +67,20 @@
     "storySource": "journey",
     "sentence": "El permiso del puesto se paga el domingo.",
     "targetWord": "permiso",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1718e1ecd2ddd6cc.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "faltar",
+  "word": "faltan",
   "sentence": "Al permiso le _____ doscientos y la feria se acaba.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "faltar",
+   "answer": "faltan",
    "options": [
-    "faltar",
+    "faltan",
     "sobran",
     "pagan",
     "cobran"
@@ -94,9 +95,10 @@
    "audioClip": {
     "storySlug": "el-gallo-colorado",
     "storySource": "journey",
-    "sentence": "Al permiso le faltar doscientos y la feria se acaba.",
-    "targetWord": "faltar",
-    "language": "spanish"
+    "sentence": "Al permiso le faltan doscientos y la feria se acaba.",
+    "targetWord": "faltan",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5287edc4b4d35ba6.mp3"
    }
   }
  },
@@ -118,7 +120,8 @@
     "storySource": "journey",
     "sentence": "“Yo le fío los doscientos y me paga el domingo.”",
     "targetWord": "dar fiado",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/17aa8aebc054328a.mp3"
    }
   }
  },
@@ -140,7 +143,8 @@
     "storySource": "journey",
     "sentence": "“Métase, don Hugo”, le suelta el corredor.",
     "targetWord": "meterse",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cea673cde1f634e3.mp3"
    }
   }
  },
@@ -162,19 +166,20 @@
     "storySource": "journey",
     "sentence": "Toma el boleto y lo dobla en cuatro.",
     "targetWord": "boleto",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a330f20b360a8ca1.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "doblar",
+  "word": "dobla",
   "sentence": "Toma el boleto y lo _____ en cuatro.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "doblar",
+   "answer": "dobla",
    "options": [
-    "doblar",
+    "dobla",
     "rompe",
     "paga",
     "suelta"
@@ -189,21 +194,22 @@
    "audioClip": {
     "storySlug": "el-gallo-colorado",
     "storySource": "journey",
-    "sentence": "Toma el boleto y lo doblar en cuatro.",
-    "targetWord": "doblar",
-    "language": "spanish"
+    "sentence": "Toma el boleto y lo dobla en cuatro.",
+    "targetWord": "dobla",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a5ae09520946368e.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "soltar",
+  "word": "suelta",
   "sentence": "No lo _____ en toda la pelea del gallo colorado.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "soltar",
+   "answer": "suelta",
    "options": [
-    "soltar",
+    "suelta",
     "dobla",
     "cobra",
     "esconde"
@@ -218,9 +224,10 @@
    "audioClip": {
     "storySlug": "el-gallo-colorado",
     "storySource": "journey",
-    "sentence": "No lo soltar en toda la pelea del gallo colorado.",
-    "targetWord": "soltar",
-    "language": "spanish"
+    "sentence": "No lo suelta en toda la pelea del gallo colorado.",
+    "targetWord": "suelta",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/31c421f99d2f4a8e.mp3"
    }
   }
  },
@@ -242,7 +249,8 @@
     "storySource": "journey",
     "sentence": "No suelta el boleto en toda la pelea.",
     "targetWord": "pelea",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/69c2082badb0c5e8.mp3"
    }
   }
  },
@@ -264,7 +272,8 @@
     "storySource": "journey",
     "sentence": "Esa cuenta le da vueltas desde el jueves.",
     "targetWord": "deuda",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b108039759a62d0e.mp3"
    }
   }
  },
@@ -339,13 +348,13 @@
  },
  {
   "type": "fill_blank",
-  "word": "repetir",
+  "word": "repite",
   "sentence": "Le _____ a Brenda cada noche que él no juega.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "repetir",
+   "answer": "repite",
    "options": [
-    "repetir",
+    "repite",
     "fía",
     "dobla",
     "suelta"
@@ -360,8 +369,8 @@
    "audioClip": {
     "storySlug": "el-gallo-colorado",
     "storySource": "journey",
-    "sentence": "Le repetir a Brenda cada noche que él no juega.",
-    "targetWord": "repetir",
+    "sentence": "Le repite a Brenda cada noche que él no juega.",
+    "targetWord": "repite",
     "language": "spanish"
    }
   },

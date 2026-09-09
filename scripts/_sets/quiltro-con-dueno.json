@@ -51,13 +51,13 @@
  },
  {
   "type": "fill_blank",
-  "word": "negar",
+  "word": "niega",
   "sentence": "Óscar cuida esos cercos y no _____ nada.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "negar",
+   "answer": "niega",
    "options": [
-    "negar",
+    "niega",
     "cobra",
     "mueve",
     "aprieta"
@@ -72,9 +72,10 @@
    "audioClip": {
     "storySlug": "quiltro-con-dueno",
     "storySource": "journey",
-    "sentence": "Óscar cuida esos cercos y no negar nada.",
-    "targetWord": "negar",
-    "language": "spanish"
+    "sentence": "Óscar cuida esos cercos y no niega nada.",
+    "targetWord": "niega",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b83cdbbf9cecb035.mp3"
    }
   }
  },
@@ -96,19 +97,20 @@
     "storySource": "journey",
     "sentence": "Aprieta la correa del maletín sin soltarla.",
     "targetWord": "correa",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d463fed6849c4d3.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "apretar",
+  "word": "aprieta",
   "sentence": "Le da rabia y _____ la correa sin soltarla.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "apretar",
+   "answer": "aprieta",
    "options": [
-    "apretar",
+    "aprieta",
     "suelta",
     "paga",
     "mide"
@@ -123,9 +125,10 @@
    "audioClip": {
     "storySlug": "quiltro-con-dueno",
     "storySource": "journey",
-    "sentence": "Le da rabia y apretar la correa sin soltarla.",
-    "targetWord": "apretar",
-    "language": "spanish"
+    "sentence": "Le da rabia y aprieta la correa sin soltarla.",
+    "targetWord": "aprieta",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7de75872b6edf253.mp3"
    }
   }
  },
@@ -147,7 +150,8 @@
     "storySource": "journey",
     "sentence": "De ahí no lo mueve nadie en toda la tarde.",
     "targetWord": "mover",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ed7cdf4e6dba136.mp3"
    }
   }
  },
@@ -169,7 +173,8 @@
     "storySource": "journey",
     "sentence": "Le da rabia que saque a la mesa aquel favor.",
     "targetWord": "dar rabia",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85830008723eca4c.mp3"
    }
   }
  },
@@ -191,7 +196,8 @@
     "storySource": "journey",
     "sentence": "“El precio lo pongo yo”, contesta Ximena.",
     "targetWord": "poner el precio",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d25d2815682eec26.mp3"
    }
   }
  },
@@ -213,7 +219,8 @@
     "storySource": "journey",
     "sentence": "“Estaban sanas cuando pasé”, contesta ella.",
     "targetWord": "estar sana",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d30ed0c499ec961b.mp3"
    }
   }
  },
@@ -235,19 +242,20 @@
     "storySource": "journey",
     "sentence": "Saca a la mesa la camioneta que le arregló.",
     "targetWord": "sacar a la mesa",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e87714c5b6d97c40.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "cuidar",
+  "word": "cuida",
   "sentence": "Óscar _____ esos cercos desde hace veinte años.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "cuidar",
+   "answer": "cuida",
    "options": [
-    "cuidar",
+    "cuida",
     "vende",
     "pierde",
     "mide"
@@ -262,9 +270,10 @@
    "audioClip": {
     "storySlug": "quiltro-con-dueno",
     "storySource": "journey",
-    "sentence": "Óscar cuidar esos cercos desde hace veinte años.",
-    "targetWord": "cuidar",
-    "language": "spanish"
+    "sentence": "Óscar cuida esos cercos desde hace veinte años.",
+    "targetWord": "cuida",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9ff2a9cbb4833362.mp3"
    }
   }
  },

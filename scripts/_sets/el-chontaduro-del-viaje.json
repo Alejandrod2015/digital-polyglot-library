@@ -67,7 +67,8 @@
     "storySource": "journey",
     "sentence": "El bolso de Teresa espera en el zaguán desde temprano.",
     "targetWord": "bolso",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/37fc0bf6408c8f42.mp3"
    }
   }
  },
@@ -89,7 +90,8 @@
     "storySource": "journey",
     "sentence": "El carro que la lleva al terminal pasa a las cuatro.",
     "targetWord": "carro",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2efdd826e7374725.mp3"
    }
   }
  },
@@ -111,7 +113,8 @@
     "storySource": "journey",
     "sentence": "Wilson sale con ella hasta el andén, sin prisa.",
     "targetWord": "prisa",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d8b662b5ecb84b85.mp3"
    }
   }
  },
@@ -133,19 +136,20 @@
     "storySource": "journey",
     "sentence": "Trae la llave de la casa en la mano.",
     "targetWord": "llave",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ece5e4712821bfa9.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "quedarse",
+  "word": "Quédese",
   "sentence": "“_____ con ella”, le dice él, y le ofrece la llave.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "quedarse",
+   "answer": "Quédese",
    "options": [
-    "quedarse",
+    "Quédese",
     "Váyase",
     "Págueme",
     "Ábrala"
@@ -160,9 +164,10 @@
    "audioClip": {
     "storySlug": "el-chontaduro-del-viaje",
     "storySource": "journey",
-    "sentence": "“quedarse con ella”, le dice él, y le ofrece la llave.",
-    "targetWord": "quedarse",
-    "language": "spanish"
+    "sentence": "“Quédese con ella”, le dice él, y le ofrece la llave.",
+    "targetWord": "Quédese",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b8176422b384f5f3.mp3"
    }
   }
  },
@@ -184,19 +189,20 @@
     "storySource": "journey",
     "sentence": "Se fue con esa misma llave guardada ocho años.",
     "targetWord": "guardado",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1438ac7a1df4d6d0.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "usar",
+  "word": "usó",
   "sentence": "Volvió con la llave y no la _____ ni una vez.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "usar",
+   "answer": "usó",
    "options": [
-    "usar",
+    "usó",
     "envolvió",
     "pesó",
     "despidió"
@@ -211,9 +217,10 @@
    "audioClip": {
     "storySlug": "el-chontaduro-del-viaje",
     "storySource": "journey",
-    "sentence": "Volvió con la llave y no la usar ni una vez.",
-    "targetWord": "usar",
-    "language": "spanish"
+    "sentence": "Volvió con la llave y no la usó ni una vez.",
+    "targetWord": "usó",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aba6dae81c7862a5.mp3"
    }
   }
  },
@@ -235,7 +242,8 @@
     "storySource": "journey",
     "sentence": "Wilson se queda callado porque sabe que es verdad.",
     "targetWord": "verdad",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e667f8a83208e5db.mp3"
    }
   }
  },
@@ -257,19 +265,20 @@
     "storySource": "journey",
     "sentence": "“Una llave que no se usa pesa distinto.”",
     "targetWord": "pesar",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7d61ab3ba9792927.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "envolver",
+  "word": "envolvió",
   "sentence": "Le _____ el chontaduro para que aguante el viaje.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "envolver",
+   "answer": "envolvió",
    "options": [
-    "envolver",
+    "envolvió",
     "pesó",
     "usó",
     "cerró"
@@ -284,8 +293,8 @@
    "audioClip": {
     "storySlug": "el-chontaduro-del-viaje",
     "storySource": "journey",
-    "sentence": "Le envolver el chontaduro para que aguante el viaje.",
-    "targetWord": "envolver",
+    "sentence": "Le envolvió el chontaduro para que aguante el viaje.",
+    "targetWord": "envolvió",
     "language": "spanish"
    }
   },

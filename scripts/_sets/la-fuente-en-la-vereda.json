@@ -67,19 +67,20 @@
     "storySource": "journey",
     "sentence": "Trae la fuente vacía que él le mandó llena.",
     "targetWord": "vacío",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b0f892722ac69e9.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "copiar",
+  "word": "copiaste",
   "sentence": "“Lo _____, Adrián”, le dice ella sin levantar la voz.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "copiar",
+   "answer": "copiaste",
    "options": [
-    "copiar",
+    "copiaste",
     "vendiste",
     "tapaste",
     "pediste"
@@ -94,21 +95,22 @@
    "audioClip": {
     "storySlug": "la-fuente-en-la-vereda",
     "storySource": "journey",
-    "sentence": "“Lo copiar, Adrián”, le dice ella sin levantar la voz.",
-    "targetWord": "copiar",
-    "language": "spanish"
+    "sentence": "“Lo copiaste, Adrián”, le dice ella sin levantar la voz.",
+    "targetWord": "copiaste",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fe8eb14096fee8ef.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "mejorar",
+  "word": "mejoré",
   "sentence": "“Lo _____, que no es lo mismo”, contesta él.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "mejorar",
+   "answer": "mejoré",
    "options": [
-    "mejorar",
+    "mejoré",
     "copié",
     "cerré",
     "guardé"
@@ -123,9 +125,10 @@
    "audioClip": {
     "storySlug": "la-fuente-en-la-vereda",
     "storySource": "journey",
-    "sentence": "“Lo mejorar, que no es lo mismo”, contesta él.",
-    "targetWord": "mejorar",
-    "language": "spanish"
+    "sentence": "“Lo mejoré, que no es lo mismo”, contesta él.",
+    "targetWord": "mejoré",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b1783bd2c4ee918.mp3"
    }
   }
  },
@@ -147,19 +150,20 @@
     "storySource": "journey",
     "sentence": "Se va sin comprar nada y no cierra de golpe.",
     "targetWord": "de golpe",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4b79c87f4ddf5700.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "llamar",
+  "word": "llama",
   "sentence": "Deja la fuente en la puerta y no _____.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "llamar",
+   "answer": "llama",
    "options": [
-    "llamar",
+    "llama",
     "compra",
     "acepta",
     "copia"
@@ -174,9 +178,10 @@
    "audioClip": {
     "storySlug": "la-fuente-en-la-vereda",
     "storySource": "journey",
-    "sentence": "Deja la fuente en la puerta y no llamar.",
-    "targetWord": "llamar",
-    "language": "spanish"
+    "sentence": "Deja la fuente en la puerta y no llama.",
+    "targetWord": "llama",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/02d2d8481757185b.mp3"
    }
   }
  },
@@ -198,19 +203,20 @@
     "storySource": "journey",
     "sentence": "Esa es la manera de dejar un tema abierto.",
     "targetWord": "abierto",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bbecc3a4ad296751.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "pedir",
+  "word": "pedías",
   "sentence": "“Yo te lo daba, si me lo _____.”",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "pedir",
+   "answer": "pedías",
    "options": [
-    "pedir",
+    "pedías",
     "copiabas",
     "tapabas",
     "vendías"
@@ -225,9 +231,10 @@
    "audioClip": {
     "storySlug": "la-fuente-en-la-vereda",
     "storySource": "journey",
-    "sentence": "“Yo te lo daba, si me lo pedir.”",
-    "targetWord": "pedir",
-    "language": "spanish"
+    "sentence": "“Yo te lo daba, si me lo pedías.”",
+    "targetWord": "pedías",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/43df17a43d2a14f5.mp3"
    }
   }
  },
@@ -249,7 +256,8 @@
     "storySource": "journey",
     "sentence": "“Ya sé. Por eso no te lo dije”, admite él.",
     "targetWord": "saber",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fd6f9056cc5e4621.mp3"
    }
   }
  },
@@ -271,7 +279,8 @@
     "storySource": "journey",
     "sentence": "“Ponele”, acepta ella, y no discute más.",
     "targetWord": "aceptar",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36ae90629e23c0be.mp3"
    }
   }
  },

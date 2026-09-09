@@ -67,19 +67,20 @@
     "storySource": "journey",
     "sentence": "“¿Usted qué opina si quito las mesas?”, pregunta Rocío.",
     "targetWord": "opinar",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/efe994b9153c945d.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "aconsejar",
+  "word": "aconsejaría",
   "sentence": "“Yo no le _____ eso”, contesta Esteban.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "aconsejar",
+   "answer": "aconsejaría",
    "options": [
-    "aconsejar",
+    "aconsejaría",
     "cobraría",
     "serviría",
     "tapaba"
@@ -94,9 +95,10 @@
    "audioClip": {
     "storySlug": "un-tinto-que-nadie-pidio",
     "storySource": "journey",
-    "sentence": "“Yo no le aconsejar eso”, contesta Esteban.",
-    "targetWord": "aconsejar",
-    "language": "spanish"
+    "sentence": "“Yo no le aconsejaría eso”, contesta Esteban.",
+    "targetWord": "aconsejaría",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/703c0e51352cfb83.mp3"
    }
   }
  },
@@ -118,7 +120,8 @@
     "storySource": "journey",
     "sentence": "“Nadie le pidió consejo”, dice ella, y se ríe.",
     "targetWord": "consejo",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c202d3545101556.mp3"
    }
   }
  },
@@ -140,19 +143,20 @@
     "storySource": "journey",
     "sentence": "“Ponga el letrero afuera antes de tocar nada.”",
     "targetWord": "letrero",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/32327b6b7bf1f13a.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "decidirse",
+  "word": "decide",
   "sentence": "Ella no se _____ a cambiar nada del café.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "decidirse",
+   "answer": "decide",
    "options": [
-    "decidirse",
+    "decide",
     "arrepiente",
     "apura",
     "excusa"
@@ -167,9 +171,10 @@
    "audioClip": {
     "storySlug": "un-tinto-que-nadie-pidio",
     "storySource": "journey",
-    "sentence": "Ella no se decidirse a cambiar nada del café.",
-    "targetWord": "decidirse",
-    "language": "spanish"
+    "sentence": "Ella no se decide a cambiar nada del café.",
+    "targetWord": "decide",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8cd4d6b2762acc03.mp3"
    }
   }
  },
@@ -198,7 +203,8 @@
     "storySource": "journey",
     "sentence": "“Un letrero es más barato que arrepentirse.”",
     "targetWord": "arrepentirse",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f7961585cf938d39.mp3"
    }
   }
  },
@@ -220,7 +226,8 @@
     "storySource": "journey",
     "sentence": "Lleva tres semanas dándole vueltas al mismo cambio.",
     "targetWord": "dar vueltas",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8a0ca25a7bd50714.mp3"
    }
   }
  },
@@ -242,19 +249,20 @@
     "storySource": "journey",
     "sentence": "El mostrador de bahareque ya se ve gastado.",
     "targetWord": "gastado",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/00f8afccc8a4002e.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "insistir",
+  "word": "insiste",
   "sentence": "“Un letrero es más barato”, _____ Esteban desde la silla.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "insistir",
+   "answer": "insiste",
    "options": [
-    "insistir",
+    "insiste",
     "duda",
     "calla",
     "paga"
@@ -269,9 +277,10 @@
    "audioClip": {
     "storySlug": "un-tinto-que-nadie-pidio",
     "storySource": "journey",
-    "sentence": "“Un letrero es más barato”, insistir Esteban desde la silla.",
-    "targetWord": "insistir",
-    "language": "spanish"
+    "sentence": "“Un letrero es más barato”, insiste Esteban desde la silla.",
+    "targetWord": "insiste",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7def8edc85995d76.mp3"
    }
   }
  },

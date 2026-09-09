@@ -67,7 +67,8 @@
     "storySource": "journey",
     "sentence": "El jueves sube al camión con el pedido de Lima.",
     "targetWord": "pedido",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/02a922e00bce26a6.mp3"
    }
   }
  },
@@ -96,7 +97,8 @@
     "storySource": "journey",
     "sentence": "Delia pasa el hilo por la cera antes de coser.",
     "targetWord": "coser",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a61937bdbc2c5e62.mp3"
    }
   }
  },
@@ -118,19 +120,20 @@
     "storySource": "journey",
     "sentence": "Pasa el hilo por la cera antes de coser el manto.",
     "targetWord": "hilo",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6248b2b4ee180c54.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "juntarse",
+  "word": "juntan",
   "sentence": "“Los cargadores se _____ a las cinco y media.”",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "juntarse",
+   "answer": "juntan",
    "options": [
-    "juntarse",
+    "juntan",
     "pagan",
     "cosen",
     "miden"
@@ -145,9 +148,10 @@
    "audioClip": {
     "storySlug": "no-voy-a-llegar-tarde",
     "storySource": "journey",
-    "sentence": "“Los cargadores se juntarse a las cinco y media.”",
-    "targetWord": "juntarse",
-    "language": "spanish"
+    "sentence": "“Los cargadores se juntan a las cinco y media.”",
+    "targetWord": "juntan",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8734eba0d8f26a43.mp3"
    }
   }
  },
@@ -169,7 +173,8 @@
     "storySource": "journey",
     "sentence": "El billete es la mitad de lo que costó faltar.",
     "targetWord": "costar",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6fe2105070c9d591.mp3"
    }
   }
  },
@@ -191,7 +196,8 @@
     "storySource": "journey",
     "sentence": "Le pagan la mitad porque el retablo no llegó a tiempo.",
     "targetWord": "a tiempo",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/44ba984981a384db.mp3"
    }
   }
  },
@@ -213,7 +219,8 @@
     "storySource": "journey",
     "sentence": "La entrega llega fuera de hora igual.",
     "targetWord": "fuera de hora",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d88a301b7202097.mp3"
    }
   }
  },
@@ -242,7 +249,8 @@
     "storySource": "journey",
     "sentence": "“Llego temprano, antes de que se junten los cargadores.”",
     "targetWord": "temprano",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/532bd711110fd734.mp3"
    }
   }
  },
@@ -264,7 +272,8 @@
     "storySource": "journey",
     "sentence": "“Ojalá”, contesta Delia sin levantar la vista.",
     "targetWord": "ojalá",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/179486df5f298a13.mp3"
    }
   }
  },

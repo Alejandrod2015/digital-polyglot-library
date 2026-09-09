@@ -51,13 +51,13 @@
  },
  {
   "type": "fill_blank",
-  "word": "amasar",
+  "word": "amasa",
   "sentence": "Nazario _____ al lado y no dice nada.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "amasar",
+   "answer": "amasa",
    "options": [
-    "amasar",
+    "amasa",
     "cobra",
     "cruza",
     "toca"
@@ -72,9 +72,10 @@
    "audioClip": {
     "storySlug": "antes-eran-mias",
     "storySource": "journey",
-    "sentence": "Nazario amasar al lado y no dice nada.",
-    "targetWord": "amasar",
-    "language": "spanish"
+    "sentence": "Nazario amasa al lado y no dice nada.",
+    "targetWord": "amasa",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/06ce8981f41d0930.mp3"
    }
   }
  },
@@ -96,7 +97,8 @@
     "storySource": "journey",
     "sentence": "Cuenta las bolsas con las manos en la masa.",
     "targetWord": "masa",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2331693b7d92670a.mp3"
    }
   }
  },
@@ -118,7 +120,8 @@
     "storySource": "journey",
     "sentence": "Su cuñada vende el doble que él desde hace dos años.",
     "targetWord": "cuñada",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9698433629c065cc.mp3"
    }
   }
  },
@@ -140,19 +143,20 @@
     "storySource": "journey",
     "sentence": "Nazario es su ayudante desde hace cinco años.",
     "targetWord": "ayudante",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/82ac6a908d5153c9.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "cruzar",
+  "word": "cruza",
   "sentence": "La gente _____ la calle sin mirar la vidriera de acá.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "cruzar",
+   "answer": "cruza",
    "options": [
-    "cruzar",
+    "cruza",
     "amasa",
     "cobra",
     "toca"
@@ -167,9 +171,10 @@
    "audioClip": {
     "storySlug": "antes-eran-mias",
     "storySource": "journey",
-    "sentence": "La gente cruzar la calle sin mirar la vidriera de acá.",
-    "targetWord": "cruzar",
-    "language": "spanish"
+    "sentence": "La gente cruza la calle sin mirar la vidriera de acá.",
+    "targetWord": "cruza",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d715d3fd0314835c.mp3"
    }
   }
  },
@@ -191,7 +196,8 @@
     "storySource": "journey",
     "sentence": "Adrián no dice envidia en toda la noche.",
     "targetWord": "envidia",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c7ac79fb2dc3258a.mp3"
    }
   }
  },
@@ -213,7 +219,8 @@
     "storySource": "journey",
     "sentence": "“Once”, cuenta Adrián en voz baja.",
     "targetWord": "en voz baja",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4fd2f0f9d7a2bd28.mp3"
    }
   }
  },
@@ -235,7 +242,8 @@
     "storySource": "journey",
     "sentence": "Decirlo sería darle la razón a ella.",
     "targetWord": "razón",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7f73b9f8bca294e6.mp3"
    }
   }
  },
@@ -264,7 +272,8 @@
     "storySource": "journey",
     "sentence": "El cayote se queda ahí sin tocar hasta las nueve.",
     "targetWord": "tocar",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8917035089802041.mp3"
    }
   }
  },

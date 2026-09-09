@@ -67,7 +67,8 @@
     "storySource": "journey",
     "sentence": "Nicanor sigue lijando la misma tabla tres veces.",
     "targetWord": "lijar",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/643c22f9e16e66c8.mp3"
    }
   }
  },
@@ -89,7 +90,8 @@
     "storySource": "journey",
     "sentence": "El polvo del aliso huele dulce en el taller.",
     "targetWord": "polvo",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/89bf90c858ba8cdd.mp3"
    }
   }
  },
@@ -111,7 +113,8 @@
     "storySource": "journey",
     "sentence": "La tabla, cuando la levanta, quedó más delgada.",
     "targetWord": "tabla",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e37c2efe1585c518.mp3"
    }
   }
  },
@@ -140,7 +143,8 @@
     "storySource": "journey",
     "sentence": "Su hermana entra a operarse y él espera la noticia.",
     "targetWord": "noticia",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eaa223b8e147ac8b.mp3"
    }
   }
  },
@@ -162,19 +166,20 @@
     "storySource": "journey",
     "sentence": "Delia deja la aguja sobre el terciopelo.",
     "targetWord": "aguja",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f8344132d656cdac.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "escribir",
+  "word": "escribe",
   "sentence": "Ella lo _____ con la letra grande de las listas viejas.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "escribir",
+   "answer": "escribe",
    "options": [
-    "escribir",
+    "escribe",
     "borra",
     "levanta",
     "lija"
@@ -189,21 +194,22 @@
    "audioClip": {
     "storySlug": "la-tabla-delgada",
     "storySource": "journey",
-    "sentence": "Ella lo escribir con la letra grande de las listas viejas.",
-    "targetWord": "escribir",
-    "language": "spanish"
+    "sentence": "Ella lo escribe con la letra grande de las listas viejas.",
+    "targetWord": "escribe",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/424d4599a2c7e97e.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "borrarse",
+  "word": "borra",
   "sentence": "“Va a la lista y ya no se _____.”",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "borrarse",
+   "answer": "borra",
    "options": [
-    "borrarse",
+    "borra",
     "escribe",
     "levanta",
     "apunta"
@@ -219,8 +225,9 @@
     "storySlug": "la-tabla-delgada",
     "storySource": "journey",
     "sentence": "“Va a la lista y ya no se borra.”",
-    "targetWord": "borrarse",
-    "language": "spanish"
+    "targetWord": "borra",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8ca684cfe015fdcf.mp3"
    }
   }
  },
@@ -242,7 +249,8 @@
     "storySource": "journey",
     "sentence": "La tabla ha quedado más delgada que las otras.",
     "targetWord": "delgado",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0e91ce70b28b8b7.mp3"
    }
   }
  },
@@ -264,19 +272,20 @@
     "storySource": "journey",
     "sentence": "Escribe con la letra grande de las listas viejas.",
     "targetWord": "letra",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a442234d052d0492.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "avisar",
+  "word": "avisa",
   "sentence": "Delia _____ que lo dicho aquí se apunta.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "avisar",
+   "answer": "avisa",
    "options": [
-    "avisar",
+    "avisa",
     "borra",
     "lija",
     "cose"
@@ -291,8 +300,8 @@
    "audioClip": {
     "storySlug": "la-tabla-delgada",
     "storySource": "journey",
-    "sentence": "Delia avisar que lo dicho aquí se apunta.",
-    "targetWord": "avisar",
+    "sentence": "Delia avisa que lo dicho aquí se apunta.",
+    "targetWord": "avisa",
     "language": "spanish"
    }
   },
@@ -323,13 +332,13 @@
  },
  {
   "type": "fill_blank",
-  "word": "levantar",
+  "word": "levanta",
   "sentence": "Delia _____ la vista del bastidor cuando él entra.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "levantar",
+   "answer": "levanta",
    "options": [
-    "levantar",
+    "levanta",
     "borra",
     "lija",
     "cose"
@@ -344,8 +353,8 @@
    "audioClip": {
     "storySlug": "la-tabla-delgada",
     "storySource": "journey",
-    "sentence": "Delia levantar la vista del bastidor cuando él entra.",
-    "targetWord": "levantar",
+    "sentence": "Delia levanta la vista del bastidor cuando él entra.",
+    "targetWord": "levanta",
     "language": "spanish"
    }
   },

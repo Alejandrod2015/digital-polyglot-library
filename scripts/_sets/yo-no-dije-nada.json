@@ -67,7 +67,8 @@
     "storySource": "journey",
     "sentence": "Le cuesta más darle la razón que haber cambiado de idea.",
     "targetWord": "dar la razón",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/987d0babb36c0672.mp3"
    }
   }
  },
@@ -89,7 +90,8 @@
     "storySource": "journey",
     "sentence": "“No dije que usted tuviera razón”, agrega Rocío.",
     "targetWord": "tener razón",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cd4419b813402f5d.mp3"
    }
   }
  },
@@ -118,7 +120,8 @@
     "storySource": "journey",
     "sentence": "Le costó menos cambiar de idea que decirlo en voz alta.",
     "targetWord": "cambiar de idea",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/08cf42980a874f23.mp3"
    }
   }
  },
@@ -140,19 +143,20 @@
     "storySource": "journey",
     "sentence": "Dice que esto habría pasado antes, y se calla.",
     "targetWord": "callarse",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e488a761d507f4f3.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "apuntar",
+  "word": "señala",
   "sentence": "Esteban no contesta: _____ la fila con la mano.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "apuntar",
+   "answer": "señala",
    "options": [
-    "apuntar",
+    "señala",
     "amarra",
     "cobra",
     "tapa"
@@ -167,9 +171,10 @@
    "audioClip": {
     "storySlug": "yo-no-dije-nada",
     "storySource": "journey",
-    "sentence": "Esteban no contesta: apuntar la fila con la mano.",
-    "targetWord": "apuntar",
-    "language": "spanish"
+    "sentence": "Esteban no contesta: señala la fila con la mano.",
+    "targetWord": "señala",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c7740178374251b.mp3"
    }
   }
  },
@@ -191,7 +196,8 @@
     "storySource": "journey",
     "sentence": "“Yo no dije nada”, contesta Esteban, y lo nota.",
     "targetWord": "notar",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dcbe33c720c07f39.mp3"
    }
   }
  },
@@ -213,7 +219,8 @@
     "storySource": "journey",
     "sentence": "“Gracias”, dice ella al fin, de mala gana.",
     "targetWord": "de mala gana",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c16fc077f9d02648.mp3"
    }
   }
  },
@@ -235,7 +242,8 @@
     "storySource": "journey",
     "sentence": "Esteban espera su turno con la mazamorra en la mano.",
     "targetWord": "turno",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4af3090ab7ba2c3c.mp3"
    }
   }
  },
@@ -264,19 +272,20 @@
     "storySource": "journey",
     "sentence": "Le sirve el tinto sin cobrar nada.",
     "targetWord": "cobrar",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5d57146f94805d1d.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "amarrar",
+  "word": "amarra",
   "sentence": "Esteban _____ la caja de chócolo con cabuya.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "amarrar",
+   "answer": "amarra",
    "options": [
-    "amarrar",
+    "amarra",
     "mezcla",
     "cobra",
     "disimula"
@@ -291,8 +300,8 @@
    "audioClip": {
     "storySlug": "yo-no-dije-nada",
     "storySource": "journey",
-    "sentence": "Esteban amarrar la caja de chócolo con cabuya.",
-    "targetWord": "amarrar",
+    "sentence": "Esteban amarra la caja de chócolo con cabuya.",
+    "targetWord": "amarra",
     "language": "spanish"
    }
   },

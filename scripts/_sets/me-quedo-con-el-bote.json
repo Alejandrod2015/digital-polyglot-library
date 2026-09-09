@@ -51,13 +51,13 @@
  },
  {
   "type": "fill_blank",
-  "word": "firmar",
+  "word": "firma",
   "sentence": "Cuando el vecino _____, firma por menos de lo tasado.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "firmar",
+   "answer": "firma",
    "options": [
-    "firmar",
+    "firma",
     "pesa",
     "vende",
     "mide"
@@ -72,9 +72,10 @@
    "audioClip": {
     "storySlug": "me-quedo-con-el-bote",
     "storySource": "journey",
-    "sentence": "Cuando el vecino firmar, firma por menos de lo tasado.",
-    "targetWord": "firmar",
-    "language": "spanish"
+    "sentence": "Cuando el vecino firma, firma por menos de lo tasado.",
+    "targetWord": "firma",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4e4a0a90e863e2bc.mp3"
    }
   }
  },
@@ -96,7 +97,8 @@
     "storySource": "journey",
     "sentence": "“Y él puso menos, y así queda”, contesta el vecino, tranquilo.",
     "targetWord": "tranquilo",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/34977635f3f5085a.mp3"
    }
   }
  },
@@ -118,7 +120,8 @@
     "storySource": "journey",
     "sentence": "“¿Y usted se queda conforme con eso?”",
     "targetWord": "conforme",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/855dbe65d46ab467.mp3"
    }
   }
  },
@@ -140,7 +143,8 @@
     "storySource": "journey",
     "sentence": "Nadie aquí gana un juicio y sigue teniendo vecinos.",
     "targetWord": "juicio",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1e8e6fc815d6077d.mp3"
    }
   }
  },
@@ -162,19 +166,20 @@
     "storySource": "journey",
     "sentence": "Nadie hizo nada contra la ley, y aun así salió mal.",
     "targetWord": "contra la ley",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8e24d334eb96b985.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "valer",
+  "word": "vale",
   "sentence": "El papel _____ la mitad de lo que ella escribió.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "valer",
+   "answer": "vale",
    "options": [
-    "valer",
+    "vale",
     "pesa",
     "firma",
     "parte"
@@ -189,21 +194,22 @@
    "audioClip": {
     "storySlug": "me-quedo-con-el-bote",
     "storySource": "journey",
-    "sentence": "El papel valer la mitad de lo que ella escribió.",
-    "targetWord": "valer",
-    "language": "spanish"
+    "sentence": "El papel vale la mitad de lo que ella escribió.",
+    "targetWord": "vale",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cebfd416ec6cfeca.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "llevar",
+  "word": "llevo",
   "sentence": "“Si me peleo con él, mañana no _____ nada a vender.”",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "llevar",
+   "answer": "llevo",
    "options": [
-    "llevar",
+    "llevo",
     "firmo",
     "entiendo",
     "tapo"
@@ -218,9 +224,10 @@
    "audioClip": {
     "storySlug": "me-quedo-con-el-bote",
     "storySource": "journey",
-    "sentence": "“Si me peleo con él, mañana no llevar nada a vender.”",
-    "targetWord": "llevar",
-    "language": "spanish"
+    "sentence": "“Si me peleo con él, mañana no llevo nada a vender.”",
+    "targetWord": "llevo",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/31c38e034ed75002.mp3"
    }
   }
  },
@@ -242,7 +249,8 @@
     "storySource": "journey",
     "sentence": "Ella entiende la cuenta, y aun así se lo pregunta.",
     "targetWord": "entender",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fac1b2a19a42046d.mp3"
    }
   }
  },
@@ -264,19 +272,20 @@
     "storySource": "journey",
     "sentence": "El bote de Óscar queda de lado sobre el barro.",
     "targetWord": "de lado",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bffceb28c677981f.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "partir",
+  "word": "parte",
   "sentence": "Ella _____ por el camino de pellín sin ponerse el cinturón.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "partir",
+   "answer": "parte",
    "options": [
-    "partir",
+    "parte",
     "firma",
     "vende",
     "entiende"
@@ -291,8 +300,8 @@
    "audioClip": {
     "storySlug": "me-quedo-con-el-bote",
     "storySource": "journey",
-    "sentence": "Ella partir por el camino de pellín sin ponerse el cinturón.",
-    "targetWord": "partir",
+    "sentence": "Ella parte por el camino de pellín sin ponerse el cinturón.",
+    "targetWord": "parte",
     "language": "spanish"
    }
   },

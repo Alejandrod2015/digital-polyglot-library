@@ -51,13 +51,13 @@
  },
  {
   "type": "fill_blank",
-  "word": "picar",
+  "word": "pica",
   "sentence": "Teresa pone la olla, _____ y prueba el caldo.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "picar",
+   "answer": "pica",
    "options": [
-    "picar",
+    "pica",
     "barre",
     "cierra",
     "sirve"
@@ -72,9 +72,10 @@
    "audioClip": {
     "storySlug": "le-falta-sal",
     "storySource": "journey",
-    "sentence": "Teresa pone la olla, picar y prueba el caldo.",
-    "targetWord": "picar",
-    "language": "spanish"
+    "sentence": "Teresa pone la olla, pica y prueba el caldo.",
+    "targetWord": "pica",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/37b3ac40ce3f4548.mp3"
    }
   }
  },
@@ -96,7 +97,8 @@
     "storySource": "journey",
     "sentence": "Wilson prueba el caldo con una cuchara.",
     "targetWord": "caldo",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bb8dfd85e76c6a01.mp3"
    }
   }
  },
@@ -118,7 +120,8 @@
     "storySource": "journey",
     "sentence": "Hace un gesto corto con la boca y no dice nada.",
     "targetWord": "gesto",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3a0df026afcc1a28.mp3"
    }
   }
  },
@@ -147,7 +150,8 @@
     "storySource": "journey",
     "sentence": "“Le falta sal”, le señala Wilson delante de todos.",
     "targetWord": "sal",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4a67476f377d831d.mp3"
    }
   }
  },
@@ -169,7 +173,8 @@
     "storySource": "journey",
     "sentence": "La comida es lo único que sabe que sigue siendo suyo.",
     "targetWord": "único",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/605e7077bfcaccd7.mp3"
    }
   }
  },
@@ -191,7 +196,8 @@
     "storySource": "journey",
     "sentence": "“Ahora la carantanta va por separado”, explica él.",
     "targetWord": "por separado",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/71b662b61dd50ef9.mp3"
    }
   }
  },
@@ -213,7 +219,8 @@
     "storySource": "journey",
     "sentence": "Ve su cocina como se ve una cocina ajena.",
     "targetWord": "ajeno",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/085b76ef33f219cf.mp3"
    }
   }
  },
@@ -242,19 +249,20 @@
     "storySource": "journey",
     "sentence": "“Terminen ustedes”, dice, y los deja acabar el sancocho.",
     "targetWord": "acabar",
-    "language": "spanish"
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/26b125e5ac3195bb.mp3"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "probar",
+  "word": "prueba",
   "sentence": "Wilson _____ el caldo antes de decir nada.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "probar",
+   "answer": "prueba",
    "options": [
-    "probar",
+    "prueba",
     "pica",
     "acaba",
     "guarda"
@@ -269,9 +277,10 @@
    "audioClip": {
     "storySlug": "le-falta-sal",
     "storySource": "journey",
-    "sentence": "Wilson probar el caldo antes de decir nada.",
-    "targetWord": "probar",
-    "language": "spanish"
+    "sentence": "Wilson prueba el caldo antes de decir nada.",
+    "targetWord": "prueba",
+    "language": "spanish",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a18e451953cdb715.mp3"
    }
   }
  },
@@ -323,13 +332,13 @@
  },
  {
   "type": "fill_blank",
-  "word": "levantarse",
+  "word": "levanta",
   "sentence": "El domingo Teresa se _____ temprano para cocinar.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "levantarse",
+   "answer": "levanta",
    "options": [
-    "levantarse",
+    "levanta",
     "sienta",
     "acaba",
     "despide"
@@ -344,8 +353,8 @@
    "audioClip": {
     "storySlug": "le-falta-sal",
     "storySource": "journey",
-    "sentence": "El domingo Teresa se levantarse temprano para cocinar.",
-    "targetWord": "levantarse",
+    "sentence": "El domingo Teresa se levanta temprano para cocinar.",
+    "targetWord": "levanta",
     "language": "spanish"
    }
   },
