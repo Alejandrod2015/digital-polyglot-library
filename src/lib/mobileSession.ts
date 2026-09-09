@@ -179,5 +179,70 @@ export async function getActiveMobileSession(
     console.error("[mobile-auth] revocation check failed (failing open):", err);
   }
 
+  // Se ESPERA, no se deja suelta. En serverless la instancia se puede congelar
+  // en cuanto sale la respuesta, y una promesa flotante se pierde a medias.
+  // El coste es una escritura cada 6 h por instancia y aparato, y la funcion
+  // se traga sus propios errores, asi que no puede tumbar la peticion.
+  await recordMobileDevice(req, session.sub);
+
   return session;
+}
+
+// Cuánto esperamos antes de volver a tocar la fila del mismo aparato. La
+// cabecera viaja en TODA llamada, así que sin esto una sesión de lectura
+// escribiría decenas de veces la misma fila para no cambiar nada.
+const DEVICE_WRITE_TTL_MS = 6 * 60 * 60 * 1000;
+
+// Caché por instancia: `userId|huella` -> cuándo se escribió. Las instancias
+// son efímeras, así que como mucho se pagan unos upserts de más al arrancar
+// una nueva; nunca se pierde un aparato, porque la primera llamada de cada
+// instancia siempre escribe.
+const deviceSeen = new Map<string, number>();
+
+/**
+ * Guarda con qué teléfono entra cada persona, leyendo las cabeceras que
+ * `apiFetch` manda en todas las llamadas.
+ *
+ * No bloquea la respuesta y NUNCA propaga su error: es telemetría, y una
+ * escritura fallida no puede tumbar la petición que la trajo. Ver el comentario
+ * de `MobileDevice` en el schema para el porqué de la tabla.
+ */
+async function recordMobileDevice(req: NextRequest, userId: string): Promise<void> {
+  try {
+    const platform = req.headers.get("X-DP-Platform") === "android" ? "android" : "ios";
+    const model = (req.headers.get("X-DP-Device") ?? "").slice(0, 120).trim();
+    const osVersion = (req.headers.get("X-DP-OS") ?? "").slice(0, 60).trim();
+    const rawApp = (req.headers.get("X-DP-App") ?? "").slice(0, 60).trim();
+
+    // Nada que guardar: es una llamada desde la web o desde un binario viejo
+    // que todavía no manda las cabeceras.
+    if (!model && !osVersion && !rawApp) return;
+
+    // "1.0 (317)" -> version + build. Sin paréntesis, todo es versión.
+    const match = /^(.*?)\s*\((.*)\)\s*$/.exec(rawApp);
+    const appVersion = (match ? match[1] : rawApp).trim();
+    const buildNumber = (match ? match[2] : "").trim();
+
+    const key = `${userId}|${platform}|${model}|${appVersion}|${buildNumber}`;
+    const now = Date.now();
+    const last = deviceSeen.get(key);
+    if (last !== undefined && now - last < DEVICE_WRITE_TTL_MS) return;
+    deviceSeen.set(key, now);
+
+    await prisma.mobileDevice.upsert({
+      where: {
+        userId_platform_model_appVersion_buildNumber: {
+          userId,
+          platform,
+          model,
+          appVersion,
+          buildNumber,
+        },
+      },
+      create: { userId, platform, model, osVersion, appVersion, buildNumber },
+      update: { osVersion, lastSeenAt: new Date() },
+    });
+  } catch (err) {
+    console.error("[mobile-device] no se pudo registrar el aparato:", err);
+  }
 }

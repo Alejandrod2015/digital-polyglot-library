@@ -1340,3 +1340,43 @@ model TapGlossSet {
   @@index([slug])
   @@map("dp_tap_glosses_v1")
 }
+
+/// El aparato con el que cada persona usa la app movil.
+///
+/// Existe porque hasta ahora el modelo de telefono solo se guardaba cuando
+/// alguien abria la hoja de feedback, que casi nadie abre: el 2026-09-09
+/// habia 22 personas apuntadas en Android y CERO filas con modelo. Cuando
+/// llego una captura con el texto roto no habia forma de saber en que
+/// telefono pasaba, y validabamos Android en el unico aparato que no usa
+/// nadie. Play Console si lo sabe, pero por agregado, nunca por persona.
+///
+/// Se llena solo: `apiFetch` manda las cabeceras `X-DP-Device` / `X-DP-OS` /
+/// `X-DP-App` en TODA llamada y `getActiveMobileSession` hace el upsert. No
+/// hay que pedirle nada a nadie.
+///
+/// Una fila por combinacion de (persona, plataforma, modelo, version de app):
+/// cambiar de telefono o actualizar la app crea fila nueva y deja la anterior
+/// con su `lastSeenAt`, que es lo que permite contestar "en que version vio
+/// esto". Los campos son "" y no null a proposito: en Postgres dos NULL no
+/// chocan, asi que con null la clave unica no deduplicaria nada.
+model MobileDevice {
+  id          String   @id @default(cuid())
+  userId      String
+  /// ios | android
+  platform    String
+  /// "Galaxy A05s", "moto g04s", "iPhone 15 Pro Max"
+  model       String   @default("")
+  /// "Android 14", "iOS 26.6.1"
+  osVersion   String   @default("")
+  /// version visible de la app ("1.0")
+  appVersion  String   @default("")
+  /// buildNumber nativo ("317")
+  buildNumber String   @default("")
+  firstSeenAt DateTime @default(now())
+  lastSeenAt  DateTime @default(now())
+
+  @@unique([userId, platform, model, appVersion, buildNumber])
+  @@index([lastSeenAt])
+  @@index([model])
+  @@map("dp_mobile_devices_v1")
+}

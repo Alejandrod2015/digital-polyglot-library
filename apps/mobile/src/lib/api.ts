@@ -10,6 +10,49 @@ export const CLIENT_PLATFORM_HEADER = "X-DP-Platform";
 export const clientPlatform: "ios" | "android" =
   Platform.OS === "android" ? "android" : "ios";
 
+/**
+ * Y cuál es el aparato. El modelo sólo se guardaba cuando alguien abría la
+ * hoja de feedback, que casi nadie abre: con una captura del lector roto no
+ * había forma de saber en qué teléfono pasaba. Estas tres cabeceras viajan en
+ * TODA llamada y el servidor las guarda por persona, así que el dato está sin
+ * preguntárselo a nadie.
+ *
+ * Se calculan una vez al cargar el módulo: son constantes durante la vida del
+ * proceso y no vale la pena tocar los módulos nativos en cada petición.
+ * `expo-device` y `expo-application` van en require perezoso porque no siempre
+ * están enlazados (Expo Go, un binario viejo) y su ausencia NO puede tumbar
+ * una llamada a la API.
+ */
+export const DEVICE_HEADER = "X-DP-Device";
+export const OS_HEADER = "X-DP-OS";
+export const APP_HEADER = "X-DP-App";
+
+function readClientDevice(): { device: string; os: string; app: string } {
+  let device = "";
+  let os = "";
+  let app = "";
+  try {
+    const Device = require("expo-device");
+    device = Device?.modelName?.trim() ?? "";
+    const osName = Device?.osName?.trim() || (Platform.OS === "android" ? "Android" : "iOS");
+    const osVersion = Device?.osVersion?.trim() ?? "";
+    os = osVersion ? `${osName} ${osVersion}` : "";
+  } catch {
+    // Sin expo-device: se manda vacío y el servidor guarda la fila igual.
+  }
+  try {
+    const Application = require("expo-application");
+    const version = Application?.nativeApplicationVersion?.trim() ?? "";
+    const build = Application?.nativeBuildVersion?.trim() ?? "";
+    app = version && build ? `${version} (${build})` : version || build;
+  } catch {
+    // idem
+  }
+  return { device, os, app };
+}
+
+const clientDevice = readClientDevice();
+
 export class ApiError extends Error {
   status: number;
 
@@ -68,6 +111,9 @@ export async function apiFetch<T>(args: {
         headers: {
           "Content-Type": "application/json",
           [CLIENT_PLATFORM_HEADER]: clientPlatform,
+          ...(clientDevice.device ? { [DEVICE_HEADER]: clientDevice.device } : {}),
+          ...(clientDevice.os ? { [OS_HEADER]: clientDevice.os } : {}),
+          ...(clientDevice.app ? { [APP_HEADER]: clientDevice.app } : {}),
           ...(token ? { Authorization: `Bearer ${token}` } : {}),
         },
         ...(body === undefined ? {} : { body: JSON.stringify(body) }),
