@@ -202,6 +202,19 @@
         "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library--claude-worktrees-angry-lovelace-b6095d/caecbf0a-46e6-4d3a-bb3e-b642da77d28c/scratchpad/vocescl"
       ],
       "port": 8921
+    },
+    {
+      "_comment": "El mural de portadas del B1 latam. Borrar al cerrar el journey.",
+      "name": "mural-b1-8922",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8922",
+        "--directory",
+        "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library--claude-worktrees-angry-lovelace-b6095d/33cc47a4-0e3f-4f8c-a464-e6df4fe5664c/scratchpad/mural"
+      ],
+      "port": 8922
     }
   ]
 }
