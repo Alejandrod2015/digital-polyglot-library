@@ -2353,6 +2353,76 @@
       ]
     }
   },
+  "cmtvpqsfv000832hgemzk20cl#natal": {
+    "cerrado": "2026-09-10T17:05:21.303Z",
+    "hash": "32fd9283877cf557",
+    "historias": [
+      "natal#0 buggy-com-emocao",
+      "natal#1 uma-calca-cortada",
+      "natal#2 eu-esqueco-o-sol"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"calor y risa de hermanas: sol, viento, ropa equivocada, piel quemada; frases de una idea pero cosidas con e, mas y porque\", espina \"Larissa, uma moça do Rio de Janeiro, parte o ano entre Londres e o Brasil; em cada volta reaprende o seu proprio pais e descobre o que perdeu fora. Em Natal, com a irma Mariana, descobre que a roupa, a pele e o calendario ainda sao de Londres, e marca a proxima volta\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"pergunta\" 29%)",
+      "arranques de parrafo variados (mas repetido \"mariana\", 27%)",
+      "densidad 7.2 palabras por oracion (techo 9 en a0)",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.22 sobre 55 plazas · 47 salen una sola vez | ancladas: 7/62 (11%) | cola: 47/55 portables con un solo encuentro (85%, tope 30%) | de un solo encuentro: bota, forte, vento, amarelo, mais nova, calor, liga, certeza, estômago, óculos, alto, verde, azul, chapéu, põe, parece, forno, dentro, roupa, blusa, grossa, short, uso, vestido, tesoura, gaveta, corta, perna, torta, fresca…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en PT no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: natal (Larissa, Mariana)"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "a0",
+      "variante": "BRAZIL",
+      "registro": "calor y risa de hermanas: sol, viento, ropa equivocada, piel quemada; frases de una idea pero cosidas con e, mas y porque",
+      "espina": "Larissa, uma moça do Rio de Janeiro, parte o ano entre Londres e o Brasil; em cada volta reaprende o seu proprio pais e descobre o que perdeu fora. Em Natal, com a irma Mariana, descobre que a roupa, a pele e o calendario ainda sao de Londres, e marca a proxima volta",
+      "recursos": "A0: repeticion ritmica, contraste con mas, emocion como gesto visible (segura a mao da irma). Titulos: regionalismo, objeto torcido y linea dicha, orden nuevo. ESCALERA: cada historia devuelve surfaces EXACTAS que hasta hoy salian una sola vez (lista en 'vuelven'); ancladas solo las de la escena potiguar",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "parecer valiente delante de su hermana en el buggy de las dunas",
+          "impide": "llega con ropa de Londres y el buggy salta mas de lo que ella cree",
+          "cuesta": "las gafas de sol de Londres, que el viento se lleva a la arena",
+          "cambia": "se rie con arena en la cara y acepta el sombrero de Mariana",
+          "emocion": "susto (grita en la bajada) y despues alegria (sonrie con arena en la cara)",
+          "vuelven": "praia, carro, feliz, desce, de repente, grita, para trás, toma, sorri, rosto, forte, areia, mar, ao lado"
+        },
+        {
+          "slot": "2",
+          "quiere": "aguantar el calor de la tarde en casa de Mariana",
+          "impide": "en la maleta solo hay ropa de frio y el vestido de Mariana le queda pequeno",
+          "cuesta": "los vaqueros de Londres, cortados por la mitad y medio a la basura",
+          "cambia": "se pone el short torcido y se ve en el espejo medio carioca, medio potiguar",
+          "emocion": "agobio (se sienta en la cama sin aire) y despues risa (se mira en el espejo)",
+          "vuelven": "mala, meia, tenta, pequeno, quanto, custa, importa, meio, faz uma careta, feia, outra vez, lixo, cama, fecha"
+        },
+        {
+          "slot": "3",
+          "quiere": "haberse quedado todo el dia al sol",
+          "impide": "su piel de Londres no se acuerda del sol: la espalda quemada le duele",
+          "cuesta": "el dolor y el dia de playa de manana",
+          "cambia": "Mariana apunta en el movil la proxima vuelta: Navidad, en Natal",
+          "emocion": "dolor callado (se queda quieta en la cama) y despues ternura (le toma la mano a su hermana)",
+          "vuelven": "vermelha, inteira, cuidado, baixo, cama, conversam, aberta, que vem, chego, baixinho, falta, quieta, um pouco, coisa, pronto, tela, data, saudade, dedo, segura"
+        }
+      ]
+    },
+    "avisos": [
+      "seguidilla: 51% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
+    ]
+  },
   "cmtvpqsfv000832hgemzk20cl#porto-alegre": {
     "cerrado": "2026-09-10T16:58:20.736Z",
     "hash": "d60e44d50d1762e3",
