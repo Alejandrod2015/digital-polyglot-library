@@ -17,15 +17,15 @@ import { formatVariantLabel } from "@/lib/languageVariant";
 /**
  * Consulta propia y ESTRECHA, a propósito.
  *
- * Reusar `getAllStudioJourneys` era lo obvio, pero ese loader trae las
- * historias enteras (texto incluido): 5,17 MB, por encima del límite de 2 MB
- * del data cache de Next, así que su `unstable_cache` nunca llega a guardar y
- * cada llamada lanza un rechazo no capturado. Es un problema que ya existe en
- * la página, y colgar la metadata del mismo loader lo habría triplicado por
- * visita (página + metadata + imagen).
+ * Reusar `getAllStudioJourneys` era lo obvio, pero cuando se escribió ese
+ * loader traía las historias enteras y pasaba del límite de 2 MB del data
+ * cache de Next (se recortó el 2026-09-10). Aun recortado lleva lo que pinta
+ * la escalera de temas, que aquí sobra.
  *
  * Aquí solo hacen falta los campos con los que se arma el slug y el recuento
- * de temas, que caben de sobra en la caché.
+ * de temas, que caben de sobra en la caché. El filtro de historias tiene que
+ * ser el MISMO que el de JOURNEY_LIST_SELECT, o el slug de la metadata y el de
+ * la página podrían salir distintos.
  */
 const getJourneysForShareMeta = unstable_cache(
   async () => {
@@ -39,7 +39,7 @@ const getJourneysForShareMeta = unstable_cache(
         variant: true,
         levels: true,
         stories: {
-          where: { ...STORY_STATUS_WHERE, NOT: [{ text: null }, { title: null }] },
+          where: { ...STORY_STATUS_WHERE, NOT: [{ text: null }, { text: "" }, { title: null }] },
           select: { topic: true },
         },
       },

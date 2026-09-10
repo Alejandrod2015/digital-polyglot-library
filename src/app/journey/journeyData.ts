@@ -521,6 +521,45 @@ export const STORY_STATUS_WHERE: Prisma.JourneyStoryWhereInput = PREVIEW_DRAFTS
   ? { OR: [{ status: "published" }, { journeyId: { in: PREVIEW_JOURNEY_IDS } }] }
   : { status: "published" };
 
+// Solo las columnas que pinta la lista de journeys. Lista BLANCA a propósito:
+// con `include` (o con un `omit` de las gordas) cada columna nueva de
+// JourneyStory entraba sola en la caché. Medido el 2026-09-10 sobre todos los
+// idiomas, la entrada pesaba 10,4 MB (tiempos de karaoke 4,9; audioSegments 1,2;
+// vocab 1,1; audioFragments 1,1; texto 0,45), cinco veces el tope de 2 MB de
+// Next, así que nunca se guardaba y cada visita a /journey rehacía la consulta
+// y dejaba un rechazo sin capturar en el log. El texto y el vocab los piden
+// aparte la práctica y el checkpoint (`withStudyContent`).
+// Antes, el 2026-08-18, el mismo tope tumbó la versión por idioma: la
+// escritura lanzaba, la respuesta se cortaba y el móvil enseñaba "No Spanish
+// content yet" al pasar el español de 7 a 8 journeys.
+const JOURNEY_LIST_SELECT = {
+  id: true,
+  name: true,
+  language: true,
+  variant: true,
+  levels: true,
+  topics: true,
+  stories: {
+    // `text: ""` va aquí porque el texto ya no se trae: antes lo descartaba el
+    // constructor con `!story.text`. Misma condición en journeyMeta.ts, para
+    // que los dos cuenten las mismas historias al derivar el slug.
+    where: { ...STORY_STATUS_WHERE, NOT: [{ text: null }, { text: "" }, { title: null }] },
+    select: {
+      id: true,
+      level: true,
+      topic: true,
+      title: true,
+      slug: true,
+      coverUrl: true,
+      coverThumbhash: true,
+    },
+    // Include `topic` in the order so stories with the same level/slot
+    // don't get shuffled between topics; `slotIndex` is the sequence
+    // within a topic, as assigned by the Studio creation flow.
+    orderBy: [{ level: "asc" }, { topic: "asc" }, { slotIndex: "asc" }],
+  },
+} satisfies Prisma.JourneySelect;
+
 const getStudioJourneysForLanguage = unstable_cache(
   async (language: string) => {
     return prisma.journey.findMany({
@@ -531,36 +570,13 @@ const getStudioJourneysForLanguage = unstable_cache(
       // Deterministic order across Journey records for a variant so the UI
       // shows them the same way every time.
       orderBy: { createdAt: "asc" },
-      include: {
-        stories: {
-          where: { ...STORY_STATUS_WHERE, NOT: [{ text: null }, { title: null }] },
-          // Fuera las columnas gordas que este constructor no lee. Los tiempos
-          // de karaoke son una entrada por PALABRA y no se usan para pintar la
-          // lista de journeys; con ellas dentro, la entrada de `unstable_cache`
-          // del español llegó a 3,89 MB, por encima del tope de 2 MB de Next.
-          // La escritura en caché lanzaba, la respuesta se cortaba y el móvil
-          // enseñaba "No Spanish content yet" (2026-08-18, al publicar el A1
-          // de España y pasar de 7 a 8 journeys en ese idioma).
-          omit: {
-            audioWordTimings: true,   // 2,89 MB: una entrada por palabra
-            audioSegments: true,      // 0,72 MB
-            audioFragments: true,     // 0,60 MB
-            dialogueSpec: true,       // 0,16 MB
-            synopsis: true,           // 0,10 MB
-            auditOffenders: true,
-          },
-          // Include `topic` in the order so stories with the same level/slot
-          // don't get shuffled between topics; `slotIndex` is the sequence
-          // within a topic, as assigned by the Studio creation flow.
-          orderBy: [{ level: "asc" }, { topic: "asc" }, { slotIndex: "asc" }],
-        },
-      },
+      select: JOURNEY_LIST_SELECT,
     });
   },
-  // v8 (2026-08-13): subir el número invalida la entrada de forma
-  // determinista en el deploy. `revalidateTag` no bastó para desatascar el
-  // portugués, y una clave nueva no depende de que la invalidación se propague.
-  ["studio-journeys-by-language-v9"],
+  // Subir el número invalida la entrada de forma determinista en el deploy.
+  // `revalidateTag` no bastó para desatascar el portugués (2026-08-13), y una
+  // clave nueva no depende de que la invalidación se propague.
+  ["studio-journeys-by-language-v10"],
   { revalidate: 300, tags: ["published-journey-stories"] }
 );
 
@@ -572,15 +588,10 @@ const getAllStudioJourneys = unstable_cache(
     return prisma.journey.findMany({
       where: { ...JOURNEY_STATUS_WHERE },
       orderBy: [{ language: "asc" }, { createdAt: "asc" }],
-      include: {
-        stories: {
-          where: { ...STORY_STATUS_WHERE, NOT: [{ text: null }, { title: null }] },
-          orderBy: [{ level: "asc" }, { topic: "asc" }, { slotIndex: "asc" }],
-        },
-      },
+      select: JOURNEY_LIST_SELECT,
     });
   },
-  ["studio-journeys-all-v5"],
+  ["studio-journeys-all-v6"],
   { revalidate: 300, tags: ["published-journey-stories"] }
 );
 
@@ -742,7 +753,8 @@ async function buildJourneyVariantsFromStudio(
     }
 
     for (const story of journey.stories) {
-      if (!story.text || !story.title || !story.slug) continue;
+      // El texto vacío ya lo descarta el `where` de JOURNEY_LIST_SELECT.
+      if (!story.title || !story.slug) continue;
       const levelId = story.level.trim().toLowerCase();
       const topicSlug = story.topic.trim().toLowerCase();
       if (!levelId || !topicSlug) continue;
@@ -768,8 +780,6 @@ async function buildJourneyVariantsFromStudio(
         journeyFocus: "General",
         levelLabel: cefrDisplayLabel(levelId) ?? levelLabel,
         topicLabel: resolveTopicLabel(topicSlug),
-        text: story.text ?? undefined,
-        vocabItems: Array.isArray(story.vocab) ? (story.vocab as unknown as VocabItem[]) : undefined,
       };
       topicMap.get(topicSlug)!.push(item);
     }
@@ -1169,6 +1179,35 @@ function buildWordChoiceQuestion(
   };
 }
 
+// El texto y el vocab de cada historia NO viajan en la lista cacheada de
+// journeys: con ellos dentro la entrada de todos los idiomas pesaba ~2 MB aun
+// sin los tiempos de karaoke, por encima del tope del data cache de Next. Solo
+// los leen la práctica y el checkpoint, y siempre para UN tema (tres filas),
+// así que se piden aquí, frescos, en vez de cargarlos en cada visita al journey.
+async function withStudyContent(topic: JourneyTopic): Promise<JourneyTopic> {
+  const ids = topic.stories
+    .filter((story) => story.text === undefined && story.id.startsWith("journey:"))
+    .map((story) => story.id.slice("journey:".length));
+  if (ids.length === 0) return topic;
+  const rows = await prisma.journeyStory.findMany({
+    where: { id: { in: ids } },
+    select: { id: true, text: true, vocab: true },
+  });
+  const byId = new Map(rows.map((row) => [`journey:${row.id}`, row]));
+  return {
+    ...topic,
+    stories: topic.stories.map((story) => {
+      const row = byId.get(story.id);
+      if (!row) return story;
+      return {
+        ...story,
+        text: row.text ?? undefined,
+        vocabItems: Array.isArray(row.vocab) ? (row.vocab as unknown as VocabItem[]) : undefined,
+      };
+    }),
+  };
+}
+
 export async function buildJourneyTopicPracticeItems(
   variantId: string | undefined,
   levelId: string,
@@ -1181,9 +1220,10 @@ export async function buildJourneyTopicPracticeItems(
 } | null> {
   const levels = await buildJourneyLevels(variantId, DEFAULT_LANGUAGE, journeyFocus, levelId);
   const level = levels.find((entry) => entry.id === levelId) ?? null;
-  const topic = level?.topics.find((entry) => entry.slug === topicSlug) ?? null;
+  const baseTopic = level?.topics.find((entry) => entry.slug === topicSlug) ?? null;
 
-  if (!level || !topic) return null;
+  if (!level || !baseTopic) return null;
+  const topic = await withStudyContent(baseTopic);
 
   const items: PracticeFavoriteItem[] = [];
 
@@ -1231,9 +1271,10 @@ export async function buildJourneyTopicCheckpoint(
 } | null> {
   const levels = await buildJourneyLevels(variantId, DEFAULT_LANGUAGE, "General", levelId);
   const level = levels.find((entry) => entry.id === levelId);
-  const topic = level?.topics.find((entry) => entry.slug === topicSlug);
+  const baseTopic = level?.topics.find((entry) => entry.slug === topicSlug);
 
-  if (!level || !topic) return null;
+  if (!level || !baseTopic) return null;
+  const topic = await withStudyContent(baseTopic);
 
   const vocabPool = collectTopicVocab(topic.stories);
   const uniqueByWord = new Map<string, TopicVocabItem>();
