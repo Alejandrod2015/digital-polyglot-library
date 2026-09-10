@@ -125,7 +125,7 @@
   {
     "type": "meaning_in_context",
     "word": "cortesía",
-    "sentence": "Pagó el chifa completo por la [[cortesía]] más cara del mes.",
+    "sentence": "Pagó el chifa por la [[cortesía]] más cara del mes.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "courtesy",
@@ -138,7 +138,7 @@
       "audioClip": {
         "storySlug": "la-cortesia-mas-cara",
         "storySource": "user",
-        "sentence": "Pagó el chifa completo por la cortesía más cara del mes.",
+        "sentence": "Pagó el chifa por la cortesía más cara del mes.",
         "targetWord": "cortesía",
         "language": "spanish"
       }
@@ -147,7 +147,7 @@
   {
     "type": "meaning_in_context",
     "word": "muestrario",
-    "sentence": "Cruzó la ciudad con el [[muestrario]] nuevo.",
+    "sentence": "Cruzó la ciudad con el [[muestrario]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "sample book",
@@ -160,7 +160,7 @@
       "audioClip": {
         "storySlug": "la-cortesia-mas-cara",
         "storySource": "user",
-        "sentence": "Cruzó la ciudad con el muestrario nuevo.",
+        "sentence": "Cruzó la ciudad con el muestrario.",
         "targetWord": "muestrario",
         "language": "spanish"
       }
@@ -220,7 +220,7 @@
   {
     "type": "meaning_in_context",
     "word": "directorio",
-    "sentence": "La que viene tengo [[directorio]]. Usted tranquila.",
+    "sentence": "La que viene tengo [[directorio]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "board meeting",
@@ -233,7 +233,7 @@
       "audioClip": {
         "storySlug": "la-cortesia-mas-cara",
         "storySource": "user",
-        "sentence": "La que viene tengo directorio. Usted tranquila.",
+        "sentence": "La que viene tengo directorio.",
         "targetWord": "directorio",
         "language": "spanish"
       }

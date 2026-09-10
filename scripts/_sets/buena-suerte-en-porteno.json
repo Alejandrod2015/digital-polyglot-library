@@ -348,7 +348,7 @@
     "type": "meaning_in_context",
     "featured": false,
     "word": "pendiente",
-    "sentence": "Lo dejó sin abrir sobre el escritorio, tildado como [[pendiente]].",
+    "sentence": "Lo dejó sin abrir, tildado como [[pendiente]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "pending",
@@ -361,7 +361,7 @@
       "audioClip": {
         "storySlug": "buena-suerte-en-porteno",
         "storySource": "user",
-        "sentence": "Lo dejó sin abrir sobre el escritorio, tildado como pendiente.",
+        "sentence": "Lo dejó sin abrir, tildado como pendiente.",
         "targetWord": "pendiente",
         "language": "spanish"
       }
@@ -417,7 +417,7 @@
     "type": "meaning_in_context",
     "featured": false,
     "word": "al pasar",
-    "sentence": "La noticia la trajo él en el recreo, dicha [[al pasar]].",
+    "sentence": "La noticia la trajo él en el recreo, [[al pasar]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "in passing",
@@ -430,7 +430,7 @@
       "audioClip": {
         "storySlug": "buena-suerte-en-porteno",
         "storySource": "user",
-        "sentence": "La noticia la trajo él en el recreo, dicha al pasar.",
+        "sentence": "La noticia la trajo él en el recreo, al pasar.",
         "targetWord": "al pasar",
         "language": "spanish"
       }

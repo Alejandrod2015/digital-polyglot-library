@@ -26,6 +26,16 @@ const p = new PrismaClient();
     const orig = db.find((d) => d.slug === s.slug)!;
     const faltan = ((s.vocab ?? []) as any[]).filter((v) => !s.text.toLowerCase().includes(String(v.surface ?? v.word).toLowerCase()));
     const pars = s.text.split(/\n{2,}/).length;
+    const turnos = s.text.match(/^\s*[A-ZÁÉÍÓÚÑÜ][\wáéíóúñçüö' ]{1,20}:\s/gm) ?? [];
+    const toks = (t: string) => new Set((t.toLowerCase().match(/[\p{L}]+/gu) ?? []));
+    const nuevo = toks(s.text), viejo = toks(orig.text);
+    const setF = `scripts/_sets/${s.slug}.json`;
+    const rotas = fs.existsSync(setF) ? (JSON.parse(fs.readFileSync(setF, "utf8")) as any[])
+      .filter((e) => e.type === "meaning_in_context")
+      .map((e) => ({ w: e.word, perdidas: [...toks(e.sentence.replace(/\[\[|\]\]/g, ""))].filter((x) => viejo.has(x) && !nuevo.has(x)) }))
+      .filter((x) => x.perdidas.length) : [];
+    if (turnos.length) console.log(`   TURNO FALSO: ${turnos.join(" | ")}`);
+    for (const r of rotas) console.log(`   practica ${r.w}: cita palabras cortadas (${r.perdidas.join(", ")})`);
     console.log(`${s.slug}: ${words(orig.text)} -> ${words(s.text)} palabras · citada ${quotedPct(orig.text).toFixed(1)} -> ${quotedPct(s.text).toFixed(1)}% · ${pars} parrafos · titulo ${s.title === orig.title ? "igual" : "CAMBIADO"} · plazas sin superficie: ${faltan.map((v) => v.word).join(", ") || "ninguna"}`);
   }
   const mk = (arr: any[]) => arr.map((s) => ({ slug: s.slug, title: s.title, text: s.text, language: "ES", level: "b2", vocab: s.vocab as any, topic: s.topic }));

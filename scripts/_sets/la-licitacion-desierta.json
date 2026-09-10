@@ -52,7 +52,7 @@
   {
     "type": "meaning_in_context",
     "word": "licitación",
-    "sentence": "El encargo soñado esperaba arriba: la [[licitación]] de la estación entera.",
+    "sentence": "El encargo soñado era la [[licitación]] de la estación.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "public tender",
@@ -65,7 +65,7 @@
       "audioClip": {
         "storySlug": "la-licitacion-desierta",
         "storySource": "user",
-        "sentence": "El encargo soñado esperaba arriba: la licitación de la estación entera.",
+        "sentence": "El encargo soñado era la licitación de la estación.",
         "targetWord": "licitación",
         "language": "spanish"
       }
@@ -74,7 +74,7 @@
   {
     "type": "meaning_in_context",
     "word": "postular",
-    "sentence": "¿Y vas a [[postular]], al final?, preguntó él.",
+    "sentence": "¿Y vas a [[postular]]?, preguntó él.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to apply",
@@ -87,7 +87,7 @@
       "audioClip": {
         "storySlug": "la-licitacion-desierta",
         "storySource": "user",
-        "sentence": "¿Y vas a postular, al final?, preguntó él.",
+        "sentence": "¿Y vas a postular?, preguntó él.",
         "targetWord": "postular",
         "language": "spanish"
       }
@@ -242,7 +242,7 @@
   {
     "type": "meaning_in_context",
     "word": "dar el paso",
-    "sentence": "No [[dio el paso]]: entregó en blanco.",
+    "sentence": "No [[dio el paso]]; entregó en blanco.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to take the step",
@@ -255,7 +255,7 @@
       "audioClip": {
         "storySlug": "la-licitacion-desierta",
         "storySource": "user",
-        "sentence": "No dio el paso: entregó en blanco.",
+        "sentence": "No dio el paso; entregó en blanco.",
         "targetWord": "dio el paso",
         "language": "spanish"
       }
@@ -287,7 +287,7 @@
   {
     "type": "meaning_in_context",
     "word": "no más",
-    "sentence": "Haz la vista gorda, [[no más]]. Como todos, pidió él.",
+    "sentence": "Haz la vista gorda, [[no más]], pidió él.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "just (softener)",
@@ -300,7 +300,7 @@
       "audioClip": {
         "storySlug": "la-licitacion-desierta",
         "storySource": "user",
-        "sentence": "Haz la vista gorda, no más. Como todos, pidió él.",
+        "sentence": "Haz la vista gorda, no más, pidió él.",
         "targetWord": "no más",
         "language": "spanish"
       }

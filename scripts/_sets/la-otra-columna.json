@@ -272,7 +272,7 @@
     "type": "meaning_in_context",
     "featured": false,
     "word": "subte",
-    "sentence": "El dueño bajaba los lunes del [[subte]] con el promedio de cada grupo.",
+    "sentence": "Los lunes bajaba del [[subte]] con el promedio de cada grupo.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "subway",
@@ -285,7 +285,7 @@
       "audioClip": {
         "storySlug": "la-otra-columna",
         "storySource": "user",
-        "sentence": "El dueño bajaba los lunes del subte con el promedio de cada grupo.",
+        "sentence": "Los lunes bajaba del subte con el promedio de cada grupo.",
         "targetWord": "subte",
         "language": "spanish"
       }

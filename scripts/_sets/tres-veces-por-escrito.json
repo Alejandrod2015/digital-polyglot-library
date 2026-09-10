@@ -52,7 +52,7 @@
   {
     "type": "meaning_in_context",
     "word": "a media subida",
-    "sentence": "[[A media subida]], el ascensor dio un salto corto.",
+    "sentence": "[[A media subida]], el ascensor dio un salto.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "halfway up",
@@ -65,7 +65,7 @@
       "audioClip": {
         "storySlug": "tres-veces-por-escrito",
         "storySource": "user",
-        "sentence": "A media subida, el ascensor dio un salto corto.",
+        "sentence": "A media subida, el ascensor dio un salto.",
         "targetWord": "A media subida",
         "language": "spanish"
       }
@@ -96,7 +96,7 @@
   {
     "type": "meaning_in_context",
     "word": "manivela",
-    "sentence": "Te bajo a [[manivela]]. Un ratito no más, te lo prometo.",
+    "sentence": "Te bajo a [[manivela]]. Un ratito no más.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "hand crank",
@@ -109,7 +109,7 @@
       "audioClip": {
         "storySlug": "tres-veces-por-escrito",
         "storySource": "user",
-        "sentence": "Te bajo a manivela. Un ratito no más, te lo prometo.",
+        "sentence": "Te bajo a manivela. Un ratito no más.",
         "targetWord": "manivela",
         "language": "spanish"
       }
@@ -147,7 +147,7 @@
   {
     "type": "meaning_in_context",
     "word": "pasamanos",
-    "sentence": "¿Cuánto sería un ratito, exactamente?, preguntó ella, sujeta del [[pasamanos]].",
+    "sentence": "¿Cuánto sería un ratito?, preguntó ella, sujeta del [[pasamanos]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "handrail",
@@ -160,7 +160,7 @@
       "audioClip": {
         "storySlug": "tres-veces-por-escrito",
         "storySource": "user",
-        "sentence": "¿Cuánto sería un ratito, exactamente?, preguntó ella, sujeta del pasamanos.",
+        "sentence": "¿Cuánto sería un ratito?, preguntó ella, sujeta del pasamanos.",
         "targetWord": "pasamanos",
         "language": "spanish"
       }
@@ -287,7 +287,7 @@
   {
     "type": "meaning_in_context",
     "word": "al trote",
-    "sentence": "Salió con las piernas temblonas y el corazón [[al trote]].",
+    "sentence": "Salió con piernas temblonas y el corazón [[al trote]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "racing",
@@ -300,7 +300,7 @@
       "audioClip": {
         "storySlug": "tres-veces-por-escrito",
         "storySource": "user",
-        "sentence": "Salió con las piernas temblonas y el corazón al trote.",
+        "sentence": "Salió con piernas temblonas y el corazón al trote.",
         "targetWord": "al trote",
         "language": "spanish"
       }

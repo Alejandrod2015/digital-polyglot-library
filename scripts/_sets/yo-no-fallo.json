@@ -74,7 +74,7 @@
   {
     "type": "meaning_in_context",
     "word": "encargo",
-    "sentence": "Desde el lunes había un solo [[encargo]].",
+    "sentence": "Desde el lunes, el taller tenía un solo [[encargo]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "customer order",
@@ -87,7 +87,7 @@
       "audioClip": {
         "storySlug": "yo-no-fallo",
         "storySource": "user",
-        "sentence": "Desde el lunes había un solo encargo.",
+        "sentence": "Desde el lunes, el taller tenía un solo encargo.",
         "targetWord": "encargo",
         "language": "spanish"
       }

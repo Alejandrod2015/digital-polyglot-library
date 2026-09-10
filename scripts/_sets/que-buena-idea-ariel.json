@@ -227,7 +227,7 @@
   {
     "type": "meaning_in_context",
     "word": "de espaldas",
-    "sentence": "No dijo nada: dejó que la carta hablara, [[de espaldas]].",
+    "sentence": "No dijo nada; dejó que la carta hablara, [[de espaldas]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "with your back turned",
@@ -240,7 +240,7 @@
       "audioClip": {
         "storySlug": "que-buena-idea-ariel",
         "storySource": "user",
-        "sentence": "No dijo nada: dejó que la carta hablara, de espaldas.",
+        "sentence": "No dijo nada; dejó que la carta hablara, de espaldas.",
         "targetWord": "de espaldas",
         "language": "spanish"
       }
@@ -401,7 +401,7 @@
     "type": "meaning_in_context",
     "featured": false,
     "word": "pararse",
-    "sentence": "Después cruzó el pasillo en silencio y [[se paró]] en la puerta del aula.",
+    "sentence": "Después cruzó el pasillo en silencio y [[se paró]] en la puerta.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to stand",
@@ -414,7 +414,7 @@
       "audioClip": {
         "storySlug": "que-buena-idea-ariel",
         "storySource": "user",
-        "sentence": "Después cruzó el pasillo en silencio y se paró en la puerta del aula.",
+        "sentence": "Después cruzó el pasillo en silencio y se paró en la puerta.",
         "targetWord": "se paró",
         "language": "spanish"
       }

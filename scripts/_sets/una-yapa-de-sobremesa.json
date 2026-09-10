@@ -74,7 +74,7 @@
   {
     "type": "meaning_in_context",
     "word": "mozo",
-    "sentence": "El [[mozo]] gritó el pedido y trajo el chaufa caliente.",
+    "sentence": "El [[mozo]] trajo el chaufa caliente.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "waiter",
@@ -87,7 +87,7 @@
       "audioClip": {
         "storySlug": "una-yapa-de-sobremesa",
         "storySource": "user",
-        "sentence": "El mozo gritó el pedido y trajo el chaufa caliente.",
+        "sentence": "El mozo trajo el chaufa caliente.",
         "targetWord": "mozo",
         "language": "spanish"
       }
