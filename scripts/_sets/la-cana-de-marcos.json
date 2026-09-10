@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "deuda",
+  "sentence": "Una [[deuda]] pequeña la ataba al bar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "debt",
+   "options": [
+    "debt",
+    "secret",
+    "habit",
+    "favour"
+   ],
+   "audioClip": {
+    "storySlug": "la-cana-de-marcos",
+    "storySource": "user",
+    "sentence": "Una deuda pequeña la ataba al bar.",
+    "targetWord": "deuda",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "señaló",
+  "sentence": "No sabía el nombre, así que _____ el pastel con el dedo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "señaló",
+   "options": [
+    "señaló",
+    "cosió",
+    "planchó",
+    "barrió"
+   ],
+   "translation": "He didn't know the name, so he _____ at the cake with his finger.",
+   "optionTranslations": [
+    "pointed",
+    "sewed",
+    "ironed",
+    "swept"
+   ],
+   "audioClip": {
+    "storySlug": "la-cana-de-marcos",
+    "storySource": "user",
+    "sentence": "No sabía el nombre, así que señaló el pastel con el dedo.",
+    "targetWord": "señaló",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "pizarra,tiza,trapo,caña",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "pizarra",
+     "answer": "blackboard",
+     "options": [
+      "blackboard",
+      "chalk",
+      "cloth",
+      "small draught beer"
+     ]
+    },
+    {
+     "word": "tiza",
+     "answer": "chalk",
+     "options": [
+      "blackboard",
+      "chalk",
+      "cloth",
+      "small draught beer"
+     ]
+    },
+    {
+     "word": "trapo",
+     "answer": "cloth",
+     "options": [
+      "blackboard",
+      "chalk",
+      "cloth",
+      "small draught beer"
+     ]
+    },
+    {
+     "word": "caña",
+     "answer": "small draught beer",
+     "options": [
+      "blackboard",
+      "chalk",
+      "cloth",
+      "small draught beer"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a fin de mes",
+  "sentence": "Aquí se apunta y se paga [[a fin de mes]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at the end of the month",
+   "options": [
+    "at the end of the month",
+    "at the start of the day",
+    "every weekend",
+    "in advance"
+   ],
+   "audioClip": {
+    "storySlug": "la-cana-de-marcos",
+    "storySource": "user",
+    "sentence": "Aquí se apunta y se paga a fin de mes.",
+    "targetWord": "a fin de mes",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "deber",
+  "sentence": "[[Deber dinero]] le molestaba mucho.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to owe",
+   "options": [
+    "to owe",
+    "to earn",
+    "to lend",
+    "to save"
+   ],
+   "audioClip": {
+    "storySlug": "la-cana-de-marcos",
+    "storySource": "user",
+    "sentence": "Deber dinero le molestaba mucho.",
+    "targetWord": "Deber dinero",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "secando",
+  "sentence": "Está en el balcón, _____ la ropa al sol.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "secando",
+   "options": [
+    "secando",
+    "bebiendo",
+    "leyendo",
+    "cantando"
+   ],
+   "translation": "She's on the balcony, _____ the washing in the sun.",
+   "optionTranslations": [
+    "drying",
+    "drinking",
+    "reading",
+    "singing"
+   ],
+   "audioClip": {
+    "storySlug": "la-cana-de-marcos",
+    "storySource": "user",
+    "sentence": "Está en el balcón, secando la ropa al sol.",
+    "targetWord": "secando",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "al día",
+  "sentence": "El que paga [[al día]] es un turista.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "up to date",
+   "options": [
+    "up to date",
+    "in cash",
+    "by card",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "la-cana-de-marcos",
+    "storySource": "user",
+    "sentence": "El que paga al día es un turista.",
+    "targetWord": "al día",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "en paz",
+  "sentence": "Cóbrame y [[en paz]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "even, settled",
+   "options": [
+    "even, settled",
+    "in debt",
+    "in a hurry",
+    "in trouble"
+   ],
+   "audioClip": {
+    "storySlug": "la-cana-de-marcos",
+    "storySource": "user",
+    "sentence": "Cóbrame y en paz.",
+    "targetWord": "en paz",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "tranquila",
+  "sentence": "Ya no tiene prisa; habla con voz _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tranquila",
+   "options": [
+    "tranquila",
+    "amarilla",
+    "cuadrada",
+    "salada"
+   ],
+   "translation": "She's not in a hurry any more; she speaks in a _____ voice.",
+   "optionTranslations": [
+    "calm",
+    "yellow",
+    "square",
+    "salty"
+   ],
+   "audioClip": {
+    "storySlug": "la-cana-de-marcos",
+    "storySource": "user",
+    "sentence": "Ya no tiene prisa; habla con voz tranquila.",
+    "targetWord": "tranquila",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "propina",
+  "sentence": "La ataba al bar mejor que cualquier [[propina]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tip",
+   "options": [
+    "tip",
+    "discount",
+    "receipt",
+    "refund"
+   ],
+   "audioClip": {
+    "storySlug": "la-cana-de-marcos",
+    "storySource": "user",
+    "sentence": "La ataba al bar mejor que cualquier propina.",
+    "targetWord": "propina",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "billete",
+  "sentence": "Insistió en pagar, [[billete]] en mano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "banknote",
+   "options": [
+    "banknote",
+    "coin",
+    "receipt",
+    "credit card"
+   ],
+   "audioClip": {
+    "storySlug": "la-cana-de-marcos",
+    "storySource": "user",
+    "sentence": "Insistió en pagar, billete en mano.",
+    "targetWord": "billete",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "atar",
+  "sentence": "Antes de correr, hay que _____ bien los cordones.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "atar",
+   "options": [
+    "atar",
+    "afeitar",
+    "maquillar",
+    "rascar"
+   ],
+   "translation": "Before running, you have to _____ your laces tightly.",
+   "optionTranslations": [
+    "tie",
+    "shave",
+    "put make-up on",
+    "scratch"
+   ],
+   "audioClip": {
+    "storySlug": "la-cana-de-marcos",
+    "storySource": "user",
+    "sentence": "Antes de correr, hay que atar bien los cordones.",
+    "targetWord": "atar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "raya",
+  "sentence": "Escribió su nombre con una [[raya]] corta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "line",
+   "options": [
+    "line",
+    "circle",
+    "stain",
+    "crack"
+   ],
+   "audioClip": {
+    "storySlug": "la-cana-de-marcos",
+    "storySource": "user",
+    "sentence": "Escribió su nombre con una raya corta.",
+    "targetWord": "raya",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sonreír",
+  "sentence": "Ahora ya te fío yo a ti, [[sonrió]] él.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to smile",
+   "options": [
+    "to smile",
+    "to shout",
+    "to sigh",
+    "to frown"
+   ],
+   "audioClip": {
+    "storySlug": "la-cana-de-marcos",
+    "storySource": "user",
+    "sentence": "Ahora ya te fío yo a ti, sonrió él.",
+    "targetWord": "sonrió",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "corta",
+  "sentence": "La reunión fue muy _____; terminamos enseguida.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "corta",
+   "options": [
+    "corta",
+    "salada",
+    "peluda",
+    "dulce"
+   ],
+   "translation": "The meeting was very _____; we finished right away.",
+   "optionTranslations": [
+    "short",
+    "salty",
+    "hairy",
+    "sweet"
+   ],
+   "audioClip": {
+    "storySlug": "la-cana-de-marcos",
+    "storySource": "user",
+    "sentence": "La reunión fue muy corta; terminamos enseguida.",
+    "targetWord": "corta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prometer",
+  "sentence": "Era una raya corta que [[prometía]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to promise",
+   "options": [
+    "to promise",
+    "to warn",
+    "to forget",
+    "to cost"
+   ],
+   "audioClip": {
+    "storySlug": "la-cana-de-marcos",
+    "storySource": "user",
+    "sentence": "Era una raya corta que prometía.",
+    "targetWord": "prometía",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a la vista de todos",
+  "sentence": "Una deuda pequeña, [[a la vista de todos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in full view of everyone",
+   "options": [
+    "in full view of everyone",
+    "behind closed doors",
+    "in a secret place",
+    "out of sight"
+   ],
+   "audioClip": {
+    "storySlug": "la-cana-de-marcos",
+    "storySource": "user",
+    "sentence": "Una deuda pequeña, a la vista de todos.",
+    "targetWord": "a la vista de todos",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

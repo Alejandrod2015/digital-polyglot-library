@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "de toda la vida",
+  "sentence": "Pides sin hablar, como los [[de toda la vida]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lifelong",
+   "options": [
+    "lifelong",
+    "brand-new",
+    "part-time",
+    "out of town"
+   ],
+   "audioClip": {
+    "storySlug": "una-agenda-de-desconocida",
+    "storySource": "user",
+    "sentence": "Pides sin hablar, como los de toda la vida.",
+    "targetWord": "de toda la vida",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "funciona",
+  "sentence": "El ascensor no _____; tenemos que subir andando.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "funciona",
+   "options": [
+    "funciona",
+    "bosteza",
+    "maúlla",
+    "parpadea"
+   ],
+   "translation": "The lift doesn't _____; we'll have to walk up.",
+   "optionTranslations": [
+    "work",
+    "yawn",
+    "meow",
+    "blink"
+   ],
+   "audioClip": {
+    "storySlug": "una-agenda-de-desconocida",
+    "storySource": "user",
+    "sentence": "El ascensor no funciona; tenemos que subir andando.",
+    "targetWord": "funciona",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "andén,maleta,paquete,agenda",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "andén",
+     "answer": "platform",
+     "options": [
+      "platform",
+      "suitcase",
+      "parcel",
+      "planner"
+     ]
+    },
+    {
+     "word": "maleta",
+     "answer": "suitcase",
+     "options": [
+      "platform",
+      "suitcase",
+      "parcel",
+      "planner"
+     ]
+    },
+    {
+     "word": "paquete",
+     "answer": "parcel",
+     "options": [
+      "platform",
+      "suitcase",
+      "parcel",
+      "planner"
+     ]
+    },
+    {
+     "word": "agenda",
+     "answer": "planner",
+     "options": [
+      "platform",
+      "suitcase",
+      "parcel",
+      "planner"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sin abrir la boca",
+  "sentence": "Pidió los cafés [[sin abrir la boca]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "without saying a word",
+   "options": [
+    "without saying a word",
+    "without paying",
+    "without sitting down",
+    "without a smile"
+   ],
+   "audioClip": {
+    "storySlug": "una-agenda-de-desconocida",
+    "storySource": "user",
+    "sentence": "Pidió los cafés sin abrir la boca.",
+    "targetWord": "sin abrir la boca",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hojear",
+  "sentence": "Lo [[hojeó]] como la agenda de una desconocida.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to leaf through",
+   "options": [
+    "to leaf through",
+    "to tear up",
+    "to throw away",
+    "to sign"
+   ],
+   "audioClip": {
+    "storySlug": "una-agenda-de-desconocida",
+    "storySource": "user",
+    "sentence": "Lo hojeó como la agenda de una desconocida.",
+    "targetWord": "hojeó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "traigo",
+  "sentence": "Si vienes a cenar, yo _____ el postre.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "traigo",
+   "options": [
+    "traigo",
+    "afilo",
+    "cepillo",
+    "lijo"
+   ],
+   "translation": "If you come to dinner, I'll _____ the dessert.",
+   "optionTranslations": [
+    "bring",
+    "sharpen",
+    "brush",
+    "sand"
+   ],
+   "audioClip": {
+    "storySlug": "una-agenda-de-desconocida",
+    "storySource": "user",
+    "sentence": "Si vienes a cenar, yo traigo el postre.",
+    "targetWord": "traigo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dar las gracias",
+  "sentence": "Le [[dio las gracias]] sin saber por qué.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to say thank you",
+   "options": [
+    "to say thank you",
+    "to say sorry",
+    "to say goodbye",
+    "to say no"
+   ],
+   "audioClip": {
+    "storySlug": "una-agenda-de-desconocida",
+    "storySource": "user",
+    "sentence": "Le dio las gracias sin saber por qué.",
+    "targetWord": "dio las gracias",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "talla",
+  "sentence": "La vida de antes era de otra [[talla]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "size",
+   "options": [
+    "size",
+    "colour",
+    "price",
+    "country"
+   ],
+   "audioClip": {
+    "storySlug": "una-agenda-de-desconocida",
+    "storySource": "user",
+    "sentence": "La vida de antes era de otra talla.",
+    "targetWord": "talla",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "abrazaron",
+  "sentence": "Hacía años que no se veían y se _____ en la estación.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "abrazaron",
+   "options": [
+    "abrazaron",
+    "afeitaron",
+    "maquillaron",
+    "graduaron"
+   ],
+   "translation": "They hadn't seen each other for years and they _____ at the station.",
+   "optionTranslations": [
+    "hugged",
+    "shaved",
+    "put on make-up",
+    "graduated"
+   ],
+   "audioClip": {
+    "storySlug": "una-agenda-de-desconocida",
+    "storySource": "user",
+    "sentence": "Hacía años que no se veían y se abrazaron en la estación.",
+    "targetWord": "abrazaron",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "por si",
+  "sentence": "Te lo traigo [[por si]] lo echabas de menos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in case",
+   "options": [
+    "in case",
+    "because",
+    "although",
+    "unless"
+   ],
+   "audioClip": {
+    "storySlug": "una-agenda-de-desconocida",
+    "storySource": "user",
+    "sentence": "Te lo traigo por si lo echabas de menos.",
+    "targetWord": "por si",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "casilla",
+  "sentence": "Cada hora tenía su [[casilla]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "box, slot",
+   "options": [
+    "box, slot",
+    "alarm",
+    "colour",
+    "page"
+   ],
+   "audioClip": {
+    "storySlug": "una-agenda-de-desconocida",
+    "storySource": "user",
+    "sentence": "Cada hora tenía su casilla.",
+    "targetWord": "casilla",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "olvidado",
+  "sentence": "Volví al bar a por el paraguas _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "olvidado",
+   "options": [
+    "olvidado",
+    "hambriento",
+    "celoso",
+    "educado"
+   ],
+   "translation": "I went back to the bar for the _____ umbrella.",
+   "optionTranslations": [
+    "forgotten",
+    "hungry",
+    "jealous",
+    "polite"
+   ],
+   "audioClip": {
+    "storySlug": "una-agenda-de-desconocida",
+    "storySource": "user",
+    "sentence": "Volví al bar a por el paraguas olvidado.",
+    "targetWord": "olvidado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bienvenida",
+  "sentence": "El paseo de [[bienvenida]] salió solo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "welcome",
+   "options": [
+    "welcome",
+    "farewell",
+    "birthday",
+    "wedding"
+   ],
+   "audioClip": {
+    "storySlug": "una-agenda-de-desconocida",
+    "storySource": "user",
+    "sentence": "El paseo de bienvenida salió solo.",
+    "targetWord": "bienvenida",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "desconocido",
+  "sentence": "Era como la agenda de una [[desconocida]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stranger",
+   "options": [
+    "stranger",
+    "neighbour",
+    "cousin",
+    "colleague"
+   ],
+   "audioClip": {
+    "storySlug": "una-agenda-de-desconocida",
+    "storySource": "user",
+    "sentence": "Era como la agenda de una desconocida.",
+    "targetWord": "desconocida",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "rara",
+  "sentence": "Hoy está muy _____: no ha dicho ni una palabra.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rara",
+   "options": [
+    "rara",
+    "cuadrada",
+    "oxidada",
+    "hervida"
+   ],
+   "translation": "She's being very _____ today: she hasn't said a word.",
+   "optionTranslations": [
+    "strange",
+    "square",
+    "rusty",
+    "boiled"
+   ],
+   "audioClip": {
+    "storySlug": "una-agenda-de-desconocida",
+    "storySource": "user",
+    "sentence": "Hoy está muy rara: no ha dicho ni una palabra.",
+    "targetWord": "rara",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de sobra",
+  "sentence": "La esperó con tiempo [[de sobra]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to spare",
+   "options": [
+    "to spare",
+    "too little",
+    "by the hour",
+    "in the rain"
+   ],
+   "audioClip": {
+    "storySlug": "una-agenda-de-desconocida",
+    "storySource": "user",
+    "sentence": "La esperó con tiempo de sobra.",
+    "targetWord": "de sobra",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de verdad",
+  "sentence": "Se lo agradeció [[de verdad]], sin saber por qué.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "truly",
+   "options": [
+    "truly",
+    "jokingly",
+    "coldly",
+    "briefly"
+   ],
+   "audioClip": {
+    "storySlug": "una-agenda-de-desconocida",
+    "storySource": "user",
+    "sentence": "Se lo agradeció de verdad, sin saber por qué.",
+    "targetWord": "de verdad",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

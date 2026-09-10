@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "esta vez",
+  "sentence": "[[Esta vez]] no apuntó nada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "this time",
+   "options": [
+    "this time",
+    "every time",
+    "next time",
+    "last time"
+   ],
+   "audioClip": {
+    "storySlug": "me-lo-he-ganado",
+    "storySource": "user",
+    "sentence": "Esta vez no apuntó nada.",
+    "targetWord": "Esta vez",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "estrenó",
+  "sentence": "Para la boda, _____ unos zapatos nuevos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "estrenó",
+   "options": [
+    "estrenó",
+    "enhebró",
+    "abanicó",
+    "rastrilló"
+   ],
+   "translation": "For the wedding, she _____ a new pair of shoes.",
+   "optionTranslations": [
+    "wore for the first time",
+    "threaded",
+    "fanned",
+    "raked"
+   ],
+   "audioClip": {
+    "storySlug": "me-lo-he-ganado",
+    "storySource": "user",
+    "sentence": "Para la boda, estrenó unos zapatos nuevos.",
+    "targetWord": "estrenó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "pintura,clavo,estribillo,aplauso",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "pintura",
+     "answer": "paint",
+     "options": [
+      "paint",
+      "nail",
+      "chorus",
+      "applause"
+     ]
+    },
+    {
+     "word": "clavo",
+     "answer": "nail",
+     "options": [
+      "paint",
+      "nail",
+      "chorus",
+      "applause"
+     ]
+    },
+    {
+     "word": "estribillo",
+     "answer": "chorus",
+     "options": [
+      "paint",
+      "nail",
+      "chorus",
+      "applause"
+     ]
+    },
+    {
+     "word": "aplauso",
+     "answer": "applause",
+     "options": [
+      "paint",
+      "nail",
+      "chorus",
+      "applause"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de memoria",
+  "sentence": "La copla ya se la sabía [[de memoria]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "by heart",
+   "options": [
+    "by heart",
+    "by chance",
+    "in writing",
+    "in part"
+   ],
+   "audioClip": {
+    "storySlug": "me-lo-he-ganado",
+    "storySource": "user",
+    "sentence": "La copla ya se la sabía de memoria.",
+    "targetWord": "de memoria",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "el que se pique",
+  "sentence": "Hay copla nueva; [[el que se pique]], que se aguante.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "whoever takes offence",
+   "options": [
+    "whoever takes offence",
+    "whoever arrives late",
+    "whoever sings best",
+    "whoever pays"
+   ],
+   "audioClip": {
+    "storySlug": "me-lo-he-ganado",
+    "storySource": "user",
+    "sentence": "Hay copla nueva; el que se pique, que se aguante.",
+    "targetWord": "el que se pique",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "subió",
+  "sentence": "Para ver el desfile, se _____ a una silla.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "subió",
+   "options": [
+    "subió",
+    "sonó",
+    "desmayó",
+    "empapó"
+   ],
+   "translation": "To see the parade, he _____ onto a chair.",
+   "optionTranslations": [
+    "climbed",
+    "blew his nose",
+    "fainted",
+    "got soaked"
+   ],
+   "audioClip": {
+    "storySlug": "me-lo-he-ganado",
+    "storySource": "user",
+    "sentence": "Para ver el desfile, se subió a una silla.",
+    "targetWord": "subió",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ganarse",
+  "sentence": "Me lo [[he ganado]], entonces.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to earn",
+   "options": [
+    "to earn",
+    "to lose",
+    "to steal",
+    "to borrow"
+   ],
+   "audioClip": {
+    "storySlug": "me-lo-he-ganado",
+    "storySource": "user",
+    "sentence": "Me lo he ganado, entonces.",
+    "targetWord": "he ganado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hacerte esperar",
+  "sentence": "En esta casa había que [[hacerte esperar]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make you wait",
+   "options": [
+    "to make you wait",
+    "to make you laugh",
+    "to make you leave",
+    "to make you pay"
+   ],
+   "audioClip": {
+    "storySlug": "me-lo-he-ganado",
+    "storySource": "user",
+    "sentence": "En esta casa había que hacerte esperar.",
+    "targetWord": "hacerte esperar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "desdobló",
+  "sentence": "Sacó el mapa del bolsillo y lo _____ sobre la mesa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "desdobló",
+   "options": [
+    "desdobló",
+    "tragó",
+    "sopló",
+    "lamió"
+   ],
+   "translation": "He took the map out of his pocket and _____ it on the table.",
+   "optionTranslations": [
+    "unfolded",
+    "swallowed",
+    "blew",
+    "licked"
+   ],
+   "audioClip": {
+    "storySlug": "me-lo-he-ganado",
+    "storySource": "user",
+    "sentence": "Sacó el mapa del bolsillo y lo desdobló sobre la mesa.",
+    "targetWord": "desdobló",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "retratar",
+  "sentence": "El primer verso ya la [[retrataba]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to portray",
+   "options": [
+    "to portray",
+    "to insult",
+    "to forget",
+    "to hide"
+   ],
+   "audioClip": {
+    "storySlug": "me-lo-he-ganado",
+    "storySource": "user",
+    "sentence": "El primer verso ya la retrataba.",
+    "targetWord": "retrataba",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "resumen",
+  "sentence": "Esa diferencia le pareció el [[resumen]] del año.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "summary",
+   "options": [
+    "summary",
+    "beginning",
+    "secret",
+    "mistake"
+   ],
+   "audioClip": {
+    "storySlug": "me-lo-he-ganado",
+    "storySource": "user",
+    "sentence": "Esa diferencia le pareció el resumen del año.",
+    "targetWord": "resumen",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "servidos",
+  "sentence": "Los platos ya están _____; siéntate a comer.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "servidos",
+   "options": [
+    "servidos",
+    "dormidos",
+    "casados",
+    "peinados"
+   ],
+   "translation": "The dishes are already _____; sit down and eat.",
+   "optionTranslations": [
+    "served",
+    "asleep",
+    "married",
+    "combed"
+   ],
+   "audioClip": {
+    "storySlug": "me-lo-he-ganado",
+    "storySource": "user",
+    "sentence": "Los platos ya están servidos; siéntate a comer.",
+    "targetWord": "servidos",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "diferencia",
+  "sentence": "A ella esa [[diferencia]] le pareció el resumen del año.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "difference",
+   "options": [
+    "difference",
+    "silence",
+    "danger",
+    "weight"
+   ],
+   "audioClip": {
+    "storySlug": "me-lo-he-ganado",
+    "storySource": "user",
+    "sentence": "A ella esa diferencia le pareció el resumen del año.",
+    "targetWord": "diferencia",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "reconocerse",
+  "sentence": "Tardó un verso en [[reconocerse]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to recognise yourself",
+   "options": [
+    "to recognise yourself",
+    "to get dressed",
+    "to calm down",
+    "to sit down"
+   ],
+   "audioClip": {
+    "storySlug": "me-lo-he-ganado",
+    "storySource": "user",
+    "sentence": "Tardó un verso en reconocerse.",
+    "targetWord": "reconocerse",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "contaba",
+  "sentence": "Cada noche le _____ un cuento para dormir.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "contaba",
+   "options": [
+    "contaba",
+    "freía",
+    "barría",
+    "cosía"
+   ],
+   "translation": "Every night she _____ him a bedtime story.",
+   "optionTranslations": [
+    "told",
+    "fried",
+    "swept",
+    "sewed"
+   ],
+   "audioClip": {
+    "storySlug": "me-lo-he-ganado",
+    "storySource": "user",
+    "sentence": "Cada noche le contaba un cuento para dormir.",
+    "targetWord": "contaba",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "luz",
+  "sentence": "El local nuevo estrenó [[luz]] y olor a pintura.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "light",
+   "options": [
+    "light",
+    "furniture",
+    "music",
+    "staff"
+   ],
+   "audioClip": {
+    "storySlug": "me-lo-he-ganado",
+    "storySource": "user",
+    "sentence": "El local nuevo estrenó luz y olor a pintura.",
+    "targetWord": "luz",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pedir silencio",
+  "sentence": "Subido a una silla, [[pidió silencio]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to ask for quiet",
+   "options": [
+    "to ask for quiet",
+    "to ask for help",
+    "to ask for a drink",
+    "to ask for the bill"
+   ],
+   "audioClip": {
+    "storySlug": "me-lo-he-ganado",
+    "storySource": "user",
+    "sentence": "Subido a una silla, pidió silencio.",
+    "targetWord": "pidió silencio",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

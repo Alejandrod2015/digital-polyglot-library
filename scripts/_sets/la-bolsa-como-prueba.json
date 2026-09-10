@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "mercado de abastos",
+  "sentence": "Llevaba días oyendo pedir en el [[mercado de abastos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "covered food market",
+   "options": [
+    "covered food market",
+    "shopping centre",
+    "street festival",
+    "bus station"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-como-prueba",
+    "storySource": "user",
+    "sentence": "Llevaba días oyendo pedir en el mercado de abastos.",
+    "targetWord": "mercado de abastos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "ensayó",
+  "sentence": "Antes de la entrevista, _____ las respuestas delante del espejo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ensayó",
+   "options": [
+    "ensayó",
+    "rompió",
+    "vendió",
+    "pintó"
+   ],
+   "translation": "Before the interview, she _____ the answers in front of the mirror.",
+   "optionTranslations": [
+    "rehearsed",
+    "broke",
+    "sold",
+    "painted"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-como-prueba",
+    "storySource": "user",
+    "sentence": "Antes de la entrevista, ensayó las respuestas delante del espejo.",
+    "targetWord": "ensayó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "puesto,prueba,vergüenza,lista de la compra",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "puesto",
+     "answer": "market stall",
+     "options": [
+      "market stall",
+      "proof",
+      "embarrassment",
+      "shopping list"
+     ]
+    },
+    {
+     "word": "prueba",
+     "answer": "proof",
+     "options": [
+      "market stall",
+      "proof",
+      "embarrassment",
+      "shopping list"
+     ]
+    },
+    {
+     "word": "vergüenza",
+     "answer": "embarrassment",
+     "options": [
+      "market stall",
+      "proof",
+      "embarrassment",
+      "shopping list"
+     ]
+    },
+    {
+     "word": "lista de la compra",
+     "answer": "shopping list",
+     "options": [
+      "market stall",
+      "proof",
+      "embarrassment",
+      "shopping list"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "salirse con la suya",
+  "sentence": "Salió segura de haberse [[salido con la suya]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to get your way",
+   "options": [
+    "to get your way",
+    "to lose your temper",
+    "to go home early",
+    "to change your mind"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-como-prueba",
+    "storySource": "user",
+    "sentence": "Salió segura de haberse salido con la suya.",
+    "targetWord": "salido con la suya",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tomar por",
+  "sentence": "Hoy nadie me ha [[tomado por]] turista.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to mistake for",
+   "options": [
+    "to mistake for",
+    "to charge as",
+    "to welcome as",
+    "to warn about"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-como-prueba",
+    "storySource": "user",
+    "sentence": "Hoy nadie me ha tomado por turista.",
+    "targetWord": "tomado por",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "eligieron",
+  "sentence": "En la frutería me _____ los melocotones más maduros.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "eligieron",
+   "options": [
+    "eligieron",
+    "pintaron",
+    "contaron",
+    "rompieron"
+   ],
+   "translation": "At the greengrocer's they _____ the ripest peaches for me.",
+   "optionTranslations": [
+    "picked",
+    "painted",
+    "counted",
+    "broke"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-como-prueba",
+    "storySource": "user",
+    "sentence": "En la frutería me eligieron los melocotones más maduros.",
+    "targetWord": "eligieron",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "en voz baja",
+  "sentence": "En la puerta ensayó la frase [[en voz baja]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quietly",
+   "options": [
+    "quietly",
+    "by heart",
+    "in a hurry",
+    "out loud"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-como-prueba",
+    "storySource": "user",
+    "sentence": "En la puerta ensayó la frase en voz baja.",
+    "targetWord": "en voz baja",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tocarle a alguien",
+  "sentence": "Aquella mañana, por fin, [[le tocaba]] a ella.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be someone's turn",
+   "options": [
+    "to be someone's turn",
+    "to be someone's fault",
+    "to be someone's gift",
+    "to be someone's secret"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-como-prueba",
+    "storySource": "user",
+    "sentence": "Aquella mañana, por fin, le tocaba a ella.",
+    "targetWord": "le tocaba",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "lleno",
+  "sentence": "No cabía nada más: el autobús iba _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lleno",
+   "options": [
+    "lleno",
+    "barato",
+    "oscuro",
+    "nuevo"
+   ],
+   "translation": "Nothing else would fit: the bus was _____.",
+   "optionTranslations": [
+    "full",
+    "cheap",
+    "dark",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-como-prueba",
+    "storySource": "user",
+    "sentence": "No cabía nada más: el autobús iba lleno.",
+    "targetWord": "lleno",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "colar",
+  "sentence": "Nunca había habido nada que [[colar]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to slip past",
+   "options": [
+    "to slip past",
+    "to throw away",
+    "to pay back",
+    "to write down"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-como-prueba",
+    "storySource": "user",
+    "sentence": "Nunca había habido nada que colar.",
+    "targetWord": "colar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "redondear",
+  "sentence": "Pagó con la cuenta [[redondeada]] y la bolsa llena.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to round off",
+   "options": [
+    "to round off",
+    "to split",
+    "to double",
+    "to check"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-como-prueba",
+    "storySource": "user",
+    "sentence": "Pagó con la cuenta redondeada y la bolsa llena.",
+    "targetWord": "redondeada",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "repartió",
+  "sentence": "Al llegar a casa, _____ la fruta entre los vecinos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "repartió",
+   "options": [
+    "repartió",
+    "pintó",
+    "apagó",
+    "cerró"
+   ],
+   "translation": "When she got home, she _____ the fruit among the neighbours.",
+   "optionTranslations": [
+    "shared out",
+    "painted",
+    "switched off",
+    "closed"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-como-prueba",
+    "storySource": "user",
+    "sentence": "Al llegar a casa, repartió la fruta entre los vecinos.",
+    "targetWord": "repartió",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "guardar",
+  "sentence": "Pues que me [[guarden]] lo que quieran.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to keep aside",
+   "options": [
+    "to keep aside",
+    "to throw out",
+    "to sell off",
+    "to give back"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-como-prueba",
+    "storySource": "user",
+    "sentence": "Pues que me guarden lo que quieran.",
+    "targetWord": "guarden",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fresco",
+  "sentence": "Olía a hierbabuena y a pescado [[fresco]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fresh",
+   "options": [
+    "fresh",
+    "frozen",
+    "salty",
+    "smoked"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-como-prueba",
+    "storySource": "user",
+    "sentence": "Olía a hierbabuena y a pescado fresco.",
+    "targetWord": "fresco",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "duró",
+  "sentence": "La tormenta _____ poco; enseguida salió el sol.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "duró",
+   "options": [
+    "duró",
+    "pesó",
+    "costó",
+    "midió"
+   ],
+   "translation": "The storm _____ a short time; the sun came out right away.",
+   "optionTranslations": [
+    "lasted",
+    "weighed",
+    "cost",
+    "measured"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-como-prueba",
+    "storySource": "user",
+    "sentence": "La tormenta duró poco; enseguida salió el sol.",
+    "targetWord": "duró",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de más",
+  "sentence": "Nadie la miró [[de más]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "more than necessary",
+   "options": [
+    "more than necessary",
+    "for a second",
+    "with anger",
+    "from far away"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-como-prueba",
+    "storySource": "user",
+    "sentence": "Nadie la miró de más.",
+    "targetWord": "de más",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de los buenos",
+  "sentence": "Le tenía guardados tomates [[de los buenos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "of the best kind",
+   "options": [
+    "of the best kind",
+    "of every colour",
+    "from last week",
+    "for the sauce"
+   ],
+   "audioClip": {
+    "storySlug": "la-bolsa-como-prueba",
+    "storySource": "user",
+    "sentence": "Le tenía guardados tomates de los buenos.",
+    "targetWord": "de los buenos",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

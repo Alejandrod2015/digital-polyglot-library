@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "fecha",
+  "sentence": "Miró la [[fecha]] y tardó en contestar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "date",
+   "options": [
+    "date",
+    "price",
+    "headline",
+    "address"
+   ],
+   "audioClip": {
+    "storySlug": "la-persiana-a-media-tarde",
+    "storySource": "user",
+    "sentence": "Miró la fecha y tardó en contestar.",
+    "targetWord": "fecha",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "subrayó",
+  "sentence": "Para no olvidarla, _____ la fecha en rojo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "subrayó",
+   "options": [
+    "subrayó",
+    "masticó",
+    "tragó",
+    "sopló"
+   ],
+   "translation": "So as not to forget it, she _____ the date in red.",
+   "optionTranslations": [
+    "underlined",
+    "chewed",
+    "swallowed",
+    "blew"
+   ],
+   "audioClip": {
+    "storySlug": "la-persiana-a-media-tarde",
+    "storySource": "user",
+    "sentence": "Para no olvidarla, subrayó la fecha en rojo.",
+    "targetWord": "subrayó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "kiosco,sello,persiana,montón",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "kiosco",
+     "answer": "newsstand",
+     "options": [
+      "newsstand",
+      "stamp",
+      "metal shutter",
+      "pile"
+     ]
+    },
+    {
+     "word": "sello",
+     "answer": "stamp",
+     "options": [
+      "newsstand",
+      "stamp",
+      "metal shutter",
+      "pile"
+     ]
+    },
+    {
+     "word": "persiana",
+     "answer": "metal shutter",
+     "options": [
+      "newsstand",
+      "stamp",
+      "metal shutter",
+      "pile"
+     ]
+    },
+    {
+     "word": "montón",
+     "answer": "pile",
+     "options": [
+      "newsstand",
+      "stamp",
+      "metal shutter",
+      "pile"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a primera hora",
+  "sentence": "Vuelve el jueves [[a primera hora]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "first thing",
+   "options": [
+    "first thing",
+    "last thing",
+    "at lunchtime",
+    "at midnight"
+   ],
+   "audioClip": {
+    "storySlug": "la-persiana-a-media-tarde",
+    "storySource": "user",
+    "sentence": "Vuelve el jueves a primera hora.",
+    "targetWord": "a primera hora",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sonar a",
+  "sentence": "La respuesta [[sonaba a]] puerta cerrada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sound like",
+   "options": [
+    "to sound like",
+    "to smell of",
+    "to look like",
+    "to taste of"
+   ],
+   "audioClip": {
+    "storySlug": "la-persiana-a-media-tarde",
+    "storySource": "user",
+    "sentence": "La respuesta sonaba a puerta cerrada.",
+    "targetWord": "sonaba a",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "tardó",
+  "sentence": "El autobús _____ mucho en llegar y perdimos el tren.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tardó",
+   "options": [
+    "tardó",
+    "bailó",
+    "ladró",
+    "sudó"
+   ],
+   "translation": "The bus _____ ages to arrive and we missed the train.",
+   "optionTranslations": [
+    "took",
+    "danced",
+    "barked",
+    "sweated"
+   ],
+   "audioClip": {
+    "storySlug": "la-persiana-a-media-tarde",
+    "storySource": "user",
+    "sentence": "El autobús tardó mucho en llegar y perdimos el tren.",
+    "targetWord": "tardó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "al fin",
+  "sentence": "Pregunta por la caja azul, soltó [[al fin]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at last",
+   "options": [
+    "at last",
+    "at once",
+    "at first",
+    "at random"
+   ],
+   "audioClip": {
+    "storySlug": "la-persiana-a-media-tarde",
+    "storySource": "user",
+    "sentence": "Pregunta por la caja azul, soltó al fin.",
+    "targetWord": "al fin",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "con la palabra en la boca",
+  "sentence": "La plaza entera se quedó [[con la palabra en la boca]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cut off mid-sentence",
+   "options": [
+    "cut off mid-sentence",
+    "with a full mouth",
+    "out of breath",
+    "lost for a name"
+   ],
+   "audioClip": {
+    "storySlug": "la-persiana-a-media-tarde",
+    "storySource": "user",
+    "sentence": "La plaza entera se quedó con la palabra en la boca.",
+    "targetWord": "con la palabra en la boca",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "dolía",
+  "sentence": "Me caí ayer y toda la noche me _____ la rodilla.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dolía",
+   "options": [
+    "dolía",
+    "sobraba",
+    "encantaba",
+    "apetecía"
+   ],
+   "translation": "I fell yesterday and my knee _____ all night.",
+   "optionTranslations": [
+    "hurt",
+    "was left over",
+    "delighted me",
+    "appealed to me"
+   ],
+   "audioClip": {
+    "storySlug": "la-persiana-a-media-tarde",
+    "storySource": "user",
+    "sentence": "Me caí ayer y toda la noche me dolía la rodilla.",
+    "targetWord": "dolía",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "por eso mismo",
+  "sentence": "Ya lo sé; [[por eso mismo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "for that very reason",
+   "options": [
+    "for that very reason",
+    "just in case",
+    "even so",
+    "by the way"
+   ],
+   "audioClip": {
+    "storySlug": "la-persiana-a-media-tarde",
+    "storySource": "user",
+    "sentence": "Ya lo sé; por eso mismo.",
+    "targetWord": "por eso mismo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "respuesta",
+  "sentence": "Él tardó en dar una [[respuesta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "answer",
+   "options": [
+    "answer",
+    "question",
+    "visit",
+    "smell"
+   ],
+   "audioClip": {
+    "storySlug": "la-persiana-a-media-tarde",
+    "storySource": "user",
+    "sentence": "Él tardó en dar una respuesta.",
+    "targetWord": "respuesta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "falta",
+  "sentence": "No podemos hacer la tarta porque _____ azúcar.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "falta",
+   "options": [
+    "falta",
+    "ladra",
+    "tose",
+    "llueve"
+   ],
+   "translation": "We can't make the cake because sugar is _____.",
+   "optionTranslations": [
+    "missing",
+    "barking",
+    "coughing",
+    "raining"
+   ],
+   "audioClip": {
+    "storySlug": "la-persiana-a-media-tarde",
+    "storySource": "user",
+    "sentence": "No podemos hacer la tarta porque falta azúcar.",
+    "targetWord": "falta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "agotarse",
+  "sentence": "No queda nada, y no porque [[se agotara]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sell out",
+   "options": [
+    "to sell out",
+    "to get lost",
+    "to get wet",
+    "to break down"
+   ],
+   "audioClip": {
+    "storySlug": "la-persiana-a-media-tarde",
+    "storySource": "user",
+    "sentence": "No queda nada, y no porque se agotara.",
+    "targetWord": "se agotara",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "atrasado",
+  "sentence": "¿Guardas también los números [[atrasados]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "back-dated",
+   "options": [
+    "back-dated",
+    "brand-new",
+    "hand-written",
+    "expensive"
+   ],
+   "audioClip": {
+    "storySlug": "la-persiana-a-media-tarde",
+    "storySource": "user",
+    "sentence": "¿Guardas también los números atrasados?",
+    "targetWord": "atrasados",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "perdido",
+  "sentence": "Busqué el gato por todo el barrio; seguía _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "perdido",
+   "options": [
+    "perdido",
+    "cocido",
+    "pelado",
+    "tostado"
+   ],
+   "translation": "I looked for the cat all over the neighbourhood; it was still _____.",
+   "optionTranslations": [
+    "lost",
+    "boiled",
+    "peeled",
+    "toasted"
+   ],
+   "audioClip": {
+    "storySlug": "la-persiana-a-media-tarde",
+    "storySource": "user",
+    "sentence": "Busqué el gato por todo el barrio; seguía perdido.",
+    "targetWord": "perdido",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "seco",
+  "sentence": "Contestó [[seco]], sin mirarla.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "curt",
+   "options": [
+    "curt",
+    "cheerful",
+    "tired",
+    "polite"
+   ],
+   "audioClip": {
+    "storySlug": "la-persiana-a-media-tarde",
+    "storySource": "user",
+    "sentence": "Contestó seco, sin mirarla.",
+    "targetWord": "seco",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a media tarde",
+  "sentence": "Bajó la persiana [[a media tarde]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in mid-afternoon",
+   "options": [
+    "in mid-afternoon",
+    "at dawn",
+    "late at night",
+    "at noon"
+   ],
+   "audioClip": {
+    "storySlug": "la-persiana-a-media-tarde",
+    "storySource": "user",
+    "sentence": "Bajó la persiana a media tarde.",
+    "targetWord": "a media tarde",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "a mano",
+  "sentence": "Apareció una copla escrita [[a mano]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "by hand",
+   "options": [
+    "by hand",
+    "by machine",
+    "in pencil",
+    "in secret"
+   ],
+   "audioClip": {
+    "storySlug": "una-copla-sin-firma",
+    "storySource": "user",
+    "sentence": "Apareció una copla escrita a mano.",
+    "targetWord": "a mano",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "dibuja",
+  "sentence": "En clase de arte, _____ un árbol con lápices de colores.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dibuja",
+   "options": [
+    "dibuja",
+    "bebe",
+    "masca",
+    "riega"
+   ],
+   "translation": "In art class, she _____ a tree with coloured pencils.",
+   "optionTranslations": [
+    "draws",
+    "drinks",
+    "chews",
+    "waters"
+   ],
+   "audioClip": {
+    "storySlug": "una-copla-sin-firma",
+    "storySource": "user",
+    "sentence": "En clase de arte, dibuja un árbol con lápices de colores.",
+    "targetWord": "dibuja",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "revista,inicial,autor,verso",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "revista",
+     "answer": "magazine",
+     "options": [
+      "magazine",
+      "initial",
+      "author",
+      "line of verse"
+     ]
+    },
+    {
+     "word": "inicial",
+     "answer": "initial",
+     "options": [
+      "magazine",
+      "initial",
+      "author",
+      "line of verse"
+     ]
+    },
+    {
+     "word": "autor",
+     "answer": "author",
+     "options": [
+      "magazine",
+      "initial",
+      "author",
+      "line of verse"
+     ]
+    },
+    {
+     "word": "verso",
+     "answer": "line of verse",
+     "options": [
+      "magazine",
+      "initial",
+      "author",
+      "line of verse"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "con el corazón en un puño",
+  "sentence": "Se la llevó [[con el corazón en un puño]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "with her heart in her mouth",
+   "options": [
+    "with her heart in her mouth",
+    "with a light heart",
+    "with open arms",
+    "with empty hands"
+   ],
+   "audioClip": {
+    "storySlug": "una-copla-sin-firma",
+    "storySource": "user",
+    "sentence": "Se la llevó con el corazón en un puño.",
+    "targetWord": "con el corazón en un puño",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dejar de",
+  "sentence": "Hablaba de amigos que [[dejaron de]] hablarse.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to stop",
+   "options": [
+    "to stop",
+    "to start",
+    "to try",
+    "to pretend"
+   ],
+   "audioClip": {
+    "storySlug": "una-copla-sin-firma",
+    "storySource": "user",
+    "sentence": "Hablaba de amigos que dejaron de hablarse.",
+    "targetWord": "dejaron de",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pesa",
+  "sentence": "Esta maleta _____ demasiado para subirla sola.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pesa",
+   "options": [
+    "pesa",
+    "nada",
+    "tose",
+    "llora"
+   ],
+   "translation": "This suitcase _____ too much to carry up alone.",
+   "optionTranslations": [
+    "weighs",
+    "swims",
+    "coughs",
+    "cries"
+   ],
+   "audioClip": {
+    "storySlug": "una-copla-sin-firma",
+    "storySource": "user",
+    "sentence": "Esta maleta pesa demasiado para subirla sola.",
+    "targetWord": "pesa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nombrar",
+  "sentence": "Pedía perdón sin [[nombrar]] la palabra.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to name",
+   "options": [
+    "to name",
+    "to spell",
+    "to change",
+    "to erase"
+   ],
+   "audioClip": {
+    "storySlug": "una-copla-sin-firma",
+    "storySource": "user",
+    "sentence": "Pedía perdón sin nombrar la palabra.",
+    "targetWord": "nombrar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "notarse",
+  "sentence": "Nadie la cantó nunca; [[se notaba]] en el doblez.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to show",
+   "options": [
+    "to show",
+    "to hide",
+    "to break",
+    "to fade"
+   ],
+   "audioClip": {
+    "storySlug": "una-copla-sin-firma",
+    "storySource": "user",
+    "sentence": "Nadie la cantó nunca; se notaba en el doblez.",
+    "targetWord": "se notaba",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "torcido",
+  "sentence": "El cuadro está _____; hay que ponerlo recto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "torcido",
+   "options": [
+    "torcido",
+    "enfadado",
+    "hambriento",
+    "contento"
+   ],
+   "translation": "The picture is _____; it needs straightening.",
+   "optionTranslations": [
+    "crooked",
+    "angry",
+    "hungry",
+    "happy"
+   ],
+   "audioClip": {
+    "storySlug": "una-copla-sin-firma",
+    "storySource": "user",
+    "sentence": "El cuadro está torcido; hay que ponerlo recto.",
+    "targetWord": "torcido",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ajeno",
+  "sentence": "Cuidaba las cosas [[ajenas]] con respeto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "belonging to others",
+   "options": [
+    "belonging to others",
+    "very old",
+    "broken",
+    "cheap"
+   ],
+   "audioClip": {
+    "storySlug": "una-copla-sin-firma",
+    "storySource": "user",
+    "sentence": "Cuidaba las cosas ajenas con respeto.",
+    "targetWord": "ajenas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aire",
+  "sentence": "La luz dibujaba el polvo en el [[aire]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "air",
+   "options": [
+    "air",
+    "water",
+    "wall",
+    "floor"
+   ],
+   "audioClip": {
+    "storySlug": "una-copla-sin-firma",
+    "storySource": "user",
+    "sentence": "La luz dibujaba el polvo en el aire.",
+    "targetWord": "aire",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "limpio",
+  "sentence": "Acabo de fregar, así que el suelo está _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "limpio",
+   "options": [
+    "limpio",
+    "tímido",
+    "celoso",
+    "sordo"
+   ],
+   "translation": "I've just mopped, so the floor is _____.",
+   "optionTranslations": [
+    "clean",
+    "shy",
+    "jealous",
+    "deaf"
+   ],
+   "audioClip": {
+    "storySlug": "una-copla-sin-firma",
+    "storySource": "user",
+    "sentence": "Acabo de fregar, así que el suelo está limpio.",
+    "targetWord": "limpio",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "respeto",
+  "sentence": "Trabajaba con el [[respeto]] de las cosas ajenas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "respect",
+   "options": [
+    "respect",
+    "speed",
+    "noise",
+    "fear"
+   ],
+   "audioClip": {
+    "storySlug": "una-copla-sin-firma",
+    "storySource": "user",
+    "sentence": "Trabajaba con el respeto de las cosas ajenas.",
+    "targetWord": "respeto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "delante",
+  "sentence": "La puso [[delante]], entre las revistas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in front",
+   "options": [
+    "in front",
+    "underneath",
+    "far away",
+    "inside"
+   ],
+   "audioClip": {
+    "storySlug": "una-copla-sin-firma",
+    "storySource": "user",
+    "sentence": "La puso delante, entre las revistas.",
+    "targetWord": "delante",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "llevó",
+  "sentence": "Al salir del restaurante, se _____ las sobras a casa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "llevó",
+   "options": [
+    "llevó",
+    "rascó",
+    "lavó",
+    "secó"
+   ],
+   "translation": "Leaving the restaurant, she _____ the leftovers home.",
+   "optionTranslations": [
+    "took",
+    "scratched",
+    "washed",
+    "dried"
+   ],
+   "audioClip": {
+    "storySlug": "una-copla-sin-firma",
+    "storySource": "user",
+    "sentence": "Al salir del restaurante, se llevó las sobras a casa.",
+    "targetWord": "llevó",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "al pie",
+  "sentence": "[[Al pie]] había una fecha y unas iniciales.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at the bottom",
+   "options": [
+    "at the bottom",
+    "at the top",
+    "on the back",
+    "in the margin"
+   ],
+   "audioClip": {
+    "storySlug": "una-copla-sin-firma",
+    "storySource": "user",
+    "sentence": "Al pie había una fecha y unas iniciales.",
+    "targetWord": "Al pie",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de lado",
+  "sentence": "La luz entraba [[de lado]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sideways",
+   "options": [
+    "sideways",
+    "straight down",
+    "very slowly",
+    "through the door"
+   ],
+   "audioClip": {
+    "storySlug": "una-copla-sin-firma",
+    "storySource": "user",
+    "sentence": "La luz entraba de lado.",
+    "targetWord": "de lado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

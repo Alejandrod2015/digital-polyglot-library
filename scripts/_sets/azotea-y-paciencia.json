@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "levante",
+  "sentence": "El [[levante]] llegó el jueves.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "east wind",
+   "options": [
+    "east wind",
+    "high tide",
+    "heavy rain",
+    "sea fog"
+   ],
+   "audioClip": {
+    "storySlug": "azotea-y-paciencia",
+    "storySource": "user",
+    "sentence": "El levante llegó el jueves.",
+    "targetWord": "levante",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "aplazó",
+  "sentence": "Estaba enferma, así que _____ la cita para la semana siguiente.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aplazó",
+   "options": [
+    "aplazó",
+    "lijó",
+    "embaló",
+    "fregó"
+   ],
+   "translation": "She was ill, so she _____ the appointment to the following week.",
+   "optionTranslations": [
+    "postponed",
+    "sanded",
+    "packed",
+    "scrubbed"
+   ],
+   "audioClip": {
+    "storySlug": "azotea-y-paciencia",
+    "storySource": "user",
+    "sentence": "Estaba enferma, así que aplazó la cita para la semana siguiente.",
+    "targetWord": "aplazó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "azotea,nevera,lona,refrán",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "azotea",
+     "answer": "flat rooftop",
+     "options": [
+      "flat rooftop",
+      "cool box",
+      "tarpaulin",
+      "proverb"
+     ]
+    },
+    {
+     "word": "nevera",
+     "answer": "cool box",
+     "options": [
+      "flat rooftop",
+      "cool box",
+      "tarpaulin",
+      "proverb"
+     ]
+    },
+    {
+     "word": "lona",
+     "answer": "tarpaulin",
+     "options": [
+      "flat rooftop",
+      "cool box",
+      "tarpaulin",
+      "proverb"
+     ]
+    },
+    {
+     "word": "refrán",
+     "answer": "proverb",
+     "options": [
+      "flat rooftop",
+      "cool box",
+      "tarpaulin",
+      "proverb"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "echar de menos",
+  "sentence": "No [[echó de menos]] el barco.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to miss",
+   "options": [
+    "to miss",
+    "to forget",
+    "to sell",
+    "to fear"
+   ],
+   "audioClip": {
+    "storySlug": "azotea-y-paciencia",
+    "storySource": "user",
+    "sentence": "No echó de menos el barco.",
+    "targetWord": "echó de menos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hacer caso",
+  "sentence": "El viento silbaba y nadie le [[hacía caso]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to pay attention",
+   "options": [
+    "to pay attention",
+    "to answer back",
+    "to give way",
+    "to take shelter"
+   ],
+   "audioClip": {
+    "storySlug": "azotea-y-paciencia",
+    "storySource": "user",
+    "sentence": "El viento silbaba y nadie le hacía caso.",
+    "targetWord": "hacía caso",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "volaban",
+  "sentence": "Hacía tanto viento que las hojas _____ por la calle.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "volaban",
+   "options": [
+    "volaban",
+    "maullaban",
+    "tosían",
+    "lloraban"
+   ],
+   "translation": "It was so windy that the leaves were _____ down the street.",
+   "optionTranslations": [
+    "flying",
+    "meowing",
+    "coughing",
+    "crying"
+   ],
+   "audioClip": {
+    "storySlug": "azotea-y-paciencia",
+    "storySource": "user",
+    "sentence": "Hacía tanto viento que las hojas volaban por la calle.",
+    "targetWord": "volaban",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "deber una",
+  "sentence": "Con levante no salgo; [[os debo una]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to owe a favour",
+   "options": [
+    "to owe a favour",
+    "to owe money",
+    "to lose a bet",
+    "to break a promise"
+   ],
+   "audioClip": {
+    "storySlug": "azotea-y-paciencia",
+    "storySource": "user",
+    "sentence": "Con levante no salgo; os debo una.",
+    "targetWord": "os debo una",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hermanar",
+  "sentence": "Aguantar el mismo viento [[hermanaba]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to bring together",
+   "options": [
+    "to bring together",
+    "to divide",
+    "to tire out",
+    "to scare"
+   ],
+   "audioClip": {
+    "storySlug": "azotea-y-paciencia",
+    "storySource": "user",
+    "sentence": "Aguantar el mismo viento hermanaba.",
+    "targetWord": "hermanaba",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "despeinada",
+  "sentence": "Con tanto viento, llegó a casa _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "despeinada",
+   "options": [
+    "despeinada",
+    "casada",
+    "zurda",
+    "famosa"
+   ],
+   "translation": "With so much wind, she got home _____.",
+   "optionTranslations": [
+    "windswept",
+    "married",
+    "left-handed",
+    "famous"
+   ],
+   "audioClip": {
+    "storySlug": "azotea-y-paciencia",
+    "storySource": "user",
+    "sentence": "Con tanto viento, llegó a casa despeinada.",
+    "targetWord": "despeinada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de andar por casa",
+  "sentence": "Sonaba a refrán [[de andar por casa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "homespun",
+   "options": [
+    "homespun",
+    "very old",
+    "foreign",
+    "rude"
+   ],
+   "audioClip": {
+    "storySlug": "azotea-y-paciencia",
+    "storySource": "user",
+    "sentence": "Sonaba a refrán de andar por casa.",
+    "targetWord": "de andar por casa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "viento",
+  "sentence": "La azotea aguantó el [[viento]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wind",
+   "options": [
+    "wind",
+    "weight",
+    "noise",
+    "heat"
+   ],
+   "audioClip": {
+    "storySlug": "azotea-y-paciencia",
+    "storySource": "user",
+    "sentence": "La azotea aguantó el viento.",
+    "targetWord": "viento",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "estropea",
+  "sentence": "La lluvia siempre _____ los planes de playa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "estropea",
+   "options": [
+    "estropea",
+    "bautiza",
+    "peina",
+    "sazona"
+   ],
+   "translation": "The rain always _____ beach plans.",
+   "optionTranslations": [
+    "ruins",
+    "baptises",
+    "combs",
+    "seasons"
+   ],
+   "audioClip": {
+    "storySlug": "azotea-y-paciencia",
+    "storySource": "user",
+    "sentence": "La lluvia siempre estropea los planes de playa.",
+    "targetWord": "estropea",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sujetar",
+  "sentence": "Las servilletas volaban a menos que alguien las [[sujetara]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hold down",
+   "options": [
+    "to hold down",
+    "to fold up",
+    "to throw away",
+    "to wash"
+   ],
+   "audioClip": {
+    "storySlug": "azotea-y-paciencia",
+    "storySource": "user",
+    "sentence": "Las servilletas volaban a menos que alguien las sujetara.",
+    "targetWord": "sujetara",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "llorar",
+  "sentence": "Nadie [[lloró]] demasiado la tarde perdida.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to mourn",
+   "options": [
+    "to mourn",
+    "to forget",
+    "to celebrate",
+    "to repeat"
+   ],
+   "audioClip": {
+    "storySlug": "azotea-y-paciencia",
+    "storySource": "user",
+    "sentence": "Nadie lloró demasiado la tarde perdida.",
+    "targetWord": "lloró",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "silbaba",
+  "sentence": "Mientras trabajaba, _____ una canción alegre.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "silbaba",
+   "options": [
+    "silbaba",
+    "rallaba",
+    "horneaba",
+    "podaba"
+   ],
+   "translation": "While he worked, he _____ a cheerful song.",
+   "optionTranslations": [
+    "whistled",
+    "grated",
+    "baked",
+    "pruned"
+   ],
+   "audioClip": {
+    "storySlug": "azotea-y-paciencia",
+    "storySource": "user",
+    "sentence": "Mientras trabajaba, silbaba una canción alegre.",
+    "targetWord": "silbaba",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "puntual",
+  "sentence": "Llegó [[puntual]], como todo lo que estropea planes.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on time",
+   "options": [
+    "on time",
+    "too late",
+    "by surprise",
+    "uninvited"
+   ],
+   "audioClip": {
+    "storySlug": "azotea-y-paciencia",
+    "storySource": "user",
+    "sentence": "Llegó puntual, como todo lo que estropea planes.",
+    "targetWord": "puntual",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "arriba",
+  "sentence": "Desde [[arriba]], la ciudad aguantaba el mismo viento.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "up above",
+   "options": [
+    "up above",
+    "down below",
+    "far away",
+    "inside"
+   ],
+   "audioClip": {
+    "storySlug": "azotea-y-paciencia",
+    "storySource": "user",
+    "sentence": "Desde arriba, la ciudad aguantaba el mismo viento.",
+    "targetWord": "arriba",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

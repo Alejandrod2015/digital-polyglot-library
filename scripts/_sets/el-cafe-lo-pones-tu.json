@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "peña",
+  "sentence": "La [[peña]] le había encargado que digitalizara su archivo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "social club",
+   "options": [
+    "social club",
+    "town hall",
+    "sports team",
+    "family firm"
+   ],
+   "audioClip": {
+    "storySlug": "el-cafe-lo-pones-tu",
+    "storySource": "user",
+    "sentence": "La peña le había encargado que digitalizara su archivo.",
+    "targetWord": "peña",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cabe",
+  "sentence": "La maleta es pequeña y el abrigo no _____ dentro.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cabe",
+   "options": [
+    "cabe",
+    "cuesta",
+    "brilla",
+    "suena"
+   ],
+   "translation": "The suitcase is small and the coat doesn't _____ inside.",
+   "optionTranslations": [
+    "fit",
+    "cost",
+    "shine",
+    "sound"
+   ],
+   "audioClip": {
+    "storySlug": "el-cafe-lo-pones-tu",
+    "storySource": "user",
+    "sentence": "La maleta es pequeña y el abrigo no cabe dentro.",
+    "targetWord": "cabe",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caer en la cuenta",
+  "sentence": "A la tercera vez [[cayó en la cuenta]], de golpe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to realise",
+   "options": [
+    "to realise",
+    "to fall asleep",
+    "to lose count",
+    "to give up"
+   ],
+   "audioClip": {
+    "storySlug": "el-cafe-lo-pones-tu",
+    "storySource": "user",
+    "sentence": "A la tercera vez cayó en la cuenta, de golpe.",
+    "targetWord": "cayó en la cuenta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "candado,madera,mudanza,derrota",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "candado",
+     "answer": "padlock",
+     "options": [
+      "padlock",
+      "wood",
+      "house move",
+      "defeat"
+     ]
+    },
+    {
+     "word": "madera",
+     "answer": "wood",
+     "options": [
+      "padlock",
+      "wood",
+      "house move",
+      "defeat"
+     ]
+    },
+    {
+     "word": "mudanza",
+     "answer": "house move",
+     "options": [
+      "padlock",
+      "wood",
+      "house move",
+      "defeat"
+     ]
+    },
+    {
+     "word": "derrota",
+     "answer": "defeat",
+     "options": [
+      "padlock",
+      "wood",
+      "house move",
+      "defeat"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "encargar",
+  "sentence": "Le habían [[encargado]] digitalizar el archivo antes de la mudanza.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to commission",
+   "options": [
+    "to commission",
+    "to forbid",
+    "to explain",
+    "to forgive"
+   ],
+   "audioClip": {
+    "storySlug": "el-cafe-lo-pones-tu",
+    "storySource": "user",
+    "sentence": "Le habían encargado digitalizar el archivo antes de la mudanza.",
+    "targetWord": "encargado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "apunto",
+  "sentence": "Si no lo _____ en la libreta, se me olvida.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "apunto",
+   "options": [
+    "apunto",
+    "pierdo",
+    "rompo",
+    "vendo"
+   ],
+   "translation": "If I don't _____ it in the notebook, I forget it.",
+   "optionTranslations": [
+    "write down",
+    "lose",
+    "break",
+    "sell"
+   ],
+   "audioClip": {
+    "storySlug": "el-cafe-lo-pones-tu",
+    "storySource": "user",
+    "sentence": "Si no lo apunto en la libreta, se me olvida.",
+    "targetWord": "apunto",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de golpe",
+  "sentence": "Lo entendió todo [[de golpe]] y se quedó callada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "all at once",
+   "options": [
+    "all at once",
+    "little by little",
+    "too late",
+    "by chance"
+   ],
+   "audioClip": {
+    "storySlug": "el-cafe-lo-pones-tu",
+    "storySource": "user",
+    "sentence": "Lo entendió todo de golpe y se quedó callada.",
+    "targetWord": "de golpe",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "calentarse la cara",
+  "sentence": "Lo entendió y [[se le calentó la cara]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to blush",
+   "options": [
+    "to blush",
+    "to feel cold",
+    "to get angry",
+    "to feel sick"
+   ],
+   "audioClip": {
+    "storySlug": "el-cafe-lo-pones-tu",
+    "storySource": "user",
+    "sentence": "Lo entendió y se le calentó la cara.",
+    "targetWord": "se le calentó la cara",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "aburrió",
+  "sentence": "No había nada que hacer en la sala y se _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aburrió",
+   "options": [
+    "aburrió",
+    "peinó",
+    "mojó",
+    "duchó"
+   ],
+   "translation": "There was nothing to do in the room, and she _____.",
+   "optionTranslations": [
+    "got bored",
+    "combed her hair",
+    "got wet",
+    "showered"
+   ],
+   "audioClip": {
+    "storySlug": "el-cafe-lo-pones-tu",
+    "storySource": "user",
+    "sentence": "No había nada que hacer en la sala y se aburrió.",
+    "targetWord": "aburrió",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "despacio",
+  "sentence": "Tapó el bolígrafo y respondió [[despacio]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "slowly",
+   "options": [
+    "slowly",
+    "loudly",
+    "rudely",
+    "briefly"
+   ],
+   "audioClip": {
+    "storySlug": "el-cafe-lo-pones-tu",
+    "storySource": "user",
+    "sentence": "Tapó el bolígrafo y respondió despacio.",
+    "targetWord": "despacio",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trámite",
+  "sentence": "Pidió las llaves, como quien despacha un [[trámite]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "formality",
+   "options": [
+    "formality",
+    "favour",
+    "complaint",
+    "bargain"
+   ],
+   "audioClip": {
+    "storySlug": "el-cafe-lo-pones-tu",
+    "storySource": "user",
+    "sentence": "Pidió las llaves, como quien despacha un trámite.",
+    "targetWord": "trámite",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "tapa",
+  "sentence": "Siempre _____ el bolígrafo para que no se seque.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tapa",
+   "options": [
+    "tapa",
+    "pinta",
+    "dobla",
+    "rompe"
+   ],
+   "translation": "She always _____ the pen so that it doesn't dry out.",
+   "optionTranslations": [
+    "caps",
+    "paints",
+    "folds",
+    "breaks"
+   ],
+   "audioClip": {
+    "storySlug": "el-cafe-lo-pones-tu",
+    "storySource": "user",
+    "sentence": "Siempre tapa el bolígrafo para que no se seque.",
+    "targetWord": "tapa",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quedarse",
+  "sentence": "Querían saber cuánto tiempo [[se quedaba]] en la ciudad.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to stay",
+   "options": [
+    "to stay",
+    "to rest",
+    "to wait",
+    "to hide"
+   ],
+   "audioClip": {
+    "storySlug": "el-cafe-lo-pones-tu",
+    "storySource": "user",
+    "sentence": "Querían saber cuánto tiempo se quedaba en la ciudad.",
+    "targetWord": "se quedaba",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "entero",
+  "sentence": "Respondió despacio, [[entera]], sin esconder nada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "whole",
+   "options": [
+    "whole",
+    "tired",
+    "angry",
+    "shy"
+   ],
+   "audioClip": {
+    "storySlug": "el-cafe-lo-pones-tu",
+    "storySource": "user",
+    "sentence": "Respondió despacio, entera, sin esconder nada.",
+    "targetWord": "entera",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "quieto",
+  "sentence": "Si te mueves, la foto sale mal; quédate _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "quieto",
+   "options": [
+    "quieto",
+    "flaco",
+    "calvo",
+    "rubio"
+   ],
+   "translation": "If you move, the photo comes out wrong; stay _____.",
+   "optionTranslations": [
+    "still",
+    "thin",
+    "bald",
+    "blond"
+   ],
+   "audioClip": {
+    "storySlug": "el-cafe-lo-pones-tu",
+    "storySource": "user",
+    "sentence": "Si te mueves, la foto sale mal; quédate quieto.",
+    "targetWord": "quieto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sin prisa",
+  "sentence": "Se lo dijo tranquilo y [[sin prisa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "unhurriedly",
+   "options": [
+    "unhurriedly",
+    "by mistake",
+    "in secret",
+    "on purpose"
+   ],
+   "audioClip": {
+    "storySlug": "el-cafe-lo-pones-tu",
+    "storySource": "user",
+    "sentence": "Se lo dijo tranquilo y sin prisa.",
+    "targetWord": "sin prisa",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "debajo",
+  "sentence": "Apuntó la hora y, [[debajo]], una nota para mañana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "underneath",
+   "options": [
+    "underneath",
+    "beside",
+    "behind",
+    "above"
+   ],
+   "audioClip": {
+    "storySlug": "el-cafe-lo-pones-tu",
+    "storySource": "user",
+    "sentence": "Apuntó la hora y, debajo, una nota para mañana.",
+    "targetWord": "debajo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

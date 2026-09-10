@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "susto",
+  "sentence": "Para que el [[susto]] no se repita.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "scare",
+   "options": [
+    "scare",
+    "party",
+    "joke",
+    "storm"
+   ],
+   "audioClip": {
+    "storySlug": "yo-ya-decidi-una-vez",
+    "storySource": "user",
+    "sentence": "Para que el susto no se repita.",
+    "targetWord": "susto",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "marcó",
+  "sentence": "Para encontrar la página luego, la _____ con un papel.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "marcó",
+   "options": [
+    "marcó",
+    "untó",
+    "ordeñó",
+    "lamió"
+   ],
+   "translation": "To find the page later, she _____ it with a slip of paper.",
+   "optionTranslations": [
+    "marked",
+    "spread",
+    "milked",
+    "licked"
+   ],
+   "audioClip": {
+    "storySlug": "yo-ya-decidi-una-vez",
+    "storySource": "user",
+    "sentence": "Para encontrar la página luego, la marcó con un papel.",
+    "targetWord": "marcó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "recorte,portada,titular,almacén",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "recorte",
+     "answer": "clipping",
+     "options": [
+      "clipping",
+      "front page",
+      "headline",
+      "warehouse"
+     ]
+    },
+    {
+     "word": "portada",
+     "answer": "front page",
+     "options": [
+      "clipping",
+      "front page",
+      "headline",
+      "warehouse"
+     ]
+    },
+    {
+     "word": "titular",
+     "answer": "headline",
+     "options": [
+      "clipping",
+      "front page",
+      "headline",
+      "warehouse"
+     ]
+    },
+    {
+     "word": "almacén",
+     "answer": "warehouse",
+     "options": [
+      "clipping",
+      "front page",
+      "headline",
+      "warehouse"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sin adornos",
+  "sentence": "Se lo explicó [[sin adornos]], tal como fue.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "plainly",
+   "options": [
+    "plainly",
+    "with jokes",
+    "in a letter",
+    "with tears"
+   ],
+   "audioClip": {
+    "storySlug": "yo-ya-decidi-una-vez",
+    "storySource": "user",
+    "sentence": "Se lo explicó sin adornos, tal como fue.",
+    "targetWord": "sin adornos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "herida",
+  "sentence": "La abrió como quien abre una [[herida]] pequeña.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wound",
+   "options": [
+    "wound",
+    "door",
+    "letter",
+    "window"
+   ],
+   "audioClip": {
+    "storySlug": "yo-ya-decidi-una-vez",
+    "storySource": "user",
+    "sentence": "La abrió como quien abre una herida pequeña.",
+    "targetWord": "herida",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "asintió",
+  "sentence": "Estaba de acuerdo y _____ con la cabeza.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "asintió",
+   "options": [
+    "asintió",
+    "bostezó",
+    "silbó",
+    "roncó"
+   ],
+   "translation": "He agreed and _____ his head.",
+   "optionTranslations": [
+    "nodded",
+    "yawned",
+    "whistled",
+    "snored"
+   ],
+   "audioClip": {
+    "storySlug": "yo-ya-decidi-una-vez",
+    "storySource": "user",
+    "sentence": "Estaba de acuerdo y asintió con la cabeza.",
+    "targetWord": "asintió",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "el otro lado",
+  "sentence": "Ahora veía [[el otro lado]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the other side",
+   "options": [
+    "the other side",
+    "the whole story",
+    "the bright side",
+    "the way out"
+   ],
+   "audioClip": {
+    "storySlug": "yo-ya-decidi-una-vez",
+    "storySource": "user",
+    "sentence": "Ahora veía el otro lado.",
+    "targetWord": "el otro lado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "callar",
+  "sentence": "El archivo [[calló]] porque nosotros callamos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go quiet",
+   "options": [
+    "to go quiet",
+    "to break",
+    "to burn",
+    "to grow"
+   ],
+   "audioClip": {
+    "storySlug": "yo-ya-decidi-una-vez",
+    "storySource": "user",
+    "sentence": "El archivo calló porque nosotros callamos.",
+    "targetWord": "calló",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "gritar",
+  "sentence": "No hace falta _____; te oigo perfectamente.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gritar",
+   "options": [
+    "gritar",
+    "coser",
+    "tejer",
+    "remar"
+   ],
+   "translation": "There's no need to _____; I can hear you perfectly.",
+   "optionTranslations": [
+    "shout",
+    "sew",
+    "knit",
+    "row"
+   ],
+   "audioClip": {
+    "storySlug": "yo-ya-decidi-una-vez",
+    "storySource": "user",
+    "sentence": "No hace falta gritar; te oigo perfectamente.",
+    "targetWord": "gritar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "por primera vez",
+  "sentence": "El archivo, [[por primera vez]], le pareció una casa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "for the first time",
+   "options": [
+    "for the first time",
+    "for the last time",
+    "once again",
+    "every time"
+   ],
+   "audioClip": {
+    "storySlug": "yo-ya-decidi-una-vez",
+    "storySource": "user",
+    "sentence": "El archivo, por primera vez, le pareció una casa.",
+    "targetWord": "por primera vez",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bando",
+  "sentence": "Cada [[bando]] tenía su periódico.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "side",
+   "options": [
+    "side",
+    "choir",
+    "family",
+    "shift"
+   ],
+   "audioClip": {
+    "storySlug": "yo-ya-decidi-una-vez",
+    "storySource": "user",
+    "sentence": "Cada bando tenía su periódico.",
+    "targetWord": "bando",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "cuidar",
+  "sentence": "Cuando se fue de viaje, me pidió _____ sus plantas.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cuidar",
+   "options": [
+    "cuidar",
+    "morder",
+    "freír",
+    "quemar"
+   ],
+   "translation": "When she went away, she asked me to _____ her plants.",
+   "optionTranslations": [
+    "look after",
+    "bite",
+    "fry",
+    "burn"
+   ],
+   "audioClip": {
+    "storySlug": "yo-ya-decidi-una-vez",
+    "storySource": "user",
+    "sentence": "Cuando se fue de viaje, me pidió cuidar sus plantas.",
+    "targetWord": "cuidar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "venta",
+  "sentence": "Aquel año se firmó la [[venta]] del primer local.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sale",
+   "options": [
+    "sale",
+    "rent",
+    "repair",
+    "opening"
+   ],
+   "audioClip": {
+    "storySlug": "yo-ya-decidi-una-vez",
+    "storySource": "user",
+    "sentence": "Aquel año se firmó la venta del primer local.",
+    "targetWord": "venta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "repetirse",
+  "sentence": "Estas entran, para que el susto no [[se repita]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to happen again",
+   "options": [
+    "to happen again",
+    "to be forgotten",
+    "to get worse",
+    "to be solved"
+   ],
+   "audioClip": {
+    "storySlug": "yo-ya-decidi-una-vez",
+    "storySource": "user",
+    "sentence": "Estas entran, para que el susto no se repita.",
+    "targetWord": "se repita",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "amable",
+  "sentence": "La vecina nos ayudó con las cajas; es muy _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "amable",
+   "options": [
+    "amable",
+    "azul",
+    "verde",
+    "gris"
+   ],
+   "translation": "The neighbour helped us with the boxes; she's very _____.",
+   "optionTranslations": [
+    "kind",
+    "blue",
+    "green",
+    "grey"
+   ],
+   "audioClip": {
+    "storySlug": "yo-ya-decidi-una-vez",
+    "storySource": "user",
+    "sentence": "La vecina nos ayudó con las cajas; es muy amable.",
+    "targetWord": "amable",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apartar",
+  "sentence": "Lo dijo y [[apartó]] la vista.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to turn away",
+   "options": [
+    "to turn away",
+    "to fix",
+    "to lift",
+    "to close"
+   ],
+   "audioClip": {
+    "storySlug": "yo-ya-decidi-una-vez",
+    "storySource": "user",
+    "sentence": "Lo dijo y apartó la vista.",
+    "targetWord": "apartó",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "partido",
+  "sentence": "Aquel año la peña quedó [[partida]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "split",
+   "options": [
+    "split",
+    "united",
+    "famous",
+    "ruined"
+   ],
+   "audioClip": {
+    "storySlug": "yo-ya-decidi-una-vez",
+    "storySource": "user",
+    "sentence": "Aquel año la peña quedó partida.",
+    "targetWord": "partida",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

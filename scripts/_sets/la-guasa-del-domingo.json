@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "copla",
+  "sentence": "En el archivo, las [[coplas]] vivían en cajas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "carnival song",
+   "options": [
+    "carnival song",
+    "love letter",
+    "old photograph",
+    "local newspaper"
+   ],
+   "audioClip": {
+    "storySlug": "la-guasa-del-domingo",
+    "storySource": "user",
+    "sentence": "En el archivo, las coplas vivían en cajas.",
+    "targetWord": "coplas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "barría",
+  "sentence": "Cada tarde _____ el suelo de la cocina.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "barría",
+   "options": [
+    "barría",
+    "leía",
+    "bebía",
+    "oía"
+   ],
+   "translation": "Every afternoon he _____ the kitchen floor.",
+   "optionTranslations": [
+    "swept",
+    "read",
+    "drank",
+    "heard"
+   ],
+   "audioClip": {
+    "storySlug": "la-guasa-del-domingo",
+    "storySource": "user",
+    "sentence": "Cada tarde barría el suelo de la cocina.",
+    "targetWord": "barría",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "escoba,tinta,socio,letra",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "escoba",
+     "answer": "broom",
+     "options": [
+      "broom",
+      "ink",
+      "club member",
+      "lyrics"
+     ]
+    },
+    {
+     "word": "tinta",
+     "answer": "ink",
+     "options": [
+      "broom",
+      "ink",
+      "club member",
+      "lyrics"
+     ]
+    },
+    {
+     "word": "socio",
+     "answer": "club member",
+     "options": [
+      "broom",
+      "ink",
+      "club member",
+      "lyrics"
+     ]
+    },
+    {
+     "word": "letra",
+     "answer": "lyrics",
+     "options": [
+      "broom",
+      "ink",
+      "club member",
+      "lyrics"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "guasa",
+  "sentence": "Ya le va saliendo la [[guasa]] de aquí.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "teasing humour",
+   "options": [
+    "teasing humour",
+    "local accent",
+    "bad temper",
+    "good manners"
+   ],
+   "audioClip": {
+    "storySlug": "la-guasa-del-domingo",
+    "storySource": "user",
+    "sentence": "Ya le va saliendo la guasa de aquí.",
+    "targetWord": "guasa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "picarse",
+  "sentence": "[[Se picó]] y lo disimuló mal.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to take offence",
+   "options": [
+    "to take offence",
+    "to get sunburnt",
+    "to get hungry",
+    "to fall asleep"
+   ],
+   "audioClip": {
+    "storySlug": "la-guasa-del-domingo",
+    "storySource": "user",
+    "sentence": "Se picó y lo disimuló mal.",
+    "targetWord": "Se picó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "disimuló",
+  "sentence": "Le dolió el comentario, pero lo _____ con una sonrisa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "disimuló",
+   "options": [
+    "disimuló",
+    "cocinó",
+    "alquiló",
+    "planchó"
+   ],
+   "translation": "The comment hurt, but she _____ it with a smile.",
+   "optionTranslations": [
+    "hid",
+    "cooked",
+    "rented",
+    "ironed"
+   ],
+   "audioClip": {
+    "storySlug": "la-guasa-del-domingo",
+    "storySource": "user",
+    "sentence": "Le dolió el comentario, pero lo disimuló con una sonrisa.",
+    "targetWord": "disimuló",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vacilar",
+  "sentence": "Aquí se [[vacila]] a quien está dentro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to tease",
+   "options": [
+    "to tease",
+    "to ignore",
+    "to hire",
+    "to punish"
+   ],
+   "audioClip": {
+    "storySlug": "la-guasa-del-domingo",
+    "storySource": "user",
+    "sentence": "Aquí se vacila a quien está dentro.",
+    "targetWord": "vacila",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pique",
+  "sentence": "El [[pique]] se le deshizo sin avisar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hurt pride",
+   "options": [
+    "hurt pride",
+    "headache",
+    "appetite",
+    "hiccup"
+   ],
+   "audioClip": {
+    "storySlug": "la-guasa-del-domingo",
+    "storySource": "user",
+    "sentence": "El pique se le deshizo sin avisar.",
+    "targetWord": "pique",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "graciosa",
+  "sentence": "Siempre nos hace reír; es la más _____ del grupo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "graciosa",
+   "options": [
+    "graciosa",
+    "lenta",
+    "pálida",
+    "delgada"
+   ],
+   "translation": "She always makes us laugh; she's the _____ one in the group.",
+   "optionTranslations": [
+    "funniest",
+    "slowest",
+    "palest",
+    "thinnest"
+   ],
+   "audioClip": {
+    "storySlug": "la-guasa-del-domingo",
+    "storySource": "user",
+    "sentence": "Siempre nos hace reír; es la más graciosa del grupo.",
+    "targetWord": "graciosa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "media sonrisa",
+  "sentence": "Lo admitió con [[media sonrisa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "half smile",
+   "options": [
+    "half smile",
+    "loud laugh",
+    "deep sigh",
+    "blank stare"
+   ],
+   "audioClip": {
+    "storySlug": "la-guasa-del-domingo",
+    "storySource": "user",
+    "sentence": "Lo admitió con media sonrisa.",
+    "targetWord": "media sonrisa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mandar",
+  "sentence": "Quien [[mandaba]] en las letras escribía las nuevas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be in charge",
+   "options": [
+    "to be in charge",
+    "to be absent",
+    "to be wrong",
+    "to be tired"
+   ],
+   "audioClip": {
+    "storySlug": "la-guasa-del-domingo",
+    "storySource": "user",
+    "sentence": "Quien mandaba en las letras escribía las nuevas.",
+    "targetWord": "mandaba",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "propuso",
+  "sentence": "Para celebrarlo, _____ una cena en su casa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "propuso",
+   "options": [
+    "propuso",
+    "mordió",
+    "cosió",
+    "peinó"
+   ],
+   "translation": "To celebrate, she _____ a dinner at her place.",
+   "optionTranslations": [
+    "suggested",
+    "bit",
+    "sewed",
+    "combed"
+   ],
+   "audioClip": {
+    "storySlug": "la-guasa-del-domingo",
+    "storySource": "user",
+    "sentence": "Para celebrarlo, propuso una cena en su casa.",
+    "targetWord": "propuso",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "flojo",
+  "sentence": "Contestó, y le salió [[flojo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "weak",
+   "options": [
+    "weak",
+    "loud",
+    "rude",
+    "clever"
+   ],
+   "audioClip": {
+    "storySlug": "la-guasa-del-domingo",
+    "storySource": "user",
+    "sentence": "Contestó, y le salió flojo.",
+    "targetWord": "flojo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "querido",
+  "sentence": "Era el más [[querido]] de la casa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "beloved",
+   "options": [
+    "beloved",
+    "feared",
+    "lazy",
+    "quiet"
+   ],
+   "audioClip": {
+    "storySlug": "la-guasa-del-domingo",
+    "storySource": "user",
+    "sentence": "Era el más querido de la casa.",
+    "targetWord": "querido",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "húmedo",
+  "sentence": "Después de la lluvia, el banco del parque seguía _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "húmedo",
+   "options": [
+    "húmedo",
+    "alegre",
+    "famoso",
+    "gordo"
+   ],
+   "translation": "After the rain, the park bench was still _____.",
+   "optionTranslations": [
+    "damp",
+    "cheerful",
+    "famous",
+    "fat"
+   ],
+   "audioClip": {
+    "storySlug": "la-guasa-del-domingo",
+    "storySource": "user",
+    "sentence": "Después de la lluvia, el banco del parque seguía húmedo.",
+    "targetWord": "húmedo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cortar por el mismo patrón",
+  "sentence": "Estaban [[cortadas por el mismo patrón]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cut from the same cloth",
+   "options": [
+    "cut from the same cloth",
+    "written in a hurry",
+    "sung out of tune",
+    "kept under lock"
+   ],
+   "audioClip": {
+    "storySlug": "la-guasa-del-domingo",
+    "storySource": "user",
+    "sentence": "Estaban cortadas por el mismo patrón.",
+    "targetWord": "cortadas por el mismo patrón",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "por encima del hombro",
+  "sentence": "Lo dijo [[por encima del hombro]], sin dejar de trabajar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "over her shoulder",
+   "options": [
+    "over her shoulder",
+    "under her breath",
+    "behind his back",
+    "in front of everyone"
+   ],
+   "audioClip": {
+    "storySlug": "la-guasa-del-domingo",
+    "storySource": "user",
+    "sentence": "Lo dijo por encima del hombro, sin dejar de trabajar.",
+    "targetWord": "por encima del hombro",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

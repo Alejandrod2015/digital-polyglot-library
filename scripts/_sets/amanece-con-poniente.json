@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "tal y como",
+  "sentence": "Amaneció con poniente, [[tal y como]] estaba negociado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "just as",
+   "options": [
+    "just as",
+    "unlike",
+    "even though",
+    "before"
+   ],
+   "audioClip": {
+    "storySlug": "amanece-con-poniente",
+    "storySource": "user",
+    "sentence": "Amaneció con poniente, tal y como estaba negociado.",
+    "targetWord": "tal y como",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "recordó",
+  "sentence": "Antes de irse, me _____ que apagara la luz.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "recordó",
+   "options": [
+    "recordó",
+    "mordió",
+    "peinó",
+    "rascó"
+   ],
+   "translation": "Before leaving, she _____ me to switch off the light.",
+   "optionTranslations": [
+    "reminded",
+    "bit",
+    "combed",
+    "scratched"
+   ],
+   "audioClip": {
+    "storySlug": "amanece-con-poniente",
+    "storySource": "user",
+    "sentence": "Antes de irse, me recordó que apagara la luz.",
+    "targetWord": "recordó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "camión,cajón,regalo,descuido",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "camión",
+     "answer": "lorry",
+     "options": [
+      "lorry",
+      "crate",
+      "gift",
+      "careless moment"
+     ]
+    },
+    {
+     "word": "cajón",
+     "answer": "crate",
+     "options": [
+      "lorry",
+      "crate",
+      "gift",
+      "careless moment"
+     ]
+    },
+    {
+     "word": "regalo",
+     "answer": "gift",
+     "options": [
+      "lorry",
+      "crate",
+      "gift",
+      "careless moment"
+     ]
+    },
+    {
+     "word": "descuido",
+     "answer": "careless moment",
+     "options": [
+      "lorry",
+      "crate",
+      "gift",
+      "careless moment"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quedarse atrás",
+  "sentence": "Nadie dijo adiós porque nadie [[se quedaba atrás]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be left behind",
+   "options": [
+    "to be left behind",
+    "to arrive early",
+    "to be in charge",
+    "to feel sad"
+   ],
+   "audioClip": {
+    "storySlug": "amanece-con-poniente",
+    "storySource": "user",
+    "sentence": "Nadie dijo adiós porque nadie se quedaba atrás.",
+    "targetWord": "se quedaba atrás",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hacer falta",
+  "sentence": "No [[hacía falta]] decir adiós.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be necessary",
+   "options": [
+    "to be necessary",
+    "to be polite",
+    "to be allowed",
+    "to be possible"
+   ],
+   "audioClip": {
+    "storySlug": "amanece-con-poniente",
+    "storySource": "user",
+    "sentence": "No hacía falta decir adiós.",
+    "targetWord": "hacía falta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "curó",
+  "sentence": "La herida tardó semanas, pero al final se _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "curó",
+   "options": [
+    "curó",
+    "duchó",
+    "casó",
+    "bañó"
+   ],
+   "translation": "The wound took weeks, but in the end it _____.",
+   "optionTranslations": [
+    "healed",
+    "showered",
+    "got married",
+    "bathed"
+   ],
+   "audioClip": {
+    "storySlug": "amanece-con-poniente",
+    "storySource": "user",
+    "sentence": "La herida tardó semanas, pero al final se curó.",
+    "targetWord": "curó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de visita",
+  "sentence": "Su amiga, [[de visita]], cargó la primera caja.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on a visit",
+   "options": [
+    "on a visit",
+    "on duty",
+    "on strike",
+    "on her way out"
+   ],
+   "audioClip": {
+    "storySlug": "amanece-con-poniente",
+    "storySource": "user",
+    "sentence": "Su amiga, de visita, cargó la primera caja.",
+    "targetWord": "de visita",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "temer",
+  "sentence": "[[Temía]] que el día sonara a funeral.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to fear",
+   "options": [
+    "to fear",
+    "to hope",
+    "to decide",
+    "to promise"
+   ],
+   "audioClip": {
+    "storySlug": "amanece-con-poniente",
+    "storySource": "user",
+    "sentence": "Temía que el día sonara a funeral.",
+    "targetWord": "Temía",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "sudada",
+  "sentence": "Después de correr, llegó a casa _____ y con sed.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sudada",
+   "options": [
+    "sudada",
+    "pelirroja",
+    "bizca",
+    "rubia"
+   ],
+   "translation": "After running, she got home _____ and thirsty.",
+   "optionTranslations": [
+    "sweaty",
+    "red-haired",
+    "cross-eyed",
+    "blonde"
+   ],
+   "audioClip": {
+    "storySlug": "amanece-con-poniente",
+    "storySource": "user",
+    "sentence": "Después de correr, llegó a casa sudada y con sed.",
+    "targetWord": "sudada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "oírse",
+  "sentence": "Lo cerró despacio, y el clic [[se oyó]] entero.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be heard",
+   "options": [
+    "to be heard",
+    "to be seen",
+    "to be broken",
+    "to be lost"
+   ],
+   "audioClip": {
+    "storySlug": "amanece-con-poniente",
+    "storySource": "user",
+    "sentence": "Lo cerró despacio, y el clic se oyó entero.",
+    "targetWord": "se oyó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "funeral",
+  "sentence": "Temía que el día sonara a [[funeral]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "funeral",
+   "options": [
+    "funeral",
+    "party",
+    "wedding",
+    "holiday"
+   ],
+   "audioClip": {
+    "storySlug": "amanece-con-poniente",
+    "storySource": "user",
+    "sentence": "Temía que el día sonara a funeral.",
+    "targetWord": "funeral",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "mudarse",
+  "sentence": "Encontró trabajo en otra ciudad y tuvo que _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mudarse",
+   "options": [
+    "mudarse",
+    "estirarse",
+    "sonarse",
+    "rascarse"
+   ],
+   "translation": "She found a job in another city and had to _____.",
+   "optionTranslations": [
+    "move house",
+    "stretch",
+    "blow her nose",
+    "scratch herself"
+   ],
+   "audioClip": {
+    "storySlug": "amanece-con-poniente",
+    "storySource": "user",
+    "sentence": "Encontró trabajo en otra ciudad y tuvo que mudarse.",
+    "targetWord": "mudarse",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "eco",
+  "sentence": "Se oían bromas con [[eco]] en la escalera.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "echo",
+   "options": [
+    "echo",
+    "music",
+    "smoke",
+    "dust"
+   ],
+   "audioClip": {
+    "storySlug": "amanece-con-poniente",
+    "storySource": "user",
+    "sentence": "Se oían bromas con eco en la escalera.",
+    "targetWord": "eco",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "clic",
+  "sentence": "Cerró el candado, y el [[clic]] sonó entero.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "click",
+   "options": [
+    "click",
+    "bang",
+    "scream",
+    "ring"
+   ],
+   "audioClip": {
+    "storySlug": "amanece-con-poniente",
+    "storySource": "user",
+    "sentence": "Cerró el candado, y el clic sonó entero.",
+    "targetWord": "clic",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "contenta",
+  "sentence": "Aprobó el examen y está muy _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "contenta",
+   "options": [
+    "contenta",
+    "agria",
+    "rallada",
+    "hueca"
+   ],
+   "translation": "She passed the exam and she's very _____.",
+   "optionTranslations": [
+    "happy",
+    "sour",
+    "grated",
+    "hollow"
+   ],
+   "audioClip": {
+    "storySlug": "amanece-con-poniente",
+    "storySource": "user",
+    "sentence": "Aprobó el examen y está muy contenta.",
+    "targetWord": "contenta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "informar",
+  "sentence": "El que mira, carga, le [[informó]] él.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to inform",
+   "options": [
+    "to inform",
+    "to beg",
+    "to deny",
+    "to ask"
+   ],
+   "audioClip": {
+    "storySlug": "amanece-con-poniente",
+    "storySource": "user",
+    "sentence": "El que mira, carga, le informó él.",
+    "targetWord": "informó",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "en los brazos",
+  "sentence": "Cargó una caja [[en los brazos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in her arms",
+   "options": [
+    "in her arms",
+    "on her back",
+    "on a trolley",
+    "by the handle"
+   ],
+   "audioClip": {
+    "storySlug": "amanece-con-poniente",
+    "storySource": "user",
+    "sentence": "Cargó una caja en los brazos.",
+    "targetWord": "en los brazos",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

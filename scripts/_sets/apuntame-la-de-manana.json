@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "fijo",
+  "sentence": "A los [[fijos]] nadie les preguntaba qué querían.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "regular customer",
+   "options": [
+    "regular customer",
+    "new waiter",
+    "delivery driver",
+    "tourist"
+   ],
+   "audioClip": {
+    "storySlug": "apuntame-la-de-manana",
+    "storySource": "user",
+    "sentence": "A los fijos nadie les preguntaba qué querían.",
+    "targetWord": "fijos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "empujar",
+  "sentence": "La puerta pesa mucho; hay que _____ fuerte para abrirla.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "empujar",
+   "options": [
+    "empujar",
+    "cantar",
+    "llorar",
+    "dormir"
+   ],
+   "translation": "The door is very heavy; you have to _____ hard to open it.",
+   "optionTranslations": [
+    "push",
+    "sing",
+    "cry",
+    "sleep"
+   ],
+   "audioClip": {
+    "storySlug": "apuntame-la-de-manana",
+    "storySource": "user",
+    "sentence": "La puerta pesa mucho; hay que empujar fuerte para abrirla.",
+    "targetWord": "empujar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "churros,taza,ronda,estreno",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "churros",
+     "answer": "fried dough sticks",
+     "options": [
+      "fried dough sticks",
+      "cup",
+      "round of drinks",
+      "debut"
+     ]
+    },
+    {
+     "word": "taza",
+     "answer": "cup",
+     "options": [
+      "fried dough sticks",
+      "cup",
+      "round of drinks",
+      "debut"
+     ]
+    },
+    {
+     "word": "ronda",
+     "answer": "round of drinks",
+     "options": [
+      "fried dough sticks",
+      "cup",
+      "round of drinks",
+      "debut"
+     ]
+    },
+    {
+     "word": "estreno",
+     "answer": "debut",
+     "options": [
+      "fried dough sticks",
+      "cup",
+      "round of drinks",
+      "debut"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lo de siempre",
+  "sentence": "¿[[Lo de siempre]], o hoy quieres otra cosa?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the usual",
+   "options": [
+    "the usual",
+    "the bill",
+    "the menu",
+    "something new"
+   ],
+   "audioClip": {
+    "storySlug": "apuntame-la-de-manana",
+    "storySource": "user",
+    "sentence": "¿Lo de siempre, o hoy quieres otra cosa?",
+    "targetWord": "Lo de siempre",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "orgullo",
+  "sentence": "El [[orgullo]] le dio risa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pride",
+   "options": [
+    "pride",
+    "shame",
+    "fear",
+    "relief"
+   ],
+   "audioClip": {
+    "storySlug": "apuntame-la-de-manana",
+    "storySource": "user",
+    "sentence": "El orgullo le dio risa.",
+    "targetWord": "orgullo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "ocupó",
+  "sentence": "Llegó temprano y _____ el mejor asiento del tren.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ocupó",
+   "options": [
+    "ocupó",
+    "hirvió",
+    "sembró",
+    "frió"
+   ],
+   "translation": "He arrived early and _____ the best seat on the train.",
+   "optionTranslations": [
+    "took",
+    "boiled",
+    "sowed",
+    "fried"
+   ],
+   "audioClip": {
+    "storySlug": "apuntame-la-de-manana",
+    "storySource": "user",
+    "sentence": "Llegó temprano y ocupó el mejor asiento del tren.",
+    "targetWord": "ocupó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ya era hora",
+  "sentence": "Pues [[ya era hora]] de llegar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "about time",
+   "options": [
+    "about time",
+    "too early",
+    "just in case",
+    "never again"
+   ],
+   "audioClip": {
+    "storySlug": "apuntame-la-de-manana",
+    "storySource": "user",
+    "sentence": "Pues ya era hora de llegar.",
+    "targetWord": "ya era hora",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fiarse",
+  "sentence": "¿Hoy tampoco [[te fías]] de mi máquina?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to trust",
+   "options": [
+    "to trust",
+    "to fix",
+    "to pay for",
+    "to hate"
+   ],
+   "audioClip": {
+    "storySlug": "apuntame-la-de-manana",
+    "storySource": "user",
+    "sentence": "¿Hoy tampoco te fías de mi máquina?",
+    "targetWord": "te fías",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "libre",
+  "sentence": "¿Está _____ este asiento, o espera a alguien?",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "libre",
+   "options": [
+    "libre",
+    "salado",
+    "peludo",
+    "maduro"
+   ],
+   "translation": "Is this seat _____, or are you waiting for someone?",
+   "optionTranslations": [
+    "free",
+    "salty",
+    "hairy",
+    "ripe"
+   ],
+   "audioClip": {
+    "storySlug": "apuntame-la-de-manana",
+    "storySource": "user",
+    "sentence": "¿Está libre este asiento, o espera a alguien?",
+    "targetWord": "libre",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mejor que nunca",
+  "sentence": "Aquel café le supo [[mejor que nunca]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "better than ever",
+   "options": [
+    "better than ever",
+    "worse than usual",
+    "as always",
+    "too strong"
+   ],
+   "audioClip": {
+    "storySlug": "apuntame-la-de-manana",
+    "storySource": "user",
+    "sentence": "Aquel café le supo mejor que nunca.",
+    "targetWord": "mejor que nunca",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "asunto",
+  "sentence": "Unos clientes discutían un [[asunto]] viejo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "matter",
+   "options": [
+    "matter",
+    "debt",
+    "joke",
+    "song"
+   ],
+   "audioClip": {
+    "storySlug": "apuntame-la-de-manana",
+    "storySource": "user",
+    "sentence": "Unos clientes discutían un asunto viejo.",
+    "targetWord": "asunto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "firma",
+  "sentence": "Ella lee el contrato y luego lo _____ con su nombre.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "firma",
+   "options": [
+    "firma",
+    "hornea",
+    "poda",
+    "pela"
+   ],
+   "translation": "She reads the contract and then _____ it with her name.",
+   "optionTranslations": [
+    "signs",
+    "bakes",
+    "prunes",
+    "peels"
+   ],
+   "audioClip": {
+    "storySlug": "apuntame-la-de-manana",
+    "storySource": "user",
+    "sentence": "Ella lee el contrato y luego lo firma con su nombre.",
+    "targetWord": "firma",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tonto",
+  "sentence": "Ocupó el sitio con el corazón [[tonto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "silly",
+   "options": [
+    "silly",
+    "broken",
+    "cold",
+    "brave"
+   ],
+   "audioClip": {
+    "storySlug": "apuntame-la-de-manana",
+    "storySource": "user",
+    "sentence": "Ocupó el sitio con el corazón tonto.",
+    "targetWord": "tonto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "detrás",
+  "sentence": "[[Detrás]], unos clientes discutían en voz alta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "behind",
+   "options": [
+    "behind",
+    "upstairs",
+    "outside",
+    "opposite"
+   ],
+   "audioClip": {
+    "storySlug": "apuntame-la-de-manana",
+    "storySource": "user",
+    "sentence": "Detrás, unos clientes discutían en voz alta.",
+    "targetWord": "Detrás",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "discutían",
+  "sentence": "Los vecinos _____ a gritos por el ruido de la obra.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "discutían",
+   "options": [
+    "discutían",
+    "nadaban",
+    "cosían",
+    "pescaban"
+   ],
+   "translation": "The neighbours were _____ loudly about the building noise.",
+   "optionTranslations": [
+    "arguing",
+    "swimming",
+    "sewing",
+    "fishing"
+   ],
+   "audioClip": {
+    "storySlug": "apuntame-la-de-manana",
+    "storySource": "user",
+    "sentence": "Los vecinos discutían a gritos por el ruido de la obra.",
+    "targetWord": "discutían",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dar por sabido",
+  "sentence": "Por fin alguien daba su café [[por sabido]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to take as known",
+   "options": [
+    "to take as known",
+    "to take as a gift",
+    "to take by force",
+    "to take too long"
+   ],
+   "audioClip": {
+    "storySlug": "apuntame-la-de-manana",
+    "storySource": "user",
+    "sentence": "Por fin alguien daba su café por sabido.",
+    "targetWord": "por sabido",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lo suyo",
+  "sentence": "A los fijos, [[lo suyo]] les llegaba solo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "their usual",
+   "options": [
+    "their usual",
+    "their change",
+    "their bill",
+    "their coats"
+   ],
+   "audioClip": {
+    "storySlug": "apuntame-la-de-manana",
+    "storySource": "user",
+    "sentence": "A los fijos, lo suyo les llegaba solo.",
+    "targetWord": "lo suyo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

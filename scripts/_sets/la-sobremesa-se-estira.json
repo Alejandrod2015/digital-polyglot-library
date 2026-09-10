@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "sobremesa",
+  "sentence": "La [[sobremesa]] se estiró hasta la noche.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "after-meal chat at the table",
+   "options": [
+    "after-meal chat at the table",
+    "nap on the sofa",
+    "dessert at the end",
+    "walk after lunch"
+   ],
+   "audioClip": {
+    "storySlug": "la-sobremesa-se-estira",
+    "storySource": "user",
+    "sentence": "La sobremesa se estiró hasta la noche.",
+    "targetWord": "sobremesa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "acercó",
+  "sentence": "Hacía frío y _____ la silla al fuego.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "acercó",
+   "options": [
+    "acercó",
+    "pintó",
+    "lavó",
+    "cosió"
+   ],
+   "translation": "It was cold, and she _____ her chair to the fire.",
+   "optionTranslations": [
+    "pulled closer",
+    "painted",
+    "washed",
+    "sewed"
+   ],
+   "audioClip": {
+    "storySlug": "la-sobremesa-se-estira",
+    "storySource": "user",
+    "sentence": "Hacía frío y acercó la silla al fuego.",
+    "targetWord": "acercó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "libreta,comedor,obras,pregón",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "libreta",
+     "answer": "notebook",
+     "options": [
+      "notebook",
+      "dining room",
+      "building works",
+      "festival opening speech"
+     ]
+    },
+    {
+     "word": "comedor",
+     "answer": "dining room",
+     "options": [
+      "notebook",
+      "dining room",
+      "building works",
+      "festival opening speech"
+     ]
+    },
+    {
+     "word": "obras",
+     "answer": "building works",
+     "options": [
+      "notebook",
+      "dining room",
+      "building works",
+      "festival opening speech"
+     ]
+    },
+    {
+     "word": "pregón",
+     "answer": "festival opening speech",
+     "options": [
+      "notebook",
+      "dining room",
+      "building works",
+      "festival opening speech"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "soltar",
+  "sentence": "Hay mesas que no [[sueltan]] a nadie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to release",
+   "options": [
+    "to release",
+    "to feed",
+    "to invite",
+    "to notice"
+   ],
+   "audioClip": {
+    "storySlug": "la-sobremesa-se-estira",
+    "storySource": "user",
+    "sentence": "Hay mesas que no sueltan a nadie.",
+    "targetWord": "sueltan",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "costar",
+  "sentence": "Seguía allí, aunque le [[costaba]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be hard",
+   "options": [
+    "to be hard",
+    "to be fun",
+    "to be cheap",
+    "to be late"
+   ],
+   "audioClip": {
+    "storySlug": "la-sobremesa-se-estira",
+    "storySource": "user",
+    "sentence": "Seguía allí, aunque le costaba.",
+    "targetWord": "costaba",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "recogieron",
+  "sentence": "Después de cenar, entre todos _____ la mesa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "recogieron",
+   "options": [
+    "recogieron",
+    "bebieron",
+    "soñaron",
+    "ganaron"
+   ],
+   "translation": "After dinner, everyone together _____ the table.",
+   "optionTranslations": [
+    "cleared",
+    "drank",
+    "dreamed",
+    "won"
+   ],
+   "audioClip": {
+    "storySlug": "la-sobremesa-se-estira",
+    "storySource": "user",
+    "sentence": "Después de cenar, entre todos recogieron la mesa.",
+    "targetWord": "recogieron",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dar igual",
+  "sentence": "La tarde se alargó hasta la noche, y le [[dio igual]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to not mind",
+   "options": [
+    "to not mind",
+    "to feel sad",
+    "to get angry",
+    "to be surprised"
+   ],
+   "audioClip": {
+    "storySlug": "la-sobremesa-se-estira",
+    "storySource": "user",
+    "sentence": "La tarde se alargó hasta la noche, y le dio igual.",
+    "targetWord": "dio igual",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "por una vez",
+  "sentence": "[[Por una vez]] no apunto nada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "for once",
+   "options": [
+    "for once",
+    "once again",
+    "at once",
+    "once upon a time"
+   ],
+   "audioClip": {
+    "storySlug": "la-sobremesa-se-estira",
+    "storySource": "user",
+    "sentence": "Por una vez no apunto nada.",
+    "targetWord": "Por una vez",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "vacíos",
+  "sentence": "Todos comieron mucho: los platos volvieron _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vacíos",
+   "options": [
+    "vacíos",
+    "caros",
+    "azules",
+    "nuevos"
+   ],
+   "translation": "Everyone ate a lot: the plates came back _____.",
+   "optionTranslations": [
+    "empty",
+    "expensive",
+    "blue",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "la-sobremesa-se-estira",
+    "storySource": "user",
+    "sentence": "Todos comieron mucho: los platos volvieron vacíos.",
+    "targetWord": "vacíos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nudo",
+  "sentence": "Le subió un [[nudo]] a la garganta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lump in the throat",
+   "options": [
+    "lump in the throat",
+    "pain in the chest",
+    "smile on the face",
+    "tear in the eye"
+   ],
+   "audioClip": {
+    "storySlug": "la-sobremesa-se-estira",
+    "storySource": "user",
+    "sentence": "Le subió un nudo a la garganta.",
+    "targetWord": "nudo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "antiguo",
+  "sentence": "Se discutía de fútbol, de obras y de un pregón [[antiguo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "old",
+   "options": [
+    "old",
+    "famous",
+    "boring",
+    "short"
+   ],
+   "audioClip": {
+    "storySlug": "la-sobremesa-se-estira",
+    "storySource": "user",
+    "sentence": "Se discutía de fútbol, de obras y de un pregón antiguo.",
+    "targetWord": "antiguo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "levanto",
+  "sentence": "Tengo prisa, así que me _____ de la mesa enseguida.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "levanto",
+   "options": [
+    "levanto",
+    "peino",
+    "ducho",
+    "visto"
+   ],
+   "translation": "I'm in a hurry, so I _____ from the table right away.",
+   "optionTranslations": [
+    "get up",
+    "comb my hair",
+    "shower",
+    "get dressed"
+   ],
+   "audioClip": {
+    "storySlug": "la-sobremesa-se-estira",
+    "storySource": "user",
+    "sentence": "Tengo prisa, así que me levanto de la mesa enseguida.",
+    "targetWord": "levanto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pronto",
+  "sentence": "Hay mesas de las que uno se levanta [[pronto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "early",
+   "options": [
+    "early",
+    "late",
+    "slowly",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "la-sobremesa-se-estira",
+    "storySource": "user",
+    "sentence": "Hay mesas de las que uno se levanta pronto.",
+    "targetWord": "pronto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dejar ir",
+  "sentence": "No apuntó nada y [[dejó ir]] la tarde.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to let go of",
+   "options": [
+    "to let go of",
+    "to plan ahead",
+    "to fill up",
+    "to cut short"
+   ],
+   "audioClip": {
+    "storySlug": "la-sobremesa-se-estira",
+    "storySource": "user",
+    "sentence": "No apuntó nada y dejó ir la tarde.",
+    "targetWord": "dejó ir",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "agradecido",
+  "sentence": "Le ayudaron con la mudanza y quedó muy _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "agradecido",
+   "options": [
+    "agradecido",
+    "pesado",
+    "peludo",
+    "famoso"
+   ],
+   "translation": "They helped him with the move and he was very _____.",
+   "optionTranslations": [
+    "grateful",
+    "heavy",
+    "hairy",
+    "famous"
+   ],
+   "audioClip": {
+    "storySlug": "la-sobremesa-se-estira",
+    "storySource": "user",
+    "sentence": "Le ayudaron con la mudanza y quedó muy agradecido.",
+    "targetWord": "agradecido",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de fuera",
+  "sentence": "Ya estaba un poco menos [[de fuera]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "from elsewhere",
+   "options": [
+    "from elsewhere",
+    "on holiday",
+    "in a hurry",
+    "out of breath"
+   ],
+   "audioClip": {
+    "storySlug": "la-sobremesa-se-estira",
+    "storySource": "user",
+    "sentence": "Ya estaba un poco menos de fuera.",
+    "targetWord": "de fuera",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sin palabras",
+  "sentence": "La silla guardada valía lo mismo [[sin palabras]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "without words",
+   "options": [
+    "without words",
+    "without money",
+    "without doubt",
+    "without help"
+   ],
+   "audioClip": {
+    "storySlug": "la-sobremesa-se-estira",
+    "storySource": "user",
+    "sentence": "La silla guardada valía lo mismo sin palabras.",
+    "targetWord": "sin palabras",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

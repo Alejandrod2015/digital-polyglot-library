@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "custodia",
+  "sentence": "Entendió de golpe la [[custodia]] callada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "safekeeping",
+   "options": [
+    "safekeeping",
+    "sale",
+    "loss",
+    "theft"
+   ],
+   "audioClip": {
+    "storySlug": "la-balda-del-medio",
+    "storySource": "user",
+    "sentence": "Entendió de golpe la custodia callada.",
+    "targetWord": "custodia",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cruzar",
+  "sentence": "Mira bien antes de _____ la calle.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cruzar",
+   "options": [
+    "cruzar",
+    "freír",
+    "ordeñar",
+    "bordar"
+   ],
+   "translation": "Look carefully before you _____ the street.",
+   "optionTranslations": [
+    "cross",
+    "fry",
+    "milk",
+    "embroider"
+   ],
+   "audioClip": {
+    "storySlug": "la-balda-del-medio",
+    "storySource": "user",
+    "sentence": "Mira bien antes de cruzar la calle.",
+    "targetWord": "cruzar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "carretilla,balda,pared,firma",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "carretilla",
+     "answer": "handcart",
+     "options": [
+      "handcart",
+      "shelf",
+      "wall",
+      "signature"
+     ]
+    },
+    {
+     "word": "balda",
+     "answer": "shelf",
+     "options": [
+      "handcart",
+      "shelf",
+      "wall",
+      "signature"
+     ]
+    },
+    {
+     "word": "pared",
+     "answer": "wall",
+     "options": [
+      "handcart",
+      "shelf",
+      "wall",
+      "signature"
+     ]
+    },
+    {
+     "word": "firma",
+     "answer": "signature",
+     "options": [
+      "handcart",
+      "shelf",
+      "wall",
+      "signature"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tender la mano",
+  "sentence": "Él le [[tendió la mano]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hold out a hand",
+   "options": [
+    "to hold out a hand",
+    "to wave goodbye",
+    "to raise a fist",
+    "to clap"
+   ],
+   "audioClip": {
+    "storySlug": "la-balda-del-medio",
+    "storySource": "user",
+    "sentence": "Él le tendió la mano.",
+    "targetWord": "tendió la mano",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sin pedir permiso",
+  "sentence": "Lo dejó en la balda del medio, [[sin pedir permiso]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "without asking permission",
+   "options": [
+    "without asking permission",
+    "without saying thanks",
+    "without looking back",
+    "without paying"
+   ],
+   "audioClip": {
+    "storySlug": "la-balda-del-medio",
+    "storySource": "user",
+    "sentence": "Lo dejó en la balda del medio, sin pedir permiso.",
+    "targetWord": "sin pedir permiso",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "invitó",
+  "sentence": "Cumplía años y nos _____ a todos a cenar.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "invitó",
+   "options": [
+    "invitó",
+    "vacunó",
+    "afeitó",
+    "tatuó"
+   ],
+   "translation": "It was his birthday and he _____ us all to dinner.",
+   "optionTranslations": [
+    "invited",
+    "vaccinated",
+    "shaved",
+    "tattooed"
+   ],
+   "audioClip": {
+    "storySlug": "la-balda-del-medio",
+    "storySource": "user",
+    "sentence": "Cumplía años y nos invitó a todos a cenar.",
+    "targetWord": "invitó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "en voz alta",
+  "sentence": "La peña me enseñó a leer [[en voz alta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "aloud",
+   "options": [
+    "aloud",
+    "silently",
+    "fast",
+    "in secret"
+   ],
+   "audioClip": {
+    "storySlug": "la-balda-del-medio",
+    "storySource": "user",
+    "sentence": "La peña me enseñó a leer en voz alta.",
+    "targetWord": "en voz alta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "perderse",
+  "sentence": "Temía que la biblioteca [[se perdiera]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to get lost",
+   "options": [
+    "to get lost",
+    "to get wet",
+    "to get bored",
+    "to get married"
+   ],
+   "audioClip": {
+    "storySlug": "la-balda-del-medio",
+    "storySource": "user",
+    "sentence": "Temía que la biblioteca se perdiera.",
+    "targetWord": "se perdiera",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "enorme",
+  "sentence": "La casa tiene muchísimas habitaciones; es _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "enorme",
+   "options": [
+    "enorme",
+    "joven",
+    "alegre",
+    "feliz"
+   ],
+   "translation": "The house has loads of rooms; it's _____.",
+   "optionTranslations": [
+    "huge",
+    "young",
+    "cheerful",
+    "happy"
+   ],
+   "audioClip": {
+    "storySlug": "la-balda-del-medio",
+    "storySource": "user",
+    "sentence": "La casa tiene muchísimas habitaciones; es enorme.",
+    "targetWord": "enorme",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "comienzo",
+  "sentence": "Había olor a madera nueva y a [[comienzo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "new beginning",
+   "options": [
+    "new beginning",
+    "old age",
+    "goodbye",
+    "paint"
+   ],
+   "audioClip": {
+    "storySlug": "la-balda-del-medio",
+    "storySource": "user",
+    "sentence": "Había olor a madera nueva y a comienzo.",
+    "targetWord": "comienzo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "permiso",
+  "sentence": "Nadie le había dado [[permiso]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "permission",
+   "options": [
+    "permission",
+    "money",
+    "advice",
+    "time"
+   ],
+   "audioClip": {
+    "storySlug": "la-balda-del-medio",
+    "storySource": "user",
+    "sentence": "Nadie le había dado permiso.",
+    "targetWord": "permiso",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "añadió",
+  "sentence": "Probó la sopa y le _____ un poco de sal.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "añadió",
+   "options": [
+    "añadió",
+    "prestó",
+    "alquiló",
+    "dedicó"
+   ],
+   "translation": "She tasted the soup and _____ a little salt.",
+   "optionTranslations": [
+    "added",
+    "lent",
+    "rented",
+    "dedicated"
+   ],
+   "audioClip": {
+    "storySlug": "la-balda-del-medio",
+    "storySource": "user",
+    "sentence": "Probó la sopa y le añadió un poco de sal.",
+    "targetWord": "añadió",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "negar",
+  "sentence": "Nadie se lo habría [[negado]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to refuse",
+   "options": [
+    "to refuse",
+    "to allow",
+    "to sell",
+    "to explain"
+   ],
+   "audioClip": {
+    "storySlug": "la-balda-del-medio",
+    "storySource": "user",
+    "sentence": "Nadie se lo habría negado.",
+    "targetWord": "negado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "último",
+  "sentence": "Ella llegó la [[última]], con el tomo en una bolsa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "last",
+   "options": [
+    "last",
+    "first",
+    "alone",
+    "early"
+   ],
+   "audioClip": {
+    "storySlug": "la-balda-del-medio",
+    "storySource": "user",
+    "sentence": "Ella llegó la última, con el tomo en una bolsa.",
+    "targetWord": "última",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "callado",
+  "sentence": "No dijo nada en toda la cena; estuvo muy _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "callado",
+   "options": [
+    "callado",
+    "oxidado",
+    "pelado",
+    "maduro"
+   ],
+   "translation": "He didn't say a word all dinner; he was very _____.",
+   "optionTranslations": [
+    "quiet",
+    "rusty",
+    "peeled",
+    "ripe"
+   ],
+   "audioClip": {
+    "storySlug": "la-balda-del-medio",
+    "storySource": "user",
+    "sentence": "No dijo nada en toda la cena; estuvo muy callado.",
+    "targetWord": "callado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "con las dos manos",
+  "sentence": "Lo abrió [[con las dos manos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "with both hands",
+   "options": [
+    "with both hands",
+    "with one finger",
+    "without looking",
+    "with gloves on"
+   ],
+   "audioClip": {
+    "storySlug": "la-balda-del-medio",
+    "storySource": "user",
+    "sentence": "Lo abrió con las dos manos.",
+    "targetWord": "con las dos manos",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "por el mundo",
+  "sentence": "La compró para que no se perdiera [[por el mundo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "out in the world",
+   "options": [
+    "out in the world",
+    "at home",
+    "in the post",
+    "in a drawer"
+   ],
+   "audioClip": {
+    "storySlug": "la-balda-del-medio",
+    "storySource": "user",
+    "sentence": "La compró para que no se perdiera por el mundo.",
+    "targetWord": "por el mundo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

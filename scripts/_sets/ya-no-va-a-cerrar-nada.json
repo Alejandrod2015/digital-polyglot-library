@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "dueño",
+  "sentence": "Al [[dueño]] le han comprado el edificio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "owner",
+   "options": [
+    "owner",
+    "tenant",
+    "builder",
+    "neighbour"
+   ],
+   "audioClip": {
+    "storySlug": "ya-no-va-a-cerrar-nada",
+    "storySource": "user",
+    "sentence": "Al dueño le han comprado el edificio.",
+    "targetWord": "dueño",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cuelgo",
+  "sentence": "Tengo un cuadro nuevo y lo _____ en el salón.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cuelgo",
+   "options": [
+    "cuelgo",
+    "riego",
+    "frío",
+    "barro"
+   ],
+   "translation": "I have a new painting and I _____ it in the living room.",
+   "optionTranslations": [
+    "hang",
+    "water",
+    "fry",
+    "sweep"
+   ],
+   "audioClip": {
+    "storySlug": "ya-no-va-a-cerrar-nada",
+    "storySource": "user",
+    "sentence": "Tengo un cuadro nuevo y lo cuelgo en el salón.",
+    "targetWord": "cuelgo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "mostrador,estantería,ceja,cinta",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "mostrador",
+     "answer": "counter",
+     "options": [
+      "counter",
+      "shelving unit",
+      "eyebrow",
+      "tape"
+     ]
+    },
+    {
+     "word": "estantería",
+     "answer": "shelving unit",
+     "options": [
+      "counter",
+      "shelving unit",
+      "eyebrow",
+      "tape"
+     ]
+    },
+    {
+     "word": "ceja",
+     "answer": "eyebrow",
+     "options": [
+      "counter",
+      "shelving unit",
+      "eyebrow",
+      "tape"
+     ]
+    },
+    {
+     "word": "cinta",
+     "answer": "tape",
+     "options": [
+      "counter",
+      "shelving unit",
+      "eyebrow",
+      "tape"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "culpa",
+  "sentence": "La [[culpa]] se le quedó más pequeña.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "guilt",
+   "options": [
+    "guilt",
+    "fear",
+    "anger",
+    "hunger"
+   ],
+   "audioClip": {
+    "storySlug": "ya-no-va-a-cerrar-nada",
+    "storySource": "user",
+    "sentence": "La culpa se le quedó más pequeña.",
+    "targetWord": "culpa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sin rodeos",
+  "sentence": "Se lo contó [[sin rodeos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "straight out",
+   "options": [
+    "straight out",
+    "in tears",
+    "by letter",
+    "in a whisper"
+   ],
+   "audioClip": {
+    "storySlug": "ya-no-va-a-cerrar-nada",
+    "storySource": "user",
+    "sentence": "Se lo contó sin rodeos.",
+    "targetWord": "sin rodeos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "desmontar",
+  "sentence": "Para la mudanza hay que _____ la cama y la mesa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "desmontar",
+   "options": [
+    "desmontar",
+    "cocinar",
+    "hervir",
+    "freír"
+   ],
+   "translation": "For the move we have to _____ the bed and the table.",
+   "optionTranslations": [
+    "take apart",
+    "cook",
+    "boil",
+    "fry"
+   ],
+   "audioClip": {
+    "storySlug": "ya-no-va-a-cerrar-nada",
+    "storySource": "user",
+    "sentence": "Para la mudanza hay que desmontar la cama y la mesa.",
+    "targetWord": "desmontar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trato hecho",
+  "sentence": "[[Trato hecho]], pero lo cuelgo en mi casa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it's a deal",
+   "options": [
+    "it's a deal",
+    "no way",
+    "thanks anyway",
+    "see you later"
+   ],
+   "audioClip": {
+    "storySlug": "ya-no-va-a-cerrar-nada",
+    "storySource": "user",
+    "sentence": "Trato hecho, pero lo cuelgo en mi casa.",
+    "targetWord": "Trato hecho",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "perdón",
+  "sentence": "Valía por un [[perdón]] entero.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "apology",
+   "options": [
+    "apology",
+    "reward",
+    "promise",
+    "warning"
+   ],
+   "audioClip": {
+    "storySlug": "ya-no-va-a-cerrar-nada",
+    "storySource": "user",
+    "sentence": "Valía por un perdón entero.",
+    "targetWord": "perdón",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "desapareció",
+  "sentence": "Busqué mi paraguas por todas partes, pero _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "desapareció",
+   "options": [
+    "desapareció",
+    "cantó",
+    "sonrió",
+    "estornudó"
+   ],
+   "translation": "I looked everywhere for my umbrella, but it _____.",
+   "optionTranslations": [
+    "disappeared",
+    "sang",
+    "smiled",
+    "sneezed"
+   ],
+   "audioClip": {
+    "storySlug": "ya-no-va-a-cerrar-nada",
+    "storySource": "user",
+    "sentence": "Busqué mi paraguas por todas partes, pero desapareció.",
+    "targetWord": "desapareció",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "con ganas",
+  "sentence": "Se rio [[con ganas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wholeheartedly",
+   "options": [
+    "wholeheartedly",
+    "nervously",
+    "quietly",
+    "bitterly"
+   ],
+   "audioClip": {
+    "storySlug": "ya-no-va-a-cerrar-nada",
+    "storySource": "user",
+    "sentence": "Se rio con ganas.",
+    "targetWord": "con ganas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "broma",
+  "sentence": "La [[broma]] no había sido mala; había sido de otro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "joke",
+   "options": [
+    "joke",
+    "lie",
+    "plan",
+    "gift"
+   ],
+   "audioClip": {
+    "storySlug": "ya-no-va-a-cerrar-nada",
+    "storySource": "user",
+    "sentence": "La broma no había sido mala; había sido de otro.",
+    "targetWord": "broma",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "devolver",
+  "sentence": "Si no te gusta la camisa, la puedes _____ en la tienda.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "devolver",
+   "options": [
+    "devolver",
+    "morder",
+    "regar",
+    "hornear"
+   ],
+   "translation": "If you don't like the shirt, you can _____ it at the shop.",
+   "optionTranslations": [
+    "return",
+    "bite",
+    "water",
+    "bake"
+   ],
+   "audioClip": {
+    "storySlug": "ya-no-va-a-cerrar-nada",
+    "storySource": "user",
+    "sentence": "Si no te gusta la camisa, la puedes devolver en la tienda.",
+    "targetWord": "devolver",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "conceder",
+  "sentence": "Eso ya es una copla, [[concedió]] él.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to admit",
+   "options": [
+    "to admit",
+    "to deny",
+    "to demand",
+    "to complain"
+   ],
+   "audioClip": {
+    "storySlug": "ya-no-va-a-cerrar-nada",
+    "storySource": "user",
+    "sentence": "Eso ya es una copla, concedió él.",
+    "targetWord": "concedió",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "levantado",
+  "sentence": "Lo soltó con la ceja [[levantada]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "raised",
+   "options": [
+    "raised",
+    "shaved",
+    "painted",
+    "broken"
+   ],
+   "audioClip": {
+    "storySlug": "ya-no-va-a-cerrar-nada",
+    "storySource": "user",
+    "sentence": "Lo soltó con la ceja levantada.",
+    "targetWord": "levantada",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "valía",
+  "sentence": "Aquel reloj antiguo _____ más que el coche.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "valía",
+   "options": [
+    "valía",
+    "dormía",
+    "nadaba",
+    "cantaba"
+   ],
+   "translation": "That old watch was _____ more than the car.",
+   "optionTranslations": [
+    "worth",
+    "sleeping",
+    "swimming",
+    "singing"
+   ],
+   "audioClip": {
+    "storySlug": "ya-no-va-a-cerrar-nada",
+    "storySource": "user",
+    "sentence": "Aquel reloj antiguo valía más que el coche.",
+    "targetWord": "valía",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de momento",
+  "sentence": "Y de eso, [[de momento]], solo se ríe él.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "for now",
+   "options": [
+    "for now",
+    "forever",
+    "by accident",
+    "at last"
+   ],
+   "audioClip": {
+    "storySlug": "ya-no-va-a-cerrar-nada",
+    "storySource": "user",
+    "sentence": "Y de eso, de momento, solo se ríe él.",
+    "targetWord": "de momento",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ponerse a",
+  "sentence": "[[Se puso a]] desmontar la primera estantería.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to start",
+   "options": [
+    "to start",
+    "to refuse",
+    "to pretend",
+    "to forget"
+   ],
+   "audioClip": {
+    "storySlug": "ya-no-va-a-cerrar-nada",
+    "storySource": "user",
+    "sentence": "Se puso a desmontar la primera estantería.",
+    "targetWord": "Se puso a",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

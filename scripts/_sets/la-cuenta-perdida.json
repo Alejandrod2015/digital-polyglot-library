@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "mirada",
+  "sentence": "Preguntó con la [[mirada]] y nadie contestó.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "look",
+   "options": [
+    "look",
+    "hand",
+    "voice",
+    "smile"
+   ],
+   "audioClip": {
+    "storySlug": "la-cuenta-perdida",
+    "storySource": "user",
+    "sentence": "Preguntó con la mirada y nadie contestó.",
+    "targetWord": "mirada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "chocaron",
+  "sentence": "Para brindar, _____ los vasos y bebieron.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chocaron",
+   "options": [
+    "chocaron",
+    "doblaron",
+    "pelaron",
+    "cosieron"
+   ],
+   "translation": "To make a toast, they _____ their glasses and drank.",
+   "optionTranslations": [
+    "clinked",
+    "folded",
+    "peeled",
+    "sewed"
+   ],
+   "audioClip": {
+    "storySlug": "la-cuenta-perdida",
+    "storySource": "user",
+    "sentence": "Para brindar, chocaron los vasos y bebieron.",
+    "targetWord": "chocaron",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "posavasos,aceituna,tapa,polvo",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "posavasos",
+     "answer": "coaster",
+     "options": [
+      "coaster",
+      "olive",
+      "bar snack",
+      "dust"
+     ]
+    },
+    {
+     "word": "aceituna",
+     "answer": "olive",
+     "options": [
+      "coaster",
+      "olive",
+      "bar snack",
+      "dust"
+     ]
+    },
+    {
+     "word": "tapa",
+     "answer": "bar snack",
+     "options": [
+      "coaster",
+      "olive",
+      "bar snack",
+      "dust"
+     ]
+    },
+    {
+     "word": "polvo",
+     "answer": "dust",
+     "options": [
+      "coaster",
+      "olive",
+      "bar snack",
+      "dust"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de reojo",
+  "sentence": "Hubo sonrisas [[de reojo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "out of the corner of the eye",
+   "options": [
+    "out of the corner of the eye",
+    "from ear to ear",
+    "with tears",
+    "behind a hand"
+   ],
+   "audioClip": {
+    "storySlug": "la-cuenta-perdida",
+    "storySource": "user",
+    "sentence": "Hubo sonrisas de reojo.",
+    "targetWord": "de reojo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "darse por aludido",
+  "sentence": "Nadie [[se dio por aludido]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to take the hint",
+   "options": [
+    "to take the hint",
+    "to take the blame",
+    "to take a break",
+    "to take a seat"
+   ],
+   "audioClip": {
+    "storySlug": "la-cuenta-perdida",
+    "storySource": "user",
+    "sentence": "Nadie se dio por aludido.",
+    "targetWord": "se dio por aludido",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "alzó",
+  "sentence": "Para hacer una pregunta, _____ la mano.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "alzó",
+   "options": [
+    "alzó",
+    "mordió",
+    "cortó",
+    "vendó"
+   ],
+   "translation": "To ask a question, she _____ her hand.",
+   "optionTranslations": [
+    "raised",
+    "bit",
+    "cut",
+    "bandaged"
+   ],
+   "audioClip": {
+    "storySlug": "la-cuenta-perdida",
+    "storySource": "user",
+    "sentence": "Para hacer una pregunta, alzó la mano.",
+    "targetWord": "alzó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de la casa",
+  "sentence": "Esas tapas son [[de la casa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on the house",
+   "options": [
+    "on the house",
+    "very expensive",
+    "for sharing",
+    "for later"
+   ],
+   "audioClip": {
+    "storySlug": "la-cuenta-perdida",
+    "storySource": "user",
+    "sentence": "Esas tapas son de la casa.",
+    "targetWord": "de la casa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "encogido",
+  "sentence": "Hubo miradas y hombros [[encogidos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shrugged",
+   "options": [
+    "shrugged",
+    "broad",
+    "bare",
+    "sore"
+   ],
+   "audioClip": {
+    "storySlug": "la-cuenta-perdida",
+    "storySource": "user",
+    "sentence": "Hubo miradas y hombros encogidos.",
+    "targetWord": "encogidos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "agotados",
+  "sentence": "Después de la mudanza, todos estaban _____ y se fueron a dormir.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "agotados",
+   "options": [
+    "agotados",
+    "azules",
+    "redondos",
+    "peludos"
+   ],
+   "translation": "After the move, everyone was _____ and went to bed.",
+   "optionTranslations": [
+    "exhausted",
+    "blue",
+    "round",
+    "hairy"
+   ],
+   "audioClip": {
+    "storySlug": "la-cuenta-perdida",
+    "storySource": "user",
+    "sentence": "Después de la mudanza, todos estaban agotados y se fueron a dormir.",
+    "targetWord": "agotados",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sin bajar la voz",
+  "sentence": "La siguiente es mía, avisó, [[sin bajar la voz]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "without lowering her voice",
+   "options": [
+    "without lowering her voice",
+    "without looking up",
+    "without paying",
+    "without a word"
+   ],
+   "audioClip": {
+    "storySlug": "la-cuenta-perdida",
+    "storySource": "user",
+    "sentence": "La siguiente es mía, avisó, sin bajar la voz.",
+    "targetWord": "sin bajar la voz",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "punta",
+  "sentence": "Le guiñó un ojo desde la otra [[punta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "far end",
+   "options": [
+    "far end",
+    "corner table",
+    "kitchen door",
+    "back room"
+   ],
+   "audioClip": {
+    "storySlug": "la-cuenta-perdida",
+    "storySource": "user",
+    "sentence": "Le guiñó un ojo desde la otra punta.",
+    "targetWord": "punta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "avisar",
+  "sentence": "Si vas a llegar tarde, hay que _____ antes.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "avisar",
+   "options": [
+    "avisar",
+    "bailar",
+    "dormir",
+    "nadar"
+   ],
+   "translation": "If you're going to be late, you have to _____ beforehand.",
+   "optionTranslations": [
+    "let people know",
+    "dance",
+    "sleep",
+    "swim"
+   ],
+   "audioClip": {
+    "storySlug": "la-cuenta-perdida",
+    "storySource": "user",
+    "sentence": "Si vas a llegar tarde, hay que avisar antes.",
+    "targetWord": "avisar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cuenta",
+  "sentence": "Nadie lleva esa [[cuenta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tab",
+   "options": [
+    "tab",
+    "tip",
+    "menu",
+    "change"
+   ],
+   "audioClip": {
+    "storySlug": "la-cuenta-perdida",
+    "storySource": "user",
+    "sentence": "Nadie lleva esa cuenta.",
+    "targetWord": "cuenta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bajito",
+  "sentence": "Lo preguntó [[bajito]], casi sin voz.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "very quietly",
+   "options": [
+    "very quietly",
+    "very fast",
+    "very angrily",
+    "very late"
+   ],
+   "audioClip": {
+    "storySlug": "la-cuenta-perdida",
+    "storySource": "user",
+    "sentence": "Lo preguntó bajito, casi sin voz.",
+    "targetWord": "bajito",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "guiñó",
+  "sentence": "Para que supiera que era broma, le _____ un ojo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "guiñó",
+   "options": [
+    "guiñó",
+    "pidió",
+    "prestó",
+    "vendió"
+   ],
+   "translation": "So that she knew it was a joke, he _____ at her.",
+   "optionTranslations": [
+    "winked",
+    "asked",
+    "lent",
+    "sold"
+   ],
+   "audioClip": {
+    "storySlug": "la-cuenta-perdida",
+    "storySource": "user",
+    "sentence": "Para que supiera que era broma, le guiñó un ojo.",
+    "targetWord": "guiñó",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de buen humor",
+  "sentence": "Bajaron con la peña [[de buen humor]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in a good mood",
+   "options": [
+    "in a good mood",
+    "in a hurry",
+    "in silence",
+    "in trouble"
+   ],
+   "audioClip": {
+    "storySlug": "la-cuenta-perdida",
+    "storySource": "user",
+    "sentence": "Bajaron con la peña de buen humor.",
+    "targetWord": "de buen humor",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cosa de",
+  "sentence": "Los milagros aquí son [[cosa de la casa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a matter for",
+   "options": [
+    "a matter for",
+    "a gift from",
+    "a danger to",
+    "a copy of"
+   ],
+   "audioClip": {
+    "storySlug": "la-cuenta-perdida",
+    "storySource": "user",
+    "sentence": "Los milagros aquí son cosa de la casa.",
+    "targetWord": "cosa de la casa",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

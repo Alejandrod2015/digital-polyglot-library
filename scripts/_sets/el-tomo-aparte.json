@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "propuesta",
+  "sentence": "Volvió con una [[propuesta]] seria.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "proposal",
+   "options": [
+    "proposal",
+    "complaint",
+    "apology",
+    "bill"
+   ],
+   "audioClip": {
+    "storySlug": "el-tomo-aparte",
+    "storySource": "user",
+    "sentence": "Volvió con una propuesta seria.",
+    "targetWord": "propuesta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "enseñó",
+  "sentence": "Orgulloso, nos _____ las fotos de su casa nueva.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "enseñó",
+   "options": [
+    "enseñó",
+    "amasó",
+    "ralló",
+    "hiló"
+   ],
+   "translation": "Proudly, he _____ us the photos of his new house.",
+   "optionTranslations": [
+    "showed",
+    "kneaded",
+    "grated",
+    "spun"
+   ],
+   "audioClip": {
+    "storySlug": "el-tomo-aparte",
+    "storySource": "user",
+    "sentence": "Orgulloso, nos enseñó las fotos de su casa nueva.",
+    "targetWord": "enseñó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "tomo,dedicatoria,apretón,cifra",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "tomo",
+     "answer": "volume",
+     "options": [
+      "volume",
+      "dedication",
+      "handshake",
+      "figure"
+     ]
+    },
+    {
+     "word": "dedicatoria",
+     "answer": "dedication",
+     "options": [
+      "volume",
+      "dedication",
+      "handshake",
+      "figure"
+     ]
+    },
+    {
+     "word": "apretón",
+     "answer": "handshake",
+     "options": [
+      "volume",
+      "dedication",
+      "handshake",
+      "figure"
+     ]
+    },
+    {
+     "word": "cifra",
+     "answer": "figure",
+     "options": [
+      "volume",
+      "dedication",
+      "handshake",
+      "figure"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "con cara de",
+  "sentence": "Las repasó [[con cara de examen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "with the look of",
+   "options": [
+    "with the look of",
+    "with the smell of",
+    "in the shape of",
+    "in the name of"
+   ],
+   "audioClip": {
+    "storySlug": "el-tomo-aparte",
+    "storySource": "user",
+    "sentence": "Las repasó con cara de examen.",
+    "targetWord": "con cara de examen",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "volver a",
+  "sentence": "Lo abrió, lo pensó y lo [[volvió a]] cerrar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to do again",
+   "options": [
+    "to do again",
+    "to stop doing",
+    "to try to",
+    "to refuse to"
+   ],
+   "audioClip": {
+    "storySlug": "el-tomo-aparte",
+    "storySource": "user",
+    "sentence": "Lo abrió, lo pensó y lo volvió a cerrar.",
+    "targetWord": "volvió a",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "agachó",
+  "sentence": "La moneda se cayó y se _____ para cogerla.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "agachó",
+   "options": [
+    "agachó",
+    "casó",
+    "vacunó",
+    "graduó"
+   ],
+   "translation": "The coin fell and she _____ to pick it up.",
+   "optionTranslations": [
+    "bent down",
+    "got married",
+    "got vaccinated",
+    "graduated"
+   ],
+   "audioClip": {
+    "storySlug": "el-tomo-aparte",
+    "storySource": "user",
+    "sentence": "La moneda se cayó y se agachó para cogerla.",
+    "targetWord": "agachó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dando vueltas",
+  "sentence": "La palabra se quedó [[dando vueltas]] toda la tarde.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "going round in her head",
+   "options": [
+    "going round in her head",
+    "written on the wall",
+    "lost in the post",
+    "hidden in a drawer"
+   ],
+   "audioClip": {
+    "storySlug": "el-tomo-aparte",
+    "storySource": "user",
+    "sentence": "La palabra se quedó dando vueltas toda la tarde.",
+    "targetWord": "dando vueltas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a la antigua",
+  "sentence": "El trato se cerró [[a la antigua]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the old way",
+   "options": [
+    "the old way",
+    "by email",
+    "in a rush",
+    "in secret"
+   ],
+   "audioClip": {
+    "storySlug": "el-tomo-aparte",
+    "storySource": "user",
+    "sentence": "El trato se cerró a la antigua.",
+    "targetWord": "a la antigua",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "manuscrita",
+  "sentence": "No es un correo; es una carta _____, con su letra.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "manuscrita",
+   "options": [
+    "manuscrita",
+    "oxidada",
+    "hervida",
+    "calva"
+   ],
+   "translation": "It's not an email; it's a _____ letter, in her own writing.",
+   "optionTranslations": [
+    "handwritten",
+    "rusty",
+    "boiled",
+    "bald"
+   ],
+   "audioClip": {
+    "storySlug": "el-tomo-aparte",
+    "storySource": "user",
+    "sentence": "No es un correo; es una carta manuscrita, con su letra.",
+    "targetWord": "manuscrita",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "uno a uno",
+  "sentence": "Los conté [[uno a uno]] al comprarlos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "one by one",
+   "options": [
+    "one by one",
+    "all at once",
+    "twice over",
+    "roughly"
+   ],
+   "audioClip": {
+    "storySlug": "el-tomo-aparte",
+    "storySource": "user",
+    "sentence": "Los conté uno a uno al comprarlos.",
+    "targetWord": "uno a uno",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tanda",
+  "sentence": "Los libros salieron por [[tandas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "batch",
+   "options": [
+    "batch",
+    "colour",
+    "size",
+    "author"
+   ],
+   "audioClip": {
+    "storySlug": "el-tomo-aparte",
+    "storySource": "user",
+    "sentence": "Los libros salieron por tandas.",
+    "targetWord": "tandas",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "envolvió",
+  "sentence": "Para el cumpleaños, _____ el regalo en papel brillante.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "envolvió",
+   "options": [
+    "envolvió",
+    "fumó",
+    "rastrilló",
+    "ordeñó"
+   ],
+   "translation": "For the birthday, she _____ the present in shiny paper.",
+   "optionTranslations": [
+    "wrapped",
+    "smoked",
+    "raked",
+    "milked"
+   ],
+   "audioClip": {
+    "storySlug": "el-tomo-aparte",
+    "storySource": "user",
+    "sentence": "Para el cumpleaños, envolvió el regalo en papel brillante.",
+    "targetWord": "envolvió",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "promesa",
+  "sentence": "Una pared no es una [[promesa]], pero se le parece.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "promise",
+   "options": [
+    "promise",
+    "threat",
+    "gift",
+    "lie"
+   ],
+   "audioClip": {
+    "storySlug": "el-tomo-aparte",
+    "storySource": "user",
+    "sentence": "Una pared no es una promesa, pero se le parece.",
+    "targetWord": "promesa",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "forrar",
+  "sentence": "Sacó un tomo aparte, [[forrado]] a mano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to cover (a book)",
+   "options": [
+    "to cover (a book)",
+    "to tear",
+    "to sign",
+    "to glue shut"
+   ],
+   "audioClip": {
+    "storySlug": "el-tomo-aparte",
+    "storySource": "user",
+    "sentence": "Sacó un tomo aparte, forrado a mano.",
+    "targetWord": "forrado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "sacó",
+  "sentence": "Abrió la nevera y _____ una botella de agua.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sacó",
+   "options": [
+    "sacó",
+    "afiló",
+    "cepilló",
+    "bordó"
+   ],
+   "translation": "She opened the fridge and _____ a bottle of water.",
+   "optionTranslations": [
+    "took out",
+    "sharpened",
+    "brushed",
+    "embroidered"
+   ],
+   "audioClip": {
+    "storySlug": "el-tomo-aparte",
+    "storySource": "user",
+    "sentence": "Abrió la nevera y sacó una botella de agua.",
+    "targetWord": "sacó",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cruzado",
+  "sentence": "Escuchó con los brazos [[cruzados]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "crossed",
+   "options": [
+    "crossed",
+    "raised",
+    "broken",
+    "open"
+   ],
+   "audioClip": {
+    "storySlug": "el-tomo-aparte",
+    "storySource": "user",
+    "sentence": "Escuchó con los brazos cruzados.",
+    "targetWord": "cruzados",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aparte",
+  "sentence": "Con la caja casi vacía, sacó un tomo [[aparte]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "set apart",
+   "options": [
+    "set apart",
+    "brand-new",
+    "very heavy",
+    "damaged"
+   ],
+   "audioClip": {
+    "storySlug": "el-tomo-aparte",
+    "storySource": "user",
+    "sentence": "Con la caja casi vacía, sacó un tomo aparte.",
+    "targetWord": "aparte",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

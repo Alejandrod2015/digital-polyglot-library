@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "hueco",
+  "sentence": "Vio el [[hueco]] y se lanzó.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "opening",
+   "options": [
+    "opening",
+    "danger",
+    "signal",
+    "mistake"
+   ],
+   "audioClip": {
+    "storySlug": "un-mantel-mojado",
+    "storySource": "user",
+    "sentence": "Vio el hueco y se lanzó.",
+    "targetWord": "hueco",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "apiló",
+  "sentence": "Terminó de fregar y _____ los platos en el armario.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "apiló",
+   "options": [
+    "apiló",
+    "besó",
+    "regó",
+    "saludó"
+   ],
+   "translation": "She finished washing up and _____ the plates in the cupboard.",
+   "optionTranslations": [
+    "stacked",
+    "kissed",
+    "watered",
+    "greeted"
+   ],
+   "audioClip": {
+    "storySlug": "un-mantel-mojado",
+    "storySource": "user",
+    "sentence": "Terminó de fregar y apiló los platos en el armario.",
+    "targetWord": "apiló",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "servilleta,mantel,patio,chirigota",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "servilleta",
+     "answer": "napkin",
+     "options": [
+      "napkin",
+      "tablecloth",
+      "courtyard",
+      "carnival singing group"
+     ]
+    },
+    {
+     "word": "mantel",
+     "answer": "tablecloth",
+     "options": [
+      "napkin",
+      "tablecloth",
+      "courtyard",
+      "carnival singing group"
+     ]
+    },
+    {
+     "word": "patio",
+     "answer": "courtyard",
+     "options": [
+      "napkin",
+      "tablecloth",
+      "courtyard",
+      "carnival singing group"
+     ]
+    },
+    {
+     "word": "chirigota",
+     "answer": "carnival singing group",
+     "options": [
+      "napkin",
+      "tablecloth",
+      "courtyard",
+      "carnival singing group"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "atreverse",
+  "sentence": "Estaba contenta de [[atreverse]] por fin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to dare",
+   "options": [
+    "to dare",
+    "to rest",
+    "to hide",
+    "to leave"
+   ],
+   "audioClip": {
+    "storySlug": "un-mantel-mojado",
+    "storySource": "user",
+    "sentence": "Estaba contenta de atreverse por fin.",
+    "targetWord": "atreverse",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "al pie de la letra",
+  "sentence": "Había seguido la regla [[al pie de la letra]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to the letter",
+   "options": [
+    "to the letter",
+    "by accident",
+    "half-heartedly",
+    "in secret"
+   ],
+   "audioClip": {
+    "storySlug": "un-mantel-mojado",
+    "storySource": "user",
+    "sentence": "Había seguido la regla al pie de la letra.",
+    "targetWord": "al pie de la letra",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "mojado",
+  "sentence": "Llovía tanto que llegó con el pelo _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mojado",
+   "options": [
+    "mojado",
+    "dulce",
+    "barato",
+    "triste"
+   ],
+   "translation": "It was raining so hard that he arrived with his hair _____.",
+   "optionTranslations": [
+    "wet",
+    "sweet",
+    "cheap",
+    "sad"
+   ],
+   "audioClip": {
+    "storySlug": "un-mantel-mojado",
+    "storySource": "user",
+    "sentence": "Llovía tanto que llegó con el pelo mojado.",
+    "targetWord": "mojado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dejarse querer",
+  "sentence": "Él [[se dejó querer]] e hizo teatro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to enjoy the attention",
+   "options": [
+    "to enjoy the attention",
+    "to fall in love",
+    "to lose patience",
+    "to hide away"
+   ],
+   "audioClip": {
+    "storySlug": "un-mantel-mojado",
+    "storySource": "user",
+    "sentence": "Él se dejó querer e hizo teatro.",
+    "targetWord": "se dejó querer",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "disparar",
+  "sentence": "[[Disparó]] la broma sin pensarlo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to fire off",
+   "options": [
+    "to fire off",
+    "to take back",
+    "to write down",
+    "to whisper"
+   ],
+   "audioClip": {
+    "storySlug": "un-mantel-mojado",
+    "storySource": "user",
+    "sentence": "Disparó la broma sin pensarlo.",
+    "targetWord": "Disparó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "doblada",
+  "sentence": "Guardó la camisa bien _____ en la maleta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "doblada",
+   "options": [
+    "doblada",
+    "frita",
+    "hervida",
+    "asada"
+   ],
+   "translation": "She packed the shirt neatly _____ in the suitcase.",
+   "optionTranslations": [
+    "folded",
+    "fried",
+    "boiled",
+    "roasted"
+   ],
+   "audioClip": {
+    "storySlug": "un-mantel-mojado",
+    "storySource": "user",
+    "sentence": "Guardó la camisa bien doblada en la maleta.",
+    "targetWord": "doblada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apretar",
+  "sentence": "Le [[apretó]] el brazo al pasar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to squeeze",
+   "options": [
+    "to squeeze",
+    "to scratch",
+    "to wave",
+    "to push away"
+   ],
+   "audioClip": {
+    "storySlug": "un-mantel-mojado",
+    "storySource": "user",
+    "sentence": "Le apretó el brazo al pasar.",
+    "targetWord": "apretó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lanzarse",
+  "sentence": "Por fin [[se lanzó]] a contar su broma.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go for it",
+   "options": [
+    "to go for it",
+    "to hold back",
+    "to apologise",
+    "to calm down"
+   ],
+   "audioClip": {
+    "storySlug": "un-mantel-mojado",
+    "storySource": "user",
+    "sentence": "Por fin se lanzó a contar su broma.",
+    "targetWord": "se lanzó",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "afila",
+  "sentence": "Antes de cortar el pan, siempre _____ el cuchillo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "afila",
+   "options": [
+    "afila",
+    "borda",
+    "cose",
+    "riega"
+   ],
+   "translation": "Before cutting the bread, he always _____ the knife.",
+   "optionTranslations": [
+    "sharpens",
+    "embroiders",
+    "sews",
+    "waters"
+   ],
+   "audioClip": {
+    "storySlug": "un-mantel-mojado",
+    "storySource": "user",
+    "sentence": "Antes de cortar el pan, siempre afila el cuchillo.",
+    "targetWord": "afila",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "echar",
+  "sentence": "Cuando os [[echen]] del local, el candado me lo quedo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to throw out",
+   "options": [
+    "to throw out",
+    "to welcome",
+    "to pay",
+    "to visit"
+   ],
+   "audioClip": {
+    "storySlug": "un-mantel-mojado",
+    "storySource": "user",
+    "sentence": "Cuando os echen del local, el candado me lo quedo.",
+    "targetWord": "echen",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ligero",
+  "sentence": "A la sobremesa de aquel sábado se llegaba [[ligero]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "light-hearted",
+   "options": [
+    "light-hearted",
+    "hungry",
+    "late",
+    "dressed up"
+   ],
+   "audioClip": {
+    "storySlug": "un-mantel-mojado",
+    "storySource": "user",
+    "sentence": "A la sobremesa de aquel sábado se llegaba ligero.",
+    "targetWord": "ligero",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "rescató",
+  "sentence": "El socorrista _____ al bañista del agua.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rescató",
+   "options": [
+    "rescató",
+    "tejió",
+    "horneó",
+    "exprimió"
+   ],
+   "translation": "The lifeguard _____ the swimmer from the water.",
+   "optionTranslations": [
+    "rescued",
+    "knitted",
+    "baked",
+    "squeezed"
+   ],
+   "audioClip": {
+    "storySlug": "un-mantel-mojado",
+    "storySource": "user",
+    "sentence": "El socorrista rescató al bañista del agua.",
+    "targetWord": "rescató",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "por medio",
+  "sentence": "Se llegaba con la fruta y el café [[por medio]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in between",
+   "options": [
+    "in between",
+    "at the end",
+    "for free",
+    "on the floor"
+   ],
+   "audioClip": {
+    "storySlug": "un-mantel-mojado",
+    "storySource": "user",
+    "sentence": "Se llegaba con la fruta y el café por medio.",
+    "targetWord": "por medio",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de recuerdo",
+  "sentence": "El candado me lo quedo yo [[de recuerdo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "as a keepsake",
+   "options": [
+    "as a keepsake",
+    "as a joke",
+    "as a loan",
+    "as a bribe"
+   ],
+   "audioClip": {
+    "storySlug": "un-mantel-mojado",
+    "storySource": "user",
+    "sentence": "El candado me lo quedo yo de recuerdo.",
+    "targetWord": "de recuerdo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

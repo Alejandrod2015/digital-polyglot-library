@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "a lápiz",
+  "sentence": "Aquí una fecha se escribe [[a lápiz]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in pencil",
+   "options": [
+    "in pencil",
+    "in ink",
+    "in capitals",
+    "in red"
+   ],
+   "audioClip": {
+    "storySlug": "la-herramienta-seria",
+    "storySource": "user",
+    "sentence": "Aquí una fecha se escribe a lápiz.",
+    "targetWord": "a lápiz",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "encendió",
+  "sentence": "Entró a oscuras y _____ la lámpara del salón.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "encendió",
+   "options": [
+    "encendió",
+    "abrochó",
+    "amasó",
+    "desplumó"
+   ],
+   "translation": "She came in in the dark and _____ the living-room lamp.",
+   "optionTranslations": [
+    "switched on",
+    "buttoned",
+    "kneaded",
+    "plucked"
+   ],
+   "audioClip": {
+    "storySlug": "la-herramienta-seria",
+    "storySource": "user",
+    "sentence": "Entró a oscuras y encendió la lámpara del salón.",
+    "targetWord": "encendió",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "lápiz,herramienta,bolso,parte",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "lápiz",
+     "answer": "pencil",
+     "options": [
+      "pencil",
+      "tool",
+      "handbag",
+      "weather report"
+     ]
+    },
+    {
+     "word": "herramienta",
+     "answer": "tool",
+     "options": [
+      "pencil",
+      "tool",
+      "handbag",
+      "weather report"
+     ]
+    },
+    {
+     "word": "bolso",
+     "answer": "handbag",
+     "options": [
+      "pencil",
+      "tool",
+      "handbag",
+      "weather report"
+     ]
+    },
+    {
+     "word": "parte",
+     "answer": "weather report",
+     "options": [
+      "pencil",
+      "tool",
+      "handbag",
+      "weather report"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de pronto",
+  "sentence": "Y [[de pronto]] entendió su primera semana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "suddenly",
+   "options": [
+    "suddenly",
+    "slowly",
+    "finally",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "la-herramienta-seria",
+    "storySource": "user",
+    "sentence": "Y de pronto entendió su primera semana.",
+    "targetWord": "de pronto",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "amanecer",
+  "sentence": "¿Y si el viernes [[amanece]] con poniente?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to dawn",
+   "options": [
+    "to dawn",
+    "to end",
+    "to rain",
+    "to cool down"
+   ],
+   "audioClip": {
+    "storySlug": "la-herramienta-seria",
+    "storySource": "user",
+    "sentence": "¿Y si el viernes amanece con poniente?",
+    "targetWord": "amanece",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cargamos",
+  "sentence": "Para la mudanza, _____ las cajas en el camión.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cargamos",
+   "options": [
+    "cargamos",
+    "rallamos",
+    "tejimos",
+    "remamos"
+   ],
+   "translation": "For the move, we _____ the boxes onto the lorry.",
+   "optionTranslations": [
+    "loaded",
+    "grated",
+    "knitted",
+    "rowed"
+   ],
+   "audioClip": {
+    "storySlug": "la-herramienta-seria",
+    "storySource": "user",
+    "sentence": "Para la mudanza, cargamos las cajas en el camión.",
+    "targetWord": "cargamos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "negociar",
+  "sentence": "Aquí las fechas [[se negocian]] con el viento.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to negotiate",
+   "options": [
+    "to negotiate",
+    "to forget",
+    "to celebrate",
+    "to count"
+   ],
+   "audioClip": {
+    "storySlug": "la-herramienta-seria",
+    "storySource": "user",
+    "sentence": "Aquí las fechas se negocian con el viento.",
+    "targetWord": "se negocian",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mudo",
+  "sentence": "Su calendario se quedó [[mudo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "silent",
+   "options": [
+    "silent",
+    "empty",
+    "broken",
+    "full"
+   ],
+   "audioClip": {
+    "storySlug": "la-herramienta-seria",
+    "storySource": "user",
+    "sentence": "Su calendario se quedó mudo.",
+    "targetWord": "mudo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "verde",
+  "sentence": "No te comas ese plátano; todavía está _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "verde",
+   "options": [
+    "verde",
+    "tímido",
+    "celoso",
+    "educado"
+   ],
+   "translation": "Don't eat that banana; it's still _____.",
+   "optionTranslations": [
+    "green",
+    "shy",
+    "jealous",
+    "polite"
+   ],
+   "audioClip": {
+    "storySlug": "la-herramienta-seria",
+    "storySource": "user",
+    "sentence": "No te comas ese plátano; todavía está verde.",
+    "targetWord": "verde",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a medias",
+  "sentence": "Escuchó [[a medias]], esperando que acabara.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "only half",
+   "options": [
+    "only half",
+    "very carefully",
+    "twice",
+    "in silence"
+   ],
+   "audioClip": {
+    "storySlug": "la-herramienta-seria",
+    "storySource": "user",
+    "sentence": "Escuchó a medias, esperando que acabara.",
+    "targetWord": "a medias",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "poniente",
+  "sentence": "El viernes llegó limpio, con luz de [[poniente]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "west wind",
+   "options": [
+    "west wind",
+    "east wind",
+    "low tide",
+    "full moon"
+   ],
+   "audioClip": {
+    "storySlug": "la-herramienta-seria",
+    "storySource": "user",
+    "sentence": "El viernes llegó limpio, con luz de poniente.",
+    "targetWord": "poniente",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "escuchó",
+  "sentence": "Puso la radio y _____ las noticias en silencio.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "escuchó",
+   "options": [
+    "escuchó",
+    "peló",
+    "sembró",
+    "bordó"
+   ],
+   "translation": "She put the radio on and _____ the news in silence.",
+   "optionTranslations": [
+    "listened to",
+    "peeled",
+    "sowed",
+    "embroidered"
+   ],
+   "audioClip": {
+    "storySlug": "la-herramienta-seria",
+    "storySource": "user",
+    "sentence": "Puso la radio y escuchó las noticias en silencio.",
+    "targetWord": "escuchó",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "repasar",
+  "sentence": "La fecha [[se repasó]] con bolígrafo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go over again",
+   "options": [
+    "to go over again",
+    "to rub out",
+    "to translate",
+    "to forget"
+   ],
+   "audioClip": {
+    "storySlug": "la-herramienta-seria",
+    "storySource": "user",
+    "sentence": "La fecha se repasó con bolígrafo.",
+    "targetWord": "se repasó",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "saludar",
+  "sentence": "Qué valiente ha venido hoy, [[saludó]] él.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to greet",
+   "options": [
+    "to greet",
+    "to complain",
+    "to leave",
+    "to apologise"
+   ],
+   "audioClip": {
+    "storySlug": "la-herramienta-seria",
+    "storySource": "user",
+    "sentence": "Qué valiente ha venido hoy, saludó él.",
+    "targetWord": "saludó",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "valiente",
+  "sentence": "Saltó al agua para ayudarlo; fue muy _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "valiente",
+   "options": [
+    "valiente",
+    "azul",
+    "gris",
+    "marrón"
+   ],
+   "translation": "He jumped into the water to help; he was very _____.",
+   "optionTranslations": [
+    "brave",
+    "blue",
+    "grey",
+    "brown"
+   ],
+   "audioClip": {
+    "storySlug": "la-herramienta-seria",
+    "storySource": "user",
+    "sentence": "Saltó al agua para ayudarlo; fue muy valiente.",
+    "targetWord": "valiente",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "serio",
+  "sentence": "En esta ciudad, era la herramienta [[seria]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "serious, reliable",
+   "options": [
+    "serious, reliable",
+    "old-fashioned",
+    "expensive",
+    "borrowed"
+   ],
+   "audioClip": {
+    "storySlug": "la-herramienta-seria",
+    "storySource": "user",
+    "sentence": "En esta ciudad, era la herramienta seria.",
+    "targetWord": "seria",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quedar por",
+  "sentence": "Todavía [[quedaba por]] elegir el día de la mudanza.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to remain to be",
+   "options": [
+    "to remain to be",
+    "to have already been",
+    "to be impossible to",
+    "to be ready to"
+   ],
+   "audioClip": {
+    "storySlug": "la-herramienta-seria",
+    "storySource": "user",
+    "sentence": "Todavía quedaba por elegir el día de la mudanza.",
+    "targetWord": "quedaba por",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

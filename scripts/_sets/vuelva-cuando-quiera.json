@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "de segunda mano",
+  "sentence": "Era una librería [[de segunda mano]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "second-hand",
+   "options": [
+    "second-hand",
+    "brand-new",
+    "very expensive",
+    "closed down"
+   ],
+   "audioClip": {
+    "storySlug": "vuelva-cuando-quiera",
+    "storySource": "user",
+    "sentence": "Era una librería de segunda mano.",
+    "targetWord": "de segunda mano",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "reconoció",
+  "sentence": "Llevaba años sin verla, pero la _____ al instante.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "reconoció",
+   "options": [
+    "reconoció",
+    "enjabonó",
+    "abanicó",
+    "enhebró"
+   ],
+   "translation": "He hadn't seen her for years, but he _____ her instantly.",
+   "optionTranslations": [
+    "recognised",
+    "lathered",
+    "fanned",
+    "threaded"
+   ],
+   "audioClip": {
+    "storySlug": "vuelva-cuando-quiera",
+    "storySource": "user",
+    "sentence": "Llevaba años sin verla, pero la reconoció al instante.",
+    "targetWord": "reconoció",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "librería,campanilla,escalera,escudo",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "librería",
+     "answer": "bookshop",
+     "options": [
+      "bookshop",
+      "little bell",
+      "ladder",
+      "crest"
+     ]
+    },
+    {
+     "word": "campanilla",
+     "answer": "little bell",
+     "options": [
+      "bookshop",
+      "little bell",
+      "ladder",
+      "crest"
+     ]
+    },
+    {
+     "word": "escalera",
+     "answer": "ladder",
+     "options": [
+      "bookshop",
+      "little bell",
+      "ladder",
+      "crest"
+     ]
+    },
+    {
+     "word": "escudo",
+     "answer": "crest",
+     "options": [
+      "bookshop",
+      "little bell",
+      "ladder",
+      "crest"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bajo el brazo",
+  "sentence": "Salió con el libro [[bajo el brazo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "under her arm",
+   "options": [
+    "under her arm",
+    "in her hand",
+    "on her head",
+    "in her bag"
+   ],
+   "audioClip": {
+    "storySlug": "vuelva-cuando-quiera",
+    "storySource": "user",
+    "sentence": "Salió con el libro bajo el brazo.",
+    "targetWord": "bajo el brazo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lomo",
+  "sentence": "Paseó la mirada por los [[lomos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "spine (of a book)",
+   "options": [
+    "spine (of a book)",
+    "price tag",
+    "front cover",
+    "bookmark"
+   ],
+   "audioClip": {
+    "storySlug": "vuelva-cuando-quiera",
+    "storySource": "user",
+    "sentence": "Paseó la mirada por los lomos.",
+    "targetWord": "lomos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "vender",
+  "sentence": "Se mudan al extranjero y quieren _____ el piso.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vender",
+   "options": [
+    "vender",
+    "podar",
+    "ordeñar",
+    "tostar"
+   ],
+   "translation": "They're moving abroad and want to _____ the flat.",
+   "optionTranslations": [
+    "sell",
+    "prune",
+    "milk",
+    "toast"
+   ],
+   "audioClip": {
+    "storySlug": "vuelva-cuando-quiera",
+    "storySource": "user",
+    "sentence": "Se mudan al extranjero y quieren vender el piso.",
+    "targetWord": "vender",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "respirar",
+  "sentence": "Miraron los libros como si [[respiraran]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to breathe",
+   "options": [
+    "to breathe",
+    "to sleep",
+    "to shout",
+    "to burn"
+   ],
+   "audioClip": {
+    "storySlug": "vuelva-cuando-quiera",
+    "storySource": "user",
+    "sentence": "Miraron los libros como si respiraran.",
+    "targetWord": "respiraran",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "por ahí",
+  "sentence": "Si es que le queda algo [[por ahí]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "around somewhere",
+   "options": [
+    "around somewhere",
+    "for free",
+    "by post",
+    "on the top shelf"
+   ],
+   "audioClip": {
+    "storySlug": "vuelva-cuando-quiera",
+    "storySource": "user",
+    "sentence": "Si es que le queda algo por ahí.",
+    "targetWord": "por ahí",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "redonda",
+  "sentence": "La mesa no tiene esquinas; es _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "redonda",
+   "options": [
+    "redonda",
+    "celosa",
+    "calva",
+    "miope"
+   ],
+   "translation": "The table has no corners; it's _____.",
+   "optionTranslations": [
+    "round",
+    "jealous",
+    "bald",
+    "short-sighted"
+   ],
+   "audioClip": {
+    "storySlug": "vuelva-cuando-quiera",
+    "storySource": "user",
+    "sentence": "La mesa no tiene esquinas; es redonda.",
+    "targetWord": "redonda",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "clienta",
+  "sentence": "Ya hablaba sin voz de [[clienta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "customer",
+   "options": [
+    "customer",
+    "owner",
+    "teacher",
+    "thief"
+   ],
+   "audioClip": {
+    "storySlug": "vuelva-cuando-quiera",
+    "storySource": "user",
+    "sentence": "Ya hablaba sin voz de clienta.",
+    "targetWord": "clienta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "exlibris",
+  "sentence": "Los libros llevaban un [[exlibris]] redondo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bookplate",
+   "options": [
+    "bookplate",
+    "coffee stain",
+    "library fine",
+    "torn page"
+   ],
+   "audioClip": {
+    "storySlug": "vuelva-cuando-quiera",
+    "storySource": "user",
+    "sentence": "Los libros llevaban un exlibris redondo.",
+    "targetWord": "exlibris",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "movía",
+  "sentence": "Estaba tan asustado que no se _____ del sitio.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "movía",
+   "options": [
+    "movía",
+    "bañaba",
+    "vestía",
+    "rascaba"
+   ],
+   "translation": "He was so scared that he didn't _____ from the spot.",
+   "optionTranslations": [
+    "move",
+    "bathe",
+    "get dressed",
+    "scratch"
+   ],
+   "audioClip": {
+    "storySlug": "vuelva-cuando-quiera",
+    "storySource": "user",
+    "sentence": "Estaba tan asustado que no se movía del sitio.",
+    "targetWord": "movía",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "guarda",
+  "sentence": "El escudo estaba en la [[guarda]] de cada libro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "endpaper",
+   "options": [
+    "endpaper",
+    "spine",
+    "dust jacket",
+    "last chapter"
+   ],
+   "audioClip": {
+    "storySlug": "vuelva-cuando-quiera",
+    "storySource": "user",
+    "sentence": "El escudo estaba en la guarda de cada libro.",
+    "targetWord": "guarda",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cuesta",
+  "sentence": "La librería de la [[cuesta]] olía a papel.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "slope",
+   "options": [
+    "slope",
+    "square",
+    "coast",
+    "market"
+   ],
+   "audioClip": {
+    "storySlug": "vuelva-cuando-quiera",
+    "storySource": "user",
+    "sentence": "La librería de la cuesta olía a papel.",
+    "targetWord": "cuesta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "dormido",
+  "sentence": "Está tan cansado que se ha quedado _____ en el sofá.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dormido",
+   "options": [
+    "dormido",
+    "cuadrado",
+    "oxidado",
+    "hervido"
+   ],
+   "translation": "He's so tired that he's fallen _____ on the sofa.",
+   "optionTranslations": [
+    "asleep",
+    "square",
+    "rusty",
+    "boiled"
+   ],
+   "audioClip": {
+    "storySlug": "vuelva-cuando-quiera",
+    "storySource": "user",
+    "sentence": "Está tan cansado que se ha quedado dormido en el sofá.",
+    "targetWord": "dormido",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pasear",
+  "sentence": "[[Paseó]] la mirada por los libros.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to let wander",
+   "options": [
+    "to let wander",
+    "to fix",
+    "to lower",
+    "to close"
+   ],
+   "audioClip": {
+    "storySlug": "vuelva-cuando-quiera",
+    "storySource": "user",
+    "sentence": "Paseó la mirada por los libros.",
+    "targetWord": "Paseó",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "por fin",
+  "sentence": "Contestó la librera, bajando [[por fin]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at last",
+   "options": [
+    "at last",
+    "too soon",
+    "by mistake",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "vuelva-cuando-quiera",
+    "storySource": "user",
+    "sentence": "Contestó la librera, bajando por fin.",
+    "targetWord": "por fin",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

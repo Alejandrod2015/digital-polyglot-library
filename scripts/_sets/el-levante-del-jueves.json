@@ -1,0 +1,447 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "patrona",
+  "sentence": "La [[patrona]] del barco amarró en el muelle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "skipper",
+   "options": [
+    "skipper",
+    "cook",
+    "passenger",
+    "lifeguard"
+   ],
+   "audioClip": {
+    "storySlug": "el-levante-del-jueves",
+    "storySource": "user",
+    "sentence": "La patrona del barco amarró en el muelle.",
+    "targetWord": "patrona",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "amarró",
+  "sentence": "Al llegar al puerto, el pescador _____ la barca.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "amarró",
+   "options": [
+    "amarró",
+    "trituró",
+    "exprimió",
+    "batió"
+   ],
+   "translation": "When he reached the port, the fisherman _____ the boat.",
+   "optionTranslations": [
+    "moored",
+    "crushed",
+    "squeezed",
+    "whisked"
+   ],
+   "audioClip": {
+    "storySlug": "el-levante-del-jueves",
+    "storySource": "user",
+    "sentence": "Al llegar al puerto, el pescador amarró la barca.",
+    "targetWord": "amarró",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "bahía,muelle,dedo,atardecer",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "bahía",
+     "answer": "bay",
+     "options": [
+      "bay",
+      "dock",
+      "finger",
+      "sunset"
+     ]
+    },
+    {
+     "word": "muelle",
+     "answer": "dock",
+     "options": [
+      "bay",
+      "dock",
+      "finger",
+      "sunset"
+     ]
+    },
+    {
+     "word": "dedo",
+     "answer": "finger",
+     "options": [
+      "bay",
+      "dock",
+      "finger",
+      "sunset"
+     ]
+    },
+    {
+     "word": "atardecer",
+     "answer": "sunset",
+     "options": [
+      "bay",
+      "dock",
+      "finger",
+      "sunset"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hacer una excepción",
+  "sentence": "Yo de la orilla no paso; hoy [[hago una excepción]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make an exception",
+   "options": [
+    "to make an exception",
+    "to make a mistake",
+    "to make a deal",
+    "to make a scene"
+   ],
+   "audioClip": {
+    "storySlug": "el-levante-del-jueves",
+    "storySource": "user",
+    "sentence": "Yo de la orilla no paso; hoy hago una excepción.",
+    "targetWord": "hago una excepción",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ir por",
+  "sentence": "Esta ronda [[va por]] el que pagó la del viernes.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be in honour of",
+   "options": [
+    "to be in honour of",
+    "to be paid by",
+    "to go looking for",
+    "to be instead of"
+   ],
+   "audioClip": {
+    "storySlug": "el-levante-del-jueves",
+    "storySource": "user",
+    "sentence": "Esta ronda va por el que pagó la del viernes.",
+    "targetWord": "va por",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "arrancó",
+  "sentence": "Giró la llave y el coche no _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "arrancó",
+   "options": [
+    "arrancó",
+    "maulló",
+    "parpadeó",
+    "tartamudeó"
+   ],
+   "translation": "She turned the key and the car didn't _____.",
+   "optionTranslations": [
+    "start",
+    "meow",
+    "blink",
+    "stutter"
+   ],
+   "audioClip": {
+    "storySlug": "el-levante-del-jueves",
+    "storySource": "user",
+    "sentence": "Giró la llave y el coche no arrancó.",
+    "targetWord": "arrancó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cara a",
+  "sentence": "Dejó el barco [[cara al]] atardecer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "facing",
+   "options": [
+    "facing",
+    "behind",
+    "after",
+    "without"
+   ],
+   "audioClip": {
+    "storySlug": "el-levante-del-jueves",
+    "storySource": "user",
+    "sentence": "Dejó el barco cara al atardecer.",
+    "targetWord": "cara al",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "confesar",
+  "sentence": "Nadie [[confesó]] y todos bebieron.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to confess",
+   "options": [
+    "to confess",
+    "to complain",
+    "to pay",
+    "to sing"
+   ],
+   "audioClip": {
+    "storySlug": "el-levante-del-jueves",
+    "storySource": "user",
+    "sentence": "Nadie confesó y todos bebieron.",
+    "targetWord": "confesó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "apaga",
+  "sentence": "Antes de dormir, _____ la luz de la mesilla.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "apaga",
+   "options": [
+    "apaga",
+    "muerde",
+    "sala",
+    "ralla"
+   ],
+   "translation": "Before sleeping, she _____ the bedside light.",
+   "optionTranslations": [
+    "switches off",
+    "bites",
+    "salts",
+    "grates"
+   ],
+   "audioClip": {
+    "storySlug": "el-levante-del-jueves",
+    "storySource": "user",
+    "sentence": "Antes de dormir, apaga la luz de la mesilla.",
+    "targetWord": "apaga",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dorado",
+  "sentence": "La ciudad se veía entera, [[dorada]] y pequeña.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "golden",
+   "options": [
+    "golden",
+    "grey",
+    "noisy",
+    "empty"
+   ],
+   "audioClip": {
+    "storySlug": "el-levante-del-jueves",
+    "storySource": "user",
+    "sentence": "La ciudad se veía entera, dorada y pequeña.",
+    "targetWord": "dorada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "señal",
+  "sentence": "Pagó la [[señal]] del barco.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "deposit",
+   "options": [
+    "deposit",
+    "fine",
+    "tip",
+    "ticket"
+   ],
+   "audioClip": {
+    "storySlug": "el-levante-del-jueves",
+    "storySource": "user",
+    "sentence": "Pagó la señal del barco.",
+    "targetWord": "señal",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "disfrutar",
+  "sentence": "Hace un día precioso; hay que _____ del sol.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "disfrutar",
+   "options": [
+    "disfrutar",
+    "dudar",
+    "desconfiar",
+    "burlarse"
+   ],
+   "translation": "It's a lovely day; we have to _____ the sun.",
+   "optionTranslations": [
+    "enjoy",
+    "doubt",
+    "distrust",
+    "make fun of"
+   ],
+   "audioClip": {
+    "storySlug": "el-levante-del-jueves",
+    "storySource": "user",
+    "sentence": "Hace un día precioso; hay que disfrutar del sol.",
+    "targetWord": "disfrutar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "borda",
+  "sentence": "Iba bien agarrado a la [[borda]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "side of the boat",
+   "options": [
+    "side of the boat",
+    "anchor chain",
+    "ship's bell",
+    "life jacket"
+   ],
+   "audioClip": {
+    "storySlug": "el-levante-del-jueves",
+    "storySource": "user",
+    "sentence": "Iba bien agarrado a la borda.",
+    "targetWord": "borda",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vaivén",
+  "sentence": "Apagó el motor y dejó el barco al [[vaivén]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rocking",
+   "options": [
+    "rocking",
+    "anchor",
+    "harbour",
+    "engine"
+   ],
+   "audioClip": {
+    "storySlug": "el-levante-del-jueves",
+    "storySource": "user",
+    "sentence": "Apagó el motor y dejó el barco al vaivén.",
+    "targetWord": "vaivén",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "sencillo",
+  "sentence": "El plan es muy _____: comer y volver pronto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sencillo",
+   "options": [
+    "sencillo",
+    "cojo",
+    "zurdo",
+    "pelirrojo"
+   ],
+   "translation": "The plan is very _____: eat and come back early.",
+   "optionTranslations": [
+    "simple",
+    "lame",
+    "left-handed",
+    "red-haired"
+   ],
+   "audioClip": {
+    "storySlug": "el-levante-del-jueves",
+    "storySource": "user",
+    "sentence": "El plan es muy sencillo: comer y volver pronto.",
+    "targetWord": "sencillo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "agarrarse",
+  "sentence": "Lo avisó, [[agarrado]] a la borda.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hold on",
+   "options": [
+    "to hold on",
+    "to lean out",
+    "to slip",
+    "to jump"
+   ],
+   "audioClip": {
+    "storySlug": "el-levante-del-jueves",
+    "storySource": "user",
+    "sentence": "Lo avisó, agarrado a la borda.",
+    "targetWord": "agarrado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pendiente",
+  "sentence": "Tenía una frase [[pendiente]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pending",
+   "options": [
+    "pending",
+    "famous",
+    "funny",
+    "forgotten"
+   ],
+   "audioClip": {
+    "storySlug": "el-levante-del-jueves",
+    "storySource": "user",
+    "sentence": "Tenía una frase pendiente.",
+    "targetWord": "pendiente",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]
