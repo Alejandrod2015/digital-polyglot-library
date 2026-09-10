@@ -506,7 +506,7 @@ const PREVIEW_JOURNEY_IDS = [
   "cmt0a8vb1000m32p1x7r5ba28", // Traveler DE A0 germany (en obra, 2026-08)
   "cmss0fkc40007j8dub1zpa1kc", // Traveler IT A0 italy (en obra, 2026-08)
   "cmsvz6mz9000732gsgsfer0ko", // Friends ES spain A1 (en obra, 2026-08)
-  "cmsyrge55000732u9oiu8wue3", // Traveler PT-BR A1 (en obra, 2026-08)
+  "cmsyrge55000732u9oiu8wue3", // Traveler PT-BR A2 (era el A1 hasta el 2026-09-10)
   "cmt09ehi60000320qf9efrypu", // Expat FR A0 lyon (en obra, 2026-08)
   "cmt70xfyt000l3283gxd70wck", // Traveler ES A2 spain (en obra, 2026-08)
   "cmt5x67ze000l320cpgunu5vi", // Traveler ES B1 spain (en obra, 2026-08)
