@@ -7,6 +7,10 @@ const B = "spanish-traveler-latam-b2";
 type E = { claves: string[]; g: string; t: string; es: string; en: string };
 const CAPA: Record<string, E[]> = {
   "los-aguanto-de-dos-en-dos": [
+    { claves: ["atender", "atendía"], t: "verb", g: "ran, served at (atender)", es: "la mujer que atendía la barra", en: "the woman who ran the bar" },
+    { claves: ["temprano"], t: "adverb", g: "early", es: "olía a birria desde temprano", en: "smelled of birria from early on" },
+    { claves: ["cansarse", "se cansa"], t: "verb", g: "get tired (cansarse)", es: "¿Se cansa tan pronto?", en: "are you getting tired so soon" },
+    { claves: ["calentar", "calentando"], t: "verb", g: "warming up (calentar)", es: "Apenas voy calentando", en: "I am only just warming up" },
     { claves: ["cantina"], t: "noun", g: "cantina, traditional Mexican bar", es: "la barra de una cantina", en: "the bar of a cantina" },
     { claves: ["birria"], t: "noun", g: "birria, spicy meat stew from Jalisco", es: "olía a birria desde temprano", en: "smelled of birria from early on" },
     { claves: ["tejuino"], t: "noun", g: "tejuino, cold fermented corn drink", es: "de tejuino y pocas palabras", en: "of tejuino and few words" },
