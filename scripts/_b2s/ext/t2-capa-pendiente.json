@@ -1,0 +1,742 @@
+{
+ "la-guasa-del-domingo": {
+  "coplas": {
+   "es": "las coplas vivían en cajas",
+   "en": "",
+   "antes": "las coplas viven en cajas = the carnival songs live in boxes"
+  },
+  "vivían": {
+   "es": "las coplas vivían en cajas",
+   "en": ""
+  },
+  "cajas": {
+   "es": "las coplas vivían en cajas",
+   "en": "",
+   "antes": "viven en cajas = live in boxes"
+  },
+  "y": {
+   "es": "y claudia abrió la más vieja",
+   "en": "",
+   "antes": "y claudia abre la más vieja = and Claudia opens the oldest one"
+  },
+  "abrió": {
+   "es": "y claudia abrió la más vieja",
+   "en": ""
+  },
+  "quien": {
+   "es": "quien mandaba en las letras",
+   "en": "",
+   "antes": "quien manda en las letras = the one in charge of the lyrics"
+  },
+  "mandaba": {
+   "es": "quien mandaba en las letras",
+   "en": ""
+  },
+  "letras": {
+   "es": "en las letras era carla",
+   "en": "",
+   "antes": "quien manda en las letras = the one in charge of the lyrics"
+  },
+  "que": {
+   "es": "que escribía las nuevas",
+   "en": "",
+   "antes": "que escribe las nuevas = who writes the new ones"
+  },
+  "escribía": {
+   "es": "que escribía las nuevas",
+   "en": ""
+  },
+  "nuevas": {
+   "es": "que escribía las nuevas",
+   "en": "",
+   "antes": "que escribe las nuevas = who writes the new ones"
+  },
+  "había": {
+   "es": "había olor a papel húmedo",
+   "en": ""
+  },
+  "olor": {
+   "es": "había olor a papel húmedo",
+   "en": ""
+  },
+  "a": {
+   "es": "la guasa del domingo",
+   "en": "",
+   "antes": "huele a papel húmedo = it smells of damp paper"
+  },
+  "soltó": {
+   "es": "soltó carla",
+   "en": ""
+  },
+  "se": {
+   "es": "claudia se picó y lo",
+   "en": "",
+   "antes": "se pica = she gets stung"
+  },
+  "picó": {
+   "es": "claudia se picó y lo",
+   "en": ""
+  },
+  "lo": {
+   "es": "había olor a papel húmedo",
+   "en": "",
+   "antes": "lo disimula mal = hides it badly"
+  },
+  "disimuló": {
+   "es": "picó y lo disimuló mal",
+   "en": ""
+  },
+  "mal": {
+   "es": "picó y lo disimuló mal",
+   "en": "",
+   "antes": "lo disimula mal = hides it badly"
+  },
+  "contestó": {
+   "es": "contestó",
+   "en": ""
+  },
+  "le": {
+   "es": "en las letras era carla",
+   "en": "",
+   "antes": "le sale flojo = it comes out weak"
+  },
+  "salió": {
+   "es": "y le salió flojo",
+   "en": ""
+  },
+  "flojo": {
+   "es": "y le salió flojo",
+   "en": "",
+   "antes": "le sale flojo = it comes out weak"
+  },
+  "apareció": {
+   "es": "la caja apareció una copla",
+   "en": ""
+  },
+  "copla": {
+   "es": "las coplas vivían en cajas",
+   "en": "",
+   "antes": "aparece una copla = a song turns up"
+  },
+  "dijo": {
+   "es": "dijo carla por encima del hombro",
+   "en": ""
+  },
+  "leyó": {
+   "es": "claudia la leyó dos veces",
+   "en": ""
+  },
+  "veces": {
+   "es": "leyó dos veces y se",
+   "en": "",
+   "antes": "la lee dos veces = reads it twice"
+  },
+  "escapó": {
+   "es": "se le escapó la risa",
+   "en": ""
+  },
+  "risa": {
+   "es": "se le escapó la risa",
+   "en": "",
+   "antes": "se le escapa la risa = the laugh slips out of her"
+  },
+  "estaban": {
+   "es": "de ahora estaban cortadas por",
+   "en": ""
+  },
+  "pique": {
+   "es": "el pique se le deshizo",
+   "en": "",
+   "antes": "el pique se le deshace = her sting melts away"
+  },
+  "deshizo": {
+   "es": "se le deshizo sin avisar",
+   "en": ""
+  },
+  "propuso": {
+   "es": "propuso claudia",
+   "en": ""
+  },
+  "frase": {
+   "es": "vez la frase era suya",
+   "en": "",
+   "antes": "la frase es suya = the phrase is her own"
+  },
+  "suya": {
+   "es": "vez la frase era suya",
+   "en": "",
+   "antes": "la frase es suya = the phrase is her own"
+  },
+  "admitió": {
+   "es": "admitió carla",
+   "en": ""
+  },
+  "apuntó": {
+   "es": "las quejas apuntó la broma",
+   "en": ""
+  },
+  "letra": {
+   "es": "en las letras era carla",
+   "en": "",
+   "antes": "manda en las letras = rules over the lyrics"
+  },
+  "picarse": {
+   "es": "claudia se picó y lo",
+   "en": "",
+   "antes": "Claudia se pica = Claudia takes offence"
+  },
+  "disimular": {
+   "es": "picó y lo disimuló mal",
+   "en": ""
+  },
+  "vacilar": {
+   "es": "se vacila a quien está dentro",
+   "en": ""
+  },
+  "barrer": {
+   "es": "socio que barría hasta en",
+   "en": ""
+  },
+  "proponer": {
+   "es": "propuso claudia",
+   "en": ""
+  },
+  "mandar": {
+   "es": "quien mandaba en las letras",
+   "en": ""
+  },
+  "gracioso": {
+   "es": "muy graciosa",
+   "en": ""
+  },
+  "cortar por el mismo patrón": {
+   "es": "ahora estaban cortadas por el",
+   "en": "",
+   "antes": "están cortadas por el mismo patrón = are cut from the same cloth"
+  }
+ },
+ "un-mantel-mojado": {
+  "a": {
+   "es": "un mantel mojado",
+   "en": "",
+   "antes": "a la sobremesa del sábado = at the Saturday table talk"
+  },
+  "sobremesa": {
+   "es": "a la sobremesa de aquel",
+   "en": "",
+   "antes": "a la sobremesa del sábado = at the Saturday table talk"
+  },
+  "aquel": {
+   "es": "sobremesa de aquel sábado se",
+   "en": ""
+  },
+  "sábado": {
+   "es": "de aquel sábado se llegaba",
+   "en": "",
+   "antes": "la sobremesa del sábado = the Saturday table talk"
+  },
+  "se": {
+   "es": "aquel sábado se llegaba ligero",
+   "en": "",
+   "antes": "se llega ligero = you arrive travelling light"
+  },
+  "llegaba": {
+   "es": "aquel sábado se llegaba ligero",
+   "en": ""
+  },
+  "ligero": {
+   "es": "la tarde ya no fue ligera",
+   "en": "",
+   "antes": "se llega ligero = you arrive travelling light"
+  },
+  "afiló": {
+   "es": "carla afiló la primera",
+   "en": ""
+  },
+  "primera": {
+   "es": "carla afiló la primera",
+   "en": "",
+   "antes": "carla afila la primera = Carla sharpens the first one"
+  },
+  "dejó": {
+   "es": "marcos se dejó querer e",
+   "en": ""
+  },
+  "querer": {
+   "es": "se dejó querer e hizo",
+   "en": "",
+   "antes": "se deja querer = enjoys the attention"
+  },
+  "e": {
+   "es": "un mantel mojado",
+   "en": ""
+  },
+  "hizo": {
+   "es": "dejó querer e hizo teatro",
+   "en": ""
+  },
+  "teatro": {
+   "es": "dejó querer e hizo teatro",
+   "en": "",
+   "antes": "hace teatro = plays it up"
+  },
+  "vio": {
+   "es": "claudia vio el hueco y",
+   "en": ""
+  },
+  "hueco": {
+   "es": "vio el hueco y se",
+   "en": "",
+   "antes": "claudia ve el hueco = Claudia sees the opening"
+  },
+  "lanzó": {
+   "es": "el hueco y se lanzó",
+   "en": ""
+  },
+  "del": {
+   "es": "pues cuando os echen del local",
+   "en": "",
+   "antes": "la sobremesa del sábado = the Saturday table talk"
+  },
+  "disparó": {
+   "es": "disparó",
+   "en": ""
+  },
+  "nadie": {
+   "es": "y nadie se rio",
+   "en": "",
+   "antes": "nadie se ríe = nobody laughs"
+  },
+  "rio": {
+   "es": "y nadie se rio",
+   "en": ""
+  },
+  "habría": {
+   "es": "habría dado cualquier cosa por",
+   "en": ""
+  },
+  "dado": {
+   "es": "el candado me lo quedo",
+   "en": ""
+  },
+  "cualquier": {
+   "es": "habría dado cualquier cosa por",
+   "en": ""
+  },
+  "cosa": {
+   "es": "dado cualquier cosa por retirar",
+   "en": ""
+  },
+  "retirar": {
+   "es": "cosa por retirar la frase",
+   "en": ""
+  },
+  "frase": {
+   "es": "cosa por retirar la frase",
+   "en": ""
+  },
+  "silencio": {
+   "es": "el silencio le cayó encima",
+   "en": "",
+   "antes": "el silencio le cae encima = the silence falls on her"
+  },
+  "le": {
+   "es": "aquel sábado se llegaba ligero",
+   "en": "",
+   "antes": "el silencio le cae encima = the silence falls on her"
+  },
+  "cayó": {
+   "es": "silencio le cayó encima como",
+   "en": ""
+  },
+  "encima": {
+   "es": "le cayó encima como un",
+   "en": "",
+   "antes": "le cae encima = falls on top of her"
+  },
+  "servilleta": {
+   "es": "dejó la servilleta doblada y",
+   "en": "",
+   "antes": "deja la servilleta doblada = leaves his napkin folded"
+  },
+  "salió": {
+   "es": "doblada y salió al patio",
+   "en": ""
+  },
+  "al": {
+   "es": "que material das",
+   "en": "",
+   "antes": "sale al patio = goes out to the courtyard"
+  },
+  "patio": {
+   "es": "salió al patio sin mirar",
+   "en": "",
+   "antes": "sale al patio = goes out to the courtyard"
+  },
+  "rescató": {
+   "es": "carla rescató la mesa",
+   "en": ""
+  },
+  "mesa": {
+   "es": "a la sobremesa de aquel",
+   "en": "",
+   "antes": "carla rescata la mesa = Carla rescues the table"
+  },
+  "apiló": {
+   "es": "claudia apiló platos que nadie",
+   "en": ""
+  },
+  "platos": {
+   "es": "claudia apiló platos que nadie",
+   "en": "",
+   "antes": "claudia apila platos = Claudia stacks plates"
+  },
+  "había": {
+   "es": "nadie le había pedido que",
+   "en": ""
+  },
+  "pedido": {
+   "es": "le había pedido que apilara",
+   "en": "",
+   "antes": "nadie le ha pedido apilar = nobody has asked her to stack"
+  },
+  "apilara": {
+   "es": "le había pedido que apilara",
+   "en": ""
+  },
+  "seguido": {
+   "es": "había seguido la regla al",
+   "en": "",
+   "antes": "ha seguido la regla = she has followed the rule"
+  },
+  "regla": {
+   "es": "seguido la regla al pie",
+   "en": "",
+   "antes": "ha seguido la regla = she has followed the rule"
+  },
+  "preguntó": {
+   "es": "preguntó en voz baja",
+   "en": ""
+  },
+  "en": {
+   "es": "pues cuando os echen del local",
+   "en": "",
+   "antes": "en el patio = in the courtyard"
+  },
+  "apretó": {
+   "es": "carla le apretó el brazo",
+   "en": ""
+  },
+  "brazo": {
+   "es": "apretó el brazo al pasar",
+   "en": "",
+   "antes": "le aprieta el brazo = squeezes her arm"
+  },
+  "tarde": {
+   "es": "la tarde ya no fue ligera",
+   "en": "",
+   "antes": "la tarde ligera no vuelve = the light afternoon does not return"
+  },
+  "fue": {
+   "es": "la tarde ya no fue ligera",
+   "en": ""
+  },
+  "ligera": {
+   "es": "la tarde ya no fue ligera",
+   "en": "",
+   "antes": "la tarde ligera = the light afternoon"
+  },
+  "mucho": {
+   "es": "por mucho que durara el café",
+   "en": "",
+   "antes": "por mucho que el café dure = however long the coffee lasts"
+  },
+  "durara": {
+   "es": "por mucho que durara el café",
+   "en": ""
+  },
+  "explicó": {
+   "es": "y nadie más le explicó nada",
+   "en": ""
+  },
+  "nada": {
+   "es": "y nadie más le explicó nada",
+   "en": "",
+   "antes": "nadie más le explica nada = nobody else explains anything to her"
+  },
+  "afilar": {
+   "es": "carla afiló la primera",
+   "en": ""
+  },
+  "lanzarse": {
+   "es": "el hueco y se lanzó",
+   "en": "",
+   "antes": "ve el hueco y se lanza = sees the gap and goes for it"
+  },
+  "disparar": {
+   "es": "disparó",
+   "en": ""
+  },
+  "apilar": {
+   "es": "claudia apiló platos que nadie",
+   "en": "",
+   "antes": "nadie le ha pedido apilar = nobody has asked her to stack"
+  },
+  "rescatar": {
+   "es": "carla rescató la mesa",
+   "en": ""
+  },
+  "apretar": {
+   "es": "carla le apretó el brazo",
+   "en": ""
+  },
+  "echar": {
+   "es": "pues cuando os echen del local",
+   "en": ""
+  },
+  "doblado": {
+   "es": "la servilleta doblada y salió",
+   "en": ""
+  },
+  "dejarse querer": {
+   "es": "marcos se dejó querer e",
+   "en": "",
+   "antes": "Marcos se deja querer = Marcos laps it up"
+  }
+ },
+ "ya-no-va-a-cerrar-nada": {
+  "no": {
+   "es": "ya no va a cerrar nada",
+   "en": "",
+   "antes": "no era mala = was not a bad one"
+  },
+  "cafés": {
+   "es": "dos cafés la esperaban el",
+   "en": "",
+   "antes": "dos cafés la esperan = two coffees wait for her"
+  },
+  "esperaban": {
+   "es": "cafés la esperaban el domingo",
+   "en": ""
+  },
+  "contó": {
+   "es": "contó sin rodeos",
+   "en": ""
+  },
+  "regla": {
+   "es": "la regla entró sola",
+   "en": "",
+   "antes": "la regla entra sola = the rule sinks in by itself"
+  },
+  "entró": {
+   "es": "la regla entró sola",
+   "en": ""
+  },
+  "sola": {
+   "es": "la regla entró sola",
+   "en": "",
+   "antes": "la regla entra sola = the rule sinks in by itself"
+  },
+  "esperan": {
+   "es": "y los demás esperan turno",
+   "en": "",
+   "antes": "dos cafés la esperan = two coffees wait for her"
+  },
+  "había": {
+   "es": "claudia no había sido mala",
+   "en": ""
+  },
+  "sido": {
+   "es": "claudia no había sido mala",
+   "en": ""
+  },
+  "mala": {
+   "es": "claudia no había sido mala",
+   "en": "",
+   "antes": "no era mala = was not a bad one"
+  },
+  "otro": {
+   "es": "había sido de otro",
+   "en": "",
+   "antes": "era de otro = it belonged to someone else"
+  },
+  "culpa": {
+   "es": "la culpa se le quedó",
+   "en": "",
+   "antes": "la culpa más pequeña = the guilt made smaller"
+  },
+  "quedó": {
+   "es": "se le quedó más pequeña",
+   "en": ""
+  },
+  "más": {
+   "es": "y los demás esperan turno",
+   "en": "",
+   "antes": "la culpa más pequeña = the guilt made smaller"
+  },
+  "pequeña": {
+   "es": "se le quedó más pequeña",
+   "en": "",
+   "antes": "la culpa más pequeña = the guilt made smaller"
+  },
+  "aunque": {
+   "es": "aunque no desapareció",
+   "en": "",
+   "antes": "aunque no desaparezca = even if it does not vanish"
+  },
+  "desapareció": {
+   "es": "aunque no desapareció",
+   "en": ""
+  },
+  "olor": {
+   "es": "había olor a polvo y",
+   "en": ""
+  },
+  "polvo": {
+   "es": "olor a polvo y a",
+   "en": "",
+   "antes": "huele a polvo = it smells of dust"
+  },
+  "dejó": {
+   "es": "marcos dejó el candado sobre",
+   "en": ""
+  },
+  "candado": {
+   "es": "dejó el candado sobre el",
+   "en": "",
+   "antes": "con el candado en la mano = with the padlock in his hand"
+  },
+  "soltó": {
+   "es": "soltó",
+   "en": ""
+  },
+  "con": {
+   "es": "contó sin rodeos",
+   "en": "",
+   "antes": "con el candado en la mano = with the padlock in his hand"
+  },
+  "era": {
+   "es": "cafés la esperaban el domingo",
+   "en": "",
+   "antes": "no era mala = was not a bad one"
+  },
+  "frase": {
+   "es": "era la frase de claudia",
+   "en": ""
+  },
+  "sábado": {
+   "es": "frase de claudia del sábado",
+   "en": ""
+  },
+  "valía": {
+   "es": "y valía por un perdón entero",
+   "en": ""
+  },
+  "por": {
+   "es": "y valía por un perdón entero",
+   "en": "",
+   "antes": "vale por un perdón entero = counts as a whole apology"
+  },
+  "rio": {
+   "es": "claudia se rio con ganas",
+   "en": ""
+  },
+  "ganas": {
+   "es": "claudia se rio con ganas",
+   "en": "",
+   "antes": "se ríe con ganas = laughs wholeheartedly"
+  },
+  "mudanza": {
+   "es": "la mudanza dolía",
+   "en": "",
+   "antes": "la mudanza duele = the move hurts"
+  },
+  "dolía": {
+   "es": "la mudanza dolía",
+   "en": ""
+  },
+  "pero": {
+   "es": "pero ya se podía nombrar",
+   "en": "",
+   "antes": "pero ya se puede nombrar = but now it can be named"
+  },
+  "podía": {
+   "es": "pero ya se podía nombrar",
+   "en": ""
+  },
+  "nombrar": {
+   "es": "pero ya se podía nombrar",
+   "en": "",
+   "antes": "ya se puede nombrar = now it can be named"
+  },
+  "remató": {
+   "es": "remató ella",
+   "en": ""
+  },
+  "ella": {
+   "es": "remató ella",
+   "en": "",
+   "antes": "remata ella = she caps it"
+  },
+  "es": {
+   "es": "cafés la esperaban el domingo",
+   "en": "",
+   "antes": "es su broma de ayer = it is her joke from yesterday"
+  },
+  "concedió": {
+   "es": "concedió marcos",
+   "en": ""
+  },
+  "puso": {
+   "es": "y se puso a desmontar",
+   "en": ""
+  },
+  "desmontar": {
+   "es": "puso a desmontar la primera",
+   "en": "",
+   "antes": "se pone a desmontar = gets started dismantling"
+  },
+  "volvió": {
+   "es": "claudia volvió al escáner sabiendo",
+   "en": ""
+  },
+  "trabajaba": {
+   "es": "escáner sabiendo para quién trabajaba",
+   "en": ""
+  },
+  "devolver": {
+   "es": "devuelta en su idioma",
+   "en": ""
+  },
+  "colgar": {
+   "es": "pero lo cuelgo en vitoria",
+   "en": ""
+  },
+  "conceder": {
+   "es": "concedió marcos",
+   "en": ""
+  },
+  "desaparecer": {
+   "es": "aunque no desapareció",
+   "en": ""
+  },
+  "valer": {
+   "es": "y valía por un perdón entero",
+   "en": ""
+  },
+  "levantado": {
+   "es": "con la ceja levantada",
+   "en": ""
+  },
+  "con ganas": {
+   "es": "claudia se rio con ganas",
+   "en": "",
+   "antes": "se ríe con ganas = laughs wholeheartedly"
+  },
+  "ponerse a": {
+   "es": "y se puso a desmontar",
+   "en": "",
+   "antes": "se pone a desmontar la primera estantería = starts taking down the first shelf"
+  }
+ }
+}

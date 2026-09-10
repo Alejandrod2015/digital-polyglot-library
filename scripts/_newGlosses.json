@@ -7883,6 +7883,58 @@
   "eligieron": {
    "g": "picked, chose (elegir)",
    "t": "verb"
+  },
+  "vivían": {
+   "g": "lived (vivir)",
+   "t": "verb"
+  },
+  "escribía": {
+   "g": "wrote, used to write (escribir)",
+   "t": "verb"
+  },
+  "disimuló": {
+   "g": "hid it, pretended (disimular)",
+   "t": "verb"
+  },
+  "deshizo": {
+   "g": "melted away, came undone (deshacerse)",
+   "t": "verb"
+  },
+  "desapareció": {
+   "g": "went away, disappeared (desaparecer)",
+   "t": "verb"
+  },
+  "concedió": {
+   "g": "granted, admitted (conceder)",
+   "t": "verb"
+  },
+  "afiló": {
+   "g": "sharpened (afilar)",
+   "t": "verb"
+  },
+  "disparó": {
+   "g": "fired off, shot (disparar)",
+   "t": "verb"
+  },
+  "dado": {
+   "g": "given (dar)",
+   "t": "verb"
+  },
+  "retirar": {
+   "g": "to take back, to withdraw (retirar)",
+   "t": "verb"
+  },
+  "apiló": {
+   "g": "stacked up (apilar)",
+   "t": "verb"
+  },
+  "apilara": {
+   "g": "stacked, would stack (apilar)",
+   "t": "verb"
+  },
+  "durara": {
+   "g": "lasted, would last (durar)",
+   "t": "verb"
   }
  },
  "spanish-traveler-latam-b2": {
