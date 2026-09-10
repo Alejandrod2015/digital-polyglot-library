@@ -63,7 +63,9 @@ msg = re.sub(r"`[^`\n]*`", " ", msg)                   # codigo en linea
 msg = re.sub(r"\[[^\]]*\]\([^)]*\)", " ", msg)         # enlaces ya formados
 
 sueltos = []
-for m in re.finditer(r"(?<![\w.@/])@([A-Za-z0-9._]{2,30})(?![\w/@])", msg):
+# Instagram no admite guion en un usuario: un guion detras es un paquete
+# (@anthropic-ai/sdk) cortado a mitad, no un handle.
+for m in re.finditer(r"(?<![\w.@/])@([A-Za-z0-9._]{2,30})(?![\w/@-])", msg):
     h = m.group(1).rstrip(".")
     if h and h not in sueltos:
         sueltos.append(h)

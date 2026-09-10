@@ -698,6 +698,13 @@
       "source": "memory:project_cover_style_lock.md"
     },
     {
+      "id": "project_cover_upload_artifact",
+      "domain": "cover",
+      "rule": "\"Las portadas del B1 latam se generan en OTRA laptop (ChatGPT/Gemini con cast sheet) y llegan por el artifact 'Taller de portadas B1'; se leen con read_db + read_asset\"",
+      "gate": "process",
+      "source": "memory:project_cover_upload_artifact.md"
+    },
+    {
       "id": "project_el_mural",
       "domain": "cover",
       "rule": "\"«el mural» = las imágenes de producto de un journey en UNA pantalla sin scroll, por scripts/mural.ts; es lo que se da SIEMPRE que el usuario pida ver imágenes\"",
@@ -731,6 +738,13 @@
       "rule": "\"La tabla del journey se entrega sola al cerrar cada tema, sin que el usuario la pida\"",
       "gate": "scripts/cierraTema.ts",
       "source": "memory:feedback_journey_table_after_every_topic.md"
+    },
+    {
+      "id": "feedback_level_measured_externally",
+      "domain": "journey",
+      "rule": "El nivel de un journey se mide con la gramática de SU idioma contra una vara que no salga de nuestro propio catálogo; nunca se da por bueno porque el validador pase",
+      "gate": "scripts/cierraTema.ts",
+      "source": "memory:feedback_level_measured_externally.md"
     },
     {
       "id": "feedback_mandatory_gestalt_read_full_bodies",
@@ -1144,6 +1158,13 @@
       "rule": "\"Ciudad y pais se dicen con coma, no con dos preposiciones: 'En Arequipa, Peru', nunca 'en Arequipa, en Peru'\"",
       "gate": "opening-city-without-country",
       "source": "memory:feedback_city_country_comma.md"
+    },
+    {
+      "id": "feedback_close_batch_scope",
+      "domain": "process",
+      "rule": "\"Una tanda de trabajo con varios chats lleva alcance cerrado desde el principio; lo nuevo va a una lista de pendientes, y nunca se dice 'queda poco' sin mirar el estado\"",
+      "gate": "process",
+      "source": "memory:feedback_close_batch_scope.md"
     },
     {
       "id": "feedback_commit_to_recommendations",
