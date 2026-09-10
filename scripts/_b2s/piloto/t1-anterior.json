@@ -1,0 +1,364 @@
+[
+ {
+  "topic": "locals-and-outsiders",
+  "slotIndex": 1,
+  "title": "El café lo pones tú",
+  "arcType": "reframe-turn",
+  "synopsis": "Claudia llega a Cádiz con tres meses, un plan por semanas y un archivo que digitalizar antes de la mudanza de la peña. El primer día no consigue las llaves: consigue una barra llena de preguntas que ella responde mirando el reloj. Lo que parece una mañana perdida es un examen que nadie le ha anunciado, y aprobarlo no depende de su calendario.",
+  "text": "Claudia, una documentalista de Vitoria, llegó a Cádiz, en el sur de España. La peña le había encargado que digitalizara su archivo antes de la mudanza. La esperaba Marcos, el archivero, candado en mano.\n\nDentro, con olor a café y a madera vieja, la barra preguntaba. Querían saber de dónde venía, cuánto se quedaba, si se aburría. “Hoy conoces la casa y mañana te doy el papel”, avisó Marcos, sin prisa.\n\n“¿Me puedes dar las llaves?”, pidió Claudia, como quien despacha un trámite. “Ese archivo lleva cuarenta años quieto; una tarde más no lo mata”, contestó Marcos. A Claudia le habría gustado que Cádiz cupiera en su calendario; no cabía.\n\nA la tercera vez cayó en la cuenta, de golpe, y se le calentó la cara. No era cortesía sino la entrada, y ella miraba el reloj. Tapó el bolígrafo y respondió despacio, entera: “De Vitoria, y me está gustando más de lo que pensaba”.\n\nLas llaves no llegaron, y no le pareció una derrota. “Mañana a las nueve abro yo; el café lo pones tú”, dijo Marcos. Claudia apuntó la hora y, debajo, que al día siguiente preguntaría ella.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "peña",
+    "register": "regional",
+    "definition": "Social club typical of southern Spain, built around carnival, food and friends."
+   },
+   {
+    "type": "noun",
+    "word": "candado",
+    "definition": "Padlock; a small removable lock that closes a door or gate."
+   },
+   {
+    "type": "noun",
+    "word": "trámite",
+    "definition": "Formality or bureaucratic step you complete without putting your heart in it."
+   },
+   {
+    "type": "noun",
+    "word": "mudanza",
+    "definition": "House move; the act of packing everything and changing premises."
+   },
+   {
+    "type": "noun",
+    "word": "derrota",
+    "definition": "Defeat; a loss you accept when things do not go your way."
+   },
+   {
+    "type": "noun",
+    "word": "madera",
+    "definition": "Wood; the material old bars and their furniture are made of."
+   },
+   {
+    "type": "verb",
+    "word": "encargar",
+    "surface": "encargado",
+    "definition": "To commission someone to do a job, trusting them with the task."
+   },
+   {
+    "type": "verb",
+    "word": "caber",
+    "surface": "cupiera",
+    "definition": "To fit inside something; here, a city fitting into a schedule."
+   },
+   {
+    "type": "verb",
+    "word": "tapar",
+    "surface": "Tapó",
+    "definition": "To cover or close something, like putting the cap on a pen."
+   },
+   {
+    "type": "verb",
+    "word": "apuntar",
+    "surface": "apuntó",
+    "definition": "To write something down quickly so you do not forget it."
+   },
+   {
+    "type": "verb",
+    "word": "quedarse",
+    "surface": "se quedaba",
+    "definition": "To stay in a place instead of leaving it."
+   },
+   {
+    "type": "verb",
+    "word": "aburrirse",
+    "surface": "se aburría",
+    "definition": "To get bored when nothing interesting is happening around you."
+   },
+   {
+    "type": "adjective",
+    "word": "quieto",
+    "definition": "Still, not moving; said of things or people that stay put."
+   },
+   {
+    "type": "adjective",
+    "word": "entero",
+    "surface": "entera",
+    "definition": "Whole, complete; here, an answer given fully instead of in part."
+   },
+   {
+    "type": "adverb",
+    "word": "despacio",
+    "definition": "Slowly, without hurry, taking all the time you need."
+   },
+   {
+    "type": "expression",
+    "word": "caer en la cuenta",
+    "surface": "cayó en la cuenta",
+    "definition": "To suddenly realise something that was in front of you all along."
+   },
+   {
+    "type": "expression",
+    "word": "calentarse la cara",
+    "surface": "se le calentó la cara",
+    "definition": "Your face goes hot with embarrassment when you realise a mistake."
+   },
+   {
+    "type": "expression",
+    "word": "sin prisa",
+    "definition": "Without hurry, calmly, letting things take their natural time."
+   },
+   {
+    "type": "expression",
+    "word": "de golpe",
+    "definition": "All at once, suddenly and without any previous warning."
+   },
+   {
+    "type": "adverb",
+    "word": "debajo",
+    "definition": "Underneath, below; in the space right under something else."
+   }
+  ]
+ },
+ {
+  "topic": "locals-and-outsiders",
+  "slotIndex": 2,
+  "title": "La bolsa como prueba",
+  "arcType": "late-reveal",
+  "synopsis": "Hacer la compra sin parecer de fuera: ese es el plan de Claudia, ensayado en voz baja delante del puesto. La mañana sale perfecta y la victoria le dura lo que tarda Marcos en traducirle lo que de verdad ha pasado en el mercado. Aquí nadie la confundía con nadie, y la noticia, en vez de doler, libera.",
+  "text": "La lista de la compra de Claudia tenía dos columnas: lo que necesitaba y cómo se pedía. Llevaba días oyendo pedir a los demás en el mercado de abastos; aquella mañana le tocaba. En la puerta ensayó la frase en voz baja, como si alguien fuera a examinarla.\n\nEn el puesto, entre el olor a hierbabuena y a pescado fresco, dejó que le eligieran la fruta madura. Nadie la miró de más. Salió con la bolsa llena, segura de haberse salido con la suya, deseando contárselo a Marcos.\n\n“Hoy nadie me ha tomado por turista; he pedido como una más”, presumió Claudia, con la bolsa como prueba y la cuenta redondeada. “¿Y la bolsa la has pagado en euros o en aplausos?”, preguntó Marcos. “La frutera me preguntó ayer si la de Vitoria volvería el sábado, que le tenía guardados tomates de los buenos”, añadió Marcos.\n\nLa conocían desde el primer día; nunca había habido nada que colar. La vergüenza le duró poco, porque la risa ganó antes de que ella decidiera reírse. “Pues que me guarden lo que quieran”, contestó, y repartió la fruta en la cocina.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "mercado de abastos",
+    "register": "cultural",
+    "definition": "Covered food market where Spanish towns buy fish, fruit and meat daily."
+   },
+   {
+    "type": "noun",
+    "word": "vergüenza",
+    "definition": "Embarrassment; the hot, uncomfortable feeling of being caught out."
+   },
+   {
+    "type": "noun",
+    "word": "puesto",
+    "definition": "Market stall; the small stand where one seller offers their goods."
+   },
+   {
+    "type": "noun",
+    "word": "prueba",
+    "definition": "Proof; an object or fact that shows something really happened."
+   },
+   {
+    "type": "expression",
+    "word": "lista de la compra",
+    "surface": "lista de la compra",
+    "definition": "Shopping list; what you plan to buy, written down beforehand."
+   },
+   {
+    "type": "verb",
+    "word": "ensayar",
+    "surface": "ensayó",
+    "definition": "To rehearse or practise something before doing it for real."
+   },
+   {
+    "type": "verb",
+    "word": "redondear",
+    "surface": "redondeada",
+    "definition": "To round a number up or down to make it simpler."
+   },
+   {
+    "type": "expression",
+    "word": "salirse con la suya",
+    "surface": "salido con la suya",
+    "definition": "To get away with it; to pull off your own plan."
+   },
+   {
+    "type": "verb",
+    "word": "colar",
+    "register": "colloquial",
+    "definition": "To slip something false past someone without them noticing it."
+   },
+   {
+    "type": "verb",
+    "word": "guardar",
+    "surface": "guarden",
+    "definition": "To keep or set something aside for someone, saving it for later."
+   },
+   {
+    "type": "verb",
+    "word": "repartir",
+    "surface": "repartió",
+    "definition": "To distribute things, putting each one where it belongs."
+   },
+   {
+    "type": "verb",
+    "word": "durar",
+    "surface": "duró poco",
+    "definition": "To last; to continue existing for a certain amount of time."
+   },
+   {
+    "type": "verb",
+    "word": "elegir",
+    "surface": "eligieran",
+    "definition": "To choose one thing among several, picking the best option."
+   },
+   {
+    "type": "adjective",
+    "word": "lleno",
+    "surface": "llena",
+    "definition": "Full; a bag with no room left for anything else."
+   },
+   {
+    "type": "adjective",
+    "word": "fresco",
+    "definition": "Fresh; food recently caught or picked, not old or frozen."
+   },
+   {
+    "type": "expression",
+    "word": "en voz baja",
+    "definition": "In a low voice, quietly, so that others cannot hear."
+   },
+   {
+    "type": "expression",
+    "word": "de más",
+    "definition": "More than necessary; here, looking at someone longer than normal."
+   },
+   {
+    "type": "expression",
+    "word": "tomar por",
+    "surface": "tomado por",
+    "definition": "To mistake someone for something they are not."
+   },
+   {
+    "type": "expression",
+    "word": "de los buenos",
+    "definition": "Of the good kind; the best ones a seller keeps back."
+   },
+   {
+    "type": "expression",
+    "word": "tocarle a alguien",
+    "surface": "le tocaba",
+    "definition": "To be someone's turn to do something at last."
+   }
+  ]
+ },
+ {
+  "topic": "locals-and-outsiders",
+  "slotIndex": 3,
+  "title": "La sobremesa se estira",
+  "arcType": "harmonic-close",
+  "synopsis": "Un sábado de peña, una comida que no se acaba y una silla guardada sin que ella la pida. Claudia había venido con la tarde medida y descubre que quedarse también es una forma de trabajar, aunque el archivo no avance. Marcos lo resume con los platos ya vacíos, y ella, por una vez, no discute.",
+  "text": "Hay mesas de las que uno se levanta pronto y mesas que no sueltan a nadie. La de aquel sábado en la peña era de las segundas. Claudia había llegado con la libreta y la idea de irse a las cuatro; Marcos lo notó.\n\nEn el comedor había olor a arroz y a laurel. Se comía y se discutía despacio: fútbol, obras, un pregón antiguo. “Tú come, que el archivo no tiene hambre y tú sí”, le dijo Marcos.\n\n“Me tendría que ir; tengo la tarde medida y el archivo a medias”, avisó Claudia. “Ya estás trabajando: sin esta mesa no hay archivo que valga”, contestó Marcos. A las cinco seguía allí, aunque le costara.\n\n“Aquí lo importante se dice con los platos vacíos”, sentenció Marcos mientras recogían la fuente. Nadie le había pedido que se quedara, pero le habían guardado silla. Le subió un nudo agradecido: la silla valía lo mismo sin palabras.\n\n“Pues por una vez no apunto nada”, contestó Claudia, y dejó ir la tarde. La sobremesa se estiró hasta la noche, y le dio igual. Acercó la silla; ya estaba un poco menos de fuera.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "sobremesa",
+    "definition": "Spanish custom of staying at the table talking long after eating."
+   },
+   {
+    "type": "noun",
+    "word": "pregón",
+    "register": "cultural",
+    "definition": "Public opening speech of a Spanish festival, often witty and sung."
+   },
+   {
+    "type": "noun",
+    "word": "nudo",
+    "definition": "Knot; here, the tight feeling in your throat from emotion."
+   },
+   {
+    "type": "noun",
+    "word": "obras",
+    "definition": "Roadworks or building works; a favourite topic of Spanish table talk."
+   },
+   {
+    "type": "noun",
+    "word": "libreta",
+    "definition": "Notebook; a small book for writing notes and lists by hand."
+   },
+   {
+    "type": "noun",
+    "word": "comedor",
+    "definition": "Dining room; the room where meals are shared at the table."
+   },
+   {
+    "type": "verb",
+    "word": "soltar",
+    "surface": "sueltan",
+    "definition": "To let go of someone; here, tables that will not release you."
+   },
+   {
+    "type": "verb",
+    "word": "acercar",
+    "surface": "Acercó",
+    "definition": "To pull something closer, like moving your chair towards the table."
+   },
+   {
+    "type": "verb",
+    "word": "recoger",
+    "surface": "recogían",
+    "definition": "To clear things away, picking them up from the table."
+   },
+   {
+    "type": "verb",
+    "word": "costar",
+    "surface": "costara",
+    "definition": "To be hard for someone; an effort that does not come easily."
+   },
+   {
+    "type": "verb",
+    "word": "levantarse",
+    "surface": "se levanta",
+    "definition": "To get up from your seat, ready to leave."
+   },
+   {
+    "type": "adjective",
+    "word": "vacío",
+    "surface": "vacíos",
+    "definition": "Empty; with nothing left inside after everything has been eaten."
+   },
+   {
+    "type": "adjective",
+    "word": "antiguo",
+    "definition": "Old, from an earlier time; something people still remember fondly."
+   },
+   {
+    "type": "adjective",
+    "word": "agradecido",
+    "definition": "Grateful; feeling thankful for a kindness someone showed you."
+   },
+   {
+    "type": "adverb",
+    "word": "pronto",
+    "definition": "Soon, early; before much time has gone by."
+   },
+   {
+    "type": "expression",
+    "word": "dejar ir",
+    "surface": "dejó ir",
+    "definition": "To let something go instead of holding on to it."
+   },
+   {
+    "type": "expression",
+    "word": "de fuera",
+    "definition": "From somewhere else; not born in the place where you live."
+   },
+   {
+    "type": "expression",
+    "word": "dar igual",
+    "surface": "dio igual",
+    "definition": "To make no difference; when something stops mattering to you."
+   },
+   {
+    "type": "expression",
+    "word": "sin palabras",
+    "definition": "Without words; when a gesture says everything that is needed."
+   },
+   {
+    "type": "expression",
+    "word": "por una vez",
+    "definition": "For once; one single time that breaks your usual habit."
+   }
+  ]
+ }
+]

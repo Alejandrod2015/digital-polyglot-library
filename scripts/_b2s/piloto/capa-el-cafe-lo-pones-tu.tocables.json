@@ -1,0 +1,462 @@
+{
+ "café": {
+  "es": "el café lo pones tú",
+  "en": "you make the coffee"
+ },
+ "lo": {
+  "es": "el café lo pones tú",
+  "en": "you make the coffee"
+ },
+ "pones": {
+  "es": "el café lo pones tú",
+  "en": "you make the coffee"
+ },
+ "tú": {
+  "es": "el café lo pones tú",
+  "en": "you make the coffee"
+ },
+ "documentalista": {
+  "es": "una documentalista de vitoria",
+  "en": "a records specialist from Vitoria"
+ },
+ "de": {
+  "es": "una documentalista de vitoria",
+  "en": "a records specialist from Vitoria"
+ },
+ "vitoria": {
+  "es": "una documentalista de vitoria",
+  "en": "a records specialist from Vitoria"
+ },
+ "llegó": {
+  "es": "llegó a cádiz",
+  "en": "arrived in Cádiz"
+ },
+ "a": {
+  "es": "llegó a cádiz",
+  "en": "arrived in Cádiz"
+ },
+ "cádiz": {
+  "es": "llegó a cádiz",
+  "en": "arrived in Cádiz"
+ },
+ "en": {
+  "es": "en el sur de españa",
+  "en": "in the south of Spain"
+ },
+ "sur": {
+  "es": "en el sur de españa",
+  "en": "in the south of Spain"
+ },
+ "españa": {
+  "es": "en el sur de españa",
+  "en": "in the south of Spain"
+ },
+ "peña": {
+  "es": "la peña le había encargado",
+  "en": "the club had asked her"
+ },
+ "le": {
+  "es": "la peña le había encargado",
+  "en": "the club had asked her"
+ },
+ "había": {
+  "es": "la peña le había encargado",
+  "en": "the club had asked her"
+ },
+ "encargado": {
+  "es": "le había encargado que digitalizara",
+  "en": "had asked her to digitise"
+ },
+ "que": {
+  "es": "que digitalizara su archivo",
+  "en": "to digitise its archive"
+ },
+ "digitalizara": {
+  "es": "que digitalizara su archivo",
+  "en": "to digitise its archive"
+ },
+ "su": {
+  "es": "que digitalizara su archivo",
+  "en": "to digitise its archive"
+ },
+ "archivo": {
+  "es": "que digitalizara su archivo",
+  "en": "to digitise its archive"
+ },
+ "antes": {
+  "es": "antes de la mudanza",
+  "en": "before the move"
+ },
+ "mudanza": {
+  "es": "antes de la mudanza",
+  "en": "before the move"
+ },
+ "esperaba": {
+  "es": "la esperaba marcos",
+  "en": "Marcos was waiting for her"
+ },
+ "archivero": {
+  "es": "el archivero",
+  "en": "the archivist"
+ },
+ "candado": {
+  "es": "candado en mano",
+  "en": "padlock in hand"
+ },
+ "mano": {
+  "es": "candado en mano",
+  "en": "padlock in hand"
+ },
+ "dentro": {
+  "es": "dentro",
+  "en": "inside"
+ },
+ "con": {
+  "es": "con olor a café",
+  "en": "smelling of coffee"
+ },
+ "olor": {
+  "es": "con olor a café",
+  "en": "smelling of coffee"
+ },
+ "y": {
+  "es": "a café y a madera vieja",
+  "en": "of coffee and old wood"
+ },
+ "madera": {
+  "es": "a madera vieja",
+  "en": "of old wood"
+ },
+ "vieja": {
+  "es": "a madera vieja",
+  "en": "of old wood"
+ },
+ "barra": {
+  "es": "la barra preguntaba",
+  "en": "the bar kept asking"
+ },
+ "preguntaba": {
+  "es": "la barra preguntaba",
+  "en": "the bar kept asking"
+ },
+ "querían": {
+  "es": "querían saber de dónde venía",
+  "en": "they wanted to know where she came from"
+ },
+ "saber": {
+  "es": "querían saber de dónde venía",
+  "en": "they wanted to know where she came from"
+ },
+ "dónde": {
+  "es": "querían saber de dónde venía",
+  "en": "they wanted to know where she came from"
+ },
+ "venía": {
+  "es": "querían saber de dónde venía",
+  "en": "they wanted to know where she came from"
+ },
+ "cuánto": {
+  "es": "cuánto se quedaba",
+  "en": "how long she was staying"
+ },
+ "se": {
+  "es": "cuánto se quedaba",
+  "en": "how long she was staying"
+ },
+ "quedaba": {
+  "es": "cuánto se quedaba",
+  "en": "how long she was staying"
+ },
+ "si": {
+  "es": "si se aburría",
+  "en": "whether she got bored"
+ },
+ "aburría": {
+  "es": "si se aburría",
+  "en": "whether she got bored"
+ },
+ "hoy": {
+  "es": "hoy conoces la casa",
+  "en": "today you get to know the place"
+ },
+ "conoces": {
+  "es": "hoy conoces la casa",
+  "en": "today you get to know the place"
+ },
+ "casa": {
+  "es": "hoy conoces la casa",
+  "en": "today you get to know the place"
+ },
+ "mañana": {
+  "es": "mañana te doy el papel",
+  "en": "tomorrow I give you the paperwork"
+ },
+ "te": {
+  "es": "mañana te doy el papel",
+  "en": "tomorrow I give you the paperwork"
+ },
+ "doy": {
+  "es": "mañana te doy el papel",
+  "en": "tomorrow I give you the paperwork"
+ },
+ "papel": {
+  "es": "mañana te doy el papel",
+  "en": "tomorrow I give you the paperwork"
+ },
+ "avisó": {
+  "es": "avisó marcos",
+  "en": "Marcos warned"
+ },
+ "sin": {
+  "es": "sin prisa",
+  "en": "unhurried"
+ },
+ "prisa": {
+  "es": "sin prisa",
+  "en": "unhurried"
+ },
+ "me": {
+  "es": "me puedes dar las llaves",
+  "en": "can you give me the keys"
+ },
+ "puedes": {
+  "es": "me puedes dar las llaves",
+  "en": "can you give me the keys"
+ },
+ "dar": {
+  "es": "me puedes dar las llaves",
+  "en": "can you give me the keys"
+ },
+ "llaves": {
+  "es": "me puedes dar las llaves",
+  "en": "can you give me the keys"
+ },
+ "pidió": {
+  "es": "pidió claudia",
+  "en": "Claudia asked"
+ },
+ "como": {
+  "es": "como quien despacha un trámite",
+  "en": "like someone ticking off a formality"
+ },
+ "quien": {
+  "es": "como quien despacha un trámite",
+  "en": "like someone ticking off a formality"
+ },
+ "despacha": {
+  "es": "como quien despacha un trámite",
+  "en": "like someone ticking off a formality"
+ },
+ "trámite": {
+  "es": "como quien despacha un trámite",
+  "en": "like someone ticking off a formality"
+ },
+ "ese": {
+  "es": "ese archivo lleva cuarenta años quieto",
+  "en": "that archive has sat still for forty years"
+ },
+ "lleva": {
+  "es": "ese archivo lleva cuarenta años quieto",
+  "en": "that archive has sat still for forty years"
+ },
+ "años": {
+  "es": "ese archivo lleva cuarenta años quieto",
+  "en": "that archive has sat still for forty years"
+ },
+ "quieto": {
+  "es": "ese archivo lleva cuarenta años quieto",
+  "en": "that archive has sat still for forty years"
+ },
+ "tarde": {
+  "es": "una tarde más",
+  "en": "one more afternoon"
+ },
+ "más": {
+  "es": "una tarde más",
+  "en": "one more afternoon"
+ },
+ "no": {
+  "es": "no lo mata",
+  "en": "won't kill it"
+ },
+ "mata": {
+  "es": "no lo mata",
+  "en": "won't kill it"
+ },
+ "contestó": {
+  "es": "contestó marcos",
+  "en": "Marcos replied"
+ },
+ "habría": {
+  "es": "le habría gustado",
+  "en": "she would have liked"
+ },
+ "gustado": {
+  "es": "le habría gustado",
+  "en": "she would have liked"
+ },
+ "cupiera": {
+  "es": "que cádiz cupiera en su calendario",
+  "en": "for Cádiz to fit into her calendar"
+ },
+ "calendario": {
+  "es": "que cádiz cupiera en su calendario",
+  "en": "for Cádiz to fit into her calendar"
+ },
+ "cabía": {
+  "es": "no cabía",
+  "en": "it didn't fit"
+ },
+ "vez": {
+  "es": "a la tercera vez",
+  "en": "the third time"
+ },
+ "cayó": {
+  "es": "cayó en la cuenta",
+  "en": "it dawned on her"
+ },
+ "cuenta": {
+  "es": "cayó en la cuenta",
+  "en": "it dawned on her"
+ },
+ "golpe": {
+  "es": "de golpe",
+  "en": "all at once"
+ },
+ "calentó": {
+  "es": "se le calentó la cara",
+  "en": "her face went hot"
+ },
+ "cara": {
+  "es": "se le calentó la cara",
+  "en": "her face went hot"
+ },
+ "era": {
+  "es": "no era cortesía",
+  "en": "it wasn't politeness"
+ },
+ "cortesía": {
+  "es": "no era cortesía",
+  "en": "it wasn't politeness"
+ },
+ "sino": {
+  "es": "sino la entrada",
+  "en": "but the way in"
+ },
+ "entrada": {
+  "es": "sino la entrada",
+  "en": "but the way in"
+ },
+ "ella": {
+  "es": "ella miraba el reloj",
+  "en": "she was watching the clock"
+ },
+ "miraba": {
+  "es": "ella miraba el reloj",
+  "en": "she was watching the clock"
+ },
+ "reloj": {
+  "es": "ella miraba el reloj",
+  "en": "she was watching the clock"
+ },
+ "tapó": {
+  "es": "tapó el bolígrafo",
+  "en": "she capped her pen"
+ },
+ "bolígrafo": {
+  "es": "tapó el bolígrafo",
+  "en": "she capped her pen"
+ },
+ "respondió": {
+  "es": "respondió despacio",
+  "en": "she answered slowly"
+ },
+ "despacio": {
+  "es": "respondió despacio",
+  "en": "she answered slowly"
+ },
+ "entera": {
+  "es": "respondió despacio, entera",
+  "en": "she answered slowly, fully present"
+ },
+ "está": {
+  "es": "me está gustando",
+  "en": "I'm enjoying it"
+ },
+ "gustando": {
+  "es": "me está gustando",
+  "en": "I'm enjoying it"
+ },
+ "pensaba": {
+  "es": "más de lo que pensaba",
+  "en": "more than I expected"
+ },
+ "llegaron": {
+  "es": "las llaves no llegaron",
+  "en": "the keys didn't come"
+ },
+ "pareció": {
+  "es": "no le pareció una derrota",
+  "en": "it didn't feel like a defeat"
+ },
+ "derrota": {
+  "es": "no le pareció una derrota",
+  "en": "it didn't feel like a defeat"
+ },
+ "abro": {
+  "es": "abro yo",
+  "en": "I'll open up"
+ },
+ "yo": {
+  "es": "abro yo",
+  "en": "I'll open up"
+ },
+ "dijo": {
+  "es": "dijo marcos",
+  "en": "Marcos said"
+ },
+ "apuntó": {
+  "es": "claudia apuntó la hora",
+  "en": "Claudia wrote down the time"
+ },
+ "hora": {
+  "es": "claudia apuntó la hora",
+  "en": "Claudia wrote down the time"
+ },
+ "debajo": {
+  "es": "y, debajo",
+  "en": "and underneath"
+ },
+ "al": {
+  "es": "al día siguiente",
+  "en": "the next day"
+ },
+ "día": {
+  "es": "al día siguiente",
+  "en": "the next day"
+ },
+ "siguiente": {
+  "es": "al día siguiente",
+  "en": "the next day"
+ },
+ "preguntaría": {
+  "es": "preguntaría ella",
+  "en": "she would do the asking"
+ },
+ "quedarse": {
+  "es": "cuánto se quedaba",
+  "en": "how long she was staying"
+ },
+ "entero": {
+  "es": "respondió despacio, entera",
+  "en": "she answered slowly, fully present"
+ },
+ "sin prisa": {
+  "es": "sin prisa",
+  "en": "unhurried"
+ },
+ "de golpe": {
+  "es": "de golpe",
+  "en": "all at once"
+ }
+}

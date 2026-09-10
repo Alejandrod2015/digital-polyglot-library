@@ -573,8 +573,8 @@
     ]
   },
   "cmtplpfum0007j8c6piegwt31#locals-and-outsiders": {
-    "cerrado": "2026-09-08T09:19:18.671Z",
-    "hash": "d74783423ddc7527",
+    "cerrado": "2026-09-10T16:35:54.823Z",
+    "hash": "fc9ff1ea46808f03",
     "historias": [
       "locals-and-outsiders#1 el-cafe-lo-pones-tu",
       "locals-and-outsiders#2 la-bolsa-como-prueba",
@@ -585,16 +585,19 @@
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"contesta\" 36%)",
-      "arranques de parrafo variados (mas repetido \"claudia\", 13%)",
-      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+      "acotacion dominante bajo tope (\"contestó\" 31%)",
+      "arranques de parrafo variados (mas repetido \"me\", 14%)",
+      "banda gramatical b2 dentro: subj. imperfecto 5 · condicional 5 · estilo indirecto 2",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.08 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 55/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.07 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 56/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 27/60 plazas por encima de A1/A2 (45%, suelo 60%) · referencias medidas: C1 publicados 70% y 81%, B2 latam 67% · de nivel: trámite, derrota, encargar, caer en la cuenta, calentarse la cara, sin prisa, de golpe, mercado de abastos",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: locals-and-outsiders (Marcos, Claudia)"
@@ -631,11 +634,9 @@
           "cambia": "acepta el sitio que le guardan: se puede ser de un sitio sin haber nacido en el, y la sobremesa es donde se firma",
           "emocion": "gratitud con nudo al ver la silla guardada y el vaso lleno; se ve cuando acerca la silla y deja la libreta en el fondo del bolso"
         }
-      ]
-    },
-    "avisos": [
-      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
-    ]
+      ],
+      "gramatica": "narracion en PASADO (preterito para la accion, imperfecto para el marco, pluscuamperfecto para lo previo); marcadores DENTRO de la banda B2 medida con la sonda arreglada (por 100 oraciones: subj. imperfecto 3-7, condicional 1-5, estilo indirecto 1-3; el preterito no lleva banda porque mide el modo de narrar, no el nivel): subjuntivo imperfecto en 'le habia encargado que digitalizara' y 'antes de que decidiera'; condicional en 'me tendria que ir' y en la correlacion 'me pregunto ayer si la de Vitoria volveria'; ese es tambien el estilo indirecto del tema; subjuntivo presente en el dialogo ('que me guarden lo que quieran')"
+    }
   },
   "cmtplpfum0007j8c6piegwt31#news-and-headlines": {
     "cerrado": "2026-09-08T09:20:02.381Z",

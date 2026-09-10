@@ -1,0 +1,438 @@
+{
+ "sobremesa": {
+  "es": "la sobremesa se estira",
+  "en": "the after-lunch chat stretches on"
+ },
+ "se": {
+  "es": "la sobremesa se estira",
+  "en": "the after-lunch chat stretches on"
+ },
+ "estira": {
+  "es": "la sobremesa se estira",
+  "en": "the after-lunch chat stretches on"
+ },
+ "hay": {
+  "es": "hay mesas",
+  "en": "there are tables"
+ },
+ "mesas": {
+  "es": "hay mesas",
+  "en": "there are tables"
+ },
+ "de": {
+  "es": "de las que uno se levanta pronto",
+  "en": "that you get up from early"
+ },
+ "que": {
+  "es": "de las que uno se levanta pronto",
+  "en": "that you get up from early"
+ },
+ "uno": {
+  "es": "de las que uno se levanta pronto",
+  "en": "that you get up from early"
+ },
+ "levanta": {
+  "es": "uno se levanta pronto",
+  "en": "you get up early"
+ },
+ "pronto": {
+  "es": "uno se levanta pronto",
+  "en": "you get up early"
+ },
+ "y": {
+  "es": "y mesas que no sueltan a nadie",
+  "en": "and tables that let nobody go"
+ },
+ "no": {
+  "es": "que no sueltan a nadie",
+  "en": "that let nobody go"
+ },
+ "sueltan": {
+  "es": "que no sueltan a nadie",
+  "en": "that let nobody go"
+ },
+ "a": {
+  "es": "que no sueltan a nadie",
+  "en": "that let nobody go"
+ },
+ "nadie": {
+  "es": "que no sueltan a nadie",
+  "en": "that let nobody go"
+ },
+ "aquel": {
+  "es": "la de aquel sábado",
+  "en": "the one that Saturday"
+ },
+ "sábado": {
+  "es": "la de aquel sábado",
+  "en": "the one that Saturday"
+ },
+ "en": {
+  "es": "en la peña",
+  "en": "at the club"
+ },
+ "peña": {
+  "es": "en la peña",
+  "en": "at the club"
+ },
+ "era": {
+  "es": "era de las segundas",
+  "en": "was the second kind"
+ },
+ "segundas": {
+  "es": "era de las segundas",
+  "en": "was the second kind"
+ },
+ "había": {
+  "es": "claudia había llegado",
+  "en": "Claudia had arrived"
+ },
+ "llegado": {
+  "es": "claudia había llegado",
+  "en": "Claudia had arrived"
+ },
+ "con": {
+  "es": "con la libreta",
+  "en": "with her notebook"
+ },
+ "libreta": {
+  "es": "con la libreta",
+  "en": "with her notebook"
+ },
+ "idea": {
+  "es": "la idea de irse a las cuatro",
+  "en": "the idea of leaving at four"
+ },
+ "irse": {
+  "es": "la idea de irse a las cuatro",
+  "en": "the idea of leaving at four"
+ },
+ "lo": {
+  "es": "marcos lo notó",
+  "en": "Marcos noticed"
+ },
+ "notó": {
+  "es": "marcos lo notó",
+  "en": "Marcos noticed"
+ },
+ "comedor": {
+  "es": "en el comedor",
+  "en": "in the dining room"
+ },
+ "olor": {
+  "es": "olor a arroz y a laurel",
+  "en": "a smell of rice and bay leaf"
+ },
+ "arroz": {
+  "es": "olor a arroz y a laurel",
+  "en": "a smell of rice and bay leaf"
+ },
+ "laurel": {
+  "es": "olor a arroz y a laurel",
+  "en": "a smell of rice and bay leaf"
+ },
+ "comía": {
+  "es": "se comía y se discutía despacio",
+  "en": "people ate and argued slowly"
+ },
+ "discutía": {
+  "es": "se comía y se discutía despacio",
+  "en": "people ate and argued slowly"
+ },
+ "despacio": {
+  "es": "se comía y se discutía despacio",
+  "en": "people ate and argued slowly"
+ },
+ "fútbol": {
+  "es": "fútbol",
+  "en": "football"
+ },
+ "obras": {
+  "es": "obras",
+  "en": "building work"
+ },
+ "pregón": {
+  "es": "un pregón antiguo",
+  "en": "an old festival speech"
+ },
+ "antiguo": {
+  "es": "un pregón antiguo",
+  "en": "an old festival speech"
+ },
+ "tú": {
+  "es": "tú come",
+  "en": "you eat"
+ },
+ "come": {
+  "es": "tú come",
+  "en": "you eat"
+ },
+ "archivo": {
+  "es": "el archivo no tiene hambre",
+  "en": "the archive isn't hungry"
+ },
+ "tiene": {
+  "es": "el archivo no tiene hambre",
+  "en": "the archive isn't hungry"
+ },
+ "hambre": {
+  "es": "el archivo no tiene hambre",
+  "en": "the archive isn't hungry"
+ },
+ "sí": {
+  "es": "y tú sí",
+  "en": "and you are"
+ },
+ "le": {
+  "es": "le dijo marcos",
+  "en": "Marcos told her"
+ },
+ "dijo": {
+  "es": "le dijo marcos",
+  "en": "Marcos told her"
+ },
+ "me": {
+  "es": "me tendría que ir",
+  "en": "I ought to go"
+ },
+ "tendría": {
+  "es": "me tendría que ir",
+  "en": "I ought to go"
+ },
+ "ir": {
+  "es": "me tendría que ir",
+  "en": "I ought to go"
+ },
+ "tengo": {
+  "es": "tengo la tarde medida",
+  "en": "I have the afternoon planned out"
+ },
+ "tarde": {
+  "es": "tengo la tarde medida",
+  "en": "I have the afternoon planned out"
+ },
+ "medida": {
+  "es": "tengo la tarde medida",
+  "en": "I have the afternoon planned out"
+ },
+ "medias": {
+  "es": "el archivo a medias",
+  "en": "the archive half done"
+ },
+ "avisó": {
+  "es": "avisó claudia",
+  "en": "Claudia warned"
+ },
+ "ya": {
+  "es": "ya estás trabajando",
+  "en": "you're already working"
+ },
+ "estás": {
+  "es": "ya estás trabajando",
+  "en": "you're already working"
+ },
+ "trabajando": {
+  "es": "ya estás trabajando",
+  "en": "you're already working"
+ },
+ "sin": {
+  "es": "sin esta mesa",
+  "en": "without this table"
+ },
+ "esta": {
+  "es": "sin esta mesa",
+  "en": "without this table"
+ },
+ "mesa": {
+  "es": "sin esta mesa",
+  "en": "without this table"
+ },
+ "valga": {
+  "es": "no hay archivo que valga",
+  "en": "there's no archive worth the name"
+ },
+ "contestó": {
+  "es": "contestó marcos",
+  "en": "Marcos replied"
+ },
+ "seguía": {
+  "es": "a las cinco seguía allí",
+  "en": "at five she was still there"
+ },
+ "allí": {
+  "es": "a las cinco seguía allí",
+  "en": "at five she was still there"
+ },
+ "aunque": {
+  "es": "aunque le costara",
+  "en": "even if it cost her"
+ },
+ "costara": {
+  "es": "aunque le costara",
+  "en": "even if it cost her"
+ },
+ "aquí": {
+  "es": "aquí lo importante se dice",
+  "en": "here what matters gets said"
+ },
+ "importante": {
+  "es": "aquí lo importante se dice",
+  "en": "here what matters gets said"
+ },
+ "dice": {
+  "es": "se dice con los platos vacíos",
+  "en": "gets said over empty plates"
+ },
+ "platos": {
+  "es": "con los platos vacíos",
+  "en": "over empty plates"
+ },
+ "vacíos": {
+  "es": "con los platos vacíos",
+  "en": "over empty plates"
+ },
+ "sentenció": {
+  "es": "sentenció marcos",
+  "en": "Marcos pronounced"
+ },
+ "mientras": {
+  "es": "mientras recogían la fuente",
+  "en": "while they cleared the serving dish"
+ },
+ "recogían": {
+  "es": "mientras recogían la fuente",
+  "en": "while they cleared the serving dish"
+ },
+ "fuente": {
+  "es": "mientras recogían la fuente",
+  "en": "while they cleared the serving dish"
+ },
+ "pedido": {
+  "es": "nadie le había pedido que se quedara",
+  "en": "nobody had asked her to stay"
+ },
+ "quedara": {
+  "es": "nadie le había pedido que se quedara",
+  "en": "nobody had asked her to stay"
+ },
+ "pero": {
+  "es": "pero le habían guardado silla",
+  "en": "but they had kept her a seat"
+ },
+ "habían": {
+  "es": "pero le habían guardado silla",
+  "en": "but they had kept her a seat"
+ },
+ "guardado": {
+  "es": "pero le habían guardado silla",
+  "en": "but they had kept her a seat"
+ },
+ "silla": {
+  "es": "pero le habían guardado silla",
+  "en": "but they had kept her a seat"
+ },
+ "subió": {
+  "es": "le subió un nudo agradecido",
+  "en": "a grateful lump rose in her throat"
+ },
+ "nudo": {
+  "es": "le subió un nudo agradecido",
+  "en": "a grateful lump rose in her throat"
+ },
+ "agradecido": {
+  "es": "le subió un nudo agradecido",
+  "en": "a grateful lump rose in her throat"
+ },
+ "valía": {
+  "es": "la silla valía lo mismo",
+  "en": "the seat meant the same"
+ },
+ "mismo": {
+  "es": "valía lo mismo sin palabras",
+  "en": "meant the same without words"
+ },
+ "palabras": {
+  "es": "valía lo mismo sin palabras",
+  "en": "meant the same without words"
+ },
+ "pues": {
+  "es": "pues por una vez no apunto nada",
+  "en": "well, for once I'm writing nothing down"
+ },
+ "por": {
+  "es": "por una vez",
+  "en": "for once"
+ },
+ "vez": {
+  "es": "por una vez",
+  "en": "for once"
+ },
+ "apunto": {
+  "es": "no apunto nada",
+  "en": "I'm writing nothing down"
+ },
+ "nada": {
+  "es": "no apunto nada",
+  "en": "I'm writing nothing down"
+ },
+ "dejó": {
+  "es": "dejó ir la tarde",
+  "en": "let the afternoon go"
+ },
+ "estiró": {
+  "es": "la sobremesa se estiró hasta la noche",
+  "en": "the after-lunch chat stretched into the night"
+ },
+ "hasta": {
+  "es": "hasta la noche",
+  "en": "into the night"
+ },
+ "noche": {
+  "es": "hasta la noche",
+  "en": "into the night"
+ },
+ "dio": {
+  "es": "le dio igual",
+  "en": "she didn't mind"
+ },
+ "igual": {
+  "es": "le dio igual",
+  "en": "she didn't mind"
+ },
+ "acercó": {
+  "es": "acercó la silla",
+  "en": "she pulled her chair closer"
+ },
+ "estaba": {
+  "es": "ya estaba un poco menos de fuera",
+  "en": "she was already a little less of an outsider"
+ },
+ "poco": {
+  "es": "un poco menos de fuera",
+  "en": "a little less of an outsider"
+ },
+ "menos": {
+  "es": "un poco menos de fuera",
+  "en": "a little less of an outsider"
+ },
+ "fuera": {
+  "es": "un poco menos de fuera",
+  "en": "a little less of an outsider"
+ },
+ "recoger": {
+  "es": "mientras recogían la fuente",
+  "en": "while they cleared the serving dish"
+ },
+ "de fuera": {
+  "es": "un poco menos de fuera",
+  "en": "a little less of an outsider"
+ },
+ "sin palabras": {
+  "es": "sin palabras",
+  "en": "without words"
+ },
+ "por una vez": {
+  "es": "por una vez",
+  "en": "for once"
+ }
+}
