@@ -1,7 +1,7 @@
 {
   "cmt5x67ze000l320cpgunu5vi#deals-and-estimates": {
-    "cerrado": "2026-09-10T22:41:55.064Z",
-    "hash": "d38034ac1778a494",
+    "cerrado": "2026-09-10T23:33:01.468Z",
+    "hash": "fb70599e83fe61ae",
     "historias": [
       "deals-and-estimates#1 el-tejado-a-la-mitad",
       "deals-and-estimates#2 la-rebaja-en-mano",
@@ -13,7 +13,7 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"dice\" 22%)",
-      "arranques de parrafo variados (mas repetido \"dos\", 6%)",
+      "arranques de parrafo variados (mas repetido \"celia\", 13%)",
       "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
@@ -64,8 +64,8 @@
     }
   },
   "cmt5x67ze000l320cpgunu5vi#jobs-and-wages": {
-    "cerrado": "2026-09-10T22:33:42.468Z",
-    "hash": "b9849db130190803",
+    "cerrado": "2026-09-10T23:30:22.624Z",
+    "hash": "64887f4eee99c36d",
     "historias": [
       "jobs-and-wages#1 el-precio-que-existe",
       "jobs-and-wages#2 cobro-tarde-y-pago-pronto",
@@ -128,8 +128,8 @@
     }
   },
   "cmt5x67ze000l320cpgunu5vi#meetings-and-deadlines": {
-    "cerrado": "2026-09-10T22:34:41.706Z",
-    "hash": "d0fdc7a491006ed7",
+    "cerrado": "2026-09-10T23:31:24.498Z",
+    "hash": "30ca67542baddd50",
     "historias": [
       "meetings-and-deadlines#1 la-reunion-de-un-punto",
       "meetings-and-deadlines#2 la-ventana-del-rellano",
@@ -320,8 +320,8 @@
     }
   },
   "cmt5x67ze000l320cpgunu5vi#sayings-and-nicknames": {
-    "cerrado": "2026-09-10T22:40:20.977Z",
-    "hash": "6232d8624d5b0737",
+    "cerrado": "2026-09-10T23:32:15.490Z",
+    "hash": "bfd9eb4da41fd92a",
     "historias": [
       "sayings-and-nicknames#1 lo-de-chispa",
       "sayings-and-nicknames#2 un-favor-sin-pedir",
@@ -384,8 +384,8 @@
     }
   },
   "cmt5x67ze000l320cpgunu5vi#trust-and-rumours": {
-    "cerrado": "2026-09-10T22:42:52.822Z",
-    "hash": "19f0fc1c734734fc",
+    "cerrado": "2026-09-10T23:33:48.322Z",
+    "hash": "442dd87b9b7a07c5",
     "historias": [
       "trust-and-rumours#1 palabra-por-palabra",
       "trust-and-rumours#2 la-voz-mas-rapida",
@@ -396,7 +396,7 @@
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"pregunta\" 25%)",
+      "acotacion dominante bajo tope (\"pregunta\" 27%)",
       "arranques de parrafo variados (mas repetido \"sole\", 13%)",
       "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
