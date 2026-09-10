@@ -1,310 +1,52 @@
 {
- "una-agenda-de-desconocida": {
-  "mejor": {
-   "es": "su mejor amiga de vitoria",
-   "en": "",
-   "antes": "la mejor amiga = the best friend"
-  },
-  "amiga": {
-   "es": "su mejor amiga de vitoria",
-   "en": "",
-   "antes": "la mejor amiga = the best friend"
-  },
-  "vitoria": {
-   "es": "su mejor amiga de vitoria",
-   "en": "",
-   "antes": "la mejor amiga que vitoria mandaba a cádiz = the best friend Vitoria was sending to Cádiz"
-  },
-  "comité": {
-   "es": "claudia era el comité de bienvenida",
-   "en": "",
-   "antes": "claudia era ese día comité de bienvenida = that day Claudia was the welcome committee"
-  },
-  "bienvenida": {
-   "es": "claudia era el comité de bienvenida",
-   "en": "",
-   "antes": "el paseo de bienvenida = the welcome walk"
-  },
-  "que": {
-   "es": "que olía a tren",
-   "en": "",
-   "antes": "la mejor amiga que vitoria mandaba a cádiz = the best friend Vitoria was sending to Cádiz"
-  },
-  "a": {
-   "es": "una agenda de desconocida",
-   "en": "",
-   "antes": "la mejor amiga que vitoria mandaba a cádiz = the best friend Vitoria was sending to Cádiz"
-  },
-  "pidió": {
-   "es": "claudia pidió sin abrir la boca",
-   "en": "",
-   "antes": "claudia pidió dos cafés sin abrir la boca = Claudia ordered two coffees without opening her mouth"
-  },
-  "sacó": {
-   "es": "paula sacó un paquete con",
-   "en": "",
-   "antes": "paula sacó un paquete del bolso = Paula took a package out of her bag"
-  },
-  "paquete": {
-   "es": "sacó un paquete con el",
-   "en": "",
-   "antes": "paula sacó un paquete del bolso = Paula took a package out of her bag"
-  },
-  "dijo": {
-   "es": "dijo",
-   "en": "",
-   "antes": "dijo, y explicó que pesaba más = she said, and explained it weighed more"
-  },
-  "hojeó": {
-   "es": "lo hojeó como se hojea",
-   "en": "",
-   "antes": "claudia lo hojeó = Claudia leafed through it"
-  },
-  "ahí": {
-   "es": "ahí ya no le cabría nada",
-   "en": "",
-   "antes": "y ahí ya no le cabría nada = and nothing more would fit in there"
-  },
-  "ya": {
-   "es": "ahí ya no le cabría nada",
-   "en": "",
-   "antes": "ya van seis meses = six months already"
-  },
-  "no": {
-   "es": "una agenda de desconocida",
-   "en": "",
-   "antes": "no era peor = was not worse"
-  },
-  "le": {
-   "es": "un paquete con el calendario",
-   "en": "",
-   "antes": "y ahí ya no le cabría nada = and nothing more would fit in there"
-  },
-  "cabría": {
-   "es": "ahí ya no le cabría nada",
-   "en": "",
-   "antes": "y ahí ya no le cabría nada = and nothing more would fit in there"
-  },
-  "nada": {
-   "es": "ahí ya no le cabría nada",
-   "en": "",
-   "antes": "y ahí ya no le cabría nada = and nothing more would fit in there"
-  },
-  "decidió": {
-   "es": "decidió",
-   "en": "",
-   "antes": "decidió, y paula lo guardó riéndose = she decided, and Paula put it away laughing"
-  },
-  "y": {
-   "es": "ahí ya no le cabría nada",
-   "en": "",
-   "antes": "y ya van seis meses = and it's been six months now"
-  },
-  "avisó": {
-   "es": "avisó claudia",
-   "en": "",
-   "antes": "le avisó claudia = Claudia warned her"
-  },
-  "sin abrir la boca": {
-   "es": "claudia pidió sin abrir la boca",
-   "en": "",
-   "antes": "claudia pidió dos cafés sin abrir la boca = Claudia ordered two coffees without opening her mouth"
-  }
- },
  "amanece-con-poniente": {
-  "informó": {
-   "es": "informó marcos",
+  "cargó": {
+   "es": "marcos cargó a claudia y",
    "en": "",
-   "antes": "le informó marcos = Marcos informed her"
+   "antes": "que cargó una caja en los brazos = who took a box in her arms"
   },
-  "local": {
-   "es": "el local se quedó vacío",
-   "en": "",
-   "antes": "el local se quedó sin sillas = the bar was left without chairs"
-  },
-  "se": {
-   "es": "el local se quedó vacío",
-   "en": "",
-   "antes": "el local se quedó sin sillas = the bar was left without chairs"
-  },
-  "quedó": {
-   "es": "el local se quedó vacío",
-   "en": "",
-   "antes": "el local se quedó sin sillas = the bar was left without chairs"
-  },
-  "vacío": {
-   "es": "el local se quedó vacío",
+  "cajas": {
+   "es": "con cajas en los brazos",
    "en": ""
   },
-  "ofreció": {
-   "es": "ofreció marcos",
+  "que": {
+   "es": "en esta casa el que mira",
    "en": "",
-   "antes": "ofreció marcos delante del candado = Marcos offered in front of the padlock"
+   "antes": "que cargó una caja en los brazos = who took a box in her arms"
   },
-  "lo": {
-   "es": "caja en los brazos al",
-   "en": "",
-   "antes": "claudia lo cerró despacio = Claudia closed it slowly"
-  },
-  "cerró": {
-   "es": "lo cerró despacio",
-   "en": "",
-   "antes": "claudia lo cerró despacio = Claudia closed it slowly"
-  },
-  "despacio": {
-   "es": "lo cerró despacio",
-   "en": "",
-   "antes": "claudia lo cerró despacio = Claudia closed it slowly"
+  "apretó": {
+   "es": "claudia lo apretó",
+   "en": ""
   },
   "broma": {
    "es": "a bromas con eco en",
    "en": "",
-   "antes": "la broma de entonces = the joke from back then"
+   "antes": "la broma volvía como regalo, ya curada = the joke came back as a gift, healed now"
   },
   "volvía": {
    "es": "la broma volvía como regalo",
    "en": "",
-   "antes": "la broma de entonces volvía como regalo = the old joke came back as a gift"
+   "antes": "la broma volvía como regalo, ya curada = the joke came back as a gift, healed now"
   },
   "regalo": {
    "es": "la broma volvía como regalo",
    "en": "",
-   "antes": "la broma de entonces volvía como regalo = the old joke came back as a gift"
-  },
-  "ya": {
-   "es": "ya curada",
-   "en": "",
-   "antes": "con la herida ya curada = with the wound now healed"
+   "antes": "la broma volvía como regalo, ya curada = the joke came back as a gift, healed now"
   },
   "curada": {
-   "es": "ya curada",
+   "es": "curada",
    "en": "",
-   "antes": "la herida ya curada = the wound now healed"
-  },
-  "contestó": {
-   "es": "contestó claudia ante el camión",
-   "en": "",
-   "antes": "contestó claudia ante el camión lleno = Claudia answered, facing the full truck"
-  },
-  "ante": {
-   "es": "contestó claudia ante el camión",
-   "en": "",
-   "antes": "contestó claudia ante el camión lleno = Claudia answered, facing the full truck"
-  },
-  "camión": {
-   "es": "contestó claudia ante el camión",
-   "en": "",
-   "antes": "el camión lleno = the full lorry"
-  },
-  "decir": {
-   "es": "no hacía falta decir adiós",
-   "en": ""
-  },
-  "adiós": {
-   "es": "no hacía falta decir adiós",
-   "en": "",
-   "antes": "nadie dijo adiós al local viejo = nobody said goodbye to the old bar"
-  },
-  "nadie": {
-   "es": "nadie se quedaba atrás",
-   "en": "",
-   "antes": "nadie dijo adiós al local viejo = nobody said goodbye to the old bar"
-  },
-  "quedaba": {
-   "es": "nadie se quedaba atrás",
-   "en": "",
-   "antes": "porque nadie se quedaba atrás = because nobody was being left behind"
-  },
-  "atrás": {
-   "es": "nadie se quedaba atrás",
-   "en": "",
-   "antes": "porque nadie se quedaba atrás = because nobody was being left behind"
-  },
-  "informar": {
-   "es": "informó marcos",
-   "en": "",
-   "antes": "le informó marcos = Marcos informed her"
+   "antes": "la broma volvía como regalo, ya curada = the joke came back as a gift, healed now"
   },
   "curar": {
-   "es": "ya curada",
+   "es": "curada",
    "en": "",
-   "antes": "con la herida ya curada = with the wound already healed"
+   "antes": "la broma volvía como regalo, ya curada = the joke came back as a gift, healed now"
   },
-  "quedarse atrás": {
-   "es": "nadie se quedaba atrás",
+  "en los brazos": {
+   "es": "con cajas en los brazos",
    "en": "",
-   "antes": "porque nadie se quedaba atrás = because nobody was being left behind"
-  }
- },
- "me-lo-he-ganado": {
-  "biblioteca": {
-   "es": "la biblioteca ya estaba en",
-   "en": "",
-   "antes": "con la biblioteca ya en su pared = with the library already on its wall"
-  },
-  "ya": {
-   "es": "la biblioteca ya estaba en",
-   "en": "",
-   "antes": "ya en su pared = already on its wall"
-  },
-  "estaba": {
-   "es": "biblioteca ya estaba en su",
-   "en": ""
-  },
-  "pared": {
-   "es": "ya estaba en su pared",
-   "en": "",
-   "antes": "ya en su pared = already on its wall"
-  },
-  "colgó": {
-   "es": "marcos colgó el candado viejo",
-   "en": "",
-   "antes": "decidió marcos, y lo colgó con dos clavos = Marcos decided, and hung it with two nails"
-  },
-  "se": {
-   "es": "con los vasos servidos",
-   "en": "",
-   "antes": "donde se vea = where it can be seen"
-  },
-  "desde": {
-   "es": "desde el primer verso",
-   "en": "",
-   "antes": "desde la barra = from the counter"
-  },
-  "retrataba": {
-   "es": "la copla la retrataba",
-   "en": "",
-   "antes": "el primer verso ya la retrataba = the first line already portrayed her"
-  },
-  "contestó": {
-   "es": "contestó marcos",
-   "en": "",
-   "antes": "contestó marcos desde la silla = Marcos answered from the chair"
-  },
-  "vez": {
-   "es": "esta vez no apuntó nada",
-   "en": "",
-   "antes": "esta vez claudia no apuntó nada = this time Claudia wrote nothing down"
-  },
-  "apuntó": {
-   "es": "esta vez no apuntó nada",
-   "en": "",
-   "antes": "esta vez claudia no apuntó nada = this time Claudia wrote nothing down"
-  },
-  "clavo": {
-   "es": "candado viejo con dos clavos",
-   "en": "",
-   "antes": "decidió marcos, y lo colgó con dos clavos = Marcos decided, and hung it with two nails"
-  },
-  "esta vez": {
-   "es": "esta vez no apuntó nada",
-   "en": "",
-   "antes": "esta vez claudia no apuntó nada = this time Claudia wrote nothing down"
-  },
-  "retratar": {
-   "es": "la copla la retrataba",
-   "en": "",
-   "antes": "el primer verso ya la retrataba = the first line already portrayed her"
+   "antes": "una caja en los brazos = a box in her arms"
   }
  }
 }

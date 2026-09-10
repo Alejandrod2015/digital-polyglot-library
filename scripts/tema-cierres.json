@@ -889,8 +889,8 @@
     }
   },
   "cmtplpfum0007j8c6piegwt31#books-and-bookshops": {
-    "cerrado": "2026-09-10T23:13:33.810Z",
-    "hash": "4b6ea273423e4301",
+    "cerrado": "2026-09-10T23:33:34.178Z",
+    "hash": "abf9558e388cc277",
     "historias": [
       "books-and-bookshops#1 vuelva-cuando-quiera",
       "books-and-bookshops#2 el-tomo-aparte",
@@ -1021,8 +1021,8 @@
     }
   },
   "cmtplpfum0007j8c6piegwt31#locals-and-outsiders": {
-    "cerrado": "2026-09-10T22:36:02.596Z",
-    "hash": "576953dd92417c79",
+    "cerrado": "2026-09-10T23:32:47.409Z",
+    "hash": "be510c3b3369985b",
     "historias": [
       "locals-and-outsiders#1 el-cafe-lo-pones-tu",
       "locals-and-outsiders#2 la-bolsa-como-prueba",
@@ -1153,8 +1153,8 @@
     }
   },
   "cmtplpfum0007j8c6piegwt31#rounds-and-regulars": {
-    "cerrado": "2026-09-10T22:42:14.108Z",
-    "hash": "b56bf22dda682e70",
+    "cerrado": "2026-09-10T23:33:02.676Z",
+    "hash": "5287897e1e5563b4",
     "historias": [
       "rounds-and-regulars#1 apuntame-la-de-manana",
       "rounds-and-regulars#2 la-cana-de-marcos",
@@ -1166,7 +1166,7 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"contestó\" 31%)",
-      "arranques de parrafo variados (mas repetido \"pablo\", 7%)",
+      "arranques de parrafo variados (mas repetido \"claudia\", 14%)",
       "banda gramatical b2 dentro: subj. imperfecto 5 · condicional 3 · estilo indirecto 3",
       "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
@@ -1219,8 +1219,8 @@
     }
   },
   "cmtplpfum0007j8c6piegwt31#visits-and-old-friends": {
-    "cerrado": "2026-09-10T23:15:24.140Z",
-    "hash": "624679f5aa885f1e",
+    "cerrado": "2026-09-10T23:33:49.942Z",
+    "hash": "7c2473cc0128817b",
     "historias": [
       "visits-and-old-friends#1 una-agenda-de-desconocida",
       "visits-and-old-friends#2 amanece-con-poniente",
@@ -1285,8 +1285,8 @@
     }
   },
   "cmtplpfum0007j8c6piegwt31#wind-and-plans": {
-    "cerrado": "2026-09-10T23:04:53.896Z",
-    "hash": "c9b7badbb3742e9c",
+    "cerrado": "2026-09-10T23:33:18.464Z",
+    "hash": "f862880532b293d0",
     "historias": [
       "wind-and-plans#1 el-levante-del-jueves",
       "wind-and-plans#2 azotea-y-paciencia",

@@ -1,357 +1,57 @@
 {
  "apuntame-la-de-manana": {
-  "mañana": {
-   "es": "apúntame la de mañana",
+  "confirmó": {
+   "es": "confirmó",
    "en": "",
-   "antes": "cada mañana = every morning"
+   "antes": "confirmó, como quien firma = she confirmed, like someone signing"
   },
-  "nunca": {
-   "es": "había preguntado nunca qué querían",
-   "en": "",
-   "antes": "que no me lo cambies nunca = never change it on me"
-  },
-  "olía": {
-   "es": "olía a churros y quedaba",
+  "casi": {
+   "es": "casi una firma",
    "en": ""
   },
-  "churros": {
-   "es": "olía a churros y quedaba",
+  "firma": {
+   "es": "casi una firma",
    "en": "",
-   "antes": "había olor a churros = there was a smell of churros"
+   "antes": "como quien firma = like someone signing"
   },
-  "y": {
-   "es": "lo suyo llegaba solo",
+  "firmar": {
+   "es": "casi una firma",
    "en": "",
-   "antes": "y su barra = and his counter"
-  },
-  "quedaba": {
-   "es": "churros y quedaba un sitio",
-   "en": "",
-   "antes": "quedaba un sitio libre en la barra = there was a free spot at the counter"
-  },
-  "sitio": {
-   "es": "y quedaba un sitio libre",
-   "en": "",
-   "antes": "un sitio libre en la barra = a free seat at the counter"
-  },
-  "o": {
-   "es": "pablo era el camarero de abajo",
-   "en": "",
-   "antes": "o es que hoy tampoco = or is it that today still not"
-  },
-  "que": {
-   "es": "había preguntado nunca qué querían",
-   "en": "",
-   "antes": "que piensa volver = that they mean to come back"
-  },
-  "su": {
-   "es": "lo suyo llegaba solo",
-   "en": "",
-   "antes": "su barra = his counter"
-  },
-  "café": {
-   "es": "daba su café por sabido",
-   "en": "",
-   "antes": "pedía su café cada mañana = ordered her coffee every morning"
-  },
-  "no": {
-   "es": "y no me lo cambies nunca",
-   "en": "",
-   "antes": "que no me lo cambies = do not change it on me"
-  },
-  "me": {
-   "es": "apúntame la de mañana",
-   "en": "",
-   "antes": "que no me lo cambies = do not change it on me"
-  },
-  "cambies": {
-   "es": "y no me lo cambies nunca",
-   "en": "",
-   "antes": "que no me lo cambies nunca = never change it on me"
-  },
-  "vuelve": {
-   "es": "así sabemos que vuelve",
-   "en": ""
-  },
-  "discutían": {
-   "es": "dos fijos discutían un asunto",
-   "en": "",
-   "antes": "dos fijos discutían un asunto viejo = two regulars argued over an old matter"
-  },
-  "asunto": {
-   "es": "dos fijos discutían un asunto",
-   "en": "",
-   "antes": "dos fijos discutían un asunto viejo = two regulars argued over an old matter"
-  },
-  "discutir": {
-   "es": "dos fijos discutían un asunto",
-   "en": "",
-   "antes": "dos fijos discutían un asunto viejo = two regulars argued over an old matter"
+   "antes": "como quien firma = like someone signing"
   }
  },
  "la-cana-de-marcos": {
-  "de": {
-   "es": "la caña de marcos",
-   "en": "",
-   "antes": "a los de la casa = the house people"
-  },
   "cuando": {
-   "es": "cuando sacó el monedero",
+   "es": "cuando claudia sacó el monedero",
    "en": "",
-   "antes": "cuando claudia sacó el monedero = when Claudia took out her purse"
+   "antes": "cuando sacó el monedero = when she took out her purse"
   },
   "sacó": {
-   "es": "cuando sacó el monedero",
+   "es": "cuando claudia sacó el monedero",
    "en": "",
-   "antes": "cuando claudia sacó el monedero = when Claudia took out her purse"
+   "antes": "cuando sacó el monedero = when she took out her purse"
   },
   "monedero": {
-   "es": "cuando sacó el monedero",
+   "es": "cuando claudia sacó el monedero",
    "en": "",
-   "antes": "cuando claudia sacó el monedero = when Claudia took out her purse"
-  },
-  "señaló": {
-   "es": "pablo señaló la pizarra",
-   "en": "",
-   "antes": "pablo señaló la pizarra del fondo = Pablo pointed at the board at the back"
-  },
-  "pizarra": {
-   "es": "pablo señaló la pizarra",
-   "en": "",
-   "antes": "pablo señaló la pizarra del fondo = Pablo pointed at the board at the back"
-  },
-  "aquí": {
-   "es": "aquí se apunta y se",
-   "en": "",
-   "antes": "aquí a los de la casa = here, for the regulars"
-  },
-  "se": {
-   "es": "pablo señaló la pizarra",
-   "en": "",
-   "antes": "se les apunta = it goes on the slate"
-  },
-  "apunta": {
-   "es": "aquí se apunta y se",
-   "en": "",
-   "antes": "se les apunta = it goes on the slate"
-  },
-  "a": {
-   "es": "la caña de marcos",
-   "en": "",
-   "antes": "a los de la casa = the house people"
-  },
-  "guardaba": {
-   "es": "la pizarra guardaba nombres",
-   "en": "",
-   "antes": "la pizarra guardaba nombres y números = the board held names and numbers"
-  },
-  "nombres": {
-   "es": "la pizarra guardaba nombres",
-   "en": "",
-   "antes": "la pizarra guardaba nombres y números = the board held names and numbers"
-  },
-  "aquellas": {
-   "es": "aquellas rayas",
-   "en": ""
-  },
-  "rayas": {
-   "es": "aquellas rayas",
-   "en": "",
-   "antes": "las rayas de tiza guardan confianza = the chalk marks hold trust"
-  },
-  "como": {
-   "es": "como las coplas",
-   "en": "",
-   "antes": "como las coplas guardan memoria = as the songs hold memory"
-  },
-  "coplas": {
-   "es": "como las coplas",
-   "en": "",
-   "antes": "las coplas guardan memoria = the songs hold memory"
-  },
-  "guardaban": {
-   "es": "guardaban algo",
-   "en": ""
-  },
-  "algo": {
-   "es": "guardaban algo",
-   "en": "",
-   "antes": "cayó en algo = something dawned on her"
-  },
-  "su": {
-   "es": "su norma de no deber",
-   "en": "",
-   "antes": "su norma de no deber nada = her rule of owing nothing"
-  },
-  "norma": {
-   "es": "su norma de no deber",
-   "en": "",
-   "antes": "su norma de no deber nada = her rule of owing nothing"
-  },
-  "quedó": {
-   "es": "no deber se quedó vieja",
-   "en": "",
-   "antes": "se quedó vieja de repente = suddenly felt old"
-  },
-  "vieja": {
-   "es": "no deber se quedó vieja",
-   "en": "",
-   "antes": "se quedó vieja de repente = suddenly felt old"
-  },
-  "apuntó": {
-   "es": "pablo la apuntó con una",
-   "en": ""
-  },
-  "señalar": {
-   "es": "pablo señaló la pizarra",
-   "en": "",
-   "antes": "pablo señaló la pizarra del fondo = Pablo pointed at the board at the back"
+   "antes": "cuando sacó el monedero = when she took out her purse"
   }
  },
  "la-cuenta-perdida": {
-  "perdida": {
-   "es": "la cuenta perdida",
-   "en": "",
-   "antes": "la cuenta perdida es la casa = the lost tab is home"
-  },
-  "y": {
-   "es": "claudia y marcos bajaron de",
-   "en": "",
-   "antes": "y nadie preguntó = and nobody asked"
-  },
-  "con": {
-   "es": "con olor a polvo",
-   "en": "",
-   "antes": "con la peña = with the club"
-  },
-  "olor": {
-   "es": "con olor a polvo",
-   "en": "",
-   "antes": "con olor a polvo de estanterías = smelling of shelf dust"
-  },
-  "polvo": {
-   "es": "con olor a polvo",
-   "en": "",
-   "antes": "con olor a polvo de estanterías = smelling of shelf dust"
-  },
-  "puso": {
-   "es": "pablo puso una tapa de",
-   "en": "",
-   "antes": "pablo puso vasos fríos = Pablo set out cold glasses"
-  },
-  "sin": {
-   "es": "de aceitunas sin que nadie",
-   "en": "",
-   "antes": "sin que nadie los pidiera = without anyone ordering them"
-  },
-  "que": {
-   "es": "aceitunas sin que nadie la",
-   "en": "",
-   "antes": "sin que nadie los pidiera = without anyone ordering them"
-  },
-  "pidiera": {
-   "es": "sin que nadie la pidiera",
-   "en": "",
-   "antes": "sin que nadie los pidiera = without anyone ordering them"
-  },
-  "nombre": {
-   "es": "estas las manda alguien sin nombre",
-   "en": "",
-   "antes": "que no quiere nombre = who wants no name"
-  },
-  "ni": {
-   "es": "ni preguntes",
-   "en": "",
-   "antes": "así que ni preguntes = so do not even ask"
-  },
-  "preguntes": {
-   "es": "ni preguntes",
-   "en": "",
-   "antes": "así que ni preguntes = so do not even ask"
-  },
-  "preguntó": {
-   "es": "preguntó con la mirada",
-   "en": "",
-   "antes": "y nadie preguntó = and nobody asked"
-  },
-  "lo": {
-   "es": "con olor a polvo",
-   "en": "",
-   "antes": "claudia se lo comentó a marcos = Claudia mentioned it to Marcos"
-  },
-  "comentó": {
-   "es": "se lo comentó a marcos",
-   "en": "",
-   "antes": "claudia se lo comentó a marcos = Claudia mentioned it to Marcos"
-  },
-  "pagué": {
-   "es": "el primer día pagué para entrar",
-   "en": "",
-   "antes": "pagué la ronda para entrar = I paid the round to get in"
-  },
-  "hoy": {
-   "es": "hoy no sé a quién",
-   "en": "",
-   "antes": "hoy ni sé = today I do not even know"
-  },
-  "no": {
-   "es": "estas las manda alguien sin nombre",
-   "en": "",
-   "antes": "que no quiere nombre = who wants no name"
-  },
-  "sé": {
-   "es": "hoy no sé a quién",
-   "en": "",
-   "antes": "ni sé a quién le debo = I do not even know who I owe"
-  },
-  "debo": {
-   "es": "a quién debo el café",
-   "en": "",
-   "antes": "a quién le debo el café = who I owe the coffee to"
-  },
-  "café": {
-   "es": "a quién debo el café",
-   "en": "",
-   "antes": "le debo el café = I owe the coffee"
-  },
-  "contestó": {
-   "es": "contestó él",
-   "en": "",
-   "antes": "contestó marcos = Marcos replied"
-  },
-  "él": {
-   "es": "contestó él",
-   "en": ""
-  },
-  "milagros": {
-   "es": "los milagros son cosa de",
-   "en": "",
-   "antes": "los milagros aquí son cosa de la casa = miracles here are the house's business"
-  },
-  "casa": {
-   "es": "son cosa de la casa",
-   "en": "",
-   "antes": "la cuenta perdida es la casa = the lost tab is home"
-  },
   "le": {
-   "es": "marcos le guiñó un ojo",
+   "es": "marcos le guiñó desde la",
    "en": "",
-   "antes": "a quién le debo el café = who I owe the coffee to"
+   "antes": "marcos le guiñó un ojo = Marcos winked at her"
   },
-  "alzó": {
-   "es": "alzó su vaso",
+  "guiñó": {
+   "es": "marcos le guiñó desde la",
    "en": "",
-   "antes": "claudia alzó su vaso = Claudia raised her glass"
+   "antes": "marcos le guiñó un ojo = Marcos winked at her"
   },
-  "cerró": {
-   "es": "viernes se cerró como una",
+  "guiñar": {
+   "es": "marcos le guiñó desde la",
    "en": "",
-   "antes": "el viernes se cerró solo = Friday closed by itself"
-  },
-  "alzar": {
-   "es": "alzó su vaso",
-   "en": "",
-   "antes": "claudia alzó su vaso = Claudia raised her glass"
+   "antes": "marcos le guiñó un ojo = Marcos winked at her"
   }
  }
 }

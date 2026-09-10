@@ -15,7 +15,7 @@ SETS = {
   ("F", "aburrió", "No había nada que hacer en la sala y se _____.", ["peinó", "mojó", "duchó"],
    "There was nothing to do in the room, and she _____.",["got bored", "combed her hair", "got wet", "showered"]),
   ("C", "despacio", "Tapó el bolígrafo y respondió [[despacio]].", "slowly", "loudly", "rudely", "briefly"),
-  ("C", "trámite", "Pidió las llaves como quien despacha un [[trámite]].", "formality", "favour", "complaint", "bargain"),
+  ("C", "trámite", "Pidió las llaves en tono de [[trámite]].", "formality", "favour", "complaint", "bargain"),
   ("F", "tapa", "Siempre _____ el bolígrafo para que no se seque.", ["pinta", "dobla", "rompe"],
    "She always _____ the pen so that it doesn't dry out.", ["caps", "paints", "folds", "breaks"]),
   ("C", "quedarse", "La barra preguntaba cuánto [[se quedaba]] y si se aburría.", "to stay", "to rest", "to wait", "to hide"),

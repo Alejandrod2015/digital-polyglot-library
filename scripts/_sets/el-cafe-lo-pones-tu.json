@@ -272,7 +272,7 @@
  {
   "type": "meaning_in_context",
   "word": "trámite",
-  "sentence": "Pidió las llaves como quien despacha un [[trámite]].",
+  "sentence": "Pidió las llaves en tono de [[trámite]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "formality",
@@ -285,7 +285,7 @@
    "audioClip": {
     "storySlug": "el-cafe-lo-pones-tu",
     "storySource": "user",
-    "sentence": "Pidió las llaves como quien despacha un trámite.",
+    "sentence": "Pidió las llaves en tono de trámite.",
     "targetWord": "trámite",
     "language": "spanish"
    }

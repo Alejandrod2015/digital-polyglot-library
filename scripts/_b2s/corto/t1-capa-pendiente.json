@@ -1,1 +1,17 @@
-{}
+{
+ "el-cafe-lo-pones-tu": {
+  "tono": {
+   "es": "en tono de trámite",
+   "en": ""
+  },
+  "trámite": {
+   "es": "en tono de trámite",
+   "en": "",
+   "antes": "como quien despacha un trámite = like someone ticking off a formality"
+  },
+  "tiempo": {
+   "es": "un tiempo",
+   "en": ""
+  }
+ }
+}
