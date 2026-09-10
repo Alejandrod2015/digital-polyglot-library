@@ -74,7 +74,9 @@ function unaLinea(s: string, tope = 200): string {
  * `none` es un hueco conocido que hoy no comprueba nadie.
  */
 export function gateDeEnforcement(texto: string, idsCheck: Set<string>): string {
-  const rutas = [...texto.matchAll(/(?<![A-Za-z0-9_/.-])((?:scripts|src\/lib)\/[A-Za-z0-9_/-]+\.ts)/g)]
+  // `.sh` tambien: vercel-ignore-build.sh es un gate real (lo ejecuta Vercel en
+  // cada build) y, sin esto, su regla salia como `none`.
+  const rutas = [...texto.matchAll(/(?<![A-Za-z0-9_/.-])((?:scripts|src\/lib)\/[A-Za-z0-9_/-]+\.(?:ts|sh))/g)]
     .map((m) => m[1])
     .filter((r) => fs.existsSync(path.join(REPO, r)));
   if (rutas.length) return rutas[0];

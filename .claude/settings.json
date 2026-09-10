@@ -74,6 +74,10 @@
           {
             "type": "command",
             "command": ".claude/safety/stop-word-budget-guard.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/safety/stop-ig-handle-link-guard.sh"
           }
         ]
       }
