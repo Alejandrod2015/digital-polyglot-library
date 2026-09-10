@@ -335,22 +335,17 @@ function getParagraphs(text: string): string[] {
 // "les pièces sont froides"). Un idioma que el detector no conoce da CERO
 // categorías, que no es lo mismo que no tener ancla.
 const SENSE_CATEGORIES_SHARED: Record<string, RegExp> = {
-    // Frontera de palabra UNICODE (2026-09-10). Con \b y sin la bandera u, JS
-    // trata la "o" con tilde como no-letra, asi que "escuchó", "oyó" o
-    // "brilló" no casaban NUNCA aunque estaban en la lista: toda historia en
-    // preterito perdia su ancla sensorial. Es el defecto que ya se arreglo en
-    // la sonda; aqui seguia vivo.
     // Las formas de PASADO estaban fuera: el detector solo conocía el presente
     // ("ouve", "cheira", "brilha"), así que una historia narrada en pretérito
     // daba CERO categorías y fallaba entera. Detectado el 2026-08-19 al pasar a
     // pretérito las siete historias que cierran cada tema del A1 brasileño:
     // "ouviu uma vareta partir" es una ancla de sonido perfectamente válida.
-    smell: /(?<!\p{L})(olor|aroma|perfume|huele|huelen|olía|olor[eo]s|olfato|cheiro|cheira|cheirou|cheirava|perfum[eo]|Geruch|riecht|Duft|odore|profumo|odeur|odeurs|parfum|sent|sentait|senteur)(?!\p{L})/iu,
-    light: /(?<!\p{L})(luz|luces|iluminac|brilla|brilló|brillan|sombra|sombras|claroscuro|oscur[oa]|deslumbra|luzes|brilha|brilhou|brilhava|brilhante|escureceu|sombras?|escur[oa]|Licht|Schatten|dunkel|luce|luci|ombra|buio|lumière|lumières|brille|brillait|ombre|ombres|sombre|obscur|éclaire|éclairé)(?!\p{L})/iu,
-    sound: /(?<!\p{L})(sonido|sonidos|ruido|ruidos|silencio|suena|sonaba|sonaron|tronaba|trueno|ladrido|grito|murmullo|silbido|escuch[oóa]|oye|oyó|som|sons|barulho|silêncio|silencio|soa|soou|grita|gritou|assobia|assobiou|escuta|escutou|ouve|ouviu|ouvia|Geräusch|Lärm|Stille|hört|klingt|suono|rumore|silenzio|sente|bruit|bruits|silence|sonne|sonnait|entend|entendait|crie|cria|murmure|écoute|écoutait)(?!\p{L})/iu,
-    temperature: /(?<!\p{L})(frío|fría|frio|caliente|calor|cálid[oa]|fresca|fresco|helad[oa]|hierve|tibi[oa]|gélid[oa]|templad[oa]|fria|quente|gelad[oa]|morn[oa]|esquentou|esfriou|kalt|warm|heiß|kühl|freddo|fredda|caldo|calda|tiepid[oa]|froid|froide|froides|chaud|chaude|chaleur|tiède|glacé|glacée|frais|fraîche)(?!\p{L})/iu,
-    touch: /(?<!\p{L})(suave|áspero|aspero|rugoso|liso|húmedo|humedo|seco|seca|blando|duro|firme|pegajos[oa]|molhad[oa]|áspera|macio|liso|úmid[oa]|firme|vento|weich|rau|trocken|feucht|morbido|ruvido|bagnato|asciutto|doux|douce|rugueux|lisse|mouillé|mouillée|humide|trempé|trempée|rêche)(?!\p{L})/iu,
-    taste: /(?<!\p{L})(dulce|amargo|salado|ácido|acido|picante|sabor|saborea|gusta\s+a|doce|amarg[oa]|salgad[oa]|gosto|süß|bitter|salzig|Geschmack|dolce|amaro|salato|sapore|sucré|amer|amère|salé|salée|goût|saveur|épicé)(?!\p{L})/iu,
+    smell: /\b(olor|aroma|perfume|huele|huelen|olía|olor[eo]s|olfato|cheiro|cheira|cheirou|cheirava|perfum[eo]|Geruch|riecht|Duft|odore|profumo|odeur|odeurs|parfum|sent|sentait|senteur)\b/i,
+    light: /\b(luz|luces|iluminac|brilla|brilló|brillan|sombra|sombras|claroscuro|oscur[oa]|deslumbra|luzes|brilha|brilhou|brilhava|brilhante|escureceu|sombras?|escur[oa]|Licht|Schatten|dunkel|luce|luci|ombra|buio|lumière|lumières|brille|brillait|ombre|ombres|sombre|obscur|éclaire|éclairé)\b/i,
+    sound: /\b(sonido|sonidos|ruido|ruidos|silencio|suena|sonaba|sonaron|tronaba|trueno|ladrido|grito|murmullo|silbido|escuch[oóa]|oye|oyó|som|sons|barulho|silêncio|silencio|soa|soou|grita|gritou|assobia|assobiou|escuta|escutou|ouve|ouviu|ouvia|Geräusch|Lärm|Stille|hört|klingt|suono|rumore|silenzio|sente|bruit|bruits|silence|sonne|sonnait|entend|entendait|crie|cria|murmure|écoute|écoutait)\b/i,
+    temperature: /\b(frío|fría|frio|caliente|calor|cálid[oa]|fresca|fresco|helad[oa]|hierve|tibi[oa]|gélid[oa]|templad[oa]|fria|quente|gelad[oa]|morn[oa]|esquentou|esfriou|kalt|warm|heiß|kühl|freddo|fredda|caldo|calda|tiepid[oa]|froid|froide|froides|chaud|chaude|chaleur|tiède|glacé|glacée|frais|fraîche)\b/i,
+    touch: /\b(suave|áspero|aspero|rugoso|liso|húmedo|humedo|seco|seca|blando|duro|firme|pegajos[oa]|molhad[oa]|áspera|macio|liso|úmid[oa]|firme|vento|weich|rau|trocken|feucht|morbido|ruvido|bagnato|asciutto|doux|douce|rugueux|lisse|mouillé|mouillée|humide|trempé|trempée|rêche)\b/i,
+    taste: /\b(dulce|amargo|salado|ácido|acido|picante|sabor|saborea|gusta\s+a|doce|amarg[oa]|salgad[oa]|gosto|süß|bitter|salzig|Geschmack|dolce|amaro|salato|sapore|sucré|amer|amère|salé|salée|goût|saveur|épicé)\b/i,
   };
 
 function extractSpeakerNames(text: string): string[] {
