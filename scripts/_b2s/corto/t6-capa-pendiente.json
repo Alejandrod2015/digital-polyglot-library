@@ -1,0 +1,299 @@
+{
+ "vuelva-cuando-quiera": {
+  "y": {
+   "es": "la librera y saludó desde",
+   "en": "",
+   "antes": "y le gustó la pregunta = and she liked the question"
+  },
+  "caja": {
+   "es": "una caja la frenó",
+   "en": "",
+   "antes": "una caja recién llegada = a newly arrived box"
+  },
+  "frenó": {
+   "es": "una caja la frenó",
+   "en": "",
+   "antes": "una caja recién llegada la frenó = a box that had just come in stopped her"
+  },
+  "cara": {
+   "es": "como se reconoce una cara",
+   "en": "",
+   "antes": "una cara en una foto vieja = a face in an old photo"
+  },
+  "salió": {
+   "es": "salió sin la novela",
+   "en": "",
+   "antes": "claudia salió con el primer libro = Claudia left with the first book"
+  },
+  "novela": {
+   "es": "salió sin la novela",
+   "en": "",
+   "antes": "una novela corta = a short novel"
+  },
+  "con": {
+   "es": "contestó claudia",
+   "en": "",
+   "antes": "con prisas = in a hurry"
+  },
+  "libro": {
+   "es": "los libros llevaban un exlibris",
+   "en": "",
+   "antes": "el primer libro de la peña = the club's first book"
+  }
+ },
+ "el-tomo-aparte": {
+  "volvió": {
+   "es": "claudia volvió con marcos y",
+   "en": "",
+   "antes": "claudia volvió con marcos y una propuesta seria = Claudia came back with Marcos and a serious proposal"
+  },
+  "con": {
+   "es": "claudia volvió con marcos y",
+   "en": "",
+   "antes": "con los brazos cruzados = with her arms folded"
+  },
+  "y": {
+   "es": "con marcos y una propuesta",
+   "en": "",
+   "antes": "claudia volvió con marcos y una propuesta seria = Claudia came back with Marcos and a serious proposal"
+  },
+  "propuesta": {
+   "es": "con marcos y una propuesta",
+   "en": "",
+   "antes": "una propuesta seria = a serious proposal"
+  },
+  "escuchó": {
+   "es": "martina escuchó",
+   "en": "",
+   "antes": "martina escuchó con los brazos cruzados = Martina listened with her arms crossed"
+  },
+  "brazos": {
+   "es": "brazos cruzados",
+   "en": "",
+   "antes": "con los brazos cruzados = with her arms folded"
+  },
+  "cruzados": {
+   "es": "brazos cruzados",
+   "en": "",
+   "antes": "con los brazos cruzados = with her arms folded"
+  },
+  "enseñó": {
+   "es": "y enseñó fotos",
+   "en": "",
+   "antes": "y enseñó fotos del hueco = and showed photos of the empty space"
+  },
+  "fotos": {
+   "es": "y enseñó fotos",
+   "en": "",
+   "antes": "y enseñó fotos del hueco = and showed photos of the empty space"
+  },
+  "de": {
+   "es": "repasó con cara de examen",
+   "en": "",
+   "antes": "de caja a caja = from box to box"
+  },
+  "concedió": {
+   "es": "concedió",
+   "en": "",
+   "antes": "concedió al fin = she conceded at last"
+  },
+  "apretón": {
+   "es": "con apretón",
+   "en": "",
+   "antes": "con lista y apretón = with a list and a handshake"
+  },
+  "envueltos": {
+   "es": "envueltos en periódico",
+   "en": "",
+   "antes": "envueltos en papel de periódico = wrapped in newspaper"
+  },
+  "periódico": {
+   "es": "envueltos en periódico",
+   "en": "",
+   "antes": "en papel de periódico = in newspaper"
+  },
+  "al": {
+   "es": "en el local nuevo hay",
+   "en": "",
+   "antes": "concedió al fin = she conceded at last"
+  },
+  "final": {
+   "es": "al final",
+   "en": ""
+  },
+  "llevó": {
+   "es": "y se lo llevó",
+   "en": "",
+   "antes": "se lo llevó al mostrador de dentro = took it to the counter inside"
+  },
+  "vio": {
+   "es": "claudia vio la dedicatoria",
+   "en": "",
+   "antes": "claudia vio la dedicatoria un segundo = Claudia saw the inscription for a second"
+  },
+  "dedicatoria": {
+   "es": "claudia vio la dedicatoria",
+   "en": "",
+   "antes": "claudia vio la dedicatoria un segundo = Claudia saw the inscription for a second"
+  },
+  "quedó": {
+   "es": "todavía se quedó dando vueltas",
+   "en": "",
+   "antes": "se quedó dando vueltas toda la tarde = kept going round all afternoon"
+  },
+  "dando": {
+   "es": "todavía se quedó dando vueltas",
+   "en": "",
+   "antes": "dando vueltas toda la tarde = going round all afternoon"
+  },
+  "vueltas": {
+   "es": "todavía se quedó dando vueltas",
+   "en": "",
+   "antes": "dando vueltas toda la tarde = going round all afternoon"
+  },
+  "enseñar": {
+   "es": "y enseñó fotos",
+   "en": "",
+   "antes": "y enseñó fotos del hueco = and showed photos of the empty space"
+  },
+  "envolver": {
+   "es": "envueltos en periódico",
+   "en": "",
+   "antes": "envueltos en papel de periódico = wrapped in newspaper"
+  },
+  "cruzado": {
+   "es": "brazos cruzados",
+   "en": "",
+   "antes": "martina escuchó con los brazos cruzados = Martina listened with her arms crossed"
+  },
+  "dando vueltas": {
+   "es": "todavía se quedó dando vueltas",
+   "en": "",
+   "antes": "se quedó dando vueltas toda la tarde = kept going round all afternoon"
+  }
+ },
+ "la-balda-del-medio": {
+  "y": {
+   "es": "claudia y la peña cruzaron",
+   "en": "",
+   "antes": "claudia y media peña cruzaron la ciudad = Claudia and half the club crossed the city"
+  },
+  "peña": {
+   "es": "y la peña cruzaron la",
+   "en": "",
+   "antes": "claudia y media peña = Claudia and half the club"
+  },
+  "cruzaron": {
+   "es": "la peña cruzaron la ciudad",
+   "en": "",
+   "antes": "claudia y media peña cruzaron la ciudad = Claudia and half the club crossed the city"
+  },
+  "ciudad": {
+   "es": "cruzaron la ciudad con los",
+   "en": "",
+   "antes": "claudia y media peña cruzaron la ciudad = Claudia and half the club crossed the city"
+  },
+  "pared": {
+   "es": "la pared esperaba con las",
+   "en": "",
+   "antes": "la pared los espera = the wall waits for them"
+  },
+  "esperaba": {
+   "es": "la pared esperaba con las",
+   "en": "",
+   "antes": "la pared los esperaba = the wall was waiting for them"
+  },
+  "baldas": {
+   "es": "esperaba con las baldas medidas",
+   "en": "",
+   "antes": "con las baldas ya medidas = with the shelves already measured"
+  },
+  "medidas": {
+   "es": "esperaba con las baldas medidas",
+   "en": "",
+   "antes": "las baldas ya medidas = the shelves already measured"
+  },
+  "olía": {
+   "es": "olía a madera nueva y",
+   "en": ""
+  },
+  "madera": {
+   "es": "olía a madera nueva y",
+   "en": "",
+   "antes": "había olor a madera nueva y a comienzo = there was a smell of new wood and of beginnings"
+  },
+  "tomo": {
+   "es": "con el tomo",
+   "en": "",
+   "antes": "con el tomo en una bolsa = with the volume in a bag"
+  },
+  "lo": {
+   "es": "ciudad con los libros en",
+   "en": "",
+   "antes": "lo dejó en el centro de la balda = she set it in the middle of the shelf"
+  },
+  "dejó": {
+   "es": "lo dejó en la balda",
+   "en": "",
+   "antes": "lo dejó en el centro de la balda = she set it in the middle of the shelf"
+  },
+  "debajo": {
+   "es": "debajo había una firma",
+   "en": "",
+   "antes": "debajo había una fecha del año malo = underneath there was a date from the bad year"
+  },
+  "había": {
+   "es": "debajo había una firma",
+   "en": "",
+   "antes": "había olor a madera nueva y a comienzo = there was a smell of new wood and of beginnings"
+  },
+  "firma": {
+   "es": "debajo había una firma",
+   "en": "",
+   "antes": "una firma pequeña = a small signature"
+  },
+  "llevaba": {
+   "es": "llevaba años esperando",
+   "en": ""
+  },
+  "años": {
+   "es": "llevaba años esperando",
+   "en": "",
+   "antes": "llevo años esperando = I have been waiting for years"
+  },
+  "esperando": {
+   "es": "llevaba años esperando",
+   "en": "",
+   "antes": "llevo años esperando = I have been waiting for years"
+  },
+  "como": {
+   "es": "lo dijo como quien ha",
+   "en": ""
+  },
+  "quien": {
+   "es": "dijo como quien ha hecho",
+   "en": "",
+   "antes": "de quien ha hecho algo enorme = of someone who did something enormous"
+  },
+  "entendió": {
+   "es": "claudia entendió la custodia callada",
+   "en": "",
+   "antes": "claudia entendió de golpe la custodia callada = all at once Claudia understood the silent safekeeping"
+  },
+  "ya": {
+   "es": "del medio ya no se",
+   "en": "",
+   "antes": "las baldas ya medidas = the shelves already measured"
+  },
+  "cruzar": {
+   "es": "la peña cruzaron la ciudad",
+   "en": "",
+   "antes": "claudia y media peña cruzaron la ciudad = Claudia and half the club crossed the city"
+  },
+  "callado": {
+   "es": "claudia entendió la custodia callada",
+   "en": "",
+   "antes": "claudia entendió de golpe la custodia callada = all at once Claudia understood the silent safekeeping"
+  }
+ }
+}

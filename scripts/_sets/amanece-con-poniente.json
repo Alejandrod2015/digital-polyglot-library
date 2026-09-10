@@ -104,7 +104,7 @@
  {
   "type": "meaning_in_context",
   "word": "quedarse atrás",
-  "sentence": "Nadie dijo adiós porque nadie [[se quedaba atrás]].",
+  "sentence": "Nadie [[se quedaba atrás]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to be left behind",
@@ -117,7 +117,7 @@
    "audioClip": {
     "storySlug": "amanece-con-poniente",
     "storySource": "user",
-    "sentence": "Nadie dijo adiós porque nadie se quedaba atrás.",
+    "sentence": "Nadie se quedaba atrás.",
     "targetWord": "se quedaba atrás",
     "language": "spanish"
    }
@@ -177,7 +177,7 @@
  {
   "type": "meaning_in_context",
   "word": "de visita",
-  "sentence": "Su amiga, [[de visita]], cargó la primera caja.",
+  "sentence": "[[De visita]], cargó una caja en los brazos.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "on a visit",
@@ -190,8 +190,8 @@
    "audioClip": {
     "storySlug": "amanece-con-poniente",
     "storySource": "user",
-    "sentence": "Su amiga, de visita, cargó la primera caja.",
-    "targetWord": "de visita",
+    "sentence": "De visita, cargó una caja en los brazos.",
+    "targetWord": "De visita",
     "language": "spanish"
    }
   }
@@ -325,7 +325,7 @@
  {
   "type": "meaning_in_context",
   "word": "eco",
-  "sentence": "Se oían bromas con [[eco]] en la escalera.",
+  "sentence": "Sonó a bromas con [[eco]] en una escalera.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "echo",
@@ -338,7 +338,7 @@
    "audioClip": {
     "storySlug": "amanece-con-poniente",
     "storySource": "user",
-    "sentence": "Se oían bromas con eco en la escalera.",
+    "sentence": "Sonó a bromas con eco en una escalera.",
     "targetWord": "eco",
     "language": "spanish"
    }
@@ -401,7 +401,7 @@
  {
   "type": "meaning_in_context",
   "word": "informar",
-  "sentence": "El que mira, carga, le [[informó]] él.",
+  "sentence": "En esta casa el que mira, carga, [[informó]] él.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to inform",
@@ -414,7 +414,7 @@
    "audioClip": {
     "storySlug": "amanece-con-poniente",
     "storySource": "user",
-    "sentence": "El que mira, carga, le informó él.",
+    "sentence": "En esta casa el que mira, carga, informó él.",
     "targetWord": "informó",
     "language": "spanish"
    }

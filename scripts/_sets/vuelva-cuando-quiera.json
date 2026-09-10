@@ -250,7 +250,7 @@
  {
   "type": "meaning_in_context",
   "word": "clienta",
-  "sentence": "Ya hablaba sin voz de [[clienta]].",
+  "sentence": "Era una [[clienta]] sin encargo.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "customer",
@@ -263,7 +263,7 @@
    "audioClip": {
     "storySlug": "vuelva-cuando-quiera",
     "storySource": "user",
-    "sentence": "Ya hablaba sin voz de clienta.",
+    "sentence": "Era una clienta sin encargo.",
     "targetWord": "clienta",
     "language": "spanish"
    }
@@ -325,7 +325,7 @@
  {
   "type": "meaning_in_context",
   "word": "guarda",
-  "sentence": "El escudo estaba en la [[guarda]] de cada libro.",
+  "sentence": "Llevaban un exlibris redondo en la [[guarda]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "endpaper",
@@ -338,7 +338,7 @@
    "audioClip": {
     "storySlug": "vuelva-cuando-quiera",
     "storySource": "user",
-    "sentence": "El escudo estaba en la guarda de cada libro.",
+    "sentence": "Llevaban un exlibris redondo en la guarda.",
     "targetWord": "guarda",
     "language": "spanish"
    }

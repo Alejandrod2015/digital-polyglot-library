@@ -177,7 +177,7 @@
  {
   "type": "meaning_in_context",
   "word": "dar las gracias",
-  "sentence": "Le [[dio las gracias]] sin saber por qué.",
+  "sentence": "Le [[dio las gracias]] de verdad.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to say thank you",
@@ -190,7 +190,7 @@
    "audioClip": {
     "storySlug": "una-agenda-de-desconocida",
     "storySource": "user",
-    "sentence": "Le dio las gracias sin saber por qué.",
+    "sentence": "Le dio las gracias de verdad.",
     "targetWord": "dio las gracias",
     "language": "spanish"
    }
@@ -325,7 +325,7 @@
  {
   "type": "meaning_in_context",
   "word": "bienvenida",
-  "sentence": "El paseo de [[bienvenida]] salió solo.",
+  "sentence": "Era el comité de [[bienvenida]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "welcome",
@@ -338,7 +338,7 @@
    "audioClip": {
     "storySlug": "una-agenda-de-desconocida",
     "storySource": "user",
-    "sentence": "El paseo de bienvenida salió solo.",
+    "sentence": "Era el comité de bienvenida.",
     "targetWord": "bienvenida",
     "language": "spanish"
    }
@@ -424,7 +424,7 @@
  {
   "type": "meaning_in_context",
   "word": "de verdad",
-  "sentence": "Se lo agradeció [[de verdad]], sin saber por qué.",
+  "sentence": "Le dio las gracias [[de verdad]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "truly",
@@ -437,7 +437,7 @@
    "audioClip": {
     "storySlug": "una-agenda-de-desconocida",
     "storySource": "user",
-    "sentence": "Se lo agradeció de verdad, sin saber por qué.",
+    "sentence": "Le dio las gracias de verdad.",
     "targetWord": "de verdad",
     "language": "spanish"
    }

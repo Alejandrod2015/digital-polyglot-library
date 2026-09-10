@@ -199,7 +199,7 @@
  {
   "type": "meaning_in_context",
   "word": "perderse",
-  "sentence": "Temía que la biblioteca [[se perdiera]].",
+  "sentence": "La compré yo, para que no [[se perdiera]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to get lost",
@@ -212,7 +212,7 @@
    "audioClip": {
     "storySlug": "la-balda-del-medio",
     "storySource": "user",
-    "sentence": "Temía que la biblioteca se perdiera.",
+    "sentence": "La compré yo, para que no se perdiera.",
     "targetWord": "se perdiera",
     "language": "spanish"
    }
@@ -348,7 +348,7 @@
  {
   "type": "meaning_in_context",
   "word": "último",
-  "sentence": "Ella llegó la [[última]], con el tomo en una bolsa.",
+  "sentence": "Ella llegó la [[última]], con el tomo.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "last",
@@ -361,7 +361,7 @@
    "audioClip": {
     "storySlug": "la-balda-del-medio",
     "storySource": "user",
-    "sentence": "Ella llegó la última, con el tomo en una bolsa.",
+    "sentence": "Ella llegó la última, con el tomo.",
     "targetWord": "última",
     "language": "spanish"
    }

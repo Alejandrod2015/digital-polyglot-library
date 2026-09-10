@@ -2,7 +2,7 @@
  {
   "type": "meaning_in_context",
   "word": "propuesta",
-  "sentence": "Volvió con una [[propuesta]] seria.",
+  "sentence": "Volvió con una [[propuesta]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "proposal",
@@ -15,7 +15,7 @@
    "audioClip": {
     "storySlug": "el-tomo-aparte",
     "storySource": "user",
-    "sentence": "Volvió con una propuesta seria.",
+    "sentence": "Volvió con una propuesta.",
     "targetWord": "propuesta",
     "language": "spanish"
    }
@@ -250,7 +250,7 @@
  {
   "type": "meaning_in_context",
   "word": "uno a uno",
-  "sentence": "Los conté [[uno a uno]] al comprarlos.",
+  "sentence": "Los conté [[uno a uno]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "one by one",
@@ -263,7 +263,7 @@
    "audioClip": {
     "storySlug": "el-tomo-aparte",
     "storySource": "user",
-    "sentence": "Los conté uno a uno al comprarlos.",
+    "sentence": "Los conté uno a uno.",
     "targetWord": "uno a uno",
     "language": "spanish"
    }
@@ -424,7 +424,7 @@
  {
   "type": "meaning_in_context",
   "word": "aparte",
-  "sentence": "Con la caja casi vacía, sacó un tomo [[aparte]].",
+  "sentence": "Al final, sacó un tomo [[aparte]], forrado a mano.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "set apart",
@@ -437,7 +437,7 @@
    "audioClip": {
     "storySlug": "el-tomo-aparte",
     "storySource": "user",
-    "sentence": "Con la caja casi vacía, sacó un tomo aparte.",
+    "sentence": "Al final, sacó un tomo aparte, forrado a mano.",
     "targetWord": "aparte",
     "language": "spanish"
    }
