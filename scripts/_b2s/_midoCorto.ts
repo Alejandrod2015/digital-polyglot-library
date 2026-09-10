@@ -17,5 +17,7 @@ for (const s of L) {
     if (i < 0) falta.push(sup); else por[i]++;
   }
   const max = Math.max(...por);
-  console.log(`${s.title.padEnd(24)} ${w} pal · ${s.text.split("\n\n").length} parr · citado ${Math.round(100 * q / w)}% · bloques [${por.join(", ")}] max ${Math.round(100 * max / s.vocab.length)}%${falta.length ? " · FALTA " + falta.join(", ") : ""}`);
+  const dosPuntos = s.text.split("\n\n").map((p: string, i: number) => [i + 1, p] as [number, string])
+    .filter(([, p]) => /^\s*[A-ZÁÉÍÓÚÑÜ][\wáéíóúñçüö' ]{1,20}:\s/.test(p) || /^[\p{Lu}][\p{L}\s'-]*:\s/u.test(p)).map(([i]) => i);
+  console.log(`${s.title.padEnd(24)} ${w} pal · ${s.text.split("\n\n").length} parr · citado ${Math.round(100 * q / w)}% · bloques [${por.join(", ")}] max ${Math.round(100 * max / s.vocab.length)}%${falta.length ? " · FALTA " + falta.join(", ") : ""}${dosPuntos.length ? " · DOS PUNTOS al abrir parr " + dosPuntos.join(",") : ""}`);
 }

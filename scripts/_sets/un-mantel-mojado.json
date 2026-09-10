@@ -104,7 +104,7 @@
  {
   "type": "meaning_in_context",
   "word": "atreverse",
-  "sentence": "Estaba contenta de [[atreverse]] por fin.",
+  "sentence": "Estaba contenta de [[atreverse]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to dare",
@@ -117,7 +117,7 @@
    "audioClip": {
     "storySlug": "un-mantel-mojado",
     "storySource": "user",
-    "sentence": "Estaba contenta de atreverse por fin.",
+    "sentence": "Estaba contenta de atreverse.",
     "targetWord": "atreverse",
     "language": "spanish"
    }
@@ -199,7 +199,7 @@
  {
   "type": "meaning_in_context",
   "word": "disparar",
-  "sentence": "[[Disparó]] la broma sin pensarlo.",
+  "sentence": "Lo [[disparó]], contenta de atreverse.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to fire off",
@@ -212,8 +212,8 @@
    "audioClip": {
     "storySlug": "un-mantel-mojado",
     "storySource": "user",
-    "sentence": "Disparó la broma sin pensarlo.",
-    "targetWord": "Disparó",
+    "sentence": "Lo disparó, contenta de atreverse.",
+    "targetWord": "disparó",
     "language": "spanish"
    }
   }
@@ -250,7 +250,7 @@
  {
   "type": "meaning_in_context",
   "word": "apretar",
-  "sentence": "Le [[apretó]] el brazo al pasar.",
+  "sentence": "Le [[apretó]] el brazo.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to squeeze",
@@ -263,7 +263,7 @@
    "audioClip": {
     "storySlug": "un-mantel-mojado",
     "storySource": "user",
-    "sentence": "Le apretó el brazo al pasar.",
+    "sentence": "Le apretó el brazo.",
     "targetWord": "apretó",
     "language": "spanish"
    }
@@ -272,7 +272,7 @@
  {
   "type": "meaning_in_context",
   "word": "lanzarse",
-  "sentence": "Por fin [[se lanzó]] a contar su broma.",
+  "sentence": "Vio el hueco y [[se lanzó]] sin pensarlo.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to go for it",
@@ -285,7 +285,7 @@
    "audioClip": {
     "storySlug": "un-mantel-mojado",
     "storySource": "user",
-    "sentence": "Por fin se lanzó a contar su broma.",
+    "sentence": "Vio el hueco y se lanzó sin pensarlo.",
     "targetWord": "se lanzó",
     "language": "spanish"
    }
@@ -348,7 +348,7 @@
  {
   "type": "meaning_in_context",
   "word": "ligero",
-  "sentence": "A la sobremesa de aquel sábado se llegaba [[ligero]].",
+  "sentence": "A la sobremesa del sábado se llegaba [[ligero]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "light-hearted",
@@ -361,7 +361,7 @@
    "audioClip": {
     "storySlug": "un-mantel-mojado",
     "storySource": "user",
-    "sentence": "A la sobremesa de aquel sábado se llegaba ligero.",
+    "sentence": "A la sobremesa del sábado se llegaba ligero.",
     "targetWord": "ligero",
     "language": "spanish"
    }

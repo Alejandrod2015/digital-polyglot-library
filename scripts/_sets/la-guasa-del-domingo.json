@@ -272,7 +272,7 @@
  {
   "type": "meaning_in_context",
   "word": "mandar",
-  "sentence": "Quien [[mandaba]] en las letras escribía las nuevas.",
+  "sentence": "Ella [[mandaba]] en las letras.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to be in charge",
@@ -285,7 +285,7 @@
    "audioClip": {
     "storySlug": "la-guasa-del-domingo",
     "storySource": "user",
-    "sentence": "Quien mandaba en las letras escribía las nuevas.",
+    "sentence": "Ella mandaba en las letras.",
     "targetWord": "mandaba",
     "language": "spanish"
    }
@@ -424,7 +424,7 @@
  {
   "type": "meaning_in_context",
   "word": "por encima del hombro",
-  "sentence": "Lo dijo [[por encima del hombro]], sin dejar de trabajar.",
+  "sentence": "Lo dijo [[por encima del hombro]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "over her shoulder",
@@ -437,7 +437,7 @@
    "audioClip": {
     "storySlug": "la-guasa-del-domingo",
     "storySource": "user",
-    "sentence": "Lo dijo por encima del hombro, sin dejar de trabajar.",
+    "sentence": "Lo dijo por encima del hombro.",
     "targetWord": "por encima del hombro",
     "language": "spanish"
    }

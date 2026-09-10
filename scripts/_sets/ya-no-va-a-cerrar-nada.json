@@ -104,7 +104,7 @@
  {
   "type": "meaning_in_context",
   "word": "culpa",
-  "sentence": "La [[culpa]] se le quedó más pequeña.",
+  "sentence": "La [[culpa]] encogió, aunque no desapareció.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "guilt",
@@ -117,7 +117,7 @@
    "audioClip": {
     "storySlug": "ya-no-va-a-cerrar-nada",
     "storySource": "user",
-    "sentence": "La culpa se le quedó más pequeña.",
+    "sentence": "La culpa encogió, aunque no desapareció.",
     "targetWord": "culpa",
     "language": "spanish"
    }
@@ -424,7 +424,7 @@
  {
   "type": "meaning_in_context",
   "word": "ponerse a",
-  "sentence": "[[Se puso a]] desmontar la primera estantería.",
+  "sentence": "[[Se puso a]] desmontar una estantería.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to start",
@@ -437,7 +437,7 @@
    "audioClip": {
     "storySlug": "ya-no-va-a-cerrar-nada",
     "storySource": "user",
-    "sentence": "Se puso a desmontar la primera estantería.",
+    "sentence": "Se puso a desmontar una estantería.",
     "targetWord": "Se puso a",
     "language": "spanish"
    }
