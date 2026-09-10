@@ -125,7 +125,7 @@
   {
     "type": "meaning_in_context",
     "word": "hoja por hoja",
-    "sentence": "La tinta se soltó del papel de a poco, [[hoja por hoja]].",
+    "sentence": "La tinta se soltó del papel [[hoja por hoja]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "page by page",
@@ -138,7 +138,7 @@
       "audioClip": {
         "storySlug": "la-carreta-mojada",
         "storySource": "user",
-        "sentence": "La tinta se soltó del papel de a poco, hoja por hoja.",
+        "sentence": "La tinta se soltó del papel hoja por hoja.",
         "targetWord": "hoja por hoja",
         "language": "spanish"
       }
@@ -169,7 +169,7 @@
   {
     "type": "meaning_in_context",
     "word": "sin decir palabra",
-    "sentence": "[[Sin decir palabra]], de espaldas al corredor.",
+    "sentence": "Puso las hojas a secar, [[sin decir palabra]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "without a word",
@@ -182,7 +182,7 @@
       "audioClip": {
         "storySlug": "la-carreta-mojada",
         "storySource": "user",
-        "sentence": "Sin decir palabra, de espaldas al corredor.",
+        "sentence": "Puso las hojas a secar, sin decir palabra.",
         "targetWord": "Sin decir palabra",
         "language": "spanish"
       }

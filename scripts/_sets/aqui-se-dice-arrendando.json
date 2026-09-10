@@ -363,7 +363,7 @@
   {
     "type": "meaning_in_context",
     "word": "a medio camino",
-    "sentence": "Se quedó con el vaso de lulada [[a medio camino]], sonriendo.",
+    "sentence": "Se quedó con el vaso [[a medio camino]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "halfway there",
@@ -376,7 +376,7 @@
       "audioClip": {
         "storySlug": "aqui-se-dice-arrendando",
         "storySource": "user",
-        "sentence": "Se quedó con el vaso de lulada a medio camino, sonriendo.",
+        "sentence": "Se quedó con el vaso a medio camino.",
         "targetWord": "a medio camino",
         "language": "spanish"
       }

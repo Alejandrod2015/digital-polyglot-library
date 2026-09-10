@@ -154,7 +154,7 @@
   {
     "type": "meaning_in_context",
     "word": "se agradece",
-    "sentence": "Lo guardó en el estante de abajo. Pero [[se agradece]], nene.",
+    "sentence": "Lo guardó abajo. Pero [[se agradece]], nene.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "much appreciated",
@@ -167,7 +167,7 @@
       "audioClip": {
         "storySlug": "vitel-tone-con-blanco",
         "storySource": "user",
-        "sentence": "Lo guardó en el estante de abajo. Pero se agradece, nene.",
+        "sentence": "Lo guardó abajo. Pero se agradece, nene.",
         "targetWord": "se agradece",
         "language": "spanish"
       }
@@ -205,7 +205,7 @@
   {
     "type": "meaning_in_context",
     "word": "fijarse",
-    "sentence": "Él [[se fijó]] en todo: el examen, el anillo.",
+    "sentence": "Él [[se fijó]] en todo: el anillo.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to notice",
@@ -218,7 +218,7 @@
       "audioClip": {
         "storySlug": "vitel-tone-con-blanco",
         "storySource": "user",
-        "sentence": "Él se fijó en todo: el examen, el anillo.",
+        "sentence": "Él se fijó en todo: el anillo.",
         "targetWord": "se fijó",
         "language": "spanish"
       }

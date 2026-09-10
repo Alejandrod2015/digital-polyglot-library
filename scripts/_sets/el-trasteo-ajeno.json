@@ -147,7 +147,7 @@
   {
     "type": "meaning_in_context",
     "word": "decidido",
-    "sentence": "Venía [[decidido]], o eso creía.",
+    "sentence": "Venía [[decidido]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "determined",
@@ -160,7 +160,7 @@
       "audioClip": {
         "storySlug": "el-trasteo-ajeno",
         "storySource": "user",
-        "sentence": "Venía decidido, o eso creía.",
+        "sentence": "Venía decidido.",
         "targetWord": "decidido",
         "language": "spanish"
       }
@@ -220,7 +220,7 @@
   {
     "type": "meaning_in_context",
     "word": "sin pensarlo",
-    "sentence": "De una es ya, ahora, [[sin pensarlo]].",
+    "sentence": "De una es ya, [[sin pensarlo]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "without thinking it over",
@@ -233,7 +233,7 @@
       "audioClip": {
         "storySlug": "el-trasteo-ajeno",
         "storySource": "user",
-        "sentence": "De una es ya, ahora, sin pensarlo.",
+        "sentence": "De una es ya, sin pensarlo.",
         "targetWord": "sin pensarlo",
         "language": "spanish"
       }
@@ -242,7 +242,7 @@
   {
     "type": "meaning_in_context",
     "word": "negocio",
-    "sentence": "El [[negocio]] de los jugos lo necesitaba.",
+    "sentence": "El [[negocio]] de los jugos necesitaba el local.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "business",
@@ -255,7 +255,7 @@
       "audioClip": {
         "storySlug": "el-trasteo-ajeno",
         "storySource": "user",
-        "sentence": "El negocio de los jugos lo necesitaba.",
+        "sentence": "El negocio de los jugos necesitaba el local.",
         "targetWord": "negocio",
         "language": "spanish"
       }
