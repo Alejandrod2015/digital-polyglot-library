@@ -126,7 +126,7 @@
  {
   "type": "meaning_in_context",
   "word": "deber",
-  "sentence": "[[Deber dinero]] le molestaba mucho.",
+  "sentence": "[[Deber dinero]] le picaba.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to owe",
@@ -139,7 +139,7 @@
    "audioClip": {
     "storySlug": "la-cana-de-marcos",
     "storySource": "user",
-    "sentence": "Deber dinero le molestaba mucho.",
+    "sentence": "Deber dinero le picaba.",
     "targetWord": "Deber dinero",
     "language": "spanish"
    }

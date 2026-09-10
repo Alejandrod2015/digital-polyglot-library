@@ -104,7 +104,7 @@
  {
   "type": "meaning_in_context",
   "word": "lo de siempre",
-  "sentence": "¿[[Lo de siempre]], o hoy quieres otra cosa?",
+  "sentence": "¿[[Lo de siempre]], o hoy tampoco te fías de mi máquina?",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "the usual",
@@ -117,7 +117,7 @@
    "audioClip": {
     "storySlug": "apuntame-la-de-manana",
     "storySource": "user",
-    "sentence": "¿Lo de siempre, o hoy quieres otra cosa?",
+    "sentence": "¿Lo de siempre, o hoy tampoco te fías de mi máquina?",
     "targetWord": "Lo de siempre",
     "language": "spanish"
    }
@@ -272,7 +272,7 @@
  {
   "type": "meaning_in_context",
   "word": "asunto",
-  "sentence": "Unos clientes discutían un [[asunto]] viejo.",
+  "sentence": "Detrás, unos fijos discutían un [[asunto]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "matter",
@@ -285,7 +285,7 @@
    "audioClip": {
     "storySlug": "apuntame-la-de-manana",
     "storySource": "user",
-    "sentence": "Unos clientes discutían un asunto viejo.",
+    "sentence": "Detrás, unos fijos discutían un asunto.",
     "targetWord": "asunto",
     "language": "spanish"
    }
@@ -348,7 +348,7 @@
  {
   "type": "meaning_in_context",
   "word": "detrás",
-  "sentence": "[[Detrás]], unos clientes discutían en voz alta.",
+  "sentence": "[[Detrás]], los fijos discutían un asunto.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "behind",
@@ -361,7 +361,7 @@
    "audioClip": {
     "storySlug": "apuntame-la-de-manana",
     "storySource": "user",
-    "sentence": "Detrás, unos clientes discutían en voz alta.",
+    "sentence": "Detrás, los fijos discutían un asunto.",
     "targetWord": "Detrás",
     "language": "spanish"
    }

@@ -177,7 +177,7 @@
  {
   "type": "meaning_in_context",
   "word": "de la casa",
-  "sentence": "Esas tapas son [[de la casa]].",
+  "sentence": "Yo solo apunto; los milagros son cosa [[de la casa]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "on the house",
@@ -190,7 +190,7 @@
    "audioClip": {
     "storySlug": "la-cuenta-perdida",
     "storySource": "user",
-    "sentence": "Esas tapas son de la casa.",
+    "sentence": "Yo solo apunto; los milagros son cosa de la casa.",
     "targetWord": "de la casa",
     "language": "spanish"
    }
@@ -348,7 +348,7 @@
  {
   "type": "meaning_in_context",
   "word": "bajito",
-  "sentence": "Lo preguntó [[bajito]], casi sin voz.",
+  "sentence": "Lo preguntó [[bajito]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "very quietly",
@@ -361,7 +361,7 @@
    "audioClip": {
     "storySlug": "la-cuenta-perdida",
     "storySource": "user",
-    "sentence": "Lo preguntó bajito, casi sin voz.",
+    "sentence": "Lo preguntó bajito.",
     "targetWord": "bajito",
     "language": "spanish"
    }
@@ -424,7 +424,7 @@
  {
   "type": "meaning_in_context",
   "word": "cosa de",
-  "sentence": "Los milagros aquí son [[cosa de la casa]].",
+  "sentence": "Los milagros son [[cosa de la casa]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "a matter for",
@@ -437,7 +437,7 @@
    "audioClip": {
     "storySlug": "la-cuenta-perdida",
     "storySource": "user",
-    "sentence": "Los milagros aquí son cosa de la casa.",
+    "sentence": "Los milagros son cosa de la casa.",
     "targetWord": "cosa de la casa",
     "language": "spanish"
    }
