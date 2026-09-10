@@ -1,0 +1,670 @@
+{
+ "la-persiana-a-media-tarde": {
+  "persiana": {
+   "es": "la persiana a media tarde",
+   "en": "",
+   "antes": "baja la persiana a media tarde = rolls down the shutter mid-afternoon"
+  },
+  "a": {
+   "es": "la persiana a media tarde",
+   "en": "",
+   "antes": "huele a papel = smells of paper"
+  },
+  "fue": {
+   "es": "claudia fue la primera en notarlo",
+   "en": ""
+  },
+  "en": {
+   "es": "claudia fue la primera en notarlo",
+   "en": "",
+   "antes": "tarda en contestar = takes a while to answer"
+  },
+  "le": {
+   "es": "al archivo le faltaba un",
+   "en": "",
+   "antes": "le falta un año entero = is missing a whole year"
+  },
+  "faltaba": {
+   "es": "archivo le faltaba un año",
+   "en": ""
+  },
+  "quien": {
+   "es": "quien más sabía era hugo",
+   "en": "",
+   "antes": "quien más sabe es hugo = the one who knows most is Hugo"
+  },
+  "más": {
+   "es": "quien más sabía era hugo",
+   "en": "",
+   "antes": "quien más sabe = who knows most"
+  },
+  "sabía": {
+   "es": "quien más sabía era hugo",
+   "en": ""
+  },
+  "era": {
+   "es": "claudia fue la primera en notarlo",
+   "en": ""
+  },
+  "guardaba": {
+   "es": "que guardaba periódicos como otros",
+   "en": ""
+  },
+  "periódicos": {
+   "es": "que guardaba periódicos como otros",
+   "en": "",
+   "antes": "guarda periódicos como otros guardan sellos = keeps newspapers like others keep stamps"
+  },
+  "allí": {
+   "es": "allí había olor a papel",
+   "en": ""
+  },
+  "olor": {
+   "es": "allí había olor a papel",
+   "en": ""
+  },
+  "papel": {
+   "es": "olor a papel recién llegado",
+   "en": "",
+   "antes": "huele a papel recién llegado = smells of freshly arrived paper"
+  },
+  "preguntó": {
+   "es": "preguntó claudia",
+   "en": ""
+  },
+  "miró": {
+   "es": "hugo miró la fecha y",
+   "en": ""
+  },
+  "y": {
+   "es": "con la fecha subrayada dos veces",
+   "en": "",
+   "antes": "y tarda en contestar = and takes a while to answer"
+  },
+  "tardó": {
+   "es": "fecha y tardó en contestar",
+   "en": ""
+  },
+  "contestar": {
+   "es": "fecha y tardó en contestar",
+   "en": "",
+   "antes": "tarda en contestar = takes a while to answer"
+  },
+  "cortó": {
+   "es": "cortó",
+   "en": ""
+  },
+  "seco": {
+   "es": "seco",
+   "en": "",
+   "antes": "corta, seco = he cuts her off, curt"
+  },
+  "falta": {
+   "es": "archivo le faltaba un año",
+   "en": "",
+   "antes": "le falta un año entero = is missing a whole year"
+  },
+  "explicó": {
+   "es": "explicó claudia",
+   "en": ""
+  },
+  "contestó": {
+   "es": "contestó hugo",
+   "en": ""
+  },
+  "empezó": {
+   "es": "y empezó a recoger montones",
+   "en": ""
+  },
+  "recoger": {
+   "es": "empezó a recoger montones aunque",
+   "en": "",
+   "antes": "empieza a recoger montones = starts gathering up piles"
+  },
+  "montones": {
+   "es": "a recoger montones aunque era",
+   "en": "",
+   "antes": "empieza a recoger montones = starts gathering up piles"
+  },
+  "mediodía": {
+   "es": "recoger montones aunque era mediodía",
+   "en": "",
+   "antes": "aunque es mediodía = though it is midday"
+  },
+  "respuesta": {
+   "es": "la respuesta sonaba a puerta cerrada",
+   "en": "",
+   "antes": "la respuesta suena a puerta cerrada = the answer sounds like a closed door"
+  },
+  "sonaba": {
+   "es": "la respuesta sonaba a puerta cerrada",
+   "en": ""
+  },
+  "puerta": {
+   "es": "la respuesta sonaba a puerta cerrada",
+   "en": "",
+   "antes": "suena a puerta cerrada = sounds like a closed door"
+  },
+  "cerrada": {
+   "es": "la respuesta sonaba a puerta cerrada",
+   "en": "",
+   "antes": "suena a puerta cerrada = sounds like a closed door"
+  },
+  "pregunta": {
+   "es": "hora y pregunta por la",
+   "en": "",
+   "antes": "pregunta claudia = asks Claudia"
+  },
+  "soltó": {
+   "es": "soltó al fin",
+   "en": ""
+  },
+  "luego": {
+   "es": "luego bajó la persiana a",
+   "en": "",
+   "antes": "luego baja la persiana = then he rolls down the shutter"
+  },
+  "bajó": {
+   "es": "luego bajó la persiana a",
+   "en": ""
+  },
+  "plaza": {
+   "es": "la plaza entera se quedó",
+   "en": "",
+   "antes": "la plaza entera se queda = the whole square is left"
+  },
+  "quedó": {
+   "es": "entera se quedó con la",
+   "en": ""
+  },
+  "volvió": {
+   "es": "y claudia volvió al archivo",
+   "en": ""
+  },
+  "perdido": {
+   "es": "el año perdido existía y",
+   "en": "",
+   "antes": "el año perdido existe = the lost year exists"
+  },
+  "existía": {
+   "es": "año perdido existía y le",
+   "en": ""
+  },
+  "dolía": {
+   "es": "y le dolía a alguien",
+   "en": ""
+  },
+  "alguien": {
+   "es": "dolía a alguien más que",
+   "en": "",
+   "antes": "le duele a alguien = it hurts somebody"
+  },
+  "faltaban": {
+   "es": "faltaban tres días",
+   "en": ""
+  },
+  "días": {
+   "es": "faltaban tres días",
+   "en": "",
+   "antes": "le faltan tres días = three days to go"
+  },
+  "paciencia": {
+   "es": "y la paciencia no le llegaría",
+   "en": "",
+   "antes": "y a ella la paciencia = and she is out of patience"
+  },
+  "llegaría": {
+   "es": "y la paciencia no le llegaría",
+   "en": ""
+  },
+  "sello": {
+   "es": "periódicos como otros guardan sellos",
+   "en": ""
+  },
+  "montón": {
+   "es": "a recoger montones aunque era",
+   "en": ""
+  },
+  "subrayar": {
+   "es": "con la fecha subrayada dos veces",
+   "en": ""
+  },
+  "agotarse": {
+   "es": "y no porque se agotara",
+   "en": ""
+  },
+  "tardar": {
+   "es": "fecha y tardó en contestar",
+   "en": ""
+  },
+  "doler": {
+   "es": "y le dolía a alguien",
+   "en": ""
+  },
+  "faltar": {
+   "es": "archivo le faltaba un año",
+   "en": ""
+  },
+  "atrasado": {
+   "es": "guardas también los atrasados",
+   "en": ""
+  },
+  "al fin": {
+   "es": "soltó al fin",
+   "en": "",
+   "antes": "suelta al fin = lets out at last"
+  },
+  "sonar a": {
+   "es": "la respuesta sonaba a puerta cerrada",
+   "en": ""
+  }
+ },
+ "yo-ya-decidi-una-vez": {
+  "esperaba": {
+   "es": "caja azul esperaba el jueves",
+   "en": ""
+  },
+  "jueves": {
+   "es": "esperaba el jueves sobre el",
+   "en": "",
+   "antes": "espera el jueves = waits on Thursday"
+  },
+  "dijo": {
+   "es": "dijo hugo",
+   "en": ""
+  },
+  "apartó": {
+   "es": "y apartó la vista",
+   "en": ""
+  },
+  "vista": {
+   "es": "y apartó la vista",
+   "en": "",
+   "antes": "aparta la vista = looks away"
+  },
+  "abrió": {
+   "es": "claudia la abrió como quien",
+   "en": ""
+  },
+  "abre": {
+   "es": "como quien abre una herida",
+   "en": "",
+   "antes": "la abre como quien abre = opens it the way you open"
+  },
+  "dentro": {
+   "es": "dentro había periódicos doblados",
+   "en": "",
+   "antes": "dentro hay periódicos doblados = inside there are folded newspapers"
+  },
+  "había": {
+   "es": "dentro había periódicos doblados",
+   "en": ""
+  },
+  "eran": {
+   "es": "eran las portadas del año",
+   "en": ""
+  },
+  "faltaba": {
+   "es": "portadas del año que faltaba",
+   "en": ""
+  },
+  "titulares": {
+   "es": "los titulares no gritaban",
+   "en": "",
+   "antes": "los titulares no gritan = the headlines do not shout"
+  },
+  "no": {
+   "es": "los titulares no gritaban",
+   "en": "",
+   "antes": "los titulares no gritan = the headlines do not shout"
+  },
+  "gritaban": {
+   "es": "los titulares no gritaban",
+   "en": ""
+  },
+  "señalaban": {
+   "es": "señalaban",
+   "en": ""
+  },
+  "le": {
+   "es": "marcos le contó sin adornos",
+   "en": "",
+   "antes": "le parece una casa = feels like a home to her"
+  },
+  "contó": {
+   "es": "marcos le contó sin adornos",
+   "en": ""
+  },
+  "firmó": {
+   "es": "año se firmó la venta",
+   "en": ""
+  },
+  "añadió": {
+   "es": "añadió",
+   "en": ""
+  },
+  "remató": {
+   "es": "remató",
+   "en": ""
+  },
+  "entendido": {
+   "es": "claudia había entendido el archivo",
+   "en": ""
+  },
+  "ahora": {
+   "es": "ahora veía el otro lado",
+   "en": "",
+   "antes": "ahora ve el otro lado = now she sees the other side"
+  },
+  "veía": {
+   "es": "ahora veía el otro lado",
+   "en": ""
+  },
+  "también": {
+   "es": "también era una mano que elige",
+   "en": "",
+   "antes": "también es una mano que elige = it is also a hand that chooses"
+  },
+  "era": {
+   "es": "caja azul esperaba el jueves",
+   "en": ""
+  },
+  "dejó": {
+   "es": "dejó el año malo dentro",
+   "en": ""
+  },
+  "malo": {
+   "es": "dejó el año malo dentro",
+   "en": "",
+   "antes": "deja el año malo dentro = leaves the bad year inside"
+  },
+  "pero": {
+   "es": "pero marcó dos portadas con",
+   "en": "",
+   "antes": "pero marca dos portadas = but marks two front pages"
+  },
+  "marcó": {
+   "es": "pero marcó dos portadas con",
+   "en": ""
+  },
+  "propuso": {
+   "es": "propuso por la tarde",
+   "en": ""
+  },
+  "leyó": {
+   "es": "marcos leyó la nota y",
+   "en": ""
+  },
+  "asintió": {
+   "es": "nota y asintió dos veces",
+   "en": ""
+  },
+  "veces": {
+   "es": "nota y asintió dos veces",
+   "en": "",
+   "antes": "asiente dos veces = nods twice"
+  },
+  "pareció": {
+   "es": "le pareció una casa y",
+   "en": ""
+  },
+  "recorte": {
+   "es": "recortes sueltos y un olor",
+   "en": ""
+  },
+  "portada": {
+   "es": "eran las portadas del año",
+   "en": ""
+  },
+  "titular": {
+   "es": "los titulares no gritaban",
+   "en": ""
+  },
+  "bando": {
+   "es": "peña partida en dos bandos",
+   "en": ""
+  },
+  "callar": {
+   "es": "el archivo calló porque nosotros callamos",
+   "en": ""
+  },
+  "marcar": {
+   "es": "pero marcó dos portadas con",
+   "en": ""
+  },
+  "asentir": {
+   "es": "nota y asintió dos veces",
+   "en": ""
+  },
+  "repetirse": {
+   "es": "el susto no se repita",
+   "en": ""
+  },
+  "apartar": {
+   "es": "y apartó la vista",
+   "en": ""
+  },
+  "gritar": {
+   "es": "los titulares no gritaban",
+   "en": ""
+  },
+  "partido": {
+   "es": "la peña partida en dos",
+   "en": ""
+  },
+  "el otro lado": {
+   "es": "ahora veía el otro lado",
+   "en": "",
+   "antes": "ahora ve el otro lado = now she sees the other side"
+  }
+ },
+ "una-copla-sin-firma": {
+  "aunque": {
+   "es": "aunque era sábado",
+   "en": "",
+   "antes": "aunque es sábado = although it is Saturday"
+  },
+  "era": {
+   "es": "aunque era sábado",
+   "en": ""
+  },
+  "sábado": {
+   "es": "aunque era sábado",
+   "en": "",
+   "antes": "aunque es sábado = although it is Saturday"
+  },
+  "bajó": {
+   "es": "claudia bajó sola a escanear",
+   "en": ""
+  },
+  "sola": {
+   "es": "claudia bajó sola a escanear",
+   "en": "",
+   "antes": "claudia baja sola = Claudia goes down alone"
+  },
+  "luz": {
+   "es": "la luz entraba de lado",
+   "en": "",
+   "antes": "la luz entra de lado = the light comes in sideways"
+  },
+  "entraba": {
+   "es": "la luz entraba de lado",
+   "en": ""
+  },
+  "y": {
+   "es": "de lado y dibujaba el",
+   "en": "",
+   "antes": "y dibuja el polvo = and sketches the dust"
+  },
+  "dibujaba": {
+   "es": "lado y dibujaba el polvo",
+   "en": ""
+  },
+  "polvo": {
+   "es": "dibujaba el polvo en el",
+   "en": "",
+   "antes": "dibuja el polvo en el aire = sketches the dust in the air"
+  },
+  "trabajaba": {
+   "es": "trabajaba con el respeto de",
+   "en": ""
+  },
+  "apareció": {
+   "es": "de hugo apareció una copla",
+   "en": ""
+  },
+  "pedía": {
+   "es": "pedía perdón sin nombrar la palabra",
+   "en": ""
+  },
+  "perdón": {
+   "es": "pedía perdón sin nombrar la palabra",
+   "en": "",
+   "antes": "pide perdón sin nombrar la palabra = asks forgiveness without naming the word"
+  },
+  "se": {
+   "es": "se notaba en lo limpio",
+   "en": "",
+   "antes": "se nota en lo limpio = it shows in how clean it is"
+  },
+  "notaba": {
+   "es": "se notaba en lo limpio",
+   "en": ""
+  },
+  "leyó": {
+   "es": "leyó claudia en un verso",
+   "en": ""
+  },
+  "hablaba": {
+   "es": "hablaba de amigos que dejaron",
+   "en": ""
+  },
+  "amigos": {
+   "es": "hablaba de amigos que dejaron",
+   "en": "",
+   "antes": "habla de amigos = it speaks of friends"
+  },
+  "fecha": {
+   "es": "había una fecha y dos",
+   "en": "",
+   "antes": "hay una fecha = there is a date"
+  },
+  "llevó": {
+   "es": "se la llevó a hugo",
+   "en": ""
+  },
+  "puso": {
+   "es": "puño y la puso delante",
+   "en": ""
+  },
+  "delante": {
+   "es": "puño y la puso delante",
+   "en": "",
+   "antes": "la pone delante = sets it in front of him"
+  },
+  "preguntó": {
+   "es": "preguntó hugo",
+   "en": ""
+  },
+  "sabía": {
+   "es": "que lo sabía",
+   "en": ""
+  },
+  "quedó": {
+   "es": "se quedó quieto",
+   "en": ""
+  },
+  "quieto": {
+   "es": "se quedó quieto",
+   "en": "",
+   "antes": "se queda quieto = goes still"
+  },
+  "dijo": {
+   "es": "dijo claudia",
+   "en": ""
+  },
+  "no": {
+   "es": "apareció una copla a mano",
+   "en": "",
+   "antes": "no es una pregunta = it is not a question"
+  },
+  "pregunta": {
+   "es": "y no era una pregunta",
+   "en": "",
+   "antes": "pregunta hugo = asks Hugo"
+  },
+  "admitió": {
+   "es": "admitió hugo",
+   "en": ""
+  },
+  "contestó": {
+   "es": "contestó ella",
+   "en": ""
+  },
+  "ella": {
+   "es": "contestó ella",
+   "en": "",
+   "antes": "contesta ella = she answers"
+  },
+  "lunes": {
+   "es": "y el lunes la copla",
+   "en": "",
+   "antes": "el lunes la copla entra = on Monday the song goes in"
+  },
+  "entró": {
+   "es": "la copla entró en el",
+   "en": ""
+  },
+  "archivo": {
+   "es": "en el archivo con autor",
+   "en": "",
+   "antes": "entra en el archivo con autor = goes into the archive with an author"
+  },
+  "llevarse": {
+   "es": "se la llevó a hugo",
+   "en": ""
+  },
+  "inicial": {
+   "es": "fecha y dos iniciales torcidas",
+   "en": ""
+  },
+  "revista": {
+   "es": "entre dos revistas",
+   "en": ""
+  },
+  "pesar": {
+   "es": "como si el papel pesara",
+   "en": ""
+  },
+  "notarse": {
+   "es": "se notaba en lo limpio",
+   "en": ""
+  },
+  "dibujar": {
+   "es": "lado y dibujaba el polvo",
+   "en": ""
+  },
+  "ajeno": {
+   "es": "respeto de las cosas ajenas",
+   "en": ""
+  },
+  "torcido": {
+   "es": "fecha y dos iniciales torcidas",
+   "en": ""
+  },
+  "al pie": {
+   "es": "al pie había una fecha",
+   "en": "",
+   "antes": "al pie hay una fecha = at the bottom there is a date"
+  },
+  "de lado": {
+   "es": "luz entraba de lado y",
+   "en": "",
+   "antes": "la luz entra de lado = the light comes in sideways"
+  },
+  "dejar de": {
+   "es": "amigos que dejaron de hablarse",
+   "en": ""
+  }
+ }
+}

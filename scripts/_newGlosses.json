@@ -7975,6 +7975,42 @@
   "ataba": {
    "g": "tied, bound (atar)",
    "t": "verb"
+  },
+  "bajó": {
+   "g": "went down; rolled down (bajar)",
+   "t": "verb"
+  },
+  "faltaban": {
+   "g": "were left, were missing (faltar)",
+   "t": "verb"
+  },
+  "llegaría": {
+   "g": "would last, would reach (llegar)",
+   "t": "verb"
+  },
+  "dibujaba": {
+   "g": "traced, drew (dibujar)",
+   "t": "verb"
+  },
+  "notaba": {
+   "g": "showed (notarse)",
+   "t": "verb"
+  },
+  "hablaba": {
+   "g": "spoke, talked (hablar)",
+   "t": "verb"
+  },
+  "apartó": {
+   "g": "moved away (apartar)",
+   "t": "verb"
+  },
+  "gritaban": {
+   "g": "shouted (gritar)",
+   "t": "verb"
+  },
+  "señalaban": {
+   "g": "pointed (señalar)",
+   "t": "verb"
   }
  },
  "spanish-traveler-latam-b2": {

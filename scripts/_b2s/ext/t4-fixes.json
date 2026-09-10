@@ -1,0 +1,19 @@
+{
+ "la-persiana-a-media-tarde": {
+  "faltaba": { "g": "was missing (faltar)" },
+  "cortó": { "g": "cut her off (cortar)" },
+  "sonaba": { "g": "sounded like (sonar a)" },
+  "llegaría": { "rows": ["llegaría", "llegarías", "llegaría", "llegaríamos", "llegaríais", "llegarían"] }
+ },
+ "yo-ya-decidi-una-vez": {
+  "abre": { "g": "opens (abrir)" },
+  "faltaba": { "g": "was missing (faltar)" },
+  "veía": { "g": "saw, could see (ver)" },
+  "marcó": { "g": "marked (marcar)" }
+ },
+ "una-copla-sin-firma": {
+  "entraba": { "g": "came in (entrar)" },
+  "pedía": { "g": "asked for (pedir)" },
+  "trabajaba": { "g": "was working (trabajar)" }
+ }
+}
