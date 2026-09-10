@@ -1,0 +1,442 @@
+{
+ "la-herramienta-seria": {
+  "el lápiz": {
+   "c": {
+    "es": "claudia guardó el lápiz en el bolso",
+    "en": "Claudia put the pencil away in her bag"
+   }
+  },
+  "quedó": {
+   "g": "fell (silent), was left (quedarse)"
+  }
+ },
+ "azotea-y-paciencia": {
+  "no": {
+   "c": {
+    "es": "con levante no salgo ni a nadar",
+    "en": "in an east wind I won't even swim"
+   }
+  },
+  "quedó": {
+   "g": "was left (quedarse)"
+  },
+  "cantaba": {
+   "g": "was sung (cantar)"
+  }
+ },
+ "vuelva-cuando-quiera": {
+  "salió": {
+   "c": {
+    "es": "claudia salió con el primer libro",
+    "en": "Claudia left with the first book"
+   }
+  },
+  "miraron": {
+   "c": {
+    "es": "miraron los libros como si respiraran",
+    "en": "looked at the books as if they were breathing"
+   }
+  },
+  "respirar": {
+   "c": {
+    "es": "miraron los libros como si respiraran",
+    "en": "looked at the books as if they were breathing"
+   }
+  },
+  "volvió": {
+   "g": "went back (volver)"
+  }
+ },
+ "el-tomo-aparte": {
+  "que": {
+   "c": {
+    "es": "explicó a martina que querían recuperar la biblioteca",
+    "en": "explained to Martina they wanted the library back"
+   }
+  },
+  "explicó": {
+   "c": {
+    "es": "explicó a martina que querían recuperar la biblioteca",
+    "en": "explained to Martina they wanted the library back"
+   }
+  },
+  "querían": {
+   "c": {
+    "es": "explicó a martina que querían recuperar la biblioteca",
+    "en": "explained to Martina they wanted the library back"
+   }
+  }
+ },
+ "la-balda-del-medio": {
+  "lo": {
+   "c": {
+    "es": "lo dejó en el centro de la balda",
+    "en": "she set it in the middle of the shelf"
+   }
+  },
+  "dejó": {
+   "c": {
+    "es": "lo dejó en el centro de la balda",
+    "en": "she set it in the middle of the shelf"
+   },
+   "g": "set, put (dejar)"
+  },
+  "llamaba": {
+   "c": {
+    "es": "ya no se llamaba balda",
+    "en": "was no longer called a shelf"
+   }
+  },
+  "esperaba": {
+   "c": {
+    "es": "la pared los esperaba",
+    "en": "the wall was waiting for them"
+   }
+  }
+ },
+ "la-sobremesa-se-estira": {
+  "aunque": {
+   "c": {
+    "es": "aunque le costaba",
+    "en": "though it was hard"
+   }
+  },
+  "costar": {
+   "c": {
+    "es": "aunque le costaba",
+    "en": "though it was hard"
+   }
+  },
+  "costaba": {
+   "c": {
+    "es": "aunque le costaba",
+    "en": "though it was hard"
+   }
+  }
+ },
+ "un-mantel-mojado": {
+  "apilar": {
+   "c": {
+    "es": "nadie le había pedido que apilara",
+    "en": "nobody had asked her to stack"
+   }
+  },
+  "dejó": {
+   "g": "let himself (dejarse)"
+  },
+  "apretó": {
+   "g": "squeezed (apretar)"
+  },
+  "llegaba": {
+   "g": "one arrived (llegar)"
+  },
+  "hizo": {
+   "g": "put on, made (hacer)"
+  }
+ },
+ "ya-no-va-a-cerrar-nada": {
+  "a": {
+   "c": {
+    "es": "te lo vas a quedar tú",
+    "en": "you're going to keep it"
+   }
+  },
+  "dejó": {
+   "g": "put down (dejar)"
+  },
+  "quedó": {
+   "g": "became, ended up (quedarse)"
+  },
+  "entró": {
+   "g": "sank in (entrar)"
+  },
+  "esperaban": {
+   "g": "were waiting for (esperar)"
+  }
+ },
+ "una-agenda-de-desconocida": {
+  "dijo": {
+   "c": {
+    "es": "dijo, y explicó que pesaba más",
+    "en": "she said, and explained it weighed more"
+   }
+  },
+  "su": {
+   "c": {
+    "es": "explicó que pesaba más que su maleta",
+    "en": "explained it weighed more than her suitcase"
+   }
+  },
+  "más": {
+   "c": {
+    "es": "explicó que pesaba más que su maleta",
+    "en": "explained it weighed more than her suitcase"
+   }
+  },
+  "maleta": {
+   "c": {
+    "es": "explicó que pesaba más que su maleta",
+    "en": "explained it weighed more than her suitcase"
+   }
+  },
+  "pesaba": {
+   "c": {
+    "es": "explicó que pesaba más que su maleta",
+    "en": "explained it weighed more than her suitcase"
+   }
+  },
+  "explicó": {
+   "c": {
+    "es": "explicó que pesaba más que su maleta",
+    "en": "explained it weighed more than her suitcase"
+   }
+  },
+  "hojea": {
+   "c": {
+    "es": "como se hojea la agenda de una desconocida",
+    "en": "the way you leaf through a stranger's diary"
+   }
+  },
+  "hojear": {
+   "c": {
+    "es": "como se hojea la agenda de una desconocida",
+    "en": "the way you leaf through a stranger's diary"
+   }
+  },
+  "desconocido": {
+   "c": {
+    "es": "como se hojea la agenda de una desconocida",
+    "en": "the way you leaf through a stranger's diary"
+   }
+  },
+  "hojeó": {
+   "c": {
+    "es": "claudia lo hojeó",
+    "en": "Claudia leafed through it"
+   }
+  },
+  "traer": {
+   "c": {
+    "es": "te lo traigo",
+    "en": "I'm bringing it to you"
+   }
+  },
+  "esperó": {
+   "c": {
+    "es": "la esperó con tiempo de sobra",
+    "en": "waited for her with time to spare"
+   }
+  }
+ },
+ "amanece-con-poniente": {
+  "se": {
+   "c": {
+    "es": "el local se quedó sin sillas",
+    "en": "the bar was left without chairs"
+   }
+  },
+  "local": {
+   "c": {
+    "es": "el local se quedó sin sillas",
+    "en": "the bar was left without chairs"
+   }
+  },
+  "quedó": {
+   "c": {
+    "es": "el local se quedó sin sillas",
+    "en": "the bar was left without chairs"
+   },
+   "g": "was left (quedarse)"
+  },
+  "eco": {
+   "c": {
+    "es": "a bromas con eco en una escalera",
+    "en": "like jokes echoing on a staircase"
+   }
+  },
+  "escalera": {
+   "c": {
+    "es": "una escalera que olía a cartón",
+    "en": "a staircase that smelled of cardboard"
+   }
+  },
+  "olía": {
+   "c": {
+    "es": "una escalera que olía a cartón",
+    "en": "a staircase that smelled of cardboard"
+   }
+  },
+  "cartón": {
+   "c": {
+    "es": "una escalera que olía a cartón",
+    "en": "a staircase that smelled of cardboard"
+   }
+  },
+  "que": {
+   "c": {
+    "es": "que cargó una caja en los brazos",
+    "en": "who took a box in her arms"
+   }
+  },
+  "cargó": {
+   "c": {
+    "es": "que cargó una caja en los brazos",
+    "en": "who took a box in her arms"
+   }
+  },
+  "nudo": {
+   "c": {
+    "es": "hasta que se le pasó el nudo",
+    "en": "until the lump in her throat eased"
+   }
+  },
+  "pasó": {
+   "c": {
+    "es": "hasta que se le pasó el nudo",
+    "en": "until the lump in her throat eased"
+   }
+  },
+  "hasta": {
+   "c": {
+    "es": "hasta que se le pasó el nudo",
+    "en": "until the lump in her throat eased"
+   }
+  },
+  "apretó": {
+   "c": {
+    "es": "claudia apretó el candado",
+    "en": "Claudia squeezed the padlock"
+   }
+  }
+ },
+ "me-lo-he-ganado": {
+  "le": {
+   "c": {
+    "es": "esa diferencia le pareció el resumen del año",
+    "en": "that difference seemed to her the year's summary"
+   }
+  },
+  "pareció": {
+   "c": {
+    "es": "esa diferencia le pareció el resumen del año",
+    "en": "that difference seemed to her the year's summary"
+   }
+  },
+  "luz": {
+   "c": {
+    "es": "estrenó luz y olor a pintura",
+    "en": "had fresh light and the smell of paint"
+   }
+  },
+  "estrenar": {
+   "c": {
+    "es": "estrenó luz y olor a pintura",
+    "en": "had fresh light and the smell of paint"
+   }
+  },
+  "estrenó": {
+   "c": {
+    "es": "estrenó luz y olor a pintura",
+    "en": "had fresh light and the smell of paint"
+   }
+  },
+  "local": {
+   "c": {
+    "es": "el local nuevo estrenó luz",
+    "en": "the new bar had fresh light"
+   }
+  },
+  "colgar": {
+   "c": {
+    "es": "discutió con media peña dónde colgar",
+    "en": "argued with half the club where to hang"
+   }
+  },
+  "dónde": {
+   "c": {
+    "es": "discutió con media peña dónde colgar",
+    "en": "argued with half the club where to hang"
+   }
+  },
+  "discutió": {
+   "c": {
+    "es": "discutió con media peña dónde colgar",
+    "en": "argued with half the club where to hang"
+   }
+  },
+  "hubieran": {
+   "g": "had (haber)"
+  }
+ },
+ "la-cana-de-marcos": {
+  "quedó": {
+   "g": "suddenly became (quedarse)"
+  },
+  "cayó": {
+   "g": "hit on, realised (caer en)"
+  }
+ },
+ "la-persiana-a-media-tarde": {
+  "quedó": {
+   "g": "was left (quedarse)"
+  }
+ },
+ "una-copla-sin-firma": {
+  "quedó": {
+   "g": "went (still) (quedarse)"
+  }
+ },
+ "": {
+  "frenó": {
+   "g": "stopped (frenar)"
+  },
+  "mandaba": {
+   "g": "was in charge; was sending (mandar)"
+  },
+  "miraron": {
+   "g": "looked at (mirar)"
+  },
+  "llevaban": {
+   "g": "had, carried (llevar)"
+  },
+  "temía": {
+   "g": "was afraid (temer)"
+  },
+  "subió": {
+   "g": "went up, rose (subir)"
+  },
+  "picaba": {
+   "g": "stung, bothered (picar)"
+  },
+  "comía": {
+   "g": "ate (comer)"
+  },
+  "cortó": {
+   "g": "cut, cut in (cortar)"
+  },
+  "costaba": {
+   "g": "cost, was hard (costar)"
+  },
+  "faltaba": {
+   "g": "was missing (faltar)"
+  },
+  "señaló": {
+   "g": "pointed at (señalar)"
+  },
+  "veía": {
+   "g": "saw, could see (ver)"
+  },
+  "acabó": {
+   "g": "ended, finished (acabar)"
+  },
+  "colgó": {
+   "g": "hung (colgar)"
+  },
+  "cerraba": {
+   "g": "closed, locked (cerrar)"
+  },
+  "hubieran": {
+   "g": "had (haber)"
+  }
+ }
+}

@@ -49,8 +49,8 @@
    "en": "that day Claudia was the welcome committee"
   },
   "esperó": {
-   "es": "la esperó con tiempo de sobra en el andén",
-   "en": "she waited for her on the platform with time to spare"
+   "es": "la esperó con tiempo de sobra",
+   "en": "waited for her with time to spare"
   },
   "olía": {
    "es": "que olía a tren",
@@ -129,44 +129,44 @@
    "en": "the planner, left behind in Vitoria"
   },
   "dijo": {
-   "es": "dijo, y explicó que pesaba más que su maleta",
-   "en": "she said, and explained that it weighed more than her suitcase"
+   "es": "dijo, y explicó que pesaba más",
+   "en": "she said, and explained it weighed more"
   },
   "explicó": {
-   "es": "dijo, y explicó que pesaba más que su maleta",
-   "en": "she said, and explained that it weighed more than her suitcase"
+   "es": "explicó que pesaba más que su maleta",
+   "en": "explained it weighed more than her suitcase"
   },
   "pesaba": {
-   "es": "dijo, y explicó que pesaba más que su maleta",
-   "en": "she said, and explained that it weighed more than her suitcase"
+   "es": "explicó que pesaba más que su maleta",
+   "en": "explained it weighed more than her suitcase"
   },
   "más": {
-   "es": "dijo, y explicó que pesaba más que su maleta",
-   "en": "she said, and explained that it weighed more than her suitcase"
+   "es": "explicó que pesaba más que su maleta",
+   "en": "explained it weighed more than her suitcase"
   },
   "su": {
-   "es": "dijo, y explicó que pesaba más que su maleta",
-   "en": "she said, and explained that it weighed more than her suitcase"
+   "es": "explicó que pesaba más que su maleta",
+   "en": "explained it weighed more than her suitcase"
   },
   "maleta": {
-   "es": "dijo, y explicó que pesaba más que su maleta",
-   "en": "she said, and explained that it weighed more than her suitcase"
+   "es": "explicó que pesaba más que su maleta",
+   "en": "explained it weighed more than her suitcase"
   },
   "hojeó": {
-   "es": "claudia lo hojeó como se hojea la agenda de una desconocida",
-   "en": "Claudia leafed through it the way you leaf through a stranger's diary"
+   "es": "claudia lo hojeó",
+   "en": "Claudia leafed through it"
   },
   "hojea": {
-   "es": "claudia lo hojeó como se hojea la agenda de una desconocida",
-   "en": "Claudia leafed through it the way you leaf through a stranger's diary"
+   "es": "como se hojea la agenda de una desconocida",
+   "en": "the way you leaf through a stranger's diary"
   },
   "hojear": {
-   "es": "claudia lo hojeó como se hojea la agenda de una desconocida",
-   "en": "Claudia leafed through it the way you leaf through a stranger's diary"
+   "es": "como se hojea la agenda de una desconocida",
+   "en": "the way you leaf through a stranger's diary"
   },
   "desconocido": {
-   "es": "claudia lo hojeó como se hojea la agenda de una desconocida",
-   "en": "Claudia leafed through it the way you leaf through a stranger's diary"
+   "es": "como se hojea la agenda de una desconocida",
+   "en": "the way you leaf through a stranger's diary"
   },
   "cada": {
    "es": "cada hora tenía su casilla",
@@ -253,8 +253,8 @@
    "en": "since it still works for you"
   },
   "traer": {
-   "es": "te lo traigo por si lo echabas de menos",
-   "en": "I'm bringing it in case you missed it"
+   "es": "te lo traigo",
+   "en": "I'm bringing it to you"
   }
  },
  "amanece-con-poniente": {
@@ -271,12 +271,12 @@
    "en": "Marcos shared out the work between Claudia and Paula"
   },
   "que": {
-   "es": "que cargó una caja en los brazos al primer descuido",
-   "en": "who had a box in her arms the moment nobody was looking"
+   "es": "que cargó una caja en los brazos",
+   "en": "who took a box in her arms"
   },
   "cargó": {
-   "es": "que cargó una caja en los brazos al primer descuido",
-   "en": "who had a box in her arms the moment nobody was looking"
+   "es": "que cargó una caja en los brazos",
+   "en": "who took a box in her arms"
   },
   "carga": {
    "es": "en esta casa el que mira, carga",
@@ -339,32 +339,32 @@
    "en": "it sounded like the club carrying up drawers"
   },
   "eco": {
-   "es": "a bromas con eco en una escalera que olía a cartón",
-   "en": "like jokes echoing on a staircase that smelled of cardboard"
+   "es": "a bromas con eco en una escalera",
+   "en": "like jokes echoing on a staircase"
   },
   "escalera": {
-   "es": "a bromas con eco en una escalera que olía a cartón",
-   "en": "like jokes echoing on a staircase that smelled of cardboard"
+   "es": "una escalera que olía a cartón",
+   "en": "a staircase that smelled of cardboard"
   },
   "olía": {
-   "es": "a bromas con eco en una escalera que olía a cartón",
-   "en": "like jokes echoing on a staircase that smelled of cardboard"
+   "es": "una escalera que olía a cartón",
+   "en": "a staircase that smelled of cardboard"
   },
   "cartón": {
-   "es": "a bromas con eco en una escalera que olía a cartón",
-   "en": "like jokes echoing on a staircase that smelled of cardboard"
+   "es": "una escalera que olía a cartón",
+   "en": "a staircase that smelled of cardboard"
   },
   "local": {
-   "es": "el local se quedó sin sillas y sin coplas",
-   "en": "the bar was left without chairs or songs"
+   "es": "el local se quedó sin sillas",
+   "en": "the bar was left without chairs"
   },
   "se": {
-   "es": "el local se quedó sin sillas y sin coplas",
-   "en": "the bar was left without chairs or songs"
+   "es": "el local se quedó sin sillas",
+   "en": "the bar was left without chairs"
   },
   "quedó": {
-   "es": "el local se quedó sin sillas y sin coplas",
-   "en": "the bar was left without chairs or songs"
+   "es": "el local se quedó sin sillas",
+   "en": "the bar was left without chairs"
   },
   "ofreció": {
    "es": "ofreció marcos delante del candado",
@@ -415,20 +415,20 @@
    "en": "with the wound already healed"
   },
   "apretó": {
-   "es": "claudia apretó el candado hasta que se le pasó el nudo",
-   "en": "Claudia squeezed the padlock until the lump in her throat eased"
+   "es": "claudia apretó el candado",
+   "en": "Claudia squeezed the padlock"
   },
   "hasta": {
-   "es": "claudia apretó el candado hasta que se le pasó el nudo",
-   "en": "Claudia squeezed the padlock until the lump in her throat eased"
+   "es": "hasta que se le pasó el nudo",
+   "en": "until the lump in her throat eased"
   },
   "pasó": {
-   "es": "claudia apretó el candado hasta que se le pasó el nudo",
-   "en": "Claudia squeezed the padlock until the lump in her throat eased"
+   "es": "hasta que se le pasó el nudo",
+   "en": "until the lump in her throat eased"
   },
   "nudo": {
-   "es": "claudia apretó el candado hasta que se le pasó el nudo",
-   "en": "Claudia squeezed the padlock until the lump in her throat eased"
+   "es": "hasta que se le pasó el nudo",
+   "en": "until the lump in her throat eased"
   },
   "preguntó": {
    "es": "preguntó paula",
@@ -513,36 +513,36 @@
    "en": "I've earned it"
   },
   "local": {
-   "es": "el local nuevo estrenó luz y olor a pintura",
-   "en": "the new bar opened with fresh light and the smell of paint"
+   "es": "el local nuevo estrenó luz",
+   "en": "the new bar had fresh light"
   },
   "estrenó": {
-   "es": "el local nuevo estrenó luz y olor a pintura",
-   "en": "the new bar opened with fresh light and the smell of paint"
+   "es": "estrenó luz y olor a pintura",
+   "en": "had fresh light and the smell of paint"
   },
   "luz": {
-   "es": "el local nuevo estrenó luz y olor a pintura",
-   "en": "the new bar opened with fresh light and the smell of paint"
+   "es": "estrenó luz y olor a pintura",
+   "en": "had fresh light and the smell of paint"
   },
   "estrenar": {
-   "es": "el local nuevo estrenó luz y olor a pintura",
-   "en": "the new bar opened with fresh light and the smell of paint"
+   "es": "estrenó luz y olor a pintura",
+   "en": "had fresh light and the smell of paint"
   },
   "guardó": {
    "es": "claudia guardó el archivo completo",
    "en": "Claudia stored away the complete archive"
   },
   "discutió": {
-   "es": "marcos discutió con media peña dónde colgar el candado viejo",
-   "en": "Marcos argued with half the club about where to hang the old padlock"
+   "es": "discutió con media peña dónde colgar",
+   "en": "argued with half the club where to hang"
   },
   "dónde": {
-   "es": "marcos discutió con media peña dónde colgar el candado viejo",
-   "en": "Marcos argued with half the club about where to hang the old padlock"
+   "es": "discutió con media peña dónde colgar",
+   "en": "argued with half the club where to hang"
   },
   "colgar": {
-   "es": "marcos discutió con media peña dónde colgar el candado viejo",
-   "en": "Marcos argued with half the club about where to hang the old padlock"
+   "es": "discutió con media peña dónde colgar",
+   "en": "argued with half the club where to hang"
   },
   "decidió": {
    "es": "decidió marcos, y lo colgó con dos clavos",
@@ -585,12 +585,12 @@
    "en": "now it told a story"
   },
   "le": {
-   "es": "a claudia esa diferencia le pareció el resumen del año",
-   "en": "to Claudia that difference seemed to sum up the year"
+   "es": "esa diferencia le pareció el resumen del año",
+   "en": "that difference seemed to her the year's summary"
   },
   "pareció": {
-   "es": "a claudia esa diferencia le pareció el resumen del año",
-   "en": "to Claudia that difference seemed to sum up the year"
+   "es": "esa diferencia le pareció el resumen del año",
+   "en": "that difference seemed to her the year's summary"
   },
   "pidió": {
    "es": "marcos pidió silencio subiéndose a una silla",

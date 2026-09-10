@@ -1,136 +1,520 @@
 {
  "vuelva-cuando-quiera": {
-  "tenía": {"es": "tenía olor a papel dormido", "en": "smelled of sleeping paper"},
-  "olor": {"es": "tenía olor a papel dormido", "en": "smelled of sleeping paper"},
-  "a": {"es": "tenía olor a papel dormido", "en": "smelled of sleeping paper"},
-  "papel": {"es": "tenía olor a papel dormido", "en": "smelled of sleeping paper"},
-  "era": {"es": "claudia era una clienta sin encargo", "en": "Claudia was a customer with no errand"},
-  "librera": {"es": "martina era la librera", "en": "Martina was the bookseller"},
-  "saludó": {"es": "saludó desde la escalera", "en": "she said hello from the ladder"},
-  "escalera": {"es": "saludó desde la escalera", "en": "she said hello from the ladder"},
-  "preguntó": {"es": "preguntó desde arriba", "en": "she asked from up above"},
-  "es": {"es": "si es que le queda algo por ahí", "en": "if you have any left around here"},
-  "contestó": {"es": "contestó claudia", "en": "Claudia answered"},
-  "y": {"es": "y le gustó la pregunta", "en": "and she liked the question"},
-  "gustó": {"es": "y le gustó la pregunta", "en": "and she liked the question"},
-  "pregunta": {"es": "y le gustó la pregunta", "en": "and she liked the question"},
-  "paseó": {"es": "paseó la mirada por los lomos", "en": "she ran her eyes along the spines"},
-  "mirada": {"es": "paseó la mirada por los lomos", "en": "she ran her eyes along the spines"},
-  "lomo": {"es": "paseó la mirada por los lomos", "en": "she ran her eyes along the spines"},
-  "pasear": {"es": "paseó la mirada por los lomos", "en": "she ran her eyes along the spines"},
-  "eligió": {"es": "eligió una novela corta y la apartó", "en": "she picked a short novel and set it aside"},
-  "apartó": {"es": "eligió una novela corta y la apartó", "en": "she picked a short novel and set it aside"},
-  "frenó": {"es": "una caja recién llegada la frenó", "en": "a box that had just come in stopped her"},
-  "libros": {"es": "los libros llevaban un exlibris redondo", "en": "the books had a round bookplate"},
-  "llevaban": {"es": "los libros llevaban un exlibris redondo", "en": "the books had a round bookplate"},
-  "lo": {"es": "lo reconoció como se reconoce una cara", "en": "she recognised it the way you recognise a face"},
-  "reconoció": {"es": "lo reconoció como se reconoce una cara", "en": "she recognised it the way you recognise a face"},
-  "reconoce": {"es": "lo reconoció como se reconoce una cara", "en": "she recognised it the way you recognise a face"},
-  "reconocer": {"es": "lo reconoció como se reconoce una cara", "en": "she recognised it the way you recognise a face"},
-  "miraron": {"es": "las dos miraron los libros como si respiraran", "en": "the two of them looked at the books as if they were breathing"},
-  "respirar": {"es": "las dos miraron los libros como si respiraran", "en": "the two of them looked at the books as if they were breathing"},
-  "volvió": {"es": "la novela volvió a su sitio", "en": "the novel went back to its place"},
-  "su": {"es": "la novela volvió a su sitio", "en": "the novel went back to its place"},
-  "sitio": {"es": "la novela volvió a su sitio", "en": "the novel went back to its place"},
-  "mandaba": {"es": "el presupuesto mandaba", "en": "the budget was in charge"},
-  "salió": {"es": "claudia salió con el primer libro de la peña", "en": "Claudia left with the club's first book"},
-  "dijo": {"es": "dijo martina", "en": "Martina said"},
-  "campanilla": {"es": "la campanilla sonó a principio de algo", "en": "the little bell rang like the start of something"},
-  "sonó": {"es": "la campanilla sonó a principio de algo", "en": "the little bell rang like the start of something"},
-  "moverse": {"es": "la caja no se mueve de aquí", "en": "the box isn't going anywhere"},
-  "vender": {"es": "una biblioteca que se vendió hace años", "en": "a library that was sold years ago"}
+  "tenía": {
+   "es": "tenía olor a papel dormido",
+   "en": "smelled of sleeping paper"
+  },
+  "olor": {
+   "es": "tenía olor a papel dormido",
+   "en": "smelled of sleeping paper"
+  },
+  "a": {
+   "es": "tenía olor a papel dormido",
+   "en": "smelled of sleeping paper"
+  },
+  "papel": {
+   "es": "tenía olor a papel dormido",
+   "en": "smelled of sleeping paper"
+  },
+  "era": {
+   "es": "claudia era una clienta sin encargo",
+   "en": "Claudia was a customer with no errand"
+  },
+  "librera": {
+   "es": "martina era la librera",
+   "en": "Martina was the bookseller"
+  },
+  "saludó": {
+   "es": "saludó desde la escalera",
+   "en": "she said hello from the ladder"
+  },
+  "escalera": {
+   "es": "saludó desde la escalera",
+   "en": "she said hello from the ladder"
+  },
+  "preguntó": {
+   "es": "preguntó desde arriba",
+   "en": "she asked from up above"
+  },
+  "es": {
+   "es": "si es que le queda algo por ahí",
+   "en": "if you have any left around here"
+  },
+  "contestó": {
+   "es": "contestó claudia",
+   "en": "Claudia answered"
+  },
+  "y": {
+   "es": "y le gustó la pregunta",
+   "en": "and she liked the question"
+  },
+  "gustó": {
+   "es": "y le gustó la pregunta",
+   "en": "and she liked the question"
+  },
+  "pregunta": {
+   "es": "y le gustó la pregunta",
+   "en": "and she liked the question"
+  },
+  "paseó": {
+   "es": "paseó la mirada por los lomos",
+   "en": "she ran her eyes along the spines"
+  },
+  "mirada": {
+   "es": "paseó la mirada por los lomos",
+   "en": "she ran her eyes along the spines"
+  },
+  "lomo": {
+   "es": "paseó la mirada por los lomos",
+   "en": "she ran her eyes along the spines"
+  },
+  "pasear": {
+   "es": "paseó la mirada por los lomos",
+   "en": "she ran her eyes along the spines"
+  },
+  "eligió": {
+   "es": "eligió una novela corta y la apartó",
+   "en": "she picked a short novel and set it aside"
+  },
+  "apartó": {
+   "es": "eligió una novela corta y la apartó",
+   "en": "she picked a short novel and set it aside"
+  },
+  "frenó": {
+   "es": "una caja recién llegada la frenó",
+   "en": "a box that had just come in stopped her"
+  },
+  "libros": {
+   "es": "los libros llevaban un exlibris redondo",
+   "en": "the books had a round bookplate"
+  },
+  "llevaban": {
+   "es": "los libros llevaban un exlibris redondo",
+   "en": "the books had a round bookplate"
+  },
+  "lo": {
+   "es": "lo reconoció como se reconoce una cara",
+   "en": "she recognised it the way you recognise a face"
+  },
+  "reconoció": {
+   "es": "lo reconoció como se reconoce una cara",
+   "en": "she recognised it the way you recognise a face"
+  },
+  "reconoce": {
+   "es": "lo reconoció como se reconoce una cara",
+   "en": "she recognised it the way you recognise a face"
+  },
+  "reconocer": {
+   "es": "lo reconoció como se reconoce una cara",
+   "en": "she recognised it the way you recognise a face"
+  },
+  "miraron": {
+   "es": "miraron los libros como si respiraran",
+   "en": "looked at the books as if they were breathing"
+  },
+  "respirar": {
+   "es": "miraron los libros como si respiraran",
+   "en": "looked at the books as if they were breathing"
+  },
+  "volvió": {
+   "es": "la novela volvió a su sitio",
+   "en": "the novel went back to its place"
+  },
+  "su": {
+   "es": "la novela volvió a su sitio",
+   "en": "the novel went back to its place"
+  },
+  "sitio": {
+   "es": "la novela volvió a su sitio",
+   "en": "the novel went back to its place"
+  },
+  "mandaba": {
+   "es": "el presupuesto mandaba",
+   "en": "the budget was in charge"
+  },
+  "salió": {
+   "es": "claudia salió con el primer libro",
+   "en": "Claudia left with the first book"
+  },
+  "dijo": {
+   "es": "dijo martina",
+   "en": "Martina said"
+  },
+  "campanilla": {
+   "es": "la campanilla sonó a principio de algo",
+   "en": "the little bell rang like the start of something"
+  },
+  "sonó": {
+   "es": "la campanilla sonó a principio de algo",
+   "en": "the little bell rang like the start of something"
+  },
+  "moverse": {
+   "es": "la caja no se mueve de aquí",
+   "en": "the box isn't going anywhere"
+  },
+  "vender": {
+   "es": "una biblioteca que se vendió hace años",
+   "en": "a library that was sold years ago"
+  }
  },
  "el-tomo-aparte": {
-  "volvió": {"es": "claudia volvió con marcos y una propuesta seria", "en": "Claudia came back with Marcos and a serious proposal"},
-  "y": {"es": "claudia volvió con marcos y una propuesta seria", "en": "Claudia came back with Marcos and a serious proposal"},
-  "explicó": {"es": "le explicó a martina que querían recuperar la biblioteca", "en": "she explained to Martina that they wanted to get the library back"},
-  "que": {"es": "le explicó a martina que querían recuperar la biblioteca", "en": "she explained to Martina that they wanted to get the library back"},
-  "querían": {"es": "le explicó a martina que querían recuperar la biblioteca", "en": "she explained to Martina that they wanted to get the library back"},
-  "escuchó": {"es": "martina escuchó con los brazos cruzados", "en": "Martina listened with her arms crossed"},
-  "cruzado": {"es": "martina escuchó con los brazos cruzados", "en": "Martina listened with her arms crossed"},
-  "avisó": {"es": "avisó", "en": "she warned"},
-  "prometió": {"es": "prometió marcos", "en": "Marcos promised"},
-  "enseñó": {"es": "y enseñó fotos del hueco", "en": "and showed photos of the empty space"},
-  "fotos": {"es": "y enseñó fotos del hueco", "en": "and showed photos of the empty space"},
-  "enseñar": {"es": "y enseñó fotos del hueco", "en": "and showed photos of the empty space"},
-  "repasó": {"es": "martina las repasó con cara de examen", "en": "Martina went over them with an examiner's face"},
-  "concedió": {"es": "concedió al fin", "en": "she conceded at last"},
-  "al": {"es": "concedió al fin", "en": "she conceded at last"},
-  "fin": {"es": "concedió al fin", "en": "she conceded at last"},
-  "trato": {"es": "el trato se cerró a la antigua", "en": "the deal was closed the old way"},
-  "cerró": {"es": "el trato se cerró a la antigua", "en": "the deal was closed the old way"},
-  "a la antigua": {"es": "el trato se cerró a la antigua", "en": "the deal was closed the old way"},
-  "libros": {"es": "los libros salieron por tandas", "en": "the books left in batches"},
-  "salieron": {"es": "los libros salieron por tandas", "en": "the books left in batches"},
-  "tandas": {"es": "los libros salieron por tandas", "en": "the books left in batches"},
-  "tanda": {"es": "los libros salieron por tandas", "en": "the books left in batches"},
-  "envolver": {"es": "envueltos en papel de periódico", "en": "wrapped in newspaper"},
-  "preguntó": {"es": "preguntó claudia", "en": "Claudia asked"},
-  "contestó": {"es": "contestó martina", "en": "Martina answered"},
-  "agachó": {"es": "martina se agachó y sacó un tomo aparte", "en": "Martina bent down and took out a volume kept apart"},
-  "sacó": {"es": "martina se agachó y sacó un tomo aparte", "en": "Martina bent down and took out a volume kept apart"},
-  "agacharse": {"es": "martina se agachó y sacó un tomo aparte", "en": "Martina bent down and took out a volume kept apart"},
-  "sacar": {"es": "martina se agachó y sacó un tomo aparte", "en": "Martina bent down and took out a volume kept apart"},
-  "forrar": {"es": "forrado a mano", "en": "covered by hand"},
-  "lo": {"es": "lo abrió", "en": "she opened it"},
-  "abrió": {"es": "lo abrió", "en": "she opened it"},
-  "pensó": {"es": "lo pensó y lo volvió a cerrar", "en": "thought it over and closed it again"},
-  "cerrar": {"es": "lo pensó y lo volvió a cerrar", "en": "thought it over and closed it again"},
-  "volver a": {"es": "lo pensó y lo volvió a cerrar", "en": "thought it over and closed it again"},
-  "fuera": {"es": "fuera", "en": "outside"},
-  "luz": {"es": "la luz fue cayendo", "en": "the light was fading"},
-  "fue": {"es": "la luz fue cayendo", "en": "the light was fading"},
-  "cayendo": {"es": "la luz fue cayendo", "en": "the light was fading"},
-  "nadie": {"es": "y nadie miró el reloj", "en": "and nobody looked at the clock"},
-  "miró": {"es": "y nadie miró el reloj", "en": "and nobody looked at the clock"},
-  "reloj": {"es": "y nadie miró el reloj", "en": "and nobody looked at the clock"},
-  "dijo": {"es": "dijo", "en": "she said"},
-  "llevó": {"es": "se lo llevó al mostrador de dentro", "en": "took it to the counter inside"},
-  "vio": {"es": "claudia vio la dedicatoria un segundo", "en": "Claudia saw the inscription for a second"},
-  "dedicatoria": {"es": "claudia vio la dedicatoria un segundo", "en": "Claudia saw the inscription for a second"},
-  "manuscrito": {"es": "manuscrita y torcida", "en": "handwritten and crooked"},
-  "quedó": {"es": "se quedó dando vueltas toda la tarde", "en": "kept going round all afternoon"},
-  "dando vueltas": {"es": "se quedó dando vueltas toda la tarde", "en": "kept going round all afternoon"},
-  "tarde": {"es": "se quedó dando vueltas toda la tarde", "en": "kept going round all afternoon"}
+  "volvió": {
+   "es": "claudia volvió con marcos y una propuesta seria",
+   "en": "Claudia came back with Marcos and a serious proposal"
+  },
+  "y": {
+   "es": "claudia volvió con marcos y una propuesta seria",
+   "en": "Claudia came back with Marcos and a serious proposal"
+  },
+  "explicó": {
+   "es": "explicó a martina que querían recuperar la biblioteca",
+   "en": "explained to Martina they wanted the library back"
+  },
+  "que": {
+   "es": "explicó a martina que querían recuperar la biblioteca",
+   "en": "explained to Martina they wanted the library back"
+  },
+  "querían": {
+   "es": "explicó a martina que querían recuperar la biblioteca",
+   "en": "explained to Martina they wanted the library back"
+  },
+  "escuchó": {
+   "es": "martina escuchó con los brazos cruzados",
+   "en": "Martina listened with her arms crossed"
+  },
+  "cruzado": {
+   "es": "martina escuchó con los brazos cruzados",
+   "en": "Martina listened with her arms crossed"
+  },
+  "avisó": {
+   "es": "avisó",
+   "en": "she warned"
+  },
+  "prometió": {
+   "es": "prometió marcos",
+   "en": "Marcos promised"
+  },
+  "enseñó": {
+   "es": "y enseñó fotos del hueco",
+   "en": "and showed photos of the empty space"
+  },
+  "fotos": {
+   "es": "y enseñó fotos del hueco",
+   "en": "and showed photos of the empty space"
+  },
+  "enseñar": {
+   "es": "y enseñó fotos del hueco",
+   "en": "and showed photos of the empty space"
+  },
+  "repasó": {
+   "es": "martina las repasó con cara de examen",
+   "en": "Martina went over them with an examiner's face"
+  },
+  "concedió": {
+   "es": "concedió al fin",
+   "en": "she conceded at last"
+  },
+  "al": {
+   "es": "concedió al fin",
+   "en": "she conceded at last"
+  },
+  "fin": {
+   "es": "concedió al fin",
+   "en": "she conceded at last"
+  },
+  "trato": {
+   "es": "el trato se cerró a la antigua",
+   "en": "the deal was closed the old way"
+  },
+  "cerró": {
+   "es": "el trato se cerró a la antigua",
+   "en": "the deal was closed the old way"
+  },
+  "a la antigua": {
+   "es": "el trato se cerró a la antigua",
+   "en": "the deal was closed the old way"
+  },
+  "libros": {
+   "es": "los libros salieron por tandas",
+   "en": "the books left in batches"
+  },
+  "salieron": {
+   "es": "los libros salieron por tandas",
+   "en": "the books left in batches"
+  },
+  "tandas": {
+   "es": "los libros salieron por tandas",
+   "en": "the books left in batches"
+  },
+  "tanda": {
+   "es": "los libros salieron por tandas",
+   "en": "the books left in batches"
+  },
+  "envolver": {
+   "es": "envueltos en papel de periódico",
+   "en": "wrapped in newspaper"
+  },
+  "preguntó": {
+   "es": "preguntó claudia",
+   "en": "Claudia asked"
+  },
+  "contestó": {
+   "es": "contestó martina",
+   "en": "Martina answered"
+  },
+  "agachó": {
+   "es": "martina se agachó y sacó un tomo aparte",
+   "en": "Martina bent down and took out a volume kept apart"
+  },
+  "sacó": {
+   "es": "martina se agachó y sacó un tomo aparte",
+   "en": "Martina bent down and took out a volume kept apart"
+  },
+  "agacharse": {
+   "es": "martina se agachó y sacó un tomo aparte",
+   "en": "Martina bent down and took out a volume kept apart"
+  },
+  "sacar": {
+   "es": "martina se agachó y sacó un tomo aparte",
+   "en": "Martina bent down and took out a volume kept apart"
+  },
+  "forrar": {
+   "es": "forrado a mano",
+   "en": "covered by hand"
+  },
+  "lo": {
+   "es": "lo abrió",
+   "en": "she opened it"
+  },
+  "abrió": {
+   "es": "lo abrió",
+   "en": "she opened it"
+  },
+  "pensó": {
+   "es": "lo pensó y lo volvió a cerrar",
+   "en": "thought it over and closed it again"
+  },
+  "cerrar": {
+   "es": "lo pensó y lo volvió a cerrar",
+   "en": "thought it over and closed it again"
+  },
+  "volver a": {
+   "es": "lo pensó y lo volvió a cerrar",
+   "en": "thought it over and closed it again"
+  },
+  "fuera": {
+   "es": "fuera",
+   "en": "outside"
+  },
+  "luz": {
+   "es": "la luz fue cayendo",
+   "en": "the light was fading"
+  },
+  "fue": {
+   "es": "la luz fue cayendo",
+   "en": "the light was fading"
+  },
+  "cayendo": {
+   "es": "la luz fue cayendo",
+   "en": "the light was fading"
+  },
+  "nadie": {
+   "es": "y nadie miró el reloj",
+   "en": "and nobody looked at the clock"
+  },
+  "miró": {
+   "es": "y nadie miró el reloj",
+   "en": "and nobody looked at the clock"
+  },
+  "reloj": {
+   "es": "y nadie miró el reloj",
+   "en": "and nobody looked at the clock"
+  },
+  "dijo": {
+   "es": "dijo",
+   "en": "she said"
+  },
+  "llevó": {
+   "es": "se lo llevó al mostrador de dentro",
+   "en": "took it to the counter inside"
+  },
+  "vio": {
+   "es": "claudia vio la dedicatoria un segundo",
+   "en": "Claudia saw the inscription for a second"
+  },
+  "dedicatoria": {
+   "es": "claudia vio la dedicatoria un segundo",
+   "en": "Claudia saw the inscription for a second"
+  },
+  "manuscrito": {
+   "es": "manuscrita y torcida",
+   "en": "handwritten and crooked"
+  },
+  "quedó": {
+   "es": "se quedó dando vueltas toda la tarde",
+   "en": "kept going round all afternoon"
+  },
+  "dando vueltas": {
+   "es": "se quedó dando vueltas toda la tarde",
+   "en": "kept going round all afternoon"
+  },
+  "tarde": {
+   "es": "se quedó dando vueltas toda la tarde",
+   "en": "kept going round all afternoon"
+  }
  },
  "la-balda-del-medio": {
-  "y": {"es": "claudia y media peña cruzaron la ciudad", "en": "Claudia and half the club crossed the city"},
-  "cruzaron": {"es": "claudia y media peña cruzaron la ciudad", "en": "Claudia and half the club crossed the city"},
-  "ciudad": {"es": "claudia y media peña cruzaron la ciudad", "en": "Claudia and half the club crossed the city"},
-  "cruzar": {"es": "claudia y media peña cruzaron la ciudad", "en": "Claudia and half the club crossed the city"},
-  "esperaba": {"es": "la pared los esperaba con las baldas ya medidas", "en": "the wall was waiting for them with the shelves already measured"},
-  "había": {"es": "había olor a madera nueva y a comienzo", "en": "there was a smell of new wood and of beginnings"},
-  "olor": {"es": "había olor a madera nueva y a comienzo", "en": "there was a smell of new wood and of beginnings"},
-  "madera": {"es": "había olor a madera nueva y a comienzo", "en": "there was a smell of new wood and of beginnings"},
-  "llegó": {"es": "martina llegó la última", "en": "Martina arrived last"},
-  "última": {"es": "martina llegó la última", "en": "Martina arrived last"},
-  "último": {"es": "martina llegó la última", "en": "Martina arrived last"},
-  "tomo": {"es": "con el tomo en una bolsa", "en": "with the volume in a bag"},
-  "bolsa": {"es": "con el tomo en una bolsa", "en": "with the volume in a bag"},
-  "lo": {"es": "lo dejó en el centro de la balda del medio", "en": "she set it in the middle of the middle shelf"},
-  "dejó": {"es": "lo dejó en el centro de la balda del medio", "en": "she set it in the middle of the middle shelf"},
-  "negar": {"es": "nadie se lo habría negado", "en": "nobody would have refused her"},
-  "dijo": {"es": "dijo", "en": "she said"},
-  "abrió": {"es": "claudia lo abrió con las dos manos", "en": "Claudia opened it with both hands"},
-  "con las dos manos": {"es": "claudia lo abrió con las dos manos", "en": "Claudia opened it with both hands"},
-  "leyó": {"es": "leyó", "en": "she read"},
-  "debajo": {"es": "debajo había una fecha del año malo", "en": "underneath there was a date from the bad year"},
-  "era": {"es": "la firma era de martina", "en": "the signature was Martina's"},
-  "de": {"es": "la firma era de martina", "en": "the signature was Martina's"},
-  "perderse": {"es": "para que no se perdiera por el mundo", "en": "so that it wouldn't get lost out in the world"},
-  "confesó": {"es": "confesó", "en": "she confessed"},
-  "añadió": {"es": "añadió", "en": "she added"},
-  "añadir": {"es": "añadió", "en": "she added"},
-  "entendió": {"es": "claudia entendió de golpe la custodia callada", "en": "all at once Claudia understood the silent safekeeping"},
-  "golpe": {"es": "claudia entendió de golpe la custodia callada", "en": "all at once Claudia understood the silent safekeeping"},
-  "callado": {"es": "claudia entendió de golpe la custodia callada", "en": "all at once Claudia understood the silent safekeeping"},
-  "le": {"es": "marcos le tendió la mano", "en": "Marcos held out his hand to her"},
-  "tendió": {"es": "marcos le tendió la mano", "en": "Marcos held out his hand to her"},
-  "mano": {"es": "marcos le tendió la mano", "en": "Marcos held out his hand to her"},
-  "tender la mano": {"es": "marcos le tendió la mano", "en": "Marcos held out his hand to her"},
-  "invitó": {"es": "la invitó a quedarse", "en": "he invited her to stay"},
-  "quedarse": {"es": "la invitó a quedarse", "en": "he invited her to stay"},
-  "invitar": {"es": "la invitó a quedarse", "en": "he invited her to stay"},
-  "llamaba": {"es": "la balda del medio ya no se llamaba balda", "en": "the middle shelf was no longer called a shelf"}
+  "y": {
+   "es": "claudia y media peña cruzaron la ciudad",
+   "en": "Claudia and half the club crossed the city"
+  },
+  "cruzaron": {
+   "es": "claudia y media peña cruzaron la ciudad",
+   "en": "Claudia and half the club crossed the city"
+  },
+  "ciudad": {
+   "es": "claudia y media peña cruzaron la ciudad",
+   "en": "Claudia and half the club crossed the city"
+  },
+  "cruzar": {
+   "es": "claudia y media peña cruzaron la ciudad",
+   "en": "Claudia and half the club crossed the city"
+  },
+  "esperaba": {
+   "es": "la pared los esperaba",
+   "en": "the wall was waiting for them"
+  },
+  "había": {
+   "es": "había olor a madera nueva y a comienzo",
+   "en": "there was a smell of new wood and of beginnings"
+  },
+  "olor": {
+   "es": "había olor a madera nueva y a comienzo",
+   "en": "there was a smell of new wood and of beginnings"
+  },
+  "madera": {
+   "es": "había olor a madera nueva y a comienzo",
+   "en": "there was a smell of new wood and of beginnings"
+  },
+  "llegó": {
+   "es": "martina llegó la última",
+   "en": "Martina arrived last"
+  },
+  "última": {
+   "es": "martina llegó la última",
+   "en": "Martina arrived last"
+  },
+  "último": {
+   "es": "martina llegó la última",
+   "en": "Martina arrived last"
+  },
+  "tomo": {
+   "es": "con el tomo en una bolsa",
+   "en": "with the volume in a bag"
+  },
+  "bolsa": {
+   "es": "con el tomo en una bolsa",
+   "en": "with the volume in a bag"
+  },
+  "lo": {
+   "es": "lo dejó en el centro de la balda",
+   "en": "she set it in the middle of the shelf"
+  },
+  "dejó": {
+   "es": "lo dejó en el centro de la balda",
+   "en": "she set it in the middle of the shelf"
+  },
+  "negar": {
+   "es": "nadie se lo habría negado",
+   "en": "nobody would have refused her"
+  },
+  "dijo": {
+   "es": "dijo",
+   "en": "she said"
+  },
+  "abrió": {
+   "es": "claudia lo abrió con las dos manos",
+   "en": "Claudia opened it with both hands"
+  },
+  "con las dos manos": {
+   "es": "claudia lo abrió con las dos manos",
+   "en": "Claudia opened it with both hands"
+  },
+  "leyó": {
+   "es": "leyó",
+   "en": "she read"
+  },
+  "debajo": {
+   "es": "debajo había una fecha del año malo",
+   "en": "underneath there was a date from the bad year"
+  },
+  "era": {
+   "es": "la firma era de martina",
+   "en": "the signature was Martina's"
+  },
+  "de": {
+   "es": "la firma era de martina",
+   "en": "the signature was Martina's"
+  },
+  "perderse": {
+   "es": "para que no se perdiera por el mundo",
+   "en": "so that it wouldn't get lost out in the world"
+  },
+  "confesó": {
+   "es": "confesó",
+   "en": "she confessed"
+  },
+  "añadió": {
+   "es": "añadió",
+   "en": "she added"
+  },
+  "añadir": {
+   "es": "añadió",
+   "en": "she added"
+  },
+  "entendió": {
+   "es": "claudia entendió de golpe la custodia callada",
+   "en": "all at once Claudia understood the silent safekeeping"
+  },
+  "golpe": {
+   "es": "claudia entendió de golpe la custodia callada",
+   "en": "all at once Claudia understood the silent safekeeping"
+  },
+  "callado": {
+   "es": "claudia entendió de golpe la custodia callada",
+   "en": "all at once Claudia understood the silent safekeeping"
+  },
+  "le": {
+   "es": "marcos le tendió la mano",
+   "en": "Marcos held out his hand to her"
+  },
+  "tendió": {
+   "es": "marcos le tendió la mano",
+   "en": "Marcos held out his hand to her"
+  },
+  "mano": {
+   "es": "marcos le tendió la mano",
+   "en": "Marcos held out his hand to her"
+  },
+  "tender la mano": {
+   "es": "marcos le tendió la mano",
+   "en": "Marcos held out his hand to her"
+  },
+  "invitó": {
+   "es": "la invitó a quedarse",
+   "en": "he invited her to stay"
+  },
+  "quedarse": {
+   "es": "la invitó a quedarse",
+   "en": "he invited her to stay"
+  },
+  "invitar": {
+   "es": "la invitó a quedarse",
+   "en": "he invited her to stay"
+  },
+  "llamaba": {
+   "es": "ya no se llamaba balda",
+   "en": "was no longer called a shelf"
+  }
  }
 }
