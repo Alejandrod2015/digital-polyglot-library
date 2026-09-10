@@ -2221,7 +2221,7 @@
     ]
   },
   "cmtvpqsfv000832hgemzk20cl#belo-horizonte": {
-    "cerrado": "2026-09-10T16:28:19.640Z",
+    "cerrado": "2026-09-10T16:52:46.900Z",
     "hash": "44837d6b3e048033",
     "historias": [
       "belo-horizonte#0 voce-e-a-moca-da-foto",
@@ -2241,10 +2241,10 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 6 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.11 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 56/63 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.13 sobre 54 plazas · 47 salen una sola vez | ancladas: 9/63 (14%) | cola: 47/54 portables con un solo encuentro (87%, tope 30%) | de un solo encuentro: cheiro, abre, respira fundo, dona, geladeira, atrás de, boca, moça, ri, nem, celular, bolso, almoço, sala, janela, tiro a foto, ficam, tela, baixa, volto, sorriso, pequeno, relógio, parede, botão, números, dez, puxa, braço, olho…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en PT no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
@@ -2286,7 +2286,7 @@
     }
   },
   "cmtvpqsfv000832hgemzk20cl#fortaleza": {
-    "cerrado": "2026-09-10T16:37:04.403Z",
+    "cerrado": "2026-09-10T16:52:52.059Z",
     "hash": "d18a151e0849fa45",
     "historias": [
       "fortaleza#0 uma-tapioca-rasgada",
@@ -2353,8 +2353,78 @@
       ]
     }
   },
+  "cmtvpqsfv000832hgemzk20cl#porto-alegre": {
+    "cerrado": "2026-09-10T16:58:20.736Z",
+    "hash": "d60e44d50d1762e3",
+    "historias": [
+      "porto-alegre#0 no-domingo-nada",
+      "porto-alegre#1 chimarrao-no-sabado",
+      "porto-alegre#2 uma-passagem-mais-tarde"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"semana de amiga en el sur: calendario, frio, chimarrao; humor de agenda y culpa pequena; frases de una idea, presente\", espina \"Larissa, uma moça do Rio de Janeiro, parte o ano entre Londres e o Brasil; em cada volta reaprende o seu proprio pais e descobre o que perdeu fora. Em Porto Alegre, na casa da amiga Camila, aprende a nao encher os dias e escolhe, pela primeira vez, ficar mais uma semana\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"diz\" 26%)",
+      "arranques de parrafo variados (mas repetido \"o\", 13%)",
+      "densidad 6.5 palabras por oracion (techo 9 en a0)",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 12 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.02 sobre 56 plazas · 55 salen una sola vez | ancladas: 5/61 (8%) | cola: 55/56 portables con un solo encuentro (98%, tope 30%) | de un solo encuentro: amiga, faculdade, inteira, segunda, terça, quarta, jantar, cada, feliz, cansada, cama, domingo, bate, mesmo, quieta, depois, também, caneta, escreve, nove, todo mundo, toma, cuidado, amargo, faz uma careta, conversam, anda, chamadas, horas, meia…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en PT no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: porto-alegre (Camila, Larissa)"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "a0",
+      "variante": "BRAZIL",
+      "registro": "semana de amiga en el sur: calendario, frio, chimarrao; humor de agenda y culpa pequena; frases de una idea, presente",
+      "espina": "Larissa, uma moça do Rio de Janeiro, parte o ano entre Londres e o Brasil; em cada volta reaprende o seu proprio pais e descobre o que perdeu fora. Em Porto Alegre, na casa da amiga Camila, aprende a nao encher os dias e escolhe, pela primeira vez, ficar mais uma semana",
+      "recursos": "A0: repeticion ritmica (Segunda, museu. Terca, cinema.), contraste con mas, emocion como gesto visible (o dedo em cima do botao). Titulos: linea dicha, regionalismo y objeto torcido, orden nuevo. ESCALERA: cada historia devuelve surfaces EXACTAS que hasta hoy salian una sola vez (lista en 'vuelven'); ancladas solo las de la escena gaucha",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "un domingo sin nada, en la cama, sin prisa",
+          "impide": "Camila tiene un papel en la nevera con un plan para cada dia de la semana",
+          "cuesta": "el plan de Camila, hecho con carino, que se queda sin cumplir",
+          "cambia": "Camila tambien queria un dia sin nada; escriben juntas: domingo, nada",
+          "emocion": "cansancio que calla (solo sonrie) y despues alivio compartido (las dos rien en la cama)",
+          "vuelven": "geladeira, papel, semana, coisa, pressa, tudo bem, acorda, cedo, olho, bom, um pouco, almoço, ficam, quieta, sorri, porta, baixinho"
+        },
+        {
+          "slot": "2",
+          "quiere": "aprender a tomar chimarrao con Camila",
+          "impide": "la charla se come la manana y olvida el desayuno de sabado por video con Caio",
+          "cuesta": "ese desayuno con Caio, que ya no vuelve",
+          "cambia": "le manda una foto y una disculpa; el sabado que viene ella llega primero",
+          "emocion": "culpa (se tapa la boca) y despues ternura (el movil vibra con un corazon)",
+          "vuelven": "enche, quente, sábado, puxa, devagar, bom, ainda, sala, relógio, parede, de repente, vibra, mesa, tela, dez, café da manhã, boca, desculpa, coração, esqueço"
+        },
+        {
+          "slot": "3",
+          "quiere": "comprar el billete de vuelta a Londres para el diez de marzo",
+          "impide": "el dedo no baja sobre el boton de comprar",
+          "cuesta": "dinero: el billete sale un poco mas caro al cambiar la fecha",
+          "cambia": "compra el diecisiete: una semana mas en Brasil, elegida por ella",
+          "emocion": "duda (el dedo quieto sobre el boton) y despues decision (aprieta y sonrie)",
+          "vuelven": "tela, branca, cadeira, dez, botão, em cima, desce, tudo bem, trabalho, semana, ombro, pensa, por fim, estende, um pouco, aperta, sorri"
+        }
+      ]
+    },
+    "avisos": [
+      "seguidilla: 59% de la narracion son oraciones de 4 palabras o menos. No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
+    ]
+  },
   "cmtvpqsfv000832hgemzk20cl#rio-de-janeiro": {
-    "cerrado": "2026-09-10T16:18:53.211Z",
+    "cerrado": "2026-09-10T16:52:33.115Z",
     "hash": "05f1d21154d6d387",
     "historias": [
       "rio-de-janeiro#0 um-beijo-torto",
@@ -2374,10 +2444,10 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 3 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.19 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 57/68 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.22 sobre 59 plazas · 48 salen una sola vez | ancladas: 9/68 (13%) | cola: 48/59 portables con un solo encuentro (81%, tope 30%) | de un solo encuentro: mala, metade, namorado, rapaz, estende, tudo bem, vermelha, rosto, desculpa, esqueço, lembra, chão, saudade, casaco, areia, senta, ao lado dele, devagar, letra, feia, some, grita, de repente, mar, baixinho, levanta, longe, promete, desce, continuam…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en PT no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
