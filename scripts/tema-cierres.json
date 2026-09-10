@@ -2285,8 +2285,76 @@
       ]
     }
   },
+  "cmtvpqsfv000832hgemzk20cl#bonito": {
+    "cerrado": "2026-09-10T17:28:43.137Z",
+    "hash": "1be5c9c47c37f069",
+    "historias": [
+      "bonito#0 um-sinal-no-alto-do-morro",
+      "bonito#1 o-celular-fica-aqui",
+      "bonito#2 terere-na-rodoviaria"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"ultima semana: senal que no llega, agua transparente, madrugada de despedida; tierno y luminoso, frases cosidas con e, mas y porque\", espina \"Larissa, uma moça do Rio de Janeiro, parte o ano entre Londres e o Brasil; em cada volta reaprende o seu proprio pais e descobre o que perdeu fora. Em Bonito, na ultima semana, deixa o celular na margem, reencontra o Caio e parte com uma resposta para a pergunta de Sao Luis: a casa dela tem nome\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"fala\" 29%)",
+      "arranques de parrafo variados (mas repetido \"larissa\", 27%)",
+      "densidad 8.4 palabras por oracion (techo 9 en a0)",
+      "seguidilla 30/60 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.08 sobre 50 plazas · 46 salen una sola vez | ancladas: 10/60 (17%) | cola: 46/50 portables con un solo encuentro (92%, tope 30%) | de un solo encuentro: mora, esta, quem, recebe, guia, sinal, bonito, sol, mensagem, vira, rápido, caminho, cai, barro, água, tão, clara, vidro, explica, regras, quero, foto, peixes, margem, calma, árvores, sombra, espera, apaga, vê…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en PT no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: bonito (Larissa, Gabriel)"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "a0",
+      "variante": "BRAZIL",
+      "registro": "ultima semana: senal que no llega, agua transparente, madrugada de despedida; tierno y luminoso, frases cosidas con e, mas y porque",
+      "espina": "Larissa, uma moça do Rio de Janeiro, parte o ano entre Londres e o Brasil; em cada volta reaprende o seu proprio pais e descobre o que perdeu fora. Em Bonito, na ultima semana, deixa o celular na margem, reencontra o Caio e parte com uma resposta para a pergunta de Sao Luis: a casa dela tem nome",
+      "recursos": "A0: repeticion ritmica, contraste con mas, emocion como gesto visible (os olhos molhados, acena da janela). Titulos: objeto torcido, linea dicha y regionalismo (el orden del tema 1, el mas lejano). ESCALERA: el vocab nuevo sale de palabras que ya estan en el texto de temas anteriores (cabeca, foto, agua, rapido, sol, nome, mensagem, aviao...) y cada historia devuelve surfaces EXACTAS de un solo encuentro (lista en 'vuelven')",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "hacer la videollamada del sabado con Caio, como prometio",
+          "impide": "en la pousada de Bonito no hay senal; solo en lo alto del cerro",
+          "cuesta": "la pantalla del movil, que se raja al caer en la bajada",
+          "cambia": "arriba llega un mensaje: mira atras; Caio esta en la carretera, vino para la ultima semana",
+          "emocion": "prisa y fastidio (sube corriendo sin aire) y despues alegria (grita su nombre y baja corriendo)",
+          "vuelven": "estrada, cidade, alto, correndo, costas, sem ar, para trás, acena, rapaz, conhece, grita, casa"
+        },
+        {
+          "slot": "2",
+          "quiere": "sacar fotos de los peces del Rio da Prata",
+          "impide": "la regla del guia: el movil se queda en la orilla",
+          "cuesta": "las fotos, que no va a tener nunca",
+          "cambia": "mira sin pantalla y se lleva la foto en la cabeza",
+          "emocion": "frustracion (mira el movil en la bolsa) y despues asombro (casi no respira bajo el agua)",
+          "vuelven": "roupa, óculos, fila, nem, quase, cinco, cores, maior, braço, dança, conversam, vinte, sai, entender, ninguém"
+        },
+        {
+          "slot": "3",
+          "quiere": "despedirse de Caio en la rodoviaria sin llorar",
+          "impide": "el despertador de las cinco y la lista de contactos llena de gente nueva",
+          "cuesta": "la despedida: el autobus se va y Caio se queda en el banco",
+          "cambia": "Caio guarda su numero con un nombre: Casa",
+          "emocion": "nudo en la garganta (los ojos mojados) y despues ternura (saluda desde la ventana)",
+          "vuelven": "banco, garrafa, gelada, dezessete, amargo, gente, palavra, qual, mesmo, muda, acena, dezembro, vai embora, estrada, cinco, sai"
+        }
+      ]
+    }
+  },
   "cmtvpqsfv000832hgemzk20cl#fortaleza": {
-    "cerrado": "2026-09-10T16:52:52.059Z",
+    "cerrado": "2026-09-10T17:28:04.005Z",
     "hash": "d18a151e0849fa45",
     "historias": [
       "fortaleza#0 uma-tapioca-rasgada",
@@ -2306,7 +2374,7 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.09 sobre 54 plazas · 50 salen una sola vez | ancladas: 9/63 (14%) | cola: 50/54 portables con un solo encuentro (93%, tope 30%) | de un solo encuentro: prima, fogo, pacote, branca, coloca, gruda, rasga, meio, pouca, tenta, redonda, olha só, prato, come, lixo, rua, cidade, pão, mesa, esquina, cedo, fila, bom, caixa, entender, um pouco, como, moedas, sobram, acorda…",
@@ -2354,8 +2422,8 @@
     }
   },
   "cmtvpqsfv000832hgemzk20cl#natal": {
-    "cerrado": "2026-09-10T17:05:21.303Z",
-    "hash": "32fd9283877cf557",
+    "cerrado": "2026-09-10T17:28:16.600Z",
+    "hash": "ca58ae31abc7ef30",
     "historias": [
       "natal#0 buggy-com-emocao",
       "natal#1 uma-calca-cortada",
@@ -2373,10 +2441,10 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.22 sobre 55 plazas · 47 salen una sola vez | ancladas: 7/62 (11%) | cola: 47/55 portables con un solo encuentro (85%, tope 30%) | de un solo encuentro: bota, forte, vento, amarelo, mais nova, calor, liga, certeza, estômago, óculos, alto, verde, azul, chapéu, põe, parece, forno, dentro, roupa, blusa, grossa, short, uso, vestido, tesoura, gaveta, corta, perna, torta, fresca…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.21 sobre 56 plazas · 48 salen una sola vez | ancladas: 6/62 (10%) | cola: 48/56 portables con un solo encuentro (86%, tope 30%) | de un solo encuentro: bota, forte, vento, amarelo, cabelo, mais nova, calor, liga, certeza, estômago, óculos, alto, verde, azul, chapéu, põe, parece, forno, dentro, roupa, blusa, grossa, bermuda, uso, vestido, tesoura, gaveta, corta, perna, torta…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en PT no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
@@ -2559,8 +2627,8 @@
     }
   },
   "cmtvpqsfv000832hgemzk20cl#sao-luis": {
-    "cerrado": "2026-09-10T17:22:35.930Z",
-    "hash": "41a2d0111bb4f39e",
+    "cerrado": "2026-09-10T17:28:29.514Z",
+    "hash": "bfd2b3ed4a49d0a3",
     "historias": [
       "sao-luis#0 a-chave-do-casarao",
       "sao-luis#1 a-janela-nao-fecha",
@@ -2582,7 +2650,7 @@
       "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.25 sobre 55 plazas · 43 salen una sola vez | ancladas: 5/60 (8%) | cola: 43/55 portables con un solo encuentro (78%, tope 30%) | de un solo encuentro: estreita, aluga, quartos, cem, anos, fechadura, acredito, cara, ninguém, sozinha, mexe, isso, duas, dá para, sempre, tambor, tocar, calçada, ensaio, gente, cores, dança, fita, aqui, esse, correndo, descalça, último, fazer a mala, mãe…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.25 sobre 56 plazas · 44 salen una sola vez | ancladas: 4/60 (7%) | cola: 44/56 portables con un solo encuentro (79%, tope 30%) | de un solo encuentro: estreita, aluga, quartos, cem, anos, praça, fechadura, acredito, cara, ninguém, sozinha, mexe, isso, duas, dá para, sempre, tambor, tocar, calçada, ensaio, gente, cores, dança, fita, aqui, esse, correndo, descalça, último, fazer a mala…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en PT no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",

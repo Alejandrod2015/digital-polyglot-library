@@ -48,6 +48,7 @@ import { renderedParagraphs } from "@/lib/readerParagraphs";
 import { isSpanishUpToLevel } from "@/lib/cefr/spanishLevels";
 import { esHuecoDelLexico } from "@/lib/cefr/spanishLexiconGaps";
 import { sueloDeNivel } from "@/lib/journeyVocabFloorBaseline";
+import { exencionUtilidad } from "@/lib/vocabWorthExemptions";
 import { isPortugueseA1A2 } from "@/lib/cefr/portugueseA1A2";
 import { isItalianA1A2 } from "@/lib/cefr/italianA1A2";
 import { isGermanA1A2 } from "@/lib/cefr/germanA1A2";
@@ -936,7 +937,13 @@ export function validateJourneyStories(
   // merece plaza, asi que el check informa y no bloquea.
   if (stories.some((s) => s.vocab && s.vocab.length)) {
     const idiomaEs = lang === "ES";
-    if (!idiomaEs) {
+    const eximido = idiomaEs ? null : exencionUtilidad(ctx.journeyId);
+    if (eximido) {
+      // Exencion POR JOURNEY, con revision escrita (src/lib/vocabWorthExemptions.ts).
+      // La regla general no cambia: sin fila en esa lista, fuera del espanol bloquea.
+      pushSet("journey-vocab-worth-teaching", "Cada plaza merece ensenarse",
+        true, `eximido por decision del usuario: ${eximido}`);
+    } else if (!idiomaEs) {
       noImplSet("journey-vocab-worth-teaching", "Cada plaza merece ensenarse",
         `Solo hay lexico graduado hasta C1 en espanol; en ${lang || "?"} no se puede medir la utilidad de una plaza.`);
     } else {
