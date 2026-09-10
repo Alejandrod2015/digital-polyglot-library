@@ -46,6 +46,8 @@ export { parseStoryInput } from "./storyPayload";
 import { findLookupOnlyVocab } from "./vocabUtility";
 import type { StoryPayload, StoryVocabItem } from "./storyPayload";
 import { parseStoryInput } from "./storyPayload";
+import { BANDA_PALABRAS_SPEC } from "./bodyWordBand";
+import { PALABRAS_CONGELADAS } from "./bodyWordBandBaseline";
 
 export type ExistingStorySummary = {
   title: string;
@@ -78,6 +80,11 @@ export type ValidationContext = {
   level?: string;
   /** Used in messages only. */
   topic?: string;
+  /** Journey y hueco de la historia. Con `topic`, localizan su linea base de
+   *  `body-word-count` (src/lib/bodyWordBandBaseline.ts). Sin ellos, la banda
+   *  entera del spec. */
+  journeyId?: string;
+  slotIndex?: number;
   /** Stories already in the same journey+level+topic. */
   existing?: ExistingStorySummary[];
   /**
@@ -934,22 +941,58 @@ export async function validateGeneratedStory(
   // la decision ya estaba tomada en el commit del B1 latam ("banda de
   // palabras UNA para todos los niveles, la del A0") y en la tabla del spec
   // (B2 = 140-166 palabras); el nivel solo faltaba en esta lista.
-  const isOneMinuteTier =
-    isA0 || ["A1", "A2", "B1", "B2"].includes((context.level ?? "").toUpperCase());
-  const [bwHardLo, bwHardHi, bwSoftLo, bwSoftHi] = isOneMinuteTier
-    ? [100, 190, 115, 170]
-    : [180, 320, 220, 280];
-  checks.push({
-    id: "body-word-count",
-    label: `Body is ${bwSoftLo}-${bwSoftHi} words (hard: ${bwHardLo}-${bwHardHi})`,
-    status:
-      bodyWords < bwHardLo || bodyWords > bwHardHi
-        ? "fail"
-        : bodyWords < bwSoftLo || bodyWords > bwSoftHi
-          ? "warn"
-          : "pass",
-    detail: `${bodyWords} words`,
-  });
+  //
+  // FALLA FUERA DE LA BANDA DEL SPEC, POR NIVEL (2026-09-11). Hasta aqui la
+  // lista de arriba daba a A0-B2 UNA banda, 115-170 de aviso y 100-190 de
+  // fallo, y el aviso no paraba nada: el 2026-09-10/11 los drafts Traveler
+  // ES/spain B1 y B2 y ES/latam B2 quedaron en 173, 185 y 189 palabras de
+  // media, que con los tiempos reales de lo ya narrado (Maia a 137 palabras
+  // por minuto, los narradores del B1 latam a 157) son 72-81 s. La historia
+  // es de un minuto porque es facil de consumir y porque ElevenLabs cobra por
+  // caracter: cada palabra de mas se paga en cada narracion. Ahora la banda es
+  // la de "Criterios por nivel" (src/lib/bodyWordBand.ts) y fuera de ella el
+  // check FALLA, sin tramo de aviso. C1/C2 bajan el suelo de 180 a 150 porque
+  // el spec los hace tambien de un minuto; su techo baja de 320 a 177.
+  //
+  // Lo publicado que ya estaba fuera no se bloquea para siempre: cada historia
+  // live medida ese dia conserva sus palabras como limite en
+  // src/lib/bodyWordBandBaseline.ts (igual o mejor, nunca peor). Solo aplica
+  // si quien llama pasa `journeyId`, `topic` y `slotIndex`; sin ellos manda la
+  // banda entera. Un nivel que el spec no conoce (o sin nivel) conserva la
+  // banda de antes, 220-280 de aviso y 180-320 de fallo.
+  const bandaSpec = BANDA_PALABRAS_SPEC[(context.level ?? "").toUpperCase()];
+  if (bandaSpec) {
+    const [bwLo, bwHi] = bandaSpec;
+    const congelada =
+      context.journeyId && context.topic != null && context.slotIndex != null
+        ? PALABRAS_CONGELADAS[context.journeyId]?.historias[`${context.topic}#${context.slotIndex}`]
+        : undefined;
+    const lo = congelada !== undefined ? Math.min(bwLo, congelada) : bwLo;
+    const hi = congelada !== undefined ? Math.max(bwHi, congelada) : bwHi;
+    checks.push({
+      id: "body-word-count",
+      label:
+        `Body is ${bwLo}-${bwHi} words (spec, ${(context.level ?? "").toUpperCase()})` +
+        (congelada !== undefined ? `; live congelada en ${congelada}, igual o mejor` : ""),
+      status: bodyWords < lo || bodyWords > hi ? "fail" : "pass",
+      detail:
+        `${bodyWords} words` +
+        (congelada !== undefined ? ` (banda ${bwLo}-${bwHi}, congelada en ${congelada})` : ` (banda ${bwLo}-${bwHi})`),
+    });
+  } else {
+    const [bwHardLo, bwHardHi, bwSoftLo, bwSoftHi] = [180, 320, 220, 280];
+    checks.push({
+      id: "body-word-count",
+      label: `Body is ${bwSoftLo}-${bwSoftHi} words (hard: ${bwHardLo}-${bwHardHi})`,
+      status:
+        bodyWords < bwHardLo || bodyWords > bwHardHi
+          ? "fail"
+          : bodyWords < bwSoftLo || bodyWords > bwSoftHi
+            ? "warn"
+            : "pass",
+      detail: `${bodyWords} words`,
+    });
+  }
 
   // NARRADA vs DIALOGADA (2026-09-05). Los tres checks que siguen
   // (`body-dialogue-ratio`, `speakers-count`, `speaker-lines`) miden el

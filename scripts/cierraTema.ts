@@ -382,7 +382,7 @@ function desdeJson(fichero: string) {
     const r = await validateGeneratedStory(
       { title: d.title, synopsis: d.synopsis, text: d.text, vocab: d.vocab, arcType: d.arcType } as never,
       {
-        language, level, variant, topic,
+        language, level, variant, topic, journeyId, slotIndex: d.slotIndex,
         journeyTitles: conTexto.map((x) => String(x.title ?? "")).filter((t) => t !== d.title),
         existing: [...previas],
       } as never
