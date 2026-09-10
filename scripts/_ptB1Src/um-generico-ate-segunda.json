@@ -1,0 +1,22 @@
+{
+  "slug": "um-generico-ate-segunda",
+  "match": [["carregador", "a charger"], ["correio", "the post office"], ["reunião", "a meeting"], ["empresa", "a company"]],
+  "items": [
+    ["m", "notebook", "O carregador do [[notebook]] parou ontem à noite.", "a laptop", "a phone", "a printer", "a camera"],
+    ["m", "computador", "Ele liga o [[computador]] dela na tomada.", "a computer", "a kettle", "a lamp", "a radio"],
+    ["f", "funciona", "A televisão está velha, mas ainda _____.", "The TV is old, but it still _____.", "works", ["chora", "cries"], ["dança", "dances"], ["sonha", "dreams"]],
+    ["m", "ligar", "Ele [[liga]] o computador na tomada.", "to plug in", "to break", "to clean", "to drop"],
+    ["m", "desligar", "Ela [[desliga]] o carregador velho.", "to unplug", "to buy", "to repair", "to borrow"],
+    ["f", "compra", "Ela não tem pão em casa e _____ na padaria.", "She has no bread at home and _____ some at the bakery.", "buys", ["vende", "sells"], ["lava", "washes"], ["pinta", "paints"]],
+    ["m", "receber", "A senhora [[recebe]] o pacote na segunda.", "to get", "to send", "to pay for", "to check"],
+    ["m", "enviar", "Ela precisa [[enviar]] o pacote hoje.", "to send", "to open", "to weigh", "to hide"],
+    ["f", "aceita", "O cartão não passa, mas a loja _____ dinheiro.", "The card doesn't go through, but the shop _____ cash.", "accepts", ["recusa", "refuses"], ["esconde", "hides"], ["queima", "burns"]],
+    ["m", "conferir", "Ele [[confere]] a ponta duas vezes.", "to check", "to cut", "to paint", "to bend"],
+    ["m", "caro", "Tem um genérico [[caro]] e um barato.", "expensive", "heavy", "broken", "slow"],
+    ["f", "barato", "Custa só dois reais: é bem _____.", "It costs only two reais: it's really _____.", "cheap", ["caro", "expensive"], ["pesado", "heavy"], ["fundo", "deep"]],
+    ["m", "novo", "Não é [[novo]], mas serve até segunda.", "new", "fast", "big", "clean"],
+    ["f", "velho", "Esse carro tem trinta anos; é muito _____.", "This car is thirty years old; it's very _____.", "old", ["novo", "new"], ["moderno", "modern"], ["recente", "recent"]],
+    ["m", "agora", "[[Agora]] ela testa o carregador.", "now", "later", "again", "already"],
+    ["f", "fechada", "A porta tem cadeado: a loja está _____.", "The door has a padlock: the shop is _____.", "closed", ["aberta", "open"], ["cheia", "full"], ["lotada", "packed"]]
+  ]
+}

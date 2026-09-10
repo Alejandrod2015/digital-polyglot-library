@@ -1,0 +1,447 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "cenoura,alface,cogumelo,milho",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cenoura",
+          "answer": "a carrot",
+          "options": [
+            "a carrot",
+            "lettuce",
+            "a mushroom",
+            "corn"
+          ]
+        },
+        {
+          "word": "alface",
+          "answer": "lettuce",
+          "options": [
+            "a carrot",
+            "lettuce",
+            "a mushroom",
+            "corn"
+          ]
+        },
+        {
+          "word": "cogumelo",
+          "answer": "a mushroom",
+          "options": [
+            "a carrot",
+            "lettuce",
+            "a mushroom",
+            "corn"
+          ]
+        },
+        {
+          "word": "milho",
+          "answer": "corn",
+          "options": [
+            "a carrot",
+            "lettuce",
+            "a mushroom",
+            "corn"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "macarrão",
+    "sentence": "Sobrou [[macarrão]] para dois dias.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pasta",
+      "options": [
+        "pasta",
+        "bread",
+        "cheese",
+        "fish"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "Sobrou macarrão para dois dias.",
+        "targetWord": "macarrão",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vinagre",
+    "sentence": "Ela rega a salada com [[vinagre]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "vinegar",
+      "options": [
+        "vinegar",
+        "honey",
+        "milk",
+        "sugar"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "Ela rega a salada com vinagre.",
+        "targetWord": "vinagre",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "derreteu",
+    "sentence": "Deixei o sorvete no sol e ele _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "derreteu",
+      "options": [
+        "derreteu",
+        "congelou",
+        "cresceu",
+        "fugiu"
+      ],
+      "translation": "I left the ice cream in the sun and it _____.",
+      "optionTranslations": [
+        "melted",
+        "froze",
+        "grew",
+        "ran away"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "Deixei o sorvete no sol e ele derreteu.",
+        "targetWord": "derreteu",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escorrer",
+    "sentence": "Ela [[escorre]] o macarrão de ontem.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to drain",
+      "options": [
+        "to drain",
+        "to fry",
+        "to chop",
+        "to freeze"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "Ela escorre o macarrão de ontem.",
+        "targetWord": "escorre",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grudar",
+    "sentence": "O arroz [[grudou]] na panela mesmo assim.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stick",
+      "options": [
+        "to stick",
+        "to spill",
+        "to shrink",
+        "to float"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "O arroz grudou na panela mesmo assim.",
+        "targetWord": "grudou",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "esvazia",
+    "sentence": "Antes da viagem, ela _____ a geladeira e desliga.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "esvazia",
+      "options": [
+        "esvazia",
+        "enche",
+        "pinta",
+        "conserta"
+      ],
+      "translation": "Before the trip, she _____ the fridge and unplugs it.",
+      "optionTranslations": [
+        "empties",
+        "fills",
+        "paints",
+        "fixes"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "Antes da viagem, ela esvazia a geladeira e desliga.",
+        "targetWord": "esvazia",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sobrar",
+    "sentence": "[[Sobrou]] comida para dois dias.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be left over",
+      "options": [
+        "to be left over",
+        "to run out",
+        "to go bad",
+        "to get cold"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "Sobrou comida para dois dias.",
+        "targetWord": "Sobrou",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "encostar",
+    "sentence": "Ninguém [[encosta]] na panela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to touch",
+      "options": [
+        "to touch",
+        "to smell",
+        "to wash",
+        "to lift"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "Ninguém encosta na panela.",
+        "targetWord": "encosta",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "solta",
+    "sentence": "Ela abre a mão e _____ o balão, que sobe.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "solta",
+      "options": [
+        "solta",
+        "segura",
+        "enche",
+        "compra"
+      ],
+      "translation": "She opens her hand and _____ the balloon, which rises.",
+      "optionTranslations": [
+        "lets go of",
+        "holds",
+        "blows up",
+        "buys"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "Ela abre a mão e solta o balão, que sobe.",
+        "targetWord": "solta",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jogar",
+    "sentence": "Ela [[joga]] a cenoura por cima da alface.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to throw",
+      "options": [
+        "to throw",
+        "to peel",
+        "to wash",
+        "to hide"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "Ela joga a cenoura por cima da alface.",
+        "targetWord": "joga",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mole",
+    "sentence": "O cogumelo está [[mole]], mas serve.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "soft",
+      "options": [
+        "soft",
+        "hard",
+        "dry",
+        "sweet"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "O cogumelo está mole, mas serve.",
+        "targetWord": "mole",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "duro",
+    "sentence": "Esse pão é de ontem: está _____ como pedra.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "duro",
+      "options": [
+        "duro",
+        "mole",
+        "fresco",
+        "doce"
+      ],
+      "translation": "This bread is from yesterday: it's _____ as a rock.",
+      "optionTranslations": [
+        "hard",
+        "soft",
+        "fresh",
+        "sweet"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "Esse pão é de ontem: está duro como pedra.",
+        "targetWord": "duro",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gordo",
+    "sentence": "Um bilhete de letra grande e [[gorda]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fat, thick",
+      "options": [
+        "fat, thick",
+        "thin",
+        "pale",
+        "tiny"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "Um bilhete de letra grande e gorda.",
+        "targetWord": "gorda",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "abafado",
+    "sentence": "Janelas fechadas e muito calor: o ar está _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "abafado",
+      "options": [
+        "abafado",
+        "fresco",
+        "frio",
+        "gelado"
+      ],
+      "translation": "Windows shut and very hot: the air is _____.",
+      "optionTranslations": [
+        "stuffy",
+        "fresh",
+        "cold",
+        "icy"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "Janelas fechadas e muito calor: o ar está abafado.",
+        "targetWord": "abafado",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parado",
+    "sentence": "De tarde a cozinha fica [[parada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "still",
+      "options": [
+        "still",
+        "busy",
+        "noisy",
+        "bright"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "De tarde a cozinha fica parada.",
+        "targetWord": "parada",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "limpar",
+    "sentence": "Alguém [[limpou]] a panela e a deixou virada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to clean",
+      "options": [
+        "to clean",
+        "to burn",
+        "to fill",
+        "to hide"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "Alguém limpou a panela e a deixou virada.",
+        "targetWord": "limpou",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  }
+]

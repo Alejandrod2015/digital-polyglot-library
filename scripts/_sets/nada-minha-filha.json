@@ -1,0 +1,447 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "cachecol,luva,meia,suéter",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cachecol",
+          "answer": "a scarf",
+          "options": [
+            "a scarf",
+            "a glove",
+            "a sock",
+            "a jumper"
+          ]
+        },
+        {
+          "word": "luva",
+          "answer": "a glove",
+          "options": [
+            "a scarf",
+            "a glove",
+            "a sock",
+            "a jumper"
+          ]
+        },
+        {
+          "word": "meia",
+          "answer": "a sock",
+          "options": [
+            "a scarf",
+            "a glove",
+            "a sock",
+            "a jumper"
+          ]
+        },
+        {
+          "word": "suéter",
+          "answer": "a jumper",
+          "options": [
+            "a scarf",
+            "a glove",
+            "a sock",
+            "a jumper"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jaqueta",
+    "sentence": "A [[jaqueta]] dela é fina demais para o frio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a jacket",
+      "options": [
+        "a jacket",
+        "a skirt",
+        "a hat",
+        "a bag"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "A jaqueta dela é fina demais para o frio.",
+        "targetWord": "jaqueta",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "roupa",
+    "sentence": "Ela chegou com [[roupa]] de praia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clothes",
+      "options": [
+        "clothes",
+        "shoes",
+        "food",
+        "money"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "Ela chegou com roupa de praia.",
+        "targetWord": "roupa",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pendura",
+    "sentence": "Ela lava a camisa e _____ no varal.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pendura",
+      "options": [
+        "pendura",
+        "cozinha",
+        "lê",
+        "queima"
+      ],
+      "translation": "She washes the shirt and _____ it on the clothesline.",
+      "optionTranslations": [
+        "hangs",
+        "cooks",
+        "reads",
+        "burns"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "Ela lava a camisa e pendura no varal.",
+        "targetWord": "pendura",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vestir",
+    "sentence": "A senhora vai [[vestir]] o quê hoje?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to put on",
+      "options": [
+        "to put on",
+        "to wash",
+        "to sell",
+        "to fold"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "A senhora vai vestir o quê hoje?",
+        "targetWord": "vestir",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despir",
+    "sentence": "Ela [[despe]] a jaqueta fina e veste o suéter.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to take off",
+      "options": [
+        "to take off",
+        "to fold",
+        "to iron",
+        "to lose"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "Ela despe a jaqueta fina e veste o suéter.",
+        "targetWord": "despe",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "levar",
+    "sentence": "Vai chover: não esqueça de _____ o guarda-chuva.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "levar",
+      "options": [
+        "levar",
+        "quebrar",
+        "pintar",
+        "cozinhar"
+      ],
+      "translation": "It's going to rain: don't forget to _____ your umbrella.",
+      "optionTranslations": [
+        "take",
+        "break",
+        "paint",
+        "cook"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "Vai chover: não esqueça de levar o guarda-chuva.",
+        "targetWord": "levar",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "convidar",
+    "sentence": "Ela [[convida]] a amiga para um chá depois.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to invite",
+      "options": [
+        "to invite",
+        "to thank",
+        "to warn",
+        "to follow"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "Ela convida a amiga para um chá depois.",
+        "targetWord": "convida",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vir",
+    "sentence": "Você quer [[vir]] tomar um chá?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to come",
+      "options": [
+        "to come",
+        "to leave",
+        "to cook",
+        "to pay"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "Você quer vir tomar um chá?",
+        "targetWord": "vir",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "seca",
+    "sentence": "Pode vestir: a camisa já está _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "seca",
+      "options": [
+        "seca",
+        "molhada",
+        "suja",
+        "rasgada"
+      ],
+      "translation": "You can put it on: the shirt is already _____.",
+      "optionTranslations": [
+        "dry",
+        "wet",
+        "dirty",
+        "torn"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "Pode vestir: a camisa já está seca.",
+        "targetWord": "seca",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cansar",
+    "sentence": "[[Cansa]] mais chegar com frio do que viajar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tire out",
+      "options": [
+        "to tire out",
+        "to cheer up",
+        "to cost",
+        "to warm up"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "Cansa mais chegar com frio do que viajar.",
+        "targetWord": "Cansa",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fazer",
+    "sentence": "[[Faz]] três invernos que isso está aqui.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to do, to make",
+      "options": [
+        "to do, to make",
+        "to take",
+        "to bring",
+        "to keep"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "Faz três invernos que isso está aqui.",
+        "targetWord": "Faz",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "molhado",
+    "sentence": "Ele caiu na piscina e saiu todo _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "molhado",
+      "options": [
+        "molhado",
+        "seco",
+        "quente",
+        "penteado"
+      ],
+      "translation": "He fell into the pool and came out all _____.",
+      "optionTranslations": [
+        "wet",
+        "dry",
+        "hot",
+        "combed"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "Ele caiu na piscina e saiu todo molhado.",
+        "targetWord": "molhado",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fino",
+    "sentence": "O tecido é [[fino]] e deixa passar o vento.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thin",
+      "options": [
+        "thin",
+        "heavy",
+        "dark",
+        "rough"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "O tecido é fino e deixa passar o vento.",
+        "targetWord": "fino",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "marrom",
+    "sentence": "Ela leva uma caixa [[marrom]] para o balcão.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "brown",
+      "options": [
+        "brown",
+        "yellow",
+        "purple",
+        "orange"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "Ela leva uma caixa marrom para o balcão.",
+        "targetWord": "marrom",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "congelada",
+    "sentence": "Ela ficou duas horas na neve e voltou _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "congelada",
+      "options": [
+        "congelada",
+        "bronzeada",
+        "suada",
+        "queimada"
+      ],
+      "translation": "She stayed two hours in the snow and came back _____.",
+      "optionTranslations": [
+        "frozen",
+        "tanned",
+        "sweaty",
+        "sunburnt"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "Ela ficou duas horas na neve e voltou congelada.",
+        "targetWord": "congelada",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de repente",
+    "sentence": "[[De repente]] aparece o dono.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "maybe",
+      "options": [
+        "maybe",
+        "never",
+        "already",
+        "on purpose"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "De repente aparece o dono.",
+        "targetWord": "De repente",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  }
+]

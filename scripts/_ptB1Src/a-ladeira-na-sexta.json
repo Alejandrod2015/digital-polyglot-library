@@ -1,0 +1,22 @@
+{
+  "slug": "a-ladeira-na-sexta",
+  "match": [["biblioteca", "a library"], ["universidade", "a university"], ["exame", "an exam"], ["idioma", "a language"]],
+  "items": [
+    ["m", "faculdade", "Ele quer entrar na [[faculdade]].", "college", "a factory", "a shop", "a club"],
+    ["m", "aluno", "Ele é o único [[aluno]] que ela não conhece.", "a pupil", "a cook", "a guard", "a guest"],
+    ["f", "estuda", "Amanhã tem prova, então ela _____ a noite toda.", "There's a test tomorrow, so she _____ all night.", "studies", ["dança", "dances"], ["passeia", "strolls"], ["canta", "sings"]],
+    ["m", "aprender", "Você [[aprendeu]] esta escola inteira sozinho.", "to learn", "to teach", "to build", "to clean"],
+    ["m", "ensinar", "Você quer [[ensinar]] idioma?", "to teach", "to learn", "to translate", "to forget"],
+    ["f", "falar", "Ele mora em Paris há anos e sabe _____ francês.", "He has lived in Paris for years and can _____ French.", "speak", ["nadar", "swim"], ["dirigir", "drive"], ["correr", "run"]],
+    ["m", "ouvir", "Devagar. Eu [[ouço]].", "to hear", "to see", "to wait", "to write"],
+    ["m", "esquecer", "Ele [[esquece]] uma palavra.", "to forget", "to learn", "to spell", "to shout"],
+    ["f", "conseguiu", "Estudou muito e finalmente _____ passar no exame.", "She studied hard and finally _____ to pass the exam.", "managed", ["evitou", "avoided"], ["temeu", "feared"], ["fingiu", "pretended"]],
+    ["m", "acreditar", "Ela conhece o rapaz o bastante para [[acreditar]] que sim.", "to believe", "to doubt", "to deny", "to forget"],
+    ["m", "ensaiar", "Eles [[ensaiam]] a prova oral na escada.", "to practise", "to cancel", "to fail", "to mark"],
+    ["m", "inventar", "Ela [[inventa]] perguntas e ele responde.", "to make up", "to write down", "to read out", "to copy"],
+    ["f", "cumprimenta", "Ao chegar na festa, ele _____ todo mundo com um beijo.", "Arriving at the party, he _____ everyone with a kiss.", "greets", ["ignora", "ignores"], ["empurra", "pushes"], ["acorda", "wakes"]],
+    ["m", "conhecer", "Ela [[conhece]] bem esta escola.", "to know", "to leave", "to clean", "to build"],
+    ["f", "certa", "Dois mais dois são quatro: a resposta está _____.", "Two plus two is four: the answer is _____.", "right", ["errada", "wrong"], ["incompleta", "incomplete"], ["apagada", "erased"]],
+    ["f", "escura", "São nove da noite e a rua está _____.", "It's nine at night and the street is _____.", "dark", ["clara", "bright"], ["ensolarada", "sunny"], ["dourada", "golden"]]
+  ]
+}

@@ -1,0 +1,447 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "remédio,pescoço,frasco,embalagem",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "remédio",
+          "answer": "medicine",
+          "options": [
+            "medicine",
+            "the neck",
+            "a small bottle",
+            "a package"
+          ]
+        },
+        {
+          "word": "pescoço",
+          "answer": "the neck",
+          "options": [
+            "medicine",
+            "the neck",
+            "a small bottle",
+            "a package"
+          ]
+        },
+        {
+          "word": "frasco",
+          "answer": "a small bottle",
+          "options": [
+            "medicine",
+            "the neck",
+            "a small bottle",
+            "a package"
+          ]
+        },
+        {
+          "word": "embalagem",
+          "answer": "a package",
+          "options": [
+            "medicine",
+            "the neck",
+            "a small bottle",
+            "a package"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dor",
+    "sentence": "Hoje ela sente [[dor]] e não vira a cabeça.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pain",
+      "options": [
+        "pain",
+        "hunger",
+        "sleep",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "a-dor-nao-e-doenca",
+        "storySource": "user",
+        "sentence": "Hoje ela sente dor e não vira a cabeça.",
+        "targetWord": "dor",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saúde",
+    "sentence": "A [[saúde]] dela depende de uma cama boa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "health",
+      "options": [
+        "health",
+        "money",
+        "luck",
+        "work"
+      ],
+      "audioClip": {
+        "storySlug": "a-dor-nao-e-doenca",
+        "storySource": "user",
+        "sentence": "A saúde dela depende de uma cama boa.",
+        "targetWord": "saúde",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "dói",
+    "sentence": "Caí da bicicleta e agora o meu joelho _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dói",
+      "options": [
+        "dói",
+        "cresce",
+        "sorri",
+        "voa"
+      ],
+      "translation": "I fell off my bike and now my knee _____.",
+      "optionTranslations": [
+        "hurts",
+        "grows",
+        "smiles",
+        "flies"
+      ],
+      "audioClip": {
+        "storySlug": "a-dor-nao-e-doenca",
+        "storySource": "user",
+        "sentence": "Caí da bicicleta e agora o meu joelho dói.",
+        "targetWord": "dói",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tomar",
+    "sentence": "A senhora [[toma]] um agora e espera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to take",
+      "options": [
+        "to take",
+        "to spill",
+        "to open",
+        "to throw"
+      ],
+      "audioClip": {
+        "storySlug": "a-dor-nao-e-doenca",
+        "storySource": "user",
+        "sentence": "A senhora toma um agora e espera.",
+        "targetWord": "toma",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "procurar",
+    "sentence": "Ela [[procura]] a palavra e aponta o ombro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look for",
+      "options": [
+        "to look for",
+        "to write down",
+        "to forget",
+        "to shout"
+      ],
+      "audioClip": {
+        "storySlug": "a-dor-nao-e-doenca",
+        "storySource": "user",
+        "sentence": "Ela procura a palavra e aponta o ombro.",
+        "targetWord": "procura",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "esperar",
+    "sentence": "O ônibus atrasou, então vamos _____ mais um pouco.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "esperar",
+      "options": [
+        "esperar",
+        "pagar",
+        "vender",
+        "nadar"
+      ],
+      "translation": "The bus is late, so let's _____ a bit longer.",
+      "optionTranslations": [
+        "wait",
+        "pay",
+        "sell",
+        "swim"
+      ],
+      "audioClip": {
+        "storySlug": "a-dor-nao-e-doenca",
+        "storySource": "user",
+        "sentence": "O ônibus atrasou, então vamos esperar mais um pouco.",
+        "targetWord": "esperar",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "precisar",
+    "sentence": "Eu [[preciso]] de um remédio forte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to need",
+      "options": [
+        "to need",
+        "to hate",
+        "to find",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "a-dor-nao-e-doenca",
+        "storySource": "user",
+        "sentence": "Eu preciso de um remédio forte.",
+        "targetWord": "preciso",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "recomendar",
+    "sentence": "Eu não [[recomendo]] o caro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to advise",
+      "options": [
+        "to advise",
+        "to steal",
+        "to repair",
+        "to wrap"
+      ],
+      "audioClip": {
+        "storySlug": "a-dor-nao-e-doenca",
+        "storySource": "user",
+        "sentence": "Eu não recomendo o caro.",
+        "targetWord": "recomendo",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cansada",
+    "sentence": "Ela trabalhou doze horas e chegou muito _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cansada",
+      "options": [
+        "cansada",
+        "descansada",
+        "bonita",
+        "penteada"
+      ],
+      "translation": "She worked twelve hours and arrived very _____.",
+      "optionTranslations": [
+        "tired",
+        "rested",
+        "pretty",
+        "combed"
+      ],
+      "audioClip": {
+        "storySlug": "a-dor-nao-e-doenca",
+        "storySource": "user",
+        "sentence": "Ela trabalhou doze horas e chegou muito cansada.",
+        "targetWord": "cansada",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avisar",
+    "sentence": "Escreve no caderno: [[avisar]] se não passar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to let someone know",
+      "options": [
+        "to let someone know",
+        "to pay someone back",
+        "to ask someone out",
+        "to show someone round"
+      ],
+      "audioClip": {
+        "storySlug": "a-dor-nao-e-doenca",
+        "storySource": "user",
+        "sentence": "Escreve no caderno: avisar se não passar.",
+        "targetWord": "avisar",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "forte",
+    "sentence": "Eu preciso de um remédio [[forte]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "strong",
+      "options": [
+        "strong",
+        "cheap",
+        "sweet",
+        "small"
+      ],
+      "audioClip": {
+        "storySlug": "a-dor-nao-e-doenca",
+        "storySource": "user",
+        "sentence": "Eu preciso de um remédio forte.",
+        "targetWord": "forte",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pior",
+    "sentence": "Tomei o remédio errado e fiquei _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pior",
+      "options": [
+        "pior",
+        "melhor",
+        "feliz",
+        "livre"
+      ],
+      "translation": "I took the wrong medicine and got _____.",
+      "optionTranslations": [
+        "worse",
+        "better",
+        "happy",
+        "free"
+      ],
+      "audioClip": {
+        "storySlug": "a-dor-nao-e-doenca",
+        "storySource": "user",
+        "sentence": "Tomei o remédio errado e fiquei pior.",
+        "targetWord": "pior",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amargo",
+    "sentence": "Este é [[amargo]], mas resolve.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bitter",
+      "options": [
+        "bitter",
+        "sweet",
+        "salty",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "a-dor-nao-e-doenca",
+        "storySource": "user",
+        "sentence": "Este é amargo, mas resolve.",
+        "targetWord": "amargo",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "ficar",
+    "sentence": "Se chover, eu vou _____ em casa o dia todo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ficar",
+      "options": [
+        "ficar",
+        "sair",
+        "viajar",
+        "correr"
+      ],
+      "translation": "If it rains, I'm going to _____ at home all day.",
+      "optionTranslations": [
+        "stay",
+        "go out",
+        "travel",
+        "run"
+      ],
+      "audioClip": {
+        "storySlug": "a-dor-nao-e-doenca",
+        "storySource": "user",
+        "sentence": "Se chover, eu vou ficar em casa o dia todo.",
+        "targetWord": "ficar",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "melhor",
+    "sentence": "Amanhã você acorda [[melhor]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "better",
+      "options": [
+        "better",
+        "older",
+        "busier",
+        "quieter"
+      ],
+      "audioClip": {
+        "storySlug": "a-dor-nao-e-doenca",
+        "storySource": "user",
+        "sentence": "Amanhã você acorda melhor.",
+        "targetWord": "melhor",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ontem",
+    "sentence": "[[Ontem]] dormiu mal e hoje não vira a cabeça.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "yesterday",
+      "options": [
+        "yesterday",
+        "tomorrow",
+        "always",
+        "never"
+      ],
+      "audioClip": {
+        "storySlug": "a-dor-nao-e-doenca",
+        "storySource": "user",
+        "sentence": "Ontem dormiu mal e hoje não vira a cabeça.",
+        "targetWord": "Ontem",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "estrela,lua,planta,flor",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "estrela",
+          "answer": "a star",
+          "options": [
+            "a star",
+            "the moon",
+            "a plant",
+            "a flower"
+          ]
+        },
+        {
+          "word": "lua",
+          "answer": "the moon",
+          "options": [
+            "a star",
+            "the moon",
+            "a plant",
+            "a flower"
+          ]
+        },
+        {
+          "word": "planta",
+          "answer": "a plant",
+          "options": [
+            "a star",
+            "the moon",
+            "a plant",
+            "a flower"
+          ]
+        },
+        {
+          "word": "flor",
+          "answer": "a flower",
+          "options": [
+            "a star",
+            "the moon",
+            "a plant",
+            "a flower"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "férias",
+    "sentence": "Não são [[férias]] e não é feriado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "holidays",
+      "options": [
+        "holidays",
+        "exams",
+        "bills",
+        "chores"
+      ],
+      "audioClip": {
+        "storySlug": "a-lagoa-entre-as-dunas",
+        "storySource": "user",
+        "sentence": "Não são férias e não é feriado.",
+        "targetWord": "férias",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "feriado",
+    "sentence": "Hoje não é [[feriado]]: é uma quarta-feira qualquer.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a public holiday",
+      "options": [
+        "a public holiday",
+        "a birthday",
+        "a wedding",
+        "a match day"
+      ],
+      "audioClip": {
+        "storySlug": "a-lagoa-entre-as-dunas",
+        "storySource": "user",
+        "sentence": "Hoje não é feriado: é uma quarta-feira qualquer.",
+        "targetWord": "feriado",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "nada",
+    "sentence": "Ela entra na lagoa e _____ até o outro lado.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "nada",
+      "options": [
+        "nada",
+        "voa",
+        "dorme",
+        "tosse"
+      ],
+      "translation": "She goes into the lagoon and _____ to the other side.",
+      "optionTranslations": [
+        "swims",
+        "flies",
+        "sleeps",
+        "coughs"
+      ],
+      "audioClip": {
+        "storySlug": "a-lagoa-entre-as-dunas",
+        "storySource": "user",
+        "sentence": "Ela entra na lagoa e nada até o outro lado.",
+        "targetWord": "nada",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caminhar",
+    "sentence": "Ela [[caminha]] devagar pela areia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to walk",
+      "options": [
+        "to walk",
+        "to run",
+        "to drive",
+        "to crawl"
+      ],
+      "audioClip": {
+        "storySlug": "a-lagoa-entre-as-dunas",
+        "storySource": "user",
+        "sentence": "Ela caminha devagar pela areia.",
+        "targetWord": "caminha",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pescar",
+    "sentence": "Fico. [[Pesco]] no rio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to fish",
+      "options": [
+        "to fish",
+        "to swim",
+        "to wash",
+        "to sail"
+      ],
+      "audioClip": {
+        "storySlug": "a-lagoa-entre-as-dunas",
+        "storySource": "user",
+        "sentence": "Fico. Pesco no rio.",
+        "targetWord": "Pesco",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cava",
+    "sentence": "Ele pega a pá e _____ um buraco na areia.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cava",
+      "options": [
+        "cava",
+        "pinta",
+        "dobra",
+        "empresta"
+      ],
+      "translation": "He picks up the spade and _____ a hole in the sand.",
+      "optionTranslations": [
+        "digs",
+        "paints",
+        "folds",
+        "lends"
+      ],
+      "audioClip": {
+        "storySlug": "a-lagoa-entre-as-dunas",
+        "storySource": "user",
+        "sentence": "Ele pega a pá e cava um buraco na areia.",
+        "targetWord": "cava",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saltar",
+    "sentence": "Ela [[salta]] uma vez, sem motivo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to jump",
+      "options": [
+        "to jump",
+        "to sit",
+        "to sleep",
+        "to shout"
+      ],
+      "audioClip": {
+        "storySlug": "a-lagoa-entre-as-dunas",
+        "storySource": "user",
+        "sentence": "Ela salta uma vez, sem motivo.",
+        "targetWord": "salta",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brilhar",
+    "sentence": "O sol [[brilha]] perto da margem.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to shine",
+      "options": [
+        "to shine",
+        "to hide",
+        "to set",
+        "to fall"
+      ],
+      "audioClip": {
+        "storySlug": "a-lagoa-entre-as-dunas",
+        "storySource": "user",
+        "sentence": "O sol brilha perto da margem.",
+        "targetWord": "brilha",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "aproveita",
+    "sentence": "O sol vai embora logo, então ela _____ a praia agora.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aproveita",
+      "options": [
+        "aproveita",
+        "esquece",
+        "odeia",
+        "vende"
+      ],
+      "translation": "The sun will be gone soon, so she _____ the beach now.",
+      "optionTranslations": [
+        "makes the most of",
+        "forgets",
+        "hates",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "a-lagoa-entre-as-dunas",
+        "storySource": "user",
+        "sentence": "O sol vai embora logo, então ela aproveita a praia agora.",
+        "targetWord": "aproveita",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "combinar",
+    "sentence": "Hoje sai. [[Combinei]] com o rio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to arrange",
+      "options": [
+        "to arrange",
+        "to argue",
+        "to swap",
+        "to race"
+      ],
+      "audioClip": {
+        "storySlug": "a-lagoa-entre-as-dunas",
+        "storySource": "user",
+        "sentence": "Hoje sai. Combinei com o rio.",
+        "targetWord": "Combinei",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "secar",
+    "sentence": "Isso aqui [[seca]] em maio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to dry up",
+      "options": [
+        "to dry up",
+        "to flood",
+        "to freeze",
+        "to grow"
+      ],
+      "audioClip": {
+        "storySlug": "a-lagoa-entre-as-dunas",
+        "storySource": "user",
+        "sentence": "Isso aqui seca em maio.",
+        "targetWord": "seca",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "gigante",
+    "sentence": "A baleia é um animal _____, maior que um ônibus.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gigante",
+      "options": [
+        "gigante",
+        "pequeno",
+        "minúsculo",
+        "leve"
+      ],
+      "translation": "The whale is a _____ animal, bigger than a bus.",
+      "optionTranslations": [
+        "huge",
+        "small",
+        "tiny",
+        "light"
+      ],
+      "audioClip": {
+        "storySlug": "a-lagoa-entre-as-dunas",
+        "storySource": "user",
+        "sentence": "A baleia é um animal gigante, maior que um ônibus.",
+        "targetWord": "gigante",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bonito",
+    "sentence": "A água é [[bonita]] e ela está livre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "beautiful",
+      "options": [
+        "beautiful",
+        "dirty",
+        "deep",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "a-lagoa-entre-as-dunas",
+        "storySource": "user",
+        "sentence": "A água é bonita e ela está livre.",
+        "targetWord": "bonita",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "livre",
+    "sentence": "Ele não tem aula nem trabalho: está _____ o dia todo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "livre",
+      "options": [
+        "livre",
+        "ocupado",
+        "atrasado",
+        "preso"
+      ],
+      "translation": "He has no class or work: he's _____ all day.",
+      "optionTranslations": [
+        "free",
+        "busy",
+        "late",
+        "stuck"
+      ],
+      "audioClip": {
+        "storySlug": "a-lagoa-entre-as-dunas",
+        "storySource": "user",
+        "sentence": "Ele não tem aula nem trabalho: está livre o dia todo.",
+        "targetWord": "livre",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sozinho",
+    "sentence": "Ela caminha [[sozinha]] até a porta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "alone",
+      "options": [
+        "alone",
+        "late",
+        "lost",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "a-lagoa-entre-as-dunas",
+        "storySource": "user",
+        "sentence": "Ela caminha sozinha até a porta.",
+        "targetWord": "sozinha",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "perto",
+    "sentence": "A padaria fica _____: dois minutos a pé.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "perto",
+      "options": [
+        "perto",
+        "longe",
+        "distante",
+        "lotada"
+      ],
+      "translation": "The bakery is _____: two minutes on foot.",
+      "optionTranslations": [
+        "close by",
+        "far away",
+        "distant",
+        "packed"
+      ],
+      "audioClip": {
+        "storySlug": "a-lagoa-entre-as-dunas",
+        "storySource": "user",
+        "sentence": "A padaria fica perto: dois minutos a pé.",
+        "targetWord": "perto",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  }
+]

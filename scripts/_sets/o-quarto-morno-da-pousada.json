@@ -1,0 +1,447 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "colchão,almofada,barriga,cama",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "colchão",
+          "answer": "a mattress",
+          "options": [
+            "a mattress",
+            "a pillow",
+            "the belly",
+            "a bed"
+          ]
+        },
+        {
+          "word": "almofada",
+          "answer": "a pillow",
+          "options": [
+            "a mattress",
+            "a pillow",
+            "the belly",
+            "a bed"
+          ]
+        },
+        {
+          "word": "barriga",
+          "answer": "the belly",
+          "options": [
+            "a mattress",
+            "a pillow",
+            "the belly",
+            "a bed"
+          ]
+        },
+        {
+          "word": "cama",
+          "answer": "a bed",
+          "options": [
+            "a mattress",
+            "a pillow",
+            "the belly",
+            "a bed"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sono",
+    "sentence": "Ela deita, vira, senta; o [[sono]] não vem.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sleep",
+      "options": [
+        "sleep",
+        "dinner",
+        "the bus",
+        "the rain"
+      ],
+      "audioClip": {
+        "storySlug": "o-quarto-morno-da-pousada",
+        "storySource": "user",
+        "sentence": "Ela deita, vira, senta; o sono não vem.",
+        "targetWord": "sono",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estômago",
+    "sentence": "À uma da manhã, o [[estômago]] dela dói.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the stomach",
+      "options": [
+        "the stomach",
+        "the heart",
+        "the throat",
+        "the knee"
+      ],
+      "audioClip": {
+        "storySlug": "o-quarto-morno-da-pousada",
+        "storySource": "user",
+        "sentence": "À uma da manhã, o estômago dela dói.",
+        "targetWord": "estômago",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "dormir",
+    "sentence": "Estou com muito sono; vou _____ cedo hoje.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dormir",
+      "options": [
+        "dormir",
+        "acordar",
+        "correr",
+        "trabalhar"
+      ],
+      "translation": "I'm really sleepy; I'm going to _____ early tonight.",
+      "optionTranslations": [
+        "sleep",
+        "wake up",
+        "run",
+        "work"
+      ],
+      "audioClip": {
+        "storySlug": "o-quarto-morno-da-pousada",
+        "storySource": "user",
+        "sentence": "Estou com muito sono; vou dormir cedo hoje.",
+        "targetWord": "dormir",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "deitar",
+    "sentence": "Ela [[deita]], vira e senta de novo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to lie down",
+      "options": [
+        "to lie down",
+        "to stand up",
+        "to kneel",
+        "to run"
+      ],
+      "audioClip": {
+        "storySlug": "o-quarto-morno-da-pousada",
+        "storySource": "user",
+        "sentence": "Ela deita, vira e senta de novo.",
+        "targetWord": "deita",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acordar",
+    "sentence": "Não durmo, não [[acordo]], fico virando.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to wake up",
+      "options": [
+        "to wake up",
+        "to sit down",
+        "to get dressed",
+        "to shout"
+      ],
+      "audioClip": {
+        "storySlug": "o-quarto-morno-da-pousada",
+        "storySource": "user",
+        "sentence": "Não durmo, não acordo, fico virando.",
+        "targetWord": "acordo",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "reclama",
+    "sentence": "A sopa está fria, e o cliente _____ com o garçom.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "reclama",
+      "options": [
+        "reclama",
+        "dança",
+        "sonha",
+        "canta"
+      ],
+      "translation": "The soup is cold, and the customer _____ to the waiter.",
+      "optionTranslations": [
+        "complains",
+        "dances",
+        "dreams",
+        "sings"
+      ],
+      "audioClip": {
+        "storySlug": "o-quarto-morno-da-pousada",
+        "storySource": "user",
+        "sentence": "A sopa está fria, e o cliente reclama com o garçom.",
+        "targetWord": "reclama",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aguentar",
+    "sentence": "Eu não [[aguento]] esse quarto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to put up with",
+      "options": [
+        "to put up with",
+        "to clean",
+        "to rent",
+        "to find"
+      ],
+      "audioClip": {
+        "storySlug": "o-quarto-morno-da-pousada",
+        "storySource": "user",
+        "sentence": "Eu não aguento esse quarto.",
+        "targetWord": "aguento",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "respirar",
+    "sentence": "Você [[respira]] contando até quatro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to breathe",
+      "options": [
+        "to breathe",
+        "to blink",
+        "to sing",
+        "to swallow"
+      ],
+      "audioClip": {
+        "storySlug": "o-quarto-morno-da-pousada",
+        "storySource": "user",
+        "sentence": "Você respira contando até quatro.",
+        "targetWord": "respira",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sente",
+    "sentence": "Depois de correr muito, ela _____ dor nas pernas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sente",
+      "options": [
+        "sente",
+        "vende",
+        "compra",
+        "desenha"
+      ],
+      "translation": "After running a lot, she _____ pain in her legs.",
+      "optionTranslations": [
+        "feels",
+        "sells",
+        "buys",
+        "draws"
+      ],
+      "audioClip": {
+        "storySlug": "o-quarto-morno-da-pousada",
+        "storySource": "user",
+        "sentence": "Depois de correr muito, ela sente dor nas pernas.",
+        "targetWord": "sente",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "durar",
+    "sentence": "Isso não [[dura]] a noite inteira.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to last",
+      "options": [
+        "to last",
+        "to cost",
+        "to begin",
+        "to hurt"
+      ],
+      "audioClip": {
+        "storySlug": "o-quarto-morno-da-pousada",
+        "storySource": "user",
+        "sentence": "Isso não dura a noite inteira.",
+        "targetWord": "dura",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "faltar",
+    "sentence": "[[Falta]] pouco pro sol.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be left",
+      "options": [
+        "to be left",
+        "to be over",
+        "to be early",
+        "to be wrong"
+      ],
+      "audioClip": {
+        "storySlug": "o-quarto-morno-da-pousada",
+        "storySource": "user",
+        "sentence": "Falta pouco pro sol.",
+        "targetWord": "Falta",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "quente",
+    "sentence": "Cuidado com a panela: está muito _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "quente",
+      "options": [
+        "quente",
+        "fria",
+        "vazia",
+        "limpa"
+      ],
+      "translation": "Careful with the pan: it's very _____.",
+      "optionTranslations": [
+        "hot",
+        "cold",
+        "empty",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "o-quarto-morno-da-pousada",
+        "storySource": "user",
+        "sentence": "Cuidado com a panela: está muito quente.",
+        "targetWord": "quente",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "morno",
+    "sentence": "O quarto [[morno]], nunca quente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "mildly warm",
+      "options": [
+        "mildly warm",
+        "freezing",
+        "dark",
+        "noisy"
+      ],
+      "audioClip": {
+        "storySlug": "o-quarto-morno-da-pousada",
+        "storySource": "user",
+        "sentence": "O quarto morno, nunca quente.",
+        "targetWord": "morno",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "frio",
+    "sentence": "Neva lá fora, e sem aquecedor o quarto fica _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "frio",
+      "options": [
+        "frio",
+        "quente",
+        "abafado",
+        "iluminado"
+      ],
+      "translation": "It's snowing outside, and without a heater the room gets _____.",
+      "optionTranslations": [
+        "cold",
+        "hot",
+        "stuffy",
+        "bright"
+      ],
+      "audioClip": {
+        "storySlug": "o-quarto-morno-da-pousada",
+        "storySource": "user",
+        "sentence": "Neva lá fora, e sem aquecedor o quarto fica frio.",
+        "targetWord": "frio",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nervoso",
+    "sentence": "Ela não sabe se é o estômago ou o [[nervoso]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nerves",
+      "options": [
+        "nerves",
+        "hunger",
+        "boredom",
+        "fever"
+      ],
+      "audioClip": {
+        "storySlug": "o-quarto-morno-da-pousada",
+        "storySource": "user",
+        "sentence": "Ela não sabe se é o estômago ou o nervoso.",
+        "targetWord": "nervoso",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "triste",
+    "sentence": "Ela dorme sem nada [[triste]] na cabeça.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sad",
+      "options": [
+        "sad",
+        "funny",
+        "new",
+        "loud"
+      ],
+      "audioClip": {
+        "storySlug": "o-quarto-morno-da-pousada",
+        "storySource": "user",
+        "sentence": "Ela dorme sem nada triste na cabeça.",
+        "targetWord": "triste",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  }
+]

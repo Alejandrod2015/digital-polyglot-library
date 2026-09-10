@@ -1,0 +1,22 @@
+{
+  "slug": "se-puxar-a-gente-vira",
+  "match": [["canoa", "a canoe"], ["remo", "a paddle"], ["floresta", "a forest"], ["montanha", "a mountain"]],
+  "items": [
+    ["m", "barco", "O [[barco]] deles já volta.", "a boat", "a bridge", "a truck", "a tent"],
+    ["m", "temperatura", "A [[temperatura]] cai e o vento aumenta.", "how hot it is", "how deep it is", "how far it is", "how late it is"],
+    ["f", "rema", "Ele _____ com força e a canoa anda rápido.", "He _____ hard and the canoe moves fast.", "rows", ["dorme", "sleeps"], ["lê", "reads"], ["boceja", "yawns"]],
+    ["m", "atravessar", "Eles [[atravessam]] o primeiro trecho do rio.", "to cross", "to close", "to paint", "to rent"],
+    ["m", "balançar", "A canoa [[balança]] feio no rio.", "to rock", "to sink", "to shine", "to melt"],
+    ["f", "escorrega", "O chão está molhado e ela _____ na escada.", "The floor is wet and she _____ on the stairs.", "slips", ["cozinha", "cooks"], ["costura", "sews"], ["lê", "reads"]],
+    ["m", "empurrar", "O vento [[empurra]] o casco para o lado.", "to push", "to pull", "to lift", "to wash"],
+    ["m", "puxar", "Se ela [[puxar]], a gente vira.", "to pull", "to push", "to throw", "to cut"],
+    ["f", "arrasta", "A mala é pesada demais, então ela _____ pelo chão.", "The suitcase is far too heavy, so she _____ it along the floor.", "drags", ["lava", "washes"], ["dobra", "folds"], ["costura", "sews"]],
+    ["m", "subir", "Ela [[sobe]] dez passos na areia.", "to climb", "to dig", "to fall", "to swim"],
+    ["m", "descer", "[[Desceu]] chuva a noite inteira lá de cima.", "to come down", "to dry up", "to stop", "to shine"],
+    ["m", "salvar", "Ele [[salva]] o remo que ia embora.", "to save", "to break", "to drop", "to sell"],
+    ["f", "alto", "Choveu muito na serra, e o rio está _____.", "It rained a lot in the hills, and the river is _____.", "high", ["seco", "dry"], ["baixo", "low"], ["raso", "shallow"]],
+    ["m", "curvado", "Há uma montanha de areia, [[curvada]] e torta.", "curved", "flat", "wet", "tiny"],
+    ["m", "torto", "O quadro na parede está [[torto]].", "crooked", "clean", "new", "heavy"],
+    ["f", "irregular", "O chão tem buracos e pedras: é muito _____.", "The ground has holes and stones: it's very _____.", "uneven", ["liso", "smooth"], ["plano", "flat"], ["macio", "soft"]]
+  ]
+}

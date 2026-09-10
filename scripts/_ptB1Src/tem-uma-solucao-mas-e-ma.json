@@ -1,0 +1,22 @@
+{
+  "slug": "tem-uma-solucao-mas-e-ma",
+  "match": [["emprego", "a job"], ["salário", "a salary"], ["tarefa", "a task"], ["solução", "a way out"]],
+  "items": [
+    ["m", "pergunta", "Ela faz uma [[pergunta]] e oferece outra saída.", "a question", "a promise", "a joke", "a mistake"],
+    ["m", "vez", "Pela primeira [[vez]], o assunto não era dinheiro.", "a time, an occasion", "a place", "a reason", "a price"],
+    ["f", "digita", "Ela _____ a senha no teclado.", "She _____ the password on the keyboard.", "types", ["canta", "sings"], ["costura", "sews"], ["pinta", "paints"]],
+    ["m", "conectar", "O notebook não [[conecta]] à internet.", "to go online", "to charge", "to switch off", "to print"],
+    ["m", "trazer", "Ele [[traz]] a mesa do fundo.", "to bring", "to break", "to lock", "to paint"],
+    ["f", "paga", "No restaurante, ele pede a conta e _____.", "At the restaurant, he asks for the bill and _____.", "pays", ["dorme", "sleeps"], ["nada", "swims"], ["chora", "cries"]],
+    ["m", "mostrar", "Alguém [[mostra]] uma tabela na tela.", "to show", "to hide", "to print", "to break"],
+    ["m", "oferecer", "Ela [[oferece]] uma terceira saída.", "to offer", "to refuse", "to steal", "to forget"],
+    ["f", "escolhe", "Entre o azul e o vermelho, ela _____ o vermelho.", "Between the blue one and the red one, she _____ the red.", "chooses", ["lava", "washes"], ["dobra", "folds"], ["perde", "loses"]],
+    ["m", "cobrar", "A gente [[cobra]] menos do cliente.", "to charge", "to thank", "to meet", "to call"],
+    ["m", "deixar", "Ele [[deixa]] um café na mesa.", "to leave", "to spill", "to heat", "to buy"],
+    ["f", "agradece", "Ela recebe o presente e _____ com um abraço.", "She gets the present and _____ with a hug.", "says thank you", ["recusa", "refuses"], ["reclama", "complains"], ["esquece", "forgets"]],
+    ["m", "mau", "Tem uma solução, mas é [[má]].", "bad", "easy", "new", "rare"],
+    ["m", "real", "O assunto [[real]] não era o dinheiro.", "true", "small", "old", "next"],
+    ["f", "rica", "Ela ganhou na loteria e agora é _____.", "She won the lottery and now she's _____.", "rich", ["pobre", "poor"], ["cansada", "tired"], ["doente", "ill"]],
+    ["f", "pobre", "Não tem dinheiro nem para o pão: é muito _____.", "He doesn't even have money for bread: he's very _____.", "poor", ["rico", "rich"], ["famoso", "famous"], ["alto", "tall"]]
+  ]
+}

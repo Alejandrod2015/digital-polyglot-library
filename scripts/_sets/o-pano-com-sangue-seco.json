@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "orelha,nariz,osso,sangue",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "orelha",
+          "answer": "an ear",
+          "options": [
+            "an ear",
+            "a nose",
+            "a bone",
+            "blood"
+          ]
+        },
+        {
+          "word": "nariz",
+          "answer": "a nose",
+          "options": [
+            "an ear",
+            "a nose",
+            "a bone",
+            "blood"
+          ]
+        },
+        {
+          "word": "osso",
+          "answer": "a bone",
+          "options": [
+            "an ear",
+            "a nose",
+            "a bone",
+            "blood"
+          ]
+        },
+        {
+          "word": "sangue",
+          "answer": "blood",
+          "options": [
+            "an ear",
+            "a nose",
+            "a bone",
+            "blood"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "doença",
+    "sentence": "[[Doença]] não é, mas o hospital fica perto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an illness",
+      "options": [
+        "an illness",
+        "a cure",
+        "a doctor",
+        "a wound"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "Doença não é, mas o hospital fica perto.",
+        "targetWord": "Doença",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hospital",
+    "sentence": "O [[hospital]] fica a duas quadras.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a hospital",
+      "options": [
+        "a hospital",
+        "a bakery",
+        "a bank",
+        "a school"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "O hospital fica a duas quadras.",
+        "targetWord": "hospital",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "machucou",
+    "sentence": "Ela caiu da escada e _____ o joelho.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "machucou",
+      "options": [
+        "machucou",
+        "pintou",
+        "vendeu",
+        "esqueceu"
+      ],
+      "translation": "She fell down the stairs and _____ her knee.",
+      "optionTranslations": [
+        "hurt",
+        "painted",
+        "sold",
+        "forgot"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "Ela caiu da escada e machucou o joelho.",
+        "targetWord": "machucou",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "engolir",
+    "sentence": "Eu [[engulo]] um comprimido e passa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to swallow",
+      "options": [
+        "to swallow",
+        "to chew",
+        "to spit out",
+        "to drop"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "Eu engulo um comprimido e passa.",
+        "targetWord": "engulo",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "coçar",
+    "sentence": "[[Coça]] por dentro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to itch",
+      "options": [
+        "to itch",
+        "to burn",
+        "to bleed",
+        "to shake"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "Coça por dentro.",
+        "targetWord": "Coça",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cuidar",
+    "sentence": "Ela viaja, e a vizinha vai _____ das plantas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cuidar",
+      "options": [
+        "cuidar",
+        "rir",
+        "fugir",
+        "duvidar"
+      ],
+      "translation": "She's travelling, and the neighbour is going to _____ the plants.",
+      "optionTranslations": [
+        "look after",
+        "laugh at",
+        "run away from",
+        "doubt"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "Ela viaja, e a vizinha vai cuidar das plantas.",
+        "targetWord": "cuidar",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "formigar",
+    "sentence": "[[Formiga]] um pouco, admite ela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tingle",
+      "options": [
+        "to tingle",
+        "to bleed",
+        "to swell",
+        "to sneeze"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "Formiga um pouco, admite ela.",
+        "targetWord": "Formiga",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pesar",
+    "sentence": "O dedo inchou e a mão [[pesa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to feel heavy",
+      "options": [
+        "to feel heavy",
+        "to feel light",
+        "to feel cold",
+        "to feel wet"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "O dedo inchou e a mão pesa.",
+        "targetWord": "pesa",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "prefiro",
+    "sentence": "Entre café e chá, eu _____ chá.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "prefiro",
+      "options": [
+        "prefiro",
+        "vendo",
+        "derramo",
+        "esqueço"
+      ],
+      "translation": "Between coffee and tea, I _____ tea.",
+      "optionTranslations": [
+        "prefer",
+        "sell",
+        "spill",
+        "forget"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "Entre café e chá, eu prefiro chá.",
+        "targetWord": "prefiro",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cheirar",
+    "sentence": "O pano [[cheira]] a álcool.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to smell of",
+      "options": [
+        "to smell of",
+        "to taste of",
+        "to look like",
+        "to sound like"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "O pano cheira a álcool.",
+        "targetWord": "cheira",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "proteger",
+    "sentence": "O dedo está [[protegido]] por uma tala.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to keep safe",
+      "options": [
+        "to keep safe",
+        "to bend",
+        "to paint",
+        "to show"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "O dedo está protegido por uma tala.",
+        "targetWord": "protegido",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "fraco",
+    "sentence": "Coloquei pouco pó: o café ficou _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fraco",
+      "options": [
+        "fraco",
+        "forte",
+        "amargo",
+        "grosso"
+      ],
+      "translation": "I used little coffee: it came out _____.",
+      "optionTranslations": [
+        "weak",
+        "strong",
+        "bitter",
+        "thick"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "Coloquei pouco pó: o café ficou fraco.",
+        "targetWord": "fraco",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ruim",
+    "sentence": "Um café fraco e [[ruim]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bad",
+      "options": [
+        "bad",
+        "sweet",
+        "free",
+        "hot"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "Um café fraco e ruim.",
+        "targetWord": "ruim",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tranquilo",
+    "sentence": "Ela fica [[tranquila]] atrás do balcão.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at ease",
+      "options": [
+        "at ease",
+        "scared",
+        "busy",
+        "angry"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "Ela fica tranquila atrás do balcão.",
+        "targetWord": "tranquila",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "calmas",
+    "sentence": "Sem pressa e sem gritar, as duas conversam _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "calmas",
+      "options": [
+        "calmas",
+        "furiosas",
+        "desesperadas",
+        "histéricas"
+      ],
+      "translation": "With no hurry and no shouting, the two women talk _____.",
+      "optionTranslations": [
+        "calmly",
+        "furiously",
+        "desperately",
+        "hysterically"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "Sem pressa e sem gritar, as duas conversam calmas.",
+        "targetWord": "calmas",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "amanhã",
+    "sentence": "Hoje está fechado; _____ a farmácia abre cedo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "amanhã",
+      "options": [
+        "amanhã",
+        "ontem",
+        "agora",
+        "nunca"
+      ],
+      "translation": "It's closed today; _____ the pharmacy opens early.",
+      "optionTranslations": [
+        "tomorrow",
+        "yesterday",
+        "now",
+        "never"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "Hoje está fechado; amanhã a farmácia abre cedo.",
+        "targetWord": "amanhã",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  }
+]

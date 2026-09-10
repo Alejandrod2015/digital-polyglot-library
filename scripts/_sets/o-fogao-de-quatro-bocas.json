@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "fogão,esponja,vassoura,frigideira",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "fogão",
+          "answer": "a stove",
+          "options": [
+            "a stove",
+            "a sponge",
+            "a broom",
+            "a frying pan"
+          ]
+        },
+        {
+          "word": "esponja",
+          "answer": "a sponge",
+          "options": [
+            "a stove",
+            "a sponge",
+            "a broom",
+            "a frying pan"
+          ]
+        },
+        {
+          "word": "vassoura",
+          "answer": "a broom",
+          "options": [
+            "a stove",
+            "a sponge",
+            "a broom",
+            "a frying pan"
+          ]
+        },
+        {
+          "word": "frigideira",
+          "answer": "a frying pan",
+          "options": [
+            "a stove",
+            "a sponge",
+            "a broom",
+            "a frying pan"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alho",
+    "sentence": "O cheiro do [[alho]] sobe logo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "garlic",
+      "options": [
+        "garlic",
+        "onion",
+        "pepper",
+        "butter"
+      ],
+      "audioClip": {
+        "storySlug": "o-fogao-de-quatro-bocas",
+        "storySource": "user",
+        "sentence": "O cheiro do alho sobe logo.",
+        "targetWord": "alho",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "garfo",
+    "sentence": "A pia está cheia e os [[garfos]], sujos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a fork",
+      "options": [
+        "a fork",
+        "a knife",
+        "a cup",
+        "a plate"
+      ],
+      "audioClip": {
+        "storySlug": "o-fogao-de-quatro-bocas",
+        "storySource": "user",
+        "sentence": "A pia está cheia e os garfos, sujos.",
+        "targetWord": "garfos",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cozinhar",
+    "sentence": "Estou com fome; vou _____ um arroz agora.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cozinhar",
+      "options": [
+        "cozinhar",
+        "esconder",
+        "pintar",
+        "dobrar"
+      ],
+      "translation": "I'm hungry; I'm going to _____ some rice now.",
+      "optionTranslations": [
+        "cook",
+        "hide",
+        "paint",
+        "fold"
+      ],
+      "audioClip": {
+        "storySlug": "o-fogao-de-quatro-bocas",
+        "storySource": "user",
+        "sentence": "Estou com fome; vou cozinhar um arroz agora.",
+        "targetWord": "cozinhar",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lavar",
+    "sentence": "Ele [[lava]] os pratos de todo mundo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to wash",
+      "options": [
+        "to wash",
+        "to break",
+        "to count",
+        "to dry"
+      ],
+      "audioClip": {
+        "storySlug": "o-fogao-de-quatro-bocas",
+        "storySource": "user",
+        "sentence": "Ele lava os pratos de todo mundo.",
+        "targetWord": "lava",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arrumar",
+    "sentence": "Depois ela [[arruma]] o fogão.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tidy",
+      "options": [
+        "to tidy",
+        "to light",
+        "to unplug",
+        "to paint"
+      ],
+      "audioClip": {
+        "storySlug": "o-fogao-de-quatro-bocas",
+        "storySource": "user",
+        "sentence": "Depois ela arruma o fogão.",
+        "targetWord": "arruma",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "guarda",
+    "sentence": "Depois de secar os pratos, ela _____ tudo no armário.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "guarda",
+      "options": [
+        "guarda",
+        "quebra",
+        "come",
+        "canta"
+      ],
+      "translation": "After drying the dishes, she _____ everything in the cupboard.",
+      "optionTranslations": [
+        "puts away",
+        "breaks",
+        "eats",
+        "sings"
+      ],
+      "audioClip": {
+        "storySlug": "o-fogao-de-quatro-bocas",
+        "storySource": "user",
+        "sentence": "Depois de secar os pratos, ela guarda tudo no armário.",
+        "targetWord": "guarda",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "organizar",
+    "sentence": "Ela [[organiza]] o espaço que sobrou.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sort out",
+      "options": [
+        "to sort out",
+        "to paint",
+        "to measure",
+        "to rent"
+      ],
+      "audioClip": {
+        "storySlug": "o-fogao-de-quatro-bocas",
+        "storySource": "user",
+        "sentence": "Ela organiza o espaço que sobrou.",
+        "targetWord": "organiza",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pegar",
+    "sentence": "Ela [[pega]] a esponja e ajuda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to pick up",
+      "options": [
+        "to pick up",
+        "to throw away",
+        "to buy",
+        "to hide"
+      ],
+      "audioClip": {
+        "storySlug": "o-fogao-de-quatro-bocas",
+        "storySource": "user",
+        "sentence": "Ela pega a esponja e ajuda.",
+        "targetWord": "pega",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cheia",
+    "sentence": "Não cabe mais nada: a mala está _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cheia",
+      "options": [
+        "cheia",
+        "vazia",
+        "leve",
+        "aberta"
+      ],
+      "translation": "Nothing else fits: the suitcase is _____.",
+      "optionTranslations": [
+        "full",
+        "empty",
+        "light",
+        "open"
+      ],
+      "audioClip": {
+        "storySlug": "o-fogao-de-quatro-bocas",
+        "storySource": "user",
+        "sentence": "Não cabe mais nada: a mala está cheia.",
+        "targetWord": "cheia",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "colocar",
+    "sentence": "Ela [[coloca]] a frigideira no bico bom.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to put",
+      "options": [
+        "to put",
+        "to wash",
+        "to lift",
+        "to heat"
+      ],
+      "audioClip": {
+        "storySlug": "o-fogao-de-quatro-bocas",
+        "storySource": "user",
+        "sentence": "Ela coloca a frigideira no bico bom.",
+        "targetWord": "coloca",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cortar",
+    "sentence": "Ela [[corta]] o alho devagar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to cut",
+      "options": [
+        "to cut",
+        "to fry",
+        "to peel",
+        "to boil"
+      ],
+      "audioClip": {
+        "storySlug": "o-fogao-de-quatro-bocas",
+        "storySource": "user",
+        "sentence": "Ela corta o alho devagar.",
+        "targetWord": "corta",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sujos",
+    "sentence": "Depois do jantar, os pratos ficam _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sujos",
+      "options": [
+        "sujos",
+        "limpos",
+        "novos",
+        "caros"
+      ],
+      "translation": "After dinner, the plates are _____.",
+      "optionTranslations": [
+        "dirty",
+        "clean",
+        "new",
+        "expensive"
+      ],
+      "audioClip": {
+        "storySlug": "o-fogao-de-quatro-bocas",
+        "storySource": "user",
+        "sentence": "Depois do jantar, os pratos ficam sujos.",
+        "targetWord": "sujos",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vazio",
+    "sentence": "A pia fica [[vazia]] e o cheiro sobe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "empty",
+      "options": [
+        "empty",
+        "full",
+        "cold",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "o-fogao-de-quatro-bocas",
+        "storySource": "user",
+        "sentence": "A pia fica vazia e o cheiro sobe.",
+        "targetWord": "vazia",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "limpo",
+    "sentence": "Lavei o chão com sabão e agora está _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "limpo",
+      "options": [
+        "limpo",
+        "sujo",
+        "quebrado",
+        "empoeirado"
+      ],
+      "translation": "I washed the floor with soap and now it's _____.",
+      "optionTranslations": [
+        "clean",
+        "dirty",
+        "broken",
+        "dusty"
+      ],
+      "audioClip": {
+        "storySlug": "o-fogao-de-quatro-bocas",
+        "storySource": "user",
+        "sentence": "Lavei o chão com sabão e agora está limpo.",
+        "targetWord": "limpo",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "logo",
+    "sentence": "O cheiro da cozinha sobe [[logo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "soon",
+      "options": [
+        "soon",
+        "never",
+        "slowly",
+        "late"
+      ],
+      "audioClip": {
+        "storySlug": "o-fogao-de-quatro-bocas",
+        "storySource": "user",
+        "sentence": "O cheiro da cozinha sobe logo.",
+        "targetWord": "logo",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "depois",
+    "sentence": "Primeiro eu lavo a louça, _____ eu descanso.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "depois",
+      "options": [
+        "depois",
+        "antes",
+        "nunca",
+        "ontem"
+      ],
+      "translation": "First I wash the dishes, _____ I rest.",
+      "optionTranslations": [
+        "afterwards",
+        "before",
+        "never",
+        "yesterday"
+      ],
+      "audioClip": {
+        "storySlug": "o-fogao-de-quatro-bocas",
+        "storySource": "user",
+        "sentence": "Primeiro eu lavo a louça, depois eu descanso.",
+        "targetWord": "depois",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  }
+]

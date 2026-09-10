@@ -1,0 +1,22 @@
+{
+  "slug": "o-pano-com-sangue-seco",
+  "match": [["orelha", "an ear"], ["nariz", "a nose"], ["osso", "a bone"], ["sangue", "blood"]],
+  "items": [
+    ["m", "doença", "[[Doença]] não é, mas o hospital fica perto.", "an illness", "a cure", "a doctor", "a wound"],
+    ["m", "hospital", "O [[hospital]] fica a duas quadras.", "a hospital", "a bakery", "a bank", "a school"],
+    ["f", "machucou", "Ela caiu da escada e _____ o joelho.", "She fell down the stairs and _____ her knee.", "hurt", ["pintou", "painted"], ["vendeu", "sold"], ["esqueceu", "forgot"]],
+    ["m", "engolir", "Eu [[engulo]] um comprimido e passa.", "to swallow", "to chew", "to spit out", "to drop"],
+    ["m", "coçar", "[[Coça]] por dentro.", "to itch", "to burn", "to bleed", "to shake"],
+    ["f", "cuidar", "Ela viaja, e a vizinha vai _____ das plantas.", "She's travelling, and the neighbour is going to _____ the plants.", "look after", ["rir", "laugh at"], ["fugir", "run away from"], ["duvidar", "doubt"]],
+    ["m", "formigar", "[[Formiga]] um pouco, admite ela.", "to tingle", "to bleed", "to swell", "to sneeze"],
+    ["m", "pesar", "O dedo inchou e a mão [[pesa]].", "to feel heavy", "to feel light", "to feel cold", "to feel wet"],
+    ["f", "prefiro", "Entre café e chá, eu _____ chá.", "Between coffee and tea, I _____ tea.", "prefer", ["vendo", "sell"], ["derramo", "spill"], ["esqueço", "forget"]],
+    ["m", "cheirar", "O pano [[cheira]] a álcool.", "to smell of", "to taste of", "to look like", "to sound like"],
+    ["m", "proteger", "O dedo está [[protegido]] por uma tala.", "to keep safe", "to bend", "to paint", "to show"],
+    ["f", "fraco", "Coloquei pouco pó: o café ficou _____.", "I used little coffee: it came out _____.", "weak", ["forte", "strong"], ["amargo", "bitter"], ["grosso", "thick"]],
+    ["m", "ruim", "Um café fraco e [[ruim]].", "bad", "sweet", "free", "hot"],
+    ["m", "tranquilo", "Ela fica [[tranquila]] atrás do balcão.", "at ease", "scared", "busy", "angry"],
+    ["f", "calmas", "Sem pressa e sem gritar, as duas conversam _____.", "With no hurry and no shouting, the two women talk _____.", "calmly", ["furiosas", "furiously"], ["desesperadas", "desperately"], ["histéricas", "hysterically"]],
+    ["f", "amanhã", "Hoje está fechado; _____ a farmácia abre cedo.", "It's closed today; _____ the pharmacy opens early.", "tomorrow", ["ontem", "yesterday"], ["agora", "now"], ["nunca", "never"]]
+  ]
+}

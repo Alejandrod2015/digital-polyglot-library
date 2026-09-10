@@ -1,0 +1,22 @@
+{
+  "slug": "o-quarto-morno-da-pousada",
+  "match": [["colchão", "a mattress"], ["almofada", "a pillow"], ["barriga", "the belly"], ["cama", "a bed"]],
+  "items": [
+    ["m", "sono", "Ela deita, vira, senta; o [[sono]] não vem.", "sleep", "dinner", "the bus", "the rain"],
+    ["m", "estômago", "À uma da manhã, o [[estômago]] dela dói.", "the stomach", "the heart", "the throat", "the knee"],
+    ["f", "dormir", "Estou com muito sono; vou _____ cedo hoje.", "I'm really sleepy; I'm going to _____ early tonight.", "sleep", ["acordar", "wake up"], ["correr", "run"], ["trabalhar", "work"]],
+    ["m", "deitar", "Ela [[deita]], vira e senta de novo.", "to lie down", "to stand up", "to kneel", "to run"],
+    ["m", "acordar", "Não durmo, não [[acordo]], fico virando.", "to wake up", "to sit down", "to get dressed", "to shout"],
+    ["f", "reclama", "A sopa está fria, e o cliente _____ com o garçom.", "The soup is cold, and the customer _____ to the waiter.", "complains", ["dança", "dances"], ["sonha", "dreams"], ["canta", "sings"]],
+    ["m", "aguentar", "Eu não [[aguento]] esse quarto.", "to put up with", "to clean", "to rent", "to find"],
+    ["m", "respirar", "Você [[respira]] contando até quatro.", "to breathe", "to blink", "to sing", "to swallow"],
+    ["f", "sente", "Depois de correr muito, ela _____ dor nas pernas.", "After running a lot, she _____ pain in her legs.", "feels", ["vende", "sells"], ["compra", "buys"], ["desenha", "draws"]],
+    ["m", "durar", "Isso não [[dura]] a noite inteira.", "to last", "to cost", "to begin", "to hurt"],
+    ["m", "faltar", "[[Falta]] pouco pro sol.", "to be left", "to be over", "to be early", "to be wrong"],
+    ["f", "quente", "Cuidado com a panela: está muito _____.", "Careful with the pan: it's very _____.", "hot", ["fria", "cold"], ["vazia", "empty"], ["limpa", "clean"]],
+    ["m", "morno", "O quarto [[morno]], nunca quente.", "mildly warm", "freezing", "dark", "noisy"],
+    ["f", "frio", "Neva lá fora, e sem aquecedor o quarto fica _____.", "It's snowing outside, and without a heater the room gets _____.", "cold", ["quente", "hot"], ["abafado", "stuffy"], ["iluminado", "bright"]],
+    ["m", "nervoso", "Ela não sabe se é o estômago ou o [[nervoso]].", "nerves", "hunger", "boredom", "fever"],
+    ["m", "triste", "Ela dorme sem nada [[triste]] na cabeça.", "sad", "funny", "new", "loud"]
+  ]
+}

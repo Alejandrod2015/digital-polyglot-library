@@ -1,0 +1,22 @@
+{
+  "slug": "sete-minutos-de-moto",
+  "match": [["bicicleta", "a bicycle"], ["trem", "a train"], ["metrô", "the underground"], ["garagem", "a bus depot"]],
+  "items": [
+    ["m", "moto", "Um homem numa [[moto]] espera na esquina.", "a motorbike", "a van", "a taxi", "a truck"],
+    ["m", "motocicleta", "A [[motocicleta]] está parada na porta.", "a motorcycle", "a lorry", "a tractor", "a ferry"],
+    ["f", "freia", "Um cachorro entra na rua, e o motorista _____ rápido.", "A dog runs into the road, and the driver _____ quickly.", "brakes", ["acelera", "speeds up"], ["canta", "sings"], ["dorme", "sleeps"]],
+    ["m", "descarregar", "Dois homens [[descarregam]] malas.", "to unload", "to steal", "to weigh", "to open"],
+    ["m", "carregar", "Eles descarregam malas e [[carregam]] outras.", "to load", "to unload", "to count", "to lose"],
+    ["f", "corre", "Está atrasada, então ela _____ até o ponto.", "She's late, so she _____ to the bus stop.", "runs", ["passeia", "strolls"], ["dança", "dances"], ["descansa", "rests"]],
+    ["m", "ganhar", "Ela [[ganha]] o ônibus das nove por doze minutos.", "to catch in time", "to miss", "to wait for", "to hear"],
+    ["m", "entrar", "Ela [[entra]] no primeiro por engano.", "to get into", "to get out of", "to look at", "to clean"],
+    ["f", "vê", "Sem óculos, ela não _____ nada de longe.", "Without glasses, she can't _____ anything far away.", "see", ["ouve", "hear"], ["come", "eat"], ["paga", "pay"]],
+    ["m", "valer", "Não [[vale]] o dobro, responde ele.", "to be worth", "to cost less", "to weigh", "to last"],
+    ["m", "apontar", "Ele [[aponta]] a motocicleta.", "to point at", "to push", "to wash", "to rent"],
+    ["f", "primeiro", "Cheguei antes de todos: fui o _____ da fila.", "I arrived before everyone: I was _____ in the queue.", "first", ["último", "last"], ["terceiro", "third"], ["segundo", "second"]],
+    ["m", "terceiro", "O caderno está no [[terceiro]] ônibus da fila.", "third", "first", "last", "next"],
+    ["m", "curto", "Não foi barato, foi [[curto]].", "short", "long", "cheap", "slow"],
+    ["f", "larga", "A avenida é tão _____ que tem seis faixas.", "The avenue is so _____ that it has six lanes.", "wide", ["estreita", "narrow"], ["escura", "dark"], ["velha", "old"]],
+    ["f", "famosa", "Todo mundo conhece essa cantora: ela é muito _____.", "Everyone knows this singer: she's very _____.", "famous", ["desconhecida", "unknown"], ["cansada", "tired"], ["baixa", "short"]]
+  ]
+}

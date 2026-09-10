@@ -1,0 +1,22 @@
+{
+  "slug": "o-preco-nao-a-ideia",
+  "match": [["livraria", "a bookshop"], ["borracha", "an eraser"], ["régua", "a ruler"], ["conto", "a short story"]],
+  "items": [
+    ["m", "estudante", "Hoje ela é uma [[estudante]] com um professor novo.", "a student", "a teacher", "a seller", "a driver"],
+    ["m", "aluna", "Hoje a [[aluna]] é ela.", "a pupil", "a boss", "a neighbour", "a guest"],
+    ["f", "ler", "Esqueci os óculos e não consigo _____ o jornal.", "I forgot my glasses and can't _____ the newspaper.", "read", ["dobrar", "fold"], ["comprar", "buy"], ["rasgar", "tear"]],
+    ["m", "contar", "Ela [[conta]] as moedas e paga.", "to count", "to drop", "to hide", "to spend"],
+    ["m", "explicar", "É pra turma, não é pra mim, [[explica]] ele.", "to make clear", "to shout", "to complain", "to lie"],
+    ["f", "recusa", "Ele oferece o lugar, mas ela _____ com um sorriso.", "He offers his seat, but she _____ with a smile.", "refuses", ["aceita", "accepts"], ["lava", "washes"], ["conserta", "fixes"]],
+    ["m", "insistir", "Faz assim, [[insiste]] ele.", "to keep asking", "to give up", "to whisper", "to apologise"],
+    ["m", "convencer", "Ele [[convence]] sem levantar a voz.", "to persuade", "to scare", "to wake", "to ignore"],
+    ["f", "discutem", "Eles não concordam e _____ em voz alta.", "They don't agree and _____ out loud.", "argue", ["dormem", "sleep"], ["nadam", "swim"], ["costuram", "sew"]],
+    ["m", "esperto", "Ele é [[esperto]]: convence sem levantar a voz.", "clever", "lazy", "shy", "rude"],
+    ["m", "teimoso", "Os dois são [[teimosos]].", "stubborn", "generous", "tired", "lucky"],
+    ["f", "gentil", "Ela sempre ajuda os vizinhos: é muito _____.", "She always helps the neighbours: she's very _____.", "kind", ["grosseira", "rude"], ["preguiçosa", "lazy"], ["egoísta", "selfish"]],
+    ["m", "fácil", "Ler alto é mais [[fácil]] quando alguém corrige.", "easy", "dangerous", "boring", "expensive"],
+    ["f", "direto", "Esse voo não para em nenhuma cidade: vai _____.", "This flight doesn't stop in any city: it goes _____.", "straight there", ["atrasado", "late"], ["cheio", "full"], ["vazio", "empty"]],
+    ["m", "dizer", "A senhora me [[diz]] onde eu erro.", "to tell", "to pay", "to lend", "to sell"],
+    ["m", "lembrar", "Depois ela [[lembra]] da primeira aula.", "to remember", "to forget", "to miss", "to plan"]
+  ]
+}

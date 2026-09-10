@@ -1,0 +1,22 @@
+{
+  "slug": "a-senhora-nao-dorme",
+  "match": [["semáforo", "a traffic light"], ["buzina", "a horn"], ["seta", "an indicator"], ["cruzamento", "a crossroads"]],
+  "items": [
+    ["m", "avenida", "O ônibus cruza a [[avenida]] vazia.", "a wide street", "a narrow path", "a bridge", "a square"],
+    ["m", "automóvel", "Um [[automóvel]] buzina duas vezes, por nada.", "a car", "a bicycle", "a boat", "a lorry"],
+    ["f", "ronca", "Ele dorme de boca aberta e _____ a noite inteira.", "He sleeps with his mouth open and _____ all night.", "snores", ["corre", "runs"], ["nada", "swims"], ["pula", "jumps"]],
+    ["m", "sentar", "Ela se levanta e [[senta]] de novo.", "to sit down", "to lie down", "to fall", "to turn round"],
+    ["m", "levantar", "Ela se [[levanta]] duas vezes.", "to stand up", "to wake up", "to fall over", "to get dressed"],
+    ["f", "segura", "O ônibus balança, então ela _____ firme no banco.", "The bus is rocking, so she _____ on tight to the seat.", "holds", ["solta", "lets go"], ["escreve", "writes"], ["limpa", "cleans"]],
+    ["m", "viajar", "A senhora [[viaja]] muito?", "to travel", "to cook", "to read", "to rest"],
+    ["m", "passar", "O homem se mexe e ela [[passa]].", "to get past", "to stop", "to push", "to shout"],
+    ["f", "continuar", "A chuva não para: vai _____ a noite inteira.", "The rain won't stop: it's going to _____ all night.", "go on", ["parar", "stop"], ["secar", "dry up"], ["acabar", "end"]],
+    ["m", "mover", "O homem se [[move]] sem acordar.", "to shift", "to cough", "to speak", "to smile"],
+    ["m", "apertado", "O corredor é [[apertado]].", "tight", "wide", "bright", "noisy"],
+    ["f", "lento", "É um trem velho e muito _____: leva doze horas.", "It's an old and very _____ train: it takes twelve hours.", "slow", ["rápido", "fast"], ["curto", "short"], ["moderno", "modern"]],
+    ["m", "longo", "A estrada é [[longa]] e o ônibus vai devagar.", "long", "wide", "wet", "dark"],
+    ["f", "estreita", "A rua é tão _____ que o carro não passa.", "The street is so _____ that the car can't get through.", "narrow", ["larga", "wide"], ["limpa", "clean"], ["bonita", "pretty"]],
+    ["m", "ocupado", "O ônibus segue [[ocupado]] e escuro.", "full", "empty", "late", "clean"],
+    ["m", "abaixo", "Ela olha [[abaixo]], pela janela.", "down below", "up above", "behind her", "inside"]
+  ]
+}

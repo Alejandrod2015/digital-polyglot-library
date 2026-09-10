@@ -1,0 +1,22 @@
+{
+  "slug": "o-barbante-de-um-real",
+  "match": [["relatório", "a report"], ["impressora", "a printer"], ["teclado", "a keyboard"], ["saco", "a bag"]],
+  "items": [
+    ["m", "notícia", "Depois ela lê uma [[notícia]] curta.", "a piece of news", "a recipe", "a poem", "a bill"],
+    ["m", "caixinha", "Tem um aviso na [[caixinha]] do balcão.", "a little box", "a shelf", "a window", "a door"],
+    ["f", "embrulha", "Antes de dar o presente, ela _____ em papel colorido.", "Before giving the present, she _____ it in colourful paper.", "wraps", ["rasga", "tears"], ["lava", "washes"], ["come", "eats"]],
+    ["m", "amarrar", "Ela [[amarra]] o pacote com barbante.", "to tie", "to cut", "to open", "to weigh"],
+    ["m", "dobrar", "Ela [[dobra]] as folhas e embrulha o pacote.", "to fold", "to tear", "to print", "to count"],
+    ["f", "fecha", "Está ventando muito, então ela _____ a janela.", "It's very windy, so she _____ the window.", "shuts", ["abre", "opens"], ["pinta", "paints"], ["vende", "sells"]],
+    ["m", "abrir", "A tampa emperra, mas [[abre]].", "to open", "to shut", "to squeak", "to break"],
+    ["m", "emprestar", "Ele [[empresta]] a tesoura.", "to lend", "to steal", "to sell", "to sharpen"],
+    ["f", "manda", "Ela escreve a carta e _____ pelo correio.", "She writes the letter and _____ it by post.", "sends", ["recebe", "receives"], ["rasga", "tears up"], ["esconde", "hides"]],
+    ["m", "vender", "Barbante, que eu [[vendo]] por um real.", "to sell", "to buy", "to lend", "to tie"],
+    ["m", "aberto", "No correio a fila está [[aberta]] até as cinco.", "open", "full", "slow", "closed"],
+    ["f", "hoje", "Ontem choveu, mas _____ o sol voltou.", "Yesterday it rained, but _____ the sun came back.", "today", ["ontem", "yesterday"], ["amanhã", "tomorrow"], ["antes", "before"]],
+    ["m", "pesado", "[[Pesado]] assim, não cabe em envelope.", "heavy", "light", "wet", "cheap"],
+    ["f", "colado", "O selo não sai do envelope: está bem _____.", "The stamp won't come off the envelope: it's firmly _____.", "stuck", ["solto", "loose"], ["novo", "new"], ["barato", "cheap"]],
+    ["m", "branco", "Saem quinze folhas em preto e [[branco]].", "white", "grey", "gold", "green"],
+    ["f", "preto", "À noite, sem lua, o céu fica _____.", "At night, with no moon, the sky turns _____.", "black", ["branco", "white"], ["amarelo", "yellow"], ["claro", "light"]]
+  ]
+}

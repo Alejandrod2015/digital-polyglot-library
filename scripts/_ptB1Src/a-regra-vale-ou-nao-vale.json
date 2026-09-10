@@ -1,0 +1,22 @@
+{
+  "slug": "a-regra-vale-ou-nao-vale",
+  "match": [["cenoura", "a carrot"], ["alface", "lettuce"], ["cogumelo", "a mushroom"], ["milho", "corn"]],
+  "items": [
+    ["m", "macarrão", "Sobrou [[macarrão]] para dois dias.", "pasta", "bread", "cheese", "fish"],
+    ["m", "vinagre", "Ela rega a salada com [[vinagre]].", "vinegar", "honey", "milk", "sugar"],
+    ["f", "derreteu", "Deixei o sorvete no sol e ele _____.", "I left the ice cream in the sun and it _____.", "melted", ["congelou", "froze"], ["cresceu", "grew"], ["fugiu", "ran away"]],
+    ["m", "escorrer", "Ela [[escorre]] o macarrão de ontem.", "to drain", "to fry", "to chop", "to freeze"],
+    ["m", "grudar", "O arroz [[grudou]] na panela mesmo assim.", "to stick", "to spill", "to shrink", "to float"],
+    ["f", "esvazia", "Antes da viagem, ela _____ a geladeira e desliga.", "Before the trip, she _____ the fridge and unplugs it.", "empties", ["enche", "fills"], ["pinta", "paints"], ["conserta", "fixes"]],
+    ["m", "sobrar", "[[Sobrou]] comida para dois dias.", "to be left over", "to run out", "to go bad", "to get cold"],
+    ["m", "encostar", "Ninguém [[encosta]] na panela.", "to touch", "to smell", "to wash", "to lift"],
+    ["f", "solta", "Ela abre a mão e _____ o balão, que sobe.", "She opens her hand and _____ the balloon, which rises.", "lets go of", ["segura", "holds"], ["enche", "blows up"], ["compra", "buys"]],
+    ["m", "jogar", "Ela [[joga]] a cenoura por cima da alface.", "to throw", "to peel", "to wash", "to hide"],
+    ["m", "mole", "O cogumelo está [[mole]], mas serve.", "soft", "hard", "dry", "sweet"],
+    ["f", "duro", "Esse pão é de ontem: está _____ como pedra.", "This bread is from yesterday: it's _____ as a rock.", "hard", ["mole", "soft"], ["fresco", "fresh"], ["doce", "sweet"]],
+    ["m", "gordo", "Um bilhete de letra grande e [[gorda]].", "fat, thick", "thin", "pale", "tiny"],
+    ["f", "abafado", "Janelas fechadas e muito calor: o ar está _____.", "Windows shut and very hot: the air is _____.", "stuffy", ["fresco", "fresh"], ["frio", "cold"], ["gelado", "icy"]],
+    ["m", "parado", "De tarde a cozinha fica [[parada]].", "still", "busy", "noisy", "bright"],
+    ["m", "limpar", "Alguém [[limpou]] a panela e a deixou virada.", "to clean", "to burn", "to fill", "to hide"]
+  ]
+}

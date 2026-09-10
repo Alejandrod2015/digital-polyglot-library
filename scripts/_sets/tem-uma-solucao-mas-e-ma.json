@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "emprego,salário,tarefa,solução",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "emprego",
+          "answer": "a job",
+          "options": [
+            "a job",
+            "a salary",
+            "a task",
+            "a way out"
+          ]
+        },
+        {
+          "word": "salário",
+          "answer": "a salary",
+          "options": [
+            "a job",
+            "a salary",
+            "a task",
+            "a way out"
+          ]
+        },
+        {
+          "word": "tarefa",
+          "answer": "a task",
+          "options": [
+            "a job",
+            "a salary",
+            "a task",
+            "a way out"
+          ]
+        },
+        {
+          "word": "solução",
+          "answer": "a way out",
+          "options": [
+            "a job",
+            "a salary",
+            "a task",
+            "a way out"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pergunta",
+    "sentence": "Ela faz uma [[pergunta]] e oferece outra saída.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a question",
+      "options": [
+        "a question",
+        "a promise",
+        "a joke",
+        "a mistake"
+      ],
+      "audioClip": {
+        "storySlug": "tem-uma-solucao-mas-e-ma",
+        "storySource": "user",
+        "sentence": "Ela faz uma pergunta e oferece outra saída.",
+        "targetWord": "pergunta",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vez",
+    "sentence": "Pela primeira [[vez]], o assunto não era dinheiro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a time, an occasion",
+      "options": [
+        "a time, an occasion",
+        "a place",
+        "a reason",
+        "a price"
+      ],
+      "audioClip": {
+        "storySlug": "tem-uma-solucao-mas-e-ma",
+        "storySource": "user",
+        "sentence": "Pela primeira vez, o assunto não era dinheiro.",
+        "targetWord": "vez",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "digita",
+    "sentence": "Ela _____ a senha no teclado.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "digita",
+      "options": [
+        "digita",
+        "canta",
+        "costura",
+        "pinta"
+      ],
+      "translation": "She _____ the password on the keyboard.",
+      "optionTranslations": [
+        "types",
+        "sings",
+        "sews",
+        "paints"
+      ],
+      "audioClip": {
+        "storySlug": "tem-uma-solucao-mas-e-ma",
+        "storySource": "user",
+        "sentence": "Ela digita a senha no teclado.",
+        "targetWord": "digita",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conectar",
+    "sentence": "O notebook não [[conecta]] à internet.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go online",
+      "options": [
+        "to go online",
+        "to charge",
+        "to switch off",
+        "to print"
+      ],
+      "audioClip": {
+        "storySlug": "tem-uma-solucao-mas-e-ma",
+        "storySource": "user",
+        "sentence": "O notebook não conecta à internet.",
+        "targetWord": "conecta",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "trazer",
+    "sentence": "Ele [[traz]] a mesa do fundo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to bring",
+      "options": [
+        "to bring",
+        "to break",
+        "to lock",
+        "to paint"
+      ],
+      "audioClip": {
+        "storySlug": "tem-uma-solucao-mas-e-ma",
+        "storySource": "user",
+        "sentence": "Ele traz a mesa do fundo.",
+        "targetWord": "traz",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "paga",
+    "sentence": "No restaurante, ele pede a conta e _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "paga",
+      "options": [
+        "paga",
+        "dorme",
+        "nada",
+        "chora"
+      ],
+      "translation": "At the restaurant, he asks for the bill and _____.",
+      "optionTranslations": [
+        "pays",
+        "sleeps",
+        "swims",
+        "cries"
+      ],
+      "audioClip": {
+        "storySlug": "tem-uma-solucao-mas-e-ma",
+        "storySource": "user",
+        "sentence": "No restaurante, ele pede a conta e paga.",
+        "targetWord": "paga",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mostrar",
+    "sentence": "Alguém [[mostra]] uma tabela na tela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to show",
+      "options": [
+        "to show",
+        "to hide",
+        "to print",
+        "to break"
+      ],
+      "audioClip": {
+        "storySlug": "tem-uma-solucao-mas-e-ma",
+        "storySource": "user",
+        "sentence": "Alguém mostra uma tabela na tela.",
+        "targetWord": "mostra",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oferecer",
+    "sentence": "Ela [[oferece]] uma terceira saída.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to offer",
+      "options": [
+        "to offer",
+        "to refuse",
+        "to steal",
+        "to forget"
+      ],
+      "audioClip": {
+        "storySlug": "tem-uma-solucao-mas-e-ma",
+        "storySource": "user",
+        "sentence": "Ela oferece uma terceira saída.",
+        "targetWord": "oferece",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "escolhe",
+    "sentence": "Entre o azul e o vermelho, ela _____ o vermelho.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "escolhe",
+      "options": [
+        "escolhe",
+        "lava",
+        "dobra",
+        "perde"
+      ],
+      "translation": "Between the blue one and the red one, she _____ the red.",
+      "optionTranslations": [
+        "chooses",
+        "washes",
+        "folds",
+        "loses"
+      ],
+      "audioClip": {
+        "storySlug": "tem-uma-solucao-mas-e-ma",
+        "storySource": "user",
+        "sentence": "Entre o azul e o vermelho, ela escolhe o vermelho.",
+        "targetWord": "escolhe",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cobrar",
+    "sentence": "A gente [[cobra]] menos do cliente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to charge",
+      "options": [
+        "to charge",
+        "to thank",
+        "to meet",
+        "to call"
+      ],
+      "audioClip": {
+        "storySlug": "tem-uma-solucao-mas-e-ma",
+        "storySource": "user",
+        "sentence": "A gente cobra menos do cliente.",
+        "targetWord": "cobra",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "deixar",
+    "sentence": "Ele [[deixa]] um café na mesa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to leave",
+      "options": [
+        "to leave",
+        "to spill",
+        "to heat",
+        "to buy"
+      ],
+      "audioClip": {
+        "storySlug": "tem-uma-solucao-mas-e-ma",
+        "storySource": "user",
+        "sentence": "Ele deixa um café na mesa.",
+        "targetWord": "deixa",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "agradece",
+    "sentence": "Ela recebe o presente e _____ com um abraço.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "agradece",
+      "options": [
+        "agradece",
+        "recusa",
+        "reclama",
+        "esquece"
+      ],
+      "translation": "She gets the present and _____ with a hug.",
+      "optionTranslations": [
+        "says thank you",
+        "refuses",
+        "complains",
+        "forgets"
+      ],
+      "audioClip": {
+        "storySlug": "tem-uma-solucao-mas-e-ma",
+        "storySource": "user",
+        "sentence": "Ela recebe o presente e agradece com um abraço.",
+        "targetWord": "agradece",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mau",
+    "sentence": "Tem uma solução, mas é [[má]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bad",
+      "options": [
+        "bad",
+        "easy",
+        "new",
+        "rare"
+      ],
+      "audioClip": {
+        "storySlug": "tem-uma-solucao-mas-e-ma",
+        "storySource": "user",
+        "sentence": "Tem uma solução, mas é má.",
+        "targetWord": "má",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "real",
+    "sentence": "O assunto [[real]] não era o dinheiro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "true",
+      "options": [
+        "true",
+        "small",
+        "old",
+        "next"
+      ],
+      "audioClip": {
+        "storySlug": "tem-uma-solucao-mas-e-ma",
+        "storySource": "user",
+        "sentence": "O assunto real não era o dinheiro.",
+        "targetWord": "real",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "rica",
+    "sentence": "Ela ganhou na loteria e agora é _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rica",
+      "options": [
+        "rica",
+        "pobre",
+        "cansada",
+        "doente"
+      ],
+      "translation": "She won the lottery and now she's _____.",
+      "optionTranslations": [
+        "rich",
+        "poor",
+        "tired",
+        "ill"
+      ],
+      "audioClip": {
+        "storySlug": "tem-uma-solucao-mas-e-ma",
+        "storySource": "user",
+        "sentence": "Ela ganhou na loteria e agora é rica.",
+        "targetWord": "rica",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pobre",
+    "sentence": "Não tem dinheiro nem para o pão: é muito _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pobre",
+      "options": [
+        "pobre",
+        "rico",
+        "famoso",
+        "alto"
+      ],
+      "translation": "He doesn't even have money for bread: he's very _____.",
+      "optionTranslations": [
+        "poor",
+        "rich",
+        "famous",
+        "tall"
+      ],
+      "audioClip": {
+        "storySlug": "tem-uma-solucao-mas-e-ma",
+        "storySource": "user",
+        "sentence": "Não tem dinheiro nem para o pão: é muito pobre.",
+        "targetWord": "pobre",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  }
+]

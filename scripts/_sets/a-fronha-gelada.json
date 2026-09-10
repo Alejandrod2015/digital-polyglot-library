@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "lâmpada,cortina,cômoda,fronha",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "lâmpada",
+          "answer": "a light bulb",
+          "options": [
+            "a light bulb",
+            "a curtain",
+            "a chest of drawers",
+            "a pillowcase"
+          ]
+        },
+        {
+          "word": "cortina",
+          "answer": "a curtain",
+          "options": [
+            "a light bulb",
+            "a curtain",
+            "a chest of drawers",
+            "a pillowcase"
+          ]
+        },
+        {
+          "word": "cômoda",
+          "answer": "a chest of drawers",
+          "options": [
+            "a light bulb",
+            "a curtain",
+            "a chest of drawers",
+            "a pillowcase"
+          ]
+        },
+        {
+          "word": "fronha",
+          "answer": "a pillowcase",
+          "options": [
+            "a light bulb",
+            "a curtain",
+            "a chest of drawers",
+            "a pillowcase"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tapete",
+    "sentence": "O [[tapete]] não chega até a cama.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rug",
+      "options": [
+        "a rug",
+        "a sheet",
+        "a towel",
+        "a shelf"
+      ],
+      "audioClip": {
+        "storySlug": "a-fronha-gelada",
+        "storySource": "user",
+        "sentence": "O tapete não chega até a cama.",
+        "targetWord": "tapete",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pijama",
+    "sentence": "[[Pijama]] por baixo, suéter grosso por cima.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pyjamas",
+      "options": [
+        "pyjamas",
+        "a raincoat",
+        "slippers",
+        "a uniform"
+      ],
+      "audioClip": {
+        "storySlug": "a-fronha-gelada",
+        "storySource": "user",
+        "sentence": "Pijama por baixo, suéter grosso por cima.",
+        "targetWord": "Pijama",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "acende",
+    "sentence": "Está escuro no quarto, então ela _____ a luz.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "acende",
+      "options": [
+        "acende",
+        "apaga",
+        "lava",
+        "guarda"
+      ],
+      "translation": "It's dark in the room, so she _____ the light.",
+      "optionTranslations": [
+        "switches on",
+        "switches off",
+        "washes",
+        "puts away"
+      ],
+      "audioClip": {
+        "storySlug": "a-fronha-gelada",
+        "storySource": "user",
+        "sentence": "Está escuro no quarto, então ela acende a luz.",
+        "targetWord": "acende",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apagar",
+    "sentence": "Ela [[apaga]] a luz às nove.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to switch off",
+      "options": [
+        "to switch off",
+        "to fix",
+        "to buy",
+        "to hang up"
+      ],
+      "audioClip": {
+        "storySlug": "a-fronha-gelada",
+        "storySource": "user",
+        "sentence": "Ela apaga a luz às nove.",
+        "targetWord": "apaga",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "mora",
+    "sentence": "Ela _____ nesta rua desde que nasceu.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mora",
+      "options": [
+        "mora",
+        "cozinha",
+        "dança",
+        "espirra"
+      ],
+      "translation": "She has _____ on this street since she was born.",
+      "optionTranslations": [
+        "lived",
+        "cooked",
+        "danced",
+        "sneezed"
+      ],
+      "audioClip": {
+        "storySlug": "a-fronha-gelada",
+        "storySource": "user",
+        "sentence": "Ela mora nesta rua desde que nasceu.",
+        "targetWord": "mora",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pensar",
+    "sentence": "Já [[pensei]] em ir embora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to think",
+      "options": [
+        "to think",
+        "to cry",
+        "to pay",
+        "to sing"
+      ],
+      "audioClip": {
+        "storySlug": "a-fronha-gelada",
+        "storySource": "user",
+        "sentence": "Já pensei em ir embora.",
+        "targetWord": "pensei",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "permanecer",
+    "sentence": "Ela [[permanece]] assim, sem se mexer.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stay",
+      "options": [
+        "to stay",
+        "to jump",
+        "to shout",
+        "to fall"
+      ],
+      "audioClip": {
+        "storySlug": "a-fronha-gelada",
+        "storySource": "user",
+        "sentence": "Ela permanece assim, sem se mexer.",
+        "targetWord": "permanece",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "viver",
+    "sentence": "Como é que vocês [[vivem]] com esse frio?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to live, get by",
+      "options": [
+        "to live, get by",
+        "to cook",
+        "to travel",
+        "to sing"
+      ],
+      "audioClip": {
+        "storySlug": "a-fronha-gelada",
+        "storySource": "user",
+        "sentence": "Como é que vocês vivem com esse frio?",
+        "targetWord": "vivem",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "alugado",
+    "sentence": "Não é meu: é um apartamento _____ por mês.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "alugado",
+      "options": [
+        "alugado",
+        "comprado",
+        "vendido",
+        "pintado"
+      ],
+      "translation": "It's not mine: it's an apartment _____ by the month.",
+      "optionTranslations": [
+        "rented",
+        "bought",
+        "sold",
+        "painted"
+      ],
+      "audioClip": {
+        "storySlug": "a-fronha-gelada",
+        "storySource": "user",
+        "sentence": "Não é meu: é um apartamento alugado por mês.",
+        "targetWord": "alugado",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grosso",
+    "sentence": "Um suéter [[grosso]] por cima.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thick",
+      "options": [
+        "thick",
+        "thin",
+        "short",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "a-fronha-gelada",
+        "storySource": "user",
+        "sentence": "Um suéter grosso por cima.",
+        "targetWord": "grosso",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "macio",
+    "sentence": "O travesseiro é [[macio]] e cheiroso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "soft",
+      "options": [
+        "soft",
+        "hard",
+        "cold",
+        "small"
+      ],
+      "audioClip": {
+        "storySlug": "a-fronha-gelada",
+        "storySource": "user",
+        "sentence": "O travesseiro é macio e cheiroso.",
+        "targetWord": "macio",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "amarela",
+    "sentence": "A banana madura fica _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "amarela",
+      "options": [
+        "amarela",
+        "verde",
+        "azul",
+        "branca"
+      ],
+      "translation": "A ripe banana turns _____.",
+      "optionTranslations": [
+        "yellow",
+        "green",
+        "blue",
+        "white"
+      ],
+      "audioClip": {
+        "storySlug": "a-fronha-gelada",
+        "storySource": "user",
+        "sentence": "A banana madura fica amarela.",
+        "targetWord": "amarela",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "roxo",
+    "sentence": "A janela deixa passar uma faixa [[roxa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "purple",
+      "options": [
+        "purple",
+        "pink",
+        "orange",
+        "silver"
+      ],
+      "audioClip": {
+        "storySlug": "a-fronha-gelada",
+        "storySource": "user",
+        "sentence": "A janela deixa passar uma faixa roxa.",
+        "targetWord": "roxa",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "azul",
+    "sentence": "Sem nuvens, o céu está _____ hoje.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "azul",
+      "options": [
+        "azul",
+        "cinza",
+        "nublado",
+        "marrom"
+      ],
+      "translation": "With no clouds, the sky is _____ today.",
+      "optionTranslations": [
+        "blue",
+        "grey",
+        "cloudy",
+        "brown"
+      ],
+      "audioClip": {
+        "storySlug": "a-fronha-gelada",
+        "storySource": "user",
+        "sentence": "Sem nuvens, o céu está azul hoje.",
+        "targetWord": "azul",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vivo",
+    "sentence": "Ela olha a faixa com o nariz [[vivo]] de frio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "alive, sharp",
+      "options": [
+        "alive, sharp",
+        "asleep",
+        "broken",
+        "hidden"
+      ],
+      "audioClip": {
+        "storySlug": "a-fronha-gelada",
+        "storySource": "user",
+        "sentence": "Ela olha a faixa com o nariz vivo de frio.",
+        "targetWord": "vivo",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "a pé",
+    "sentence": "Moro perto, então vou ao trabalho _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "a pé",
+      "options": [
+        "a pé",
+        "de avião",
+        "de navio",
+        "de helicóptero"
+      ],
+      "translation": "I live nearby, so I go to work _____.",
+      "optionTranslations": [
+        "on foot",
+        "by plane",
+        "by ship",
+        "by helicopter"
+      ],
+      "audioClip": {
+        "storySlug": "a-fronha-gelada",
+        "storySource": "user",
+        "sentence": "Moro perto, então vou ao trabalho a pé.",
+        "targetWord": "a pé",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  }
+]

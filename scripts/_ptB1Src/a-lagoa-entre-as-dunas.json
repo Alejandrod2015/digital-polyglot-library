@@ -1,0 +1,22 @@
+{
+  "slug": "a-lagoa-entre-as-dunas",
+  "match": [["estrela", "a star"], ["lua", "the moon"], ["planta", "a plant"], ["flor", "a flower"]],
+  "items": [
+    ["m", "férias", "Não são [[férias]] e não é feriado.", "holidays", "exams", "bills", "chores"],
+    ["m", "feriado", "Hoje não é [[feriado]]: é uma quarta-feira qualquer.", "a public holiday", "a birthday", "a wedding", "a match day"],
+    ["f", "nada", "Ela entra na lagoa e _____ até o outro lado.", "She goes into the lagoon and _____ to the other side.", "swims", ["voa", "flies"], ["dorme", "sleeps"], ["tosse", "coughs"]],
+    ["m", "caminhar", "Ela [[caminha]] devagar pela areia.", "to walk", "to run", "to drive", "to crawl"],
+    ["m", "pescar", "Fico. [[Pesco]] no rio.", "to fish", "to swim", "to wash", "to sail"],
+    ["f", "cava", "Ele pega a pá e _____ um buraco na areia.", "He picks up the spade and _____ a hole in the sand.", "digs", ["pinta", "paints"], ["dobra", "folds"], ["empresta", "lends"]],
+    ["m", "saltar", "Ela [[salta]] uma vez, sem motivo.", "to jump", "to sit", "to sleep", "to shout"],
+    ["m", "brilhar", "O sol [[brilha]] perto da margem.", "to shine", "to hide", "to set", "to fall"],
+    ["f", "aproveita", "O sol vai embora logo, então ela _____ a praia agora.", "The sun will be gone soon, so she _____ the beach now.", "makes the most of", ["esquece", "forgets"], ["odeia", "hates"], ["vende", "sells"]],
+    ["m", "combinar", "Hoje sai. [[Combinei]] com o rio.", "to arrange", "to argue", "to swap", "to race"],
+    ["m", "secar", "Isso aqui [[seca]] em maio.", "to dry up", "to flood", "to freeze", "to grow"],
+    ["f", "gigante", "A baleia é um animal _____, maior que um ônibus.", "The whale is a _____ animal, bigger than a bus.", "huge", ["pequeno", "small"], ["minúsculo", "tiny"], ["leve", "light"]],
+    ["m", "bonito", "A água é [[bonita]] e ela está livre.", "beautiful", "dirty", "deep", "cold"],
+    ["f", "livre", "Ele não tem aula nem trabalho: está _____ o dia todo.", "He has no class or work: he's _____ all day.", "free", ["ocupado", "busy"], ["atrasado", "late"], ["preso", "stuck"]],
+    ["m", "sozinho", "Ela caminha [[sozinha]] até a porta.", "alone", "late", "lost", "tired"],
+    ["f", "perto", "A padaria fica _____: dois minutos a pé.", "The bakery is _____: two minutes on foot.", "close by", ["longe", "far away"], ["distante", "distant"], ["lotada", "packed"]]
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "slug": "a-dor-nao-e-doenca",
+  "match": [["remédio", "medicine"], ["pescoço", "the neck"], ["frasco", "a small bottle"], ["embalagem", "a package"]],
+  "items": [
+    ["m", "dor", "Hoje ela sente [[dor]] e não vira a cabeça.", "pain", "hunger", "sleep", "cold"],
+    ["m", "saúde", "A [[saúde]] dela depende de uma cama boa.", "health", "money", "luck", "work"],
+    ["f", "dói", "Caí da bicicleta e agora o meu joelho _____.", "I fell off my bike and now my knee _____.", "hurts", ["cresce", "grows"], ["sorri", "smiles"], ["voa", "flies"]],
+    ["m", "tomar", "A senhora [[toma]] um agora e espera.", "to take", "to spill", "to open", "to throw"],
+    ["m", "procurar", "Ela [[procura]] a palavra e aponta o ombro.", "to look for", "to write down", "to forget", "to shout"],
+    ["f", "esperar", "O ônibus atrasou, então vamos _____ mais um pouco.", "The bus is late, so let's _____ a bit longer.", "wait", ["pagar", "pay"], ["vender", "sell"], ["nadar", "swim"]],
+    ["m", "precisar", "Eu [[preciso]] de um remédio forte.", "to need", "to hate", "to find", "to sell"],
+    ["m", "recomendar", "Eu não [[recomendo]] o caro.", "to advise", "to steal", "to repair", "to wrap"],
+    ["f", "cansada", "Ela trabalhou doze horas e chegou muito _____.", "She worked twelve hours and arrived very _____.", "tired", ["descansada", "rested"], ["bonita", "pretty"], ["penteada", "combed"]],
+    ["m", "avisar", "Escreve no caderno: [[avisar]] se não passar.", "to let someone know", "to pay someone back", "to ask someone out", "to show someone round"],
+    ["m", "forte", "Eu preciso de um remédio [[forte]].", "strong", "cheap", "sweet", "small"],
+    ["f", "pior", "Tomei o remédio errado e fiquei _____.", "I took the wrong medicine and got _____.", "worse", ["melhor", "better"], ["feliz", "happy"], ["livre", "free"]],
+    ["m", "amargo", "Este é [[amargo]], mas resolve.", "bitter", "sweet", "salty", "cold"],
+    ["f", "ficar", "Se chover, eu vou _____ em casa o dia todo.", "If it rains, I'm going to _____ at home all day.", "stay", ["sair", "go out"], ["viajar", "travel"], ["correr", "run"]],
+    ["m", "melhor", "Amanhã você acorda [[melhor]].", "better", "older", "busier", "quieter"],
+    ["m", "ontem", "[[Ontem]] dormiu mal e hoje não vira a cabeça.", "yesterday", "tomorrow", "always", "never"]
+  ]
+}

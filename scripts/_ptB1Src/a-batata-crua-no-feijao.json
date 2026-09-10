@@ -1,0 +1,22 @@
+{
+  "slug": "a-batata-crua-no-feijao",
+  "match": [["feijão", "beans"], ["cebola", "an onion"], ["azeite", "olive oil"], ["ovo", "an egg"]],
+  "items": [
+    ["m", "arroz", "O [[arroz]] fica no outro bico.", "rice", "soup", "bread", "meat"],
+    ["m", "tomate", "O [[tomate]] entra depois.", "a tomato", "a potato", "a pepper", "a lemon"],
+    ["f", "esquenta", "A sopa está fria, então ela _____ no fogão.", "The soup is cold, so she _____ it on the stove.", "heats up", ["esfria", "cools"], ["congela", "freezes"], ["esconde", "hides"]],
+    ["m", "preparar", "Ela [[prepara]] o feijão como aprendeu em casa.", "to make ready", "to order", "to buy", "to throw away"],
+    ["m", "misturar", "Ela [[mistura]] tudo com calma.", "to mix", "to cut", "to boil", "to pour"],
+    ["f", "prova", "Antes de pôr sal, ela _____ a sopa com a colher.", "Before adding salt, she _____ the soup with the spoon.", "tastes", ["dobra", "folds"], ["pendura", "hangs"], ["empresta", "lends"]],
+    ["m", "servir", "Ela [[serve]] os outros e janta por último.", "to serve", "to wake", "to wash up", "to sell"],
+    ["m", "comer", "Aí a gente [[come]] assim mesmo.", "to eat", "to leave", "to cry", "to pay"],
+    ["f", "bebe", "Ela está com sede e _____ dois copos de água.", "She's thirsty and _____ two glasses of water.", "drinks", ["come", "eats"], ["vende", "sells"], ["esconde", "hides"]],
+    ["m", "tirar", "Vinte minutos e você [[tira]] a batata.", "to take out", "to put in", "to cut", "to fry"],
+    ["m", "largar", "Ele [[larga]] a mochila e entra.", "to drop", "to pick up", "to carry", "to open"],
+    ["f", "salgado", "Coloquei sal demais: o feijão ficou _____.", "I put in too much salt: the beans came out _____.", "salty", ["doce", "sweet"], ["amargo", "bitter"], ["cru", "raw"]],
+    ["m", "doce", "A batata não deixa o feijão [[doce]].", "sweet", "salty", "sour", "spicy"],
+    ["f", "gostoso", "O bolo da padaria é tão _____ que acaba logo.", "The bakery's cake is so _____ that it's gone fast.", "tasty", ["ruim", "bad"], ["duro", "hard"], ["queimado", "burnt"]],
+    ["m", "frito", "Ela janta com um ovo [[frito]].", "fried", "boiled", "raw", "cold"],
+    ["m", "quieto", "Ele prova também e fica [[quieto]].", "quiet", "angry", "happy", "hungry"]
+  ]
+}

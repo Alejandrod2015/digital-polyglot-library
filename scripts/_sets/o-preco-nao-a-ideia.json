@@ -1,0 +1,447 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "livraria,borracha,régua,conto",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "livraria",
+          "answer": "a bookshop",
+          "options": [
+            "a bookshop",
+            "an eraser",
+            "a ruler",
+            "a short story"
+          ]
+        },
+        {
+          "word": "borracha",
+          "answer": "an eraser",
+          "options": [
+            "a bookshop",
+            "an eraser",
+            "a ruler",
+            "a short story"
+          ]
+        },
+        {
+          "word": "régua",
+          "answer": "a ruler",
+          "options": [
+            "a bookshop",
+            "an eraser",
+            "a ruler",
+            "a short story"
+          ]
+        },
+        {
+          "word": "conto",
+          "answer": "a short story",
+          "options": [
+            "a bookshop",
+            "an eraser",
+            "a ruler",
+            "a short story"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estudante",
+    "sentence": "Hoje ela é uma [[estudante]] com um professor novo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a student",
+      "options": [
+        "a student",
+        "a teacher",
+        "a seller",
+        "a driver"
+      ],
+      "audioClip": {
+        "storySlug": "o-preco-nao-a-ideia",
+        "storySource": "user",
+        "sentence": "Hoje ela é uma estudante com um professor novo.",
+        "targetWord": "estudante",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aluna",
+    "sentence": "Hoje a [[aluna]] é ela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a pupil",
+      "options": [
+        "a pupil",
+        "a boss",
+        "a neighbour",
+        "a guest"
+      ],
+      "audioClip": {
+        "storySlug": "o-preco-nao-a-ideia",
+        "storySource": "user",
+        "sentence": "Hoje a aluna é ela.",
+        "targetWord": "aluna",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ler",
+    "sentence": "Esqueci os óculos e não consigo _____ o jornal.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ler",
+      "options": [
+        "ler",
+        "dobrar",
+        "comprar",
+        "rasgar"
+      ],
+      "translation": "I forgot my glasses and can't _____ the newspaper.",
+      "optionTranslations": [
+        "read",
+        "fold",
+        "buy",
+        "tear"
+      ],
+      "audioClip": {
+        "storySlug": "o-preco-nao-a-ideia",
+        "storySource": "user",
+        "sentence": "Esqueci os óculos e não consigo ler o jornal.",
+        "targetWord": "ler",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "contar",
+    "sentence": "Ela [[conta]] as moedas e paga.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to count",
+      "options": [
+        "to count",
+        "to drop",
+        "to hide",
+        "to spend"
+      ],
+      "audioClip": {
+        "storySlug": "o-preco-nao-a-ideia",
+        "storySource": "user",
+        "sentence": "Ela conta as moedas e paga.",
+        "targetWord": "conta",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "explicar",
+    "sentence": "É pra turma, não é pra mim, [[explica]] ele.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to make clear",
+      "options": [
+        "to make clear",
+        "to shout",
+        "to complain",
+        "to lie"
+      ],
+      "audioClip": {
+        "storySlug": "o-preco-nao-a-ideia",
+        "storySource": "user",
+        "sentence": "É pra turma, não é pra mim, explica ele.",
+        "targetWord": "explica",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "recusa",
+    "sentence": "Ele oferece o lugar, mas ela _____ com um sorriso.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "recusa",
+      "options": [
+        "recusa",
+        "aceita",
+        "lava",
+        "conserta"
+      ],
+      "translation": "He offers his seat, but she _____ with a smile.",
+      "optionTranslations": [
+        "refuses",
+        "accepts",
+        "washes",
+        "fixes"
+      ],
+      "audioClip": {
+        "storySlug": "o-preco-nao-a-ideia",
+        "storySource": "user",
+        "sentence": "Ele oferece o lugar, mas ela recusa com um sorriso.",
+        "targetWord": "recusa",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "insistir",
+    "sentence": "Faz assim, [[insiste]] ele.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to keep asking",
+      "options": [
+        "to keep asking",
+        "to give up",
+        "to whisper",
+        "to apologise"
+      ],
+      "audioClip": {
+        "storySlug": "o-preco-nao-a-ideia",
+        "storySource": "user",
+        "sentence": "Faz assim, insiste ele.",
+        "targetWord": "insiste",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "convencer",
+    "sentence": "Ele [[convence]] sem levantar a voz.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to persuade",
+      "options": [
+        "to persuade",
+        "to scare",
+        "to wake",
+        "to ignore"
+      ],
+      "audioClip": {
+        "storySlug": "o-preco-nao-a-ideia",
+        "storySource": "user",
+        "sentence": "Ele convence sem levantar a voz.",
+        "targetWord": "convence",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "discutem",
+    "sentence": "Eles não concordam e _____ em voz alta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "discutem",
+      "options": [
+        "discutem",
+        "dormem",
+        "nadam",
+        "costuram"
+      ],
+      "translation": "They don't agree and _____ out loud.",
+      "optionTranslations": [
+        "argue",
+        "sleep",
+        "swim",
+        "sew"
+      ],
+      "audioClip": {
+        "storySlug": "o-preco-nao-a-ideia",
+        "storySource": "user",
+        "sentence": "Eles não concordam e discutem em voz alta.",
+        "targetWord": "discutem",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esperto",
+    "sentence": "Ele é [[esperto]]: convence sem levantar a voz.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clever",
+      "options": [
+        "clever",
+        "lazy",
+        "shy",
+        "rude"
+      ],
+      "audioClip": {
+        "storySlug": "o-preco-nao-a-ideia",
+        "storySource": "user",
+        "sentence": "Ele é esperto: convence sem levantar a voz.",
+        "targetWord": "esperto",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "teimoso",
+    "sentence": "Os dois são [[teimosos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stubborn",
+      "options": [
+        "stubborn",
+        "generous",
+        "tired",
+        "lucky"
+      ],
+      "audioClip": {
+        "storySlug": "o-preco-nao-a-ideia",
+        "storySource": "user",
+        "sentence": "Os dois são teimosos.",
+        "targetWord": "teimosos",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "gentil",
+    "sentence": "Ela sempre ajuda os vizinhos: é muito _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gentil",
+      "options": [
+        "gentil",
+        "grosseira",
+        "preguiçosa",
+        "egoísta"
+      ],
+      "translation": "She always helps the neighbours: she's very _____.",
+      "optionTranslations": [
+        "kind",
+        "rude",
+        "lazy",
+        "selfish"
+      ],
+      "audioClip": {
+        "storySlug": "o-preco-nao-a-ideia",
+        "storySource": "user",
+        "sentence": "Ela sempre ajuda os vizinhos: é muito gentil.",
+        "targetWord": "gentil",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fácil",
+    "sentence": "Ler alto é mais [[fácil]] quando alguém corrige.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "easy",
+      "options": [
+        "easy",
+        "dangerous",
+        "boring",
+        "expensive"
+      ],
+      "audioClip": {
+        "storySlug": "o-preco-nao-a-ideia",
+        "storySource": "user",
+        "sentence": "Ler alto é mais fácil quando alguém corrige.",
+        "targetWord": "fácil",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "direto",
+    "sentence": "Esse voo não para em nenhuma cidade: vai _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "direto",
+      "options": [
+        "direto",
+        "atrasado",
+        "cheio",
+        "vazio"
+      ],
+      "translation": "This flight doesn't stop in any city: it goes _____.",
+      "optionTranslations": [
+        "straight there",
+        "late",
+        "full",
+        "empty"
+      ],
+      "audioClip": {
+        "storySlug": "o-preco-nao-a-ideia",
+        "storySource": "user",
+        "sentence": "Esse voo não para em nenhuma cidade: vai direto.",
+        "targetWord": "direto",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dizer",
+    "sentence": "A senhora me [[diz]] onde eu erro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tell",
+      "options": [
+        "to tell",
+        "to pay",
+        "to lend",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "o-preco-nao-a-ideia",
+        "storySource": "user",
+        "sentence": "A senhora me diz onde eu erro.",
+        "targetWord": "diz",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lembrar",
+    "sentence": "Depois ela [[lembra]] da primeira aula.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to remember",
+      "options": [
+        "to remember",
+        "to forget",
+        "to miss",
+        "to plan"
+      ],
+      "audioClip": {
+        "storySlug": "o-preco-nao-a-ideia",
+        "storySource": "user",
+        "sentence": "Depois ela lembra da primeira aula.",
+        "targetWord": "lembra",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  }
+]

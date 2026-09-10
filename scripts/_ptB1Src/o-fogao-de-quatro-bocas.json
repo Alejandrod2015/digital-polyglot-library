@@ -1,0 +1,22 @@
+{
+  "slug": "o-fogao-de-quatro-bocas",
+  "match": [["fogão", "a stove"], ["esponja", "a sponge"], ["vassoura", "a broom"], ["frigideira", "a frying pan"]],
+  "items": [
+    ["m", "alho", "O cheiro do [[alho]] sobe logo.", "garlic", "onion", "pepper", "butter"],
+    ["m", "garfo", "A pia está cheia e os [[garfos]], sujos.", "a fork", "a knife", "a cup", "a plate"],
+    ["f", "cozinhar", "Estou com fome; vou _____ um arroz agora.", "I'm hungry; I'm going to _____ some rice now.", "cook", ["esconder", "hide"], ["pintar", "paint"], ["dobrar", "fold"]],
+    ["m", "lavar", "Ele [[lava]] os pratos de todo mundo.", "to wash", "to break", "to count", "to dry"],
+    ["m", "arrumar", "Depois ela [[arruma]] o fogão.", "to tidy", "to light", "to unplug", "to paint"],
+    ["f", "guarda", "Depois de secar os pratos, ela _____ tudo no armário.", "After drying the dishes, she _____ everything in the cupboard.", "puts away", ["quebra", "breaks"], ["come", "eats"], ["canta", "sings"]],
+    ["m", "organizar", "Ela [[organiza]] o espaço que sobrou.", "to sort out", "to paint", "to measure", "to rent"],
+    ["m", "pegar", "Ela [[pega]] a esponja e ajuda.", "to pick up", "to throw away", "to buy", "to hide"],
+    ["f", "cheia", "Não cabe mais nada: a mala está _____.", "Nothing else fits: the suitcase is _____.", "full", ["vazia", "empty"], ["leve", "light"], ["aberta", "open"]],
+    ["m", "colocar", "Ela [[coloca]] a frigideira no bico bom.", "to put", "to wash", "to lift", "to heat"],
+    ["m", "cortar", "Ela [[corta]] o alho devagar.", "to cut", "to fry", "to peel", "to boil"],
+    ["f", "sujos", "Depois do jantar, os pratos ficam _____.", "After dinner, the plates are _____.", "dirty", ["limpos", "clean"], ["novos", "new"], ["caros", "expensive"]],
+    ["m", "vazio", "A pia fica [[vazia]] e o cheiro sobe.", "empty", "full", "cold", "wet"],
+    ["f", "limpo", "Lavei o chão com sabão e agora está _____.", "I washed the floor with soap and now it's _____.", "clean", ["sujo", "dirty"], ["quebrado", "broken"], ["empoeirado", "dusty"]],
+    ["m", "logo", "O cheiro da cozinha sobe [[logo]].", "soon", "never", "slowly", "late"],
+    ["f", "depois", "Primeiro eu lavo a louça, _____ eu descanso.", "First I wash the dishes, _____ I rest.", "afterwards", ["antes", "before"], ["nunca", "never"], ["ontem", "yesterday"]]
+  ]
+}
