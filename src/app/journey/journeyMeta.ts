@@ -12,6 +12,7 @@ import {
   STORY_STATUS_WHERE,
 } from "./journeyData";
 import { formatLanguageCode } from "@domain/displayFormat";
+import { journeyIdForLegacySlug } from "@/lib/journeySlugAliases";
 import { formatVariantLabel } from "@/lib/languageVariant";
 
 /**
@@ -82,6 +83,7 @@ export async function getJourneyShareMeta(
   const match =
     journeys.find((j) => slugById.get(j.id) === incoming) ??
     journeys.find((j) => j.id === incoming) ??
+    journeys.find((j) => j.id === journeyIdForLegacySlug(incoming)) ??
     journeys.find((j) => (j.variant ?? "").toLowerCase() === lower) ??
     null;
   if (!match) return null;
