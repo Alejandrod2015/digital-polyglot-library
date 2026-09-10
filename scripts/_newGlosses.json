@@ -10952,5 +10952,667 @@
       "g": "They check it together (conferir).",
       "t": "verb"
     }
+  },
+  "portuguese-traveler-brazil-a0": {
+    "londres": {
+      "g": "London, the city in England",
+      "t": "noun"
+    },
+    "esta": {
+      "g": "this (feminine)",
+      "t": "determiner"
+    },
+    "brasil": {
+      "g": "Brazil",
+      "t": "noun"
+    },
+    "vídeo": {
+      "g": "video; a video call",
+      "t": "noun"
+    },
+    "desce": {
+      "g": "goes down (descer)",
+      "t": "verb"
+    },
+    "pelas": {
+      "g": "down, along the (por + as)",
+      "t": "preposition"
+    },
+    "vibra": {
+      "g": "vibrates (vibrar)",
+      "t": "verb"
+    },
+    "racha": {
+      "g": "cracks (rachar)",
+      "t": "verb"
+    },
+    "câmera": {
+      "g": "camera",
+      "t": "noun"
+    },
+    "armário": {
+      "g": "cupboard",
+      "t": "noun"
+    },
+    "nossa": {
+      "g": "our (nosso)",
+      "t": "determiner"
+    },
+    "tiro": {
+      "g": "I take, a photo (tirar)",
+      "t": "verb"
+    },
+    "sofá": {
+      "g": "sofa",
+      "t": "noun"
+    },
+    "volto": {
+      "g": "I come back (voltar)",
+      "t": "verb"
+    },
+    "sorriso": {
+      "g": "smile",
+      "t": "noun"
+    },
+    "botão": {
+      "g": "button",
+      "t": "noun"
+    },
+    "oito": {
+      "g": "eight",
+      "t": "number"
+    },
+    "tremida": {
+      "g": "blurry, shaky (tremido)",
+      "t": "adjective"
+    },
+    "estou": {
+      "g": "I am (estar)",
+      "t": "verb"
+    },
+    "fechado": {
+      "g": "closed, shut",
+      "t": "adjective"
+    },
+    "perfeita": {
+      "g": "perfect (perfeito)",
+      "t": "adjective"
+    },
+    "ombro": {
+      "g": "shoulder",
+      "t": "noun"
+    },
+    "graveto": {
+      "g": "small stick",
+      "t": "noun"
+    },
+    "leblon": {
+      "g": "Leblon, a beach area in Rio",
+      "t": "noun"
+    },
+    "feia": {
+      "g": "ugly (feio)",
+      "t": "adjective"
+    },
+    "ei": {
+      "g": "hey",
+      "t": "interjection"
+    },
+    "sumiu": {
+      "g": "disappeared (sumir)",
+      "t": "verb"
+    },
+    "abraça": {
+      "g": "hugs (abraçar)",
+      "t": "verb"
+    },
+    "joelhos": {
+      "g": "knees (joelho)",
+      "t": "noun"
+    },
+    "prometo": {
+      "g": "I promise (prometer)",
+      "t": "verb"
+    },
+    "irmãos": {
+      "g": "brothers; Dois Irmãos is a hill in Rio",
+      "t": "noun"
+    },
+    "belo": {
+      "g": "part of Belo Horizonte, the city (belo, beautiful)",
+      "t": "noun"
+    },
+    "horizonte": {
+      "g": "part of Belo Horizonte, the city (horizonte, horizon)",
+      "t": "noun"
+    },
+    "mãe": {
+      "g": "mother",
+      "t": "noun"
+    },
+    "beijo": {
+      "g": "kiss on the cheek",
+      "t": "noun"
+    },
+    "minas": {
+      "g": "Minas Gerais, a state of Brazil",
+      "t": "noun"
+    },
+    "às": {
+      "g": "at, with a time (a + as); às vezes, sometimes",
+      "t": "preposition"
+    },
+    "treina": {
+      "g": "practises (treinar)",
+      "t": "verb"
+    },
+    "direita": {
+      "g": "right, the right side",
+      "t": "noun"
+    },
+    "beijos": {
+      "g": "kisses on the cheek (beijo)",
+      "t": "noun"
+    },
+    "erra": {
+      "g": "gets it wrong (errar)",
+      "t": "verb"
+    },
+    "levo": {
+      "g": "I take, I bring (levar)",
+      "t": "verb"
+    },
+    "namorada": {
+      "g": "girlfriend",
+      "t": "noun"
+    },
+    "abraço": {
+      "g": "hug",
+      "t": "noun"
+    },
+    "deita": {
+      "g": "lays down, rests (deitar)",
+      "t": "verb"
+    },
+    "juiz": {
+      "g": "part of Juiz de Fora, a city in Minas Gerais",
+      "t": "noun"
+    },
+    "beagá": {
+      "g": "Beagá, the nickname of Belo Horizonte",
+      "t": "noun"
+    },
+    "mineiros": {
+      "g": "people from Minas Gerais (mineiro)",
+      "t": "noun"
+    },
+    "chamam": {
+      "g": "call (chamar)",
+      "t": "verb"
+    },
+    "impressa": {
+      "g": "printed (impresso)",
+      "t": "adjective"
+    },
+    "guarda": {
+      "g": "puts away, keeps (guardar)",
+      "t": "verb"
+    },
+    "pesado": {
+      "g": "heavy",
+      "t": "adjective"
+    },
+    "tira": {
+      "g": "takes off, takes out; takes a photo (tirar)",
+      "t": "verb"
+    },
+    "guardo": {
+      "g": "I keep it (guardar)",
+      "t": "verb"
+    },
+    "ligado": {
+      "g": "on, running",
+      "t": "adjective"
+    },
+    "iracema": {
+      "g": "Iracema, a beach in Fortaleza",
+      "t": "noun"
+    },
+    "xícaras": {
+      "g": "cups (xícara)",
+      "t": "noun"
+    },
+    "esfria": {
+      "g": "gets cold (esfriar)",
+      "t": "verb"
+    },
+    "jangada": {
+      "g": "small fishing raft with a sail",
+      "t": "noun"
+    },
+    "embora": {
+      "g": "away; vai embora, goes away",
+      "t": "adverb"
+    },
+    "esqueço": {
+      "g": "I forget (esquecer)",
+      "t": "verb"
+    },
+    "janeiro": {
+      "g": "January; part of Rio de Janeiro",
+      "t": "noun"
+    },
+    "enorme": {
+      "g": "huge",
+      "t": "adjective"
+    },
+    "namorado": {
+      "g": "boyfriend",
+      "t": "noun"
+    },
+    "cafés": {
+      "g": "coffees (café)",
+      "t": "noun"
+    },
+    "oi": {
+      "g": "hi",
+      "t": "interjection"
+    },
+    "vermelha": {
+      "g": "red (vermelho)",
+      "t": "adjective"
+    },
+    "desculpa": {
+      "g": "sorry",
+      "t": "interjection"
+    },
+    "lembra": {
+      "g": "remembers (lembrar)",
+      "t": "verb"
+    },
+    "lembro": {
+      "g": "I remember (lembrar)",
+      "t": "verb"
+    },
+    "demorado": {
+      "g": "long, lasting a long time",
+      "t": "adjective"
+    },
+    "bem-vinda": {
+      "g": "welcome, to a woman (bem-vindo)",
+      "t": "adjective"
+    },
+    "saudade": {
+      "g": "the warm, sad feeling of missing someone",
+      "t": "noun"
+    },
+    "torto": {
+      "g": "crooked",
+      "t": "adjective"
+    },
+    "flores": {
+      "g": "flowers (flor)",
+      "t": "noun"
+    },
+    "prazer": {
+      "g": "pleasure; muito prazer, nice to meet you",
+      "t": "noun"
+    },
+    "geladeira": {
+      "g": "fridge",
+      "t": "noun"
+    },
+    "dormindo": {
+      "g": "sleeping (dormir)",
+      "t": "verb"
+    },
+    "favorita": {
+      "g": "favourite (favorito)",
+      "t": "adjective"
+    },
+    "nela": {
+      "g": "on her (em + ela)",
+      "t": "pronoun"
+    },
+    "natal": {
+      "g": "Christmas; Natal, a city in the north-east",
+      "t": "noun"
+    },
+    "buggy": {
+      "g": "dune buggy",
+      "t": "noun"
+    },
+    "genipabu": {
+      "g": "Genipabu, sand dunes near Natal",
+      "t": "noun"
+    },
+    "emoção": {
+      "g": "thrill; com emoção, the wild ride",
+      "t": "noun"
+    },
+    "feliz": {
+      "g": "happy",
+      "t": "adjective"
+    },
+    "certeza": {
+      "g": "certainty; tem certeza, are you sure",
+      "t": "noun"
+    },
+    "estômago": {
+      "g": "stomach",
+      "t": "noun"
+    },
+    "óculos": {
+      "g": "glasses, sunglasses; goggles",
+      "t": "noun"
+    },
+    "meus": {
+      "g": "my (meu)",
+      "t": "determiner"
+    },
+    "toma": {
+      "g": "drinks; here, take it (tomar)",
+      "t": "verb"
+    },
+    "assim": {
+      "g": "like this, this way",
+      "t": "adverb"
+    },
+    "cabelo": {
+      "g": "hair",
+      "t": "noun"
+    },
+    "protetor": {
+      "g": "sun cream",
+      "t": "noun"
+    },
+    "doem": {
+      "g": "hurt (doer)",
+      "t": "verb"
+    },
+    "babosa": {
+      "g": "aloe vera",
+      "t": "noun"
+    },
+    "gelada": {
+      "g": "cold, iced (gelado)",
+      "t": "adjective"
+    },
+    "cama": {
+      "g": "bed",
+      "t": "noun"
+    },
+    "chego": {
+      "g": "I arrive (chegar)",
+      "t": "verb"
+    },
+    "festa": {
+      "g": "party",
+      "t": "noun"
+    },
+    "amiga": {
+      "g": "friend, a woman",
+      "t": "noun"
+    },
+    "faculdade": {
+      "g": "university",
+      "t": "noun"
+    },
+    "alegre": {
+      "g": "part of Porto Alegre, the city (alegre, happy)",
+      "t": "noun"
+    },
+    "museu": {
+      "g": "museum",
+      "t": "noun"
+    },
+    "cinema": {
+      "g": "cinema",
+      "t": "noun"
+    },
+    "quarta": {
+      "g": "Wednesday",
+      "t": "noun"
+    },
+    "jantar": {
+      "g": "dinner",
+      "t": "noun"
+    },
+    "domingo": {
+      "g": "Sunday",
+      "t": "noun"
+    },
+    "erva": {
+      "g": "yerba mate leaves",
+      "t": "noun"
+    },
+    "chimarrão": {
+      "g": "hot mate tea from the south",
+      "t": "noun"
+    },
+    "sul": {
+      "g": "south; the South of Brazil",
+      "t": "noun"
+    },
+    "bomba": {
+      "g": "metal straw for mate",
+      "t": "noun"
+    },
+    "amargo": {
+      "g": "bitter",
+      "t": "adjective"
+    },
+    "careta": {
+      "g": "funny face; faz uma careta, pulls a face",
+      "t": "noun"
+    },
+    "conversam": {
+      "g": "talk (conversar)",
+      "t": "verb"
+    },
+    "chamadas": {
+      "g": "calls (chamada)",
+      "t": "noun"
+    },
+    "meia": {
+      "g": "half, as in half past; sock",
+      "t": "noun"
+    },
+    "computador": {
+      "g": "computer",
+      "t": "noun"
+    },
+    "tapioca": {
+      "g": "tapioca pancake from Ceará",
+      "t": "noun"
+    },
+    "prima": {
+      "g": "cousin, a woman",
+      "t": "noun"
+    },
+    "fortaleza": {
+      "g": "Fortaleza, a city in Ceará",
+      "t": "noun"
+    },
+    "frigideira": {
+      "g": "frying pan",
+      "t": "noun"
+    },
+    "fogo": {
+      "g": "the flame on the cooker",
+      "t": "noun"
+    },
+    "pacote": {
+      "g": "packet",
+      "t": "noun"
+    },
+    "carioca": {
+      "g": "from Rio de Janeiro",
+      "t": "noun"
+    },
+    "rasga": {
+      "g": "tears (rasgar)",
+      "t": "verb"
+    },
+    "sono": {
+      "g": "sleepiness; com sono, sleepy",
+      "t": "noun"
+    },
+    "rasgada": {
+      "g": "torn (rasgado)",
+      "t": "adjective"
+    },
+    "lixo": {
+      "g": "rubbish, the bin",
+      "t": "noun"
+    },
+    "franceses": {
+      "g": "French (francês); pão francês, a bread roll",
+      "t": "adjective"
+    },
+    "carioquinha": {
+      "g": "bread roll, as it is called in Ceará",
+      "t": "noun"
+    },
+    "carioquinhas": {
+      "g": "bread rolls (carioquinha)",
+      "t": "noun"
+    },
+    "sobram": {
+      "g": "are left over (sobrar)",
+      "t": "verb"
+    },
+    "nesta": {
+      "g": "in this (em + esta)",
+      "t": "preposition"
+    },
+    "lã": {
+      "g": "wool",
+      "t": "noun"
+    },
+    "grossa": {
+      "g": "thick (grosso)",
+      "t": "adjective"
+    },
+    "bermuda": {
+      "g": "shorts",
+      "t": "noun"
+    },
+    "uso": {
+      "g": "I wear (usar)",
+      "t": "verb"
+    },
+    "potiguar": {
+      "g": "from Rio Grande do Norte",
+      "t": "noun"
+    },
+    "casarão": {
+      "g": "big old mansion",
+      "t": "noun"
+    },
+    "estreita": {
+      "g": "narrow (estreito)",
+      "t": "adjective"
+    },
+    "azulejo": {
+      "g": "painted tile",
+      "t": "noun"
+    },
+    "quartos": {
+      "g": "rooms (quarto)",
+      "t": "noun"
+    },
+    "show": {
+      "g": "concert, show",
+      "t": "noun"
+    },
+    "reggae": {
+      "g": "reggae music",
+      "t": "noun"
+    },
+    "fechadura": {
+      "g": "lock",
+      "t": "noun"
+    },
+    "bumba": {
+      "g": "part of bumba meu boi, the June festival of the bull",
+      "t": "noun"
+    },
+    "muitas": {
+      "g": "many (muito)",
+      "t": "determiner"
+    },
+    "cores": {
+      "g": "colours (cor)",
+      "t": "noun"
+    },
+    "pijama": {
+      "g": "pyjamas",
+      "t": "noun"
+    },
+    "descalça": {
+      "g": "barefoot (descalço)",
+      "t": "adjective"
+    },
+    "fazer": {
+      "g": "to do, to make; fazer a mala, to pack",
+      "t": "verb"
+    },
+    "chaves": {
+      "g": "keys (chave)",
+      "t": "noun"
+    },
+    "luís": {
+      "g": "part of São Luís, the city",
+      "t": "noun"
+    },
+    "limpo": {
+      "g": "clean",
+      "t": "adjective"
+    },
+    "erro": {
+      "g": "mistake",
+      "t": "noun"
+    },
+    "prata": {
+      "g": "silver; Rio da Prata, a clear river in Bonito",
+      "t": "noun"
+    },
+    "põem": {
+      "g": "put on (pôr)",
+      "t": "verb"
+    },
+    "seus": {
+      "g": "your (seu)",
+      "t": "determiner"
+    },
+    "flutuam": {
+      "g": "float (flutuar)",
+      "t": "verb"
+    },
+    "apaga": {
+      "g": "erases (apagar)",
+      "t": "verb"
+    },
+    "tereré": {
+      "g": "cold mate tea from Mato Grosso do Sul",
+      "t": "noun"
+    },
+    "verão": {
+      "g": "summer",
+      "t": "noun"
+    },
+    "prefiro": {
+      "g": "I prefer (preferir)",
+      "t": "verb"
+    },
+    "despertador": {
+      "g": "alarm clock",
+      "t": "noun"
+    },
+    "molhados": {
+      "g": "wet (molhado)",
+      "t": "adjective"
+    }
   }
 }
