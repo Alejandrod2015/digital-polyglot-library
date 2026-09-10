@@ -6,7 +6,7 @@
     "slug": "la-otra-columna",
     "arcType": "reframe-turn",
     "synopsis": "Griselda teaches with stories at a small institute in San Telmo, and Ariel, the owner, arrives with spreadsheets: her group is falling behind the app-based ones. She points at the other column, the one showing that her students never miss a class, loses the argument anyway, and watches her weekly story hour disappear from the schedule without a fight.",
-    "text": "Griselda es la profesora de los cuentos en un instituto de San Telmo, en Buenos Aires, Argentina. Sus alumnos extranjeros no aprenden con listas: aprenden con historias que ella dicta despacio, en un aula que huele a café con medialunas.\n\nQuien mira las planillas es Ariel. El dueño baja los lunes del subte con el promedio de cada grupo tildado en rojo.\n\n“Tu grupo rinde menos”, dice Ariel, lapicera en mano. “Los de la aplicación ya van dos módulos adelante.”\n\n“Mi grupo llega después del laburo y no falta nunca”, contesta Griselda. “Mirá la otra columna, la de los que vuelven.”\n\n“Acá se paga con niveles, no con cariño”, corta él.\n\n“¿Y los viernes?”, pregunta ella. “Los viernes hay módulo de repaso”, contesta Ariel, sin levantar la vista.\n\nDesde el lunes, los módulos entran en su aula, y la hora de cuentos sale del horario.\n\nSe traga el orgullo. La planilla dice que su grupo rinde menos; la misma planilla dice que no falta nadie. Los números también cuentan historias; Ariel no sabe leerlas. No lo pelea: borra el pizarrón sin apuro y guarda el libro en el bolso.",
+    "text": "Griselda era la profesora de los cuentos en un instituto de San Telmo, Buenos Aires, Argentina. Sus alumnos extranjeros no aprendían con listas: aprendían con historias que dictaba despacio, en un aula que olía a café con medialunas.\n\nQuien miraba las planillas era Ariel. El dueño bajaba los lunes del subte con el promedio de cada grupo tildado en rojo.\n\n“Tu grupo rinde menos”, dijo Ariel, lapicera en mano. “Los de la aplicación ya van dos módulos adelante.”\n\n“Mi grupo llega después del laburo y no falta nunca”, contestó Griselda. “Mirá la otra columna, la de los que vuelven.”\n\n“Acá se paga con niveles, no con cariño”, cortó él.\n\n“¿Y los viernes?”, preguntó ella. “Los viernes hay módulo de repaso”, contestó Ariel, sin levantar la vista.\n\nAriel avisó que, desde el lunes, los módulos entraban en su aula y la hora de cuentos salía del horario.\n\nSe tragó el orgullo. La planilla decía que su grupo rendía menos; la misma planilla decía que no faltaba nadie. Los números también contaban historias; Ariel no sabía leerlas. No lo peleó: borró el pizarrón sin apuro y guardó el libro en el bolso.",
     "vocab": [
       {
         "word": "pizarrón",
@@ -54,7 +54,7 @@
       },
       {
         "word": "dictar",
-        "surface": "dicta",
+        "surface": "dictaba",
         "type": "verb",
         "definition": "To teach a class, deliver it; also to read aloud slowly."
       },
@@ -87,7 +87,7 @@
       },
       {
         "word": "pelear",
-        "surface": "pelea",
+        "surface": "peleó",
         "type": "verb",
         "definition": "To fight, argue hard to defend your position."
       },
@@ -121,7 +121,7 @@
       },
       {
         "word": "tragarse el orgullo",
-        "surface": "traga el orgullo",
+        "surface": "tragó el orgullo",
         "type": "expression",
         "definition": "To swallow your pride and not answer back."
       },
@@ -140,7 +140,7 @@
     "slug": "buena-suerte-en-porteno",
     "arcType": "mini-cliffhanger",
     "synopsis": "The morning group is moved to the app and Griselda is left with six night students and a blackboard. While the modules advance next door in headphone silence, her small class writes, laughs and learns to spell the letter jota, and one day an envelope from Montreal arrives at the institute. Ariel leaves it unopened on his desk, ticked as pending.",
-    "text": "La noticia la trae Ariel en el recreo, dicha al pasar.\n\n“El grupo de las mañanas pasa a la aplicación”, avisa Ariel. “A vos te queda el de la noche.”\n\n“No te lo tomés a pecho”, agrega. “Es un piloto, nada más. Cuando los números mejoren, lo hablamos.”\n\n“Vos sabés dónde encontrarme, che”, contesta ella, y tampoco esta vez pelea.\n\nCon el grupo de la noche, Griselda dicta despacio y reparte una consigna por pupitre. Seis nombres, seis países, seis maneras de deletrear la jota.\n\nToma lista sin apuro. Cuando la charla se suelta, el instituto ya cerró y el pizarrón queda lleno.\n\nEn el aula de al lado, los módulos avanzan solos, con auriculares. Nadie se ríe, nadie levanta la mano, nadie pregunta cómo se dice buena suerte en porteño.\n\nA Griselda le pesa más el aula de al lado: ese silencio no se parece a nada.\n\n“¿Y vos, todavía dictás cuentos?”, pregunta Ariel al pasar. “Los viernes, por si acaso”, contesta ella.\n\nY un jueves cualquiera llega al instituto un sobre desde Montreal, con estampillas de colores. Ariel lo deja sin abrir sobre el escritorio, tildado como pendiente.",
+    "text": "La noticia la trajo Ariel en el recreo, dicha al pasar.\n\n“El grupo de las mañanas pasa a la aplicación”, avisó Ariel. “A vos te queda el de la noche.”\n\n“No te lo tomés a pecho”, agregó. “Es un piloto, nada más. Cuando los números mejoren, lo hablamos.”\n\n“Vos sabés dónde encontrarme, che”, contestó ella, y tampoco esta vez peleó.\n\nCon el grupo de la noche, Griselda dictaba despacio y repartía una consigna por pupitre. Seis nombres, seis países, seis maneras de deletrear la jota.\n\nTomaba lista sin apuro. Cuando la charla se soltaba, el instituto ya había cerrado y el pizarrón quedaba lleno.\n\nEn el aula de al lado, los módulos avanzaban solos, con auriculares. Nadie se reía, nadie levantaba la mano, nadie preguntaba cómo se decía buena suerte en porteño.\n\nA Griselda le pesaba más el aula de al lado: ese silencio no se parecía a nada.\n\n“¿Y vos, todavía dictás cuentos?”, preguntó Ariel al pasar. “Los viernes, por si acaso”, contestó ella.\n\nUn jueves cualquiera llegó al instituto un sobre desde Montreal, con estampillas de colores. Ariel lo dejó sin abrir sobre el escritorio, tildado como pendiente.",
     "vocab": [
       {
         "word": "porteño",
@@ -188,7 +188,7 @@
       },
       {
         "word": "soltarse",
-        "surface": "se suelta",
+        "surface": "se soltaba",
         "type": "verb",
         "definition": "To loosen up, lose the fear of speaking."
       },
@@ -210,7 +210,7 @@
       },
       {
         "word": "parecerse",
-        "surface": "se parece",
+        "surface": "se parecía",
         "type": "verb",
         "definition": "To look like, be similar to something else."
       },
@@ -222,19 +222,19 @@
       },
       {
         "word": "avanzar",
-        "surface": "avanzan",
+        "surface": "avanzaban",
         "type": "verb",
         "definition": "To advance, move forward through the course material."
       },
       {
         "word": "tomar lista",
-        "surface": "toma lista",
+        "surface": "Tomaba lista",
         "type": "expression",
         "definition": "To call the roll, read out who is present."
       },
       {
         "word": "levantar la mano",
-        "surface": "levanta la mano",
+        "surface": "levantaba la mano",
         "type": "expression",
         "definition": "To raise your hand to ask or answer."
       },
@@ -262,7 +262,7 @@
     "slug": "que-buena-idea-ariel",
     "arcType": "harmonic-close",
     "synopsis": "Three enrolments arrive from Montreal in one day, all quoting the same friend who learned with stories, and only then does Ariel open the pending envelope. He reads the letter aloud at the door of the night classroom, invents a weekly reading hour as if it were his own idea, and Griselda accepts it very seriously, laughing only on the inside.",
-    "text": "Un martes caen tres matrículas desde Montreal, con la misma frase en la ficha de inscripción: me lo recomendó una amiga que se sabe los cuentos de memoria.\n\nRecién entonces Ariel despega el sobre pendiente y lee moviendo los labios. Después cruza el pasillo en silencio y se para en la puerta del aula de Griselda.\n\n“Escuchá esto”, dice, y lee: “El curso me salvó. Cuando me trabo, cierro los ojos y me acuerdo de los cuentos de los viernes. Así me suelto.”\n\nGriselda no dice nada: deja que la carta hable, de espaldas, aguantándose la risa.\n\n“Estuve pensando”, plantea Ariel, carta en mano. “Al módulo le falta algo: una hora de lectura por semana. De cuentos, digamos. ¿La tomás vos?”\n\nAfuera frena un colectivo. Griselda lo deja esperar un momento.\n\n“Qué buena idea, Ariel. Ojalá se te ocurra más seguido”, contesta Griselda, muy seria, y los dos saben qué acaban de firmar: la disculpa llegó disfrazada de idea.\n\nLos seis del grupo aplauden bajito. La hora de cuentos vuelve al horario con otro nombre: Módulo de lectura. Griselda la dicta despacio, con la puerta abierta, por las dudas.",
+    "text": "Un martes cayeron tres matrículas desde Montreal, con la misma frase en la ficha de inscripción: me lo recomendó una amiga que se sabe los cuentos de memoria.\n\nRecién entonces Ariel despegó el sobre pendiente y leyó moviendo los labios. Después cruzó el pasillo en silencio y se paró en la puerta del aula de Griselda.\n\n“Escuchá esto”, dijo, y leyó: “El curso me salvó. Cuando me trabo, cierro los ojos y me acuerdo de los cuentos de los viernes. Así me suelto.”\n\nGriselda no dijo nada: dejó que la carta hablara, de espaldas, aguantándose la risa.\n\n“Estuve pensando”, planteó Ariel, carta en mano. “Al módulo le falta algo: una hora de lectura por semana. De cuentos, digamos. ¿La tomarías vos?”\n\nAfuera frenó un colectivo. Griselda dejó que Ariel esperara un momento.\n\n“Qué buena idea, Ariel. Ojalá se te ocurra más seguido”, contestó Griselda, muy seria, y los dos supieron qué acababan de firmar: la disculpa llegó disfrazada de idea.\n\nLos seis del grupo aplaudieron bajito. La hora de cuentos volvió al horario con otro nombre: Módulo de lectura. Griselda la dictaba despacio, con la puerta abierta, por las dudas.",
     "vocab": [
       {
         "word": "matrícula",
@@ -326,7 +326,7 @@
       },
       {
         "word": "despegar",
-        "surface": "despega",
+        "surface": "despegó",
         "type": "verb",
         "definition": "To peel off, unstick something slowly and with care."
       },
@@ -349,7 +349,7 @@
       },
       {
         "word": "aplaudir",
-        "surface": "aplauden",
+        "surface": "aplaudieron",
         "type": "verb",
         "definition": "To clap, hit your palms together in approval."
       },
@@ -361,7 +361,7 @@
       },
       {
         "word": "pararse",
-        "surface": "se para",
+        "surface": "se paró",
         "type": "verb",
         "definition": "To stand, place yourself somewhere on your feet."
       },
