@@ -159,6 +159,22 @@ const YO_TONICA: Record<string, string> = {
 /** Las cuatro personas con el acento en la raiz. */
 const TONICAS = [0, 1, 2, 5];
 
+/** ¿Diptonga o cierra la vocal de la raiz? Lo usa el subjuntivo para saber si
+ *  nosotros y vosotros vuelven a la raiz del infinitivo (pensemos, no
+ *  "piensemos"). Solo esos: `parezcamos` y `cojamos` conservan la raiz del yo. */
+export function cambiaRaiz(inf: string): boolean {
+  return Boolean(RAIZ_TONICA[inf]);
+}
+
+/** La ortografia de la primera persona en -ger / -gir / -guir: la g ante o se
+ *  escribe j (cojo, dirijo, finjo) y la u de -guir sobra (distingo). Sin esto
+ *  salia "cogo", y de ahi el subjuntivo "coga" en vez de coja. */
+function yoOrtografico(inf: string, yo: string): string {
+  if (/(ger|gir)$/.test(inf) && yo.endsWith("go")) return `${yo.slice(0, -2)}jo`;
+  if (/guir$/.test(inf) && yo.endsWith("guo")) return `${yo.slice(0, -3)}go`;
+  return yo;
+}
+
 function conjugaRegular(inf: string): string[] | null {
   const raiz = inf.slice(0, -2);
   const fin = inf.slice(-2);
@@ -183,6 +199,7 @@ export function presente(inf: string, variante: string): string[] | null {
       const yo = YO_TONICA[inf];
       if (yo) filas[0] = yo;
     }
+    filas[0] = yoOrtografico(inf, filas[0]);
   }
   if (variante !== "spain") {
     // ustedes toma la forma de ellos; el hueco de vosotros desaparece.

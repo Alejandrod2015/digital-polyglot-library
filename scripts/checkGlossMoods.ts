@@ -14,6 +14,11 @@
  *     dos, `here` dentro del rango, y los de `kind: "expand"` con su `head` de
  *     dos celdas y su enlace. Un bloque a medias pinta una tarjeta rota y
  *     ningun otro lint la ve.
+ *  3. HUERFANOS. Un bloque con `mood` que el generador ya no produce ni con
+ *     --force. En español bloquea; en las otras lenguas se nombra, porque ahi
+ *     hay bloques escritos a mano. WHY: el 2026-09-10 el motor daba "parezza"
+ *     por parezca, asi que `parezca` no se reconocia y su bloque viejo, con el
+ *     fallo del clitico, sobrevivia a cada --force sin que nada avisara.
  *
  * Ademas prohibe el signo igual, que es la regla de redaccion de las glosas
  * (`project_tap_glosses_contract`), y el guion largo.
@@ -64,6 +69,11 @@ function revisaForma(f: Record<string, unknown>): string | null {
     if (here < 0) return "expand sin fila encendida";
   }
   if (kind === "line" && f.link) return "line con enlace, que no lleva a ningun sitio";
+  // Ninguna palabra lleva dos tildes. Asi salio "pusiérás" (2026-09-10) y el
+  // lint daba verde porque la tabla estaba bien formada.
+  const dobles = rows.map((r) => r[1]).join(" ").split(/\s+/)
+    .filter((w) => (w.match(/[áéíóú]/g) ?? []).length > 1);
+  if (dobles.length) return `palabra con dos tildes (${dobles.join(", ")})`;
   const texto = JSON.stringify(f);
   if (texto.includes("=")) return "lleva un signo igual";
   // Escapado, no literal: el propio lint de guiones barre este arbol.
@@ -77,6 +87,7 @@ async function main() {
   const sinTablas: string[] = [];
   let bloques = 0;
 
+  const huerfanosOtros: string[] = [];
   for (const bundle of bundles) {
     const r = await moodsDeBundle(prisma, bundle, false);
     if (!r) continue;
@@ -84,18 +95,37 @@ async function main() {
     for (const p of r.pendientes) {
       fallos.push({ bundle, slug: p.slug, palabra: p.palabra, que: `sin bloque, y es ${p.bloque.mood}` });
     }
+    // Lo que el generador escribiria con --force. Un bloque que ya no sale de
+    // aqui es HUERFANO: --force solo rehace lo que el motor produce, asi que
+    // ese bloque se queda en la base con la tabla de cuando se escribio.
+    const conFuerza = await moodsDeBundle(prisma, bundle, true);
+    const generadas = new Set((conFuerza?.pendientes ?? []).map((p) => `${p.slug}|${p.palabra}`));
     for (const capa of r.capas) {
       for (const [w, e] of Object.entries(capa.glosses as Record<string, { f?: Record<string, unknown> }>)) {
         if (!e?.f?.mood) continue;
         bloques++;
         const mal = revisaForma(e.f);
         if (mal) fallos.push({ bundle, slug: capa.slug, palabra: w, que: mal });
+        if (generadas.has(`${capa.slug}|${w}`)) continue;
+        // En español el motor es dueño de todos los bloques, asi que un
+        // huerfano es una tabla vieja y bloquea. En las otras lenguas hay
+        // bloques escritos a mano que el motor no conoce: se nombran, no
+        // bloquean.
+        if (r.idioma === "spanish") {
+          fallos.push({ bundle, slug: capa.slug, palabra: w, que: `bloque huerfano (${e.f.mood}): el motor ya no lo produce` });
+        } else {
+          huerfanosOtros.push(`${bundle} · ${capa.slug} · ${w} (${e.f.mood})`);
+        }
       }
     }
   }
 
   if (sinTablas.length) {
     console.log(`gloss-moods: sin tablas de modo escritas, no se comprueban: ${sinTablas.join(", ")}`);
+  }
+  if (huerfanosOtros.length) {
+    console.log(`gloss-moods: ${huerfanosOtros.length} bloques fuera del motor (escritos a mano, no bloquean):`);
+    for (const h of huerfanosOtros) console.log(`  ${h}`);
   }
   if (!fallos.length) {
     console.log(`gloss-moods: limpio (${bundles.length} paquetes, ${bloques} bloques de modo)`);
@@ -107,7 +137,8 @@ async function main() {
     console.error(`  ${f.bundle} · ${f.slug} · ${f.palabra}: ${f.que}`);
   }
   if (fallos.length > 60) console.error(`  ... y ${fallos.length - 60} mas`);
-  console.error("\nSe arregla corriendo:  npx tsx scripts/buildGlossMoods.ts --all\n");
+  console.error("\nSe arregla corriendo:  npx tsx scripts/buildGlossMoods.ts --all");
+  console.error("Si el fallo esta en un bloque ya escrito, con --force; un huerfano pide arreglar el motor.\n");
   await prisma.$disconnect();
   process.exit(1);
 }
