@@ -12,6 +12,31 @@ export type OrderableTrack = {
 };
 
 /**
+ * El nivel con el que se decide DÓNDE aterriza el alumno.
+ *
+ * `journeyPlacementLevel` solo lo guarda el onboarding móvil. Quien hizo el
+ * onboarding en web se queda sin él para siempre, y sin placement el orden por
+ * defecto lo manda al A0 aunque se declarara Intermediate: Mike (beta PT,
+ * 2026-09-09) leyó el Traveler brasileño A0 con un A1 publicado encima y
+ * escribió que le quedaba "a little bit above my level" (sic).
+ *
+ * De reserva se usa `preferredLevel`, que sí existe en esas cuentas. Beginner
+ * NO mueve nada: ese cubo junta "Brand new" (A0) y "A few words" (A1), y
+ * subirlo al A1 le quitaría el suelo a quien empieza de cero.
+ */
+export function placementForLanding(
+  journeyPlacementLevel: unknown,
+  preferredLevel: unknown
+): string | null {
+  const placement = normalizeJourneyPlacementLevel(journeyPlacementLevel);
+  if (placement) return placement;
+  const coarse = typeof preferredLevel === "string" ? preferredLevel.trim().toLowerCase() : "";
+  if (coarse === "intermediate") return "b1";
+  if (coarse === "advanced") return "c1";
+  return null;
+}
+
+/**
  * Ordena los tracks que se le sirven a un alumno poniendo PRIMERO el que le
  * toca por nivel.
  *

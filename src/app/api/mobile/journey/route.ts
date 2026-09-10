@@ -18,7 +18,7 @@ import {
   getPassedJourneyCheckpointKeys,
   getPracticedJourneyTopicKeys,
 } from "@/lib/journeyProgress";
-import { orderTracksByPlacement } from "@/lib/journeyTrackOrder";
+import { orderTracksByPlacement, placementForLanding } from "@/lib/journeyTrackOrder";
 import { variantMatchesPreference } from "@/lib/languageVariant";
 import { resolveLearnerVariant } from "@/lib/learnerVariant";
 import { getActiveMobileSession } from "@/lib/mobileSession";
@@ -163,8 +163,14 @@ export async function GET(req: NextRequest): Promise<Response> {
   // El primero de la lista manda, así que el primero tiene que ser el que le
   // toca por nivel. El porqué, los criterios y el historial de las dos veces
   // que este orden decidió mal el nivel de alguien viven en
-  // `orderTracksByPlacement`, que es donde se pueden probar.
-  const tracks = orderTracksByPlacement(servedTracks, journeyPlacementLevel, learnerVariant);
+  // `orderTracksByPlacement`, que es donde se pueden probar. Sin placement se
+  // aterriza con el nivel declarado (`placementForLanding`); el desbloqueo de
+  // abajo sigue usando solo el placement real.
+  const tracks = orderTracksByPlacement(
+    servedTracks,
+    placementForLanding(journeyPlacementLevel, user.publicMetadata?.preferredLevel),
+    learnerVariant
+  );
 
   const dueReviewProgressKeySet = new Set(
     dueReviewItems.map((item) => item.progressKey).filter((value): value is string => Boolean(value))
