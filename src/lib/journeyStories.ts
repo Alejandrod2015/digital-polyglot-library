@@ -106,6 +106,7 @@ function readerStatusWhere() {
       "cmt5x67ze000l320cpgunu5vi", // Traveler ES B1 spain (en obra, 2026-08)
       "cmtplpfum0007j8c6piegwt31", // Traveler ES B2 spain (en obra, 2026-09)
       "cmsyrge55000732u9oiu8wue3", // Traveler PT-BR A2 (era el A1 hasta el 2026-09-10)
+      "cmtvpqsfv000832hgemzk20cl", // Traveler PT-BR A0 nuevo (en obra, 2026-09-10)
       "cmt0a8vb1000m32p1x7r5ba28", // Traveler DE A0 germany (en obra, 2026-08)
       "cmrdqk484000032r4rt2vw4ej", // Friends ES C1 LATAM (in progress)
       "cmrdbz11t000032asrvo832i9", // Hanseat DE C1 (in progress; un-published 2026-07-09)
