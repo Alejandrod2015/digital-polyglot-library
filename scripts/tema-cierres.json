@@ -2219,5 +2219,73 @@
     "avisos": [
       "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
     ]
+  },
+  "cmtvpqsfv000832hgemzk20cl#rio-de-janeiro": {
+    "cerrado": "2026-09-10T16:17:43.749Z",
+    "hash": "03c93822b3f690e2",
+    "historias": [
+      "rio-de-janeiro#0 um-beijo-torto",
+      "rio-de-janeiro#1 aqui-a-onda-nao-chega",
+      "rio-de-janeiro#2 dois-beijos-em-minas"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"reencuentro tierno y torpe: frases de una idea, presente, dialogo de dos o tres palabras por turno\", espina \"Larissa, uma moça do Rio de Janeiro, parte o ano entre Londres e o Brasil; em cada volta reaprende o seu proprio pais e descobre o que perdeu fora. Caio, o namorado, e quem espera. No Rio ela reaprende a cumprimentar e o peso de um nome\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"diz\" 36%)",
+      "arranques de parrafo variados (mas repetido \"larissa\", 44%)",
+      "densidad 6.1 palabras por oracion (techo 9 en a0)",
+      "seguidilla 33/72 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 3 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.19 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 57/68 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en PT no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: rio-de-janeiro (Caio, Larissa)"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "a0",
+      "variante": "BRAZIL",
+      "registro": "reencuentro tierno y torpe: frases de una idea, presente, dialogo de dos o tres palabras por turno",
+      "espina": "Larissa, uma moça do Rio de Janeiro, parte o ano entre Londres e o Brasil; em cada volta reaprende o seu proprio pais e descobre o que perdeu fora. Caio, o namorado, e quem espera. No Rio ela reaprende a cumprimentar e o peso de um nome",
+      "recursos": "A0: repeticion ritmica (um beijo, dois beijos), contraste con mas, emocion como gesto visible (tapa o rosto, segura a mao). Titulos: objeto torcido, linea dicha y regionalismo, uno por historia",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "que el reencuentro con Caio en el aeropuerto sea como antes de Londres",
+          "impide": "seis meses fuera: le da la mano y un hi a la inglesa, y el beso llega tarde y torcido",
+          "cuesta": "el primer momento del reencuentro, que sale mal y ya no se repite",
+          "cambia": "se rie de si misma y le da un abrazo largo; sabe que tiene que reaprender su casa",
+          "emocion": "verguenza (se tapa la cara con la mano) y despues alivio (el abrazo)"
+        },
+        {
+          "slot": "2",
+          "quiere": "que Caio escriba Larissa e Caio en la arena de la playa",
+          "impide": "una ola se lleva el nombre de ella antes de terminar",
+          "cuesta": "el nombre escrito, y con el la idea de que el verano dura: ella vuelve a Londres en seis meses",
+          "cambia": "Caio lo escribe otra vez, mas arriba, donde el agua no llega; ella entiende que el la espera",
+          "emocion": "tristeza pequena (mira el mar callada) y despues ternura (le toma la mano)"
+        },
+        {
+          "slot": "3",
+          "quiere": "acertar mañana el saludo a la madre de Caio, en Belo Horizonte",
+          "impide": "en el Rio es un beso y en Minas son dos; ensaya en el autobus y se confunde",
+          "cuesta": "la noche de sueño en el autobus, ensayando besos al aire",
+          "cambia": "Caio confiesa que tampoco sabe como saluda su madre a una novia; se rien y ella se duerme tranquila",
+          "emocion": "nervios (aprieta la bolsa en las rodillas) y despues calma (apoya la cabeza en su hombro)"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 6 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
   }
 }
