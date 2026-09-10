@@ -401,7 +401,7 @@
  {
   "type": "meaning_in_context",
   "word": "seco",
-  "sentence": "Contestó [[seco]], sin mirarla.",
+  "sentence": "Lo cortó, [[seco]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "curt",
@@ -414,7 +414,7 @@
    "audioClip": {
     "storySlug": "la-persiana-a-media-tarde",
     "storySource": "user",
-    "sentence": "Contestó seco, sin mirarla.",
+    "sentence": "Lo cortó, seco.",
     "targetWord": "seco",
     "language": "spanish"
    }

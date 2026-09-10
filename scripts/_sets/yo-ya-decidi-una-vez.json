@@ -104,7 +104,7 @@
  {
   "type": "meaning_in_context",
   "word": "sin adornos",
-  "sentence": "Se lo explicó [[sin adornos]], tal como fue.",
+  "sentence": "Le contó [[sin adornos]] que aquel año se firmó la venta.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "plainly",
@@ -117,7 +117,7 @@
    "audioClip": {
     "storySlug": "yo-ya-decidi-una-vez",
     "storySource": "user",
-    "sentence": "Se lo explicó sin adornos, tal como fue.",
+    "sentence": "Le contó sin adornos que aquel año se firmó la venta.",
     "targetWord": "sin adornos",
     "language": "spanish"
    }
@@ -272,7 +272,7 @@
  {
   "type": "meaning_in_context",
   "word": "bando",
-  "sentence": "Cada [[bando]] tenía su periódico.",
+  "sentence": "La peña estaba partida en [[bandos]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "side",
@@ -285,8 +285,8 @@
    "audioClip": {
     "storySlug": "yo-ya-decidi-una-vez",
     "storySource": "user",
-    "sentence": "Cada bando tenía su periódico.",
-    "targetWord": "bando",
+    "sentence": "La peña estaba partida en bandos.",
+    "targetWord": "bandos",
     "language": "spanish"
    }
   },

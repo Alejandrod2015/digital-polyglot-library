@@ -1,0 +1,452 @@
+{
+ "la-persiana-a-media-tarde": {
+  "persiana": {
+   "es": "la persiana a media tarde",
+   "en": "",
+   "antes": "luego bajó la persiana = then he rolled down the shutter"
+  },
+  "como": {
+   "es": "que guardaba periódicos como otros",
+   "en": "",
+   "antes": "como otros guardan sellos = like others keep stamps"
+  },
+  "otros": {
+   "es": "que guardaba periódicos como otros",
+   "en": "",
+   "antes": "como otros guardan sellos = like others keep stamps"
+  },
+  "sellos": {
+   "es": "sellos",
+   "en": "",
+   "antes": "como otros guardan sellos = like others keep stamps"
+  },
+  "allí": {
+   "es": "allí olía a papel",
+   "en": "",
+   "antes": "allí había olor a papel = there it smelled of paper"
+  },
+  "olía": {
+   "es": "allí olía a papel",
+   "en": ""
+  },
+  "papel": {
+   "es": "allí olía a papel",
+   "en": "",
+   "antes": "olor a papel recién llegado = a smell of freshly delivered paper"
+  },
+  "fecha": {
+   "es": "con la fecha subrayada",
+   "en": "",
+   "antes": "la fecha subrayada dos veces = the date underlined twice"
+  },
+  "subrayada": {
+   "es": "con la fecha subrayada",
+   "en": "",
+   "antes": "la fecha subrayada dos veces = the date underlined twice"
+  },
+  "tardó": {
+   "es": "hugo tardó en contestar",
+   "en": "",
+   "antes": "y tardó en contestar = and took a while to answer"
+  },
+  "contestar": {
+   "es": "hugo tardó en contestar",
+   "en": "",
+   "antes": "y tardó en contestar = and took a while to answer"
+  },
+  "de": {
+   "es": "la persiana a media tarde",
+   "en": "",
+   "antes": "de hace mucho = from long ago"
+  },
+  "y": {
+   "es": "con la fecha subrayada",
+   "en": "",
+   "antes": "y tardó en contestar = and took a while to answer"
+  },
+  "bajó": {
+   "es": "bajó la persiana a media tarde",
+   "en": "",
+   "antes": "luego bajó la persiana = then he rolled down the shutter"
+  },
+  "plaza": {
+   "es": "la plaza se quedó con",
+   "en": "",
+   "antes": "la plaza entera se quedó = the whole square was left"
+  },
+  "quedó": {
+   "es": "plaza se quedó con la",
+   "en": "",
+   "antes": "la plaza entera se quedó = the whole square was left"
+  },
+  "perdido": {
+   "es": "el año perdido le dolía",
+   "en": "",
+   "antes": "el año perdido existía = the lost year existed"
+  },
+  "paciencia": {
+   "es": "la paciencia de claudia no",
+   "en": "",
+   "antes": "la paciencia no le llegaría = her patience would not last"
+  },
+  "llegaría": {
+   "es": "claudia no llegaría al jueves",
+   "en": "",
+   "antes": "la paciencia no le llegaría = her patience would not last"
+  },
+  "sello": {
+   "es": "sellos",
+   "en": "",
+   "antes": "como otros guardan sellos = the way others keep stamps"
+  },
+  "subrayar": {
+   "es": "con la fecha subrayada",
+   "en": "",
+   "antes": "con la fecha subrayada dos veces = with the date underlined twice"
+  },
+  "tardar": {
+   "es": "hugo tardó en contestar",
+   "en": "",
+   "antes": "y tardó en contestar = and took a while to answer"
+  }
+ },
+ "yo-ya-decidi-una-vez": {
+  "caja": {
+   "es": "la caja azul esperaba en",
+   "en": "",
+   "antes": "su caja azul espera = her blue box waits"
+  },
+  "azul": {
+   "es": "la caja azul esperaba en",
+   "en": "",
+   "antes": "su caja azul = her blue box"
+  },
+  "esperaba": {
+   "es": "caja azul esperaba en el",
+   "en": "",
+   "antes": "su caja azul esperaba el jueves = her blue box was waiting on Thursday"
+  },
+  "en": {
+   "es": "azul esperaba en el mostrador",
+   "en": "",
+   "antes": "partida en dos bandos = split into two camps"
+  },
+  "mostrador": {
+   "es": "en el mostrador de hugo",
+   "en": "",
+   "antes": "sobre el mostrador = on the counter"
+  },
+  "de": {
+   "es": "yo ya decidí una vez",
+   "en": "",
+   "antes": "de no perder nada = for losing nothing"
+  },
+  "dentro": {
+   "es": "dentro olía a húmedo",
+   "en": "",
+   "antes": "dentro había periódicos doblados = inside there were folded newspapers"
+  },
+  "olía": {
+   "es": "dentro olía a húmedo",
+   "en": ""
+  },
+  "a": {
+   "es": "yo ya decidí una vez",
+   "en": "",
+   "antes": "un olor a húmedo = a damp smell"
+  },
+  "húmedo": {
+   "es": "dentro olía a húmedo",
+   "en": "",
+   "antes": "un olor a húmedo = a damp smell"
+  },
+  "eran": {
+   "es": "eran recortes y portadas del",
+   "en": "",
+   "antes": "eran las portadas del año que faltaba = they were the front pages of the missing year"
+  },
+  "recortes": {
+   "es": "eran recortes y portadas del",
+   "en": "",
+   "antes": "recortes sueltos = loose clippings"
+  },
+  "portadas": {
+   "es": "recortes y portadas del año",
+   "en": "",
+   "antes": "las portadas del año que falta = the missing year's front pages"
+  },
+  "del": {
+   "es": "y portadas del año que",
+   "en": "",
+   "antes": "las portadas del año = the year's front pages"
+  },
+  "aquel": {
+   "es": "adornos que aquel año se",
+   "en": "",
+   "antes": "aquel año nos quedamos sin casa = that year we lost our home"
+  },
+  "firmó": {
+   "es": "año se firmó la venta",
+   "en": "",
+   "antes": "se firmó la venta del primer local = the sale of the first clubhouse was signed"
+  },
+  "venta": {
+   "es": "firmó la venta del local",
+   "en": "",
+   "antes": "la venta del primer local = the sale of the first clubhouse"
+  },
+  "local": {
+   "es": "firmó la venta del local",
+   "en": "",
+   "antes": "la venta del primer local = the sale of the first clubhouse"
+  },
+  "peña": {
+   "es": "con la peña partida en bandos",
+   "en": "",
+   "antes": "la peña partida en dos bandos = the club split into two camps"
+  },
+  "partida": {
+   "es": "con la peña partida en bandos",
+   "en": "",
+   "antes": "la peña partida en dos bandos = the club split into two camps"
+  },
+  "bandos": {
+   "es": "con la peña partida en bandos",
+   "en": "",
+   "antes": "partida en dos bandos = split into two camps"
+  },
+  "elegir": {
+   "es": "y elegir también era cuidar",
+   "en": "",
+   "antes": "elegir es cuidar = choosing is caring"
+  },
+  "también": {
+   "es": "y elegir también era cuidar",
+   "en": "",
+   "antes": "también era una mano que elige = it was also a hand that chooses"
+  },
+  "era": {
+   "es": "caja azul esperaba en el",
+   "en": "",
+   "antes": "también era una mano que elige = it was also a hand that chooses"
+  },
+  "cuidar": {
+   "es": "y elegir también era cuidar",
+   "en": "",
+   "antes": "elegir es cuidar = choosing is caring"
+  },
+  "marcó": {
+   "es": "dentro y marcó dos portadas",
+   "en": "",
+   "antes": "pero marcó dos portadas = but marked two front pages"
+  },
+  "asintió": {
+   "es": "marcos leyó la nota y asintió",
+   "en": "",
+   "antes": "asintió dos veces = nodded twice"
+  },
+  "propuso": {
+   "es": "propuso claudia",
+   "en": "",
+   "antes": "propuso por la tarde = she proposed in the afternoon"
+  },
+  "almacén": {
+   "es": "no un almacén",
+   "en": "",
+   "antes": "una casa y no un almacén = a home and not a warehouse"
+  },
+  "recorte": {
+   "es": "eran recortes y portadas del",
+   "en": "",
+   "antes": "recortes sueltos = loose clippings"
+  },
+  "portada": {
+   "es": "recortes y portadas del año",
+   "en": "",
+   "antes": "eran las portadas del año que faltaba = they were the front pages of the missing year"
+  },
+  "bando": {
+   "es": "con la peña partida en bandos",
+   "en": "",
+   "antes": "partida en dos bandos = split into two camps"
+  },
+  "marcar": {
+   "es": "dentro y marcó dos portadas",
+   "en": "",
+   "antes": "pero marcó dos portadas = but marked two front pages"
+  },
+  "asentir": {
+   "es": "marcos leyó la nota y asintió",
+   "en": "",
+   "antes": "asintió dos veces = nodded twice"
+  },
+  "partido": {
+   "es": "con la peña partida en bandos",
+   "en": "",
+   "antes": "la peña partida en dos bandos = the club split into two camps"
+  }
+ },
+ "una-copla-sin-firma": {
+  "firma": {
+   "es": "una copla sin firma",
+   "en": "",
+   "antes": "con tachones y sin firma = with crossings-out and no signature"
+  },
+  "escaneaba": {
+   "es": "claudia escaneaba sola el año malo",
+   "en": ""
+  },
+  "sola": {
+   "es": "claudia escaneaba sola el año malo",
+   "en": "",
+   "antes": "claudia bajó sola a escanear = Claudia went down alone to scan"
+  },
+  "entre": {
+   "es": "entre las portadas de hugo",
+   "en": "",
+   "antes": "entre dos portadas = between two front pages"
+  },
+  "portadas": {
+   "es": "entre las portadas de hugo",
+   "en": "",
+   "antes": "entre dos portadas = between two front pages"
+  },
+  "a": {
+   "es": "una copla sin firma",
+   "en": "",
+   "antes": "a escanear el año malo = to scan the bad year"
+  },
+  "pedía": {
+   "es": "pedía perdón sin nombrarlo",
+   "en": "",
+   "antes": "pedía perdón sin nombrar la palabra = it apologised without saying the word"
+  },
+  "perdón": {
+   "es": "pedía perdón sin nombrarlo",
+   "en": "",
+   "antes": "pedía perdón sin nombrar la palabra = it apologised without saying the word"
+  },
+  "nombrarlo": {
+   "es": "pedía perdón sin nombrarlo",
+   "en": ""
+  },
+  "nunca": {
+   "es": "nunca se cantó",
+   "en": "",
+   "antes": "nadie la cantó nunca = nobody ever sang it"
+  },
+  "se": {
+   "es": "nunca se cantó",
+   "en": "",
+   "antes": "se notaba en lo limpio = it showed in how clean"
+  },
+  "cantó": {
+   "es": "nunca se cantó",
+   "en": "",
+   "antes": "nadie la cantó nunca = nobody ever sang it"
+  },
+  "notaba": {
+   "es": "se notaba en el doblez limpio",
+   "en": "",
+   "antes": "se notaba en lo limpio = it showed in how clean"
+  },
+  "doblez": {
+   "es": "se notaba en el doblez limpio",
+   "en": "",
+   "antes": "lo limpio del doblez = how clean the fold is"
+  },
+  "limpio": {
+   "es": "se notaba en el doblez limpio",
+   "en": "",
+   "antes": "en lo limpio del doblez = in how clean the fold is"
+  },
+  "amigos": {
+   "es": "amigos que dejaron de hablarse",
+   "en": "",
+   "antes": "hablaba de amigos = it spoke of friends"
+  },
+  "dejó": {
+   "es": "la dejó delante",
+   "en": ""
+  },
+  "delante": {
+   "es": "la dejó delante",
+   "en": "",
+   "antes": "la puso delante = set it in front of him"
+  },
+  "revistas": {
+   "es": "entre revistas",
+   "en": "",
+   "antes": "entre dos revistas = between two magazines"
+  },
+  "preguntó": {
+   "es": "preguntó él",
+   "en": "",
+   "antes": "preguntó hugo = Hugo asked"
+  },
+  "lo": {
+   "es": "claudia escaneaba sola el año malo",
+   "en": "",
+   "antes": "en lo limpio del doblez = in how clean the fold is"
+  },
+  "como": {
+   "es": "como si pesara",
+   "en": "",
+   "antes": "como si el papel pesara = as if the paper weighed"
+  },
+  "si": {
+   "es": "una copla sin firma",
+   "en": "",
+   "antes": "como si el papel pesara = as if the paper weighed"
+  },
+  "pesara": {
+   "es": "como si pesara",
+   "en": "",
+   "antes": "como si el papel pesara = as if the paper weighed"
+  },
+  "no": {
+   "es": "apareció una copla a mano",
+   "en": "",
+   "antes": "no era una pregunta = it was not a question"
+  },
+  "cantarla": {
+   "es": "ya no había con quién cantarla",
+   "en": ""
+  },
+  "archivo": {
+   "es": "entró al archivo con autor",
+   "en": "",
+   "antes": "en el archivo con autor = into the archive with an author"
+  },
+  "autor": {
+   "es": "entró al archivo con autor",
+   "en": "",
+   "antes": "en el archivo con autor = in the archive with an author"
+  },
+  "revista": {
+   "es": "entre revistas",
+   "en": "",
+   "antes": "entre dos revistas = between two magazines"
+  },
+  "pesar": {
+   "es": "como si pesara",
+   "en": "",
+   "antes": "como si el papel pesara = as if the paper weighed a lot"
+  },
+  "notarse": {
+   "es": "se notaba en el doblez limpio",
+   "en": "",
+   "antes": "se notaba en lo limpio = it showed in how clean"
+  },
+  "nombrar": {
+   "es": "pedía perdón sin nombrarlo",
+   "en": "",
+   "antes": "sin nombrar la palabra = without naming the word"
+  },
+  "al pie": {
+   "es": "al pie había dos iniciales torcidas",
+   "en": "",
+   "antes": "al pie había una fecha = at the bottom there was a date"
+  }
+ }
+}

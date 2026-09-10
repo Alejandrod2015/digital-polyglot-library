@@ -401,7 +401,7 @@
  {
   "type": "meaning_in_context",
   "word": "al pie",
-  "sentence": "[[Al pie]] había una fecha y unas iniciales.",
+  "sentence": "[[Al pie]] había unas iniciales torcidas.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "at the bottom",
@@ -414,7 +414,7 @@
    "audioClip": {
     "storySlug": "una-copla-sin-firma",
     "storySource": "user",
-    "sentence": "Al pie había una fecha y unas iniciales.",
+    "sentence": "Al pie había unas iniciales torcidas.",
     "targetWord": "Al pie",
     "language": "spanish"
    }
