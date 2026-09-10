@@ -1,0 +1,689 @@
+{
+ "el-levante-del-jueves": {
+  "amarró": {
+   "es": "amarró en el muelle",
+   "en": ""
+  },
+  "muelle": {
+   "es": "amarró en el muelle",
+   "en": "",
+   "antes": "amarra en el muelle = moors at the dock"
+  },
+  "era": {
+   "es": "claudia era la anfitriona",
+   "en": ""
+  },
+  "anfitriona": {
+   "es": "claudia era la anfitriona",
+   "en": "",
+   "antes": "claudia es hoy la anfitriona = Claudia is today's host"
+  },
+  "tenía": {
+   "es": "tenía una frase pendiente",
+   "en": ""
+  },
+  "preguntó": {
+   "es": "preguntó alba",
+   "en": ""
+  },
+  "contestó": {
+   "es": "contestó claudia",
+   "en": ""
+  },
+  "señal": {
+   "es": "y pagó la señal",
+   "en": "",
+   "antes": "paga la señal = pays the deposit"
+  },
+  "plan": {
+   "es": "el plan era sencillo",
+   "en": "",
+   "antes": "el plan es sencillo = the plan is simple"
+  },
+  "sencillo": {
+   "es": "el plan era sencillo",
+   "en": "",
+   "antes": "el plan es sencillo = the plan is simple"
+  },
+  "subió": {
+   "es": "marcos subió el último y",
+   "en": ""
+  },
+  "último": {
+   "es": "subió el último y buscó",
+   "en": "",
+   "antes": "marcos sube el último = Marcos boards last"
+  },
+  "buscó": {
+   "es": "último y buscó el centro",
+   "en": ""
+  },
+  "centro": {
+   "es": "y buscó el centro exacto",
+   "en": "",
+   "antes": "busca el centro exacto = finds the exact centre"
+  },
+  "exacto": {
+   "es": "y buscó el centro exacto",
+   "en": "",
+   "antes": "busca el centro exacto = finds the exact centre"
+  },
+  "hoy": {
+   "es": "hoy hago una excepción",
+   "en": "",
+   "antes": "claudia es hoy la anfitriona = Claudia is today's host"
+  },
+  "avisó": {
+   "es": "avisó",
+   "en": ""
+  },
+  "motor": {
+   "es": "el motor arrancó con ruido viejo",
+   "en": "",
+   "antes": "el motor arranca = the engine starts"
+  },
+  "arrancó": {
+   "es": "el motor arrancó con ruido viejo",
+   "en": ""
+  },
+  "bahía": {
+   "es": "y la bahía se abrió",
+   "en": "",
+   "antes": "la bahía se abre = the bay opens up"
+  },
+  "se": {
+   "es": "tenía una frase pendiente",
+   "en": "",
+   "antes": "la bahía se abre = the bay opens up"
+  },
+  "abrió": {
+   "es": "bahía se abrió como una",
+   "en": ""
+  },
+  "ciudad": {
+   "es": "la ciudad se veía entera",
+   "en": "",
+   "antes": "la ciudad se ve entera = the whole city is visible"
+  },
+  "veía": {
+   "es": "la ciudad se veía entera",
+   "en": ""
+  },
+  "entera": {
+   "es": "la ciudad se veía entera",
+   "en": "",
+   "antes": "se ve entera = seen whole"
+  },
+  "anunció": {
+   "es": "anunció claudia",
+   "en": ""
+  },
+  "nadie": {
+   "es": "nadie confesó y todos bebieron",
+   "en": "",
+   "antes": "nadie confiesa = nobody confesses"
+  },
+  "confesó": {
+   "es": "nadie confesó y todos bebieron",
+   "en": ""
+  },
+  "bebieron": {
+   "es": "nadie confesó y todos bebieron",
+   "en": ""
+  },
+  "apagó": {
+   "es": "alba apagó el motor y",
+   "en": ""
+  },
+  "dejó": {
+   "es": "motor y dejó el barco",
+   "en": ""
+  },
+  "vaivén": {
+   "es": "dejó el barco al vaivén",
+   "en": "",
+   "antes": "deja el barco al vaivén = leaves the boat to rock"
+  },
+  "comentó": {
+   "es": "comentó",
+   "en": ""
+  },
+  "apuntó": {
+   "es": "claudia apuntó la primera nube",
+   "en": ""
+  },
+  "amarrar": {
+   "es": "amarró en el muelle",
+   "en": ""
+  },
+  "arrancar": {
+   "es": "el motor arrancó con ruido viejo",
+   "en": ""
+  },
+  "confesar": {
+   "es": "nadie confesó y todos bebieron",
+   "en": ""
+  },
+  "agarrarse": {
+   "es": "agarrado a la borda",
+   "en": ""
+  },
+  "apagar": {
+   "es": "alba apagó el motor y",
+   "en": ""
+  },
+  "disfrutar": {
+   "es": "disfrutad hoy",
+   "en": ""
+  },
+  "dorado": {
+   "es": "dorada y pequeña",
+   "en": ""
+  },
+  "cara a": {
+   "es": "cara al atardecer",
+   "en": ""
+  },
+  "ir por": {
+   "es": "esta ronda va por el",
+   "en": ""
+  },
+  "hacer una excepción": {
+   "es": "hoy hago una excepción",
+   "en": ""
+  }
+ },
+ "azotea-y-paciencia": {
+  "y": {
+   "es": "azotea y paciencia",
+   "en": "",
+   "antes": "claudia y marcos miran el muelle = Claudia and Marcos watch the dock"
+  },
+  "llegó": {
+   "es": "el levante llegó el jueves",
+   "en": ""
+  },
+  "jueves": {
+   "es": "el levante llegó el jueves",
+   "en": "",
+   "antes": "llega el jueves = arrives on Thursday"
+  },
+  "miraron": {
+   "es": "claudia y marcos miraron el muelle",
+   "en": ""
+  },
+  "muelle": {
+   "es": "claudia y marcos miraron el muelle",
+   "en": "",
+   "antes": "miran el muelle = watch the dock"
+  },
+  "amarró": {
+   "es": "alba amarró doble y aplazó",
+   "en": ""
+  },
+  "doble": {
+   "es": "alba amarró doble y aplazó",
+   "en": "",
+   "antes": "amarra doble = moors it double"
+  },
+  "aplazó": {
+   "es": "doble y aplazó sin discutir",
+   "en": ""
+  },
+  "sin": {
+   "es": "doble y aplazó sin discutir",
+   "en": "",
+   "antes": "aplaza sin discutir = postpones without arguing"
+  },
+  "discutir": {
+   "es": "doble y aplazó sin discutir",
+   "en": "",
+   "antes": "aplaza sin discutir = postpones without arguing"
+  },
+  "no": {
+   "es": "con levante no salgo ni",
+   "en": "",
+   "antes": "no vuelve = is not coming back"
+  },
+  "preguntó": {
+   "es": "preguntó claudia",
+   "en": ""
+  },
+  "decidió": {
+   "es": "decidió marcos",
+   "en": ""
+  },
+  "excursión": {
+   "es": "la excursión se quedó sin fecha",
+   "en": "",
+   "antes": "la excursión se queda sin fecha = the outing is left without a date"
+  },
+  "se": {
+   "es": "la excursión se quedó sin fecha",
+   "en": "",
+   "antes": "se queda sin fecha = is left without a date"
+  },
+  "quedó": {
+   "es": "la excursión se quedó sin fecha",
+   "en": ""
+  },
+  "fecha": {
+   "es": "la excursión se quedó sin fecha",
+   "en": "",
+   "antes": "se queda sin fecha = is left without a date"
+  },
+  "aguantó": {
+   "es": "la azotea aguantó el viento",
+   "en": ""
+  },
+  "viento": {
+   "es": "aguantó el viento mejor que",
+   "en": "",
+   "antes": "aguanta el viento = stands the wind"
+  },
+  "peña": {
+   "es": "la peña subió sillas y",
+   "en": "",
+   "antes": "la peña sube sillas = the club carries chairs up"
+  },
+  "subió": {
+   "es": "la peña subió sillas y",
+   "en": ""
+  },
+  "sillas": {
+   "es": "peña subió sillas y una",
+   "en": "",
+   "antes": "sube sillas = carries chairs up"
+  },
+  "nevera": {
+   "es": "subió sillas y una nevera",
+   "en": "",
+   "antes": "una nevera y una guitarra = a cool box and a guitar"
+  },
+  "cantaba": {
+   "es": "se cantaba bajito",
+   "en": ""
+  },
+  "bajito": {
+   "es": "se cantaba bajito",
+   "en": "",
+   "antes": "se canta bajito = people sing softly"
+  },
+  "servilletas": {
+   "es": "y las servilletas volaban a",
+   "en": "",
+   "antes": "las servilletas vuelan = the napkins fly off"
+  },
+  "volaban": {
+   "es": "las servilletas volaban a menos",
+   "en": ""
+  },
+  "menos": {
+   "es": "volaban a menos que alguien",
+   "en": "",
+   "antes": "sin echar de menos el barco = without missing the boat"
+  },
+  "alguien": {
+   "es": "menos que alguien las sujetara",
+   "en": ""
+  },
+  "sujetara": {
+   "es": "menos que alguien las sujetara",
+   "en": ""
+  },
+  "silbaba": {
+   "es": "el levante silbaba en las",
+   "en": ""
+  },
+  "antenas": {
+   "es": "en las antenas y nadie",
+   "en": "",
+   "antes": "silba en las antenas = whistles in the aerials"
+  },
+  "nadie": {
+   "es": "antenas y nadie le hacía",
+   "en": "",
+   "antes": "si nadie las sujeta = if nobody holds them down"
+  },
+  "le": {
+   "es": "el levante llegó el jueves",
+   "en": "",
+   "antes": "nadie le hace caso = nobody pays it any attention"
+  },
+  "hacía": {
+   "es": "y nadie le hacía caso",
+   "en": ""
+  },
+  "caso": {
+   "es": "y nadie le hacía caso",
+   "en": "",
+   "antes": "nadie le hace caso = nobody pays it any attention"
+  },
+  "salió": {
+   "es": "plan b salió mejor que",
+   "en": ""
+  },
+  "aquí": {
+   "es": "todo el que vive aquí",
+   "en": "",
+   "antes": "aquí nadie se sorprende = here nobody is surprised"
+  },
+  "soltó": {
+   "es": "soltó marcos",
+   "en": ""
+  },
+  "sonaba": {
+   "es": "sonaba a refrán de andar",
+   "en": ""
+  },
+  "refrán": {
+   "es": "sonaba a refrán de andar",
+   "en": "",
+   "antes": "suena a refrán de andar por casa = sounds like a homespun proverb"
+  },
+  "barco": {
+   "es": "la tarde de barco no volvería",
+   "en": "",
+   "antes": "la tarde de barco no vuelve = the boat afternoon is not coming back"
+  },
+  "volvería": {
+   "es": "la tarde de barco no volvería",
+   "en": ""
+  },
+  "lloró": {
+   "es": "y nadie la lloró demasiado",
+   "en": ""
+  },
+  "demasiado": {
+   "es": "y nadie la lloró demasiado",
+   "en": "",
+   "antes": "nadie la llora demasiado = nobody mourns it much"
+  },
+  "última": {
+   "es": "con la última luz",
+   "en": "",
+   "antes": "baja la última = comes down last"
+  },
+  "luz": {
+   "es": "con la última luz",
+   "en": ""
+  },
+  "aguantaba": {
+   "es": "ciudad entera aguantaba el mismo",
+   "en": ""
+  },
+  "hermanaba": {
+   "es": "y eso hermanaba",
+   "en": ""
+  },
+  "bajó": {
+   "es": "claudia bajó la última",
+   "en": ""
+  },
+  "echó": {
+   "es": "no echó de menos el barco",
+   "en": ""
+  },
+  "aplazar": {
+   "es": "doble y aplazó sin discutir",
+   "en": ""
+  },
+  "estropear": {
+   "es": "todo lo que estropea planes",
+   "en": ""
+  },
+  "silbar": {
+   "es": "el levante silbaba en las",
+   "en": ""
+  },
+  "sujetar": {
+   "es": "menos que alguien las sujetara",
+   "en": ""
+  },
+  "volar": {
+   "es": "las servilletas volaban a menos",
+   "en": ""
+  },
+  "hermanar": {
+   "es": "y eso hermanaba",
+   "en": ""
+  },
+  "llorar": {
+   "es": "y nadie la lloró demasiado",
+   "en": ""
+  },
+  "despeinado": {
+   "es": "despeinada y contenta",
+   "en": ""
+  },
+  "hacer caso": {
+   "es": "y nadie le hacía caso",
+   "en": ""
+  },
+  "echar de menos": {
+   "es": "no echó de menos el barco",
+   "en": "",
+   "antes": "sin echar de menos el barco = without missing the boat"
+  },
+  "deber una": {
+   "es": "os debo una tarde entera",
+   "en": ""
+  }
+ },
+ "la-herramienta-seria": {
+  "herramienta": {
+   "es": "la herramienta seria",
+   "en": "",
+   "antes": "es la herramienta seria = is the serious tool"
+  },
+  "todavía": {
+   "es": "todavía quedaba por elegir el",
+   "en": "",
+   "antes": "todavía queda por elegir = it still remains to be chosen"
+  },
+  "quedaba": {
+   "es": "todavía quedaba por elegir el",
+   "en": ""
+  },
+  "por": {
+   "es": "todavía quedaba por elegir el",
+   "en": "",
+   "antes": "queda por elegir = remains to be chosen"
+  },
+  "elegir": {
+   "es": "quedaba por elegir el día",
+   "en": "",
+   "antes": "queda por elegir el día = the day remains to be chosen"
+  },
+  "trajo": {
+   "es": "claudia trajo tres fechas en bolígrafo",
+   "en": ""
+  },
+  "fechas": {
+   "es": "claudia trajo tres fechas en bolígrafo",
+   "en": "",
+   "antes": "trae tres fechas en bolígrafo = brings three dates in ink"
+  },
+  "miró": {
+   "es": "marcos las miró como quien",
+   "en": ""
+  },
+  "mira": {
+   "es": "como quien mira fruta verde",
+   "en": "",
+   "antes": "marcos las mira = Marcos looks at them"
+  },
+  "saludó": {
+   "es": "saludó",
+   "en": ""
+  },
+  "lápiz": {
+   "es": "claudia guardó el lápiz en",
+   "en": "",
+   "antes": "guarda el lápiz = keeps the pencil"
+  },
+  "explicó": {
+   "es": "explicó",
+   "en": ""
+  },
+  "y": {
+   "es": "ha venido hoy la de",
+   "en": "",
+   "antes": "y enciende la radio = and switches on the radio"
+  },
+  "encendió": {
+   "es": "y encendió la radio del archivo",
+   "en": ""
+  },
+  "radio": {
+   "es": "y encendió la radio del archivo",
+   "en": "",
+   "antes": "la radio pequeña del archivo = the archive's little radio"
+  },
+  "archivo": {
+   "es": "y encendió la radio del archivo",
+   "en": "",
+   "antes": "la radio pequeña del archivo = the archive's little radio"
+  },
+  "avisó": {
+   "es": "del tiempo avisó de que",
+   "en": ""
+  },
+  "levante": {
+   "es": "que el levante era un",
+   "en": "",
+   "antes": "trata al levante de vecino difícil = treats the east wind like a difficult neighbour"
+  },
+  "vecino": {
+   "es": "levante era un vecino difícil",
+   "en": "",
+   "antes": "de vecino difícil = like a difficult neighbour"
+  },
+  "difícil": {
+   "es": "levante era un vecino difícil",
+   "en": "",
+   "antes": "de vecino difícil = like a difficult neighbour"
+  },
+  "escuchó": {
+   "es": "claudia escuchó a medias",
+   "en": ""
+  },
+  "medias": {
+   "es": "claudia escuchó a medias",
+   "en": "",
+   "antes": "escucha a medias = half listens"
+  },
+  "esperando": {
+   "es": "esperando que el parte acabara",
+   "en": ""
+  },
+  "acabara": {
+   "es": "esperando que el parte acabara",
+   "en": ""
+  },
+  "pronto": {
+   "es": "y de pronto entendió su",
+   "en": "",
+   "antes": "de pronto entiende = suddenly she understands"
+  },
+  "entendió": {
+   "es": "de pronto entendió su primera",
+   "en": ""
+  },
+  "quedó": {
+   "es": "su calendario se quedó mudo",
+   "en": ""
+  },
+  "mudo": {
+   "es": "su calendario se quedó mudo",
+   "en": "",
+   "antes": "se queda mudo = goes silent"
+  },
+  "preguntó": {
+   "es": "preguntó claudia",
+   "en": ""
+  },
+  "contestó": {
+   "es": "contestó marcos",
+   "en": ""
+  },
+  "lo": {
+   "es": "lo apuntaron en la pizarra",
+   "en": "",
+   "antes": "lo apuntan en la pizarra = they write it on the blackboard"
+  },
+  "apuntaron": {
+   "es": "lo apuntaron en la pizarra",
+   "en": ""
+  },
+  "pizarra": {
+   "es": "lo apuntaron en la pizarra",
+   "en": "",
+   "antes": "lo apuntan en la pizarra = they write it on the blackboard"
+  },
+  "llegó": {
+   "es": "el viernes llegó limpio",
+   "en": ""
+  },
+  "limpio": {
+   "es": "el viernes llegó limpio",
+   "en": "",
+   "antes": "el viernes llega limpio = Friday arrives clean"
+  },
+  "luz": {
+   "es": "con luz de poniente",
+   "en": ""
+  },
+  "repasó": {
+   "es": "fecha se repasó con bolígrafo",
+   "en": ""
+  },
+  "guardó": {
+   "es": "claudia guardó el lápiz en",
+   "en": ""
+  },
+  "amanecer": {
+   "es": "el viernes amanece con poniente",
+   "en": ""
+  },
+  "cargar": {
+   "es": "entonces cargamos el viernes",
+   "en": ""
+  },
+  "repasar": {
+   "es": "la fecha se repasó con",
+   "en": "",
+   "antes": "la fecha se repasa = the date is inked over"
+  },
+  "encender": {
+   "es": "y encendió la radio del archivo",
+   "en": ""
+  },
+  "saludar": {
+   "es": "saludó",
+   "en": ""
+  },
+  "escuchar": {
+   "es": "claudia escuchó a medias",
+   "en": ""
+  },
+  "serio": {
+   "es": "la herramienta seria",
+   "en": ""
+  },
+  "de pronto": {
+   "es": "y de pronto entendió su",
+   "en": "",
+   "antes": "de pronto entiende = suddenly she understands"
+  },
+  "a medias": {
+   "es": "claudia escuchó a medias",
+   "en": "",
+   "antes": "escucha a medias = half listens"
+  },
+  "quedar por": {
+   "es": "todavía quedaba por elegir el",
+   "en": ""
+  }
+ }
+}

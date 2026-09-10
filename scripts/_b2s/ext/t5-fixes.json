@@ -1,0 +1,18 @@
+{
+ "el-levante-del-jueves": {
+  "subió": { "g": "got on, went up (subir)" },
+  "veía": { "g": "could be seen (verse)" }
+ },
+ "azotea-y-paciencia": {
+  "miraron": { "g": "looked at, watched (mirar)" },
+  "subió": { "g": "carried up (subir)" },
+  "salió": { "g": "turned out (salir)" },
+  "sonaba": { "g": "sounded like (sonar a)" },
+  "echó": { "g": "missed (echar de menos)" },
+  "sujetara": { "rows": ["sujetara", "sujetaras", "sujetara", "sujetáramos", "sujetarais", "sujetaran"] }
+ },
+ "la-herramienta-seria": {
+  "quedaba": { "g": "remained, was left (quedar)" },
+  "mira": { "g": "looks at (mirar)" }
+ }
+}
