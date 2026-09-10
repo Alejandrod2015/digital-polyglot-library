@@ -154,7 +154,7 @@
   {
     "type": "meaning_in_context",
     "word": "chirrido",
-    "sentence": "Esa mañana el eje tenía un [[chirrido]] fino.",
+    "sentence": "El eje tenía un [[chirrido]] fino.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "squeal",
@@ -167,7 +167,7 @@
       "audioClip": {
         "storySlug": "la-once-con-chirrido",
         "storySource": "user",
-        "sentence": "Esa mañana el eje tenía un chirrido fino.",
+        "sentence": "El eje tenía un chirrido fino.",
         "targetWord": "chirrido",
         "language": "spanish"
       }
@@ -176,7 +176,7 @@
   {
     "type": "meaning_in_context",
     "word": "engranaje",
-    "sentence": "El [[engranaje]] sonaba a reloj.",
+    "sentence": "Conocía la máquina de memoria: el [[engranaje]] sonaba a reloj.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "gear",
@@ -189,7 +189,7 @@
       "audioClip": {
         "storySlug": "la-once-con-chirrido",
         "storySource": "user",
-        "sentence": "El engranaje sonaba a reloj.",
+        "sentence": "Conocía la máquina de memoria: el engranaje sonaba a reloj.",
         "targetWord": "engranaje",
         "language": "spanish"
       }
@@ -294,7 +294,7 @@
   {
     "type": "meaning_in_context",
     "word": "vibrar",
-    "sentence": "Dejó la mano en la mesa, que [[vibraba]] bajito.",
+    "sentence": "Dejó la mano en la mesa, que [[vibraba]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to vibrate",
@@ -307,7 +307,7 @@
       "audioClip": {
         "storySlug": "la-once-con-chirrido",
         "storySource": "user",
-        "sentence": "Dejó la mano en la mesa, que vibraba bajito.",
+        "sentence": "Dejó la mano en la mesa, que vibraba.",
         "targetWord": "vibraba",
         "language": "spanish"
       }

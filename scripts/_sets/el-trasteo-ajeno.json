@@ -147,7 +147,7 @@
   {
     "type": "meaning_in_context",
     "word": "decidido",
-    "sentence": "Venía [[decidido]].",
+    "sentence": "Venía [[decidido]], o eso creía.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "determined",
@@ -160,7 +160,7 @@
       "audioClip": {
         "storySlug": "el-trasteo-ajeno",
         "storySource": "user",
-        "sentence": "Venía decidido.",
+        "sentence": "Venía decidido, o eso creía.",
         "targetWord": "decidido",
         "language": "spanish"
       }

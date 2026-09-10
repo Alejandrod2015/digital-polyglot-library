@@ -356,7 +356,7 @@
   {
     "type": "meaning_in_context",
     "word": "a plena luz",
-    "sentence": "Lo sacó [[a plena luz]].",
+    "sentence": "Lo sacó una tarde llena, [[a plena luz]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "in full daylight",
@@ -369,7 +369,7 @@
       "audioClip": {
         "storySlug": "la-historia-sin-agrandar",
         "storySource": "user",
-        "sentence": "Lo sacó a plena luz.",
+        "sentence": "Lo sacó una tarde llena, a plena luz.",
         "targetWord": "a plena luz",
         "language": "spanish"
       }

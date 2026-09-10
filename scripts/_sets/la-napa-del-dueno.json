@@ -125,7 +125,7 @@
   {
     "type": "meaning_in_context",
     "word": "plaza de mercado",
-    "sentence": "Meses de rebusque: [[plaza de mercado]], dominó, guayaba.",
+    "sentence": "Meses de rebusque: [[plaza de mercado]], guayaba pelada.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "market hall",
@@ -138,7 +138,7 @@
       "audioClip": {
         "storySlug": "la-napa-del-dueno",
         "storySource": "user",
-        "sentence": "Meses de rebusque: plaza de mercado, dominó, guayaba.",
+        "sentence": "Meses de rebusque: plaza de mercado, guayaba pelada.",
         "targetWord": "plaza de mercado",
         "language": "spanish"
       }

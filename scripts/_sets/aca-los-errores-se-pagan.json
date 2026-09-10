@@ -81,7 +81,7 @@
   {
     "type": "meaning_in_context",
     "word": "rebozar",
-    "sentence": "¿Sabés [[rebozar]], nene, o allá eso se compra hecho?",
+    "sentence": "¿Sabés [[rebozar]], o allá eso se compra hecho?",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to coat in breadcrumbs",
@@ -94,7 +94,7 @@
       "audioClip": {
         "storySlug": "aca-los-errores-se-pagan",
         "storySource": "user",
-        "sentence": "¿Sabés rebozar, nene, o allá eso se compra hecho?",
+        "sentence": "¿Sabés rebozar, o allá eso se compra hecho?",
         "targetWord": "rebozar",
         "language": "spanish"
       }
@@ -271,7 +271,7 @@
   {
     "type": "meaning_in_context",
     "word": "franco",
-    "sentence": "[[De franco]] en su laburo, llegó el sábado antes de que abrieran.",
+    "sentence": "[[De franco]] en su laburo, llegó el sábado antes de que ella abriera.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "day off",
@@ -284,7 +284,7 @@
       "audioClip": {
         "storySlug": "aca-los-errores-se-pagan",
         "storySource": "user",
-        "sentence": "De franco en su laburo, llegó el sábado antes de que abrieran.",
+        "sentence": "De franco en su laburo, llegó el sábado antes de que ella abriera.",
         "targetWord": "De franco",
         "language": "spanish"
       }
