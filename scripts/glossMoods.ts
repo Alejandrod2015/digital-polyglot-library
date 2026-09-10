@@ -307,11 +307,18 @@ export function negadaAquiES(oracion: string, forma: string): boolean {
 
 /** Las tablas se escriben con las seis casillas de España. En LATAM `ustedes`
  *  ocupa la casilla de vosotros y toma la forma de ellos: sin esto la tarjeta
- *  enseñaba "ustedes vayáis", que no lo dice nadie a este lado. */
-export function aVarianteModo(filas: string[], variante: string): string[] {
+ *  enseñaba "ustedes vayáis", que no lo dice nadie a este lado.
+ *
+ *  El voseo solo cambia la forma en el subjuntivo PRESENTE (vuelvas, volvás).
+ *  En el pasado y en el condicional `vos` dice lo mismo que `tú` (pusieras,
+ *  darías): aplicarle el acento daba "pusiérás" y "llevárás", que no existen.
+ *  Por eso el tiempo es obligatorio y solo `presente` toca la fila de vos. */
+export function aVarianteModo(
+  filas: string[], variante: string, tiempo: "presente" | "pasado" | "condicional"
+): string[] {
   const out = [...filas];
   if (variante !== "spain") out[4] = out[5];
-  if (variante === "argentina" || variante === "uruguay") {
+  if (tiempo === "presente" && (variante === "argentina" || variante === "uruguay")) {
     const vos = vosSubjuntivo(out);
     if (vos) out[1] = vos;
   }
