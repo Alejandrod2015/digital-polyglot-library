@@ -502,6 +502,7 @@ function prettifyTopicLabel(slug: string): string {
 // sí se abrieran por URL directa (`journeyStories.ts` ya llevaba lista).
 const PREVIEW_JOURNEY_IDS = [
   "cmtgelq560007j84n3ujx9bpd", // Traveler ES A2 latam (en obra, 2026-08)
+  "cmtmylg7k0007321h6t7njesx", // Traveler ES B1 latam (narracion en curso, 2026-09)
   "cmt0a8vb1000m32p1x7r5ba28", // Traveler DE A0 germany (en obra, 2026-08)
   "cmss0fkc40007j8dub1zpa1kc", // Traveler IT A0 italy (en obra, 2026-08)
   "cmsvz6mz9000732gsgsfer0ko", // Friends ES spain A1 (en obra, 2026-08)
@@ -509,6 +510,7 @@ const PREVIEW_JOURNEY_IDS = [
   "cmt09ehi60000320qf9efrypu", // Expat FR A0 lyon (en obra, 2026-08)
   "cmt70xfyt000l3283gxd70wck", // Traveler ES A2 spain (en obra, 2026-08)
   "cmt5x67ze000l320cpgunu5vi", // Traveler ES B1 spain (en obra, 2026-08)
+  "cmtplpfum0007j8c6piegwt31", // Traveler ES B2 spain (en obra, 2026-09)
   "cmrqn1s5s000032tj3kq0gykb", // Friends ES C1 argentina (en obra, 2026-08)
 ];
 const PREVIEW_DRAFTS = process.env.NODE_ENV !== "production";

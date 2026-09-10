@@ -1,0 +1,410 @@
+{
+ "de": {
+  "es": "de trabajo o de vivir",
+  "en": "for work or for living"
+ },
+ "trabajo": {
+  "es": "algo de trabajo",
+  "en": "something for work"
+ },
+ "o": {
+  "es": "de trabajo o de vivir",
+  "en": "for work or for living"
+ },
+ "vivir": {
+  "es": "algo de vivir",
+  "en": "something for living"
+ },
+ "librería": {
+  "es": "la librería de segunda mano",
+  "en": "the second-hand bookshop"
+ },
+ "segunda": {
+  "es": "de segunda mano",
+  "en": "second-hand"
+ },
+ "mano": {
+  "es": "de segunda mano",
+  "en": "second-hand"
+ },
+ "cuesta": {
+  "es": "la librería de la cuesta",
+  "en": "the bookshop on the slope"
+ },
+ "huele": {
+  "es": "huele a papel dormido",
+  "en": "smells of sleeping paper"
+ },
+ "a": {
+  "es": "huele a papel dormido",
+  "en": "smells of sleeping paper"
+ },
+ "papel": {
+  "es": "huele a papel dormido",
+  "en": "smells of sleeping paper"
+ },
+ "dormido": {
+  "es": "papel dormido",
+  "en": "sleeping paper"
+ },
+ "entra": {
+  "es": "claudia entra sin encargo",
+  "en": "Claudia comes in with no errand"
+ },
+ "sin": {
+  "es": "sin encargo",
+  "en": "with no errand"
+ },
+ "encargo": {
+  "es": "entra sin encargo",
+  "en": "comes in with no errand"
+ },
+ "es": {
+  "es": "martina es la librera",
+  "en": "Martina is the bookseller"
+ },
+ "saluda": {
+  "es": "saluda desde la escalera",
+  "en": "greets from the ladder"
+ },
+ "desde": {
+  "es": "desde la escalera",
+  "en": "from the ladder"
+ },
+ "escalera": {
+  "es": "saluda desde la escalera",
+  "en": "greets from the ladder"
+ },
+ "busca": {
+  "es": "busca algo de trabajo",
+  "en": "looking for something for work"
+ },
+ "algo": {
+  "es": "algo de vivir",
+  "en": "something for living"
+ },
+ "pregunta": {
+  "es": "pregunta desde arriba",
+  "en": "she asks from above"
+ },
+ "arriba": {
+  "es": "desde arriba",
+  "en": "from up there"
+ },
+ "si": {
+  "es": "si es que le queda algo",
+  "en": "if there is any left"
+ },
+ "que": {
+  "es": "si es que le queda algo",
+  "en": "if there is any left"
+ },
+ "le": {
+  "es": "le queda algo por ahí",
+  "en": "any left around somewhere"
+ },
+ "queda": {
+  "es": "le queda algo por ahí",
+  "en": "any left around somewhere"
+ },
+ "por": {
+  "es": "por ahí",
+  "en": "around somewhere"
+ },
+ "ahí": {
+  "es": "por ahí",
+  "en": "around somewhere"
+ },
+ "contesta": {
+  "es": "contesta claudia",
+  "en": "Claudia answers"
+ },
+ "y": {
+  "es": "y le gusta la pregunta",
+  "en": "and she likes the question"
+ },
+ "gusta": {
+  "es": "le gusta la pregunta",
+  "en": "she likes the question"
+ },
+ "pasea": {
+  "es": "pasea la mirada por los lomos",
+  "en": "lets her gaze stroll along the spines"
+ },
+ "mirada": {
+  "es": "pasea la mirada",
+  "en": "lets her gaze stroll"
+ },
+ "lomos": {
+  "es": "por los lomos",
+  "en": "along the spines"
+ },
+ "despacio": {
+  "es": "por los lomos, despacio",
+  "en": "along the spines, slowly"
+ },
+ "elige": {
+  "es": "elige una novela corta",
+  "en": "picks a short novel"
+ },
+ "novela": {
+  "es": "una novela corta",
+  "en": "a short novel"
+ },
+ "corta": {
+  "es": "una novela corta",
+  "en": "a short novel"
+ },
+ "aparta": {
+  "es": "la aparta para ella",
+  "en": "sets it aside for herself"
+ },
+ "para": {
+  "es": "la aparta para ella",
+  "en": "sets it aside for herself"
+ },
+ "ella": {
+  "es": "la aparta para ella",
+  "en": "sets it aside for herself"
+ },
+ "fondo": {
+  "es": "al fondo",
+  "en": "at the back"
+ },
+ "caja": {
+  "es": "una caja recién llegada",
+  "en": "a newly arrived box"
+ },
+ "recién": {
+  "es": "una caja recién llegada",
+  "en": "a newly arrived box"
+ },
+ "llegada": {
+  "es": "una caja recién llegada",
+  "en": "a newly arrived box"
+ },
+ "paseo": {
+  "es": "le corta el paseo",
+  "en": "cuts her stroll short"
+ },
+ "libros": {
+  "es": "los libros llevan un exlibris",
+  "en": "the books carry an ex-libris"
+ },
+ "llevan": {
+  "es": "los libros llevan un exlibris",
+  "en": "the books carry an ex-libris"
+ },
+ "exlibris": {
+  "es": "un exlibris redondo",
+  "en": "a round ex-libris"
+ },
+ "redondo": {
+  "es": "un exlibris redondo",
+  "en": "a round ex-libris"
+ },
+ "guarda": {
+  "es": "en la guarda",
+  "en": "on the endpaper"
+ },
+ "escudo": {
+  "es": "el escudo de la peña",
+  "en": "the club's crest"
+ },
+ "peña": {
+  "es": "el escudo de la peña",
+  "en": "the club's crest"
+ },
+ "lo": {
+  "es": "lo reconoce",
+  "en": "she recognises it"
+ },
+ "reconoce": {
+  "es": "lo reconoce",
+  "en": "she recognises it"
+ },
+ "como": {
+  "es": "como se reconoce una cara",
+  "en": "the way you recognise a face"
+ },
+ "se": {
+  "es": "como se reconoce una cara",
+  "en": "the way you recognise a face"
+ },
+ "cara": {
+  "es": "una cara en una foto vieja",
+  "en": "a face in an old photo"
+ },
+ "foto": {
+  "es": "una foto vieja",
+  "en": "an old photo"
+ },
+ "vieja": {
+  "es": "una foto vieja",
+  "en": "an old photo"
+ },
+ "dónde": {
+  "es": "de dónde ha salido esta caja",
+  "en": "where did this box come from"
+ },
+ "ha": {
+  "es": "de dónde ha salido",
+  "en": "where did it come from"
+ },
+ "salido": {
+  "es": "de dónde ha salido",
+  "en": "where did it come from"
+ },
+ "esta": {
+  "es": "esta caja",
+  "en": "this box"
+ },
+ "ya": {
+  "es": "ya sin voz de clienta",
+  "en": "no longer in a customer's voice"
+ },
+ "voz": {
+  "es": "sin voz de clienta",
+  "en": "without a customer's voice"
+ },
+ "clienta": {
+  "es": "sin voz de clienta",
+  "en": "without a customer's voice"
+ },
+ "biblioteca": {
+  "es": "de una biblioteca que se vendió",
+  "en": "from a library that was sold"
+ },
+ "vendió": {
+  "es": "que se vendió hace años",
+  "en": "that was sold years ago"
+ },
+ "hace": {
+  "es": "hace años",
+  "en": "years ago"
+ },
+ "años": {
+  "es": "hace años",
+  "en": "years ago"
+ },
+ "con": {
+  "es": "con prisas",
+  "en": "in a hurry"
+ },
+ "prisas": {
+  "es": "con prisas",
+  "en": "in a hurry"
+ },
+ "nunca": {
+  "es": "nunca pregunté más",
+  "en": "I never asked more"
+ },
+ "pregunté": {
+  "es": "nunca pregunté más",
+  "en": "I never asked more"
+ },
+ "más": {
+  "es": "nunca pregunté más",
+  "en": "I never asked more"
+ },
+ "bajando": {
+  "es": "bajando por fin",
+  "en": "finally coming down"
+ },
+ "fin": {
+  "es": "por fin",
+  "en": "at last"
+ },
+ "miran": {
+  "es": "las dos miran los libros",
+  "en": "the two of them look at the books"
+ },
+ "respiraran": {
+  "es": "como si respiraran",
+  "en": "as if they were breathing"
+ },
+ "vuelve": {
+  "es": "la novela vuelve a su sitio",
+  "en": "the novel goes back to its place"
+ },
+ "su": {
+  "es": "vuelve a su sitio",
+  "en": "goes back to its place"
+ },
+ "sitio": {
+  "es": "vuelve a su sitio",
+  "en": "goes back to its place"
+ },
+ "presupuesto": {
+  "es": "el presupuesto manda",
+  "en": "the budget rules"
+ },
+ "manda": {
+  "es": "el presupuesto manda",
+  "en": "the budget rules"
+ },
+ "sale": {
+  "es": "claudia sale con el primer libro",
+  "en": "Claudia leaves with the first book"
+ },
+ "libro": {
+  "es": "el primer libro de la peña",
+  "en": "the club's first book"
+ },
+ "bajo": {
+  "es": "bajo el brazo",
+  "en": "under her arm"
+ },
+ "brazo": {
+  "es": "bajo el brazo",
+  "en": "under her arm"
+ },
+ "pagado": {
+  "es": "pagado con el dinero de vivir",
+  "en": "paid with her living money"
+ },
+ "dinero": {
+  "es": "el dinero de vivir",
+  "en": "the living money"
+ },
+ "vuelva": {
+  "es": "vuelva cuando quiera",
+  "en": "come back whenever you like"
+ },
+ "cuando": {
+  "es": "vuelva cuando quiera",
+  "en": "come back whenever you like"
+ },
+ "quiera": {
+  "es": "vuelva cuando quiera",
+  "en": "come back whenever you like"
+ },
+ "mueve": {
+  "es": "la caja no se mueve de aquí",
+  "en": "the box is not moving from here"
+ },
+ "aquí": {
+  "es": "no se mueve de aquí",
+  "en": "not moving from here"
+ },
+ "dice": {
+  "es": "dice martina",
+  "en": "says Martina"
+ },
+ "campanilla": {
+  "es": "la campanilla suena",
+  "en": "the little bell rings"
+ },
+ "suena": {
+  "es": "suena a principio de algo",
+  "en": "sounds like the start of something"
+ },
+ "principio": {
+  "es": "a principio de algo",
+  "en": "like the start of something"
+ },
+ "no": {
+  "es": "la caja no se mueve",
+  "en": "the box is not moving"
+ }
+}

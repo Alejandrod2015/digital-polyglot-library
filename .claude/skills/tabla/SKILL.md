@@ -35,10 +35,26 @@ Archivados (SOLO si el usuario los pide con esa palabra):
 npx tsx scripts/journeysTable.ts --archived
 ```
 
+Un solo idioma, cuando pide "solo portugues" o "los journeys en aleman":
+
+```
+npx tsx scripts/journeysTable.ts --language portugues
+```
+
+Acepta el nombre de la base (`portuguese`), el castellano corriente (`portugues`,
+con o sin tilde) y el codigo de dos letras (`pt`). El alias `--idioma` hace lo
+mismo. NUNCA recortes a ojo la salida completa para dejar un idioma: ese filtro
+es del generador.
+
 ## Reglas de uso, y no son negociables
 
 1. **Pega la salida tal cual.** No la resumas, no la reordenes, no la
-   "traduzcas" a otro formato. Puedes añadir texto ANTES o DESPUES.
+   "traduzcas" a otro formato. Puedes añadir texto ANTES o DESPUES. El
+   generador ya imprime cuadros de markdown (**Catalogo** y **Forma y voces**);
+   ese es el formato que ve el usuario y no se toca. La tira de columnas
+   separadas por barras esta PROHIBIDA desde el 2026-09-06 (el usuario, viendo
+   una: "esa es una mierda"); solo sale con `--crudo`, y `--crudo` es para
+   cuando algo la parsea, nunca para pegarsela a el.
 2. **Nunca compongas una tabla a mano**, ni "solo esta vez", ni porque el
    comando falle. Si el comando falla, lo que se reporta es el fallo.
 3. **Falta una columna que el usuario pide?** Se amplia

@@ -367,7 +367,9 @@ function toBlocks(text: string | null | undefined): StoryBlock[] {
 // de verdad protege es MAX_REGEX_SOURCE_LENGTH; este es la red de seguridad.
 const MAX_HIGHLIGHT_WORDS = 90;
 const MAX_HIGHLIGHT_WORD_LENGTH = 48;
-const MAX_HIGHLIGHT_WORD_TOKENS = 4;
+// 10, no 4 (mismo valor que la web): con 4 los modismos de 5+ tokens se
+// descartaban en la ruta regex mientras la ruta karaoke los pintaba sin tope.
+const MAX_HIGHLIGHT_WORD_TOKENS = 10;
 const MAX_REGEX_SOURCE_LENGTH = 1400;
 const MAX_TEXT_LENGTH_FOR_HIGHLIGHT = 25000;
 

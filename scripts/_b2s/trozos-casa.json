@@ -1,0 +1,394 @@
+{
+ "libros": {
+  "es": "los libros vuelven a casa",
+  "en": "the books come home"
+ },
+ "vuelven": {
+  "es": "los libros vuelven a casa",
+  "en": "the books come home"
+ },
+ "casa": {
+  "es": "vuelven a casa",
+  "en": "come home"
+ },
+ "sábado": {
+  "es": "el sábado",
+  "en": "on Saturday"
+ },
+ "media": {
+  "es": "claudia y media peña",
+  "en": "Claudia and half the club"
+ },
+ "peña": {
+  "es": "claudia y media peña",
+  "en": "Claudia and half the club"
+ },
+ "cruzan": {
+  "es": "cruzan la ciudad",
+  "en": "cross the city"
+ },
+ "ciudad": {
+  "es": "cruzan la ciudad",
+  "en": "cross the city"
+ },
+ "con": {
+  "es": "con los libros en carretilla",
+  "en": "with the books in a handcart"
+ },
+ "en": {
+  "es": "en carretilla",
+  "en": "in a handcart"
+ },
+ "carretilla": {
+  "es": "en carretilla",
+  "en": "in a handcart"
+ },
+ "pared": {
+  "es": "la pared los espera",
+  "en": "the wall waits for them"
+ },
+ "espera": {
+  "es": "la pared los espera",
+  "en": "the wall waits for them"
+ },
+ "baldas": {
+  "es": "con las baldas ya medidas",
+  "en": "with the shelves already measured"
+ },
+ "ya": {
+  "es": "las baldas ya medidas",
+  "en": "the shelves already measured"
+ },
+ "medidas": {
+  "es": "las baldas ya medidas",
+  "en": "the shelves already measured"
+ },
+ "huele": {
+  "es": "huele a madera nueva",
+  "en": "smells of new wood"
+ },
+ "madera": {
+  "es": "huele a madera nueva",
+  "en": "smells of new wood"
+ },
+ "nueva": {
+  "es": "a madera nueva",
+  "en": "of new wood"
+ },
+ "comienzo": {
+  "es": "y a comienzo",
+  "en": "and of beginnings"
+ },
+ "llega": {
+  "es": "martina llega la última",
+  "en": "Martina arrives last"
+ },
+ "última": {
+  "es": "llega la última",
+  "en": "arrives last"
+ },
+ "tomo": {
+  "es": "el tomo forrado",
+  "en": "the covered volume"
+ },
+ "forrado": {
+  "es": "el tomo forrado",
+  "en": "the covered volume"
+ },
+ "bolsa": {
+  "es": "en una bolsa aparte",
+  "en": "in a separate bag"
+ },
+ "aparte": {
+  "es": "en una bolsa aparte",
+  "en": "in a separate bag"
+ },
+ "lo": {
+  "es": "lo deja en el centro",
+  "en": "sets it in the centre"
+ },
+ "deja": {
+  "es": "lo deja en el centro",
+  "en": "sets it in the centre"
+ },
+ "centro": {
+  "es": "en el centro",
+  "en": "in the centre"
+ },
+ "balda": {
+  "es": "la balda del medio",
+  "en": "the middle shelf"
+ },
+ "del": {
+  "es": "la balda del medio",
+  "en": "the middle shelf"
+ },
+ "medio": {
+  "es": "la balda del medio",
+  "en": "the middle shelf"
+ },
+ "sin": {
+  "es": "sin pedir permiso",
+  "en": "without asking permission"
+ },
+ "pedir": {
+  "es": "sin pedir permiso",
+  "en": "without asking permission"
+ },
+ "permiso": {
+  "es": "sin pedir permiso",
+  "en": "without asking permission"
+ },
+ "nadie": {
+  "es": "nadie se lo habría negado",
+  "en": "nobody would have refused her"
+ },
+ "se": {
+  "es": "nadie se lo habría negado",
+  "en": "nobody would have refused her"
+ },
+ "habría": {
+  "es": "nadie se lo habría negado",
+  "en": "nobody would have refused her"
+ },
+ "negado": {
+  "es": "nadie se lo habría negado",
+  "en": "nobody would have refused her"
+ },
+ "ábralo": {
+  "es": "ábralo ahora",
+  "en": "open it now"
+ },
+ "ahora": {
+  "es": "ábralo ahora",
+  "en": "open it now"
+ },
+ "dice": {
+  "es": "dice",
+  "en": "she says"
+ },
+ "y": {
+  "es": "y claudia lo abre",
+  "en": "and Claudia opens it"
+ },
+ "abre": {
+  "es": "claudia lo abre con las dos manos",
+  "en": "Claudia opens it with both hands"
+ },
+ "manos": {
+  "es": "con las dos manos",
+  "en": "with both hands"
+ },
+ "para": {
+  "es": "para la peña",
+  "en": "for the club"
+ },
+ "que": {
+  "es": "que me enseñó a leer",
+  "en": "that taught me to read"
+ },
+ "me": {
+  "es": "que me enseñó a leer",
+  "en": "that taught me to read"
+ },
+ "enseñó": {
+  "es": "que me enseñó a leer",
+  "en": "that taught me to read"
+ },
+ "leer": {
+  "es": "a leer en voz alta",
+  "en": "to read aloud"
+ },
+ "voz": {
+  "es": "en voz alta",
+  "en": "aloud"
+ },
+ "alta": {
+  "es": "en voz alta",
+  "en": "aloud"
+ },
+ "lee": {
+  "es": "lee",
+  "en": "she reads"
+ },
+ "debajo": {
+  "es": "debajo hay una fecha",
+  "en": "underneath there is a date"
+ },
+ "hay": {
+  "es": "hay una fecha",
+  "en": "there is a date"
+ },
+ "fecha": {
+  "es": "una fecha del año malo",
+  "en": "a date from the bad year"
+ },
+ "año": {
+  "es": "del año malo",
+  "en": "from the bad year"
+ },
+ "malo": {
+  "es": "del año malo",
+  "en": "from the bad year"
+ },
+ "firma": {
+  "es": "una firma pequeña",
+  "en": "a small signature"
+ },
+ "pequeña": {
+  "es": "una firma pequeña",
+  "en": "a small signature"
+ },
+ "es": {
+  "es": "la firma es de martina",
+  "en": "the signature is Martina's"
+ },
+ "de": {
+  "es": "la firma es de martina",
+  "en": "the signature is Martina's"
+ },
+ "biblioteca": {
+  "es": "la biblioteca no se vendió fuera",
+  "en": "the library was never sold away"
+ },
+ "no": {
+  "es": "no se vendió fuera",
+  "en": "was never sold away"
+ },
+ "vendió": {
+  "es": "no se vendió fuera",
+  "en": "was never sold away"
+ },
+ "fuera": {
+  "es": "no se vendió fuera",
+  "en": "was never sold away"
+ },
+ "compré": {
+  "es": "la compré yo",
+  "en": "I bought it myself"
+ },
+ "yo": {
+  "es": "la compré yo",
+  "en": "I bought it myself"
+ },
+ "perdiera": {
+  "es": "para que no se perdiera",
+  "en": "so it would not be lost"
+ },
+ "por": {
+  "es": "por el mundo",
+  "en": "out into the world"
+ },
+ "mundo": {
+  "es": "por el mundo",
+  "en": "out into the world"
+ },
+ "confiesa": {
+  "es": "confiesa",
+  "en": "she confesses"
+ },
+ "llevo": {
+  "es": "llevo años esperando",
+  "en": "I have been waiting for years"
+ },
+ "años": {
+  "es": "llevo años esperando",
+  "en": "I have been waiting for years"
+ },
+ "esperando": {
+  "es": "llevo años esperando",
+  "en": "I have been waiting for years"
+ },
+ "alguien": {
+  "es": "a que alguien viniera a buscarla",
+  "en": "for someone to come looking for it"
+ },
+ "viniera": {
+  "es": "que alguien viniera a buscarla",
+  "en": "for someone to come looking for it"
+ },
+ "buscarla": {
+  "es": "viniera a buscarla",
+  "en": "come looking for it"
+ },
+ "añade": {
+  "es": "añade",
+  "en": "she adds"
+ },
+ "normal": {
+  "es": "con la voz normal",
+  "en": "in the plain voice"
+ },
+ "quien": {
+  "es": "de quien ha hecho algo enorme",
+  "en": "of someone who did something enormous"
+ },
+ "ha": {
+  "es": "quien ha hecho algo enorme",
+  "en": "who did something enormous"
+ },
+ "hecho": {
+  "es": "quien ha hecho algo enorme",
+  "en": "who did something enormous"
+ },
+ "algo": {
+  "es": "algo enorme",
+  "en": "something enormous"
+ },
+ "enorme": {
+  "es": "algo enorme",
+  "en": "something enormous"
+ },
+ "entiende": {
+  "es": "entiende de golpe",
+  "en": "understands all at once"
+ },
+ "golpe": {
+  "es": "entiende de golpe",
+  "en": "understands all at once"
+ },
+ "custodia": {
+  "es": "la custodia callada",
+  "en": "the quiet guardianship"
+ },
+ "callada": {
+  "es": "la custodia callada",
+  "en": "the quiet guardianship"
+ },
+ "tantos": {
+  "es": "de tantos años",
+  "en": "of so many years"
+ },
+ "tiende": {
+  "es": "le tiende la mano",
+  "en": "holds out his hand to her"
+ },
+ "mano": {
+  "es": "le tiende la mano",
+  "en": "holds out his hand to her"
+ },
+ "le": {
+  "es": "le tiende la mano",
+  "en": "holds out his hand to her"
+ },
+ "invita": {
+  "es": "la invita a quedarse",
+  "en": "invites her to stay"
+ },
+ "quedarse": {
+  "es": "la invita a quedarse",
+  "en": "invites her to stay"
+ },
+ "usted": {
+  "es": "y usted con ellos",
+  "en": "and you along with them"
+ },
+ "ellos": {
+  "es": "y usted con ellos",
+  "en": "and you along with them"
+ },
+ "llama": {
+  "es": "ya no se llama balda",
+  "en": "is no longer called a shelf"
+ }
+}

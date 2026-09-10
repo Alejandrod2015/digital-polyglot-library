@@ -206,11 +206,15 @@ export const SPANISH_B2_LEMMAS: ReadonlySet<string> = new Set([
   "academia","accesibilidad","accesorio","acción","aceptación","acercamiento","acervo","aclamación","aclaración","acogida",
   "acompañamiento","acoso","acrobacia","actitud","actividad","activismo","acto","actor","acuerdo","acusación",
   "adaptación","adicción","adjetivo","administración","admiración","admisión","adolescencia","adoración","adquisición","adversario",
-  "afán","afecto","afiche","aficionado","afluencia","agencia","agente","agitación","agnosticismo","agonía",
+  "afán","afecto","afiche","aficionado","afilar","afluencia","agencia","agente","agitación","agnosticismo","agonía",
+  // Lexico corriente que faltaba, anadido al escribir el B2 ES/spain
+  // (2026-09-06), con el mismo criterio del B1: palabras que un B2 usa a
+  // diario y que el juez list-only mandaba a C2 por ausencia.
+  "desmontar","gracioso",
   "agresividad","agrupación","aguante","ahorro","aislamiento","ajuste","alarma","alcance","alegoría","alianza",
   "alimento","alivio","alma","almacén","altar","alternativa","altura","aluvión","amante","amargura",
   "amasamiento","ámbito","ambiente","amenaza","amparo","análisis","analogía","anhelo","anhídrido","animación",
-  "anomalía","anonimato","ansiedad","antagonista","anticipo","antiguedad","antología","anuncio","apatía","aplauso",
+  "anomalía","anonimato","apartar","bienvenida","hojear","clic","sudado","descuido","diferencia","estribillo","estrenar","retratar","balda","carretilla","aparte","apretón","clienta","cliente","dedicatoria","forrar","lomo","tanda","aplazar","arrancar","azotea","bahía","borda","confesar","despeinado","disfrutar","estropear","hermanar","lona","patrona","patrón","pendiente","refrán","vaivén","autor","bando","inicial","montón","recorte","titular","verso","ansiedad","antagonista","anticipo","antiguedad","antología","anuncio","apatía","aplauso",
   "apertura","apogeo","apología","aporte","aporte","apoyo","apreciación","aprendiz","aprobación","aproximación",
   "apuesta","aquiescencia","arancel","arbitraje","archivo","arenga","argumentación","arma","armadura","armisticio",
   "armonía","arquetipo","arquitecto","arraigo","arrebato","arrepentimiento","arribo","arte","articulación","artificio",
@@ -264,7 +268,9 @@ export const SPANISH_B2_LEMMAS: ReadonlySet<string> = new Set([
   "explotación","exposición","expresión","expropiación","exquisitez","éxtasis","extensión","exterior","externalización","extinción",
   "extracción","extranjería","extravagancia","extravío","extremismo","extremo","facción","facilidad","facsímil","factor",
   "facultad","falacia","falsedad","fanatismo","fantasía","fascinación","favoritismo","fe","fecundación","federalismo",
-  "feminismo","fenómeno","ferocidad","ferrocarril","fervor","fibra","ficción","fidelidad","figuración","filiación",
+  "feminismo","fenómeno","ferocidad","ferrocarril","fervor","fiarse","fibra","ficción","fidelidad","figuración","filiación",
+  // Mas lexico corriente que faltaba (B2 ES/spain, 2026-09-06): mismo criterio
+  "propina","posavasos","guiñar",
   "filosofía","financiación","fineza","firmeza","fiscalía","fluctuación","fondo","forma","formación","formulación",
   "fortaleza","fortuna","franquicia","fraternidad","fricción","frontera","fruición","frustración","fuente","fuerza",
   "fugacidad","función","fundación","fundamento","fundamentalismo","fundición","fusilamiento","fusión","gallardía","ganancia",
@@ -347,7 +353,7 @@ export const SPANISH_B2_LEMMAS: ReadonlySet<string> = new Set([
   "tendencia","tensión","tentación","teólogo","teoría","ternura","terquedad","testamento","testigo","testimonio",
   "tilde","timbre","timidez","tipología","tirano","tiranía","titularidad","tolerancia","toma","tono",
   "tópico","tortura","totalidad","totalitarismo","toxicidad","trabajador","trabajo","traducción","tragedia","traición",
-  "trama","trampa","tramposo","tranquilidad","trance","transacción","transcurso","transformación","transgresión","transición",
+  "trama","trámite","trampa","tramposo","tranquilidad","trance","transacción","transcurso","transformación","transgresión","transición",
   "transmisión","transparencia","trasfondo","traslado","transporte","trastorno","tratamiento","traumas","travesía","traza",
   "tribunal","trinchera","triunfo","trofeo","tropelía","trotamundos","tutela","tutor","ulteridad","ultimátum",
   "umbral","unanimidad","unidad","unificación","uniformidad","unión","universalismo","universalidad","urgencia","usurpación",

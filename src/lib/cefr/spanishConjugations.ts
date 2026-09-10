@@ -513,6 +513,29 @@ export function spanishInfinitiveOf(word: string): string | null {
   return conjugationMap.get(w) ?? null;
 }
 
+/** Todas las formas de un verbo: las regulares generadas mas las irregulares
+ *  de la tabla que apuntan a ese infinitivo. A diferencia de
+ *  spanishInfinitiveOf, no depende de la lista de ~200 verbos comunes: vale
+ *  para "cobrar", "rendir" o "hojear", que dan null alli. */
+export function formasDeVerbo(infinitivo: string): Set<string> {
+  const inf = infinitivo.toLowerCase().trim();
+  const out = new Set<string>([inf, ...genRegularConjugations(inf)]);
+  // Cambios de raiz: rendir -> rinde/rindio, contar -> cuenta, dormir ->
+  // duerme/durmio, sentir -> siente/sintio. Sin saber que verbos cambian, se
+  // conjuga tambien con la ultima vocal de la raiz cambiada. Genera de mas a
+  // proposito: una forma que no existe ("piensa" de un verbo que no diptonga)
+  // solo cuenta si aparece literal en el cuerpo, y entonces es ese verbo.
+  const stem = inf.slice(0, -2), ending = inf.slice(-2);
+  const i = Math.max(stem.lastIndexOf("e"), stem.lastIndexOf("o"));
+  if (i >= 0 && /^(?:ar|er|ir)$/.test(ending)) {
+    const v = stem[i];
+    for (const nueva of v === "e" ? ["ie", "i"] : ["ue", "u"])
+      for (const f of genRegularConjugations(stem.slice(0, i) + nueva + stem.slice(i + 1) + ending)) out.add(f);
+  }
+  for (const [forma, i2] of Object.entries(IRREGULAR_FORMS)) if (i2 === inf) out.add(forma);
+  return out;
+}
+
 /** True if the word is in our verb conjugation table. Useful for tests. */
 export function isKnownConjugation(word: string): boolean {
   return spanishInfinitiveOf(word) !== null;

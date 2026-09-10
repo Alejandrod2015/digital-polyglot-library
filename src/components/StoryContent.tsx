@@ -65,7 +65,12 @@ export type StoryContentProps = {
 // (apps/mobile/src/mobile/ReaderScreen.tsx) o las píldoras no son las mismas.
 const MAX_HIGHLIGHT_WORDS = 90;
 const MAX_HIGHLIGHT_WORD_LENGTH = 48;
-const MAX_HIGHLIGHT_WORD_TOKENS = 4;
+// 10, no 4: los modismos de 5+ tokens ("se le heló la sangre", "con el alma
+// en un hilo") son vocab legítimo y la vista con sesión (karaoke) los pinta
+// sin tope; con 4 esta vista los descartaba y las píldoras divergían entre
+// vistas. El máximo real en historias live es 9 tokens; la protección contra
+// datos patológicos sigue siendo MAX_REGEX_SOURCE_LENGTH y el tope de chars.
+const MAX_HIGHLIGHT_WORD_TOKENS = 10;
 const MAX_REGEX_SOURCE_LENGTH = 1400;
 const MAX_TEXT_LENGTH_FOR_HIGHLIGHT = 25000;
 

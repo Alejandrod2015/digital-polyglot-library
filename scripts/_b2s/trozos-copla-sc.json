@@ -1,0 +1,426 @@
+{
+ "copla": {
+  "es": "una copla sin cantar",
+  "en": "a song never sung"
+ },
+ "sin": {
+  "es": "una copla sin cantar",
+  "en": "a song never sung"
+ },
+ "cantar": {
+  "es": "una copla sin cantar",
+  "en": "a song never sung"
+ },
+ "aunque": {
+  "es": "aunque es sábado",
+  "en": "although it is Saturday"
+ },
+ "es": {
+  "es": "aunque es sábado",
+  "en": "although it is Saturday"
+ },
+ "sábado": {
+  "es": "aunque es sábado",
+  "en": "although it is Saturday"
+ },
+ "baja": {
+  "es": "claudia baja sola",
+  "en": "Claudia goes down alone"
+ },
+ "sola": {
+  "es": "claudia baja sola",
+  "en": "Claudia goes down alone"
+ },
+ "a": {
+  "es": "a escanear el año malo",
+  "en": "to scan the bad year"
+ },
+ "escanear": {
+  "es": "a escanear el año malo",
+  "en": "to scan the bad year"
+ },
+ "año": {
+  "es": "el año malo",
+  "en": "the bad year"
+ },
+ "malo": {
+  "es": "el año malo",
+  "en": "the bad year"
+ },
+ "luz": {
+  "es": "la luz entra de lado",
+  "en": "the light comes in sideways"
+ },
+ "entra": {
+  "es": "la luz entra de lado",
+  "en": "the light comes in sideways"
+ },
+ "de": {
+  "es": "de lado",
+  "en": "sideways"
+ },
+ "lado": {
+  "es": "de lado",
+  "en": "sideways"
+ },
+ "y": {
+  "es": "y dibuja el polvo",
+  "en": "and sketches the dust"
+ },
+ "dibuja": {
+  "es": "dibuja el polvo en el aire",
+  "en": "sketches the dust in the air"
+ },
+ "polvo": {
+  "es": "dibuja el polvo en el aire",
+  "en": "sketches the dust in the air"
+ },
+ "en": {
+  "es": "en el aire",
+  "en": "in the air"
+ },
+ "aire": {
+  "es": "el polvo en el aire",
+  "en": "the dust in the air"
+ },
+ "trabaja": {
+  "es": "trabaja con el respeto",
+  "en": "works with the respect"
+ },
+ "con": {
+  "es": "con el respeto",
+  "en": "with the respect"
+ },
+ "respeto": {
+  "es": "con el respeto de las cosas ajenas",
+  "en": "with the respect owed to others' things"
+ },
+ "cosas": {
+  "es": "las cosas ajenas",
+  "en": "other people's things"
+ },
+ "ajenas": {
+  "es": "las cosas ajenas",
+  "en": "other people's things"
+ },
+ "entre": {
+  "es": "entre dos portadas",
+  "en": "between two front pages"
+ },
+ "portadas": {
+  "es": "entre dos portadas",
+  "en": "between two front pages"
+ },
+ "caja": {
+  "es": "la caja de hugo",
+  "en": "Hugo's box"
+ },
+ "aparece": {
+  "es": "aparece una copla a mano",
+  "en": "a handwritten song appears"
+ },
+ "mano": {
+  "es": "una copla a mano",
+  "en": "a handwritten song"
+ },
+ "tachones": {
+  "es": "con tachones y sin firma",
+  "en": "with crossings-out and no signature"
+ },
+ "firma": {
+  "es": "con tachones y sin firma",
+  "en": "with crossings-out and no signature"
+ },
+ "pide": {
+  "es": "pide perdón sin nombrar la palabra",
+  "en": "asks forgiveness without naming the word"
+ },
+ "perdón": {
+  "es": "pide perdón sin nombrar la palabra",
+  "en": "asks forgiveness without naming the word"
+ },
+ "nombrar": {
+  "es": "sin nombrar la palabra",
+  "en": "without naming the word"
+ },
+ "palabra": {
+  "es": "sin nombrar la palabra",
+  "en": "without naming the word"
+ },
+ "nadie": {
+  "es": "nadie la cantó nunca",
+  "en": "nobody ever sang it"
+ },
+ "cantó": {
+  "es": "nadie la cantó nunca",
+  "en": "nobody ever sang it"
+ },
+ "nunca": {
+  "es": "nadie la cantó nunca",
+  "en": "nobody ever sang it"
+ },
+ "se": {
+  "es": "se nota en lo limpio",
+  "en": "it shows in how clean it is"
+ },
+ "nota": {
+  "es": "se nota en lo limpio",
+  "en": "it shows in how clean it is"
+ },
+ "lo": {
+  "es": "en lo limpio del doblez",
+  "en": "in how clean the fold is"
+ },
+ "limpio": {
+  "es": "en lo limpio del doblez",
+  "en": "in how clean the fold is"
+ },
+ "del": {
+  "es": "lo limpio del doblez",
+  "en": "how clean the fold is"
+ },
+ "doblez": {
+  "es": "lo limpio del doblez",
+  "en": "how clean the fold is"
+ },
+ "local": {
+  "es": "el local se fue",
+  "en": "the clubhouse went"
+ },
+ "fue": {
+  "es": "el local se fue",
+  "en": "the clubhouse went"
+ },
+ "nosotros": {
+  "es": "nosotros nos fuimos detrás",
+  "en": "we went out after it"
+ },
+ "nos": {
+  "es": "nos fuimos detrás de él",
+  "en": "we went out after it"
+ },
+ "fuimos": {
+  "es": "nos fuimos detrás de él",
+  "en": "we went out after it"
+ },
+ "detrás": {
+  "es": "detrás de él",
+  "en": "after it"
+ },
+ "él": {
+  "es": "detrás de él",
+  "en": "after it"
+ },
+ "lee": {
+  "es": "lee claudia en un verso",
+  "en": "Claudia reads in one line"
+ },
+ "verso": {
+  "es": "en un verso",
+  "en": "in one verse"
+ },
+ "habla": {
+  "es": "habla de amigos",
+  "en": "it speaks of friends"
+ },
+ "amigos": {
+  "es": "habla de amigos",
+  "en": "it speaks of friends"
+ },
+ "que": {
+  "es": "que dejaron de hablarse",
+  "en": "who stopped speaking"
+ },
+ "dejaron": {
+  "es": "que dejaron de hablarse",
+  "en": "who stopped speaking"
+ },
+ "hablarse": {
+  "es": "dejaron de hablarse",
+  "en": "stopped speaking to each other"
+ },
+ "pie": {
+  "es": "al pie",
+  "en": "at the bottom"
+ },
+ "hay": {
+  "es": "hay una fecha",
+  "en": "there is a date"
+ },
+ "fecha": {
+  "es": "hay una fecha",
+  "en": "there is a date"
+ },
+ "iniciales": {
+  "es": "dos iniciales torcidas",
+  "en": "two crooked initials"
+ },
+ "torcidas": {
+  "es": "dos iniciales torcidas",
+  "en": "two crooked initials"
+ },
+ "lleva": {
+  "es": "se la lleva a hugo",
+  "en": "takes it along to Hugo"
+ },
+ "corazón": {
+  "es": "con el corazón en un puño",
+  "en": "with her heart in her fist"
+ },
+ "puño": {
+  "es": "con el corazón en un puño",
+  "en": "with her heart in her fist"
+ },
+ "pone": {
+  "es": "la pone delante",
+  "en": "sets it in front of him"
+ },
+ "delante": {
+  "es": "la pone delante",
+  "en": "sets it in front of him"
+ },
+ "revistas": {
+  "es": "entre dos revistas",
+  "en": "between two magazines"
+ },
+ "esto": {
+  "es": "y esto de dónde ha salido",
+  "en": "and where did this come from"
+ },
+ "dónde": {
+  "es": "de dónde ha salido",
+  "en": "where did it come from"
+ },
+ "ha": {
+  "es": "de dónde ha salido",
+  "en": "where did it come from"
+ },
+ "salido": {
+  "es": "de dónde ha salido",
+  "en": "where did it come from"
+ },
+ "pregunta": {
+  "es": "pregunta hugo",
+  "en": "asks Hugo"
+ },
+ "sabe": {
+  "es": "que lo sabe",
+  "en": "who already knows"
+ },
+ "queda": {
+  "es": "se queda quieto",
+  "en": "goes still"
+ },
+ "quieto": {
+  "es": "se queda quieto",
+  "en": "goes still"
+ },
+ "como": {
+  "es": "como si el papel pesara",
+  "en": "as if the paper weighed"
+ },
+ "si": {
+  "es": "como si el papel pesara",
+  "en": "as if the paper weighed"
+ },
+ "papel": {
+  "es": "como si el papel pesara",
+  "en": "as if the paper weighed"
+ },
+ "pesara": {
+  "es": "como si el papel pesara",
+  "en": "as if the paper weighed"
+ },
+ "son": {
+  "es": "las iniciales son tuyas",
+  "en": "the initials are yours"
+ },
+ "tuyas": {
+  "es": "las iniciales son tuyas",
+  "en": "the initials are yours"
+ },
+ "letra": {
+  "es": "y la letra también",
+  "en": "and the writing too"
+ },
+ "también": {
+  "es": "y la letra también",
+  "en": "and the writing too"
+ },
+ "dice": {
+  "es": "dice claudia",
+  "en": "says Claudia"
+ },
+ "no": {
+  "es": "no es una pregunta",
+  "en": "it is not a question"
+ },
+ "escribí": {
+  "es": "la escribí el año que nos echaron",
+  "en": "I wrote it the year they threw us out"
+ },
+ "echaron": {
+  "es": "el año que nos echaron",
+  "en": "the year they threw us out"
+ },
+ "canté": {
+  "es": "no la canté",
+  "en": "I never sang it"
+ },
+ "porque": {
+  "es": "porque ya no había con quién",
+  "en": "because there was no one left to sing with"
+ },
+ "ya": {
+  "es": "ya no había con quién",
+  "en": "no one left to sing with"
+ },
+ "había": {
+  "es": "ya no había con quién",
+  "en": "no one left to sing with"
+ },
+ "quién": {
+  "es": "ya no había con quién",
+  "en": "no one left to sing with"
+ },
+ "admite": {
+  "es": "admite hugo",
+  "en": "Hugo admits"
+ },
+ "pues": {
+  "es": "pues cántala este año",
+  "en": "then sing it this year"
+ },
+ "cántala": {
+  "es": "pues cántala este año",
+  "en": "then sing it this year"
+ },
+ "este": {
+  "es": "cántala este año",
+  "en": "sing it this year"
+ },
+ "toca": {
+  "es": "que ya toca",
+  "en": "it is high time"
+ },
+ "contesta": {
+  "es": "contesta ella",
+  "en": "she answers"
+ },
+ "ella": {
+  "es": "contesta ella",
+  "en": "she answers"
+ },
+ "lunes": {
+  "es": "el lunes la copla entra",
+  "en": "on Monday the song goes in"
+ },
+ "archivo": {
+  "es": "entra en el archivo con autor",
+  "en": "goes into the archive with an author"
+ },
+ "autor": {
+  "es": "en el archivo con autor",
+  "en": "in the archive with an author"
+ }
+}

@@ -1,0 +1,367 @@
+[
+  {
+    "topic": "wind-and-plans",
+    "slotIndex": 1,
+    "title": "Un barco para la peña",
+    "slug": "un-barco-para-la-pena",
+    "arcType": "recurring-character-callback",
+    "synopsis": "Desde el viernes de la ronda sin dueño, Claudia arrastra una frase pendiente, y la paga a lo grande: una tarde de barco por la bahía para la peña entera. Marcos sube haciendo una excepción histórica, nadie confiesa la ronda anónima cuando ella brinda, y Alba huele en el aire el levante que viene.",
+    "text": "A las nueve, Alba, la patrona del barco, amarra en el muelle. Claudia es hoy la anfitriona, y Marcos, el primer invitado de la lista. Desde el viernes de la ronda sin dueño, tiene una frase pendiente.\n\n“¿Todos esos caben, o vamos a nadar la mitad?”, pregunta Alba, contando cabezas con el dedo. “Caben hasta los que dicen que no vienen”, contesta Claudia, y paga la señal. El plan es sencillo: atardecer y vuelta.\n\nMarcos sube el último y busca el centro exacto. “Yo de la orilla no paso jamás; hoy hago una excepción”, avisa, agarrado a la borda. El motor arranca con ruido viejo y la bahía se abre como una mesa puesta.\n\nDespués, la ciudad se ve entera, dorada y pequeña. “Esta ronda va por el que pagó la del viernes”, anuncia Claudia, alzando su vaso. Nadie confiesa y todos beben, que es la respuesta de la casa.\n\nAlba apaga el motor y deja el barco al vaivén, cara al atardecer. “El levante llega el jueves; disfrutad hoy, que mañana esto se pone serio”, comenta. Claudia apunta la primera nube en la memoria, no en la libreta.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "patrona",
+        "definition": "Skipper; the woman who owns and steers the boat."
+      },
+      {
+        "type": "noun",
+        "word": "bahía",
+        "definition": "Bay; the sheltered water a city curves around."
+      },
+      {
+        "type": "noun",
+        "word": "muelle",
+        "definition": "Dock, pier; where boats tie up to load."
+      },
+      {
+        "type": "noun",
+        "word": "borda",
+        "definition": "Gunwale; the top edge of a boat's side."
+      },
+      {
+        "type": "noun",
+        "word": "señal",
+        "definition": "Deposit; the advance money that reserves a booking."
+      },
+      {
+        "type": "noun",
+        "word": "atardecer",
+        "definition": "Sunset hour; the late golden light over the water."
+      },
+      {
+        "type": "noun",
+        "word": "vaivén",
+        "definition": "Rocking, swaying; the gentle back-and-forth of a boat."
+      },
+      {
+        "type": "noun",
+        "word": "dedo",
+        "definition": "Finger; used here for counting people one by one."
+      },
+      {
+        "type": "verb",
+        "word": "amarrar",
+        "surface": "amarra",
+        "definition": "To moor, to tie a boat to the dock."
+      },
+      {
+        "type": "verb",
+        "word": "arrancar",
+        "surface": "arranca",
+        "definition": "To start up; an engine coming to life."
+      },
+      {
+        "type": "verb",
+        "word": "confesar",
+        "surface": "confiesa",
+        "definition": "To confess; to admit something you kept secret."
+      },
+      {
+        "type": "verb",
+        "word": "agarrarse",
+        "surface": "agarrado",
+        "definition": "To hold on tight to something for safety."
+      },
+      {
+        "type": "verb",
+        "word": "apagar",
+        "surface": "apaga",
+        "definition": "To switch off; to make an engine go quiet."
+      },
+      {
+        "type": "verb",
+        "word": "disfrutar",
+        "surface": "disfrutad",
+        "definition": "To enjoy; to make the most of a good moment."
+      },
+      {
+        "type": "adjective",
+        "word": "dorado",
+        "surface": "dorada",
+        "definition": "Golden; lit warm by the low evening sun."
+      },
+      {
+        "type": "adjective",
+        "word": "pendiente",
+        "definition": "Pending; something owed that still waits to be settled."
+      },
+      {
+        "type": "adjective",
+        "word": "sencillo",
+        "definition": "Simple, uncomplicated; with no hidden steps in it."
+      },
+      {
+        "type": "expression",
+        "word": "cara a",
+        "surface": "cara al",
+        "definition": "Facing towards something, turned to look at it."
+      },
+      {
+        "type": "expression",
+        "word": "ir por",
+        "surface": "va por",
+        "definition": "To be dedicated to someone; a toast in their honour."
+      },
+      {
+        "type": "expression",
+        "word": "hacer una excepción",
+        "surface": "hago una excepción",
+        "definition": "To make an exception, breaking your own rule once."
+      }
+    ]
+  },
+  {
+    "topic": "wind-and-plans",
+    "slotIndex": 2,
+    "title": "El levante manda",
+    "slug": "el-levante-manda",
+    "arcType": "harmonic-close",
+    "synopsis": "La excursión de los que faltaron amanece amarrada: el levante ha llegado puntual y Alba no discute con el viento. La peña cambia el barco por la azotea del local, donde el plan B sale mejor que muchos planes A. Nadie llora demasiado la tarde perdida, y Claudia baja despeinada, contenta y sin echar de menos el mar.",
+    "text": "El levante llega el jueves, puntual como todo lo que estropea planes. Claudia y Marcos miran el muelle; Alba amarra doble y aplaza sin discutir. “Con levante no salgo ni a nadar; os debo una tarde entera”, avisa.\n\n“¿Y ahora qué hacemos con la tarde libre?”, pregunta Claudia, viendo la lona dar golpes. “Ahora, azotea; el plan B en esta casa siempre tiene vistas”, decide Marcos. La excursión se queda sin fecha.\n\nLa azotea aguanta el viento mejor que el ánimo. La peña sube sillas, una nevera y una guitarra. Se canta bajito y las servilletas vuelan si nadie las sujeta.\n\nEl levante silba en las antenas y nadie le hace caso. El plan B sale mejor que muchos planes A, y aquí nadie se sorprende. “Azotea y paciencia, que contra el levante no se pelea; lo dice todo el que vive aquí”, suelta Marcos, y suena a refrán de andar por casa.\n\nLa tarde de barco no vuelve, y nadie la llora demasiado. Desde arriba, la ciudad entera aguanta el mismo viento, y eso hermana. Claudia baja la última, despeinada y contenta, sin echar de menos el barco.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "levante",
+        "register": "cultural",
+        "definition": "The strong east wind that rules life around Cádiz."
+      },
+      {
+        "type": "noun",
+        "word": "azotea",
+        "definition": "Flat rooftop; the open-air top floor of a building."
+      },
+      {
+        "type": "noun",
+        "word": "lona",
+        "definition": "Canvas, tarpaulin; the heavy cloth that flaps in wind."
+      },
+      {
+        "type": "noun",
+        "word": "nevera",
+        "definition": "Cool box, fridge; here the portable party kind."
+      },
+      {
+        "type": "noun",
+        "word": "refrán",
+        "definition": "Proverb, saying; folk wisdom in one short sentence."
+      },
+      {
+        "type": "noun",
+        "word": "viento",
+        "definition": "Wind; the moving air that decides plans here."
+      },
+      {
+        "type": "verb",
+        "word": "aplazar",
+        "surface": "aplaza",
+        "definition": "To postpone; to move a plan to a later day."
+      },
+      {
+        "type": "verb",
+        "word": "estropear",
+        "surface": "estropea",
+        "definition": "To ruin, to spoil something that was going well."
+      },
+      {
+        "type": "verb",
+        "word": "silbar",
+        "surface": "silba",
+        "definition": "To whistle; the sound wind makes through wires."
+      },
+      {
+        "type": "verb",
+        "word": "sujetar",
+        "surface": "sujeta",
+        "definition": "To hold something down so it cannot fly away."
+      },
+      {
+        "type": "verb",
+        "word": "volar",
+        "surface": "vuelan",
+        "definition": "To fly; to be carried off by the wind."
+      },
+      {
+        "type": "verb",
+        "word": "hermanar",
+        "surface": "hermana",
+        "definition": "To bring people together as if they were family."
+      },
+      {
+        "type": "verb",
+        "word": "llorar",
+        "surface": "llora",
+        "definition": "To cry over something; to mourn a small loss."
+      },
+      {
+        "type": "adjective",
+        "word": "puntual",
+        "definition": "Punctual, right on time; arriving exactly when it was expected."
+      },
+      {
+        "type": "adjective",
+        "word": "despeinado",
+        "surface": "despeinada",
+        "definition": "Windswept, with your hair completely undone by the weather."
+      },
+      {
+        "type": "adverb",
+        "word": "arriba",
+        "definition": "Up, above; from the high part looking down."
+      },
+      {
+        "type": "expression",
+        "word": "hacer caso",
+        "surface": "hace caso",
+        "definition": "To pay attention to; to take notice of something."
+      },
+      {
+        "type": "expression",
+        "word": "de andar por casa",
+        "definition": "Homespun, informal; made for everyday use, not for show."
+      },
+      {
+        "type": "expression",
+        "word": "echar de menos",
+        "definition": "To miss something; to feel the lack of it."
+      },
+      {
+        "type": "expression",
+        "word": "deber una",
+        "surface": "os debo una",
+        "definition": "To owe someone a favour to be repaid later."
+      }
+    ]
+  },
+  {
+    "topic": "wind-and-plans",
+    "slotIndex": 3,
+    "title": "Fecha a lápiz",
+    "slug": "fecha-a-lapiz",
+    "arcType": "reframe-turn",
+    "synopsis": "La mudanza necesita día y Claudia llega con tres fechas en bolígrafo, a su manera de siempre. Marcos enciende la radio, deja hablar al hombre del tiempo y le enseña la regla de la casa: aquí las fechas se negocian con el viento. De pronto, su primera semana entera cambia de sentido, y el lápiz asciende a herramienta seria.",
+    "text": "Todavía queda por elegir el día de la mudanza; Claudia trae tres fechas en bolígrafo. Marcos las mira como quien mira fruta verde. “¿En bolígrafo? Qué valiente ha venido hoy la de Vitoria”, saluda.\n\n“Aquí una fecha se escribe a lápiz hasta oír el parte; el calendario manda poco”, explica, y enciende la radio pequeña del archivo. El hombre del tiempo trata al levante de vecino difícil. Claudia escucha a medias y espera.\n\nY de pronto entiende su primera semana: nadie le daba fechas porque las fechas aquí se negocian con el viento. No era desorden; era otra manera de contar el tiempo. Su calendario semanal se queda mudo, como un turista más.\n\n“¿Y si el viernes amanece con poniente?”, pregunta Claudia, ya en el idioma de la casa. “Entonces cargamos el viernes; y si no, pues el lunes, que Cádiz seguirá donde está y nosotros también”, contesta Marcos. Lo apuntan en la pizarra.\n\nEl viernes llega limpio, con el viento del oeste barriendo el cielo. La fecha se repasa con bolígrafo a media mañana. Claudia guarda el lápiz en el bolso: en esta ciudad, es la herramienta seria.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "lápiz",
+        "definition": "Pencil; the tool for plans that may still change.",
+        "surface": "el lápiz"
+      },
+      {
+        "type": "noun",
+        "word": "parte",
+        "definition": "Weather report; the forecast read out on the radio."
+      },
+      {
+        "type": "noun",
+        "word": "poniente",
+        "register": "cultural",
+        "definition": "The west wind that clears the sky over Cádiz."
+      },
+      {
+        "type": "noun",
+        "word": "herramienta",
+        "definition": "Tool; the instrument a serious job really calls for."
+      },
+      {
+        "type": "verb",
+        "word": "negociar",
+        "surface": "se negocian",
+        "definition": "To negotiate; to settle something by give and take."
+      },
+      {
+        "type": "verb",
+        "word": "amanecer",
+        "surface": "amanece",
+        "definition": "To dawn; how the day looks when it begins."
+      },
+      {
+        "type": "verb",
+        "word": "cargar",
+        "surface": "cargamos",
+        "definition": "To load; to carry boxes onto a truck."
+      },
+      {
+        "type": "verb",
+        "word": "repasar",
+        "surface": "se repasa",
+        "definition": "To go over again; to trace or check once more."
+      },
+      {
+        "type": "verb",
+        "word": "encender",
+        "surface": "enciende",
+        "definition": "To switch on; to turn a radio or light on."
+      },
+      {
+        "type": "verb",
+        "word": "saludar",
+        "surface": "saluda",
+        "definition": "To greet; to open a conversation with a hello."
+      },
+      {
+        "type": "verb",
+        "word": "escuchar",
+        "surface": "escucha",
+        "definition": "To listen; to pay attention with your ears."
+      },
+      {
+        "type": "adjective",
+        "word": "verde",
+        "definition": "Green; unripe fruit that still needs its time."
+      },
+      {
+        "type": "adjective",
+        "word": "valiente",
+        "definition": "Brave, daring; risking more than the situation advises."
+      },
+      {
+        "type": "adjective",
+        "word": "mudo",
+        "definition": "Mute, silent; left with nothing left to say."
+      },
+      {
+        "type": "adjective",
+        "word": "serio",
+        "surface": "seria",
+        "definition": "Serious, reliable; the one that truly counts here."
+      },
+      {
+        "type": "expression",
+        "word": "a lápiz",
+        "definition": "In pencil; provisional and still easy to change later."
+      },
+      {
+        "type": "expression",
+        "word": "de pronto",
+        "definition": "Suddenly, all at once and without any warning."
+      },
+      {
+        "type": "expression",
+        "word": "a medias",
+        "definition": "Halfway, only partly; not fully done or understood."
+      },
+      {
+        "type": "noun",
+        "word": "bolso",
+        "definition": "Handbag; the bag where everyday tools end up living."
+      },
+      {
+        "type": "expression",
+        "word": "quedar por",
+        "surface": "queda por",
+        "definition": "To remain to be done; still waiting to happen."
+      }
+    ]
+  }
+]

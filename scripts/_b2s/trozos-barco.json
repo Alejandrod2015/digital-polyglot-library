@@ -1,0 +1,438 @@
+{
+ "barco": {
+  "es": "un barco para la peña",
+  "en": "a boat for the club"
+ },
+ "para": {
+  "es": "un barco para la peña",
+  "en": "a boat for the club"
+ },
+ "peña": {
+  "es": "un barco para la peña",
+  "en": "a boat for the club"
+ },
+ "patrona": {
+  "es": "la patrona del barco",
+  "en": "the boat's skipper"
+ },
+ "del": {
+  "es": "la patrona del barco",
+  "en": "the boat's skipper"
+ },
+ "amarra": {
+  "es": "amarra en el muelle",
+  "en": "moors at the dock"
+ },
+ "en": {
+  "es": "en el muelle",
+  "en": "at the dock"
+ },
+ "muelle": {
+  "es": "amarra en el muelle",
+  "en": "moors at the dock"
+ },
+ "y": {
+  "es": "claudia y marcos llegan",
+  "en": "Claudia and Marcos arrive"
+ },
+ "llegan": {
+  "es": "claudia y marcos llegan",
+  "en": "Claudia and Marcos arrive"
+ },
+ "con": {
+  "es": "con la lista de la peña",
+  "en": "with the club's list"
+ },
+ "lista": {
+  "es": "la lista de la peña",
+  "en": "the club's list"
+ },
+ "de": {
+  "es": "una deuda alegre",
+  "en": "a happy debt"
+ },
+ "deuda": {
+  "es": "una deuda alegre",
+  "en": "a happy debt"
+ },
+ "alegre": {
+  "es": "una deuda alegre",
+  "en": "a happy debt"
+ },
+ "desde": {
+  "es": "desde el viernes",
+  "en": "since Friday"
+ },
+ "viernes": {
+  "es": "desde el viernes",
+  "en": "since Friday"
+ },
+ "ronda": {
+  "es": "la ronda sin dueño",
+  "en": "the round with no owner"
+ },
+ "sin": {
+  "es": "la ronda sin dueño",
+  "en": "the round with no owner"
+ },
+ "dueño": {
+  "es": "la ronda sin dueño",
+  "en": "the round with no owner"
+ },
+ "tiene": {
+  "es": "tiene una frase pendiente",
+  "en": "has an unfinished phrase"
+ },
+ "frase": {
+  "es": "una frase pendiente",
+  "en": "an unfinished phrase"
+ },
+ "pendiente": {
+  "es": "una frase pendiente",
+  "en": "a phrase still owed"
+ },
+ "todos": {
+  "es": "todos esos caben",
+  "en": "do all of those fit"
+ },
+ "esos": {
+  "es": "todos esos caben",
+  "en": "do all of those fit"
+ },
+ "caben": {
+  "es": "todos esos caben",
+  "en": "do all of those fit"
+ },
+ "o": {
+  "es": "o vamos a nadar la mitad",
+  "en": "or will half of us swim"
+ },
+ "vamos": {
+  "es": "vamos a nadar la mitad",
+  "en": "half of us will swim"
+ },
+ "nadar": {
+  "es": "vamos a nadar la mitad",
+  "en": "half of us will swim"
+ },
+ "mitad": {
+  "es": "vamos a nadar la mitad",
+  "en": "half of us will swim"
+ },
+ "pregunta": {
+  "es": "pregunta alba",
+  "en": "asks Alba"
+ },
+ "contando": {
+  "es": "contando cabezas con el dedo",
+  "en": "counting heads with her finger"
+ },
+ "cabezas": {
+  "es": "contando cabezas con el dedo",
+  "en": "counting heads with her finger"
+ },
+ "dedo": {
+  "es": "contando cabezas con el dedo",
+  "en": "counting heads with her finger"
+ },
+ "hasta": {
+  "es": "caben hasta los que dicen que no vienen",
+  "en": "even the ones who say they are not coming fit"
+ },
+ "que": {
+  "es": "los que dicen que no vienen",
+  "en": "the ones who say they are not coming"
+ },
+ "dicen": {
+  "es": "los que dicen que no vienen",
+  "en": "the ones who say they are not coming"
+ },
+ "no": {
+  "es": "que no vienen",
+  "en": "who are not coming"
+ },
+ "vienen": {
+  "es": "que no vienen",
+  "en": "who are not coming"
+ },
+ "contesta": {
+  "es": "contesta claudia",
+  "en": "Claudia answers"
+ },
+ "paga": {
+  "es": "paga la señal",
+  "en": "pays the deposit"
+ },
+ "señal": {
+  "es": "paga la señal",
+  "en": "pays the deposit"
+ },
+ "plan": {
+  "es": "el plan es sencillo",
+  "en": "the plan is simple"
+ },
+ "es": {
+  "es": "el plan es sencillo",
+  "en": "the plan is simple"
+ },
+ "sencillo": {
+  "es": "el plan es sencillo",
+  "en": "the plan is simple"
+ },
+ "atardecer": {
+  "es": "atardecer y vuelta",
+  "en": "sunset and back"
+ },
+ "vuelta": {
+  "es": "atardecer y vuelta",
+  "en": "sunset and back"
+ },
+ "sube": {
+  "es": "marcos sube el último",
+  "en": "Marcos boards last"
+ },
+ "último": {
+  "es": "marcos sube el último",
+  "en": "Marcos boards last"
+ },
+ "busca": {
+  "es": "busca el centro exacto",
+  "en": "finds the exact centre"
+ },
+ "centro": {
+  "es": "busca el centro exacto",
+  "en": "finds the exact centre"
+ },
+ "exacto": {
+  "es": "busca el centro exacto",
+  "en": "finds the exact centre"
+ },
+ "yo": {
+  "es": "yo de la orilla no paso",
+  "en": "I never go past the shore"
+ },
+ "orilla": {
+  "es": "de la orilla no paso",
+  "en": "never past the shore"
+ },
+ "paso": {
+  "es": "de la orilla no paso jamás",
+  "en": "I never go past the shore"
+ },
+ "jamás": {
+  "es": "no paso jamás",
+  "en": "I never ever go past"
+ },
+ "hoy": {
+  "es": "hoy hago una excepción",
+  "en": "today I make an exception"
+ },
+ "hago": {
+  "es": "hoy hago una excepción",
+  "en": "today I make an exception"
+ },
+ "excepción": {
+  "es": "hoy hago una excepción",
+  "en": "today I make an exception"
+ },
+ "avisa": {
+  "es": "avisa",
+  "en": "he warns"
+ },
+ "agarrado": {
+  "es": "agarrado a la borda",
+  "en": "gripping the gunwale"
+ },
+ "borda": {
+  "es": "agarrado a la borda",
+  "en": "gripping the gunwale"
+ },
+ "motor": {
+  "es": "el motor arranca",
+  "en": "the engine starts"
+ },
+ "arranca": {
+  "es": "el motor arranca con ruido viejo",
+  "en": "the engine starts with an old rattle"
+ },
+ "ruido": {
+  "es": "con ruido viejo",
+  "en": "with an old rattle"
+ },
+ "viejo": {
+  "es": "con ruido viejo",
+  "en": "with an old rattle"
+ },
+ "bahía": {
+  "es": "la bahía se abre",
+  "en": "the bay opens up"
+ },
+ "se": {
+  "es": "la bahía se abre",
+  "en": "the bay opens up"
+ },
+ "abre": {
+  "es": "la bahía se abre",
+  "en": "the bay opens up"
+ },
+ "como": {
+  "es": "como una mesa puesta",
+  "en": "like a table laid for dinner"
+ },
+ "mesa": {
+  "es": "como una mesa puesta",
+  "en": "like a table laid for dinner"
+ },
+ "puesta": {
+  "es": "como una mesa puesta",
+  "en": "like a table laid for dinner"
+ },
+ "después": {
+  "es": "después",
+  "en": "afterwards"
+ },
+ "ciudad": {
+  "es": "la ciudad se ve entera",
+  "en": "the whole city is visible"
+ },
+ "ve": {
+  "es": "la ciudad se ve entera",
+  "en": "the whole city is visible"
+ },
+ "entera": {
+  "es": "se ve entera",
+  "en": "seen whole"
+ },
+ "dorada": {
+  "es": "dorada y pequeña",
+  "en": "golden and small"
+ },
+ "pequeña": {
+  "es": "dorada y pequeña",
+  "en": "golden and small"
+ },
+ "esta": {
+  "es": "esta ronda va por",
+  "en": "this round is for"
+ },
+ "va": {
+  "es": "esta ronda va por",
+  "en": "this round is for"
+ },
+ "por": {
+  "es": "va por el que pagó",
+  "en": "is for the one who paid"
+ },
+ "pagó": {
+  "es": "el que pagó la del viernes",
+  "en": "the one who paid Friday's"
+ },
+ "anuncia": {
+  "es": "anuncia claudia",
+  "en": "Claudia announces"
+ },
+ "alzando": {
+  "es": "alzando su vaso",
+  "en": "raising her glass"
+ },
+ "su": {
+  "es": "alzando su vaso",
+  "en": "raising her glass"
+ },
+ "vaso": {
+  "es": "alzando su vaso",
+  "en": "raising her glass"
+ },
+ "nadie": {
+  "es": "nadie confiesa",
+  "en": "nobody confesses"
+ },
+ "confiesa": {
+  "es": "nadie confiesa",
+  "en": "nobody confesses"
+ },
+ "beben": {
+  "es": "todos beben",
+  "en": "everyone drinks"
+ },
+ "respuesta": {
+  "es": "la respuesta de la casa",
+  "en": "the house's answer"
+ },
+ "casa": {
+  "es": "la respuesta de la casa",
+  "en": "the house's answer"
+ },
+ "apaga": {
+  "es": "alba apaga el motor",
+  "en": "Alba switches off the engine"
+ },
+ "deja": {
+  "es": "deja el barco al vaivén",
+  "en": "leaves the boat to rock"
+ },
+ "vaivén": {
+  "es": "deja el barco al vaivén",
+  "en": "leaves the boat to rock"
+ },
+ "cara": {
+  "es": "cara al atardecer",
+  "en": "facing the sunset"
+ },
+ "levante": {
+  "es": "el levante llega el jueves",
+  "en": "the east wind arrives Thursday"
+ },
+ "llega": {
+  "es": "el levante llega el jueves",
+  "en": "the east wind arrives Thursday"
+ },
+ "jueves": {
+  "es": "llega el jueves",
+  "en": "arrives on Thursday"
+ },
+ "disfrutad": {
+  "es": "disfrutad hoy",
+  "en": "enjoy today"
+ },
+ "mañana": {
+  "es": "mañana esto se pone serio",
+  "en": "tomorrow this turns serious"
+ },
+ "esto": {
+  "es": "esto se pone serio",
+  "en": "this turns serious"
+ },
+ "pone": {
+  "es": "se pone serio",
+  "en": "turns serious"
+ },
+ "serio": {
+  "es": "se pone serio",
+  "en": "turns serious"
+ },
+ "comenta": {
+  "es": "comenta",
+  "en": "she remarks"
+ },
+ "apunta": {
+  "es": "apunta la primera nube",
+  "en": "notes the first cloud"
+ },
+ "primera": {
+  "es": "la primera nube",
+  "en": "the first cloud"
+ },
+ "nube": {
+  "es": "la primera nube",
+  "en": "the first cloud"
+ },
+ "memoria": {
+  "es": "en la memoria",
+  "en": "in her memory"
+ },
+ "libreta": {
+  "es": "no en la libreta",
+  "en": "not in the notebook"
+ }
+}

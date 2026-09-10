@@ -35,6 +35,16 @@ export function empeora(antes: JourneyCheck | undefined, ahora: JourneyCheck, sl
   if (!antes || antes.status === "pass") return true;
   const da = (antes.detail ?? "").trim();
   const dh = (ahora.detail ?? "").trim();
+  // MAGNITUD DECLARADA (2026-09-08): la regla dice su numero y hacia donde se
+  // mejora. Es mas fiable que leerlo de la prosa del detalle y sirve para las
+  // dos direcciones: una media de color mejora BAJANDO, un suelo de nivel
+  // mejora SUBIENDO. Sin esto el suelo de nivel tampoco se podia reparar a
+  // plazos, porque su detalle no lista slugs sino palabras.
+  if (antes.magnitud && ahora.magnitud && antes.magnitud.mejor === ahora.magnitud.mejor) {
+    return ahora.magnitud.mejor === "baja"
+      ? ahora.magnitud.valor > antes.magnitud.valor
+      : ahora.magnitud.valor < antes.magnitud.valor;
+  }
   if (da === dh) return false;
   const ma = da.match(MAGNITUD);
   const mh = dh.match(MAGNITUD);

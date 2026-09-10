@@ -2,6 +2,7 @@ import { createClerkClient, verifyToken } from "@clerk/backend";
 import { NextRequest, NextResponse } from "next/server";
 import { createMobileSessionToken } from "@/lib/mobileSession";
 import { prisma } from "@/lib/prisma";
+import { appOrigin, encodeOrigin } from "@/lib/signupSource";
 import { touchTesterActivity } from "@/lib/betaProgram";
 import { mobilePlatformFromRequest } from "@/lib/mobilePlatform";
 
@@ -64,10 +65,20 @@ export async function POST(req: NextRequest) {
     const mobilePlatform = mobilePlatformFromRequest(req);
     const stamped = typeof publicMetadata.signupPlatform === "string" ? publicMetadata.signupPlatform : "";
     const isMobileStamp = stamped === "ios" || stamped === "android";
-    if (!stamped || (isMobileStamp && stamped !== mobilePlatform)) {
+    const needsPlatform = !stamped || (isMobileStamp && stamped !== mobilePlatform);
+    // Origen de quien nace dentro de la app. La app no trae utm ni referrer,
+    // asi que lo unico cierto es por que tienda entro; se sella solo si no
+    // hay ya un origen (el de la web es mas preciso y no se pisa).
+    const hasSource = typeof publicMetadata.signupSource === "string" && publicMetadata.signupSource;
+    const needsSource = !hasSource && !stamped;
+    if (needsPlatform || needsSource) {
       try {
         await clerkClient.users.updateUserMetadata(userId, {
-          publicMetadata: { ...publicMetadata, signupPlatform: mobilePlatform },
+          publicMetadata: {
+            ...publicMetadata,
+            signupPlatform: needsPlatform ? mobilePlatform : stamped,
+            ...(needsSource ? { signupSource: encodeOrigin(appOrigin(mobilePlatform)) } : {}),
+          },
         });
       } catch (stampErr) {
         console.error(`Failed to stamp signupPlatform=${mobilePlatform}:`, stampErr);

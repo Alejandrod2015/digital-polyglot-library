@@ -19,6 +19,7 @@ import { isSpanishUpToLevel } from "./cefr/spanishLevels";
 import { isGermanA1A2 } from "./cefr/germanA1A2";
 import { isItalianA1A2 } from "./cefr/italianA1A2";
 import { isPortugueseA1A2 } from "./cefr/portugueseA1A2";
+import { isPortugueseB1Lemma } from "./cefr/portugueseB1";
 import { isFrenchA1A2 } from "./cefr/frenchA1A2";
 import { classifyName, getNameBank } from "@/lib/characterNames";
 
@@ -334,17 +335,22 @@ function getParagraphs(text: string): string[] {
 // "les pièces sont froides"). Un idioma que el detector no conoce da CERO
 // categorías, que no es lo mismo que no tener ancla.
 const SENSE_CATEGORIES_SHARED: Record<string, RegExp> = {
+    // Frontera de palabra UNICODE (2026-09-10). Con \b y sin la bandera u, JS
+    // trata la "o" con tilde como no-letra, asi que "escuchó", "oyó" o
+    // "brilló" no casaban NUNCA aunque estaban en la lista: toda historia en
+    // preterito perdia su ancla sensorial. Es el defecto que ya se arreglo en
+    // la sonda; aqui seguia vivo.
     // Las formas de PASADO estaban fuera: el detector solo conocía el presente
     // ("ouve", "cheira", "brilha"), así que una historia narrada en pretérito
     // daba CERO categorías y fallaba entera. Detectado el 2026-08-19 al pasar a
     // pretérito las siete historias que cierran cada tema del A1 brasileño:
     // "ouviu uma vareta partir" es una ancla de sonido perfectamente válida.
-    smell: /\b(olor|aroma|perfume|huele|huelen|olía|olor[eo]s|olfato|cheiro|cheira|cheirou|cheirava|perfum[eo]|Geruch|riecht|Duft|odore|profumo|odeur|odeurs|parfum|sent|sentait|senteur)\b/i,
-    light: /\b(luz|luces|iluminac|brilla|brilló|brillan|sombra|sombras|claroscuro|oscur[oa]|deslumbra|luzes|brilha|brilhou|brilhava|brilhante|escureceu|sombras?|escur[oa]|Licht|Schatten|dunkel|luce|luci|ombra|buio|lumière|lumières|brille|brillait|ombre|ombres|sombre|obscur|éclaire|éclairé)\b/i,
-    sound: /\b(sonido|sonidos|ruido|ruidos|silencio|suena|sonaba|sonaron|tronaba|trueno|ladrido|grito|murmullo|silbido|escuch[oóa]|oye|oyó|som|sons|barulho|silêncio|silencio|soa|soou|grita|gritou|assobia|assobiou|escuta|escutou|ouve|ouviu|ouvia|Geräusch|Lärm|Stille|hört|klingt|suono|rumore|silenzio|sente|bruit|bruits|silence|sonne|sonnait|entend|entendait|crie|cria|murmure|écoute|écoutait)\b/i,
-    temperature: /\b(frío|fría|frio|caliente|calor|cálid[oa]|fresca|fresco|helad[oa]|hierve|tibi[oa]|gélid[oa]|templad[oa]|fria|quente|gelad[oa]|morn[oa]|esquentou|esfriou|kalt|warm|heiß|kühl|freddo|fredda|caldo|calda|tiepid[oa]|froid|froide|froides|chaud|chaude|chaleur|tiède|glacé|glacée|frais|fraîche)\b/i,
-    touch: /\b(suave|áspero|aspero|rugoso|liso|húmedo|humedo|seco|seca|blando|duro|firme|pegajos[oa]|molhad[oa]|áspera|macio|liso|úmid[oa]|firme|vento|weich|rau|trocken|feucht|morbido|ruvido|bagnato|asciutto|doux|douce|rugueux|lisse|mouillé|mouillée|humide|trempé|trempée|rêche)\b/i,
-    taste: /\b(dulce|amargo|salado|ácido|acido|picante|sabor|saborea|gusta\s+a|doce|amarg[oa]|salgad[oa]|gosto|süß|bitter|salzig|Geschmack|dolce|amaro|salato|sapore|sucré|amer|amère|salé|salée|goût|saveur|épicé)\b/i,
+    smell: /(?<!\p{L})(olor|aroma|perfume|huele|huelen|olía|olor[eo]s|olfato|cheiro|cheira|cheirou|cheirava|perfum[eo]|Geruch|riecht|Duft|odore|profumo|odeur|odeurs|parfum|sent|sentait|senteur)(?!\p{L})/iu,
+    light: /(?<!\p{L})(luz|luces|iluminac|brilla|brilló|brillan|sombra|sombras|claroscuro|oscur[oa]|deslumbra|luzes|brilha|brilhou|brilhava|brilhante|escureceu|sombras?|escur[oa]|Licht|Schatten|dunkel|luce|luci|ombra|buio|lumière|lumières|brille|brillait|ombre|ombres|sombre|obscur|éclaire|éclairé)(?!\p{L})/iu,
+    sound: /(?<!\p{L})(sonido|sonidos|ruido|ruidos|silencio|suena|sonaba|sonaron|tronaba|trueno|ladrido|grito|murmullo|silbido|escuch[oóa]|oye|oyó|som|sons|barulho|silêncio|silencio|soa|soou|grita|gritou|assobia|assobiou|escuta|escutou|ouve|ouviu|ouvia|Geräusch|Lärm|Stille|hört|klingt|suono|rumore|silenzio|sente|bruit|bruits|silence|sonne|sonnait|entend|entendait|crie|cria|murmure|écoute|écoutait)(?!\p{L})/iu,
+    temperature: /(?<!\p{L})(frío|fría|frio|caliente|calor|cálid[oa]|fresca|fresco|helad[oa]|hierve|tibi[oa]|gélid[oa]|templad[oa]|fria|quente|gelad[oa]|morn[oa]|esquentou|esfriou|kalt|warm|heiß|kühl|freddo|fredda|caldo|calda|tiepid[oa]|froid|froide|froides|chaud|chaude|chaleur|tiède|glacé|glacée|frais|fraîche)(?!\p{L})/iu,
+    touch: /(?<!\p{L})(suave|áspero|aspero|rugoso|liso|húmedo|humedo|seco|seca|blando|duro|firme|pegajos[oa]|molhad[oa]|áspera|macio|liso|úmid[oa]|firme|vento|weich|rau|trocken|feucht|morbido|ruvido|bagnato|asciutto|doux|douce|rugueux|lisse|mouillé|mouillée|humide|trempé|trempée|rêche)(?!\p{L})/iu,
+    taste: /(?<!\p{L})(dulce|amargo|salado|ácido|acido|picante|sabor|saborea|gusta\s+a|doce|amarg[oa]|salgad[oa]|gosto|süß|bitter|salzig|Geschmack|dolce|amaro|salato|sapore|sucré|amer|amère|salé|salée|goût|saveur|épicé)(?!\p{L})/iu,
   };
 
 function extractSpeakerNames(text: string): string[] {
@@ -929,11 +935,10 @@ export async function validateGeneratedStory(
   // mismo minuto de lectura, no un A1 mas largo... manten esa banda y sube la
   // gramatica dentro", asi que B1 es tier de un minuto por decision del
   // usuario. Al anadir un nivel aqui, ANADELO, no lo sustituyas.
-  // B2 entra el 2026-09-06 al crear el primer B2 (Traveler ES/latam): la
-  // decision del usuario del 2026-09-04 es que la banda es UNA para todos los
-  // niveles porque lo que sube con el nivel es la densidad, no el volumen, y
-  // el coste de TTS escala con las palabras. No hay ningun B2 escrito con la
-  // banda larga al que esto afloje nada.
+  // B2 entra el 2026-09-06, al escribirse el primer B2 (Traveler ES/spain):
+  // la decision ya estaba tomada en el commit del B1 latam ("banda de
+  // palabras UNA para todos los niveles, la del A0") y en la tabla del spec
+  // (B2 = 140-166 palabras); el nivel solo faltaba en esta lista.
   const isOneMinuteTier =
     isA0 || ["A1", "A2", "B1", "B2"].includes((context.level ?? "").toUpperCase());
   const [bwHardLo, bwHardHi, bwSoftLo, bwSoftHi] = isOneMinuteTier
@@ -2434,6 +2439,50 @@ export async function validateGeneratedStory(
             : undefined,
       });
     }
+  } else if (lang === "PT" && levelKey === "b1") {
+    // TECHO de nivel para portugues B1 (2026-09-06). Hasta hoy este check no
+    // corria aqui: el juez se enganchaba para ES en todos los niveles y para
+    // DE/IT/PT/FR solo en A1/A2, asi que en PT b1 no quedaba NADA midiendo el
+    // nivel del vocabulario. Medido, no recordado: la misma historia publicada
+    // del Traveler PT-BR A1 daba 32 checks declarada `a1` y 31 declarada `b1`,
+    // y la que faltaba era esta.
+    //
+    // Mide el TECHO (ninguna palabra por encima de B1). El SUELO ("un B1
+    // ensena palabras de B1 y no veinte de A1") no cabe aqui, porque es una
+    // proporcion y por historia no se puede medir: las historias sueltas de
+    // los dos B1 de espanol ya escritos bajan al 5% y al 15% de plazas por
+    // encima de A1/A2 aunque sus journeys esten en 37% y 42%. Vive en
+    // `journey-vocab-level-floor` (validateJourneyStories.ts).
+    //
+    // Umbrales: los mismos que ya usaba la rama A1/A2 de los otros idiomas
+    // (0 pasa, 1-2 avisa, 3+ falla), para no inventar una vara nueva.
+    // Exenciones: las mismas que en ES y por el mismo motivo (ver el bloque
+    // REGISTER_EXEMPT de arriba). Un ancla cultural es rara en cualquier
+    // corpus POR DEFINICION y su regla la obliga a estar en el vocab.
+    const EXENTOS_PT = new Set([
+      "slang", "colloquial", "vulgar", "coloquial", "argot", "jerga",
+      "cultural", "realia",
+    ]);
+    const juzgables = parsed.vocab.filter((v) => {
+      const type = (v.type ?? "").toLowerCase();
+      const register = ((v as { register?: string }).register ?? "").toLowerCase();
+      return !(type === "expression" || type === "slang" || EXENTOS_PT.has(register));
+    });
+    const outOfLevel = juzgables.filter(
+      (v) => !isPortugueseA1A2(v.word) && !isPortugueseB1Lemma(v.word),
+    );
+    checks.push({
+      id: "vocab-level-frequency",
+      label: "Vocab matches B1 lexical frequency (PT, list)",
+      status: outOfLevel.length === 0 ? "pass" : outOfLevel.length <= 2 ? "warn" : "fail",
+      detail:
+        outOfLevel.length > 0
+          ? `${outOfLevel.length} fuera de B1: ${outOfLevel
+              .slice(0, 6)
+              .map((v) => v.word)
+              .join(", ")}${outOfLevel.length > 6 ? ` …+${outOfLevel.length - 6}` : ""}`
+          : undefined,
+    });
   }
 
   // Body CEFR check (Spanish only, all levels A1→C1).
@@ -2709,6 +2758,61 @@ export async function validateGeneratedStory(
       shared.length / Math.max(titleTokens.length, otherTokens.length) > 0.5
     );
   });
+  // CRUCE DE VOCAB CON LO YA ENSENADO. Vive FUERA del bloque `existing.length`
+  // desde el 2026-09-08: depende de `context.taughtSameType` /
+  // `taughtElsewhere`, que los pasa el saver desde la base, no de las hermanas
+  // de la tanda. Estando dentro, la PRIMERA historia de cada tanda quedaba
+  // exenta del cruce y por ahi se colaron dos plazas dobles en el B2 latam
+  // (`arrancar` y `recibir`): la colision solo aparecia al validar OTRO tema,
+  // dos pasos despues, y para entonces ya estaba guardada.
+    const lema = (w: string) =>
+      stripPrefix(w.toLowerCase(), context.language).normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+    // Mismo tipo de journey (incluido este journey en otra tanda): cero.
+    //
+    // POR QUÉ el corte por tipo (2026-08-19). Con la regla de cero contra
+    // TODO el idioma, escribir el A1 brasileño obligó a meter 222 lemas
+    // nuevos en la lista de nivel mientras `praça`, `chuva`, `porta` y
+    // `calçada` seguían bloqueadas por el A0: el journey acababa enseñando
+    // `lasca` y `avental` antes que "plaza". Entre tipos distintos el
+    // reencuentro de una palabra en otra escena es justo lo que la fija, así
+    // que ahí se toleran dos; dentro del mismo tipo, ninguna.
+    const mismoTipo = new Set((context.taughtSameType ?? []).map(lema));
+    if (mismoTipo.size > 0 && parsed.vocab.length > 0) {
+      const repes = parsed.vocab.map((v) => v.word).filter((w) => mismoTipo.has(lema(w)));
+      checks.push({
+        id: "vocab-taught-same-type",
+        label: "Vocab not already taught by this journey or another of the same type (zero)",
+        status: repes.length > 0 ? "fail" : "pass",
+        detail: repes.length
+          ? `${repes.length}/${parsed.vocab.length} ya enseñadas: ${repes.slice(0, 8).join(", ")}${repes.length > 8 ? ` …+${repes.length - 8}` : ""}`
+          : undefined,
+      });
+    }
+
+    const yaEnsenado = new Set((context.taughtElsewhere ?? []).map(lema));
+    if (yaEnsenado.size > 0 && parsed.vocab.length > 0) {
+      const repetidas = parsed.vocab
+        .map((v) => v.word)
+        .filter((w) => yaEnsenado.has(lema(w)));
+      const pct = Math.round((100 * repetidas.length) / parsed.vocab.length);
+      // CERO, no un porcentaje (2026-08-18). Un slot de vocab es la promesa
+      // "llévate esta palabra"; si otro journey del idioma ya la enseñó, el
+      // lector ya la tiene en su repaso y el slot está tirado. La única
+      // excepción legítima es la palabra que en esta escena significa OTRA
+      // cosa, y esa se justifica en su propia glosa, no en el umbral. Se
+      // toleran dos como colchón de lematización (plural, participio) antes de
+      // bloquear, pero cualquiera avisa.
+      checks.push({
+        id: "vocab-taught-elsewhere",
+        label: "Vocab repeated from a DIFFERENT journey type: max 2 per story",
+        status: repetidas.length > 2 ? "fail" : repetidas.length > 0 ? "warn" : "pass",
+        detail:
+          repetidas.length > 0
+            ? `${repetidas.length}/${parsed.vocab.length} (${pct}%) ya enseñadas: ${repetidas.slice(0, 8).join(", ")}${repetidas.length > 8 ? ` …+${repetidas.length - 8}` : ""}`
+            : undefined,
+      });
+    }
+
   if (existing.length) {
     checks.push({
       id: "title-uniqueness",
@@ -2966,54 +3070,6 @@ export async function validateGeneratedStory(
     // se avisa al 25% y se bloquea al 35%.
     // Mismo criterio que el resto del archivo: minúsculas sin tildes, y el
     // prefijo del idioma fuera (el artículo alemán, por ejemplo).
-    const lema = (w: string) =>
-      stripPrefix(w.toLowerCase(), context.language).normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
-    // Mismo tipo de journey (incluido este journey en otra tanda): cero.
-    //
-    // POR QUÉ el corte por tipo (2026-08-19). Con la regla de cero contra
-    // TODO el idioma, escribir el A1 brasileño obligó a meter 222 lemas
-    // nuevos en la lista de nivel mientras `praça`, `chuva`, `porta` y
-    // `calçada` seguían bloqueadas por el A0: el journey acababa enseñando
-    // `lasca` y `avental` antes que "plaza". Entre tipos distintos el
-    // reencuentro de una palabra en otra escena es justo lo que la fija, así
-    // que ahí se toleran dos; dentro del mismo tipo, ninguna.
-    const mismoTipo = new Set((context.taughtSameType ?? []).map(lema));
-    if (mismoTipo.size > 0 && parsed.vocab.length > 0) {
-      const repes = parsed.vocab.map((v) => v.word).filter((w) => mismoTipo.has(lema(w)));
-      checks.push({
-        id: "vocab-taught-same-type",
-        label: "Vocab not already taught by this journey or another of the same type (zero)",
-        status: repes.length > 0 ? "fail" : "pass",
-        detail: repes.length
-          ? `${repes.length}/${parsed.vocab.length} ya enseñadas: ${repes.slice(0, 8).join(", ")}${repes.length > 8 ? ` …+${repes.length - 8}` : ""}`
-          : undefined,
-      });
-    }
-
-    const yaEnsenado = new Set((context.taughtElsewhere ?? []).map(lema));
-    if (yaEnsenado.size > 0 && parsed.vocab.length > 0) {
-      const repetidas = parsed.vocab
-        .map((v) => v.word)
-        .filter((w) => yaEnsenado.has(lema(w)));
-      const pct = Math.round((100 * repetidas.length) / parsed.vocab.length);
-      // CERO, no un porcentaje (2026-08-18). Un slot de vocab es la promesa
-      // "llévate esta palabra"; si otro journey del idioma ya la enseñó, el
-      // lector ya la tiene en su repaso y el slot está tirado. La única
-      // excepción legítima es la palabra que en esta escena significa OTRA
-      // cosa, y esa se justifica en su propia glosa, no en el umbral. Se
-      // toleran dos como colchón de lematización (plural, participio) antes de
-      // bloquear, pero cualquiera avisa.
-      checks.push({
-        id: "vocab-taught-elsewhere",
-        label: "Vocab repeated from a DIFFERENT journey type: max 2 per story",
-        status: repetidas.length > 2 ? "fail" : repetidas.length > 0 ? "warn" : "pass",
-        detail:
-          repetidas.length > 0
-            ? `${repetidas.length}/${parsed.vocab.length} (${pct}%) ya enseñadas: ${repetidas.slice(0, 8).join(", ")}${repetidas.length > 8 ? ` …+${repetidas.length - 8}` : ""}`
-            : undefined,
-      });
-    }
-
     checks.push({
       id: "names-cross-story",
       label: "Character names not reused from prior stories",

@@ -1,0 +1,442 @@
+{
+ "quien": {
+  "es": "quien baja del tren es paula",
+  "en": "the one getting off the train is Paula"
+ },
+ "baja": {
+  "es": "quien baja del tren",
+  "en": "who gets off the train"
+ },
+ "del": {
+  "es": "baja del tren",
+  "en": "gets off the train"
+ },
+ "tren": {
+  "es": "baja del tren",
+  "en": "gets off the train"
+ },
+ "es": {
+  "es": "quien baja del tren es paula",
+  "en": "the one getting off the train is Paula"
+ },
+ "mejor": {
+  "es": "la mejor amiga",
+  "en": "the best friend"
+ },
+ "amiga": {
+  "es": "la mejor amiga",
+  "en": "the best friend"
+ },
+ "que": {
+  "es": "que vitoria manda a cádiz",
+  "en": "that Vitoria sends to Cádiz"
+ },
+ "vitoria": {
+  "es": "que vitoria manda a cádiz",
+  "en": "that Vitoria sends to Cádiz"
+ },
+ "manda": {
+  "es": "que vitoria manda a cádiz",
+  "en": "that Vitoria sends to Cádiz"
+ },
+ "a": {
+  "es": "manda a cádiz",
+  "en": "sends to Cádiz"
+ },
+ "cádiz": {
+  "es": "manda a cádiz",
+  "en": "sends to Cádiz"
+ },
+ "espera": {
+  "es": "claudia la espera en el andén",
+  "en": "Claudia waits for her on the platform"
+ },
+ "en": {
+  "es": "en el andén",
+  "en": "on the platform"
+ },
+ "andén": {
+  "es": "en el andén",
+  "en": "on the platform"
+ },
+ "huele": {
+  "es": "que huele a tren",
+  "en": "which smells of trains"
+ },
+ "con": {
+  "es": "con tiempo de sobra",
+  "en": "with time to spare"
+ },
+ "tiempo": {
+  "es": "con tiempo de sobra",
+  "en": "with time to spare"
+ },
+ "de": {
+  "es": "de sobra",
+  "en": "to spare"
+ },
+ "sobra": {
+  "es": "con tiempo de sobra",
+  "en": "with time to spare"
+ },
+ "cosa": {
+  "es": "cosa rara en ella",
+  "en": "unusual for her"
+ },
+ "rara": {
+  "es": "cosa rara en ella",
+  "en": "unusual for her"
+ },
+ "ella": {
+  "es": "cosa rara en ella",
+  "en": "unusual for her"
+ },
+ "se": {
+  "es": "se abrazan dos veces",
+  "en": "they hug twice"
+ },
+ "abrazan": {
+  "es": "se abrazan dos veces",
+  "en": "they hug twice"
+ },
+ "veces": {
+  "es": "se abrazan dos veces",
+  "en": "they hug twice"
+ },
+ "como": {
+  "es": "como después de medio año",
+  "en": "the way you do after half a year"
+ },
+ "después": {
+  "es": "como después de medio año",
+  "en": "the way you do after half a year"
+ },
+ "medio": {
+  "es": "después de medio año",
+  "en": "after half a year"
+ },
+ "año": {
+  "es": "después de medio año",
+  "en": "after half a year"
+ },
+ "paseo": {
+  "es": "el paseo de bienvenida",
+  "en": "the welcome walk"
+ },
+ "bienvenida": {
+  "es": "el paseo de bienvenida",
+  "en": "the welcome walk"
+ },
+ "sale": {
+  "es": "sale solo",
+  "en": "comes out by itself"
+ },
+ "solo": {
+  "es": "sale solo",
+  "en": "comes out by itself"
+ },
+ "plaza": {
+  "es": "plaza, kiosco, bar de abajo",
+  "en": "square, newsstand, bar downstairs"
+ },
+ "kiosco": {
+  "es": "plaza, kiosco, bar de abajo",
+  "en": "square, newsstand, bar downstairs"
+ },
+ "bar": {
+  "es": "bar de abajo",
+  "en": "the bar downstairs"
+ },
+ "abajo": {
+  "es": "bar de abajo",
+  "en": "the bar downstairs"
+ },
+ "pide": {
+  "es": "pide dos cafés",
+  "en": "orders two coffees"
+ },
+ "cafés": {
+  "es": "pide dos cafés",
+  "en": "orders two coffees"
+ },
+ "sin": {
+  "es": "sin abrir la boca",
+  "en": "without opening her mouth"
+ },
+ "abrir": {
+  "es": "sin abrir la boca",
+  "en": "without opening her mouth"
+ },
+ "boca": {
+  "es": "sin abrir la boca",
+  "en": "without opening her mouth"
+ },
+ "desde": {
+  "es": "desde cuándo pides tú sin hablar",
+  "en": "since when do you order without speaking"
+ },
+ "cuándo": {
+  "es": "desde cuándo pides tú",
+  "en": "since when do you"
+ },
+ "pides": {
+  "es": "desde cuándo pides tú sin hablar",
+  "en": "since when do you order without speaking"
+ },
+ "tú": {
+  "es": "pides tú sin hablar",
+  "en": "you order without speaking"
+ },
+ "hablar": {
+  "es": "pides tú sin hablar",
+  "en": "you order without speaking"
+ },
+ "toda": {
+  "es": "de toda la vida",
+  "en": "lifelong"
+ },
+ "vida": {
+  "es": "de toda la vida",
+  "en": "lifelong"
+ },
+ "ríe": {
+  "es": "se ríe paula",
+  "en": "Paula laughs"
+ },
+ "soy": {
+  "es": "desde que soy de la barra",
+  "en": "since I became one of the counter"
+ },
+ "barra": {
+  "es": "de la barra de abajo",
+  "en": "of the counter downstairs"
+ },
+ "ya": {
+  "es": "ya van seis meses",
+  "en": "six months already"
+ },
+ "van": {
+  "es": "ya van seis meses",
+  "en": "six months already"
+ },
+ "meses": {
+  "es": "ya van seis meses",
+  "en": "six months already"
+ },
+ "contesta": {
+  "es": "contesta claudia",
+  "en": "Claudia answers"
+ },
+ "saca": {
+  "es": "paula saca un paquete",
+  "en": "Paula takes out a package"
+ },
+ "paquete": {
+  "es": "saca un paquete del bolso",
+  "en": "takes a package from her bag"
+ },
+ "bolso": {
+  "es": "un paquete del bolso",
+  "en": "a package from her bag"
+ },
+ "calendario": {
+  "es": "el calendario semanal",
+  "en": "the weekly planner"
+ },
+ "semanal": {
+  "es": "el calendario semanal",
+  "en": "the weekly planner"
+ },
+ "olvidado": {
+  "es": "olvidado en vitoria",
+  "en": "forgotten back in Vitoria"
+ },
+ "te": {
+  "es": "te lo traigo",
+  "en": "I brought it for you"
+ },
+ "lo": {
+  "es": "te lo traigo",
+  "en": "I brought it for you"
+ },
+ "traigo": {
+  "es": "te lo traigo",
+  "en": "I brought it for you"
+ },
+ "por": {
+  "es": "por si lo echabas de menos",
+  "en": "in case you missed it"
+ },
+ "si": {
+  "es": "por si lo echabas de menos",
+  "en": "in case you missed it"
+ },
+ "echabas": {
+  "es": "por si lo echabas de menos",
+  "en": "in case you missed it"
+ },
+ "menos": {
+  "es": "lo echabas de menos",
+  "en": "you missed it"
+ },
+ "pesa": {
+  "es": "pesa más que mi maleta",
+  "en": "weighs more than my suitcase"
+ },
+ "más": {
+  "es": "pesa más que mi maleta",
+  "en": "weighs more than my suitcase"
+ },
+ "mi": {
+  "es": "más que mi maleta",
+  "en": "more than my suitcase"
+ },
+ "maleta": {
+  "es": "más que mi maleta",
+  "en": "more than my suitcase"
+ },
+ "explica": {
+  "es": "explica",
+  "en": "she explains"
+ },
+ "hojea": {
+  "es": "lo hojea como se hojea",
+  "en": "leafs through it the way you leaf"
+ },
+ "agenda": {
+  "es": "la agenda de una desconocida",
+  "en": "a stranger's planner"
+ },
+ "desconocida": {
+  "es": "la agenda de una desconocida",
+  "en": "a stranger's planner"
+ },
+ "cada": {
+  "es": "cada hora tiene su casilla",
+  "en": "every hour has its box"
+ },
+ "hora": {
+  "es": "cada hora tiene su casilla",
+  "en": "every hour has its box"
+ },
+ "tiene": {
+  "es": "cada hora tiene su casilla",
+  "en": "every hour has its box"
+ },
+ "casilla": {
+  "es": "cada hora tiene su casilla",
+  "en": "every hour has its box"
+ },
+ "nada": {
+  "es": "nada de eso le cabe",
+  "en": "none of it fits her"
+ },
+ "eso": {
+  "es": "nada de eso le cabe",
+  "en": "none of it fits her"
+ },
+ "le": {
+  "es": "nada de eso le cabe",
+  "en": "none of it fits her"
+ },
+ "cabe": {
+  "es": "nada de eso le cabe",
+  "en": "none of it fits her"
+ },
+ "esta": {
+  "es": "en esta vida",
+  "en": "in this life"
+ },
+ "da": {
+  "es": "le da las gracias",
+  "en": "she thanks her"
+ },
+ "gracias": {
+  "es": "le da las gracias de verdad",
+  "en": "thanks her truly"
+ },
+ "verdad": {
+  "es": "de verdad",
+  "en": "truly"
+ },
+ "saber": {
+  "es": "sin saber bien por qué",
+  "en": "without quite knowing why"
+ },
+ "bien": {
+  "es": "sin saber bien por qué",
+  "en": "without quite knowing why"
+ },
+ "qué": {
+  "es": "sin saber bien por qué",
+  "en": "without quite knowing why"
+ },
+ "quédatelo": {
+  "es": "quédatelo tú",
+  "en": "keep it yourself"
+ },
+ "todavía": {
+  "es": "a ti todavía te funciona",
+  "en": "it still works for you"
+ },
+ "ti": {
+  "es": "a ti todavía te funciona",
+  "en": "it still works for you"
+ },
+ "funciona": {
+  "es": "todavía te funciona",
+  "en": "it still works for you"
+ },
+ "decide": {
+  "es": "decide",
+  "en": "she decides"
+ },
+ "guarda": {
+  "es": "paula lo guarda riéndose",
+  "en": "Paula puts it away laughing"
+ },
+ "riéndose": {
+  "es": "lo guarda riéndose",
+  "en": "puts it away laughing"
+ },
+ "antes": {
+  "es": "la vida de antes",
+  "en": "the life from before"
+ },
+ "era": {
+  "es": "era de otra talla",
+  "en": "was another size"
+ },
+ "peor": {
+  "es": "no era peor",
+  "en": "was not worse"
+ },
+ "otra": {
+  "es": "era de otra talla",
+  "en": "was another size"
+ },
+ "talla": {
+  "es": "era de otra talla",
+  "en": "was another size"
+ },
+ "viernes": {
+  "es": "el viernes hay mudanza",
+  "en": "Friday there is a move"
+ },
+ "hay": {
+  "es": "el viernes hay mudanza",
+  "en": "Friday there is a move"
+ },
+ "mudanza": {
+  "es": "el viernes hay mudanza",
+  "en": "Friday there is a move"
+ },
+ "tocará": {
+  "es": "a paula le tocará cargar",
+  "en": "Paula will get to carry"
+ },
+ "cargar": {
+  "es": "le tocará cargar",
+  "en": "will get to carry"
+ }
+}

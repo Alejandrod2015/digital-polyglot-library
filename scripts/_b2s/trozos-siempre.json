@@ -1,0 +1,394 @@
+{
+ "lo": {
+  "es": "lo de siempre",
+  "en": "the usual"
+ },
+ "de": {
+  "es": "lo de siempre",
+  "en": "the usual"
+ },
+ "siempre": {
+  "es": "lo de siempre",
+  "en": "the usual"
+ },
+ "es": {
+  "es": "pablo es el camarero",
+  "en": "Pablo is the barman"
+ },
+ "camarero": {
+  "es": "pablo es el camarero de abajo",
+  "en": "Pablo is the barman downstairs"
+ },
+ "abajo": {
+  "es": "el camarero de abajo",
+  "en": "the barman downstairs"
+ },
+ "y": {
+  "es": "y su barra",
+  "en": "and his counter"
+ },
+ "su": {
+  "es": "su barra",
+  "en": "his counter"
+ },
+ "barra": {
+  "es": "su barra es la otra sala",
+  "en": "his counter is the other room"
+ },
+ "otra": {
+  "es": "la otra sala de la peña",
+  "en": "the club's other room"
+ },
+ "sala": {
+  "es": "la otra sala de la peña",
+  "en": "the club's other room"
+ },
+ "peña": {
+  "es": "la otra sala de la peña",
+  "en": "the club's other room"
+ },
+ "baja": {
+  "es": "claudia baja cada mañana",
+  "en": "Claudia comes down every morning"
+ },
+ "cada": {
+  "es": "cada mañana",
+  "en": "every morning"
+ },
+ "mañana": {
+  "es": "cada mañana",
+  "en": "every morning"
+ },
+ "pide": {
+  "es": "pide su café",
+  "en": "orders her coffee"
+ },
+ "café": {
+  "es": "pide su café",
+  "en": "orders her coffee"
+ },
+ "en": {
+  "es": "en una mesa",
+  "en": "at a table"
+ },
+ "mesa": {
+  "es": "en una mesa",
+  "en": "at a table"
+ },
+ "a": {
+  "es": "a los fijos",
+  "en": "the regulars"
+ },
+ "fijos": {
+  "es": "a los fijos nadie les pregunta",
+  "en": "nobody questions the regulars"
+ },
+ "nadie": {
+  "es": "nadie les pregunta",
+  "en": "nobody asks them"
+ },
+ "les": {
+  "es": "nadie les pregunta",
+  "en": "nobody asks them"
+ },
+ "pregunta": {
+  "es": "nadie les pregunta",
+  "en": "nobody asks them"
+ },
+ "suyo": {
+  "es": "lo suyo llega solo",
+  "en": "their usual arrives by itself"
+ },
+ "llega": {
+  "es": "lo suyo llega solo",
+  "en": "their usual arrives by itself"
+ },
+ "solo": {
+  "es": "lo suyo llega solo",
+  "en": "their usual arrives by itself"
+ },
+ "esta": {
+  "es": "esta mañana",
+  "en": "this morning"
+ },
+ "huele": {
+  "es": "huele a churros",
+  "en": "it smells of churros"
+ },
+ "churros": {
+  "es": "huele a churros",
+  "en": "it smells of churros"
+ },
+ "hay": {
+  "es": "hay un sitio libre",
+  "en": "there is a free seat"
+ },
+ "sitio": {
+  "es": "un sitio libre en la barra",
+  "en": "a free seat at the counter"
+ },
+ "libre": {
+  "es": "un sitio libre",
+  "en": "a free seat"
+ },
+ "ocupa": {
+  "es": "claudia lo ocupa",
+  "en": "Claudia takes it"
+ },
+ "con": {
+  "es": "con el corazón tonto",
+  "en": "with a silly heart"
+ },
+ "corazón": {
+  "es": "el corazón tonto",
+  "en": "a silly heart"
+ },
+ "tonto": {
+  "es": "el corazón tonto",
+  "en": "a silly heart"
+ },
+ "o": {
+  "es": "o hoy tampoco te fías",
+  "en": "or do you still not trust"
+ },
+ "hoy": {
+  "es": "hoy tampoco te fías",
+  "en": "today you still do not trust"
+ },
+ "tampoco": {
+  "es": "hoy tampoco te fías",
+  "en": "today you still do not trust"
+ },
+ "te": {
+  "es": "te fías de mi máquina",
+  "en": "you trust my machine"
+ },
+ "fías": {
+  "es": "te fías de mi máquina",
+  "en": "you trust my machine"
+ },
+ "mi": {
+  "es": "de mi máquina",
+  "en": "of my machine"
+ },
+ "máquina": {
+  "es": "de mi máquina",
+  "en": "of my machine"
+ },
+ "primera": {
+  "es": "la primera vez",
+  "en": "the first time"
+ },
+ "vez": {
+  "es": "la primera vez",
+  "en": "the first time"
+ },
+ "que": {
+  "es": "que piensa volver",
+  "en": "that they mean to come back"
+ },
+ "alguien": {
+  "es": "alguien da su café por sabido",
+  "en": "someone takes her coffee as known"
+ },
+ "da": {
+  "es": "da su café por sabido",
+  "en": "takes her coffee as known"
+ },
+ "por": {
+  "es": "por sabido",
+  "en": "as known"
+ },
+ "sabido": {
+  "es": "da su café por sabido",
+  "en": "takes her coffee as known"
+ },
+ "orgullo": {
+  "es": "el orgullo le da hasta risa",
+  "en": "the pride even makes her laugh"
+ },
+ "le": {
+  "es": "le da hasta risa",
+  "en": "even makes her laugh"
+ },
+ "hasta": {
+  "es": "le da hasta risa",
+  "en": "even makes her laugh"
+ },
+ "risa": {
+  "es": "le da hasta risa",
+  "en": "even makes her laugh"
+ },
+ "no": {
+  "es": "que no me lo cambies",
+  "en": "do not change it on me"
+ },
+ "me": {
+  "es": "que no me lo cambies",
+  "en": "do not change it on me"
+ },
+ "cambies": {
+  "es": "que no me lo cambies nunca",
+  "en": "never change it on me"
+ },
+ "nunca": {
+  "es": "que no me lo cambies nunca",
+  "en": "never change it on me"
+ },
+ "confirma": {
+  "es": "confirma",
+  "en": "she confirms"
+ },
+ "como": {
+  "es": "como quien firma",
+  "en": "like someone signing"
+ },
+ "quien": {
+  "es": "como quien firma",
+  "en": "like someone signing"
+ },
+ "firma": {
+  "es": "como quien firma",
+  "en": "like someone signing"
+ },
+ "paga": {
+  "es": "paga el estreno",
+  "en": "pays for the debut"
+ },
+ "estreno": {
+  "es": "paga el estreno",
+  "en": "pays for the debut"
+ },
+ "así": {
+  "es": "así sabemos",
+  "en": "that way we know"
+ },
+ "sabemos": {
+  "es": "así sabemos",
+  "en": "that way we know"
+ },
+ "piensa": {
+  "es": "que piensa volver",
+  "en": "that they mean to come back"
+ },
+ "volver": {
+  "es": "que piensa volver",
+  "en": "that they mean to come back"
+ },
+ "explica": {
+  "es": "explica pablo",
+  "en": "Pablo explains"
+ },
+ "detrás": {
+  "es": "detrás",
+  "en": "behind her"
+ },
+ "discuten": {
+  "es": "dos fijos discuten",
+  "en": "two regulars argue"
+ },
+ "asunto": {
+  "es": "el asunto de ayer",
+  "en": "yesterday's business"
+ },
+ "ayer": {
+  "es": "el asunto de ayer",
+  "en": "yesterday's business"
+ },
+ "pues": {
+  "es": "pues ya era hora",
+  "en": "well, about time"
+ },
+ "ya": {
+  "es": "ya era hora",
+  "en": "about time"
+ },
+ "era": {
+  "es": "ya era hora",
+  "en": "about time"
+ },
+ "hora": {
+  "es": "ya era hora de llegar",
+  "en": "about time I arrived"
+ },
+ "llegar": {
+  "es": "ya era hora de llegar",
+  "en": "about time I arrived"
+ },
+ "contesta": {
+  "es": "contesta claudia",
+  "en": "Claudia answers"
+ },
+ "sabe": {
+  "es": "sabe mejor que nunca",
+  "en": "tastes better than ever"
+ },
+ "mejor": {
+  "es": "sabe mejor que nunca",
+  "en": "tastes better than ever"
+ },
+ "taza": {
+  "es": "su taza estará puesta",
+  "en": "her cup will be set out"
+ },
+ "estará": {
+  "es": "su taza estará puesta",
+  "en": "her cup will be set out"
+ },
+ "puesta": {
+  "es": "su taza estará puesta",
+  "en": "her cup will be set out"
+ },
+ "antes": {
+  "es": "antes de que ella empuje",
+  "en": "before she pushes"
+ },
+ "ella": {
+  "es": "antes de que ella empuje",
+  "en": "before she pushes"
+ },
+ "empuje": {
+  "es": "que ella empuje la puerta",
+  "en": "she pushes the door"
+ },
+ "puerta": {
+  "es": "empuje la puerta",
+  "en": "pushes the door"
+ },
+ "llena": {
+  "es": "con la barra llena",
+  "en": "with the counter full"
+ },
+ "levantan": {
+  "es": "los fijos levantan la vista",
+  "en": "the regulars look up"
+ },
+ "vista": {
+  "es": "levantan la vista un momento",
+  "en": "look up for a moment"
+ },
+ "momento": {
+  "es": "un momento",
+  "en": "for a moment"
+ },
+ "vuelven": {
+  "es": "vuelven a lo suyo",
+  "en": "go back to their own business"
+ },
+ "ronda": {
+  "es": "pide una ronda para los fijos",
+  "en": "orders a round for the regulars"
+ },
+ "para": {
+  "es": "una ronda para los fijos",
+  "en": "a round for the regulars"
+ },
+ "también": {
+  "es": "apúntame también la de mañana",
+  "en": "put tomorrow's on the tab too"
+ },
+ "apúntame": {
+  "es": "apúntame también la de mañana",
+  "en": "put tomorrow's on the tab too"
+ }
+}

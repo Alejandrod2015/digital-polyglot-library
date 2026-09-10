@@ -1,0 +1,434 @@
+{
+ "ronda": {
+  "es": "una ronda sin dueño",
+  "en": "a round with no owner"
+ },
+ "sin": {
+  "es": "una ronda sin dueño",
+  "en": "a round with no owner"
+ },
+ "dueño": {
+  "es": "una ronda sin dueño",
+  "en": "a round with no owner"
+ },
+ "nadie": {
+  "es": "nadie sabe quién paga",
+  "en": "nobody knows who pays"
+ },
+ "sabe": {
+  "es": "nadie sabe quién paga",
+  "en": "nobody knows who pays"
+ },
+ "quién": {
+  "es": "nadie sabe quién paga",
+  "en": "nobody knows who pays"
+ },
+ "paga": {
+  "es": "quién paga la primera ronda",
+  "en": "who pays for the first round"
+ },
+ "primera": {
+  "es": "la primera ronda del viernes",
+  "en": "the first round on Friday"
+ },
+ "del": {
+  "es": "la primera ronda del viernes",
+  "en": "the first round on Friday"
+ },
+ "viernes": {
+  "es": "la primera ronda del viernes",
+  "en": "the first round on Friday"
+ },
+ "y": {
+  "es": "y nadie pregunta",
+  "en": "and nobody asks"
+ },
+ "pregunta": {
+  "es": "y nadie pregunta",
+  "en": "and nobody asks"
+ },
+ "bajan": {
+  "es": "bajan con la peña",
+  "en": "come down with the club"
+ },
+ "con": {
+  "es": "con la peña",
+  "en": "with the club"
+ },
+ "peña": {
+  "es": "con la peña",
+  "en": "with the club"
+ },
+ "de": {
+  "es": "de buen humor",
+  "en": "in a good mood"
+ },
+ "buen": {
+  "es": "de buen humor",
+  "en": "in a good mood"
+ },
+ "humor": {
+  "es": "de buen humor",
+  "en": "in a good mood"
+ },
+ "agotados": {
+  "es": "agotados",
+  "en": "worn out"
+ },
+ "huelen": {
+  "es": "huelen a polvo de estanterías",
+  "en": "smell of shelving dust"
+ },
+ "a": {
+  "es": "huelen a polvo",
+  "en": "smell of dust"
+ },
+ "polvo": {
+  "es": "huelen a polvo de estanterías",
+  "en": "smell of shelving dust"
+ },
+ "estanterías": {
+  "es": "polvo de estanterías",
+  "en": "shelving dust"
+ },
+ "va": {
+  "es": "va poniendo vasos fríos",
+  "en": "keeps setting out cold glasses"
+ },
+ "poniendo": {
+  "es": "va poniendo vasos fríos",
+  "en": "keeps setting out cold glasses"
+ },
+ "vasos": {
+  "es": "vasos fríos",
+  "en": "cold glasses"
+ },
+ "fríos": {
+  "es": "vasos fríos",
+  "en": "cold glasses"
+ },
+ "tapa": {
+  "es": "una tapa de aceitunas",
+  "en": "a little dish of olives"
+ },
+ "aceitunas": {
+  "es": "una tapa de aceitunas",
+  "en": "a little dish of olives"
+ },
+ "que": {
+  "es": "sin que nadie los pida",
+  "en": "without anyone ordering them"
+ },
+ "pida": {
+  "es": "sin que nadie los pida",
+  "en": "without anyone ordering them"
+ },
+ "estas": {
+  "es": "estas las manda alguien",
+  "en": "someone sent these over"
+ },
+ "manda": {
+  "es": "estas las manda alguien",
+  "en": "someone sent these over"
+ },
+ "alguien": {
+  "es": "las manda alguien",
+  "en": "someone sent them"
+ },
+ "no": {
+  "es": "que no quiere nombre",
+  "en": "who wants no name"
+ },
+ "quiere": {
+  "es": "que no quiere nombre",
+  "en": "who wants no name"
+ },
+ "nombre": {
+  "es": "que no quiere nombre",
+  "en": "who wants no name"
+ },
+ "así": {
+  "es": "así que ni preguntes",
+  "en": "so do not even ask"
+ },
+ "ni": {
+  "es": "así que ni preguntes",
+  "en": "so do not even ask"
+ },
+ "preguntes": {
+  "es": "así que ni preguntes",
+  "en": "so do not even ask"
+ },
+ "anuncia": {
+  "es": "anuncia pablo",
+  "en": "Pablo announces"
+ },
+ "repartiendo": {
+  "es": "repartiendo posavasos",
+  "en": "handing out coasters"
+ },
+ "posavasos": {
+  "es": "repartiendo posavasos",
+  "en": "handing out coasters"
+ },
+ "mirada": {
+  "es": "pregunta con la mirada",
+  "en": "asks with her eyes"
+ },
+ "se": {
+  "es": "nadie se da por aludido",
+  "en": "nobody takes the hint"
+ },
+ "da": {
+  "es": "nadie se da por aludido",
+  "en": "nobody takes the hint"
+ },
+ "por": {
+  "es": "se da por aludido",
+  "en": "takes the hint"
+ },
+ "aludido": {
+  "es": "nadie se da por aludido",
+  "en": "nobody takes the hint"
+ },
+ "hay": {
+  "es": "hay sonrisas de reojo",
+  "en": "there are sideways smiles"
+ },
+ "sonrisas": {
+  "es": "sonrisas de reojo",
+  "en": "sideways smiles"
+ },
+ "reojo": {
+  "es": "sonrisas de reojo",
+  "en": "sideways smiles"
+ },
+ "hombros": {
+  "es": "hombros encogidos",
+  "en": "shrugged shoulders"
+ },
+ "encogidos": {
+  "es": "hombros encogidos",
+  "en": "shrugged shoulders"
+ },
+ "lo": {
+  "es": "se lo comenta a marcos",
+  "en": "she remarks on it to Marcos"
+ },
+ "comenta": {
+  "es": "se lo comenta a marcos",
+  "en": "she remarks on it to Marcos"
+ },
+ "día": {
+  "es": "el primer día",
+  "en": "on the first day"
+ },
+ "pagué": {
+  "es": "pagué la ronda para entrar",
+  "en": "I paid the round to get in"
+ },
+ "para": {
+  "es": "para entrar",
+  "en": "to get in"
+ },
+ "entrar": {
+  "es": "para entrar",
+  "en": "to get in"
+ },
+ "hoy": {
+  "es": "hoy ni sé",
+  "en": "today I do not even know"
+ },
+ "sé": {
+  "es": "ni sé a quién le debo",
+  "en": "I do not even know who I owe"
+ },
+ "le": {
+  "es": "a quién le debo el café",
+  "en": "who I owe the coffee to"
+ },
+ "debo": {
+  "es": "a quién le debo el café",
+  "en": "who I owe the coffee to"
+ },
+ "café": {
+  "es": "le debo el café",
+  "en": "I owe the coffee"
+ },
+ "eso": {
+  "es": "eso es ser de aquí",
+  "en": "that is being from here"
+ },
+ "es": {
+  "es": "eso es ser de aquí",
+  "en": "that is being from here"
+ },
+ "ser": {
+  "es": "eso es ser de aquí",
+  "en": "that is being from here"
+ },
+ "aquí": {
+  "es": "ser de aquí",
+  "en": "being from here"
+ },
+ "contesta": {
+  "es": "contesta marcos",
+  "en": "Marcos answers"
+ },
+ "chocando": {
+  "es": "chocando su vaso",
+  "en": "clinking his glass"
+ },
+ "vaso": {
+  "es": "chocando su vaso",
+  "en": "clinking his glass"
+ },
+ "cuenta": {
+  "es": "la cuenta exacta era la entrada",
+  "en": "the exact tab was the way in"
+ },
+ "exacta": {
+  "es": "la cuenta exacta",
+  "en": "the exact tab"
+ },
+ "era": {
+  "es": "era la entrada",
+  "en": "was the way in"
+ },
+ "entrada": {
+  "es": "era la entrada",
+  "en": "was the way in"
+ },
+ "perdida": {
+  "es": "la cuenta perdida es la casa",
+  "en": "the lost tab is home"
+ },
+ "casa": {
+  "es": "la cuenta perdida es la casa",
+  "en": "the lost tab is home"
+ },
+ "si": {
+  "es": "y si has sido tú",
+  "en": "what if it was you"
+ },
+ "has": {
+  "es": "y si has sido tú",
+  "en": "what if it was you"
+ },
+ "sido": {
+  "es": "y si has sido tú",
+  "en": "what if it was you"
+ },
+ "tú": {
+  "es": "y si has sido tú",
+  "en": "what if it was you"
+ },
+ "bajito": {
+  "es": "pregunta claudia, bajito",
+  "en": "Claudia asks, very quietly"
+ },
+ "yo": {
+  "es": "yo solo apunto",
+  "en": "I just write things down"
+ },
+ "solo": {
+  "es": "yo solo apunto",
+  "en": "I just write things down"
+ },
+ "apunto": {
+  "es": "yo solo apunto",
+  "en": "I just write things down"
+ },
+ "milagros": {
+  "es": "los milagros aquí son cosa de la casa",
+  "en": "miracles here are the house's business"
+ },
+ "son": {
+  "es": "son cosa de la casa",
+  "en": "are the house's business"
+ },
+ "cosa": {
+  "es": "son cosa de la casa",
+  "en": "are the house's business"
+ },
+ "muy": {
+  "es": "muy serio",
+  "en": "very serious"
+ },
+ "serio": {
+  "es": "muy serio",
+  "en": "very serious"
+ },
+ "guiña": {
+  "es": "le guiña un ojo",
+  "en": "winks an eye at her"
+ },
+ "ojo": {
+  "es": "le guiña un ojo",
+  "en": "winks an eye at her"
+ },
+ "desde": {
+  "es": "desde la otra punta",
+  "en": "from the far end"
+ },
+ "otra": {
+  "es": "desde la otra punta",
+  "en": "from the far end"
+ },
+ "punta": {
+  "es": "desde la otra punta",
+  "en": "from the far end"
+ },
+ "alza": {
+  "es": "claudia alza su vaso",
+  "en": "Claudia raises her glass"
+ },
+ "su": {
+  "es": "alza su vaso",
+  "en": "raises her glass"
+ },
+ "todos": {
+  "es": "a nadie y a todos",
+  "en": "to no one and everyone"
+ },
+ "calma": {
+  "es": "con una calma nueva",
+  "en": "with a new calm"
+ },
+ "nueva": {
+  "es": "con una calma nueva",
+  "en": "with a new calm"
+ },
+ "siguiente": {
+  "es": "la siguiente es mía",
+  "en": "the next one is on me"
+ },
+ "mía": {
+  "es": "la siguiente es mía",
+  "en": "the next one is on me"
+ },
+ "avisa": {
+  "es": "avisa",
+  "en": "she announces"
+ },
+ "bajar": {
+  "es": "sin bajar la voz",
+  "en": "without lowering her voice"
+ },
+ "voz": {
+  "es": "sin bajar la voz",
+  "en": "without lowering her voice"
+ },
+ "cierra": {
+  "es": "el viernes se cierra solo",
+  "en": "Friday closes by itself"
+ },
+ "como": {
+  "es": "como una cuenta que nadie lleva",
+  "en": "like a tab nobody keeps"
+ },
+ "lleva": {
+  "es": "una cuenta que nadie lleva",
+  "en": "a tab nobody keeps"
+ }
+}

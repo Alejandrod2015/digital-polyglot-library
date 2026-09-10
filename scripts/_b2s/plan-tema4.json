@@ -1,0 +1,34 @@
+{
+  "tipo": "Traveler",
+  "nivel": "b2",
+  "variante": "spain",
+  "registro": "de papel y tinta, con humor seco: las noticias del pueblo caben en un mostrador y las que duelen se guardan en una caja",
+  "espina": "al archivo de la pena le falta un ano entero; el kiosco de Hugo guarda lo que la pena decidio olvidar, y Claudia aprende que archivar tambien es elegir que se guarda",
+  "recursos": "subtexto de dialogo y narrador con opinion (B2), aforismo de personaje con cuentagotas (B2, uno en el tema), elipsis temporal (B2, el salto al jueves), simil simple (A2), causalidad explicita (A1)",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "encontrar la cronica del ano que falta en las cajas del archivo",
+      "impide": "Hugo, que guarda periodicos de todo, se cierra en seco justo con ese ano y aplaza la respuesta al jueves",
+      "cuesta": "tres dias de espera sin ninguna forma de acortarlos, con la pregunta abierta delante de toda la plaza",
+      "cambia": "descubre que el hueco del archivo no es un descuido: es un ano que le duele a alguien de carne y hueso",
+      "emocion": "curiosidad que se vuelve respeto cuando la respuesta suena a puerta cerrada; se ve cuando deja de insistir y en que la fecha va subrayada dos veces"
+    },
+    {
+      "slot": "2",
+      "quiere": "que alguien decida por ella que hacer con el ano malo",
+      "impide": "Hugo le planta la caja azul y le pasa la decision: decide tu lo que se guarda",
+      "cuesta": "su idea del archivo como maquina de no perder nada: renuncia a escanearlo todo y deja el resto de portadas fuera",
+      "cambia": "entiende que archivar es elegir y que elegir es cuidar: guarda dos portadas con una nota amable y deja descansar el resto",
+      "emocion": "el peso de decidir sobre heridas ajenas, que se afloja cuando Marcos le da la regla de la casa; se ve en que marca las dos portadas con una nota amable en vez de con una etiqueta"
+    },
+    {
+      "slot": "3",
+      "quiere": "escanear el ano malo a solas y cerrar el hueco del archivo",
+      "impide": "entre las portadas aparece una copla escrita a mano que nunca se canto, sin firma y con dos iniciales",
+      "cuesta": "la distancia comoda del archivero: la copla la obliga a llamar a una puerta con nombre y apellido",
+      "cambia": "el reveal: las iniciales son de Hugo; el kiosquero era de la pena y se fue el ano que los echaron; la copla entra en el archivo con autor y Hugo vuelve a entrar con ella",
+      "emocion": "ternura con cuidado de no romper nada; se ve cuando se la lleva al kiosco con el corazon en un puño y en que no lo dice como pregunta"
+    }
+  ]
+}

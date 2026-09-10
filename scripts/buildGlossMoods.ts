@@ -250,11 +250,39 @@ export async function moodsDeBundle(
   const capas = filas.filter((f) => f.slug !== "");
   const plana = global.glosses as Record<string, Entrada>;
 
+  // Las historias del paquete, con su VOCAB: hace falta antes de armar el
+  // indice de infinitivos (ver abajo) y despues para el texto de cada una.
+  const historias = (await prismaC.journeyStory.findMany({
+    where: { slug: { in: capas.map((c) => c.slug) } },
+    select: {
+      slug: true, title: true, text: true, vocab: true,
+      journey: { select: { language: true, variant: true } },
+    },
+  })).filter((s) => s.journey.language === global.language && s.journey.variant === global.variant);
+
   const infinitivos = new Set<string>(idioma === "spanish" ? Object.keys(IRREGULARES) : []);
   const FIN = idioma === "italian" ? /(are|ere|ire)$/ : idioma === "german" ? /(en|eln|ern)$/ : /(ar|er|ir|ír)$/;
   const TOK = idioma === "italian"
     ? /\b([a-zàèéìòù]{3,}(?:are|ere|ire))(?:si)?\b/g
     : /\b([a-záéíóúñãõçü]{2,}(?:ar|er|ir|ír))(?:se|me|te|nos)?\b/g;
+
+  // El VOCAB de la historia declara el par lema-forma (`word` es el infinitivo,
+  // `surface` la forma que sale en el texto), asi que es la fuente MAS fiable
+  // de infinitivos y hasta el 2026-09-08 no se miraba. Sin ella, una forma no
+  // indicativa cuya definicion no nombra su infinitivo entre parentesis era
+  // invisible: el usuario toco `aconsejaria` ("would advise", sin `(aconsejar)`)
+  // y la tarjeta salio sin tabla de conjugacion. El lint no lo veia porque
+  // reusa este mismo detector, asi que compartia el punto ciego. Eran 6 formas
+  // en el catalogo español (aconsejaria, supiera, pescara, cuadremos,
+  // desparramara, reemplazaran).
+  for (const s of historias) {
+    for (const v of ((s.vocab as Array<{ word?: unknown; type?: unknown }> | null) ?? [])) {
+      if (v?.type !== "verb") continue;
+      const lema = String(v?.word ?? "").trim().toLowerCase();
+      if (lema && FIN.test(lema)) infinitivos.add(lema);
+    }
+  }
+
   for (const fuente of [plana, ...capas.map((c) => c.glosses as Record<string, Entrada>)]) {
     for (const [k, v] of Object.entries(fuente)) {
       if (v?.t === "verb" && FIN.test(k)) infinitivos.add(k);
@@ -296,16 +324,7 @@ export async function moodsDeBundle(
   const idxCond = idioma === "spanish" ? mk(condicionalES) : new Map();
 
   const textos = new Map<string, string>();
-  {
-    const st = await prismaC.journeyStory.findMany({
-      where: { slug: { in: capas.map((c) => c.slug) } },
-      select: { slug: true, title: true, text: true, journey: { select: { language: true, variant: true } } },
-    });
-    for (const s of st) {
-      if (s.journey.language !== global.language || s.journey.variant !== global.variant) continue;
-      textos.set(s.slug, `${s.title}. ${s.text}`);
-    }
-  }
+  for (const s of historias) textos.set(s.slug, `${s.title}. ${s.text}`);
 
   const pendientes: Pendiente[] = [];
   for (const fila of capas) {

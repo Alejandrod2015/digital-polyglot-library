@@ -1,0 +1,414 @@
+{
+ "última": {
+  "es": "la última llave",
+  "en": "the last key"
+ },
+ "llave": {
+  "es": "la última llave",
+  "en": "the last key"
+ },
+ "mudanza": {
+  "es": "la mudanza amanece con poniente",
+  "en": "moving day dawns with a west wind"
+ },
+ "amanece": {
+  "es": "amanece con poniente",
+  "en": "dawns with a west wind"
+ },
+ "con": {
+  "es": "con poniente",
+  "en": "with a west wind"
+ },
+ "poniente": {
+  "es": "amanece con poniente",
+  "en": "dawns with a west wind"
+ },
+ "tal": {
+  "es": "tal y como estaba negociado",
+  "en": "exactly as negotiated"
+ },
+ "y": {
+  "es": "tal y como estaba negociado",
+  "en": "exactly as negotiated"
+ },
+ "como": {
+  "es": "tal y como estaba negociado",
+  "en": "exactly as negotiated"
+ },
+ "estaba": {
+  "es": "estaba negociado",
+  "en": "it was negotiated"
+ },
+ "negociado": {
+  "es": "estaba negociado",
+  "en": "it was negotiated"
+ },
+ "reparte": {
+  "es": "marcos reparte",
+  "en": "Marcos hands out boxes"
+ },
+ "entre": {
+  "es": "entre claudia y paula",
+  "en": "between Claudia and Paula"
+ },
+ "visita": {
+  "es": "de visita",
+  "en": "on a visit"
+ },
+ "que": {
+  "es": "que carga una caja",
+  "en": "who ends up carrying a box"
+ },
+ "carga": {
+  "es": "carga una caja en los brazos",
+  "en": "carries a box in her arms"
+ },
+ "caja": {
+  "es": "una caja en los brazos",
+  "en": "a box in her arms"
+ },
+ "brazos": {
+  "es": "en los brazos",
+  "en": "in her arms"
+ },
+ "descuido": {
+  "es": "al primer descuido",
+  "en": "at the first careless moment"
+ },
+ "esta": {
+  "es": "en esta casa",
+  "en": "in this house"
+ },
+ "casa": {
+  "es": "en esta casa",
+  "en": "in this house"
+ },
+ "mira": {
+  "es": "el que mira, carga",
+  "en": "whoever watches, carries"
+ },
+ "cena": {
+  "es": "el que carga, cena",
+  "en": "whoever carries, gets dinner"
+ },
+ "informa": {
+  "es": "le informa marcos",
+  "en": "Marcos informs her"
+ },
+ "le": {
+  "es": "le informa marcos",
+  "en": "Marcos informs her"
+ },
+ "teme": {
+  "es": "claudia teme",
+  "en": "Claudia fears"
+ },
+ "día": {
+  "es": "que el día suene a funeral",
+  "en": "that the day will sound like a funeral"
+ },
+ "suene": {
+  "es": "que el día suene a funeral",
+  "en": "that the day will sound like a funeral"
+ },
+ "funeral": {
+  "es": "suene a funeral",
+  "en": "sound like a funeral"
+ },
+ "suena": {
+  "es": "suena a peña subiendo y bajando",
+  "en": "it sounds like the club going up and down"
+ },
+ "peña": {
+  "es": "a peña subiendo y bajando",
+  "en": "like the club going up and down"
+ },
+ "subiendo": {
+  "es": "peña subiendo y bajando",
+  "en": "the club going up and down"
+ },
+ "bajando": {
+  "es": "peña subiendo y bajando",
+  "en": "the club going up and down"
+ },
+ "bromas": {
+  "es": "a bromas con eco",
+  "en": "like jokes with an echo"
+ },
+ "eco": {
+  "es": "bromas con eco en la escalera",
+  "en": "jokes echoing in the stairwell"
+ },
+ "escalera": {
+  "es": "con eco en la escalera",
+  "en": "echoing in the stairwell"
+ },
+ "nadie": {
+  "es": "nadie carga solo",
+  "en": "nobody carries alone"
+ },
+ "solo": {
+  "es": "nadie carga solo",
+  "en": "nobody carries alone"
+ },
+ "ni": {
+  "es": "ni un cajón",
+  "en": "not even one crate"
+ },
+ "cajón": {
+  "es": "ni un cajón",
+  "en": "not even one crate"
+ },
+ "local": {
+  "es": "el local se queda sin sillas",
+  "en": "the clubhouse is left without chairs"
+ },
+ "se": {
+  "es": "se queda sin sillas",
+  "en": "is left without chairs"
+ },
+ "queda": {
+  "es": "se queda sin sillas",
+  "en": "is left without chairs"
+ },
+ "sin": {
+  "es": "sin sillas y sin coplas",
+  "en": "without chairs and without songs"
+ },
+ "sillas": {
+  "es": "sin sillas y sin coplas",
+  "en": "without chairs and without songs"
+ },
+ "coplas": {
+  "es": "sin sillas y sin coplas",
+  "en": "without chairs and without songs"
+ },
+ "cierra": {
+  "es": "cierra tú",
+  "en": "you close it"
+ },
+ "tú": {
+  "es": "cierra tú",
+  "en": "you close it"
+ },
+ "clic": {
+  "es": "el último clic es tuyo",
+  "en": "the last click is yours"
+ },
+ "tuyo": {
+  "es": "el último clic es tuyo",
+  "en": "the last click is yours"
+ },
+ "ofrece": {
+  "es": "ofrece marcos",
+  "en": "Marcos offers"
+ },
+ "delante": {
+  "es": "delante del candado",
+  "en": "in front of the padlock"
+ },
+ "candado": {
+  "es": "delante del candado",
+  "en": "in front of the padlock"
+ },
+ "lo": {
+  "es": "lo cierra despacio",
+  "en": "closes it slowly"
+ },
+ "despacio": {
+  "es": "lo cierra despacio",
+  "en": "closes it slowly"
+ },
+ "oye": {
+  "es": "el clic se oye entero",
+  "en": "the click is heard whole"
+ },
+ "entero": {
+  "es": "se oye entero",
+  "en": "is heard whole"
+ },
+ "te": {
+  "es": "te lo dije el primer mes",
+  "en": "I told you the first month"
+ },
+ "dije": {
+  "es": "te lo dije el primer mes",
+  "en": "I told you the first month"
+ },
+ "mes": {
+  "es": "el primer mes",
+  "en": "the first month"
+ },
+ "final": {
+  "es": "al final te lo ibas a quedar",
+  "en": "in the end you were going to keep it"
+ },
+ "ibas": {
+  "es": "te lo ibas a quedar tú",
+  "en": "you were going to keep it"
+ },
+ "quedar": {
+  "es": "te lo ibas a quedar",
+  "en": "you were going to keep it"
+ },
+ "recuerda": {
+  "es": "recuerda marcos",
+  "en": "Marcos reminds her"
+ },
+ "poniéndoselo": {
+  "es": "poniéndoselo en la mano",
+  "en": "putting it in her hand"
+ },
+ "mano": {
+  "es": "poniéndoselo en la mano",
+  "en": "putting it in her hand"
+ },
+ "broma": {
+  "es": "la broma de entonces",
+  "en": "the joke from back then"
+ },
+ "entonces": {
+  "es": "la broma de entonces",
+  "en": "the joke from back then"
+ },
+ "vuelve": {
+  "es": "vuelve como regalo",
+  "en": "comes back as a gift"
+ },
+ "regalo": {
+  "es": "vuelve como regalo",
+  "en": "comes back as a gift"
+ },
+ "herida": {
+  "es": "con la herida ya curada",
+  "en": "with the wound now healed"
+ },
+ "ya": {
+  "es": "con la herida ya curada",
+  "en": "with the wound now healed"
+ },
+ "curada": {
+  "es": "la herida ya curada",
+  "en": "the wound now healed"
+ },
+ "aprieta": {
+  "es": "aprieta el candado",
+  "en": "squeezes the padlock"
+ },
+ "hasta": {
+  "es": "hasta que se le pasa el nudo",
+  "en": "until the lump passes"
+ },
+ "pasa": {
+  "es": "se le pasa el nudo",
+  "en": "the lump passes"
+ },
+ "nudo": {
+  "es": "se le pasa el nudo",
+  "en": "the lump in her throat passes"
+ },
+ "siempre": {
+  "es": "siempre son así las mudanzas",
+  "en": "are moves always like this"
+ },
+ "son": {
+  "es": "siempre son así las mudanzas",
+  "en": "are moves always like this"
+ },
+ "así": {
+  "es": "son así las mudanzas",
+  "en": "moves like this"
+ },
+ "mudanzas": {
+  "es": "son así las mudanzas",
+  "en": "moves like this"
+ },
+ "o": {
+  "es": "o me ha tocado la buena",
+  "en": "or did I get the good one"
+ },
+ "me": {
+  "es": "me ha tocado la buena",
+  "en": "I got the good one"
+ },
+ "ha": {
+  "es": "me ha tocado la buena",
+  "en": "I got the good one"
+ },
+ "tocado": {
+  "es": "me ha tocado la buena",
+  "en": "I got the good one"
+ },
+ "buena": {
+  "es": "me ha tocado la buena",
+  "en": "I got the good one"
+ },
+ "pregunta": {
+  "es": "pregunta paula",
+  "en": "asks Paula"
+ },
+ "sudada": {
+  "es": "sudada y contenta",
+  "en": "sweaty and happy"
+ },
+ "contenta": {
+  "es": "sudada y contenta",
+  "en": "sweaty and happy"
+ },
+ "cuando": {
+  "es": "cuando se muda una casa entera",
+  "en": "when a whole home moves"
+ },
+ "muda": {
+  "es": "se muda una casa entera",
+  "en": "a whole home moves"
+ },
+ "entera": {
+  "es": "una casa entera",
+  "en": "a whole home"
+ },
+ "contesta": {
+  "es": "contesta claudia",
+  "en": "Claudia answers"
+ },
+ "mirando": {
+  "es": "mirando el camión lleno",
+  "en": "looking at the full lorry"
+ },
+ "camión": {
+  "es": "el camión lleno",
+  "en": "the full lorry"
+ },
+ "lleno": {
+  "es": "el camión lleno",
+  "en": "the full lorry"
+ },
+ "dice": {
+  "es": "nadie dice adiós",
+  "en": "nobody says goodbye"
+ },
+ "adiós": {
+  "es": "nadie dice adiós",
+  "en": "nobody says goodbye"
+ },
+ "viejo": {
+  "es": "al local viejo",
+  "en": "to the old clubhouse"
+ },
+ "hace": {
+  "es": "no hace falta",
+  "en": "there is no need"
+ },
+ "falta": {
+  "es": "no hace falta",
+  "en": "there is no need"
+ },
+ "porque": {
+  "es": "porque nadie se queda atrás",
+  "en": "because nobody is left behind"
+ },
+ "atrás": {
+  "es": "nadie se queda atrás",
+  "en": "nobody is left behind"
+ }
+}

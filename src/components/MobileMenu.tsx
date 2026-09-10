@@ -153,27 +153,16 @@ export default function MobileMenu() {
                   My Library
                 </Link>
 
-                {plan === "free" && (
-                  <Link
-                    href="/story-of-the-week"
-                    onClick={() => setOpen(false)}
-                    className="inline-flex items-center gap-3 text-[var(--nav-text-muted)] hover:text-[var(--nav-text)]"
-                  >
-                    <BookMarked size={20} />
-                    Story of the Week
-                  </Link>
-                )}
-
-                {plan === "basic" && (
-                  <Link
-                    href="/story-of-the-day"
-                    onClick={() => setOpen(false)}
-                    className="inline-flex items-center gap-3 text-[var(--nav-text-muted)] hover:text-[var(--nav-text)]"
-                  >
-                    <BookMarked size={20} />
-                    Story of the Day
-                  </Link>
-                )}
+                {/* Una sola entrada: la semanal ya no existe y la del dia
+                    esta abierta a todo el mundo, hasta sin cuenta. */}
+                <Link
+                  href="/story-of-the-day"
+                  onClick={() => setOpen(false)}
+                  className="inline-flex items-center gap-3 text-[var(--nav-text-muted)] hover:text-[var(--nav-text)]"
+                >
+                  <BookMarked size={20} />
+                  Story of the Day
+                </Link>
 
                 {(plan === "free" || plan === "basic") && (
                   <Link

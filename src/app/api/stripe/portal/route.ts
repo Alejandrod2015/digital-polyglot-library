@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
     const user = await clerkClient.users.getUser(userId);
     const privateMetadata = user.privateMetadata as Record<string, unknown> | undefined;
     const plan = user.publicMetadata?.plan;
-    let entitlement: { source: "stripe" | "google_play" | "app_store" } | null = null;
+    let entitlement: { source: "stripe" | "google_play" | "app_store" | "comp" } | null = null;
     try {
       entitlement = await prisma.billingEntitlement.findUnique({
         where: { userId },
@@ -59,6 +59,15 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         {
           error: "This subscription is managed in the App Store.",
+        },
+        { status: 409 }
+      );
+    }
+
+    if (entitlement?.source === "comp") {
+      return NextResponse.json(
+        {
+          error: "Your premium access is a courtesy of the insider program; there is nothing to manage.",
         },
         { status: 409 }
       );

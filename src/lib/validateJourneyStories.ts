@@ -47,10 +47,12 @@ import rulesDoc from "../../docs/story-rules.json";
 import { renderedParagraphs } from "@/lib/readerParagraphs";
 import { isSpanishUpToLevel } from "@/lib/cefr/spanishLevels";
 import { esHuecoDelLexico } from "@/lib/cefr/spanishLexiconGaps";
+import { sueloDeNivel } from "@/lib/journeyVocabFloorBaseline";
 import { isPortugueseA1A2 } from "@/lib/cefr/portugueseA1A2";
 import { isItalianA1A2 } from "@/lib/cefr/italianA1A2";
 import { isGermanA1A2 } from "@/lib/cefr/germanA1A2";
 import { isFrenchA1A2 } from "@/lib/cefr/frenchA1A2";
+import { formasDeVerbo } from "./cefr/spanishConjugations";
 
 export type JourneyStoryInput = {
   slug: string;
@@ -71,6 +73,14 @@ export type JourneyCheck = {
    *  journey esta a medias. NO es un aprobado; se lista, no se calla. */
   status: "pass" | "fail" | "not-implemented" | "pending-set";
   detail?: string;
+  /** Magnitud comparable de la regla, para el trinquete de --no-regression.
+   *  Sin esto, una regla que se arregla POR ACUMULACION no se puede reparar a
+   *  plazos: el trinquete compara los slugs citados en el detalle, y en estas
+   *  reglas esa lista CAMBIA justo al arreglarlas (al bajar las cuatro peores
+   *  historias aparecen otras cuatro y se leen como infractoras nuevas).
+   *  `mejor` dice hacia donde se mejora: una media de color baja, un suelo de
+   *  nivel sube. */
+  magnitud?: { valor: number; mejor: "alta" | "baja" };
 };
 
 const QUOTE_OPEN = "“";
@@ -144,8 +154,11 @@ function castLegacy(stories: JourneyStoryInput[], lang = ""): string[] {
   // reparto pasaban sin medir nada, que es peor que fallar.
   const SOLO_PT = lang === "ES" || lang === "FR" || lang === "IT" ? "" : "|o|a|os|as|um|uma";
   const ART = new RegExp(
-    `\\b(der|die|das|den|dem|des|ein|eine|einen|einem|einer|zum|zur|im|am|beim|vom|` +
-    `le|la|les|un|une|du|el|los|las|il|lo|gli${SOLO_PT})\\s+$`, "i");
+    // (?<!\\p{L}) y no \\b: la frontera ASCII casaba el «o» FINAL de «então»
+    // como articulo y expulsaba del reparto a quien viniera detras (bug PT B1,
+    // 2026-09-06; mismo mal que el detector de presentaciones).
+    `(?<!\\p{L})(der|die|das|den|dem|des|ein|eine|einen|einem|einer|zum|zur|im|am|beim|vom|` +
+    `le|la|les|un|une|du|el|los|las|il|lo|gli${SOLO_PT})\\s+$`, "iu");
   // OJO: aqui van ARTICULOS, no preposiciones. Meter "de", "da", "no"... echa
   // del reparto a cualquiera que aparezca en "a mao de Rafaela" o "a filha da
   // Neide", que es media historia: el 2026-08-23 el reparto salio VACIO y el
@@ -169,13 +182,20 @@ function castLegacy(stories: JourneyStoryInput[], lang = ""): string[] {
     .map(([w]) => w);
 }
 
+/**
+ * OJO con los bordes de palabra (bug cazado por el chat del PT B1, 2026-09-06):
+ * \b junto a una letra acentuada NO casa, porque \w es ASCII. "é\b" estaba
+ * muerto en portugues, "nació\b" en espanol, y "${n}\b" fallaba con nombres
+ * como Óscar o José. Por eso los bordes pegados a texto que puede llevar
+ * acento van con (?<!\p{L}) y (?!\p{L}), que son \b de verdad en unicode.
+ */
 /** Las tres formas de presentacion aprobadas, en aleman. */
 const DET_DE = "(?:der|die|das|den|ein|eine|einen|einer|ihr|ihre|ihren|sein|seine|seinen)";
 const NUC_DE = "(?:[a-zäöüß]+\\s+){0,2}[A-ZÄÖÜ][a-zäöüß]+";
 const FORMAS_DE: Array<[string, (n: string) => RegExp]> = [
   ["aposicion", (n) => new RegExp(`${n},\\s+${DET_DE}\\s+${NUC_DE}`, "u")],
-  ["titulo y nombre", (n) => new RegExp(`(?:(?:Ihre?|Seine?)\\w*|[A-ZÄÖÜ][a-zäöüß]+s)\\s+\\w+\\s+${n}\\b`, "u")],
-  ["con sein", (n) => new RegExp(`\\b${n}\\s+ist\\s+(?:${DET_DE}\\s+)?${NUC_DE}`, "u")],
+  ["titulo y nombre", (n) => new RegExp(`(?:(?:Ihre?|Seine?)\\w*|[A-ZÄÖÜ][a-zäöüß]+s)\\s+\\w+\\s+${n}(?!\\p{L})`, "u")],
+  ["con sein", (n) => new RegExp(`(?<!\\p{L})${n}\\s+ist\\s+(?:${DET_DE}\\s+)?${NUC_DE}`, "u")],
 ];
 
 /**
@@ -193,8 +213,8 @@ const NUC_PT = "(?:[a-zà-ú]+\\s+){0,3}[a-zà-ú]+";
 const VERBO_SER_PT = "(?:é|foi|era|trabalha|trabalhou|vende|vendia|leva|levava|cuida|cuidava|pinta|pintava|desceu|mora|morava|abre|abria|serve|servia|senta|sentava|nasceu|estuda|estudava|pesca|pescava|sobe|subia)";
 const FORMAS_PT: Array<[string, (n: string) => RegExp]> = [
   ["aposicion", (n) => new RegExp(`${n},\\s+(?:um|uma)\\s+${NUC_PT}`, "iu")],
-  ["quem", (n) => new RegExp(`\\bQuem\\s+[a-zà-ú]+(?:\\s+[a-zà-ú]+)?\\s+é\\s+${n}\\b`, "iu")],
-  ["nombre y oficio", (n) => new RegExp(`\\b${n}\\s+(?:${VERBO_SER_PT})\\b`, "iu")],
+  ["quem", (n) => new RegExp(`\\bQuem\\s+[a-zà-ú]+(?:\\s+[a-zà-ú]+)?\\s+é\\s+${n}(?!\\p{L})`, "iu")],
+  ["nombre y oficio", (n) => new RegExp(`(?<!\\p{L})${n}\\s+(?:${VERBO_SER_PT})(?!\\p{L})`, "iu")],
 ];
 
 /**
@@ -209,7 +229,7 @@ const FORMAS_PT: Array<[string, (n: string) => RegExp]> = [
 const NUC_FR = "(?:[a-zà-ÿ']+\\s+){0,3}[a-zà-ÿ']+";
 const FORMAS_FR: Array<[string, (n: string) => RegExp]> = [
   ["aposicion", (n) => new RegExp(`${n},\\s+(?:un|une|le|la|l')\\s*${NUC_FR}`, "iu")],
-  ["s'appeler", (n) => new RegExp(`s'appelle\\s+${n}\\b`, "iu")],
+  ["s'appeler", (n) => new RegExp(`s'appelle\\s+${n}(?!\\p{L})`, "iu")],
   ["con etre", (n) => new RegExp(`\\b${n}\\s+est\\s+(?:un|une)\\s+${NUC_FR}`, "iu")],
 ];
 
@@ -236,8 +256,10 @@ const FORMAS_ES: Array<[string, (n: string) => RegExp]> = [
   // es el caso de libro y el detector lo daba por no presentado porque exigia
   // la coma pegada al nombre de pila (2026-09-01).
   ["aposicion", (n) => new RegExp(`${n}(?:\\s+[A-ZÁ-Ú][a-zá-úñ]+)?,\\s+(?:un|una|el|la)\\s+${NUC_ES}`, "iu")],
-  ["quien", (n) => new RegExp(`\\bQuien\\s+[a-zá-úüñ]+(?:\\s+[a-zá-úüñ]+){0,3}\\s+es\\s+${n}\\b`, "iu")],
-  ["nombre y oficio", (n) => new RegExp(`\\b${n}\\s+${VERBO_SER_ES}\\b`, "iu")],
+  // "es|era|fue": en pasado la presentacion es la misma ("Quien abria la puerta
+  // era Mireya"), y la forma hermana VERBO_SER_ES ya lo aceptaba (2026-09-10).
+  ["quien", (n) => new RegExp(`\\bQuien\\s+[a-zá-úüñ]+(?:\\s+[a-zá-úüñ]+){0,3}\\s+(?:es|era|fue)\\s+${n}(?!\\p{L})`, "iu")],
+  ["nombre y oficio", (n) => new RegExp(`(?<!\\p{L})${n}\\s+${VERBO_SER_ES}(?!\\p{L})`, "iu")],
 ];
 
 const FORMAS_POR_IDIOMA: Record<string, Array<[string, (n: string) => RegExp]>> = {
@@ -330,6 +352,9 @@ export function validateJourneyStories(
      *  mismo umbral de siempre (7), para que quien ya llamaba a este checker
      *  siga midiendo exactamente lo que medía. */
     conjuntoCompleto?: boolean;
+    /** Id del journey. Solo lo usa el suelo de nivel, para saber si este
+     *  journey tiene linea base congelada (src/lib/journeyVocabFloorBaseline). */
+    journeyId?: string | null;
     /** Tipo del journey (`typeSlug`: traveler, friends, expat...). Lo necesita
      *  `journey-vocab-worth-teaching`, que solo gatea a los Traveler: en los
      *  Friends la jerga coloquial ES el producto. Sin el, ese check mide e
@@ -361,9 +386,16 @@ export function validateJourneyStories(
   const enEspera = (detail?: string) =>
     `pendiente de conjunto: ${stories.length} historia(s) a la vista` +
     (detail ? ` · medida provisional: ${detail}` : "");
-  const pushSet = (id: string, label: string, ok: boolean, detail?: string) => {
-    if (!parcial) return push(id, label, ok, detail);
-    out.push({ id, label, status: "pending-set", detail: enEspera(ok ? undefined : detail) });
+  const pushSet = (
+    id: string, label: string, ok: boolean, detail?: string,
+    magnitud?: { valor: number; mejor: "alta" | "baja" },
+  ) => {
+    if (!parcial) {
+      push(id, label, ok, detail);
+      if (magnitud) out[out.length - 1].magnitud = magnitud;
+      return;
+    }
+    out.push({ id, label, status: "pending-set", detail: enEspera(ok ? undefined : detail), magnitud });
   };
   const noImplSet = (id: string, label: string, why: string) => {
     if (!parcial) return noImpl(id, label, why);
@@ -392,7 +424,7 @@ export function validateJourneyStories(
     const formas: string[] = [];
     const malos: string[] = [];
     for (const n of cast) {
-      const primera = stories.find((s) => new RegExp(`\\b${n}\\b`, "u").test(s.text));
+      const primera = stories.find((s) => new RegExp(`(?<!\\p{L})${n}(?!\\p{L})`, "u").test(s.text));
       if (!primera) continue;
       const t = primera.text;
       const forma = FORMAS.find(([, re]) => re(n).test(t));
@@ -706,29 +738,61 @@ export function validateJourneyStories(
     const textos = stories.map((s) => s.text.toLowerCase());
     const clave = (v: { word: string; surface?: string | null }) =>
       String(v.surface ?? v.word).toLowerCase().replace(/^(der|die|das|le|la|el|il|o|a)\s+/, "");
-    const encuentros = (v: { word: string; surface?: string | null }): number => {
+    const esEspanol = lang === "ES";
+    const encuentros = (v: { word: string; surface?: string | null; type?: string | null }): number => {
+      // Un VERBO se reencuentra en cualquiera de sus formas (2026-09-10). Se
+      // contaba por la superficie exacta, asi que al pasar un tema a pasado
+      // "se rinde" -> "se rindio" y "cobra" -> "cobro", y las plazas
+      // rendir/cobrar de OTRAS historias perdian su segundo encuentro aunque
+      // el lector viera el mismo verbo: el B2 latam empeoraba la cola solo por
+      // cambiar de tiempo. Se lematizan los dos lados, como pide
+      // feedback_lemmatize_both_sides. Solo en espanol: el generador de formas
+      // es de espanol, y aplicado a un verbo portugues contaria de mas.
+      if (esEspanol && String(v.type ?? "").toLowerCase() === "verb") {
+        const inf = String(v.word).toLowerCase().trim()
+          .replace(/^se\s+/, "").replace(/^(\p{L}+?(?:ar|er|ir))se$/u, "$1");
+        if (/(?:ar|er|ir)$/.test(inf)) {
+          const formas = formasDeVerbo(inf);
+          return cuerpos.filter((c) => [...formas].some((f) => c.has(f))).length;
+        }
+      }
       const k = clave(v);
       if (!k.includes(" ")) return cuerpos.filter((c) => c.has(k)).length;
       const lema = String(v.word).toLowerCase();
       return textos.filter((t) => t.includes(k) || t.includes(lema)).length;
     };
-    const todas: Array<{ n: number; anchor: boolean }> = [];
+    // `word` viaja aqui porque el mensaje de la cola NOMBRA las plazas que
+    // solo salen una vez. Sin ella, el `.map((x) => x.word)` de mas abajo no
+    // compila y el build de produccion cae entero en el typecheck.
+    const todas: Array<{ n: number; anchor: boolean; word: string }> = [];
     for (const s of stories) for (const v of s.vocab ?? [])
-      todas.push({ n: encuentros(v), anchor: Boolean((v as { anchor?: boolean }).anchor) });
+      todas.push({
+        n: encuentros(v),
+        anchor: Boolean((v as { anchor?: boolean }).anchor),
+        word: String((v as { surface?: string | null }).surface ?? v.word),
+      });
     const marca = todas.some((x) => x.anchor);
     if (!marca) {
       const media = todas.reduce((a, b) => a + b.n, 0) / todas.length;
       const unaVez = todas.filter((x) => x.n <= 1).length;
       pushSet("journey-vocab-recirculation", `Cada plaza de vocab se reencuentra (media ${suelo} o mas en ${level})`,
         media >= suelo,
-        `media ${media.toFixed(2)} encuentros por plaza (ideal 4, liston de los buenos ${suelo}) · ${unaVez}/${todas.length} salen una sola vez · sin marcar ancladas`);
+        `media ${media.toFixed(2)} encuentros por plaza (ideal 4, liston de los buenos ${suelo}) · ${unaVez}/${todas.length} salen una sola vez · sin marcar ancladas`,
+        // Declarada para el trinquete: aqui BAJAR la media es EMPEORAR. Sin
+        // esto journeyRatchet caia a leer "media N" como si bajar fuera mejorar.
+        { valor: media, mejor: "alta" });
     } else {
       const port = todas.filter((x) => !x.anchor);
       const anc = todas.filter((x) => x.anchor);
       const media = port.reduce((a, b) => a + b.n, 0) / (port.length || 1);
       const cuota = anc.length / todas.length;
       const pide = suelo;
-      const unaVez = port.filter((x) => x.n <= 1).length;
+      // Nombrar las de un solo encuentro (pedido del chat del PT B1,
+      // 2026-09-06): al borde del tope, la salida es tejer en el cuerpo LAS
+      // QUE SOLO SALEN UNA VEZ, no repetir las repetidas; sin la lista, el
+      // que arregla va a ciegas.
+      const solasLista = port.filter((x) => x.n <= 1).map((x) => x.word);
+      const unaVez = solasLista.length;
       const okMedia = media >= pide;
       const okCuota = cuota <= TOPE_ANCLADAS;
       const cola = port.length ? unaVez / port.length : 0;
@@ -741,7 +805,9 @@ export function validateJourneyStories(
         ` | ancladas: ${anc.length}/${todas.length} (${Math.round(cuota * 100)}%)` +
         ` | cola: ${unaVez}/${port.length} portables con un solo encuentro (${Math.round(cola * 100)}%` +
         `${topeCola === undefined ? ", sin liston medido para este nivel" : `, tope ${Math.round(topeCola * 100)}%`})` +
-        `${okCuota ? "" : `; pasan del ${Math.round(TOPE_ANCLADAS * 100)}%`}`);
+        `${unaVez ? ` | de un solo encuentro: ${solasLista.slice(0, 30).join(", ")}${solasLista.length > 30 ? "…" : ""}` : ""}` +
+        `${okCuota ? "" : `; pasan del ${Math.round(TOPE_ANCLADAS * 100)}%`}`,
+        { valor: media, mejor: "alta" });
     }
   }
 
@@ -778,7 +844,12 @@ export function validateJourneyStories(
   // que contaria una lista neutra, y el suelo sale MAS dificil, no mas facil.
   // Se remide contra el primer B1 de portugues publicado; la fila del
   // inventario lo lleva marcado.
-  if (level === "B1") {
+  // Desde el 2026-09-08 corre tambien en B2 y C1: el suelo solo miraba B1 y
+  // por eso el Traveler ES/spain B2 podia gastar el 68% de sus plazas en
+  // palabras de A1 sin que nadie dijera nada. Los C1 publicados pasan de
+  // sobra (70% y 81%), asi que no es una vara nueva para ellos, es la que ya
+  // cumplen.
+  if (["B1", "B2", "C1"].includes(level)) {
     const DENTRO_A1A2: Record<string, (w: string) => boolean> = {
       ES: (w) => isSpanishUpToLevel(w, "a2"),
       PT: isPortugueseA1A2,
@@ -786,13 +857,26 @@ export function validateJourneyStories(
       DE: isGermanA1A2,
       FR: isFrenchA1A2,
     };
-    const SUELO_NIVEL_B1 = 0.30;
+    // 0,60 desde el 2026-09-08 (antes 0,30). El 30% dejaba que DOS TERCIOS de
+    // las plazas fueran palabras que el alumno ya tiene: medido, el B1 latam
+    // gastaba 274 de 420 plazas en `agua`, `mesa`, `domingo`, `plato`,
+    // `puerta`. El usuario lo dijo entero: las plazas alimentan los
+    // ejercicios, asi que tienen que ser palabras que a ese nivel haya que
+    // aprender. Calibrado con el catalogo: los C1 publicados van a 70% y 81%,
+    // los cuatro drafts flojos a 28-32%, y el B2 latam ya reescrito a 67%.
+    // Se queda en 60 y no en 70 porque en B1 apretar mas empuja a plazas
+    // rebuscadas, que es el error contrario.
+    const SUELO_GENERAL = 0.60;
+    // Los journeys escritos contra el suelo viejo del 30% no pueden llegar al
+    // 60% sin reescribir su prosa (techo medido: 42-50%), asi que llevan su
+    // porcentaje congelado y solo pueden subir. Ver el fichero de la linea base.
+    const SUELO_NIVEL_B1 = sueloDeNivel(ctx.journeyId, SUELO_GENERAL);
     const dentro = DENTRO_A1A2[lang];
     if (!dentro) {
-      noImplSet("journey-vocab-level-floor", "Un journey B1 ensena vocabulario de B1",
+      noImplSet("journey-vocab-level-floor", `Un journey ${level} ensena vocabulario de su nivel`,
         `No hay lista A1/A2 de ${lang || "?"}, asi que no se puede saber que plaza esta por encima de A1/A2.`);
     } else if (!stories.some((s) => s.vocab && s.vocab.length)) {
-      noImplSet("journey-vocab-level-floor", "Un journey B1 ensena vocabulario de B1",
+      noImplSet("journey-vocab-level-floor", `Un journey ${level} ensena vocabulario de su nivel`,
         "Las historias llegaron sin vocab.");
     } else {
       let tot = 0;
@@ -803,11 +887,13 @@ export function validateJourneyStories(
       }
       const cuota = tot ? deNivel.length / tot : 0;
       pushSet("journey-vocab-level-floor",
-        `Un journey B1 ensena vocabulario de B1 (${Math.round(SUELO_NIVEL_B1 * 100)}% de las plazas por encima de A1/A2)`,
+        `Un journey ${level} ensena vocabulario de su nivel (${Math.round(SUELO_NIVEL_B1 * 100)}% de las plazas por encima de A1/A2)`,
         cuota >= SUELO_NIVEL_B1,
         `${deNivel.length}/${tot} plazas por encima de A1/A2 (${Math.round(cuota * 100)}%, suelo ${Math.round(SUELO_NIVEL_B1 * 100)}%)` +
-        ` · referencias medidas: ES spain b1 42%, ES latam b1 37%, PT brazil a1 2%` +
-        (deNivel.length ? ` · de nivel: ${deNivel.slice(0, 8).join(", ")}` : ""));
+        `${SUELO_NIVEL_B1 < SUELO_GENERAL ? ` · linea base congelada de este journey; el suelo general es ${Math.round(SUELO_GENERAL * 100)}%` : ""}` +
+        ` · referencias medidas: C1 publicados 70% y 81%, B2 latam 67%` +
+        (deNivel.length ? ` · de nivel: ${deNivel.slice(0, 8).join(", ")}` : ""),
+        { valor: cuota, mejor: "alta" });
     }
   }
 
@@ -883,7 +969,8 @@ export function validateJourneyStories(
       pushSet("journey-vocab-worth-teaching",
         `Cada plaza merece ensenarse (media ${TOPE_MEDIA} o menos de palabras fuera del lexico graduado)`,
         gateado ? media <= TOPE_MEDIA : true,
-        detalle);
+        detalle,
+        { valor: media, mejor: "baja" });
     }
   }
 
@@ -915,7 +1002,9 @@ export function validateJourneyStories(
     const declaradas = (rulesDoc.rules as Array<{ id: string; gate: string }>)
       .filter((r) => r.gate === "journey").map((r) => r.id);
     const implementadas = new Set(out.map((c) => c.id));
-    const sinCheck = declaradas.filter((id) => !implementadas.has(id) && !(id === "journey-a0-floor" && level !== "A0"));
+    const sinCheck = declaradas.filter((id) => !implementadas.has(id)
+      && !(id === "journey-a0-floor" && level !== "A0")
+      && !(id === "journey-vocab-level-floor" && level !== "B1"));
     push("journey-rules-inventory", "Toda regla de docs/story-rules.json tiene su check",
       sinCheck.length === 0,
       `Declaradas en docs/story-rules.json y sin implementar: ${sinCheck.join(", ")}`);
@@ -941,7 +1030,7 @@ export function validateJourneyStories(
     // la memoria ("valen las menciones, no hace falta que hable").
     const nombres = cast;
     const saleEn = (n: string) =>
-      stories.filter((s) => new RegExp(`\\b${n}\\b`, "u").test(s.text));
+      stories.filter((s) => new RegExp(`(?<!\\p{L})${n}(?!\\p{L})`, "u").test(s.text));
     const presencia = new Map(nombres.map((n) => [n, saleEn(n).length]));
     const total = stories.length;
     // FIJO = sale en mas de UN tema. La primera version lo definia por
@@ -1014,7 +1103,7 @@ export function validateJourneyStories(
       const fueraDeSuTema: string[] = [];
       for (const n of nombres) {
         if (fijos.includes(n)) continue;
-        const i0 = stories.findIndex((s) => new RegExp(`\\b${n}\\b`, "u").test(s.text));
+        const i0 = stories.findIndex((s) => new RegExp(`(?<!\\p{L})${n}(?!\\p{L})`, "u").test(s.text));
         // Si el detector de habla lo vio pero el de mencion no lo encuentra
         // (acentos, forma flexionada), no se puede decir de que tema es.
         if (i0 < 0) continue;
@@ -1044,7 +1133,7 @@ export function validateJourneyStories(
       // medio escribir; quien es fijo, no: el 2026-09-01, con dos temas de
       // siete, Leandro todavia no habia reaparecido fuera del suyo y el check
       // lo daba por intruso en la historia que protagoniza.
-      const enPrimera = nombres.filter((n) => new RegExp(`\\b${n}\\b`, "u").test(stories[0].text));
+      const enPrimera = nombres.filter((n) => new RegExp(`(?<!\\p{L})${n}(?!\\p{L})`, "u").test(stories[0].text));
       push("journey-cast-first-story-only-fixed", "La primera historia del journey no pasa de dos personajes",
         enPrimera.length <= 2,
         `${enPrimera.length} en la primera (${enPrimera.join(", ")}). La abre el reparto ` +

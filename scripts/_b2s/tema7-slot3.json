@@ -1,0 +1,123 @@
+[
+  {
+    "topic": "visits-and-old-friends",
+    "slotIndex": 3,
+    "title": "Una copla con su nombre",
+    "slug": "una-copla-con-su-nombre",
+    "arcType": "harmonic-close",
+    "synopsis": "El local nuevo estrena luz, biblioteca y archivo completo, y la peña estrena pared para el candado jubilado. Cuando los vasos ya están servidos, Marcos se sube a una silla, desdobla un papel escrito entre todos y cumple una promesa del primer mes: hay copla nueva, y viene con nombre. Esta vez Claudia no necesita apuntar nada.",
+    "text": "El local nuevo estrena luz y olor a pintura, con la biblioteca ya en su pared. Claudia guarda el archivo completo: todas las cajas hechas memoria. Marcos discute con media peña dónde cuelga el candado viejo.\n\n“Aquí, donde se vea desde la barra”, decide Marcos, y lo cuelga con dos clavos. El candado ya no cierra nada; ahora cuenta algo. A Claudia esa diferencia le parece el resumen del año.\n\nCon los vasos servidos, Marcos pide silencio subiéndose a una silla. “Hay copla nueva y viene con nombre; el que se pique, que se aguante”, anuncia, desdoblando un papel. Claudia tarda un verso en reconocerse.\n\nEl primer verso ya la retrata: “Vino de fuera con libreta y aprendió a pedir sin hablar”. La peña se ríe y la mira, y ella se deja querer. La peña canta el estribillo como si lo hubiera cantado siempre.\n\n“Me lo he ganado, entonces”, dice Claudia cuando acaba el aplauso. “Desde el primer día, pero en esta casa había que hacerte esperar”, contesta Marcos desde la silla. Esta vez Claudia no apunta nada: la copla ya se la sabe de memoria.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "pintura",
+        "definition": "Paint; the fresh smell of a just-finished room."
+      },
+      {
+        "type": "noun",
+        "word": "clavo",
+        "surface": "clavos",
+        "definition": "Nail; the metal pin that holds things on walls."
+      },
+      {
+        "type": "expression",
+        "word": "esta vez",
+        "definition": "This time; on this occasion, unlike all the others."
+      },
+      {
+        "type": "noun",
+        "word": "estribillo",
+        "definition": "Chorus; the repeated part everyone sings along to."
+      },
+      {
+        "type": "noun",
+        "word": "aplauso",
+        "definition": "Applause; hands clapping when something truly deserves it."
+      },
+      {
+        "type": "noun",
+        "word": "resumen",
+        "definition": "Summary; the whole year said in one image."
+      },
+      {
+        "type": "noun",
+        "word": "diferencia",
+        "definition": "Difference; the change between locking things and telling them."
+      },
+      {
+        "type": "verb",
+        "word": "estrenar",
+        "surface": "estrena",
+        "definition": "To use for the first time; to open something new."
+      },
+      {
+        "type": "verb",
+        "word": "subirse",
+        "surface": "subiéndose",
+        "definition": "To climb up onto something to be seen and heard."
+      },
+      {
+        "type": "verb",
+        "word": "desdoblar",
+        "surface": "desdoblando",
+        "definition": "To unfold a paper that was folded away."
+      },
+      {
+        "type": "verb",
+        "word": "retratar",
+        "surface": "retrata",
+        "definition": "To portray someone; to capture them in few words."
+      },
+      {
+        "type": "verb",
+        "word": "reconocerse",
+        "surface": "reconocerse",
+        "definition": "To recognise yourself inside someone else's words about you."
+      },
+      {
+        "type": "noun",
+        "word": "luz",
+        "definition": "Light; the brightness a freshly opened place shows off."
+      },
+      {
+        "type": "verb",
+        "word": "ganarse",
+        "surface": "he ganado",
+        "definition": "To earn something; to deserve it through what you did."
+      },
+      {
+        "type": "verb",
+        "word": "contar",
+        "surface": "cuenta",
+        "definition": "To tell; here, an object telling a story instead of locking."
+      },
+      {
+        "type": "adjective",
+        "word": "servido",
+        "surface": "servidos",
+        "definition": "Served, poured out; glasses ready and waiting on the table."
+      },
+      {
+        "type": "expression",
+        "word": "de memoria",
+        "definition": "By heart; known so well no notes are needed."
+      },
+      {
+        "type": "expression",
+        "word": "pedir silencio",
+        "surface": "pide silencio",
+        "definition": "To ask for quiet before speaking to everyone."
+      },
+      {
+        "type": "expression",
+        "word": "el que se pique",
+        "definition": "Whoever takes offence; a teasing warning before a joke."
+      },
+      {
+        "type": "expression",
+        "word": "hacerte esperar",
+        "definition": "To make you wait; delaying what you deserved."
+      }
+    ]
+  }
+]

@@ -404,6 +404,13 @@
       "source": "memory:project_voice_library_removals.md"
     },
     {
+      "id": "comms-claim-cites-ota-update",
+      "domain": "comms",
+      "rule": "Con expo-updates en la app, la prueba de iOS y Android del gate 6g cita el UUID de la ultima update del canal production, no solo la build de tienda",
+      "gate": "pre-comms-claim-guard.sh",
+      "source": "manual"
+    },
+    {
       "id": "feedback_announcement_must_be_live_everywhere",
       "domain": "comms",
       "rule": "Un correo que anuncia algo no sale hasta comprobar que eso se ve en web, iOS y Android; autorizado no es cierto",
@@ -414,7 +421,7 @@
       "id": "feedback_check_every_email_link",
       "domain": "comms",
       "rule": "Ningún correo se da por listo sin pedir cada uno de sus enlaces contra producción; el comprobador es scripts/checkEmailLinks.ts",
-      "gate": "pre-bash-guard.sh",
+      "gate": "scripts/checkEmailLinks.ts",
       "source": "memory:feedback_check_every_email_link.md"
     },
     {
@@ -838,13 +845,6 @@
       "source": "validator:src/lib/validateJourneyStories.ts"
     },
     {
-      "id": "journey-vocab-level-floor",
-      "domain": "journey",
-      "rule": "Un journey B1 ensena vocabulario de B1",
-      "gate": "src/lib/validateJourneyStories.ts#journey-vocab-level-floor",
-      "source": "validator:src/lib/validateJourneyStories.ts"
-    },
-    {
       "id": "journey-vocab-worth-teaching",
       "domain": "journey",
       "rule": "Cada plaza merece ensenarse",
@@ -994,8 +994,8 @@
     {
       "id": "topics-grounded",
       "domain": "journey",
-      "rule": "Cada tema cita una motivacion real escrita por un solicitante",
-      "gate": "process",
+      "rule": "Cada tema cita una motivacion real escrita por un solicitante; en un idioma con menos frases de proposito que temas, el porton admite el modo journey-level declarado (minimo 2 citas verbatim de 2 p...",
+      "gate": "pre-topic-guard.sh",
       "source": "story-rules:topics-grounded (project_topic_naming_rule)"
     },
     {
@@ -1431,6 +1431,13 @@
       "rule": "En el simulador de iOS la arroba sale como comilla; se resuelve pegando desde el portapapeles",
       "gate": "none",
       "source": "memory:project_simulator_hardware_keyboard_at_sign.md"
+    },
+    {
+      "id": "release-stage-measured",
+      "domain": "process",
+      "rule": "El plan de despliegue por etapas (docs/plan-despliegue-por-etapas.md) no se recuerda: se mide. checkReleaseReadiness detecta cada pieza en el repo, el JSON commiteado tiene que coincidir, y el digest semanal imprime etapa, disparador y piezas pendientes",
+      "gate": "npm run lint:release-readiness",
+      "source": "manual"
     },
     {
       "id": "rules-at-planning-stage",
@@ -1891,7 +1898,7 @@
       "id": "feedback_cultural_anchor_always_vocab",
       "domain": "vocab",
       "rule": "\"La palabra cultural ancla (mole, fonda, epazote…) SIEMPRE va en el vocab; nunca dejarla fuera por frecuencia. La banda puede extenderse a 30.\"",
-      "gate": "none",
+      "gate": "npm run lint:hard-rules",
       "source": "memory:feedback_cultural_anchor_always_vocab.md"
     },
     {
@@ -1930,9 +1937,16 @@
       "source": "memory:feedback_vocab_zero_overlap_across_journeys.md"
     },
     {
+      "id": "journey-vocab-level-floor",
+      "domain": "vocab",
+      "rule": "Un journey de nivel B1 ensena vocabulario de B1: al menos el 30% de sus plazas por encima de A1/A2 (suelo PROVISIONAL, remedir contra el primer B1 de portugues publicado)",
+      "gate": "src/lib/validateJourneyStories.ts#journey-vocab-level-floor",
+      "source": "story-rules:journey-vocab-level-floor (project_vocab_recirculation_ladder) + validator:src/lib/validateJourneyStories.ts"
+    },
+    {
       "id": "journey-vocab-recirculation",
       "domain": "vocab",
-      "rule": "Cada plaza de vocab se reencuentra: media de 2 apariciones o mas a lo largo del journey",
+      "rule": "Cada plaza de vocab se reencuentra: media de 2 apariciones o mas a lo largo del journey; el suelo de B1 (media 1,2 y cola 80%) es PROVISIONAL, remedir contra el primer B1 publicado y sustituir por...",
       "gate": "src/lib/validateJourneyStories.ts#journey-vocab-recirculation",
       "source": "story-rules:journey-vocab-recirculation (project_vocab_recirculation_ladder) + validator:src/lib/validateJourneyStories.ts"
     },
@@ -2044,7 +2058,7 @@
     {
       "id": "vocab-level-frequency",
       "domain": "vocab",
-      "rule": "vocab-level-frequency",
+      "rule": "Vocab matches B1 lexical frequency (PT, list)",
       "gate": "src/lib/validateGeneratedStory.ts#vocab-level-frequency",
       "source": "validator:src/lib/validateGeneratedStory.ts"
     },

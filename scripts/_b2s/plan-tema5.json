@@ -1,0 +1,34 @@
+{
+  "tipo": "Traveler",
+  "nivel": "b2",
+  "variante": "spain",
+  "registro": "a la intemperie y con el viento de personaje: los planes se escriben a lapiz y nadie se ofende",
+  "espina": "la mudanza necesita fecha y en esta ciudad las fechas se negocian con el levante; Claudia paga por fin su ronda pendiente y aprende a planear a la gaditana",
+  "recursos": "narrador con opinion (B2), aforismo de personaje con cuentagotas (B2, el refran de la azotea), elipsis temporal (B2, el salto al jueves del levante), simil simple (A2), causalidad explicita (A1)",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "organizar ella un plan para toda la pena y pagar la ronda anonima del viernes con una tarde de barco",
+      "impide": "su miedo a quedarse corta: cuenta cabezas, paga la senal sin mirar y necesita que todo salga perfecto",
+      "cuesta": "la senal del barco, pagada de una vez y sin factura pequena; el dinero del agradecimiento no se recupera",
+      "cambia": "la deuda alegre queda pagada: brinda por el que pago la ronda sin nombre y nadie confiesa, que es la respuesta de la casa",
+      "emocion": "orgullo de anfitriona con nervios de estreno; se ve cuando brinda mirando a todos y en que apunta la primera nube en la memoria y no en la libreta"
+    },
+    {
+      "slot": "2",
+      "quiere": "repetir la excursion para los que faltaron",
+      "impide": "el levante llega puntual y Alba no discute con el viento: barco amarrado y tarde aplazada sin fecha",
+      "cuesta": "la tarde de barco perdida, que no vuelve; la excursion pendiente se queda sin fecha",
+      "cambia": "el plan B en la azotea sale mejor que muchos planes A: contra el levante, azotea y paciencia, y Claudia baja despeinada y sin echar de menos el barco",
+      "emocion": "fastidio que se destensa en risa cuando la ciudad entera aguanta el mismo viento; se ve en que baja la ultima, despeinada y contenta"
+    },
+    {
+      "slot": "3",
+      "quiere": "fijar con Marcos la fecha de la mudanza, en boligrafo y por semanas, como en Vitoria",
+      "impide": "aqui una fecha se escribe a lapiz hasta oir el parte: el calendario manda poco y el levante mucho",
+      "cuesta": "su calendario por semanas, que se queda mudo en el fondo del bolso; la seguridad de la fecha fija no existe aqui",
+      "cambia": "el reframe del tema uno: nadie le daba fechas en su primera semana porque las fechas se negocian con el viento; no era desorden, era otra manera de contar el tiempo",
+      "emocion": "alivio de entender por fin la regla que la volvia loca; se ve cuando pregunta por el poniente ya en el idioma de la casa y guarda el lapiz como herramienta seria"
+    }
+  ]
+}

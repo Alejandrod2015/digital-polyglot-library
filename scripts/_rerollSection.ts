@@ -26,7 +26,7 @@
 import { config } from "dotenv";
 config({ path: ".env.local", quiet: true });
 config({ path: ".env", quiet: true });
-import { execFile } from "child_process";
+import { execFile, spawnSync } from "child_process";
 import { mkdtempSync, readFileSync, writeFileSync } from "fs";
 import { tmpdir } from "os";
 import path from "path";
@@ -66,6 +66,12 @@ async function main() {
   const index = Number(process.argv[3]);
   const takes = Number(arg("--takes", "3"));
   const tempo = Number(arg("--tempo", String(DEFAULT_NARRATION_TEMPO)));
+  // VELOCIDAD NATIVA (2026-09-08). Cuando el problema es que el parrafo salio
+  // disparado, se re-sintetiza mas despacio, no se estira despues: `atempo`
+  // sobre una toma buena se oye (paso en los-changarines con un 14%). ElevenLabs
+  // acepta `speed` entre 0,7 y 1,2; el catalogo narra a 0,9.
+  const speed = Number(arg("--speed", String(DEFAULT_VOICE_SETTINGS.speed)));
+  if (speed < 0.7 || speed > 1.2) throw new Error("--speed fuera de rango (0.7 a 1.2)");
   const apply = process.argv.includes("--apply");
   // `--use-candidate` empalma el candidato que YA está en disco, sin sintetizar
   // otro.
@@ -106,26 +112,35 @@ async function main() {
   // de lo que dura. Las tomas nuevas sonaban limpias por separado; era el
   // corte lo que rompía.
   //
-  // Antes de gastar una sola llamada de TTS, se compara la duración real del
-  // máster con el final del último fragmento. Si no cuadran, se aborta: mejor
-  // no corregir que dejarlo peor.
+  // Antes de gastar una sola llamada de TTS se comprueba que las DOS FRONTERAS
+  // DE ESTE FRAGMENTO caen en silencio del máster. Antes se comparaba la
+  // duración del máster con el final del último fragmento, y ese número mide
+  // otra cosa: la COLA DE SILENCIO del máster. Toda historia recién narrada
+  // trae ahí un segundo largo, así que el guard bloqueaba en seco arreglos
+  // perfectamente seguros (2026-09-09, `no-voy-a-llegar-tarde`) mientras dejaba
+  // pasar fronteras desplazadas en mitad del audio, que es el defecto real.
+  // Lo definitivo lo comprueba `assertCorteEnSilencio` dentro del empalme; esto
+  // es el mismo criterio adelantado, para no pagar el TTS de un corte que
+  // luego se va a rechazar.
   {
-    const { stdout: durOut } = await execFileAsync("ffprobe", [
-      "-v", "error", "-show_entries", "format=duration", "-of", "default=nw=1:nk=1", story.audioUrl!,
-    ]);
-    const masterDur = Number(durOut);
-    const lastEnd = Math.max(...frags.map((f) => Number(f.endSec)));
-    const drift = masterDur - lastEnd;
-    if (Number.isFinite(masterDur) && Math.abs(drift) > 0.3) {
+    const r = spawnSync("ffmpeg", ["-i", story.audioUrl!, "-af", "silencedetect=noise=-35dB:d=0.12", "-f", "null", "-"], { encoding: "utf8" });
+    const sils: Array<[number, number]> = [];
+    let ini: number | null = null;
+    for (const m of String(r.stderr ?? "").matchAll(/silence_(start|end): ([0-9.]+)/g)) {
+      if (m[1] === "start") ini = Number(m[2]);
+      else if (ini !== null) { sils.push([ini, Number(m[2])]); ini = null; }
+    }
+    const dentro = (t: number) => sils.some(([a, b]) => t >= a - 0.08 && t <= b + 0.08);
+    const malas = ([["inicio", Number(frag.startSec)], ["final", Number(frag.endSec)]] as Array<[string, number]>)
+      .filter(([, t]) => t > 0.05 && !dentro(t));
+    if (sils.length && malas.length) {
       throw new Error(
-        `OFFSETS DESFASADOS: el máster dura ${masterDur.toFixed(2)}s y el último fragmento acaba en ` +
-        `${lastEnd.toFixed(2)}s (desfase ${drift.toFixed(2)}s). Los tiempos guardados no describen ESTE audio, ` +
-        `así que el corte caería fuera del silencio y partiría una palabra por la mitad. Es lo que dejó ` +
-        `restos "l--" / "n--" / "tas--" en siete historias el 2026-08-17. Re-mide los fragmentos contra el ` +
-        `máster actual antes de re-tirar (scripts/_remeasureFragments.ts).`
+        `FRONTERA SOBRE VOZ: ${malas.map(([q, t]) => `${q} ${t.toFixed(2)}s`).join(", ")} del fragmento ${index}. ` +
+        `Cortar ahí partiría una palabra o dejaría cola de la toma vieja, que es lo que dejó restos "l--" / ` +
+        `"n--" / "tas--" en siete historias el 2026-08-17. Re-mide primero: scripts/_remeasureFragments.ts.`
       );
     }
-    console.log(`offsets  desfase ${drift.toFixed(2)}s frente al máster (tolerancia 0.30s) ✓`);
+    console.log(`fronteras del fragmento ${index} en silencio ✓ (${sils.length} silencios en el máster)`);
   }
 
   const apiKey = process.env.ELEVENLABS_API_KEY;
@@ -149,6 +164,7 @@ async function main() {
   console.log(`fragment [${index}] voice=${frag.voiceId} span=${spanSec.toFixed(2)}s en el máster`);
   console.log(`texto    ${ttsText.slice(0, 90)}${ttsText.length > 90 ? "…" : ""}`);
   console.log(`tempo    ${tempo} (se aplica al take nuevo para igualar el máster)`);
+  console.log(`speed    ${speed} (velocidad nativa de la voz)`);
   console.log(`takes    hasta ${takes}, gate F0 statement, umbral +${UPTALK_ST} st\n`);
 
   const dir = mkdtempSync(path.join(tmpdir(), "reroll-"));
@@ -161,7 +177,7 @@ async function main() {
       body: JSON.stringify({
         text: softenPunctuationForTts(ttsText),
         model_id: "eleven_multilingual_v2",
-        voice_settings: DEFAULT_VOICE_SETTINGS,
+        voice_settings: { ...DEFAULT_VOICE_SETTINGS, speed },
         next_text: " ", // seam-breath suppression, disableStitching parity
       }),
     });

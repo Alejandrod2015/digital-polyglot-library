@@ -1,0 +1,364 @@
+[
+  {
+    "topic": "news-and-headlines",
+    "slotIndex": 1,
+    "title": "El año que falta",
+    "slug": "el-ano-que-falta",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "Contando cajas, Claudia descubre que al archivo le falta un año entero, y el hombre que guarda periódicos de todo se cierra en seco justo con ese año. Hugo aplaza la respuesta al jueves y baja la persiana a media tarde, y ella se queda con tres días por delante y la primera pista de que el hueco no es un descuido.",
+    "text": "Claudia es la primera en notarlo, contando cajas: al archivo le falta un año entero. Quien más sabe es Hugo, el del kiosco, que guarda periódicos como otros guardan sellos. El kiosco huele a papel recién llegado.\n\n“¿Guardas también los atrasados, aunque sean de hace mucho?”, pregunta Claudia, con la fecha subrayada dos veces. Hugo mira la fecha y tarda en contestar. “De ese año no queda nada, y no porque se agotara; ese año aquí no hubo periódico”, corta, seco.\n\n“Solo busco lo que le falta a la peña”, explica Claudia. “Ya lo sé; por eso mismo”, contesta Hugo, y empieza a recoger montones aunque es mediodía. La respuesta suena a puerta cerrada.\n\n“Vuelve el jueves a primera hora y pregunta por la caja azul”, suelta al fin, sin mirarla. Luego baja la persiana a media tarde, cosa que nadie le había visto hacer. La plaza entera se queda con la palabra en la boca.\n\nClaudia vuelve al archivo con más preguntas que papeles. El año perdido existe y le duele a alguien más que a las cajas. Al jueves le faltan tres días y a ella la paciencia.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "kiosco",
+        "definition": "Newsstand; the small street stall that sells the papers."
+      },
+      {
+        "type": "noun",
+        "word": "sello",
+        "surface": "sellos",
+        "definition": "Stamp; the small collectable kind people keep in albums."
+      },
+      {
+        "type": "noun",
+        "word": "fecha",
+        "definition": "Date; the day, month and year written down."
+      },
+      {
+        "type": "noun",
+        "word": "persiana",
+        "definition": "Metal shutter a shop rolls down when it closes."
+      },
+      {
+        "type": "noun",
+        "word": "montón",
+        "surface": "montones",
+        "definition": "Pile, heap; many papers stacked up without much order."
+      },
+      {
+        "type": "noun",
+        "word": "respuesta",
+        "definition": "Answer; what comes back when you ask a question."
+      },
+      {
+        "type": "verb",
+        "word": "subrayar",
+        "surface": "subrayada",
+        "definition": "To underline something so it stands out on the page."
+      },
+      {
+        "type": "verb",
+        "word": "agotarse",
+        "surface": "se agotara",
+        "definition": "To sell out; when no copies are left to buy."
+      },
+      {
+        "type": "verb",
+        "word": "tardar",
+        "surface": "tarda",
+        "definition": "To take time; to be slow in doing something."
+      },
+      {
+        "type": "verb",
+        "word": "doler",
+        "surface": "duele",
+        "definition": "To hurt; to cause pain that has not healed."
+      },
+      {
+        "type": "verb",
+        "word": "faltar",
+        "surface": "falta",
+        "definition": "To be missing; to not be where it should be."
+      },
+      {
+        "type": "adjective",
+        "word": "atrasado",
+        "surface": "atrasados",
+        "definition": "Back-dated; old issues kept after their day has passed."
+      },
+      {
+        "type": "adjective",
+        "word": "seco",
+        "definition": "Dry, curt; an answer with no warmth in it."
+      },
+      {
+        "type": "adjective",
+        "word": "perdido",
+        "definition": "Lost; missing for so long that nobody expects it back."
+      },
+      {
+        "type": "expression",
+        "word": "a primera hora",
+        "definition": "First thing in the morning, as soon as it opens."
+      },
+      {
+        "type": "expression",
+        "word": "con la palabra en la boca",
+        "definition": "Left mid-sentence; cut off before you could finish speaking."
+      },
+      {
+        "type": "expression",
+        "word": "a media tarde",
+        "definition": "In the middle of the afternoon, earlier than expected."
+      },
+      {
+        "type": "expression",
+        "word": "por eso mismo",
+        "definition": "For that very reason; precisely because of that."
+      },
+      {
+        "type": "expression",
+        "word": "al fin",
+        "definition": "Finally, at last, after making someone wait for it."
+      },
+      {
+        "type": "expression",
+        "word": "sonar a",
+        "surface": "suena a",
+        "definition": "To sound like; to give the impression of something."
+      }
+    ]
+  },
+  {
+    "topic": "news-and-headlines",
+    "slotIndex": 2,
+    "title": "Decide tú",
+    "slug": "decide-tu",
+    "arcType": "reframe-turn",
+    "synopsis": "El jueves no trae respuestas, trae una caja azul y una orden incómoda: que decida ella lo que se guarda. Las portadas del año malo cuentan la venta del primer local y una peña partida en dos, y Marcos remata la regla de la casa. Claudia creía que archivar era no perder nada; descubre que es elegir, y que elegir también es cuidar.",
+    "text": "Su caja azul espera el jueves sobre el mostrador de Hugo. “Decide tú lo que se guarda; yo ya decidí una vez y mira”, dice Hugo, y aparta la vista. Claudia la abre como quien abre una herida pequeña.\n\nDentro hay periódicos doblados, recortes sueltos y un olor a húmedo. Son las portadas del año que falta, con la peña partida en dos bandos. Los titulares no gritan; señalan.\n\nMarcos, en el bar, confirma la venta del primer local sin adornos. “Aquel año nos quedamos sin casa y sin ánimo de cantar; el archivo calló porque nosotros callamos”, cuenta, con el vaso quieto. “Guardamos lo que nos deja dormir”, remata.\n\nClaudia entendía el archivo como una máquina de no perder nada. Ahora ve el otro lado: también es una mano que elige, y elegir es cuidar. Deja el año malo dentro, pero marca dos portadas con una nota amable.\n\n“Estas dos entran, para que el susto no se repita; el resto descansa”, propone a Marcos por la tarde. Marcos lee la nota y asiente dos veces. El archivo, por primera vez, le parece una casa y no un almacén.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "recorte",
+        "surface": "recortes",
+        "definition": "Clipping; a piece cut out of a newspaper and kept."
+      },
+      {
+        "type": "noun",
+        "word": "portada",
+        "surface": "portadas",
+        "definition": "Front page; the face a newspaper shows the street."
+      },
+      {
+        "type": "noun",
+        "word": "titular",
+        "surface": "titulares",
+        "definition": "Headline; the big line that sums up the news."
+      },
+      {
+        "type": "noun",
+        "word": "bando",
+        "surface": "bandos",
+        "definition": "Side, camp; one of two groups in a quarrel."
+      },
+      {
+        "type": "noun",
+        "word": "venta",
+        "definition": "Sale; the act of selling something that mattered."
+      },
+      {
+        "type": "noun",
+        "word": "susto",
+        "definition": "Scare, fright; a shock that leaves a mark behind."
+      },
+      {
+        "type": "noun",
+        "word": "almacén",
+        "definition": "Warehouse; a building where things are only stored."
+      },
+      {
+        "type": "noun",
+        "word": "herida",
+        "definition": "Wound; damage that still hurts when you touch it."
+      },
+      {
+        "type": "verb",
+        "word": "callar",
+        "surface": "calló",
+        "definition": "To go quiet; to choose not to speak about something."
+      },
+      {
+        "type": "verb",
+        "word": "marcar",
+        "surface": "marca",
+        "definition": "To mark something so it can be found again later."
+      },
+      {
+        "type": "verb",
+        "word": "asentir",
+        "surface": "asiente",
+        "definition": "To nod; to agree with a movement of the head."
+      },
+      {
+        "type": "verb",
+        "word": "repetirse",
+        "surface": "se repita",
+        "definition": "To happen again; something you hope never comes back."
+      },
+      {
+        "type": "verb",
+        "word": "apartar",
+        "surface": "aparta",
+        "definition": "To turn something away, like your eyes from a box."
+      },
+      {
+        "type": "verb",
+        "word": "gritar",
+        "surface": "gritan",
+        "definition": "To shout; to say something with too much force."
+      },
+      {
+        "type": "verb",
+        "word": "cuidar",
+        "definition": "To look after; to handle something with care."
+      },
+      {
+        "type": "adjective",
+        "word": "amable",
+        "definition": "Kind, gentle; written to soothe and not to wound."
+      },
+      {
+        "type": "adjective",
+        "word": "partido",
+        "surface": "partida",
+        "definition": "Split, divided; broken into two halves that were one."
+      },
+      {
+        "type": "expression",
+        "word": "sin adornos",
+        "definition": "Plainly, without decorating the truth in any way."
+      },
+      {
+        "type": "expression",
+        "word": "por primera vez",
+        "definition": "For the first time ever, never before now."
+      },
+      {
+        "type": "expression",
+        "word": "el otro lado",
+        "definition": "The other side; the part you had not seen."
+      }
+    ]
+  },
+  {
+    "topic": "news-and-headlines",
+    "slotIndex": 3,
+    "title": "Una copla sin cantar",
+    "slug": "una-copla-sin-cantar",
+    "arcType": "late-reveal",
+    "synopsis": "A solas con el año malo, Claudia encuentra entre dos portadas una copla escrita a mano que nunca llegó a cantarse: pide perdón sin decir la palabra, y al pie solo hay una fecha y dos iniciales. Cuando por fin la pone delante de su autor, el kiosco y la peña resultan ser la misma historia partida en dos.",
+    "text": "Aunque es sábado, Claudia baja sola a escanear el año malo. La luz entra de lado y dibuja el polvo en el aire. Trabaja con el respeto de las cosas ajenas.\n\nEntre dos portadas de la caja de Hugo aparece una copla a mano, con tachones y sin firma. Pide perdón sin nombrar la palabra. Nadie la cantó nunca; se nota en lo limpio del doblez.\n\n“El local se fue y nosotros nos fuimos detrás de él”, lee Claudia en un verso. Habla de amigos que dejaron de hablarse. Al pie hay una fecha y dos iniciales torcidas.\n\nSe la lleva a Hugo con el corazón en un puño y la pone delante, entre dos revistas. “¿Y esto de dónde ha salido?”, pregunta Hugo, que lo sabe. Se queda quieto, como si el papel pesara.\n\n“Las iniciales son tuyas, y la letra también”, dice Claudia, y no es una pregunta. “La escribí el año que nos echaron, y no la canté porque ya no había con quién”, admite Hugo. “Pues cántala este año, que ya toca”, contesta ella, y el lunes la copla entra en el archivo con autor.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "verso",
+        "definition": "Line of a song or poem, one row of words."
+      },
+      {
+        "type": "verb",
+        "word": "llevarse",
+        "surface": "se la lleva",
+        "definition": "To take something along with you to another place."
+      },
+      {
+        "type": "noun",
+        "word": "aire",
+        "definition": "Air; the space where dust floats in the light."
+      },
+      {
+        "type": "noun",
+        "word": "inicial",
+        "surface": "iniciales",
+        "definition": "Initial; the first letter standing for a name."
+      },
+      {
+        "type": "noun",
+        "word": "respeto",
+        "definition": "Respect; careful regard for something that deserves it."
+      },
+      {
+        "type": "noun",
+        "word": "autor",
+        "definition": "Author; the person who actually wrote the words."
+      },
+      {
+        "type": "noun",
+        "word": "revista",
+        "surface": "revistas",
+        "definition": "Magazine; the glossy weekly kind a newsstand sells."
+      },
+      {
+        "type": "verb",
+        "word": "pesar",
+        "surface": "pesara",
+        "definition": "To weigh; to feel heavy in the hand or the heart."
+      },
+      {
+        "type": "verb",
+        "word": "notarse",
+        "surface": "se nota",
+        "definition": "To show; to be visible without anyone saying it."
+      },
+      {
+        "type": "verb",
+        "word": "nombrar",
+        "definition": "To name; to say a word out loud at last."
+      },
+      {
+        "type": "verb",
+        "word": "dibujar",
+        "surface": "dibuja",
+        "definition": "To draw; here, light sketching shapes in the dust."
+      },
+      {
+        "type": "adjective",
+        "word": "ajeno",
+        "surface": "ajenas",
+        "definition": "Belonging to others; not yours to handle carelessly."
+      },
+      {
+        "type": "adjective",
+        "word": "limpio",
+        "definition": "Clean, untouched; a fold never worn by use."
+      },
+      {
+        "type": "adjective",
+        "word": "torcido",
+        "surface": "torcidas",
+        "definition": "Crooked, slanted; written with an unsteady, hurried hand."
+      },
+      {
+        "type": "adverb",
+        "word": "delante",
+        "definition": "In front of someone, placed right before their eyes."
+      },
+      {
+        "type": "expression",
+        "word": "a mano",
+        "definition": "By hand; handwritten rather than printed by machine."
+      },
+      {
+        "type": "expression",
+        "word": "al pie",
+        "definition": "At the bottom of the page or text."
+      },
+      {
+        "type": "expression",
+        "word": "de lado",
+        "definition": "Sideways, at an angle rather than straight on."
+      },
+      {
+        "type": "expression",
+        "word": "dejar de",
+        "surface": "dejaron de",
+        "definition": "To stop doing something that used to be normal."
+      },
+      {
+        "type": "expression",
+        "word": "con el corazón en un puño",
+        "definition": "With your heart in your fist; tense with worry."
+      }
+    ]
+  }
+]

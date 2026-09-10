@@ -1,0 +1,434 @@
+{
+ "aquí": {
+  "es": "aquí se apunta",
+  "en": "here it goes on the slate"
+ },
+ "se": {
+  "es": "aquí se apunta",
+  "en": "here it goes on the slate"
+ },
+ "apunta": {
+  "es": "aquí se apunta",
+  "en": "here it goes on the slate"
+ },
+ "cuando": {
+  "es": "cuando claudia saca el monedero",
+  "en": "when Claudia takes out her purse"
+ },
+ "saca": {
+  "es": "saca el monedero",
+  "en": "takes out her purse"
+ },
+ "monedero": {
+  "es": "saca el monedero",
+  "en": "takes out her purse"
+ },
+ "señala": {
+  "es": "pablo señala la pizarra",
+  "en": "Pablo points at the blackboard"
+ },
+ "pizarra": {
+  "es": "señala la pizarra del fondo",
+  "en": "points at the blackboard at the back"
+ },
+ "del": {
+  "es": "la pizarra del fondo",
+  "en": "the blackboard at the back"
+ },
+ "fondo": {
+  "es": "la pizarra del fondo",
+  "en": "the blackboard at the back"
+ },
+ "a": {
+  "es": "a los de la casa",
+  "en": "the house people"
+ },
+ "de": {
+  "es": "a los de la casa",
+  "en": "the house people"
+ },
+ "casa": {
+  "es": "a los de la casa",
+  "en": "the house people"
+ },
+ "les": {
+  "es": "se les apunta",
+  "en": "it goes on their tab"
+ },
+ "y": {
+  "es": "y se paga a fin de mes",
+  "en": "and is paid at the end of the month"
+ },
+ "paga": {
+  "es": "se paga a fin de mes",
+  "en": "is paid at the end of the month"
+ },
+ "fin": {
+  "es": "a fin de mes",
+  "en": "at the end of the month"
+ },
+ "mes": {
+  "es": "a fin de mes",
+  "en": "at the end of the month"
+ },
+ "que": {
+  "es": "el que paga al día",
+  "en": "whoever pays on the spot"
+ },
+ "al": {
+  "es": "paga al día",
+  "en": "pays on the spot"
+ },
+ "día": {
+  "es": "paga al día",
+  "en": "pays on the spot"
+ },
+ "es": {
+  "es": "es un turista",
+  "en": "is a tourist"
+ },
+ "turista": {
+  "es": "es un turista",
+  "en": "is a tourist"
+ },
+ "dice": {
+  "es": "dice",
+  "en": "he says"
+ },
+ "sigue": {
+  "es": "sigue secando vasos",
+  "en": "keeps drying glasses"
+ },
+ "secando": {
+  "es": "sigue secando vasos",
+  "en": "keeps drying glasses"
+ },
+ "vasos": {
+  "es": "sigue secando vasos",
+  "en": "keeps drying glasses"
+ },
+ "huele": {
+  "es": "la pizarra huele a tiza",
+  "en": "the blackboard smells of chalk"
+ },
+ "tiza": {
+  "es": "huele a tiza",
+  "en": "smells of chalk"
+ },
+ "guarda": {
+  "es": "guarda nombres y números",
+  "en": "holds names and numbers"
+ },
+ "nombres": {
+  "es": "guarda nombres y números",
+  "en": "holds names and numbers"
+ },
+ "números": {
+  "es": "guarda nombres y números",
+  "en": "holds names and numbers"
+ },
+ "insiste": {
+  "es": "claudia insiste",
+  "en": "Claudia insists"
+ },
+ "billete": {
+  "es": "billete en mano",
+  "en": "banknote in hand"
+ },
+ "en": {
+  "es": "billete en mano",
+  "en": "banknote in hand"
+ },
+ "mano": {
+  "es": "billete en mano",
+  "en": "banknote in hand"
+ },
+ "deber": {
+  "es": "deber dinero le pica",
+  "en": "owing money stings her"
+ },
+ "dinero": {
+  "es": "deber dinero le pica",
+  "en": "owing money stings her"
+ },
+ "le": {
+  "es": "deber dinero le pica",
+  "en": "owing money stings her"
+ },
+ "pica": {
+  "es": "deber dinero le pica",
+  "en": "owing money stings her"
+ },
+ "cóbrame": {
+  "es": "cóbrame y en paz",
+  "en": "charge me and we are even"
+ },
+ "paz": {
+  "es": "cóbrame y en paz",
+  "en": "charge me and we are even"
+ },
+ "pide": {
+  "es": "pide",
+  "en": "she asks"
+ },
+ "corre": {
+  "es": "el dinero corre",
+  "en": "money runs"
+ },
+ "espera": {
+  "es": "la tiza espera",
+  "en": "chalk waits"
+ },
+ "contesta": {
+  "es": "contesta pablo",
+  "en": "Pablo answers"
+ },
+ "con": {
+  "es": "con el trapo al hombro",
+  "en": "with the cloth over his shoulder"
+ },
+ "trapo": {
+  "es": "con el trapo al hombro",
+  "en": "with the cloth over his shoulder"
+ },
+ "hombro": {
+  "es": "el trapo al hombro",
+  "en": "the cloth over his shoulder"
+ },
+ "frente": {
+  "es": "frente a la pizarra",
+  "en": "facing the blackboard"
+ },
+ "cae": {
+  "es": "cae en algo",
+  "en": "something dawns on her"
+ },
+ "algo": {
+  "es": "cae en algo",
+  "en": "something dawns on her"
+ },
+ "otro": {
+  "es": "es otro archivo",
+  "en": "it is another archive"
+ },
+ "archivo": {
+  "es": "es otro archivo",
+  "en": "it is another archive"
+ },
+ "rayas": {
+  "es": "las rayas de tiza guardan confianza",
+  "en": "the chalk marks hold trust"
+ },
+ "guardan": {
+  "es": "las rayas de tiza guardan confianza",
+  "en": "the chalk marks hold trust"
+ },
+ "confianza": {
+  "es": "guardan confianza",
+  "en": "hold trust"
+ },
+ "como": {
+  "es": "como las coplas guardan memoria",
+  "en": "as the songs hold memory"
+ },
+ "coplas": {
+  "es": "las coplas guardan memoria",
+  "en": "the songs hold memory"
+ },
+ "memoria": {
+  "es": "las coplas guardan memoria",
+  "en": "the songs hold memory"
+ },
+ "quien": {
+  "es": "quien debe aquí",
+  "en": "whoever owes here"
+ },
+ "debe": {
+  "es": "quien debe aquí",
+  "en": "whoever owes here"
+ },
+ "vuelve": {
+  "es": "vuelve mañana",
+  "en": "comes back tomorrow"
+ },
+ "mañana": {
+  "es": "vuelve mañana",
+  "en": "comes back tomorrow"
+ },
+ "fiar": {
+  "es": "fiar no es un favor",
+  "en": "giving credit is not a favour"
+ },
+ "no": {
+  "es": "no es un favor",
+  "en": "is not a favour"
+ },
+ "favor": {
+  "es": "fiar no es un favor",
+  "en": "giving credit is not a favour"
+ },
+ "decir": {
+  "es": "es decir te espero",
+  "en": "it means I will wait for you"
+ },
+ "te": {
+  "es": "es decir te espero",
+  "en": "it means I will wait for you"
+ },
+ "espero": {
+  "es": "es decir te espero",
+  "en": "it means I will wait for you"
+ },
+ "su": {
+  "es": "su norma de no deber nada",
+  "en": "her rule of owing nothing"
+ },
+ "norma": {
+  "es": "su norma de no deber nada",
+  "en": "her rule of owing nothing"
+ },
+ "nada": {
+  "es": "de no deber nada",
+  "en": "of owing nothing"
+ },
+ "queda": {
+  "es": "se queda vieja de repente",
+  "en": "suddenly feels old"
+ },
+ "vieja": {
+  "es": "se queda vieja de repente",
+  "en": "suddenly feels old"
+ },
+ "repente": {
+  "es": "de repente",
+  "en": "all of a sudden"
+ },
+ "deuda": {
+  "es": "una deuda pequeña",
+  "en": "a small debt"
+ },
+ "pequeña": {
+  "es": "una deuda pequeña",
+  "en": "a small debt"
+ },
+ "vista": {
+  "es": "a la vista de todos",
+  "en": "in full view of everyone"
+ },
+ "todos": {
+  "es": "a la vista de todos",
+  "en": "in full view of everyone"
+ },
+ "ata": {
+  "es": "la ata al bar",
+  "en": "ties her to the bar"
+ },
+ "bar": {
+  "es": "la ata al bar",
+  "en": "ties her to the bar"
+ },
+ "mejor": {
+  "es": "mejor que cualquier propina",
+  "en": "better than any tip"
+ },
+ "cualquier": {
+  "es": "mejor que cualquier propina",
+  "en": "better than any tip"
+ },
+ "propina": {
+  "es": "mejor que cualquier propina",
+  "en": "better than any tip"
+ },
+ "apúntame": {
+  "es": "apúntame el café",
+  "en": "put the coffee on my tab"
+ },
+ "café": {
+  "es": "apúntame el café",
+  "en": "put the coffee on my tab"
+ },
+ "caña": {
+  "es": "una caña de marcos",
+  "en": "a small beer for Marcos"
+ },
+ "decide": {
+  "es": "decide",
+  "en": "she decides"
+ },
+ "sale": {
+  "es": "le sale la voz tranquila",
+  "en": "her voice comes out calm"
+ },
+ "voz": {
+  "es": "le sale la voz tranquila",
+  "en": "her voice comes out calm"
+ },
+ "tranquila": {
+  "es": "la voz tranquila",
+  "en": "the calm voice"
+ },
+ "escribe": {
+  "es": "pablo escribe su nombre",
+  "en": "Pablo writes her name"
+ },
+ "nombre": {
+  "es": "escribe su nombre",
+  "en": "writes her name"
+ },
+ "debajo": {
+  "es": "debajo de los fijos de siempre",
+  "en": "under the usual regulars"
+ },
+ "fijos": {
+  "es": "debajo de los fijos de siempre",
+  "en": "under the usual regulars"
+ },
+ "siempre": {
+  "es": "los fijos de siempre",
+  "en": "the usual regulars"
+ },
+ "raya": {
+  "es": "la raya es corta",
+  "en": "the chalk line is short"
+ },
+ "corta": {
+  "es": "la raya es corta",
+  "en": "the chalk line is short"
+ },
+ "parece": {
+  "es": "parece que promete",
+  "en": "it seems to promise more"
+ },
+ "promete": {
+  "es": "parece que promete",
+  "en": "it seems to promise more"
+ },
+ "bienvenida": {
+  "es": "bienvenida al mes",
+  "en": "welcome to the month"
+ },
+ "ahora": {
+  "es": "ahora ya te fío yo a ti",
+  "en": "now I give you credit too"
+ },
+ "ya": {
+  "es": "ahora ya te fío yo a ti",
+  "en": "now I give you credit too"
+ },
+ "fío": {
+  "es": "ya te fío yo a ti",
+  "en": "I give you credit now"
+ },
+ "yo": {
+  "es": "te fío yo a ti",
+  "en": "I am the one trusting you"
+ },
+ "ti": {
+  "es": "te fío yo a ti",
+  "en": "I am the one trusting you"
+ },
+ "sonríe": {
+  "es": "sonríe pablo",
+  "en": "Pablo smiles"
+ }
+}

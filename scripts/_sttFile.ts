@@ -1,5 +1,6 @@
 // Transcribe un mp3 local y lo compara con un texto esperado. Sirve para
 // validar un candidato de re-roll ANTES de empalmarlo.
+//   npx tsx scripts/_sttFile.ts <mp3> [codigo-de-idioma]   por defecto "por"
 import { config } from "dotenv"; config({ path: ".env.local", quiet:true }); config({ path: ".env", quiet:true });
 import { readFileSync } from "fs";
 const apiKey = process.env.ELEVENLABS_API_KEY!;
@@ -9,7 +10,7 @@ const norm = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[
   const file = process.argv[2];
   const buf = readFileSync(file);
   const fd = new FormData();
-  fd.append("model_id","scribe_v1"); fd.append("language_code","por"); fd.append("timestamps_granularity","word");
+  fd.append("model_id","scribe_v1"); fd.append("language_code", process.argv[3] ?? "por"); fd.append("timestamps_granularity","word");
   fd.append("file", new Blob([new Uint8Array(buf)], { type: "audio/mpeg" }), "s.mp3");
   const r = await fetch("https://api.elevenlabs.io/v1/speech-to-text", { method:"POST", headers:{"xi-api-key":apiKey}, body:fd });
   const j = (await r.json()) as { words?: W[]; text?: string };

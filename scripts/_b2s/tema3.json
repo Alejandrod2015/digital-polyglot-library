@@ -1,0 +1,364 @@
+[
+  {
+    "topic": "rounds-and-regulars",
+    "slotIndex": 1,
+    "title": "Lo de siempre",
+    "slug": "lo-de-siempre-cadiz-b2",
+    "arcType": "daily-encounter",
+    "synopsis": "Tres semanas pidiendo el café desde la mesa y una mañana, por fin, un sitio libre en la barra. Claudia lo ocupa, Pablo le pregunta si quiere lo de siempre, y ese detalle mínimo vale más que cualquier discurso de bienvenida. La primera ronda de la barra la paga el que llega, y ella la paga encantada.",
+    "text": "Pablo es el camarero de abajo, y su barra es la otra sala. Claudia es aún la de la mesa: baja cada mañana y pide su café. A los fijos nadie les pregunta: lo suyo llega solo.\n\nEsta mañana huele a churros, y hay un sitio libre en la barra. Claudia lo ocupa con el corazón tonto. “¿Lo de siempre, o es que hoy tampoco te fías de mi máquina?”, pregunta Pablo.\n\nEs la primera vez que alguien da su café por sabido, y el orgullo da hasta risa. “Lo de siempre, y que no me lo cambies nunca”, confirma, como quien firma. Los fijos levantan la vista un momento y vuelven a lo suyo.\n\nCon la barra llena, Claudia pide una ronda para los fijos y paga el estreno. “La primera de la barra la paga el que llega; así sabemos que piensa volver”, explica Pablo. Detrás, dos fijos discuten el asunto de ayer.\n\n“Pues ya era hora de llegar; apúntame también la de mañana”, contesta Claudia. El café de hoy sabe mejor que nunca. Mañana su taza estará puesta antes de que ella empuje la puerta.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "ronda",
+        "register": "colloquial",
+        "definition": "Round of drinks one person buys for the whole group."
+      },
+      {
+        "type": "noun",
+        "word": "churros",
+        "register": "cultural",
+        "definition": "Fried dough sticks Spaniards dip in coffee or thick chocolate."
+      },
+      {
+        "type": "noun",
+        "word": "taza",
+        "definition": "Cup; the small one your morning coffee arrives in."
+      },
+      {
+        "type": "noun",
+        "word": "estreno",
+        "definition": "Debut, first time; the opening act of something new."
+      },
+      {
+        "type": "noun",
+        "word": "orgullo",
+        "definition": "Pride; the warm feeling of having earned something."
+      },
+      {
+        "type": "noun",
+        "word": "asunto",
+        "definition": "Matter, topic; the ongoing business people keep coming back to."
+      },
+      {
+        "type": "noun",
+        "word": "fijo",
+        "surface": "fijos",
+        "register": "colloquial",
+        "definition": "Regular; a customer who comes every day and belongs."
+      },
+      {
+        "type": "verb",
+        "word": "empujar",
+        "surface": "empuje",
+        "definition": "To push something, like a door, to make it move."
+      },
+      {
+        "type": "verb",
+        "word": "fiarse",
+        "surface": "te fías",
+        "definition": "To trust something or someone enough to rely on them."
+      },
+      {
+        "type": "verb",
+        "word": "ocupar",
+        "surface": "ocupa",
+        "definition": "To take a place or seat and make it yours."
+      },
+      {
+        "type": "verb",
+        "word": "discutir",
+        "surface": "discuten",
+        "definition": "To argue or debate something, often loudly and for pleasure."
+      },
+      {
+        "type": "verb",
+        "word": "firmar",
+        "surface": "firma",
+        "definition": "To sign something, making it official with your name."
+      },
+      {
+        "type": "adjective",
+        "word": "tonto",
+        "definition": "Silly, foolish; a heart beating over something small."
+      },
+      {
+        "type": "adjective",
+        "word": "libre",
+        "definition": "Free, unoccupied; a seat with nobody sitting in it."
+      },
+      {
+        "type": "adverb",
+        "word": "detrás",
+        "definition": "Behind, at the back of where you are."
+      },
+      {
+        "type": "expression",
+        "word": "lo de siempre",
+        "definition": "The usual; the order a bar knows without asking."
+      },
+      {
+        "type": "expression",
+        "word": "dar por sabido",
+        "surface": "por sabido",
+        "definition": "To take something as known, no longer worth asking about."
+      },
+      {
+        "type": "expression",
+        "word": "ya era hora",
+        "definition": "About time; said when something finally happens at last."
+      },
+      {
+        "type": "expression",
+        "word": "lo suyo",
+        "definition": "What is theirs; the usual thing each person always gets."
+      },
+      {
+        "type": "expression",
+        "word": "mejor que nunca",
+        "definition": "Better than ever; at its best point so far."
+      }
+    ]
+  },
+  {
+    "topic": "rounds-and-regulars",
+    "slotIndex": 2,
+    "title": "Aquí se apunta",
+    "slug": "aqui-se-apunta",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "Pagar al momento era su norma de toda la vida, y en este bar resulta ser cosa de turistas. Entre rayas de tiza, Claudia descubre que el bar guarda confianza igual que su archivo guarda memoria, y que una deuda pequeña a la vista de todos ata más que cualquier moneda dejada sobre el plato.",
+    "text": "Cuando Claudia saca el monedero, Pablo señala la pizarra del fondo. “Aquí a los de la casa se les apunta y se paga a fin de mes; el que paga al día es un turista”, dice, y sigue secando vasos. La pizarra huele a tiza y guarda nombres y números.\n\nClaudia insiste, billete en mano; deber dinero le pica. “Cóbrame y en paz”, pide. “El dinero corre; la tiza espera”, contesta Pablo, con el trapo al hombro.\n\nFrente a la pizarra, cae en algo: es otro archivo. Las rayas de tiza guardan confianza como las coplas guardan memoria: quien debe aquí, vuelve mañana. Fiar no es un favor; es decir te espero.\n\nSu norma de no deber nada se queda vieja de repente. Una deuda pequeña, a la vista de todos, la ata al bar mejor que cualquier propina. “Apúntame el café y una caña de Marcos”, decide, y le sale la voz tranquila.\n\nPablo escribe su nombre debajo de los fijos de siempre. La raya es corta y parece que promete. “Bienvenida al mes; ahora ya te fío yo a ti”, sonríe Pablo.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "pizarra",
+        "definition": "Blackboard; the slate where the bar keeps its accounts."
+      },
+      {
+        "type": "noun",
+        "word": "tiza",
+        "definition": "Chalk; the white stick that writes on blackboards."
+      },
+      {
+        "type": "noun",
+        "word": "billete",
+        "definition": "Banknote; the paper money you hold out to pay with."
+      },
+      {
+        "type": "noun",
+        "word": "trapo",
+        "definition": "Rag, cloth; the one a barman dries glasses with."
+      },
+      {
+        "type": "noun",
+        "word": "raya",
+        "definition": "Line, stroke; each mark that counts one drink owed."
+      },
+      {
+        "type": "noun",
+        "word": "deuda",
+        "definition": "Debt; money you owe and have not paid yet."
+      },
+      {
+        "type": "noun",
+        "word": "propina",
+        "definition": "Tip; the extra coins left for good service."
+      },
+      {
+        "type": "noun",
+        "word": "caña",
+        "register": "cultural",
+        "definition": "Small draught beer, the standard Spanish bar order."
+      },
+      {
+        "type": "verb",
+        "word": "deber",
+        "surface": "deber dinero",
+        "definition": "To owe; to have a debt with someone."
+      },
+      {
+        "type": "verb",
+        "word": "señalar",
+        "surface": "señala",
+        "definition": "To point at something so others look at it."
+      },
+      {
+        "type": "verb",
+        "word": "sonreír",
+        "surface": "sonríe",
+        "definition": "To smile; to let a small satisfaction show on your face."
+      },
+      {
+        "type": "verb",
+        "word": "atar",
+        "surface": "ata",
+        "definition": "To tie; to bind someone to a place or person."
+      },
+      {
+        "type": "verb",
+        "word": "prometer",
+        "surface": "promete",
+        "definition": "To promise; to point towards something good coming."
+      },
+      {
+        "type": "verb",
+        "word": "secar",
+        "surface": "secando",
+        "definition": "To dry something wet, like glasses with a cloth."
+      },
+      {
+        "type": "adjective",
+        "word": "corto",
+        "surface": "corta",
+        "definition": "Short in length; a chalk line just begun."
+      },
+      {
+        "type": "adjective",
+        "word": "tranquilo",
+        "surface": "tranquila",
+        "definition": "Calm, steady; a voice with no worry left in it."
+      },
+      {
+        "type": "expression",
+        "word": "a fin de mes",
+        "definition": "At the end of the month, when bills get settled."
+      },
+      {
+        "type": "expression",
+        "word": "al día",
+        "definition": "Up to date; paying everything the moment it happens."
+      },
+      {
+        "type": "expression",
+        "word": "en paz",
+        "definition": "Even, settled; owing each other nothing at all anymore."
+      },
+      {
+        "type": "expression",
+        "word": "a la vista de todos",
+        "definition": "In full view of everyone, with nothing hidden."
+      }
+    ]
+  },
+  {
+    "topic": "rounds-and-regulars",
+    "slotIndex": 3,
+    "title": "Una ronda sin dueño",
+    "slug": "una-ronda-sin-dueno",
+    "arcType": "harmonic-close",
+    "synopsis": "Un viernes de estanterías desmontadas, aparece en la barra una ronda que nadie firma. Claudia pregunta con la mirada, prueba suerte con Pablo y se queda sin culpable: el misterio va incluido en el regalo. Lo que sí encuentra es el espejo del primer día, cuando pagó para entrar y lo supo todo el bar.",
+    "text": "Nadie sabe quién paga la primera ronda del viernes, y nadie pregunta. Claudia y Marcos bajan con la peña de buen humor, agotados, y huelen a polvo de estanterías. Pablo va poniendo vasos fríos y una tapa de aceitunas sin que nadie los pida.\n\n“Estas las manda alguien que no quiere nombre, así que ni preguntes”, anuncia Pablo, repartiendo posavasos. Claudia pregunta con la mirada y nadie se da por aludido. Hay sonrisas de reojo y hombros encogidos.\n\nClaudia se lo comenta a Marcos: “El primer día pagué la ronda para entrar, y hoy ni sé a quién le debo el café”. “Eso es ser de aquí”, contesta Marcos, chocando su vaso. La cuenta exacta era la entrada; la cuenta perdida es la casa.\n\n“¿Y si has sido tú?”, pregunta Claudia, bajito. “Yo solo apunto; los milagros aquí son cosa de la casa”, contesta Pablo, muy serio. Marcos le guiña un ojo desde la otra punta.\n\nClaudia alza su vaso, a nadie y a todos, con una calma nueva. “La siguiente es mía”, avisa, sin bajar la voz. El viernes se cierra solo, como una cuenta que nadie lleva.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "posavasos",
+        "definition": "Coaster; the small mat a glass sits on."
+      },
+      {
+        "type": "noun",
+        "word": "punta",
+        "definition": "Far end; the opposite tip of the bar counter."
+      },
+      {
+        "type": "noun",
+        "word": "cuenta",
+        "definition": "Tab, bill; the running count of what is owed."
+      },
+      {
+        "type": "noun",
+        "word": "mirada",
+        "definition": "Look, gaze; a question asked with the eyes only."
+      },
+      {
+        "type": "noun",
+        "word": "polvo",
+        "definition": "Dust; the fine dirt old furniture leaves on hands."
+      },
+      {
+        "type": "noun",
+        "word": "tapa",
+        "definition": "Small free snack served with a drink in Spain."
+      },
+      {
+        "type": "noun",
+        "word": "aceituna",
+        "surface": "aceitunas",
+        "definition": "Olive; the salty little fruit Spanish bars serve."
+      },
+      {
+        "type": "verb",
+        "word": "chocar",
+        "surface": "chocando",
+        "definition": "To clink your glass against another in a toast."
+      },
+      {
+        "type": "verb",
+        "word": "alzar",
+        "surface": "alza",
+        "definition": "To raise something up, like a glass in salute."
+      },
+      {
+        "type": "verb",
+        "word": "avisar",
+        "surface": "avisa",
+        "definition": "To let people know something before it happens."
+      },
+      {
+        "type": "verb",
+        "word": "guiñar",
+        "surface": "guiña",
+        "definition": "To wink one eye at someone as a signal."
+      },
+      {
+        "type": "adjective",
+        "word": "agotado",
+        "surface": "agotados",
+        "definition": "Exhausted, completely worn out after hard physical work."
+      },
+      {
+        "type": "adjective",
+        "word": "encogido",
+        "surface": "encogidos",
+        "definition": "Shrugged, drawn in; shoulders saying they know nothing."
+      },
+      {
+        "type": "adverb",
+        "word": "bajito",
+        "register": "colloquial",
+        "definition": "Very quietly, in a voice close to a whisper."
+      },
+      {
+        "type": "expression",
+        "word": "de buen humor",
+        "definition": "In a good mood, ready to laugh at anything."
+      },
+      {
+        "type": "expression",
+        "word": "de reojo",
+        "definition": "Out of the corner of your eye, sideways."
+      },
+      {
+        "type": "expression",
+        "word": "darse por aludido",
+        "surface": "se da por aludido",
+        "definition": "To show that a remark was meant for you."
+      },
+      {
+        "type": "expression",
+        "word": "sin bajar la voz",
+        "definition": "Without lowering your voice; said openly for all."
+      },
+      {
+        "type": "expression",
+        "word": "de la casa",
+        "definition": "On the house; offered by the establishment itself."
+      },
+      {
+        "type": "expression",
+        "word": "cosa de",
+        "surface": "cosa de la casa",
+        "definition": "A matter of; something that belongs to that world."
+      }
+    ]
+  }
+]

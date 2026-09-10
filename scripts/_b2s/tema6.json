@@ -1,0 +1,361 @@
+[
+  {
+    "topic": "books-and-bookshops",
+    "slotIndex": 1,
+    "title": "De trabajo o de vivir",
+    "slug": "de-trabajo-o-de-vivir",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "Una tarde libre, una librería de segunda mano y una pregunta de librera que le gusta al instante. Claudia va a comprarse una novela sin encargo cuando una caja recién llegada le corta el paseo: los libros llevan en la guarda el exlibris de la peña. Su ocio y su trabajo acaban de chocar en la misma balda.",
+    "text": "La librería de segunda mano de la cuesta huele a papel dormido. Claudia es hoy una clienta sin encargo. Martina es la librera: saluda desde la escalera. “¿Busca algo de trabajo o algo de vivir?”, pregunta desde arriba.\n\n“De vivir, si es que le queda algo por ahí”, contesta Claudia, y le gusta la pregunta. Pasea la mirada por los lomos. Elige una novela corta y la aparta para ella.\n\nAl fondo, una caja recién llegada la frena. Los libros llevan un exlibris redondo en la guarda: el escudo de la peña. Lo reconoce como se reconoce una cara en una foto vieja.\n\n“¿De dónde ha salido esta caja?”, pregunta, ya sin voz de clienta. “De una biblioteca que se vendió hace años, con prisas; nunca pregunté más”, contesta Martina, bajando por fin. Las dos miran los libros como si respiraran.\n\nLa novela vuelve a su sitio: el presupuesto manda. Claudia sale con el primer libro de la peña bajo el brazo, pagado con el dinero de vivir. “Vuelva cuando quiera, que la caja no se mueve de aquí”, dice Martina, y la campanilla suena a principio de algo.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "librería",
+        "definition": "Bookshop; the shop where books wait for their readers."
+      },
+      {
+        "type": "verb",
+        "word": "moverse",
+        "surface": "se mueve",
+        "definition": "To move; to change place or go anywhere at all."
+      },
+      {
+        "type": "noun",
+        "word": "campanilla",
+        "definition": "Little bell; the one that rings over a shop door."
+      },
+      {
+        "type": "noun",
+        "word": "lomo",
+        "surface": "lomos",
+        "definition": "Spine; the edge of a book you read on the shelf."
+      },
+      {
+        "type": "noun",
+        "word": "exlibris",
+        "register": "cultural",
+        "definition": "Ex-libris; the ownership stamp inside a book's cover."
+      },
+      {
+        "type": "noun",
+        "word": "guarda",
+        "definition": "Endpaper; the first inside page of a bound book."
+      },
+      {
+        "type": "noun",
+        "word": "escudo",
+        "definition": "Crest, emblem; the drawn symbol of a club or city."
+      },
+      {
+        "type": "noun",
+        "word": "cuesta",
+        "definition": "Slope; a street that climbs up the hill."
+      },
+      {
+        "type": "noun",
+        "word": "clienta",
+        "definition": "Customer; a woman buying, with a customer's polite voice."
+      },
+      {
+        "type": "noun",
+        "word": "escalera",
+        "definition": "Ladder; the steps a bookseller climbs to high shelves."
+      },
+      {
+        "type": "verb",
+        "word": "pasear",
+        "surface": "pasea",
+        "definition": "To stroll; here, letting your eyes wander the shelves."
+      },
+      {
+        "type": "verb",
+        "word": "reconocer",
+        "surface": "reconoce",
+        "definition": "To recognise; to know something the moment you see it."
+      },
+      {
+        "type": "verb",
+        "word": "respirar",
+        "surface": "respiraran",
+        "definition": "To breathe; as if the books were quietly alive."
+      },
+      {
+        "type": "verb",
+        "word": "vender",
+        "surface": "se vendió",
+        "definition": "To sell; to let something go for money."
+      },
+      {
+        "type": "adjective",
+        "word": "dormido",
+        "definition": "Asleep; paper resting quietly for years on a shelf."
+      },
+      {
+        "type": "adjective",
+        "word": "redondo",
+        "definition": "Round; shaped like a circle, with no corners."
+      },
+      {
+        "type": "expression",
+        "word": "bajo el brazo",
+        "definition": "Under your arm; carried close like something yours."
+      },
+      {
+        "type": "expression",
+        "word": "por fin",
+        "definition": "At last, finally, after quite a long wait."
+      },
+      {
+        "type": "expression",
+        "word": "de segunda mano",
+        "definition": "Second-hand; already owned and loved by someone before."
+      },
+      {
+        "type": "expression",
+        "word": "por ahí",
+        "definition": "Around somewhere; in some corner of the place."
+      }
+    ]
+  },
+  {
+    "topic": "books-and-bookshops",
+    "slotIndex": 2,
+    "title": "Este no, todavía",
+    "slug": "este-no-todavia",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "Recuperar la biblioteca entera exige convencer a una librera que no vende a cualquier precio: los libros solo salen si vuelven a estar a la vista. El trato se cierra a la antigua y los libros cruzan la cuesta por tandas, hasta que Martina aparta un tomo forrado a mano y lo retira con tres palabras que dejan la tarde en vilo.",
+    "text": "Claudia vuelve con Marcos y una propuesta seria: recuperar la biblioteca. Martina escucha con los brazos cruzados. “Los vendo si vuelven a estar a la vista; de caja a caja no salen de aquí”, avisa.\n\n“En el local nuevo hay una pared entera esperándolos”, promete Marcos, y enseña fotos del hueco. Martina las repasa con cara de examen. “Una pared no es una promesa, pero se le parece”, concede al fin.\n\nEl trato se cierra a la antigua, con lista y apretón; los libros salen por tandas, envueltos en papel de periódico. “¿Cuántos eran?”, pregunta Claudia. “Los conté uno a uno al comprarlos”, contesta Martina, sin dar la cifra.\n\nCon la caja casi vacía, Martina se agacha y saca un tomo aparte, forrado a mano. Lo abre, lo piensa y lo vuelve a cerrar. Fuera, la tarde va cayendo sin que nadie mire el reloj.\n\n“Este no, todavía”, dice, y se lo lleva al mostrador de dentro. Claudia ve la dedicatoria un segundo, manuscrita y torcida. La palabra todavía se queda dando vueltas toda la tarde.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "propuesta",
+        "definition": "Proposal; a serious offer put on the table."
+      },
+      {
+        "type": "noun",
+        "word": "apretón",
+        "definition": "Handshake; the firm grip that seals a deal."
+      },
+      {
+        "type": "noun",
+        "word": "tanda",
+        "surface": "tandas",
+        "definition": "Batch; one round of things moved at a time."
+      },
+      {
+        "type": "noun",
+        "word": "tomo",
+        "definition": "Volume; one thick book of a larger set."
+      },
+      {
+        "type": "noun",
+        "word": "promesa",
+        "definition": "Promise; a commitment that something good will be done."
+      },
+      {
+        "type": "noun",
+        "word": "dedicatoria",
+        "definition": "Dedication; the handwritten words inside a gifted book."
+      },
+      {
+        "type": "noun",
+        "word": "cifra",
+        "definition": "Figure, number; the exact amount deliberately kept unsaid."
+      },
+      {
+        "type": "expression",
+        "word": "con cara de",
+        "surface": "con cara de examen",
+        "definition": "With the look of; wearing that expression on your face."
+      },
+      {
+        "type": "verb",
+        "word": "enseñar",
+        "surface": "enseña",
+        "definition": "To show; to hold something up for others to see."
+      },
+      {
+        "type": "verb",
+        "word": "agacharse",
+        "surface": "se agacha",
+        "definition": "To bend down, crouching to reach something low."
+      },
+      {
+        "type": "verb",
+        "word": "envolver",
+        "surface": "envueltos",
+        "definition": "To wrap; to cover something in protective paper."
+      },
+      {
+        "type": "verb",
+        "word": "forrar",
+        "surface": "forrado",
+        "definition": "To cover a book with paper to protect it."
+      },
+      {
+        "type": "expression",
+        "word": "volver a",
+        "surface": "vuelve a cerrar",
+        "definition": "To do again; closing it once more after opening."
+      },
+      {
+        "type": "adjective",
+        "word": "cruzado",
+        "surface": "cruzados",
+        "definition": "Crossed; arms folded while someone makes their mind up."
+      },
+      {
+        "type": "adjective",
+        "word": "manuscrito",
+        "surface": "manuscrita",
+        "definition": "Handwritten; put down in ink by a real hand."
+      },
+      {
+        "type": "adverb",
+        "word": "aparte",
+        "definition": "Apart, set aside from the rest on purpose."
+      },
+      {
+        "type": "expression",
+        "word": "a la antigua",
+        "definition": "The old way; done as it was done before."
+      },
+      {
+        "type": "expression",
+        "word": "uno a uno",
+        "definition": "One by one; each counted on its own."
+      },
+      {
+        "type": "expression",
+        "word": "dando vueltas",
+        "definition": "Going round in your head; refusing to be forgotten."
+      },
+      {
+        "type": "verb",
+        "word": "sacar",
+        "surface": "saca",
+        "definition": "To take something out from where it was kept."
+      }
+    ]
+  },
+  {
+    "topic": "books-and-bookshops",
+    "slotIndex": 3,
+    "title": "Los libros vuelven a casa",
+    "slug": "los-libros-vuelven-a-casa",
+    "arcType": "late-reveal",
+    "synopsis": "El sábado la biblioteca cruza la ciudad en carretilla y la pared del local nuevo la recibe con las baldas medidas. Martina llega la última con el tomo forrado, lo planta en la balda del medio y manda abrirlo. Lo que hay escrito dentro cambia de sitio toda la historia: la compra de hace años nunca fue una compra.",
+    "text": "El sábado, Claudia y media peña cruzan la ciudad con los libros en carretilla. La pared los espera con las baldas ya medidas. Huele a madera nueva y a comienzo.\n\nMartina llega la última, con el tomo forrado en una bolsa aparte. Lo deja en el centro de la balda del medio, sin pedir permiso. Nadie se lo habría negado.\n\n“Ábralo ahora”, dice, y Claudia lo abre con las dos manos. “Para la peña, que me enseñó a leer en voz alta”, lee, y debajo hay una fecha del año malo y una firma pequeña. La firma es de Martina.\n\n“La biblioteca no se vendió fuera; la compré yo, para que no se perdiera por el mundo”, confiesa. “Llevo años esperando a que alguien viniera a buscarla”, añade, con la voz normal de quien ha hecho algo enorme. Claudia entiende de golpe la custodia callada de tantos años.\n\nMarcos le tiende la mano y la invita a quedarse. “Los libros vuelven a casa, y usted con ellos”, dice Claudia. La balda del medio ya no se llama balda: se llama biblioteca.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "carretilla",
+        "definition": "Handcart, wheelbarrow; for moving heavy loads through streets."
+      },
+      {
+        "type": "noun",
+        "word": "balda",
+        "surface": "baldas",
+        "definition": "Shelf; one single board of a wooden bookcase unit."
+      },
+      {
+        "type": "noun",
+        "word": "permiso",
+        "definition": "Permission; the yes you ask for before acting."
+      },
+      {
+        "type": "noun",
+        "word": "firma",
+        "definition": "Signature; a name written by its own hand."
+      },
+      {
+        "type": "noun",
+        "word": "custodia",
+        "definition": "Guardianship; keeping something safe on someone else's behalf."
+      },
+      {
+        "type": "noun",
+        "word": "comienzo",
+        "definition": "Beginning; the fresh start something new smells of."
+      },
+      {
+        "type": "verb",
+        "word": "cruzar",
+        "surface": "cruzan",
+        "definition": "To cross; to travel from one side to the other."
+      },
+      {
+        "type": "noun",
+        "word": "pared",
+        "definition": "Wall; the vertical surface waiting to hold the shelves."
+      },
+      {
+        "type": "verb",
+        "word": "negar",
+        "surface": "negado",
+        "definition": "To refuse; to say no to a request."
+      },
+      {
+        "type": "verb",
+        "word": "perderse",
+        "surface": "se perdiera",
+        "definition": "To get lost; to be scattered and never found again."
+      },
+      {
+        "type": "expression",
+        "word": "tender la mano",
+        "surface": "tiende la mano",
+        "definition": "To hold out your hand, offering welcome or help."
+      },
+      {
+        "type": "verb",
+        "word": "invitar",
+        "surface": "invita",
+        "definition": "To invite; to ask someone to stay and belong."
+      },
+      {
+        "type": "verb",
+        "word": "añadir",
+        "surface": "añade",
+        "definition": "To add; to say one more thing after a pause."
+      },
+      {
+        "type": "adjective",
+        "word": "enorme",
+        "definition": "Enormous, huge; far bigger than the voice saying it."
+      },
+      {
+        "type": "adjective",
+        "word": "callado",
+        "surface": "callada",
+        "definition": "Quiet, silent; done for years without telling anyone."
+      },
+      {
+        "type": "adjective",
+        "word": "último",
+        "surface": "última",
+        "definition": "Last; the one arriving after everyone else has."
+      },
+      {
+        "type": "expression",
+        "word": "en voz alta",
+        "definition": "Aloud, out loud, for everyone present to hear."
+      },
+      {
+        "type": "expression",
+        "word": "con las dos manos",
+        "definition": "With both hands; carefully, giving it full attention."
+      },
+      {
+        "type": "expression",
+        "word": "por el mundo",
+        "definition": "Out into the world, scattered who knows where."
+      },
+      {
+        "type": "expression",
+        "word": "sin pedir permiso",
+        "definition": "Without asking permission; sure of your own right."
+      }
+    ]
+  }
+]
