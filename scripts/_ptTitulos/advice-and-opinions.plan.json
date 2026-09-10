@@ -1,0 +1,34 @@
+{
+  "tipo": "Traveler",
+  "nivel": "B1",
+  "variante": "LATAM",
+  "registro": "conversado y de mostrador: trato corto, precio y clientela",
+  "espina": "un consejo que nadie pidio y que resulta ser el bueno",
+  "recursos": "imagen concreta, contraste con pero, causalidad explicita, espejo concreto, cambio de ritmo",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "decidir de una vez si quita las mesas y deja solo barra",
+      "impide": "Esteban le da una opinion que ella no pidio, y ademas tiene razon",
+      "cuesta": "tres semanas de darle vueltas que ya no recupera, y el cambio sigue sin hacerse",
+      "cambia": "deja de preguntarse por los muebles y empieza a pensar en la clientela",
+      "emocion": "impaciencia porque lleva semanas sin decidirse; se ve en que se rie a destiempo y no contesta la pregunta"
+    },
+    {
+      "slot": "2",
+      "quiere": "hacer el cambio a su manera, quedandose con la mitad del consejo",
+      "impide": "sube el precio el mismo dia que pone el letrero, y los clientes leen las dos cosas juntas",
+      "cuesta": "un cliente de anos que pide la cuenta y no vuelve en toda la semana",
+      "cambia": "descubre que la mitad que se salto era la que importaba",
+      "emocion": "terquedad defensiva porque sabe que fallo; se ve en que no discute el numero y se pone a mezclar la pasilla"
+    },
+    {
+      "slot": "3",
+      "quiere": "que la fila de la esquina sea merito suyo y no de un consejo ajeno",
+      "impide": "el letrero y el precio viejo juntos son exactamente lo que le dijeron",
+      "cuesta": "tener que decirlo en voz alta delante de el, y le cuesta mas que el cambio",
+      "cambia": "le da la razon con un tinto que no cobra, que es su manera de firmarlo",
+      "emocion": "orgullo herido que cede; se ve en que se calla primero y solo despues sirve el tinto sin cobrarlo"
+    }
+  ]
+}

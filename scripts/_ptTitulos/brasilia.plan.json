@@ -1,0 +1,34 @@
+{
+  "tipo": "Traveler",
+  "nivel": "b1",
+  "variante": "brazil",
+  "registro": "administrativo y paciente: numeros de turno, ventanillas, frases de manual dichas por gente cansada",
+  "espina": "Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. El ano se le parte en dos, y aqui descubre cual es la mitad que sostiene la otra: sin el papel de esta oficina no hay ruta ninguna.",
+  "recursos": "B1: reversa cosida y cambio de ritmo. Heredados: repeticion ritmica, contraste con pero e imagen concreta (A0); causalidad explicita, humor de situacion y gancho final literal (A1); simil simple y espejo concreto (A2). Sin ironia, subtexto, aforismo ni elipsis, que son B2.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "renovar el registro de la agencia en una manana y coger el vuelo de las seis",
+      "impide": "una pendencia de hace dos anos que nadie le habia dicho",
+      "cuesta": "el vuelo y la manana entera, con el numero de turno en la mano",
+      "cambia": "deja de creer que esto se resuelve con paciencia y pregunta por un despachante",
+      "emocion": "rabia fria; alisa el papel del numero contra la pierna hasta que se rompe por el doblez"
+    },
+    {
+      "slot": "2",
+      "quiere": "entender el sistema para no depender de nadie el ano que viene",
+      "impide": "el sistema no se entiende, se conoce; y quien lo conoce cobra por ello",
+      "cuesta": "la idea de hacerlo sola, y el dinero de la comision del despachante",
+      "cambia": "mete el gasto en el presupuesto del ano como una linea mas",
+      "emocion": "humillacion que se le pasa; se rie cuando el despachante acierta la ventanilla a la primera"
+    },
+    {
+      "slot": "3",
+      "quiere": "salir de Brasilia con el registro deferido y la ruta cerrada",
+      "impide": "el resultado sale en el diario oficial y no avisa a nadie",
+      "cuesta": "la costumbre de improvisar: ahora su ano empieza en una fecha de oficina",
+      "cambia": "escribe el calendario del ano al reves, empezando por los tramites",
+      "emocion": "alivio serio; guarda el comprobante en la ficha y no en el bolsillo"
+    }
+  ]
+}

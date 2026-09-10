@@ -1,0 +1,34 @@
+{
+  "tipo": "Traveler",
+  "nivel": "b1",
+  "variante": "brazil",
+  "registro": "claro y submarino: instrucciones antes de entrar al agua, silencio dentro, reglas que nadie discute",
+  "espina": "Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. En la isla aprende que la ruta que vende tiene cupo, y que el cupo es lo que la mantiene vendible el ano que viene.",
+  "recursos": "B1: reversa cosida y cambio de ritmo. Heredados: repeticion ritmica, contraste con pero e imagen concreta (A0); causalidad explicita, humor de situacion y gancho final literal (A1); simil simple y espejo concreto (A2). Sin ironia, subtexto, aforismo ni elipsis, que son B2.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "reservar veinte plazas de buceo para la temporada alta",
+      "impide": "la cuota diaria de la isla y un credenciamiento que ella no tiene",
+      "cuesta": "la mitad de las plazas y dos dias de tramite que no factura",
+      "cambia": "deja de vender la isla como un sitio y empieza a venderla como una cita",
+      "emocion": "impaciencia que se le nota en que rellena el formulario de pie, sin sentarse"
+    },
+    {
+      "slot": "2",
+      "quiere": "bajar con el grupo y ver el arrecife que sale en su folleto",
+      "impide": "una regla de distancia y una tortuga en desove que cambia el punto de inmersion",
+      "cuesta": "el arrecife de la foto: bucean en otro sitio, mas pobre y mas cerca",
+      "cambia": "entiende que la foto no es la promesa; la promesa es que siga habiendo tortuga",
+      "emocion": "frustracion que se traga bajo el agua, donde nadie puede hablar; sube y no dice nada"
+    },
+    {
+      "slot": "3",
+      "quiere": "cerrar el ano con la isla dentro de su ruta fija",
+      "impide": "el cupo del ano que viene sale por sorteo y ella no controla nada",
+      "cuesta": "la ilusion de controlar su propia ruta",
+      "cambia": "acepta el sorteo y prepara una alternativa, que es lo que nunca habia hecho",
+      "emocion": "resignacion activa; escribe dos rutas en la ficha y tacha la palabra seguro"
+    }
+  ]
+}

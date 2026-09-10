@@ -1,0 +1,384 @@
+[
+  {
+    "slug": "chove-sobre-a-excursao",
+    "topic": "lencois-maranhenses",
+    "slotIndex": 0,
+    "title": "A passagem já comprada",
+    "synopsis": "Tem três dias na região e a passagem de volta já comprada, e o céu não colabora com nenhum dos dois planos que ela trouxe escritos. Quem leva gente de canoa poderia lhe vender uma esperança barata pela manhã, e prefere lhe dar a verdade sobre janeiro.",
+    "text": "Chove em Lençóis desde a madrugada; a tempestade deixou o céu cinza. A excursão de hoje não sai. Renata tem três dias na região e a passagem já comprada.\n\nDamião, um homem que leva gente de canoa, olha o céu e não fala do clima. “Amanhã melhora?”, pergunta Renata. “Não sei”, responde ele. “Em janeiro ninguém sabe, nem eu que nasci aqui.”\n\nUm trovão passa longe e a chuva pinga mais forte no telhado. O ar esfria de repente. “A senhora quer que eu minta?”, ele pergunta.\n\n“Quero que você me diga o que acontece”, responde ela. “Acontece isso: chove três dias e para.” “Hoje está feio. Amanhã, quem sabe. Depois de amanhã, quase certo.”\n\nRenata decide não desistir e paga mais uma noite. O campo atrás da pousada está molhado, úmido, e a estrada some. Ela dorme mal.\n\nDe manhã o céu ainda esconde tudo. A chuva demora a parar, mas alguma coisa aparece atrás dela. É Damião na porta, contente, com dois remos na mão.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "tempestade",
+        "anchor": true,
+        "definition": "Storm, with heavy rain and strong wind together."
+      },
+      {
+        "type": "noun",
+        "word": "trovão",
+        "anchor": true,
+        "definition": "Thunder, the loud noise that follows the lightning."
+      },
+      {
+        "type": "noun",
+        "word": "clima",
+        "anchor": true,
+        "definition": "Weather over a season, not just one day."
+      },
+      {
+        "type": "noun",
+        "word": "excursão",
+        "anchor": true,
+        "definition": "Day trip you book and pay for beforehand."
+      },
+      {
+        "type": "noun",
+        "word": "região",
+        "anchor": true,
+        "definition": "Region, one part of a country with its own character."
+      },
+      {
+        "type": "noun",
+        "word": "campo",
+        "anchor": true,
+        "definition": "Open ground outside town, with grass and few houses."
+      },
+      {
+        "type": "verb",
+        "word": "molhar",
+        "surface": "molhado",
+        "definition": "To get something wet, or to be wet through."
+      },
+      {
+        "type": "verb",
+        "word": "pingar",
+        "surface": "pinga",
+        "definition": "To drip, fall in single drops onto something."
+      },
+      {
+        "type": "verb",
+        "word": "desistir",
+        "definition": "To give up and stop trying to do it."
+      },
+      {
+        "type": "verb",
+        "word": "decidir",
+        "surface": "decide",
+        "definition": "To make up your mind about what to do."
+      },
+      {
+        "type": "verb",
+        "word": "demorar",
+        "surface": "demora",
+        "definition": "To take a long time before it happens."
+      },
+      {
+        "type": "verb",
+        "word": "esfriar",
+        "surface": "esfria",
+        "definition": "To get colder than it was a moment before."
+      },
+      {
+        "type": "verb",
+        "word": "acontecer",
+        "surface": "acontece",
+        "definition": "To happen, to take place in real life."
+      },
+      {
+        "type": "verb",
+        "word": "aparecer",
+        "surface": "aparece",
+        "definition": "To appear, come into sight where nothing was."
+      },
+      {
+        "type": "verb",
+        "word": "esconder",
+        "surface": "esconde",
+        "definition": "To hide something so nobody can see it."
+      },
+      {
+        "type": "adjective",
+        "word": "cinza",
+        "definition": "Grey, the colour of a sky before rain."
+      },
+      {
+        "type": "adjective",
+        "word": "úmido",
+        "definition": "Damp, holding water in the air or ground."
+      },
+      {
+        "type": "adjective",
+        "word": "feio",
+        "definition": "Ugly, and of weather, dark and threatening more rain."
+      },
+      {
+        "type": "adjective",
+        "word": "contente",
+        "definition": "Pleased, glad about something small that went well."
+      },
+      {
+        "type": "adverb",
+        "word": "longe",
+        "definition": "Far away, at a good distance from here."
+      }
+    ],
+    "arcType": "reframe-turn"
+  },
+  {
+    "slug": "no-meio-do-rio",
+    "topic": "lencois-maranhenses",
+    "slotIndex": 1,
+    "title": "Se puxar, a gente vira",
+    "synopsis": "Saem às seis com o rio cheio e a promessa de que a chuva parou de vez, e no meio da travessia o vento decide outra coisa por eles. Voltam sem falar e sem saber se ainda existe um terceiro dia, e ninguém pergunta nada na margem.",
+    "text": "A canoa sai às seis. Damião rema atrás; Renata vai na frente, sem fazer nada. “O rio está alto”, diz ele. “Desceu chuva a noite inteira lá de cima.” A água passa rápida pelo casco.\n\nDa margem a floresta parece uma parede. A temperatura cai e o vento empurra o casco para o lado. “Segura firme, moça. Segura no banco, não no remo.”\n\nEles atravessam o primeiro trecho e balançam feio. Renata escorrega no banco molhado e se agarra ao remo. “Não puxa!”, grita ele. “Puxa não, deixa solto. Se puxar, a gente vira.”\n\nDo outro lado há uma montanha de areia, curvada e torta. “O barco deles já volta”, avisa Damião. “A gente vai atrás.”\n\nRenata sobe dez passos na areia irregular. A chuva chega de lado e arrasta a areia pelo chão. “Desce”, ele grita. “Desce agora.”\n\nDamião salva o remo que ia embora. “Amanhã?”, pergunta ela na margem. Ele olha o céu alto e não responde.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "canoa",
+        "anchor": true,
+        "definition": "Narrow boat that you move along with a paddle."
+      },
+      {
+        "type": "noun",
+        "word": "barco",
+        "anchor": true,
+        "definition": "Boat, bigger than a canoe and with a motor."
+      },
+      {
+        "type": "noun",
+        "word": "remo",
+        "anchor": true,
+        "definition": "Paddle, the flat pole you row a canoe with."
+      },
+      {
+        "type": "noun",
+        "word": "temperatura",
+        "anchor": true,
+        "definition": "Temperature, how hot or cold the air is."
+      },
+      {
+        "type": "noun",
+        "word": "floresta",
+        "anchor": true,
+        "definition": "Forest, a wide stretch of trees growing together."
+      },
+      {
+        "type": "noun",
+        "word": "montanha",
+        "anchor": true,
+        "definition": "Mountain, or any high pile that rises up."
+      },
+      {
+        "type": "verb",
+        "word": "remar",
+        "surface": "rema",
+        "definition": "To row, push a boat along with a paddle."
+      },
+      {
+        "type": "verb",
+        "word": "atravessar",
+        "surface": "atravessam",
+        "definition": "To cross from one side to the other side."
+      },
+      {
+        "type": "verb",
+        "word": "balançar",
+        "surface": "balança",
+        "definition": "To rock from side to side without falling."
+      },
+      {
+        "type": "verb",
+        "word": "escorregar",
+        "surface": "escorrega",
+        "definition": "To slip on a surface and lose your balance."
+      },
+      {
+        "type": "verb",
+        "word": "empurrar",
+        "surface": "empurra",
+        "definition": "To push something away from where you are."
+      },
+      {
+        "type": "verb",
+        "word": "puxar",
+        "surface": "puxa",
+        "definition": "To pull something towards where you are standing."
+      },
+      {
+        "type": "verb",
+        "word": "arrastar",
+        "surface": "arrasta",
+        "definition": "To drag something along the ground behind you."
+      },
+      {
+        "type": "verb",
+        "word": "salvar",
+        "surface": "salva",
+        "definition": "To save something before it is lost for good."
+      },
+      {
+        "type": "verb",
+        "word": "subir",
+        "surface": "sobe",
+        "definition": "To go up, climb towards a higher place."
+      },
+      {
+        "type": "verb",
+        "word": "descer",
+        "surface": "Desceu",
+        "definition": "To go down, come from a higher place."
+      },
+      {
+        "type": "adjective",
+        "word": "alto",
+        "definition": "High, and of a river, full and risen."
+      },
+      {
+        "type": "adjective",
+        "word": "curvado",
+        "surface": "curvada",
+        "definition": "Curved, bending round instead of running in a line."
+      },
+      {
+        "type": "adjective",
+        "word": "torto",
+        "surface": "torta",
+        "definition": "Crooked, leaning off to one side of straight."
+      },
+      {
+        "type": "adjective",
+        "word": "irregular",
+        "definition": "Uneven, with no regular shape or steady surface."
+      }
+    ],
+    "arcType": "mini-cliffhanger"
+  },
+  {
+    "slug": "antes-do-sol",
+    "topic": "lencois-maranhenses",
+    "slotIndex": 2,
+    "title": "A lagoa entre as dunas",
+    "synopsis": "No último dia acorda antes de todo mundo e o céu, pela primeira vez, deixa ver o que havia atrás dele desde domingo. Quem passou dois dias sem prometer nada aparece na porta com a canoa pronta, e o que ela encontra não é bem o que tinha vindo buscar.",
+    "text": "Às quatro ainda há estrela no céu e a lua está baixa. Renata caminha sozinha até a porta. Damião já espera, com a canoa pronta.\n\n“Hoje sai”, avisa ele. “Combinei com o rio.” Ela ri pela primeira vez em três dias.\n\nA areia está seca e firme. Entre as dunas há uma planta pequena e uma flor branca.\n\n“Isso aqui seca em maio”, conta Damião. “Em maio não tem nada. Só areia e vento.” “E você fica?” “Fico. Pesco no rio.”\n\nA lagoa é gigante e rasa. Renata nada dez metros e fica de pé na água. O sol brilha perto da margem.\n\n“Você não entra?”, ela pergunta, e cava a areia com o pé. “Eu entro todo dia”, responde ele. “A senhora entra hoje.”\n\nEla salta uma vez sem motivo. Não são férias e não é feriado: é uma quarta-feira qualquer.\n\n“Duas da tarde”, ela lembra. “Então aproveita”, diz ele. “Isso aqui fica igual, mas sem a senhora.”\n\nA água é bonita e ela está livre até as duas.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "estrela",
+        "anchor": true,
+        "definition": "Star, one of the small lights in the sky."
+      },
+      {
+        "type": "noun",
+        "word": "lua",
+        "anchor": true,
+        "definition": "Moon, the big pale light in the night sky."
+      },
+      {
+        "type": "noun",
+        "word": "planta",
+        "anchor": true,
+        "definition": "Plant, anything green that grows from the ground."
+      },
+      {
+        "type": "noun",
+        "word": "flor",
+        "anchor": true,
+        "definition": "Flower, the coloured part a plant opens up."
+      },
+      {
+        "type": "noun",
+        "word": "férias",
+        "anchor": true,
+        "definition": "Holidays, the weeks you take off from work."
+      },
+      {
+        "type": "noun",
+        "word": "feriado",
+        "anchor": true,
+        "definition": "Public holiday, one day when nobody has to work."
+      },
+      {
+        "type": "verb",
+        "word": "caminhar",
+        "surface": "caminha",
+        "definition": "To walk, go somewhere on foot without hurrying."
+      },
+      {
+        "type": "verb",
+        "word": "nadar",
+        "surface": "nada",
+        "definition": "To swim, move through water with your body."
+      },
+      {
+        "type": "verb",
+        "word": "pescar",
+        "surface": "Pesco",
+        "definition": "To fish, try to catch fish from the water."
+      },
+      {
+        "type": "verb",
+        "word": "cavar",
+        "surface": "cava",
+        "definition": "To dig, make a hole in earth or sand."
+      },
+      {
+        "type": "verb",
+        "word": "saltar",
+        "surface": "salta",
+        "definition": "To jump, push off the ground with both feet."
+      },
+      {
+        "type": "verb",
+        "word": "brilhar",
+        "surface": "brilha",
+        "definition": "To shine, give off light that you notice."
+      },
+      {
+        "type": "verb",
+        "word": "aproveitar",
+        "surface": "aproveita",
+        "definition": "To make the most of something while it lasts."
+      },
+      {
+        "type": "verb",
+        "word": "combinar",
+        "surface": "Combinei",
+        "definition": "To agree something with somebody else in advance."
+      },
+      {
+        "type": "verb",
+        "word": "secar",
+        "surface": "seca",
+        "definition": "To dry, lose the water it was holding."
+      },
+      {
+        "type": "adjective",
+        "word": "gigante",
+        "definition": "Huge, far bigger than you expected it to be."
+      },
+      {
+        "type": "adjective",
+        "word": "bonito",
+        "surface": "bonita",
+        "definition": "Beautiful, good to look at and worth stopping for."
+      },
+      {
+        "type": "adjective",
+        "word": "livre",
+        "definition": "Free, with nothing you have to do now."
+      },
+      {
+        "type": "adjective",
+        "word": "sozinho",
+        "surface": "sozinha",
+        "definition": "Alone, with nobody else there with you at all."
+      },
+      {
+        "type": "adverb",
+        "word": "perto",
+        "definition": "Near, at a short distance from where you are."
+      }
+    ],
+    "arcType": "recurring-character-callback"
+  }
+]

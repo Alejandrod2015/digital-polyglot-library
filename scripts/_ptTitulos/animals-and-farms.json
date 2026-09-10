@@ -1,0 +1,426 @@
+[
+  {
+    "slug": "la-casilla-en-blanco",
+    "topic": "animals-and-farms",
+    "slotIndex": 1,
+    "title": "La casilla en blanco",
+    "synopsis": "Two sheep are found dead against the wire in a field in Chiloé, and Ximena, the vet who does the rounds of the island farms, opens the report in the mud. The neighbour stands there waiting for a name that both of them already know, because the dog that crossed the wet grassland leaves the same crooked print every morning. She writes everything except the line that matters, closes the notebook before finishing it, and sends the report off with the owner's box empty.",
+    "text": "Dos ovejas muertas amanecen junto al alambre del cerco, en Chiloé, Chile. Ximena atiende los campos de la isla y se agacha a abrir el parte.\n\nEl vecino espera en el barro, con el viento frío en contra, y no dice el nombre que los dos saben.\n\n“¿Fue perro, o fue otra cosa?”, pregunta él.\n\n“Fue perro, y no fue anoche”, contesta Ximena. “Esto pasó ayer temprano.”\n\nElla conoce la marca, porque el quiltro de Óscar cruza la vega todas las mañanas y deja la misma pisada torcida.\n\n“¿Y de quién es ese perro?”, insiste el vecino.\n\nElla mira el tepual del fondo y no contesta.\n\n“Si lo pongo, mañana lo sabe la isla entera”, responde ella.\n\n“Póngalo usted, que para eso viene”, agrega él. “Yo tengo que seguir viviendo al lado.”\n\nXimena guarda el cuaderno antes de terminar la línea, y la tapa de luma se cierra de golpe.\n\nEl nombre de Óscar no aparece, y el parte se va con la casilla del dueño en blanco.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "parte",
+        "anchor": false,
+        "definition": "The official paper where you write what happened and who saw it."
+      },
+      {
+        "type": "noun",
+        "word": "alambre",
+        "anchor": false,
+        "definition": "The thin metal line that closes a field so animals stay in."
+      },
+      {
+        "type": "noun",
+        "word": "barro",
+        "anchor": false,
+        "definition": "Wet earth that sticks to your boots after the rain has stopped."
+      },
+      {
+        "type": "verb",
+        "word": "agacharse",
+        "anchor": false,
+        "surface": "se agacha",
+        "definition": "To bend your body down to look at something on the ground."
+      },
+      {
+        "type": "noun",
+        "word": "marca",
+        "anchor": false,
+        "definition": "The sign an animal leaves that tells you where it went."
+      },
+      {
+        "type": "noun",
+        "word": "pisada",
+        "anchor": false,
+        "definition": "The mark that one foot or one paw leaves on the ground."
+      },
+      {
+        "type": "adjective",
+        "word": "torcido",
+        "anchor": false,
+        "surface": "torcida",
+        "definition": "Not straight, bent to one side more than the other."
+      },
+      {
+        "type": "noun",
+        "word": "casilla",
+        "anchor": false,
+        "definition": "The small empty box on a form where you write one thing."
+      },
+      {
+        "type": "noun",
+        "word": "línea",
+        "anchor": false,
+        "surface": "línea",
+        "definition": "One written row across the page of a notebook."
+      },
+      {
+        "type": "expression",
+        "word": "en blanco",
+        "anchor": false,
+        "definition": "Left empty, with nothing written where something should be."
+      },
+      {
+        "type": "adverb",
+        "word": "anoche",
+        "anchor": false,
+        "definition": "During the night that has just passed, before this morning."
+      },
+      {
+        "type": "noun",
+        "word": "tapa",
+        "anchor": false,
+        "definition": "The flat piece of wood that closes a box or a notebook."
+      },
+      {
+        "type": "noun",
+        "word": "cerco",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The fence of posts and wire that closes a field on the island."
+      },
+      {
+        "type": "noun",
+        "word": "quiltro",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "A mongrel dog, the common farm dog all over Chile."
+      },
+      {
+        "type": "noun",
+        "word": "vega",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The low wet grassland between the hills, where sheep feed."
+      },
+      {
+        "type": "noun",
+        "word": "vecino",
+        "definition": "Neighbour; the person who lives on the land or house next to yours."
+      },
+      {
+        "type": "noun",
+        "word": "viento",
+        "definition": "Wind; the moving air that you feel and hear outside."
+      },
+      {
+        "type": "noun",
+        "word": "oveja",
+        "anchor": true,
+        "surface": "ovejas",
+        "register": "cultural",
+        "definition": "A sheep, the animal these island fields are kept for."
+      },
+      {
+        "type": "expression",
+        "word": "al lado",
+        "anchor": false,
+        "definition": "Next to you, close enough to meet every single day."
+      },
+      {
+        "type": "adverb",
+        "word": "ayer",
+        "anchor": false,
+        "definition": "On the day before today, and not before that."
+      }
+    ],
+    "arcType": "daily-encounter"
+  },
+  {
+    "slug": "quiltro-con-dueno",
+    "topic": "animals-and-farms",
+    "slotIndex": 2,
+    "title": "Quiltro con dueño",
+    "synopsis": "The thin mongrel is asleep by the fire when Ximena reaches the house, and its owner does not deny anything: he says the dog killed one sheep and that the other one was already ill. She had seen both of them healthy days before. Instead of arguing the number he brings up the truck he fixed for her last winter, when she was left stranded on the road. She writes the full amount anyway, and he counts out half of it from the tin.",
+    "text": "Un perro dormido descansa al lado del fogón. Ximena llega y no se sienta. Óscar cuida esos cercos desde hace veinte años y no niega nada.\n\n“Mató una sola”, dice Óscar. “La otra ya estaba enferma.”\n\n“Estaban sanas cuando pasé”, contesta Ximena, y saca el número.\n\nÉl no discute el número. “Usted sabe cómo es esto”, suelta Óscar.\n\nSaca a la mesa la camioneta que le arregló el invierno pasado.\n\nLa plata está en la repisa, entre los milcaos.\n\n“Eso fue un favor, y no se cobra así”, le aclara ella.\n\n“Y esto también es un favor”, responde Óscar. “Le pago hoy y quedamos a mano”, dice él. “Y el perro no vuelve a andar suelto.”\n\nLe da rabia que lo saque así, y aprieta la correa sin soltarla.\n\n“El precio lo pongo yo”, contesta Ximena.\n\nLe pone el precio a las ovejas y escribe el número entero.\n\nDeja los papeles sobre la mesa, y huelen a humo.\n\n“La otra oveja no la pago”, repite Óscar, y de ahí no lo mueve nadie.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "negar",
+        "anchor": false,
+        "surface": "niega",
+        "definition": "To say that something is not true or did not happen."
+      },
+      {
+        "type": "noun",
+        "word": "repisa",
+        "anchor": false,
+        "definition": "A narrow flat board on a wall, for keeping small things."
+      },
+      {
+        "type": "noun",
+        "word": "correa",
+        "anchor": false,
+        "definition": "The long strap that you hold a bag or a dog with."
+      },
+      {
+        "type": "verb",
+        "word": "apretar",
+        "anchor": false,
+        "surface": "aprieta",
+        "definition": "To press something hard with your hand and not let it go."
+      },
+      {
+        "type": "verb",
+        "word": "mover",
+        "anchor": false,
+        "surface": "mueve",
+        "definition": "To make somebody change the position they have taken."
+      },
+      {
+        "type": "expression",
+        "word": "dar rabia",
+        "anchor": false,
+        "surface": "da rabia",
+        "definition": "To make you angry inside, in a way you have to hold."
+      },
+      {
+        "type": "expression",
+        "word": "poner el precio",
+        "anchor": false,
+        "surface": "pone el precio",
+        "definition": "To decide how much money a thing is really worth."
+      },
+      {
+        "type": "expression",
+        "word": "estar sana",
+        "anchor": false,
+        "surface": "estaban sanas",
+        "definition": "To be in good health, with nothing wrong inside."
+      },
+      {
+        "type": "expression",
+        "word": "sacar a la mesa",
+        "anchor": false,
+        "surface": "Saca a la mesa",
+        "definition": "To bring up an old thing so it counts in this argument."
+      },
+      {
+        "type": "adjective",
+        "word": "dormido",
+        "anchor": false,
+        "definition": "Sleeping, with the eyes closed and the body still."
+      },
+      {
+        "type": "noun",
+        "word": "invierno",
+        "anchor": false,
+        "definition": "The cold and wet season of the year, when roads get bad."
+      },
+      {
+        "type": "noun",
+        "word": "número",
+        "anchor": false,
+        "definition": "The amount that is written down, in money or in count."
+      },
+      {
+        "type": "verb",
+        "word": "cuidar",
+        "anchor": false,
+        "surface": "cuida",
+        "definition": "To look after something so that nothing bad happens to it."
+      },
+      {
+        "type": "noun",
+        "word": "fogón",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The open wood fire that heats and cooks in an island house."
+      },
+      {
+        "type": "noun",
+        "word": "plata",
+        "definition": "Money; the everyday word for cash across much of Latin America."
+      },
+      {
+        "type": "noun",
+        "word": "mesa",
+        "anchor": true,
+        "surface": "mesa",
+        "register": "cultural",
+        "definition": "The flat piece of furniture where money and food are put down."
+      },
+      {
+        "type": "noun",
+        "word": "camioneta",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The small truck that every country vet drives on these roads."
+      },
+      {
+        "type": "expression",
+        "word": "quedar a mano",
+        "anchor": false,
+        "surface": "quedamos a mano",
+        "definition": "To end a debt so that neither person owes the other."
+      },
+      {
+        "type": "expression",
+        "word": "andar suelto",
+        "anchor": false,
+        "surface": "andar suelto",
+        "definition": "To go around free, with nobody holding you back."
+      },
+      {
+        "type": "noun",
+        "word": "papel",
+        "anchor": false,
+        "surface": "papeles",
+        "definition": "A sheet you can write on, and here the money itself."
+      }
+    ],
+    "arcType": "reframe-turn"
+  },
+  {
+    "slug": "me-quedo-con-el-bote",
+    "topic": "animals-and-farms",
+    "slotIndex": 3,
+    "title": "Me quedo con el bote",
+    "synopsis": "The neighbour signs for less than Ximena valued the animals at, and he does it with the tide out and the other man's boat lying on its side in the yard. On an island a boat weighs more than a piece of paper: without it he has nothing to take to market and sell. She understands the arithmetic and asks him twice anyway. Nobody has broken any law, and the paper is worth half of what she wrote on it.",
+    "text": "Cuando el vecino firma, firma por menos de lo que Ximena tasó. La marea está baja y el bote de Óscar queda de lado sobre el barro del corral.\n\nHuele a algas desde la orilla. “Usted puso más de lo que él pagó”, insiste ella.\n\n“Y él puso menos, y así queda”, contesta el vecino, tranquilo.\n\nEn la isla ese bote pesa más que un papel.\n\n“¿Y usted se queda conforme con eso?”\n\n“Me quedo con el bote”, responde él. “Si me peleo con él, mañana no llevo nada a vender.”\n\nElla entiende la cuenta, porque nadie aquí gana un juicio y sigue teniendo vecinos.\n\nNadie hizo nada contra la ley, y el papel vale la mitad de lo que escribió.\n\n“Firmo yo también, pero abajo pongo lo que valían”, dice Ximena.\n\nDobla el papel por la mitad que falta y se lo guarda en el bolsillo.\n\n“Nos vemos en la marea baja”, dice el vecino, y ella parte por el camino de pellín sin ponerse el cinturón.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "firmar",
+        "anchor": false,
+        "surface": "firma",
+        "definition": "To write your name on a paper to say that you accept it."
+      },
+      {
+        "type": "adjective",
+        "word": "tranquilo",
+        "anchor": false,
+        "definition": "Calm, without worry, as if nothing bad had happened at all."
+      },
+      {
+        "type": "adjective",
+        "word": "conforme",
+        "anchor": false,
+        "definition": "Happy enough with what you got, and not asking for any more."
+      },
+      {
+        "type": "noun",
+        "word": "juicio",
+        "anchor": false,
+        "definition": "A fight taken to a judge, with lawyers and papers and months."
+      },
+      {
+        "type": "expression",
+        "word": "de lado",
+        "anchor": false,
+        "definition": "Lying on one side instead of standing up straight."
+      },
+      {
+        "type": "expression",
+        "word": "contra la ley",
+        "anchor": false,
+        "definition": "Against the rules that the country makes everyone follow."
+      },
+      {
+        "type": "noun",
+        "word": "bolsillo",
+        "anchor": false,
+        "definition": "The small bag sewn inside your coat or your trousers."
+      },
+      {
+        "type": "noun",
+        "word": "cinturón",
+        "anchor": false,
+        "definition": "The belt that holds you to the seat of a car or truck."
+      },
+      {
+        "type": "verb",
+        "word": "partir",
+        "anchor": false,
+        "surface": "Parte",
+        "definition": "To leave a place and start the trip away from it."
+      },
+      {
+        "type": "verb",
+        "word": "llevar",
+        "anchor": false,
+        "surface": "llevo",
+        "definition": "To take a thing with you to another place to sell it."
+      },
+      {
+        "type": "verb",
+        "word": "valer",
+        "anchor": false,
+        "surface": "vale",
+        "definition": "To be worth a certain amount of money or of trust."
+      },
+      {
+        "type": "noun",
+        "word": "alga",
+        "anchor": false,
+        "surface": "algas",
+        "definition": "The green sea plant that the low tide leaves on the shore."
+      },
+      {
+        "type": "verb",
+        "word": "entender",
+        "anchor": false,
+        "surface": "entiende",
+        "definition": "To see clearly why a person does what they do."
+      },
+      {
+        "type": "noun",
+        "word": "marea",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The sea water that rises and falls on the island shore."
+      },
+      {
+        "type": "noun",
+        "word": "bote",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The small open boat that every island family needs."
+      },
+      {
+        "type": "noun",
+        "word": "corral",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The closed yard next to the house where animals are kept."
+      },
+      {
+        "type": "noun",
+        "word": "orilla",
+        "definition": "Shore; the edge of the land where it meets the water."
+      },
+      {
+        "type": "noun",
+        "word": "isla",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The island, and the way of living that being on one imposes."
+      },
+      {
+        "type": "noun",
+        "word": "camino",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The dirt road that joins the farms across the island."
+      },
+      {
+        "type": "verb",
+        "word": "vender",
+        "anchor": false,
+        "surface": "vender",
+        "definition": "To give a thing to another person in exchange for money."
+      }
+    ],
+    "arcType": "late-reveal"
+  }
+]

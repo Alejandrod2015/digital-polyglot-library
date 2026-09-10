@@ -1,0 +1,34 @@
+{
+  "tipo": "traveler",
+  "nivel": "a2",
+  "variante": "brazil",
+  "registro": "seco y práctico, con humor de situación",
+  "espina": "Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.",
+  "recursos": "A2: espejo concreto (la escena 3 devuelve entera la frase de la escena 1, cambiada de boca) y símil simple (la almofada fina como un pano dobrado). Heredados: contraste con pero, causalidad explícita, imagen concreta de remate, gancho final literal. Nada de B1 o superior: sin ironía, sin subtexto, sin final abierto.",
+  "historias": [
+    {
+      "slot": "recife#0",
+      "quiere": "Renata quiere el remedio más fuerte del mostrador para el cuello trabado.",
+      "impide": "Nilza no le entrega nada hasta saber dónde duele de verdad, y Renata no sabe nombrarlo.",
+      "cuesta": "Señalar el hombro, señalar el cuello y rendirse delante de una desconocida sin haber sabido decirlo.",
+      "cambia": "Sale con el frasco más barato y con un diagnóstico que no había pedido: el problema no es el cuello, es la cama que aún no ha visto.",
+      "emocion": "impaciencia que se rinde"
+    },
+    {
+      "slot": "recife#1",
+      "quiere": "Renata quiere dormir una noche entera antes del día siguiente.",
+      "impide": "El colchón se hunde, la barriga entra en la cuenta a la una y el sueño no llega.",
+      "cuesta": "Bajar a la calle de madrugada y admitir en voz alta que no aguanta el cuarto.",
+      "cambia": "Esta vez Nilza no le vende nada: le dice cómo, y el mismo cuarto de repente sirve.",
+      "emocion": "agotamiento que se vuelve calma"
+    },
+    {
+      "slot": "recife#2",
+      "quiere": "Renata quiere que Nilza vaya al hospital por la mano.",
+      "impide": "Nilza tiene su explicación lista y no piensa cerrar la farmacia por veinte minutos.",
+      "cuesta": "Quedarse ella detrás del mostrador y sostener la discusión sin levantar la voz.",
+      "cambia": "El dedo estaba fracturado; quien atendía queda atendida, y la frase del primer día vuelve cambiada de boca.",
+      "emocion": "terquedad que se vuelve cuidado"
+    }
+  ]
+}

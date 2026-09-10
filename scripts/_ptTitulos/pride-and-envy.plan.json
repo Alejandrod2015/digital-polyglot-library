@@ -1,0 +1,34 @@
+{
+  "tipo": "Traveler",
+  "nivel": "B1",
+  "variante": "LATAM",
+  "registro": "caliente y cerrado, de obrador de noche: harina, horno y frases que se dicen dos veces",
+  "espina": "un orgullo que no deja decir en voz alta que lo del otro estaba bueno",
+  "recursos": "repeticion ritmica, imagen concreta, contraste con pero, causalidad explicita, espejo concreto, simil simple, cambio de ritmo",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "que su panaderia siga siendo la de la esquina de siempre, sin cambiar nada",
+      "impide": "la de Silvana vende el doble desde que le cambio la masa al pan dulce",
+      "cuesta": "la clientela del sabado, que se pasa de vereda y ya no vuelve",
+      "cambia": "pasa de no mirar el otro local a contarle las bolsas todas las tardes",
+      "emocion": "envidia que no se nombra, porque nombrarla seria darle la razon; se ve en que cuenta las bolsas ajenas en voz baja mientras amasa"
+    },
+    {
+      "slot": "2",
+      "quiere": "recuperar el sabado con la misma idea, sin decir de quien es",
+      "impide": "Silvana reconoce su propia receta al primer bocado, en la mesa del domingo",
+      "cuesta": "poder mirarla de frente en esa mesa, cosa que ya no recupera ese mes",
+      "cambia": "la copia deja de ser un secreto y pasa a ser un tema",
+      "emocion": "verguenza disfrazada de orgullo; se ve en que sube la voz y se pone a hablar del horno nuevo"
+    },
+    {
+      "slot": "3",
+      "quiere": "que ella lo diga de una vez o que lo deje pasar para siempre",
+      "impide": "Silvana lo dice, y el no puede pedir disculpas sin darle todavia mas razon",
+      "cuesta": "el domingo en familia, que ese mes no se repite y nadie propone otro",
+      "cambia": "los dos aceptan que quedo dicho, y ninguno lo arregla",
+      "emocion": "alivio aspero porque decirlo pesa menos que callarlo; se ve en que Adrian deja la bandeja de pan en la puerta de ella y no toca el timbre"
+    }
+  ]
+}

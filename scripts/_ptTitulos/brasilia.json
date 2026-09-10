@@ -1,0 +1,368 @@
+[
+  {
+    "slug": "senha-b-quarenta-e-dois",
+    "topic": "brasilia",
+    "slotIndex": 0,
+    "title": "O painel que não chama",
+    "synopsis": "Renovar el registro de la agencia parece cosa de una manana y un vuelo por la tarde. En la ventanilla aparece una pendencia de hace dos anos que nadie le habia comunicado nunca. Lo que se le rompe ese dia no es solo el papelito del turno.",
+    "text": "No corredor da repartição, desde antes de abrir, Wagner trabalha com cheiro de café requentado no ar, e conhece cada janela pelo número.\n\nNa portaria, o segurança entrega o crachá de visitante. Rafaela vende viagens e pega a senha B quarenta e dois e senta com o processo no colo, ao lado da ficha das rotas e do folheto novo. “Quanto tempo?”, pergunta a alguém. “Depende do painel.” O painel chama B trinta e nove às nove e vinte.\n\n“Renovação de registro”, diz ela na janela três, às onze. A atendente do escritório tecla, para, e vira a tela: “Tem pendência de dois mil e vinte e quatro. Sem baixa, não renova.”\n\n“Que pendência? Ninguém avisou”, responde Rafaela. “Foi publicado no diário, moça.” “E quem lê o diário todo dia?” “Quem tem despachante. Ou quem perde o voo, como a senhora hoje.”\n\nRafaela alisa o papel da senha contra a perna até rasgar no vinco.\n\nO painel troca de setor e o expediente fecha às cinco. Às quatro ela ainda está no mesmo andar, com o processo na mão e a situação parada no mesmo trâmite.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "repartição",
+        "anchor": true,
+        "definition": "Government office where the public comes to be served."
+      },
+      {
+        "type": "noun",
+        "word": "senha",
+        "anchor": true,
+        "definition": "Paper with a number that says when it is your turn."
+      },
+      {
+        "type": "noun",
+        "word": "painel",
+        "definition": "Screen on the wall that shows the number being called."
+      },
+      {
+        "type": "noun",
+        "word": "processo",
+        "definition": "The set of papers about one case, kept together."
+      },
+      {
+        "type": "noun",
+        "word": "registro",
+        "definition": "Official record that says the business may operate."
+      },
+      {
+        "type": "noun",
+        "word": "pendência",
+        "anchor": true,
+        "definition": "Something left unfinished that blocks all the rest."
+      },
+      {
+        "type": "noun",
+        "word": "baixa",
+        "definition": "Official note saying that a case is now closed."
+      },
+      {
+        "type": "noun",
+        "word": "despachante",
+        "anchor": true,
+        "definition": "Person paid to push papers through the offices."
+      },
+      {
+        "type": "noun",
+        "word": "tela",
+        "definition": "The screen the clerk turns round to show her."
+      },
+      {
+        "type": "verb",
+        "word": "alisar",
+        "surface": "alisa",
+        "definition": "To smooth a piece of paper flat with your hand."
+      },
+      {
+        "type": "verb",
+        "word": "rasgar",
+        "surface": "rasgar",
+        "definition": "To tear paper so that it comes apart."
+      },
+      {
+        "type": "noun",
+        "word": "vinco",
+        "definition": "The line left in paper where it has been folded."
+      },
+      {
+        "type": "noun",
+        "word": "diário",
+        "anchor": true,
+        "definition": "The official daily paper where decisions are printed."
+      },
+      {
+        "type": "noun",
+        "word": "setor",
+        "definition": "One part of an office that handles one kind of case."
+      },
+      {
+        "type": "noun",
+        "word": "expediente",
+        "definition": "The hours an office is open to the public."
+      },
+      {
+        "type": "noun",
+        "word": "situação",
+        "definition": "How a case stands in the system right now."
+      },
+      {
+        "type": "noun",
+        "word": "trâmite",
+        "definition": "The steps a paper goes through inside the office."
+      },
+      {
+        "type": "noun",
+        "word": "escritório",
+        "definition": "Room where somebody does office work every day."
+      },
+      {
+        "type": "noun",
+        "word": "portaria",
+        "definition": "Desk at the door where visitors sign in."
+      },
+      {
+        "type": "noun",
+        "word": "crachá",
+        "definition": "Card with your name that you wear inside a building."
+      },
+      {
+        "type": "noun",
+        "word": "visitante",
+        "definition": "Person from outside who comes in for one visit."
+      },
+      {
+        "type": "noun",
+        "word": "senhora",
+        "definition": "Polite way of speaking to a woman you do not know."
+      }
+    ],
+    "arcType": "juxtaposition-discovery"
+  },
+  {
+    "slug": "o-andar-certo",
+    "topic": "brasilia",
+    "slotIndex": 1,
+    "title": "Como você sabe qual?",
+    "synopsis": "Rafaela quiere entender el sistema para no depender de nadie el ano que viene. Descubre que este sistema no se entiende, se conoce, y que conocerlo tiene precio por hora. La humillacion le dura hasta la segunda ventanilla, que el hombre acierta sin mirar el cartel.",
+    "text": "O despachante é Wagner: cobra por processo, não por hora, e pede a procuração antes de qualquer coisa.\n\n“Assina aqui, com firma reconhecida.” “O cartório fica onde?” “Térreo, do lado do café. Pede a certidão negativa junto, senão volta.”\n\nRafaela desce, pega a certidão e sobe sem perguntar a ninguém.\n\nLá dentro tem um arquivo velho, uma estante de processos e um bebedouro que ninguém usa. Ela acerta a janela na primeira e ri sozinha no elevador; a risada sai meio seca.\n\n“Como você sabe qual?”, pergunta Rafaela. “Vinte anos. A triagem manda pro terceiro, mas o terceiro devolve.”\n\nO protocolo sai às três, com grampo, número e data de validade. Rafaela fotografa o comprovante e mete a despesa no orçamento do ano, na mesma linha do credenciamento da ilha e da autorização da trilha.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "procuração",
+        "anchor": true,
+        "definition": "Paper that lets somebody act in your name."
+      },
+      {
+        "type": "expression",
+        "word": "firma reconhecida",
+        "anchor": true,
+        "definition": "Signature checked and stamped by a notary office."
+      },
+      {
+        "type": "noun",
+        "word": "cartório",
+        "anchor": true,
+        "definition": "Office that checks signatures and keeps official copies."
+      },
+      {
+        "type": "noun",
+        "word": "certidão",
+        "anchor": true,
+        "definition": "Official paper stating what the records say about you."
+      },
+      {
+        "type": "adjective",
+        "word": "negativa",
+        "definition": "Stating that nothing is owed and nothing is pending."
+      },
+      {
+        "type": "noun",
+        "word": "triagem",
+        "definition": "First desk, the one that decides where to send you."
+      },
+      {
+        "type": "noun",
+        "word": "protocolo",
+        "anchor": true,
+        "definition": "Numbered receipt proving the office took your papers."
+      },
+      {
+        "type": "noun",
+        "word": "comprovante",
+        "definition": "Paper that proves a thing was paid or handed in."
+      },
+      {
+        "type": "noun",
+        "word": "orçamento",
+        "definition": "Plan of what money comes in and what goes out."
+      },
+      {
+        "type": "noun",
+        "word": "despesa",
+        "definition": "Money that has to be spent on something needed."
+      },
+      {
+        "type": "noun",
+        "word": "validade",
+        "definition": "The time during which a paper still counts."
+      },
+      {
+        "type": "noun",
+        "word": "elevador",
+        "definition": "Small moving room that carries people between floors."
+      },
+      {
+        "type": "verb",
+        "word": "acertar",
+        "surface": "Acerta",
+        "definition": "To get it right the very first time you try."
+      },
+      {
+        "type": "noun",
+        "word": "risada",
+        "definition": "A laugh, the sound of somebody laughing once."
+      },
+      {
+        "type": "verb",
+        "word": "fotografar",
+        "surface": "fotografa",
+        "definition": "To take a picture with a phone or a camera."
+      },
+      {
+        "type": "noun",
+        "word": "arquivo",
+        "definition": "Metal cabinet where the old papers are stored."
+      },
+      {
+        "type": "noun",
+        "word": "estante",
+        "definition": "Set of shelves where the files are lined up."
+      },
+      {
+        "type": "noun",
+        "word": "bebedouro",
+        "definition": "Machine in a corridor that gives cold water."
+      },
+      {
+        "type": "noun",
+        "word": "grampo",
+        "definition": "Small metal clip that holds sheets of paper together."
+      },
+      {
+        "type": "adjective",
+        "word": "seco",
+        "surface": "seca",
+        "definition": "Dry, with no warmth or pleasure in the sound."
+      }
+    ],
+    "arcType": "mini-cliffhanger"
+  },
+  {
+    "slug": "deferido-no-diario",
+    "topic": "brasilia",
+    "slotIndex": 2,
+    "title": "O diário no mormaço",
+    "synopsis": "El resultado no llega por carta ni por mensaje: sale publicado y no avisa a nadie, asi que hay que ir a mirarlo cada dia. Rafaela se pasa una semana abriendo la misma pagina en el movil, en el autobus, con la pantalla apagada de sol. Cuando aparece la palabra buena entiende que su ano ya no empieza donde ella creia.",
+    "text": "Wagner avisa Rafaela que o resultado não chega por carta nem por mensagem: sai publicado, e quem não olha não fica sabendo.\n\n“Sai que dia?” “Sai quando sair.” “E se eu não vir?” “Aí perde o prazo e recomeça tudo.” “E se sair indeferido?” “Aí vem por escrito, com cópia. Esse eles mandam.”\n\nDurante uma semana Rafaela abre o diário no ônibus, no mormaço das duas, com o reflexo do sol quente na tela e o zumbido do ônibus embaixo.\n\nNa quinta-feira, na relação do dia, aparece a agência dela e, do lado, deferido.\n\n“Saiu.” “Eu vi de manhã”, responde ele, e manda o trecho. “E agora?”, escreve Rafaela ao celular. “Agora você planeja o ano.”\n\nEla imprime a página, junta a cópia à papelada e guarda tudo dentro da ficha, com o folheto novo e a cota da ilha.\n\nNo avião abre o calendário e escreve ao contrário: primeiro a renovação, depois o sorteio, e só então as rotas.",
+    "vocab": [
+      {
+        "type": "adjective",
+        "word": "deferido",
+        "anchor": true,
+        "definition": "Granted, said of a request the office has approved."
+      },
+      {
+        "type": "adjective",
+        "word": "publicado",
+        "definition": "Printed where anybody can read it, and not sent out."
+      },
+      {
+        "type": "noun",
+        "word": "carta",
+        "definition": "Letter on paper, sent by post to your address."
+      },
+      {
+        "type": "noun",
+        "word": "trecho",
+        "definition": "The short part of a text that matters to you."
+      },
+      {
+        "type": "verb",
+        "word": "imprimir",
+        "surface": "imprime",
+        "definition": "To make a paper copy of what is on a screen."
+      },
+      {
+        "type": "noun",
+        "word": "calendário",
+        "definition": "Page of months where you write what happens when."
+      },
+      {
+        "type": "noun",
+        "word": "contrário",
+        "definition": "The other way round, from the end backwards."
+      },
+      {
+        "type": "noun",
+        "word": "quinta-feira",
+        "definition": "Thursday, the fourth working day of the week."
+      },
+      {
+        "type": "verb",
+        "word": "recomeçar",
+        "surface": "recomeça",
+        "definition": "To start the whole thing again from the beginning."
+      },
+      {
+        "type": "verb",
+        "word": "aparecer",
+        "surface": "aparece",
+        "definition": "To show up on the page where it was not before."
+      },
+      {
+        "type": "verb",
+        "word": "responder",
+        "surface": "responde",
+        "definition": "To write back to somebody who wrote to you."
+      },
+      {
+        "type": "verb",
+        "word": "saber",
+        "surface": "sabendo",
+        "definition": "To find out that a thing has happened."
+      },
+      {
+        "type": "adjective",
+        "word": "indeferido",
+        "definition": "Refused, said of a request the office says no to."
+      },
+      {
+        "type": "noun",
+        "word": "cópia",
+        "definition": "Second copy of a paper, kept in case."
+      },
+      {
+        "type": "noun",
+        "word": "zumbido",
+        "definition": "Low steady noise, here from the lights overhead."
+      },
+      {
+        "type": "noun",
+        "word": "reflexo",
+        "definition": "The light bouncing off the screen into her eyes."
+      },
+      {
+        "type": "noun",
+        "word": "papelada",
+        "register": "colloquial",
+        "definition": "A lot of paperwork, more than anybody wants."
+      },
+      {
+        "type": "noun",
+        "word": "mormaço",
+        "definition": "Heavy still heat with no wind at all."
+      },
+      {
+        "type": "noun",
+        "word": "relação",
+        "definition": "Official list of the cases decided that day."
+      },
+      {
+        "type": "verb",
+        "word": "planejar",
+        "surface": "planeja",
+        "definition": "To decide in advance what you will do and when."
+      }
+    ],
+    "arcType": "harmonic-close"
+  }
+]

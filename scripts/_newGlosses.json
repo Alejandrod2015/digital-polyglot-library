@@ -1254,10 +1254,6 @@
       "g": "more expensive (teuer)",
       "t": "adjective"
     },
-    "lichtern": {
-      "g": "lights (die Lichter)",
-      "t": "noun"
-    },
     "schachtel": {
       "g": "small box (die Schachtel)",
       "t": "noun"
@@ -3299,10 +3295,6 @@
     "settembre": {
       "g": "September",
       "t": "noun"
-    },
-    "lasciata": {
-      "g": "left (lasciare)",
-      "t": "verb"
     },
     "nebbia": {
       "g": "fog (la nebbia)",
@@ -5598,10 +5590,6 @@
       "g": "to find out",
       "t": "verb"
     },
-    "firmo": {
-      "g": "I sign (firmar)",
-      "t": "verb"
-    },
     "corbata": {
       "g": "a tie",
       "t": "noun"
@@ -5629,10 +5617,6 @@
     "sorbete": {
       "g": "a sorbet, a fruit ice",
       "t": "noun"
-    },
-    "cuídese": {
-      "g": "take care (cuidarse)",
-      "t": "verb"
     },
     "siéntese": {
       "g": "sit down (sentarse)",
@@ -5726,20 +5710,8 @@
       "g": "debts",
       "t": "noun"
     },
-    "llamara": {
-      "g": "called him (llamar)",
-      "t": "verb"
-    },
-    "conste": {
-      "g": "let it be clear (constar)",
-      "t": "verb"
-    },
     "hablé": {
       "g": "I spoke (hablar)",
-      "t": "verb"
-    },
-    "contárselo": {
-      "g": "telling it to them (contar)",
       "t": "verb"
     },
     "anotar": {
@@ -5764,10 +5736,6 @@
     },
     "trabajaba": {
       "g": "used to work (trabajar)",
-      "t": "verb"
-    },
-    "cobro": {
-      "g": "I charge for it (cobrar)",
       "t": "verb"
     },
     "cose": {
@@ -9364,10 +9332,6 @@
       "g": "December, the month she asks him to keep a place for.",
       "t": "noun"
     },
-    "tchau": {
-      "g": "Bye, the everyday Brazilian goodbye.",
-      "t": "expression"
-    },
     "garoa": {
       "g": "Fine cold drizzle that soaks you slowly.",
       "t": "noun"
@@ -10080,10 +10044,6 @@
       "g": "Paid, settled; here the debt is over.",
       "t": "adjective"
     },
-    "sublinhado": {
-      "g": "Underlined, with a line drawn under it.",
-      "t": "adjective"
-    },
     "folheto": {
       "g": "Printed sheet an agency uses to sell a trip.",
       "t": "noun"
@@ -10298,10 +10258,6 @@
     },
     "alívio": {
       "g": "The good feeling when a worry goes away.",
-      "t": "noun"
-    },
-    "tornozelo": {
-      "g": "The joint between the leg and the foot.",
       "t": "noun"
     },
     "folha": {
@@ -10708,10 +10664,6 @@
       "g": "Room where somebody does office work.",
       "t": "noun"
     },
-    "teclea": {
-      "g": "Types on the keyboard (teclear).",
-      "t": "verb"
-    },
     "tela": {
       "g": "The screen the clerk turns round to show her.",
       "t": "noun"
@@ -10951,6 +10903,1576 @@
     "conferem": {
       "g": "They check it together (conferir).",
       "t": "verb"
+    }
+  },
+  "portuguese-traveler-brazil-a2": {
+    "lousa": {
+      "g": "blackboard on the classroom wall",
+      "t": "noun"
+    },
+    "cadeiras": {
+      "g": "chairs",
+      "t": "noun"
+    },
+    "livro": {
+      "g": "book",
+      "t": "noun"
+    },
+    "dar": {
+      "g": "to give; dar aula is to teach a class",
+      "t": "verb"
+    },
+    "assim": {
+      "g": "like this, this way",
+      "t": "adverb"
+    },
+    "tento": {
+      "g": "I try",
+      "t": "verb"
+    },
+    "escrevo": {
+      "g": "I write",
+      "t": "verb"
+    },
+    "claro": {
+      "g": "clear, easy to follow",
+      "t": "adjective"
+    },
+    "tira": {
+      "g": "takes out, pulls out",
+      "t": "verb"
+    },
+    "giz": {
+      "g": "chalk for writing on a blackboard",
+      "t": "noun"
+    },
+    "enorme": {
+      "g": "huge",
+      "t": "adjective"
+    },
+    "turma": {
+      "g": "class, the group of students",
+      "t": "noun"
+    },
+    "enxerga": {
+      "g": "can see, can make out from far away",
+      "t": "verb"
+    },
+    "varro": {
+      "g": "I sweep",
+      "t": "verb"
+    },
+    "lápis": {
+      "g": "pencil",
+      "t": "noun"
+    },
+    "vontade": {
+      "g": "ease; a vontade means comfortable",
+      "t": "noun"
+    },
+    "graça": {
+      "g": "achar graca means to find something funny",
+      "t": "noun"
+    },
+    "educada": {
+      "g": "polite, well mannered",
+      "t": "adjective"
+    },
+    "quadro": {
+      "g": "board at the front of the room",
+      "t": "noun"
+    },
+    "mesmas": {
+      "g": "same",
+      "t": "adjective"
+    },
+    "entendem": {
+      "g": "they understand",
+      "t": "verb"
+    },
+    "apaga": {
+      "g": "wipes clean, rubs out",
+      "t": "verb"
+    },
+    "livraria": {
+      "g": "bookshop",
+      "t": "noun"
+    },
+    "guardado": {
+      "g": "stored away for a long time",
+      "t": "adjective"
+    },
+    "exemplar": {
+      "g": "copy of a book",
+      "t": "noun"
+    },
+    "contos": {
+      "g": "short stories",
+      "t": "noun"
+    },
+    "conto": {
+      "g": "short story",
+      "t": "noun"
+    },
+    "leio": {
+      "g": "I read",
+      "t": "verb"
+    },
+    "pra": {
+      "g": "colloquial form of para, for or to",
+      "t": "preposition"
+    },
+    "mim": {
+      "g": "me, after a preposition",
+      "t": "pronoun"
+    },
+    "teimosos": {
+      "g": "stubborn",
+      "t": "adjective"
+    },
+    "erro": {
+      "g": "I get it wrong",
+      "t": "verb"
+    },
+    "ideia": {
+      "g": "idea",
+      "t": "noun"
+    },
+    "esperto": {
+      "g": "sharp, quick to work things out",
+      "t": "adjective"
+    },
+    "convence": {
+      "g": "convinces, wins someone over",
+      "t": "verb"
+    },
+    "régua": {
+      "g": "ruler for drawing straight lines",
+      "t": "noun"
+    },
+    "borracha": {
+      "g": "eraser",
+      "t": "noun"
+    },
+    "lembra": {
+      "g": "remembers",
+      "t": "verb"
+    },
+    "aluna": {
+      "g": "female student",
+      "t": "noun"
+    },
+    "estudante": {
+      "g": "student",
+      "t": "noun"
+    },
+    "professor": {
+      "g": "teacher",
+      "t": "noun"
+    },
+    "salas": {
+      "g": "rooms, here classrooms",
+      "t": "noun"
+    },
+    "entrar": {
+      "g": "to get in, to be admitted",
+      "t": "verb"
+    },
+    "faculdade": {
+      "g": "university department you apply to",
+      "t": "noun"
+    },
+    "exame": {
+      "g": "entrance exam",
+      "t": "noun"
+    },
+    "sexta": {
+      "g": "Friday",
+      "t": "noun"
+    },
+    "contou": {
+      "g": "told, said it to anyone",
+      "t": "verb"
+    },
+    "descobre": {
+      "g": "finds out",
+      "t": "verb"
+    },
+    "acaso": {
+      "g": "por acaso means by chance",
+      "t": "noun"
+    },
+    "biblioteca": {
+      "g": "library",
+      "t": "noun"
+    },
+    "estuda": {
+      "g": "studies",
+      "t": "verb"
+    },
+    "universidade": {
+      "g": "university",
+      "t": "noun"
+    },
+    "ensinar": {
+      "g": "to teach",
+      "t": "verb"
+    },
+    "idioma": {
+      "g": "language",
+      "t": "noun"
+    },
+    "ensaiam": {
+      "g": "they rehearse, they practise it out loud",
+      "t": "verb"
+    },
+    "oral": {
+      "g": "spoken rather than written",
+      "t": "adjective"
+    },
+    "perguntas": {
+      "g": "questions",
+      "t": "noun"
+    },
+    "ouço": {
+      "g": "I am listening",
+      "t": "verb"
+    },
+    "falo": {
+      "g": "I speak",
+      "t": "verb"
+    },
+    "vou": {
+      "g": "I am going to",
+      "t": "verb"
+    },
+    "conseguir": {
+      "g": "to manage it, to pull it off",
+      "t": "verb"
+    },
+    "aprendeu": {
+      "g": "learned",
+      "t": "verb"
+    },
+    "aprender": {
+      "g": "to learn",
+      "t": "verb"
+    },
+    "esta": {
+      "g": "this one, feminine",
+      "t": "pronoun"
+    },
+    "único": {
+      "g": "the only one",
+      "t": "adjective"
+    },
+    "aluno": {
+      "g": "male student",
+      "t": "noun"
+    },
+    "cumprimenta": {
+      "g": "greets, says hello",
+      "t": "verb"
+    },
+    "bastante": {
+      "g": "enough, as much as it takes",
+      "t": "adverb"
+    },
+    "pescoço": {
+      "g": "neck",
+      "t": "noun"
+    },
+    "dormiu": {
+      "g": "slept",
+      "t": "verb"
+    },
+    "remédio": {
+      "g": "medicine",
+      "t": "noun"
+    },
+    "ombro": {
+      "g": "shoulder",
+      "t": "noun"
+    },
+    "desiste": {
+      "g": "gives up",
+      "t": "verb"
+    },
+    "frasco": {
+      "g": "small bottle of medicine",
+      "t": "noun"
+    },
+    "embalagem": {
+      "g": "the box a product comes in",
+      "t": "noun"
+    },
+    "recomendo": {
+      "g": "I recommend",
+      "t": "verb"
+    },
+    "este": {
+      "g": "this one",
+      "t": "pronoun"
+    },
+    "amargo": {
+      "g": "bitter",
+      "t": "adjective"
+    },
+    "dor": {
+      "g": "pain",
+      "t": "noun"
+    },
+    "doença": {
+      "g": "illness",
+      "t": "noun"
+    },
+    "cama": {
+      "g": "bed",
+      "t": "noun"
+    },
+    "toma": {
+      "g": "takes, as in takes a pill",
+      "t": "verb"
+    },
+    "discutir": {
+      "g": "to argue about something",
+      "t": "verb"
+    },
+    "colchão": {
+      "g": "mattress",
+      "t": "noun"
+    },
+    "afunda": {
+      "g": "sinks in the middle",
+      "t": "verb"
+    },
+    "almofada": {
+      "g": "cushion, pillow",
+      "t": "noun"
+    },
+    "deita": {
+      "g": "lies down",
+      "t": "verb"
+    },
+    "sono": {
+      "g": "sleep, the need to sleep",
+      "t": "noun"
+    },
+    "barriga": {
+      "g": "belly",
+      "t": "noun"
+    },
+    "estômago": {
+      "g": "stomach",
+      "t": "noun"
+    },
+    "nervoso": {
+      "g": "nerves, being on edge",
+      "t": "noun"
+    },
+    "jaqueta": {
+      "g": "jacket",
+      "t": "noun"
+    },
+    "desce": {
+      "g": "goes down, downstairs",
+      "t": "verb"
+    },
+    "surpreender": {
+      "g": "to be surprised by it",
+      "t": "verb"
+    },
+    "aguento": {
+      "g": "I can put up with",
+      "t": "verb"
+    },
+    "durmo": {
+      "g": "I sleep",
+      "t": "verb"
+    },
+    "virando": {
+      "g": "turning over and over in bed",
+      "t": "verb"
+    },
+    "contando": {
+      "g": "counting",
+      "t": "verb"
+    },
+    "ouviu": {
+      "g": "heard, was told",
+      "t": "verb"
+    },
+    "pesar": {
+      "g": "to feel heavy",
+      "t": "verb"
+    },
+    "triste": {
+      "g": "sad",
+      "t": "adjective"
+    },
+    "enrolada": {
+      "g": "wrapped up in cloth",
+      "t": "adjective"
+    },
+    "machucou": {
+      "g": "hurt herself",
+      "t": "verb"
+    },
+    "caiu": {
+      "g": "fell",
+      "t": "verb"
+    },
+    "inchou": {
+      "g": "swelled up",
+      "t": "verb"
+    },
+    "osso": {
+      "g": "bone",
+      "t": "noun"
+    },
+    "pancada": {
+      "g": "a knock, a blow",
+      "t": "noun"
+    },
+    "sangue": {
+      "g": "blood",
+      "t": "noun"
+    },
+    "dobrar": {
+      "g": "to bend it",
+      "t": "verb"
+    },
+    "nariz": {
+      "g": "nose",
+      "t": "noun"
+    },
+    "enruga": {
+      "g": "wrinkles up",
+      "t": "verb"
+    },
+    "formiga": {
+      "g": "it tingles, pins and needles",
+      "t": "verb"
+    },
+    "engulo": {
+      "g": "I swallow",
+      "t": "verb"
+    },
+    "comprimido": {
+      "g": "a tablet, a pill",
+      "t": "noun"
+    },
+    "conheço": {
+      "g": "I know it, I have seen it before",
+      "t": "verb"
+    },
+    "devolvendo": {
+      "g": "giving it back",
+      "t": "verb"
+    },
+    "hospital": {
+      "g": "hospital",
+      "t": "noun"
+    },
+    "quadras": {
+      "g": "blocks, city blocks",
+      "t": "noun"
+    },
+    "cuido": {
+      "g": "I look after",
+      "t": "verb"
+    },
+    "prefiro": {
+      "g": "I prefer",
+      "t": "verb"
+    },
+    "discutem": {
+      "g": "they argue",
+      "t": "verb"
+    },
+    "calmas": {
+      "g": "calm, without raising their voices",
+      "t": "adjective"
+    },
+    "protegido": {
+      "g": "protected, held safe",
+      "t": "adjective"
+    },
+    "vermelha": {
+      "g": "red",
+      "t": "adjective"
+    },
+    "sermão": {
+      "g": "a telling off",
+      "t": "noun"
+    },
+    "fraturou": {
+      "g": "it is broken, it fractured",
+      "t": "verb"
+    },
+    "tranquila": {
+      "g": "calm and settled",
+      "t": "adjective"
+    },
+    "bebem": {
+      "g": "they drink",
+      "t": "verb"
+    },
+    "horário": {
+      "g": "the usual opening time",
+      "t": "noun"
+    },
+    "escolas": {
+      "g": "schools",
+      "t": "noun"
+    },
+    "coletiva": {
+      "g": "shared by everyone in the house",
+      "t": "adjective"
+    },
+    "garfos": {
+      "g": "forks",
+      "t": "noun"
+    },
+    "sujos": {
+      "g": "dirty",
+      "t": "adjective"
+    },
+    "cozinhar": {
+      "g": "to cook",
+      "t": "verb"
+    },
+    "fogão": {
+      "g": "cooker, stove",
+      "t": "noun"
+    },
+    "bocas": {
+      "g": "burners on a cooker",
+      "t": "noun"
+    },
+    "pratos": {
+      "g": "plates, dishes",
+      "t": "noun"
+    },
+    "peixaria": {
+      "g": "fish shop",
+      "t": "noun"
+    },
+    "lavo": {
+      "g": "I wash up",
+      "t": "verb"
+    },
+    "limpo": {
+      "g": "clean",
+      "t": "adjective"
+    },
+    "esponja": {
+      "g": "sponge for washing dishes",
+      "t": "noun"
+    },
+    "guarda": {
+      "g": "puts away",
+      "t": "verb"
+    },
+    "organiza": {
+      "g": "sorts out, arranges",
+      "t": "verb"
+    },
+    "espaço": {
+      "g": "space, room",
+      "t": "noun"
+    },
+    "sobrou": {
+      "g": "was left over",
+      "t": "verb"
+    },
+    "vassoura": {
+      "g": "broom",
+      "t": "noun"
+    },
+    "frigideira": {
+      "g": "frying pan",
+      "t": "noun"
+    },
+    "bico": {
+      "g": "burner on a cooker",
+      "t": "noun"
+    },
+    "alho": {
+      "g": "garlic",
+      "t": "noun"
+    },
+    "logo": {
+      "g": "soon, straight away",
+      "t": "adverb"
+    },
+    "cozinho": {
+      "g": "I cook",
+      "t": "verb"
+    },
+    "cebola": {
+      "g": "onion",
+      "t": "noun"
+    },
+    "azeite": {
+      "g": "olive oil",
+      "t": "noun"
+    },
+    "prepara": {
+      "g": "gets it ready",
+      "t": "verb"
+    },
+    "feijão": {
+      "g": "beans, the everyday dish with rice",
+      "t": "noun"
+    },
+    "tomate": {
+      "g": "tomato",
+      "t": "noun"
+    },
+    "arroz": {
+      "g": "rice",
+      "t": "noun"
+    },
+    "posta": {
+      "g": "laid, said of the table",
+      "t": "adjective"
+    },
+    "tirar": {
+      "g": "to take off, to take out",
+      "t": "verb"
+    },
+    "boné": {
+      "g": "cap with a peak",
+      "t": "noun"
+    },
+    "quieto": {
+      "g": "quiet, saying nothing",
+      "t": "adjective"
+    },
+    "crua": {
+      "g": "raw, not cooked",
+      "t": "adjective"
+    },
+    "morreu": {
+      "g": "died",
+      "t": "verb"
+    },
+    "salgada": {
+      "g": "salty",
+      "t": "adjective"
+    },
+    "comível": {
+      "g": "edible, good enough to eat",
+      "t": "adjective"
+    },
+    "comenta": {
+      "g": "says anything about it",
+      "t": "verb"
+    },
+    "janta": {
+      "g": "has dinner",
+      "t": "verb"
+    },
+    "ovo": {
+      "g": "egg",
+      "t": "noun"
+    },
+    "salvo": {
+      "g": "saved, rescued",
+      "t": "adjective"
+    },
+    "passou": {
+      "g": "spent, as in spent the night",
+      "t": "verb"
+    },
+    "grudou": {
+      "g": "stuck to the bottom",
+      "t": "verb"
+    },
+    "geladeira": {
+      "g": "fridge",
+      "t": "noun"
+    },
+    "esvazia": {
+      "g": "empties out",
+      "t": "verb"
+    },
+    "escorre": {
+      "g": "drains",
+      "t": "verb"
+    },
+    "macarrão": {
+      "g": "pasta",
+      "t": "noun"
+    },
+    "cogumelo": {
+      "g": "mushroom",
+      "t": "noun"
+    },
+    "milho": {
+      "g": "corn",
+      "t": "noun"
+    },
+    "duro": {
+      "g": "hard",
+      "t": "adjective"
+    },
+    "cenoura": {
+      "g": "carrot",
+      "t": "noun"
+    },
+    "alface": {
+      "g": "lettuce",
+      "t": "noun"
+    },
+    "rega": {
+      "g": "pours dressing over it",
+      "t": "verb"
+    },
+    "vinagre": {
+      "g": "vinegar",
+      "t": "noun"
+    },
+    "lavar": {
+      "g": "to wash up",
+      "t": "verb"
+    },
+    "cozinhou": {
+      "g": "cooked",
+      "t": "verb"
+    },
+    "solta": {
+      "g": "drops, lets go of",
+      "t": "verb"
+    },
+    "onze": {
+      "g": "eleven o'clock",
+      "t": "noun"
+    },
+    "gordura": {
+      "g": "grease, fat",
+      "t": "noun"
+    },
+    "derreteu": {
+      "g": "melted off",
+      "t": "verb"
+    },
+    "gorda": {
+      "g": "thick, said of handwriting",
+      "t": "adjective"
+    },
+    "tempestade": {
+      "g": "storm",
+      "t": "noun"
+    },
+    "deixou": {
+      "g": "left it, made it stay that way",
+      "t": "verb"
+    },
+    "excursão": {
+      "g": "day trip you book and pay for",
+      "t": "noun"
+    },
+    "região": {
+      "g": "region, this part of the country",
+      "t": "noun"
+    },
+    "comprada": {
+      "g": "already bought",
+      "t": "adjective"
+    },
+    "canoa": {
+      "g": "canoe",
+      "t": "noun"
+    },
+    "clima": {
+      "g": "the weather over a season",
+      "t": "noun"
+    },
+    "melhora": {
+      "g": "gets better",
+      "t": "verb"
+    },
+    "janeiro": {
+      "g": "January",
+      "t": "noun"
+    },
+    "nasci": {
+      "g": "I was born",
+      "t": "verb"
+    },
+    "trovão": {
+      "g": "thunder",
+      "t": "noun"
+    },
+    "esfria": {
+      "g": "gets colder",
+      "t": "verb"
+    },
+    "minta": {
+      "g": "should lie, from mentir",
+      "t": "verb"
+    },
+    "diga": {
+      "g": "should tell, from dizer",
+      "t": "verb"
+    },
+    "feio": {
+      "g": "ugly; of weather, threatening",
+      "t": "adjective"
+    },
+    "desistir": {
+      "g": "to give up",
+      "t": "verb"
+    },
+    "campo": {
+      "g": "open ground outside town",
+      "t": "noun"
+    },
+    "esconde": {
+      "g": "hides it from view",
+      "t": "verb"
+    },
+    "contente": {
+      "g": "pleased, glad",
+      "t": "adjective"
+    },
+    "remos": {
+      "g": "paddles",
+      "t": "noun"
+    },
+    "rema": {
+      "g": "rows, paddles",
+      "t": "verb"
+    },
+    "fazer": {
+      "g": "to do, to make",
+      "t": "verb"
+    },
+    "desceu": {
+      "g": "came down",
+      "t": "verb"
+    },
+    "rápida": {
+      "g": "fast",
+      "t": "adjective"
+    },
+    "floresta": {
+      "g": "forest",
+      "t": "noun"
+    },
+    "temperatura": {
+      "g": "temperature",
+      "t": "noun"
+    },
+    "remo": {
+      "g": "paddle for a canoe",
+      "t": "noun"
+    },
+    "atravessam": {
+      "g": "they cross over",
+      "t": "verb"
+    },
+    "balançam": {
+      "g": "they rock from side to side",
+      "t": "verb"
+    },
+    "agarra": {
+      "g": "grabs hold of",
+      "t": "verb"
+    },
+    "solto": {
+      "g": "loose, not held tight",
+      "t": "adjective"
+    },
+    "puxar": {
+      "g": "to pull",
+      "t": "verb"
+    },
+    "montanha": {
+      "g": "mountain; here a high pile of sand",
+      "t": "noun"
+    },
+    "curvada": {
+      "g": "curved",
+      "t": "adjective"
+    },
+    "embora": {
+      "g": "ir embora means to go away",
+      "t": "adverb"
+    },
+    "estrela": {
+      "g": "star",
+      "t": "noun"
+    },
+    "lua": {
+      "g": "moon",
+      "t": "noun"
+    },
+    "pronta": {
+      "g": "ready",
+      "t": "adjective"
+    },
+    "combinei": {
+      "g": "I agreed it beforehand",
+      "t": "verb"
+    },
+    "planta": {
+      "g": "plant",
+      "t": "noun"
+    },
+    "flor": {
+      "g": "flower",
+      "t": "noun"
+    },
+    "pesco": {
+      "g": "I fish",
+      "t": "verb"
+    },
+    "lagoa": {
+      "g": "shallow lake between the dunes",
+      "t": "noun"
+    },
+    "metros": {
+      "g": "metres",
+      "t": "noun"
+    },
+    "entro": {
+      "g": "I go in",
+      "t": "verb"
+    },
+    "salta": {
+      "g": "jumps",
+      "t": "verb"
+    },
+    "motivo": {
+      "g": "reason",
+      "t": "noun"
+    },
+    "férias": {
+      "g": "holidays off work",
+      "t": "noun"
+    },
+    "feriado": {
+      "g": "a public holiday",
+      "t": "noun"
+    },
+    "quarta-feira": {
+      "g": "Wednesday",
+      "t": "noun"
+    },
+    "bonita": {
+      "g": "beautiful",
+      "t": "adjective"
+    },
+    "guichês": {
+      "g": "ticket windows",
+      "t": "noun"
+    },
+    "abertos": {
+      "g": "open, not closed",
+      "t": "adjective"
+    },
+    "alto-falante": {
+      "g": "loudspeaker",
+      "t": "noun"
+    },
+    "impresso": {
+      "g": "printed out on paper",
+      "t": "adjective"
+    },
+    "passagens": {
+      "g": "tickets for a journey",
+      "t": "noun"
+    },
+    "mudou": {
+      "g": "changed",
+      "t": "verb"
+    },
+    "devo": {
+      "g": "I have to, I am due to",
+      "t": "verb"
+    },
+    "estar": {
+      "g": "to be somewhere",
+      "t": "verb"
+    },
+    "conexão": {
+      "g": "the connecting bus you have to catch",
+      "t": "noun"
+    },
+    "apressado": {
+      "g": "in a hurry",
+      "t": "adjective"
+    },
+    "documento": {
+      "g": "official paper that proves who you are",
+      "t": "noun"
+    },
+    "nesse": {
+      "g": "on that one",
+      "t": "pronoun"
+    },
+    "embarca": {
+      "g": "gets on board",
+      "t": "verb"
+    },
+    "volante": {
+      "g": "steering wheel",
+      "t": "noun"
+    },
+    "rodovia": {
+      "g": "highway between cities",
+      "t": "noun"
+    },
+    "cruza": {
+      "g": "crosses",
+      "t": "verb"
+    },
+    "semáforo": {
+      "g": "traffic light",
+      "t": "noun"
+    },
+    "seta": {
+      "g": "indicator light on a vehicle",
+      "t": "noun"
+    },
+    "automóvel": {
+      "g": "motor car",
+      "t": "noun"
+    },
+    "estreita": {
+      "g": "narrow",
+      "t": "adjective"
+    },
+    "apertado": {
+      "g": "tight, with little room",
+      "t": "adjective"
+    },
+    "cruzamento": {
+      "g": "crossroads",
+      "t": "noun"
+    },
+    "ronca": {
+      "g": "snores",
+      "t": "verb"
+    },
+    "acordar": {
+      "g": "to wake up",
+      "t": "verb"
+    },
+    "longa": {
+      "g": "long",
+      "t": "adjective"
+    },
+    "encosto": {
+      "g": "the back of a seat",
+      "t": "noun"
+    },
+    "meia": {
+      "g": "half, as in half an hour",
+      "t": "adjective"
+    },
+    "noites": {
+      "g": "nights",
+      "t": "noun"
+    },
+    "ocupado": {
+      "g": "full, with every seat taken",
+      "t": "adjective"
+    },
+    "ficou": {
+      "g": "stayed behind",
+      "t": "verb"
+    },
+    "trem": {
+      "g": "train",
+      "t": "noun"
+    },
+    "garagem": {
+      "g": "depot where the buses are parked",
+      "t": "noun"
+    },
+    "bicicleta": {
+      "g": "bicycle",
+      "t": "noun"
+    },
+    "moto": {
+      "g": "motorbike",
+      "t": "noun"
+    },
+    "motocicleta": {
+      "g": "motorcycle, the full word",
+      "t": "noun"
+    },
+    "freia": {
+      "g": "brakes, stops the vehicle",
+      "t": "verb"
+    },
+    "homens": {
+      "g": "men",
+      "t": "noun"
+    },
+    "descarregam": {
+      "g": "they unload",
+      "t": "verb"
+    },
+    "malas": {
+      "g": "suitcases",
+      "t": "noun"
+    },
+    "carregam": {
+      "g": "they load up",
+      "t": "verb"
+    },
+    "limparam": {
+      "g": "they cleaned it",
+      "t": "verb"
+    },
+    "limpamos": {
+      "g": "we cleaned it",
+      "t": "verb"
+    },
+    "mexeu": {
+      "g": "touched it, moved it",
+      "t": "verb"
+    },
+    "ganha": {
+      "g": "catches it just in time",
+      "t": "verb"
+    },
+    "valeu": {
+      "g": "valeu means thanks, it was worth it",
+      "t": "expression"
+    },
+    "dobro": {
+      "g": "double the amount",
+      "t": "noun"
+    },
+    "volto": {
+      "g": "I go back",
+      "t": "verb"
+    },
+    "carregador": {
+      "g": "charger for a laptop",
+      "t": "noun"
+    },
+    "notebook": {
+      "g": "laptop",
+      "t": "noun"
+    },
+    "parou": {
+      "g": "stopped working",
+      "t": "verb"
+    },
+    "funcionar": {
+      "g": "to work, to do its job",
+      "t": "verb"
+    },
+    "empresa": {
+      "g": "the company she works for",
+      "t": "noun"
+    },
+    "informática": {
+      "g": "computers, as a trade",
+      "t": "noun"
+    },
+    "modelo": {
+      "g": "model, the exact type of a thing",
+      "t": "noun"
+    },
+    "computador": {
+      "g": "computer",
+      "t": "noun"
+    },
+    "genérico": {
+      "g": "an unbranded copy, cheaper than the original",
+      "t": "noun"
+    },
+    "triplo": {
+      "g": "three times as much",
+      "t": "noun"
+    },
+    "internet": {
+      "g": "the internet",
+      "t": "noun"
+    },
+    "correio": {
+      "g": "post office",
+      "t": "noun"
+    },
+    "domingo": {
+      "g": "Sunday",
+      "t": "noun"
+    },
+    "fechado": {
+      "g": "closed",
+      "t": "adjective"
+    },
+    "enviava": {
+      "g": "was sending, was passing through",
+      "t": "verb"
+    },
+    "testa": {
+      "g": "try it, test it",
+      "t": "verb"
+    },
+    "acende": {
+      "g": "lights up",
+      "t": "verb"
+    },
+    "conecta": {
+      "g": "connects to the network",
+      "t": "verb"
+    },
+    "emprego": {
+      "g": "job",
+      "t": "noun"
+    },
+    "digita": {
+      "g": "types it in",
+      "t": "verb"
+    },
+    "tarefa": {
+      "g": "the job she has been given",
+      "t": "noun"
+    },
+    "solução": {
+      "g": "a way out of the problem",
+      "t": "noun"
+    },
+    "má": {
+      "g": "bad (mau)",
+      "t": "adjective"
+    },
+    "salário": {
+      "g": "salary",
+      "t": "noun"
+    },
+    "rica": {
+      "g": "rich",
+      "t": "adjective"
+    },
+    "pobre": {
+      "g": "poor",
+      "t": "adjective"
+    },
+    "mesas": {
+      "g": "tables",
+      "t": "noun"
+    },
+    "relatório": {
+      "g": "written report of the work done",
+      "t": "noun"
+    },
+    "impressora": {
+      "g": "printer",
+      "t": "noun"
+    },
+    "teclado": {
+      "g": "keyboard",
+      "t": "noun"
+    },
+    "colado": {
+      "g": "stuck, glued together",
+      "t": "adjective"
+    },
+    "emperra": {
+      "g": "jams, sticks and will not move",
+      "t": "verb"
+    },
+    "preto": {
+      "g": "black",
+      "t": "adjective"
+    },
+    "pesado": {
+      "g": "heavy",
+      "t": "adjective"
+    },
+    "envelope": {
+      "g": "envelope for a letter",
+      "t": "noun"
+    },
+    "pardo": {
+      "g": "brown, the colour of wrapping paper",
+      "t": "adjective"
+    },
+    "pacote": {
+      "g": "parcel, a wrapped package",
+      "t": "noun"
+    },
+    "endereço": {
+      "g": "address you write on a parcel",
+      "t": "noun"
+    },
+    "caixinha": {
+      "g": "little sign or box on a counter",
+      "t": "noun"
+    },
+    "país": {
+      "g": "country",
+      "t": "noun"
+    },
+    "notícia": {
+      "g": "a piece of news",
+      "t": "noun"
+    },
+    "limpou": {
+      "g": "cleaned it",
+      "t": "verb"
+    },
+    "rindo": {
+      "g": "laughing",
+      "t": "verb"
+    },
+    "sorri": {
+      "g": "smiles",
+      "t": "verb"
+    },
+    "esquina": {
+      "g": "street corner",
+      "t": "noun"
+    },
+    "atende": {
+      "g": "serves the people who come in",
+      "t": "verb"
+    },
+    "portas": {
+      "g": "doors",
+      "t": "noun"
+    },
+    "abertas": {
+      "g": "open",
+      "t": "adjective"
+    },
+    "camisetas": {
+      "g": "t-shirts",
+      "t": "noun"
+    },
+    "saia": {
+      "g": "skirt",
+      "t": "noun"
+    },
+    "suéter": {
+      "g": "jumper, a warm knitted top",
+      "t": "noun"
+    },
+    "cachecol": {
+      "g": "scarf for the neck",
+      "t": "noun"
+    },
+    "luva": {
+      "g": "glove",
+      "t": "noun"
+    },
+    "par": {
+      "g": "pair; sem par means with no matching one",
+      "t": "noun"
+    },
+    "buscar": {
+      "g": "to come and fetch it",
+      "t": "verb"
+    },
+    "invernos": {
+      "g": "winters",
+      "t": "noun"
+    },
+    "despe": {
+      "g": "takes it off",
+      "t": "verb"
+    },
+    "chá": {
+      "g": "tea",
+      "t": "noun"
+    },
+    "convida": {
+      "g": "invites her over",
+      "t": "verb"
+    },
+    "congelada": {
+      "g": "frozen through, unable to warm up",
+      "t": "adjective"
+    },
+    "fecho": {
+      "g": "I close up",
+      "t": "verb"
+    },
+    "meias": {
+      "g": "socks",
+      "t": "noun"
+    },
+    "secam": {
+      "g": "they dry out",
+      "t": "verb"
+    },
+    "cansa": {
+      "g": "it wears you out",
+      "t": "verb"
+    },
+    "viajar": {
+      "g": "to travel",
+      "t": "verb"
+    },
+    "lâmpada": {
+      "g": "light bulb",
+      "t": "noun"
+    },
+    "cortina": {
+      "g": "curtain",
+      "t": "noun"
+    },
+    "tapete": {
+      "g": "rug on the floor",
+      "t": "noun"
+    },
+    "lavanderia": {
+      "g": "laundry, where clothes are washed for you",
+      "t": "noun"
+    },
+    "caneca": {
+      "g": "mug",
+      "t": "noun"
+    },
+    "uso": {
+      "g": "use; de tanto uso means from being used so much",
+      "t": "noun"
+    },
+    "vocês": {
+      "g": "you, speaking to more than one person",
+      "t": "pronoun"
+    },
+    "vivem": {
+      "g": "they live, they get by",
+      "t": "verb"
+    },
+    "pijama": {
+      "g": "pyjamas",
+      "t": "noun"
+    },
+    "nesta": {
+      "g": "in this one, feminine",
+      "t": "pronoun"
+    },
+    "pensei": {
+      "g": "I have thought about it",
+      "t": "verb"
+    },
+    "cômoda": {
+      "g": "chest of drawers",
+      "t": "noun"
+    },
+    "fronha": {
+      "g": "pillowcase",
+      "t": "noun"
+    },
+    "gelada": {
+      "g": "icy cold to the touch",
+      "t": "adjective"
+    },
+    "permanece": {
+      "g": "stays exactly as she is",
+      "t": "verb"
+    },
+    "mexer": {
+      "g": "to move, to shift about",
+      "t": "verb"
+    },
+    "esquentar": {
+      "g": "to warm up",
+      "t": "verb"
+    },
+    "faixa": {
+      "g": "a strip, here a strip of light",
+      "t": "noun"
+    },
+    "roxa": {
+      "g": "purple",
+      "t": "adjective"
+    },
+    "ensaia": {
+      "g": "rehearses it",
+      "t": "verb"
+    },
+    "desfile": {
+      "g": "street parade",
+      "t": "noun"
+    },
+    "passeia": {
+      "g": "walks about with no hurry",
+      "t": "verb"
+    },
+    "gravata": {
+      "g": "tie worn at the neck",
+      "t": "noun"
+    },
+    "visito": {
+      "g": "I come and see you",
+      "t": "verb"
+    },
+    "brincam": {
+      "g": "they joke about it",
+      "t": "verb"
+    },
+    "desafinado": {
+      "g": "out of tune",
+      "t": "adjective"
+    },
+    "sapato": {
+      "g": "shoe",
+      "t": "noun"
+    },
+    "colorido": {
+      "g": "colourful",
+      "t": "adjective"
+    },
+    "pula": {
+      "g": "jumps over it",
+      "t": "verb"
+    },
+    "linhas": {
+      "g": "lines of writing",
+      "t": "noun"
+    },
+    "tênis": {
+      "g": "trainers",
+      "t": "noun"
+    },
+    "vermelhos": {
+      "g": "red",
+      "t": "adjective"
+    },
+    "balão": {
+      "g": "balloon",
+      "t": "noun"
+    },
+    "voa": {
+      "g": "flies away",
+      "t": "verb"
+    },
+    "apontava": {
+      "g": "used to point at things instead of saying them",
+      "t": "verb"
+    },
+    "deseja": {
+      "g": "wants it enough to say so",
+      "t": "verb"
+    },
+    "ama": {
+      "g": "loves it",
+      "t": "verb"
+    },
+    "escrevem": {
+      "g": "they write",
+      "t": "verb"
+    },
+    "educados": {
+      "g": "polite, well behaved",
+      "t": "adjective"
+    },
+    "vivo": {
+      "g": "alive, and feeling it",
+      "t": "adjective"
     }
   }
 }
