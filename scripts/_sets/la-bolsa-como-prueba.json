@@ -104,7 +104,7 @@
  {
   "type": "meaning_in_context",
   "word": "salirse con la suya",
-  "sentence": "Salió segura de haberse [[salido con la suya]].",
+  "sentence": "Salió con la bolsa llena, segura de haberse [[salido con la suya]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to get your way",
@@ -117,7 +117,7 @@
    "audioClip": {
     "storySlug": "la-bolsa-como-prueba",
     "storySource": "user",
-    "sentence": "Salió segura de haberse salido con la suya.",
+    "sentence": "Salió con la bolsa llena, segura de haberse salido con la suya.",
     "targetWord": "salido con la suya",
     "language": "spanish"
    }
@@ -177,7 +177,7 @@
  {
   "type": "meaning_in_context",
   "word": "en voz baja",
-  "sentence": "En la puerta ensayó la frase [[en voz baja]].",
+  "sentence": "Ensayó la frase [[en voz baja]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "quietly",
@@ -190,7 +190,7 @@
    "audioClip": {
     "storySlug": "la-bolsa-como-prueba",
     "storySource": "user",
-    "sentence": "En la puerta ensayó la frase en voz baja.",
+    "sentence": "Ensayó la frase en voz baja.",
     "targetWord": "en voz baja",
     "language": "spanish"
    }
@@ -199,7 +199,7 @@
  {
   "type": "meaning_in_context",
   "word": "tocarle a alguien",
-  "sentence": "Aquella mañana, por fin, [[le tocaba]] a ella.",
+  "sentence": "Llevaba días oyendo pedir; hoy [[le tocaba]] a ella.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to be someone's turn",
@@ -212,7 +212,7 @@
    "audioClip": {
     "storySlug": "la-bolsa-como-prueba",
     "storySource": "user",
-    "sentence": "Aquella mañana, por fin, le tocaba a ella.",
+    "sentence": "Llevaba días oyendo pedir; hoy le tocaba a ella.",
     "targetWord": "le tocaba",
     "language": "spanish"
    }
@@ -250,7 +250,7 @@
  {
   "type": "meaning_in_context",
   "word": "colar",
-  "sentence": "Nunca había habido nada que [[colar]].",
+  "sentence": "La conocían desde el primer día: nada que [[colar]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to slip past",
@@ -263,7 +263,7 @@
    "audioClip": {
     "storySlug": "la-bolsa-como-prueba",
     "storySource": "user",
-    "sentence": "Nunca había habido nada que colar.",
+    "sentence": "La conocían desde el primer día: nada que colar.",
     "targetWord": "colar",
     "language": "spanish"
    }
@@ -272,7 +272,7 @@
  {
   "type": "meaning_in_context",
   "word": "redondear",
-  "sentence": "Pagó con la cuenta [[redondeada]] y la bolsa llena.",
+  "sentence": "Presumió con la bolsa como prueba y la cuenta [[redondeada]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to round off",
@@ -285,7 +285,7 @@
    "audioClip": {
     "storySlug": "la-bolsa-como-prueba",
     "storySource": "user",
-    "sentence": "Pagó con la cuenta redondeada y la bolsa llena.",
+    "sentence": "Presumió con la bolsa como prueba y la cuenta redondeada.",
     "targetWord": "redondeada",
     "language": "spanish"
    }
@@ -348,7 +348,7 @@
  {
   "type": "meaning_in_context",
   "word": "fresco",
-  "sentence": "Olía a hierbabuena y a pescado [[fresco]].",
+  "sentence": "En el puesto, con olor a pescado [[fresco]], le eligieron la fruta.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "fresh",
@@ -361,7 +361,7 @@
    "audioClip": {
     "storySlug": "la-bolsa-como-prueba",
     "storySource": "user",
-    "sentence": "Olía a hierbabuena y a pescado fresco.",
+    "sentence": "En el puesto, con olor a pescado fresco, le eligieron la fruta.",
     "targetWord": "fresco",
     "language": "spanish"
    }
@@ -424,7 +424,7 @@
  {
   "type": "meaning_in_context",
   "word": "de los buenos",
-  "sentence": "Le tenía guardados tomates [[de los buenos]].",
+  "sentence": "Te guarda tomates [[de los buenos]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "of the best kind",
@@ -437,7 +437,7 @@
    "audioClip": {
     "storySlug": "la-bolsa-como-prueba",
     "storySource": "user",
-    "sentence": "Le tenía guardados tomates de los buenos.",
+    "sentence": "Te guarda tomates de los buenos.",
     "targetWord": "de los buenos",
     "language": "spanish"
    }

@@ -2,7 +2,7 @@
  {
   "type": "meaning_in_context",
   "word": "sobremesa",
-  "sentence": "La [[sobremesa]] se estiró hasta la noche.",
+  "sentence": "La [[sobremesa]] del sábado era de las segundas.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "after-meal chat at the table",
@@ -15,7 +15,7 @@
    "audioClip": {
     "storySlug": "la-sobremesa-se-estira",
     "storySource": "user",
-    "sentence": "La sobremesa se estiró hasta la noche.",
+    "sentence": "La sobremesa del sábado era de las segundas.",
     "targetWord": "sobremesa",
     "language": "spanish"
    }
@@ -177,7 +177,7 @@
  {
   "type": "meaning_in_context",
   "word": "dar igual",
-  "sentence": "La tarde se alargó hasta la noche, y le [[dio igual]].",
+  "sentence": "La tarde se estiró hasta la noche; le [[dio igual]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to not mind",
@@ -190,7 +190,7 @@
    "audioClip": {
     "storySlug": "la-sobremesa-se-estira",
     "storySource": "user",
-    "sentence": "La tarde se alargó hasta la noche, y le dio igual.",
+    "sentence": "La tarde se estiró hasta la noche; le dio igual.",
     "targetWord": "dio igual",
     "language": "spanish"
    }
@@ -250,7 +250,7 @@
  {
   "type": "meaning_in_context",
   "word": "nudo",
-  "sentence": "Le subió un [[nudo]] a la garganta.",
+  "sentence": "Le guardaron silla; le subió un [[nudo]] agradecido.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "lump in the throat",
@@ -263,7 +263,7 @@
    "audioClip": {
     "storySlug": "la-sobremesa-se-estira",
     "storySource": "user",
-    "sentence": "Le subió un nudo a la garganta.",
+    "sentence": "Le guardaron silla; le subió un nudo agradecido.",
     "targetWord": "nudo",
     "language": "spanish"
    }
@@ -272,7 +272,7 @@
  {
   "type": "meaning_in_context",
   "word": "antiguo",
-  "sentence": "Se discutía de fútbol, de obras y de un pregón [[antiguo]].",
+  "sentence": "Se discutía de obras y de un pregón [[antiguo]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "old",
@@ -285,7 +285,7 @@
    "audioClip": {
     "storySlug": "la-sobremesa-se-estira",
     "storySource": "user",
-    "sentence": "Se discutía de fútbol, de obras y de un pregón antiguo.",
+    "sentence": "Se discutía de obras y de un pregón antiguo.",
     "targetWord": "antiguo",
     "language": "spanish"
    }
@@ -348,7 +348,7 @@
  {
   "type": "meaning_in_context",
   "word": "dejar ir",
-  "sentence": "No apuntó nada y [[dejó ir]] la tarde.",
+  "sentence": "No apuntó nada, y [[dejó ir]] la tarde.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to let go of",
@@ -361,7 +361,7 @@
    "audioClip": {
     "storySlug": "la-sobremesa-se-estira",
     "storySource": "user",
-    "sentence": "No apuntó nada y dejó ir la tarde.",
+    "sentence": "No apuntó nada, y dejó ir la tarde.",
     "targetWord": "dejó ir",
     "language": "spanish"
    }
@@ -401,7 +401,7 @@
  {
   "type": "meaning_in_context",
   "word": "de fuera",
-  "sentence": "Ya estaba un poco menos [[de fuera]].",
+  "sentence": "Ya era menos [[de fuera]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "from elsewhere",
@@ -414,7 +414,7 @@
    "audioClip": {
     "storySlug": "la-sobremesa-se-estira",
     "storySource": "user",
-    "sentence": "Ya estaba un poco menos de fuera.",
+    "sentence": "Ya era menos de fuera.",
     "targetWord": "de fuera",
     "language": "spanish"
    }
@@ -424,7 +424,7 @@
  {
   "type": "meaning_in_context",
   "word": "sin palabras",
-  "sentence": "La silla guardada valía lo mismo [[sin palabras]].",
+  "sentence": "Le guardaron silla [[sin palabras]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "without words",
@@ -437,7 +437,7 @@
    "audioClip": {
     "storySlug": "la-sobremesa-se-estira",
     "storySource": "user",
-    "sentence": "La silla guardada valía lo mismo sin palabras.",
+    "sentence": "Le guardaron silla sin palabras.",
     "targetWord": "sin palabras",
     "language": "spanish"
    }

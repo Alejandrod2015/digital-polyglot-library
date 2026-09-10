@@ -53,7 +53,7 @@
  {
   "type": "meaning_in_context",
   "word": "caer en la cuenta",
-  "sentence": "A la tercera vez [[cayó en la cuenta]], de golpe.",
+  "sentence": "De golpe [[cayó en la cuenta]]: era la entrada, no cortesía.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to realise",
@@ -66,7 +66,7 @@
    "audioClip": {
     "storySlug": "el-cafe-lo-pones-tu",
     "storySource": "user",
-    "sentence": "A la tercera vez cayó en la cuenta, de golpe.",
+    "sentence": "De golpe cayó en la cuenta: era la entrada, no cortesía.",
     "targetWord": "cayó en la cuenta",
     "language": "spanish"
    }
@@ -126,7 +126,7 @@
  {
   "type": "meaning_in_context",
   "word": "encargar",
-  "sentence": "Le habían [[encargado]] digitalizar el archivo antes de la mudanza.",
+  "sentence": "Le había [[encargado]] que digitalizara su archivo antes de la mudanza.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to commission",
@@ -139,7 +139,7 @@
    "audioClip": {
     "storySlug": "el-cafe-lo-pones-tu",
     "storySource": "user",
-    "sentence": "Le habían encargado digitalizar el archivo antes de la mudanza.",
+    "sentence": "Le había encargado que digitalizara su archivo antes de la mudanza.",
     "targetWord": "encargado",
     "language": "spanish"
    }
@@ -177,7 +177,7 @@
  {
   "type": "meaning_in_context",
   "word": "de golpe",
-  "sentence": "Lo entendió todo [[de golpe]] y se quedó callada.",
+  "sentence": "[[De golpe]] cayó en la cuenta y se le calentó la cara.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "all at once",
@@ -190,8 +190,8 @@
    "audioClip": {
     "storySlug": "el-cafe-lo-pones-tu",
     "storySource": "user",
-    "sentence": "Lo entendió todo de golpe y se quedó callada.",
-    "targetWord": "de golpe",
+    "sentence": "De golpe cayó en la cuenta y se le calentó la cara.",
+    "targetWord": "De golpe",
     "language": "spanish"
    }
   }
@@ -199,7 +199,7 @@
  {
   "type": "meaning_in_context",
   "word": "calentarse la cara",
-  "sentence": "Lo entendió y [[se le calentó la cara]].",
+  "sentence": "[[Se le calentó la cara]]: era la entrada, no cortesía.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to blush",
@@ -212,8 +212,8 @@
    "audioClip": {
     "storySlug": "el-cafe-lo-pones-tu",
     "storySource": "user",
-    "sentence": "Lo entendió y se le calentó la cara.",
-    "targetWord": "se le calentó la cara",
+    "sentence": "Se le calentó la cara: era la entrada, no cortesía.",
+    "targetWord": "Se le calentó la cara",
     "language": "spanish"
    }
   }
@@ -272,7 +272,7 @@
  {
   "type": "meaning_in_context",
   "word": "trámite",
-  "sentence": "Pidió las llaves, como quien despacha un [[trámite]].",
+  "sentence": "Pidió las llaves como quien despacha un [[trámite]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "formality",
@@ -285,7 +285,7 @@
    "audioClip": {
     "storySlug": "el-cafe-lo-pones-tu",
     "storySource": "user",
-    "sentence": "Pidió las llaves, como quien despacha un trámite.",
+    "sentence": "Pidió las llaves como quien despacha un trámite.",
     "targetWord": "trámite",
     "language": "spanish"
    }
@@ -325,7 +325,7 @@
  {
   "type": "meaning_in_context",
   "word": "quedarse",
-  "sentence": "Querían saber cuánto tiempo [[se quedaba]] en la ciudad.",
+  "sentence": "La barra preguntaba cuánto [[se quedaba]] y si se aburría.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to stay",
@@ -338,7 +338,7 @@
    "audioClip": {
     "storySlug": "el-cafe-lo-pones-tu",
     "storySource": "user",
-    "sentence": "Querían saber cuánto tiempo se quedaba en la ciudad.",
+    "sentence": "La barra preguntaba cuánto se quedaba y si se aburría.",
     "targetWord": "se quedaba",
     "language": "spanish"
    }
@@ -348,7 +348,7 @@
  {
   "type": "meaning_in_context",
   "word": "entero",
-  "sentence": "Respondió despacio, [[entera]], sin esconder nada.",
+  "sentence": "Respondió despacio, [[entera]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "whole",
@@ -361,7 +361,7 @@
    "audioClip": {
     "storySlug": "el-cafe-lo-pones-tu",
     "storySource": "user",
-    "sentence": "Respondió despacio, entera, sin esconder nada.",
+    "sentence": "Respondió despacio, entera.",
     "targetWord": "entera",
     "language": "spanish"
    }
@@ -401,7 +401,7 @@
  {
   "type": "meaning_in_context",
   "word": "sin prisa",
-  "sentence": "Se lo dijo tranquilo y [[sin prisa]].",
+  "sentence": "Le avisó [[sin prisa]]: hoy la casa, mañana el papel.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "unhurriedly",
@@ -414,7 +414,7 @@
    "audioClip": {
     "storySlug": "el-cafe-lo-pones-tu",
     "storySource": "user",
-    "sentence": "Se lo dijo tranquilo y sin prisa.",
+    "sentence": "Le avisó sin prisa: hoy la casa, mañana el papel.",
     "targetWord": "sin prisa",
     "language": "spanish"
    }
@@ -424,7 +424,7 @@
  {
   "type": "meaning_in_context",
   "word": "debajo",
-  "sentence": "Apuntó la hora y, [[debajo]], una nota para mañana.",
+  "sentence": "Apuntó la hora y, [[debajo]]: mañana pregunto yo.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "underneath",
@@ -437,7 +437,7 @@
    "audioClip": {
     "storySlug": "el-cafe-lo-pones-tu",
     "storySource": "user",
-    "sentence": "Apuntó la hora y, debajo, una nota para mañana.",
+    "sentence": "Apuntó la hora y, debajo: mañana pregunto yo.",
     "targetWord": "debajo",
     "language": "spanish"
    }

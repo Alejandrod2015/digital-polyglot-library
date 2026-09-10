@@ -1,0 +1,414 @@
+{
+ "el-cafe-lo-pones-tu": {
+  "en": {
+   "es": "una documentalista de vitoria",
+   "en": "",
+   "antes": "en el sur de españa = in the south of Spain"
+  },
+  "barra": {
+   "es": "la barra",
+   "en": "",
+   "antes": "la barra preguntaba = the bar kept asking"
+  },
+  "y": {
+   "es": "a café y a madera",
+   "en": "",
+   "antes": "a café y a madera vieja = of coffee and old wood"
+  },
+  "madera": {
+   "es": "a café y a madera",
+   "en": "",
+   "antes": "a madera vieja = of old wood"
+  },
+  "preguntaba": {
+   "es": "preguntaba cuánto se quedaba y",
+   "en": "",
+   "antes": "la barra preguntaba = the bar kept asking"
+  },
+  "mañana": {
+   "es": "mañana",
+   "en": "",
+   "antes": "mañana te doy el papel = tomorrow I give you the paperwork"
+  },
+  "papel": {
+   "es": "el papel",
+   "en": "",
+   "antes": "mañana te doy el papel = tomorrow I give you the paperwork"
+  },
+  "me": {
+   "es": "una documentalista de vitoria",
+   "en": "",
+   "antes": "me puedes dar las llaves = can you give me the keys"
+  },
+  "das": {
+   "es": "me das las llaves",
+   "en": ""
+  },
+  "llaves": {
+   "es": "me das las llaves",
+   "en": "",
+   "antes": "me puedes dar las llaves = can you give me the keys"
+  },
+  "ese": {
+   "es": "ese archivo lleva años quieto",
+   "en": "",
+   "antes": "ese archivo lleva cuarenta años quieto = that archive has sat still for forty years"
+  },
+  "lleva": {
+   "es": "ese archivo lleva años quieto",
+   "en": "",
+   "antes": "ese archivo lleva cuarenta años quieto = that archive has sat still for forty years"
+  },
+  "años": {
+   "es": "ese archivo lleva años quieto",
+   "en": "",
+   "antes": "ese archivo lleva cuarenta años quieto = that archive has sat still for forty years"
+  },
+  "quieto": {
+   "es": "ese archivo lleva años quieto",
+   "en": "",
+   "antes": "ese archivo lleva cuarenta años quieto = that archive has sat still for forty years"
+  },
+  "contestó": {
+   "es": "contestó él",
+   "en": "",
+   "antes": "contestó marcos = Marcos replied"
+  },
+  "él": {
+   "es": "contestó él",
+   "en": ""
+  },
+  "calendario": {
+   "es": "cádiz no cabía en su calendario",
+   "en": "",
+   "antes": "en el calendario de claudia = in Claudia's calendar"
+  },
+  "era": {
+   "es": "la esperaba marcos",
+   "en": "",
+   "antes": "no era cortesía = it wasn't politeness"
+  },
+  "entrada": {
+   "es": "era la entrada",
+   "en": "",
+   "antes": "sino la entrada = but the way in"
+  },
+  "cortesía": {
+   "es": "no cortesía",
+   "en": "",
+   "antes": "no era cortesía = it wasn't politeness"
+  },
+  "gusta": {
+   "es": "y me gusta más de",
+   "en": ""
+  },
+  "hubo": {
+   "es": "no hubo llaves",
+   "en": ""
+  },
+  "ni": {
+   "es": "ni derrota",
+   "en": ""
+  },
+  "derrota": {
+   "es": "ni derrota",
+   "en": "",
+   "antes": "no le pareció una derrota = it didn't feel like a defeat"
+  },
+  "apuntó": {
+   "es": "apuntó la hora y",
+   "en": "",
+   "antes": "claudia apuntó la hora = Claudia wrote down the time"
+  },
+  "hora": {
+   "es": "apuntó la hora y",
+   "en": "",
+   "antes": "claudia apuntó la hora = Claudia wrote down the time"
+  },
+  "apuntar": {
+   "es": "apuntó la hora y",
+   "en": "",
+   "antes": "claudia apuntó la hora = Claudia wrote down the time"
+  }
+ },
+ "la-bolsa-como-prueba": {
+  "qué": {
+   "es": "qué necesitaba y cómo se pedía",
+   "en": ""
+  },
+  "necesitaba": {
+   "es": "qué necesitaba y cómo se pedía",
+   "en": "",
+   "antes": "lo que necesitaba = what she needed"
+  },
+  "le": {
+   "es": "llevaba días oyendo pedir en",
+   "en": "",
+   "antes": "aquella mañana le tocaba = that morning it was her turn"
+  },
+  "tocaba": {
+   "es": "hoy le tocaba",
+   "en": "",
+   "antes": "aquella mañana le tocaba = that morning it was her turn"
+  },
+  "olor": {
+   "es": "con olor a pescado fresco",
+   "en": "",
+   "antes": "entre el olor a hierbabuena = amid the smell of mint"
+  },
+  "a": {
+   "es": "la bolsa como prueba",
+   "en": "",
+   "antes": "oyendo pedir a los demás = hearing the others order"
+  },
+  "eligieron": {
+   "es": "le eligieron la fruta",
+   "en": "",
+   "antes": "le eligieron la fruta madura = they picked her the ripe fruit"
+  },
+  "fruta": {
+   "es": "le eligieron la fruta",
+   "en": "",
+   "antes": "la fruta madura = the ripe fruit"
+  },
+  "presumió": {
+   "es": "le presumió a marcos",
+   "en": "",
+   "antes": "presumió claudia = Claudia boasted"
+  },
+  "preguntó": {
+   "es": "preguntó él",
+   "en": "",
+   "antes": "preguntó marcos = Marcos asked"
+  },
+  "él": {
+   "es": "preguntó él",
+   "en": ""
+  },
+  "si": {
+   "es": "qué necesitaba y cómo se pedía",
+   "en": "",
+   "antes": "como si alguien fuera a examinarla = as if someone were about to test her"
+  },
+  "te": {
+   "es": "de claudia tenía dos columnas",
+   "en": ""
+  },
+  "guarda": {
+   "es": "te guarda tomates de los buenos",
+   "en": ""
+  },
+  "tomates": {
+   "es": "te guarda tomates de los buenos",
+   "en": "",
+   "antes": "le tenía guardados tomates = she was keeping tomatoes for her"
+  },
+  "añadió": {
+   "es": "añadió",
+   "en": "",
+   "antes": "añadió marcos = Marcos added"
+  },
+  "nada": {
+   "es": "nada que colar",
+   "en": "",
+   "antes": "nunca había habido nada que colar = there had never been anything to pass off"
+  },
+  "que": {
+   "es": "nada que colar",
+   "en": "",
+   "antes": "lo que necesitaba = what she needed"
+  },
+  "colar": {
+   "es": "nada que colar",
+   "en": "",
+   "antes": "nunca había habido nada que colar = there had never been anything to pass off"
+  },
+  "vergüenza": {
+   "es": "la vergüenza duró poco",
+   "en": "",
+   "antes": "la vergüenza le duró poco = the embarrassment didn't last"
+  },
+  "duró": {
+   "es": "la vergüenza duró poco",
+   "en": "",
+   "antes": "la vergüenza le duró poco = the embarrassment didn't last"
+  },
+  "poco": {
+   "es": "la vergüenza duró poco",
+   "en": "",
+   "antes": "la vergüenza le duró poco = the embarrassment didn't last"
+  },
+  "ganó": {
+   "es": "ganó la risa antes de",
+   "en": "",
+   "antes": "porque la risa ganó = because the laughter won"
+  },
+  "risa": {
+   "es": "ganó la risa antes de",
+   "en": "",
+   "antes": "porque la risa ganó = because the laughter won"
+  },
+  "antes": {
+   "es": "la risa antes de que",
+   "en": "",
+   "antes": "antes de que ella decidiera reírse = before she decided to laugh"
+  },
+  "decidiera": {
+   "es": "antes de que decidiera reírse",
+   "en": "",
+   "antes": "antes de que ella decidiera reírse = before she decided to laugh"
+  },
+  "reírse": {
+   "es": "antes de que decidiera reírse",
+   "en": "",
+   "antes": "antes de que ella decidiera reírse = before she decided to laugh"
+  },
+  "lo": {
+   "es": "con olor a pescado fresco",
+   "en": "",
+   "antes": "lo que necesitaba = what she needed"
+  },
+  "repartió": {
+   "es": "y repartió la fruta",
+   "en": "",
+   "antes": "repartió la fruta en la cocina = shared out the fruit in the kitchen"
+  },
+  "repartir": {
+   "es": "y repartió la fruta",
+   "en": "",
+   "antes": "repartió la fruta en la cocina = shared out the fruit in the kitchen"
+  },
+  "durar": {
+   "es": "la vergüenza duró poco",
+   "en": "",
+   "antes": "la vergüenza le duró poco = the embarrassment didn't last"
+  },
+  "elegir": {
+   "es": "le eligieron la fruta",
+   "en": "",
+   "antes": "le eligieron la fruta madura = they picked her the ripe fruit"
+  },
+  "tocarle a alguien": {
+   "es": "hoy le tocaba",
+   "en": "",
+   "antes": "aquella mañana le tocaba = that morning it was her turn"
+  }
+ },
+ "la-sobremesa-se-estira": {
+  "del": {
+   "es": "la sobremesa del sábado era",
+   "en": ""
+  },
+  "sábado": {
+   "es": "sobremesa del sábado era de",
+   "en": "",
+   "antes": "la de aquel sábado = the one that Saturday"
+  },
+  "llegó": {
+   "es": "claudia llegó con la libreta",
+   "en": ""
+  },
+  "prisa": {
+   "es": "libreta y prisa por irse",
+   "en": ""
+  },
+  "irse": {
+   "es": "libreta y prisa por irse",
+   "en": "",
+   "antes": "la idea de irse a las cuatro = the idea of leaving at four"
+  },
+  "en": {
+   "es": "en el comedor olía a laurel",
+   "en": "",
+   "antes": "en la peña = at the club"
+  },
+  "olía": {
+   "es": "en el comedor olía a laurel",
+   "en": ""
+  },
+  "laurel": {
+   "es": "en el comedor olía a laurel",
+   "en": "",
+   "antes": "olor a arroz y a laurel = a smell of rice and bay leaf"
+  },
+  "discutía": {
+   "es": "se discutía de obras y",
+   "en": "",
+   "antes": "se comía y se discutía despacio = people ate and argued slowly"
+  },
+  "me": {
+   "es": "la sobremesa se estira",
+   "en": "",
+   "antes": "me tendría que ir = I ought to go"
+  },
+  "tengo": {
+   "es": "me tengo que ir",
+   "en": "",
+   "antes": "tengo la tarde medida = I have the afternoon planned out"
+  },
+  "ir": {
+   "es": "la sobremesa se estira",
+   "en": "",
+   "antes": "me tendría que ir = I ought to go"
+  },
+  "mientras": {
+   "es": "sentenció marcos mientras recogían",
+   "en": "",
+   "antes": "mientras recogían la fuente = while they cleared the serving dish"
+  },
+  "recogían": {
+   "es": "sentenció marcos mientras recogían",
+   "en": "",
+   "antes": "mientras recogían la fuente = while they cleared the serving dish"
+  },
+  "guardaron": {
+   "es": "le guardaron silla sin palabras",
+   "en": ""
+  },
+  "silla": {
+   "es": "le guardaron silla sin palabras",
+   "en": "",
+   "antes": "pero le habían guardado silla = but they had kept her a seat"
+  },
+  "palabras": {
+   "es": "le guardaron silla sin palabras",
+   "en": "",
+   "antes": "valía lo mismo sin palabras = meant the same without words"
+  },
+  "tarde": {
+   "es": "y dejó ir la tarde",
+   "en": "",
+   "antes": "tengo la tarde medida = I have the afternoon planned out"
+  },
+  "estiró": {
+   "es": "tarde se estiró hasta la",
+   "en": "",
+   "antes": "la sobremesa se estiró hasta la noche = the after-lunch chat stretched into the night"
+  },
+  "ya": {
+   "es": "ya era menos de fuera",
+   "en": "",
+   "antes": "ya estás trabajando = you're already working"
+  },
+  "menos": {
+   "es": "ya era menos de fuera",
+   "en": "",
+   "antes": "un poco menos de fuera = a little less of an outsider"
+  },
+  "fuera": {
+   "es": "ya era menos de fuera",
+   "en": "",
+   "antes": "un poco menos de fuera = a little less of an outsider"
+  },
+  "recoger": {
+   "es": "sentenció marcos mientras recogían",
+   "en": "",
+   "antes": "mientras recogían la fuente = while they cleared the serving dish"
+  },
+  "de fuera": {
+   "es": "ya era menos de fuera",
+   "en": "",
+   "antes": "un poco menos de fuera = a little less of an outsider"
+  }
+ }
+}
