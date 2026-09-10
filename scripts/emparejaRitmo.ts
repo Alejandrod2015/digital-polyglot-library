@@ -66,7 +66,8 @@ const palabras = (t: string) => t.trim().split(/\s+/).filter(Boolean).length;
   if (!tocar.length) console.log("  ningun parrafo desentona");
   for (const f of tocar) {
     console.log(`  [${f.i}] ${f.ws.toFixed(2)} w/s · ${f.texto.slice(0, 52)}`);
-    console.log(`     DPL_AUDIO_FULL_OK=1 NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_rerollSection.ts ${slug} ${f.i} --tempo ${f.factor.toFixed(2)} --apply`);
+    const speed = Math.min(1.2, Math.max(0.7, 0.9 * f.factor)).toFixed(2);
+    console.log(`     DPL_AUDIO_FULL_OK=1 NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_rerollSection.ts ${slug} ${f.i} --tempo 1.0 --speed ${speed} --apply`);
   }
   await prisma.$disconnect();
 })();

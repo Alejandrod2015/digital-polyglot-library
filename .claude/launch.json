@@ -176,6 +176,32 @@
       ],
       "port": 3009,
       "autoPort": false
+    },
+    {
+      "_comment": "Muestra de narracion con el texto delante (el lector solo toca la narracion completa). Borrar al cerrar el B1 latam.",
+      "name": "muestra-b1-8920",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8920",
+        "--directory",
+        "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library--claude-worktrees-angry-lovelace-b6095d/caecbf0a-46e6-4d3a-bb3e-b642da77d28c/scratchpad/muestra"
+      ],
+      "port": 8920
+    },
+    {
+      "_comment": "Audicion de las 3 voces chilenas aprobadas para el tema 4 del B1 latam. Borrar al elegir.",
+      "name": "voces-cl-8921",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8921",
+        "--directory",
+        "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library--claude-worktrees-angry-lovelace-b6095d/caecbf0a-46e6-4d3a-bb3e-b642da77d28c/scratchpad/vocescl"
+      ],
+      "port": 8921
     }
   ]
 }

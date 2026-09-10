@@ -61,6 +61,18 @@ export function rapidasDe(
   return out;
 }
 
+/**
+ * Velocidad NATIVA con la que re-sintetizar ese parrafo. El audio ya hecho NO
+ * se estira: `atempo` sobre una toma buena se oye, y el usuario lo caza. Se
+ * parte de la velocidad del catalogo (0,9) y se baja en la misma proporcion
+ * que sobra, con el suelo 0,7 que impone ElevenLabs. Es un punto de partida,
+ * no una garantia: la toma se mide antes de empalmarla, con
+ * scripts/_ritmoCandidato.ts.
+ */
+export function velocidadSugerida(r: Rapida): string {
+  return Math.min(1.2, Math.max(0.7, 0.9 * (r.mediana / r.ws))).toFixed(2);
+}
+
 /** Lo que imprime el runner de narracion despues de alinear. */
 export function informe(slug: string, rapidas: Rapida[]): string {
   if (!rapidas.length) return `ritmo: sin oraciones aceleradas`;
@@ -69,7 +81,7 @@ export function informe(slug: string, rapidas: Rapida[]): string {
     ...rapidas.map((r) =>
       `   ${r.ws.toFixed(2)} w/s (mediana ${r.mediana.toFixed(2)}) · ${r.texto.slice(0, 60)}` +
       (r.fragmento !== null
-        ? `\n     arreglo: DPL_AUDIO_FULL_OK=1 NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_rerollSection.ts ${slug} ${r.fragmento} --tempo ${(r.mediana / r.ws).toFixed(2)} --apply`
+        ? `\n     arreglo: DPL_AUDIO_FULL_OK=1 NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_rerollSection.ts ${slug} ${r.fragmento} --tempo 1.0 --speed ${velocidadSugerida(r)} --apply`
         : "")),
   ].join("\n");
 }
