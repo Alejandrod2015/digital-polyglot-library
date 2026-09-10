@@ -1914,43 +1914,7 @@ export async function validateGeneratedStory(
       const firstQuote = parsed.text.search(/[«“"„]/);
       const opening = firstQuote > 0 ? parsed.text.slice(0, firstQuote) : parsed.text;
 
-      // Quién habla: nombre propio pegado a un verbo de habla, en cualquiera
-      // de los dos órdenes ("dice Toñi" / "Toñi pregunta").
-      const SAY = "dice|dijo|pregunta|preguntó|contesta|contestó|responde|respondió|añade|añadió|grita|gritó|susurra|repite|repitió|explica|explicó" +
-        // Portugués: los verbos de habla en presente Y en pretérito. Sin ellos
-        // el check solo acertaba por coincidencia con el español ("responde",
-        // "pergunta" no).
-        "|diz|disse|perguntou|respondeu|avisa|avisou|repetiu|conta|contou|gritou|chama|chamou|pede|pediu|ensina|ensinou|escreve|escreveu";
-      // Un PRONOMBRE no es un personaje. "Ele responde" hacía que el check
-      // pidiera presentar a "Ele" como si fuera alguien nuevo: el 2026-08-23
-      // tumbaba `a-cabeca-do-vitalino` del A1 brasileño, que está bien escrita.
-      const PRONOMBRES = new Set([
-        "ele", "ela", "eles", "elas", "você", "vocês", "nós", "gente",
-        "él", "ella", "ellos", "ellas", "usted", "ustedes", "nosotros",
-        "lui", "lei", "loro", "elle", "ils", "elles", "er", "sie", "wir",
-        // Indefinidos: "Ninguém pede carimbo aqui" no presenta a nadie.
-        "ninguém", "ninguem", "alguém", "alguem", "todos", "todo", "tudo",
-        "nadie", "alguien", "nessuno", "qualcuno", "personne", "quelqu",
-        "niemand", "jemand",
-      ]);
-      const speakers = new Set<string>();
-      for (const re of [
-        new RegExp(`(?:${SAY})\\s+([\\p{Lu}][\\p{Ll}]+)`, "gu"),
-        new RegExp(`([\\p{Lu}][\\p{Ll}]+)\\s+(?:${SAY})`, "gu"),
-      ]) {
-        for (const m of parsed.text.matchAll(re)) speakers.add(m[1]);
-      }
-      // También los que hablan sin nombre propio: "le pregunta la panadera",
-      // "contesta el señor". Son la mitad de los casos reales y se escapaban
-      // del patrón de mayúscula inicial.
-      for (const re of [
-        new RegExp(`(?:${SAY})\\s+(?:el|la|un|una)\\s+([\\p{Ll}]+)`, "gu"),
-        new RegExp(`(?:el|la|un|una)\\s+([\\p{Ll}]+)\\s+(?:${SAY})`, "gu"),
-      ]) {
-        for (const m of parsed.text.matchAll(re)) speakers.add(m[1]);
-      }
-      const late = [...speakers]
-        .filter((n) => !PRONOMBRES.has(n.toLowerCase()))
+      const late = extractQuotedSpeakers(parsed.text, context.language)
         .filter((n) => !opening.includes(n));
 
       // Personajes que ya salieron en historias hermanas del mismo journey.
@@ -3121,6 +3085,100 @@ export async function validateGeneratedStory(
   }
 
   return finalize(checks, parsed);
+}
+
+// Verbos de habla por idioma. Antes eran UNA lista mezclada, y los verbos
+// portugueses cazaban prefijos de palabras españolas: en "tengo la tarde
+// contada", "conta" es el principio de "contada", y el check pedía presentar
+// a un personaje llamado "tarde" (2026-09-10, `la-sobremesa-se-estira` del
+// Traveler ES/Spain B2; la autora tuvo que reescribir la frase para pasar).
+// "avisa" va en las dos porque también es español ("avisa Claudia").
+//
+// `inflect`: sin límites de palabra, el prefijo cazaba de paso el imperfecto
+// y el plural cuando el hablante va DELANTE ("Regina gritaba", "Chucho
+// contaba", "la barra preguntaba" en journeys reales). Esas terminaciones se
+// conservan, pero solo en ese orden: detrás del verbo casi siempre viene un
+// objeto ("contaba una historia", "contestaba el celular"), no quien habla.
+type SayVerbs = { verbs: string; inflect: string; extraAfter?: string };
+const SAY_BY_LANG: Record<"ES" | "PT" | "IT", SayVerbs> = {
+  ES: {
+    verbs: "dice|dijo|pregunta|preguntó|contesta|contestó|responde|respondió|añade|añadió|grita|gritó|susurra|repite|repitió|explica|explicó|avisa",
+    inflect: "ba|ban|n",
+    // "conta" era portugués, pero su prefijo cazaba "contaba" en español.
+    extraAfter: "contaba|contaban",
+  },
+  // Portugués: los verbos de habla en presente Y en pretérito. Sin ellos el
+  // check solo acertaba por coincidencia con el español ("responde",
+  // "pergunta" no).
+  PT: {
+    verbs: "diz|disse|perguntou|responde|respondeu|avisa|avisou|repetiu|conta|contou|grita|gritou|chama|chamou|pede|pediu|ensina|ensinou|escreve|escreveu|explica",
+    inflect: "va|vam|m",
+  },
+  // Italiano: solo lo que la lista mezclada ya cazaba ("dice", "disse", y
+  // "racconta" porque "conta" casaba dentro). Ampliarla (chiede, spiega,
+  // risponde) endurece los journeys italianos y es otra decisión.
+  IT: { verbs: "dice|disse|racconta", inflect: "va|vano|no" },
+};
+
+function sayVerbsFor(language: string | undefined): SayVerbs {
+  // La base guarda el nombre ("spanish") y saveStory pasa el código ("ES").
+  const lang = (language ?? "").toUpperCase();
+  if (lang === "ES" || lang === "SPANISH") return SAY_BY_LANG.ES;
+  if (lang === "PT" || lang === "PORTUGUESE") return SAY_BY_LANG.PT;
+  if (lang === "IT" || lang === "ITALIAN") return SAY_BY_LANG.IT;
+  // Idioma sin lista propia: se conserva la unión de siempre.
+  const all = Object.values(SAY_BY_LANG);
+  return {
+    verbs: all.map((s) => s.verbs).join("|"),
+    inflect: [...new Set(all.flatMap((s) => s.inflect.split("|")))].join("|"),
+    extraAfter: all.map((s) => s.extraAfter).filter(Boolean).join("|"),
+  };
+}
+
+// Un PRONOMBRE no es un personaje. "Ele responde" hacía que el check
+// pidiera presentar a "Ele" como si fuera alguien nuevo: el 2026-08-23
+// tumbaba `a-cabeca-do-vitalino` del A1 brasileño, que está bien escrita.
+const SPEAKER_PRONOUNS = new Set([
+  "ele", "ela", "eles", "elas", "você", "vocês", "nós", "gente",
+  "él", "ella", "ellos", "ellas", "usted", "ustedes", "nosotros",
+  "lui", "lei", "loro", "elle", "ils", "elles", "er", "sie", "wir",
+  // Indefinidos: "Ninguém pede carimbo aqui" no presenta a nadie.
+  "ninguém", "ninguem", "alguém", "alguem", "todos", "todo", "tudo",
+  "nadie", "alguien", "nessuno", "qualcuno", "personne", "quelqu",
+  "niemand", "jemand",
+]);
+
+/**
+ * Quién habla en prosa narrada: la palabra pegada a un verbo de habla, en
+ * cualquiera de los dos órdenes ("dice Toñi" / "Toñi pregunta", "le pregunta
+ * la panadera" / "la panadera contesta"). La usa `narrator-speaker-introduced`
+ * y se exporta para poder probarla sin montar una historia entera.
+ *
+ * Los verbos y los artículos van entre límites de palabra Unicode (`\p{L}`,
+ * no `\b`, que en JS no entiende la ñ ni las tildes). Sin ellos "conta"
+ * casaba dentro de "contada" y "la" al final de "Isla".
+ */
+export function extractQuotedSpeakers(text: string, language?: string): string[] {
+  const { verbs, inflect, extraAfter } = sayVerbsFor(language);
+  // Verbo DELANTE del hablante: solo las formas de la lista, exactas.
+  const sayBefore = `(?<!\\p{L})(?:${verbs})(?!\\p{L})`;
+  // Verbo DETRÁS del hablante: también sus terminaciones de imperfecto y plural.
+  const afterAlts = [`(?:${verbs})(?:${inflect})?`, extraAfter].filter(Boolean).join("|");
+  const sayAfter = `(?<!\\p{L})(?:${afterAlts})(?!\\p{L})`;
+  const art = `(?<!\\p{L})(?:el|la|un|una)`;
+  const speakers = new Set<string>();
+  for (const re of [
+    new RegExp(`${sayBefore}\\s+([\\p{Lu}][\\p{Ll}]+)`, "gu"),
+    new RegExp(`([\\p{Lu}][\\p{Ll}]+)\\s+${sayAfter}`, "gu"),
+    // También los que hablan sin nombre propio: "le pregunta la panadera",
+    // "contesta el señor". Son la mitad de los casos reales y se escapaban
+    // del patrón de mayúscula inicial.
+    new RegExp(`${sayBefore}\\s+${art}\\s+([\\p{Ll}]+)`, "gu"),
+    new RegExp(`${art}\\s+([\\p{Ll}]+)\\s+${sayAfter}`, "gu"),
+  ]) {
+    for (const m of text.matchAll(re)) speakers.add(m[1]);
+  }
+  return [...speakers].filter((n) => !SPEAKER_PRONOUNS.has(n.toLowerCase()));
 }
 
 /**
