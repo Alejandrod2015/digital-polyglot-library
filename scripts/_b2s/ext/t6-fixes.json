@@ -1,0 +1,15 @@
+{
+ "vuelva-cuando-quiera": {
+  "frenó": { "g": "stopped (frenar)" },
+  "mandaba": { "g": "was in charge, ruled (mandar)" },
+  "miraron": { "g": "looked at (mirar)" },
+  "apartó": { "g": "set aside (apartar)" },
+  "llevaban": { "g": "had, bore (llevar)" }
+ },
+ "la-balda-del-medio": {
+  "tomo": { "g": "volume (book)", "t": "noun", "sinF": true },
+  "añadir": { "g": "added (añadir)" },
+  "añadió": { "g": "added (añadir)" },
+  "invitó": { "g": "invited (invitar)" }
+ }
+}

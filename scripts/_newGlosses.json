@@ -8063,6 +8063,38 @@
   "guardó": {
    "g": "put away, kept (guardar)",
    "t": "verb"
+  },
+  "gustó": {
+   "g": "liked, pleased (gustar)",
+   "t": "verb"
+  },
+  "paseó": {
+   "g": "let (her eyes) wander (pasear)",
+   "t": "verb"
+  },
+  "eligió": {
+   "g": "chose, picked (elegir)",
+   "t": "verb"
+  },
+  "salieron": {
+   "g": "went out, left (salir)",
+   "t": "verb"
+  },
+  "agachó": {
+   "g": "bent down (agacharse)",
+   "t": "verb"
+  },
+  "cruzaron": {
+   "g": "crossed (cruzar)",
+   "t": "verb"
+  },
+  "tendió": {
+   "g": "held out (tender)",
+   "t": "verb"
+  },
+  "llamaba": {
+   "g": "was called (llamarse)",
+   "t": "verb"
   }
  },
  "spanish-traveler-latam-b2": {

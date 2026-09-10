@@ -1,0 +1,566 @@
+{
+ "vuelva-cuando-quiera": {
+  "tenía": {
+   "es": "la cuesta tenía olor a",
+   "en": ""
+  },
+  "olor": {
+   "es": "cuesta tenía olor a papel",
+   "en": ""
+  },
+  "a": {
+   "es": "vuelva cuando quiera",
+   "en": "",
+   "antes": "huele a papel dormido = smells of sleeping paper"
+  },
+  "papel": {
+   "es": "tenía olor a papel dormido",
+   "en": "",
+   "antes": "huele a papel dormido = smells of sleeping paper"
+  },
+  "era": {
+   "es": "vuelva cuando quiera",
+   "en": ""
+  },
+  "librera": {
+   "es": "martina era la librera",
+   "en": "",
+   "antes": "martina es la librera = Martina is the bookseller"
+  },
+  "saludó": {
+   "es": "saludó desde la escalera",
+   "en": ""
+  },
+  "escalera": {
+   "es": "saludó desde la escalera",
+   "en": "",
+   "antes": "saluda desde la escalera = greets from the ladder"
+  },
+  "preguntó": {
+   "es": "preguntó desde arriba",
+   "en": ""
+  },
+  "es": {
+   "es": "de la cuesta tenía olor",
+   "en": "",
+   "antes": "martina es la librera = Martina is the bookseller"
+  },
+  "contestó": {
+   "es": "contestó claudia",
+   "en": ""
+  },
+  "y": {
+   "es": "y le gustó la pregunta",
+   "en": "",
+   "antes": "y le gusta la pregunta = and she likes the question"
+  },
+  "gustó": {
+   "es": "y le gustó la pregunta",
+   "en": ""
+  },
+  "pregunta": {
+   "es": "y le gustó la pregunta",
+   "en": "",
+   "antes": "pregunta desde arriba = she asks from above"
+  },
+  "paseó": {
+   "es": "paseó la mirada por los lomos",
+   "en": ""
+  },
+  "mirada": {
+   "es": "paseó la mirada por los lomos",
+   "en": "",
+   "antes": "pasea la mirada = lets her gaze stroll"
+  },
+  "eligió": {
+   "es": "eligió una novela corta y",
+   "en": ""
+  },
+  "apartó": {
+   "es": "novela corta y la apartó",
+   "en": ""
+  },
+  "frenó": {
+   "es": "una caja recién llegada la frenó",
+   "en": ""
+  },
+  "libros": {
+   "es": "los libros llevaban un exlibris",
+   "en": "",
+   "antes": "los libros llevan un exlibris = the books carry an ex-libris"
+  },
+  "llevaban": {
+   "es": "los libros llevaban un exlibris",
+   "en": ""
+  },
+  "lo": {
+   "es": "cuesta tenía olor a papel",
+   "en": "",
+   "antes": "lo reconoce = she recognises it"
+  },
+  "reconoció": {
+   "es": "lo reconoció como se reconoce",
+   "en": ""
+  },
+  "reconoce": {
+   "es": "como se reconoce una cara",
+   "en": "",
+   "antes": "lo reconoce = she recognises it"
+  },
+  "miraron": {
+   "es": "las dos miraron los libros",
+   "en": ""
+  },
+  "volvió": {
+   "es": "la novela volvió a su sitio",
+   "en": ""
+  },
+  "su": {
+   "es": "la novela volvió a su sitio",
+   "en": "",
+   "antes": "vuelve a su sitio = goes back to its place"
+  },
+  "sitio": {
+   "es": "la novela volvió a su sitio",
+   "en": "",
+   "antes": "vuelve a su sitio = goes back to its place"
+  },
+  "mandaba": {
+   "es": "el presupuesto mandaba",
+   "en": ""
+  },
+  "salió": {
+   "es": "claudia salió con el primer",
+   "en": ""
+  },
+  "dijo": {
+   "es": "dijo martina",
+   "en": ""
+  },
+  "campanilla": {
+   "es": "y la campanilla sonó a",
+   "en": "",
+   "antes": "la campanilla suena = the little bell rings"
+  },
+  "sonó": {
+   "es": "la campanilla sonó a principio",
+   "en": ""
+  },
+  "moverse": {
+   "es": "caja no se mueve de",
+   "en": ""
+  },
+  "lomo": {
+   "es": "paseó la mirada por los lomos",
+   "en": ""
+  },
+  "pasear": {
+   "es": "paseó la mirada por los lomos",
+   "en": ""
+  },
+  "reconocer": {
+   "es": "lo reconoció como se reconoce",
+   "en": ""
+  },
+  "respirar": {
+   "es": "los libros como si respiraran",
+   "en": ""
+  },
+  "vender": {
+   "es": "biblioteca que se vendió hace",
+   "en": ""
+  }
+ },
+ "el-tomo-aparte": {
+  "volvió": {
+   "es": "claudia volvió con marcos y",
+   "en": ""
+  },
+  "y": {
+   "es": "con marcos y una propuesta",
+   "en": "",
+   "antes": "y enseña fotos del hueco = and shows photos of the space"
+  },
+  "explicó": {
+   "es": "le explicó a martina que",
+   "en": ""
+  },
+  "que": {
+   "es": "a martina que querían recuperar",
+   "en": "",
+   "antes": "sin que nadie mire el reloj = without anyone checking the clock"
+  },
+  "querían": {
+   "es": "martina que querían recuperar la",
+   "en": ""
+  },
+  "escuchó": {
+   "es": "martina escuchó con los brazos cruzados",
+   "en": ""
+  },
+  "avisó": {
+   "es": "avisó",
+   "en": ""
+  },
+  "prometió": {
+   "es": "prometió marcos",
+   "en": ""
+  },
+  "enseñó": {
+   "es": "y enseñó fotos del hueco",
+   "en": ""
+  },
+  "fotos": {
+   "es": "y enseñó fotos del hueco",
+   "en": "",
+   "antes": "enseña fotos del hueco = shows photos of the space"
+  },
+  "repasó": {
+   "es": "martina las repasó con cara",
+   "en": ""
+  },
+  "concedió": {
+   "es": "concedió al fin",
+   "en": ""
+  },
+  "al": {
+   "es": "caja no salen de aquí",
+   "en": "",
+   "antes": "concede al fin = grants at last"
+  },
+  "fin": {
+   "es": "concedió al fin",
+   "en": "",
+   "antes": "concede al fin = she grants at last"
+  },
+  "trato": {
+   "es": "el trato se cerró a",
+   "en": "",
+   "antes": "el trato se cierra a la antigua = the deal closes the old way"
+  },
+  "cerró": {
+   "es": "trato se cerró a la",
+   "en": ""
+  },
+  "libros": {
+   "es": "los libros salieron por tandas",
+   "en": "",
+   "antes": "los libros salen por tandas = the books leave in batches"
+  },
+  "salieron": {
+   "es": "los libros salieron por tandas",
+   "en": ""
+  },
+  "tandas": {
+   "es": "los libros salieron por tandas",
+   "en": "",
+   "antes": "salen por tandas = leave in batches"
+  },
+  "preguntó": {
+   "es": "preguntó claudia",
+   "en": ""
+  },
+  "contestó": {
+   "es": "contestó martina",
+   "en": ""
+  },
+  "agachó": {
+   "es": "martina se agachó y sacó",
+   "en": ""
+  },
+  "sacó": {
+   "es": "agachó y sacó un tomo",
+   "en": ""
+  },
+  "lo": {
+   "es": "martina escuchó con los brazos cruzados",
+   "en": "",
+   "antes": "lo abre, lo piensa = opens it, thinks about it"
+  },
+  "abrió": {
+   "es": "lo abrió",
+   "en": ""
+  },
+  "pensó": {
+   "es": "lo pensó y lo volvió",
+   "en": ""
+  },
+  "cerrar": {
+   "es": "y lo volvió a cerrar",
+   "en": "",
+   "antes": "lo vuelve a cerrar = closes it again"
+  },
+  "fuera": {
+   "es": "fuera",
+   "en": "",
+   "antes": "fuera, la tarde va cayendo = outside, the evening is falling"
+  },
+  "luz": {
+   "es": "la luz fue cayendo",
+   "en": ""
+  },
+  "fue": {
+   "es": "fuera",
+   "en": ""
+  },
+  "cayendo": {
+   "es": "la luz fue cayendo",
+   "en": "",
+   "antes": "la tarde va cayendo = the evening is falling"
+  },
+  "nadie": {
+   "es": "y nadie miró el reloj",
+   "en": "",
+   "antes": "sin que nadie mire el reloj = without anyone checking the clock"
+  },
+  "miró": {
+   "es": "y nadie miró el reloj",
+   "en": ""
+  },
+  "reloj": {
+   "es": "y nadie miró el reloj",
+   "en": "",
+   "antes": "sin que nadie mire el reloj = without anyone checking the clock"
+  },
+  "dijo": {
+   "es": "dijo",
+   "en": ""
+  },
+  "llevó": {
+   "es": "se lo llevó al mostrador",
+   "en": ""
+  },
+  "vio": {
+   "es": "claudia vio la dedicatoria un segundo",
+   "en": ""
+  },
+  "dedicatoria": {
+   "es": "claudia vio la dedicatoria un segundo",
+   "en": "",
+   "antes": "ve la dedicatoria un segundo = sees the dedication for a second"
+  },
+  "quedó": {
+   "es": "todavía se quedó dando vueltas",
+   "en": ""
+  },
+  "tarde": {
+   "es": "dando vueltas toda la tarde",
+   "en": "",
+   "antes": "la tarde va cayendo = the evening is falling"
+  },
+  "tanda": {
+   "es": "los libros salieron por tandas",
+   "en": ""
+  },
+  "enseñar": {
+   "es": "y enseñó fotos del hueco",
+   "en": ""
+  },
+  "agacharse": {
+   "es": "martina se agachó y sacó",
+   "en": ""
+  },
+  "envolver": {
+   "es": "envueltos en papel de periódico",
+   "en": ""
+  },
+  "forrar": {
+   "es": "forrado a mano",
+   "en": ""
+  },
+  "volver a": {
+   "es": "y lo volvió a cerrar",
+   "en": ""
+  },
+  "cruzado": {
+   "es": "martina escuchó con los brazos cruzados",
+   "en": ""
+  },
+  "manuscrito": {
+   "es": "manuscrita y torcida",
+   "en": ""
+  },
+  "a la antigua": {
+   "es": "el trato se cerró a",
+   "en": "",
+   "antes": "se cierra a la antigua = closes the old way"
+  },
+  "dando vueltas": {
+   "es": "se quedó dando vueltas toda",
+   "en": "",
+   "antes": "se queda dando vueltas = keeps going round her head"
+  },
+  "sacar": {
+   "es": "agachó y sacó un tomo",
+   "en": ""
+  }
+ },
+ "la-balda-del-medio": {
+  "y": {
+   "es": "claudia y media peña cruzaron",
+   "en": "",
+   "antes": "y claudia lo abre = and Claudia opens it"
+  },
+  "cruzaron": {
+   "es": "media peña cruzaron la ciudad",
+   "en": ""
+  },
+  "ciudad": {
+   "es": "cruzaron la ciudad con los",
+   "en": "",
+   "antes": "cruzan la ciudad = cross the city"
+  },
+  "esperaba": {
+   "es": "pared los esperaba con las",
+   "en": ""
+  },
+  "había": {
+   "es": "había olor a madera nueva",
+   "en": ""
+  },
+  "olor": {
+   "es": "había olor a madera nueva",
+   "en": ""
+  },
+  "madera": {
+   "es": "olor a madera nueva y",
+   "en": "",
+   "antes": "huele a madera nueva = smells of new wood"
+  },
+  "llegó": {
+   "es": "martina llegó la última",
+   "en": ""
+  },
+  "última": {
+   "es": "martina llegó la última",
+   "en": "",
+   "antes": "llega la última = arrives last"
+  },
+  "tomo": {
+   "es": "con el tomo en una bolsa",
+   "en": "",
+   "antes": "el tomo forrado = the covered volume"
+  },
+  "bolsa": {
+   "es": "con el tomo en una bolsa",
+   "en": "",
+   "antes": "en una bolsa aparte = in a separate bag"
+  },
+  "lo": {
+   "es": "ciudad con los libros en",
+   "en": "",
+   "antes": "lo deja en el centro = sets it in the centre"
+  },
+  "dejó": {
+   "es": "lo dejó en el centro",
+   "en": ""
+  },
+  "de": {
+   "es": "la balda del medio",
+   "en": "",
+   "antes": "la firma es de martina = the signature is Martina's"
+  },
+  "dijo": {
+   "es": "dijo",
+   "en": ""
+  },
+  "abrió": {
+   "es": "claudia lo abrió con las",
+   "en": ""
+  },
+  "leyó": {
+   "es": "leyó",
+   "en": ""
+  },
+  "debajo": {
+   "es": "debajo había una fecha del",
+   "en": "",
+   "antes": "debajo hay una fecha = underneath there is a date"
+  },
+  "era": {
+   "es": "pared los esperaba con las",
+   "en": ""
+  },
+  "confesó": {
+   "es": "confesó",
+   "en": ""
+  },
+  "añadió": {
+   "es": "añadió",
+   "en": ""
+  },
+  "entendió": {
+   "es": "claudia entendió de golpe la",
+   "en": ""
+  },
+  "golpe": {
+   "es": "entendió de golpe la custodia",
+   "en": "",
+   "antes": "entiende de golpe = understands all at once"
+  },
+  "le": {
+   "es": "martina llegó la última",
+   "en": "",
+   "antes": "le tiende la mano = holds out his hand to her"
+  },
+  "tendió": {
+   "es": "claudia entendió de golpe la",
+   "en": ""
+  },
+  "mano": {
+   "es": "abrió con las dos manos",
+   "en": "",
+   "antes": "le tiende la mano = holds out his hand to her"
+  },
+  "invitó": {
+   "es": "la invitó a quedarse",
+   "en": ""
+  },
+  "quedarse": {
+   "es": "la invitó a quedarse",
+   "en": "",
+   "antes": "la invita a quedarse = invites her to stay"
+  },
+  "llamaba": {
+   "es": "ya no se llamaba balda",
+   "en": ""
+  },
+  "cruzar": {
+   "es": "media peña cruzaron la ciudad",
+   "en": ""
+  },
+  "negar": {
+   "es": "nadie se lo habría negado",
+   "en": ""
+  },
+  "perderse": {
+   "es": "que no se perdiera por",
+   "en": ""
+  },
+  "tender la mano": {
+   "es": "marcos le tendió la mano",
+   "en": ""
+  },
+  "invitar": {
+   "es": "la invitó a quedarse",
+   "en": ""
+  },
+  "añadir": {
+   "es": "añadió",
+   "en": ""
+  },
+  "callado": {
+   "es": "de golpe la custodia callada",
+   "en": ""
+  },
+  "último": {
+   "es": "martina llegó la última",
+   "en": ""
+  },
+  "con las dos manos": {
+   "es": "lo abrió con las dos",
+   "en": "",
+   "antes": "lo abre con las dos manos = opens it with both hands"
+  }
+ }
+}
