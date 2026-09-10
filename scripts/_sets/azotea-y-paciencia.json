@@ -272,7 +272,7 @@
  {
   "type": "meaning_in_context",
   "word": "viento",
-  "sentence": "La azotea aguantó el [[viento]].",
+  "sentence": "La ciudad aguantaba el mismo [[viento]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "wind",
@@ -285,7 +285,7 @@
    "audioClip": {
     "storySlug": "azotea-y-paciencia",
     "storySource": "user",
-    "sentence": "La azotea aguantó el viento.",
+    "sentence": "La ciudad aguantaba el mismo viento.",
     "targetWord": "viento",
     "language": "spanish"
    }
@@ -348,7 +348,7 @@
  {
   "type": "meaning_in_context",
   "word": "llorar",
-  "sentence": "Nadie [[lloró]] demasiado la tarde perdida.",
+  "sentence": "La tarde no volvería, y nadie la [[lloró]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to mourn",
@@ -361,7 +361,7 @@
    "audioClip": {
     "storySlug": "azotea-y-paciencia",
     "storySource": "user",
-    "sentence": "Nadie lloró demasiado la tarde perdida.",
+    "sentence": "La tarde no volvería, y nadie la lloró.",
     "targetWord": "lloró",
     "language": "spanish"
    }

@@ -348,7 +348,7 @@
  {
   "type": "meaning_in_context",
   "word": "saludar",
-  "sentence": "Qué valiente ha venido hoy, [[saludó]] él.",
+  "sentence": "Qué valiente vienes hoy, [[saludó]] él.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to greet",
@@ -361,7 +361,7 @@
    "audioClip": {
     "storySlug": "la-herramienta-seria",
     "storySource": "user",
-    "sentence": "Qué valiente ha venido hoy, saludó él.",
+    "sentence": "Qué valiente vienes hoy, saludó él.",
     "targetWord": "saludó",
     "language": "spanish"
    }

@@ -250,7 +250,7 @@
  {
   "type": "meaning_in_context",
   "word": "dorado",
-  "sentence": "La ciudad se veía entera, [[dorada]] y pequeña.",
+  "sentence": "La ciudad se veía [[dorada]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "golden",
@@ -263,7 +263,7 @@
    "audioClip": {
     "storySlug": "el-levante-del-jueves",
     "storySource": "user",
-    "sentence": "La ciudad se veía entera, dorada y pequeña.",
+    "sentence": "La ciudad se veía dorada.",
     "targetWord": "dorada",
     "language": "spanish"
    }
@@ -325,7 +325,7 @@
  {
   "type": "meaning_in_context",
   "word": "borda",
-  "sentence": "Iba bien agarrado a la [[borda]].",
+  "sentence": "Agarrado a la [[borda]], hizo una excepción.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "side of the boat",
@@ -338,7 +338,7 @@
    "audioClip": {
     "storySlug": "el-levante-del-jueves",
     "storySource": "user",
-    "sentence": "Iba bien agarrado a la borda.",
+    "sentence": "Agarrado a la borda, hizo una excepción.",
     "targetWord": "borda",
     "language": "spanish"
    }
