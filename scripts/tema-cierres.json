@@ -1339,8 +1339,8 @@
     ]
   },
   "cmtpls1l20007j8epwgcs6e1h#classes-and-teachers": {
-    "cerrado": "2026-09-08T09:24:55.875Z",
-    "hash": "cdba58d3b2033ac6",
+    "cerrado": "2026-09-10T18:12:16.917Z",
+    "hash": "133107f288cc2e44",
     "historias": [
       "classes-and-teachers#1 la-otra-columna",
       "classes-and-teachers#2 buena-suerte-en-porteno",
@@ -1351,16 +1351,19 @@
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"contesta\" 38%)",
-      "arranques de parrafo variados (mas repetido \"y\", 12%)",
-      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+      "acotacion dominante bajo tope (\"contestó\" 38%)",
+      "arranques de parrafo variados (mas repetido \"griselda\", 13%)",
+      "banda gramatical b2 dentro: subj. imperfecto 4 · condicional 2 · estilo indirecto 2",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.13 sobre 52 plazas · 47 salen una sola vez | ancladas: 8/60 (13%) | cola: 47/52 portables con un solo encuentro (90%, tope 80%)",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.15 sobre 52 plazas · 46 salen una sola vez | ancladas: 8/60 (13%) | cola: 46/52 portables con un solo encuentro (88%, tope 80%) | de un solo encuentro: alumnos, profesora, promedio, rinde, repaso, niveles, extranjeros, Acá, adelante, tragó el orgullo, levantar la vista, recreo, consigna, pupitre, charla, jota, deletrear, estampillas, cualquiera, se parecía, mejoren, avanzaban, Tomaba lista, levantaba la mano, al pasar, buena suerte, matrículas, ficha, inscripción, recomendó…",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: classes-and-teachers (Ariel, Griselda)"
@@ -1397,12 +1400,13 @@
           "cambia": "la hora de cuentos vuelve al horario rebautizada modulo de lectura, y Griselda la acepta sin pelear la autoria",
           "emocion": "triunfo contenido: se queda de espaldas borrando el pizarron, aguantandose la risa, porque celebrarlo en voz alta seria cobrarselo"
         }
-      ]
+      ],
+      "gramatica": "narracion en PASADO: preterito para la accion, imperfecto para el marco, pluscuamperfecto para lo previo ('el instituto ya habia cerrado'); el dialogo sigue en presente y con voseo, como se habla en Buenos Aires. Banda B2 (por 100 oraciones: subj. imperfecto 3-7, condicional 1-5, estilo indirecto 1-3): subjuntivo imperfecto en 'dejo que la carta hablara' y 'dejo que Ariel esperara'; condicional en 'La tomarias vos?', la cortesia que disfraza la disculpa; estilo indirecto en 'Ariel aviso que, desde el lunes, los modulos entraban en su aula'"
     }
   },
   "cmtpls1l20007j8epwgcs6e1h#fluency-and-forgetting": {
-    "cerrado": "2026-09-08T11:45:34.318Z",
-    "hash": "708b5b29988c6084",
+    "cerrado": "2026-09-10T18:13:32.719Z",
+    "hash": "67217595f8664106",
     "historias": [
       "fluency-and-forgetting#1 aqui-se-dice-arrendando",
       "fluency-and-forgetting#2 el-trasteo-ajeno",
@@ -1412,17 +1416,19 @@
       "plan del tema completo (registro \"verguenza y paciencia: las palabras que se fueron y vuelven\", espina \"lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir\")",
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
-      "acotacion 88% (solo avisa)",
-      "acotacion dominante bajo tope (\"contesta\" 36%)",
-      "arranques de parrafo variados (mas repetido \"la\", 13%)",
-      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"contestó\" 36%)",
+      "arranques de parrafo variados (mas repetido \"jairo\", 13%)",
+      "banda gramatical b2 dentro: subj. imperfecto 3 · condicional 2 · estilo indirecto 3",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.06 sobre 50 plazas · 47 salen una sola vez | ancladas: 10/60 (17%) | cola: 47/50 portables con un solo encuentro (94%, tope 80%)",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.14 sobre 50 plazas · 44 salen una sola vez | ancladas: 10/60 (17%) | cola: 44/50 portables con un solo encuentro (88%, tope 80%) | de un solo encuentro: oxidado, se le escapó, parquear, rentando, se desempolva, dio pena, chueca, socia, gringo, pegado, a medio camino, como si nada, de toda la vida, en ninguna parte, decidido, fiador, desocupado, giro, sílabas, flotando, amaneció, cita, duda, en efectivo, sonaba a, sin pensarlo, empezar de nuevo, Bienvenido, sin más, descansaba…",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
@@ -1460,12 +1466,13 @@
           "cambia": "contesta de una antes del punto final, remata con un refran a medias, y la mesa vuelve a reirse con el",
           "emocion": "orgullo callado: se queda con el vaso en alto un segundo, como quien brinda por dentro, porque celebrarlo en voz alta seria volver a explicarse"
         }
-      ]
+      ],
+      "gramatica": "narracion en PASADO: preterito para la accion, imperfecto para el marco, pluscuamperfecto para lo previo ('la palabra no se le habia olvidado'); el dialogo sigue en presente, con el ve y el mija de Cali. Banda B2 (por 100 oraciones: subj. imperfecto 3-7, condicional 1-5, estilo indirecto 1-3): subjuntivo imperfecto en 'como si el dueno tuviera otra cita', que es el malentendido de Jairo, y en 'le pidieron que contara otro', la mesa que le devuelve el turno; condicional en 'el proximo hagale no lo agarraria pensando'; estilo indirecto en 'nadie le pregunto ya de donde venia' y 'le pidieron que contara otro'"
     }
   },
   "cmtpls1l20007j8epwgcs6e1h#jokes-and-double-meanings": {
-    "cerrado": "2026-09-08T09:24:04.466Z",
-    "hash": "a1cd07dc9e38d77e",
+    "cerrado": "2026-09-10T18:09:17.387Z",
+    "hash": "05f4144da7a6a12b",
     "historias": [
       "jokes-and-double-meanings#1 los-aguanto-de-dos-en-dos",
       "jokes-and-double-meanings#2 de-pura-muina",
@@ -1476,19 +1483,22 @@
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"contesta\" 39%)",
-      "arranques de parrafo variados (mas repetido \"la\", 11%)",
-      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+      "acotacion dominante bajo tope (\"contestó\" 33%)",
+      "arranques de parrafo variados (mas repetido \"la\", 20%)",
+      "banda gramatical b2 dentro: subj. imperfecto 6 · condicional 2 · estilo indirecto 2",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.07 sobre 43 plazas · 40 salen una sola vez | ancladas: 17/60 (28%) | cola: 40/43 portables con un solo encuentro (93%, tope 80%)",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.07 sobre 46 plazas · 42 salen una sola vez | ancladas: 14/60 (23%) | cola: 42/46 portables con un solo encuentro (91%, tope 80%) | de un solo encuentro: atendía, presumía, fama, ingeniosa, duelo, mansa, delató, calentando, empatado, carcajada, dejó caer, hecho callar, Va que va, sin despeinarse, doble sentido, revancha, carnicero, reuniendo, hojeó, arrancarle, tronó, ensayando, planteó, Puros, a escondidas, cara de yo no fui, subir la apuesta, sostuvo la mirada, puso fecha, parejos…",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: jokes-and-double-meanings (Renata, Joaquín)"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
     ],
     "plan": {
       "tipo": "Traveler: protagonistas nativos; el narrador mira desde fuera, presenta gente y sitios (Ciudad, pais) y explica lo que un local daria por sabido",
@@ -1522,12 +1532,13 @@
           "cambia": "los dos fingen que fue limpia, y en fingirlo juntos queda dicho el afecto que ninguno nombra",
           "emocion": "triunfo con espina: cobra la apuesta con la risa corta porque celebrar completo seria creerse el regalo, y empuja el caballito hacia el para brindar muy serios"
         }
-      ]
+      ],
+      "gramatica": "narracion en PASADO: preterito para la accion, imperfecto para el marco, pluscuamperfecto para lo previo ('nadie la habia hecho callar'); el dialogo sigue en presente, como se habla. Banda B2 medida con la sonda (por 100 oraciones: subj. imperfecto 3-7, condicional 1-5, estilo indirecto 1-3; el preterito no lleva banda): subjuntivo imperfecto en 'antes de que ella entendiera', 'a quienes pidio que no se lo contaran' y 'sin que perdiera la gracia'; condicional en 'quejarse habria sido confesarlo'; estilo indirecto en 'pidio que no se lo contaran'; subjuntivo presente en el dialogo ('el que pierda', 'para que dure')"
     }
   },
   "cmtpls1l20007j8epwgcs6e1h#negotiations-and-courtesies": {
-    "cerrado": "2026-09-08T09:24:21.546Z",
-    "hash": "92e7b43488bcb108",
+    "cerrado": "2026-09-10T18:10:42.482Z",
+    "hash": "caf82d266a19f83d",
     "historias": [
       "negotiations-and-courtesies#1 la-cortesia-mas-cara",
       "negotiations-and-courtesies#2 yo-no-fallo",
@@ -1538,16 +1549,19 @@
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"dice\" 25%)",
-      "arranques de parrafo variados (mas repetido \"le\", 7%)",
-      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+      "acotacion dominante bajo tope (\"dijo\" 25%)",
+      "arranques de parrafo variados (mas repetido \"quien\", 7%)",
+      "banda gramatical b2 dentro: subj. imperfecto 6 · condicional 2 · estilo indirecto 2",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Maricarmen): la-cortesia-mas-cara, yo-no-fallo, una-yapa-de-sobremesa",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.02 sobre 45 plazas · 44 salen una sola vez | ancladas: 15/60 (25%) | cola: 44/45 portables con un solo encuentro (98%, tope 80%)",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.09 sobre 45 plazas · 41 salen una sola vez | ancladas: 15/60 (25%) | cola: 41/45 portables con un solo encuentro (91%, tope 80%) | de un solo encuentro: elogio, tela, costura, palillos, Ahorita, se desinflaba, cortesía, garabato, directorio, quedó en nada, a la altura del, madrugada, culpa, puntada, encargo, exigente, arreglos, vestido, apuró, timbró, Suspiró, adelanta, entallar, a la medida, dejó plantada, boca abajo, regatear, halago, centavo, apretón…",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: negotiations-and-courtesies (Maricarmen, Aurelio)"
@@ -1584,15 +1598,13 @@
           "cambia": "el trato queda cerrado de igual a igual; los halagos dejan de ser peligro y pasan a ser juego",
           "emocion": "alivio con la guardia alta: cierra con un apreton corto y un brindis, y no celebra de mas porque ya sabe lo que cuestan los elogios"
         }
-      ]
-    },
-    "avisos": [
-      "estructura clonada: las 3 historias tienen 10 parrafos exactos. Leelas seguidas antes de darlas por buenas."
-    ]
+      ],
+      "gramatica": "narracion en PASADO: preterito para la accion, imperfecto para el marco, pluscuamperfecto para lo previo ('habia cruzado la ciudad', 'nadie habia apuntado ni un garabato'); el dialogo sigue en presente, como se habla. Banda B2 medida con la sonda (por 100 oraciones: subj. imperfecto 3-7, condicional 1-5, estilo indirecto 1-3): subjuntivo imperfecto en 'para que las manos trabajaran', 'sin que nadie lo pidiera' y 'como si no valiera nada'; condicional y estilo indirecto juntos en 'El elogio ya decia que no cuando dijo que lo verian', que convierte el 'lo conversamos' del almuerzo en el no amable que era; subjuntivo presente en el dialogo ('no me falle')"
+    }
   },
   "cmtpls1l20007j8epwgcs6e1h#partners-and-in-laws": {
-    "cerrado": "2026-09-08T09:25:26.622Z",
-    "hash": "cc75b1a19d2312ba",
+    "cerrado": "2026-09-10T18:14:18.785Z",
+    "hash": "168e6920ca01b268",
     "historias": [
       "partners-and-in-laws#1 vitel-tone-con-blanco",
       "partners-and-in-laws#2 aca-los-errores-se-pagan",
@@ -1603,16 +1615,19 @@
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"contesta\" 33%)",
-      "arranques de parrafo variados (mas repetido \"y\", 14%)",
-      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+      "acotacion dominante bajo tope (\"contestó\" 33%)",
+      "arranques de parrafo variados (mas repetido \"norma\", 13%)",
+      "banda gramatical b2 dentro: subj. imperfecto 4 · condicional 2 · estilo indirecto 2",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.08 sobre 52 plazas · 48 salen una sola vez | ancladas: 8/60 (13%) | cola: 48/52 portables con un solo encuentro (92%, tope 80%)",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.10 sobre 52 plazas · 47 salen una sola vez | ancladas: 8/60 (13%) | cola: 47/52 portables con un solo encuentro (90%, tope 80%) | de un solo encuentro: lustrados, botella, novia, muchacho, anillos, entrevista, grave, Meter la pata, se fijó, hacía girar, se agradece, lavar los platos, de los buenos, de allá, sobre todo, como nadie, se quemó, clienta, cumplido, consoló, valía, tiró, doblado, sacó la cuenta, se pasó de punto, sin chistar, la hora de cerrar, abrió la caja, sale de tu bolsillo, campanita…",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: partners-and-in-laws (Emiliano, Norma)"
@@ -1649,15 +1664,13 @@
           "cambia": "Norma se va de franco por primera vez y le deja la caja; el examen termina sin diploma y sin anuncio",
           "emocion": "orgullo tranquilo: cierra con llave, cuenta la plata dos veces y le guarda una milanesa a Norma, porque el que ya es de la casa no necesita decirlo"
         }
-      ]
-    },
-    "avisos": [
-      "estructura clonada: las 3 historias tienen 12 parrafos exactos. Leelas seguidas antes de darlas por buenas."
-    ]
+      ],
+      "gramatica": "narracion en PASADO: preterito para la accion, imperfecto para el marco; el dialogo sigue en presente y con voseo, como se habla en La Plata. Banda B2 (por 100 oraciones: subj. imperfecto 3-7, condicional 1-5, estilo indirecto 1-3): subjuntivo imperfecto en 'antes de que abrieran' y 'sin que nadie llamara a Norma'; condicional en 'lo grave habria sido no darse cuenta'; estilo indirecto en 'le habian contado que la caja no se la dejaba a cualquiera', la confianza que Emiliano sabe que se esta ganando"
+    }
   },
   "cmtpls1l20007j8epwgcs6e1h#secrets-and-silences": {
-    "cerrado": "2026-09-08T09:24:38.186Z",
-    "hash": "b3d5555e1279e96d",
+    "cerrado": "2026-09-10T18:11:27.686Z",
+    "hash": "c966f1965f4c4862",
     "historias": [
       "secrets-and-silences#1 la-once-con-chirrido",
       "secrets-and-silences#2 la-licitacion-desierta",
@@ -1668,16 +1681,19 @@
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"pregunta\" 27%)",
-      "arranques de parrafo variados (mas repetido \"y\", 15%)",
-      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+      "acotacion dominante bajo tope (\"preguntó\" 27%)",
+      "arranques de parrafo variados (mas repetido \"marcela\", 20%)",
+      "banda gramatical b2 dentro: subj. imperfecto 4 · condicional 2 · estilo indirecto 2",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.06 sobre 52 plazas · 48 salen una sola vez | ancladas: 8/60 (13%) | cola: 48/52 portables con un solo encuentro (92%, tope 80%)",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.06 sobre 52 plazas · 48 salen una sola vez | ancladas: 8/60 (13%) | cola: 48/52 portables con un solo encuentro (92%, tope 80%) | de un solo encuentro: andamio, grasa, cable, desgaste, vibraba, rejilla, eje, a pie, al día, se quedó callada, a simple vista, licitación, postular, presupuesto, se adjudicaba, constancia, falla, ardió, trámite, papeleo, capa, desierta, dio el paso, letra chica, secreto a voces, quedó fuera, la vista gorda, valió la pena, en blanco, freno…",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: secrets-and-silences (Marcela, Ignacio)"
@@ -1714,12 +1730,13 @@
           "cambia": "el secreto pesa del lado correcto: el ascensor cierra con aviso, y ella contesta pintando la caseta que nadie encargo",
           "emocion": "susto que se vuelve verguenza: quiere pedir perdon por lo que penso y no puede decirlo sin confesarlo, asi que lo dice con una pared celeste recien pintada"
         }
-      ]
+      ],
+      "gramatica": "narracion en PASADO: preterito para la accion, imperfecto para el marco; el dialogo sigue en presente, como se habla. Banda B2 medida con la sonda (por 100 oraciones: subj. imperfecto 3-7, condicional 1-5, estilo indirecto 1-3): subjuntivo imperfecto en 'no se adelantaba sin que alguien dejara constancia' y 'esperaba que el mirara'; condicional en el dialogo, con sorna: 'Cuanto seria un ratito, exactamente?'; estilo indirecto en 'al mes le avisaron que, sin falla declarada, la licitacion quedaba desierta', que ademas cierra la logica pedida en la revision del 2026-09-08: Marcela postulo, y aun asi quedo fuera"
     }
   },
   "cmtpls1l20007j8epwgcs6e1h#tales-and-tall-stories": {
-    "cerrado": "2026-09-08T09:23:13.762Z",
-    "hash": "8fe691b446474c4f",
+    "cerrado": "2026-09-10T18:14:58.805Z",
+    "hash": "175e7b80251af471",
     "historias": [
       "tales-and-tall-stories#1 de-medio-metro-y-gracias",
       "tales-and-tall-stories#2 la-carreta-mojada",
@@ -1729,17 +1746,20 @@
       "plan del tema completo (registro \"fabulacion: la mentira que cuenta mas verdad que el dato\", espina \"lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir\")",
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
-      "acotacion 94% (solo avisa)",
-      "acotacion dominante bajo tope (\"contesta\" 25%)",
-      "arranques de parrafo variados (mas repetido \"los\", 8%)",
-      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"contestó\" 25%)",
+      "arranques de parrafo variados (mas repetido \"los\", 13%)",
+      "banda gramatical b2 dentro: subj. imperfecto 4 · condicional 2 · estilo indirecto 2",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.06 sobre 53 plazas · 50 salen una sola vez | ancladas: 7/60 (12%) | cola: 50/53 portables con un solo encuentro (94%, tope 80%)",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.13 sobre 53 plazas · 46 salen una sola vez | ancladas: 7/60 (12%) | cola: 46/53 portables con un solo encuentro (87%, tope 80%) | de un solo encuentro: Echar carreta, firmaba, corrigió, rodilla, salga cierta, Mientras tanto, y gracias, en otra parte, empapada, manoteando, toallas, plancha, piedritas, gigante, resucita, techado, armada, rueda, vuelto agua, hizo lo suyo, a secar, de las suyas, hoja por hoja, una por una, sin decir palabra, Invita la casa, álbum, retrato, amarillento, Tal cual…",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: tales-and-tall-stories (Ofelia, Baldomero)"
@@ -1776,7 +1796,8 @@
           "cambia": "el retrato amarillento del album prueba que su historia mas exagerada era cierta tal cual; Ofelia le abre la puerta de adentro y le encarga la historia del hospedaje",
           "emocion": "desquite tranquilo del fabulador: recibe el retrato, lo mira largo, y en vez de decir se lo dije, pregunta si se lo puede quedar"
         }
-      ]
+      ],
+      "gramatica": "narracion en PASADO: preterito para la accion, imperfecto para el marco; el dialogo sigue en presente, con el usted de Aracataca. Banda B2 (por 100 oraciones: subj. imperfecto 3-7, condicional 1-5, estilo indirecto 1-3): subjuntivo imperfecto en 'como si la retara' y 'para que lo vieran'; condicional en 'nadie viajaria hasta aca por medio metro de pescado'; estilo indirecto en 'pregunto si se la podia quedar', el gesto que cierra la apuesta"
     }
   },
   "cmtq5n9a50007j8812p9lzxjr#brasilia": {
