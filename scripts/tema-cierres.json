@@ -2285,6 +2285,74 @@
       ]
     }
   },
+  "cmtvpqsfv000832hgemzk20cl#fortaleza": {
+    "cerrado": "2026-09-10T16:37:04.403Z",
+    "hash": "d18a151e0849fa45",
+    "historias": [
+      "fortaleza#0 uma-tapioca-rasgada",
+      "fortaleza#1 carioquinha-para-a-carioca",
+      "fortaleza#2 amanha-eu-nao-estou-aqui"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"manana de cocina y de playa: olor a cafe, manos torpes, humor de apodo; frases de una idea, presente\", espina \"Larissa, uma moça do Rio de Janeiro, parte o ano entre Londres e o Brasil; em cada volta reaprende o seu proprio pais e descobre o que perdeu fora. Em Fortaleza, na casa da prima Bruna, descobre que as maos esqueceram a tapioca e que o Caio tambem vai embora antes dela\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"diz\" 39%)",
+      "arranques de parrafo variados (mas repetido \"larissa\", 27%)",
+      "densidad 6.0 palabras por oracion (techo 9 en a0)",
+      "seguidilla 31/65 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.09 sobre 54 plazas · 50 salen una sola vez | ancladas: 9/63 (14%) | cola: 50/54 portables con un solo encuentro (93%, tope 30%) | de un solo encuentro: prima, fogo, pacote, branca, coloca, gruda, rasga, meio, pouca, tenta, redonda, olha só, prato, come, lixo, rua, cidade, pão, mesa, esquina, cedo, fila, bom, caixa, entender, um pouco, como, moedas, sobram, acorda…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en PT no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: fortaleza (Larissa, Bruna)"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "a0",
+      "variante": "BRAZIL",
+      "registro": "manana de cocina y de playa: olor a cafe, manos torpes, humor de apodo; frases de una idea, presente",
+      "espina": "Larissa, uma moça do Rio de Janeiro, parte o ano entre Londres e o Brasil; em cada volta reaprende o seu proprio pais e descobre o que perdeu fora. Em Fortaleza, na casa da prima Bruna, descobre que as maos esqueceram a tapioca e que o Caio tambem vai embora antes dela",
+      "recursos": "A0: repeticion ritmica (Caio dorme. Bruna dorme.), contraste con mas, emocion como gesto visible (segura a xicara com as duas maos). Titulos: objeto torcido, regionalismo y linea dicha, orden nuevo respecto a los temas 1 y 2. ESCALERA: cada historia devuelve surfaces EXACTAS de temas anteriores (lista en 'vuelven') y marca como anchor las palabras de una sola escena, menos del 30%",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "hacer tapioca para Caio como la hacia antes en Rio",
+          "impide": "las manos no se acuerdan: la goma se pega y la tapioca se rompe por la mitad",
+          "cuesta": "la primera tapioca, que va a la basura, y el orgullo delante de la prima",
+          "cambia": "Bruna le guia las manos y la segunda sale redonda; Larissa reaprende un gesto de su pais",
+          "emocion": "verguenza (se pone roja) y despues orgullo pequeno (sonrie cuando Caio pide otra)",
+          "vuelven": "respira fundo, devagar, esqueço, vermelha, de novo, sorri, abre, cheiro (temas 1 y 2)"
+        },
+        {
+          "slot": "2",
+          "quiere": "poner pan caliente en la mesa antes de que Caio despierte",
+          "impide": "pide pao frances y en Fortaleza ese pan se llama carioquinha; nadie la entiende",
+          "cuesta": "su nombre en esa casa: desde hoy es Carioquinha",
+          "cambia": "se rie de su apodo; Caio despierta con el olor y la historia ya es de la casa",
+          "emocion": "desconcierto (mira a Bruna sin entender) y despues risa (se tapa la cara riendo)",
+          "vuelven": "desce, dorme, baixinho, pensa, conta, bolsa, abre, manhã, fica (temas 1 y 2)"
+        },
+        {
+          "slot": "3",
+          "quiere": "que la ultima manana en Fortaleza con Caio sea larga y lenta",
+          "impide": "un mensaje del trabajo: Caio vuelve a Beaga manana y ella sigue sola",
+          "cuesta": "la semana de viaje juntos que ya no van a tener",
+          "cambia": "acuerdan un desayuno de sabado por video; ella acepta seguir sola",
+          "emocion": "tristeza (sujeta la taza con las dos manos) y despues calma (apoya la cabeza en su hombro)",
+          "vuelven": "senta, ao lado dele, volto, Beagá, segura, devagar, longe, mar, às vezes, esqueço, puxa, deita, ombro, promete, continuam (temas 1 y 2)"
+        }
+      ]
+    }
+  },
   "cmtvpqsfv000832hgemzk20cl#rio-de-janeiro": {
     "cerrado": "2026-09-10T16:18:53.211Z",
     "hash": "05f1d21154d6d387",
