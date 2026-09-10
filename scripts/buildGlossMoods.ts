@@ -19,7 +19,7 @@ import { presente, preterito, personas, indicePorForma, IRREGULARES } from "./bu
 import {
   type Bloque, type Modo, subjuntivoPresenteES, subjuntivoPasadoES, condicionalES,
   imperativoES, esOrdenES, esOrdenDE, negadaAquiES, parteEncliticaES, ES_IMP_TU, ES_PRON_EN,
-  aVarianteModo, conClitico, vosSubjuntivo,
+  aVarianteModo, conReflexivo, vosSubjuntivo,
   DE_K2, DE_IMP, IT_MODOS, PT_MODOS,
 } from "./glossMoods";
 
@@ -71,19 +71,100 @@ function personaDicha(oracion: string, w: string, tabla: string[], porDefecto: n
   return porDefecto;
 }
 
-/** El infinitivo tal como se dice: con `se` cuando el clítico es reflexivo.
- *  "ir (present subjunctive)" sobre `se vaya` nombra otro verbo. */
-function lema(inf: string, clitico: string): string {
-  return ["me", "te", "se", "nos"].includes(clitico.trim()) ? `${inf}se` : inf;
+/**
+ * Qué papel hace el clítico de delante, que es lo que decide las filas.
+ *
+ *   reflexivo  concuerda con el sujeto (se quede, te quedes, nos quedemos). Las
+ *              filas lo conjugan por persona y el lema lleva `se`.
+ *   objeto     no cambia con la persona ("que me guarden", "aunque le
+ *              costara"), o es el `se` impersonal ("lo que se pueda"). El head
+ *              lo lleva porque así sale en la frase; las filas van sin él.
+ *   sube       es de un infinitivo que va detrás: en "Me tendría que ir" el
+ *              `me` es de ir(se), no de tener. Ni el head ni las filas lo llevan.
+ *
+ * Hasta el 2026-09-10 todo clítico se trataba como reflexivo: "que me guarden"
+ * enseñaba `te guardes / se guarden` y un verbo "guardarse" que no estaba en
+ * la frase.
+ *
+ * Decidirlo pide prueba. `le`, `les`, `lo`, `la`, `los`, `las` nunca son el
+ * reflexivo. `me`, `te`, `nos` lo son cuando su persona es la del sujeto de la
+ * forma: con una tercera persona son objeto. Si la forma sirve a la vez para
+ * esa persona y para la tercera (`quede` es yo y él), desempata que el paquete
+ * conozca el verbo con `se`. `se` delante de una tercera persona pide lo mismo;
+ * sin esa prueba es el impersonal y no se conjuga.
+ */
+type Rol = { tipo: "reflexivo" | "objeto" | "sube" | "ninguno"; persona: number; lemaSe?: boolean };
+const PERSONA_CL: Record<string, number> = { me: 0, te: 1, nos: 3 };
+
+/** Verbos que llevan detrás un infinitivo y le prestan el hueco del clítico,
+ *  con la palabra que va entre los dos (vacía si no hay ninguna). */
+const SUBIDA: Record<string, string> = {
+  tener: "que", ir: "a", volver: "a", empezar: "a", acabar: "de", dejar: "de",
+  poder: "", querer: "", deber: "", soler: "", necesitar: "", saber: "",
+  pensar: "", preferir: "", intentar: "",
+};
+
+function rolClitico(
+  oracion: string, w: string, cl: string, inf: string, persona: number,
+  tabla: string[], pronominales: Set<string>, glosa: string
+): Rol {
+  const c = cl.trim().toLowerCase();
+  if (!c) return { tipo: "ninguno", persona };
+  const pc = PERSONA_CL[c];
+  const sirve = (p: number | undefined) => p !== undefined && tabla[p]?.toLowerCase() === w.toLowerCase();
+  const esc = w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  // La prueba de que el verbo es pronominal: la glosa de ESTA palabra lo nombra
+  // con `se` ("leaves, goes away (irse)"), o el paquete lo conoce así.
+  const conSe = (v: string) =>
+    pronominales.has(`${v}se`) || new RegExp(`(?<![\\p{L}])${v}se(?![\\p{L}])`, "iu").test(glosa);
+
+  const puente = SUBIDA[inf];
+  if (puente !== undefined) {
+    const m = new RegExp(
+      `(?<![\\p{L}])${esc}\\s+${puente ? `${puente}\\s+` : ""}(\\p{L}*(?:ar|er|ir|ír))(?![\\p{L}])`, "iu"
+    ).exec(oracion);
+    if (m) {
+      // Con un infinitivo pronominal el clítico nombra al sujeto: "me tendría
+      // que ir" es yo, aunque `tendría` sirva también para él.
+      const destino = m[1].toLowerCase();
+      const p = sirve(pc) && pronominales.has(`${destino}se`) ? pc! : persona;
+      return { tipo: "sube", persona: p };
+    }
+  }
+
+  // "se me apague", "se te ocurra", "se le acerque": el `se` es del verbo
+  // (apagarse) y el de delante de la forma es un dativo que no se conjuga.
+  if (["me", "te", "le", "nos", "les"].includes(c)
+      && new RegExp(`(?<![\\p{L}])se\\s+${c}\\s+${esc}(?![\\p{L}])`, "iu").test(oracion)) {
+    return { tipo: "objeto", persona, lemaSe: true };
+  }
+  if (c === "se") {
+    const tercera = persona === 2 || persona === 5;
+    return { tipo: tercera && conSe(inf) ? "reflexivo" : "objeto", persona };
+  }
+  if (pc === undefined) return { tipo: "objeto", persona };
+  if (pc === persona) return { tipo: "reflexivo", persona };
+  if (sirve(pc) && conSe(inf)) return { tipo: "reflexivo", persona: pc };
+  return { tipo: "objeto", persona };
 }
 
-function bloqueES(
+/** El head lleva el clítico como en la frase, salvo cuando es de otro verbo. */
+const delante = (cl: string, rol: Rol) => (rol.tipo === "sube" ? "" : cl);
+const filasDe = (filas: string[], rol: Rol, variante: string) =>
+  rol.tipo === "reflexivo" ? conReflexivo(filas, variante) : filas;
+/** El infinitivo tal como se dice: con `se` solo si es pronominal de verdad.
+ *  "ir (present subjunctive)" sobre `se vaya` nombra otro verbo. */
+const lema = (inf: string, rol: Rol) => (rol.tipo === "reflexivo" || rol.lemaSe ? `${inf}se` : inf);
+
+export function bloqueES(
   w: string, oracion: string, variante: string,
   idxSubj: Map<string, { inf: string; i: number }>,
   idxPas: Map<string, { inf: string; i: number }>,
   idxCond: Map<string, { inf: string; i: number }>,
   infinitivos: Set<string>,
-  P: string[]
+  P: string[],
+  pronominales: Set<string> = new Set(),
+  glosa = ""
 ): Bloque | null {
   const enc = parteEncliticaES(w);
   if (enc) {
@@ -151,39 +232,48 @@ function bloqueES(
     // "se vaya" contra "se va", no "vaya" contra "va": sin el pronombre las dos
     // celdas dejan de parecerse a lo que el lector tiene en la frase.
     const cl = clitico(oracion, w);
+    const rol = rolClitico(oracion, w, cl, sp.inf, sp.i, tabla, pronominales, glosa);
+    const pre = delante(cl, rol);
     return {
       mood: "Subjunctive", kind: "expand", link: "See subjunctive",
-      lemma: lema(sp.inf, cl),
-      head: [["present", `${cl}${ind[sp.i]}`], ["subjunctive", `${cl}${w}`]],
-      rows: conClitico(aVarianteModo(tabla, variante), cl).map((f, i) => [P[i], f]), here: sp.i,
+      lemma: lema(sp.inf, rol),
+      head: [["present", `${pre}${ind[rol.persona]}`], ["subjunctive", `${pre}${w}`]],
+      rows: filasDe(aVarianteModo(tabla, variante), rol, variante).map((f, i) => [P[i], f]),
+      here: rol.persona,
     };
   }
 
   const pa = idxPas.get(w);
   if (pa) {
-    const clp = clitico(oracion, w);
     const pret = preterito(pa.inf);
-    if (!pret) return null;
+    const tabla = subjuntivoPasadoES(pa.inf);
+    if (!pret || !tabla) return null;
+    const cl = clitico(oracion, w);
+    const rol = rolClitico(oracion, w, cl, pa.inf, pa.i, tabla, pronominales, glosa);
+    const pre = delante(cl, rol);
     return {
       mood: "Past subjunctive", kind: "expand", link: "See past subjunctive",
-      lemma: lema(pa.inf, clp),
-      head: [["preterite", `${clp}${pret[pa.i]}`], ["past subjunctive", `${clp}${w}`]],
-      rows: conClitico(aVarianteModo(subjuntivoPasadoES(pa.inf)!, variante), clp).map((f, i) => [P[i], f]),
-      here: pa.i,
+      lemma: lema(pa.inf, rol),
+      head: [["preterite", `${pre}${pret[rol.persona]}`], ["past subjunctive", `${pre}${w}`]],
+      rows: filasDe(aVarianteModo(tabla, variante), rol, variante).map((f, i) => [P[i], f]),
+      here: rol.persona,
     };
   }
 
   const co = idxCond.get(w);
   if (co) {
-    const clc = clitico(oracion, w);
     const ind = presente(co.inf, variante);
-    if (!ind) return null;
+    const tabla = condicionalES(co.inf);
+    if (!ind || !tabla) return null;
+    const cl = clitico(oracion, w);
+    const rol = rolClitico(oracion, w, cl, co.inf, co.i, tabla, pronominales, glosa);
+    const pre = delante(cl, rol);
     return {
       mood: "Conditional", kind: "expand", link: "See conditional",
-      lemma: co.inf,
-      head: [["present", `${clc}${ind[co.i]}`], ["conditional", `${clc}${w}`]],
-      rows: conClitico(aVarianteModo(condicionalES(co.inf)!, variante), clc).map((f, i) => [P[i], f]),
-      here: co.i,
+      lemma: lema(co.inf, rol),
+      head: [["present", `${pre}${ind[rol.persona]}`], ["conditional", `${pre}${w}`]],
+      rows: filasDe(aVarianteModo(tabla, variante), rol, variante).map((f, i) => [P[i], f]),
+      here: rol.persona,
     };
   }
 
@@ -295,6 +385,25 @@ export async function moodsDeBundle(
     }
   }
 
+  // Los verbos que el paquete conoce CON `se` (irse, quedarse): es la prueba de
+  // que un `me` o un `se` delante de la forma es el reflexivo y no un objeto.
+  // Salen del vocab, de las claves de glosa y de los infinitivos entre
+  // parentesis de las definiciones ("(quedarse)").
+  const pronominales = new Set<string>();
+  if (idioma === "spanish") {
+    const PRON = /^\p{L}*(?:ar|er|ir|ír)se$/u;
+    for (const s of historias) {
+      for (const v of ((s.vocab as Array<{ word?: unknown }> | null) ?? [])) {
+        const lema = String(v?.word ?? "").trim().toLowerCase();
+        if (PRON.test(lema)) pronominales.add(lema);
+      }
+    }
+    for (const fuente of [plana, ...capas.map((c) => c.glosses as Record<string, Entrada>)]) {
+      for (const k of Object.keys(fuente)) if (PRON.test(k)) pronominales.add(k);
+    }
+    for (const x of infinitivos) if (PRON.test(x)) pronominales.add(x);
+  }
+
   const indicativo = new Set<string>();
   if (idioma === "spanish") {
     for (const [f] of indicePorForma([...infinitivos], variante, "spanish")) {
@@ -339,7 +448,8 @@ export async function moodsDeBundle(
       if (indicativo.has(w) || AMBIGUAS.has(w) || SIN_BLOQUE.has(w)) continue;
       const oracion = oracionDe(texto, e.c?.es ?? "", w);
       const b = idioma === "spanish"
-        ? bloqueES(w, oracion, variante, idxSubj, idxPas, idxCond, infinitivos, P)
+        ? bloqueES(w, oracion, variante, idxSubj, idxPas, idxCond, infinitivos, P, pronominales,
+            `${capa[w]?.g ?? ""} ${plana[w]?.g ?? ""}`)
         : bloqueOtro(idioma, w, oracion);
       if (!b) continue;
       if (b.here < 0 && b.kind === "expand") continue;

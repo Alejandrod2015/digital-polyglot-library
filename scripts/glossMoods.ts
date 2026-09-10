@@ -333,14 +333,16 @@ export function vosSubjuntivo(filas: string[]): string | null {
   return `${base.slice(0, i)}${TILDE_VOS[base[i]]}${base.slice(i + 1)}s`;
 }
 
-/** El pronombre que acompaña a cada persona. Reflexivo, cambia con la persona
- *  (me vaya, te vayas, se vaya); de objeto, se queda igual en las seis. */
-const REFLEXIVOS = ["me", "te", "se", "nos", "se", "se"];
-export function conClitico(filas: string[], clitico: string): string[] {
-  const c = clitico.trim();
-  if (!c) return filas;
-  const refl = ["me", "te", "se", "nos"].includes(c);
-  return filas.map((f, i) => `${refl ? REFLEXIVOS[i] : c} ${f}`);
+/** El pronombre de un verbo PRONOMINAL, que concuerda con el sujeto: me vaya,
+ *  te vayas, se vaya, nos vayamos, os vayáis. Solo para ese caso: un clítico de
+ *  objeto no cambia con la persona, y conjugarlo daba "te guardes" y "le
+ *  costaras" sobre "que me guarden" y "aunque le costara" (2026-09-10). Quien
+ *  llama decide si es reflexivo; aquí solo se pone.
+ *  La casilla de vosotros lleva `os` en España; fuera de España esa casilla es
+ *  `ustedes` con la forma de ellos, y ahí va `se`. */
+export function conReflexivo(filas: string[], variante: string): string[] {
+  const refl = ["me", "te", "se", "nos", variante === "spain" ? "os" : "se", "se"];
+  return filas.map((f, i) => `${refl[i]} ${f}`);
 }
 
 // ── Enclíticos ───────────────────────────────────────────────────────────
