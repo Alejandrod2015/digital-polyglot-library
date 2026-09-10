@@ -1,0 +1,17 @@
+{
+ "apuntame-la-de-manana": {
+  "pedía": { "g": "ordered, used to order (pedir)" },
+  "llegaba": { "g": "arrived, used to arrive (llegar)" },
+  "quedaba": { "g": "was left, remained (quedar)" },
+  "supo": { "g": "tasted (saber a)" }
+ },
+ "la-cana-de-marcos": {
+  "señaló": { "g": "pointed at (señalar)" },
+  "picaba": { "g": "bothered her, stung (picar)" },
+  "corta": { "g": "short", "t": "adjective", "sinF": true }
+ },
+ "la-cuenta-perdida": {
+  "dio": { "g": "took (the hint), gave (dar)" },
+  "pidiera": { "rows": ["pidiera", "pidieras", "pidiera", "pidiéramos", "pidierais", "pidieran"] }
+ }
+}

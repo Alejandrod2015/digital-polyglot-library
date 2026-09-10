@@ -7935,6 +7935,46 @@
   "durara": {
    "g": "lasted, would last (durar)",
    "t": "verb"
+  },
+  "ocupó": {
+   "g": "took, occupied (ocupar)",
+   "t": "verb"
+  },
+  "confirmó": {
+   "g": "confirmed (confirmar)",
+   "t": "verb"
+  },
+  "levantaron": {
+   "g": "raised, lifted (levantar)",
+   "t": "verb"
+  },
+  "volvieron": {
+   "g": "went back, returned (volver)",
+   "t": "verb"
+  },
+  "discutían": {
+   "g": "were arguing about (discutir)",
+   "t": "verb"
+  },
+  "estaría": {
+   "g": "would be (estar)",
+   "t": "verb"
+  },
+  "empujara": {
+   "g": "pushed, would push (empujar)",
+   "t": "verb"
+  },
+  "cerró": {
+   "g": "closed, shut (cerrar)",
+   "t": "verb"
+  },
+  "sacó": {
+   "g": "took out (sacar)",
+   "t": "verb"
+  },
+  "ataba": {
+   "g": "tied, bound (atar)",
+   "t": "verb"
   }
  },
  "spanish-traveler-latam-b2": {

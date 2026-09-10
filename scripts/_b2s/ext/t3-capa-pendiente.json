@@ -1,0 +1,704 @@
+{
+ "apuntame-la-de-manana": {
+  "camarero": {
+   "es": "pablo era el camarero de abajo",
+   "en": "",
+   "antes": "pablo es el camarero de abajo = Pablo is the barman downstairs"
+  },
+  "barra": {
+   "es": "y su barra",
+   "en": "",
+   "antes": "su barra es la otra sala = his counter is the other room"
+  },
+  "otra": {
+   "es": "otra sala",
+   "en": "",
+   "antes": "es la otra sala = is the other room"
+  },
+  "sala": {
+   "es": "otra sala",
+   "en": "",
+   "antes": "es la otra sala = is the other room"
+  },
+  "seguía": {
+   "es": "claudia seguía en la mesa",
+   "en": ""
+  },
+  "mesa": {
+   "es": "en la mesa y pedía",
+   "en": "",
+   "antes": "la de la mesa = the table one"
+  },
+  "pedía": {
+   "es": "mesa y pedía su café",
+   "en": ""
+  },
+  "café": {
+   "es": "pedía su café cada mañana",
+   "en": "",
+   "antes": "pide su café = orders her coffee"
+  },
+  "fijos": {
+   "es": "a los fijos nadie les",
+   "en": "",
+   "antes": "a los fijos nadie les pregunta = nobody questions the regulars"
+  },
+  "nadie": {
+   "es": "los fijos nadie les había",
+   "en": "",
+   "antes": "nadie les pregunta = nobody asks them"
+  },
+  "les": {
+   "es": "fijos nadie les había preguntado",
+   "en": "",
+   "antes": "nadie les pregunta = nobody asks them"
+  },
+  "había": {
+   "es": "nadie les había preguntado nunca",
+   "en": ""
+  },
+  "preguntado": {
+   "es": "les había preguntado nunca qué",
+   "en": ""
+  },
+  "qué": {
+   "es": "había preguntado nunca qué querían",
+   "en": ""
+  },
+  "querían": {
+   "es": "había preguntado nunca qué querían",
+   "en": ""
+  },
+  "suyo": {
+   "es": "lo suyo llegaba solo",
+   "en": "",
+   "antes": "lo suyo llega solo = their usual arrives by itself"
+  },
+  "llegaba": {
+   "es": "lo suyo llegaba solo",
+   "en": ""
+  },
+  "solo": {
+   "es": "lo suyo llegaba solo",
+   "en": "",
+   "antes": "lo suyo llega solo = their usual arrives by itself"
+  },
+  "aquella": {
+   "es": "aquella mañana había olor a churros",
+   "en": ""
+  },
+  "olor": {
+   "es": "aquella mañana había olor a churros",
+   "en": ""
+  },
+  "churros": {
+   "es": "aquella mañana había olor a churros",
+   "en": "",
+   "antes": "huele a churros = it smells of churros"
+  },
+  "quedaba": {
+   "es": "y quedaba un sitio libre",
+   "en": ""
+  },
+  "ocupó": {
+   "es": "claudia lo ocupó con el",
+   "en": ""
+  },
+  "es": {
+   "es": "en la mesa y pedía",
+   "en": "",
+   "antes": "pablo es el camarero = Pablo is the barman"
+  },
+  "preguntó": {
+   "es": "preguntó pablo",
+   "en": ""
+  },
+  "alguien": {
+   "es": "vez que alguien daba su",
+   "en": "",
+   "antes": "alguien da su café por sabido = someone takes her coffee as known"
+  },
+  "daba": {
+   "es": "y quedaba un sitio libre",
+   "en": ""
+  },
+  "sabido": {
+   "es": "daba su café por sabido",
+   "en": "",
+   "antes": "da su café por sabido = takes her coffee as known"
+  },
+  "orgullo": {
+   "es": "el orgullo le dio risa",
+   "en": "",
+   "antes": "el orgullo da hasta risa = the pride even makes you laugh"
+  },
+  "le": {
+   "es": "fijos nadie les había preguntado",
+   "en": ""
+  },
+  "dio": {
+   "es": "el orgullo le dio risa",
+   "en": ""
+  },
+  "risa": {
+   "es": "el orgullo le dio risa",
+   "en": "",
+   "antes": "da hasta risa = even makes you laugh"
+  },
+  "confirmó": {
+   "es": "confirmó",
+   "en": ""
+  },
+  "levantaron": {
+   "es": "los fijos levantaron la vista",
+   "en": ""
+  },
+  "vista": {
+   "es": "levantaron la vista un momento",
+   "en": "",
+   "antes": "levantan la vista un momento = look up for a moment"
+  },
+  "volvieron": {
+   "es": "momento y volvieron a lo",
+   "en": ""
+  },
+  "pidió": {
+   "es": "pidió una ronda para los",
+   "en": ""
+  },
+  "ronda": {
+   "es": "pidió una ronda para los",
+   "en": "",
+   "antes": "pide una ronda para los fijos = orders a round for the regulars"
+  },
+  "pagó": {
+   "es": "fijos y pagó el estreno",
+   "en": ""
+  },
+  "estreno": {
+   "es": "fijos y pagó el estreno",
+   "en": "",
+   "antes": "paga el estreno = pays for the debut"
+  },
+  "paga": {
+   "es": "barra la paga el que",
+   "en": "",
+   "antes": "paga el estreno = pays for the debut"
+  },
+  "llega": {
+   "es": "lo suyo llegaba solo",
+   "en": "",
+   "antes": "lo suyo llega solo = their usual arrives by itself"
+  },
+  "explicó": {
+   "es": "explicó pablo",
+   "en": ""
+  },
+  "discutían": {
+   "es": "dos fijos discutían un asunto viejo",
+   "en": ""
+  },
+  "asunto": {
+   "es": "dos fijos discutían un asunto viejo",
+   "en": "",
+   "antes": "el asunto de ayer = yesterday's business"
+  },
+  "viejo": {
+   "es": "dos fijos discutían un asunto viejo",
+   "en": ""
+  },
+  "contestó": {
+   "es": "contestó claudia",
+   "en": ""
+  },
+  "aquel": {
+   "es": "aquella mañana había olor a churros",
+   "en": ""
+  },
+  "supo": {
+   "es": "café le supo mejor que",
+   "en": ""
+  },
+  "mejor": {
+   "es": "le supo mejor que nunca",
+   "en": "",
+   "antes": "sabe mejor que nunca = tastes better than ever"
+  },
+  "al": {
+   "es": "otra sala",
+   "en": ""
+  },
+  "día": {
+   "es": "mesa y pedía su café",
+   "en": ""
+  },
+  "siguiente": {
+   "es": "al día siguiente",
+   "en": ""
+  },
+  "taza": {
+   "es": "su taza estaría puesta antes",
+   "en": "",
+   "antes": "su taza estará puesta = her cup will be set out"
+  },
+  "estaría": {
+   "es": "su taza estaría puesta antes",
+   "en": ""
+  },
+  "puesta": {
+   "es": "taza estaría puesta antes de",
+   "en": "",
+   "antes": "su taza estará puesta = her cup will be set out"
+  },
+  "antes": {
+   "es": "estaría puesta antes de que",
+   "en": "",
+   "antes": "antes de que ella empuje = before she pushes"
+  },
+  "empujara": {
+   "es": "de que empujara la puerta",
+   "en": ""
+  },
+  "puerta": {
+   "es": "de que empujara la puerta",
+   "en": "",
+   "antes": "empuje la puerta = pushes the door"
+  },
+  "fijo": {
+   "es": "a los fijos nadie les",
+   "en": ""
+  },
+  "empujar": {
+   "es": "de que empujara la puerta",
+   "en": ""
+  },
+  "fiarse": {
+   "es": "hoy tampoco te fías de",
+   "en": ""
+  },
+  "ocupar": {
+   "es": "claudia lo ocupó con el",
+   "en": ""
+  },
+  "discutir": {
+   "es": "dos fijos discutían un asunto viejo",
+   "en": ""
+  },
+  "firmar": {
+   "es": "como quien firma",
+   "en": ""
+  },
+  "dar por sabido": {
+   "es": "daba su café por sabido",
+   "en": "",
+   "antes": "da su café por sabido = takes his coffee as given"
+  },
+  "lo suyo": {
+   "es": "lo suyo llegaba solo",
+   "en": "",
+   "antes": "lo suyo llega solo = their usual arrives by itself"
+  },
+  "mejor que nunca": {
+   "es": "le supo mejor que nunca",
+   "en": "",
+   "antes": "sabe mejor que nunca = tastes better than ever"
+  }
+ },
+ "la-cana-de-marcos": {
+  "cuando": {
+   "es": "cuando claudia sacó el monedero",
+   "en": "",
+   "antes": "cuando claudia saca el monedero = when Claudia takes out her purse"
+  },
+  "sacó": {
+   "es": "cuando claudia sacó el monedero",
+   "en": ""
+  },
+  "monedero": {
+   "es": "cuando claudia sacó el monedero",
+   "en": "",
+   "antes": "saca el monedero = takes out her purse"
+  },
+  "señaló": {
+   "es": "pablo señaló la pizarra del fondo",
+   "en": ""
+  },
+  "pizarra": {
+   "es": "pablo señaló la pizarra del fondo",
+   "en": "",
+   "antes": "señala la pizarra del fondo = points at the blackboard at the back"
+  },
+  "dijo": {
+   "es": "dijo",
+   "en": ""
+  },
+  "siguió": {
+   "es": "y siguió secando vasos",
+   "en": ""
+  },
+  "secando": {
+   "es": "y siguió secando vasos",
+   "en": "",
+   "antes": "sigue secando vasos = keeps drying glasses"
+  },
+  "vasos": {
+   "es": "y siguió secando vasos",
+   "en": "",
+   "antes": "sigue secando vasos = keeps drying glasses"
+  },
+  "bajo": {
+   "es": "bajo la luz de la barra",
+   "en": ""
+  },
+  "luz": {
+   "es": "bajo la luz de la barra",
+   "en": ""
+  },
+  "barra": {
+   "es": "bajo la luz de la barra",
+   "en": ""
+  },
+  "guardaba": {
+   "es": "la pizarra guardaba nombres y números",
+   "en": ""
+  },
+  "nombres": {
+   "es": "la pizarra guardaba nombres y números",
+   "en": "",
+   "antes": "guarda nombres y números = holds names and numbers"
+  },
+  "números": {
+   "es": "la pizarra guardaba nombres y números",
+   "en": "",
+   "antes": "guarda nombres y números = holds names and numbers"
+  },
+  "insistió": {
+   "es": "claudia insistió",
+   "en": ""
+  },
+  "porque": {
+   "es": "porque deber dinero le picaba",
+   "en": ""
+  },
+  "picaba": {
+   "es": "porque deber dinero le picaba",
+   "en": ""
+  },
+  "tiza": {
+   "es": "la tiza espera",
+   "en": "",
+   "antes": "huele a tiza = smells of chalk"
+  },
+  "contestó": {
+   "es": "contestó pablo",
+   "en": ""
+  },
+  "cayó": {
+   "es": "cayó en algo",
+   "en": ""
+  },
+  "algo": {
+   "es": "cayó en algo",
+   "en": "",
+   "antes": "cae en algo = something dawns on her"
+  },
+  "era": {
+   "es": "la tiza espera",
+   "en": ""
+  },
+  "otro": {
+   "es": "era otro archivo",
+   "en": "",
+   "antes": "es otro archivo = it is another archive"
+  },
+  "archivo": {
+   "es": "era otro archivo",
+   "en": "",
+   "antes": "es otro archivo = it is another archive"
+  },
+  "quedó": {
+   "es": "nada se quedó vieja de",
+   "en": ""
+  },
+  "vieja": {
+   "es": "se quedó vieja de repente",
+   "en": "",
+   "antes": "se queda vieja de repente = suddenly feels old"
+  },
+  "ataba": {
+   "es": "la ataba al bar mejor",
+   "en": ""
+  },
+  "bar": {
+   "es": "bajo la luz de la barra",
+   "en": "",
+   "antes": "la ata al bar = ties her to the bar"
+  },
+  "decidió": {
+   "es": "decidió",
+   "en": ""
+  },
+  "salió": {
+   "es": "y le salió la voz tranquila",
+   "en": ""
+  },
+  "voz": {
+   "es": "y le salió la voz tranquila",
+   "en": "",
+   "antes": "le sale la voz tranquila = her voice comes out calm"
+  },
+  "escribió": {
+   "es": "pablo escribió su nombre debajo",
+   "en": ""
+  },
+  "nombre": {
+   "es": "la pizarra guardaba nombres y números",
+   "en": "",
+   "antes": "escribe su nombre = writes her name"
+  },
+  "raya": {
+   "es": "las rayas de tiza guardan",
+   "en": "",
+   "antes": "la raya es corta = the chalk line is short"
+  },
+  "corta": {
+   "es": "con una raya corta que prometía",
+   "en": "",
+   "antes": "la raya es corta = the chalk line is short"
+  },
+  "prometía": {
+   "es": "con una raya corta que prometía",
+   "en": ""
+  },
+  "sonrió": {
+   "es": "sonrió pablo",
+   "en": ""
+  },
+  "señalar": {
+   "es": "pablo señaló la pizarra del fondo",
+   "en": ""
+  },
+  "sonreír": {
+   "es": "sonrió pablo",
+   "en": ""
+  },
+  "atar": {
+   "es": "la ataba al bar mejor",
+   "en": ""
+  },
+  "prometer": {
+   "es": "con una raya corta que prometía",
+   "en": ""
+  },
+  "secar": {
+   "es": "y siguió secando vasos",
+   "en": ""
+  },
+  "corto": {
+   "es": "con una raya corta que prometía",
+   "en": ""
+  },
+  "tranquilo": {
+   "es": "y le salió la voz tranquila",
+   "en": ""
+  }
+ },
+ "la-cuenta-perdida": {
+  "cuenta": {
+   "es": "la cuenta perdida",
+   "en": "",
+   "antes": "la cuenta exacta era la entrada = the exact tab was the way in"
+  },
+  "nadie": {
+   "es": "nadie supo quién pagó la",
+   "en": "",
+   "antes": "nadie sabe quién paga = nobody knows who pays"
+  },
+  "supo": {
+   "es": "nadie supo quién pagó la",
+   "en": ""
+  },
+  "quién": {
+   "es": "nadie supo quién pagó la",
+   "en": "",
+   "antes": "nadie sabe quién paga = nobody knows who pays"
+  },
+  "pagó": {
+   "es": "supo quién pagó la primera",
+   "en": ""
+  },
+  "y": {
+   "es": "y nadie preguntó",
+   "en": "",
+   "antes": "y nadie pregunta = and nobody asks"
+  },
+  "preguntó": {
+   "es": "y nadie preguntó",
+   "en": ""
+  },
+  "bajaron": {
+   "es": "y marcos bajaron con la",
+   "en": ""
+  },
+  "olor": {
+   "es": "con olor a polvo de estanterías",
+   "en": ""
+  },
+  "a": {
+   "es": "la cuenta perdida",
+   "en": "",
+   "antes": "huelen a polvo = smell of dust"
+  },
+  "polvo": {
+   "es": "con olor a polvo de estanterías",
+   "en": "",
+   "antes": "huelen a polvo de estanterías = smell of shelving dust"
+  },
+  "puso": {
+   "es": "pablo puso vasos fríos y",
+   "en": ""
+  },
+  "sin": {
+   "es": "de aceitunas sin que nadie",
+   "en": "",
+   "antes": "sin que nadie los pida = without anyone ordering them"
+  },
+  "que": {
+   "es": "aceitunas sin que nadie los",
+   "en": "",
+   "antes": "sin que nadie los pida = without anyone ordering them"
+  },
+  "pidiera": {
+   "es": "sin que nadie los pidiera",
+   "en": ""
+  },
+  "anunció": {
+   "es": "anunció pablo",
+   "en": ""
+  },
+  "mirada": {
+   "es": "con la mirada y nadie",
+   "en": "",
+   "antes": "pregunta con la mirada = asks with her eyes"
+  },
+  "se": {
+   "es": "y nadie se dio por",
+   "en": "",
+   "antes": "nadie se da por aludido = nobody takes the hint"
+  },
+  "dio": {
+   "es": "nadie se dio por aludido",
+   "en": ""
+  },
+  "por": {
+   "es": "nadie se dio por aludido",
+   "en": "",
+   "antes": "se da por aludido = takes the hint"
+  },
+  "aludido": {
+   "es": "nadie se dio por aludido",
+   "en": "",
+   "antes": "nadie se da por aludido = nobody takes the hint"
+  },
+  "hubo": {
+   "es": "hubo sonrisas de reojo y",
+   "en": ""
+  },
+  "lo": {
+   "es": "con olor a polvo de estanterías",
+   "en": "",
+   "antes": "se lo comenta a marcos = she remarks on it to Marcos"
+  },
+  "comentó": {
+   "es": "claudia se lo comentó a marcos",
+   "en": ""
+  },
+  "contestó": {
+   "es": "contestó marcos",
+   "en": ""
+  },
+  "su": {
+   "es": "nadie supo quién pagó la",
+   "en": "",
+   "antes": "alza su vaso = raises her glass"
+  },
+  "había": {
+   "es": "cuenta exacta había sido la",
+   "en": ""
+  },
+  "entrada": {
+   "es": "exacta había sido la entrada",
+   "en": "",
+   "antes": "era la entrada = was the way in"
+  },
+  "bajito": {
+   "es": "bajito",
+   "en": "",
+   "antes": "pregunta claudia, bajito = Claudia asks, very quietly"
+  },
+  "guiñó": {
+   "es": "marcos le guiñó un ojo",
+   "en": ""
+  },
+  "ojo": {
+   "es": "sonrisas de reojo y hombros",
+   "en": "",
+   "antes": "le guiña un ojo = winks an eye at her"
+  },
+  "alzó": {
+   "es": "claudia alzó su vaso",
+   "en": ""
+  },
+  "calma": {
+   "es": "con calma nueva",
+   "en": "",
+   "antes": "con una calma nueva = with a new calm"
+  },
+  "nueva": {
+   "es": "con calma nueva",
+   "en": "",
+   "antes": "con una calma nueva = with a new calm"
+  },
+  "avisó": {
+   "es": "avisó",
+   "en": ""
+  },
+  "cerró": {
+   "es": "el viernes se cerró solo",
+   "en": ""
+  },
+  "aceituna": {
+   "es": "tapa de aceitunas sin que",
+   "en": ""
+  },
+  "chocar": {
+   "es": "chocando su vaso",
+   "en": ""
+  },
+  "alzar": {
+   "es": "claudia alzó su vaso",
+   "en": ""
+  },
+  "avisar": {
+   "es": "avisó",
+   "en": ""
+  },
+  "guiñar": {
+   "es": "marcos le guiñó un ojo",
+   "en": ""
+  },
+  "agotado": {
+   "es": "agotados",
+   "en": ""
+  },
+  "encogido": {
+   "es": "de reojo y hombros encogidos",
+   "en": ""
+  },
+  "darse por aludido": {
+   "es": "y nadie se dio por",
+   "en": "",
+   "antes": "nadie se da por aludido = nobody takes the hint"
+  }
+ }
+}
