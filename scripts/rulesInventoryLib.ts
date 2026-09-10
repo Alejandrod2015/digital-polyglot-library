@@ -128,6 +128,8 @@ export function gateFantasma(gate: string): string | null {
   if (npm) return scriptsNpm().has(npm[1]) ? null : `npm run ${npm[1]} no esta en package.json`;
 
   if (/\.sh$/.test(g)) {
+    // Con ruta es un script del arbol (scripts/vercel-ignore-build.sh), no un hook.
+    if (g.includes("/")) return fs.existsSync(path.join(REPO, g)) ? null : `${g} no esta en el arbol`;
     const hooks = hooksExistentes();
     if (hooks.has(g)) return null;
     return fs.existsSync(path.join(REPO, ".claude", "safety", g)) ? null : `el hook ${g} no existe`;

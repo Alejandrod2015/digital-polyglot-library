@@ -271,6 +271,13 @@
       "source": "memory:project_audio_dual_path.md"
     },
     {
+      "id": "project_audio_splice_seam_residue",
+      "domain": "audio",
+      "rule": "Todo empalme de seccion deja cola de la toma vieja si los offsets no se re-miden; se coteja el master con el texto",
+      "gate": "src/lib/audioEditorSections.ts",
+      "source": "memory:project_audio_splice_seam_residue.md"
+    },
+    {
       "id": "project_ios_wsola_mono_artifact",
       "domain": "audio",
       "rule": "expo-av rate < 0.7 + shouldCorrectPitch:true on Piper mono 22050 Hz mp3 degrades formants → female voice sounds \"deep/possessed\"",
@@ -418,6 +425,13 @@
       "source": "memory:feedback_announcement_must_be_live_everywhere.md"
     },
     {
+      "id": "feedback_beta_wording_soften_dont_erase",
+      "domain": "comms",
+      "rule": "\"En los anuncios la palabra \\\"beta\\\" se baja de tono, no se borra; la landing /beta SI debe decir beta\"",
+      "gate": "process",
+      "source": "memory:feedback_beta_wording_soften_dont_erase.md"
+    },
+    {
       "id": "feedback_check_every_email_link",
       "domain": "comms",
       "rule": "Ningún correo se da por listo sin pedir cada uno de sus enlaces contra producción; el comprobador es scripts/checkEmailLinks.ts",
@@ -444,6 +458,13 @@
       "rule": "muvn.de es el email de otra empresa donde trabaja el usuario, NUNCA usarlo para tests/registros/comunicación de DPL",
       "gate": "none",
       "source": "memory:feedback_never_use_muvn_email.md"
+    },
+    {
+      "id": "feedback_new_adset_starts_at_10_eur",
+      "domain": "comms",
+      "rule": "\"Todo ad set nuevo en Meta arranca con 10 EUR/dia, nunca con el presupuesto heredado del duplicado\"",
+      "gate": "process",
+      "source": "memory:feedback_new_adset_starts_at_10_eur.md"
     },
     {
       "id": "feedback_notification_copy_teases",
@@ -525,7 +546,7 @@
     {
       "id": "project_feedback_channels_reality",
       "domain": "comms",
-      "rule": "Todo el feedback de la beta viene del formulario web por correo; la hoja in-app no ha producido ni una fila desde que se lanzo el 2026-07-30.",
+      "rule": "El feedback de la beta venia todo del formulario web; el 2026-09-06 la hoja in-app dio su primera fila y el 2026-09-08 llego el primer pulgar de un tester.",
       "gate": "process",
       "source": "memory:project_feedback_channels_reality.md"
     },
@@ -887,6 +908,13 @@
       "source": "memory:project_catalog_dump_vs_db.md"
     },
     {
+      "id": "project_grammar_band_by_level",
+      "domain": "journey",
+      "rule": "\"BLOQUEANTE: un tema B2 no cierra con un marcador fuera de banda (subj. imperfecto 3-7, condicional 1-5, estilo indirecto 1-3 por 100 oraciones); el preterito no lleva banda\"",
+      "gate": "scripts/cierraTema.ts",
+      "source": "memory:project_grammar_band_by_level.md"
+    },
+    {
       "id": "project_journey_de_c1_hamburg",
       "domain": "journey",
       "rule": "\"Journey alemán C1 Expat de Hamburgo (era name='Hanseat', renombrado 2026-08-21): scaffold 21 slots archived; spine=reserva hanseática (no burocracia); cast Nora/Ole/Herr Carstens/Wiebke; piloto T1...",
@@ -948,6 +976,13 @@
       "rule": "\"Etiquetas user-facing de niveles DPL (a0→c2); nombres amigables en inglés, código CEFR solo anotación secundaria, NUNCA A0/Pre-A1/Level 0\"",
       "gate": "none",
       "source": "memory:project_level_labels.md"
+    },
+    {
+      "id": "project_levels_raised_2026_09_10",
+      "domain": "journey",
+      "rule": "\"El 2026-09-10 se subieron de nivel 6 journeys cuyo contenido medía por encima de su etiqueta; cómo se midió, qué se movió y qué quedó pendiente\"",
+      "gate": "process",
+      "source": "memory:project_levels_raised_2026_09_10.md"
     },
     {
       "id": "project_story_id_two_forms",
@@ -1165,6 +1200,13 @@
       "rule": "Workflow oficial validado para builds locales iPhone en este Mac. NO usar expo run:ios. Saber detectar syspolicyd hang.",
       "gate": "process",
       "source": "memory:feedback_iphone_build.md"
+    },
+    {
+      "id": "feedback_link_instagram_handles",
+      "domain": "process",
+      "rule": "\"Todo handle de Instagram que yo escriba va como enlace clicable, nunca como texto suelto\"",
+      "gate": "stop-ig-handle-link-guard.sh",
+      "source": "memory:feedback_link_instagram_handles.md"
     },
     {
       "id": "feedback_measure_needs_a_control",
@@ -1433,6 +1475,20 @@
       "source": "memory:project_simulator_hardware_keyboard_at_sign.md"
     },
     {
+      "id": "project_spanish_ig_comment_strategy",
+      "domain": "process",
+      "rule": "Estrategia de comentarios graciosos en Instagram y la lista de 20 profes de español verificada el 2026-09-09",
+      "gate": "process",
+      "source": "memory:project_spanish_ig_comment_strategy.md"
+    },
+    {
+      "id": "project_vercel_build_optimization",
+      "domain": "process",
+      "rule": "\"El ignore step de vercel.json salta ramas que no son main y commits solo de movil; ataca CUANTOS builds, no cuanto cuesta cada uno\"",
+      "gate": "scripts/vercel-ignore-build.sh",
+      "source": "memory:project_vercel_build_optimization.md"
+    },
+    {
       "id": "release-stage-measured",
       "domain": "process",
       "rule": "El plan de despliegue por etapas (docs/plan-despliegue-por-etapas.md) no se recuerda: se mide. checkReleaseReadiness detecta cada pieza en el repo, el JSON commiteado tiene que coincidir, y el digest semanal imprime etapa, disparador y piezas pendientes",
@@ -1620,6 +1676,13 @@
       "rule": "\"Las historias A0 deben ser entretenidas (mini-arco + giro + emoción), no listas de cognados\"",
       "gate": "none",
       "source": "memory:feedback_a0_engaging.md"
+    },
+    {
+      "id": "feedback_characters_from_target_country",
+      "domain": "story",
+      "rule": "\"Los personajes de una historia son todos del país objetivo; nada de turistas de otros países (ni 'um rapaz do Canadá')\"",
+      "gate": "process",
+      "source": "memory:feedback_characters_from_target_country.md"
     },
     {
       "id": "feedback_dont_disable_working_code_on_a_hunch",
@@ -1953,7 +2016,7 @@
     {
       "id": "project_gloss_mood_layer",
       "domain": "vocab",
-      "rule": "La capa gramatical de las glosas (modo y par de formas), lo que decide si una forma es orden, y por que el lint importa el generador en vez de copiarlo",
+      "rule": "\"La capa gramatical de las glosas (modo y par de formas), lo que decide si una forma es orden, y por que el lint importa el generador en vez de copiarlo\"",
       "gate": "scripts/buildGlossMoods.ts",
       "source": "memory:project_gloss_mood_layer.md"
     },
