@@ -172,39 +172,49 @@ que cabe dentro del minuto, no el minuto.
 - **Léxico**: de A0 a A2 sale de las 2500 palabras más frecuentes; de B1 en
   adelante, libre.
 
-**Cómo se comprueba** (`scripts/_gramProbe.ts`, `scripts/_levelProbe3.ts`), medido
-el 2026-08-19 sobre los ocho journeys de español, usos por cada 100 oraciones:
+**Cómo se comprueba** (`scripts/_gramProbe.ts`). Re-medido el 2026-09-10 con la
+sonda arreglada sobre los journeys de español live y draft, en usos por cada 100
+oraciones. La tabla anterior (2026-08-19) se midió con una sonda rota y sus
+cifras eran falsas: usaba `\b` sin la bandera `u`, así que no veía ningún
+pretérito en -ó y en cambio contaba "canción", "panadería" o "cuchara".
 
-| | A0 (3 journeys) | A1 | C1 (4 journeys) |
-|---|---|---|---|
-| Pretérito | 4-10 | 10 | 21-38 |
-| Imperfecto | 0-1 | 3 | 24-52 |
-| Subjuntivo imperfecto | 1-3 | 1 | 5-10 |
-| Condicional | 0-2 | 3 | 3-6 |
-| Subjuntivo presente | 0-1 | 0 | 0-1 |
-| Pasiva | 0 | 0 | 0 |
-| Conectores de discurso | 0-3 | 0 | 0-1 |
-| Subordinadas | 9 (PT A0) | 13 (PT A1) | 45-60 |
+| | A0 (1) | A1 (5) | A2 (2) | B1 (2) | B2 reescrito (España, temas 1-4) | C1 (4) |
+|---|---|---|---|---|---|---|
+| Pretérito | 0 | 0-8 | 1-11 | 3-15 | 86-95 | 53-85 |
+| Imperfecto | 0 | 0-3 | 4-9 | 7 | 33-67 | 24-52 |
+| Condicional | 0 | 0-2 | 0 | 1-5 | 2-5 | 0-1 |
+| Subjuntivo presente | 0 | 0-1 | 0-2 | 1-2 | 0-2 | 0-1 |
+| Subjuntivo imperfecto | 0 | 0-1 | 0 | 2-4 | 5 | 3-6 |
+| Estilo indirecto | 0 | 0-1 | 0-1 | 0-1 | 2 | 0-3 |
+| Pasiva | 0 | 0 | 0 | 0 | 0 | 0 |
 
-La primera versión de esta tabla la escribí de memoria del MCER y ponía la
-pasiva, el subjuntivo presente y los conectores de discurso como marcadores de
-B2 y C1. El catálogo lo desmiente: **la pasiva es cero incluso en C1**, el
-subjuntivo presente no pasa de 1 y los conectores salen igual en un A0 que en un
-C1. Lo que de verdad separa nuestro C1 del A1 es el imperfecto (24-52 contra 3)
-y el pretérito (21-38 contra 10).
+Lo que dice la medición:
+
+- **El pretérito y el imperfecto miden el MODO DE NARRAR, no el nivel.** Los
+  Traveler narran en presente (0-15 de A0 a B1) y los Friends C1 en pasado
+  (53-85). Por eso no llevan banda: ponerles techo sería prohibir narrar en
+  pasado, que es una decisión de estilo.
+- **Lo que separa niveles es el subjuntivo imperfecto y el estilo indirecto.**
+  El B1 y el B2 escritos antes del 2026-09-10 narraban en presente y medían
+  como un A2 (subjuntivo imperfecto 0-4, estilo indirecto 0-1). El B2 de España
+  reescrito con narración en pasado cae entre el B1 y el C1, que es donde toca.
+- **La pasiva es cero en todos los niveles**, incluido el C1. No es marcador.
+- **Banda B2**, que comprueba el cierre de tema (`scripts/cierraTema.ts`, desde
+  la rama del B2 de España): subjuntivo imperfecto 3-7, condicional 1-5, estilo
+  indirecto 1-3. El B1 no tiene banda todavía; se está midiendo.
+- El 2026-09-10 los A0 de España, México y Argentina (y el de Italia) se
+  subieron a A1, porque medían como un A1. El único A0 de español que queda es
+  el Traveler latam, y da cero en todos los marcadores.
 
 **Avisos, para no leer esto como más firme de lo que es:**
 
-- **A2, B1 y B2 no tienen ni un journey escrito.** Esas tres filas son criterio,
-  no medición.
-- Todo nuestro C1 es conversacional. La pasiva y los conectores pueden faltar por
-  el género, no por el nivel.
+- Todo nuestro C1 es conversacional. Algún marcador puede faltar por el género,
+  no por el nivel.
 - **Los siete journeys C1 que ya existen miden 225-280 palabras**, cien por
   encima de su fila. La tabla vale para lo que se escriba a partir de ahora; no
   los invalida.
-- El validador **no** comprueba nada de esto todavía: sigue con su ventana de un
-  minuto para A0 y A1 (`isOneMinuteTier`) y 180-320 para el resto. Esta tabla es
-  la referencia para escribir, no un gate.
+- El léxico no entra en esta tabla. El B2 reescrito movió la gramática y dejó el
+  léxico igual (riqueza de prosa del 29%, contra 44-47% en los C1).
 
 ### Length
 
