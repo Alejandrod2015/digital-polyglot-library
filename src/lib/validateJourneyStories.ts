@@ -535,6 +535,43 @@ export function validateJourneyStories(
       }
       push("journey-a0-floor", "Suelo A0: la narracion va en presente",
         malas.length === 0, malas.slice(0, 8).join(" | "));
+    } else if (lang === "PT") {
+      // Suelo A0 portugues (2026-09-10, al escribir el Traveler PT-BR A0 nuevo):
+      // la NARRACION va en presente, mismo contrato que el frances. El pasado
+      // se permite DENTRO de comillas, que es habla real.
+      // El A0 que habia antes media 0% de frases con pasado y aun asi era un A1
+      // por largo de frase; eso lo mide `body-a0-sentence-length`. Este mide el
+      // tiempo verbal, que ningun check miraba en PT.
+      // Terminaciones con trampa, que un detector ingenuo se come:
+      //   - "-ou": "estou" es presente ("sou", "vou", "dou" no llegan al largo);
+      //   - "-eu": "museu", "europeu" son sustantivo o adjetivo;
+      //   - "-ei": "vôlei", "jóquei", "pônei" son sustantivo;
+      //   - "-ava": "lava", "trava", "grava" son PRESENTE y "brava" adjetivo;
+      //   - "-asse/-esse": "esse", "desse", "nesse", "classe", "interesse";
+      //   - "-aram/-eram/-iram": el presente de los verbos en -rar/-rer/-rir
+      //     acaba igual que el preterito ("esperam", "preparam", "respiram");
+      //     "viram" es ademas presente de "virar" ("as regras viram costume").
+      //     Los dos falsos positivos salieron del control contra el PT A2.
+      // El "-ia" del imperfecto (comia, dormia) choca con cien sustantivos
+      // (dia, praia, familia, padaria), asi que ahi va una lista blanca.
+      const L = "(?<![\\p{L}])";
+      const R = "(?![\\p{L}])";
+      const IRREG = "(?:foi|fui|foram|fomos|fez|fiz|fizeram|teve|tive|tiveram|disse|disseram|veio|vieram|pôs|quis|pôde|soube|deu|deram|viu|trouxe|esteve|estive|houve|era|eram|tinha|tinham|vinha|vinham|estava|estavam|ia|iam|havia|fazia|dizia|sabia|queria|podia|comia|bebia|dormia|saía|abria|subia|descia|conhecia|parecia|devia|vivia|corria|escrevia|pedia|sentia|ouvia|seguia|sorria|seria|teria|faria|poderia|gostaria|iria|diria|viria|deveria|será|serão|terá|terão|fará|farão|irá|irão|fosse|fossem|tivesse|tivessem|estivesse)";
+      const IRREG_PT = new RegExp(`${L}${IRREG}${R}`, "iu");
+      const TERM_PT = new RegExp(`${L}(\\p{Ll}{2,}(?:ou|eu|iu|ei|aram|eram|iram|ava|avam|ávamos|asse|assem|esse|essem|isse|issem))${R}`, "u");
+      const NO_PASADO = /^(?:estou|museu|europeu|judeu|ateu|vôlei|jóquei|pônei|hóquei|lava|trava|grava|crava|cava|fava|brava|bravas|oitava|escrava|esse|desse|nesse|daquele|interesse|classe|posse|tosse|ingresse|endereço|esperam|preparam|comparam|separam|declaram|disparam|encaram|reparam|consideram|operam|alteram|liberam|recuperam|aceleram|toleram|superam|admiram|respiram|inspiram|retiram|suspiram|expiram)$/;
+      const malas: string[] = [];
+      for (const s of stories) {
+        const narr = s.text.replace(new RegExp(`${QUOTE_OPEN}[^${QUOTE_CLOSE}]*${QUOTE_CLOSE}`, "g"), " ");
+        for (const f of sentences(narr)) {
+          if (f.length < 4) continue;
+          const term = f.match(TERM_PT);
+          const termReal = term ? !NO_PASADO.test(term[1].toLowerCase()) : false;
+          if (IRREG_PT.test(f) || termReal) malas.push(`${s.slug}: [no es presente] ${f.slice(0, 70)}`);
+        }
+      }
+      push("journey-a0-floor", "Suelo A0: la narracion va en presente",
+        malas.length === 0, malas.slice(0, 8).join(" | "));
     } else if (lang !== "DE") {
       noImpl("journey-a0-floor", "Suelo A0: sujeto primero, sin separables partidos, solo presente",
         `El suelo A0 solo esta implementado para DE; este journey es ${lang || "?"}. Escribelo antes de guardar.`);

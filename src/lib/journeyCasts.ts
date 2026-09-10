@@ -643,6 +643,56 @@ const PORTUGUESE_BRAZIL_A1_CAST: JourneyCast = {
     "Fernanda (7iqXtOF3wl3pomwXFY7G), la misma del A0 brasileño.",
 };
 
+/**
+ * Traveler PT-BR A0 nuevo (journey cmtvpqsfv000832hgemzk20cl, 2026-09-10).
+ *
+ * Nace cuando los cuatro Traveler brasileños suben un peldaño: el A0 publicado
+ * medía como un A1. La espina sale de las dos únicas frases de portugués que
+ * hablan de una vida y no de la app, las de Alison: "dating a Brazilian" y
+ * "dividing my year between Brazil and England". Por la regla de nativos nadie
+ * es extranjero: Larissa es brasileña y parte el año, y Caio es quien espera.
+ * La clave lleva el nivel porque `portuguese-brazil` ya es el reparto del A2;
+ * `getJourneyCast` no la resuelve, y hoy nadie consume esa función.
+ */
+const PORTUGUESE_BRAZIL_A0_CAST: JourneyCast = {
+  journeyKey: "portuguese-brazil-a0",
+  countries: [
+    {
+      country: "Brasil",
+      members: [
+        {
+          slug: "larissa",
+          displayName: "Larissa",
+          voiceId: "7iqXtOF3wl3pomwXFY7G",
+          voiceSlot: "narrator",
+          age: "young",
+          relation: "protagonista; novia de Caio",
+          description:
+            "29 años, uma moça do Rio de Janeiro. Pasa medio año en Londres y medio en " +
+            "Brasil, y en cada vuelta reaprende su propio país. Sale en las 21 historias.",
+        },
+        {
+          slug: "caio",
+          displayName: "Caio",
+          voiceId: "7iqXtOF3wl3pomwXFY7G",
+          voiceSlot: "narrator",
+          age: "young",
+          relation: "novio de Larissa",
+          description:
+            "31 años, um rapaz de Belo Horizonte. Es quien espera cuando ella se va. " +
+            "Aparece en la mitad de las historias; en las otras, Larissa lo menciona.",
+        },
+      ],
+      notes:
+        "Pareja, no hermanos: el primer tema es el reencuentro tras seis meses y la " +
+        "visita a la madre de él. Los dos son brasileños, como exige la regla de voces.",
+    },
+  ],
+  notes:
+    "Journey de tipo traveler: 2 personajes fijos, siete destinos, orden libre. " +
+    "Voz de narración por decidir al narrar; el voiceId es el del narrador de la escalera.",
+};
+
 export const JOURNEY_CASTS: Record<string, JourneyCast> = {
   "spanish-latam": SPANISH_LATAM_CAST,
   // 2026-07-07: el key german-germany pasa del Traveler beta (ARCHIVADO,
@@ -651,6 +701,7 @@ export const JOURNEY_CASTS: Record<string, JourneyCast> = {
   // documentación histórica.
   "german-germany": GERMAN_EXPAT_B1_CAST,
   "portuguese-brazil": PORTUGUESE_BRAZIL_A1_CAST,
+  "portuguese-brazil-a0": PORTUGUESE_BRAZIL_A0_CAST,
 };
 
 export function getJourneyCast(
