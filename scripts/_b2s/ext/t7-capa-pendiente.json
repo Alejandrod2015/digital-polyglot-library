@@ -1,0 +1,820 @@
+{
+ "una-agenda-de-desconocida": {
+  "quien": {
+   "es": "quien bajó del tren era paula",
+   "en": "",
+   "antes": "quien baja del tren es paula = the one getting off the train is Paula"
+  },
+  "bajó": {
+   "es": "quien bajó del tren era paula",
+   "en": ""
+  },
+  "del": {
+   "es": "quien bajó del tren era paula",
+   "en": "",
+   "antes": "baja del tren = gets off the train"
+  },
+  "tren": {
+   "es": "quien bajó del tren era paula",
+   "en": "",
+   "antes": "baja del tren = gets off the train"
+  },
+  "que": {
+   "es": "mejor amiga que vitoria mandaba",
+   "en": "",
+   "antes": "que vitoria manda a cádiz = that Vitoria sends to Cádiz"
+  },
+  "vitoria": {
+   "es": "amiga que vitoria mandaba a",
+   "en": "",
+   "antes": "que vitoria manda a cádiz = that Vitoria sends to Cádiz"
+  },
+  "mandaba": {
+   "es": "que vitoria mandaba a cádiz",
+   "en": ""
+  },
+  "a": {
+   "es": "una agenda de desconocida",
+   "en": "",
+   "antes": "manda a cádiz = sends to Cádiz"
+  },
+  "cádiz": {
+   "es": "que vitoria mandaba a cádiz",
+   "en": "",
+   "antes": "manda a cádiz = sends to Cádiz"
+  },
+  "ese": {
+   "es": "claudia era ese día comité",
+   "en": ""
+  },
+  "día": {
+   "es": "era ese día comité de",
+   "en": ""
+  },
+  "comité": {
+   "es": "ese día comité de bienvenida",
+   "en": "",
+   "antes": "claudia es hoy comité de bienvenida = Claudia is today's welcome committee"
+  },
+  "esperó": {
+   "es": "la esperó con tiempo de",
+   "en": ""
+  },
+  "olía": {
+   "es": "que olía a tren",
+   "en": ""
+  },
+  "se": {
+   "es": "claudia era ese día comité",
+   "en": "",
+   "antes": "se abrazan dos veces = they hug twice"
+  },
+  "abrazaron": {
+   "es": "se abrazaron dos veces",
+   "en": ""
+  },
+  "veces": {
+   "es": "se abrazaron dos veces",
+   "en": "",
+   "antes": "se abrazan dos veces = they hug twice"
+  },
+  "cosa": {
+   "es": "cosa rara",
+   "en": "",
+   "antes": "cosa rara en ella = unusual for her"
+  },
+  "rara": {
+   "es": "cosa rara",
+   "en": "",
+   "antes": "cosa rara en ella = unusual for her"
+  },
+  "salió": {
+   "es": "el paseo de bienvenida salió solo",
+   "en": ""
+  },
+  "solo": {
+   "es": "el paseo de bienvenida salió solo",
+   "en": "",
+   "antes": "sale solo = comes out by itself"
+  },
+  "pidió": {
+   "es": "claudia pidió dos cafés sin",
+   "en": ""
+  },
+  "cafés": {
+   "es": "pidió dos cafés sin abrir",
+   "en": "",
+   "antes": "pide dos cafés = orders two coffees"
+  },
+  "rio": {
+   "es": "se rio paula",
+   "en": ""
+  },
+  "y": {
+   "es": "desde que soy de la",
+   "en": "",
+   "antes": "y a paula le tocará cargar = and Paula will get to carry"
+  },
+  "contestó": {
+   "es": "contestó claudia",
+   "en": ""
+  },
+  "sacó": {
+   "es": "paula sacó un paquete del bolso",
+   "en": ""
+  },
+  "paquete": {
+   "es": "paula sacó un paquete del bolso",
+   "en": "",
+   "antes": "saca un paquete del bolso = takes a package from her bag"
+  },
+  "calendario": {
+   "es": "el calendario",
+   "en": "",
+   "antes": "el calendario semanal = the weekly planner"
+  },
+  "dijo": {
+   "es": "dijo",
+   "en": ""
+  },
+  "explicó": {
+   "es": "y explicó que pesaba más",
+   "en": ""
+  },
+  "pesaba": {
+   "es": "explicó que pesaba más que",
+   "en": ""
+  },
+  "más": {
+   "es": "que pesaba más que su",
+   "en": "",
+   "antes": "pesa más que mi maleta = weighs more than my suitcase"
+  },
+  "su": {
+   "es": "pesaba más que su maleta",
+   "en": "",
+   "antes": "cada hora tiene su casilla = every hour has its box"
+  },
+  "maleta": {
+   "es": "pesaba más que su maleta",
+   "en": "",
+   "antes": "más que mi maleta = more than my suitcase"
+  },
+  "hojeó": {
+   "es": "claudia lo hojeó como se",
+   "en": ""
+  },
+  "hojea": {
+   "es": "como se hojea la agenda",
+   "en": "",
+   "antes": "lo hojea como se hojea = leafs through it the way you leaf"
+  },
+  "cada": {
+   "es": "cada hora tenía su casilla",
+   "en": "",
+   "antes": "cada hora tiene su casilla = every hour has its box"
+  },
+  "hora": {
+   "es": "cada hora tenía su casilla",
+   "en": "",
+   "antes": "cada hora tiene su casilla = every hour has its box"
+  },
+  "tenía": {
+   "es": "cada hora tenía su casilla",
+   "en": ""
+  },
+  "casilla": {
+   "es": "cada hora tenía su casilla",
+   "en": "",
+   "antes": "cada hora tiene su casilla = every hour has its box"
+  },
+  "ahí": {
+   "es": "y ahí ya no le",
+   "en": ""
+  },
+  "le": {
+   "es": "el calendario",
+   "en": "",
+   "antes": "nada de eso le cabe = none of it fits her"
+  },
+  "cabría": {
+   "es": "ya no le cabría nada",
+   "en": ""
+  },
+  "nada": {
+   "es": "ya no le cabría nada",
+   "en": "",
+   "antes": "nada de eso le cabe = none of it fits her"
+  },
+  "dio": {
+   "es": "le dio las gracias de verdad",
+   "en": ""
+  },
+  "gracias": {
+   "es": "le dio las gracias de verdad",
+   "en": "",
+   "antes": "le da las gracias de verdad = thanks her truly"
+  },
+  "saber": {
+   "es": "sin saber por qué",
+   "en": "",
+   "antes": "sin saber bien por qué = without quite knowing why"
+  },
+  "qué": {
+   "es": "sin saber por qué",
+   "en": "",
+   "antes": "sin saber bien por qué = without quite knowing why"
+  },
+  "decidió": {
+   "es": "decidió",
+   "en": ""
+  },
+  "guardó": {
+   "es": "y paula lo guardó riéndose",
+   "en": ""
+  },
+  "riéndose": {
+   "es": "y paula lo guardó riéndose",
+   "en": "",
+   "antes": "lo guarda riéndose = puts it away laughing"
+  },
+  "toca": {
+   "es": "y te toca cargar",
+   "en": ""
+  },
+  "cargar": {
+   "es": "y te toca cargar",
+   "en": "",
+   "antes": "le tocará cargar = will get to carry"
+  },
+  "avisó": {
+   "es": "le avisó claudia",
+   "en": ""
+  },
+  "abrazarse": {
+   "es": "se abrazaron dos veces",
+   "en": ""
+  },
+  "hojear": {
+   "es": "claudia lo hojeó como se",
+   "en": ""
+  },
+  "funcionar": {
+   "es": "que a ti todavía te funciona",
+   "en": ""
+  },
+  "traer": {
+   "es": "te lo traigo por si",
+   "en": ""
+  },
+  "raro": {
+   "es": "cosa rara",
+   "en": ""
+  },
+  "dar las gracias": {
+   "es": "le dio las gracias de verdad",
+   "en": ""
+  },
+  "desconocido": {
+   "es": "una agenda de desconocida",
+   "en": ""
+  },
+  "sin abrir la boca": {
+   "es": "dos cafés sin abrir la",
+   "en": "",
+   "antes": "pide dos cafés sin abrir la boca = orders two coffees without a word"
+  },
+  "de verdad": {
+   "es": "le dio las gracias de verdad",
+   "en": "",
+   "antes": "da las gracias de verdad = thanks her truly"
+  }
+ },
+ "amanece-con-poniente": {
+  "mudanza": {
+   "es": "la mudanza amaneció con poniente",
+   "en": "",
+   "antes": "la mudanza amanece con poniente = moving day dawns with a west wind"
+  },
+  "amaneció": {
+   "es": "la mudanza amaneció con poniente",
+   "en": ""
+  },
+  "repartió": {
+   "es": "marcos repartió entre claudia y paula",
+   "en": ""
+  },
+  "que": {
+   "es": "que cargó una caja en",
+   "en": "",
+   "antes": "que carga una caja = who ends up carrying a box"
+  },
+  "cargó": {
+   "es": "que cargó una caja en",
+   "en": ""
+  },
+  "carga": {
+   "es": "carga",
+   "en": "",
+   "antes": "carga una caja en los brazos = carries a box in her arms"
+  },
+  "le": {
+   "es": "le informó marcos",
+   "en": "",
+   "antes": "le informa marcos = Marcos informs her"
+  },
+  "informó": {
+   "es": "le informó marcos",
+   "en": ""
+  },
+  "temía": {
+   "es": "claudia temía que el día",
+   "en": ""
+  },
+  "día": {
+   "es": "que el día sonara a",
+   "en": "",
+   "antes": "que el día suene a funeral = that the day will sound like a funeral"
+  },
+  "sonara": {
+   "es": "el día sonara a funeral",
+   "en": ""
+  },
+  "a": {
+   "es": "amanece con poniente",
+   "en": "",
+   "antes": "suene a funeral = sound like a funeral"
+  },
+  "funeral": {
+   "es": "el día sonara a funeral",
+   "en": "",
+   "antes": "suene a funeral = sound like a funeral"
+  },
+  "sonó": {
+   "es": "sonó a peña subiendo cajones",
+   "en": ""
+  },
+  "peña": {
+   "es": "sonó a peña subiendo cajones",
+   "en": "",
+   "antes": "a peña subiendo y bajando = like the club going up and down"
+  },
+  "subiendo": {
+   "es": "sonó a peña subiendo cajones",
+   "en": "",
+   "antes": "peña subiendo y bajando = the club going up and down"
+  },
+  "cajones": {
+   "es": "sonó a peña subiendo cajones",
+   "en": ""
+  },
+  "eco": {
+   "es": "bromas con eco en una",
+   "en": "",
+   "antes": "bromas con eco en la escalera = jokes echoing in the stairwell"
+  },
+  "escalera": {
+   "es": "en una escalera que olía",
+   "en": "",
+   "antes": "con eco en la escalera = echoing in the stairwell"
+  },
+  "olía": {
+   "es": "escalera que olía a cartón",
+   "en": ""
+  },
+  "cartón": {
+   "es": "escalera que olía a cartón",
+   "en": ""
+  },
+  "local": {
+   "es": "el local se quedó sin",
+   "en": "",
+   "antes": "el local se queda sin sillas = the clubhouse is left without chairs"
+  },
+  "se": {
+   "es": "el local se quedó sin",
+   "en": "",
+   "antes": "se queda sin sillas = is left without chairs"
+  },
+  "quedó": {
+   "es": "local se quedó sin sillas",
+   "en": ""
+  },
+  "ofreció": {
+   "es": "ofreció marcos delante del candado",
+   "en": ""
+  },
+  "lo": {
+   "es": "caja en los brazos al",
+   "en": "",
+   "antes": "lo cierra despacio = closes it slowly"
+  },
+  "cerró": {
+   "es": "claudia lo cerró despacio",
+   "en": ""
+  },
+  "despacio": {
+   "es": "claudia lo cerró despacio",
+   "en": "",
+   "antes": "lo cierra despacio = closes it slowly"
+  },
+  "oyó": {
+   "es": "y el clic se oyó entero",
+   "en": ""
+  },
+  "entero": {
+   "es": "y el clic se oyó entero",
+   "en": "",
+   "antes": "se oye entero = is heard whole"
+  },
+  "recordó": {
+   "es": "recordó marcos",
+   "en": ""
+  },
+  "volvía": {
+   "es": "de entonces volvía como regalo",
+   "en": ""
+  },
+  "regalo": {
+   "es": "de entonces volvía como regalo",
+   "en": "",
+   "antes": "vuelve como regalo = comes back as a gift"
+  },
+  "apretó": {
+   "es": "claudia apretó el candado hasta",
+   "en": ""
+  },
+  "hasta": {
+   "es": "el candado hasta que se",
+   "en": "",
+   "antes": "hasta que se le pasa el nudo = until the lump passes"
+  },
+  "pasó": {
+   "es": "se le pasó el nudo",
+   "en": ""
+  },
+  "nudo": {
+   "es": "se le pasó el nudo",
+   "en": "",
+   "antes": "se le pasa el nudo = the lump in her throat passes"
+  },
+  "preguntó": {
+   "es": "preguntó paula",
+   "en": ""
+  },
+  "solo": {
+   "es": "solo cuando se muda una",
+   "en": "",
+   "antes": "nadie carga solo = nobody carries alone"
+  },
+  "contestó": {
+   "es": "contestó claudia ante el camión lleno",
+   "en": ""
+  },
+  "ante": {
+   "es": "ofreció marcos delante del candado",
+   "en": ""
+  },
+  "nadie": {
+   "es": "nadie dijo adiós al local viejo",
+   "en": "",
+   "antes": "nadie carga solo = nobody carries alone"
+  },
+  "dijo": {
+   "es": "nadie dijo adiós al local viejo",
+   "en": ""
+  },
+  "adiós": {
+   "es": "nadie dijo adiós al local viejo",
+   "en": "",
+   "antes": "nadie dice adiós = nobody says goodbye"
+  },
+  "no": {
+   "es": "poniéndoselo en la mano",
+   "en": "",
+   "antes": "no hace falta = there is no need"
+  },
+  "hacía": {
+   "es": "no hacía falta",
+   "en": ""
+  },
+  "falta": {
+   "es": "no hacía falta",
+   "en": "",
+   "antes": "no hace falta = there is no need"
+  },
+  "porque": {
+   "es": "porque nadie se quedaba atrás",
+   "en": "",
+   "antes": "porque nadie se queda atrás = because nobody is left behind"
+  },
+  "quedaba": {
+   "es": "porque nadie se quedaba atrás",
+   "en": ""
+  },
+  "atrás": {
+   "es": "porque nadie se quedaba atrás",
+   "en": "",
+   "antes": "nadie se queda atrás = nobody is left behind"
+  },
+  "cajón": {
+   "es": "sonó a peña subiendo cajones",
+   "en": "",
+   "antes": "ni un cajón = not even one crate"
+  },
+  "contento": {
+   "es": "sudada y contenta",
+   "en": ""
+  },
+  "temer": {
+   "es": "claudia temía que el día",
+   "en": ""
+  },
+  "oírse": {
+   "es": "y el clic se oyó entero",
+   "en": ""
+  },
+  "informar": {
+   "es": "le informó marcos",
+   "en": ""
+  },
+  "recordar": {
+   "es": "recordó marcos",
+   "en": ""
+  },
+  "curar": {
+   "es": "con la herida ya curada",
+   "en": ""
+  },
+  "mudarse": {
+   "es": "solo cuando se muda una",
+   "en": ""
+  },
+  "sudado": {
+   "es": "sudada y contenta",
+   "en": ""
+  },
+  "quedarse atrás": {
+   "es": "porque nadie se quedaba atrás",
+   "en": ""
+  },
+  "hacer falta": {
+   "es": "no hacía falta",
+   "en": ""
+  }
+ },
+ "me-lo-he-ganado": {
+  "lo": {
+   "es": "me lo he ganado",
+   "en": "",
+   "antes": "lo cuelga con dos clavos = hangs it with two nails"
+  },
+  "local": {
+   "es": "el local nuevo estrenó luz",
+   "en": "",
+   "antes": "el local nuevo estrena luz = the new clubhouse shows off new light"
+  },
+  "estrenó": {
+   "es": "local nuevo estrenó luz y",
+   "en": ""
+  },
+  "luz": {
+   "es": "nuevo estrenó luz y olor",
+   "en": "",
+   "antes": "estrena luz = shows off new light"
+  },
+  "guardó": {
+   "es": "claudia guardó el archivo completo",
+   "en": ""
+  },
+  "discutió": {
+   "es": "marcos discutió con media peña",
+   "en": ""
+  },
+  "dónde": {
+   "es": "media peña dónde colgar el",
+   "en": "",
+   "antes": "dónde cuelga el candado viejo = where the old padlock hangs"
+  },
+  "colgar": {
+   "es": "peña dónde colgar el candado",
+   "en": ""
+  },
+  "decidió": {
+   "es": "decidió marcos",
+   "en": ""
+  },
+  "colgó": {
+   "es": "y lo colgó con dos clavos",
+   "en": ""
+  },
+  "no": {
+   "es": "el candado ya no cerraba nada",
+   "en": "",
+   "antes": "ya no cierra nada = no longer locks anything"
+  },
+  "cerraba": {
+   "es": "el candado ya no cerraba nada",
+   "en": ""
+  },
+  "nada": {
+   "es": "el candado ya no cerraba nada",
+   "en": "",
+   "antes": "ya no cierra nada = no longer locks anything"
+  },
+  "ahora": {
+   "es": "ahora contaba algo",
+   "en": "",
+   "antes": "ahora cuenta algo = now it tells something"
+  },
+  "contaba": {
+   "es": "ahora contaba algo",
+   "en": ""
+  },
+  "algo": {
+   "es": "ahora contaba algo",
+   "en": "",
+   "antes": "ahora cuenta algo = now it tells something"
+  },
+  "le": {
+   "es": "claudia guardó el archivo completo",
+   "en": "",
+   "antes": "le parece el resumen del año = seems to her the summary of the year"
+  },
+  "pareció": {
+   "es": "diferencia le pareció el resumen",
+   "en": ""
+  },
+  "pidió": {
+   "es": "marcos pidió silencio subiéndose a",
+   "en": ""
+  },
+  "silencio": {
+   "es": "marcos pidió silencio subiéndose a",
+   "en": "",
+   "antes": "pide silencio = asks for quiet"
+  },
+  "anunció": {
+   "es": "anunció",
+   "en": ""
+  },
+  "tardó": {
+   "es": "claudia tardó un verso en reconocerse",
+   "en": ""
+  },
+  "verso": {
+   "es": "claudia tardó un verso en reconocerse",
+   "en": "",
+   "antes": "tarda un verso en reconocerse = takes one line to recognise herself"
+  },
+  "reconocerse": {
+   "es": "claudia tardó un verso en reconocerse",
+   "en": "",
+   "antes": "tarda un verso en reconocerse = takes one line to recognise herself"
+  },
+  "retrataba": {
+   "es": "el primer verso ya la retrataba",
+   "en": ""
+  },
+  "rio": {
+   "es": "peña se rio y la",
+   "en": ""
+  },
+  "miró": {
+   "es": "se rio y la miró",
+   "en": ""
+  },
+  "ella": {
+   "es": "y ella se dejó querer",
+   "en": "",
+   "antes": "ella se deja querer = she enjoys the attention"
+  },
+  "dejó": {
+   "es": "y ella se dejó querer",
+   "en": ""
+  },
+  "querer": {
+   "es": "y ella se dejó querer",
+   "en": "",
+   "antes": "ella se deja querer = she enjoys the attention"
+  },
+  "todos": {
+   "es": "todos cantaron el estribillo como",
+   "en": ""
+  },
+  "cantaron": {
+   "es": "todos cantaron el estribillo como",
+   "en": ""
+  },
+  "estribillo": {
+   "es": "cantaron el estribillo como si",
+   "en": "",
+   "antes": "canta el estribillo = sings the chorus"
+  },
+  "como": {
+   "es": "el estribillo como si lo",
+   "en": "",
+   "antes": "como si lo hubiera cantado siempre = as if it had always sung it"
+  },
+  "si": {
+   "es": "marcos pidió silencio subiéndose a",
+   "en": "",
+   "antes": "como si lo hubiera cantado siempre = as if it had always sung it"
+  },
+  "hubieran": {
+   "es": "si lo hubieran cantado siempre",
+   "en": ""
+  },
+  "cantado": {
+   "es": "si lo hubieran cantado siempre",
+   "en": "",
+   "antes": "como si lo hubiera cantado siempre = as if it had always sung it"
+  },
+  "siempre": {
+   "es": "si lo hubieran cantado siempre",
+   "en": "",
+   "antes": "lo hubiera cantado siempre = had always sung it"
+  },
+  "dijo": {
+   "es": "dijo claudia cuando acabó el aplauso",
+   "en": ""
+  },
+  "cuando": {
+   "es": "dijo claudia cuando acabó el aplauso",
+   "en": "",
+   "antes": "cuando acaba el aplauso = when the applause ends"
+  },
+  "acabó": {
+   "es": "dijo claudia cuando acabó el aplauso",
+   "en": ""
+  },
+  "aplauso": {
+   "es": "dijo claudia cuando acabó el aplauso",
+   "en": "",
+   "antes": "cuando acaba el aplauso = when the applause ends"
+  },
+  "contestó": {
+   "es": "contestó marcos desde la silla",
+   "en": ""
+  },
+  "vez": {
+   "es": "esta vez claudia no apuntó nada",
+   "en": "",
+   "antes": "esta vez claudia no apunta = this time Claudia writes nothing"
+  },
+  "apuntó": {
+   "es": "esta vez claudia no apuntó nada",
+   "en": ""
+  },
+  "sabía": {
+   "es": "se la sabía de memoria",
+   "en": ""
+  },
+  "clavo": {
+   "es": "y lo colgó con dos clavos",
+   "en": ""
+  },
+  "esta vez": {
+   "es": "esta vez claudia no apuntó nada",
+   "en": "",
+   "antes": "esta vez claudia no apunta = this time Claudia writes nothing"
+  },
+  "estrenar": {
+   "es": "local nuevo estrenó luz y",
+   "en": ""
+  },
+  "subirse": {
+   "es": "pidió silencio subiéndose a una",
+   "en": ""
+  },
+  "desdoblar": {
+   "es": "desdoblando un papel",
+   "en": ""
+  },
+  "retratar": {
+   "es": "el primer verso ya la retrataba",
+   "en": ""
+  },
+  "ganarse": {
+   "es": "me lo he ganado",
+   "en": ""
+  },
+  "contar": {
+   "es": "ahora contaba algo",
+   "en": ""
+  },
+  "servido": {
+   "es": "con los vasos servidos",
+   "en": ""
+  },
+  "de memoria": {
+   "es": "se la sabía de memoria",
+   "en": "",
+   "antes": "se la sabe de memoria = knows it by heart"
+  },
+  "pedir silencio": {
+   "es": "marcos pidió silencio subiéndose a",
+   "en": ""
+  }
+ }
+}

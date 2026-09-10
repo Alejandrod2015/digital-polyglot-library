@@ -8095,6 +8095,54 @@
   "llamaba": {
    "g": "was called (llamarse)",
    "t": "verb"
+  },
+  "esperó": {
+   "g": "waited for (esperar)",
+   "t": "verb"
+  },
+  "abrazaron": {
+   "g": "hugged each other (abrazarse)",
+   "t": "verb"
+  },
+  "hojeó": {
+   "g": "leafed through (hojear)",
+   "t": "verb"
+  },
+  "cabría": {
+   "g": "would fit (caber)",
+   "t": "verb"
+  },
+  "estrenó": {
+   "g": "showed off for the first time (estrenar)",
+   "t": "verb"
+  },
+  "discutió": {
+   "g": "argued, debated (discutir)",
+   "t": "verb"
+  },
+  "colgar": {
+   "g": "to hang, hang up (colgar)",
+   "t": "verb"
+  },
+  "retrataba": {
+   "g": "portrayed, captured (retratar)",
+   "t": "verb"
+  },
+  "amaneció": {
+   "g": "dawned, started at daybreak (amanecer)",
+   "t": "verb"
+  },
+  "informó": {
+   "g": "informed, told (informar)",
+   "t": "verb"
+  },
+  "sonara": {
+   "g": "sounded (sonar)",
+   "t": "verb"
+  },
+  "recordó": {
+   "g": "reminded, recalled (recordar)",
+   "t": "verb"
   }
  },
  "spanish-traveler-latam-b2": {

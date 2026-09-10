@@ -1,0 +1,65 @@
+{
+ "una-agenda-de-desconocida": {
+  "bajó": {
+   "g": "got off (bajar)"
+  },
+  "mandaba": {
+   "g": "was sending (mandar)"
+  },
+  "pidió": {
+   "g": "ordered (pedir)"
+  },
+  "toca": {
+   "g": "it's your turn (tocar)"
+  },
+  "cabría": {
+   "rows": [
+    "cabría",
+    "cabrías",
+    "cabría",
+    "cabríamos",
+    "cabríais",
+    "cabrían"
+   ]
+  }
+ },
+ "amanece-con-poniente": {
+  "temía": {
+   "g": "was afraid (temer)"
+  },
+  "apretó": {
+   "g": "squeezed (apretar)"
+  },
+  "pasó": {
+   "g": "went away, eased (pasarse)"
+  },
+  "hacía": {
+   "g": "was needed (hacer falta)"
+  },
+  "falta": {
+   "g": "need (in hacer falta)",
+   "t": "noun",
+   "sinF": true
+  },
+  "quedaba": {
+   "g": "was being left behind (quedarse atrás)"
+  }
+ },
+ "me-lo-he-ganado": {
+  "estrenó": {
+   "g": "debuted, had brand-new (estrenar)"
+  },
+  "colgó": {
+   "g": "hung (colgar)"
+  },
+  "cerraba": {
+   "g": "locked (cerrar)"
+  },
+  "dejó": {
+   "g": "let herself (dejarse)"
+  },
+  "acabó": {
+   "g": "ended (acabar)"
+  }
+ }
+}

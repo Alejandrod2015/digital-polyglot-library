@@ -773,8 +773,8 @@
     }
   },
   "cmtplpfum0007j8c6piegwt31#visits-and-old-friends": {
-    "cerrado": "2026-09-08T13:06:32.597Z",
-    "hash": "1206caf24ebe5b24",
+    "cerrado": "2026-09-10T17:41:08.471Z",
+    "hash": "1f9eba685c0f3e49",
     "historias": [
       "visits-and-old-friends#1 una-agenda-de-desconocida",
       "visits-and-old-friends#2 amanece-con-poniente",
@@ -785,8 +785,9 @@
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"contesta\" 23%)",
-      "arranques de parrafo variados (mas repetido \"el\", 27%)",
+      "acotacion dominante bajo tope (\"contestó\" 21%)",
+      "arranques de parrafo variados (mas repetido \"el\", 29%)",
+      "banda gramatical b2 dentro: subj. imperfecto 5 · condicional 2 · estilo indirecto 2",
       "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
@@ -828,16 +829,14 @@
         {
           "slot": "3",
           "quiere": "entregar el archivo completo y estrenar el local nuevo como una mas",
-          "impide": "Carla pide silencio, desdobla un papel y anuncia copla nueva con nombre: el suyo",
+          "impide": "Marcos pide silencio, desdobla un papel y anuncia copla nueva con nombre: el suyo",
           "cuesta": "el anonimato de la observadora, ya del todo: la copla la retrata delante de la pena entera y de Paula",
           "cambia": "el pago de la promesa del tema dos: pidio que la pusieran en una copla cuando se lo ganara, y la pena decide que se lo gano desde el primer dia",
           "emocion": "el pique del tema dos vuelto orgullo; se ve en que esta vez no apunta nada porque la copla ya se la sabe de memoria"
         }
-      ]
-    },
-    "avisos": [
-      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
-    ]
+      ],
+      "gramatica": "narracion en PASADO (preterito para la accion, imperfecto para el marco); el dialogo sigue en presente. Marcadores en la banda B2: subjuntivo imperfecto en 'temia que el dia sonara a funeral' y 'como si lo hubieran cantado siempre'; condicional en 'ahi ya no le cabria nada'; estilo indirecto en 'explico que pesaba mas que su maleta'"
+    }
   },
   "cmtplpfum0007j8c6piegwt31#wind-and-plans": {
     "cerrado": "2026-09-10T17:16:20.575Z",
