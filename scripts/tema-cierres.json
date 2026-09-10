@@ -2557,5 +2557,73 @@
         }
       ]
     }
+  },
+  "cmtvpqsfv000832hgemzk20cl#sao-luis": {
+    "cerrado": "2026-09-10T17:12:04.501Z",
+    "hash": "8eb1b2b90d739ac8",
+    "historias": [
+      "sao-luis#0 a-chave-do-casarao",
+      "sao-luis#1 a-janela-nao-fecha",
+      "sao-luis#2 uma-chave-que-sobra"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"noche de casaron: puertas que no abren, tambores en la calle, llaves que se parecen; frases cosidas con e, mas y porque\", espina \"Larissa, uma moça do Rio de Janeiro, parte o ano entre Londres e o Brasil; em cada volta reaprende o seu proprio pais e descobre o que perdeu fora. Em Sao Luis, num casarao de azulejos, junta tres chaves de tres casas e nao sabe dizer qual e a dela\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"pergunta\" 30%)",
+      "arranques de parrafo variados (mas repetido \"larissa\", 27%)",
+      "densidad 8.7 palabras por oracion (techo 9 en a0)",
+      "seguidilla 21/56 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.25 sobre 55 plazas · 43 salen una sola vez | ancladas: 5/60 (8%) | cola: 43/55 portables con un solo encuentro (78%, tope 30%) | de un solo encuentro: estreita, aluga, quartos, cem, anos, fechadura, acredito, cara, ninguém, sozinha, mexe, isso, duas, dá para, sempre, tambor, tocar, calçada, ensaio, gente, cores, dança, fita, aqui, esse, correndo, descalça, último, fazer a mala, mãe…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en PT no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: sao-luis (Diego, Larissa)"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "a0",
+      "variante": "BRAZIL",
+      "registro": "noche de casaron: puertas que no abren, tambores en la calle, llaves que se parecen; frases cosidas con e, mas y porque",
+      "espina": "Larissa, uma moça do Rio de Janeiro, parte o ano entre Londres e o Brasil; em cada volta reaprende o seu proprio pais e descobre o que perdeu fora. Em Sao Luis, num casarao de azulejos, junta tres chaves de tres casas e nao sabe dizer qual e a dela",
+      "recursos": "A0: repeticion ritmica (gira para a direita, nada; gira para a esquerda, nada), contraste con mas, emocion como gesto visible (ri sozinha no escuro). Titulos: regionalismo, linea dicha y objeto torcido, el unico orden que faltaba. ESCALERA: cada historia devuelve surfaces EXACTAS que hasta hoy salian una sola vez (lista en 'vuelven'); ancladas solo las de la escena maranhense",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "entrar sola en el casaron a las dos de la manana, sin molestar a nadie",
+          "impide": "la llave de cien anos no gira ni a la derecha ni a la izquierda",
+          "cuesta": "el sueno de Diego, que baja en pijama, y su orgullo de viajera que se arregla sola",
+          "cambia": "aprende el truco de la puerta y se rie sola en la oscuridad",
+          "emocion": "panico pequeno (empuja la puerta con el hombro) y despues risa (se rie sola)",
+          "vuelven": "rapaz, rua, parede, azul, primeiro, pesado, horas, vazia, direita, esquerda, empurra, nem, por fim, liga, desculpa, dentro, sono, levanta, um pouco, outra vez, barulho, olha só, entender, escuro"
+        },
+        {
+          "slot": "2",
+          "quiere": "dormir con la ventana cerrada, como en Londres",
+          "impide": "la ventana torcida no cierra y en la calle ensaya el bumba meu boi",
+          "cuesta": "una noche entera de sueno",
+          "cambia": "baja descalza a la calle y baila con Diego hasta las tres",
+          "emocion": "cansancio (se sienta en la cama) y despues alegria (baja la escalera corriendo)",
+          "vuelven": "parece, forno, fechado, fecha, torta, de repente, começa, cansada, barulho, embaixo, meio, esquina, verde, azul, chapéu, amarelo, festa, grita, todo mundo, vestido, desce, horas, aberta, inteira"
+        },
+        {
+          "slot": "3",
+          "quiere": "devolver la llave del casaron y cerrar la maleta",
+          "impide": "tiene tres llaves casi iguales, de tres casas, y no sabe cual es cual",
+          "cuesta": "el cuarto de Sao Luis, que deja limpio y vacio",
+          "cambia": "Diego no acepta la llave: el cuarto es suyo en junio; ella guarda las tres",
+          "emocion": "duda (mira las tres llaves sin hablar) y despues calma (sonrie en la puerta)",
+          "vuelven": "gaveta, dentro, treina, cada, bate, pronto, mostra, que vem, quieta, um pouco, sei, por fim, guarda, bolso, direita, sorri"
+        }
+      ]
+    }
   }
 }
