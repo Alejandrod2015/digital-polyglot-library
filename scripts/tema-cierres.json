@@ -1,7 +1,7 @@
 {
   "cmt5x67ze000l320cpgunu5vi#deals-and-estimates": {
-    "cerrado": "2026-09-10T18:13:09.284Z",
-    "hash": "a73bebcc209dbca3",
+    "cerrado": "2026-09-10T21:44:55.425Z",
+    "hash": "b98e3d66893b7e32",
     "historias": [
       "deals-and-estimates#1 el-tejado-a-la-mitad",
       "deals-and-estimates#2 la-rebaja-en-mano",
@@ -13,7 +13,7 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"dice\" 22%)",
-      "arranques de parrafo variados (mas repetido \"celia\", 12%)",
+      "arranques de parrafo variados (mas repetido \"celia\", 13%)",
       "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
@@ -64,8 +64,8 @@
     }
   },
   "cmt5x67ze000l320cpgunu5vi#jobs-and-wages": {
-    "cerrado": "2026-09-10T17:58:41.506Z",
-    "hash": "7e8d1ab6d613586c",
+    "cerrado": "2026-09-10T21:43:55.254Z",
+    "hash": "887d4469cd5a48ce",
     "historias": [
       "jobs-and-wages#1 el-precio-que-existe",
       "jobs-and-wages#2 cobro-tarde-y-pago-pronto",
@@ -77,7 +77,7 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"dice\" 27%)",
-      "arranques de parrafo variados (mas repetido \"el\", 20%)",
+      "arranques de parrafo variados (mas repetido \"el\", 19%)",
       "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
@@ -125,14 +125,11 @@
           "emocion": "verguenza que se convierte en decision: escribe tres borradores y los borra, y al final manda cuatro lineas"
         }
       ]
-    },
-    "avisos": [
-      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
-    ]
+    }
   },
   "cmt5x67ze000l320cpgunu5vi#meetings-and-deadlines": {
-    "cerrado": "2026-09-10T17:59:29.451Z",
-    "hash": "aa184607c80b7e04",
+    "cerrado": "2026-09-10T21:44:10.801Z",
+    "hash": "e4ea83982fb9db0e",
     "historias": [
       "meetings-and-deadlines#1 la-reunion-de-un-punto",
       "meetings-and-deadlines#2 la-ventana-del-rellano",
@@ -144,7 +141,7 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"dice\" 13%)",
-      "arranques de parrafo variados (mas repetido \"el\", 27%)",
+      "arranques de parrafo variados (mas repetido \"el\", 25%)",
       "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
@@ -192,14 +189,11 @@
           "emocion": "miedo que se queda sin respuesta: escribe la pregunta, nadie contesta, y no apaga la luz"
         }
       ]
-    },
-    "avisos": [
-      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
-    ]
+    }
   },
   "cmt5x67ze000l320cpgunu5vi#repeating-and-rephrasing": {
-    "cerrado": "2026-09-10T18:05:19.758Z",
-    "hash": "744f951f04b4b7bf",
+    "cerrado": "2026-09-10T21:44:25.542Z",
+    "hash": "ef05148f4f836a57",
     "historias": [
       "repeating-and-rephrasing#1 el-piloto-azul",
       "repeating-and-rephrasing#2 a-ver-si-te-sigo",
@@ -262,8 +256,8 @@
     }
   },
   "cmt5x67ze000l320cpgunu5vi#rooms-and-landlords": {
-    "cerrado": "2026-09-10T17:55:50.978Z",
-    "hash": "29321645fb140a6f",
+    "cerrado": "2026-09-10T21:43:40.287Z",
+    "hash": "1be247e3cb03dd0f",
     "historias": [
       "rooms-and-landlords#1 la-cerradura-la-cambio-yo",
       "rooms-and-landlords#2 la-manta-del-altillo",
@@ -323,14 +317,11 @@
           "emocion": "alivio fisico: la frase le sale corta al ofrecerse, y sube los cuatro pisos mas tranquila"
         }
       ]
-    },
-    "avisos": [
-      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
-    ]
+    }
   },
   "cmt5x67ze000l320cpgunu5vi#sayings-and-nicknames": {
-    "cerrado": "2026-09-10T18:09:45.884Z",
-    "hash": "720a9aa7029ccd82",
+    "cerrado": "2026-09-10T21:44:40.823Z",
+    "hash": "93e4a6a88e296aa0",
     "historias": [
       "sayings-and-nicknames#1 lo-de-chispa",
       "sayings-and-nicknames#2 un-favor-sin-pedir",
@@ -342,7 +333,7 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"contesta\" 13%)",
-      "arranques de parrafo variados (mas repetido \"de\", 11%)",
+      "arranques de parrafo variados (mas repetido \"mientras\", 6%)",
       "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
@@ -393,8 +384,8 @@
     }
   },
   "cmt5x67ze000l320cpgunu5vi#trust-and-rumours": {
-    "cerrado": "2026-09-10T18:20:54.520Z",
-    "hash": "360d327cfa02cb18",
+    "cerrado": "2026-09-10T21:45:10.532Z",
+    "hash": "fa6d9df59a6a5946",
     "historias": [
       "trust-and-rumours#1 palabra-por-palabra",
       "trust-and-rumours#2 la-voz-mas-rapida",
@@ -406,7 +397,7 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"pregunta\" 25%)",
-      "arranques de parrafo variados (mas repetido \"sole\", 12%)",
+      "arranques de parrafo variados (mas repetido \"sole\", 13%)",
       "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
