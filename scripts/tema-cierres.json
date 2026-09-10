@@ -2221,8 +2221,8 @@
     ]
   },
   "cmtvpqsfv000832hgemzk20cl#rio-de-janeiro": {
-    "cerrado": "2026-09-10T16:17:43.749Z",
-    "hash": "03c93822b3f690e2",
+    "cerrado": "2026-09-10T16:18:53.211Z",
+    "hash": "05f1d21154d6d387",
     "historias": [
       "rio-de-janeiro#0 um-beijo-torto",
       "rio-de-janeiro#1 aqui-a-onda-nao-chega",
@@ -2234,8 +2234,8 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"diz\" 36%)",
-      "arranques de parrafo variados (mas repetido \"larissa\", 44%)",
-      "densidad 6.1 palabras por oracion (techo 9 en a0)",
+      "arranques de parrafo variados (mas repetido \"larissa\", 40%)",
+      "densidad 6.2 palabras por oracion (techo 9 en a0)",
       "seguidilla 33/72 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 12/19 medidos y limpios"
     ],
@@ -2283,9 +2283,6 @@
           "emocion": "nervios (aprieta la bolsa en las rodillas) y despues calma (apoya la cabeza en su hombro)"
         }
       ]
-    },
-    "avisos": [
-      "estructura clonada: las 3 historias tienen 6 parrafos exactos. Leelas seguidas antes de darlas por buenas."
-    ]
+    }
   }
 }
