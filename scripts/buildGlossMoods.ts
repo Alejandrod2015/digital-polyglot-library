@@ -15,10 +15,10 @@
  */
 import { config } from "dotenv"; config({ path: ".env.local", quiet: true });
 import { PrismaClient } from "../src/generated/prisma";
-import { presente, preterito, personas, indicePorForma, IRREGULARES } from "./buildGlossForms";
+import { presente, preterito, personas, indicePorForma, IRREGULARES, compuestoIrregular, infinitivosDeGlosa } from "./buildGlossForms";
 import {
   type Bloque, type Modo, subjuntivoPresenteES, subjuntivoPasadoES, condicionalES,
-  imperativoES, esOrdenES, esOrdenDE, negadaAquiES, parteEncliticaES, ES_IMP_TU, ES_PRON_EN,
+  imperativoES, esOrdenES, esOrdenDE, negadaAquiES, parteEncliticaES, ES_IMP_TU, tuIrregularES, ES_PRON_EN,
   aVarianteModo, conClitico, vosSubjuntivo,
   DE_K2, DE_IMP, IT_MODOS, PT_MODOS,
 } from "./glossMoods";
@@ -168,7 +168,7 @@ function bloqueES(
       mood: "Past subjunctive", kind: "expand", link: "See past subjunctive",
       lemma: lema(pa.inf, clp),
       head: [["preterite", `${clp}${pret[pa.i]}`], ["past subjunctive", `${clp}${w}`]],
-      rows: conClitico(aVarianteModo(subjuntivoPasadoES(pa.inf)!, variante), clp).map((f, i) => [P[i], f]),
+      rows: conClitico(aVarianteModo(subjuntivoPasadoES(pa.inf)!, variante, false), clp).map((f, i) => [P[i], f]),
       here: pa.i,
     };
   }
@@ -182,12 +182,15 @@ function bloqueES(
       mood: "Conditional", kind: "expand", link: "See conditional",
       lemma: co.inf,
       head: [["present", `${clc}${ind[co.i]}`], ["conditional", `${clc}${w}`]],
-      rows: conClitico(aVarianteModo(condicionalES(co.inf)!, variante), clc).map((f, i) => [P[i], f]),
+      rows: conClitico(aVarianteModo(condicionalES(co.inf)!, variante, false), clc).map((f, i) => [P[i], f]),
       here: co.i,
     };
   }
 
-  const inf = Object.entries(ES_IMP_TU).find(([, f]) => f === w)?.[0];
+  // Tambien los compuestos: `sostén` y `deshaz` no estan en ninguna tabla de
+  // indicativo ni de subjuntivo.
+  const inf = Object.entries(ES_IMP_TU).find(([, f]) => f === w)?.[0]
+    ?? [...infinitivos].find((i) => compuestoIrregular(i) && tuIrregularES(i) === w);
   if (inf && infinitivos.has(inf)) {
     const cel = imperativoES(inf, variante);
     if (cel) return { mood: "Command", kind: "line", head: [], rows: cel, here: 2 };
@@ -286,6 +289,16 @@ export async function moodsDeBundle(
   for (const fuente of [plana, ...capas.map((c) => c.glosses as Record<string, Entrada>)]) {
     for (const [k, v] of Object.entries(fuente)) {
       if (v?.t === "verb" && FIN.test(k)) infinitivos.add(k);
+      // En español el parentesis pasa por el filtro compartido con
+      // buildGlossForms: sin el, "goal (soccer)" y "digamos (softener)"
+      // entraban como infinitivos.
+      if (idioma === "spanish") {
+        for (const { inf, conPron } of infinitivosDeGlosa(v?.g ?? "", v?.t, k)) {
+          infinitivos.add(inf);
+          if (conPron.endsWith("se") && conPron !== inf) infinitivos.add(conPron);
+        }
+        continue;
+      }
       for (const par of (v?.g ?? "").match(/\(([^)]*)\)/g) ?? []) {
         for (const m of par.matchAll(TOK)) {
           infinitivos.add(m[1]);

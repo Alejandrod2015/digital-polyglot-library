@@ -33,7 +33,7 @@
  *      no se convierte en el subjuntivo de sentir.
  *   2. Una lista de formas ambiguas por idioma que nunca se marcan.
  */
-import { presente, preterito, personas, indicePorForma } from "./buildGlossForms";
+import { presente, preterito, personas, indicePorForma, cambiaRaiz, compuestoIrregular } from "./buildGlossForms";
 
 export type Modo =
   | "Subjunctive"
@@ -133,15 +133,23 @@ function raizSubjES(inf: string): { raiz: string; vocal: "e" | "a" } | null {
   // conozco -> conozca, tengo -> tenga. Sacarla del infinitivo, que es lo que
   // se hacia, no diptonga: daba "encenda" por "encienda" (2026-09-04).
   const yo = presente(inf, "spain")?.[0];
-  let raiz = yo && yo.endsWith("o") ? yo.slice(0, -1) : inf.slice(0, -2);
+  const delYo = Boolean(yo && yo.endsWith("o"));
+  let raiz = delYo ? yo!.slice(0, -1) : inf.slice(0, -2);
   if (fin === "ar") {
+    // En -ar si hace falta aunque la raiz venga del yo: la o pasa a e y la
+    // consonante cambia de sonido (busco -> busque, llego -> llegue).
     if (/c$/.test(raiz)) raiz = `${raiz.slice(0, -1)}qu`;
     else if (/g$/.test(raiz)) raiz = `${raiz}u`;
     else if (/z$/.test(raiz)) raiz = `${raiz.slice(0, -1)}c`;
-    else if (/gu$/.test(raiz)) raiz = `${raiz}ü`;
+    else if (/gu$/.test(raiz)) raiz = `${raiz.slice(0, -1)}ü`; // averigüe
     return { raiz, vocal: "e" };
   }
   if (fin !== "er" && fin !== "ir") return null;
+  // En -er / -ir la o pasa a a y el sonido no cambia, asi que la raiz del yo ya
+  // viene bien escrita: parezco -> parezca, cojo -> coja, distingo -> distinga.
+  // Reajustarla otra vez daba "parezza" y "conozza" (2026-09-10). Los ajustes
+  // de abajo son solo para la raiz sacada del infinitivo.
+  if (delYo) return { raiz, vocal: "a" };
   // -cer / -cir: vocal delante da -zca (conozca), consonante da -za (venza).
   const cer = /^(.*?)([aeiouáéíóú]|[^aeiouáéíóú])c$/.exec(raiz);
   if (cer) raiz = `${cer[1]}${cer[2]}${/[aeiouáéíóú]/.test(cer[2]) ? "zc" : "z"}`;
@@ -171,8 +179,18 @@ const ES_SUBJ_IR: Record<string, string[]> = {
   elegir: ["elija", "elijas", "elija", "elijamos", "elijáis", "elijan"],
 };
 
+/** La tabla de un compuesto de irregular, sacada de la de su base con el
+ *  prefijo delante: sostenga de tenga, deshaga de haga. */
+function deBaseES(inf: string, tabla: Record<string, string[]>): string[] | null {
+  const c = compuestoIrregular(inf);
+  const t = c ? tabla[c.base] : undefined;
+  return c && t ? t.map((f) => `${c.prefijo}${f}`) : null;
+}
+
 export function subjuntivoPresenteES(inf: string): string[] | null {
   if (ES_SUBJ[inf]) return [...ES_SUBJ[inf]];
+  const comp = deBaseES(inf, ES_SUBJ);
+  if (comp) return comp;
   if (ES_SUBJ_IR[inf]) return [...ES_SUBJ_IR[inf]];
   const r = raizSubjES(inf);
   if (!r) return null;
@@ -182,9 +200,11 @@ export function subjuntivoPresenteES(inf: string): string[] | null {
   const salida = e.map((x) => `${r.raiz}${x}`);
   // En -ar y -er el cambio de raiz NO llega a nosotros ni a vosotros: piense
   // pero pensemos, encienda pero encendamos. Esas dos se rehacen desde la raiz
-  // del infinitivo.
+  // del infinitivo, y SOLO en los verbos que diptongan: que la raiz del yo sea
+  // distinta de la del infinitivo no basta, porque en parezco / parecer tambien
+  // lo es y ahi nosotros es parezcamos.
   const fin = inf.slice(-2);
-  if ((fin === "ar" || fin === "er") && r.raiz !== inf.slice(0, -2)) {
+  if ((fin === "ar" || fin === "er") && cambiaRaiz(inf)) {
     const llana = raizAtonaES(inf);
     if (llana) { salida[3] = `${llana}${e[3]}`; salida[4] = `${llana}${e[4]}`; }
   }
@@ -197,7 +217,7 @@ function raizAtonaES(inf: string): string | null {
   let raiz = inf.slice(0, -2);
   if (fin === "ar") {
     if (/c$/.test(raiz)) raiz = `${raiz.slice(0, -1)}qu`;
-    else if (/gu$/.test(raiz)) raiz = `${raiz}ü`;
+    else if (/gu$/.test(raiz)) raiz = `${raiz.slice(0, -1)}ü`;
     else if (/g$/.test(raiz)) raiz = `${raiz}u`;
     else if (/z$/.test(raiz)) raiz = `${raiz.slice(0, -1)}c`;
   }
@@ -226,8 +246,18 @@ const ES_COND_IRR: Record<string, string> = {
   saber: "sabr", hacer: "har", decir: "dir", querer: "querr", haber: "habr",
   caber: "cabr", valer: "valdr",
 };
+/** Raiz del condicional. Los compuestos siguen a su base (sostendría,
+ *  desharía, prediría), salvo bendecir y maldecir, que en el futuro son
+ *  regulares: bendeciría, no "bendiría". */
+function raizCondicionalES(inf: string): string | null {
+  if (ES_COND_IRR[inf]) return ES_COND_IRR[inf];
+  const c = compuestoIrregular(inf);
+  const regular = c?.base === "decir" && (c.prefijo === "ben" || c.prefijo === "mal");
+  if (c && ES_COND_IRR[c.base] && !regular) return `${c.prefijo}${ES_COND_IRR[c.base]}`;
+  return /(ar|er|ir|ír)$/.test(inf) ? inf : null;
+}
 export function condicionalES(inf: string): string[] | null {
-  const r = ES_COND_IRR[inf] ?? (/(ar|er|ir|ír)$/.test(inf) ? inf : null);
+  const r = raizCondicionalES(inf);
   if (!r) return null;
   return ["ía", "ías", "ía", "íamos", "íais", "ían"].map((x) => `${r}${x}`);
 }
@@ -237,6 +267,20 @@ export const ES_IMP_TU: Record<string, string> = {
   decir: "di", hacer: "haz", ir: "ve", poner: "pon", salir: "sal",
   ser: "sé", tener: "ten", venir: "ven",
 };
+
+/** El tú irregular, tambien el de los compuestos. El prefijo convierte `ten`,
+ *  `pon` y `ven` en agudas acabadas en n, y ahi la tilde es obligatoria:
+ *  sostén, compón, prevén. `deshaz` y `sobresal` no la llevan. Los de decir no
+ *  siguen a `di`: su orden es predice, contradice, bendice, que ya es la forma
+ *  de él, asi que aqui no tienen entrada. */
+const TILDE_TU: Record<string, string> = { a: "á", e: "é", i: "í", o: "ó", u: "ú" };
+export function tuIrregularES(inf: string): string | null {
+  if (ES_IMP_TU[inf]) return ES_IMP_TU[inf];
+  const c = compuestoIrregular(inf);
+  const tu = c && c.base !== "decir" ? ES_IMP_TU[c.base] : undefined;
+  if (!c || !tu) return null;
+  return `${c.prefijo}${tu.replace(/[aeiou](?=n$)/, (v) => TILDE_TU[v])}`;
+}
 
 /** Imperativo, adaptado al trato de la variante. Devuelve las tres celdas que
  *  van a la vista: la orden formal, la formal en plural y la de tuteo. */
@@ -250,7 +294,7 @@ export function imperativoES(inf: string, variante: string): string[][] | null {
   const tu = vos
     ? (inf === "ser" ? "sé" : inf === "ir" ? "andá"
        : `${inf.slice(0, -2)}${inf.slice(-2) === "ar" ? "á" : inf.slice(-2) === "er" ? "é" : "í"}`)
-    : (ES_IMP_TU[inf] ?? pres[2]);
+    : (tuIrregularES(inf) ?? pres[2]);
   return [["usted", usted], ["ustedes", ustedes], [vos ? "vos" : "tú", tu]];
 }
 
@@ -307,11 +351,16 @@ export function negadaAquiES(oracion: string, forma: string): boolean {
 
 /** Las tablas se escriben con las seis casillas de España. En LATAM `ustedes`
  *  ocupa la casilla de vosotros y toma la forma de ellos: sin esto la tarjeta
- *  enseñaba "ustedes vayáis", que no lo dice nadie a este lado. */
-export function aVarianteModo(filas: string[], variante: string): string[] {
+ *  enseñaba "ustedes vayáis", que no lo dice nadie a este lado.
+ *
+ *  `voseo` va solo en el PRESENTE de subjuntivo, que es el unico tiempo donde
+ *  vos cambia de forma (volvás). En el pasado y en el condicional vos usa la de
+ *  tú (pusieras, pondrías); aplicarle la regla daba "pusiérás" y "cayérás",
+ *  que llegaron a la base el 2026-09-10 con un --force. */
+export function aVarianteModo(filas: string[], variante: string, voseo = true): string[] {
   const out = [...filas];
   if (variante !== "spain") out[4] = out[5];
-  if (variante === "argentina" || variante === "uruguay") {
+  if (voseo && (variante === "argentina" || variante === "uruguay")) {
     const vos = vosSubjuntivo(out);
     if (vos) out[1] = vos;
   }
@@ -333,14 +382,16 @@ export function vosSubjuntivo(filas: string[]): string | null {
   return `${base.slice(0, i)}${TILDE_VOS[base[i]]}${base.slice(i + 1)}s`;
 }
 
-/** El pronombre que acompaña a cada persona. Reflexivo, cambia con la persona
- *  (me vaya, te vayas, se vaya); de objeto, se queda igual en las seis. */
+/** El pronombre que acompaña a cada persona en las filas. Solo el reflexivo,
+ *  que cambia con la persona (me vaya, te vayas, se vaya) y por eso enseña
+ *  algo. El de objeto se queda en la cabecera, que es la frase real ("lo
+ *  parezca"), y sale de las filas: repetido igual en las seis ("lo parezca, lo
+ *  parezcas") no enseña nada y tapa la conjugacion (2026-09-10). */
 const REFLEXIVOS = ["me", "te", "se", "nos", "se", "se"];
 export function conClitico(filas: string[], clitico: string): string[] {
   const c = clitico.trim();
-  if (!c) return filas;
-  const refl = ["me", "te", "se", "nos"].includes(c);
-  return filas.map((f, i) => `${refl ? REFLEXIVOS[i] : c} ${f}`);
+  if (!["me", "te", "se", "nos"].includes(c)) return filas;
+  return filas.map((f, i) => `${REFLEXIVOS[i]} ${f}`);
 }
 
 // ── Enclíticos ───────────────────────────────────────────────────────────

@@ -62,6 +62,10 @@ rama sin integrar mientras el hook lo llamaba sin encontrarlo.
 4. `buildGlossForms.ts <bundle> <textos.json>` para las conjugaciones y el
    género. Si la historia ya tiene capa escrita a mano, hace falta
    `--solo-formas`, o se la salta entera y sus verbos se quedan sin tabla.
+   Tras tocar el motor, `--solo-formas --rehace`: `--solo-formas` solo rellena
+   huecos, así que una tabla ya escrita con "sosteno" no se corregía nunca.
+   `--rehace` rehace solo las que tienen la forma del generador (mismo lema,
+   mismas personas) y el motor conjuga distinto; no rellena huecos.
 5. `buildGlossMoods.ts --all --force` para el modo. `--force` es obligatorio
    tras tocar el motor: la tabla se REHACE, no se hereda.
 6. Los cuatro lints.

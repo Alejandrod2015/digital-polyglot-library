@@ -9,7 +9,7 @@
  * conjuga cuando la forma pertenece a un paradigma conocido, y si no, la
  * palabra se queda sin bloque en vez de con una conjugación adivinada.
  *
- *   npx tsx scripts/buildGlossForms.ts <bundle> <textos.json> [--dry]
+ *   npx tsx scripts/buildGlossForms.ts <bundle> <textos.json> [--dry] [--solo-formas [--rehace]]
  *
  * De dónde sale cada cosa:
  *
@@ -95,6 +95,77 @@ export const IRREGULARES: Record<string, string[]> = {
   morir: ["muero", "mueres", "muere", "morimos", "morís", "mueren"],
 };
 
+/**
+ * COMPUESTOS de los irregulares: sostener, componer, deshacer, predecir. Se
+ * conjugan como su base con el prefijo delante (sostengo, compuse, deshaga,
+ * compondria), asi que salen de las tablas de la base y no se escriben uno a
+ * uno. Antes caian en la rama regular y la tarjeta ensenaba "sosteno",
+ * "sostení", "compona" y "deshazco" (medido el 2026-09-10 en los paquetes
+ * vivos).
+ *
+ * Los prefijos van en una lista cerrada por base, no se deduce el compuesto
+ * por la terminacion: `softener` acaba en -tener y es ingles, y `complacer`
+ * acaba en -acer y no tiene nada que ver con hacer.
+ */
+const PREFIJOS: Record<string, string[]> = {
+  hacer: ["des", "re", "contra"],
+  decir: ["contra", "pre", "des", "ben", "mal"],
+  poner: ["com", "pro", "dis", "ex", "im", "o", "pos", "re", "su", "super", "sobre", "tras",
+          "yuxta", "de", "contra", "inter", "ante", "predis", "descom", "recom", "indis"],
+  tener: ["sos", "con", "de", "re", "ob", "man", "abs", "entre", "a"],
+  venir: ["con", "pre", "inter", "pro", "sobre", "sub", "de", "a", "contra"],
+  traer: ["con", "dis", "a", "sus", "sub", "ex", "re", "abs"],
+  salir: ["sobre"],
+  valer: ["equi", "pre"],
+  caer: ["re", "de"],
+};
+export function compuestoIrregular(inf: string): { prefijo: string; base: string } | null {
+  for (const [base, prefijos] of Object.entries(PREFIJOS)) {
+    if (!inf.endsWith(base) || inf === base) continue;
+    const prefijo = inf.slice(0, -base.length);
+    if (prefijos.includes(prefijo)) return { prefijo, base };
+  }
+  return null;
+}
+
+/** Lo que sale de los parentesis de una glosa como infinitivo. El parentesis
+ *  a veces declara el lema ("adds (añadir)") y a veces es una nota en ingles
+ *  ("goal (soccer)", "digamos (softener)", "barked (an order)"). Tres redes:
+ *
+ *   1. Grafia que el espanol no tiene (th, wh, ft, w, k...) y palabra detras
+ *      de un articulo ingles. La `a` no cuenta: en "(no la vayas a embarrar)"
+ *      es la preposicion.
+ *   2. En las glosas que no son de verbo ni de expresion, el parentesis solo
+ *      vale si es un modismo que contiene la propia palabra glosada ("patas
+ *      (meter las patas)") o si la palabra sale de ese verbo ("agarrado
+ *      (agarrarse)", "medidas (medir)"). Asi caen "soccer", "river" y
+ *      "painter", y se quedan meter y aguantar, que tienen bloques de modo.
+ *   3. Los bordes de palabra van por \p{L}: con `\b` la tilde cortaba la
+ *      palabra y "querían" daba el infinitivo "quer". */
+// Sin "sh": des + h la da en español (deshacer, deshielo).
+const GRAFIA_NO_ES = /th|wh|ph|ck|ft|gh|oo|ee|[wk]|y[^aeiouáéíóú]/;
+const ARTICULO_EN = /^(an|the|each|every|one|this|that|some|any)$/;
+export function infinitivosDeGlosa(
+  g: string, tipo: string | undefined, clave = ""
+): Array<{ inf: string; conPron: string }> {
+  const deVerbo = tipo === "verb" || tipo === "expression";
+  const palabrasClave = clave.toLowerCase().split(/[^\p{L}]+/u).filter(Boolean);
+  const out: Array<{ inf: string; conPron: string }> = [];
+  for (const [, dentro] of g.matchAll(/\(([^)]*)\)/g)) {
+    const palabras = dentro.toLowerCase().split(/[^\p{L}]+/u).filter(Boolean);
+    const modismo = palabras.length > 1 && palabrasClave.some((k) => palabras.includes(k));
+    palabras.forEach((w, i) => {
+      const m = /^([a-záéíóúñü]{2,}(?:ar|er|ir|ír))(se|me|te|nos)?$/.exec(w);
+      if (!m || GRAFIA_NO_ES.test(m[1])) return;
+      if (i > 0 && ARTICULO_EN.test(palabras[i - 1])) return;
+      const raiz = m[1].slice(0, -2);
+      if (!deVerbo && !modismo && !palabrasClave.some((k) => k.startsWith(raiz))) return;
+      out.push({ inf: m[1], conPron: w });
+    });
+  }
+  return out;
+}
+
 /** Infinitivos que ninguna glosa nombra y que el texto NO deja deducir. La
  *  vuelta atras desde la forma solo sabe sacar -ar, asi que `gruñó` daba
  *  "gruñar": la i de -ir se come detras de ñ y de ll, y ahi las dos
@@ -159,6 +230,22 @@ const YO_TONICA: Record<string, string> = {
 /** Las cuatro personas con el acento en la raiz. */
 const TONICAS = [0, 1, 2, 5];
 
+/** ¿Diptonga o cierra la vocal de la raiz? Lo usa el subjuntivo para saber si
+ *  nosotros y vosotros vuelven a la raiz del infinitivo (pensemos, no
+ *  "piensemos"). Solo esos: `parezcamos` y `cojamos` conservan la raiz del yo. */
+export function cambiaRaiz(inf: string): boolean {
+  return Boolean(RAIZ_TONICA[inf]);
+}
+
+/** La ortografia de la primera persona en -ger / -gir / -guir: la g ante o se
+ *  escribe j (cojo, dirijo, finjo) y la u de -guir sobra (distingo). Sin esto
+ *  salia "cogo", y de ahi el subjuntivo "coga" en vez de coja. */
+function yoOrtografico(inf: string, yo: string): string {
+  if (/(ger|gir)$/.test(inf) && yo.endsWith("go")) return `${yo.slice(0, -2)}jo`;
+  if (/guir$/.test(inf) && yo.endsWith("guo")) return `${yo.slice(0, -3)}go`;
+  return yo;
+}
+
 function conjugaRegular(inf: string): string[] | null {
   const raiz = inf.slice(0, -2);
   const fin = inf.slice(-2);
@@ -170,10 +257,15 @@ function conjugaRegular(inf: string): string[] | null {
 
 /** Presente de indicativo del infinitivo, ya adaptado a la variante. */
 export function presente(inf: string, variante: string): string[] | null {
-  const base = IRREGULARES[inf] ?? conjugaRegular(inf);
+  const comp = compuestoIrregular(inf);
+  const base = IRREGULARES[inf]
+    ?? (comp && IRREGULARES[comp.base] ? IRREGULARES[comp.base].map((f) => `${comp.prefijo}${f}`) : null)
+    ?? conjugaRegular(inf);
   if (!base) return null;
   const filas = [...base];
-  if (!IRREGULARES[inf]) {
+  // Un compuesto ya trae su tabla entera: pasarlo por la regla de -cer daba
+  // "deshazco", como si deshacer fuera parecer.
+  if (!IRREGULARES[inf] && !comp) {
     const yo = primeraDeCer(inf);
     if (yo) filas[0] = yo;
     const tonica = RAIZ_TONICA[inf];
@@ -183,6 +275,7 @@ export function presente(inf: string, variante: string): string[] | null {
       const yo = YO_TONICA[inf];
       if (yo) filas[0] = yo;
     }
+    filas[0] = yoOrtografico(inf, filas[0]);
   }
   if (variante !== "spain") {
     // ustedes toma la forma de ellos; el hueco de vosotros desaparece.
@@ -241,11 +334,21 @@ export function preterito(inf: string): string[] | null {
   // ninguna rama: devolvia null y ganaba un alias sin tilde que ademas
   // ensenaba el infinitivo mal escrito.
   const fin = inf.slice(-2).replace(/^í/, "i").replace(/^é/, "e").replace(/^á/, "a");
-  if (PRET_FUERTE[inf]) {
-    const r = PRET_FUERTE[inf];
-    const tercera = inf === "hacer" ? "hizo" : `${r}o`;
+  const comp = compuestoIrregular(inf);
+  const fuerte = PRET_FUERTE[inf]
+    ?? (comp && PRET_FUERTE[comp.base] ? `${comp.prefijo}${PRET_FUERTE[comp.base]}` : null);
+  if (fuerte) {
+    const r = fuerte;
+    const deHacer = inf === "hacer" || comp?.base === "hacer";
+    const tercera = deHacer ? `${r.slice(0, -1)}zo` : `${r}o`;
     const ellos = r.endsWith("j") ? `${r}eron` : `${r}ieron`;
-    return [`${r}e`, `${r}iste`, tercera, `${r}imos`, `${r}isteis`, ellos];
+    const filas = [`${r}e`, `${r}iste`, tercera, `${r}imos`, `${r}isteis`, ellos];
+    // Con prefijo acabado en vocal la h no impide el hiato, y la i tonica se
+    // escribe con tilde: rehíce, rehízo (como rehúso o prohíbo).
+    if (comp?.base === "hacer" && /[aeiou]$/.test(comp.prefijo)) {
+      for (const i of [0, 2]) filas[i] = filas[i].replace(/hi(?=[cz])/, "hí");
+    }
+    return filas;
   }
   if (fin === "ar") {
     // La ortografia protege el sonido de la raiz en la 1a: busque, llegue, empece.
@@ -787,7 +890,7 @@ async function main() {
   const dry = process.argv.includes("--dry");
   const soloFormas = process.argv.includes("--solo-formas");
   if (!nombre) {
-    console.error("uso: npx tsx scripts/buildGlossForms.ts <bundle> <textos.json> [--dry]");
+    console.error("uso: npx tsx scripts/buildGlossForms.ts <bundle> <textos.json> [--dry] [--solo-formas [--rehace]]");
     process.exit(1);
   }
   // Las glosas viven en dp_tap_glosses_v1 desde el 2026-08-26: la fila de slug
@@ -823,7 +926,11 @@ async function main() {
       : idioma === "german" ? Object.keys(DE_IRR)
       : [...Object.keys(IRREGULARES), ...CONOCIDOS]
   );
-  for (const [k, v] of Object.entries(bundle.glosses)) {
+  // Tambien de las capas de cada historia: ahi vive el lema de muchas glosas
+  // escritas a mano ("deshace ... (deshacer)"), y sin el la forma no tenia
+  // tabla que rehacer.
+  const fuentes = [bundle.glosses, ...Object.values(bundle.byStory ?? {})];
+  for (const [k, v] of fuentes.flatMap((f) => Object.entries(f))) {
     const FIN_INF = idioma === "italian" ? /(are|ere|ire)$/
       : idioma === "german" ? /(en|eln|ern)$/
       : /(ar|er|ir)$/;
@@ -831,7 +938,27 @@ async function main() {
     const m = idioma === "italian"
       ? /\(([a-zàèéìòù]+(?:are|ere|ire))\)/.exec(v?.g ?? "")
       : /\(([a-záéíóúñ]+(?:ar|er|ir))\)/.exec(v?.g ?? "");
-    if (m) infinitivos.add(m[1]);
+    // En español, el mismo filtro que la capa de modo: "goal (soccer)" no
+    // declara ningun infinitivo.
+    if (m && (idioma !== "spanish" || infinitivosDeGlosa(`(${m[1]})`, v?.t, k).length)) infinitivos.add(m[1]);
+  }
+  // Y del VOCAB, que declara el par lema-forma (`word` es el infinitivo): es la
+  // fuente que ya lee la capa de modo. Sin ella, `propone` guardaba la tabla
+  // "propono" y ninguna pasada podia rehacerla, porque ninguna glosa nombra
+  // proponer. Solo historias del mismo idioma y variante: el slug se repite
+  // entre journeys.
+  if (idioma === "spanish") {
+    const conVocab = await prisma.journeyStory.findMany({
+      where: { slug: { in: bundle.slugs } },
+      select: { vocab: true, journey: { select: { language: true, variant: true } } },
+    });
+    for (const s of conVocab) {
+      if (s.journey.language !== global.language || s.journey.variant !== global.variant) continue;
+      for (const v of (s.vocab as Array<{ word?: unknown; type?: unknown }> | null) ?? []) {
+        const lema = String(v?.word ?? "").trim().toLowerCase();
+        if (v?.type === "verb" && /(ar|er|ir|ír)$/.test(lema)) infinitivos.add(lema);
+      }
+    }
   }
   // Infinitivos que la propia historia delata. Solo -ar, y solo por formas que
   // NO pueden venir de otra conjugacion: -o con tilde y -aba(n) son de -ar y de
@@ -882,6 +1009,28 @@ async function main() {
   }
   const porForma = indicePorForma([...infinitivos], variante, idioma);
 
+  // `--rehace` (con --solo-formas): un bloque de indicativo que el motor ya
+  // conjuga distinto se rehace, porque `--solo-formas` solo rellena huecos y
+  // un arreglo del motor (sosteno -> sostengo) no llegaba nunca a la base.
+  // Solo si el bloque tiene la forma exacta que escribiria el generador:
+  // mismo lema, mismas personas y sin `mood`. Uno con pronombres en las filas
+  // o con otras etiquetas se escribio de otra manera y no se toca. No rellena
+  // huecos: una palabra sin bloque sigue sin bloque.
+  const rehace = process.argv.includes("--rehace");
+  const rehechas: string[] = [];
+  const tablaVieja = (f: NonNullable<Entrada["f"]>, palabra: string): boolean => {
+    if ((f as { mood?: string }).mood) return false;
+    const hit = porForma.get(palabra);
+    const filas = hit ? motor.conjuga(hit.inf, hit.tiempo, variante) : null;
+    if (!hit || !filas) return false;
+    const lemma = hit.tiempo === "presente" ? hit.inf : `${hit.inf} (${hit.tiempo})`;
+    if (f.lemma !== lemma || f.rows.length !== filas.length) return false;
+    if (f.rows.some((r, i) => r[0] !== P[i])) return false;
+    if (f.rows.every((r, i) => r[1] === filas[i])) return false;
+    rehechas.push(`${palabra}: ${f.rows.map((r) => r[1]).join(" ")}  ->  ${filas.join(" ")}`);
+    return true;
+  };
+
   const textos = JSON.parse(fs.readFileSync(process.argv[3] ?? "/dev/null", "utf8").trim() || "{}") as Record<string, string>;
 
   let verbos = 0, sustantivos = 0, adjetivos = 0, sinNada = 0;
@@ -910,7 +1059,10 @@ async function main() {
       const entrada: Entrada = soloFormas
         ? { ...previa }
         : { ...previa, g: base.g, t: base.t };
-      if (soloFormas && previa.f) return; // ya tiene bloque: no se toca
+      // Ya tiene bloque: no se toca, salvo con `--rehace` (ver `tablaVieja`).
+      // Y `--rehace` solo rehace: rellenar huecos es `--solo-formas` a secas.
+      if (rehace && !previa.f) return;
+      if (soloFormas && previa.f && !(rehace && tablaVieja(previa.f, palabra))) return;
       // La tabla se REHACE, no se hereda: si esta pasada ya no sabe conjugar
       // la palabra, tiene que quedarse sin bloque. Heredandola, un arreglo del
       // motor dejaba viva la tabla equivocada que el arreglo venia a quitar.
@@ -962,7 +1114,8 @@ async function main() {
   console.log(
     `${nombre}: ${verbos} verbos conjugados, ${sustantivos} sustantivos con número, ` +
       `${adjetivos} adjetivos con concordancia, ${sinNada} sin bloque` +
-      (saltadas.length ? `\n  intactas por estar escritas a mano: ${saltadas.join(", ")}` : "")
+      (saltadas.length ? `\n  intactas por estar escritas a mano: ${saltadas.join(", ")}` : "") +
+      (rehechas.length ? `\n  rehechas (--rehace):\n    ${rehechas.join("\n    ")}` : "")
   );
   if (dry) {
     console.log("(--dry: no se ha escrito nada)");
