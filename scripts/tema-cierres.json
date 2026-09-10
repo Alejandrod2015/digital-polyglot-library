@@ -1476,8 +1476,8 @@
     }
   },
   "cmtpls1l20007j8epwgcs6e1h#jokes-and-double-meanings": {
-    "cerrado": "2026-09-10T18:09:17.387Z",
-    "hash": "05f4144da7a6a12b",
+    "cerrado": "2026-09-10T22:24:54.631Z",
+    "hash": "44cfa937e49a483b",
     "historias": [
       "jokes-and-double-meanings#1 los-aguanto-de-dos-en-dos",
       "jokes-and-double-meanings#2 de-pura-muina",
@@ -1488,9 +1488,9 @@
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"contestó\" 33%)",
-      "arranques de parrafo variados (mas repetido \"la\", 20%)",
-      "banda gramatical b2 dentro: subj. imperfecto 6 · condicional 2 · estilo indirecto 2",
+      "acotacion dominante bajo tope (\"contestó\" 35%)",
+      "arranques de parrafo variados (mas repetido \"renata\", 13%)",
+      "banda gramatical b2 dentro: subj. imperfecto 6 · condicional 4 · estilo indirecto 2",
       "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
@@ -1498,7 +1498,7 @@
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.07 sobre 46 plazas · 42 salen una sola vez | ancladas: 14/60 (23%) | cola: 42/46 portables con un solo encuentro (91%, tope 80%) | de un solo encuentro: atendía, presumía, fama, ingeniosa, duelo, mansa, delató, calentando, empatado, carcajada, dejó caer, hecho callar, Va que va, sin despeinarse, doble sentido, revancha, carnicero, reuniendo, hojeó, arrancarle, tronó, ensayando, planteó, Puros, a escondidas, cara de yo no fui, subir la apuesta, sostuvo la mirada, puso fecha, parejos…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.04 sobre 46 plazas · 43 salen una sola vez | ancladas: 14/60 (23%) | cola: 43/46 portables con un solo encuentro (93%, tope 80%) | de un solo encuentro: atendía, temprano, presumía, fama, ingeniosa, duelo, mansa, delató, calentando, empatado, carcajada, dejó caer, hecho callar, Va que va, sin despeinarse, doble sentido, revancha, carnicero, reuniendo, hojeó, arrancarle, tronó, ensayando, planteó, Puros, a escondidas, cara de yo no fui, subir la apuesta, sostuvo la mirada, puso fecha…",
       "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",

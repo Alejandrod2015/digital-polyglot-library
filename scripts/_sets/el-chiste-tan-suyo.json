@@ -125,7 +125,7 @@
   {
     "type": "meaning_in_context",
     "word": "desquite",
-    "sentence": "La cantina se llenó temprano: se jugaba el [[desquite]].",
+    "sentence": "La cantina se llenó: se jugaba el [[desquite]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "payback",
@@ -138,7 +138,7 @@
       "audioClip": {
         "storySlug": "el-chiste-tan-suyo",
         "storySource": "user",
-        "sentence": "La cantina se llenó temprano: se jugaba el desquite.",
+        "sentence": "La cantina se llenó: se jugaba el desquite.",
         "targetWord": "desquite",
         "language": "spanish"
       }
@@ -147,7 +147,7 @@
   {
     "type": "meaning_in_context",
     "word": "venirse abajo",
-    "sentence": "La barra [[se vino abajo]]; de la puerta llegó un silbido.",
+    "sentence": "La barra [[se vino abajo]]; desde la puerta, un silbido.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to bring the house down",
@@ -160,7 +160,7 @@
       "audioClip": {
         "storySlug": "el-chiste-tan-suyo",
         "storySource": "user",
-        "sentence": "La barra se vino abajo; de la puerta llegó un silbido.",
+        "sentence": "La barra se vino abajo; desde la puerta, un silbido.",
         "targetWord": "se vino abajo",
         "language": "spanish"
       }
@@ -242,7 +242,7 @@
   {
     "type": "meaning_in_context",
     "word": "parejo",
-    "sentence": "Iban [[parejos]], y ella notó la trampa.",
+    "sentence": "Iban [[parejos]]; ella notó la trampa.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "neck and neck",
@@ -255,7 +255,7 @@
       "audioClip": {
         "storySlug": "el-chiste-tan-suyo",
         "storySource": "user",
-        "sentence": "Iban parejos, y ella notó la trampa.",
+        "sentence": "Iban parejos; ella notó la trampa.",
         "targetWord": "parejos",
         "language": "spanish"
       }
@@ -264,7 +264,7 @@
   {
     "type": "meaning_in_context",
     "word": "hora de la comida",
-    "sentence": "A la [[hora de la comida]] se jugaba el desquite.",
+    "sentence": "A la [[hora de la comida]], la cantina se llenó.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "lunchtime",
@@ -277,7 +277,7 @@
       "audioClip": {
         "storySlug": "el-chiste-tan-suyo",
         "storySource": "user",
-        "sentence": "A la hora de la comida se jugaba el desquite.",
+        "sentence": "A la hora de la comida, la cantina se llenó.",
         "targetWord": "hora de la comida",
         "language": "spanish"
       }

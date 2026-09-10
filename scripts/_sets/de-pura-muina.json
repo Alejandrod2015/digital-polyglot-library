@@ -2,7 +2,7 @@
   {
     "type": "meaning_in_context",
     "word": "muina",
-    "sentence": "De pura [[muina]], apostó la propina del día.",
+    "sentence": "De pura [[muina]], apostó la propina.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "anger",
@@ -15,7 +15,7 @@
       "audioClip": {
         "storySlug": "de-pura-muina",
         "storySource": "user",
-        "sentence": "De pura muina, apostó la propina del día.",
+        "sentence": "De pura muina, apostó la propina.",
         "targetWord": "muina",
         "language": "spanish"
       }
@@ -227,7 +227,7 @@
   {
     "type": "meaning_in_context",
     "word": "puro",
-    "sentence": "[[Puro]] apunte del negocio, contestaba ella.",
+    "sentence": "¿[[Puros]] dobles sentidos?, dijo él.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "nothing but",
@@ -240,8 +240,8 @@
       "audioClip": {
         "storySlug": "de-pura-muina",
         "storySource": "user",
-        "sentence": "Puro apunte del negocio, contestaba ella.",
-        "targetWord": "Puro",
+        "sentence": "¿Puros dobles sentidos?, dijo él.",
+        "targetWord": "Puros",
         "language": "spanish"
       }
     }

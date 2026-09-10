@@ -24,7 +24,7 @@
   {
     "type": "meaning_in_context",
     "word": "doble sentido",
-    "sentence": "Una frase de [[doble sentido]] escondido, y toda la barra soltó la carcajada.",
+    "sentence": "Una frase de [[doble sentido]] escondido, y la barra soltó la carcajada.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "double meaning",
@@ -37,7 +37,7 @@
       "audioClip": {
         "storySlug": "los-aguanto-de-dos-en-dos",
         "storySource": "user",
-        "sentence": "Una frase de doble sentido escondido, y toda la barra soltó la carcajada.",
+        "sentence": "Una frase de doble sentido escondido, y la barra soltó la carcajada.",
         "targetWord": "doble sentido",
         "language": "spanish"
       }
