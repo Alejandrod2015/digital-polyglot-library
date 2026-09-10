@@ -7102,6 +7102,426 @@
     "ñapa": {
       "g": "the little free extra (Colombian word)",
       "t": "noun"
+    },
+    "aprendían": {
+      "g": "they learned (aprender)",
+      "t": "verb"
+    },
+    "dictaba": {
+      "g": "she taught, delivered (dictar)",
+      "t": "verb"
+    },
+    "entraban": {
+      "g": "were coming in (entrar)",
+      "t": "verb"
+    },
+    "salía": {
+      "g": "was leaving (salir)",
+      "t": "verb"
+    },
+    "rendía": {
+      "g": "was performing (rendir)",
+      "t": "verb"
+    },
+    "peleó": {
+      "g": "fought (pelear)",
+      "t": "verb"
+    },
+    "presumía": {
+      "g": "boasted (presumir)",
+      "t": "verb"
+    },
+    "entendiera": {
+      "g": "she understood (subjunctive of entender)",
+      "t": "verb"
+    },
+    "delató": {
+      "g": "gave away (delatar)",
+      "t": "verb"
+    },
+    "confesarlo": {
+      "g": "to confess it (confesar)",
+      "t": "verb"
+    },
+    "despidió": {
+      "g": "said goodbye (despedirse)",
+      "t": "verb"
+    },
+    "llegaban": {
+      "g": "were arriving (llegar)",
+      "t": "verb"
+    },
+    "festejaba": {
+      "g": "celebrated (festejar)",
+      "t": "verb"
+    },
+    "rindió": {
+      "g": "gave up (rendirse)",
+      "t": "verb"
+    },
+    "tomó": {
+      "g": "drank, took (tomar)",
+      "t": "verb"
+    },
+    "invitaba": {
+      "g": "was the one inviting (invitar)",
+      "t": "verb"
+    },
+    "cosía": {
+      "g": "sewed (coser)",
+      "t": "verb"
+    },
+    "cerraban": {
+      "g": "were closed (cerrar)",
+      "t": "verb"
+    },
+    "compraba": {
+      "g": "bought (comprar)",
+      "t": "verb"
+    },
+    "elogió": {
+      "g": "praised (elogiar)",
+      "t": "verb"
+    },
+    "verían": {
+      "g": "they would see (ver)",
+      "t": "verb"
+    },
+    "trabajaran": {
+      "g": "kept working (subjunctive of trabajar)",
+      "t": "verb"
+    },
+    "desinflaba": {
+      "g": "deflated (desinflarse)",
+      "t": "verb"
+    },
+    "pintaba": {
+      "g": "painted (pintar)",
+      "t": "verb"
+    },
+    "llevaba": {
+      "g": "had been, carried (llevar)",
+      "t": "verb"
+    },
+    "mirara": {
+      "g": "would look (subjunctive of mirar)",
+      "t": "verb"
+    },
+    "saltaba": {
+      "g": "leapt out (saltar)",
+      "t": "verb"
+    },
+    "tomaron": {
+      "g": "they had, took (tomar)",
+      "t": "verb"
+    },
+    "vibraba": {
+      "g": "vibrated (vibrar)",
+      "t": "verb"
+    },
+    "bajó": {
+      "g": "went down (bajar)",
+      "t": "verb"
+    },
+    "postuló": {
+      "g": "applied (postular)",
+      "t": "verb"
+    },
+    "traía": {
+      "g": "brought (traer)",
+      "t": "verb"
+    },
+    "adjudicaba": {
+      "g": "was awarded (adjudicar)",
+      "t": "verb"
+    },
+    "adelantaba": {
+      "g": "was brought forward (adelantar)",
+      "t": "verb"
+    },
+    "dejara": {
+      "g": "put, left (subjunctive of dejar)",
+      "t": "verb"
+    },
+    "repitió": {
+      "g": "repeated (repetir)",
+      "t": "verb"
+    },
+    "ardió": {
+      "g": "burned (arder)",
+      "t": "verb"
+    },
+    "durmió": {
+      "g": "slept (dormir)",
+      "t": "verb"
+    },
+    "avisaron": {
+      "g": "they told her (avisar)",
+      "t": "verb"
+    },
+    "declarada": {
+      "g": "declared (declarar)",
+      "t": "adjective"
+    },
+    "quedaba": {
+      "g": "was left (quedar)",
+      "t": "verb"
+    },
+    "despegó": {
+      "g": "peeled open (despegar)",
+      "t": "verb"
+    },
+    "paró": {
+      "g": "stood (pararse)",
+      "t": "verb"
+    },
+    "planteó": {
+      "g": "put forward (plantear)",
+      "t": "verb"
+    },
+    "tomarías": {
+      "g": "would you take (tomar)",
+      "t": "verb"
+    },
+    "esperara": {
+      "g": "waited (subjunctive of esperar)",
+      "t": "verb"
+    },
+    "supieron": {
+      "g": "they knew (saber)",
+      "t": "verb"
+    },
+    "acababan": {
+      "g": "they had just (acabar de)",
+      "t": "verb"
+    },
+    "mostró": {
+      "g": "showed (mostrar)",
+      "t": "verb"
+    },
+    "cabían": {
+      "g": "fitted (caber)",
+      "t": "verb"
+    },
+    "agarraría": {
+      "g": "would catch (agarrar)",
+      "t": "verb"
+    },
+    "traducía": {
+      "g": "translated (traducir)",
+      "t": "verb"
+    },
+    "pensaba": {
+      "g": "thought (pensar)",
+      "t": "verb"
+    },
+    "salían": {
+      "g": "came out (salir)",
+      "t": "verb"
+    },
+    "hacía": {
+      "g": "was needed, made (hacer)",
+      "t": "verb"
+    },
+    "contara": {
+      "g": "told (subjunctive of contar)",
+      "t": "verb"
+    },
+    "raspó": {
+      "g": "shaved, scraped (raspar)",
+      "t": "verb"
+    },
+    "repartió": {
+      "g": "handed out (repartir)",
+      "t": "verb"
+    },
+    "armó": {
+      "g": "came together (armarse)",
+      "t": "verb"
+    },
+    "desató": {
+      "g": "untied (desatarse)",
+      "t": "verb"
+    },
+    "contado": {
+      "g": "told (contar)",
+      "t": "verb"
+    },
+    "dejaba": {
+      "g": "left, let (dejar)",
+      "t": "verb"
+    },
+    "atendió": {
+      "g": "served (atender)",
+      "t": "verb"
+    },
+    "rebozó": {
+      "g": "breaded (rebozar)",
+      "t": "verb"
+    },
+    "llamara": {
+      "g": "called (subjunctive of llamar)",
+      "t": "verb"
+    },
+    "desinfló": {
+      "g": "deflated (desinflarse)",
+      "t": "verb"
+    },
+    "descubrió": {
+      "g": "discovered (descubrir)",
+      "t": "verb"
+    },
+    "abrieran": {
+      "g": "they opened (subjunctive of abrir)",
+      "t": "verb"
+    },
+    "quemó": {
+      "g": "burned (quemarse)",
+      "t": "verb"
+    },
+    "consoló": {
+      "g": "comforted (consolar)",
+      "t": "verb"
+    },
+    "sacó": {
+      "g": "worked out, took out (sacar)",
+      "t": "verb"
+    },
+    "timbró": {
+      "g": "rang the bell (timbrar)",
+      "t": "verb"
+    },
+    "suspiró": {
+      "g": "sighed (suspirar)",
+      "t": "verb"
+    },
+    "cosió": {
+      "g": "sewed (coser)",
+      "t": "verb"
+    },
+    "recibía": {
+      "g": "received (recibir)",
+      "t": "verb"
+    },
+    "firmaban": {
+      "g": "were signing (firmar)",
+      "t": "verb"
+    },
+    "regatearon": {
+      "g": "they haggled (regatear)",
+      "t": "verb"
+    },
+    "elogiaba": {
+      "g": "praised (elogiar)",
+      "t": "verb"
+    },
+    "agradecía": {
+      "g": "thanked (agradecer)",
+      "t": "verb"
+    },
+    "sacaron": {
+      "g": "they wrote out (sacar)",
+      "t": "verb"
+    },
+    "cerraron": {
+      "g": "they closed (cerrar)",
+      "t": "verb"
+    },
+    "cedido": {
+      "g": "given in (ceder)",
+      "t": "verb"
+    },
+    "fijó": {
+      "g": "noticed (fijarse)",
+      "t": "verb"
+    },
+    "dudaba": {
+      "g": "hesitated (dudar)",
+      "t": "verb"
+    },
+    "corrigió": {
+      "g": "corrected (corregir)",
+      "t": "verb"
+    },
+    "agrandó": {
+      "g": "made bigger (agrandar)",
+      "t": "verb"
+    },
+    "retara": {
+      "g": "challenged (subjunctive of retar)",
+      "t": "verb"
+    },
+    "viajaría": {
+      "g": "would travel (viajar)",
+      "t": "verb"
+    },
+    "firmaba": {
+      "g": "was signing (firmar)",
+      "t": "verb"
+    },
+    "avisaba": {
+      "g": "warned (avisar)",
+      "t": "verb"
+    },
+    "frenaba": {
+      "g": "stopped himself (frenarse)",
+      "t": "verb"
+    },
+    "desempolvaban": {
+      "g": "got dusted off (desempolvar)",
+      "t": "verb"
+    },
+    "vieran": {
+      "g": "could see (subjunctive of ver)",
+      "t": "verb"
+    },
+    "contaran": {
+      "g": "told (subjunctive of contar)",
+      "t": "verb"
+    },
+    "rebanaba": {
+      "g": "sliced (rebanar)",
+      "t": "verb"
+    },
+    "importaba": {
+      "g": "mattered (importar)",
+      "t": "verb"
+    },
+    "tronó": {
+      "g": "cracked (tronar)",
+      "t": "verb"
+    },
+    "apostó": {
+      "g": "bet (apostar)",
+      "t": "verb"
+    },
+    "crujió": {
+      "g": "creaked (crujir)",
+      "t": "verb"
+    },
+    "rechinaba": {
+      "g": "ground, squeaked (rechinar)",
+      "t": "verb"
+    },
+    "abrieron": {
+      "g": "they opened (abrir)",
+      "t": "verb"
+    },
+    "repartía": {
+      "g": "handed out (repartir)",
+      "t": "verb"
+    },
+    "tomaba": {
+      "g": "took, called (tomar)",
+      "t": "verb"
+    },
+    "avanzaban": {
+      "g": "advanced (avanzar)",
+      "t": "verb"
+    },
+    "levantaba": {
+      "g": "raised (levantar)",
+      "t": "verb"
     }
   },
   "spanish-traveler-spain-b1": {

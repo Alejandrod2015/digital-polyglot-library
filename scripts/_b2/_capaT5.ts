@@ -29,6 +29,8 @@ const CAPA: Record<string, E[]> = {
     { claves: ["en ninguna parte"], t: "expression", g: "nowhere", es: "la mitad en ninguna parte", en: "half of it nowhere at all" }
   ],
   "el-trasteo-ajeno": [
+    { claves: ["tuviera"], t: "verb", g: "had (subjunctive of tener)", es: "como si el dueño tuviera otra cita", en: "as if the owner had another appointment" },
+    { claves: ["agarraría"], t: "verb", g: "would catch (conditional of agarrar)", es: "no lo agarraría pensando", en: "would not catch him thinking" },
     { claves: ["decidido"], t: "adjective", g: "set on it", es: "Venía decidido, o eso creía", en: "he came set on it, or so he thought" },
     { claves: ["de una"], t: "expression", g: "right away (Colombia)", es: "hágale de una", en: "go ahead, right away" },
     { claves: ["hágale"], t: "expression", g: "go ahead (Colombia)", es: "remató con un hágale de una", en: "closed with a go-ahead-right-now" },
@@ -52,6 +54,8 @@ const CAPA: Record<string, E[]> = {
     { claves: ["sin más"], t: "expression", g: "just like that", es: "guardó las llaves sin más", en: "put the keys away, just like that" }
   ],
   "la-napa-del-dueno": [
+    { claves: ["preguntó"], t: "verb", g: "asked (preguntar)", es: "Nadie le preguntó ya de dónde venía", en: "nobody asked him anymore where he came from" },
+    { claves: ["contara"], t: "verb", g: "tell (subjunctive of contar)", es: "Le pidieron que contara otro", en: "they asked him to tell another" },
     { claves: ["descansar", "descansaba"], t: "verb", g: "did not rest (descansar)", es: "la licuadora no descansaba", en: "the blender never rested" },
     { claves: ["perder", "perdiste"], t: "verb", g: "you lost (perder)", es: "Lo que perdiste fue un local", en: "what you lost was a shop" },
     { claves: ["cholado"], t: "noun", g: "Cali shaved-ice dessert", es: "repartió cholado dulce", en: "handed out sweet cholado" },

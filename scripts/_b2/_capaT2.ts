@@ -5,6 +5,8 @@ const B = "spanish-traveler-latam-b2";
 type E = { claves: string[]; g: string; t: string; es: string; en: string };
 const CAPA: Record<string, E[]> = {
   "la-cortesia-mas-cara": [
+    { claves: ["trabajaran"], t: "verb", g: "would keep working (subjunctive of trabajar)", es: "para que las manos trabajaran", en: "so her hands would keep busy" },
+    { claves: ["verían"], t: "verb", g: "they would see (conditional of ver)", es: "cuando dijo que lo verían", en: "when he said they would see" },
     { claves: ["chifa"], t: "noun", g: "Peruvian-Chinese restaurant", es: "en un chifa del jirón Ucayali", en: "in a chifa on Ucayali street" },
     { claves: ["wantán"], t: "noun", g: "fried wonton", es: "Pidió wantán de memoria", en: "ordered wonton from memory" },
     { claves: ["jirón"], t: "noun", g: "street (Lima word)", es: "del jirón Ucayali", en: "on Ucayali street" },
@@ -43,18 +45,20 @@ const CAPA: Record<string, E[]> = {
     { claves: ["suspirar", "suspiró"], t: "verb", g: "sighed (suspirar)", es: "Suspiró y cosió de madrugada", en: "she sighed and sewed before dawn" },
     { claves: ["estrenar", "estrenando"], t: "verb", g: "using for the first time (estrenar)", es: "estrenando la palabra", en: "using the phrase for the first time" },
     { claves: ["adelantar", "adelanta"], t: "verb", g: "pays in advance (adelantar)", es: "si me adelanta la mitad", en: "if you pay me half in advance" },
-    { claves: ["entallar"], t: "verb", g: "to take in a garment", es: "un vestido para entallar", en: "a dress to take in" },
+    { claves: ["entallar"], t: "verb", g: "to take in a garment (entallar)", es: "un vestido para entallar", en: "a dress to take in" },
     { claves: ["a la medida"], t: "expression", g: "made to measure", es: "a la medida del logo", en: "measured to the logo" },
     { claves: ["dejar plantado", "dejó plantada"], t: "expression", g: "stood her up", es: "La dejó plantada una vez", en: "she stood her up once" },
     { claves: ["boca abajo"], t: "expression", g: "face down", es: "el teléfono boca abajo", en: "the phone face down" }
   ],
   "una-yapa-de-sobremesa": [
-    { claves: ["chaufa"], t: "noun", g: "Peruvian-Chinese fried rice", es: "trajo el chaufa caliente sin que nadie lo pidiera", en: "brought the hot fried rice without being asked" },
+    { claves: ["pidiera"], t: "verb", g: "asked for (subjunctive of pedir)", es: "sin que nadie lo pidiera", en: "without anyone asking for it" },
+    { claves: ["valiera"], t: "verb", g: "was worth (subjunctive of valer)", es: "como si no valiera nada", en: "as if it were worth nothing" },
+    { claves: ["chaufa"], t: "noun", g: "Peruvian-Chinese fried rice", es: "trajo el chaufa caliente", en: "brought the hot fried rice" },
     { claves: ["yapa"], t: "noun", g: "the free little extra", es: "¿Y mi yapa?", en: "and my little extra" },
     { claves: ["mozo"], t: "noun", g: "waiter", es: "El mozo gritó el pedido", en: "the waiter shouted the order" },
     { claves: ["sobremesa"], t: "noun", g: "after-lunch table talk", es: "tan educado que parecía sobremesa", en: "so polite it looked like table talk" },
     { claves: ["lapicero"], t: "noun", g: "pen (Peru)", es: "con el lapicero de ella", en: "with her pen" },
-    { claves: ["regatear"], t: "verb", g: "to haggle", es: "sin decir la palabra regatear", en: "without saying the word haggle" },
+    { claves: ["regatear"], t: "verb", g: "to haggle (regatear)", es: "sin decir la palabra regatear", en: "without saying the word haggle" },
     { claves: ["halago"], t: "noun", g: "flattery", es: "ella agradecía el halago", en: "she thanked him for the flattery" },
     { claves: ["centavo"], t: "noun", g: "cent", es: "no soltaba un centavo", en: "did not let go of a cent" },
     { claves: ["apretón"], t: "noun", g: "handshake", es: "con un apretón corto", en: "with a short handshake" },

@@ -5,6 +5,7 @@ const B = "spanish-traveler-latam-b2";
 type E = { claves: string[]; g: string; t: string; es: string; en: string };
 const CAPA: Record<string, E[]> = {
   "la-otra-columna": [
+    { claves: ["avisó"], t: "verb", g: "announced (avisar)", es: "Ariel avisó que, desde el lunes", en: "Ariel announced that, from Monday" },
     { claves: ["pizarrón"], t: "noun", g: "blackboard (Latin America)", es: "borró el pizarrón sin apuro", en: "wiped the blackboard without hurry" },
     { claves: ["subte"], t: "noun", g: "Buenos Aires underground", es: "bajaba los lunes del subte", en: "came off the underground on Mondays" },
     { claves: ["laburo"], t: "noun", g: "work (Buenos Aires slang)", es: "llega después del laburo", en: "arrives after work" },
@@ -34,7 +35,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["pupitre"], t: "noun", g: "school desk", es: "una consigna por pupitre", en: "one task per desk" },
     { claves: ["charla"], t: "noun", g: "chat", es: "Cuando la charla se soltaba", en: "when the chat loosened up" },
     { claves: ["jota"], t: "noun", g: "the letter j", es: "seis maneras de deletrear la jota", en: "six ways of spelling the letter j" },
-    { claves: ["deletrear"], t: "verb", g: "to spell out", es: "deletrear la jota", en: "to spell out the letter j" },
+    { claves: ["deletrear"], t: "verb", g: "to spell out (deletrear)", es: "deletrear la jota", en: "to spell out the letter j" },
     { claves: ["soltarse", "se soltaba"], t: "verb", g: "loosened up (soltarse)", es: "la charla se soltaba", en: "the chat loosened up" },
     { claves: ["estampilla", "estampillas"], t: "noun", g: "postage stamp", es: "con estampillas de colores", en: "with colourful stamps" },
     { claves: ["pendiente"], t: "adjective", g: "pending", es: "tildado como pendiente", en: "ticked as pending" },
@@ -49,6 +50,9 @@ const CAPA: Record<string, E[]> = {
     { claves: ["al pasar"], t: "expression", g: "in passing", es: "dicha al pasar", en: "said in passing" }
   ],
   "que-buena-idea-ariel": [
+    { claves: ["hablara"], t: "verb", g: "speak (subjunctive of hablar)", es: "dejó que la carta hablara", en: "she let the letter speak" },
+    { claves: ["esperara"], t: "verb", g: "wait (subjunctive of esperar)", es: "dejó que Ariel esperara un momento", en: "she let Ariel wait a moment" },
+    { claves: ["tomarías"], t: "verb", g: "would you take (conditional of tomar)", es: "¿La tomarías vos?", en: "would you take it" },
     { claves: ["matrícula", "matrículas"], t: "noun", g: "enrolment", es: "cayeron tres matrículas", en: "three enrolments landed" },
     { claves: ["ficha"], t: "noun", g: "form", es: "en la ficha de inscripción", en: "on the registration form" },
     { claves: ["inscripción"], t: "noun", g: "registration", es: "la ficha de inscripción", en: "the registration form" },

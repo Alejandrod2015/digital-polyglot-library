@@ -5,6 +5,8 @@ const B = "spanish-traveler-latam-b2";
 type E = { claves: string[]; g: string; t: string; es: string; en: string };
 const CAPA: Record<string, E[]> = {
   "de-medio-metro-y-gracias": [
+    { claves: ["retara"], t: "verb", g: "challenged (subjunctive of retar)", es: "como si la retara", en: "as if he were challenging her" },
+    { claves: ["viajaría"], t: "verb", g: "would travel (conditional of viajar)", es: "nadie viajaría hasta acá", en: "nobody would travel all the way here" },
     { claves: ["cuentero"], t: "noun", g: "storyteller (Colombia)", es: "Baldomero era el cuentero de Aracataca", en: "Baldomero was Aracataca's storyteller" },
     { claves: ["hospedaje"], t: "noun", g: "guesthouse", es: "dueña del hospedaje", en: "owner of the guesthouse" },
     { claves: ["ciénaga"], t: "noun", g: "marsh", es: "De la ciénaga sacaban pescados", en: "they pulled fish out of the marsh" },
@@ -49,6 +51,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["invita la casa"], t: "expression", g: "on the house", es: "Invita la casa, cuentero", en: "it is on the house, storyteller" }
   ],
   "la-historia-sin-agrandar": [
+    { claves: ["vieran"], t: "verb", g: "could see (subjunctive of ver)", es: "para que lo vieran", en: "so they could see it" },
     { claves: ["álbum"], t: "noun", g: "photo album", es: "hojeó a escondidas el álbum", en: "leafed secretly through the album" },
     { claves: ["retrato"], t: "noun", g: "photograph", es: "un retrato amarillento", en: "a yellowed photograph" },
     { claves: ["amarillento"], t: "adjective", g: "yellowed", es: "un retrato amarillento", en: "a yellowed photograph" },

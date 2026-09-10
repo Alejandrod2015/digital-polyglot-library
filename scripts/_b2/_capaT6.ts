@@ -5,6 +5,7 @@ const B = "spanish-traveler-latam-b2";
 type E = { claves: string[]; g: string; t: string; es: string; en: string };
 const CAPA: Record<string, E[]> = {
   "vitel-tone-con-blanco": [
+    { claves: ["habría"], t: "verb", g: "would have (conditional of haber)", es: "lo grave habría sido no darse cuenta", en: "the serious thing would have been not noticing" },
     { claves: ["rotisería"], t: "noun", g: "Argentine prepared-food shop", es: "la dueña de la rotisería", en: "the owner of the rotisería" },
     { claves: ["vitel toné", "vitel", "toné"], t: "noun", g: "cold veal in tuna sauce", es: "el vitel toné se lleva con blanco", en: "vitel toné goes with white wine" },
     { claves: ["nene"], t: "noun", g: "kid, dear (Argentina)", es: "Pero se agradece, nene", en: "but much appreciated, dear" },
@@ -27,6 +28,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["en la puerta"], t: "expression", g: "at the door", es: "prometió en la puerta", en: "promised at the door" }
   ],
   "aca-los-errores-se-pagan": [
+    { claves: ["abrieran"], t: "verb", g: "opened (subjunctive of abrir)", es: "antes de que abrieran", en: "before they opened" },
     { claves: ["franco", "de franco"], t: "noun", g: "day off (Argentina)", es: "De franco en su laburo", en: "on his day off from work" },
     { claves: ["milanesa", "milanesas"], t: "noun", g: "breaded cutlet", es: "la primera tanda de milanesas", en: "the first batch of milanesas" },
     { claves: ["pan rallado", "rallado"], t: "expression", g: "breadcrumbs", es: "Harina, huevo, pan rallado", en: "flour, egg, breadcrumbs" },
@@ -49,6 +51,8 @@ const CAPA: Record<string, E[]> = {
     { claves: ["salir de tu bolsillo", "sale de tu bolsillo"], t: "expression", g: "come out of your pocket", es: "Esto sale de tu bolsillo", en: "this comes out of your pocket" }
   ],
   "la-ultima-dorada": [
+    { claves: ["llamara"], t: "verb", g: "called (subjunctive of llamar)", es: "sin que nadie llamara a Norma", en: "without anyone calling Norma" },
+    { claves: ["contado"], t: "verb", g: "told (contar)", es: "Le habían contado que la caja", en: "they had told him that the till" },
     { claves: ["a cargo"], t: "expression", g: "in charge", es: "Vos quedás a cargo del negocio", en: "you are in charge of the shop" },
     { claves: ["campanita"], t: "noun", g: "little doorbell", es: "la campanita de la puerta sonaba", en: "the little doorbell rang" },
     { claves: ["desatarse", "se desató"], t: "verb", g: "untied (desatarse)", es: "se desató el delantal", en: "untied her apron" },

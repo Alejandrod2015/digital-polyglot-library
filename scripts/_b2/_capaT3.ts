@@ -5,6 +5,7 @@ const B = "spanish-traveler-latam-b2";
 type E = { claves: string[]; g: string; t: string; es: string; en: string };
 const CAPA: Record<string, E[]> = {
   "la-once-con-chirrido": [
+    { claves: ["mirara"], t: "verb", g: "would look (subjunctive of mirar)", es: "esperaba que él mirara", en: "she hoped he would look" },
     { claves: ["maestro"], t: "noun", g: "master (Chilean address for a tradesman)", es: "¿Y ese ruido nuevo, maestro?", en: "and that new noise, maestro" },
     { claves: ["mantención"], t: "noun", g: "maintenance (Chile)", es: "La mantención, por la rejilla, se veía así", en: "the maintenance, through the grille, looked like this" },
     { claves: ["al tiro"], t: "expression", g: "right away (Chile)", es: "Al tiro le pongo grasa", en: "I will grease it right away" },
@@ -27,6 +28,8 @@ const CAPA: Record<string, E[]> = {
     { claves: ["a simple vista"], t: "expression", g: "at first glance", es: "saltaba a simple vista", en: "leapt out at first glance" }
   ],
   "la-licitacion-desierta": [
+    { claves: ["dejara"], t: "verb", g: "put on record (subjunctive of dejar)", es: "sin que alguien dejara constancia", en: "unless someone put it on record" },
+    { claves: ["avisaron"], t: "verb", g: "they told her (avisar)", es: "Al mes le avisaron que", en: "a month later they told her that" },
     { claves: ["harto"], t: "adjective", g: "a lot of (Chile)", es: "con harto pasaje", en: "with plenty of passengers" },
     { claves: ["no más", "no mas"], t: "expression", g: "just, go ahead (Southern Cone)", es: "Haz la vista gorda, no más", en: "just turn a blind eye" },
     { claves: ["licitación"], t: "noun", g: "public tender", es: "la licitación de la estación entera", en: "the tender for the whole station" },
@@ -49,6 +52,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["en blanco"], t: "expression", g: "blank", es: "entregó en blanco", en: "handed it in blank" }
   ],
   "tres-veces-por-escrito": [
+    { claves: ["sería"], t: "verb", g: "would be (conditional of ser)", es: "¿Cuánto sería un ratito, exactamente?", en: "how long would a little while be, exactly" },
     { claves: ["freno"], t: "noun", g: "brake", es: "que el freno agarró", en: "the brake caught" },
     { claves: ["manivela"], t: "noun", g: "crank", es: "Te bajo a manivela", en: "I will crank you down by hand" },
     { claves: ["rechinar", "rechinaba"], t: "verb", g: "ground (rechinar)", es: "La manivela rechinaba", en: "the crank ground" },

@@ -7,6 +7,8 @@ const B = "spanish-traveler-latam-b2";
 type E = { claves: string[]; g: string; t: string; es: string; en: string };
 const CAPA: Record<string, E[]> = {
   "los-aguanto-de-dos-en-dos": [
+    { claves: ["entendiera"], t: "verb", g: "understood (subjunctive of entender)", es: "antes de que ella entendiera", en: "before she understood" },
+    { claves: ["habría"], t: "verb", g: "would have (conditional of haber)", es: "quejarse habría sido confesarlo", en: "complaining would have meant admitting it" },
     { claves: ["atender", "atendía"], t: "verb", g: "ran, served at (atender)", es: "la mujer que atendía la barra", en: "the woman who ran the bar" },
     { claves: ["temprano"], t: "adverb", g: "early", es: "olía a birria desde temprano", en: "smelled of birria from early on" },
     { claves: ["cansarse", "se cansa"], t: "verb", g: "get tired (cansarse)", es: "¿Se cansa tan pronto?", en: "are you getting tired so soon" },
@@ -33,6 +35,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["doble sentido"], t: "expression", g: "double meaning", es: "de doble sentido escondido", en: "with a hidden double meaning" }
   ],
   "de-pura-muina": [
+    { claves: ["contaran"], t: "verb", g: "would tell (subjunctive of contar)", es: "pidió que no se lo contaran", en: "she asked them not to tell" },
     { claves: ["tianguis"], t: "noun", g: "tianguis, open-air street market", es: "del carnicero del tianguis", en: "from the butcher at the street market" },
     { claves: ["botana"], t: "noun", g: "bar snack", es: "jícama fría para la botana", en: "cold jicama for the bar snack" },
     { claves: ["mandado"], t: "noun", g: "groceries, everyday shopping", es: "Es la lista del mandado", en: "it is the grocery list" },
@@ -55,6 +58,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["poner fecha", "puso fecha"], t: "expression", g: "set the date", es: "Y le puso fecha", en: "and set the date" }
   ],
   "el-chiste-tan-suyo": [
+    { claves: ["perdiera"], t: "verb", g: "lost (subjunctive of perder)", es: "sin que perdiera la gracia", en: "without it losing its charm" },
     { claves: ["desquite"], t: "noun", g: "payback, rematch", es: "se jugaba el desquite", en: "the payback match was on" },
     { claves: ["nomás"], t: "adverb", g: "just, only (Mexican)", es: "Nomás que usted no había preguntado", en: "only you had never asked" },
     { claves: ["la casa invita", "la casa no invita"], t: "expression", g: "on the house", es: "La casa no invita", en: "it is not on the house" },
