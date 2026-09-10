@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { orderTracksByPlacement, type OrderableTrack } from "@/lib/journeyTrackOrder";
+import { orderTracksByPlacement, placementForLanding, type OrderableTrack } from "@/lib/journeyTrackOrder";
 
 /** El catalogo LATAM real el 2026-08-25: a0, a1 y c1, sin nada en B. */
 const LATAM: OrderableTrack[] = [
@@ -66,5 +66,37 @@ describe("orderTracksByPlacement", () => {
     const orden = orderTracksByPlacement(conBasura, "b2", "latam");
     expect(first(orden)).toBe("Friends/latam/c1");
     expect(orden[orden.length - 1]?.label).toBe("Basura");
+  });
+});
+
+/** El catalogo PT live el 2026-09-10: a0 y a1. */
+const PT: OrderableTrack[] = [
+  { label: "Traveler", variant: "brazil", levels: [{ id: "a0" }] },
+  { label: "Traveler", variant: "brazil", levels: [{ id: "a1" }] },
+];
+
+describe("placementForLanding", () => {
+  it("el placement del test manda sobre el nivel declarado", () => {
+    expect(placementForLanding("a0", "Intermediate")).toBe("a0");
+    expect(placementForLanding("B2", "Beginner")).toBe("b2");
+  });
+
+  it("sin placement, Intermediate y Advanced sirven de reserva", () => {
+    expect(placementForLanding(null, "Intermediate")).toBe("b1");
+    expect(placementForLanding(undefined, " advanced ")).toBe("c1");
+  });
+
+  it("Beginner o nada no mueven al alumno del suelo", () => {
+    expect(placementForLanding(null, "Beginner")).toBeNull();
+    expect(placementForLanding(null, null)).toBeNull();
+    expect(placementForLanding("no-es-un-nivel", undefined)).toBeNull();
+  });
+
+  it("el caso de Mike: Intermediate sin placement aterriza en el A1, no en el A0", () => {
+    const placement = placementForLanding(null, "Intermediate");
+    expect(first(orderTracksByPlacement(PT, placement, "brazil"))).toBe("Traveler/brazil/a1");
+    expect(first(orderTracksByPlacement(PT, placementForLanding(null, "Beginner"), "brazil"))).toBe(
+      "Traveler/brazil/a0"
+    );
   });
 });
