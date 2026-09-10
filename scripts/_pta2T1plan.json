@@ -1,0 +1,34 @@
+{
+  "tipo": "traveler",
+  "nivel": "a2",
+  "variante": "brazil",
+  "registro": "cálido y terco, sin ironía",
+  "espina": "Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.",
+  "recursos": "A2: símil simple y espejo concreto (el caderno de dieciocho palabras al final de la primera, la línea abierta al final de la tercera). Heredados: contraste con pero, causalidad explícita, imagen concreta de remate, gancho final literal. NO se usa nada de B1 o superior: sin ironía, sin subtexto, sin final abierto de C1 (la tercera deja un hilo colgando, que es mini-cliffhanger literal, no ambigüedad).",
+  "historias": [
+    {
+      "slot": "salvador#0",
+      "quiere": "Renata quiere entender lo que dice su turma el primer día en Salvador.",
+      "impide": "El sotaque baiano se come el final de las palabras y ella escucha menos de la mitad.",
+      "cuesta": "Aceptar delante de la clase que quien la corrige es el chico que barre la sala, no ella.",
+      "cambia": "Deja de escuchar como profesora y empieza a apuntar como alumna; se lleva la última palabra repitiéndola sola.",
+      "emocion": "vergüenza que se vuelve curiosidad"
+    },
+    {
+      "slot": "salvador#1",
+      "quiere": "Renata quiere el único ejemplar del libro de contos para usarlo en clase.",
+      "impide": "Gilson llegó primero y lo quiere por el mismo motivo, y ninguno de los dos cede.",
+      "cuesta": "Pagar el libro y aceptar el trato que la deja a ella en el papel de corregida.",
+      "cambia": "El intercambio se formaliza: él lee un conto por semana y ella dice dónde se equivoca, así que la profesora escribe en su caderno que hoy la alumna es ella.",
+      "emocion": "terquedad que se ablanda"
+    },
+    {
+      "slot": "salvador#2",
+      "quiere": "Gilson quiere entrar en la faculdade y hacer el exame del viernes.",
+      "impide": "No se lo ha contado a nadie, la biblioteca cierra a las seis y falla la parte escrita.",
+      "cuesta": "Decir en voz alta que cree que no lo va a conseguir, delante de la única persona que lo ha visto estudiar.",
+      "cambia": "Ensayan en la escalera y el viernes él se va sin decir nada; Renata escribe su nombre y la fecha y deja la línea abierta.",
+      "emocion": "miedo sostenido por la confianza de otro"
+    }
+  ]
+}

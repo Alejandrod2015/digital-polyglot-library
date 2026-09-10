@@ -1,0 +1,34 @@
+{
+  "tipo": "traveler",
+  "nivel": "a2",
+  "variante": "brazil",
+  "registro": "práctico y algo tenso, con un aliado que no cobra por ayudar",
+  "espina": "Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.",
+  "recursos": "A2: símil simple y contraste con pero, más causalidad explícita (el cable roto explica la reunión, la reunión explica el informe). El remate de cada historia es una imagen concreta: la luz verde, el café en la mesa prestada, el frío en la calle con el abrigo abierto. Sin espejo concreto, que ya cargaron los temas 2 y 3, y sin nada de B1 o superior.",
+  "historias": [
+    {
+      "slot": "petropolis#0",
+      "quiere": "Renata quiere un cargador hoy, antes de la reunión de mañana.",
+      "impide": "El suyo se quemó anoche, el repuesto está en el correo y el correo cierra al mediodía en sábado.",
+      "cuesta": "Pagar el triple por un genérico sabiendo que el barato dura tres meses.",
+      "cambia": "Deja de esperar al que pidió y compra el que hay; se guarda el viejo por si acaso.",
+      "emocion": "agobio que se resuelve pagando"
+    },
+    {
+      "slot": "petropolis#1",
+      "quiere": "Renata quiere conservar el trabajo sin aceptar el doble de encargo por el mismo sueldo.",
+      "impide": "Se le cae la conexión diez minutos antes y las dos salidas que le ofrecen son malas.",
+      "cuesta": "Proponer una tercera en voz alta y aguantar el silencio que viene después.",
+      "cambia": "Se lo aceptan, y ella descubre que lo que estaba negociando no era dinero sino calendario.",
+      "emocion": "miedo que se atreve"
+    },
+    {
+      "slot": "petropolis#2",
+      "quiere": "Renata quiere mandar el informe en papel antes de las cinco.",
+      "impide": "La impresora se atasca, el paquete pesa demasiado para un sobre y el envío al extranjero no sale hoy.",
+      "cuesta": "Depender otra vez de la tienda de alguien que no le cobra por ayudar.",
+      "cambia": "Lo manda igual sabiendo que sale el lunes, y sale a la calle con el abrigo abierto porque ya da lo mismo.",
+      "emocion": "tensión que se afloja"
+    }
+  ]
+}

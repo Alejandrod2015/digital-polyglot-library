@@ -419,6 +419,104 @@ function slugify(s: string): string {
     return;
   }
 
+  // ── EL SLUG SIGUE AL TÍTULO ──
+  // Regla del usuario (2026-09-08, "cambia el slug, esta mal"): al retitular,
+  // el slug se regenera del título nuevo. No es un `update` suelto: del slug
+  // cuelga la fila de glosas de la historia, la lista `slugs` de la fila
+  // global del bundle y el registro de muestras, y si alguna se queda atrás la
+  // historia pierde sus glosas sin que salte ningún lint.
+  //
+  // Vive aquí y no en un script aparte porque el slug es CONTENIDO de
+  // JourneyStory, y la regla dura del proyecto es que el contenido entra por
+  // este saver. Solo toca historias sin publicar y sin audio: en una publicada
+  // el slug es URL viva, y en una narrada hay copias alineadas que lo citan.
+  if (flag("slug-follows-title")) {
+    if (!journeyId) { console.error("FAIL: --slug-follows-title requiere --journey <id>."); process.exit(2); }
+    const prisma = new PrismaClient();
+    try {
+      const plan: { id: string; antes: string; ahora: string; titulo: string }[] = [];
+      const problemas: string[] = [];
+      for (const d of stories) {
+        const slot = await prisma.journeyStory.findFirst({
+          where: { journeyId, topic: d.topic, slotIndex: d.slotIndex },
+          select: { id: true, slug: true, title: true, status: true, audioUrl: true, audioWordTimings: true },
+        });
+        if (!slot) { problemas.push(`sin slot para ${d.topic}#${d.slotIndex}`); continue; }
+        const nombre = slot.slug ?? slot.id;
+        if (slot.status !== "draft") { problemas.push(`${nombre}: status ${slot.status}; el slug de una publicada es URL viva`); continue; }
+        if (slot.audioUrl || slot.audioWordTimings) { problemas.push(`${nombre}: narrada; hay copias alineadas que citan el slug`); continue; }
+        if (!slot.title) { problemas.push(`${nombre}: sin título`); continue; }
+        const nuevo = slugify(slot.title);
+        if (!nuevo) { problemas.push(`${nombre}: el título no da slug`); continue; }
+        if (nuevo === slot.slug) continue;
+        plan.push({ id: slot.id, antes: slot.slug ?? "", ahora: nuevo, titulo: slot.title });
+      }
+
+      // Choques en TODA la base, no solo en este journey: los bundles del mismo
+      // idioma comparten espacio de slug y una colisión silenciosa mezcla las
+      // glosas de dos historias.
+      const nuevos = plan.map((p) => p.ahora);
+      if (nuevos.length !== new Set(nuevos).size) problemas.push("dos títulos del lote dan el mismo slug");
+      const chocaHistoria = await prisma.journeyStory.findMany({
+        where: { slug: { in: nuevos }, id: { notIn: plan.map((p) => p.id) } },
+        select: { slug: true, journeyId: true },
+      });
+      for (const c of chocaHistoria) problemas.push(`el slug "${c.slug}" ya existe en journeyStory (journey ${c.journeyId})`);
+      const viejos = new Set(plan.map((p) => p.antes));
+      const chocaGlosas = await prisma.tapGlossSet.findMany({
+        where: { slug: { in: nuevos } }, select: { bundle: true, slug: true },
+      });
+      for (const c of chocaGlosas) if (!viejos.has(c.slug)) problemas.push(`el slug "${c.slug}" ya existe en tapGlossSet (${c.bundle})`);
+
+      if (problemas.length) {
+        console.error(`✗ [slug-follows-title] ${problemas.length} problema(s). NOTHING WRITTEN.`);
+        for (const p of problemas) console.error(`   FAIL ${p}`);
+        process.exit(1);
+      }
+      console.log(`[slug-follows-title] ${plan.length}/${stories.length} slugs que cambiar.`);
+      for (const p of plan) console.log(`  · "${p.titulo}": ${p.antes} -> ${p.ahora}`);
+      if (dry) { console.log("--dry: no DB write."); return; }
+
+      const MUESTRAS = "scripts/a2-muestras.json";
+      const muestras: Record<string, unknown> = fs.existsSync(MUESTRAS)
+        ? JSON.parse(fs.readFileSync(MUESTRAS, "utf8")) : {};
+      let muestrasTocadas = false;
+
+      for (const p of plan) {
+        await prisma.journeyStory.update({ where: { id: p.id }, data: { slug: p.ahora } });
+        // La fila de glosas de la historia y la lista de la fila global.
+        const filas = await prisma.tapGlossSet.findMany({
+          where: { OR: [{ slug: p.antes }, { slugs: { has: p.antes } }] },
+          select: { bundle: true, slug: true, slugs: true },
+        });
+        for (const f of filas) {
+          if (f.slug === p.antes) {
+            await prisma.tapGlossSet.update({
+              where: { bundle_slug: { bundle: f.bundle, slug: p.antes } }, data: { slug: p.ahora },
+            });
+          }
+          if (f.slugs?.includes(p.antes)) {
+            await prisma.tapGlossSet.update({
+              where: { bundle_slug: { bundle: f.bundle, slug: f.slug } },
+              data: { slugs: f.slugs.map((s) => (s === p.antes ? p.ahora : s)) },
+            });
+          }
+        }
+        if (p.antes in muestras) {
+          muestras[p.ahora] = muestras[p.antes];
+          delete muestras[p.antes];
+          muestrasTocadas = true;
+        }
+        console.log(`  ✓ ${p.antes} -> ${p.ahora}`);
+      }
+      if (muestrasTocadas) fs.writeFileSync(MUESTRAS, `${JSON.stringify(muestras, null, 2)}\n`);
+      console.log(`[slug-follows-title] ${plan.length} slugs actualizados, con sus glosas.`);
+    } finally {
+      await prisma.$disconnect();
+    }
+    return;
+  }
+
   // ── GATE: canonical validator, in-process, zero tolerance ──
   // Each story is validated against its already-validated SIBLINGS in this
   // batch (vocab-repetition, arcType-rotation, opening-rhythm, motif and

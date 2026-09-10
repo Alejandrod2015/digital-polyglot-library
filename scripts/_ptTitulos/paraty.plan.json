@@ -1,0 +1,34 @@
+{
+  "tipo": "Traveler",
+  "nivel": "b1",
+  "variante": "brazil",
+  "registro": "seco y maritimo: mareas, favores que no se cobran, frases cortas de gente que se ve todos los meses",
+  "espina": "Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. En esta parada descubre que en su ruta nueva no se paga con dinero, y que deber algo es la forma que tiene la gente de asegurarse de que vuelvas.",
+  "recursos": "B1: reversa cosida y cambio de ritmo. Heredados: repeticion ritmica, contraste con pero e imagen concreta (A0); causalidad explicita, humor de situacion y gancho final literal (A1); simil simple y espejo concreto (A2). Sin ironia, subtexto, aforismo ni elipsis, que son B2.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "cruzar a la isla y volver el mismo dia para no pagar otra noche",
+      "impide": "la lancha de linea no sale con marea baja y ella no lo sabia",
+      "cuesta": "los cuarenta reales de la noche extra, que ya no recupera",
+      "cambia": "acepta que un desconocido la cruce gratis, cosa que no habria hecho en Sao Paulo",
+      "emocion": "incomodidad de deber algo; se le ve en que insiste tres veces con el dinero en la mano"
+    },
+    {
+      "slot": "2",
+      "quiere": "pagar el favor de ayer y quedar en paz",
+      "impide": "aqui el dinero por un favor ofende, y ella no conoce la moneda con la que se paga",
+      "cuesta": "su idea de estar en paz con la gente de la ruta; se queda debiendo y tiene que aguantarlo",
+      "cambia": "entiende que la deuda no se cierra, se devuelve mas tarde y de otra forma",
+      "emocion": "frustracion contenida; guarda los billetes doblados y se queda mirando el agua"
+    },
+    {
+      "slot": "3",
+      "quiere": "devolver el favor antes de irse, ahora que sabe como",
+      "impide": "no tiene barco, ni casa, ni nada que ofrecer en esta ciudad",
+      "cuesta": "la comodidad de no mezclar el trabajo con la gente: mete a Ivo en su ficha de rutas",
+      "cambia": "el favor se devuelve con clientes, y la deuda deja de pesarle",
+      "emocion": "alivio con algo de orgullo; escribe el telefono de el con letra grande y lo subraya"
+    }
+  ]
+}

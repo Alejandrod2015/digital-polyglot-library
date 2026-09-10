@@ -1,0 +1,358 @@
+[
+  {
+    "slug": "a-caucao-volta-dia-trinta",
+    "topic": "sao-paulo",
+    "slotIndex": 0,
+    "title": "O quarto que não é dela",
+    "synopsis": "Voltar de viagem e não ter onde dormir: quem alugou o cuarto tem papel até o fim do mês. Ela garante que nove dias se resolvem sozinhos. O irmão faz a conta que ela não fez, e nessa conta entra também o que ela pensava receber de volta.",
+    "text": "Rafaela, uma moça de São Paulo, volta de um mês na estrada e o quarto ainda não é dela: a inquilina tem contrato até o dia trinta. Matheus mora em Manaus, é o irmão mais velho e está de passagem. O corredor cheira a tinta fresca.\n\n“Nove dias eu resolvo”, promete Rafaela. “Resolve como? Você gastou a viagem inteira”, pergunta Matheus. Ela abre a mochila na mesa e arruma o que já está arrumado. “Fico em qualquer lugar, sai barato. Nove dias não quebram ninguém.”\n\nO contrato dá o prazo e dá também a caução. “A caução volta no dia trinta”, lê ela em voz alta. “Então você fica sem o quarto e sem o dinheiro no mesmo mês”, diz Matheus, sem levantar a voz. “Dorme aqui, Rafa.”\n\nA resposta que ela tem na ponta da língua não sai na frente do irmão; dobra a mesma camiseta outra vez e fecha a mochila. “Amanhã eu vejo”, responde Rafaela. À noite paga a diária de um quarto perto do metrô.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "caução",
+        "anchor": true,
+        "definition": "Money you leave with the landlord and get back later."
+      },
+      {
+        "type": "noun",
+        "word": "inquilina",
+        "definition": "Woman who pays rent to live in someone else's flat."
+      },
+      {
+        "type": "noun",
+        "word": "contrato",
+        "definition": "Written agreement saying what each side has to do."
+      },
+      {
+        "type": "noun",
+        "word": "prazo",
+        "definition": "The time limit you have before something ends."
+      },
+      {
+        "type": "noun",
+        "word": "mochila",
+        "definition": "Bag you carry on your back when you travel."
+      },
+      {
+        "type": "verb",
+        "word": "arrumar",
+        "surface": "arruma",
+        "definition": "To put things in order, tidy and neat."
+      },
+      {
+        "type": "noun",
+        "word": "diária",
+        "definition": "The price you pay for one night in a room."
+      },
+      {
+        "type": "noun",
+        "word": "estrada",
+        "definition": "Road that goes between towns, outside the city."
+      },
+      {
+        "type": "expression",
+        "word": "de passagem",
+        "definition": "Staying in a place for a short time only."
+      },
+      {
+        "type": "expression",
+        "word": "em voz alta",
+        "definition": "Loud enough for the other people to hear you."
+      },
+      {
+        "type": "expression",
+        "word": "levantar a voz",
+        "definition": "To speak louder because you are angry with someone."
+      },
+      {
+        "type": "expression",
+        "word": "na frente de",
+        "surface": "na frente do",
+        "definition": "In front of someone who can see and hear."
+      },
+      {
+        "type": "noun",
+        "word": "metrô",
+        "definition": "The city train that runs under the streets."
+      },
+      {
+        "type": "noun",
+        "word": "corredor",
+        "definition": "Long narrow space with doors on both sides."
+      },
+      {
+        "type": "noun",
+        "word": "tinta",
+        "definition": "Coloured liquid you put on walls to paint them."
+      },
+      {
+        "type": "adjective",
+        "word": "fresco",
+        "surface": "fresca",
+        "definition": "Just done, still new and not yet dry."
+      },
+      {
+        "type": "verb",
+        "word": "quebrar",
+        "surface": "quebram",
+        "definition": "To break something, or to leave someone without money."
+      },
+      {
+        "type": "verb",
+        "word": "gastar",
+        "surface": "gastou",
+        "definition": "To spend money until there is none left."
+      },
+      {
+        "type": "noun",
+        "word": "dinheiro",
+        "definition": "Notes and coins you use to pay for things."
+      },
+      {
+        "type": "noun",
+        "word": "mesa",
+        "definition": "Flat piece of furniture you put things on."
+      }
+    ],
+    "arcType": "reframe-turn"
+  },
+  {
+    "slug": "chuva-na-marginal",
+    "topic": "sao-paulo",
+    "slotIndex": 1,
+    "title": "Sobrou a do interior",
+    "synopsis": "Duas horas de água parada entre ela e a única coisa que queria pedir na segunda-feira. Chega tarde e a resposta já está dada. Sobra o que ninguém quis, e à tarde, sozinha com um papel aberto, ela descobre que sobrar não é o mesmo que perder.",
+    "text": "Na segunda-feira a reunião das rotas é às nove, e a agência fica do outro lado do rio. Rafaela sai com a pasta debaixo do braço às sete.\n\nNa marginal a chuva pega o trânsito parado. Um motoboy passa entre os carros e bate no retrovisor. “Foi mal, moça”, grita ele. “Tudo bem”, responde Rafaela. “Você sabe se abriu mais adiante?” “Abriu nada. Daqui até a ponte é tudo assim.”\n\nEla entra na sala às nove e vinte, com a bainha da calça encharcada.\n\n“A rota do Norte já tem dono”, diz a chefe, sem parar a pauta. “Eu subi o rio inteiro, eu conheço cada cidade”, insiste Rafaela. “Eu sei. E você chegou nove e vinte. Sobrou a do interior, se quiser.”\n\nCidade pequena, estrada de terra, hotel sem piscina: a rota que ninguém pede. Rafaela aperta o guarda-chuva molhado contra a perna. “Quero”, aceita baixinho.\n\nÀ tarde abre o mapa e conta onze cidades que nunca vendeu. Fica até tarde olhando as onze. Gosta.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "marginal",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Wide fast road along the river in São Paulo."
+      },
+      {
+        "type": "noun",
+        "word": "motoboy",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Man who delivers things on a motorbike through traffic."
+      },
+      {
+        "type": "noun",
+        "word": "trânsito",
+        "definition": "All the cars moving or stopped on city streets."
+      },
+      {
+        "type": "noun",
+        "word": "retrovisor",
+        "definition": "Small mirror that shows the driver what is behind."
+      },
+      {
+        "type": "adjective",
+        "word": "encharcado",
+        "surface": "encharcada",
+        "definition": "So wet that water has gone through the cloth."
+      },
+      {
+        "type": "noun",
+        "word": "bainha",
+        "definition": "Folded edge at the bottom of trousers or skirt."
+      },
+      {
+        "type": "noun",
+        "word": "pauta",
+        "definition": "List of points a meeting has to get through."
+      },
+      {
+        "type": "noun",
+        "word": "chefe",
+        "definition": "The person who leads the team and decides things."
+      },
+      {
+        "type": "noun",
+        "word": "rota",
+        "definition": "The planned way a trip goes from place to place."
+      },
+      {
+        "type": "noun",
+        "word": "pasta",
+        "definition": "Flat case for carrying work papers under your arm."
+      },
+      {
+        "type": "noun",
+        "word": "guarda-chuva",
+        "definition": "Thing you open over your head against the rain."
+      },
+      {
+        "type": "noun",
+        "word": "piscina",
+        "definition": "Big pool of water built for people to swim."
+      },
+      {
+        "type": "noun",
+        "word": "interior",
+        "definition": "The small towns away from the coast and capital."
+      },
+      {
+        "type": "noun",
+        "word": "mapa",
+        "definition": "Drawing of an area showing roads, towns and rivers."
+      },
+      {
+        "type": "verb",
+        "word": "apertar",
+        "surface": "aperta",
+        "definition": "To press something hard against your body or a surface."
+      },
+      {
+        "type": "adverb",
+        "word": "baixinho",
+        "definition": "In a very quiet voice, almost without being heard."
+      },
+      {
+        "type": "expression",
+        "word": "foi mal",
+        "register": "colloquial",
+        "definition": "Casual way to say sorry for a small mistake."
+      },
+      {
+        "type": "adjective",
+        "word": "molhado",
+        "definition": "With water on it, not dry any more."
+      },
+      {
+        "type": "noun",
+        "word": "calça",
+        "definition": "Clothing that covers your legs, from waist to feet."
+      },
+      {
+        "type": "verb",
+        "word": "vender",
+        "surface": "vendeu",
+        "definition": "To give something to a buyer in return for money."
+      }
+    ],
+    "arcType": "juxtaposition-discovery"
+  },
+  {
+    "slug": "tchau-no-engarrafamento",
+    "topic": "sao-paulo",
+    "slotIndex": 2,
+    "title": "Desce no acostamento",
+    "synopsis": "Uma hora e meia de carro parado para dizer o que cabe em trinta segundos. Ele tem voo, ela tem turno, e a estrada do aeroporto decide pelos dois. Quando ele resolve o problema do jeito dele, com os pés, sobra pela janela uma frase bem mais curta do que a que ela tinha guardado, e essa serve para dezembro.",
+    "text": "O avião de Matheus é às seis da manhã e o turno de Rafaela começa às sete. Os dois saem às quatro, no carro emprestado de uma colega.\n\nNa estrada do aeroporto um caminhão tombou e o engarrafamento não anda. “Dá tempo”, diz Matheus, sem olhar o relógio. “Dá”, responde Rafaela. “E se não der, você pega o das nove.” “Não pego. Amanhã sai barco.”\n\nQuarenta minutos parados. “Na temporada de chuva o rio sobe até a escada de casa”, conta ele. “Até a escada mesmo?”, pergunta ela. Ele responde duas vezes, porque ela pergunta duas vezes.\n\nA despedida acontece ali dentro, no carro parado. “Daqui eu vou a pé, chego antes”, avisa Matheus, e pega a mochila no banco de trás. Ela liga o pisca-alerta e ele desce no acostamento.\n\nO carro de trás buzina. Ela ri de uma coisa que não tem graça, porque o que quer dizer não cabe numa janela, e grita: “Guarda um lugar em dezembro.” Ele levanta o polegar e some entre os carros.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "engarrafamento",
+        "anchor": true,
+        "definition": "Long line of cars that stops moving on the road."
+      },
+      {
+        "type": "noun",
+        "word": "acostamento",
+        "anchor": true,
+        "definition": "Strip at the side of a road for stopping."
+      },
+      {
+        "type": "noun",
+        "word": "pisca-alerta",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Car lights that blink to warn the drivers behind."
+      },
+      {
+        "type": "noun",
+        "word": "caminhão",
+        "definition": "Big vehicle that carries goods along the roads."
+      },
+      {
+        "type": "verb",
+        "word": "tombar",
+        "surface": "tombou",
+        "definition": "To fall over onto one side and stay there."
+      },
+      {
+        "type": "verb",
+        "word": "buzinar",
+        "surface": "buzina",
+        "definition": "To make the horn of your car sound."
+      },
+      {
+        "type": "noun",
+        "word": "polegar",
+        "definition": "The short thick finger at the side of the hand."
+      },
+      {
+        "type": "noun",
+        "word": "temporada",
+        "definition": "The part of the year when something always happens."
+      },
+      {
+        "type": "noun",
+        "word": "turno",
+        "definition": "The hours you work before someone else takes over."
+      },
+      {
+        "type": "noun",
+        "word": "despedida",
+        "definition": "The moment when people say goodbye before someone leaves."
+      },
+      {
+        "type": "noun",
+        "word": "colega",
+        "definition": "Someone you work with, but not a close friend."
+      },
+      {
+        "type": "adjective",
+        "word": "emprestado",
+        "definition": "Given to you for a while, to give back later."
+      },
+      {
+        "type": "noun",
+        "word": "graça",
+        "definition": "The funny side of something that makes people laugh."
+      },
+      {
+        "type": "verb",
+        "word": "caber",
+        "surface": "cabe",
+        "definition": "To fit inside a space, with room enough for it."
+      },
+      {
+        "type": "verb",
+        "word": "sumir",
+        "surface": "some",
+        "definition": "To go out of sight so nobody can see."
+      },
+      {
+        "type": "expression",
+        "word": "a pé",
+        "definition": "Walking, without a car, bus or any transport."
+      },
+      {
+        "type": "expression",
+        "word": "banco de trás",
+        "definition": "The seat at the back of a car."
+      },
+      {
+        "type": "noun",
+        "word": "janela",
+        "definition": "Opening in a wall or car that lets light in."
+      },
+      {
+        "type": "verb",
+        "word": "rir",
+        "surface": "ri",
+        "definition": "To laugh, showing that something seems funny to you."
+      },
+      {
+        "type": "noun",
+        "word": "chuva",
+        "definition": "Water that falls from the clouds onto the streets."
+      }
+    ],
+    "arcType": "late-reveal"
+  }
+]

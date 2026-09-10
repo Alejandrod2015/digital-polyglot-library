@@ -1,0 +1,34 @@
+{
+  "tipo": "Traveler",
+  "nivel": "b1",
+  "variante": "brazil",
+  "registro": "calido y ruidoso: mesa larga, comida que no para de llegar, gente que insiste hasta que aceptas",
+  "espina": "Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. Con la ruta del interior aprende que el trato no se cierra en la oficina sino en la mesa, y eso la obliga a quedarse mas de lo que tenia previsto.",
+  "recursos": "B1: reversa cosida y cambio de ritmo. Heredados: repeticion ritmica, contraste con pero e imagen concreta (A0); causalidad explicita, humor de situacion y gancho final literal (A1); simil simple y espejo concreto (A2). Sin ironia, subtexto, aforismo ni elipsis, que son B2.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "cerrar el acuerdo con la posada y coger el autobus de las dos",
+      "impide": "la duena no habla de precios antes de comer, y ya estan poniendo la mesa",
+      "cuesta": "el autobus de las dos, y con el la noche en su propia cama",
+      "cambia": "entiende que aqui el trato se firma despues del cafe, no antes",
+      "emocion": "prisa disimulada; mira el reloj por debajo de la mesa y se rie de un chiste que no ha entendido"
+    },
+    {
+      "slot": "2",
+      "quiere": "quedar bien sin comer mas, porque lleva dos horas comiendo",
+      "impide": "en esta mesa rechazar un plato es rechazar a quien lo hizo",
+      "cuesta": "la tarde entera y la ropa que le queda apretada para el vuelo",
+      "cambia": "aprende la formula exacta para decir que no sin ofender",
+      "emocion": "agobio con carino; se afloja el cinturon por debajo del mantel y sigue sonriendo"
+    },
+    {
+      "slot": "3",
+      "quiere": "irse con el acuerdo firmado y nada mas",
+      "impide": "la familia le prepara una caja de comida para el camino",
+      "cuesta": "el orgullo de no deber nada: acepta la caja y no puede devolver el gesto",
+      "cambia": "apunta la posada como parada fija de la ruta, no como cliente suelto",
+      "emocion": "verguenza agradecida; carga la caja con las dos manos y no encuentra donde mirar"
+    }
+  ]
+}

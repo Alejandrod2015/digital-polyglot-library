@@ -1,0 +1,356 @@
+[
+  {
+    "slug": "a-cota-do-dia",
+    "topic": "fernando-de-noronha",
+    "slotIndex": 0,
+    "title": "A cota é oito por ponto",
+    "synopsis": "Veinte plazas de buceo para la temporada alta parecen una llamada de diez minutos. La isla tiene cuota diaria y pide un papel que la agencia no tiene, y el papel tarda dos dias. Lo que Rafaela deja de vender esa semana le cambia la forma de nombrar el sitio en el folleto.",
+    "text": "Nara, uma instrutora de mergulho da ilha, atende com o cilindro ainda pingando e cheiro de sal na sala. Rafaela vende essa rota desde o ano passado.\n\n“Quero vinte lugares para dezembro”, pede Rafaela. “A cota do dia é oito pessoas por ponto de mergulho.” “E se eu dividir em três dias?” “Aí dá. Mas precisa de credenciamento.”\n\nO credenciamento sai em dois dias úteis e cobra taxa de preservação por pessoa. Ninguém entra na água sem ele, nem a agência mais antiga da ilha.\n\nRafaela preenche o formulário em pé, apoiada na bancada, sem sentar. Atrás dela, no mural, um edital antigo lista as agências do ano passado.\n\n“Isso é sempre assim?” “Desde que a ilha tem cota. Antes vinha embarcação demais e o coral pagou.” Rafaela vende dez em vez de vinte, e escreve na ficha, embaixo do preço: em Noronha, tudo tem dia e hora marcada.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "cota",
+        "anchor": true,
+        "definition": "The number of people allowed in on one day."
+      },
+      {
+        "type": "noun",
+        "word": "mergulho",
+        "anchor": true,
+        "definition": "Going down under the water with air on your back."
+      },
+      {
+        "type": "noun",
+        "word": "instrutora",
+        "definition": "Woman who teaches and leads people under the water."
+      },
+      {
+        "type": "noun",
+        "word": "cilindro",
+        "definition": "Metal bottle of air carried on a diver's back."
+      },
+      {
+        "type": "noun",
+        "word": "credenciamento",
+        "anchor": true,
+        "definition": "Official paper that lets an agency sell trips here."
+      },
+      {
+        "type": "noun",
+        "word": "preservação",
+        "definition": "Keeping a place as it is so that it lasts."
+      },
+      {
+        "type": "noun",
+        "word": "formulário",
+        "definition": "Printed page with boxes that you have to fill in."
+      },
+      {
+        "type": "noun",
+        "word": "taxa",
+        "definition": "Small fixed sum that you have to pay to enter."
+      },
+      {
+        "type": "noun",
+        "word": "coral",
+        "definition": "Hard living rock under the sea that fish live around."
+      },
+      {
+        "type": "noun",
+        "word": "bancada",
+        "definition": "Long high counter that you stand at to be served."
+      },
+      {
+        "type": "noun",
+        "word": "mural",
+        "definition": "Board on a wall where notices are pinned up."
+      },
+      {
+        "type": "noun",
+        "word": "edital",
+        "definition": "Official notice that lists who is allowed in."
+      },
+      {
+        "type": "adjective",
+        "word": "útil",
+        "surface": "úteis",
+        "definition": "Working, counted only from Monday through to Friday."
+      },
+      {
+        "type": "verb",
+        "word": "preencher",
+        "surface": "preenche",
+        "definition": "To write your details into the boxes of a form."
+      },
+      {
+        "type": "verb",
+        "word": "dividir",
+        "surface": "dividir",
+        "definition": "To split one group up into smaller parts."
+      },
+      {
+        "type": "adjective",
+        "word": "apoiado",
+        "surface": "apoiada",
+        "definition": "Leaning on something in order to stay upright."
+      },
+      {
+        "type": "adjective",
+        "word": "marcado",
+        "surface": "marcada",
+        "definition": "Fixed in advance, with a set day and hour."
+      },
+      {
+        "type": "noun",
+        "word": "embarcação",
+        "definition": "Boat that carries divers out to the dive points."
+      },
+      {
+        "type": "noun",
+        "word": "sal",
+        "definition": "Salt, what the sea leaves in the air and on skin."
+      },
+      {
+        "type": "noun",
+        "word": "sala",
+        "definition": "Room where the diving office does its paperwork."
+      }
+    ],
+    "arcType": "reframe-turn"
+  },
+  {
+    "slug": "tartaruga-na-desova",
+    "topic": "fernando-de-noronha",
+    "slotIndex": 1,
+    "title": "O recife do folheto",
+    "synopsis": "El arrecife de la foto esta a veinte minutos de barco y el grupo ya tiene el traje puesto. Una tortuga cambia el punto de inmersion esa manana, y nadie discute. Debajo del agua no se puede hablar, que es donde Rafaela se traga lo que iba a decir.",
+    "text": "Na embarcação das oito, com o motor quente embaixo do banco, Rafaela ouve o briefing, que dura mais que a viagem. Nara desenha o ponto na prancheta e risca o antigo, com o aviso do dia preso ao lado.\n\n“Hoje não vamos ao recife do folheto.” “Por quê? Meu grupo pagou por aquele”, responde Rafaela. “Tem tartaruga em desova. Fica proibido por quinze dias.”\n\n“Quinze dias?” “Quinze. E depois abre de novo, se a desova acabar bem.” Rafaela abre a boca e fecha. Nara confere a pulseira e a credencial de cada um, um por um, e libera o lote das nove.\n\nDescem, e embaixo da água ninguém fala: só bolha, cardume pequeno e visibilidade curta.\n\nNa superfície, uma cliente sobe rindo com a máscara na mão: “Vi um golfinho no caminho.” Rafaela não corrige e não menciona o recife. No barco Nara mostra a foto de um ninho aberto.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "desova",
+        "anchor": true,
+        "definition": "When a turtle lays her eggs in the sand."
+      },
+      {
+        "type": "noun",
+        "word": "tartaruga",
+        "anchor": true,
+        "definition": "Sea animal with a hard shell that lays eggs ashore."
+      },
+      {
+        "type": "noun",
+        "word": "ninho",
+        "definition": "Hole in the sand where the eggs are left."
+      },
+      {
+        "type": "noun",
+        "word": "recife",
+        "anchor": true,
+        "definition": "Line of rock and coral under the sea near shore."
+      },
+      {
+        "type": "noun",
+        "word": "briefing",
+        "anchor": true,
+        "register": "colloquial",
+        "definition": "Short talk before a dive, saying what will happen."
+      },
+      {
+        "type": "noun",
+        "word": "prancheta",
+        "definition": "Flat board you write and draw on with the hand."
+      },
+      {
+        "type": "noun",
+        "word": "visibilidade",
+        "definition": "How far you can see through the water."
+      },
+      {
+        "type": "noun",
+        "word": "cardume",
+        "definition": "Group of fish swimming together in one shape."
+      },
+      {
+        "type": "noun",
+        "word": "bolha",
+        "definition": "Ball of air that goes up from a diver."
+      },
+      {
+        "type": "noun",
+        "word": "máscara",
+        "definition": "Glass piece over eyes and nose for seeing underwater."
+      },
+      {
+        "type": "noun",
+        "word": "golfinho",
+        "definition": "Grey sea animal that swims beside the boats."
+      },
+      {
+        "type": "noun",
+        "word": "superfície",
+        "definition": "The top of the water, where you can breathe."
+      },
+      {
+        "type": "adjective",
+        "word": "proibido",
+        "definition": "Not allowed, closed off by a rule for now."
+      },
+      {
+        "type": "verb",
+        "word": "desenhar",
+        "surface": "desenha",
+        "definition": "To draw lines that show where a place is."
+      },
+      {
+        "type": "verb",
+        "word": "corrigir",
+        "surface": "corrige",
+        "definition": "To tell somebody they have got it wrong."
+      },
+      {
+        "type": "verb",
+        "word": "mencionar",
+        "surface": "menciona",
+        "definition": "To say the name of a thing out loud."
+      },
+      {
+        "type": "noun",
+        "word": "pulseira",
+        "definition": "Band worn on the wrist to show you may enter."
+      },
+      {
+        "type": "noun",
+        "word": "aviso",
+        "definition": "Short notice telling people what has changed today."
+      },
+      {
+        "type": "noun",
+        "word": "credencial",
+        "definition": "Card that shows who you are and what you may do."
+      },
+      {
+        "type": "noun",
+        "word": "lote",
+        "definition": "Group of places sold or handed out together."
+      }
+    ],
+    "arcType": "daily-encounter"
+  },
+  {
+    "slug": "sorteio-para-dezembro",
+    "topic": "fernando-de-noronha",
+    "slotIndex": 2,
+    "title": "Ninguém tem vaga garantida",
+    "synopsis": "Cerrar el ano con la isla dentro de la ruta fija depende de un sorteo que Rafaela no controla. Ella llega con la ficha lista para escribir seguro y se va escribiendo otra cosa. La ruta alternativa que prepara esa tarde es la primera que escribe sin saber si le hara falta.",
+    "text": "O credenciamento do ano seguinte sai por sorteio, e o resultado sai em agosto. No galpão, com cheiro de mofo, o ventilador range e ninguém desliga.\n\n“Sorteio mesmo?”, pergunta Rafaela. “Sorteio. Ninguém tem vaga garantida aqui, nem eu.” “E a inscrição?” “Abre em junho. Depois vem a convocação, se sair.”\n\nNo parapeito tem uma lista pregada com percevejo: agências que saíram e agências que não.\n\n“Todo ano é assim?”, pergunta Rafaela. “Todo ano.” Metade dos nomes está riscada, e a atendente cola por cima o comunicado.\n\n“E se eu não sair?” “Aí você vende outra coisa e volta em julho.”\n\nRafaela abre a ficha para escrever seguro do lado de Noronha, para a caneta no ar e escreve sorteio, com a data. Embaixo começa uma rota alternativa em outro estado: é o primeiro plano B que escreve antes de precisar.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "sorteio",
+        "anchor": true,
+        "definition": "Drawing names by chance to decide who gets in."
+      },
+      {
+        "type": "noun",
+        "word": "resultado",
+        "definition": "What comes out at the end of the drawing."
+      },
+      {
+        "type": "adjective",
+        "word": "garantido",
+        "surface": "garantida",
+        "definition": "Certain, promised in advance and not in doubt."
+      },
+      {
+        "type": "noun",
+        "word": "percevejo",
+        "definition": "Short pin used to fix paper to a board."
+      },
+      {
+        "type": "adjective",
+        "word": "pregado",
+        "surface": "pregada",
+        "definition": "Pinned or nailed onto a wall or a board."
+      },
+      {
+        "type": "adjective",
+        "word": "riscado",
+        "surface": "riscada",
+        "definition": "Crossed out with a line through the name."
+      },
+      {
+        "type": "noun",
+        "word": "agosto",
+        "definition": "August, when the result of the draw comes out."
+      },
+      {
+        "type": "noun",
+        "word": "julho",
+        "definition": "July, the other month she could come back."
+      },
+      {
+        "type": "adjective",
+        "word": "alternativo",
+        "surface": "alternativa",
+        "definition": "Second choice, ready in case the first fails."
+      },
+      {
+        "type": "noun",
+        "word": "estado",
+        "definition": "One of the parts the country is divided into."
+      },
+      {
+        "type": "adjective",
+        "word": "seguinte",
+        "definition": "The next one, the year that comes after this."
+      },
+      {
+        "type": "noun",
+        "word": "plano",
+        "definition": "What you decide to do before you do it."
+      },
+      {
+        "type": "noun",
+        "word": "data",
+        "definition": "The day and month written down for something."
+      },
+      {
+        "type": "noun",
+        "word": "convocação",
+        "definition": "Official call telling those chosen to come forward."
+      },
+      {
+        "type": "noun",
+        "word": "inscrição",
+        "definition": "Putting your name down to take part in something."
+      },
+      {
+        "type": "noun",
+        "word": "parapeito",
+        "definition": "Low wall along the edge of a balcony."
+      },
+      {
+        "type": "noun",
+        "word": "comunicado",
+        "definition": "Short official message telling everybody the same thing."
+      },
+      {
+        "type": "noun",
+        "word": "atendente",
+        "definition": "Person behind the counter who deals with you."
+      },
+      {
+        "type": "noun",
+        "word": "galpão",
+        "definition": "Big shed with a metal roof, used for storage."
+      },
+      {
+        "type": "noun",
+        "word": "mofo",
+        "definition": "Damp grey growth that smells in a closed shed."
+      }
+    ],
+    "arcType": "late-reveal"
+  }
+]

@@ -1,0 +1,386 @@
+[
+  {
+    "slug": "a-caixa-que-nao-chegou",
+    "topic": "salvador",
+    "slotIndex": 0,
+    "title": "A lousa e nenhum livro",
+    "synopsis": "A escola do Pelourinho tem cadeiras, tem lousa e não tem um livro sequer, porque a caixa prometida para segunda ainda está em outro estado. A professora que veio do sul pode cancelar a primeira aula ou dar aula com o que existe na sala, e quem lhe mostra o que existe é o rapaz que varre o chão antes de todo mundo chegar.",
+    "text": "Renata, uma professora de Porto Alegre, chega cedo na escola do Pelourinho e a sala tem lousa, cadeiras e nenhum livro. A caixa não chegou. Ela abre o caderno.\n\nQuem varre a sala é Gilson, um rapaz que trabalha ali há anos. “A senhora vai dar aula assim mesmo?”, pergunta ele. “Eu tento”, responde Renata. “Se eu escrevo tudo na lousa, fica mais claro.”\n\nGilson tira um giz do bolso e escreve uma letra enorme. “Assim”, pede ele. “A turma do fundo não enxerga. Eu varro daqui de trás, eu sei.” Renata escuta e repete em voz alta.\n\nEla pega o lápis e chama cada um à frente, de três em três. “Escreve o seu”, pede. Ninguém parece à vontade, e Renata acha graça: escrevem devagar, educados, sem barulho.\n\nNo fim, o quadro e o caderno têm as mesmas dezoito palavras. “De pé é mais difícil, mas eles entendem melhor”, diz Gilson. “Amanhã a caixa chega?” “Não sei”, responde Renata. Apaga o quadro e sai.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "livro",
+        "anchor": true,
+        "definition": "Printed pages bound together that you read from start to end."
+      },
+      {
+        "type": "noun",
+        "word": "professor",
+        "anchor": true,
+        "surface": "professora",
+        "definition": "Person who teaches a class at a school or university."
+      },
+      {
+        "type": "noun",
+        "word": "caderno",
+        "anchor": true,
+        "definition": "Notebook with blank pages where you write notes by hand."
+      },
+      {
+        "type": "noun",
+        "word": "lápis",
+        "anchor": true,
+        "definition": "Thin wooden stick with grey lead used for writing."
+      },
+      {
+        "type": "noun",
+        "word": "turma",
+        "anchor": true,
+        "definition": "Group of students who take the same class together."
+      },
+      {
+        "type": "noun",
+        "word": "lousa",
+        "anchor": true,
+        "definition": "Dark board on the classroom wall for writing on."
+      },
+      {
+        "type": "verb",
+        "word": "escutar",
+        "surface": "escuta",
+        "definition": "To listen, pay attention to a sound on purpose."
+      },
+      {
+        "type": "verb",
+        "word": "repetir",
+        "surface": "repete",
+        "definition": "To say or do the same thing another time."
+      },
+      {
+        "type": "verb",
+        "word": "entender",
+        "surface": "entendem",
+        "definition": "To understand, get the meaning of words or situations."
+      },
+      {
+        "type": "verb",
+        "word": "perguntar",
+        "surface": "pergunta",
+        "definition": "To ask someone a question and wait for an answer."
+      },
+      {
+        "type": "verb",
+        "word": "responder",
+        "surface": "responde",
+        "definition": "To answer, give words back to someone who asked."
+      },
+      {
+        "type": "verb",
+        "word": "escrever",
+        "surface": "escrevo",
+        "definition": "To put words on paper or on a screen."
+      },
+      {
+        "type": "verb",
+        "word": "achar",
+        "surface": "acha",
+        "definition": "To think something, or to find what you looked for."
+      },
+      {
+        "type": "verb",
+        "word": "parecer",
+        "surface": "parece",
+        "definition": "To seem a certain way to whoever is looking."
+      },
+      {
+        "type": "adjective",
+        "word": "difícil",
+        "definition": "Hard to do or understand; it costs you effort."
+      },
+      {
+        "type": "adjective",
+        "word": "claro",
+        "definition": "Easy to understand, with nothing hidden or confusing."
+      },
+      {
+        "type": "adjective",
+        "word": "educado",
+        "surface": "educados",
+        "definition": "Polite, careful not to make anyone else feel bad."
+      },
+      {
+        "type": "adverb",
+        "word": "cedo",
+        "definition": "Early, before the usual hour that something happens."
+      },
+      {
+        "type": "verb",
+        "word": "chamar",
+        "surface": "chama",
+        "definition": "To call someone or something by name or by voice."
+      },
+      {
+        "type": "verb",
+        "word": "tentar",
+        "surface": "tento",
+        "definition": "To try, make an effort without knowing the result."
+      }
+    ],
+    "arcType": "juxtaposition-discovery"
+  },
+  {
+    "slug": "um-livro-de-contos",
+    "topic": "salvador",
+    "slotIndex": 1,
+    "title": "O preço, não a ideia",
+    "synopsis": "Na livraria da ladeira sobrou um exemplar e há duas pessoas que o querem pelo mesmo motivo, cada uma convencida de que a outra precisa mais. Nenhum dos dois cede na porta da loja, e o acordo que sai dali no fim da tarde troca de lugar quem ensina e quem aprende dentro da escola.",
+    "text": "A livraria da ladeira cheira a papel guardado. Tem um exemplar só do livro de contos, e Gilson chega primeiro; Renata para na porta.\n\n“Leva a senhora”, diz ele, gentil, e estende o livro. “Eu leio devagar. Você lê direto”, responde Renata. “Leva você.”\n\nEle não aceita. “É pra turma, não é pra mim”, explica. “Ler alto é mais fácil quando alguém corrige.” Renata recusa mais uma vez. Os dois são teimosos.\n\n“Faz assim”, insiste Gilson. “A senhora compra. Eu leio um conto por semana, e a senhora me diz onde eu erro.” Ela discute o preço, não a ideia. Ele é esperto: convence sem levantar a voz.\n\nNa caixa, Renata acha a régua e a borracha no fundo da bolsa, conta as moedas e paga.\n\nDepois lembra da primeira aula e escreve uma linha nova no caderno. Não é uma palavra: hoje a aluna é ela, uma estudante com um professor que varre salas.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "livraria",
+        "anchor": true,
+        "definition": "Shop that sells books, often with a table for readers."
+      },
+      {
+        "type": "noun",
+        "word": "conto",
+        "anchor": true,
+        "surface": "contos",
+        "definition": "Short story you can read in one single sitting."
+      },
+      {
+        "type": "noun",
+        "word": "borracha",
+        "anchor": true,
+        "definition": "Small rubber block that removes pencil marks from paper."
+      },
+      {
+        "type": "noun",
+        "word": "régua",
+        "anchor": true,
+        "definition": "Flat strip with numbers for drawing straight lines."
+      },
+      {
+        "type": "noun",
+        "word": "estudante",
+        "anchor": true,
+        "definition": "Person who studies, at school or on their own."
+      },
+      {
+        "type": "noun",
+        "word": "aluna",
+        "anchor": true,
+        "definition": "Female student of a particular teacher or class."
+      },
+      {
+        "type": "verb",
+        "word": "ler",
+        "surface": "leio",
+        "definition": "To go through written words and get their meaning."
+      },
+      {
+        "type": "verb",
+        "word": "contar",
+        "surface": "conta",
+        "definition": "To count things one by one, or to tell something."
+      },
+      {
+        "type": "verb",
+        "word": "explicar",
+        "surface": "explica",
+        "definition": "To make something clear so another person understands it."
+      },
+      {
+        "type": "verb",
+        "word": "insistir",
+        "surface": "insiste",
+        "definition": "To keep asking or saying something after a refusal."
+      },
+      {
+        "type": "verb",
+        "word": "recusar",
+        "surface": "recusa",
+        "definition": "To say no to something offered or asked of you."
+      },
+      {
+        "type": "verb",
+        "word": "convencer",
+        "surface": "convence",
+        "definition": "To make someone change their mind and finally agree."
+      },
+      {
+        "type": "verb",
+        "word": "discutir",
+        "surface": "discute",
+        "definition": "To argue about something, each side holding a position."
+      },
+      {
+        "type": "adjective",
+        "word": "esperto",
+        "definition": "Quick to see how things work and use that."
+      },
+      {
+        "type": "adjective",
+        "word": "teimoso",
+        "surface": "teimosos",
+        "definition": "Stubborn, unwilling to change a decision once it is made."
+      },
+      {
+        "type": "adjective",
+        "word": "gentil",
+        "definition": "Kind in a small, everyday way toward other people."
+      },
+      {
+        "type": "adjective",
+        "word": "fácil",
+        "definition": "Simple to do; it takes little effort from you."
+      },
+      {
+        "type": "adverb",
+        "word": "direto",
+        "definition": "Straight through, without stopping or going around anything."
+      },
+      {
+        "type": "verb",
+        "word": "dizer",
+        "surface": "diz",
+        "definition": "To say something out loud to another person."
+      },
+      {
+        "type": "verb",
+        "word": "lembrar",
+        "surface": "lembra",
+        "definition": "To bring a past thing back into your mind."
+      }
+    ],
+    "arcType": "reframe-turn"
+  },
+  {
+    "slug": "ninguem-sabe-do-exame",
+    "topic": "salvador",
+    "slotIndex": 2,
+    "title": "A ladeira na sexta",
+    "synopsis": "O rapaz que varre a sala guarda uma prova para sexta de manhã e não contou a ninguém dentro da escola, nem à professora que já o viu estudar. A escada da biblioteca vira sala de ensaio quando as luzes se apagam, mas quem espera na sexta com o caderno aberto não recebe resposta nenhuma.",
+    "text": "Gilson quer entrar na faculdade e o exame é na sexta. Não contou a ninguém.\n\nRenata descobre por acaso, na biblioteca, quando ele fecha o caderno rápido demais. “Você estuda pra quê?”, ela pergunta. “Pra universidade. Letras.” “Você quer ensinar idioma?” “Quero.”\n\nA sala fica escura às seis e a biblioteca fecha. Eles saem e ensaiam a prova oral na escada. Renata inventa perguntas; ele responde. “Outra vez”, ela pede quando ele esquece uma palavra. “Devagar. Eu ouço.”\n\n“Falar eu já falo. Escrever certo é outra coisa”, diz ele na terceira errada. “Não vou conseguir.” “Vai”, responde Renata. “Você aprendeu esta escola inteira sozinho, e aprender é o que você faz melhor.” Gilson é o único aluno dali que ela não conhece de sala.\n\nNa sexta ele cumprimenta a turma de longe, com a pasta debaixo do braço, e some na ladeira. Renata não sabe o resultado, mas conhece o rapaz o bastante para acreditar que sim. Escreve o nome dele e a data, e deixa a linha aberta.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "biblioteca",
+        "anchor": true,
+        "definition": "Public room full of books you can read or borrow."
+      },
+      {
+        "type": "noun",
+        "word": "universidade",
+        "anchor": true,
+        "definition": "Place where adults study for a degree after school."
+      },
+      {
+        "type": "noun",
+        "word": "faculdade",
+        "anchor": true,
+        "definition": "One school inside a university, for one field of study."
+      },
+      {
+        "type": "noun",
+        "word": "exame",
+        "anchor": true,
+        "definition": "Test that decides whether you pass or get a place."
+      },
+      {
+        "type": "noun",
+        "word": "aluno",
+        "anchor": true,
+        "definition": "Male student who belongs to a particular teacher's class."
+      },
+      {
+        "type": "noun",
+        "word": "idioma",
+        "anchor": true,
+        "definition": "A language, such as Portuguese, English or Spanish."
+      },
+      {
+        "type": "verb",
+        "word": "aprender",
+        "surface": "aprendeu",
+        "definition": "To take in knowledge or a skill you did not have."
+      },
+      {
+        "type": "verb",
+        "word": "ensinar",
+        "definition": "To teach, give someone knowledge they did not have."
+      },
+      {
+        "type": "verb",
+        "word": "estudar",
+        "surface": "estuda",
+        "definition": "To work on a subject until you know it."
+      },
+      {
+        "type": "verb",
+        "word": "falar",
+        "surface": "falo",
+        "definition": "To speak, use your voice to say things."
+      },
+      {
+        "type": "verb",
+        "word": "ouvir",
+        "surface": "ouço",
+        "definition": "To hear a sound, or to listen to someone."
+      },
+      {
+        "type": "verb",
+        "word": "esquecer",
+        "surface": "esquece",
+        "definition": "To lose something from your memory without meaning to."
+      },
+      {
+        "type": "verb",
+        "word": "conseguir",
+        "definition": "To manage to do something difficult you were trying."
+      },
+      {
+        "type": "verb",
+        "word": "acreditar",
+        "definition": "To think something is true even without any proof."
+      },
+      {
+        "type": "verb",
+        "word": "ensaiar",
+        "surface": "ensaiam",
+        "definition": "To practise something before doing it for real."
+      },
+      {
+        "type": "verb",
+        "word": "inventar",
+        "surface": "inventa",
+        "definition": "To make something up that did not exist before."
+      },
+      {
+        "type": "verb",
+        "word": "cumprimentar",
+        "surface": "cumprimenta",
+        "definition": "To greet someone with words or a small gesture."
+      },
+      {
+        "type": "verb",
+        "word": "conhecer",
+        "surface": "conhece",
+        "definition": "To know a person or place from real experience."
+      },
+      {
+        "type": "adjective",
+        "word": "certo",
+        "definition": "Right, the way something is supposed to be."
+      },
+      {
+        "type": "adjective",
+        "word": "escuro",
+        "surface": "escura",
+        "definition": "Dark, with little or no light to see by."
+      }
+    ],
+    "arcType": "mini-cliffhanger"
+  }
+]

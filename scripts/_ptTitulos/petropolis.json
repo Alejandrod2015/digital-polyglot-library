@@ -1,0 +1,381 @@
+[
+  {
+    "slug": "o-carregador-queimou",
+    "topic": "petropolis",
+    "slotIndex": 0,
+    "title": "Um genérico até segunda",
+    "synopsis": "O que a mantém trabalhando de qualquer cidade cabe num cabo de dois metros, e esse cabo parou na véspera da única chamada do mês com quem lhe paga. O substituto que ela pediu está a três quarteirões e atrás de uma porta que só abre na segunda-feira de manhã.",
+    "text": "Em Petrópolis faz frio de manhã. Renata trabalha para uma empresa que nunca viu, e o carregador do notebook dela parou de funcionar ontem à noite. Amanhã tem reunião.\n\nWilson trabalha na loja de informática da rua do meio. “Esse modelo eu não tenho”, responde ele, e liga o computador dela na tomada da bancada. “Tem um genérico caro e um barato”, avisa.\n\n“O barato queima em três meses. O caro dura, mas custa o triplo.” Renata pediu outro pela internet e pergunta pelo correio. “O correio fecha ao meio-dia e no domingo fica fechado”, diz Wilson. “A senhora recebe na segunda, se a chuva deixar.” Segunda é tarde demais.\n\nEla aceita o genérico e desliga o velho, que já não enviava carga nenhuma. Wilson confere a ponta duas vezes. “Agora testa aí”, pede ele, e ela compra sem discutir.\n\nA luz verde acende. “Funciona”, diz Renata, e guarda o carregador velho na mochila. Não é novo, mas serve até segunda.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "carregador",
+        "anchor": true,
+        "definition": "Charger, the cable that puts power back into a laptop."
+      },
+      {
+        "type": "noun",
+        "word": "notebook",
+        "anchor": true,
+        "definition": "Laptop, the computer you carry and open anywhere."
+      },
+      {
+        "type": "noun",
+        "word": "computador",
+        "anchor": true,
+        "definition": "Computer, the machine you work and write on."
+      },
+      {
+        "type": "noun",
+        "word": "correio",
+        "anchor": true,
+        "definition": "Post office, where parcels are sent and picked up."
+      },
+      {
+        "type": "noun",
+        "word": "reunião",
+        "anchor": true,
+        "definition": "Meeting, when people talk together to decide something."
+      },
+      {
+        "type": "noun",
+        "word": "empresa",
+        "anchor": true,
+        "definition": "Company, the business that pays you for your work."
+      },
+      {
+        "type": "verb",
+        "word": "funcionar",
+        "definition": "To work properly, to do what it should do."
+      },
+      {
+        "type": "verb",
+        "word": "ligar",
+        "surface": "liga",
+        "definition": "To plug something in, or to switch it on."
+      },
+      {
+        "type": "verb",
+        "word": "desligar",
+        "surface": "desliga",
+        "definition": "To unplug something, or to switch it right off."
+      },
+      {
+        "type": "verb",
+        "word": "comprar",
+        "surface": "compra",
+        "definition": "To buy something, pay money and take it away."
+      },
+      {
+        "type": "verb",
+        "word": "receber",
+        "surface": "recebe",
+        "definition": "To get something that somebody else sent to you."
+      },
+      {
+        "type": "verb",
+        "word": "enviar",
+        "surface": "enviava",
+        "definition": "To send something from one place to another."
+      },
+      {
+        "type": "verb",
+        "word": "conferir",
+        "surface": "confere",
+        "definition": "To check something carefully before you trust it."
+      },
+      {
+        "type": "verb",
+        "word": "aceitar",
+        "surface": "aceita",
+        "definition": "To take what is offered instead of refusing it."
+      },
+      {
+        "type": "adjective",
+        "word": "caro",
+        "definition": "Expensive, costing more money than you wanted to pay."
+      },
+      {
+        "type": "adjective",
+        "word": "barato",
+        "definition": "Cheap, costing little money to buy or to use."
+      },
+      {
+        "type": "adjective",
+        "word": "novo",
+        "definition": "New, not used by anybody else before you."
+      },
+      {
+        "type": "adjective",
+        "word": "velho",
+        "definition": "Old, used a long time and worn out now."
+      },
+      {
+        "type": "adverb",
+        "word": "agora",
+        "definition": "Now, at this very moment and not later."
+      },
+      {
+        "type": "adjective",
+        "word": "fechado",
+        "definition": "Closed, not serving anybody until it opens again."
+      }
+    ],
+    "arcType": "juxtaposition-discovery"
+  },
+  {
+    "slug": "quatro-meses-nao-dois",
+    "topic": "petropolis",
+    "slotIndex": 1,
+    "title": "Tem uma solução, mas é má",
+    "synopsis": "A internet cai dez minutos antes da chamada que decide o ano inteiro dela, e a mesa do fundo de uma loja de informática vira escritório. Do outro lado oferecem duas saídas e as duas são ruins, e o silêncio que segue a terceira dura mais do que ela aguenta calada.",
+    "text": "Às nove a internet da pousada cai e o notebook não conecta. Renata tem dez minutos e o emprego depende disso. Wilson abre a loja meia hora antes e traz a mesa do fundo.\n\nEla digita a senha e entra na chamada. Do outro lado alguém mostra uma tabela. A tarefa dela mudou: agora são doze cidades, não seis.\n\n“Tem uma solução, mas é má”, diz a chefe. “A gente paga o mesmo salário e você faz o dobro.” “Ou a gente cobra menos do cliente e você escolhe as cidades.”\n\nRenata faz uma pergunta e oferece uma terceira saída. “Eu faço as doze, mas em quatro meses, não em dois.” Ninguém responde na hora, e o silêncio dura o que ela não aguenta.\n\n“A gente aceita”, responde a chefe depois. Pela primeira vez o assunto real não era o dinheiro, era o calendário.\n\nWilson deixa um café na mesa. Ela agradece e fica mais meia hora. A loja não é rica nem pobre: tem duas mesas e um cliente.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "emprego",
+        "anchor": true,
+        "definition": "Job, the paid work that keeps you going."
+      },
+      {
+        "type": "noun",
+        "word": "salário",
+        "anchor": true,
+        "definition": "Salary, the money you are paid each month."
+      },
+      {
+        "type": "noun",
+        "word": "tarefa",
+        "anchor": true,
+        "definition": "Task, the piece of work you have to finish."
+      },
+      {
+        "type": "noun",
+        "word": "pergunta",
+        "anchor": true,
+        "definition": "Question, what you ask when you want to know."
+      },
+      {
+        "type": "noun",
+        "word": "solução",
+        "anchor": true,
+        "definition": "Way out, what gets you past a difficulty."
+      },
+      {
+        "type": "noun",
+        "word": "vez",
+        "anchor": true,
+        "definition": "Time, one single occasion among several other ones."
+      },
+      {
+        "type": "verb",
+        "word": "conectar",
+        "surface": "conecta",
+        "definition": "To connect, join a computer to the internet."
+      },
+      {
+        "type": "verb",
+        "word": "digitar",
+        "surface": "digita",
+        "definition": "To type something in with your own fingers."
+      },
+      {
+        "type": "verb",
+        "word": "trazer",
+        "surface": "traz",
+        "definition": "To bring something over to where you are."
+      },
+      {
+        "type": "verb",
+        "word": "mostrar",
+        "surface": "mostra",
+        "definition": "To show something so another person can see it."
+      },
+      {
+        "type": "verb",
+        "word": "oferecer",
+        "surface": "oferece",
+        "definition": "To offer something and let the other decide."
+      },
+      {
+        "type": "verb",
+        "word": "pagar",
+        "surface": "paga",
+        "definition": "To pay money for work done or goods taken."
+      },
+      {
+        "type": "verb",
+        "word": "cobrar",
+        "surface": "cobra",
+        "definition": "To charge somebody a price for a thing."
+      },
+      {
+        "type": "verb",
+        "word": "escolher",
+        "surface": "escolhe",
+        "definition": "To choose one option out of two or more."
+      },
+      {
+        "type": "verb",
+        "word": "deixar",
+        "surface": "deixa",
+        "definition": "To leave something somewhere for another person to find."
+      },
+      {
+        "type": "verb",
+        "word": "agradecer",
+        "surface": "agradece",
+        "definition": "To thank somebody out loud for what they did."
+      },
+      {
+        "type": "adjective",
+        "word": "mau",
+        "surface": "má",
+        "definition": "Bad, poor as a choice or as an outcome."
+      },
+      {
+        "type": "adjective",
+        "word": "real",
+        "definition": "Real, the true one and not the apparent one."
+      },
+      {
+        "type": "adjective",
+        "word": "rico",
+        "surface": "rica",
+        "definition": "Rich, with plenty of money coming in each month."
+      },
+      {
+        "type": "adjective",
+        "word": "pobre",
+        "definition": "Poor, with very little money coming in at all."
+      }
+    ],
+    "arcType": "mini-cliffhanger"
+  },
+  {
+    "slug": "quinze-folhas-e-barbante",
+    "topic": "petropolis",
+    "slotIndex": 2,
+    "title": "O barbante de um real",
+    "synopsis": "O cliente quer em papel o que ela escreveu em dois meses de estrada, e o guichê da cidade fecha às cinco em ponto. Entre uma máquina que come folha sim e folha não e o balcão do correio há um saco de papel grosso, um barbante e um real.",
+    "text": "Wilson lê o pedido do cliente por cima do ombro dela. O relatório tem que ir em papel, e o correio fecha às cinco. “Essa impressora come folha sim, folha não”, avisa ele.\n\n“E o seu teclado está colado de café.” “Imprime aqui”, oferece. “A tampa emperra, mas abre.”\n\nSaem quinze folhas em preto e branco. Wilson levanta o pacote. “Pesado assim não cabe em envelope.” “Tem saco?”, pergunta Renata.\n\n“Do grosso, tenho. E barbante, que eu vendo por um real.” Ele empresta a tesoura e traz o saco pardo do fundo da loja.\n\nRenata dobra as folhas e embrulha o pacote. Amarra com o barbante e escreve o endereço em letra grande. No correio a fila está aberta até as cinco em ponto.\n\nUm aviso na caixinha do balcão: hoje não sai nada para fora do país. Ela manda assim mesmo. Depois lê uma notícia curta: o contrato dos quatro meses saiu. Lá fora faz frio e ela não fecha o casaco.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "relatório",
+        "anchor": true,
+        "definition": "Report, the written account of the work you did."
+      },
+      {
+        "type": "noun",
+        "word": "impressora",
+        "anchor": true,
+        "definition": "Printer, the machine that puts words onto paper."
+      },
+      {
+        "type": "noun",
+        "word": "teclado",
+        "anchor": true,
+        "definition": "Keyboard, the keys you type your words on."
+      },
+      {
+        "type": "noun",
+        "word": "saco",
+        "anchor": true,
+        "definition": "Bag, made of paper or of thin plastic."
+      },
+      {
+        "type": "noun",
+        "word": "caixinha",
+        "anchor": true,
+        "definition": "Small box, or the little sign on a counter."
+      },
+      {
+        "type": "noun",
+        "word": "notícia",
+        "anchor": true,
+        "definition": "News, a piece of information about what has happened."
+      },
+      {
+        "type": "verb",
+        "word": "embrulhar",
+        "surface": "embrulha",
+        "definition": "To wrap something up in paper or in cloth."
+      },
+      {
+        "type": "verb",
+        "word": "amarrar",
+        "surface": "Amarra",
+        "definition": "To tie something with string so that it holds."
+      },
+      {
+        "type": "verb",
+        "word": "dobrar",
+        "surface": "dobra",
+        "definition": "To fold something over so it takes less space."
+      },
+      {
+        "type": "verb",
+        "word": "abrir",
+        "surface": "abre",
+        "definition": "To open something that was shut until now."
+      },
+      {
+        "type": "verb",
+        "word": "fechar",
+        "surface": "fecha",
+        "definition": "To close something, or to stop serving people."
+      },
+      {
+        "type": "verb",
+        "word": "emprestar",
+        "surface": "empresta",
+        "definition": "To lend somebody something they will give back."
+      },
+      {
+        "type": "verb",
+        "word": "mandar",
+        "surface": "manda",
+        "definition": "To send something off to somebody else far away."
+      },
+      {
+        "type": "verb",
+        "word": "vender",
+        "surface": "vendo",
+        "definition": "To sell something to somebody else for money."
+      },
+      {
+        "type": "adjective",
+        "word": "aberto",
+        "surface": "aberta",
+        "definition": "Open, still serving all the people who arrive."
+      },
+      {
+        "type": "adverb",
+        "word": "hoje",
+        "definition": "Today, on this day and on no other."
+      },
+      {
+        "type": "adjective",
+        "word": "pesado",
+        "definition": "Heavy, hard to lift or costly to post."
+      },
+      {
+        "type": "adjective",
+        "word": "colado",
+        "definition": "Stuck fast to something, hard to pull apart again."
+      },
+      {
+        "type": "adjective",
+        "word": "branco",
+        "definition": "White, the colour of a clean sheet of paper."
+      },
+      {
+        "type": "adjective",
+        "word": "preto",
+        "definition": "Black, the darkest colour that there is anywhere."
+      }
+    ],
+    "arcType": "harmonic-close"
+  }
+]
