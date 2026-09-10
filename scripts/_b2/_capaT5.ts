@@ -69,7 +69,7 @@ const CAPA: Record<string, E[]> = {
     { claves: ["al momento"], t: "expression", g: "on the spot", es: "exprimidos al momento", en: "squeezed on the spot" },
     { claves: ["pelar", "pelada"], t: "verb", g: "peeled (pelar)", es: "guayaba pelada", en: "peeled guava" },
     { claves: ["en alto"], t: "expression", g: "raised high", es: "levantó el vaso en alto", en: "raised the glass up high" },
-    { claves: ["por dentro"], t: "expression", g: "on the inside", es: "como si brindara por dentro", en: "as if toasting on the inside" },
+    { claves: ["por dentro"], t: "expression", g: "on the inside", es: "como quien brinda por dentro", en: "like someone toasting on the inside" },
     { claves: ["dormirse", "se duerme"], t: "verb", g: "falls asleep (dormirse)", es: "Camarón que se duerme...", en: "shrimp that falls asleep..." },
     { claves: ["aparecer", "apareció"], t: "verb", g: "showed up (aparecer)", es: "ese dueño apareció por el puesto", en: "that owner showed up at the stand" },
     { claves: ["probar", "probó"], t: "verb", g: "tasted (probar)", es: "probó la lulada", en: "tasted the lulada" },
