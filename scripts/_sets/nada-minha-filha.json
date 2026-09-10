@@ -243,27 +243,27 @@
   {
     "type": "fill_blank",
     "word": "seca",
-    "sentence": "Pode vestir: a camisa já está _____.",
+    "sentence": "Com esse sol forte, a roupa _____ em uma hora.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "seca",
       "options": [
         "seca",
-        "molhada",
-        "suja",
-        "rasgada"
+        "molha",
+        "congela",
+        "cresce"
       ],
-      "translation": "You can put it on: the shirt is already _____.",
+      "translation": "With this strong sun, the washing _____ in an hour.",
       "optionTranslations": [
-        "dry",
-        "wet",
-        "dirty",
-        "torn"
+        "dries",
+        "gets wet",
+        "freezes",
+        "grows"
       ],
       "audioClip": {
         "storySlug": "nada-minha-filha",
         "storySource": "user",
-        "sentence": "Pode vestir: a camisa já está seca.",
+        "sentence": "Com esse sol forte, a roupa seca em uma hora.",
         "targetWord": "seca",
         "language": "portuguese"
       }

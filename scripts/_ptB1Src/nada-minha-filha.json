@@ -10,7 +10,7 @@
     ["f", "levar", "Vai chover: não esqueça de _____ o guarda-chuva.", "It's going to rain: don't forget to _____ your umbrella.", "take", ["quebrar", "break"], ["pintar", "paint"], ["cozinhar", "cook"]],
     ["m", "convidar", "Ela [[convida]] a amiga para um chá depois.", "to invite", "to thank", "to warn", "to follow"],
     ["m", "vir", "Você quer [[vir]] tomar um chá?", "to come", "to leave", "to cook", "to pay"],
-    ["f", "seca", "Pode vestir: a camisa já está _____.", "You can put it on: the shirt is already _____.", "dry", ["molhada", "wet"], ["suja", "dirty"], ["rasgada", "torn"]],
+    ["f", "seca", "Com esse sol forte, a roupa _____ em uma hora.", "With this strong sun, the washing _____ in an hour.", "dries", ["molha", "gets wet"], ["congela", "freezes"], ["cresce", "grows"]],
     ["m", "cansar", "[[Cansa]] mais chegar com frio do que viajar.", "to tire out", "to cheer up", "to cost", "to warm up"],
     ["m", "fazer", "[[Faz]] três invernos que isso está aqui.", "to do, to make", "to take", "to bring", "to keep"],
     ["f", "molhado", "Ele caiu na piscina e saiu todo _____.", "He fell into the pool and came out all _____.", "wet", ["seco", "dry"], ["quente", "hot"], ["penteado", "combed"]],
