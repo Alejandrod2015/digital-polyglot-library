@@ -56,6 +56,7 @@ type Props = {
   onPressBack: () => void;
   onPressSave: () => void;
   onPressStartReading?: () => void;
+  onPressBuyBook?: () => void;
   continueStory?: BookDetailContinueStory | null;
   selectedTab: BookDetailTab;
   onSelectTab: (tab: BookDetailTab) => void;
@@ -94,6 +95,7 @@ export function MobileBookDetail({
   onPressBack,
   onPressSave,
   onPressStartReading,
+  onPressBuyBook,
   continueStory,
   selectedTab,
   onSelectTab,
@@ -195,6 +197,18 @@ export function MobileBookDetail({
               <Pressable onPress={onPressSave} style={[styles.inlineButton, styles.ghostButton]}>
                 <Text style={styles.inlineButtonText}>{isBookSaved ? "Saved" : "Save book"}</Text>
               </Pressable>
+              {onPressBuyBook ? (
+                <Pressable
+                  onPress={onPressBuyBook}
+                  accessibilityRole="link"
+                  accessibilityLabel="Buy physical book"
+                  testID="qa-book-buy"
+                  style={[styles.inlineButton, styles.buyButton]}
+                >
+                  <Feather name="shopping-bag" size={14} color="#f8c15c" />
+                  <Text style={styles.inlineButtonText}>Buy physical book</Text>
+                </Pressable>
+              ) : null}
             </View>
 
             {continueStory ? (
@@ -521,6 +535,13 @@ const styles = StyleSheet.create({
     borderColor: "#f8c15c",
   },
   ghostButton: {
+    backgroundColor: "#15263d",
+  },
+  buyButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    borderColor: "#f8c15c",
     backgroundColor: "#15263d",
   },
   inlineButtonText: {

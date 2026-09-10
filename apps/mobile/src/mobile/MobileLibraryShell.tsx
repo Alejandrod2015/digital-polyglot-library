@@ -7667,6 +7667,21 @@ export function MobileLibraryShell(args: {
     await WebBrowser.openBrowserAsync(url.toString());
   }
 
+  // El storeUrl del libro trae utm_medium=App, que es el de la web. Aquí se
+  // cambia por la plataforma para poder separar en Shopify las compras que
+  // vienen de cada app. A mano y no con searchParams: el URL de RN no lo
+  // implementa entero.
+  async function openBookStore(storeUrl: string) {
+    const trimmed = storeUrl.trim();
+    if (!trimmed) return;
+    const base = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+    const medium = Platform.OS === "android" ? "android" : "ios";
+    const url = /[?&]utm_medium=/.test(base)
+      ? base.replace(/([?&]utm_medium=)[^&#]*/, `$1${medium}`)
+      : `${base}${base.includes("?") ? "&" : "?"}utm_medium=${medium}`;
+    await WebBrowser.openBrowserAsync(url);
+  }
+
   // Plans entry point. On iOS we MUST use the native paywall (Apple IAP); the
   // App Store forbids the web Stripe checkout for digital content. Everywhere
   // else (Android/web) keep the web /plans page.
@@ -19795,6 +19810,9 @@ export function MobileLibraryShell(args: {
         storyCount={selectedBook.stories.length}
         averageMinutes={averageMinutes}
         isBookSaved={isBookSaved}
+        onPressBuyBook={
+          selectedBook.storeUrl ? () => void openBookStore(selectedBook.storeUrl as string) : undefined
+        }
         onPressBack={() => setSelectedBook(null)}
         onPressSave={() => toggleBookSaved(selectedBook)}
         onPressStartReading={
