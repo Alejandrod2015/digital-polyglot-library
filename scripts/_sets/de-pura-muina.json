@@ -1,0 +1,446 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "muina",
+    "sentence": "De pura [[muina]], apostó la propina del día.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "anger",
+      "options": [
+        "anger",
+        "fear",
+        "boredom",
+        "luck"
+      ],
+      "audioClip": {
+        "storySlug": "de-pura-muina",
+        "storySource": "user",
+        "sentence": "De pura muina, apostó la propina del día.",
+        "targetWord": "muina",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "tianguis,jícama,carnicero,botana",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "tianguis",
+          "answer": "street market",
+          "options": [
+            "street market",
+            "crunchy root vegetable",
+            "butcher",
+            "bar snack"
+          ]
+        },
+        {
+          "word": "jícama",
+          "answer": "crunchy root vegetable",
+          "options": [
+            "street market",
+            "crunchy root vegetable",
+            "butcher",
+            "bar snack"
+          ]
+        },
+        {
+          "word": "carnicero",
+          "answer": "butcher",
+          "options": [
+            "street market",
+            "crunchy root vegetable",
+            "butcher",
+            "bar snack"
+          ]
+        },
+        {
+          "word": "botana",
+          "answer": "bar snack",
+          "options": [
+            "street market",
+            "crunchy root vegetable",
+            "butcher",
+            "bar snack"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "revancha",
+    "sentence": "La [[revancha]] se preparó a escondidas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "rematch",
+      "options": [
+        "rematch",
+        "truce",
+        "prize",
+        "debut"
+      ],
+      "audioClip": {
+        "storySlug": "de-pura-muina",
+        "storySource": "user",
+        "sentence": "La revancha se preparó a escondidas.",
+        "targetWord": "revancha",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "subir la apuesta",
+    "sentence": "Nadie quería retirarse, así que decidimos _____ y jugar por más dinero.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "subir la apuesta",
+      "options": [
+        "subir la apuesta",
+        "bajar la apuesta",
+        "pagar la cuenta",
+        "limpiar la mesa"
+      ],
+      "translation": "Nobody wanted to quit, so we decided to _____ and play for more money.",
+      "optionTranslations": [
+        "raise the stakes",
+        "lower the bet",
+        "pay the bill",
+        "clean the table"
+      ],
+      "audioClip": {
+        "storySlug": "de-pura-muina",
+        "storySource": "user",
+        "sentence": "Nadie quería retirarse, así que decidimos subir la apuesta y jugar por más dinero.",
+        "targetWord": "subir la apuesta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cara de yo no fui",
+    "sentence": "Preguntó él, con [[cara de yo no fui]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an innocent look",
+      "options": [
+        "an innocent look",
+        "a sleepy look",
+        "a bored look",
+        "an angry look"
+      ],
+      "audioClip": {
+        "storySlug": "de-pura-muina",
+        "storySource": "user",
+        "sentence": "Preguntó él, con cara de yo no fui.",
+        "targetWord": "cara de yo no fui",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mandado",
+    "sentence": "Es la lista del [[mandado]], contestó ella.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "grocery shopping",
+      "options": [
+        "grocery shopping",
+        "house cleaning",
+        "monthly bills",
+        "guest list"
+      ],
+      "audioClip": {
+        "storySlug": "de-pura-muina",
+        "storySource": "user",
+        "sentence": "Es la lista del mandado, contestó ella.",
+        "targetWord": "mandado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "a escondidas",
+    "sentence": "Comía chocolate _____ para que su médico no se enterara.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "a escondidas",
+      "options": [
+        "a escondidas",
+        "a ciegas",
+        "a medias",
+        "a cucharadas"
+      ],
+      "translation": "He ate chocolate _____ so that his doctor would not find out.",
+      "optionTranslations": [
+        "in secret",
+        "blindly",
+        "halfway",
+        "by the spoonful"
+      ],
+      "audioClip": {
+        "storySlug": "de-pura-muina",
+        "storySource": "user",
+        "sentence": "Comía chocolate a escondidas para que su médico no se enterara.",
+        "targetWord": "a escondidas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "trastes",
+    "sentence": "Después de cenar, lavé los _____ y los sequé con un trapo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "trastes",
+      "options": [
+        "trastes",
+        "billetes",
+        "mensajes",
+        "exámenes"
+      ],
+      "translation": "After dinner, I washed the _____ and dried them with a cloth.",
+      "optionTranslations": [
+        "dishes",
+        "banknotes",
+        "messages",
+        "exams"
+      ],
+      "audioClip": {
+        "storySlug": "de-pura-muina",
+        "storySource": "user",
+        "sentence": "Después de cenar, lavé los trastes y los sequé con un trapo.",
+        "targetWord": "trastes",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "puro",
+    "sentence": "[[Puro]] apunte del negocio, contestaba ella.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nothing but",
+      "options": [
+        "nothing but",
+        "hardly any",
+        "a few",
+        "plenty of"
+      ],
+      "audioClip": {
+        "storySlug": "de-pura-muina",
+        "storySource": "user",
+        "sentence": "Puro apunte del negocio, contestaba ella.",
+        "targetWord": "Puro",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sostener la mirada",
+    "sentence": "Apretó el lápiz y [[sostuvo la mirada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hold someone's gaze",
+      "options": [
+        "to hold someone's gaze",
+        "to look away quickly",
+        "to lower one's eyes",
+        "to wink at someone"
+      ],
+      "audioClip": {
+        "storySlug": "de-pura-muina",
+        "storySource": "user",
+        "sentence": "Apretó el lápiz y sostuvo la mirada.",
+        "targetWord": "sostuvo la mirada",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reunir",
+    "sentence": "Pasó la semana [[reuniendo]] albures del carnicero del tianguis.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to gather",
+      "options": [
+        "to gather",
+        "to forget",
+        "to invent",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "de-pura-muina",
+        "storySource": "user",
+        "sentence": "Pasó la semana reuniendo albures del carnicero del tianguis.",
+        "targetWord": "reuniendo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "hojeó",
+    "sentence": "En la sala de espera, _____ una revista sin leer nada.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "hojeó",
+      "options": [
+        "hojeó",
+        "rompió",
+        "mojó",
+        "pisó"
+      ],
+      "translation": "In the waiting room, she _____ a magazine without reading anything.",
+      "optionTranslations": [
+        "leafed through",
+        "tore",
+        "wet",
+        "stepped on"
+      ],
+      "audioClip": {
+        "storySlug": "de-pura-muina",
+        "storySource": "user",
+        "sentence": "En la sala de espera, hojeó una revista sin leer nada.",
+        "targetWord": "hojeó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arrancar",
+    "sentence": "Quiso [[arrancarle]] la libreta y no lo hizo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to snatch",
+      "options": [
+        "to snatch",
+        "to borrow",
+        "to sign",
+        "to hide"
+      ],
+      "audioClip": {
+        "storySlug": "de-pura-muina",
+        "storySource": "user",
+        "sentence": "Quiso arrancarle la libreta y no lo hizo.",
+        "targetWord": "arrancarle",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tronar",
+    "sentence": "Apretó el lápiz hasta que [[tronó]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to crack",
+      "options": [
+        "to crack",
+        "to bend",
+        "to shine",
+        "to slip"
+      ],
+      "audioClip": {
+        "storySlug": "de-pura-muina",
+        "storySource": "user",
+        "sentence": "Apretó el lápiz hasta que tronó.",
+        "targetWord": "tronó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "ensayando",
+    "sentence": "La banda estuvo _____ las canciones toda la tarde antes del concierto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ensayando",
+      "options": [
+        "ensayando",
+        "borrando",
+        "comprando",
+        "olvidando"
+      ],
+      "translation": "The band spent the whole afternoon _____ the songs before the concert.",
+      "optionTranslations": [
+        "rehearsing",
+        "deleting",
+        "buying",
+        "forgetting"
+      ],
+      "audioClip": {
+        "storySlug": "de-pura-muina",
+        "storySource": "user",
+        "sentence": "La banda estuvo ensayando las canciones toda la tarde antes del concierto.",
+        "targetWord": "ensayando",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plantear",
+    "sentence": "Vamos a subir la apuesta, [[planteó]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to propose",
+      "options": [
+        "to propose",
+        "to complain",
+        "to whisper",
+        "to confess"
+      ],
+      "audioClip": {
+        "storySlug": "de-pura-muina",
+        "storySource": "user",
+        "sentence": "Vamos a subir la apuesta, planteó.",
+        "targetWord": "planteó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poner fecha",
+    "sentence": "Y le [[puso fecha]]: la hora de la comida.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to set a date",
+      "options": [
+        "to set a date",
+        "to change the plan",
+        "to pay the bill",
+        "to cancel the bet"
+      ],
+      "audioClip": {
+        "storySlug": "de-pura-muina",
+        "storySource": "user",
+        "sentence": "Y le puso fecha: la hora de la comida.",
+        "targetWord": "puso fecha",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

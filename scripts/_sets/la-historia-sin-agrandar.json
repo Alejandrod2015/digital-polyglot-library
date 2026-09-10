@@ -1,0 +1,439 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "álbum,retrato,amarillento,esquina",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "álbum",
+          "answer": "photo album",
+          "options": [
+            "photo album",
+            "portrait",
+            "yellowed",
+            "corner"
+          ]
+        },
+        {
+          "word": "retrato",
+          "answer": "portrait",
+          "options": [
+            "photo album",
+            "portrait",
+            "yellowed",
+            "corner"
+          ]
+        },
+        {
+          "word": "amarillento",
+          "answer": "yellowed",
+          "options": [
+            "photo album",
+            "portrait",
+            "yellowed",
+            "corner"
+          ]
+        },
+        {
+          "word": "esquina",
+          "answer": "corner",
+          "options": [
+            "photo album",
+            "portrait",
+            "yellowed",
+            "corner"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tal cual",
+    "sentence": "[[Tal cual]] la contaba usted.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "exactly as",
+      "options": [
+        "exactly as",
+        "almost as",
+        "unlike how",
+        "better than"
+      ],
+      "audioClip": {
+        "storySlug": "la-historia-sin-agrandar",
+        "storySource": "user",
+        "sentence": "Tal cual la contaba usted.",
+        "targetWord": "Tal cual",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al pie de la letra",
+    "sentence": "Salió cierta, [[al pie de la letra]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to the letter",
+      "options": [
+        "to the letter",
+        "only in part",
+        "by pure luck",
+        "more or less"
+      ],
+      "audioClip": {
+        "storySlug": "la-historia-sin-agrandar",
+        "storySource": "user",
+        "sentence": "Salió cierta, al pie de la letra.",
+        "targetWord": "al pie de la letra",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "se frenaba",
+    "sentence": "Casi contaba el secreto, pero siempre _____ a tiempo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "se frenaba",
+      "options": [
+        "se frenaba",
+        "se mareaba",
+        "se cansaba",
+        "se quejaba"
+      ],
+      "translation": "He would almost tell the secret, but he always _____ in time.",
+      "optionTranslations": [
+        "stopped himself",
+        "got dizzy",
+        "got tired",
+        "complained"
+      ],
+      "audioClip": {
+        "storySlug": "la-historia-sin-agrandar",
+        "storySource": "user",
+        "sentence": "Casi contaba el secreto, pero siempre se frenaba a tiempo.",
+        "targetWord": "se frenaba",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a media historia",
+    "sentence": "Él se frenaba [[a media historia]]: los cuentos, sin papel, no se desempolvaban.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "halfway through the story",
+      "options": [
+        "halfway through the story",
+        "at the end of the story",
+        "before the story began",
+        "after every story"
+      ],
+      "audioClip": {
+        "storySlug": "la-historia-sin-agrandar",
+        "storySource": "user",
+        "sentence": "Él se frenaba a media historia: los cuentos, sin papel, no se desempolvaban.",
+        "targetWord": "a media historia",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "levantar",
+    "sentence": "y [[levantó]] el retrato para que lo vieran.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to lift",
+      "options": [
+        "to lift",
+        "to hide",
+        "to lower",
+        "to frame"
+      ],
+      "audioClip": {
+        "storySlug": "la-historia-sin-agrandar",
+        "storySource": "user",
+        "sentence": "y levantó el retrato para que lo vieran.",
+        "targetWord": "levantó",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirar largo",
+    "sentence": "Él recibió la foto, la [[miró largo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to gaze at slowly",
+      "options": [
+        "to gaze at slowly",
+        "to glance at quickly",
+        "to look away from",
+        "to look for"
+      ],
+      "audioClip": {
+        "storySlug": "la-historia-sin-agrandar",
+        "storySource": "user",
+        "sentence": "Él recibió la foto, la miró largo.",
+        "targetWord": "miró largo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "se lo dije",
+    "sentence": "Y, en vez de decir [[se lo dije]], preguntó si se la podía quedar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "I told you so",
+      "options": [
+        "I told you so",
+        "I am sorry",
+        "thank you so much",
+        "I knew nothing"
+      ],
+      "audioClip": {
+        "storySlug": "la-historia-sin-agrandar",
+        "storySource": "user",
+        "sentence": "Y, en vez de decir se lo dije, preguntó si se la podía quedar.",
+        "targetWord": "se lo dije",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quedarse con",
+    "sentence": "Preguntó si [[se la podía quedar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to keep",
+      "options": [
+        "to keep",
+        "to borrow",
+        "to copy",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "la-historia-sin-agrandar",
+        "storySource": "user",
+        "sentence": "Preguntó si se la podía quedar.",
+        "targetWord": "se la podía quedar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "en vez de",
+    "sentence": "Pidió agua _____ tomar cerveza, porque luego tenía que manejar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "en vez de",
+      "options": [
+        "en vez de",
+        "además de",
+        "después de",
+        "antes de"
+      ],
+      "translation": "She ordered water _____ drinking beer, because she had to drive later.",
+      "optionTranslations": [
+        "instead of",
+        "as well as",
+        "after",
+        "before"
+      ],
+      "audioClip": {
+        "storySlug": "la-historia-sin-agrandar",
+        "storySource": "user",
+        "sentence": "Pidió agua en vez de tomar cerveza, porque luego tenía que manejar.",
+        "targetWord": "en vez de",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonreír",
+    "sentence": "y un hombre [[sonriendo]] al lado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to smile",
+      "options": [
+        "to smile",
+        "to wave",
+        "to frown",
+        "to sleep"
+      ],
+      "audioClip": {
+        "storySlug": "la-historia-sin-agrandar",
+        "storySource": "user",
+        "sentence": "y un hombre sonriendo al lado.",
+        "targetWord": "sonriendo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cargado",
+    "sentence": "Un tren amarillo, [[cargado]] de pescado hasta el techo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "loaded",
+      "options": [
+        "loaded",
+        "painted",
+        "emptied",
+        "decorated"
+      ],
+      "audioClip": {
+        "storySlug": "la-historia-sin-agrandar",
+        "storySource": "user",
+        "sentence": "Un tren amarillo, cargado de pescado hasta el techo.",
+        "targetWord": "cargado",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "condición",
+    "sentence": "Con una [[condición]], dejó caer ella.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "condition",
+      "options": [
+        "condition",
+        "apology",
+        "promise",
+        "surprise"
+      ],
+      "audioClip": {
+        "storySlug": "la-historia-sin-agrandar",
+        "storySource": "user",
+        "sentence": "Con una condición, dejó caer ella.",
+        "targetWord": "condición",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "puerta adentro",
+    "sentence": "arrastró la mecedora [[puerta adentro]], sin pensarlo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "into the house",
+      "options": [
+        "into the house",
+        "out to the street",
+        "up the stairs",
+        "around the corner"
+      ],
+      "audioClip": {
+        "storySlug": "la-historia-sin-agrandar",
+        "storySource": "user",
+        "sentence": "arrastró la mecedora puerta adentro, sin pensarlo.",
+        "targetWord": "puerta adentro",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a plena luz",
+    "sentence": "Lo sacó una tarde llena, [[a plena luz]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in full daylight",
+      "options": [
+        "in full daylight",
+        "late at night",
+        "in secret",
+        "by candlelight"
+      ],
+      "audioClip": {
+        "storySlug": "la-historia-sin-agrandar",
+        "storySource": "user",
+        "sentence": "Lo sacó una tarde llena, a plena luz.",
+        "targetWord": "a plena luz",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "arrastró",
+    "sentence": "La maleta pesaba demasiado, así que la _____ por el suelo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "arrastró",
+      "options": [
+        "arrastró",
+        "colgó",
+        "pintó",
+        "dobló"
+      ],
+      "translation": "The suitcase was too heavy, so she _____ it across the floor.",
+      "optionTranslations": [
+        "dragged",
+        "hung",
+        "painted",
+        "folded"
+      ],
+      "audioClip": {
+        "storySlug": "la-historia-sin-agrandar",
+        "storySource": "user",
+        "sentence": "La maleta pesaba demasiado, así que la arrastró por el suelo.",
+        "targetWord": "arrastró",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "recibió",
+    "sentence": "Por su cumpleaños, _____ muchos regalos de sus amigos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "recibió",
+      "options": [
+        "recibió",
+        "vendió",
+        "perdió",
+        "rompió"
+      ],
+      "translation": "For her birthday, she _____ lots of presents from her friends.",
+      "optionTranslations": [
+        "received",
+        "sold",
+        "lost",
+        "broke"
+      ],
+      "audioClip": {
+        "storySlug": "la-historia-sin-agrandar",
+        "storySource": "user",
+        "sentence": "Por su cumpleaños, recibió muchos regalos de sus amigos.",
+        "targetWord": "recibió",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

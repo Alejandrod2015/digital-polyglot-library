@@ -1,0 +1,446 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "buzo,vestido,puntada,emoliente",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "buzo",
+          "answer": "tracksuit",
+          "options": [
+            "tracksuit",
+            "dress",
+            "stitch",
+            "herbal drink"
+          ]
+        },
+        {
+          "word": "vestido",
+          "answer": "dress",
+          "options": [
+            "tracksuit",
+            "dress",
+            "stitch",
+            "herbal drink"
+          ]
+        },
+        {
+          "word": "puntada",
+          "answer": "stitch",
+          "options": [
+            "tracksuit",
+            "dress",
+            "stitch",
+            "herbal drink"
+          ]
+        },
+        {
+          "word": "emoliente",
+          "answer": "herbal drink",
+          "options": [
+            "tracksuit",
+            "dress",
+            "stitch",
+            "herbal drink"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al toque",
+    "sentence": "¿Me lo tiene [[al toque]], señora?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "right away",
+      "options": [
+        "right away",
+        "next week",
+        "by mistake",
+        "on credit"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-fallo",
+        "storySource": "user",
+        "sentence": "¿Me lo tiene al toque, señora?",
+        "targetWord": "al toque",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "encargo",
+    "sentence": "Desde el lunes había un solo [[encargo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "customer order",
+      "options": [
+        "customer order",
+        "day off",
+        "sewing machine",
+        "unpaid bill"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-fallo",
+        "storySource": "user",
+        "sentence": "Desde el lunes había un solo encargo.",
+        "targetWord": "encargo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "exigente",
+    "sentence": "Mi profesora era muy _____: nunca aceptaba un trabajo mal hecho.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "exigente",
+      "options": [
+        "exigente",
+        "indulgente",
+        "tolerante",
+        "complaciente"
+      ],
+      "translation": "My teacher was very _____: she never accepted sloppy work.",
+      "optionTranslations": [
+        "demanding",
+        "lenient",
+        "tolerant",
+        "easygoing"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-fallo",
+        "storySource": "user",
+        "sentence": "Mi profesora era muy exigente: nunca aceptaba un trabajo mal hecho.",
+        "targetWord": "exigente",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "casera",
+    "sentence": "El jueves siguiente la [[casera]] no timbró, ni el otro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "regular customer",
+      "options": [
+        "regular customer",
+        "shop assistant",
+        "sewing teacher",
+        "delivery woman"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-fallo",
+        "storySource": "user",
+        "sentence": "El jueves siguiente la casera no timbró, ni el otro.",
+        "targetWord": "casera",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "timbró",
+    "sentence": "Llegó a la puerta del vecino y _____ para que le abriera.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "timbró",
+      "options": [
+        "timbró",
+        "cerró",
+        "barrió",
+        "pintó"
+      ],
+      "translation": "He reached the neighbour's door and _____ so they would open.",
+      "optionTranslations": [
+        "rang the bell",
+        "closed",
+        "swept",
+        "painted"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-fallo",
+        "storySource": "user",
+        "sentence": "Llegó a la puerta del vecino y timbró para que le abriera.",
+        "targetWord": "timbró",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apurar",
+    "sentence": "La campaña no espera, [[apuró]] el comprador por teléfono.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hurry someone",
+      "options": [
+        "to hurry someone",
+        "to thank someone",
+        "to calm someone",
+        "to warn someone"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-fallo",
+        "storySource": "user",
+        "sentence": "La campaña no espera, apuró el comprador por teléfono.",
+        "targetWord": "apuró",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "culpa",
+    "sentence": "La [[culpa]] se quedó despierta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "guilt",
+      "options": [
+        "guilt",
+        "hunger",
+        "boredom",
+        "pride"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-fallo",
+        "storySource": "user",
+        "sentence": "La culpa se quedó despierta.",
+        "targetWord": "culpa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dejar plantado",
+    "sentence": "La [[dejó plantada]] una vez, la vez equivocada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stand someone up",
+      "options": [
+        "to stand someone up",
+        "to cheer someone up",
+        "to pay someone back",
+        "to pick someone up"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-fallo",
+        "storySource": "user",
+        "sentence": "La dejó plantada una vez, la vez equivocada.",
+        "targetWord": "dejó plantada",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "boca abajo",
+    "sentence": "Con el emoliente enfriándose y el teléfono [[boca abajo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "face down",
+      "options": [
+        "face down",
+        "switched off",
+        "fully charged",
+        "on silent"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-fallo",
+        "storySource": "user",
+        "sentence": "Con el emoliente enfriándose y el teléfono boca abajo.",
+        "targetWord": "boca abajo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "madrugada",
+    "sentence": "Suspiró y cosió de [[madrugada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the small hours",
+      "options": [
+        "the small hours",
+        "the lunch hour",
+        "the weekend",
+        "the evening"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-fallo",
+        "storySource": "user",
+        "sentence": "Suspiró y cosió de madrugada.",
+        "targetWord": "madrugada",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "arreglo",
+    "sentence": "Con la cremallera rota, la chaqueta necesita un _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "arreglo",
+      "options": [
+        "arreglo",
+        "bolsillo",
+        "cuello",
+        "pañuelo"
+      ],
+      "translation": "With its zip broken, the jacket needs a _____.",
+      "optionTranslations": [
+        "repair",
+        "pocket",
+        "collar",
+        "scarf"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-fallo",
+        "storySource": "user",
+        "sentence": "Con la cremallera rota, la chaqueta necesita un arreglo.",
+        "targetWord": "arreglo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estrenar",
+    "sentence": "Lo conversamos, contestó ella, [[estrenando]] la palabra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to use for the first time",
+      "options": [
+        "to use for the first time",
+        "to say very softly",
+        "to repeat over and over",
+        "to spell out slowly"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-fallo",
+        "storySource": "user",
+        "sentence": "Lo conversamos, contestó ella, estrenando la palabra.",
+        "targetWord": "estrenando",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "suspiró",
+    "sentence": "Al ver la cuenta tan alta, _____ con resignación.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "suspiró",
+      "options": [
+        "suspiró",
+        "aplaudió",
+        "festejó",
+        "gritó"
+      ],
+      "translation": "Seeing such a high bill, she _____ in resignation.",
+      "optionTranslations": [
+        "sighed",
+        "clapped",
+        "celebrated",
+        "shouted"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-fallo",
+        "storySource": "user",
+        "sentence": "Al ver la cuenta tan alta, suspiró con resignación.",
+        "targetWord": "suspiró",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "adelantar",
+    "sentence": "[[Adelantado]] y con yapa, se rio él.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to pay in advance",
+      "options": [
+        "to pay in advance",
+        "to pay back later",
+        "to charge extra",
+        "to lend for free"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-fallo",
+        "storySource": "user",
+        "sentence": "Adelantado y con yapa, se rio él.",
+        "targetWord": "Adelantado",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "entalló",
+    "sentence": "La blusa le quedaba ancha, así que la costurera la _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "entalló",
+      "options": [
+        "entalló",
+        "ensanchó",
+        "alargó",
+        "lavó"
+      ],
+      "translation": "The blouse was loose on her, so the seamstress _____ it.",
+      "optionTranslations": [
+        "took in",
+        "let out",
+        "lengthened",
+        "washed"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-fallo",
+        "storySource": "user",
+        "sentence": "La blusa le quedaba ancha, así que la costurera la entalló.",
+        "targetWord": "entalló",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a la medida",
+    "sentence": "Cada puntada [[a la medida]] del logo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "made to measure",
+      "options": [
+        "made to measure",
+        "sewn by hand",
+        "ready to wear",
+        "done in a hurry"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-fallo",
+        "storySource": "user",
+        "sentence": "Cada puntada a la medida del logo.",
+        "targetWord": "a la medida",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

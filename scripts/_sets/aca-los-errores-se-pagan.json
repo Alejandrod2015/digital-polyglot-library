@@ -1,0 +1,446 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "milanesa,hornalla,pan rallado,clienta",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "milanesa",
+     "answer": "breaded cutlet",
+     "options": [
+      "breaded cutlet",
+      "stove burner",
+      "breadcrumbs",
+      "customer"
+     ]
+    },
+    {
+     "word": "hornalla",
+     "answer": "stove burner",
+     "options": [
+      "breaded cutlet",
+      "stove burner",
+      "breadcrumbs",
+      "customer"
+     ]
+    },
+    {
+     "word": "pan rallado",
+     "answer": "breadcrumbs",
+     "options": [
+      "breaded cutlet",
+      "stove burner",
+      "breadcrumbs",
+      "customer"
+     ]
+    },
+    {
+     "word": "clienta",
+     "answer": "customer",
+     "options": [
+      "breaded cutlet",
+      "stove burner",
+      "breadcrumbs",
+      "customer"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "doradas",
+  "sentence": "Frió las papas hasta que quedaron _____, ni crudas ni quemadas.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "doradas",
+   "options": [
+    "doradas",
+    "mojadas",
+    "heladas",
+    "saladas"
+   ],
+   "translation": "She fried the potatoes until they were _____, neither raw nor burnt.",
+   "optionTranslations": [
+    "golden brown",
+    "wet",
+    "frozen",
+    "salty"
+   ],
+   "audioClip": {
+    "storySlug": "aca-los-errores-se-pagan",
+    "storySource": "user",
+    "sentence": "Frió las papas hasta que quedaron doradas, ni crudas ni quemadas.",
+    "targetWord": "doradas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rebozar",
+  "sentence": "¿Sabés [[rebozar]], nene, o allá eso se compra hecho?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to coat in breadcrumbs",
+   "options": [
+    "to coat in breadcrumbs",
+    "to cut into slices",
+    "to cook on the grill",
+    "to season with salt"
+   ],
+   "audioClip": {
+    "storySlug": "aca-los-errores-se-pagan",
+    "storySource": "user",
+    "sentence": "¿Sabés rebozar, nene, o allá eso se compra hecho?",
+    "targetWord": "rebozar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tanda",
+  "sentence": "La primera [[tanda]] de milanesas salió dorada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "batch",
+   "options": [
+    "batch",
+    "plate",
+    "recipe",
+    "order"
+   ],
+   "audioClip": {
+    "storySlug": "aca-los-errores-se-pagan",
+    "storySource": "user",
+    "sentence": "La primera tanda de milanesas salió dorada.",
+    "targetWord": "tanda",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "se quemó",
+  "sentence": "El pan quedó demasiado tiempo en el fuego y _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "se quemó",
+   "options": [
+    "se quemó",
+    "se enfrió",
+    "se mojó",
+    "se rompió"
+   ],
+   "translation": "The bread stayed on the fire too long and _____.",
+   "optionTranslations": [
+    "burned",
+    "cooled down",
+    "got wet",
+    "broke"
+   ],
+   "audioClip": {
+    "storySlug": "aca-los-errores-se-pagan",
+    "storySource": "user",
+    "sentence": "El pan quedó demasiado tiempo en el fuego y se quemó.",
+    "targetWord": "se quemó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pasarse de punto",
+  "sentence": "La segunda [[se pasó de punto]] y se quemó entera.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to get overcooked",
+   "options": [
+    "to get overcooked",
+    "to come out raw",
+    "to stick to the pan",
+    "to cool down fast"
+   ],
+   "audioClip": {
+    "storySlug": "aca-los-errores-se-pagan",
+    "storySource": "user",
+    "sentence": "La segunda se pasó de punto y se quemó entera.",
+    "targetWord": "se pasó de punto",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cumplido",
+  "sentence": "No dijo nada, que era un [[cumplido]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "compliment",
+   "options": [
+    "compliment",
+    "warning",
+    "complaint",
+    "favour"
+   ],
+   "audioClip": {
+    "storySlug": "aca-los-errores-se-pagan",
+    "storySource": "user",
+    "sentence": "No dijo nada, que era un cumplido.",
+    "targetWord": "cumplido",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "salir de tu bolsillo",
+  "sentence": "Esto [[sale de tu bolsillo]], nene.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be paid by you",
+   "options": [
+    "to be paid by you",
+    "to be forgiven",
+    "to be shared",
+    "to be taken back"
+   ],
+   "audioClip": {
+    "storySlug": "aca-los-errores-se-pagan",
+    "storySource": "user",
+    "sentence": "Esto sale de tu bolsillo, nene.",
+    "targetWord": "sale de tu bolsillo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "sacó la cuenta",
+  "sentence": "Con la calculadora, _____ de lo que gastó en el viaje.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sacó la cuenta",
+   "options": [
+    "sacó la cuenta",
+    "perdió la cuenta",
+    "pagó la cuenta",
+    "pidió la cuenta"
+   ],
+   "translation": "With the calculator, he _____ what he spent on the trip.",
+   "optionTranslations": [
+    "worked out",
+    "lost count of",
+    "paid the bill for",
+    "asked for the bill for"
+   ],
+   "audioClip": {
+    "storySlug": "aca-los-errores-se-pagan",
+    "storySource": "user",
+    "sentence": "Con la calculadora, sacó la cuenta de lo que gastó en el viaje.",
+    "targetWord": "sacó la cuenta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sin chistar",
+  "sentence": "Pagó [[sin chistar]], mirando la caja.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "without complaining",
+   "options": [
+    "without complaining",
+    "without counting",
+    "without hurrying",
+    "without thinking"
+   ],
+   "audioClip": {
+    "storySlug": "aca-los-errores-se-pagan",
+    "storySource": "user",
+    "sentence": "Pagó sin chistar, mirando la caja.",
+    "targetWord": "sin chistar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "franco",
+  "sentence": "[[De franco]] en su laburo, llegó el sábado antes de que abrieran.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "day off",
+   "options": [
+    "day off",
+    "night shift",
+    "sick leave",
+    "lunch break"
+   ],
+   "audioClip": {
+    "storySlug": "aca-los-errores-se-pagan",
+    "storySource": "user",
+    "sentence": "De franco en su laburo, llegó el sábado antes de que abrieran.",
+    "targetWord": "De franco",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "valer",
+  "sentence": "Sacó la cuenta de lo que [[valía]] y la puso enfrente.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be worth",
+   "options": [
+    "to be worth",
+    "to weigh",
+    "to last",
+    "to hold"
+   ],
+   "audioClip": {
+    "storySlug": "aca-los-errores-se-pagan",
+    "storySource": "user",
+    "sentence": "Sacó la cuenta de lo que valía y la puso enfrente.",
+    "targetWord": "valía",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "tiró",
+  "sentence": "Le _____ la pelota y él la atrapó en el aire.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tiró",
+   "options": [
+    "tiró",
+    "mostró",
+    "vendió",
+    "escondió"
+   ],
+   "translation": "She _____ him the ball and he caught it in the air.",
+   "optionTranslations": [
+    "threw",
+    "showed",
+    "sold",
+    "hid"
+   ],
+   "audioClip": {
+    "storySlug": "aca-los-errores-se-pagan",
+    "storySource": "user",
+    "sentence": "Le tiró la pelota y él la atrapó en el aire.",
+    "targetWord": "tiró",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "consoló",
+  "sentence": "Su amiga lloraba y él la _____ con un abrazo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "consoló",
+   "options": [
+    "consoló",
+    "asustó",
+    "despertó",
+    "castigó"
+   ],
+   "translation": "His friend was crying and he _____ her with a hug.",
+   "optionTranslations": [
+    "comforted",
+    "scared",
+    "woke up",
+    "punished"
+   ],
+   "audioClip": {
+    "storySlug": "aca-los-errores-se-pagan",
+    "storySource": "user",
+    "sentence": "Su amiga lloraba y él la consoló con un abrazo.",
+    "targetWord": "consoló",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "abrir la caja",
+  "sentence": "No gritó ni consoló: [[abrió la caja]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to open the till",
+   "options": [
+    "to open the till",
+    "to lock the shop",
+    "to check the oven",
+    "to call the bank"
+   ],
+   "audioClip": {
+    "storySlug": "aca-los-errores-se-pagan",
+    "storySource": "user",
+    "sentence": "No gritó ni consoló: abrió la caja.",
+    "targetWord": "abrió la caja",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "doblado",
+  "sentence": "En la puerta, ella le devolvió el delantal [[doblado]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "folded",
+   "options": [
+    "folded",
+    "stained",
+    "washed",
+    "torn"
+   ],
+   "audioClip": {
+    "storySlug": "aca-los-errores-se-pagan",
+    "storySource": "user",
+    "sentence": "En la puerta, ella le devolvió el delantal doblado.",
+    "targetWord": "doblado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la hora de cerrar",
+  "sentence": "Volvió a la harina hasta [[la hora de cerrar]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "closing time",
+   "options": [
+    "closing time",
+    "opening time",
+    "lunch break",
+    "rush hour"
+   ],
+   "audioClip": {
+    "storySlug": "aca-los-errores-se-pagan",
+    "storySource": "user",
+    "sentence": "Volvió a la harina hasta la hora de cerrar.",
+    "targetWord": "la hora de cerrar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

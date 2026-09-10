@@ -1,0 +1,446 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "tomar once,pan amasado,caseta,desgaste",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "tomar once",
+     "answer": "to have afternoon tea",
+     "options": [
+      "to have afternoon tea",
+      "home-kneaded bread",
+      "small booth",
+      "wear and tear"
+     ]
+    },
+    {
+     "word": "pan amasado",
+     "answer": "home-kneaded bread",
+     "options": [
+      "to have afternoon tea",
+      "home-kneaded bread",
+      "small booth",
+      "wear and tear"
+     ]
+    },
+    {
+     "word": "caseta",
+     "answer": "small booth",
+     "options": [
+      "to have afternoon tea",
+      "home-kneaded bread",
+      "small booth",
+      "wear and tear"
+     ]
+    },
+    {
+     "word": "desgaste",
+     "answer": "wear and tear",
+     "options": [
+      "to have afternoon tea",
+      "home-kneaded bread",
+      "small booth",
+      "wear and tear"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "maestro",
+  "sentence": "Llamaron al _____ para arreglar la reja del patio.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "maestro",
+   "options": [
+    "maestro",
+    "cartero",
+    "alumno",
+    "cajero"
+   ],
+   "translation": "They called the _____ to fix the yard gate.",
+   "optionTranslations": [
+    "tradesman",
+    "mailman",
+    "student",
+    "cashier"
+   ],
+   "audioClip": {
+    "storySlug": "la-once-con-chirrido",
+    "storySource": "user",
+    "sentence": "Llamaron al maestro para arreglar la reja del patio.",
+    "targetWord": "maestro",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mantención",
+  "sentence": "La [[mantención]], por la rejilla, se veía así: al engranaje le faltaba grasa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "maintenance",
+   "options": [
+    "maintenance",
+    "installation",
+    "decoration",
+    "timetable"
+   ],
+   "audioClip": {
+    "storySlug": "la-once-con-chirrido",
+    "storySource": "user",
+    "sentence": "La mantención, por la rejilla, se veía así: al engranaje le faltaba grasa.",
+    "targetWord": "mantención",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "al tiro",
+  "sentence": "[[Al tiro]] le pongo grasa, no te preocupes.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "right away",
+   "options": [
+    "right away",
+    "later on",
+    "every week",
+    "next year"
+   ],
+   "audioClip": {
+    "storySlug": "la-once-con-chirrido",
+    "storySource": "user",
+    "sentence": "Al tiro le pongo grasa, no te preocupes.",
+    "targetWord": "Al tiro",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "grasa",
+  "sentence": "Tenía las manos negras de _____ después de arreglar el motor.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "grasa",
+   "options": [
+    "grasa",
+    "harina",
+    "arena",
+    "espuma"
+   ],
+   "translation": "Her hands were black with _____ after fixing the engine.",
+   "optionTranslations": [
+    "grease",
+    "flour",
+    "sand",
+    "foam"
+   ],
+   "audioClip": {
+    "storySlug": "la-once-con-chirrido",
+    "storySource": "user",
+    "sentence": "Tenía las manos negras de grasa después de arreglar el motor.",
+    "targetWord": "grasa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chirrido",
+  "sentence": "Esa mañana el eje tenía un [[chirrido]] fino, nuevo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "squeal",
+   "options": [
+    "squeal",
+    "leak",
+    "dent",
+    "smell"
+   ],
+   "audioClip": {
+    "storySlug": "la-once-con-chirrido",
+    "storySource": "user",
+    "sentence": "Esa mañana el eje tenía un chirrido fino, nuevo.",
+    "targetWord": "chirrido",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "engranaje",
+  "sentence": "Conocía la máquina de memoria: el [[engranaje]] sonaba a reloj.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gear",
+   "options": [
+    "gear",
+    "handle",
+    "brake",
+    "window"
+   ],
+   "audioClip": {
+    "storySlug": "la-once-con-chirrido",
+    "storySource": "user",
+    "sentence": "Conocía la máquina de memoria: el engranaje sonaba a reloj.",
+    "targetWord": "engranaje",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fierro",
+  "sentence": "[[Fierro]] viejo que conversa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "iron",
+   "options": [
+    "iron",
+    "copper",
+    "wood",
+    "glass"
+   ],
+   "audioClip": {
+    "storySlug": "la-once-con-chirrido",
+    "storySource": "user",
+    "sentence": "Fierro viejo que conversa.",
+    "targetWord": "Fierro",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cable",
+  "sentence": "Para remolcar el auto, lo amarramos con un _____ de acero.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cable",
+   "options": [
+    "cable",
+    "broche",
+    "poste",
+    "puente"
+   ],
+   "translation": "To tow the car, we tied it with a steel _____.",
+   "optionTranslations": [
+    "cable",
+    "clasp",
+    "post",
+    "bridge"
+   ],
+   "audioClip": {
+    "storySlug": "la-once-con-chirrido",
+    "storySource": "user",
+    "sentence": "Para remolcar el auto, lo amarramos con un cable de acero.",
+    "targetWord": "cable",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quedarse callado",
+  "sentence": "Estuvo por preguntar de frente y [[se quedó callada]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to stay silent",
+   "options": [
+    "to stay silent",
+    "to speak up",
+    "to walk away",
+    "to laugh it off"
+   ],
+   "audioClip": {
+    "storySlug": "la-once-con-chirrido",
+    "storySource": "user",
+    "sentence": "Estuvo por preguntar de frente y se quedó callada.",
+    "targetWord": "se quedó callada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "andamio",
+  "sentence": "Llevaba semanas colgada de un [[andamio]] en un cerro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "scaffold",
+   "options": [
+    "scaffold",
+    "balcony",
+    "ladder",
+    "chimney"
+   ],
+   "audioClip": {
+    "storySlug": "la-once-con-chirrido",
+    "storySource": "user",
+    "sentence": "Llevaba semanas colgada de un andamio en un cerro.",
+    "targetWord": "andamio",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vibrar",
+  "sentence": "Dejó la mano en la mesa, que [[vibraba]] bajito.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to vibrate",
+   "options": [
+    "to vibrate",
+    "to creak",
+    "to slide",
+    "to cool down"
+   ],
+   "audioClip": {
+    "storySlug": "la-once-con-chirrido",
+    "storySource": "user",
+    "sentence": "Dejó la mano en la mesa, que vibraba bajito.",
+    "targetWord": "vibraba",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a simple vista",
+  "sentence": "El desgaste saltaba [[a simple vista]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at first glance",
+   "options": [
+    "at first glance",
+    "only up close",
+    "in the dark",
+    "after a while"
+   ],
+   "audioClip": {
+    "storySlug": "la-once-con-chirrido",
+    "storySource": "user",
+    "sentence": "El desgaste saltaba a simple vista.",
+    "targetWord": "a simple vista",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "rejilla",
+  "sentence": "El sótano tenía una _____ en la pared para que entrara aire.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rejilla",
+   "options": [
+    "rejilla",
+    "repisa",
+    "percha",
+    "pizarra"
+   ],
+   "translation": "The basement had a _____ in the wall to let air in.",
+   "optionTranslations": [
+    "grille",
+    "shelf",
+    "coat hook",
+    "blackboard"
+   ],
+   "audioClip": {
+    "storySlug": "la-once-con-chirrido",
+    "storySource": "user",
+    "sentence": "El sótano tenía una rejilla en la pared para que entrara aire.",
+    "targetWord": "rejilla",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a pie",
+  "sentence": "Bajó [[a pie]]: ya no quería colgar de un cable cansado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on foot",
+   "options": [
+    "on foot",
+    "by car",
+    "in a hurry",
+    "at night"
+   ],
+   "audioClip": {
+    "storySlug": "la-once-con-chirrido",
+    "storySource": "user",
+    "sentence": "Bajó a pie: ya no quería colgar de un cable cansado.",
+    "targetWord": "a pie",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "al día",
+  "sentence": "El maquinista tenía la libreta [[al día]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "up to date",
+   "options": [
+    "up to date",
+    "out of date",
+    "in his pocket",
+    "almost empty"
+   ],
+   "audioClip": {
+    "storySlug": "la-once-con-chirrido",
+    "storySource": "user",
+    "sentence": "El maquinista tenía la libreta al día.",
+    "targetWord": "al día",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "eje",
+  "sentence": "La rueda de la bicicleta giraba torcida porque el _____ estaba doblado.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "eje",
+   "options": [
+    "eje",
+    "timbre",
+    "parche",
+    "sobre"
+   ],
+   "translation": "The bike wheel spun crooked because the _____ was bent.",
+   "optionTranslations": [
+    "axle",
+    "bell",
+    "patch",
+    "envelope"
+   ],
+   "audioClip": {
+    "storySlug": "la-once-con-chirrido",
+    "storySource": "user",
+    "sentence": "La rueda de la bicicleta giraba torcida porque el eje estaba doblado.",
+    "targetWord": "eje",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

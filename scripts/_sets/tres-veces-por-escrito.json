@@ -1,0 +1,446 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "salto,temblón,sellado,celeste",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "salto",
+          "answer": "sudden jolt",
+          "options": [
+            "sudden jolt",
+            "shaky",
+            "sealed",
+            "sky blue"
+          ]
+        },
+        {
+          "word": "temblón",
+          "answer": "shaky",
+          "options": [
+            "sudden jolt",
+            "shaky",
+            "sealed",
+            "sky blue"
+          ]
+        },
+        {
+          "word": "sellado",
+          "answer": "sealed",
+          "options": [
+            "sudden jolt",
+            "shaky",
+            "sealed",
+            "sky blue"
+          ]
+        },
+        {
+          "word": "celeste",
+          "answer": "sky blue",
+          "options": [
+            "sudden jolt",
+            "shaky",
+            "sealed",
+            "sky blue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a media subida",
+    "sentence": "[[A media subida]], el ascensor dio un salto corto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "halfway up",
+      "options": [
+        "halfway up",
+        "right at the top",
+        "at the bottom",
+        "on the way down"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-por-escrito",
+        "storySource": "user",
+        "sentence": "A media subida, el ascensor dio un salto corto.",
+        "targetWord": "A media subida",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "freno",
+    "sentence": "No te muevas, que el [[freno]] agarró.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "brake",
+      "options": [
+        "brake",
+        "engine",
+        "alarm",
+        "gear"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-por-escrito",
+        "storySource": "user",
+        "sentence": "No te muevas, que el freno agarró.",
+        "targetWord": "freno",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "manivela",
+    "sentence": "Te bajo a [[manivela]]. Un ratito no más, te lo prometo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hand crank",
+      "options": [
+        "hand crank",
+        "rope ladder",
+        "remote control",
+        "safety net"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-por-escrito",
+        "storySource": "user",
+        "sentence": "Te bajo a manivela. Un ratito no más, te lo prometo.",
+        "targetWord": "manivela",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "crujió",
+    "sentence": "En la casa silenciosa, la escalera vieja _____ bajo sus pies.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "crujió",
+      "options": [
+        "crujió",
+        "brilló",
+        "creció",
+        "hirvió"
+      ],
+      "translation": "In the silent house, the old staircase _____ under his feet.",
+      "optionTranslations": [
+        "creaked",
+        "shone",
+        "grew",
+        "boiled"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-por-escrito",
+        "storySource": "user",
+        "sentence": "En la casa silenciosa, la escalera vieja crujió bajo sus pies.",
+        "targetWord": "crujió",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pasamanos",
+    "sentence": "¿Cuánto sería un ratito, exactamente?, preguntó ella, sujeta del [[pasamanos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "handrail",
+      "options": [
+        "handrail",
+        "doorframe",
+        "seat belt",
+        "window ledge"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-por-escrito",
+        "storySource": "user",
+        "sentence": "¿Cuánto sería un ratito, exactamente?, preguntó ella, sujeta del pasamanos.",
+        "targetWord": "pasamanos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "secreto",
+    "sentence": "Entendió dónde pesaba lo callado: ella guardó el [[secreto]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "secret",
+      "options": [
+        "secret",
+        "promise",
+        "grudge",
+        "receipt"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-por-escrito",
+        "storySource": "user",
+        "sentence": "Entendió dónde pesaba lo callado: ella guardó el secreto.",
+        "targetWord": "secreto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cedió",
+    "sentence": "El techo viejo _____ bajo el peso de la nieve.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cedió",
+      "options": [
+        "cedió",
+        "mejoró",
+        "se secó",
+        "se calentó"
+      ],
+      "translation": "The old roof _____ under the weight of the snow.",
+      "optionTranslations": [
+        "gave way",
+        "improved",
+        "dried out",
+        "warmed up"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-por-escrito",
+        "storySource": "user",
+        "sentence": "El techo viejo cedió bajo el peso de la nieve.",
+        "targetWord": "cedió",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a punto de",
+    "sentence": "El engranaje estaba [[a punto de]] ceder.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "about to",
+      "options": [
+        "about to",
+        "used to",
+        "unable to",
+        "forced to"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-por-escrito",
+        "storySource": "user",
+        "sentence": "El engranaje estaba a punto de ceder.",
+        "targetWord": "a punto de",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por fin",
+    "sentence": "[[Por fin]] cerraron el ascensor.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at last",
+      "options": [
+        "at last",
+        "at first",
+        "for a while",
+        "by mistake"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-por-escrito",
+        "storySource": "user",
+        "sentence": "Por fin cerraron el ascensor.",
+        "targetWord": "Por fin",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de a poco",
+    "sentence": "El carro bajó [[de a poco]], y todo sonaba a fierro viejo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "little by little",
+      "options": [
+        "little by little",
+        "all at once",
+        "at full speed",
+        "now and then"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-por-escrito",
+        "storySource": "user",
+        "sentence": "El carro bajó de a poco, y todo sonaba a fierro viejo.",
+        "targetWord": "de a poco",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al trote",
+    "sentence": "Salió con las piernas temblonas y el corazón [[al trote]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "racing",
+      "options": [
+        "racing",
+        "calm",
+        "heavy",
+        "broken"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-por-escrito",
+        "storySource": "user",
+        "sentence": "Salió con las piernas temblonas y el corazón al trote.",
+        "targetWord": "al trote",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mercadería",
+    "sentence": "Medio cerro sube su [[mercadería]] en este fierro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "goods",
+      "options": [
+        "goods",
+        "furniture",
+        "tools",
+        "pets"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-por-escrito",
+        "storySource": "user",
+        "sentence": "Medio cerro sube su mercadería en este fierro.",
+        "targetWord": "mercadería",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "recién",
+    "sentence": "En la caseta había una pared [[recién]] pintada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "freshly",
+      "options": [
+        "freshly",
+        "badly",
+        "partly",
+        "hardly"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-por-escrito",
+        "storySource": "user",
+        "sentence": "En la caseta había una pared recién pintada.",
+        "targetWord": "recién",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "rechinaba",
+    "sentence": "Le faltaba aceite y la puerta _____ cada vez que la abríamos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rechinaba",
+      "options": [
+        "rechinaba",
+        "brillaba",
+        "flotaba",
+        "sudaba"
+      ],
+      "translation": "It needed oil and the door _____ every time we opened it.",
+      "optionTranslations": [
+        "screeched",
+        "shone",
+        "floated",
+        "sweated"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-por-escrito",
+        "storySource": "user",
+        "sentence": "Le faltaba aceite y la puerta rechinaba cada vez que la abríamos.",
+        "targetWord": "rechinaba",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "tumbó",
+    "sentence": "El viento fue tan fuerte que _____ el árbol del patio.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tumbó",
+      "options": [
+        "tumbó",
+        "regó",
+        "pintó",
+        "vendió"
+      ],
+      "translation": "The wind was so strong that it _____ the tree in the yard.",
+      "optionTranslations": [
+        "knocked down",
+        "watered",
+        "painted",
+        "sold"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-por-escrito",
+        "storySource": "user",
+        "sentence": "El viento fue tan fuerte que tumbó el árbol del patio.",
+        "targetWord": "tumbó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "repuesto",
+    "sentence": "Se me pinchó una rueda, pero por suerte llevaba una de _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "repuesto",
+      "options": [
+        "repuesto",
+        "regalo",
+        "adorno",
+        "recuerdo"
+      ],
+      "translation": "I got a flat tyre, but luckily I had a _____ one with me.",
+      "optionTranslations": [
+        "spare",
+        "gift",
+        "decoration",
+        "souvenir"
+      ],
+      "audioClip": {
+        "storySlug": "tres-veces-por-escrito",
+        "storySource": "user",
+        "sentence": "Se me pinchó una rueda, pero por suerte llevaba una de repuesto.",
+        "targetWord": "repuesto",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

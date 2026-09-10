@@ -1,0 +1,432 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "mija,socio,gringo,chueco",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "mija",
+          "answer": "my dear",
+          "options": [
+            "my dear",
+            "business partner",
+            "northern foreigner",
+            "crooked"
+          ]
+        },
+        {
+          "word": "socio",
+          "answer": "business partner",
+          "options": [
+            "my dear",
+            "business partner",
+            "northern foreigner",
+            "crooked"
+          ]
+        },
+        {
+          "word": "gringo",
+          "answer": "northern foreigner",
+          "options": [
+            "my dear",
+            "business partner",
+            "northern foreigner",
+            "crooked"
+          ]
+        },
+        {
+          "word": "chueco",
+          "answer": "crooked",
+          "options": [
+            "my dear",
+            "business partner",
+            "northern foreigner",
+            "crooked"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "qué más",
+    "sentence": "¿[[Qué más]] pues? ¿Cómo te fue por allá?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "what's new",
+      "options": [
+        "what's new",
+        "see you soon",
+        "thanks a lot",
+        "never mind"
+      ],
+      "audioClip": {
+        "storySlug": "aqui-se-dice-arrendando",
+        "storySource": "user",
+        "sentence": "¿Qué más pues? ¿Cómo te fue por allá?",
+        "targetWord": "Qué más",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rentar",
+    "sentence": "Allá estuve [[rentando]] un puesto de comida.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to rent",
+      "options": [
+        "to rent",
+        "to sell",
+        "to build",
+        "to close"
+      ],
+      "audioClip": {
+        "storySlug": "aqui-se-dice-arrendando",
+        "storySource": "user",
+        "sentence": "Allá estuve rentando un puesto de comida.",
+        "targetWord": "rentando",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "arrendábamos",
+    "sentence": "No compramos el apartamento: lo _____ mientras ahorrábamos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "arrendábamos",
+      "options": [
+        "arrendábamos",
+        "pintábamos",
+        "limpiábamos",
+        "decorábamos"
+      ],
+      "translation": "We did not buy the flat: we _____ it while we saved.",
+      "optionTranslations": [
+        "rented",
+        "painted",
+        "cleaned",
+        "decorated"
+      ],
+      "audioClip": {
+        "storySlug": "aqui-se-dice-arrendando",
+        "storySource": "user",
+        "sentence": "No compramos el apartamento: lo arrendábamos mientras ahorrábamos.",
+        "targetWord": "arrendábamos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parquear",
+    "sentence": "Voy a [[parquear]] el carro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to park",
+      "options": [
+        "to park",
+        "to wash",
+        "to fix",
+        "to start"
+      ],
+      "audioClip": {
+        "storySlug": "aqui-se-dice-arrendando",
+        "storySource": "user",
+        "sentence": "Voy a parquear el carro.",
+        "targetWord": "parquear",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caleño",
+    "sentence": "Un [[caleño]] de vuelta llegó al barrio Obrero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "from Cali",
+      "options": [
+        "from Cali",
+        "from Bogotá",
+        "from Medellín",
+        "from the coast"
+      ],
+      "audioClip": {
+        "storySlug": "aqui-se-dice-arrendando",
+        "storySource": "user",
+        "sentence": "Un caleño de vuelta llegó al barrio Obrero.",
+        "targetWord": "caleño",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "olvidar",
+    "sentence": "Tranquilo, ve, que el caleño no se [[olvida]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to forget",
+      "options": [
+        "to forget",
+        "to repeat",
+        "to change",
+        "to learn"
+      ],
+      "audioClip": {
+        "storySlug": "aqui-se-dice-arrendando",
+        "storySource": "user",
+        "sentence": "Tranquilo, ve, que el caleño no se olvida.",
+        "targetWord": "olvida",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "llegó",
+    "sentence": "Después de un viaje muy largo, por fin _____ a su pueblo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "llegó",
+      "options": [
+        "llegó",
+        "mintió",
+        "cantó",
+        "escribió"
+      ],
+      "translation": "After a very long trip, he finally _____ in his hometown.",
+      "optionTranslations": [
+        "arrived",
+        "lied",
+        "sang",
+        "wrote"
+      ],
+      "audioClip": {
+        "storySlug": "aqui-se-dice-arrendando",
+        "storySource": "user",
+        "sentence": "Después de un viaje muy largo, por fin llegó a su pueblo.",
+        "targetWord": "llegó",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dar pena",
+    "sentence": "La mesa se rio, pero de otra cosa. A él le [[dio pena]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to embarrass",
+      "options": [
+        "to embarrass",
+        "to anger",
+        "to bore",
+        "to scare"
+      ],
+      "audioClip": {
+        "storySlug": "aqui-se-dice-arrendando",
+        "storySource": "user",
+        "sentence": "La mesa se rio, pero de otra cosa. A él le dio pena.",
+        "targetWord": "dio pena",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "como si nada",
+    "sentence": "El barrio lo recibió [[como si nada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "as if nothing happened",
+      "options": [
+        "as if nothing happened",
+        "as if by pure chance",
+        "as if in slow motion",
+        "as if on purpose"
+      ],
+      "audioClip": {
+        "storySlug": "aqui-se-dice-arrendando",
+        "storySource": "user",
+        "sentence": "El barrio lo recibió como si nada.",
+        "targetWord": "como si nada",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oxidarse",
+    "sentence": "Está [[oxidado]] no más. Eso se desempolva.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get rusty",
+      "options": [
+        "to get rusty",
+        "to get tired",
+        "to get lost",
+        "to get angry"
+      ],
+      "audioClip": {
+        "storySlug": "aqui-se-dice-arrendando",
+        "storySource": "user",
+        "sentence": "Está oxidado no más. Eso se desempolva.",
+        "targetWord": "oxidado",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escaparse",
+    "sentence": "Cuando buscó el chiste, el chiste [[se le escapó]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to slip away",
+      "options": [
+        "to slip away",
+        "to show up",
+        "to sink in",
+        "to wear out"
+      ],
+      "audioClip": {
+        "storySlug": "aqui-se-dice-arrendando",
+        "storySource": "user",
+        "sentence": "Cuando buscó el chiste, el chiste se le escapó.",
+        "targetWord": "se le escapó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "desempolvó",
+    "sentence": "Sacó la guitarra vieja del armario y la _____ con un trapo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "desempolvó",
+      "options": [
+        "desempolvó",
+        "afinó",
+        "vendió",
+        "rompió"
+      ],
+      "translation": "She took the old guitar out of the cupboard and _____ it with a rag.",
+      "optionTranslations": [
+        "dusted",
+        "tuned",
+        "sold",
+        "broke"
+      ],
+      "audioClip": {
+        "storySlug": "aqui-se-dice-arrendando",
+        "storySource": "user",
+        "sentence": "Sacó la guitarra vieja del armario y la desempolvó con un trapo.",
+        "targetWord": "desempolvó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pegado",
+    "sentence": "La esquina de siempre, el calor [[pegado]] a la espalda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stuck close",
+      "options": [
+        "stuck close",
+        "far away",
+        "set apart",
+        "hanging loose"
+      ],
+      "audioClip": {
+        "storySlug": "aqui-se-dice-arrendando",
+        "storySource": "user",
+        "sentence": "La esquina de siempre, el calor pegado a la espalda.",
+        "targetWord": "pegado",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a medio camino",
+    "sentence": "Se quedó con el vaso de lulada [[a medio camino]], sonriendo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "halfway there",
+      "options": [
+        "halfway there",
+        "all the way up",
+        "right on time",
+        "out of reach"
+      ],
+      "audioClip": {
+        "storySlug": "aqui-se-dice-arrendando",
+        "storySource": "user",
+        "sentence": "Se quedó con el vaso de lulada a medio camino, sonriendo.",
+        "targetWord": "a medio camino",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de toda la vida",
+    "sentence": "La socia [[de toda la vida]] lo esperaba con lulada y mecato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lifelong",
+      "options": [
+        "lifelong",
+        "brand-new",
+        "part-time",
+        "short-lived"
+      ],
+      "audioClip": {
+        "storySlug": "aqui-se-dice-arrendando",
+        "storySource": "user",
+        "sentence": "La socia de toda la vida lo esperaba con lulada y mecato.",
+        "targetWord": "de toda la vida",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en ninguna parte",
+    "sentence": "Salió la mitad en caleño y la mitad [[en ninguna parte]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nowhere",
+      "options": [
+        "nowhere",
+        "everywhere",
+        "over there",
+        "right here"
+      ],
+      "audioClip": {
+        "storySlug": "aqui-se-dice-arrendando",
+        "storySource": "user",
+        "sentence": "Salió la mitad en caleño y la mitad en ninguna parte.",
+        "targetWord": "en ninguna parte",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]
