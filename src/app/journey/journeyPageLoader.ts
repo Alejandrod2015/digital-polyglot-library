@@ -18,6 +18,7 @@ import {
   getPassedJourneyCheckpointKeys,
   getPracticedJourneyTopicKeys,
 } from "@/lib/journeyProgress";
+import { journeyIdForLegacySlug } from "@/lib/journeySlugAliases";
 import { normalizeVariant } from "@/lib/languageVariant";
 import {
   getJourneyFocusFromLearningGoal,
@@ -83,6 +84,8 @@ export async function loadJourneyPageProps({
   const resolveIn = (pool: typeof tracks) =>
     pool.find((t) => t.slug === incomingVariant) ??
     pool.find((t) => t.id === incomingVariant) ??
+    // Slug de antes de subir de nivel el journey: resuelve y redirige al nuevo.
+    pool.find((t) => t.id === journeyIdForLegacySlug(incomingVariant)) ??
     pool.find(
       (t) =>
         t.variant === normalizeVariant(incomingVariant) ||
