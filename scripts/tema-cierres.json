@@ -1,11 +1,11 @@
 {
   "cmt5x67ze000l320cpgunu5vi#deals-and-estimates": {
-    "cerrado": "2026-09-06T02:01:29.836Z",
-    "hash": "ec327b283e3d0119",
+    "cerrado": "2026-09-10T18:13:09.284Z",
+    "hash": "a73bebcc209dbca3",
     "historias": [
-      "deals-and-estimates#1 dos-precios-un-techo",
-      "deals-and-estimates#2 en-mano-y-sin-factura",
-      "deals-and-estimates#3 el-papel-donde-se-ve"
+      "deals-and-estimates#1 el-tejado-a-la-mitad",
+      "deals-and-estimates#2 la-rebaja-en-mano",
+      "deals-and-estimates#3 lo-pongo-por-escrito"
     ],
     "checks": [
       "plan del tema completo (registro \"de obra y acera: se habla de pie, con el papel en la mano y ruido de calle\", espina \"Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella\")",
@@ -14,14 +14,16 @@
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"dice\" 22%)",
       "arranques de parrafo variados (mas repetido \"celia\", 12%)",
-      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Celia): dos-precios-un-techo, en-mano-y-sin-factura, el-papel-donde-se-ve",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 0.90 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 53/60 salen una sola vez · sin marcar ancladas",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Celia): el-tejado-a-la-mitad, la-rebaja-en-mano, lo-pongo-por-escrito",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.13 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 53/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 18/60 plazas por encima de A1/A2 (30%, suelo 60%) · referencias medidas: C1 publicados 70% y 81%, B2 latam 67% · de nivel: albañil, salir las cuentas, en partes, así de simple, rebaja, decisión, copia, en mano",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
@@ -62,12 +64,12 @@
     }
   },
   "cmt5x67ze000l320cpgunu5vi#jobs-and-wages": {
-    "cerrado": "2026-09-06T02:01:06.946Z",
-    "hash": "9cf604326a845e41",
+    "cerrado": "2026-09-10T17:58:41.506Z",
+    "hash": "7e8d1ab6d613586c",
     "historias": [
-      "jobs-and-wages#1 nuria-no-negocia",
-      "jobs-and-wages#2 la-cuota-no-espera",
-      "jobs-and-wages#3 cobrar-es-otro-trabajo"
+      "jobs-and-wages#1 el-precio-que-existe",
+      "jobs-and-wages#2 cobro-tarde-y-pago-pronto",
+      "jobs-and-wages#3 el-descansillo-aconseja"
     ],
     "checks": [
       "plan del tema completo (registro \"cuentas en voz baja: fechas, importes y plazos dichos sin dramatismo\", espina \"Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella\")",
@@ -76,14 +78,16 @@
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"dice\" 27%)",
       "arranques de parrafo variados (mas repetido \"el\", 20%)",
-      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 0.98 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 57/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.05 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 57/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
@@ -127,12 +131,12 @@
     ]
   },
   "cmt5x67ze000l320cpgunu5vi#meetings-and-deadlines": {
-    "cerrado": "2026-09-06T02:01:12.565Z",
-    "hash": "26e8466846334fae",
+    "cerrado": "2026-09-10T17:59:29.451Z",
+    "hash": "aa184607c80b7e04",
     "historias": [
-      "meetings-and-deadlines#1 tres-horas-por-un-punto",
-      "meetings-and-deadlines#2 el-retraso-no-es-suyo",
-      "meetings-and-deadlines#3 reunion-sin-orden-del-dia"
+      "meetings-and-deadlines#1 la-reunion-de-un-punto",
+      "meetings-and-deadlines#2 la-ventana-del-rellano",
+      "meetings-and-deadlines#3 manana-y-yo-sola"
     ],
     "checks": [
       "plan del tema completo (registro \"sala de oficina: orden del dia, silencios y correos de cuatro lineas\", espina \"Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella\")",
@@ -141,14 +145,16 @@
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"dice\" 13%)",
       "arranques de parrafo variados (mas repetido \"el\", 27%)",
-      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 0.75 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 57/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.08 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 56/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 30/60 plazas por encima de A1/A2 (50%, suelo 60%) · referencias medidas: C1 publicados 70% y 81%, B2 latam 67% · de nivel: punto, acuerdo, desacuerdo, entrega, título, ocupar, texto, antes que nada",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
@@ -192,12 +198,12 @@
     ]
   },
   "cmt5x67ze000l320cpgunu5vi#repeating-and-rephrasing": {
-    "cerrado": "2026-09-06T02:01:18.285Z",
-    "hash": "e77f9f9401f96a42",
+    "cerrado": "2026-09-10T18:05:19.758Z",
+    "hash": "744f951f04b4b7bf",
     "historias": [
-      "repeating-and-rephrasing#1 el-tecnico-habla-rapido",
-      "repeating-and-rephrasing#2 con-mis-propias-palabras",
-      "repeating-and-rephrasing#3 la-linea-se-corta"
+      "repeating-and-rephrasing#1 el-piloto-azul",
+      "repeating-and-rephrasing#2 a-ver-si-te-sigo",
+      "repeating-and-rephrasing#3 la-fecha-que-decide"
     ],
     "checks": [
       "plan del tema completo (registro \"hablado y con ruido: frases que empiezan dos veces, palabras que vuelven\", espina \"Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella\")",
@@ -206,14 +212,16 @@
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"sigue\" 18%)",
       "arranques de parrafo variados (mas repetido \"perdona\", 13%)",
-      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 0.83 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 56/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.08 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 55/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 25/60 plazas por encima de A1/A2 (42%, suelo 60%) · referencias medidas: C1 publicados 70% y 81%, B2 latam 67% · de nivel: técnico, gas, piloto, manual, traductor, explicación, ganarse la vida, inseguro",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: repeating-and-rephrasing (Celia, Emilio) · presentados tarde: Emilio (aparece en la 2a de repeating-and-rephrasing)"
@@ -254,12 +262,12 @@
     }
   },
   "cmt5x67ze000l320cpgunu5vi#rooms-and-landlords": {
-    "cerrado": "2026-09-06T02:01:01.180Z",
-    "hash": "de53f9d0f3d6d180",
+    "cerrado": "2026-09-10T17:55:50.978Z",
+    "hash": "29321645fb140a6f",
     "historias": [
-      "rooms-and-landlords#1 celia-no-dice-que-si",
-      "rooms-and-landlords#2 arriba-vive-alguien",
-      "rooms-and-landlords#3 la-mayoria-decide-el-techo"
+      "rooms-and-landlords#1 la-cerradura-la-cambio-yo",
+      "rooms-and-landlords#2 la-manta-del-altillo",
+      "rooms-and-landlords#3 el-techo-de-los-tres"
     ],
     "checks": [
       "plan del tema completo (registro \"seco y de tramite: frases cortas, cifras y condiciones, sin adorno\", espina \"Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella\")",
@@ -268,14 +276,16 @@
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"dice\" 20%)",
       "arranques de parrafo variados (mas repetido \"el\", 33%)",
-      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 0.78 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 56/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.15 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 54/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 20/60 plazas por encima de A1/A2 (33%, suelo 60%) · referencias medidas: C1 publicados 70% y 81%, B2 latam 67% · de nivel: de mes en mes, por adelantado, de todo, a la primera, sin decir nada, norma, prometer, poco a poco",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: rooms-and-landlords (Emilio, Celia)"
@@ -319,12 +329,12 @@
     ]
   },
   "cmt5x67ze000l320cpgunu5vi#sayings-and-nicknames": {
-    "cerrado": "2026-09-06T02:01:24.164Z",
-    "hash": "93e7d37d992ae551",
+    "cerrado": "2026-09-10T18:09:45.884Z",
+    "hash": "720a9aa7029ccd82",
     "historias": [
-      "sayings-and-nicknames#1 por-que-le-dicen-chispa",
-      "sayings-and-nicknames#2 el-horno-y-los-bollos",
-      "sayings-and-nicknames#3 la-nueva-ya-tiene-mote"
+      "sayings-and-nicknames#1 lo-de-chispa",
+      "sayings-and-nicknames#2 un-favor-sin-pedir",
+      "sayings-and-nicknames#3 mira-la-apuntadora"
     ],
     "checks": [
       "plan del tema completo (registro \"de portal y broma: frases hechas que no quieren decir lo que dicen\", espina \"Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella\")",
@@ -333,14 +343,16 @@
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"contesta\" 13%)",
       "arranques de parrafo variados (mas repetido \"de\", 11%)",
-      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 0.92 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 53/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.13 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 53/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 20/60 plazas por encima de A1/A2 (33%, suelo 60%) · referencias medidas: C1 publicados 70% y 81%, B2 latam 67% · de nivel: electricista, broma, mote, deducir, enterarse, a oscuras, sin rodeos, por fin",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: sayings-and-nicknames (Celia, Emilio)"
@@ -381,12 +393,12 @@
     }
   },
   "cmt5x67ze000l320cpgunu5vi#trust-and-rumours": {
-    "cerrado": "2026-09-06T02:01:35.654Z",
-    "hash": "372dc2fea5078967",
+    "cerrado": "2026-09-10T18:14:16.091Z",
+    "hash": "10f3334c3d14a3ae",
     "historias": [
-      "trust-and-rumours#1 lo-que-corre-por-el-portal",
-      "trust-and-rumours#2 se-lo-digo-yo-primero",
-      "trust-and-rumours#3 eso-no-lo-repito"
+      "trust-and-rumours#1 palabra-por-palabra",
+      "trust-and-rumours#2 la-voz-mas-rapida",
+      "trust-and-rumours#3 poco-y-de-oidas"
     ],
     "checks": [
       "plan del tema completo (registro \"de rellano y media frase: lo que se dice bajito y lo que se calla\", espina \"Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella\")",
@@ -395,14 +407,16 @@
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"pregunta\" 25%)",
       "arranques de parrafo variados (mas repetido \"sole\", 12%)",
-      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 0.83 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 54/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.18 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 52/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 18/60 plazas por encima de A1/A2 (30%, suelo 60%) · referencias medidas: C1 publicados 70% y 81%, B2 latam 67% · de nivel: comentario, debajo de, a medio girar, hace dos semanas, palabra por palabra, al final, dato, antes que ella",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: trust-and-rumours (Celia, Sole)"

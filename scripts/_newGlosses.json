@@ -6737,6 +6737,50 @@
     "entrando": {
       "g": "coming in (entrar)",
       "t": "verb"
+    },
+    "empezara": {
+      "g": "began, started (empezar)",
+      "t": "verb"
+    },
+    "cedería": {
+      "g": "would give in (ceder)",
+      "t": "verb"
+    },
+    "había": {
+      "g": "had (auxiliary) (haber)",
+      "t": "verb"
+    },
+    "habían": {
+      "g": "they had (auxiliary) (haber)",
+      "t": "verb"
+    },
+    "preguntara": {
+      "g": "asked (preguntar)",
+      "t": "verb"
+    },
+    "sabría": {
+      "g": "would know (saber)",
+      "t": "verb"
+    },
+    "repetir": {
+      "g": "to repeat",
+      "t": "verb"
+    },
+    "pediría": {
+      "g": "would ask for (pedir)",
+      "t": "verb"
+    },
+    "ahorrarías": {
+      "g": "you would save (ahorrar)",
+      "t": "verb"
+    },
+    "sería": {
+      "g": "would be (ser)",
+      "t": "verb"
+    },
+    "preguntaras": {
+      "g": "you asked (preguntar)",
+      "t": "verb"
     }
   },
   "spanish-traveler-spain-b2": {
