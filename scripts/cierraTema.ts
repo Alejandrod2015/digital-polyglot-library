@@ -582,6 +582,13 @@ function desdeJson(fichero: string) {
     plan,
     avisos: avisos.length ? avisos : undefined,
   };
+  // El modo --json es para PROBAR el cierre con fixtures: nunca escribe. Antes
+  // escribia igual, y el 2026-09-10 piso el cierre valido de un tema con el
+  // hash de un texto que no estaba guardado en la base.
+  if (modoJson) {
+    console.log(`\n✓ EL CIERRE PASARIA (modo fixture, hash ${cierre.hash}). NADA ESCRITO EN EL REGISTRO.`);
+    process.exit(0);
+  }
   escribirCierre(journeyId, topic, cierre);
   console.log(`\n✓ TEMA CERRADO. Registrado en scripts/tema-cierres.json (hash ${cierre.hash}), con su plan.`);
   console.log("   Eso, y no una frase, es lo que hace que el tema cuente como listo.");
