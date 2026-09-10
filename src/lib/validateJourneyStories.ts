@@ -613,8 +613,8 @@ export function validateJourneyStories(
   //
   // Una plaza que sale una sola vez en todo el journey se enseña y no se vuelve
   // a ver. El escenario ideal son cuatro encuentros por palabra
-  // ([[project_vocab_recirculation_ladder]]), con 12 portables y 8 ancladas al
-  // sitio por historia.
+  // ([[project_vocab_recirculation_ladder]]), con 14 portables y 6 ancladas al
+  // sitio por historia (el techo de 6 sale del TOPE_ANCLADAS de abajo).
   //
   // EL UMBRAL NO ESTA INVENTADO: es el listón que ya tienen los buenos, medido
   // sobre el catalogo el 2026-08-23. En A0 los journeys publicados dan 4,25

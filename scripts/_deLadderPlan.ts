@@ -4,7 +4,7 @@
  * ANCLADA (solo tiene sentido en su destino), y reparte para cada portable las
  * historias donde debe volver a salir.
  *
- * El objetivo lo fija [[project_vocab_recirculation_ladder]]: 12 portables y 8
+ * El objetivo lo fija [[project_vocab_recirculation_ladder]]: 14 portables y 6
  * ancladas por historia, cuatro encuentros por palabra portable.
  *
  *   npx tsx scripts/_deLadderPlan.ts            # informe
@@ -46,7 +46,7 @@ const ANCLADA = /Kreidefels|Königsstuhl|Hühnergott|Feuerstein|Kalk|Buche|Zahnr
   const port = plazas.filter((x) => x.portable);
   const anc = plazas.filter((x) => !x.portable);
   console.log(`${plazas.length} plazas: ${port.length} portables · ${anc.length} ancladas`);
-  console.log(`por historia: portables ${(port.length / 21).toFixed(1)} (objetivo 12) · ancladas ${(anc.length / 21).toFixed(1)} (objetivo 8)`);
+  console.log(`por historia: portables ${(port.length / 21).toFixed(1)} (objetivo 14) · ancladas ${(anc.length / 21).toFixed(1)} (objetivo 6)`);
   const med = (xs: Plaza[]) => (xs.reduce((a, b) => a + b.sale.length, 0) / xs.length).toFixed(2);
   console.log(`encuentros: portables ${med(port)} (objetivo 4) · ancladas ${med(anc)} (objetivo 1)`);
   const deuda = port.filter((x) => x.sale.length < 4);

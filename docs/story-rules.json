@@ -300,8 +300,8 @@
     {
       "id": "vocab-ladder-shape",
       "gate": "none",
-      "rule": "20 plazas por historia, 12 portables y 8 ancladas",
-      "memory": "project_vocab_ladder_shape"
+      "rule": "20 plazas por historia: 14 portables y 6 ancladas (desde 2026-08). El techo lo impone journey-vocab-recirculation: ancladas hasta el 30% del journey (6x21=126/420 pasa; 8x21=168, 40%, falla)",
+      "memory": "project_vocab_recirculation_ladder"
     },
     {
       "id": "tema-plan-block",
