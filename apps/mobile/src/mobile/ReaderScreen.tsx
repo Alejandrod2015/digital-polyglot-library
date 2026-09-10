@@ -24,7 +24,9 @@ import {
   formatVariantLabel,
   formatLevel,
   formatTopic,
+  getVocabRegisterLabel,
   getVocabTypeLabel,
+  normalizeVocabRegister,
   normalizeVocabType,
   type AudioWordTimingsPayload,
   type Book,
@@ -3239,17 +3241,35 @@ export function ReaderScreen(args: {
                       word: selectedVocab.word,
                       definition: selectedVocab.definition,
                     });
-                    if (!normalizedType || normalizedType === "other") return null;
+                    // El REGISTRO (slang, vulgar...) es una dimension aparte del
+                    // tipo. La web lo pintaba y el movil no, asi que aqui una
+                    // palabra vulgar solo avisaba si su definicion lo decia
+                    // (feedback del 2026-09-09 sobre "culero"). Mismo chip
+                    // ambar con borde que el lector web.
+                    const register = normalizeVocabRegister(selectedVocab.register);
+                    const tipo = normalizedType && normalizedType !== "other" ? normalizedType : null;
+                    if (!tipo && !register) return null;
                     return (
-                      <View
-                        style={[
-                          styles.vocabBubbleTypeBadge,
-                          { backgroundColor: VOCAB_TYPE_BACKGROUNDS[normalizedType] },
-                        ]}
-                      >
-                        <Text style={styles.vocabBubbleTypeBadgeText}>
-                          {getVocabTypeLabel(normalizedType)}
-                        </Text>
+                      <View style={styles.vocabBubbleBadgeRow}>
+                        {tipo ? (
+                          <View
+                            style={[
+                              styles.vocabBubbleTypeBadge,
+                              { backgroundColor: VOCAB_TYPE_BACKGROUNDS[tipo] },
+                            ]}
+                          >
+                            <Text style={styles.vocabBubbleTypeBadgeText}>
+                              {getVocabTypeLabel(tipo)}
+                            </Text>
+                          </View>
+                        ) : null}
+                        {register ? (
+                          <View style={styles.vocabBubbleRegisterBadge}>
+                            <Text style={styles.vocabBubbleRegisterBadgeText}>
+                              {getVocabRegisterLabel(register)}
+                            </Text>
+                          </View>
+                        ) : null}
                       </View>
                     );
                   })()}
@@ -4267,6 +4287,28 @@ const styles = StyleSheet.create({
     marginTop: 4,
     borderWidth: 1,
     borderColor: "rgba(125, 211, 252, 0.85)",
+  },
+  vocabBubbleBadgeRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 6,
+  },
+  // Registro: ambar con borde, el mismo chip del lector web (VocabPanel).
+  vocabBubbleRegisterBadge: {
+    alignSelf: "flex-start",
+    paddingHorizontal: 8,
+    paddingVertical: 1,
+    borderRadius: 999,
+    marginTop: 4,
+    borderWidth: 1,
+    borderColor: "rgba(248, 193, 92, 0.85)",
+  },
+  vocabBubbleRegisterBadgeText: {
+    color: "#f8c15c",
+    fontSize: 11,
+    fontWeight: "700",
+    letterSpacing: 0.4,
+    textTransform: "uppercase",
   },
   vocabBubbleMoodBadgeText: {
     color: "#7dd3fc",

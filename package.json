@@ -32,6 +32,7 @@
     "lint:gloss-moods": "tsx scripts/checkGlossMoods.ts",
     "lint:hard-rules": "tsx scripts/checkHardRules.ts",
     "lint:vocab-layer": "tsx scripts/checkVocabLayer.ts",
+    "lint:vulgar-register": "tsx scripts/checkVulgarRegister.ts",
     "lint:rules-inventory": "tsx scripts/checkRulesInventory.ts",
     "lint:release-readiness": "tsx scripts/checkReleaseReadiness.ts",
     "lint:email-links": "tsx scripts/checkEmailLinks.ts",

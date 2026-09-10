@@ -346,6 +346,80 @@ function slugify(s: string): string {
   // AUDIO: rechaza toda historia narrada. El título se lee en la narración
   // (`buildAlignmentText` lo antepone al cuerpo), así que cambiarlo dejaría a
   // la voz diciendo el título viejo. Esas se arreglan al re-narrar, no aquí.
+  // --register-only (2026-09-10): corregir la MARCA de registro de plazas que
+  // ya existen, sobre todo `register: "vulgar"` (check vocab-vulgar-register).
+  // Nacio de un tester que toco "culero" en una historia narrada y cerrada:
+  // esas historias tienen que poder corregir la marca sin reabrir el juicio
+  // sobre el cuerpo, igual que --title-only corrige un titulo.
+  //
+  // Mecanico: el titulo, el cuerpo, la sinopsis, el arco y cada plaza llegan
+  // IDENTICOS salvo `register` y `definition`, en el mismo orden. El
+  // validador canonico corre con el vocab viejo y con el nuevo: todo check
+  // vocab-* que pasaba tiene que seguir pasando, y vocab-vulgar-register tiene
+  // que quedar en verde. El audio no lee el vocab, asi que las narradas entran.
+  if (flag("register-only")) {
+    if (!journeyId) { console.error("FAIL: --register-only requiere --journey <id>."); process.exit(2); }
+    const prisma = new PrismaClient();
+    try {
+      const plan: { id: string; slug: string; vocab: unknown; cambios: string[] }[] = [];
+      const problemas: string[] = [];
+      for (const d of stories) {
+        const slot = await prisma.journeyStory.findFirst({
+          where: { journeyId, topic: d.topic, slotIndex: d.slotIndex },
+          select: { id: true, slug: true, title: true, text: true, synopsis: true, vocab: true, arcType: true },
+        });
+        if (!slot) { problemas.push(`sin slot para ${d.topic}#${d.slotIndex}`); continue; }
+        const nombre = slot.slug ?? slot.id;
+        const igual = (a: unknown, b: unknown) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+        for (const campo of ["title", "text", "synopsis", "arcType"] as const) {
+          if (d[campo] !== undefined && !igual(d[campo], slot[campo])) {
+            problemas.push(`${nombre}: .${campo} no coincide con la base; --register-only solo cambia el registro del vocab`);
+          }
+        }
+        const viejo = (slot.vocab ?? []) as Record<string, unknown>[];
+        const nuevo = (d.vocab ?? []) as Record<string, unknown>[];
+        if (viejo.length !== nuevo.length) { problemas.push(`${nombre}: el vocab cambia de ${viejo.length} a ${nuevo.length} plazas`); continue; }
+        const cambios: string[] = [];
+        nuevo.forEach((n, i) => {
+          const v = viejo[i];
+          const resto = (x: Record<string, unknown>) => { const { register: _r, definition: _d, ...o } = x; return o; };
+          if (!igual(resto(n), resto(v))) problemas.push(`${nombre}: la plaza ${i} (${String(v.word)}) cambia algo mas que register/definition`);
+          if (!igual(n.register, v.register)) cambios.push(`${String(v.word)}: register ${String(v.register ?? "-")} -> ${String(n.register ?? "-")}`);
+          if (!igual(n.definition, v.definition)) cambios.push(`${String(v.word)}: definicion "${String(v.definition)}" -> "${String(n.definition)}"`);
+        });
+        if (!cambios.length) continue;
+
+        const base = { title: slot.title, slug: slot.slug ?? undefined, synopsis: slot.synopsis, text: slot.text, arcType: slot.arcType };
+        const ctxV = { language: ctx.language, level: ctx.level, variant: ctx.variant } as never;
+        const antes = await validateGeneratedStory({ ...base, vocab: viejo } as never, ctxV);
+        const despues = await validateGeneratedStory({ ...base, vocab: nuevo } as never, ctxV);
+        const estadoAntes = new Map(antes.checks.map((c) => [c.id, c.status]));
+        for (const c of despues.checks) {
+          if (!c.id.startsWith("vocab-") || c.status !== "fail") continue;
+          if (c.id === "vocab-vulgar-register" || estadoAntes.get(c.id) !== "fail") {
+            problemas.push(`${nombre}: [${c.id}] ${c.detail ?? c.label}`);
+          }
+        }
+        plan.push({ id: slot.id, slug: nombre, vocab: nuevo, cambios });
+      }
+      if (problemas.length) {
+        console.error(`✗ [register-only] ${problemas.length} problema(s). NOTHING WRITTEN.`);
+        for (const p of problemas) console.error(`   FAIL ${p}`);
+        process.exit(1);
+      }
+      console.log(`[register-only] ${plan.length}/${stories.length} historias que cambiar.`);
+      for (const p of plan) for (const c of p.cambios) console.log(`  · ${p.slug}: ${c}`);
+      if (dry) { console.log("--dry: no DB write."); return; }
+      for (const p of plan) {
+        await prisma.journeyStory.update({ where: { id: p.id }, data: { vocab: p.vocab as never } });
+        console.log(`  ✓ ${p.slug}`);
+      }
+    } finally {
+      await prisma.$disconnect();
+    }
+    return;
+  }
+
   if (titleOnly) {
     if (!journeyId) { console.error("FAIL: --title-only requiere --journey <id>."); process.exit(2); }
     const prisma = new PrismaClient();

@@ -116,6 +116,7 @@ checkRulesInventory  -
 checkGlossMoods      db
 checkGlossVariants   db
 checkVocabLayer      db
+checkVulgarRegister  db
 checkReleaseReadiness -
 checkEmailLinks      red
 checkTypes           -

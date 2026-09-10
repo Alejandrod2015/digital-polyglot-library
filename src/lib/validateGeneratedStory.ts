@@ -2056,6 +2056,37 @@ export async function validateGeneratedStory(
           `Cámbiala por una palabra que el usuario vaya a necesitar otra vez.`,
   });
 
+  // Una palabra vulgar va marcada `register: "vulgar"`, sin excepcion
+  // (2026-09-10). Un tester toco "culero" en el Friends latam C1 y no tenia
+  // ningun aviso: el journey entero llevaba cero plazas con ese registro, y
+  // las que avisaban lo hacian dentro de la definicion. El lector pinta el
+  // chip desde el campo, no desde el texto. Lexico y regla en vulgarVocab.ts,
+  // el mismo archivo que barre la base (npm run lint:vulgar-register).
+  {
+    const { vulgarSinMarcar } = await import("./vulgarVocab");
+    const sinMarcar = vulgarSinMarcar(
+      parsed.vocab.map((v) => ({
+        word: v.word,
+        surface: (v as { surface?: string | null }).surface ?? null,
+        definition: v.definition,
+        register: (v as { register?: string | null }).register ?? null,
+      })),
+      context.language,
+      context.variant
+    );
+    checks.push({
+      id: "vocab-vulgar-register",
+      label: "Vulgar vocab is marked register vulgar",
+      status: sinMarcar.length === 0 ? "pass" : "fail",
+      detail:
+        sinMarcar.length === 0
+          ? "every vulgar entry carries register vulgar"
+          : `${sinMarcar
+              .map((v) => `"${v.word}" (${v.motivo === "lexico" ? "on the vulgar list" : "its definition says so"}) has register ${v.register ?? "none"}`)
+              .join("; ")}. Set register: "vulgar"; the reader paints the warning from that field.`,
+    });
+  }
+
   // Definition rules; see docs/story-quality-spec.md §4. The corrected
   // target after the 2026-05-03 vocab audit is 8-14 English words per
   // definition across all CEFR levels. The previous 3-7w window was an
