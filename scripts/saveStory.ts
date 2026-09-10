@@ -628,6 +628,7 @@ function slugify(s: string): string {
     const payload = { title: d.title, synopsis: d.synopsis, text: d.text, vocab: d.vocab, arcType: d.arcType };
     const r = await validateGeneratedStory(payload as any, {
       language: ctx.language, level: ctx.level, variant: ctx.variant, topic: d.topic,
+      journeyId: journeyId ?? undefined, slotIndex: d.slotIndex,
       journeyTitles: allTitles.filter((t) => t !== d.title),
       existing: [...priorSummaries],
       taughtElsewhere,

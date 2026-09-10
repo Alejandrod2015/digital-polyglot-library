@@ -1057,7 +1057,7 @@
     {
       "id": "body-word-count",
       "domain": "process",
-      "rule": "A0 y A1: cuerpo de 115 a 170 palabras",
+      "rule": "Cuerpo dentro de la banda del spec por nivel (A0-A2 128-155, B1-B2 140-166, C1-C2 150-177); fuera, FALLA. Live ya fuera el 2026-09-11: igual o mejor (src/lib/bodyWordBandBaseline.ts)",
       "gate": "src/lib/validateGeneratedStory.ts#body-word-count",
       "source": "story-rules:body-word-count (project_a0_gate_profile) + validator:src/lib/validateGeneratedStory.ts"
     },
