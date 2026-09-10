@@ -392,18 +392,34 @@ export async function generateGeminiImagen4Buffer(prompt: string, modelOverride?
   return Buffer.from(prediction.bytesBase64Encoded, "base64");
 }
 
-export async function generateGeminiFlashImageBuffer(prompt: string, modelOverride?: string): Promise<Buffer> {
+export type GeminiReferenceImage = { mimeType: "image/png" | "image/jpeg"; data: Buffer };
+
+// With `referenceImage`, the prompt is sent VERBATIM next to the image (the
+// caller composes it, and the image goes first so the prompt can say "the
+// image provided"). Without it, the old orientation prefix stays.
+// `imageConfig.aspectRatio` is what actually fixes the canvas: without it
+// Gemini composes near-square art inside a landscape canvas, leaving white
+// bands (measured in the "Reparto que no cambia de cara" method doc).
+export async function generateGeminiFlashImageBuffer(
+  prompt: string,
+  modelOverride?: string,
+  referenceImage?: GeminiReferenceImage
+): Promise<Buffer> {
   const apiKey = geminiApiKey();
   const model = modelOverride ?? process.env.GEMINI_FLASH_IMAGE_MODEL ?? "gemini-2.5-flash-image";
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`;
-  const orientedPrompt =
-    "Generate a horizontal 16:9 landscape cover illustration. " + prompt;
+  const parts: Array<Record<string, unknown>> = referenceImage
+    ? [
+        { inline_data: { mime_type: referenceImage.mimeType, data: referenceImage.data.toString("base64") } },
+        { text: prompt },
+      ]
+    : [{ text: "Generate a horizontal 16:9 landscape cover illustration. " + prompt }];
   const response = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      contents: [{ role: "user", parts: [{ text: orientedPrompt }] }],
-      generationConfig: { responseModalities: ["IMAGE"] },
+      contents: [{ role: "user", parts }],
+      generationConfig: { responseModalities: ["IMAGE"], imageConfig: { aspectRatio: "16:9" } },
     }),
   });
   if (!response.ok) {
@@ -426,5 +442,8 @@ export async function generateGeminiFlashImageBuffer(prompt: string, modelOverri
       if (inline?.data) return Buffer.from(inline.data, "base64");
     }
   }
-  throw new Error("Gemini Flash Image returned no inline image data.");
+  // finishReason says WHY (IMAGE_SAFETY, PROHIBITED_CONTENT, ...), which is
+  // what tells you whether to change the scene or the sheet.
+  const reasons = (payload.candidates ?? []).map((c) => c.finishReason).filter(Boolean).join(", ");
+  throw new Error(`Gemini Flash Image returned no inline image data${reasons ? ` (finishReason: ${reasons})` : ""}.`);
 }
