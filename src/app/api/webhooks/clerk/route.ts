@@ -1,7 +1,6 @@
 import { Webhook } from "svix";
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { sendWelcomeEmail } from "@/lib/email";
 import { deleteAllUserData } from "@/lib/deleteUserData";
 import { linkClerkUserToBetaSignup } from "@/lib/betaProgram";
 
@@ -114,19 +113,22 @@ export async function POST(req: Request) {
         }
       }
 
-      // Instant welcome email (lifecycle onboarding). Wrapped so a Resend
-      // failure can never break signup tracking or the webhook 200.
+      // Aqui NO se manda la bienvenida. La decide `decideKind` en el motor del
+      // ciclo de vida, que corre por cron.
       //
-      // Beta testers are skipped: they already got the acceptance email, which
-      // tells them what to do next in beta terms. Two "welcome" emails minutes
-      // apart, giving different instructions, reads as broken.
-      if (email && !isBetaTester) {
-        try {
-          await sendWelcomeEmail({ to: email });
-        } catch (mailErr) {
-          console.error("❌ Welcome email threw (signup still tracked):", mailErr);
-        }
-      }
+      // WHY (2026-09-07): desde aqui salia con `sendWelcomeEmail({ to })`, sin
+      // `data`, porque en el instante del alta no hay nada que pasarle: sin
+      // onboarding no hay idioma ni nivel. La plantilla resolvia entonces su
+      // rama de demostracion y el boton apuntaba a `mole-en-san-angel`, que no
+      // esta publicada: 404 para las 23 personas que pasaron por aqui desde el
+      // 11 de agosto. Una de ellas lo pulso 21 veces y escribio a soporte.
+      //
+      // El motor lo hace bien porque llega despues: el onboarding ya termino,
+      // `buildLifecycleData` tiene idioma y nivel, y `getSentKinds` garantiza
+      // que no se manda dos veces. `isBetaTester` sigue calculandose arriba
+      // para el plan; a los testers los sigue cubriendo el correo de
+      // aceptacion, y el motor solo mira altas con `signup_completed`.
+      void isBetaTester;
     }
 
     return NextResponse.json({ received: true });

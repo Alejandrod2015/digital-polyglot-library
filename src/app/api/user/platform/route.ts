@@ -10,14 +10,20 @@
 // webhook never fired gets linked to their application.
 import { auth } from "@clerk/nextjs/server";
 import { createClerkClient } from "@clerk/backend";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { touchTesterActivity } from "@/lib/betaProgram";
+import {
+  FIRST_TOUCH_COOKIE,
+  classifyOrigin,
+  decodeFirstTouch,
+  encodeOrigin,
+} from "@/lib/signupSource";
 
 const clerkClient = createClerkClient({
   secretKey: process.env.CLERK_SECRET_KEY!,
 });
 
-export async function POST() {
+export async function POST(req: NextRequest) {
   try {
     const { userId } = await auth();
     if (!userId) {
@@ -36,14 +42,32 @@ export async function POST() {
       console.error("touchTesterActivity failed:", err);
     });
 
-    if (typeof existing.signupPlatform === "string" && existing.signupPlatform) {
-      return NextResponse.json({ signupPlatform: existing.signupPlatform });
+    // Origen: el primer toque que dejo la cookie en su primera visita. Va
+    // aparte de la plataforma porque responde otra pregunta ("de donde
+    // vino") y porque puede llegar cuando la plataforma ya esta sellada,
+    // p.ej. quien nacio en la app y luego abre la web.
+    const hasOrigin = typeof existing.signupSource === "string" && existing.signupSource;
+    const touch = decodeFirstTouch(req.cookies.get(FIRST_TOUCH_COOKIE)?.value);
+    // Sin cookie no se sella nada: un "s/d" grabado taparia para siempre el
+    // dato bueno que llegaria en la siguiente visita con cookie.
+    const origin = hasOrigin || !touch ? null : encodeOrigin(classifyOrigin(touch));
+
+    const platformStamped =
+      typeof existing.signupPlatform === "string" && existing.signupPlatform
+        ? (existing.signupPlatform as string)
+        : null;
+    if (platformStamped && !origin) {
+      return NextResponse.json({ signupPlatform: platformStamped });
     }
 
     await clerkClient.users.updateUserMetadata(userId, {
-      publicMetadata: { ...existing, signupPlatform: "web" },
+      publicMetadata: {
+        ...existing,
+        signupPlatform: platformStamped ?? "web",
+        ...(origin ? { signupSource: origin } : {}),
+      },
     });
-    return NextResponse.json({ signupPlatform: "web" });
+    return NextResponse.json({ signupPlatform: platformStamped ?? "web", signupSource: origin });
   } catch (error) {
     console.error("Error stamping signupPlatform:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });

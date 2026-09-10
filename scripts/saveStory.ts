@@ -51,6 +51,7 @@ import { validateGeneratedStory, extractStoryMotifs, extractProperNouns, type Ex
 import { renderedParagraphs } from "@/lib/readerParagraphs";
 import { validateJourneyStories, type JourneyStoryInput, type JourneyCheck } from "@/lib/validateJourneyStories";
 import { candadoCierrePrevio, type HistoriaCierre } from "./temaCierres";
+import { empeora } from "./journeyRatchet";
 
 /** Build the cross-story summary the canonical validator needs to run its
  *  repetition / rotation / opening-rhythm / motif checks against siblings. */
@@ -75,38 +76,6 @@ function summarize(d: any): ExistingStorySummary {
     openingFirstSentence: firstSentence,
     motifTags: extractStoryMotifs(String(d.text)),
   };
-}
-
-/**
- * ¿La edición empeora esta regla de conjunto respecto a como estaba?
- *
- * Conservador a propósito: devuelve "empeora" siempre que no pueda demostrar
- * lo contrario. Cuatro casos y ninguno más:
- *
- *   1. Antes pasaba y ahora no        -> EMPEORA. Sin excepción.
- *   2. El detalle es idéntico          -> igual. La edición no la tocó.
- *   3. Los dos detallan historias, y   -> igual o mejor. Ninguna historia
- *      las de ahora son un subconjunto    nueva entra en la lista de fallos.
- *      de las de antes
- *   4. Cualquier otra cosa             -> EMPEORA.
- *
- * Se compara por SLUG y no por los números del detalle porque el sentido de
- * un número depende de la regla: en `journey-quoted-speech-band` un 3% es
- * peor que un 7%, y en `journey-closing-alone` 17 es peor que 12. El conjunto
- * de historias señaladas, en cambio, significa lo mismo en todas.
- */
-function empeora(antes: JourneyCheck | undefined, ahora: JourneyCheck, slugs: string[]): boolean {
-  if (!antes || antes.status === "pass") return true;
-  const da = (antes.detail ?? "").trim();
-  const dh = (ahora.detail ?? "").trim();
-  if (da === dh) return false;
-  const mencionadas = (d: string) => new Set(slugs.filter((s) => d.includes(s)));
-  const A = mencionadas(da);
-  const H = mencionadas(dh);
-  if (A.size === 0 || H.size === 0) return true;
-  if (H.size > A.size) return true;
-  for (const s of H) if (!A.has(s)) return true;
-  return false;
 }
 
 function arg(name: string, fallback?: string): string | undefined {
@@ -444,6 +413,104 @@ function slugify(s: string): string {
         console.log(`  ✓ ${p.slug}`);
       }
       console.log(`[title-only] ${plan.length} títulos actualizados.`);
+    } finally {
+      await prisma.$disconnect();
+    }
+    return;
+  }
+
+  // ── EL SLUG SIGUE AL TÍTULO ──
+  // Regla del usuario (2026-09-08, "cambia el slug, esta mal"): al retitular,
+  // el slug se regenera del título nuevo. No es un `update` suelto: del slug
+  // cuelga la fila de glosas de la historia, la lista `slugs` de la fila
+  // global del bundle y el registro de muestras, y si alguna se queda atrás la
+  // historia pierde sus glosas sin que salte ningún lint.
+  //
+  // Vive aquí y no en un script aparte porque el slug es CONTENIDO de
+  // JourneyStory, y la regla dura del proyecto es que el contenido entra por
+  // este saver. Solo toca historias sin publicar y sin audio: en una publicada
+  // el slug es URL viva, y en una narrada hay copias alineadas que lo citan.
+  if (flag("slug-follows-title")) {
+    if (!journeyId) { console.error("FAIL: --slug-follows-title requiere --journey <id>."); process.exit(2); }
+    const prisma = new PrismaClient();
+    try {
+      const plan: { id: string; antes: string; ahora: string; titulo: string }[] = [];
+      const problemas: string[] = [];
+      for (const d of stories) {
+        const slot = await prisma.journeyStory.findFirst({
+          where: { journeyId, topic: d.topic, slotIndex: d.slotIndex },
+          select: { id: true, slug: true, title: true, status: true, audioUrl: true, audioWordTimings: true },
+        });
+        if (!slot) { problemas.push(`sin slot para ${d.topic}#${d.slotIndex}`); continue; }
+        const nombre = slot.slug ?? slot.id;
+        if (slot.status !== "draft") { problemas.push(`${nombre}: status ${slot.status}; el slug de una publicada es URL viva`); continue; }
+        if (slot.audioUrl || slot.audioWordTimings) { problemas.push(`${nombre}: narrada; hay copias alineadas que citan el slug`); continue; }
+        if (!slot.title) { problemas.push(`${nombre}: sin título`); continue; }
+        const nuevo = slugify(slot.title);
+        if (!nuevo) { problemas.push(`${nombre}: el título no da slug`); continue; }
+        if (nuevo === slot.slug) continue;
+        plan.push({ id: slot.id, antes: slot.slug ?? "", ahora: nuevo, titulo: slot.title });
+      }
+
+      // Choques en TODA la base, no solo en este journey: los bundles del mismo
+      // idioma comparten espacio de slug y una colisión silenciosa mezcla las
+      // glosas de dos historias.
+      const nuevos = plan.map((p) => p.ahora);
+      if (nuevos.length !== new Set(nuevos).size) problemas.push("dos títulos del lote dan el mismo slug");
+      const chocaHistoria = await prisma.journeyStory.findMany({
+        where: { slug: { in: nuevos }, id: { notIn: plan.map((p) => p.id) } },
+        select: { slug: true, journeyId: true },
+      });
+      for (const c of chocaHistoria) problemas.push(`el slug "${c.slug}" ya existe en journeyStory (journey ${c.journeyId})`);
+      const viejos = new Set(plan.map((p) => p.antes));
+      const chocaGlosas = await prisma.tapGlossSet.findMany({
+        where: { slug: { in: nuevos } }, select: { bundle: true, slug: true },
+      });
+      for (const c of chocaGlosas) if (!viejos.has(c.slug)) problemas.push(`el slug "${c.slug}" ya existe en tapGlossSet (${c.bundle})`);
+
+      if (problemas.length) {
+        console.error(`✗ [slug-follows-title] ${problemas.length} problema(s). NOTHING WRITTEN.`);
+        for (const p of problemas) console.error(`   FAIL ${p}`);
+        process.exit(1);
+      }
+      console.log(`[slug-follows-title] ${plan.length}/${stories.length} slugs que cambiar.`);
+      for (const p of plan) console.log(`  · "${p.titulo}": ${p.antes} -> ${p.ahora}`);
+      if (dry) { console.log("--dry: no DB write."); return; }
+
+      const MUESTRAS = "scripts/a2-muestras.json";
+      const muestras: Record<string, unknown> = fs.existsSync(MUESTRAS)
+        ? JSON.parse(fs.readFileSync(MUESTRAS, "utf8")) : {};
+      let muestrasTocadas = false;
+
+      for (const p of plan) {
+        await prisma.journeyStory.update({ where: { id: p.id }, data: { slug: p.ahora } });
+        // La fila de glosas de la historia y la lista de la fila global.
+        const filas = await prisma.tapGlossSet.findMany({
+          where: { OR: [{ slug: p.antes }, { slugs: { has: p.antes } }] },
+          select: { bundle: true, slug: true, slugs: true },
+        });
+        for (const f of filas) {
+          if (f.slug === p.antes) {
+            await prisma.tapGlossSet.update({
+              where: { bundle_slug: { bundle: f.bundle, slug: p.antes } }, data: { slug: p.ahora },
+            });
+          }
+          if (f.slugs?.includes(p.antes)) {
+            await prisma.tapGlossSet.update({
+              where: { bundle_slug: { bundle: f.bundle, slug: f.slug } },
+              data: { slugs: f.slugs.map((s) => (s === p.antes ? p.ahora : s)) },
+            });
+          }
+        }
+        if (p.antes in muestras) {
+          muestras[p.ahora] = muestras[p.antes];
+          delete muestras[p.antes];
+          muestrasTocadas = true;
+        }
+        console.log(`  ✓ ${p.antes} -> ${p.ahora}`);
+      }
+      if (muestrasTocadas) fs.writeFileSync(MUESTRAS, `${JSON.stringify(muestras, null, 2)}\n`);
+      console.log(`[slug-follows-title] ${plan.length} slugs actualizados, con sus glosas.`);
     } finally {
       await prisma.$disconnect();
     }
@@ -830,8 +897,12 @@ function slugify(s: string): string {
       // juzgarse (o a `not-implemented`, que bloquea igual) con menos de la
       // mitad del material. Se mide contra los huecos que el journey declara.
       const completo = esperadas > 0 ? todas.length >= esperadas : todas.length >= 7;
+      const tipoJourney = (await p3.journey.findUnique({
+        where: { id: journeyId }, select: { typeSlug: true },
+      }))?.typeSlug ?? null;
       const jc = validateJourneyStories(todas, {
         language: ctx.language, level: ctx.level, realPeople, conjuntoCompleto: completo,
+        journeyType: tipoJourney, journeyId,
       });
       const malos = jc.filter((c) => c.status === "fail" || c.status === "not-implemented");
       const enEspera = jc.filter((c) => c.status === "pending-set");
@@ -856,7 +927,15 @@ function slugify(s: string): string {
           console.error(`   El trinquete solo sirve para EDITAR lo que ya existe. NOTHING WRITTEN.`);
           process.exit(1);
         }
-        const antes = validateJourneyStories(base, { language: ctx.language, level: ctx.level, realPeople });
+        // MISMO contexto que el "ahora", tipo y completitud incluidos. Sin
+        // ellos el antes se medía con otras reglas activas: los checks que
+        // solo gatean a cierto tipo (journey-vocab-worth-teaching) salían
+        // "pass" en la base por no saber el tipo, y entonces cualquier fallo
+        // posterior se leía como EMPEORA por la primera linea de empeora().
+        const antes = validateJourneyStories(base, {
+          language: ctx.language, level: ctx.level, realPeople,
+          conjuntoCompleto: completo, journeyType: tipoJourney, journeyId,
+        });
         const porId = new Map(antes.map((c) => [c.id, c]));
         const slugs = todas.map((t) => t.slug);
         const peores = malos.filter((c) => empeora(porId.get(c.id), c, slugs));

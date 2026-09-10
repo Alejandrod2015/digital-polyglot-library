@@ -24,7 +24,18 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { checkActiveJourneySlotCounts } from "@/lib/journeyInvariants";
 
-export async function GET() {
+function isAuthorized(req: Request): boolean {
+  const secret = process.env.CRON_SECRET;
+  if (!secret) return true; // dev / no-auth mode
+  const header = req.headers.get("authorization");
+  return header === `Bearer ${secret}`;
+}
+
+export async function GET(req: Request) {
+  if (!isAuthorized(req)) {
+    return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
+  }
+
   const violations = await checkActiveJourneySlotCounts(prisma);
   const ok = violations.length === 0;
   return NextResponse.json(

@@ -1,0 +1,13 @@
+{
+  "tipo": "Traveler: protagonistas nativos; el narrador mira desde fuera, presenta gente y sitios (Ciudad, pais) y explica lo que un local daria por sabido",
+  "nivel": "b2",
+  "variante": "LATAM",
+  "registro": "querer pertenecer: el examen que nadie admite estar tomando",
+  "espina": "lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir",
+  "recursos": "ironia de personaje (B2), subtexto de dialogo (B2), aforismo de personaje con cuentagotas (B2), humor de situacion (A1), cambio de ritmo (B1)",
+  "historias": [
+    { "slot": "1", "quiere": "Emiliano quiere caerle bien a Norma, la duena de la rotiseria, en el primer almuerzo con la familia de su novia", "impide": "el examen que nadie nombra: el vino equivocado, las preguntas de entrevista, la ironia de Norma", "cuesta": "el punto del vino: el malbec que trajo termina en el estante de abajo y ahi se queda; el primer intento de impresionar no vuelve", "cambia": "deja de intentar impresionar y empieza a fijarse: en el estante, en el anillo que Norma hace girar, en lo que la casa premia de verdad", "emocion": "nervios de examen: contesta con la espalda derecha y el vaso sin tocar, como en entrevista, porque relajarse seria dar por ganado lo que no le han dado" },
+    { "slot": "2", "quiere": "aprobar el sabado de trabajo en la rotiseria que el mismo ofrecio", "impide": "la segunda tanda de milanesas se quema por atender dos cosas a la vez", "cuesta": "la plata de la tanda quemada, que sale de su bolsillo y no vuelve", "cambia": "descubre la regla de la casa: los errores se pagan y el delantal se gana; se lleva el delantal doblado", "emocion": "verguenza que se traga sin chistar: paga la tanda mirando la caja y no a Norma, porque discutir el precio seria discutir la casa" },
+    { "slot": "3", "quiere": "que un sabado cualquiera la rotiseria lo trate como de la casa, no como visita", "impide": "la confianza de Norma no se pide: se espera, y nadie avisa cuando llega", "cuesta": "el sabado de descanso que entrega sin que se lo pidan: los francos de Emiliano ya no son suyos", "cambia": "Norma se va de franco por primera vez y le deja la caja; el examen termina sin diploma y sin anuncio", "emocion": "orgullo tranquilo: cierra con llave, cuenta la plata dos veces y le guarda una milanesa a Norma, porque el que ya es de la casa no necesita decirlo" }
+  ]
+}

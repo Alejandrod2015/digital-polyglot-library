@@ -1,0 +1,34 @@
+{
+  "tipo": "traveler",
+  "nivel": "a2",
+  "variante": "brazil",
+  "registro": "doméstico y algo terco, con humor de convivencia",
+  "espina": "Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.",
+  "recursos": "A2: símil simple (cortar el ajo como quien tiene tiempo) y espejo concreto (la regla que él enuncia en la primera se la cobra ella en la tercera). Heredados: repetición rítmica en las réplicas cortas del inventario de la nevera, contraste con pero, causalidad explícita, imagen concreta de remate (el papel en la encimera). Nada de B1 o superior.",
+  "historias": [
+    {
+      "slot": "jericoacoara#0",
+      "quiere": "Renata quiere cocinar una vez en casa después de semanas comiendo en la calle.",
+      "impide": "La cocina es de todos, el fregadero lleva tres días lleno y del fogón funciona un fuego.",
+      "cuesta": "Fregar lo que ensuciaron otros antes de poder empezar lo suyo.",
+      "cambia": "Se entera de la regla de la casa (quien cocina no friega) y la anuncia en voz alta, comprometiéndose delante de todos.",
+      "emocion": "hartazgo que se vuelve decisión"
+    },
+    {
+      "slot": "jericoacoara#1",
+      "quiere": "Renata quiere dar de cenar bien a seis personas que no conoce.",
+      "impide": "Prueba la cuchara tarde, con la mesa puesta, y el feijão está salado de más.",
+      "cuesta": "Aceptar delante del único que se ha dado cuenta que no sabe arreglarlo.",
+      "cambia": "Edilson lo salva con una patata cruda y sin decirlo en la mesa; ella cena la última, con un huevo que no pidió.",
+      "emocion": "vergüenza que se queda en privado"
+    },
+    {
+      "slot": "jericoacoara#2",
+      "quiere": "Renata quiere que la regla que le dijeron valga también cuando le toca a quien la dijo.",
+      "impide": "La olla lleva desde anoche pegada y ninguno de los dos la toca en todo el día.",
+      "cuesta": "Pasar el día entero sin ceder, delante de una cocina parada y cargada.",
+      "cambia": "A las once la olla está limpia y hay un papel con letra gorda en la encimera; la discusión se cierra sin una palabra más.",
+      "emocion": "terquedad que se resuelve en complicidad"
+    }
+  ]
+}

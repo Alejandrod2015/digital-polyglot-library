@@ -24,6 +24,12 @@ const CIUDAD: Record<string, string> = {
   "night-buses": "Cusco", "prices-and-change": "Coyoacán", "calls-and-messages": "Cartagena",
   "help-and-repairs": "Oaxaca", "names-for-things": "San Telmo",
   "doors-and-neighbours": "Barranquilla", "plans-and-invitations": "Palermo",
+  // B1 latam: la ciudad de cada tema sale del pais que fija su narrador en
+  // scripts/_b1LatamVoces.ts, que es donde se decidio la escena.
+  "promises-and-excuses": "Mendoza", "advice-and-opinions": "Manizales",
+  "faith-and-devotion": "Ayacucho", "animals-and-farms": "Chiloe",
+  "games-and-bets": "Aguascalientes", "pride-and-envy": "Tucuman",
+  "distance-and-homecoming": "Popayan",
 };
 const H = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
 (async () => {

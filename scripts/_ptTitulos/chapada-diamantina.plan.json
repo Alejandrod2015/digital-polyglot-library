@@ -1,0 +1,34 @@
+{
+  "tipo": "Traveler",
+  "nivel": "b1",
+  "variante": "brazil",
+  "registro": "seco y de montana: instrucciones cortas, silencio entre frases, gente que mide el riesgo en voz baja",
+  "espina": "Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. Aqui descubre que lo que vende en la agencia y lo que pasa en la trilla no se parecen, y que quien manda en su ruta no es ella.",
+  "recursos": "B1: reversa cosida y cambio de ritmo. Heredados: repeticion ritmica, contraste con pero e imagen concreta (A0); causalidad explicita, humor de situacion y gancho final literal (A1); simil simple y espejo concreto (A2). Sin ironia, subtexto, aforismo ni elipsis, que son B2.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "cerrar la trilla para grupos de quince, que es lo que ya vendio en el folleto",
+      "impide": "la guia no sube con mas de ocho y no lo discute",
+      "cuesta": "los siete lugares vendidos, que la agencia tiene que devolver",
+      "cambia": "acepta el tope y entiende que no lo pone la guia, lo pone la piedra mojada",
+      "emocion": "orgullo herido; dobla el folleto en cuatro y se lo guarda sin volver a mirarlo"
+    },
+    {
+      "slot": "2",
+      "quiere": "llegar al mirador con el grupo entero para la foto que promete el folleto",
+      "impide": "una tobillera torcida a mitad de subida y una radio que no engancha",
+      "cuesta": "el mirador: bajan todos, y la foto no existe",
+      "cambia": "ve lo que de verdad esta comprando su cliente, y no es la vista",
+      "emocion": "miedo que no ensena; sostiene la cantimplora con las dos manos para que no le tiemble"
+    },
+    {
+      "slot": "3",
+      "quiere": "irse con una frase buena para el folleto nuevo",
+      "impide": "la guia le dicta reglas, que en un folleto quedan feas",
+      "cuesta": "la palabra aventura, que era lo que mejor vendia",
+      "cambia": "escribe las reglas tal cual y descubre que se vende igual o mejor",
+      "emocion": "resignacion que se vuelve gusto; tacha la palabra dos veces y se rie sola de la tachadura"
+    }
+  ]
+}

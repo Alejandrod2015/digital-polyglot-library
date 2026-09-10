@@ -53,6 +53,27 @@ async function recordSent(userId: string, kind: LifecycleKind, to: string): Prom
   }
 }
 
+/**
+ * Testers de la beta, por su id de Clerk. Solo se usa para NO mandarles la
+ * bienvenida: ya recibieron el correo de aceptacion, que les dice que hacer en
+ * terminos de la beta, y dos bienvenidas con instrucciones distintas se leen
+ * como una averia. Esta exclusion vivia en el webhook de `user.created`; se
+ * mudo aqui junto con el envio.
+ *
+ * El resto de correos del ciclo de vida SI les llegan, como hasta ahora.
+ */
+async function getBetaTesterUserIds(): Promise<Set<string>> {
+  try {
+    const rows = await prisma.betaSignup.findMany({
+      where: { clerkUserId: { not: null } },
+      select: { clerkUserId: true },
+    });
+    return new Set(rows.map((r) => r.clerkUserId!).filter(Boolean));
+  } catch {
+    return new Set();
+  }
+}
+
 /** Most recent activity timestamp (story listening). */
 async function getLastActiveAt(userId: string): Promise<Date | null> {
   try {
@@ -90,6 +111,25 @@ export function decideKind(args: {
   // Celebration: finished their first story (behavioral), once.
   if (storiesFinished >= 1 && not("celebration")) return "celebration";
 
+  // Bienvenida. Vive aqui, y no en el webhook de `user.created`, por dos
+  // razones que se vieron el 2026-09-07:
+  //
+  //  1. En el instante del alta no sabemos ni idioma ni nivel, asi que el
+  //     correo no puede elegir una historia y acababa apuntando a un slug de
+  //     demostracion que da 404.
+  //  2. En ese instante el usuario esta DENTRO de la app (del alta a la
+  //     primera historia pasan unos tres minutos), asi que el correo compite
+  //     con la pantalla que ya tiene delante.
+  //
+  // Al correr por aqui, el onboarding ya termino y `buildLifecycleData` tiene
+  // idioma y nivel: el boton apunta a una historia publicada de verdad. Y la
+  // idempotencia sale gratis, via `getSentKinds`.
+  //
+  // `storiesFinished === 0` la deja fuera de quien ya esta leyendo (ese recibe
+  // `celebration`, arriba), y el tope de dos dias evita que una bienvenida
+  // aparezca semanas despues.
+  if (daysSinceSignup <= 2 && storiesFinished === 0 && not("welcome")) return "welcome";
+
   // Activation nudge: 1-3 days in and still hasn't finished a story.
   if (daysSinceSignup >= 1 && daysSinceSignup <= 3 && storiesFinished === 0 && not("nudge"))
     return "nudge";
@@ -113,6 +153,7 @@ export type LifecycleRunResult = {
 
 export async function runLifecycleEmails(now: Date): Promise<LifecycleRunResult> {
   const internal = new Set(await getInternalUserIds().catch(() => []));
+  const betaTesters = await getBetaTesterUserIds();
   const since = new Date(now.getTime() - LOOKBACK_DAYS * DAY);
 
   const signups = await prisma.userMetric.findMany({
@@ -155,6 +196,13 @@ export async function runLifecycleEmails(now: Date): Promise<LifecycleRunResult>
     });
 
     if (!kind) {
+      result.skipped++;
+      continue;
+    }
+
+    // Ver `getBetaTesterUserIds`: al tester le llega el correo de aceptacion,
+    // no la bienvenida.
+    if (kind === "welcome" && betaTesters.has(userId)) {
       result.skipped++;
       continue;
     }

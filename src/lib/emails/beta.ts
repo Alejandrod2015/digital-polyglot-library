@@ -254,7 +254,17 @@ function betaShell(opts: Parameters<typeof shell>[0]): string {
 export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
   const b = base(data);
   const name = firstNameOr(data, "there");
-  const tfUrl = data?.testflightUrl ?? "https://apps.apple.com/app/testflight/id899247664";
+  // Apple does not hand out a per tester invitation URL: the invitation IS the
+  // email it sends to the Apple ID, and the only link we can put here is the
+  // App Store page for TestFlight itself. So the label has to follow the link.
+  // Ben, 2026-09-07: "Cant open from testflight. Its prompting me for a code".
+  // A button reading "Open TestFlight" next to a link that INSTALLS TestFlight
+  // invites exactly that: skip Apple's email, land in TestFlight with nothing
+  // pending, get asked for a code. It also outranked step 2, which is the step
+  // that works. Demoted to secondary, and named after what it does.
+  const tfInvite = data?.testflightUrl ?? null;
+  const tfUrl = tfInvite ?? "https://apps.apple.com/app/testflight/id899247664";
+  const tfLabel = tfInvite ? "Open TestFlight" : "Install TestFlight";
 
   // The one email in the program that has to tell someone how to install, and
   // the only one of the four store-aware emails that did not look at
@@ -350,7 +360,12 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
         ]
       : android
         ? []
-        : [block(cta("Open TestFlight", tfUrl), "24px 24px 0")]),
+        : [
+            block(
+              tfInvite ? cta(tfLabel, tfUrl) : ctaSecondary(tfLabel, tfUrl),
+              "24px 24px 0",
+            ),
+          ]),
     block(perks, "24px 24px 0", false),
     block(ask, "16px 24px 0", false),
     block(
@@ -416,7 +431,7 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
               "  2. Open the invite Apple just sent and tap Accept.",
               "  3. Install Digital Polyglot from there, and sign in with this email address.",
               "",
-              `TestFlight: ${tfUrl}`,
+              `${tfLabel}: ${tfUrl}`,
               "",
             ]),
       "Every language, every story and the audio are open to you. Pick a language when you open the app. You can change it whenever you want.",
@@ -671,6 +686,7 @@ export function buildBetaInstallNudgeEmail(data?: BetaEmailData): BuiltEmail {
   const android = data?.platform === "android";
   const tfUrl = data?.testflightUrl ?? "https://apps.apple.com/app/testflight/id899247664";
   const optInUrl = data?.playOptInUrl ?? null;
+  const joinUrl = data?.playGroupJoinUrl ?? null;
 
   // The two ways each store loses a tester, and they have nothing in common.
   // On iOS the invitation is an email that landed somewhere they do not read.
@@ -678,7 +694,13 @@ export function buildBetaInstallNudgeEmail(data?: BetaEmailData): BuiltEmail {
   // page: wrong Google account, or the Play Store app swallowing the link.
   const reasons = android
     ? [
-        "You are signed in with a different Google account than the one on the testers list. The page just says the app is not available, with no hint that this is why.",
+        ...(joinUrl
+          ? [
+              "You never joined the testers group, or joined it with a different Google account than the one your phone uses. Either way the page just says the app is not available, with no hint that this is why. Joining takes one tap.",
+            ]
+          : [
+              "You are signed in with a different Google account than the one on the testers list. The page just says the app is not available, with no hint that this is why.",
+            ]),
         "Tapping the link opened the Play Store app instead of a browser, and it showed an empty grey card. Paste the link into Chrome instead.",
       ]
     : [
@@ -686,8 +708,13 @@ export function buildBetaInstallNudgeEmail(data?: BetaEmailData): BuiltEmail {
         "TestFlight itself was never installed. It is a free Apple app, and the invite link does nothing without it.",
       ];
 
+  // Android needs both links, and in this order. The first cause we name is
+  // not being on the testers list, and the only thing that puts a person on it
+  // is the group link, so shipping the nudge with the opt-in link alone sends
+  // them back to the same page that already told them nothing.
   const ctaUrl = android ? optInUrl : tfUrl;
   const ctaLabel = android ? "Open the tester link" : "Install TestFlight";
+  const androidJoin = android ? joinUrl : null;
 
   const blocks = [
     block(
@@ -699,7 +726,15 @@ export function buildBetaInstallNudgeEmail(data?: BetaEmailData): BuiltEmail {
       "40px 24px 0",
     ),
     block(card(`${cardTitle("The two things that go wrong")}${bullets(reasons)}`), "28px 24px 0", false),
-    ...(ctaUrl ? [block(cta(ctaLabel, ctaUrl), "24px 24px 0")] : []),
+    ...(androidJoin ? [block(cta("Join the testers group", androidJoin), "24px 24px 0")] : []),
+    ...(ctaUrl
+      ? [
+          block(
+            androidJoin ? ctaSecondary(ctaLabel, ctaUrl) : cta(ctaLabel, ctaUrl),
+            androidJoin ? "12px 24px 0" : "24px 24px 0",
+          ),
+        ]
+      : []),
     block(
       note(
         android
@@ -713,9 +748,11 @@ export function buildBetaInstallNudgeEmail(data?: BetaEmailData): BuiltEmail {
   return {
     subject: "Your beta spot is still open",
     html: betaShell({
-      preheader: android
-        ? "It is almost always the wrong Google account."
-        : "The invite is usually sitting in your Apple ID inbox.",
+      preheader: androidJoin
+        ? "Join the testers group, then open the link in Chrome."
+        : android
+          ? "It is almost always the wrong Google account."
+          : "The invite is usually sitting in your Apple ID inbox.",
       blocks,
       baseUrl: b,
       assetBase: assetBase(data),
@@ -730,6 +767,7 @@ export function buildBetaInstallNudgeEmail(data?: BetaEmailData): BuiltEmail {
       "",
       ...reasons.map((r, i) => `  ${i + 1}. ${r}`),
       "",
+      ...(androidJoin ? [`Join the testers group first: ${androidJoin}`] : []),
       ...(ctaUrl ? [`${ctaLabel}: ${ctaUrl}`] : []),
       "",
       android

@@ -14,6 +14,17 @@ export type DailyStory = {
   title: string;
   level: string;
   coverUrl: string | null;
+  /**
+   * Etiqueta del tema, leida de la tabla de temas. El heroe de la home la usa
+   * de subtitulo, donde antes iba el titulo del libro. No vale title-casear el
+   * slug: "helping-and-favours" saldria como "Helping And Favours" y el nombre
+   * de un tema lleva ampersand, nunca "And".
+   */
+  topicLabel: string | null;
+  /** Variante del journey (spain, latam, brazil), para la insignia de region. */
+  variant: string | null;
+  /** Palabras nuevas de la historia, para la ficha del heroe. */
+  vocabCount: number | null;
 };
 
 function dayKey(date: Date): string {
@@ -44,8 +55,9 @@ export const getDailyStories = cache(async (date?: Date): Promise<DailyStory[]> 
       topic: true,
       slotIndex: true,
       coverUrl: true,
+      vocabCount: true,
       journeyId: true,
-      journey: { select: { language: true } },
+      journey: { select: { language: true, variant: true } },
     },
     orderBy: [{ journeyId: "asc" }, { topic: "asc" }, { slotIndex: "asc" }],
   });
@@ -60,19 +72,35 @@ export const getDailyStories = cache(async (date?: Date): Promise<DailyStory[]> 
   }
 
   const key = dayKey(date ?? new Date());
-  const picks: DailyStory[] = [];
+  const chosen: Array<{ language: string; row: (typeof rows)[number] }> = [];
   for (const [language, list] of byLanguage) {
     const index = hashString(`${key}:${language}`) % list.length;
     const pick = list[index];
     if (!pick?.slug || !pick.title) continue;
-    picks.push({
-      language,
-      slug: pick.slug,
-      title: pick.title,
-      level: pick.level,
-      coverUrl: pick.coverUrl,
-    });
+    chosen.push({ language, row: pick });
   }
+
+  // Una sola consulta para las etiquetas de los temas elegidos: son tantas
+  // como idiomas vivos, no como historias.
+  const topicLabels = new Map<string, string>();
+  const topicSlugs = [...new Set(chosen.map((c) => c.row.topic).filter(Boolean))];
+  if (topicSlugs.length > 0) {
+    const topics = await prisma.topic
+      .findMany({ where: { slug: { in: topicSlugs } }, select: { slug: true, label: true } })
+      .catch(() => []);
+    for (const t of topics) topicLabels.set(t.slug, t.label);
+  }
+
+  const picks: DailyStory[] = chosen.map(({ language, row }) => ({
+    language,
+    slug: row.slug as string,
+    title: row.title as string,
+    level: row.level,
+    coverUrl: row.coverUrl,
+    topicLabel: topicLabels.get(row.topic) ?? null,
+    variant: row.journey.variant ?? null,
+    vocabCount: row.vocabCount,
+  }));
 
   return picks.sort((a, b) => a.language.localeCompare(b.language));
 });

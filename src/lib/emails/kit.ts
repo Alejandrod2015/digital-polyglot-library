@@ -402,10 +402,15 @@ function footer(
     ? `${baseUrl}/api/email/unsubscribe?token=${encodeURIComponent(unsubscribeToken)}`
     : `${baseUrl}/account/emails?unsubscribe=1`;
   const noteText = note || "You're receiving this as part of your Digital Polyglot account.";
+  // El logo ENLAZA al sitio. Era un `<img>` suelto, asi que los unicos enlaces
+  // del pie eran "Manage emails" y "Unsubscribe": si el boton del cuerpo
+  // fallaba, el correo entero no tenia una sola salida hacia la web. Le paso el
+  // 2026-09-07 a una lectora que acabo escribiendo a soporte para preguntar
+  // como se llegaba a la portada.
   return `<tr><td style="padding:28px 44px 34px;text-align:${justify};">
     <div style="height:1px;background:${DPE.hair};margin-bottom:22px;"></div>
     <div style="margin-bottom:14px;text-align:${justify};">
-      ${logoImg(assetBase, 46)}
+      <a href="${baseUrl}" style="text-decoration:none;display:inline-block;">${logoImg(assetBase, 46)}</a>
     </div>
     <div style="font-family:${DPE.font};font-weight:600;font-size:14px;color:${DPE.faint};line-height:1.7;">
       ${esc(noteText)}<br/>

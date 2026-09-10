@@ -1,0 +1,13 @@
+{
+  "tipo": "Traveler: protagonistas nativos; el narrador mira desde fuera, presenta gente y sitios (Ciudad, pais) y explica lo que un local daria por sabido",
+  "nivel": "b2",
+  "variante": "LATAM",
+  "registro": "picardia: el duelo de ingenio que es cortejo y ninguno lo nombra",
+  "espina": "lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir",
+  "recursos": "ironia de personaje (B2), subtexto de dialogo (B2), cambio de ritmo (B1), simil simple (A2), imagen concreta (A0)",
+  "historias": [
+    { "slot": "1", "quiere": "Renata quiere ganarle a Joaquin el duelo de albures delante de su barra llena", "impide": "un doble sentido que no conoce; se rie medio segundo tarde y todos lo notan", "cuesta": "paga la ronda de la apuesta y pierde la fama de invencible en su propia cantina", "cambia": "decide aprender el juego a fondo en vez de fingir que no le importa", "emocion": "verguenza que no quiere mostrar: paga sin quejarse porque quejarse seria confesar que no entendio, y esconde la cara caliente secando un vaso que ya estaba seco" },
+    { "slot": "2", "quiere": "preparar la revancha sin que se sepa, juntando albures ajenos en una libreta", "impide": "en la cantina todo se sabe: Joaquin encuentra la libreta y sube la apuesta", "cuesta": "la propina del dia, apostada de coraje en el ensayo con los del domino; no la recupera", "cambia": "el juego deja de ser secreto: la revancha queda declarada y con fecha", "emocion": "orgullo herido vuelto terquedad: quiere arrancarle la libreta y no lo hace porque seria admitir cuanto le importa; aprieta el lapiz hasta que truena y le sostiene la mirada" },
+    { "slot": "3", "quiere": "ganar la revancha con un albur propio, de su cosecha, no copiado", "impide": "Joaquin juega despacio, dejandose alcanzar, y ella lo nota a mitad del duelo", "cuesta": "la victoria limpia que queria: gana sabiendo que el se dejo, y esa duda se queda", "cambia": "los dos fingen que fue limpia, y en fingirlo juntos queda dicho el afecto que ninguno nombra", "emocion": "triunfo con espina: cobra la apuesta con la risa corta porque celebrar completo seria creerse el regalo, y empuja el caballito hacia el para brindar muy serios" }
+  ]
+}

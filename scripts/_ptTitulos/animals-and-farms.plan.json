@@ -1,0 +1,34 @@
+{
+  "tipo": "Traveler",
+  "nivel": "B1",
+  "variante": "LATAM",
+  "registro": "seco y a la intemperie: viento, barro y frases cortas",
+  "espina": "un dano con dueno conocido que nadie del campo quiere nombrar en voz alta",
+  "recursos": "imagen concreta, contraste con pero, causalidad explicita, simil simple, espejo concreto, reversa cosida, cambio de ritmo",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "cerrar el parte de las dos ovejas muertas y seguir con la ronda del dia",
+      "impide": "reconoce al perro que las mato, y el dueno es Oscar, que le arreglo la camioneta el invierno pasado",
+      "cuesta": "pierde la manana entera y los tres campos que le quedaban por ver, y no los recupera",
+      "cambia": "entiende que dejar el nombre en blanco tambien es firmar algo",
+      "emocion": "incomodidad porque el vecino la mira esperando el nombre; se ve en que guarda el cuaderno antes de terminar de escribir"
+    },
+    {
+      "slot": "2",
+      "quiere": "que Oscar pague las dos ovejas que valen sus animales",
+      "impide": "Oscar sostiene que su perro mato una sola y que la otra ya estaba enferma",
+      "cuesta": "el favor de la camioneta queda cobrado esa manana y no vuelve a existir",
+      "cambia": "deja de ser la vecina y pasa a ser la que tasa el dano",
+      "emocion": "rabia contenida porque el saca el favor viejo a la mesa; se ve en que aprieta la correa del maletin y no la suelta"
+    },
+    {
+      "slot": "3",
+      "quiere": "que el vecino reclame la diferencia que ella dejo escrita",
+      "impide": "el vecino prefiere el arreglo corto antes que pelearse con quien le presta el bote",
+      "cuesta": "su parte queda por debajo de lo que ella tasó, y no se corrige nunca",
+      "cambia": "firma igual, y aprende cuanto vale su firma en ese campo",
+      "emocion": "impotencia porque nadie hizo nada ilegal y aun asi salio mal; se ve en que arranca la camioneta sin ponerse el cinturon"
+    }
+  ]
+}

@@ -120,8 +120,8 @@ export default function MenuClient({ plan }: Props) {
   const router = useRouter();
   const [testModeRunning, setTestModeRunning] = useState(false);
   const showUpgrade = plan === "free" || plan === "basic";
-  const showStoryOfWeek = plan === "free";
-  const showStoryOfDay = plan === "basic";
+  // La historia del dia sale para todos los planes. Antes el plan decidia
+  // cual de las dos veias, y la semanal ya no existe.
   // Test mode (paridad iPhone): solo Polyglot. Resetea preferences
   // server-side (targetLanguages, level, region, variant, reminders,
   // onboarding flags) y manda al home en blanco. Confirmación previa
@@ -205,22 +205,12 @@ export default function MenuClient({ plan }: Props) {
             accent="#ffab3d"
           />
         ) : null}
-        {showStoryOfWeek ? (
-          <MenuRow
-            icon={Star}
-            label="Story of the Week"
-            href="/story-of-the-week"
-            accent="#f8c15c"
-          />
-        ) : null}
-        {showStoryOfDay ? (
-          <MenuRow
-            icon={Star}
-            label="Story of the Day"
-            href="/story-of-the-day"
-            accent="#f8c15c"
-          />
-        ) : null}
+        <MenuRow
+          icon={Star}
+          label="Story of the Day"
+          href="/story-of-the-day"
+          accent="#f8c15c"
+        />
       </SectionCard>
 
       <SectionTitle>Account</SectionTitle>

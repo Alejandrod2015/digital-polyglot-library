@@ -3,6 +3,24 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { ClerkProvider, useAuth, useClerk } from "@clerk/expo";
 import { tokenCache } from "@clerk/expo/token-cache";
 import * as SplashScreen from "expo-splash-screen";
+import * as Sentry from "@sentry/react-native";
+import { mobileConfig } from "./src/config";
+
+// Crashes y release health de la app. Hasta el 2026-09-06 la app no tenia
+// NINGUN reporte de errores: un rollout escalonado sin esto es teatro, porque
+// no hay nada que mirar entre un salto y el siguiente. Solo arranca con DSN y
+// fuera de __DEV__, igual que el Sentry de la web (sentry.client.config.ts):
+// sin DSN no manda nada, y en desarrollo tampoco. Sin trazas ni PII: lo que
+// importa aqui es el crash-free por release, que es lo que decide si un
+// rollout sigue o se para.
+if (mobileConfig.sentryDsn && !__DEV__) {
+  Sentry.init({
+    dsn: mobileConfig.sentryDsn,
+    enableAutoSessionTracking: true,
+    tracesSampleRate: 0,
+    sendDefaultPii: false,
+  });
+}
 
 // Prevent the native splash from auto-hiding the moment React mounts.
 // We hide it programmatically AFTER the JS has rendered the in-app
@@ -72,7 +90,6 @@ import { useAndroidBottomInset } from "./src/mobile/useAndroidBottomInset";
 import { type PushRegistrationState } from "./src/notifications/registerPush";
 import { parseReminderDestination } from "./src/notifications/dailyReminder";
 import type { ReminderDestination } from "./src/notifications/dailyReminder";
-import { mobileConfig } from "./src/config";
 import { apiFetch } from "./src/lib/api";
 
 type PendingReminderNavigation = {
@@ -540,7 +557,7 @@ function MobileAppRoot() {
   );
 }
 
-export default function App() {
+function App() {
   // Block the app until Nunito is ready. While it's loading we keep the
   // same branded splash the rest of the app uses so there's no white
   // flash and no "font swap" visible to the user on cold start. If the
@@ -588,6 +605,10 @@ export default function App() {
     </SafeAreaProvider>
   );
 }
+
+// El wrap añade el error boundary de Sentry y el rastro de toques; sin
+// Sentry.init (sin DSN) es un envoltorio inerte.
+export default Sentry.wrap(App);
 
 const styles = StyleSheet.create({
   safeArea: {

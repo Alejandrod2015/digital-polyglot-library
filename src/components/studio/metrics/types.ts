@@ -47,8 +47,10 @@ export type MetricsKpiUser = {
   userId: string;
   name: string | null;
   email: string | null;
-  /** Eventos suyos en la ventana de la tarjeta: 24h en DAU, 7d en WAU. */
+  /** Eventos suyos en la ventana de la tarjeta: hoy en DAU, 7d en WAU. */
   events: number;
+  /** Minutos de audio en esa ventana. Falta en respuestas cacheadas viejas. */
+  minutes?: number;
   lastAt: string | null;
 };
 

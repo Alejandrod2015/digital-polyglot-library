@@ -1002,7 +1002,16 @@ type AcquisitionPayload = {
     paid: boolean;
     /** Redimió un claim de libro o tiene suscripción viva. */
     bought?: boolean;
+    /** Práctica. Falta en respuestas cacheadas de antes de la columna. */
+    practiceStarted?: number;
+    practiceCompleted?: number;
+    /** Media de aciertos de las sesiones terminadas. */
+    practiceAccuracy?: number | null;
     platform: "ios" | "android" | "web" | null;
+    /** De dónde vino. Falta en respuestas cacheadas de antes de la columna. */
+    origin?: { key: string; label: string; basis: "stamped" | "probable" | "unknown" };
+    /** Por qué puerta entró. Falta en respuestas cacheadas de antes. */
+    userType?: { key: "beta" | "audiolibro" | "app" | "web" | "unknown"; label: string };
   }>;
   clerkInstance: string;
 };
@@ -1016,39 +1025,37 @@ function formatListened(seconds: number): string {
 }
 
 /**
- * Distintivo de beta tester en la fila del usuario.
+ * Por qué puerta entró esta persona al producto. Una sola por fila y siempre
+ * hay una: es la pregunta que la tabla no sabía contestar cuando quien no era
+ * beta tester ni comprador salía sin ninguna etiqueta.
  *
- * Existe porque el "(beta)" de la columna de idioma NO dice quién es la
- * persona, dice de dónde sacamos el idioma que mostramos, y sólo aparece
- * cuando no hubo onboarding. Un beta tester que sí completó el onboarding
- * salía en la tabla exactamente igual que cualquier otro usuario. Este chip
- * cuelga del email y siempre está, haya onboardeado o no.
- *
- * Se distingue a simple vista quién está DENTRO del programa (invitado o
- * aceptado, mismos estados que `ACTIVE_STATUSES` en `src/lib/betaProgram.ts`)
- * de quien sólo solicitó: mezclarlos era la mitad del problema original.
+ * No dice si paga (columna Pagó) ni si ha hecho algo (Onb., Abrió). Mezclar
+ * esos tres ejes en un mismo distintivo fue justo lo que dejó filas mudas.
  */
-const BETA_STATUS_LABEL: Record<string, string> = {
-  accepted: "aceptado",
-  invited: "invitado",
-  waitlist: "en espera",
-  pending: "sin triar",
-  declined: "rechazado",
-};
-const BETA_STATUS_IN = new Set(["invited", "accepted"]);
-
-function BetaBadge({ status }: { status: string }) {
-  const inProgram = BETA_STATUS_IN.has(status);
-  const label = BETA_STATUS_LABEL[status] ?? status;
+function UserTypeBadge({
+  type,
+}: {
+  type: { key: "beta" | "audiolibro" | "app" | "web" | "unknown"; label: string };
+}) {
+  const tone: Record<string, string> = {
+    beta: "#fcd34d",
+    audiolibro: "#5ad19a",
+    app: "#6ea8fe",
+    web: "#94a3b8",
+  };
+  const unknown = type.key === "unknown";
+  const color = unknown ? "var(--mx-muted, #94a3b8)" : tone[type.key] ?? "#94a3b8";
+  const title: Record<string, string> = {
+    beta: "Entró por el programa de beta (invitado o aceptado).",
+    audiolibro: "Entró comprando un audiolibro: redimió el claim de la tienda.",
+    app: "Se dio de alta desde la app del móvil.",
+    web: "Se dio de alta navegando en la webapp.",
+    unknown: "Cuenta sin plataforma sellada y sin actividad. No se adivina.",
+  };
   return (
     <span
-      title={
-        inProgram
-          ? `Beta tester (${label}). Está dentro del programa.`
-          : `Solicitó la beta (${label}). Todavía no está dentro del programa.`
-      }
+      title={title[type.key]}
       style={{
-        marginLeft: 6,
         padding: "1px 6px",
         borderRadius: 4,
         fontSize: 10,
@@ -1056,42 +1063,64 @@ function BetaBadge({ status }: { status: string }) {
         letterSpacing: "0.04em",
         textTransform: "uppercase",
         whiteSpace: "nowrap",
-        color: inProgram ? "#fcd34d" : "var(--mx-muted, #94a3b8)",
-        backgroundColor: inProgram ? "rgba(252, 211, 77, 0.14)" : "rgba(148, 163, 184, 0.12)",
-        border: `1px solid ${inProgram ? "rgba(252, 211, 77, 0.3)" : "rgba(148, 163, 184, 0.22)"}`,
+        color,
+        backgroundColor: unknown ? "transparent" : `${color}22`,
+        border: `1px solid ${unknown ? "transparent" : `${color}4d`}`,
+        opacity: unknown ? 0.55 : 1,
       }}
     >
-      beta · {label}
+      {type.label}
     </span>
   );
 }
 
 /**
- * Distintivo de comprador. Es el corte que queda DENTRO de "público" una vez
- * que la cohorte saca a los beta testers del bote: quien pagó (un claim de
- * libro de la tienda o una suscripción viva) frente a quien solo se dio de
- * alta. Un beta tester también puede llevarlo; la cohorte dice quién es y
- * esto dice qué hizo.
+ * De dónde vino esta cuenta. Toda fila lleva una: antes, quien no era beta
+ * tester ni comprador salía sin nada y no había manera de saber si llegó por
+ * un anuncio, por la tienda o buscando en Google.
+ *
+ * La cursiva y el "?" no son decoración: separan lo que selló su propia
+ * visita de lo que se dedujo cruzando la hora del alta con la única sesión
+ * que pasó por la página de alta en esos minutos.
  */
-function BuyerBadge() {
+function OriginBadge({
+  origin,
+}: {
+  origin: { key: string; label: string; basis: "stamped" | "probable" | "unknown" };
+}) {
+  const unknown = origin.basis === "unknown";
+  const probable = origin.basis === "probable";
+  const tone: Record<string, string> = {
+    ad: "#e0653a",
+    email: "#6ea8fe",
+    shop: "#5ad19a",
+    search: "#d3a13a",
+    social: "#c084fc",
+  };
+  const color = unknown ? "var(--mx-muted, #94a3b8)" : tone[origin.key] ?? "#94a3b8";
   return (
     <span
-      title="Compró: redimió un claim de libro o tiene una suscripción viva."
+      title={
+        unknown
+          ? "Cuenta anterior al sello de origen. No se adivina de dónde vino."
+          : probable
+            ? "Deducido: cruce por hora con la visita a la página de alta, o por la tienda de la app. No lo selló su propia visita."
+            : "Sellado en su primera visita (primer toque: utm o referrer)."
+      }
       style={{
-        marginLeft: 6,
         padding: "1px 6px",
         borderRadius: 4,
-        fontSize: 10,
-        fontWeight: 700,
-        letterSpacing: "0.04em",
-        textTransform: "uppercase",
+        fontSize: 10.5,
         whiteSpace: "nowrap",
-        color: "#5ad19a",
-        backgroundColor: "rgba(90, 209, 154, 0.14)",
-        border: "1px solid rgba(90, 209, 154, 0.3)",
+        fontStyle: probable ? "italic" : "normal",
+        opacity: unknown ? 0.55 : 1,
+        color,
+        backgroundColor: unknown ? "transparent" : "rgba(148, 163, 184, 0.12)",
+        border: `1px solid ${unknown ? "transparent" : "rgba(148, 163, 184, 0.22)"}`,
       }}
     >
-      compró
+      {origin.label}
+      {probable ? " ?" : ""}
     </span>
   );
 }
@@ -1780,10 +1809,13 @@ function AcquisitionView({
                   <th style={{ padding: "4px 6px" }}>Fecha</th>
                   <th style={{ padding: "4px 6px" }}>Usuario</th>
                   <th style={{ padding: "4px 6px" }}>Idioma · nivel</th>
+                  <th style={{ padding: "4px 6px" }}>Tipo</th>
+                  <th style={{ padding: "4px 6px" }}>Origen</th>
                   <th style={{ padding: "4px 6px" }}>Plataforma</th>
                   <th style={{ padding: "4px 6px" }}>Onb.</th>
                   <th style={{ padding: "4px 6px" }}>Abrió</th>
                   <th style={{ padding: "4px 6px" }}>Escuchó</th>
+                  <th style={{ padding: "4px 6px" }}>Practicó</th>
                   <th style={{ padding: "4px 6px" }}>Precios</th>
                   <th style={{ padding: "4px 6px" }}>Pagó</th>
                 </tr>
@@ -1825,8 +1857,6 @@ function AcquisitionView({
                         "-"
                       )}
                       <span style={{ opacity: 0.5 }}> · {r.email ?? "-"}</span>
-                      {r.betaStatus ? <BetaBadge status={r.betaStatus} /> : null}
-                      {r.bought ? <BuyerBadge /> : null}
                     </td>
                     <td style={{ padding: "4px 6px" }}>
                       {r.targetLanguages.length ? (
@@ -1861,6 +1891,16 @@ function AcquisitionView({
                       ) : (
                         "-"
                       )}
+                    </td>
+                    <td style={{ padding: "4px 6px" }}>
+                      <UserTypeBadge
+                        type={r.userType ?? { key: "unknown", label: "s/d" }}
+                      />
+                    </td>
+                    <td style={{ padding: "4px 6px" }}>
+                      <OriginBadge
+                        origin={r.origin ?? { key: "unknown", label: "s/d", basis: "unknown" }}
+                      />
                     </td>
                     <td style={{ padding: "4px 6px" }}>
                       {r.platform === "ios" ? (
@@ -1911,6 +1951,30 @@ function AcquisitionView({
                         "-"
                       )}
                     </td>
+                    <td style={{ padding: "4px 6px" }}>
+                      {/* Terminadas/empezadas y la nota media. Las dos cifras
+                          juntas porque por separado engañan: cinco sesiones
+                          empezadas parece uso y puede ser abandono, y un 95%
+                          sobre una sola sesión no es una nota, es una tirada. */}
+                      {(r.practiceStarted ?? 0) > 0 ? (
+                        <span
+                          style={{ cursor: "help", fontVariantNumeric: "tabular-nums" }}
+                          title={[
+                            `${r.practiceCompleted ?? 0} sesiones terminadas de ${r.practiceStarted} empezadas.`,
+                            typeof r.practiceAccuracy === "number"
+                              ? `Media de aciertos de las terminadas: ${r.practiceAccuracy}%.`
+                              : "Ninguna terminada, así que no hay nota.",
+                          ].join(" ")}
+                        >
+                          {r.practiceCompleted ?? 0}/{r.practiceStarted}
+                          {typeof r.practiceAccuracy === "number" && (
+                            <span style={{ opacity: 0.7 }}> · {r.practiceAccuracy}%</span>
+                          )}
+                        </span>
+                      ) : (
+                        "-"
+                      )}
+                    </td>
                     <td style={{ padding: "4px 6px" }}>{r.viewedPlans ? "✓" : "-"}</td>
                     <td style={{ padding: "4px 6px" }}>{r.paid ? "✓" : "-"}</td>
                   </tr>
@@ -1924,6 +1988,10 @@ function AcquisitionView({
             al menos una. <span>*</span> = el valor incluye algún checkpoint, que se graba a saltos de
             ~20s, así que es un suelo. <span>▶?</span> = dio play pero se fue antes del primer
             checkpoint, así que no hay nada medido.
+            <br />
+            <strong style={{ fontWeight: 600 }}>Practicó</strong>: sesiones terminadas de las
+            empezadas, y la media de aciertos de las terminadas. Una sesión abandonada no deja
+            nota, así que no cuenta en la media.
           </p>
         </div>
       )}

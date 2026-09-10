@@ -68,12 +68,25 @@ const FAMILIES: Record<string, string[]> = {
     "spanish-traveler-spain-a1",
     "spanish-traveler-spain-a2",
     "spanish-traveler-spain-b1",
+    // Los tres bundles B nacidos despues de esta tabla (2026-09-06): sin fila
+    // aqui, familyOf devuelve "" y el rebuild no copia NADA de los hermanos,
+    // que es por lo que salian "0 copiadas" con articulos y numeros sin cubrir.
+    "spanish-traveler-latam-b1",
+    "spanish-traveler-latam-b2",
     "spanish-traveler-spain-b2",
   ],
   german: ["german-expat", "german-friends", "german-hamburg", "german-traveler-a0", "german-traveler-a1"],
   french: ["french-traveler", "french-expat-lyon"],
   italian: ["italian-friends-a0", "italian-traveler-a0", "italian-traveler-a1"],
-  portuguese: ["portuguese-traveler-brazil-a0", "portuguese-traveler-brazil-a1"],
+  // El a2 entra AQUI antes del primer rebuild, no despues: sin su fila,
+  // `familyOf` devuelve "" y el rebuild no copia nada de sus hermanos, que es
+  // como nacieron vacios los tres bundles B de espanol.
+  portuguese: [
+    "portuguese-traveler-brazil-a0",
+    "portuguese-traveler-brazil-a1",
+    "portuguese-traveler-brazil-a2",
+    "portuguese-traveler-brazil-b1",
+  ],
 };
 
 /**

@@ -7,7 +7,23 @@ const STORAGE_KEY_LEGACY = "digital-polyglot/mobile-preview-state";
 // SecureStore con dev certs. Reading progress + saved books/stories
 // son demasiado importantes para perderlos en cada build.
 const PREVIEW_ROOT = `${FileSystem.documentDirectory ?? ""}digital-polyglot`;
-const PREVIEW_PATH = `${PREVIEW_ROOT}/preview-state.json`;
+
+/**
+ * Un archivo POR CUENTA, igual que las colecciones y los favoritos.
+ *
+ * Hasta el 2026-09-06 habia uno solo para todo el telefono, sin el id de nadie,
+ * asi que las historias guardadas y el progreso de lectura eran del APARATO y
+ * no de quien iniciaba sesion: al entrar con otra cuenta se pintaba lo de la
+ * anterior. Solo desaparecia de la vista porque la estanteria unicamente
+ * muestra lo guardado del idioma que esa cuenta acaba de cargar; el apunte
+ * seguia ahi, y con el el "seguir leyendo" y el contador semanal.
+ */
+function getPreviewPath(userId?: string | null): string {
+  return `${PREVIEW_ROOT}/preview-state-${userId ?? "guest"}.json`;
+}
+
+/** El archivo unico de antes. Se adopta una vez y se retira. */
+const PREVIEW_PATH_SHARED = `${PREVIEW_ROOT}/preview-state.json`;
 
 async function ensurePreviewRoot(): Promise<void> {
   const info = await FileSystem.getInfoAsync(PREVIEW_ROOT);
@@ -106,40 +122,64 @@ function parseState(raw: string, fallback: MobilePreviewState): MobilePreviewSta
 }
 
 export async function loadMobilePreviewState(
-  fallback: MobilePreviewState
+  fallback: MobilePreviewState,
+  userId?: string | null,
 ): Promise<MobilePreviewState> {
   await ensurePreviewRoot();
-  // Path 1: FileSystem (preferido, persiste entre reinstalls).
+  const path = getPreviewPath(userId);
+
+  // Path 1: el archivo de esta cuenta.
   try {
-    const info = await FileSystem.getInfoAsync(PREVIEW_PATH);
+    const info = await FileSystem.getInfoAsync(path);
     if (info.exists) {
-      const raw = await FileSystem.readAsStringAsync(PREVIEW_PATH);
+      const raw = await FileSystem.readAsStringAsync(path);
       return parseState(raw, fallback);
+    }
+  } catch {
+    // ignore, fall through
+  }
+
+  // Path 2: el archivo compartido de las versiones anteriores. Lo hereda la
+  // PRIMERA cuenta que abra la app despues de actualizar, y acto seguido se
+  // borra: si se dejara, cada cuenta nueva volveria a heredarlo y estariamos
+  // en el mismo sitio.
+  try {
+    const info = await FileSystem.getInfoAsync(PREVIEW_PATH_SHARED);
+    if (info.exists) {
+      const raw = await FileSystem.readAsStringAsync(PREVIEW_PATH_SHARED);
+      const adopted = parseState(raw, fallback);
+      await FileSystem.writeAsStringAsync(path, JSON.stringify(adopted));
+      await FileSystem.deleteAsync(PREVIEW_PATH_SHARED, { idempotent: true });
+      return adopted;
     }
   } catch {
     // ignore, fall through to legacy
   }
-  // Path 2: migración desde SecureStore legacy; al primer load, si
-  // había estado guardado en la versión vieja, lo rehidratamos al
-  // FileSystem y lo devolvemos. Las entries de SecureStore quedan; el
-  // FileSystem manda de aquí en adelante.
+
+  // Path 3: migracion desde el SecureStore viejo, que tampoco distinguia
+  // cuentas. Misma regla: la adopta uno y se borra la entrada.
   try {
     const raw = await SecureStore.getItemAsync(STORAGE_KEY_LEGACY);
     if (raw) {
       const migrated = parseState(raw, fallback);
-      await FileSystem.writeAsStringAsync(PREVIEW_PATH, JSON.stringify(migrated));
+      await FileSystem.writeAsStringAsync(path, JSON.stringify(migrated));
+      await SecureStore.deleteItemAsync(STORAGE_KEY_LEGACY);
       return migrated;
     }
   } catch {
     // ignore
   }
+
   return fallback;
 }
 
-export async function saveMobilePreviewState(state: MobilePreviewState): Promise<void> {
+export async function saveMobilePreviewState(
+  state: MobilePreviewState,
+  userId?: string | null,
+): Promise<void> {
   try {
     await ensurePreviewRoot();
-    await FileSystem.writeAsStringAsync(PREVIEW_PATH, JSON.stringify(state));
+    await FileSystem.writeAsStringAsync(getPreviewPath(userId), JSON.stringify(state));
   } catch {
     // Preview-mode persistence should fail quietly instead of breaking the app shell.
   }

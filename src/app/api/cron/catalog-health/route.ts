@@ -113,7 +113,18 @@ async function checkSsr(host: string, slug: string): Promise<CheckResult> {
   }
 }
 
+function isAuthorized(req: Request): boolean {
+  const secret = process.env.CRON_SECRET;
+  if (!secret) return true; // dev / no-auth mode
+  const header = req.headers.get("authorization");
+  return header === `Bearer ${secret}`;
+}
+
 export async function GET(req: Request) {
+  if (!isAuthorized(req)) {
+    return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
+  }
+
   const t0 = Date.now();
   const host =
     process.env.APP_BASE_URL ??

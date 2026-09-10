@@ -19,6 +19,7 @@ import { isSpanishUpToLevel } from "./cefr/spanishLevels";
 import { isGermanA1A2 } from "./cefr/germanA1A2";
 import { isItalianA1A2 } from "./cefr/italianA1A2";
 import { isPortugueseA1A2 } from "./cefr/portugueseA1A2";
+import { isPortugueseB1Lemma } from "./cefr/portugueseB1";
 import { isFrenchA1A2 } from "./cefr/frenchA1A2";
 import { classifyName, getNameBank } from "@/lib/characterNames";
 
@@ -2433,6 +2434,50 @@ export async function validateGeneratedStory(
             : undefined,
       });
     }
+  } else if (lang === "PT" && levelKey === "b1") {
+    // TECHO de nivel para portugues B1 (2026-09-06). Hasta hoy este check no
+    // corria aqui: el juez se enganchaba para ES en todos los niveles y para
+    // DE/IT/PT/FR solo en A1/A2, asi que en PT b1 no quedaba NADA midiendo el
+    // nivel del vocabulario. Medido, no recordado: la misma historia publicada
+    // del Traveler PT-BR A1 daba 32 checks declarada `a1` y 31 declarada `b1`,
+    // y la que faltaba era esta.
+    //
+    // Mide el TECHO (ninguna palabra por encima de B1). El SUELO ("un B1
+    // ensena palabras de B1 y no veinte de A1") no cabe aqui, porque es una
+    // proporcion y por historia no se puede medir: las historias sueltas de
+    // los dos B1 de espanol ya escritos bajan al 5% y al 15% de plazas por
+    // encima de A1/A2 aunque sus journeys esten en 37% y 42%. Vive en
+    // `journey-vocab-level-floor` (validateJourneyStories.ts).
+    //
+    // Umbrales: los mismos que ya usaba la rama A1/A2 de los otros idiomas
+    // (0 pasa, 1-2 avisa, 3+ falla), para no inventar una vara nueva.
+    // Exenciones: las mismas que en ES y por el mismo motivo (ver el bloque
+    // REGISTER_EXEMPT de arriba). Un ancla cultural es rara en cualquier
+    // corpus POR DEFINICION y su regla la obliga a estar en el vocab.
+    const EXENTOS_PT = new Set([
+      "slang", "colloquial", "vulgar", "coloquial", "argot", "jerga",
+      "cultural", "realia",
+    ]);
+    const juzgables = parsed.vocab.filter((v) => {
+      const type = (v.type ?? "").toLowerCase();
+      const register = ((v as { register?: string }).register ?? "").toLowerCase();
+      return !(type === "expression" || type === "slang" || EXENTOS_PT.has(register));
+    });
+    const outOfLevel = juzgables.filter(
+      (v) => !isPortugueseA1A2(v.word) && !isPortugueseB1Lemma(v.word),
+    );
+    checks.push({
+      id: "vocab-level-frequency",
+      label: "Vocab matches B1 lexical frequency (PT, list)",
+      status: outOfLevel.length === 0 ? "pass" : outOfLevel.length <= 2 ? "warn" : "fail",
+      detail:
+        outOfLevel.length > 0
+          ? `${outOfLevel.length} fuera de B1: ${outOfLevel
+              .slice(0, 6)
+              .map((v) => v.word)
+              .join(", ")}${outOfLevel.length > 6 ? ` …+${outOfLevel.length - 6}` : ""}`
+          : undefined,
+    });
   }
 
   // Body CEFR check (Spanish only, all levels A1→C1).

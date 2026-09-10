@@ -314,28 +314,18 @@ export default function Sidebar({ onClose }: SidebarProps) {
           </Link>
         )}
 
-        {/* Story of the day/week gating:
-            - free  → solo "Story of the Week" (su unlock weekly)
-            - basic / premium → solo "Story of the Day" (paid, no necesitan weekly)
-            - polyglot → AMBOS (acceso total, ve las dos versiones) */}
-        {plan !== "free" && (
-          <Link
-            href="/story-of-the-day"
-            onClick={handleNavClick}
-            className={linkClass("/story-of-the-day")}
-          >
-            <BookMarked size={20} /> Story of the Day
-          </Link>
-        )}
-        {(plan === "free" || plan === "polyglot") && (
-          <Link
-            href="/story-of-the-week"
-            onClick={handleNavClick}
-            className={linkClass("/story-of-the-week")}
-          >
-            <BookMarked size={20} /> Story of the Week
-          </Link>
-        )}
+        {/* Una sola entrada, y para todos los planes. Antes habia dos y el
+            plan decidia cual: free veia solo "Story of the Week" (su unica
+            lectura desbloqueada entonces) y el resto solo "Story of the Day".
+            La semanal ya no existe, y la del dia esta abierta hasta sin
+            cuenta, asi que esconderla a free era cerrarle lo unico gratis. */}
+        <Link
+          href="/story-of-the-day"
+          onClick={handleNavClick}
+          className={linkClass("/story-of-the-day")}
+        >
+          <BookMarked size={20} /> Story of the Day
+        </Link>
 
         {(!user || plan === "free" || plan === "basic") && (
           <Link

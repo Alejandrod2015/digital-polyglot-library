@@ -8,6 +8,13 @@ import { getBetaUserIds, parseMetricsCohort } from "@/lib/metricsCohort";
 import { resolveStoryLanguages } from "@/lib/storyLanguages";
 import { buildRetention, SERVER_WRITTEN_METRIC_EVENTS } from "@/lib/metricsRetention";
 import { pushTokenPlatform } from "@/lib/mobilePlatform";
+import {
+  Origin,
+  appOrigin,
+  classifyOrigin,
+  decodeOrigin,
+  firstTouchFromVisit,
+} from "@/lib/signupSource";
 
 const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
 
@@ -75,8 +82,47 @@ type RecentSignup = {
    * la cohorte manda y este distintivo solo describe.
    */
   bought: boolean;
+  /**
+   * Práctica. Van los tres campos crudos en vez de una cadena ya montada
+   * porque "4/5 · 90%" y "no ha practicado nunca" no son la misma ausencia,
+   * y quien pinta la tabla necesita poder distinguirlas.
+   *
+   * `practiceStarted` nunca es menor que `practiceCompleted`: la app móvil
+   * manda el evento de fin de una práctica de historia sin el de inicio que
+   * sí escribe la web, y el denominador se corrige al mayor de los dos.
+   */
+  practiceStarted: number;
+  practiceCompleted: number;
+  /** Media de `accuracyPercent` de las sesiones TERMINADAS. null si ninguna. */
+  practiceAccuracy: number | null;
   platform: "ios" | "android" | "web" | null;
+  /**
+   * De donde vino esta cuenta. Nunca es null: la tabla tenia filas sin
+   * ninguna etiqueta y no habia forma de saber si eran de un anuncio, de la
+   * tienda o de una busqueda.
+   *
+   * `basis` dice cuanto vale la etiqueta y no se puede esconder:
+   *  - "stamped": lo sello su propia visita (primer toque) o la app.
+   *  - "probable": cruce por tiempo entre el alta y la UNICA sesion que paso
+   *    por la pagina de alta en esos minutos. Se pinta en cursiva.
+   *  - "unknown": cuenta anterior a que esto se midiera. No se adivina.
+   */
+  origin: { key: string; label: string; basis: "stamped" | "probable" | "unknown" };
+  /**
+   * Por que puerta entro esta persona al producto. Una sola, siempre, y
+   * responde una unica pregunta: como llego a tener cuenta. No dice si paga
+   * (eso es la columna Pago) ni si ha hecho algo (Onb. y Abrio), que era la
+   * mezcla que dejaba filas enteras sin ninguna etiqueta.
+   */
+  userType: { key: "beta" | "audiolibro" | "app" | "web" | "unknown"; label: string };
 };
+
+/**
+ * Primer evento llegado desde la app. Antes de esa fecha solo existia la
+ * webapp, asi que una cuenta anterior sin sello ni actividad solo pudo nacer
+ * navegando. Despues de esa fecha no se adivina: sale "s/d".
+ */
+const APP_ERA_START = Date.parse("2026-06-23T00:00:00Z");
 
 const TEAM_DOMAINS = ["muvn.de"];
 function isTeamEmail(email: string | null): boolean {
@@ -147,7 +193,15 @@ export async function GET(req: NextRequest): Promise<Response> {
     const ids = cohort.map((u) => u.id);
 
     // ── DB cross-reference (single round of grouped queries) ──
-    const [audioEvents, plansEvents, continueRows, entitlements, claimRows, activityRows] = await Promise.all([
+    const [
+      audioEvents,
+      plansEvents,
+      continueRows,
+      entitlements,
+      claimRows,
+      activityRows,
+      practiceRows,
+    ] = await Promise.all([
       ids.length
         ? prisma.userMetric.findMany({
             where: { userId: { in: ids }, eventType: { in: ["story_opened", "audio_play", "audio_complete", "audio_pause", "continue_listening"] } },
@@ -193,6 +247,20 @@ export async function GET(req: NextRequest): Promise<Response> {
             },
             select: { userId: true, createdAt: true },
             take: 200000,
+          })
+        : Promise.resolve([]),
+      // Practica: las dos mitades del mismo gesto. Empezar una sesion y
+      // terminarla son eventos distintos a proposito, y la distancia entre
+      // ambos es la mitad de lo que dice la columna: quien empieza cinco y
+      // acaba dos no esta practicando, esta abandonando.
+      ids.length
+        ? prisma.userMetric.findMany({
+            where: {
+              userId: { in: ids },
+              eventType: { in: ["practice_session_started", "practice_session_completed"] },
+            },
+            select: { userId: true, eventType: true, metadata: true },
+            take: 100000,
           })
         : Promise.resolve([]),
     ]);
@@ -431,6 +499,128 @@ export async function GET(req: NextRequest): Promise<Response> {
       return undefined;
     };
 
+    // ── Practica por persona ──
+    // `accuracyPercent` viene dentro del `metadata` de cada sesion terminada.
+    // La media es de las sesiones terminadas y solo de esas: una sesion que
+    // se abandona no deja nota, y contarla como cero diria que fallo cuando
+    // lo que hizo fue irse.
+    type PracticeAgg = { started: number; completed: number; accuracy: number | null };
+    const practiceBy = new Map<string, PracticeAgg>();
+    const accuracyByUser = new Map<string, number[]>();
+    for (const row of practiceRows) {
+      const agg = practiceBy.get(row.userId) ?? { started: 0, completed: 0, accuracy: null };
+      if (row.eventType === "practice_session_started") agg.started += 1;
+      else {
+        agg.completed += 1;
+        const meta =
+          row.metadata && typeof row.metadata === "object"
+            ? (row.metadata as Record<string, unknown>)
+            : null;
+        if (typeof meta?.accuracyPercent === "number" && Number.isFinite(meta.accuracyPercent)) {
+          const list = accuracyByUser.get(row.userId) ?? [];
+          list.push(meta.accuracyPercent);
+          accuracyByUser.set(row.userId, list);
+        }
+      }
+      practiceBy.set(row.userId, agg);
+    }
+    for (const [userId, list] of accuracyByUser) {
+      const agg = practiceBy.get(userId);
+      if (agg && list.length) {
+        agg.accuracy = Math.round(list.reduce((sum, v) => sum + v, 0) / list.length);
+      }
+    }
+    // Terminar sin haber empezado pasa: la app movil manda el `completed` de
+    // una practica de historia sin el `started` que la web si escribe. La
+    // columna diria "2/0", asi que el denominador es el mayor de los dos.
+    const practiceFor = (userId: string): PracticeAgg => {
+      const agg = practiceBy.get(userId) ?? { started: 0, completed: 0, accuracy: null };
+      return { ...agg, started: Math.max(agg.started, agg.completed) };
+    };
+
+    // ── Origen ──
+    // La visita a la pagina de alta y la cuenta que nace de ella son el mismo
+    // gesto separado por segundos, pero nada las une: la tabla de visitas no
+    // sabe quien es nadie. Desde el sello de primer toque las cuentas nuevas
+    // lo traen encima; para las anteriores se cruza por tiempo, y solo cuando
+    // la respuesta es UNA. Si dos personas pasaron por la pagina de alta en
+    // la misma ventana no hay atribucion posible, y entonces se dice "s/d"
+    // en vez de elegir una de las dos.
+    const MATCH_WINDOW_MS = 5 * 60 * 1000;
+    const signupVisits = await prisma.pageVisit.findMany({
+      where: {
+        createdAt: { gte: new Date(windowStart - MATCH_WINDOW_MS) },
+        path: { contains: "sign-up" },
+      },
+      select: { sessionId: true, createdAt: true },
+      orderBy: { createdAt: "asc" },
+      take: 5000,
+    });
+    const visitSessions = Array.from(
+      new Set(signupVisits.map((v) => v.sessionId).filter((x): x is string => Boolean(x))),
+    );
+    // Primera visita de cada sesion: el primer toque de esa persona, que es
+    // lo que dice de donde vino. La ultima casi siempre es nuestra propia
+    // pagina de alta, que no informa de nada.
+    const firstVisitBySession = new Map<
+      string,
+      { utmSource: string | null; utmCampaign: string | null; referrer: string | null }
+    >();
+    if (visitSessions.length) {
+      const rows = await prisma.pageVisit.findMany({
+        where: { sessionId: { in: visitSessions } },
+        select: { sessionId: true, utmSource: true, utmCampaign: true, referrer: true },
+        orderBy: { createdAt: "asc" },
+        take: 20000,
+      });
+      for (const r of rows) {
+        if (r.sessionId && !firstVisitBySession.has(r.sessionId)) firstVisitBySession.set(r.sessionId, r);
+      }
+    }
+    const probableOriginFor = (createdAt: number): Origin | null => {
+      const hits = new Set<string>();
+      for (const v of signupVisits) {
+        if (!v.sessionId) continue;
+        if (Math.abs(v.createdAt.getTime() - createdAt) <= MATCH_WINDOW_MS) hits.add(v.sessionId);
+      }
+      if (hits.size !== 1) return null;
+      const first = firstVisitBySession.get(Array.from(hits)[0]);
+      return first ? classifyOrigin(firstTouchFromVisit(first)) : null;
+    };
+    // Puerta de entrada. El orden importa y es el de la propia historia de
+    // la persona: al programa se entra por invitacion, y quien esta dentro
+    // llego por ahi aunque despues comprara un libro.
+    const bookBy = new Set(
+      claimRows.map((c) => c.redeemedBy).filter((id): id is string => Boolean(id)),
+    );
+    const userTypeFor = (u: (typeof cohort)[number]): RecentSignup["userType"] => {
+      // Por id y tambien por sus tres direcciones: el tester cuyo webhook
+      // nunca enlazo la cuenta sigue siendo tester, y por id solo salia como
+      // usuario cualquiera.
+      const betaStatus = betaFor(u)?.status;
+      if (betaIds.has(u.id) || betaStatus === "invited" || betaStatus === "accepted") {
+        return { key: "beta", label: "Beta" };
+      }
+      if (bookBy.has(u.id)) return { key: "audiolibro", label: "Audiolibro" };
+      const pf = platformFor(u);
+      if (pf === "ios" || pf === "android") return { key: "app", label: "App" };
+      if (pf === "web") return { key: "web", label: "Web" };
+      if (u.createdAt < APP_ERA_START) return { key: "web", label: "Web" };
+      return { key: "unknown", label: "s/d" };
+    };
+
+    const originFor = (u: (typeof cohort)[number]): RecentSignup["origin"] => {
+      const stamped = decodeOrigin((u.publicMetadata as Record<string, unknown>)?.signupSource);
+      if (stamped) return { ...stamped, basis: "stamped" };
+      const pf = platformFor(u);
+      // Quien nacio en la app entro por una tienda. Es deduccion, no sello,
+      // asi que va marcado como probable.
+      if (pf === "ios" || pf === "android") return { ...appOrigin(pf), basis: "probable" };
+      const probable = probableOriginFor(u.createdAt);
+      if (probable) return { ...probable, basis: "probable" };
+      return { key: "unknown", label: "s/d", basis: "unknown" };
+    };
+
     const recent: RecentSignup[] = cohort
       .sort((a, b) => b.createdAt - a.createdAt)
       .map((u) => {
@@ -442,6 +632,7 @@ export async function GET(req: NextRequest): Promise<Response> {
         const declaredLevel = typeof md.preferredLevel === "string" ? (md.preferredLevel as string) : null;
         const clerkName = [u.firstName, u.lastName].filter(Boolean).join(" ") || null;
         const betaName = beta?.firstName?.trim() || null;
+        const practice = practiceFor(u.id);
         return {
           userId: u.id,
           name: clerkName ?? betaName,
@@ -464,7 +655,12 @@ export async function GET(req: NextRequest): Promise<Response> {
           viewedPlans: plansBy.has(u.id),
           paid: paidBy.has(u.id),
           bought: boughtBy.has(u.id),
+          practiceStarted: practice.started,
+          practiceCompleted: practice.completed,
+          practiceAccuracy: practice.accuracy,
           platform: platformFor(u),
+          origin: originFor(u),
+          userType: userTypeFor(u),
         };
       });
 

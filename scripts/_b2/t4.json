@@ -1,0 +1,381 @@
+[
+  {
+    "topic": "classes-and-teachers",
+    "slotIndex": 1,
+    "title": "Nadie falta nunca",
+    "slug": "nadie-falta-nunca",
+    "arcType": "reframe-turn",
+    "synopsis": "Griselda teaches with stories at a small institute in San Telmo, and Ariel, the owner, arrives with spreadsheets: her group is falling behind the app-based ones. She points at the other column, the one showing that her students never miss a class, loses the argument anyway, and watches her weekly story hour disappear from the schedule without a fight.",
+    "text": "Griselda es la profesora de los cuentos en un instituto de San Telmo, en Buenos Aires, Argentina. Sus alumnos extranjeros no aprenden con listas: aprenden con historias que ella dicta despacio, en un aula que huele a café con medialunas.\n\nQuien mira las planillas es Ariel. El dueño baja los lunes del subte con el promedio de cada grupo tildado en rojo.\n\n“Tu grupo rinde menos”, dice Ariel, lapicera en mano. “Los de la aplicación ya van dos módulos adelante.”\n\n“Mi grupo llega después del laburo y no falta nunca”, contesta Griselda. “Mirá la otra columna, la de los que vuelven.”\n\n“Acá se paga con niveles, no con cariño”, corta él.\n\n“¿Y los viernes?”, pregunta ella. “Los viernes hay módulo de repaso”, contesta Ariel, sin levantar la vista.\n\nDesde el lunes, los módulos entran en su aula, y la hora de cuentos sale del horario.\n\nSe traga el orgullo. La planilla dice que su grupo rinde menos; la misma planilla dice que no falta nadie. Los números también cuentan historias; Ariel no sabe leerlas. No lo pelea: borra el pizarrón sin apuro y guarda el libro en el bolso.",
+    "vocab": [
+      {
+        "word": "pizarrón",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Blackboard; the word Latin American classrooms use for it."
+      },
+      {
+        "word": "subte",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "The Buenos Aires underground train, short for subterráneo."
+      },
+      {
+        "word": "laburo",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Work, job; everyday Buenos Aires word from Italian."
+      },
+      {
+        "word": "medialuna",
+        "surface": "medialunas",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Small sweet croissant, the classic Argentine breakfast pastry."
+      },
+      {
+        "word": "lapicera",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Pen; the everyday word for a ballpoint in Argentina."
+      },
+      {
+        "word": "tildar",
+        "surface": "tildado",
+        "type": "verb",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "To tick, mark something on a list as checked."
+      },
+      {
+        "word": "dictar",
+        "surface": "dicta",
+        "type": "verb",
+        "definition": "To teach a class, deliver it; also to read aloud slowly."
+      },
+      {
+        "word": "alumno",
+        "surface": "alumnos",
+        "type": "noun",
+        "definition": "Student; the person taking a class with a teacher."
+      },
+      {
+        "word": "profesora",
+        "type": "noun",
+        "definition": "Teacher; the woman who teaches and runs a class."
+      },
+      {
+        "word": "promedio",
+        "type": "noun",
+        "definition": "Average; the middle number a group of results gives."
+      },
+      {
+        "word": "rendir",
+        "surface": "rinde",
+        "type": "verb",
+        "definition": "To perform, produce the results that are expected."
+      },
+      {
+        "word": "aula",
+        "type": "noun",
+        "definition": "Classroom; the room where a class is taught."
+      },
+      {
+        "word": "pelear",
+        "surface": "pelea",
+        "type": "verb",
+        "definition": "To fight, argue hard to defend your position."
+      },
+      {
+        "word": "repaso",
+        "type": "noun",
+        "definition": "Review; going over material again to fix it in memory."
+      },
+      {
+        "word": "nivel",
+        "surface": "niveles",
+        "type": "noun",
+        "definition": "Level; one step in a scale of skill or progress."
+      },
+      {
+        "word": "extranjero",
+        "surface": "extranjeros",
+        "type": "adjective",
+        "definition": "Foreign; coming from another country than this one."
+      },
+      {
+        "word": "acá",
+        "type": "adverb",
+        "definition": "Here; the form Latin America prefers over aquí.",
+        "surface": "Acá"
+      },
+      {
+        "word": "adelante",
+        "type": "adverb",
+        "definition": "Ahead, further forward than someone else has reached."
+      },
+      {
+        "word": "tragarse el orgullo",
+        "surface": "traga el orgullo",
+        "type": "expression",
+        "definition": "To swallow your pride and not answer back."
+      },
+      {
+        "word": "levantar la vista",
+        "surface": "levantar la vista",
+        "type": "expression",
+        "definition": "To look up from what you are doing."
+      }
+    ]
+  },
+  {
+    "topic": "classes-and-teachers",
+    "slotIndex": 2,
+    "title": "La carta sin abrir",
+    "slug": "la-carta-sin-abrir",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "The morning group is moved to the app and Griselda is left with six night students and a blackboard. While the modules advance next door in headphone silence, her small class writes, laughs and learns to spell the letter jota, and one day an envelope from Montreal arrives at the institute. Ariel leaves it unopened on his desk, ticked as pending.",
+    "text": "La noticia la trae Ariel en el recreo, dicha al pasar.\n\n“El grupo de las mañanas pasa a la aplicación”, avisa Ariel. “A vos te queda el de la noche.”\n\n“No te lo tomés a pecho”, agrega. “Es un piloto, nada más. Cuando los números mejoren, lo hablamos.”\n\n“Vos sabés dónde encontrarme, che”, contesta ella, y tampoco esta vez pelea.\n\nCon el grupo de la noche, Griselda dicta despacio y reparte una consigna por pupitre. Seis nombres, seis países, seis maneras de deletrear la jota.\n\nToma lista sin apuro. Cuando la charla se suelta, el instituto ya cerró y el pizarrón queda lleno.\n\nEn el aula de al lado, los módulos avanzan solos, con auriculares. Nadie se ríe, nadie levanta la mano, nadie pregunta cómo se dice buena suerte en porteño.\n\nA Griselda le pesa más el aula de al lado: ese silencio no se parece a nada.\n\n“¿Y vos, todavía dictás cuentos?”, pregunta Ariel al pasar. “Los viernes, por si acaso”, contesta ella.\n\nY un jueves cualquiera llega al instituto un sobre desde Montreal, con estampillas de colores. Ariel lo deja sin abrir sobre el escritorio, tildado como pendiente.",
+    "vocab": [
+      {
+        "word": "porteño",
+        "type": "adjective",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "From Buenos Aires; the way the city calls its own."
+      },
+      {
+        "word": "che",
+        "type": "expression",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Hey, you; the little word Argentina is known by."
+      },
+      {
+        "word": "recreo",
+        "type": "noun",
+        "definition": "Break; the pause between classes when everyone breathes."
+      },
+      {
+        "word": "consigna",
+        "type": "noun",
+        "definition": "Task instruction; what the teacher asks the class to do."
+      },
+      {
+        "word": "pupitre",
+        "type": "noun",
+        "definition": "School desk; the small table each student has."
+      },
+      {
+        "word": "charla",
+        "type": "noun",
+        "definition": "Chat; relaxed talk that flows without a plan."
+      },
+      {
+        "word": "jota",
+        "type": "noun",
+        "definition": "The letter j, famously hard to pronounce in Spanish."
+      },
+      {
+        "word": "deletrear",
+        "type": "verb",
+        "definition": "To spell a word out, letter by letter."
+      },
+      {
+        "word": "soltarse",
+        "surface": "se suelta",
+        "type": "verb",
+        "definition": "To loosen up, lose the fear of speaking."
+      },
+      {
+        "word": "estampilla",
+        "surface": "estampillas",
+        "type": "noun",
+        "definition": "Postage stamp; the Latin American word for it."
+      },
+      {
+        "word": "pendiente",
+        "type": "adjective",
+        "definition": "Pending; still waiting for someone to deal with it."
+      },
+      {
+        "word": "cualquiera",
+        "type": "adjective",
+        "definition": "Any, an ordinary one with nothing special about it."
+      },
+      {
+        "word": "parecerse",
+        "surface": "se parece",
+        "type": "verb",
+        "definition": "To look like, be similar to something else."
+      },
+      {
+        "word": "mejorar",
+        "surface": "mejoren",
+        "type": "verb",
+        "definition": "To improve, get better than they were before."
+      },
+      {
+        "word": "avanzar",
+        "surface": "avanzan",
+        "type": "verb",
+        "definition": "To advance, move forward through the course material."
+      },
+      {
+        "word": "tomar lista",
+        "surface": "toma lista",
+        "type": "expression",
+        "definition": "To call the roll, read out who is present."
+      },
+      {
+        "word": "levantar la mano",
+        "surface": "levanta la mano",
+        "type": "expression",
+        "definition": "To raise your hand to ask or answer."
+      },
+      {
+        "word": "sin apuro",
+        "type": "expression",
+        "definition": "Without hurry, taking all the time it needs."
+      },
+      {
+        "word": "al pasar",
+        "type": "expression",
+        "definition": "In passing, said casually on the way to something else."
+      },
+      {
+        "word": "buena suerte",
+        "type": "expression",
+        "definition": "Good luck; the wish you say before something hard."
+      }
+    ]
+  },
+  {
+    "topic": "classes-and-teachers",
+    "slotIndex": 3,
+    "title": "Una idea de Ariel",
+    "slug": "una-idea-de-ariel",
+    "arcType": "harmonic-close",
+    "synopsis": "Three enrolments arrive from Montreal in one day, all quoting the same friend who learned with stories, and only then does Ariel open the pending envelope. He reads the letter aloud at the door of the night classroom, invents a weekly reading hour as if it were his own idea, and Griselda accepts it very seriously, laughing only on the inside.",
+    "text": "Un martes caen tres matrículas desde Montreal, con la misma frase en la ficha de inscripción: me lo recomendó una amiga que se sabe los cuentos de memoria.\n\nRecién entonces Ariel despega el sobre pendiente y lee moviendo los labios. Después cruza el pasillo en silencio y se para en la puerta del aula de Griselda.\n\n“Escuchá esto”, dice, y lee: “El curso me salvó. Cuando me trabo, cierro los ojos y me acuerdo de los cuentos de los viernes. Así me suelto.”\n\nGriselda no dice nada: deja que la carta hable, de espaldas, aguantándose la risa.\n\n“Estuve pensando”, plantea Ariel, carta en mano. “Al módulo le falta algo: una hora de lectura por semana. De cuentos, digamos. ¿La tomás vos?”\n\nAfuera frena un colectivo. Griselda lo deja esperar un momento.\n\n“Qué buena idea, Ariel. Ojalá se te ocurra más seguido”, contesta Griselda, muy seria, y los dos saben qué acaban de firmar: la disculpa llegó disfrazada de idea.\n\nLos seis del grupo aplauden bajito. La hora de cuentos vuelve al horario con otro nombre: Módulo de lectura. Griselda la dicta despacio, con la puerta abierta, por las dudas.",
+    "vocab": [
+      {
+        "word": "matrícula",
+        "surface": "matrículas",
+        "type": "noun",
+        "definition": "Enrolment; the paid registration that reserves your course place."
+      },
+      {
+        "word": "ficha",
+        "type": "noun",
+        "definition": "Form, card; the sheet where personal details go."
+      },
+      {
+        "word": "inscripción",
+        "type": "noun",
+        "definition": "Registration; the act of signing up for something."
+      },
+      {
+        "word": "recomendar",
+        "surface": "recomendó",
+        "type": "verb",
+        "definition": "To recommend, tell someone that something is worth it."
+      },
+      {
+        "word": "lectura",
+        "type": "noun",
+        "definition": "Reading; the activity of reading as a practice."
+      },
+      {
+        "word": "digamos",
+        "type": "expression",
+        "definition": "Let us say; softens a word you half mean."
+      },
+      {
+        "word": "ocurrirse",
+        "surface": "se te ocurra",
+        "type": "verb",
+        "definition": "To occur to you, come into your head as an idea."
+      },
+      {
+        "word": "más seguido",
+        "type": "expression",
+        "definition": "More often; the Latin American way to say it."
+      },
+      {
+        "word": "de espaldas",
+        "type": "expression",
+        "definition": "With your back turned, facing away from everyone."
+      },
+      {
+        "word": "aguantarse la risa",
+        "surface": "aguantándose la risa",
+        "type": "expression",
+        "definition": "To hold in your laughter when it wants out."
+      },
+      {
+        "word": "disfrazar",
+        "surface": "disfrazada",
+        "type": "verb",
+        "definition": "To disguise, dress something up as something else."
+      },
+      {
+        "word": "despegar",
+        "surface": "despega",
+        "type": "verb",
+        "definition": "To peel off, unstick something slowly and with care."
+      },
+      {
+        "word": "trabarse",
+        "surface": "me trabo",
+        "type": "verb",
+        "definition": "To get stuck mid-sentence, unable to find the word."
+      },
+      {
+        "word": "salvar",
+        "surface": "salvó",
+        "type": "verb",
+        "definition": "To save someone, get them out of real trouble."
+      },
+      {
+        "word": "por semana",
+        "type": "expression",
+        "definition": "Per week, once every week as a routine."
+      },
+      {
+        "word": "aplaudir",
+        "surface": "aplauden",
+        "type": "verb",
+        "definition": "To clap, hit your palms together in approval."
+      },
+      {
+        "word": "acordarse",
+        "surface": "me acuerdo",
+        "type": "verb",
+        "definition": "To remember, bring something back to your mind again."
+      },
+      {
+        "word": "pararse",
+        "surface": "se para",
+        "type": "verb",
+        "definition": "To stand, place yourself somewhere on your feet."
+      },
+      {
+        "word": "ojalá",
+        "surface": "Ojalá",
+        "type": "expression",
+        "definition": "Hopefully, if only; wishing hard that something would happen."
+      },
+      {
+        "word": "por las dudas",
+        "type": "expression",
+        "definition": "Just in case; the Argentine way of covering yourself."
+      }
+    ]
+  }
+]

@@ -22,6 +22,7 @@ import { books } from "@/data/books";
 import { formatTopic } from "@domain/displayFormat";
 import { getBookCardMeta } from "@domain/bookCardMeta";
 import type { GamificationSummary } from "@/lib/gamification";
+import type { DailyStory } from "@/lib/dailyJourneyStory";
 import { VARIANT_OPTIONS_BY_LANGUAGE, formatVariantLabel, normalizeVariant } from "@/lib/languageVariant";
 import {
   JOURNEY_FOCUS_OPTIONS,
@@ -157,8 +158,9 @@ type Props = {
   latestBooks: LatestBook[];
   latestStories: LatestStory[];
   latestPolyglotStories: LatestPolyglotStory[];
-  featuredWeekSlug: string | null;
-  featuredDaySlug: string | null;
+  dailyStories: DailyStory[];
+  /** Idiomas con journey vivo, en minusculas. El resto va con "Coming soon". */
+  availableLanguages: string[];
   initialPlan: string;
   initialTargetLanguages: string[];
   initialInterests: string[];
@@ -328,8 +330,8 @@ export default function HomeClient({
   latestBooks,
   latestStories,
   latestPolyglotStories,
-  featuredWeekSlug,
-  featuredDaySlug,
+  dailyStories,
+  availableLanguages,
   initialPlan,
   initialTargetLanguages,
   initialInterests,
@@ -420,6 +422,7 @@ export default function HomeClient({
   // that already finished it, the web twin of the app's "Replay tour" menu
   // entry. Off in production, and it never writes preferences.
   const [tourPreview, setTourPreview] = useState(false);
+  const [surveyPreview, setSurveyPreview] = useState(false);
   const [onboardingSaving, setOnboardingSaving] = useState(false);
   const [onboardingError, setOnboardingError] = useState("");
   const plan = isLoaded
@@ -439,7 +442,7 @@ export default function HomeClient({
     [activeOnboardingLanguage]
   );
   const shouldShowSurvey =
-    hasSession && isLoaded && !onboardingState.onboardingSurveyCompletedAt;
+    surveyPreview || (hasSession && isLoaded && !onboardingState.onboardingSurveyCompletedAt);
   const shouldShowTour =
     tourStep !== null &&
     (tourPreview ||
@@ -561,6 +564,17 @@ export default function HomeClient({
     if (new URLSearchParams(window.location.search).get("tour") !== "preview") return;
     setTourPreview(true);
     setTourStep(0);
+  }, []);
+
+  // `?survey=preview`, hermano del de arriba y con el mismo candado de
+  // desarrollo. La encuesta solo sale en cuentas sin onboarding hecho, asi que
+  // sin esto la unica forma de mirarla era resetear las preferencias de una
+  // cuenta real.
+  useEffect(() => {
+    if (process.env.NODE_ENV === "production") return;
+    if (typeof window === "undefined") return;
+    if (new URLSearchParams(window.location.search).get("survey") !== "preview") return;
+    setSurveyPreview(true);
   }, []);
 
   useEffect(() => {
@@ -995,6 +1009,10 @@ export default function HomeClient({
     }
     return new Set(onboardingState.targetLanguages.map((l) => l.toLowerCase()));
   }, [onboardingState.targetLanguages]);
+  const availableLanguageSet = useMemo(
+    () => new Set(availableLanguages.map((l) => l.trim().toLowerCase())),
+    [availableLanguages]
+  );
   const preferredLevel = useMemo(
     () => (typeof onboardingState.preferredLevel === "string" ? onboardingState.preferredLevel.toLowerCase().trim() : ""),
     [onboardingState.preferredLevel]
@@ -1434,51 +1452,33 @@ export default function HomeClient({
   ]);
 
   const featuredFreeStory = useMemo(() => {
-    // Hero "Story of the Day" renders for every plan; the "Free today"
-    // gold pill is gated separately to free/basic via showFreeTodayPill.
-    const targetSlug = featuredDaySlug ?? featuredWeekSlug;
-    if (!targetSlug) return null;
+    // La historia del dia DE SU IDIOMA. El heroe sale para todos los planes;
+    // la pastilla dorada "Free today" la gatea StoryOfDayHero a free/basic, y
+    // ahora dice la verdad, porque `isDailyStorySlug` abre justo esta.
+    //
+    // Si su idioma no tiene journey vivo (frances, polaco, coreano, arabe hoy)
+    // NO hay heroe. Ensenarle el de otro idioma es lo que veniamos haciendo:
+    // el 2026-09-05 dos personas que pidieron espanol aterrizaron en una
+    // historia italiana, la abrieron y no le dieron al play.
+    if (dailyStories.length === 0) return null;
 
-    for (const book of Object.values(books)) {
-      const story = book.stories.find((s) => s.slug === targetSlug);
-      if (!story) continue;
-      const wordCount = typeof story.text === "string"
-        ? story.text.replace(/<[^>]+>/g, " ").trim().split(/\s+/).filter(Boolean).length
-        : 0;
-      const runtimeMin = wordCount > 0 ? Math.max(1, Math.round(wordCount / 150)) : null;
-      const newWords = Array.isArray(story.vocab) ? story.vocab.length : null;
-      const description = typeof book.description === "string" && book.description.trim()
-        ? book.description.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim()
-        : null;
-      return {
-        label: featuredDaySlug ? "Story of the Day" : "Story of the Week",
-        href: withReturnContext(`/books/${book.slug}/${story.slug}`),
-        title: story.title,
-        bookTitle: book.title,
-        cover:
-          // `coverUrl` (argentinian book) | `cover` (resto) → ambos chequeados
-          // antes de caer al book.cover, sino las stories argentinas pierden
-          // su imagen propia.
-          typeof story.cover === "string" && story.cover.trim() !== ""
-            ? story.cover
-            : typeof (story as { coverUrl?: unknown }).coverUrl === "string" &&
-              ((story as { coverUrl?: string }).coverUrl ?? "").trim() !== ""
-              ? (story as { coverUrl?: string }).coverUrl!
-              : typeof book.cover === "string" && book.cover.trim() !== ""
-                ? book.cover
-                : "/covers/default.jpg",
-        language: story.language ?? book.language,
-        region: story.region ?? book.region,
-        level: story.level ?? book.level,
-        topic: story.topic ?? book.topic,
-        description,
-        runtimeMin,
-        newWords,
-        chapters: book.stories.length,
-      };
-    }
-    return null;
-  }, [plan, featuredDaySlug, featuredWeekSlug]);
+    const wanted = languageFilter ?? new Set(["spanish"]);
+    const pick = dailyStories.find((story) => wanted.has(story.language.toLowerCase()));
+    if (!pick) return null;
+
+    return {
+      href: withReturnContext(`/stories/${pick.slug}`),
+      title: pick.title,
+      // El subtitulo dorado llevaba el titulo del libro. Un journey no tiene
+      // nombre propio, asi que el contenedor que se puede nombrar es el tema.
+      bookTitle: pick.topicLabel ?? "",
+      cover: pick.coverUrl ?? "/covers/default.jpg",
+      language: pick.language,
+      region: pick.variant ?? undefined,
+      level: pick.level,
+      newWords: pick.vocabCount,
+    };
+  }, [dailyStories, languageFilter]);
 
   const mobileContinueCards = useMemo<ContinueMobileCard[]>(() => {
     if (continueListening.length === 0) return [];
@@ -1652,26 +1652,40 @@ export default function HomeClient({
         <div className="flex flex-wrap gap-3">
           {["Spanish", "French", "German", "Italian", "Portuguese", "Japanese"].map((language) => {
             const active = onboardingState.targetLanguages[0] === language;
+            // Mismo criterio que la app: se puede elegir el idioma que tiene
+            // journey vivo, y el resto se ve con "Coming soon" en vez de
+            // dejarte elegirlo y aterrizar en una historia de otro idioma.
+            const comingSoon = !availableLanguageSet.has(language.toLowerCase());
             return (
               <button
                 key={language}
                 type="button"
-                onClick={() =>
+                disabled={comingSoon}
+                title={comingSoon ? `${language} is not ready yet. We are working on it.` : undefined}
+                onClick={() => {
+                  if (comingSoon) return;
                   setOnboardingState((current) => ({
                     ...current,
                     targetLanguages: [language],
                     preferredVariant: null,
                     preferredRegion: null,
-                  }))
-                }
+                  }));
+                }}
                 className={[
-                  "rounded-full border px-4 py-2 text-sm font-semibold transition",
-                  active
-                    ? "border-[var(--primary)] bg-[var(--primary)] text-[#0d1830]"
-                    : "border-[var(--card-border)] bg-[var(--card-bg)] text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]",
+                  "inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition",
+                  comingSoon
+                    ? "cursor-not-allowed border-[var(--card-border)] bg-[var(--card-bg)] text-[var(--muted)] opacity-70"
+                    : active
+                      ? "border-[var(--primary)] bg-[var(--primary)] text-[#0d1830]"
+                      : "border-[var(--card-border)] bg-[var(--card-bg)] text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]",
                 ].join(" ")}
               >
                 {language}
+                {comingSoon ? (
+                  <span className="rounded-full bg-[var(--chip-bg)] px-2 py-0.5 text-[10px] font-black uppercase tracking-[0.06em] text-[var(--chip-text)]">
+                    Coming soon
+                  </span>
+                ) : null}
               </button>
             );
           })}
@@ -2071,14 +2085,10 @@ export default function HomeClient({
               title: featuredFreeStory.title,
               bookTitle: featuredFreeStory.bookTitle,
               coverUrl: featuredFreeStory.cover,
-              description: featuredFreeStory.description ?? undefined,
               level: featuredFreeStory.level,
               language: featuredFreeStory.language,
               region: featuredFreeStory.region,
-              topic: featuredFreeStory.topic ? formatTopic(featuredFreeStory.topic) : undefined,
-              durationMin: featuredFreeStory.runtimeMin ?? undefined,
               newWords: featuredFreeStory.newWords ?? undefined,
-              chapters: featuredFreeStory.chapters ?? undefined,
             }}
             plan={plan as "free" | "basic" | "premium" | "polyglot"}
           />
@@ -2163,14 +2173,10 @@ export default function HomeClient({
               title: featuredFreeStory.title,
               bookTitle: featuredFreeStory.bookTitle,
               coverUrl: featuredFreeStory.cover,
-              description: featuredFreeStory.description ?? undefined,
               level: featuredFreeStory.level,
               language: featuredFreeStory.language,
               region: featuredFreeStory.region,
-              topic: featuredFreeStory.topic ? formatTopic(featuredFreeStory.topic) : undefined,
-              durationMin: featuredFreeStory.runtimeMin ?? undefined,
               newWords: featuredFreeStory.newWords ?? undefined,
-              chapters: featuredFreeStory.chapters ?? undefined,
             }}
             plan={plan as "free" | "basic" | "premium" | "polyglot"}
           />

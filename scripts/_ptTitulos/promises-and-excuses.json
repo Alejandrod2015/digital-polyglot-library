@@ -1,0 +1,443 @@
+[
+  {
+    "slug": "le-puse-el-ojo",
+    "topic": "promises-and-excuses",
+    "slotIndex": 1,
+    "title": "Le puse el ojo",
+    "synopsis": "An autumn afternoon on a vineyard in Mendoza, where Valentina promises Damián a job she has never measured. He offers her a work gang and a way out, and she turns it down before she has finished thinking. By seven the light goes and four rows are still standing, and the foreman stops asking, which is worse than being asked.",
+    "text": "Valentina Sosa, que hace la poda en una finca de Mendoza, Argentina, camina entre las hileras con Damián, el capataz, y aún no ha contado el cuartel.\n\nLas yemas de las vides están cerradas, así que si la helada se adelantara, se perdería el año. Lleva el cuadernillo abierto, como si ya hubiera anotado la respuesta.\n\n“¿Para cuándo me la entregás?”, pregunta él.\n\n“Para el viernes”, dice ella, aunque no ha calculado nada.\n\n“¿Calculaste o le pusiste el ojo?”, quiere saber Damián.\n\n“Le puse el ojo”, agrega ella.\n\nSe detiene bajo el parral. “Si fueras con atraso, tendrías que decírmelo hoy”, le avisa, “y yo pediría una cuadrilla.”\n\n“No hace falta, el viernes está”, contesta ella, y duda.\n\nNo le cuenta que el hombro le duele. Podar mal sería peor que apurarse.\n\nA las siete guarda la tijera con lentitud: quedan cuatro hileras sin tocar.\n\n“Mañana madrugo y lo cumplo, aunque venga antes que el sol”, se promete en el galpón, y la promesa ya no es solo suya.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "hilera",
+        "anchor": true,
+        "surface": "hileras",
+        "register": "cultural",
+        "definition": "Row; a long line of vines planted one behind another."
+      },
+      {
+        "type": "noun",
+        "word": "yema",
+        "anchor": true,
+        "surface": "yemas",
+        "register": "cultural",
+        "definition": "Bud; the small swelling on a vine that opens into a shoot."
+      },
+      {
+        "type": "noun",
+        "word": "vid",
+        "anchor": true,
+        "surface": "vides",
+        "register": "cultural",
+        "definition": "Grapevine; the climbing plant that grapes grow on."
+      },
+      {
+        "type": "noun",
+        "word": "galpón",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Shed; the big storage building on a farm, common word in Argentina."
+      },
+      {
+        "type": "noun",
+        "word": "cuartel",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Block of vineyard; one marked section of planted land."
+      },
+      {
+        "type": "noun",
+        "word": "parral",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Vine arbour; vines trained overhead to give shade."
+      },
+      {
+        "type": "noun",
+        "word": "poda",
+        "anchor": false,
+        "definition": "Pruning; the winter cutting back of vines so they fruit well."
+      },
+      {
+        "type": "verb",
+        "word": "podar",
+        "anchor": false,
+        "definition": "To prune; to cut branches back so the plant grows better."
+      },
+      {
+        "type": "noun",
+        "word": "capataz",
+        "anchor": false,
+        "definition": "Foreman; the person who runs the day's work on a farm."
+      },
+      {
+        "type": "noun",
+        "word": "cuadrilla",
+        "anchor": false,
+        "definition": "Work gang; a small team hired to finish a job together."
+      },
+      {
+        "type": "noun",
+        "word": "promesa",
+        "anchor": false,
+        "definition": "Promise; something you have said you will certainly do."
+      },
+      {
+        "type": "verb",
+        "word": "cumplir",
+        "anchor": false,
+        "surface": "cumplo",
+        "definition": "To keep your word; to do what you said you would do."
+      },
+      {
+        "type": "verb",
+        "word": "calcular",
+        "anchor": false,
+        "surface": "Calculaste",
+        "definition": "To work out an amount or a time in your head."
+      },
+      {
+        "type": "verb",
+        "word": "apurarse",
+        "anchor": false,
+        "surface": "Apurarse",
+        "register": "colloquial",
+        "definition": "To hurry; to work faster than is comfortable or safe."
+      },
+      {
+        "type": "verb",
+        "word": "dudar",
+        "anchor": false,
+        "surface": "duda",
+        "definition": "To hesitate; to stop for a moment because you are unsure."
+      },
+      {
+        "type": "noun",
+        "word": "atraso",
+        "anchor": false,
+        "definition": "Delay; being behind the point where you should be."
+      },
+      {
+        "type": "verb",
+        "word": "madrugar",
+        "anchor": false,
+        "surface": "madrugo",
+        "definition": "To get up very early, before the sun is properly out."
+      },
+      {
+        "type": "verb",
+        "word": "agregar",
+        "anchor": false,
+        "surface": "agrega",
+        "definition": "To add something more to what has just been said."
+      },
+      {
+        "type": "noun",
+        "word": "lentitud",
+        "anchor": false,
+        "definition": "Slowness; a pace so slow that other people notice it."
+      },
+      {
+        "type": "expression",
+        "word": "poner el ojo",
+        "anchor": false,
+        "surface": "pusiste el ojo",
+        "register": "colloquial",
+        "definition": "To eyeball something; to judge a size without measuring it."
+      }
+    ],
+    "arcType": "mini-cliffhanger"
+  },
+  {
+    "slug": "el-pretexto-armado",
+    "topic": "promises-and-excuses",
+    "slotIndex": 2,
+    "title": "El pretexto armado",
+    "synopsis": "Valentina turns up late with the excuse already built, and the pickup she blames is parked clean with the keys in it. Damián looks at it once and says nothing about the engine. What he minds is not the four rows; it is having waited without knowing, with cold coming down off the mountains and every hour costing somebody money.",
+    "text": "El viernes Valentina llega tarde con el pretexto que había armado. Damián está al lado del galpón, con el cuadernillo abierto, y no levanta la vista. Ella respira dos veces antes de hablar.\n\n“No arrancaba el motor y esperé al mecánico”, se excusa.\n\nDamián mira la camioneta, con las llaves puestas. “Ah”, dice.\n\n“Igual hoy termino las cuatro hileras”, insiste, y la voz se le adelanta a la cabeza.\n\n“No te reclamo las hileras”, contesta él, cortante. “Te reclamo la demora sin aviso. Si me hubieras llamado, habría mandado a alguien antes de que bajara el frío de la cordillera.”\n\n“Fue que no quisiste llamar”, dice Damián.\n\nSe le ocurren tres frases y las tres son inventadas.\n\n“Perdón”, dice, y suena corto para lo que pasó.\n\nÉl le alcanza la tijera del cinto, mientras el zonda mueve los brotes al otro lado de la acequia.\n\n“Te exijo una cosa”, agrega. “Cuando no llegues, avisá antes.”\n\nSe va a la hilera doce con el enojo mal puesto y un jornal menos.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "cinto",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Work belt; the strap at the waist that holds tools."
+      },
+      {
+        "type": "noun",
+        "word": "acequia",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Irrigation channel; the open ditch that carries water to the fields."
+      },
+      {
+        "type": "verb",
+        "word": "arrancar",
+        "definition": "To start up; to get an engine going, or to pull something out.",
+        "surface": "arrancaba"
+      },
+      {
+        "type": "noun",
+        "word": "brote",
+        "anchor": true,
+        "surface": "brotes",
+        "register": "cultural",
+        "definition": "Shoot; the new green growth that comes out of a bud."
+      },
+      {
+        "type": "noun",
+        "word": "jornal",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Day's wage; what one day of manual work is paid."
+      },
+      {
+        "type": "noun",
+        "word": "cordillera",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Mountain range; here the Andes, which the cold comes down from."
+      },
+      {
+        "type": "noun",
+        "word": "pretexto",
+        "anchor": false,
+        "definition": "Pretext; a reason you give that is not the real one."
+      },
+      {
+        "type": "verb",
+        "word": "excusarse",
+        "anchor": false,
+        "surface": "excusa",
+        "definition": "To make an excuse for something you failed to do."
+      },
+      {
+        "type": "verb",
+        "word": "armar",
+        "anchor": false,
+        "surface": "armado",
+        "definition": "To put together; to build a story or an object piece by piece."
+      },
+      {
+        "type": "noun",
+        "word": "motor",
+        "anchor": false,
+        "definition": "Engine; the part of a vehicle that makes it move."
+      },
+      {
+        "type": "noun",
+        "word": "mecánico",
+        "anchor": false,
+        "definition": "Mechanic; the person who repairs engines and vehicles."
+      },
+      {
+        "type": "verb",
+        "word": "adelantarse",
+        "anchor": false,
+        "surface": "adelanta",
+        "definition": "To get ahead of something, or to speak before thinking."
+      },
+      {
+        "type": "adjective",
+        "word": "cortante",
+        "anchor": false,
+        "definition": "Curt; speaking in a short sharp way that closes the subject."
+      },
+      {
+        "type": "verb",
+        "word": "reclamar",
+        "anchor": false,
+        "surface": "reclamo",
+        "definition": "To complain about something you believe is owed to you."
+      },
+      {
+        "type": "noun",
+        "word": "demora",
+        "anchor": false,
+        "definition": "Hold-up; the time somebody loses while waiting for you."
+      },
+      {
+        "type": "verb",
+        "word": "inventar",
+        "anchor": false,
+        "surface": "inventadas",
+        "definition": "To make up; to say something that is not true."
+      },
+      {
+        "type": "verb",
+        "word": "exigir",
+        "anchor": false,
+        "surface": "exijo",
+        "definition": "To demand; to ask for something and not accept less."
+      },
+      {
+        "type": "noun",
+        "word": "cuadernillo",
+        "anchor": false,
+        "definition": "Small notebook; the thin pad used for short daily records."
+      },
+      {
+        "type": "expression",
+        "word": "sin aviso",
+        "anchor": false,
+        "definition": "Without warning; giving nobody the chance to plan for it."
+      },
+      {
+        "type": "noun",
+        "word": "enojo",
+        "anchor": false,
+        "register": "colloquial",
+        "definition": "Anger; the hot feeling left over after an argument."
+      }
+    ],
+    "arcType": "reframe-turn"
+  },
+  {
+    "slug": "los-changarines",
+    "topic": "promises-and-excuses",
+    "slotIndex": 3,
+    "title": "Los changarines",
+    "synopsis": "Valentina arrives at first light with her shoulder strapped and the old promise on her back, and the four rows are already pruned. Damián hired two day labourers and did not tell her, because water and frost do not wait. She offers to settle it in wages, which is the one thing he does not want from her.",
+    "text": "Valentina llega al amanecer con el hombro vendado, convencida de que todavía podría cumplir lo prometido. Las cuatro hileras ya están podadas y los sarmientos, amontonados en el surco. Damián toma mate, como si la hubiera estado esperando.\n\n“¿Quién las hizo?”, pregunta ella.\n\n“Contraté dos changarines”, contesta él, “porque el riego no espera y la helada tampoco.”\n\nQue la reemplazaran salió barato; que él no se lo reclame, no.\n\n“Te lo saldo con dos jornadas mías”, ofrece, apurada.\n\n“No”, dice Damián. “Prometé menos y avisá antes.”\n\nValentina no justifica nada esta vez. “Estaba lastimada desde el lunes”, confiesa, “y no quería que me sacaran del cuartel.” Le cuesta más que cualquier excusa.\n\n“Agotada estabas”, contesta él. “Se te veía el cansancio desde la otra punta.”\n\nLa helada entró el domingo y no encontró nada abierto. Los racimos siguen dentro de las yemas. El lunes mide el cuartel y tacha el número viejo.\n\n“Ahora sí”, dice Damián, y guarda la disculpa que ella no llegó a pedirle.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "sarmiento",
+        "anchor": true,
+        "surface": "sarmientos",
+        "register": "cultural",
+        "definition": "Vine cutting; the woody shoot cut off during pruning."
+      },
+      {
+        "type": "noun",
+        "word": "changarín",
+        "anchor": true,
+        "surface": "changarines",
+        "register": "cultural",
+        "definition": "Casual day labourer hired for a single job, common in Argentina."
+      },
+      {
+        "type": "noun",
+        "word": "surco",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Furrow; the long groove in the soil between rows."
+      },
+      {
+        "type": "noun",
+        "word": "riego",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Watering; the system that brings water to a planted field."
+      },
+      {
+        "type": "noun",
+        "word": "racimo",
+        "anchor": true,
+        "surface": "racimos",
+        "definition": "Bunch of grapes; the cluster that grows on the vine."
+      },
+      {
+        "type": "noun",
+        "word": "helada",
+        "anchor": false,
+        "definition": "Frost; a night cold enough to freeze and kill young growth."
+      },
+      {
+        "type": "noun",
+        "word": "amanecer",
+        "anchor": false,
+        "definition": "Daybreak; the moment when the light first comes back."
+      },
+      {
+        "type": "adjective",
+        "word": "vendado",
+        "anchor": false,
+        "definition": "Bandaged; wrapped in cloth because it has been hurt."
+      },
+      {
+        "type": "verb",
+        "word": "amontonar",
+        "anchor": false,
+        "surface": "amontonados",
+        "definition": "To pile up; to heap things one on top of another."
+      },
+      {
+        "type": "verb",
+        "word": "contratar",
+        "anchor": false,
+        "surface": "Contraté",
+        "definition": "To hire; to pay somebody to do a piece of work."
+      },
+      {
+        "type": "verb",
+        "word": "reemplazar",
+        "anchor": false,
+        "surface": "reemplazaran",
+        "definition": "To replace; to put somebody in another person's place."
+      },
+      {
+        "type": "verb",
+        "word": "saldar",
+        "anchor": false,
+        "surface": "saldo",
+        "definition": "To settle a debt; to pay off what you still owe."
+      },
+      {
+        "type": "verb",
+        "word": "justificar",
+        "anchor": false,
+        "surface": "justifica",
+        "definition": "To justify; to give reasons that make your behaviour look right."
+      },
+      {
+        "type": "verb",
+        "word": "confesar",
+        "anchor": false,
+        "surface": "Confiesa",
+        "definition": "To confess; to say the thing you were trying to hide."
+      },
+      {
+        "type": "adjective",
+        "word": "lastimado",
+        "anchor": false,
+        "surface": "lastimada",
+        "definition": "Hurt; with an injury that has not healed yet."
+      },
+      {
+        "type": "adjective",
+        "word": "agotado",
+        "anchor": false,
+        "surface": "Agotada",
+        "definition": "Exhausted; with no energy left at all after working."
+      },
+      {
+        "type": "verb",
+        "word": "medir",
+        "anchor": false,
+        "surface": "mide",
+        "definition": "To measure; to find out the real size or length of something."
+      },
+      {
+        "type": "verb",
+        "word": "tachar",
+        "anchor": false,
+        "surface": "tacha",
+        "definition": "To cross out; to draw a line through what is written."
+      },
+      {
+        "type": "noun",
+        "word": "disculpa",
+        "anchor": false,
+        "definition": "Apology; the words you say to admit you were wrong."
+      },
+      {
+        "type": "noun",
+        "word": "cansancio",
+        "anchor": false,
+        "definition": "Tiredness; the worn-out state that shows in somebody's face."
+      }
+    ],
+    "arcType": "late-reveal"
+  }
+]

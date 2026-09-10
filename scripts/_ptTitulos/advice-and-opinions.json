@@ -1,0 +1,421 @@
+[
+  {
+    "slug": "un-tinto-que-nadie-pidio",
+    "topic": "advice-and-opinions",
+    "slotIndex": 1,
+    "title": "Un tinto que nadie pidió",
+    "synopsis": "Rocío has run the same neighbourhood cafe in Manizales for years, and for three weeks she has been turning one change over in her head: take the tables out and leave only a standing counter. She asks Esteban, a taxi driver who has breakfast there every morning, what he thinks. He answers with more than she asked for, and the advice she did not want turns out to be about the customers who stay an hour, not about the furniture she wanted to move.",
+    "text": "Desde hace tres semanas, Rocío Betancur, una mujer con un café de barrio en Manizales, Colombia, le da vueltas al mismo cambio.\n\nLa greca vieja calienta desde las seis y el mostrador de bahareque ya se ve gastado. Esteban, un taxista que desayuna ahí todos los días, se sienta sin pedir nada.\n\n“¿Usted qué opina si quito las mesas y pongo solo barra?”, le pregunta ella.\n\n“Yo no le aconsejaría eso”, contesta Esteban. “Si quitara las mesas, perdería a los clientes que se quedan una hora con un tinto y una aguapanela.”\n\n“Nadie le pidió consejo”, dice Rocío, y se ríe.\n\n“Igual se lo doy”, agrega él. “Ponga el letrero afuera antes de tocar nada.”\n\nElla no se decide a cambiar nada. Había prometido resolverlo antes de diciembre, y la promesa lleva semanas sin cumplirse.\n\nAfuera pasa una chiva llena de cajas, y el ruido tapa lo que él dice después.\n\n“Un letrero es más barato que arrepentirse”, insiste Esteban, y recoge el carriel de la silla.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "opinar",
+        "anchor": false,
+        "surface": "opina",
+        "definition": "To say out loud what you think about something someone asked you."
+      },
+      {
+        "type": "verb",
+        "word": "aconsejar",
+        "anchor": false,
+        "surface": "aconsejaría",
+        "definition": "To tell another person what you think they should do now."
+      },
+      {
+        "type": "noun",
+        "word": "consejo",
+        "anchor": false,
+        "definition": "The words someone gives you about what you should do next."
+      },
+      {
+        "type": "noun",
+        "word": "mostrador",
+        "anchor": false,
+        "definition": "The long table where a shop or cafe serves the people waiting."
+      },
+      {
+        "type": "noun",
+        "word": "letrero",
+        "anchor": false,
+        "definition": "A board with words on it, put outside where people read it."
+      },
+      {
+        "type": "verb",
+        "word": "decidirse",
+        "anchor": false,
+        "surface": "se decide",
+        "definition": "To stop thinking about it and finally choose one of the options."
+      },
+      {
+        "type": "verb",
+        "word": "arrepentirse",
+        "anchor": false,
+        "definition": "To feel sorry later about something you chose to do before."
+      },
+      {
+        "type": "expression",
+        "word": "dar vueltas",
+        "anchor": false,
+        "surface": "da vueltas",
+        "definition": "To think about the same problem again and again without choosing."
+      },
+      {
+        "type": "adjective",
+        "word": "gastado",
+        "anchor": false,
+        "definition": "Old and worn out because many people have used it for years."
+      },
+      {
+        "type": "verb",
+        "word": "insistir",
+        "anchor": false,
+        "surface": "insiste",
+        "definition": "To say the same thing again because you want it to happen."
+      },
+      {
+        "type": "verb",
+        "word": "tapar",
+        "anchor": false,
+        "surface": "tapa",
+        "definition": "To cover something so that it cannot be seen or heard."
+      },
+      {
+        "type": "noun",
+        "word": "barra",
+        "anchor": false,
+        "definition": "A high counter where people stand up to drink and eat fast."
+      },
+      {
+        "type": "noun",
+        "word": "clientes",
+        "anchor": false,
+        "surface": "clientes",
+        "definition": "The people who come to buy and eat at your place."
+      },
+      {
+        "type": "noun",
+        "word": "barrio",
+        "anchor": false,
+        "definition": "The small part of a city where the same people live."
+      },
+      {
+        "type": "noun",
+        "word": "greca",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "A tall metal machine that keeps coffee hot in Colombian cafes."
+      },
+      {
+        "type": "noun",
+        "word": "taxista",
+        "definition": "Taxi driver; the person who drives a taxi for a living."
+      },
+      {
+        "type": "noun",
+        "word": "vuelta",
+        "definition": "Round; one full turn of something that comes back again.",
+        "surface": "vueltas"
+      },
+      {
+        "type": "noun",
+        "word": "tinto",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "A small black coffee, the everyday coffee people drink in Colombia."
+      },
+      {
+        "type": "verb",
+        "word": "desayunar",
+        "definition": "To have breakfast; to eat the first meal of the day.",
+        "surface": "desayuna"
+      },
+      {
+        "type": "noun",
+        "word": "ruido",
+        "definition": "Noise; the sound a place makes when something is going on."
+      }
+    ],
+    "arcType": "juxtaposition-discovery"
+  },
+  {
+    "slug": "la-greca-fria",
+    "topic": "advice-and-opinions",
+    "slotIndex": 2,
+    "title": "La greca fría",
+    "synopsis": "Rocío puts the sign outside, exactly as Esteban told her, and on the same morning she also raises the price of the coffee without telling anyone. Esteban reads the cardboard twice and says she listened to half of it. Through the day the regulars work out what changed: two muleteers leave without sitting down, a customer of many years asks for the bill and does not come back. She will not admit that the half she skipped was the important half.",
+    "text": "El cartón con el precio nuevo lleva media hora afuera, y lo escribió Rocío un jueves, sin avisarle a nadie. Esteban llega a las seis y lo lee dos veces.\n\nLa greca todavía no calienta y la panela del día sigue entera sobre el mostrador.\n\n“Me escuchó a la mitad”, dice él.\n\n“Lo hice donde me servía”, contesta Rocío.\n\n“Si hubiera puesto solo el letrero, hoy tendría los mismos clientes y treinta pesos más”, le apunta Esteban. “Subir y avisar el mismo día no lo aguanta nadie.”\n\nElla no discute.\n\nMezcla la pasilla con el café bueno para que dure.\n\nEl olor de la tostión la delata igual, y ella lo disimula abriendo la puerta.\n\nUn cliente de años pide la cuenta y no vuelve en toda la semana.\n\n“Yo no le reclamo nada”, dice Esteban desde la barra de guadua. “Pero se lo había dicho.”\n\n“No me lo diga dos veces”, contesta ella, terca.\n\nAfuera, dos arrieros que bajan en el willys miran el cartón y siguen de largo.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "mitad",
+        "anchor": false,
+        "surface": "mitad",
+        "definition": "One of the two equal parts into which something is divided."
+      },
+      {
+        "type": "verb",
+        "word": "servir",
+        "anchor": false,
+        "surface": "servía",
+        "definition": "To be useful to you for the thing you want to do."
+      },
+      {
+        "type": "verb",
+        "word": "señalar",
+        "anchor": false,
+        "surface": "apunta",
+        "definition": "To say a fact out loud that the other person did not see."
+      },
+      {
+        "type": "verb",
+        "word": "aguantar",
+        "anchor": false,
+        "surface": "aguanta",
+        "definition": "To accept something hard or unfair without complaining about it."
+      },
+      {
+        "type": "verb",
+        "word": "discutir",
+        "anchor": false,
+        "surface": "discute",
+        "definition": "To argue with another person because you do not agree."
+      },
+      {
+        "type": "verb",
+        "word": "mezclar",
+        "anchor": false,
+        "surface": "Mezcla",
+        "definition": "To put two different things together so they become one."
+      },
+      {
+        "type": "verb",
+        "word": "durar",
+        "anchor": false,
+        "surface": "dure",
+        "definition": "To last for a long time before it is finished."
+      },
+      {
+        "type": "verb",
+        "word": "disimular",
+        "anchor": false,
+        "surface": "disimula",
+        "definition": "To hide what is really happening so nobody notices it."
+      },
+      {
+        "type": "noun",
+        "word": "cartón",
+        "anchor": false,
+        "definition": "A piece of thick hard paper, used here as a cheap sign."
+      },
+      {
+        "type": "noun",
+        "word": "cuenta",
+        "anchor": false,
+        "definition": "The paper that tells you how much money you have to pay."
+      },
+      {
+        "type": "adjective",
+        "word": "terco",
+        "anchor": false,
+        "surface": "terca",
+        "definition": "Not willing to change your mind, even when you are wrong."
+      },
+      {
+        "type": "noun",
+        "word": "precio",
+        "anchor": false,
+        "definition": "The amount of money that you have to pay for something."
+      },
+      {
+        "type": "noun",
+        "word": "olor",
+        "anchor": false,
+        "definition": "The thing you notice with your nose when something is cooking."
+      },
+      {
+        "type": "expression",
+        "word": "seguir de largo",
+        "anchor": false,
+        "surface": "siguen de largo",
+        "definition": "To keep walking past a place without stopping to go in."
+      },
+      {
+        "type": "noun",
+        "word": "pasilla",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The lower-grade coffee beans left after the good ones are chosen."
+      },
+      {
+        "type": "noun",
+        "word": "tostión",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The roasting of the coffee, and the strong smell it makes."
+      },
+      {
+        "type": "noun",
+        "word": "mostrador",
+        "definition": "Counter; the long surface in a shop where you are served."
+      },
+      {
+        "type": "noun",
+        "word": "arriero",
+        "anchor": true,
+        "surface": "arrieros",
+        "register": "cultural",
+        "definition": "A man who moved goods by mule through the coffee mountains."
+      },
+      {
+        "type": "noun",
+        "word": "letrero",
+        "definition": "Sign; a written notice put up for people to read."
+      },
+      {
+        "type": "noun",
+        "word": "cliente",
+        "definition": "Customer; the person who buys or is served in a place.",
+        "surface": "clientes"
+      }
+    ],
+    "arcType": "mini-cliffhanger"
+  },
+  {
+    "slug": "yo-no-dije-nada",
+    "topic": "advice-and-opinions",
+    "slotIndex": 3,
+    "title": "Yo no dije nada",
+    "synopsis": "At the start of the week the queue reaches the corner and Rocío cannot work out where all the people came from. The sign is still there, the old price is back, and both things together are what Esteban had described to her in the first place. He waits his turn like everyone else and does not say a word about it. Saying thank you costs her more than changing the price did, and she says it anyway, badly, with a coffee she refuses to charge him for.",
+    "text": "A media mañana la fila da la vuelta a la esquina, y Rocío no entiende de dónde salió. El letrero se ve desde el cafetal de enfrente.\n\nEl precio volvió a ser el de antes, y el olor dulce del trapiche baja con el aire frío. Esteban espera su turno con la mazamorra.\n\n“Bajé el precio y dejé el letrero”, le cuenta ella.\n\n“Eso era lo que le había dicho”, contesta él.\n\n“No dije que usted tuviera razón”, agrega Rocío.\n\n“No hace falta que lo diga”, responde Esteban, y señala la fila.\n\nDetrás del nevado se arma la nube de las cuatro.\n\n“Si me hubiera hecho caso el jueves, esto habría pasado antes”, dice ella, y se calla.\n\nLe cuesta más darle la razón que haber cambiado de idea.\n\n“Usted dirá que se lo debo”, dice Rocío.\n\n“Yo no dije nada”, contesta Esteban, y lo nota.\n\n“Gracias”, dice ella al fin, de mala gana, y le sirve el tinto sin cobrarlo.\n\nEsteban amarra la caja de chócolo con cabuya.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "fila",
+        "anchor": false,
+        "definition": "A line of people standing one behind the other, waiting."
+      },
+      {
+        "type": "expression",
+        "word": "dar la razón",
+        "anchor": false,
+        "surface": "darle la razón",
+        "definition": "To say out loud that the other person was right about it."
+      },
+      {
+        "type": "expression",
+        "word": "tener razón",
+        "anchor": false,
+        "surface": "tuviera razón",
+        "definition": "To be right about something that other people doubted."
+      },
+      {
+        "type": "expression",
+        "word": "cambiar de idea",
+        "anchor": false,
+        "surface": "cambiado de idea",
+        "definition": "To think something different from what you thought before."
+      },
+      {
+        "type": "verb",
+        "word": "callarse",
+        "anchor": false,
+        "surface": "se calla",
+        "definition": "To stop talking, often because you have nothing good to say."
+      },
+      {
+        "type": "verb",
+        "word": "apuntar",
+        "anchor": false,
+        "surface": "señala",
+        "definition": "To point at something with your hand so others look at it."
+      },
+      {
+        "type": "verb",
+        "word": "notar",
+        "anchor": false,
+        "surface": "nota",
+        "definition": "To see a small thing that most other people do not see."
+      },
+      {
+        "type": "expression",
+        "word": "de mala gana",
+        "anchor": false,
+        "definition": "Doing something that you do not really want to do."
+      },
+      {
+        "type": "noun",
+        "word": "esquina",
+        "anchor": false,
+        "definition": "The place outside where two streets meet and turn."
+      },
+      {
+        "type": "noun",
+        "word": "turno",
+        "anchor": false,
+        "definition": "The moment when it is finally your time to be served."
+      },
+      {
+        "type": "verb",
+        "word": "cobrar",
+        "anchor": false,
+        "surface": "cobrarlo",
+        "definition": "To ask for and take the money that someone owes you."
+      },
+      {
+        "type": "verb",
+        "word": "amarrar",
+        "anchor": false,
+        "surface": "amarra",
+        "definition": "To tie something with rope so that it does not move."
+      },
+      {
+        "type": "noun",
+        "word": "nube",
+        "anchor": false,
+        "definition": "The grey or white thing in the sky that brings the rain."
+      },
+      {
+        "type": "adverb",
+        "word": "enfrente",
+        "anchor": false,
+        "definition": "On the other side of the street, facing where you are."
+      },
+      {
+        "type": "noun",
+        "word": "cafetal",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "A field on the hillside where the coffee plants grow."
+      },
+      {
+        "type": "noun",
+        "word": "precio",
+        "definition": "Price; the amount of money that something costs to buy."
+      },
+      {
+        "type": "adverb",
+        "word": "detrás",
+        "definition": "Behind; at the back of something, or following after it."
+      },
+      {
+        "type": "adjective",
+        "word": "dulce",
+        "definition": "Sweet; tasting of sugar, or gentle in the way it lands."
+      },
+      {
+        "type": "noun",
+        "word": "nevado",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "The snow volcano that stands above the city of Manizales."
+      },
+      {
+        "type": "verb",
+        "word": "responder",
+        "definition": "To answer; to say something back to what you were asked.",
+        "surface": "responde"
+      }
+    ],
+    "arcType": "harmonic-close"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "tipo": "Traveler: protagonistas nativos; el narrador mira desde fuera, presenta gente y sitios (Ciudad, pais) y explica lo que un local daria por sabido",
+  "nivel": "b2",
+  "variante": "LATAM",
+  "registro": "orgullo corregido: la que tiene razon y no la pelea",
+  "espina": "lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir",
+  "recursos": "narrador con opinion (B2), ironia de personaje (B2), subtexto de dialogo (B2), cambio de ritmo (B1), humor de situacion (A1)",
+  "historias": [
+    { "slot": "1", "quiere": "Griselda quiere defender su hora de cuentos frente a las planillas de Ariel", "impide": "los numeros dicen que su grupo rinde menos, y contra una planilla no se discute con cariño", "cuesta": "la hora de cuentos del viernes sale del horario, y con ese nombre no vuelve", "cambia": "decide no pelear con palabras: lo que tenga que demostrar lo demostrara en el aula", "emocion": "orgullo tragado: no pelea porque pelear seria discutir en el idioma de Ariel; se traga el orgullo, borra el pizarron despacio y guarda el libro en el bolso" },
+    { "slot": "2", "quiere": "sostener a su grupo chico de la noche sin volverse invisible en su propio instituto", "impide": "le quitan el grupo de las mañanas y los modulos avanzan solos en el aula de al lado", "cuesta": "el grupo de las mañanas, que no se lo devuelven; y la carta que podria hablar por ella queda sin abrir", "cambia": "su clase chica se vuelve refugio: consignas por pupitre, la jota deletreada y el pizarron lleno", "emocion": "pesar por el aula de al lado: le duele mas ese silencio con auriculares que su propia perdida; por eso dicta despacio y contesta que los viernes siguen, por si acaso" },
+    { "slot": "3", "quiere": "que el metodo de los cuentos quede demostrado sin tener que pelearlo", "impide": "la prueba duerme en una carta que Ariel tiene sin abrir, tildada como pendiente", "cuesta": "la disculpa con su nombre: no llega nunca; llega disfrazada de idea de Ariel", "cambia": "la hora de cuentos vuelve al horario rebautizada modulo de lectura, y Griselda la acepta sin pelear la autoria", "emocion": "triunfo contenido: se queda de espaldas borrando el pizarron, aguantandose la risa, porque celebrarlo en voz alta seria cobrarselo" }
+  ]
+}

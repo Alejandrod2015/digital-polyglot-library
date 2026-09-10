@@ -18,6 +18,16 @@ config.resolver.nodeModulesPaths = [
   projectNodeModules,
   workspaceNodeModules,
 ];
+// OJO con lo que esto implica: Metro NO mira el node_modules anidado del
+// paquete que importa, solo estas dos carpetas. Si npm deja en la raiz una
+// version vieja de algo que un paquete lleva anidado en la buena, gana la
+// vieja. Paso el 2026-09-06 con @sentry/core: eas-cli (devDependency) arrastra
+// @sentry/node 7 y con el @sentry/core 7.77 a la raiz, y @sentry/react-native
+// 7.2 se quedaba con ese en vez del 10.12 que lleva anidado; la app moria al
+// arrancar con "Cannot read property 'document' of undefined". Por eso
+// package.json fija @sentry/core en la MISMA version que exige
+// @sentry/react-native: asi npm lo deja en la raiz. Al subir
+// @sentry/react-native, subir ese pin a la par (npm ls @sentry/core lo canta).
 config.resolver.disableHierarchicalLookup = true;
 config.resolver.extraNodeModules = {
   "@": path.resolve(workspaceRoot, "src"),

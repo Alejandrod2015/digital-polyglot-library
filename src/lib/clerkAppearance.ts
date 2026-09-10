@@ -12,6 +12,12 @@ export const clerkAppearance = {
   layout: {
     shimmer: true,
     socialButtonsVariant: "blockButton" as const,
+    // El logotipo que se sube al dashboard de Clerk lo usan DOS superficies con
+    // fondos opuestos: sus correos transaccionales, que van sobre blanco, y
+    // estas tarjetas, que van sobre #0b1e36. Ahi esta subido el de color (el
+    // unico que se ve en el correo) y aqui se pisa con el blanco, que es para
+    // lo que existe `logoImageUrl`.
+    logoImageUrl: "https://reader.digitalpolyglot.com/digital-polyglot-logo.png",
   },
   elements: {
     card: "bg-[#0b1e36]/95 border border-white/10 shadow-2xl backdrop-blur-xl",

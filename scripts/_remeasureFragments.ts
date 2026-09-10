@@ -92,20 +92,43 @@ function alSilencio(t:number, sils:Array<[number,number]>): number {
   // fragmento: una sola palabra ("Ele", "A") se repite por toda la historia y
   // el cursor saltaba a la ocurrencia equivocada, dejando fragmentos solapados.
   const inicios: number[] = [];
+  const sinAnclar: number[] = [];
   let cursor = 0;
   for (const f of orden) {
     const objetivo = norm(String(f.text ?? "")).split(" ").filter(Boolean);
     if (!objetivo.length) { inicios.push(cursor); continue; }
-    const clave = objetivo.slice(0, Math.min(3, objetivo.length));
-    let ini = -1;
-    for (let i = cursor; i <= words.length - clave.length; i++) {
-      let casan = true;
-      for (let k = 0; k < clave.length; k++) {
-        if (norm(words[i + k].text) !== clave[k]) { casan = false; break; }
+    const buscaClave = (largo: number): number => {
+      const clave = objetivo.slice(0, Math.min(largo, objetivo.length));
+      for (let i = cursor; i <= words.length - clave.length; i++) {
+        let casan = true;
+        for (let k = 0; k < clave.length; k++) {
+          if (norm(words[i + k].text) !== clave[k]) { casan = false; break; }
+        }
+        if (casan) return i;
       }
-      if (casan) { ini = i; break; }
+      return -1;
+    };
+    // La clave de 3 palabras falla en cuanto el STT junta o parte una: oyo
+    // "Landa" donde el texto dice "El anda", y el fragmento se anclaba en el
+    // CURSOR, o sea dentro del titulo, con la frontera cayendo sobre voz. Se
+    // afloja la clave y, en ultimo termino, se ancla por la palabra mas larga
+    // del parrafo, que es la que el STT casi nunca confunde.
+    let ini = buscaClave(3);
+    if (ini < 0) ini = buscaClave(2);
+    if (ini < 0) {
+      // La busqueda va ACOTADA a la vecindad del cursor. Sin tope, una palabra
+      // que se repite mas adelante arrastraba el ancla al otro extremo de la
+      // historia y descuadraba todos los fragmentos siguientes.
+      const tope = Math.min(words.length, cursor + objetivo.length + 8);
+      for (const larga of [...objetivo].sort((a, b) => b.length - a.length)) {
+        if (larga.length < 5) break;
+        for (let i = cursor; i < tope; i++) {
+          if (norm(words[i].text) === larga) { ini = i; break; }
+        }
+        if (ini >= 0) break;
+      }
     }
-    if (ini < 0) ini = cursor;
+    if (ini < 0) { sinAnclar.push(f.index); ini = cursor; }
     inicios.push(ini);
     cursor = ini + Math.max(1, objetivo.length - 2);
   }
@@ -125,6 +148,23 @@ function alSilencio(t:number, sils:Array<[number,number]>): number {
     const antes = `${Number(f.startSec).toFixed(2)}-${Number(f.endSec).toFixed(2)}`;
     console.log(`  [${f.index}] ${antes}  ->  ${start.toFixed(2)}-${end.toFixed(2)}   ${String(f.text ?? "").slice(0,44)}`);
     nuevos.push({ ...f, startSec: Number(start.toFixed(3)), endSec: Number(end.toFixed(3)) });
+  }
+
+  // NINGUNA frontera puede caer sobre voz: es el mismo invariante que exige
+  // assertCorteEnSilencio antes de empalmar, y escribir aqui un tiempo que ese
+  // guard va a rechazar despues no ayuda a nadie. Si una no cae en silencio, se
+  // dice cual y NO se escribe: unos tiempos viejos y sabidos son mejores que
+  // unos nuevos y equivocados.
+  const enSilencio = (t: number) => sils.some(([a, b]) => t >= a - 0.08 && t <= b + 0.08);
+  const malas = nuevos
+    .map((f, n) => ({ f, n }))
+    .filter(({ f, n }) => n > 0 && !enSilencio(Number(f.startSec)));
+  if (sinAnclar.length) console.log(`\n  sin anclar en la transcripcion: ${sinAnclar.join(", ")}`);
+  if (malas.length) {
+    console.log(`\n  NO SE ESCRIBE: ${malas.length} frontera(s) caen sobre voz:`);
+    for (const { f } of malas) console.log(`    [${f.index}] ${Number(f.startSec).toFixed(2)}s · ${String(f.text ?? "").slice(0, 44)}`);
+    process.exitCode = 1;
+    return;
   }
 
   if (!apply) { console.log("\n[--dry] nada escrito. Repite con --apply."); return; }

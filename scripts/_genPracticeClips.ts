@@ -308,6 +308,18 @@ const NUM_WORDS: Record<string, number> = {
   vingt: 20, veinte: 20, venti: 20, zwanzig: 20, vinte: 20, trente: 30, treinta: 30, trenta: 30, dreissig: 30,
   quarante: 40, cuarenta: 40, quaranta: 40, cinquante: 50, cincuenta: 50, cinquanta: 50,
   cent: 100, cien: 100, cento: 100, hundert: 100, mille: 1000, mil: 1000,
+  // Las CENTENAS faltaban, y son justo las que aparecen cuando alguien fia
+  // dinero: "doscientos" salia como "200" en la transcripcion, o sea una
+  // palabra ausente y otra sobrante, y el clip se rechazaba con el audio
+  // perfecto. Paso el 2026-09-09 en el-gallo-colorado.
+  doscientos: 200, doscientas: 200, duzentos: 200, duzentas: 200, zweihundert: 200,
+  trescientos: 300, trescientas: 300, trezentos: 300, trezentas: 300, dreihundert: 300,
+  cuatrocientos: 400, cuatrocientas: 400, quatrocentos: 400, vierhundert: 400,
+  quinientos: 500, quinientas: 500, quinhentos: 500, funfhundert: 500,
+  seiscientos: 600, seiscientas: 600, seiscentos: 600, sechshundert: 600,
+  setecientos: 700, setecientas: 700, setecentos: 700, siebenhundert: 700,
+  ochocientos: 800, ochocientas: 800, oitocentos: 800, achthundert: 800,
+  novecientos: 900, novecientas: 900, novecentos: 900, neunhundert: 900,
 };
 
 /** Valor de una palabra-número, incluidos los compuestos con guion

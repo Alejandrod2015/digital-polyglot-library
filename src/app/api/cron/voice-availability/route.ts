@@ -110,7 +110,18 @@ async function checkVoice(id: string, label: string): Promise<VoiceCheck> {
   }
 }
 
-export async function GET() {
+function isAuthorized(req: Request): boolean {
+  const secret = process.env.CRON_SECRET;
+  if (!secret) return true; // dev / no-auth mode
+  const header = req.headers.get("authorization");
+  return header === `Bearer ${secret}`;
+}
+
+export async function GET(req: Request) {
+  if (!isAuthorized(req)) {
+    return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
+  }
+
   const cast: Array<[label: string, id: string]> = Object.entries(
     GERMAN_DIALOGUE_VOICES as Record<string, string>
   );
