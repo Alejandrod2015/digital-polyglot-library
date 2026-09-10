@@ -2424,8 +2424,8 @@
     ]
   },
   "cmtvpqsfv000832hgemzk20cl#porto-alegre": {
-    "cerrado": "2026-09-10T16:58:20.736Z",
-    "hash": "d60e44d50d1762e3",
+    "cerrado": "2026-09-10T17:21:30.112Z",
+    "hash": "89fd4a4feff5b8ec",
     "historias": [
       "porto-alegre#0 no-domingo-nada",
       "porto-alegre#1 chimarrao-no-sabado",
@@ -2443,7 +2443,7 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 12 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.02 sobre 56 plazas · 55 salen una sola vez | ancladas: 5/61 (8%) | cola: 55/56 portables con un solo encuentro (98%, tope 30%) | de un solo encuentro: amiga, faculdade, inteira, segunda, terça, quarta, jantar, cada, feliz, cansada, cama, domingo, bate, mesmo, quieta, depois, também, caneta, escreve, nove, todo mundo, toma, cuidado, amargo, faz uma careta, conversam, anda, chamadas, horas, meia…",
@@ -2559,8 +2559,8 @@
     }
   },
   "cmtvpqsfv000832hgemzk20cl#sao-luis": {
-    "cerrado": "2026-09-10T17:12:04.501Z",
-    "hash": "8eb1b2b90d739ac8",
+    "cerrado": "2026-09-10T17:22:35.930Z",
+    "hash": "41a2d0111bb4f39e",
     "historias": [
       "sao-luis#0 a-chave-do-casarao",
       "sao-luis#1 a-janela-nao-fecha",
@@ -2573,8 +2573,8 @@
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"pergunta\" 30%)",
       "arranques de parrafo variados (mas repetido \"larissa\", 27%)",
-      "densidad 8.7 palabras por oracion (techo 9 en a0)",
-      "seguidilla 21/56 oraciones cortas narradas",
+      "densidad 8.6 palabras por oracion (techo 9 en a0)",
+      "seguidilla 22/57 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 12/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
