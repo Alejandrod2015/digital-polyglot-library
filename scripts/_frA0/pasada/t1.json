@@ -1,0 +1,470 @@
+[
+  {
+    "topic": "sports-and-games",
+    "slotIndex": 0,
+    "title": "Une boule sous le platane",
+    "arcType": null,
+    "synopsis": "Léa perd toujours à la pétanque contre Hugo. Ce dimanche, elle gagne enfin, mais Hugo joue mal pour elle. Puis il a une nouvelle: il quitte Marseille en mars.",
+    "text": "Les boules attendent sur le banc, sous le platane. Léa est une jeune femme de Marseille. Elle a un café sur la placette. Hugo, un ami de Léa, habite au-dessus. Ils jouent à la pétanque chaque dimanche.\n\nHugo gagne toujours, et Léa perd toujours. “Aujourd'hui, c'est moi. Je gagne”, dit Léa. Hugo lance le cochonnet.\n\n“À toi”, répond Hugo. Léa prend sa boule ronde et froide. Sa boule roule lentement, tout près. “Très près. Génial!”, dit Hugo.\n\nHugo joue mal, et sa boule part loin. “Tu perds pour moi? Vraiment?”, demande Léa. “Non. C'est un jeu”, répond Hugo.\n\nLéa pose sa boule sur le banc. Hugo parle doucement. “Léa, je pars à Paris en mars. Je quitte Marseille.” “En mars? Le départ est dans six mois? Et moi?”, demande Léa. “C'est ça. Je suis désolé.” Léa est triste et ne regarde plus sa boule.",
+    "vocab": [
+      {
+        "word": "la pétanque",
+        "surface": "pétanque",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Pétanque; a French game with metal balls on sand."
+      },
+      {
+        "word": "la boule",
+        "surface": "boule",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Boule; the heavy metal ball you throw in pétanque."
+      },
+      {
+        "word": "le platane",
+        "surface": "platane",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Plane tree; the big tree that gives shade on the square."
+      },
+      {
+        "word": "la placette",
+        "surface": "placette",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Little square; a small open place between old houses."
+      },
+      {
+        "word": "le banc",
+        "surface": "banc",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Bench; a long seat outside where people sit."
+      },
+      {
+        "word": "perdre",
+        "surface": "perd",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To lose; to not win a game."
+      },
+      {
+        "word": "lancer",
+        "surface": "lance",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To throw; to send something through the air with your hand."
+      },
+      {
+        "word": "le cochonnet",
+        "surface": "cochonnet",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Jack; the small ball the players try to get near."
+      },
+      {
+        "word": "rouler",
+        "surface": "roule",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To roll; to move along the ground by turning."
+      },
+      {
+        "word": "à toi",
+        "surface": "À toi",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Your turn; now it is you who plays."
+      },
+      {
+        "word": "rond",
+        "surface": "ronde",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Round; with the shape of a ball."
+      },
+      {
+        "word": "près",
+        "surface": "près",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Near; at a short distance from something."
+      },
+      {
+        "word": "loin",
+        "surface": "loin",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Far; at a long distance from something."
+      },
+      {
+        "word": "vraiment",
+        "surface": "Vraiment",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Really; truly, in a real way."
+      },
+      {
+        "word": "le jeu",
+        "surface": "jeu",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Game; something you play for fun."
+      },
+      {
+        "word": "partir",
+        "surface": "pars",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To leave; to go away from a place."
+      },
+      {
+        "word": "mars",
+        "surface": "mars",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "March; the third month of the year."
+      },
+      {
+        "word": "quitter",
+        "surface": "quitte",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To leave a place or a person for good."
+      },
+      {
+        "word": "le départ",
+        "surface": "départ",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Departure; the moment when someone goes away."
+      },
+      {
+        "word": "triste",
+        "surface": "triste",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Sad; not happy about something."
+      }
+    ]
+  },
+  {
+    "topic": "sports-and-games",
+    "slotIndex": 1,
+    "title": "Deux carreaux pour Hugo",
+    "arcType": null,
+    "synopsis": "Hugo veut apprendre le carreau à Léa avant son départ. Le mistral souffle, et Léa rate tous ses tirs. Elle perd le pari et paie les cafés.",
+    "text": "Léa apporte deux tasses de café noir. Elle porte son tablier, et le mistral arrive.\n\nIl souffle fort. Hugo veut montrer quelque chose à Léa.\n\nLa boule de Hugo tape l'autre boule. L'autre boule part. Sa boule reste à sa place: c'est un carreau. “Je pars en mars”, explique Hugo. “Tu dois apprendre à tirer.”\n\n“Je joue avec toi, pas seule”, dit Léa. Mais elle prend une boule. Elle veut essayer. La boule ne va pas droit, et elle rate.\n\nHugo fait un pari. “Si tu rates, tu paies les cafés”, propose Hugo. “C'est facile. Tu tiens la boule comme ça.” Il tire: carreau. Il tire encore: carreau.\n\n“Encore une fois”, annonce Léa. Elle tire, et elle rate. Elle rit, les mains sur la tête. “Pas grave, je paie. Mais demain, tu me montres.” “Tous les jours avant mars”, répond Hugo. Ils restent à l'ombre tout l'après-midi.",
+    "vocab": [
+      {
+        "word": "la tasse",
+        "surface": "tasses",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Cup; a small bowl with a handle for coffee."
+      },
+      {
+        "word": "le tablier",
+        "surface": "tablier",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Apron; cloth you wear over your clothes at work."
+      },
+      {
+        "word": "le mistral",
+        "surface": "mistral",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Mistral; the strong cold wind of the south of France."
+      },
+      {
+        "word": "souffler",
+        "surface": "souffle",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To blow; what the wind does."
+      },
+      {
+        "word": "fort",
+        "surface": "fort",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Hard, strongly; with a lot of force."
+      },
+      {
+        "word": "montrer",
+        "surface": "montrer",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To show; to let someone see how to do something."
+      },
+      {
+        "word": "le carreau",
+        "surface": "carreau",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Carreau; a perfect shot that takes the other ball's place."
+      },
+      {
+        "word": "devoir",
+        "surface": "dois",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "Must, have to; it is necessary for you."
+      },
+      {
+        "word": "tirer",
+        "surface": "tirer",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To shoot; to throw your ball hard at another ball."
+      },
+      {
+        "word": "prendre",
+        "surface": "prend",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To take; to pick something up in your hand."
+      },
+      {
+        "word": "droit",
+        "surface": "droit",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Straight; in a line, without turning to the side."
+      },
+      {
+        "word": "rater",
+        "surface": "rate",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To miss; to not hit what you aim at."
+      },
+      {
+        "word": "le pari",
+        "surface": "pari",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Bet; a deal where the loser has to pay."
+      },
+      {
+        "word": "payer",
+        "surface": "paies",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To pay; to give money for something."
+      },
+      {
+        "word": "facile",
+        "surface": "facile",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Easy; not hard to do."
+      },
+      {
+        "word": "comme ça",
+        "surface": "comme ça",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Like this; in this way, as I show you."
+      },
+      {
+        "word": "encore une fois",
+        "surface": "encore une fois",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "One more time; again, as before."
+      },
+      {
+        "word": "la tête",
+        "surface": "tête",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Head; the top part of your body."
+      },
+      {
+        "word": "l'ombre",
+        "surface": "ombre",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Shade; the cool dark place under a tree."
+      },
+      {
+        "word": "l'après-midi",
+        "surface": "après-midi",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Afternoon; the part of the day after lunch."
+      }
+    ]
+  },
+  {
+    "topic": "sports-and-games",
+    "slotIndex": 2,
+    "title": "Si je gagne, tu restes",
+    "arcType": null,
+    "synopsis": "Pour la dernière partie de septembre, Léa fait un pari avec Hugo: si elle gagne, il reste à Marseille. Hugo dit oui, et ce soir il joue pour gagner.",
+    "text": "Le ciel est rouge au-dessus du Panier. Le gravier est encore chaud. Hugo dessine un rond avec la craie. C'est la dernière partie de septembre.\n\nLéa sort les boules de son sac. Elle les nettoie avec un chiffon propre. Léa veut parier: “Si je gagne, tu restes à Marseille. Tu restes ici, avec moi.”\n\nHugo n'est pas sûr. Il ne dit jamais non à Léa. “Et si je gagne?”, demande Hugo. “Tu pars en mars. C'est ça”, répond Léa. “Avec plaisir”, dit Hugo. Léa espère, mais ce soir, il joue bien. Sous le lampadaire, il mesure avec une ficelle.\n\n“Ma boule est plus près”, dit Hugo. “Je sais. Le perdant ramasse”, dit Léa. Elle ramasse les boules une à une. “Tu es triste?”, demande Hugo. “Non. Je range”, répond Léa. Hugo n'est pas fier, et il comprend. Léa n'oublie pas le pari. Hugo non plus.",
+    "vocab": [
+      {
+        "word": "rouge",
+        "surface": "rouge",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Red; the colour of the sky at sunset."
+      },
+      {
+        "word": "le gravier",
+        "surface": "gravier",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Gravel; small stones on the ground where they play."
+      },
+      {
+        "word": "la craie",
+        "surface": "craie",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Chalk; a white stick for drawing on the ground."
+      },
+      {
+        "word": "dernier",
+        "surface": "dernière",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Last; the one at the end, with no more after."
+      },
+      {
+        "word": "la partie",
+        "surface": "partie",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Game, match; one full game from start to end."
+      },
+      {
+        "word": "le sac",
+        "surface": "sac",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Bag; what she carries the balls in."
+      },
+      {
+        "word": "le chiffon",
+        "surface": "chiffon",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Cloth; a small piece of old fabric for cleaning."
+      },
+      {
+        "word": "vouloir",
+        "surface": "veut",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To want; to wish to have or do something."
+      },
+      {
+        "word": "parier",
+        "surface": "parier",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To bet; to promise something if you lose."
+      },
+      {
+        "word": "rester",
+        "surface": "restes",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To stay; to not go away from a place."
+      },
+      {
+        "word": "sûr",
+        "surface": "sûr",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Sure; certain about what you want to do."
+      },
+      {
+        "word": "espérer",
+        "surface": "espère",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To hope; to want something good to happen."
+      },
+      {
+        "word": "jamais",
+        "surface": "jamais",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Never; not one time."
+      },
+      {
+        "word": "le lampadaire",
+        "surface": "lampadaire",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Street lamp; the tall light on the square at night."
+      },
+      {
+        "word": "la ficelle",
+        "surface": "ficelle",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "String; a thin cord used here to measure the distance."
+      },
+      {
+        "word": "le perdant",
+        "surface": "perdant",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Loser; the person who does not win the game."
+      },
+      {
+        "word": "ramasser",
+        "surface": "ramasse",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To pick up; to take things from the ground."
+      },
+      {
+        "word": "une à une",
+        "surface": "une à une",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "One by one; each one after the other."
+      },
+      {
+        "word": "fier",
+        "surface": "fier",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Proud; happy with what you did."
+      },
+      {
+        "word": "oublier",
+        "surface": "oublie",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To forget; to not remember something."
+      }
+    ]
+  }
+]
