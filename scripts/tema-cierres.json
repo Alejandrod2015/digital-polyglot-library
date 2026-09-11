@@ -1200,8 +1200,8 @@
     }
   },
   "cmtrcpgso00073232h8vaf7na#recife": {
-    "cerrado": "2026-09-11T09:35:49.897Z",
-    "hash": "74da335c66f1e55e",
+    "cerrado": "2026-09-11T10:46:23.561Z",
+    "hash": "b0f0619fb0b61ffd",
     "historias": [
       "recife#0 a-dor-nao-e-doenca",
       "recife#1 o-quarto-morno-da-pousada",
@@ -1213,7 +1213,7 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"disse\" 29%)",
-      "arranques de parrafo variados (mas repetido \"renata\", 14%)",
+      "arranques de parrafo variados (mas repetido \"nilza\", 21%)",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
@@ -1225,7 +1225,7 @@
       "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: recife (Nilza, Renata)"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: recife (Renata, Nilza)"
     ],
     "plan": {
       "tipo": "traveler",
@@ -1263,8 +1263,8 @@
     }
   },
   "cmtrcpgso00073232h8vaf7na#salvador": {
-    "cerrado": "2026-09-11T08:55:18.749Z",
-    "hash": "a2dfacc489025147",
+    "cerrado": "2026-09-11T10:44:39.262Z",
+    "hash": "c3153c854def65bf",
     "historias": [
       "salvador#0 a-lousa-e-nenhum-livro",
       "salvador#1 o-preco-nao-a-ideia",
@@ -1276,7 +1276,7 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"respondeu\" 38%)",
-      "arranques de parrafo variados (mas repetido \"gilson\", 13%)",
+      "arranques de parrafo variados (mas repetido \"gilson\", 19%)",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
