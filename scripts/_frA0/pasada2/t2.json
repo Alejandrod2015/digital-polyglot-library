@@ -1,0 +1,470 @@
+[
+  {
+    "topic": "talking-and-listening",
+    "slotIndex": 0,
+    "title": "Théo écoute pour Léa",
+    "arcType": null,
+    "synopsis": "Hugo envoie un message vocal de Paris, mais le café est plein et Léa n'entend rien. Elle demande à Théo, le nouveau serveur, d'écouter pour elle. La nouvelle arrive par sa bouche.",
+    "text": "Il y a du bruit dans le café. Le nouveau serveur s'appelle Théo. Il commence aujourd'hui. Il court entre les tables avec son plateau.\n\nLe café est plein, et Léa est occupée. Un message vocal arrive sur son portable. C'est Hugo. Il est à Paris, loin d'ici.\n\nLéa écoute, mais il y a trop de bruit. “Quoi? Je n'entends rien”, crie Léa. “Pardon. J'oublie toujours où sont les tasses”, dit Théo.\n\nLéa donne son portable à Théo. “C'est difficile ici. Tu peux écouter pour moi?”, demande Léa. Théo prend le portable. Il met les écouteurs dans ses oreilles. Il est sur un tabouret, à côté d'elle.\n\nLéa attend. “Il dit quoi?” “Hugo a un appartement à Paris”, répond Théo. “Il part vraiment en mars.” Léa comprend. “Merci, Théo. Tu es gentil.” “Bien sûr”, sourit Théo. Léa retourne le portable et sert les cafés.",
+    "vocab": [
+      {
+        "word": "nouveau",
+        "surface": "nouveau",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "New; here for the first time."
+      },
+      {
+        "word": "le serveur",
+        "surface": "serveur",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Waiter; the person who brings drinks to the tables."
+      },
+      {
+        "word": "commencer",
+        "surface": "commence",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To start; to do something for the first time."
+      },
+      {
+        "word": "courir",
+        "surface": "court",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To run; to move very fast on foot."
+      },
+      {
+        "word": "le plateau",
+        "surface": "plateau",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Tray; a flat board for carrying cups and glasses."
+      },
+      {
+        "word": "plein",
+        "surface": "plein",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Full; with no free space left."
+      },
+      {
+        "word": "occupé",
+        "surface": "occupée",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Busy; with a lot of work to do."
+      },
+      {
+        "word": "le message vocal",
+        "surface": "message vocal",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Voice message; a short recording you send by phone."
+      },
+      {
+        "word": "le portable",
+        "surface": "portable",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Mobile phone; the phone you carry with you."
+      },
+      {
+        "word": "écouter",
+        "surface": "écoute",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To listen; to try to hear something."
+      },
+      {
+        "word": "entendre",
+        "surface": "entends",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To hear; to get a sound with your ears."
+      },
+      {
+        "word": "pardon",
+        "surface": "Pardon",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Sorry, excuse me; a polite word before a question."
+      },
+      {
+        "word": "dire",
+        "surface": "dit",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To say; to tell something with words."
+      },
+      {
+        "word": "les écouteurs",
+        "surface": "écouteurs",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Earphones; small speakers you put in your ears."
+      },
+      {
+        "word": "l'oreille",
+        "surface": "oreilles",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Ear; the part of the head you hear with."
+      },
+      {
+        "word": "le tabouret",
+        "surface": "tabouret",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Stool; a high seat with no back."
+      },
+      {
+        "word": "à côté",
+        "surface": "à côté",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Next to; very near, at the side."
+      },
+      {
+        "word": "comprendre",
+        "surface": "comprend",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To understand; to get what someone means."
+      },
+      {
+        "word": "gentil",
+        "surface": "gentil",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Kind; nice and ready to help."
+      },
+      {
+        "word": "bien sûr",
+        "surface": "Bien sûr",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Of course; yes, with pleasure."
+      }
+    ]
+  },
+  {
+    "topic": "talking-and-listening",
+    "slotIndex": 1,
+    "title": "La ligne coupe après Hugo",
+    "arcType": null,
+    "synopsis": "Léa monte sur le toit pour appeler Hugo. Elle veut enfin lui dire une chose importante. Mais la ligne coupe au mauvais moment, et elle ne peut pas le dire deux fois.",
+    "text": "Sur le toit, le linge sèche entre les cheminées. En bas, le café n'a pas de réseau. Alors Léa monte ici. Le vent est froid, et Léa est seule.\n\nElle appelle Hugo. Le portable sonne deux fois. “Allô, Léa?”, répond Hugo. Léa met le haut-parleur. “Paris, c'est génial. Je dois commencer en mars”, dit Hugo.\n\nLa voix de Hugo est claire. Léa espère encore. C'est sa dernière chance. Elle veut dire une chose avant son départ. Elle parle fort: “Hugo, tu restes ici, avec moi.” Mais la ligne est coupée après “Hugo”. Il n'entend pas le reste. Léa attend.\n\nLe portable sonne encore. Hugo rappelle. “Allô? Léa? Je n'entends pas. Encore une fois? Tu demandes quoi?” Léa ferme les yeux et retient ses larmes. “Rien. Juste bonjour”, répond Léa. “Tu es triste?”, demande Hugo. “Non. Pas du tout.” Elle serre le portable près du cœur.",
+    "vocab": [
+      {
+        "word": "le réseau",
+        "surface": "réseau",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Signal; the phone network that lets you call."
+      },
+      {
+        "word": "le toit",
+        "surface": "toit",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Roof; the top of a building."
+      },
+      {
+        "word": "le linge",
+        "surface": "linge",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Laundry; clothes that are washed and drying."
+      },
+      {
+        "word": "la cheminée",
+        "surface": "cheminées",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Chimney; the tall pipe on a roof for smoke."
+      },
+      {
+        "word": "seul",
+        "surface": "seule",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Alone; with nobody else there."
+      },
+      {
+        "word": "sonner",
+        "surface": "sonne",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To ring; what a phone does when someone calls."
+      },
+      {
+        "word": "deux fois",
+        "surface": "deux fois",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Twice; two times, one after the other."
+      },
+      {
+        "word": "allô",
+        "surface": "Allô",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Hello?; what you say when you answer the phone."
+      },
+      {
+        "word": "répondre",
+        "surface": "répond",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To answer; to say something back."
+      },
+      {
+        "word": "le haut-parleur",
+        "surface": "haut-parleur",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Speaker; the phone mode where you hear without holding it."
+      },
+      {
+        "word": "clair",
+        "surface": "claire",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Clear; easy to hear, with no noise."
+      },
+      {
+        "word": "avant",
+        "surface": "avant",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Before; earlier than something else."
+      },
+      {
+        "word": "la ligne",
+        "surface": "ligne",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Line; the phone connection between two people."
+      },
+      {
+        "word": "coupé",
+        "surface": "coupée",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Cut off; stopped suddenly, with no more sound."
+      },
+      {
+        "word": "attendre",
+        "surface": "attend",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To wait; to stay until something happens."
+      },
+      {
+        "word": "rappeler",
+        "surface": "rappelle",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To call back; to phone someone again."
+      },
+      {
+        "word": "demander",
+        "surface": "demandes",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To ask; to want an answer from someone."
+      },
+      {
+        "word": "fermer",
+        "surface": "ferme",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To close; here, to shut your eyes."
+      },
+      {
+        "word": "juste",
+        "surface": "Juste",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Just, only; nothing more than this."
+      },
+      {
+        "word": "pas du tout",
+        "surface": "pas du tout",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Not at all; really not."
+      }
+    ]
+  },
+  {
+    "topic": "talking-and-listening",
+    "slotIndex": 2,
+    "title": "Le torchon à la main",
+    "arcType": null,
+    "synopsis": "Hugo rentre de Paris et veut tout raconter: le petit appartement, la vue, le métro. Léa essuie des tasses et parle d'autre chose. Hugo monte chez lui sans rien dire.",
+    "text": "Léa sèche les tasses à l'évier avec un torchon. La vitrine est noire. L'eau est tiède. Elle les pose sur l'étagère.\n\nHugo entre avec son portable. Il est heureux. “Léa, je te montre l'appartement! Il est petit, et je paie cher.”\n\n“La vue est belle. Le métro est en bas”, explique Hugo. Hugo est fier. Léa secoue la tête. Elle range la cafetière.\n\n“Théo court partout. Il casse des tasses”, répond Léa. Léa parle tout le temps de Théo. Elle ne veut pas écouter, parce que c'est triste.\n\nHugo reste moins d'une minute. “Bon. Bonne nuit, Léa.” Il monte là-haut, chez lui. Sans lui, le café est grand et vide.\n\nLéa monte, mais il n'y a pas de sonnette. Elle frappe, le torchon à la main. “À toi, Hugo. Tu racontes?”, demande Léa. “Comme ça, maintenant?” “Oui. J'écoute.” Il montre les photos, une à une.",
+    "vocab": [
+      {
+        "word": "la vitrine",
+        "surface": "vitrine",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Shop window; the big glass front of the café."
+      },
+      {
+        "word": "sécher",
+        "surface": "sèche",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To dry; to take the water off something."
+      },
+      {
+        "word": "l'évier",
+        "surface": "évier",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Sink; where you wash cups in the kitchen."
+      },
+      {
+        "word": "le torchon",
+        "surface": "torchon",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Tea towel; a cloth for drying cups and plates."
+      },
+      {
+        "word": "l'étagère",
+        "surface": "étagère",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Shelf; a board on the wall to put things on."
+      },
+      {
+        "word": "heureux",
+        "surface": "heureux",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Happy; feeling very good."
+      },
+      {
+        "word": "petit",
+        "surface": "petit",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Small; not big in size."
+      },
+      {
+        "word": "cher",
+        "surface": "cher",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Expensive; costing a lot of money."
+      },
+      {
+        "word": "la vue",
+        "surface": "vue",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "View; what you see from a window."
+      },
+      {
+        "word": "le métro",
+        "surface": "métro",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Underground train; the train under the city."
+      },
+      {
+        "word": "la cafetière",
+        "surface": "cafetière",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Coffee pot; the pot that makes the coffee."
+      },
+      {
+        "word": "partout",
+        "surface": "partout",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Everywhere; in every place."
+      },
+      {
+        "word": "tout le temps",
+        "surface": "tout le temps",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "All the time; again and again."
+      },
+      {
+        "word": "parce que",
+        "surface": "parce que",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Because; this gives the reason."
+      },
+      {
+        "word": "moins",
+        "surface": "moins",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Less; not as much."
+      },
+      {
+        "word": "là-haut",
+        "surface": "là-haut",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Up there; in a higher place."
+      },
+      {
+        "word": "grand",
+        "surface": "grand",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Big; large in size."
+      },
+      {
+        "word": "la sonnette",
+        "surface": "sonnette",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Doorbell; the button you press at a door."
+      },
+      {
+        "word": "frapper",
+        "surface": "frappe",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To knock; to hit a door with your hand."
+      },
+      {
+        "word": "raconter",
+        "surface": "racontes",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To tell; to give the details of a story."
+      }
+    ]
+  }
+]
