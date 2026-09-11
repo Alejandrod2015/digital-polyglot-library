@@ -910,21 +910,33 @@ export function validateJourneyStories(
   // merece plaza, asi que el check informa y no bloquea.
   if (stories.some((s) => s.vocab && s.vocab.length)) {
     const idiomaEs = lang === "ES";
-    if (!idiomaEs) {
+    // FRANCES (2026-09-11, Friends FR A0): el lexico graduado es la lista
+    // A1-A2 de src/lib/cefr/frenchA1A2.ts, asi que solo sabe medir en a0-a2.
+    // Por encima no hay lexico y el check sigue sin saber medir: no pasa en
+    // silencio. Mismo criterio que el espanol (media de plazas fuera del
+    // lexico, gateado solo en Traveler); la lista francesa es mas corta, asi
+    // que marca mas lagunas y hay que JUZGAR cada palabra listada.
+    const idiomaFrBajo = lang === "FR" && ["A0", "A1", "A2"].includes(level);
+    if (!idiomaEs && !idiomaFrBajo) {
       noImplSet("journey-vocab-worth-teaching", "Cada plaza merece ensenarse",
-        `Solo hay lexico graduado hasta C1 en espanol; en ${lang || "?"} no se puede medir la utilidad de una plaza.`);
+        `Solo hay lexico graduado hasta C1 en espanol y hasta A2 en frances; en ${lang || "?"} ${level || "?"} no se puede medir la utilidad de una plaza.`);
     } else {
       const fueraDelLexico = (w: string): boolean => {
-        const x = w.trim().toLowerCase();
+        let x = w.trim().toLowerCase();
+        // En frances la plaza lleva articulo ("le banc"): sin quitarlo, el
+        // espacio la haria pasar por expresion y ningun sustantivo se mediria.
+        if (idiomaFrBajo) x = x.replace(/^(le|la|les|un|une|des|du)\s+/, "").replace(/^l['’]/, "");
         if (!x || x.includes(" ")) return false; // las expresiones se juzgan aparte
         // Espanol corriente que la lista graduada no tiene (teja, alacena,
         // yema...). Sin esto el gate empuja a cambiar buenas palabras por
         // peores; ver src/lib/cefr/spanishLexiconGaps.ts.
-        if (esHuecoDelLexico(x)) return false;
+        if (idiomaEs && esHuecoDelLexico(x)) return false;
         const formas = [x];
         if (x.endsWith("es") && x.length > 4) formas.push(x.slice(0, -2));
         if (x.endsWith("s") && x.length > 3) formas.push(x.slice(0, -1));
-        return !formas.some((f) => isSpanishUpToLevel(f, "c1"));
+        return idiomaEs
+          ? !formas.some((f) => isSpanishUpToLevel(f, "c1"))
+          : !formas.some((f) => isFrenchA1A2(f));
       };
       // Se juzga por la MEDIA del journey, no por historia suelta, y no es
       // laxitud: el lexico graduado tiene lagunas (`flojo`, `mozo`, `rellano`
@@ -951,7 +963,9 @@ export function validateJourneyStories(
           ? `: ${pasadas.slice(0, 4).map((x) => `${x.slug} (${x.fuera.join(", ")})`).join(" · ")}`
           : ": en ninguna historia pasa de 3") +
         ` · el lexico tiene lagunas (flojo, mozo, rellano salen marcados sin serlo): JUZGA cada palabra` +
-        ` · referencias publicadas: Traveler live 0,0-1,0 de media` +
+        (idiomaEs
+          ? ` · referencias publicadas: Traveler live 0,0-1,0 de media`
+          : ` · lexico: lista A1-A2 de frances; no hay Traveler frances publicado con el que calibrar`) +
         (gateado ? "" : ` · tipo ${tipo || "desconocido"}: medido pero NO gateado (en Friends la jerga es el producto; el Friends latam C1 publicado va a 9,8)`);
       pushSet("journey-vocab-worth-teaching",
         `Cada plaza merece ensenarse (media ${TOPE_MEDIA} o menos de palabras fuera del lexico graduado)`,
