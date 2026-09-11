@@ -2225,6 +2225,71 @@
       "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
     ]
   },
+  "cmtwo6cys0007j8yzg6ni3fsc#helping-and-favours": {
+    "cerrado": "2026-09-11T09:35:25.541Z",
+    "hash": "e19c04456f0d1021",
+    "historias": [
+      "helping-and-favours#0 le-fauteuil-descend",
+      "helping-and-favours#1 mille-euros-sans-compter",
+      "helping-and-favours#2 une-goutte-chaque-nuit"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"practico y calido: manos ocupadas, cosas que pesan, pequenas deudas entre vecinos y amigos\", espina \"Hugo se va a Paris en marzo. En noviembre los favores empiezan a preparar su ausencia: lo que deja, lo que necesita y lo que arregla para cuando no este.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dit\" 31%)",
+      "arranques de parrafo variados (mas repetido \"hugo\", 20%)",
+      "densidad 5.5 palabras por oracion (techo 9 en a0)",
+      "seguidilla 31/63 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.14 sobre 42 plazas · 36 salen una sola vez | ancladas: 18/60 (30%) | cola: 36/42 portables con un solo encuentro (86%, tope 30%) | de un solo encuentro: large, lourd, porter, étroit, aider, gratuit, ensemble, a mal, dos, Merci beaucoup, De rien, tous les jours, argent, mille, cassé, garde, compte, prêter, rends, bientôt, Combien, neuf, achète, mois, coule, chaque nuit, répare, dessous, Bravo, sale…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: helping-and-favours (Hugo, Léa)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "france",
+      "registro": "practico y calido: manos ocupadas, cosas que pesan, pequenas deudas entre vecinos y amigos",
+      "espina": "Hugo se va a Paris en marzo. En noviembre los favores empiezan a preparar su ausencia: lo que deja, lo que necesita y lo que arregla para cuando no este.",
+      "recursos": "A0: repeticion ritmica (une goutte, encore une goutte), contraste con mais, imagen concreta (la emocion como gesto visible)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Lea quiere bajar al cafe el viejo sillon que Hugo le regala antes de irse",
+          "impide": "pesa, la escalera es estrecha y Hugo esta trabajando; Chloe, una vecina con furgoneta, se ofrece a ayudar",
+          "cuesta": "a cambio Chloe pide un cafe gratis cada dia hasta marzo, y el sillon ocupa el rincon de la ventana donde Lea se sentaba",
+          "cambia": "el sitio de Hugo se queda en el cafe aunque el se vaya",
+          "emocion": "Lea se sienta en el sillon, cierra los ojos y huele el jersey de Hugo en el cojin"
+        },
+        {
+          "slot": "2",
+          "quiere": "Hugo necesita dinero para la fianza del piso de Paris y le cuesta pedirlo",
+          "impide": "Lea ahorra en una hucha para un percolateur nuevo; el viejo esta roto",
+          "cuesta": "Lea le presta sus ahorros: no hay percolateur nuevo, y paga ella para que el se vaya",
+          "cambia": "Lea ya no solo acepta la marcha: la ayuda",
+          "emocion": "le da los billetes sin contarlos y vuelve a la barra"
+        },
+        {
+          "slot": "3",
+          "quiere": "Hugo quiere devolver el favor: arreglar el grifo del cafe, que gotea desde siempre",
+          "impide": "no sabe, lo moja todo y Lea se rie",
+          "cuesta": "lo arregla, y la gota que Lea oia cada noche desaparece; el dice que ahora ella ya no le necesita, y ella no contesta",
+          "cambia": "Lea entiende que el arregla las cosas para cuando no este",
+          "emocion": "abre y cierra el grifo dos veces, y no cae ninguna gota"
+        }
+      ]
+    }
+  },
   "cmtwo6cys0007j8yzg6ni3fsc#sports-and-games": {
     "cerrado": "2026-09-11T08:38:05.127Z",
     "hash": "2bc9c74442b7ad08",
