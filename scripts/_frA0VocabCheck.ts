@@ -9,9 +9,9 @@ const ESTE = "cmtwo6cys0007j8yzg6ni3fsc";
 const strip = (w: string) => w.toLowerCase().replace(/^(le |la |les |l'|l’|se |s')/, "").trim();
 // Tema 7 · Travel & Goodbyes
 const C: Record<string, string[]> = {
-  s1: ["la voiture","le coffre","le réveil","le mouchoir","le port","le nuage","savoir","pouvoir","parler","sortir","mettre","poser","vieux","premier","ici","puis","aussi","là","à samedi","bon voyage"],
-  s2: ["la poussière","la casquette","les lunettes","la gourde","la bise","le printemps","servir","trouver","boire","apprendre","tenir","descendre","attraper","très","toujours","bien","difficile","chaque dimanche","avec plaisir","le coude"],
-  s3: ["le TGV","le canapé","l'oreiller","la veste","la baguette","le pain au chocolat","rêver","pleurer","embrasser","tricher","manger","prêt","lentement","l'égalité","la joue","le petit-déjeuner","la prochaine fois","comme avant","entre nous","à la maison"],
+  s1: ["la voiture","le coffre","le réveil","le mouchoir","le port","le klaxon","savoir","pouvoir","parler","mettre","sortir","retenir","pleurer","premier","prêt","lentement","la larme","au revoir","à samedi","bon voyage"],
+  s2: ["la poussière","la casquette","les lunettes","la gourde","le printemps","le coude","servir","trouver","boire","apprendre","tenir","descendre","essayer","plier","baisser","difficile","toujours","l'élève","chaque dimanche","avec plaisir"],
+  s3: ["le TGV","le canapé","l'oreiller","la bise","la baguette","le pain au chocolat","rêver","tricher","manger","lever","possible","jaune","treize","l'égalité","la joue","le petit-déjeuner","la prochaine fois","comme avant","à la maison","encore un peu"],
 };
 (async () => {
   const other: any[] = await p.journeyStory.findMany({ where: { journey: { language: "french" } }, select: { vocab: true, journeyId: true, journey: { select: { status: true, typeSlug: true } } } as any });
