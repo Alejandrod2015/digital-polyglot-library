@@ -54,15 +54,18 @@ const prisma = new PrismaClient();
   const muestras = fs.existsSync(REGISTRO)
     ? (JSON.parse(fs.readFileSync(REGISTRO, "utf8")) as Record<string, unknown>)
     : {};
-  if (s.slotIndex === 1 && !muestras[s.slug] && !process.argv.includes("--rehacer")) {
+  // slotIndex es 0-indexado en este journey (comprobado en la base:
+  // a-lousa-e-nenhum-livro=0, o-preco-nao-a-ideia=1, a-ladeira-na-sexta=2),
+  // a diferencia del A2 latam del que viene copiado este runner (1-indexado).
+  if (s.slotIndex === 0 && !muestras[s.slug] && !process.argv.includes("--rehacer")) {
     throw new Error(
       `${slug} es la PRIMERA de su tema y no tiene muestra.\n` +
       `  NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_muestraPtB1Titulo.ts ${slug}`
     );
   }
-  if (s.slotIndex > 1) {
+  if (s.slotIndex > 0) {
     const primera = await prisma.journeyStory.findFirst({
-      where: { journeyId: JOURNEY, topic: s.topic, slotIndex: 1 },
+      where: { journeyId: JOURNEY, topic: s.topic, slotIndex: 0 },
       select: { slug: true, audioUrl: true },
     });
     if (!primera?.audioUrl) {
