@@ -1,0 +1,240 @@
+[
+ {
+  "topic": "sports-and-games",
+  "label": "Sports & Games",
+  "place": "Marseille, France",
+  "names": [
+   "LÉA",
+   "HUGO"
+  ],
+  "sheet": "Character model sheet for a story series, clean cel-shaded editorial illustration, crisp clean linework, flat vivid warm colour fills, plain pure white background, landscape 16:9.\n\nExactly 2 adult characters, drawn as a reference sheet: top row shows all of them full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same characters as head-and-shoulders close-ups.\n\nLEFT is LÉA: woman, exactly 29 years old, slim build, medium height, olive Mediterranean skin, long straight black hair in a single thick braid over her right shoulder, WITHOUT fringe, no glasses; wears a rust-red cotton apron over a plain white short-sleeved t-shirt, dark blue jeans and white canvas trainers.\n\nRIGHT is HUGO: man, exactly 32 years old, tall and lanky build, a head taller than LÉA, light skin with a light summer tan, short wavy chestnut-brown hair, WITHOUT fringe, short neat brown stubble, no glasses; wears a sky-blue linen shirt with the sleeves rolled up, beige chino trousers and brown leather boat shoes.\n\nGenerous white margin around every figure, no props, no animals, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "une-boule-sous-le-platane",
+    "title": "Une boule sous le platane",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: A small gravel square under a huge plane tree in the Panier quarter of Marseille, with ochre and pastel facades, green wooden shutters and narrow stone streets, Sunday afternoon, warm golden sun and dappled shade. LÉA crouches on the gravel, one arm still stretched out after rolling a shiny silver boule that has stopped right next to a small round wooden jack; HUGO stands beside her clapping his hands once, grinning. Two more silver boules rest on a wooden bench and a café terrace with empty chairs sits at the edge of the square. Wide shot from low on the gravel, both full body.",
+    "note": ""
+   },
+   {
+    "slug": "deux-carreaux-pour-hugo",
+    "title": "Deux carreaux pour Hugo",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The same gravel square in the Panier quarter of Marseille, with ochre and pastel facades, green wooden shutters and narrow stone streets on a windy morning, the mistral bending the plane tree branches and blowing dry leaves through the air, clear blue sky. LÉA stands with her knees bent and a silver boule in her right hand, arm swung back to throw; HUGO stands just behind her, guiding her elbow with one hand. Two white coffee cups on a small round café table nearby. Medium shot from the side, both full body.",
+    "note": ""
+   },
+   {
+    "slug": "si-je-gagne-tu-restes",
+    "title": "Si je gagne, tu restes",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The gravel square in the Panier quarter of Marseille, with ochre and pastel facades, green wooden shutters and narrow stone streets at dusk, a deep red sky over the rooftops and one lit street lamp. HUGO crouches on the gravel stretching a piece of white string between a silver boule and the small wooden jack, measuring; LÉA leans over him holding her own boule in both hands against her chest, holding her breath. A chalk circle drawn on the gravel. Low-angle medium shot, both full body.",
+    "note": ""
+   }
+  ]
+ },
+ {
+  "topic": "talking-and-listening",
+  "label": "Talking & Listening",
+  "place": "Marseille, France",
+  "names": [
+   "LÉA",
+   "HUGO",
+   "THÉO"
+  ],
+  "sheet": "Character model sheet for a story series, clean cel-shaded editorial illustration, crisp clean linework, flat vivid warm colour fills, plain pure white background, landscape 16:9.\n\nExactly 3 adult characters, drawn as a reference sheet: top row shows all of them full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same characters as head-and-shoulders close-ups.\n\nLEFT is LÉA: woman, exactly 29 years old, slim build, medium height, olive Mediterranean skin, long straight black hair in a single thick braid over her right shoulder, WITHOUT fringe, no glasses; wears a rust-red cotton apron over a plain white short-sleeved t-shirt, dark blue jeans and white canvas trainers.\n\nCENTER is HUGO: man, exactly 32 years old, tall and lanky build, a head taller than LÉA, light skin with a light summer tan, short wavy chestnut-brown hair, WITHOUT fringe, short neat brown stubble, no glasses; wears a sky-blue linen shirt with the sleeves rolled up, beige chino trousers and brown leather boat shoes.\n\nRIGHT is THÉO: man, exactly 25 years old, clearly a young adult man and not a teenager, slim build, a little taller than LÉA and shorter than HUGO, dark brown skin, short black curly hair, WITHOUT fringe, clean-shaven, no glasses; wears a long black waiter's apron over a plain white shirt, black trousers and black shoes.\n\nGenerous white margin around every figure, no props, no animals, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "theo-ecoute-pour-lea",
+    "title": "Théo écoute pour Léa",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: Inside Léa's small café in the Panier, midday, sunlight through the front window, every table covered with empty cups and saucers after a busy lunch. THÉO sits on a tall wooden stool by the counter with white earphones in his ears, holding a mobile phone whose screen faces away from the viewer, frowning in concentration; LÉA stands close beside him with one hand flat on the counter, leaning in to hear. A metal tray and a stack of cups on the counter. Medium shot across the counter, both waist-up.",
+    "note": "HUGO no sale: es la voz del mensaje."
+   },
+   {
+    "slug": "la-ligne-coupe-apres-hugo",
+    "title": "La ligne coupe après Hugo",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: A flat rooftop terrace above the Panier, windy late afternoon, blue sky with fast white clouds, white sheets and shirts flapping on washing lines strung between old chimney pots, the sea far behind. LÉA stands alone holding a mobile phone to her ear with the screen facing away from the viewer, eyes closed, her other hand pressed flat against her chest. Terracotta roof tiles all around. Medium shot from the side, LÉA waist-up or fuller.",
+    "note": "HUGO no sale: está al otro lado del teléfono."
+   },
+   {
+    "slug": "le-torchon-a-la-main",
+    "title": "Le torchon à la main",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: Inside Léa's café in the evening, the shop window dark behind them, one warm lamp over the counter. LÉA stands at the sink drying a white cup with a striped tea towel, looking down at the cup; HUGO leans on the counter holding out his mobile phone towards her with the screen facing away from the viewer, smiling proudly. A shelf of clean cups and a metal coffee pot. Medium shot from the end of the counter, both waist-up.",
+    "note": "THÉO no sale: solo se le nombra."
+   }
+  ]
+ },
+ {
+  "topic": "helping-and-favours",
+  "label": "Helping & Favours",
+  "place": "Marseille, France",
+  "names": [
+   "LÉA",
+   "HUGO",
+   "CHLOÉ"
+  ],
+  "sheet": "Character model sheet for a story series, clean cel-shaded editorial illustration, crisp clean linework, flat vivid warm colour fills, plain pure white background, landscape 16:9.\n\nExactly 3 adult characters, drawn as a reference sheet: top row shows all of them full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same characters as head-and-shoulders close-ups.\n\nLEFT is LÉA: woman, exactly 29 years old, slim build, medium height, olive Mediterranean skin, long straight black hair in a single thick braid over her right shoulder, WITHOUT fringe, no glasses; wears a rust-red cotton apron over a plain white short-sleeved t-shirt, dark blue jeans and white canvas trainers.\n\nCENTER is HUGO: man, exactly 32 years old, tall and lanky build, a head taller than LÉA, light skin with a light summer tan, short wavy chestnut-brown hair, WITHOUT fringe, short neat brown stubble, no glasses; wears a sky-blue linen shirt with the sleeves rolled up, beige chino trousers and brown leather boat shoes.\n\nRIGHT is CHLOÉ: woman, exactly 41 years old, sturdy build with broad shoulders, the same height as LÉA but clearly wider, pale fair skin, very short cropped blond hair above the ears, WITHOUT fringe, round red-framed glasses; wears green cotton work overalls over a grey t-shirt and brown leather work boots.\n\nGenerous white margin around every figure, no props, no animals, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "le-fauteuil-descend",
+    "title": "Le fauteuil descend",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: A narrow stone staircase inside an old building in the Panier, morning light from a small window. CHLOÉ, a coil of rope over one shoulder, walks backwards down the steps holding the front of a heavy green velvet armchair; LÉA holds the back of the armchair two steps above her, straining. A cold iron handrail along the wall. Shot from the bottom of the stairs looking up, both full body.",
+    "note": "HUGO no sale: está trabajando."
+   },
+   {
+    "slug": "mille-euros-sans-compter",
+    "title": "Mille euros sans compter",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: Behind the counter of Léa's café, late afternoon, soft light. LÉA holds out a plain brown paper envelope with both hands; HUGO takes it, embarrassed, his other hand on the back of his neck. A small pink ceramic piggy bank stands open on the counter and a big old chrome coffee machine sits behind them. Close medium shot, both waist-up.",
+    "note": ""
+   },
+   {
+    "slug": "une-goutte-chaque-nuit",
+    "title": "Une goutte chaque nuit",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The small kitchen at the back of Léa's café, afternoon. HUGO kneels under the sink holding a wrench while water sprays out of the pipe onto his shirt; LÉA stands beside him laughing, holding a yellow sponge. A metal bucket on the wet tiled floor and an open toolbox. Medium shot from the kitchen door, both full body.",
+    "note": ""
+   }
+  ]
+ },
+ {
+  "topic": "words-and-meanings",
+  "label": "Words & Meanings",
+  "place": "Marseille, France",
+  "names": [
+   "LÉA",
+   "HUGO",
+   "MAXIME"
+  ],
+  "sheet": "Character model sheet for a story series, clean cel-shaded editorial illustration, crisp clean linework, flat vivid warm colour fills, plain pure white background, landscape 16:9.\n\nExactly 3 adult characters, drawn as a reference sheet: top row shows all of them full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same characters as head-and-shoulders close-ups.\n\nLEFT is LÉA: woman, exactly 29 years old, slim build, medium height, olive Mediterranean skin, long straight black hair in a single thick braid over her right shoulder, WITHOUT fringe, no glasses; wears a rust-red cotton apron over a plain white short-sleeved t-shirt, dark blue jeans and white canvas trainers.\n\nCENTER is HUGO: man, exactly 32 years old, tall and lanky build, a head taller than LÉA, light skin with a light summer tan, short wavy chestnut-brown hair, WITHOUT fringe, short neat brown stubble, no glasses; wears a sky-blue linen shirt with the sleeves rolled up, beige chino trousers and brown leather boat shoes.\n\nRIGHT is MAXIME: man, exactly 34 years old, stocky build, as tall as HUGO, light-brown skin, shaved head, short thick black beard, black rectangular glasses; wears a dark green bomber jacket over a plain grey t-shirt, black jeans and white trainers.\n\nGenerous white margin around every figure, no props, no animals, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "tu-prends-la-carte",
+    "title": "Tu prends la carte?",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The café terrace on the square in the Panier, bright morning. MAXIME sits at a small round table with a big black duffel bag at his feet, holding up a plain blue card with no printing and laughing; LÉA stands beside the table holding a closed leather menu folder with a plain cover, one hand over her mouth, laughing too. A glass of orange juice and a small cup of black coffee on the table. Medium shot from the side, both waist-up.",
+    "note": "HUGO no sale: solo se le nombra."
+   },
+   {
+    "slug": "vingt-minutes-c-est-long",
+    "title": "Vingt minutes, c'est long",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: A table by the window of Léa's café, afternoon, the masts of small boats in the Old Port visible through the glass. HUGO leans across the table talking, both hands open as if measuring something; LÉA sits opposite him and places her wristwatch face down on the table, not looking at it. Two cups of coffee. Medium shot across the table, both waist-up.",
+    "note": ""
+   },
+   {
+    "slug": "les-mots-a-l-envers",
+    "title": "Les mots à l'envers",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: A corner table in Léa's café at night, a round moon and one bright star in the dark window. LÉA sits holding a pencil above a closed notebook with a plain cover, frowning; HUGO sits next to her with a cup of coffee and gently squeezes her other hand on the table. A checked tablecloth and a small lamp. Close medium shot, both waist-up.",
+    "note": ""
+   }
+  ]
+ },
+ {
+  "topic": "parties-and-gifts",
+  "label": "Parties & Gifts",
+  "place": "Marseille, France",
+  "names": [
+   "LÉA",
+   "HUGO",
+   "LOUISE"
+  ],
+  "sheet": "Character model sheet for a story series, clean cel-shaded editorial illustration, crisp clean linework, flat vivid warm colour fills, plain pure white background, landscape 16:9.\n\nExactly 3 adult characters, drawn as a reference sheet: top row shows all of them full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same characters as head-and-shoulders close-ups.\n\nLEFT is LÉA: woman, exactly 29 years old, slim build, medium height, olive Mediterranean skin, long straight black hair in a single thick braid over her right shoulder, WITHOUT fringe, no glasses; wears a rust-red cotton apron over a plain white short-sleeved t-shirt, dark blue jeans and white canvas trainers.\n\nCENTER is HUGO: man, exactly 32 years old, tall and lanky build, a head taller than LÉA, light skin with a light summer tan, short wavy chestnut-brown hair, WITHOUT fringe, short neat brown stubble, no glasses; wears a sky-blue linen shirt with the sleeves rolled up, beige chino trousers and brown leather boat shoes.\n\nRIGHT is LOUISE: woman, exactly 35 years old, LÉA's older sister, rounder and fuller build, a little shorter than LÉA, the same olive skin as LÉA, chin-length curly dark-red hair WITH a straight fringe, no glasses; wears a lilac knitted cardigan over a white blouse, a knee-length grey skirt and black ankle boots.\n\nGenerous white margin around every figure, no props, no animals, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "la-boule-porte-bonheur",
+    "title": "La boule porte-bonheur",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: Behind the counter of Léa's café, morning, an open wooden drawer. LOUISE ties a red ribbon into a bow around a small round parcel wrapped in plain red paper; LÉA holds a single shiny silver boule in her open palm, looking at it one last time. A roll of red paper and a pair of scissors on the counter. Close medium shot, both waist-up.",
+    "note": "HUGO no sale: el regalo es para él."
+   },
+   {
+    "slug": "trente-trois-bougies",
+    "title": "Trente-trois bougies",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The gravel square in the Panier quarter of Marseille, with ochre and pastel facades, green wooden shutters and narrow stone streets on a warm evening, paper lanterns hanging under the plane trees and a string of warm lights between the branches. LÉA holds a big round cake covered with many small lit candles; HUGO bends over it with puffed cheeks, blowing the candles out. A table with a bottle and glasses behind them. Medium shot, both waist-up.",
+    "note": "Los amigos de la fiesta no se dibujan."
+   },
+   {
+    "slug": "a-toi-la-boule",
+    "title": "À toi la boule",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The gravel square in the Panier quarter of Marseille, with ochre and pastel facades, green wooden shutters and narrow stone streets the morning after the party, fresh morning light, a big ginger cat asleep on a wooden bench among fallen leaves. HUGO holds the shiny silver boule in his open hands, surprised; LÉA closes his fingers over it with both of her hands, smiling. Torn red wrapping paper on the bench and a broom leaning against the plane tree. Close medium shot, both waist-up.",
+    "note": ""
+   }
+  ]
+ },
+ {
+  "topic": "houses-and-neighbours",
+  "label": "Houses & Neighbours",
+  "place": "Marseille, France",
+  "names": [
+   "LÉA",
+   "HUGO",
+   "ANTOINE",
+   "CLARA"
+  ],
+  "sheet": "Character model sheet for a story series, clean cel-shaded editorial illustration, crisp clean linework, flat vivid warm colour fills, plain pure white background, landscape 16:9.\n\nExactly 4 adult characters, drawn as a reference sheet: top row shows all of them full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same characters as head-and-shoulders close-ups.\n\nFAR LEFT is LÉA: woman, exactly 29 years old, slim build, medium height, olive Mediterranean skin, long straight black hair in a single thick braid over her right shoulder, WITHOUT fringe, no glasses; wears a rust-red cotton apron over a plain white short-sleeved t-shirt, dark blue jeans and white canvas trainers.\n\nLEFT is HUGO: man, exactly 32 years old, tall and lanky build, a head taller than LÉA, light skin with a light summer tan, short wavy chestnut-brown hair, WITHOUT fringe, short neat brown stubble, no glasses; wears a sky-blue linen shirt with the sleeves rolled up, beige chino trousers and brown leather boat shoes.\n\nRIGHT is ANTOINE: man, exactly 50 years old, clearly a man in his early fifties and not elderly, heavy build with a round belly, a little taller than LÉA and shorter than HUGO, ruddy light skin, thick dark-brown hair combed back, WITHOUT fringe, clean-shaven, rectangular silver-framed glasses; wears a navy blazer over a light-blue shirt with no tie, grey trousers and black leather shoes.\n\nFAR RIGHT is CLARA: woman, exactly 31 years old, athletic build, a little taller than LÉA, fair skin, shoulder-length wavy brown hair worn loose, WITHOUT fringe, thin round gold-rimmed glasses; wears a bright yellow knee-length coat over a plain white t-shirt, light-blue jeans and tan leather ankle boots.\n\nGenerous white margin around every figure, no props, no animals, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "l-annonce-du-couloir",
+    "title": "L'annonce du couloir",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The doorway of Léa's café, late morning. ANTOINE stands in the doorway holding up a big ring of old iron keys, speaking; LÉA stands behind the counter gripping its edge with both hands, leaning towards him, upset. A row of plain unmarked metal letterboxes on the hallway wall behind him. Medium shot from inside the café, both waist-up.",
+    "note": "HUGO y CLARA no salen."
+   },
+   {
+    "slug": "une-plante-pour-lea",
+    "title": "Une plante pour Léa",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: An empty flat with freshly painted white walls and a bare light bulb hanging from the ceiling, daylight through an open window with green shutters. HUGO holds out a green potted plant towards LÉA with both hands; LÉA takes it by the pot without smiling. A paint roller in a tray on the wooden floor. Medium shot from the window, both waist-up.",
+    "note": ""
+   },
+   {
+    "slug": "des-pas-au-dessus",
+    "title": "Des pas au-dessus",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The bottom of the narrow stone staircase of the old building, morning. CLARA comes down the last steps holding the lead of her medium-sized white dog with brown ears, which pulls ahead; LÉA stands at the foot of the stairs holding a cup of coffee, looking up at her. An iron handrail and a small window with morning light. Shot from the side of the staircase, both full body.",
+    "note": "ANTOINE no sale: la escena es el encuentro con la inconnue."
+   }
+  ]
+ },
+ {
+  "topic": "travel-and-goodbyes",
+  "label": "Travel & Goodbyes",
+  "place": "Marseille, France",
+  "names": [
+   "LÉA",
+   "HUGO",
+   "CLARA"
+  ],
+  "sheet": "Character model sheet for a story series, clean cel-shaded editorial illustration, crisp clean linework, flat vivid warm colour fills, plain pure white background, landscape 16:9.\n\nExactly 3 adult characters, drawn as a reference sheet: top row shows all of them full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same characters as head-and-shoulders close-ups.\n\nLEFT is LÉA: woman, exactly 29 years old, slim build, medium height, olive Mediterranean skin, long straight black hair in a single thick braid over her right shoulder, WITHOUT fringe, no glasses; wears a rust-red cotton apron over a plain white short-sleeved t-shirt, dark blue jeans and white canvas trainers.\n\nCENTER is HUGO: man, exactly 32 years old, tall and lanky build, a head taller than LÉA, light skin with a light summer tan, short wavy chestnut-brown hair, WITHOUT fringe, short neat brown stubble, no glasses; wears a sky-blue linen shirt with the sleeves rolled up, beige chino trousers and brown leather boat shoes.\n\nRIGHT is CLARA: woman, exactly 31 years old, athletic build, a little taller than LÉA, fair skin, shoulder-length wavy brown hair worn loose, WITHOUT fringe, thin round gold-rimmed glasses; wears a bright yellow knee-length coat over a plain white t-shirt, light-blue jeans and tan leather ankle boots.\n\nGenerous white margin around every figure, no props, no animals, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "a-samedi-hugo",
+    "title": "À samedi, Hugo",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: A street near the Old Port of Marseille, early morning, soft pink light, fishing boats in the background. HUGO lifts a heavy suitcase into the open boot of a plain dark-blue car seen from the side with no number plate visible; LÉA stands close beside him with one hand in her apron pocket, eyes wet, holding back tears. Seagulls in the sky. Medium shot from the pavement, both full body.",
+    "note": "CLARA no sale: la escena es la despedida."
+   },
+   {
+    "slug": "clara-tient-la-boule",
+    "title": "Clara tient la boule",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The gravel square in the Panier quarter of Marseille, with ochre and pastel facades, green wooden shutters and narrow stone streets on a sunny spring afternoon, dust floating in the light. CLARA, wearing a green cap with her yellow coat open, bends her knees and holds a silver boule ready to throw; LÉA stands behind her correcting the position of her elbow with one hand. Her medium-sized white dog with brown ears lies in the shade of the bench, next to a water bottle. Medium shot from the front, both full body.",
+    "note": ""
+   },
+   {
+    "slug": "treize-comme-avant",
+    "title": "Treize, comme avant",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, bright daylight unless the scene says otherwise, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The gravel square in the Panier quarter of Marseille, with ochre and pastel facades, green wooden shutters and narrow stone streets on a bright April afternoon. LÉA raises both arms in victory; HUGO leans in and kisses her on the cheek, laughing; CLARA claps her hands beside the bench. Silver boules scattered around the small wooden jack on the gravel. Wide shot from the edge of the square, all three full body.",
+    "note": ""
+   }
+  ]
+ }
+]
