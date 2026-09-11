@@ -1,0 +1,433 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "le vélo,la montre,le plan,le quai",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "le vélo",
+          "answer": "a bike",
+          "options": [
+            "a bike",
+            "a wristwatch",
+            "a street map",
+            "a train platform"
+          ]
+        },
+        {
+          "word": "la montre",
+          "answer": "a wristwatch",
+          "options": [
+            "a bike",
+            "a wristwatch",
+            "a street map",
+            "a train platform"
+          ]
+        },
+        {
+          "word": "le plan",
+          "answer": "a street map",
+          "options": [
+            "a bike",
+            "a wristwatch",
+            "a street map",
+            "a train platform"
+          ]
+        },
+        {
+          "word": "le quai",
+          "answer": "a train platform",
+          "options": [
+            "a bike",
+            "a wristwatch",
+            "a street map",
+            "a train platform"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en face",
+    "sentence": "Il habite [[en face]] du métro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "across from",
+      "options": [
+        "across from",
+        "far from",
+        "behind",
+        "next to"
+      ],
+      "audioClip": {
+        "storySlug": "vingt-minutes-c-est-long",
+        "storySource": "user",
+        "sentence": "Il habite en face du métro.",
+        "targetWord": "en face",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "à pied",
+    "sentence": "Pas de voiture, pas de bus: elle va au port _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "à pied",
+      "options": [
+        "à pied",
+        "en voiture",
+        "en bus",
+        "en avion"
+      ],
+      "translation": "No car, no bus: she goes to the port _____.",
+      "optionTranslations": [
+        "on foot",
+        "by car",
+        "by bus",
+        "by plane"
+      ],
+      "audioClip": {
+        "storySlug": "vingt-minutes-c-est-long",
+        "storySource": "user",
+        "sentence": "Pas de voiture, pas de bus: elle va au port à pied.",
+        "targetWord": "à pied",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "habiter",
+    "sentence": "À Paris, il [[habite]] en face du métro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to live",
+      "options": [
+        "to live",
+        "to work",
+        "to eat",
+        "to sleep"
+      ],
+      "audioClip": {
+        "storySlug": "vingt-minutes-c-est-long",
+        "storySource": "user",
+        "sentence": "À Paris, il habite en face du métro.",
+        "targetWord": "habite",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "long",
+    "sentence": "“C'est [[long]]!”, répond-elle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "long",
+      "options": [
+        "long",
+        "far",
+        "short",
+        "slow"
+      ],
+      "audioClip": {
+        "storySlug": "vingt-minutes-c-est-long",
+        "storySource": "user",
+        "sentence": "“C'est long!”, répond-elle.",
+        "targetWord": "long",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tôt",
+    "sentence": "Il arrive [[tôt]] au travail.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "early",
+      "options": [
+        "early",
+        "late",
+        "rarely",
+        "quickly"
+      ],
+      "audioClip": {
+        "storySlug": "vingt-minutes-c-est-long",
+        "storySource": "user",
+        "sentence": "Il arrive tôt au travail.",
+        "targetWord": "tôt",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tard",
+    "sentence": "Il arrive tôt au travail, et il part [[tard]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "late",
+      "options": [
+        "late",
+        "early",
+        "alone",
+        "slowly"
+      ],
+      "audioClip": {
+        "storySlug": "vingt-minutes-c-est-long",
+        "storySource": "user",
+        "sentence": "Il arrive tôt au travail, et il part tard.",
+        "targetWord": "tard",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ça dépend",
+    "sentence": "“Et le métro va vite?” “[[Ça dépend]].”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "it depends",
+      "options": [
+        "it depends",
+        "of course",
+        "not at all",
+        "never mind"
+      ],
+      "audioClip": {
+        "storySlug": "vingt-minutes-c-est-long",
+        "storySource": "user",
+        "sentence": "“Et le métro va vite?” “Ça dépend.”",
+        "targetWord": "Ça dépend",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "presque",
+    "sentence": "C'est [[presque]] toute la ville.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "almost",
+      "options": [
+        "almost",
+        "exactly",
+        "more than",
+        "only half"
+      ],
+      "audioClip": {
+        "storySlug": "vingt-minutes-c-est-long",
+        "storySource": "user",
+        "sentence": "C'est presque toute la ville.",
+        "targetWord": "presque",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "l'arrêt",
+    "sentence": "L'[[arrêt]] du bus est en bas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a stop",
+      "options": [
+        "a stop",
+        "a ticket",
+        "a driver",
+        "a seat"
+      ],
+      "audioClip": {
+        "storySlug": "vingt-minutes-c-est-long",
+        "storySource": "user",
+        "sentence": "L'arrêt du bus est en bas.",
+        "targetWord": "arrêt",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tous les deux",
+    "sentence": "Ils regardent le plan [[tous les deux]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "both together",
+      "options": [
+        "both together",
+        "one at a time",
+        "all day long",
+        "every morning"
+      ],
+      "audioClip": {
+        "storySlug": "vingt-minutes-c-est-long",
+        "storySource": "user",
+        "sentence": "Ils regardent le plan tous les deux.",
+        "targetWord": "tous les deux",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dix",
+    "sentence": "Ici, le port est à [[dix]] minutes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ten",
+      "options": [
+        "ten",
+        "two",
+        "six",
+        "twelve"
+      ],
+      "audioClip": {
+        "storySlug": "vingt-minutes-c-est-long",
+        "storySource": "user",
+        "sentence": "Ici, le port est à dix minutes.",
+        "targetWord": "dix",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arriver",
+    "sentence": "Le matin, il [[arrive]] au travail.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get there",
+      "options": [
+        "to get there",
+        "to leave",
+        "to wait",
+        "to phone"
+      ],
+      "audioClip": {
+        "storySlug": "vingt-minutes-c-est-long",
+        "storySource": "user",
+        "sentence": "Le matin, il arrive au travail.",
+        "targetWord": "arrive",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "marcher",
+    "sentence": "“Tu [[marches]] un peu?”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to walk",
+      "options": [
+        "to walk",
+        "to run",
+        "to drive",
+        "to swim"
+      ],
+      "audioClip": {
+        "storySlug": "vingt-minutes-c-est-long",
+        "storySource": "user",
+        "sentence": "“Tu marches un peu?”",
+        "targetWord": "marches",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poser",
+    "sentence": "Elle [[pose]] sa montre sur la table.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to put down",
+      "options": [
+        "to put down",
+        "to pick up",
+        "to look at",
+        "to lose"
+      ],
+      "audioClip": {
+        "storySlug": "vingt-minutes-c-est-long",
+        "storySource": "user",
+        "sentence": "Elle pose sa montre sur la table.",
+        "targetWord": "pose",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "vite",
+    "sentence": "Le bus part tout de suite: marche _____!",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vite",
+      "options": [
+        "vite",
+        "lentement",
+        "peu",
+        "mal"
+      ],
+      "translation": "The bus is leaving right now: walk _____!",
+      "optionTranslations": [
+        "fast",
+        "slowly",
+        "a little",
+        "badly"
+      ],
+      "audioClip": {
+        "storySlug": "vingt-minutes-c-est-long",
+        "storySource": "user",
+        "sentence": "Le bus part tout de suite: marche vite!",
+        "targetWord": "vite",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bateau",
+    "sentence": "Pour aller sur l'île, on prend le _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bateau",
+      "options": [
+        "bateau",
+        "train",
+        "métro",
+        "bus"
+      ],
+      "translation": "To go to the island, you take the _____.",
+      "optionTranslations": [
+        "boat",
+        "train",
+        "metro",
+        "bus"
+      ],
+      "audioClip": {
+        "storySlug": "vingt-minutes-c-est-long",
+        "storySource": "user",
+        "sentence": "Pour aller sur l'île, on prend le bateau.",
+        "targetWord": "bateau",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
+]

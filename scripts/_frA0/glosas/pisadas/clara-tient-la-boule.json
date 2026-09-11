@@ -1,0 +1,52 @@
+{
+ "a": {
+  "es": "Clara a une casquette verte et des lunettes.",
+  "en": "Clara has a green cap and glasses.",
+  "g": "has (avoir)"
+ },
+ "elle": {
+  "es": "Elle corrige la main de Clara, comme Hugo.",
+  "en": "She corrects Clara's hand, like Hugo.",
+  "g": "she (elle)"
+ },
+ "encore": {
+  "es": "Clara boit encore un peu à la gourde.",
+  "en": "Clara drinks a little more from the water bottle.",
+  "g": "a little more (encore un peu)"
+ },
+ "il": {
+  "es": "Chaque fois, il gagne.",
+  "en": "Every time, he wins.",
+  "g": "he (il)"
+ },
+ "joue": {
+  "es": "Chaque dimanche, Léa joue à la pétanque",
+  "en": "Every Sunday, Léa plays pétanque",
+  "g": "plays (jouer)"
+ },
+ "ne": {
+  "es": "Ensuite, elle ne dit rien.",
+  "en": "Then she says nothing.",
+  "g": "not (ne ... rien: nothing)"
+ },
+ "peu": {
+  "es": "Clara boit encore un peu à la gourde.",
+  "en": "Clara drinks a little more from the water bottle.",
+  "g": "a little (encore un peu: a little more)"
+ },
+ "plaisir": {
+  "es": "Avec plaisir!",
+  "en": "Gladly!",
+  "g": "gladly (avec plaisir)"
+ },
+ "rien": {
+  "es": "Ensuite, elle ne dit rien.",
+  "en": "Then she says nothing.",
+  "g": "nothing; says nothing (ne dit rien)"
+ },
+ "toujours": {
+  "es": "Toujours, au début.",
+  "en": "Always, at the beginning.",
+  "g": "always (toujours)"
+ }
+}

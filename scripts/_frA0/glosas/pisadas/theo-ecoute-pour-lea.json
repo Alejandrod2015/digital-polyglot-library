@@ -1,0 +1,52 @@
+{
+ "a": {
+  "es": "Il y a du bruit dans le café.",
+  "en": "There is noise in the café.",
+  "g": "there is (il y a)"
+ },
+ "il": {
+  "es": "Il y a du bruit dans le café.",
+  "en": "There is noise in the café.",
+  "g": "there is (il y a)"
+ },
+ "appelle": {
+  "es": "Le nouveau serveur s'appelle Théo.",
+  "en": "The new waiter is called Théo.",
+  "g": "is called, is named (s'appeler)"
+ },
+ "côté": {
+  "es": "Il est sur un tabouret, à côté d'elle.",
+  "en": "He is on a stool, next to her.",
+  "g": "next to (à côté de)"
+ },
+ "elle": {
+  "es": "Il est sur un tabouret, à côté d'elle.",
+  "en": "He is on a stool, next to her.",
+  "g": "her (elle)"
+ },
+ "en": {
+  "es": "Il part vraiment en mars.",
+  "en": "He is really leaving in March.",
+  "g": "in (en)"
+ },
+ "entre": {
+  "es": "Il court entre les tables avec son plateau.",
+  "en": "He runs between the tables with his tray.",
+  "g": "between (entre)"
+ },
+ "retourne": {
+  "es": "Léa retourne le portable et sert les cafés.",
+  "en": "Léa turns the phone over and serves the coffees.",
+  "g": "turns over (retourner)"
+ },
+ "rien": {
+  "es": "Je n'entends rien",
+  "en": "I can't hear anything",
+  "g": "nothing (ne ... rien)"
+ },
+ "toujours": {
+  "es": "J'oublie toujours où sont les tasses",
+  "en": "I always forget where the cups are",
+  "g": "always (toujours)"
+ }
+}

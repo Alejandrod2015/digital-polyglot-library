@@ -1,0 +1,433 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "le toit,le linge,la cheminée,le haut-parleur",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "le toit",
+          "answer": "the roof",
+          "options": [
+            "the roof",
+            "the laundry",
+            "the chimney",
+            "the phone speaker"
+          ]
+        },
+        {
+          "word": "le linge",
+          "answer": "the laundry",
+          "options": [
+            "the roof",
+            "the laundry",
+            "the chimney",
+            "the phone speaker"
+          ]
+        },
+        {
+          "word": "la cheminée",
+          "answer": "the chimney",
+          "options": [
+            "the roof",
+            "the laundry",
+            "the chimney",
+            "the phone speaker"
+          ]
+        },
+        {
+          "word": "le haut-parleur",
+          "answer": "the phone speaker",
+          "options": [
+            "the roof",
+            "the laundry",
+            "the chimney",
+            "the phone speaker"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le réseau",
+    "sentence": "En bas, le café n'a pas de [[réseau]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "phone signal",
+      "options": [
+        "phone signal",
+        "electric light",
+        "hot water",
+        "free seats"
+      ],
+      "audioClip": {
+        "storySlug": "la-ligne-coupe-apres-hugo",
+        "storySource": "user",
+        "sentence": "En bas, le café n'a pas de réseau.",
+        "targetWord": "réseau",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonner",
+    "sentence": "Le portable [[sonne]] encore.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to ring",
+      "options": [
+        "to ring",
+        "to fall",
+        "to break",
+        "to switch off"
+      ],
+      "audioClip": {
+        "storySlug": "la-ligne-coupe-apres-hugo",
+        "storySource": "user",
+        "sentence": "Le portable sonne encore.",
+        "targetWord": "sonne",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "allô",
+    "sentence": "“[[Allô]]?”, répond-il.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hello (on the phone)",
+      "options": [
+        "hello (on the phone)",
+        "goodbye for now",
+        "sorry, wrong number",
+        "hold on, please"
+      ],
+      "audioClip": {
+        "storySlug": "la-ligne-coupe-apres-hugo",
+        "storySource": "user",
+        "sentence": "“Allô?”, répond-il.",
+        "targetWord": "Allô",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "répondre",
+    "sentence": "Le portable sonne, et il [[répond]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to answer",
+      "options": [
+        "to answer",
+        "to hang up",
+        "to call",
+        "to laugh"
+      ],
+      "audioClip": {
+        "storySlug": "la-ligne-coupe-apres-hugo",
+        "storySource": "user",
+        "sentence": "Le portable sonne, et il répond.",
+        "targetWord": "répond",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la ligne",
+    "sentence": "La [[ligne]] est coupée, et elle attend.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a phone connection",
+      "options": [
+        "a phone connection",
+        "a bus route",
+        "a waiting queue",
+        "a drawn line"
+      ],
+      "audioClip": {
+        "storySlug": "la-ligne-coupe-apres-hugo",
+        "storySource": "user",
+        "sentence": "La ligne est coupée, et elle attend.",
+        "targetWord": "ligne",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "coupé",
+    "sentence": "Mais la ligne est [[coupée]] après son nom.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cut off",
+      "options": [
+        "cut off",
+        "too loud",
+        "very slow",
+        "wide open"
+      ],
+      "audioClip": {
+        "storySlug": "la-ligne-coupe-apres-hugo",
+        "storySource": "user",
+        "sentence": "Mais la ligne est coupée après son nom.",
+        "targetWord": "coupée",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rappeler",
+    "sentence": "La ligne est coupée, puis il [[rappelle]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to call back",
+      "options": [
+        "to call back",
+        "to remember",
+        "to hang up",
+        "to send a text"
+      ],
+      "audioClip": {
+        "storySlug": "la-ligne-coupe-apres-hugo",
+        "storySource": "user",
+        "sentence": "La ligne est coupée, puis il rappelle.",
+        "targetWord": "rappelle",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "attendre",
+    "sentence": "Elle [[attend]], le portable à la main.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to wait",
+      "options": [
+        "to wait",
+        "to run",
+        "to cry",
+        "to leave"
+      ],
+      "audioClip": {
+        "storySlug": "la-ligne-coupe-apres-hugo",
+        "storySource": "user",
+        "sentence": "Elle attend, le portable à la main.",
+        "targetWord": "attend",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "seule",
+    "sentence": "Il n'y a personne avec elle: elle est _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "seule",
+      "options": [
+        "seule",
+        "grande",
+        "blonde",
+        "prête"
+      ],
+      "translation": "There is nobody with her: she is _____.",
+      "optionTranslations": [
+        "alone",
+        "tall",
+        "blonde",
+        "ready"
+      ],
+      "audioClip": {
+        "storySlug": "la-ligne-coupe-apres-hugo",
+        "storySource": "user",
+        "sentence": "Il n'y a personne avec elle: elle est seule.",
+        "targetWord": "seule",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "clair",
+    "sentence": "Sa voix est [[claire]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clear",
+      "options": [
+        "clear",
+        "sad",
+        "deep",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "la-ligne-coupe-apres-hugo",
+        "storySource": "user",
+        "sentence": "Sa voix est claire.",
+        "targetWord": "claire",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avant",
+    "sentence": "Elle veut dire une chose [[avant]] son départ.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "before",
+      "options": [
+        "before",
+        "after",
+        "during",
+        "without"
+      ],
+      "audioClip": {
+        "storySlug": "la-ligne-coupe-apres-hugo",
+        "storySource": "user",
+        "sentence": "Elle veut dire une chose avant son départ.",
+        "targetWord": "avant",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "demander",
+    "sentence": "“Tu es triste?”, [[demande]]-t-il.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to ask",
+      "options": [
+        "to ask",
+        "to answer",
+        "to shout",
+        "to smile"
+      ],
+      "audioClip": {
+        "storySlug": "la-ligne-coupe-apres-hugo",
+        "storySource": "user",
+        "sentence": "“Tu es triste?”, demande-t-il.",
+        "targetWord": "demande",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "juste",
+    "sentence": "“[[Juste]] bonjour”, répond-elle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "only",
+      "options": [
+        "only",
+        "again",
+        "already",
+        "never"
+      ],
+      "audioClip": {
+        "storySlug": "la-ligne-coupe-apres-hugo",
+        "storySource": "user",
+        "sentence": "“Juste bonjour”, répond-elle.",
+        "targetWord": "Juste",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pas du tout",
+    "sentence": "“Tu es triste?” “[[Pas du tout]].”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "not at all",
+      "options": [
+        "not at all",
+        "a little",
+        "very much",
+        "sometimes"
+      ],
+      "audioClip": {
+        "storySlug": "la-ligne-coupe-apres-hugo",
+        "storySource": "user",
+        "sentence": "“Tu es triste?” “Pas du tout.”",
+        "targetWord": "Pas du tout",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "deux",
+    "sentence": "J'ai _____ yeux et un nez.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "deux",
+      "options": [
+        "deux",
+        "trois",
+        "six",
+        "dix"
+      ],
+      "translation": "I have _____ eyes and one nose.",
+      "optionTranslations": [
+        "two",
+        "three",
+        "six",
+        "ten"
+      ],
+      "audioClip": {
+        "storySlug": "la-ligne-coupe-apres-hugo",
+        "storySource": "user",
+        "sentence": "J'ai deux yeux et un nez.",
+        "targetWord": "deux",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "ferme",
+    "sentence": "Il fait froid, alors je _____ la fenêtre.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ferme",
+      "options": [
+        "ferme",
+        "lave",
+        "peins",
+        "casse"
+      ],
+      "translation": "It is cold, so I _____ the window.",
+      "optionTranslations": [
+        "close",
+        "wash",
+        "paint",
+        "break"
+      ],
+      "audioClip": {
+        "storySlug": "la-ligne-coupe-apres-hugo",
+        "storySource": "user",
+        "sentence": "Il fait froid, alors je ferme la fenêtre.",
+        "targetWord": "ferme",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "le seau,l'éponge,le robinet,la boîte à outils",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "le seau",
+     "answer": "a bucket",
+     "options": [
+      "a bucket",
+      "a sponge",
+      "a tap",
+      "a toolbox"
+     ]
+    },
+    {
+     "word": "l'éponge",
+     "answer": "a sponge",
+     "options": [
+      "a bucket",
+      "a sponge",
+      "a tap",
+      "a toolbox"
+     ]
+    },
+    {
+     "word": "le robinet",
+     "answer": "a tap",
+     "options": [
+      "a bucket",
+      "a sponge",
+      "a tap",
+      "a toolbox"
+     ]
+    },
+    {
+     "word": "la boîte à outils",
+     "answer": "a toolbox",
+     "options": [
+      "a bucket",
+      "a sponge",
+      "a tap",
+      "a toolbox"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la goutte",
+  "sentence": "Une [[goutte]] tombe du robinet.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a drop",
+   "options": [
+    "a drop",
+    "a stone",
+    "a leaf",
+    "a coin"
+   ],
+   "audioClip": {
+    "storySlug": "une-goutte-chaque-nuit",
+    "storySource": "user",
+    "sentence": "Une goutte tombe du robinet.",
+    "targetWord": "goutte",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "coule",
+  "sentence": "Le robinet est ouvert et l'eau _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "coule",
+   "options": [
+    "coule",
+    "brûle",
+    "dort",
+    "chante"
+   ],
+   "translation": "The tap is open and the water _____.",
+   "optionTranslations": [
+    "runs",
+    "burns",
+    "sleeps",
+    "sings"
+   ],
+   "audioClip": {
+    "storySlug": "une-goutte-chaque-nuit",
+    "storySource": "user",
+    "sentence": "Le robinet est ouvert et l'eau coule.",
+    "targetWord": "coule",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chaque nuit",
+  "sentence": "Elle écoute les gouttes [[chaque nuit]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "every night",
+   "options": [
+    "every night",
+    "last night",
+    "all night long",
+    "one night"
+   ],
+   "audioClip": {
+    "storySlug": "une-goutte-chaque-nuit",
+    "storySource": "user",
+    "sentence": "Elle écoute les gouttes chaque nuit.",
+    "targetWord": "chaque nuit",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "répare",
+  "sentence": "Le vélo est cassé; il le _____ avec ses outils.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "répare",
+   "options": [
+    "répare",
+    "lave",
+    "vend",
+    "prête"
+   ],
+   "translation": "The bike is broken; he _____ it with his tools.",
+   "optionTranslations": [
+    "repairs",
+    "washes",
+    "sells",
+    "lends"
+   ],
+   "audioClip": {
+    "storySlug": "une-goutte-chaque-nuit",
+    "storySource": "user",
+    "sentence": "Le vélo est cassé; il le répare avec ses outils.",
+    "targetWord": "répare",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dessous",
+  "sentence": "Il met un seau [[dessous]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "underneath",
+   "options": [
+    "underneath",
+    "on top",
+    "next to it",
+    "behind it"
+   ],
+   "audioClip": {
+    "storySlug": "une-goutte-chaque-nuit",
+    "storySource": "user",
+    "sentence": "Il met un seau dessous.",
+    "targetWord": "dessous",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tourner",
+  "sentence": "Il [[tourne]], et l'eau coule partout.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to turn",
+   "options": [
+    "to turn",
+    "to pull",
+    "to push",
+    "to hit"
+   ],
+   "audioClip": {
+    "storySlug": "une-goutte-chaque-nuit",
+    "storySource": "user",
+    "sentence": "Il tourne, et l'eau coule partout.",
+    "targetWord": "tourne",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le tuyau",
+  "sentence": "Le [[tuyau]] est sale.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a pipe",
+   "options": [
+    "a pipe",
+    "a wire",
+    "a plug",
+    "a lid"
+   ],
+   "audioClip": {
+    "storySlug": "une-goutte-chaque-nuit",
+    "storySource": "user",
+    "sentence": "Le tuyau est sale.",
+    "targetWord": "tuyau",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "serrer",
+  "sentence": "Il [[serre]] le tuyau.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to tighten",
+   "options": [
+    "to tighten",
+    "to cut",
+    "to wash",
+    "to paint"
+   ],
+   "audioClip": {
+    "storySlug": "une-goutte-chaque-nuit",
+    "storySource": "user",
+    "sentence": "Il serre le tuyau.",
+    "targetWord": "serre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "propre",
+  "sentence": "Le sol est [[propre]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clean",
+   "options": [
+    "clean",
+    "wet",
+    "dark",
+    "cold"
+   ],
+   "audioClip": {
+    "storySlug": "une-goutte-chaque-nuit",
+    "storySource": "user",
+    "sentence": "Le sol est propre.",
+    "targetWord": "propre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "sale",
+  "sentence": "Après le match de foot, son t-shirt est très _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sale",
+   "options": [
+    "sale",
+    "cher",
+    "léger",
+    "joli"
+   ],
+   "translation": "After the football match, his T-shirt is very _____.",
+   "optionTranslations": [
+    "dirty",
+    "expensive",
+    "light",
+    "pretty"
+   ],
+   "audioClip": {
+    "storySlug": "une-goutte-chaque-nuit",
+    "storySource": "user",
+    "sentence": "Après le match de foot, son t-shirt est très sale.",
+    "targetWord": "sale",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la raison",
+  "sentence": "“Tu as [[raison]]”, répond-il.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "being right",
+   "options": [
+    "being right",
+    "being lucky",
+    "being hungry",
+    "being late"
+   ],
+   "audioClip": {
+    "storySlug": "une-goutte-chaque-nuit",
+    "storySource": "user",
+    "sentence": "“Tu as raison”, répond-il.",
+    "targetWord": "raison",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bravo",
+  "sentence": "“[[Bravo]]! Tu ne sais pas réparer.”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Well done!",
+   "options": [
+    "Well done!",
+    "Good night!",
+    "Excuse me!",
+    "Hurry up!"
+   ],
+   "audioClip": {
+    "storySlug": "une-goutte-chaque-nuit",
+    "storySource": "user",
+    "sentence": "“Bravo! Tu ne sais pas réparer.”",
+    "targetWord": "Bravo",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ça y est",
+  "sentence": "“[[Ça y est]]. Fini”, dit-il.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "That's it",
+   "options": [
+    "That's it",
+    "Not yet",
+    "Oh no",
+    "Wait a moment"
+   ],
+   "audioClip": {
+    "storySlug": "une-goutte-chaque-nuit",
+    "storySource": "user",
+    "sentence": "“Ça y est. Fini”, dit-il.",
+    "targetWord": "Ça y est",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fini",
+  "sentence": "“Ça y est. [[Fini]]”, dit-il.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "finished",
+   "options": [
+    "finished",
+    "started",
+    "broken",
+    "stuck"
+   ],
+   "audioClip": {
+    "storySlug": "une-goutte-chaque-nuit",
+    "storySource": "user",
+    "sentence": "“Ça y est. Fini”, dit-il.",
+    "targetWord": "Fini",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "voilà",
+  "sentence": "“[[Voilà]]. Maintenant, tu n'as plus besoin de moi.”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "There you go",
+   "options": [
+    "There you go",
+    "Excuse me",
+    "Good luck",
+    "See you soon"
+   ],
+   "audioClip": {
+    "storySlug": "une-goutte-chaque-nuit",
+    "storySource": "user",
+    "sentence": "“Voilà. Maintenant, tu n'as plus besoin de moi.”",
+    "targetWord": "Voilà",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tout seul",
+  "sentence": "Elle est [[toute seule]] avec le silence.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on your own",
+   "options": [
+    "on your own",
+    "with a friend",
+    "very quiet",
+    "half asleep"
+   ],
+   "audioClip": {
+    "storySlug": "une-goutte-chaque-nuit",
+    "storySource": "user",
+    "sentence": "Elle est toute seule avec le silence.",
+    "targetWord": "toute seule",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

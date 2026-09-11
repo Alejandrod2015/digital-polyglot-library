@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la boule,le platane,le banc,le cochonnet",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la boule",
+     "answer": "a heavy metal ball",
+     "options": [
+      "a heavy metal ball",
+      "a big shade tree",
+      "a long outdoor seat",
+      "a small target ball"
+     ]
+    },
+    {
+     "word": "le platane",
+     "answer": "a big shade tree",
+     "options": [
+      "a heavy metal ball",
+      "a big shade tree",
+      "a long outdoor seat",
+      "a small target ball"
+     ]
+    },
+    {
+     "word": "le banc",
+     "answer": "a long outdoor seat",
+     "options": [
+      "a heavy metal ball",
+      "a big shade tree",
+      "a long outdoor seat",
+      "a small target ball"
+     ]
+    },
+    {
+     "word": "le cochonnet",
+     "answer": "a small target ball",
+     "options": [
+      "a heavy metal ball",
+      "a big shade tree",
+      "a long outdoor seat",
+      "a small target ball"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la pétanque",
+  "sentence": "Ils jouent à la [[pétanque]] chaque dimanche.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a game with metal balls",
+   "options": [
+    "a game with metal balls",
+    "a game with cards",
+    "a game with dice",
+    "a game with rackets"
+   ],
+   "audioClip": {
+    "storySlug": "une-boule-sous-le-platane",
+    "storySource": "user",
+    "sentence": "Ils jouent à la pétanque chaque dimanche.",
+    "targetWord": "pétanque",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la placette",
+  "sentence": "Elle a un café sur la [[placette]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a small square",
+   "options": [
+    "a small square",
+    "a narrow street",
+    "a big market",
+    "a small garden"
+   ],
+   "audioClip": {
+    "storySlug": "une-boule-sous-le-platane",
+    "storySource": "user",
+    "sentence": "Elle a un café sur la placette.",
+    "targetWord": "placette",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "perdre",
+  "sentence": "Il gagne toujours, et elle [[perd]] toujours.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to lose",
+   "options": [
+    "to lose",
+    "to cheat",
+    "to shout",
+    "to wait"
+   ],
+   "audioClip": {
+    "storySlug": "une-boule-sous-le-platane",
+    "storySource": "user",
+    "sentence": "Il gagne toujours, et elle perd toujours.",
+    "targetWord": "perd",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lancer",
+  "sentence": "Il [[lance]] le cochonnet, vite.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to throw",
+   "options": [
+    "to throw",
+    "to catch",
+    "to hide",
+    "to carry"
+   ],
+   "audioClip": {
+    "storySlug": "une-boule-sous-le-platane",
+    "storySource": "user",
+    "sentence": "Il lance le cochonnet, vite.",
+    "targetWord": "lance",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rouler",
+  "sentence": "Sa boule [[roule]] tout près.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to roll",
+   "options": [
+    "to roll",
+    "to fly",
+    "to sink",
+    "to break"
+   ],
+   "audioClip": {
+    "storySlug": "une-boule-sous-le-platane",
+    "storySource": "user",
+    "sentence": "Sa boule roule tout près.",
+    "targetWord": "roule",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "près",
+  "sentence": "“Très [[près]]. Génial!”, dit-il.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "near",
+   "options": [
+    "near",
+    "far",
+    "behind",
+    "above"
+   ],
+   "audioClip": {
+    "storySlug": "une-boule-sous-le-platane",
+    "storySource": "user",
+    "sentence": "“Très près. Génial!”, dit-il.",
+    "targetWord": "près",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quitter",
+  "sentence": "Je [[quitte]] Marseille.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to leave for good",
+   "options": [
+    "to leave for good",
+    "to visit for a day",
+    "to come back to",
+    "to know well"
+   ],
+   "audioClip": {
+    "storySlug": "une-boule-sous-le-platane",
+    "storySource": "user",
+    "sentence": "Je quitte Marseille.",
+    "targetWord": "quitte",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "triste",
+  "sentence": "Il pleure parce qu'il est _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "triste",
+   "options": [
+    "triste",
+    "riche",
+    "grand",
+    "drôle"
+   ],
+   "translation": "He is crying because he is _____.",
+   "optionTranslations": [
+    "sad",
+    "rich",
+    "tall",
+    "funny"
+   ],
+   "audioClip": {
+    "storySlug": "une-boule-sous-le-platane",
+    "storySource": "user",
+    "sentence": "Il pleure parce qu'il est triste.",
+    "targetWord": "triste",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "départ",
+  "sentence": "Les valises sont prêtes pour le _____ en vacances.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "départ",
+   "options": [
+    "départ",
+    "repas",
+    "marché",
+    "bureau"
+   ],
+   "translation": "The suitcases are ready for the _____ on holiday.",
+   "optionTranslations": [
+    "departure",
+    "meal",
+    "market",
+    "office"
+   ],
+   "audioClip": {
+    "storySlug": "une-boule-sous-le-platane",
+    "storySource": "user",
+    "sentence": "Les valises sont prêtes pour le départ en vacances.",
+    "targetWord": "départ",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "à toi",
+  "sentence": "“[[À toi]]”, répond-il.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "your turn",
+   "options": [
+    "your turn",
+    "my turn",
+    "good luck",
+    "well done"
+   ],
+   "audioClip": {
+    "storySlug": "une-boule-sous-le-platane",
+    "storySource": "user",
+    "sentence": "“À toi”, répond-il.",
+    "targetWord": "À toi",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rond",
+  "sentence": "Elle prend sa boule [[ronde]] et froide.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "round",
+   "options": [
+    "round",
+    "square",
+    "soft",
+    "flat"
+   ],
+   "audioClip": {
+    "storySlug": "une-boule-sous-le-platane",
+    "storySource": "user",
+    "sentence": "Elle prend sa boule ronde et froide.",
+    "targetWord": "ronde",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vraiment",
+  "sentence": "“Tu perds pour moi? [[Vraiment]]?”, demande-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "really",
+   "options": [
+    "really",
+    "maybe",
+    "never",
+    "already"
+   ],
+   "audioClip": {
+    "storySlug": "une-boule-sous-le-platane",
+    "storySource": "user",
+    "sentence": "“Tu perds pour moi? Vraiment?”, demande-t-elle.",
+    "targetWord": "Vraiment",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le jeu",
+  "sentence": "“Non. C'est un [[jeu]]”, répond-il.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a game",
+   "options": [
+    "a game",
+    "a job",
+    "a joke",
+    "a race"
+   ],
+   "audioClip": {
+    "storySlug": "une-boule-sous-le-platane",
+    "storySource": "user",
+    "sentence": "“Non. C'est un jeu”, répond-il.",
+    "targetWord": "jeu",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "partir",
+  "sentence": "Il joue mal, et sa boule [[part]] loin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go away",
+   "options": [
+    "to go away",
+    "to come back",
+    "to stop",
+    "to fall down"
+   ],
+   "audioClip": {
+    "storySlug": "une-boule-sous-le-platane",
+    "storySource": "user",
+    "sentence": "Il joue mal, et sa boule part loin.",
+    "targetWord": "part",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mars",
+  "sentence": "Je pars à Paris en [[mars]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the third month",
+   "options": [
+    "the third month",
+    "the first month",
+    "the fifth month",
+    "the last month"
+   ],
+   "audioClip": {
+    "storySlug": "une-boule-sous-le-platane",
+    "storySource": "user",
+    "sentence": "Je pars à Paris en mars.",
+    "targetWord": "mars",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "loin",
+  "sentence": "La mer est _____: il faut prendre le train.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "loin",
+   "options": [
+    "loin",
+    "ici",
+    "dehors",
+    "devant"
+   ],
+   "translation": "The sea is _____: you have to take the train.",
+   "optionTranslations": [
+    "far",
+    "here",
+    "outside",
+    "in front"
+   ],
+   "audioClip": {
+    "storySlug": "une-boule-sous-le-platane",
+    "storySource": "user",
+    "sentence": "La mer est loin: il faut prendre le train.",
+    "targetWord": "loin",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

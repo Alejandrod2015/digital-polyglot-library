@@ -1,0 +1,68 @@
+{
+ "au-dessus": {
+  "es": "Le ciel est rouge au-dessus du Panier.",
+  "en": "The sky is red above the Panier.",
+  "g": "above (au-dessus de)"
+ },
+ "elle": {
+  "es": "Elle les nettoie avec un chiffon.",
+  "en": "She cleans them with a cloth.",
+  "g": "she (elle)"
+ },
+ "encore": {
+  "es": "Le gravier est encore chaud.",
+  "en": "The gravel is still warm.",
+  "g": "still (encore)"
+ },
+ "il": {
+  "es": "Il ne dit jamais non à Léa.",
+  "en": "He never says no to Léa.",
+  "g": "he (il)"
+ },
+ "joue": {
+  "es": "Léa espère, mais ce soir, il joue bien.",
+  "en": "Léa hopes, but this evening he plays well.",
+  "g": "plays (jouer)"
+ },
+ "ne": {
+  "es": "Il ne dit jamais non à Léa.",
+  "en": "He never says no to Léa.",
+  "g": "not (ne ... jamais: never)"
+ },
+ "pas": {
+  "es": "Hugo n'est pas sûr.",
+  "en": "Hugo isn't sure.",
+  "g": "not (ne ... pas)"
+ },
+ "plaisir": {
+  "es": "Avec plaisir",
+  "en": "Gladly",
+  "g": "gladly (avec plaisir)"
+ },
+ "plus": {
+  "es": "Ma boule est plus près",
+  "en": "My boule is closer",
+  "g": "more; plus près, closer"
+ },
+ "restes": {
+  "es": "Si je gagne, tu restes",
+  "en": "If I win, you stay",
+  "g": "you stay (rester)",
+  "t": "verb"
+ },
+ "si": {
+  "es": "Si je gagne, tu restes",
+  "en": "If I win, you stay",
+  "g": "if (si)"
+ },
+ "sort": {
+  "es": "Léa sort les boules de son sac.",
+  "en": "Léa takes the boules out of her bag.",
+  "g": "takes out (sortir)"
+ },
+ "tout": {
+  "es": "C'est tout",
+  "en": "That's all",
+  "g": "all; that's all (c'est tout)"
+ }
+}

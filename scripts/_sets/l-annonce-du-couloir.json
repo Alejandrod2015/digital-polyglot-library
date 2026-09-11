@@ -1,0 +1,433 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "la boîte aux lettres,la cave,la poignée,le volet",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "la boîte aux lettres",
+          "answer": "a letterbox",
+          "options": [
+            "a letterbox",
+            "a cellar",
+            "a door handle",
+            "a window shutter"
+          ]
+        },
+        {
+          "word": "la cave",
+          "answer": "a cellar",
+          "options": [
+            "a letterbox",
+            "a cellar",
+            "a door handle",
+            "a window shutter"
+          ]
+        },
+        {
+          "word": "la poignée",
+          "answer": "a door handle",
+          "options": [
+            "a letterbox",
+            "a cellar",
+            "a door handle",
+            "a window shutter"
+          ]
+        },
+        {
+          "word": "le volet",
+          "answer": "a window shutter",
+          "options": [
+            "a letterbox",
+            "a cellar",
+            "a door handle",
+            "a window shutter"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "l'annonce",
+    "sentence": "Elle lit l'[[annonce]] sur la boîte aux lettres.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a written notice",
+      "options": [
+        "a written notice",
+        "a private letter",
+        "a paid bill",
+        "a door key"
+      ],
+      "audioClip": {
+        "storySlug": "l-annonce-du-couloir",
+        "storySource": "user",
+        "sentence": "Elle lit l'annonce sur la boîte aux lettres.",
+        "targetWord": "annonce",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "louer",
+    "sentence": "Aujourd'hui, il a une annonce: “À [[louer]].”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to rent out",
+      "options": [
+        "to rent out",
+        "to sell",
+        "to repair",
+        "to visit"
+      ],
+      "audioClip": {
+        "storySlug": "l-annonce-du-couloir",
+        "storySource": "user",
+        "sentence": "Aujourd'hui, il a une annonce: “À louer.”",
+        "targetWord": "louer",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "déménager",
+    "sentence": "Il [[déménage]] en mars.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to move out",
+      "options": [
+        "to move out",
+        "to come back",
+        "to stay on",
+        "to fall ill"
+      ],
+      "audioClip": {
+        "storySlug": "l-annonce-du-couloir",
+        "storySource": "user",
+        "sentence": "Il déménage en mars.",
+        "targetWord": "déménage",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le locataire",
+    "sentence": "Demain, je choisis un [[locataire]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a tenant",
+      "options": [
+        "a tenant",
+        "a landlord",
+        "a neighbour",
+        "a builder"
+      ],
+      "audioClip": {
+        "storySlug": "l-annonce-du-couloir",
+        "storySource": "user",
+        "sentence": "Demain, je choisis un locataire.",
+        "targetWord": "locataire",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en haut",
+    "sentence": "L'appartement [[en haut]] est déjà presque vide.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "upstairs",
+      "options": [
+        "upstairs",
+        "downstairs",
+        "next door",
+        "across the street"
+      ],
+      "audioClip": {
+        "storySlug": "l-annonce-du-couloir",
+        "storySource": "user",
+        "sentence": "L'appartement en haut est déjà presque vide.",
+        "targetWord": "en haut",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "libre",
+    "sentence": "Je veux l'appartement [[libre]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "empty",
+      "options": [
+        "empty",
+        "free of charge",
+        "clean",
+        "locked"
+      ],
+      "audioClip": {
+        "storySlug": "l-annonce-du-couloir",
+        "storySource": "user",
+        "sentence": "Je veux l'appartement libre.",
+        "targetWord": "libre",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le couloir",
+    "sentence": "Le [[couloir]] est froid.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a hallway",
+      "options": [
+        "a hallway",
+        "a kitchen",
+        "a bedroom",
+        "a roof"
+      ],
+      "audioClip": {
+        "storySlug": "l-annonce-du-couloir",
+        "storySource": "user",
+        "sentence": "Le couloir est froid.",
+        "targetWord": "couloir",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pas encore",
+    "sentence": "Il ne part [[pas encore]]!",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "not yet",
+      "options": [
+        "not yet",
+        "not any more",
+        "never again",
+        "not at all"
+      ],
+      "audioClip": {
+        "storySlug": "l-annonce-du-couloir",
+        "storySource": "user",
+        "sentence": "Il ne part pas encore!",
+        "targetWord": "pas encore",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "vends",
+    "sentence": "Je _____ mon vieux vélo: le voisin me donne de l'argent.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vends",
+      "options": [
+        "vends",
+        "lave",
+        "répare",
+        "peins"
+      ],
+      "translation": "I _____ my old bike: the neighbour gives me money.",
+      "optionTranslations": [
+        "sell",
+        "wash",
+        "repair",
+        "paint"
+      ],
+      "audioClip": {
+        "storySlug": "l-annonce-du-couloir",
+        "storySource": "user",
+        "sentence": "Je vends mon vieux vélo: le voisin me donne de l'argent.",
+        "targetWord": "vends",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "d'habitude",
+    "sentence": "[[D'habitude]], il vient le lundi, tard.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "usually",
+      "options": [
+        "usually",
+        "rarely",
+        "never",
+        "for once"
+      ],
+      "audioClip": {
+        "storySlug": "l-annonce-du-couloir",
+        "storySource": "user",
+        "sentence": "D'habitude, il vient le lundi, tard.",
+        "targetWord": "D'habitude",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rien",
+    "sentence": "Elle sait, mais elle ne dit [[rien]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nothing",
+      "options": [
+        "nothing",
+        "everything",
+        "something",
+        "a lot"
+      ],
+      "audioClip": {
+        "storySlug": "l-annonce-du-couloir",
+        "storySource": "user",
+        "sentence": "Elle sait, mais elle ne dit rien.",
+        "targetWord": "rien",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tout de suite",
+    "sentence": "Il veut louer l'appartement [[tout de suite]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "right away",
+      "options": [
+        "right away",
+        "next year",
+        "very slowly",
+        "later on"
+      ],
+      "audioClip": {
+        "storySlug": "l-annonce-du-couloir",
+        "storySource": "user",
+        "sentence": "Il veut louer l'appartement tout de suite.",
+        "targetWord": "tout de suite",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "désolé",
+    "sentence": "“[[Désolé]]”, répond-il.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sorry",
+      "options": [
+        "sorry",
+        "grateful",
+        "proud",
+        "angry"
+      ],
+      "audioClip": {
+        "storySlug": "l-annonce-du-couloir",
+        "storySource": "user",
+        "sentence": "“Désolé”, répond-il.",
+        "targetWord": "Désolé",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "méchant",
+    "sentence": "Je ne suis pas [[méchant]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "mean",
+      "options": [
+        "mean",
+        "kind",
+        "lazy",
+        "busy"
+      ],
+      "audioClip": {
+        "storySlug": "l-annonce-du-couloir",
+        "storySource": "user",
+        "sentence": "Je ne suis pas méchant.",
+        "targetWord": "méchant",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cent",
+    "sentence": "Un siècle, c'est _____ ans.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cent",
+      "options": [
+        "cent",
+        "mille",
+        "vingt",
+        "douze"
+      ],
+      "translation": "A century is _____ years.",
+      "optionTranslations": [
+        "a hundred",
+        "a thousand",
+        "twenty",
+        "twelve"
+      ],
+      "audioClip": {
+        "storySlug": "l-annonce-du-couloir",
+        "storySource": "user",
+        "sentence": "Un siècle, c'est cent ans.",
+        "targetWord": "cent",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "demain",
+    "sentence": "Aujourd'hui, c'est lundi, et _____, c'est mardi.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "demain",
+      "options": [
+        "demain",
+        "hier",
+        "toujours",
+        "souvent"
+      ],
+      "translation": "Today is Monday, and _____ is Tuesday.",
+      "optionTranslations": [
+        "tomorrow",
+        "yesterday",
+        "always",
+        "often"
+      ],
+      "audioClip": {
+        "storySlug": "l-annonce-du-couloir",
+        "storySource": "user",
+        "sentence": "Aujourd'hui, c'est lundi, et demain, c'est mardi.",
+        "targetWord": "demain",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
+]

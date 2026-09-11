@@ -1,0 +1,82 @@
+{
+ "a": {
+  "es": "Au petit-déjeuner, Hugo a un pain au chocolat.",
+  "en": "At breakfast, Hugo has a chocolate croissant.",
+  "g": "has (avoir)"
+ },
+ "bon": {
+  "es": "Bon retour, Hugo!",
+  "en": "Welcome back, Hugo!",
+  "g": "good; welcome back (bon retour)"
+ },
+ "café": {
+  "es": "Il dort sur le long canapé du café.",
+  "en": "He sleeps on the long sofa in the café.",
+  "g": "café (le café)"
+ },
+ "elle": {
+  "es": "Elle touche le cochonnet.",
+  "en": "It touches the jack.",
+  "g": "it (elle: the boule)"
+ },
+ "en": {
+  "es": "Un samedi d'avril, Hugo arrive en TGV, heureux.",
+  "en": "One Saturday in April, Hugo arrives by TGV, happy.",
+  "g": "by, on (en TGV: by TGV); to (en treize points)"
+ },
+ "encore": {
+  "es": "Il mange encore un peu.",
+  "en": "He eats a little more.",
+  "g": "a little more (encore un peu)"
+ },
+ "il": {
+  "es": "Il dort sur le long canapé du café.",
+  "en": "He sleeps on the long sofa in the café.",
+  "g": "he (il)"
+ },
+ "joue": {
+  "es": "On joue en treize points.",
+  "en": "We play to thirteen points.",
+  "g": "play (jouer)"
+ },
+ "maison": {
+  "es": "Ici, tu es toujours à la maison",
+  "en": "Here, you are always at home",
+  "g": "at home (à la maison)"
+ },
+ "ne": {
+  "es": "Mais personne ne triche",
+  "en": "But nobody cheats",
+  "g": "not (personne ne: nobody)"
+ },
+ "pas": {
+  "es": "Pas encore!",
+  "en": "Not yet!",
+  "g": "not (pas encore: not yet)"
+ },
+ "peu": {
+  "es": "Il mange encore un peu.",
+  "en": "He eats a little more.",
+  "g": "a little (encore un peu: a little more)"
+ },
+ "retour": {
+  "es": "Bon retour, Hugo!",
+  "en": "Welcome back, Hugo!",
+  "g": "welcome back (bon retour)"
+ },
+ "sent": {
+  "es": "Le café sent la baguette.",
+  "en": "The café smells of baguette.",
+  "g": "smells of (sentir)"
+ },
+ "tire": {
+  "es": "Hugo tire droit.",
+  "en": "Hugo shoots straight.",
+  "g": "shoots, in pétanque (tirer)"
+ },
+ "toujours": {
+  "es": "Ici, tu es toujours à la maison",
+  "en": "Here, you are always at home",
+  "g": "always (toujours)"
+ }
+}

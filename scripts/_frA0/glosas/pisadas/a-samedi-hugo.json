@@ -1,0 +1,52 @@
+{
+ "bon": {
+  "es": "Bon voyage, Hugo",
+  "en": "Have a good trip, Hugo",
+  "g": "good; have a good trip (bon voyage)"
+ },
+ "elle": {
+  "es": "Elle est lourde!",
+  "en": "It is heavy!",
+  "g": "it (elle: the suitcase)"
+ },
+ "en": {
+  "es": "Clara est une nouvelle locataire, en manteau jaune.",
+  "en": "Clara is a new tenant, in a yellow coat.",
+  "g": "in, wearing (en)"
+ },
+ "il": {
+  "es": "Il met la valise dans le coffre.",
+  "en": "He puts the suitcase in the boot.",
+  "g": "he (il)"
+ },
+ "ne": {
+  "es": "Léa ne peut rien dire.",
+  "en": "Léa can't say anything.",
+  "g": "not (ne ... rien: nothing)"
+ },
+ "pas": {
+  "es": "Je ne veux pas pleurer.",
+  "en": "I don't want to cry.",
+  "g": "not (ne ... pas)"
+ },
+ "rien": {
+  "es": "Léa ne peut rien dire.",
+  "en": "Léa can't say anything.",
+  "g": "nothing (ne ... rien)"
+ },
+ "serre": {
+  "es": "Léa serre le cochonnet dans sa poche.",
+  "en": "Léa squeezes the jack in her pocket.",
+  "g": "squeezes (serrer)"
+ },
+ "sort": {
+  "es": "Une femme sort d'un taxi, avec son chien.",
+  "en": "A woman gets out of a taxi, with her dog.",
+  "g": "gets out (sortir)"
+ },
+ "voyage": {
+  "es": "Bon voyage, Hugo",
+  "en": "Have a good trip, Hugo",
+  "g": "trip; have a good trip (bon voyage)"
+ }
+}

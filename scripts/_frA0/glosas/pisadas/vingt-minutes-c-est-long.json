@@ -1,0 +1,63 @@
+{
+ "bas": {
+  "es": "L'arrêt du bus est en bas.",
+  "en": "The bus stop is downstairs.",
+  "g": "downstairs, down below (en bas)"
+ },
+ "besoin": {
+  "es": "Mais je n'ai pas besoin de voiture.",
+  "en": "But I don't need a car.",
+  "g": "to need (avoir besoin de)"
+ },
+ "elle": {
+  "es": "Elle ne la regarde pas.",
+  "en": "She doesn't look at it.",
+  "g": "she (elle)"
+ },
+ "en": {
+  "es": "À Paris, Hugo habite en face du métro.",
+  "en": "In Paris, Hugo lives opposite the metro.",
+  "g": "in; en face de, opposite"
+ },
+ "il": {
+  "es": "et il part tard.",
+  "en": "and he leaves late.",
+  "g": "he (il)"
+ },
+ "montre": {
+  "es": "Léa pose sa montre sur la table.",
+  "en": "Léa puts her watch down on the table.",
+  "g": "watch (la montre)",
+  "t": "noun"
+ },
+ "ne": {
+  "es": "Hugo ne comprend pas.",
+  "en": "Hugo doesn't understand.",
+  "g": "not (ne ... pas)"
+ },
+ "pas": {
+  "es": "Ce n'est pas loin.",
+  "en": "It isn't far.",
+  "g": "not (ne ... pas)"
+ },
+ "peu": {
+  "es": "Tu marches un peu?",
+  "en": "Do you walk a bit?",
+  "g": "a little (un peu)"
+ },
+ "pied": {
+  "es": "à dix minutes à pied.",
+  "en": "ten minutes on foot.",
+  "g": "on foot (à pied)"
+ },
+ "tout": {
+  "es": "Tout est près.",
+  "en": "Everything is near.",
+  "g": "everything (tout)"
+ },
+ "va": {
+  "es": "Et le métro va vite?",
+  "en": "And is the metro fast?",
+  "g": "goes (aller)"
+ }
+}

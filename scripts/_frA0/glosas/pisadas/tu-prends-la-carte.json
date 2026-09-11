@@ -1,0 +1,32 @@
+{
+ "elle": {
+  "es": "Elle sert un café noir.",
+  "en": "She serves a black coffee.",
+  "g": "she (elle)"
+ },
+ "grave": {
+  "es": "Pas grave.",
+  "en": "No problem.",
+  "g": "no problem (pas grave)"
+ },
+ "il": {
+  "es": "Il vient de Paris.",
+  "en": "He comes from Paris.",
+  "g": "he (il)"
+ },
+ "ne": {
+  "es": "Léa ne veut pas trouver Maxime sympa.",
+  "en": "Léa doesn't want to find Maxime nice.",
+  "g": "not (ne ... pas)"
+ },
+ "pas": {
+  "es": "Léa ne veut pas trouver Maxime sympa.",
+  "en": "Léa doesn't want to find Maxime nice.",
+  "g": "not (ne ... pas)"
+ },
+ "trouver": {
+  "es": "Léa ne veut pas trouver Maxime sympa.",
+  "en": "Léa doesn't want to find Maxime nice.",
+  "g": "to think someone is (trouver)"
+ }
+}

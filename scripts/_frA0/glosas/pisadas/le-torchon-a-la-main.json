@@ -1,0 +1,83 @@
+{
+ "a": {
+  "es": "mais il n'y a pas de sonnette.",
+  "en": "but there is no doorbell.",
+  "g": "there is (il y a)"
+ },
+ "bas": {
+  "es": "Le métro est en bas",
+  "en": "The metro is downstairs",
+  "g": "downstairs, down below (en bas)"
+ },
+ "bon": {
+  "es": "Bon.",
+  "en": "Well.",
+  "g": "well, OK (bon)"
+ },
+ "cher": {
+  "es": "Il est petit, et je paie cher.",
+  "en": "It is small, and I pay a lot.",
+  "g": "a lot, dearly (payer cher)",
+  "t": "adverb"
+ },
+ "elle": {
+  "es": "Elle les pose sur l'étagère.",
+  "en": "She puts them on the shelf.",
+  "g": "she (elle)"
+ },
+ "en": {
+  "es": "Le métro est en bas",
+  "en": "The metro is downstairs",
+  "g": "in; en bas, downstairs"
+ },
+ "entre": {
+  "es": "Hugo entre avec son portable.",
+  "en": "Hugo comes in with his phone.",
+  "g": "comes in (entrer)"
+ },
+ "il": {
+  "es": "Il est heureux.",
+  "en": "He is happy.",
+  "g": "he (il)"
+ },
+ "maison": {
+  "es": "Il monte là-haut, à la maison.",
+  "en": "He goes up there, home.",
+  "g": "at home (à la maison)"
+ },
+ "montre": {
+  "es": "Léa, je te montre l'appartement!",
+  "en": "Léa, I'll show you the flat!",
+  "g": "show, shows (montrer)"
+ },
+ "ne": {
+  "es": "Elle ne veut pas écouter",
+  "en": "She doesn't want to listen",
+  "g": "not (ne ... pas)"
+ },
+ "pas": {
+  "es": "Elle ne veut pas écouter",
+  "en": "She doesn't want to listen",
+  "g": "not (ne ... pas)"
+ },
+ "reste": {
+  "es": "Hugo reste moins d'une minute.",
+  "en": "Hugo stays less than a minute.",
+  "g": "stays (rester)"
+ },
+ "sèche": {
+  "es": "Léa sèche les tasses à l'évier",
+  "en": "Léa dries the cups at the sink",
+  "g": "dries (sécher)"
+ },
+ "temps": {
+  "es": "Léa parle tout le temps de Théo.",
+  "en": "Léa talks about Théo all the time.",
+  "g": "all the time (tout le temps)"
+ },
+ "tout": {
+  "es": "Léa parle tout le temps de Théo.",
+  "en": "Léa talks about Théo all the time.",
+  "g": "all the time (tout le temps)"
+ }
+}

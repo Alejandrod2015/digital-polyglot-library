@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la voiture,le port,le réveil,la larme",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la voiture",
+     "answer": "a car",
+     "options": [
+      "a car",
+      "a harbour",
+      "an alarm clock",
+      "a teardrop"
+     ]
+    },
+    {
+     "word": "le port",
+     "answer": "a harbour",
+     "options": [
+      "a car",
+      "a harbour",
+      "an alarm clock",
+      "a teardrop"
+     ]
+    },
+    {
+     "word": "le réveil",
+     "answer": "an alarm clock",
+     "options": [
+      "a car",
+      "a harbour",
+      "an alarm clock",
+      "a teardrop"
+     ]
+    },
+    {
+     "word": "la larme",
+     "answer": "a teardrop",
+     "options": [
+      "a car",
+      "a harbour",
+      "an alarm clock",
+      "a teardrop"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le coffre",
+  "sentence": "Il met la valise dans le [[coffre]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the car boot",
+   "options": [
+    "the car boot",
+    "the car roof",
+    "the car seat",
+    "the car door"
+   ],
+   "audioClip": {
+    "storySlug": "a-samedi-hugo",
+    "storySource": "user",
+    "sentence": "Il met la valise dans le coffre.",
+    "targetWord": "coffre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le mouchoir",
+  "sentence": "Il lui donne un [[mouchoir]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a paper tissue",
+   "options": [
+    "a paper tissue",
+    "a paper bag",
+    "a paper cup",
+    "a paper ticket"
+   ],
+   "audioClip": {
+    "storySlug": "a-samedi-hugo",
+    "storySource": "user",
+    "sentence": "Il lui donne un mouchoir.",
+    "targetWord": "mouchoir",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prêt",
+  "sentence": "“Tu es [[prêt]]?”, demande-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ready",
+   "options": [
+    "ready",
+    "tired",
+    "sure",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "a-samedi-hugo",
+    "storySource": "user",
+    "sentence": "“Tu es prêt?”, demande-t-elle.",
+    "targetWord": "prêt",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "retenir",
+  "sentence": "Elle [[retient]] ses larmes.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hold back",
+   "options": [
+    "to hold back",
+    "to wipe away",
+    "to let out",
+    "to show"
+   ],
+   "audioClip": {
+    "storySlug": "a-samedi-hugo",
+    "storySource": "user",
+    "sentence": "Elle retient ses larmes.",
+    "targetWord": "retient",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bon voyage",
+  "sentence": "“[[Bon voyage]]”, dit-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "have a good trip",
+   "options": [
+    "have a good trip",
+    "have a good day",
+    "have a good meal",
+    "have a good night"
+   ],
+   "audioClip": {
+    "storySlug": "a-samedi-hugo",
+    "storySource": "user",
+    "sentence": "“Bon voyage”, dit-elle.",
+    "targetWord": "Bon voyage",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "au revoir",
+  "sentence": "“[[Au revoir]]”, répond-il.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "goodbye",
+   "options": [
+    "goodbye",
+    "hello",
+    "thank you",
+    "sorry"
+   ],
+   "audioClip": {
+    "storySlug": "a-samedi-hugo",
+    "storySource": "user",
+    "sentence": "“Au revoir”, répond-il.",
+    "targetWord": "Au revoir",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "à samedi",
+  "sentence": "“[[À samedi]], pour jouer?”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "see you Saturday",
+   "options": [
+    "see you Saturday",
+    "see you Sunday",
+    "see you tonight",
+    "see you Monday"
+   ],
+   "audioClip": {
+    "storySlug": "a-samedi-hugo",
+    "storySource": "user",
+    "sentence": "“À samedi, pour jouer?”",
+    "targetWord": "À samedi",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "premier",
+  "sentence": "C'est le [[premier]] jour de mars.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "first",
+   "options": [
+    "first",
+    "last",
+    "only",
+    "next"
+   ],
+   "audioClip": {
+    "storySlug": "a-samedi-hugo",
+    "storySource": "user",
+    "sentence": "C'est le premier jour de mars.",
+    "targetWord": "premier",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pleurer",
+  "sentence": "Ce film est triste, alors elle commence à _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pleurer",
+   "options": [
+    "pleurer",
+    "danser",
+    "courir",
+    "chanter"
+   ],
+   "translation": "This film is sad, so she starts to _____.",
+   "optionTranslations": [
+    "cry",
+    "dance",
+    "run",
+    "sing"
+   ],
+   "audioClip": {
+    "storySlug": "a-samedi-hugo",
+    "storySource": "user",
+    "sentence": "Ce film est triste, alors elle commence à pleurer.",
+    "targetWord": "pleurer",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le klaxon",
+  "sentence": "Le [[klaxon]] sonne.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the car horn",
+   "options": [
+    "the car horn",
+    "the doorbell",
+    "the phone",
+    "the church bell"
+   ],
+   "audioClip": {
+    "storySlug": "a-samedi-hugo",
+    "storySource": "user",
+    "sentence": "Le klaxon sonne.",
+    "targetWord": "klaxon",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sortir",
+  "sentence": "Une femme [[sort]] d'un taxi, avec son chien.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to get out",
+   "options": [
+    "to get out",
+    "to get in",
+    "to wave at",
+    "to call"
+   ],
+   "audioClip": {
+    "storySlug": "a-samedi-hugo",
+    "storySource": "user",
+    "sentence": "Une femme sort d'un taxi, avec son chien.",
+    "targetWord": "sort",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "savoir",
+  "sentence": "Elle [[sait]]: c'est l'inconnue de l'écharpe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to know",
+   "options": [
+    "to know",
+    "to think",
+    "to ask",
+    "to forget"
+   ],
+   "audioClip": {
+    "storySlug": "a-samedi-hugo",
+    "storySource": "user",
+    "sentence": "Elle sait: c'est l'inconnue de l'écharpe.",
+    "targetWord": "sait",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nouveau",
+  "sentence": "C'est une [[nouvelle]] locataire, en manteau jaune.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "new",
+   "options": [
+    "new",
+    "old",
+    "young",
+    "nice"
+   ],
+   "audioClip": {
+    "storySlug": "a-samedi-hugo",
+    "storySource": "user",
+    "sentence": "C'est une nouvelle locataire, en manteau jaune.",
+    "targetWord": "nouvelle",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "parler",
+  "sentence": "Il lui [[parle]] doucement.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to speak",
+   "options": [
+    "to speak",
+    "to listen",
+    "to smile",
+    "to sing"
+   ],
+   "audioClip": {
+    "storySlug": "a-samedi-hugo",
+    "storySource": "user",
+    "sentence": "Il lui parle doucement.",
+    "targetWord": "parle",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "met",
+  "sentence": "Elle _____ les fleurs dans un vase.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "met",
+   "options": [
+    "met",
+    "mange",
+    "lit",
+    "ferme"
+   ],
+   "translation": "She _____ the flowers in a vase.",
+   "optionTranslations": [
+    "puts",
+    "eats",
+    "reads",
+    "closes"
+   ],
+   "audioClip": {
+    "storySlug": "a-samedi-hugo",
+    "storySource": "user",
+    "sentence": "Elle met les fleurs dans un vase.",
+    "targetWord": "met",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "lentement",
+  "sentence": "Le chien est vieux et fatigué: il marche _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lentement",
+   "options": [
+    "lentement",
+    "vite",
+    "loin",
+    "beaucoup"
+   ],
+   "translation": "The dog is old and tired: it walks _____.",
+   "optionTranslations": [
+    "slowly",
+    "fast",
+    "far",
+    "a lot"
+   ],
+   "audioClip": {
+    "storySlug": "a-samedi-hugo",
+    "storySource": "user",
+    "sentence": "Le chien est vieux et fatigué: il marche lentement.",
+    "targetWord": "lentement",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

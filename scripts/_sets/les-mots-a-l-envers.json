@@ -1,0 +1,433 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "le cahier,le crayon,la gomme,la nappe",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "le cahier",
+          "answer": "a notebook",
+          "options": [
+            "a notebook",
+            "a pencil",
+            "an eraser",
+            "a tablecloth"
+          ]
+        },
+        {
+          "word": "le crayon",
+          "answer": "a pencil",
+          "options": [
+            "a notebook",
+            "a pencil",
+            "an eraser",
+            "a tablecloth"
+          ]
+        },
+        {
+          "word": "la gomme",
+          "answer": "an eraser",
+          "options": [
+            "a notebook",
+            "a pencil",
+            "an eraser",
+            "a tablecloth"
+          ]
+        },
+        {
+          "word": "la nappe",
+          "answer": "a tablecloth",
+          "options": [
+            "a notebook",
+            "a pencil",
+            "an eraser",
+            "a tablecloth"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "manquer",
+    "sentence": "Elle lit une phrase: “Tu me [[manques]].”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to miss",
+      "options": [
+        "to miss",
+        "to love",
+        "to hate",
+        "to forget"
+      ],
+      "audioClip": {
+        "storySlug": "les-mots-a-l-envers",
+        "storySource": "user",
+        "sentence": "Elle lit une phrase: “Tu me manques.”",
+        "targetWord": "manques",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le sens",
+    "sentence": "Elle ne comprend pas le [[sens]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the meaning",
+      "options": [
+        "the meaning",
+        "the sound",
+        "the spelling",
+        "the answer"
+      ],
+      "audioClip": {
+        "storySlug": "les-mots-a-l-envers",
+        "storySource": "user",
+        "sentence": "Elle ne comprend pas le sens.",
+        "targetWord": "sens",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "à l'envers",
+    "sentence": "“C'est [[à l'envers]]”, explique-t-il.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the other way round",
+      "options": [
+        "the other way round",
+        "the same way",
+        "very far away",
+        "too hard to say"
+      ],
+      "audioClip": {
+        "storySlug": "les-mots-a-l-envers",
+        "storySource": "user",
+        "sentence": "“C'est à l'envers”, explique-t-il.",
+        "targetWord": "à l'envers",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "compris",
+    "sentence": "“Ça y est, j'ai [[compris]]!”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "understood",
+      "options": [
+        "understood",
+        "forgotten",
+        "finished",
+        "lost"
+      ],
+      "audioClip": {
+        "storySlug": "les-mots-a-l-envers",
+        "storySource": "user",
+        "sentence": "“Ça y est, j'ai compris!”",
+        "targetWord": "compris",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enfin",
+    "sentence": "“[[Enfin]]!”, rit-il.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at last",
+      "options": [
+        "at last",
+        "too bad",
+        "too late",
+        "right now"
+      ],
+      "audioClip": {
+        "storySlug": "les-mots-a-l-envers",
+        "storySource": "user",
+        "sentence": "“Enfin!”, rit-il.",
+        "targetWord": "Enfin",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "efface",
+    "sentence": "Le mot est faux: elle _____ tout avec la gomme.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "efface",
+      "options": [
+        "efface",
+        "lit",
+        "ouvre",
+        "vend"
+      ],
+      "translation": "The word is wrong: she _____ it all with the eraser.",
+      "optionTranslations": [
+        "erases",
+        "reads",
+        "opens",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "les-mots-a-l-envers",
+        "storySource": "user",
+        "sentence": "Le mot est faux: elle efface tout avec la gomme.",
+        "targetWord": "efface",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "déjà",
+    "sentence": "“Tu me manques. [[Déjà]].”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "already",
+      "options": [
+        "already",
+        "not yet",
+        "again",
+        "later"
+      ],
+      "audioClip": {
+        "storySlug": "les-mots-a-l-envers",
+        "storySource": "user",
+        "sentence": "“Tu me manques. Déjà.”",
+        "targetWord": "Déjà",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "penser",
+    "sentence": "“Moi aussi, je [[pense]] à toi.”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to think of",
+      "options": [
+        "to think of",
+        "to talk to",
+        "to wait for",
+        "to write to"
+      ],
+      "audioClip": {
+        "storySlug": "les-mots-a-l-envers",
+        "storySource": "user",
+        "sentence": "“Moi aussi, je pense à toi.”",
+        "targetWord": "pense",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "l'étoile",
+    "sentence": "Sous la lune, il y a une [[étoile]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a star",
+      "options": [
+        "a star",
+        "a cloud",
+        "a bird",
+        "a plane"
+      ],
+      "audioClip": {
+        "storySlug": "les-mots-a-l-envers",
+        "storySource": "user",
+        "sentence": "Sous la lune, il y a une étoile.",
+        "targetWord": "étoile",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "écrire",
+    "sentence": "Dans son cahier, elle [[écrit]] les mots durs.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to write",
+      "options": [
+        "to write",
+        "to read",
+        "to draw",
+        "to find"
+      ],
+      "audioClip": {
+        "storySlug": "les-mots-a-l-envers",
+        "storySource": "user",
+        "sentence": "Dans son cahier, elle écrit les mots durs.",
+        "targetWord": "écrit",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lire",
+    "sentence": "Elle [[lit]] une phrase.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to read",
+      "options": [
+        "to read",
+        "to copy",
+        "to hear",
+        "to sing"
+      ],
+      "audioClip": {
+        "storySlug": "les-mots-a-l-envers",
+        "storySource": "user",
+        "sentence": "Elle lit une phrase.",
+        "targetWord": "lit",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vrai",
+    "sentence": "“C'est [[vrai]]? Qui est triste?”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "true",
+      "options": [
+        "true",
+        "strange",
+        "finished",
+        "important"
+      ],
+      "audioClip": {
+        "storySlug": "les-mots-a-l-envers",
+        "storySource": "user",
+        "sentence": "“C'est vrai? Qui est triste?”",
+        "targetWord": "vrai",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pour toujours",
+    "sentence": "Elle écrit encore: amis [[pour toujours]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "forever",
+      "options": [
+        "forever",
+        "for today",
+        "for a while",
+        "never again"
+      ],
+      "audioClip": {
+        "storySlug": "les-mots-a-l-envers",
+        "storySource": "user",
+        "sentence": "Elle écrit encore: amis pour toujours.",
+        "targetWord": "pour toujours",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "doux",
+    "sentence": "Dehors, la lune est [[douce]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "soft",
+      "options": [
+        "soft",
+        "cold",
+        "harsh",
+        "dark"
+      ],
+      "audioClip": {
+        "storySlug": "les-mots-a-l-envers",
+        "storySource": "user",
+        "sentence": "Dehors, la lune est douce.",
+        "targetWord": "douce",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "lune",
+    "sentence": "La nuit, la _____ est grande et ronde dans le ciel.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lune",
+      "options": [
+        "lune",
+        "rue",
+        "porte",
+        "plage"
+      ],
+      "translation": "At night, the _____ is big and round in the sky.",
+      "optionTranslations": [
+        "moon",
+        "street",
+        "door",
+        "beach"
+      ],
+      "audioClip": {
+        "storySlug": "les-mots-a-l-envers",
+        "storySource": "user",
+        "sentence": "La nuit, la lune est grande et ronde dans le ciel.",
+        "targetWord": "lune",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "durs",
+    "sentence": "Ces mots sont _____: je ne comprends rien.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "durs",
+      "options": [
+        "durs",
+        "faciles",
+        "clairs",
+        "simples"
+      ],
+      "translation": "These words are _____: I understand nothing.",
+      "optionTranslations": [
+        "hard",
+        "easy",
+        "clear",
+        "simple"
+      ],
+      "audioClip": {
+        "storySlug": "les-mots-a-l-envers",
+        "storySource": "user",
+        "sentence": "Ces mots sont durs: je ne comprends rien.",
+        "targetWord": "durs",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
+]

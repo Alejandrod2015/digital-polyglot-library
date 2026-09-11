@@ -1,0 +1,64 @@
+{
+ "a": {
+  "es": "il y a une plante verte.",
+  "en": "there is a green plant.",
+  "g": "there is (il y a)"
+ },
+ "elle": {
+  "es": "Elle est pour toi",
+  "en": "It's for you",
+  "g": "it (elle: the plant)"
+ },
+ "en": {
+  "es": "Hugo peint le dernier mur en blanc.",
+  "en": "Hugo paints the last wall white.",
+  "g": "in (en)"
+ },
+ "encore": {
+  "es": "mais Léa arrose encore.",
+  "en": "but Léa waters it again.",
+  "g": "again (encore)"
+ },
+ "il": {
+  "es": "il y a une plante verte.",
+  "en": "there is a green plant.",
+  "g": "there is (il y a)"
+ },
+ "ne": {
+  "es": "Léa ne veut pas de plante.",
+  "en": "Léa doesn't want a plant.",
+  "g": "not (ne ... pas)"
+ },
+ "pas": {
+  "es": "Léa ne veut pas de plante.",
+  "en": "Léa doesn't want a plant.",
+  "g": "not (ne ... pas)"
+ },
+ "plus": {
+  "es": "Mais ce n'est plus comme avant.",
+  "en": "But it isn't like before any more.",
+  "g": "no longer (ne ... plus)"
+ },
+ "sèche": {
+  "es": "La terre est sèche.",
+  "en": "The soil is dry.",
+  "g": "dry (sec)",
+  "t": "adjective"
+ },
+ "toujours": {
+  "es": "Pour toujours?",
+  "en": "Forever?",
+  "g": "forever (pour toujours)"
+ },
+ "haut": {
+  "es": "Elle veut Hugo, en haut.",
+  "en": "She wants Hugo, upstairs.",
+  "g": "upstairs (en haut)"
+ },
+ "éteint": {
+  "es": "Le chauffage est éteint, et l'air est tiède.",
+  "en": "The heating is off, and the air is lukewarm.",
+  "g": "switched off (éteint)",
+  "t": "adjective"
+ }
+}

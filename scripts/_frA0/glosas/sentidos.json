@@ -1,0 +1,137 @@
+{
+ "_nota": "Glosas globales con varios sentidos pisadas en cada historia con el sentido de SU frase (chat de planificacion, 2026-09-11). Se quedan con los dos sentidos las que juegan con ambos (carte, prends: el chiste de t4#0) y las que ya los dicen bien (bleue, noir, pain, pied).",
+ "theo-ecoute-pour-lea": {
+  "a": {"g": "there is (il y a)"}, "il": {"g": "there is (il y a)"}, "appelle": {"g": "is called, is named (s'appeler)"},
+  "côté": {"g": "next to (à côté de)"}, "elle": {"g": "her (elle)"}, "en": {"g": "in (en)"}, "entre": {"g": "between (entre)"},
+  "retourne": {"g": "turns over (retourner)"}, "rien": {"g": "nothing (ne ... rien)"}, "toujours": {"g": "always (toujours)"}
+ },
+ "le-torchon-a-la-main": {
+  "a": {"g": "there is (il y a)"}, "bas": {"g": "downstairs, down below (en bas)"}, "bon": {"g": "well, OK (bon)"},
+  "cher": {"g": "a lot, dearly (payer cher)", "t": "adverb"}, "elle": {"g": "she (elle)"}, "en": {"g": "in; en bas, downstairs"},
+  "entre": {"g": "comes in (entrer)"}, "il": {"g": "he (il)"}, "maison": {"g": "at home (à la maison)"},
+  "montre": {"g": "show, shows (montrer)"}, "ne": {"g": "not (ne ... pas)"}, "pas": {"g": "not (ne ... pas)"},
+  "reste": {"g": "stays (rester)"}, "sèche": {"g": "dries (sécher)"}, "temps": {"g": "all the time (tout le temps)"},
+  "tout": {"g": "all the time (tout le temps)"}
+ },
+ "une-goutte-chaque-nuit": {
+  "a": {"g": "there is (il y a)"}, "il": {"g": "there is (il y a)"}, "besoin": {"g": "to need (avoir besoin de)"},
+  "elle": {"g": "she (elle)"}, "ne": {"g": "not (ne ... pas)"}, "pas": {"g": "not (ne ... pas)"},
+  "plus": {"g": "no longer (ne ... plus)"}, "raison": {"g": "to be right (avoir raison)"}, "serre": {"g": "tightens (serrer)"},
+  "sèche": {"g": "dries (sécher)"}, "temps": {"g": "all the time (tout le temps)"}, "tout": {"g": "all the time (tout le temps)"}
+ },
+ "tu-prends-la-carte": {
+  "elle": {"g": "she (elle)"}, "grave": {"g": "no problem (pas grave)"}, "il": {"g": "he (il)"},
+  "ne": {"g": "not (ne ... pas)"}, "pas": {"g": "not (ne ... pas)"}, "trouver": {"g": "to think someone is (trouver)"}
+ },
+ "vingt-minutes-c-est-long": {
+  "bas": {"g": "downstairs, down below (en bas)"}, "besoin": {"g": "to need (avoir besoin de)"}, "elle": {"g": "she (elle)"},
+  "en": {"g": "in; en face de, opposite"}, "il": {"g": "he (il)"}, "montre": {"g": "watch (la montre)", "t": "noun"},
+  "ne": {"g": "not (ne ... pas)"}, "pas": {"g": "not (ne ... pas)"}, "peu": {"g": "a little (un peu)"},
+  "pied": {"g": "on foot (à pied)"}, "tout": {"g": "everything (tout)"}, "va": {"g": "goes (aller)"}
+ },
+ "les-mots-a-l-envers": {
+  "a": {"g": "has (avoir)"}, "côté": {"g": "next to her, nearby (à côté)"}, "elle": {"g": "she (elle)"},
+  "encore": {"g": "again (encore)"}, "il": {"g": "he (il)"}, "là": {"g": "here, there for you (être là)"},
+  "mal": {"g": "pain; a headache (avoir mal à la tête)"}, "ne": {"g": "not (ne ... pas)"}, "pas": {"g": "not (ne ... pas)"},
+  "raison": {"g": "to be right (avoir raison)"}, "serre": {"g": "squeezes, holds (serrer la main)"}, "toujours": {"g": "forever (pour toujours)"}
+ },
+ "la-boule-porte-bonheur": {
+  "a": {"g": "is ... years old (avoir ... ans)"}, "appelle": {"g": "is called, is named (s'appeler)"}, "café": {"g": "coffee (le café)"},
+  "chance": {"g": "luck (la chance)"}, "elle": {"g": "she (elle)"}, "encore": {"g": "again (encore)"}, "il": {"g": "there is (il y a)"},
+  "mal": {"g": "not bad (pas mal)"}, "pas": {"g": "not (pas mal: not bad)"}, "porte": {"g": "brings (porter)"},
+  "rien": {"g": "nothing (ne ... rien)"}, "sent": {"g": "smells of (sentir)"}
+ },
+ "trente-trois-bougies": {
+  "a": {"g": "there is (il y a)"}, "il": {"g": "there is (il y a)"}, "laisse": {"g": "lets (laisser)"},
+  "mal": {"g": "badly (mal)"}, "monde": {"g": "everybody (tout le monde)"}, "pas": {"g": "not (pas du tout: not at all)"},
+  "tout": {"g": "everybody (tout le monde)"}, "éteint": {"g": "blows out (éteindre)"}
+ },
+ "a-toi-la-boule": {
+  "elle": {"g": "she (elle)"}, "encore": {"g": "yet (pas encore: not yet)"}, "il": {"g": "he (il)"},
+  "ne": {"g": "not (ne ... pas)"}, "pas": {"g": "not (pas encore: not yet)"}, "restes": {"g": "leftovers (les restes)"},
+  "retour": {"g": "return, coming back (le retour)"}
+ },
+ "si-je-gagne-tu-restes": {
+  "au-dessus": {"g": "above (au-dessus de)"}, "elle": {"g": "she (elle)"}, "encore": {"g": "still (encore)"},
+  "il": {"g": "he (il)"}, "joue": {"g": "plays (jouer)"}, "ne": {"g": "not (ne ... jamais: never)"},
+  "pas": {"g": "not (ne ... pas)"}, "plaisir": {"g": "gladly (avec plaisir)"}, "plus": {"g": "more; plus près, closer"},
+  "restes": {"g": "you stay (rester)", "t": "verb"}, "si": {"g": "if (si)"}, "sort": {"g": "takes out (sortir)"},
+  "tout": {"g": "all; that's all (c'est tout)"}
+ },
+ "mille-euros-sans-compter": {
+  "a": {"g": "has (avoir)"}, "besoin": {"g": "to need (avoir besoin de)"}, "cher": {"g": "expensive (cher)"},
+  "elle": {"g": "she (elle)"}, "il": {"g": "he (il)"}, "machine": {"g": "coffee machine (la machine)"},
+  "ne": {"g": "not (ne ... pas)"}, "pas": {"g": "not (ne ... pas)"}, "peu": {"g": "a little (un peu)"},
+  "retourne": {"g": "goes back (retourner)"}, "tout": {"g": "all, everything (tout)"}
+ },
+ "a-samedi-hugo": {
+  "bon": {"g": "good; have a good trip (bon voyage)"}, "elle": {"g": "it (elle: the suitcase)"}, "en": {"g": "in, wearing (en)"},
+  "il": {"g": "he (il)"}, "ne": {"g": "not (ne ... rien: nothing)"}, "pas": {"g": "not (ne ... pas)"},
+  "rien": {"g": "nothing (ne ... rien)"}, "serre": {"g": "squeezes (serrer)"}, "sort": {"g": "gets out (sortir)"},
+  "voyage": {"g": "trip; have a good trip (bon voyage)"}
+ },
+ "clara-tient-la-boule": {
+  "a": {"g": "has (avoir)"}, "elle": {"g": "she (elle)"}, "encore": {"g": "a little more (encore un peu)"},
+  "il": {"g": "he (il)"}, "joue": {"g": "plays (jouer)"}, "ne": {"g": "not (ne ... rien: nothing)"},
+  "peu": {"g": "a little (encore un peu: a little more)"}, "plaisir": {"g": "gladly (avec plaisir)"},
+  "rien": {"g": "nothing; says nothing (ne dit rien)"}, "toujours": {"g": "always (toujours)"}
+ },
+ "treize-comme-avant": {
+  "a": {"g": "has (avoir)"}, "bon": {"g": "good; welcome back (bon retour)"}, "café": {"g": "café (le café)"},
+  "elle": {"g": "it (elle: the boule)"}, "en": {"g": "by, on (en TGV: by TGV); to (en treize points)"},
+  "encore": {"g": "a little more (encore un peu)"}, "il": {"g": "he (il)"}, "joue": {"g": "play (jouer)"},
+  "maison": {"g": "at home (à la maison)"}, "ne": {"g": "not (personne ne: nobody)"}, "pas": {"g": "not (pas encore: not yet)"},
+  "peu": {"g": "a little (encore un peu: a little more)"}, "retour": {"g": "welcome back (bon retour)"},
+  "sent": {"g": "smells of (sentir)"}, "tire": {"g": "shoots, in pétanque (tirer)"}, "toujours": {"g": "always (toujours)"}
+ },
+ "une-boule-sous-le-platane": {
+  "a": {"g": "has (avoir)"}, "au-dessus": {"g": "upstairs (au-dessus)"}, "café": {"g": "café (le café)"},
+  "elle": {"g": "she (elle)"}, "en": {"g": "in (en)"}, "joue": {"g": "plays (jouer)"},
+  "mal": {"g": "badly (mal)"}, "ne": {"g": "no longer (ne ... plus)"}, "plus": {"g": "no longer (ne ... plus)"},
+  "toujours": {"g": "always (toujours)"}, "tout": {"g": "very (tout près: very close)"}
+ },
+ "la-ligne-coupe-apres-hugo": {
+  "a": {"g": "has (avoir)"}, "appelle": {"g": "calls (appeler)"}, "bas": {"g": "downstairs, down below (en bas)"},
+  "chance": {"g": "chance (la chance)"}, "elle": {"g": "she (elle)"}, "en": {"g": "in; en bas, downstairs"},
+  "encore": {"g": "still (encore)"}, "entre": {"g": "between (entre)"}, "il": {"g": "he (il)"},
+  "pas": {"g": "not (ne ... pas)"}, "reste": {"g": "the rest (le reste)", "t": "noun"}, "restes": {"g": "you stay (rester)", "t": "verb"},
+  "rien": {"g": "nothing (rien)"}, "serre": {"g": "holds tight (serrer)"}, "sèche": {"g": "dries (sécher)"},
+  "tout": {"g": "at all (pas du tout)"}
+ },
+ "le-fauteuil-descend": {
+  "a": {"g": "has (avoir)"}, "bas": {"g": "downstairs (en bas)"}, "contre": {"g": "in exchange for (contre)"},
+  "côté": {"g": "next to it, nearby (à côté)"}, "elle": {"g": "she (elle)"}, "en": {"g": "in (en)"}, "il": {"g": "he (il)"},
+  "mal": {"g": "pain; her back hurts (avoir mal au dos)"}, "ne": {"g": "not (ne ... jamais: never)"},
+  "pas": {"g": "not (pas du tout: not at all)"}, "rien": {"g": "you're welcome (de rien)"}, "sent": {"g": "smells of (sentir)"},
+  "tout": {"g": "at all (pas du tout)"}, "va": {"g": "are you OK? (ça va?)"}
+ },
+ "deux-carreaux-pour-hugo": {
+  "café": {"g": "coffee (le café)"}, "elle": {"g": "she (elle)"}, "en": {"g": "in (en)"}, "encore": {"g": "again (encore)"},
+  "il": {"g": "it (il: the wind)"}, "joue": {"g": "play (jouer)"}, "ne": {"g": "not (ne ... pas)"}, "pas": {"g": "not (pas)"},
+  "porte": {"g": "wears (porter)"}, "quelque": {"g": "something (quelque chose)"}, "reste": {"g": "stays (rester)"},
+  "si": {"g": "if (si)"}, "tire": {"g": "shoots, in pétanque (tirer)"}, "tout": {"g": "all (tout)"}, "va": {"g": "goes (aller)"}
+ },
+ "une-plante-pour-lea": {
+  "a": {"g": "there is (il y a)"}, "elle": {"g": "it (elle: the plant)"}, "en": {"g": "in (en)"}, "encore": {"g": "again (encore)"},
+  "il": {"g": "there is (il y a)"}, "ne": {"g": "not (ne ... pas)"}, "pas": {"g": "not (ne ... pas)"},
+  "plus": {"g": "no longer (ne ... plus)"}, "sèche": {"g": "dry (sec)", "t": "adjective"}, "toujours": {"g": "forever (pour toujours)"},
+  "haut": {"g": "upstairs (en haut)"}, "éteint": {"g": "switched off (éteint)", "t": "adjective"}
+ },
+ "des-pas-au-dessus": {
+  "a": {"g": "has (avoir)"}, "au-dessus": {"g": "upstairs, above (au-dessus)"}, "bas": {"g": "downstairs (en bas)"},
+  "elle": {"g": "she (elle)"}, "en": {"g": "in; en bas, downstairs"}, "encore": {"g": "still (encore)"},
+  "il": {"g": "he, it (il: the dog)"}, "laisse": {"g": "lead for a dog (la laisse)", "t": "noun"}, "là": {"g": "still here (encore là)"},
+  "louer": {"g": "to rent (louer)"}, "mot": {"g": "a short note (le mot)"}, "ne": {"g": "not (ne ... rien: nothing)"},
+  "pas": {"g": "steps (le pas)", "t": "noun"}, "rien": {"g": "nothing (ne ... rien)"}, "tire": {"g": "pulls (tirer)"},
+  "tout": {"g": "suddenly (tout à coup)"}
+ },
+ "l-annonce-du-couloir": {
+  "a": {"g": "has (avoir)"}, "cher": {"g": "expensive (cher)"}, "elle": {"g": "she (elle)"}, "en": {"g": "in (en)"},
+  "encore": {"g": "yet (pas encore: not yet)"}, "entre": {"g": "comes in (entrer)"}, "habitude": {"g": "usually (d'habitude)"},
+  "haut": {"g": "upstairs (en haut)"}, "il": {"g": "he (il)"}, "lettres": {"g": "letterbox (boîte aux lettres)"},
+  "louer": {"g": "for rent (à louer); to rent out (louer)"}, "machine": {"g": "coffee machine (la machine)"},
+  "ne": {"g": "not (ne ... pas)"}, "pas": {"g": "not (pas encore: not yet)"}, "plus": {"g": "more (de plus)"},
+  "porte": {"g": "door (la porte)", "t": "noun"}, "rien": {"g": "nothing; says nothing (ne dit rien)"}, "si": {"g": "if (si)"},
+  "tout": {"g": "right away (tout de suite)"}
+ }
+}

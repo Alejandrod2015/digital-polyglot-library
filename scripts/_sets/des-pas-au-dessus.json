@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la laisse,le manteau,l'écharpe,le parquet",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la laisse",
+     "answer": "a dog lead",
+     "options": [
+      "a dog lead",
+      "a coat",
+      "a scarf",
+      "a wooden floor"
+     ]
+    },
+    {
+     "word": "le manteau",
+     "answer": "a coat",
+     "options": [
+      "a dog lead",
+      "a coat",
+      "a scarf",
+      "a wooden floor"
+     ]
+    },
+    {
+     "word": "l'écharpe",
+     "answer": "a scarf",
+     "options": [
+      "a dog lead",
+      "a coat",
+      "a scarf",
+      "a wooden floor"
+     ]
+    },
+    {
+     "word": "le parquet",
+     "answer": "a wooden floor",
+     "options": [
+      "a dog lead",
+      "a coat",
+      "a scarf",
+      "a wooden floor"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "inconnu",
+  "sentence": "Le matin, il monte avec une [[inconnue]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a stranger",
+   "options": [
+    "a stranger",
+    "a neighbour",
+    "an old friend",
+    "a relative"
+   ],
+   "audioClip": {
+    "storySlug": "des-pas-au-dessus",
+    "storySource": "user",
+    "sentence": "Le matin, il monte avec une inconnue.",
+    "targetWord": "inconnue",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "au-dessus",
+  "sentence": "[[Au-dessus]] du café, on entend des pas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "above",
+   "options": [
+    "above",
+    "below",
+    "next to",
+    "behind"
+   ],
+   "audioClip": {
+    "storySlug": "des-pas-au-dessus",
+    "storySource": "user",
+    "sentence": "Au-dessus du café, on entend des pas.",
+    "targetWord": "Au-dessus",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pas",
+  "sentence": "J'entends des _____ en haut: quelqu'un marche.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pas",
+   "options": [
+    "pas",
+    "fleurs",
+    "lits",
+    "livres"
+   ],
+   "translation": "I hear _____ upstairs: someone is walking.",
+   "optionTranslations": [
+    "footsteps",
+    "flowers",
+    "beds",
+    "books"
+   ],
+   "audioClip": {
+    "storySlug": "des-pas-au-dessus",
+    "storySource": "user",
+    "sentence": "J'entends des pas en haut: quelqu'un marche.",
+    "targetWord": "pas",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "monte",
+  "sentence": "Sa chambre est en haut: elle _____ l'escalier pour dormir.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "monte",
+   "options": [
+    "monte",
+    "descend",
+    "lave",
+    "ferme"
+   ],
+   "translation": "Her bedroom is upstairs: she _____ the stairs to sleep.",
+   "optionTranslations": [
+    "goes up",
+    "goes down",
+    "washes",
+    "closes"
+   ],
+   "audioClip": {
+    "storySlug": "des-pas-au-dessus",
+    "storySource": "user",
+    "sentence": "Sa chambre est en haut: elle monte l'escalier pour dormir.",
+    "targetWord": "monte",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le chien",
+  "sentence": "Puis elle descend avec un [[chien]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a dog",
+   "options": [
+    "a dog",
+    "a cat",
+    "a bike",
+    "a box"
+   ],
+   "audioClip": {
+    "storySlug": "des-pas-au-dessus",
+    "storySource": "user",
+    "sentence": "Puis elle descend avec un chien.",
+    "targetWord": "chien",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gros",
+  "sentence": "Le [[gros]] chien tire sur sa laisse.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "big",
+   "options": [
+    "big",
+    "small",
+    "old",
+    "noisy"
+   ],
+   "audioClip": {
+    "storySlug": "des-pas-au-dessus",
+    "storySource": "user",
+    "sentence": "Le gros chien tire sur sa laisse.",
+    "targetWord": "gros",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "saluer",
+  "sentence": "Elle la [[salue]] avec un sourire.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to greet",
+   "options": [
+    "to greet",
+    "to thank",
+    "to call",
+    "to follow"
+   ],
+   "audioClip": {
+    "storySlug": "des-pas-au-dessus",
+    "storySource": "user",
+    "sentence": "Elle la salue avec un sourire.",
+    "targetWord": "salue",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quelqu'un",
+  "sentence": "[[Quelqu'un]] prend sa place.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "someone",
+   "options": [
+    "someone",
+    "no one",
+    "everyone",
+    "each one"
+   ],
+   "audioClip": {
+    "storySlug": "des-pas-au-dessus",
+    "storySource": "user",
+    "sentence": "Quelqu'un prend sa place.",
+    "targetWord": "Quelqu'un",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tout à coup",
+  "sentence": "[[Tout à coup]], c'est tranquille.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "suddenly",
+   "options": [
+    "suddenly",
+    "slowly",
+    "as usual",
+    "at last"
+   ],
+   "audioClip": {
+    "storySlug": "des-pas-au-dessus",
+    "storySource": "user",
+    "sentence": "Tout à coup, c'est tranquille.",
+    "targetWord": "Tout à coup",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "regarder",
+  "sentence": "Elle [[regarde]] le plafond.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to look at",
+   "options": [
+    "to look at",
+    "to paint",
+    "to touch",
+    "to clean"
+   ],
+   "audioClip": {
+    "storySlug": "des-pas-au-dessus",
+    "storySource": "user",
+    "sentence": "Elle regarde le plafond.",
+    "targetWord": "regarde",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ici",
+  "sentence": "Les pas vont [[ici]], puis ailleurs.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "here",
+   "options": [
+    "here",
+    "there",
+    "nowhere",
+    "far away"
+   ],
+   "audioClip": {
+    "storySlug": "des-pas-au-dessus",
+    "storySource": "user",
+    "sentence": "Les pas vont ici, puis ailleurs.",
+    "targetWord": "ici",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ensuite",
+  "sentence": "[[Ensuite]], il descend.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "after that",
+   "options": [
+    "after that",
+    "before that",
+    "once more",
+    "at the same time"
+   ],
+   "audioClip": {
+    "storySlug": "des-pas-au-dessus",
+    "storySource": "user",
+    "sentence": "Ensuite, il descend.",
+    "targetWord": "Ensuite",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trop",
+  "sentence": "Elle arrive [[trop]] tôt!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "too",
+   "options": [
+    "too",
+    "not",
+    "quite",
+    "almost"
+   ],
+   "audioClip": {
+    "storySlug": "des-pas-au-dessus",
+    "storySource": "user",
+    "sentence": "Elle arrive trop tôt!",
+    "targetWord": "trop",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "brun",
+  "sentence": "Elle a un manteau jaune et les cheveux [[bruns]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "brown",
+   "options": [
+    "brown",
+    "blond",
+    "grey",
+    "black"
+   ],
+   "audioClip": {
+    "storySlug": "des-pas-au-dessus",
+    "storySource": "user",
+    "sentence": "Elle a un manteau jaune et les cheveux bruns.",
+    "targetWord": "bruns",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chez moi",
+  "sentence": "[[Chez moi]], c'est en bas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at my place",
+   "options": [
+    "at my place",
+    "at work",
+    "at your place",
+    "in town"
+   ],
+   "audioClip": {
+    "storySlug": "des-pas-au-dessus",
+    "storySource": "user",
+    "sentence": "Chez moi, c'est en bas.",
+    "targetWord": "Chez moi",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "sympa",
+  "sentence": "Mon voisin est très _____: il m'aide toujours.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sympa",
+   "options": [
+    "sympa",
+    "méchant",
+    "égoïste",
+    "impoli"
+   ],
+   "translation": "My neighbour is very _____: he always helps me.",
+   "optionTranslations": [
+    "nice",
+    "mean",
+    "selfish",
+    "rude"
+   ],
+   "audioClip": {
+    "storySlug": "des-pas-au-dessus",
+    "storySource": "user",
+    "sentence": "Mon voisin est très sympa: il m'aide toujours.",
+    "targetWord": "sympa",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

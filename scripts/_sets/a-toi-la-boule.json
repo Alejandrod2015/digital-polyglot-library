@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "le chat,le bouchon,la poubelle,le balai",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "le chat",
+     "answer": "a cat",
+     "options": [
+      "a cat",
+      "a cork",
+      "a rubbish bin",
+      "a broom"
+     ]
+    },
+    {
+     "word": "le bouchon",
+     "answer": "a cork",
+     "options": [
+      "a cat",
+      "a cork",
+      "a rubbish bin",
+      "a broom"
+     ]
+    },
+    {
+     "word": "la poubelle",
+     "answer": "a rubbish bin",
+     "options": [
+      "a cat",
+      "a cork",
+      "a rubbish bin",
+      "a broom"
+     ]
+    },
+    {
+     "word": "le balai",
+     "answer": "a broom",
+     "options": [
+      "a cat",
+      "a cork",
+      "a rubbish bin",
+      "a broom"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la miette",
+  "sentence": "Elle balaie les [[miettes]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a crumb",
+   "options": [
+    "a crumb",
+    "a leaf",
+    "a stone",
+    "a coin"
+   ],
+   "audioClip": {
+    "storySlug": "a-toi-la-boule",
+    "storySource": "user",
+    "sentence": "Elle balaie les miettes.",
+    "targetWord": "miettes",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "les restes",
+  "sentence": "Les [[restes]] du gâteau vont à la poubelle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the leftovers",
+   "options": [
+    "the leftovers",
+    "the plates",
+    "the candles",
+    "the boxes"
+   ],
+   "audioClip": {
+    "storySlug": "a-toi-la-boule",
+    "storySource": "user",
+    "sentence": "Les restes du gâteau vont à la poubelle.",
+    "targetWord": "restes",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "déchirer",
+  "sentence": "Il [[déchire]] doucement le papier.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to tear",
+   "options": [
+    "to tear",
+    "to fold",
+    "to cut",
+    "to read"
+   ],
+   "audioClip": {
+    "storySlug": "a-toi-la-boule",
+    "storySource": "user",
+    "sentence": "Il déchire doucement le papier.",
+    "targetWord": "déchire",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "partager",
+  "sentence": "“Alors, on [[partage]]”, répond-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to share",
+   "options": [
+    "to share",
+    "to swap",
+    "to keep",
+    "to sell"
+   ],
+   "audioClip": {
+    "storySlug": "a-toi-la-boule",
+    "storySource": "user",
+    "sentence": "“Alors, on partage”, répond-elle.",
+    "targetWord": "partage",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "à moi",
+  "sentence": "“À toi la boule, [[à moi]] le cochonnet.”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "mine",
+   "options": [
+    "mine",
+    "yours",
+    "his",
+    "ours"
+   ],
+   "audioClip": {
+    "storySlug": "a-toi-la-boule",
+    "storySource": "user",
+    "sentence": "“À toi la boule, à moi le cochonnet.”",
+    "targetWord": "à moi",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rentrer",
+  "sentence": "À la fin, il [[rentre]] chez lui.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go home",
+   "options": [
+    "to go home",
+    "to go out",
+    "to stay out",
+    "to get lost"
+   ],
+   "audioClip": {
+    "storySlug": "a-toi-la-boule",
+    "storySource": "user",
+    "sentence": "À la fin, il rentre chez lui.",
+    "targetWord": "rentre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jouer",
+  "sentence": "“Tu [[joues]] à Paris?”, demande-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to play",
+   "options": [
+    "to play",
+    "to live",
+    "to work",
+    "to walk"
+   ],
+   "audioClip": {
+    "storySlug": "a-toi-la-boule",
+    "storySource": "user",
+    "sentence": "“Tu joues à Paris?”, demande-t-elle.",
+    "targetWord": "joues",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "réveillé",
+  "sentence": "Il arrive, pas encore [[réveillé]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "awake",
+   "options": [
+    "awake",
+    "dressed",
+    "ready",
+    "hungry"
+   ],
+   "audioClip": {
+    "storySlug": "a-toi-la-boule",
+    "storySource": "user",
+    "sentence": "Il arrive, pas encore réveillé.",
+    "targetWord": "réveillé",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "dort",
+  "sentence": "Il ferme les yeux et _____ dans son lit.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dort",
+   "options": [
+    "dort",
+    "court",
+    "cuisine",
+    "nage"
+   ],
+   "translation": "He closes his eyes and _____ in his bed.",
+   "optionTranslations": [
+    "sleeps",
+    "runs",
+    "cooks",
+    "swims"
+   ],
+   "audioClip": {
+    "storySlug": "a-toi-la-boule",
+    "storySource": "user",
+    "sentence": "Il ferme les yeux et dort dans son lit.",
+    "targetWord": "dort",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tranquille",
+  "sentence": "La placette est [[tranquille]], mais sale.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quiet and calm",
+   "options": [
+    "quiet and calm",
+    "busy and loud",
+    "big and open",
+    "dark and cold"
+   ],
+   "audioClip": {
+    "storySlug": "a-toi-la-boule",
+    "storySource": "user",
+    "sentence": "La placette est tranquille, mais sale.",
+    "targetWord": "tranquille",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "doucement",
+  "sentence": "Il déchire [[doucement]] le papier.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gently",
+   "options": [
+    "gently",
+    "quickly",
+    "roughly",
+    "loudly"
+   ],
+   "audioClip": {
+    "storySlug": "a-toi-la-boule",
+    "storySource": "user",
+    "sentence": "Il déchire doucement le papier.",
+    "targetWord": "doucement",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chaque fois",
+  "sentence": "“[[Chaque fois]], je pense à toi.”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "every time",
+   "options": [
+    "every time",
+    "only once",
+    "sometimes",
+    "never again"
+   ],
+   "audioClip": {
+    "storySlug": "a-toi-la-boule",
+    "storySource": "user",
+    "sentence": "“Chaque fois, je pense à toi.”",
+    "targetWord": "Chaque fois",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le retour",
+  "sentence": "“Et le [[retour]]?”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the trip back",
+   "options": [
+    "the trip back",
+    "the trip there",
+    "the ticket",
+    "the price"
+   ],
+   "audioClip": {
+    "storySlug": "a-toi-la-boule",
+    "storySource": "user",
+    "sentence": "“Et le retour?”",
+    "targetWord": "retour",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "un jour",
+  "sentence": "“[[Un jour]].”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "some day",
+   "options": [
+    "some day",
+    "every day",
+    "right now",
+    "last week"
+   ],
+   "audioClip": {
+    "storySlug": "a-toi-la-boule",
+    "storySource": "user",
+    "sentence": "“Un jour.”",
+    "targetWord": "Un jour",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "ouvre",
+  "sentence": "Il fait chaud, alors elle _____ la fenêtre.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ouvre",
+   "options": [
+    "ouvre",
+    "ferme",
+    "lave",
+    "casse"
+   ],
+   "translation": "It is hot, so she _____ the window.",
+   "optionTranslations": [
+    "opens",
+    "closes",
+    "washes",
+    "breaks"
+   ],
+   "audioClip": {
+    "storySlug": "a-toi-la-boule",
+    "storySource": "user",
+    "sentence": "Il fait chaud, alors elle ouvre la fenêtre.",
+    "targetWord": "ouvre",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "balaie",
+  "sentence": "Le sol est sale, alors il _____ la cuisine.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "balaie",
+   "options": [
+    "balaie",
+    "peint",
+    "vend",
+    "décore"
+   ],
+   "translation": "The floor is dirty, so he _____ the kitchen.",
+   "optionTranslations": [
+    "sweeps",
+    "paints",
+    "sells",
+    "decorates"
+   ],
+   "audioClip": {
+    "storySlug": "a-toi-la-boule",
+    "storySource": "user",
+    "sentence": "Le sol est sale, alors il balaie la cuisine.",
+    "targetWord": "balaie",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

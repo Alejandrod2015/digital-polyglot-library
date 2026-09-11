@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la gourde,la casquette,les lunettes,le coude",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la gourde",
+     "answer": "a water bottle",
+     "options": [
+      "a water bottle",
+      "a cap",
+      "sunglasses",
+      "an elbow"
+     ]
+    },
+    {
+     "word": "la casquette",
+     "answer": "a cap",
+     "options": [
+      "a water bottle",
+      "a cap",
+      "sunglasses",
+      "an elbow"
+     ]
+    },
+    {
+     "word": "les lunettes",
+     "answer": "sunglasses",
+     "options": [
+      "a water bottle",
+      "a cap",
+      "sunglasses",
+      "an elbow"
+     ]
+    },
+    {
+     "word": "le coude",
+     "answer": "an elbow",
+     "options": [
+      "a water bottle",
+      "a cap",
+      "sunglasses",
+      "an elbow"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apprendre",
+  "sentence": "“Tu veux [[apprendre]]?”, demande-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to learn",
+   "options": [
+    "to learn",
+    "to teach",
+    "to watch",
+    "to win"
+   ],
+   "audioClip": {
+    "storySlug": "clara-tient-la-boule",
+    "storySource": "user",
+    "sentence": "“Tu veux apprendre?”, demande-t-elle.",
+    "targetWord": "apprendre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pouvoir",
+  "sentence": "“Je [[peux]] essayer?”, demande-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be able to",
+   "options": [
+    "to be able to",
+    "to have to",
+    "to want to",
+    "to need to"
+   ],
+   "audioClip": {
+    "storySlug": "clara-tient-la-boule",
+    "storySource": "user",
+    "sentence": "“Je peux essayer?”, demande-t-elle.",
+    "targetWord": "peux",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "avec plaisir",
+  "sentence": "“Tu veux apprendre?” “[[Avec plaisir]]!”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "with pleasure",
+   "options": [
+    "with pleasure",
+    "no thanks",
+    "maybe later",
+    "I don't know"
+   ],
+   "audioClip": {
+    "storySlug": "clara-tient-la-boule",
+    "storySource": "user",
+    "sentence": "“Tu veux apprendre?” “Avec plaisir!”",
+    "targetWord": "Avec plaisir",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tenir",
+  "sentence": "Tu [[tiens]] la boule comme ça.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hold",
+   "options": [
+    "to hold",
+    "to throw",
+    "to drop",
+    "to clean"
+   ],
+   "audioClip": {
+    "storySlug": "clara-tient-la-boule",
+    "storySource": "user",
+    "sentence": "Tu tiens la boule comme ça.",
+    "targetWord": "tiens",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "plier",
+  "sentence": "Tu [[plies]] les genoux.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to bend",
+   "options": [
+    "to bend",
+    "to stretch",
+    "to cross",
+    "to touch"
+   ],
+   "audioClip": {
+    "storySlug": "clara-tient-la-boule",
+    "storySource": "user",
+    "sentence": "Tu plies les genoux.",
+    "targetWord": "plies",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "baisser",
+  "sentence": "Tu [[baisses]] le coude.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to lower",
+   "options": [
+    "to lower",
+    "to raise",
+    "to turn",
+    "to straighten"
+   ],
+   "audioClip": {
+    "storySlug": "clara-tient-la-boule",
+    "storySource": "user",
+    "sentence": "Tu baisses le coude.",
+    "targetWord": "baisses",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'élève",
+  "sentence": "C'est une bonne [[élève]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a student",
+   "options": [
+    "a student",
+    "a teacher",
+    "a player",
+    "a neighbour"
+   ],
+   "audioClip": {
+    "storySlug": "clara-tient-la-boule",
+    "storySource": "user",
+    "sentence": "C'est une bonne élève.",
+    "targetWord": "élève",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "difficile",
+  "sentence": "Cet exercice est très _____: personne ne trouve la réponse.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "difficile",
+   "options": [
+    "difficile",
+    "facile",
+    "utile",
+    "gratuit"
+   ],
+   "translation": "This exercise is very _____: nobody finds the answer.",
+   "optionTranslations": [
+    "difficult",
+    "easy",
+    "useful",
+    "free"
+   ],
+   "audioClip": {
+    "storySlug": "clara-tient-la-boule",
+    "storySource": "user",
+    "sentence": "Cet exercice est très difficile: personne ne trouve la réponse.",
+    "targetWord": "difficile",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "boit",
+  "sentence": "Il a soif, alors il _____ un grand verre d'eau.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "boit",
+   "options": [
+    "boit",
+    "lave",
+    "casse",
+    "vend"
+   ],
+   "translation": "He is thirsty, so he _____ a big glass of water.",
+   "optionTranslations": [
+    "drinks",
+    "washes",
+    "breaks",
+    "sells"
+   ],
+   "audioClip": {
+    "storySlug": "clara-tient-la-boule",
+    "storySource": "user",
+    "sentence": "Il a soif, alors il boit un grand verre d'eau.",
+    "targetWord": "boit",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chaque dimanche",
+  "sentence": "[[Chaque dimanche]], elle joue à la pétanque.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "every Sunday",
+   "options": [
+    "every Sunday",
+    "last Sunday",
+    "next Sunday",
+    "one Sunday"
+   ],
+   "audioClip": {
+    "storySlug": "clara-tient-la-boule",
+    "storySource": "user",
+    "sentence": "Chaque dimanche, elle joue à la pétanque.",
+    "targetWord": "Chaque dimanche",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le printemps",
+  "sentence": "C'est le [[printemps]], et le soleil est chaud.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "spring",
+   "options": [
+    "spring",
+    "summer",
+    "autumn",
+    "winter"
+   ],
+   "audioClip": {
+    "storySlug": "clara-tient-la-boule",
+    "storySource": "user",
+    "sentence": "C'est le printemps, et le soleil est chaud.",
+    "targetWord": "printemps",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la poussière",
+  "sentence": "La [[poussière]] vole.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dust",
+   "options": [
+    "dust",
+    "sand",
+    "smoke",
+    "rain"
+   ],
+   "audioClip": {
+    "storySlug": "clara-tient-la-boule",
+    "storySource": "user",
+    "sentence": "La poussière vole.",
+    "targetWord": "poussière",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "descendre",
+  "sentence": "Elle [[descend]] avec son chien.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come down",
+   "options": [
+    "to come down",
+    "to go up",
+    "to come in",
+    "to run off"
+   ],
+   "audioClip": {
+    "storySlug": "clara-tient-la-boule",
+    "storySource": "user",
+    "sentence": "Elle descend avec son chien.",
+    "targetWord": "descend",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "toujours",
+  "sentence": "“C'est difficile!” “[[Toujours]], au début.”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "always",
+   "options": [
+    "always",
+    "never",
+    "sometimes",
+    "rarely"
+   ],
+   "audioClip": {
+    "storySlug": "clara-tient-la-boule",
+    "storySource": "user",
+    "sentence": "“C'est difficile!” “Toujours, au début.”",
+    "targetWord": "Toujours",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "servir",
+  "sentence": "Après, elle [[sert]] les cafés.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to serve",
+   "options": [
+    "to serve",
+    "to order",
+    "to pay for",
+    "to make"
+   ],
+   "audioClip": {
+    "storySlug": "clara-tient-la-boule",
+    "storySource": "user",
+    "sentence": "Après, elle sert les cafés.",
+    "targetWord": "sert",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "essayer",
+  "sentence": "Ce pull est joli: je peux l'_____ avant de l'acheter?",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "essayer",
+   "options": [
+    "essayer",
+    "oublier",
+    "échanger",
+    "écouter"
+   ],
+   "translation": "This jumper is nice: can I _____ it before I buy it?",
+   "optionTranslations": [
+    "try on",
+    "forget",
+    "exchange",
+    "listen to"
+   ],
+   "audioClip": {
+    "storySlug": "clara-tient-la-boule",
+    "storySource": "user",
+    "sentence": "Ce pull est joli: je peux l'essayer avant de l'acheter?",
+    "targetWord": "essayer",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]
