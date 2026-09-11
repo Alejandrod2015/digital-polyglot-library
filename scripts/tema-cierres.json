@@ -2224,5 +2224,70 @@
     "avisos": [
       "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
     ]
+  },
+  "cmtwo6cys0007j8yzg6ni3fsc#sports-and-games": {
+    "cerrado": "2026-09-11T08:38:05.127Z",
+    "hash": "2bc9c74442b7ad08",
+    "historias": [
+      "sports-and-games#0 une-boule-sous-le-platane",
+      "sports-and-games#1 deux-carreaux-pour-hugo",
+      "sports-and-games#2 si-je-gagne-tu-restes"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"ligero y soleado: domingo en la placita, bolas que chocan, bromas entre dos amigos de siempre\", espina \"Hugo se va a Paris en marzo. El journey son los seis meses que les quedan en la placita de Le Panier; aqui se anuncia y empieza la cuenta atras.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dit\" 33%)",
+      "arranques de parrafo variados (mas repetido \"hugo\", 27%)",
+      "densidad 5.7 palabras por oracion (techo 9 en a0)",
+      "seguidilla 28/61 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 3 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.17 sobre 42 plazas · 36 salen una sola vez | ancladas: 18/60 (30%) | cola: 36/42 portables con un solo encuentro (86%, tope 30%) | de un solo encuentro: perd, lance, roule, À toi, ronde, loin, Vraiment, jeu, quitte, départ, souffle, fort, montrer, dois, tirer, droit, rate, paies, facile, comme ça, encore une fois, tête, après-midi, rouge, dernière, partie, parier, restes, sûr, espère…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: sports-and-games (Léa, Hugo)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "france",
+      "registro": "ligero y soleado: domingo en la placita, bolas que chocan, bromas entre dos amigos de siempre",
+      "espina": "Hugo se va a Paris en marzo. El journey son los seis meses que les quedan en la placita de Le Panier; aqui se anuncia y empieza la cuenta atras.",
+      "recursos": "A0: repeticion ritmica (una bola, otra bola), contraste con mais, imagen concreta (la emocion como gesto visible)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Lea quiere ganar a Hugo a la petanque por primera vez",
+          "impide": "Hugo juega siempre mejor y ella lanza con nervios",
+          "cuesta": "gana, pero porque Hugo se deja: la victoria no es suya, y justo despues el dice que se va a Paris en marzo",
+          "cambia": "la partida del domingo ya tiene fecha final",
+          "emocion": "sorpresa y un golpe de tristeza: Lea deja la bola en la mesa y no la mira"
+        },
+        {
+          "slot": "2",
+          "quiere": "Hugo quiere ensenar a Lea a tirar como el antes de irse",
+          "impide": "el mistral mueve el cochonnet y ella no quiere aprender algo para jugar sola",
+          "cuesta": "Lea pierde la apuesta y paga los cafes de la semana",
+          "cambia": "acepta aprender: si el se va, ella se queda con su manera de tirar",
+          "emocion": "enfado que se vuelve risa: tira, falla, y se rie con las manos en la cabeza"
+        },
+        {
+          "slot": "3",
+          "quiere": "Lea apuesta que si gana, Hugo se queda en Marseille",
+          "impide": "Hugo acepta la apuesta pero juega en serio por primera vez",
+          "cuesta": "Lea pierde, y la apuesta que parecia broma no lo era para ella",
+          "cambia": "Hugo entiende que a ella le importa; ninguno lo dice en voz alta",
+          "emocion": "esperanza que cae: Lea recoge las bolas despacio, una a una"
+        }
+      ]
+    }
   }
 }
