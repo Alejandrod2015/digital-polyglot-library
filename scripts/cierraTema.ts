@@ -247,6 +247,16 @@ async function desdeBase(journeyId: string, topic: string) {
                 synopsis: true, arcType: true },
       orderBy: { slotIndex: "asc" },
     });
+    // Los temas ANTERIORES del journey, en el orden de j.topics. Entran solo
+    // como contexto para journey-character-introduction ("primera aparicion"
+    // es la del journey, no la del tema); no se juzgan.
+    const anteriores = j.topics.slice(0, j.topics.indexOf(topic));
+    const previas = anteriores.length
+      ? (await p.journeyStory.findMany({
+          where: { journeyId, topic: { in: anteriores }, text: { not: null } },
+          select: { text: true },
+        })).map((r) => ({ text: String(r.text ?? "") }))
+      : [];
     const total = await p.journeyStory.count({ where: { journeyId, text: { not: null } } });
     // Personas REALES, igual que en saveStory: sin la lista el check de
     // personajes no puede medir y devuelve `not-implemented`, que bloquea.
@@ -260,6 +270,7 @@ async function desdeBase(journeyId: string, topic: string) {
       esperadas: j.storiesPerTopic ?? 3,
       historiasDelJourney: total,
       realPeople,
+      previas,
     };
   } finally {
     await p.$disconnect();
@@ -280,6 +291,8 @@ function desdeJson(fichero: string) {
     esperadas: Number(obj.storiesPerTopic ?? 3),
     historiasDelJourney: Number(obj.historiasDelJourney ?? historias.length),
     realPeople: obj.realPeople as string[] | undefined,
+    // Historias de temas anteriores, solo como contexto (ver desdeBase).
+    previas: ((obj.previas ?? []) as Array<{ text?: string }>).map((s) => ({ text: String(s.text ?? "") })),
   };
 }
 
@@ -289,6 +302,7 @@ function desdeJson(fichero: string) {
   let datos: {
     historias: Historia[]; language: string; level: string; variant: string;
     esperadas: number; historiasDelJourney: number; realPeople?: string[];
+    previas?: Array<{ text: string }>;
   };
 
   if (modoJson) {
@@ -308,7 +322,7 @@ function desdeJson(fichero: string) {
     datos = await desdeBase(journeyId, topic);
   }
 
-  const { historias, language, level, variant, esperadas, historiasDelJourney, realPeople } = datos;
+  const { historias, language, level, variant, esperadas, historiasDelJourney, realPeople, previas: previasDelJourney } = datos;
   const conTexto = historias.filter((s) => String(s.text ?? "").trim());
   const fallos: string[] = [];
   const checks: string[] = [];
@@ -543,7 +557,7 @@ function desdeJson(fichero: string) {
       vocab: s.vocab as never,
       language, level, topic: s.topic,
     })),
-    { language, level, realPeople, conjuntoCompleto: false }
+    { language, level, realPeople, conjuntoCompleto: false, previas: previasDelJourney }
   );
   console.log("");
   for (const c of jc) {
