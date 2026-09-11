@@ -1,0 +1,424 @@
+[
+ {
+  "topic": "jericoacoara",
+  "slotIndex": 0,
+  "title": "O fogão de quatro bocas",
+  "slug": "o-fogao-de-quatro-bocas",
+  "synopsis": "Depois de semanas comendo na rua, quer cozinhar uma vez em casa e encontra a cozinha coletiva com a pia cheia e um bico de fogão funcionando. Ninguém ali lavou nada desde sábado, e a regra da casa que alguém lhe explica na pia não é a que ela esperava ouvir.",
+  "text": "Na casa coletiva de Jericoacoara, a cozinha era compartilhada por todo mundo. A pia estava cheia e os garfos, sujos. Renata morava ali havia uma semana e, embora estivesse cansada, queria cozinhar.\n\nDas quatro bocas do fogão, só uma funcionava. Edilson vendia peixe na peixaria da esquina e geralmente lavava os pratos de todo mundo. “A pia não é minha”, disse ele. “Eu lavo por hábito, não por obrigação.”\n\nRenata pegou a esponja, ajudou e perguntou se havia alguma regra na casa. “Quem cozinha não lava”, respondeu Edilson. “Mas ninguém cozinha, ou seja, ninguém lava. Faz três dias que essa pia está assim.”\n\nEla organizou o espaço, passou a vassoura e jogou as sobras na lixeira. Depois cortou o alho devagar.\n\nA pia ficou vazia e o cheiro subiu logo. “Hoje eu cozinho”, avisou Renata, alto. “E hoje, de propósito, eu não lavo.” Edilson riu sem responder.",
+  "vocab": [
+   {
+    "word": "compartilhar",
+    "surface": "compartilhada",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To share something so that several people can use it."
+   },
+   {
+    "word": "cheio",
+    "surface": "cheia",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Full, with no space left inside it at all."
+   },
+   {
+    "word": "sujo",
+    "surface": "sujos",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Dirty, with marks or old food still left on them."
+   },
+   {
+    "word": "embora",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Although; used before something that could stop what follows."
+   },
+   {
+    "word": "cozinhar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To cook, make a meal using heat and ingredients."
+   },
+   {
+    "word": "fogão",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Stove with burners where you heat pans and cook food."
+   },
+   {
+    "word": "geralmente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Usually, in most cases or on most days of the week."
+   },
+   {
+    "word": "lavar",
+    "surface": "lavava",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To wash something with water until it is clean."
+   },
+   {
+    "word": "hábito",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Something you do so often that you do it without thinking."
+   },
+   {
+    "word": "pegar",
+    "surface": "pegou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To pick something up and take hold of it."
+   },
+   {
+    "word": "esponja",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Soft square you use with soap to wash the dishes."
+   },
+   {
+    "word": "ajudar",
+    "surface": "ajudou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To help, do part of the work for someone else."
+   },
+   {
+    "word": "ou seja",
+    "type": "expression",
+    "anchor": false,
+    "definition": "In other words; used to say the same thing more clearly."
+   },
+   {
+    "word": "organizar",
+    "surface": "organizou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To sort things out into an order that works well."
+   },
+   {
+    "word": "vassoura",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Brush with a long handle that you use to sweep floors."
+   },
+   {
+    "word": "sobra",
+    "surface": "sobras",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Food or things left over after everyone has had some."
+   },
+   {
+    "word": "lixeira",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Bin where you throw away rubbish and old food."
+   },
+   {
+    "word": "vazio",
+    "surface": "vazia",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Empty, with nothing at all left inside it now."
+   },
+   {
+    "word": "logo",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Soon, in a short while from the moment you speak."
+   },
+   {
+    "word": "de propósito",
+    "type": "expression",
+    "anchor": false,
+    "definition": "On purpose; because you decided to do it, not by chance."
+   }
+  ],
+  "arcType": "juxtaposition-discovery"
+ },
+ {
+  "topic": "jericoacoara",
+  "slotIndex": 1,
+  "title": "A batata crua no feijão",
+  "slug": "a-batata-crua-no-feijao",
+  "synopsis": "Cozinha para seis pessoas que não conhece e prova a colher tarde demais, com a panela pronta e a mesa já posta para todo mundo. O homem da peixaria não diz que está ruim nem manda jogar fora: pede uma batata crua e resolve o problema sem comentar nada na frente dos outros.",
+  "text": "Naquela noite, Renata cozinhou para seis moradores; Edilson ainda não tinha chegado. Cortou a cebola, pôs o azeite na panela e preparou o feijão como em casa.\n\nO arroz ficou na outra boca. Ela misturou tudo com calma e provou a colher. “Salgado demais”, disse baixinho, chateada.\n\nRenata sabia que todos comeriam aquilo sem reclamar. Edilson chegou assim que a mesa ficou pronta, largou a mochila e provou; no entanto, ficou calado. “Tem batata?”\n\n“Batata crua, cortada em quatro”, explicou ele. “Não deixa doce e puxa o sal. Vinte minutos e você tira.” “E se não der certo?”, perguntou Renata. “Aí a gente come assim mesmo. Ninguém morreu de feijão salgado.”\n\nA batata saiu salgada, e o resto, comível. Ninguém desperdiçou nada. Renata serviu e jantou por último, com um ovo frito.\n\n“Você prova antes”, disse Edilson ao passar. “Antes, não depois.” Não estava gostoso, sem dúvida; estava salvo, e ela ficou grata.",
+  "vocab": [
+   {
+    "word": "morador",
+    "surface": "moradores",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Person who lives in a house or a building with others."
+   },
+   {
+    "word": "cebola",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Onion, the strong round vegetable you usually fry first."
+   },
+   {
+    "word": "azeite",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Olive oil, poured into the pan before anything else goes in."
+   },
+   {
+    "word": "feijão",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Beans, the everyday brown dish that Brazilians eat with rice."
+   },
+   {
+    "word": "arroz",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Rice, the white grain served with almost every meal."
+   },
+   {
+    "word": "provar",
+    "surface": "provou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To taste a little of something to see how it is."
+   },
+   {
+    "word": "chateado",
+    "surface": "chateada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Upset and disappointed because something did not go well."
+   },
+   {
+    "word": "assim que",
+    "type": "expression",
+    "anchor": false,
+    "definition": "As soon as; right at the moment that something happens."
+   },
+   {
+    "word": "largar",
+    "surface": "largou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To drop something and leave it where it lands."
+   },
+   {
+    "word": "no entanto",
+    "type": "expression",
+    "anchor": false,
+    "definition": "However; used before something that goes against what came before."
+   },
+   {
+    "word": "calado",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Quiet, saying nothing at all while other people talk."
+   },
+   {
+    "word": "cortar",
+    "surface": "cortada",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To cut something into smaller pieces with a knife."
+   },
+   {
+    "word": "doce",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Sweet, with the taste of sugar or of honey."
+   },
+   {
+    "word": "tirar",
+    "surface": "tira",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To take something out of a pot, a bag or a place."
+   },
+   {
+    "word": "desperdiçar",
+    "surface": "desperdiçou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To waste something, use it badly or throw it away."
+   },
+   {
+    "word": "servir",
+    "surface": "serviu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To put food on the plates of other people."
+   },
+   {
+    "word": "ovo",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Egg, cooked in the pan or boiled in water."
+   },
+   {
+    "word": "gostoso",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Tasty, good to eat and worth another plate."
+   },
+   {
+    "word": "sem dúvida",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Without doubt; used when something is clearly true."
+   },
+   {
+    "word": "grato",
+    "surface": "grata",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Grateful, thankful for something that someone did for you."
+   }
+  ],
+  "arcType": "late-reveal"
+ },
+ {
+  "topic": "jericoacoara",
+  "slotIndex": 2,
+  "title": "A regra vale ou não vale?",
+  "slug": "a-regra-vale-ou-nao-vale",
+  "synopsis": "A regra da casa diz que quem cozinha não lava, e ontem foi ela quem cozinhou. O dia inteiro vira uma pergunta em voz baixa: uma regra dita de passagem na pia vale também quando dá trabalho a quem a disse? Nenhum dos dois cede durante horas, e a resposta aparece de madrugada sem que ninguém precise dizer mais nada.",
+  "text": "O arroz grudou na panela mesmo assim. Normalmente, dizia Edilson, quem cozinhasse não lavaria. Por isso Renata não lavou nada, já que a ideia era dele, e sobrou comida requentada.\n\nNa geladeira, ela esvaziou um pote velho e escorreu o macarrão de ontem. “Isso ainda serve?”, perguntou Edilson da porta. “Serve. O cogumelo também. O milho eu separo para depois”, respondeu ela.\n\nEla cortou a cenoura, jogou por cima da alface e regou tudo com vinagre. De tarde, o ar ficou abafado e ninguém encostou na panela. “Você vai lavar”, disse Edilson à noite. “Não vou”, respondeu Renata. “Quem cozinha não lava. Você mesmo disse isso ontem.”\n\n“Ninguém cozinhava aqui, lembra?”, riu ele, sem ficar ofendido. “E agora alguém cozinhou. Portanto, a regra vale para os dois.” Às onze, Renata desceu por água e encontrou Edilson na pia, limpando com água quente a gordura derretida da panela. “Amanhã eu cozinho”, disse ele, com respeito.",
+  "vocab": [
+   {
+    "word": "grudar",
+    "surface": "grudou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To stick to a surface and not come off easily."
+   },
+   {
+    "word": "normalmente",
+    "surface": "Normalmente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Normally, the way things usually happen on most days."
+   },
+   {
+    "word": "por isso",
+    "surface": "Por isso",
+    "type": "expression",
+    "anchor": false,
+    "definition": "That is why; used to give the result of something."
+   },
+   {
+    "word": "já que",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Since; used to give the reason for what you say."
+   },
+   {
+    "word": "requentado",
+    "surface": "requentada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Heated up again, cooked before and warmed a second time."
+   },
+   {
+    "word": "esvaziar",
+    "surface": "esvaziou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To empty something out until nothing is left inside."
+   },
+   {
+    "word": "escorrer",
+    "surface": "escorreu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To drain, let the water run off something you cooked."
+   },
+   {
+    "word": "macarrão",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Pasta, boiled in water and drained before you eat it."
+   },
+   {
+    "word": "cogumelo",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Mushroom, soft and pale, eaten cooked or in a salad."
+   },
+   {
+    "word": "separar",
+    "surface": "separo",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To put something apart from the rest for later."
+   },
+   {
+    "word": "cenoura",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Carrot, the long orange root eaten raw or cooked."
+   },
+   {
+    "word": "alface",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Lettuce, the green leaves at the base of a salad."
+   },
+   {
+    "word": "vinagre",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Vinegar, the sharp liquid poured over salad leaves."
+   },
+   {
+    "word": "abafado",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Stuffy, with warm air that does not move at all."
+   },
+   {
+    "word": "encostar",
+    "surface": "encostou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To touch something lightly, or to lean against it."
+   },
+   {
+    "word": "ofendido",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Hurt or upset by something that someone said to you."
+   },
+   {
+    "word": "portanto",
+    "surface": "Portanto",
+    "type": "expression",
+    "anchor": false,
+    "definition": "So, therefore; used to give the result of what you said."
+   },
+   {
+    "word": "limpar",
+    "surface": "limpando",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To clean something until all the dirt is gone."
+   },
+   {
+    "word": "derreter",
+    "surface": "derretida",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To melt, turn from solid into liquid with heat."
+   },
+   {
+    "word": "respeito",
+    "type": "noun",
+    "anchor": true,
+    "definition": "The feeling that other people and their rules matter."
+   }
+  ],
+  "arcType": "harmonic-close"
+ }
+]
