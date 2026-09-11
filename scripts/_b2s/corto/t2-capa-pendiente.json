@@ -1,168 +1,67 @@
 {
  "la-guasa-del-domingo": {
-  "olía": {
-   "es": "olía a papel húmedo y",
+  "veterana": {
+   "es": "la veterana de la peña",
    "en": ""
   },
-  "a": {
-   "es": "la guasa del domingo",
-   "en": "",
-   "antes": "olor a papel húmedo = a smell of damp paper"
-  },
-  "y": {
-   "es": "papel húmedo y a tinta",
-   "en": "",
-   "antes": "y claudia abrió la más vieja = and Claudia opened the oldest one"
-  },
-  "apareció": {
-   "es": "apareció una copla contra un",
-   "en": "",
-   "antes": "en la caja apareció una copla = a song turned up in the box"
-  },
-  "que": {
-   "es": "un socio que barría hasta",
-   "en": "",
-   "antes": "que escribía las nuevas = who wrote the new ones"
-  },
-  "cantaron": {
-   "es": "escoba le cantaron tres carnavales",
-   "en": "",
-   "antes": "le cantaron tres carnavales seguidos = they sang about him three Carnivals running"
-  },
-  "carnavales": {
-   "es": "escoba le cantaron tres carnavales",
-   "en": "",
-   "antes": "tres carnavales seguidos = three Carnivals in a row"
-  },
-  "más": {
-   "es": "era el más querido de",
-   "en": "",
-   "antes": "la más vieja = the oldest one"
-  },
-  "rio": {
-   "es": "claudia se rio",
+  "peña": {
+   "es": "la veterana de la peña",
    "en": ""
   },
-  "aquí": {
-   "es": "aquí se vacila a quien",
+  "mandaba": {
+   "es": "mandaba en las letras",
    "en": "",
-   "antes": "aquí nadie se ríe de ti = here nobody laughs at you"
-  }
- },
- "un-mantel-mojado": {
-  "a": {
-   "es": "un mantel mojado",
-   "en": "",
-   "antes": "a la sobremesa de aquel sábado = to the table talk that Saturday"
+   "antes": "quien mandaba en las letras = the one in charge of the lyrics"
   },
-  "sobremesa": {
-   "es": "a la sobremesa del sábado",
+  "letras": {
+   "es": "mandaba en las letras",
    "en": "",
-   "antes": "a la sobremesa de aquel sábado = to the table talk that Saturday"
+   "antes": "quien mandaba en las letras = the one in charge of the lyrics"
   },
-  "sábado": {
-   "es": "sobremesa del sábado se llegaba",
+  "quien": {
+   "es": "vacila a quien está dentro",
    "en": "",
-   "antes": "a la sobremesa de aquel sábado = to the table talk that Saturday"
+   "antes": "quien mandaba en las letras = the one in charge of the lyrics"
   },
-  "nadie": {
-   "es": "nadie se rio",
+  "pique": {
+   "es": "el pique se deshizo",
    "en": "",
-   "antes": "y nadie se rio = and nobody laughed"
+   "antes": "el pique se le deshizo = her sting melted away"
   },
-  "rio": {
-   "es": "nadie se rio",
+  "deshizo": {
+   "es": "el pique se deshizo",
    "en": "",
-   "antes": "y nadie se rio = and nobody laughed"
+   "antes": "se le deshizo sin avisar = melted away without warning"
   },
-  "retirarlo": {
-   "es": "habría dado cualquier cosa por retirarlo",
-   "en": ""
-  },
-  "silencio": {
-   "es": "el silencio cayó como un",
+  "letra": {
+   "es": "mandaba en las letras",
    "en": "",
-   "antes": "el silencio le cayó encima = the silence fell on her"
+   "antes": "quien mandaba en las letras = the one in charge of the lyrics"
   },
-  "cayó": {
-   "es": "el silencio cayó como un",
+  "mandar": {
+   "es": "mandaba en las letras",
    "en": "",
-   "antes": "el silencio le cayó encima = the silence fell on her"
-  },
-  "que": {
-   "es": "se dejó querer e hizo",
-   "en": "",
-   "antes": "que material das = you do give them material"
-  },
-  "le": {
-   "es": "del sábado se llegaba ligero",
-   "en": "",
-   "antes": "el silencio le cayó encima = the silence fell on her"
-  },
-  "ya": {
-   "es": "la tarde ya no fue ligera",
-   "en": "",
-   "antes": "o lo mato ya = or shall I finish it off"
-  },
-  "no": {
-   "es": "la tarde ya no fue ligera",
-   "en": "",
-   "antes": "aquí no = not here"
+   "antes": "quien mandaba en las letras = the one in charge of the lyrics"
   }
  },
  "ya-no-va-a-cerrar-nada": {
-  "culpa": {
-   "es": "la culpa encogió",
+  "cinta": {
+   "es": "la cinta nueva rompía el silencio",
    "en": "",
-   "antes": "la culpa se le quedó más pequeña = the guilt got smaller"
+   "antes": "y a cinta nueva = and of fresh tape"
   },
-  "encogió": {
-   "es": "la culpa encogió",
+  "nueva": {
+   "es": "la cinta nueva rompía el silencio",
+   "en": "",
+   "antes": "y a cinta nueva = and of fresh tape"
+  },
+  "rompía": {
+   "es": "la cinta nueva rompía el silencio",
    "en": ""
   },
-  "olía": {
-   "es": "el archivo olía a polvo",
+  "silencio": {
+   "es": "la cinta nueva rompía el silencio",
    "en": ""
-  },
-  "polvo": {
-   "es": "olía a polvo y a",
-   "en": "",
-   "antes": "había olor a polvo = there was a smell of dust"
-  },
-  "era": {
-   "es": "cafés la esperaban el domingo",
-   "en": "",
-   "antes": "era la frase de claudia = it was Claudia's line"
-  },
-  "frase": {
-   "es": "era su frase",
-   "en": "",
-   "antes": "era la frase de claudia = it was Claudia's line"
-  },
-  "devuelta": {
-   "es": "devuelta",
-   "en": "",
-   "antes": "devuelta en su idioma = returned in his own language"
-  },
-  "pero": {
-   "es": "pero lo cuelgo en vitoria",
-   "en": "",
-   "antes": "pero ya se podía nombrar = but now it could be named"
-  },
-  "estantería": {
-   "es": "puso a desmontar una estantería",
-   "en": "",
-   "antes": "la primera estantería = the first shelving unit"
-  },
-  "volvió": {
-   "es": "volvió al escáner sabiendo para",
-   "en": "",
-   "antes": "claudia volvió al escáner = Claudia went back to the scanner"
-  },
-  "devolver": {
-   "es": "devuelta",
-   "en": "",
-   "antes": "devuelta en su idioma = returned in his own language"
   }
  }
 }

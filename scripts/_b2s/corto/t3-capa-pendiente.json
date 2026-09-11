@@ -1,57 +1,23 @@
 {
  "apuntame-la-de-manana": {
-  "confirmó": {
-   "es": "confirmó",
-   "en": "",
-   "antes": "confirmó, como quien firma = she confirmed, like someone signing"
-  },
-  "casi": {
-   "es": "casi una firma",
+  "ruido": {
+   "es": "había ruido",
    "en": ""
   },
-  "firma": {
-   "es": "casi una firma",
+  "churros": {
+   "es": "churros y un sitio libre",
    "en": "",
-   "antes": "como quien firma = like someone signing"
+   "antes": "olía a churros y quedaba un sitio libre = it smelled of churros and a seat was free"
   },
-  "firmar": {
-   "es": "casi una firma",
+  "y": {
+   "es": "lo suyo llegaba solo",
    "en": "",
-   "antes": "como quien firma = like someone signing"
-  }
- },
- "la-cana-de-marcos": {
-  "cuando": {
-   "es": "cuando claudia sacó el monedero",
-   "en": "",
-   "antes": "cuando sacó el monedero = when she took out her purse"
+   "antes": "olía a churros y quedaba un sitio libre = it smelled of churros and a seat was free"
   },
-  "sacó": {
-   "es": "cuando claudia sacó el monedero",
+  "sitio": {
+   "es": "churros y un sitio libre",
    "en": "",
-   "antes": "cuando sacó el monedero = when she took out her purse"
-  },
-  "monedero": {
-   "es": "cuando claudia sacó el monedero",
-   "en": "",
-   "antes": "cuando sacó el monedero = when she took out her purse"
-  }
- },
- "la-cuenta-perdida": {
-  "le": {
-   "es": "marcos le guiñó desde la",
-   "en": "",
-   "antes": "marcos le guiñó un ojo = Marcos winked at her"
-  },
-  "guiñó": {
-   "es": "marcos le guiñó desde la",
-   "en": "",
-   "antes": "marcos le guiñó un ojo = Marcos winked at her"
-  },
-  "guiñar": {
-   "es": "marcos le guiñó desde la",
-   "en": "",
-   "antes": "marcos le guiñó un ojo = Marcos winked at her"
+   "antes": "olía a churros y quedaba un sitio libre = it smelled of churros and a seat was free"
   }
  }
 }

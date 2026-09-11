@@ -199,7 +199,7 @@
  {
   "type": "meaning_in_context",
   "word": "pique",
-  "sentence": "El [[pique]] se le deshizo sin avisar.",
+  "sentence": "El [[pique]] se deshizo.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "hurt pride",
@@ -212,7 +212,7 @@
    "audioClip": {
     "storySlug": "la-guasa-del-domingo",
     "storySource": "user",
-    "sentence": "El pique se le deshizo sin avisar.",
+    "sentence": "El pique se deshizo.",
     "targetWord": "pique",
     "language": "spanish"
    }
@@ -272,7 +272,7 @@
  {
   "type": "meaning_in_context",
   "word": "mandar",
-  "sentence": "Ella [[mandaba]] en las letras.",
+  "sentence": "La veterana [[mandaba]] en las letras.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to be in charge",
@@ -285,7 +285,7 @@
    "audioClip": {
     "storySlug": "la-guasa-del-domingo",
     "storySource": "user",
-    "sentence": "Ella mandaba en las letras.",
+    "sentence": "La veterana mandaba en las letras.",
     "targetWord": "mandaba",
     "language": "spanish"
    }

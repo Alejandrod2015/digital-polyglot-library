@@ -2,21 +2,19 @@
  "la-balda-del-medio": {
   "entraba": {
    "es": "entraba una luz nueva",
-   "en": ""
+   "en": "a new light came in"
   },
   "luz": {
    "es": "entraba una luz nueva",
-   "en": ""
+   "en": "a new light came in"
   },
   "nueva": {
    "es": "entraba una luz nueva",
-   "en": "",
-   "antes": "a madera nueva = of new wood"
+   "en": "a new light came in"
   },
   "comienzo": {
-   "es": "de comienzo",
-   "en": "",
-   "antes": "y a comienzo = and of beginnings"
+   "es": "entraba una luz nueva, de comienzo",
+   "en": "a new light came in, like a beginning"
   }
  }
 }

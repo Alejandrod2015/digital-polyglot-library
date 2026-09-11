@@ -889,8 +889,8 @@
     }
   },
   "cmtplpfum0007j8c6piegwt31#books-and-bookshops": {
-    "cerrado": "2026-09-10T23:33:34.178Z",
-    "hash": "abf9558e388cc277",
+    "cerrado": "2026-09-11T07:23:14.376Z",
+    "hash": "3438cf5056fdf66f",
     "historias": [
       "books-and-bookshops#1 vuelva-cuando-quiera",
       "books-and-bookshops#2 el-tomo-aparte",
@@ -955,8 +955,8 @@
     }
   },
   "cmtplpfum0007j8c6piegwt31#humour-and-comebacks": {
-    "cerrado": "2026-09-10T22:36:18.230Z",
-    "hash": "1646c04854a47ebe",
+    "cerrado": "2026-09-11T07:22:21.864Z",
+    "hash": "acc41eda8d8a9847",
     "historias": [
       "humour-and-comebacks#1 la-guasa-del-domingo",
       "humour-and-comebacks#2 un-mantel-mojado",
@@ -1021,8 +1021,8 @@
     }
   },
   "cmtplpfum0007j8c6piegwt31#locals-and-outsiders": {
-    "cerrado": "2026-09-10T23:32:47.409Z",
-    "hash": "be510c3b3369985b",
+    "cerrado": "2026-09-11T07:22:02.065Z",
+    "hash": "90ba3b4f21b9b219",
     "historias": [
       "locals-and-outsiders#1 el-cafe-lo-pones-tu",
       "locals-and-outsiders#2 la-bolsa-como-prueba",
@@ -1087,8 +1087,8 @@
     }
   },
   "cmtplpfum0007j8c6piegwt31#news-and-headlines": {
-    "cerrado": "2026-09-10T22:52:49.874Z",
-    "hash": "0a856818f4ab7da1",
+    "cerrado": "2026-09-11T07:22:58.577Z",
+    "hash": "384ff85c59f531ba",
     "historias": [
       "news-and-headlines#1 la-persiana-a-media-tarde",
       "news-and-headlines#2 yo-ya-decidi-una-vez",
@@ -1114,7 +1114,7 @@
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: news-and-headlines (Hugo, Claudia)"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: news-and-headlines (Claudia, Hugo)"
     ],
     "plan": {
       "tipo": "Traveler",
@@ -1153,8 +1153,8 @@
     }
   },
   "cmtplpfum0007j8c6piegwt31#rounds-and-regulars": {
-    "cerrado": "2026-09-10T23:33:02.676Z",
-    "hash": "5287897e1e5563b4",
+    "cerrado": "2026-09-11T07:22:40.580Z",
+    "hash": "87ff4d885f4426b0",
     "historias": [
       "rounds-and-regulars#1 apuntame-la-de-manana",
       "rounds-and-regulars#2 la-cana-de-marcos",
@@ -1219,8 +1219,8 @@
     }
   },
   "cmtplpfum0007j8c6piegwt31#visits-and-old-friends": {
-    "cerrado": "2026-09-10T23:33:49.942Z",
-    "hash": "7c2473cc0128817b",
+    "cerrado": "2026-09-11T07:23:30.097Z",
+    "hash": "057fb0db8772aeb1",
     "historias": [
       "visits-and-old-friends#1 una-agenda-de-desconocida",
       "visits-and-old-friends#2 amanece-con-poniente",

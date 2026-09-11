@@ -250,7 +250,7 @@
  {
   "type": "meaning_in_context",
   "word": "comienzo",
-  "sentence": "Había olor a madera nueva y a [[comienzo]].",
+  "sentence": "Entraba una luz nueva, de [[comienzo]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "new beginning",
@@ -263,7 +263,7 @@
    "audioClip": {
     "storySlug": "la-balda-del-medio",
     "storySource": "user",
-    "sentence": "Había olor a madera nueva y a comienzo.",
+    "sentence": "Entraba una luz nueva, de comienzo.",
     "targetWord": "comienzo",
     "language": "spanish"
    }

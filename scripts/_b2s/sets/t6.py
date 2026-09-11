@@ -66,7 +66,7 @@ SETS = {
   ("C", "perderse", "La compré yo, para que no [[se perdiera]].", "to get lost", "to get wet", "to get bored", "to get married"),
   ("F", "enorme", "La casa tiene muchísimas habitaciones; es _____.", ["joven", "alegre", "feliz"],
    "The house has loads of rooms; it's _____.", ["huge", "young", "cheerful", "happy"]),
-  ("C", "comienzo", "Había olor a madera nueva y a [[comienzo]].", "new beginning", "old age", "goodbye", "paint"),
+  ("C", "comienzo", "Entraba una luz nueva, de [[comienzo]].", "new beginning", "old age", "goodbye", "paint"),
   ("C", "permiso", "Nadie le había dado [[permiso]].", "permission", "money", "advice", "time"),
   ("F", "añadió", "Probó la sopa y le _____ un poco de sal.", ["prestó", "alquiló", "dedicó"],
    "She tasted the soup and _____ a little salt.", ["added", "lent", "rented", "dedicated"]),

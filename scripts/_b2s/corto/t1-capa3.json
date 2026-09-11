@@ -2,41 +2,37 @@
  "la-bolsa-como-prueba": {
   "entre": {
    "es": "entre murmullo y pescado fresco",
-   "en": ""
+   "en": "amid murmuring and fresh fish"
   },
   "murmullo": {
    "es": "entre murmullo y pescado fresco",
-   "en": ""
+   "en": "amid murmuring and fresh fish"
   },
   "pescado": {
    "es": "entre murmullo y pescado fresco",
-   "en": "",
-   "antes": "a pescado fresco = of fresh fish"
+   "en": "amid murmuring and fresh fish"
   },
   "fresco": {
    "es": "entre murmullo y pescado fresco",
-   "en": "",
-   "antes": "a pescado fresco = of fresh fish"
+   "en": "amid murmuring and fresh fish"
   },
   "a": {
-   "es": "la bolsa como prueba",
-   "en": "",
-   "antes": "con olor a pescado fresco = smelling of fresh fish"
+   "es": "le presumió a marcos",
+   "en": "she boasted to Marcos"
   }
  },
  "la-sobremesa-se-estira": {
   "en": {
    "es": "en el comedor sonaba la radio",
-   "en": "",
-   "antes": "en el comedor olía a laurel = the dining room smelled of bay leaf"
+   "en": "the radio was playing in the dining room"
   },
   "sonaba": {
    "es": "en el comedor sonaba la radio",
-   "en": ""
+   "en": "the radio was playing in the dining room"
   },
   "radio": {
    "es": "en el comedor sonaba la radio",
-   "en": ""
+   "en": "the radio was playing in the dining room"
   }
  }
 }

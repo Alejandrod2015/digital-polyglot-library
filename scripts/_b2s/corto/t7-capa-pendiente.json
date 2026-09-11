@@ -1,52 +1,50 @@
 {
- "amanece-con-poniente": {
-  "cargó": {
-   "es": "marcos cargó a claudia y",
-   "en": "",
-   "antes": "que cargó una caja en los brazos = who took a box in her arms"
-  },
-  "cajas": {
-   "es": "con cajas en los brazos",
+ "una-agenda-de-desconocida": {
+  "oscuro": {
+   "es": "en el andén todavía oscuro",
    "en": ""
   },
   "que": {
-   "es": "en esta casa el que mira",
+   "es": "sacó un paquete con el",
    "en": "",
-   "antes": "que cargó una caja en los brazos = who took a box in her arms"
+   "antes": "que olía a tren = which smelled of trains"
   },
-  "apretó": {
-   "es": "claudia lo apretó",
-   "en": ""
-  },
-  "broma": {
-   "es": "a bromas con eco en",
+  "a": {
+   "es": "una agenda de desconocida",
    "en": "",
-   "antes": "la broma volvía como regalo, ya curada = the joke came back as a gift, healed now"
-  },
-  "volvía": {
-   "es": "la broma volvía como regalo",
+   "antes": "que olía a tren = which smelled of trains"
+  }
+ },
+ "me-lo-he-ganado": {
+  "estrenó": {
+   "es": "local nuevo estrenó luz y",
    "en": "",
-   "antes": "la broma volvía como regalo, ya curada = the joke came back as a gift, healed now"
+   "antes": "estrenó luz y olor a pintura = had fresh light and the smell of paint"
   },
-  "regalo": {
-   "es": "la broma volvía como regalo",
+  "luz": {
+   "es": "nuevo estrenó luz y pintura",
    "en": "",
-   "antes": "la broma volvía como regalo, ya curada = the joke came back as a gift, healed now"
+   "antes": "estrenó luz y olor a pintura = had fresh light and the smell of paint"
   },
-  "curada": {
-   "es": "curada",
+  "y": {
+   "es": "nuevo estrenó luz y pintura",
    "en": "",
-   "antes": "la broma volvía como regalo, ya curada = the joke came back as a gift, healed now"
+   "antes": "luz y olor a pintura = light and the smell of paint"
   },
-  "curar": {
-   "es": "curada",
+  "pintura": {
+   "es": "nuevo estrenó luz y pintura",
    "en": "",
-   "antes": "la broma volvía como regalo, ya curada = the joke came back as a gift, healed now"
+   "antes": "olor a pintura = the smell of paint"
   },
-  "en los brazos": {
-   "es": "con cajas en los brazos",
+  "a": {
+   "es": "me lo he ganado",
    "en": "",
-   "antes": "una caja en los brazos = a box in her arms"
+   "antes": "olor a pintura = the smell of paint"
+  },
+  "estrenar": {
+   "es": "local nuevo estrenó luz y",
+   "en": "",
+   "antes": "estrenó luz y olor a pintura = had fresh light and the smell of paint"
   }
  }
 }
