@@ -33,16 +33,10 @@ import { VOZ_POR_TEMA_B1_LATAM } from "./_b1LatamVoces";
 const PERFILES: Record<string, { journey: string; voces: Record<string, string> }> = {
   a2: { journey: "cmtgelq560007j84n3ujx9bpd", voces: VOZ_POR_TEMA },
   "b1-latam": { journey: "cmtmylg7k0007321h6t7njesx", voces: VOZ_POR_TEMA_B1_LATAM },
-  // Ampliado el 2026-09-11 para el Traveler ES spain B1: narradora unica,
-  // Maia, en los siete temas (la misma voiceId que ya lleva cada historia,
-  // igual que el A1 y el A2 de Espana).
-  "spain-b1": { journey: "cmt5x67ze000l320cpgunu5vi", voces: Object.fromEntries(
-    ["rooms-and-landlords", "jobs-and-wages", "meetings-and-deadlines", "repeating-and-rephrasing",
-     "sayings-and-nicknames", "deals-and-estimates", "trust-and-rumours"].map((t) => [t, "jipeLrCHZ6ByxrU2JP9i"])) },
 };
 const pi = process.argv.indexOf("--journey");
 const PERFIL = PERFILES[pi >= 0 ? process.argv[pi + 1] : "a2"];
-if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam | spain-b1");
+if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam");
 const JOURNEY = PERFIL.journey;
 const REGISTRO = path.join(__dirname, "a2-muestras.json");
 
