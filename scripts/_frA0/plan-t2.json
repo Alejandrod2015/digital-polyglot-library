@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "france",
+  "registro": "intimo y un poco torpe: el ruido del cafe, un telefono que corta, lo que se oye mal y lo que no se quiere oir",
+  "espina": "Hugo se va a Paris en marzo. En octubre ya tiene piso alli, y Lea aprende a escuchar lo que no quiere oir.",
+  "recursos": "A0: repeticion ritmica (encore une fois, deux fois), contraste con mais, imagen concreta (la emocion como gesto visible)",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Lea quiere escuchar el mensaje de voz de Hugo, que esta en Paris",
+      "impide": "el cafe esta lleno y Theo, el camarero nuevo en su primer dia, le pide ayuda todo el rato",
+      "cuesta": "Theo lo escucha por ella con sus auriculares y se lo repite: Hugo tiene piso en Paris. Se entera por otro",
+      "cambia": "la marcha ya tiene direccion; Theo ya es alguien en el cafe",
+      "emocion": "deja el portable boca abajo en el plateau y sigue sirviendo"
+    },
+    {
+      "slot": "2",
+      "quiere": "Lea quiere decirle a Hugo por telefono que no quiere que se vaya",
+      "impide": "en el cafe no hay red; sube al tejado, entre la ropa tendida, y la linea corta a mitad de frase",
+      "cuesta": "lo dice una vez y el no lo oye; cuando el vuelve a llamar, ella ya no puede decirlo",
+      "cambia": "decide que lo importante se dice a la cara",
+      "emocion": "aprieta el portable contra el pecho y mira las chimeneas"
+    },
+    {
+      "slot": "3",
+      "quiere": "Hugo vuelve y quiere contarle todo de Paris: el piso, la vista, el metro",
+      "impide": "Lea no quiere escuchar; seca tazas y habla de otra cosa",
+      "cuesta": "Hugo se calla y sube a su casa; ella pierde la noche que el queria compartir",
+      "cambia": "ella sube, llama a su puerta y le dice que cuente: escucha",
+      "emocion": "llama a la puerta con el torchon todavia en la mano"
+    }
+  ]
+}

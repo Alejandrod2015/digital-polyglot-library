@@ -56,3 +56,8 @@ for s in stories:
     print(f"   palabras {words} · frases {len(lens)} · mediana {statistics.median(lens)} · max {max(lens)} · citado {round(100*quoted/words)}%")
     print(f"   plazas {len(s['vocab'])} (ancladas {sum(1 for v in s['vocab'] if v.get('anchor'))}) · por parrafo {per}" + (f" · FALTAN {missing}" if missing else ""))
     print(f"   sinopsis {len(WORD.findall(s['synopsis']))} palabras")
+    t = text.replace("\n", " ")
+    frs = [f for f in re.split(r"(?<=[.!?:])\s+|(?<=[.!?]”)\s+", t) if WORD.findall(f)]
+    larga = max(frs, key=lambda f: len(WORD.findall(f)))
+    if len(WORD.findall(larga)) > 9:
+        print(f"   frase larga ({len(WORD.findall(larga))}): {larga}")
