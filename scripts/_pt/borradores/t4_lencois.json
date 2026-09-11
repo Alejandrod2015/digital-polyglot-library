@@ -5,7 +5,7 @@
   "title": "A passagem já comprada",
   "slug": "a-passagem-ja-comprada",
   "synopsis": "Tem três dias na região e a passagem de volta já comprada, e o céu não colabora com nenhum dos dois planos que ela trouxe escritos. Quem leva gente de canoa poderia lhe vender uma esperança barata pela manhã, e prefere lhe dar a verdade sobre janeiro.",
-  "text": "Chovia em Lençóis desde a madrugada, e a excursão do dia foi cancelada. Renata tinha três dias na região, a passagem já comprada e uma previsão de tempestade.\n\nDamião levava turistas de canoa havia vinte anos e raramente falava do clima. “Amanhã melhora?”, perguntou Renata. “Não sei”, respondeu ele. “Em janeiro ninguém sabe, moça, nem eu, que nasci aqui.”\n\nUm trovão passou longe, e o ar esfriou. “A senhora quer que eu minta?”, perguntou Damião. “Quero saber o que acontece”, respondeu ela. Ele disse que a chuva pararia em três dias: “Hoje está feio. Amanhã, quem sabe. Depois de amanhã, provavelmente.”\n\nRenata decidiu não desistir. “Então eu fico”, disse ela, e pagou mais uma noite. Por enquanto, não havia nada a fazer.\n\nDe manhã, o céu ainda escondia tudo, e a chuva demorou a parar. Então alguém surgiu na porta: Damião, animado, com dois remos. “Vamos?”, perguntou ele.",
+  "text": "Chovia em Lençóis desde a madrugada, e a excursão do dia foi cancelada. Renata tinha três dias na região, a passagem já comprada e uma previsão de tempestade.\n\nDamião levava turistas de canoa havia vinte anos e raramente falava do clima. “Amanhã melhora?”, perguntou Renata. “Não sei”, respondeu ele. “Em janeiro ninguém sabe, moça, nem eu, que nasci aqui.”\n\nUm trovão passou longe, e o ar esfriou. “A senhora quer que eu minta?”, perguntou Damião. “Quero saber o que acontece”, respondeu ela. Ele disse que a chuva pararia em três dias: “Hoje está feio e pode piorar. Amanhã, quem sabe. Depois de amanhã, provavelmente.”\n\nRenata decidiu não desistir. “Então eu fico”, disse ela, e pagou mais uma noite. A noite foi longa, e por enquanto não havia nada a fazer.\n\nDe manhã, o céu ainda escondia tudo, e a chuva demorou a parar. Então alguém surgiu na porta: Damião, animado, com dois remos. “Vamos?”, perguntou ele.",
   "vocab": [
    {
     "word": "excursão",
@@ -103,7 +103,7 @@
    },
    {
     "word": "por enquanto",
-    "surface": "Por enquanto",
+    "surface": "por enquanto",
     "type": "expression",
     "anchor": false,
     "definition": "For now; until the situation changes later on."
@@ -144,7 +144,7 @@
   "title": "Se puxar, a gente vira",
   "slug": "se-puxar-a-gente-vira",
   "synopsis": "Saem às seis com o rio cheio e a promessa de que a chuva parou de vez, e no meio da travessia o vento decide outra coisa por eles. Voltam sem falar e sem saber se ainda existe um terceiro dia, e ninguém pergunta nada na margem.",
-  "text": "A canoa saiu às seis. Damião remava atrás, e Renata ia na frente. Da margem, a floresta parecia uma parede, e a temperatura caiu.\n\n“O rio está alto e certamente vai subir mais”, avisou ele. “Choveu a noite inteira lá em cima.” O vento empurrava a canoa para o lado, não para adiante. “Segura no banco, moça, não no remo”, pediu Damião.\n\nEles atravessaram o primeiro trecho e balançaram feio. Renata escorregou no banco molhado e praticamente caiu. Damião gritou de trás: se ela puxasse, a canoa viraria. “Deixa o remo solto, que eu seguro”, disse.\n\nRenata obedeceu, sem fôlego, e a canoa resistiu. Do outro lado havia uma montanha de areia. “O barco deles já voltou. A gente vai atrás”, disse Damião.\n\nRenata subiu dez passos, mas a chuva arrastou a areia de lado. “Desce, que vem mais”, chamou ele, e salvou na hora o remo que ia embora. “Amanhã?”, perguntou ela. Damião olhou o céu e não respondeu.",
+  "text": "A canoa saiu às seis. Damião remava atrás, e Renata ia na frente. Da margem, a floresta parecia uma parede, e a temperatura caiu.\n\n“O rio está alto e certamente vai subir mais”, avisou ele. “Choveu a noite inteira lá em cima.” O vento empurrava a canoa para o lado, não para adiante. “Segura no banco, moça, não no remo”, pediu Damião.\n\nEles atravessaram o primeiro trecho e balançaram feio. Renata escorregou no banco molhado e praticamente caiu. Damião gritou de trás: se ela puxasse, a canoa viraria. “Deixa o remo solto, que eu seguro”, disse.\n\nRenata obedeceu, sem fôlego, e a canoa resistiu. Do outro lado havia uma montanha de areia. “O barco deles já voltou. A gente vai atrás”, disse Damião.\n\nRenata subiu dez passos, mas a chuva arrastou a areia de lado. “Desce, que vem mais”, chamou ele, e salvou na hora o remo que ia embora. “Amanhã?”, perguntou ela. Damião olhou o céu, calado.",
   "vocab": [
    {
     "word": "remar",

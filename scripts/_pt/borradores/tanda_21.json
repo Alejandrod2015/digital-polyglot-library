@@ -1,0 +1,2966 @@
+[
+ {
+  "topic": "salvador",
+  "slotIndex": 0,
+  "title": "A lousa e nenhum livro",
+  "slug": "a-lousa-e-nenhum-livro",
+  "synopsis": "A escola do Pelourinho tem cadeiras, tem lousa e não tem um livro sequer, porque a caixa prometida para segunda ainda está em outro estado. A professora que veio do sul pode cancelar a primeira aula ou dar aula com o que existe na sala, e quem lhe mostra o que existe é o rapaz que varre o chão antes de todo mundo chegar.",
+  "text": "Renata, uma professora de Porto Alegre, chegou cedo à escola do Pelourinho: lousa, cadeiras e nenhum livro. Segundo o diretor, a caixa chegaria na segunda, mas não chegou. A sala cheirava a giz.\n\nQuem varria o chão era Gilson, um rapaz que trabalhava ali como zelador. “A senhora vai dar aula assim mesmo?”, perguntou ele. “Vou tentar”, respondeu Renata, envergonhada. “Escrevendo tudo na lousa, fica mais claro.”\n\nGilson desenhou uma letra enorme com giz. “Assim a turma do fundo enxerga”, explicou, mostrando um detalhe que ela não viu. “Eu varro lá de trás e sei o que eles não leem.” Renata prestou atenção e repetiu.\n\nAos poucos, ela chamou os alunos de três em três, e cada um escreveu a sua palavra. Na verdade, ninguém estava à vontade, mas trabalharam educados.\n\nNo fim, a lousa e o caderno tinham as mesmas dezoito palavras. “De pé, eles entenderam melhor”, comentou Gilson. “E amanhã, a caixa chega?” “Não sei”, respondeu Renata.",
+  "vocab": [
+   {
+    "word": "lousa",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Dark board on the classroom wall for writing on."
+   },
+   {
+    "word": "diretor",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Person in charge of a school who makes the decisions."
+   },
+   {
+    "word": "zelador",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Person paid to clean and look after a building."
+   },
+   {
+    "word": "responder",
+    "surface": "respondeu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To answer, give words back to someone who asked."
+   },
+   {
+    "word": "envergonhado",
+    "surface": "envergonhada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Feeling bad and shy because others saw you fail."
+   },
+   {
+    "word": "claro",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Easy to understand, with nothing hidden or confusing."
+   },
+   {
+    "word": "turma",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Group of students who take the same class together."
+   },
+   {
+    "word": "detalhe",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Small part of something that is easy to miss."
+   },
+   {
+    "word": "prestar atenção",
+    "surface": "prestou atenção",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To watch or listen carefully so that you notice everything."
+   },
+   {
+    "word": "repetir",
+    "surface": "repetiu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To say or do the same thing another time."
+   },
+   {
+    "word": "aos poucos",
+    "surface": "Aos poucos",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Little by little, slowly and in small steps."
+   },
+   {
+    "word": "chamar",
+    "surface": "chamou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To call someone to come to where you are."
+   },
+   {
+    "word": "escrever",
+    "surface": "escreveu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To put words on paper or on a board."
+   },
+   {
+    "word": "na verdade",
+    "surface": "Na verdade",
+    "type": "expression",
+    "anchor": false,
+    "definition": "In fact; used to say what is really true."
+   },
+   {
+    "word": "educado",
+    "surface": "educados",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Polite, careful not to make anyone else feel bad."
+   },
+   {
+    "word": "caderno",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Notebook with blank pages where you write notes by hand."
+   },
+   {
+    "word": "entender",
+    "surface": "entenderam",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To understand, get the meaning of words or ideas."
+   },
+   {
+    "word": "comentar",
+    "surface": "comentou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To say what you think about something you saw."
+   },
+   {
+    "word": "cedo",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Early, before the usual hour that something starts."
+   },
+   {
+    "word": "tentar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To try, make an effort without knowing the result."
+   }
+  ],
+  "arcType": "juxtaposition-discovery"
+ },
+ {
+  "topic": "salvador",
+  "slotIndex": 1,
+  "title": "O preço, não a ideia",
+  "slug": "o-preco-nao-a-ideia",
+  "synopsis": "Na livraria da ladeira sobrou um exemplar e há duas pessoas que o querem pelo mesmo motivo, cada uma convencida de que a outra precisa mais. Nenhum dos dois cede na porta da loja, e o acordo que sai dali no fim da tarde troca de lugar quem ensina e quem aprende dentro da escola.",
+  "text": "A livraria da ladeira era um sebo: tinha um exemplar só do livro de contos, e o ventilador fazia barulho no teto. Gilson chegou primeiro; Renata parou na porta. Os dois queriam o livro pelo mesmo motivo.\n\n“Esse é da senhora”, disse Gilson, e estendeu o livro. “Faço questão de que fique com você”, respondeu Renata. “Você lê direto; eu não.”\n\nEle recusou. Os dois eram teimosos, e nenhum queria ceder.\n\n“Então a senhora compra, e eu leio um conto por semana em voz alta”, insistiu Gilson, como se o acordo já estivesse fechado. “Pelo menos a senhora me diz onde eu erro e escolhe o próximo.” Renata discutiu o preço, não a ideia, porque no fundo ele tinha razão, e concordou.\n\nNo caixa, achou a régua e a borracha no fundo da bolsa e contou as moedas devagar.\n\nDepois lembrou da primeira aula e escreveu, com orgulho, no caderno: hoje a aprendiz era ela.",
+  "vocab": [
+   {
+    "word": "livraria",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Shop that sells books, often with a table for readers."
+   },
+   {
+    "word": "sebo",
+    "type": "noun",
+    "anchor": true,
+    "register": "cultural",
+    "definition": "Shop that sells used books, common in Brazilian cities."
+   },
+   {
+    "word": "conto",
+    "surface": "contos",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Short story you can read in one single sitting."
+   },
+   {
+    "word": "motivo",
+    "type": "noun",
+    "anchor": true,
+    "definition": "The reason why someone does or wants something."
+   },
+   {
+    "word": "fazer questão",
+    "surface": "Faço questão",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To insist on something because it really matters to you."
+   },
+   {
+    "word": "direto",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Straight through, without stopping or going around anything."
+   },
+   {
+    "word": "ler",
+    "surface": "lê",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To go through written words and get their meaning."
+   },
+   {
+    "word": "recusar",
+    "surface": "recusou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To say no to something offered or asked of you."
+   },
+   {
+    "word": "teimoso",
+    "surface": "teimosos",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Stubborn, unwilling to change a decision once it is made."
+   },
+   {
+    "word": "ceder",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To give way and let the other person have it."
+   },
+   {
+    "word": "insistir",
+    "surface": "insistiu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To keep asking or saying something after a refusal."
+   },
+   {
+    "word": "pelo menos",
+    "surface": "Pelo menos",
+    "type": "expression",
+    "anchor": false,
+    "definition": "At least; the smallest thing that is still acceptable."
+   },
+   {
+    "word": "ter razão",
+    "surface": "tinha razão",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To be right about something that was said."
+   },
+   {
+    "word": "concordar",
+    "surface": "concordou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To agree, say yes to the same idea."
+   },
+   {
+    "word": "contar",
+    "surface": "contou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To count things one by one to know how many."
+   },
+   {
+    "word": "lembrar",
+    "surface": "lembrou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To bring a past thing back into your mind."
+   },
+   {
+    "word": "orgulho",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Good feeling about yourself after doing something well."
+   },
+   {
+    "word": "aprendiz",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Person who is learning a skill from someone else."
+   },
+   {
+    "word": "achar",
+    "surface": "achou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To find something you were looking for, or to think."
+   },
+   {
+    "word": "devagar",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Slowly, taking more time than usual to do it."
+   }
+  ],
+  "arcType": "reframe-turn"
+ },
+ {
+  "topic": "salvador",
+  "slotIndex": 2,
+  "title": "A ladeira na sexta",
+  "slug": "a-ladeira-na-sexta",
+  "synopsis": "O rapaz que varre a sala guarda uma prova para sexta de manhã e não contou a ninguém dentro da escola, nem à professora que já o viu estudar. A escada da biblioteca vira sala de ensaio quando as luzes se apagam, mas quem espera na sexta com o caderno aberto não recebe resposta nenhuma.",
+  "text": "Gilson queria entrar na universidade, e o vestibular era na sexta, mas não contou a ninguém. Renata descobriu por acaso, na biblioteca, quando ele fechou o caderno rápido demais.\n\n“Você estuda pra quê?”, perguntou ela. “Pra Letras, professora”, respondeu ele, inseguro. Renata perguntou se ele queria ensinar idioma, e ele fez que sim.\n\nÀs seis a biblioteca fechou e a escada ficou escura. Ensaiaram ali a prova oral: ela inventava perguntas, ele respondia. Se ele esquecesse uma palavra, ela esperava. “Devagar, que eu ouço tudo”, dizia.\n\n“Falar eu já falo. Escrever certo, sem errar, é outra coisa”, disse ele. “Não sei se vale a pena arriscar.” “Vale, sim”, respondeu Renata. “Você aprendeu esta escola inteira sozinho e merece essa chance.”\n\nNa sexta, ele cumprimentou a turma de longe e sumiu na ladeira. Renata gostaria de saber o resultado, mas conhecia o rapaz: tinha esperança e confiança. Escreveu o nome dele e a data, e deixou a linha aberta.",
+  "vocab": [
+   {
+    "word": "universidade",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Place where adults study for a degree after school."
+   },
+   {
+    "word": "vestibular",
+    "type": "noun",
+    "anchor": true,
+    "register": "cultural",
+    "definition": "Brazilian entrance exam to get a place at university."
+   },
+   {
+    "word": "por acaso",
+    "type": "expression",
+    "anchor": false,
+    "definition": "By chance, without planning or looking for it."
+   },
+   {
+    "word": "biblioteca",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Public room full of books you can read or borrow."
+   },
+   {
+    "word": "estudar",
+    "surface": "estuda",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To work on a subject until you know it."
+   },
+   {
+    "word": "inseguro",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Not sure of yourself, afraid of doing badly."
+   },
+   {
+    "word": "ensinar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To teach, give someone knowledge they did not have."
+   },
+   {
+    "word": "idioma",
+    "type": "noun",
+    "anchor": true,
+    "definition": "A language, such as Portuguese, English or Spanish."
+   },
+   {
+    "word": "escuro",
+    "surface": "escura",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Dark, with little or no light to see by."
+   },
+   {
+    "word": "esquecer",
+    "surface": "esquecesse",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To lose something from your memory without meaning to."
+   },
+   {
+    "word": "ouvir",
+    "surface": "ouço",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To hear a sound, or to listen to someone."
+   },
+   {
+    "word": "certo",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Right, the way something is supposed to be."
+   },
+   {
+    "word": "valer a pena",
+    "surface": "vale a pena",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To be worth the effort or the risk."
+   },
+   {
+    "word": "arriscar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To try something even though it could go wrong."
+   },
+   {
+    "word": "aprender",
+    "surface": "aprendeu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To take in knowledge or a skill you did not have."
+   },
+   {
+    "word": "merecer",
+    "surface": "merece",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To have earned something by what you did."
+   },
+   {
+    "word": "conhecer",
+    "surface": "conhecia",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To know a person or place from real experience."
+   },
+   {
+    "word": "esperança",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Feeling that something good can still happen in the future."
+   },
+   {
+    "word": "confiança",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Feeling that you can trust someone and rely on them."
+   },
+   {
+    "word": "cumprimentar",
+    "surface": "cumprimentou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To greet someone with words or a small gesture."
+   }
+  ],
+  "arcType": "mini-cliffhanger"
+ },
+ {
+  "topic": "recife",
+  "slotIndex": 0,
+  "title": "A dor não é doença",
+  "slug": "a-dor-nao-e-doenca",
+  "synopsis": "Chega a Recife sem virar a cabeça e entra na primeira farmácia que vê, decidida a comprar a caixa mais cara do balcão. Quem atende não entrega nada até saber onde dói de verdade, e o que sai dali por três reais não é bem o que ela tinha ido buscar.",
+  "text": "Em Recife, o pescoço de Renata travou de vez. Ela dava aulas em escolas de idioma e estava havia um mês na estrada, cansada, com uma dor que não passava.\n\nQuem atendia na farmácia da esquina era Nilza, uma mulher que estava ali desde que a loja abriu. “Preciso de um remédio forte, que resolveria tudo”, disse Renata. “Forte pra quê?”, respondeu Nilza, e perguntou se doía no pescoço ou no ombro.\n\nRenata apontou os dois, desconfiada. Nilza pegou um frasco pequeno, mostrou a embalagem e disse o preço. “Não recomendo o caro. Este é amargo, mas resolve.”\n\n“A dor não é doença, é cama ruim”, explicou Nilza. “Não é sintoma de nada grave. É só evitar esforço, tomar cuidado, e amanhã melhora.”\n\nRenata saiu aliviada, com o frasco na mão. A saúde dela dependia de uma cama que ainda não tinha visto. “Se piorar, a senhora volta e me avisa”, disse Nilza da porta.",
+  "vocab": [
+   {
+    "word": "pescoço",
+    "type": "noun",
+    "anchor": true,
+    "definition": "The part of the body between your head and shoulders."
+   },
+   {
+    "word": "cansado",
+    "surface": "cansada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Tired, with little energy left after a long day or trip."
+   },
+   {
+    "word": "dor",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Pain, the bad feeling in a part of your body."
+   },
+   {
+    "word": "precisar",
+    "surface": "Preciso",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To need something that you really cannot manage without."
+   },
+   {
+    "word": "remédio",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Medicine you take to make pain or an illness stop."
+   },
+   {
+    "word": "forte",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Strong, with a powerful effect on the body or the problem."
+   },
+   {
+    "word": "resolver",
+    "surface": "resolveria",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To solve a problem so that it stops being a problem."
+   },
+   {
+    "word": "doer",
+    "surface": "doía",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To hurt, to cause pain in a part of the body."
+   },
+   {
+    "word": "desconfiado",
+    "surface": "desconfiada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Not trusting something, a little suspicious that it will not work."
+   },
+   {
+    "word": "frasco",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Small bottle that holds liquid medicine or a syrup."
+   },
+   {
+    "word": "embalagem",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Box or wrapper that a product comes inside when you buy it."
+   },
+   {
+    "word": "recomendar",
+    "surface": "recomendo",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To tell someone which choice you think is the better one."
+   },
+   {
+    "word": "amargo",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Bitter, with the sharp taste of strong black coffee."
+   },
+   {
+    "word": "sintoma",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Sign in your body that shows you may be ill."
+   },
+   {
+    "word": "evitar",
+    "surface": "evitar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To keep away from something so that it does not happen."
+   },
+   {
+    "word": "tomar cuidado",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To be careful so that nothing bad happens to you."
+   },
+   {
+    "word": "melhorar",
+    "surface": "melhora",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To get better, feel less pain or trouble than before."
+   },
+   {
+    "word": "aliviado",
+    "surface": "aliviada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Relieved, feeling calmer because a worry has gone away."
+   },
+   {
+    "word": "piorar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To get worse, become more painful or serious than before."
+   },
+   {
+    "word": "avisar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To let someone know, especially before a problem gets bigger.",
+    "surface": "avisa"
+   }
+  ],
+  "arcType": "late-reveal"
+ },
+ {
+  "topic": "recife",
+  "slotIndex": 1,
+  "title": "O quarto morno da pousada",
+  "slug": "o-quarto-morno-da-pousada",
+  "synopsis": "A cama da pousada afunda no meio e a noite passa inteira sem nenhuma hora de sono, com a barriga entrando na conta lá pela uma da manhã. A farmácia da esquina está aberta, e quem está no turno da noite não vende nada desta vez.",
+  "text": "O colchão da pousada afundava no meio, e a almofada era fina como um pano dobrado. Renata virou de um lado para o outro, mas o sono não vinha. À uma da manhã, a barriga entrou na conta, e no fundo ela não sabia se era o estômago ou a ansiedade.\n\nAflita, vestiu a jaqueta e desceu. Nilza estava no turno da noite, com um café frio na mão. “A senhora de novo”, disse ela, sem se surpreender. “Eu não suporto esse quarto”, reclamou Renata, irritada. “Não durmo, não acordo, fico virando.”\n\nNilza saiu de trás do balcão e explicou devagar, como se ensinasse uma receita. “Você respira contando até quatro”, sugeriu. “Quarto morno, nunca quente, e a janela aberta um dedo. É insônia de viagem.”\n\n“Com certeza isso não dura a noite inteira. Falta pouco pro sol, e amanhã a senhora pega leve”, disse Nilza. Renata voltou, deitou, fez o que ouviu e dormiu sem nada triste na cabeça. O quarto, de repente, serviu.",
+  "vocab": [
+   {
+    "word": "colchão",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Mattress, the soft part of a bed that you lie on."
+   },
+   {
+    "word": "almofada",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Soft cushion or pillow that you rest your head on."
+   },
+   {
+    "word": "barriga",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Belly, the front part of your body below the chest."
+   },
+   {
+    "word": "ansiedade",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Worried, nervous feeling that makes it hard to relax or sleep."
+   },
+   {
+    "word": "aflito",
+    "surface": "Aflita",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Worried and upset, not able to stay calm or still."
+   },
+   {
+    "word": "suportar",
+    "surface": "suporto",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To put up with something unpleasant for a long time."
+   },
+   {
+    "word": "irritado",
+    "surface": "irritada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Annoyed and a little angry because something keeps going wrong."
+   },
+   {
+    "word": "dormir",
+    "surface": "durmo",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To sleep, rest with your eyes closed through the night."
+   },
+   {
+    "word": "acordar",
+    "surface": "acordo",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To wake up and stop being asleep for the day."
+   },
+   {
+    "word": "respirar",
+    "surface": "respira",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To breathe, take air into your body and let it out."
+   },
+   {
+    "word": "sugerir",
+    "surface": "sugeriu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To give someone an idea about what they could do."
+   },
+   {
+    "word": "morno",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Mildly warm, between hot and cold, pleasant to the touch."
+   },
+   {
+    "word": "quente",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Hot, with a high temperature that you can feel."
+   },
+   {
+    "word": "insônia",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Problem of not being able to sleep during the night."
+   },
+   {
+    "word": "com certeza",
+    "surface": "Com certeza",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Certainly; used when you are completely sure about something."
+   },
+   {
+    "word": "durar",
+    "surface": "dura",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To last, go on for a certain amount of time."
+   },
+   {
+    "word": "faltar",
+    "surface": "Falta",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To be still missing or left before something happens."
+   },
+   {
+    "word": "pegar leve",
+    "surface": "pega leve",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To take it easy and not push yourself too hard."
+   },
+   {
+    "word": "deitar",
+    "surface": "deitou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To lie down and put your body flat on something."
+   },
+   {
+    "word": "no fundo",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Deep down; what you really feel or think inside."
+   }
+  ],
+  "arcType": "harmonic-close"
+ },
+ {
+  "topic": "recife",
+  "slotIndex": 2,
+  "title": "O pano com sangue seco",
+  "slug": "o-pano-com-sangue-seco",
+  "synopsis": "Volta à farmácia três dias depois só para agradecer e encontra a mão de quem a atendeu enrolada num pano, com uma explicação pronta para não fechar a loja. Desta vez é ela quem se recusa a aceitar a explicação fácil, e devolve inteira a frase que recebeu.",
+  "text": "Três dias depois, Renata voltou para agradecer e encontrou Nilza com a mão enrolada num pano. Uma caixa tinha caído sem querer, o dedo inchou, e no pano havia sangue seco.\n\n“Não é osso. Só me machuquei”, disse Nilza, e dobrou o dedo. O nariz enrugou sozinho, e o pano cheirava a álcool.\n\n“Formiga um pouco e coça por dentro”, admitiu. “Isso eu conheço”, respondeu Renata. “Doença não é. Mas, se eu fosse a senhora, faria isso no hospital.” Era uma emergência pequena, mas era.\n\n“Prefiro não fechar a farmácia”, disse Nilza. “Eu cuido do balcão, atenta, e não vendo nada”, insistiu Renata. As duas discutiram calmas, até a preocupação vencer.\n\nNilza voltou com o dedo numa tala. “Fraturou. O tratamento dura um mês, mas eu recupero rápido”, contou. Ficou tranquila atrás do balcão, e Renata serviu um café fraco. Nada tinha dado certo naquele dia, e mesmo assim as duas riram.",
+  "vocab": [
+   {
+    "word": "sem querer",
+    "type": "expression",
+    "anchor": false,
+    "definition": "By accident, without meaning to do it at all."
+   },
+   {
+    "word": "inchar",
+    "surface": "inchou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To swell, become bigger because of a knock or illness."
+   },
+   {
+    "word": "sangue",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Blood, the red liquid that runs inside your body."
+   },
+   {
+    "word": "osso",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Bone, one of the hard parts inside your body."
+   },
+   {
+    "word": "machucar",
+    "surface": "machuquei",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To hurt yourself, get a cut or a knock by accident."
+   },
+   {
+    "word": "cheirar",
+    "surface": "cheirava",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To have a certain smell that people nearby can notice."
+   },
+   {
+    "word": "formigar",
+    "surface": "Formiga",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To tingle, feel small pins and needles in the skin."
+   },
+   {
+    "word": "coçar",
+    "surface": "coça",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To itch, feel that you want to scratch your skin."
+   },
+   {
+    "word": "hospital",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Building where doctors and nurses treat people who are hurt."
+   },
+   {
+    "word": "emergência",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Sudden, serious situation that needs help or care right away."
+   },
+   {
+    "word": "preferir",
+    "surface": "Prefiro",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To like one option more than the other one."
+   },
+   {
+    "word": "cuidar",
+    "surface": "cuido",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To look after a person or a place for a while."
+   },
+   {
+    "word": "atento",
+    "surface": "atenta",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Paying close attention and ready to notice any problem."
+   },
+   {
+    "word": "calmo",
+    "surface": "calmas",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Calm, speaking or acting without anger or hurry."
+   },
+   {
+    "word": "preocupação",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Worry, the feeling you have when something might go wrong."
+   },
+   {
+    "word": "tratamento",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Care and medicine a doctor gives to make you well."
+   },
+   {
+    "word": "recuperar",
+    "surface": "recupero",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To get better and become healthy again after being hurt."
+   },
+   {
+    "word": "tranquilo",
+    "surface": "tranquila",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Calm and settled, with nothing pressing to worry about now."
+   },
+   {
+    "word": "fraco",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Weak, with little strength or, for drinks, little flavour."
+   },
+   {
+    "word": "dar certo",
+    "surface": "dado certo",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To work out well, to happen the way you wanted."
+   }
+  ],
+  "arcType": "reframe-turn"
+ },
+ {
+  "topic": "jericoacoara",
+  "slotIndex": 0,
+  "title": "O fogão de quatro bocas",
+  "slug": "o-fogao-de-quatro-bocas",
+  "synopsis": "Depois de semanas comendo na rua, quer cozinhar uma vez em casa e encontra a cozinha coletiva com a pia cheia e um bico de fogão funcionando. Ninguém ali lavou nada desde sábado, e a regra da casa que alguém lhe explica na pia não é a que ela esperava ouvir.",
+  "text": "Na casa coletiva de Jericoacoara, a cozinha era compartilhada por todo mundo. A pia estava cheia e os garfos, sujos. Renata morava ali havia uma semana e, embora estivesse cansada, queria cozinhar.\n\nDas quatro bocas do fogão, só uma funcionava. Edilson vendia peixe na peixaria da esquina e geralmente lavava os pratos de todo mundo. “A pia não é minha”, disse ele. “Eu lavo por hábito, não por obrigação.”\n\nRenata pegou a esponja, ajudou e perguntou se havia alguma regra na casa. “Quem cozinha não lava”, respondeu Edilson. “Mas ninguém cozinha, ou seja, ninguém lava. Faz três dias que essa pia está assim.”\n\nEla organizou o espaço, passou a vassoura e jogou as sobras na lixeira. Depois cortou o alho devagar.\n\nA pia ficou vazia e o cheiro subiu logo. “Hoje eu cozinho”, avisou Renata, alto. “E hoje, de propósito, eu não lavo.” Edilson riu sem responder.",
+  "vocab": [
+   {
+    "word": "compartilhar",
+    "surface": "compartilhada",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To share something so that several people can use it."
+   },
+   {
+    "word": "cheio",
+    "surface": "cheia",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Full, with no space left inside it at all."
+   },
+   {
+    "word": "sujo",
+    "surface": "sujos",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Dirty, with marks or old food still left on them."
+   },
+   {
+    "word": "embora",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Although; used before something that could stop what follows."
+   },
+   {
+    "word": "cozinhar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To cook, make a meal using heat and ingredients."
+   },
+   {
+    "word": "fogão",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Stove with burners where you heat pans and cook food."
+   },
+   {
+    "word": "geralmente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Usually, in most cases or on most days of the week."
+   },
+   {
+    "word": "lavar",
+    "surface": "lavava",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To wash something with water until it is clean."
+   },
+   {
+    "word": "hábito",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Something you do so often that you do it without thinking."
+   },
+   {
+    "word": "pegar",
+    "surface": "pegou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To pick something up and take hold of it."
+   },
+   {
+    "word": "esponja",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Soft square you use with soap to wash the dishes."
+   },
+   {
+    "word": "ajudar",
+    "surface": "ajudou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To help, do part of the work for someone else."
+   },
+   {
+    "word": "ou seja",
+    "type": "expression",
+    "anchor": false,
+    "definition": "In other words; used to say the same thing more clearly."
+   },
+   {
+    "word": "organizar",
+    "surface": "organizou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To sort things out into an order that works well."
+   },
+   {
+    "word": "vassoura",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Brush with a long handle that you use to sweep floors."
+   },
+   {
+    "word": "sobra",
+    "surface": "sobras",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Food or things left over after everyone has had some."
+   },
+   {
+    "word": "lixeira",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Bin where you throw away rubbish and old food."
+   },
+   {
+    "word": "vazio",
+    "surface": "vazia",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Empty, with nothing at all left inside it now."
+   },
+   {
+    "word": "logo",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Soon, in a short while from the moment you speak."
+   },
+   {
+    "word": "de propósito",
+    "type": "expression",
+    "anchor": false,
+    "definition": "On purpose; because you decided to do it, not by chance."
+   }
+  ],
+  "arcType": "juxtaposition-discovery"
+ },
+ {
+  "topic": "jericoacoara",
+  "slotIndex": 1,
+  "title": "A batata crua no feijão",
+  "slug": "a-batata-crua-no-feijao",
+  "synopsis": "Cozinha para seis pessoas que não conhece e prova a colher tarde demais, com a panela pronta e a mesa já posta para todo mundo. O homem da peixaria não diz que está ruim nem manda jogar fora: pede uma batata crua e resolve o problema sem comentar nada na frente dos outros.",
+  "text": "Naquela noite, Renata cozinhou para seis moradores; Edilson ainda não tinha chegado. Cortou a cebola, pôs o azeite na panela e preparou o feijão como em casa.\n\nO arroz ficou na outra boca. Ela misturou tudo com calma e provou a colher. “Salgado demais”, disse baixinho, chateada.\n\nRenata sabia que todos comeriam aquilo sem reclamar. Edilson chegou assim que a mesa ficou pronta, largou a mochila e provou; no entanto, ficou calado. “Tem batata?”\n\n“Batata crua, cortada em quatro”, explicou ele. “Não deixa doce e puxa o sal. Vinte minutos e você tira.” “E se eu tentar e não der certo?”, perguntou Renata. “Aí a gente come assim mesmo. Ninguém morreu de feijão salgado.”\n\nA batata saiu salgada, e o resto, comível. Ninguém desperdiçou nada. Renata serviu e jantou por último, com um ovo frito.\n\n“Você prova antes”, disse Edilson ao passar. “Antes, não depois.” Não estava gostoso, sem dúvida; estava salvo, e ela ficou grata.",
+  "vocab": [
+   {
+    "word": "morador",
+    "surface": "moradores",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Person who lives in a house or a building with others."
+   },
+   {
+    "word": "cebola",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Onion, the strong round vegetable you usually fry first."
+   },
+   {
+    "word": "azeite",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Olive oil, poured into the pan before anything else goes in."
+   },
+   {
+    "word": "feijão",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Beans, the everyday brown dish that Brazilians eat with rice."
+   },
+   {
+    "word": "arroz",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Rice, the white grain served with almost every meal."
+   },
+   {
+    "word": "provar",
+    "surface": "provou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To taste a little of something to see how it is."
+   },
+   {
+    "word": "chateado",
+    "surface": "chateada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Upset and disappointed because something did not go well."
+   },
+   {
+    "word": "assim que",
+    "type": "expression",
+    "anchor": false,
+    "definition": "As soon as; right at the moment that something happens."
+   },
+   {
+    "word": "largar",
+    "surface": "largou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To drop something and leave it where it lands."
+   },
+   {
+    "word": "no entanto",
+    "type": "expression",
+    "anchor": false,
+    "definition": "However; used before something that goes against what came before."
+   },
+   {
+    "word": "calado",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Quiet, saying nothing at all while other people talk."
+   },
+   {
+    "word": "cortar",
+    "surface": "cortada",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To cut something into smaller pieces with a knife."
+   },
+   {
+    "word": "doce",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Sweet, with the taste of sugar or of honey."
+   },
+   {
+    "word": "tirar",
+    "surface": "tira",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To take something out of a pot, a bag or a place."
+   },
+   {
+    "word": "desperdiçar",
+    "surface": "desperdiçou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To waste something, use it badly or throw it away."
+   },
+   {
+    "word": "servir",
+    "surface": "serviu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To put food on the plates of other people."
+   },
+   {
+    "word": "ovo",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Egg, cooked in the pan or boiled in water."
+   },
+   {
+    "word": "gostoso",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Tasty, good to eat and worth another plate."
+   },
+   {
+    "word": "sem dúvida",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Without doubt; used when something is clearly true."
+   },
+   {
+    "word": "grato",
+    "surface": "grata",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Grateful, thankful for something that someone did for you."
+   }
+  ],
+  "arcType": "late-reveal"
+ },
+ {
+  "topic": "jericoacoara",
+  "slotIndex": 2,
+  "title": "A regra vale ou não vale?",
+  "slug": "a-regra-vale-ou-nao-vale",
+  "synopsis": "A regra da casa diz que quem cozinha não lava, e ontem foi ela quem cozinhou. O dia inteiro vira uma pergunta em voz baixa: uma regra dita de passagem na pia vale também quando dá trabalho a quem a disse? Nenhum dos dois cede durante horas, e a resposta aparece de madrugada sem que ninguém precise dizer mais nada.",
+  "text": "O arroz grudou na panela mesmo assim. Normalmente, dizia Edilson, quem cozinhasse não lavaria. Por isso Renata não lavou nada, já que a ideia era dele, e sobrou comida requentada.\n\nNa geladeira, ela esvaziou um pote velho e escorreu o macarrão de ontem. “Isso ainda serve?”, perguntou Edilson da porta. “Serve. O cogumelo também. O milho eu separo para depois”, respondeu ela.\n\nEla cortou a cenoura, jogou por cima da alface e regou tudo com vinagre. De tarde, o ar ficou abafado e ninguém encostou na panela. “Você vai lavar”, disse Edilson à noite. “Não vou”, respondeu Renata. “Quem cozinha não lava. Você mesmo disse isso ontem.”\n\n“Ninguém cozinhava aqui, lembra?”, riu ele, sem ficar ofendido. “E agora alguém cozinhou. Portanto, a regra vale para os dois.” Às onze, Renata desceu por água e encontrou Edilson na pia, limpando com água quente a gordura derretida da panela. “Amanhã é minha vez de cozinhar”, disse ele, com respeito.",
+  "vocab": [
+   {
+    "word": "grudar",
+    "surface": "grudou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To stick to a surface and not come off easily."
+   },
+   {
+    "word": "normalmente",
+    "surface": "Normalmente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Normally, the way things usually happen on most days."
+   },
+   {
+    "word": "por isso",
+    "surface": "Por isso",
+    "type": "expression",
+    "anchor": false,
+    "definition": "That is why; used to give the result of something."
+   },
+   {
+    "word": "já que",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Since; used to give the reason for what you say."
+   },
+   {
+    "word": "requentado",
+    "surface": "requentada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Heated up again, cooked before and warmed a second time."
+   },
+   {
+    "word": "esvaziar",
+    "surface": "esvaziou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To empty something out until nothing is left inside."
+   },
+   {
+    "word": "escorrer",
+    "surface": "escorreu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To drain, let the water run off something you cooked."
+   },
+   {
+    "word": "macarrão",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Pasta, boiled in water and drained before you eat it."
+   },
+   {
+    "word": "cogumelo",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Mushroom, soft and pale, eaten cooked or in a salad."
+   },
+   {
+    "word": "separar",
+    "surface": "separo",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To put something apart from the rest for later."
+   },
+   {
+    "word": "cenoura",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Carrot, the long orange root eaten raw or cooked."
+   },
+   {
+    "word": "alface",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Lettuce, the green leaves at the base of a salad."
+   },
+   {
+    "word": "vinagre",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Vinegar, the sharp liquid poured over salad leaves."
+   },
+   {
+    "word": "abafado",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Stuffy, with warm air that does not move at all."
+   },
+   {
+    "word": "encostar",
+    "surface": "encostou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To touch something lightly, or to lean against it."
+   },
+   {
+    "word": "ofendido",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Hurt or upset by something that someone said to you."
+   },
+   {
+    "word": "portanto",
+    "surface": "Portanto",
+    "type": "expression",
+    "anchor": false,
+    "definition": "So, therefore; used to give the result of what you said."
+   },
+   {
+    "word": "limpar",
+    "surface": "limpando",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To clean something until all the dirt is gone."
+   },
+   {
+    "word": "derreter",
+    "surface": "derretida",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To melt, turn from solid into liquid with heat."
+   },
+   {
+    "word": "respeito",
+    "type": "noun",
+    "anchor": true,
+    "definition": "The feeling that other people and their rules matter."
+   }
+  ],
+  "arcType": "harmonic-close"
+ },
+ {
+  "topic": "lencois-maranhenses",
+  "slotIndex": 0,
+  "title": "A passagem já comprada",
+  "slug": "a-passagem-ja-comprada",
+  "synopsis": "Tem três dias na região e a passagem de volta já comprada, e o céu não colabora com nenhum dos dois planos que ela trouxe escritos. Quem leva gente de canoa poderia lhe vender uma esperança barata pela manhã, e prefere lhe dar a verdade sobre janeiro.",
+  "text": "Chovia em Lençóis desde a madrugada, e a excursão do dia foi cancelada. Renata tinha três dias na região, a passagem já comprada e uma previsão de tempestade.\n\nDamião levava turistas de canoa havia vinte anos e raramente falava do clima. “Amanhã melhora?”, perguntou Renata. “Não sei”, respondeu ele. “Em janeiro ninguém sabe, moça, nem eu, que nasci aqui.”\n\nUm trovão passou longe, e o ar esfriou. “A senhora quer que eu minta?”, perguntou Damião. “Quero saber o que acontece”, respondeu ela. Ele disse que a chuva pararia em três dias: “Hoje está feio e pode piorar. Amanhã, quem sabe. Depois de amanhã, provavelmente.”\n\nRenata decidiu não desistir. “Então eu fico”, disse ela, e pagou mais uma noite. A noite foi longa, e por enquanto não havia nada a fazer.\n\nDe manhã, o céu ainda escondia tudo, e a chuva demorou a parar. Então alguém surgiu na porta: Damião, animado, com dois remos. “Vamos?”, perguntou ele.",
+  "vocab": [
+   {
+    "word": "excursão",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Day trip you book and pay for before it starts."
+   },
+   {
+    "word": "cancelar",
+    "surface": "cancelada",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To stop something planned from happening, so it will not take place."
+   },
+   {
+    "word": "região",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Area of a country with its own land and character."
+   },
+   {
+    "word": "previsão",
+    "type": "noun",
+    "anchor": true,
+    "definition": "What the weather report says will happen in the next days."
+   },
+   {
+    "word": "tempestade",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Storm, with heavy rain and strong wind at the same time."
+   },
+   {
+    "word": "canoa",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Narrow boat that you move along the water with a paddle."
+   },
+   {
+    "word": "raramente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Rarely, almost never, only once in a long while."
+   },
+   {
+    "word": "clima",
+    "type": "noun",
+    "anchor": true,
+    "definition": "The usual weather of a place over a whole season."
+   },
+   {
+    "word": "longe",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Far away, at a good distance from where you are."
+   },
+   {
+    "word": "esfriar",
+    "surface": "esfriou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To get colder than it was just a moment before."
+   },
+   {
+    "word": "acontecer",
+    "surface": "acontece",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To happen, to take place in real life right now."
+   },
+   {
+    "word": "feio",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Ugly; of the weather, dark and threatening more rain."
+   },
+   {
+    "word": "provavelmente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Probably; very likely, though you cannot be completely sure."
+   },
+   {
+    "word": "decidir",
+    "surface": "decidiu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To make up your mind about what you are going to do."
+   },
+   {
+    "word": "desistir",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To give up and stop trying to do something."
+   },
+   {
+    "word": "por enquanto",
+    "surface": "por enquanto",
+    "type": "expression",
+    "anchor": false,
+    "definition": "For now; until the situation changes later on."
+   },
+   {
+    "word": "esconder",
+    "surface": "escondia",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To hide something so that nobody is able to see it."
+   },
+   {
+    "word": "demorar",
+    "surface": "demorou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To take a long time before something finally happens."
+   },
+   {
+    "word": "surgir",
+    "surface": "surgiu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To appear suddenly, when nobody was expecting it."
+   },
+   {
+    "word": "animado",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Cheerful and full of energy, happy about what is coming."
+   }
+  ],
+  "arcType": "reframe-turn"
+ },
+ {
+  "topic": "lencois-maranhenses",
+  "slotIndex": 1,
+  "title": "Se puxar, a gente vira",
+  "slug": "se-puxar-a-gente-vira",
+  "synopsis": "Saem às seis com o rio cheio e a promessa de que a chuva parou de vez, e no meio da travessia o vento decide outra coisa por eles. Voltam sem falar e sem saber se ainda existe um terceiro dia, e ninguém pergunta nada na margem.",
+  "text": "A canoa saiu às seis. Damião remava atrás, e Renata ia na frente. Da margem, a floresta parecia uma parede, e a temperatura caiu.\n\n“O rio está alto e certamente vai subir mais”, avisou ele. “Choveu a noite inteira lá em cima.” O vento empurrava a canoa para o lado, não para adiante. “Segura no banco, moça, não no remo”, pediu Damião.\n\nEles atravessaram o primeiro trecho e balançaram feio. Renata escorregou no banco molhado e praticamente caiu. Damião gritou de trás: se ela puxasse, a canoa viraria. “Deixa o remo solto, que eu seguro”, disse.\n\nRenata obedeceu, sem fôlego, e a canoa resistiu. Do outro lado havia uma montanha de areia. “O barco deles já voltou. A gente vai atrás”, disse Damião.\n\nRenata subiu dez passos, mas a chuva arrastou a areia de lado. “Desce, que vem mais”, chamou ele, e salvou na hora o remo que ia embora. “Amanhã?”, perguntou ela. Damião olhou o céu, calado.",
+  "vocab": [
+   {
+    "word": "remar",
+    "surface": "remava",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To row, push a boat along the water with a paddle."
+   },
+   {
+    "word": "alto",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "High; of a river, full and risen after a lot of rain."
+   },
+   {
+    "word": "certamente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Certainly; used when you are sure that something will happen."
+   },
+   {
+    "word": "floresta",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Forest, a wide stretch of trees growing close together."
+   },
+   {
+    "word": "temperatura",
+    "type": "noun",
+    "anchor": true,
+    "definition": "How hot or cold the air or the water is."
+   },
+   {
+    "word": "adiante",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Forward, ahead, towards the place that is in front of you."
+   },
+   {
+    "word": "remo",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Paddle, the flat pole you use to row a canoe."
+   },
+   {
+    "word": "atravessar",
+    "surface": "atravessaram",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To cross from one side of something to the other side."
+   },
+   {
+    "word": "escorregar",
+    "surface": "escorregou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To slip on a wet surface and lose your balance."
+   },
+   {
+    "word": "praticamente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Practically; almost completely, very nearly but not quite."
+   },
+   {
+    "word": "puxar",
+    "surface": "puxasse",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To pull something towards the place where you are."
+   },
+   {
+    "word": "obedecer",
+    "surface": "obedeceu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To do what someone tells you to do, without arguing."
+   },
+   {
+    "word": "fôlego",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Breath, the air you need to keep going or to speak."
+   },
+   {
+    "word": "resistir",
+    "surface": "resistiu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To stay strong and not break or give way under force."
+   },
+   {
+    "word": "montanha",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Mountain, or any very high pile that rises up from the ground."
+   },
+   {
+    "word": "barco",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Boat, usually bigger than a canoe and often with a motor."
+   },
+   {
+    "word": "arrastar",
+    "surface": "arrastou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To drag something along the ground behind you."
+   },
+   {
+    "word": "salvar",
+    "surface": "salvou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To save something before it is lost for good."
+   },
+   {
+    "word": "na hora",
+    "type": "expression",
+    "anchor": false,
+    "definition": "At that very moment; right when it was needed."
+   },
+   {
+    "word": "subir",
+    "surface": "subiu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To go up, climb towards a higher place."
+   }
+  ],
+  "arcType": "mini-cliffhanger"
+ },
+ {
+  "topic": "lencois-maranhenses",
+  "slotIndex": 2,
+  "title": "A lagoa entre as dunas",
+  "slug": "a-lagoa-entre-as-dunas",
+  "synopsis": "No último dia acorda antes de todo mundo e o céu, pela primeira vez, deixa ver o que havia atrás dele desde domingo. Quem passou dois dias sem prometer nada aparece na porta com a canoa pronta, e o que ela encontra não é bem o que tinha vindo buscar.",
+  "text": "Às quatro ainda havia estrelas no céu, e a lua estava baixa. Renata chegou à porta emocionada, disposta a enfrentar a lagoa: Damião já esperava, com a canoa pronta para navegar.\n\n“Hoje sai”, disse ele. “Combinei com o rio.” Entre as dunas havia uma planta pequena. “Isso aqui seca em maio”, contou Damião. “Ultimamente, só vento e, de vez em quando, um turista.” “E você fica?”, perguntou ela. “Fico”, respondeu ele. “Pesco na nascente do rio.”\n\nA lagoa era gigante e rasa. Renata nadou dez metros e ficou de pé na água, com segurança. Ela saltou uma vez, como se ninguém estivesse olhando. Não eram férias nem feriado: era uma quarta-feira qualquer.\n\n“Você não entra?”, perguntou ela. “Eu entro todo dia. A senhora entra hoje”, respondeu Damião. Ela não podia adiar o ônibus das duas. “Então aproveita”, disse ele, “que isso aqui fica igual, mas sem a senhora.” Damião sentou na canoa, e ela voltou para a água, livre.",
+  "vocab": [
+   {
+    "word": "estrela",
+    "surface": "estrelas",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Star, one of the small lights you see in the night sky."
+   },
+   {
+    "word": "lua",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Moon, the big pale light in the sky at night."
+   },
+   {
+    "word": "emocionado",
+    "surface": "emocionada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Moved, full of strong feeling because something matters to you."
+   },
+   {
+    "word": "navegar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To travel on water in a boat or in a canoe."
+   },
+   {
+    "word": "combinar",
+    "surface": "Combinei",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To agree on something with somebody else in advance."
+   },
+   {
+    "word": "ultimamente",
+    "surface": "Ultimamente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Lately, during the last weeks or months until now."
+   },
+   {
+    "word": "de vez em quando",
+    "type": "expression",
+    "anchor": false,
+    "definition": "From time to time, now and then, but not very often."
+   },
+   {
+    "word": "pescar",
+    "surface": "Pesco",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To fish, try to catch fish from the water."
+   },
+   {
+    "word": "nascente",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Spring, the place where a river starts coming out of the ground."
+   },
+   {
+    "word": "gigante",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Huge, far bigger than you expected it to be."
+   },
+   {
+    "word": "segurança",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Feeling of being safe, with no danger of falling or getting hurt."
+   },
+   {
+    "word": "saltar",
+    "surface": "saltou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To jump, push off the ground with both feet."
+   },
+   {
+    "word": "férias",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Holidays, the weeks you take off from work or school."
+   },
+   {
+    "word": "feriado",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Public holiday, a single day when most people do not work."
+   },
+   {
+    "word": "adiar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To move something to a later time or date."
+   },
+   {
+    "word": "aproveitar",
+    "surface": "aproveita",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To make the most of something while it still lasts."
+   },
+   {
+    "word": "igual",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "The same, not changed in any way from before."
+   },
+   {
+    "word": "voltar",
+    "surface": "voltou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To go back to a place where you were before."
+   },
+   {
+    "word": "livre",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Free, with nothing you have to do right now."
+   },
+   {
+    "word": "enfrentar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To face something difficult instead of running away from it."
+   }
+  ],
+  "arcType": "recurring-character-callback"
+ },
+ {
+  "topic": "campo-grande",
+  "slotIndex": 0,
+  "title": "Um papel que já não vale",
+  "slug": "um-papel-que-ja-nao-vale",
+  "synopsis": "Chega ao guichê com o horário impresso na mão e descobre que aquele papel deixou de valer em maio, sem que ninguém tivesse por que avisá-la. Quem vende as passagens conhece três saídas possíveis e não esconde nenhuma, nem a que pode custar-lhe a conexão da manhã seguinte.",
+  "text": "Na estação de Campo Grande havia doze guichês e só três abertos; só se ouvia o alto-falante. Renata chegou apressada, com o itinerário impresso na mão.\n\nCleide, uma mulher que vendia passagens ali desde que a estação abriu, avisou que o ônibus das dez não sairia mais. “Mudou em maio”, disse ela. Renata olhou, desesperada, para um papel que já não valia. “Eu devo estar em Bonito amanhã cedo.”\n\n“Então a senhora não chega de ônibus direto”, explicou Cleide. “Atualmente, o próximo sai às seis. Mas tem o último de hoje, que passa por Aquidauana.”\n\nCustava mais e chegava tarde, com uma conexão arriscada. Renata podia remarcar e evitar a conexão, mas decidiu: “Eu vou nesse.” Cleide despachou a mala sem comentar.\n\nUm táxi buzinou na porta. Às onze, Renata embarcou com mais cinco passageiros. “Boa viagem”, disse Cleide, e fechou o guichê enquanto o ônibus entrava na rodovia.",
+  "vocab": [
+   {
+    "word": "estação",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Station, the building where buses arrive and leave from."
+   },
+   {
+    "word": "apressado",
+    "surface": "apressada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "In a hurry, moving faster than the people around you."
+   },
+   {
+    "word": "itinerário",
+    "type": "noun",
+    "anchor": true,
+    "definition": "The planned route of a trip, with its stops and times."
+   },
+   {
+    "word": "sair",
+    "surface": "sairia",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To leave, go out from the place where you were."
+   },
+   {
+    "word": "desesperado",
+    "surface": "desesperada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Desperate, very worried because you see no good way out."
+   },
+   {
+    "word": "valer",
+    "surface": "valia",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To be valid, or to be worth a certain amount."
+   },
+   {
+    "word": "dever",
+    "surface": "devo",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To have to do something you promised or planned to do."
+   },
+   {
+    "word": "atualmente",
+    "surface": "Atualmente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Currently, at the present time, the way things are now."
+   },
+   {
+    "word": "próximo",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Next, the one that comes right after this one."
+   },
+   {
+    "word": "último",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Last, with nothing else coming after it on that day."
+   },
+   {
+    "word": "custar",
+    "surface": "Custava",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To cost a certain amount of money to buy."
+   },
+   {
+    "word": "conexão",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Connection, the second bus or plane you must catch in time."
+   },
+   {
+    "word": "remarcar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To change a booking to another day or another time."
+   },
+   {
+    "word": "despachar",
+    "surface": "despachou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To send your bag to travel in the hold of the bus."
+   },
+   {
+    "word": "táxi",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Taxi, a car with a driver that you pay to take you."
+   },
+   {
+    "word": "buzinar",
+    "surface": "buzinou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To sound a car horn to warn or call someone."
+   },
+   {
+    "word": "embarcar",
+    "surface": "embarcou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To board, get onto a bus, a boat or a plane."
+   },
+   {
+    "word": "passageiro",
+    "surface": "passageiros",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Passenger, a person who travels in a vehicle but does not drive."
+   },
+   {
+    "word": "rodovia",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Highway, the wide road that joins one city to another."
+   },
+   {
+    "word": "chegar",
+    "surface": "chega",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To arrive, reach the place you were travelling to."
+   }
+  ],
+  "arcType": "late-reveal"
+ },
+ {
+  "topic": "campo-grande",
+  "slotIndex": 1,
+  "title": "A senhora não dorme?",
+  "slug": "a-senhora-nao-dorme",
+  "synopsis": "Doze horas de estrada numa poltrona estreita, com um desconhecido dormindo ao lado desde antes de a cidade acabar e o corredor cheio de bagagem. Não passa nada digno de contar, e é justamente na conversa do espelho que a noite acaba valendo a pena.",
+  "text": "O ônibus passou pelo pedágio, cruzou a avenida vazia e parou no último semáforo. O motorista ligou a seta, e ninguém vinha atrás.\n\nA poltrona de Renata era apertada, e a mala não coube no bagageiro. O homem do lado roncou a noite inteira. Ela queria que a noite passasse logo, mas sentia enjoo e uma leve tontura.\n\nLevantou duas vezes e pediu licença; o homem se moveu sem acordar, e o corredor ficou livre. A estrada era longa, e Renata, distraída, ficou de olho nas luzes lá embaixo.\n\n“A senhora não dorme?”, perguntou o motorista pelo espelho. “Claro que não. Tenho medo de perder a hora”, respondeu Renata. “Vai continuar assim até Aquidauana, e depois eu ganho meia hora”, disse ele.\n\n“O senhor faz esse caminho frequentemente?”, perguntou ela. “Três noites por semana, exatamente, faz dezoito anos”, respondeu o motorista. Renata, agradecida e tranquila, dormiu vinte minutos até a buzina.",
+  "vocab": [
+   {
+    "word": "passar",
+    "surface": "passou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To go past or through a place without stopping there."
+   },
+   {
+    "word": "pedágio",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Toll, the place on a highway where you pay to pass."
+   },
+   {
+    "word": "avenida",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Avenue, a wide street that runs through the city."
+   },
+   {
+    "word": "semáforo",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Traffic light that tells drivers when to stop or go."
+   },
+   {
+    "word": "apertado",
+    "surface": "apertada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Tight, with barely enough room for your body to fit."
+   },
+   {
+    "word": "bagageiro",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Luggage rack, the shelf above the seats for bags."
+   },
+   {
+    "word": "roncar",
+    "surface": "roncou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To snore, breathe loudly and noisily while you are asleep."
+   },
+   {
+    "word": "enjoo",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Sick feeling in your stomach that comes from moving vehicles."
+   },
+   {
+    "word": "tontura",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Dizziness, the feeling that everything around you is turning."
+   },
+   {
+    "word": "levantar",
+    "surface": "Levantou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To stand up from the seat where you were sitting."
+   },
+   {
+    "word": "mover",
+    "surface": "moveu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To shift your body or an object a little."
+   },
+   {
+    "word": "longo",
+    "surface": "longa",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Long, going on for a great distance or time."
+   },
+   {
+    "word": "distraído",
+    "surface": "distraída",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Absent-minded, thinking of other things and not paying attention."
+   },
+   {
+    "word": "ficar de olho",
+    "surface": "ficou de olho",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To keep an eye on something so that you notice changes."
+   },
+   {
+    "word": "perder a hora",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To oversleep, wake up too late for something you had to do."
+   },
+   {
+    "word": "continuar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To go on in the same way without changing anything."
+   },
+   {
+    "word": "ganhar",
+    "surface": "ganho",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To gain or win something, such as extra time."
+   },
+   {
+    "word": "frequentemente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Often, many times, on a regular basis over time."
+   },
+   {
+    "word": "exatamente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Exactly, with no difference at all from what is said."
+   },
+   {
+    "word": "agradecido",
+    "surface": "agradecida",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Thankful for something kind that somebody did for you."
+   }
+  ],
+  "arcType": "daily-encounter"
+ },
+ {
+  "topic": "campo-grande",
+  "slotIndex": 2,
+  "title": "Sete minutos de moto",
+  "slug": "sete-minutos-de-moto",
+  "synopsis": "Um caderno de duas páginas por dia não vale nada para ninguém mais, e é a única coisa que ela não pode comprar de novo em nenhuma cidade do caminho. Entre a conexão salva e as três horas de espera há um preço que ela paga sem discutir, e o homem que o recebe acha que é dinheiro demais por sete minutos de rua vazia.",
+  "text": "Renata desceu às seis e percebeu: o caderno ficou na poltrona. Nenhum transporte ia até a garagem, e o ônibus para Bonito saía às nove.\n\nCorreu até a esquina e achou um homem numa moto. “Quanto custa até a garagem?”, perguntou. “Depende da pressa”, respondeu ele. “Da senhora ou minha?” E apontou a garupa.\n\nNa rua larga, o vento batia na cara. Freou na porta em sete minutos. “Foi barato”, disse ela. “Foi curto”, respondeu ele.\n\nDois homens descarregavam e carregavam malas. “O de Campo Grande, das seis, já limparam?”, perguntou Renata. “É o terceiro da fila”, respondeu um deles. Ela entrou no primeiro por engano e saiu frustrada.\n\n“Aqui está”, disse ela no terceiro: o caderno estava justamente na poltrona, perto da plataforma de desembarque. Se não estivesse ali, perderia dois meses de anotações.\n\n“Valeu mesmo”, disse ao da moto, e pagou o dobro: alcançou o de Bonito por pouco. “Não vale o dobro”, respondeu ele. “Hoje vale”, disse ela, orgulhosa. “Estava tudo aqui dentro.”",
+  "vocab": [
+   {
+    "word": "perceber",
+    "surface": "percebeu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To notice or realise something that you had not seen before."
+   },
+   {
+    "word": "transporte",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Transport, the bus or vehicle that takes people somewhere."
+   },
+   {
+    "word": "garagem",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Depot where the buses are parked and cleaned at night."
+   },
+   {
+    "word": "correr",
+    "surface": "Correu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To run, move fast on your own feet."
+   },
+   {
+    "word": "moto",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Motorbike, the short everyday word for a motorcycle."
+   },
+   {
+    "word": "apontar",
+    "surface": "apontou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To point at something so the other person looks at it."
+   },
+   {
+    "word": "largo",
+    "surface": "larga",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Wide, with plenty of room from one side to the other."
+   },
+   {
+    "word": "frear",
+    "surface": "freou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To brake, slow a vehicle down until it stops."
+   },
+   {
+    "word": "curto",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Short, taking less time than you had expected."
+   },
+   {
+    "word": "descarregar",
+    "surface": "descarregavam",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To unload, take the bags or goods off something."
+   },
+   {
+    "word": "carregar",
+    "surface": "carregavam",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To load, put bags or goods onto a vehicle."
+   },
+   {
+    "word": "terceiro",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Third, coming right after the first and the second."
+   },
+   {
+    "word": "frustrado",
+    "surface": "frustrada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Frustrated, annoyed because something did not work as you hoped."
+   },
+   {
+    "word": "plataforma",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Platform where passengers get on and off the buses."
+   },
+   {
+    "word": "desembarque",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Arrivals, the place where passengers get off at the end."
+   },
+   {
+    "word": "justamente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Exactly, precisely in that very place or that very way."
+   },
+   {
+    "word": "alcançar",
+    "surface": "alcançou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To reach or catch something just before it goes away."
+   },
+   {
+    "word": "dobro",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Double, twice the amount that was asked or expected."
+   },
+   {
+    "word": "primeiro",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "First, coming before all the others in the same order."
+   },
+   {
+    "word": "orgulhoso",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Proud, pleased with yourself about something you did well.",
+    "surface": "orgulhosa"
+   }
+  ],
+  "arcType": "reframe-turn"
+ },
+ {
+  "topic": "petropolis",
+  "slotIndex": 0,
+  "title": "Um genérico até segunda",
+  "slug": "um-generico-ate-segunda",
+  "synopsis": "O que a mantém trabalhando de qualquer cidade cabe num cabo de dois metros, e esse cabo parou na véspera da única chamada do mês com quem lhe paga. O substituto que ela pediu está a três quarteirões e atrás de uma porta que só abre na segunda-feira de manhã.",
+  "text": "Em Petrópolis fazia frio de manhã. Renata trabalhava para uma empresa que nunca tinha visto, e o carregador do notebook parou de funcionar à noite. No dia seguinte, havia reunião.\n\nWilson cuidava da loja de informática da rua do meio. “Esse modelo não tenho”, disse ele, verificando o computador na tomada. “Tem um genérico caro, com garantia, e um barato.”\n\n“O barato queima em três meses. O caro dura, mas custa o triplo”, esclareceu. Renata tinha solicitado outro pela internet, e a loja ia enviar pelo correio, mas só entregaria na segunda. “Se a chuva deixar”, brincou Wilson. “Segunda é tarde demais”, respondeu ela.\n\nEla precisava de algo que funcionasse até segunda. “Então eu aceito o caro, com garantia”, disse, e desligou o velho, que já não dava sinal de vida. Wilson conferiu a ponta duas vezes. “Pode testar”, pediu.\n\nA luz verde acendeu. “Funciona”, confirmou Renata, e o carregador velho foi para a mochila. “Se der problema, eu substituo”, disse Wilson atrás do balcão.",
+  "vocab": [
+   {
+    "word": "empresa",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Company, the business that pays you for your work."
+   },
+   {
+    "word": "carregador",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Charger, the cable that puts power back into a laptop."
+   },
+   {
+    "word": "funcionar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To work properly, to do what it is supposed to do."
+   },
+   {
+    "word": "verificar",
+    "surface": "verificando",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To check something carefully to make sure that it works."
+   },
+   {
+    "word": "computador",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Computer, the machine you work, write and read on."
+   },
+   {
+    "word": "garantia",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Promise from the shop to fix or change it if it breaks."
+   },
+   {
+    "word": "caro",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Expensive, costing more money than you wanted to pay."
+   },
+   {
+    "word": "barato",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Cheap, costing only a little money to buy or to use."
+   },
+   {
+    "word": "solicitar",
+    "surface": "solicitado",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To ask for something formally, often by filling in a form."
+   },
+   {
+    "word": "internet",
+    "type": "noun",
+    "anchor": true,
+    "definition": "The network that lets computers and phones connect worldwide."
+   },
+   {
+    "word": "correio",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Post office, where letters and parcels are sent and collected."
+   },
+   {
+    "word": "esclarecer",
+    "surface": "esclareceu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To make something clear so that nobody gets it wrong."
+   },
+   {
+    "word": "aceitar",
+    "surface": "aceito",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To take what is offered instead of saying no to it."
+   },
+   {
+    "word": "desligar",
+    "surface": "desligou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To unplug something or switch it off completely."
+   },
+   {
+    "word": "velho",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Old, used for a long time and worn out now."
+   },
+   {
+    "word": "enviar",
+    "surface": "enviar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To send something from one place to another place."
+   },
+   {
+    "word": "conferir",
+    "surface": "conferiu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To check something carefully before you trust it."
+   },
+   {
+    "word": "confirmar",
+    "surface": "confirmou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To say that something is really true or really works."
+   },
+   {
+    "word": "trabalhar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To work, do a job that somebody pays you for.",
+    "surface": "trabalhava"
+   },
+   {
+    "word": "substituir",
+    "surface": "substituo",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To take the place of something else that stopped working."
+   }
+  ],
+  "arcType": "juxtaposition-discovery"
+ },
+ {
+  "topic": "petropolis",
+  "slotIndex": 1,
+  "title": "Tem uma solução, mas é má",
+  "slug": "tem-uma-solucao-mas-e-ma",
+  "synopsis": "A internet cai dez minutos antes da chamada que decide o ano inteiro dela, e a mesa do fundo de uma loja de informática vira escritório. Do outro lado oferecem duas saídas e as duas são ruins, e o silêncio que segue a terceira dura mais do que ela aguenta calada.",
+  "text": "Às nove, a internet da pousada caiu, e o notebook não conectava. Renata tinha dez minutos, e o emprego dependia daquela videochamada.\n\nWilson abriu a loja meia hora antes e trouxe a mesa do fundo. “A mesa é sua até o meio-dia”, disse ele. “Obrigada, Wilson”, respondeu Renata. Ela digitou a senha e entrou na chamada: alguém da equipe mostrou o projeto. Agora eram doze cidades, não seis.\n\n“Tem uma solução, mas é má”, disse a chefe, exigente. “O pagamento é o mesmo, e você faz o dobro.” Renata perguntou se podia discordar e ofereceu outra saída: “Eu faço as doze, mas em quatro meses, não em dois.”\n\nNinguém respondeu, e o silêncio pareceu durar uma hora. “A gente aceita”, disse a chefe depois; a meta real era o calendário, não o dinheiro. “Café forte, pra comemorar”, disse Wilson, animado, e ela agradeceu. A loja não era rica nem pobre: tinha duas mesas e um cliente.",
+  "vocab": [
+   {
+    "word": "cair",
+    "surface": "caiu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To fall or, for a connection, to stop working suddenly."
+   },
+   {
+    "word": "conectar",
+    "surface": "conectava",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To connect, join a computer or a phone to the internet."
+   },
+   {
+    "word": "emprego",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Job, the paid work that you do to earn money."
+   },
+   {
+    "word": "depender",
+    "surface": "dependia",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To need something else in order to happen or to work."
+   },
+   {
+    "word": "videochamada",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Video call, a talk where people see each other on screens."
+   },
+   {
+    "word": "trazer",
+    "surface": "trouxe",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To bring something over to where another person is."
+   },
+   {
+    "word": "digitar",
+    "surface": "digitou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To type something using the keys of a keyboard."
+   },
+   {
+    "word": "equipe",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Team, a group of people who work together on something."
+   },
+   {
+    "word": "mostrar",
+    "surface": "mostrou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To show something so another person can see it."
+   },
+   {
+    "word": "projeto",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Project, a planned piece of work with a goal and a date."
+   },
+   {
+    "word": "mau",
+    "surface": "má",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Bad, poor as a choice or as a result."
+   },
+   {
+    "word": "exigente",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Demanding, expecting a lot from other people all the time."
+   },
+   {
+    "word": "pagamento",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Payment, the money you receive for the work you did."
+   },
+   {
+    "word": "discordar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To disagree, to think differently about an idea or a plan."
+   },
+   {
+    "word": "oferecer",
+    "surface": "ofereceu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To offer something and let the other person decide."
+   },
+   {
+    "word": "meta",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Goal, the result that a team has to reach in time."
+   },
+   {
+    "word": "real",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Real, the true one and not only the apparent one."
+   },
+   {
+    "word": "agradecer",
+    "surface": "agradeceu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To thank somebody for what they did for you."
+   },
+   {
+    "word": "rico",
+    "surface": "rica",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Rich, with plenty of money coming in each month."
+   },
+   {
+    "word": "pobre",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Poor, with very little money coming in at all."
+   }
+  ],
+  "arcType": "mini-cliffhanger"
+ },
+ {
+  "topic": "petropolis",
+  "slotIndex": 2,
+  "title": "O barbante de um real",
+  "slug": "o-barbante-de-um-real",
+  "synopsis": "O cliente quer em papel o que ela escreveu em dois meses de estrada, e o guichê da cidade fecha às cinco em ponto. Entre uma máquina que come folha sim e folha não e o balcão do correio há um saco de papel grosso, um barbante e um real.",
+  "text": "Wilson leu por cima do ombro de Renata: a fatura da primeira parcela, com o relatório em anexo, tinha que ir impressa, e o vencimento era hoje. Com sorte, ela chegaria ao correio antes das cinco.\n\n“Essa impressora come uma folha sim, outra não”, avisou Wilson. “E o seu teclado está colado de café. Pode imprimir aqui.” A tampa fazia barulho e precisava de reparo, mas abria.\n\nSaíram quinze folhas em preto e branco. Wilson levantou o pacote como se fosse um presente. “Pesado assim, não cabe em envelope.” “Tem saco?”, perguntou Renata.\n\n“Do grosso, tenho. E barbante, que eu vendo por um real”, disse Wilson. Emprestou a tesoura, e ela quis pagar, mas ele negou.\n\n“Dobra as folhas antes de embrulhar”, disse ele. Renata dobrou, embrulhou o pacote e amarrou com o barbante.\n\n“Ainda está aberto”, disse ela na porta do correio, e mandou o pacote registrado. Depois leu uma notícia curta: o contrato dos quatro meses tinha saído. “Mandei”, contou a Wilson, lá fora.",
+  "vocab": [
+   {
+    "word": "fatura",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Invoice, the paper that shows how much a client must pay."
+   },
+   {
+    "word": "parcela",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Instalment, one of the parts of a payment made over time."
+   },
+   {
+    "word": "anexo",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Attachment, a document that goes together with another one."
+   },
+   {
+    "word": "vencimento",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Due date, the last day to pay or to deliver something."
+   },
+   {
+    "word": "impressora",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Printer, the machine that puts words and pictures onto paper."
+   },
+   {
+    "word": "colado",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Stuck fast to something and hard to pull apart again."
+   },
+   {
+    "word": "reparo",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Repair, the work needed to make something function again."
+   },
+   {
+    "word": "abrir",
+    "surface": "abria",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To open, stop being shut so that you can use it."
+   },
+   {
+    "word": "preto",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Black, the darkest colour that there is anywhere."
+   },
+   {
+    "word": "branco",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "White, the colour of a clean sheet of paper."
+   },
+   {
+    "word": "pesado",
+    "surface": "Pesado",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Heavy, hard to lift or expensive to send by post."
+   },
+   {
+    "word": "vender",
+    "surface": "vendo",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To sell something to somebody else for money."
+   },
+   {
+    "word": "emprestar",
+    "surface": "Emprestou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To lend somebody something that they will give back later."
+   },
+   {
+    "word": "negar",
+    "surface": "negou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To say no, refuse something that someone offers or asks."
+   },
+   {
+    "word": "dobrar",
+    "surface": "dobrou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To fold something over so that it takes less space."
+   },
+   {
+    "word": "embrulhar",
+    "surface": "embrulhou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To wrap something up in paper or in cloth."
+   },
+   {
+    "word": "amarrar",
+    "surface": "amarrou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To tie something with string so that it holds together."
+   },
+   {
+    "word": "aberto",
+    "surface": "aberto",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Open, still serving all the people who arrive."
+   },
+   {
+    "word": "mandar",
+    "surface": "mandou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To send something off to somebody who is far away."
+   },
+   {
+    "word": "registrar",
+    "surface": "registrado",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To send a letter with proof that it was posted and received."
+   }
+  ],
+  "arcType": "harmonic-close"
+ },
+ {
+  "topic": "gramado",
+  "slotIndex": 0,
+  "title": "Nada, minha filha",
+  "slug": "nada-minha-filha",
+  "synopsis": "Desce do ônibus no sul com a mala de dois meses de praia e uma jaqueta que não segura nada do frio daqui. Quem lava a roupa da rua inteira guarda uma caixa de peças que ninguém veio buscar, e o que sai dessa caixa não se vende nem se empresta.",
+  "text": "Em Gramado fazia frio de verdade, e Renata tinha chegado com roupa de praia. A jaqueta dela era fina, e tudo na mala estava molhado por causa de uma goteira no ônibus.\n\nNeuza cuidava da lavanderia da esquina e puxou assunto logo. As peças não secariam antes do dia seguinte, e ela pendurou tudo numa vara. “A senhora vai vestir o quê hoje?”, perguntou.\n\nRenata não tinha resposta: trouxe duas camisetas e uma saia. Neuza levou uma caixa marrom para o balcão, com um suéter, um cachecol e uma luva sem par.\n\n“Gente esquece e não volta para buscar”, explicou Neuza. “Faz três invernos que isso está aqui.” “Quanto custa?”, perguntou Renata. “Nada, minha filha. A gente dá um jeito, mesmo que o dono apareça”, respondeu Neuza.\n\nDespiu a camiseta e se trocou ali mesmo. “Vem tomar um chá depois das seis”, convidou Neuza, com carinho. À noite, as duas batiam papo no balcão, e, graças a Neuza, Renata não passou frio.",
+  "vocab": [
+   {
+    "word": "jaqueta",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Jacket, the short coat you put on to go outdoors."
+   },
+   {
+    "word": "fino",
+    "surface": "fina",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Thin, with too little material to keep you warm."
+   },
+   {
+    "word": "molhado",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Wet, with water still soaked right into it."
+   },
+   {
+    "word": "por causa de",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Because of; used to give the reason for a problem."
+   },
+   {
+    "word": "puxar assunto",
+    "surface": "puxou assunto",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To start a conversation with someone you do not know well."
+   },
+   {
+    "word": "pendurar",
+    "surface": "pendurou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To hang something up so that it stays there and dries."
+   },
+   {
+    "word": "vestir",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To put clothes on your body before going out."
+   },
+   {
+    "word": "saia",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Skirt, the piece of clothing that hangs from the waist."
+   },
+   {
+    "word": "levar",
+    "surface": "levou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To carry something over from one place to another place."
+   },
+   {
+    "word": "marrom",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Brown, the colour of cardboard or of earth."
+   },
+   {
+    "word": "suéter",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Jumper, the warm woollen top you pull over your head."
+   },
+   {
+    "word": "cachecol",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Scarf, the long strip of cloth you wind round your neck."
+   },
+   {
+    "word": "inverno",
+    "surface": "invernos",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Winter, the coldest season of the whole year."
+   },
+   {
+    "word": "dar um jeito",
+    "surface": "dá um jeito",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To find a way to solve a problem somehow."
+   },
+   {
+    "word": "mesmo que",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Even if; used before something that will not change the plan."
+   },
+   {
+    "word": "despir",
+    "surface": "Despiu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To take a piece of clothing off your body."
+   },
+   {
+    "word": "convidar",
+    "surface": "convidou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To ask somebody to come and join you somewhere."
+   },
+   {
+    "word": "carinho",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Warm, gentle care that you show to someone you like."
+   },
+   {
+    "word": "bater papo",
+    "surface": "batiam papo",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To chat, talk in a relaxed way about everyday things."
+   },
+   {
+    "word": "graças a",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Thanks to; because of someone who helped you."
+   }
+  ],
+  "arcType": "reframe-turn"
+ },
+ {
+  "topic": "gramado",
+  "slotIndex": 1,
+  "title": "A fronha gelada",
+  "slug": "a-fronha-gelada",
+  "synopsis": "Ninguém lhe explicou como se passa uma noite de inverno num quarto que não tem nada dentro, e ela chegou do calor há quatro dias. A receita não se compra em lugar nenhum e cabe em três frases ditas entre duas canecas de chá, antes das seis.",
+  "text": "O quarto alugado tinha uma lâmpada só, no teto. A cortina era fina, o tapete não chegava até a cama, e o quarto ficava cada vez mais gelado. Às seis, Renata desceu até a lavanderia.\n\nNeuza serviu chá numa caneca quente. “Desculpa a pergunta, mas como é que vocês vivem com esse frio?”, disse Renata. “A gente veste tudo o que tem, em vez de reclamar”, respondeu Neuza, como se fosse uma receita. “Suéter grosso por cima e cobertor por baixo.”\n\nRenata perguntou se ela morava ali havia muito tempo. “Nasci nesta rua e moro aqui desde que me casei”, disse Neuza. “Já pensei em ir embora, mas aqui eu reconheço cada casa.” Renata anotou tudo com ternura.\n\nDe volta ao quarto, acendeu a luz e abriu a cômoda: não havia nada dentro. A fronha estava fria. Por outro lado, com o tapete dobrado por cima dos pés, permaneceu quieta até esquentar e dormiu imaginando a rua de Neuza.",
+  "vocab": [
+   {
+    "word": "alugar",
+    "surface": "alugado",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To rent a room or a place for money."
+   },
+   {
+    "word": "cortina",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Curtain, the cloth you pull across a window."
+   },
+   {
+    "word": "tapete",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Rug, the piece of thick cloth lying on the floor."
+   },
+   {
+    "word": "cada vez mais",
+    "type": "expression",
+    "anchor": false,
+    "definition": "More and more, a little more every time."
+   },
+   {
+    "word": "gelado",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Icy cold, so cold that it is unpleasant to touch."
+   },
+   {
+    "word": "chá",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Tea, a hot drink made by putting leaves in water."
+   },
+   {
+    "word": "desculpar",
+    "surface": "Desculpa",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To forgive; used to say sorry before asking something."
+   },
+   {
+    "word": "viver",
+    "surface": "vivem",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To live, to get through your days in a place."
+   },
+   {
+    "word": "em vez de",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Instead of; doing one thing and not the other."
+   },
+   {
+    "word": "grosso",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Thick, with plenty of material to keep the heat in."
+   },
+   {
+    "word": "morar",
+    "surface": "morava",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To live in a place, to have your home there."
+   },
+   {
+    "word": "desde que",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Since; from that moment in the past until now."
+   },
+   {
+    "word": "pensar",
+    "surface": "pensei",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To think about something or consider doing it."
+   },
+   {
+    "word": "reconhecer",
+    "surface": "reconheço",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To know who or what something is because you have seen it."
+   },
+   {
+    "word": "ternura",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Tenderness, a soft and loving feeling towards someone."
+   },
+   {
+    "word": "cômoda",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Chest of drawers, the piece of furniture where clothes are kept."
+   },
+   {
+    "word": "fronha",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Pillowcase, the cloth cover you slip over a pillow."
+   },
+   {
+    "word": "por outro lado",
+    "surface": "Por outro lado",
+    "type": "expression",
+    "anchor": false,
+    "definition": "On the other hand; used to show another side of things."
+   },
+   {
+    "word": "permanecer",
+    "surface": "permaneceu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To stay just as you are, without moving at all."
+   },
+   {
+    "word": "imaginar",
+    "surface": "imaginando",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To picture something in your mind that you cannot see."
+   }
+  ],
+  "arcType": "daily-encounter"
+ },
+ {
+  "topic": "gramado",
+  "slotIndex": 2,
+  "title": "O desfile na última manhã",
+  "slug": "o-desfile-na-ultima-manha",
+  "synopsis": "A rua ensaia o desfile de inverno na manhã em que ela vai embora, e ninguém tem pressa de nada. Tem duas horas livres, um caderno quase cheio e uma coisa para dizer que dois meses atrás não teria sabido dizer nem devagar nem com alguém ajudando do lado.",
+  "text": "Na última manhã, a rua ensaiava o desfile, e o barulho começou cedo. Passeava gente de saia comprida; passou uma gravata larga e um vestido verde.\n\nUm homem de boné dançava sozinho na esquina. Renata levou o suéter de volta à lavanderia de Neuza. “Fica com ele”, disse Neuza, rindo. “Aqui ninguém devolve nada, minha filha.”\n\n“A senhora vai embora decepcionada?”, perguntou Neuza. “Não. Eu volto para visitar a senhora”, respondeu Renata. “Então volta em junho”, disse Neuza. “Em junho chove todo dia, mas a senhora vem de qualquer jeito.”\n\nAs duas brincaram com isso. Lá fora, a vizinhança cantava desafinada, e uma mulher de sapato colorido pulou uma poça.\n\nRenata filmou a rua. Do ponto de vista dela, até a mulher de tênis e balão era parte da despedida.\n\nComparou o primeiro dia com aquele: antes só apontava, agora pedia e agradecia. “Se pudesse, voltaria em junho”, disse a Neuza, na porta. Amava aquela rua, apesar de a chuva de junho ser pior.",
+  "vocab": [
+   {
+    "word": "passear",
+    "surface": "Passeava",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To walk about with no hurry and no errand."
+   },
+   {
+    "word": "gravata",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Tie, the strip of cloth knotted at the neck."
+   },
+   {
+    "word": "verde",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Green, the colour of grass and of leaves."
+   },
+   {
+    "word": "boné",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Cap with a peak that keeps the sun off your eyes."
+   },
+   {
+    "word": "dançar",
+    "surface": "dançava",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To dance, move your body along with the music."
+   },
+   {
+    "word": "devolver",
+    "surface": "devolve",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To give something back to the person it belongs to."
+   },
+   {
+    "word": "decepcionado",
+    "surface": "decepcionada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Disappointed, sad because something was not as good as you hoped."
+   },
+   {
+    "word": "visitar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To go and see somebody where they live."
+   },
+   {
+    "word": "vir",
+    "surface": "vem",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To come towards the place where someone is."
+   },
+   {
+    "word": "de qualquer jeito",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Anyway; no matter what happens or what it costs."
+   },
+   {
+    "word": "brincar",
+    "surface": "brincaram",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To joke or play about something with somebody."
+   },
+   {
+    "word": "vizinhança",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Neighbourhood, the streets and the people who live around you."
+   },
+   {
+    "word": "sapato",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Shoe, the closed one you wear on the street."
+   },
+   {
+    "word": "pular",
+    "surface": "pulou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To jump over something, pushing off with both of your feet."
+   },
+   {
+    "word": "filmar",
+    "surface": "filmou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To film something so you can watch it later."
+   },
+   {
+    "word": "tênis",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Trainers, the soft shoes you walk or run in."
+   },
+   {
+    "word": "ponto de vista",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Point of view, the way one person sees something."
+   },
+   {
+    "word": "comparar",
+    "surface": "Comparou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To look at two things and see how they differ."
+   },
+   {
+    "word": "amar",
+    "surface": "Amava",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To love a person or a place very much."
+   },
+   {
+    "word": "apesar de",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Despite; even though something else is against it or makes it harder."
+   }
+  ],
+  "arcType": "recurring-character-callback"
+ }
+]

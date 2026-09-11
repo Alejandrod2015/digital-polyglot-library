@@ -1,0 +1,423 @@
+[
+ {
+  "topic": "gramado",
+  "slotIndex": 0,
+  "title": "Nada, minha filha",
+  "slug": "nada-minha-filha",
+  "synopsis": "Desce do ônibus no sul com a mala de dois meses de praia e uma jaqueta que não segura nada do frio daqui. Quem lava a roupa da rua inteira guarda uma caixa de peças que ninguém veio buscar, e o que sai dessa caixa não se vende nem se empresta.",
+  "text": "Em Gramado fazia frio de verdade, e Renata tinha chegado com roupa de praia. A jaqueta dela era fina, e tudo na mala estava molhado por causa de uma goteira no ônibus.\n\nNeuza cuidava da lavanderia da esquina e puxou assunto logo. As peças não secariam antes do dia seguinte, e ela pendurou tudo numa vara. “A senhora vai vestir o quê hoje?”, perguntou.\n\nRenata não tinha resposta: trouxe duas camisetas e uma saia. Neuza levou uma caixa marrom para o balcão, com um suéter, um cachecol e uma luva sem par.\n\n“Gente esquece e não volta para buscar”, explicou Neuza. “Faz três invernos que isso está aqui.” “Quanto custa?”, perguntou Renata. “Nada, minha filha. A gente dá um jeito, mesmo que o dono apareça”, respondeu Neuza.\n\nDespiu a camiseta e se trocou ali mesmo. “Vem tomar um chá depois das seis”, convidou Neuza, com carinho. À noite, as duas batiam papo no balcão, e, graças a Neuza, Renata não passou frio.",
+  "vocab": [
+   {
+    "word": "jaqueta",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Jacket, the short coat you put on to go outdoors."
+   },
+   {
+    "word": "fino",
+    "surface": "fina",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Thin, with too little material to keep you warm."
+   },
+   {
+    "word": "molhado",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Wet, with water still soaked right into it."
+   },
+   {
+    "word": "por causa de",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Because of; used to give the reason for a problem."
+   },
+   {
+    "word": "puxar assunto",
+    "surface": "puxou assunto",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To start a conversation with someone you do not know well."
+   },
+   {
+    "word": "pendurar",
+    "surface": "pendurou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To hang something up so that it stays there and dries."
+   },
+   {
+    "word": "vestir",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To put clothes on your body before going out."
+   },
+   {
+    "word": "saia",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Skirt, the piece of clothing that hangs from the waist."
+   },
+   {
+    "word": "levar",
+    "surface": "levou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To carry something over from one place to another place."
+   },
+   {
+    "word": "marrom",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Brown, the colour of cardboard or of earth."
+   },
+   {
+    "word": "suéter",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Jumper, the warm woollen top you pull over your head."
+   },
+   {
+    "word": "cachecol",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Scarf, the long strip of cloth you wind round your neck."
+   },
+   {
+    "word": "inverno",
+    "surface": "invernos",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Winter, the coldest season of the whole year."
+   },
+   {
+    "word": "dar um jeito",
+    "surface": "dá um jeito",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To find a way to solve a problem somehow."
+   },
+   {
+    "word": "mesmo que",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Even if; used before something that will not change the plan."
+   },
+   {
+    "word": "despir",
+    "surface": "Despiu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To take a piece of clothing off your body."
+   },
+   {
+    "word": "convidar",
+    "surface": "convidou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To ask somebody to come and join you somewhere."
+   },
+   {
+    "word": "carinho",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Warm, gentle care that you show to someone you like."
+   },
+   {
+    "word": "bater papo",
+    "surface": "batiam papo",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To chat, talk in a relaxed way about everyday things."
+   },
+   {
+    "word": "graças a",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Thanks to; because of someone who helped you."
+   }
+  ],
+  "arcType": "reframe-turn"
+ },
+ {
+  "topic": "gramado",
+  "slotIndex": 1,
+  "title": "A fronha gelada",
+  "slug": "a-fronha-gelada",
+  "synopsis": "Ninguém lhe explicou como se passa uma noite de inverno num quarto que não tem nada dentro, e ela chegou do calor há quatro dias. A receita não se compra em lugar nenhum e cabe em três frases ditas entre duas canecas de chá, antes das seis.",
+  "text": "O quarto alugado tinha uma lâmpada só, no teto. A cortina era fina, o tapete não chegava até a cama, e o quarto ficava cada vez mais gelado. Às seis, Renata desceu até a lavanderia.\n\nNeuza serviu chá numa caneca quente. “Desculpa a pergunta, mas como é que vocês vivem com esse frio?”, disse Renata. “A gente veste tudo o que tem, em vez de reclamar”, respondeu Neuza, como se fosse uma receita. “Suéter grosso por cima e cobertor por baixo.”\n\nRenata perguntou se ela morava ali havia muito tempo. “Nasci nesta rua e moro aqui desde que me casei”, disse Neuza. “Já pensei em ir embora, mas aqui eu reconheço cada casa.” Renata anotou tudo com ternura.\n\nDe volta ao quarto, acendeu a luz e abriu a cômoda: não havia nada dentro. A fronha estava fria. Por outro lado, com o tapete dobrado por cima dos pés, permaneceu quieta até esquentar e dormiu imaginando a rua de Neuza.",
+  "vocab": [
+   {
+    "word": "alugar",
+    "surface": "alugado",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To rent a room or a place for money."
+   },
+   {
+    "word": "cortina",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Curtain, the cloth you pull across a window."
+   },
+   {
+    "word": "tapete",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Rug, the piece of thick cloth lying on the floor."
+   },
+   {
+    "word": "cada vez mais",
+    "type": "expression",
+    "anchor": false,
+    "definition": "More and more, a little more every time."
+   },
+   {
+    "word": "gelado",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Icy cold, so cold that it is unpleasant to touch."
+   },
+   {
+    "word": "chá",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Tea, a hot drink made by putting leaves in water."
+   },
+   {
+    "word": "desculpar",
+    "surface": "Desculpa",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To forgive; used to say sorry before asking something."
+   },
+   {
+    "word": "viver",
+    "surface": "vivem",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To live, to get through your days in a place."
+   },
+   {
+    "word": "em vez de",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Instead of; doing one thing and not the other."
+   },
+   {
+    "word": "grosso",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Thick, with plenty of material to keep the heat in."
+   },
+   {
+    "word": "morar",
+    "surface": "morava",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To live in a place, to have your home there."
+   },
+   {
+    "word": "desde que",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Since; from that moment in the past until now."
+   },
+   {
+    "word": "pensar",
+    "surface": "pensei",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To think about something or consider doing it."
+   },
+   {
+    "word": "reconhecer",
+    "surface": "reconheço",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To know who or what something is because you have seen it."
+   },
+   {
+    "word": "ternura",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Tenderness, a soft and loving feeling towards someone."
+   },
+   {
+    "word": "cômoda",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Chest of drawers, the piece of furniture where clothes are kept."
+   },
+   {
+    "word": "fronha",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Pillowcase, the cloth cover you slip over a pillow."
+   },
+   {
+    "word": "por outro lado",
+    "surface": "Por outro lado",
+    "type": "expression",
+    "anchor": false,
+    "definition": "On the other hand; used to show another side of things."
+   },
+   {
+    "word": "permanecer",
+    "surface": "permaneceu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To stay just as you are, without moving at all."
+   },
+   {
+    "word": "imaginar",
+    "surface": "imaginando",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To picture something in your mind that you cannot see."
+   }
+  ],
+  "arcType": "daily-encounter"
+ },
+ {
+  "topic": "gramado",
+  "slotIndex": 2,
+  "title": "O desfile na última manhã",
+  "slug": "o-desfile-na-ultima-manha",
+  "synopsis": "A rua ensaia o desfile de inverno na manhã em que ela vai embora, e ninguém tem pressa de nada. Tem duas horas livres, um caderno quase cheio e uma coisa para dizer que dois meses atrás não teria sabido dizer nem devagar nem com alguém ajudando do lado.",
+  "text": "Na última manhã, a rua ensaiava o desfile, e o barulho começou cedo. Passeava gente de saia comprida; passou uma gravata larga e um vestido verde.\n\nUm homem de boné dançava sozinho na esquina. Renata levou o suéter de volta à lavanderia de Neuza. “Fica com ele”, disse Neuza, rindo. “Aqui ninguém devolve nada, minha filha.”\n\n“A senhora vai embora decepcionada?”, perguntou Neuza. “Não. Eu volto para visitar a senhora”, respondeu Renata. “Então volta em junho”, disse Neuza. “Em junho chove todo dia, mas a senhora vem de qualquer jeito.”\n\nAs duas brincaram com isso. Lá fora, a vizinhança cantava desafinada, e uma mulher de sapato colorido pulou uma poça.\n\nRenata filmou a rua. Do ponto de vista dela, até a mulher de tênis e balão era parte da despedida.\n\nComparou o primeiro dia com aquele: antes só apontava, agora pedia e agradecia. “Se pudesse, voltaria em junho”, disse a Neuza, na porta. Amava aquela rua, apesar de a chuva de junho ser pior.",
+  "vocab": [
+   {
+    "word": "passear",
+    "surface": "Passeava",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To walk about with no hurry and no errand."
+   },
+   {
+    "word": "gravata",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Tie, the strip of cloth knotted at the neck."
+   },
+   {
+    "word": "verde",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Green, the colour of grass and of leaves."
+   },
+   {
+    "word": "boné",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Cap with a peak that keeps the sun off your eyes."
+   },
+   {
+    "word": "dançar",
+    "surface": "dançava",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To dance, move your body along with the music."
+   },
+   {
+    "word": "devolver",
+    "surface": "devolve",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To give something back to the person it belongs to."
+   },
+   {
+    "word": "decepcionado",
+    "surface": "decepcionada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Disappointed, sad because something was not as good as you hoped."
+   },
+   {
+    "word": "visitar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To go and see somebody where they live."
+   },
+   {
+    "word": "vir",
+    "surface": "vem",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To come towards the place where someone is."
+   },
+   {
+    "word": "de qualquer jeito",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Anyway; no matter what happens or what it costs."
+   },
+   {
+    "word": "brincar",
+    "surface": "brincaram",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To joke or play about something with somebody."
+   },
+   {
+    "word": "vizinhança",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Neighbourhood, the streets and the people who live around you."
+   },
+   {
+    "word": "sapato",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Shoe, the closed one you wear on the street."
+   },
+   {
+    "word": "pular",
+    "surface": "pulou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To jump over something, pushing off with both of your feet."
+   },
+   {
+    "word": "filmar",
+    "surface": "filmou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To film something so you can watch it later."
+   },
+   {
+    "word": "tênis",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Trainers, the soft shoes you walk or run in."
+   },
+   {
+    "word": "ponto de vista",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Point of view, the way one person sees something."
+   },
+   {
+    "word": "comparar",
+    "surface": "Comparou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To look at two things and see how they differ."
+   },
+   {
+    "word": "amar",
+    "surface": "Amava",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To love a person or a place very much."
+   },
+   {
+    "word": "apesar de",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Despite; even though something else is against it or makes it harder."
+   }
+  ],
+  "arcType": "recurring-character-callback"
+ }
+]
