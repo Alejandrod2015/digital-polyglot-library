@@ -5,7 +5,7 @@
   "title": "Um papel que já não vale",
   "slug": "um-papel-que-ja-nao-vale",
   "synopsis": "Chega ao guichê com o horário impresso na mão e descobre que aquele papel deixou de valer em maio, sem que ninguém tivesse por que avisá-la. Quem vende as passagens conhece três saídas possíveis e não esconde nenhuma, nem a que pode custar-lhe a conexão da manhã seguinte.",
-  "text": "Na estação de Campo Grande havia doze guichês e só três abertos; só se ouvia o alto-falante. Renata chegou apressada, com o itinerário impresso na mão.\n\nCleide, uma mulher que vendia passagens ali desde que a estação abriu, avisou que o ônibus das dez não sairia mais. “Mudou em maio”, disse ela. Renata olhou, desesperada, para um papel que já não valia. “Eu devo estar em Bonito amanhã cedo.”\n\n“Então a senhora nunca chega de ônibus direto”, explicou Cleide. “Atualmente, o próximo sai às seis. Mas tem o último de hoje, que passa por Aquidauana.”\n\nCustava mais e chegava tarde, com uma conexão arriscada. Renata podia remarcar, mas decidiu: “Eu vou nesse.” Cleide despachou a mala sem comentar.\n\nUm táxi buzinou na porta. Às onze, Renata embarcou com mais cinco passageiros. “Boa viagem”, disse Cleide, e fechou o guichê enquanto o ônibus entrava na rodovia.",
+  "text": "Na estação de Campo Grande havia doze guichês e só três abertos; só se ouvia o alto-falante. Renata chegou apressada, com o itinerário impresso na mão.\n\nCleide, uma mulher que vendia passagens ali desde que a estação abriu, avisou que o ônibus das dez não sairia mais. “Mudou em maio”, disse ela. Renata olhou, desesperada, para um papel que já não valia. “Eu devo estar em Bonito amanhã cedo.”\n\n“Então a senhora não chega de ônibus direto”, explicou Cleide. “Atualmente, o próximo sai às seis. Mas tem o último de hoje, que passa por Aquidauana.”\n\nCustava mais e chegava tarde, com uma conexão arriscada. Renata podia remarcar, mas decidiu: “Eu vou nesse.” Cleide despachou a mala sem comentar.\n\nUm táxi buzinou na porta. Às onze, Renata embarcou com mais cinco passageiros. “Boa viagem”, disse Cleide, e fechou o guichê enquanto o ônibus entrava na rodovia.",
   "vocab": [
    {
     "word": "estação",
@@ -53,12 +53,6 @@
     "type": "verb",
     "anchor": false,
     "definition": "To have to do something you promised or planned to do."
-   },
-   {
-    "word": "nunca",
-    "type": "adverb",
-    "anchor": false,
-    "definition": "Never, at no time and in no case at all."
    },
    {
     "word": "atualmente",
@@ -137,6 +131,13 @@
     "type": "noun",
     "anchor": true,
     "definition": "Highway, the wide road that joins one city to another."
+   },
+   {
+    "word": "chegar",
+    "surface": "chega",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To arrive, reach the place you were travelling to."
    }
   ],
   "arcType": "late-reveal"
@@ -288,7 +289,7 @@
   "title": "Sete minutos de moto",
   "slug": "sete-minutos-de-moto",
   "synopsis": "Um caderno de duas páginas por dia não vale nada para ninguém mais, e é a única coisa que ela não pode comprar de novo em nenhuma cidade do caminho. Entre a conexão salva e as três horas de espera há um preço que ela paga sem discutir, e o homem que o recebe acha que é dinheiro demais por sete minutos de rua vazia.",
-  "text": "Renata desceu às seis e percebeu: o caderno ficou na poltrona. Sem metrô nem trem, o transporte da garagem saía às nove.\n\nCorreu até a esquina e achou um homem numa moto. “Quanto custa até a garagem?”, perguntou. “Depende da pressa”, respondeu ele. “Da senhora ou minha?” E apontou a garupa.\n\nNa rua larga, o vento batia na cara. Ele freou na porta em sete minutos. “Foi barato”, disse ela. “Foi curto”, respondeu ele.\n\nDois homens descarregavam malas e carregavam outras. “O de Campo Grande, das seis, já limparam?”, perguntou Renata. “É o terceiro da fila”, respondeu um deles. Ela entrou no primeiro por engano e saiu frustrada.\n\n“Aqui está”, disse ela no terceiro: o caderno estava justamente na poltrona, perto da plataforma de desembarque. Se não estivesse ali, ela voltaria a pé.\n\n“Valeu mesmo”, disse Renata ao da moto, e pagou o dobro: alcançou o das nove por doze minutos. “Não vale o dobro”, respondeu ele. “Hoje vale”, disse ela, orgulhosa. “Estava tudo aqui dentro.”",
+  "text": "Renata desceu às seis e percebeu: o caderno ficou na poltrona. Não havia metrô nem trem, nenhum transporte até a garagem, e o ônibus para Bonito saía às nove.\n\nCorreu até a esquina e achou um homem numa moto. “Quanto custa até a garagem?”, perguntou. “Depende da pressa”, respondeu ele. “Da senhora ou minha?” E apontou a garupa.\n\nNa rua larga, o vento batia na cara. Ele freou na porta em sete minutos. “Foi barato”, disse ela. “Foi curto”, respondeu ele.\n\nDois homens descarregavam malas e carregavam outras. “O de Campo Grande, das seis, já limparam?”, perguntou Renata. “É o terceiro da fila”, respondeu um deles. Ela entrou no primeiro por engano e saiu frustrada.\n\n“Aqui está”, disse ela no terceiro: o caderno estava justamente na poltrona, perto da plataforma de desembarque. Se não estivesse ali, ela perderia as anotações de dois meses de viagem.\n\n“Valeu mesmo”, disse Renata ao da moto, e pagou o dobro: alcançou o ônibus para Bonito por doze minutos. “Não vale o dobro”, respondeu ele. “Hoje vale”, disse ela, orgulhosa. “Estava tudo aqui dentro.”",
   "vocab": [
    {
     "word": "perceber",
