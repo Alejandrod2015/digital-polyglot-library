@@ -10,6 +10,8 @@ type StudioShellProps = {
   title: string;
   description?: string;
   breadcrumbs?: { label: string; href?: string }[];
+  /** Controles a la derecha del título (filtros de Métricas, por ejemplo). */
+  headerAside?: React.ReactNode;
 };
 
 /* ── Sidebar sections ── */
@@ -175,6 +177,7 @@ export default function StudioShell({
   title,
   description,
   breadcrumbs,
+  headerAside,
 }: StudioShellProps) {
   const pathname = usePathname() ?? "";
   const [testMode, setTestMode] = useState(false);
@@ -476,14 +479,19 @@ export default function StudioShell({
               ))}
             </div>
           )}
-          <h1 style={{ fontSize: 22, fontWeight: 700, margin: 0, color: "var(--foreground)" }}>
-            {title}
-          </h1>
-          {description && (
-            <p style={{ fontSize: 14, color: "var(--muted)", marginTop: 4, marginBottom: 0 }}>
-              {description}
-            </p>
-          )}
+          <div style={{ display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
+            <div>
+              <h1 style={{ fontSize: 22, fontWeight: 700, margin: 0, color: "var(--foreground)" }}>
+                {title}
+              </h1>
+              {description && (
+                <p style={{ fontSize: 14, color: "var(--muted)", marginTop: 4, marginBottom: 0 }}>
+                  {description}
+                </p>
+              )}
+            </div>
+            {headerAside && <div style={{ flex: 1, minWidth: 0 }}>{headerAside}</div>}
+          </div>
         </header>
 
         {/* Content */}

@@ -210,16 +210,14 @@ export function ResumenView({ data }: { data: DashboardData }) {
         </div>
       </div>
 
-      <div className="mx-row mx-row--2up">
-        <div className="mx-panel">
-          <div className="mx-panel__head">
-            <div>
-              <div className="mx-panel__eyebrow">Top contenido</div>
-              <h3 className="mx-panel__title">Historias más escuchadas</h3>
-            </div>
-            <span className="mx-panel__hint">minutos · listeners</span>
-          </div>
-          <div className="mx-barlist">
+      <div className="mx-fold-row">
+        <details className="mx-fold">
+          <summary>
+            <span className="mx-fold__eyebrow">Top contenido</span>
+            Historias más escuchadas
+            <span className="mx-fold__hint">{data.topStoriesByMinutes.length}</span>
+          </summary>
+          <div className="mx-fold__body mx-barlist mx-barlist--compact">
             {data.topStoriesByMinutes.slice(0, 8).map((story) => {
               const lang = story.language;
               return (
@@ -241,17 +239,15 @@ export function ResumenView({ data }: { data: DashboardData }) {
               </p>
             )}
           </div>
-        </div>
+        </details>
 
-        <div className="mx-panel">
-          <div className="mx-panel__head">
-            <div>
-              <div className="mx-panel__eyebrow">Saves</div>
-              <h3 className="mx-panel__title">Historias más guardadas</h3>
-            </div>
-            <span className="mx-panel__hint">señal editorial</span>
-          </div>
-          <div className="mx-barlist">
+        <details className="mx-fold">
+          <summary>
+            <span className="mx-fold__eyebrow">Saves</span>
+            Historias más guardadas
+            <span className="mx-fold__hint">{data.topSavedStories.length}</span>
+          </summary>
+          <div className="mx-fold__body mx-barlist mx-barlist--compact">
             {data.topSavedStories.map((story) => (
               <BarRow
                 key={story.storySlug}
@@ -268,14 +264,15 @@ export function ResumenView({ data }: { data: DashboardData }) {
               </p>
             )}
           </div>
+        </details>
 
-          <div className="mx-panel__head" style={{ marginTop: 20 }}>
-            <div>
-              <div className="mx-panel__eyebrow">Saves</div>
-              <h3 className="mx-panel__title">Libros más guardados</h3>
-            </div>
-          </div>
-          <div className="mx-barlist">
+        <details className="mx-fold">
+          <summary>
+            <span className="mx-fold__eyebrow">Saves</span>
+            Libros más guardados
+            <span className="mx-fold__hint">{data.topSavedBooks.length}</span>
+          </summary>
+          <div className="mx-fold__body mx-barlist mx-barlist--compact">
             {data.topSavedBooks.map((book) => (
               <BarRow
                 key={book.bookSlug}
@@ -292,7 +289,7 @@ export function ResumenView({ data }: { data: DashboardData }) {
               </p>
             )}
           </div>
-        </div>
+        </details>
       </div>
     </div>
   );

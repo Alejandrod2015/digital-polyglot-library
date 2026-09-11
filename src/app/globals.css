@@ -970,6 +970,27 @@ body {
 .mx-filters__spacer { flex: 1; }
 .mx-filters__actions { display: flex; gap: 8px; }
 
+/* ── Fold: panel plegado a una línea, se abre al hacer clic ── */
+.mx-fold-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-items: start; }
+@media (max-width: 900px) { .mx-fold-row { grid-template-columns: 1fr; } }
+.mx-fold {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid var(--mx-border);
+  border-radius: 10px;
+}
+.mx-fold > summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px;
+  font-size: 12.5px; font-weight: 600; color: var(--mx-fg-soft);
+}
+.mx-fold > summary::-webkit-details-marker { display: none; }
+.mx-fold > summary::before { content: "▸"; color: var(--mx-muted); font-size: 10px; transition: transform 0.15s; }
+.mx-fold[open] > summary::before { transform: rotate(90deg); }
+.mx-fold__eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--mx-muted); }
+.mx-fold__hint { margin-left: auto; font-size: 11px; font-weight: 500; color: var(--mx-muted); }
+.mx-fold__body { padding: 4px 12px 12px; }
+
 .mx-segmented {
   display: inline-flex;
   background: var(--mx-bg-input);

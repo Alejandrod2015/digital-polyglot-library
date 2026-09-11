@@ -232,8 +232,6 @@ export default function MetricsDashboard() {
   const [customFrom, setCustomFrom] = useState("");
   const [customTo, setCustomTo] = useState("");
   const isCustom = customFrom !== "" && customTo !== "";
-  const [bookSlug, setBookSlug] = useState("");
-  const [storySlug, setStorySlug] = useState("");
   const [cohort, setCohort] = useState<MetricsCohort>("all");
   const [section, setSection] = useState<MetricsSection>("overview");
   /**
@@ -300,8 +298,6 @@ export default function MetricsDashboard() {
       } else {
         qs.set("days", days);
       }
-      if (bookSlug.trim()) qs.set("bookSlug", bookSlug.trim());
-      if (storySlug.trim()) qs.set("storySlug", storySlug.trim());
       qs.set("cohort", cohort);
       const res = await fetch(`/api/metrics/dashboard?${qs.toString()}`);
       if (!res.ok) {
@@ -368,7 +364,7 @@ export default function MetricsDashboard() {
     setSectionCache({});
     void loadMetrics(section, true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bookSlug, days, storySlug, customFrom, customTo, cohort]);
+  }, [days, customFrom, customTo, cohort]);
 
   function handleExport() {
     const qs = new URLSearchParams();
@@ -382,8 +378,6 @@ export default function MetricsDashboard() {
     } else {
       qs.set("days", days);
     }
-    if (bookSlug.trim()) qs.set("bookSlug", bookSlug.trim());
-    if (storySlug.trim()) qs.set("storySlug", storySlug.trim());
     qs.set("cohort", cohort);
     window.location.href = `/api/metrics/export?${qs.toString()}`;
   }
@@ -431,10 +425,149 @@ export default function MetricsDashboard() {
 
   const periodLabel = formatRangeLabel(data.range.from, data.range.to);
 
+  const filtersForm = (
+    <form
+      autoComplete="off"
+      className="mx-filters"
+      onSubmit={(e) => {
+        e.preventDefault();
+        void loadMetrics(section, true);
+      }}
+    >
+      <div className="mx-filters__group">
+        <span className="mx-filters__label">Rango</span>
+        <div className="mx-segmented">
+          {RANGE_OPTIONS.map((option) => {
+            const active = option === days && !isCustom;
+            return (
+              <button
+                type="button"
+                key={option}
+                onClick={() => {
+                  setDays(option);
+                  setCustomFrom("");
+                  setCustomTo("");
+                }}
+                className={
+                  active
+                    ? "mx-segmented__btn mx-segmented__btn--active"
+                    : "mx-segmented__btn"
+                }
+              >
+                {option}d
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="mx-filters__group">
+        <span className="mx-filters__label">Cohorte</span>
+        <div className="mx-segmented">
+          {COHORT_OPTIONS.map((option) => {
+            const active = option.key === cohort;
+            return (
+              <button
+                type="button"
+                key={option.key}
+                title={option.title}
+                onClick={() => setCohort(option.key)}
+                className={
+                  active
+                    ? "mx-segmented__btn mx-segmented__btn--active"
+                    : "mx-segmented__btn"
+                }
+              >
+                {option.label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="mx-filters__group">
+        <span className="mx-filters__label">Personalizado</span>
+        <input
+          type="date"
+          value={customFrom}
+          max={customTo || undefined}
+          onChange={(e) => setCustomFrom(e.target.value)}
+          aria-label="Desde"
+          className="mx-date-input"
+          style={{
+            background: "var(--mx-bg-input)",
+            border: "1px solid var(--mx-border)",
+            borderRadius: 7,
+            padding: "5px 8px",
+            color: "var(--mx-fg)",
+            fontSize: 12,
+            fontFamily: "var(--mx-mono)",
+            outline: "none",
+            colorScheme: "dark",
+          }}
+        />
+        <span style={{ color: "var(--mx-muted)", fontSize: 12 }}>→</span>
+        <input
+          type="date"
+          value={customTo}
+          min={customFrom || undefined}
+          onChange={(e) => setCustomTo(e.target.value)}
+          aria-label="Hasta"
+          className="mx-date-input"
+          style={{
+            background: "var(--mx-bg-input)",
+            border: "1px solid var(--mx-border)",
+            borderRadius: 7,
+            padding: "5px 8px",
+            color: "var(--mx-fg)",
+            fontSize: 12,
+            fontFamily: "var(--mx-mono)",
+            outline: "none",
+            colorScheme: "dark",
+          }}
+        />
+        {isCustom && (
+          <button
+            type="button"
+            className="mx-input__clear"
+            onClick={() => {
+              setCustomFrom("");
+              setCustomTo("");
+            }}
+            title="Volver al rango preestablecido"
+            aria-label="Limpiar rango personalizado"
+          >
+            ×
+          </button>
+        )}
+      </div>
+
+      <span className="mx-filters__spacer" />
+
+      <div className="mx-filters__actions">
+        <button
+          type="button"
+          className="mx-btn"
+          onClick={handleExport}
+          title="Exporta el rango actual como CSV"
+        >
+          ⤓ Exportar
+        </button>
+        <button
+          type="submit"
+          className="mx-btn mx-btn--primary"
+          disabled={loading}
+        >
+          {loading ? "Cargando…" : "Actualizar"}
+        </button>
+      </div>
+    </form>
+  );
+
   return (
     <StudioShell
       title="Métricas"
-      description="Cómo se comportan tus historias, libros, journeys y recordatorios."
+      headerAside={filtersForm}
       breadcrumbs={[
         { label: "Studio", href: "/studio" },
         { label: "Métricas" },
@@ -484,193 +617,6 @@ export default function MetricsDashboard() {
             pipeline editorial, no de lo que hace la gente en la app.
           </div>
         ) : null}
-
-        <form
-          autoComplete="off"
-          className="mx-filters"
-          onSubmit={(e) => {
-            e.preventDefault();
-            void loadMetrics(section, true);
-          }}
-        >
-          <div className="mx-filters__group">
-            <span className="mx-filters__label">Rango</span>
-            <div className="mx-segmented">
-              {RANGE_OPTIONS.map((option) => {
-                const active = option === days && !isCustom;
-                return (
-                  <button
-                    type="button"
-                    key={option}
-                    onClick={() => {
-                      setDays(option);
-                      setCustomFrom("");
-                      setCustomTo("");
-                    }}
-                    className={
-                      active
-                        ? "mx-segmented__btn mx-segmented__btn--active"
-                        : "mx-segmented__btn"
-                    }
-                  >
-                    {option}d
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="mx-filters__group">
-            <span className="mx-filters__label">Cohorte</span>
-            <div className="mx-segmented">
-              {COHORT_OPTIONS.map((option) => {
-                const active = option.key === cohort;
-                return (
-                  <button
-                    type="button"
-                    key={option.key}
-                    title={option.title}
-                    onClick={() => setCohort(option.key)}
-                    className={
-                      active
-                        ? "mx-segmented__btn mx-segmented__btn--active"
-                        : "mx-segmented__btn"
-                    }
-                  >
-                    {option.label}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="mx-filters__group">
-            <span className="mx-filters__label">Personalizado</span>
-            <input
-              type="date"
-              value={customFrom}
-              max={customTo || undefined}
-              onChange={(e) => setCustomFrom(e.target.value)}
-              aria-label="Desde"
-              className="mx-date-input"
-              style={{
-                background: "var(--mx-bg-input)",
-                border: "1px solid var(--mx-border)",
-                borderRadius: 7,
-                padding: "5px 8px",
-                color: "var(--mx-fg)",
-                fontSize: 12,
-                fontFamily: "var(--mx-mono)",
-                outline: "none",
-                colorScheme: "dark",
-              }}
-            />
-            <span style={{ color: "var(--mx-muted)", fontSize: 12 }}>→</span>
-            <input
-              type="date"
-              value={customTo}
-              min={customFrom || undefined}
-              onChange={(e) => setCustomTo(e.target.value)}
-              aria-label="Hasta"
-              className="mx-date-input"
-              style={{
-                background: "var(--mx-bg-input)",
-                border: "1px solid var(--mx-border)",
-                borderRadius: 7,
-                padding: "5px 8px",
-                color: "var(--mx-fg)",
-                fontSize: 12,
-                fontFamily: "var(--mx-mono)",
-                outline: "none",
-                colorScheme: "dark",
-              }}
-            />
-            {isCustom && (
-              <button
-                type="button"
-                className="mx-input__clear"
-                onClick={() => {
-                  setCustomFrom("");
-                  setCustomTo("");
-                }}
-                title="Volver al rango preestablecido"
-                aria-label="Limpiar rango personalizado"
-              >
-                ×
-              </button>
-            )}
-          </div>
-
-          <div className="mx-filters__group mx-filters__group--input">
-            <span className="mx-filters__label">Libro</span>
-            <div className="mx-input">
-              <span className="mx-input__icon">⌕</span>
-              <input
-                value={bookSlug}
-                onChange={(e) => setBookSlug(e.target.value)}
-                placeholder="bookSlug"
-                autoComplete="off"
-                data-1p-ignore
-                data-lpignore="true"
-              />
-              {bookSlug && (
-                <button
-                  type="button"
-                  className="mx-input__clear"
-                  onClick={() => setBookSlug("")}
-                  aria-label="Limpiar libro"
-                >
-                  ×
-                </button>
-              )}
-            </div>
-          </div>
-
-          <div className="mx-filters__group mx-filters__group--input">
-            <span className="mx-filters__label">Historia</span>
-            <div className="mx-input">
-              <span className="mx-input__icon">⌕</span>
-              <input
-                value={storySlug}
-                onChange={(e) => setStorySlug(e.target.value)}
-                placeholder="storySlug"
-                autoComplete="off"
-                data-1p-ignore
-                data-lpignore="true"
-              />
-              {storySlug && (
-                <button
-                  type="button"
-                  className="mx-input__clear"
-                  onClick={() => setStorySlug("")}
-                  aria-label="Limpiar historia"
-                >
-                  ×
-                </button>
-              )}
-            </div>
-          </div>
-
-          <span className="mx-filters__spacer" />
-
-          <div className="mx-filters__actions">
-            <button
-              type="button"
-              className="mx-btn"
-              onClick={handleExport}
-              title="Exporta el rango actual como CSV"
-            >
-              ⤓ Exportar
-            </button>
-            <button
-              type="submit"
-              className="mx-btn mx-btn--primary"
-              disabled={loading}
-            >
-              {loading ? "Cargando…" : "Actualizar"}
-            </button>
-          </div>
-        </form>
 
         {errorMessage && (
           <div
