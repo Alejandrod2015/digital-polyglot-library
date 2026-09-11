@@ -1,0 +1,429 @@
+[
+ {
+  "topic": "recife",
+  "slotIndex": 0,
+  "title": "A dor não é doença",
+  "slug": "a-dor-nao-e-doenca",
+  "synopsis": "Chega a Recife sem virar a cabeça e entra na primeira farmácia que vê, decidida a comprar a caixa mais cara do balcão. Quem atende não entrega nada até saber onde dói de verdade, e o que sai dali por três reais não é bem o que ela tinha ido buscar.",
+  "text": "Em Recife, o pescoço de Renata travou de vez. Ela dava aulas em escolas de idioma e estava havia um mês na estrada, cansada, com uma dor que não passava.\n\nQuem atendia na farmácia da esquina era Nilza, uma mulher que estava ali desde que a loja abriu. “Preciso de um remédio forte, que resolveria tudo”, disse Renata. “Forte pra quê?”, respondeu Nilza, e perguntou se doía no pescoço ou no ombro.\n\nRenata apontou os dois, desconfiada. Nilza pegou um frasco pequeno, mostrou a embalagem e disse o preço. “Não recomendo o caro. Este é amargo, mas resolve.”\n\n“A dor não é doença, é cama ruim”, explicou Nilza. “Não é sintoma de nada grave. É só evitar esforço, tomar cuidado, e amanhã melhora.”\n\nRenata saiu aliviada, com o frasco na mão. A saúde dela dependia de uma cama que ainda não tinha visto. “Se piorar, a senhora volta e me avisa”, disse Nilza da porta.",
+  "vocab": [
+   {
+    "word": "pescoço",
+    "type": "noun",
+    "anchor": true,
+    "definition": "The part of the body between your head and shoulders."
+   },
+   {
+    "word": "cansado",
+    "surface": "cansada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Tired, with little energy left after a long day or trip."
+   },
+   {
+    "word": "dor",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Pain, the bad feeling in a part of your body."
+   },
+   {
+    "word": "precisar",
+    "surface": "Preciso",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To need something that you really cannot manage without."
+   },
+   {
+    "word": "remédio",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Medicine you take to make pain or an illness stop."
+   },
+   {
+    "word": "forte",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Strong, with a powerful effect on the body or the problem."
+   },
+   {
+    "word": "resolver",
+    "surface": "resolveria",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To solve a problem so that it stops being a problem."
+   },
+   {
+    "word": "doer",
+    "surface": "doía",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To hurt, to cause pain in a part of the body."
+   },
+   {
+    "word": "desconfiado",
+    "surface": "desconfiada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Not trusting something, a little suspicious that it will not work."
+   },
+   {
+    "word": "frasco",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Small bottle that holds liquid medicine or a syrup."
+   },
+   {
+    "word": "embalagem",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Box or wrapper that a product comes inside when you buy it."
+   },
+   {
+    "word": "recomendar",
+    "surface": "recomendo",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To tell someone which choice you think is the better one."
+   },
+   {
+    "word": "amargo",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Bitter, with the sharp taste of strong black coffee."
+   },
+   {
+    "word": "sintoma",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Sign in your body that shows you may be ill."
+   },
+   {
+    "word": "evitar",
+    "surface": "evitar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To keep away from something so that it does not happen."
+   },
+   {
+    "word": "tomar cuidado",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To be careful so that nothing bad happens to you."
+   },
+   {
+    "word": "melhorar",
+    "surface": "melhora",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To get better, feel less pain or trouble than before."
+   },
+   {
+    "word": "aliviado",
+    "surface": "aliviada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Relieved, feeling calmer because a worry has gone away."
+   },
+   {
+    "word": "piorar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To get worse, become more painful or serious than before."
+   },
+   {
+    "word": "avisar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To let someone know, especially before a problem gets bigger.",
+    "surface": "avisa"
+   }
+  ],
+  "arcType": "late-reveal"
+ },
+ {
+  "topic": "recife",
+  "slotIndex": 1,
+  "title": "O quarto morno da pousada",
+  "slug": "o-quarto-morno-da-pousada",
+  "synopsis": "A cama da pousada afunda no meio e a noite passa inteira sem nenhuma hora de sono, com a barriga entrando na conta lá pela uma da manhã. A farmácia da esquina está aberta, e quem está no turno da noite não vende nada desta vez.",
+  "text": "O colchão da pousada afundava no meio, e a almofada era fina como um pano dobrado. Renata virou de um lado para o outro, mas o sono não vinha. À uma da manhã, a barriga entrou na conta, e no fundo ela não sabia se era o estômago ou a ansiedade.\n\nAflita, vestiu a jaqueta e desceu. Nilza estava no turno da noite, com um café frio na mão. “A senhora de novo”, disse ela, sem se surpreender. “Eu não suporto esse quarto”, reclamou Renata, irritada. “Não durmo, não acordo, fico virando.”\n\nNilza saiu de trás do balcão e explicou devagar, como se ensinasse uma receita. “Você respira contando até quatro”, sugeriu. “Quarto morno, nunca quente, e a janela aberta um dedo. É insônia de viagem.”\n\n“Com certeza isso não dura a noite inteira. Falta pouco pro sol, e amanhã a senhora pega leve”, disse Nilza. Renata voltou, deitou, fez o que ouviu e dormiu sem nada triste na cabeça. O quarto, de repente, serviu.",
+  "vocab": [
+   {
+    "word": "colchão",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Mattress, the soft part of a bed that you lie on."
+   },
+   {
+    "word": "almofada",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Soft cushion or pillow that you rest your head on."
+   },
+   {
+    "word": "barriga",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Belly, the front part of your body below the chest."
+   },
+   {
+    "word": "ansiedade",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Worried, nervous feeling that makes it hard to relax or sleep."
+   },
+   {
+    "word": "aflito",
+    "surface": "Aflita",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Worried and upset, not able to stay calm or still."
+   },
+   {
+    "word": "suportar",
+    "surface": "suporto",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To put up with something unpleasant for a long time."
+   },
+   {
+    "word": "irritado",
+    "surface": "irritada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Annoyed and a little angry because something keeps going wrong."
+   },
+   {
+    "word": "dormir",
+    "surface": "durmo",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To sleep, rest with your eyes closed through the night."
+   },
+   {
+    "word": "acordar",
+    "surface": "acordo",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To wake up and stop being asleep for the day."
+   },
+   {
+    "word": "respirar",
+    "surface": "respira",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To breathe, take air into your body and let it out."
+   },
+   {
+    "word": "sugerir",
+    "surface": "sugeriu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To give someone an idea about what they could do."
+   },
+   {
+    "word": "morno",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Mildly warm, between hot and cold, pleasant to the touch."
+   },
+   {
+    "word": "quente",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Hot, with a high temperature that you can feel."
+   },
+   {
+    "word": "insônia",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Problem of not being able to sleep during the night."
+   },
+   {
+    "word": "com certeza",
+    "surface": "Com certeza",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Certainly; used when you are completely sure about something."
+   },
+   {
+    "word": "durar",
+    "surface": "dura",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To last, go on for a certain amount of time."
+   },
+   {
+    "word": "faltar",
+    "surface": "Falta",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To be still missing or left before something happens."
+   },
+   {
+    "word": "pegar leve",
+    "surface": "pega leve",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To take it easy and not push yourself too hard."
+   },
+   {
+    "word": "deitar",
+    "surface": "deitou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To lie down and put your body flat on something."
+   },
+   {
+    "word": "no fundo",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Deep down; what you really feel or think inside."
+   }
+  ],
+  "arcType": "harmonic-close"
+ },
+ {
+  "topic": "recife",
+  "slotIndex": 2,
+  "title": "O pano com sangue seco",
+  "slug": "o-pano-com-sangue-seco",
+  "synopsis": "Volta à farmácia três dias depois só para agradecer e encontra a mão de quem a atendeu enrolada num pano, com uma explicação pronta para não fechar a loja. Desta vez é ela quem se recusa a aceitar a explicação fácil, e devolve inteira a frase que recebeu.",
+  "text": "Três dias depois, Renata voltou para agradecer e encontrou Nilza com a mão enrolada num pano. Uma caixa tinha caído sem querer, o dedo inchou, e no pano havia sangue seco.\n\n“Não é osso. Só me machuquei”, disse Nilza, e dobrou o dedo. O nariz enrugou sozinho, e o pano cheirava a álcool.\n\n“Formiga um pouco e coça por dentro”, admitiu. “Isso eu conheço”, respondeu Renata. “Doença não é. Mas, se eu fosse a senhora, faria isso no hospital.” Era uma emergência pequena, mas era.\n\n“Prefiro não fechar a farmácia”, disse Nilza. “Eu cuido do balcão, atenta, e não vendo nada”, insistiu Renata. As duas discutiram calmas, até a preocupação vencer.\n\nNilza voltou com o dedo numa tala. “Fraturou. O tratamento dura um mês, mas eu recupero rápido”, contou. Ficou tranquila atrás do balcão, e Renata serviu um café fraco. Nada tinha dado certo naquele dia, e mesmo assim as duas riram.",
+  "vocab": [
+   {
+    "word": "sem querer",
+    "type": "expression",
+    "anchor": false,
+    "definition": "By accident, without meaning to do it at all."
+   },
+   {
+    "word": "inchar",
+    "surface": "inchou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To swell, become bigger because of a knock or illness."
+   },
+   {
+    "word": "sangue",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Blood, the red liquid that runs inside your body."
+   },
+   {
+    "word": "osso",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Bone, one of the hard parts inside your body."
+   },
+   {
+    "word": "machucar",
+    "surface": "machuquei",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To hurt yourself, get a cut or a knock by accident."
+   },
+   {
+    "word": "cheirar",
+    "surface": "cheirava",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To have a certain smell that people nearby can notice."
+   },
+   {
+    "word": "formigar",
+    "surface": "Formiga",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To tingle, feel small pins and needles in the skin."
+   },
+   {
+    "word": "coçar",
+    "surface": "coça",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To itch, feel that you want to scratch your skin."
+   },
+   {
+    "word": "hospital",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Building where doctors and nurses treat people who are hurt."
+   },
+   {
+    "word": "emergência",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Sudden, serious situation that needs help or care right away."
+   },
+   {
+    "word": "preferir",
+    "surface": "Prefiro",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To like one option more than the other one."
+   },
+   {
+    "word": "cuidar",
+    "surface": "cuido",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To look after a person or a place for a while."
+   },
+   {
+    "word": "atento",
+    "surface": "atenta",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Paying close attention and ready to notice any problem."
+   },
+   {
+    "word": "calmo",
+    "surface": "calmas",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Calm, speaking or acting without anger or hurry."
+   },
+   {
+    "word": "preocupação",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Worry, the feeling you have when something might go wrong."
+   },
+   {
+    "word": "tratamento",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Care and medicine a doctor gives to make you well."
+   },
+   {
+    "word": "recuperar",
+    "surface": "recupero",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To get better and become healthy again after being hurt."
+   },
+   {
+    "word": "tranquilo",
+    "surface": "tranquila",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Calm and settled, with nothing pressing to worry about now."
+   },
+   {
+    "word": "fraco",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Weak, with little strength or, for drinks, little flavour."
+   },
+   {
+    "word": "dar certo",
+    "surface": "dado certo",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To work out well, to happen the way you wanted."
+   }
+  ],
+  "arcType": "reframe-turn"
+ }
+]

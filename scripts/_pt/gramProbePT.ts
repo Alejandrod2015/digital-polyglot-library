@@ -32,8 +32,10 @@ import * as fs from "fs";
 const SUBJ = /(?<![\p{L}])[\p{L}]+(?:ásse|êsse|ísse|asse|esse|isse|osse)(?:s|mos|m)?(?![\p{L}])/giu;
 // Palabras que terminan igual y NO son subjuntivo. "disse" es preterito de dizer.
 const NO_SUBJ = new Set(["esse", "essa", "isso", "isse", "nesse", "desse", "classe", "interesse", "expresse", "disse", "impasse", "passe", "compasse", "endereço", "tosse", "posse", "grosse", "fosso"]);
-// Futuro do preterito: falaria, venderia, partiria, faria, diria, traria...
-const COND = /(?<![\p{L}])[\p{L}]{2,}(?:aria|eria|iria|ariam|eriam|iriam|aríamos|eríamos|iríamos)(?![\p{L}])/giu;
+// Futuro do preterito: falaria, venderia, partiria, faria, diria, traria, seria, iria...
+// La raiz puede ser corta (s-eria, f-aria, d-iria): antes se exigian dos letras y
+// estas, que son las mas frecuentes, no se contaban.
+const COND = /(?<![\p{L}])[\p{L}]*(?:aria|eria|iria|ariam|eriam|iriam|aríamos|eríamos|iríamos)(?![\p{L}])/giu;
 const NO_COND = new Set(["maria", "padaria", "livraria", "secretaria", "lavanderia", "portaria", "galeria", "maioria", "categoria", "bateria", "loteria", "peixaria", "papelaria", "mercearia", "cafeteria", "sorveteria", "joalheria", "engenharia", "cervejaria", "varia", "feria", "série", "história", "vitória", "memória", "glória", "cadeira", "geladeira", "carteira",
   // imperfeito de verbos con raiz en -er/-ir: quer-ia, prefer-ia (el condicional es quereria, preferiria)
   "queria", "queriam", "preferia", "preferiam", "sugeria", "conferia", "transferia", "referia", "requeria"]);
@@ -58,11 +60,11 @@ export function mide(t: string): Cuenta {
 }
 
 function controles(): void {
-  const si = mide("Se ela tivesse tempo, falaria com ele. Ontem ela disse que voltaria. Ele perguntou se ela vinha. Pediu que fizessem silêncio. Parecia que fosse tarde.");
-  const no = mide("Ele disse: vou agora. A padaria da Maria fecha às seis. Essa ideia é boa e a praia está cheia. Ele tem tosse e posse da casa. Ela queria café e preferia chá.");
-  const ok = si.subj.length === 3 && si.cond.length === 2 && si.ind.length === 3
+  const si = mide("Se ela tivesse tempo, falaria com ele. Ontem ela disse que voltaria. Ele perguntou se ela vinha. Pediu que fizessem silêncio. Parecia que fosse tarde. Seria bom e ele faria tudo.");
+  const no = mide("Ele disse: vou agora. A padaria da Maria fecha às seis. Essa ideia é boa e a praia está cheia. Ele tem tosse e posse da casa. Ela queria café e preferia chá. A Maria é séria.");
+  const ok = si.subj.length === 3 && si.cond.length === 4 && si.ind.length === 3
     && no.subj.length === 0 && no.cond.length === 0 && no.ind.length === 0;
-  console.log(`controles: positivo subj ${si.subj.length}/3 cond ${si.cond.length}/2 ind ${si.ind.length}/3 · negativo ${no.subj.length}/${no.cond.length}/${no.ind.length} (esperado 0/0/0) -> ${ok ? "OK" : "FALLAN"}`);
+  console.log(`controles: positivo subj ${si.subj.length}/3 cond ${si.cond.length}/4 ind ${si.ind.length}/3 · negativo ${no.subj.length}/${no.cond.length}/${no.ind.length} (esperado 0/0/0) -> ${ok ? "OK" : "FALLAN"}`);
   if (!ok) {
     console.error("La sonda no ve lo que tiene delante; no mide nada.", JSON.stringify({ si, no }));
     process.exit(1);
