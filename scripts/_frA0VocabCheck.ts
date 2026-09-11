@@ -7,11 +7,11 @@ import { FRENCH_A1_A2_LEMMAS } from "@/lib/cefr/frenchA1A2";
 const p = new PrismaClient();
 const ESTE = "cmtwo6cys0007j8yzg6ni3fsc";
 const strip = (w: string) => w.toLowerCase().replace(/^(le |la |les |l'|l’|se |s')/, "").trim();
-// Tema 6 · Houses & Neighbours
+// Tema 7 · Travel & Goodbyes
 const C: Record<string, string[]> = {
-  s1: ["le volet","la boîte aux lettres","le couloir","l'annonce","la cave","la poignée","louer","déménager","vendre","le locataire","méchant","libre","désolé","cent","d'habitude","en haut","à louer","pas encore","demain","tout de suite"],
-  s2: ["la plante","l'arrosoir","les meubles","l'ampoule","le chauffage","le plafond","arroser","vider","peindre","grandir","blanc","vert","sec","vivant","tiède","la feuille","la terre","s'il te plaît","petit à petit","tous les matins"],
-  s3: ["les pas","le parquet","l'écharpe","le manteau","le chien","la laisse","monter","saluer","regarder","quelqu'un","inconnu","brun","gros","sympa","au-dessus","tout à coup","ensuite","ailleurs","chez moi","trop"],
+  s1: ["la voiture","le coffre","le réveil","le mouchoir","le port","le nuage","savoir","pouvoir","parler","sortir","mettre","poser","vieux","premier","ici","puis","aussi","là","à samedi","bon voyage"],
+  s2: ["la poussière","la casquette","les lunettes","la gourde","la bise","le printemps","servir","trouver","boire","apprendre","tenir","descendre","attraper","très","toujours","bien","difficile","chaque dimanche","avec plaisir","le coude"],
+  s3: ["le TGV","le canapé","l'oreiller","la veste","la baguette","le pain au chocolat","rêver","pleurer","embrasser","tricher","manger","prêt","lentement","l'égalité","la joue","le petit-déjeuner","la prochaine fois","comme avant","entre nous","à la maison"],
 };
 (async () => {
   const other: any[] = await p.journeyStory.findMany({ where: { journey: { language: "french" } }, select: { vocab: true, journeyId: true, journey: { select: { status: true, typeSlug: true } } } as any });
