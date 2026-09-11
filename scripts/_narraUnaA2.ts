@@ -12,7 +12,10 @@
  * (~2,3 palabras/s). Aplicar el 2,7 del A0 cambiaria justo lo que aprobo.
  *
  * Uso:  DPL_AUDIO_FULL_OK=1 NODE_OPTIONS="--conditions=react-server" \
- *         npx tsx scripts/_narraUnaA2.ts <slug>
+ *         npx tsx scripts/_narraUnaA2.ts <slug> [--journey a2 | b1-latam | b2-latam]
+ *
+ * Antes de narrar, el modo en seco dice que voz y que paso del orden toca a
+ * cada historia, con las mismas funciones:  npx tsx scripts/_narraSeco.ts --journey <perfil>
  */
 import { config } from "dotenv";
 config({ path: ".env.local", quiet: true });
@@ -22,21 +25,11 @@ import { PrismaClient } from "../src/generated/prisma";
 import { generateAndUploadMultiVoiceAudio } from "../src/lib/elevenlabs";
 import { generateWordTimingsForStory } from "../src/lib/audioWordTimings";
 import { rapidasDe, informe } from "./checkNarrationPace";
-import * as fs from "fs";
-import * as path from "path";
+import { perfilDeArgs, vozDe, pasoDelOrden, muestrasRegistradas } from "./_narraPerfiles";
 
-import { VOZ_POR_TEMA } from "./_a2Voces";
-import { VOZ_POR_TEMA_B1_LATAM } from "./_b1LatamVoces";
-
-// Ampliado el 2026-09-07 para el B1 latam (pedir-una-vez): --journey b1-latam
-// usa su journey, su mapa de voces y su bundle de glosas; sin flag, el A2.
-const PERFILES: Record<string, { journey: string; voces: Record<string, string>; bundle: string }> = {
-  a2: { journey: "cmtgelq560007j84n3ujx9bpd", voces: VOZ_POR_TEMA, bundle: "spanish-traveler-latam-a2" },
-  "b1-latam": { journey: "cmtmylg7k0007321h6t7njesx", voces: VOZ_POR_TEMA_B1_LATAM, bundle: "spanish-traveler-latam-b1" },
-};
-const pi = process.argv.indexOf("--journey");
-const PERFIL = PERFILES[pi >= 0 ? process.argv[pi + 1] : "a2"];
-if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam");
+// Ampliado el 2026-09-07 para el B1 latam y el 2026-09-11 para el B2 latam
+// (pedir-una-vez): los perfiles viven en _narraPerfiles.ts; sin flag, el A2.
+const PERFIL = perfilDeArgs(process.argv);
 const JOURNEY = PERFIL.journey;
 
 const prisma = new PrismaClient();
@@ -47,43 +40,41 @@ const prisma = new PrismaClient();
 
   const s = await prisma.journeyStory.findFirst({
     where: { journeyId: JOURNEY, slug },
-    select: { id: true, slug: true, title: true, text: true, topic: true, slotIndex: true, audioUrl: true },
+    select: { id: true, slug: true, title: true, text: true, topic: true, slotIndex: true, audioUrl: true, voiceId: true },
   });
   if (!s?.text) throw new Error(`no encuentro la historia ${slug}`);
   // Pisar audio existente exige decirlo: --rehacer. Sin eso, no se toca.
-  if (s.audioUrl && !process.argv.includes("--rehacer")) {
+  const rehacer = process.argv.includes("--rehacer");
+  if (s.audioUrl && !rehacer) {
     throw new Error(`${slug} YA tiene audio; para rehacerlo pasa --rehacer`);
   }
 
-  const voiceId = PERFIL.voces[s.topic];
-  if (!voiceId) throw new Error(`sin narrador para el tema ${s.topic}`);
+  const voiceId = vozDe(PERFIL, s);
 
   // ORDEN DE NARRACION POR TEMA (regla dura, 2026-09-02). Primero la muestra
   // de titulo y primer parrafo, que el usuario comprueba; luego la primera
   // historia entera, que vuelve a comprobar; y solo entonces el resto del
   // tema. Cada paso se para hasta que el anterior existe, porque narrar de
   // golpe y equivocarse cuesta creditos y ya paso dos veces.
-  const REGISTRO = path.join(__dirname, "a2-muestras.json");
-  const muestras = fs.existsSync(REGISTRO)
-    ? (JSON.parse(fs.readFileSync(REGISTRO, "utf8")) as Record<string, unknown>)
-    : {};
-  if (s.slotIndex === 1 && !muestras[s.slug] && !process.argv.includes("--rehacer")) {
+  const primera = s.slotIndex > 1
+    ? await prisma.journeyStory.findFirst({
+        where: { journeyId: JOURNEY, topic: s.topic, slotIndex: 1 },
+        select: { slug: true, audioUrl: true },
+      })
+    : null;
+  const orden = pasoDelOrden({ ...s, audioUrl: null }, muestrasRegistradas(), !!primera?.audioUrl);
+  if (orden.paso === "muestra" && !rehacer) {
     throw new Error(
       `${slug} es la PRIMERA de su tema y no tiene muestra.\n` +
-      `  NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_muestraA2Titulo.ts ${slug}`
+      `  NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_muestraA2Titulo.ts ${slug}` +
+      (process.argv.includes("--journey") ? ` --journey ${process.argv[process.argv.indexOf("--journey") + 1]}` : "")
     );
   }
-  if (s.slotIndex > 1) {
-    const primera = await prisma.journeyStory.findFirst({
-      where: { journeyId: JOURNEY, topic: s.topic, slotIndex: 1 },
-      select: { slug: true, audioUrl: true },
-    });
-    if (!primera?.audioUrl) {
-      throw new Error(
-        `la primera de este tema (${primera?.slug}) todavia no esta narrada.\n` +
-        `  El orden es: muestra, primera entera, y luego el resto.`
-      );
-    }
+  if (orden.paso === "resto del tema" && orden.bloqueo) {
+    throw new Error(
+      `la primera de este tema (${primera?.slug}) todavia no esta narrada.\n` +
+      `  El orden es: muestra, primera entera, y luego el resto.`
+    );
   }
 
   // Ninguna historia se narra con glosas copiadas sin leer: el audio es lo caro
