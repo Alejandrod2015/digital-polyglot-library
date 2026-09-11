@@ -36,6 +36,18 @@ export const PERFILES: Record<string, Perfil> = {
     bundle: "spanish-traveler-latam-b2",
     vozGuardadaManda: true,
   },
+  // spain-b1 (2026-09-11): narradora unica, Maia, en los siete temas, igual que
+  // el A1 y el A2 de Espana. Su voiceId ya esta guardado en las 21, asi que manda
+  // la guardada y el mapa la confirma.
+  "spain-b1": {
+    journey: "cmt5x67ze000l320cpgunu5vi",
+    voces: Object.fromEntries(
+      ["rooms-and-landlords", "jobs-and-wages", "meetings-and-deadlines", "repeating-and-rephrasing",
+        "sayings-and-nicknames", "deals-and-estimates", "trust-and-rumours"].map((t) => [t, "jipeLrCHZ6ByxrU2JP9i"]),
+    ),
+    bundle: "spanish-traveler-spain-b1",
+    vozGuardadaManda: true,
+  },
 };
 
 export function perfilDeArgs(argv: string[]): Perfil {
