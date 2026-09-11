@@ -4,7 +4,7 @@
 import fs from "fs";
 import { validateJourneyStories } from "@/lib/validateJourneyStories";
 const temas = ["t1", "t2", "t3", "t4", "t5", "t6", "t7"];
-const stories = temas.flatMap((t) => JSON.parse(fs.readFileSync(`scripts/_frA0/${t}.json`, "utf8")))
+const stories = temas.flatMap((t) => JSON.parse(fs.readFileSync(`${process.argv[2] ?? "scripts/_frA0"}/${t}.json`, "utf8")))
   .map((s: any) => ({ slug: `${s.topic}#${s.slotIndex}`, title: s.title, text: s.text, vocab: s.vocab, language: "FR", level: "a0", topic: s.topic }));
 const jc = validateJourneyStories(stories as never, { language: "FR", level: "a0", conjuntoCompleto: true });
 for (const c of jc.filter((c: any) => /recirculation|introduction-form|closing|cast-/.test(c.id)))
