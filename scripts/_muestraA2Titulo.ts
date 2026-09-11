@@ -14,31 +14,22 @@
  * Deja constancia en scripts/a2-muestras.json, que es lo que mira
  * `_narraUnaA2.ts` para no dejar narrar una primera historia sin muestra.
  *
- * Uso: NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_muestraA2Titulo.ts <slug>
+ * Uso: NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_muestraA2Titulo.ts <slug> [--journey a2 | b1-latam | b2-latam | spain-b1 | spain-b2]
  */
 import { config } from "dotenv";
 config({ path: ".env.local", quiet: true });
 config({ path: ".env", quiet: true });
 
 import * as fs from "fs";
-import * as path from "path";
 import { PrismaClient } from "../src/generated/prisma";
 import { generateAndUploadMultiVoiceAudio } from "../src/lib/elevenlabs";
-import { VOZ_POR_TEMA } from "./_a2Voces";
-import { VOZ_POR_TEMA_B1_LATAM } from "./_b1LatamVoces";
+import { perfilDeArgs, vozDe, REGISTRO_MUESTRAS } from "./_narraPerfiles";
 
-// Ampliado el 2026-09-07 para el B1 latam (pedir-una-vez: se amplia el script
-// en un commit, no se clona): --journey b1-latam usa su journey y su mapa de
-// voces; sin flag, el A2 de siempre.
-const PERFILES: Record<string, { journey: string; voces: Record<string, string> }> = {
-  a2: { journey: "cmtgelq560007j84n3ujx9bpd", voces: VOZ_POR_TEMA },
-  "b1-latam": { journey: "cmtmylg7k0007321h6t7njesx", voces: VOZ_POR_TEMA_B1_LATAM },
-};
-const pi = process.argv.indexOf("--journey");
-const PERFIL = PERFILES[pi >= 0 ? process.argv[pi + 1] : "a2"];
-if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam");
+// Ampliado el 2026-09-07 para el B1 latam y el 2026-09-11 para el B2 latam y
+// el B2 spain (pedir-una-vez: se amplia el script en un commit, no se clona):
+// los perfiles viven en _narraPerfiles.ts; sin flag, el A2 de siempre.
+const PERFIL = perfilDeArgs(process.argv);
 const JOURNEY = PERFIL.journey;
-const REGISTRO = path.join(__dirname, "a2-muestras.json");
 
 const prisma = new PrismaClient();
 
@@ -48,12 +39,11 @@ const prisma = new PrismaClient();
 
   const s = await prisma.journeyStory.findFirst({
     where: { journeyId: JOURNEY, slug },
-    select: { title: true, text: true, topic: true },
+    select: { slug: true, title: true, text: true, topic: true, voiceId: true },
   });
   if (!s?.text) throw new Error(`no encuentro la historia ${slug}`);
 
-  const voiceId = PERFIL.voces[s.topic];
-  if (!voiceId) throw new Error(`sin narrador para el tema ${s.topic}`);
+  const voiceId = vozDe(PERFIL, s);
 
   const parrafo = s.text.split(/\n\n+/)[0].trim();
   console.log(`${s.title} · ${parrafo.split(/\s+/).length} palabras · voz ${voiceId}`);
@@ -68,9 +58,9 @@ const prisma = new PrismaClient();
     contentGate: true,
   });
 
-  const reg = fs.existsSync(REGISTRO) ? JSON.parse(fs.readFileSync(REGISTRO, "utf8")) : {};
+  const reg = fs.existsSync(REGISTRO_MUESTRAS) ? JSON.parse(fs.readFileSync(REGISTRO_MUESTRAS, "utf8")) : {};
   reg[slug] = { url: res.url, fecha: new Date().toISOString(), voiceId };
-  fs.writeFileSync(REGISTRO, JSON.stringify(reg, null, 1) + "\n");
+  fs.writeFileSync(REGISTRO_MUESTRAS, JSON.stringify(reg, null, 1) + "\n");
 
   console.log("\nURL:", res.url);
 })().finally(() => prisma.$disconnect());

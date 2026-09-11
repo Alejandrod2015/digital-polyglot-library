@@ -251,7 +251,7 @@
   "title": "Ya no va a cerrar nada",
   "arcType": "reframe-turn",
   "synopsis": "Carla paga la explicación pendiente: al local de la peña lo echan después del verano, y de esa herida solo bromea su dueño. Con la regla completa, Claudia baja al archivo sin saber cómo se pide perdón en el idioma de la guasa. No hace falta: Marcos se lo concede devolviéndole su propia broma del candado.",
-  "text": "Dos cafés esperaban a Claudia el domingo en el mostrador, y Carla detrás. “Al dueño le han comprado el edificio; después del verano, fuera”, contó sin rodeos. “Y de eso, de momento, solo se ríe Marcos”.\n\nDe lo que duele hace broma su dueño. La broma de Claudia no había sido mala; había sido de otro.\n\nLa culpa encogió, aunque no desapareció. En el archivo, la cinta nueva rompía el silencio. Marcos dejó el candado sobre el escáner.\n\n“Al final te lo vas a quedar tú; aquí ya no va a cerrar nada”, soltó, con la ceja levantada. Era su frase, devuelta, y valía por un perdón entero. Claudia se rio con ganas.\n\n“Trato hecho, pero lo cuelgo en Vitoria”, remató ella. “Eso ya es una copla”, concedió Marcos, y se puso a desmontar una estantería. Volvió al escáner sabiendo para quién trabajaba.",
+  "text": "Dos cafés esperaban a Claudia el domingo en el mostrador, y Carla detrás. “Al dueño le han comprado el edificio; después del verano, fuera”, contó sin rodeos. “Y de eso, de momento, solo se ríe Marcos”.\n\nDe lo que duele hace broma su dueño. La broma de Claudia no había sido mala; había sido de otro.\n\nLa culpa encogió, aunque no desapareció. En el archivo, la cinta nueva rompía el silencio. Marcos dejó el candado sobre el escáner.\n\n“Al final te lo vas a quedar tú; aquí ya no va a cerrar nada”, soltó, con la ceja levantada. Le devolvió su frase, y valía por un perdón entero. Claudia se rio con ganas.\n\n“Trato hecho, pero lo cuelgo en Vitoria”, remató ella. “Eso ya es una copla”, concedió Marcos, y se puso a desmontar una estantería. Volvió al escáner sabiendo para quién trabajaba.",
   "vocab": [
    {
     "type": "noun",
@@ -296,7 +296,7 @@
    {
     "type": "verb",
     "word": "devolver",
-    "surface": "devuelta",
+    "surface": "devolvió",
     "definition": "To give back; here, a joke returned to its maker."
    },
    {
