@@ -52,13 +52,13 @@
  },
  {
   "type": "match_meaning",
-  "word": "kiosco,sello,persiana,montón",
+  "word": "quiosco,sello,persiana,montón",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
     {
-     "word": "kiosco",
+     "word": "quiosco",
      "answer": "newsstand",
      "options": [
       "newsstand",

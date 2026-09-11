@@ -1,6 +1,6 @@
 SETS = {
 "la-persiana-a-media-tarde": {
- "M": [("kiosco", "newsstand"), ("sello", "stamp"), ("persiana", "metal shutter"), ("montón", "pile")],
+ "M": [("quiosco", "newsstand"), ("sello", "stamp"), ("persiana", "metal shutter"), ("montón", "pile")],
  "E": [
   ("C", "fecha", "Miró la [[fecha]] y tardó en contestar.", "date", "price", "headline", "address"),
   ("F", "subrayó", "Para no olvidarla, _____ la fecha en rojo.", ["masticó", "tragó", "sopló"],
