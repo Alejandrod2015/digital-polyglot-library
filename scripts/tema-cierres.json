@@ -1344,8 +1344,8 @@
     ]
   },
   "cmtpls1l20007j8epwgcs6e1h#classes-and-teachers": {
-    "cerrado": "2026-09-10T23:34:39.652Z",
-    "hash": "fd81fa3b933c4b1b",
+    "cerrado": "2026-09-11T10:57:33.626Z",
+    "hash": "2d0860de56c27d98",
     "historias": [
       "classes-and-teachers#1 la-otra-columna",
       "classes-and-teachers#2 buena-suerte-en-porteno",
@@ -1410,8 +1410,8 @@
     }
   },
   "cmtpls1l20007j8epwgcs6e1h#fluency-and-forgetting": {
-    "cerrado": "2026-09-10T23:34:55.026Z",
-    "hash": "303a1951eba65af1",
+    "cerrado": "2026-09-11T11:00:49.819Z",
+    "hash": "17c0c3903cd6558e",
     "historias": [
       "fluency-and-forgetting#1 aqui-se-dice-arrendando",
       "fluency-and-forgetting#2 el-trasteo-ajeno",
@@ -1542,8 +1542,8 @@
     }
   },
   "cmtpls1l20007j8epwgcs6e1h#negotiations-and-courtesies": {
-    "cerrado": "2026-09-10T23:34:03.992Z",
-    "hash": "a8bcc0e41721afc2",
+    "cerrado": "2026-09-11T10:57:18.434Z",
+    "hash": "a5d91f72674be915",
     "historias": [
       "negotiations-and-courtesies#1 la-cortesia-mas-cara",
       "negotiations-and-courtesies#2 yo-no-fallo",
@@ -1555,7 +1555,7 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"contestó\" 20%)",
-      "arranques de parrafo variados (mas repetido \"quien\", 7%)",
+      "arranques de parrafo variados (mas repetido \"una\", 7%)",
       "banda gramatical b2 dentro: subj. imperfecto 6 · condicional 2 · estilo indirecto 2",
       "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
@@ -1569,7 +1569,7 @@
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: negotiations-and-courtesies (Maricarmen, Aurelio)"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: negotiations-and-courtesies (Aurelio, Maricarmen)"
     ],
     "plan": {
       "tipo": "Traveler: protagonistas nativos; el narrador mira desde fuera, presenta gente y sitios (Ciudad, pais) y explica lo que un local daria por sabido",
@@ -1608,8 +1608,8 @@
     }
   },
   "cmtpls1l20007j8epwgcs6e1h#partners-and-in-laws": {
-    "cerrado": "2026-09-11T07:14:50.629Z",
-    "hash": "0ba5902e3f24ece7",
+    "cerrado": "2026-09-11T11:00:44.383Z",
+    "hash": "227d370e557f0217",
     "historias": [
       "partners-and-in-laws#1 vitel-tone-con-blanco",
       "partners-and-in-laws#2 aca-los-errores-se-pagan",
@@ -1740,8 +1740,8 @@
     }
   },
   "cmtpls1l20007j8epwgcs6e1h#tales-and-tall-stories": {
-    "cerrado": "2026-09-11T07:15:09.460Z",
-    "hash": "a2655dd42acb17b9",
+    "cerrado": "2026-09-11T11:01:16.382Z",
+    "hash": "7d07266c8f49bf52",
     "historias": [
       "tales-and-tall-stories#1 de-medio-metro-y-gracias",
       "tales-and-tall-stories#2 la-carreta-mojada",
@@ -1753,7 +1753,7 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"contestó\" 25%)",
-      "arranques de parrafo variados (mas repetido \"baldomero\", 13%)",
+      "arranques de parrafo variados (mas repetido \"una\", 7%)",
       "banda gramatical b2 dentro: subj. imperfecto 4 · condicional 2 · estilo indirecto 2",
       "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],

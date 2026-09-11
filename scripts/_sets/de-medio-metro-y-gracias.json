@@ -103,7 +103,7 @@
   {
     "type": "meaning_in_context",
     "word": "hospedaje",
-    "sentence": "Ella manejaba el [[hospedaje]] y el orden.",
+    "sentence": "Ella era la dueña del [[hospedaje]] y ponía el orden.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "guesthouse",
@@ -116,7 +116,7 @@
       "audioClip": {
         "storySlug": "de-medio-metro-y-gracias",
         "storySource": "user",
-        "sentence": "Ella manejaba el hospedaje y el orden.",
+        "sentence": "Ella era la dueña del hospedaje y ponía el orden.",
         "targetWord": "hospedaje",
         "language": "spanish"
       }
@@ -416,7 +416,7 @@
   {
     "type": "meaning_in_context",
     "word": "en otra parte",
-    "sentence": "Manejaba el hospedaje y el orden: paciencia [[en otra parte]].",
+    "sentence": "Era la dueña del hospedaje: paciencia [[en otra parte]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "somewhere else",
@@ -429,7 +429,7 @@
       "audioClip": {
         "storySlug": "de-medio-metro-y-gracias",
         "storySource": "user",
-        "sentence": "Manejaba el hospedaje y el orden: paciencia en otra parte.",
+        "sentence": "Era la dueña del hospedaje: paciencia en otra parte.",
         "targetWord": "en otra parte",
         "language": "spanish"
       }

@@ -1,0 +1,378 @@
+[
+  {
+    "slug": "vitel-tone-con-blanco",
+    "title": "Vitel toné con blanco",
+    "synopsis": "Emiliano arrives from Mendoza with polished shoes and a bottle under his arm, ready to meet his girlfriend's family, which in La Plata means one person: Norma, owner of the neighbourhood rotisería. Lunch turns out to be an exam nobody names, the wine ends up on the bottom shelf, and the only real laugh he earns comes from an honest answer.",
+    "text": "Emiliano, un joven de Mendoza, tocaba timbre con botella bajo el brazo y zapatos lustrados. Venía de Mendoza a conocer a la familia de la novia, que en La Plata, Argentina, era sobre todo Norma.\n\nNorma, la dueña de la rotisería, atendía con delantal y anillos en un local que olía a horno. Miró la botella antes que al muchacho. “Traje un vino de allá, de los buenos”, saludó.\n\n“Acá el vitel toné se lleva con blanco”, contestó Norma, y lo guardó abajo. “Pero se agradece, nene.” “¿Y de qué trabajás allá?”, preguntó ella. Emiliano contestó con la espalda derecha, como en entrevista. “¿Y cocinar, sabés?”, remató Norma. “Sé lavar los platos como nadie. Y sé escuchar”, contestó él, y Norma se rio de verdad.\n\nMeter la pata no fue grave: lo grave habría sido no darse cuenta. Emiliano se fijó en todo: el anillo que Norma hacía girar cuando dudaba. “El sábado vengo a ayudar”, prometió en la puerta, “aunque sea a pelar papas.”",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "rotisería",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Argentine shop selling roast meals and prepared food."
+      },
+      {
+        "type": "noun",
+        "word": "vitel toné",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Cold veal in tuna sauce, an Argentine celebration classic."
+      },
+      {
+        "type": "noun",
+        "word": "nene",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Kid, dear; warm Argentine way to address someone younger."
+      },
+      {
+        "type": "adjective",
+        "word": "lustrado",
+        "surface": "lustrados",
+        "definition": "Polished until it shines, carefully cleaned for the occasion."
+      },
+      {
+        "type": "noun",
+        "word": "botella",
+        "definition": "Bottle; the glass container a drink comes in."
+      },
+      {
+        "type": "noun",
+        "word": "novia",
+        "definition": "Girlfriend; the woman someone is in a relationship with."
+      },
+      {
+        "type": "noun",
+        "word": "muchacho",
+        "definition": "Young man; a casual friendly word for a guy."
+      },
+      {
+        "type": "noun",
+        "word": "anillo",
+        "surface": "anillos",
+        "definition": "Ring; the small metal circle worn on a finger."
+      },
+      {
+        "type": "noun",
+        "word": "entrevista",
+        "definition": "Interview; the formal meeting where someone examines you."
+      },
+      {
+        "type": "adjective",
+        "word": "grave",
+        "definition": "Serious, bad enough to cause some real damage."
+      },
+      {
+        "type": "expression",
+        "word": "meter la pata",
+        "surface": "Meter la pata",
+        "definition": "To put your foot in it, make an awkward mistake."
+      },
+      {
+        "type": "verb",
+        "word": "fijarse",
+        "surface": "se fijó",
+        "definition": "To pay close attention, notice the small details around."
+      },
+      {
+        "type": "expression",
+        "word": "hacer girar",
+        "surface": "hacía girar",
+        "definition": "To spin something around, turn it in slow circles."
+      },
+      {
+        "type": "expression",
+        "word": "se agradece",
+        "definition": "Much appreciated; the polite thanks that closes the subject."
+      },
+      {
+        "type": "expression",
+        "word": "lavar los platos",
+        "definition": "To wash the dishes after everyone has eaten."
+      },
+      {
+        "type": "expression",
+        "word": "de los buenos",
+        "definition": "One of the good ones, the real quality kind."
+      },
+      {
+        "type": "expression",
+        "word": "de allá",
+        "definition": "From over there, from the place someone comes from."
+      },
+      {
+        "type": "expression",
+        "word": "sobre todo",
+        "definition": "Above all, more than anything or anyone else."
+      },
+      {
+        "type": "expression",
+        "word": "como nadie",
+        "definition": "Like nobody else, better than anyone else around."
+      },
+      {
+        "type": "expression",
+        "word": "en la puerta",
+        "definition": "At the door, right at the moment of leaving."
+      }
+    ],
+    "arcType": "daily-encounter",
+    "topic": "partners-and-in-laws",
+    "slotIndex": 1
+  },
+  {
+    "slug": "aca-los-errores-se-pagan",
+    "title": "Acá los errores se pagan",
+    "synopsis": "On his day off, Emiliano shows up at the rotisería before opening time, ready to earn his place. The first batch of milanesas comes out golden, the second burns while he helps a customer, and Norma neither shouts nor consoles: mistakes are paid from your own pocket in this house, and aprons go home with the ones who will come back.",
+    "text": "De franco en su laburo, Emiliano llegó el sábado antes de que Norma abriera.\n\n“¿Sabés rebozar, o allá eso se compra hecho?”, preguntó, y le tiró un delantal. “Aprendo rápido”, contestó él.\n\nHarina, huevo, pan rallado: la primera tanda de milanesas salió dorada. Norma no dijo nada, que era un cumplido.\n\nLa segunda se pasó de punto y se quemó: Emiliano atendía a una clienta del vitel toné, y la hornalla no esperaba a nadie. El local olía a quemado.\n\nNorma no gritó ni consoló: abrió la caja, sacó la cuenta de lo que valía. “Esto sale de tu bolsillo, nene”, dijo. “Acá los errores se pagan.”\n\n“¿Y la tanda que salió bien, quién la paga?”, preguntó Emiliano. “Eso se espera”, contestó ella. “Por eso no se paga.” Pagó sin chistar, mirando la caja y no a Norma, y siguió hasta la hora de cerrar. En la puerta, Norma le devolvió el delantal doblado. “Llevátelo”, dijo. “El que tiene delantal, vuelve.” Se lo llevó, ya suyo.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "franco",
+        "anchor": true,
+        "surface": "de franco",
+        "register": "cultural",
+        "definition": "Day off; in Argentina, your free day from work."
+      },
+      {
+        "type": "noun",
+        "word": "milanesa",
+        "anchor": true,
+        "surface": "milanesas",
+        "register": "cultural",
+        "definition": "Breaded fried cutlet, the dish Argentina cannot live without."
+      },
+      {
+        "type": "expression",
+        "word": "pan rallado",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Breadcrumbs; the coating that makes a milanesa crunchy."
+      },
+      {
+        "type": "noun",
+        "word": "hornalla",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "Stove burner; the word Argentine kitchens use for it."
+      },
+      {
+        "type": "noun",
+        "word": "tanda",
+        "definition": "Batch; one round of things cooked at the same time."
+      },
+      {
+        "type": "verb",
+        "word": "rebozar",
+        "definition": "To coat food in flour, egg and breadcrumbs before frying."
+      },
+      {
+        "type": "verb",
+        "word": "quemarse",
+        "surface": "se quemó",
+        "definition": "To burn, get ruined by staying too long on the fire."
+      },
+      {
+        "type": "adjective",
+        "word": "dorado",
+        "surface": "dorada",
+        "definition": "Golden brown, fried to exactly the right point."
+      },
+      {
+        "type": "noun",
+        "word": "clienta",
+        "definition": "Customer; a woman buying something at the shop."
+      },
+      {
+        "type": "noun",
+        "word": "cumplido",
+        "definition": "Compliment; in some mouths, silence is the biggest one."
+      },
+      {
+        "type": "verb",
+        "word": "consolar",
+        "surface": "consoló",
+        "definition": "To comfort someone so that a failure hurts them less."
+      },
+      {
+        "type": "verb",
+        "word": "valer",
+        "surface": "valía",
+        "definition": "To be worth, have a certain value in money."
+      },
+      {
+        "type": "verb",
+        "word": "tirar",
+        "surface": "tiró",
+        "definition": "To throw, toss something for someone else to catch."
+      },
+      {
+        "type": "adjective",
+        "word": "doblado",
+        "definition": "Folded neatly, ready to be carried back home."
+      },
+      {
+        "type": "expression",
+        "word": "sacar la cuenta",
+        "surface": "sacó la cuenta",
+        "definition": "To work out the numbers, calculate what something costs."
+      },
+      {
+        "type": "expression",
+        "word": "pasarse de punto",
+        "surface": "se pasó de punto",
+        "definition": "To go past the right cooking point, get overdone."
+      },
+      {
+        "type": "expression",
+        "word": "sin chistar",
+        "definition": "Without a word of protest, accepting it in full silence."
+      },
+      {
+        "type": "expression",
+        "word": "a la hora de",
+        "surface": "la hora de cerrar",
+        "definition": "At the moment when something has to be done."
+      },
+      {
+        "type": "expression",
+        "word": "abrir la caja",
+        "surface": "abrió la caja",
+        "definition": "To open the till where the shop's money lives."
+      },
+      {
+        "type": "expression",
+        "word": "salir de tu bolsillo",
+        "surface": "sale de tu bolsillo",
+        "definition": "To come out of your own pocket, paid by you."
+      }
+    ],
+    "arcType": "juxtaposition-discovery",
+    "topic": "partners-and-in-laws",
+    "slotIndex": 2
+  },
+  {
+    "slug": "la-ultima-dorada",
+    "title": "La última dorada",
+    "synopsis": "Weeks of free days later, Emiliano knows the rotisería by heart, and one morning Norma unties her apron, announces she is taking her own day off for the first time in years, and leaves him the till without ceremony. Nobody calls her all day. When she comes back at night, the money is counted, the door is locked, and there is one milanesa saved for her, still warm.",
+    "text": "Sábado tras sábado, la rutina se armó sola: Emiliano llegaba temprano y la campanita sonaba. Norma se desató el delantal a media mañana.\n\n“Hoy me voy de franco yo, por primera vez en años”, avisó. “Vos quedás a cargo del negocio. Cualquier cosa, me llamás.”\n\n“¿Y si viene mucha gente?”, preguntó Emiliano. “Mejor para vos: propina doble”, contestó ella, y se fue sin darse vuelta, cartera al hombro. Le habían contado que la caja no se la dejaba a cualquiera, y le llevó semanas ganarse el saludo de los clientes. Atendió, cobró, rebozó, sin que nadie llamara a Norma.\n\nA la vuelta, ya de noche, ella encontró el local cerrado con llave. La plata estaba contada, con el vuelto listo.\n\nEn el mostrador había una milanesa tapada con una servilleta, todavía tibia. “¿Y esto tapado, qué es?”, preguntó Norma. “La última dorada. Era para usted”, contestó Emiliano. Norma la probó parada. “¿Y vos comiste?”, preguntó con la boca llena. En esa casa, eso era un gracias.",
+    "vocab": [
+      {
+        "type": "expression",
+        "word": "a cargo",
+        "anchor": true,
+        "register": "cultural",
+        "definition": "In charge, trusted to run things while the owner is away."
+      },
+      {
+        "type": "noun",
+        "word": "campanita",
+        "definition": "Little bell; the ring that announces someone at the door."
+      },
+      {
+        "type": "verb",
+        "word": "desatarse",
+        "surface": "se desató",
+        "definition": "To untie something that was knotted around you."
+      },
+      {
+        "type": "expression",
+        "word": "quedar a cargo",
+        "surface": "quedás a cargo",
+        "definition": "To stay in charge while the boss is somewhere else."
+      },
+      {
+        "type": "expression",
+        "word": "cualquier cosa",
+        "surface": "Cualquier cosa",
+        "definition": "Anything at all; whatever might come up meanwhile."
+      },
+      {
+        "type": "expression",
+        "word": "darse vuelta",
+        "definition": "To turn around and look back behind you."
+      },
+      {
+        "type": "noun",
+        "word": "cartera",
+        "definition": "Handbag; the bag a woman carries on her shoulder."
+      },
+      {
+        "type": "expression",
+        "word": "al hombro",
+        "definition": "Over the shoulder, hanging from it as you walk."
+      },
+      {
+        "type": "verb",
+        "word": "ganarse",
+        "definition": "To earn something slowly, deserve it with steady effort."
+      },
+      {
+        "type": "noun",
+        "word": "saludo",
+        "definition": "Greeting; the hello that people give or withhold."
+      },
+      {
+        "type": "verb",
+        "word": "cobrar",
+        "surface": "cobró",
+        "definition": "To charge, take the customer's payment at the till."
+      },
+      {
+        "type": "expression",
+        "word": "a la vuelta",
+        "surface": "A la vuelta",
+        "definition": "On returning, at the moment somebody comes back."
+      },
+      {
+        "type": "expression",
+        "word": "de noche",
+        "definition": "At night, after the daylight is completely gone."
+      },
+      {
+        "type": "expression",
+        "word": "con llave",
+        "definition": "Locked properly, with the key turned all the way."
+      },
+      {
+        "type": "adjective",
+        "word": "contado",
+        "surface": "contada",
+        "definition": "Counted; checked carefully one coin at a time."
+      },
+      {
+        "type": "noun",
+        "word": "vuelto",
+        "register": "cultural",
+        "definition": "Change; the money handed back, in Latin American Spanish."
+      },
+      {
+        "type": "adjective",
+        "word": "tapado",
+        "surface": "tapada",
+        "definition": "Covered over so it stays clean and warm."
+      },
+      {
+        "type": "adjective",
+        "word": "tibio",
+        "surface": "tibia",
+        "definition": "Lukewarm; still keeping a little of its heat."
+      },
+      {
+        "type": "adjective",
+        "word": "parado",
+        "surface": "parada",
+        "definition": "Standing up, on your feet without sitting down."
+      },
+      {
+        "type": "expression",
+        "word": "por primera vez",
+        "definition": "For the first time after all these years."
+      }
+    ],
+    "arcType": "harmonic-close",
+    "topic": "partners-and-in-laws",
+    "slotIndex": 3
+  }
+]

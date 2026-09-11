@@ -147,7 +147,7 @@
   {
     "type": "meaning_in_context",
     "word": "muestrario",
-    "sentence": "Cruzó la ciudad con el [[muestrario]].",
+    "sentence": "Lo invitó a un chifa, [[muestrario]] en mano.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "sample book",
@@ -160,7 +160,7 @@
       "audioClip": {
         "storySlug": "la-cortesia-mas-cara",
         "storySource": "user",
-        "sentence": "Cruzó la ciudad con el muestrario.",
+        "sentence": "Lo invitó a un chifa, muestrario en mano.",
         "targetWord": "muestrario",
         "language": "spanish"
       }
