@@ -18,6 +18,7 @@ type CatalogOption = {
   label: string;
   language: string | null;
   variant: string | null;
+  levelTitle?: string | null;
 };
 
 type Props = {
@@ -275,6 +276,7 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
                       <div className="mt-1 text-[13px] font-bold text-[var(--muted)]">
                         {langShortFor(option.language)}
                         {variantLabel ? ` · ${variantLabel}` : ""}
+                        {option.levelTitle ? ` · ${option.levelTitle}` : ""}
                       </div>
                     </div>
 

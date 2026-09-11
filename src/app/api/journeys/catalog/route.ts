@@ -16,6 +16,9 @@ export async function GET() {
       label: t.label,
       language: t.language,
       variant: t.variant,
+      // Friendly level title(s), e.g. "Beginner". Journeys that share a name
+      // and variant differ only by level; without it the rows look identical.
+      levelTitle: t.levels.length ? t.levels.map((l) => l.title).join("/") : null,
     }));
     return NextResponse.json({ options });
   } catch (err) {

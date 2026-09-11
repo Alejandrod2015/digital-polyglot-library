@@ -222,6 +222,7 @@ export default function JourneyClient({
     label: string;
     language: string | null;
     variant: string | null;
+    levelTitle?: string | null;
   };
   const [addSheetOpen, setAddSheetOpen] = useState(false);
   const [addLanguage, setAddLanguage] = useState<string | null>(null);
@@ -886,6 +887,7 @@ export default function JourneyClient({
                           {option.variant
                             ? ` · ${formatVariantLabel(option.variant) ?? option.variant}`
                             : ""}
+                          {option.levelTitle ? ` · ${option.levelTitle}` : ""}
                         </span>
                       </span>
                       {addingSlug === option.slug ? (
