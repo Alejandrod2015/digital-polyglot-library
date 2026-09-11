@@ -1,0 +1,426 @@
+[
+ {
+  "topic": "campo-grande",
+  "slotIndex": 0,
+  "title": "Um papel que já não vale",
+  "slug": "um-papel-que-ja-nao-vale",
+  "synopsis": "Chega ao guichê com o horário impresso na mão e descobre que aquele papel deixou de valer em maio, sem que ninguém tivesse por que avisá-la. Quem vende as passagens conhece três saídas possíveis e não esconde nenhuma, nem a que pode custar-lhe a conexão da manhã seguinte.",
+  "text": "Na estação de Campo Grande havia doze guichês e só três abertos; só se ouvia o alto-falante. Renata chegou apressada, com o itinerário impresso na mão.\n\nCleide, uma mulher que vendia passagens ali desde que a estação abriu, avisou que o ônibus das dez não sairia mais. “Mudou em maio”, disse ela. Renata olhou, desesperada, para um papel que já não valia. “Eu devo estar em Bonito amanhã cedo.”\n\n“Então a senhora nunca chega de ônibus direto”, explicou Cleide. “Atualmente, o próximo sai às seis. Mas tem o último de hoje, que passa por Aquidauana.”\n\nCustava mais e chegava tarde, com uma conexão arriscada. Renata podia remarcar, mas decidiu: “Eu vou nesse.” Cleide despachou a mala sem comentar.\n\nUm táxi buzinou na porta. Às onze, Renata embarcou com mais cinco passageiros. “Boa viagem”, disse Cleide, e fechou o guichê enquanto o ônibus entrava na rodovia.",
+  "vocab": [
+   {
+    "word": "estação",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Station, the building where buses arrive and leave from."
+   },
+   {
+    "word": "apressado",
+    "surface": "apressada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "In a hurry, moving faster than the people around you."
+   },
+   {
+    "word": "itinerário",
+    "type": "noun",
+    "anchor": true,
+    "definition": "The planned route of a trip, with its stops and times."
+   },
+   {
+    "word": "sair",
+    "surface": "sairia",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To leave, go out from the place where you were."
+   },
+   {
+    "word": "desesperado",
+    "surface": "desesperada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Desperate, very worried because you see no good way out."
+   },
+   {
+    "word": "valer",
+    "surface": "valia",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To be valid, or to be worth a certain amount."
+   },
+   {
+    "word": "dever",
+    "surface": "devo",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To have to do something you promised or planned to do."
+   },
+   {
+    "word": "nunca",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Never, at no time and in no case at all."
+   },
+   {
+    "word": "atualmente",
+    "surface": "Atualmente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Currently, at the present time, the way things are now."
+   },
+   {
+    "word": "próximo",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Next, the one that comes right after this one."
+   },
+   {
+    "word": "último",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Last, with nothing else coming after it on that day."
+   },
+   {
+    "word": "custar",
+    "surface": "Custava",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To cost a certain amount of money to buy."
+   },
+   {
+    "word": "conexão",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Connection, the second bus or plane you must catch in time."
+   },
+   {
+    "word": "remarcar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To change a booking to another day or another time."
+   },
+   {
+    "word": "despachar",
+    "surface": "despachou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To send your bag to travel in the hold of the bus."
+   },
+   {
+    "word": "táxi",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Taxi, a car with a driver that you pay to take you."
+   },
+   {
+    "word": "buzinar",
+    "surface": "buzinou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To sound a car horn to warn or call someone."
+   },
+   {
+    "word": "embarcar",
+    "surface": "embarcou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To board, get onto a bus, a boat or a plane."
+   },
+   {
+    "word": "passageiro",
+    "surface": "passageiros",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Passenger, a person who travels in a vehicle but does not drive."
+   },
+   {
+    "word": "rodovia",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Highway, the wide road that joins one city to another."
+   }
+  ],
+  "arcType": "late-reveal"
+ },
+ {
+  "topic": "campo-grande",
+  "slotIndex": 1,
+  "title": "A senhora não dorme?",
+  "slug": "a-senhora-nao-dorme",
+  "synopsis": "Doze horas de estrada numa poltrona estreita, com um desconhecido dormindo ao lado desde antes de a cidade acabar e o corredor cheio de bagagem. Não passa nada digno de contar, e é justamente na conversa do espelho que a noite acaba valendo a pena.",
+  "text": "O ônibus passou pelo pedágio, cruzou a avenida vazia e parou no último semáforo. O motorista ligou a seta, e ninguém vinha atrás.\n\nA poltrona de Renata era apertada, e a mala não coube no bagageiro. O homem do lado roncou a noite inteira. Ela queria que a noite passasse logo, mas sentia enjoo e uma leve tontura.\n\nLevantou duas vezes e pediu licença; o homem se moveu sem acordar. A estrada era longa, e Renata, distraída, ficou de olho nas luzes lá embaixo.\n\n“A senhora não dorme?”, perguntou o motorista pelo espelho. “Não consigo. Tenho medo de perder a hora”, respondeu Renata. “Vai continuar assim até Aquidauana, e depois eu ganho meia hora”, disse ele.\n\n“O senhor faz esse caminho frequentemente?”, perguntou ela. “Três noites por semana, exatamente, faz dezoito anos”, respondeu o motorista. Renata, agradecida pela conversa, dormiu vinte minutos até a buzina.",
+  "vocab": [
+   {
+    "word": "passar",
+    "surface": "passou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To go past or through a place without stopping there."
+   },
+   {
+    "word": "pedágio",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Toll, the place on a highway where you pay to pass."
+   },
+   {
+    "word": "avenida",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Avenue, a wide street that runs through the city."
+   },
+   {
+    "word": "semáforo",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Traffic light that tells drivers when to stop or go."
+   },
+   {
+    "word": "apertado",
+    "surface": "apertada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Tight, with barely enough room for your body to fit."
+   },
+   {
+    "word": "bagageiro",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Luggage rack, the shelf above the seats for bags."
+   },
+   {
+    "word": "roncar",
+    "surface": "roncou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To snore, breathe loudly and noisily while you are asleep."
+   },
+   {
+    "word": "enjoo",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Sick feeling in your stomach that comes from moving vehicles."
+   },
+   {
+    "word": "tontura",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Dizziness, the feeling that everything around you is turning."
+   },
+   {
+    "word": "levantar",
+    "surface": "Levantou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To stand up from the seat where you were sitting."
+   },
+   {
+    "word": "mover",
+    "surface": "moveu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To shift your body or an object a little."
+   },
+   {
+    "word": "longo",
+    "surface": "longa",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Long, going on for a great distance or time."
+   },
+   {
+    "word": "distraído",
+    "surface": "distraída",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Absent-minded, thinking of other things and not paying attention."
+   },
+   {
+    "word": "ficar de olho",
+    "surface": "ficou de olho",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To keep an eye on something so that you notice changes."
+   },
+   {
+    "word": "perder a hora",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To oversleep, wake up too late for something you had to do."
+   },
+   {
+    "word": "continuar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To go on in the same way without changing anything."
+   },
+   {
+    "word": "ganhar",
+    "surface": "ganho",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To gain or win something, such as extra time."
+   },
+   {
+    "word": "frequentemente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Often, many times, on a regular basis over time."
+   },
+   {
+    "word": "exatamente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Exactly, with no difference at all from what is said."
+   },
+   {
+    "word": "agradecido",
+    "surface": "agradecida",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Thankful for something kind that somebody did for you."
+   }
+  ],
+  "arcType": "daily-encounter"
+ },
+ {
+  "topic": "campo-grande",
+  "slotIndex": 2,
+  "title": "Sete minutos de moto",
+  "slug": "sete-minutos-de-moto",
+  "synopsis": "Um caderno de duas páginas por dia não vale nada para ninguém mais, e é a única coisa que ela não pode comprar de novo em nenhuma cidade do caminho. Entre a conexão salva e as três horas de espera há um preço que ela paga sem discutir, e o homem que o recebe acha que é dinheiro demais por sete minutos de rua vazia.",
+  "text": "Renata desceu às seis e percebeu: o caderno ficou na poltrona. Sem metrô nem trem, o transporte da garagem saía às nove.\n\nCorreu até a esquina e achou um homem numa moto. “Quanto custa até a garagem?”, perguntou. “Depende da pressa”, respondeu ele. “Da senhora ou minha?” E apontou a garupa.\n\nNa rua larga, o vento batia na cara. Ele freou na porta em sete minutos. “Foi barato”, disse ela. “Foi curto”, respondeu ele.\n\nDois homens descarregavam malas e carregavam outras. “O de Campo Grande, das seis, já limparam?”, perguntou Renata. “É o terceiro da fila”, respondeu um deles. Ela entrou no primeiro por engano e saiu frustrada.\n\n“Aqui está”, disse ela no terceiro: o caderno estava justamente na poltrona, perto da plataforma de desembarque. Se não estivesse ali, ela voltaria a pé.\n\n“Valeu mesmo”, disse Renata ao da moto, e pagou o dobro: alcançou o das nove por doze minutos. “Não vale o dobro”, respondeu ele. “Hoje vale”, disse ela, orgulhosa. “Estava tudo aqui dentro.”",
+  "vocab": [
+   {
+    "word": "perceber",
+    "surface": "percebeu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To notice or realise something that you had not seen before."
+   },
+   {
+    "word": "transporte",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Transport, the bus or vehicle that takes people somewhere."
+   },
+   {
+    "word": "garagem",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Depot where the buses are parked and cleaned at night."
+   },
+   {
+    "word": "correr",
+    "surface": "Correu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To run, move fast on your own feet."
+   },
+   {
+    "word": "moto",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Motorbike, the short everyday word for a motorcycle."
+   },
+   {
+    "word": "apontar",
+    "surface": "apontou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To point at something so the other person looks at it."
+   },
+   {
+    "word": "largo",
+    "surface": "larga",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Wide, with plenty of room from one side to the other."
+   },
+   {
+    "word": "frear",
+    "surface": "freou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To brake, slow a vehicle down until it stops."
+   },
+   {
+    "word": "curto",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Short, taking less time than you had expected."
+   },
+   {
+    "word": "descarregar",
+    "surface": "descarregavam",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To unload, take the bags or goods off something."
+   },
+   {
+    "word": "carregar",
+    "surface": "carregavam",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To load, put bags or goods onto a vehicle."
+   },
+   {
+    "word": "terceiro",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Third, coming right after the first and the second."
+   },
+   {
+    "word": "frustrado",
+    "surface": "frustrada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Frustrated, annoyed because something did not work as you hoped."
+   },
+   {
+    "word": "plataforma",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Platform where passengers get on and off the buses."
+   },
+   {
+    "word": "desembarque",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Arrivals, the place where passengers get off at the end."
+   },
+   {
+    "word": "justamente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Exactly, precisely in that very place or that very way."
+   },
+   {
+    "word": "alcançar",
+    "surface": "alcançou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To reach or catch something just before it goes away."
+   },
+   {
+    "word": "dobro",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Double, twice the amount that was asked or expected."
+   },
+   {
+    "word": "primeiro",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "First, coming before all the others in the same order."
+   },
+   {
+    "word": "orgulhoso",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Proud, pleased with yourself about something you did well.",
+    "surface": "orgulhosa"
+   }
+  ],
+  "arcType": "reframe-turn"
+ }
+]
