@@ -1,0 +1,470 @@
+[
+  {
+    "topic": "travel-and-goodbyes",
+    "slotIndex": 0,
+    "title": "À samedi, Hugo",
+    "arcType": null,
+    "synopsis": "Hugo part aujourd'hui, et quelqu'un arrive déjà dans son appartement. Léa garde une promesse dans la poche. Est-ce qu'elle peut dire au revoir sans pleurer?",
+    "text": "Ce matin, le réveil sonne tôt. C'est le premier jour de mars. Une voiture attend près du port.\n\nHugo descend avec une valise lourde. Il met la valise dans le coffre. “Tu es prêt?”, demande Léa. “Presque. Elle est lourde!”\n\nUne femme sort d'un taxi, avec son chien. Clara est une nouvelle locataire, en manteau jaune. Léa sait: c'est l'inconnue de l'écharpe. “Voilà les clés. Bienvenue!”, dit Hugo à Clara. Léa ne peut rien dire.\n\nHugo parle doucement à Léa. “Tu arroses la plante?” “Tous les matins, je l'arrose.” “À samedi, pour jouer?” “À samedi. Je ne veux pas pleurer.”\n\nElle retient ses larmes. “Bon voyage, Hugo”, dit Léa. “Au revoir, Léa”, répond Hugo. “Samedi, j'ai ma boule.”\n\nHugo lui donne un mouchoir. Il monte dans la voiture. La voiture part lentement. Le klaxon sonne deux fois. Léa serre le cochonnet dans sa poche.",
+    "vocab": [
+      {
+        "word": "le réveil",
+        "surface": "réveil",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Alarm clock; it rings to wake you up."
+      },
+      {
+        "word": "la voiture",
+        "surface": "voiture",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Car; you drive it on the road."
+      },
+      {
+        "word": "le port",
+        "surface": "port",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Harbour; the place where boats stay."
+      },
+      {
+        "word": "premier",
+        "surface": "premier",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "First; the one before all the others."
+      },
+      {
+        "word": "mettre",
+        "surface": "met",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To put; to place something somewhere."
+      },
+      {
+        "word": "le coffre",
+        "surface": "coffre",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Boot; the back of a car for bags."
+      },
+      {
+        "word": "prêt",
+        "surface": "prêt",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Ready; all set to go."
+      },
+      {
+        "word": "sortir",
+        "surface": "sort",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To get out; to leave a car or a room."
+      },
+      {
+        "word": "savoir",
+        "surface": "sait",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To know; to have something in your head."
+      },
+      {
+        "word": "nouveau",
+        "surface": "nouvelle",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "New; here for the first time."
+      },
+      {
+        "word": "parler",
+        "surface": "parle",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To speak; to say words to someone."
+      },
+      {
+        "word": "à samedi",
+        "surface": "À samedi",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "See you Saturday; we meet again on Saturday."
+      },
+      {
+        "word": "pleurer",
+        "surface": "pleurer",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To cry; tears come from your eyes."
+      },
+      {
+        "word": "retenir",
+        "surface": "retient",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To hold back; to stop tears from coming."
+      },
+      {
+        "word": "la larme",
+        "surface": "larmes",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Tear; a drop of water from your eye."
+      },
+      {
+        "word": "bon voyage",
+        "surface": "Bon voyage",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Have a good trip; said to someone who leaves."
+      },
+      {
+        "word": "au revoir",
+        "surface": "Au revoir",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Goodbye; what you say when someone leaves."
+      },
+      {
+        "word": "le mouchoir",
+        "surface": "mouchoir",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Tissue; a small soft paper for your eyes and nose."
+      },
+      {
+        "word": "lentement",
+        "surface": "lentement",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Slowly; not fast at all."
+      },
+      {
+        "word": "le klaxon",
+        "surface": "klaxon",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Car horn; it makes a loud sound in the street."
+      }
+    ]
+  },
+  {
+    "topic": "travel-and-goodbyes",
+    "slotIndex": 1,
+    "title": "Clara tient la boule",
+    "arcType": null,
+    "synopsis": "Hugo est à Paris, et Léa joue seule le dimanche. La nouvelle voisine veut apprendre le jeu. Léa n'a pas envie de partager la placette, mais elle dit oui.",
+    "text": "Chaque dimanche, Léa joue à la pétanque, seule maintenant. C'est le printemps, et le soleil est chaud. La poussière vole. Léa pose sa gourde sur le banc. Clara descend avec son chien.\n\nClara a une casquette verte et des lunettes. “Je peux essayer?”, demande Clara. C'est le jeu de Hugo. Mais Clara est gentille. “Tu veux apprendre?”, demande Léa. “Avec plaisir!”\n\n“Tu tiens la boule comme ça. Tu plies les genoux. Tu baisses le coude”, explique Léa. Elle corrige la main de Clara, comme Hugo. Ensuite, elle ne dit rien. Clara boit encore un peu à la gourde.\n\nClara veut tirer. Sa boule roule loin, et elle rate le cochonnet. “C'est difficile!”, rit Clara. “Toujours, au début.” “Hugo aime beaucoup ce jeu?” “Oui. Chaque fois, il gagne.” Clara est une bonne élève. Après, Léa sert deux cafés. Clara trouve la placette jolie.",
+    "vocab": [
+      {
+        "word": "chaque dimanche",
+        "surface": "Chaque dimanche",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Every Sunday; each Sunday, again and again."
+      },
+      {
+        "word": "le printemps",
+        "surface": "printemps",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Spring; the season after winter."
+      },
+      {
+        "word": "la poussière",
+        "surface": "poussière",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Dust; very small bits of dry earth."
+      },
+      {
+        "word": "la gourde",
+        "surface": "gourde",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Water bottle; a bottle you carry with you."
+      },
+      {
+        "word": "descendre",
+        "surface": "descend",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To come down; to go down the stairs."
+      },
+      {
+        "word": "la casquette",
+        "surface": "casquette",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Cap; a hat with a front part against the sun."
+      },
+      {
+        "word": "les lunettes",
+        "surface": "lunettes",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Glasses; here, dark ones against the sun."
+      },
+      {
+        "word": "essayer",
+        "surface": "essayer",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To try; to do something for the first time."
+      },
+      {
+        "word": "apprendre",
+        "surface": "apprendre",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To learn; to start to know how to do something."
+      },
+      {
+        "word": "avec plaisir",
+        "surface": "Avec plaisir",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "With pleasure; yes, gladly."
+      },
+      {
+        "word": "tenir",
+        "surface": "tiens",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To hold; to keep something in your hand."
+      },
+      {
+        "word": "plier",
+        "surface": "plies",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To bend; to make your legs not straight."
+      },
+      {
+        "word": "baisser",
+        "surface": "baisses",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To lower; to move something down."
+      },
+      {
+        "word": "le coude",
+        "surface": "coude",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Elbow; the middle part of your arm."
+      },
+      {
+        "word": "boire",
+        "surface": "boit",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To drink; to take water or coffee."
+      },
+      {
+        "word": "difficile",
+        "surface": "difficile",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Difficult; not easy to do."
+      },
+      {
+        "word": "toujours",
+        "surface": "Toujours",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Always; every time, again and again."
+      },
+      {
+        "word": "l'élève",
+        "surface": "élève",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Student; a person who learns from someone."
+      },
+      {
+        "word": "servir",
+        "surface": "sert",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To serve; to give drinks to people."
+      },
+      {
+        "word": "pouvoir",
+        "surface": "peux",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "Can; to be able to do something."
+      }
+    ]
+  },
+  {
+    "topic": "travel-and-goodbyes",
+    "slotIndex": 2,
+    "title": "Treize, comme avant",
+    "arcType": null,
+    "synopsis": "Hugo tient sa promesse et revient pour une partie. Mais sa maison n'est plus à lui. Cette fois, qui va perdre exprès, et qui va jouer pour de bon?",
+    "text": "Un samedi d'avril, Hugo arrive en TGV, heureux. “Bon retour, Hugo!”, dit Léa. Son appartement est à Clara, maintenant. Il dort sur le long canapé du café. Il rêve sur un vieil oreiller.\n\nLe café sent la baguette. Au petit-déjeuner, Hugo a un pain au chocolat. Il mange encore un peu.\n\n“Une partie, comme avant?”, demande Hugo. “Oui. Mais personne ne triche”, dit Léa. “On joue en treize points. Tu paies le café?” “On parie!”\n\nClara regarde, dans son manteau jaune. Hugo tire droit. Léa lance. Douze à douze: c'est l'égalité. “Et la revanche?”, rit Hugo. “Pas encore!”\n\nLa dernière boule de Léa roule. Elle touche le cochonnet. Treize! Personne ne perd exprès. Léa lève les bras. Hugo ramasse les boules. Il lui fait la bise, sur la joue. “La prochaine fois, c'est moi”, sourit Hugo. “Ici, tu es toujours à la maison”, répond Léa.",
+    "vocab": [
+      {
+        "word": "le TGV",
+        "surface": "TGV",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "TGV; the fast French train."
+      },
+      {
+        "word": "le canapé",
+        "surface": "canapé",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Sofa; a long soft seat for two or three people."
+      },
+      {
+        "word": "l'oreiller",
+        "surface": "oreiller",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Pillow; you put your head on it in bed."
+      },
+      {
+        "word": "rêver",
+        "surface": "rêve",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To dream; to see pictures when you sleep."
+      },
+      {
+        "word": "le petit-déjeuner",
+        "surface": "petit-déjeuner",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Breakfast; the first meal of the day."
+      },
+      {
+        "word": "la baguette",
+        "surface": "baguette",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Baguette; the long French bread."
+      },
+      {
+        "word": "le pain au chocolat",
+        "surface": "pain au chocolat",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Pain au chocolat; soft bread with chocolate inside."
+      },
+      {
+        "word": "sentir",
+        "surface": "sent",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To smell of; to have the smell of something."
+      },
+      {
+        "word": "encore un peu",
+        "surface": "encore un peu",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "A little more; some more of it."
+      },
+      {
+        "word": "comme avant",
+        "surface": "comme avant",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Like before; the same as in the past."
+      },
+      {
+        "word": "tricher",
+        "surface": "triche",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To cheat; to not play by the rules."
+      },
+      {
+        "word": "treize",
+        "surface": "treize",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Thirteen; the score you need to win at pétanque."
+      },
+      {
+        "word": "jaune",
+        "surface": "jaune",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Yellow; the colour of Clara's coat."
+      },
+      {
+        "word": "l'égalité",
+        "surface": "égalité",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Tie; the same score for both players."
+      },
+      {
+        "word": "la revanche",
+        "surface": "revanche",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Rematch; a new game to try to win back."
+      },
+      {
+        "word": "lever",
+        "surface": "lève",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To lift; to move something up."
+      },
+      {
+        "word": "la bise",
+        "surface": "bise",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Kiss on the cheek; how friends say hello in France."
+      },
+      {
+        "word": "la joue",
+        "surface": "joue",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Cheek; the side of your face."
+      },
+      {
+        "word": "faire",
+        "surface": "fait",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To do, to make; here, to give a kiss."
+      },
+      {
+        "word": "à la maison",
+        "surface": "à la maison",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "At home; in the place where you live."
+      }
+    ]
+  }
+]
