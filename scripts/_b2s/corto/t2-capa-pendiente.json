@@ -1,67 +1,14 @@
 {
- "la-guasa-del-domingo": {
-  "veterana": {
-   "es": "la veterana de la peña",
-   "en": ""
-  },
-  "peña": {
-   "es": "la veterana de la peña",
-   "en": ""
-  },
-  "mandaba": {
-   "es": "mandaba en las letras",
-   "en": "",
-   "antes": "quien mandaba en las letras = the one in charge of the lyrics"
-  },
-  "letras": {
-   "es": "mandaba en las letras",
-   "en": "",
-   "antes": "quien mandaba en las letras = the one in charge of the lyrics"
-  },
-  "quien": {
-   "es": "vacila a quien está dentro",
-   "en": "",
-   "antes": "quien mandaba en las letras = the one in charge of the lyrics"
-  },
-  "pique": {
-   "es": "el pique se deshizo",
-   "en": "",
-   "antes": "el pique se le deshizo = her sting melted away"
-  },
-  "deshizo": {
-   "es": "el pique se deshizo",
-   "en": "",
-   "antes": "se le deshizo sin avisar = melted away without warning"
-  },
-  "letra": {
-   "es": "mandaba en las letras",
-   "en": "",
-   "antes": "quien mandaba en las letras = the one in charge of the lyrics"
-  },
-  "mandar": {
-   "es": "mandaba en las letras",
-   "en": "",
-   "antes": "quien mandaba en las letras = the one in charge of the lyrics"
-  }
- },
  "ya-no-va-a-cerrar-nada": {
-  "cinta": {
-   "es": "la cinta nueva rompía el silencio",
+  "cafés": {
+   "es": "dos cafés esperaban a claudia",
    "en": "",
-   "antes": "y a cinta nueva = and of fresh tape"
+   "antes": "dos cafés la esperaban = two coffees were waiting for her"
   },
-  "nueva": {
-   "es": "la cinta nueva rompía el silencio",
+  "esperaban": {
+   "es": "dos cafés esperaban a claudia",
    "en": "",
-   "antes": "y a cinta nueva = and of fresh tape"
-  },
-  "rompía": {
-   "es": "la cinta nueva rompía el silencio",
-   "en": ""
-  },
-  "silencio": {
-   "es": "la cinta nueva rompía el silencio",
-   "en": ""
+   "antes": "dos cafés la esperaban = two coffees were waiting for her"
   }
  }
 }

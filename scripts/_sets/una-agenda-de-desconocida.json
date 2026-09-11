@@ -401,7 +401,7 @@
  {
   "type": "meaning_in_context",
   "word": "de sobra",
-  "sentence": "La esperó con tiempo [[de sobra]].",
+  "sentence": "Esperaba con tiempo [[de sobra]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to spare",
@@ -414,7 +414,7 @@
    "audioClip": {
     "storySlug": "una-agenda-de-desconocida",
     "storySource": "user",
-    "sentence": "La esperó con tiempo de sobra.",
+    "sentence": "Esperaba con tiempo de sobra.",
     "targetWord": "de sobra",
     "language": "spanish"
    }

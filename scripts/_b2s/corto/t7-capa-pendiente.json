@@ -1,50 +1,17 @@
 {
  "una-agenda-de-desconocida": {
-  "oscuro": {
-   "es": "en el andén todavía oscuro",
+  "esperaba": {
+   "es": "bienvenida y esperaba con tiempo",
    "en": ""
   },
-  "que": {
-   "es": "sacó un paquete con el",
-   "en": "",
-   "antes": "que olía a tren = which smelled of trains"
+  "llegaba": {
+   "es": "vitoria y llegaba en tren",
+   "en": ""
   },
-  "a": {
-   "es": "una agenda de desconocida",
+  "tren": {
+   "es": "vitoria y llegaba en tren",
    "en": "",
-   "antes": "que olía a tren = which smelled of trains"
-  }
- },
- "me-lo-he-ganado": {
-  "estrenó": {
-   "es": "local nuevo estrenó luz y",
-   "en": "",
-   "antes": "estrenó luz y olor a pintura = had fresh light and the smell of paint"
-  },
-  "luz": {
-   "es": "nuevo estrenó luz y pintura",
-   "en": "",
-   "antes": "estrenó luz y olor a pintura = had fresh light and the smell of paint"
-  },
-  "y": {
-   "es": "nuevo estrenó luz y pintura",
-   "en": "",
-   "antes": "luz y olor a pintura = light and the smell of paint"
-  },
-  "pintura": {
-   "es": "nuevo estrenó luz y pintura",
-   "en": "",
-   "antes": "olor a pintura = the smell of paint"
-  },
-  "a": {
-   "es": "me lo he ganado",
-   "en": "",
-   "antes": "olor a pintura = the smell of paint"
-  },
-  "estrenar": {
-   "es": "local nuevo estrenó luz y",
-   "en": "",
-   "antes": "estrenó luz y olor a pintura = had fresh light and the smell of paint"
+   "antes": "quien bajó del tren era paula = the one who got off the train was Paula"
   }
  }
 }

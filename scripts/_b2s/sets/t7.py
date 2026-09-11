@@ -22,7 +22,7 @@ SETS = {
   ("C", "desconocido", "Era como la agenda de una [[desconocida]].", "stranger", "neighbour", "cousin", "colleague"),
   ("F", "rara", "Hoy está muy _____: no ha dicho ni una palabra.", ["cuadrada", "oxidada", "hervida"],
    "She's being very _____ today: she hasn't said a word.", ["strange", "square", "rusty", "boiled"]),
-  ("C", "de sobra", "La esperó con tiempo [[de sobra]].", "to spare", "too little", "by the hour", "in the rain"),
+  ("C", "de sobra", "Esperaba con tiempo [[de sobra]].", "to spare", "too little", "by the hour", "in the rain"),
   ("C", "de verdad", "Le dio las gracias [[de verdad]].", "truly", "jokingly", "coldly", "briefly"),
  ]},
 "amanece-con-poniente": {
