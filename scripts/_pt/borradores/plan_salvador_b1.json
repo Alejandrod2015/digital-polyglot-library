@@ -1,0 +1,13 @@
+{
+ "tipo": "traveler",
+ "nivel": "b1",
+ "variante": "brazil",
+ "registro": "cálido y terco, sin ironía",
+ "espina": "Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.",
+ "recursos": "B1: narración en PASADO (pretérito perfeito e imperfeito) con la gramática de la banda B1 medida por scripts/_pt/gramProbePT.ts: subjuntivo imperfecto (estivesse, esquecesse), futuro do pretérito (chegaria, gostaria) y estilo indirecto (perguntou se). Recursos B1: reversa cosida (la profesora que acaba de aprendiz) y cambio de ritmo (frases cortas en la escalera a oscuras). Heredados A0-A2: contraste con mas, causalidad explícita, imagen concreta de remate, espejo concreto (las dieciocho palabras en la lousa y en el caderno), gancho final literal. NO se usa nada de B2 o superior: sin ironía, sin subtexto, sin aforismos, sin elipsis; la tercera deja un hilo colgando, que es mini-cliffhanger literal, no ambigüedad.",
+ "historias": [
+  {"slot": "salvador#0", "quiere": "Renata quiere dar su primera clase en Salvador aunque la caja de libros no haya llegado.", "impide": "La sala solo tiene lousa y cadeiras, y los del fondo no ven lo que ella escribe.", "cuesta": "Aceptar, avergonzada y delante de la clase, que quien le enseña a usar la lousa es el zelador, no ella.", "cambia": "Deja de dar la clase como profesora y la construye con lo que hay; la lousa y el caderno acaban con las mismas dieciocho palabras.", "emocion": "vergüenza que se vuelve atención"},
+  {"slot": "salvador#1", "quiere": "Renata quiere el único ejemplar del libro de contos del sebo para usarlo con la turma.", "impide": "Gilson lo quiere por el mismo motivo, y los dos son demasiado teimosos para ceder.", "cuesta": "Pagar el libro y aceptar un trato que la pone a ella en el papel de quien corrige y aprende a la vez.", "cambia": "El intercambio se formaliza: él lee un conto por semana y ella dice dónde se equivoca, y la profesora escribe con orgullo que hoy la aprendiz es ella.", "emocion": "terquedad que se ablanda"},
+  {"slot": "salvador#2", "quiere": "Gilson quiere entrar en la universidade y hacer el vestibular del viernes.", "impide": "No se lo ha contado a nadie, la biblioteca cierra a las seis y se siente inseguro con la parte escrita.", "cuesta": "Decir en voz alta que no sabe si vale la pena arriesgarse, delante de la única persona que lo ha visto estudiar.", "cambia": "Ensayan en la escalera a oscuras y el viernes él se va sin decir nada; Renata escribe su nombre y la fecha y deja la línea abierta.", "emocion": "miedo sostenido por la confianza de otro"}
+ ]
+}

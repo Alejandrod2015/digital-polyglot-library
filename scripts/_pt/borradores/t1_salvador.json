@@ -1,0 +1,429 @@
+[
+ {
+  "topic": "salvador",
+  "slotIndex": 0,
+  "title": "A lousa e nenhum livro",
+  "slug": "a-lousa-e-nenhum-livro",
+  "synopsis": "A escola do Pelourinho tem cadeiras, tem lousa e não tem um livro sequer, porque a caixa prometida para segunda ainda está em outro estado. A professora que veio do sul pode cancelar a primeira aula ou dar aula com o que existe na sala, e quem lhe mostra o que existe é o rapaz que varre o chão antes de todo mundo chegar.",
+  "text": "Renata, uma professora de Porto Alegre, chegou cedo à escola do Pelourinho: lousa, cadeiras e nenhum livro. Segundo o diretor, a caixa chegaria na segunda, mas não chegou. A sala cheirava a giz.\n\nQuem varria o chão era Gilson, um rapaz que trabalhava ali como zelador. “A senhora vai dar aula assim mesmo?”, perguntou ele. “Vou tentar”, respondeu Renata, envergonhada. “Escrevendo tudo na lousa, fica mais claro.”\n\nGilson desenhou uma letra enorme com giz. “Assim a turma do fundo enxerga”, explicou, mostrando um detalhe que ela não viu. “Eu varro lá de trás e sei o que eles não leem.” Renata prestou atenção e repetiu.\n\nAos poucos, ela chamou os alunos de três em três, e cada um escreveu a sua palavra. Na verdade, ninguém estava à vontade, mas trabalharam educados.\n\nNo fim, a lousa e o caderno tinham as mesmas dezoito palavras. “De pé, eles entenderam melhor”, comentou Gilson. “E amanhã, a caixa chega?” “Não sei”, respondeu Renata.",
+  "vocab": [
+   {
+    "word": "lousa",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Dark board on the classroom wall for writing on."
+   },
+   {
+    "word": "diretor",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Person in charge of a school who makes the decisions."
+   },
+   {
+    "word": "zelador",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Person paid to clean and look after a building."
+   },
+   {
+    "word": "responder",
+    "surface": "respondeu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To answer, give words back to someone who asked."
+   },
+   {
+    "word": "envergonhado",
+    "surface": "envergonhada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Feeling bad and shy because others saw you fail."
+   },
+   {
+    "word": "claro",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Easy to understand, with nothing hidden or confusing."
+   },
+   {
+    "word": "turma",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Group of students who take the same class together."
+   },
+   {
+    "word": "detalhe",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Small part of something that is easy to miss."
+   },
+   {
+    "word": "prestar atenção",
+    "surface": "prestou atenção",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To watch or listen carefully so that you notice everything."
+   },
+   {
+    "word": "repetir",
+    "surface": "repetiu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To say or do the same thing another time."
+   },
+   {
+    "word": "aos poucos",
+    "surface": "Aos poucos",
+    "type": "expression",
+    "anchor": false,
+    "definition": "Little by little, slowly and in small steps."
+   },
+   {
+    "word": "chamar",
+    "surface": "chamou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To call someone to come to where you are."
+   },
+   {
+    "word": "escrever",
+    "surface": "escreveu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To put words on paper or on a board."
+   },
+   {
+    "word": "na verdade",
+    "surface": "Na verdade",
+    "type": "expression",
+    "anchor": false,
+    "definition": "In fact; used to say what is really true."
+   },
+   {
+    "word": "educado",
+    "surface": "educados",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Polite, careful not to make anyone else feel bad."
+   },
+   {
+    "word": "caderno",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Notebook with blank pages where you write notes by hand."
+   },
+   {
+    "word": "entender",
+    "surface": "entenderam",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To understand, get the meaning of words or ideas."
+   },
+   {
+    "word": "comentar",
+    "surface": "comentou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To say what you think about something you saw."
+   },
+   {
+    "word": "cedo",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Early, before the usual hour that something starts."
+   },
+   {
+    "word": "tentar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To try, make an effort without knowing the result."
+   }
+  ],
+  "arcType": "juxtaposition-discovery"
+ },
+ {
+  "topic": "salvador",
+  "slotIndex": 1,
+  "title": "O preço, não a ideia",
+  "slug": "o-preco-nao-a-ideia",
+  "synopsis": "Na livraria da ladeira sobrou um exemplar e há duas pessoas que o querem pelo mesmo motivo, cada uma convencida de que a outra precisa mais. Nenhum dos dois cede na porta da loja, e o acordo que sai dali no fim da tarde troca de lugar quem ensina e quem aprende dentro da escola.",
+  "text": "A livraria da ladeira era um sebo: tinha um exemplar só do livro de contos, e o ventilador fazia barulho no teto. Gilson chegou primeiro; Renata parou na porta. Os dois queriam o livro pelo mesmo motivo.\n\n“Esse é da senhora”, disse Gilson, e estendeu o livro. “Faço questão de que fique com você”, respondeu Renata. “Você lê direto; eu não.”\n\nEle recusou. Os dois eram teimosos, e nenhum queria ceder.\n\n“Então a senhora compra, e eu leio um conto por semana em voz alta”, insistiu Gilson, como se o acordo já estivesse fechado. “Pelo menos a senhora me diz onde eu erro.” Renata discutiu o preço, não a ideia, porque no fundo ele tinha razão, e concordou.\n\nNo caixa, achou a régua e a borracha no fundo da bolsa e contou as moedas devagar.\n\nDepois lembrou da primeira aula e escreveu, com orgulho, no caderno: hoje a aprendiz era ela.",
+  "vocab": [
+   {
+    "word": "livraria",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Shop that sells books, often with a table for readers."
+   },
+   {
+    "word": "sebo",
+    "type": "noun",
+    "anchor": true,
+    "register": "cultural",
+    "definition": "Shop that sells used books, common in Brazilian cities."
+   },
+   {
+    "word": "conto",
+    "surface": "contos",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Short story you can read in one single sitting."
+   },
+   {
+    "word": "motivo",
+    "type": "noun",
+    "anchor": true,
+    "definition": "The reason why someone does or wants something."
+   },
+   {
+    "word": "fazer questão",
+    "surface": "Faço questão",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To insist on something because it really matters to you."
+   },
+   {
+    "word": "direto",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Straight through, without stopping or going around anything."
+   },
+   {
+    "word": "ler",
+    "surface": "lê",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To go through written words and get their meaning."
+   },
+   {
+    "word": "recusar",
+    "surface": "recusou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To say no to something offered or asked of you."
+   },
+   {
+    "word": "teimoso",
+    "surface": "teimosos",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Stubborn, unwilling to change a decision once it is made."
+   },
+   {
+    "word": "ceder",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To give way and let the other person have it."
+   },
+   {
+    "word": "insistir",
+    "surface": "insistiu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To keep asking or saying something after a refusal."
+   },
+   {
+    "word": "pelo menos",
+    "surface": "Pelo menos",
+    "type": "expression",
+    "anchor": false,
+    "definition": "At least; the smallest thing that is still acceptable."
+   },
+   {
+    "word": "ter razão",
+    "surface": "tinha razão",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To be right about something that was said."
+   },
+   {
+    "word": "concordar",
+    "surface": "concordou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To agree, say yes to the same idea."
+   },
+   {
+    "word": "contar",
+    "surface": "contou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To count things one by one to know how many."
+   },
+   {
+    "word": "lembrar",
+    "surface": "lembrou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To bring a past thing back into your mind."
+   },
+   {
+    "word": "orgulho",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Good feeling about yourself after doing something well."
+   },
+   {
+    "word": "aprendiz",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Person who is learning a skill from someone else."
+   },
+   {
+    "word": "achar",
+    "surface": "achou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To find something you were looking for, or to think."
+   },
+   {
+    "word": "devagar",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Slowly, taking more time than usual to do it."
+   }
+  ],
+  "arcType": "reframe-turn"
+ },
+ {
+  "topic": "salvador",
+  "slotIndex": 2,
+  "title": "A ladeira na sexta",
+  "slug": "a-ladeira-na-sexta",
+  "synopsis": "O rapaz que varre a sala guarda uma prova para sexta de manhã e não contou a ninguém dentro da escola, nem à professora que já o viu estudar. A escada da biblioteca vira sala de ensaio quando as luzes se apagam, mas quem espera na sexta com o caderno aberto não recebe resposta nenhuma.",
+  "text": "Gilson queria entrar na universidade, e o vestibular era na sexta, mas não contou a ninguém. Renata descobriu por acaso, na biblioteca, quando ele fechou o caderno rápido demais.\n\n“Você estuda pra quê?”, perguntou ela. “Pra Letras, professora”, respondeu ele, inseguro. Renata perguntou se ele queria ensinar idioma, e ele fez que sim.\n\nÀs seis a biblioteca fechou e a escada ficou escura. Ensaiaram ali a prova oral: ela inventava perguntas, ele respondia. Se ele esquecesse uma palavra, ela esperava. “Devagar, que eu ouço tudo”, dizia.\n\n“Falar eu já falo. Escrever certo, sem errar, é outra coisa”, disse ele. “Não sei se vale a pena arriscar.” “Vale, sim”, respondeu Renata. “Você aprendeu esta escola inteira sozinho e merece essa chance.”\n\nNa sexta, ele cumprimentou a turma de longe e sumiu na ladeira. Renata gostaria de saber o resultado, mas conhecia o rapaz: tinha esperança e confiança. Escreveu o nome dele e a data, e deixou a linha aberta.",
+  "vocab": [
+   {
+    "word": "universidade",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Place where adults study for a degree after school."
+   },
+   {
+    "word": "vestibular",
+    "type": "noun",
+    "anchor": true,
+    "register": "cultural",
+    "definition": "Brazilian entrance exam to get a place at university."
+   },
+   {
+    "word": "por acaso",
+    "type": "expression",
+    "anchor": false,
+    "definition": "By chance, without planning or looking for it."
+   },
+   {
+    "word": "biblioteca",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Public room full of books you can read or borrow."
+   },
+   {
+    "word": "estudar",
+    "surface": "estuda",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To work on a subject until you know it."
+   },
+   {
+    "word": "inseguro",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Not sure of yourself, afraid of doing badly."
+   },
+   {
+    "word": "ensinar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To teach, give someone knowledge they did not have."
+   },
+   {
+    "word": "idioma",
+    "type": "noun",
+    "anchor": true,
+    "definition": "A language, such as Portuguese, English or Spanish."
+   },
+   {
+    "word": "escuro",
+    "surface": "escura",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Dark, with little or no light to see by."
+   },
+   {
+    "word": "esquecer",
+    "surface": "esquecesse",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To lose something from your memory without meaning to."
+   },
+   {
+    "word": "ouvir",
+    "surface": "ouço",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To hear a sound, or to listen to someone."
+   },
+   {
+    "word": "certo",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Right, the way something is supposed to be."
+   },
+   {
+    "word": "valer a pena",
+    "surface": "vale a pena",
+    "type": "expression",
+    "anchor": false,
+    "definition": "To be worth the effort or the risk."
+   },
+   {
+    "word": "arriscar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To try something even though it could go wrong."
+   },
+   {
+    "word": "aprender",
+    "surface": "aprendeu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To take in knowledge or a skill you did not have."
+   },
+   {
+    "word": "merecer",
+    "surface": "merece",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To have earned something by what you did."
+   },
+   {
+    "word": "conhecer",
+    "surface": "conhecia",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To know a person or place from real experience."
+   },
+   {
+    "word": "esperança",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Feeling that something good can still happen in the future."
+   },
+   {
+    "word": "confiança",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Feeling that you can trust someone and rely on them."
+   },
+   {
+    "word": "cumprimentar",
+    "surface": "cumprimentou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To greet someone with words or a small gesture."
+   }
+  ],
+  "arcType": "mini-cliffhanger"
+ }
+]
