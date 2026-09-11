@@ -1,7 +1,7 @@
 [
   {
     "type": "match_meaning",
-    "word": "carregador,correio,reunião,empresa",
+    "word": "carregador,computador,garantia,correio",
     "sentence": "",
     "payload": {
       "prompt": "Match the words to their meanings.",
@@ -11,9 +11,29 @@
           "answer": "a charger",
           "options": [
             "a charger",
-            "the post office",
-            "a meeting",
-            "a company"
+            "a computer",
+            "a warranty",
+            "the post office"
+          ]
+        },
+        {
+          "word": "computador",
+          "answer": "a computer",
+          "options": [
+            "a charger",
+            "a computer",
+            "a warranty",
+            "the post office"
+          ]
+        },
+        {
+          "word": "garantia",
+          "answer": "a warranty",
+          "options": [
+            "a charger",
+            "a computer",
+            "a warranty",
+            "the post office"
           ]
         },
         {
@@ -21,29 +41,9 @@
           "answer": "the post office",
           "options": [
             "a charger",
-            "the post office",
-            "a meeting",
-            "a company"
-          ]
-        },
-        {
-          "word": "reunião",
-          "answer": "a meeting",
-          "options": [
-            "a charger",
-            "the post office",
-            "a meeting",
-            "a company"
-          ]
-        },
-        {
-          "word": "empresa",
-          "answer": "a company",
-          "options": [
-            "a charger",
-            "the post office",
-            "a meeting",
-            "a company"
+            "a computer",
+            "a warranty",
+            "the post office"
           ]
         }
       ],
@@ -52,72 +52,21 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "notebook",
-    "sentence": "O carregador do [[notebook]] parou ontem à noite.",
+    "word": "funcionar",
+    "sentence": "O carregador antigo já não [[funciona]] bem.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a laptop",
+      "answer": "to work properly",
       "options": [
-        "a laptop",
-        "a phone",
-        "a printer",
-        "a camera"
+        "to work properly",
+        "to break down",
+        "to shut down",
+        "to speed up"
       ],
       "audioClip": {
         "storySlug": "um-generico-ate-segunda",
         "storySource": "user",
-        "sentence": "O carregador do notebook parou ontem à noite.",
-        "targetWord": "notebook",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "computador",
-    "sentence": "Ele liga o [[computador]] dela na tomada.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "a computer",
-      "options": [
-        "a computer",
-        "a kettle",
-        "a lamp",
-        "a radio"
-      ],
-      "audioClip": {
-        "storySlug": "um-generico-ate-segunda",
-        "storySource": "user",
-        "sentence": "Ele liga o computador dela na tomada.",
-        "targetWord": "computador",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "funciona",
-    "sentence": "A televisão está velha, mas ainda _____.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "funciona",
-      "options": [
-        "funciona",
-        "chora",
-        "dança",
-        "sonha"
-      ],
-      "translation": "The TV is old, but it still _____.",
-      "optionTranslations": [
-        "works",
-        "cries",
-        "dances",
-        "dreams"
-      ],
-      "audioClip": {
-        "storySlug": "um-generico-ate-segunda",
-        "storySource": "user",
-        "sentence": "A televisão está velha, mas ainda funciona.",
+        "sentence": "O carregador antigo já não funciona bem.",
         "targetWord": "funciona",
         "language": "portuguese"
       }
@@ -125,95 +74,88 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "ligar",
-    "sentence": "Ele [[liga]] o computador na tomada.",
+    "word": "verificar",
+    "sentence": "Ela [[verificou]] o computador antes de sair de casa.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to plug in",
+      "answer": "to check",
       "options": [
-        "to plug in",
-        "to break",
-        "to clean",
-        "to drop"
-      ],
-      "audioClip": {
-        "storySlug": "um-generico-ate-segunda",
-        "storySource": "user",
-        "sentence": "Ele liga o computador na tomada.",
-        "targetWord": "liga",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "desligar",
-    "sentence": "Ela [[desliga]] o carregador velho.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to unplug",
-      "options": [
-        "to unplug",
-        "to buy",
-        "to repair",
+        "to check",
+        "to fix",
+        "to sell",
         "to borrow"
       ],
       "audioClip": {
         "storySlug": "um-generico-ate-segunda",
         "storySource": "user",
-        "sentence": "Ela desliga o carregador velho.",
-        "targetWord": "desliga",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "compra",
-    "sentence": "Ela não tem pão em casa e _____ na padaria.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "compra",
-      "options": [
-        "compra",
-        "vende",
-        "lava",
-        "pinta"
-      ],
-      "translation": "She has no bread at home and _____ some at the bakery.",
-      "optionTranslations": [
-        "buys",
-        "sells",
-        "washes",
-        "paints"
-      ],
-      "audioClip": {
-        "storySlug": "um-generico-ate-segunda",
-        "storySource": "user",
-        "sentence": "Ela não tem pão em casa e compra na padaria.",
-        "targetWord": "compra",
+        "sentence": "Ela verificou o computador antes de sair de casa.",
+        "targetWord": "verificou",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "meaning_in_context",
-    "word": "receber",
-    "sentence": "A senhora [[recebe]] o pacote na segunda.",
+    "word": "solicitar",
+    "sentence": "O produto que ela tinha [[solicitado]] chegou com atraso.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to get",
+      "answer": "to request",
       "options": [
-        "to get",
-        "to send",
-        "to pay for",
-        "to check"
+        "to request",
+        "to return",
+        "to cancel",
+        "to donate"
       ],
       "audioClip": {
         "storySlug": "um-generico-ate-segunda",
         "storySource": "user",
-        "sentence": "A senhora recebe o pacote na segunda.",
-        "targetWord": "recebe",
+        "sentence": "O produto que ela tinha solicitado chegou com atraso.",
+        "targetWord": "solicitado",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esclarecer",
+    "sentence": "O atendente [[esclareceu]] todas as dúvidas sobre o preço.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to clarify",
+      "options": [
+        "to clarify",
+        "to complicate",
+        "to hide",
+        "to invent"
+      ],
+      "audioClip": {
+        "storySlug": "um-generico-ate-segunda",
+        "storySource": "user",
+        "sentence": "O atendente esclareceu todas as dúvidas sobre o preço.",
+        "targetWord": "esclareceu",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aceitar",
+    "sentence": "Está bem, eu [[aceito]] a sua proposta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to accept",
+      "options": [
+        "to accept",
+        "to refuse",
+        "to postpone",
+        "to forget"
+      ],
+      "audioClip": {
+        "storySlug": "um-generico-ate-segunda",
+        "storySource": "user",
+        "sentence": "Está bem, eu aceito a sua proposta.",
+        "targetWord": "aceito",
         "language": "portuguese"
       }
     }
@@ -221,50 +163,21 @@
   {
     "type": "meaning_in_context",
     "word": "enviar",
-    "sentence": "Ela precisa [[enviar]] o pacote hoje.",
+    "sentence": "Aquele fio antigo já não [[enviava]] energia nenhuma para o notebook.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to send",
       "options": [
         "to send",
-        "to open",
-        "to weigh",
-        "to hide"
+        "to receive",
+        "to store",
+        "to waste"
       ],
       "audioClip": {
         "storySlug": "um-generico-ate-segunda",
         "storySource": "user",
-        "sentence": "Ela precisa enviar o pacote hoje.",
-        "targetWord": "enviar",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "aceita",
-    "sentence": "O cartão não passa, mas a loja _____ dinheiro.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "aceita",
-      "options": [
-        "aceita",
-        "recusa",
-        "esconde",
-        "queima"
-      ],
-      "translation": "The card doesn't go through, but the shop _____ cash.",
-      "optionTranslations": [
-        "accepts",
-        "refuses",
-        "hides",
-        "burns"
-      ],
-      "audioClip": {
-        "storySlug": "um-generico-ate-segunda",
-        "storySource": "user",
-        "sentence": "O cartão não passa, mas a loja aceita dinheiro.",
-        "targetWord": "aceita",
+        "sentence": "Aquele fio antigo já não enviava energia nenhuma para o notebook.",
+        "targetWord": "enviava",
         "language": "portuguese"
       }
     }
@@ -272,43 +185,100 @@
   {
     "type": "meaning_in_context",
     "word": "conferir",
-    "sentence": "Ele [[confere]] a ponta duas vezes.",
+    "sentence": "O funcionário [[conferiu]] a ponta do cabo duas vezes.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to check",
+      "answer": "to check again",
       "options": [
-        "to check",
-        "to cut",
-        "to paint",
-        "to bend"
+        "to check again",
+        "to clean",
+        "to break",
+        "to buy"
       ],
       "audioClip": {
         "storySlug": "um-generico-ate-segunda",
         "storySource": "user",
-        "sentence": "Ele confere a ponta duas vezes.",
-        "targetWord": "confere",
+        "sentence": "O funcionário conferiu a ponta do cabo duas vezes.",
+        "targetWord": "conferiu",
         "language": "portuguese"
       }
-    },
-    "featured": false
+    }
   },
   {
     "type": "meaning_in_context",
-    "word": "caro",
-    "sentence": "Tem um genérico [[caro]] e um barato.",
+    "word": "confirmar",
+    "sentence": "A luz verde acendeu e [[confirmou]] que estava tudo certo.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "expensive",
+      "answer": "to confirm",
       "options": [
-        "expensive",
-        "heavy",
-        "broken",
-        "slow"
+        "to confirm",
+        "to doubt",
+        "to deny",
+        "to question"
       ],
       "audioClip": {
         "storySlug": "um-generico-ate-segunda",
         "storySource": "user",
-        "sentence": "Tem um genérico caro e um barato.",
+        "sentence": "A luz verde acendeu e confirmou que estava tudo certo.",
+        "targetWord": "confirmou",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "empresa",
+    "sentence": "Ela trabalha para uma _____ que nunca visitou.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "empresa",
+      "options": [
+        "empresa",
+        "fábrica",
+        "loja",
+        "escola"
+      ],
+      "translation": "She works for a _____ she has never visited.",
+      "optionTranslations": [
+        "company",
+        "factory",
+        "shop",
+        "school"
+      ],
+      "audioClip": {
+        "storySlug": "um-generico-ate-segunda",
+        "storySource": "user",
+        "sentence": "Ela trabalha para uma empresa que nunca visitou.",
+        "targetWord": "empresa",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "caro",
+    "sentence": "Esse modelo é muito _____ para o meu orçamento.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "caro",
+      "options": [
+        "caro",
+        "simples",
+        "leve",
+        "moderno"
+      ],
+      "translation": "This model is too _____ for my budget.",
+      "optionTranslations": [
+        "expensive",
+        "simple",
+        "light",
+        "modern"
+      ],
+      "audioClip": {
+        "storySlug": "um-generico-ate-segunda",
+        "storySource": "user",
+        "sentence": "Esse modelo é muito caro para o meu orçamento.",
         "targetWord": "caro",
         "language": "portuguese"
       }
@@ -318,27 +288,27 @@
   {
     "type": "fill_blank",
     "word": "barato",
-    "sentence": "Custa só dois reais: é bem _____.",
+    "sentence": "O carregador genérico era _____ mas quebrava fácil.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "barato",
       "options": [
         "barato",
-        "caro",
-        "pesado",
-        "fundo"
+        "resistente",
+        "elegante",
+        "pesado"
       ],
-      "translation": "It costs only two reais: it's really _____.",
+      "translation": "The generic charger was _____ but broke easily.",
       "optionTranslations": [
         "cheap",
-        "expensive",
-        "heavy",
-        "deep"
+        "sturdy",
+        "elegant",
+        "heavy"
       ],
       "audioClip": {
         "storySlug": "um-generico-ate-segunda",
         "storySource": "user",
-        "sentence": "Custa só dois reais: é bem barato.",
+        "sentence": "O carregador genérico era barato mas quebrava fácil.",
         "targetWord": "barato",
         "language": "portuguese"
       }
@@ -346,23 +316,60 @@
     "featured": false
   },
   {
-    "type": "meaning_in_context",
-    "word": "novo",
-    "sentence": "Não é [[novo]], mas serve até segunda.",
+    "type": "fill_blank",
+    "word": "internet",
+    "sentence": "Ela comprou as passagens pela _____ na noite anterior.",
     "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "new",
+      "prompt": "Complete the sentence.",
+      "answer": "internet",
       "options": [
-        "new",
-        "fast",
-        "big",
+        "internet",
+        "telefone",
+        "rádio",
+        "jornal"
+      ],
+      "translation": "She bought the tickets over the _____ the night before.",
+      "optionTranslations": [
+        "internet",
+        "phone",
+        "radio",
+        "newspaper"
+      ],
+      "audioClip": {
+        "storySlug": "um-generico-ate-segunda",
+        "storySource": "user",
+        "sentence": "Ela comprou as passagens pela internet na noite anterior.",
+        "targetWord": "internet",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "desligar",
+    "sentence": "Antes de dormir, ela foi _____ o computador da tomada.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "desligar",
+      "options": [
+        "desligar",
+        "ligar",
+        "consertar",
+        "limpar"
+      ],
+      "translation": "Before going to sleep, she went to _____ the computer from the socket.",
+      "optionTranslations": [
+        "unplug",
+        "plug in",
+        "fix",
         "clean"
       ],
       "audioClip": {
         "storySlug": "um-generico-ate-segunda",
         "storySource": "user",
-        "sentence": "Não é novo, mas serve até segunda.",
-        "targetWord": "novo",
+        "sentence": "Antes de dormir, ela foi desligar o computador da tomada.",
+        "targetWord": "desligar",
         "language": "portuguese"
       }
     },
@@ -371,27 +378,27 @@
   {
     "type": "fill_blank",
     "word": "velho",
-    "sentence": "Esse carro tem trinta anos; é muito _____.",
+    "sentence": "O carregador _____ já não servia para nada.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "velho",
       "options": [
         "velho",
-        "novo",
-        "moderno",
-        "recente"
+        "pequeno",
+        "quebrado",
+        "barulhento"
       ],
-      "translation": "This car is thirty years old; it's very _____.",
+      "translation": "The _____ charger no longer worked at all.",
       "optionTranslations": [
         "old",
-        "new",
-        "modern",
-        "recent"
+        "small",
+        "broken",
+        "noisy"
       ],
       "audioClip": {
         "storySlug": "um-generico-ate-segunda",
         "storySource": "user",
-        "sentence": "Esse carro tem trinta anos; é muito velho.",
+        "sentence": "O carregador velho já não servia para nada.",
         "targetWord": "velho",
         "language": "portuguese"
       }
@@ -399,23 +406,30 @@
     "featured": false
   },
   {
-    "type": "meaning_in_context",
-    "word": "agora",
-    "sentence": "[[Agora]] ela testa o carregador.",
+    "type": "fill_blank",
+    "word": "trabalhar",
+    "sentence": "Ela precisava _____ até tarde naquele dia.",
     "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "now",
+      "prompt": "Complete the sentence.",
+      "answer": "trabalhar",
       "options": [
-        "now",
-        "later",
-        "again",
-        "already"
+        "trabalhar",
+        "dormir",
+        "esperar",
+        "correr"
+      ],
+      "translation": "She needed to _____ late that day.",
+      "optionTranslations": [
+        "work",
+        "sleep",
+        "wait",
+        "run"
       ],
       "audioClip": {
         "storySlug": "um-generico-ate-segunda",
         "storySource": "user",
-        "sentence": "Agora ela testa o carregador.",
-        "targetWord": "Agora",
+        "sentence": "Ela precisava trabalhar até tarde naquele dia.",
+        "targetWord": "trabalhar",
         "language": "portuguese"
       }
     },
@@ -423,29 +437,29 @@
   },
   {
     "type": "fill_blank",
-    "word": "fechada",
-    "sentence": "A porta tem cadeado: a loja está _____.",
+    "word": "substituir",
+    "sentence": "Ela precisava _____ o carregador antes da reunião.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "fechada",
+      "answer": "substituir",
       "options": [
-        "fechada",
-        "aberta",
-        "cheia",
-        "lotada"
+        "substituir",
+        "emprestar",
+        "vender",
+        "esconder"
       ],
-      "translation": "The door has a padlock: the shop is _____.",
+      "translation": "She needed to _____ the charger before the meeting.",
       "optionTranslations": [
-        "closed",
-        "open",
-        "full",
-        "packed"
+        "replace",
+        "borrow",
+        "sell",
+        "hide"
       ],
       "audioClip": {
         "storySlug": "um-generico-ate-segunda",
         "storySource": "user",
-        "sentence": "A porta tem cadeado: a loja está fechada.",
-        "targetWord": "fechada",
+        "sentence": "Ela precisava substituir o carregador antes da reunião.",
+        "targetWord": "substituir",
         "language": "portuguese"
       }
     },

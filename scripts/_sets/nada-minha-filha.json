@@ -1,49 +1,49 @@
 [
   {
     "type": "match_meaning",
-    "word": "cachecol,luva,meia,suéter",
+    "word": "jaqueta,saia,suéter,cachecol",
     "sentence": "",
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
         {
-          "word": "cachecol",
-          "answer": "a scarf",
+          "word": "jaqueta",
+          "answer": "a jacket",
           "options": [
-            "a scarf",
-            "a glove",
-            "a sock",
-            "a jumper"
+            "a jacket",
+            "a skirt",
+            "a jumper",
+            "a scarf"
           ]
         },
         {
-          "word": "luva",
-          "answer": "a glove",
+          "word": "saia",
+          "answer": "a skirt",
           "options": [
-            "a scarf",
-            "a glove",
-            "a sock",
-            "a jumper"
-          ]
-        },
-        {
-          "word": "meia",
-          "answer": "a sock",
-          "options": [
-            "a scarf",
-            "a glove",
-            "a sock",
-            "a jumper"
+            "a jacket",
+            "a skirt",
+            "a jumper",
+            "a scarf"
           ]
         },
         {
           "word": "suéter",
           "answer": "a jumper",
           "options": [
-            "a scarf",
-            "a glove",
-            "a sock",
-            "a jumper"
+            "a jacket",
+            "a skirt",
+            "a jumper",
+            "a scarf"
+          ]
+        },
+        {
+          "word": "cachecol",
+          "answer": "a scarf",
+          "options": [
+            "a jacket",
+            "a skirt",
+            "a jumper",
+            "a scarf"
           ]
         }
       ],
@@ -52,73 +52,124 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "jaqueta",
-    "sentence": "A [[jaqueta]] dela é fina demais para o frio.",
+    "word": "fino",
+    "sentence": "A blusa dela é muito [[fina]] para o inverno.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a jacket",
+      "answer": "thin",
       "options": [
-        "a jacket",
-        "a skirt",
-        "a hat",
-        "a bag"
+        "thin",
+        "warm",
+        "heavy",
+        "dirty"
       ],
       "audioClip": {
         "storySlug": "nada-minha-filha",
         "storySource": "user",
-        "sentence": "A jaqueta dela é fina demais para o frio.",
-        "targetWord": "jaqueta",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "roupa",
-    "sentence": "Ela chegou com [[roupa]] de praia.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "clothes",
-      "options": [
-        "clothes",
-        "shoes",
-        "food",
-        "money"
-      ],
-      "audioClip": {
-        "storySlug": "nada-minha-filha",
-        "storySource": "user",
-        "sentence": "Ela chegou com roupa de praia.",
-        "targetWord": "roupa",
+        "sentence": "A blusa dela é muito fina para o inverno.",
+        "targetWord": "fina",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "fill_blank",
-    "word": "pendura",
-    "sentence": "Ela lava a camisa e _____ no varal.",
+    "word": "molhado",
+    "sentence": "Depois da chuva, o casaco ficou _____.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "pendura",
+      "answer": "molhado",
       "options": [
-        "pendura",
-        "cozinha",
-        "lê",
-        "queima"
+        "molhado",
+        "sujo",
+        "rasgado",
+        "apertado"
       ],
-      "translation": "She washes the shirt and _____ it on the clothesline.",
+      "translation": "After the rain, the coat got _____.",
       "optionTranslations": [
-        "hangs",
-        "cooks",
-        "reads",
-        "burns"
+        "wet",
+        "dirty",
+        "torn",
+        "tight"
       ],
       "audioClip": {
         "storySlug": "nada-minha-filha",
         "storySource": "user",
-        "sentence": "Ela lava a camisa e pendura no varal.",
-        "targetWord": "pendura",
+        "sentence": "Depois da chuva, o casaco ficou molhado.",
+        "targetWord": "molhado",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por causa de",
+    "sentence": "A festa foi cancelada [[por causa de]] Ricardo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "because of",
+      "options": [
+        "because of",
+        "instead of",
+        "according to",
+        "in spite of"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "A festa foi cancelada por causa de Ricardo.",
+        "targetWord": "por causa de",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "puxar assunto",
+    "sentence": "Na fila do banco, ele [[puxou assunto]] com um estranho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "struck up a conversation",
+      "options": [
+        "struck up a conversation",
+        "ended a conversation",
+        "overheard a conversation",
+        "avoided a conversation"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "Na fila do banco, ele puxou assunto com um estranho.",
+        "targetWord": "puxou assunto",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pendurar",
+    "sentence": "Depois de lavar, ela vai _____ a roupa no varal.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pendurar",
+      "options": [
+        "pendurar",
+        "dobrar",
+        "lavar",
+        "vender"
+      ],
+      "translation": "After washing, she is going to _____ the clothes on the line.",
+      "optionTranslations": [
+        "hang",
+        "fold",
+        "wash",
+        "sell"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "Depois de lavar, ela vai pendurar a roupa no varal.",
+        "targetWord": "pendurar",
         "language": "portuguese"
       }
     }
@@ -126,43 +177,21 @@
   {
     "type": "meaning_in_context",
     "word": "vestir",
-    "sentence": "A senhora vai [[vestir]] o quê hoje?",
+    "sentence": "Ele [[vestiu]] o casaco antes de sair de casa.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to put on",
+      "answer": "put on",
       "options": [
-        "to put on",
-        "to wash",
-        "to sell",
-        "to fold"
+        "put on",
+        "took off",
+        "washed",
+        "bought"
       ],
       "audioClip": {
         "storySlug": "nada-minha-filha",
         "storySource": "user",
-        "sentence": "A senhora vai vestir o quê hoje?",
-        "targetWord": "vestir",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "despir",
-    "sentence": "Ela [[despe]] a jaqueta fina e veste o suéter.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to take off",
-      "options": [
-        "to take off",
-        "to fold",
-        "to iron",
-        "to lose"
-      ],
-      "audioClip": {
-        "storySlug": "nada-minha-filha",
-        "storySource": "user",
-        "sentence": "Ela despe a jaqueta fina e veste o suéter.",
-        "targetWord": "despe",
+        "sentence": "Ele vestiu o casaco antes de sair de casa.",
+        "targetWord": "vestiu",
         "language": "portuguese"
       }
     }
@@ -170,27 +199,27 @@
   {
     "type": "fill_blank",
     "word": "levar",
-    "sentence": "Vai chover: não esqueça de _____ o guarda-chuva.",
+    "sentence": "Ela vai _____ os documentos para a reunião.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "levar",
       "options": [
         "levar",
-        "quebrar",
-        "pintar",
-        "cozinhar"
+        "perder",
+        "esconder",
+        "queimar"
       ],
-      "translation": "It's going to rain: don't forget to _____ your umbrella.",
+      "translation": "She is going to _____ the documents to the meeting.",
       "optionTranslations": [
-        "take",
-        "break",
-        "paint",
-        "cook"
+        "carry",
+        "lose",
+        "hide",
+        "burn"
       ],
       "audioClip": {
         "storySlug": "nada-minha-filha",
         "storySource": "user",
-        "sentence": "Vai chover: não esqueça de levar o guarda-chuva.",
+        "sentence": "Ela vai levar os documentos para a reunião.",
         "targetWord": "levar",
         "language": "portuguese"
       }
@@ -198,194 +227,73 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "convidar",
-    "sentence": "Ela [[convida]] a amiga para um chá depois.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to invite",
-      "options": [
-        "to invite",
-        "to thank",
-        "to warn",
-        "to follow"
-      ],
-      "audioClip": {
-        "storySlug": "nada-minha-filha",
-        "storySource": "user",
-        "sentence": "Ela convida a amiga para um chá depois.",
-        "targetWord": "convida",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "vir",
-    "sentence": "Você quer [[vir]] tomar um chá?",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to come",
-      "options": [
-        "to come",
-        "to leave",
-        "to cook",
-        "to pay"
-      ],
-      "audioClip": {
-        "storySlug": "nada-minha-filha",
-        "storySource": "user",
-        "sentence": "Você quer vir tomar um chá?",
-        "targetWord": "vir",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "seca",
-    "sentence": "Com esse sol forte, a roupa _____ em uma hora.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "seca",
-      "options": [
-        "seca",
-        "molha",
-        "congela",
-        "cresce"
-      ],
-      "translation": "With this strong sun, the washing _____ in an hour.",
-      "optionTranslations": [
-        "dries",
-        "gets wet",
-        "freezes",
-        "grows"
-      ],
-      "audioClip": {
-        "storySlug": "nada-minha-filha",
-        "storySource": "user",
-        "sentence": "Com esse sol forte, a roupa seca em uma hora.",
-        "targetWord": "seca",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "cansar",
-    "sentence": "[[Cansa]] mais chegar com frio do que viajar.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to tire out",
-      "options": [
-        "to tire out",
-        "to cheer up",
-        "to cost",
-        "to warm up"
-      ],
-      "audioClip": {
-        "storySlug": "nada-minha-filha",
-        "storySource": "user",
-        "sentence": "Cansa mais chegar com frio do que viajar.",
-        "targetWord": "Cansa",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "fazer",
-    "sentence": "[[Faz]] três invernos que isso está aqui.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to do, to make",
-      "options": [
-        "to do, to make",
-        "to take",
-        "to bring",
-        "to keep"
-      ],
-      "audioClip": {
-        "storySlug": "nada-minha-filha",
-        "storySource": "user",
-        "sentence": "Faz três invernos que isso está aqui.",
-        "targetWord": "Faz",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "fill_blank",
-    "word": "molhado",
-    "sentence": "Ele caiu na piscina e saiu todo _____.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "molhado",
-      "options": [
-        "molhado",
-        "seco",
-        "quente",
-        "penteado"
-      ],
-      "translation": "He fell into the pool and came out all _____.",
-      "optionTranslations": [
-        "wet",
-        "dry",
-        "hot",
-        "combed"
-      ],
-      "audioClip": {
-        "storySlug": "nada-minha-filha",
-        "storySource": "user",
-        "sentence": "Ele caiu na piscina e saiu todo molhado.",
-        "targetWord": "molhado",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "fino",
-    "sentence": "O tecido é [[fino]] e deixa passar o vento.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "thin",
-      "options": [
-        "thin",
-        "heavy",
-        "dark",
-        "rough"
-      ],
-      "audioClip": {
-        "storySlug": "nada-minha-filha",
-        "storySource": "user",
-        "sentence": "O tecido é fino e deixa passar o vento.",
-        "targetWord": "fino",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
     "word": "marrom",
-    "sentence": "Ela leva uma caixa [[marrom]] para o balcão.",
+    "sentence": "Ele comprou um sapato [[marrom]] para o inverno.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "brown",
       "options": [
         "brown",
-        "yellow",
-        "purple",
-        "orange"
+        "black",
+        "gray",
+        "beige"
       ],
       "audioClip": {
         "storySlug": "nada-minha-filha",
         "storySource": "user",
-        "sentence": "Ela leva uma caixa marrom para o balcão.",
+        "sentence": "Ele comprou um sapato marrom para o inverno.",
         "targetWord": "marrom",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "inverno",
+    "sentence": "Aqui faz muito frio no _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "inverno",
+      "options": [
+        "inverno",
+        "verão",
+        "outono",
+        "primavera"
+      ],
+      "translation": "Here it's very cold in the _____.",
+      "optionTranslations": [
+        "winter",
+        "summer",
+        "autumn",
+        "spring"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "Aqui faz muito frio no inverno.",
+        "targetWord": "inverno",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dar um jeito",
+    "sentence": "Sem dinheiro, ela sempre [[dá um jeito]] de resolver tudo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "finds a way",
+      "options": [
+        "finds a way",
+        "gives up",
+        "asks for help",
+        "complains a lot"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "Sem dinheiro, ela sempre dá um jeito de resolver tudo.",
+        "targetWord": "dá um jeito",
         "language": "portuguese"
       }
     },
@@ -393,29 +301,29 @@
   },
   {
     "type": "fill_blank",
-    "word": "congelada",
-    "sentence": "Ela ficou duas horas na neve e voltou _____.",
+    "word": "mesmo que",
+    "sentence": "Vou trabalhar amanhã, _____ chova o dia todo.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "congelada",
+      "answer": "mesmo que",
       "options": [
-        "congelada",
-        "bronzeada",
-        "suada",
-        "queimada"
+        "mesmo que",
+        "assim que",
+        "desde que",
+        "contanto que"
       ],
-      "translation": "She stayed two hours in the snow and came back _____.",
+      "translation": "I'll work tomorrow, _____ it rains all day.",
       "optionTranslations": [
-        "frozen",
-        "tanned",
-        "sweaty",
-        "sunburnt"
+        "even if",
+        "as soon as",
+        "since",
+        "provided that"
       ],
       "audioClip": {
         "storySlug": "nada-minha-filha",
         "storySource": "user",
-        "sentence": "Ela ficou duas horas na neve e voltou congelada.",
-        "targetWord": "congelada",
+        "sentence": "Vou trabalhar amanhã, mesmo que chova o dia todo.",
+        "targetWord": "mesmo que",
         "language": "portuguese"
       }
     },
@@ -423,22 +331,128 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "de repente",
-    "sentence": "[[De repente]] aparece o dono.",
+    "word": "despir",
+    "sentence": "Ele [[despiu]] o casaco molhado ao entrar em casa.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "maybe",
+      "answer": "took off",
       "options": [
-        "maybe",
-        "never",
-        "already",
-        "on purpose"
+        "took off",
+        "put on",
+        "washed",
+        "folded"
       ],
       "audioClip": {
         "storySlug": "nada-minha-filha",
         "storySource": "user",
-        "sentence": "De repente aparece o dono.",
-        "targetWord": "De repente",
+        "sentence": "Ele despiu o casaco molhado ao entrar em casa.",
+        "targetWord": "despiu",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "convidar",
+    "sentence": "Ela quer _____ os amigos para o jantar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "convidar",
+      "options": [
+        "convidar",
+        "evitar",
+        "enganar",
+        "imitar"
+      ],
+      "translation": "She wants to _____ her friends to dinner.",
+      "optionTranslations": [
+        "invite",
+        "avoid",
+        "deceive",
+        "imitate"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "Ela quer convidar os amigos para o jantar.",
+        "targetWord": "convidar",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "carinho",
+    "sentence": "Ela cuidou do irmão doente com muito [[carinho]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tenderness",
+      "options": [
+        "tenderness",
+        "haste",
+        "doubt",
+        "anger"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "Ela cuidou do irmão doente com muito carinho.",
+        "targetWord": "carinho",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bater papo",
+    "sentence": "Depois do jantar, gostamos de _____ na varanda.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bater papo",
+      "options": [
+        "bater papo",
+        "cochilar",
+        "discutir",
+        "cozinhar"
+      ],
+      "translation": "After dinner, we like to _____ on the porch.",
+      "optionTranslations": [
+        "chat",
+        "nap",
+        "argue",
+        "cook"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "Depois do jantar, gostamos de bater papo na varanda.",
+        "targetWord": "bater papo",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "graças a",
+    "sentence": "[[Graças a]] Teresa, encontramos o caminho certo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thanks to",
+      "options": [
+        "thanks to",
+        "despite",
+        "regardless of",
+        "far from"
+      ],
+      "audioClip": {
+        "storySlug": "nada-minha-filha",
+        "storySource": "user",
+        "sentence": "Graças a Teresa, encontramos o caminho certo.",
+        "targetWord": "Graças a",
         "language": "portuguese"
       }
     },

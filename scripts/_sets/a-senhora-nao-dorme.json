@@ -1,49 +1,49 @@
 [
   {
     "type": "match_meaning",
-    "word": "semáforo,buzina,seta,cruzamento",
+    "word": "pedágio,avenida,semáforo,bagageiro",
     "sentence": "",
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
         {
+          "word": "pedágio",
+          "answer": "a toll",
+          "options": [
+            "a toll",
+            "an avenue",
+            "a traffic light",
+            "a luggage rack"
+          ]
+        },
+        {
+          "word": "avenida",
+          "answer": "an avenue",
+          "options": [
+            "a toll",
+            "an avenue",
+            "a traffic light",
+            "a luggage rack"
+          ]
+        },
+        {
           "word": "semáforo",
           "answer": "a traffic light",
           "options": [
+            "a toll",
+            "an avenue",
             "a traffic light",
-            "a horn",
-            "an indicator",
-            "a crossroads"
+            "a luggage rack"
           ]
         },
         {
-          "word": "buzina",
-          "answer": "a horn",
+          "word": "bagageiro",
+          "answer": "a luggage rack",
           "options": [
+            "a toll",
+            "an avenue",
             "a traffic light",
-            "a horn",
-            "an indicator",
-            "a crossroads"
-          ]
-        },
-        {
-          "word": "seta",
-          "answer": "an indicator",
-          "options": [
-            "a traffic light",
-            "a horn",
-            "an indicator",
-            "a crossroads"
-          ]
-        },
-        {
-          "word": "cruzamento",
-          "answer": "a crossroads",
-          "options": [
-            "a traffic light",
-            "a horn",
-            "an indicator",
-            "a crossroads"
+            "a luggage rack"
           ]
         }
       ],
@@ -52,95 +52,44 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "avenida",
-    "sentence": "O ônibus cruza a [[avenida]] vazia.",
+    "word": "passar",
+    "sentence": "O trem [[passou]] pelo pedágio sem parar.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a wide street",
+      "answer": "went by",
       "options": [
-        "a wide street",
-        "a narrow path",
-        "a bridge",
-        "a square"
+        "went by",
+        "stopped",
+        "waited",
+        "returned"
       ],
       "audioClip": {
         "storySlug": "a-senhora-nao-dorme",
         "storySource": "user",
-        "sentence": "O ônibus cruza a avenida vazia.",
-        "targetWord": "avenida",
+        "sentence": "O trem passou pelo pedágio sem parar.",
+        "targetWord": "passou",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "meaning_in_context",
-    "word": "automóvel",
-    "sentence": "Um [[automóvel]] buzina duas vezes, por nada.",
+    "word": "roncar",
+    "sentence": "O passageiro ao lado [[roncou]] a noite inteira.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a car",
+      "answer": "snored",
       "options": [
-        "a car",
-        "a bicycle",
-        "a boat",
-        "a lorry"
+        "snored",
+        "coughed",
+        "talked",
+        "sang"
       ],
       "audioClip": {
         "storySlug": "a-senhora-nao-dorme",
         "storySource": "user",
-        "sentence": "Um automóvel buzina duas vezes, por nada.",
-        "targetWord": "automóvel",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "ronca",
-    "sentence": "Ele dorme de boca aberta e _____ a noite inteira.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "ronca",
-      "options": [
-        "ronca",
-        "corre",
-        "nada",
-        "pula"
-      ],
-      "translation": "He sleeps with his mouth open and _____ all night.",
-      "optionTranslations": [
-        "snores",
-        "runs",
-        "swims",
-        "jumps"
-      ],
-      "audioClip": {
-        "storySlug": "a-senhora-nao-dorme",
-        "storySource": "user",
-        "sentence": "Ele dorme de boca aberta e ronca a noite inteira.",
-        "targetWord": "ronca",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "sentar",
-    "sentence": "Ela se levanta e [[senta]] de novo.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to sit down",
-      "options": [
-        "to sit down",
-        "to lie down",
-        "to fall",
-        "to turn round"
-      ],
-      "audioClip": {
-        "storySlug": "a-senhora-nao-dorme",
-        "storySource": "user",
-        "sentence": "Ela se levanta e senta de novo.",
-        "targetWord": "senta",
+        "sentence": "O passageiro ao lado roncou a noite inteira.",
+        "targetWord": "roncou",
         "language": "portuguese"
       }
     }
@@ -148,123 +97,21 @@
   {
     "type": "meaning_in_context",
     "word": "levantar",
-    "sentence": "Ela se [[levanta]] duas vezes.",
+    "sentence": "[[Levantou]] duas vezes para esticar as pernas.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to stand up",
+      "answer": "stood up",
       "options": [
-        "to stand up",
-        "to wake up",
-        "to fall over",
-        "to get dressed"
+        "stood up",
+        "sat down",
+        "fell asleep",
+        "looked around"
       ],
       "audioClip": {
         "storySlug": "a-senhora-nao-dorme",
         "storySource": "user",
-        "sentence": "Ela se levanta duas vezes.",
-        "targetWord": "levanta",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "segura",
-    "sentence": "O ônibus balança, então ela _____ firme no banco.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "segura",
-      "options": [
-        "segura",
-        "solta",
-        "escreve",
-        "limpa"
-      ],
-      "translation": "The bus is rocking, so she _____ on tight to the seat.",
-      "optionTranslations": [
-        "holds",
-        "lets go",
-        "writes",
-        "cleans"
-      ],
-      "audioClip": {
-        "storySlug": "a-senhora-nao-dorme",
-        "storySource": "user",
-        "sentence": "O ônibus balança, então ela segura firme no banco.",
-        "targetWord": "segura",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "viajar",
-    "sentence": "A senhora [[viaja]] muito?",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to travel",
-      "options": [
-        "to travel",
-        "to cook",
-        "to read",
-        "to rest"
-      ],
-      "audioClip": {
-        "storySlug": "a-senhora-nao-dorme",
-        "storySource": "user",
-        "sentence": "A senhora viaja muito?",
-        "targetWord": "viaja",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "passar",
-    "sentence": "O homem se mexe e ela [[passa]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to get past",
-      "options": [
-        "to get past",
-        "to stop",
-        "to push",
-        "to shout"
-      ],
-      "audioClip": {
-        "storySlug": "a-senhora-nao-dorme",
-        "storySource": "user",
-        "sentence": "O homem se mexe e ela passa.",
-        "targetWord": "passa",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "continuar",
-    "sentence": "A chuva não para: vai _____ a noite inteira.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "continuar",
-      "options": [
-        "continuar",
-        "parar",
-        "secar",
-        "acabar"
-      ],
-      "translation": "The rain won't stop: it's going to _____ all night.",
-      "optionTranslations": [
-        "go on",
-        "stop",
-        "dry up",
-        "end"
-      ],
-      "audioClip": {
-        "storySlug": "a-senhora-nao-dorme",
-        "storySource": "user",
-        "sentence": "A chuva não para: vai continuar a noite inteira.",
-        "targetWord": "continuar",
+        "sentence": "Levantou duas vezes para esticar as pernas.",
+        "targetWord": "Levantou",
         "language": "portuguese"
       }
     }
@@ -272,97 +119,227 @@
   {
     "type": "meaning_in_context",
     "word": "mover",
-    "sentence": "O homem se [[move]] sem acordar.",
+    "sentence": "O homem [[moveu]] a mala sem acordar.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to shift",
+      "answer": "moved",
       "options": [
-        "to shift",
-        "to cough",
-        "to speak",
-        "to smile"
+        "moved",
+        "opened",
+        "found",
+        "lost"
       ],
       "audioClip": {
         "storySlug": "a-senhora-nao-dorme",
         "storySource": "user",
-        "sentence": "O homem se move sem acordar.",
-        "targetWord": "move",
+        "sentence": "O homem moveu a mala sem acordar.",
+        "targetWord": "moveu",
         "language": "portuguese"
       }
-    },
-    "featured": false
+    }
   },
   {
     "type": "meaning_in_context",
-    "word": "apertado",
-    "sentence": "O corredor é [[apertado]].",
+    "word": "ficar de olho",
+    "sentence": "Ela [[ficou de olho]] nas luzes da estrada.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "tight",
+      "answer": "kept an eye on",
       "options": [
-        "tight",
-        "wide",
-        "bright",
-        "noisy"
+        "kept an eye on",
+        "lost sight of",
+        "was afraid of",
+        "got tired of"
       ],
       "audioClip": {
         "storySlug": "a-senhora-nao-dorme",
         "storySource": "user",
-        "sentence": "O corredor é apertado.",
+        "sentence": "Ela ficou de olho nas luzes da estrada.",
+        "targetWord": "ficou de olho",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "perder a hora",
+    "sentence": "Ela tem medo de [[perder a hora]] e chegar atrasada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "oversleep",
+      "options": [
+        "oversleep",
+        "lose the ticket",
+        "miss the stop",
+        "forget the bag"
+      ],
+      "audioClip": {
+        "storySlug": "a-senhora-nao-dorme",
+        "storySource": "user",
+        "sentence": "Ela tem medo de perder a hora e chegar atrasada.",
+        "targetWord": "perder a hora",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ganhar",
+    "sentence": "Depois de Aquidauana, eu [[ganho]] meia hora de vantagem.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gain",
+      "options": [
+        "gain",
+        "lose",
+        "waste",
+        "share"
+      ],
+      "audioClip": {
+        "storySlug": "a-senhora-nao-dorme",
+        "storySource": "user",
+        "sentence": "Depois de Aquidauana, eu ganho meia hora de vantagem.",
+        "targetWord": "ganho",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agradecido",
+    "sentence": "Ela ficou [[agradecida]] pela conversa durante a viagem.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thankful",
+      "options": [
+        "thankful",
+        "surprised",
+        "curious",
+        "nervous"
+      ],
+      "audioClip": {
+        "storySlug": "a-senhora-nao-dorme",
+        "storySource": "user",
+        "sentence": "Ela ficou agradecida pela conversa durante a viagem.",
+        "targetWord": "agradecida",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "apertado",
+    "sentence": "O assento do ônibus estava muito _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "apertado",
+      "options": [
+        "apertado",
+        "sujo",
+        "quebrado",
+        "molhado"
+      ],
+      "translation": "The bus seat was very _____.",
+      "optionTranslations": [
+        "tight",
+        "dirty",
+        "broken",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "a-senhora-nao-dorme",
+        "storySource": "user",
+        "sentence": "O assento do ônibus estava muito apertado.",
         "targetWord": "apertado",
         "language": "portuguese"
       }
-    },
-    "featured": false
+    }
   },
   {
     "type": "fill_blank",
-    "word": "lento",
-    "sentence": "É um trem velho e muito _____: leva doze horas.",
+    "word": "enjoo",
+    "sentence": "Durante a viagem, ela sentiu um pouco de _____.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "lento",
+      "answer": "enjoo",
       "options": [
-        "lento",
-        "rápido",
-        "curto",
-        "moderno"
+        "enjoo",
+        "fome",
+        "sede",
+        "frio"
       ],
-      "translation": "It's an old and very _____ train: it takes twelve hours.",
+      "translation": "During the trip, she felt a bit of _____.",
       "optionTranslations": [
-        "slow",
-        "fast",
-        "short",
-        "modern"
+        "motion sickness",
+        "hunger",
+        "thirst",
+        "cold"
       ],
       "audioClip": {
         "storySlug": "a-senhora-nao-dorme",
         "storySource": "user",
-        "sentence": "É um trem velho e muito lento: leva doze horas.",
-        "targetWord": "lento",
+        "sentence": "Durante a viagem, ela sentiu um pouco de enjoo.",
+        "targetWord": "enjoo",
         "language": "portuguese"
       }
     },
     "featured": false
   },
   {
-    "type": "meaning_in_context",
+    "type": "fill_blank",
+    "word": "tontura",
+    "sentence": "Ao se levantar rápido, sentiu uma leve _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tontura",
+      "options": [
+        "tontura",
+        "dor",
+        "febre",
+        "coceira"
+      ],
+      "translation": "Standing up fast, he felt a slight _____.",
+      "optionTranslations": [
+        "dizziness",
+        "pain",
+        "fever",
+        "itching"
+      ],
+      "audioClip": {
+        "storySlug": "a-senhora-nao-dorme",
+        "storySource": "user",
+        "sentence": "Ao se levantar rápido, sentiu uma leve tontura.",
+        "targetWord": "tontura",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
     "word": "longo",
-    "sentence": "A estrada é [[longa]] e o ônibus vai devagar.",
+    "sentence": "O caminho até Bonito é muito _____.",
     "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "long",
+      "prompt": "Complete the sentence.",
+      "answer": "longo",
       "options": [
+        "longo",
+        "curto",
+        "perigoso",
+        "estreito"
+      ],
+      "translation": "The road to Bonito is very _____.",
+      "optionTranslations": [
         "long",
-        "wide",
-        "wet",
-        "dark"
+        "short",
+        "dangerous",
+        "narrow"
       ],
       "audioClip": {
         "storySlug": "a-senhora-nao-dorme",
         "storySource": "user",
-        "sentence": "A estrada é longa e o ônibus vai devagar.",
-        "targetWord": "longa",
+        "sentence": "O caminho até Bonito é muito longo.",
+        "targetWord": "longo",
         "language": "portuguese"
       }
     },
@@ -370,75 +347,119 @@
   },
   {
     "type": "fill_blank",
-    "word": "estreita",
-    "sentence": "A rua é tão _____ que o carro não passa.",
+    "word": "distraído",
+    "sentence": "O motorista, _____, não notou a placa da saída.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "estreita",
+      "answer": "distraído",
       "options": [
-        "estreita",
-        "larga",
-        "limpa",
-        "bonita"
+        "distraído",
+        "cansado",
+        "curioso",
+        "nervoso"
       ],
-      "translation": "The street is so _____ that the car can't get through.",
+      "translation": "The driver, _____, did not notice the exit sign.",
       "optionTranslations": [
-        "narrow",
-        "wide",
-        "clean",
-        "pretty"
+        "absent-minded",
+        "tired",
+        "curious",
+        "nervous"
       ],
       "audioClip": {
         "storySlug": "a-senhora-nao-dorme",
         "storySource": "user",
-        "sentence": "A rua é tão estreita que o carro não passa.",
-        "targetWord": "estreita",
+        "sentence": "O motorista, distraído, não notou a placa da saída.",
+        "targetWord": "distraído",
         "language": "portuguese"
       }
     },
     "featured": false
   },
   {
-    "type": "meaning_in_context",
-    "word": "ocupado",
-    "sentence": "O ônibus segue [[ocupado]] e escuro.",
+    "type": "fill_blank",
+    "word": "continuar",
+    "sentence": "O ônibus vai _____ até a próxima cidade.",
     "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "full",
+      "prompt": "Complete the sentence.",
+      "answer": "continuar",
       "options": [
-        "full",
-        "empty",
-        "late",
-        "clean"
+        "continuar",
+        "parar",
+        "voltar",
+        "virar"
+      ],
+      "translation": "The bus will _____ to the next town.",
+      "optionTranslations": [
+        "continue",
+        "stop",
+        "return",
+        "turn"
       ],
       "audioClip": {
         "storySlug": "a-senhora-nao-dorme",
         "storySource": "user",
-        "sentence": "O ônibus segue ocupado e escuro.",
-        "targetWord": "ocupado",
+        "sentence": "O ônibus vai continuar até a próxima cidade.",
+        "targetWord": "continuar",
         "language": "portuguese"
       }
     },
     "featured": false
   },
   {
-    "type": "meaning_in_context",
-    "word": "abaixo",
-    "sentence": "Ela olha [[abaixo]], pela janela.",
+    "type": "fill_blank",
+    "word": "frequentemente",
+    "sentence": "O motorista faz esse trajeto _____.",
     "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "down below",
+      "prompt": "Complete the sentence.",
+      "answer": "frequentemente",
       "options": [
-        "down below",
-        "up above",
-        "behind her",
-        "inside"
+        "frequentemente",
+        "raramente",
+        "ontem",
+        "sozinho"
+      ],
+      "translation": "The driver does this route _____.",
+      "optionTranslations": [
+        "often",
+        "rarely",
+        "yesterday",
+        "alone"
       ],
       "audioClip": {
         "storySlug": "a-senhora-nao-dorme",
         "storySource": "user",
-        "sentence": "Ela olha abaixo, pela janela.",
-        "targetWord": "abaixo",
+        "sentence": "O motorista faz esse trajeto frequentemente.",
+        "targetWord": "frequentemente",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "exatamente",
+    "sentence": "Ele faz esse trabalho há _____ dez anos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "exatamente",
+      "options": [
+        "exatamente",
+        "quase",
+        "mais de",
+        "cerca de"
+      ],
+      "translation": "He has done this job for _____ ten years.",
+      "optionTranslations": [
+        "exactly",
+        "almost",
+        "more than",
+        "about"
+      ],
+      "audioClip": {
+        "storySlug": "a-senhora-nao-dorme",
+        "storySource": "user",
+        "sentence": "Ele faz esse trabalho há exatamente dez anos.",
+        "targetWord": "exatamente",
         "language": "portuguese"
       }
     },

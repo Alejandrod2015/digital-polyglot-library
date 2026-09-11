@@ -1,49 +1,49 @@
 [
   {
     "type": "match_meaning",
-    "word": "feijão,cebola,azeite,ovo",
+    "word": "cebola,azeite,feijão,arroz",
     "sentence": "",
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
         {
-          "word": "feijão",
-          "answer": "beans",
-          "options": [
-            "beans",
-            "an onion",
-            "olive oil",
-            "an egg"
-          ]
-        },
-        {
           "word": "cebola",
           "answer": "an onion",
           "options": [
-            "beans",
             "an onion",
             "olive oil",
-            "an egg"
+            "beans",
+            "rice"
           ]
         },
         {
           "word": "azeite",
           "answer": "olive oil",
           "options": [
-            "beans",
             "an onion",
             "olive oil",
-            "an egg"
+            "beans",
+            "rice"
           ]
         },
         {
-          "word": "ovo",
-          "answer": "an egg",
+          "word": "feijão",
+          "answer": "beans",
           "options": [
-            "beans",
             "an onion",
             "olive oil",
-            "an egg"
+            "beans",
+            "rice"
+          ]
+        },
+        {
+          "word": "arroz",
+          "answer": "rice",
+          "options": [
+            "an onion",
+            "olive oil",
+            "beans",
+            "rice"
           ]
         }
       ],
@@ -52,219 +52,205 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "arroz",
-    "sentence": "O [[arroz]] fica no outro bico.",
+    "word": "morador",
+    "sentence": "Todos os [[moradores]] dividem a cozinha pequena.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "rice",
+      "answer": "residents",
       "options": [
-        "rice",
-        "soup",
-        "bread",
-        "meat"
+        "residents",
+        "guests",
+        "owners",
+        "neighbors"
       ],
       "audioClip": {
         "storySlug": "a-batata-crua-no-feijao",
         "storySource": "user",
-        "sentence": "O arroz fica no outro bico.",
-        "targetWord": "arroz",
+        "sentence": "Todos os moradores dividem a cozinha pequena.",
+        "targetWord": "moradores",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "meaning_in_context",
-    "word": "tomate",
-    "sentence": "O [[tomate]] entra depois.",
+    "word": "provar",
+    "sentence": "Ela [[provou]] a sopa antes de servir.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a tomato",
+      "answer": "tasted",
       "options": [
-        "a tomato",
-        "a potato",
-        "a pepper",
-        "a lemon"
+        "tasted",
+        "cooked",
+        "burned",
+        "spilled"
       ],
       "audioClip": {
         "storySlug": "a-batata-crua-no-feijao",
         "storySource": "user",
-        "sentence": "O tomate entra depois.",
-        "targetWord": "tomate",
+        "sentence": "Ela provou a sopa antes de servir.",
+        "targetWord": "provou",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chateado",
+    "sentence": "Ela ficou [[chateada]] com o comentário dele.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "upset",
+      "options": [
+        "upset",
+        "surprised",
+        "proud",
+        "relieved"
+      ],
+      "audioClip": {
+        "storySlug": "a-batata-crua-no-feijao",
+        "storySource": "user",
+        "sentence": "Ela ficou chateada com o comentário dele.",
+        "targetWord": "chateada",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "assim que",
+    "sentence": "[[Assim que]] ele chegou, todos foram jantar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "as soon as",
+      "options": [
+        "as soon as",
+        "even though",
+        "in case",
+        "before that"
+      ],
+      "audioClip": {
+        "storySlug": "a-batata-crua-no-feijao",
+        "storySource": "user",
+        "sentence": "Assim que ele chegou, todos foram jantar.",
+        "targetWord": "Assim que",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "largar",
+    "sentence": "Ele [[largou]] a mochila perto da porta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dropped",
+      "options": [
+        "dropped",
+        "carried",
+        "cleaned",
+        "hid"
+      ],
+      "audioClip": {
+        "storySlug": "a-batata-crua-no-feijao",
+        "storySource": "user",
+        "sentence": "Ele largou a mochila perto da porta.",
+        "targetWord": "largou",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "no entanto",
+    "sentence": "Ele estava com fome; [[no entanto]], comeu pouco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "however",
+      "options": [
+        "however",
+        "therefore",
+        "meanwhile",
+        "besides"
+      ],
+      "audioClip": {
+        "storySlug": "a-batata-crua-no-feijao",
+        "storySource": "user",
+        "sentence": "Ele estava com fome; no entanto, comeu pouco.",
+        "targetWord": "no entanto",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calado",
+    "sentence": "Ele ficou [[calado]] durante o jantar inteiro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "quiet",
+      "options": [
+        "quiet",
+        "nervous",
+        "angry",
+        "happy"
+      ],
+      "audioClip": {
+        "storySlug": "a-batata-crua-no-feijao",
+        "storySource": "user",
+        "sentence": "Ele ficou calado durante o jantar inteiro.",
+        "targetWord": "calado",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cortar",
+    "sentence": "A batata veio [[cortada]] em quatro pedaços.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cut",
+      "options": [
+        "cut",
+        "boiled",
+        "fried",
+        "peeled"
+      ],
+      "audioClip": {
+        "storySlug": "a-batata-crua-no-feijao",
+        "storySource": "user",
+        "sentence": "A batata veio cortada em quatro pedaços.",
+        "targetWord": "cortada",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "fill_blank",
-    "word": "esquenta",
-    "sentence": "A sopa está fria, então ela _____ no fogão.",
+    "word": "doce",
+    "sentence": "Depois do almoço, ela comeu algo _____.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "esquenta",
+      "answer": "doce",
       "options": [
-        "esquenta",
-        "esfria",
-        "congela",
-        "esconde"
+        "doce",
+        "amargo",
+        "azedo",
+        "picante"
       ],
-      "translation": "The soup is cold, so she _____ it on the stove.",
+      "translation": "After lunch, she ate something _____.",
       "optionTranslations": [
-        "heats up",
-        "cools",
-        "freezes",
-        "hides"
+        "sweet",
+        "bitter",
+        "sour",
+        "spicy"
       ],
       "audioClip": {
         "storySlug": "a-batata-crua-no-feijao",
         "storySource": "user",
-        "sentence": "A sopa está fria, então ela esquenta no fogão.",
-        "targetWord": "esquenta",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "preparar",
-    "sentence": "Ela [[prepara]] o feijão como aprendeu em casa.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to make ready",
-      "options": [
-        "to make ready",
-        "to order",
-        "to buy",
-        "to throw away"
-      ],
-      "audioClip": {
-        "storySlug": "a-batata-crua-no-feijao",
-        "storySource": "user",
-        "sentence": "Ela prepara o feijão como aprendeu em casa.",
-        "targetWord": "prepara",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "misturar",
-    "sentence": "Ela [[mistura]] tudo com calma.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to mix",
-      "options": [
-        "to mix",
-        "to cut",
-        "to boil",
-        "to pour"
-      ],
-      "audioClip": {
-        "storySlug": "a-batata-crua-no-feijao",
-        "storySource": "user",
-        "sentence": "Ela mistura tudo com calma.",
-        "targetWord": "mistura",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "prova",
-    "sentence": "Antes de pôr sal, ela _____ a sopa com a colher.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "prova",
-      "options": [
-        "prova",
-        "dobra",
-        "pendura",
-        "empresta"
-      ],
-      "translation": "Before adding salt, she _____ the soup with the spoon.",
-      "optionTranslations": [
-        "tastes",
-        "folds",
-        "hangs",
-        "lends"
-      ],
-      "audioClip": {
-        "storySlug": "a-batata-crua-no-feijao",
-        "storySource": "user",
-        "sentence": "Antes de pôr sal, ela prova a sopa com a colher.",
-        "targetWord": "prova",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "servir",
-    "sentence": "Ela [[serve]] os outros e janta por último.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to serve",
-      "options": [
-        "to serve",
-        "to wake",
-        "to wash up",
-        "to sell"
-      ],
-      "audioClip": {
-        "storySlug": "a-batata-crua-no-feijao",
-        "storySource": "user",
-        "sentence": "Ela serve os outros e janta por último.",
-        "targetWord": "serve",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "comer",
-    "sentence": "Aí a gente [[come]] assim mesmo.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to eat",
-      "options": [
-        "to eat",
-        "to leave",
-        "to cry",
-        "to pay"
-      ],
-      "audioClip": {
-        "storySlug": "a-batata-crua-no-feijao",
-        "storySource": "user",
-        "sentence": "Aí a gente come assim mesmo.",
-        "targetWord": "come",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "bebe",
-    "sentence": "Ela está com sede e _____ dois copos de água.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "bebe",
-      "options": [
-        "bebe",
-        "come",
-        "vende",
-        "esconde"
-      ],
-      "translation": "She's thirsty and _____ two glasses of water.",
-      "optionTranslations": [
-        "drinks",
-        "eats",
-        "sells",
-        "hides"
-      ],
-      "audioClip": {
-        "storySlug": "a-batata-crua-no-feijao",
-        "storySource": "user",
-        "sentence": "Ela está com sede e bebe dois copos de água.",
-        "targetWord": "bebe",
+        "sentence": "Depois do almoço, ela comeu algo doce.",
+        "targetWord": "doce",
         "language": "portuguese"
       }
     }
@@ -272,20 +258,20 @@
   {
     "type": "meaning_in_context",
     "word": "tirar",
-    "sentence": "Vinte minutos e você [[tira]] a batata.",
+    "sentence": "Ela sempre [[tira]] a batata depois de vinte minutos.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to take out",
+      "answer": "takes out",
       "options": [
-        "to take out",
-        "to put in",
-        "to cut",
-        "to fry"
+        "takes out",
+        "adds",
+        "hides",
+        "burns"
       ],
       "audioClip": {
         "storySlug": "a-batata-crua-no-feijao",
         "storySource": "user",
-        "sentence": "Vinte minutos e você tira a batata.",
+        "sentence": "Ela sempre tira a batata depois de vinte minutos.",
         "targetWord": "tira",
         "language": "portuguese"
       }
@@ -294,52 +280,22 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "largar",
-    "sentence": "Ele [[larga]] a mochila e entra.",
+    "word": "desperdiçar",
+    "sentence": "Ninguém [[desperdiçou]] a comida que sobrou.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to drop",
+      "answer": "wasted",
       "options": [
-        "to drop",
-        "to pick up",
-        "to carry",
-        "to open"
+        "wasted",
+        "shared",
+        "cooked",
+        "sold"
       ],
       "audioClip": {
         "storySlug": "a-batata-crua-no-feijao",
         "storySource": "user",
-        "sentence": "Ele larga a mochila e entra.",
-        "targetWord": "larga",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "fill_blank",
-    "word": "salgado",
-    "sentence": "Coloquei sal demais: o feijão ficou _____.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "salgado",
-      "options": [
-        "salgado",
-        "doce",
-        "amargo",
-        "cru"
-      ],
-      "translation": "I put in too much salt: the beans came out _____.",
-      "optionTranslations": [
-        "salty",
-        "sweet",
-        "bitter",
-        "raw"
-      ],
-      "audioClip": {
-        "storySlug": "a-batata-crua-no-feijao",
-        "storySource": "user",
-        "sentence": "Coloquei sal demais: o feijão ficou salgado.",
-        "targetWord": "salgado",
+        "sentence": "Ninguém desperdiçou a comida que sobrou.",
+        "targetWord": "desperdiçou",
         "language": "portuguese"
       }
     },
@@ -347,22 +303,22 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "doce",
-    "sentence": "A batata não deixa o feijão [[doce]].",
+    "word": "servir",
+    "sentence": "Ela [[serviu]] o jantar para os seis moradores.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "sweet",
+      "answer": "served",
       "options": [
-        "sweet",
-        "salty",
-        "sour",
-        "spicy"
+        "served",
+        "bought",
+        "cooked",
+        "hid"
       ],
       "audioClip": {
         "storySlug": "a-batata-crua-no-feijao",
         "storySource": "user",
-        "sentence": "A batata não deixa o feijão doce.",
-        "targetWord": "doce",
+        "sentence": "Ela serviu o jantar para os seis moradores.",
+        "targetWord": "serviu",
         "language": "portuguese"
       }
     },
@@ -370,28 +326,51 @@
   },
   {
     "type": "fill_blank",
-    "word": "gostoso",
-    "sentence": "O bolo da padaria é tão _____ que acaba logo.",
+    "word": "ovo",
+    "sentence": "No café da manhã, ela sempre come um _____.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "gostoso",
+      "answer": "ovo",
       "options": [
-        "gostoso",
-        "ruim",
-        "duro",
-        "queimado"
+        "ovo",
+        "pão",
+        "queijo",
+        "suco"
       ],
-      "translation": "The bakery's cake is so _____ that it's gone fast.",
+      "translation": "For breakfast, she always eats an _____.",
       "optionTranslations": [
-        "tasty",
-        "bad",
-        "hard",
-        "burnt"
+        "egg",
+        "bread",
+        "cheese",
+        "juice"
       ],
       "audioClip": {
         "storySlug": "a-batata-crua-no-feijao",
         "storySource": "user",
-        "sentence": "O bolo da padaria é tão gostoso que acaba logo.",
+        "sentence": "No café da manhã, ela sempre come um ovo.",
+        "targetWord": "ovo",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gostoso",
+    "sentence": "O jantar ficou muito [[gostoso]] naquela noite.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tasty",
+      "options": [
+        "tasty",
+        "salty",
+        "cold",
+        "spicy"
+      ],
+      "audioClip": {
+        "storySlug": "a-batata-crua-no-feijao",
+        "storySource": "user",
+        "sentence": "O jantar ficou muito gostoso naquela noite.",
         "targetWord": "gostoso",
         "language": "portuguese"
       }
@@ -400,22 +379,22 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "frito",
-    "sentence": "Ela janta com um ovo [[frito]].",
+    "word": "sem dúvida",
+    "sentence": "[[Sem dúvida]], ela é a melhor cozinheira da casa.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "fried",
+      "answer": "without a doubt",
       "options": [
-        "fried",
-        "boiled",
-        "raw",
-        "cold"
+        "without a doubt",
+        "by the way",
+        "just in case",
+        "more or less"
       ],
       "audioClip": {
         "storySlug": "a-batata-crua-no-feijao",
         "storySource": "user",
-        "sentence": "Ela janta com um ovo frito.",
-        "targetWord": "frito",
+        "sentence": "Sem dúvida, ela é a melhor cozinheira da casa.",
+        "targetWord": "Sem dúvida",
         "language": "portuguese"
       }
     },
@@ -423,22 +402,22 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "quieto",
-    "sentence": "Ele prova também e fica [[quieto]].",
+    "word": "grato",
+    "sentence": "Ela ficou [[grata]] pela ajuda na cozinha.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "quiet",
+      "answer": "grateful",
       "options": [
-        "quiet",
-        "angry",
-        "happy",
-        "hungry"
+        "grateful",
+        "annoyed",
+        "confused",
+        "embarrassed"
       ],
       "audioClip": {
         "storySlug": "a-batata-crua-no-feijao",
         "storySource": "user",
-        "sentence": "Ele prova também e fica quieto.",
-        "targetWord": "quieto",
+        "sentence": "Ela ficou grata pela ajuda na cozinha.",
+        "targetWord": "grata",
         "language": "portuguese"
       }
     },

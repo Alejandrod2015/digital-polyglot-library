@@ -1,7 +1,7 @@
 [
   {
     "type": "match_meaning",
-    "word": "estação,rodovia,motorista,táxi",
+    "word": "estação,itinerário,táxi,rodovia",
     "sentence": "",
     "payload": {
       "prompt": "Match the words to their meanings.",
@@ -11,29 +11,19 @@
           "answer": "a station",
           "options": [
             "a station",
-            "a highway",
-            "a driver",
-            "a taxi"
+            "an itinerary",
+            "a taxi",
+            "a highway"
           ]
         },
         {
-          "word": "rodovia",
-          "answer": "a highway",
+          "word": "itinerário",
+          "answer": "an itinerary",
           "options": [
             "a station",
-            "a highway",
-            "a driver",
-            "a taxi"
-          ]
-        },
-        {
-          "word": "motorista",
-          "answer": "a driver",
-          "options": [
-            "a station",
-            "a highway",
-            "a driver",
-            "a taxi"
+            "an itinerary",
+            "a taxi",
+            "a highway"
           ]
         },
         {
@@ -41,9 +31,19 @@
           "answer": "a taxi",
           "options": [
             "a station",
-            "a highway",
-            "a driver",
-            "a taxi"
+            "an itinerary",
+            "a taxi",
+            "a highway"
+          ]
+        },
+        {
+          "word": "rodovia",
+          "answer": "a highway",
+          "options": [
+            "a station",
+            "an itinerary",
+            "a taxi",
+            "a highway"
           ]
         }
       ],
@@ -52,219 +52,44 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "horário",
-    "sentence": "Ela chega com o [[horário]] impresso na mão.",
+    "word": "apressado",
+    "sentence": "Ela sempre chega [[apressada]] às reuniões da manhã.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the timetable",
+      "answer": "in a hurry",
       "options": [
-        "the timetable",
-        "the ticket",
-        "the map",
-        "the receipt"
+        "in a hurry",
+        "half asleep",
+        "poorly dressed",
+        "very confident"
       ],
       "audioClip": {
         "storySlug": "um-papel-que-ja-nao-vale",
         "storySource": "user",
-        "sentence": "Ela chega com o horário impresso na mão.",
-        "targetWord": "horário",
+        "sentence": "Ela sempre chega apressada às reuniões da manhã.",
+        "targetWord": "apressada",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "meaning_in_context",
-    "word": "documento",
-    "sentence": "Ela olha o [[documento]] na mão e decide.",
+    "word": "valer",
+    "sentence": "Aquele bilhete já não [[valia]] mais para a viagem.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "an official paper",
+      "answer": "was valid",
       "options": [
-        "an official paper",
-        "a bus ticket",
-        "a letter",
-        "a photo"
+        "was valid",
+        "was expensive",
+        "was recent",
+        "was official"
       ],
       "audioClip": {
         "storySlug": "um-papel-que-ja-nao-vale",
         "storySource": "user",
-        "sentence": "Ela olha o documento na mão e decide.",
-        "targetWord": "documento",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "embarca",
-    "sentence": "Ela mostra a passagem ao motorista e _____ no ônibus.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "embarca",
-      "options": [
-        "embarca",
-        "cozinha",
-        "nada",
-        "pinta"
-      ],
-      "translation": "She shows her ticket to the driver and _____ the bus.",
-      "optionTranslations": [
-        "boards",
-        "cooks",
-        "swims",
-        "paints"
-      ],
-      "audioClip": {
-        "storySlug": "um-papel-que-ja-nao-vale",
-        "storySource": "user",
-        "sentence": "Ela mostra a passagem ao motorista e embarca no ônibus.",
-        "targetWord": "embarca",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "chegar",
-    "sentence": "Custa mais e [[chega]] tarde.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to arrive",
-      "options": [
-        "to arrive",
-        "to pay",
-        "to sleep",
-        "to call"
-      ],
-      "audioClip": {
-        "storySlug": "um-papel-que-ja-nao-vale",
-        "storySource": "user",
-        "sentence": "Custa mais e chega tarde.",
-        "targetWord": "chega",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "sair",
-    "sentence": "O próximo [[sai]] às seis.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to leave",
-      "options": [
-        "to leave",
-        "to stop",
-        "to cost",
-        "to fill up"
-      ],
-      "audioClip": {
-        "storySlug": "um-papel-que-ja-nao-vale",
-        "storySource": "user",
-        "sentence": "O próximo sai às seis.",
-        "targetWord": "sai",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "perder",
-    "sentence": "Corre, senão você vai _____ o último ônibus!",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "perder",
-      "options": [
-        "perder",
-        "pegar",
-        "lavar",
-        "consertar"
-      ],
-      "translation": "Run, or you're going to _____ the last bus!",
-      "optionTranslations": [
-        "miss",
-        "catch",
-        "wash",
-        "fix"
-      ],
-      "audioClip": {
-        "storySlug": "um-papel-que-ja-nao-vale",
-        "storySource": "user",
-        "sentence": "Corre, senão você vai perder o último ônibus!",
-        "targetWord": "perder",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "saber",
-    "sentence": "Ela não [[sabe]] o que fazer com o papel.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to know",
-      "options": [
-        "to know",
-        "to eat",
-        "to carry",
-        "to sell"
-      ],
-      "audioClip": {
-        "storySlug": "um-papel-que-ja-nao-vale",
-        "storySource": "user",
-        "sentence": "Ela não sabe o que fazer com o papel.",
-        "targetWord": "sabe",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "poder",
-    "sentence": "A senhora [[pode]] perder a conexão.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to be able to",
-      "options": [
-        "to be able to",
-        "to be afraid to",
-        "to refuse to",
-        "to pretend to"
-      ],
-      "audioClip": {
-        "storySlug": "um-papel-que-ja-nao-vale",
-        "storySource": "user",
-        "sentence": "A senhora pode perder a conexão.",
-        "targetWord": "pode",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "custa",
-    "sentence": "A passagem é cara: _____ o dobro do trem.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "custa",
-      "options": [
-        "custa",
-        "dura",
-        "pesa",
-        "mede"
-      ],
-      "translation": "The ticket is expensive: it _____ twice as much as the train.",
-      "optionTranslations": [
-        "costs",
-        "lasts",
-        "weighs",
-        "measures"
-      ],
-      "audioClip": {
-        "storySlug": "um-papel-que-ja-nao-vale",
-        "storySource": "user",
-        "sentence": "A passagem é cara: custa o dobro do trem.",
-        "targetWord": "custa",
+        "sentence": "Aquele bilhete já não valia mais para a viagem.",
+        "targetWord": "valia",
         "language": "portuguese"
       }
     }
@@ -272,44 +97,189 @@
   {
     "type": "meaning_in_context",
     "word": "dever",
-    "sentence": "Eu [[devo]] estar lá amanhã cedo.",
+    "sentence": "[[Devo]] confirmar o horário antes de sair de casa.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to have to",
+      "answer": "I have to",
       "options": [
-        "to have to",
-        "to hope to",
-        "to forget to",
-        "to learn to"
+        "I have to",
+        "I want to",
+        "I forgot to",
+        "I prefer to"
       ],
       "audioClip": {
         "storySlug": "um-papel-que-ja-nao-vale",
         "storySource": "user",
-        "sentence": "Eu devo estar lá amanhã cedo.",
-        "targetWord": "devo",
+        "sentence": "Devo confirmar o horário antes de sair de casa.",
+        "targetWord": "Devo",
         "language": "portuguese"
       }
-    },
-    "featured": false
+    }
   },
   {
     "type": "meaning_in_context",
-    "word": "querer",
-    "sentence": "Ela [[quer]] o de hoje e pergunta o preço.",
+    "word": "sair",
+    "sentence": "O funcionário disse que o ônibus não [[sairia]] mais hoje.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to want",
+      "answer": "would leave",
       "options": [
-        "to want",
-        "to find",
-        "to lose",
-        "to repair"
+        "would leave",
+        "would arrive",
+        "would stop",
+        "would return"
       ],
       "audioClip": {
         "storySlug": "um-papel-que-ja-nao-vale",
         "storySource": "user",
-        "sentence": "Ela quer o de hoje e pergunta o preço.",
-        "targetWord": "quer",
+        "sentence": "O funcionário disse que o ônibus não sairia mais hoje.",
+        "targetWord": "sairia",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desesperado",
+    "sentence": "Ao perder o voo, ela ficou completamente [[desesperada]] no saguão.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "desperate",
+      "options": [
+        "desperate",
+        "exhausted",
+        "confused",
+        "annoyed"
+      ],
+      "audioClip": {
+        "storySlug": "um-papel-que-ja-nao-vale",
+        "storySource": "user",
+        "sentence": "Ao perder o voo, ela ficou completamente desesperada no saguão.",
+        "targetWord": "desesperada",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "próximo",
+    "sentence": "O [[próximo]] trem sai da plataforma dois em breve.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "next",
+      "options": [
+        "next",
+        "delayed",
+        "empty",
+        "reserved"
+      ],
+      "audioClip": {
+        "storySlug": "um-papel-que-ja-nao-vale",
+        "storySource": "user",
+        "sentence": "O próximo trem sai da plataforma dois em breve.",
+        "targetWord": "próximo",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "buzinar",
+    "sentence": "O táxi [[buzinou]] duas vezes antes de partir.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "honked",
+      "options": [
+        "honked",
+        "braked",
+        "stopped",
+        "turned"
+      ],
+      "audioClip": {
+        "storySlug": "um-papel-que-ja-nao-vale",
+        "storySource": "user",
+        "sentence": "O táxi buzinou duas vezes antes de partir.",
+        "targetWord": "buzinou",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "embarcar",
+    "sentence": "Ela [[embarcou]] no último instante, com a mala na mão.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "boarded",
+      "options": [
+        "boarded",
+        "arrived",
+        "waited",
+        "paid"
+      ],
+      "audioClip": {
+        "storySlug": "um-papel-que-ja-nao-vale",
+        "storySource": "user",
+        "sentence": "Ela embarcou no último instante, com a mala na mão.",
+        "targetWord": "embarcou",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "chegar",
+    "sentence": "Ela espera _____ a tempo em Bonito.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "chegar",
+      "options": [
+        "chegar",
+        "partir",
+        "voltar",
+        "ficar"
+      ],
+      "translation": "She hopes to _____ on time in Bonito.",
+      "optionTranslations": [
+        "arrive",
+        "depart",
+        "return",
+        "stay"
+      ],
+      "audioClip": {
+        "storySlug": "um-papel-que-ja-nao-vale",
+        "storySource": "user",
+        "sentence": "Ela espera chegar a tempo em Bonito.",
+        "targetWord": "chegar",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "atualmente",
+    "sentence": "O trem, _____, sai da plataforma dois.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "atualmente",
+      "options": [
+        "atualmente",
+        "felizmente",
+        "finalmente",
+        "realmente"
+      ],
+      "translation": "The train, _____, leaves from platform two.",
+      "optionTranslations": [
+        "currently",
+        "fortunately",
+        "finally",
+        "really"
+      ],
+      "audioClip": {
+        "storySlug": "um-papel-que-ja-nao-vale",
+        "storySource": "user",
+        "sentence": "O trem, atualmente, sai da plataforma dois.",
+        "targetWord": "atualmente",
         "language": "portuguese"
       }
     },
@@ -317,74 +287,28 @@
   },
   {
     "type": "fill_blank",
-    "word": "apressado",
-    "sentence": "Um homem _____ corre para o guichê.",
+    "word": "último",
+    "sentence": "Este é o _____ ônibus do dia.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "apressado",
+      "answer": "último",
       "options": [
-        "apressado",
-        "sentado",
-        "sonolento",
-        "deitado"
+        "último",
+        "primeiro",
+        "rápido",
+        "vazio"
       ],
-      "translation": "A _____ man runs to the ticket window.",
+      "translation": "This is the _____ bus of the day.",
       "optionTranslations": [
-        "hurried",
-        "sitting",
-        "sleepy",
-        "lying down"
-      ],
-      "audioClip": {
-        "storySlug": "um-papel-que-ja-nao-vale",
-        "storySource": "user",
-        "sentence": "Um homem apressado corre para o guichê.",
-        "targetWord": "apressado",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "próximo",
-    "sentence": "O [[próximo]] sai às seis.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "next",
-      "options": [
-        "next",
-        "last",
-        "slow",
-        "cheap"
-      ],
-      "audioClip": {
-        "storySlug": "um-papel-que-ja-nao-vale",
-        "storySource": "user",
-        "sentence": "O próximo sai às seis.",
-        "targetWord": "próximo",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "último",
-    "sentence": "Mas ainda tem o [[último]] de hoje.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "last",
-      "options": [
         "last",
         "first",
-        "quickest",
-        "emptiest"
+        "fast",
+        "empty"
       ],
       "audioClip": {
         "storySlug": "um-papel-que-ja-nao-vale",
         "storySource": "user",
-        "sentence": "Mas ainda tem o último de hoje.",
+        "sentence": "Este é o último ônibus do dia.",
         "targetWord": "último",
         "language": "portuguese"
       }
@@ -393,52 +317,149 @@
   },
   {
     "type": "fill_blank",
-    "word": "seguinte",
-    "sentence": "Hoje não dá. Vou no ônibus _____, amanhã cedo.",
+    "word": "custar",
+    "sentence": "Quanto vai _____ o bilhete até lá?",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "seguinte",
+      "answer": "custar",
       "options": [
-        "seguinte",
-        "anterior",
-        "passado",
-        "noturno"
+        "custar",
+        "demorar",
+        "mudar",
+        "atrasar"
       ],
-      "translation": "Not today. I'll take the _____ bus, early tomorrow.",
+      "translation": "How much will the ticket _____ to get there?",
       "optionTranslations": [
-        "following",
-        "previous",
-        "past",
-        "night"
+        "cost",
+        "take (time)",
+        "change",
+        "be delayed"
       ],
       "audioClip": {
         "storySlug": "um-papel-que-ja-nao-vale",
         "storySource": "user",
-        "sentence": "Hoje não dá. Vou no ônibus seguinte, amanhã cedo.",
-        "targetWord": "seguinte",
+        "sentence": "Quanto vai custar o bilhete até lá?",
+        "targetWord": "custar",
         "language": "portuguese"
       }
     },
     "featured": false
   },
   {
-    "type": "meaning_in_context",
-    "word": "nunca",
-    "sentence": "A senhora [[nunca]] chega de ônibus direto.",
+    "type": "fill_blank",
+    "word": "conexão",
+    "sentence": "A _____ com o outro ônibus é muito apertada.",
     "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "never",
+      "prompt": "Complete the sentence.",
+      "answer": "conexão",
       "options": [
-        "never",
-        "always",
-        "often",
-        "soon"
+        "conexão",
+        "distância",
+        "demora",
+        "fila"
+      ],
+      "translation": "The _____ with the other bus is very tight.",
+      "optionTranslations": [
+        "connection",
+        "distance",
+        "delay",
+        "line"
       ],
       "audioClip": {
         "storySlug": "um-papel-que-ja-nao-vale",
         "storySource": "user",
-        "sentence": "A senhora nunca chega de ônibus direto.",
-        "targetWord": "nunca",
+        "sentence": "A conexão com o outro ônibus é muito apertada.",
+        "targetWord": "conexão",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "remarcar",
+    "sentence": "Ela decidiu não _____ a viagem.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "remarcar",
+      "options": [
+        "remarcar",
+        "cancelar",
+        "adiar",
+        "pagar"
+      ],
+      "translation": "She decided not to _____ the trip.",
+      "optionTranslations": [
+        "rebook",
+        "cancel",
+        "postpone",
+        "pay"
+      ],
+      "audioClip": {
+        "storySlug": "um-papel-que-ja-nao-vale",
+        "storySource": "user",
+        "sentence": "Ela decidiu não remarcar a viagem.",
+        "targetWord": "remarcar",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "despachar",
+    "sentence": "Você pode _____ a mala aqui.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "despachar",
+      "options": [
+        "despachar",
+        "carregar",
+        "abrir",
+        "perder"
+      ],
+      "translation": "You can _____ the bag here.",
+      "optionTranslations": [
+        "check in",
+        "carry",
+        "open",
+        "lose"
+      ],
+      "audioClip": {
+        "storySlug": "um-papel-que-ja-nao-vale",
+        "storySource": "user",
+        "sentence": "Você pode despachar a mala aqui.",
+        "targetWord": "despachar",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "passageiro",
+    "sentence": "Só um _____ perdeu o ônibus hoje.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "passageiro",
+      "options": [
+        "passageiro",
+        "motorista",
+        "turista",
+        "funcionário"
+      ],
+      "translation": "Only one _____ missed the bus today.",
+      "optionTranslations": [
+        "passenger",
+        "driver",
+        "tourist",
+        "employee"
+      ],
+      "audioClip": {
+        "storySlug": "um-papel-que-ja-nao-vale",
+        "storySource": "user",
+        "sentence": "Só um passageiro perdeu o ônibus hoje.",
+        "targetWord": "passageiro",
         "language": "portuguese"
       }
     },

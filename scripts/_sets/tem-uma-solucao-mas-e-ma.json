@@ -1,7 +1,7 @@
 [
   {
     "type": "match_meaning",
-    "word": "emprego,salário,tarefa,solução",
+    "word": "emprego,videochamada,equipe,projeto",
     "sentence": "",
     "payload": {
       "prompt": "Match the words to their meanings.",
@@ -11,39 +11,39 @@
           "answer": "a job",
           "options": [
             "a job",
-            "a salary",
-            "a task",
-            "a way out"
+            "a video call",
+            "a team",
+            "a project"
           ]
         },
         {
-          "word": "salário",
-          "answer": "a salary",
+          "word": "videochamada",
+          "answer": "a video call",
           "options": [
             "a job",
-            "a salary",
-            "a task",
-            "a way out"
+            "a video call",
+            "a team",
+            "a project"
           ]
         },
         {
-          "word": "tarefa",
-          "answer": "a task",
+          "word": "equipe",
+          "answer": "a team",
           "options": [
             "a job",
-            "a salary",
-            "a task",
-            "a way out"
+            "a video call",
+            "a team",
+            "a project"
           ]
         },
         {
-          "word": "solução",
-          "answer": "a way out",
+          "word": "projeto",
+          "answer": "a project",
           "options": [
             "a job",
-            "a salary",
-            "a task",
-            "a way out"
+            "a video call",
+            "a team",
+            "a project"
           ]
         }
       ],
@@ -52,73 +52,22 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "pergunta",
-    "sentence": "Ela faz uma [[pergunta]] e oferece outra saída.",
+    "word": "cair",
+    "sentence": "A internet [[caiu]] bem na hora da reunião.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a question",
+      "answer": "to drop suddenly",
       "options": [
-        "a question",
-        "a promise",
-        "a joke",
-        "a mistake"
+        "to drop suddenly",
+        "to improve suddenly",
+        "to restart",
+        "to freeze"
       ],
       "audioClip": {
         "storySlug": "tem-uma-solucao-mas-e-ma",
         "storySource": "user",
-        "sentence": "Ela faz uma pergunta e oferece outra saída.",
-        "targetWord": "pergunta",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "vez",
-    "sentence": "Pela primeira [[vez]], o assunto não era dinheiro.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "a time, an occasion",
-      "options": [
-        "a time, an occasion",
-        "a place",
-        "a reason",
-        "a price"
-      ],
-      "audioClip": {
-        "storySlug": "tem-uma-solucao-mas-e-ma",
-        "storySource": "user",
-        "sentence": "Pela primeira vez, o assunto não era dinheiro.",
-        "targetWord": "vez",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "digita",
-    "sentence": "Ela _____ a senha no teclado.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "digita",
-      "options": [
-        "digita",
-        "canta",
-        "costura",
-        "pinta"
-      ],
-      "translation": "She _____ the password on the keyboard.",
-      "optionTranslations": [
-        "types",
-        "sings",
-        "sews",
-        "paints"
-      ],
-      "audioClip": {
-        "storySlug": "tem-uma-solucao-mas-e-ma",
-        "storySource": "user",
-        "sentence": "Ela digita a senha no teclado.",
-        "targetWord": "digita",
+        "sentence": "A internet caiu bem na hora da reunião.",
+        "targetWord": "caiu",
         "language": "portuguese"
       }
     }
@@ -126,21 +75,21 @@
   {
     "type": "meaning_in_context",
     "word": "conectar",
-    "sentence": "O notebook não [[conecta]] à internet.",
+    "sentence": "O notebook não [[conectava]] à rede do hotel.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to go online",
+      "answer": "to connect",
       "options": [
-        "to go online",
+        "to connect",
+        "to disconnect",
         "to charge",
-        "to switch off",
         "to print"
       ],
       "audioClip": {
         "storySlug": "tem-uma-solucao-mas-e-ma",
         "storySource": "user",
-        "sentence": "O notebook não conecta à internet.",
-        "targetWord": "conecta",
+        "sentence": "O notebook não conectava à rede do hotel.",
+        "targetWord": "conectava",
         "language": "portuguese"
       }
     }
@@ -148,50 +97,43 @@
   {
     "type": "meaning_in_context",
     "word": "trazer",
-    "sentence": "Ele [[traz]] a mesa do fundo.",
+    "sentence": "Ele [[trouxe]] uma mesa extra para ela trabalhar.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to bring",
       "options": [
         "to bring",
-        "to break",
-        "to lock",
-        "to paint"
+        "to sell",
+        "to borrow",
+        "to hide"
       ],
       "audioClip": {
         "storySlug": "tem-uma-solucao-mas-e-ma",
         "storySource": "user",
-        "sentence": "Ele traz a mesa do fundo.",
-        "targetWord": "traz",
+        "sentence": "Ele trouxe uma mesa extra para ela trabalhar.",
+        "targetWord": "trouxe",
         "language": "portuguese"
       }
     }
   },
   {
-    "type": "fill_blank",
-    "word": "paga",
-    "sentence": "No restaurante, ele pede a conta e _____.",
+    "type": "meaning_in_context",
+    "word": "digitar",
+    "sentence": "Ela [[digitou]] a senha rápido antes da chamada.",
     "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "paga",
+      "prompt": "Choose the meaning in context.",
+      "answer": "to type",
       "options": [
-        "paga",
-        "dorme",
-        "nada",
-        "chora"
-      ],
-      "translation": "At the restaurant, he asks for the bill and _____.",
-      "optionTranslations": [
-        "pays",
-        "sleeps",
-        "swims",
-        "cries"
+        "to type",
+        "to memorize",
+        "to erase",
+        "to shout"
       ],
       "audioClip": {
         "storySlug": "tem-uma-solucao-mas-e-ma",
         "storySource": "user",
-        "sentence": "No restaurante, ele pede a conta e paga.",
-        "targetWord": "paga",
+        "sentence": "Ela digitou a senha rápido antes da chamada.",
+        "targetWord": "digitou",
         "language": "portuguese"
       }
     }
@@ -199,21 +141,21 @@
   {
     "type": "meaning_in_context",
     "word": "mostrar",
-    "sentence": "Alguém [[mostra]] uma tabela na tela.",
+    "sentence": "Alguém da equipe [[mostrou]] o novo projeto na tela.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to show",
       "options": [
         "to show",
         "to hide",
-        "to print",
-        "to break"
+        "to sell",
+        "to copy"
       ],
       "audioClip": {
         "storySlug": "tem-uma-solucao-mas-e-ma",
         "storySource": "user",
-        "sentence": "Alguém mostra uma tabela na tela.",
-        "targetWord": "mostra",
+        "sentence": "Alguém da equipe mostrou o novo projeto na tela.",
+        "targetWord": "mostrou",
         "language": "portuguese"
       }
     }
@@ -221,95 +163,123 @@
   {
     "type": "meaning_in_context",
     "word": "oferecer",
-    "sentence": "Ela [[oferece]] uma terceira saída.",
+    "sentence": "Ela [[ofereceu]] outra solução para o problema.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to offer",
       "options": [
         "to offer",
-        "to refuse",
-        "to steal",
+        "to reject",
+        "to postpone",
         "to forget"
       ],
       "audioClip": {
         "storySlug": "tem-uma-solucao-mas-e-ma",
         "storySource": "user",
-        "sentence": "Ela oferece uma terceira saída.",
-        "targetWord": "oferece",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "escolhe",
-    "sentence": "Entre o azul e o vermelho, ela _____ o vermelho.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "escolhe",
-      "options": [
-        "escolhe",
-        "lava",
-        "dobra",
-        "perde"
-      ],
-      "translation": "Between the blue one and the red one, she _____ the red.",
-      "optionTranslations": [
-        "chooses",
-        "washes",
-        "folds",
-        "loses"
-      ],
-      "audioClip": {
-        "storySlug": "tem-uma-solucao-mas-e-ma",
-        "storySource": "user",
-        "sentence": "Entre o azul e o vermelho, ela escolhe o vermelho.",
-        "targetWord": "escolhe",
+        "sentence": "Ela ofereceu outra solução para o problema.",
+        "targetWord": "ofereceu",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "meaning_in_context",
-    "word": "cobrar",
-    "sentence": "A gente [[cobra]] menos do cliente.",
+    "word": "agradecer",
+    "sentence": "Renata [[agradeceu]] o café forte de Wilson.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to charge",
+      "answer": "to thank",
       "options": [
-        "to charge",
         "to thank",
-        "to meet",
-        "to call"
+        "to criticize",
+        "to ignore",
+        "to interrupt"
       ],
       "audioClip": {
         "storySlug": "tem-uma-solucao-mas-e-ma",
         "storySource": "user",
-        "sentence": "A gente cobra menos do cliente.",
-        "targetWord": "cobra",
+        "sentence": "Renata agradeceu o café forte de Wilson.",
+        "targetWord": "agradeceu",
         "language": "portuguese"
       }
-    },
-    "featured": false
+    }
   },
   {
     "type": "meaning_in_context",
-    "word": "deixar",
-    "sentence": "Ele [[deixa]] um café na mesa.",
+    "word": "depender",
+    "sentence": "O emprego dela [[dependia]] daquela videochamada única.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to leave",
+      "answer": "to depend on",
       "options": [
-        "to leave",
-        "to spill",
-        "to heat",
-        "to buy"
+        "to depend on",
+        "to differ from",
+        "to compete with",
+        "to complain about"
       ],
       "audioClip": {
         "storySlug": "tem-uma-solucao-mas-e-ma",
         "storySource": "user",
-        "sentence": "Ele deixa um café na mesa.",
-        "targetWord": "deixa",
+        "sentence": "O emprego dela dependia daquela videochamada única.",
+        "targetWord": "dependia",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "mau",
+    "sentence": "O resultado foi _____, mas ela seguiu confiante.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mau",
+      "options": [
+        "mau",
+        "bom",
+        "ótimo",
+        "normal"
+      ],
+      "translation": "The result was _____, but she stayed confident.",
+      "optionTranslations": [
+        "bad",
+        "good",
+        "great",
+        "normal"
+      ],
+      "audioClip": {
+        "storySlug": "tem-uma-solucao-mas-e-ma",
+        "storySource": "user",
+        "sentence": "O resultado foi mau, mas ela seguiu confiante.",
+        "targetWord": "mau",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "exigente",
+    "sentence": "A chefe dela era muito _____ com prazos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "exigente",
+      "options": [
+        "exigente",
+        "paciente",
+        "distraída",
+        "generosa"
+      ],
+      "translation": "Her boss was very _____ about deadlines.",
+      "optionTranslations": [
+        "demanding",
+        "patient",
+        "distracted",
+        "generous"
+      ],
+      "audioClip": {
+        "storySlug": "tem-uma-solucao-mas-e-ma",
+        "storySource": "user",
+        "sentence": "A chefe dela era muito exigente com prazos.",
+        "targetWord": "exigente",
         "language": "portuguese"
       }
     },
@@ -317,74 +287,118 @@
   },
   {
     "type": "fill_blank",
-    "word": "agradece",
-    "sentence": "Ela recebe o presente e _____ com um abraço.",
+    "word": "pagamento",
+    "sentence": "O _____ chegava sempre no fim do mês.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "agradece",
+      "answer": "pagamento",
       "options": [
-        "agradece",
-        "recusa",
-        "reclama",
-        "esquece"
+        "pagamento",
+        "contrato",
+        "horário",
+        "relatório"
       ],
-      "translation": "She gets the present and _____ with a hug.",
+      "translation": "The _____ always arrived at the end of the month.",
       "optionTranslations": [
-        "says thank you",
-        "refuses",
-        "complains",
-        "forgets"
+        "payment",
+        "contract",
+        "schedule",
+        "report"
       ],
       "audioClip": {
         "storySlug": "tem-uma-solucao-mas-e-ma",
         "storySource": "user",
-        "sentence": "Ela recebe o presente e agradece com um abraço.",
-        "targetWord": "agradece",
+        "sentence": "O pagamento chegava sempre no fim do mês.",
+        "targetWord": "pagamento",
         "language": "portuguese"
       }
     },
     "featured": false
   },
   {
-    "type": "meaning_in_context",
-    "word": "mau",
-    "sentence": "Tem uma solução, mas é [[má]].",
+    "type": "fill_blank",
+    "word": "discordar",
+    "sentence": "Ela quis _____ da chefe, mas ficou em silêncio.",
     "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "bad",
+      "prompt": "Complete the sentence.",
+      "answer": "discordar",
       "options": [
-        "bad",
-        "easy",
-        "new",
-        "rare"
+        "discordar",
+        "concordar",
+        "brigar",
+        "desistir"
+      ],
+      "translation": "She wanted to _____ with her boss, but stayed silent.",
+      "optionTranslations": [
+        "disagree",
+        "agree",
+        "argue",
+        "give up"
       ],
       "audioClip": {
         "storySlug": "tem-uma-solucao-mas-e-ma",
         "storySource": "user",
-        "sentence": "Tem uma solução, mas é má.",
-        "targetWord": "má",
+        "sentence": "Ela quis discordar da chefe, mas ficou em silêncio.",
+        "targetWord": "discordar",
         "language": "portuguese"
       }
     },
     "featured": false
   },
   {
-    "type": "meaning_in_context",
+    "type": "fill_blank",
+    "word": "meta",
+    "sentence": "A _____ verdadeira era cumprir o calendário.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "meta",
+      "options": [
+        "meta",
+        "desculpa",
+        "dúvida",
+        "opinião"
+      ],
+      "translation": "The real _____ was to meet the schedule.",
+      "optionTranslations": [
+        "goal",
+        "excuse",
+        "doubt",
+        "opinion"
+      ],
+      "audioClip": {
+        "storySlug": "tem-uma-solucao-mas-e-ma",
+        "storySource": "user",
+        "sentence": "A meta verdadeira era cumprir o calendário.",
+        "targetWord": "meta",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
     "word": "real",
-    "sentence": "O assunto [[real]] não era o dinheiro.",
+    "sentence": "O motivo _____ não era o dinheiro, era o tempo.",
     "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "true",
+      "prompt": "Complete the sentence.",
+      "answer": "real",
       "options": [
-        "true",
-        "small",
-        "old",
-        "next"
+        "real",
+        "principal",
+        "único",
+        "primeiro"
+      ],
+      "translation": "The _____ reason wasn't the money, it was the time.",
+      "optionTranslations": [
+        "real",
+        "main",
+        "only",
+        "first"
       ],
       "audioClip": {
         "storySlug": "tem-uma-solucao-mas-e-ma",
         "storySource": "user",
-        "sentence": "O assunto real não era o dinheiro.",
+        "sentence": "O motivo real não era o dinheiro, era o tempo.",
         "targetWord": "real",
         "language": "portuguese"
       }
@@ -393,29 +407,29 @@
   },
   {
     "type": "fill_blank",
-    "word": "rica",
-    "sentence": "Ela ganhou na loteria e agora é _____.",
+    "word": "rico",
+    "sentence": "A loja não era _____, apenas simples e pequena.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "rica",
+      "answer": "rico",
       "options": [
-        "rica",
-        "pobre",
-        "cansada",
-        "doente"
+        "rico",
+        "enorme",
+        "moderna",
+        "famosa"
       ],
-      "translation": "She won the lottery and now she's _____.",
+      "translation": "The shop wasn't _____, just simple and small.",
       "optionTranslations": [
         "rich",
-        "poor",
-        "tired",
-        "ill"
+        "huge",
+        "modern",
+        "famous"
       ],
       "audioClip": {
         "storySlug": "tem-uma-solucao-mas-e-ma",
         "storySource": "user",
-        "sentence": "Ela ganhou na loteria e agora é rica.",
-        "targetWord": "rica",
+        "sentence": "A loja não era rico, apenas simples e pequena.",
+        "targetWord": "rico",
         "language": "portuguese"
       }
     },
@@ -424,27 +438,27 @@
   {
     "type": "fill_blank",
     "word": "pobre",
-    "sentence": "Não tem dinheiro nem para o pão: é muito _____.",
+    "sentence": "Ela cresceu numa família _____, mas feliz.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "pobre",
       "options": [
         "pobre",
-        "rico",
-        "famoso",
-        "alto"
+        "grande",
+        "unida",
+        "viajada"
       ],
-      "translation": "He doesn't even have money for bread: he's very _____.",
+      "translation": "She grew up in a _____ family, but happy.",
       "optionTranslations": [
         "poor",
-        "rich",
-        "famous",
-        "tall"
+        "big",
+        "close-knit",
+        "well-travelled"
       ],
       "audioClip": {
         "storySlug": "tem-uma-solucao-mas-e-ma",
         "storySource": "user",
-        "sentence": "Não tem dinheiro nem para o pão: é muito pobre.",
+        "sentence": "Ela cresceu numa família pobre, mas feliz.",
         "targetWord": "pobre",
         "language": "portuguese"
       }

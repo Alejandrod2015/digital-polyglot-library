@@ -1,49 +1,49 @@
 [
   {
     "type": "match_meaning",
-    "word": "relatório,impressora,teclado,saco",
+    "word": "fatura,parcela,impressora,vencimento",
     "sentence": "",
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
         {
-          "word": "relatório",
-          "answer": "a report",
+          "word": "fatura",
+          "answer": "an invoice",
           "options": [
-            "a report",
+            "an invoice",
+            "an instalment",
             "a printer",
-            "a keyboard",
-            "a bag"
+            "a due date"
+          ]
+        },
+        {
+          "word": "parcela",
+          "answer": "an instalment",
+          "options": [
+            "an invoice",
+            "an instalment",
+            "a printer",
+            "a due date"
           ]
         },
         {
           "word": "impressora",
           "answer": "a printer",
           "options": [
-            "a report",
+            "an invoice",
+            "an instalment",
             "a printer",
-            "a keyboard",
-            "a bag"
+            "a due date"
           ]
         },
         {
-          "word": "teclado",
-          "answer": "a keyboard",
+          "word": "vencimento",
+          "answer": "a due date",
           "options": [
-            "a report",
+            "an invoice",
+            "an instalment",
             "a printer",
-            "a keyboard",
-            "a bag"
-          ]
-        },
-        {
-          "word": "saco",
-          "answer": "a bag",
-          "options": [
-            "a report",
-            "a printer",
-            "a keyboard",
-            "a bag"
+            "a due date"
           ]
         }
       ],
@@ -52,219 +52,22 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "notícia",
-    "sentence": "Depois ela lê uma [[notícia]] curta.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "a piece of news",
-      "options": [
-        "a piece of news",
-        "a recipe",
-        "a poem",
-        "a bill"
-      ],
-      "audioClip": {
-        "storySlug": "o-barbante-de-um-real",
-        "storySource": "user",
-        "sentence": "Depois ela lê uma notícia curta.",
-        "targetWord": "notícia",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "caixinha",
-    "sentence": "Tem um aviso na [[caixinha]] do balcão.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "a little box",
-      "options": [
-        "a little box",
-        "a shelf",
-        "a window",
-        "a door"
-      ],
-      "audioClip": {
-        "storySlug": "o-barbante-de-um-real",
-        "storySource": "user",
-        "sentence": "Tem um aviso na caixinha do balcão.",
-        "targetWord": "caixinha",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "embrulha",
-    "sentence": "Antes de dar o presente, ela _____ em papel colorido.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "embrulha",
-      "options": [
-        "embrulha",
-        "rasga",
-        "lava",
-        "come"
-      ],
-      "translation": "Before giving the present, she _____ it in colourful paper.",
-      "optionTranslations": [
-        "wraps",
-        "tears",
-        "washes",
-        "eats"
-      ],
-      "audioClip": {
-        "storySlug": "o-barbante-de-um-real",
-        "storySource": "user",
-        "sentence": "Antes de dar o presente, ela embrulha em papel colorido.",
-        "targetWord": "embrulha",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "amarrar",
-    "sentence": "Ela [[amarra]] o pacote com barbante.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to tie",
-      "options": [
-        "to tie",
-        "to cut",
-        "to open",
-        "to weigh"
-      ],
-      "audioClip": {
-        "storySlug": "o-barbante-de-um-real",
-        "storySource": "user",
-        "sentence": "Ela amarra o pacote com barbante.",
-        "targetWord": "amarra",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "dobrar",
-    "sentence": "Ela [[dobra]] as folhas e embrulha o pacote.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to fold",
-      "options": [
-        "to fold",
-        "to tear",
-        "to print",
-        "to count"
-      ],
-      "audioClip": {
-        "storySlug": "o-barbante-de-um-real",
-        "storySource": "user",
-        "sentence": "Ela dobra as folhas e embrulha o pacote.",
-        "targetWord": "dobra",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "fecha",
-    "sentence": "Está ventando muito, então ela _____ a janela.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "fecha",
-      "options": [
-        "fecha",
-        "abre",
-        "pinta",
-        "vende"
-      ],
-      "translation": "It's very windy, so she _____ the window.",
-      "optionTranslations": [
-        "shuts",
-        "opens",
-        "paints",
-        "sells"
-      ],
-      "audioClip": {
-        "storySlug": "o-barbante-de-um-real",
-        "storySource": "user",
-        "sentence": "Está ventando muito, então ela fecha a janela.",
-        "targetWord": "fecha",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
     "word": "abrir",
-    "sentence": "A tampa emperra, mas [[abre]].",
+    "sentence": "A tampa da impressora [[abria]] com dificuldade.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to open",
       "options": [
         "to open",
-        "to shut",
-        "to squeak",
-        "to break"
+        "to close",
+        "to break",
+        "to shine"
       ],
       "audioClip": {
         "storySlug": "o-barbante-de-um-real",
         "storySource": "user",
-        "sentence": "A tampa emperra, mas abre.",
-        "targetWord": "abre",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "emprestar",
-    "sentence": "Ele [[empresta]] a tesoura.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to lend",
-      "options": [
-        "to lend",
-        "to steal",
-        "to sell",
-        "to sharpen"
-      ],
-      "audioClip": {
-        "storySlug": "o-barbante-de-um-real",
-        "storySource": "user",
-        "sentence": "Ele empresta a tesoura.",
-        "targetWord": "empresta",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "manda",
-    "sentence": "Ela escreve a carta e _____ pelo correio.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "manda",
-      "options": [
-        "manda",
-        "recebe",
-        "rasga",
-        "esconde"
-      ],
-      "translation": "She writes the letter and _____ it by post.",
-      "optionTranslations": [
-        "sends",
-        "receives",
-        "tears up",
-        "hides"
-      ],
-      "audioClip": {
-        "storySlug": "o-barbante-de-um-real",
-        "storySource": "user",
-        "sentence": "Ela escreve a carta e manda pelo correio.",
-        "targetWord": "manda",
+        "sentence": "A tampa da impressora abria com dificuldade.",
+        "targetWord": "abria",
         "language": "portuguese"
       }
     }
@@ -272,126 +75,210 @@
   {
     "type": "meaning_in_context",
     "word": "vender",
-    "sentence": "Barbante, que eu [[vendo]] por um real.",
+    "sentence": "Esse barbante eu [[vendo]] por um real.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to sell",
       "options": [
         "to sell",
-        "to buy",
         "to lend",
-        "to tie"
+        "to throw away",
+        "to keep"
       ],
       "audioClip": {
         "storySlug": "o-barbante-de-um-real",
         "storySource": "user",
-        "sentence": "Barbante, que eu vendo por um real.",
+        "sentence": "Esse barbante eu vendo por um real.",
         "targetWord": "vendo",
         "language": "portuguese"
       }
-    },
-    "featured": false
+    }
   },
   {
     "type": "meaning_in_context",
-    "word": "aberto",
-    "sentence": "No correio a fila está [[aberta]] até as cinco.",
+    "word": "emprestar",
+    "sentence": "Wilson [[emprestou]] a tesoura sem cobrar nada.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "open",
+      "answer": "to lend",
       "options": [
-        "open",
-        "full",
-        "slow",
-        "closed"
+        "to lend",
+        "to sell",
+        "to fix",
+        "to hide"
       ],
       "audioClip": {
         "storySlug": "o-barbante-de-um-real",
         "storySource": "user",
-        "sentence": "No correio a fila está aberta até as cinco.",
-        "targetWord": "aberta",
+        "sentence": "Wilson emprestou a tesoura sem cobrar nada.",
+        "targetWord": "emprestou",
         "language": "portuguese"
       }
-    },
-    "featured": false
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "negar",
+    "sentence": "Ela quis pagar, mas ele [[negou]] o dinheiro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to refuse",
+      "options": [
+        "to refuse",
+        "to accept",
+        "to count",
+        "to double"
+      ],
+      "audioClip": {
+        "storySlug": "o-barbante-de-um-real",
+        "storySource": "user",
+        "sentence": "Ela quis pagar, mas ele negou o dinheiro.",
+        "targetWord": "negou",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dobrar",
+    "sentence": "Renata [[dobrou]] as folhas antes de embalar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to fold",
+      "options": [
+        "to fold",
+        "to cut",
+        "to print",
+        "to burn"
+      ],
+      "audioClip": {
+        "storySlug": "o-barbante-de-um-real",
+        "storySource": "user",
+        "sentence": "Renata dobrou as folhas antes de embalar.",
+        "targetWord": "dobrou",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "embrulhar",
+    "sentence": "Ela [[embrulhou]] o pacote com cuidado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to wrap",
+      "options": [
+        "to wrap",
+        "to open",
+        "to weigh",
+        "to label"
+      ],
+      "audioClip": {
+        "storySlug": "o-barbante-de-um-real",
+        "storySource": "user",
+        "sentence": "Ela embrulhou o pacote com cuidado.",
+        "targetWord": "embrulhou",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amarrar",
+    "sentence": "Ela [[amarrou]] o pacote com um barbante grosso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tie",
+      "options": [
+        "to tie",
+        "to cut",
+        "to lift",
+        "to measure"
+      ],
+      "audioClip": {
+        "storySlug": "o-barbante-de-um-real",
+        "storySource": "user",
+        "sentence": "Ela amarrou o pacote com um barbante grosso.",
+        "targetWord": "amarrou",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mandar",
+    "sentence": "No correio, ela [[mandou]] o pacote antes das cinco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to send",
+      "options": [
+        "to send",
+        "to weigh",
+        "to open",
+        "to lose"
+      ],
+      "audioClip": {
+        "storySlug": "o-barbante-de-um-real",
+        "storySource": "user",
+        "sentence": "No correio, ela mandou o pacote antes das cinco.",
+        "targetWord": "mandou",
+        "language": "portuguese"
+      }
+    }
   },
   {
     "type": "fill_blank",
-    "word": "hoje",
-    "sentence": "Ontem choveu, mas _____ o sol voltou.",
+    "word": "anexo",
+    "sentence": "O relatório em _____ tinha que ir junto da fatura.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "hoje",
+      "answer": "anexo",
       "options": [
-        "hoje",
-        "ontem",
-        "amanhã",
-        "antes"
+        "anexo",
+        "rascunho",
+        "resumo",
+        "formulário"
       ],
-      "translation": "Yesterday it rained, but _____ the sun came back.",
+      "translation": "The report as an _____ had to go with the invoice.",
       "optionTranslations": [
-        "today",
-        "yesterday",
-        "tomorrow",
-        "before"
+        "attachment",
+        "draft",
+        "summary",
+        "form"
       ],
       "audioClip": {
         "storySlug": "o-barbante-de-um-real",
         "storySource": "user",
-        "sentence": "Ontem choveu, mas hoje o sol voltou.",
-        "targetWord": "hoje",
+        "sentence": "O relatório em anexo tinha que ir junto da fatura.",
+        "targetWord": "anexo",
         "language": "portuguese"
       }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "pesado",
-    "sentence": "[[Pesado]] assim, não cabe em envelope.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "heavy",
-      "options": [
-        "heavy",
-        "light",
-        "wet",
-        "cheap"
-      ],
-      "audioClip": {
-        "storySlug": "o-barbante-de-um-real",
-        "storySource": "user",
-        "sentence": "Pesado assim, não cabe em envelope.",
-        "targetWord": "Pesado",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
+    }
   },
   {
     "type": "fill_blank",
     "word": "colado",
-    "sentence": "O selo não sai do envelope: está bem _____.",
+    "sentence": "O teclado dela estava _____ de café.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "colado",
       "options": [
         "colado",
-        "solto",
-        "novo",
-        "barato"
+        "molhado",
+        "quente",
+        "riscado"
       ],
-      "translation": "The stamp won't come off the envelope: it's firmly _____.",
+      "translation": "Her keyboard was _____ with coffee.",
       "optionTranslations": [
         "stuck",
-        "loose",
-        "new",
-        "cheap"
+        "wet",
+        "hot",
+        "scratched"
       ],
       "audioClip": {
         "storySlug": "o-barbante-de-um-real",
         "storySource": "user",
-        "sentence": "O selo não sai do envelope: está bem colado.",
+        "sentence": "O teclado dela estava colado de café.",
         "targetWord": "colado",
         "language": "portuguese"
       }
@@ -399,23 +286,30 @@
     "featured": false
   },
   {
-    "type": "meaning_in_context",
-    "word": "branco",
-    "sentence": "Saem quinze folhas em preto e [[branco]].",
+    "type": "fill_blank",
+    "word": "reparo",
+    "sentence": "A impressora precisava de _____ antes de imprimir.",
     "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "white",
+      "prompt": "Complete the sentence.",
+      "answer": "reparo",
       "options": [
-        "white",
-        "grey",
-        "gold",
-        "green"
+        "reparo",
+        "limpeza",
+        "tinta",
+        "energia"
+      ],
+      "translation": "The printer needed _____ before it could print.",
+      "optionTranslations": [
+        "repair",
+        "cleaning",
+        "ink",
+        "power"
       ],
       "audioClip": {
         "storySlug": "o-barbante-de-um-real",
         "storySource": "user",
-        "sentence": "Saem quinze folhas em preto e branco.",
-        "targetWord": "branco",
+        "sentence": "A impressora precisava de reparo antes de imprimir.",
+        "targetWord": "reparo",
         "language": "portuguese"
       }
     },
@@ -424,28 +318,148 @@
   {
     "type": "fill_blank",
     "word": "preto",
-    "sentence": "À noite, sem lua, o céu fica _____.",
+    "sentence": "As folhas saíram em _____ e branco.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "preto",
       "options": [
         "preto",
-        "branco",
-        "amarelo",
-        "claro"
+        "cinza",
+        "azul",
+        "colorido"
       ],
-      "translation": "At night, with no moon, the sky turns _____.",
+      "translation": "The pages came out in _____ and white.",
       "optionTranslations": [
         "black",
-        "white",
-        "yellow",
-        "light"
+        "grey",
+        "blue",
+        "colourful"
       ],
       "audioClip": {
         "storySlug": "o-barbante-de-um-real",
         "storySource": "user",
-        "sentence": "À noite, sem lua, o céu fica preto.",
+        "sentence": "As folhas saíram em preto e branco.",
         "targetWord": "preto",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "branco",
+    "sentence": "A parede da loja era toda _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "branco",
+      "options": [
+        "branco",
+        "verde",
+        "marrom",
+        "escura"
+      ],
+      "translation": "The shop's wall was all _____.",
+      "optionTranslations": [
+        "white",
+        "green",
+        "brown",
+        "dark"
+      ],
+      "audioClip": {
+        "storySlug": "o-barbante-de-um-real",
+        "storySource": "user",
+        "sentence": "A parede da loja era toda branco.",
+        "targetWord": "branco",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pesado",
+    "sentence": "O pacote estava tão _____ que não cabia no envelope.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pesado",
+      "options": [
+        "pesado",
+        "fino",
+        "largo",
+        "redondo"
+      ],
+      "translation": "The package was so _____ it didn't fit in the envelope.",
+      "optionTranslations": [
+        "heavy",
+        "thin",
+        "wide",
+        "round"
+      ],
+      "audioClip": {
+        "storySlug": "o-barbante-de-um-real",
+        "storySource": "user",
+        "sentence": "O pacote estava tão pesado que não cabia no envelope.",
+        "targetWord": "pesado",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "aberto",
+    "sentence": "A fila do correio ainda estava _____ às cinco.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aberto",
+      "options": [
+        "aberto",
+        "fechada",
+        "vazia",
+        "longa"
+      ],
+      "translation": "The post office queue was still _____ at five.",
+      "optionTranslations": [
+        "open",
+        "closed",
+        "empty",
+        "long"
+      ],
+      "audioClip": {
+        "storySlug": "o-barbante-de-um-real",
+        "storySource": "user",
+        "sentence": "A fila do correio ainda estava aberto às cinco.",
+        "targetWord": "aberto",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "registrar",
+    "sentence": "Ela quis _____ o pacote para ter comprovante.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "registrar",
+      "options": [
+        "registrar",
+        "pesar",
+        "cancelar",
+        "comprar"
+      ],
+      "translation": "She wanted to _____ the package to get proof of posting.",
+      "optionTranslations": [
+        "register",
+        "weigh",
+        "cancel",
+        "buy"
+      ],
+      "audioClip": {
+        "storySlug": "o-barbante-de-um-real",
+        "storySource": "user",
+        "sentence": "Ela quis registrar o pacote para ter comprovante.",
+        "targetWord": "registrar",
         "language": "portuguese"
       }
     },

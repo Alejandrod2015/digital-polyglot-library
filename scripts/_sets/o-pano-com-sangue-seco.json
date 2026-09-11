@@ -1,49 +1,49 @@
 [
   {
     "type": "match_meaning",
-    "word": "orelha,nariz,osso,sangue",
+    "word": "sangue,osso,hospital,tratamento",
     "sentence": "",
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
         {
-          "word": "orelha",
-          "answer": "an ear",
+          "word": "sangue",
+          "answer": "blood",
           "options": [
-            "an ear",
-            "a nose",
+            "blood",
             "a bone",
-            "blood"
-          ]
-        },
-        {
-          "word": "nariz",
-          "answer": "a nose",
-          "options": [
-            "an ear",
-            "a nose",
-            "a bone",
-            "blood"
+            "a hospital",
+            "treatment"
           ]
         },
         {
           "word": "osso",
           "answer": "a bone",
           "options": [
-            "an ear",
-            "a nose",
+            "blood",
             "a bone",
-            "blood"
+            "a hospital",
+            "treatment"
           ]
         },
         {
-          "word": "sangue",
-          "answer": "blood",
+          "word": "hospital",
+          "answer": "a hospital",
           "options": [
-            "an ear",
-            "a nose",
+            "blood",
             "a bone",
-            "blood"
+            "a hospital",
+            "treatment"
+          ]
+        },
+        {
+          "word": "tratamento",
+          "answer": "treatment",
+          "options": [
+            "blood",
+            "a bone",
+            "a hospital",
+            "treatment"
           ]
         }
       ],
@@ -52,72 +52,43 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "doença",
-    "sentence": "[[Doença]] não é, mas o hospital fica perto.",
+    "word": "inchar",
+    "sentence": "Depois da queda, o dedo dela [[inchou]] bastante.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "an illness",
+      "answer": "to swell",
       "options": [
-        "an illness",
-        "a cure",
-        "a doctor",
-        "a wound"
+        "to swell",
+        "to bleed",
+        "to heal",
+        "to bruise slightly"
       ],
       "audioClip": {
         "storySlug": "o-pano-com-sangue-seco",
         "storySource": "user",
-        "sentence": "Doença não é, mas o hospital fica perto.",
-        "targetWord": "Doença",
+        "sentence": "Depois da queda, o dedo dela inchou bastante.",
+        "targetWord": "inchou",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "meaning_in_context",
-    "word": "hospital",
-    "sentence": "O [[hospital]] fica a duas quadras.",
+    "word": "machucar",
+    "sentence": "Ele tropeçou na escada e [[machucou]] o joelho.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a hospital",
+      "answer": "to hurt oneself",
       "options": [
-        "a hospital",
-        "a bakery",
-        "a bank",
-        "a school"
+        "to hurt oneself",
+        "to rest",
+        "to clean",
+        "to exercise"
       ],
       "audioClip": {
         "storySlug": "o-pano-com-sangue-seco",
         "storySource": "user",
-        "sentence": "O hospital fica a duas quadras.",
-        "targetWord": "hospital",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "machucou",
-    "sentence": "Ela caiu da escada e _____ o joelho.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "machucou",
-      "options": [
-        "machucou",
-        "pintou",
-        "vendeu",
-        "esqueceu"
-      ],
-      "translation": "She fell down the stairs and _____ her knee.",
-      "optionTranslations": [
-        "hurt",
-        "painted",
-        "sold",
-        "forgot"
-      ],
-      "audioClip": {
-        "storySlug": "o-pano-com-sangue-seco",
-        "storySource": "user",
-        "sentence": "Ela caiu da escada e machucou o joelho.",
+        "sentence": "Ele tropeçou na escada e machucou o joelho.",
         "targetWord": "machucou",
         "language": "portuguese"
       }
@@ -125,73 +96,22 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "engolir",
-    "sentence": "Eu [[engulo]] um comprimido e passa.",
+    "word": "cheirar",
+    "sentence": "O curativo [[cheirava]] a álcool e remédio.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to swallow",
+      "answer": "to smell of",
       "options": [
-        "to swallow",
-        "to chew",
-        "to spit out",
-        "to drop"
+        "to smell of",
+        "to taste like",
+        "to feel like",
+        "to look like"
       ],
       "audioClip": {
         "storySlug": "o-pano-com-sangue-seco",
         "storySource": "user",
-        "sentence": "Eu engulo um comprimido e passa.",
-        "targetWord": "engulo",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "coçar",
-    "sentence": "[[Coça]] por dentro.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to itch",
-      "options": [
-        "to itch",
-        "to burn",
-        "to bleed",
-        "to shake"
-      ],
-      "audioClip": {
-        "storySlug": "o-pano-com-sangue-seco",
-        "storySource": "user",
-        "sentence": "Coça por dentro.",
-        "targetWord": "Coça",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "cuidar",
-    "sentence": "Ela viaja, e a vizinha vai _____ das plantas.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "cuidar",
-      "options": [
-        "cuidar",
-        "rir",
-        "fugir",
-        "duvidar"
-      ],
-      "translation": "She's travelling, and the neighbour is going to _____ the plants.",
-      "optionTranslations": [
-        "look after",
-        "laugh at",
-        "run away from",
-        "doubt"
-      ],
-      "audioClip": {
-        "storySlug": "o-pano-com-sangue-seco",
-        "storySource": "user",
-        "sentence": "Ela viaja, e a vizinha vai cuidar das plantas.",
-        "targetWord": "cuidar",
+        "sentence": "O curativo cheirava a álcool e remédio.",
+        "targetWord": "cheirava",
         "language": "portuguese"
       }
     }
@@ -199,94 +119,153 @@
   {
     "type": "meaning_in_context",
     "word": "formigar",
-    "sentence": "[[Formiga]] um pouco, admite ela.",
+    "sentence": "Depois da injeção, o braço dela [[formiga]] um pouco.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to tingle",
       "options": [
         "to tingle",
+        "to swell up",
+        "to go numb completely",
+        "to burn badly"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "Depois da injeção, o braço dela formiga um pouco.",
+        "targetWord": "formiga",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "coçar",
+    "sentence": "O curativo novo [[coça]] a pele ao redor.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to itch",
+      "options": [
+        "to itch",
+        "to hurt sharply",
         "to bleed",
-        "to swell",
-        "to sneeze"
+        "to feel cold"
       ],
       "audioClip": {
         "storySlug": "o-pano-com-sangue-seco",
         "storySource": "user",
-        "sentence": "Formiga um pouco, admite ela.",
-        "targetWord": "Formiga",
+        "sentence": "O curativo novo coça a pele ao redor.",
+        "targetWord": "coça",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "meaning_in_context",
-    "word": "pesar",
-    "sentence": "O dedo inchou e a mão [[pesa]].",
+    "word": "preferir",
+    "sentence": "Ela [[prefere]] não fechar a farmácia cedo.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to feel heavy",
+      "answer": "to prefer",
       "options": [
-        "to feel heavy",
-        "to feel light",
-        "to feel cold",
-        "to feel wet"
+        "to prefer",
+        "to refuse",
+        "to forget",
+        "to promise"
       ],
       "audioClip": {
         "storySlug": "o-pano-com-sangue-seco",
         "storySource": "user",
-        "sentence": "O dedo inchou e a mão pesa.",
-        "targetWord": "pesa",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "prefiro",
-    "sentence": "Entre café e chá, eu _____ chá.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "prefiro",
-      "options": [
-        "prefiro",
-        "vendo",
-        "derramo",
-        "esqueço"
-      ],
-      "translation": "Between coffee and tea, I _____ tea.",
-      "optionTranslations": [
-        "prefer",
-        "sell",
-        "spill",
-        "forget"
-      ],
-      "audioClip": {
-        "storySlug": "o-pano-com-sangue-seco",
-        "storySource": "user",
-        "sentence": "Entre café e chá, eu prefiro chá.",
-        "targetWord": "prefiro",
+        "sentence": "Ela prefere não fechar a farmácia cedo.",
+        "targetWord": "prefere",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "meaning_in_context",
-    "word": "cheirar",
-    "sentence": "O pano [[cheira]] a álcool.",
+    "word": "cuidar",
+    "sentence": "Renata [[cuida]] do balcão enquanto Nilza descansa.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to smell of",
+      "answer": "to look after",
       "options": [
-        "to smell of",
-        "to taste of",
-        "to look like",
-        "to sound like"
+        "to look after",
+        "to clean",
+        "to close",
+        "to sell"
       ],
       "audioClip": {
         "storySlug": "o-pano-com-sangue-seco",
         "storySource": "user",
-        "sentence": "O pano cheira a álcool.",
-        "targetWord": "cheira",
+        "sentence": "Renata cuida do balcão enquanto Nilza descansa.",
+        "targetWord": "cuida",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "recuperar",
+    "sentence": "Com o tratamento certo, ela [[recupera]] a força rápido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to recover",
+      "options": [
+        "to recover",
+        "to lose",
+        "to hide",
+        "to test"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "Com o tratamento certo, ela recupera a força rápido.",
+        "targetWord": "recupera",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sem querer",
+    "sentence": "Ela derrubou a caixa [[sem querer]] e o dedo doeu.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "by accident",
+      "options": [
+        "by accident",
+        "on purpose",
+        "very carefully",
+        "with great effort"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "Ela derrubou a caixa sem querer e o dedo doeu.",
+        "targetWord": "sem querer",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dar certo",
+    "sentence": "Apesar do susto, tudo [[deu certo]] no final.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to work out well",
+      "options": [
+        "to work out well",
+        "to go completely wrong",
+        "to stay the same",
+        "to take too long"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "Apesar do susto, tudo deu certo no final.",
+        "targetWord": "deu certo",
         "language": "portuguese"
       }
     },
@@ -294,75 +273,22 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "proteger",
-    "sentence": "O dedo está [[protegido]] por uma tala.",
+    "word": "atento",
+    "sentence": "No balcão, Renata ficou bem [[atenta]] a tudo.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to keep safe",
+      "answer": "attentive",
       "options": [
-        "to keep safe",
-        "to bend",
-        "to paint",
-        "to show"
+        "attentive",
+        "distracted",
+        "bored",
+        "impatient"
       ],
       "audioClip": {
         "storySlug": "o-pano-com-sangue-seco",
         "storySource": "user",
-        "sentence": "O dedo está protegido por uma tala.",
-        "targetWord": "protegido",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "fill_blank",
-    "word": "fraco",
-    "sentence": "Coloquei pouco pó: o café ficou _____.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "fraco",
-      "options": [
-        "fraco",
-        "forte",
-        "amargo",
-        "grosso"
-      ],
-      "translation": "I used little coffee: it came out _____.",
-      "optionTranslations": [
-        "weak",
-        "strong",
-        "bitter",
-        "thick"
-      ],
-      "audioClip": {
-        "storySlug": "o-pano-com-sangue-seco",
-        "storySource": "user",
-        "sentence": "Coloquei pouco pó: o café ficou fraco.",
-        "targetWord": "fraco",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "ruim",
-    "sentence": "Um café fraco e [[ruim]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "bad",
-      "options": [
-        "bad",
-        "sweet",
-        "free",
-        "hot"
-      ],
-      "audioClip": {
-        "storySlug": "o-pano-com-sangue-seco",
-        "storySource": "user",
-        "sentence": "Um café fraco e ruim.",
-        "targetWord": "ruim",
+        "sentence": "No balcão, Renata ficou bem atenta a tudo.",
+        "targetWord": "atenta",
         "language": "portuguese"
       }
     },
@@ -371,20 +297,20 @@
   {
     "type": "meaning_in_context",
     "word": "tranquilo",
-    "sentence": "Ela fica [[tranquila]] atrás do balcão.",
+    "sentence": "Mesmo com o dedo fraturado, Nilza ficou [[tranquila]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "at ease",
+      "answer": "calm",
       "options": [
-        "at ease",
-        "scared",
-        "busy",
-        "angry"
+        "calm",
+        "nervous",
+        "furious",
+        "exhausted"
       ],
       "audioClip": {
         "storySlug": "o-pano-com-sangue-seco",
         "storySource": "user",
-        "sentence": "Ela fica tranquila atrás do balcão.",
+        "sentence": "Mesmo com o dedo fraturado, Nilza ficou tranquila.",
         "targetWord": "tranquila",
         "language": "portuguese"
       }
@@ -393,29 +319,29 @@
   },
   {
     "type": "fill_blank",
-    "word": "calmas",
-    "sentence": "Sem pressa e sem gritar, as duas conversam _____.",
+    "word": "calmo",
+    "sentence": "As duas conversaram de um jeito _____, sem brigar.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "calmas",
+      "answer": "calmo",
       "options": [
-        "calmas",
-        "furiosas",
-        "desesperadas",
-        "histéricas"
+        "calmo",
+        "agressivo",
+        "apressado",
+        "confuso"
       ],
-      "translation": "With no hurry and no shouting, the two women talk _____.",
+      "translation": "The two of them talked in a _____ way, without fighting.",
       "optionTranslations": [
-        "calmly",
-        "furiously",
-        "desperately",
-        "hysterically"
+        "calm",
+        "aggressive",
+        "hurried",
+        "confused"
       ],
       "audioClip": {
         "storySlug": "o-pano-com-sangue-seco",
         "storySource": "user",
-        "sentence": "Sem pressa e sem gritar, as duas conversam calmas.",
-        "targetWord": "calmas",
+        "sentence": "As duas conversaram de um jeito calmo, sem brigar.",
+        "targetWord": "calmo",
         "language": "portuguese"
       }
     },
@@ -423,29 +349,89 @@
   },
   {
     "type": "fill_blank",
-    "word": "amanhã",
-    "sentence": "Hoje está fechado; _____ a farmácia abre cedo.",
+    "word": "fraco",
+    "sentence": "Depois do susto, ela só quis um café _____.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "amanhã",
+      "answer": "fraco",
       "options": [
-        "amanhã",
-        "ontem",
-        "agora",
-        "nunca"
+        "fraco",
+        "forte",
+        "doce",
+        "gelado"
       ],
-      "translation": "It's closed today; _____ the pharmacy opens early.",
+      "translation": "After the scare, she only wanted a _____ coffee.",
       "optionTranslations": [
-        "tomorrow",
-        "yesterday",
-        "now",
-        "never"
+        "weak",
+        "strong",
+        "sweet",
+        "iced"
       ],
       "audioClip": {
         "storySlug": "o-pano-com-sangue-seco",
         "storySource": "user",
-        "sentence": "Hoje está fechado; amanhã a farmácia abre cedo.",
-        "targetWord": "amanhã",
+        "sentence": "Depois do susto, ela só quis um café fraco.",
+        "targetWord": "fraco",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "emergência",
+    "sentence": "Um dedo quebrado não é uma grande _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "emergência",
+      "options": [
+        "emergência",
+        "surpresa",
+        "dúvida",
+        "novidade"
+      ],
+      "translation": "A broken finger isn't a big _____.",
+      "optionTranslations": [
+        "emergency",
+        "surprise",
+        "doubt",
+        "piece of news"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "Um dedo quebrado não é uma grande emergência.",
+        "targetWord": "emergência",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "preocupação",
+    "sentence": "A viagem cansativa virou a principal _____ dela.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "preocupação",
+      "options": [
+        "preocupação",
+        "alegria",
+        "desculpa",
+        "lembrança"
+      ],
+      "translation": "The tiring trip became her main _____.",
+      "optionTranslations": [
+        "worry",
+        "joy",
+        "excuse",
+        "memory"
+      ],
+      "audioClip": {
+        "storySlug": "o-pano-com-sangue-seco",
+        "storySource": "user",
+        "sentence": "A viagem cansativa virou a principal preocupação dela.",
+        "targetWord": "preocupação",
         "language": "portuguese"
       }
     },

@@ -1,49 +1,49 @@
 [
   {
     "type": "match_meaning",
-    "word": "livro,caderno,lápis,lousa",
+    "word": "lousa,caderno,zelador,diretor",
     "sentence": "",
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
         {
-          "word": "livro",
-          "answer": "a book",
+          "word": "lousa",
+          "answer": "a chalkboard",
           "options": [
-            "a book",
+            "a chalkboard",
             "a notebook",
-            "a pencil",
-            "a blackboard"
+            "a caretaker",
+            "a principal"
           ]
         },
         {
           "word": "caderno",
           "answer": "a notebook",
           "options": [
-            "a book",
+            "a chalkboard",
             "a notebook",
-            "a pencil",
-            "a blackboard"
+            "a caretaker",
+            "a principal"
           ]
         },
         {
-          "word": "lápis",
-          "answer": "a pencil",
+          "word": "zelador",
+          "answer": "a caretaker",
           "options": [
-            "a book",
+            "a chalkboard",
             "a notebook",
-            "a pencil",
-            "a blackboard"
+            "a caretaker",
+            "a principal"
           ]
         },
         {
-          "word": "lousa",
-          "answer": "a blackboard",
+          "word": "diretor",
+          "answer": "a principal",
           "options": [
-            "a book",
+            "a chalkboard",
             "a notebook",
-            "a pencil",
-            "a blackboard"
+            "a caretaker",
+            "a principal"
           ]
         }
       ],
@@ -52,22 +52,51 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "professor",
-    "sentence": "Ela é [[professora]] numa escola do Pelourinho.",
+    "word": "cedo",
+    "sentence": "Renata chegou muito [[cedo]] à escola naquele dia.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a teacher",
+      "answer": "early",
       "options": [
-        "a teacher",
-        "a cleaner",
-        "a nurse",
-        "a student"
+        "early",
+        "late",
+        "quietly",
+        "alone"
       ],
       "audioClip": {
         "storySlug": "a-lousa-e-nenhum-livro",
         "storySource": "user",
-        "sentence": "Ela é professora numa escola do Pelourinho.",
-        "targetWord": "professora",
+        "sentence": "Renata chegou muito cedo à escola naquele dia.",
+        "targetWord": "cedo",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tentar",
+    "sentence": "Mesmo sem saber a resposta, ele quis _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tentar",
+      "options": [
+        "tentar",
+        "desistir",
+        "copiar",
+        "chorar"
+      ],
+      "translation": "Even without knowing the answer, he wanted to _____.",
+      "optionTranslations": [
+        "try",
+        "give up",
+        "copy",
+        "cry"
+      ],
+      "audioClip": {
+        "storySlug": "a-lousa-e-nenhum-livro",
+        "storySource": "user",
+        "sentence": "Mesmo sem saber a resposta, ele quis tentar.",
+        "targetWord": "tentar",
         "language": "portuguese"
       }
     }
@@ -75,20 +104,20 @@
   {
     "type": "meaning_in_context",
     "word": "turma",
-    "sentence": "A [[turma]] do fundo não enxerga.",
+    "sentence": "A [[turma]] ficou em silêncio durante toda a prova.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the class",
+      "answer": "class",
       "options": [
-        "the class",
-        "the table",
-        "the family",
-        "the band"
+        "class",
+        "teacher",
+        "school",
+        "exam"
       ],
       "audioClip": {
         "storySlug": "a-lousa-e-nenhum-livro",
         "storySource": "user",
-        "sentence": "A turma do fundo não enxerga.",
+        "sentence": "A turma ficou em silêncio durante toda a prova.",
         "targetWord": "turma",
         "language": "portuguese"
       }
@@ -96,29 +125,131 @@
   },
   {
     "type": "fill_blank",
-    "word": "escuta",
-    "sentence": "O rádio está baixo, mas ela _____ tudo com atenção.",
+    "word": "detalhe",
+    "sentence": "Ela notou um _____ que ninguém mais tinha visto.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "escuta",
+      "answer": "detalhe",
       "options": [
-        "escuta",
-        "dobra",
-        "corta",
-        "embrulha"
+        "detalhe",
+        "erro",
+        "problema",
+        "segredo"
       ],
-      "translation": "The radio is low, but she _____ everything carefully.",
+      "translation": "She noticed a _____ that nobody else had seen.",
       "optionTranslations": [
-        "listens to",
-        "folds",
-        "cuts",
-        "wraps"
+        "detail",
+        "mistake",
+        "problem",
+        "secret"
       ],
       "audioClip": {
         "storySlug": "a-lousa-e-nenhum-livro",
         "storySource": "user",
-        "sentence": "O rádio está baixo, mas ela escuta tudo com atenção.",
-        "targetWord": "escuta",
+        "sentence": "Ela notou um detalhe que ninguém mais tinha visto.",
+        "targetWord": "detalhe",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "responder",
+    "sentence": "Ela precisa [[responder]] à pergunta com calma.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to answer",
+      "options": [
+        "to answer",
+        "to ask",
+        "to repeat",
+        "to forget"
+      ],
+      "audioClip": {
+        "storySlug": "a-lousa-e-nenhum-livro",
+        "storySource": "user",
+        "sentence": "Ela precisa responder à pergunta com calma.",
+        "targetWord": "responder",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "envergonhado",
+    "sentence": "Ele ficou muito _____ na frente da turma toda.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "envergonhado",
+      "options": [
+        "envergonhado",
+        "nervoso",
+        "cansado",
+        "confuso"
+      ],
+      "translation": "He felt very _____ in front of the whole class.",
+      "optionTranslations": [
+        "embarrassed",
+        "nervous",
+        "tired",
+        "confused"
+      ],
+      "audioClip": {
+        "storySlug": "a-lousa-e-nenhum-livro",
+        "storySource": "user",
+        "sentence": "Ele ficou muito envergonhado na frente da turma toda.",
+        "targetWord": "envergonhado",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "claro",
+    "sentence": "Sem a lousa, tudo ficou menos [[claro]] para os alunos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clear",
+      "options": [
+        "clear",
+        "difficult",
+        "boring",
+        "short"
+      ],
+      "audioClip": {
+        "storySlug": "a-lousa-e-nenhum-livro",
+        "storySource": "user",
+        "sentence": "Sem a lousa, tudo ficou menos claro para os alunos.",
+        "targetWord": "claro",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "prestar atenção",
+    "sentence": "O diretor pediu para todos _____ na aula.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "prestar atenção",
+      "options": [
+        "prestar atenção",
+        "ficar calado",
+        "sair da sala",
+        "copiar tudo"
+      ],
+      "translation": "The principal asked everyone to _____ during the class.",
+      "optionTranslations": [
+        "pay attention",
+        "stay quiet",
+        "leave the room",
+        "copy everything"
+      ],
+      "audioClip": {
+        "storySlug": "a-lousa-e-nenhum-livro",
+        "storySource": "user",
+        "sentence": "O diretor pediu para todos prestar atenção na aula.",
+        "targetWord": "prestar atenção",
         "language": "portuguese"
       }
     }
@@ -126,273 +257,50 @@
   {
     "type": "meaning_in_context",
     "word": "repetir",
-    "sentence": "Ela escuta e [[repete]] em voz alta.",
+    "sentence": "A professora pediu para [[repetir]] a mesma frase.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to say again",
+      "answer": "to repeat",
       "options": [
-        "to say again",
-        "to write down",
-        "to cross out",
-        "to sing"
+        "to repeat",
+        "to explain",
+        "to translate",
+        "to write"
       ],
       "audioClip": {
         "storySlug": "a-lousa-e-nenhum-livro",
         "storySource": "user",
-        "sentence": "Ela escuta e repete em voz alta.",
-        "targetWord": "repete",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "entender",
-    "sentence": "De pé, eles [[entendem]] melhor.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to understand",
-      "options": [
-        "to understand",
-        "to sleep",
-        "to sing",
-        "to eat"
-      ],
-      "audioClip": {
-        "storySlug": "a-lousa-e-nenhum-livro",
-        "storySource": "user",
-        "sentence": "De pé, eles entendem melhor.",
-        "targetWord": "entendem",
+        "sentence": "A professora pediu para repetir a mesma frase.",
+        "targetWord": "repetir",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "fill_blank",
-    "word": "pergunta",
-    "sentence": "Ela não sabe o caminho e _____ a um policial.",
+    "word": "aos poucos",
+    "sentence": "_____, os alunos entenderam a explicação toda.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "pergunta",
+      "answer": "aos poucos",
       "options": [
-        "pergunta",
-        "responde",
-        "obedece",
-        "escreve"
+        "aos poucos",
+        "de repente",
+        "no início",
+        "por acaso"
       ],
-      "translation": "She doesn't know the way and _____ a police officer.",
+      "translation": "_____, the students understood the whole explanation.",
       "optionTranslations": [
-        "asks",
-        "answers",
-        "obeys",
-        "writes"
+        "little by little",
+        "suddenly",
+        "at first",
+        "by chance"
       ],
       "audioClip": {
         "storySlug": "a-lousa-e-nenhum-livro",
         "storySource": "user",
-        "sentence": "Ela não sabe o caminho e pergunta a um policial.",
-        "targetWord": "pergunta",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "escrever",
-    "sentence": "Se eu [[escrevo]] tudo na lousa, fica mais claro.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to write",
-      "options": [
-        "to write",
-        "to erase",
-        "to draw",
-        "to read"
-      ],
-      "audioClip": {
-        "storySlug": "a-lousa-e-nenhum-livro",
-        "storySource": "user",
-        "sentence": "Se eu escrevo tudo na lousa, fica mais claro.",
-        "targetWord": "escrevo",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "achar",
-    "sentence": "Ela [[acha]] graça e sorri.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to find",
-      "options": [
-        "to find",
-        "to lose",
-        "to hide",
-        "to forget"
-      ],
-      "audioClip": {
-        "storySlug": "a-lousa-e-nenhum-livro",
-        "storySource": "user",
-        "sentence": "Ela acha graça e sorri.",
-        "targetWord": "acha",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "tento",
-    "sentence": "Não sei se consigo, mas eu _____.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "tento",
-      "options": [
-        "tento",
-        "durmo",
-        "canto",
-        "desisto"
-      ],
-      "translation": "I'm not sure I can do it, but I _____.",
-      "optionTranslations": [
-        "try",
-        "sleep",
-        "sing",
-        "give up"
-      ],
-      "audioClip": {
-        "storySlug": "a-lousa-e-nenhum-livro",
-        "storySource": "user",
-        "sentence": "Não sei se consigo, mas eu tento.",
-        "targetWord": "tento",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "parecer",
-    "sentence": "Ninguém [[parece]] à vontade.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to seem",
-      "options": [
-        "to seem",
-        "to sit",
-        "to stay",
-        "to speak"
-      ],
-      "audioClip": {
-        "storySlug": "a-lousa-e-nenhum-livro",
-        "storySource": "user",
-        "sentence": "Ninguém parece à vontade.",
-        "targetWord": "parece",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "fill_blank",
-    "word": "difícil",
-    "sentence": "Ninguém da turma passou nessa prova: é muito _____.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "difícil",
-      "options": [
-        "difícil",
-        "fácil",
-        "curta",
-        "leve"
-      ],
-      "translation": "Nobody in the class passed this test: it's very _____.",
-      "optionTranslations": [
-        "hard",
-        "easy",
-        "short",
-        "light"
-      ],
-      "audioClip": {
-        "storySlug": "a-lousa-e-nenhum-livro",
-        "storySource": "user",
-        "sentence": "Ninguém da turma passou nessa prova: é muito difícil.",
-        "targetWord": "difícil",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "claro",
-    "sentence": "Na lousa, fica mais [[claro]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "easy to understand",
-      "options": [
-        "easy to understand",
-        "hard to read",
-        "too small",
-        "very loud"
-      ],
-      "audioClip": {
-        "storySlug": "a-lousa-e-nenhum-livro",
-        "storySource": "user",
-        "sentence": "Na lousa, fica mais claro.",
-        "targetWord": "claro",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "educado",
-    "sentence": "Eles escrevem devagar, [[educados]], sem barulho.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "polite",
-      "options": [
-        "polite",
-        "rude",
-        "hungry",
-        "sleepy"
-      ],
-      "audioClip": {
-        "storySlug": "a-lousa-e-nenhum-livro",
-        "storySource": "user",
-        "sentence": "Eles escrevem devagar, educados, sem barulho.",
-        "targetWord": "educados",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "fill_blank",
-    "word": "cedo",
-    "sentence": "Acordo às cinco, bem _____, para pegar o trem.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "cedo",
-      "options": [
-        "cedo",
-        "tarde",
-        "longe",
-        "alto"
-      ],
-      "translation": "I wake up at five, really _____, to catch the train.",
-      "optionTranslations": [
-        "early",
-        "late",
-        "far away",
-        "loudly"
-      ],
-      "audioClip": {
-        "storySlug": "a-lousa-e-nenhum-livro",
-        "storySource": "user",
-        "sentence": "Acordo às cinco, bem cedo, para pegar o trem.",
-        "targetWord": "cedo",
+        "sentence": "aos poucos, os alunos entenderam a explicação toda.",
+        "targetWord": "aos poucos",
         "language": "portuguese"
       }
     },
@@ -401,21 +309,51 @@
   {
     "type": "meaning_in_context",
     "word": "chamar",
-    "sentence": "Ela [[chama]] cada um à frente.",
+    "sentence": "A professora vai [[chamar]] os alunos um a um.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to call",
       "options": [
         "to call",
-        "to push",
-        "to follow",
-        "to pay"
+        "to teach",
+        "to help",
+        "to count"
       ],
       "audioClip": {
         "storySlug": "a-lousa-e-nenhum-livro",
         "storySource": "user",
-        "sentence": "Ela chama cada um à frente.",
-        "targetWord": "chama",
+        "sentence": "A professora vai chamar os alunos um a um.",
+        "targetWord": "chamar",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "escrever",
+    "sentence": "Cada aluno vai _____ a própria palavra na lousa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "escrever",
+      "options": [
+        "escrever",
+        "desenhar",
+        "apagar",
+        "ler"
+      ],
+      "translation": "Each student is going to _____ their own word on the board.",
+      "optionTranslations": [
+        "write",
+        "draw",
+        "erase",
+        "read"
+      ],
+      "audioClip": {
+        "storySlug": "a-lousa-e-nenhum-livro",
+        "storySource": "user",
+        "sentence": "Cada aluno vai escrever a própria palavra na lousa.",
+        "targetWord": "escrever",
         "language": "portuguese"
       }
     },
@@ -423,22 +361,105 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "responder",
-    "sentence": "Não sei, [[responde]] ela.",
+    "word": "na verdade",
+    "sentence": "[[Na verdade]], ninguém na sala estava à vontade.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to answer",
+      "answer": "in fact",
       "options": [
-        "to answer",
-        "to ask",
-        "to laugh",
-        "to lie"
+        "in fact",
+        "for now",
+        "by chance",
+        "in general"
       ],
       "audioClip": {
         "storySlug": "a-lousa-e-nenhum-livro",
         "storySource": "user",
-        "sentence": "Não sei, responde ela.",
-        "targetWord": "responde",
+        "sentence": "Na verdade, ninguém na sala estava à vontade.",
+        "targetWord": "Na verdade",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "educado",
+    "sentence": "O menino mais _____ da turma ajudou o professor.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "educado",
+      "options": [
+        "educado",
+        "tímido",
+        "curioso",
+        "distraído"
+      ],
+      "translation": "The most _____ boy in the class helped the teacher.",
+      "optionTranslations": [
+        "polite",
+        "shy",
+        "curious",
+        "distracted"
+      ],
+      "audioClip": {
+        "storySlug": "a-lousa-e-nenhum-livro",
+        "storySource": "user",
+        "sentence": "O menino mais educado da turma ajudou o professor.",
+        "targetWord": "educado",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entender",
+    "sentence": "De pé, foi mais fácil [[entender]] a explicação.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to understand",
+      "options": [
+        "to understand",
+        "to hear",
+        "to copy",
+        "to remember"
+      ],
+      "audioClip": {
+        "storySlug": "a-lousa-e-nenhum-livro",
+        "storySource": "user",
+        "sentence": "De pé, foi mais fácil entender a explicação.",
+        "targetWord": "entender",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "comentar",
+    "sentence": "No fim, o zelador quis _____ sobre a aula.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "comentar",
+      "options": [
+        "comentar",
+        "reclamar",
+        "perguntar",
+        "desistir"
+      ],
+      "translation": "In the end, the caretaker wanted to _____ on the class.",
+      "optionTranslations": [
+        "comment",
+        "complain",
+        "ask",
+        "give up"
+      ],
+      "audioClip": {
+        "storySlug": "a-lousa-e-nenhum-livro",
+        "storySource": "user",
+        "sentence": "No fim, o zelador quis comentar sobre a aula.",
+        "targetWord": "comentar",
         "language": "portuguese"
       }
     },

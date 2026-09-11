@@ -1,49 +1,49 @@
 [
   {
     "type": "match_meaning",
-    "word": "canoa,remo,floresta,montanha",
+    "word": "floresta,remo,montanha,barco",
     "sentence": "",
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
         {
-          "word": "canoa",
-          "answer": "a canoe",
+          "word": "floresta",
+          "answer": "a forest",
           "options": [
-            "a canoe",
-            "a paddle",
             "a forest",
-            "a mountain"
+            "a paddle",
+            "a mountain",
+            "a boat"
           ]
         },
         {
           "word": "remo",
           "answer": "a paddle",
           "options": [
-            "a canoe",
-            "a paddle",
             "a forest",
-            "a mountain"
-          ]
-        },
-        {
-          "word": "floresta",
-          "answer": "a forest",
-          "options": [
-            "a canoe",
             "a paddle",
-            "a forest",
-            "a mountain"
+            "a mountain",
+            "a boat"
           ]
         },
         {
           "word": "montanha",
           "answer": "a mountain",
           "options": [
-            "a canoe",
-            "a paddle",
             "a forest",
-            "a mountain"
+            "a paddle",
+            "a mountain",
+            "a boat"
+          ]
+        },
+        {
+          "word": "barco",
+          "answer": "a boat",
+          "options": [
+            "a forest",
+            "a paddle",
+            "a mountain",
+            "a boat"
           ]
         }
       ],
@@ -51,44 +51,102 @@
     }
   },
   {
-    "type": "meaning_in_context",
-    "word": "barco",
-    "sentence": "O [[barco]] deles já volta.",
+    "type": "fill_blank",
+    "word": "remar",
+    "sentence": "Ele sabe _____ desde criança.",
     "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "a boat",
+      "prompt": "Complete the sentence.",
+      "answer": "remar",
       "options": [
-        "a boat",
-        "a bridge",
-        "a truck",
-        "a tent"
+        "remar",
+        "nadar",
+        "pescar",
+        "dirigir"
+      ],
+      "translation": "He has known how to _____ since childhood.",
+      "optionTranslations": [
+        "row",
+        "swim",
+        "fish",
+        "drive"
       ],
       "audioClip": {
         "storySlug": "se-puxar-a-gente-vira",
         "storySource": "user",
-        "sentence": "O barco deles já volta.",
-        "targetWord": "barco",
+        "sentence": "Ele sabe remar desde criança.",
+        "targetWord": "remar",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "meaning_in_context",
-    "word": "temperatura",
-    "sentence": "A [[temperatura]] cai e o vento aumenta.",
+    "word": "alto",
+    "sentence": "O rio estava muito [[alto]] depois da chuva.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "how hot it is",
+      "answer": "high",
       "options": [
-        "how hot it is",
-        "how deep it is",
-        "how far it is",
-        "how late it is"
+        "high",
+        "low",
+        "dry",
+        "calm"
       ],
       "audioClip": {
         "storySlug": "se-puxar-a-gente-vira",
         "storySource": "user",
-        "sentence": "A temperatura cai e o vento aumenta.",
+        "sentence": "O rio estava muito alto depois da chuva.",
+        "targetWord": "alto",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "certamente",
+    "sentence": "[[Certamente]] vamos chegar atrasados hoje.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "certainly",
+      "options": [
+        "certainly",
+        "rarely",
+        "never",
+        "maybe"
+      ],
+      "audioClip": {
+        "storySlug": "se-puxar-a-gente-vira",
+        "storySource": "user",
+        "sentence": "Certamente vamos chegar atrasados hoje.",
+        "targetWord": "Certamente",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "temperatura",
+    "sentence": "A _____ da água estava muito baixa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "temperatura",
+      "options": [
+        "temperatura",
+        "profundidade",
+        "cor",
+        "velocidade"
+      ],
+      "translation": "The _____ of the water was very low.",
+      "optionTranslations": [
+        "temperature",
+        "depth",
+        "color",
+        "speed"
+      ],
+      "audioClip": {
+        "storySlug": "se-puxar-a-gente-vira",
+        "storySource": "user",
+        "sentence": "A temperatura da água estava muito baixa.",
         "targetWord": "temperatura",
         "language": "portuguese"
       }
@@ -96,145 +154,137 @@
   },
   {
     "type": "fill_blank",
-    "word": "rema",
-    "sentence": "Ele _____ com força e a canoa anda rápido.",
+    "word": "adiante",
+    "sentence": "O guia seguiu _____ sem olhar para trás.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "rema",
+      "answer": "adiante",
       "options": [
-        "rema",
-        "dorme",
-        "lê",
-        "boceja"
+        "adiante",
+        "devagar",
+        "sozinho",
+        "cedo"
       ],
-      "translation": "He _____ hard and the canoe moves fast.",
+      "translation": "The guide went _____ without looking back.",
       "optionTranslations": [
-        "rows",
-        "sleeps",
-        "reads",
-        "yawns"
+        "forward",
+        "slowly",
+        "alone",
+        "early"
       ],
       "audioClip": {
         "storySlug": "se-puxar-a-gente-vira",
         "storySource": "user",
-        "sentence": "Ele rema com força e a canoa anda rápido.",
-        "targetWord": "rema",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "atravessar",
-    "sentence": "Eles [[atravessam]] o primeiro trecho do rio.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to cross",
-      "options": [
-        "to cross",
-        "to close",
-        "to paint",
-        "to rent"
-      ],
-      "audioClip": {
-        "storySlug": "se-puxar-a-gente-vira",
-        "storySource": "user",
-        "sentence": "Eles atravessam o primeiro trecho do rio.",
-        "targetWord": "atravessam",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "balançar",
-    "sentence": "A canoa [[balança]] feio no rio.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to rock",
-      "options": [
-        "to rock",
-        "to sink",
-        "to shine",
-        "to melt"
-      ],
-      "audioClip": {
-        "storySlug": "se-puxar-a-gente-vira",
-        "storySource": "user",
-        "sentence": "A canoa balança feio no rio.",
-        "targetWord": "balança",
+        "sentence": "O guia seguiu adiante sem olhar para trás.",
+        "targetWord": "adiante",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "fill_blank",
-    "word": "escorrega",
-    "sentence": "O chão está molhado e ela _____ na escada.",
+    "word": "atravessar",
+    "sentence": "Depois de duas horas, eles conseguiram _____ o rio.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "escorrega",
+      "answer": "atravessar",
       "options": [
-        "escorrega",
-        "cozinha",
-        "costura",
-        "lê"
+        "atravessar",
+        "encontrar",
+        "evitar",
+        "desenhar"
       ],
-      "translation": "The floor is wet and she _____ on the stairs.",
+      "translation": "After two hours, they managed to _____ the river.",
       "optionTranslations": [
-        "slips",
-        "cooks",
-        "sews",
-        "reads"
+        "cross",
+        "find",
+        "avoid",
+        "draw"
       ],
       "audioClip": {
         "storySlug": "se-puxar-a-gente-vira",
         "storySource": "user",
-        "sentence": "O chão está molhado e ela escorrega na escada.",
-        "targetWord": "escorrega",
+        "sentence": "Depois de duas horas, eles conseguiram atravessar o rio.",
+        "targetWord": "atravessar",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "escorregar",
+    "sentence": "Com a pedra molhada, qualquer um pode _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "escorregar",
+      "options": [
+        "escorregar",
+        "cair",
+        "correr",
+        "parar"
+      ],
+      "translation": "With the wet stone, anyone can _____.",
+      "optionTranslations": [
+        "slip",
+        "fall",
+        "run",
+        "stop"
+      ],
+      "audioClip": {
+        "storySlug": "se-puxar-a-gente-vira",
+        "storySource": "user",
+        "sentence": "Com a pedra molhada, qualquer um pode escorregar.",
+        "targetWord": "escorregar",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "meaning_in_context",
-    "word": "empurrar",
-    "sentence": "O vento [[empurra]] o casco para o lado.",
+    "word": "praticamente",
+    "sentence": "Ela [[praticamente]] não dormiu essa noite.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to push",
+      "answer": "practically",
       "options": [
-        "to push",
-        "to pull",
-        "to lift",
-        "to wash"
+        "practically",
+        "rarely",
+        "always",
+        "never"
       ],
       "audioClip": {
         "storySlug": "se-puxar-a-gente-vira",
         "storySource": "user",
-        "sentence": "O vento empurra o casco para o lado.",
-        "targetWord": "empurra",
+        "sentence": "Ela praticamente não dormiu essa noite.",
+        "targetWord": "praticamente",
         "language": "portuguese"
       }
     }
   },
   {
-    "type": "meaning_in_context",
+    "type": "fill_blank",
     "word": "puxar",
-    "sentence": "Se ela [[puxar]], a gente vira.",
+    "sentence": "Se o nó apertar, você não deve _____ com força.",
     "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to pull",
+      "prompt": "Complete the sentence.",
+      "answer": "puxar",
       "options": [
-        "to pull",
-        "to push",
-        "to throw",
-        "to cut"
+        "puxar",
+        "cortar",
+        "soltar",
+        "amarrar"
+      ],
+      "translation": "If the knot tightens, you should not _____ hard.",
+      "optionTranslations": [
+        "pull",
+        "cut",
+        "release",
+        "tie"
       ],
       "audioClip": {
         "storySlug": "se-puxar-a-gente-vira",
         "storySource": "user",
-        "sentence": "Se ela puxar, a gente vira.",
+        "sentence": "Se o nó apertar, você não deve puxar com força.",
         "targetWord": "puxar",
         "language": "portuguese"
       }
@@ -242,51 +292,29 @@
   },
   {
     "type": "fill_blank",
-    "word": "arrasta",
-    "sentence": "A mala é pesada demais, então ela _____ pelo chão.",
+    "word": "obedecer",
+    "sentence": "O cachorro prefere _____ ao dono.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "arrasta",
+      "answer": "obedecer",
       "options": [
-        "arrasta",
-        "lava",
-        "dobra",
-        "costura"
+        "obedecer",
+        "morder",
+        "seguir",
+        "ignorar"
       ],
-      "translation": "The suitcase is far too heavy, so she _____ it along the floor.",
+      "translation": "The dog prefers to _____ its owner.",
       "optionTranslations": [
-        "drags",
-        "washes",
-        "folds",
-        "sews"
+        "obey",
+        "bite",
+        "follow",
+        "ignore"
       ],
       "audioClip": {
         "storySlug": "se-puxar-a-gente-vira",
         "storySource": "user",
-        "sentence": "A mala é pesada demais, então ela arrasta pelo chão.",
-        "targetWord": "arrasta",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "subir",
-    "sentence": "Ela [[sobe]] dez passos na areia.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to climb",
-      "options": [
-        "to climb",
-        "to dig",
-        "to fall",
-        "to swim"
-      ],
-      "audioClip": {
-        "storySlug": "se-puxar-a-gente-vira",
-        "storySource": "user",
-        "sentence": "Ela sobe dez passos na areia.",
-        "targetWord": "sobe",
+        "sentence": "O cachorro prefere obedecer ao dono.",
+        "targetWord": "obedecer",
         "language": "portuguese"
       }
     },
@@ -294,22 +322,82 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "descer",
-    "sentence": "[[Desceu]] chuva a noite inteira lá de cima.",
+    "word": "fôlego",
+    "sentence": "Depois da corrida, ela ficou sem [[fôlego]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to come down",
+      "answer": "breath",
       "options": [
-        "to come down",
-        "to dry up",
-        "to stop",
-        "to shine"
+        "breath",
+        "energy",
+        "voice",
+        "balance"
       ],
       "audioClip": {
         "storySlug": "se-puxar-a-gente-vira",
         "storySource": "user",
-        "sentence": "Desceu chuva a noite inteira lá de cima.",
-        "targetWord": "Desceu",
+        "sentence": "Depois da corrida, ela ficou sem fôlego.",
+        "targetWord": "fôlego",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "resistir",
+    "sentence": "Mesmo cansada, ela conseguiu _____ até o final.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "resistir",
+      "options": [
+        "resistir",
+        "desistir",
+        "dormir",
+        "chorar"
+      ],
+      "translation": "Even tired, she managed to _____ until the end.",
+      "optionTranslations": [
+        "endure",
+        "give up",
+        "sleep",
+        "cry"
+      ],
+      "audioClip": {
+        "storySlug": "se-puxar-a-gente-vira",
+        "storySource": "user",
+        "sentence": "Mesmo cansada, ela conseguiu resistir até o final.",
+        "targetWord": "resistir",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "arrastar",
+    "sentence": "A correnteza forte pode _____ até pedras grandes.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "arrastar",
+      "options": [
+        "arrastar",
+        "quebrar",
+        "esconder",
+        "molhar"
+      ],
+      "translation": "The strong current can _____ even big rocks.",
+      "optionTranslations": [
+        "drag",
+        "break",
+        "hide",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "se-puxar-a-gente-vira",
+        "storySource": "user",
+        "sentence": "A correnteza forte pode arrastar até pedras grandes.",
+        "targetWord": "arrastar",
         "language": "portuguese"
       }
     },
@@ -318,51 +406,21 @@
   {
     "type": "meaning_in_context",
     "word": "salvar",
-    "sentence": "Ele [[salva]] o remo que ia embora.",
+    "sentence": "O nadador conseguiu [[salvar]] a criança a tempo.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to save",
       "options": [
         "to save",
-        "to break",
-        "to drop",
-        "to sell"
+        "to find",
+        "to carry",
+        "to warn"
       ],
       "audioClip": {
         "storySlug": "se-puxar-a-gente-vira",
         "storySource": "user",
-        "sentence": "Ele salva o remo que ia embora.",
-        "targetWord": "salva",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "fill_blank",
-    "word": "alto",
-    "sentence": "Choveu muito na serra, e o rio está _____.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "alto",
-      "options": [
-        "alto",
-        "seco",
-        "baixo",
-        "raso"
-      ],
-      "translation": "It rained a lot in the hills, and the river is _____.",
-      "optionTranslations": [
-        "high",
-        "dry",
-        "low",
-        "shallow"
-      ],
-      "audioClip": {
-        "storySlug": "se-puxar-a-gente-vira",
-        "storySource": "user",
-        "sentence": "Choveu muito na serra, e o rio está alto.",
-        "targetWord": "alto",
+        "sentence": "O nadador conseguiu salvar a criança a tempo.",
+        "targetWord": "salvar",
         "language": "portuguese"
       }
     },
@@ -370,45 +428,22 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "curvado",
-    "sentence": "Há uma montanha de areia, [[curvada]] e torta.",
+    "word": "na hora",
+    "sentence": "O guia agiu [[na hora]] e evitou o acidente.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "curved",
+      "answer": "right away",
       "options": [
-        "curved",
-        "flat",
-        "wet",
-        "tiny"
+        "right away",
+        "too late",
+        "by accident",
+        "for free"
       ],
       "audioClip": {
         "storySlug": "se-puxar-a-gente-vira",
         "storySource": "user",
-        "sentence": "Há uma montanha de areia, curvada e torta.",
-        "targetWord": "curvada",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "torto",
-    "sentence": "O quadro na parede está [[torto]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "crooked",
-      "options": [
-        "crooked",
-        "clean",
-        "new",
-        "heavy"
-      ],
-      "audioClip": {
-        "storySlug": "se-puxar-a-gente-vira",
-        "storySource": "user",
-        "sentence": "O quadro na parede está torto.",
-        "targetWord": "torto",
+        "sentence": "O guia agiu na hora e evitou o acidente.",
+        "targetWord": "na hora",
         "language": "portuguese"
       }
     },
@@ -416,29 +451,29 @@
   },
   {
     "type": "fill_blank",
-    "word": "irregular",
-    "sentence": "O chão tem buracos e pedras: é muito _____.",
+    "word": "subir",
+    "sentence": "Com a chuva, o rio vai _____ ainda mais.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "irregular",
+      "answer": "subir",
       "options": [
-        "irregular",
-        "liso",
-        "plano",
-        "macio"
+        "subir",
+        "secar",
+        "parar",
+        "virar"
       ],
-      "translation": "The ground has holes and stones: it's very _____.",
+      "translation": "With the rain, the river is going to _____ even more.",
       "optionTranslations": [
-        "uneven",
-        "smooth",
-        "flat",
-        "soft"
+        "rise",
+        "dry up",
+        "stop",
+        "turn over"
       ],
       "audioClip": {
         "storySlug": "se-puxar-a-gente-vira",
         "storySource": "user",
-        "sentence": "O chão tem buracos e pedras: é muito irregular.",
-        "targetWord": "irregular",
+        "sentence": "Com a chuva, o rio vai subir ainda mais.",
+        "targetWord": "subir",
         "language": "portuguese"
       }
     },

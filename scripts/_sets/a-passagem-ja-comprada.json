@@ -1,49 +1,49 @@
 [
   {
     "type": "match_meaning",
-    "word": "tempestade,trovão,excursão,campo",
+    "word": "excursão,tempestade,canoa,clima",
     "sentence": "",
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
         {
-          "word": "tempestade",
-          "answer": "a storm",
-          "options": [
-            "a storm",
-            "thunder",
-            "a day trip",
-            "open country"
-          ]
-        },
-        {
-          "word": "trovão",
-          "answer": "thunder",
-          "options": [
-            "a storm",
-            "thunder",
-            "a day trip",
-            "open country"
-          ]
-        },
-        {
           "word": "excursão",
           "answer": "a day trip",
           "options": [
-            "a storm",
-            "thunder",
             "a day trip",
-            "open country"
+            "a storm",
+            "a canoe",
+            "the weather"
           ]
         },
         {
-          "word": "campo",
-          "answer": "open country",
+          "word": "tempestade",
+          "answer": "a storm",
           "options": [
-            "a storm",
-            "thunder",
             "a day trip",
-            "open country"
+            "a storm",
+            "a canoe",
+            "the weather"
+          ]
+        },
+        {
+          "word": "canoa",
+          "answer": "a canoe",
+          "options": [
+            "a day trip",
+            "a storm",
+            "a canoe",
+            "the weather"
+          ]
+        },
+        {
+          "word": "clima",
+          "answer": "the weather",
+          "options": [
+            "a day trip",
+            "a storm",
+            "a canoe",
+            "the weather"
           ]
         }
       ],
@@ -51,23 +51,30 @@
     }
   },
   {
-    "type": "meaning_in_context",
-    "word": "clima",
-    "sentence": "Ele olha o céu e não fala do [[clima]].",
+    "type": "fill_blank",
+    "word": "cancelar",
+    "sentence": "Por causa da chuva, a empresa teve que _____ o passeio.",
     "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "the weather",
+      "prompt": "Complete the sentence.",
+      "answer": "cancelar",
       "options": [
-        "the weather",
-        "the price",
-        "the road",
-        "the river"
+        "cancelar",
+        "adiar",
+        "repetir",
+        "confirmar"
+      ],
+      "translation": "Because of the rain, the company had to _____ the trip.",
+      "optionTranslations": [
+        "cancel",
+        "postpone",
+        "repeat",
+        "confirm"
       ],
       "audioClip": {
         "storySlug": "a-passagem-ja-comprada",
         "storySource": "user",
-        "sentence": "Ele olha o céu e não fala do clima.",
-        "targetWord": "clima",
+        "sentence": "Por causa da chuva, a empresa teve que cancelar o passeio.",
+        "targetWord": "cancelar",
         "language": "portuguese"
       }
     }
@@ -75,377 +82,398 @@
   {
     "type": "meaning_in_context",
     "word": "região",
-    "sentence": "Ela tem só três dias na [[região]].",
+    "sentence": "Cada [[região]] do país tem uma cultura própria.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the area",
+      "answer": "a region",
       "options": [
-        "the area",
-        "the hotel",
-        "the boat",
-        "the office"
+        "a region",
+        "a city",
+        "a country",
+        "a neighborhood"
       ],
       "audioClip": {
         "storySlug": "a-passagem-ja-comprada",
         "storySource": "user",
-        "sentence": "Ela tem só três dias na região.",
+        "sentence": "Cada região do país tem uma cultura própria.",
         "targetWord": "região",
         "language": "portuguese"
       }
     }
   },
   {
-    "type": "fill_blank",
-    "word": "desistir",
-    "sentence": "O caminho era difícil demais, e ela quis _____.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "desistir",
-      "options": [
-        "desistir",
-        "almoçar",
-        "dançar",
-        "sorrir"
-      ],
-      "translation": "The path was far too hard, and she wanted to _____.",
-      "optionTranslations": [
-        "give up",
-        "have lunch",
-        "dance",
-        "smile"
-      ],
-      "audioClip": {
-        "storySlug": "a-passagem-ja-comprada",
-        "storySource": "user",
-        "sentence": "O caminho era difícil demais, e ela quis desistir.",
-        "targetWord": "desistir",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
     "type": "meaning_in_context",
-    "word": "decidir",
-    "sentence": "Ela [[decide]] ficar e paga mais uma noite.",
+    "word": "previsão",
+    "sentence": "A [[previsão]] do tempo diz que vai chover.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to decide",
+      "answer": "the forecast",
       "options": [
-        "to decide",
-        "to forget",
-        "to explain",
-        "to complain"
+        "the forecast",
+        "the rumor",
+        "the warning",
+        "the announcement"
       ],
       "audioClip": {
         "storySlug": "a-passagem-ja-comprada",
         "storySource": "user",
-        "sentence": "Ela decide ficar e paga mais uma noite.",
-        "targetWord": "decide",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "pingar",
-    "sentence": "A chuva [[pinga]] mais forte no telhado.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to drip",
-      "options": [
-        "to drip",
-        "to shine",
-        "to blow",
-        "to burn"
-      ],
-      "audioClip": {
-        "storySlug": "a-passagem-ja-comprada",
-        "storySource": "user",
-        "sentence": "A chuva pinga mais forte no telhado.",
-        "targetWord": "pinga",
+        "sentence": "A previsão do tempo diz que vai chover.",
+        "targetWord": "previsão",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "fill_blank",
-    "word": "esfriou",
-    "sentence": "Abri a janela à noite e o quarto _____ rápido.",
+    "word": "raramente",
+    "sentence": "Ela _____ chega atrasada ao trabalho.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "esfriou",
+      "answer": "raramente",
       "options": [
-        "esfriou",
-        "esquentou",
-        "brilhou",
-        "cresceu"
+        "raramente",
+        "sempre",
+        "nunca",
+        "quase"
       ],
-      "translation": "I opened the window at night and the room _____ fast.",
+      "translation": "She _____ arrives late for work.",
       "optionTranslations": [
-        "got cold",
-        "warmed up",
-        "shone",
-        "grew"
+        "rarely",
+        "always",
+        "never",
+        "almost"
       ],
       "audioClip": {
         "storySlug": "a-passagem-ja-comprada",
         "storySource": "user",
-        "sentence": "Abri a janela à noite e o quarto esfriou rápido.",
-        "targetWord": "esfriou",
+        "sentence": "Ela raramente chega atrasada ao trabalho.",
+        "targetWord": "raramente",
         "language": "portuguese"
       }
     }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "acontecer",
-    "sentence": "Quero que você me diga o que [[acontece]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to happen",
-      "options": [
-        "to happen",
-        "to cost",
-        "to hurt",
-        "to arrive"
-      ],
-      "audioClip": {
-        "storySlug": "a-passagem-ja-comprada",
-        "storySource": "user",
-        "sentence": "Quero que você me diga o que acontece.",
-        "targetWord": "acontece",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "aparecer",
-    "sentence": "Alguma coisa [[aparece]] atrás da chuva.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to appear",
-      "options": [
-        "to appear",
-        "to fall",
-        "to break",
-        "to sleep"
-      ],
-      "audioClip": {
-        "storySlug": "a-passagem-ja-comprada",
-        "storySource": "user",
-        "sentence": "Alguma coisa aparece atrás da chuva.",
-        "targetWord": "aparece",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "molhado",
-    "sentence": "Esqueci o guarda-chuva e cheguei todo _____.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "molhado",
-      "options": [
-        "molhado",
-        "seco",
-        "limpo",
-        "calmo"
-      ],
-      "translation": "I forgot my umbrella and arrived all _____.",
-      "optionTranslations": [
-        "wet",
-        "dry",
-        "clean",
-        "calm"
-      ],
-      "audioClip": {
-        "storySlug": "a-passagem-ja-comprada",
-        "storySource": "user",
-        "sentence": "Esqueci o guarda-chuva e cheguei todo molhado.",
-        "targetWord": "molhado",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "esconder",
-    "sentence": "De manhã o céu ainda [[esconde]] tudo.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to hide",
-      "options": [
-        "to hide",
-        "to wash",
-        "to pay",
-        "to fix"
-      ],
-      "audioClip": {
-        "storySlug": "a-passagem-ja-comprada",
-        "storySource": "user",
-        "sentence": "De manhã o céu ainda esconde tudo.",
-        "targetWord": "esconde",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "cinza",
-    "sentence": "A tempestade deixou o céu [[cinza]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "grey",
-      "options": [
-        "grey",
-        "green",
-        "pink",
-        "gold"
-      ],
-      "audioClip": {
-        "storySlug": "a-passagem-ja-comprada",
-        "storySource": "user",
-        "sentence": "A tempestade deixou o céu cinza.",
-        "targetWord": "cinza",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "fill_blank",
-    "word": "demora",
-    "sentence": "O ônibus _____ muito e eu chego atrasada.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "demora",
-      "options": [
-        "demora",
-        "corre",
-        "custa",
-        "canta"
-      ],
-      "translation": "The bus _____ a long time and I arrive late.",
-      "optionTranslations": [
-        "takes",
-        "runs",
-        "costs",
-        "sings"
-      ],
-      "audioClip": {
-        "storySlug": "a-passagem-ja-comprada",
-        "storySource": "user",
-        "sentence": "O ônibus demora muito e eu chego atrasada.",
-        "targetWord": "demora",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "úmido",
-    "sentence": "O campo atrás da pousada está [[úmido]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "damp",
-      "options": [
-        "damp",
-        "dusty",
-        "sunny",
-        "flat"
-      ],
-      "audioClip": {
-        "storySlug": "a-passagem-ja-comprada",
-        "storySource": "user",
-        "sentence": "O campo atrás da pousada está úmido.",
-        "targetWord": "úmido",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "fill_blank",
-    "word": "feio",
-    "sentence": "Nuvens escuras e muito vento: o dia está _____.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "feio",
-      "options": [
-        "feio",
-        "bonito",
-        "claro",
-        "tranquilo"
-      ],
-      "translation": "Dark clouds and lots of wind: the day is _____.",
-      "optionTranslations": [
-        "nasty",
-        "lovely",
-        "bright",
-        "peaceful"
-      ],
-      "audioClip": {
-        "storySlug": "a-passagem-ja-comprada",
-        "storySource": "user",
-        "sentence": "Nuvens escuras e muito vento: o dia está feio.",
-        "targetWord": "feio",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "contente",
-    "sentence": "Ele está na porta, [[contente]], com dois remos na mão.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "pleased",
-      "options": [
-        "pleased",
-        "angry",
-        "scared",
-        "sleepy"
-      ],
-      "audioClip": {
-        "storySlug": "a-passagem-ja-comprada",
-        "storySource": "user",
-        "sentence": "Ele está na porta, contente, com dois remos na mão.",
-        "targetWord": "contente",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
   },
   {
     "type": "fill_blank",
     "word": "longe",
-    "sentence": "A praia fica _____: são duas horas de carro.",
+    "sentence": "A praia fica _____ da cidade.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "longe",
       "options": [
         "longe",
         "perto",
-        "aqui",
-        "embaixo"
+        "dentro",
+        "fora"
       ],
-      "translation": "The beach is _____: it's two hours by car.",
+      "translation": "The beach is _____ from the city.",
       "optionTranslations": [
-        "far away",
-        "nearby",
-        "here",
-        "downstairs"
+        "far",
+        "close",
+        "inside",
+        "outside"
       ],
       "audioClip": {
         "storySlug": "a-passagem-ja-comprada",
         "storySource": "user",
-        "sentence": "A praia fica longe: são duas horas de carro.",
+        "sentence": "A praia fica longe da cidade.",
         "targetWord": "longe",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "esfriar",
+    "sentence": "À noite, a temperatura vai _____ bastante.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "esfriar",
+      "options": [
+        "esfriar",
+        "esquentar",
+        "secar",
+        "escurecer"
+      ],
+      "translation": "At night, the temperature is going to _____ a lot.",
+      "optionTranslations": [
+        "get cold",
+        "warm up",
+        "dry up",
+        "get dark"
+      ],
+      "audioClip": {
+        "storySlug": "a-passagem-ja-comprada",
+        "storySource": "user",
+        "sentence": "À noite, a temperatura vai esfriar bastante.",
+        "targetWord": "esfriar",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "acontecer",
+    "sentence": "Ninguém sabe o que vai _____ amanhã.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "acontecer",
+      "options": [
+        "acontecer",
+        "mudar",
+        "melhorar",
+        "continuar"
+      ],
+      "translation": "Nobody knows what is going to _____ tomorrow.",
+      "optionTranslations": [
+        "happen",
+        "change",
+        "improve",
+        "continue"
+      ],
+      "audioClip": {
+        "storySlug": "a-passagem-ja-comprada",
+        "storySource": "user",
+        "sentence": "Ninguém sabe o que vai acontecer amanhã.",
+        "targetWord": "acontecer",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "feio",
+    "sentence": "O céu está [[feio]] hoje, acho que vai chover.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "threatening",
+      "options": [
+        "threatening",
+        "clear",
+        "sunny",
+        "calm"
+      ],
+      "audioClip": {
+        "storySlug": "a-passagem-ja-comprada",
+        "storySource": "user",
+        "sentence": "O céu está feio hoje, acho que vai chover.",
+        "targetWord": "feio",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "provavelmente",
+    "sentence": "[[Provavelmente]] vai chover à tarde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "probably",
+      "options": [
+        "probably",
+        "certainly",
+        "never",
+        "rarely"
+      ],
+      "audioClip": {
+        "storySlug": "a-passagem-ja-comprada",
+        "storySource": "user",
+        "sentence": "Provavelmente vai chover à tarde.",
+        "targetWord": "Provavelmente",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "decidir",
+    "sentence": "Antes da viagem, ela precisa _____ o itinerário.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "decidir",
+      "options": [
+        "decidir",
+        "esquecer",
+        "copiar",
+        "ignorar"
+      ],
+      "translation": "Before the trip, she needs to _____ on the itinerary.",
+      "optionTranslations": [
+        "decide",
+        "forget",
+        "copy",
+        "ignore"
+      ],
+      "audioClip": {
+        "storySlug": "a-passagem-ja-comprada",
+        "storySource": "user",
+        "sentence": "Antes da viagem, ela precisa decidir o itinerário.",
+        "targetWord": "decidir",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "desistir",
+    "sentence": "Mesmo cansada, ela não vai _____ do projeto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "desistir",
+      "options": [
+        "desistir",
+        "começar",
+        "copiar",
+        "vender"
+      ],
+      "translation": "Even tired, she is not going to _____ the project.",
+      "optionTranslations": [
+        "give up",
+        "start",
+        "copy",
+        "sell"
+      ],
+      "audioClip": {
+        "storySlug": "a-passagem-ja-comprada",
+        "storySource": "user",
+        "sentence": "Mesmo cansada, ela não vai desistir do projeto.",
+        "targetWord": "desistir",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por enquanto",
+    "sentence": "[[Por enquanto]], não temos nenhuma notícia sobre o voo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "for now",
+      "options": [
+        "for now",
+        "for always",
+        "by chance",
+        "in general"
+      ],
+      "audioClip": {
+        "storySlug": "a-passagem-ja-comprada",
+        "storySource": "user",
+        "sentence": "Por enquanto, não temos nenhuma notícia sobre o voo.",
+        "targetWord": "Por enquanto",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "esconder",
+    "sentence": "Ele tentou _____ o presente antes da festa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "esconder",
+      "options": [
+        "esconder",
+        "embrulhar",
+        "comprar",
+        "perder"
+      ],
+      "translation": "He tried to _____ the gift before the party.",
+      "optionTranslations": [
+        "hide",
+        "wrap",
+        "buy",
+        "lose"
+      ],
+      "audioClip": {
+        "storySlug": "a-passagem-ja-comprada",
+        "storySource": "user",
+        "sentence": "Ele tentou esconder o presente antes da festa.",
+        "targetWord": "esconder",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "demorar",
+    "sentence": "O ônibus vai _____ mais vinte minutos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "demorar",
+      "options": [
+        "demorar",
+        "parar",
+        "voltar",
+        "passar"
+      ],
+      "translation": "The bus is going to _____ another twenty minutes.",
+      "optionTranslations": [
+        "be delayed",
+        "stop",
+        "return",
+        "pass by"
+      ],
+      "audioClip": {
+        "storySlug": "a-passagem-ja-comprada",
+        "storySource": "user",
+        "sentence": "O ônibus vai demorar mais vinte minutos.",
+        "targetWord": "demorar",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "surgir",
+    "sentence": "A qualquer momento, um problema pode _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "surgir",
+      "options": [
+        "surgir",
+        "crescer",
+        "sumir",
+        "voltar"
+      ],
+      "translation": "At any moment, a problem can _____.",
+      "optionTranslations": [
+        "arise",
+        "grow",
+        "disappear",
+        "return"
+      ],
+      "audioClip": {
+        "storySlug": "a-passagem-ja-comprada",
+        "storySource": "user",
+        "sentence": "A qualquer momento, um problema pode surgir.",
+        "targetWord": "surgir",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "animado",
+    "sentence": "O guia estava muito [[animado]] com a nova trilha.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "excited",
+      "options": [
+        "excited",
+        "tired",
+        "angry",
+        "bored"
+      ],
+      "audioClip": {
+        "storySlug": "a-passagem-ja-comprada",
+        "storySource": "user",
+        "sentence": "O guia estava muito animado com a nova trilha.",
+        "targetWord": "animado",
         "language": "portuguese"
       }
     },

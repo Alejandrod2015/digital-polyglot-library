@@ -1,49 +1,49 @@
 [
   {
     "type": "match_meaning",
-    "word": "cenoura,alface,cogumelo,milho",
+    "word": "macarrão,cenoura,alface,vinagre",
     "sentence": "",
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
         {
+          "word": "macarrão",
+          "answer": "pasta",
+          "options": [
+            "pasta",
+            "a carrot",
+            "lettuce",
+            "vinegar"
+          ]
+        },
+        {
           "word": "cenoura",
           "answer": "a carrot",
           "options": [
+            "pasta",
             "a carrot",
             "lettuce",
-            "a mushroom",
-            "corn"
+            "vinegar"
           ]
         },
         {
           "word": "alface",
           "answer": "lettuce",
           "options": [
+            "pasta",
             "a carrot",
             "lettuce",
-            "a mushroom",
-            "corn"
+            "vinegar"
           ]
         },
         {
-          "word": "cogumelo",
-          "answer": "a mushroom",
+          "word": "vinagre",
+          "answer": "vinegar",
           "options": [
+            "pasta",
             "a carrot",
             "lettuce",
-            "a mushroom",
-            "corn"
-          ]
-        },
-        {
-          "word": "milho",
-          "answer": "corn",
-          "options": [
-            "a carrot",
-            "lettuce",
-            "a mushroom",
-            "corn"
+            "vinegar"
           ]
         }
       ],
@@ -52,73 +52,139 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "macarrão",
-    "sentence": "Sobrou [[macarrão]] para dois dias.",
+    "word": "grudar",
+    "sentence": "O arroz [[grudou]] no fundo da panela.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "pasta",
+      "answer": "stuck",
       "options": [
-        "pasta",
-        "bread",
-        "cheese",
-        "fish"
+        "stuck",
+        "burned",
+        "spilled",
+        "cooled"
       ],
       "audioClip": {
         "storySlug": "a-regra-vale-ou-nao-vale",
         "storySource": "user",
-        "sentence": "Sobrou macarrão para dois dias.",
-        "targetWord": "macarrão",
+        "sentence": "O arroz grudou no fundo da panela.",
+        "targetWord": "grudou",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "meaning_in_context",
-    "word": "vinagre",
-    "sentence": "Ela rega a salada com [[vinagre]].",
+    "word": "normalmente",
+    "sentence": "[[Normalmente]], ele chega em casa às sete.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "vinegar",
+      "answer": "normally",
       "options": [
-        "vinegar",
-        "honey",
-        "milk",
-        "sugar"
+        "normally",
+        "rarely",
+        "secretly",
+        "suddenly"
       ],
       "audioClip": {
         "storySlug": "a-regra-vale-ou-nao-vale",
         "storySource": "user",
-        "sentence": "Ela rega a salada com vinagre.",
-        "targetWord": "vinagre",
+        "sentence": "Normalmente, ele chega em casa às sete.",
+        "targetWord": "Normalmente",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por isso",
+    "sentence": "[[Por isso]] ela decidiu lavar toda a louça.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "that is why",
+      "options": [
+        "that is why",
+        "even so",
+        "in case",
+        "for example"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "Por isso ela decidiu lavar toda a louça.",
+        "targetWord": "Por isso",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "fill_blank",
-    "word": "derreteu",
-    "sentence": "Deixei o sorvete no sol e ele _____.",
+    "word": "já que",
+    "sentence": "_____ estava chovendo, cancelamos o passeio.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "derreteu",
+      "answer": "já que",
       "options": [
-        "derreteu",
-        "congelou",
-        "cresceu",
-        "fugiu"
+        "já que",
+        "embora",
+        "quando",
+        "antes que"
       ],
-      "translation": "I left the ice cream in the sun and it _____.",
+      "translation": "_____ it was raining, we canceled the walk.",
       "optionTranslations": [
-        "melted",
-        "froze",
-        "grew",
-        "ran away"
+        "since",
+        "although",
+        "when",
+        "before"
       ],
       "audioClip": {
         "storySlug": "a-regra-vale-ou-nao-vale",
         "storySource": "user",
-        "sentence": "Deixei o sorvete no sol e ele derreteu.",
-        "targetWord": "derreteu",
+        "sentence": "já que estava chovendo, cancelamos o passeio.",
+        "targetWord": "já que",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "requentado",
+    "sentence": "A comida ficou [[requentada]] mas ainda gostosa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "reheated",
+      "options": [
+        "reheated",
+        "burnt",
+        "frozen",
+        "raw"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "A comida ficou requentada mas ainda gostosa.",
+        "targetWord": "requentada",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esvaziar",
+    "sentence": "Ele [[esvaziou]] a geladeira antes da viagem.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "emptied",
+      "options": [
+        "emptied",
+        "filled",
+        "organized",
+        "painted"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "Ele esvaziou a geladeira antes da viagem.",
+        "targetWord": "esvaziou",
         "language": "portuguese"
       }
     }
@@ -126,272 +192,93 @@
   {
     "type": "meaning_in_context",
     "word": "escorrer",
-    "sentence": "Ela [[escorre]] o macarrão de ontem.",
+    "sentence": "Ela [[escorreu]] o macarrão antes de temperar.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to drain",
+      "answer": "drained",
       "options": [
-        "to drain",
-        "to fry",
-        "to chop",
-        "to freeze"
+        "drained",
+        "boiled",
+        "burned",
+        "seasoned"
       ],
       "audioClip": {
         "storySlug": "a-regra-vale-ou-nao-vale",
         "storySource": "user",
-        "sentence": "Ela escorre o macarrão de ontem.",
-        "targetWord": "escorre",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "grudar",
-    "sentence": "O arroz [[grudou]] na panela mesmo assim.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to stick",
-      "options": [
-        "to stick",
-        "to spill",
-        "to shrink",
-        "to float"
-      ],
-      "audioClip": {
-        "storySlug": "a-regra-vale-ou-nao-vale",
-        "storySource": "user",
-        "sentence": "O arroz grudou na panela mesmo assim.",
-        "targetWord": "grudou",
+        "sentence": "Ela escorreu o macarrão antes de temperar.",
+        "targetWord": "escorreu",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "fill_blank",
-    "word": "esvazia",
-    "sentence": "Antes da viagem, ela _____ a geladeira e desliga.",
+    "word": "cogumelo",
+    "sentence": "No refogado, ela sempre usa _____ fresco.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "esvazia",
+      "answer": "cogumelo",
       "options": [
-        "esvazia",
-        "enche",
-        "pinta",
-        "conserta"
+        "cogumelo",
+        "alho",
+        "tomate",
+        "pepino"
       ],
-      "translation": "Before the trip, she _____ the fridge and unplugs it.",
+      "translation": "In the stir-fry, she always uses fresh _____.",
       "optionTranslations": [
-        "empties",
-        "fills",
-        "paints",
-        "fixes"
+        "mushroom",
+        "garlic",
+        "tomato",
+        "cucumber"
       ],
       "audioClip": {
         "storySlug": "a-regra-vale-ou-nao-vale",
         "storySource": "user",
-        "sentence": "Antes da viagem, ela esvazia a geladeira e desliga.",
-        "targetWord": "esvazia",
+        "sentence": "No refogado, ela sempre usa cogumelo fresco.",
+        "targetWord": "cogumelo",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "meaning_in_context",
-    "word": "sobrar",
-    "sentence": "[[Sobrou]] comida para dois dias.",
+    "word": "separar",
+    "sentence": "Eu sempre [[separo]] o lixo reciclável em casa.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to be left over",
+      "answer": "separate",
       "options": [
-        "to be left over",
-        "to run out",
-        "to go bad",
-        "to get cold"
+        "separate",
+        "throw away",
+        "mix",
+        "burn"
       ],
       "audioClip": {
         "storySlug": "a-regra-vale-ou-nao-vale",
         "storySource": "user",
-        "sentence": "Sobrou comida para dois dias.",
-        "targetWord": "Sobrou",
+        "sentence": "Eu sempre separo o lixo reciclável em casa.",
+        "targetWord": "separo",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "meaning_in_context",
-    "word": "encostar",
-    "sentence": "Ninguém [[encosta]] na panela.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to touch",
-      "options": [
-        "to touch",
-        "to smell",
-        "to wash",
-        "to lift"
-      ],
-      "audioClip": {
-        "storySlug": "a-regra-vale-ou-nao-vale",
-        "storySource": "user",
-        "sentence": "Ninguém encosta na panela.",
-        "targetWord": "encosta",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "solta",
-    "sentence": "Ela abre a mão e _____ o balão, que sobe.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "solta",
-      "options": [
-        "solta",
-        "segura",
-        "enche",
-        "compra"
-      ],
-      "translation": "She opens her hand and _____ the balloon, which rises.",
-      "optionTranslations": [
-        "lets go of",
-        "holds",
-        "blows up",
-        "buys"
-      ],
-      "audioClip": {
-        "storySlug": "a-regra-vale-ou-nao-vale",
-        "storySource": "user",
-        "sentence": "Ela abre a mão e solta o balão, que sobe.",
-        "targetWord": "solta",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "jogar",
-    "sentence": "Ela [[joga]] a cenoura por cima da alface.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to throw",
-      "options": [
-        "to throw",
-        "to peel",
-        "to wash",
-        "to hide"
-      ],
-      "audioClip": {
-        "storySlug": "a-regra-vale-ou-nao-vale",
-        "storySource": "user",
-        "sentence": "Ela joga a cenoura por cima da alface.",
-        "targetWord": "joga",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "mole",
-    "sentence": "O cogumelo está [[mole]], mas serve.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "soft",
-      "options": [
-        "soft",
-        "hard",
-        "dry",
-        "sweet"
-      ],
-      "audioClip": {
-        "storySlug": "a-regra-vale-ou-nao-vale",
-        "storySource": "user",
-        "sentence": "O cogumelo está mole, mas serve.",
-        "targetWord": "mole",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "fill_blank",
-    "word": "duro",
-    "sentence": "Esse pão é de ontem: está _____ como pedra.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "duro",
-      "options": [
-        "duro",
-        "mole",
-        "fresco",
-        "doce"
-      ],
-      "translation": "This bread is from yesterday: it's _____ as a rock.",
-      "optionTranslations": [
-        "hard",
-        "soft",
-        "fresh",
-        "sweet"
-      ],
-      "audioClip": {
-        "storySlug": "a-regra-vale-ou-nao-vale",
-        "storySource": "user",
-        "sentence": "Esse pão é de ontem: está duro como pedra.",
-        "targetWord": "duro",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "gordo",
-    "sentence": "Um bilhete de letra grande e [[gorda]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "fat, thick",
-      "options": [
-        "fat, thick",
-        "thin",
-        "pale",
-        "tiny"
-      ],
-      "audioClip": {
-        "storySlug": "a-regra-vale-ou-nao-vale",
-        "storySource": "user",
-        "sentence": "Um bilhete de letra grande e gorda.",
-        "targetWord": "gorda",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "fill_blank",
     "word": "abafado",
-    "sentence": "Janelas fechadas e muito calor: o ar está _____.",
+    "sentence": "O quarto ficou [[abafado]] durante a tarde inteira.",
     "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "abafado",
+      "prompt": "Choose the meaning in context.",
+      "answer": "stuffy",
       "options": [
-        "abafado",
-        "fresco",
-        "frio",
-        "gelado"
-      ],
-      "translation": "Windows shut and very hot: the air is _____.",
-      "optionTranslations": [
         "stuffy",
-        "fresh",
         "cold",
-        "icy"
+        "bright",
+        "noisy"
       ],
       "audioClip": {
         "storySlug": "a-regra-vale-ou-nao-vale",
         "storySource": "user",
-        "sentence": "Janelas fechadas e muito calor: o ar está abafado.",
+        "sentence": "O quarto ficou abafado durante a tarde inteira.",
         "targetWord": "abafado",
         "language": "portuguese"
       }
@@ -400,22 +287,68 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "parado",
-    "sentence": "De tarde a cozinha fica [[parada]].",
+    "word": "encostar",
+    "sentence": "Ninguém [[encostou]] na panela quente da noite.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "still",
+      "answer": "touched",
       "options": [
-        "still",
-        "busy",
-        "noisy",
-        "bright"
+        "touched",
+        "washed",
+        "moved",
+        "opened"
       ],
       "audioClip": {
         "storySlug": "a-regra-vale-ou-nao-vale",
         "storySource": "user",
-        "sentence": "De tarde a cozinha fica parada.",
-        "targetWord": "parada",
+        "sentence": "Ninguém encostou na panela quente da noite.",
+        "targetWord": "encostou",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ofendido",
+    "sentence": "Ele não ficou [[ofendido]] com a brincadeira.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "offended",
+      "options": [
+        "offended",
+        "amused",
+        "confused",
+        "worried"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "Ele não ficou ofendido com a brincadeira.",
+        "targetWord": "ofendido",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "portanto",
+    "sentence": "Ela cozinhou hoje; [[portanto]], ele lava amanhã.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "therefore",
+      "options": [
+        "therefore",
+        "meanwhile",
+        "besides",
+        "otherwise"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "Ela cozinhou hoje; portanto, ele lava amanhã.",
+        "targetWord": "portanto",
         "language": "portuguese"
       }
     },
@@ -424,21 +357,74 @@
   {
     "type": "meaning_in_context",
     "word": "limpar",
-    "sentence": "Alguém [[limpou]] a panela e a deixou virada.",
+    "sentence": "Ele está [[limpando]] a pia com água quente.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to clean",
+      "answer": "cleaning",
       "options": [
-        "to clean",
-        "to burn",
-        "to fill",
-        "to hide"
+        "cleaning",
+        "filling",
+        "breaking",
+        "painting"
       ],
       "audioClip": {
         "storySlug": "a-regra-vale-ou-nao-vale",
         "storySource": "user",
-        "sentence": "Alguém limpou a panela e a deixou virada.",
-        "targetWord": "limpou",
+        "sentence": "Ele está limpando a pia com água quente.",
+        "targetWord": "limpando",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "derreter",
+    "sentence": "A manteiga já estava [[derretida]] na frigideira.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "melted",
+      "options": [
+        "melted",
+        "frozen",
+        "burnt",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "A manteiga já estava derretida na frigideira.",
+        "targetWord": "derretida",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "respeito",
+    "sentence": "Ele tratou todos os colegas com muito _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "respeito",
+      "options": [
+        "respeito",
+        "cuidado",
+        "carinho",
+        "humor"
+      ],
+      "translation": "He treated all his colleagues with great _____.",
+      "optionTranslations": [
+        "respect",
+        "care",
+        "affection",
+        "humor"
+      ],
+      "audioClip": {
+        "storySlug": "a-regra-vale-ou-nao-vale",
+        "storySource": "user",
+        "sentence": "Ele tratou todos os colegas com muito respeito.",
+        "targetWord": "respeito",
         "language": "portuguese"
       }
     },

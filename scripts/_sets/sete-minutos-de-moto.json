@@ -1,49 +1,49 @@
 [
   {
     "type": "match_meaning",
-    "word": "bicicleta,trem,metrô,garagem",
+    "word": "moto,garagem,plataforma,dobro",
     "sentence": "",
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
         {
-          "word": "bicicleta",
-          "answer": "a bicycle",
+          "word": "moto",
+          "answer": "a motorbike",
           "options": [
-            "a bicycle",
-            "a train",
-            "the underground",
-            "a bus depot"
-          ]
-        },
-        {
-          "word": "trem",
-          "answer": "a train",
-          "options": [
-            "a bicycle",
-            "a train",
-            "the underground",
-            "a bus depot"
-          ]
-        },
-        {
-          "word": "metrô",
-          "answer": "the underground",
-          "options": [
-            "a bicycle",
-            "a train",
-            "the underground",
-            "a bus depot"
+            "a motorbike",
+            "a depot",
+            "a platform",
+            "double"
           ]
         },
         {
           "word": "garagem",
-          "answer": "a bus depot",
+          "answer": "a depot",
           "options": [
-            "a bicycle",
-            "a train",
-            "the underground",
-            "a bus depot"
+            "a motorbike",
+            "a depot",
+            "a platform",
+            "double"
+          ]
+        },
+        {
+          "word": "plataforma",
+          "answer": "a platform",
+          "options": [
+            "a motorbike",
+            "a depot",
+            "a platform",
+            "double"
+          ]
+        },
+        {
+          "word": "dobro",
+          "answer": "double",
+          "options": [
+            "a motorbike",
+            "a depot",
+            "a platform",
+            "double"
           ]
         }
       ],
@@ -52,73 +52,88 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "moto",
-    "sentence": "Um homem numa [[moto]] espera na esquina.",
+    "word": "perceber",
+    "sentence": "Ela só [[percebeu]] o erro depois de embarcar.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a motorbike",
+      "answer": "noticed",
       "options": [
-        "a motorbike",
-        "a van",
-        "a taxi",
-        "a truck"
+        "noticed",
+        "forgot",
+        "fixed",
+        "ignored"
       ],
       "audioClip": {
         "storySlug": "sete-minutos-de-moto",
         "storySource": "user",
-        "sentence": "Um homem numa moto espera na esquina.",
-        "targetWord": "moto",
+        "sentence": "Ela só percebeu o erro depois de embarcar.",
+        "targetWord": "percebeu",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "meaning_in_context",
-    "word": "motocicleta",
-    "sentence": "A [[motocicleta]] está parada na porta.",
+    "word": "correr",
+    "sentence": "Renata [[correu]] até a esquina para pegar a moto.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a motorcycle",
+      "answer": "ran",
       "options": [
-        "a motorcycle",
-        "a lorry",
-        "a tractor",
-        "a ferry"
+        "ran",
+        "walked",
+        "drove",
+        "waited"
       ],
       "audioClip": {
         "storySlug": "sete-minutos-de-moto",
         "storySource": "user",
-        "sentence": "A motocicleta está parada na porta.",
-        "targetWord": "motocicleta",
+        "sentence": "Renata correu até a esquina para pegar a moto.",
+        "targetWord": "correu",
         "language": "portuguese"
       }
     }
   },
   {
-    "type": "fill_blank",
-    "word": "freia",
-    "sentence": "Um cachorro entra na rua, e o motorista _____ rápido.",
+    "type": "meaning_in_context",
+    "word": "apontar",
+    "sentence": "O motociclista [[apontou]] para a moto estacionada.",
     "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "freia",
+      "prompt": "Choose the meaning in context.",
+      "answer": "pointed at",
       "options": [
-        "freia",
-        "acelera",
-        "canta",
-        "dorme"
-      ],
-      "translation": "A dog runs into the road, and the driver _____ quickly.",
-      "optionTranslations": [
-        "brakes",
-        "speeds up",
-        "sings",
-        "sleeps"
+        "pointed at",
+        "looked at",
+        "cleaned",
+        "started"
       ],
       "audioClip": {
         "storySlug": "sete-minutos-de-moto",
         "storySource": "user",
-        "sentence": "Um cachorro entra na rua, e o motorista freia rápido.",
-        "targetWord": "freia",
+        "sentence": "O motociclista apontou para a moto estacionada.",
+        "targetWord": "apontou",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frear",
+    "sentence": "Ele [[freou]] bem na frente da garagem.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "braked",
+      "options": [
+        "braked",
+        "accelerated",
+        "turned",
+        "parked"
+      ],
+      "audioClip": {
+        "storySlug": "sete-minutos-de-moto",
+        "storySource": "user",
+        "sentence": "Ele freou bem na frente da garagem.",
+        "targetWord": "freou",
         "language": "portuguese"
       }
     }
@@ -126,21 +141,21 @@
   {
     "type": "meaning_in_context",
     "word": "descarregar",
-    "sentence": "Dois homens [[descarregam]] malas.",
+    "sentence": "Dois homens [[descarregavam]] as malas do ônibus.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to unload",
+      "answer": "were unloading",
       "options": [
-        "to unload",
-        "to steal",
-        "to weigh",
-        "to open"
+        "were unloading",
+        "were counting",
+        "were washing",
+        "were selling"
       ],
       "audioClip": {
         "storySlug": "sete-minutos-de-moto",
         "storySource": "user",
-        "sentence": "Dois homens descarregam malas.",
-        "targetWord": "descarregam",
+        "sentence": "Dois homens descarregavam as malas do ônibus.",
+        "targetWord": "descarregavam",
         "language": "portuguese"
       }
     }
@@ -148,243 +163,152 @@
   {
     "type": "meaning_in_context",
     "word": "carregar",
-    "sentence": "Eles descarregam malas e [[carregam]] outras.",
+    "sentence": "Ao mesmo tempo, outros [[carregavam]] caixas pesadas.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to load",
+      "answer": "were loading",
       "options": [
-        "to load",
-        "to unload",
-        "to count",
-        "to lose"
+        "were loading",
+        "were opening",
+        "were weighing",
+        "were painting"
       ],
       "audioClip": {
         "storySlug": "sete-minutos-de-moto",
         "storySource": "user",
-        "sentence": "Eles descarregam malas e carregam outras.",
-        "targetWord": "carregam",
+        "sentence": "Ao mesmo tempo, outros carregavam caixas pesadas.",
+        "targetWord": "carregavam",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alcançar",
+    "sentence": "Ela [[alcançou]] o ônibus por poucos minutos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "caught",
+      "options": [
+        "caught",
+        "missed",
+        "found",
+        "lost"
+      ],
+      "audioClip": {
+        "storySlug": "sete-minutos-de-moto",
+        "storySource": "user",
+        "sentence": "Ela alcançou o ônibus por poucos minutos.",
+        "targetWord": "alcançou",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "orgulhoso",
+    "sentence": "Renata ficou [[orgulhosa]] de ter guardado o caderno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "proud",
+      "options": [
+        "proud",
+        "surprised",
+        "worried",
+        "ashamed"
+      ],
+      "audioClip": {
+        "storySlug": "sete-minutos-de-moto",
+        "storySource": "user",
+        "sentence": "Renata ficou orgulhosa de ter guardado o caderno.",
+        "targetWord": "orgulhosa",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "fill_blank",
-    "word": "corre",
-    "sentence": "Está atrasada, então ela _____ até o ponto.",
+    "word": "transporte",
+    "sentence": "O _____ da garagem só sai às nove.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "corre",
+      "answer": "transporte",
       "options": [
-        "corre",
-        "passeia",
-        "dança",
-        "descansa"
+        "transporte",
+        "horário",
+        "motorista",
+        "bilhete"
       ],
-      "translation": "She's late, so she _____ to the bus stop.",
+      "translation": "The _____ from the depot only leaves at nine.",
       "optionTranslations": [
-        "runs",
-        "strolls",
-        "dances",
-        "rests"
+        "transport",
+        "schedule",
+        "driver",
+        "ticket"
       ],
       "audioClip": {
         "storySlug": "sete-minutos-de-moto",
         "storySource": "user",
-        "sentence": "Está atrasada, então ela corre até o ponto.",
-        "targetWord": "corre",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "ganhar",
-    "sentence": "Ela [[ganha]] o ônibus das nove por doze minutos.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to catch in time",
-      "options": [
-        "to catch in time",
-        "to miss",
-        "to wait for",
-        "to hear"
-      ],
-      "audioClip": {
-        "storySlug": "sete-minutos-de-moto",
-        "storySource": "user",
-        "sentence": "Ela ganha o ônibus das nove por doze minutos.",
-        "targetWord": "ganha",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "entrar",
-    "sentence": "Ela [[entra]] no primeiro por engano.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to get into",
-      "options": [
-        "to get into",
-        "to get out of",
-        "to look at",
-        "to clean"
-      ],
-      "audioClip": {
-        "storySlug": "sete-minutos-de-moto",
-        "storySource": "user",
-        "sentence": "Ela entra no primeiro por engano.",
-        "targetWord": "entra",
+        "sentence": "O transporte da garagem só sai às nove.",
+        "targetWord": "transporte",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "fill_blank",
-    "word": "vê",
-    "sentence": "Sem óculos, ela não _____ nada de longe.",
+    "word": "largo",
+    "sentence": "O caminho até a garagem era muito _____.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "vê",
+      "answer": "largo",
       "options": [
-        "vê",
-        "ouve",
-        "come",
-        "paga"
+        "largo",
+        "estreito",
+        "longo",
+        "escuro"
       ],
-      "translation": "Without glasses, she can't _____ anything far away.",
+      "translation": "The way to the depot was very _____.",
       "optionTranslations": [
-        "see",
-        "hear",
-        "eat",
-        "pay"
-      ],
-      "audioClip": {
-        "storySlug": "sete-minutos-de-moto",
-        "storySource": "user",
-        "sentence": "Sem óculos, ela não vê nada de longe.",
-        "targetWord": "vê",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "valer",
-    "sentence": "Não [[vale]] o dobro, responde ele.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to be worth",
-      "options": [
-        "to be worth",
-        "to cost less",
-        "to weigh",
-        "to last"
-      ],
-      "audioClip": {
-        "storySlug": "sete-minutos-de-moto",
-        "storySource": "user",
-        "sentence": "Não vale o dobro, responde ele.",
-        "targetWord": "vale",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "apontar",
-    "sentence": "Ele [[aponta]] a motocicleta.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to point at",
-      "options": [
-        "to point at",
-        "to push",
-        "to wash",
-        "to rent"
-      ],
-      "audioClip": {
-        "storySlug": "sete-minutos-de-moto",
-        "storySource": "user",
-        "sentence": "Ele aponta a motocicleta.",
-        "targetWord": "aponta",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "fill_blank",
-    "word": "primeiro",
-    "sentence": "Cheguei antes de todos: fui o _____ da fila.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "primeiro",
-      "options": [
-        "primeiro",
-        "último",
-        "terceiro",
-        "segundo"
-      ],
-      "translation": "I arrived before everyone: I was _____ in the queue.",
-      "optionTranslations": [
-        "first",
-        "last",
-        "third",
-        "second"
-      ],
-      "audioClip": {
-        "storySlug": "sete-minutos-de-moto",
-        "storySource": "user",
-        "sentence": "Cheguei antes de todos: fui o primeiro da fila.",
-        "targetWord": "primeiro",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "terceiro",
-    "sentence": "O caderno está no [[terceiro]] ônibus da fila.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "third",
-      "options": [
-        "third",
-        "first",
-        "last",
-        "next"
-      ],
-      "audioClip": {
-        "storySlug": "sete-minutos-de-moto",
-        "storySource": "user",
-        "sentence": "O caderno está no terceiro ônibus da fila.",
-        "targetWord": "terceiro",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "curto",
-    "sentence": "Não foi barato, foi [[curto]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "short",
-      "options": [
-        "short",
+        "wide",
+        "narrow",
         "long",
-        "cheap",
+        "dark"
+      ],
+      "audioClip": {
+        "storySlug": "sete-minutos-de-moto",
+        "storySource": "user",
+        "sentence": "O caminho até a garagem era muito largo.",
+        "targetWord": "largo",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "curto",
+    "sentence": "O passeio de moto foi bem _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "curto",
+      "options": [
+        "curto",
+        "caro",
+        "perigoso",
+        "lento"
+      ],
+      "translation": "The motorbike ride was quite _____.",
+      "optionTranslations": [
+        "short",
+        "expensive",
+        "dangerous",
         "slow"
       ],
       "audioClip": {
         "storySlug": "sete-minutos-de-moto",
         "storySource": "user",
-        "sentence": "Não foi barato, foi curto.",
+        "sentence": "O passeio de moto foi bem curto.",
         "targetWord": "curto",
         "language": "portuguese"
       }
@@ -393,29 +317,29 @@
   },
   {
     "type": "fill_blank",
-    "word": "larga",
-    "sentence": "A avenida é tão _____ que tem seis faixas.",
+    "word": "terceiro",
+    "sentence": "O ônibus certo era o _____ da fila.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "larga",
+      "answer": "terceiro",
       "options": [
-        "larga",
-        "estreita",
-        "escura",
-        "velha"
+        "terceiro",
+        "segundo",
+        "quarto",
+        "quinto"
       ],
-      "translation": "The avenue is so _____ that it has six lanes.",
+      "translation": "The right bus was the _____ in line.",
       "optionTranslations": [
-        "wide",
-        "narrow",
-        "dark",
-        "old"
+        "third",
+        "second",
+        "fourth",
+        "fifth"
       ],
       "audioClip": {
         "storySlug": "sete-minutos-de-moto",
         "storySource": "user",
-        "sentence": "A avenida é tão larga que tem seis faixas.",
-        "targetWord": "larga",
+        "sentence": "O ônibus certo era o terceiro da fila.",
+        "targetWord": "terceiro",
         "language": "portuguese"
       }
     },
@@ -423,29 +347,119 @@
   },
   {
     "type": "fill_blank",
-    "word": "famosa",
-    "sentence": "Todo mundo conhece essa cantora: ela é muito _____.",
+    "word": "frustrado",
+    "sentence": "Ao entrar no ônibus errado, ele ficou _____.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "famosa",
+      "answer": "frustrado",
       "options": [
-        "famosa",
-        "desconhecida",
-        "cansada",
-        "baixa"
+        "frustrado",
+        "confuso",
+        "curioso",
+        "cansado"
       ],
-      "translation": "Everyone knows this singer: she's very _____.",
+      "translation": "Getting on the wrong bus, he got _____.",
       "optionTranslations": [
-        "famous",
-        "unknown",
-        "tired",
-        "short"
+        "frustrated",
+        "confused",
+        "curious",
+        "tired"
       ],
       "audioClip": {
         "storySlug": "sete-minutos-de-moto",
         "storySource": "user",
-        "sentence": "Todo mundo conhece essa cantora: ela é muito famosa.",
-        "targetWord": "famosa",
+        "sentence": "Ao entrar no ônibus errado, ele ficou frustrado.",
+        "targetWord": "frustrado",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "desembarque",
+    "sentence": "O caderno estava perto da plataforma de _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "desembarque",
+      "options": [
+        "desembarque",
+        "embarque",
+        "bagagem",
+        "bilheteria"
+      ],
+      "translation": "The notebook was near the _____ platform.",
+      "optionTranslations": [
+        "arrivals",
+        "departure",
+        "luggage",
+        "ticket office"
+      ],
+      "audioClip": {
+        "storySlug": "sete-minutos-de-moto",
+        "storySource": "user",
+        "sentence": "O caderno estava perto da plataforma de desembarque.",
+        "targetWord": "desembarque",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "justamente",
+    "sentence": "O caderno estava _____ onde ela o deixou.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "justamente",
+      "options": [
+        "justamente",
+        "quase",
+        "talvez",
+        "ainda"
+      ],
+      "translation": "The notebook was _____ where she left it.",
+      "optionTranslations": [
+        "exactly",
+        "almost",
+        "maybe",
+        "still"
+      ],
+      "audioClip": {
+        "storySlug": "sete-minutos-de-moto",
+        "storySource": "user",
+        "sentence": "O caderno estava justamente onde ela o deixou.",
+        "targetWord": "justamente",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "primeiro",
+    "sentence": "Ela entrou no _____ ônibus por engano.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "primeiro",
+      "options": [
+        "primeiro",
+        "segundo",
+        "errado",
+        "mesmo"
+      ],
+      "translation": "She got on the _____ bus by mistake.",
+      "optionTranslations": [
+        "first",
+        "second",
+        "wrong",
+        "same"
+      ],
+      "audioClip": {
+        "storySlug": "sete-minutos-de-moto",
+        "storySource": "user",
+        "sentence": "Ela entrou no primeiro ônibus por engano.",
+        "targetWord": "primeiro",
         "language": "portuguese"
       }
     },

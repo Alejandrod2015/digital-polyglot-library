@@ -1,38 +1,38 @@
 [
   {
     "type": "match_meaning",
-    "word": "boné,saia,gravata,tênis",
+    "word": "gravata,boné,sapato,tênis",
     "sentence": "",
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
         {
-          "word": "boné",
-          "answer": "a cap",
-          "options": [
-            "a cap",
-            "a skirt",
-            "a tie",
-            "trainers"
-          ]
-        },
-        {
-          "word": "saia",
-          "answer": "a skirt",
-          "options": [
-            "a cap",
-            "a skirt",
-            "a tie",
-            "trainers"
-          ]
-        },
-        {
           "word": "gravata",
           "answer": "a tie",
           "options": [
-            "a cap",
-            "a skirt",
             "a tie",
+            "a cap",
+            "a shoe",
+            "trainers"
+          ]
+        },
+        {
+          "word": "boné",
+          "answer": "a cap",
+          "options": [
+            "a tie",
+            "a cap",
+            "a shoe",
+            "trainers"
+          ]
+        },
+        {
+          "word": "sapato",
+          "answer": "a shoe",
+          "options": [
+            "a tie",
+            "a cap",
+            "a shoe",
             "trainers"
           ]
         },
@@ -40,9 +40,9 @@
           "word": "tênis",
           "answer": "trainers",
           "options": [
-            "a cap",
-            "a skirt",
             "a tie",
+            "a cap",
+            "a shoe",
             "trainers"
           ]
         }
@@ -52,95 +52,51 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "sapato",
-    "sentence": "Uma mulher de [[sapato]] colorido pula a poça.",
+    "word": "passear",
+    "sentence": "Ela [[passeava]] pela praça todas as tardes.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "a shoe",
+      "answer": "strolled",
       "options": [
-        "a shoe",
-        "a hat",
-        "a coat",
-        "a belt"
+        "strolled",
+        "worked",
+        "slept",
+        "cooked"
       ],
       "audioClip": {
         "storySlug": "o-desfile-na-ultima-manha",
         "storySource": "user",
-        "sentence": "Uma mulher de sapato colorido pula a poça.",
-        "targetWord": "sapato",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "vestido",
-    "sentence": "Passa um [[vestido]] verde.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "a dress",
-      "options": [
-        "a dress",
-        "a shirt",
-        "a scarf",
-        "a bag"
-      ],
-      "audioClip": {
-        "storySlug": "o-desfile-na-ultima-manha",
-        "storySource": "user",
-        "sentence": "Passa um vestido verde.",
-        "targetWord": "vestido",
+        "sentence": "Ela passeava pela praça todas as tardes.",
+        "targetWord": "passeava",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "fill_blank",
-    "word": "canta",
-    "sentence": "No chuveiro, ele sempre _____ uma música.",
+    "word": "verde",
+    "sentence": "O carro novo do meu irmão é _____.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "canta",
+      "answer": "verde",
       "options": [
-        "canta",
-        "compra",
-        "vende",
-        "apaga"
+        "verde",
+        "azul",
+        "cinza",
+        "vermelho"
       ],
-      "translation": "In the shower, he always _____ a song.",
+      "translation": "My brother's new car is _____.",
       "optionTranslations": [
-        "sings",
-        "buys",
-        "sells",
-        "deletes"
+        "green",
+        "blue",
+        "gray",
+        "red"
       ],
       "audioClip": {
         "storySlug": "o-desfile-na-ultima-manha",
         "storySource": "user",
-        "sentence": "No chuveiro, ele sempre canta uma música.",
-        "targetWord": "canta",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "rir",
-    "sentence": "Fica com ele, diz ela, [[rindo]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to laugh",
-      "options": [
-        "to laugh",
-        "to cry",
-        "to cough",
-        "to shout"
-      ],
-      "audioClip": {
-        "storySlug": "o-desfile-na-ultima-manha",
-        "storySource": "user",
-        "sentence": "Fica com ele, diz ela, rindo.",
-        "targetWord": "rindo",
+        "sentence": "O carro novo do meu irmão é verde.",
+        "targetWord": "verde",
         "language": "portuguese"
       }
     }
@@ -148,72 +104,152 @@
   {
     "type": "meaning_in_context",
     "word": "dançar",
-    "sentence": "Um homem de boné [[dança]] sozinho na esquina.",
+    "sentence": "O casal [[dançava]] devagar no meio da sala.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to dance",
+      "answer": "was dancing",
       "options": [
-        "to dance",
-        "to beg",
-        "to sleep",
-        "to wait"
+        "was dancing",
+        "was arguing",
+        "was resting",
+        "was cooking"
       ],
       "audioClip": {
         "storySlug": "o-desfile-na-ultima-manha",
         "storySource": "user",
-        "sentence": "Um homem de boné dança sozinho na esquina.",
-        "targetWord": "dança",
+        "sentence": "O casal dançava devagar no meio da sala.",
+        "targetWord": "dançava",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "fill_blank",
-    "word": "filma",
-    "sentence": "Ela pega o celular e _____ o desfile inteiro.",
+    "word": "devolver",
+    "sentence": "Ele precisa _____ o livro à biblioteca amanhã.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "filma",
+      "answer": "devolver",
       "options": [
-        "filma",
-        "lava",
-        "costura",
-        "embrulha"
+        "devolver",
+        "comprar",
+        "ler",
+        "perder"
       ],
-      "translation": "She takes out her phone and _____ the whole parade.",
+      "translation": "He needs to _____ the book to the library tomorrow.",
       "optionTranslations": [
-        "films",
-        "washes",
-        "sews",
-        "wraps"
+        "return",
+        "buy",
+        "read",
+        "lose"
       ],
       "audioClip": {
         "storySlug": "o-desfile-na-ultima-manha",
         "storySource": "user",
-        "sentence": "Ela pega o celular e filma o desfile inteiro.",
-        "targetWord": "filma",
+        "sentence": "Ele precisa devolver o livro à biblioteca amanhã.",
+        "targetWord": "devolver",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "meaning_in_context",
-    "word": "visitar",
-    "sentence": "Eu volto e [[visito]] a senhora.",
+    "word": "decepcionado",
+    "sentence": "Ela ficou [[decepcionada]] com o resultado do exame.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to go and see",
+      "answer": "disappointed",
       "options": [
-        "to go and see",
-        "to call",
-        "to write to",
-        "to pay"
+        "disappointed",
+        "surprised",
+        "relieved",
+        "proud"
       ],
       "audioClip": {
         "storySlug": "o-desfile-na-ultima-manha",
         "storySource": "user",
-        "sentence": "Eu volto e visito a senhora.",
-        "targetWord": "visito",
+        "sentence": "Ela ficou decepcionada com o resultado do exame.",
+        "targetWord": "decepcionada",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "visitar",
+    "sentence": "No verão, gostamos de _____ os avós no interior.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "visitar",
+      "options": [
+        "visitar",
+        "ligar para",
+        "escrever para",
+        "esquecer"
+      ],
+      "translation": "In the summer, we like to _____ our grandparents in the countryside.",
+      "optionTranslations": [
+        "visit",
+        "call",
+        "write to",
+        "forget"
+      ],
+      "audioClip": {
+        "storySlug": "o-desfile-na-ultima-manha",
+        "storySource": "user",
+        "sentence": "No verão, gostamos de visitar os avós no interior.",
+        "targetWord": "visitar",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vir",
+    "sentence": "O trem [[vem]] atrasado quase todos os dias.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "comes",
+      "options": [
+        "comes",
+        "leaves",
+        "stops",
+        "returns"
+      ],
+      "audioClip": {
+        "storySlug": "o-desfile-na-ultima-manha",
+        "storySource": "user",
+        "sentence": "O trem vem atrasado quase todos os dias.",
+        "targetWord": "vem",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "de qualquer jeito",
+    "sentence": "Vai chover, mas eles saem _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "de qualquer jeito",
+      "options": [
+        "de qualquer jeito",
+        "com cuidado",
+        "cedo demais",
+        "sem pressa"
+      ],
+      "translation": "It's going to rain, but they're going out _____.",
+      "optionTranslations": [
+        "anyway",
+        "carefully",
+        "too early",
+        "unhurriedly"
+      ],
+      "audioClip": {
+        "storySlug": "o-desfile-na-ultima-manha",
+        "storySource": "user",
+        "sentence": "Vai chover, mas eles saem de qualquer jeito.",
+        "targetWord": "de qualquer jeito",
         "language": "portuguese"
       }
     }
@@ -221,72 +257,50 @@
   {
     "type": "meaning_in_context",
     "word": "brincar",
-    "sentence": "Elas [[brincam]] com isso um tempo.",
+    "sentence": "As crianças [[brincaram]] no quintal a tarde toda.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to joke about",
+      "answer": "played",
       "options": [
-        "to joke about",
-        "to argue about",
-        "to cry about",
-        "to worry about"
+        "played",
+        "studied",
+        "cried",
+        "cleaned"
       ],
       "audioClip": {
         "storySlug": "o-desfile-na-ultima-manha",
         "storySource": "user",
-        "sentence": "Elas brincam com isso um tempo.",
-        "targetWord": "brincam",
+        "sentence": "As crianças brincaram no quintal a tarde toda.",
+        "targetWord": "brincaram",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "fill_blank",
-    "word": "pula",
-    "sentence": "Tem uma poça no caminho, e ela _____ por cima.",
+    "word": "vizinhança",
+    "sentence": "Todo mundo se conhece bem nesta _____.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "pula",
+      "answer": "vizinhança",
       "options": [
-        "pula",
-        "dorme",
-        "lê",
-        "espirra"
+        "vizinhança",
+        "empresa",
+        "escola",
+        "cidade"
       ],
-      "translation": "There's a puddle on the path, and she _____ over it.",
+      "translation": "Everyone knows each other well in this _____.",
       "optionTranslations": [
-        "jumps",
-        "sleeps",
-        "reads",
-        "sneezes"
+        "neighborhood",
+        "company",
+        "school",
+        "city"
       ],
       "audioClip": {
         "storySlug": "o-desfile-na-ultima-manha",
         "storySource": "user",
-        "sentence": "Tem uma poça no caminho, e ela pula por cima.",
-        "targetWord": "pula",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "desejar",
-    "sentence": "Ela [[deseja]] voltar em junho.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to wish",
-      "options": [
-        "to wish",
-        "to refuse",
-        "to forget",
-        "to fear"
-      ],
-      "audioClip": {
-        "storySlug": "o-desfile-na-ultima-manha",
-        "storySource": "user",
-        "sentence": "Ela deseja voltar em junho.",
-        "targetWord": "deseja",
+        "sentence": "Todo mundo se conhece bem nesta vizinhança.",
+        "targetWord": "vizinhança",
         "language": "portuguese"
       }
     },
@@ -294,22 +308,22 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "passear",
-    "sentence": "[[Passeia]] gente de saia comprida.",
+    "word": "pular",
+    "sentence": "O menino [[pulou]] a poça sem molhar o tênis.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to stroll",
+      "answer": "jumped",
       "options": [
-        "to stroll",
-        "to run",
-        "to fight",
-        "to shop"
+        "jumped",
+        "avoided",
+        "kicked",
+        "found"
       ],
       "audioClip": {
         "storySlug": "o-desfile-na-ultima-manha",
         "storySource": "user",
-        "sentence": "Passeia gente de saia comprida.",
-        "targetWord": "Passeia",
+        "sentence": "O menino pulou a poça sem molhar o tênis.",
+        "targetWord": "pulou",
         "language": "portuguese"
       }
     },
@@ -317,29 +331,82 @@
   },
   {
     "type": "fill_blank",
-    "word": "voa",
-    "sentence": "O pássaro abre as asas e _____ para longe.",
+    "word": "filmar",
+    "sentence": "Ela vai _____ o show inteiro com o celular.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "voa",
+      "answer": "filmar",
       "options": [
-        "voa",
-        "nada",
-        "dorme",
-        "come"
+        "filmar",
+        "fotografar",
+        "ouvir",
+        "cancelar"
       ],
-      "translation": "The bird opens its wings and _____ away.",
+      "translation": "She is going to _____ the whole show with her phone.",
       "optionTranslations": [
-        "flies",
-        "swims",
-        "sleeps",
-        "eats"
+        "film",
+        "photograph",
+        "listen to",
+        "cancel"
       ],
       "audioClip": {
         "storySlug": "o-desfile-na-ultima-manha",
         "storySource": "user",
-        "sentence": "O pássaro abre as asas e voa para longe.",
-        "targetWord": "voa",
+        "sentence": "Ela vai filmar o show inteiro com o celular.",
+        "targetWord": "filmar",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ponto de vista",
+    "sentence": "Do [[ponto de vista]] dela, o plano é perfeito.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "point of view",
+      "options": [
+        "point of view",
+        "false start",
+        "last resort",
+        "closest guess"
+      ],
+      "audioClip": {
+        "storySlug": "o-desfile-na-ultima-manha",
+        "storySource": "user",
+        "sentence": "Do ponto de vista dela, o plano é perfeito.",
+        "targetWord": "ponto de vista",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "comparar",
+    "sentence": "Ela quer _____ os dois preços antes de decidir.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "comparar",
+      "options": [
+        "comparar",
+        "pagar",
+        "anotar",
+        "esconder"
+      ],
+      "translation": "She wants to _____ the two prices before deciding.",
+      "optionTranslations": [
+        "compare",
+        "pay",
+        "note down",
+        "hide"
+      ],
+      "audioClip": {
+        "storySlug": "o-desfile-na-ultima-manha",
+        "storySource": "user",
+        "sentence": "Ela quer comparar os dois preços antes de decidir.",
+        "targetWord": "comparar",
         "language": "portuguese"
       }
     },
@@ -348,44 +415,21 @@
   {
     "type": "meaning_in_context",
     "word": "amar",
-    "sentence": "Ela [[ama]] esta rua como quem já esteve aqui.",
+    "sentence": "Ele [[amava]] aquela rua desde criança.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to love",
+      "answer": "loved",
       "options": [
-        "to love",
-        "to hate",
-        "to leave",
-        "to know"
+        "loved",
+        "avoided",
+        "forgot",
+        "feared"
       ],
       "audioClip": {
         "storySlug": "o-desfile-na-ultima-manha",
         "storySource": "user",
-        "sentence": "Ela ama esta rua como quem já esteve aqui.",
-        "targetWord": "ama",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "colorido",
-    "sentence": "Uma mulher de sapato [[colorido]] pula a poça.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "colourful",
-      "options": [
-        "colourful",
-        "dirty",
-        "new",
-        "tiny"
-      ],
-      "audioClip": {
-        "storySlug": "o-desfile-na-ultima-manha",
-        "storySource": "user",
-        "sentence": "Uma mulher de sapato colorido pula a poça.",
-        "targetWord": "colorido",
+        "sentence": "Ele amava aquela rua desde criança.",
+        "targetWord": "amava",
         "language": "portuguese"
       }
     },
@@ -393,59 +437,29 @@
   },
   {
     "type": "fill_blank",
-    "word": "verde",
-    "sentence": "A grama do parque é bem _____.",
+    "word": "apesar de",
+    "sentence": "Ele foi trabalhar _____ estar doente.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "verde",
+      "answer": "apesar de",
       "options": [
-        "verde",
-        "azul",
-        "roxa",
-        "rosa"
+        "apesar de",
+        "por causa de",
+        "antes de",
+        "em vez de"
       ],
-      "translation": "The grass in the park is really _____.",
+      "translation": "He went to work _____ being sick.",
       "optionTranslations": [
-        "green",
-        "blue",
-        "purple",
-        "pink"
+        "despite",
+        "because of",
+        "before",
+        "instead of"
       ],
       "audioClip": {
         "storySlug": "o-desfile-na-ultima-manha",
         "storySource": "user",
-        "sentence": "A grama do parque é bem verde.",
-        "targetWord": "verde",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "fill_blank",
-    "word": "vermelhos",
-    "sentence": "Ela usa tênis _____, da cor do tomate.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "vermelhos",
-      "options": [
-        "vermelhos",
-        "verdes",
-        "azuis",
-        "brancos"
-      ],
-      "translation": "She's wearing _____ trainers, the colour of a tomato.",
-      "optionTranslations": [
-        "red",
-        "green",
-        "blue",
-        "white"
-      ],
-      "audioClip": {
-        "storySlug": "o-desfile-na-ultima-manha",
-        "storySource": "user",
-        "sentence": "Ela usa tênis vermelhos, da cor do tomate.",
-        "targetWord": "vermelhos",
+        "sentence": "Ele foi trabalhar apesar de estar doente.",
+        "targetWord": "apesar de",
         "language": "portuguese"
       }
     },

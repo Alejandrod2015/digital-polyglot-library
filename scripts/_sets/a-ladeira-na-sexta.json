@@ -1,38 +1,38 @@
 [
   {
     "type": "match_meaning",
-    "word": "biblioteca,universidade,exame,idioma",
+    "word": "universidade,vestibular,biblioteca,idioma",
     "sentence": "",
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
         {
-          "word": "biblioteca",
-          "answer": "a library",
-          "options": [
-            "a library",
-            "a university",
-            "an exam",
-            "a language"
-          ]
-        },
-        {
           "word": "universidade",
           "answer": "a university",
           "options": [
-            "a library",
             "a university",
-            "an exam",
+            "a university entrance exam",
+            "a library",
             "a language"
           ]
         },
         {
-          "word": "exame",
-          "answer": "an exam",
+          "word": "vestibular",
+          "answer": "a university entrance exam",
           "options": [
-            "a library",
             "a university",
-            "an exam",
+            "a university entrance exam",
+            "a library",
+            "a language"
+          ]
+        },
+        {
+          "word": "biblioteca",
+          "answer": "a library",
+          "options": [
+            "a university",
+            "a university entrance exam",
+            "a library",
             "a language"
           ]
         },
@@ -40,9 +40,9 @@
           "word": "idioma",
           "answer": "a language",
           "options": [
-            "a library",
             "a university",
-            "an exam",
+            "a university entrance exam",
+            "a library",
             "a language"
           ]
         }
@@ -52,146 +52,153 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "faculdade",
-    "sentence": "Ele quer entrar na [[faculdade]].",
+    "word": "por acaso",
+    "sentence": "Ela descobriu o segredo dele [[por acaso]], na biblioteca.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "college",
+      "answer": "by chance",
       "options": [
-        "college",
-        "a factory",
-        "a shop",
-        "a club"
+        "by chance",
+        "on purpose",
+        "too late",
+        "in secret"
       ],
       "audioClip": {
         "storySlug": "a-ladeira-na-sexta",
         "storySource": "user",
-        "sentence": "Ele quer entrar na faculdade.",
-        "targetWord": "faculdade",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "aluno",
-    "sentence": "Ele é o único [[aluno]] que ela não conhece.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "a pupil",
-      "options": [
-        "a pupil",
-        "a cook",
-        "a guard",
-        "a guest"
-      ],
-      "audioClip": {
-        "storySlug": "a-ladeira-na-sexta",
-        "storySource": "user",
-        "sentence": "Ele é o único aluno que ela não conhece.",
-        "targetWord": "aluno",
+        "sentence": "Ela descobriu o segredo dele por acaso, na biblioteca.",
+        "targetWord": "por acaso",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "fill_blank",
-    "word": "estuda",
-    "sentence": "Amanhã tem prova, então ela _____ a noite toda.",
+    "word": "estudar",
+    "sentence": "Amanhã é sexta, e ele precisa _____ a noite toda.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "estuda",
+      "answer": "estudar",
       "options": [
-        "estuda",
-        "dança",
-        "passeia",
-        "canta"
+        "estudar",
+        "descansar",
+        "trabalhar",
+        "viajar"
       ],
-      "translation": "There's a test tomorrow, so she _____ all night.",
+      "translation": "Tomorrow is Friday, and he needs to _____ all night.",
       "optionTranslations": [
-        "studies",
-        "dances",
-        "strolls",
-        "sings"
+        "study",
+        "rest",
+        "work",
+        "travel"
       ],
       "audioClip": {
         "storySlug": "a-ladeira-na-sexta",
         "storySource": "user",
-        "sentence": "Amanhã tem prova, então ela estuda a noite toda.",
-        "targetWord": "estuda",
+        "sentence": "Amanhã é sexta, e ele precisa estudar a noite toda.",
+        "targetWord": "estudar",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "meaning_in_context",
-    "word": "aprender",
-    "sentence": "Você [[aprendeu]] esta escola inteira sozinho.",
+    "word": "inseguro",
+    "sentence": "Diante da pergunta difícil, ele ficou [[inseguro]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to learn",
+      "answer": "unsure",
       "options": [
-        "to learn",
-        "to teach",
-        "to build",
-        "to clean"
+        "unsure",
+        "confident",
+        "angry",
+        "bored"
       ],
       "audioClip": {
         "storySlug": "a-ladeira-na-sexta",
         "storySource": "user",
-        "sentence": "Você aprendeu esta escola inteira sozinho.",
-        "targetWord": "aprendeu",
+        "sentence": "Diante da pergunta difícil, ele ficou inseguro.",
+        "targetWord": "inseguro",
         "language": "portuguese"
       }
     }
   },
   {
-    "type": "meaning_in_context",
+    "type": "fill_blank",
     "word": "ensinar",
-    "sentence": "Você quer [[ensinar]] idioma?",
+    "sentence": "Ela sempre quis _____ um idioma estrangeiro.",
     "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to teach",
+      "prompt": "Complete the sentence.",
+      "answer": "ensinar",
       "options": [
-        "to teach",
-        "to learn",
-        "to translate",
-        "to forget"
+        "ensinar",
+        "aprender",
+        "traduzir",
+        "esquecer"
+      ],
+      "translation": "She always wanted to _____ a foreign language.",
+      "optionTranslations": [
+        "teach",
+        "learn",
+        "translate",
+        "forget"
       ],
       "audioClip": {
         "storySlug": "a-ladeira-na-sexta",
         "storySource": "user",
-        "sentence": "Você quer ensinar idioma?",
+        "sentence": "Ela sempre quis ensinar um idioma estrangeiro.",
         "targetWord": "ensinar",
         "language": "portuguese"
       }
     }
   },
   {
-    "type": "fill_blank",
-    "word": "falar",
-    "sentence": "Ele mora em Paris há anos e sabe _____ francês.",
+    "type": "meaning_in_context",
+    "word": "escuro",
+    "sentence": "Às seis, o corredor da escola já estava [[escuro]].",
     "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "falar",
+      "prompt": "Choose the meaning in context.",
+      "answer": "dark",
       "options": [
-        "falar",
-        "nadar",
-        "dirigir",
-        "correr"
-      ],
-      "translation": "He has lived in Paris for years and can _____ French.",
-      "optionTranslations": [
-        "speak",
-        "swim",
-        "drive",
-        "run"
+        "dark",
+        "empty",
+        "clean",
+        "noisy"
       ],
       "audioClip": {
         "storySlug": "a-ladeira-na-sexta",
         "storySource": "user",
-        "sentence": "Ele mora em Paris há anos e sabe falar francês.",
-        "targetWord": "falar",
+        "sentence": "Às seis, o corredor da escola já estava escuro.",
+        "targetWord": "escuro",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "esquecer",
+    "sentence": "Durante a prova, ele começou a _____ as respostas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "esquecer",
+      "options": [
+        "esquecer",
+        "copiar",
+        "revisar",
+        "escrever"
+      ],
+      "translation": "During the test, he started to _____ the answers.",
+      "optionTranslations": [
+        "forget",
+        "copy",
+        "review",
+        "write"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-na-sexta",
+        "storySource": "user",
+        "sentence": "Durante a prova, ele começou a esquecer as respostas.",
+        "targetWord": "esquecer",
         "language": "portuguese"
       }
     }
@@ -199,140 +206,124 @@
   {
     "type": "meaning_in_context",
     "word": "ouvir",
-    "sentence": "Devagar. Eu [[ouço]].",
+    "sentence": "Fale mais devagar, para eu conseguir [[ouvir]] tudo.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to hear",
       "options": [
         "to hear",
-        "to see",
-        "to wait",
-        "to write"
+        "to guess",
+        "to write",
+        "to repeat"
       ],
       "audioClip": {
         "storySlug": "a-ladeira-na-sexta",
         "storySource": "user",
-        "sentence": "Devagar. Eu ouço.",
-        "targetWord": "ouço",
+        "sentence": "Fale mais devagar, para eu conseguir ouvir tudo.",
+        "targetWord": "ouvir",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "certo",
+    "sentence": "Ele quer escrever tudo _____, sem nenhum erro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "certo",
+      "options": [
+        "certo",
+        "errado",
+        "rápido",
+        "bonito"
+      ],
+      "translation": "He wants to write everything _____, without a single mistake.",
+      "optionTranslations": [
+        "right",
+        "wrong",
+        "fast",
+        "beautifully"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-na-sexta",
+        "storySource": "user",
+        "sentence": "Ele quer escrever tudo certo, sem nenhum erro.",
+        "targetWord": "certo",
         "language": "portuguese"
       }
     }
   },
   {
     "type": "meaning_in_context",
-    "word": "esquecer",
-    "sentence": "Ele [[esquece]] uma palavra.",
+    "word": "valer a pena",
+    "sentence": "Ele duvidava se [[valia a pena]] arriscar tanto assim.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "to forget",
+      "answer": "was worth it",
       "options": [
-        "to forget",
+        "was worth it",
+        "was too late",
+        "was forbidden",
+        "was easy"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-na-sexta",
+        "storySource": "user",
+        "sentence": "Ele duvidava se valia a pena arriscar tanto assim.",
+        "targetWord": "valia a pena",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "arriscar",
+    "sentence": "Depois de pensar bastante, ele decidiu _____ mesmo assim.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "arriscar",
+      "options": [
+        "arriscar",
+        "esperar",
+        "recusar",
+        "desistir"
+      ],
+      "translation": "After thinking a lot, he decided to _____ anyway.",
+      "optionTranslations": [
+        "take the risk",
+        "wait",
+        "refuse",
+        "give up"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-na-sexta",
+        "storySource": "user",
+        "sentence": "Depois de pensar bastante, ele decidiu arriscar mesmo assim.",
+        "targetWord": "arriscar",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aprender",
+    "sentence": "Ele conseguiu [[aprender]] tudo sozinho, sem professor nenhum.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to learn",
+      "options": [
         "to learn",
-        "to spell",
-        "to shout"
+        "to teach",
+        "to copy",
+        "to guess"
       ],
       "audioClip": {
         "storySlug": "a-ladeira-na-sexta",
         "storySource": "user",
-        "sentence": "Ele esquece uma palavra.",
-        "targetWord": "esquece",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "conseguiu",
-    "sentence": "Estudou muito e finalmente _____ passar no exame.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "conseguiu",
-      "options": [
-        "conseguiu",
-        "evitou",
-        "temeu",
-        "fingiu"
-      ],
-      "translation": "She studied hard and finally _____ to pass the exam.",
-      "optionTranslations": [
-        "managed",
-        "avoided",
-        "feared",
-        "pretended"
-      ],
-      "audioClip": {
-        "storySlug": "a-ladeira-na-sexta",
-        "storySource": "user",
-        "sentence": "Estudou muito e finalmente conseguiu passar no exame.",
-        "targetWord": "conseguiu",
-        "language": "portuguese"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "acreditar",
-    "sentence": "Ela conhece o rapaz o bastante para [[acreditar]] que sim.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to believe",
-      "options": [
-        "to believe",
-        "to doubt",
-        "to deny",
-        "to forget"
-      ],
-      "audioClip": {
-        "storySlug": "a-ladeira-na-sexta",
-        "storySource": "user",
-        "sentence": "Ela conhece o rapaz o bastante para acreditar que sim.",
-        "targetWord": "acreditar",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "ensaiar",
-    "sentence": "Eles [[ensaiam]] a prova oral na escada.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to practise",
-      "options": [
-        "to practise",
-        "to cancel",
-        "to fail",
-        "to mark"
-      ],
-      "audioClip": {
-        "storySlug": "a-ladeira-na-sexta",
-        "storySource": "user",
-        "sentence": "Eles ensaiam a prova oral na escada.",
-        "targetWord": "ensaiam",
-        "language": "portuguese"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "inventar",
-    "sentence": "Ela [[inventa]] perguntas e ele responde.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to make up",
-      "options": [
-        "to make up",
-        "to write down",
-        "to read out",
-        "to copy"
-      ],
-      "audioClip": {
-        "storySlug": "a-ladeira-na-sexta",
-        "storySource": "user",
-        "sentence": "Ela inventa perguntas e ele responde.",
-        "targetWord": "inventa",
+        "sentence": "Ele conseguiu aprender tudo sozinho, sem professor nenhum.",
+        "targetWord": "aprender",
         "language": "portuguese"
       }
     },
@@ -340,29 +331,29 @@
   },
   {
     "type": "fill_blank",
-    "word": "cumprimenta",
-    "sentence": "Ao chegar na festa, ele _____ todo mundo com um beijo.",
+    "word": "merecer",
+    "sentence": "Depois de tanto esforço, ele ia _____ essa chance.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "cumprimenta",
+      "answer": "merecer",
       "options": [
-        "cumprimenta",
-        "ignora",
-        "empurra",
-        "acorda"
+        "merecer",
+        "perder",
+        "temer",
+        "ignorar"
       ],
-      "translation": "Arriving at the party, he _____ everyone with a kiss.",
+      "translation": "After so much effort, he was going to _____ that chance.",
       "optionTranslations": [
-        "greets",
-        "ignores",
-        "pushes",
-        "wakes"
+        "deserve",
+        "lose",
+        "fear",
+        "ignore"
       ],
       "audioClip": {
         "storySlug": "a-ladeira-na-sexta",
         "storySource": "user",
-        "sentence": "Ao chegar na festa, ele cumprimenta todo mundo com um beijo.",
-        "targetWord": "cumprimenta",
+        "sentence": "Depois de tanto esforço, ele ia merecer essa chance.",
+        "targetWord": "merecer",
         "language": "portuguese"
       }
     },
@@ -371,21 +362,21 @@
   {
     "type": "meaning_in_context",
     "word": "conhecer",
-    "sentence": "Ela [[conhece]] bem esta escola.",
+    "sentence": "Ela sentiu que passou a [[conhecer]] bem o rapaz.",
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to know",
       "options": [
         "to know",
-        "to leave",
-        "to clean",
-        "to build"
+        "to judge",
+        "to follow",
+        "to copy"
       ],
       "audioClip": {
         "storySlug": "a-ladeira-na-sexta",
         "storySource": "user",
-        "sentence": "Ela conhece bem esta escola.",
-        "targetWord": "conhece",
+        "sentence": "Ela sentiu que passou a conhecer bem o rapaz.",
+        "targetWord": "conhecer",
         "language": "portuguese"
       }
     },
@@ -393,29 +384,52 @@
   },
   {
     "type": "fill_blank",
-    "word": "certa",
-    "sentence": "Dois mais dois são quatro: a resposta está _____.",
+    "word": "esperança",
+    "sentence": "Mesmo sem notícias, ela ainda tinha _____.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "certa",
+      "answer": "esperança",
       "options": [
-        "certa",
-        "errada",
-        "incompleta",
-        "apagada"
+        "esperança",
+        "dúvida",
+        "pressa",
+        "culpa"
       ],
-      "translation": "Two plus two is four: the answer is _____.",
+      "translation": "Even without news, she still had _____.",
       "optionTranslations": [
-        "right",
-        "wrong",
-        "incomplete",
-        "erased"
+        "hope",
+        "doubt",
+        "hurry",
+        "guilt"
       ],
       "audioClip": {
         "storySlug": "a-ladeira-na-sexta",
         "storySource": "user",
-        "sentence": "Dois mais dois são quatro: a resposta está certa.",
-        "targetWord": "certa",
+        "sentence": "Mesmo sem notícias, ela ainda tinha esperança.",
+        "targetWord": "esperança",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "confiança",
+    "sentence": "Renata sempre teve [[confiança]] no talento do rapaz.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "trust",
+      "options": [
+        "trust",
+        "doubt",
+        "envy",
+        "fear"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-na-sexta",
+        "storySource": "user",
+        "sentence": "Renata sempre teve confiança no talento do rapaz.",
+        "targetWord": "confiança",
         "language": "portuguese"
       }
     },
@@ -423,29 +437,29 @@
   },
   {
     "type": "fill_blank",
-    "word": "escura",
-    "sentence": "São nove da noite e a rua está _____.",
+    "word": "cumprimentar",
+    "sentence": "Antes de sumir na ladeira, ele parou para _____ a turma.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "escura",
+      "answer": "cumprimentar",
       "options": [
-        "escura",
-        "clara",
-        "ensolarada",
-        "dourada"
+        "cumprimentar",
+        "ignorar",
+        "procurar",
+        "seguir"
       ],
-      "translation": "It's nine at night and the street is _____.",
+      "translation": "Before disappearing down the hill, he stopped to _____ the class.",
       "optionTranslations": [
-        "dark",
-        "bright",
-        "sunny",
-        "golden"
+        "greet",
+        "ignore",
+        "look for",
+        "follow"
       ],
       "audioClip": {
         "storySlug": "a-ladeira-na-sexta",
         "storySource": "user",
-        "sentence": "São nove da noite e a rua está escura.",
-        "targetWord": "escura",
+        "sentence": "Antes de sumir na ladeira, ele parou para cumprimentar a turma.",
+        "targetWord": "cumprimentar",
         "language": "portuguese"
       }
     },
