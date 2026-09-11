@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import FitText from "@/components/FitText";
 import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -3407,7 +3408,7 @@ export default function PracticePage() {
                                   assignMatchMeaning(meaning);
                                 }}
                                 disabled={revealed || (!activeMatchWord && !assignedWord)}
-                                className={`flex h-full min-h-0 w-full items-center justify-center rounded-[1.2rem] border px-[clamp(0.4rem,0.8vw,0.7rem)] py-[clamp(0.4rem,0.8vw,0.7rem)] text-center transition ${
+                                className={`flex h-full min-h-0 w-full items-center justify-center rounded-[1.2rem] border px-[clamp(0.4rem,0.8vw,0.7rem)] py-[clamp(0.25rem,0.7vh,0.7rem)] text-center transition ${
                                   meaningIsCorrect
                                     ? meaningColor
                                     : meaningIsWrong
@@ -3417,9 +3418,9 @@ export default function PracticePage() {
                                         : "border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)]"
                                 } disabled:opacity-100`}
                               >
-                                <p className="text-[clamp(0.95rem,1.7vw,1.3rem)] leading-[1.22]">
+                                <FitText className="text-[clamp(0.95rem,1.7vw,1.3rem)] leading-[1.22]">
                                   {meaning}
-                                </p>
+                                </FitText>
                               </button>
                             ) : (
                               <div />
