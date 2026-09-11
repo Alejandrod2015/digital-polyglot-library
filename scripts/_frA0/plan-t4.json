@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "france",
+  "registro": "jugueton y de malentendidos: palabras que no significan lo mismo en Paris y en Marseille, y la risa que tapa lo triste",
+  "espina": "Diciembre. Maxime, el amigo parisino de Hugo, trae Paris a la placette, y Lea descubre que la distancia tambien esta en las palabras.",
+  "recursos": "A0: repeticion ritmica, contraste con mais, imagen concreta (la emocion como gesto visible)",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Lea quiere que Maxime, el amigo de Paris de Hugo, no le caiga bien: Paris es el motivo de la marcha",
+      "impide": "Maxime pide la carte y ella le trae un plano de Marseille; los dos se rien",
+      "cuesta": "se rie con el y pierde el rencor que la protegia: Maxime le cae bien",
+      "cambia": "Paris ya tiene una cara amable",
+      "emocion": "tapa la risa con la servilleta"
+    },
+    {
+      "slot": "2",
+      "quiere": "Hugo quiere convencer a Lea de que Paris no esta lejos: veinte minutos de metro no es lejos",
+      "impide": "para Lea, en Marseille, veinte minutos es lejisimos; cerca y lejos no significan lo mismo para los dos",
+      "cuesta": "Lea entiende que el ya mide las cosas como en Paris",
+      "cambia": "la distancia ya no es solo de kilometros",
+      "emocion": "deja el reloj sobre la mesa y no lo mira"
+    },
+    {
+      "slot": "3",
+      "quiere": "Lea quiere entender tu me manques para poder decirselo a Hugo",
+      "impide": "la frase va al reves; la escribe mal en su cuaderno y la borra",
+      "cuesta": "al decirla en voz alta la marcha se vuelve real: ya le echa de menos y el todavia esta",
+      "cambia": "por primera vez se lo dice",
+      "emocion": "escribe la frase, la borra con la goma y la dice en voz alta"
+    }
+  ]
+}

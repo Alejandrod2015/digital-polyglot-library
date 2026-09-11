@@ -7,9 +7,11 @@ import { FRENCH_A1_A2_LEMMAS } from "@/lib/cefr/frenchA1A2";
 const p = new PrismaClient();
 const ESTE = "cmtwo6cys0007j8yzg6ni3fsc";
 const strip = (w: string) => w.toLowerCase().replace(/^(le |la |les |l'|l’|se |s')/, "").trim();
-// Tema 3 · Helping & Favours
+// Tema 4 · Words & Meanings
 const C: Record<string, string[]> = {
-  s1: ["le stylo","le frigo","acheter"],
+  s1: ["la carte","l'ardoise","le sucre","la gare","le jus","la serviette","drôle","faux","vouloir dire","pas grave","c'est ça","surpris","rire","expliquer","venir","apporter","amer","noir","chaud","d'où"],
+  s2: ["le plan","le quai","la montre","le vélo","le bateau","l'arrêt","long","lent","à pied","habiter","vite","tard","tôt","marcher","arriver","ça dépend","dix","presque","tous les deux","en face"],
+  s3: ["le cahier","le crayon","la nappe","la lune","la gomme","l'étoile","manquer","écrire","lire","effacer","le sens","à l'envers","pour toujours","penser","compris","déjà","vrai","dur","doux","enfin"],
 };
 (async () => {
   const other: any[] = await p.journeyStory.findMany({ where: { journey: { language: "french" } }, select: { vocab: true, journeyId: true, journey: { select: { status: true, typeSlug: true } } } as any });
