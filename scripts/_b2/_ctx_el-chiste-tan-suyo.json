@@ -1,0 +1,354 @@
+{
+  "a": {
+    "es": "A la hora de la comida",
+    "en": "at lunchtime"
+  },
+  "abajo": {
+    "es": "La barra se vino abajo",
+    "en": "the whole bar collapsed"
+  },
+  "ajenos": {
+    "es": "festejaba los aciertos ajenos",
+    "en": "celebrated the other player's hits"
+  },
+  "antes": {
+    "es": "antes de tiempo",
+    "en": "ahead of time"
+  },
+  "barra": {
+    "es": "La barra se vino abajo",
+    "en": "the whole bar collapsed"
+  },
+  "brindaron": {
+    "es": "Brindaron, serios",
+    "en": "they toasted, serious"
+  },
+  "caballito": {
+    "es": "empujando el caballito",
+    "en": "pushing the little shot glass"
+  },
+  "calma": {
+    "es": "madurado con calma",
+    "en": "ripened without hurry"
+  },
+  "campeón": {
+    "es": "Salud, campeón",
+    "en": "cheers, champ"
+  },
+  "cansó": {
+    "es": "¿Se cansó, o me cuida el negocio?",
+    "en": "are you tired, or watching my business for me"
+  },
+  "cantina": {
+    "es": "la cantina se llenó",
+    "en": "the cantina filled up"
+  },
+  "casa": {
+    "es": "Me ganó en su casa",
+    "en": "you beat me in your own house"
+  },
+  "clavo": {
+    "es": "en el clavo de siempre",
+    "en": "on the usual nail"
+  },
+  "cobró": {
+    "es": "Renata cobró la apuesta",
+    "en": "Renata collected the bet"
+  },
+  "colgó": {
+    "es": "Joaquín colgó el sombrero",
+    "en": "Joaquín hung up his hat"
+  },
+  "comida": {
+    "es": "A la hora de la comida",
+    "en": "at lunchtime"
+  },
+  "con": {
+    "es": "madurado con calma",
+    "en": "ripened without hurry"
+  },
+  "contestó": {
+    "es": "contestó ella",
+    "en": "she answered"
+  },
+  "creerse": {
+    "es": "festejar era creerse el regalo",
+    "en": "celebrating would mean buying into the gift"
+  },
+  "creía": {
+    "es": "que ninguno se creía",
+    "en": "that neither of them believed"
+  },
+  "cuida": {
+    "es": "¿Se cansó, o me cuida el negocio?",
+    "en": "are you tired, or watching my business for me"
+  },
+  "de": {
+    "es": "de un jalón",
+    "en": "in one go"
+  },
+  "dejando": {
+    "es": "se estaba dejando ganar",
+    "en": "he was letting her win"
+  },
+  "desde": {
+    "es": "desde la puerta, un silbido",
+    "en": "from the door, a whistle"
+  },
+  "despacio": {
+    "es": "Voy despacio",
+    "en": "I'm going slowly"
+  },
+  "dijo": {
+    "es": "dijo Joaquín",
+    "en": "Joaquín said"
+  },
+  "dure": {
+    "es": "para que dure",
+    "en": "so it lasts"
+  },
+  "ella": {
+    "es": "contestó ella",
+    "en": "she answered"
+  },
+  "empujando": {
+    "es": "empujando el caballito",
+    "en": "pushing the little shot glass"
+  },
+  "en": {
+    "es": "en el clavo de siempre",
+    "en": "on the usual nail"
+  },
+  "entendió": {
+    "es": "Renata lo entendió",
+    "en": "Renata understood it"
+  },
+  "era": {
+    "es": "festejar era creerse el regalo",
+    "en": "celebrating would mean buying into the gift"
+  },
+  "es": {
+    "es": "y no es regalo",
+    "en": "and it's not a gift"
+  },
+  "estaba": {
+    "es": "se estaba dejando ganar",
+    "en": "he was letting her win"
+  },
+  "ganar": {
+    "es": "se estaba dejando ganar",
+    "en": "he was letting her win"
+  },
+  "ganó": {
+    "es": "Me ganó en su casa",
+    "en": "you beat me in your own house"
+  },
+  "gracia": {
+    "es": "sin que perdiera la gracia",
+    "en": "without losing its charm"
+  },
+  "había": {
+    "es": "usted no había preguntado",
+    "en": "you hadn't asked"
+  },
+  "hora": {
+    "es": "A la hora de la comida",
+    "en": "at lunchtime"
+  },
+  "iban": {
+    "es": "Iban parejos",
+    "en": "they were even"
+  },
+  "invita": {
+    "es": "La casa no invita",
+    "en": "it's not on the house"
+  },
+  "jalón": {
+    "es": "de un jalón",
+    "en": "in one go"
+  },
+  "jugaba": {
+    "es": "se jugaba el desquite",
+    "en": "the rematch was at stake"
+  },
+  "lista": {
+    "es": "¿Lista, patrona?",
+    "en": "ready, boss lady"
+  },
+  "llenó": {
+    "es": "la cantina se llenó",
+    "en": "the cantina filled up"
+  },
+  "lo": {
+    "es": "Renata lo entendió",
+    "en": "Renata understood it"
+  },
+  "me": {
+    "es": "¿Se cansó, o me cuida el negocio?",
+    "en": "are you tired, or watching my business for me"
+  },
+  "nací": {
+    "es": "Nací lista",
+    "en": "I was born ready"
+  },
+  "negocio": {
+    "es": "¿Se cansó, o me cuida el negocio?",
+    "en": "are you tired, or watching my business for me"
+  },
+  "ninguno": {
+    "es": "que ninguno se creía",
+    "en": "that neither of them believed"
+  },
+  "no": {
+    "es": "usted no había preguntado",
+    "en": "you hadn't asked"
+  },
+  "notó": {
+    "es": "ella notó la trampa",
+    "en": "she noticed the trick"
+  },
+  "o": {
+    "es": "¿Se cansó, o me cuida el negocio?",
+    "en": "are you tired, or watching my business for me"
+  },
+  "para": {
+    "es": "para que dure",
+    "en": "so it lasts"
+  },
+  "patrona": {
+    "es": "¿Lista, patrona?",
+    "en": "ready, boss lady"
+  },
+  "pero": {
+    "es": "Pero yo sí",
+    "en": "but I do"
+  },
+  "podía": {
+    "es": "no se podía repetir",
+    "en": "couldn't be repeated"
+  },
+  "por": {
+    "es": "por la victoria",
+    "en": "for the victory"
+  },
+  "preguntado": {
+    "es": "usted no había preguntado",
+    "en": "you hadn't asked"
+  },
+  "preguntó": {
+    "es": "preguntó ella",
+    "en": "she asked"
+  },
+  "puerta": {
+    "es": "desde la puerta, un silbido",
+    "en": "from the door, a whistle"
+  },
+  "público": {
+    "es": "y con público",
+    "en": "and with an audience"
+  },
+  "que": {
+    "es": "tan suyo que no se podía repetir",
+    "en": "so completely his own that it couldn't be repeated"
+  },
+  "regalo": {
+    "es": "y no es regalo",
+    "en": "and it's not a gift"
+  },
+  "repetir": {
+    "es": "no se podía repetir",
+    "en": "couldn't be repeated"
+  },
+  "rindió": {
+    "es": "y se rindió",
+    "en": "and gave up"
+  },
+  "salud": {
+    "es": "Salud, campeón",
+    "en": "cheers, champ"
+  },
+  "saludó": {
+    "es": "saludó él",
+    "en": "he greeted"
+  },
+  "se": {
+    "es": "y se rindió",
+    "en": "and gave up"
+  },
+  "siempre": {
+    "es": "en el clavo de siempre",
+    "en": "on the usual nail"
+  },
+  "sin": {
+    "es": "sin que perdiera la gracia",
+    "en": "without losing its charm"
+  },
+  "soltó": {
+    "es": "Soltó uno de su cosecha",
+    "en": "he let loose one of his own making"
+  },
+  "sombrero": {
+    "es": "colgó el sombrero",
+    "en": "hung up his hat"
+  },
+  "su": {
+    "es": "Soltó uno de su cosecha",
+    "en": "he let loose one of his own making"
+  },
+  "suyo": {
+    "es": "un chiste tan suyo",
+    "en": "a joke so completely his own"
+  },
+  "sí": {
+    "es": "Pero yo sí",
+    "en": "but I do"
+  },
+  "tan": {
+    "es": "un chiste tan suyo",
+    "en": "a joke so completely his own"
+  },
+  "tardaba": {
+    "es": "él tardaba y festejaba",
+    "en": "he was slow and celebrated"
+  },
+  "tiempo": {
+    "es": "antes de tiempo",
+    "en": "ahead of time"
+  },
+  "tomó": {
+    "es": "se lo tomó de un jalón",
+    "en": "he downed it in one go"
+  },
+  "uno": {
+    "es": "Soltó uno de su cosecha",
+    "en": "he let loose one of his own making"
+  },
+  "usted": {
+    "es": "usted no había preguntado",
+    "en": "you hadn't asked"
+  },
+  "victoria": {
+    "es": "por la victoria",
+    "en": "for the victory"
+  },
+  "vino": {
+    "es": "La barra se vino abajo",
+    "en": "the whole bar collapsed"
+  },
+  "voy": {
+    "es": "Voy despacio",
+    "en": "I'm going slowly"
+  },
+  "y": {
+    "es": "y con público",
+    "en": "and with an audience"
+  },
+  "yo": {
+    "es": "Pero yo sí",
+    "en": "but I do"
+  },
+  "él": {
+    "es": "saludó él",
+    "en": "he greeted"
+  }
+}
