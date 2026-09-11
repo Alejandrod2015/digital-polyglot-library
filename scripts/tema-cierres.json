@@ -1608,8 +1608,8 @@
     }
   },
   "cmtpls1l20007j8epwgcs6e1h#partners-and-in-laws": {
-    "cerrado": "2026-09-10T23:35:14.204Z",
-    "hash": "63969148003176b1",
+    "cerrado": "2026-09-11T07:14:50.629Z",
+    "hash": "0ba5902e3f24ece7",
     "historias": [
       "partners-and-in-laws#1 vitel-tone-con-blanco",
       "partners-and-in-laws#2 aca-los-errores-se-pagan",
@@ -1635,7 +1635,7 @@
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: partners-and-in-laws (Emiliano, Norma)"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: partners-and-in-laws (Norma, Emiliano)"
     ],
     "plan": {
       "tipo": "Traveler: protagonistas nativos; el narrador mira desde fuera, presenta gente y sitios (Ciudad, pais) y explica lo que un local daria por sabido",
@@ -1740,8 +1740,8 @@
     }
   },
   "cmtpls1l20007j8epwgcs6e1h#tales-and-tall-stories": {
-    "cerrado": "2026-09-10T23:35:29.822Z",
-    "hash": "a2e2d0e325aebc0c",
+    "cerrado": "2026-09-11T07:15:09.460Z",
+    "hash": "a2655dd42acb17b9",
     "historias": [
       "tales-and-tall-stories#1 de-medio-metro-y-gracias",
       "tales-and-tall-stories#2 la-carreta-mojada",
