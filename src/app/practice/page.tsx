@@ -425,6 +425,14 @@ export default function PracticePage() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [matchAnswers, setMatchAnswers] = useState<Record<string, string>>({});
   const [activeMatchWord, setActiveMatchWord] = useState<string | null>(null);
+  // Match con reintento, igual que la app: Check fija los pares acertados, pinta
+  // de rojo los fallados 900 ms y los suelta para volver a intentarlo. El
+  // ejercicio se revela cuando todo esta bien o se acaba el tiempo.
+  const [matchLockedWords, setMatchLockedWords] = useState<string[]>([]);
+  const [matchWrongFlash, setMatchWrongFlash] = useState<string[]>([]);
+  // Un match resuelto despues de fallar no suma punto ni encadena racha.
+  const matchHadErrorRef = useRef(false);
+  const matchFlashTimeoutRef = useRef<number | null>(null);
   const [revealedIds, setRevealedIds] = useState<string[]>([]);
   const [score, setScore] = useState(0);
   const [sessionComplete, setSessionComplete] = useState(false);
@@ -1202,6 +1210,11 @@ export default function PracticePage() {
     setSelectedOption(null);
     setMatchAnswers({});
     setActiveMatchWord(null);
+    if (matchFlashTimeoutRef.current != null) window.clearTimeout(matchFlashTimeoutRef.current);
+    matchFlashTimeoutRef.current = null;
+    setMatchLockedWords([]);
+    setMatchWrongFlash([]);
+    matchHadErrorRef.current = false;
     setRevealedIds([]);
     setScore(0);
     setSessionComplete(false);
@@ -1281,6 +1294,11 @@ export default function PracticePage() {
     setSelectedOption(null);
     setMatchAnswers({});
     setActiveMatchWord(null);
+    if (matchFlashTimeoutRef.current != null) window.clearTimeout(matchFlashTimeoutRef.current);
+    matchFlashTimeoutRef.current = null;
+    setMatchLockedWords([]);
+    setMatchWrongFlash([]);
+    matchHadErrorRef.current = false;
     setLastResult(null);
     setPlayingClipId(null);
     setTimerRemaining(timerDurationForExercise(exercises[exerciseIndex] ?? null));
@@ -1465,9 +1483,31 @@ export default function PracticePage() {
     if (revealedIds.includes(currentExercise.id)) return;
     setRevealedIds((prev) => (prev.includes(currentExercise.id) ? prev : [...prev, currentExercise.id]));
 
+    // Si el tiempo se agota durante el parpadeo rojo, se revela con los fallos
+    // todavia puestos, y el temporizador ya no debe soltarlos.
+    if (matchFlashTimeoutRef.current != null) {
+      window.clearTimeout(matchFlashTimeoutRef.current);
+      matchFlashTimeoutRef.current = null;
+      setMatchWrongFlash([]);
+    }
+
+    const allPairsRight =
+      currentExercise.type === "match_meaning" &&
+      currentExercise.pairs.every((pair) => matchAnswers[pair.word] === pair.answer);
+
+    // Match resuelto tras fallar: suena a acierto porque lo es, pero no suma
+    // punto ni encadena racha (mismo criterio que la app). El fallo ya sono y
+    // ya quedo en `wrongIds` al pulsar Check.
+    if (allPairsRight && matchHadErrorRef.current) {
+      setStreak(0);
+      setLastResult("wrong");
+      playFeedbackSound("correct");
+      return;
+    }
+
     const isCorrect =
       currentExercise.type === "match_meaning"
-        ? currentExercise.pairs.every((pair) => matchAnswers[pair.word] === pair.answer)
+        ? allPairsRight
         : selectedOption === currentExercise.answer;
 
     if (isCorrect) {
@@ -1760,6 +1800,11 @@ export default function PracticePage() {
     setExerciseIndex(0);
     setSelectedOption(null);
     setMatchAnswers({});
+    if (matchFlashTimeoutRef.current != null) window.clearTimeout(matchFlashTimeoutRef.current);
+    matchFlashTimeoutRef.current = null;
+    setMatchLockedWords([]);
+    setMatchWrongFlash([]);
+    matchHadErrorRef.current = false;
     setRevealedIds([]);
     setScore(0);
     setStreak(0);
@@ -2088,6 +2133,40 @@ export default function PracticePage() {
       return next;
     });
     setActiveMatchWord(null);
+  };
+
+  // Check del match. Si todo esta bien, revela como cualquier ejercicio. Si no,
+  // fija los aciertos, pinta los fallos de rojo y a los 900 ms los suelta para
+  // reintentar; el fallo suena y cuenta aqui, una vez por Check.
+  const checkMatchAnswers = () => {
+    if (!currentExercise || currentExercise.type !== "match_meaning" || revealed) return;
+    if (matchWrongFlash.length > 0) return;
+    const wrongWords = currentExercise.pairs
+      .filter((pair) => matchAnswers[pair.word] !== pair.answer)
+      .map((pair) => pair.word);
+    if (wrongWords.length === 0) {
+      revealCurrent();
+      return;
+    }
+    const exerciseId = currentExercise.id;
+    matchHadErrorRef.current = true;
+    setMatchLockedWords(
+      currentExercise.pairs.filter((pair) => !wrongWords.includes(pair.word)).map((pair) => pair.word)
+    );
+    setMatchWrongFlash(wrongWords);
+    setActiveMatchWord(null);
+    setStreak(0);
+    setWrongIds((prev) => (prev.includes(exerciseId) ? prev : [...prev, exerciseId]));
+    playFeedbackSound("wrong");
+    matchFlashTimeoutRef.current = window.setTimeout(() => {
+      matchFlashTimeoutRef.current = null;
+      setMatchAnswers((prev) => {
+        const next = { ...prev };
+        for (const word of wrongWords) delete next[word];
+        return next;
+      });
+      setMatchWrongFlash([]);
+    }, 900);
   };
 
   const chooseOption = (option: string) => {
@@ -3310,8 +3389,12 @@ export default function PracticePage() {
                         const currentValue = matchAnswers[pair.word] ?? "";
                         const matchColor = matchColorClasses[index % matchColorClasses.length];
                         const isActive = activeMatchWord === pair.word;
-                        const isCorrect = revealed && currentValue === pair.answer;
-                        const isWrong = revealed && currentValue && currentValue !== pair.answer;
+                        const isLocked = matchLockedWords.includes(pair.word);
+                        const matchFlashing = matchWrongFlash.length > 0;
+                        const isCorrect = (revealed || isLocked) && currentValue === pair.answer;
+                        const isWrong =
+                          matchWrongFlash.includes(pair.word) ||
+                          (revealed && currentValue && currentValue !== pair.answer);
                         const assignedWord =
                           meaning != null
                             ? Object.entries(matchAnswers).find(([, assignedMeaning]) => assignedMeaning === meaning)?.[0] ?? null
@@ -3328,16 +3411,19 @@ export default function PracticePage() {
                           assignedIndex >= 0
                             ? matchColorClasses[assignedIndex % matchColorClasses.length]
                             : "";
-                        const meaningIsCorrect = revealed && assignedPair?.answer === meaning;
-                        const meaningIsWrong = revealed && isAssigned && assignedPair?.answer !== meaning;
+                        const meaningLocked = assignedWord != null && matchLockedWords.includes(assignedWord);
+                        const meaningIsCorrect = (revealed || meaningLocked) && assignedPair?.answer === meaning;
+                        const meaningIsWrong =
+                          (assignedWord != null && matchWrongFlash.includes(assignedWord)) ||
+                          (revealed && isAssigned && assignedPair?.answer !== meaning);
 
                         return (
                           <div key={`${pair.word}-${meaning ?? index}`} className="contents">
                             <div
                               role="button"
-                              tabIndex={revealed ? -1 : 0}
+                              tabIndex={revealed || isLocked ? -1 : 0}
                               onClick={() => {
-                                if (revealed) return;
+                                if (revealed || isLocked || matchFlashing) return;
                                 if (currentValue) {
                                   unassignMatchWord(pair.word);
                                   return;
@@ -3399,14 +3485,16 @@ export default function PracticePage() {
                               <button
                                 type="button"
                                 onClick={() => {
-                                  if (revealed) return;
+                                  if (revealed || meaningLocked || matchFlashing) return;
                                   if (assignedWord) {
                                     unassignMatchWord(assignedWord);
                                     return;
                                   }
                                   assignMatchMeaning(meaning);
                                 }}
-                                disabled={revealed || (!activeMatchWord && !assignedWord)}
+                                disabled={
+                                  revealed || meaningLocked || matchFlashing || (!activeMatchWord && !assignedWord)
+                                }
                                 className={`flex h-full min-h-0 w-full items-center justify-center rounded-[1.2rem] border px-[clamp(0.4rem,0.8vw,0.7rem)] py-[clamp(0.4rem,0.8vw,0.7rem)] text-center transition ${
                                   meaningIsCorrect
                                     ? meaningColor
@@ -3477,7 +3565,7 @@ export default function PracticePage() {
               ) : (
                 <button
                   type="button"
-                  onClick={revealCurrent}
+                  onClick={currentExercise.type === "match_meaning" ? checkMatchAnswers : revealCurrent}
                   disabled={!canSubmitAnswer}
                   className={`flex w-full items-center justify-center gap-2.5 rounded-2xl px-6 py-[18px] text-[13px] font-black uppercase tracking-[0.18em] transition ${
                     canSubmitAnswer
