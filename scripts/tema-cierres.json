@@ -1137,8 +1137,8 @@
     }
   },
   "cmtrcpgso00073232h8vaf7na#petropolis": {
-    "cerrado": "2026-09-11T09:36:28.407Z",
-    "hash": "67a32fffebfaf557",
+    "cerrado": "2026-09-11T16:19:07.770Z",
+    "hash": "255fccdedec52f60",
     "historias": [
       "petropolis#0 um-generico-ate-segunda",
       "petropolis#1 tem-uma-solucao-mas-e-ma",
@@ -1263,7 +1263,7 @@
     }
   },
   "cmtrcpgso00073232h8vaf7na#salvador": {
-    "cerrado": "2026-09-11T10:44:39.262Z",
+    "cerrado": "2026-09-11T17:07:58.264Z",
     "hash": "c3153c854def65bf",
     "historias": [
       "salvador#0 a-lousa-e-nenhum-livro",
