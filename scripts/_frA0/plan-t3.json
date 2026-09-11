@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "france",
+  "registro": "practico y calido: manos ocupadas, cosas que pesan, pequenas deudas entre vecinos y amigos",
+  "espina": "Hugo se va a Paris en marzo. En noviembre los favores empiezan a preparar su ausencia: lo que deja, lo que necesita y lo que arregla para cuando no este.",
+  "recursos": "A0: repeticion ritmica (une goutte, encore une goutte), contraste con mais, imagen concreta (la emocion como gesto visible)",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Lea quiere bajar al cafe el viejo sillon que Hugo le regala antes de irse",
+      "impide": "pesa, la escalera es estrecha y Hugo esta trabajando; Chloe, una vecina con furgoneta, se ofrece a ayudar",
+      "cuesta": "a cambio Chloe pide un cafe gratis cada dia hasta marzo, y el sillon ocupa el rincon de la ventana donde Lea se sentaba",
+      "cambia": "el sitio de Hugo se queda en el cafe aunque el se vaya",
+      "emocion": "Lea se sienta en el sillon, cierra los ojos y huele el jersey de Hugo en el cojin"
+    },
+    {
+      "slot": "2",
+      "quiere": "Hugo necesita dinero para la fianza del piso de Paris y le cuesta pedirlo",
+      "impide": "Lea ahorra en una hucha para un percolateur nuevo; el viejo esta roto",
+      "cuesta": "Lea le presta sus ahorros: no hay percolateur nuevo, y paga ella para que el se vaya",
+      "cambia": "Lea ya no solo acepta la marcha: la ayuda",
+      "emocion": "le da los billetes sin contarlos y vuelve a la barra"
+    },
+    {
+      "slot": "3",
+      "quiere": "Hugo quiere devolver el favor: arreglar el grifo del cafe, que gotea desde siempre",
+      "impide": "no sabe, lo moja todo y Lea se rie",
+      "cuesta": "lo arregla, y la gota que Lea oia cada noche desaparece; el dice que ahora ella ya no le necesita, y ella no contesta",
+      "cambia": "Lea entiende que el arregla las cosas para cuando no este",
+      "emocion": "abre y cierra el grifo dos veces, y no cae ninguna gota"
+    }
+  ]
+}
