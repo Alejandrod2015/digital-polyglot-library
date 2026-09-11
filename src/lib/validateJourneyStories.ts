@@ -743,11 +743,23 @@ export function validateJourneyStories(
     // niveles: los suelos A0-A2 (y el B1 provisional) quedan INTACTOS y ahora
     // con margen extra, porque una plaza solo puede subir de cuenta con esto,
     // nunca bajar. No se recalibra ninguno.
-    const textos = stories.map((s) => s.text.toLowerCase());
+    const textos = stories.map((s) => s.text.toLowerCase().replace(/’/g, "'"));
     const clave = (v: { word: string; surface?: string | null }) =>
-      String(v.surface ?? v.word).toLowerCase().replace(/^(der|die|das|le|la|el|il|o|a)\s+/, "");
+      String(v.surface ?? v.word).toLowerCase().replace(/’/g, "'").replace(/^(der|die|das|le|la|el|il|o|a)\s+/, "");
     const encuentros = (v: { word: string; surface?: string | null }): number => {
       const k = clave(v);
+      // Una pieza con guion o apostrofo ("la-haut", "aujourd'hui", "Au-dessus")
+      // no puede buscarse en el set de tokens: `tok` parte por letras y la
+      // pieza entera no esta nunca, asi que contaba 0 aunque saliera en cinco
+      // cuerpos (bug de MEDICION, 2026-09-11, Friends FR A0: nueve plazas
+      // sueltas fijas). Se busca ENTERA con bordes de letra, para que un "la"
+      // suelto no cuente como "la-haut". Mismo arreglo, y mismo argumento, que
+      // el de las expresiones de 2026-09-06: una plaza solo puede subir de
+      // cuenta, nunca bajar.
+      if (!k.includes(" ") && !/^\p{L}+$/u.test(k)) {
+        const pieza = new RegExp(`(?<!\\p{L})${k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?!\\p{L})`, "u");
+        return textos.filter((t) => pieza.test(t)).length;
+      }
       if (!k.includes(" ")) return cuerpos.filter((c) => c.has(k)).length;
       const lema = String(v.word).toLowerCase();
       return textos.filter((t) => t.includes(k) || t.includes(lema)).length;
