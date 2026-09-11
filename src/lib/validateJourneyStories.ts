@@ -78,9 +78,13 @@ export type JourneyCheck = {
    *  reglas esa lista CAMBIA justo al arreglarlas (al bajar las cuatro peores
    *  historias aparecen otras cuatro y se leen como infractoras nuevas).
    *  `mejor` dice hacia donde se mejora: una media de color baja, un suelo de
-   *  nivel sube. */
-  magnitud?: { valor: number; mejor: "alta" | "baja" };
+   *  nivel sube. Una regla con varias condiciones (la recirculacion mide
+   *  media, cuota de ancladas y cola) declara una dimension por condicion, y
+   *  el trinquete la da por empeorada si empeora CUALQUIERA. */
+  magnitud?: Magnitud | Magnitud[];
 };
+
+export type Magnitud = { valor: number; mejor: "alta" | "baja" };
 
 const QUOTE_OPEN = "“";
 const QUOTE_CLOSE = "”";
@@ -385,7 +389,7 @@ export function validateJourneyStories(
     (detail ? ` · medida provisional: ${detail}` : "");
   const pushSet = (
     id: string, label: string, ok: boolean, detail?: string,
-    magnitud?: { valor: number; mejor: "alta" | "baja" },
+    magnitud?: Magnitud | Magnitud[],
   ) => {
     if (!parcial) {
       push(id, label, ok, detail);
@@ -440,7 +444,10 @@ export function validateJourneyStories(
     // esta completo hasta que lo estan las historias.
     pushSet("journey-introduction-form-variety", "Las tres formas de presentacion se alternan",
       formas.length < 3 || peor <= Math.ceil(formas.length / 2),
-      `${peor} de ${formas.length} usan la misma forma: ${[...porForma].map(([k, v]) => `${k} x${v}`).join(", ")}`);
+      `${peor} de ${formas.length} usan la misma forma: ${[...porForma].map(([k, v]) => `${k} x${v}`).join(", ")}`,
+      // El detalle no cita slugs, asi que sin magnitud el trinquete leia
+      // cualquier cambio como EMPEORA, tambien el que reparte mejor.
+      { valor: formas.length ? peor / formas.length : 0, mejor: "baja" });
   }
 
   // ── 4. Forma de la apertura ─────────────────────────────────
@@ -757,7 +764,10 @@ export function validateJourneyStories(
       const unaVez = todas.filter((x) => x.n <= 1).length;
       pushSet("journey-vocab-recirculation", `Cada plaza de vocab se reencuentra (media ${suelo} o mas en ${level})`,
         media >= suelo,
-        `media ${media.toFixed(2)} encuentros por plaza (ideal 4, liston de los buenos ${suelo}) · ${unaVez}/${todas.length} salen una sola vez · sin marcar ancladas`);
+        `media ${media.toFixed(2)} encuentros por plaza (ideal 4, liston de los buenos ${suelo}) · ${unaVez}/${todas.length} salen una sola vez · sin marcar ancladas`,
+        // Declarada porque aqui la media mejora SUBIENDO, y el respaldo del
+        // trinquete que lee "media N" del detalle asume lo contrario.
+        { valor: media, mejor: "alta" });
     } else {
       const port = todas.filter((x) => !x.anchor);
       const anc = todas.filter((x) => x.anchor);
@@ -783,7 +793,10 @@ export function validateJourneyStories(
         ` | cola: ${unaVez}/${port.length} portables con un solo encuentro (${Math.round(cola * 100)}%` +
         `${topeCola === undefined ? ", sin liston medido para este nivel" : `, tope ${Math.round(topeCola * 100)}%`})` +
         `${unaVez ? ` | de un solo encuentro: ${solasLista.slice(0, 30).join(", ")}${solasLista.length > 30 ? "…" : ""}` : ""}` +
-        `${okCuota ? "" : `; pasan del ${Math.round(TOPE_ANCLADAS * 100)}%`}`);
+        `${okCuota ? "" : `; pasan del ${Math.round(TOPE_ANCLADAS * 100)}%`}`,
+        // Tres condiciones, tres dimensiones: subir la media a costa de mas
+        // ancladas o de una cola mas larga sigue siendo empeorar.
+        [{ valor: media, mejor: "alta" }, { valor: cuota, mejor: "baja" }, { valor: cola, mejor: "baja" }]);
     }
   }
 
@@ -1025,7 +1038,10 @@ export function validateJourneyStories(
     pushSet("journey-cast-fixed-max-two", "Nunca mas de 2 personajes fijos",
       fijos.length <= 2,
       `${fijos.length} salen en media o mas: ${fijos.map(ficha).join(", ")}. ` +
-      `Tres voces sostenidas se confunden de oido; el tope es 2.`);
+      `Tres voces sostenidas se confunden de oido; el tope es 2.`,
+      // El detalle cita nombres, no slugs: sin magnitud, pasar de 4 fijos a 3
+      // salia EMPEORA en el trinquete.
+      { valor: fijos.length, mejor: "baja" });
 
     // Un check que no sabe medir NO puede fallar, igual que el de presentacion:
     // si el detector de habla no saco reparto, el rojo seria del detector.
@@ -1102,7 +1118,11 @@ export function validateJourneyStories(
         `Como mucho ${topeNuevos} personaje(s) nuevo(s) por tema, presentados en su primera historia`,
         conDeMas.length === 0 && fueraDeSuTema.length === 0,
         [conDeMas.length ? `temas con mas de uno: ${conDeMas.map((t) => `${t} (${nuevosPorTema.get(t)!.join(", ")})`).join(" | ")}` : "",
-         fueraDeSuTema.length ? `presentados tarde: ${fueraDeSuTema.join(", ")}` : ""].filter(Boolean).join(" · "));
+         fueraDeSuTema.length ? `presentados tarde: ${fueraDeSuTema.join(", ")}` : ""].filter(Boolean).join(" · "),
+        // Por EXCESO y no por temas afectados: un tema que pasa de dos nuevos a
+        // tres sigue siendo un tema, pero es peor.
+        [{ valor: conDeMas.reduce((n, t) => n + nuevosPorTema.get(t)!.length - topeNuevos, 0), mejor: "baja" },
+         { valor: fueraDeSuTema.length, mejor: "baja" }]);
 
       // Se mide por CUANTOS, no por quienes. "Solo los fijos" quiere decir
       // dos personas y ninguna mas, y eso se puede comprobar con el journey a

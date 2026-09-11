@@ -1,4 +1,8 @@
-import type { JourneyCheck } from "@/lib/validateJourneyStories";
+import type { JourneyCheck, Magnitud } from "@/lib/validateJourneyStories";
+
+function dimensiones(m: JourneyCheck["magnitud"]): Magnitud[] {
+  return m === undefined ? [] : Array.isArray(m) ? m : [m];
+}
 
 /**
  * ¿La edición empeora esta regla de conjunto respecto a como estaba?
@@ -40,10 +44,15 @@ export function empeora(antes: JourneyCheck | undefined, ahora: JourneyCheck, sl
   // dos direcciones: una media de color mejora BAJANDO, un suelo de nivel
   // mejora SUBIENDO. Sin esto el suelo de nivel tampoco se podia reparar a
   // plazos, porque su detalle no lista slugs sino palabras.
-  if (antes.magnitud && ahora.magnitud && antes.magnitud.mejor === ahora.magnitud.mejor) {
-    return ahora.magnitud.mejor === "baja"
-      ? ahora.magnitud.valor > antes.magnitud.valor
-      : ahora.magnitud.valor < antes.magnitud.valor;
+  //
+  // Con varias dimensiones (2026-09-11) empeora si empeora CUALQUIERA: subir
+  // la media de recirculacion a costa de mas ancladas no es mejorar. Si las
+  // dos mediciones no declaran las mismas dimensiones en el mismo sentido, no
+  // son comparables y se cae a la regla vieja.
+  const dimA = dimensiones(antes.magnitud);
+  const dimH = dimensiones(ahora.magnitud);
+  if (dimA.length && dimA.length === dimH.length && dimA.every((d, i) => d.mejor === dimH[i].mejor)) {
+    return dimH.some((d, i) => d.mejor === "baja" ? d.valor > dimA[i].valor : d.valor < dimA[i].valor);
   }
   if (da === dh) return false;
   const ma = da.match(MAGNITUD);
