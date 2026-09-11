@@ -2290,6 +2290,71 @@
       ]
     }
   },
+  "cmtwo6cys0007j8yzg6ni3fsc#parties-and-gifts": {
+    "cerrado": "2026-09-11T09:58:57.495Z",
+    "hash": "a15f4009b3217128",
+    "historias": [
+      "parties-and-gifts#0 la-boule-porte-bonheur",
+      "parties-and-gifts#1 trente-trois-bougies",
+      "parties-and-gifts#2 a-toi-la-boule"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"festivo con nudo en la garganta: luces de papel, velas, la ultima partida en la placette y lo que se regala cuando no hay dinero\", espina \"Enero. El ultimo cumpleanos de Hugo en Marseille. Lea regala lo unico que tiene de valor, pierde a proposito la ultima partida y reparten el juego como promesa de volver.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dit\" 33%)",
+      "arranques de parrafo variados (mas repetido \"louise\", 13%)",
+      "densidad 5.9 palabras por oracion (techo 9 en a0)",
+      "seguidilla 27/61 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 0.98 sobre 42 plazas · 41 salen una sola vez | ancladas: 18/60 (30%) | cola: 41/42 portables con un solo encuentro (98%, tope 30%) | de un solo encuentro: Aujourd'hui, vide, offrir, choisis, joli, beaucoup, chance, aime, coupe, Pourquoi, emballe, Génial, Pas mal, cache, allume, invite, trente-trois, Joyeux anniversaire, éteint, gai, À la fin, voir, exprès, laisse, gagnant, chante, danse, fête, dort, tranquille…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: parties-and-gifts (Léa, Hugo)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "france",
+      "registro": "festivo con nudo en la garganta: luces de papel, velas, la ultima partida en la placette y lo que se regala cuando no hay dinero",
+      "espina": "Enero. El ultimo cumpleanos de Hugo en Marseille. Lea regala lo unico que tiene de valor, pierde a proposito la ultima partida y reparten el juego como promesa de volver.",
+      "recursos": "A0: repeticion ritmica, contraste con mais, imagen concreta (la emocion como gesto visible)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Lea quiere hacerle a Hugo un regalo que le recuerde Marseille",
+          "impide": "no tiene dinero: presto sus ahorros a Hugo; su hermana Louise viene a ayudar y no hay nada que comprar",
+          "cuesta": "regala su boule de la suerte, la de su primera victoria contra Hugo",
+          "cambia": "el regalo no se compra: se da algo propio",
+          "emocion": "Louise corta el papel y Lea tarda en soltar la boule"
+        },
+        {
+          "slot": "2",
+          "quiere": "Lea quiere que el ultimo cumpleanos de Hugo en la placette sea una fiesta alegre",
+          "impide": "en la ultima partida de petanque Hugo va a perder, y Lea no quiere que pierda esta noche",
+          "cuesta": "Lea pierde a proposito, como el en el tema 1; Hugo lo nota y no dice nada",
+          "cambia": "ahora es ella la que se deja ganar",
+          "emocion": "aplaude muy fuerte y no le mira a los ojos"
+        },
+        {
+          "slot": "3",
+          "quiere": "Hugo quiere devolverle algo a Lea al abrir el regalo",
+          "impide": "reconoce la boule de la suerte y no quiere quitarsela",
+          "cuesta": "reparten el juego: el se lleva la boule, ella se queda el cochonnet; el juego ya no esta entero en la placette",
+          "cambia": "hay una promesa de volver a jugar",
+          "emocion": "Lea le cierra la mano sobre la boule"
+        }
+      ]
+    }
+  },
   "cmtwo6cys0007j8yzg6ni3fsc#sports-and-games": {
     "cerrado": "2026-09-11T08:38:05.127Z",
     "hash": "2bc9c74442b7ad08",
