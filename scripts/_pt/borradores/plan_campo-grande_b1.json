@@ -1,0 +1,34 @@
+{
+ "tipo": "traveler",
+ "nivel": "b1",
+ "variante": "brazil",
+ "registro": "cansado y atento, con la cortesía de quien pide favores",
+ "espina": "Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.",
+ "recursos": "B1: narración en pasado con estilo indirecto (avisou que), futuro do pretérito (sairia, perderia) y subjuntivo imperfecto (passasse, estivesse). Recursos B1: cambio de ritmo (los siete minutos de moto) y reversa cosida (el caderno perdido es lo que vale el doble). Heredados A0-A2: contraste, causalidad explícita, imagen concreta de remate. Nada de B2.",
+ "historias": [
+  {
+   "slot": "campo-grande#0",
+   "quiere": "Renata quiere llegar a Bonito al día siguiente.",
+   "impide": "El ônibus de las diez ya no sale y su itinerário impreso no vale.",
+   "cuesta": "Arriesgar la conexión en el último ônibus en vez de remarcar.",
+   "cambia": "Embarca en el de las once y Cleide le desea buen viaje al cerrar el guichê.",
+   "emocion": "desesperación que se vuelve decisión"
+  },
+  {
+   "slot": "campo-grande#1",
+   "quiere": "Renata quiere dormir en el ônibus nocturno.",
+   "impide": "La poltrona es apretada, el vecino ronca y el enjoo no la deja.",
+   "cuesta": "Pasar la noche en vela con miedo de perder la hora.",
+   "cambia": "Una conversación con el motorista la calma y duerme veinte minutos.",
+   "emocion": "incomodidad que se vuelve compañía"
+  },
+  {
+   "slot": "campo-grande#2",
+   "quiere": "Renata quiere recuperar el caderno olvidado en la poltrona.",
+   "impide": "No hay transporte hasta la garagem y el ônibus para Bonito sale a las nueve.",
+   "cuesta": "Pagar el doble a un desconocido y entrar primero en el ônibus equivocado.",
+   "cambia": "Encuentra el caderno, alcanza el de Bonito y entiende qué valía el viaje.",
+   "emocion": "angustia que se vuelve orgullo"
+  }
+ ]
+}

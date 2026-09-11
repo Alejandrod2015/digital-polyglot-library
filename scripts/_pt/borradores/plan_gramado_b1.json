@@ -1,0 +1,34 @@
+{
+ "tipo": "traveler",
+ "nivel": "b1",
+ "variante": "brazil",
+ "registro": "cálido y de despedida, sin sentimentalismo",
+ "espina": "Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.",
+ "recursos": "B1: narración en pasado con estilo indirecto (perguntou se), futuro do pretérito (secariam, ficaria) y subjuntivo imperfecto (fosse, pudesse). Recursos B1: reversa cosida (lo que otros olvidan la abriga a ella) y cambio de ritmo. Heredados A0-A2: espejo concreto (el suéter que vuelve a la lavandería), contraste, causalidad explícita. Nada de B2.",
+ "historias": [
+  {
+   "slot": "gramado#0",
+   "quiere": "Renata quiere algo abrigado para el frío de Gramado.",
+   "impide": "Llegó con ropa de playa y todo en la maleta está mojado.",
+   "cuesta": "Aceptar ropa ajena, olvidada por otros, sin poder pagarla.",
+   "cambia": "Neuza le da el suéter y la invita a un chá; esa noche no pasa frío.",
+   "emocion": "desamparo que se vuelve abrigo"
+  },
+  {
+   "slot": "gramado#1",
+   "quiere": "Renata quiere aprender a vivir con el frío del cuarto alquilado.",
+   "impide": "El cuarto es helado y la cômoda está vacía.",
+   "cuesta": "Preguntar lo que a Neuza le parece evidente.",
+   "cambia": "Neuza le da su receta y su calle, y Renata duerme imaginándola.",
+   "emocion": "extrañeza que se vuelve ternura"
+  },
+  {
+   "slot": "gramado#2",
+   "quiere": "Renata quiere devolver el suéter y despedirse de Neuza.",
+   "impide": "Neuza no acepta devoluciones y el viaje termina ese día.",
+   "cuesta": "Irse de una calle que ya siente suya.",
+   "cambia": "Promete volver en junio y compara el primer día con el último.",
+   "emocion": "despedida sin tristeza"
+  }
+ ]
+}

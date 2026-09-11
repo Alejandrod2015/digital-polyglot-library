@@ -1,0 +1,34 @@
+{
+ "tipo": "traveler",
+ "nivel": "b1",
+ "variante": "brazil",
+ "registro": "práctico y algo tenso, con un aliado que no cobra por ayudar",
+ "espina": "Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.",
+ "recursos": "B1: narración en pasado con estilo indirecto (perguntou se), futuro do pretérito (entregaria, chegaria) y subjuntivo imperfecto (funcionasse, fosse). Recursos B1: reversa cosida (la negociación la gana proponiendo, no cediendo) y cambio de ritmo. Heredados A0-A2: contraste, causalidad explícita, imagen concreta de remate. Nada de B2.",
+ "historias": [
+  {
+   "slot": "petropolis#0",
+   "quiere": "Renata quiere un cargador que funcione antes de la reunión.",
+   "impide": "La tienda no tiene su modelo y el correio solo entregaría el lunes.",
+   "cuesta": "Pagar el triple por el genérico caro con garantía.",
+   "cambia": "El cargador funciona y Wilson promete sustituirlo si falla.",
+   "emocion": "urgencia que se vuelve alivio"
+  },
+  {
+   "slot": "petropolis#1",
+   "quiere": "Renata quiere mantener el empleo en la videollamada.",
+   "impide": "La internet cae y la jefa exigente le dobla la tarea por el mismo pago.",
+   "cuesta": "Discordar en voz alta y esperar un silencio que parece durar una hora.",
+   "cambia": "Aceptan su propuesta de más plazo y Wilson celebra con un café fuerte.",
+   "emocion": "tensión que se vuelve alivio"
+  },
+  {
+   "slot": "petropolis#2",
+   "quiere": "Renata quiere enviar la fatura impresa antes del vencimiento.",
+   "impide": "La impresora falla y el paquete pesa demasiado para un sobre.",
+   "cuesta": "Aceptar la ayuda de Wilson sin poder pagarle nada.",
+   "cambia": "Manda el paquete registrado y se entera de que el contrato salió.",
+   "emocion": "prisa que se vuelve gratitud"
+  }
+ ]
+}

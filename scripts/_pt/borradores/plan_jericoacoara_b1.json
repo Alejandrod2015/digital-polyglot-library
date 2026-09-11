@@ -1,0 +1,34 @@
+{
+ "tipo": "traveler",
+ "nivel": "b1",
+ "variante": "brazil",
+ "registro": "doméstico y algo terco, con humor de convivencia",
+ "espina": "Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.",
+ "recursos": "B1: narración en pasado con estilo indirecto (perguntou se), futuro do pretérito (comeriam, lavaria) y subjuntivo imperfecto (estivesse, cozinhasse). Recursos B1: reversa cosida (la regla de Edilson se vuelve contra él) y cambio de ritmo. Heredados A0-A2: contraste con mas, causalidad explícita, imagen concreta de remate. Nada de B2.",
+ "historias": [
+  {
+   "slot": "jericoacoara#0",
+   "quiere": "Renata quiere cocinar en la cocina compartida de la casa.",
+   "impide": "La pia está llena y la regla de la casa hace que nadie lave.",
+   "cuesta": "Limpiar lo que no ensució antes de poder cocinar.",
+   "cambia": "Anuncia en voz alta que hoy cocina y que, de propósito, hoy no lava.",
+   "emocion": "fastidio que se vuelve decisión"
+  },
+  {
+   "slot": "jericoacoara#1",
+   "quiere": "Renata quiere dar de comer bien a seis moradores que no conoce.",
+   "impide": "El feijão sale salado y todos lo comerían sin reclamar.",
+   "cuesta": "Admitir delante de Edilson que se equivocó con el sal.",
+   "cambia": "La batata cruda salva la cena y ella queda grata; Edilson le deja la lección de probar antes.",
+   "emocion": "vergüenza que se vuelve gratitud"
+  },
+  {
+   "slot": "jericoacoara#2",
+   "quiere": "Renata quiere que la regla de la casa valga también para Edilson.",
+   "impide": "Edilson insiste en que ella lave lo que cocinó.",
+   "cuesta": "Sostener el no toda la tarde con la panela sucia a la vista.",
+   "cambia": "Edilson acepta la regla, limpia la panela de noche y anuncia que mañana cocina él.",
+   "emocion": "terquedad que se vuelve respeto"
+  }
+ ]
+}

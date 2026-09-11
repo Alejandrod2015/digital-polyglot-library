@@ -1,0 +1,34 @@
+{
+ "tipo": "traveler",
+ "nivel": "b1",
+ "variante": "brazil",
+ "registro": "seco y práctico, con humor de situación",
+ "espina": "Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.",
+ "recursos": "B1: narración en pasado con la banda B1 medida por scripts/_pt/gramProbePT.ts: estilo indirecto (perguntou se), futuro do pretérito (resolveria, faria) y subjuntivo imperfecto (ensinasse, fosse). Recursos B1: reversa cosida (quien atendía acaba atendida) y cambio de ritmo. Heredados A0-A2: espejo concreto (Doença não é devuelve A dor não é doença), símil simple (la almofada fina como um pano dobrado), contraste, causalidad explícita. Nada de B2: sin ironía, sin subtexto, sin aforismos.",
+ "historias": [
+  {
+   "slot": "recife#0",
+   "quiere": "Renata quiere un remedio fuerte para el cuello trabado.",
+   "impide": "Nilza no le da nada hasta saber dónde duele y Renata no sabe nombrarlo.",
+   "cuesta": "Aceptar, desconfiada, el frasco barato y un diagnóstico que no pidió.",
+   "cambia": "Sale aliviada sabiendo que el problema es la cama, y Nilza le pide que avise si empeora.",
+   "emocion": "impaciencia que se rinde"
+  },
+  {
+   "slot": "recife#1",
+   "quiere": "Renata quiere dormir una noche entera en la pousada.",
+   "impide": "El colchón se hunde, la barriga entra en la cuenta y la ansiedad no la deja.",
+   "cuesta": "Bajar de madrugada, irritada, y admitir que no soporta el cuarto.",
+   "cambia": "Nilza no le vende nada: le enseña a respirar, y el mismo cuarto de repente sirve.",
+   "emocion": "agotamiento que se vuelve calma"
+  },
+  {
+   "slot": "recife#2",
+   "quiere": "Renata quiere que Nilza vaya al hospital por la mano.",
+   "impide": "Nilza prefiere no cerrar la farmacia y tiene su explicación lista.",
+   "cuesta": "Quedarse detrás del mostrador y sostener la discusión sin levantar la voz.",
+   "cambia": "El dedo estaba fracturado; quien atendía queda atendida y la frase del primer día vuelve cambiada de boca.",
+   "emocion": "terquedad que se vuelve cuidado"
+  }
+ ]
+}

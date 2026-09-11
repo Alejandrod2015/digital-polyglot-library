@@ -1,0 +1,34 @@
+{
+ "tipo": "traveler",
+ "nivel": "b1",
+ "variante": "brazil",
+ "registro": "sobrio y paciente, sin dramatismo",
+ "espina": "Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.",
+ "recursos": "B1: narración en pasado con estilo indirecto (disse que), futuro do pretérito (pararia, viraria) y subjuntivo imperfecto (puxasse, estivesse). Recursos B1: cambio de ritmo (frases cortas en la canoa) y reversa cosida (la lluvia que la retiene le regala la laguna). Heredados A0-A2: contraste, causalidad explícita, gancho final literal. Nada de B2.",
+ "historias": [
+  {
+   "slot": "lencois-maranhenses#0",
+   "quiere": "Renata quiere hacer la excursión en sus tres días en la región.",
+   "impide": "Una tempestad cancela la salida y nadie sabe cuándo parará.",
+   "cuesta": "Pagar una noche más sin saber si servirá de algo.",
+   "cambia": "Decide no desistir y a la mañana Damião aparece con dos remos.",
+   "emocion": "desánimo que se vuelve paciencia"
+  },
+  {
+   "slot": "lencois-maranhenses#1",
+   "quiere": "Renata quiere cruzar el río en la canoa hasta las dunas.",
+   "impide": "El río está alto y la corriente empuja la canoa de lado.",
+   "cuesta": "Obedecer sin fôlego y soltar el remo cuando todo le pide agarrarlo.",
+   "cambia": "La canoa resiste, pero la lluvia vuelve y Damião no promete el mañana.",
+   "emocion": "miedo que se vuelve confianza"
+  },
+  {
+   "slot": "lencois-maranhenses#2",
+   "quiere": "Renata quiere ver la laguna antes de irse.",
+   "impide": "El ônibus de las dos no se puede aplazar.",
+   "cuesta": "Saber que la laguna sigue igual sin ella cuando se vaya.",
+   "cambia": "Aprovecha la mañana libre en el agua mientras Damião la espera en la canoa.",
+   "emocion": "alegría contenida"
+  }
+ ]
+}
