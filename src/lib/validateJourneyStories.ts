@@ -329,6 +329,19 @@ export function validateJourneyStories(
      *  mismo umbral de siempre (7), para que quien ya llamaba a este checker
      *  siga midiendo exactamente lo que medía. */
     conjuntoCompleto?: boolean;
+    /** Id del journey. Solo lo usa el suelo de nivel, para saber si este
+     *  journey tiene linea base congelada (src/lib/journeyVocabFloorBaseline). */
+    journeyId?: string | null;
+    /** Tipo del journey (`typeSlug`: traveler, friends, expat...). Lo necesita
+     *  `journey-vocab-worth-teaching`, que solo gatea a los Traveler: en los
+     *  Friends la jerga coloquial ES el producto. Sin el, ese check mide e
+     *  informa pero no bloquea, que es lo prudente cuando no se sabe el tipo. */
+    journeyType?: string | null;
+    /** Historias YA guardadas de los temas ANTERIORES del journey, cuando se
+     *  juzga un tema suelto (cierraTema). Son solo contexto: un personaje que
+     *  ya sale en ellas se presento alli y no se vuelve a juzgar aqui. Ninguna
+     *  se juzga, asi que nada de lo que tengan tumba ni aprueba este conjunto. */
+    previas?: Array<{ text: string }>;
   }
 ): JourneyCheck[] {
   const out: JourneyCheck[] = [];
@@ -386,7 +399,13 @@ export function validateJourneyStories(
     const formas: string[] = [];
     const malos: string[] = [];
     for (const n of cast) {
-      const primera = stories.find((s) => new RegExp(`\\b${n}\\b`, "u").test(s.text));
+      const nombre = new RegExp(`(?<!\\p{L})${n}(?!\\p{L})`, "u");
+      // Ya sale en un tema ANTERIOR del journey: se presento alli y alli se
+      // juzgo al cerrarlo. Sin esto, desde el tema 2 cada fijo "aparecia por
+      // primera vez" en su tema y habia que presentarlo otra vez (2026-09-11,
+      // Friends FR A0; el mismo fallo obligo al PT B1 a re-presentar a Renata).
+      if (ctx.previas?.some((p) => nombre.test(p.text))) continue;
+      const primera = stories.find((s) => nombre.test(s.text));
       if (!primera) continue;
       const t = primera.text;
       const forma = FORMAS.find(([, re]) => re(n).test(t));
