@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "france",
+  "registro": "despedida luminosa: una manana de marzo con coche en marcha, una placette que aprende otro nombre y un sabado de vuelta sin nadie que se deje ganar",
+  "espina": "Marzo. Hugo se va a Paris y Clara ocupa su piso. Un sabado Hugo vuelve a jugar: el juego se completa un dia, la boule de el y el cochonnet de ella, y la amistad sigue en otra forma.",
+  "recursos": "A0: repeticion ritmica, contraste con mais, imagen concreta (la emocion como gesto visible)",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Lea quiere despedirse de Hugo sin llorar delante de el",
+      "impide": "la voiture espera en la placette y Clara, la nueva inquilina, llega con su perro justo cuando Hugo baja la maleta",
+      "cuesta": "Hugo le da las llaves de su piso a Clara delante de Lea; el piso ya es de otra",
+      "cambia": "Hugo se va, con una promesa concreta: a samedi, para jugar",
+      "emocion": "Lea aprieta el cochonnet en el bolsillo hasta que la voiture gira la esquina"
+    },
+    {
+      "slot": "2",
+      "quiere": "Clara quiere aprender a jugar a la petanque en la placette",
+      "impide": "Lea no quiere ensenar el juego de los domingos a otra persona",
+      "cuesta": "le ensena como Hugo le enseno a ella; el ritual del domingo ya no es solo de los dos",
+      "cambia": "la placette tiene una jugadora nueva",
+      "emocion": "Lea le corrige la mano a Clara con el mismo gesto que Hugo, y se calla"
+    },
+    {
+      "slot": "3",
+      "quiere": "Hugo vuelve un sabado de abril y quiere una ultima partida de verdad",
+      "impide": "los dos saben perder a proposito, y ninguno quiere hacerlo esta vez",
+      "cuesta": "Hugo duerme en el sofa del cafe porque su piso ya es de Clara",
+      "cambia": "la partida se juega en serio y la amistad sigue como antes, en otra forma",
+      "emocion": "Lea gana de verdad y Hugo le da la bise, la boule y el cochonnet juntos por un dia"
+    }
+  ]
+}
