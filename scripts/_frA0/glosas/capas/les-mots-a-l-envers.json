@@ -1,0 +1,326 @@
+{
+ "mots": {
+  "es": "Les mots à l'envers",
+  "en": "The words the wrong way round"
+ },
+ "à": {
+  "es": "Les mots à l'envers",
+  "en": "The words the wrong way round"
+ },
+ "envers": {
+  "es": "Les mots à l'envers",
+  "en": "The words the wrong way round"
+ },
+ "dans": {
+  "es": "Dans son cahier, Léa écrit les mots durs.",
+  "en": "In her notebook, Léa writes the hard words."
+ },
+ "son": {
+  "es": "Dans son cahier, Léa écrit les mots durs.",
+  "en": "In her notebook, Léa writes the hard words."
+ },
+ "cahier": {
+  "es": "Dans son cahier, Léa écrit les mots durs.",
+  "en": "In her notebook, Léa writes the hard words."
+ },
+ "écrit": {
+  "es": "Dans son cahier, Léa écrit les mots durs.",
+  "en": "In her notebook, Léa writes the hard words."
+ },
+ "durs": {
+  "es": "Dans son cahier, Léa écrit les mots durs.",
+  "en": "In her notebook, Léa writes the hard words."
+ },
+ "chaque": {
+  "es": "Chaque nuit, elle écrit au crayon.",
+  "en": "Every night, she writes in pencil."
+ },
+ "nuit": {
+  "es": "Chaque nuit, elle écrit au crayon.",
+  "en": "Every night, she writes in pencil."
+ },
+ "elle": {
+  "es": "Chaque nuit, elle écrit au crayon.",
+  "en": "Every night, she writes in pencil."
+ },
+ "au": {
+  "es": "Chaque nuit, elle écrit au crayon.",
+  "en": "Every night, she writes in pencil."
+ },
+ "crayon": {
+  "es": "Chaque nuit, elle écrit au crayon.",
+  "en": "Every night, she writes in pencil."
+ },
+ "est": {
+  "es": "Le cahier est sur la nappe du café.",
+  "en": "The notebook is on the café tablecloth."
+ },
+ "sur": {
+  "es": "Le cahier est sur la nappe du café.",
+  "en": "The notebook is on the café tablecloth."
+ },
+ "nappe": {
+  "es": "Le cahier est sur la nappe du café.",
+  "en": "The notebook is on the café tablecloth."
+ },
+ "café": {
+  "es": "Le cahier est sur la nappe du café.",
+  "en": "The notebook is on the café tablecloth."
+ },
+ "tourne": {
+  "es": "Elle tourne la page.",
+  "en": "She turns the page."
+ },
+ "page": {
+  "es": "Elle tourne la page.",
+  "en": "She turns the page."
+ },
+ "soir": {
+  "es": "Ce soir, Hugo boit un café à côté.",
+  "en": "This evening, Hugo drinks a coffee next to her."
+ },
+ "boit": {
+  "es": "Ce soir, Hugo boit un café à côté.",
+  "en": "This evening, Hugo drinks a coffee next to her."
+ },
+ "côté": {
+  "es": "Ce soir, Hugo boit un café à côté.",
+  "en": "This evening, Hugo drinks a coffee next to her."
+ },
+ "lit": {
+  "es": "Léa lit une phrase:",
+  "en": "Léa reads a sentence:"
+ },
+ "phrase": {
+  "es": "Léa lit une phrase:",
+  "en": "Léa reads a sentence:"
+ },
+ "tu": {
+  "es": "Tu me manques.",
+  "en": "I miss you."
+ },
+ "me": {
+  "es": "Tu me manques.",
+  "en": "I miss you."
+ },
+ "manques": {
+  "es": "Tu me manques.",
+  "en": "I miss you."
+ },
+ "ne": {
+  "es": "Léa ne comprend pas le sens.",
+  "en": "Léa doesn't understand the meaning."
+ },
+ "comprend": {
+  "es": "Léa ne comprend pas le sens.",
+  "en": "Léa doesn't understand the meaning."
+ },
+ "pas": {
+  "es": "Léa ne comprend pas le sens.",
+  "en": "Léa doesn't understand the meaning."
+ },
+ "sens": {
+  "es": "Léa ne comprend pas le sens.",
+  "en": "Léa doesn't understand the meaning."
+ },
+ "a": {
+  "es": "Elle a mal à la tête.",
+  "en": "She has a headache."
+ },
+ "mal": {
+  "es": "Elle a mal à la tête.",
+  "en": "She has a headache."
+ },
+ "tête": {
+  "es": "Elle a mal à la tête.",
+  "en": "She has a headache."
+ },
+ "vrai": {
+  "es": "C'est vrai?",
+  "en": "Really?"
+ },
+ "qui": {
+  "es": "Qui est triste?",
+  "en": "Who is sad?"
+ },
+ "triste": {
+  "es": "Qui est triste?",
+  "en": "Who is sad?"
+ },
+ "demande": {
+  "es": "demande Léa.",
+  "en": "Léa asks."
+ },
+ "explique": {
+  "es": "explique Hugo.",
+  "en": "Hugo explains."
+ },
+ "il": {
+  "es": "Il a raison:",
+  "en": "He is right:"
+ },
+ "raison": {
+  "es": "Il a raison:",
+  "en": "He is right:"
+ },
+ "difficile": {
+  "es": "c'est difficile.",
+  "en": "it is hard."
+ },
+ "toi": {
+  "es": "Toi, tu es loin.",
+  "en": "You are far away."
+ },
+ "es": {
+  "es": "Toi, tu es loin.",
+  "en": "You are far away."
+ },
+ "loin": {
+  "es": "Toi, tu es loin.",
+  "en": "You are far away."
+ },
+ "moi": {
+  "es": "Moi, je suis triste.",
+  "en": "I am sad."
+ },
+ "je": {
+  "es": "Moi, je suis triste.",
+  "en": "I am sad."
+ },
+ "suis": {
+  "es": "Moi, je suis triste.",
+  "en": "I am sad."
+ },
+ "alors": {
+  "es": "Alors:",
+  "en": "So:"
+ },
+ "ça": {
+  "es": "Ça y est, j'ai compris!",
+  "en": "There, I've got it!"
+ },
+ "y": {
+  "es": "Ça y est, j'ai compris!",
+  "en": "There, I've got it!"
+ },
+ "j": {
+  "es": "Ça y est, j'ai compris!",
+  "en": "There, I've got it!"
+ },
+ "compris": {
+  "es": "Ça y est, j'ai compris!",
+  "en": "There, I've got it!"
+ },
+ "dit": {
+  "es": "dit Léa.",
+  "en": "Léa says."
+ },
+ "enfin": {
+  "es": "Enfin!",
+  "en": "At last!"
+ },
+ "rit": {
+  "es": "rit Hugo.",
+  "en": "Hugo laughs."
+ },
+ "efface": {
+  "es": "Elle efface avec la gomme.",
+  "en": "She rubs it out with the eraser."
+ },
+ "avec": {
+  "es": "Elle efface avec la gomme.",
+  "en": "She rubs it out with the eraser."
+ },
+ "gomme": {
+  "es": "Elle efface avec la gomme.",
+  "en": "She rubs it out with the eraser."
+ },
+ "encore": {
+  "es": "Elle écrit encore, toute seule:",
+  "en": "She writes again, all alone:"
+ },
+ "toute": {
+  "es": "Elle écrit encore, toute seule:",
+  "en": "She writes again, all alone:"
+ },
+ "seule": {
+  "es": "Elle écrit encore, toute seule:",
+  "en": "She writes again, all alone:"
+ },
+ "amis": {
+  "es": "amis pour toujours.",
+  "en": "friends forever."
+ },
+ "pour": {
+  "es": "amis pour toujours.",
+  "en": "friends forever."
+ },
+ "toujours": {
+  "es": "amis pour toujours.",
+  "en": "friends forever."
+ },
+ "regarde": {
+  "es": "Léa regarde Hugo.",
+  "en": "Léa looks at Hugo."
+ },
+ "déjà": {
+  "es": "Déjà.",
+  "en": "Already."
+ },
+ "mais": {
+  "es": "Mais je suis là!",
+  "en": "But I'm here!"
+ },
+ "là": {
+  "es": "Mais je suis là!",
+  "en": "But I'm here!"
+ },
+ "oui": {
+  "es": "Oui.",
+  "en": "Yes."
+ },
+ "serre": {
+  "es": "Hugo serre la main de Léa.",
+  "en": "Hugo squeezes Léa's hand."
+ },
+ "main": {
+  "es": "Hugo serre la main de Léa.",
+  "en": "Hugo squeezes Léa's hand."
+ },
+ "de": {
+  "es": "Hugo serre la main de Léa.",
+  "en": "Hugo squeezes Léa's hand."
+ },
+ "aussi": {
+  "es": "Moi aussi, je pense à toi.",
+  "en": "Me too, I think of you."
+ },
+ "pense": {
+  "es": "Moi aussi, je pense à toi.",
+  "en": "Me too, I think of you."
+ },
+ "rêve": {
+  "es": "Léa rêve.",
+  "en": "Léa dreams."
+ },
+ "dehors": {
+  "es": "Dehors, la lune est douce.",
+  "en": "Outside, the moon is soft."
+ },
+ "lune": {
+  "es": "Dehors, la lune est douce.",
+  "en": "Outside, the moon is soft."
+ },
+ "douce": {
+  "es": "Dehors, la lune est douce.",
+  "en": "Outside, the moon is soft."
+ },
+ "sous": {
+  "es": "Sous la lune, il y a une étoile.",
+  "en": "Under the moon, there is a star."
+ },
+ "étoile": {
+  "es": "Sous la lune, il y a une étoile.",
+  "en": "Under the moon, there is a star."
+ }
+}

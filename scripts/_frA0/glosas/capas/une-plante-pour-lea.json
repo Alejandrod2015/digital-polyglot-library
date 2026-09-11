@@ -1,0 +1,338 @@
+{
+ "plante": {
+  "es": "Une plante pour Léa",
+  "en": "A plant for Léa"
+ },
+ "pour": {
+  "es": "Une plante pour Léa",
+  "en": "A plant for Léa"
+ },
+ "et": {
+  "es": "Hugo et Léa vident la cuisine ensemble.",
+  "en": "Hugo and Léa empty the kitchen together."
+ },
+ "vident": {
+  "es": "Hugo et Léa vident la cuisine ensemble.",
+  "en": "Hugo and Léa empty the kitchen together."
+ },
+ "cuisine": {
+  "es": "Hugo et Léa vident la cuisine ensemble.",
+  "en": "Hugo and Léa empty the kitchen together."
+ },
+ "ensemble": {
+  "es": "Hugo et Léa vident la cuisine ensemble.",
+  "en": "Hugo and Léa empty the kitchen together."
+ },
+ "appartement": {
+  "es": "L'appartement est vide, sans meubles.",
+  "en": "The flat is empty, with no furniture."
+ },
+ "est": {
+  "es": "L'appartement est vide, sans meubles.",
+  "en": "The flat is empty, with no furniture."
+ },
+ "vide": {
+  "es": "L'appartement est vide, sans meubles.",
+  "en": "The flat is empty, with no furniture."
+ },
+ "sans": {
+  "es": "L'appartement est vide, sans meubles.",
+  "en": "The flat is empty, with no furniture."
+ },
+ "meubles": {
+  "es": "L'appartement est vide, sans meubles.",
+  "en": "The flat is empty, with no furniture."
+ },
+ "chauffage": {
+  "es": "Le chauffage est éteint, et l'air est tiède.",
+  "en": "The heating is off, and the air is lukewarm."
+ },
+ "éteint": {
+  "es": "Le chauffage est éteint, et l'air est tiède.",
+  "en": "The heating is off, and the air is lukewarm."
+ },
+ "air": {
+  "es": "Le chauffage est éteint, et l'air est tiède.",
+  "en": "The heating is off, and the air is lukewarm."
+ },
+ "tiède": {
+  "es": "Le chauffage est éteint, et l'air est tiède.",
+  "en": "The heating is off, and the air is lukewarm."
+ },
+ "au": {
+  "es": "Au plafond, Hugo allume une vieille ampoule.",
+  "en": "On the ceiling, Hugo switches on an old light bulb."
+ },
+ "plafond": {
+  "es": "Au plafond, Hugo allume une vieille ampoule.",
+  "en": "On the ceiling, Hugo switches on an old light bulb."
+ },
+ "allume": {
+  "es": "Au plafond, Hugo allume une vieille ampoule.",
+  "en": "On the ceiling, Hugo switches on an old light bulb."
+ },
+ "vieille": {
+  "es": "Au plafond, Hugo allume une vieille ampoule.",
+  "en": "On the ceiling, Hugo switches on an old light bulb."
+ },
+ "ampoule": {
+  "es": "Au plafond, Hugo allume une vieille ampoule.",
+  "en": "On the ceiling, Hugo switches on an old light bulb."
+ },
+ "peint": {
+  "es": "Hugo peint le dernier mur en blanc.",
+  "en": "Hugo paints the last wall white."
+ },
+ "dernier": {
+  "es": "Hugo peint le dernier mur en blanc.",
+  "en": "Hugo paints the last wall white."
+ },
+ "mur": {
+  "es": "Hugo peint le dernier mur en blanc.",
+  "en": "Hugo paints the last wall white."
+ },
+ "en": {
+  "es": "Hugo peint le dernier mur en blanc.",
+  "en": "Hugo paints the last wall white."
+ },
+ "blanc": {
+  "es": "Hugo peint le dernier mur en blanc.",
+  "en": "Hugo paints the last wall white."
+ },
+ "fini": {
+  "es": "C'est fini",
+  "en": "It's finished"
+ },
+ "dit": {
+  "es": "dit Hugo.",
+  "en": "Hugo says."
+ },
+ "joli": {
+  "es": "C'est joli.",
+  "en": "It's nice."
+ },
+ "aime": {
+  "es": "J'aime beaucoup",
+  "en": "I like it a lot"
+ },
+ "beaucoup": {
+  "es": "J'aime beaucoup",
+  "en": "I like it a lot"
+ },
+ "répond": {
+  "es": "répond Léa.",
+  "en": "Léa answers."
+ },
+ "mais": {
+  "es": "Mais ce n'est plus comme avant.",
+  "en": "But it isn't like before any more."
+ },
+ "plus": {
+  "es": "Mais ce n'est plus comme avant.",
+  "en": "But it isn't like before any more."
+ },
+ "comme": {
+  "es": "Mais ce n'est plus comme avant.",
+  "en": "But it isn't like before any more."
+ },
+ "avant": {
+  "es": "Mais ce n'est plus comme avant.",
+  "en": "But it isn't like before any more."
+ },
+ "à": {
+  "es": "À la fenêtre",
+  "en": "At the window"
+ },
+ "fenêtre": {
+  "es": "À la fenêtre",
+  "en": "At the window"
+ },
+ "il": {
+  "es": "il y a une plante verte.",
+  "en": "there is a green plant."
+ },
+ "y": {
+  "es": "il y a une plante verte.",
+  "en": "there is a green plant."
+ },
+ "a": {
+  "es": "il y a une plante verte.",
+  "en": "there is a green plant."
+ },
+ "verte": {
+  "es": "il y a une plante verte.",
+  "en": "there is a green plant."
+ },
+ "elle": {
+  "es": "Elle est pour toi",
+  "en": "It's for you"
+ },
+ "toi": {
+  "es": "Elle est pour toi",
+  "en": "It's for you"
+ },
+ "explique": {
+  "es": "explique Hugo.",
+  "en": "Hugo explains."
+ },
+ "tu": {
+  "es": "Tu l'arroses tous les matins, s'il te plaît?",
+  "en": "Will you water it every morning, please?"
+ },
+ "arroses": {
+  "es": "Tu l'arroses tous les matins, s'il te plaît?",
+  "en": "Will you water it every morning, please?"
+ },
+ "tous": {
+  "es": "Tu l'arroses tous les matins, s'il te plaît?",
+  "en": "Will you water it every morning, please?"
+ },
+ "matins": {
+  "es": "Tu l'arroses tous les matins, s'il te plaît?",
+  "en": "Will you water it every morning, please?"
+ },
+ "te": {
+  "es": "Tu l'arroses tous les matins, s'il te plaît?",
+  "en": "Will you water it every morning, please?"
+ },
+ "plaît": {
+  "es": "Tu l'arroses tous les matins, s'il te plaît?",
+  "en": "Will you water it every morning, please?"
+ },
+ "pourquoi": {
+  "es": "Pourquoi moi?",
+  "en": "Why me?"
+ },
+ "moi": {
+  "es": "Pourquoi moi?",
+  "en": "Why me?"
+ },
+ "je": {
+  "es": "Je suis occupée!",
+  "en": "I'm busy!"
+ },
+ "suis": {
+  "es": "Je suis occupée!",
+  "en": "I'm busy!"
+ },
+ "occupée": {
+  "es": "Je suis occupée!",
+  "en": "I'm busy!"
+ },
+ "demande": {
+  "es": "demande Léa.",
+  "en": "Léa asks."
+ },
+ "ne": {
+  "es": "Léa ne veut pas de plante.",
+  "en": "Léa doesn't want a plant."
+ },
+ "veut": {
+  "es": "Léa ne veut pas de plante.",
+  "en": "Léa doesn't want a plant."
+ },
+ "pas": {
+  "es": "Léa ne veut pas de plante.",
+  "en": "Léa doesn't want a plant."
+ },
+ "de": {
+  "es": "Léa ne veut pas de plante.",
+  "en": "Léa doesn't want a plant."
+ },
+ "haut": {
+  "es": "Elle veut Hugo, en haut.",
+  "en": "She wants Hugo, upstairs."
+ },
+ "prend": {
+  "es": "Mais elle prend l'arrosoir.",
+  "en": "But she takes the watering can."
+ },
+ "arrosoir": {
+  "es": "Mais elle prend l'arrosoir.",
+  "en": "But she takes the watering can."
+ },
+ "terre": {
+  "es": "La terre est sèche.",
+  "en": "The soil is dry."
+ },
+ "sèche": {
+  "es": "La terre est sèche.",
+  "en": "The soil is dry."
+ },
+ "vivante": {
+  "es": "Elle est vivante, tu vois?",
+  "en": "It's alive, you see?"
+ },
+ "vois": {
+  "es": "Elle est vivante, tu vois?",
+  "en": "It's alive, you see?"
+ },
+ "on": {
+  "es": "On partage, tous les deux",
+  "en": "We share it, the two of us"
+ },
+ "partage": {
+  "es": "On partage, tous les deux",
+  "en": "We share it, the two of us"
+ },
+ "sourit": {
+  "es": "sourit Hugo.",
+  "en": "Hugo smiles."
+ },
+ "verse": {
+  "es": "Léa verse l'eau doucement.",
+  "en": "Léa pours the water gently."
+ },
+ "eau": {
+  "es": "Léa verse l'eau doucement.",
+  "en": "Léa pours the water gently."
+ },
+ "doucement": {
+  "es": "Léa verse l'eau doucement.",
+  "en": "Léa pours the water gently."
+ },
+ "coule": {
+  "es": "L'eau coule sur les feuilles.",
+  "en": "The water runs over the leaves."
+ },
+ "sur": {
+  "es": "L'eau coule sur les feuilles.",
+  "en": "The water runs over the leaves."
+ },
+ "feuilles": {
+  "es": "L'eau coule sur les feuilles.",
+  "en": "The water runs over the leaves."
+ },
+ "déjà": {
+  "es": "La terre est déjà mouillée",
+  "en": "The soil is already wet"
+ },
+ "mouillée": {
+  "es": "La terre est déjà mouillée",
+  "en": "The soil is already wet"
+ },
+ "arrose": {
+  "es": "mais Léa arrose encore.",
+  "en": "but Léa waters it again."
+ },
+ "encore": {
+  "es": "mais Léa arrose encore.",
+  "en": "but Léa waters it again."
+ },
+ "grandit": {
+  "es": "Elle grandit petit à petit",
+  "en": "It grows little by little"
+ },
+ "petit": {
+  "es": "Elle grandit petit à petit",
+  "en": "It grows little by little"
+ },
+ "rit": {
+  "es": "rit Hugo.",
+  "en": "Hugo laughs."
+ },
+ "toujours": {
+  "es": "Pour toujours?",
+  "en": "Forever?"
+ }
+}

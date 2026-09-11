@@ -1,0 +1,302 @@
+{
+ "euros": {
+  "es": "Mille euros sans compter",
+  "en": "A thousand euros without counting"
+ },
+ "sans": {
+  "es": "Mille euros sans compter",
+  "en": "A thousand euros without counting"
+ },
+ "compter": {
+  "es": "Mille euros sans compter",
+  "en": "A thousand euros without counting"
+ },
+ "a": {
+  "es": "Hugo n'a pas assez d'argent.",
+  "en": "Hugo doesn't have enough money."
+ },
+ "pas": {
+  "es": "Hugo n'a pas assez d'argent.",
+  "en": "Hugo doesn't have enough money."
+ },
+ "assez": {
+  "es": "Hugo n'a pas assez d'argent.",
+  "en": "Hugo doesn't have enough money."
+ },
+ "argent": {
+  "es": "Hugo n'a pas assez d'argent.",
+  "en": "Hugo doesn't have enough money."
+ },
+ "loyer": {
+  "es": "Le loyer de Paris est cher.",
+  "en": "The rent in Paris is expensive."
+ },
+ "de": {
+  "es": "Le loyer de Paris est cher.",
+  "en": "The rent in Paris is expensive."
+ },
+ "paris": {
+  "es": "Le loyer de Paris est cher.",
+  "en": "The rent in Paris is expensive."
+ },
+ "est": {
+  "es": "Le loyer de Paris est cher.",
+  "en": "The rent in Paris is expensive."
+ },
+ "cher": {
+  "es": "Le loyer de Paris est cher.",
+  "en": "The rent in Paris is expensive."
+ },
+ "il": {
+  "es": "Il a besoin de mille euros.",
+  "en": "He needs a thousand euros."
+ },
+ "besoin": {
+  "es": "Il a besoin de mille euros.",
+  "en": "He needs a thousand euros."
+ },
+ "près": {
+  "es": "Près du frigo, le vieux percolateur est cassé.",
+  "en": "Near the fridge, the old coffee machine is broken."
+ },
+ "frigo": {
+  "es": "Près du frigo, le vieux percolateur est cassé.",
+  "en": "Near the fridge, the old coffee machine is broken."
+ },
+ "vieux": {
+  "es": "Près du frigo, le vieux percolateur est cassé.",
+  "en": "Near the fridge, the old coffee machine is broken."
+ },
+ "percolateur": {
+  "es": "Près du frigo, le vieux percolateur est cassé.",
+  "en": "Near the fridge, the old coffee machine is broken."
+ },
+ "cassé": {
+  "es": "Près du frigo, le vieux percolateur est cassé.",
+  "en": "Near the fridge, the old coffee machine is broken."
+ },
+ "garde": {
+  "es": "Léa garde son argent pour une nouvelle machine.",
+  "en": "Léa keeps her money for a new machine."
+ },
+ "son": {
+  "es": "Léa garde son argent pour une nouvelle machine.",
+  "en": "Léa keeps her money for a new machine."
+ },
+ "pour": {
+  "es": "Léa garde son argent pour une nouvelle machine.",
+  "en": "Léa keeps her money for a new machine."
+ },
+ "nouvelle": {
+  "es": "Léa garde son argent pour une nouvelle machine.",
+  "en": "Léa keeps her money for a new machine."
+ },
+ "machine": {
+  "es": "Léa garde son argent pour une nouvelle machine.",
+  "en": "Léa keeps her money for a new machine."
+ },
+ "dans": {
+  "es": "Dans le tiroir, il y a une tirelire.",
+  "en": "In the drawer, there is a piggy bank."
+ },
+ "tiroir": {
+  "es": "Dans le tiroir, il y a une tirelire.",
+  "en": "In the drawer, there is a piggy bank."
+ },
+ "y": {
+  "es": "Dans le tiroir, il y a une tirelire.",
+  "en": "In the drawer, there is a piggy bank."
+ },
+ "tirelire": {
+  "es": "Dans le tiroir, il y a une tirelire.",
+  "en": "In the drawer, there is a piggy bank."
+ },
+ "compte": {
+  "es": "Léa compte:",
+  "en": "Léa counts:"
+ },
+ "juste": {
+  "es": "C'est juste assez.",
+  "en": "It is just enough."
+ },
+ "arrive": {
+  "es": "Hugo arrive et attend un peu.",
+  "en": "Hugo arrives and waits a bit."
+ },
+ "et": {
+  "es": "Hugo arrive et attend un peu.",
+  "en": "Hugo arrives and waits a bit."
+ },
+ "attend": {
+  "es": "Hugo arrive et attend un peu.",
+  "en": "Hugo arrives and waits a bit."
+ },
+ "peu": {
+  "es": "Hugo arrive et attend un peu.",
+  "en": "Hugo arrives and waits a bit."
+ },
+ "ensuite": {
+  "es": "Ensuite, il dit:",
+  "en": "Then he says:"
+ },
+ "dit": {
+  "es": "Ensuite, il dit:",
+  "en": "Then he says:"
+ },
+ "tu": {
+  "es": "Léa, tu peux me prêter de l'argent?",
+  "en": "Léa, can you lend me some money?"
+ },
+ "peux": {
+  "es": "Léa, tu peux me prêter de l'argent?",
+  "en": "Léa, can you lend me some money?"
+ },
+ "me": {
+  "es": "Léa, tu peux me prêter de l'argent?",
+  "en": "Léa, can you lend me some money?"
+ },
+ "prêter": {
+  "es": "Léa, tu peux me prêter de l'argent?",
+  "en": "Léa, can you lend me some money?"
+ },
+ "je": {
+  "es": "Je te rends tout bientôt.",
+  "en": "I'll pay it all back soon."
+ },
+ "te": {
+  "es": "Je te rends tout bientôt.",
+  "en": "I'll pay it all back soon."
+ },
+ "rends": {
+  "es": "Je te rends tout bientôt.",
+  "en": "I'll pay it all back soon."
+ },
+ "tout": {
+  "es": "Je te rends tout bientôt.",
+  "en": "I'll pay it all back soon."
+ },
+ "bientôt": {
+  "es": "Je te rends tout bientôt.",
+  "en": "I'll pay it all back soon."
+ },
+ "combien": {
+  "es": "Combien?",
+  "en": "How much?"
+ },
+ "demande": {
+  "es": "demande Léa.",
+  "en": "Léa asks."
+ },
+ "répond": {
+  "es": "répond Hugo.",
+  "en": "Hugo answers."
+ },
+ "commence": {
+  "es": "Le loyer commence avant mon départ.",
+  "en": "The rent starts before I leave."
+ },
+ "avant": {
+  "es": "Le loyer commence avant mon départ.",
+  "en": "The rent starts before I leave."
+ },
+ "mon": {
+  "es": "Le loyer commence avant mon départ.",
+  "en": "The rent starts before I leave."
+ },
+ "départ": {
+  "es": "Le loyer commence avant mon départ.",
+  "en": "The rent starts before I leave."
+ },
+ "beaucoup": {
+  "es": "C'est beaucoup, Hugo.",
+  "en": "That's a lot, Hugo."
+ },
+ "sais": {
+  "es": "Je sais.",
+  "en": "I know."
+ },
+ "pardon": {
+  "es": "Pardon.",
+  "en": "Sorry."
+ },
+ "entend": {
+  "es": "Léa entend le bruit du vieux percolateur.",
+  "en": "Léa hears the noise of the old coffee machine."
+ },
+ "bruit": {
+  "es": "Léa entend le bruit du vieux percolateur.",
+  "en": "Léa hears the noise of the old coffee machine."
+ },
+ "achète": {
+  "es": "Léa n'achète pas de percolateur neuf.",
+  "en": "Léa doesn't buy a new coffee machine."
+ },
+ "neuf": {
+  "es": "Léa n'achète pas de percolateur neuf.",
+  "en": "Léa doesn't buy a new coffee machine."
+ },
+ "ouvre": {
+  "es": "Léa ouvre la tirelire",
+  "en": "Léa opens the piggy bank"
+ },
+ "donne": {
+  "es": "et donne l'argent à Hugo.",
+  "en": "and gives the money to Hugo."
+ },
+ "à": {
+  "es": "et donne l'argent à Hugo.",
+  "en": "and gives the money to Hugo."
+ },
+ "elle": {
+  "es": "Elle ne compte pas.",
+  "en": "She doesn't count."
+ },
+ "ne": {
+  "es": "Elle ne compte pas.",
+  "en": "She doesn't count."
+ },
+ "voilà": {
+  "es": "Voilà.",
+  "en": "There you are."
+ },
+ "ton": {
+  "es": "Pour ton loyer.",
+  "en": "For your rent."
+ },
+ "prend": {
+  "es": "Hugo prend un stylo.",
+  "en": "Hugo takes a pen."
+ },
+ "stylo": {
+  "es": "Hugo prend un stylo.",
+  "en": "Hugo takes a pen."
+ },
+ "écrit": {
+  "es": "Il écrit:",
+  "en": "He writes:"
+ },
+ "mois": {
+  "es": "Je rends dans six mois.",
+  "en": "I'll pay it back in six months."
+ },
+ "quitte": {
+  "es": "Hugo quitte le café.",
+  "en": "Hugo leaves the café."
+ },
+ "café": {
+  "es": "Hugo quitte le café.",
+  "en": "Hugo leaves the café."
+ },
+ "retourne": {
+  "es": "Léa retourne au comptoir.",
+  "en": "Léa goes back to the counter."
+ },
+ "au": {
+  "es": "Léa retourne au comptoir.",
+  "en": "Léa goes back to the counter."
+ },
+ "comptoir": {
+  "es": "Léa retourne au comptoir.",
+  "en": "Léa goes back to the counter."
+ }
+}

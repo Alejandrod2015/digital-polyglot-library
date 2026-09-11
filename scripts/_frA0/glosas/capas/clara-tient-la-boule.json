@@ -1,0 +1,338 @@
+{
+ "tient": {
+  "es": "Clara tient la boule",
+  "en": "Clara holds the boule"
+ },
+ "boule": {
+  "es": "Clara tient la boule",
+  "en": "Clara holds the boule"
+ },
+ "chaque": {
+  "es": "Chaque dimanche, Léa joue à la pétanque",
+  "en": "Every Sunday, Léa plays pétanque"
+ },
+ "dimanche": {
+  "es": "Chaque dimanche, Léa joue à la pétanque",
+  "en": "Every Sunday, Léa plays pétanque"
+ },
+ "joue": {
+  "es": "Chaque dimanche, Léa joue à la pétanque",
+  "en": "Every Sunday, Léa plays pétanque"
+ },
+ "à": {
+  "es": "Chaque dimanche, Léa joue à la pétanque",
+  "en": "Every Sunday, Léa plays pétanque"
+ },
+ "pétanque": {
+  "es": "Chaque dimanche, Léa joue à la pétanque",
+  "en": "Every Sunday, Léa plays pétanque"
+ },
+ "seule": {
+  "es": "seule maintenant.",
+  "en": "alone now."
+ },
+ "maintenant": {
+  "es": "seule maintenant.",
+  "en": "alone now."
+ },
+ "est": {
+  "es": "C'est le printemps, et le soleil est chaud.",
+  "en": "It is spring, and the sun is warm."
+ },
+ "printemps": {
+  "es": "C'est le printemps, et le soleil est chaud.",
+  "en": "It is spring, and the sun is warm."
+ },
+ "et": {
+  "es": "C'est le printemps, et le soleil est chaud.",
+  "en": "It is spring, and the sun is warm."
+ },
+ "soleil": {
+  "es": "C'est le printemps, et le soleil est chaud.",
+  "en": "It is spring, and the sun is warm."
+ },
+ "chaud": {
+  "es": "C'est le printemps, et le soleil est chaud.",
+  "en": "It is spring, and the sun is warm."
+ },
+ "poussière": {
+  "es": "La poussière vole.",
+  "en": "The dust flies."
+ },
+ "vole": {
+  "es": "La poussière vole.",
+  "en": "The dust flies."
+ },
+ "pose": {
+  "es": "Léa pose sa gourde sur le banc.",
+  "en": "Léa puts her water bottle down on the bench."
+ },
+ "sa": {
+  "es": "Léa pose sa gourde sur le banc.",
+  "en": "Léa puts her water bottle down on the bench."
+ },
+ "gourde": {
+  "es": "Léa pose sa gourde sur le banc.",
+  "en": "Léa puts her water bottle down on the bench."
+ },
+ "sur": {
+  "es": "Léa pose sa gourde sur le banc.",
+  "en": "Léa puts her water bottle down on the bench."
+ },
+ "banc": {
+  "es": "Léa pose sa gourde sur le banc.",
+  "en": "Léa puts her water bottle down on the bench."
+ },
+ "descend": {
+  "es": "Clara descend avec son chien.",
+  "en": "Clara comes down with her dog."
+ },
+ "avec": {
+  "es": "Clara descend avec son chien.",
+  "en": "Clara comes down with her dog."
+ },
+ "son": {
+  "es": "Clara descend avec son chien.",
+  "en": "Clara comes down with her dog."
+ },
+ "chien": {
+  "es": "Clara descend avec son chien.",
+  "en": "Clara comes down with her dog."
+ },
+ "a": {
+  "es": "Clara a une casquette verte et des lunettes.",
+  "en": "Clara has a green cap and glasses."
+ },
+ "casquette": {
+  "es": "Clara a une casquette verte et des lunettes.",
+  "en": "Clara has a green cap and glasses."
+ },
+ "verte": {
+  "es": "Clara a une casquette verte et des lunettes.",
+  "en": "Clara has a green cap and glasses."
+ },
+ "lunettes": {
+  "es": "Clara a une casquette verte et des lunettes.",
+  "en": "Clara has a green cap and glasses."
+ },
+ "je": {
+  "es": "Je peux essayer?",
+  "en": "Can I try?"
+ },
+ "peux": {
+  "es": "Je peux essayer?",
+  "en": "Can I try?"
+ },
+ "essayer": {
+  "es": "Je peux essayer?",
+  "en": "Can I try?"
+ },
+ "demande": {
+  "es": "demande Clara.",
+  "en": "Clara asks."
+ },
+ "jeu": {
+  "es": "C'est le jeu de Hugo.",
+  "en": "It is Hugo's game."
+ },
+ "de": {
+  "es": "C'est le jeu de Hugo.",
+  "en": "It is Hugo's game."
+ },
+ "mais": {
+  "es": "Mais Clara est gentille.",
+  "en": "But Clara is kind."
+ },
+ "gentille": {
+  "es": "Mais Clara est gentille.",
+  "en": "But Clara is kind."
+ },
+ "tu": {
+  "es": "Tu veux apprendre?",
+  "en": "Do you want to learn?"
+ },
+ "veux": {
+  "es": "Tu veux apprendre?",
+  "en": "Do you want to learn?"
+ },
+ "apprendre": {
+  "es": "Tu veux apprendre?",
+  "en": "Do you want to learn?"
+ },
+ "plaisir": {
+  "es": "Avec plaisir!",
+  "en": "Gladly!"
+ },
+ "tiens": {
+  "es": "Tu tiens la boule comme ça.",
+  "en": "You hold the boule like this."
+ },
+ "comme": {
+  "es": "Tu tiens la boule comme ça.",
+  "en": "You hold the boule like this."
+ },
+ "ça": {
+  "es": "Tu tiens la boule comme ça.",
+  "en": "You hold the boule like this."
+ },
+ "plies": {
+  "es": "Tu plies les genoux.",
+  "en": "You bend your knees."
+ },
+ "genoux": {
+  "es": "Tu plies les genoux.",
+  "en": "You bend your knees."
+ },
+ "baisses": {
+  "es": "Tu baisses le coude",
+  "en": "You lower your elbow"
+ },
+ "coude": {
+  "es": "Tu baisses le coude",
+  "en": "You lower your elbow"
+ },
+ "explique": {
+  "es": "explique Léa.",
+  "en": "Léa explains."
+ },
+ "elle": {
+  "es": "Elle corrige la main de Clara, comme Hugo.",
+  "en": "She corrects Clara's hand, like Hugo."
+ },
+ "corrige": {
+  "es": "Elle corrige la main de Clara, comme Hugo.",
+  "en": "She corrects Clara's hand, like Hugo."
+ },
+ "main": {
+  "es": "Elle corrige la main de Clara, comme Hugo.",
+  "en": "She corrects Clara's hand, like Hugo."
+ },
+ "ensuite": {
+  "es": "Ensuite, elle ne dit rien.",
+  "en": "Then she says nothing."
+ },
+ "ne": {
+  "es": "Ensuite, elle ne dit rien.",
+  "en": "Then she says nothing."
+ },
+ "dit": {
+  "es": "Ensuite, elle ne dit rien.",
+  "en": "Then she says nothing."
+ },
+ "rien": {
+  "es": "Ensuite, elle ne dit rien.",
+  "en": "Then she says nothing."
+ },
+ "boit": {
+  "es": "Clara boit encore un peu à la gourde.",
+  "en": "Clara drinks a little more from the water bottle."
+ },
+ "encore": {
+  "es": "Clara boit encore un peu à la gourde.",
+  "en": "Clara drinks a little more from the water bottle."
+ },
+ "peu": {
+  "es": "Clara boit encore un peu à la gourde.",
+  "en": "Clara drinks a little more from the water bottle."
+ },
+ "veut": {
+  "es": "Clara veut tirer.",
+  "en": "Clara wants to shoot."
+ },
+ "tirer": {
+  "es": "Clara veut tirer.",
+  "en": "Clara wants to shoot."
+ },
+ "roule": {
+  "es": "Sa boule roule loin",
+  "en": "Her boule rolls far"
+ },
+ "loin": {
+  "es": "Sa boule roule loin",
+  "en": "Her boule rolls far"
+ },
+ "rate": {
+  "es": "et elle rate le cochonnet.",
+  "en": "and she misses the jack."
+ },
+ "cochonnet": {
+  "es": "et elle rate le cochonnet.",
+  "en": "and she misses the jack."
+ },
+ "difficile": {
+  "es": "C'est difficile!",
+  "en": "It's hard!"
+ },
+ "rit": {
+  "es": "rit Clara.",
+  "en": "Clara laughs."
+ },
+ "toujours": {
+  "es": "Toujours, au début.",
+  "en": "Always, at the beginning."
+ },
+ "au": {
+  "es": "Toujours, au début.",
+  "en": "Always, at the beginning."
+ },
+ "début": {
+  "es": "Toujours, au début.",
+  "en": "Always, at the beginning."
+ },
+ "aime": {
+  "es": "Hugo aime beaucoup ce jeu?",
+  "en": "Does Hugo like this game a lot?"
+ },
+ "beaucoup": {
+  "es": "Hugo aime beaucoup ce jeu?",
+  "en": "Does Hugo like this game a lot?"
+ },
+ "oui": {
+  "es": "Oui.",
+  "en": "Yes."
+ },
+ "fois": {
+  "es": "Chaque fois, il gagne.",
+  "en": "Every time, he wins."
+ },
+ "il": {
+  "es": "Chaque fois, il gagne.",
+  "en": "Every time, he wins."
+ },
+ "gagne": {
+  "es": "Chaque fois, il gagne.",
+  "en": "Every time, he wins."
+ },
+ "bonne": {
+  "es": "Clara est une bonne élève.",
+  "en": "Clara is a good pupil."
+ },
+ "élève": {
+  "es": "Clara est une bonne élève.",
+  "en": "Clara is a good pupil."
+ },
+ "après": {
+  "es": "Après, Léa sert deux cafés.",
+  "en": "Afterwards, Léa serves two coffees."
+ },
+ "sert": {
+  "es": "Après, Léa sert deux cafés.",
+  "en": "Afterwards, Léa serves two coffees."
+ },
+ "cafés": {
+  "es": "Après, Léa sert deux cafés.",
+  "en": "Afterwards, Léa serves two coffees."
+ },
+ "trouve": {
+  "es": "Clara trouve la placette jolie.",
+  "en": "Clara thinks the little square is pretty."
+ },
+ "placette": {
+  "es": "Clara trouve la placette jolie.",
+  "en": "Clara thinks the little square is pretty."
+ },
+ "jolie": {
+  "es": "Clara trouve la placette jolie.",
+  "en": "Clara thinks the little square is pretty."
+ }
+}

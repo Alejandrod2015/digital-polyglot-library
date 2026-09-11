@@ -1,0 +1,274 @@
+{
+ "tu": {
+  "es": "Tu prends la carte?",
+  "en": "Do you take cards?"
+ },
+ "prends": {
+  "es": "Tu prends la carte?",
+  "en": "Do you take cards?"
+ },
+ "carte": {
+  "es": "Tu prends la carte?",
+  "en": "Do you take cards?"
+ },
+ "est": {
+  "es": "Maxime est un ami de Hugo.",
+  "en": "Maxime is a friend of Hugo's."
+ },
+ "ami": {
+  "es": "Maxime est un ami de Hugo.",
+  "en": "Maxime is a friend of Hugo's."
+ },
+ "de": {
+  "es": "Maxime est un ami de Hugo.",
+  "en": "Maxime is a friend of Hugo's."
+ },
+ "il": {
+  "es": "Il vient de Paris.",
+  "en": "He comes from Paris."
+ },
+ "vient": {
+  "es": "Il vient de Paris.",
+  "en": "He comes from Paris."
+ },
+ "paris": {
+  "es": "Il vient de Paris.",
+  "en": "He comes from Paris."
+ },
+ "arrive": {
+  "es": "Il arrive de la gare",
+  "en": "He arrives from the station"
+ },
+ "gare": {
+  "es": "Il arrive de la gare",
+  "en": "He arrives from the station"
+ },
+ "avec": {
+  "es": "avec un grand sac.",
+  "en": "with a big bag."
+ },
+ "grand": {
+  "es": "avec un grand sac.",
+  "en": "with a big bag."
+ },
+ "sac": {
+  "es": "avec un grand sac.",
+  "en": "with a big bag."
+ },
+ "surpris": {
+  "es": "Maxime est surpris:",
+  "en": "Maxime is surprised:"
+ },
+ "café": {
+  "es": "le café est petit.",
+  "en": "the café is small."
+ },
+ "petit": {
+  "es": "le café est petit.",
+  "en": "the café is small."
+ },
+ "ne": {
+  "es": "Léa ne veut pas trouver Maxime sympa.",
+  "en": "Léa doesn't want to find Maxime nice."
+ },
+ "veut": {
+  "es": "Léa ne veut pas trouver Maxime sympa.",
+  "en": "Léa doesn't want to find Maxime nice."
+ },
+ "pas": {
+  "es": "Léa ne veut pas trouver Maxime sympa.",
+  "en": "Léa doesn't want to find Maxime nice."
+ },
+ "trouver": {
+  "es": "Léa ne veut pas trouver Maxime sympa.",
+  "en": "Léa doesn't want to find Maxime nice."
+ },
+ "sympa": {
+  "es": "Léa ne veut pas trouver Maxime sympa.",
+  "en": "Léa doesn't want to find Maxime nice."
+ },
+ "départ": {
+  "es": "Paris, c'est le départ de Hugo.",
+  "en": "Paris means Hugo leaving."
+ },
+ "elle": {
+  "es": "Elle sert un café noir.",
+  "en": "She serves a black coffee."
+ },
+ "sert": {
+  "es": "Elle sert un café noir.",
+  "en": "She serves a black coffee."
+ },
+ "noir": {
+  "es": "Elle sert un café noir.",
+  "en": "She serves a black coffee."
+ },
+ "attention": {
+  "es": "Attention, c'est chaud!",
+  "en": "Careful, it's hot!"
+ },
+ "chaud": {
+  "es": "Attention, c'est chaud!",
+  "en": "Careful, it's hot!"
+ },
+ "où": {
+  "es": "D'où tu viens?",
+  "en": "Where do you come from?"
+ },
+ "viens": {
+  "es": "D'où tu viens?",
+  "en": "Where do you come from?"
+ },
+ "demande": {
+  "es": "demande Léa.",
+  "en": "Léa asks."
+ },
+ "répond": {
+  "es": "répond Maxime.",
+  "en": "Maxime answers."
+ },
+ "met": {
+  "es": "Il met du sucre, parce que c'est amer.",
+  "en": "He puts in sugar, because it is bitter."
+ },
+ "sucre": {
+  "es": "Il met du sucre, parce que c'est amer.",
+  "en": "He puts in sugar, because it is bitter."
+ },
+ "parce": {
+  "es": "Il met du sucre, parce que c'est amer.",
+  "en": "He puts in sugar, because it is bitter."
+ },
+ "que": {
+  "es": "Il met du sucre, parce que c'est amer.",
+  "en": "He puts in sugar, because it is bitter."
+ },
+ "amer": {
+  "es": "Il met du sucre, parce que c'est amer.",
+  "en": "He puts in sugar, because it is bitter."
+ },
+ "merci": {
+  "es": "Merci beaucoup.",
+  "en": "Thank you very much."
+ },
+ "beaucoup": {
+  "es": "Merci beaucoup.",
+  "en": "Thank you very much."
+ },
+ "ça": {
+  "es": "C'est ça.",
+  "en": "That's right."
+ },
+ "voilà": {
+  "es": "Voilà",
+  "en": "Here you are"
+ },
+ "dit": {
+  "es": "dit Léa.",
+  "en": "Léa says."
+ },
+ "donne": {
+  "es": "Elle donne la carte.",
+  "en": "She gives him the menu."
+ },
+ "rit": {
+  "es": "Maxime rit.",
+  "en": "Maxime laughs."
+ },
+ "non": {
+  "es": "Non!",
+  "en": "No!"
+ },
+ "bleue": {
+  "es": "La carte bleue, pour payer!",
+  "en": "The bank card, to pay!"
+ },
+ "pour": {
+  "es": "La carte bleue, pour payer!",
+  "en": "The bank card, to pay!"
+ },
+ "payer": {
+  "es": "La carte bleue, pour payer!",
+  "en": "The bank card, to pay!"
+ },
+ "comprend": {
+  "es": "Léa comprend.",
+  "en": "Léa understands."
+ },
+ "ah": {
+  "es": "Ah!",
+  "en": "Oh!"
+ },
+ "dire": {
+  "es": "Ça veut dire ça!",
+  "en": "So that's what it means!"
+ },
+ "drôle": {
+  "es": "C'est drôle.",
+  "en": "It's funny."
+ },
+ "bravo": {
+  "es": "Bravo, Léa!",
+  "en": "Well done, Léa!"
+ },
+ "ici": {
+  "es": "Ici, pas de carte bleue",
+  "en": "Here, no bank cards"
+ },
+ "explique": {
+  "es": "explique Léa.",
+  "en": "Léa explains."
+ },
+ "alors": {
+  "es": "Alors, c'est gratuit?",
+  "en": "So it's free?"
+ },
+ "gratuit": {
+  "es": "Alors, c'est gratuit?",
+  "en": "So it's free?"
+ },
+ "faux": {
+  "es": "C'est faux!",
+  "en": "That's wrong!"
+ },
+ "grave": {
+  "es": "Pas grave.",
+  "en": "No problem."
+ },
+ "combien": {
+  "es": "C'est combien?",
+  "en": "How much is it?"
+ },
+ "serviette": {
+  "es": "Léa rit avec la serviette sur la bouche.",
+  "en": "Léa laughs with the napkin over her mouth."
+ },
+ "sur": {
+  "es": "Léa rit avec la serviette sur la bouche.",
+  "en": "Léa laughs with the napkin over her mouth."
+ },
+ "bouche": {
+  "es": "Léa rit avec la serviette sur la bouche.",
+  "en": "Léa laughs with the napkin over her mouth."
+ },
+ "apporte": {
+  "es": "Elle apporte un jus d'orange:",
+  "en": "She brings an orange juice:"
+ },
+ "jus": {
+  "es": "Elle apporte un jus d'orange:",
+  "en": "She brings an orange juice:"
+ },
+ "orange": {
+  "es": "Elle apporte un jus d'orange:",
+  "en": "She brings an orange juice:"
+ },
+ "ardoise": {
+  "es": "Sur l'ardoise, elle écrit:",
+  "en": "On the chalkboard, she writes:"
+ },
+ "écrit": {
+  "es": "Sur l'ardoise, elle écrit:",
+  "en": "On the chalkboard, she writes:"
+ }
+}

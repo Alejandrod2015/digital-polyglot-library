@@ -1,0 +1,330 @@
+{
+ "annonce": {
+  "es": "L'annonce du couloir",
+  "en": "The notice in the hallway"
+ },
+ "couloir": {
+  "es": "L'annonce du couloir",
+  "en": "The notice in the hallway"
+ },
+ "propriétaire": {
+  "es": "Antoine, le propriétaire de l'immeuble",
+  "en": "Antoine, the owner of the building"
+ },
+ "de": {
+  "es": "Antoine, le propriétaire de l'immeuble",
+  "en": "Antoine, the owner of the building"
+ },
+ "immeuble": {
+  "es": "Antoine, le propriétaire de l'immeuble",
+  "en": "Antoine, the owner of the building"
+ },
+ "entre": {
+  "es": "entre dans le café.",
+  "en": "comes into the café."
+ },
+ "dans": {
+  "es": "entre dans le café.",
+  "en": "comes into the café."
+ },
+ "café": {
+  "es": "entre dans le café.",
+  "en": "comes into the café."
+ },
+ "habitude": {
+  "es": "D'habitude, il vient le lundi, tard.",
+  "en": "Usually, he comes on Mondays, late."
+ },
+ "il": {
+  "es": "D'habitude, il vient le lundi, tard.",
+  "en": "Usually, he comes on Mondays, late."
+ },
+ "vient": {
+  "es": "D'habitude, il vient le lundi, tard.",
+  "en": "Usually, he comes on Mondays, late."
+ },
+ "lundi": {
+  "es": "D'habitude, il vient le lundi, tard.",
+  "en": "Usually, he comes on Mondays, late."
+ },
+ "tard": {
+  "es": "D'habitude, il vient le lundi, tard.",
+  "en": "Usually, he comes on Mondays, late."
+ },
+ "hui": {
+  "es": "Aujourd'hui, il a une annonce:",
+  "en": "Today, he has a notice:"
+ },
+ "a": {
+  "es": "Aujourd'hui, il a une annonce:",
+  "en": "Today, he has a notice:"
+ },
+ "à": {
+  "es": "À louer.",
+  "en": "For rent."
+ },
+ "louer": {
+  "es": "À louer.",
+  "en": "For rent."
+ },
+ "déménage": {
+  "es": "Hugo déménage en mars.",
+  "en": "Hugo moves out in March."
+ },
+ "en": {
+  "es": "Hugo déménage en mars.",
+  "en": "Hugo moves out in March."
+ },
+ "mars": {
+  "es": "Hugo déménage en mars.",
+  "en": "Hugo moves out in March."
+ },
+ "appartement": {
+  "es": "L'appartement en haut est déjà presque vide.",
+  "en": "The flat upstairs is already almost empty."
+ },
+ "haut": {
+  "es": "L'appartement en haut est déjà presque vide.",
+  "en": "The flat upstairs is already almost empty."
+ },
+ "est": {
+  "es": "L'appartement en haut est déjà presque vide.",
+  "en": "The flat upstairs is already almost empty."
+ },
+ "déjà": {
+  "es": "L'appartement en haut est déjà presque vide.",
+  "en": "The flat upstairs is already almost empty."
+ },
+ "presque": {
+  "es": "L'appartement en haut est déjà presque vide.",
+  "en": "The flat upstairs is already almost empty."
+ },
+ "vide": {
+  "es": "L'appartement en haut est déjà presque vide.",
+  "en": "The flat upstairs is already almost empty."
+ },
+ "veut": {
+  "es": "Antoine veut louer l'appartement tout de suite.",
+  "en": "Antoine wants to rent out the flat right away."
+ },
+ "tout": {
+  "es": "Antoine veut louer l'appartement tout de suite.",
+  "en": "Antoine wants to rent out the flat right away."
+ },
+ "suite": {
+  "es": "Antoine veut louer l'appartement tout de suite.",
+  "en": "Antoine wants to rent out the flat right away."
+ },
+ "pourquoi": {
+  "es": "Pourquoi?",
+  "en": "Why?"
+ },
+ "ne": {
+  "es": "Hugo ne part pas encore!",
+  "en": "Hugo isn't leaving yet!"
+ },
+ "part": {
+  "es": "Hugo ne part pas encore!",
+  "en": "Hugo isn't leaving yet!"
+ },
+ "pas": {
+  "es": "Hugo ne part pas encore!",
+  "en": "Hugo isn't leaving yet!"
+ },
+ "encore": {
+  "es": "Hugo ne part pas encore!",
+  "en": "Hugo isn't leaving yet!"
+ },
+ "dit": {
+  "es": "dit Léa.",
+  "en": "Léa says."
+ },
+ "locataire": {
+  "es": "Un locataire paie cent euros de plus.",
+  "en": "A tenant pays a hundred euros more."
+ },
+ "paie": {
+  "es": "Un locataire paie cent euros de plus.",
+  "en": "A tenant pays a hundred euros more."
+ },
+ "euros": {
+  "es": "Un locataire paie cent euros de plus.",
+  "en": "A tenant pays a hundred euros more."
+ },
+ "plus": {
+  "es": "Un locataire paie cent euros de plus.",
+  "en": "A tenant pays a hundred euros more."
+ },
+ "cher": {
+  "es": "C'est cher",
+  "en": "It's expensive"
+ },
+ "explique": {
+  "es": "explique Antoine.",
+  "en": "Antoine explains."
+ },
+ "drôle": {
+  "es": "Ce n'est pas drôle!",
+  "en": "It isn't funny!"
+ },
+ "je": {
+  "es": "Je veux l'appartement libre pour Hugo.",
+  "en": "I want the flat kept free for Hugo."
+ },
+ "veux": {
+  "es": "Je veux l'appartement libre pour Hugo.",
+  "en": "I want the flat kept free for Hugo."
+ },
+ "libre": {
+  "es": "Je veux l'appartement libre pour Hugo.",
+  "en": "I want the flat kept free for Hugo."
+ },
+ "pour": {
+  "es": "Je veux l'appartement libre pour Hugo.",
+  "en": "I want the flat kept free for Hugo."
+ },
+ "et": {
+  "es": "Et si je vends ma vieille machine?",
+  "en": "And what if I sell my old machine?"
+ },
+ "si": {
+  "es": "Et si je vends ma vieille machine?",
+  "en": "And what if I sell my old machine?"
+ },
+ "vends": {
+  "es": "Et si je vends ma vieille machine?",
+  "en": "And what if I sell my old machine?"
+ },
+ "ma": {
+  "es": "Et si je vends ma vieille machine?",
+  "en": "And what if I sell my old machine?"
+ },
+ "vieille": {
+  "es": "Et si je vends ma vieille machine?",
+  "en": "And what if I sell my old machine?"
+ },
+ "machine": {
+  "es": "Et si je vends ma vieille machine?",
+  "en": "And what if I sell my old machine?"
+ },
+ "désolé": {
+  "es": "Désolé, Léa",
+  "en": "Sorry, Léa"
+ },
+ "répond": {
+  "es": "répond Antoine.",
+  "en": "Antoine answers."
+ },
+ "suis": {
+  "es": "Je ne suis pas méchant.",
+  "en": "I'm not mean."
+ },
+ "méchant": {
+  "es": "Je ne suis pas méchant.",
+  "en": "I'm not mean."
+ },
+ "demain": {
+  "es": "Demain, je choisis un locataire.",
+  "en": "Tomorrow, I choose a tenant."
+ },
+ "choisis": {
+  "es": "Demain, je choisis un locataire.",
+  "en": "Tomorrow, I choose a tenant."
+ },
+ "lit": {
+  "es": "Léa lit l'annonce sur la boîte aux lettres.",
+  "en": "Léa reads the notice on the letterbox."
+ },
+ "sur": {
+  "es": "Léa lit l'annonce sur la boîte aux lettres.",
+  "en": "Léa reads the notice on the letterbox."
+ },
+ "boîte": {
+  "es": "Léa lit l'annonce sur la boîte aux lettres.",
+  "en": "Léa reads the notice on the letterbox."
+ },
+ "aux": {
+  "es": "Léa lit l'annonce sur la boîte aux lettres.",
+  "en": "Léa reads the notice on the letterbox."
+ },
+ "lettres": {
+  "es": "Léa lit l'annonce sur la boîte aux lettres.",
+  "en": "Léa reads the notice on the letterbox."
+ },
+ "froid": {
+  "es": "Le couloir est froid.",
+  "en": "The hallway is cold."
+ },
+ "meubles": {
+  "es": "Les meubles de Hugo",
+  "en": "Hugo's furniture"
+ },
+ "vont": {
+  "es": "vont à la cave, dessous.",
+  "en": "goes to the cellar, below."
+ },
+ "cave": {
+  "es": "vont à la cave, dessous.",
+  "en": "goes to the cellar, below."
+ },
+ "dessous": {
+  "es": "vont à la cave, dessous.",
+  "en": "goes to the cellar, below."
+ },
+ "touche": {
+  "es": "Léa touche doucement la poignée",
+  "en": "Léa gently touches the handle"
+ },
+ "doucement": {
+  "es": "Léa touche doucement la poignée",
+  "en": "Léa gently touches the handle"
+ },
+ "poignée": {
+  "es": "Léa touche doucement la poignée",
+  "en": "Léa gently touches the handle"
+ },
+ "porte": {
+  "es": "de la porte de Hugo.",
+  "en": "of Hugo's door."
+ },
+ "volets": {
+  "es": "En haut, les volets sont fermés.",
+  "en": "Upstairs, the shutters are closed."
+ },
+ "sont": {
+  "es": "En haut, les volets sont fermés.",
+  "en": "Upstairs, the shutters are closed."
+ },
+ "fermés": {
+  "es": "En haut, les volets sont fermés.",
+  "en": "Upstairs, the shutters are closed."
+ },
+ "regarde": {
+  "es": "Léa regarde les volets.",
+  "en": "Léa looks at the shutters."
+ },
+ "aime": {
+  "es": "Léa n'aime pas ça.",
+  "en": "Léa doesn't like that."
+ },
+ "ça": {
+  "es": "Léa n'aime pas ça.",
+  "en": "Léa doesn't like that."
+ },
+ "elle": {
+  "es": "Elle sait, mais elle ne dit rien.",
+  "en": "She knows, but she says nothing."
+ },
+ "sait": {
+  "es": "Elle sait, mais elle ne dit rien.",
+  "en": "She knows, but she says nothing."
+ },
+ "mais": {
+  "es": "Elle sait, mais elle ne dit rien.",
+  "en": "She knows, but she says nothing."
+ },
+ "rien": {
+  "es": "Elle sait, mais elle ne dit rien.",
+  "en": "She knows, but she says nothing."
+ }
+}

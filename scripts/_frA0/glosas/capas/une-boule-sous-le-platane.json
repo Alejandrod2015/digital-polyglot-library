@@ -1,0 +1,306 @@
+{
+ "boule": {
+  "es": "Une boule sous le platane",
+  "en": "A boule under the plane tree"
+ },
+ "sous": {
+  "es": "Une boule sous le platane",
+  "en": "A boule under the plane tree"
+ },
+ "platane": {
+  "es": "Une boule sous le platane",
+  "en": "A boule under the plane tree"
+ },
+ "boules": {
+  "es": "Les boules attendent sur le banc",
+  "en": "The boules wait on the bench"
+ },
+ "attendent": {
+  "es": "Les boules attendent sur le banc",
+  "en": "The boules wait on the bench"
+ },
+ "sur": {
+  "es": "Les boules attendent sur le banc",
+  "en": "The boules wait on the bench"
+ },
+ "banc": {
+  "es": "Les boules attendent sur le banc",
+  "en": "The boules wait on the bench"
+ },
+ "est": {
+  "es": "Léa est une jeune femme de Marseille.",
+  "en": "Léa is a young woman from Marseille."
+ },
+ "jeune": {
+  "es": "Léa est une jeune femme de Marseille.",
+  "en": "Léa is a young woman from Marseille."
+ },
+ "femme": {
+  "es": "Léa est une jeune femme de Marseille.",
+  "en": "Léa is a young woman from Marseille."
+ },
+ "de": {
+  "es": "Léa est une jeune femme de Marseille.",
+  "en": "Léa is a young woman from Marseille."
+ },
+ "marseille": {
+  "es": "Léa est une jeune femme de Marseille.",
+  "en": "Léa is a young woman from Marseille."
+ },
+ "elle": {
+  "es": "Elle a un café sur la placette.",
+  "en": "She has a café on the little square."
+ },
+ "a": {
+  "es": "Elle a un café sur la placette.",
+  "en": "She has a café on the little square."
+ },
+ "café": {
+  "es": "Elle a un café sur la placette.",
+  "en": "She has a café on the little square."
+ },
+ "placette": {
+  "es": "Elle a un café sur la placette.",
+  "en": "She has a café on the little square."
+ },
+ "ami": {
+  "es": "Hugo, un ami de Léa, habite au-dessus.",
+  "en": "Hugo, a friend of Léa's, lives upstairs."
+ },
+ "habite": {
+  "es": "Hugo, un ami de Léa, habite au-dessus.",
+  "en": "Hugo, a friend of Léa's, lives upstairs."
+ },
+ "au-dessus": {
+  "es": "Hugo, un ami de Léa, habite au-dessus.",
+  "en": "Hugo, a friend of Léa's, lives upstairs."
+ },
+ "ils": {
+  "es": "Ils jouent à la pétanque chaque dimanche.",
+  "en": "They play pétanque every Sunday."
+ },
+ "jouent": {
+  "es": "Ils jouent à la pétanque chaque dimanche.",
+  "en": "They play pétanque every Sunday."
+ },
+ "à": {
+  "es": "Ils jouent à la pétanque chaque dimanche.",
+  "en": "They play pétanque every Sunday."
+ },
+ "pétanque": {
+  "es": "Ils jouent à la pétanque chaque dimanche.",
+  "en": "They play pétanque every Sunday."
+ },
+ "chaque": {
+  "es": "Ils jouent à la pétanque chaque dimanche.",
+  "en": "They play pétanque every Sunday."
+ },
+ "dimanche": {
+  "es": "Ils jouent à la pétanque chaque dimanche.",
+  "en": "They play pétanque every Sunday."
+ },
+ "gagne": {
+  "es": "Hugo gagne toujours, et Léa perd toujours.",
+  "en": "Hugo always wins, and Léa always loses."
+ },
+ "toujours": {
+  "es": "Hugo gagne toujours, et Léa perd toujours.",
+  "en": "Hugo always wins, and Léa always loses."
+ },
+ "et": {
+  "es": "Hugo gagne toujours, et Léa perd toujours.",
+  "en": "Hugo always wins, and Léa always loses."
+ },
+ "perd": {
+  "es": "Hugo gagne toujours, et Léa perd toujours.",
+  "en": "Hugo always wins, and Léa always loses."
+ },
+ "hui": {
+  "es": "Aujourd'hui, c'est moi.",
+  "en": "Today, it's me."
+ },
+ "moi": {
+  "es": "Aujourd'hui, c'est moi.",
+  "en": "Today, it's me."
+ },
+ "je": {
+  "es": "Je gagne",
+  "en": "I win"
+ },
+ "dit": {
+  "es": "dit Léa.",
+  "en": "Léa says."
+ },
+ "lance": {
+  "es": "Hugo lance le cochonnet, vite.",
+  "en": "Hugo throws the jack, quickly."
+ },
+ "cochonnet": {
+  "es": "Hugo lance le cochonnet, vite.",
+  "en": "Hugo throws the jack, quickly."
+ },
+ "vite": {
+  "es": "Hugo lance le cochonnet, vite.",
+  "en": "Hugo throws the jack, quickly."
+ },
+ "toi": {
+  "es": "À toi",
+  "en": "Your turn"
+ },
+ "répond": {
+  "es": "répond Hugo.",
+  "en": "Hugo answers."
+ },
+ "prend": {
+  "es": "Léa prend sa boule ronde et froide.",
+  "en": "Léa takes her round, cold boule."
+ },
+ "sa": {
+  "es": "Léa prend sa boule ronde et froide.",
+  "en": "Léa takes her round, cold boule."
+ },
+ "ronde": {
+  "es": "Léa prend sa boule ronde et froide.",
+  "en": "Léa takes her round, cold boule."
+ },
+ "froide": {
+  "es": "Léa prend sa boule ronde et froide.",
+  "en": "Léa takes her round, cold boule."
+ },
+ "roule": {
+  "es": "Sa boule roule tout près.",
+  "en": "Her boule rolls very close."
+ },
+ "tout": {
+  "es": "Sa boule roule tout près.",
+  "en": "Her boule rolls very close."
+ },
+ "près": {
+  "es": "Sa boule roule tout près.",
+  "en": "Her boule rolls very close."
+ },
+ "très": {
+  "es": "Très près.",
+  "en": "Very close."
+ },
+ "génial": {
+  "es": "Génial!",
+  "en": "Great!"
+ },
+ "joue": {
+  "es": "Hugo joue mal, et sa boule part loin.",
+  "en": "Hugo plays badly, and his boule goes far."
+ },
+ "mal": {
+  "es": "Hugo joue mal, et sa boule part loin.",
+  "en": "Hugo plays badly, and his boule goes far."
+ },
+ "part": {
+  "es": "Hugo joue mal, et sa boule part loin.",
+  "en": "Hugo plays badly, and his boule goes far."
+ },
+ "loin": {
+  "es": "Hugo joue mal, et sa boule part loin.",
+  "en": "Hugo plays badly, and his boule goes far."
+ },
+ "tu": {
+  "es": "Tu perds pour moi?",
+  "en": "Are you losing for me?"
+ },
+ "perds": {
+  "es": "Tu perds pour moi?",
+  "en": "Are you losing for me?"
+ },
+ "pour": {
+  "es": "Tu perds pour moi?",
+  "en": "Are you losing for me?"
+ },
+ "vraiment": {
+  "es": "Vraiment?",
+  "en": "Really?"
+ },
+ "demande": {
+  "es": "demande Léa.",
+  "en": "Léa asks."
+ },
+ "non": {
+  "es": "Non.",
+  "en": "No."
+ },
+ "jeu": {
+  "es": "C'est un jeu",
+  "en": "It is a game"
+ },
+ "pose": {
+  "es": "Léa pose sa boule sur le banc.",
+  "en": "Léa puts her boule down on the bench."
+ },
+ "parle": {
+  "es": "Hugo parle doucement.",
+  "en": "Hugo speaks softly."
+ },
+ "doucement": {
+  "es": "Hugo parle doucement.",
+  "en": "Hugo speaks softly."
+ },
+ "pars": {
+  "es": "Léa, je pars à Paris en mars.",
+  "en": "Léa, I'm leaving for Paris in March."
+ },
+ "paris": {
+  "es": "Léa, je pars à Paris en mars.",
+  "en": "Léa, I'm leaving for Paris in March."
+ },
+ "en": {
+  "es": "Léa, je pars à Paris en mars.",
+  "en": "Léa, I'm leaving for Paris in March."
+ },
+ "mars": {
+  "es": "Léa, je pars à Paris en mars.",
+  "en": "Léa, I'm leaving for Paris in March."
+ },
+ "quitte": {
+  "es": "Je quitte Marseille.",
+  "en": "I'm leaving Marseille."
+ },
+ "départ": {
+  "es": "Le départ est dans six mois?",
+  "en": "You leave in six months?"
+ },
+ "dans": {
+  "es": "Le départ est dans six mois?",
+  "en": "You leave in six months?"
+ },
+ "mois": {
+  "es": "Le départ est dans six mois?",
+  "en": "You leave in six months?"
+ },
+ "oui": {
+  "es": "Oui.",
+  "en": "Yes."
+ },
+ "suis": {
+  "es": "Je suis désolé.",
+  "en": "I'm sorry."
+ },
+ "désolé": {
+  "es": "Je suis désolé.",
+  "en": "I'm sorry."
+ },
+ "triste": {
+  "es": "Léa est triste",
+  "en": "Léa is sad"
+ },
+ "ne": {
+  "es": "et ne regarde plus sa boule.",
+  "en": "and doesn't look at her boule any more."
+ },
+ "regarde": {
+  "es": "et ne regarde plus sa boule.",
+  "en": "and doesn't look at her boule any more."
+ },
+ "plus": {
+  "es": "et ne regarde plus sa boule.",
+  "en": "and doesn't look at her boule any more."
+ }
+}

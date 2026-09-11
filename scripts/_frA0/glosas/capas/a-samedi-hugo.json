@@ -1,0 +1,350 @@
+{
+ "à": {
+  "es": "À samedi, Hugo",
+  "en": "See you Saturday, Hugo"
+ },
+ "samedi": {
+  "es": "À samedi, Hugo",
+  "en": "See you Saturday, Hugo"
+ },
+ "matin": {
+  "es": "Ce matin, le réveil sonne tôt.",
+  "en": "This morning, the alarm clock rings early."
+ },
+ "réveil": {
+  "es": "Ce matin, le réveil sonne tôt.",
+  "en": "This morning, the alarm clock rings early."
+ },
+ "sonne": {
+  "es": "Ce matin, le réveil sonne tôt.",
+  "en": "This morning, the alarm clock rings early."
+ },
+ "tôt": {
+  "es": "Ce matin, le réveil sonne tôt.",
+  "en": "This morning, the alarm clock rings early."
+ },
+ "est": {
+  "es": "C'est le premier jour de mars.",
+  "en": "It is the first day of March."
+ },
+ "premier": {
+  "es": "C'est le premier jour de mars.",
+  "en": "It is the first day of March."
+ },
+ "jour": {
+  "es": "C'est le premier jour de mars.",
+  "en": "It is the first day of March."
+ },
+ "de": {
+  "es": "C'est le premier jour de mars.",
+  "en": "It is the first day of March."
+ },
+ "mars": {
+  "es": "C'est le premier jour de mars.",
+  "en": "It is the first day of March."
+ },
+ "voiture": {
+  "es": "Une voiture attend près du port.",
+  "en": "A car waits near the harbour."
+ },
+ "attend": {
+  "es": "Une voiture attend près du port.",
+  "en": "A car waits near the harbour."
+ },
+ "près": {
+  "es": "Une voiture attend près du port.",
+  "en": "A car waits near the harbour."
+ },
+ "port": {
+  "es": "Une voiture attend près du port.",
+  "en": "A car waits near the harbour."
+ },
+ "descend": {
+  "es": "Hugo descend avec une valise lourde.",
+  "en": "Hugo comes down with a heavy suitcase."
+ },
+ "avec": {
+  "es": "Hugo descend avec une valise lourde.",
+  "en": "Hugo comes down with a heavy suitcase."
+ },
+ "valise": {
+  "es": "Hugo descend avec une valise lourde.",
+  "en": "Hugo comes down with a heavy suitcase."
+ },
+ "lourde": {
+  "es": "Hugo descend avec une valise lourde.",
+  "en": "Hugo comes down with a heavy suitcase."
+ },
+ "il": {
+  "es": "Il met la valise dans le coffre.",
+  "en": "He puts the suitcase in the boot."
+ },
+ "met": {
+  "es": "Il met la valise dans le coffre.",
+  "en": "He puts the suitcase in the boot."
+ },
+ "dans": {
+  "es": "Il met la valise dans le coffre.",
+  "en": "He puts the suitcase in the boot."
+ },
+ "coffre": {
+  "es": "Il met la valise dans le coffre.",
+  "en": "He puts the suitcase in the boot."
+ },
+ "tu": {
+  "es": "Tu es prêt?",
+  "en": "Are you ready?"
+ },
+ "es": {
+  "es": "Tu es prêt?",
+  "en": "Are you ready?"
+ },
+ "prêt": {
+  "es": "Tu es prêt?",
+  "en": "Are you ready?"
+ },
+ "demande": {
+  "es": "demande Léa.",
+  "en": "Léa asks."
+ },
+ "presque": {
+  "es": "Presque.",
+  "en": "Almost."
+ },
+ "elle": {
+  "es": "Elle est lourde!",
+  "en": "It is heavy!"
+ },
+ "femme": {
+  "es": "Une femme sort d'un taxi, avec son chien.",
+  "en": "A woman gets out of a taxi, with her dog."
+ },
+ "sort": {
+  "es": "Une femme sort d'un taxi, avec son chien.",
+  "en": "A woman gets out of a taxi, with her dog."
+ },
+ "d": {
+  "es": "Une femme sort d'un taxi, avec son chien.",
+  "en": "A woman gets out of a taxi, with her dog."
+ },
+ "taxi": {
+  "es": "Une femme sort d'un taxi, avec son chien.",
+  "en": "A woman gets out of a taxi, with her dog."
+ },
+ "son": {
+  "es": "Une femme sort d'un taxi, avec son chien.",
+  "en": "A woman gets out of a taxi, with her dog."
+ },
+ "chien": {
+  "es": "Une femme sort d'un taxi, avec son chien.",
+  "en": "A woman gets out of a taxi, with her dog."
+ },
+ "nouvelle": {
+  "es": "Clara est une nouvelle locataire, en manteau jaune.",
+  "en": "Clara is a new tenant, in a yellow coat."
+ },
+ "locataire": {
+  "es": "Clara est une nouvelle locataire, en manteau jaune.",
+  "en": "Clara is a new tenant, in a yellow coat."
+ },
+ "en": {
+  "es": "Clara est une nouvelle locataire, en manteau jaune.",
+  "en": "Clara is a new tenant, in a yellow coat."
+ },
+ "manteau": {
+  "es": "Clara est une nouvelle locataire, en manteau jaune.",
+  "en": "Clara is a new tenant, in a yellow coat."
+ },
+ "jaune": {
+  "es": "Clara est une nouvelle locataire, en manteau jaune.",
+  "en": "Clara is a new tenant, in a yellow coat."
+ },
+ "sait": {
+  "es": "Léa sait:",
+  "en": "Léa knows:"
+ },
+ "inconnue": {
+  "es": "c'est l'inconnue de l'écharpe.",
+  "en": "it is the stranger with the scarf."
+ },
+ "écharpe": {
+  "es": "c'est l'inconnue de l'écharpe.",
+  "en": "it is the stranger with the scarf."
+ },
+ "voilà": {
+  "es": "Voilà les clés.",
+  "en": "Here are the keys."
+ },
+ "clés": {
+  "es": "Voilà les clés.",
+  "en": "Here are the keys."
+ },
+ "bienvenue": {
+  "es": "Bienvenue!",
+  "en": "Welcome!"
+ },
+ "dit": {
+  "es": "dit Hugo à Clara.",
+  "en": "Hugo says to Clara."
+ },
+ "ne": {
+  "es": "Léa ne peut rien dire.",
+  "en": "Léa can't say anything."
+ },
+ "peut": {
+  "es": "Léa ne peut rien dire.",
+  "en": "Léa can't say anything."
+ },
+ "rien": {
+  "es": "Léa ne peut rien dire.",
+  "en": "Léa can't say anything."
+ },
+ "dire": {
+  "es": "Léa ne peut rien dire.",
+  "en": "Léa can't say anything."
+ },
+ "parle": {
+  "es": "Hugo parle doucement à Léa.",
+  "en": "Hugo speaks softly to Léa."
+ },
+ "doucement": {
+  "es": "Hugo parle doucement à Léa.",
+  "en": "Hugo speaks softly to Léa."
+ },
+ "arroses": {
+  "es": "Tu arroses la plante?",
+  "en": "Will you water the plant?"
+ },
+ "plante": {
+  "es": "Tu arroses la plante?",
+  "en": "Will you water the plant?"
+ },
+ "tous": {
+  "es": "Tous les matins, je l'arrose.",
+  "en": "Every morning, I water it."
+ },
+ "matins": {
+  "es": "Tous les matins, je l'arrose.",
+  "en": "Every morning, I water it."
+ },
+ "je": {
+  "es": "Tous les matins, je l'arrose.",
+  "en": "Every morning, I water it."
+ },
+ "arrose": {
+  "es": "Tous les matins, je l'arrose.",
+  "en": "Every morning, I water it."
+ },
+ "pour": {
+  "es": "À samedi, pour jouer?",
+  "en": "See you Saturday, to play?"
+ },
+ "jouer": {
+  "es": "À samedi, pour jouer?",
+  "en": "See you Saturday, to play?"
+ },
+ "veux": {
+  "es": "Je ne veux pas pleurer.",
+  "en": "I don't want to cry."
+ },
+ "pas": {
+  "es": "Je ne veux pas pleurer.",
+  "en": "I don't want to cry."
+ },
+ "pleurer": {
+  "es": "Je ne veux pas pleurer.",
+  "en": "I don't want to cry."
+ },
+ "retient": {
+  "es": "Elle retient ses larmes.",
+  "en": "She holds back her tears."
+ },
+ "ses": {
+  "es": "Elle retient ses larmes.",
+  "en": "She holds back her tears."
+ },
+ "larmes": {
+  "es": "Elle retient ses larmes.",
+  "en": "She holds back her tears."
+ },
+ "bon": {
+  "es": "Bon voyage, Hugo",
+  "en": "Have a good trip, Hugo"
+ },
+ "voyage": {
+  "es": "Bon voyage, Hugo",
+  "en": "Have a good trip, Hugo"
+ },
+ "au": {
+  "es": "Au revoir, Léa",
+  "en": "Goodbye, Léa"
+ },
+ "revoir": {
+  "es": "Au revoir, Léa",
+  "en": "Goodbye, Léa"
+ },
+ "répond": {
+  "es": "répond Hugo.",
+  "en": "Hugo answers."
+ },
+ "j": {
+  "es": "Samedi, j'ai ma boule.",
+  "en": "On Saturday, I'll have my boule."
+ },
+ "ma": {
+  "es": "Samedi, j'ai ma boule.",
+  "en": "On Saturday, I'll have my boule."
+ },
+ "boule": {
+  "es": "Samedi, j'ai ma boule.",
+  "en": "On Saturday, I'll have my boule."
+ },
+ "lui": {
+  "es": "Hugo lui donne un mouchoir.",
+  "en": "Hugo gives her a handkerchief."
+ },
+ "donne": {
+  "es": "Hugo lui donne un mouchoir.",
+  "en": "Hugo gives her a handkerchief."
+ },
+ "mouchoir": {
+  "es": "Hugo lui donne un mouchoir.",
+  "en": "Hugo gives her a handkerchief."
+ },
+ "monte": {
+  "es": "Il monte dans la voiture.",
+  "en": "He gets into the car."
+ },
+ "part": {
+  "es": "La voiture part lentement.",
+  "en": "The car leaves slowly."
+ },
+ "lentement": {
+  "es": "La voiture part lentement.",
+  "en": "The car leaves slowly."
+ },
+ "klaxon": {
+  "es": "Le klaxon sonne deux fois.",
+  "en": "The horn sounds twice."
+ },
+ "fois": {
+  "es": "Le klaxon sonne deux fois.",
+  "en": "The horn sounds twice."
+ },
+ "serre": {
+  "es": "Léa serre le cochonnet dans sa poche.",
+  "en": "Léa squeezes the jack in her pocket."
+ },
+ "cochonnet": {
+  "es": "Léa serre le cochonnet dans sa poche.",
+  "en": "Léa squeezes the jack in her pocket."
+ },
+ "sa": {
+  "es": "Léa serre le cochonnet dans sa poche.",
+  "en": "Léa squeezes the jack in her pocket."
+ },
+ "poche": {
+  "es": "Léa serre le cochonnet dans sa poche.",
+  "en": "Léa squeezes the jack in her pocket."
+ }
+}

@@ -1,0 +1,342 @@
+{
+ "carreaux": {
+  "es": "Deux carreaux pour Hugo",
+  "en": "Two carreaux for Hugo"
+ },
+ "pour": {
+  "es": "Deux carreaux pour Hugo",
+  "en": "Two carreaux for Hugo"
+ },
+ "apporte": {
+  "es": "Léa apporte deux tasses de café.",
+  "en": "Léa brings two cups of coffee."
+ },
+ "tasses": {
+  "es": "Léa apporte deux tasses de café.",
+  "en": "Léa brings two cups of coffee."
+ },
+ "de": {
+  "es": "Léa apporte deux tasses de café.",
+  "en": "Léa brings two cups of coffee."
+ },
+ "café": {
+  "es": "Léa apporte deux tasses de café.",
+  "en": "Léa brings two cups of coffee."
+ },
+ "elle": {
+  "es": "Elle porte son tablier, et le mistral arrive.",
+  "en": "She wears her apron, and the mistral arrives."
+ },
+ "porte": {
+  "es": "Elle porte son tablier, et le mistral arrive.",
+  "en": "She wears her apron, and the mistral arrives."
+ },
+ "son": {
+  "es": "Elle porte son tablier, et le mistral arrive.",
+  "en": "She wears her apron, and the mistral arrives."
+ },
+ "tablier": {
+  "es": "Elle porte son tablier, et le mistral arrive.",
+  "en": "She wears her apron, and the mistral arrives."
+ },
+ "et": {
+  "es": "Elle porte son tablier, et le mistral arrive.",
+  "en": "She wears her apron, and the mistral arrives."
+ },
+ "mistral": {
+  "es": "Elle porte son tablier, et le mistral arrive.",
+  "en": "She wears her apron, and the mistral arrives."
+ },
+ "arrive": {
+  "es": "Elle porte son tablier, et le mistral arrive.",
+  "en": "She wears her apron, and the mistral arrives."
+ },
+ "il": {
+  "es": "Il souffle fort.",
+  "en": "It blows hard."
+ },
+ "souffle": {
+  "es": "Il souffle fort.",
+  "en": "It blows hard."
+ },
+ "fort": {
+  "es": "Il souffle fort.",
+  "en": "It blows hard."
+ },
+ "veut": {
+  "es": "Hugo veut montrer quelque chose à Léa.",
+  "en": "Hugo wants to show Léa something."
+ },
+ "montrer": {
+  "es": "Hugo veut montrer quelque chose à Léa.",
+  "en": "Hugo wants to show Léa something."
+ },
+ "quelque": {
+  "es": "Hugo veut montrer quelque chose à Léa.",
+  "en": "Hugo wants to show Léa something."
+ },
+ "chose": {
+  "es": "Hugo veut montrer quelque chose à Léa.",
+  "en": "Hugo wants to show Léa something."
+ },
+ "à": {
+  "es": "Hugo veut montrer quelque chose à Léa.",
+  "en": "Hugo wants to show Léa something."
+ },
+ "boule": {
+  "es": "La boule de Hugo tape l'autre boule.",
+  "en": "Hugo's boule hits the other boule."
+ },
+ "tape": {
+  "es": "La boule de Hugo tape l'autre boule.",
+  "en": "Hugo's boule hits the other boule."
+ },
+ "autre": {
+  "es": "La boule de Hugo tape l'autre boule.",
+  "en": "Hugo's boule hits the other boule."
+ },
+ "part": {
+  "es": "L'autre boule part.",
+  "en": "The other boule flies off."
+ },
+ "sa": {
+  "es": "Sa boule reste à sa place:",
+  "en": "His boule stays in its place:"
+ },
+ "reste": {
+  "es": "Sa boule reste à sa place:",
+  "en": "His boule stays in its place:"
+ },
+ "place": {
+  "es": "Sa boule reste à sa place:",
+  "en": "His boule stays in its place:"
+ },
+ "est": {
+  "es": "c'est un carreau.",
+  "en": "it's a carreau."
+ },
+ "carreau": {
+  "es": "c'est un carreau.",
+  "en": "it's a carreau."
+ },
+ "je": {
+  "es": "Je pars en mars",
+  "en": "I leave in March"
+ },
+ "pars": {
+  "es": "Je pars en mars",
+  "en": "I leave in March"
+ },
+ "en": {
+  "es": "Je pars en mars",
+  "en": "I leave in March"
+ },
+ "mars": {
+  "es": "Je pars en mars",
+  "en": "I leave in March"
+ },
+ "explique": {
+  "es": "explique Hugo.",
+  "en": "Hugo explains."
+ },
+ "tu": {
+  "es": "Tu dois apprendre à tirer.",
+  "en": "You must learn to shoot."
+ },
+ "dois": {
+  "es": "Tu dois apprendre à tirer.",
+  "en": "You must learn to shoot."
+ },
+ "apprendre": {
+  "es": "Tu dois apprendre à tirer.",
+  "en": "You must learn to shoot."
+ },
+ "tirer": {
+  "es": "Tu dois apprendre à tirer.",
+  "en": "You must learn to shoot."
+ },
+ "joue": {
+  "es": "Je joue avec toi, pas seule",
+  "en": "I play with you, not alone"
+ },
+ "avec": {
+  "es": "Je joue avec toi, pas seule",
+  "en": "I play with you, not alone"
+ },
+ "toi": {
+  "es": "Je joue avec toi, pas seule",
+  "en": "I play with you, not alone"
+ },
+ "pas": {
+  "es": "Je joue avec toi, pas seule",
+  "en": "I play with you, not alone"
+ },
+ "seule": {
+  "es": "Je joue avec toi, pas seule",
+  "en": "I play with you, not alone"
+ },
+ "dit": {
+  "es": "dit Léa.",
+  "en": "Léa says."
+ },
+ "mais": {
+  "es": "Mais elle prend une boule.",
+  "en": "But she takes a boule."
+ },
+ "prend": {
+  "es": "Mais elle prend une boule.",
+  "en": "But she takes a boule."
+ },
+ "essayer": {
+  "es": "Elle veut essayer.",
+  "en": "She wants to try."
+ },
+ "ne": {
+  "es": "La boule ne va pas droit",
+  "en": "The boule doesn't go straight"
+ },
+ "va": {
+  "es": "La boule ne va pas droit",
+  "en": "The boule doesn't go straight"
+ },
+ "droit": {
+  "es": "La boule ne va pas droit",
+  "en": "The boule doesn't go straight"
+ },
+ "rate": {
+  "es": "et elle rate.",
+  "en": "and she misses."
+ },
+ "fait": {
+  "es": "Hugo fait un pari.",
+  "en": "Hugo makes a bet."
+ },
+ "pari": {
+  "es": "Hugo fait un pari.",
+  "en": "Hugo makes a bet."
+ },
+ "si": {
+  "es": "Si tu rates, tu paies les cafés",
+  "en": "If you miss, you pay for the coffees"
+ },
+ "rates": {
+  "es": "Si tu rates, tu paies les cafés",
+  "en": "If you miss, you pay for the coffees"
+ },
+ "paies": {
+  "es": "Si tu rates, tu paies les cafés",
+  "en": "If you miss, you pay for the coffees"
+ },
+ "cafés": {
+  "es": "Si tu rates, tu paies les cafés",
+  "en": "If you miss, you pay for the coffees"
+ },
+ "propose": {
+  "es": "propose Hugo.",
+  "en": "Hugo suggests."
+ },
+ "facile": {
+  "es": "C'est facile.",
+  "en": "It's easy."
+ },
+ "tiens": {
+  "es": "Tu tiens la boule comme ça.",
+  "en": "You hold the boule like this."
+ },
+ "comme": {
+  "es": "Tu tiens la boule comme ça.",
+  "en": "You hold the boule like this."
+ },
+ "ça": {
+  "es": "Tu tiens la boule comme ça.",
+  "en": "You hold the boule like this."
+ },
+ "tire": {
+  "es": "Il tire:",
+  "en": "He shoots:"
+ },
+ "encore": {
+  "es": "Encore:",
+  "en": "Again:"
+ },
+ "fois": {
+  "es": "Encore une fois",
+  "en": "One more time"
+ },
+ "annonce": {
+  "es": "annonce Léa.",
+  "en": "Léa announces."
+ },
+ "rit": {
+  "es": "Elle rit, les mains sur la tête.",
+  "en": "She laughs, her hands on her head."
+ },
+ "mains": {
+  "es": "Elle rit, les mains sur la tête.",
+  "en": "She laughs, her hands on her head."
+ },
+ "sur": {
+  "es": "Elle rit, les mains sur la tête.",
+  "en": "She laughs, her hands on her head."
+ },
+ "tête": {
+  "es": "Elle rit, les mains sur la tête.",
+  "en": "She laughs, her hands on her head."
+ },
+ "grave": {
+  "es": "Pas grave, je paie.",
+  "en": "No problem, I'll pay."
+ },
+ "paie": {
+  "es": "Pas grave, je paie.",
+  "en": "No problem, I'll pay."
+ },
+ "demain": {
+  "es": "Mais demain, tu me montres.",
+  "en": "But tomorrow, you show me."
+ },
+ "me": {
+  "es": "Mais demain, tu me montres.",
+  "en": "But tomorrow, you show me."
+ },
+ "montres": {
+  "es": "Mais demain, tu me montres.",
+  "en": "But tomorrow, you show me."
+ },
+ "tous": {
+  "es": "Tous les jours avant mars",
+  "en": "Every day before March"
+ },
+ "jours": {
+  "es": "Tous les jours avant mars",
+  "en": "Every day before March"
+ },
+ "avant": {
+  "es": "Tous les jours avant mars",
+  "en": "Every day before March"
+ },
+ "répond": {
+  "es": "répond Hugo.",
+  "en": "Hugo answers."
+ },
+ "ils": {
+  "es": "Ils restent à l'ombre tout l'après-midi.",
+  "en": "They stay in the shade all afternoon."
+ },
+ "restent": {
+  "es": "Ils restent à l'ombre tout l'après-midi.",
+  "en": "They stay in the shade all afternoon."
+ },
+ "ombre": {
+  "es": "Ils restent à l'ombre tout l'après-midi.",
+  "en": "They stay in the shade all afternoon."
+ },
+ "tout": {
+  "es": "Ils restent à l'ombre tout l'après-midi.",
+  "en": "They stay in the shade all afternoon."
+ },
+ "après-midi": {
+  "es": "Ils restent à l'ombre tout l'après-midi.",
+  "en": "They stay in the shade all afternoon."
+ }
+}

@@ -1,0 +1,318 @@
+{
+ "fauteuil": {
+  "es": "Le fauteuil descend",
+  "en": "The armchair comes down"
+ },
+ "descend": {
+  "es": "Le fauteuil descend",
+  "en": "The armchair comes down"
+ },
+ "de": {
+  "es": "Le fauteuil de Hugo, là-haut",
+  "en": "Hugo's armchair, up there"
+ },
+ "là-haut": {
+  "es": "Le fauteuil de Hugo, là-haut",
+  "en": "Hugo's armchair, up there"
+ },
+ "est": {
+  "es": "est large et lourd.",
+  "en": "is wide and heavy."
+ },
+ "large": {
+  "es": "est large et lourd.",
+  "en": "is wide and heavy."
+ },
+ "et": {
+  "es": "est large et lourd.",
+  "en": "is wide and heavy."
+ },
+ "lourd": {
+  "es": "est large et lourd.",
+  "en": "is wide and heavy."
+ },
+ "déménage": {
+  "es": "Hugo déménage en mars.",
+  "en": "Hugo moves out in March."
+ },
+ "en": {
+  "es": "Hugo déménage en mars.",
+  "en": "Hugo moves out in March."
+ },
+ "mars": {
+  "es": "Hugo déménage en mars.",
+  "en": "Hugo moves out in March."
+ },
+ "il": {
+  "es": "Il veut offrir le fauteuil à Léa.",
+  "en": "He wants to give the armchair to Léa."
+ },
+ "veut": {
+  "es": "Il veut offrir le fauteuil à Léa.",
+  "en": "He wants to give the armchair to Léa."
+ },
+ "offrir": {
+  "es": "Il veut offrir le fauteuil à Léa.",
+  "en": "He wants to give the armchair to Léa."
+ },
+ "à": {
+  "es": "Il veut offrir le fauteuil à Léa.",
+  "en": "He wants to give the armchair to Léa."
+ },
+ "porter": {
+  "es": "Léa veut le porter en bas, au café.",
+  "en": "Léa wants to carry it downstairs, to the café."
+ },
+ "bas": {
+  "es": "Léa veut le porter en bas, au café.",
+  "en": "Léa wants to carry it downstairs, to the café."
+ },
+ "au": {
+  "es": "Léa veut le porter en bas, au café.",
+  "en": "Léa wants to carry it downstairs, to the café."
+ },
+ "café": {
+  "es": "Léa veut le porter en bas, au café.",
+  "en": "Léa wants to carry it downstairs, to the café."
+ },
+ "mais": {
+  "es": "Mais l'escalier est étroit.",
+  "en": "But the stairs are narrow."
+ },
+ "escalier": {
+  "es": "Mais l'escalier est étroit.",
+  "en": "But the stairs are narrow."
+ },
+ "étroit": {
+  "es": "Mais l'escalier est étroit.",
+  "en": "But the stairs are narrow."
+ },
+ "nouvelle": {
+  "es": "Chloé, une nouvelle voisine, a une petite camionnette.",
+  "en": "Chloé, a new neighbour, has a small van."
+ },
+ "voisine": {
+  "es": "Chloé, une nouvelle voisine, a une petite camionnette.",
+  "en": "Chloé, a new neighbour, has a small van."
+ },
+ "a": {
+  "es": "Chloé, une nouvelle voisine, a une petite camionnette.",
+  "en": "Chloé, a new neighbour, has a small van."
+ },
+ "petite": {
+  "es": "Chloé, une nouvelle voisine, a une petite camionnette.",
+  "en": "Chloé, a new neighbour, has a small van."
+ },
+ "camionnette": {
+  "es": "Chloé, une nouvelle voisine, a une petite camionnette.",
+  "en": "Chloé, a new neighbour, has a small van."
+ },
+ "elle": {
+  "es": "Elle a aussi une corde.",
+  "en": "She also has a rope."
+ },
+ "aussi": {
+  "es": "Elle a aussi une corde.",
+  "en": "She also has a rope."
+ },
+ "corde": {
+  "es": "Elle a aussi une corde.",
+  "en": "She also has a rope."
+ },
+ "je": {
+  "es": "Je peux aider.",
+  "en": "I can help."
+ },
+ "peux": {
+  "es": "Je peux aider.",
+  "en": "I can help."
+ },
+ "aider": {
+  "es": "Je peux aider.",
+  "en": "I can help."
+ },
+ "suis": {
+  "es": "Je suis libre",
+  "en": "I'm free"
+ },
+ "libre": {
+  "es": "Je suis libre",
+  "en": "I'm free"
+ },
+ "dit": {
+  "es": "dit Chloé.",
+  "en": "Chloé says."
+ },
+ "pardon": {
+  "es": "Pardon, Chloé.",
+  "en": "Sorry, Chloé."
+ },
+ "gratuit": {
+  "es": "C'est gratuit?",
+  "en": "Is it free?"
+ },
+ "demande": {
+  "es": "demande Léa.",
+  "en": "Léa asks."
+ },
+ "pas": {
+  "es": "Pas du tout.",
+  "en": "Not at all."
+ },
+ "tout": {
+  "es": "Pas du tout.",
+  "en": "Not at all."
+ },
+ "service": {
+  "es": "Un service contre un café.",
+  "en": "A favour in exchange for a coffee."
+ },
+ "contre": {
+  "es": "Un service contre un café.",
+  "en": "A favour in exchange for a coffee."
+ },
+ "comprend": {
+  "es": "Léa comprend.",
+  "en": "Léa understands."
+ },
+ "elles": {
+  "es": "Elles portent le fauteuil lentement, ensemble.",
+  "en": "They carry the armchair slowly, together."
+ },
+ "portent": {
+  "es": "Elles portent le fauteuil lentement, ensemble.",
+  "en": "They carry the armchair slowly, together."
+ },
+ "lentement": {
+  "es": "Elles portent le fauteuil lentement, ensemble.",
+  "en": "They carry the armchair slowly, together."
+ },
+ "ensemble": {
+  "es": "Elles portent le fauteuil lentement, ensemble.",
+  "en": "They carry the armchair slowly, together."
+ },
+ "rampe": {
+  "es": "La rampe est froide sous la main.",
+  "en": "The handrail is cold under her hand."
+ },
+ "froide": {
+  "es": "La rampe est froide sous la main.",
+  "en": "The handrail is cold under her hand."
+ },
+ "sous": {
+  "es": "La rampe est froide sous la main.",
+  "en": "The handrail is cold under her hand."
+ },
+ "main": {
+  "es": "La rampe est froide sous la main.",
+  "en": "The handrail is cold under her hand."
+ },
+ "attention": {
+  "es": "Attention!",
+  "en": "Careful!"
+ },
+ "tourne": {
+  "es": "L'escalier tourne",
+  "en": "The stairs turn"
+ },
+ "mal": {
+  "es": "Léa a mal au dos.",
+  "en": "Léa's back hurts."
+ },
+ "dos": {
+  "es": "Léa a mal au dos.",
+  "en": "Léa's back hurts."
+ },
+ "tu": {
+  "es": "Tu es sûre?",
+  "en": "Are you sure?"
+ },
+ "es": {
+  "es": "Tu es sûre?",
+  "en": "Are you sure?"
+ },
+ "sûre": {
+  "es": "Tu es sûre?",
+  "en": "Are you sure?"
+ },
+ "ça": {
+  "es": "Ça va?",
+  "en": "Are you OK?"
+ },
+ "va": {
+  "es": "Ça va?",
+  "en": "Are you OK?"
+ },
+ "oui": {
+  "es": "Oui.",
+  "en": "Yes."
+ },
+ "ne": {
+  "es": "Je ne suis jamais fatiguée",
+  "en": "I'm never tired"
+ },
+ "jamais": {
+  "es": "Je ne suis jamais fatiguée",
+  "en": "I'm never tired"
+ },
+ "fatiguée": {
+  "es": "Je ne suis jamais fatiguée",
+  "en": "I'm never tired"
+ },
+ "rit": {
+  "es": "rit Léa.",
+  "en": "Léa laughs."
+ },
+ "prend": {
+  "es": "Le fauteuil prend le coin de Léa.",
+  "en": "The armchair takes Léa's corner."
+ },
+ "coin": {
+  "es": "Le fauteuil prend le coin de Léa.",
+  "en": "The armchair takes Léa's corner."
+ },
+ "tapis": {
+  "es": "Le tapis est à côté.",
+  "en": "The rug is next to it."
+ },
+ "côté": {
+  "es": "Le tapis est à côté.",
+  "en": "The rug is next to it."
+ },
+ "merci": {
+  "es": "Merci beaucoup",
+  "en": "Thank you very much"
+ },
+ "beaucoup": {
+  "es": "Merci beaucoup",
+  "en": "Thank you very much"
+ },
+ "rien": {
+  "es": "De rien.",
+  "en": "You're welcome."
+ },
+ "tous": {
+  "es": "Un café tous les jours, jusqu'en mars",
+  "en": "A coffee every day, until March"
+ },
+ "jours": {
+  "es": "Un café tous les jours, jusqu'en mars",
+  "en": "A coffee every day, until March"
+ },
+ "répond": {
+  "es": "répond Chloé.",
+  "en": "Chloé answers."
+ },
+ "dans": {
+  "es": "Léa est dans le fauteuil.",
+  "en": "Léa is in the armchair."
+ },
+ "coussin": {
+  "es": "Le coussin sent Hugo.",
+  "en": "The cushion smells of Hugo."
+ },
+ "sent": {
+  "es": "Le coussin sent Hugo.",
+  "en": "The cushion smells of Hugo."
+ }
+}
