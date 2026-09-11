@@ -125,11 +125,11 @@
         "definition": "Rug; a piece of thick cloth on the floor."
       },
       {
-        "word": "merci",
-        "surface": "Merci",
+        "word": "merci beaucoup",
+        "surface": "Merci beaucoup",
         "type": "expression",
         "register": "neutral",
-        "definition": "Thank you; what you say when someone helps."
+        "definition": "Thank you very much; a big thank you."
       },
       {
         "word": "de rien",
@@ -179,11 +179,11 @@
         "definition": "Rent; the money you pay each month for a flat."
       },
       {
-        "word": "avoir besoin",
+        "word": "le besoin",
         "surface": "besoin",
-        "type": "expression",
+        "type": "noun",
         "register": "neutral",
-        "definition": "To need; to have to get something."
+        "definition": "Need; avoir besoin de means to need something."
       },
       {
         "word": "mille",
@@ -409,11 +409,11 @@
         "definition": "Dirty; not clean at all."
       },
       {
-        "word": "avoir raison",
+        "word": "la raison",
         "surface": "raison",
-        "type": "expression",
+        "type": "noun",
         "register": "neutral",
-        "definition": "To be right; to say what is true."
+        "definition": "Reason; avoir raison means to be right."
       },
       {
         "word": "serrer",
