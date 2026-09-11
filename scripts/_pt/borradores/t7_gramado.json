@@ -5,7 +5,7 @@
   "title": "Nada, minha filha",
   "slug": "nada-minha-filha",
   "synopsis": "Desce do ônibus no sul com a mala de dois meses de praia e uma jaqueta que não segura nada do frio daqui. Quem lava a roupa da rua inteira guarda uma caixa de peças que ninguém veio buscar, e o que sai dessa caixa não se vende nem se empresta.",
-  "text": "Em Gramado fazia frio de verdade, e Renata tinha chegado com roupa de praia. A jaqueta dela era fina, e tudo na mala estava molhado por causa de uma goteira no ônibus.\n\nNeuza cuidava da lavanderia da esquina e puxou assunto logo. As peças não secariam antes do dia seguinte, e ela pendurou tudo numa vara. “A senhora vai vestir o quê hoje?”, perguntou.\n\nRenata não tinha resposta: trouxe duas camisetas e uma saia. Neuza levou uma caixa marrom para o balcão, com um suéter, um cachecol e uma luva sem par.\n\n“Gente esquece e não volta para buscar”, explicou Neuza. “Faz três invernos que isso está aqui.” “Quanto custa?”, perguntou Renata. “Nada, minha filha. A gente dá um jeito, mesmo que o dono apareça”, respondeu Neuza.\n\nDespiu a camiseta e se trocou ali mesmo. “Vem tomar um chá depois das seis”, convidou Neuza, com carinho. À noite, as duas batiam papo no balcão, e, graças a Neuza, Renata não passou frio.",
+  "text": "Em Gramado fazia frio de verdade, e Renata tinha chegado com roupa de praia. A jaqueta dela era fina, e tudo na mala estava molhado por causa de uma goteira no ônibus.\n\nNeuza cuidava da lavanderia da esquina e puxou assunto logo. As peças não secariam antes do dia seguinte, e ela pendurou tudo numa vara. “A senhora vai vestir o quê hoje?”, perguntou.\n\nRenata não tinha resposta: trouxe duas camisetas e uma saia. Neuza levou uma caixa marrom para o balcão, com um suéter, um cachecol e uma luva sem par.\n\n“Gente esquece e não volta. Faz três invernos que isso está aqui”, explicou Neuza. “Quanto custa?”, perguntou Renata. “Nada, minha filha. Pode levar, mesmo que o dono apareça um dia. A gente dá um jeito”, respondeu Neuza.\n\nNo banheiro dos fundos, Renata despiu a roupa de praia. “Vem tomar um chá depois das seis”, convidou Neuza, com carinho. À noite, as duas batiam papo, e, graças a Neuza, Renata não passou frio.",
   "vocab": [
    {
     "word": "jaqueta",
@@ -105,7 +105,7 @@
    },
    {
     "word": "despir",
-    "surface": "Despiu",
+    "surface": "despiu",
     "type": "verb",
     "anchor": false,
     "definition": "To take a piece of clothing off your body."
@@ -145,7 +145,7 @@
   "title": "A fronha gelada",
   "slug": "a-fronha-gelada",
   "synopsis": "Ninguém lhe explicou como se passa uma noite de inverno num quarto que não tem nada dentro, e ela chegou do calor há quatro dias. A receita não se compra em lugar nenhum e cabe em três frases ditas entre duas canecas de chá, antes das seis.",
-  "text": "O quarto alugado tinha uma lâmpada só, no teto. A cortina era fina, o tapete não chegava até a cama, e o quarto ficava cada vez mais gelado. Às seis, Renata desceu até a lavanderia.\n\nNeuza serviu chá numa caneca quente. “Desculpa a pergunta, mas como é que vocês vivem com esse frio?”, disse Renata. “A gente veste tudo o que tem, em vez de reclamar”, respondeu Neuza, como se fosse uma receita. “Suéter grosso por cima e cobertor por baixo.”\n\nRenata perguntou se ela morava ali havia muito tempo. “Nasci nesta rua e moro aqui desde que me casei”, disse Neuza. “Já pensei em ir embora, mas aqui eu reconheço cada casa.” Renata anotou tudo com ternura.\n\nDe volta ao quarto, acendeu a luz e abriu a cômoda: não havia nada dentro. A fronha estava fria. Por outro lado, com o tapete dobrado por cima dos pés, permaneceu quieta até esquentar e dormiu imaginando a rua de Neuza.",
+  "text": "O quarto alugado tinha uma lâmpada só, no teto. A cortina era fina, o tapete não chegava até a cama, e o quarto ficava cada vez mais gelado. Às seis, Renata desceu até a lavanderia.\n\nNeuza serviu chá numa caneca quente. “Desculpa a pergunta, mas como é que vocês vivem com esse frio?”, disse Renata. “A gente veste tudo o que tem, em vez de reclamar”, respondeu Neuza, como se fosse uma receita. “Suéter grosso por cima e cobertor por baixo.”\n\nRenata perguntou se ela morava ali havia muito tempo. “Nasci nesta rua e moro aqui desde que me casei”, disse Neuza, olhando a janela com ternura. “Já pensei em ir embora, mas aqui eu reconheço cada casa.”\n\nDe volta ao quarto, acendeu a luz e abriu a cômoda: não havia nada dentro. A fronha estava fria; por outro lado, o tapete dobrado por cima dos pés esquentava. Ela permaneceu quieta e dormiu imaginando a rua de Neuza.",
   "vocab": [
    {
     "word": "alugar",
@@ -257,7 +257,7 @@
    },
    {
     "word": "por outro lado",
-    "surface": "Por outro lado",
+    "surface": "por outro lado",
     "type": "expression",
     "anchor": false,
     "definition": "On the other hand; used to show another side of things."
@@ -285,7 +285,7 @@
   "title": "O desfile na última manhã",
   "slug": "o-desfile-na-ultima-manha",
   "synopsis": "A rua ensaia o desfile de inverno na manhã em que ela vai embora, e ninguém tem pressa de nada. Tem duas horas livres, um caderno quase cheio e uma coisa para dizer que dois meses atrás não teria sabido dizer nem devagar nem com alguém ajudando do lado.",
-  "text": "Na última manhã, a rua ensaiava o desfile, e o barulho começou cedo. Passeava gente de saia comprida; passou uma gravata larga e um vestido verde.\n\nUm homem de boné dançava sozinho na esquina. Renata levou o suéter de volta à lavanderia de Neuza. “Fica com ele”, disse Neuza, rindo. “Aqui ninguém devolve nada, minha filha.”\n\n“A senhora vai embora decepcionada?”, perguntou Neuza. “Não. Eu volto para visitar a senhora”, respondeu Renata. “Então volta em junho”, disse Neuza. “Em junho chove todo dia, mas a senhora vem de qualquer jeito.”\n\nAs duas brincaram com isso. Lá fora, a vizinhança cantava desafinada, e uma mulher de sapato colorido pulou uma poça.\n\nRenata filmou a rua. Do ponto de vista dela, até a mulher de tênis e balão era parte da despedida.\n\nComparou o primeiro dia com aquele: antes só apontava, agora pedia e agradecia. “Se pudesse, voltaria em junho”, disse a Neuza, na porta. Amava aquela rua, apesar de a chuva de junho ser pior.",
+  "text": "Na última manhã, a rua ensaiava o desfile desde cedo, com barulho. Passeava gente de saia comprida; passou um homem de gravata larga e uma moça de vestido verde.\n\nUm homem de boné dançava sozinho na esquina. Renata levou o suéter de volta à lavanderia de Neuza. “Fica com ele”, disse Neuza, rindo. “Aqui ninguém devolve nada, minha filha.”\n\n“A senhora vai embora decepcionada?”, perguntou Neuza. “Não. Eu volto para visitar a senhora”, respondeu Renata. “Então volta em junho”, disse Neuza. “Em junho chove todo dia, mas a senhora vem de qualquer jeito.”\n\nAs duas brincaram com isso. Lá fora, a vizinhança cantava desafinada, e uma mulher de sapato colorido pulou uma poça.\n\nRenata filmou a rua. Do ponto de vista dela, até outra mulher, de tênis e balão, era parte da despedida.\n\nComparou o primeiro dia com aquele: antes só apontava, agora pedia e agradecia. “Se pudesse, ficaria mais uma semana”, disse a Neuza, na porta. Amava aquela rua, apesar de tudo.",
   "vocab": [
    {
     "word": "passear",
