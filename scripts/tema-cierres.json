@@ -2289,5 +2289,70 @@
         }
       ]
     }
+  },
+  "cmtwo6cys0007j8yzg6ni3fsc#talking-and-listening": {
+    "cerrado": "2026-09-11T09:19:25.456Z",
+    "hash": "8526a1421366ac38",
+    "historias": [
+      "talking-and-listening#0 theo-ecoute-pour-lea",
+      "talking-and-listening#1 la-ligne-coupe-apres-hugo",
+      "talking-and-listening#2 le-torchon-a-la-main"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"intimo y un poco torpe: el ruido del cafe, un telefono que corta, lo que se oye mal y lo que no se quiere oir\", espina \"Hugo se va a Paris en marzo. En octubre ya tiene piso alli, y Lea aprende a escuchar lo que no quiere oir.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"répond\" 33%)",
+      "arranques de parrafo variados (mas repetido \"léa\", 33%)",
+      "densidad 5.3 palabras por oracion (techo 9 en a0)",
+      "seguidilla 31/63 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 6 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.17 sobre 42 plazas · 35 salen una sola vez | ancladas: 18/60 (30%) | cola: 35/42 portables con un solo encuentro (83%, tope 30%) | de un solo encuentro: nouveau, commence, plein, occupée, Pardon, oreilles, à côté, comprend, gentil, Bien sûr, seule, sonne, deux fois, Allô, claire, avant, coupée, rappelle, demandes, ferme, Juste, pas du tout, heureux, petit, cher, vue, métro, partout, tout le temps, parce que…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: talking-and-listening (Léa, Hugo)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "france",
+      "registro": "intimo y un poco torpe: el ruido del cafe, un telefono que corta, lo que se oye mal y lo que no se quiere oir",
+      "espina": "Hugo se va a Paris en marzo. En octubre ya tiene piso alli, y Lea aprende a escuchar lo que no quiere oir.",
+      "recursos": "A0: repeticion ritmica (encore une fois, deux fois), contraste con mais, imagen concreta (la emocion como gesto visible)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Lea quiere escuchar el mensaje de voz de Hugo, que esta en Paris",
+          "impide": "el cafe esta lleno y Theo, el camarero nuevo en su primer dia, le pide ayuda todo el rato",
+          "cuesta": "Theo lo escucha por ella con sus auriculares y se lo repite: Hugo tiene piso en Paris. Se entera por otro",
+          "cambia": "la marcha ya tiene direccion; Theo ya es alguien en el cafe",
+          "emocion": "deja el portable boca abajo en el plateau y sigue sirviendo"
+        },
+        {
+          "slot": "2",
+          "quiere": "Lea quiere decirle a Hugo por telefono que no quiere que se vaya",
+          "impide": "en el cafe no hay red; sube al tejado, entre la ropa tendida, y la linea corta a mitad de frase",
+          "cuesta": "lo dice una vez y el no lo oye; cuando el vuelve a llamar, ella ya no puede decirlo",
+          "cambia": "decide que lo importante se dice a la cara",
+          "emocion": "aprieta el portable contra el pecho y mira las chimeneas"
+        },
+        {
+          "slot": "3",
+          "quiere": "Hugo vuelve y quiere contarle todo de Paris: el piso, la vista, el metro",
+          "impide": "Lea no quiere escuchar; seca tazas y habla de otra cosa",
+          "cuesta": "Hugo se calla y sube a su casa; ella pierde la noche que el queria compartir",
+          "cambia": "ella sube, llama a su puerta y le dice que cuente: escucha",
+          "emocion": "llama a la puerta con el torchon todavia en la mano"
+        }
+      ]
+    }
   }
 }
