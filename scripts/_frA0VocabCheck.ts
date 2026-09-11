@@ -7,11 +7,11 @@ import { FRENCH_A1_A2_LEMMAS } from "@/lib/cefr/frenchA1A2";
 const p = new PrismaClient();
 const ESTE = "cmtwo6cys0007j8yzg6ni3fsc";
 const strip = (w: string) => w.toLowerCase().replace(/^(le |la |les |l'|l’|se |s')/, "").trim();
-// Tema 4 · Words & Meanings
+// Tema 5 · Parties & Gifts
 const C: Record<string, string[]> = {
-  s1: ["la carte","l'ardoise","le sucre","la gare","le jus","la serviette","drôle","faux","vouloir dire","pas grave","c'est ça","surpris","rire","expliquer","venir","apporter","amer","noir","chaud","d'où"],
-  s2: ["le plan","le quai","la montre","le vélo","le bateau","l'arrêt","long","lent","à pied","habiter","vite","tard","tôt","marcher","arriver","ça dépend","dix","presque","tous les deux","en face"],
-  s3: ["le cahier","le crayon","la nappe","la lune","la gomme","l'étoile","manquer","écrire","lire","effacer","le sens","à l'envers","pour toujours","penser","compris","déjà","vrai","dur","doux","enfin"],
+  s1: ["le cadeau","le paquet","les ciseaux","le nœud","le porte-monnaie","le porte-bonheur","offrir","emballer","cacher","couper","choisir","aimer","joli","génial","vide","sûrement","pas mal","au fond","la chance","le papier cadeau"],
+  s2: ["l'anniversaire","la bougie","le gâteau","la guirlande","le lampion","le pastis","fêter","allumer","éteindre","chanter","danser","inviter","laisser","voir","gai","exprès","trente-trois","joyeux anniversaire","à la fin","le gagnant"],
+  s3: ["le balai","la poubelle","les restes","le bouchon","la miette","le chat","balayer","dormir","partager","jouer","rentrer","ouvrir","déchirer","réveillé","tranquille","doucement","à moi","un jour","chaque fois","le retour"],
 };
 (async () => {
   const other: any[] = await p.journeyStory.findMany({ where: { journey: { language: "french" } }, select: { vocab: true, journeyId: true, journey: { select: { status: true, typeSlug: true } } } as any });
