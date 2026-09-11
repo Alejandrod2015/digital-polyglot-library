@@ -1,0 +1,5774 @@
+{
+ "écoute": {
+  "copia": {
+   "g": "listens (écouter)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Théo écoute pour Léa",
+   "theo-ecoute-pour-lea: Léa écoute, mais il y a trop de bruit.",
+   "le-torchon-a-la-main: “J'écoute.”",
+   "une-goutte-chaque-nuit: Léa écoute les gouttes chaque nuit."
+  ]
+ },
+ "pour": {
+  "copia": {
+   "g": "for",
+   "t": "preposition",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Théo écoute pour Léa",
+   "theo-ecoute-pour-lea: Tu peux écouter pour moi?”, demande Léa.",
+   "une-goutte-chaque-nuit: Un service pour un service.”",
+   "tu-prends-la-carte: La carte bleue, pour payer!”",
+   "tu-prends-la-carte: Elle apporte un jus d'orange: gratuit, pour un ami de Hugo.",
+   "vingt-minutes-c-est-long: Pour Léa, vingt minutes, c'est presque toute la ville."
+  ]
+ },
+ "il": {
+  "copia": {
+   "g": "he; there is (it; il y a)",
+   "t": "pronoun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Il y a du bruit dans le café.",
+   "theo-ecoute-pour-lea: Il commence aujourd'hui.",
+   "theo-ecoute-pour-lea: Il court entre les tables avec son plateau.",
+   "theo-ecoute-pour-lea: Il est à Paris, loin d'ici.",
+   "theo-ecoute-pour-lea: Léa écoute, mais il y a trop de bruit.",
+   "theo-ecoute-pour-lea: Il met les écouteurs dans ses oreilles."
+  ]
+ },
+ "y": {
+  "copia": {
+   "g": "there is, there are (il y a)",
+   "t": "pronoun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Il y a du bruit dans le café.",
+   "theo-ecoute-pour-lea: Léa écoute, mais il y a trop de bruit.",
+   "une-goutte-chaque-nuit: Il y a de l'eau partout!”, rit Léa.",
+   "une-goutte-chaque-nuit: “Ça y est.",
+   "les-mots-a-l-envers: “Ça y est, j'ai compris!”, dit Léa.",
+   "les-mots-a-l-envers: Sous la lune, il y a une étoile."
+  ]
+ },
+ "a": {
+  "copia": {
+   "g": "has (avoir); there is (il y a)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Il y a du bruit dans le café.",
+   "theo-ecoute-pour-lea: Léa écoute, mais il y a trop de bruit.",
+   "theo-ecoute-pour-lea: “Hugo a un appartement à Paris”, répond Théo.",
+   "le-torchon-a-la-main: Léa monte, mais il n'y a pas de sonnette.",
+   "une-goutte-chaque-nuit: Il y a de l'eau partout!”, rit Léa.",
+   "les-mots-a-l-envers: Elle a mal à la tête."
+  ]
+ },
+ "bruit": {
+  "copia": {
+   "g": "sound you can hear, often a loud one (le bruit)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Il y a du bruit dans le café.",
+   "theo-ecoute-pour-lea: Léa écoute, mais il y a trop de bruit.",
+   "mille-euros-sans-compter: Léa entend le bruit du vieux percolateur."
+  ]
+ },
+ "dans": {
+  "copia": {
+   "g": "in, inside",
+   "t": "preposition",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Il y a du bruit dans le café.",
+   "theo-ecoute-pour-lea: Il met les écouteurs dans ses oreilles.",
+   "les-mots-a-l-envers: Dans son cahier, Léa écrit les mots durs.",
+   "la-boule-porte-bonheur: Léa garde la boule ronde dans sa main.",
+   "mille-euros-sans-compter: Dans le tiroir, il y a une tirelire.",
+   "mille-euros-sans-compter: Je rends dans six mois.”"
+  ]
+ },
+ "café": {
+  "copia": {
+   "g": "café; coffee (le café)",
+   "t": "noun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Il y a du bruit dans le café.",
+   "theo-ecoute-pour-lea: Le café est plein, et Léa est occupée.",
+   "le-torchon-a-la-main: Sans lui, le café est grand et vide.",
+   "une-goutte-chaque-nuit: Le robinet du café coule tout le temps.",
+   "tu-prends-la-carte: Maxime est surpris: le café est petit.",
+   "tu-prends-la-carte: Elle sert un café noir."
+  ]
+ },
+ "nouveau": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: Le nouveau serveur s'appelle Théo."
+  ]
+ },
+ "serveur": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: Le nouveau serveur s'appelle Théo."
+  ]
+ },
+ "appelle": {
+  "copia": {
+   "g": "to phone somebody to talk to them (appeler)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Le nouveau serveur s'appelle Théo.",
+   "la-boule-porte-bonheur: La sœur de Léa s'appelle Louise.",
+   "la-ligne-coupe-apres-hugo: Elle appelle Hugo."
+  ]
+ },
+ "commence": {
+  "copia": {
+   "g": "starts (commencer)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Il commence aujourd'hui.",
+   "une-goutte-chaque-nuit: “Mais je commence à voir.”",
+   "mille-euros-sans-compter: “Le loyer commence avant mon départ.”"
+  ]
+ },
+ "hui": {
+  "copia": {
+   "g": "today (aujourd'hui)",
+   "t": "adverb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Il commence aujourd'hui.",
+   "la-boule-porte-bonheur: Aujourd'hui, la tirelire de Léa est vide.",
+   "une-boule-sous-le-platane: “Aujourd'hui, c'est moi.",
+   "l-annonce-du-couloir: Aujourd'hui, il a une annonce: “À louer.”"
+  ]
+ },
+ "court": {
+  "copia": {
+   "g": "runs; short (courir)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Il court entre les tables avec son plateau.",
+   "le-torchon-a-la-main: “Théo court partout."
+  ]
+ },
+ "entre": {
+  "copia": {
+   "g": "enters (entrer); between",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Il court entre les tables avec son plateau.",
+   "le-torchon-a-la-main: Hugo entre avec son portable.",
+   "la-ligne-coupe-apres-hugo: Sur le toit, le linge sèche entre les cheminées.",
+   "l-annonce-du-couloir: Antoine, le propriétaire de l'immeuble, entre dans le café."
+  ]
+ },
+ "tables": {
+  "copia": {
+   "g": "flat furniture you put things on (la table)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Il court entre les tables avec son plateau."
+  ]
+ },
+ "avec": {
+  "copia": {
+   "g": "with",
+   "t": "preposition",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Il court entre les tables avec son plateau.",
+   "le-torchon-a-la-main: Léa sèche les tasses à l'évier avec un torchon.",
+   "le-torchon-a-la-main: Hugo entre avec son portable.",
+   "une-goutte-chaque-nuit: Cet après-midi, Hugo arrive avec une boîte à outils.",
+   "une-goutte-chaque-nuit: Léa sèche le sol avec une éponge.",
+   "une-goutte-chaque-nuit: Elle est toute seule avec le silence."
+  ]
+ },
+ "son": {
+  "copia": {
+   "g": "his, her",
+   "t": "pronoun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Il court entre les tables avec son plateau.",
+   "theo-ecoute-pour-lea: Un message vocal arrive sur son portable.",
+   "theo-ecoute-pour-lea: Léa donne son portable à Théo.",
+   "le-torchon-a-la-main: Hugo entre avec son portable.",
+   "les-mots-a-l-envers: Dans son cahier, Léa écrit les mots durs.",
+   "la-boule-porte-bonheur: Son argent est à Paris, avec Hugo."
+  ]
+ },
+ "plateau": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: Il court entre les tables avec son plateau."
+  ]
+ },
+ "est": {
+  "copia": {
+   "g": "is (être)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Le café est plein, et Léa est occupée.",
+   "theo-ecoute-pour-lea: C'est Hugo.",
+   "theo-ecoute-pour-lea: Il est à Paris, loin d'ici.",
+   "theo-ecoute-pour-lea: “C'est difficile ici.",
+   "theo-ecoute-pour-lea: Il est sur un tabouret, à côté d'elle.",
+   "le-torchon-a-la-main: La vitrine est noire."
+  ]
+ },
+ "plein": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: Le café est plein, et Léa est occupée.",
+   "vingt-minutes-c-est-long: Le matin, le quai du métro est plein et étroit."
+  ]
+ },
+ "et": {
+  "copia": {
+   "g": "and",
+   "t": "conjunction",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Le café est plein, et Léa est occupée.",
+   "theo-ecoute-pour-lea: Léa retourne le portable et sert les cafés.",
+   "le-torchon-a-la-main: Il est petit, et je paie cher.”",
+   "le-torchon-a-la-main: Sans lui, le café est grand et vide.",
+   "une-goutte-chaque-nuit: Hugo tourne, et l'eau coule partout.",
+   "vingt-minutes-c-est-long: Le matin, le quai du métro est plein et étroit."
+  ]
+ },
+ "occupée": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: Le café est plein, et Léa est occupée.",
+   "une-plante-pour-lea: Je suis occupée!”, demande Léa."
+  ]
+ },
+ "message": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: Un message vocal arrive sur son portable."
+  ]
+ },
+ "vocal": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: Un message vocal arrive sur son portable."
+  ]
+ },
+ "arrive": {
+  "copia": {
+   "g": "arrives (arriver)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Un message vocal arrive sur son portable.",
+   "une-goutte-chaque-nuit: Cet après-midi, Hugo arrive avec une boîte à outils.",
+   "tu-prends-la-carte: Il arrive de la gare avec un grand sac.",
+   "vingt-minutes-c-est-long: Hugo arrive tôt au travail, et il part tard.",
+   "a-toi-la-boule: Hugo arrive, pas encore réveillé.",
+   "mille-euros-sans-compter: Hugo arrive et attend un peu."
+  ]
+ },
+ "sur": {
+  "copia": {
+   "g": "on, on top of",
+   "t": "preposition",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Un message vocal arrive sur son portable.",
+   "theo-ecoute-pour-lea: Il est sur un tabouret, à côté d'elle.",
+   "le-torchon-a-la-main: Elle les pose sur l'étagère.",
+   "tu-prends-la-carte: Léa rit avec la serviette sur la bouche.",
+   "tu-prends-la-carte: Sur l'ardoise, elle écrit: “Carte bleue: non.”",
+   "vingt-minutes-c-est-long: Léa pose sa montre sur la table."
+  ]
+ },
+ "portable": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: Un message vocal arrive sur son portable.",
+   "theo-ecoute-pour-lea: Léa donne son portable à Théo.",
+   "theo-ecoute-pour-lea: Théo prend le portable.",
+   "theo-ecoute-pour-lea: Léa retourne le portable et sert les cafés.",
+   "le-torchon-a-la-main: Hugo entre avec son portable.",
+   "la-ligne-coupe-apres-hugo: Le portable sonne deux fois."
+  ]
+ },
+ "à": {
+  "copia": {
+   "g": "at, to, in",
+   "t": "preposition",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Il est à Paris, loin d'ici.",
+   "theo-ecoute-pour-lea: Léa donne son portable à Théo.",
+   "theo-ecoute-pour-lea: Il est sur un tabouret, à côté d'elle.",
+   "theo-ecoute-pour-lea: “Hugo a un appartement à Paris”, répond Théo.",
+   "le-torchon-a-la-main: Le torchon à la main",
+   "le-torchon-a-la-main: Léa sèche les tasses à l'évier avec un torchon."
+  ]
+ },
+ "paris": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: Il est à Paris, loin d'ici.",
+   "theo-ecoute-pour-lea: “Hugo a un appartement à Paris”, répond Théo.",
+   "tu-prends-la-carte: Il vient de Paris.",
+   "tu-prends-la-carte: Paris, c'est le départ de Hugo.",
+   "vingt-minutes-c-est-long: À Paris, Hugo habite en face du métro.",
+   "la-boule-porte-bonheur: Son argent est à Paris, avec Hugo."
+  ]
+ },
+ "loin": {
+  "copia": {
+   "g": "far (loin)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Il est à Paris, loin d'ici.",
+   "vingt-minutes-c-est-long: “Ce n'est pas loin.”",
+   "les-mots-a-l-envers: “Toi, tu es loin.",
+   "trente-trois-bougies: Sa boule roule loin, exprès.",
+   "clara-tient-la-boule: Sa boule roule loin, et elle rate le cochonnet.",
+   "une-boule-sous-le-platane: Hugo joue mal, et sa boule part loin."
+  ]
+ },
+ "ici": {
+  "copia": {
+   "g": "here",
+   "t": "adverb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Il est à Paris, loin d'ici.",
+   "theo-ecoute-pour-lea: “C'est difficile ici.",
+   "tu-prends-la-carte: “Ici, pas de carte bleue”, explique Léa.",
+   "vingt-minutes-c-est-long: Ici, le port est à dix minutes à pied.",
+   "si-je-gagne-tu-restes: Tu restes ici, avec moi.”",
+   "treize-comme-avant: “Ici, tu es toujours à la maison”, répond Léa."
+  ]
+ },
+ "mais": {
+  "copia": {
+   "g": "but",
+   "t": "conjunction",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Léa écoute, mais il y a trop de bruit.",
+   "le-torchon-a-la-main: Léa monte, mais il n'y a pas de sonnette.",
+   "une-goutte-chaque-nuit: “Mais je commence à voir.”",
+   "vingt-minutes-c-est-long: Mais je n'ai pas besoin de voiture.”",
+   "les-mots-a-l-envers: “Mais je suis là!”",
+   "la-boule-porte-bonheur: Je l'aime, mais c'est pour Hugo.”"
+  ]
+ },
+ "trop": {
+  "copia": {
+   "g": "too much (trop)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Léa écoute, mais il y a trop de bruit.",
+   "des-pas-au-dessus: “Elle arrive trop tôt!”, répond Léa."
+  ]
+ },
+ "de": {
+  "copia": {
+   "g": "of, from",
+   "t": "preposition",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Léa écoute, mais il y a trop de bruit.",
+   "le-torchon-a-la-main: Léa parle tout le temps de Théo.",
+   "le-torchon-a-la-main: Léa monte, mais il n'y a pas de sonnette.",
+   "une-goutte-chaque-nuit: Il y a de l'eau partout!”, rit Léa.",
+   "une-goutte-chaque-nuit: Maintenant, tu n'as plus besoin de moi.”",
+   "tu-prends-la-carte: Maxime est un ami de Hugo."
+  ]
+ },
+ "quoi": {
+  "copia": {
+   "g": "what (quoi)",
+   "t": "pronoun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: “Quoi?",
+   "theo-ecoute-pour-lea: “Il dit quoi?”",
+   "la-boule-porte-bonheur: “Tu choisis quoi?”, demande Louise.",
+   "la-ligne-coupe-apres-hugo: Tu demandes quoi?”"
+  ]
+ },
+ "je": {
+  "copia": {
+   "g": "I",
+   "t": "pronoun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Je n'entends rien”, crie Léa.",
+   "le-torchon-a-la-main: “Léa, je te montre l'appartement!",
+   "le-torchon-a-la-main: Il est petit, et je paie cher.”",
+   "une-goutte-chaque-nuit: “Je répare ton robinet.",
+   "une-goutte-chaque-nuit: “Mais je commence à voir.”",
+   "vingt-minutes-c-est-long: Mais je n'ai pas besoin de voiture.”"
+  ]
+ },
+ "entends": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: Je n'entends rien”, crie Léa.",
+   "la-ligne-coupe-apres-hugo: Je n'entends pas."
+  ]
+ },
+ "rien": {
+  "copia": {
+   "g": "nothing; says nothing (ne dit rien)",
+   "t": "pronoun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Je n'entends rien”, crie Léa.",
+   "la-boule-porte-bonheur: “Et je n'ai rien.",
+   "la-boule-porte-bonheur: “De rien.”",
+   "a-samedi-hugo: Léa ne peut rien dire.",
+   "clara-tient-la-boule: Ensuite, elle ne dit rien.",
+   "la-ligne-coupe-apres-hugo: “Rien."
+  ]
+ },
+ "crie": {
+  "copia": {
+   "g": "shouts (crier)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Je n'entends rien”, crie Léa.",
+   "trente-trois-bougies: “Le pastis est sur la table!”, crie Léa."
+  ]
+ },
+ "pardon": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: “Pardon.",
+   "mille-euros-sans-compter: Pardon.”",
+   "le-fauteuil-descend: “Pardon, Chloé."
+  ]
+ },
+ "oublie": {
+  "copia": {
+   "g": "I forget (oublier)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: J'oublie toujours où sont les tasses”, dit Théo.",
+   "si-je-gagne-tu-restes: Léa n'oublie pas le pari.",
+   "des-pas-au-dessus: Sur la rampe, l'inconnue oublie son écharpe."
+  ]
+ },
+ "toujours": {
+  "copia": {
+   "g": "always; still",
+   "t": "adverb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: J'oublie toujours où sont les tasses”, dit Théo.",
+   "les-mots-a-l-envers: Elle écrit encore, toute seule: amis pour toujours.",
+   "clara-tient-la-boule: “Toujours, au début.”",
+   "treize-comme-avant: “Ici, tu es toujours à la maison”, répond Léa.",
+   "une-boule-sous-le-platane: Hugo gagne toujours, et Léa perd toujours.",
+   "une-plante-pour-lea: “Pour toujours?”, demande Léa."
+  ]
+ },
+ "où": {
+  "copia": {
+   "g": "where (où)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: J'oublie toujours où sont les tasses”, dit Théo."
+  ]
+ },
+ "sont": {
+  "copia": {
+   "g": "are (être)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: J'oublie toujours où sont les tasses”, dit Théo.",
+   "l-annonce-du-couloir: En haut, les volets sont fermés."
+  ]
+ },
+ "tasses": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: J'oublie toujours où sont les tasses”, dit Théo.",
+   "le-torchon-a-la-main: Léa sèche les tasses à l'évier avec un torchon.",
+   "le-torchon-a-la-main: Il casse des tasses”, répond Léa.",
+   "deux-carreaux-pour-hugo: Léa apporte deux tasses de café."
+  ]
+ },
+ "dit": {
+  "copia": {
+   "g": "says (dire)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: J'oublie toujours où sont les tasses”, dit Théo.",
+   "theo-ecoute-pour-lea: “Il dit quoi?”",
+   "le-torchon-a-la-main: Tu racontes?”, dit Léa.",
+   "une-goutte-chaque-nuit: Fini”, dit Hugo.",
+   "tu-prends-la-carte: Voilà”, dit Léa.",
+   "vingt-minutes-c-est-long: “Mon travail est à vingt minutes”, dit Hugo."
+  ]
+ },
+ "donne": {
+  "copia": {
+   "g": "to put something into somebody's hands (donner)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Léa donne son portable à Théo.",
+   "tu-prends-la-carte: Elle donne la carte.",
+   "la-boule-porte-bonheur: Ensuite, elle la donne.",
+   "mille-euros-sans-compter: Léa ouvre la tirelire et donne l'argent à Hugo.",
+   "a-samedi-hugo: Hugo lui donne un mouchoir."
+  ]
+ },
+ "difficile": {
+  "copia": {
+   "g": "hard to do or to understand (difficile)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: “C'est difficile ici.",
+   "les-mots-a-l-envers: Il a raison: c'est difficile.",
+   "clara-tient-la-boule: “C'est difficile!”, rit Clara."
+  ]
+ },
+ "tu": {
+  "copia": {
+   "g": "you (informal)",
+   "t": "pronoun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Tu peux écouter pour moi?”, demande Léa.",
+   "theo-ecoute-pour-lea: Tu es gentil.”",
+   "le-torchon-a-la-main: Tu racontes?”, dit Léa.",
+   "une-goutte-chaque-nuit: “Tu sais réparer?”, demande Léa.",
+   "une-goutte-chaque-nuit: Tu ne sais pas réparer.”",
+   "une-goutte-chaque-nuit: “Tu as raison”, répond Hugo."
+  ]
+ },
+ "peux": {
+  "copia": {
+   "g": "I can (pouvoir)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Tu peux écouter pour moi?”, demande Léa.",
+   "a-toi-la-boule: “Je ne peux pas.”",
+   "mille-euros-sans-compter: Ensuite, il dit: “Léa, tu peux me prêter de l'argent?",
+   "clara-tient-la-boule: “Je peux essayer?”, demande Clara.",
+   "le-fauteuil-descend: “Je peux aider."
+  ]
+ },
+ "écouter": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: Tu peux écouter pour moi?”, demande Léa.",
+   "le-torchon-a-la-main: Elle ne veut pas écouter, parce que c'est triste."
+  ]
+ },
+ "moi": {
+  "copia": {
+   "g": "me",
+   "t": "pronoun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Tu peux écouter pour moi?”, demande Léa.",
+   "une-goutte-chaque-nuit: Maintenant, tu n'as plus besoin de moi.”",
+   "les-mots-a-l-envers: Moi, je suis triste.",
+   "les-mots-a-l-envers: “Moi aussi, je pense à toi.”",
+   "trente-trois-bougies: “Tu perds pour moi?”, demande Hugo.",
+   "a-toi-la-boule: “À toi la boule, à moi le cochonnet.”"
+  ]
+ },
+ "demande": {
+  "copia": {
+   "g": "asks (demander)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Tu peux écouter pour moi?”, demande Léa.",
+   "une-goutte-chaque-nuit: “Tu sais réparer?”, demande Léa.",
+   "tu-prends-la-carte: “D'où tu viens?”, demande Léa.",
+   "tu-prends-la-carte: Tu prends la carte?”, demande Maxime.",
+   "vingt-minutes-c-est-long: “Tu marches un peu?”, demande Léa.",
+   "les-mots-a-l-envers: Qui est triste?”, demande Léa."
+  ]
+ },
+ "prend": {
+  "copia": {
+   "g": "takes (prendre)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Théo prend le portable.",
+   "a-toi-la-boule: Il prend un balai.",
+   "mille-euros-sans-compter: Hugo prend un stylo.",
+   "une-boule-sous-le-platane: Léa prend sa boule ronde et froide.",
+   "le-fauteuil-descend: Le fauteuil prend le coin de Léa.",
+   "deux-carreaux-pour-hugo: Mais elle prend une boule."
+  ]
+ },
+ "met": {
+  "copia": {
+   "g": "puts (mettre)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Il met les écouteurs dans ses oreilles.",
+   "une-goutte-chaque-nuit: Hugo met un seau dessous.",
+   "tu-prends-la-carte: Il met du sucre, parce que c'est amer.",
+   "a-samedi-hugo: Il met la valise dans le coffre.",
+   "la-ligne-coupe-apres-hugo: Léa met le haut-parleur."
+  ]
+ },
+ "écouteurs": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: Il met les écouteurs dans ses oreilles."
+  ]
+ },
+ "ses": {
+  "copia": {
+   "g": "his, her (plural)",
+   "t": "pronoun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Il met les écouteurs dans ses oreilles.",
+   "a-samedi-hugo: Elle retient ses larmes.",
+   "la-ligne-coupe-apres-hugo: Léa ferme les yeux et retient ses larmes."
+  ]
+ },
+ "oreilles": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: Il met les écouteurs dans ses oreilles."
+  ]
+ },
+ "tabouret": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: Il est sur un tabouret, à côté d'elle."
+  ]
+ },
+ "côté": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: Il est sur un tabouret, à côté d'elle.",
+   "les-mots-a-l-envers: Ce soir, Hugo boit un café à côté.",
+   "le-fauteuil-descend: Le tapis est à côté."
+  ]
+ },
+ "elle": {
+  "copia": {
+   "g": "she; it (feminine)",
+   "t": "pronoun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Il est sur un tabouret, à côté d'elle.",
+   "le-torchon-a-la-main: Elle les pose sur l'étagère.",
+   "le-torchon-a-la-main: Elle range la cafetière.",
+   "le-torchon-a-la-main: Elle ne veut pas écouter, parce que c'est triste.",
+   "le-torchon-a-la-main: Elle frappe, le torchon à la main.",
+   "une-goutte-chaque-nuit: Elle ouvre le robinet, puis elle le ferme."
+  ]
+ },
+ "attend": {
+  "copia": {
+   "g": "waits (attendre)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Léa attend.",
+   "mille-euros-sans-compter: Hugo arrive et attend un peu.",
+   "a-samedi-hugo: Une voiture attend près du port.",
+   "la-ligne-coupe-apres-hugo: Léa attend."
+  ]
+ },
+ "appartement": {
+  "copia": {
+   "g": "flat, apartment (l'appartement)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: “Hugo a un appartement à Paris”, répond Théo.",
+   "le-torchon-a-la-main: “Léa, je te montre l'appartement!",
+   "treize-comme-avant: Son appartement est à Clara, maintenant.",
+   "l-annonce-du-couloir: L'appartement en haut est déjà presque vide.",
+   "l-annonce-du-couloir: Antoine veut louer l'appartement tout de suite.",
+   "l-annonce-du-couloir: “Je veux l'appartement libre pour Hugo."
+  ]
+ },
+ "répond": {
+  "copia": {
+   "g": "answers (répondre)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: “Hugo a un appartement à Paris”, répond Théo.",
+   "le-torchon-a-la-main: Il casse des tasses”, répond Léa.",
+   "une-goutte-chaque-nuit: “Tu as raison”, répond Hugo.",
+   "une-goutte-chaque-nuit: Léa ne répond pas.",
+   "tu-prends-la-carte: “De la gare”, répond Maxime.",
+   "vingt-minutes-c-est-long: C'est long!”, répond Léa."
+  ]
+ },
+ "part": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: “Il part vraiment en mars.”",
+   "vingt-minutes-c-est-long: Hugo arrive tôt au travail, et il part tard.",
+   "a-samedi-hugo: La voiture part lentement.",
+   "une-boule-sous-le-platane: Hugo joue mal, et sa boule part loin.",
+   "l-annonce-du-couloir: Hugo ne part pas encore!”, dit Léa.",
+   "deux-carreaux-pour-hugo: L'autre boule part."
+  ]
+ },
+ "vraiment": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: “Il part vraiment en mars.”",
+   "trente-trois-bougies: Léa applaudit vraiment fort, et regarde le banc.",
+   "une-boule-sous-le-platane: Vraiment?”, demande Léa."
+  ]
+ },
+ "en": {
+  "copia": {
+   "g": "in; of it (en)",
+   "t": "preposition",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: “Il part vraiment en mars.”",
+   "le-torchon-a-la-main: Le métro est en bas”, explique Hugo.",
+   "vingt-minutes-c-est-long: À Paris, Hugo habite en face du métro.",
+   "vingt-minutes-c-est-long: L'arrêt du bus est en bas.",
+   "si-je-gagne-tu-restes: “Tu pars en mars.",
+   "a-samedi-hugo: Clara est une nouvelle locataire, en manteau jaune."
+  ]
+ },
+ "mars": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: “Il part vraiment en mars.”",
+   "si-je-gagne-tu-restes: “Tu pars en mars.",
+   "a-samedi-hugo: C'est le premier jour de mars.",
+   "une-boule-sous-le-platane: “Léa, je pars à Paris en mars.",
+   "une-boule-sous-le-platane: “En mars?",
+   "la-ligne-coupe-apres-hugo: Je dois commencer en mars”, dit Hugo."
+  ]
+ },
+ "comprend": {
+  "copia": {
+   "g": "understands (comprendre)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Léa comprend.",
+   "tu-prends-la-carte: Léa comprend.",
+   "vingt-minutes-c-est-long: Hugo ne comprend pas.",
+   "les-mots-a-l-envers: Léa ne comprend pas le sens.",
+   "si-je-gagne-tu-restes: Hugo n'est pas fier, et il comprend.",
+   "le-fauteuil-descend: Léa comprend."
+  ]
+ },
+ "merci": {
+  "copia": {
+   "g": "thank you (merci)",
+   "t": "interjection",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: “Merci, Théo.",
+   "tu-prends-la-carte: “Merci beaucoup.",
+   "la-boule-porte-bonheur: “Merci, Louise.”",
+   "le-fauteuil-descend: “Merci beaucoup”, dit Léa."
+  ]
+ },
+ "es": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: Tu es gentil.”",
+   "les-mots-a-l-envers: “Toi, tu es loin.",
+   "trente-trois-bougies: Tu es le gagnant!”, dit Léa.",
+   "si-je-gagne-tu-restes: “Tu es triste?”, demande Hugo.",
+   "a-samedi-hugo: “Tu es prêt?”, demande Léa.",
+   "treize-comme-avant: “Ici, tu es toujours à la maison”, répond Léa."
+  ]
+ },
+ "gentil": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: Tu es gentil.”"
+  ]
+ },
+ "bien": {
+  "copia": {
+   "g": "well, good",
+   "t": "adverb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: “Bien sûr”, sourit Théo.",
+   "si-je-gagne-tu-restes: Léa espère, mais ce soir, il joue bien."
+  ]
+ },
+ "sûr": {
+  "copia": {
+   "g": "sure (sûr)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: “Bien sûr”, sourit Théo.",
+   "si-je-gagne-tu-restes: Hugo n'est pas sûr."
+  ]
+ },
+ "sourit": {
+  "copia": {
+   "g": "smiles (sourire)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: “Bien sûr”, sourit Théo.",
+   "treize-comme-avant: “La prochaine fois, c'est moi”, sourit Hugo.",
+   "une-plante-pour-lea: On partage, tous les deux”, sourit Hugo."
+  ]
+ },
+ "retourne": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: Léa retourne le portable et sert les cafés.",
+   "mille-euros-sans-compter: Léa retourne au comptoir."
+  ]
+ },
+ "sert": {
+  "copia": null,
+  "frases": [
+   "theo-ecoute-pour-lea: Léa retourne le portable et sert les cafés.",
+   "tu-prends-la-carte: Elle sert un café noir.",
+   "clara-tient-la-boule: Après, Léa sert deux cafés."
+  ]
+ },
+ "cafés": {
+  "copia": {
+   "g": "hot dark drink adults like (le café)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "theo-ecoute-pour-lea: Léa retourne le portable et sert les cafés.",
+   "clara-tient-la-boule: Après, Léa sert deux cafés.",
+   "deux-carreaux-pour-hugo: “Si tu rates, tu paies les cafés”, propose Hugo."
+  ]
+ },
+ "torchon": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Le torchon à la main",
+   "le-torchon-a-la-main: Léa sèche les tasses à l'évier avec un torchon.",
+   "le-torchon-a-la-main: Elle frappe, le torchon à la main."
+  ]
+ },
+ "main": {
+  "copia": {
+   "g": "hand (la main)",
+   "t": "noun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Le torchon à la main",
+   "le-torchon-a-la-main: Elle frappe, le torchon à la main.",
+   "les-mots-a-l-envers: Hugo serre la main de Léa.",
+   "la-boule-porte-bonheur: Léa garde la boule ronde dans sa main.",
+   "a-toi-la-boule: Léa ferme la main de Hugo sur la boule.",
+   "a-toi-la-boule: La main de Léa est douce."
+  ]
+ },
+ "sèche": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Léa sèche les tasses à l'évier avec un torchon.",
+   "une-goutte-chaque-nuit: Léa sèche le sol avec une éponge.",
+   "la-ligne-coupe-apres-hugo: Sur le toit, le linge sèche entre les cheminées.",
+   "une-plante-pour-lea: La terre est sèche."
+  ]
+ },
+ "évier": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Léa sèche les tasses à l'évier avec un torchon."
+  ]
+ },
+ "vitrine": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: La vitrine est noire."
+  ]
+ },
+ "noire": {
+  "copia": {
+   "g": "black (noir)",
+   "t": "adjective",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "le-torchon-a-la-main: La vitrine est noire."
+  ]
+ },
+ "eau": {
+  "copia": {
+   "g": "water (l'eau)",
+   "t": "noun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "le-torchon-a-la-main: L'eau est tiède.",
+   "une-goutte-chaque-nuit: Hugo tourne, et l'eau coule partout.",
+   "une-goutte-chaque-nuit: Il y a de l'eau partout!”, rit Léa.",
+   "une-goutte-chaque-nuit: L'eau est claire.",
+   "une-plante-pour-lea: Léa verse l'eau doucement.",
+   "une-plante-pour-lea: L'eau coule sur les feuilles."
+  ]
+ },
+ "tiède": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: L'eau est tiède.",
+   "une-plante-pour-lea: Le chauffage est éteint, et l'air est tiède."
+  ]
+ },
+ "pose": {
+  "copia": {
+   "g": "to put a thing down on a surface (poser)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Elle les pose sur l'étagère.",
+   "vingt-minutes-c-est-long: Léa pose sa montre sur la table.",
+   "clara-tient-la-boule: Léa pose sa gourde sur le banc.",
+   "une-boule-sous-le-platane: Léa pose sa boule sur le banc."
+  ]
+ },
+ "étagère": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Elle les pose sur l'étagère."
+  ]
+ },
+ "heureux": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Il est heureux.",
+   "treize-comme-avant: Un samedi d'avril, Hugo arrive en TGV, heureux."
+  ]
+ },
+ "te": {
+  "copia": {
+   "g": "you, to you (te)",
+   "t": "pronoun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: “Léa, je te montre l'appartement!",
+   "a-toi-la-boule: Et je te rends ton argent.”",
+   "mille-euros-sans-compter: Je te rends tout bientôt.”",
+   "une-plante-pour-lea: “Tu l'arroses tous les matins, s'il te plaît?”"
+  ]
+ },
+ "montre": {
+  "copia": {
+   "g": "shows (montrer)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "le-torchon-a-la-main: “Léa, je te montre l'appartement!",
+   "le-torchon-a-la-main: Il montre les photos, une à une.",
+   "vingt-minutes-c-est-long: Léa pose sa montre sur la table."
+  ]
+ },
+ "petit": {
+  "copia": {
+   "g": "small, not big at all (petit)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Il est petit, et je paie cher.”",
+   "tu-prends-la-carte: Maxime est surpris: le café est petit.",
+   "une-plante-pour-lea: “Elle grandit petit à petit”, rit Hugo."
+  ]
+ },
+ "paie": {
+  "copia": {
+   "g": "to give money for something (payer)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Il est petit, et je paie cher.”",
+   "trente-trois-bougies: “Le perdant paie le pastis”, dit Hugo.",
+   "l-annonce-du-couloir: “Un locataire paie cent euros de plus.",
+   "deux-carreaux-pour-hugo: “Pas grave, je paie."
+  ]
+ },
+ "cher": {
+  "copia": {
+   "g": "expensive (cher); dear (cher)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Il est petit, et je paie cher.”",
+   "mille-euros-sans-compter: Le loyer de Paris est cher.",
+   "l-annonce-du-couloir: C'est cher”, explique Antoine."
+  ]
+ },
+ "vue": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: “La vue est belle."
+  ]
+ },
+ "belle": {
+  "copia": {
+   "g": "beautiful (beau)",
+   "t": "adjective",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "le-torchon-a-la-main: “La vue est belle."
+  ]
+ },
+ "métro": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Le métro est en bas”, explique Hugo.",
+   "vingt-minutes-c-est-long: À Paris, Hugo habite en face du métro.",
+   "vingt-minutes-c-est-long: Le matin, le quai du métro est plein et étroit.",
+   "vingt-minutes-c-est-long: “Et le métro va vite?”"
+  ]
+ },
+ "bas": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Le métro est en bas”, explique Hugo.",
+   "vingt-minutes-c-est-long: L'arrêt du bus est en bas.",
+   "la-ligne-coupe-apres-hugo: En bas, le café n'a pas de réseau.",
+   "le-fauteuil-descend: Léa veut le porter en bas, au café.",
+   "des-pas-au-dessus: Chez moi, c'est en bas.”"
+  ]
+ },
+ "explique": {
+  "copia": {
+   "g": "to say something so others understand (expliquer)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Le métro est en bas”, explique Hugo.",
+   "tu-prends-la-carte: “Ici, pas de carte bleue”, explique Léa.",
+   "les-mots-a-l-envers: “C'est à l'envers”, explique Hugo.",
+   "clara-tient-la-boule: Tu baisses le coude”, explique Léa.",
+   "l-annonce-du-couloir: C'est cher”, explique Antoine.",
+   "deux-carreaux-pour-hugo: “Je pars en mars”, explique Hugo."
+  ]
+ },
+ "fier": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Hugo est fier.",
+   "si-je-gagne-tu-restes: Hugo n'est pas fier, et il comprend."
+  ]
+ },
+ "secoue": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Léa secoue la tête."
+  ]
+ },
+ "tête": {
+  "copia": {
+   "g": "head (la tête)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Léa secoue la tête.",
+   "les-mots-a-l-envers: Elle a mal à la tête.",
+   "deux-carreaux-pour-hugo: Elle rit, les mains sur la tête."
+  ]
+ },
+ "range": {
+  "copia": {
+   "g": "to put things back in their place (ranger)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Elle range la cafetière."
+  ]
+ },
+ "cafetière": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Elle range la cafetière."
+  ]
+ },
+ "partout": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: “Théo court partout.",
+   "une-goutte-chaque-nuit: Hugo tourne, et l'eau coule partout.",
+   "une-goutte-chaque-nuit: Il y a de l'eau partout!”, rit Léa."
+  ]
+ },
+ "casse": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Il casse des tasses”, répond Léa."
+  ]
+ },
+ "parle": {
+  "copia": {
+   "g": "speaks (parler)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Léa parle tout le temps de Théo.",
+   "a-samedi-hugo: Hugo parle doucement à Léa.",
+   "une-boule-sous-le-platane: Hugo parle doucement.",
+   "la-ligne-coupe-apres-hugo: Elle parle fort: “Hugo, tu restes ici, avec moi.”"
+  ]
+ },
+ "tout": {
+  "copia": {
+   "g": "all; everybody (tout le monde)",
+   "t": "pronoun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Léa parle tout le temps de Théo.",
+   "une-goutte-chaque-nuit: Le robinet du café coule tout le temps.",
+   "vingt-minutes-c-est-long: Tout est près.",
+   "vingt-minutes-c-est-long: “Pas du tout.",
+   "trente-trois-bougies: Tout le monde dit: “Joyeux anniversaire!”",
+   "trente-trois-bougies: “Pas du tout!”, répond Léa."
+  ]
+ },
+ "temps": {
+  "copia": {
+   "g": "time (le temps); weather (le temps)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Léa parle tout le temps de Théo.",
+   "une-goutte-chaque-nuit: Le robinet du café coule tout le temps."
+  ]
+ },
+ "ne": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Elle ne veut pas écouter, parce que c'est triste.",
+   "une-goutte-chaque-nuit: Tu ne sais pas réparer.”",
+   "une-goutte-chaque-nuit: Léa ne répond pas.",
+   "tu-prends-la-carte: Léa ne veut pas trouver Maxime sympa.",
+   "vingt-minutes-c-est-long: Hugo ne comprend pas.",
+   "vingt-minutes-c-est-long: Elle ne la regarde pas."
+  ]
+ },
+ "veut": {
+  "copia": {
+   "g": "wants (vouloir)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Elle ne veut pas écouter, parce que c'est triste.",
+   "tu-prends-la-carte: Léa ne veut pas trouver Maxime sympa.",
+   "tu-prends-la-carte: Ça veut dire ça!”",
+   "la-boule-porte-bonheur: Léa veut offrir un cadeau.",
+   "trente-trois-bougies: Tout le monde veut voir.",
+   "si-je-gagne-tu-restes: Léa veut parier: “Si je gagne, tu restes à Marseille."
+  ]
+ },
+ "pas": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Elle ne veut pas écouter, parce que c'est triste.",
+   "le-torchon-a-la-main: Léa monte, mais il n'y a pas de sonnette.",
+   "une-goutte-chaque-nuit: Tu ne sais pas réparer.”",
+   "une-goutte-chaque-nuit: Léa ne répond pas.",
+   "une-goutte-chaque-nuit: Pas une goutte.",
+   "tu-prends-la-carte: Léa ne veut pas trouver Maxime sympa."
+  ]
+ },
+ "parce": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Elle ne veut pas écouter, parce que c'est triste.",
+   "tu-prends-la-carte: Il met du sucre, parce que c'est amer."
+  ]
+ },
+ "que": {
+  "copia": {
+   "g": "that, which (que)",
+   "t": "pronoun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Elle ne veut pas écouter, parce que c'est triste.",
+   "tu-prends-la-carte: Il met du sucre, parce que c'est amer."
+  ]
+ },
+ "triste": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Elle ne veut pas écouter, parce que c'est triste.",
+   "les-mots-a-l-envers: Qui est triste?”, demande Léa.",
+   "les-mots-a-l-envers: Moi, je suis triste.",
+   "si-je-gagne-tu-restes: “Tu es triste?”, demande Hugo.",
+   "une-boule-sous-le-platane: Léa est triste et ne regarde plus sa boule.",
+   "la-ligne-coupe-apres-hugo: “Tu es triste?”, demande Hugo."
+  ]
+ },
+ "reste": {
+  "copia": {
+   "g": "is still there (rester); what is left (le reste)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Hugo reste moins d'une minute.",
+   "la-ligne-coupe-apres-hugo: Il n'entend pas le reste.",
+   "deux-carreaux-pour-hugo: Sa boule reste à sa place: c'est un carreau."
+  ]
+ },
+ "moins": {
+  "copia": {
+   "g": "less (moins)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Hugo reste moins d'une minute.",
+   "vingt-minutes-c-est-long: C'est moins lent.”"
+  ]
+ },
+ "minute": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Hugo reste moins d'une minute."
+  ]
+ },
+ "bon": {
+  "copia": {
+   "g": "good, nice to eat (bon)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: “Bon.",
+   "a-samedi-hugo: “Bon voyage, Hugo”, dit Léa.",
+   "treize-comme-avant: “Bon retour, Hugo!”, dit Léa."
+  ]
+ },
+ "au": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Au revoir, Léa.”",
+   "vingt-minutes-c-est-long: Hugo arrive tôt au travail, et il part tard.",
+   "les-mots-a-l-envers: Chaque nuit, elle écrit au crayon.",
+   "mille-euros-sans-compter: Léa retourne au comptoir.",
+   "a-samedi-hugo: “Au revoir, Léa”, répond Hugo.",
+   "clara-tient-la-boule: “Toujours, au début.”"
+  ]
+ },
+ "revoir": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Au revoir, Léa.”",
+   "a-samedi-hugo: “Au revoir, Léa”, répond Hugo."
+  ]
+ },
+ "monte": {
+  "copia": {
+   "g": "gets on, climbs (monter)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Il monte là-haut, à la maison.",
+   "le-torchon-a-la-main: Léa monte, mais il n'y a pas de sonnette.",
+   "a-samedi-hugo: Il monte dans la voiture.",
+   "la-ligne-coupe-apres-hugo: Alors Léa monte ici.",
+   "des-pas-au-dessus: Le matin, Antoine monte avec une inconnue.",
+   "des-pas-au-dessus: Léa monte l'écharpe."
+  ]
+ },
+ "là-haut": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Il monte là-haut, à la maison.",
+   "le-fauteuil-descend: Le fauteuil de Hugo, là-haut, est large et lourd.",
+   "des-pas-au-dessus: Là-haut, on ne voit rien."
+  ]
+ },
+ "maison": {
+  "copia": {
+   "g": "building where a family lives (la maison)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Il monte là-haut, à la maison.",
+   "treize-comme-avant: “Ici, tu es toujours à la maison”, répond Léa."
+  ]
+ },
+ "sans": {
+  "copia": {
+   "g": "without",
+   "t": "preposition",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Sans lui, le café est grand et vide.",
+   "mille-euros-sans-compter: Mille euros sans compter",
+   "une-plante-pour-lea: L'appartement est vide, sans meubles."
+  ]
+ },
+ "lui": {
+  "copia": {
+   "g": "to him, to her (lui)",
+   "t": "pronoun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Sans lui, le café est grand et vide.",
+   "a-toi-la-boule: À la fin, il rentre chez lui.",
+   "a-samedi-hugo: Hugo lui donne un mouchoir.",
+   "treize-comme-avant: Il lui fait la bise, sur la joue."
+  ]
+ },
+ "grand": {
+  "copia": {
+   "g": "big (grand)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Sans lui, le café est grand et vide.",
+   "tu-prends-la-carte: Il arrive de la gare avec un grand sac."
+  ]
+ },
+ "vide": {
+  "copia": {
+   "g": "with nothing and nobody inside (vide)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Sans lui, le café est grand et vide.",
+   "la-boule-porte-bonheur: Aujourd'hui, la tirelire de Léa est vide.",
+   "l-annonce-du-couloir: L'appartement en haut est déjà presque vide.",
+   "une-plante-pour-lea: L'appartement est vide, sans meubles."
+  ]
+ },
+ "n": {
+  "copia": {
+   "g": "not (ne)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Léa monte, mais il n'y a pas de sonnette.",
+   "une-goutte-chaque-nuit: Maintenant, tu n'as plus besoin de moi.”",
+   "vingt-minutes-c-est-long: Mais je n'ai pas besoin de voiture.”",
+   "la-boule-porte-bonheur: “Et je n'ai rien.",
+   "mille-euros-sans-compter: Hugo n'a pas assez d'argent.",
+   "la-ligne-coupe-apres-hugo: En bas, le café n'a pas de réseau."
+  ]
+ },
+ "sonnette": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Léa monte, mais il n'y a pas de sonnette."
+  ]
+ },
+ "frappe": {
+  "copia": {
+   "g": "knocks (frapper)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: Elle frappe, le torchon à la main."
+  ]
+ },
+ "toi": {
+  "copia": {
+   "g": "you (toi)",
+   "t": "pronoun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: “À toi, Hugo.",
+   "les-mots-a-l-envers: “Toi, tu es loin.",
+   "les-mots-a-l-envers: “Moi aussi, je pense à toi.”",
+   "a-toi-la-boule: À toi la boule",
+   "a-toi-la-boule: “À toi la boule, à moi le cochonnet.”",
+   "a-toi-la-boule: Chaque fois, je pense à toi.”"
+  ]
+ },
+ "racontes": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Tu racontes?”, dit Léa."
+  ]
+ },
+ "comme": {
+  "copia": {
+   "g": "like, as",
+   "t": "conjunction",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "le-torchon-a-la-main: “Comme ça, maintenant?”",
+   "clara-tient-la-boule: “Tu tiens la boule comme ça.",
+   "clara-tient-la-boule: Elle corrige la main de Clara, comme Hugo.",
+   "treize-comme-avant: Treize, comme avant",
+   "treize-comme-avant: “Une partie, comme avant?”, demande Hugo.",
+   "deux-carreaux-pour-hugo: Tu tiens la boule comme ça.”"
+  ]
+ },
+ "ça": {
+  "copia": {
+   "g": "that, this (ça)",
+   "t": "pronoun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-torchon-a-la-main: “Comme ça, maintenant?”",
+   "une-goutte-chaque-nuit: “Ça y est.",
+   "tu-prends-la-carte: C'est ça.",
+   "tu-prends-la-carte: Ça veut dire ça!”",
+   "vingt-minutes-c-est-long: “Ça dépend.",
+   "les-mots-a-l-envers: “Ça y est, j'ai compris!”, dit Léa."
+  ]
+ },
+ "maintenant": {
+  "copia": {
+   "g": "now",
+   "t": "adverb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "le-torchon-a-la-main: “Comme ça, maintenant?”",
+   "une-goutte-chaque-nuit: Maintenant, tu n'as plus besoin de moi.”",
+   "clara-tient-la-boule: Chaque dimanche, Léa joue à la pétanque, seule maintenant.",
+   "treize-comme-avant: Son appartement est à Clara, maintenant."
+  ]
+ },
+ "photos": {
+  "copia": null,
+  "frases": [
+   "le-torchon-a-la-main: Il montre les photos, une à une."
+  ]
+ },
+ "goutte": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: Une goutte chaque nuit",
+   "une-goutte-chaque-nuit: Une goutte tombe du robinet.",
+   "une-goutte-chaque-nuit: Puis une autre goutte.",
+   "une-goutte-chaque-nuit: Pas une goutte."
+  ]
+ },
+ "chaque": {
+  "copia": {
+   "g": "each, every (chaque)",
+   "t": "determiner",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-goutte-chaque-nuit: Une goutte chaque nuit",
+   "une-goutte-chaque-nuit: Léa écoute les gouttes chaque nuit.",
+   "les-mots-a-l-envers: Chaque nuit, elle écrit au crayon.",
+   "trente-trois-bougies: Sous chaque platane, Léa allume un lampion.",
+   "a-toi-la-boule: Chaque fois, je pense à toi.”",
+   "clara-tient-la-boule: Chaque dimanche, Léa joue à la pétanque, seule maintenant."
+  ]
+ },
+ "nuit": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: Une goutte chaque nuit",
+   "une-goutte-chaque-nuit: Léa écoute les gouttes chaque nuit.",
+   "les-mots-a-l-envers: Chaque nuit, elle écrit au crayon."
+  ]
+ },
+ "tombe": {
+  "copia": {
+   "g": "falls (tomber)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "une-goutte-chaque-nuit: Une goutte tombe du robinet."
+  ]
+ },
+ "robinet": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: Une goutte tombe du robinet.",
+   "une-goutte-chaque-nuit: Le robinet du café coule tout le temps.",
+   "une-goutte-chaque-nuit: “Je répare ton robinet.",
+   "une-goutte-chaque-nuit: Elle ouvre le robinet, puis elle le ferme."
+  ]
+ },
+ "puis": {
+  "copia": {
+   "g": "then, afterwards",
+   "t": "adverb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "une-goutte-chaque-nuit: Puis une autre goutte.",
+   "une-goutte-chaque-nuit: Elle ouvre le robinet, puis elle le ferme.",
+   "des-pas-au-dessus: Les pas vont ici, puis ailleurs.",
+   "des-pas-au-dessus: Puis l'inconnue descend avec un chien."
+  ]
+ },
+ "autre": {
+  "copia": {
+   "g": "other, different",
+   "t": "adjective",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "une-goutte-chaque-nuit: Puis une autre goutte.",
+   "deux-carreaux-pour-hugo: La boule de Hugo tape l'autre boule.",
+   "deux-carreaux-pour-hugo: L'autre boule part."
+  ]
+ },
+ "coule": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: Le robinet du café coule tout le temps.",
+   "une-goutte-chaque-nuit: Hugo tourne, et l'eau coule partout.",
+   "une-plante-pour-lea: L'eau coule sur les feuilles."
+  ]
+ },
+ "gouttes": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: Léa écoute les gouttes chaque nuit."
+  ]
+ },
+ "cet": {
+  "copia": {
+   "g": "this (cet)",
+   "t": "determiner",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-goutte-chaque-nuit: Cet après-midi, Hugo arrive avec une boîte à outils."
+  ]
+ },
+ "après-midi": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: Cet après-midi, Hugo arrive avec une boîte à outils.",
+   "deux-carreaux-pour-hugo: Ils restent à l'ombre tout l'après-midi."
+  ]
+ },
+ "boîte": {
+  "copia": {
+   "g": "small box that holds things (la boîte)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-goutte-chaque-nuit: Cet après-midi, Hugo arrive avec une boîte à outils.",
+   "l-annonce-du-couloir: Léa lit l'annonce sur la boîte aux lettres."
+  ]
+ },
+ "outils": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: Cet après-midi, Hugo arrive avec une boîte à outils."
+  ]
+ },
+ "répare": {
+  "copia": {
+   "g": "repairs (réparer)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-goutte-chaque-nuit: “Je répare ton robinet."
+  ]
+ },
+ "ton": {
+  "copia": {
+   "g": "your",
+   "t": "pronoun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "une-goutte-chaque-nuit: “Je répare ton robinet.",
+   "a-toi-la-boule: C'est ton porte-bonheur!”, dit Hugo.",
+   "a-toi-la-boule: Et je te rends ton argent.”",
+   "mille-euros-sans-compter: Pour ton loyer.”"
+  ]
+ },
+ "service": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: Un service pour un service.”",
+   "a-toi-la-boule: “Un service pour un service”, dit Hugo.",
+   "le-fauteuil-descend: Un service contre un café.”"
+  ]
+ },
+ "sais": {
+  "copia": {
+   "g": "I know (savoir)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-goutte-chaque-nuit: “Tu sais réparer?”, demande Léa.",
+   "une-goutte-chaque-nuit: Tu ne sais pas réparer.”",
+   "si-je-gagne-tu-restes: “Je sais.",
+   "mille-euros-sans-compter: “Je sais."
+  ]
+ },
+ "réparer": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: “Tu sais réparer?”, demande Léa.",
+   "une-goutte-chaque-nuit: Tu ne sais pas réparer.”"
+  ]
+ },
+ "seau": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: Hugo met un seau dessous."
+  ]
+ },
+ "dessous": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: Hugo met un seau dessous.",
+   "l-annonce-du-couloir: Les meubles de Hugo vont à la cave, dessous."
+  ]
+ },
+ "tourne": {
+  "copia": {
+   "g": "to change direction, to go left or right (tourner)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-goutte-chaque-nuit: Hugo tourne, et l'eau coule partout.",
+   "les-mots-a-l-envers: Elle tourne la page.",
+   "le-fauteuil-descend: L'escalier tourne”, dit Chloé."
+  ]
+ },
+ "attention": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: “Attention!",
+   "tu-prends-la-carte: “Attention, c'est chaud!”",
+   "trente-trois-bougies: “Attention, Léa!",
+   "le-fauteuil-descend: “Attention!"
+  ]
+ },
+ "rit": {
+  "copia": {
+   "g": "laughs (rire)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "une-goutte-chaque-nuit: Il y a de l'eau partout!”, rit Léa.",
+   "tu-prends-la-carte: Maxime rit.",
+   "tu-prends-la-carte: Léa rit avec la serviette sur la bouche.",
+   "les-mots-a-l-envers: “Enfin!”, rit Hugo.",
+   "la-boule-porte-bonheur: “Pas mal, non?”, rit Léa.",
+   "trente-trois-bougies: “Trente-trois ans, c'est vieux!”, rit Hugo."
+  ]
+ },
+ "bravo": {
+  "copia": {
+   "g": "bravo, well done",
+   "t": "expression",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "une-goutte-chaque-nuit: “Bravo, Hugo!",
+   "tu-prends-la-carte: “Bravo, Léa!”",
+   "trente-trois-bougies: “Bravo, Hugo!"
+  ]
+ },
+ "tuyau": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: Le tuyau est sale.",
+   "une-goutte-chaque-nuit: Il serre le tuyau, deux fois."
+  ]
+ },
+ "sale": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: Le tuyau est sale.",
+   "a-toi-la-boule: La placette est tranquille, mais sale."
+  ]
+ },
+ "as": {
+  "copia": {
+   "g": "you have (avoir)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-goutte-chaque-nuit: “Tu as raison”, répond Hugo."
+  ]
+ },
+ "raison": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: “Tu as raison”, répond Hugo.",
+   "les-mots-a-l-envers: Il a raison: c'est difficile."
+  ]
+ },
+ "voir": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: “Mais je commence à voir.”",
+   "trente-trois-bougies: Tout le monde veut voir."
+  ]
+ },
+ "serre": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: Il serre le tuyau, deux fois.",
+   "les-mots-a-l-envers: Hugo serre la main de Léa.",
+   "a-samedi-hugo: Léa serre le cochonnet dans sa poche.",
+   "la-ligne-coupe-apres-hugo: Elle serre le portable près du cœur."
+  ]
+ },
+ "fois": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: Il serre le tuyau, deux fois.",
+   "une-goutte-chaque-nuit: Deux fois.",
+   "a-toi-la-boule: Chaque fois, je pense à toi.”",
+   "a-samedi-hugo: Le klaxon sonne deux fois.",
+   "clara-tient-la-boule: Chaque fois, il gagne.”",
+   "treize-comme-avant: “La prochaine fois, c'est moi”, sourit Hugo."
+  ]
+ },
+ "claire": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: L'eau est claire.",
+   "la-ligne-coupe-apres-hugo: La voix de Hugo est claire."
+  ]
+ },
+ "sol": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: Léa sèche le sol avec une éponge.",
+   "une-goutte-chaque-nuit: Le sol est propre."
+  ]
+ },
+ "éponge": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: Léa sèche le sol avec une éponge."
+  ]
+ },
+ "propre": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: Le sol est propre."
+  ]
+ },
+ "fini": {
+  "copia": {
+   "g": "finished (finir)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-goutte-chaque-nuit: Fini”, dit Hugo.",
+   "une-plante-pour-lea: “C'est fini”, dit Hugo."
+  ]
+ },
+ "voilà": {
+  "copia": {
+   "g": "there it is (voilà)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-goutte-chaque-nuit: “Voilà.",
+   "tu-prends-la-carte: Voilà”, dit Léa.",
+   "mille-euros-sans-compter: “Voilà.",
+   "a-samedi-hugo: “Voilà les clés."
+  ]
+ },
+ "plus": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: Maintenant, tu n'as plus besoin de moi.”",
+   "si-je-gagne-tu-restes: “Ma boule est plus près”, dit Hugo.",
+   "si-je-gagne-tu-restes: Hugo non plus.",
+   "une-boule-sous-le-platane: Léa est triste et ne regarde plus sa boule.",
+   "l-annonce-du-couloir: “Un locataire paie cent euros de plus.",
+   "une-plante-pour-lea: “Mais ce n'est plus comme avant.”"
+  ]
+ },
+ "besoin": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: Maintenant, tu n'as plus besoin de moi.”",
+   "vingt-minutes-c-est-long: Mais je n'ai pas besoin de voiture.”",
+   "mille-euros-sans-compter: Il a besoin de mille euros."
+  ]
+ },
+ "ouvre": {
+  "copia": {
+   "g": "to start a new shop or place (ouvrir)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-goutte-chaque-nuit: Elle ouvre le robinet, puis elle le ferme.",
+   "la-boule-porte-bonheur: Léa ouvre le tiroir.",
+   "a-toi-la-boule: Enfin, Hugo ouvre le paquet, surpris.",
+   "mille-euros-sans-compter: Léa ouvre la tirelire et donne l'argent à Hugo."
+  ]
+ },
+ "ferme": {
+  "copia": {
+   "g": "closes (fermer)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-goutte-chaque-nuit: Elle ouvre le robinet, puis elle le ferme.",
+   "a-toi-la-boule: Léa ferme la main de Hugo sur la boule.",
+   "la-ligne-coupe-apres-hugo: Léa ferme les yeux et retient ses larmes."
+  ]
+ },
+ "toute": {
+  "copia": {
+   "g": "all, whole (toute)",
+   "t": "determiner",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-goutte-chaque-nuit: Elle est toute seule avec le silence.",
+   "vingt-minutes-c-est-long: Pour Léa, vingt minutes, c'est presque toute la ville.",
+   "les-mots-a-l-envers: Elle écrit encore, toute seule: amis pour toujours."
+  ]
+ },
+ "seule": {
+  "copia": null,
+  "frases": [
+   "une-goutte-chaque-nuit: Elle est toute seule avec le silence.",
+   "les-mots-a-l-envers: Elle écrit encore, toute seule: amis pour toujours.",
+   "clara-tient-la-boule: Chaque dimanche, Léa joue à la pétanque, seule maintenant.",
+   "la-ligne-coupe-apres-hugo: Le vent est froid, et Léa est seule.",
+   "deux-carreaux-pour-hugo: “Je joue avec toi, pas seule”, dit Léa."
+  ]
+ },
+ "silence": {
+  "copia": {
+   "g": "when nobody is making any sound (le silence)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-goutte-chaque-nuit: Elle est toute seule avec le silence."
+  ]
+ },
+ "prends": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: Tu prends la carte?",
+   "tu-prends-la-carte: Tu prends la carte?”, demande Maxime."
+  ]
+ },
+ "carte": {
+  "copia": {
+   "g": "bank card; map (la carte)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "tu-prends-la-carte: Tu prends la carte?",
+   "tu-prends-la-carte: Tu prends la carte?”, demande Maxime.",
+   "tu-prends-la-carte: “La carte?",
+   "tu-prends-la-carte: Elle donne la carte.",
+   "tu-prends-la-carte: La carte bleue, pour payer!”",
+   "tu-prends-la-carte: “Ici, pas de carte bleue”, explique Léa."
+  ]
+ },
+ "ami": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: Maxime est un ami de Hugo.",
+   "tu-prends-la-carte: Elle apporte un jus d'orange: gratuit, pour un ami de Hugo.",
+   "une-boule-sous-le-platane: Hugo, un ami de Léa, habite au-dessus."
+  ]
+ },
+ "vient": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: Il vient de Paris.",
+   "la-boule-porte-bonheur: Elle vient pour aider.",
+   "l-annonce-du-couloir: D'habitude, il vient le lundi, tard."
+  ]
+ },
+ "gare": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: Il arrive de la gare avec un grand sac.",
+   "tu-prends-la-carte: “De la gare”, répond Maxime."
+  ]
+ },
+ "sac": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: Il arrive de la gare avec un grand sac.",
+   "si-je-gagne-tu-restes: Léa sort les boules de son sac."
+  ]
+ },
+ "surpris": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: Maxime est surpris: le café est petit.",
+   "a-toi-la-boule: Enfin, Hugo ouvre le paquet, surpris."
+  ]
+ },
+ "trouver": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: Léa ne veut pas trouver Maxime sympa."
+  ]
+ },
+ "sympa": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: Léa ne veut pas trouver Maxime sympa.",
+   "des-pas-au-dessus: “C'est une femme sympa."
+  ]
+ },
+ "départ": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: Paris, c'est le départ de Hugo.",
+   "mille-euros-sans-compter: “Le loyer commence avant mon départ.”",
+   "une-boule-sous-le-platane: Le départ est dans six mois?",
+   "la-ligne-coupe-apres-hugo: Elle veut dire une chose avant son départ."
+  ]
+ },
+ "noir": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: Elle sert un café noir."
+  ]
+ },
+ "chaud": {
+  "copia": {
+   "g": "hot, warm",
+   "t": "adjective",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "tu-prends-la-carte: “Attention, c'est chaud!”",
+   "si-je-gagne-tu-restes: Le gravier est encore chaud.",
+   "clara-tient-la-boule: C'est le printemps, et le soleil est chaud."
+  ]
+ },
+ "d": {
+  "copia": {
+   "g": "of, from (d', from de before a vowel)",
+   "t": "preposition",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "tu-prends-la-carte: “D'où tu viens?”, demande Léa.",
+   "a-samedi-hugo: Une femme sort d'un taxi, avec son chien."
+  ]
+ },
+ "viens": {
+  "copia": {
+   "g": "I come (venir)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "tu-prends-la-carte: “D'où tu viens?”, demande Léa."
+  ]
+ },
+ "sucre": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: Il met du sucre, parce que c'est amer."
+  ]
+ },
+ "amer": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: Il met du sucre, parce que c'est amer."
+  ]
+ },
+ "beaucoup": {
+  "copia": {
+   "g": "lot, very much (beaucoup)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "tu-prends-la-carte: “Merci beaucoup.",
+   "la-boule-porte-bonheur: “Un joli cadeau coûte beaucoup”, répond Léa.",
+   "mille-euros-sans-compter: “C'est beaucoup, Hugo.”",
+   "clara-tient-la-boule: “Hugo aime beaucoup ce jeu?”",
+   "le-fauteuil-descend: “Merci beaucoup”, dit Léa.",
+   "une-plante-pour-lea: J'aime beaucoup”, répond Léa."
+  ]
+ },
+ "non": {
+  "copia": {
+   "g": "no",
+   "t": "adverb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "tu-prends-la-carte: “Non!",
+   "tu-prends-la-carte: Sur l'ardoise, elle écrit: “Carte bleue: non.”",
+   "la-boule-porte-bonheur: “Pas mal, non?”, rit Léa.",
+   "trente-trois-bougies: “Non.",
+   "si-je-gagne-tu-restes: Il ne dit jamais non à Léa.",
+   "si-je-gagne-tu-restes: “Non."
+  ]
+ },
+ "bleue": {
+  "copia": {
+   "g": "colour of the sky on a clear day (bleu)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "tu-prends-la-carte: La carte bleue, pour payer!”",
+   "tu-prends-la-carte: “Ici, pas de carte bleue”, explique Léa.",
+   "tu-prends-la-carte: Sur l'ardoise, elle écrit: “Carte bleue: non.”"
+  ]
+ },
+ "payer": {
+  "copia": {
+   "g": "to pay (payer)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "tu-prends-la-carte: La carte bleue, pour payer!”"
+  ]
+ },
+ "ah": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: “Ah!"
+  ]
+ },
+ "dire": {
+  "copia": {
+   "g": "to say (dire)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "tu-prends-la-carte: Ça veut dire ça!”",
+   "a-samedi-hugo: Léa ne peut rien dire.",
+   "la-ligne-coupe-apres-hugo: Elle veut dire une chose avant son départ."
+  ]
+ },
+ "drôle": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: C'est drôle.",
+   "l-annonce-du-couloir: “Ce n'est pas drôle!”"
+  ]
+ },
+ "alors": {
+  "copia": {
+   "g": "so, then (alors)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "tu-prends-la-carte: “Alors, c'est gratuit?”",
+   "les-mots-a-l-envers: Alors: tu me manques.”",
+   "a-toi-la-boule: “Alors, on partage”, répond Léa.",
+   "la-ligne-coupe-apres-hugo: Alors Léa monte ici."
+  ]
+ },
+ "gratuit": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: “Alors, c'est gratuit?”",
+   "tu-prends-la-carte: Elle apporte un jus d'orange: gratuit, pour un ami de Hugo.",
+   "le-fauteuil-descend: C'est gratuit?”, demande Léa."
+  ]
+ },
+ "faux": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: “C'est faux!”"
+  ]
+ },
+ "grave": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: “Pas grave.",
+   "deux-carreaux-pour-hugo: “Pas grave, je paie."
+  ]
+ },
+ "combien": {
+  "copia": {
+   "g": "how many (combien)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "tu-prends-la-carte: C'est combien?”",
+   "mille-euros-sans-compter: “Combien?”, demande Léa."
+  ]
+ },
+ "serviette": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: Léa rit avec la serviette sur la bouche."
+  ]
+ },
+ "bouche": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: Léa rit avec la serviette sur la bouche."
+  ]
+ },
+ "apporte": {
+  "copia": {
+   "g": "brings (apporter)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "tu-prends-la-carte: Elle apporte un jus d'orange: gratuit, pour un ami de Hugo.",
+   "deux-carreaux-pour-hugo: Léa apporte deux tasses de café."
+  ]
+ },
+ "jus": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: Elle apporte un jus d'orange: gratuit, pour un ami de Hugo."
+  ]
+ },
+ "orange": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: Elle apporte un jus d'orange: gratuit, pour un ami de Hugo."
+  ]
+ },
+ "ardoise": {
+  "copia": null,
+  "frases": [
+   "tu-prends-la-carte: Sur l'ardoise, elle écrit: “Carte bleue: non.”"
+  ]
+ },
+ "écrit": {
+  "copia": {
+   "g": "to put words on paper or on a screen (écrire)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "tu-prends-la-carte: Sur l'ardoise, elle écrit: “Carte bleue: non.”",
+   "les-mots-a-l-envers: Dans son cahier, Léa écrit les mots durs.",
+   "les-mots-a-l-envers: Chaque nuit, elle écrit au crayon.",
+   "les-mots-a-l-envers: Elle écrit encore, toute seule: amis pour toujours.",
+   "mille-euros-sans-compter: Il écrit: “Mille euros."
+  ]
+ },
+ "minutes": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: Vingt minutes, c'est long",
+   "vingt-minutes-c-est-long: “Mon travail est à vingt minutes”, dit Hugo.",
+   "vingt-minutes-c-est-long: “Vingt minutes?",
+   "vingt-minutes-c-est-long: Ici, le port est à dix minutes à pied.",
+   "vingt-minutes-c-est-long: Pour Léa, vingt minutes, c'est presque toute la ville."
+  ]
+ },
+ "long": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: Vingt minutes, c'est long",
+   "vingt-minutes-c-est-long: C'est long!”, répond Léa.",
+   "treize-comme-avant: Il dort sur le long canapé du café."
+  ]
+ },
+ "habite": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: À Paris, Hugo habite en face du métro.",
+   "une-boule-sous-le-platane: Hugo, un ami de Léa, habite au-dessus."
+  ]
+ },
+ "face": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: À Paris, Hugo habite en face du métro."
+  ]
+ },
+ "loyer": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: Le loyer coûte mille euros par mois.",
+   "mille-euros-sans-compter: Le loyer de Paris est cher.",
+   "mille-euros-sans-compter: “Le loyer commence avant mon départ.”",
+   "mille-euros-sans-compter: Pour ton loyer.”"
+  ]
+ },
+ "coûte": {
+  "copia": {
+   "g": "to have a price of (coûter)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: Le loyer coûte mille euros par mois.",
+   "la-boule-porte-bonheur: “Un joli cadeau coûte beaucoup”, répond Léa."
+  ]
+ },
+ "euros": {
+  "copia": {
+   "g": "money used in France (l'euro)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: Le loyer coûte mille euros par mois.",
+   "mille-euros-sans-compter: Mille euros sans compter",
+   "mille-euros-sans-compter: Il a besoin de mille euros.",
+   "mille-euros-sans-compter: Léa compte: mille euros.",
+   "mille-euros-sans-compter: “Mille euros”, répond Hugo.",
+   "mille-euros-sans-compter: Il écrit: “Mille euros."
+  ]
+ },
+ "par": {
+  "copia": {
+   "g": "by, through (par)",
+   "t": "preposition",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: Le loyer coûte mille euros par mois."
+  ]
+ },
+ "mois": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: Le loyer coûte mille euros par mois.",
+   "mille-euros-sans-compter: Je rends dans six mois.”",
+   "une-boule-sous-le-platane: Le départ est dans six mois?"
+  ]
+ },
+ "ils": {
+  "copia": {
+   "g": "they (masculine or mixed)",
+   "t": "pronoun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: Ils regardent le plan tous les deux.",
+   "une-boule-sous-le-platane: Ils jouent à la pétanque chaque dimanche.",
+   "deux-carreaux-pour-hugo: Ils restent à l'ombre tout l'après-midi."
+  ]
+ },
+ "regardent": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: Ils regardent le plan tous les deux."
+  ]
+ },
+ "plan": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: Ils regardent le plan tous les deux."
+  ]
+ },
+ "tous": {
+  "copia": {
+   "g": "all, everybody (tous)",
+   "t": "determiner",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: Ils regardent le plan tous les deux.",
+   "a-samedi-hugo: “Tous les matins, je l'arrose.”",
+   "le-fauteuil-descend: Un café tous les jours, jusqu'en mars”, répond Chloé.",
+   "deux-carreaux-pour-hugo: “Tous les jours avant mars”, répond Hugo.",
+   "une-plante-pour-lea: “Tu l'arroses tous les matins, s'il te plaît?”",
+   "une-plante-pour-lea: On partage, tous les deux”, sourit Hugo."
+  ]
+ },
+ "mon": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: “Mon travail est à vingt minutes”, dit Hugo.",
+   "la-boule-porte-bonheur: “C'est mon porte-bonheur.",
+   "mille-euros-sans-compter: “Le loyer commence avant mon départ.”"
+  ]
+ },
+ "travail": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: “Mon travail est à vingt minutes”, dit Hugo.",
+   "vingt-minutes-c-est-long: Hugo arrive tôt au travail, et il part tard."
+  ]
+ },
+ "port": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: Ici, le port est à dix minutes à pied.",
+   "vingt-minutes-c-est-long: Dehors, on entend le bateau du port.",
+   "a-samedi-hugo: Une voiture attend près du port."
+  ]
+ },
+ "pied": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: Ici, le port est à dix minutes à pied."
+  ]
+ },
+ "près": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: Tout est près.",
+   "si-je-gagne-tu-restes: “Ma boule est plus près”, dit Hugo.",
+   "mille-euros-sans-compter: Près du frigo, le vieux percolateur est cassé.",
+   "a-samedi-hugo: Une voiture attend près du port.",
+   "une-boule-sous-le-platane: Sa boule roule tout près.",
+   "une-boule-sous-le-platane: “Très près."
+  ]
+ },
+ "matin": {
+  "copia": {
+   "g": "morning (le matin)",
+   "t": "noun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: Le matin, le quai du métro est plein et étroit.",
+   "a-toi-la-boule: L'air du matin est froid.",
+   "a-samedi-hugo: Ce matin, le réveil sonne tôt.",
+   "des-pas-au-dessus: Le matin, Antoine monte avec une inconnue."
+  ]
+ },
+ "quai": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: Le matin, le quai du métro est plein et étroit."
+  ]
+ },
+ "étroit": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: Le matin, le quai du métro est plein et étroit.",
+   "le-fauteuil-descend: Mais l'escalier est étroit."
+  ]
+ },
+ "tôt": {
+  "copia": {
+   "g": "early, before the usual time (tôt)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: Hugo arrive tôt au travail, et il part tard.",
+   "a-samedi-hugo: Ce matin, le réveil sonne tôt.",
+   "des-pas-au-dessus: “Elle arrive trop tôt!”, répond Léa."
+  ]
+ },
+ "tard": {
+  "copia": {
+   "g": "late (tard)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: Hugo arrive tôt au travail, et il part tard.",
+   "l-annonce-du-couloir: D'habitude, il vient le lundi, tard."
+  ]
+ },
+ "marches": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: “Tu marches un peu?”, demande Léa."
+  ]
+ },
+ "peu": {
+  "copia": {
+   "g": "little; a little (un peu)",
+   "t": "adverb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: “Tu marches un peu?”, demande Léa.",
+   "mille-euros-sans-compter: Hugo arrive et attend un peu.",
+   "clara-tient-la-boule: Clara boit encore un peu à la gourde.",
+   "treize-comme-avant: Il mange encore un peu."
+  ]
+ },
+ "achète": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: J'achète un vélo neuf.",
+   "mille-euros-sans-compter: Léa n'achète pas de percolateur neuf."
+  ]
+ },
+ "vélo": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: J'achète un vélo neuf."
+  ]
+ },
+ "neuf": {
+  "copia": {
+   "g": "new; nine (neuf)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: J'achète un vélo neuf.",
+   "mille-euros-sans-compter: Léa n'achète pas de percolateur neuf."
+  ]
+ },
+ "lent": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: C'est moins lent.”"
+  ]
+ },
+ "va": {
+  "copia": {
+   "g": "goes (aller)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: “Et le métro va vite?”",
+   "le-fauteuil-descend: Ça va?”, demande Chloé.",
+   "deux-carreaux-pour-hugo: La boule ne va pas droit, et elle rate."
+  ]
+ },
+ "vite": {
+  "copia": {
+   "g": "fast, quickly",
+   "t": "adverb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: “Et le métro va vite?”",
+   "une-boule-sous-le-platane: Hugo lance le cochonnet, vite."
+  ]
+ },
+ "dépend": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: “Ça dépend."
+  ]
+ },
+ "voiture": {
+  "copia": {
+   "g": "car (la voiture)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: Mais je n'ai pas besoin de voiture.”",
+   "a-samedi-hugo: Une voiture attend près du port.",
+   "a-samedi-hugo: Il monte dans la voiture.",
+   "a-samedi-hugo: La voiture part lentement."
+  ]
+ },
+ "dehors": {
+  "copia": {
+   "g": "outside, not inside a building (dehors)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: Dehors, on entend le bateau du port.",
+   "les-mots-a-l-envers: Dehors, la lune est douce."
+  ]
+ },
+ "on": {
+  "copia": {
+   "g": "one, we, people in general",
+   "t": "pronoun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: Dehors, on entend le bateau du port.",
+   "trente-trois-bougies: On entend la musique.",
+   "trente-trois-bougies: “On parie?”",
+   "trente-trois-bougies: “On parie!”, répond Léa.",
+   "a-toi-la-boule: “Alors, on partage”, répond Léa.",
+   "treize-comme-avant: “On joue en treize points."
+  ]
+ },
+ "entend": {
+  "copia": {
+   "g": "hears (entendre)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: Dehors, on entend le bateau du port.",
+   "trente-trois-bougies: On entend la musique.",
+   "mille-euros-sans-compter: Léa entend le bruit du vieux percolateur.",
+   "la-ligne-coupe-apres-hugo: Il n'entend pas le reste.",
+   "des-pas-au-dessus: Au-dessus du café, on entend des pas."
+  ]
+ },
+ "bateau": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: Dehors, on entend le bateau du port."
+  ]
+ },
+ "arrêt": {
+  "copia": {
+   "g": "stop for a tram or bus (l'arrêt)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: L'arrêt du bus est en bas."
+  ]
+ },
+ "bus": {
+  "copia": null,
+  "frases": [
+   "vingt-minutes-c-est-long: L'arrêt du bus est en bas."
+  ]
+ },
+ "presque": {
+  "copia": {
+   "g": "almost, very close but not quite (presque)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: Pour Léa, vingt minutes, c'est presque toute la ville.",
+   "a-samedi-hugo: “Presque.",
+   "l-annonce-du-couloir: L'appartement en haut est déjà presque vide."
+  ]
+ },
+ "ville": {
+  "copia": {
+   "g": "town, city (la ville)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: Pour Léa, vingt minutes, c'est presque toute la ville."
+  ]
+ },
+ "sa": {
+  "copia": {
+   "g": "his, her (sa)",
+   "t": "determiner",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: Léa pose sa montre sur la table.",
+   "la-boule-porte-bonheur: Dedans, il y a sa boule porte-bonheur.",
+   "la-boule-porte-bonheur: Léa garde la boule ronde dans sa main.",
+   "trente-trois-bougies: Sa boule roule loin, exprès.",
+   "a-samedi-hugo: Léa serre le cochonnet dans sa poche.",
+   "clara-tient-la-boule: Léa pose sa gourde sur le banc."
+  ]
+ },
+ "table": {
+  "copia": {
+   "g": "table (la table)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: Léa pose sa montre sur la table.",
+   "trente-trois-bougies: “Le pastis est sur la table!”, crie Léa."
+  ]
+ },
+ "regarde": {
+  "copia": {
+   "g": "looks at (regarder)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "vingt-minutes-c-est-long: Elle ne la regarde pas.",
+   "les-mots-a-l-envers: Léa regarde Hugo.",
+   "trente-trois-bougies: Léa applaudit vraiment fort, et regarde le banc.",
+   "treize-comme-avant: Clara regarde, dans son manteau jaune.",
+   "une-boule-sous-le-platane: Léa est triste et ne regarde plus sa boule.",
+   "l-annonce-du-couloir: Léa regarde les volets."
+  ]
+ },
+ "mots": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: Les mots à l'envers",
+   "les-mots-a-l-envers: Dans son cahier, Léa écrit les mots durs."
+  ]
+ },
+ "envers": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: Les mots à l'envers",
+   "les-mots-a-l-envers: “C'est à l'envers”, explique Hugo."
+  ]
+ },
+ "cahier": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: Dans son cahier, Léa écrit les mots durs.",
+   "les-mots-a-l-envers: Le cahier est sur la nappe du café."
+  ]
+ },
+ "durs": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: Dans son cahier, Léa écrit les mots durs."
+  ]
+ },
+ "crayon": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: Chaque nuit, elle écrit au crayon."
+  ]
+ },
+ "nappe": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: Le cahier est sur la nappe du café."
+  ]
+ },
+ "page": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: Elle tourne la page."
+  ]
+ },
+ "soir": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: Ce soir, Hugo boit un café à côté.",
+   "si-je-gagne-tu-restes: Léa espère, mais ce soir, il joue bien."
+  ]
+ },
+ "boit": {
+  "copia": {
+   "g": "drinks (boire)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "les-mots-a-l-envers: Ce soir, Hugo boit un café à côté.",
+   "clara-tient-la-boule: Clara boit encore un peu à la gourde."
+  ]
+ },
+ "lit": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: Léa lit une phrase: “Tu me manques.”",
+   "l-annonce-du-couloir: Léa lit l'annonce sur la boîte aux lettres."
+  ]
+ },
+ "phrase": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: Léa lit une phrase: “Tu me manques.”"
+  ]
+ },
+ "me": {
+  "copia": {
+   "g": "me, to me (me)",
+   "t": "pronoun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "les-mots-a-l-envers: Léa lit une phrase: “Tu me manques.”",
+   "les-mots-a-l-envers: Alors: tu me manques.”",
+   "les-mots-a-l-envers: “Tu me manques.",
+   "mille-euros-sans-compter: Ensuite, il dit: “Léa, tu peux me prêter de l'argent?",
+   "deux-carreaux-pour-hugo: Mais demain, tu me montres.”"
+  ]
+ },
+ "manques": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: Léa lit une phrase: “Tu me manques.”",
+   "les-mots-a-l-envers: Alors: tu me manques.”",
+   "les-mots-a-l-envers: “Tu me manques."
+  ]
+ },
+ "sens": {
+  "copia": {
+   "g": "direction (le sens); I feel (sentir)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "les-mots-a-l-envers: Léa ne comprend pas le sens."
+  ]
+ },
+ "mal": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: Elle a mal à la tête.",
+   "la-boule-porte-bonheur: “Pas mal, non?”, rit Léa.",
+   "trente-trois-bougies: Tu tires mal!”, dit Hugo.",
+   "une-boule-sous-le-platane: Hugo joue mal, et sa boule part loin.",
+   "le-fauteuil-descend: Léa a mal au dos."
+  ]
+ },
+ "vrai": {
+  "copia": {
+   "g": "true, real and not invented (vrai)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "les-mots-a-l-envers: “C'est vrai?",
+   "a-toi-la-boule: “C'est vrai?"
+  ]
+ },
+ "qui": {
+  "copia": {
+   "g": "who, which (qui)",
+   "t": "pronoun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "les-mots-a-l-envers: Qui est triste?”, demande Léa."
+  ]
+ },
+ "suis": {
+  "copia": {
+   "g": "I am (être)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "les-mots-a-l-envers: Moi, je suis triste.",
+   "les-mots-a-l-envers: “Mais je suis là!”",
+   "une-boule-sous-le-platane: Je suis désolé.”",
+   "le-fauteuil-descend: Je suis libre”, dit Chloé.",
+   "le-fauteuil-descend: Je ne suis jamais fatiguée”, rit Léa.",
+   "l-annonce-du-couloir: “Je ne suis pas méchant."
+  ]
+ },
+ "j": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: “Ça y est, j'ai compris!”, dit Léa.",
+   "a-samedi-hugo: “Samedi, j'ai ma boule.”"
+  ]
+ },
+ "compris": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: “Ça y est, j'ai compris!”, dit Léa."
+  ]
+ },
+ "enfin": {
+  "copia": {
+   "g": "after a long wait, at last (enfin)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "les-mots-a-l-envers: “Enfin!”, rit Hugo.",
+   "a-toi-la-boule: Enfin, Hugo ouvre le paquet, surpris."
+  ]
+ },
+ "efface": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: Elle efface avec la gomme."
+  ]
+ },
+ "gomme": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: Elle efface avec la gomme."
+  ]
+ },
+ "encore": {
+  "copia": {
+   "g": "again; still",
+   "t": "adverb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "les-mots-a-l-envers: Elle écrit encore, toute seule: amis pour toujours.",
+   "la-boule-porte-bonheur: Je compte, et je compte encore.”",
+   "a-toi-la-boule: Hugo arrive, pas encore réveillé.",
+   "si-je-gagne-tu-restes: Le gravier est encore chaud.",
+   "clara-tient-la-boule: Clara boit encore un peu à la gourde.",
+   "treize-comme-avant: Il mange encore un peu."
+  ]
+ },
+ "amis": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: Elle écrit encore, toute seule: amis pour toujours.",
+   "trente-trois-bougies: Pour l'anniversaire de Hugo, Léa invite les amis."
+  ]
+ },
+ "déjà": {
+  "copia": {
+   "g": "already (déjà)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "les-mots-a-l-envers: Déjà.”",
+   "l-annonce-du-couloir: L'appartement en haut est déjà presque vide.",
+   "une-plante-pour-lea: La terre est déjà mouillée, mais Léa arrose encore."
+  ]
+ },
+ "là": {
+  "copia": {
+   "g": "there; still there",
+   "t": "adverb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "les-mots-a-l-envers: “Mais je suis là!”",
+   "des-pas-au-dessus: “Hugo est encore là.”"
+  ]
+ },
+ "oui": {
+  "copia": {
+   "g": "yes",
+   "t": "adverb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "les-mots-a-l-envers: “Oui.",
+   "a-toi-la-boule: “Oui.",
+   "clara-tient-la-boule: “Oui.",
+   "treize-comme-avant: “Oui.",
+   "une-boule-sous-le-platane: “Oui.",
+   "le-fauteuil-descend: “Oui."
+  ]
+ },
+ "aussi": {
+  "copia": {
+   "g": "also (aussi)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "les-mots-a-l-envers: “Moi aussi, je pense à toi.”",
+   "le-fauteuil-descend: Elle a aussi une corde."
+  ]
+ },
+ "pense": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: “Moi aussi, je pense à toi.”",
+   "a-toi-la-boule: Chaque fois, je pense à toi.”"
+  ]
+ },
+ "rêve": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: Léa rêve.",
+   "treize-comme-avant: Il rêve sur un vieil oreiller."
+  ]
+ },
+ "lune": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: Dehors, la lune est douce.",
+   "les-mots-a-l-envers: Sous la lune, il y a une étoile."
+  ]
+ },
+ "douce": {
+  "copia": {
+   "g": "soft, gentle (doux)",
+   "t": "adjective",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "les-mots-a-l-envers: Dehors, la lune est douce.",
+   "a-toi-la-boule: La main de Léa est douce."
+  ]
+ },
+ "sous": {
+  "copia": {
+   "g": "under (sous)",
+   "t": "preposition",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "les-mots-a-l-envers: Sous la lune, il y a une étoile.",
+   "la-boule-porte-bonheur: Léa cache le paquet sous le comptoir.",
+   "trente-trois-bougies: Sous chaque platane, Léa allume un lampion.",
+   "a-toi-la-boule: Un gros chat dort sur le banc, sous les feuilles.",
+   "si-je-gagne-tu-restes: Sous le lampadaire, il mesure avec une ficelle.",
+   "une-boule-sous-le-platane: Une boule sous le platane"
+  ]
+ },
+ "étoile": {
+  "copia": null,
+  "frases": [
+   "les-mots-a-l-envers: Sous la lune, il y a une étoile."
+  ]
+ },
+ "boule": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: La boule porte-bonheur",
+   "la-boule-porte-bonheur: Dedans, il y a sa boule porte-bonheur.",
+   "la-boule-porte-bonheur: Cette boule porte chance.",
+   "la-boule-porte-bonheur: “Pourquoi cette boule?”, demande Louise, surprise.",
+   "la-boule-porte-bonheur: Léa garde la boule ronde dans sa main.",
+   "trente-trois-bougies: Sa boule roule loin, exprès."
+  ]
+ },
+ "porte-bonheur": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: La boule porte-bonheur",
+   "la-boule-porte-bonheur: Dedans, il y a sa boule porte-bonheur.",
+   "la-boule-porte-bonheur: “C'est mon porte-bonheur.",
+   "a-toi-la-boule: C'est la boule porte-bonheur de Léa!",
+   "a-toi-la-boule: C'est ton porte-bonheur!”, dit Hugo."
+  ]
+ },
+ "tirelire": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: Aujourd'hui, la tirelire de Léa est vide.",
+   "mille-euros-sans-compter: Dans le tiroir, il y a une tirelire.",
+   "mille-euros-sans-compter: Léa ouvre la tirelire et donne l'argent à Hugo."
+  ]
+ },
+ "argent": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: Son argent est à Paris, avec Hugo.",
+   "a-toi-la-boule: Et je te rends ton argent.”",
+   "mille-euros-sans-compter: Hugo n'a pas assez d'argent.",
+   "mille-euros-sans-compter: Léa garde son argent pour une nouvelle machine.",
+   "mille-euros-sans-compter: Ensuite, il dit: “Léa, tu peux me prêter de l'argent?",
+   "mille-euros-sans-compter: L'argent est pour Hugo."
+  ]
+ },
+ "samedi": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: Samedi, Hugo a trente-trois ans.",
+   "a-samedi-hugo: À samedi, Hugo",
+   "a-samedi-hugo: “À samedi, pour jouer?”",
+   "a-samedi-hugo: “À samedi.",
+   "a-samedi-hugo: “Samedi, j'ai ma boule.”",
+   "treize-comme-avant: Un samedi d'avril, Hugo arrive en TGV, heureux."
+  ]
+ },
+ "ans": {
+  "copia": {
+   "g": "years (l'an)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "la-boule-porte-bonheur: Samedi, Hugo a trente-trois ans.",
+   "trente-trois-bougies: “Trente-trois ans, c'est vieux!”, rit Hugo."
+  ]
+ },
+ "offrir": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: Léa veut offrir un cadeau.",
+   "le-fauteuil-descend: Il veut offrir le fauteuil à Léa."
+  ]
+ },
+ "cadeau": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: Léa veut offrir un cadeau.",
+   "la-boule-porte-bonheur: “Un joli cadeau coûte beaucoup”, répond Léa."
+  ]
+ },
+ "sœur": {
+  "copia": {
+   "g": "girl with the same parents as you (la sœur)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "la-boule-porte-bonheur: La sœur de Léa s'appelle Louise."
+  ]
+ },
+ "aider": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: Elle vient pour aider.",
+   "le-fauteuil-descend: “Je peux aider."
+  ]
+ },
+ "choisis": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: “Tu choisis quoi?”, demande Louise.",
+   "l-annonce-du-couloir: Demain, je choisis un locataire.”"
+  ]
+ },
+ "joli": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: “Un joli cadeau coûte beaucoup”, répond Léa.",
+   "une-plante-pour-lea: “C'est joli."
+  ]
+ },
+ "compte": {
+  "copia": {
+   "g": "to say numbers one after the other (compter)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "la-boule-porte-bonheur: Je compte, et je compte encore.”",
+   "mille-euros-sans-compter: Léa compte: mille euros.",
+   "mille-euros-sans-compter: Elle ne compte pas."
+  ]
+ },
+ "tiroir": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: Léa ouvre le tiroir.",
+   "la-boule-porte-bonheur: Le tiroir sent le café.",
+   "mille-euros-sans-compter: Dans le tiroir, il y a une tirelire."
+  ]
+ },
+ "sent": {
+  "copia": {
+   "g": "smells; feels (sentir)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "la-boule-porte-bonheur: Le tiroir sent le café.",
+   "treize-comme-avant: Le café sent la baguette.",
+   "le-fauteuil-descend: Le coussin sent Hugo."
+  ]
+ },
+ "dedans": {
+  "copia": {
+   "g": "inside, in the middle part of something (dedans)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "la-boule-porte-bonheur: Dedans, il y a sa boule porte-bonheur."
+  ]
+ },
+ "porte": {
+  "copia": {
+   "g": "wears; carries (porter)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "la-boule-porte-bonheur: Cette boule porte chance.",
+   "l-annonce-du-couloir: Léa touche doucement la poignée de la porte de Hugo.",
+   "deux-carreaux-pour-hugo: Elle porte son tablier, et le mistral arrive."
+  ]
+ },
+ "chance": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: Cette boule porte chance.",
+   "la-ligne-coupe-apres-hugo: C'est sa dernière chance."
+  ]
+ },
+ "pourquoi": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: “Pourquoi cette boule?”, demande Louise, surprise.",
+   "l-annonce-du-couloir: “Pourquoi?",
+   "une-plante-pour-lea: “Pourquoi moi?"
+  ]
+ },
+ "surprise": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: “Pourquoi cette boule?”, demande Louise, surprise."
+  ]
+ },
+ "aime": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: Je l'aime, mais c'est pour Hugo.”",
+   "clara-tient-la-boule: “Hugo aime beaucoup ce jeu?”",
+   "l-annonce-du-couloir: Léa n'aime pas ça.",
+   "une-plante-pour-lea: J'aime beaucoup”, répond Léa.",
+   "des-pas-au-dessus: “Elle aime le quartier.”"
+  ]
+ },
+ "coupe": {
+  "copia": {
+   "g": "to cut something into two parts (couper)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "la-boule-porte-bonheur: Louise coupe le papier avec les ciseaux.",
+   "la-ligne-coupe-apres-hugo: La ligne coupe après Hugo"
+  ]
+ },
+ "papier": {
+  "copia": {
+   "g": "thin white sheet you write on (le papier)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "la-boule-porte-bonheur: Louise coupe le papier avec les ciseaux.",
+   "a-toi-la-boule: Il déchire doucement le papier."
+  ]
+ },
+ "ciseaux": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: Louise coupe le papier avec les ciseaux."
+  ]
+ },
+ "garde": {
+  "copia": {
+   "g": "to keep something for somebody (garder)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "la-boule-porte-bonheur: Léa garde la boule ronde dans sa main.",
+   "mille-euros-sans-compter: Léa garde son argent pour une nouvelle machine."
+  ]
+ },
+ "ronde": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: Léa garde la boule ronde dans sa main.",
+   "une-boule-sous-le-platane: Léa prend sa boule ronde et froide."
+  ]
+ },
+ "ensuite": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: Ensuite, elle la donne.",
+   "mille-euros-sans-compter: Ensuite, il dit: “Léa, tu peux me prêter de l'argent?",
+   "clara-tient-la-boule: Ensuite, elle ne dit rien.",
+   "des-pas-au-dessus: Ensuite, Antoine descend."
+  ]
+ },
+ "emballe": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: Louise emballe le paquet avec du scotch."
+  ]
+ },
+ "paquet": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: Louise emballe le paquet avec du scotch.",
+   "la-boule-porte-bonheur: Léa cache le paquet sous le comptoir.",
+   "a-toi-la-boule: Enfin, Hugo ouvre le paquet, surpris."
+  ]
+ },
+ "scotch": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: Louise emballe le paquet avec du scotch."
+  ]
+ },
+ "fait": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: Louise fait un nœud rouge.",
+   "treize-comme-avant: Il lui fait la bise, sur la joue.",
+   "deux-carreaux-pour-hugo: Hugo fait un pari."
+  ]
+ },
+ "nœud": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: Louise fait un nœud rouge."
+  ]
+ },
+ "rouge": {
+  "copia": {
+   "g": "red (rouge)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "la-boule-porte-bonheur: Louise fait un nœud rouge.",
+   "a-toi-la-boule: Elle ramasse les bouchons et un lampion rouge.",
+   "si-je-gagne-tu-restes: Le ciel est rouge au-dessus du Panier."
+  ]
+ },
+ "génial": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: “Génial!”, dit Louise.",
+   "une-boule-sous-le-platane: Génial!”, dit Hugo.",
+   "la-ligne-coupe-apres-hugo: “Paris, c'est génial."
+  ]
+ },
+ "cache": {
+  "copia": null,
+  "frases": [
+   "la-boule-porte-bonheur: Léa cache le paquet sous le comptoir."
+  ]
+ },
+ "comptoir": {
+  "copia": {
+   "g": "long high table in a shop (le comptoir)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "la-boule-porte-bonheur: Léa cache le paquet sous le comptoir.",
+   "mille-euros-sans-compter: Léa retourne au comptoir."
+  ]
+ },
+ "bougies": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: Trente-trois bougies",
+   "trente-trois-bougies: Sur le gâteau, il y a trente-trois bougies.",
+   "trente-trois-bougies: Hugo souffle et éteint les bougies."
+  ]
+ },
+ "platane": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: Sous chaque platane, Léa allume un lampion.",
+   "une-boule-sous-le-platane: Une boule sous le platane",
+   "une-boule-sous-le-platane: Les boules attendent sur le banc, sous le platane."
+  ]
+ },
+ "allume": {
+  "copia": {
+   "g": "to switch on a light or a machine (allumer)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "trente-trois-bougies: Sous chaque platane, Léa allume un lampion.",
+   "une-plante-pour-lea: Au plafond, Hugo allume une vieille ampoule."
+  ]
+ },
+ "lampion": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: Sous chaque platane, Léa allume un lampion.",
+   "a-toi-la-boule: Elle ramasse les bouchons et un lampion rouge."
+  ]
+ },
+ "guirlande": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: Il y a une guirlande."
+  ]
+ },
+ "musique": {
+  "copia": {
+   "g": "sound people make with instruments (la musique)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "trente-trois-bougies: On entend la musique."
+  ]
+ },
+ "anniversaire": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: Pour l'anniversaire de Hugo, Léa invite les amis.",
+   "trente-trois-bougies: Tout le monde dit: “Joyeux anniversaire!”"
+  ]
+ },
+ "invite": {
+  "copia": {
+   "g": "to ask somebody to come to your home (inviter)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "trente-trois-bougies: Pour l'anniversaire de Hugo, Léa invite les amis."
+  ]
+ },
+ "pastis": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: “Le pastis est sur la table!”, crie Léa.",
+   "trente-trois-bougies: “Le perdant paie le pastis”, dit Hugo."
+  ]
+ },
+ "gâteau": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: Sur le gâteau, il y a trente-trois bougies.",
+   "a-toi-la-boule: Les restes du gâteau vont à la poubelle."
+  ]
+ },
+ "monde": {
+  "copia": {
+   "g": "world (le monde); everybody (tout le monde)",
+   "t": "noun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "trente-trois-bougies: Tout le monde dit: “Joyeux anniversaire!”",
+   "trente-trois-bougies: Tout le monde veut voir.",
+   "trente-trois-bougies: Tout le monde chante, danse et fête Hugo."
+  ]
+ },
+ "joyeux": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: Tout le monde dit: “Joyeux anniversaire!”"
+  ]
+ },
+ "souffle": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: Hugo souffle et éteint les bougies.",
+   "deux-carreaux-pour-hugo: Il souffle fort."
+  ]
+ },
+ "éteint": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: Hugo souffle et éteint les bougies.",
+   "une-plante-pour-lea: Le chauffage est éteint, et l'air est tiède."
+  ]
+ },
+ "vieux": {
+  "copia": {
+   "g": "old, from a long time ago (vieux)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "trente-trois-bougies: “Trente-trois ans, c'est vieux!”, rit Hugo.",
+   "mille-euros-sans-compter: Près du frigo, le vieux percolateur est cassé.",
+   "mille-euros-sans-compter: Léa entend le bruit du vieux percolateur.",
+   "des-pas-au-dessus: Le parquet est vieux."
+  ]
+ },
+ "gai": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: Hugo est gai."
+  ]
+ },
+ "fin": {
+  "copia": {
+   "g": "end (la fin)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "trente-trois-bougies: À la fin, il y a une dernière partie.",
+   "a-toi-la-boule: À la fin, il rentre chez lui."
+  ]
+ },
+ "dernière": {
+  "copia": {
+   "g": "one just before this one (dernier)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "trente-trois-bougies: À la fin, il y a une dernière partie.",
+   "si-je-gagne-tu-restes: C'est la dernière partie de septembre.",
+   "treize-comme-avant: La dernière boule de Léa roule.",
+   "la-ligne-coupe-apres-hugo: C'est sa dernière chance."
+  ]
+ },
+ "partie": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: À la fin, il y a une dernière partie.",
+   "si-je-gagne-tu-restes: C'est la dernière partie de septembre.",
+   "treize-comme-avant: “Une partie, comme avant?”, demande Hugo."
+  ]
+ },
+ "perdant": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: “Le perdant paie le pastis”, dit Hugo.",
+   "si-je-gagne-tu-restes: Le perdant ramasse”, dit Léa."
+  ]
+ },
+ "parie": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: “On parie?”",
+   "trente-trois-bougies: “On parie!”, répond Léa.",
+   "treize-comme-avant: “On parie!”"
+  ]
+ },
+ "roule": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: Sa boule roule loin, exprès.",
+   "clara-tient-la-boule: Sa boule roule loin, et elle rate le cochonnet.",
+   "treize-comme-avant: La dernière boule de Léa roule.",
+   "une-boule-sous-le-platane: Sa boule roule tout près."
+  ]
+ },
+ "exprès": {
+  "copia": {
+   "g": "on purpose, because you want to (exprès)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "trente-trois-bougies: Sa boule roule loin, exprès.",
+   "treize-comme-avant: Personne ne perd exprès."
+  ]
+ },
+ "tires": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: Tu tires mal!”, dit Hugo."
+  ]
+ },
+ "laisse": {
+  "copia": {
+   "g": "to let something go without stopping it (laisser)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "trente-trois-bougies: Léa laisse gagner Hugo.",
+   "des-pas-au-dessus: Le gros chien tire sur sa laisse.",
+   "des-pas-au-dessus: Elle laisse un mot: “Pour la nouvelle voisine, avec un café."
+  ]
+ },
+ "gagner": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: Léa laisse gagner Hugo."
+  ]
+ },
+ "gagnant": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: Tu es le gagnant!”, dit Léa."
+  ]
+ },
+ "perds": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: “Tu perds pour moi?”, demande Hugo.",
+   "une-boule-sous-le-platane: “Tu perds pour moi?"
+  ]
+ },
+ "jeu": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: C'est un jeu”, répond Léa.",
+   "clara-tient-la-boule: C'est le jeu de Hugo.",
+   "clara-tient-la-boule: “Hugo aime beaucoup ce jeu?”",
+   "une-boule-sous-le-platane: C'est un jeu”, répond Hugo."
+  ]
+ },
+ "applaudit": {
+  "copia": {
+   "g": "claps, applauds (applaudir)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "trente-trois-bougies: Léa applaudit vraiment fort, et regarde le banc."
+  ]
+ },
+ "fort": {
+  "copia": {
+   "g": "loudly, with a lot of noise (fort)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "trente-trois-bougies: Léa applaudit vraiment fort, et regarde le banc.",
+   "la-ligne-coupe-apres-hugo: Elle parle fort: “Hugo, tu restes ici, avec moi.”",
+   "deux-carreaux-pour-hugo: Il souffle fort."
+  ]
+ },
+ "banc": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: Léa applaudit vraiment fort, et regarde le banc.",
+   "a-toi-la-boule: Un gros chat dort sur le banc, sous les feuilles.",
+   "clara-tient-la-boule: Léa pose sa gourde sur le banc.",
+   "une-boule-sous-le-platane: Les boules attendent sur le banc, sous le platane.",
+   "une-boule-sous-le-platane: Léa pose sa boule sur le banc."
+  ]
+ },
+ "chante": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: Tout le monde chante, danse et fête Hugo."
+  ]
+ },
+ "danse": {
+  "copia": {
+   "g": "dances (danser)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "trente-trois-bougies: Tout le monde chante, danse et fête Hugo."
+  ]
+ },
+ "fête": {
+  "copia": null,
+  "frases": [
+   "trente-trois-bougies: Tout le monde chante, danse et fête Hugo."
+  ]
+ },
+ "gros": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: Un gros chat dort sur le banc, sous les feuilles.",
+   "des-pas-au-dessus: Le gros chien tire sur sa laisse."
+  ]
+ },
+ "chat": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: Un gros chat dort sur le banc, sous les feuilles."
+  ]
+ },
+ "dort": {
+  "copia": {
+   "g": "sleeps (dormir)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "a-toi-la-boule: Un gros chat dort sur le banc, sous les feuilles.",
+   "treize-comme-avant: Il dort sur le long canapé du café."
+  ]
+ },
+ "feuilles": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: Un gros chat dort sur le banc, sous les feuilles.",
+   "une-plante-pour-lea: L'eau coule sur les feuilles."
+  ]
+ },
+ "air": {
+  "copia": {
+   "g": "air (l'air)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "a-toi-la-boule: L'air du matin est froid.",
+   "une-plante-pour-lea: Le chauffage est éteint, et l'air est tiède."
+  ]
+ },
+ "froid": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: L'air du matin est froid.",
+   "la-ligne-coupe-apres-hugo: Le vent est froid, et Léa est seule.",
+   "l-annonce-du-couloir: Le couloir est froid."
+  ]
+ },
+ "placette": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: La placette est tranquille, mais sale.",
+   "clara-tient-la-boule: Clara trouve la placette jolie.",
+   "une-boule-sous-le-platane: Elle a un café sur la placette."
+  ]
+ },
+ "tranquille": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: La placette est tranquille, mais sale.",
+   "des-pas-au-dessus: Tout à coup, c'est tranquille."
+  ]
+ },
+ "balaie": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: Léa balaie les miettes.",
+   "si-je-gagne-tu-restes: Je balaie”, répond Léa."
+  ]
+ },
+ "miettes": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: Léa balaie les miettes."
+  ]
+ },
+ "ramasse": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: Elle ramasse les bouchons et un lampion rouge.",
+   "si-je-gagne-tu-restes: Le perdant ramasse”, dit Léa.",
+   "si-je-gagne-tu-restes: Elle ramasse les boules une à une.",
+   "treize-comme-avant: Hugo ramasse les boules."
+  ]
+ },
+ "bouchons": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: Elle ramasse les bouchons et un lampion rouge."
+  ]
+ },
+ "restes": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: Les restes du gâteau vont à la poubelle.",
+   "si-je-gagne-tu-restes: Si je gagne, tu restes",
+   "si-je-gagne-tu-restes: Léa veut parier: “Si je gagne, tu restes à Marseille.",
+   "si-je-gagne-tu-restes: Tu restes ici, avec moi.”",
+   "la-ligne-coupe-apres-hugo: Elle parle fort: “Hugo, tu restes ici, avec moi.”"
+  ]
+ },
+ "vont": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: Les restes du gâteau vont à la poubelle.",
+   "l-annonce-du-couloir: Les meubles de Hugo vont à la cave, dessous.",
+   "des-pas-au-dessus: Les pas vont ici, puis ailleurs."
+  ]
+ },
+ "poubelle": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: Les restes du gâteau vont à la poubelle."
+  ]
+ },
+ "réveillé": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: Hugo arrive, pas encore réveillé."
+  ]
+ },
+ "balai": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: Il prend un balai."
+  ]
+ },
+ "déchire": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: Il déchire doucement le papier."
+  ]
+ },
+ "doucement": {
+  "copia": {
+   "g": "slowly and without noise (doucement)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "a-toi-la-boule: Il déchire doucement le papier.",
+   "a-samedi-hugo: Hugo parle doucement à Léa.",
+   "une-boule-sous-le-platane: Hugo parle doucement.",
+   "l-annonce-du-couloir: Léa touche doucement la poignée de la porte de Hugo.",
+   "une-plante-pour-lea: Léa verse l'eau doucement."
+  ]
+ },
+ "partage": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: “Alors, on partage”, répond Léa.",
+   "une-plante-pour-lea: On partage, tous les deux”, sourit Hugo."
+  ]
+ },
+ "cochonnet": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: “À toi la boule, à moi le cochonnet.”",
+   "a-samedi-hugo: Léa serre le cochonnet dans sa poche.",
+   "clara-tient-la-boule: Sa boule roule loin, et elle rate le cochonnet.",
+   "treize-comme-avant: Elle touche le cochonnet.",
+   "une-boule-sous-le-platane: Hugo lance le cochonnet, vite."
+  ]
+ },
+ "joues": {
+  "copia": {
+   "g": "cheeks (la joue)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "a-toi-la-boule: “Tu joues à Paris?”, demande Léa."
+  ]
+ },
+ "retour": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: “Et le retour?”",
+   "treize-comme-avant: “Bon retour, Hugo!”, dit Léa."
+  ]
+ },
+ "jour": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: “Un jour.",
+   "a-samedi-hugo: C'est le premier jour de mars.",
+   "des-pas-au-dessus: “Un jour, Hugo rentre, peut-être”, dit Antoine."
+  ]
+ },
+ "bientôt": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: Bientôt.",
+   "mille-euros-sans-compter: Je te rends tout bientôt.”"
+  ]
+ },
+ "rends": {
+  "copia": null,
+  "frases": [
+   "a-toi-la-boule: Et je te rends ton argent.”",
+   "mille-euros-sans-compter: Je te rends tout bientôt.”",
+   "mille-euros-sans-compter: Je rends dans six mois.”"
+  ]
+ },
+ "rentre": {
+  "copia": {
+   "g": "to go back home (rentrer)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "a-toi-la-boule: À la fin, il rentre chez lui.",
+   "des-pas-au-dessus: “Un jour, Hugo rentre, peut-être”, dit Antoine."
+  ]
+ },
+ "chez": {
+  "copia": {
+   "g": "at the home of (chez)",
+   "t": "preposition",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "a-toi-la-boule: À la fin, il rentre chez lui.",
+   "des-pas-au-dessus: Chez moi, c'est en bas.”"
+  ]
+ },
+ "si": {
+  "copia": {
+   "g": "if; so (si)",
+   "t": "conjunction",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "si-je-gagne-tu-restes: Si je gagne, tu restes",
+   "si-je-gagne-tu-restes: Léa veut parier: “Si je gagne, tu restes à Marseille.",
+   "si-je-gagne-tu-restes: “Et si je gagne?”, demande Hugo.",
+   "l-annonce-du-couloir: Et si je vends ma vieille machine?”",
+   "deux-carreaux-pour-hugo: “Si tu rates, tu paies les cafés”, propose Hugo."
+  ]
+ },
+ "gagne": {
+  "copia": null,
+  "frases": [
+   "si-je-gagne-tu-restes: Si je gagne, tu restes",
+   "si-je-gagne-tu-restes: Léa veut parier: “Si je gagne, tu restes à Marseille.",
+   "si-je-gagne-tu-restes: “Et si je gagne?”, demande Hugo.",
+   "clara-tient-la-boule: Chaque fois, il gagne.”",
+   "une-boule-sous-le-platane: Hugo gagne toujours, et Léa perd toujours.",
+   "une-boule-sous-le-platane: Je gagne”, dit Léa."
+  ]
+ },
+ "ciel": {
+  "copia": {
+   "g": "sky (le ciel)",
+   "t": "noun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "si-je-gagne-tu-restes: Le ciel est rouge au-dessus du Panier."
+  ]
+ },
+ "au-dessus": {
+  "copia": null,
+  "frases": [
+   "si-je-gagne-tu-restes: Le ciel est rouge au-dessus du Panier.",
+   "une-boule-sous-le-platane: Hugo, un ami de Léa, habite au-dessus.",
+   "des-pas-au-dessus: Des pas au-dessus",
+   "des-pas-au-dessus: Au-dessus du café, on entend des pas."
+  ]
+ },
+ "gravier": {
+  "copia": null,
+  "frases": [
+   "si-je-gagne-tu-restes: Le gravier est encore chaud."
+  ]
+ },
+ "dessine": {
+  "copia": null,
+  "frases": [
+   "si-je-gagne-tu-restes: Hugo dessine un rond avec la craie."
+  ]
+ },
+ "rond": {
+  "copia": null,
+  "frases": [
+   "si-je-gagne-tu-restes: Hugo dessine un rond avec la craie."
+  ]
+ },
+ "craie": {
+  "copia": null,
+  "frases": [
+   "si-je-gagne-tu-restes: Hugo dessine un rond avec la craie."
+  ]
+ },
+ "septembre": {
+  "copia": {
+   "g": "September (septembre)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "si-je-gagne-tu-restes: C'est la dernière partie de septembre."
+  ]
+ },
+ "sort": {
+  "copia": {
+   "g": "to go out of a place (sortir)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "si-je-gagne-tu-restes: Léa sort les boules de son sac.",
+   "a-samedi-hugo: Une femme sort d'un taxi, avec son chien."
+  ]
+ },
+ "boules": {
+  "copia": null,
+  "frases": [
+   "si-je-gagne-tu-restes: Léa sort les boules de son sac.",
+   "si-je-gagne-tu-restes: Elle ramasse les boules une à une.",
+   "treize-comme-avant: Hugo ramasse les boules.",
+   "une-boule-sous-le-platane: Les boules attendent sur le banc, sous le platane."
+  ]
+ },
+ "nettoie": {
+  "copia": null,
+  "frases": [
+   "si-je-gagne-tu-restes: Elle les nettoie avec un chiffon."
+  ]
+ },
+ "chiffon": {
+  "copia": null,
+  "frases": [
+   "si-je-gagne-tu-restes: Elle les nettoie avec un chiffon."
+  ]
+ },
+ "parier": {
+  "copia": null,
+  "frases": [
+   "si-je-gagne-tu-restes: Léa veut parier: “Si je gagne, tu restes à Marseille."
+  ]
+ },
+ "marseille": {
+  "copia": null,
+  "frases": [
+   "si-je-gagne-tu-restes: Léa veut parier: “Si je gagne, tu restes à Marseille.",
+   "une-boule-sous-le-platane: Léa est une jeune femme de Marseille.",
+   "une-boule-sous-le-platane: Je quitte Marseille.”"
+  ]
+ },
+ "jamais": {
+  "copia": {
+   "g": "never (jamais)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "si-je-gagne-tu-restes: Il ne dit jamais non à Léa.",
+   "le-fauteuil-descend: Je ne suis jamais fatiguée”, rit Léa."
+  ]
+ },
+ "pars": {
+  "copia": null,
+  "frases": [
+   "si-je-gagne-tu-restes: “Tu pars en mars.",
+   "une-boule-sous-le-platane: “Léa, je pars à Paris en mars.",
+   "deux-carreaux-pour-hugo: “Je pars en mars”, explique Hugo."
+  ]
+ },
+ "plaisir": {
+  "copia": null,
+  "frases": [
+   "si-je-gagne-tu-restes: “Avec plaisir”, dit Hugo.",
+   "clara-tient-la-boule: “Avec plaisir!”"
+  ]
+ },
+ "espère": {
+  "copia": null,
+  "frases": [
+   "si-je-gagne-tu-restes: Léa espère, mais ce soir, il joue bien.",
+   "la-ligne-coupe-apres-hugo: Léa espère encore."
+  ]
+ },
+ "joue": {
+  "copia": {
+   "g": "to make music with an instrument (jouer)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "si-je-gagne-tu-restes: Léa espère, mais ce soir, il joue bien.",
+   "clara-tient-la-boule: Chaque dimanche, Léa joue à la pétanque, seule maintenant.",
+   "treize-comme-avant: “On joue en treize points.",
+   "treize-comme-avant: Il lui fait la bise, sur la joue.",
+   "une-boule-sous-le-platane: Hugo joue mal, et sa boule part loin.",
+   "deux-carreaux-pour-hugo: “Je joue avec toi, pas seule”, dit Léa."
+  ]
+ },
+ "lampadaire": {
+  "copia": null,
+  "frases": [
+   "si-je-gagne-tu-restes: Sous le lampadaire, il mesure avec une ficelle."
+  ]
+ },
+ "mesure": {
+  "copia": null,
+  "frases": [
+   "si-je-gagne-tu-restes: Sous le lampadaire, il mesure avec une ficelle."
+  ]
+ },
+ "ficelle": {
+  "copia": null,
+  "frases": [
+   "si-je-gagne-tu-restes: Sous le lampadaire, il mesure avec une ficelle."
+  ]
+ },
+ "ma": {
+  "copia": {
+   "g": "my, female (ma)",
+   "t": "determiner",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "si-je-gagne-tu-restes: “Ma boule est plus près”, dit Hugo.",
+   "a-samedi-hugo: “Samedi, j'ai ma boule.”",
+   "l-annonce-du-couloir: Et si je vends ma vieille machine?”"
+  ]
+ },
+ "pari": {
+  "copia": null,
+  "frases": [
+   "si-je-gagne-tu-restes: Léa n'oublie pas le pari.",
+   "deux-carreaux-pour-hugo: Hugo fait un pari."
+  ]
+ },
+ "compter": {
+  "copia": null,
+  "frases": [
+   "mille-euros-sans-compter: Mille euros sans compter"
+  ]
+ },
+ "assez": {
+  "copia": {
+   "g": "as much as you need (assez)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "mille-euros-sans-compter: Hugo n'a pas assez d'argent.",
+   "mille-euros-sans-compter: C'est juste assez."
+  ]
+ },
+ "frigo": {
+  "copia": null,
+  "frases": [
+   "mille-euros-sans-compter: Près du frigo, le vieux percolateur est cassé."
+  ]
+ },
+ "percolateur": {
+  "copia": null,
+  "frases": [
+   "mille-euros-sans-compter: Près du frigo, le vieux percolateur est cassé.",
+   "mille-euros-sans-compter: Léa entend le bruit du vieux percolateur.",
+   "mille-euros-sans-compter: Léa n'achète pas de percolateur neuf."
+  ]
+ },
+ "cassé": {
+  "copia": null,
+  "frases": [
+   "mille-euros-sans-compter: Près du frigo, le vieux percolateur est cassé."
+  ]
+ },
+ "nouvelle": {
+  "copia": {
+   "g": "new, female (nouveau)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "mille-euros-sans-compter: Léa garde son argent pour une nouvelle machine.",
+   "a-samedi-hugo: Clara est une nouvelle locataire, en manteau jaune.",
+   "le-fauteuil-descend: Chloé, une nouvelle voisine, a une petite camionnette.",
+   "des-pas-au-dessus: Elle laisse un mot: “Pour la nouvelle voisine, avec un café."
+  ]
+ },
+ "machine": {
+  "copia": null,
+  "frases": [
+   "mille-euros-sans-compter: Léa garde son argent pour une nouvelle machine.",
+   "l-annonce-du-couloir: Et si je vends ma vieille machine?”"
+  ]
+ },
+ "juste": {
+  "copia": {
+   "g": "in tune (juste); just, only (juste)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "mille-euros-sans-compter: C'est juste assez.",
+   "la-ligne-coupe-apres-hugo: Juste bonjour”, répond Léa."
+  ]
+ },
+ "prêter": {
+  "copia": null,
+  "frases": [
+   "mille-euros-sans-compter: Ensuite, il dit: “Léa, tu peux me prêter de l'argent?"
+  ]
+ },
+ "avant": {
+  "copia": {
+   "g": "before (avant)",
+   "t": "preposition",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "mille-euros-sans-compter: “Le loyer commence avant mon départ.”",
+   "treize-comme-avant: Treize, comme avant",
+   "treize-comme-avant: “Une partie, comme avant?”, demande Hugo.",
+   "la-ligne-coupe-apres-hugo: Elle veut dire une chose avant son départ.",
+   "deux-carreaux-pour-hugo: “Tous les jours avant mars”, répond Hugo.",
+   "une-plante-pour-lea: “Mais ce n'est plus comme avant.”"
+  ]
+ },
+ "stylo": {
+  "copia": null,
+  "frases": [
+   "mille-euros-sans-compter: Hugo prend un stylo."
+  ]
+ },
+ "quitte": {
+  "copia": null,
+  "frases": [
+   "mille-euros-sans-compter: Hugo quitte le café.",
+   "une-boule-sous-le-platane: Je quitte Marseille.”"
+  ]
+ },
+ "réveil": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: Ce matin, le réveil sonne tôt."
+  ]
+ },
+ "sonne": {
+  "copia": {
+   "g": "to make a ringing sound to call you (sonner)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "a-samedi-hugo: Ce matin, le réveil sonne tôt.",
+   "a-samedi-hugo: Le klaxon sonne deux fois.",
+   "la-ligne-coupe-apres-hugo: Le portable sonne deux fois.",
+   "la-ligne-coupe-apres-hugo: Le portable sonne encore."
+  ]
+ },
+ "premier": {
+  "copia": {
+   "g": "first (premier)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "a-samedi-hugo: C'est le premier jour de mars."
+  ]
+ },
+ "descend": {
+  "copia": {
+   "g": "goes down (descendre)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "a-samedi-hugo: Hugo descend avec une valise lourde.",
+   "clara-tient-la-boule: Clara descend avec son chien.",
+   "le-fauteuil-descend: Le fauteuil descend",
+   "des-pas-au-dessus: Ensuite, Antoine descend.",
+   "des-pas-au-dessus: Puis l'inconnue descend avec un chien."
+  ]
+ },
+ "valise": {
+  "copia": {
+   "g": "suitcase (la valise)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "a-samedi-hugo: Hugo descend avec une valise lourde.",
+   "a-samedi-hugo: Il met la valise dans le coffre."
+  ]
+ },
+ "lourde": {
+  "copia": {
+   "g": "heavy, female (lourd)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "a-samedi-hugo: Hugo descend avec une valise lourde.",
+   "a-samedi-hugo: Elle est lourde!”"
+  ]
+ },
+ "coffre": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: Il met la valise dans le coffre."
+  ]
+ },
+ "prêt": {
+  "copia": {
+   "g": "ready (prêt)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "a-samedi-hugo: “Tu es prêt?”, demande Léa."
+  ]
+ },
+ "femme": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: Une femme sort d'un taxi, avec son chien.",
+   "une-boule-sous-le-platane: Léa est une jeune femme de Marseille.",
+   "des-pas-au-dessus: “C'est une femme sympa."
+  ]
+ },
+ "taxi": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: Une femme sort d'un taxi, avec son chien."
+  ]
+ },
+ "chien": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: Une femme sort d'un taxi, avec son chien.",
+   "clara-tient-la-boule: Clara descend avec son chien.",
+   "des-pas-au-dessus: Puis l'inconnue descend avec un chien.",
+   "des-pas-au-dessus: Le gros chien tire sur sa laisse.",
+   "des-pas-au-dessus: “Il est beau, ce chien”, dit Léa."
+  ]
+ },
+ "locataire": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: Clara est une nouvelle locataire, en manteau jaune.",
+   "l-annonce-du-couloir: “Un locataire paie cent euros de plus.",
+   "l-annonce-du-couloir: Demain, je choisis un locataire.”"
+  ]
+ },
+ "manteau": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: Clara est une nouvelle locataire, en manteau jaune.",
+   "treize-comme-avant: Clara regarde, dans son manteau jaune.",
+   "des-pas-au-dessus: Elle a un manteau jaune et les cheveux bruns."
+  ]
+ },
+ "jaune": {
+  "copia": {
+   "g": "colour of the sun (jaune)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "a-samedi-hugo: Clara est une nouvelle locataire, en manteau jaune.",
+   "treize-comme-avant: Clara regarde, dans son manteau jaune.",
+   "des-pas-au-dessus: Elle a un manteau jaune et les cheveux bruns."
+  ]
+ },
+ "sait": {
+  "copia": {
+   "g": "to have something in your head as a fact (savoir)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "a-samedi-hugo: Léa sait: c'est l'inconnue de l'écharpe.",
+   "l-annonce-du-couloir: Elle sait, mais elle ne dit rien."
+  ]
+ },
+ "inconnue": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: Léa sait: c'est l'inconnue de l'écharpe.",
+   "des-pas-au-dessus: Le matin, Antoine monte avec une inconnue.",
+   "des-pas-au-dessus: Puis l'inconnue descend avec un chien.",
+   "des-pas-au-dessus: Sur la rampe, l'inconnue oublie son écharpe."
+  ]
+ },
+ "écharpe": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: Léa sait: c'est l'inconnue de l'écharpe.",
+   "des-pas-au-dessus: Sur la rampe, l'inconnue oublie son écharpe.",
+   "des-pas-au-dessus: Léa monte l'écharpe."
+  ]
+ },
+ "clés": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: “Voilà les clés."
+  ]
+ },
+ "bienvenue": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: Bienvenue!”, dit Hugo à Clara."
+  ]
+ },
+ "peut": {
+  "copia": {
+   "g": "can (pouvoir)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "a-samedi-hugo: Léa ne peut rien dire.",
+   "des-pas-au-dessus: Léa ne peut pas être méchante."
+  ]
+ },
+ "arroses": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: “Tu arroses la plante?”",
+   "une-plante-pour-lea: “Tu l'arroses tous les matins, s'il te plaît?”"
+  ]
+ },
+ "plante": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: “Tu arroses la plante?”",
+   "une-plante-pour-lea: Une plante pour Léa",
+   "une-plante-pour-lea: À la fenêtre, il y a une plante verte.",
+   "une-plante-pour-lea: Léa ne veut pas de plante."
+  ]
+ },
+ "matins": {
+  "copia": {
+   "g": "mornings (le matin)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "a-samedi-hugo: “Tous les matins, je l'arrose.”",
+   "une-plante-pour-lea: “Tu l'arroses tous les matins, s'il te plaît?”"
+  ]
+ },
+ "arrose": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: “Tous les matins, je l'arrose.”",
+   "une-plante-pour-lea: La terre est déjà mouillée, mais Léa arrose encore."
+  ]
+ },
+ "jouer": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: “À samedi, pour jouer?”"
+  ]
+ },
+ "veux": {
+  "copia": {
+   "g": "I want (vouloir)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "a-samedi-hugo: Je ne veux pas pleurer.”",
+   "clara-tient-la-boule: “Tu veux apprendre?”, demande Léa.",
+   "l-annonce-du-couloir: “Je veux l'appartement libre pour Hugo."
+  ]
+ },
+ "pleurer": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: Je ne veux pas pleurer.”"
+  ]
+ },
+ "retient": {
+  "copia": {
+   "g": "to keep something in your head (retenir)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "a-samedi-hugo: Elle retient ses larmes.",
+   "la-ligne-coupe-apres-hugo: Léa ferme les yeux et retient ses larmes."
+  ]
+ },
+ "larmes": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: Elle retient ses larmes.",
+   "la-ligne-coupe-apres-hugo: Léa ferme les yeux et retient ses larmes."
+  ]
+ },
+ "voyage": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: “Bon voyage, Hugo”, dit Léa."
+  ]
+ },
+ "mouchoir": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: Hugo lui donne un mouchoir."
+  ]
+ },
+ "lentement": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: La voiture part lentement.",
+   "le-fauteuil-descend: Elles portent le fauteuil lentement, ensemble."
+  ]
+ },
+ "klaxon": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: Le klaxon sonne deux fois."
+  ]
+ },
+ "poche": {
+  "copia": null,
+  "frases": [
+   "a-samedi-hugo: Léa serre le cochonnet dans sa poche."
+  ]
+ },
+ "tient": {
+  "copia": {
+   "g": "to hold, to keep in one state (tenir)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "clara-tient-la-boule: Clara tient la boule"
+  ]
+ },
+ "dimanche": {
+  "copia": null,
+  "frases": [
+   "clara-tient-la-boule: Chaque dimanche, Léa joue à la pétanque, seule maintenant.",
+   "une-boule-sous-le-platane: Ils jouent à la pétanque chaque dimanche."
+  ]
+ },
+ "pétanque": {
+  "copia": null,
+  "frases": [
+   "clara-tient-la-boule: Chaque dimanche, Léa joue à la pétanque, seule maintenant.",
+   "une-boule-sous-le-platane: Ils jouent à la pétanque chaque dimanche."
+  ]
+ },
+ "printemps": {
+  "copia": null,
+  "frases": [
+   "clara-tient-la-boule: C'est le printemps, et le soleil est chaud."
+  ]
+ },
+ "soleil": {
+  "copia": {
+   "g": "sun (le soleil)",
+   "t": "noun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "clara-tient-la-boule: C'est le printemps, et le soleil est chaud."
+  ]
+ },
+ "poussière": {
+  "copia": null,
+  "frases": [
+   "clara-tient-la-boule: La poussière vole."
+  ]
+ },
+ "vole": {
+  "copia": null,
+  "frases": [
+   "clara-tient-la-boule: La poussière vole."
+  ]
+ },
+ "gourde": {
+  "copia": null,
+  "frases": [
+   "clara-tient-la-boule: Léa pose sa gourde sur le banc.",
+   "clara-tient-la-boule: Clara boit encore un peu à la gourde."
+  ]
+ },
+ "casquette": {
+  "copia": null,
+  "frases": [
+   "clara-tient-la-boule: Clara a une casquette verte et des lunettes."
+  ]
+ },
+ "verte": {
+  "copia": {
+   "g": "green (vert)",
+   "t": "adjective",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "clara-tient-la-boule: Clara a une casquette verte et des lunettes.",
+   "une-plante-pour-lea: À la fenêtre, il y a une plante verte."
+  ]
+ },
+ "lunettes": {
+  "copia": null,
+  "frases": [
+   "clara-tient-la-boule: Clara a une casquette verte et des lunettes."
+  ]
+ },
+ "essayer": {
+  "copia": null,
+  "frases": [
+   "clara-tient-la-boule: “Je peux essayer?”, demande Clara.",
+   "deux-carreaux-pour-hugo: Elle veut essayer."
+  ]
+ },
+ "gentille": {
+  "copia": null,
+  "frases": [
+   "clara-tient-la-boule: Mais Clara est gentille."
+  ]
+ },
+ "apprendre": {
+  "copia": null,
+  "frases": [
+   "clara-tient-la-boule: “Tu veux apprendre?”, demande Léa.",
+   "deux-carreaux-pour-hugo: “Tu dois apprendre à tirer.”"
+  ]
+ },
+ "tiens": {
+  "copia": null,
+  "frases": [
+   "clara-tient-la-boule: “Tu tiens la boule comme ça.",
+   "deux-carreaux-pour-hugo: Tu tiens la boule comme ça.”"
+  ]
+ },
+ "plies": {
+  "copia": null,
+  "frases": [
+   "clara-tient-la-boule: Tu plies les genoux."
+  ]
+ },
+ "genoux": {
+  "copia": null,
+  "frases": [
+   "clara-tient-la-boule: Tu plies les genoux."
+  ]
+ },
+ "baisses": {
+  "copia": null,
+  "frases": [
+   "clara-tient-la-boule: Tu baisses le coude”, explique Léa."
+  ]
+ },
+ "coude": {
+  "copia": null,
+  "frases": [
+   "clara-tient-la-boule: Tu baisses le coude”, explique Léa."
+  ]
+ },
+ "corrige": {
+  "copia": {
+   "g": "to say the right thing after a mistake (corriger)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "clara-tient-la-boule: Elle corrige la main de Clara, comme Hugo."
+  ]
+ },
+ "tirer": {
+  "copia": {
+   "g": "to pull something towards you (tirer)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "clara-tient-la-boule: Clara veut tirer.",
+   "deux-carreaux-pour-hugo: “Tu dois apprendre à tirer.”"
+  ]
+ },
+ "rate": {
+  "copia": {
+   "g": "to miss something you wanted to see (rater)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "clara-tient-la-boule: Sa boule roule loin, et elle rate le cochonnet.",
+   "deux-carreaux-pour-hugo: La boule ne va pas droit, et elle rate.",
+   "deux-carreaux-pour-hugo: Elle tire, et elle rate."
+  ]
+ },
+ "début": {
+  "copia": null,
+  "frases": [
+   "clara-tient-la-boule: “Toujours, au début.”"
+  ]
+ },
+ "bonne": {
+  "copia": null,
+  "frases": [
+   "clara-tient-la-boule: Clara est une bonne élève."
+  ]
+ },
+ "élève": {
+  "copia": null,
+  "frases": [
+   "clara-tient-la-boule: Clara est une bonne élève."
+  ]
+ },
+ "après": {
+  "copia": {
+   "g": "after",
+   "t": "preposition",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "clara-tient-la-boule: Après, Léa sert deux cafés.",
+   "la-ligne-coupe-apres-hugo: La ligne coupe après Hugo",
+   "la-ligne-coupe-apres-hugo: Mais la ligne est coupée après “Hugo”."
+  ]
+ },
+ "trouve": {
+  "copia": {
+   "g": "finds (trouver)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "clara-tient-la-boule: Clara trouve la placette jolie."
+  ]
+ },
+ "jolie": {
+  "copia": null,
+  "frases": [
+   "clara-tient-la-boule: Clara trouve la placette jolie."
+  ]
+ },
+ "avril": {
+  "copia": {
+   "g": "April (avril)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "treize-comme-avant: Un samedi d'avril, Hugo arrive en TGV, heureux."
+  ]
+ },
+ "tgv": {
+  "copia": null,
+  "frases": [
+   "treize-comme-avant: Un samedi d'avril, Hugo arrive en TGV, heureux."
+  ]
+ },
+ "canapé": {
+  "copia": null,
+  "frases": [
+   "treize-comme-avant: Il dort sur le long canapé du café."
+  ]
+ },
+ "vieil": {
+  "copia": null,
+  "frases": [
+   "treize-comme-avant: Il rêve sur un vieil oreiller."
+  ]
+ },
+ "oreiller": {
+  "copia": null,
+  "frases": [
+   "treize-comme-avant: Il rêve sur un vieil oreiller."
+  ]
+ },
+ "baguette": {
+  "copia": {
+   "g": "long thin French bread (la baguette)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "treize-comme-avant: Le café sent la baguette."
+  ]
+ },
+ "petit-déjeuner": {
+  "copia": null,
+  "frases": [
+   "treize-comme-avant: Au petit-déjeuner, Hugo a un pain au chocolat."
+  ]
+ },
+ "pain": {
+  "copia": null,
+  "frases": [
+   "treize-comme-avant: Au petit-déjeuner, Hugo a un pain au chocolat."
+  ]
+ },
+ "chocolat": {
+  "copia": null,
+  "frases": [
+   "treize-comme-avant: Au petit-déjeuner, Hugo a un pain au chocolat."
+  ]
+ },
+ "mange": {
+  "copia": {
+   "g": "to put food in your mouth and swallow (manger)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "treize-comme-avant: Il mange encore un peu."
+  ]
+ },
+ "personne": {
+  "copia": {
+   "g": "not one single person (personne)",
+   "t": "pronoun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "treize-comme-avant: Mais personne ne triche”, dit Léa.",
+   "treize-comme-avant: Personne ne perd exprès."
+  ]
+ },
+ "triche": {
+  "copia": null,
+  "frases": [
+   "treize-comme-avant: Mais personne ne triche”, dit Léa."
+  ]
+ },
+ "points": {
+  "copia": null,
+  "frases": [
+   "treize-comme-avant: “On joue en treize points."
+  ]
+ },
+ "paies": {
+  "copia": null,
+  "frases": [
+   "treize-comme-avant: Tu paies le café?”",
+   "deux-carreaux-pour-hugo: “Si tu rates, tu paies les cafés”, propose Hugo."
+  ]
+ },
+ "tire": {
+  "copia": null,
+  "frases": [
+   "treize-comme-avant: Hugo tire droit.",
+   "deux-carreaux-pour-hugo: Il tire: carreau.",
+   "deux-carreaux-pour-hugo: Elle tire, et elle rate.",
+   "des-pas-au-dessus: Le gros chien tire sur sa laisse."
+  ]
+ },
+ "droit": {
+  "copia": null,
+  "frases": [
+   "treize-comme-avant: Hugo tire droit.",
+   "deux-carreaux-pour-hugo: La boule ne va pas droit, et elle rate."
+  ]
+ },
+ "lance": {
+  "copia": null,
+  "frases": [
+   "treize-comme-avant: Léa lance.",
+   "une-boule-sous-le-platane: Hugo lance le cochonnet, vite."
+  ]
+ },
+ "égalité": {
+  "copia": null,
+  "frases": [
+   "treize-comme-avant: Douze à douze: c'est l'égalité."
+  ]
+ },
+ "revanche": {
+  "copia": null,
+  "frases": [
+   "treize-comme-avant: “Et la revanche?”, rit Hugo."
+  ]
+ },
+ "touche": {
+  "copia": {
+   "g": "touches (toucher)",
+   "t": "verb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "treize-comme-avant: Elle touche le cochonnet.",
+   "l-annonce-du-couloir: Léa touche doucement la poignée de la porte de Hugo."
+  ]
+ },
+ "perd": {
+  "copia": {
+   "g": "loses (perdre)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "treize-comme-avant: Personne ne perd exprès.",
+   "une-boule-sous-le-platane: Hugo gagne toujours, et Léa perd toujours."
+  ]
+ },
+ "lève": {
+  "copia": null,
+  "frases": [
+   "treize-comme-avant: Léa lève les bras."
+  ]
+ },
+ "bras": {
+  "copia": null,
+  "frases": [
+   "treize-comme-avant: Léa lève les bras."
+  ]
+ },
+ "bise": {
+  "copia": null,
+  "frases": [
+   "treize-comme-avant: Il lui fait la bise, sur la joue."
+  ]
+ },
+ "prochaine": {
+  "copia": null,
+  "frases": [
+   "treize-comme-avant: “La prochaine fois, c'est moi”, sourit Hugo."
+  ]
+ },
+ "attendent": {
+  "copia": {
+   "g": "they wait (attendre)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-boule-sous-le-platane: Les boules attendent sur le banc, sous le platane."
+  ]
+ },
+ "jeune": {
+  "copia": {
+   "g": "young, not old at all (jeune)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-boule-sous-le-platane: Léa est une jeune femme de Marseille."
+  ]
+ },
+ "jouent": {
+  "copia": null,
+  "frases": [
+   "une-boule-sous-le-platane: Ils jouent à la pétanque chaque dimanche."
+  ]
+ },
+ "froide": {
+  "copia": {
+   "g": "cold (froid)",
+   "t": "adjective",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "une-boule-sous-le-platane: Léa prend sa boule ronde et froide.",
+   "le-fauteuil-descend: La rampe est froide sous la main."
+  ]
+ },
+ "très": {
+  "copia": {
+   "g": "very (très)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-boule-sous-le-platane: “Très près."
+  ]
+ },
+ "désolé": {
+  "copia": null,
+  "frases": [
+   "une-boule-sous-le-platane: Je suis désolé.”",
+   "l-annonce-du-couloir: “Désolé, Léa”, répond Antoine."
+  ]
+ },
+ "ligne": {
+  "copia": null,
+  "frases": [
+   "la-ligne-coupe-apres-hugo: La ligne coupe après Hugo",
+   "la-ligne-coupe-apres-hugo: Mais la ligne est coupée après “Hugo”."
+  ]
+ },
+ "toit": {
+  "copia": {
+   "g": "roof (le toit)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "la-ligne-coupe-apres-hugo: Sur le toit, le linge sèche entre les cheminées."
+  ]
+ },
+ "linge": {
+  "copia": null,
+  "frases": [
+   "la-ligne-coupe-apres-hugo: Sur le toit, le linge sèche entre les cheminées."
+  ]
+ },
+ "cheminées": {
+  "copia": null,
+  "frases": [
+   "la-ligne-coupe-apres-hugo: Sur le toit, le linge sèche entre les cheminées."
+  ]
+ },
+ "réseau": {
+  "copia": null,
+  "frases": [
+   "la-ligne-coupe-apres-hugo: En bas, le café n'a pas de réseau."
+  ]
+ },
+ "vent": {
+  "copia": {
+   "g": "wind (le vent)",
+   "t": "noun",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "la-ligne-coupe-apres-hugo: Le vent est froid, et Léa est seule."
+  ]
+ },
+ "allô": {
+  "copia": null,
+  "frases": [
+   "la-ligne-coupe-apres-hugo: “Allô, Léa?”, répond Hugo.",
+   "la-ligne-coupe-apres-hugo: “Allô?"
+  ]
+ },
+ "haut-parleur": {
+  "copia": null,
+  "frases": [
+   "la-ligne-coupe-apres-hugo: Léa met le haut-parleur."
+  ]
+ },
+ "dois": {
+  "copia": {
+   "g": "must, have to (devoir)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "la-ligne-coupe-apres-hugo: Je dois commencer en mars”, dit Hugo.",
+   "deux-carreaux-pour-hugo: “Tu dois apprendre à tirer.”"
+  ]
+ },
+ "commencer": {
+  "copia": null,
+  "frases": [
+   "la-ligne-coupe-apres-hugo: Je dois commencer en mars”, dit Hugo."
+  ]
+ },
+ "voix": {
+  "copia": {
+   "g": "sound you make when you speak (la voix)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "la-ligne-coupe-apres-hugo: La voix de Hugo est claire."
+  ]
+ },
+ "chose": {
+  "copia": null,
+  "frases": [
+   "la-ligne-coupe-apres-hugo: Elle veut dire une chose avant son départ.",
+   "deux-carreaux-pour-hugo: Hugo veut montrer quelque chose à Léa."
+  ]
+ },
+ "coupée": {
+  "copia": null,
+  "frases": [
+   "la-ligne-coupe-apres-hugo: Mais la ligne est coupée après “Hugo”."
+  ]
+ },
+ "rappelle": {
+  "copia": null,
+  "frases": [
+   "la-ligne-coupe-apres-hugo: Hugo rappelle."
+  ]
+ },
+ "demandes": {
+  "copia": null,
+  "frases": [
+   "la-ligne-coupe-apres-hugo: Tu demandes quoi?”"
+  ]
+ },
+ "yeux": {
+  "copia": null,
+  "frases": [
+   "la-ligne-coupe-apres-hugo: Léa ferme les yeux et retient ses larmes."
+  ]
+ },
+ "bonjour": {
+  "copia": null,
+  "frases": [
+   "la-ligne-coupe-apres-hugo: Juste bonjour”, répond Léa."
+  ]
+ },
+ "cœur": {
+  "copia": null,
+  "frases": [
+   "la-ligne-coupe-apres-hugo: Elle serre le portable près du cœur."
+  ]
+ },
+ "fauteuil": {
+  "copia": null,
+  "frases": [
+   "le-fauteuil-descend: Le fauteuil descend",
+   "le-fauteuil-descend: Le fauteuil de Hugo, là-haut, est large et lourd.",
+   "le-fauteuil-descend: Il veut offrir le fauteuil à Léa.",
+   "le-fauteuil-descend: Elles portent le fauteuil lentement, ensemble.",
+   "le-fauteuil-descend: Le fauteuil prend le coin de Léa.",
+   "le-fauteuil-descend: Léa est dans le fauteuil."
+  ]
+ },
+ "large": {
+  "copia": null,
+  "frases": [
+   "le-fauteuil-descend: Le fauteuil de Hugo, là-haut, est large et lourd."
+  ]
+ },
+ "lourd": {
+  "copia": {
+   "g": "heavy (lourd)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-fauteuil-descend: Le fauteuil de Hugo, là-haut, est large et lourd."
+  ]
+ },
+ "déménage": {
+  "copia": null,
+  "frases": [
+   "le-fauteuil-descend: Hugo déménage en mars.",
+   "l-annonce-du-couloir: Hugo déménage en mars."
+  ]
+ },
+ "porter": {
+  "copia": null,
+  "frases": [
+   "le-fauteuil-descend: Léa veut le porter en bas, au café."
+  ]
+ },
+ "escalier": {
+  "copia": {
+   "g": "steps you climb to go up (l'escalier)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-fauteuil-descend: Mais l'escalier est étroit.",
+   "le-fauteuil-descend: L'escalier tourne”, dit Chloé."
+  ]
+ },
+ "voisine": {
+  "copia": {
+   "g": "next to yours, very close (voisin)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-fauteuil-descend: Chloé, une nouvelle voisine, a une petite camionnette.",
+   "des-pas-au-dessus: Elle laisse un mot: “Pour la nouvelle voisine, avec un café."
+  ]
+ },
+ "petite": {
+  "copia": {
+   "g": "small, little (petit)",
+   "t": "adjective",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "le-fauteuil-descend: Chloé, une nouvelle voisine, a une petite camionnette."
+  ]
+ },
+ "camionnette": {
+  "copia": null,
+  "frases": [
+   "le-fauteuil-descend: Chloé, une nouvelle voisine, a une petite camionnette."
+  ]
+ },
+ "corde": {
+  "copia": null,
+  "frases": [
+   "le-fauteuil-descend: Elle a aussi une corde."
+  ]
+ },
+ "libre": {
+  "copia": {
+   "g": "free, with nobody in it (libre)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-fauteuil-descend: Je suis libre”, dit Chloé.",
+   "l-annonce-du-couloir: “Je veux l'appartement libre pour Hugo."
+  ]
+ },
+ "contre": {
+  "copia": null,
+  "frases": [
+   "le-fauteuil-descend: Un service contre un café.”"
+  ]
+ },
+ "elles": {
+  "copia": {
+   "g": "they, women (elles)",
+   "t": "pronoun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-fauteuil-descend: Elles portent le fauteuil lentement, ensemble."
+  ]
+ },
+ "portent": {
+  "copia": null,
+  "frases": [
+   "le-fauteuil-descend: Elles portent le fauteuil lentement, ensemble."
+  ]
+ },
+ "ensemble": {
+  "copia": {
+   "g": "with each other, not alone (ensemble)",
+   "t": "adverb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-fauteuil-descend: Elles portent le fauteuil lentement, ensemble.",
+   "une-plante-pour-lea: Hugo et Léa vident la cuisine ensemble."
+  ]
+ },
+ "rampe": {
+  "copia": null,
+  "frases": [
+   "le-fauteuil-descend: La rampe est froide sous la main.",
+   "des-pas-au-dessus: Sur la rampe, l'inconnue oublie son écharpe."
+  ]
+ },
+ "dos": {
+  "copia": null,
+  "frases": [
+   "le-fauteuil-descend: Léa a mal au dos."
+  ]
+ },
+ "sûre": {
+  "copia": null,
+  "frases": [
+   "le-fauteuil-descend: “Tu es sûre?"
+  ]
+ },
+ "fatiguée": {
+  "copia": null,
+  "frases": [
+   "le-fauteuil-descend: Je ne suis jamais fatiguée”, rit Léa."
+  ]
+ },
+ "coin": {
+  "copia": {
+   "g": "place where two walls meet (le coin)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-fauteuil-descend: Le fauteuil prend le coin de Léa."
+  ]
+ },
+ "tapis": {
+  "copia": {
+   "g": "belt at a till; rug (le tapis)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-fauteuil-descend: Le tapis est à côté."
+  ]
+ },
+ "jours": {
+  "copia": null,
+  "frases": [
+   "le-fauteuil-descend: Un café tous les jours, jusqu'en mars”, répond Chloé.",
+   "deux-carreaux-pour-hugo: “Tous les jours avant mars”, répond Hugo."
+  ]
+ },
+ "jusqu": {
+  "copia": {
+   "g": "until (jusqu'à)",
+   "t": "preposition",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "le-fauteuil-descend: Un café tous les jours, jusqu'en mars”, répond Chloé."
+  ]
+ },
+ "coussin": {
+  "copia": null,
+  "frases": [
+   "le-fauteuil-descend: Le coussin sent Hugo."
+  ]
+ },
+ "annonce": {
+  "copia": null,
+  "frases": [
+   "l-annonce-du-couloir: L'annonce du couloir",
+   "l-annonce-du-couloir: Aujourd'hui, il a une annonce: “À louer.”",
+   "l-annonce-du-couloir: Léa lit l'annonce sur la boîte aux lettres.",
+   "deux-carreaux-pour-hugo: “Encore une fois”, annonce Léa."
+  ]
+ },
+ "couloir": {
+  "copia": {
+   "g": "corridor (le couloir)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "l-annonce-du-couloir: L'annonce du couloir",
+   "l-annonce-du-couloir: Le couloir est froid."
+  ]
+ },
+ "propriétaire": {
+  "copia": null,
+  "frases": [
+   "l-annonce-du-couloir: Antoine, le propriétaire de l'immeuble, entre dans le café."
+  ]
+ },
+ "immeuble": {
+  "copia": {
+   "g": "block of flats (l'immeuble)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "l-annonce-du-couloir: Antoine, le propriétaire de l'immeuble, entre dans le café."
+  ]
+ },
+ "habitude": {
+  "copia": null,
+  "frases": [
+   "l-annonce-du-couloir: D'habitude, il vient le lundi, tard."
+  ]
+ },
+ "lundi": {
+  "copia": {
+   "g": "first working day of the week (le lundi)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "l-annonce-du-couloir: D'habitude, il vient le lundi, tard."
+  ]
+ },
+ "louer": {
+  "copia": null,
+  "frases": [
+   "l-annonce-du-couloir: Aujourd'hui, il a une annonce: “À louer.”",
+   "l-annonce-du-couloir: Antoine veut louer l'appartement tout de suite.",
+   "des-pas-au-dessus: Elle veut louer”, explique Antoine."
+  ]
+ },
+ "haut": {
+  "copia": {
+   "g": "high, up (haut)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "l-annonce-du-couloir: L'appartement en haut est déjà presque vide.",
+   "l-annonce-du-couloir: En haut, les volets sont fermés.",
+   "une-plante-pour-lea: Elle veut Hugo, en haut."
+  ]
+ },
+ "suite": {
+  "copia": {
+   "g": "right away (tout de suite)",
+   "t": "phrase",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "l-annonce-du-couloir: Antoine veut louer l'appartement tout de suite."
+  ]
+ },
+ "vends": {
+  "copia": null,
+  "frases": [
+   "l-annonce-du-couloir: Et si je vends ma vieille machine?”"
+  ]
+ },
+ "vieille": {
+  "copia": {
+   "g": "old, female (vieux)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "l-annonce-du-couloir: Et si je vends ma vieille machine?”",
+   "une-plante-pour-lea: Au plafond, Hugo allume une vieille ampoule."
+  ]
+ },
+ "méchant": {
+  "copia": null,
+  "frases": [
+   "l-annonce-du-couloir: “Je ne suis pas méchant."
+  ]
+ },
+ "demain": {
+  "copia": {
+   "g": "tomorrow",
+   "t": "adverb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "l-annonce-du-couloir: Demain, je choisis un locataire.”",
+   "deux-carreaux-pour-hugo: Mais demain, tu me montres.”"
+  ]
+ },
+ "aux": {
+  "copia": null,
+  "frases": [
+   "l-annonce-du-couloir: Léa lit l'annonce sur la boîte aux lettres."
+  ]
+ },
+ "lettres": {
+  "copia": null,
+  "frases": [
+   "l-annonce-du-couloir: Léa lit l'annonce sur la boîte aux lettres."
+  ]
+ },
+ "meubles": {
+  "copia": null,
+  "frases": [
+   "l-annonce-du-couloir: Les meubles de Hugo vont à la cave, dessous.",
+   "une-plante-pour-lea: L'appartement est vide, sans meubles."
+  ]
+ },
+ "cave": {
+  "copia": null,
+  "frases": [
+   "l-annonce-du-couloir: Les meubles de Hugo vont à la cave, dessous."
+  ]
+ },
+ "poignée": {
+  "copia": null,
+  "frases": [
+   "l-annonce-du-couloir: Léa touche doucement la poignée de la porte de Hugo."
+  ]
+ },
+ "volets": {
+  "copia": null,
+  "frases": [
+   "l-annonce-du-couloir: En haut, les volets sont fermés.",
+   "l-annonce-du-couloir: Léa regarde les volets."
+  ]
+ },
+ "fermés": {
+  "copia": null,
+  "frases": [
+   "l-annonce-du-couloir: En haut, les volets sont fermés."
+  ]
+ },
+ "carreaux": {
+  "copia": null,
+  "frases": [
+   "deux-carreaux-pour-hugo: Deux carreaux pour Hugo"
+  ]
+ },
+ "tablier": {
+  "copia": null,
+  "frases": [
+   "deux-carreaux-pour-hugo: Elle porte son tablier, et le mistral arrive."
+  ]
+ },
+ "mistral": {
+  "copia": null,
+  "frases": [
+   "deux-carreaux-pour-hugo: Elle porte son tablier, et le mistral arrive."
+  ]
+ },
+ "montrer": {
+  "copia": null,
+  "frases": [
+   "deux-carreaux-pour-hugo: Hugo veut montrer quelque chose à Léa."
+  ]
+ },
+ "quelque": {
+  "copia": {
+   "g": "some, any (quelque); something (quelque chose)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "deux-carreaux-pour-hugo: Hugo veut montrer quelque chose à Léa."
+  ]
+ },
+ "tape": {
+  "copia": {
+   "g": "types, taps (taper)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "deux-carreaux-pour-hugo: La boule de Hugo tape l'autre boule."
+  ]
+ },
+ "place": {
+  "copia": {
+   "g": "seat on a tram (la place); the spot you keep for somebody (la place)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "deux-carreaux-pour-hugo: Sa boule reste à sa place: c'est un carreau.",
+   "des-pas-au-dessus: Quelqu'un prend la place de Hugo."
+  ]
+ },
+ "carreau": {
+  "copia": null,
+  "frases": [
+   "deux-carreaux-pour-hugo: Sa boule reste à sa place: c'est un carreau.",
+   "deux-carreaux-pour-hugo: Il tire: carreau.",
+   "deux-carreaux-pour-hugo: Encore: carreau."
+  ]
+ },
+ "rates": {
+  "copia": null,
+  "frases": [
+   "deux-carreaux-pour-hugo: “Si tu rates, tu paies les cafés”, propose Hugo."
+  ]
+ },
+ "propose": {
+  "copia": {
+   "g": "to offer something to somebody (proposer)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "deux-carreaux-pour-hugo: “Si tu rates, tu paies les cafés”, propose Hugo."
+  ]
+ },
+ "facile": {
+  "copia": null,
+  "frases": [
+   "deux-carreaux-pour-hugo: “C'est facile."
+  ]
+ },
+ "mains": {
+  "copia": {
+   "g": "hands (la main)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "deux-carreaux-pour-hugo: Elle rit, les mains sur la tête."
+  ]
+ },
+ "montres": {
+  "copia": null,
+  "frases": [
+   "deux-carreaux-pour-hugo: Mais demain, tu me montres.”"
+  ]
+ },
+ "restent": {
+  "copia": {
+   "g": "they stay (rester)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "deux-carreaux-pour-hugo: Ils restent à l'ombre tout l'après-midi."
+  ]
+ },
+ "ombre": {
+  "copia": null,
+  "frases": [
+   "deux-carreaux-pour-hugo: Ils restent à l'ombre tout l'après-midi."
+  ]
+ },
+ "vident": {
+  "copia": null,
+  "frases": [
+   "une-plante-pour-lea: Hugo et Léa vident la cuisine ensemble."
+  ]
+ },
+ "cuisine": {
+  "copia": {
+   "g": "room where you cook your food (la cuisine)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-plante-pour-lea: Hugo et Léa vident la cuisine ensemble."
+  ]
+ },
+ "chauffage": {
+  "copia": null,
+  "frases": [
+   "une-plante-pour-lea: Le chauffage est éteint, et l'air est tiède."
+  ]
+ },
+ "plafond": {
+  "copia": null,
+  "frases": [
+   "une-plante-pour-lea: Au plafond, Hugo allume une vieille ampoule.",
+   "des-pas-au-dessus: Léa regarde le plafond."
+  ]
+ },
+ "ampoule": {
+  "copia": null,
+  "frases": [
+   "une-plante-pour-lea: Au plafond, Hugo allume une vieille ampoule."
+  ]
+ },
+ "peint": {
+  "copia": null,
+  "frases": [
+   "une-plante-pour-lea: Hugo peint le dernier mur en blanc."
+  ]
+ },
+ "dernier": {
+  "copia": {
+   "g": "last, final",
+   "t": "adjective",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "une-plante-pour-lea: Hugo peint le dernier mur en blanc."
+  ]
+ },
+ "mur": {
+  "copia": null,
+  "frases": [
+   "une-plante-pour-lea: Hugo peint le dernier mur en blanc."
+  ]
+ },
+ "blanc": {
+  "copia": null,
+  "frases": [
+   "une-plante-pour-lea: Hugo peint le dernier mur en blanc."
+  ]
+ },
+ "fenêtre": {
+  "copia": {
+   "g": "glass opening that lets light into a room (la fenêtre)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-plante-pour-lea: À la fenêtre, il y a une plante verte."
+  ]
+ },
+ "s": {
+  "copia": {
+   "g": "himself, herself (se)",
+   "t": "pronoun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-plante-pour-lea: “Tu l'arroses tous les matins, s'il te plaît?”"
+  ]
+ },
+ "plaît": {
+  "copia": null,
+  "frases": [
+   "une-plante-pour-lea: “Tu l'arroses tous les matins, s'il te plaît?”"
+  ]
+ },
+ "arrosoir": {
+  "copia": null,
+  "frases": [
+   "une-plante-pour-lea: Mais elle prend l'arrosoir."
+  ]
+ },
+ "terre": {
+  "copia": {
+   "g": "ground, floor (la terre)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-plante-pour-lea: La terre est sèche.",
+   "une-plante-pour-lea: La terre est déjà mouillée, mais Léa arrose encore."
+  ]
+ },
+ "vivante": {
+  "copia": null,
+  "frases": [
+   "une-plante-pour-lea: “Elle est vivante, tu vois?"
+  ]
+ },
+ "vois": {
+  "copia": null,
+  "frases": [
+   "une-plante-pour-lea: “Elle est vivante, tu vois?"
+  ]
+ },
+ "verse": {
+  "copia": null,
+  "frases": [
+   "une-plante-pour-lea: Léa verse l'eau doucement."
+  ]
+ },
+ "mouillée": {
+  "copia": {
+   "g": "wet, covered with water (mouillé)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "une-plante-pour-lea: La terre est déjà mouillée, mais Léa arrose encore."
+  ]
+ },
+ "grandit": {
+  "copia": null,
+  "frases": [
+   "une-plante-pour-lea: “Elle grandit petit à petit”, rit Hugo."
+  ]
+ },
+ "parquet": {
+  "copia": null,
+  "frases": [
+   "des-pas-au-dessus: Le parquet est vieux."
+  ]
+ },
+ "voit": {
+  "copia": {
+   "g": "to notice something with your eyes (voir)",
+   "t": "verb",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "des-pas-au-dessus: Là-haut, on ne voit rien."
+  ]
+ },
+ "ailleurs": {
+  "copia": null,
+  "frases": [
+   "des-pas-au-dessus: Les pas vont ici, puis ailleurs."
+  ]
+ },
+ "coup": {
+  "copia": null,
+  "frases": [
+   "des-pas-au-dessus: Tout à coup, c'est tranquille."
+  ]
+ },
+ "quartier": {
+  "copia": {
+   "g": "neighbourhood (le quartier)",
+   "t": "noun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "des-pas-au-dessus: “Elle aime le quartier.”"
+  ]
+ },
+ "peut-être": {
+  "copia": {
+   "g": "maybe, perhaps",
+   "t": "adverb",
+   "de": "french-traveler"
+  },
+  "frases": [
+   "des-pas-au-dessus: “Un jour, Hugo rentre, peut-être”, dit Antoine."
+  ]
+ },
+ "beau": {
+  "copia": {
+   "g": "beautiful (beau)",
+   "t": "adjective",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "des-pas-au-dessus: “Il est beau, ce chien”, dit Léa."
+  ]
+ },
+ "cheveux": {
+  "copia": null,
+  "frases": [
+   "des-pas-au-dessus: Elle a un manteau jaune et les cheveux bruns."
+  ]
+ },
+ "bruns": {
+  "copia": null,
+  "frases": [
+   "des-pas-au-dessus: Elle a un manteau jaune et les cheveux bruns."
+  ]
+ },
+ "salue": {
+  "copia": null,
+  "frases": [
+   "des-pas-au-dessus: Elle salue Léa avec un sourire."
+  ]
+ },
+ "sourire": {
+  "copia": null,
+  "frases": [
+   "des-pas-au-dessus: Elle salue Léa avec un sourire."
+  ]
+ },
+ "être": {
+  "copia": null,
+  "frases": [
+   "des-pas-au-dessus: Léa ne peut pas être méchante."
+  ]
+ },
+ "méchante": {
+  "copia": null,
+  "frases": [
+   "des-pas-au-dessus: Léa ne peut pas être méchante."
+  ]
+ },
+ "quelqu": {
+  "copia": {
+   "g": "somebody (quelqu'un)",
+   "t": "pronoun",
+   "de": "french-expat-lyon"
+  },
+  "frases": [
+   "des-pas-au-dessus: Quelqu'un prend la place de Hugo."
+  ]
+ },
+ "mot": {
+  "copia": null,
+  "frases": [
+   "des-pas-au-dessus: Elle laisse un mot: “Pour la nouvelle voisine, avec un café."
+  ]
+ }
+}
