@@ -3389,11 +3389,16 @@ export default function PracticePage() {
                                   <Volume2 size={12} />
                                 )}
                               </button>
-                              <div className="min-w-0 max-w-full">
-                                <p className="[overflow-wrap:anywhere] text-[clamp(0.85rem,2.4vw,1.9rem)] font-semibold leading-[1.1] tracking-tight">
-                                  {pair.word}
-                                </p>
-                              </div>
+                              {/* px-6 on both sides keeps the text clear of the audio button
+                                  (top-right) and still centred; long words shrink, never split. */}
+                              <FitText
+                                wrap="words"
+                                minPx={12}
+                                boxClassName="px-6"
+                                className="text-[clamp(0.85rem,2.4vw,1.9rem)] font-semibold leading-[1.1] tracking-tight"
+                              >
+                                {pair.word}
+                              </FitText>
                             </div>
 
                             {meaning ? (
