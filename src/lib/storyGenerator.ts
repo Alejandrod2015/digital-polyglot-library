@@ -2,6 +2,7 @@ import OpenAI from "openai";
 import { improveVocabDefinitions } from "@/lib/vocabQuality";
 import { isInvalidMultiwordVocab, normalizeToken } from "@/lib/vocabSelection";
 import { resolveCanonicalVocabEntry } from "@/lib/vocabWordNormalization";
+import { countSpeakerLines, extractSpeakerNames, paragraphIsTurn } from "@/lib/storyTurns";
 import {
   HARD_STORY_WORDS_MAX,
   MIN_STORY_WORDS,
@@ -120,27 +121,11 @@ export function extractFirstSentence(text: string | null | undefined): string {
   return (sentenceMatch ? sentenceMatch[0] : working).trim();
 }
 
-function extractSpeakerNames(text: string): string[] {
-  const speakerRegex = /^([\p{Lu}][\p{L}\p{M}.'\-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'\-]*){0,3}):\s+\S.*$/gmu;
-  const speakers = new Set<string>();
-  let match: RegExpExecArray | null = speakerRegex.exec(text);
-  while (match) {
-    const name = match[1]?.trim();
-    if (name) speakers.add(name);
-    match = speakerRegex.exec(text);
-  }
-  return [...speakers];
-}
-
-function countSpeakerLines(text: string): number {
-  const speakerRegex = /^[\p{Lu}][\p{L}\p{M}.'\-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'\-]*){0,3}:\s+\S.*$/gmu;
-  return [...text.matchAll(speakerRegex)].length;
-}
-
+// Turnos "Hablante: linea": el mismo detector que el validador canonico.
 function hasNarratorOpeningParagraph(text: string): boolean {
   const firstBlock = text.split(/\n{2,}/).map((block) => block.trim()).find(Boolean) ?? "";
   if (!firstBlock) return false;
-  if (/^[\p{Lu}][\p{L}\p{M}.'\-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'\-]*){0,3}:\s+/u.test(firstBlock)) return false;
+  if (paragraphIsTurn(firstBlock)) return false;
   return /[\p{L}].+[.!?]/u.test(firstBlock);
 }
 

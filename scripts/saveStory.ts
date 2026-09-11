@@ -49,6 +49,7 @@ import { variantPool } from "@domain/languageVariant";
 import { PrismaClient } from "../src/generated/prisma";
 import { validateGeneratedStory, extractStoryMotifs, extractProperNouns, type ExistingStorySummary } from "@/lib/validateGeneratedStory";
 import { renderedParagraphs } from "@/lib/readerParagraphs";
+import { classifyStoryFormat, extractSpeakerNames } from "@/lib/storyTurns";
 import { validateJourneyStories, type JourneyStoryInput, type JourneyCheck } from "@/lib/validateJourneyStories";
 import { candadoCierrePrevio, type HistoriaCierre } from "./temaCierres";
 import { empeora } from "./journeyRatchet";
@@ -56,11 +57,7 @@ import { empeora } from "./journeyRatchet";
 /** Build the cross-story summary the canonical validator needs to run its
  *  repetition / rotation / opening-rhythm / motif checks against siblings. */
 function summarize(d: any): ExistingStorySummary {
-  const names = new Set<string>();
-  for (const line of String(d.text).split(/\r?\n/)) {
-    const m = line.match(/^([A-ZÁÉÍÓÚÑ][a-záéíóúñü]+):\s/);
-    if (m) names.add(m[1]);
-  }
+  const names = new Set<string>(extractSpeakerNames(String(d.text)));
   // Las líneas `Nombre: …` solo existen en el formato diálogo. En prosa
   // narrada el reparto vive dentro del párrafo, así que hay que sacarlo del
   // cuerpo con el MISMO extractor que usa el validador; si no, cada historia
@@ -628,6 +625,7 @@ function slugify(s: string): string {
     const payload = { title: d.title, synopsis: d.synopsis, text: d.text, vocab: d.vocab, arcType: d.arcType };
     const r = await validateGeneratedStory(payload as any, {
       language: ctx.language, level: ctx.level, variant: ctx.variant, topic: d.topic,
+      storyStyle: narrator ? "narrator" : undefined,
       journeyTitles: allTitles.filter((t) => t !== d.title),
       existing: [...priorSummaries],
       taughtElsewhere,
@@ -722,7 +720,13 @@ function slugify(s: string): string {
   // (74%). El suelo se pone en 50%, muy por debajo del peor bueno, para que
   // solo salte ante un lote mudo de verdad. Una historia suelta sin voz sigue
   // siendo legítima (el validador la marca como `warn`, no como fallo).
-  const narradas = results.filter((r) => !/^\s*[A-ZÁÉÍÓÚÑÜ][\wáéíóúñçüö' ]{1,20}:\s/m.test(r.d.text ?? ""));
+  // Narrada es lo que no es multivoz completa, con el MISMO criterio que el
+  // validador (src/lib/storyTurns.ts). La regex de antes tomaba por turno
+  // cualquier arranque corto con dos puntos ("La cantina se llenó:") y sacaba
+  // del lote historias narradas.
+  const narradas = results.filter(
+    (r) => !classifyStoryFormat(String(r.d.text ?? ""), narrator ? "narrator" : undefined).dialogada
+  );
   if (narradas.length >= 3) {
     const conVoz = narradas.filter((r) => /[«»“”""„"]|(^|\n)\s*[-—–]\s+\S/.test(r.d.text ?? ""));
     const pct = Math.round((conVoz.length / narradas.length) * 100);

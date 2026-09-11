@@ -9,6 +9,7 @@ import {
   type ExistingStorySummary,
   type StoryPayload,
 } from "@/lib/validateGeneratedStory";
+import { extractSpeakerNames } from "@/lib/storyTurns";
 import { persistAgentRun } from "@/lib/agentPersistence";
 import { getIsoLanguageTag } from "@/lib/languageFlags";
 
@@ -54,14 +55,6 @@ function slugify(s: string): string {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "")
     .slice(0, 80);
-}
-
-function extractSpeakerNames(text: string): string[] {
-  const re = /^([\p{Lu}][\p{L}\p{M}.'\-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'\-]*){0,3}):\s+\S/gmu;
-  const set = new Set<string>();
-  let m: RegExpExecArray | null;
-  while ((m = re.exec(text)) !== null) set.add(m[1].trim());
-  return [...set];
 }
 
 async function loadExisting(

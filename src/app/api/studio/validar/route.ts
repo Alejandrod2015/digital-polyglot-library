@@ -6,6 +6,7 @@ import {
   extractStoryMotifs,
   type ExistingStorySummary,
 } from "@/lib/validateGeneratedStory";
+import { extractSpeakerNames } from "@/lib/storyTurns";
 import { persistAgentRun } from "@/lib/agentPersistence";
 
 type ValidateBody = {
@@ -62,14 +63,6 @@ async function loadExistingStories(
       motifTags: r.text ? extractStoryMotifs(r.text) : [],
     };
   });
-}
-
-function extractSpeakerNames(text: string): string[] {
-  const re = /^([\p{Lu}][\p{L}\p{M}.'\-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'\-]*){0,3}):\s+\S/gmu;
-  const set = new Set<string>();
-  let m: RegExpExecArray | null;
-  while ((m = re.exec(text)) !== null) set.add(m[1].trim());
-  return [...set];
 }
 
 export async function POST(req: NextRequest) {

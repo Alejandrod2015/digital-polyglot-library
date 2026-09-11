@@ -46,6 +46,9 @@ export { parseStoryInput } from "./storyPayload";
 import { findLookupOnlyVocab } from "./vocabUtility";
 import type { StoryPayload, StoryVocabItem } from "./storyPayload";
 import { parseStoryInput } from "./storyPayload";
+import {
+  classifyStoryFormat, paragraphIsTurn, parseSpeakerTurn, type StoryStyle,
+} from "./storyTurns";
 
 export type ExistingStorySummary = {
   title: string;
@@ -102,6 +105,13 @@ export type ValidationContext = {
    *  to decide which whitelist of accepted anchors to apply. When
    *  omitted, no region check runs. */
   variant?: string;
+  /**
+   * Estilo DECLARADO del cuerpo. saveStory y cierraTema lo pasan como
+   * "narrator" con --narrator. Declarado narrador, la historia corre SIEMPRE
+   * los checks de narrada, lleve lo que lleve. Sin declarar decide
+   * `classifyStoryFormat` (src/lib/storyTurns.ts) por la forma del texto.
+   */
+  storyStyle?: StoryStyle;
 };
 
 export type CheckStatus = "pass" | "fail" | "warn";
@@ -348,27 +358,10 @@ const SENSE_CATEGORIES_SHARED: Record<string, RegExp> = {
     taste: /\b(dulce|amargo|salado|ácido|acido|picante|sabor|saborea|gusta\s+a|doce|amarg[oa]|salgad[oa]|gosto|süß|bitter|salzig|Geschmack|dolce|amaro|salato|sapore|sucré|amer|amère|salé|salée|goût|saveur|épicé)\b/i,
   };
 
-function extractSpeakerNames(text: string): string[] {
-  const re = /^([\p{Lu}][\p{L}\p{M}.'\-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'\-]*){0,3}):\s+\S/gmu;
-  const set = new Set<string>();
-  let m: RegExpExecArray | null;
-  while ((m = re.exec(text)) !== null) {
-    set.add(m[1].trim());
-  }
-  return [...set];
-}
-
-function countSpeakerLines(text: string): number {
-  const re = /^[\p{Lu}][\p{L}\p{M}.'\-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'\-]*){0,3}:\s+\S/gmu;
-  return [...text.matchAll(re)].length;
-}
-
 function hasNarratorOpening(text: string): boolean {
   const first = getParagraphs(text)[0] ?? "";
   if (!first) return false;
-  if (/^[\p{Lu}][\p{L}\p{M}.'\-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'\-]*){0,3}:\s+/u.test(first)) {
-    return false;
-  }
+  if (paragraphIsTurn(first)) return false;
   return /[.!?…]\s*$/.test(first);
 }
 
@@ -967,7 +960,14 @@ export async function validateGeneratedStory(
   // mas estricto: comilla curva Y cero turnos. Una historia que quiso ser
   // dialogada y perdio el formato tiene turnos a medias o ninguna cita, y
   // sigue fallando, que es lo que debe pasar.
-  const esNarrada = /[“]/.test(parsed.text) && countSpeakerLines(parsed.text) === 0;
+  //
+  // Turno y narrada/dialogada los decide UNA funcion desde el 2026-09-11
+  // (src/lib/storyTurns.ts). Antes habia tres regex y dos tomaban por turno
+  // "La cantina se llenó:" o "Claudia se lo comentó a Marcos:". Todos los
+  // checks de abajo que preguntan "¿es un turno?" usan `parseSpeakerTurn` o
+  // `paragraphIsTurn`; ninguno lleva su propia regex.
+  const formato = classifyStoryFormat(parsed.text, context.storyStyle);
+  const esNarrada = formato.narrada;
 
   // 70/30 dialogue/narrator ratio. User hard rule (2026-06-01):
   // every story = ~70% spoken dialogue + ~30% narrator. This is the
@@ -983,9 +983,9 @@ export async function validateGeneratedStory(
     for (const raw of lines) {
       const line = raw.trim();
       if (!line) continue;
-      const m = line.match(/^[\p{Lu}][\p{L}\s'-]*:\s+(.+)$/u);
-      if (m) {
-        dialogueWords += m[1].split(/\s+/).filter(Boolean).length;
+      const turn = parseSpeakerTurn(line);
+      if (turn) {
+        dialogueWords += turn.speech.split(/\s+/).filter(Boolean).length;
       } else {
         narratorWords += line.split(/\s+/).filter(Boolean).length;
       }
@@ -1011,8 +1011,8 @@ export async function validateGeneratedStory(
     });
   }
 
-  const speakerNames = extractSpeakerNames(parsed.text);
-  const speakerLines = countSpeakerLines(parsed.text);
+  const speakerNames = formato.speakers;
+  const speakerLines = formato.turns;
   checks.push({
     id: "speakers-count",
     label: "At least 2 distinct named speakers",
@@ -1040,11 +1040,10 @@ export async function validateGeneratedStory(
       .split(/\n{2,}/)
       .map((p) => p.trim())
       .filter(Boolean);
-    const isDialogueLine = (p: string) => /^[\p{Lu}][\p{L}\s'-]*:\s/u.test(p);
     let consecutiveNarrators = 0;
     let sawDialogue = false;
     for (const p of paragraphs) {
-      const dialogue = isDialogueLine(p);
+      const dialogue = paragraphIsTurn(p);
       if (dialogue) {
         sawDialogue = true;
         consecutiveNarrators = 0;
@@ -1311,9 +1310,7 @@ export async function validateGeneratedStory(
     // If 2+ of the 3 contain such words, the opening dialogue is
     // probably a treasure hunt.
     {
-      const dialogueLines = paragraphs.filter((p) =>
-        /^[\p{Lu}][\p{L}\s'-]*:\s/u.test(p)
-      );
+      const dialogueLines = paragraphs.filter(paragraphIsTurn);
       const firstThree = dialogueLines.slice(0, 3);
       const LOCATION_RE =
         /\b(aquí|aqui|allá|alla|allí|alli|cerca\s+de|junto\s+a|al\s+lado\s+de|encima\s+de|debajo\s+de|detrás\s+de|detras\s+de|delante\s+de|dentro\s+de|sobre\s+(?:el|la|los|las)|en\s+(?:el|la|los|las)\s+(?:mesa|silla|ventana|puerta|repisa|cajón|cajon|estante|piso|suelo|pared))\b/i;
@@ -1362,18 +1359,17 @@ export async function validateGeneratedStory(
       // blank line between them. Iterating PARAGRAPHS would only check
       // the first turn of each; iterate each individual line that
       // matches a speaker label so every dialogue turn is evaluated.
-      const SPEAKER_LINE_RE = /^[\p{Lu}][\p{L}\s'-]*:\s+(.*)$/u;
       const dialogueLines: string[] = [];
       for (const para of paragraphs) {
         for (const line of para.split("\n")) {
-          if (SPEAKER_LINE_RE.test(line)) dialogueLines.push(line);
+          if (parseSpeakerTurn(line)) dialogueLines.push(line);
         }
       }
       const offenders: string[] = [];
       for (const line of dialogueLines) {
-        const m = line.match(SPEAKER_LINE_RE);
-        if (!m) continue;
-        const speech = m[1].trim();
+        const turn = parseSpeakerTurn(line);
+        if (!turn) continue;
+        const speech = turn.speech;
         const sentences = speech
           .split(/(?<=[.!?…])\s+/)
           .map((s) => s.trim())
@@ -1469,10 +1465,9 @@ export async function validateGeneratedStory(
       // paragraph (or the first two if the opening was split for vocab
       // distribution). After the first speaker line the worker can
       // mention the country once and call it a day.
-      const isDialogue = (p: string) => /^[\p{Lu}][\p{L}\s'-]*:\s/u.test(p);
       const openingNarratorParas: string[] = [];
       for (const p of paragraphs) {
-        if (isDialogue(p)) break;
+        if (paragraphIsTurn(p)) break;
         openingNarratorParas.push(p);
         if (openingNarratorParas.length >= 3) break;
       }
@@ -1883,8 +1878,13 @@ export async function validateGeneratedStory(
   // 100%: italiano A0 20/21, alemán C1 18/21, Colombia C1 18/21, España A0
   // 14/19. Una historia suelta sin voz es legítima; un journey entero sin
   // ninguna no lo es, y ESO lo bloquea el gate de lote en scripts/saveStory.ts.
-  const tieneTurnos = /^\s*[A-ZÁÉÍÓÚÑÜ][\wáéíóúñçüö' ]{1,20}:\s/m.test(parsed.text);
-  if (!tieneTurnos) {
+  //
+  // A quien le toca (2026-09-11): a todo lo que no sea multivoz COMPLETA. La
+  // condicion era "ninguna linea con un arranque de hasta 20 caracteres y dos
+  // puntos", y "La cantina se llenó:" la cumplia: la historia narrada salia de
+  // aqui en silencio. Ahora solo sale una dialogada de verdad (4 turnos, 2
+  // hablantes, sin estilo "narrator" declarado); un turno suelto no basta.
+  if (!formato.dialogada) {
     // Las comillas CURVAS “” son las del catálogo desde el 2026-08-17, y la clase
     // no las tenía: reconocía «», „ y las rectas, así que una historia narrada
     // escrita con la convención vigente se marcaba como muda (2026-08-18).
