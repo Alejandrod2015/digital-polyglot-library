@@ -9,7 +9,7 @@ const ESTE = "cmtwo6cys0007j8yzg6ni3fsc";
 const strip = (w: string) => w.toLowerCase().replace(/^(le |la |les |l'|l’|se |s')/, "").trim();
 // Tema 5 · Parties & Gifts
 const C: Record<string, string[]> = {
-  s1: ["le cadeau","le paquet","les ciseaux","le nœud","le porte-monnaie","le porte-bonheur","offrir","emballer","cacher","couper","choisir","aimer","joli","génial","vide","sûrement","pas mal","au fond","la chance","le papier cadeau"],
+  s1: ["le cadeau","le paquet","les ciseaux","le nœud","le scotch","le porte-bonheur","offrir","emballer","cacher","couper","choisir","aimer","joli","génial","vide","aujourd'hui","pas mal","beaucoup","la chance","pourquoi"],
   s2: ["l'anniversaire","la bougie","le gâteau","la guirlande","le lampion","le pastis","fêter","allumer","éteindre","chanter","danser","inviter","laisser","voir","gai","exprès","trente-trois","joyeux anniversaire","à la fin","le gagnant"],
   s3: ["le balai","la poubelle","les restes","le bouchon","la miette","le chat","balayer","dormir","partager","jouer","rentrer","ouvrir","déchirer","réveillé","tranquille","doucement","à moi","un jour","chaque fois","le retour"],
 };
