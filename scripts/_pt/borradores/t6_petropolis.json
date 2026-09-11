@@ -1,0 +1,425 @@
+[
+ {
+  "topic": "petropolis",
+  "slotIndex": 0,
+  "title": "Um genérico até segunda",
+  "slug": "um-generico-ate-segunda",
+  "synopsis": "O que a mantém trabalhando de qualquer cidade cabe num cabo de dois metros, e esse cabo parou na véspera da única chamada do mês com quem lhe paga. O substituto que ela pediu está a três quarteirões e atrás de uma porta que só abre na segunda-feira de manhã.",
+  "text": "Em Petrópolis fazia frio de manhã. Renata trabalhava para uma empresa que nunca tinha visto, e o carregador do notebook parou de funcionar à noite. No dia seguinte, havia reunião.\n\nWilson cuidava da loja de informática da rua do meio. “Esse modelo eu não tenho”, disse ele, e verificou o computador dela na tomada. “Tem um genérico caro, com garantia, e um barato.”\n\n“O barato queima em três meses. O caro dura, mas custa o triplo”, explicou. Renata tinha solicitado outro pela internet, mas o correio só entregaria na segunda. “Se a chuva deixar”, esclareceu Wilson. “Segunda é tarde demais”, respondeu ela.\n\nEla precisava de algo que funcionasse até segunda. “Então eu aceito o genérico”, disse, e desligou o velho, que já não enviava carga nenhuma. Wilson conferiu a ponta duas vezes. “Pode testar”, pediu.\n\nA luz verde acendeu. “Funciona”, confirmou Renata. O carregador velho foi para a mochila; o novo substituía o outro até segunda, e Wilson sorriu atrás do balcão.",
+  "vocab": [
+   {
+    "word": "empresa",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Company, the business that pays you for your work."
+   },
+   {
+    "word": "carregador",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Charger, the cable that puts power back into a laptop."
+   },
+   {
+    "word": "funcionar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To work properly, to do what it is supposed to do."
+   },
+   {
+    "word": "verificar",
+    "surface": "verificou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To check something carefully to make sure that it works."
+   },
+   {
+    "word": "computador",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Computer, the machine you work, write and read on."
+   },
+   {
+    "word": "garantia",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Promise from the shop to fix or change it if it breaks."
+   },
+   {
+    "word": "caro",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Expensive, costing more money than you wanted to pay."
+   },
+   {
+    "word": "barato",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Cheap, costing only a little money to buy or to use."
+   },
+   {
+    "word": "solicitar",
+    "surface": "solicitado",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To ask for something formally, often by filling in a form."
+   },
+   {
+    "word": "internet",
+    "type": "noun",
+    "anchor": true,
+    "definition": "The network that lets computers and phones connect worldwide."
+   },
+   {
+    "word": "correio",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Post office, where letters and parcels are sent and collected."
+   },
+   {
+    "word": "esclarecer",
+    "surface": "esclareceu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To make something clear so that nobody gets it wrong."
+   },
+   {
+    "word": "aceitar",
+    "surface": "aceito",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To take what is offered instead of saying no to it."
+   },
+   {
+    "word": "desligar",
+    "surface": "desligou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To unplug something or switch it off completely."
+   },
+   {
+    "word": "velho",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Old, used for a long time and worn out now."
+   },
+   {
+    "word": "enviar",
+    "surface": "enviava",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To send something from one place to another place."
+   },
+   {
+    "word": "conferir",
+    "surface": "conferiu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To check something carefully before you trust it."
+   },
+   {
+    "word": "confirmar",
+    "surface": "confirmou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To say that something is really true or really works."
+   },
+   {
+    "word": "novo",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "New, not used by anybody else before you."
+   },
+   {
+    "word": "substituir",
+    "surface": "substituía",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To take the place of something else that stopped working."
+   }
+  ],
+  "arcType": "juxtaposition-discovery"
+ },
+ {
+  "topic": "petropolis",
+  "slotIndex": 1,
+  "title": "Tem uma solução, mas é má",
+  "slug": "tem-uma-solucao-mas-e-ma",
+  "synopsis": "A internet cai dez minutos antes da chamada que decide o ano inteiro dela, e a mesa do fundo de uma loja de informática vira escritório. Do outro lado oferecem duas saídas e as duas são ruins, e o silêncio que segue a terceira dura mais do que ela aguenta calada.",
+  "text": "Às nove, a internet da pousada caiu, e o notebook não conectava. Renata tinha dez minutos, e o emprego dependia daquela videochamada.\n\nWilson abriu a loja meia hora antes e trouxe a mesa do fundo. “A mesa é sua até o meio-dia”, disse ele. “Obrigada, Wilson”, respondeu Renata. Ela digitou a senha e entrou na chamada: alguém da equipe mostrou o projeto. Agora eram doze cidades, não seis.\n\n“Tem uma solução, mas é má”, disse a chefe, exigente. “O pagamento é o mesmo, e você faz o dobro.” Renata perguntou se podia discordar e ofereceu outra saída: “Eu faço as doze, mas em quatro meses, não em dois.”\n\nNinguém respondeu, e o silêncio durou o que ela não aguentava. “A gente aceita”, disse a chefe depois; a meta real era o calendário, não o dinheiro. “Café forte, pra comemorar”, disse Wilson, e ela agradeceu. A loja não era rica nem pobre: tinha duas mesas e um cliente.",
+  "vocab": [
+   {
+    "word": "cair",
+    "surface": "caiu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To fall or, for a connection, to stop working suddenly."
+   },
+   {
+    "word": "conectar",
+    "surface": "conectava",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To connect, join a computer or a phone to the internet."
+   },
+   {
+    "word": "emprego",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Job, the paid work that you do to earn money."
+   },
+   {
+    "word": "depender",
+    "surface": "dependia",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To need something else in order to happen or to work."
+   },
+   {
+    "word": "videochamada",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Video call, a talk where people see each other on screens."
+   },
+   {
+    "word": "trazer",
+    "surface": "trouxe",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To bring something over to where another person is."
+   },
+   {
+    "word": "digitar",
+    "surface": "digitou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To type something using the keys of a keyboard."
+   },
+   {
+    "word": "equipe",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Team, a group of people who work together on something."
+   },
+   {
+    "word": "mostrar",
+    "surface": "mostrou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To show something so another person can see it."
+   },
+   {
+    "word": "projeto",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Project, a planned piece of work with a goal and a date."
+   },
+   {
+    "word": "mau",
+    "surface": "má",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Bad, poor as a choice or as a result."
+   },
+   {
+    "word": "exigente",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Demanding, expecting a lot from other people all the time."
+   },
+   {
+    "word": "pagamento",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Payment, the money you receive for the work you did."
+   },
+   {
+    "word": "discordar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To disagree, to think differently about an idea or a plan."
+   },
+   {
+    "word": "oferecer",
+    "surface": "ofereceu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To offer something and let the other person decide."
+   },
+   {
+    "word": "meta",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Goal, the result that a team has to reach in time."
+   },
+   {
+    "word": "real",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Real, the true one and not only the apparent one."
+   },
+   {
+    "word": "agradecer",
+    "surface": "agradeceu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To thank somebody for what they did for you."
+   },
+   {
+    "word": "rico",
+    "surface": "rica",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Rich, with plenty of money coming in each month."
+   },
+   {
+    "word": "pobre",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Poor, with very little money coming in at all."
+   }
+  ],
+  "arcType": "mini-cliffhanger"
+ },
+ {
+  "topic": "petropolis",
+  "slotIndex": 2,
+  "title": "O barbante de um real",
+  "slug": "o-barbante-de-um-real",
+  "synopsis": "O cliente quer em papel o que ela escreveu em dois meses de estrada, e o guichê da cidade fecha às cinco em ponto. Entre uma máquina que come folha sim e folha não e o balcão do correio há um saco de papel grosso, um barbante e um real.",
+  "text": "Wilson leu por cima do ombro de Renata: a fatura da primeira parcela, com o relatório em anexo, tinha que ir impressa, e o vencimento era hoje. Com sorte, chegaria antes das cinco.\n\n“Essa impressora come uma folha sim, outra não”, avisou Wilson. “E o seu teclado está colado de café. Pode imprimir aqui.” A tampa fazia barulho e precisava de reparo, mas abria.\n\nSaíram quinze folhas em preto e branco. Wilson levantou o pacote como se fosse um presente. “Pesado assim, não cabe em envelope.” “Tem saco?”, perguntou Renata.\n\n“Do grosso, tenho. E barbante, que eu vendo por um real”, disse Wilson. Emprestou a tesoura, e ela quis pagar, mas ele negou.\n\n“Dobra as folhas antes de embrulhar”, disse ele. Renata dobrou, embrulhou o pacote e amarrou com o barbante.\n\n“Ainda está aberto”, disse ela na porta do correio, e mandou o pacote registrado. Depois leu uma notícia curta: o contrato dos quatro meses tinha saído. “Mandei”, contou a Wilson, lá fora.",
+  "vocab": [
+   {
+    "word": "fatura",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Invoice, the paper that shows how much a client must pay."
+   },
+   {
+    "word": "parcela",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Instalment, one of the parts of a payment made over time."
+   },
+   {
+    "word": "anexo",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Attachment, a document that goes together with another one."
+   },
+   {
+    "word": "vencimento",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Due date, the last day to pay or to deliver something."
+   },
+   {
+    "word": "impressora",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Printer, the machine that puts words and pictures onto paper."
+   },
+   {
+    "word": "colado",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Stuck fast to something and hard to pull apart again."
+   },
+   {
+    "word": "reparo",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Repair, the work needed to make something function again."
+   },
+   {
+    "word": "abrir",
+    "surface": "abria",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To open, stop being shut so that you can use it."
+   },
+   {
+    "word": "preto",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Black, the darkest colour that there is anywhere."
+   },
+   {
+    "word": "branco",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "White, the colour of a clean sheet of paper."
+   },
+   {
+    "word": "pesado",
+    "surface": "Pesado",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Heavy, hard to lift or expensive to send by post."
+   },
+   {
+    "word": "vender",
+    "surface": "vendo",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To sell something to somebody else for money."
+   },
+   {
+    "word": "emprestar",
+    "surface": "emprestou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To lend somebody something that they will give back later."
+   },
+   {
+    "word": "negar",
+    "surface": "negou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To say no, refuse something that someone offers or asks."
+   },
+   {
+    "word": "dobrar",
+    "surface": "dobrou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To fold something over so that it takes less space."
+   },
+   {
+    "word": "embrulhar",
+    "surface": "embrulhou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To wrap something up in paper or in cloth."
+   },
+   {
+    "word": "amarrar",
+    "surface": "amarrou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To tie something with string so that it holds together."
+   },
+   {
+    "word": "aberto",
+    "surface": "aberto",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Open, still serving all the people who arrive."
+   },
+   {
+    "word": "mandar",
+    "surface": "mandou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To send something off to somebody who is far away."
+   },
+   {
+    "word": "registrar",
+    "surface": "registrado",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To send a letter with proof that it was posted and received."
+   }
+  ],
+  "arcType": "harmonic-close"
+ }
+]
