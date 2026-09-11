@@ -1,0 +1,420 @@
+[
+ {
+  "topic": "lencois-maranhenses",
+  "slotIndex": 0,
+  "title": "A passagem já comprada",
+  "slug": "a-passagem-ja-comprada",
+  "synopsis": "Tem três dias na região e a passagem de volta já comprada, e o céu não colabora com nenhum dos dois planos que ela trouxe escritos. Quem leva gente de canoa poderia lhe vender uma esperança barata pela manhã, e prefere lhe dar a verdade sobre janeiro.",
+  "text": "Choveu em Lençóis desde a madrugada, e a excursão do dia foi cancelada. Renata tinha três dias na região, a passagem já comprada e uma previsão de tempestade.\n\nDamião levava turistas de canoa havia vinte anos e raramente falava do clima. “Amanhã melhora?”, perguntou Renata. “Não sei”, respondeu ele. “Em janeiro ninguém sabe, moça, nem eu, que nasci aqui.”\n\nUm trovão passou longe, e o ar esfriou. “A senhora quer que eu minta?”, perguntou Damião. “Quero saber o que acontece”, respondeu ela. Ele disse que a chuva pararia em três dias: “Hoje está feio. Amanhã, quem sabe. Depois de amanhã, provavelmente.”\n\nRenata decidiu não desistir. “Então eu fico”, disse ela, e pagou mais uma noite. Por enquanto, não havia nada a fazer.\n\nDe manhã, o céu ainda escondia tudo, e a chuva demorou a parar. Então alguém surgiu na porta: Damião, animado, com dois remos. “Vamos?”, perguntou ele.",
+  "vocab": [
+   {
+    "word": "excursão",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Day trip you book and pay for before it starts."
+   },
+   {
+    "word": "cancelar",
+    "surface": "cancelada",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To stop something planned from happening, so it will not take place."
+   },
+   {
+    "word": "região",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Area of a country with its own land and character."
+   },
+   {
+    "word": "previsão",
+    "type": "noun",
+    "anchor": true,
+    "definition": "What the weather report says will happen in the next days."
+   },
+   {
+    "word": "tempestade",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Storm, with heavy rain and strong wind at the same time."
+   },
+   {
+    "word": "canoa",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Narrow boat that you move along the water with a paddle."
+   },
+   {
+    "word": "raramente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Rarely, almost never, only once in a long while."
+   },
+   {
+    "word": "clima",
+    "type": "noun",
+    "anchor": true,
+    "definition": "The usual weather of a place over a whole season."
+   },
+   {
+    "word": "longe",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Far away, at a good distance from where you are."
+   },
+   {
+    "word": "esfriar",
+    "surface": "esfriou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To get colder than it was just a moment before."
+   },
+   {
+    "word": "acontecer",
+    "surface": "acontece",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To happen, to take place in real life right now."
+   },
+   {
+    "word": "feio",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Ugly; of the weather, dark and threatening more rain."
+   },
+   {
+    "word": "provavelmente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Probably; very likely, though you cannot be completely sure."
+   },
+   {
+    "word": "decidir",
+    "surface": "decidiu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To make up your mind about what you are going to do."
+   },
+   {
+    "word": "desistir",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To give up and stop trying to do something."
+   },
+   {
+    "word": "por enquanto",
+    "surface": "Por enquanto",
+    "type": "expression",
+    "anchor": false,
+    "definition": "For now; until the situation changes later on."
+   },
+   {
+    "word": "esconder",
+    "surface": "escondia",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To hide something so that nobody is able to see it."
+   },
+   {
+    "word": "demorar",
+    "surface": "demorou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To take a long time before something finally happens."
+   },
+   {
+    "word": "surgir",
+    "surface": "surgiu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To appear suddenly, when nobody was expecting it."
+   },
+   {
+    "word": "animado",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Cheerful and full of energy, happy about what is coming."
+   }
+  ],
+  "arcType": "reframe-turn"
+ },
+ {
+  "topic": "lencois-maranhenses",
+  "slotIndex": 1,
+  "title": "Se puxar, a gente vira",
+  "slug": "se-puxar-a-gente-vira",
+  "synopsis": "Saem às seis com o rio cheio e a promessa de que a chuva parou de vez, e no meio da travessia o vento decide outra coisa por eles. Voltam sem falar e sem saber se ainda existe um terceiro dia, e ninguém pergunta nada na margem.",
+  "text": "A canoa saiu às seis. Damião remava atrás, e Renata ia na frente. Da margem, a floresta parecia uma parede, e a temperatura caiu.\n\n“O rio está alto e certamente vai subir mais”, avisou ele. “Choveu a noite inteira lá em cima.” O vento empurrava a canoa para o lado, não para adiante. “Segura no banco, moça, não no remo”, pediu Damião.\n\nEles atravessaram o primeiro trecho e balançaram feio. Renata escorregou no banco molhado e praticamente caiu. Damião gritou de trás: se ela puxasse, a canoa viraria. “Deixa o remo solto, que eu seguro”, disse.\n\nRenata obedeceu, sem fôlego, e a canoa resistiu. Do outro lado havia uma montanha de areia. “O barco deles já voltou. A gente vai atrás”, disse Damião.\n\nRenata subiu dez passos, mas a chuva arrastou a areia de lado. “Desce, que vem mais”, chamou ele, e salvou na hora o remo que ia embora. “Amanhã?”, perguntou ela. Damião olhou o céu e não respondeu.",
+  "vocab": [
+   {
+    "word": "remar",
+    "surface": "remava",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To row, push a boat along the water with a paddle."
+   },
+   {
+    "word": "alto",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "High; of a river, full and risen after a lot of rain."
+   },
+   {
+    "word": "certamente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Certainly; used when you are sure that something will happen."
+   },
+   {
+    "word": "floresta",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Forest, a wide stretch of trees growing close together."
+   },
+   {
+    "word": "temperatura",
+    "type": "noun",
+    "anchor": true,
+    "definition": "How hot or cold the air or the water is."
+   },
+   {
+    "word": "adiante",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Forward, ahead, towards the place that is in front of you."
+   },
+   {
+    "word": "remo",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Paddle, the flat pole you use to row a canoe."
+   },
+   {
+    "word": "atravessar",
+    "surface": "atravessaram",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To cross from one side of something to the other side."
+   },
+   {
+    "word": "escorregar",
+    "surface": "escorregou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To slip on a wet surface and lose your balance."
+   },
+   {
+    "word": "praticamente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Practically; almost completely, very nearly but not quite."
+   },
+   {
+    "word": "puxar",
+    "surface": "puxasse",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To pull something towards the place where you are."
+   },
+   {
+    "word": "obedecer",
+    "surface": "obedeceu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To do what someone tells you to do, without arguing."
+   },
+   {
+    "word": "fôlego",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Breath, the air you need to keep going or to speak."
+   },
+   {
+    "word": "resistir",
+    "surface": "resistiu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To stay strong and not break or give way under force."
+   },
+   {
+    "word": "montanha",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Mountain, or any very high pile that rises up from the ground."
+   },
+   {
+    "word": "barco",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Boat, usually bigger than a canoe and often with a motor."
+   },
+   {
+    "word": "arrastar",
+    "surface": "arrastou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To drag something along the ground behind you."
+   },
+   {
+    "word": "salvar",
+    "surface": "salvou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To save something before it is lost for good."
+   },
+   {
+    "word": "na hora",
+    "type": "expression",
+    "anchor": false,
+    "definition": "At that very moment; right when it was needed."
+   },
+   {
+    "word": "subir",
+    "surface": "subiu",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To go up, climb towards a higher place."
+   }
+  ],
+  "arcType": "mini-cliffhanger"
+ },
+ {
+  "topic": "lencois-maranhenses",
+  "slotIndex": 2,
+  "title": "A lagoa entre as dunas",
+  "slug": "a-lagoa-entre-as-dunas",
+  "synopsis": "No último dia acorda antes de todo mundo e o céu, pela primeira vez, deixa ver o que havia atrás dele desde domingo. Quem passou dois dias sem prometer nada aparece na porta com a canoa pronta, e o que ela encontra não é bem o que tinha vindo buscar.",
+  "text": "Às quatro ainda havia estrelas no céu, e a lua estava baixa. Renata chegou à porta emocionada, pronta para enfrentar a lagoa: Damião já esperava, com a canoa pronta para navegar.\n\n“Hoje sai”, disse ele. “Combinei com o rio.” Entre as dunas havia uma planta pequena. “Isso aqui seca em maio”, contou Damião. “Ultimamente, só vento e, de vez em quando, um turista.” “E você fica?”, perguntou ela. “Fico”, respondeu ele. “Pesco na nascente do rio.”\n\nA lagoa era gigante e rasa. Renata nadou dez metros e ficou de pé na água, com segurança. Ela saltou uma vez, como se ninguém estivesse olhando. Não eram férias nem feriado: era uma quarta-feira qualquer.\n\n“Você não entra?”, perguntou ela. “Eu entro todo dia. A senhora entra hoje”, respondeu Damião. Ela não podia adiar o ônibus das duas. “Então aproveita”, disse ele, “que isso aqui fica igual, mas sem a senhora.” Damião sentou na canoa, e ela voltou para a água, livre.",
+  "vocab": [
+   {
+    "word": "estrela",
+    "surface": "estrelas",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Star, one of the small lights you see in the night sky."
+   },
+   {
+    "word": "lua",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Moon, the big pale light in the sky at night."
+   },
+   {
+    "word": "emocionado",
+    "surface": "emocionada",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Moved, full of strong feeling because something matters to you."
+   },
+   {
+    "word": "navegar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To travel on water in a boat or in a canoe."
+   },
+   {
+    "word": "combinar",
+    "surface": "Combinei",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To agree on something with somebody else in advance."
+   },
+   {
+    "word": "ultimamente",
+    "surface": "Ultimamente",
+    "type": "adverb",
+    "anchor": false,
+    "definition": "Lately, during the last weeks or months until now."
+   },
+   {
+    "word": "de vez em quando",
+    "type": "expression",
+    "anchor": false,
+    "definition": "From time to time, now and then, but not very often."
+   },
+   {
+    "word": "pescar",
+    "surface": "Pesco",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To fish, try to catch fish from the water."
+   },
+   {
+    "word": "nascente",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Spring, the place where a river starts coming out of the ground."
+   },
+   {
+    "word": "gigante",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Huge, far bigger than you expected it to be."
+   },
+   {
+    "word": "segurança",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Feeling of being safe, with no danger of falling or getting hurt."
+   },
+   {
+    "word": "saltar",
+    "surface": "saltou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To jump, push off the ground with both feet."
+   },
+   {
+    "word": "férias",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Holidays, the weeks you take off from work or school."
+   },
+   {
+    "word": "feriado",
+    "type": "noun",
+    "anchor": true,
+    "definition": "Public holiday, a single day when most people do not work."
+   },
+   {
+    "word": "adiar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To move something to a later time or date."
+   },
+   {
+    "word": "aproveitar",
+    "surface": "aproveita",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To make the most of something while it still lasts."
+   },
+   {
+    "word": "igual",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "The same, not changed in any way from before."
+   },
+   {
+    "word": "voltar",
+    "surface": "voltou",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To go back to a place where you were before."
+   },
+   {
+    "word": "livre",
+    "type": "adjective",
+    "anchor": false,
+    "definition": "Free, with nothing you have to do right now."
+   },
+   {
+    "word": "enfrentar",
+    "type": "verb",
+    "anchor": false,
+    "definition": "To face something difficult instead of running away from it."
+   }
+  ],
+  "arcType": "recurring-character-callback"
+ }
+]
