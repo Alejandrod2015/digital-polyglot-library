@@ -9,9 +9,7 @@ const ESTE = "cmtwo6cys0007j8yzg6ni3fsc";
 const strip = (w: string) => w.toLowerCase().replace(/^(le |la |les |l'|l’|se |s')/, "").trim();
 // Tema 3 · Helping & Favours
 const C: Record<string, string[]> = {
-  s1: ["le fauteuil","la camionnette","la corde","la rampe","le coussin","le tapis","aider","porter","étroit","large","gratuit","le service","de rien","merci beaucoup","attention","le dos","avoir mal","tous les jours","lourd","ensemble"],
-  s2: ["la caution","le tiroir","la tirelire","le loyer","les économies","le percolateur","prêter","emprunter","avoir besoin","l'argent","cassé","neuf","combien","mille","bientôt","le mois","compter","rendre","donner","garder"],
-  s3: ["le robinet","le seau","le tuyau","la goutte","la boîte à outils","l'éponge","réparer","couler","sale","propre","voilà","ça y est","bravo","tourner","serrer","fini","dessous","avoir raison","maintenant","tout seul"],
+  s1: ["le stylo","le frigo","acheter"],
 };
 (async () => {
   const other: any[] = await p.journeyStory.findMany({ where: { journey: { language: "french" } }, select: { vocab: true, journeyId: true, journey: { select: { status: true, typeSlug: true } } } as any });

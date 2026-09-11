@@ -1,0 +1,470 @@
+[
+  {
+    "topic": "helping-and-favours",
+    "slotIndex": 0,
+    "title": "Le fauteuil descend",
+    "arcType": null,
+    "synopsis": "Hugo donne son vieux fauteuil à Léa avant son départ. L'escalier est étroit et Hugo travaille. Chloé, une voisine avec une camionnette, aide Léa, mais elle demande quelque chose en échange.",
+    "text": "Le fauteuil de Hugo, là-haut, est large et lourd. Hugo part en mars. Il donne le fauteuil à Léa. Léa veut le porter en bas, au café. Mais l'escalier est étroit.\n\nChloé, une nouvelle voisine, a une petite camionnette. Elle a aussi une corde. “Je peux aider”, dit Chloé. “Pardon, Chloé. C'est gratuit?”, demande Léa. “Pas du tout. Un service contre un café.” Léa comprend.\n\nElles portent le fauteuil ensemble. La rampe est froide sous la main. “Attention! L'escalier tourne”, dit Chloé. Léa a mal au dos. “Tu es sûre? Ça va?”, demande Chloé. “Oui. Je ne suis jamais fatiguée”, répond Léa.\n\nLe fauteuil prend le coin de Léa. Le tapis est à côté. “Merci beaucoup”, dit Léa. “De rien. Un café tous les jours, jusqu'en mars”, répond Chloé. Léa est dans le fauteuil. Le coussin sent Hugo.",
+    "vocab": [
+      {
+        "word": "le fauteuil",
+        "surface": "fauteuil",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Armchair; a big soft chair with arms."
+      },
+      {
+        "word": "large",
+        "surface": "large",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Wide; big from one side to the other."
+      },
+      {
+        "word": "lourd",
+        "surface": "lourd",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Heavy; hard to lift or carry."
+      },
+      {
+        "word": "porter",
+        "surface": "porter",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To carry; to hold something and move it."
+      },
+      {
+        "word": "étroit",
+        "surface": "étroit",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Narrow; with very little space from side to side."
+      },
+      {
+        "word": "la camionnette",
+        "surface": "camionnette",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Van; a small truck for carrying things."
+      },
+      {
+        "word": "la corde",
+        "surface": "corde",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Rope; a long thick string for pulling or tying."
+      },
+      {
+        "word": "aider",
+        "surface": "aider",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To help; to do part of the work for someone."
+      },
+      {
+        "word": "gratuit",
+        "surface": "gratuit",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Free; it costs no money at all."
+      },
+      {
+        "word": "le service",
+        "surface": "service",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Favour; something you do to help someone."
+      },
+      {
+        "word": "ensemble",
+        "surface": "ensemble",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Together; with another person, at the same time."
+      },
+      {
+        "word": "la rampe",
+        "surface": "rampe",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Handrail; what you hold on to on the stairs."
+      },
+      {
+        "word": "attention",
+        "surface": "Attention",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Careful!; a word to warn someone of danger."
+      },
+      {
+        "word": "avoir mal",
+        "surface": "a mal",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "To hurt; to feel pain in a part of the body."
+      },
+      {
+        "word": "le dos",
+        "surface": "dos",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Back; the part of the body behind you."
+      },
+      {
+        "word": "le tapis",
+        "surface": "tapis",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Rug; a piece of thick cloth on the floor."
+      },
+      {
+        "word": "merci beaucoup",
+        "surface": "Merci beaucoup",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Thank you very much; a big thank you."
+      },
+      {
+        "word": "de rien",
+        "surface": "De rien",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "You're welcome; what you say after thank you."
+      },
+      {
+        "word": "tous les jours",
+        "surface": "tous les jours",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Every day; each day, with no day missed."
+      },
+      {
+        "word": "le coussin",
+        "surface": "coussin",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Cushion; a soft pillow on a chair."
+      }
+    ]
+  },
+  {
+    "topic": "helping-and-favours",
+    "slotIndex": 1,
+    "title": "Mille euros sans compter",
+    "arcType": null,
+    "synopsis": "Avant son départ, Hugo a un problème, et il n'aime pas demander. Léa a un rêve, caché dans une tirelire. Qui paie le départ de Hugo?",
+    "text": "Hugo n'a pas assez d'argent. Le loyer de Paris est cher. Il a besoin de mille euros.\n\nPrès du frigo, le vieux percolateur est cassé. Elle garde son argent pour un autre.\n\nDans le tiroir, il y a une tirelire. Léa compte: mille euros. C'est juste assez.\n\nHugo arrive et attend un peu. Puis il dit: “Léa, tu peux me prêter de l'argent? Je te rends tout bientôt.”\n\n“Combien?”, demande Léa. “Mille euros”, répond Hugo. “Le loyer commence avant mon départ.” “C'est beaucoup, Hugo.” “Je sais. Pardon.” Léa entend le bruit du vieux percolateur. Pas de percolateur neuf. Elle ne l'achète pas, parce que c'est Hugo.\n\nLéa ouvre la tirelire et donne l'argent à Hugo. Elle ne compte pas. “Voilà. Pour ton loyer.” Hugo prend un stylo. Il écrit: “Mille euros. Je rends dans six mois.” Hugo quitte le café. Léa retourne au comptoir.",
+    "vocab": [
+      {
+        "word": "l'argent",
+        "surface": "argent",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Money; what you use to pay for things."
+      },
+      {
+        "word": "le loyer",
+        "surface": "loyer",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Rent; the money you pay each month for a flat."
+      },
+      {
+        "word": "avoir besoin",
+        "surface": "a besoin",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "To need; to have to get something."
+      },
+      {
+        "word": "mille",
+        "surface": "mille",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A thousand; ten times one hundred."
+      },
+      {
+        "word": "le percolateur",
+        "surface": "percolateur",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Espresso machine; the big café machine that makes coffee."
+      },
+      {
+        "word": "le frigo",
+        "surface": "frigo",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Fridge; the cold box that keeps food fresh."
+      },
+      {
+        "word": "cassé",
+        "surface": "cassé",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Broken; it does not work anymore."
+      },
+      {
+        "word": "garder",
+        "surface": "garde",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To keep; to not give or spend something."
+      },
+      {
+        "word": "le tiroir",
+        "surface": "tiroir",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Drawer; a box in a table that slides out."
+      },
+      {
+        "word": "la tirelire",
+        "surface": "tirelire",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Money box; a small box where you keep money."
+      },
+      {
+        "word": "compter",
+        "surface": "compte",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To count; to add numbers one by one."
+      },
+      {
+        "word": "prêter",
+        "surface": "prêter",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To lend; to give something that comes back later."
+      },
+      {
+        "word": "rendre",
+        "surface": "rends",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To give back; to return what you borrowed."
+      },
+      {
+        "word": "bientôt",
+        "surface": "bientôt",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Soon; in a short time from now."
+      },
+      {
+        "word": "combien",
+        "surface": "Combien",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "How much; asking about a number or a price."
+      },
+      {
+        "word": "neuf",
+        "surface": "neuf",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Brand new; never used before."
+      },
+      {
+        "word": "acheter",
+        "surface": "achète",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To buy; to pay money to get something."
+      },
+      {
+        "word": "donner",
+        "surface": "donne",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To give; to put something in someone's hands."
+      },
+      {
+        "word": "le stylo",
+        "surface": "stylo",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Pen; what you write with on paper."
+      },
+      {
+        "word": "le mois",
+        "surface": "mois",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Month; about four weeks of time."
+      }
+    ]
+  },
+  {
+    "topic": "helping-and-favours",
+    "slotIndex": 2,
+    "title": "Une goutte chaque nuit",
+    "arcType": null,
+    "synopsis": "Pour dire merci, Hugo répare le robinet du café, qui coule depuis toujours. Il ne sait pas, l'eau part partout et Léa rit. Mais à la fin, le robinet ne coule plus.",
+    "text": "Une goutte tombe du robinet. Puis une autre goutte. Le robinet du café coule tout le temps. Léa écoute les gouttes chaque nuit.\n\nCet après-midi, Hugo arrive avec une boîte à outils. “Je répare ton robinet. Un service pour un service.” “Tu sais réparer?”, demande Léa. Hugo met un seau dessous.\n\nHugo tourne, et l'eau coule partout. “Attention! Il y a de l'eau partout!”, crie Léa. “Bravo, Hugo!” Le tuyau est sale.\n\n“Tu as raison. Je ne sais pas”, répond Hugo. “Mais je commence à comprendre.” Il serre le tuyau, deux fois. L'eau est claire. Léa sèche le sol avec une éponge. Le sol est propre.\n\n“Ça y est. Fini”, dit Hugo. “Voilà. Maintenant, tu n'as plus besoin de moi.” Léa ne répond pas. Elle ouvre le robinet, puis elle le ferme. Deux fois. Pas une goutte. Elle est toute seule avec le silence.",
+    "vocab": [
+      {
+        "word": "la goutte",
+        "surface": "goutte",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Drop; a very small amount of water."
+      },
+      {
+        "word": "le robinet",
+        "surface": "robinet",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Tap; where water comes out over the sink."
+      },
+      {
+        "word": "couler",
+        "surface": "coule",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To drip, to run; what water does from a tap."
+      },
+      {
+        "word": "chaque nuit",
+        "surface": "chaque nuit",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Every night; each night, again and again."
+      },
+      {
+        "word": "la boîte à outils",
+        "surface": "boîte à outils",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Toolbox; the box where you keep your tools."
+      },
+      {
+        "word": "réparer",
+        "surface": "répare",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To repair; to make a broken thing work again."
+      },
+      {
+        "word": "le seau",
+        "surface": "seau",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Bucket; an open pot with a handle for water."
+      },
+      {
+        "word": "dessous",
+        "surface": "dessous",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Underneath; in the place below something."
+      },
+      {
+        "word": "tourner",
+        "surface": "tourne",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To turn; to move something round and round."
+      },
+      {
+        "word": "bravo",
+        "surface": "Bravo",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Well done!; here Léa says it as a joke."
+      },
+      {
+        "word": "le tuyau",
+        "surface": "tuyau",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Pipe; the tube that brings the water."
+      },
+      {
+        "word": "sale",
+        "surface": "sale",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Dirty; not clean at all."
+      },
+      {
+        "word": "avoir raison",
+        "surface": "as raison",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "To be right; to say what is true."
+      },
+      {
+        "word": "serrer",
+        "surface": "serre",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To tighten; to make something closed and firm."
+      },
+      {
+        "word": "l'éponge",
+        "surface": "éponge",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Sponge; a soft thing that drinks up water."
+      },
+      {
+        "word": "propre",
+        "surface": "propre",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Clean; with no dirt on it."
+      },
+      {
+        "word": "ça y est",
+        "surface": "Ça y est",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "That's it; said when a job is finally done."
+      },
+      {
+        "word": "fini",
+        "surface": "Fini",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Finished; done, with nothing more to do."
+      },
+      {
+        "word": "voilà",
+        "surface": "Voilà",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "There you go; said when something is ready."
+      },
+      {
+        "word": "tout seul",
+        "surface": "toute seule",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "On your own; alone, with nobody to help."
+      }
+    ]
+  }
+]
