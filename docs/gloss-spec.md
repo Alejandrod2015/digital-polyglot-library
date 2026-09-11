@@ -58,7 +58,11 @@ rama sin integrar mientras el hook lo llamaba sin encontrarlo.
    sentido de otro journey: `bombilla` decía "a mate straw" y `casero`
    "homemade".
 3. `writeGlossLayer.ts <bundle> <slug> <trozos.json>` escribe la capa de
-   contexto. El trozo es el mínimo con sentido, no la cláusula entera.
+   contexto. El trozo es el mínimo con sentido, no la cláusula entera. Las
+   plazas de vocab de varias palabras ("sala de espera") se escriben igual:
+   si la clave no está en la global, `g` y `t` salen de la plaza. Una clave sin
+   glosa de donde partir no tira el fichero: se escribe el resto, se lista lo
+   omitido y el proceso sale con 1. `--dry` enseña lo que haría.
 4. `buildGlossForms.ts <bundle> <textos.json>` para las conjugaciones y el
    género. Si la historia ya tiene capa escrita a mano, hace falta
    `--solo-formas`, o se la salta entera y sus verbos se quedan sin tabla.
