@@ -109,7 +109,7 @@
       "t": "verb"
     },
     "adiante": {
-      "g": "Further ahead, further along the road.",
+      "g": "forward, ahead",
       "t": "adverb"
     },
     "assim": {
@@ -193,7 +193,7 @@
       "t": "verb"
     },
     "olhando": {
-      "g": "Looking at, keeping her eyes on it (olhar).",
+      "g": "looking at (olhar)",
       "t": "verb"
     },
     "gosta": {
@@ -237,7 +237,7 @@
       "t": "noun"
     },
     "despedida": {
-      "g": "The goodbye, the moment before someone leaves.",
+      "g": "farewell, goodbye",
       "t": "noun"
     },
     "vou": {
@@ -309,7 +309,7 @@
       "t": "noun"
     },
     "sinal": {
-      "g": "The phone signal, which her room does not get.",
+      "g": "sign",
       "t": "noun"
     },
     "copos": {
@@ -585,7 +585,7 @@
       "t": "noun"
     },
     "obrigada": {
-      "g": "Thank you, said by a woman.",
+      "g": "thank you (said by a woman)",
       "t": "expression"
     },
     "sério": {
@@ -665,7 +665,7 @@
       "t": "noun"
     },
     "valia": {
-      "g": "Was worth more (valer), counted for more.",
+      "g": "was valid (valer)",
       "t": "verb"
     },
     "escrito": {
@@ -877,7 +877,7 @@
       "t": "verb"
     },
     "presente": {
-      "g": "Something given without being paid for.",
+      "g": "present, gift",
       "t": "noun"
     },
     "retribui": {
@@ -1081,8 +1081,8 @@
       "t": "verb"
     },
     "naquela": {
-      "g": "On that one, in that same afternoon.",
-      "t": "adverb"
+      "g": "on that (em + aquela)",
+      "t": "preposition"
     },
     "multa": {
       "g": "Money you must pay for breaking a rule.",
@@ -1093,7 +1093,7 @@
       "t": "noun"
     },
     "animado": {
-      "g": "Cheerful and full of energy at the start.",
+      "g": "cheerful, excited",
       "t": "adjective"
     },
     "pisa": {
@@ -1201,8 +1201,8 @@
       "t": "adjective"
     },
     "seguro": {
-      "g": "Insurance, what pays when something goes wrong.",
-      "t": "noun"
+      "g": "I hold (segurar)",
+      "t": "verb"
     },
     "apólice": {
       "g": "The paper that says what the insurance pays for.",
@@ -1285,7 +1285,7 @@
       "t": "noun"
     },
     "esperava": {
-      "g": "Was expecting it to come (esperar).",
+      "g": "was waiting (esperar)",
       "t": "verb"
     },
     "fechar": {
@@ -1325,7 +1325,7 @@
       "t": "adjective"
     },
     "vamos": {
-      "g": "We go (ir); here, where the group will not go.",
+      "g": "let's go (ir)",
       "t": "verb"
     },
     "recife": {
@@ -1477,7 +1477,7 @@
       "t": "noun"
     },
     "vinha": {
-      "g": "Used to come (vir), before the rule existed.",
+      "g": "was coming (vir)",
       "t": "verb"
     },
     "coral": {
@@ -1529,7 +1529,7 @@
       "t": "noun"
     },
     "saíram": {
-      "g": "Came out in the draw (sair); here, were chosen.",
+      "g": "came out (sair)",
       "t": "verb"
     },
     "riscada": {
@@ -1581,7 +1581,7 @@
       "t": "noun"
     },
     "segurança": {
-      "g": "The guard at the door of a building.",
+      "g": "safety, feeling safe",
       "t": "noun"
     },
     "crachá": {
@@ -1886,6 +1886,1602 @@
     },
     "lençóis": {
       "g": "Lençóis, short for the Lençóis Maranhenses, a park of dunes and lagoons",
+      "t": "noun"
+    },
+    "havia": {
+      "g": "there were (haver)",
+      "t": "verb"
+    },
+    "ouvia": {
+      "g": "could be heard (ouvir)",
+      "t": "verb"
+    },
+    "apressada": {
+      "g": "in a hurry (apressado)",
+      "t": "adjective"
+    },
+    "itinerário": {
+      "g": "itinerary, planned route",
+      "t": "noun"
+    },
+    "vendia": {
+      "g": "sold, had sold (vender)",
+      "t": "verb"
+    },
+    "avisou": {
+      "g": "warned, told (avisar)",
+      "t": "verb"
+    },
+    "sairia": {
+      "g": "would leave (sair)",
+      "t": "verb"
+    },
+    "olhou": {
+      "g": "looked (olhar)",
+      "t": "verb"
+    },
+    "desesperada": {
+      "g": "desperate (desesperado)",
+      "t": "adjective"
+    },
+    "explicou": {
+      "g": "explained (explicar)",
+      "t": "verb"
+    },
+    "atualmente": {
+      "g": "currently",
+      "t": "adverb"
+    },
+    "custava": {
+      "g": "it cost (custar)",
+      "t": "verb"
+    },
+    "chegava": {
+      "g": "got there, arrived (chegar)",
+      "t": "verb"
+    },
+    "arriscada": {
+      "g": "risky (arriscado)",
+      "t": "adjective"
+    },
+    "podia": {
+      "g": "could (poder)",
+      "t": "verb"
+    },
+    "remarcar": {
+      "g": "to rebook",
+      "t": "verb"
+    },
+    "evitar": {
+      "g": "to avoid",
+      "t": "verb"
+    },
+    "decidiu": {
+      "g": "she decided (decidir)",
+      "t": "verb"
+    },
+    "despachou": {
+      "g": "checked in (despachar)",
+      "t": "verb"
+    },
+    "comentar": {
+      "g": "to comment, remark",
+      "t": "verb"
+    },
+    "buzinou": {
+      "g": "honked (buzinar)",
+      "t": "verb"
+    },
+    "embarcou": {
+      "g": "boarded (embarcar)",
+      "t": "verb"
+    },
+    "passageiros": {
+      "g": "passengers (passageiro)",
+      "t": "noun"
+    },
+    "boa": {
+      "g": "good (bom)",
+      "t": "adjective"
+    },
+    "fechou": {
+      "g": "closed (fechar)",
+      "t": "verb"
+    },
+    "enquanto": {
+      "g": "while",
+      "t": "conjunction"
+    },
+    "entrava": {
+      "g": "was pulling onto (entrar)",
+      "t": "verb"
+    },
+    "pedágio": {
+      "g": "toll, toll booth",
+      "t": "noun"
+    },
+    "cruzou": {
+      "g": "crossed (cruzar)",
+      "t": "verb"
+    },
+    "ligou": {
+      "g": "turned on (ligar)",
+      "t": "verb"
+    },
+    "apertada": {
+      "g": "tight, cramped (apertado)",
+      "t": "adjective"
+    },
+    "coube": {
+      "g": "fit (caber)",
+      "t": "verb"
+    },
+    "bagageiro": {
+      "g": "luggage rack",
+      "t": "noun"
+    },
+    "roncou": {
+      "g": "snored (roncar)",
+      "t": "verb"
+    },
+    "queria": {
+      "g": "wanted (querer)",
+      "t": "verb"
+    },
+    "passasse": {
+      "g": "would pass (passar)",
+      "t": "verb"
+    },
+    "sentia": {
+      "g": "felt (sentir)",
+      "t": "verb"
+    },
+    "enjoo": {
+      "g": "nausea, travel sickness",
+      "t": "noun"
+    },
+    "leve": {
+      "g": "slight, mild",
+      "t": "adjective"
+    },
+    "tontura": {
+      "g": "dizziness",
+      "t": "noun"
+    },
+    "levantou": {
+      "g": "she stood up (levantar)",
+      "t": "verb"
+    },
+    "moveu": {
+      "g": "moved (mover)",
+      "t": "verb"
+    },
+    "distraída": {
+      "g": "absent-minded (distraído)",
+      "t": "adjective"
+    },
+    "olho": {
+      "g": "eye; (ficar de olho) watch",
+      "t": "noun"
+    },
+    "nas": {
+      "g": "on the (em + as)",
+      "t": "preposition"
+    },
+    "luzes": {
+      "g": "lights (luz)",
+      "t": "noun"
+    },
+    "perguntou": {
+      "g": "asked (perguntar)",
+      "t": "verb"
+    },
+    "medo": {
+      "g": "fear",
+      "t": "noun"
+    },
+    "respondeu": {
+      "g": "answered (responder)",
+      "t": "verb"
+    },
+    "caminho": {
+      "g": "route, way",
+      "t": "noun"
+    },
+    "frequentemente": {
+      "g": "often",
+      "t": "adverb"
+    },
+    "exatamente": {
+      "g": "exactly",
+      "t": "adverb"
+    },
+    "agradecida": {
+      "g": "grateful (agradecido)",
+      "t": "adjective"
+    },
+    "percebeu": {
+      "g": "realised (perceber)",
+      "t": "verb"
+    },
+    "transporte": {
+      "g": "transport",
+      "t": "noun"
+    },
+    "saía": {
+      "g": "was leaving, left (sair)",
+      "t": "verb"
+    },
+    "correu": {
+      "g": "she ran (correr)",
+      "t": "verb"
+    },
+    "achou": {
+      "g": "found (achar)",
+      "t": "verb"
+    },
+    "apontou": {
+      "g": "pointed to (apontar)",
+      "t": "verb"
+    },
+    "garupa": {
+      "g": "pillion, back seat of a motorbike",
+      "t": "noun"
+    },
+    "batia": {
+      "g": "was hitting (bater)",
+      "t": "verb"
+    },
+    "freou": {
+      "g": "he braked (frear)",
+      "t": "verb"
+    },
+    "descarregavam": {
+      "g": "were unloading (descarregar)",
+      "t": "verb"
+    },
+    "carregavam": {
+      "g": "were loading (carregar)",
+      "t": "verb"
+    },
+    "entrou": {
+      "g": "she went into (entrar)",
+      "t": "verb"
+    },
+    "frustrada": {
+      "g": "frustrated (frustrado)",
+      "t": "adjective"
+    },
+    "justamente": {
+      "g": "exactly, right",
+      "t": "adverb"
+    },
+    "plataforma": {
+      "g": "platform",
+      "t": "noun"
+    },
+    "desembarque": {
+      "g": "arrivals, getting off",
+      "t": "noun"
+    },
+    "estivesse": {
+      "g": "had been (estar)",
+      "t": "verb"
+    },
+    "perderia": {
+      "g": "she would lose (perder)",
+      "t": "verb"
+    },
+    "anotações": {
+      "g": "notes (anotação)",
+      "t": "noun"
+    },
+    "pagou": {
+      "g": "paid (pagar)",
+      "t": "verb"
+    },
+    "alcançou": {
+      "g": "caught (alcançar)",
+      "t": "verb"
+    },
+    "orgulhosa": {
+      "g": "proud (orgulhoso)",
+      "t": "adjective"
+    },
+    "fazia": {
+      "g": "it was (fazer, weather)",
+      "t": "verb"
+    },
+    "tinha": {
+      "g": "had (ter)",
+      "t": "verb"
+    },
+    "chegado": {
+      "g": "arrived (chegar)",
+      "t": "verb"
+    },
+    "causa": {
+      "g": "cause; por causa de, because of",
+      "t": "noun"
+    },
+    "goteira": {
+      "g": "leak (in the roof)",
+      "t": "noun"
+    },
+    "cuidava": {
+      "g": "looked after, ran (cuidar)",
+      "t": "verb"
+    },
+    "puxou": {
+      "g": "started (puxar); puxar assunto, start chatting",
+      "t": "verb"
+    },
+    "secariam": {
+      "g": "would dry (secar)",
+      "t": "verb"
+    },
+    "pendurou": {
+      "g": "hung up (pendurar)",
+      "t": "verb"
+    },
+    "levou": {
+      "g": "carried, took (levar)",
+      "t": "verb"
+    },
+    "levar": {
+      "g": "take (away)",
+      "t": "verb"
+    },
+    "apareça": {
+      "g": "turns up (aparecer)",
+      "t": "verb"
+    },
+    "jeito": {
+      "g": "way; dar um jeito, find a way",
+      "t": "noun"
+    },
+    "banheiro": {
+      "g": "bathroom",
+      "t": "noun"
+    },
+    "fundos": {
+      "g": "back of a building (fundo)",
+      "t": "noun"
+    },
+    "despiu": {
+      "g": "took off (despir)",
+      "t": "verb"
+    },
+    "convidou": {
+      "g": "invited (convidar)",
+      "t": "verb"
+    },
+    "carinho": {
+      "g": "affection, warmth",
+      "t": "noun"
+    },
+    "batiam": {
+      "g": "were having (bater); bater papo, chat",
+      "t": "verb"
+    },
+    "papo": {
+      "g": "chat; bater papo, to chat",
+      "t": "noun"
+    },
+    "graças": {
+      "g": "thanks; graças a, thanks to",
+      "t": "noun"
+    },
+    "ficava": {
+      "g": "was getting, became (ficar)",
+      "t": "verb"
+    },
+    "gelado": {
+      "g": "icy cold",
+      "t": "adjective"
+    },
+    "serviu": {
+      "g": "served (servir)",
+      "t": "verb"
+    },
+    "desculpa": {
+      "g": "sorry for, excuse (desculpar)",
+      "t": "verb"
+    },
+    "reclamar": {
+      "g": "complain",
+      "t": "verb"
+    },
+    "fosse": {
+      "g": "were (ser)",
+      "t": "verb"
+    },
+    "cobertor": {
+      "g": "blanket",
+      "t": "noun"
+    },
+    "morava": {
+      "g": "lived (morar)",
+      "t": "verb"
+    },
+    "moro": {
+      "g": "I live (morar)",
+      "t": "verb"
+    },
+    "casei": {
+      "g": "I got married (casar)",
+      "t": "verb"
+    },
+    "ternura": {
+      "g": "tenderness",
+      "t": "noun"
+    },
+    "reconheço": {
+      "g": "I recognise (reconhecer)",
+      "t": "verb"
+    },
+    "acendeu": {
+      "g": "turned on (acender)",
+      "t": "verb"
+    },
+    "fria": {
+      "g": "cold (frio)",
+      "t": "adjective"
+    },
+    "esquentava": {
+      "g": "kept warm (esquentar)",
+      "t": "verb"
+    },
+    "permaneceu": {
+      "g": "stayed (permanecer)",
+      "t": "verb"
+    },
+    "quieta": {
+      "g": "still, quiet (quieto)",
+      "t": "adjective"
+    },
+    "imaginando": {
+      "g": "picturing, imagining (imaginar)",
+      "t": "verb"
+    },
+    "ensaiava": {
+      "g": "was rehearsing (ensaiar)",
+      "t": "verb"
+    },
+    "passeava": {
+      "g": "strolled (passear)",
+      "t": "verb"
+    },
+    "dançava": {
+      "g": "was dancing (dançar)",
+      "t": "verb"
+    },
+    "decepcionada": {
+      "g": "disappointed (decepcionado)",
+      "t": "adjective"
+    },
+    "visitar": {
+      "g": "visit",
+      "t": "verb"
+    },
+    "brincaram": {
+      "g": "joked (brincar)",
+      "t": "verb"
+    },
+    "vizinhança": {
+      "g": "neighbourhood",
+      "t": "noun"
+    },
+    "cantava": {
+      "g": "was singing (cantar)",
+      "t": "verb"
+    },
+    "desafinada": {
+      "g": "off-key, out of tune (desafinado)",
+      "t": "adjective"
+    },
+    "pulou": {
+      "g": "jumped over (pular)",
+      "t": "verb"
+    },
+    "filmou": {
+      "g": "filmed (filmar)",
+      "t": "verb"
+    },
+    "vista": {
+      "g": "view; ponto de vista, point of view",
+      "t": "noun"
+    },
+    "parte": {
+      "g": "part",
+      "t": "noun"
+    },
+    "comparou": {
+      "g": "compared (comparar)",
+      "t": "verb"
+    },
+    "pedia": {
+      "g": "asked for things (pedir)",
+      "t": "verb"
+    },
+    "agradecia": {
+      "g": "thanked (agradecer)",
+      "t": "verb"
+    },
+    "pudesse": {
+      "g": "could (poder)",
+      "t": "verb"
+    },
+    "ficaria": {
+      "g": "would stay (ficar)",
+      "t": "verb"
+    },
+    "amava": {
+      "g": "loved (amar)",
+      "t": "verb"
+    },
+    "aquela": {
+      "g": "that (aquele)",
+      "t": "pronoun"
+    },
+    "apesar": {
+      "g": "despite; apesar de, in spite of",
+      "t": "preposition"
+    },
+    "compartilhada": {
+      "g": "shared (compartilhar)",
+      "t": "verb"
+    },
+    "funcionava": {
+      "g": "worked (funcionar)",
+      "t": "verb"
+    },
+    "peixe": {
+      "g": "fish",
+      "t": "noun"
+    },
+    "geralmente": {
+      "g": "usually",
+      "t": "adverb"
+    },
+    "lavava": {
+      "g": "washed (lavar)",
+      "t": "verb"
+    },
+    "hábito": {
+      "g": "habit",
+      "t": "noun"
+    },
+    "obrigação": {
+      "g": "obligation, duty",
+      "t": "noun"
+    },
+    "pegou": {
+      "g": "picked up (pegar)",
+      "t": "verb"
+    },
+    "ajudou": {
+      "g": "helped (ajudar)",
+      "t": "verb"
+    },
+    "seja": {
+      "g": "be (ser); ou seja, that is",
+      "t": "verb"
+    },
+    "organizou": {
+      "g": "tidied up, organized (organizar)",
+      "t": "verb"
+    },
+    "jogou": {
+      "g": "threw (jogar)",
+      "t": "verb"
+    },
+    "sobras": {
+      "g": "leftovers (sobra)",
+      "t": "noun"
+    },
+    "lixeira": {
+      "g": "bin, trash can",
+      "t": "noun"
+    },
+    "cortou": {
+      "g": "chopped (cortar)",
+      "t": "verb"
+    },
+    "subiu": {
+      "g": "rose, went up (subir)",
+      "t": "verb"
+    },
+    "propósito": {
+      "g": "purpose; de propósito, on purpose",
+      "t": "noun"
+    },
+    "riu": {
+      "g": "laughed (rir)",
+      "t": "verb"
+    },
+    "responder": {
+      "g": "to answer, reply",
+      "t": "verb"
+    },
+    "moradores": {
+      "g": "housemates, residents (morador)",
+      "t": "noun"
+    },
+    "pôs": {
+      "g": "put (pôr)",
+      "t": "verb"
+    },
+    "preparou": {
+      "g": "made, prepared (preparar)",
+      "t": "verb"
+    },
+    "boca": {
+      "g": "burner",
+      "t": "noun"
+    },
+    "misturou": {
+      "g": "stirred, mixed (misturar)",
+      "t": "verb"
+    },
+    "provou": {
+      "g": "tasted (provar)",
+      "t": "verb"
+    },
+    "chateada": {
+      "g": "upset (chateado)",
+      "t": "adjective"
+    },
+    "sabia": {
+      "g": "knew (saber)",
+      "t": "verb"
+    },
+    "todos": {
+      "g": "everyone (todo)",
+      "t": "pronoun"
+    },
+    "comeriam": {
+      "g": "would eat (comer)",
+      "t": "verb"
+    },
+    "aquilo": {
+      "g": "that, it",
+      "t": "pronoun"
+    },
+    "largou": {
+      "g": "dropped (largar)",
+      "t": "verb"
+    },
+    "entanto": {
+      "g": "no entanto, however",
+      "t": "expression"
+    },
+    "calado": {
+      "g": "quiet, silent",
+      "t": "adjective"
+    },
+    "tentar": {
+      "g": "I try (tentar)",
+      "t": "verb"
+    },
+    "desperdiçou": {
+      "g": "wasted (desperdiçar)",
+      "t": "verb"
+    },
+    "jantou": {
+      "g": "had dinner (jantar)",
+      "t": "verb"
+    },
+    "dúvida": {
+      "g": "doubt; sem dúvida, no doubt",
+      "t": "noun"
+    },
+    "grata": {
+      "g": "grateful (grato)",
+      "t": "adjective"
+    },
+    "normalmente": {
+      "g": "normally",
+      "t": "adverb"
+    },
+    "dizia": {
+      "g": "used to say (dizer)",
+      "t": "verb"
+    },
+    "cozinhasse": {
+      "g": "cooked (cozinhar; subjunctive)",
+      "t": "verb"
+    },
+    "lavaria": {
+      "g": "would wash up (lavar)",
+      "t": "verb"
+    },
+    "lavou": {
+      "g": "washed (lavar)",
+      "t": "verb"
+    },
+    "requentada": {
+      "g": "reheated (requentado)",
+      "t": "adjective"
+    },
+    "esvaziou": {
+      "g": "emptied (esvaziar)",
+      "t": "verb"
+    },
+    "escorreu": {
+      "g": "drained (escorrer)",
+      "t": "verb"
+    },
+    "separo": {
+      "g": "I set aside (separar)",
+      "t": "verb"
+    },
+    "regou": {
+      "g": "drizzled, doused (regar)",
+      "t": "verb"
+    },
+    "encostou": {
+      "g": "touched (encostar)",
+      "t": "verb"
+    },
+    "cozinhava": {
+      "g": "used to cook (cozinhar)",
+      "t": "verb"
+    },
+    "ofendido": {
+      "g": "offended",
+      "t": "adjective"
+    },
+    "portanto": {
+      "g": "so, therefore",
+      "t": "expression"
+    },
+    "encontrou": {
+      "g": "found (encontrar)",
+      "t": "verb"
+    },
+    "limpando": {
+      "g": "cleaning (limpar)",
+      "t": "verb"
+    },
+    "derretida": {
+      "g": "melted (derreter)",
+      "t": "verb"
+    },
+    "respeito": {
+      "g": "respect",
+      "t": "noun"
+    },
+    "chovia": {
+      "g": "it was raining (chover)",
+      "t": "verb"
+    },
+    "cancelada": {
+      "g": "cancelled (cancelar)",
+      "t": "verb"
+    },
+    "turista": {
+      "g": "tourist",
+      "t": "noun"
+    },
+    "previsão": {
+      "g": "forecast",
+      "t": "noun"
+    },
+    "levava": {
+      "g": "had been taking (levar)",
+      "t": "verb"
+    },
+    "turistas": {
+      "g": "tourists (turista)",
+      "t": "noun"
+    },
+    "raramente": {
+      "g": "rarely",
+      "t": "adverb"
+    },
+    "falava": {
+      "g": "talked (falar)",
+      "t": "verb"
+    },
+    "esfriou": {
+      "g": "got colder (esfriar)",
+      "t": "verb"
+    },
+    "saber": {
+      "g": "to know",
+      "t": "verb"
+    },
+    "pararia": {
+      "g": "would stop (parar)",
+      "t": "verb"
+    },
+    "piorar": {
+      "g": "to get worse",
+      "t": "verb"
+    },
+    "provavelmente": {
+      "g": "probably",
+      "t": "adverb"
+    },
+    "escondia": {
+      "g": "hid (esconder)",
+      "t": "verb"
+    },
+    "demorou": {
+      "g": "took a long time (demorar)",
+      "t": "verb"
+    },
+    "surgiu": {
+      "g": "appeared (surgir)",
+      "t": "verb"
+    },
+    "remava": {
+      "g": "rowed (remar)",
+      "t": "verb"
+    },
+    "parecia": {
+      "g": "looked like (parecer)",
+      "t": "verb"
+    },
+    "certamente": {
+      "g": "certainly",
+      "t": "adverb"
+    },
+    "subir": {
+      "g": "to rise",
+      "t": "verb"
+    },
+    "choveu": {
+      "g": "it rained (chover)",
+      "t": "verb"
+    },
+    "empurrava": {
+      "g": "pushed (empurrar)",
+      "t": "verb"
+    },
+    "atravessaram": {
+      "g": "crossed (atravessar)",
+      "t": "verb"
+    },
+    "balançaram": {
+      "g": "rocked (balançar)",
+      "t": "verb"
+    },
+    "escorregou": {
+      "g": "slipped (escorregar)",
+      "t": "verb"
+    },
+    "praticamente": {
+      "g": "practically, almost",
+      "t": "adverb"
+    },
+    "gritou": {
+      "g": "shouted (gritar)",
+      "t": "verb"
+    },
+    "puxasse": {
+      "g": "pulled (puxar)",
+      "t": "verb"
+    },
+    "viraria": {
+      "g": "would tip over (virar)",
+      "t": "verb"
+    },
+    "obedeceu": {
+      "g": "obeyed (obedecer)",
+      "t": "verb"
+    },
+    "fôlego": {
+      "g": "breath",
+      "t": "noun"
+    },
+    "resistiu": {
+      "g": "held up (resistir)",
+      "t": "verb"
+    },
+    "voltou": {
+      "g": "went back (voltar)",
+      "t": "verb"
+    },
+    "arrastou": {
+      "g": "dragged (arrastar)",
+      "t": "verb"
+    },
+    "chamou": {
+      "g": "called (chamar)",
+      "t": "verb"
+    },
+    "salvou": {
+      "g": "saved (salvar)",
+      "t": "verb"
+    },
+    "estrelas": {
+      "g": "stars (estrela)",
+      "t": "noun"
+    },
+    "emocionada": {
+      "g": "moved, emotional (emocionado)",
+      "t": "adjective"
+    },
+    "disposta": {
+      "g": "ready, willing (disposto)",
+      "t": "adjective"
+    },
+    "enfrentar": {
+      "g": "to face",
+      "t": "verb"
+    },
+    "navegar": {
+      "g": "to go out on the water",
+      "t": "verb"
+    },
+    "ultimamente": {
+      "g": "lately",
+      "t": "adverb"
+    },
+    "nascente": {
+      "g": "source, spring (of a river)",
+      "t": "noun"
+    },
+    "nadou": {
+      "g": "swam (nadar)",
+      "t": "verb"
+    },
+    "saltou": {
+      "g": "jumped (saltar)",
+      "t": "verb"
+    },
+    "eram": {
+      "g": "were (ser)",
+      "t": "verb"
+    },
+    "adiar": {
+      "g": "to put off, postpone",
+      "t": "verb"
+    },
+    "sentou": {
+      "g": "sat down (sentar)",
+      "t": "verb"
+    },
+    "trabalhava": {
+      "g": "worked (trabalhar)",
+      "t": "verb"
+    },
+    "visto": {
+      "g": "seen (ver)",
+      "t": "verb"
+    },
+    "verificando": {
+      "g": "checking (verificar)",
+      "t": "verb"
+    },
+    "garantia": {
+      "g": "warranty, guarantee",
+      "t": "noun"
+    },
+    "esclareceu": {
+      "g": "he explained (esclarecer)",
+      "t": "verb"
+    },
+    "solicitado": {
+      "g": "ordered, requested (solicitar)",
+      "t": "verb"
+    },
+    "enviar": {
+      "g": "to send",
+      "t": "verb"
+    },
+    "entregaria": {
+      "g": "would deliver (entregar)",
+      "t": "verb"
+    },
+    "brincou": {
+      "g": "joked (brincar)",
+      "t": "verb"
+    },
+    "precisava": {
+      "g": "needed (precisar)",
+      "t": "verb"
+    },
+    "algo": {
+      "g": "something",
+      "t": "pronoun"
+    },
+    "funcionasse": {
+      "g": "would work (funcionar)",
+      "t": "verb"
+    },
+    "aceito": {
+      "g": "I accept, I'll take (aceitar)",
+      "t": "verb"
+    },
+    "desligou": {
+      "g": "unplugged (desligar)",
+      "t": "verb"
+    },
+    "dava": {
+      "g": "gave, showed (dar)",
+      "t": "verb"
+    },
+    "vida": {
+      "g": "life",
+      "t": "noun"
+    },
+    "conferiu": {
+      "g": "checked (conferir)",
+      "t": "verb"
+    },
+    "testar": {
+      "g": "to test",
+      "t": "verb"
+    },
+    "confirmou": {
+      "g": "confirmed (confirmar)",
+      "t": "verb"
+    },
+    "problema": {
+      "g": "problem",
+      "t": "noun"
+    },
+    "substituo": {
+      "g": "I replace (substituir)",
+      "t": "verb"
+    },
+    "prometeu": {
+      "g": "promised (prometer)",
+      "t": "verb"
+    },
+    "conectava": {
+      "g": "would connect (conectar)",
+      "t": "verb"
+    },
+    "dependia": {
+      "g": "depended (depender)",
+      "t": "verb"
+    },
+    "daquela": {
+      "g": "on that, of that (de + aquela)",
+      "t": "preposition"
+    },
+    "videochamada": {
+      "g": "video call",
+      "t": "noun"
+    },
+    "sua": {
+      "g": "yours (seu)",
+      "t": "pronoun"
+    },
+    "digitou": {
+      "g": "typed (digitar)",
+      "t": "verb"
+    },
+    "equipe": {
+      "g": "team",
+      "t": "noun"
+    },
+    "mostrou": {
+      "g": "showed (mostrar)",
+      "t": "verb"
+    },
+    "projeto": {
+      "g": "project",
+      "t": "noun"
+    },
+    "exigente": {
+      "g": "demanding",
+      "t": "adjective"
+    },
+    "pagamento": {
+      "g": "payment, pay",
+      "t": "noun"
+    },
+    "discordar": {
+      "g": "to disagree",
+      "t": "verb"
+    },
+    "ofereceu": {
+      "g": "offered (oferecer)",
+      "t": "verb"
+    },
+    "pareceu": {
+      "g": "seemed (parecer)",
+      "t": "verb"
+    },
+    "durar": {
+      "g": "to last",
+      "t": "verb"
+    },
+    "meta": {
+      "g": "goal, target",
+      "t": "noun"
+    },
+    "comemorar": {
+      "g": "to celebrate",
+      "t": "verb"
+    },
+    "agradeceu": {
+      "g": "thanked (agradecer)",
+      "t": "verb"
+    },
+    "leu": {
+      "g": "read (ler)",
+      "t": "verb"
+    },
+    "fatura": {
+      "g": "invoice",
+      "t": "noun"
+    },
+    "parcela": {
+      "g": "instalment",
+      "t": "noun"
+    },
+    "anexo": {
+      "g": "attachment (em anexo, attached)",
+      "t": "noun"
+    },
+    "impressa": {
+      "g": "printed (impresso, imprimir)",
+      "t": "adjective"
+    },
+    "vencimento": {
+      "g": "due date",
+      "t": "noun"
+    },
+    "sorte": {
+      "g": "luck",
+      "t": "noun"
+    },
+    "chegaria": {
+      "g": "would arrive, would reach (chegar)",
+      "t": "verb"
+    },
+    "imprimir": {
+      "g": "to print",
+      "t": "verb"
+    },
+    "reparo": {
+      "g": "repair",
+      "t": "noun"
+    },
+    "abria": {
+      "g": "opened (abrir)",
+      "t": "verb"
+    },
+    "emprestou": {
+      "g": "lent (emprestar)",
+      "t": "verb"
+    },
+    "quis": {
+      "g": "wanted (querer)",
+      "t": "verb"
+    },
+    "pagar": {
+      "g": "to pay",
+      "t": "verb"
+    },
+    "negou": {
+      "g": "refused, said no (negar)",
+      "t": "verb"
+    },
+    "embrulhar": {
+      "g": "to wrap (up)",
+      "t": "verb"
+    },
+    "sugeriu": {
+      "g": "suggested (sugerir)",
+      "t": "verb"
+    },
+    "dobrou": {
+      "g": "folded (dobrar)",
+      "t": "verb"
+    },
+    "embrulhou": {
+      "g": "wrapped (embrulhar)",
+      "t": "verb"
+    },
+    "amarrou": {
+      "g": "tied (amarrar)",
+      "t": "verb"
+    },
+    "aberto": {
+      "g": "open",
+      "t": "adjective"
+    },
+    "mandou": {
+      "g": "sent (mandar)",
+      "t": "verb"
+    },
+    "registrado": {
+      "g": "registered, sent with proof (registrar)",
+      "t": "verb"
+    },
+    "saído": {
+      "g": "come through, been approved (sair)",
+      "t": "verb"
+    },
+    "mandei": {
+      "g": "I sent it (mandar)",
+      "t": "verb"
+    },
+    "travou": {
+      "g": "locked up, seized (travar)",
+      "t": "verb"
+    },
+    "passava": {
+      "g": "went away (passar)",
+      "t": "verb"
+    },
+    "atendia": {
+      "g": "served customers (atender)",
+      "t": "verb"
+    },
+    "resolveria": {
+      "g": "would solve (resolver)",
+      "t": "verb"
+    },
+    "doía": {
+      "g": "hurt (doer)",
+      "t": "verb"
+    },
+    "desconfiada": {
+      "g": "suspicious, doubtful (desconfiado)",
+      "t": "adjective"
+    },
+    "sintoma": {
+      "g": "symptom",
+      "t": "noun"
+    },
+    "grave": {
+      "g": "serious",
+      "t": "adjective"
+    },
+    "esforço": {
+      "g": "effort, strain",
+      "t": "noun"
+    },
+    "cuidado": {
+      "g": "care",
+      "t": "noun"
+    },
+    "aliviada": {
+      "g": "relieved (aliviado)",
+      "t": "adjective"
+    },
+    "afundava": {
+      "g": "sank, sagged (afundar)",
+      "t": "verb"
+    },
+    "virou": {
+      "g": "turned, tossed (virar)",
+      "t": "verb"
+    },
+    "ansiedade": {
+      "g": "anxiety",
+      "t": "noun"
+    },
+    "aflita": {
+      "g": "anxious, upset (aflito)",
+      "t": "adjective"
+    },
+    "vestiu": {
+      "g": "put on (vestir)",
+      "t": "verb"
+    },
+    "comentou": {
+      "g": "remarked (comentar)",
+      "t": "verb"
+    },
+    "suporto": {
+      "g": "I stand, put up with (suportar)",
+      "t": "verb"
+    },
+    "reclamou": {
+      "g": "complained (reclamar)",
+      "t": "verb"
+    },
+    "irritada": {
+      "g": "annoyed (irritado)",
+      "t": "adjective"
+    },
+    "ensinasse": {
+      "g": "were teaching (ensinar)",
+      "t": "verb"
+    },
+    "insônia": {
+      "g": "insomnia",
+      "t": "noun"
+    },
+    "certeza": {
+      "g": "certainty; 'com certeza', surely",
+      "t": "noun"
+    },
+    "deitou": {
+      "g": "lay down (deitar)",
+      "t": "verb"
+    },
+    "fez": {
+      "g": "did (fazer)",
+      "t": "verb"
+    },
+    "agradecer": {
+      "g": "to thank",
+      "t": "verb"
+    },
+    "caído": {
+      "g": "fallen (cair)",
+      "t": "verb"
+    },
+    "querer": {
+      "g": "wanting; 'sem querer', by accident",
+      "t": "verb"
+    },
+    "machuquei": {
+      "g": "I hurt (machucar)",
+      "t": "verb"
+    },
+    "enrugou": {
+      "g": "wrinkled (enrugar)",
+      "t": "verb"
+    },
+    "cheirava": {
+      "g": "smelled (cheirar)",
+      "t": "verb"
+    },
+    "admitiu": {
+      "g": "admitted (admitir)",
+      "t": "verb"
+    },
+    "faria": {
+      "g": "would do (fazer)",
+      "t": "verb"
+    },
+    "emergência": {
+      "g": "emergency",
+      "t": "noun"
+    },
+    "atenta": {
+      "g": "alert, attentive (atento)",
+      "t": "adjective"
+    },
+    "insistiu": {
+      "g": "insisted (insistir)",
+      "t": "verb"
+    },
+    "discutiram": {
+      "g": "argued, discussed (discutir)",
+      "t": "verb"
+    },
+    "preocupação": {
+      "g": "worry",
+      "t": "noun"
+    },
+    "vencer": {
+      "g": "won, to win (vencer)",
+      "t": "verb"
+    },
+    "tratamento": {
+      "g": "treatment",
+      "t": "noun"
+    },
+    "recupero": {
+      "g": "I recover (recuperar)",
+      "t": "verb"
+    },
+    "dado": {
+      "g": "gone; 'dar certo', work out (dar)",
+      "t": "verb"
+    },
+    "naquele": {
+      "g": "on that (em + aquele)",
+      "t": "preposition"
+    },
+    "riram": {
+      "g": "laughed (rir)",
+      "t": "verb"
+    },
+    "segundo": {
+      "g": "according to",
+      "t": "preposition"
+    },
+    "diretor": {
+      "g": "principal, head teacher",
+      "t": "noun"
+    },
+    "varria": {
+      "g": "was sweeping (varrer)",
+      "t": "verb"
+    },
+    "zelador": {
+      "g": "caretaker, janitor",
+      "t": "noun"
+    },
+    "envergonhada": {
+      "g": "embarrassed (envergonhado)",
+      "t": "adjective"
+    },
+    "escrevendo": {
+      "g": "writing (escrever)",
+      "t": "verb"
+    },
+    "desenhou": {
+      "g": "drew (desenhar)",
+      "t": "verb"
+    },
+    "mostrando": {
+      "g": "showing (mostrar)",
+      "t": "verb"
+    },
+    "detalhe": {
+      "g": "detail",
+      "t": "noun"
+    },
+    "leem": {
+      "g": "read (ler)",
+      "t": "verb"
+    },
+    "prestou": {
+      "g": "paid (prestar atenção)",
+      "t": "verb"
+    },
+    "atenção": {
+      "g": "attention",
+      "t": "noun"
+    },
+    "repetiu": {
+      "g": "repeated (repetir)",
+      "t": "verb"
+    },
+    "aos": {
+      "g": "to the (aos poucos, gradually)",
+      "t": "preposition"
+    },
+    "poucos": {
+      "g": "few (aos poucos, little by little)",
+      "t": "pronoun"
+    },
+    "alunos": {
+      "g": "students (aluno)",
+      "t": "noun"
+    },
+    "trabalharam": {
+      "g": "they worked (trabalhar)",
+      "t": "verb"
+    },
+    "tinham": {
+      "g": "had (ter)",
+      "t": "verb"
+    },
+    "entenderam": {
+      "g": "understood (entender)",
+      "t": "verb"
+    },
+    "sebo": {
+      "g": "secondhand bookshop",
+      "t": "noun"
+    },
+    "ventilador": {
+      "g": "fan (electric)",
+      "t": "noun"
+    },
+    "queriam": {
+      "g": "wanted (querer)",
+      "t": "verb"
+    },
+    "estendeu": {
+      "g": "held out (estender)",
+      "t": "verb"
+    },
+    "questão": {
+      "g": "question, matter (fazer questão, insist)",
+      "t": "noun"
+    },
+    "fique": {
+      "g": "stays, you keep (ficar)",
+      "t": "verb"
+    },
+    "recusou": {
+      "g": "refused (recusar)",
+      "t": "verb"
+    },
+    "ceder": {
+      "g": "to give in",
+      "t": "verb"
+    },
+    "discutiu": {
+      "g": "argued about (discutir)",
+      "t": "verb"
+    },
+    "razão": {
+      "g": "reason (ter razão, be right)",
+      "t": "noun"
+    },
+    "concordou": {
+      "g": "agreed (concordar)",
+      "t": "verb"
+    },
+    "lembrou": {
+      "g": "remembered (lembrar)",
+      "t": "verb"
+    },
+    "orgulho": {
+      "g": "pride",
+      "t": "noun"
+    },
+    "aprendiz": {
+      "g": "learner, apprentice",
+      "t": "noun"
+    },
+    "vestibular": {
+      "g": "university entrance exam",
+      "t": "noun"
+    },
+    "descobriu": {
+      "g": "found out (descobrir)",
+      "t": "verb"
+    },
+    "inseguro": {
+      "g": "unsure of himself",
+      "t": "adjective"
+    },
+    "ensaiaram": {
+      "g": "they rehearsed (ensaiar)",
+      "t": "verb"
+    },
+    "inventava": {
+      "g": "made up (inventar)",
+      "t": "verb"
+    },
+    "respondia": {
+      "g": "answered (responder)",
+      "t": "verb"
+    },
+    "esquecesse": {
+      "g": "forgot (esquecer)",
+      "t": "verb"
+    },
+    "errar": {
+      "g": "to make mistakes",
+      "t": "verb"
+    },
+    "pena": {
+      "g": "pain (vale a pena, worth it)",
+      "t": "noun"
+    },
+    "arriscar": {
+      "g": "to take the risk",
+      "t": "verb"
+    },
+    "merece": {
+      "g": "deserve (merecer)",
+      "t": "verb"
+    },
+    "chance": {
+      "g": "chance",
+      "t": "noun"
+    },
+    "cumprimentou": {
+      "g": "greeted (cumprimentar)",
+      "t": "verb"
+    },
+    "sumiu": {
+      "g": "disappeared (sumir)",
+      "t": "verb"
+    },
+    "gostaria": {
+      "g": "would like (gostar)",
+      "t": "verb"
+    },
+    "conhecia": {
+      "g": "knew (conhecer)",
+      "t": "verb"
+    },
+    "esperança": {
+      "g": "hope",
+      "t": "noun"
+    },
+    "confiança": {
+      "g": "trust, confidence",
       "t": "noun"
     }
   },
