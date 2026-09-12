@@ -101,6 +101,7 @@ function readerStatusWhere() {
   // journey is "archived". Keep in-progress journeys' stories in "draft" and
   // preview them via this list instead of publishing them.
   const PREVIEW_JOURNEY_IDS = [
+      "cmtwo6cys0007j8yzg6ni3fsc", // Friends FR A0 france (en obra, 2026-09)
       "cmtgelq560007j84n3ujx9bpd", // Traveler ES A2 latam (en obra, 2026-08)
       "cmtmylg7k0007321h6t7njesx", // Traveler ES B1 latam (narracion en curso, 2026-09)
       "cmt5x67ze000l320cpgunu5vi", // Traveler ES B1 spain (en obra, 2026-08)
