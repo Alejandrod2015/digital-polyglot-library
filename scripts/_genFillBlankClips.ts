@@ -6,11 +6,17 @@
  * `payload.audioClip.clipUrl` en cada fill_blank antes de poder publicar.
  *
  * Patrón de `_genWordClips.ts`: lee `practiceSet.exercises` de la historia,
- * ElevenLabs-only, voz `practiceVoiceId(story)` (Maia en este journey),
- * `assertVoiceApproved`, escribe el payload con SQL crudo sobre
- * `dp_story_practice_exercises_v1`. La síntesis en sí (modelo, framing
- * previous/next_text, loudnorm) es la de `_genPracticeClips.ts`, porque es
- * frase completa y no palabra suelta.
+ * ElevenLabs-only, voz `practiceVoiceId(story)`, `assertVoiceApproved`,
+ * escribe el payload con SQL crudo sobre `dp_story_practice_exercises_v1`.
+ * La síntesis en sí (modelo, framing previous/next_text, loudnorm) es la de
+ * `_genPracticeClips.ts`, porque es frase completa y no palabra suelta.
+ *
+ * EL ENCUADRE VA POR IDIOMA, igual que el `WORD_CARRIER` de `_genWordClips.ts`:
+ * un mapa `FRAMING`, no un `if` suelto, para que añadir una lengua sea una fila
+ * y no una rama. El texto de `previous_text` / `next_text` NO se sintetiza: es
+ * contexto de prosodia, y en el idioma equivocado empuja el acento de la voz.
+ * Si el idioma del journey no está en el mapa, el script FALLA: antes de
+ * generar hay que escribir sus cuatro frases y leerlas.
  *
  * GATE F0 CERRADO (a propósito, distinto de los otros dos generadores): si
  * `_f0gate.py` no corre (venv/parselmouth ausente) o falla al parsear, la
@@ -36,17 +42,35 @@ import { assertVoiceApproved } from "../src/lib/approvedVoices";
 
 const prisma = new PrismaClient();
 let VOICE = "";
+let FRAME: Framing;
 const MODEL = "eleven_multilingual_v2"; // frase completa: v2, no turbo (ver _genPracticeClips.ts)
 const CACHE_VERSION = "fb1";
 const MAX_TRIES = 6;
 const SETTINGS = { stability: 0.4, similarity_boost: 0.8, style: 0.3, speed: 0.9, use_speaker_boost: true };
-// Framing español (única lengua que necesita este journey). Igual criterio
-// que _genPracticeClips.ts: el contexto neutro corrige el sesgo de subida al
-// final que muestra multilingual_v2 en frases cortas sueltas.
-const PREV = "Ahora escucha esta frase.";
-const NEXT = "Muy bien. Ahora sigamos con la siguiente.";
-const PREVQ = "Él tiene una duda y pregunta:";
-const NEXTQ = "Ella le responde enseguida.";
+// Encuadre por idioma. Mismo criterio que _genPracticeClips.ts: el contexto
+// neutro corrige el sesgo de subida al final que muestra multilingual_v2 en
+// frases cortas sueltas, y la pareja `q` hace que una pregunta suene a
+// pregunta. Nada de esto se oye en el clip; solo condiciona la prosodia.
+type Framing = { prev: string; next: string; prevq: string; nextq: string };
+const FRAMING: Record<string, Framing> = {
+  spanish: {
+    prev: "Ahora escucha esta frase.",
+    next: "Muy bien. Ahora sigamos con la siguiente.",
+    prevq: "Él tiene una duda y pregunta:",
+    nextq: "Ella le responde enseguida.",
+  },
+  french: {
+    prev: "Écoute cette phrase.",
+    next: "Très bien. Passons à la suivante.",
+    prevq: "Il a un doute et demande:",
+    nextq: "Elle lui répond tout de suite.",
+  },
+};
+function resolveFraming(language: string | null | undefined): Framing {
+  const f = FRAMING[(language ?? "").toLowerCase()];
+  if (!f) throw new Error(`idioma no soportado aun: ${language} (añade su encuadre a FRAMING)`);
+  return f;
+}
 const isQuestion = (s: string) => s.trim().endsWith("?");
 const F0_PYTHON = join(process.env.HOME || "", ".cache", "dpl-qa", "venv", "bin", "python");
 
@@ -68,7 +92,7 @@ async function tts(text: string, apiKey: string): Promise<Buffer> {
   const q = isQuestion(text);
   const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE}`, {
     method: "POST", headers: { "xi-api-key": apiKey, "Content-Type": "application/json" },
-    body: JSON.stringify({ text, model_id: MODEL, previous_text: q ? PREVQ : PREV, next_text: q ? NEXTQ : NEXT, voice_settings: SETTINGS }),
+    body: JSON.stringify({ text, model_id: MODEL, previous_text: q ? FRAME.prevq : FRAME.prev, next_text: q ? FRAME.nextq : FRAME.next, voice_settings: SETTINGS }),
   });
   if (!res.ok) throw new Error(`TTS ${res.status} ${(await res.text()).slice(0, 80)}`);
   return Buffer.from(await res.arrayBuffer());
@@ -119,7 +143,7 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
     select: { voiceId: true, practiceVoiceId: true, journey: { select: { language: true } }, practiceSet: { select: { exercises: { select: { id: true, word: true, type: true, payload: true } } } } },
   });
   if (!story?.practiceSet) throw new Error(`no practice set for ${slug}`);
-  if ((story.journey?.language ?? "").toLowerCase() !== "spanish") throw new Error(`idioma no soportado aun: ${story.journey?.language}`);
+  const framing = resolveFraming(story.journey?.language);
   const voice = practiceVoiceId(story);
   let targets = story.practiceSet.exercises.filter((e) => e.type === "fill_blank" && (e.payload as any)?.audioClip?.sentence);
   if (only) targets = targets.filter((e) => only.has((e.word || "").trim().toLowerCase()));
@@ -127,6 +151,7 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
   if (dry) {
     let chars = 0, pendientes = 0;
     console.log(`${slug}: voz=${voice} | lang=${story.journey?.language} | ${targets.length} fill_blank`);
+    console.log(`  encuadre: "${framing.prev}" / "${framing.next}" | pregunta: "${framing.prevq}" / "${framing.nextq}"`);
     for (const e of targets) {
       const ac: any = (e.payload as any).audioClip;
       const sentence: string = ac.sentence;
@@ -140,6 +165,8 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
   }
 
   const apiKey = process.env.ELEVENLABS_API_KEY; if (!apiKey) throw new Error("no ELEVENLABS_API_KEY");
+  VOICE = voice;
+  FRAME = framing;
   console.log(`${slug}: voz=${voice} | lang=${story.journey?.language} | ${targets.length} fill_blank`);
   const outDir = mkdtempSync(join(tmpdir(), "fbout-"));
   let ok = 0;
