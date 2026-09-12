@@ -67,23 +67,28 @@ const prisma = new PrismaClient();
   const muestras = fs.existsSync(REGISTRO)
     ? (JSON.parse(fs.readFileSync(REGISTRO, "utf8")) as Record<string, unknown>)
     : {};
-  if (s.slotIndex === 1 && !muestras[s.slug] && !process.argv.includes("--rehacer")) {
+  // CUAL es la primera del tema sale del DATO, no de un numero fijo. El A2 y el
+  // B1 latam numeran sus slots desde 1, pero el Friends FR A0 lo hace desde 0:
+  // con `slotIndex === 1` a fuego, la SEGUNDA historia se tomaba por la primera
+  // y pedia muestra, y la tercera exigia que estuviera narrada la segunda
+  // (2026-09-12, se paro la tanda del frances en 1 de 21).
+  const primera = await prisma.journeyStory.findFirst({
+    where: { journeyId: JOURNEY, topic: s.topic },
+    orderBy: { slotIndex: "asc" },
+    select: { slug: true, slotIndex: true, audioUrl: true },
+  });
+  const esPrimera = s.slotIndex === primera?.slotIndex;
+  if (esPrimera && !muestras[s.slug] && !process.argv.includes("--rehacer")) {
     throw new Error(
       `${slug} es la PRIMERA de su tema y no tiene muestra.\n` +
       `  NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_muestraA2Titulo.ts ${slug}`
     );
   }
-  if (s.slotIndex > 1) {
-    const primera = await prisma.journeyStory.findFirst({
-      where: { journeyId: JOURNEY, topic: s.topic, slotIndex: 1 },
-      select: { slug: true, audioUrl: true },
-    });
-    if (!primera?.audioUrl) {
-      throw new Error(
-        `la primera de este tema (${primera?.slug}) todavia no esta narrada.\n` +
-        `  El orden es: muestra, primera entera, y luego el resto.`
-      );
-    }
+  if (!esPrimera && !primera?.audioUrl) {
+    throw new Error(
+      `la primera de este tema (${primera?.slug}) todavia no esta narrada.\n` +
+      `  El orden es: muestra, primera entera, y luego el resto.`
+    );
   }
 
   // Ninguna historia se narra con glosas copiadas sin leer: el audio es lo caro
