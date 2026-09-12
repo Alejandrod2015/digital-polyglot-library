@@ -22,6 +22,10 @@ TEMAS=(
   "a-samedi-hugo clara-tient-la-boule treize-comme-avant"
 )
 
+# Las que ya tienen audio se saltan: _narraUnaA2 se niega a pisarlas sin
+# --rehacer, y sin este filtro la tanda moriria en la primera ya narrada.
+CON_AUDIO="$(npx tsx scripts/_frA0/_orden.ts 2>/dev/null | awk '$4 == "AUDIO" { print $3 }')"
+
 for i in "${!TEMAS[@]}"; do
   read -r -a HIST <<< "${TEMAS[$i]}"
   primera="${HIST[0]}"
@@ -33,6 +37,10 @@ for i in "${!TEMAS[@]}"; do
     echo "--- muestra de $primera: ya registrada"
   fi
   for slug in "${HIST[@]}"; do
+    if grep -qx "$slug" <<< "$CON_AUDIO"; then
+      echo "--- $slug: ya narrada, se salta"
+      continue
+    fi
     echo "--- narrando $slug"
     DPL_AUDIO_FULL_OK=1 npx tsx scripts/_narraUnaA2.ts "$slug" --journey fr-a0
   done
