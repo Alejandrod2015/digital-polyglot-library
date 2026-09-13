@@ -23,7 +23,9 @@
  * como entrada de diccionario en indicativo, sin nada que dijera que `se vaya`
  * no es `se va`. Habia 473 asi repartidas por 20 paquetes.
  */
-import { config } from "dotenv"; config({ path: ".env.local", quiet: true });
+import { config } from "dotenv";
+config({ path: ".env.local", quiet: true });
+config({ path: ".env", quiet: true });
 import { PrismaClient } from "../src/generated/prisma";
 import { moodsDeBundle, paquetesVivos } from "./buildGlossMoods";
 

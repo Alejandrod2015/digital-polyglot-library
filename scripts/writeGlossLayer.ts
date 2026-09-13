@@ -18,7 +18,9 @@
  * Sustituye al helper de JSON: desde el 2026-08-26 las glosas viven en
  * `dp_tap_glosses_v1` y escribir aqui se ve en produccion sin build.
  */
-import { config } from "dotenv"; config({ path: ".env.local", quiet: true });
+import { config } from "dotenv";
+config({ path: ".env.local", quiet: true });
+config({ path: ".env", quiet: true });
 import fs from "node:fs";
 import { PrismaClient } from "../src/generated/prisma";
 

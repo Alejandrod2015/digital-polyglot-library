@@ -13,7 +13,9 @@
  *   contraste (subjuntivo, condicional, Konjunktiv II)  head + rows + enlace
  *   imperativo y enclítico                              rows a la vista, sin enlace
  */
-import { config } from "dotenv"; config({ path: ".env.local", quiet: true });
+import { config } from "dotenv";
+config({ path: ".env.local", quiet: true });
+config({ path: ".env", quiet: true });
 import { PrismaClient } from "../src/generated/prisma";
 import { presente, preterito, personas, indicePorForma, IRREGULARES } from "./buildGlossForms";
 import {
