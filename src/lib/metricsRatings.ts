@@ -12,9 +12,11 @@
 // 2. La conversion sobre preguntas, no sobre filas. Una pregunta es
 //    `(persona, cosa, superficie)`, la misma clave unica que tiene el voto:
 //    cinco impresiones seguidas del panel de favoritos son una sola pregunta.
-//    Y un voto que llega sin impresion (hay puertas de practica que dejan votar
-//    sin registrar la vista) no entra en la conversion: se cuenta aparte, o el
-//    porcentaje sale por encima de lo real.
+//    Una pregunta cuenta si al menos una de sus impresiones llego sin voto
+//    previo: tras votar, la fila vuelve a salir marcada `alreadyRated`, y
+//    descartar la pregunta por eso saca del denominador justo las contestadas.
+//    Un voto sin impresion en el rango no entra en la conversion; se cuenta
+//    aparte, o el porcentaje sale por encima de lo real.
 
 import { prisma } from "@/lib/prisma";
 import { splitInternal } from "@/lib/internalAccounts";
@@ -29,8 +31,9 @@ export type RatingsMetrics = {
   down: number;
   voters: number;
   comments: number;
-  /** Votos del equipo que se han quitado, para decirlo y no esconderlo. */
+  /** Votos e impresiones del equipo que se han quitado, para decirlo y no esconderlo. */
   excludedInternalVotes: number;
+  excludedInternalPrompts: number;
   bySurface: Array<{
     surface: string;
     up: number;
@@ -50,6 +53,18 @@ export type RatingsMetrics = {
     comments: number;
     lastAt: string;
   }>;
+  /** Una fila por persona de fuera que vio la pregunta o voto. */
+  byPerson: Array<{
+    userId: string;
+    /** null: ni nuestras tablas ni Clerk saben quien es; no se puede descartar que sea de casa. */
+    email: string | null;
+    platforms: string[];
+    story: { asked: number; answered: number };
+    practice: { asked: number; answered: number };
+    up: number;
+    down: number;
+    comments: number;
+  }>;
   commentRows: Array<{
     createdAt: string;
     email: string | null;
@@ -68,9 +83,11 @@ export function emptyRatingsMetrics(): RatingsMetrics {
     voters: 0,
     comments: 0,
     excludedInternalVotes: 0,
+    excludedInternalPrompts: 0,
     bySurface: [],
     votesWithoutView: 0,
     byStory: [],
+    byPerson: [],
     commentRows: [],
   };
 }
@@ -117,20 +134,38 @@ export async function computeRatingsMetrics(args: {
         ...slugFilter,
       },
       select: { userId: true, storySlug: true, metadata: true },
+      orderBy: { createdAt: "asc" },
     }),
   ]);
 
-  // UserMetric no guarda correo. Se lo pone el voto de esa misma persona y,
-  // si no voto nunca, Clerk; sin correo el dominio de la empresa no se puede
-  // reconocer y una cuenta de casa pasaria por tester.
-  const emailOf = new Map<string, string | null>();
+  // UserMetric no guarda correo, y sin correo el dominio de la empresa no se
+  // puede reconocer: una cuenta de casa pasaria por tester. Primero las tablas
+  // nuestras que guardan id y correo juntos, que responden igual en local que
+  // en produccion; Clerk solo para lo que quede.
+  const emailOf = new Map<string, string>();
   for (const r of ratingRows) if (r.email) emailOf.set(r.userId, r.email);
-  const sinCorreo = Array.from(
-    new Set([...ratingRows, ...promptRows].map((r) => r.userId).filter((id) => !emailOf.has(id))),
-  );
-  if (sinCorreo.length > 0) {
-    const resueltos = await resolveUserEmails(sinCorreo);
-    for (const [id, email] of resueltos) emailOf.set(id, email);
+  const faltan = () =>
+    Array.from(new Set([...ratingRows, ...promptRows].map((r) => r.userId))).filter(
+      (id) => !emailOf.has(id),
+    );
+  if (faltan().length > 0) {
+    const ids = faltan();
+    const [signups, prefs] = await Promise.all([
+      prisma.betaSignup.findMany({
+        where: { clerkUserId: { in: ids } },
+        select: { clerkUserId: true, email: true },
+      }),
+      prisma.emailPreference.findMany({
+        where: { userId: { in: ids } },
+        select: { userId: true, email: true },
+      }),
+    ]);
+    for (const e of prefs) if (e.userId) emailOf.set(e.userId, e.email);
+    for (const b of signups) if (b.clerkUserId) emailOf.set(b.clerkUserId, b.email);
+  }
+  if (faltan().length > 0) {
+    const resueltos = await resolveUserEmails(faltan());
+    for (const [id, email] of resueltos) if (email) emailOf.set(id, email);
   }
   const correo = (userId: string, own?: string | null) => own ?? emailOf.get(userId) ?? null;
 
@@ -142,10 +177,13 @@ export async function computeRatingsMetrics(args: {
     ratingRows.filter((r) => r.internal).length + votosCasaPorCorreo.length;
 
   const meta = (m: unknown): PromptMeta => (m && typeof m === "object" ? (m as PromptMeta) : {});
-  const { external: prompts } = await splitInternal(
+  const { external: prompts, internal: promptsCasaPorCorreo } = await splitInternal(
     promptRows.filter((r) => meta(r.metadata).internal !== true),
     (r) => correo(r.userId),
   );
+  const excludedInternalPrompts =
+    promptRows.filter((r) => meta(r.metadata).internal === true).length +
+    promptsCasaPorCorreo.length;
 
   // Preguntas: con al menos una impresion que no llegaba ya votada.
   const vistas = new Set<string>();
@@ -201,6 +239,50 @@ export async function computeRatingsMetrics(args: {
     .sort((a, b) => b.up + b.down - (a.up + a.down) || b.lastAt.localeCompare(a.lastAt))
     .slice(0, BY_STORY_LIMIT);
 
+  const personas = new Map<string, RatingsMetrics["byPerson"][number]>();
+  const persona = (userId: string) => {
+    let fila = personas.get(userId);
+    if (!fila) {
+      fila = {
+        userId,
+        email: correo(userId),
+        platforms: [],
+        story: { asked: 0, answered: 0 },
+        practice: { asked: 0, answered: 0 },
+        up: 0,
+        down: 0,
+        comments: 0,
+      };
+      personas.set(userId, fila);
+    }
+    return fila;
+  };
+  const anotaSistema = (userId: string, platform: unknown) => {
+    const fila = persona(userId);
+    if (typeof platform === "string" && platform && !fila.platforms.includes(platform)) {
+      fila.platforms.push(platform);
+    }
+  };
+  for (const p of prompts) anotaSistema(p.userId, (p.metadata as { platform?: unknown } | null)?.platform);
+  for (const [k, surface] of preguntas) {
+    const userId = k.split("::")[0];
+    const celdaSup = surface === "practice" ? persona(userId).practice : persona(userId).story;
+    celdaSup.asked += 1;
+    if (votadas.has(k)) celdaSup.answered += 1;
+  }
+  for (const v of votes) {
+    anotaSistema(v.userId, v.platform);
+    const fila = persona(v.userId);
+    if (v.liked) fila.up += 1;
+    else fila.down += 1;
+    if (v.comment?.trim()) fila.comments += 1;
+  }
+  const byPerson = [...personas.values()].sort(
+    (a, b) =>
+      b.up + b.down - (a.up + a.down) ||
+      b.story.asked + b.practice.asked - (a.story.asked + a.practice.asked),
+  );
+
   const conComentario = votes.filter((v) => v.comment?.trim());
   const commentRows = conComentario.slice(0, COMMENTS_LIMIT).map((v) => ({
     createdAt: v.createdAt.toISOString(),
@@ -218,9 +300,11 @@ export async function computeRatingsMetrics(args: {
     voters: new Set(votes.map((v) => v.userId)).size,
     comments: conComentario.length,
     excludedInternalVotes,
+    excludedInternalPrompts,
     bySurface,
     votesWithoutView,
     byStory,
+    byPerson,
     commentRows,
   };
 }

@@ -75,6 +75,57 @@ export function RatingsPanel({ ratings }: { ratings: DashboardData["ratings"] })
         />
       </div>
 
+      <div className="mx-panel__sub">Por persona</div>
+      <div style={{ overflowX: "auto" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
+          <thead>
+            <tr style={{ textAlign: "left", opacity: 0.6 }}>
+              <th style={cell}>Quién</th>
+              <th style={cell}>Sistema</th>
+              <th style={{ ...cell, textAlign: "right" }}>Historia</th>
+              <th style={{ ...cell, textAlign: "right" }}>Práctica</th>
+              <th style={{ ...cell, textAlign: "right" }}>Arriba</th>
+              <th style={{ ...cell, textAlign: "right" }}>Abajo</th>
+              <th style={{ ...cell, textAlign: "right" }}>Comentarios</th>
+            </tr>
+          </thead>
+          <tbody>
+            {(ratings.byPerson ?? []).map((u) => (
+              <tr key={u.userId} style={{ borderTop: "1px solid var(--mx-border-soft)" }}>
+                <td style={{ ...cell, whiteSpace: "nowrap" }}>
+                  {u.email ?? (
+                    <span style={{ color: "var(--mx-warn)" }} title="Sin correo: no se puede descartar que sea una cuenta de casa">
+                      sin correo · {u.userId.slice(-6)}
+                    </span>
+                  )}
+                </td>
+                <td style={{ ...cell, ...muted }}>{u.platforms.join(", ") || "-"}</td>
+                <td style={{ ...cell, textAlign: "right", whiteSpace: "nowrap" }}>
+                  {u.story.asked} <span style={muted}>→</span> {u.story.answered}
+                </td>
+                <td style={{ ...cell, textAlign: "right", whiteSpace: "nowrap" }}>
+                  {u.practice.asked} <span style={muted}>→</span> {u.practice.answered}
+                </td>
+                <td style={{ ...cell, textAlign: "right" }}>{fmt(u.up)}</td>
+                <td style={{ ...cell, textAlign: "right" }}>{fmt(u.down)}</td>
+                <td style={{ ...cell, textAlign: "right" }}>{fmt(u.comments)}</td>
+              </tr>
+            ))}
+            {(ratings.byPerson ?? []).length === 0 && (
+              <tr>
+                <td colSpan={7} style={{ ...cell, ...muted, textAlign: "center", padding: 18 }}>
+                  Nadie de fuera ha visto la fila de valorar en el rango.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+      <p style={{ fontSize: 12, ...muted, margin: "6px 0 0" }}>
+        preguntas → contestadas. Una pregunta es persona, historia y superficie: el mismo panel
+        visto cinco veces cuenta una.
+      </p>
+
       <div className="mx-panel__sub">Por superficie</div>
       <div style={{ overflowX: "auto" }}>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
@@ -112,8 +163,8 @@ export function RatingsPanel({ ratings }: { ratings: DashboardData["ratings"] })
       {ratings.votesWithoutView > 0 && (
         <p style={{ fontSize: 12, ...muted, margin: "8px 0 0" }}>
           {fmt(ratings.votesWithoutView)}{" "}
-          {ratings.votesWithoutView === 1 ? "voto llegó" : "votos llegaron"} sin impresión
-          registrada: hay puertas de práctica que dejan votar sin contar la vista. No entran en la
+          {ratings.votesWithoutView === 1 ? "voto no tiene" : "votos no tienen"} su impresión
+          dentro del rango (la vista pudo caer antes de la fecha de inicio). No entran en la
           conversión.
         </p>
       )}
