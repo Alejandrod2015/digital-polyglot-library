@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Kühlschrank,die Tür,die Fotografin,umarmen",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Kühlschrank",
+     "answer": "a fridge",
+     "options": [
+      "a fridge",
+      "a door",
+      "a female photographer",
+      "to hug"
+     ]
+    },
+    {
+     "word": "die Tür",
+     "answer": "a door",
+     "options": [
+      "a fridge",
+      "a door",
+      "a female photographer",
+      "to hug"
+     ]
+    },
+    {
+     "word": "die Fotografin",
+     "answer": "a female photographer",
+     "options": [
+      "a fridge",
+      "a door",
+      "a female photographer",
+      "to hug"
+     ]
+    },
+    {
+     "word": "umarmen",
+     "answer": "to hug",
+     "options": [
+      "a fridge",
+      "a door",
+      "a female photographer",
+      "to hug"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "oben",
+  "sentence": "Die neue Mieterin von [[oben]] steht davor.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "upstairs",
+   "options": [
+    "upstairs",
+    "downstairs",
+    "outside",
+    "nearby"
+   ],
+   "audioClip": {
+    "storySlug": "fotos-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Die neue Mieterin von oben steht davor.",
+    "targetWord": "oben",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sucht",
+  "sentence": "Sie [[sucht]] ihr Gesicht auf den Fotos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "looks for",
+   "options": [
+    "looks for",
+    "finds",
+    "hides",
+    "draws"
+   ],
+   "audioClip": {
+    "storySlug": "fotos-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Sie sucht ihr Gesicht auf den Fotos.",
+    "targetWord": "sucht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Gesicht",
+  "sentence": "Sie sucht ihr [[Gesicht]] auf den Fotos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a face",
+   "options": [
+    "a face",
+    "a name",
+    "a voice",
+    "a shadow"
+   ],
+   "audioClip": {
+    "storySlug": "fotos-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Sie sucht ihr Gesicht auf den Fotos.",
+    "targetWord": "Gesicht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "neben",
+  "sentence": "Die Nachbarin steht immer [[neben]] ihm.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "next to",
+   "options": [
+    "next to",
+    "far from",
+    "behind",
+    "under"
+   ],
+   "audioClip": {
+    "storySlug": "fotos-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Die Nachbarin steht immer neben ihm.",
+    "targetWord": "neben",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Bauch",
+  "sentence": "Ihr [[Bauch]] ist hart, denn die Nachbarin hat ihren Platz.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stomach",
+   "options": [
+    "stomach",
+    "heart",
+    "hand",
+    "face"
+   ],
+   "audioClip": {
+    "storySlug": "fotos-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Ihr Bauch ist hart, denn die Nachbarin hat ihren Platz.",
+    "targetWord": "Bauch",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hart",
+  "sentence": "Ihr Bauch ist [[hart]], denn die Nachbarin hat ihren Platz.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tight",
+   "options": [
+    "tight",
+    "soft",
+    "warm",
+    "light"
+   ],
+   "audioClip": {
+    "storySlug": "fotos-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Ihr Bauch ist hart, denn die Nachbarin hat ihren Platz.",
+    "targetWord": "hart",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Platz",
+  "sentence": "Die Nachbarin hat ihren [[Platz]] neben ihm.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "spot",
+   "options": [
+    "spot",
+    "name",
+    "photo",
+    "key"
+   ],
+   "audioClip": {
+    "storySlug": "fotos-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Die Nachbarin hat ihren Platz neben ihm.",
+    "targetWord": "Platz",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ruft",
+  "sentence": "“Wer bist du?”, [[ruft]] die Nachbarin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "calls out",
+   "options": [
+    "calls out",
+    "whispers",
+    "sings",
+    "reads"
+   ],
+   "audioClip": {
+    "storySlug": "fotos-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "“Wer bist du?”, ruft die Nachbarin.",
+    "targetWord": "ruft",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gern",
+  "sentence": "Ich mache [[gern]] ein Foto von dir”, lächelt die Nachbarin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gladly",
+   "options": [
+    "gladly",
+    "never",
+    "rarely",
+    "sadly"
+   ],
+   "audioClip": {
+    "storySlug": "fotos-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Ich mache gern ein Foto von dir”, lächelt die Nachbarin.",
+    "targetWord": "gern",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "immer",
+  "sentence": "Die Nachbarin steht [[immer]] neben ihm.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "always",
+   "options": [
+    "always",
+    "never",
+    "sometimes",
+    "rarely"
+   ],
+   "audioClip": {
+    "storySlug": "fotos-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Die Nachbarin steht immer neben ihm.",
+    "targetWord": "immer",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Endlich",
+  "sentence": "“[[Endlich]] bist du zurück!”, sagt die Nachbarin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Finally",
+   "options": [
+    "Finally",
+    "Never",
+    "Maybe",
+    "Sadly"
+   ],
+   "audioClip": {
+    "storySlug": "fotos-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "“Endlich bist du zurück!”, sagt die Nachbarin.",
+    "targetWord": "Endlich",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fehlst",
+  "sentence": "“Du [[fehlst]] auf dem Foto.”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "are missing",
+   "options": [
+    "are missing",
+    "are smiling",
+    "are standing",
+    "are laughing"
+   ],
+   "audioClip": {
+    "storySlug": "fotos-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "“Du fehlst auf dem Foto.”",
+    "targetWord": "fehlst",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "antwortet",
+  "sentence": "“Ich wohne oben”, [[antwortet]] die Mieterin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "answers",
+   "options": [
+    "answers",
+    "asks",
+    "shouts",
+    "sings"
+   ],
+   "audioClip": {
+    "storySlug": "fotos-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "“Ich wohne oben”, antwortet die Mieterin.",
+    "targetWord": "antwortet",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "kocht",
+  "sentence": "Er _____ heute für die Freunde.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kocht",
+   "options": [
+    "kocht",
+    "sucht",
+    "ruft",
+    "zeigt"
+   ],
+   "translation": "He is _____ today for the friends.",
+   "optionTranslations": [
+    "cooking",
+    "looking",
+    "calling",
+    "showing"
+   ],
+   "audioClip": {
+    "storySlug": "fotos-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Er kocht heute für die Freunde.",
+    "targetWord": "kocht",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "hängt",
+  "sentence": "Sie _____ das Foto an den Kühlschrank.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "hängt",
+   "options": [
+    "hängt",
+    "zeigt",
+    "sucht",
+    "findet"
+   ],
+   "translation": "She _____ the photo on the fridge.",
+   "optionTranslations": [
+    "hangs",
+    "shows",
+    "looks for",
+    "finds"
+   ],
+   "audioClip": {
+    "storySlug": "fotos-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Sie hängt das Foto an den Kühlschrank.",
+    "targetWord": "hängt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "runde",
+  "sentence": "Sie trägt eine _____ Brille.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "runde",
+   "options": [
+    "runde",
+    "neue",
+    "kleine",
+    "gelbe"
+   ],
+   "translation": "She wears _____ glasses.",
+   "optionTranslations": [
+    "round",
+    "new",
+    "small",
+    "yellow"
+   ],
+   "audioClip": {
+    "storySlug": "fotos-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Sie trägt eine runde Brille.",
+    "targetWord": "runde",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Kuli,die Liste,das Büro,die Woche",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Kuli",
+     "answer": "a pen",
+     "options": [
+      "a pen",
+      "a list",
+      "an office",
+      "a week"
+     ]
+    },
+    {
+     "word": "die Liste",
+     "answer": "a list",
+     "options": [
+      "a pen",
+      "a list",
+      "an office",
+      "a week"
+     ]
+    },
+    {
+     "word": "das Büro",
+     "answer": "an office",
+     "options": [
+      "a pen",
+      "a list",
+      "an office",
+      "a week"
+     ]
+    },
+    {
+     "word": "die Woche",
+     "answer": "a week",
+     "options": [
+      "a pen",
+      "a list",
+      "an office",
+      "a week"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Spalten",
+  "sentence": "Sie macht eine Liste mit zwei [[Spalten]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "columns",
+   "options": [
+    "columns",
+    "pages",
+    "boxes",
+    "lines"
+   ],
+   "audioClip": {
+    "storySlug": "die-liste-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Sie macht eine Liste mit zwei Spalten.",
+    "targetWord": "Spalten",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "links",
+  "sentence": "München steht [[links]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on the left",
+   "options": [
+    "on the left",
+    "on the right",
+    "above",
+    "below"
+   ],
+   "audioClip": {
+    "storySlug": "die-liste-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "München steht links.",
+    "targetWord": "links",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rechts",
+  "sentence": "Bremen steht [[rechts]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on the right",
+   "options": [
+    "on the right",
+    "on the left",
+    "above",
+    "below"
+   ],
+   "audioClip": {
+    "storySlug": "die-liste-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Bremen steht rechts.",
+    "targetWord": "rechts",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "unter",
+  "sentence": "Sie schreibt [[unter]] München: mehr Geld.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "under",
+   "options": [
+    "under",
+    "over",
+    "next to",
+    "instead of"
+   ],
+   "audioClip": {
+    "storySlug": "die-liste-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Sie schreibt unter München: mehr Geld.",
+    "targetWord": "unter",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Geld",
+  "sentence": "Sie schreibt unter München: mehr [[Geld]], großes Büro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "money",
+   "options": [
+    "money",
+    "time",
+    "friends",
+    "music"
+   ],
+   "audioClip": {
+    "storySlug": "die-liste-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Sie schreibt unter München: mehr Geld, großes Büro.",
+    "targetWord": "Geld",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Grund",
+  "sentence": "“Ich will nicht dein [[Grund]] sein.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "reason",
+   "options": [
+    "reason",
+    "name",
+    "friend",
+    "problem"
+   ],
+   "audioClip": {
+    "storySlug": "die-liste-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "“Ich will nicht dein Grund sein.",
+    "targetWord": "Grund",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "telefoniert",
+  "sentence": "Sie [[telefoniert]] dann mit München.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "calls",
+   "options": [
+    "calls",
+    "writes",
+    "waits",
+    "cooks"
+   ],
+   "audioClip": {
+    "storySlug": "die-liste-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Sie telefoniert dann mit München.",
+    "targetWord": "telefoniert",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bittet",
+  "sentence": "Sie [[bittet]] um eine Woche mehr.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "asks for",
+   "options": [
+    "asks for",
+    "forgets",
+    "refuses",
+    "waits for"
+   ],
+   "audioClip": {
+    "storySlug": "die-liste-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Sie bittet um eine Woche mehr.",
+    "targetWord": "bittet",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sofort",
+  "sentence": "Die Chefin sagt [[sofort]] Nein.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at once",
+   "options": [
+    "at once",
+    "never",
+    "slowly",
+    "later"
+   ],
+   "audioClip": {
+    "storySlug": "die-liste-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Die Chefin sagt sofort Nein.",
+    "targetWord": "sofort",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ratlos",
+  "sentence": "“Ich bin [[ratlos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at a loss",
+   "options": [
+    "at a loss",
+    "happy",
+    "sure",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "die-liste-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "“Ich bin ratlos.",
+    "targetWord": "ratlos",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "kaut",
+  "sentence": "Sie [[kaut]] auf dem Kuli.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "chews",
+   "options": [
+    "chews",
+    "writes",
+    "draws",
+    "breaks"
+   ],
+   "audioClip": {
+    "storySlug": "die-liste-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Sie kaut auf dem Kuli.",
+    "targetWord": "kaut",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schläfst",
+  "sentence": "“Jetzt [[schläfst]] du.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sleep",
+   "options": [
+    "sleep",
+    "work",
+    "wait",
+    "decide"
+   ],
+   "audioClip": {
+    "storySlug": "die-liste-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "“Jetzt schläfst du.",
+    "targetWord": "schläfst",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "kürzer",
+  "sentence": "Die Spalte für Bremen ist jetzt [[kürzer]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shorter",
+   "options": [
+    "shorter",
+    "longer",
+    "wider",
+    "older"
+   ],
+   "audioClip": {
+    "storySlug": "die-liste-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Die Spalte für Bremen ist jetzt kürzer.",
+    "targetWord": "kürzer",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "murmelt",
+  "sentence": "“Zuhause, Freunde, Musik”, _____ sie.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "murmelt",
+   "options": [
+    "murmelt",
+    "ruft",
+    "fragt",
+    "singt"
+   ],
+   "translation": "Home, friends, music,\" she _____.",
+   "optionTranslations": [
+    "murmurs",
+    "calls",
+    "asks",
+    "sings"
+   ],
+   "audioClip": {
+    "storySlug": "die-liste-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "“Zuhause, Freunde, Musik”, murmelt sie.",
+    "targetWord": "murmelt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "gähnt",
+  "sentence": "Er kommt in die Küche und _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gähnt",
+   "options": [
+    "gähnt",
+    "lacht",
+    "hustet",
+    "singt"
+   ],
+   "translation": "He comes into the kitchen and _____.",
+   "optionTranslations": [
+    "yawns",
+    "laughs",
+    "coughs",
+    "sings"
+   ],
+   "audioClip": {
+    "storySlug": "die-liste-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Er kommt in die Küche und gähnt.",
+    "targetWord": "gähnt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "summt",
+  "sentence": "Der Kühlschrank _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "summt",
+   "options": [
+    "summt",
+    "klingelt",
+    "spricht",
+    "singt"
+   ],
+   "translation": "The fridge _____.",
+   "optionTranslations": [
+    "hums",
+    "rings",
+    "talks",
+    "sings"
+   ],
+   "audioClip": {
+    "storySlug": "die-liste-am-kuhlschrank",
+    "storySource": "user",
+    "sentence": "Der Kühlschrank summt.",
+    "targetWord": "summt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

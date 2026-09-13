@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "die Adresse,der Hals,der Müll,lächeln",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "die Adresse",
+     "answer": "an address",
+     "options": [
+      "an address",
+      "the throat",
+      "rubbish",
+      "to smile"
+     ]
+    },
+    {
+     "word": "der Hals",
+     "answer": "the throat",
+     "options": [
+      "an address",
+      "the throat",
+      "rubbish",
+      "to smile"
+     ]
+    },
+    {
+     "word": "der Müll",
+     "answer": "rubbish",
+     "options": [
+      "an address",
+      "the throat",
+      "rubbish",
+      "to smile"
+     ]
+    },
+    {
+     "word": "lächeln",
+     "answer": "to smile",
+     "options": [
+      "an address",
+      "the throat",
+      "rubbish",
+      "to smile"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Zwölf",
+  "sentence": "[[Zwölf]] Namen stehen auf dem Zettel.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Twelve",
+   "options": [
+    "Twelve",
+    "Ten",
+    "Eleven",
+    "Twenty"
+   ],
+   "audioClip": {
+    "storySlug": "zwolf-alte-adressen",
+    "storySource": "user",
+    "sentence": "Zwölf Namen stehen auf dem Zettel.",
+    "targetWord": "Zwölf",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stehen",
+  "sentence": "Ihr Name muss auf der Liste [[stehen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be written (on something)",
+   "options": [
+    "to be written (on something)",
+    "to sit down",
+    "to walk away",
+    "to sleep"
+   ],
+   "audioClip": {
+    "storySlug": "zwolf-alte-adressen",
+    "storySource": "user",
+    "sentence": "Ihr Name muss auf der Liste stehen.",
+    "targetWord": "stehen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "kennt",
+  "sentence": "Sie [[kennt]] jeden Namen auf der Liste.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "knows",
+   "options": [
+    "knows",
+    "forgets",
+    "writes",
+    "loses"
+   ],
+   "audioClip": {
+    "storySlug": "zwolf-alte-adressen",
+    "storySource": "user",
+    "sentence": "Sie kennt jeden Namen auf der Liste.",
+    "targetWord": "kennt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "früher",
+  "sentence": "Das sind alle Freunde von [[früher]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "from before",
+   "options": [
+    "from before",
+    "from today",
+    "from tomorrow",
+    "from next year"
+   ],
+   "audioClip": {
+    "storySlug": "zwolf-alte-adressen",
+    "storySource": "user",
+    "sentence": "Das sind alle Freunde von früher.",
+    "targetWord": "früher",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nimmt",
+  "sentence": "Er [[nimmt]] sein Handy aus der Tasche.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "takes",
+   "options": [
+    "takes",
+    "loses",
+    "sells",
+    "breaks"
+   ],
+   "audioClip": {
+    "storySlug": "zwolf-alte-adressen",
+    "storySource": "user",
+    "sentence": "Er nimmt sein Handy aus der Tasche.",
+    "targetWord": "nimmt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zeigt",
+  "sentence": "Er [[zeigt]] auf die Namen auf der Liste.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "points at",
+   "options": [
+    "points at",
+    "hides",
+    "counts",
+    "folds"
+   ],
+   "audioClip": {
+    "storySlug": "zwolf-alte-adressen",
+    "storySource": "user",
+    "sentence": "Er zeigt auf die Namen auf der Liste.",
+    "targetWord": "zeigt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Strich",
+  "sentence": "Sie macht einen [[Strich]] durch den Namen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a line",
+   "options": [
+    "a line",
+    "a stamp",
+    "a photo",
+    "a letter"
+   ],
+   "audioClip": {
+    "storySlug": "zwolf-alte-adressen",
+    "storySource": "user",
+    "sentence": "Sie macht einen Strich durch den Namen.",
+    "targetWord": "Strich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fragt",
+  "sentence": "“Und hier?”, [[fragt]] sie leise.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "asks",
+   "options": [
+    "asks",
+    "answers",
+    "sings",
+    "laughs"
+   ],
+   "audioClip": {
+    "storySlug": "zwolf-alte-adressen",
+    "storySource": "user",
+    "sentence": "“Und hier?”, fragt sie leise.",
+    "targetWord": "fragt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zählt",
+  "sentence": "Sie [[zählt]] die Karten auf dem Tisch.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "counts",
+   "options": [
+    "counts",
+    "folds",
+    "sends",
+    "reads"
+   ],
+   "audioClip": {
+    "storySlug": "zwolf-alte-adressen",
+    "storySource": "user",
+    "sentence": "Sie zählt die Karten auf dem Tisch.",
+    "targetWord": "zählt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fünf",
+  "sentence": "Sie hat [[fünf]] alte Karten in der Hand.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "five",
+   "options": [
+    "five",
+    "four",
+    "six",
+    "seven"
+   ],
+   "audioClip": {
+    "storySlug": "zwolf-alte-adressen",
+    "storySource": "user",
+    "sentence": "Sie hat fünf alte Karten in der Hand.",
+    "targetWord": "fünf",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schlecht",
+  "sentence": "“Vier ist nicht [[schlecht]]”, meint er.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bad",
+   "options": [
+    "bad",
+    "good",
+    "new",
+    "easy"
+   ],
+   "audioClip": {
+    "storySlug": "zwolf-alte-adressen",
+    "storySource": "user",
+    "sentence": "“Vier ist nicht schlecht”, meint er.",
+    "targetWord": "schlecht",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jeden",
+  "sentence": "Sie schickt [[jeden]] Freund eine Postkarte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "every",
+   "options": [
+    "every",
+    "some",
+    "no",
+    "one"
+   ],
+   "audioClip": {
+    "storySlug": "zwolf-alte-adressen",
+    "storySource": "user",
+    "sentence": "Sie schickt jeden Freund eine Postkarte.",
+    "targetWord": "jeden",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wohnt",
+  "sentence": "Ihr Freund [[wohnt]] jetzt in Berlin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lives",
+   "options": [
+    "lives",
+    "works",
+    "travels",
+    "visits"
+   ],
+   "audioClip": {
+    "storySlug": "zwolf-alte-adressen",
+    "storySource": "user",
+    "sentence": "Ihr Freund wohnt jetzt in Berlin.",
+    "targetWord": "wohnt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "faltet",
+  "sentence": "Sie _____ den alten Zettel langsam.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "faltet",
+   "options": [
+    "faltet",
+    "liest",
+    "zeigt",
+    "sucht"
+   ],
+   "translation": "She _____ the old note slowly.",
+   "optionTranslations": [
+    "folds",
+    "reads",
+    "shows",
+    "looks for"
+   ],
+   "audioClip": {
+    "storySlug": "zwolf-alte-adressen",
+    "storySource": "user",
+    "sentence": "Sie faltet den alten Zettel langsam.",
+    "targetWord": "faltet",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "eng",
+  "sentence": "Ihr Hals ist ganz _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "eng",
+   "options": [
+    "eng",
+    "warm",
+    "alt",
+    "kalt"
+   ],
+   "translation": "Her throat is quite _____.",
+   "optionTranslations": [
+    "tight",
+    "warm",
+    "old",
+    "cold"
+   ],
+   "audioClip": {
+    "storySlug": "zwolf-alte-adressen",
+    "storySource": "user",
+    "sentence": "Ihr Hals ist ganz eng.",
+    "targetWord": "eng",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "mehr",
+  "sentence": "Sie nimmt eine Karte _____ und schreibt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mehr",
+   "options": [
+    "mehr",
+    "weniger",
+    "zuerst",
+    "wieder"
+   ],
+   "translation": "She takes one card _____ and writes.",
+   "optionTranslations": [
+    "more",
+    "less",
+    "first",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "zwolf-alte-adressen",
+    "storySource": "user",
+    "sentence": "Sie nimmt eine Karte mehr und schreibt.",
+    "targetWord": "mehr",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

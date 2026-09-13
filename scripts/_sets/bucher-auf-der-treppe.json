@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "das Buch,die Buchhändlerin,der Roman,die Sorge",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "das Buch",
+     "answer": "a book",
+     "options": [
+      "a book",
+      "a female bookseller",
+      "a novel",
+      "worry"
+     ]
+    },
+    {
+     "word": "die Buchhändlerin",
+     "answer": "a female bookseller",
+     "options": [
+      "a book",
+      "a female bookseller",
+      "a novel",
+      "worry"
+     ]
+    },
+    {
+     "word": "der Roman",
+     "answer": "a novel",
+     "options": [
+      "a book",
+      "a female bookseller",
+      "a novel",
+      "worry"
+     ]
+    },
+    {
+     "word": "die Sorge",
+     "answer": "worry",
+     "options": [
+      "a book",
+      "a female bookseller",
+      "a novel",
+      "worry"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dick",
+  "sentence": "Die Bücher sind [[dick]] und dünn.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thick",
+   "options": [
+    "thick",
+    "thin",
+    "heavy",
+    "light"
+   ],
+   "audioClip": {
+    "storySlug": "bucher-auf-der-treppe",
+    "storySource": "user",
+    "sentence": "Die Bücher sind dick und dünn.",
+    "targetWord": "dick",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dünn",
+  "sentence": "Die Bücher sind dick und [[dünn]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thin",
+   "options": [
+    "thin",
+    "thick",
+    "old",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "bucher-auf-der-treppe",
+    "storySource": "user",
+    "sentence": "Die Bücher sind dick und dünn.",
+    "targetWord": "dünn",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Haus",
+  "sentence": "Die Treppe im [[Haus]] ist dunkel.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "house",
+   "options": [
+    "house",
+    "shop",
+    "street",
+    "garden"
+   ],
+   "audioClip": {
+    "storySlug": "bucher-auf-der-treppe",
+    "storySource": "user",
+    "sentence": "Die Treppe im Haus ist dunkel.",
+    "targetWord": "Haus",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "grün",
+  "sentence": "Das Buch ist [[grün]], genau wie das alte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "green",
+   "options": [
+    "green",
+    "red",
+    "old",
+    "thick"
+   ],
+   "audioClip": {
+    "storySlug": "bucher-auf-der-treppe",
+    "storySource": "user",
+    "sentence": "Das Buch ist grün, genau wie das alte.",
+    "targetWord": "grün",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Stapel",
+  "sentence": "Sie trägt einen [[Stapel]] Bücher im Arm.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a pile",
+   "options": [
+    "a pile",
+    "a page",
+    "a shelf",
+    "a box"
+   ],
+   "audioClip": {
+    "storySlug": "bucher-auf-der-treppe",
+    "storySource": "user",
+    "sentence": "Sie trägt einen Stapel Bücher im Arm.",
+    "targetWord": "Stapel",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dunkel",
+  "sentence": "Die Treppe im Haus ist [[dunkel]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dark",
+   "options": [
+    "dark",
+    "bright",
+    "warm",
+    "small"
+   ],
+   "audioClip": {
+    "storySlug": "bucher-auf-der-treppe",
+    "storySource": "user",
+    "sentence": "Die Treppe im Haus ist dunkel.",
+    "targetWord": "dunkel",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wichtig",
+  "sentence": "“Er ist [[wichtig]]”, sagt sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "important",
+   "options": [
+    "important",
+    "heavy",
+    "old",
+    "cheap"
+   ],
+   "audioClip": {
+    "storySlug": "bucher-auf-der-treppe",
+    "storySource": "user",
+    "sentence": "“Er ist wichtig”, sagt sie.",
+    "targetWord": "wichtig",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ohr",
+  "sentence": "Sie trägt einen Stift hinter dem [[Ohr]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ear",
+   "options": [
+    "ear",
+    "hand",
+    "book",
+    "door"
+   ],
+   "audioClip": {
+    "storySlug": "bucher-auf-der-treppe",
+    "storySource": "user",
+    "sentence": "Sie trägt einen Stift hinter dem Ohr.",
+    "targetWord": "Ohr",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "etwas",
+  "sentence": "“Suchst du [[etwas]] Bestimmtes?”, fragt die Buchhändlerin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "something",
+   "options": [
+    "something",
+    "nothing",
+    "someone",
+    "everything"
+   ],
+   "audioClip": {
+    "storySlug": "bucher-auf-der-treppe",
+    "storySource": "user",
+    "sentence": "“Suchst du etwas Bestimmtes?”, fragt die Buchhändlerin.",
+    "targetWord": "etwas",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Bestimmtes",
+  "sentence": "“Suchst du etwas [[Bestimmtes]]?”, fragt die Buchhändlerin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "particular",
+   "options": [
+    "particular",
+    "cheap",
+    "heavy",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "bucher-auf-der-treppe",
+    "storySource": "user",
+    "sentence": "“Suchst du etwas Bestimmtes?”, fragt die Buchhändlerin.",
+    "targetWord": "Bestimmtes",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "leider",
+  "sentence": "Das Buch ist [[leider]] nicht mehr hier”, sagt die Buchhändlerin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "unfortunately",
+   "options": [
+    "unfortunately",
+    "luckily",
+    "quickly",
+    "finally"
+   ],
+   "audioClip": {
+    "storySlug": "bucher-auf-der-treppe",
+    "storySource": "user",
+    "sentence": "Das Buch ist leider nicht mehr hier”, sagt die Buchhändlerin.",
+    "targetWord": "leider",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Magen",
+  "sentence": "Ihr [[Magen]] tut weh.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stomach",
+   "options": [
+    "stomach",
+    "heart",
+    "hand",
+    "head"
+   ],
+   "audioClip": {
+    "storySlug": "bucher-auf-der-treppe",
+    "storySource": "user",
+    "sentence": "Ihr Magen tut weh.",
+    "targetWord": "Magen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "seufzt",
+  "sentence": "Sie [[seufzt]] und setzt sich auf die Stufe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sighs",
+   "options": [
+    "sighs",
+    "laughs",
+    "runs",
+    "sings"
+   ],
+   "audioClip": {
+    "storySlug": "bucher-auf-der-treppe",
+    "storySource": "user",
+    "sentence": "Sie seufzt und setzt sich auf die Stufe.",
+    "targetWord": "seufzt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "setzt",
+  "sentence": "Sie seufzt und _____ sich auf die Stufe.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "setzt",
+   "options": [
+    "setzt",
+    "läuft",
+    "steht",
+    "schaut"
+   ],
+   "translation": "She sighs and _____ down on the step.",
+   "optionTranslations": [
+    "sits",
+    "walks",
+    "stands",
+    "looks"
+   ],
+   "audioClip": {
+    "storySlug": "bucher-auf-der-treppe",
+    "storySource": "user",
+    "sentence": "Sie seufzt und setzt sich auf die Stufe.",
+    "targetWord": "setzt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "sammle",
+  "sentence": "“Ich _____ alle Zettel aus den Büchern”, lächelt die Buchhändlerin.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sammle",
+   "options": [
+    "sammle",
+    "lese",
+    "verkaufe",
+    "suche"
+   ],
+   "translation": "I _____ all the notes from the books,\" smiles the bookseller.",
+   "optionTranslations": [
+    "collect",
+    "read",
+    "sell",
+    "look for"
+   ],
+   "audioClip": {
+    "storySlug": "bucher-auf-der-treppe",
+    "storySource": "user",
+    "sentence": "“Ich sammle alle Zettel aus den Büchern”, lächelt die Buchhändlerin.",
+    "targetWord": "sammle",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "rennt",
+  "sentence": "Die Buchhändlerin _____ sofort in den zweiten Stock.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rennt",
+   "options": [
+    "rennt",
+    "geht",
+    "fliegt",
+    "fährt"
+   ],
+   "translation": "The bookseller _____ straight up to the second floor.",
+   "optionTranslations": [
+    "runs",
+    "goes",
+    "flies",
+    "drives"
+   ],
+   "audioClip": {
+    "storySlug": "bucher-auf-der-treppe",
+    "storySource": "user",
+    "sentence": "Die Buchhändlerin rennt sofort in den zweiten Stock.",
+    "targetWord": "rennt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Lieblingstopf,das Telefon,die Nummer,die Chefin",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Lieblingstopf",
+     "answer": "a favourite pot",
+     "options": [
+      "a favourite pot",
+      "a phone",
+      "a number",
+      "a female boss"
+     ]
+    },
+    {
+     "word": "das Telefon",
+     "answer": "a phone",
+     "options": [
+      "a favourite pot",
+      "a phone",
+      "a number",
+      "a female boss"
+     ]
+    },
+    {
+     "word": "die Nummer",
+     "answer": "a number",
+     "options": [
+      "a favourite pot",
+      "a phone",
+      "a number",
+      "a female boss"
+     ]
+    },
+    {
+     "word": "die Chefin",
+     "answer": "a female boss",
+     "options": [
+      "a favourite pot",
+      "a phone",
+      "a number",
+      "a female boss"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dreimal",
+  "sentence": "Das Telefon klingelt [[dreimal]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "three times",
+   "options": [
+    "three times",
+    "once",
+    "twice",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "jans-lieblingstopf",
+    "storySource": "user",
+    "sentence": "Das Telefon klingelt dreimal.",
+    "targetWord": "dreimal",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "geht",
+  "sentence": "Sie [[geht]] mit dem Telefon in den Flur.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "goes",
+   "options": [
+    "goes",
+    "runs",
+    "stays",
+    "sits"
+   ],
+   "audioClip": {
+    "storySlug": "jans-lieblingstopf",
+    "storySource": "user",
+    "sentence": "Sie geht mit dem Telefon in den Flur.",
+    "targetWord": "geht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "freundlich",
+  "sentence": "Ihre alte Chefin ist [[freundlich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "friendly",
+   "options": [
+    "friendly",
+    "strict",
+    "tired",
+    "angry"
+   ],
+   "audioClip": {
+    "storySlug": "jans-lieblingstopf",
+    "storySource": "user",
+    "sentence": "Ihre alte Chefin ist freundlich.",
+    "targetWord": "freundlich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zurück",
+  "sentence": "Die Chefin will sie [[zurück]] in München.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "back",
+   "options": [
+    "back",
+    "away",
+    "alone",
+    "near"
+   ],
+   "audioClip": {
+    "storySlug": "jans-lieblingstopf",
+    "storySource": "user",
+    "sentence": "Die Chefin will sie zurück in München.",
+    "targetWord": "zurück",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vergisst",
+  "sentence": "Sie [[vergisst]] die Suppe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "forgets",
+   "options": [
+    "forgets",
+    "cooks",
+    "tastes",
+    "finds"
+   ],
+   "audioClip": {
+    "storySlug": "jans-lieblingstopf",
+    "storySource": "user",
+    "sentence": "Sie vergisst die Suppe.",
+    "targetWord": "vergisst",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "weint",
+  "sentence": "Sie [[weint]] fast.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cries",
+   "options": [
+    "cries",
+    "laughs",
+    "sings",
+    "sleeps"
+   ],
+   "audioClip": {
+    "storySlug": "jans-lieblingstopf",
+    "storySource": "user",
+    "sentence": "Sie weint fast.",
+    "targetWord": "weint",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Deckel",
+  "sentence": "Der [[Deckel]] ist heiß.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lid",
+   "options": [
+    "lid",
+    "pot",
+    "table",
+    "spoon"
+   ],
+   "audioClip": {
+    "storySlug": "jans-lieblingstopf",
+    "storySource": "user",
+    "sentence": "Der Deckel ist heiß.",
+    "targetWord": "Deckel",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "linken",
+  "sentence": "Sie hält den Deckel in der [[linken]] Hand.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "left",
+   "options": [
+    "left",
+    "right",
+    "warm",
+    "small"
+   ],
+   "audioClip": {
+    "storySlug": "jans-lieblingstopf",
+    "storySource": "user",
+    "sentence": "Sie hält den Deckel in der linken Hand.",
+    "targetWord": "linken",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "so",
+  "sentence": "“Es tut mir [[so]] leid.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "so",
+   "options": [
+    "so",
+    "never",
+    "hardly",
+    "almost"
+   ],
+   "audioClip": {
+    "storySlug": "jans-lieblingstopf",
+    "storySource": "user",
+    "sentence": "“Es tut mir so leid.",
+    "targetWord": "so",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "leid",
+  "sentence": "“Es tut mir so [[leid]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sorry",
+   "options": [
+    "sorry",
+    "happy",
+    "tired",
+    "afraid"
+   ],
+   "audioClip": {
+    "storySlug": "jans-lieblingstopf",
+    "storySource": "user",
+    "sentence": "“Es tut mir so leid.",
+    "targetWord": "leid",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "böse",
+  "sentence": "Er ist nicht [[böse]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "angry",
+   "options": [
+    "angry",
+    "happy",
+    "tired",
+    "sad"
+   ],
+   "audioClip": {
+    "storySlug": "jans-lieblingstopf",
+    "storySource": "user",
+    "sentence": "Er ist nicht böse.",
+    "targetWord": "böse",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "um",
+  "sentence": "Die Freunde kommen [[um]] acht”, sagt er.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at",
+   "options": [
+    "at",
+    "after",
+    "before",
+    "without"
+   ],
+   "audioClip": {
+    "storySlug": "jans-lieblingstopf",
+    "storySource": "user",
+    "sentence": "Die Freunde kommen um acht”, sagt er.",
+    "targetWord": "um",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "acht",
+  "sentence": "Die Freunde kommen um [[acht]]”, sagt er.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "eight",
+   "options": [
+    "eight",
+    "seven",
+    "nine",
+    "ten"
+   ],
+   "audioClip": {
+    "storySlug": "jans-lieblingstopf",
+    "storySource": "user",
+    "sentence": "Die Freunde kommen um acht”, sagt er.",
+    "targetWord": "acht",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "klingelt",
+  "sentence": "Das Telefon _____ dreimal.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "klingelt",
+   "options": [
+    "klingelt",
+    "singt",
+    "spricht",
+    "schweigt"
+   ],
+   "translation": "The phone _____ three times.",
+   "optionTranslations": [
+    "rings",
+    "sings",
+    "speaks",
+    "is silent"
+   ],
+   "audioClip": {
+    "storySlug": "jans-lieblingstopf",
+    "storySource": "user",
+    "sentence": "Das Telefon klingelt dreimal.",
+    "targetWord": "klingelt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "hustet",
+  "sentence": "Er steht in der Tür und _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "hustet",
+   "options": [
+    "hustet",
+    "lacht",
+    "weint",
+    "singt"
+   ],
+   "translation": "He stands in the doorway and _____.",
+   "optionTranslations": [
+    "coughs",
+    "laughs",
+    "cries",
+    "sings"
+   ],
+   "audioClip": {
+    "storySlug": "jans-lieblingstopf",
+    "storySource": "user",
+    "sentence": "Er steht in der Tür und hustet.",
+    "targetWord": "hustet",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "kratzt",
+  "sentence": "Er _____ lange im Topf.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kratzt",
+   "options": [
+    "kratzt",
+    "kocht",
+    "sucht",
+    "wäscht"
+   ],
+   "translation": "He _____ at the pot for a long time.",
+   "optionTranslations": [
+    "scrapes",
+    "cooks",
+    "looks",
+    "washes"
+   ],
+   "audioClip": {
+    "storySlug": "jans-lieblingstopf",
+    "storySource": "user",
+    "sentence": "Er kratzt lange im Topf.",
+    "targetWord": "kratzt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Rahmen,die Treppe,das Herz,kaufen",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Rahmen",
+     "answer": "a frame",
+     "options": [
+      "a frame",
+      "the stairs",
+      "the heart",
+      "to buy"
+     ]
+    },
+    {
+     "word": "die Treppe",
+     "answer": "the stairs",
+     "options": [
+      "a frame",
+      "the stairs",
+      "the heart",
+      "to buy"
+     ]
+    },
+    {
+     "word": "das Herz",
+     "answer": "the heart",
+     "options": [
+      "a frame",
+      "the stairs",
+      "the heart",
+      "to buy"
+     ]
+    },
+    {
+     "word": "kaufen",
+     "answer": "to buy",
+     "options": [
+      "a frame",
+      "the stairs",
+      "the heart",
+      "to buy"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schaut",
+  "sentence": "Er [[schaut]] lange auf das alte Foto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "looks",
+   "options": [
+    "looks",
+    "hides",
+    "sells",
+    "folds"
+   ],
+   "audioClip": {
+    "storySlug": "ein-rahmen-fur-drei",
+    "storySource": "user",
+    "sentence": "Er schaut lange auf das alte Foto.",
+    "targetWord": "schaut",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "allein",
+  "sentence": "Die beiden sind [[allein]] am Strand.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "alone",
+   "options": [
+    "alone",
+    "together",
+    "happy",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "ein-rahmen-fur-drei",
+    "storySource": "user",
+    "sentence": "Die beiden sind allein am Strand.",
+    "targetWord": "allein",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zweite",
+  "sentence": "Das [[zweite]] Foto ist neu.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "second",
+   "options": [
+    "second",
+    "first",
+    "third",
+    "last"
+   ],
+   "audioClip": {
+    "storySlug": "ein-rahmen-fur-drei",
+    "storySource": "user",
+    "sentence": "Das zweite Foto ist neu.",
+    "targetWord": "zweite",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zwischen",
+  "sentence": "Die Nachbarin steht [[zwischen]] den beiden.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "between",
+   "options": [
+    "between",
+    "behind",
+    "next to",
+    "far from"
+   ],
+   "audioClip": {
+    "storySlug": "ein-rahmen-fur-drei",
+    "storySource": "user",
+    "sentence": "Die Nachbarin steht zwischen den beiden.",
+    "targetWord": "zwischen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schwer",
+  "sentence": "Ihr Herz ist [[schwer]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "heavy",
+   "options": [
+    "heavy",
+    "light",
+    "warm",
+    "small"
+   ],
+   "audioClip": {
+    "storySlug": "ein-rahmen-fur-drei",
+    "storySource": "user",
+    "sentence": "Ihr Herz ist schwer.",
+    "targetWord": "schwer",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Knie",
+  "sentence": "Sie legt das alte Foto auf ihr [[Knie]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "knee",
+   "options": [
+    "knee",
+    "hand",
+    "table",
+    "shoulder"
+   ],
+   "audioClip": {
+    "storySlug": "ein-rahmen-fur-drei",
+    "storySource": "user",
+    "sentence": "Sie legt das alte Foto auf ihr Knie.",
+    "targetWord": "Knie",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Warum",
+  "sentence": "“[[Warum]] sitzt du hier?”, fragt er.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Why",
+   "options": [
+    "Why",
+    "When",
+    "Where",
+    "Who"
+   ],
+   "audioClip": {
+    "storySlug": "ein-rahmen-fur-drei",
+    "storySource": "user",
+    "sentence": "“Warum sitzt du hier?”, fragt er.",
+    "targetWord": "Warum",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lange",
+  "sentence": "Er schaut [[lange]] auf das alte Foto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "for a long time",
+   "options": [
+    "for a long time",
+    "for a moment",
+    "never",
+    "quickly"
+   ],
+   "audioClip": {
+    "storySlug": "ein-rahmen-fur-drei",
+    "storySource": "user",
+    "sentence": "Er schaut lange auf das alte Foto.",
+    "targetWord": "lange",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Welches",
+  "sentence": "“[[Welches]] Foto?”, murmelt sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Which",
+   "options": [
+    "Which",
+    "Whose",
+    "When",
+    "Why"
+   ],
+   "audioClip": {
+    "storySlug": "ein-rahmen-fur-drei",
+    "storySource": "user",
+    "sentence": "“Welches Foto?”, murmelt sie.",
+    "targetWord": "Welches",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "willst",
+  "sentence": "“Welches Foto [[willst]] du?”, fragt sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "do you want",
+   "options": [
+    "do you want",
+    "do you see",
+    "do you sell",
+    "do you find"
+   ],
+   "audioClip": {
+    "storySlug": "ein-rahmen-fur-drei",
+    "storySource": "user",
+    "sentence": "“Welches Foto willst du?”, fragt sie.",
+    "targetWord": "willst",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "entscheidest",
+  "sentence": "“Du [[entscheidest]]”, sagt er.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "decide",
+   "options": [
+    "decide",
+    "forget",
+    "wait",
+    "ask"
+   ],
+   "audioClip": {
+    "storySlug": "ein-rahmen-fur-drei",
+    "storySource": "user",
+    "sentence": "“Du entscheidest”, sagt er.",
+    "targetWord": "entscheidest",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Jetzt",
+  "sentence": "“[[Jetzt]] sind wir drei.”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Now",
+   "options": [
+    "Now",
+    "Never",
+    "Soon",
+    "Later"
+   ],
+   "audioClip": {
+    "storySlug": "ein-rahmen-fur-drei",
+    "storySource": "user",
+    "sentence": "“Jetzt sind wir drei.”",
+    "targetWord": "Jetzt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "davor",
+  "sentence": "Die beiden stehen lange [[davor]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in front of it",
+   "options": [
+    "in front of it",
+    "far from it",
+    "under it",
+    "behind it"
+   ],
+   "audioClip": {
+    "storySlug": "ein-rahmen-fur-drei",
+    "storySource": "user",
+    "sentence": "Die beiden stehen lange davor.",
+    "targetWord": "davor",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "steckt",
+  "sentence": "Sie _____ das neue Foto in den Rahmen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "steckt",
+   "options": [
+    "steckt",
+    "kauft",
+    "zeigt",
+    "sucht"
+   ],
+   "translation": "She _____ the new photo in the frame.",
+   "optionTranslations": [
+    "puts",
+    "buys",
+    "shows",
+    "looks for"
+   ],
+   "audioClip": {
+    "storySlug": "ein-rahmen-fur-drei",
+    "storySource": "user",
+    "sentence": "Sie steckt das neue Foto in den Rahmen.",
+    "targetWord": "steckt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "neue",
+  "sentence": "Sie steckt das _____ Foto in den Rahmen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "neue",
+   "options": [
+    "neue",
+    "alte",
+    "kleine",
+    "erste"
+   ],
+   "translation": "She puts the _____ photo in the frame.",
+   "optionTranslations": [
+    "new",
+    "old",
+    "small",
+    "first"
+   ],
+   "audioClip": {
+    "storySlug": "ein-rahmen-fur-drei",
+    "storySource": "user",
+    "sentence": "Sie steckt das neue Foto in den Rahmen.",
+    "targetWord": "neue",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "drei",
+  "sentence": "“Jetzt sind wir _____.”",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "drei",
+   "options": [
+    "drei",
+    "zwei",
+    "vier",
+    "fünf"
+   ],
+   "translation": "Now we are _____.\"",
+   "optionTranslations": [
+    "three",
+    "two",
+    "four",
+    "five"
+   ],
+   "audioClip": {
+    "storySlug": "ein-rahmen-fur-drei",
+    "storySource": "user",
+    "sentence": "“Jetzt sind wir drei.”",
+    "targetWord": "drei",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]
