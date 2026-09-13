@@ -1,7 +1,6 @@
 # Friends FR/France A2: plan
 
-Estado: **PLAN APROBADO** (2026-09-13, via Journey-planning), con los nombres de tema renombrados a nivel de dominio (ver 6bis). Hasta el tema 1 no
-`dp_topics_v1`, ni una linea de prosa. Nada toca la base hasta el visto bueno.
+Estado: **PLAN APROBADO** (2026-09-13, via Journey-planning), con los nombres de tema renombrados a nivel de dominio (ver 6bis). El journey se monta y se escribe tema a tema por `/tema`.
 
 ## 0. Estado comprobado (2026-09-13)
 
