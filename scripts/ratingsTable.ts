@@ -2,11 +2,10 @@
 //
 //   npx tsx scripts/ratingsTable.ts
 //
-// Tres cosas, y las tres partidas entre lo de casa y lo de fuera:
-//   1. Pulgares (StoryRating), por superficie y plataforma.
-//   2. Comentarios escritos junto al pulgar.
-//   3. Impresiones de la fila de valorar (UserMetric "rating_prompt_shown"),
-//      que son el DENOMINADOR: sin ellas un cero de votos no se puede leer.
+// El calculo NO vive aqui: es `computeRatingsMetrics` (`src/lib/metricsRatings.ts`),
+// el mismo que pinta la pestana Engagement de /studio/metrics. Este script solo
+// lo imprime. Mientras cada uno contaba a su manera, el script daba 6 votos de
+// practica sobre 5 vistas y una conversion del 20% que no era la real.
 //
 // Existe porque el 2026-08-21 se reportaron "6 pulgares" como senal de testers
 // y los seis eran del equipo; y porque el 2026-09-05 los dos unicos "de
@@ -32,7 +31,7 @@ for (const file of [".env.local", ".env"]) {
   }
 }
 
-const fecha = (d: Date) => d.toISOString().slice(0, 16).replace("T", " ");
+const fecha = (iso: string) => iso.slice(0, 16).replace("T", " ");
 /** Una barra vertical sin escapar parte una celda de Markdown en dos. */
 const celda = (s: string) => s.replace(/\|/g, "\\|");
 
@@ -47,183 +46,63 @@ function tabla(cabeceras: string[], filas: string[][]): string {
 
 const pct = (a: number, b: number) => (b === 0 ? "-" : `${Math.round((a / b) * 100)}%`);
 
-type Metadata = { surface?: unknown; internal?: unknown; platform?: unknown; alreadyRated?: unknown };
-
 async function main() {
-  const { PrismaClient } = await import("../src/generated/prisma");
-  const { splitInternal } = await import("../src/lib/internalAccounts");
-  const prisma = new PrismaClient();
+  const { computeRatingsMetrics } = await import("../src/lib/metricsRatings");
+  const { prisma } = await import("../src/lib/prisma");
 
-  const ratings = await prisma.storyRating.findMany({ orderBy: { createdAt: "asc" } });
-  const impresionesRaw = await prisma.userMetric.findMany({
-    where: { eventType: "rating_prompt_shown" },
-    orderBy: { createdAt: "asc" },
-  });
+  // Sin `userScope`: la lista de internos del panel sale de Clerk, que en local
+  // es la instancia de desarrollo. Lo de casa lo quitan igual el sello
+  // `internal` y `splitInternal`, que leen la base.
+  const r = await computeRatingsMetrics({ userScope: {}, from: new Date(0), to: new Date() });
 
-  // ---------------------------------------------------------------- pulgares
-  //
-  // El sello lo pone el endpoint al escribir (columna `internal`). El reparto
-  // por correo se queda como red: una fila anterior a la columna, o de alguien
-  // dado de alta en el Studio despues de votar, sigue cayendo del lado bueno.
-  const sinSello = ratings.filter((r) => !r.internal);
-  const { external: votosFuera, internal: internosPorCorreo } = await splitInternal(
-    sinSello,
-    (r) => r.email,
-  );
-  const votosCasa = [...ratings.filter((r) => r.internal), ...internosPorCorreo];
-
-  // ------------------------------------------------------------- impresiones
-  //
-  // UserMetric no guarda correo, solo `userId`, asi que la red por correo de
-  // los pulgares no vale tal cual: primero hay que ponerle un correo a cada
-  // userId. Lo dan las dos tablas que guardan las dos cosas juntas.
-  const signups = await prisma.betaSignup.findMany({
-    where: { clerkUserId: { not: null } },
-    select: { clerkUserId: true, email: true },
-  });
-  const prefs = await prisma.emailPreference.findMany({
-    where: { userId: { not: null } },
-    select: { userId: true, email: true },
-  });
-  const correoDe = new Map<string, string>();
-  for (const e of prefs) if (e.userId) correoDe.set(e.userId, e.email);
-  for (const s of signups) if (s.clerkUserId) correoDe.set(s.clerkUserId, s.email);
-  for (const r of ratings) if (r.email) correoDe.set(r.userId, r.email);
-
-  const meta = (r: (typeof impresionesRaw)[number]): Metadata =>
-    (r.metadata && typeof r.metadata === "object" ? r.metadata : {}) as Metadata;
-  const superficieDe = (m: Metadata) => (typeof m.surface === "string" ? m.surface : "story");
-  const plataformaDe = (m: Metadata) => (typeof m.platform === "string" ? m.platform : "?");
-
-  const impSinSello = impresionesRaw.filter((r) => meta(r).internal !== true);
-  const { external: impFuera, internal: impInternasPorCorreo } = await splitInternal(
-    impSinSello,
-    (r) => correoDe.get(r.userId) ?? null,
-  );
-  const impCasa = [
-    ...impresionesRaw.filter((r) => meta(r).internal === true),
-    ...impInternasPorCorreo,
-  ];
-
-  // La oportunidad de votar es (persona, cosa, superficie), la misma clave
-  // unica que tiene el voto. Cinco impresiones de la misma pantalla no son
-  // cinco preguntas distintas; contarlas como denominador hunde la conversion.
-  const claveOportunidad = (userId: string, slug: string, surface: string) =>
-    `${userId}::${slug}::${surface}`;
-  const oportunidades = new Map<
-    string,
-    { surface: string; votada: boolean; impresiones: number; yaVotada: boolean }
-  >();
-  for (const r of impFuera) {
-    const m = meta(r);
-    const surface = superficieDe(m);
-    const k = claveOportunidad(r.userId, r.storySlug, surface);
-    const prev = oportunidades.get(k);
-    if (prev) {
-      prev.impresiones += 1;
-      prev.yaVotada = prev.yaVotada || m.alreadyRated === true;
-    } else {
-      oportunidades.set(k, {
-        surface,
-        votada: false,
-        impresiones: 1,
-        yaVotada: m.alreadyRated === true,
-      });
-    }
-  }
-  for (const v of votosFuera) {
-    const o = oportunidades.get(claveOportunidad(v.userId, v.storySlug, v.surface ?? "story"));
-    if (o) o.votada = true;
-  }
-  // Una impresion que ya llega con el pulgar dado no es una pregunta: sale del
-  // denominador o la conversion se lee al reves.
-  const frias = [...oportunidades.values()].filter((o) => !o.yaVotada);
-  const convertidas = frias.filter((o) => o.votada).length;
-  // Un voto puede no tener impresion: el evento solo existe en movil y solo
-  // desde que se anadio. Se dice, no se esconde.
-  const votosSinImpresion = votosFuera.filter(
-    (v) => !oportunidades.has(claveOportunidad(v.userId, v.storySlug, v.surface ?? "story")),
-  ).length;
-
-  // ------------------------------------------------------------------ salida
-  //
-  // UNA tabla, una fila por tester. La pregunta que hay que poder contestar de
-  // un vistazo es "de los que ven la fila, cuantos la contestan", y eso se lee
-  // por persona: cinco cuadros de totales por superficie la escondian.
   const out: string[] = [];
   const p = (s = "") => out.push(s);
+  const quien = (email: string | null, userId: string) =>
+    email ?? `sin correo (${userId.slice(-6)}) [?]`;
+  const sup = (s: string) => r.bySurface.find((x) => x.surface === s) ?? { asked: 0, answered: 0 };
+  const asked = r.bySurface.reduce((n, s) => n + s.asked, 0);
+  const answered = r.bySurface.reduce((n, s) => n + s.answered, 0);
 
-  const personas = [...new Set([...impFuera.map((r) => r.userId), ...votosFuera.map((r) => r.userId)])];
-  // Un userId sin correo en ninguna de nuestras tablas (solo lo sabe Clerk) cae
-  // del lado de fuera por defecto, que es exactamente como el 2026-09-05
-  // review@ paso por tester. Se marca en la fila en vez de darlo por bueno.
-  const quien = (userId: string) => correoDe.get(userId) ?? `sin correo (${userId.slice(-6)}) [?]`;
-
-  /** "vistas -> votos" de una persona en una superficie. */
-  const celdaSuperficie = (userId: string, surface: string) => {
-    const vistas = [...oportunidades].filter(
-      ([k, o]) => k.startsWith(`${userId}::`) && o.surface === surface && !o.yaVotada,
-    );
-    const votos = votosFuera.filter((v) => v.userId === userId && (v.surface ?? "story") === surface);
-    return `${vistas.length} -> ${votos.length}`;
-  };
-
-  const sistemasDe = (userId: string) =>
-    [
-      ...new Set([
-        ...impFuera.filter((r) => r.userId === userId).map((r) => plataformaDe(meta(r))),
-        ...votosFuera.filter((r) => r.userId === userId).map((r) => r.platform ?? "?"),
-      ]),
-    ].join(", ");
-
-  const totalVistas = (surface: string) =>
-    frias.filter((o) => o.surface === surface).length;
-  const totalVotos = (surface: string) =>
-    votosFuera.filter((v) => (v.surface ?? "story") === surface).length;
-
-  const comentariosFuera = votosFuera.filter((r) => r.comment && r.comment.trim());
-
-  p(`# Los testers y la fila de valorar  (${fecha(new Date())} UTC)`);
+  p(`# Los testers y la fila de valorar  (${fecha(new Date().toISOString())} UTC)`);
   p();
   p(
-    "`vistas -> votos`: cuantas veces se le pinto la pregunta y cuantas la contesto. " +
-      "Una vista es `(persona, cosa, superficie)`, no una impresion suelta: " +
-      "cinco veces el mismo panel es una sola pregunta.",
+    "`preguntas -> contestadas`. Una pregunta es `(persona, cosa, superficie)` y cuenta si " +
+      "al menos una vez se hizo sin voto previo: cinco veces el mismo panel es una sola pregunta.",
   );
   p();
   p(
     tabla(
       ["tester", "sistema", "historia", "practica", "arriba", "abajo", "comentarios"],
       [
-        ...personas.map((u) => [
-          quien(u),
-          sistemasDe(u),
-          celdaSuperficie(u, "story"),
-          celdaSuperficie(u, "practice"),
-          `${votosFuera.filter((v) => v.userId === u && v.liked).length}`,
-          `${votosFuera.filter((v) => v.userId === u && !v.liked).length}`,
-          `${comentariosFuera.filter((v) => v.userId === u).length}`,
+        ...r.byPerson.map((u) => [
+          quien(u.email, u.userId),
+          u.platforms.join(", ") || "?",
+          `${u.story.asked} -> ${u.story.answered}`,
+          `${u.practice.asked} -> ${u.practice.answered}`,
+          `${u.up}`,
+          `${u.down}`,
+          `${u.comments}`,
         ]),
         [
-          `**${personas.length} testers**`,
+          `**${r.byPerson.length} testers**`,
           "",
-          `**${totalVistas("story")} -> ${totalVotos("story")}**`,
-          `**${totalVistas("practice")} -> ${totalVotos("practice")}**`,
-          `**${votosFuera.filter((v) => v.liked).length}**`,
-          `**${votosFuera.filter((v) => !v.liked).length}**`,
-          `**${comentariosFuera.length}**`,
+          `**${sup("story").asked} -> ${sup("story").answered}**`,
+          `**${sup("practice").asked} -> ${sup("practice").answered}**`,
+          `**${r.up}**`,
+          `**${r.down}**`,
+          `**${r.comments}**`,
         ],
       ],
     ),
   );
   p();
   p(
-    `**${frias.length - convertidas} de ${frias.length}** preguntas se quedan sin contestar ` +
-      `(conversion ${pct(convertidas, frias.length)}).`,
+    `**${asked - answered} de ${asked}** preguntas se quedan sin contestar ` +
+      `(conversion ${pct(answered, asked)}).`,
   );
   p();
 
-  if (comentariosFuera.length === 0) {
+  if (r.commentRows.length === 0) {
     p("Ningun tester ha escrito un comentario todavia.");
   } else {
     p("Lo que han escrito:");
@@ -231,35 +110,37 @@ async function main() {
     p(
       tabla(
         ["fecha", "quien", "voto", "historia", "comentario"],
-        comentariosFuera.map((r) => [
-          fecha(r.createdAt),
-          quien(r.userId),
-          r.liked ? "arriba" : "abajo",
-          r.storySlug,
-          (r.comment ?? "").replace(/\s+/g, " ").trim(),
+        r.commentRows.map((c) => [
+          fecha(c.createdAt),
+          c.email ?? "sin correo [?]",
+          c.liked ? "arriba" : "abajo",
+          `${c.storySlug} (${c.surface})`,
+          c.comment.replace(/\s+/g, " "),
         ]),
       ),
     );
   }
   p();
-  const sinCorreo = personas.filter((u) => !correoDe.has(u));
-  if (sinCorreo.length > 0) {
+  const sinCorreo = r.byPerson.filter((u) => !u.email).length;
+  if (sinCorreo > 0) {
     p(
-      `**[?]**: ${sinCorreo.length} cuenta(s) sin correo en nuestras tablas, solo en Clerk. ` +
+      `**[?]**: ${sinCorreo} cuenta(s) sin correo en nuestras tablas, y Clerk tampoco lo dio ` +
+        "(en local Clerk es la instancia de desarrollo y no conoce a nadie de produccion). " +
         "`splitInternal` las da por testers por defecto, que es como el 2026-09-05 " +
         "review@digitalpolyglot.com se conto como tester. Sin confirmar.",
     );
     p();
   }
   p(
-    "Excluido por `splitInternal` (`StudioMember` y `@digitalpolyglot.com`): " +
-      `${votosCasa.length} pulgares y ${impCasa.length} impresiones, de ` +
-      `${new Set(impCasa.map((r) => r.userId)).size} cuentas de casa. ` +
-      `Votos de testers sin impresion registrada: ${votosSinImpresion}.`,
+    "Excluido como de casa (sello `internal`, `StudioMember` y `@digitalpolyglot.com`): " +
+      `${r.excludedInternalVotes} pulgares y ${r.excludedInternalPrompts} impresiones. ` +
+      `Votos de testers sin impresion registrada: ${r.votesWithoutView}.`,
   );
 
   console.log(out.join("\n"));
   await prisma.$disconnect();
+  // resolveUserEmails deja abierto el cliente de Clerk.
+  process.exit(0);
 }
 
 main().catch((e) => {
