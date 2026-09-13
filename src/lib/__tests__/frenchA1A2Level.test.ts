@@ -32,6 +32,26 @@ const CURATED = [
 // soupirer B2, célibataire (como nombre) B2.
 const SIN_RESPALDO = ["placard", "ronfler", "soupirer", "célibataire"];
 
+// Muestra representativa de las 106 palabras de los temas 2-7 (una por cada
+// tema, más algunas de nivel A1 y A2 mezcladas; la lista completa vive en
+// la cabecera de frenchA1A2.ts y en el reporte a Journey-planning).
+const CURATED_TEMAS_2_7_MUESTRA = [
+  "blague", "curieux", "souvenir", "coutume", "métier", "ménage", "message",
+  "concert", "scène", "discours", "musicien", "enfance", "prénom", "fleur",
+];
+
+// Las 26 rechazadas de los temas 2-7: sin respaldo A1/A2 (o, para "nature",
+// sin dato para el sentido que usa la historia). Deben seguir sin pasar.
+const SIN_RESPALDO_TEMAS_2_7 = [
+  "pédalo", "grimace", "surnom", "sous-sol", "fil", "planning", "aimant",
+  "lave-vaisselle", "frigo", "facture", "escalade", "chorale", "glacial",
+  "pareil", "rater", "témoin", "applaudissements", "joue", "prise",
+  "curiosité", "enveloppe", "étaler", "nature",
+  // Compuestos sin entrada propia en FLELex (aunque sus palabras sueltas sí
+  // sean A1/A2): papier toilette, tableau électrique, boîte aux lettres.
+  "papier toilette", "tableau électrique", "boîte aux lettres",
+];
+
 // Muestra de 50 palabras B1/B2 realistas usada para calibrar el intento
 // anterior (Lexique + corte de frecuencia), retirado por no separar bien.
 // Debe seguir fallando entera: nada de esto entró al volver al bloque 1 +
@@ -47,7 +67,7 @@ const B1B2_SAMPLE = [
   "réduction", "durable", "récemment", "envisager",
 ];
 
-describe("vocab-level-frequency FR A1/A2 (bloque 1 + bloque curado del tema 1)", () => {
+describe("vocab-level-frequency FR A1/A2 (bloque 1 + bloque curado, temas 1-7)", () => {
   it("las 28 palabras curadas del tema 1 pasan", () => {
     for (const w of CURATED) expect(isFrenchA1A2(w)).toBe(true);
   });
@@ -57,8 +77,16 @@ describe("vocab-level-frequency FR A1/A2 (bloque 1 + bloque curado del tema 1)",
     expect(c?.status).toBe("pass");
   });
 
-  it("las 4 palabras sin respaldo A1/A2 siguen sin pasar", () => {
+  it("las 4 palabras sin respaldo A1/A2 del tema 1 siguen sin pasar", () => {
     for (const w of SIN_RESPALDO) expect(isFrenchA1A2(w)).toBe(false);
+  });
+
+  it("una muestra de las 106 curadas de los temas 2-7 pasa", () => {
+    for (const w of CURATED_TEMAS_2_7_MUESTRA) expect(isFrenchA1A2(w)).toBe(true);
+  });
+
+  it("las 26 rechazadas de los temas 2-7 siguen sin pasar", () => {
+    for (const w of SIN_RESPALDO_TEMAS_2_7) expect(isFrenchA1A2(w)).toBe(false);
   });
 
   it("la muestra B1/B2 de 50 no gana nada nuevo: ninguna de las 28 curadas la toca", () => {
