@@ -4,81 +4,48 @@
 // Fuente declarada al crearlo: DELF A1/A2 + Routledge frequency dictionary
 // French top-1500, curado a mano. Sin trazabilidad por palabra.
 //
-// BLOQUE 2: FRENCH_A1_A2_LEXIQUE (2026-09-13, sustituye al bloque FLELex del
-// mismo día, retirado por licencia no comercial: ver el commit anterior).
-// Fuente EXTERNA: Lexique383 (lexique.org / openlexicon), base de datos
-// lexical del francés de Boris New, Christophe Pallier y colaboradores
-// (Université de Savoie / CNRS). ~140.000 formas con frecuencia lematizada
-// en dos corpus (subtítulos de película y libros).
-//   http://www.lexique.org  ·  http://openlexicon.fr/datasets-info/Lexique382/
-//   New, B., Pallier, C., Brysbaert, M. & Ferrand, L. (2004). Lexique 2: a
-//   new French lexical database. Behavior Research Methods 36(3), 516-524.
-//   Licencia: CC BY-SA 4.0 (verificada en openlexicon.fr, permite uso
-//   comercial con atribución y misma licencia en derivados).
+// BLOQUE 2: FRENCH_A1_A2_CURATED (2026-09-13, tercera vuelta). Reemplaza
+// dos intentos anteriores que no se dieron por buenos:
+//   1. FLELex/Beacco tal cual: retirado por licencia no comercial
+//      (CC BY-NC-SA 4.0) sobre un check que corre en producción de pago.
+//   2. Lexique383 (CC BY-SA 4.0, licencia sí compatible) con un corte de
+//      frecuencia: retirado porque NINGÚN corte separa bien A1/A2 de B1/B2.
+//      Calibrado con una muestra de 50 palabras B1/B2 realistas (no
+//      académicas), el mejor punto disponible (750) solo lograba 49,1% de
+//      cobertura del bloque 1 con 16,0% de fuga hacia B1/B2, y de las 8
+//      palabras que motivaron el encargo original solo 2 entraban. La
+//      frecuencia bruta no distingue nivel MCER en vocabulario abstracto
+//      (estado, espíritu, asegurar son muy frecuentes aunque un manual los
+//      enseñe en B1); es justo lo que FLELex resuelve combinando frecuencia
+//      con juicio experto, y un corte de un solo número no puede
+//      reproducirlo. Detalle de la curva en el historial de commits de
+//      este archivo (b00810b2).
 //
-// Lexique NO trae nivel MCER por palabra (a diferencia de FLELex); es una
-// lista de FRECUENCIA. Método: para cada lema, frecuencia = promedio de
-// freqlemfilms2 y freqlemlivres (subtítulos + libros, por millón de
-// palabras); se ordena todo Lexique por esa frecuencia, excluyendo nombres
-// propios, onomatopeyas, símbolos, abreviaturas y números (cgram NAM/ONO/
-// SYM/ABR/NUM), palabras con dígitos, y una lista corta de soeces/insultos
-// que la frecuencia de subtítulos sube alto sin que eso diga nada de su
-// nivel (register, no nivel; ya tienen su propia exención en
-// validateGeneratedStory).
+// Este bloque 2 vuelve al método del bloque 1: curado a mano, palabra por
+// palabra, CADA UNA con su nivel y su referencia pública citada en el
+// comentario de la propia línea (ver abajo). Nada de esto se redistribuye
+// ni se embebe como dataset: es una cita puntual de nivel por palabra,
+// igual que citar una entrada de diccionario.
 //
-// CALIBRACIÓN (2026-09-13, segunda vuelta; la primera usó una muestra B2/C1
-// académica demasiado fácil de separar y no se dio por buena. Ver
-// feedback_level_measured_externally: la vara viene de fuera, no del
-// catálogo). Dos referencias:
-//   - Bloque 1 (816 lemas curados a mano, asumidos A1/A2 real). 793 existen
-//     como lema suelto en Lexique.
-//   - Muestra de 50 palabras B1/B2 REALISTAS (no académicas): las que un
-//     manual pondría en B1 o B2 y no antes, con nivel citado de FLELex/
-//     Beacco por palabra (fuente usada aquí SOLO como referencia de
-//     calibración editorial, no redistribuida ni embebida en la lista
-//     final; ningún dato de FLELex queda en este archivo). Incluye las
-//     siete que dio el usuario (néanmoins B2, davantage B1, revendiquer B1,
-//     soupçonner B2, épanouissement B2, enjeu B1, auparavant B1) más 43 más:
-//     rapport, regard, pauvre, état, expérience, esprit, avenir,
-//     professionnel, politique, assurer, résultat, actuel, intérêt, maladie,
-//     victime, empêcher, mesure, risque, danger, tendance, comportement,
-//     réduire, majorité, preuve, constituer, chercheur, désormais, réseau,
-//     débat, lutter, souligner, soutenir, appliquer, craindre, capacité,
-//     essentiel, égalité, favoriser, démocratie, réduction, durable,
-//     récemment, envisager (todas B1 o B2 en FLELex/Beacco).
-//
-// CURVA (cobertura de bloque 1 encontrado en Lexique, % de la muestra
-// B1/B2 que SÍ se cuela dentro del corte, es decir el fallo):
-//   corte | cobertura bloque1 | fuga muestra B1/B2
-//    2000 |   75,5% (599/793) |  52,0% (26/50)
-//    3000 |   86,6% (687/793) |  66,0% (33/50)
-//    4000 |   91,8% (728/793) |  82,0% (41/50)
-//    6000 |   96,2% (763/793) |  88,0% (44/50)
-// El punto que mejor separa (maximiza cobertura menos fuga) es 750, con
-// 49,1% de cobertura y solo 16,0% de fuga (8/50).
-//
-// CORTE APLICADO: 750.
-//
-// LÍMITE, y no menor: en NINGÚN punto de la curva la fuga baja de forma
-// aceptable para un gate de nivel. Al corte óptimo (750) siguen colándose
-// 8 de 50 palabras B1/B2 realistas (rapport, regard, pauvre, état, esprit,
-// assurer, empêcher, craindre), y de las ocho
-// palabras que motivaron el encargo original (souvenir, vaisselle,
-// pardonner, blague, habitude, dispute, discours, accent) solo DOS entran
-// (souvenir, habitude); las otras seis quedan fuera igual que antes,
-// porque su frecuencia es demasiado parecida a la de palabras B1/B2 reales
-// para separarlas con un solo número. La causa: frecuencia bruta no
-// distingue nivel MCER para vocabulario abstracto/discursivo (estado,
-// espíritu, informe, impedir, asegurar son MUY frecuentes en francés
-// general aunque un manual los enseñe en B1); eso es justo lo que FLELex
-// resuelve combinando frecuencia con juicio experto, y lo que un corte de
-// un solo número no puede reproducir. CONCLUSIÓN: el corte de frecuencia
-// pura no es una vía viable para ampliar el gate de A1/A2 francés más allá
-// de lo que ya cubre el bloque 1 curado a mano; no se recomienda mantener
-// este bloque 2 como solución final (ver el reporte a Journey-planning del
-// mismo día).
-// NO se añade nada porque un journey lo necesite: el corte es el mismo para
-// cualquier journey francés, elegido antes de mirar ninguna historia.
+// ORIGEN de las 28 palabras: el vocabulario real de las 3 historias
+// guardadas del tema 1 del Friends FR/France A2 (home-life-and-habits,
+// journey cmu04ereh000732z7px7naqa2, leído de la base el 2026-09-13) que
+// NO estaban ya en el bloque 1. De las 32 palabras que le faltaban a ese
+// tema, 28 tienen respaldo A1/A2 en la referencia citada (FLELex/Beacco,
+// TreeTagger, CENTAL/UCLouvain: https://cental.uclouvain.be/cefrlex/flelex/)
+// y se añaden aquí. 4 NO tienen respaldo A1/A2 para el sentido en que las
+// usa la historia y se dejan fuera a propósito (reportadas a
+// Journey-planning el mismo día, no hay que adivinarlas de este archivo):
+//   - placard (armario): FLELex lo marca NOM B1, no A1/A2.
+//   - ronfler (roncar): FLELex lo marca VER C2, muy por encima.
+//   - soupirer (suspirar): FLELex lo marca VER B2.
+//   - célibataire (soltero): la historia lo usa como NOMBRE ("le
+//     célibataire"), y ese sentido es NOM B2 en FLELex. Solo el sentido
+//     ADJETIVO ("célibataire" = soltero/a) tiene respaldo A2; como la
+//     lista no distingue POS, no se añade para no colar el sentido B2.
+// NO se añade nada porque un journey lo necesite MÁS ALLÁ de tener
+// respaldo real en la referencia: las 4 de arriba también las necesitaba
+// el tema y se quedan fuera igual.
 
 const FRENCH_A1_A2_ORIGINAL: readonly string[] = [
   // Function words
@@ -203,49 +170,44 @@ const FRENCH_A1_A2_ORIGINAL: readonly string[] = [
   "musique","art","film","livre","journal","nouvelle","couleur","forme","taille",
 ];
 
-// Bloque 2, generado desde Lexique383.tsv al corte 750 (ver cabecera). 366 lemas.
-const FRENCH_A1_A2_LEXIQUE: readonly string[] = [
-  "abandonner","accompagner","accord","affaire","âge","agir","aide","ainsi","air","ajouter","âme",
-  "amener","amuser","ancien","apercevoir","apparaître","approcher","argent","arme","armée",
-  "arrêter","asseoir","assurer","attention","au-dessus","aucune","aussitôt","autant","autour",
-  "autres","avancer","avis","balle","battre","besoin","bien","bonjour","bord","bout","bruit",
-  "brûler","ça","cacher","calmer","camp","capitaine","cas","casser","cause","cela","celle","celui",
-  "certain","cesser","cet","ceux","chacun","chance","changer","chef","chemin","chéri","chez",
-  "chose","coeur","coin","combien","comme","comment","compte","compter","conduire","confiance",
-  "continuer","côté","coucher","coup","cour","couvrir","craindre","cri","crier","d'","d'abord",
-  "d'autres","dame","debout","début","découvrir","dès","désolé","désoler","devenir","dieu",
-  "différent","disparaître","docteur","dont","doucement","doute","doux","droit","drôle","échapper",
-  "effet","embrasser","emmener","empêcher","endroit","enfin","enlever","ennemi","ensemble","entier",
-  "envie","époque","espèce","esprit","est-ce que","état","eux","éviter","exactement","excuser",
-  "exemple","exister","face","façon","faim","fait","falloir","faute","faux","fin","flic","fois",
-  "fond","force","fou","français","frapper","front","garde","garder","gars","gauche","général",
-  "genre","geste","glisser","goût","grave","groupe","guerre","gueule","habiter","habitude",
-  "honneur","humain","ignorer","image","imaginer","important","importer","impossible","impression",
-  "inquiéter","installer","intéresser","intérieur","jeter","jeu","journée","jurer","juste","l'",
-  "l'un","lancer","laquelle","lequel","lever","libre","lieu","ligne","longtemps","lui-même","ma",
-  "maintenir","maître","mal","malade","malgré","manière","manquer","marche","marier","mec",
-  "médecin","meilleur","mener","mentir","merci","mieux","milieu","moi","moins","monde","montrer",
-  "mouvement","ni","nom","nu","numéro","obliger","occuper","odeur","oeil","offrir","oh","ok",
-  "ombre","or","ordre","oser","où","ouais","paix","par","pardon","pareil","parent","parole","part",
-  "partie","passage","passer","pays","peine","pensée","permettre","peuple","photo","pièce","plaire",
-  "plaisir","pleurer","plutôt","poche","point","police","possible","pourquoi","pourtant","présent",
-  "présenter","président","presque","prêt","prévenir","prier","prince","prison","prix","promettre",
-  "propos","protéger","que","quel","quelle","quelqu'un","quelques","qui","quoi","raison","ramener",
-  "reconnaître","réfléchir","regard","regarder","rejoindre","remarquer","remettre","remonter",
-  "rencontrer","rendre","rentrer","répéter","reprendre","ressembler","reste","retenir","retour",
-  "retrouver","réveiller","revenir","rêver","revoir","rire","risquer","roi","rouler","s'","sa",
-  "salle","salut","sauver","scène","secret","seigneur","sens","sentiment","serrer","service","seul",
-  "seulement","signe","silence","simple","simplement","sinon","situation","soeur","soldat","sorte",
-  "soudain","souffrir","sourire","souvenir","suffire","suite","suivre","sujet","sûr","surtout","t'",
-  "ta","taire","tant","tellement","tendre","tenter","tiens","toi","tomber","toucher","tourner",
-  "travers","traverser","tromper","trou","truc","tuer","type","utiliser","valoir","vers","visite",
-  "vite","vivant","voici","voilà","voix","voler","vrai","vraiment","vue",
+// Bloque 2: 28 lemas, uno por línea, cada uno con su nivel y referencia
+// (FLELex/Beacco, TreeTagger, CENTAL/UCLouvain, citado como diccionario de
+// nivel, no redistribuido). POS entre paréntesis: el que usa la historia.
+const FRENCH_A1_A2_CURATED: readonly string[] = [
+  "installer",      // FLELex/Beacco: A1 (VER)
+  "déranger",        // FLELex/Beacco: A1 (VER)
+  "blouson",         // FLELex/Beacco: A1 (NOM)
+  "disque",          // FLELex/Beacco: A1 (NOM)
+  "entier",          // FLELex/Beacco: A2 (ADJ)
+  "habitant",        // FLELex/Beacco: A1 (NOM)
+  "attraper",        // FLELex/Beacco: A2 (VER)
+  "plutôt",          // FLELex/Beacco: A1 (ADV)
+  "bizarre",         // FLELex/Beacco: A1 (ADJ)
+  "sommeil",         // FLELex/Beacco: A2 (NOM)
+  "roman",           // FLELex/Beacco: A1 (NOM)
+  "réveiller",       // FLELex/Beacco: A1 (VER)
+  "tellement",       // FLELex/Beacco: A1 (ADV)
+  "insupportable",   // FLELex/Beacco: A2 (ADJ)
+  "taire",           // FLELex/Beacco: A2 (VER)
+  "critiquer",       // FLELex/Beacco: A2 (VER)
+  "avouer",          // FLELex/Beacco: A2 (VER)
+  "habitude",        // FLELex/Beacco: A1 (NOM)
+  "endormir",        // FLELex/Beacco: A1 (VER)
+  "tranquillement",  // FLELex/Beacco: A2 (ADV)
+  "tomber",          // FLELex/Beacco: A1 (VER)
+  "pourtant",        // FLELex/Beacco: A1 (ADV)
+  "toucher",         // FLELex/Beacco: A1 (VER)
+  "douche",          // FLELex/Beacco: A2 (NOM)
+  "surtout",         // FLELex/Beacco: A1 (ADV)
+  "remarquer",       // FLELex/Beacco: A1 (VER)
+  "finalement",      // FLELex/Beacco: A1 (ADV)
+  "plaire",          // FLELex/Beacco: A1 (VER)
 ];
 
 const normalizeOe = (s: string) => s.replace(/œ/g, "oe").replace(/æ/g, "ae");
 
 export const FRENCH_A1_A2_LEMMAS: ReadonlySet<string> = new Set(
-  [...FRENCH_A1_A2_ORIGINAL, ...FRENCH_A1_A2_LEXIQUE].map(normalizeOe),
+  [...FRENCH_A1_A2_ORIGINAL, ...FRENCH_A1_A2_CURATED].map(normalizeOe),
 );
 
 export function isFrenchA1A2(word: string): boolean {
