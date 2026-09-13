@@ -12,6 +12,10 @@ for (const j of d.journeys) { if (j.id === OWN) continue; for (const s of j.stor
   const k = String(v.word ?? "").toLowerCase().replace(/^(der|die|das|sich) /, "").trim();
   if (!taught.has(k)) taught.set(k, new Set()); taught.get(k)!.add(`${j.name}-${j.levels[0]}`);
 } }
+import { readdirSync } from "fs";
+const propias = new Set<string>();
+for (const f of readdirSync("scripts/_deA1Friends").filter((x) => /^t\d-data\.json$/.test(x) && `scripts/_deA1Friends/${x}` !== file))
+  for (const s of JSON.parse(readFileSync(`scripts/_deA1Friends/${f}`, "utf8"))) for (const v of s.vocab) propias.add(v.word.toLowerCase().replace(/^(der|die|das|sich) /, "").trim());
 const O = "“", C = "”";
 const seen = new Map<string, number>();
 for (const s of data) {
@@ -30,14 +34,15 @@ for (const s of data) {
   for (const v of s.vocab) {
     const k = v.word.toLowerCase().replace(/^(der|die|das|sich) /, "").trim();
     if (!t.includes(v.surface)) probs.push(`NO EN CUERPO ${v.surface}`);
+    if (propias.has(k)) probs.push(`YA-EN-ESTE ${v.word}`);
     const tt = taught.get(k);
     if (tt) {
       const fr = [...tt].some((x) => x.startsWith("Friends"));
       const port = ["verb", "adjective", "adverb", "expression"].includes(v.type);
-      probs.push(`${fr ? "YA-FRIENDS" : port ? "otro-portable" : "YA-OTRO-ANCLA"} ${v.word} (${[...tt].join("/")})`);
+      if (!port) probs.push(`YA-ANCLA ${v.word} (${[...tt].join("/")})`);
     }
     if (!isGermanA1A2(v.word)) fuera++, probs.push(`fuera-lista ${v.word}`);
-    const n = v.definition.split(/\s+/).length; if (n < 4 || n > 14) probs.push(`def ${n}w ${v.word}`);
+    const n = v.definition.split(/\s+/).length; if (n < 8 || n > 14) probs.push(`def ${n}w ${v.word}`);
     seen.set(k, (seen.get(k) ?? 0) + 1);
   }
   console.log(`  fuera de lista: ${fuera}` + (probs.length ? `\n  - ${probs.join("\n  - ")}` : ""));

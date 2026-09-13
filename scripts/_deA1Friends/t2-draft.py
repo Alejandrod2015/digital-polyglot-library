@@ -1,0 +1,88 @@
+import json
+T="running-and-fitness"
+def V(t,w,s,d,a=False):
+    o={"type":t,"word":w,"surface":s,"definition":d}
+    if a: o["anchor"]=True
+    return o
+s0=["Die Morgenluft am Main ist um neun noch kühl. Am Uferweg wartet schon eine kleine Gruppe, und alle tragen Laufschuhe. Svenja, eine Polizistin, leitet den Lauftreff und hält eine Stoppuhr in der Hand. Julia ist die Neue und will nicht hinten laufen.",
+"“Heute laufen wir bis zur Brücke und zurück”, erklärt Svenja. Julia läuft ganz vorne, neben Svenja. “Ich bleibe lieber hinten, ich bin nicht so schnell”, meint Moritz.",
+"Nach zwei Kilometern hat Julia Seitenstechen. Ihr Atem ist laut, und die Beine sind schwer. Sie muss aufhören. Moritz läuft ruhig vorbei.",
+"Svenja kommt zurück und bleibt bei ihr. “Am Anfang ist langsam besser. Das ist ganz normal”, sagt sie. Die anderen verschwinden im Nebel. Julia legt die Hände auf die Oberschenkel. Ihr Gesicht ist heiß, und das liegt nicht nur am Laufen.",
+"“Das ist ziemlich peinlich, oder?”, fragt Julia leise. Svenja lacht. “Nein, wirklich nicht. Nächsten Sonntag läufst du einfach hinten mit”, antwortet sie."]
+v0=[V("noun","die Morgenluft","Morgenluft","The fresh air early in the morning, before the day gets warm.",True),
+V("adjective","kühl","kühl","Cool; a little cold, but not really cold."),
+V("noun","der Uferweg","Uferweg","A path that goes along the side of a river or lake.",True),
+V("noun","die Polizistin","Polizistin","A woman who works for the police and keeps people safe.",True),
+V("noun","die Stoppuhr","Stoppuhr","A stopwatch; a small clock that measures how long something takes.",True),
+V("noun","die Brücke","Brücke","A bridge; you walk or drive over it to cross a river."),
+V("adverb","hinten","hinten","At the back; behind the others and not at the front."),
+V("adverb","vorne","vorne","At the front; in front of the others, in the first place."),
+V("noun","der Kilometer","Kilometern","A kilometre; a distance of one thousand metres."),
+V("adjective","schwer","schwer","Heavy; it feels hard to lift or to move."),
+V("verb","aufhören","aufhören","To stop doing something, like running, talking or working."),
+V("adjective","ruhig","ruhig","Calm; quiet and relaxed, with no stress or hurry."),
+V("adjective","langsam","langsam","Slow; not fast, taking a lot of time."),
+V("adjective","normal","normal","Normal; usual, the way things often are for most people."),
+V("verb","verschwinden","verschwinden","To disappear; to go away so that nobody can see you."),
+V("noun","der Nebel","Nebel","Fog; a thick grey cloud close to the ground.",True),
+V("noun","der Oberschenkel","Oberschenkel","The thigh; the top part of your leg, above the knee.",True),
+V("adjective","heiß","heiß","Hot; very warm, like a face after hard sport."),
+V("adverb","einfach","einfach","Simply; just, without any problem or special plan."),
+V("adjective","laut","laut","Loud; making a lot of noise that others can hear."),]
+s1=["Einen Tag später, am Montagabend, tut Julia alles weh. Nach acht Stunden schafft sie die Treppe kaum. Langsam geht sie nach oben, und ihre Waden brennen. Im Treppenhaus riecht es nach Suppe.",
+"Unten knarrt die Haustür. Moritz kommt mit einer Einkaufstüte und ist in zehn Sekunden neben ihr. “Muskelkater?”, fragt er.",
+"“Nein, alles gut”, lügt Julia. Moritz grinst. “Bei mir war es nach dem ersten Mal genauso”, erzählt er. Dann trägt er ihre Tasche nach oben.",
+"Oben liest Julia den Chat aus Rostock. Ihre Freundinnen haben einen neuen Plan: “Videoanruf jetzt immer am Sonntag um neun!” Um neun ist aber der Lauftreff.",
+"Julia setzt sich auf die Treppe und denkt lange nach, denn die Freundinnen sind ihr wichtig. Dann schreibt sie: “Sonntag um neun geht bei mir nicht mehr. Ich laufe jetzt. Vielleicht am Abend?”",
+"Die Antwort kommt sofort. “Seit wann läufst du denn?”, schreibt ihre beste Freundin. Julia hat keine kurze Antwort."]
+v1=[V("verb","riechen","riecht","To smell; a place or a thing has a smell you notice."),
+V("adverb","kaum","kaum","Hardly; almost not, only with a lot of effort."),
+V("verb","gehen","geht","To walk; to move on your feet, not fast."),
+V("verb","schaffen","schafft","To manage to do something, even if it is hard."),
+V("verb","brennen","brennen","To burn; here, your muscles feel hot and hurt."),
+V("noun","die Haustür","Haustür","The front door of a house, where you go in from the street.",True),
+V("noun","die Einkaufstüte","Einkaufstüte","A shopping bag; you carry the things you buy in it.",True),
+V("noun","die Sekunde","Sekunden","A second; a very short time, sixty of them make a minute."),
+V("noun","der Muskelkater","Muskelkater","Sore muscles; the pain you feel a day after hard sport.",True),
+V("verb","tragen","trägt","To carry something in your hands or arms."),
+V("adjective","erste","ersten","First; number one, the one that comes before all the others."),
+V("verb","lesen","liest","To read; to look at words and understand them."),
+V("verb","erzählen","erzählt","To tell; to talk about things that happened or that you know."),
+V("adverb","oben","Oben","Upstairs; at the top, in a higher place."),
+V("adverb","immer","immer","Always; every time, again and again, with no change."),
+V("verb","setzen","setzt","To sit down; to put yourself on a chair or a step."),
+V("adverb","lange","lange","For a long time; not only for a short moment."),
+V("adjective","wichtig","wichtig","Important; it matters a lot to you or to others."),
+V("adverb","sofort","sofort","At once; right away, without waiting even a short time."),
+V("adjective","kurz","kurze","Short; not long, with only a few words or a little time."),]
+s2=["Eine Woche später läuft Julia zehn Kilometer mit. Diesmal fängt sie hinten an. Die Sonne scheint, und auf dem Main fährt ein langes Frachtschiff. “Heute laufe ich eine gute Zeit”, denkt Julia.",
+"Nach sechs Kilometern bleibt Moritz plötzlich stehen. Er hält sein Knie und verzieht das Gesicht. “Lauf weiter, du bist gerade so gut”, sagt er. Julia sieht nach vorne und dann wieder zu ihm. “Nein, wir gehen zusammen”, antwortet sie.",
+"Sie gehen den Rest langsam am Ufer entlang, unter den Hochhäusern vom Bankenviertel. “Die Linie elf fährt fast bis zu deiner Tür”, sagt Moritz. Julia lacht zum ersten Mal richtig laut.",
+"An der Ziellinie wartet Svenja mit einer Wasserflasche. “Für die beiden Letzten!”, ruft jemand, und alle klatschen. Auf der Stoppuhr steht keine Bestzeit.",
+"“Und? Traurig?”, fragt Svenja. Julia trinkt einen großen Schluck und schüttelt den Kopf. “Nein. Heute war ich zum ersten Mal nicht die Neue”, flüstert sie."]
+v2=[V("adverb","diesmal","Diesmal","This time; now, and not like the time before."),
+V("verb","scheinen","scheint","To shine; the sun gives bright light and warmth."),
+V("noun","das Frachtschiff","Frachtschiff","A cargo ship; a big ship that carries goods on water.",True),
+V("adverb","plötzlich","plötzlich","Suddenly; very quickly, at a moment when nobody expects it."),
+V("verb","verziehen","verzieht","To pull your face into a shape that shows pain or dislike."),
+V("adverb","gerade","gerade","Just now; at this moment, at this very time."),
+V("adverb","zusammen","zusammen","Together; with another person or a group, and not alone."),
+V("preposition","entlang","entlang","Along; following the side of a river, a road or a wall."),
+V("noun","das Hochhaus","Hochhäusern","A high-rise; a very tall building with many floors.",True),
+V("noun","das Bankenviertel","Bankenviertel","The banking district; the part of Frankfurt with many big banks.",True),
+V("verb","rufen","ruft","To call out; to say something loudly so people hear it."),
+V("adverb","richtig","richtig","Really; properly and fully, not just a little bit."),
+V("noun","die Ziellinie","Ziellinie","The finish line; the line at the end of a race.",True),
+V("noun","die Wasserflasche","Wasserflasche","A water bottle; you carry drinking water in it.",True),
+V("verb","klatschen","klatschen","To clap; to hit your hands together to show you like something."),
+V("noun","die Bestzeit","Bestzeit","A best time; the fastest time you have ever run."),
+V("adjective","traurig","Traurig","Sad; unhappy because something is not as you wanted."),
+V("verb","schütteln","schüttelt","To shake; to move your head from side to side for no."),
+V("verb","flüstern","flüstert","To whisper; to speak very quietly so only one person hears."),
+V("adjective","groß","großen","Big; large, bigger than what is normal or usual."),]
+syn=["Julia goes to Moritz's running group by the river Main for the first time. The group leader Svenja is a police officer. Julia wants to show that she is fast and runs at the very front, but after two kilometres she has to stop. Svenja stays with her while the others run into the fog.",
+"The next evening Julia's legs hurt so much that she can hardly climb the stairs. Moritz catches up with her with his shopping. Then her friends in Rostock make a new plan for their video call, on the same morning and at the same hour as the running group. Julia has to choose.",
+"One week later Julia runs ten kilometres with the group and wants a good time. After six kilometres Moritz hurts his knee. Julia stops and walks the rest of the way with him along the river. At the finish line there is no best time, but for the first time Julia is not the new one."]
+arcs=["juxtaposition-discovery","reframe-turn","harmonic-close"]
+out=[{"topic":T,"slotIndex":i,"title":ti,"arcType":arcs[i],"synopsis":syn[i],"text":"\n\n".join(tx),"vocab":vv} for i,(ti,tx,vv) in enumerate([("Zu schnell am Main",s0,v0),("Muskelkater im Treppenhaus",s1,v1),("Zehn Kilometer zu zweit",s2,v2)])]
+json.dump(out,open("scripts/_deA1Friends/t2-data.json","w"),ensure_ascii=False,indent=1)

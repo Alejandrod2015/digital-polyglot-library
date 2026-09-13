@@ -1,6 +1,6 @@
 # Plan: Friends DE A1 (Frankfurt am Main)
 
-Estado: PENDIENTE DE APROBACION. Nada escrito en la base.
+Estado: APROBADO por el usuario el 2026-09-14 (via Journey-planning). Journey creado: `cmu0dqr6y0007j8o52i1s3gf7` (draft).
 Fecha: 2026-09-14. Chat ejecutor: DE_Germany_A1_Friends_1-Texto.
 
 ## 0. Estado comprobado antes de planear
@@ -156,9 +156,13 @@ MODO JOURNEY-LEVEL · 2 persona(s) detras de todo el journey
 - 20 plazas por historia: unas 14 portables y 6 ancladas
   (`project_vocab_recirculation_ladder`), ninguna palabra en mas de 2 historias
   como plaza.
-- **Cero solape** de lo ensenado: ninguna plaza repite una palabra del Friends
-  A0 ni del Friends C1 (`vocab-taught-same-type`), y como mucho 2 por historia de
-  los Expat o Traveler (`vocab-taught-elsewhere`), que se evitan igualmente.
+- **Solape** (corregido el 2026-09-14, aprobado via Journey-planning): lo
+  ANCLADO (sustantivos) va a cero contra los seis journeys alemanes; la capa
+  PORTABLE (verbo, adjetivo, adverbio) se reabre, tambien la del Friends A0
+  (`project_vocab_portable_layer_between_levels`, la regla que ya aplica
+  `saveStory`); nada se repite dentro de este journey. La version anterior de
+  esta linea pedia cero tambien en portables, y con plazas de una sola palabra
+  y la lista A1/A2 no cabia (855 lemas libres frente a 1.147).
 - **Techo de nivel**: el A1 si pasa por `vocab-level-frequency` (el A0 no), con la
   lista `germanA1A2.ts`: 0 fuera de lista pasa, 1-2 avisa, 3 o mas falla. Cada
   historia planifica como mucho 2 plazas fuera de lista.
@@ -208,8 +212,7 @@ Todas son plazas del Friends A0 medidas hoy; se reparten por tema segun encajan.
 | 6 Moods & Feelings | traurig, weinen, lachen, nervös, froh, stolz, schämen, allein, fehlen, das Herz, der Magen, die Sorge, seufzen |
 | 7 Quarrels & Making Up | leid ("es tut mir leid"), böse, vergessen, der Grund, sicher, zusammen, umarmen, nicken, schütteln, beste, zufrieden, der Satz |
 
-Condicion: una palabra de la escalera nunca ocupa plaza en el A1; si el
-validador la da como "ya ensenada" es porque se coló en `vocab`, y se saca.
+Condicion: un sustantivo de la escalera nunca ocupa plaza en el A1; las portables de la escalera pueden reabrirse como plaza.
 
 ## 7. Proceso por tema (fase 2, tras aprobacion)
 
