@@ -4964,5 +4964,73 @@
         }
       ]
     }
+  },
+  "cmu04ereh000732z7px7naqa2#home-life-and-habits": {
+    "cerrado": "2026-09-13T18:28:28.045Z",
+    "hash": "1ada5871b4411ffd",
+    "historias": [
+      "home-life-and-habits#0 l-etagere-du-haut",
+      "home-life-and-habits#1 il-ronfle-elle-lit",
+      "home-life-and-habits#2 une-chemise-pour-lundi"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"comedia domestica tierna: dos adultos que se quieren descubren que compartir un piso pequeno cuesta sitio, sueno y costumbres\", espina \"Romain deja Strasbourg para vivir con Justine en Nantes; entiende las palabras y todavia no lo que la vida de ella espera de el. Este tema es la primera semana: el espacio.\")",
+      "validador canonico: 3/3 (perfil narrador)",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"explique\" 20%)",
+      "arranques de parrafo variados (mas repetido \"romain\", 20%)",
+      "densidad 8.4 palabras por oracion (techo 13 en a2)",
+      "seguidilla 17/46 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 3 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.00 sobre 49 plazas · 48 salen una sola vez | ancladas: 11/60 (18%) | cola: 48/49 portables con un solo encuentro (98%, tope 80%) | de un solo encuentro: vêtements, hiver, hausse les épaules, déranger, dans le noir, entière, habitant, attraper, En fait, depuis le début, fait de la place, pour rien, plutôt, bizarre, pose la question, sommeil, réveille, ronfles, tellement, insupportable, a honte, tais, critiquer, avoue, célibataire, déteste, chaleur, habitude, Au bout de, endort…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: home-life-and-habits (Justine, Romain)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a2",
+      "variante": "france",
+      "registro": "comedia domestica tierna: dos adultos que se quieren descubren que compartir un piso pequeno cuesta sitio, sueno y costumbres",
+      "espina": "Romain deja Strasbourg para vivir con Justine en Nantes; entiende las palabras y todavia no lo que la vida de ella espera de el. Este tema es la primera semana: el espacio.",
+      "recursos": "A2: narrador en presente; passe compose e imparfait en el dialogo y en recuerdos marcados de Strasbourg; futur proche; simil simple (comme un invite), espejo concreto (el placard lleno y la etagere vacia), causalidad explicita y humor de situacion. Nada de subjonctif, plus-que-parfait ni gerondif.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Romain quiere un sitio suyo en el placard para sus cosas de Strasbourg el primer dia.",
+          "impide": "El placard esta lleno de la ropa de invierno de Justine y el no quiere molestarla el primer dia.",
+          "cuesta": "Baja sus discos y su cazadora a la cave, y los discos se quedan alli: arriba no hay sitio para ellos.",
+          "cambia": "Descubre que Justine ya le habia vaciado la etagere de arriba; entiende que ella pensaba en el antes de su llegada.",
+          "emocion": "Se siente un invitado en su propia casa porque todo es de ella; se sienta en un carton en la cave y lo encuentra raro."
+        },
+        {
+          "slot": "2",
+          "quiere": "Romain quiere dormir bien la primera semana, en su lado de siempre, junto a la ventana.",
+          "impide": "Justine lee hasta la una con la lampara encendida, y la razon que no dice es que el ronca.",
+          "cuesta": "Pierde para siempre su lado de la ventana: Justine lo necesita porque en el lado del radiador tiene calor.",
+          "cambia": "Cambian de lado; el se acostumbra al lado de la puerta y ella compra tapones para los oidos.",
+          "emocion": "Le da verguenza saber que ronca porque en Strasbourg nadie se quejaba; esconde la cara en la almohada."
+        },
+        {
+          "slot": "3",
+          "quiere": "Romain quiere tender la ropa en el balcon como en Alsacia para tener la camisa blanca seca el lunes, su primer dia en la empresa.",
+          "impide": "El crachin de Nantes no se ve, y moja la ropa sin que el se de cuenta.",
+          "cuesta": "La camisa blanca no se seca a tiempo y el lunes va a trabajar con un jersey viejo.",
+          "cambia": "Justine instala un tancarville en el bano y dice chez nous por primera vez; Romain acepta la costumbre de la casa.",
+          "emocion": "Le frustra hacerlo todo al reves en una semana; sacude la camisa mojada, suspira y al final se rie con ella."
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
   }
 }

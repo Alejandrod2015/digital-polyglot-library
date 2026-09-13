@@ -10,9 +10,9 @@
       "slot": "1",
       "quiere": "Romain quiere un sitio suyo en el placard para sus cosas de Strasbourg el primer dia.",
       "impide": "El placard esta lleno de la ropa de invierno de Justine y el no quiere molestarla el primer dia.",
-      "cuesta": "Baja sus discos y su chaqueta de cuero a la cave, y los discos se quedan alli: arriba no hay sitio para ellos.",
+      "cuesta": "Baja sus discos y su cazadora a la cave, y los discos se quedan alli: arriba no hay sitio para ellos.",
       "cambia": "Descubre que Justine ya le habia vaciado la etagere de arriba; entiende que ella pensaba en el antes de su llegada.",
-      "emocion": "Se siente un invitado en su propia casa porque todo es de ella; se sienta en un carton y se toca la barba en la cave."
+      "emocion": "Se siente un invitado en su propia casa porque todo es de ella; se sienta en un carton en la cave y lo encuentra raro."
     },
     {
       "slot": "2",
@@ -24,9 +24,9 @@
     },
     {
       "slot": "3",
-      "quiere": "Romain quiere tender la ropa en el balcon como en Alsacia para tener la camisa blanca seca el lunes.",
+      "quiere": "Romain quiere tender la ropa en el balcon como en Alsacia para tener la camisa blanca seca el lunes, su primer dia en la empresa.",
       "impide": "El crachin de Nantes no se ve, y moja la ropa sin que el se de cuenta.",
-      "cuesta": "La camisa blanca no se seca a tiempo y el lunes va a la obra con un jersey viejo.",
+      "cuesta": "La camisa blanca no se seca a tiempo y el lunes va a trabajar con un jersey viejo.",
       "cambia": "Justine instala un tancarville en el bano y dice chez nous por primera vez; Romain acepta la costumbre de la casa.",
       "emocion": "Le frustra hacerlo todo al reves en una semana; sacude la camisa mojada, suspira y al final se rie con ella."
     }
