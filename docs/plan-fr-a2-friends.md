@@ -1,6 +1,6 @@
 # Friends FR/France A2: plan
 
-Estado: **PLAN, sin aprobar.** No hay journey creado, ni temas en
+Estado: **PLAN APROBADO** (2026-09-13, via Journey-planning), con los nombres de tema renombrados a nivel de dominio (ver 6bis). Hasta el tema 1 no
 `dp_topics_v1`, ni una linea de prosa. Nada toca la base hasta el visto bueno.
 
 ## 0. Estado comprobado (2026-09-13)
@@ -109,35 +109,51 @@ de bar, compra, farmacia ni transporte.
 
 | # | label | slug | nuevo | registro |
 |---|---|---|---|---|
-| 1 | Habits & Shared Space | habits-and-shared-space | nadie | comedia domestica tierna |
-| 2 | Inside Jokes & Memories | inside-jokes-and-memories | Mathilde | el de fuera en la mesa |
-| 3 | Parents & Sunday Lunch | parents-and-sunday-lunch | Nathalie | el examen que nadie admite |
-| 4 | Chores & Fair Shares | chores-and-fair-shares | Julien | humor de cuentas de pareja |
+| 1 | Home Life & Habits | home-life-and-habits | nadie | comedia domestica tierna |
+| 2 | Jokes & Memories | jokes-and-memories | Mathilde | el de fuera en la mesa |
+| 3 | Family & Manners | family-and-manners | Nathalie | el examen que nadie admite |
+| 4 | Housework & Fairness | housework-and-fairness | Julien | humor de cuentas de pareja |
 | 5 | Arguments & Apologies | arguments-and-apologies | Karim | la primera pelea de verdad |
-| 6 | Weddings & Speeches | weddings-and-speeches | Élise | nervios y emocion en publico |
+| 6 | Ceremonies & Public Speaking | ceremonies-and-public-speaking | Élise | nervios y emocion en publico |
 | 7 | Homesickness & Belonging | homesickness-and-belonging | Anaïs | nostalgia y eleccion |
+
+### 6bis. Renombrado (2026-09-13, regla project_topic_naming_rule)
+
+El usuario rechazo dos nombres por especificos (escena, no dominio). Se revisaron los siete con el mismo criterio. Historias y vocabulario no cambian.
+
+| antes | ahora |
+|---|---|
+| Habits & Shared Space | Home Life & Habits |
+| Inside Jokes & Memories | Jokes & Memories |
+| Parents & Sunday Lunch | Family & Manners |
+| Chores & Fair Shares | Housework & Fairness |
+| Arguments & Apologies | Arguments & Apologies (igual) |
+| Weddings & Speeches | Ceremonies & Public Speaking |
+| Homesickness & Belonging | Homesickness & Belonging (igual) |
+
+assertTopicsGrounded en seco con los nuevos: PORTON OK; labels y slugs libres.
 
 ### Arco de cada tema (deseo, obstaculo, coste; el slot 3 cierra)
 
-1. **Habits & Shared Space.** (1) Romain llega con sus cajas y quiere un
+1. **Home Life & Habits.** (1) Romain llega con sus cajas y quiere un
    armario suyo; el de Justine esta lleno; cede y deja sus herramientas en la
    cave. (2) Las noches: el ronca, ella lee con luz; pierde su lado de la cama,
    el de la ventana. (3) Tiende la ropa en el balcon como en Alsacia y el
    crachin se la moja; Justine le hace sitio en el tendedero de dentro y dice
    "chez nous" por primera vez.
-2. **Inside Jokes & Memories.** (1) Primera cena con la bande; todos rien con
+2. **Jokes & Memories.** (1) Primera cena con la bande; todos rien con
    "l'histoire du pédalo" y Romain rie sin entender; Mathilde le pregunta de que
    se rie y lo pilla. (2) Mathilde le cuenta el pédalo con fotos (flashback
    marcado); Romain entiende la broma y descubre una Justine que no conocia; le
    cuesta la imagen que tenia de ella. (3) Algo le pasa a Romain delante de la
    bande y nace su propio apodo, que no le gusta; lo acepta porque es suyo.
-3. **Parents & Sunday Lunch.** (1) Primer domingo en Rezé: vous o tu con
+3. **Family & Manners.** (1) Primer domingo en Rezé: vous o tu con
    Nathalie; lleva un vino de Alsace a una mesa de muscadet y la botella se
    queda cerrada. (2) Quiere ayudar con el beurre blanc y corta la salsa; se
    pierde la salsa y la tranquilidad de la mesa. (3) Salta el cuadro electrico
    y Romain lo arregla; se pierde el postre y la tarde con Justine; Nathalie le
    tutea al irse.
-4. **Chores & Fair Shares.** (1) Julien le ensena su planning en la obra;
+4. **Housework & Fairness.** (1) Julien le ensena su planning en la obra;
    Romain lo pega en la nevera y Justine se ofende; pierden el sabado. (2) La
    vaisselle por turnos y el lave-vaisselle averiado; Romain paga la pieza y
    presume; Justine saca otra cuenta. (3) Romain descubre la lista que Justine
@@ -147,7 +163,7 @@ de bar, compra, farmacia ni transporte.
    canta sola; no la oye. (2) Silencio, reproches, sofa; Karim le aconseja flores
    y sale peor. (3) Una disculpa sin "mais"; Romain pide oir la cancion en casa;
    Justine perdona con una condicion.
-6. **Weddings & Speeches.** (1) Justine es testigo y escribe un discurso lleno
+6. **Ceremonies & Public Speaking.** (1) Justine es testigo y escribe un discurso lleno
    de bromas de familia; Élise pide a Romain la luz de la sala; pasa la vispera
    alli. (2) El dia, falla la corriente en pleno discurso; Romain lo arregla a
    oscuras y se pierde el discurso de Justine. (3) Élise pide que Romain diga
@@ -230,12 +246,12 @@ cada plaza del A2 ensena algo nuevo.
 
 | tema | portables libres (muestra) | ancladas libres (muestra) |
 |---|---|---|
-| Habits & Shared Space | s'habituer, déranger, céder, supporter, régler, bizarre, plutôt, en fait, la manie, ronfler | le placard, la couette, la table de nuit, le balcon, le crachin, le tancarville |
-| Inside Jokes & Memories | se souvenir, se moquer de, taquiner, suivre, à moitié, marrant, faire semblant, deviner, remarquer | la bande, le surnom, le pédalo, la meilleure amie, le lycée, le fou rire |
-| Parents & Sunday Lunch | impressionner, resservir, vouvoyer, avoir l'air, oser, franchement | la belle-mère, le beurre blanc, le muscadet, le gâteau nantais, Rezé, le tableau électrique, le fusible |
-| Chores & Fair Shares | injuste, à tour de rôle, arranger, se plaindre, râler, pareil | la vaisselle, la lessive, le lave-vaisselle, la corvée, l'aimant, la panne |
+| Home Life & Habits | s'habituer, déranger, céder, supporter, régler, bizarre, plutôt, en fait, la manie, ronfler | le placard, la couette, la table de nuit, le balcon, le crachin, le tancarville |
+| Jokes & Memories | se souvenir, se moquer de, taquiner, suivre, à moitié, marrant, faire semblant, deviner, remarquer | la bande, le surnom, le pédalo, la meilleure amie, le lycée, le fou rire |
+| Family & Manners | impressionner, resservir, vouvoyer, avoir l'air, oser, franchement | la belle-mère, le beurre blanc, le muscadet, le gâteau nantais, Rezé, le tableau électrique, le fusible |
+| Housework & Fairness | injuste, à tour de rôle, arranger, se plaindre, râler, pareil | la vaisselle, la lessive, le lave-vaisselle, la corvée, l'aimant, la panne |
 | Arguments & Apologies | se disputer, reprocher, s'excuser, pardonner, bouder, crier, se calmer, vexé, en colère, avoir tort, avoir raison, se réconcilier | la chorale, la salle d'escalade, le reproche |
-| Weddings & Speeches | émouvoir, ému, applaudir, prévenir, se débrouiller, tant pis | le témoin, le discours, la mariée, le vin d'honneur, la salle des fêtes, la veille, le micro, la rallonge |
+| Ceremonies & Public Speaking | émouvoir, ému, applaudir, prévenir, se débrouiller, tant pis | le témoin, le discours, la mariée, le vin d'honneur, la salle des fêtes, la veille, le micro, la rallonge |
 | Homesickness & Belonging | appartenir, avouer, déçu, soulagé, désormais, au fond | le mal du pays, le kouglof, la flammekueche, le TER, l'étiquette |
 
 Cognados transparentes descartados de antemano (vinyle, guitare, compromis,
@@ -268,7 +284,7 @@ La lista entra en el plan JSON de cada tema (`/tema`), no se repasa al final.
 3. Los personajes de tema no se pueden nombrar fuera de su tema; Mathilde y el
    apodo de la bande vuelven en el 6 y el 7 **solo como apodo**, sin el nombre
    de Mathilde.
-4. "Parents & Sunday Lunch" y "Weddings & Speeches" rozan "Home & Family" y
+4. "Family & Manners" y "Ceremonies & Public Speaking" rozan "Home & Family" y
    "Community & Celebrations" del Expat A1 draft, que es otro tipo. El lexico
    comprobado no choca.
 5. Titulos: tope de 26 caracteres, sin la formula por defecto.
