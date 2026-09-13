@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a2",
+  "variante": "france",
+  "registro": "el examen que nadie admite: cortesia tensa en los domingos de la madre de Justine, donde cada gesto dice si Romain entra en la familia",
+  "espina": "Romain entiende lo que dice la gente de Justine pero no lo que espera de el; aqui la familia lo mide con el vous, la cocina y el oficio, y el tu llega cuando deja de intentar gustar.",
+  "recursos": "A2: narrador en presente; passe compose en el dialogo (Tu l'as bien merite); futur proche; negacion ne... plus (il n'y en a plus); pronombre en; espejo concreto (el vous del primer domingo y el tu del tercero); humor de situacion con la salsa. Nada de subjonctif ni plus-que-parfait.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Romain quiere causar buena impresion en su primer almuerzo de domingo en casa de Nathalie, la madre de Justine.",
+      "impide": "Nathalie le trata de vous todo el almuerzo, y en la mesa solo se bebe muscadet.",
+      "cuesta": "Su regalo, el riesling de su tierra, vuelve a casa sin abrir.",
+      "cambia": "Descubre que el vous del primer domingo es una costumbre de la familia y no un rechazo; se queda tranquilo con un on verra.",
+      "emocion": "Esta inquieto porque cada vous le suena a frialdad; aguanta hasta el postre y pregunta directamente."
+    },
+    {
+      "slot": "2",
+      "quiere": "Romain quiere ayudar en la cocina para compensar el primer domingo.",
+      "impide": "El beurre blanc pide fuego bajo y paciencia, y Romain trabaja rapido, como en su oficio.",
+      "cuesta": "Corta la salsa: ese domingo no hay beurre blanc y toda la mesa lo nota.",
+      "cambia": "Ve que Nathalie, enfermera, no se altera por una salsa; aprende el ritmo de esa casa.",
+      "emocion": "Siente horror y verguenza con la cara roja porque ha estropeado lo que queria arreglar; grita el nombre de Nathalie."
+    },
+    {
+      "slot": "3",
+      "quiere": "Romain quiere ser util de verdad en casa de Nathalie cuando salta la luz en pleno almuerzo.",
+      "impide": "El problema esta en el sotano y lleva una hora encontrarlo, solo, mientras la familia sigue a la luz de las velas.",
+      "cuesta": "Se pierde el gateau nantais y la tarde del domingo con Justine.",
+      "cambia": "Nathalie le ofrece un cafe y le tutea por primera vez.",
+      "emocion": "Se levanta de un salto porque por fin sabe hacer algo mejor que nadie; sube con las manos sucias y sonrie al oir el tu."
+    }
+  ]
+}
