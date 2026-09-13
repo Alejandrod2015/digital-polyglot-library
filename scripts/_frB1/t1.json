@@ -1,0 +1,467 @@
+[
+ {
+  "topic": "careers-and-ambitions",
+  "slotIndex": 0,
+  "title": "La tournée jamais offerte",
+  "synopsis": "Aurélien a enfin une bonne nouvelle au travail, et il a réservé une table pour la fêter avec Élodie, sa meilleure amie depuis la fac. Mais Élodie arrive avec une nouvelle bien pire que la sienne. Il faudrait choisir laquelle compte ce soir, et Aurélien décide de se taire. La soirée ne se passe pas du tout comme il l'avait prévu.",
+  "text": "Aurélien, un comptable de trente-cinq ans, attendait à l'estaminet, dans l'odeur chaude des welshs. Il voulait offrir une tournée: sa cheffe lui avait proposé une promotion. Élodie est une mécanicienne de vélos, et elle est arrivée la boule au ventre.\n\nÉlodie a posé son casque: “Mon magasin ferme en janvier. Ils vont licencier tout le monde.” Prudent, Aurélien a gardé pour lui sa nouvelle. “Le chômage, ça ne dure pas, tu verras”, a dit Aurélien, et il s'est senti coupable.\n\nFêter une promotion devant elle lui semblait déplacé, et il avait du mal à la regarder. Élodie a ri jaune. “Tu te souviens? À la fac, on rêvait d'ouvrir un atelier. C'est maintenant ou jamais”, lui a rappelé Élodie.\n\nAurélien a hoché la tête et griffonné deux noms sur une serviette en papier. “Ce serait une folie, et je suis comptable!” a plaisanté Aurélien. Sa tournée, il ne l'a jamais offerte.\n\nCe soir-là, il n'a pas pensé une seule fois à sa promotion.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "l'estaminet",
+    "surface": "estaminet",
+    "register": "cultural",
+    "definition": "a small traditional café and bar in the north of France",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "le welsh",
+    "surface": "welshs",
+    "register": "cultural",
+    "definition": "a hot northern French dish of cheese, beer and bread",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "offrir une tournée",
+    "surface": "offrir une tournée",
+    "register": "neutral",
+    "definition": "to pay for a drink for everyone at the table"
+   },
+   {
+    "type": "noun",
+    "word": "la promotion",
+    "surface": "promotion",
+    "register": "neutral",
+    "definition": "a better job with more money in the same company",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "ce soir-là",
+    "surface": "Ce soir-là",
+    "register": "neutral",
+    "definition": "on that evening in the past, not this evening"
+   },
+   {
+    "type": "expression",
+    "word": "la boule au ventre",
+    "surface": "la boule au ventre",
+    "register": "neutral",
+    "definition": "with a heavy, nervous feeling in your stomach"
+   },
+   {
+    "type": "verb",
+    "word": "licencier",
+    "surface": "licencier",
+    "register": "neutral",
+    "definition": "to tell workers that they no longer have a job"
+   },
+   {
+    "type": "adjective",
+    "word": "prudent",
+    "surface": "Prudent",
+    "register": "neutral",
+    "definition": "careful, someone who thinks about risks before acting"
+   },
+   {
+    "type": "expression",
+    "word": "garder pour soi",
+    "surface": "gardé pour lui",
+    "register": "neutral",
+    "definition": "to keep something secret and not tell other people"
+   },
+   {
+    "type": "noun",
+    "word": "le chômage",
+    "surface": "chômage",
+    "register": "neutral",
+    "definition": "the situation of having no job and looking for work",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "avoir du mal à",
+    "surface": "avait du mal à",
+    "register": "neutral",
+    "definition": "to find it hard to do something, or to manage it badly"
+   },
+   {
+    "type": "adjective",
+    "word": "déplacé",
+    "surface": "déplacé",
+    "register": "neutral",
+    "definition": "not right for the moment, a little rude"
+   },
+   {
+    "type": "expression",
+    "word": "se sentir coupable",
+    "surface": "senti coupable",
+    "register": "neutral",
+    "definition": "to feel bad because you think that you did something wrong"
+   },
+   {
+    "type": "expression",
+    "word": "rire jaune",
+    "surface": "ri jaune",
+    "register": "neutral",
+    "definition": "to laugh a little, but without finding the situation funny at all"
+   },
+   {
+    "type": "verb",
+    "word": "rêver de",
+    "surface": "rêvait d'",
+    "register": "neutral",
+    "definition": "to hope for something for a long time"
+   },
+   {
+    "type": "noun",
+    "word": "l'atelier",
+    "surface": "atelier",
+    "register": "neutral",
+    "definition": "a small workshop where people make or repair things",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "hocher la tête",
+    "surface": "hoché la tête",
+    "register": "neutral",
+    "definition": "to move your head up and down to say yes"
+   },
+   {
+    "type": "verb",
+    "word": "griffonner",
+    "surface": "griffonné",
+    "register": "neutral",
+    "definition": "to write or draw something quickly and not neatly"
+   },
+   {
+    "type": "noun",
+    "word": "la serviette en papier",
+    "surface": "serviette en papier",
+    "register": "neutral",
+    "definition": "a thin paper square for cleaning your hands at the table",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "une seule fois",
+    "surface": "une seule fois",
+    "register": "neutral",
+    "definition": "not even once, used to make a strong point"
+   }
+  ],
+  "arcType": "reframe-turn"
+ },
+ {
+  "topic": "careers-and-ambitions",
+  "slotIndex": 1,
+  "title": "Réponse avant vendredi",
+  "synopsis": "Aurélien voudrait des chiffres sûrs avant de choisir entre son bureau tranquille et un vieux rêve de la fac. Il fait des tableaux, il compte, il recompte. Mais sa cheffe attend une réponse avant vendredi, Élodie en a assez des peut-être, et les chiffres, eux, ne décident rien à sa place. Il faut qu'il choisisse, et vite.",
+  "text": "Sur son écran, Aurélien avait ouvert un tableur: loyer, outils, un an sans salaire fixe. Sa cheffe voulait une réponse avant vendredi, et ce délai lui serrait la gorge.\n\nMercredi soir, Élodie a débarqué avec deux bières froides. “Arrête de calculer, Aurélien. Tu en as envie?” a demandé Élodie. “Je veux peser le pour et le contre, sans me précipiter”, s'est défendu Aurélien.\n\n“Personne n'est sûr de rien avant de sauter le pas”, insistait Élodie. À force de fixer l'écran, il a su qu'elle avait raison, et ça l'agaçait. Jeudi, sa cheffe lui a demandé si c'était oui.\n\nIl voulait accepter par prudence, mais devant le beffroi allumé, il a refusé poliment, les mains moites. La promotion est allée à un collègue ambitieux, pour de bon. Aurélien a tapé trois mots à Élodie: “J'ai dit non.”\n\nÉlodie a appelé dans la minute. “Tu es complètement fou, et je suis fière de toi!” a crié Élodie. Aurélien a fermé le tableur sans l'enregistrer, soulagé.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "le tableur",
+    "surface": "tableur",
+    "register": "neutral",
+    "definition": "a computer program with tables for numbers and money",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "le salaire fixe",
+    "surface": "salaire fixe",
+    "register": "neutral",
+    "definition": "the same pay every month, which does not change",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "le délai",
+    "surface": "délai",
+    "register": "neutral",
+    "definition": "the time you have before something must be finished",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "débarquer",
+    "surface": "débarqué",
+    "register": "colloquial",
+    "definition": "to arrive somewhere suddenly, without telling anyone first"
+   },
+   {
+    "type": "verb",
+    "word": "calculer",
+    "surface": "calculer",
+    "register": "neutral",
+    "definition": "to count numbers carefully to find an answer"
+   },
+   {
+    "type": "expression",
+    "word": "peser le pour et le contre",
+    "surface": "peser le pour et le contre",
+    "register": "neutral",
+    "definition": "to think about the good and bad sides before deciding"
+   },
+   {
+    "type": "expression",
+    "word": "à force de",
+    "surface": "À force de",
+    "register": "neutral",
+    "definition": "because you do something many times or for a long time"
+   },
+   {
+    "type": "verb",
+    "word": "se précipiter",
+    "surface": "me précipiter",
+    "register": "neutral",
+    "definition": "to do something too fast, without taking time to think"
+   },
+   {
+    "type": "verb",
+    "word": "taper",
+    "surface": "tapé",
+    "register": "neutral",
+    "definition": "to write a message by pressing the keys of a phone"
+   },
+   {
+    "type": "expression",
+    "word": "sauter le pas",
+    "surface": "sauter le pas",
+    "register": "neutral",
+    "definition": "to finally make a big decision after waiting a long time"
+   },
+   {
+    "type": "verb",
+    "word": "agacer",
+    "surface": "agaçait",
+    "register": "neutral",
+    "definition": "to make someone a little angry or annoyed"
+   },
+   {
+    "type": "expression",
+    "word": "par prudence",
+    "surface": "par prudence",
+    "register": "neutral",
+    "definition": "to be careful and avoid a possible problem"
+   },
+   {
+    "type": "noun",
+    "word": "le beffroi",
+    "surface": "beffroi",
+    "register": "cultural",
+    "definition": "a tall old bell tower in a town centre, typical of the north",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "poliment",
+    "surface": "poliment",
+    "register": "neutral",
+    "definition": "in a kind and correct way, with good manners"
+   },
+   {
+    "type": "adjective",
+    "word": "moite",
+    "surface": "moites",
+    "register": "neutral",
+    "definition": "a little wet with sweat, because you are nervous or hot"
+   },
+   {
+    "type": "expression",
+    "word": "serrer la gorge",
+    "surface": "serrait la gorge",
+    "register": "neutral",
+    "definition": "to make you feel so nervous that it is hard to swallow"
+   },
+   {
+    "type": "adjective",
+    "word": "ambitieux",
+    "surface": "ambitieux",
+    "register": "neutral",
+    "definition": "wanting very much to be successful and have a better job"
+   },
+   {
+    "type": "expression",
+    "word": "dans la minute",
+    "surface": "dans la minute",
+    "register": "neutral",
+    "definition": "immediately, only a very short time after something happens"
+   },
+   {
+    "type": "adjective",
+    "word": "soulagé",
+    "surface": "soulagé",
+    "register": "neutral",
+    "definition": "feeling better because a worry or a problem has gone away"
+   },
+   {
+    "type": "verb",
+    "word": "enregistrer",
+    "surface": "enregistrer",
+    "register": "neutral",
+    "definition": "to keep a file on a computer so you can open it again"
+   }
+  ],
+  "arcType": "juxtaposition-discovery"
+ },
+ {
+  "topic": "careers-and-ambitions",
+  "slotIndex": 2,
+  "title": "Un carton sous le bras",
+  "synopsis": "Aurélien quitte le cabinet où il travaille depuis dix ans, et il voudrait partir sans bruit, comme un invité discret. Ses collègues, eux, ont beaucoup de choses à dire sur un homme qui abandonne un poste si sûr. Pendant une semaine, il sourit et il supporte les questions. Et le dernier soir, quelqu'un l'attend en bas avec une surprise.",
+  "text": "Un lundi matin, Aurélien a posé sa lettre de démission sur le bureau de sa cheffe, sans un mot de trop. Il voulait partir discrètement, après son préavis. La nouvelle a pourtant fait le tour du cabinet avant midi.\n\nPour une collègue, il était sûrement tombé sur la tête. Au pot de départ, il avait envie de disparaître, un champagne tiède à la main. “Merci à tous, vraiment!” a dit Aurélien pendant les discours gênants, et il a tenu le coup jusqu'au bout.\n\nSous la drache, Élodie l'attendait à cheval sur son vélo. “Il pèse lourd, ce carton?” a demandé Élodie. “Moins lourd que dix ans de CDI”, lui a répondu Aurélien.\n\nÉlodie lui a tendu un trousseau rouillé: “Le local de Fives. Le propriétaire voudrait qu'on signe vite, avant la fin du mois.” “Adieu le salaire fixe et la mutuelle”, a soupiré Aurélien, et il a rangé les clés dans la poche où il mettait son badge. “Bienvenue au chômage, associé”, s'est moquée Élodie.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "la lettre de démission",
+    "surface": "lettre de démission",
+    "register": "neutral",
+    "definition": "a letter that tells your boss you are leaving your job",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "sans un mot de trop",
+    "surface": "sans un mot de trop",
+    "register": "neutral",
+    "definition": "saying only what is really needed and nothing more"
+   },
+   {
+    "type": "adverb",
+    "word": "discrètement",
+    "surface": "discrètement",
+    "register": "neutral",
+    "definition": "quietly, so that other people do not notice"
+   },
+   {
+    "type": "noun",
+    "word": "le préavis",
+    "surface": "préavis",
+    "register": "neutral",
+    "definition": "the weeks you must still work after you say you are leaving",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "faire le tour",
+    "surface": "fait le tour",
+    "register": "neutral",
+    "definition": "to go everywhere in a place, so that everyone knows"
+   },
+   {
+    "type": "noun",
+    "word": "le CDI",
+    "surface": "CDI",
+    "register": "cultural",
+    "definition": "a French work contract with no end date, very safe",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "tomber sur la tête",
+    "surface": "tombé sur la tête",
+    "register": "colloquial",
+    "definition": "to act in a crazy way, as if you had lost your mind"
+   },
+   {
+    "type": "verb",
+    "word": "disparaître",
+    "surface": "disparaître",
+    "register": "neutral",
+    "definition": "to go away so that nobody can see you any more"
+   },
+   {
+    "type": "noun",
+    "word": "le pot de départ",
+    "surface": "pot de départ",
+    "register": "cultural",
+    "definition": "a small party at work for a person who is leaving",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "gênant",
+    "surface": "gênants",
+    "register": "neutral",
+    "definition": "making people feel uncomfortable or a little ashamed"
+   },
+   {
+    "type": "expression",
+    "word": "tenir le coup",
+    "surface": "tenu le coup",
+    "register": "neutral",
+    "definition": "to stay strong and not give up in a hard moment"
+   },
+   {
+    "type": "expression",
+    "word": "jusqu'au bout",
+    "surface": "jusqu'au bout",
+    "register": "neutral",
+    "definition": "until the very end of something, without stopping or leaving before"
+   },
+   {
+    "type": "expression",
+    "word": "à cheval sur",
+    "surface": "à cheval sur",
+    "register": "neutral",
+    "definition": "sitting with one leg on each side of something"
+   },
+   {
+    "type": "noun",
+    "word": "la drache",
+    "surface": "drache",
+    "register": "regional",
+    "definition": "a heavy, cold rain, a word used in the north of France",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "peser",
+    "surface": "pèse",
+    "register": "neutral",
+    "definition": "to have a certain weight, heavy or light"
+   },
+   {
+    "type": "noun",
+    "word": "le trousseau",
+    "surface": "trousseau",
+    "register": "neutral",
+    "definition": "a group of keys held together on a ring"
+   },
+   {
+    "type": "adjective",
+    "word": "rouillé",
+    "surface": "rouillé",
+    "register": "neutral",
+    "definition": "old metal that has turned brown and rough with water"
+   },
+   {
+    "type": "noun",
+    "word": "le local",
+    "surface": "local",
+    "register": "neutral",
+    "definition": "an empty room or shop that a business can rent"
+   },
+   {
+    "type": "noun",
+    "word": "la mutuelle",
+    "surface": "mutuelle",
+    "register": "neutral",
+    "definition": "extra health insurance, often paid in part by your job"
+   },
+   {
+    "type": "noun",
+    "word": "le badge",
+    "surface": "badge",
+    "register": "neutral",
+    "definition": "a small card that lets you enter your office building"
+   }
+  ],
+  "arcType": "harmonic-close"
+ }
+]
