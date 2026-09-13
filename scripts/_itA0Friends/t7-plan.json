@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "italy",
+  "registro": "intimo y desnudo: un cumpleanos, una confesion y una amistad que sigue sin mentiras",
+  "espina": "El pacto de la servilleta: Alice calla lo que siente por Matteo; en su cumpleanos 35 se lo dice por fin, Matteo la quiere pero no asi, y el domingo siguiente siguen siendo amigos, sin pacto.",
+  "recursos": "A0: eco del tema 1 (Oggi ... compie trentacinque anni, las velas), repeticion (Amici e basta), contraste con ma (Ti voglio bene, ma), imagen concreta final (dos platos al sol, la albahaca creciendo en el marmol roto). Titulos: objeto (Trentacinque candeline), linea dicha (Ti voglio bene, ma), fragmento (Due piatti, come sempre).",
+  "historias": [
+    { "slot": "0", "quiere": "decirle a Matteo la verdad el dia que ella cumple 35", "impide": "Matteo cumple su promesa y no menciona el pacto: tiene que sacarlo ella", "cuesta": "rompe el silencio que Matteo le regalo y pone la servilleta sobre la mesa", "cambia": "le pide que la lea en voz alta; ya no hay excusa", "emocion": "miedo: le tiemblan las manos porque ya no tiene excusa, y deja la servilleta junto a la tarta" },
+    { "slot": "1", "quiere": "que Matteo sepa que para ella el pacto nunca fue broma", "impide": "Matteo la quiere, pero no de ese modo", "cuesta": "la esperanza de quince anos", "cambia": "Alice conoce la respuesta; Matteo no se va y se queda con ella hasta la noche", "emocion": "dolor: llora porque ya sabe la respuesta, y no esconde las lagrimas" },
+    { "slot": "2", "quiere": "seguir con los domingos sin fingir", "impide": "la verguenza y la torpeza del primer domingo despues", "cuesta": "rompe la servilleta del pacto y la tira", "cambia": "son amigos y nada mas, y comen en la terraza como siempre", "emocion": "alivio triste: le duele pero es justo, y rompe la servilleta en trozos pequenos" }
+  ]
+}

@@ -1,0 +1,396 @@
+[
+ {
+  "topic": "secrets-and-confessions",
+  "slotIndex": 0,
+  "title": "Trentacinque candeline",
+  "arcType": null,
+  "synopsis": "It is Alice's thirty-fifth birthday. Matteo keeps his promise and does not say a word about the pact, so Alice goes to get the old napkin.",
+  "text": "Oggi Alice compie trentacinque anni. Il sole tramonta sul mare. Sulla terrazza c'è una torta con le fragole, e Matteo accende le candeline una per una.\n\n“Tanti auguri, Alice! Esprimi un desiderio,” dice Matteo. Alice chiude gli occhi e soffia. “E questo è per te. Apri, dai,” dice lui. È un pacchetto con un nastro rosso. Dentro ci sono due orecchini che brillano. Alice arrossisce, emozionata. “Sono bellissimi. Grazie, Matteo,” dice Alice.\n\nMatteo non parla del patto. Lui mantiene la promessa. Ma il cuore di Alice batte forte. “Sei nervosa? Hai freddo? Vuoi il mio maglione?” chiede Matteo. “No, no. Sto bene. Davvero,” risponde lei.\n\n“Aspetta qui. Torno subito,” dice lei. Lei va in casa e apre il cassetto. Il vecchio tovagliolo è lì, piegato in quattro.\n\nAlice mette il tovagliolo sul tavolo, vicino alla torta. Le sue mani tremano, perché adesso non ha più una scusa. “Leggi, per favore. Ad alta voce,” dice Alice.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "tramontare",
+    "surface": "tramonta",
+    "definition": "To set; the sun goes down in the evening."
+   },
+   {
+    "type": "noun",
+    "word": "le fragole",
+    "surface": "fragole",
+    "definition": "Strawberries; small red sweet fruits.",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "una per una",
+    "surface": "una per una",
+    "definition": "One by one; one after the other."
+   },
+   {
+    "type": "verb",
+    "word": "esprimere",
+    "surface": "Esprimi",
+    "definition": "To express; here, to make a wish."
+   },
+   {
+    "type": "noun",
+    "word": "il desiderio",
+    "surface": "desiderio",
+    "definition": "A wish; something you want very much."
+   },
+   {
+    "type": "expression",
+    "word": "questo è per te",
+    "surface": "questo è per te",
+    "definition": "This is for you; you say it with a gift."
+   },
+   {
+    "type": "noun",
+    "word": "il nastro",
+    "surface": "nastro",
+    "definition": "A ribbon; a thin band of cloth on a present."
+   },
+   {
+    "type": "noun",
+    "word": "gli orecchini",
+    "surface": "orecchini",
+    "definition": "Earrings; small jewels you wear on your ears.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "arrossire",
+    "surface": "arrossisce",
+    "definition": "To blush; your face goes a little red."
+   },
+   {
+    "type": "verb",
+    "word": "mantenere",
+    "surface": "mantiene",
+    "definition": "To keep a promise; to do what you say."
+   },
+   {
+    "type": "expression",
+    "word": "sto bene",
+    "surface": "Sto bene",
+    "definition": "I am fine; I feel OK."
+   },
+   {
+    "type": "expression",
+    "word": "torno subito",
+    "surface": "Torno subito",
+    "definition": "I will be right back."
+   },
+   {
+    "type": "expression",
+    "word": "andare in casa",
+    "surface": "va in casa",
+    "definition": "To go inside the flat."
+   },
+   {
+    "type": "expression",
+    "word": "in quattro",
+    "surface": "in quattro",
+    "definition": "In four; folded into four parts."
+   },
+   {
+    "type": "noun",
+    "word": "la scusa",
+    "surface": "scusa",
+    "definition": "An excuse; a reason not to do something."
+   },
+   {
+    "type": "verb",
+    "word": "leggere",
+    "surface": "Leggi",
+    "definition": "To read words on paper."
+   },
+   {
+    "type": "adverb",
+    "word": "lì",
+    "surface": "lì",
+    "definition": "There; in that place."
+   },
+   {
+    "type": "expression",
+    "word": "vicino alla torta",
+    "surface": "vicino alla torta",
+    "definition": "Next to the cake."
+   },
+   {
+    "type": "verb",
+    "word": "brillare",
+    "surface": "brillano",
+    "definition": "To shine; to give a little light."
+   },
+   {
+    "type": "adjective",
+    "word": "emozionato",
+    "surface": "emozionata",
+    "definition": "Moved; full of strong happy feeling."
+   }
+  ]
+ },
+ {
+  "topic": "secrets-and-confessions",
+  "slotIndex": 1,
+  "title": "Ti voglio bene, ma",
+  "arcType": null,
+  "synopsis": "Matteo reads the old pact out loud. This time Alice does not laugh, and she tells him the truth.",
+  "text": "Matteo apre il tovagliolo sul tavolo, davanti ad Alice. Il vento lo muove un po'. La carta è gialla e secca. Legge piano: “Se a trentacinque anni siamo soli, ci sposiamo.” Poi alza gli occhi.\n\n“Alice, io ho una promessa. Non parlo più del patto,” dice lui. “Lo so. Adesso parlo io,” risponde Alice. Lei trova il coraggio con un respiro profondo.\n\n“Per me non è uno scherzo. Io ti amo, Matteo. Da tanti anni. Sono sincera,” dice Alice.\n\nC'è silenzio. Lontano, i gabbiani volano sul mare. Matteo è pallido e guarda il tovagliolo a lungo.\n\n“Alice, io ti voglio bene. Tanto. Ma io non ti amo così. Mi dispiace,” dice Matteo piano.\n\nAlice piange, perché adesso sa la risposta. Lei singhiozza e Matteo le dà un fazzoletto. Non è uno scherzo: è la verità. Matteo non va via. Le accarezza i capelli e resta vicino a lei, fino a sera.",
+  "vocab": [
+   {
+    "type": "adjective",
+    "word": "giallo",
+    "surface": "gialla",
+    "definition": "Yellow; here old paper that is not white any more."
+   },
+   {
+    "type": "adjective",
+    "word": "secco",
+    "surface": "secca",
+    "definition": "Dry; with no water, a little hard."
+   },
+   {
+    "type": "expression",
+    "word": "alzare gli occhi",
+    "surface": "alza gli occhi",
+    "definition": "To look up; to raise your eyes."
+   },
+   {
+    "type": "expression",
+    "word": "lo so",
+    "surface": "Lo so",
+    "definition": "I know; you say it when you already know."
+   },
+   {
+    "type": "noun",
+    "word": "il coraggio",
+    "surface": "coraggio",
+    "definition": "Courage; you are brave and not afraid."
+   },
+   {
+    "type": "expression",
+    "word": "un respiro profondo",
+    "surface": "respiro profondo",
+    "definition": "A deep breath; you take in a lot of air."
+   },
+   {
+    "type": "expression",
+    "word": "da tanti anni",
+    "surface": "Da tanti anni",
+    "definition": "For many years; a long time now."
+   },
+   {
+    "type": "adjective",
+    "word": "sincero",
+    "surface": "sincera",
+    "definition": "Sincere; honest, saying what you really feel."
+   },
+   {
+    "type": "adverb",
+    "word": "lontano",
+    "surface": "Lontano",
+    "definition": "Far away; not near."
+   },
+   {
+    "type": "noun",
+    "word": "i gabbiani",
+    "surface": "gabbiani",
+    "definition": "Seagulls; white sea birds.",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "ti voglio bene",
+    "surface": "ti voglio bene",
+    "definition": "I care for you; I love you as a friend."
+   },
+   {
+    "type": "verb",
+    "word": "piangere",
+    "surface": "piange",
+    "definition": "To cry; tears come from your eyes."
+   },
+   {
+    "type": "verb",
+    "word": "singhiozzare",
+    "surface": "singhiozza",
+    "definition": "To sob; to cry with short loud breaths."
+   },
+   {
+    "type": "expression",
+    "word": "andare via",
+    "surface": "va via",
+    "definition": "To go away; to leave."
+   },
+   {
+    "type": "verb",
+    "word": "accarezzare",
+    "surface": "accarezza",
+    "definition": "To stroke gently with your hand."
+   },
+   {
+    "type": "expression",
+    "word": "fino a sera",
+    "surface": "fino a sera",
+    "definition": "Until the evening; until it gets dark."
+   },
+   {
+    "type": "expression",
+    "word": "davanti ad Alice",
+    "surface": "davanti ad Alice",
+    "definition": "In front of Alice."
+   },
+   {
+    "type": "verb",
+    "word": "muovere",
+    "surface": "muove",
+    "definition": "To move; to make something change place."
+   },
+   {
+    "type": "adjective",
+    "word": "pallido",
+    "surface": "pallido",
+    "definition": "Pale; with a white face, with no colour."
+   },
+   {
+    "type": "noun",
+    "word": "il fazzoletto",
+    "surface": "fazzoletto",
+    "definition": "A tissue or handkerchief to dry your eyes."
+   }
+  ]
+ },
+ {
+  "topic": "secrets-and-confessions",
+  "slotIndex": 2,
+  "title": "Due piatti, come sempre",
+  "arcType": null,
+  "synopsis": "One week later Matteo climbs to the fifth floor with two plates and a focaccia, and stops in front of Alice's door.",
+  "text": "Una domenica dopo, Matteo sale al quinto piano con due piatti e una focaccia. Ha una camicia pulita e i capelli pettinati. Davanti alla porta di Alice si ferma. Il vento è leggero.\n\n“Pranziamo in terrazza? Come sempre? Io porto la focaccia,” chiede lui, timido. È difficile, ma lei sorride. “Sì. Ma prima devo fare una cosa,” risponde Alice.\n\nLei prende il vecchio tovagliolo. Lo strappa in pezzi piccoli e lo mette nel cestino. Le fa male, ma è giusto. “Adesso niente patti. Siamo amici, e basta,” dice Alice.\n\n“Amici e basta. Promesso. E domenica prossima il pesto lo faccio io,” risponde Matteo. “Il pesto? Senza mortaio?” chiede Alice, e ride.\n\nLontano suonano le campane. Nei due vasi di marmo il basilico cresce, verde e forte. Alice e Matteo mangiano la focaccia al sole, uno davanti all'altra. Matteo mastica piano e sente sollievo. Sul tavolo restano le briciole. Due piatti, come ogni domenica.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "la camicia",
+    "surface": "camicia",
+    "definition": "A shirt with buttons and a collar."
+   },
+   {
+    "type": "adjective",
+    "word": "pettinato",
+    "surface": "pettinati",
+    "definition": "Combed; hair made tidy with a comb."
+   },
+   {
+    "type": "expression",
+    "word": "come sempre",
+    "surface": "Come sempre",
+    "definition": "As always; like every time."
+   },
+   {
+    "type": "adjective",
+    "word": "timido",
+    "surface": "timido",
+    "definition": "Shy; not sure, a little afraid to speak."
+   },
+   {
+    "type": "adjective",
+    "word": "difficile",
+    "surface": "difficile",
+    "definition": "Difficult; not easy, hard to do."
+   },
+   {
+    "type": "verb",
+    "word": "strappare",
+    "surface": "strappa",
+    "definition": "To tear; to pull paper into pieces."
+   },
+   {
+    "type": "expression",
+    "word": "fare male",
+    "surface": "Le fa male",
+    "definition": "To hurt; to cause pain."
+   },
+   {
+    "type": "adjective",
+    "word": "giusto",
+    "surface": "giusto",
+    "definition": "Right; the correct thing to do."
+   },
+   {
+    "type": "expression",
+    "word": "e basta",
+    "surface": "e basta",
+    "definition": "And that is all; nothing more."
+   },
+   {
+    "type": "expression",
+    "word": "domenica prossima",
+    "surface": "domenica prossima",
+    "definition": "Next Sunday; the Sunday after this one."
+   },
+   {
+    "type": "noun",
+    "word": "le campane",
+    "surface": "campane",
+    "definition": "Bells; they ring in a church tower.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "crescere",
+    "surface": "cresce",
+    "definition": "To grow; to get bigger."
+   },
+   {
+    "type": "adjective",
+    "word": "verde",
+    "surface": "verde",
+    "definition": "Green; the colour of leaves."
+   },
+   {
+    "type": "expression",
+    "word": "ogni domenica",
+    "surface": "ogni domenica",
+    "definition": "Every Sunday; each week on Sunday."
+   },
+   {
+    "type": "expression",
+    "word": "uno davanti all'altra",
+    "surface": "uno davanti all'altra",
+    "definition": "Face to face; one in front of the other."
+   },
+   {
+    "type": "expression",
+    "word": "una domenica dopo",
+    "surface": "Una domenica dopo",
+    "definition": "One Sunday later; a week after."
+   },
+   {
+    "type": "adjective",
+    "word": "leggero",
+    "surface": "leggero",
+    "definition": "Light; soft and gentle, not strong."
+   },
+   {
+    "type": "verb",
+    "word": "masticare",
+    "surface": "mastica",
+    "definition": "To chew food in your mouth."
+   },
+   {
+    "type": "noun",
+    "word": "il sollievo",
+    "surface": "sollievo",
+    "definition": "Relief; a good feeling when a worry ends."
+   },
+   {
+    "type": "noun",
+    "word": "le briciole",
+    "surface": "briciole",
+    "definition": "Crumbs; very small pieces of bread."
+   }
+  ]
+ }
+]
