@@ -1,0 +1,206 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "le matelas,le roman,le drap,la figure",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {"word":"le matelas","answer":"a mattress","options":["a mattress","a novel","a bedsheet","a face"]},
+        {"word":"le roman","answer":"a novel","options":["a mattress","a novel","a bedsheet","a face"]},
+        {"word":"le drap","answer":"a bedsheet","options":["a mattress","a novel","a bedsheet","a face"]},
+        {"word":"la figure","answer":"a face","options":["a mattress","a novel","a bedsheet","a face"]}
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le sommeil",
+    "sentence": "Il ne trouve pas [[le sommeil]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sleep",
+      "options": ["sleep","food","work","money"],
+      "audioClip": {"storySlug":"il-ronfle-elle-lit","storySource":"user","sentence":"Il ne trouve pas le sommeil.","targetWord":"le sommeil","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "réveiller",
+    "sentence": "Elle le [[réveille]] doucement.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wakes",
+      "options": ["wakes","kisses","calls","ignores"],
+      "audioClip": {"storySlug":"il-ronfle-elle-lit","storySource":"user","sentence":"Elle le réveille doucement.","targetWord":"réveille","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "l'œil",
+    "sentence": "Il ouvre un [[œil]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "eye",
+      "options": ["eye","hand","foot","ear"],
+      "audioClip": {"storySlug":"il-ronfle-elle-lit","storySource":"user","sentence":"Il ouvre un œil.","targetWord":"œil","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "insupportable",
+    "sentence": "C'est [[insupportable]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "unbearable",
+      "options": ["unbearable","wonderful","funny","normal"],
+      "audioClip": {"storySlug":"il-ronfle-elle-lit","storySource":"user","sentence":"C'est insupportable.","targetWord":"insupportable","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avoir honte",
+    "sentence": "Il [[a honte]] et cache sa figure.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "feels ashamed",
+      "options": ["feels ashamed","feels proud","feels hungry","feels cold"],
+      "audioClip": {"storySlug":"il-ronfle-elle-lit","storySource":"user","sentence":"Il a honte et cache sa figure.","targetWord":"a honte","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "taire",
+    "sentence": "Pourquoi tu te [[tais]] depuis lundi?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "keep quiet",
+      "options": ["keep quiet","shout so loud","wake up late","forget everything"],
+      "audioClip": {"storySlug":"il-ronfle-elle-lit","storySource":"user","sentence":"Pourquoi tu te tais depuis lundi?","targetWord":"tais","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la chaleur",
+    "sentence": "Elle déteste [[la chaleur]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "heat",
+      "options": ["heat","cold","noise","light"],
+      "audioClip": {"storySlug":"il-ronfle-elle-lit","storySource":"user","sentence":"Elle déteste la chaleur.","targetWord":"la chaleur","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "endormir",
+    "sentence": "Il [[s'endort]] près de la porte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "falls asleep",
+      "options": ["falls asleep","wakes up","gets dressed","goes out"],
+      "audioClip": {"storySlug":"il-ronfle-elle-lit","storySource":"user","sentence":"Il s'endort près de la porte.","targetWord":"s'endort","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tout le monde",
+    "sentence": "[[Tout le monde]] dort tranquillement.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "everyone",
+      "options": ["everyone","nobody","someone","the neighbor"],
+      "audioClip": {"storySlug":"il-ronfle-elle-lit","storySource":"user","sentence":"Tout le monde dort tranquillement.","targetWord":"Tout le monde","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tellement",
+    "sentence": "Tu ronfles [[tellement]] fort.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "so",
+      "options": ["so","never","barely","always"],
+      "audioClip": {"storySlug":"il-ronfle-elle-lit","storySource":"user","sentence":"Tu ronfles tellement fort.","targetWord":"tellement","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "l'habitude",
+    "sentence": "Depuis toujours, c'est [[son habitude]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "his habit",
+      "options": ["his habit","her secret","their mistake","our idea"],
+      "audioClip": {"storySlug":"il-ronfle-elle-lit","storySource":"user","sentence":"Depuis toujours, c'est son habitude.","targetWord":"son habitude","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "au bout de",
+    "sentence": "[[Au bout de]] trois nuits, il dort bien.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "after",
+      "options": ["after","before","instead of","without"],
+      "audioClip": {"storySlug":"il-ronfle-elle-lit","storySource":"user","sentence":"Au bout de trois nuits, il dort bien.","targetWord":"Au bout de","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tranquillement",
+    "sentence": "Tout le monde dort [[tranquillement]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "peacefully",
+      "options": ["peacefully","loudly","badly","briefly"],
+      "audioClip": {"storySlug":"il-ronfle-elle-lit","storySource":"user","sentence":"Tout le monde dort tranquillement.","targetWord":"tranquillement","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "critiquer",
+    "sentence": "Elle ne veut pas le _____, alors elle se tait.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "critiquer",
+      "options": ["critiquer","aider","embrasser","appeler"],
+      "translation": "She doesn't want to _____ him, so she stays quiet.",
+      "optionTranslations": ["criticize","help","kiss","call"],
+      "audioClip": {"storySlug":"il-ronfle-elle-lit","storySource":"user","sentence":"Elle ne veut pas le critiquer, alors elle se tait.","targetWord":"critiquer","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "déteste",
+    "sentence": "Il _____ la chaleur, alors il ouvre la fenêtre.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "déteste",
+      "options": ["déteste","adore","oublie","cherche"],
+      "translation": "He _____ the heat, so he opens the window.",
+      "optionTranslations": ["hates","loves","forgets","looks for"],
+      "audioClip": {"storySlug":"il-ronfle-elle-lit","storySource":"user","sentence":"Il déteste la chaleur, alors il ouvre la fenêtre.","targetWord":"déteste","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "avoue",
+    "sentence": "Elle _____ qu'elle a très chaud la nuit.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "avoue",
+      "options": ["avoue","cache","nie","ignore"],
+      "translation": "She _____ that she gets very hot at night.",
+      "optionTranslations": ["admits","hides","denies","ignores"],
+      "audioClip": {"storySlug":"il-ronfle-elle-lit","storySource":"user","sentence":"Elle avoue qu'elle a très chaud la nuit.","targetWord":"avoue","language":"french"}
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,433 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "le camion,l'épouse,le miroir,le ménage",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "le camion",
+          "answer": "a truck",
+          "options": [
+            "a truck",
+            "a wife",
+            "a mirror",
+            "housework"
+          ]
+        },
+        {
+          "word": "l'épouse",
+          "answer": "a wife",
+          "options": [
+            "a truck",
+            "a wife",
+            "a mirror",
+            "housework"
+          ]
+        },
+        {
+          "word": "le miroir",
+          "answer": "a mirror",
+          "options": [
+            "a truck",
+            "a wife",
+            "a mirror",
+            "housework"
+          ]
+        },
+        {
+          "word": "le ménage",
+          "answer": "housework",
+          "options": [
+            "a truck",
+            "a wife",
+            "a mirror",
+            "housework"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "l'outil",
+    "sentence": "Il mange au milieu des [[outils]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tools",
+      "options": [
+        "tools",
+        "plates",
+        "papers",
+        "shoes"
+      ],
+      "audioClip": {
+        "storySlug": "julien-compte-les-points",
+        "storySource": "user",
+        "sentence": "Il mange au milieu des outils.",
+        "targetWord": "outils",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "marier",
+    "sentence": "Il est un collègue [[marié]] depuis cinq ans.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "married",
+      "options": [
+        "married",
+        "single",
+        "retired",
+        "absent"
+      ],
+      "audioClip": {
+        "storySlug": "julien-compte-les-points",
+        "storySource": "user",
+        "sentence": "Il est un collègue marié depuis cinq ans.",
+        "targetWord": "marié",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le point",
+    "sentence": "Chaque tâche vaut des [[points]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "points",
+      "options": [
+        "points",
+        "hours",
+        "coins",
+        "letters"
+      ],
+      "audioClip": {
+        "storySlug": "julien-compte-les-points",
+        "storySource": "user",
+        "sentence": "Chaque tâche vaut des points.",
+        "targetWord": "points",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "faire la vaisselle",
+    "sentence": "[[Faire la vaisselle]], deux points.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "doing the dishes",
+      "options": [
+        "doing the dishes",
+        "watching TV",
+        "reading a book",
+        "taking a walk"
+      ],
+      "audioClip": {
+        "storySlug": "julien-compte-les-points",
+        "storySource": "user",
+        "sentence": "Faire la vaisselle, deux points.",
+        "targetWord": "Faire la vaisselle",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "passer l'aspirateur",
+    "sentence": "[[Passer l'aspirateur]], trois points.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "vacuuming",
+      "options": [
+        "vacuuming",
+        "cooking dinner",
+        "washing the car",
+        "painting a wall"
+      ],
+      "audioClip": {
+        "storySlug": "julien-compte-les-points",
+        "storySource": "user",
+        "sentence": "Passer l'aspirateur, trois points.",
+        "targetWord": "Passer l'aspirateur",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le total",
+    "sentence": "Le dimanche, on fait [[le total]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the total",
+      "options": [
+        "the total",
+        "the list",
+        "the schedule",
+        "the mistake"
+      ],
+      "audioClip": {
+        "storySlug": "julien-compte-les-points",
+        "storySource": "user",
+        "sentence": "Le dimanche, on fait le total.",
+        "targetWord": "le total",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pratique",
+    "sentence": "C'est [[pratique]], et c'est juste.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "practical",
+      "options": [
+        "practical",
+        "expensive",
+        "strange",
+        "forbidden"
+      ],
+      "audioClip": {
+        "storySlug": "julien-compte-les-points",
+        "storySource": "user",
+        "sentence": "C'est pratique, et c'est juste.",
+        "targetWord": "pratique",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plutôt content",
+    "sentence": "Il est [[plutôt content]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "quite pleased",
+      "options": [
+        "quite pleased",
+        "very worried",
+        "extremely tired",
+        "a little angry"
+      ],
+      "audioClip": {
+        "storySlug": "julien-compte-les-points",
+        "storySource": "user",
+        "sentence": "Il est plutôt content.",
+        "targetWord": "plutôt content",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fatigué",
+    "sentence": "Elle rentre à neuf heures, [[fatiguée]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tired",
+      "options": [
+        "tired",
+        "hungry",
+        "happy",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "julien-compte-les-points",
+        "storySource": "user",
+        "sentence": "Elle rentre à neuf heures, fatiguée.",
+        "targetWord": "fatiguée",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la salle de bain",
+    "sentence": "Il colle le papier sur le miroir de [[la salle de bain]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the bathroom",
+      "options": [
+        "the bathroom",
+        "the kitchen",
+        "the bedroom",
+        "the office"
+      ],
+      "audioClip": {
+        "storySlug": "julien-compte-les-points",
+        "storySource": "user",
+        "sentence": "Il colle le papier sur le miroir de la salle de bain.",
+        "targetWord": "la salle de bain",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "à neuf heures",
+    "sentence": "Elle rentre [[à neuf heures]], fatiguée.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at nine o'clock",
+      "options": [
+        "at nine o'clock",
+        "at noon",
+        "at midnight",
+        "at dawn"
+      ],
+      "audioClip": {
+        "storySlug": "julien-compte-les-points",
+        "storySource": "user",
+        "sentence": "Elle rentre à neuf heures, fatiguée.",
+        "targetWord": "à neuf heures",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "deux fois",
+    "sentence": "Elle le lit [[deux fois]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "twice",
+      "options": [
+        "twice",
+        "once",
+        "many times",
+        "never"
+      ],
+      "audioClip": {
+        "storySlug": "julien-compte-les-points",
+        "storySource": "user",
+        "sentence": "Elle le lit deux fois.",
+        "targetWord": "deux fois",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en silence",
+    "sentence": "Elle va dans la chambre [[en silence]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in silence",
+      "options": [
+        "in silence",
+        "very loudly",
+        "with a laugh",
+        "with a song"
+      ],
+      "audioClip": {
+        "storySlug": "julien-compte-les-points",
+        "storySource": "user",
+        "sentence": "Elle va dans la chambre en silence.",
+        "targetWord": "en silence",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "respecte",
+    "sentence": "Chacun _____ le tableau, sans jamais se disputer.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "respecte",
+      "options": [
+        "respecte",
+        "casse",
+        "cache",
+        "vend"
+      ],
+      "translation": "Everyone _____ the chart, without ever arguing.",
+      "optionTranslations": [
+        "respects",
+        "breaks",
+        "hides",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "julien-compte-les-points",
+        "storySource": "user",
+        "sentence": "Chacun respecte le tableau, sans jamais se disputer.",
+        "targetWord": "respecte",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dessine",
+    "sentence": "Le soir, il _____ un planning pour la maison.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dessine",
+      "options": [
+        "dessine",
+        "jette",
+        "lave",
+        "achète"
+      ],
+      "translation": "In the evening, he _____ a schedule for the house.",
+      "optionTranslations": [
+        "draws up",
+        "throws away",
+        "washes",
+        "buys"
+      ],
+      "audioClip": {
+        "storySlug": "julien-compte-les-points",
+        "storySource": "user",
+        "sentence": "Le soir, il dessine un planning pour la maison.",
+        "targetWord": "dessine",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "enlève",
+    "sentence": "Elle _____ le papier du miroir.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "enlève",
+      "options": [
+        "enlève",
+        "colle",
+        "dessine",
+        "cherche"
+      ],
+      "translation": "She _____ the paper off the mirror.",
+      "optionTranslations": [
+        "takes off",
+        "sticks on",
+        "draws",
+        "looks for"
+      ],
+      "audioClip": {
+        "storySlug": "julien-compte-les-points",
+        "storySource": "user",
+        "sentence": "Elle enlève le papier du miroir.",
+        "targetWord": "enlève",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
+]

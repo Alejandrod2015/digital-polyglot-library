@@ -1,0 +1,206 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "la radio,le gâteau nantais,la bougie,le dessert",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {"word":"la radio","answer":"a radio","options":["a radio","a Nantes cake","a candle","dessert"]},
+        {"word":"le gâteau nantais","answer":"a Nantes cake","options":["a radio","a Nantes cake","a candle","dessert"]},
+        {"word":"la bougie","answer":"a candle","options":["a radio","a Nantes cake","a candle","dessert"]},
+        {"word":"le dessert","answer":"dessert","options":["a radio","a Nantes cake","a candle","dessert"]}
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en plein",
+    "sentence": "La lumière s'éteint [[en plein]] déjeuner.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "right in the middle of",
+      "options": ["right in the middle of","right at the start of","right at the end of","right before"],
+      "audioClip": {"storySlug":"un-cafe-pour-romain","storySource":"user","sentence":"La lumière s'éteint en plein déjeuner.","targetWord":"en plein","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "les plombs ont sauté",
+    "sentence": "“[[Les plombs ont sauté]]!” dit-elle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the fuses have blown",
+      "options": ["the fuses have blown","the phone is ringing","the door is locked","the water is boiling"],
+      "audioClip": {"storySlug":"un-cafe-pour-romain","storySource":"user","sentence":"Les plombs ont sauté! dit-elle.","targetWord":"Les plombs ont sauté","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "électrique",
+    "sentence": "Il regarde le tableau [[électrique]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "electrical",
+      "options": ["electrical","wooden","broken","expensive"],
+      "audioClip": {"storySlug":"un-cafe-pour-romain","storySource":"user","sentence":"Il regarde le tableau électrique.","targetWord":"électrique","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "débrancher",
+    "sentence": "Il [[débranche]] tout et vérifie chaque fil.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "unplugs",
+      "options": ["unplugs","breaks","buys","paints"],
+      "audioClip": {"storySlug":"un-cafe-pour-romain","storySource":"user","sentence":"Il débranche tout et vérifie chaque fil.","targetWord":"débranche","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "d'un bond",
+    "sentence": "Il se lève [[d'un bond]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in one quick jump",
+      "options": ["in one quick jump","very slowly","without a word","with a smile"],
+      "audioClip": {"storySlug":"un-cafe-pour-romain","storySource":"user","sentence":"Il se lève d'un bond.","targetWord":"d'un bond","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "déguster",
+    "sentence": "La famille [[déguste]] le gâteau à la bougie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "savors",
+      "options": ["savors","throws away","hides","burns"],
+      "audioClip": {"storySlug":"un-cafe-pour-romain","storySource":"user","sentence":"La famille déguste le gâteau à la bougie.","targetWord":"déguste","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "heureusement",
+    "sentence": "[[Heureusement]], tout fonctionne de nouveau.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fortunately",
+      "options": ["fortunately","unfortunately","suddenly","rarely"],
+      "audioClip": {"storySlug":"un-cafe-pour-romain","storySource":"user","sentence":"Heureusement, tout fonctionne de nouveau.","targetWord":"Heureusement","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "remonter",
+    "sentence": "Il [[remonte]], couvert de poussière.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "comes back up",
+      "options": ["comes back up","falls asleep","runs away","sits down"],
+      "audioClip": {"storySlug":"un-cafe-pour-romain","storySource":"user","sentence":"Il remonte, couvert de poussière.","targetWord":"remonte","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gagner",
+    "sentence": "Il a [[gagné]] quelque chose de plus doux.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gained",
+      "options": ["gained","lost","sold","broken"],
+      "audioClip": {"storySlug":"un-cafe-pour-romain","storySource":"user","sentence":"Il a gagné quelque chose de plus doux.","targetWord":"gagné","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "par contre",
+    "sentence": "Le gâteau, [[par contre]], il n'y en a plus.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on the other hand",
+      "options": ["on the other hand","without a doubt","at the same time","more or less"],
+      "audioClip": {"storySlug":"un-cafe-pour-romain","storySource":"user","sentence":"Le gâteau, par contre, il n'y en a plus.","targetWord":"par contre","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bien mérité",
+    "sentence": "Tu l'as [[bien mérité]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "well earned",
+      "options": ["well earned","completely forgotten","very expensive","already eaten"],
+      "audioClip": {"storySlug":"un-cafe-pour-romain","storySource":"user","sentence":"Tu l'as bien mérité.","targetWord":"bien mérité","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entendre le tu",
+    "sentence": "Il [[entend le tu]] et il sourit.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "notices the informal tu",
+      "options": ["notices the informal tu","hears his name","forgets the question","ignores the answer"],
+      "audioClip": {"storySlug":"un-cafe-pour-romain","storySource":"user","sentence":"Il entend le tu et il sourit.","targetWord":"entend le tu","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plus doux que",
+    "sentence": "Ce moment est [[plus doux qu'un]] gâteau.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sweeter than",
+      "options": ["sweeter than","colder than","harder than","worse than"],
+      "audioClip": {"storySlug":"un-cafe-pour-romain","storySource":"user","sentence":"Ce moment est plus doux qu'un gâteau.","targetWord":"plus doux qu'un","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "vérifie",
+    "sentence": "Il ouvre le tableau et _____ chaque fil.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vérifie",
+      "options": ["vérifie","coupe","cache","vend"],
+      "translation": "He opens the panel and _____ each wire.",
+      "optionTranslations": ["checks","cuts","hides","sells"],
+      "audioClip": {"storySlug":"un-cafe-pour-romain","storySource":"user","sentence":"Il ouvre le tableau et vérifie chaque fil.","targetWord":"vérifie","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "chauffe",
+    "sentence": "Le four ne _____ plus, alors le gâteau reste froid.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "chauffe",
+      "options": ["chauffe","gèle","tombe","vole"],
+      "translation": "The oven doesn't _____ anymore, so the cake stays cold.",
+      "optionTranslations": ["heat up","freeze","fall","fly"],
+      "audioClip": {"storySlug":"un-cafe-pour-romain","storySource":"user","sentence":"Le four ne chauffe plus, alors le gâteau reste froid.","targetWord":"chauffe","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "fonctionne",
+    "sentence": "Une heure plus tard, tout _____ de nouveau.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fonctionne",
+      "options": ["fonctionne","dort","pleure","coûte"],
+      "translation": "An hour later, everything _____ again.",
+      "optionTranslations": ["works","sleeps","cries","costs"],
+      "audioClip": {"storySlug":"un-cafe-pour-romain","storySource":"user","sentence":"Une heure plus tard, tout fonctionne de nouveau.","targetWord":"fonctionne","language":"french"}
+    },
+    "featured": false
+  }
+]

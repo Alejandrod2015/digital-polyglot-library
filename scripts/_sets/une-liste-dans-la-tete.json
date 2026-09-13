@@ -1,0 +1,433 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "le dentiste,la brosse,la balade,le soleil",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "le dentiste",
+          "answer": "a dentist",
+          "options": [
+            "a dentist",
+            "a brush",
+            "a walk",
+            "the sun"
+          ]
+        },
+        {
+          "word": "la brosse",
+          "answer": "a brush",
+          "options": [
+            "a dentist",
+            "a brush",
+            "a walk",
+            "the sun"
+          ]
+        },
+        {
+          "word": "la balade",
+          "answer": "a walk",
+          "options": [
+            "a dentist",
+            "a brush",
+            "a walk",
+            "the sun"
+          ]
+        },
+        {
+          "word": "le soleil",
+          "answer": "the sun",
+          "options": [
+            "a dentist",
+            "a brush",
+            "a walk",
+            "the sun"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "l'ambiance",
+    "sentence": "[[L'ambiance]] est froide dans l'appartement.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the mood",
+      "options": [
+        "the mood",
+        "the noise",
+        "the smell",
+        "the weather"
+      ],
+      "audioClip": {
+        "storySlug": "une-liste-dans-la-tete",
+        "storySource": "user",
+        "sentence": "L'ambiance est froide dans l'appartement.",
+        "targetWord": "L'ambiance",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le supermarché",
+    "sentence": "Il court au [[supermarché]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "supermarket",
+      "options": [
+        "supermarket",
+        "hospital",
+        "station",
+        "school"
+      ],
+      "audioClip": {
+        "storySlug": "une-liste-dans-la-tete",
+        "storySource": "user",
+        "sentence": "Il court au supermarché.",
+        "targetWord": "supermarché",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quatre-vingts",
+    "sentence": "Il paie [[quatre-vingts]] euros.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "eighty",
+      "options": [
+        "eighty",
+        "eight",
+        "eighteen",
+        "eight hundred"
+      ],
+      "audioClip": {
+        "storySlug": "une-liste-dans-la-tete",
+        "storySource": "user",
+        "sentence": "Il paie quatre-vingts euros.",
+        "targetWord": "quatre-vingts",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sortir",
+    "sentence": "Personne n'a envie de [[sortir]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go out",
+      "options": [
+        "to go out",
+        "to sleep",
+        "to cook",
+        "to work"
+      ],
+      "audioClip": {
+        "storySlug": "une-liste-dans-la-tete",
+        "storySource": "user",
+        "sentence": "Personne n'a envie de sortir.",
+        "targetWord": "sortir",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "compter sur ses doigts",
+    "sentence": "Elle [[compte sur ses doigts]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "counts on her fingers",
+      "options": [
+        "counts on her fingers",
+        "writes a letter",
+        "closes her eyes",
+        "shakes her head"
+      ],
+      "audioClip": {
+        "storySlug": "une-liste-dans-la-tete",
+        "storySource": "user",
+        "sentence": "Elle compte sur ses doigts.",
+        "targetWord": "compte sur ses doigts",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dans ma tête",
+    "sentence": "Je le porte [[dans ma tête]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in my head",
+      "options": [
+        "in my head",
+        "in my bag",
+        "on my desk",
+        "on the wall"
+      ],
+      "audioClip": {
+        "storySlug": "une-liste-dans-la-tete",
+        "storySource": "user",
+        "sentence": "Je le porte dans ma tête.",
+        "targetWord": "dans ma tête",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tout à coup",
+    "sentence": "[[Tout à coup]], il le trouve bête.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "all at once",
+      "options": [
+        "all at once",
+        "very slowly",
+        "once a week",
+        "from the start"
+      ],
+      "audioClip": {
+        "storySlug": "une-liste-dans-la-tete",
+        "storySource": "user",
+        "sentence": "Tout à coup, il le trouve bête.",
+        "targetWord": "Tout à coup",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "l'île de Nantes",
+    "sentence": "Ils voulaient faire une balade sur [[l'île de Nantes]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the island of Nantes",
+      "options": [
+        "the island of Nantes",
+        "the beach at Nantes",
+        "the market of Nantes",
+        "the station of Nantes"
+      ],
+      "audioClip": {
+        "storySlug": "une-liste-dans-la-tete",
+        "storySource": "user",
+        "sentence": "Ils voulaient faire une balade sur l'île de Nantes.",
+        "targetWord": "l'île de Nantes",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hier",
+    "sentence": "Depuis [[hier]], le lave-vaisselle ne marche plus.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "yesterday",
+      "options": [
+        "yesterday",
+        "tomorrow",
+        "last year",
+        "this morning"
+      ],
+      "audioClip": {
+        "storySlug": "une-liste-dans-la-tete",
+        "storySource": "user",
+        "sentence": "Depuis hier, le lave-vaisselle ne marche plus.",
+        "targetWord": "hier",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "porter",
+    "sentence": "Je le [[porte]] tous les jours.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "carry it",
+      "options": [
+        "carry it",
+        "sell it",
+        "forget it",
+        "break it"
+      ],
+      "audioClip": {
+        "storySlug": "une-liste-dans-la-tete",
+        "storySource": "user",
+        "sentence": "Je le porte tous les jours.",
+        "targetWord": "porte",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "l'envie",
+    "sentence": "Personne n'a [[envie]] de sortir.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "desire",
+      "options": [
+        "desire",
+        "time",
+        "money",
+        "permission"
+      ],
+      "audioClip": {
+        "storySlug": "une-liste-dans-la-tete",
+        "storySource": "user",
+        "sentence": "Personne n'a envie de sortir.",
+        "targetWord": "envie",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de sa poche",
+    "sentence": "Il paie [[de sa poche]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "out of his own pocket",
+      "options": [
+        "out of his own pocket",
+        "with a credit card",
+        "with borrowed money",
+        "from his savings"
+      ],
+      "audioClip": {
+        "storySlug": "une-liste-dans-la-tete",
+        "storySource": "user",
+        "sentence": "Il paie de sa poche.",
+        "targetWord": "de sa poche",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rester à la maison",
+    "sentence": "Le samedi [[reste à la maison]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stays at home",
+      "options": [
+        "stays at home",
+        "goes to the beach",
+        "ends at the market",
+        "starts very early"
+      ],
+      "audioClip": {
+        "storySlug": "une-liste-dans-la-tete",
+        "storySource": "user",
+        "sentence": "Le samedi reste à la maison.",
+        "targetWord": "reste à la maison",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "marche",
+    "sentence": "Depuis hier, le lave-vaisselle ne _____ plus.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "marche",
+      "options": [
+        "marche",
+        "chante",
+        "vole",
+        "dort"
+      ],
+      "translation": "Since yesterday, the dishwasher doesn't _____ anymore.",
+      "optionTranslations": [
+        "work",
+        "sing",
+        "fly",
+        "sleep"
+      ],
+      "audioClip": {
+        "storySlug": "une-liste-dans-la-tete",
+        "storySource": "user",
+        "sentence": "Depuis hier, le lave-vaisselle ne marche plus.",
+        "targetWord": "marche",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "remercies",
+    "sentence": "Je t'ai aidé: tu ne me _____ même pas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "remercies",
+      "options": [
+        "remercies",
+        "cherches",
+        "oublies",
+        "critiques"
+      ],
+      "translation": "I helped you: you don't even _____ me.",
+      "optionTranslations": [
+        "thank",
+        "look for",
+        "forget",
+        "criticize"
+      ],
+      "audioClip": {
+        "storySlug": "une-liste-dans-la-tete",
+        "storySource": "user",
+        "sentence": "Je t'ai aidé: tu ne me remercies même pas.",
+        "targetWord": "remercies",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "continue",
+    "sentence": "Elle _____ à parler, sérieuse.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "continue",
+      "options": [
+        "continue",
+        "arrête",
+        "refuse",
+        "oublie"
+      ],
+      "translation": "She _____ talking, seriously.",
+      "optionTranslations": [
+        "keeps on",
+        "stops",
+        "refuses",
+        "forgets"
+      ],
+      "audioClip": {
+        "storySlug": "une-liste-dans-la-tete",
+        "storySource": "user",
+        "sentence": "Elle continue à parler, sérieuse.",
+        "targetWord": "continue",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
+]

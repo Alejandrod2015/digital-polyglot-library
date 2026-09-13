@@ -1,0 +1,433 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "l'explication,la fenêtre,le café,la note",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "l'explication",
+          "answer": "an explanation",
+          "options": [
+            "an explanation",
+            "a window",
+            "a coffee",
+            "a musical note"
+          ]
+        },
+        {
+          "word": "la fenêtre",
+          "answer": "a window",
+          "options": [
+            "an explanation",
+            "a window",
+            "a coffee",
+            "a musical note"
+          ]
+        },
+        {
+          "word": "le café",
+          "answer": "a coffee",
+          "options": [
+            "an explanation",
+            "a window",
+            "a coffee",
+            "a musical note"
+          ]
+        },
+        {
+          "word": "la note",
+          "answer": "a musical note",
+          "options": [
+            "an explanation",
+            "a window",
+            "a coffee",
+            "a musical note"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avoir tort",
+    "sentence": "Il comprend qu'il [[a eu tort]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "was wrong",
+      "options": [
+        "was wrong",
+        "was right",
+        "was scared",
+        "was ashamed"
+      ],
+      "audioClip": {
+        "storySlug": "sans-mais",
+        "storySource": "user",
+        "sentence": "Il comprend qu'il a eu tort.",
+        "targetWord": "a eu tort",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dommage",
+    "sentence": "Il répond avec un seul mot: [[dommage]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "too bad",
+      "options": [
+        "too bad",
+        "of course",
+        "no problem",
+        "thank you"
+      ],
+      "audioClip": {
+        "storySlug": "sans-mais",
+        "storySource": "user",
+        "sentence": "Il répond avec un seul mot: dommage.",
+        "targetWord": "dommage",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "un seul mot",
+    "sentence": "Il répond avec [[un seul mot]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "just one word",
+      "options": [
+        "just one word",
+        "a long letter",
+        "many questions",
+        "a loud laugh"
+      ],
+      "audioClip": {
+        "storySlug": "sans-mais",
+        "storySource": "user",
+        "sentence": "Il répond avec un seul mot.",
+        "targetWord": "un seul mot",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "changer d'avis",
+    "sentence": "Il ne veut pas [[changer d'avis]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "change his mind",
+      "options": [
+        "change his mind",
+        "ask a question",
+        "leave the room",
+        "call his friend"
+      ],
+      "audioClip": {
+        "storySlug": "sans-mais",
+        "storySource": "user",
+        "sentence": "Il ne veut pas changer d'avis.",
+        "targetWord": "changer d'avis",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "c'est de ma faute",
+    "sentence": "“[[C'est de ma faute]]”, dit-il.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "it's my fault",
+      "options": [
+        "it's my fault",
+        "it's a good idea",
+        "it's very late",
+        "it's your turn"
+      ],
+      "audioClip": {
+        "storySlug": "sans-mais",
+        "storySource": "user",
+        "sentence": "C'est de ma faute, dit-il.",
+        "targetWord": "C'est de ma faute",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "même si",
+    "sentence": "Chante ici, [[même si]] ce n'est pas pareil.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "even if",
+      "options": [
+        "even if",
+        "only when",
+        "except that",
+        "unless"
+      ],
+      "audioClip": {
+        "storySlug": "sans-mais",
+        "storySource": "user",
+        "sentence": "Chante ici, même si ce n'est pas pareil.",
+        "targetWord": "même si",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vouloir bien",
+    "sentence": "Tu [[veux bien]] chanter pour moi?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "are you willing to",
+      "options": [
+        "are you willing to",
+        "do you remember to",
+        "do you forget to",
+        "do you refuse to"
+      ],
+      "audioClip": {
+        "storySlug": "sans-mais",
+        "storySource": "user",
+        "sentence": "Tu veux bien chanter pour moi?",
+        "targetWord": "veux bien",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "au premier rang",
+    "sentence": "Il sera assis [[au premier rang]] du concert.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in the front row",
+      "options": [
+        "in the front row",
+        "at the back",
+        "outside the door",
+        "near the exit"
+      ],
+      "audioClip": {
+        "storySlug": "sans-mais",
+        "storySource": "user",
+        "sentence": "Il sera assis au premier rang du concert.",
+        "targetWord": "au premier rang",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cette fois",
+    "sentence": "Et [[cette fois]], il ne perd pas une note.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "this time",
+      "options": [
+        "this time",
+        "next year",
+        "every day",
+        "before that"
+      ],
+      "audioClip": {
+        "storySlug": "sans-mais",
+        "storySource": "user",
+        "sentence": "Et cette fois, il ne perd pas une note.",
+        "targetWord": "cette fois",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tout prêt",
+    "sentence": "Il arrive sans excuse [[toute prête]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ready-made",
+      "options": [
+        "ready-made",
+        "forgotten",
+        "written down",
+        "expensive"
+      ],
+      "audioClip": {
+        "storySlug": "sans-mais",
+        "storySource": "user",
+        "sentence": "Il arrive sans excuse toute prête.",
+        "targetWord": "toute prête",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "au lieu de",
+    "sentence": "Il a choisi l'escalade [[au lieu de]] la chanson.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "instead of",
+      "options": [
+        "instead of",
+        "because of",
+        "in front of",
+        "next to"
+      ],
+      "audioClip": {
+        "storySlug": "sans-mais",
+        "storySource": "user",
+        "sentence": "Il a choisi l'escalade au lieu de la chanson.",
+        "targetWord": "au lieu de",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "à une condition",
+    "sentence": "Elle accepte [[à une condition]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on one condition",
+      "options": [
+        "on one condition",
+        "for no reason",
+        "without thinking",
+        "right away"
+      ],
+      "audioClip": {
+        "storySlug": "sans-mais",
+        "storySource": "user",
+        "sentence": "Elle accepte à une condition.",
+        "targetWord": "à une condition",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le cœur qui bat",
+    "sentence": "Il écoute, [[le cœur qui bat]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "heart pounding",
+      "options": [
+        "heart pounding",
+        "eyes closed",
+        "hands cold",
+        "voice shaking"
+      ],
+      "audioClip": {
+        "storySlug": "sans-mais",
+        "storySource": "user",
+        "sentence": "Il écoute, le cœur qui bat.",
+        "targetWord": "le cœur qui bat",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "coûte",
+    "sentence": "Changer d'avis lui _____ beaucoup, mais il ne cède pas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "coûte",
+      "options": [
+        "coûte",
+        "plaît",
+        "manque",
+        "sert"
+      ],
+      "translation": "Changing his mind _____ him a lot, but he doesn't give in.",
+      "optionTranslations": [
+        "costs",
+        "pleases",
+        "is missed by",
+        "serves"
+      ],
+      "audioClip": {
+        "storySlug": "sans-mais",
+        "storySource": "user",
+        "sentence": "Changer d'avis lui coûte beaucoup, mais il ne cède pas.",
+        "targetWord": "coûte",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "prochain",
+    "sentence": "Il n'ira pas grimper jeudi _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "prochain",
+      "options": [
+        "prochain",
+        "dernier",
+        "chaque",
+        "premier"
+      ],
+      "translation": "He won't go climbing _____ Thursday.",
+      "optionTranslations": [
+        "next",
+        "last",
+        "every",
+        "first"
+      ],
+      "audioClip": {
+        "storySlug": "sans-mais",
+        "storySource": "user",
+        "sentence": "Il n'ira pas grimper jeudi prochain.",
+        "targetWord": "prochain",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sincère",
+    "sentence": "Elle le regarde longtemps pour voir s'il est _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sincère",
+      "options": [
+        "sincère",
+        "fatigué",
+        "pressé",
+        "perdu"
+      ],
+      "translation": "She looks at him a long time to see if he's _____.",
+      "optionTranslations": [
+        "sincere",
+        "tired",
+        "in a hurry",
+        "lost"
+      ],
+      "audioClip": {
+        "storySlug": "sans-mais",
+        "storySource": "user",
+        "sentence": "Elle le regarde longtemps pour voir s'il est sincère.",
+        "targetWord": "sincère",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
+]
