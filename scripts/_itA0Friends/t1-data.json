@@ -1,0 +1,416 @@
+[
+ {
+  "topic": "birthdays-and-wishes",
+  "slotIndex": 0,
+  "title": "Una torta per dodici",
+  "arcType": null,
+  "synopsis": "Alice plans a surprise party on the roof terrace for Matteo's thirty-fifth birthday. The cake is for twelve, but the guests do not come.",
+  "text": "Alice, un'infermiera di Genova, porta una torta in terrazza. È una torta per dodici persone. Oggi Matteo compie trentacinque anni.\n\nMatteo è un marinaio e il suo migliore amico. Lavora sul traghetto e arriva alle otto. Alice mette dodici piatti sul tavolo.\n\nIl telefono suona. Un amico non viene. Poi un altro, e poi tutti. “Anche tu? Va bene. Ciao,” dice Alice al telefono. Lei è triste, perché la festa è finita. Stringe forte il telefono.\n\nAlle otto Matteo apre la porta. Vede i piatti vuoti. “Una festa? Per me? E gli altri dove sono?” chiede Matteo.\n\nAlice diventa rossa. “Sì, è per te. Ma gli amici non vengono. Mi dispiace tanto, davvero,” risponde lei.\n\nMatteo prende due forchette e si siede. “Dodici pezzi per due? Per me va benissimo. Ho fame!” dice lui. “Allora tanti auguri,” dice Alice, e finalmente ride. Il vento è forte, ma le candeline restano accese.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "l'infermiera",
+    "surface": "infermiera",
+    "definition": "A nurse; she works with sick people."
+   },
+   {
+    "type": "adverb",
+    "word": "oggi",
+    "surface": "Oggi",
+    "definition": "Today; on this day, not tomorrow."
+   },
+   {
+    "type": "verb",
+    "word": "portare",
+    "surface": "porta",
+    "definition": "To carry or bring something to a place."
+   },
+   {
+    "type": "expression",
+    "word": "compiere gli anni",
+    "surface": "compie trentacinque anni",
+    "definition": "To have a birthday; here he turns thirty-five."
+   },
+   {
+    "type": "expression",
+    "word": "il migliore amico",
+    "surface": "migliore amico",
+    "definition": "Best friend; the friend you love most."
+   },
+   {
+    "type": "verb",
+    "word": "lavorare",
+    "surface": "Lavora",
+    "definition": "To work; to do your job."
+   },
+   {
+    "type": "verb",
+    "word": "mettere",
+    "surface": "mette",
+    "definition": "To put; to place something somewhere."
+   },
+   {
+    "type": "verb",
+    "word": "suonare",
+    "surface": "suona",
+    "definition": "To ring; here the phone makes a sound."
+   },
+   {
+    "type": "verb",
+    "word": "venire",
+    "surface": "viene",
+    "definition": "To come; to go to where someone is."
+   },
+   {
+    "type": "adjective",
+    "word": "triste",
+    "surface": "triste",
+    "definition": "Sad; not happy at all."
+   },
+   {
+    "type": "verb",
+    "word": "stringere",
+    "surface": "Stringe",
+    "definition": "To hold something tight in your hand."
+   },
+   {
+    "type": "verb",
+    "word": "aprire",
+    "surface": "apre",
+    "definition": "To open; the opposite of close."
+   },
+   {
+    "type": "adjective",
+    "word": "vuoto",
+    "surface": "vuoti",
+    "definition": "Empty; with nothing inside or on top."
+   },
+   {
+    "type": "verb",
+    "word": "chiedere",
+    "surface": "chiede",
+    "definition": "To ask; to say a question."
+   },
+   {
+    "type": "expression",
+    "word": "diventare rosso",
+    "surface": "diventa rossa",
+    "definition": "To go red in the face, from shame."
+   },
+   {
+    "type": "expression",
+    "word": "mi dispiace",
+    "surface": "Mi dispiace",
+    "definition": "I am sorry; you say it when something is sad."
+   },
+   {
+    "type": "verb",
+    "word": "rispondere",
+    "surface": "risponde",
+    "definition": "To answer; to reply to a question."
+   },
+   {
+    "type": "verb",
+    "word": "sedersi",
+    "surface": "si siede",
+    "definition": "To sit down on a chair or the floor."
+   },
+   {
+    "type": "expression",
+    "word": "avere fame",
+    "surface": "ho fame",
+    "definition": "To be hungry; to want food."
+   },
+   {
+    "type": "expression",
+    "word": "tanti auguri",
+    "surface": "tanti auguri",
+    "definition": "Happy birthday; many good wishes."
+   },
+   {
+    "type": "noun",
+    "word": "la candelina",
+    "surface": "candeline",
+    "definition": "A small birthday candle on a cake."
+   },
+   {
+    "type": "adjective",
+    "word": "acceso",
+    "surface": "accese",
+    "definition": "Lit; still burning, with a flame."
+   }
+  ]
+ },
+ {
+  "topic": "birthdays-and-wishes",
+  "slotIndex": 1,
+  "title": "È solo uno scherzo",
+  "arcType": null,
+  "synopsis": "After the cake, Matteo takes an old paper napkin from his wallet. On it is a pact from university, and he reads it out with a laugh.",
+  "text": "Sulla terrazza restano dieci pezzi di torta. Matteo spegne le candeline con un soffio. Poi apre il portafoglio. Dentro c'è un vecchio tovagliolo di carta.\n\nIl tovagliolo è di un bar dell'università. Sopra ci sono due firme. Matteo legge ad alta voce e ride. “Se a trentacinque anni siamo soli, ci sposiamo. Firmato: Alice e Matteo.”\n\nIl cuore di Alice batte forte. Per lei non è uno scherzo. Lei nasconde la faccia dietro il bicchiere. “Io ho trentacinque anni. Tu quasi. E siamo soli, no?” dice Matteo.\n\nAlice guarda il tovagliolo e poi guarda lui. “È solo uno scherzo, Matteo,” dice lei. Poi ride troppo forte. “Certo. Uno scherzo,” risponde Matteo.\n\nMatteo piega il tovagliolo. Poi lo dà ad Alice. “Lo tieni tu? Io perdo sempre tutto,” dice lui. Alice mette il tovagliolo nella tasca del cardigan giallo. Adesso la tasca pesa.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "restare",
+    "surface": "restano",
+    "definition": "To be left; to stay in a place."
+   },
+   {
+    "type": "verb",
+    "word": "spegnere",
+    "surface": "spegne",
+    "definition": "To blow out or switch off a flame or light."
+   },
+   {
+    "type": "noun",
+    "word": "il soffio",
+    "surface": "soffio",
+    "definition": "A short puff of air from your mouth."
+   },
+   {
+    "type": "adjective",
+    "word": "vecchio",
+    "surface": "vecchio",
+    "definition": "Old; not new, from many years ago."
+   },
+   {
+    "type": "adverb",
+    "word": "sopra",
+    "surface": "Sopra",
+    "definition": "On top; on the upper side of something."
+   },
+   {
+    "type": "expression",
+    "word": "leggere ad alta voce",
+    "surface": "legge ad alta voce",
+    "definition": "To read out loud, so others hear."
+   },
+   {
+    "type": "verb",
+    "word": "ridere",
+    "surface": "ride",
+    "definition": "To laugh; to make a happy sound."
+   },
+   {
+    "type": "verb",
+    "word": "sposarsi",
+    "surface": "ci sposiamo",
+    "definition": "To get married; here, we get married."
+   },
+   {
+    "type": "expression",
+    "word": "battere forte",
+    "surface": "batte forte",
+    "definition": "To beat hard; here her heart races."
+   },
+   {
+    "type": "noun",
+    "word": "lo scherzo",
+    "surface": "scherzo",
+    "definition": "A joke; something said only for fun."
+   },
+   {
+    "type": "verb",
+    "word": "nascondere",
+    "surface": "nasconde",
+    "definition": "To hide; to put something where nobody sees it."
+   },
+   {
+    "type": "adverb",
+    "word": "quasi",
+    "surface": "quasi",
+    "definition": "Almost; very near, but not yet."
+   },
+   {
+    "type": "verb",
+    "word": "guardare",
+    "surface": "guarda",
+    "definition": "To look at someone or something."
+   },
+   {
+    "type": "adverb",
+    "word": "troppo",
+    "surface": "troppo",
+    "definition": "Too much; more than is right."
+   },
+   {
+    "type": "adverb",
+    "word": "certo",
+    "surface": "Certo",
+    "definition": "Of course; sure, yes."
+   },
+   {
+    "type": "verb",
+    "word": "piegare",
+    "surface": "piega",
+    "definition": "To fold paper or cloth in two."
+   },
+   {
+    "type": "verb",
+    "word": "tenere",
+    "surface": "tieni",
+    "definition": "To keep; to hold on to something."
+   },
+   {
+    "type": "adverb",
+    "word": "sempre",
+    "surface": "sempre",
+    "definition": "Always; every single time, with no exceptions."
+   },
+   {
+    "type": "verb",
+    "word": "perdere",
+    "surface": "perdo",
+    "definition": "To lose; to not find something any more."
+   },
+   {
+    "type": "verb",
+    "word": "pesare",
+    "surface": "pesa",
+    "definition": "To be heavy; to weigh a lot."
+   }
+  ]
+ },
+ {
+  "topic": "birthdays-and-wishes",
+  "slotIndex": 2,
+  "title": "Il traghetto delle sei",
+  "arcType": null,
+  "synopsis": "Early the next morning Matteo leaves for a week on the ferry. Alice runs down the stairs to tell him the truth before he goes.",
+  "text": "Le scale del palazzo sono buie e fredde. Alice scende piano, in pigiama. Nella tasca ha il tovagliolo del patto.\n\nMatteo parte con il traghetto delle sei. Va in Sardegna per una settimana. Lui aspetta al secondo piano, con lo zaino.\n\n“Alice? Perché sei già sveglia? Sono le sei meno dieci,” chiede Matteo. Lei non risponde subito.\n\nAlice ha paura, perché non vuole perdere il suo amico. Lei stringe il tovagliolo nella tasca. “Matteo, aspetta un momento. Io devo dire una cosa. Una cosa importante,” dice lei.\n\nGiù nel vicolo un clacson suona due volte. “Il taxi! Scusa, sono in ritardo. Parliamo domenica, va bene?” dice Matteo. Lui bacia Alice sulla guancia. Poi corre giù per le scale.\n\n“Buon viaggio, Matteo. Ci vediamo domenica,” risponde Alice. Ma lui non sente più. Alice torna al quinto piano. Mette il tovagliolo in un cassetto. Poi chiude il cassetto, piano piano.",
+  "vocab": [
+   {
+    "type": "adjective",
+    "word": "buio",
+    "surface": "buie",
+    "definition": "Dark; with no light."
+   },
+   {
+    "type": "adjective",
+    "word": "freddo",
+    "surface": "fredde",
+    "definition": "Cold; not warm, low in temperature."
+   },
+   {
+    "type": "verb",
+    "word": "scendere",
+    "surface": "scende",
+    "definition": "To go down, for example down the stairs."
+   },
+   {
+    "type": "noun",
+    "word": "il patto",
+    "surface": "patto",
+    "definition": "A pact; a promise two people make together."
+   },
+   {
+    "type": "verb",
+    "word": "partire",
+    "surface": "parte",
+    "definition": "To leave; to go away on a trip."
+   },
+   {
+    "type": "noun",
+    "word": "la settimana",
+    "surface": "settimana",
+    "definition": "A week; seven days."
+   },
+   {
+    "type": "verb",
+    "word": "aspettare",
+    "surface": "aspetta",
+    "definition": "To wait for someone or something."
+   },
+   {
+    "type": "adjective",
+    "word": "sveglio",
+    "surface": "sveglia",
+    "definition": "Awake; not sleeping, with open eyes."
+   },
+   {
+    "type": "adverb",
+    "word": "subito",
+    "surface": "subito",
+    "definition": "Right away; at once."
+   },
+   {
+    "type": "expression",
+    "word": "meno dieci",
+    "surface": "meno dieci",
+    "definition": "Ten to; ten minutes before the hour."
+   },
+   {
+    "type": "expression",
+    "word": "avere paura",
+    "surface": "ha paura",
+    "definition": "To be afraid; to feel fear."
+   },
+   {
+    "type": "verb",
+    "word": "dovere",
+    "surface": "devo",
+    "definition": "Must; to have to do something."
+   },
+   {
+    "type": "noun",
+    "word": "la cosa",
+    "surface": "cosa",
+    "definition": "A thing; here, something to say."
+   },
+   {
+    "type": "adverb",
+    "word": "giù",
+    "surface": "Giù",
+    "definition": "Down; below, on a lower level."
+   },
+   {
+    "type": "expression",
+    "word": "essere in ritardo",
+    "surface": "sono in ritardo",
+    "definition": "To be late; to arrive after the right time."
+   },
+   {
+    "type": "verb",
+    "word": "baciare",
+    "surface": "bacia",
+    "definition": "To kiss; to touch with the lips."
+   },
+   {
+    "type": "verb",
+    "word": "correre",
+    "surface": "corre",
+    "definition": "To run; to move fast on your feet."
+   },
+   {
+    "type": "expression",
+    "word": "buon viaggio",
+    "surface": "Buon viaggio",
+    "definition": "Have a good trip; you say it to someone leaving."
+   },
+   {
+    "type": "verb",
+    "word": "sentire",
+    "surface": "sente",
+    "definition": "To hear; to notice a sound."
+   },
+   {
+    "type": "verb",
+    "word": "tornare",
+    "surface": "torna",
+    "definition": "To go back; to return to a place."
+   },
+   {
+    "type": "verb",
+    "word": "chiudere",
+    "surface": "chiude",
+    "definition": "To close; the opposite of open."
+   },
+   {
+    "type": "expression",
+    "word": "piano piano",
+    "surface": "piano piano",
+    "definition": "Very slowly and gently."
+   }
+  ]
+ }
+]
