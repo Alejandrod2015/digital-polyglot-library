@@ -1,0 +1,226 @@
+// Los pulgares y sus comentarios, para la pestaña Engagement de /studio/metrics.
+//
+// Dos cosas que hacen falta para que la cifra no mienta, y que ya se rompieron
+// en informes a mano:
+//
+// 1. Lo de casa fuera, con TODAS las redes a la vez. El `userScope` del panel
+//    quita a los internos que resuelve Clerk y aplica la cohorte; encima va el
+//    sello `internal` que el endpoint pone al escribir, y `splitInternal`, que
+//    es el unico que conoce el dominio @digitalpolyglot.com. El 2026-09-05 los
+//    dos unicos pulgares "de testers" eran de review@, que no esta en el Studio.
+//
+// 2. La conversion sobre preguntas, no sobre filas. Una pregunta es
+//    `(persona, cosa, superficie)`, la misma clave unica que tiene el voto:
+//    cinco impresiones seguidas del panel de favoritos son una sola pregunta.
+//    Y un voto que llega sin impresion (hay puertas de practica que dejan votar
+//    sin registrar la vista) no entra en la conversion: se cuenta aparte, o el
+//    porcentaje sale por encima de lo real.
+
+import { prisma } from "@/lib/prisma";
+import { splitInternal } from "@/lib/internalAccounts";
+import { resolveUserEmails } from "@/lib/metricsUserEmails";
+import type { MetricsUserScope } from "@/lib/metricsCohort";
+
+const BY_STORY_LIMIT = 30;
+const COMMENTS_LIMIT = 50;
+
+export type RatingsMetrics = {
+  up: number;
+  down: number;
+  voters: number;
+  comments: number;
+  /** Votos del equipo que se han quitado, para decirlo y no esconderlo. */
+  excludedInternalVotes: number;
+  bySurface: Array<{
+    surface: string;
+    up: number;
+    down: number;
+    /** Preguntas `(persona, cosa, superficie)` mostradas sin voto previo. */
+    asked: number;
+    /** De esas preguntas, cuantas tienen voto. */
+    answered: number;
+  }>;
+  /** Votos cuya pregunta no dejo impresion en el rango. Fuera de la conversion. */
+  votesWithoutView: number;
+  byStory: Array<{
+    storySlug: string;
+    surface: string;
+    up: number;
+    down: number;
+    comments: number;
+    lastAt: string;
+  }>;
+  commentRows: Array<{
+    createdAt: string;
+    email: string | null;
+    surface: string;
+    storySlug: string;
+    liked: boolean;
+    comment: string;
+    platform: string | null;
+  }>;
+};
+
+export function emptyRatingsMetrics(): RatingsMetrics {
+  return {
+    up: 0,
+    down: 0,
+    voters: 0,
+    comments: 0,
+    excludedInternalVotes: 0,
+    bySurface: [],
+    votesWithoutView: 0,
+    byStory: [],
+    commentRows: [],
+  };
+}
+
+type PromptMeta = { surface?: unknown; internal?: unknown; alreadyRated?: unknown };
+
+const surfaceOf = (s: string | null | undefined) => (s === "practice" ? "practice" : "story");
+const keyOf = (userId: string, slug: string, surface: string) => `${userId}::${slug}::${surface}`;
+
+export async function computeRatingsMetrics(args: {
+  userScope: MetricsUserScope;
+  from: Date;
+  to: Date;
+  storySlug?: string | null;
+  bookSlug?: string | null;
+}): Promise<RatingsMetrics> {
+  const { userScope, from, to, storySlug, bookSlug } = args;
+  const slugFilter = {
+    ...(storySlug ? { storySlug } : {}),
+    ...(bookSlug ? { bookSlug } : {}),
+  };
+
+  const [ratingRows, promptRows] = await Promise.all([
+    prisma.storyRating.findMany({
+      where: { ...userScope, createdAt: { gte: from, lte: to }, ...slugFilter },
+      select: {
+        userId: true,
+        email: true,
+        storySlug: true,
+        surface: true,
+        liked: true,
+        comment: true,
+        internal: true,
+        platform: true,
+        createdAt: true,
+      },
+      orderBy: { createdAt: "desc" },
+    }),
+    prisma.userMetric.findMany({
+      where: {
+        ...userScope,
+        eventType: "rating_prompt_shown",
+        createdAt: { gte: from, lte: to },
+        ...slugFilter,
+      },
+      select: { userId: true, storySlug: true, metadata: true },
+    }),
+  ]);
+
+  // UserMetric no guarda correo. Se lo pone el voto de esa misma persona y,
+  // si no voto nunca, Clerk; sin correo el dominio de la empresa no se puede
+  // reconocer y una cuenta de casa pasaria por tester.
+  const emailOf = new Map<string, string | null>();
+  for (const r of ratingRows) if (r.email) emailOf.set(r.userId, r.email);
+  const sinCorreo = Array.from(
+    new Set([...ratingRows, ...promptRows].map((r) => r.userId).filter((id) => !emailOf.has(id))),
+  );
+  if (sinCorreo.length > 0) {
+    const resueltos = await resolveUserEmails(sinCorreo);
+    for (const [id, email] of resueltos) emailOf.set(id, email);
+  }
+  const correo = (userId: string, own?: string | null) => own ?? emailOf.get(userId) ?? null;
+
+  const { external: votes, internal: votosCasaPorCorreo } = await splitInternal(
+    ratingRows.filter((r) => !r.internal),
+    (r) => correo(r.userId, r.email),
+  );
+  const excludedInternalVotes =
+    ratingRows.filter((r) => r.internal).length + votosCasaPorCorreo.length;
+
+  const meta = (m: unknown): PromptMeta => (m && typeof m === "object" ? (m as PromptMeta) : {});
+  const { external: prompts } = await splitInternal(
+    promptRows.filter((r) => meta(r.metadata).internal !== true),
+    (r) => correo(r.userId),
+  );
+
+  // Preguntas: con al menos una impresion que no llegaba ya votada.
+  const vistas = new Set<string>();
+  const preguntas = new Map<string, string>();
+  for (const p of prompts) {
+    const m = meta(p.metadata);
+    const surface = surfaceOf(typeof m.surface === "string" ? m.surface : null);
+    const k = keyOf(p.userId, p.storySlug, surface);
+    vistas.add(k);
+    if (m.alreadyRated !== true) preguntas.set(k, surface);
+  }
+
+  const votadas = new Set<string>();
+  let votesWithoutView = 0;
+  for (const v of votes) {
+    const k = keyOf(v.userId, v.storySlug, surfaceOf(v.surface));
+    votadas.add(k);
+    if (!vistas.has(k)) votesWithoutView += 1;
+  }
+
+  const bySurface = (["story", "practice"] as const)
+    .map((surface) => {
+      const deEsta = votes.filter((v) => surfaceOf(v.surface) === surface);
+      const keys = [...preguntas].filter(([, s]) => s === surface).map(([k]) => k);
+      return {
+        surface,
+        up: deEsta.filter((v) => v.liked).length,
+        down: deEsta.filter((v) => !v.liked).length,
+        asked: keys.length,
+        answered: keys.filter((k) => votadas.has(k)).length,
+      };
+    })
+    .filter((s) => s.up + s.down + s.asked > 0);
+
+  const porHistoria = new Map<string, RatingsMetrics["byStory"][number]>();
+  for (const v of votes) {
+    const surface = surfaceOf(v.surface);
+    const k = `${v.storySlug}::${surface}`;
+    const fila = porHistoria.get(k) ?? {
+      storySlug: v.storySlug,
+      surface,
+      up: 0,
+      down: 0,
+      comments: 0,
+      lastAt: v.createdAt.toISOString(),
+    };
+    if (v.liked) fila.up += 1;
+    else fila.down += 1;
+    if (v.comment?.trim()) fila.comments += 1;
+    porHistoria.set(k, fila);
+  }
+  const byStory = [...porHistoria.values()]
+    .sort((a, b) => b.up + b.down - (a.up + a.down) || b.lastAt.localeCompare(a.lastAt))
+    .slice(0, BY_STORY_LIMIT);
+
+  const conComentario = votes.filter((v) => v.comment?.trim());
+  const commentRows = conComentario.slice(0, COMMENTS_LIMIT).map((v) => ({
+    createdAt: v.createdAt.toISOString(),
+    email: correo(v.userId, v.email),
+    surface: surfaceOf(v.surface),
+    storySlug: v.storySlug,
+    liked: v.liked,
+    comment: (v.comment ?? "").trim(),
+    platform: v.platform,
+  }));
+
+  return {
+    up: votes.filter((v) => v.liked).length,
+    down: votes.filter((v) => !v.liked).length,
+    voters: new Set(votes.map((v) => v.userId)).size,
+    comments: conComentario.length,
+    excludedInternalVotes,
+    bySurface,
+    votesWithoutView,
+    byStory,
+    commentRows,
+  };
+}

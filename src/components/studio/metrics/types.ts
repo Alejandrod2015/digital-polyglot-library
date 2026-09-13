@@ -4,6 +4,9 @@
  * can stay strongly typed without importing server-only modules.
  */
 
+// Solo el tipo: `@/lib/metricsRatings` importa Prisma y no viaja al cliente.
+import type { RatingsMetrics } from "@/lib/metricsRatings";
+
 export type DashboardKpis = {
   dau: number;
   wau: number;
@@ -233,6 +236,8 @@ export type DashboardData = {
       unknownStory: number;
     };
   };
+  /** Falta en respuestas cacheadas de antes de que existiera el panel. */
+  ratings?: RatingsMetrics;
 };
 
 export type PipelineData = {
