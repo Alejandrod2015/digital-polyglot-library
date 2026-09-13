@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a2",
+  "variante": "france",
+  "registro": "humor de cuentas de pareja que se enfria: un sistema de puntos que parece justo y deja fuera lo que nadie ve",
+  "espina": "Romain entiende las reglas pero no lo que la vida con Justine espera de el; aqui descubre que en casa lo importante no se cuenta, se piensa antes.",
+  "recursos": "A2: narrador en presente; passe compose en la lista de Justine (j'ai pris, j'ai trouve, j'ai pense); futur proche (Julien va rire de moi); si + presente; espejo concreto (el planning del frigo y la lista de cosas que prever); humor de situacion. Nada de subjonctif ni plus-que-parfait.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Romain quiere repartir las tareas de casa de forma justa, con el sistema de puntos de su companero Julien.",
+      "impide": "Pega el planning en la nevera sin preguntar a Justine, que llega cansada y lo lee dos veces.",
+      "cuesta": "Pierde la noche tranquila: Justine quita el iman y se va al dormitorio sin una palabra.",
+      "cambia": "Romain se queda con su idea sobre la mesa y sin saber que ha roto.",
+      "emocion": "Esta orgulloso de su idea porque le parece justa; la sonrisa se le queda quieta cuando Justine se va en silencio."
+    },
+    {
+      "slot": "2",
+      "quiere": "Romain quiere demostrar que hace su parte arreglando el lavavajillas y pagando la pieza.",
+      "impide": "Justine le cuenta todo lo que ella lleva en la cabeza y que ningun planning ve.",
+      "cuesta": "Se pierden el paseo del sabado por la ile de Nantes; el sabado se queda en casa.",
+      "cambia": "Descubre que la cuenta de Justine es mas larga que la suya y que su planning era tonto.",
+      "emocion": "Pasa del orgullo a la verguenza porque pedia un gracias; mira su planning y de repente lo encuentra tonto."
+    },
+    {
+      "slot": "3",
+      "quiere": "Romain quiere arreglar el sabado perdido sin volver a contar puntos.",
+      "impide": "Sabe que Julien se reira de el en el trabajo si abandona el sistema.",
+      "cuesta": "Rompe el planning, su idea, y acepta la burla de Julien.",
+      "cambia": "Escribe una lista de cosas que el vigila sin que se lo pidan, y el domingo baja por el pan sin que nadie se lo diga.",
+      "emocion": "Siente alivio y un poco de verguenza; rompe el papel en trozos pequenos y espera a que Justine lea."
+    }
+  ]
+}
