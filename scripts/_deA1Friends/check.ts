@@ -13,9 +13,11 @@ for (const j of d.journeys) { if (j.id === OWN) continue; for (const s of j.stor
   if (!taught.has(k)) taught.set(k, new Set()); taught.get(k)!.add(`${j.name}-${j.levels[0]}`);
 } }
 import { readdirSync } from "fs";
+const SEP = ["an", "auf", "aus", "ein", "nach", "vor", "zu", "ab", "mit", "bei", "ge", "ver", "be", "er", "ent"];
+const sp = (w: string) => { let l = w.toLowerCase().replace(/^(der|die|das) /, ""); for (const p of SEP) if (l.startsWith(p) && l.length > p.length + 3) return l.slice(p.length); return l; };
 const propias = new Set<string>();
 for (const f of readdirSync("scripts/_deA1Friends").filter((x) => /^t\d-data\.json$/.test(x) && `scripts/_deA1Friends/${x}` !== file))
-  for (const s of JSON.parse(readFileSync(`scripts/_deA1Friends/${f}`, "utf8"))) for (const v of s.vocab) propias.add(v.word.toLowerCase().replace(/^(der|die|das|sich) /, "").trim());
+  for (const s of JSON.parse(readFileSync(`scripts/_deA1Friends/${f}`, "utf8"))) for (const v of s.vocab) propias.add(sp(v.word));
 const O = "“", C = "”";
 const seen = new Map<string, number>();
 for (const s of data) {
@@ -30,11 +32,15 @@ for (const s of data) {
   const blocks = renderedParagraphs(t);
   console.log("  bloques: " + blocks.map((b: string) => s.vocab.filter((v: any) => b.includes(v.surface)).length).join("/") + (process.argv.includes("-b") ? "\n    " + blocks.join("\n    ") : ""));
   const probs: string[] = [];
+  const roots = new Map<string, string[]>(); for (const v of s.vocab) { const r = sp(v.word).slice(0, 5); roots.set(r, [...(roots.get(r) ?? []), v.word]); }
+  for (const [r, ws] of roots) if (ws.length > 1) probs.push(`MISMA-RAIZ ${r}: ${ws.join("+")}`);
+  const art = new Map<string, string[]>(); for (const v of s.vocab) { const m = v.word.match(/^(der|die|das) (.)/); if (m) { const k = m[1] + m[2]; art.set(k, [...(art.get(k) ?? []), v.word]); } }
+  for (const [r, ws] of art) if (ws.length > 1) probs.push(`BUG-CIERRE ${r}: ${ws.join("+")}`);
   let fuera = 0;
   for (const v of s.vocab) {
     const k = v.word.toLowerCase().replace(/^(der|die|das|sich) /, "").trim();
     if (!t.includes(v.surface)) probs.push(`NO EN CUERPO ${v.surface}`);
-    if (propias.has(k)) probs.push(`YA-EN-ESTE ${v.word}`);
+    if (propias.has(sp(v.word))) probs.push(`YA-EN-ESTE(lema ${sp(v.word)}) ${v.word}`);
     const tt = taught.get(k);
     if (tt) {
       const fr = [...tt].some((x) => x.startsWith("Friends"));
@@ -43,7 +49,7 @@ for (const s of data) {
     }
     if (!isGermanA1A2(v.word)) fuera++, probs.push(`fuera-lista ${v.word}`);
     const n = v.definition.split(/\s+/).length; if (n < 8 || n > 14) probs.push(`def ${n}w ${v.word}`);
-    seen.set(k, (seen.get(k) ?? 0) + 1);
+    seen.set(sp(v.word), (seen.get(sp(v.word)) ?? 0) + 1);
   }
   console.log(`  fuera de lista: ${fuera}` + (probs.length ? `\n  - ${probs.join("\n  - ")}` : ""));
 }

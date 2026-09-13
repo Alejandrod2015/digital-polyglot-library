@@ -1,0 +1,403 @@
+[
+ {
+  "topic": "pets-and-animal-care",
+  "slotIndex": 0,
+  "title": "Ein Hund fürs Wochenende",
+  "arcType": "late-reveal",
+  "synopsis": "After the weekly run Florian, a friend from the running group, comes with his big brown dog. He has to work far away at the weekend and asks Julia to look after the dog. Julia is afraid of big dogs, but she says yes. Then she remembers her train ticket to Rostock for that same weekend.",
+  "text": "Nach dem Lauftreff steht Julia, die Physiotherapeutin aus Rostock, mit Moritz am Ufer. Die Sonne ist schon warm. Svenjas Laufpartner Florian kommt mit einem großen braunen Hund. Florian ist Elektriker und muss am Wochenende weit weg arbeiten.\n\n“Kannst du auf meinen Hund aufpassen? Von Freitag bis Sonntag. Er ist ganz lieb, wirklich”, fragt Florian. “Moritz hat leider keine Zeit.” Der Hund legt seinen schweren Kopf auf Julias Schuh.\n\nJulia hat Angst vor großen Hunden, aber das sagt sie nicht. “Ja, klar, das mache ich gern”, antwortet sie. Florian gibt ihr erleichtert die Leine.\n\nZu Hause öffnet Julia die App der Bahn. Am Samstag fährt ihr Zug nach Rostock, zum ersten Mal seit dem Umzug.\n\nJulia storniert das Ticket und bekommt nur die Hälfte zurück. “Tut mir leid, ich komme erst nächsten Monat. Hier ist ein Hund”, schreibt sie in den Chat. Ihre Hand zittert ein bisschen.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "der Elektriker",
+    "surface": "Elektriker",
+    "definition": "A man whose job is to fix and put in electric wires and lights.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Leine",
+    "surface": "Leine",
+    "definition": "A lead; the long strap you use to walk a dog.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "müssen",
+    "surface": "muss",
+    "definition": "Must; to have to do something because there is no other way."
+   },
+   {
+    "type": "adjective",
+    "word": "braun",
+    "surface": "braunen",
+    "definition": "Brown; the colour of wood, coffee or chocolate."
+   },
+   {
+    "type": "verb",
+    "word": "arbeiten",
+    "surface": "arbeiten",
+    "definition": "To work; to do your job and earn money for it."
+   },
+   {
+    "type": "adjective",
+    "word": "weit",
+    "surface": "weit",
+    "definition": "Far; a long way away from here, not close at all."
+   },
+   {
+    "type": "adjective",
+    "word": "lieb",
+    "surface": "lieb",
+    "definition": "Sweet and kind; nice to people and easy to be with."
+   },
+   {
+    "type": "adverb",
+    "word": "leider",
+    "surface": "leider",
+    "definition": "Sadly; unfortunately, you are sorry that it is like this."
+   },
+   {
+    "type": "verb",
+    "word": "geben",
+    "surface": "gibt",
+    "definition": "To give; to hand something to another person."
+   },
+   {
+    "type": "verb",
+    "word": "stehen",
+    "surface": "steht",
+    "definition": "To stand; to be on your feet and not sit down."
+   },
+   {
+    "type": "adverb",
+    "word": "gern",
+    "surface": "gern",
+    "definition": "Gladly; you are happy to do it and you like it."
+   },
+   {
+    "type": "adverb",
+    "word": "klar",
+    "surface": "klar",
+    "definition": "Sure; of course, you say it when you agree at once."
+   },
+   {
+    "type": "verb",
+    "word": "öffnen",
+    "surface": "öffnet",
+    "definition": "To open something, like a door, a box or an app."
+   },
+   {
+    "type": "verb",
+    "word": "fahren",
+    "surface": "fährt",
+    "definition": "To go by car, bus or train from one place to another."
+   },
+   {
+    "type": "adverb",
+    "word": "zurück",
+    "surface": "zurück",
+    "definition": "Back; to the place or the person where it was before."
+   },
+   {
+    "type": "adjective",
+    "word": "warm",
+    "surface": "warm",
+    "definition": "Warm; nice and a little hot, not cold at all."
+   },
+   {
+    "type": "noun",
+    "word": "das Ticket",
+    "surface": "Ticket",
+    "definition": "A ticket; the paper or code you need to ride a train."
+   },
+   {
+    "type": "adjective",
+    "word": "nächste",
+    "surface": "nächsten",
+    "definition": "Next; the one that comes right after this one."
+   },
+   {
+    "type": "noun",
+    "word": "das Bisschen",
+    "surface": "bisschen",
+    "definition": "A little bit; a small amount, not very much at all."
+   },
+   {
+    "type": "verb",
+    "word": "antworten",
+    "surface": "antwortet",
+    "definition": "To answer; to say something back when someone asks you."
+   }
+  ]
+ },
+ {
+  "topic": "pets-and-animal-care",
+  "slotIndex": 1,
+  "title": "Nachts vor der Tür",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "At the start of the weekend Florian brings the dog, a bed and a big bag of food. The dog does not sleep and lies at the door all night. Moritz hears it through the wall and shows Julia how to be calm with the dog. The next morning in the park the dog sees a cat.",
+  "text": "Ein Hundebett, eine Decke und ein Sack Futter: Florian bringt am Freitagabend den Hund und alles mit. “Zweimal am Tag füttern und dreimal raus. Er ist lieb, aber er bellt bei Katzen”, erklärt er.\n\nDer Hund liegt nicht im Hundebett. Er liegt vor der Tür und jault leise. Julia sitzt auf dem Sofa und bewegt sich kaum.\n\nSpäter klopft Moritz. “Ich höre ihn durch die Wand. Alles gut?”, fragt er.\n\n“Ich habe Angst vor ihm”, gibt Julia leise zu. Moritz setzt sich gemütlich auf den Boden, und der Hund legt sich sofort neben ihn. “Setz dich einfach dazu. Er riecht zuerst an dir”, sagt Moritz.\n\nDie Hundenase ist nass und warm. Nach einer Stunde streichelt Julia zum ersten Mal das weiche Fell.\n\nAm Samstagmorgen geht Julia allein mit ihm in den Park. Plötzlich sieht der Hund eine Katze und rennt schnell los. Die Leine rutscht aus ihrer Hand.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "das Hundebett",
+    "surface": "Hundebett",
+    "definition": "A soft bed for a dog to sleep in.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "der Freitagabend",
+    "surface": "Freitagabend",
+    "definition": "The evening of a Friday, when the work week is over.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "bringen",
+    "surface": "bringt",
+    "definition": "To bring; to carry something with you to a place."
+   },
+   {
+    "type": "verb",
+    "word": "erklären",
+    "surface": "erklärt",
+    "definition": "To explain; to tell someone clearly how something works."
+   },
+   {
+    "type": "verb",
+    "word": "bellen",
+    "surface": "bellt",
+    "definition": "To bark; the loud, short sound a dog makes."
+   },
+   {
+    "type": "verb",
+    "word": "liegen",
+    "surface": "liegt",
+    "definition": "To lie; to be flat on a bed, the floor or a sofa."
+   },
+   {
+    "type": "verb",
+    "word": "sitzen",
+    "surface": "sitzt",
+    "definition": "To sit; to be on a chair, a sofa or the floor."
+   },
+   {
+    "type": "verb",
+    "word": "bewegen",
+    "surface": "bewegt",
+    "definition": "To move; to change the place or position of your body."
+   },
+   {
+    "type": "adverb",
+    "word": "später",
+    "surface": "Später",
+    "definition": "Later; after some time has passed, not right now."
+   },
+   {
+    "type": "verb",
+    "word": "klopfen",
+    "surface": "klopft",
+    "definition": "To knock; to hit a door softly with your hand."
+   },
+   {
+    "type": "adjective",
+    "word": "leise",
+    "surface": "leise",
+    "definition": "Quiet; with a soft, low voice that is not loud."
+   },
+   {
+    "type": "adjective",
+    "word": "nass",
+    "surface": "nass",
+    "definition": "Wet; covered with water or another liquid, not dry."
+   },
+   {
+    "type": "verb",
+    "word": "rennen",
+    "surface": "rennt",
+    "definition": "To run very fast, usually for a short distance."
+   },
+   {
+    "type": "adjective",
+    "word": "gemütlich",
+    "surface": "gemütlich",
+    "definition": "Comfortable and relaxed; you feel easy and at home."
+   },
+   {
+    "type": "adjective",
+    "word": "weich",
+    "surface": "weiche",
+    "definition": "Soft; nice and not hard when you touch it."
+   },
+   {
+    "type": "adverb",
+    "word": "allein",
+    "surface": "allein",
+    "definition": "Alone; with nobody else there, only by yourself."
+   },
+   {
+    "type": "adjective",
+    "word": "gut",
+    "surface": "gut",
+    "definition": "Good or fine; you say it when everything is okay."
+   },
+   {
+    "type": "noun",
+    "word": "der Park",
+    "surface": "Park",
+    "definition": "A park; a big green place in a city with trees and grass."
+   },
+   {
+    "type": "adverb",
+    "word": "schnell",
+    "surface": "schnell",
+    "definition": "Fast; quickly, it happens in a very short time."
+   },
+   {
+    "type": "verb",
+    "word": "streicheln",
+    "surface": "streichelt",
+    "definition": "To stroke; to move your hand softly over an animal's fur."
+   }
+  ]
+ },
+ {
+  "topic": "pets-and-animal-care",
+  "slotIndex": 2,
+  "title": "Eine Katze im Park",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "The dog has run away in the park, and Julia asks the running group for help. Svenja and Moritz come quickly and they all look for him. Julia finds the dog under a tree, where a cat sits high up on a branch. At the end of the weekend Florian comes back for his dog.",
+  "text": "Zwei Minuten später ist der Hund weg. Julia ruft laut, aber im Park hört sie nur Vögel. Mit zitternden Fingern schreibt sie in den Chat vom Lauftreff.\n\n“Der Hund ist weggelaufen! Bitte, ich brauche Hilfe!” Svenja und Moritz sind nach zehn Minuten da. Svenja kennt den Park genau. “Keine Panik. Hunde laufen oft zum Wasser. Wir suchen am Ufer”, sagt Svenja.\n\nJulia sucht zwischen den Bäumen.\n\nDann hört Julia ein Bellen. “Da ist er!”, ruft sie. Der Hund steht unter einem Baum. Oben auf einem Ast sitzt die Katze und schaut ganz ruhig nach unten.\n\nJulia geht langsam zu ihm. Ihr Herz schlägt laut, aber ihre Stimme ist ruhig. “Komm, mein Großer. Wir gehen nach Hause”, sagt sie leise. Der Hund ist müde und leckt ihre Hand.\n\nAm Sonntagabend holt Florian ihn ab. “Und? War er lieb?”, fragt er. “Meistens. Er hat mir den Park gezeigt”, antwortet Julia und lacht.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "laufen",
+    "surface": "laufen",
+    "definition": "To run; here, to go quickly on your feet."
+   },
+   {
+    "type": "noun",
+    "word": "die Vögel",
+    "surface": "Vögel",
+    "definition": "Birds; animals with wings and feathers that can often fly."
+   },
+   {
+    "type": "verb",
+    "word": "schreiben",
+    "surface": "schreibt",
+    "definition": "To write words, for example a message on a phone."
+   },
+   {
+    "type": "verb",
+    "word": "weglaufen",
+    "surface": "weggelaufen",
+    "definition": "To run away from a place or a person."
+   },
+   {
+    "type": "verb",
+    "word": "brauchen",
+    "surface": "brauche",
+    "definition": "To need; you must have it and cannot do it without it."
+   },
+   {
+    "type": "adverb",
+    "word": "genau",
+    "surface": "genau",
+    "definition": "Exactly; very well, with every small detail and every path."
+   },
+   {
+    "type": "noun",
+    "word": "die Bäume",
+    "surface": "Bäumen",
+    "definition": "Trees; tall plants with a trunk, branches and leaves."
+   },
+   {
+    "type": "adverb",
+    "word": "da",
+    "surface": "da",
+    "definition": "There; in that place, or here and ready now."
+   },
+   {
+    "type": "noun",
+    "word": "die Panik",
+    "surface": "Panik",
+    "definition": "Panic; a sudden, strong fear that stops you thinking clearly."
+   },
+   {
+    "type": "verb",
+    "word": "schauen",
+    "surface": "schaut",
+    "definition": "To look; to turn your eyes to something and watch it."
+   },
+   {
+    "type": "adverb",
+    "word": "unten",
+    "surface": "unten",
+    "definition": "Down; below, in a lower place than you are."
+   },
+   {
+    "type": "noun",
+    "word": "die Katze",
+    "surface": "Katze",
+    "definition": "A cat; a small animal with soft fur that people keep at home."
+   },
+   {
+    "type": "verb",
+    "word": "schlagen",
+    "surface": "schlägt",
+    "definition": "To beat; here, the heart moves hard and fast."
+   },
+   {
+    "type": "adverb",
+    "word": "oft",
+    "surface": "oft",
+    "definition": "Often; many times, again and again, not only once."
+   },
+   {
+    "type": "noun",
+    "word": "der Sonntagabend",
+    "surface": "Sonntagabend",
+    "definition": "The evening of a Sunday, at the end of the weekend.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "zitternd",
+    "surface": "zitternden",
+    "definition": "Shaking; moving a little, fast and without control, often from fear."
+   },
+   {
+    "type": "verb",
+    "word": "zeigen",
+    "surface": "gezeigt",
+    "definition": "To show; to let someone see a place or a thing."
+   },
+   {
+    "type": "verb",
+    "word": "lachen",
+    "surface": "lacht",
+    "definition": "To laugh; to make happy sounds because something is funny."
+   },
+   {
+    "type": "adverb",
+    "word": "ganz",
+    "surface": "ganz",
+    "definition": "Quite or very; completely, fully and not only a little."
+   },
+   {
+    "type": "adverb",
+    "word": "nur",
+    "surface": "nur",
+    "definition": "Only; just this and nothing more than this."
+   },
+   {
+    "type": "adjective",
+    "word": "müde",
+    "surface": "müde",
+    "definition": "Tired; you feel you need rest or sleep."
+   }
+  ]
+ }
+]
