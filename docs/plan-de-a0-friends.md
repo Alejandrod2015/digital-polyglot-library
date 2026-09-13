@@ -78,19 +78,21 @@ correspond in German" (postales, notas, mensajes escritos).
 
 ## 5. Los siete temas
 
+Nombres PROPUESTOS el 2026-09-13 al nivel de dominio, pendientes de aprobacion; en la base siguen los de objeto (Postcards & Stamps, Photos & Faces, Board Games & Dice, Books & Newspapers, Songs & Instruments, Pots & Spoons, Notes & Magnets), rechazados por demasiado especificos. Historias, personajes y vocabulario no cambian.
+
 Nombres: dominio lexico, ingles, ampersand, 2-4 palabras, sin pais. Ninguno
 coincide con las 21 etiquetas alemanas existentes ni con el molde de curso
 (comida, familia, compras, saludos, tiempo). Slugs nuevos, `isUniversal: false`.
 
 | # | Tema (slug) | Nuevo | Arco del tema en una linea | Coste no devuelto |
 |---|---|---|---|---|
-| 1 | Postcards & Stamps (`postcards-and-stamps`) | - | Anna llega con las postales sin sello; da la primera a Jan, que lee una promesa de hace ocho anos; al final escriben juntos una postal al grupo | la promesa rota queda dicha en voz alta; la postal para Munich va a la basura |
-| 2 | Photos & Faces (`photos-and-faces`) | Nele | En la nevera de Jan hay fotos de ocho anos y Anna no sale en ninguna; Nele, la amiga nueva, no sabe quien es; acaban en un marco las dos fotos, la vieja y la nueva | Anna asume que su sitio de "mejor amiga" es de Nele |
-| 3 | Board Games & Dice (`board-games-and-dice`) | Felix | Noche de juegos: Anna ya no sabe las reglas del juego de siempre; practica con Jan; gana a Felix | pierde su dado de la suerte del colegio por la rejilla del patio |
-| 4 | Books & Newspapers (`books-and-newspapers`) | Johanna | En la escalera hay un armario de libros para intercambiar que lleva Johanna; Anna busca el libro que dejo hace ocho anos con una nota para Jan dentro; lo encuentra y lo lee con Jan en voz alta | el libro ya se lo llevo alguien; la nota vuelve, el libro no |
-| 5 | Songs & Instruments (`songs-and-instruments`) | Tim | Tim quiere tocar en el cumpleanos de Jan como el grupo del colegio; Anna cantaba y ya no se atreve | no canta la cancion vieja; canta una nueva, y la vieja se queda sin cantar |
-| 6 | Pots & Spoons (`pots-and-spoons`) | Luisa | Anna quiere cocinar una vez para el grupo del jueves, como de estudiante; Luisa, companera de Jan, le ensena con cucharas y ollas de verdad | se quema la olla grande de Jan y no tiene arreglo |
-| 7 | Notes & Magnets (`notes-and-magnets`) | Niklas | Niklas deja una nota: el piso de arriba es de Anna solo si firma este mes; Munich le ofrece volver; en la nevera, la lista de los jueves | renuncia al trabajo de Munich; cierre sin gancho: su nombre en la lista y la ultima postal con un iman |
+| 1 | Letters & Invitations (`letters-and-invitations`) | - | Anna llega con las postales sin sello; da la primera a Jan, que lee una promesa de hace ocho anos; al final escriben juntos una postal al grupo | la promesa rota queda dicha en voz alta; la postal para Munich va a la basura |
+| 2 | Looks & Memories (`looks-and-memories`) | Nele | En la nevera de Jan hay fotos de ocho anos y Anna no sale en ninguna; Nele, la amiga nueva, no sabe quien es; acaban en un marco las dos fotos, la vieja y la nueva | Anna asume que su sitio de "mejor amiga" es de Nele |
+| 3 | Games & Rules (`games-and-rules`) | Felix | Noche de juegos: Anna ya no sabe las reglas del juego de siempre; practica con Jan; gana a Felix | pierde su dado de la suerte del colegio por la rejilla del patio |
+| 4 | Books & Reading (`books-and-reading`) | Johanna | En la escalera hay un armario de libros para intercambiar que lleva Johanna; Anna busca el libro que dejo hace ocho anos con una nota para Jan dentro; lo encuentra y lo lee con Jan en voz alta | el libro ya se lo llevo alguien; la nota vuelve, el libro no |
+| 5 | Music & Singing (`music-and-singing`) | Tim | Tim quiere tocar en el cumpleanos de Jan como el grupo del colegio; Anna cantaba y ya no se atreve | no canta la cancion vieja; canta una nueva, y la vieja se queda sin cantar |
+| 6 | Cooking & Hosting (`cooking-and-hosting`) | Luisa | Anna quiere cocinar una vez para el grupo del jueves, como de estudiante; Luisa, companera de Jan, le ensena con cucharas y ollas de verdad | se quema la olla grande de Jan y no tiene arreglo |
+| 7 | Plans & Decisions (`plans-and-decisions`) | Niklas | Niklas deja una nota: el piso de arriba es de Anna solo si firma este mes; Munich le ofrece volver; en la nevera, la lista de los jueves | renuncia al trabajo de Munich; cierre sin gancho: su nombre en la lista y la ultima postal con un iman |
 
 Ningun tema termina en mini-cliffhanger en la historia 3: las tres historias
 cierran su arco dentro del tema y la espina avanza por el coste, no por un
