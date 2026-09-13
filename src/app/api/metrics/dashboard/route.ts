@@ -17,6 +17,11 @@ import {
   type LearningPracticeRow,
   type LearningVocabRow,
 } from "@/lib/learningMetrics";
+import {
+  computeRatingsMetrics,
+  emptyRatingsMetrics,
+  type RatingsMetrics,
+} from "@/lib/metricsRatings";
 
 const METRICS_DASHBOARD_CACHE_TTL_MS = 60 * 1000;
 const RECENT_TRIAL_STARTS_LIMIT = 20;
@@ -299,6 +304,7 @@ type DashboardResponse = {
     perUser: MetricsPerUserRow[];
   };
   learning: LearningMetrics;
+  ratings: RatingsMetrics;
 };
 
 type DashboardSection =
@@ -435,6 +441,7 @@ function createEmptyDashboardResponse(from: Date, to: Date, days: number): Dashb
       perUser: [],
     },
     learning: emptyLearningMetrics(),
+    ratings: emptyRatingsMetrics(),
   };
 }
 
@@ -1842,6 +1849,12 @@ export async function GET(req: NextRequest): Promise<Response> {
       ])
     : [new Map<string, string>(), new Map<string, string>()];
 
+  // Solo Engagement los pinta. Van aparte del Promise.all grande porque
+  // necesitan cruzar correos (Clerk) antes de poder separar lo de casa.
+  const ratingsPayload = needsEngagementData
+    ? await computeRatingsMetrics({ userScope, from, to, storySlug, bookSlug })
+    : emptyRatingsMetrics();
+
   const learningPayload = computeLearningMetrics({
     practiceRows: practiceList,
     vocabRows: vocabList,
@@ -2122,6 +2135,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       perUser,
     },
     learning: learningPayload,
+    ratings: ratingsPayload,
   };
 
   metricsDashboardCache.set(cacheKey, {

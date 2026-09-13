@@ -12,6 +12,7 @@ import {
   fmt,
 } from "./MetricsPrimitives";
 import { deriveInsights } from "./deriveInsights";
+import { RatingsPanel } from "./RatingsPanel";
 import { sparkSeries, toAreaChartData } from "./dailyHelpers";
 import type { DashboardData } from "./types";
 
@@ -466,6 +467,8 @@ export function EngagementView({ data }: { data: DashboardData }) {
           </table>
         </div>
       </div>
+
+      <RatingsPanel ratings={data.ratings} />
 
       <div className="mx-row mx-row--2up">
         <div className="mx-panel">
