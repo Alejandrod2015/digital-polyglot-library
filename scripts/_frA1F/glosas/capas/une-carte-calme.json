@@ -1,0 +1,330 @@
+{
+ "mot": {
+  "es": "Le mot plus petit",
+  "en": "The smaller word"
+ },
+ "plus": {
+  "es": "Le mot plus petit",
+  "en": "The smaller word"
+ },
+ "petit": {
+  "es": "Le mot plus petit",
+  "en": "The smaller word"
+ },
+ "rue": {
+  "es": "La rue est calme après le marché.",
+  "en": "The street is quiet after the market."
+ },
+ "est": {
+  "es": "La rue est calme après le marché.",
+  "en": "The street is quiet after the market."
+ },
+ "calme": {
+  "es": "La rue est calme après le marché.",
+  "en": "The street is quiet after the market."
+ },
+ "après": {
+  "es": "La rue est calme après le marché.",
+  "en": "The street is quiet after the market."
+ },
+ "marché": {
+  "es": "La rue est calme après le marché.",
+  "en": "The street is quiet after the market."
+ },
+ "marche": {
+  "es": "Amélie marche avec Marc jusqu'à l'avenue.",
+  "en": "Amélie walks with Marc to the avenue."
+ },
+ "avec": {
+  "es": "Amélie marche avec Marc jusqu'à l'avenue.",
+  "en": "Amélie walks with Marc to the avenue."
+ },
+ "à": {
+  "es": "Amélie marche avec Marc jusqu'à l'avenue.",
+  "en": "Amélie walks with Marc to the avenue."
+ },
+ "avenue": {
+  "es": "Amélie marche avec Marc jusqu'à l'avenue.",
+  "en": "Amélie walks with Marc to the avenue."
+ },
+ "ils": {
+  "es": "Ils passent devant la pharmacie,",
+  "en": "They walk past the pharmacy,"
+ },
+ "passent": {
+  "es": "Ils passent devant la pharmacie,",
+  "en": "They walk past the pharmacy,"
+ },
+ "devant": {
+  "es": "Ils passent devant la pharmacie,",
+  "en": "They walk past the pharmacy,"
+ },
+ "pharmacie": {
+  "es": "Ils passent devant la pharmacie,",
+  "en": "They walk past the pharmacy,"
+ },
+ "puis": {
+  "es": "puis devant la poste.",
+  "en": "then past the post office."
+ },
+ "poste": {
+  "es": "puis devant la poste.",
+  "en": "then past the post office."
+ },
+ "lumière": {
+  "es": "La lumière tombe sur le cinéma.",
+  "en": "The light falls on the cinema."
+ },
+ "tombe": {
+  "es": "La lumière tombe sur le cinéma.",
+  "en": "The light falls on the cinema."
+ },
+ "sur": {
+  "es": "La lumière tombe sur le cinéma.",
+  "en": "The light falls on the cinema."
+ },
+ "cinéma": {
+  "es": "La lumière tombe sur le cinéma.",
+  "en": "The light falls on the cinema."
+ },
+ "dit": {
+  "es": "Marc dit:",
+  "en": "Marc says:"
+ },
+ "table": {
+  "es": "Cette table est ta maison maintenant.",
+  "en": "This table is your home now."
+ },
+ "ta": {
+  "es": "Cette table est ta maison maintenant.",
+  "en": "This table is your home now."
+ },
+ "maison": {
+  "es": "Cette table est ta maison maintenant.",
+  "en": "This table is your home now."
+ },
+ "maintenant": {
+  "es": "Cette table est ta maison maintenant.",
+  "en": "This table is your home now."
+ },
+ "regarde": {
+  "es": "Amélie regarde le restaurant et l'hôtel.",
+  "en": "Amélie looks at the restaurant and the hotel."
+ },
+ "restaurant": {
+  "es": "Amélie regarde le restaurant et l'hôtel.",
+  "en": "Amélie looks at the restaurant and the hotel."
+ },
+ "et": {
+  "es": "Amélie regarde le restaurant et l'hôtel.",
+  "en": "Amélie looks at the restaurant and the hotel."
+ },
+ "hôtel": {
+  "es": "Amélie regarde le restaurant et l'hôtel.",
+  "en": "Amélie looks at the restaurant and the hotel."
+ },
+ "je": {
+  "es": "Je vis à Paris, oui.",
+  "en": "I live in Paris, yes."
+ },
+ "vis": {
+  "es": "Je vis à Paris, oui.",
+  "en": "I live in Paris, yes."
+ },
+ "paris": {
+  "es": "Je vis à Paris, oui.",
+  "en": "I live in Paris, yes."
+ },
+ "oui": {
+  "es": "Je vis à Paris, oui.",
+  "en": "I live in Paris, yes."
+ },
+ "ici": {
+  "es": "Ici, je ne sais pas encore.",
+  "en": "Here, I don't know yet."
+ },
+ "ne": {
+  "es": "Ici, je ne sais pas encore.",
+  "en": "Here, I don't know yet."
+ },
+ "sais": {
+  "es": "Ici, je ne sais pas encore.",
+  "en": "Here, I don't know yet."
+ },
+ "pas": {
+  "es": "Ici, je ne sais pas encore.",
+  "en": "Here, I don't know yet."
+ },
+ "encore": {
+  "es": "Ici, je ne sais pas encore.",
+  "en": "Here, I don't know yet."
+ },
+ "arrive": {
+  "es": "Le mot maison arrive trop vite.",
+  "en": "The word home comes too fast."
+ },
+ "trop": {
+  "es": "Le mot maison arrive trop vite.",
+  "en": "The word home comes too fast."
+ },
+ "vite": {
+  "es": "Le mot maison arrive trop vite.",
+  "en": "The word home comes too fast."
+ },
+ "elle": {
+  "es": "Elle voulait une promenade simple,",
+  "en": "She wanted a simple walk,"
+ },
+ "voulait": {
+  "es": "Elle voulait une promenade simple,",
+  "en": "She wanted a simple walk,"
+ },
+ "promenade": {
+  "es": "Elle voulait une promenade simple,",
+  "en": "She wanted a simple walk,"
+ },
+ "simple": {
+  "es": "Elle voulait une promenade simple,",
+  "en": "She wanted a simple walk,"
+ },
+ "pont": {
+  "es": "avec un pont, un arbre",
+  "en": "with a bridge, a tree"
+ },
+ "arbre": {
+  "es": "avec un pont, un arbre",
+  "en": "with a bridge, a tree"
+ },
+ "ciel": {
+  "es": "et le ciel gris.",
+  "en": "and the gray sky."
+ },
+ "gris": {
+  "es": "et le ciel gris.",
+  "en": "and the gray sky."
+ },
+ "sa": {
+  "es": "Maintenant, sa gorge se ferme.",
+  "en": "Now her throat tightens."
+ },
+ "gorge": {
+  "es": "Maintenant, sa gorge se ferme.",
+  "en": "Now her throat tightens."
+ },
+ "se": {
+  "es": "Maintenant, sa gorge se ferme.",
+  "en": "Now her throat tightens."
+ },
+ "ferme": {
+  "es": "Maintenant, sa gorge se ferme.",
+  "en": "Now her throat tightens."
+ },
+ "taxi": {
+  "es": "Un taxi passe, puis un vélo.",
+  "en": "A taxi goes by, then a bike."
+ },
+ "passe": {
+  "es": "Un taxi passe, puis un vélo.",
+  "en": "A taxi goes by, then a bike."
+ },
+ "vélo": {
+  "es": "Un taxi passe, puis un vélo.",
+  "en": "A taxi goes by, then a bike."
+ },
+ "baisse": {
+  "es": "Marc baisse la voix.",
+  "en": "Marc lowers his voice."
+ },
+ "voix": {
+  "es": "Marc baisse la voix.",
+  "en": "Marc lowers his voice."
+ },
+ "vais": {
+  "es": "Je vais trop vite?",
+  "en": "Am I going too fast?"
+ },
+ "hoche": {
+  "es": "Amélie hoche la tête.",
+  "en": "Amélie nods."
+ },
+ "tête": {
+  "es": "Amélie hoche la tête.",
+  "en": "Amélie nods."
+ },
+ "peu": {
+  "es": "Un peu.",
+  "en": "A little."
+ },
+ "j": {
+  "es": "J'ai besoin d'une carte,",
+  "en": "I need a map,"
+ },
+ "besoin": {
+  "es": "J'ai besoin d'une carte,",
+  "en": "I need a map,"
+ },
+ "d": {
+  "es": "J'ai besoin d'une carte,",
+  "en": "I need a map,"
+ },
+ "carte": {
+  "es": "J'ai besoin d'une carte,",
+  "en": "I need a map,"
+ },
+ "grand": {
+  "es": "pas d'un grand mot.",
+  "en": "not a big word."
+ },
+ "près": {
+  "es": "Près du tramway, une fleur pousse",
+  "en": "Near the tram, a flower grows"
+ },
+ "tramway": {
+  "es": "Près du tramway, une fleur pousse",
+  "en": "Near the tram, a flower grows"
+ },
+ "fleur": {
+  "es": "Près du tramway, une fleur pousse",
+  "en": "Near the tram, a flower grows"
+ },
+ "pousse": {
+  "es": "Près du tramway, une fleur pousse",
+  "en": "Near the tram, a flower grows"
+ },
+ "entre": {
+  "es": "entre deux pierres.",
+  "en": "between two stones."
+ },
+ "pierres": {
+  "es": "entre deux pierres.",
+  "en": "between two stones."
+ },
+ "touche": {
+  "es": "Amélie touche la carte.",
+  "en": "Amélie touches the map."
+ },
+ "peut": {
+  "es": "Cette rue peut être ma carte calme.",
+  "en": "This street can be my calm map."
+ },
+ "être": {
+  "es": "Cette rue peut être ma carte calme.",
+  "en": "This street can be my calm map."
+ },
+ "ma": {
+  "es": "Cette rue peut être ma carte calme.",
+  "en": "This street can be my calm map."
+ },
+ "répond": {
+  "es": "Marc répond:",
+  "en": "Marc replies:"
+ },
+ "accord": {
+  "es": "D'accord.",
+  "en": "Okay."
+ },
+ "on": {
+  "es": "On marche.",
+  "en": "Let's walk."
+ }
+}

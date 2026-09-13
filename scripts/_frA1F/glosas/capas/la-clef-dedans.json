@@ -1,0 +1,378 @@
+{
+ "clef": {
+  "es": "La clef dedans",
+  "en": "The key inside"
+ },
+ "dedans": {
+  "es": "La clef dedans",
+  "en": "The key inside"
+ },
+ "son": {
+  "es": "Son manteau fermé, Amélie sourit à Camille",
+  "en": "Her coat buttoned, Amélie smiles at Camille"
+ },
+ "manteau": {
+  "es": "Son manteau fermé, Amélie sourit à Camille",
+  "en": "Her coat buttoned, Amélie smiles at Camille"
+ },
+ "fermé": {
+  "es": "Son manteau fermé, Amélie sourit à Camille",
+  "en": "Her coat buttoned, Amélie smiles at Camille"
+ },
+ "sourit": {
+  "es": "Son manteau fermé, Amélie sourit à Camille",
+  "en": "Her coat buttoned, Amélie smiles at Camille"
+ },
+ "à": {
+  "es": "Son manteau fermé, Amélie sourit à Camille",
+  "en": "Her coat buttoned, Amélie smiles at Camille"
+ },
+ "devant": {
+  "es": "devant l'immeuble.",
+  "en": "in front of the building."
+ },
+ "immeuble": {
+  "es": "devant l'immeuble.",
+  "en": "in front of the building."
+ },
+ "regarde": {
+  "es": "Marc regarde son téléphone.",
+  "en": "Marc looks at his phone."
+ },
+ "téléphone": {
+  "es": "Marc regarde son téléphone.",
+  "en": "Marc looks at his phone."
+ },
+ "déjeuner": {
+  "es": "Le déjeuner commence bientôt.",
+  "en": "Lunch starts soon."
+ },
+ "commence": {
+  "es": "Le déjeuner commence bientôt.",
+  "en": "Lunch starts soon."
+ },
+ "bientôt": {
+  "es": "Le déjeuner commence bientôt.",
+  "en": "Lunch starts soon."
+ },
+ "j": {
+  "es": "J'ai tout",
+  "en": "I have everything"
+ },
+ "tout": {
+  "es": "J'ai tout",
+  "en": "I have everything"
+ },
+ "annonce": {
+  "es": "annonce Amélie.",
+  "en": "Amélie announces."
+ },
+ "porte": {
+  "es": "La porte fait un bruit sec derrière elle.",
+  "en": "The door makes a sharp noise behind her."
+ },
+ "fait": {
+  "es": "La porte fait un bruit sec derrière elle.",
+  "en": "The door makes a sharp noise behind her."
+ },
+ "bruit": {
+  "es": "La porte fait un bruit sec derrière elle.",
+  "en": "The door makes a sharp noise behind her."
+ },
+ "sec": {
+  "es": "La porte fait un bruit sec derrière elle.",
+  "en": "The door makes a sharp noise behind her."
+ },
+ "derrière": {
+  "es": "La porte fait un bruit sec derrière elle.",
+  "en": "The door makes a sharp noise behind her."
+ },
+ "elle": {
+  "es": "La porte fait un bruit sec derrière elle.",
+  "en": "The door makes a sharp noise behind her."
+ },
+ "puis": {
+  "es": "Puis son visage change.",
+  "en": "Then her face changes."
+ },
+ "visage": {
+  "es": "Puis son visage change.",
+  "en": "Then her face changes."
+ },
+ "change": {
+  "es": "Puis son visage change.",
+  "en": "Then her face changes."
+ },
+ "est": {
+  "es": "La clef est dedans",
+  "en": "The key is inside"
+ },
+ "souffle-t-elle": {
+  "es": "souffle-t-elle.",
+  "en": "she whispers."
+ },
+ "heure": {
+  "es": "Marc regarde l'heure.",
+  "en": "Marc looks at the time."
+ },
+ "on": {
+  "es": "On va être en retard.",
+  "en": "We're going to be late."
+ },
+ "va": {
+  "es": "On va être en retard.",
+  "en": "We're going to be late."
+ },
+ "être": {
+  "es": "On va être en retard.",
+  "en": "We're going to be late."
+ },
+ "en": {
+  "es": "On va être en retard.",
+  "en": "We're going to be late."
+ },
+ "retard": {
+  "es": "On va être en retard.",
+  "en": "We're going to be late."
+ },
+ "écoute": {
+  "es": "Amélie écoute et reste calme",
+  "en": "Amélie listens and stays calm"
+ },
+ "et": {
+  "es": "Amélie écoute et reste calme",
+  "en": "Amélie listens and stays calm"
+ },
+ "reste": {
+  "es": "Amélie écoute et reste calme",
+  "en": "Amélie listens and stays calm"
+ },
+ "calme": {
+  "es": "Amélie écoute et reste calme",
+  "en": "Amélie listens and stays calm"
+ },
+ "parce": {
+  "es": "parce que son erreur prend toute la matinée.",
+  "en": "because her mistake takes the whole morning."
+ },
+ "que": {
+  "es": "parce que son erreur prend toute la matinée.",
+  "en": "because her mistake takes the whole morning."
+ },
+ "erreur": {
+  "es": "parce que son erreur prend toute la matinée.",
+  "en": "because her mistake takes the whole morning."
+ },
+ "prend": {
+  "es": "parce que son erreur prend toute la matinée.",
+  "en": "because her mistake takes the whole morning."
+ },
+ "toute": {
+  "es": "parce que son erreur prend toute la matinée.",
+  "en": "because her mistake takes the whole morning."
+ },
+ "matinée": {
+  "es": "parce que son erreur prend toute la matinée.",
+  "en": "because her mistake takes the whole morning."
+ },
+ "sait": {
+  "es": "Elle sait une chose:",
+  "en": "She knows one thing:"
+ },
+ "chose": {
+  "es": "Elle sait une chose:",
+  "en": "She knows one thing:"
+ },
+ "peut": {
+  "es": "elle peut payer.",
+  "en": "she can pay."
+ },
+ "payer": {
+  "es": "elle peut payer.",
+  "en": "she can pay."
+ },
+ "sort": {
+  "es": "Camille sort son portable.",
+  "en": "Camille takes out her phone."
+ },
+ "portable": {
+  "es": "Camille sort son portable.",
+  "en": "Camille takes out her phone."
+ },
+ "je": {
+  "es": "Je vais appeler le serrurier.",
+  "en": "I'm going to call the locksmith."
+ },
+ "vais": {
+  "es": "Je vais appeler le serrurier.",
+  "en": "I'm going to call the locksmith."
+ },
+ "appeler": {
+  "es": "Je vais appeler le serrurier.",
+  "en": "I'm going to call the locksmith."
+ },
+ "serrurier": {
+  "es": "Je vais appeler le serrurier.",
+  "en": "I'm going to call the locksmith."
+ },
+ "explique": {
+  "es": "Amélie explique:",
+  "en": "Amélie explains:"
+ },
+ "suis": {
+  "es": "Je suis désolée.",
+  "en": "I'm sorry."
+ },
+ "désolée": {
+  "es": "Je suis désolée.",
+  "en": "I'm sorry."
+ },
+ "pas": {
+  "es": "Pas mille fois.",
+  "en": "Not a thousand times."
+ },
+ "fois": {
+  "es": "Pas mille fois.",
+  "en": "Not a thousand times."
+ },
+ "vraie": {
+  "es": "Une vraie fois.",
+  "en": "One real time."
+ },
+ "ne": {
+  "es": "Elle ne refuse pas d'attendre.",
+  "en": "She doesn't refuse to wait."
+ },
+ "refuse": {
+  "es": "Elle ne refuse pas d'attendre.",
+  "en": "She doesn't refuse to wait."
+ },
+ "attendre": {
+  "es": "Elle ne refuse pas d'attendre.",
+  "en": "She doesn't refuse to wait."
+ },
+ "baisse": {
+  "es": "Camille baisse le téléphone et sourit.",
+  "en": "Camille lowers the phone and smiles."
+ },
+ "elles": {
+  "es": "Elles attendent sur le banc.",
+  "en": "They wait on the bench."
+ },
+ "attendent": {
+  "es": "Elles attendent sur le banc.",
+  "en": "They wait on the bench."
+ },
+ "sur": {
+  "es": "Elles attendent sur le banc.",
+  "en": "They wait on the bench."
+ },
+ "banc": {
+  "es": "Elles attendent sur le banc.",
+  "en": "They wait on the bench."
+ },
+ "problème": {
+  "es": "Le problème finit ici",
+  "en": "The problem ends here"
+ },
+ "finit": {
+  "es": "Le problème finit ici",
+  "en": "The problem ends here"
+ },
+ "ici": {
+  "es": "Le problème finit ici",
+  "en": "The problem ends here"
+ },
+ "souffle": {
+  "es": "souffle Marc.",
+  "en": "Marc whispers."
+ },
+ "ouvre": {
+  "es": "Le serrurier ouvre enfin,",
+  "en": "The locksmith finally opens it,"
+ },
+ "enfin": {
+  "es": "Le serrurier ouvre enfin,",
+  "en": "The locksmith finally opens it,"
+ },
+ "sans": {
+  "es": "sans entrer dans l'histoire.",
+  "en": "without getting into the story."
+ },
+ "entrer": {
+  "es": "sans entrer dans l'histoire.",
+  "en": "without getting into the story."
+ },
+ "dans": {
+  "es": "sans entrer dans l'histoire.",
+  "en": "without getting into the story."
+ },
+ "histoire": {
+  "es": "sans entrer dans l'histoire.",
+  "en": "without getting into the story."
+ },
+ "rend": {
+  "es": "Amélie rend la clef à Camille.",
+  "en": "Amélie gives the key back to Camille."
+ },
+ "peux": {
+  "es": "Je peux quitter le groupe maintenant",
+  "en": "I can leave the group now"
+ },
+ "quitter": {
+  "es": "Je peux quitter le groupe maintenant",
+  "en": "I can leave the group now"
+ },
+ "groupe": {
+  "es": "Je peux quitter le groupe maintenant",
+  "en": "I can leave the group now"
+ },
+ "maintenant": {
+  "es": "Je peux quitter le groupe maintenant",
+  "en": "I can leave the group now"
+ },
+ "répond-elle": {
+  "es": "répond-elle.",
+  "en": "she replies."
+ },
+ "montre": {
+  "es": "Camille montre la boulangerie.",
+  "en": "Camille points to the bakery."
+ },
+ "boulangerie": {
+  "es": "Camille montre la boulangerie.",
+  "en": "Camille points to the bakery."
+ },
+ "ou": {
+  "es": "Ou tu peux manger avec nous.",
+  "en": "Or you can eat with us."
+ },
+ "tu": {
+  "es": "Ou tu peux manger avec nous.",
+  "en": "Or you can eat with us."
+ },
+ "manger": {
+  "es": "Ou tu peux manger avec nous.",
+  "en": "Or you can eat with us."
+ },
+ "avec": {
+  "es": "Ou tu peux manger avec nous.",
+  "en": "Or you can eat with us."
+ },
+ "nous": {
+  "es": "Ou tu peux manger avec nous.",
+  "en": "Or you can eat with us."
+ },
+ "main": {
+  "es": "Amélie ouvre la main.",
+  "en": "Amélie opens her hand."
+ },
+ "accord": {
+  "es": "D'accord.",
+  "en": "Okay."
+ },
+ "mange": {
+  "es": "Je mange.",
+  "en": "I'll eat."
+ }
+}

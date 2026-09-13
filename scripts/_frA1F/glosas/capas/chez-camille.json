@@ -1,0 +1,362 @@
+{
+ "chez": {
+  "es": "Chez Camille",
+  "en": "At Camille's"
+ },
+ "femme": {
+  "es": "La femme qui ouvre s'appelle Camille,",
+  "en": "The woman who opens is called Camille,"
+ },
+ "qui": {
+  "es": "La femme qui ouvre s'appelle Camille,",
+  "en": "The woman who opens is called Camille,"
+ },
+ "ouvre": {
+  "es": "La femme qui ouvre s'appelle Camille,",
+  "en": "The woman who opens is called Camille,"
+ },
+ "appelle": {
+  "es": "La femme qui ouvre s'appelle Camille,",
+  "en": "The woman who opens is called Camille,"
+ },
+ "amie": {
+  "es": "une amie de Marc.",
+  "en": "a friend of Marc's."
+ },
+ "de": {
+  "es": "une amie de Marc.",
+  "en": "a friend of Marc's."
+ },
+ "elle": {
+  "es": "Elle montre une couverture jaune",
+  "en": "She shows a yellow blanket"
+ },
+ "montre": {
+  "es": "Elle montre une couverture jaune",
+  "en": "She shows a yellow blanket"
+ },
+ "couverture": {
+  "es": "Elle montre une couverture jaune",
+  "en": "She shows a yellow blanket"
+ },
+ "jaune": {
+  "es": "Elle montre une couverture jaune",
+  "en": "She shows a yellow blanket"
+ },
+ "dans": {
+  "es": "dans son appartement à Paris.",
+  "en": "in her apartment in Paris."
+ },
+ "son": {
+  "es": "dans son appartement à Paris.",
+  "en": "in her apartment in Paris."
+ },
+ "appartement": {
+  "es": "dans son appartement à Paris.",
+  "en": "in her apartment in Paris."
+ },
+ "à": {
+  "es": "dans son appartement à Paris.",
+  "en": "in her apartment in Paris."
+ },
+ "paris": {
+  "es": "dans son appartement à Paris.",
+  "en": "in her apartment in Paris."
+ },
+ "invitée": {
+  "es": "Amélie, l'invitée de la soirée,",
+  "en": "Amélie, the guest of the evening,"
+ },
+ "soirée": {
+  "es": "Amélie, l'invitée de la soirée,",
+  "en": "Amélie, the guest of the evening,"
+ },
+ "regarde": {
+  "es": "regarde le canapé du salon",
+  "en": "looks at the living-room sofa"
+ },
+ "canapé": {
+  "es": "regarde le canapé du salon",
+  "en": "looks at the living-room sofa"
+ },
+ "salon": {
+  "es": "regarde le canapé du salon",
+  "en": "looks at the living-room sofa"
+ },
+ "près": {
+  "es": "près de la porte.",
+  "en": "near the door."
+ },
+ "porte": {
+  "es": "près de la porte.",
+  "en": "near the door."
+ },
+ "tu": {
+  "es": "Tu dors ici si la soirée finit tard",
+  "en": "You sleep here if the evening ends late"
+ },
+ "dors": {
+  "es": "Tu dors ici si la soirée finit tard",
+  "en": "You sleep here if the evening ends late"
+ },
+ "ici": {
+  "es": "Tu dors ici si la soirée finit tard",
+  "en": "You sleep here if the evening ends late"
+ },
+ "si": {
+  "es": "Tu dors ici si la soirée finit tard",
+  "en": "You sleep here if the evening ends late"
+ },
+ "finit": {
+  "es": "Tu dors ici si la soirée finit tard",
+  "en": "You sleep here if the evening ends late"
+ },
+ "tard": {
+  "es": "Tu dors ici si la soirée finit tard",
+  "en": "You sleep here if the evening ends late"
+ },
+ "propose": {
+  "es": "propose Camille.",
+  "en": "Camille offers."
+ },
+ "prend": {
+  "es": "Amélie prend la serviette pliée.",
+  "en": "Amélie takes the folded towel."
+ },
+ "serviette": {
+  "es": "Amélie prend la serviette pliée.",
+  "en": "Amélie takes the folded towel."
+ },
+ "pliée": {
+  "es": "Amélie prend la serviette pliée.",
+  "en": "Amélie takes the folded towel."
+ },
+ "est": {
+  "es": "C'est beaucoup",
+  "en": "It's a lot"
+ },
+ "beaucoup": {
+  "es": "C'est beaucoup",
+  "en": "It's a lot"
+ },
+ "répond": {
+  "es": "répond Amélie.",
+  "en": "Amélie replies."
+ },
+ "explique": {
+  "es": "Camille explique:",
+  "en": "Camille explains:"
+ },
+ "normal": {
+  "es": "Ici, c'est normal.",
+  "en": "Here, it's normal."
+ },
+ "sur": {
+  "es": "Sur la table, il y a",
+  "en": "On the table, there is"
+ },
+ "table": {
+  "es": "Sur la table, il y a",
+  "en": "On the table, there is"
+ },
+ "il": {
+  "es": "Sur la table, il y a",
+  "en": "On the table, there is"
+ },
+ "y": {
+  "es": "Sur la table, il y a",
+  "en": "On the table, there is"
+ },
+ "a": {
+  "es": "Sur la table, il y a",
+  "en": "On the table, there is"
+ },
+ "savon": {
+  "es": "du savon et un verre.",
+  "en": "soap and a glass."
+ },
+ "et": {
+  "es": "du savon et un verre.",
+  "en": "soap and a glass."
+ },
+ "verre": {
+  "es": "du savon et un verre.",
+  "en": "soap and a glass."
+ },
+ "main": {
+  "es": "La main d'Amélie se serre",
+  "en": "Amélie's hand tightens"
+ },
+ "d": {
+  "es": "La main d'Amélie se serre",
+  "en": "Amélie's hand tightens"
+ },
+ "se": {
+  "es": "La main d'Amélie se serre",
+  "en": "Amélie's hand tightens"
+ },
+ "serre": {
+  "es": "La main d'Amélie se serre",
+  "en": "Amélie's hand tightens"
+ },
+ "parce": {
+  "es": "parce qu'elle a peur de gêner.",
+  "en": "because she's afraid of being a bother."
+ },
+ "peur": {
+  "es": "parce qu'elle a peur de gêner.",
+  "en": "because she's afraid of being a bother."
+ },
+ "gêner": {
+  "es": "parce qu'elle a peur de gêner.",
+  "en": "because she's afraid of being a bother."
+ },
+ "fait": {
+  "es": "Elle fait un pli dans la serviette.",
+  "en": "She makes a fold in the towel."
+ },
+ "pli": {
+  "es": "Elle fait un pli dans la serviette.",
+  "en": "She makes a fold in the towel."
+ },
+ "demande": {
+  "es": "Camille demande:",
+  "en": "Camille asks:"
+ },
+ "veux": {
+  "es": "Tu veux attendre chez Marc?",
+  "en": "Do you want to wait at Marc's?"
+ },
+ "attendre": {
+  "es": "Tu veux attendre chez Marc?",
+  "en": "Do you want to wait at Marc's?"
+ },
+ "secoue": {
+  "es": "Amélie secoue la tête.",
+  "en": "Amélie shakes her head."
+ },
+ "tête": {
+  "es": "Amélie secoue la tête.",
+  "en": "Amélie shakes her head."
+ },
+ "non": {
+  "es": "Non.",
+  "en": "No."
+ },
+ "je": {
+  "es": "Je peux rester",
+  "en": "I can stay"
+ },
+ "peux": {
+  "es": "Je peux rester",
+  "en": "I can stay"
+ },
+ "rester": {
+  "es": "Je peux rester",
+  "en": "I can stay"
+ },
+ "répond-elle": {
+  "es": "répond-elle.",
+  "en": "she replies."
+ },
+ "puis": {
+  "es": "Puis elle ajoute:",
+  "en": "Then she adds:"
+ },
+ "ajoute": {
+  "es": "Puis elle ajoute:",
+  "en": "Then she adds:"
+ },
+ "dois": {
+  "es": "Je dois avoir la clef.",
+  "en": "I need to have the key."
+ },
+ "avoir": {
+  "es": "Je dois avoir la clef.",
+  "en": "I need to have the key."
+ },
+ "clef": {
+  "es": "Je dois avoir la clef.",
+  "en": "I need to have the key."
+ },
+ "pose": {
+  "es": "Camille pose la clef jaune dans sa main.",
+  "en": "Camille puts the yellow key in her hand."
+ },
+ "sa": {
+  "es": "Camille pose la clef jaune dans sa main.",
+  "en": "Camille puts the yellow key in her hand."
+ },
+ "alors": {
+  "es": "Alors tu entres comme une vraie invitée",
+  "en": "Then you come in like a real guest"
+ },
+ "entres": {
+  "es": "Alors tu entres comme une vraie invitée",
+  "en": "Then you come in like a real guest"
+ },
+ "comme": {
+  "es": "Alors tu entres comme une vraie invitée",
+  "en": "Then you come in like a real guest"
+ },
+ "vraie": {
+  "es": "Alors tu entres comme une vraie invitée",
+  "en": "Then you come in like a real guest"
+ },
+ "promet": {
+  "es": "promet Camille.",
+  "en": "Camille promises."
+ },
+ "sourit": {
+  "es": "Amélie sourit sans blague.",
+  "en": "Amélie smiles without joking."
+ },
+ "sans": {
+  "es": "Amélie sourit sans blague.",
+  "en": "Amélie smiles without joking."
+ },
+ "blague": {
+  "es": "Amélie sourit sans blague.",
+  "en": "Amélie smiles without joking."
+ },
+ "couloir": {
+  "es": "Dans le couloir, Camille demande:",
+  "en": "In the hallway, Camille asks:"
+ },
+ "demain": {
+  "es": "Demain, petit déjeuner?",
+  "en": "Tomorrow, breakfast?"
+ },
+ "petit": {
+  "es": "Demain, petit déjeuner?",
+  "en": "Tomorrow, breakfast?"
+ },
+ "déjeuner": {
+  "es": "Demain, petit déjeuner?",
+  "en": "Tomorrow, breakfast?"
+ },
+ "garde": {
+  "es": "Amélie garde la clef et répond:",
+  "en": "Amélie keeps the key and replies:"
+ },
+ "oui": {
+  "es": "Oui, mais pas trop tôt.",
+  "en": "Yes, but not too early."
+ },
+ "mais": {
+  "es": "Oui, mais pas trop tôt.",
+  "en": "Yes, but not too early."
+ },
+ "pas": {
+  "es": "Oui, mais pas trop tôt.",
+  "en": "Yes, but not too early."
+ },
+ "trop": {
+  "es": "Oui, mais pas trop tôt.",
+  "en": "Yes, but not too early."
+ },
+ "tôt": {
+  "es": "Oui, mais pas trop tôt.",
+  "en": "Yes, but not too early."
+ }
+}

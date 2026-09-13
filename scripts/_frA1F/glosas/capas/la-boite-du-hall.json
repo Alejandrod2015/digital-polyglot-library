@@ -1,0 +1,374 @@
+{
+ "hall": {
+  "es": "Le hall du quatre",
+  "en": "The hall of number four"
+ },
+ "dans": {
+  "es": "Dans la ville, le bâtiment du dîner",
+  "en": "In the city, the dinner building"
+ },
+ "ville": {
+  "es": "Dans la ville, le bâtiment du dîner",
+  "en": "In the city, the dinner building"
+ },
+ "bâtiment": {
+  "es": "Dans la ville, le bâtiment du dîner",
+  "en": "In the city, the dinner building"
+ },
+ "dîner": {
+  "es": "Dans la ville, le bâtiment du dîner",
+  "en": "In the city, the dinner building"
+ },
+ "a": {
+  "es": "a un hall gris.",
+  "en": "has a gray hall."
+ },
+ "gris": {
+  "es": "a un hall gris.",
+  "en": "has a gray hall."
+ },
+ "attend": {
+  "es": "Inès Caron attend près de l'escalier.",
+  "en": "Inès Caron waits near the stairs."
+ },
+ "près": {
+  "es": "Inès Caron attend près de l'escalier.",
+  "en": "Inès Caron waits near the stairs."
+ },
+ "de": {
+  "es": "Inès Caron attend près de l'escalier.",
+  "en": "Inès Caron waits near the stairs."
+ },
+ "escalier": {
+  "es": "Inès Caron attend près de l'escalier.",
+  "en": "Inès Caron waits near the stairs."
+ },
+ "meilleur": {
+  "es": "Marc, le meilleur ami d'Amélie,",
+  "en": "Marc, Amélie's best friend,"
+ },
+ "ami": {
+  "es": "Marc, le meilleur ami d'Amélie,",
+  "en": "Marc, Amélie's best friend,"
+ },
+ "d": {
+  "es": "Marc, le meilleur ami d'Amélie,",
+  "en": "Marc, Amélie's best friend,"
+ },
+ "reste": {
+  "es": "reste en bas.",
+  "en": "stays downstairs."
+ },
+ "en": {
+  "es": "reste en bas.",
+  "en": "stays downstairs."
+ },
+ "bas": {
+  "es": "reste en bas.",
+  "en": "stays downstairs."
+ },
+ "lumière": {
+  "es": "La lumière du plafond reste pâle.",
+  "en": "The ceiling light stays pale."
+ },
+ "plafond": {
+  "es": "La lumière du plafond reste pâle.",
+  "en": "The ceiling light stays pale."
+ },
+ "pâle": {
+  "es": "La lumière du plafond reste pâle.",
+  "en": "The ceiling light stays pale."
+ },
+ "voisine": {
+  "es": "Inès, une voisine de Paris,",
+  "en": "Inès, a neighbor from Paris,"
+ },
+ "paris": {
+  "es": "Inès, une voisine de Paris,",
+  "en": "Inès, a neighbor from Paris,"
+ },
+ "tient": {
+  "es": "tient une boîte ouverte.",
+  "en": "holds an open box."
+ },
+ "boîte": {
+  "es": "tient une boîte ouverte.",
+  "en": "holds an open box."
+ },
+ "ouverte": {
+  "es": "tient une boîte ouverte.",
+  "en": "holds an open box."
+ },
+ "regarde": {
+  "es": "Amélie regarde le sol.",
+  "en": "Amélie looks at the floor."
+ },
+ "sol": {
+  "es": "Amélie regarde le sol.",
+  "en": "Amélie looks at the floor."
+ },
+ "je": {
+  "es": "Je peux écrire ici, seule?",
+  "en": "Can I write here, by myself?"
+ },
+ "peux": {
+  "es": "Je peux écrire ici, seule?",
+  "en": "Can I write here, by myself?"
+ },
+ "écrire": {
+  "es": "Je peux écrire ici, seule?",
+  "en": "Can I write here, by myself?"
+ },
+ "ici": {
+  "es": "Je peux écrire ici, seule?",
+  "en": "Can I write here, by myself?"
+ },
+ "seule": {
+  "es": "Je peux écrire ici, seule?",
+  "en": "Can I write here, by myself?"
+ },
+ "demande-t-elle": {
+  "es": "demande-t-elle.",
+  "en": "she asks."
+ },
+ "répond": {
+  "es": "Inès répond:",
+  "en": "Inès replies:"
+ },
+ "oui": {
+  "es": "Oui, mais petit.",
+  "en": "Yes, but small."
+ },
+ "mais": {
+  "es": "Oui, mais petit.",
+  "en": "Yes, but small."
+ },
+ "petit": {
+  "es": "Oui, mais petit.",
+  "en": "Yes, but small."
+ },
+ "tout": {
+  "es": "Tout le monde voit bien.",
+  "en": "Everyone can see clearly."
+ },
+ "monde": {
+  "es": "Tout le monde voit bien.",
+  "en": "Everyone can see clearly."
+ },
+ "voit": {
+  "es": "Tout le monde voit bien.",
+  "en": "Everyone can see clearly."
+ },
+ "bien": {
+  "es": "Tout le monde voit bien.",
+  "en": "Everyone can see clearly."
+ },
+ "devant": {
+  "es": "Marc reste devant le mur.",
+  "en": "Marc stays in front of the wall."
+ },
+ "mur": {
+  "es": "Marc reste devant le mur.",
+  "en": "Marc stays in front of the wall."
+ },
+ "aime": {
+  "es": "Amélie aime être derrière lui",
+  "en": "Amélie likes being behind him"
+ },
+ "être": {
+  "es": "Amélie aime être derrière lui",
+  "en": "Amélie likes being behind him"
+ },
+ "derrière": {
+  "es": "Amélie aime être derrière lui",
+  "en": "Amélie likes being behind him"
+ },
+ "lui": {
+  "es": "Amélie aime être derrière lui",
+  "en": "Amélie likes being behind him"
+ },
+ "quand": {
+  "es": "quand le groupe va trop vite.",
+  "en": "when the group goes too fast."
+ },
+ "groupe": {
+  "es": "quand le groupe va trop vite.",
+  "en": "when the group goes too fast."
+ },
+ "va": {
+  "es": "quand le groupe va trop vite.",
+  "en": "when the group goes too fast."
+ },
+ "trop": {
+  "es": "quand le groupe va trop vite.",
+  "en": "when the group goes too fast."
+ },
+ "vite": {
+  "es": "quand le groupe va trop vite.",
+  "en": "when the group goes too fast."
+ },
+ "hui": {
+  "es": "Aujourd'hui, la boîte semble petite.",
+  "en": "Today, the box seems small."
+ },
+ "semble": {
+  "es": "Aujourd'hui, la boîte semble petite.",
+  "en": "Today, the box seems small."
+ },
+ "petite": {
+  "es": "Aujourd'hui, la boîte semble petite.",
+  "en": "Today, the box seems small."
+ },
+ "elle": {
+  "es": "Elle sort un papier de son sac vert",
+  "en": "She takes a paper from her green bag"
+ },
+ "sort": {
+  "es": "Elle sort un papier de son sac vert",
+  "en": "She takes a paper from her green bag"
+ },
+ "papier": {
+  "es": "Elle sort un papier de son sac vert",
+  "en": "She takes a paper from her green bag"
+ },
+ "son": {
+  "es": "Elle sort un papier de son sac vert",
+  "en": "She takes a paper from her green bag"
+ },
+ "sac": {
+  "es": "Elle sort un papier de son sac vert",
+  "en": "She takes a paper from her green bag"
+ },
+ "vert": {
+  "es": "Elle sort un papier de son sac vert",
+  "en": "She takes a paper from her green bag"
+ },
+ "ascenseur": {
+  "es": "près de l'ascenseur.",
+  "en": "near the elevator."
+ },
+ "tu": {
+  "es": "Tu veux que je le place?",
+  "en": "Do you want me to put it up?"
+ },
+ "veux": {
+  "es": "Tu veux que je le place?",
+  "en": "Do you want me to put it up?"
+ },
+ "que": {
+  "es": "Tu veux que je le place?",
+  "en": "Do you want me to put it up?"
+ },
+ "place": {
+  "es": "Tu veux que je le place?",
+  "en": "Do you want me to put it up?"
+ },
+ "propose": {
+  "es": "propose Marc.",
+  "en": "Marc offers."
+ },
+ "non": {
+  "es": "Non, je peux écrire seule aujourd'hui,",
+  "en": "No, I can write by myself today,"
+ },
+ "merci": {
+  "es": "merci Marc, je le fais",
+  "en": "thanks Marc, I'll do it"
+ },
+ "fais": {
+  "es": "merci Marc, je le fais",
+  "en": "thanks Marc, I'll do it"
+ },
+ "respire": {
+  "es": "Elle respire avant le trait.",
+  "en": "She breathes before the stroke."
+ },
+ "avant": {
+  "es": "Elle respire avant le trait.",
+  "en": "She breathes before the stroke."
+ },
+ "trait": {
+  "es": "Elle respire avant le trait.",
+  "en": "She breathes before the stroke."
+ },
+ "sous": {
+  "es": "Sous le chiffre quatre,",
+  "en": "Under the number four,"
+ },
+ "chiffre": {
+  "es": "Sous le chiffre quatre,",
+  "en": "Under the number four,"
+ },
+ "écrit": {
+  "es": "elle écrit l'adresse de la table.",
+  "en": "she writes the address of the table."
+ },
+ "adresse": {
+  "es": "elle écrit l'adresse de la table.",
+  "en": "she writes the address of the table."
+ },
+ "table": {
+  "es": "elle écrit l'adresse de la table.",
+  "en": "she writes the address of the table."
+ },
+ "sourit": {
+  "es": "Inès sourit.",
+  "en": "Inès smiles."
+ },
+ "voilà": {
+  "es": "Voilà, les voisins savent,",
+  "en": "There, the neighbors know,"
+ },
+ "voisins": {
+  "es": "Voilà, les voisins savent,",
+  "en": "There, the neighbors know,"
+ },
+ "savent": {
+  "es": "Voilà, les voisins savent,",
+  "en": "There, the neighbors know,"
+ },
+ "et": {
+  "es": "et c'est normal ici.",
+  "en": "and that's normal here."
+ },
+ "est": {
+  "es": "et c'est normal ici.",
+  "en": "and that's normal here."
+ },
+ "normal": {
+  "es": "et c'est normal ici.",
+  "en": "and that's normal here."
+ },
+ "ne": {
+  "es": "Marc ne parle pas.",
+  "en": "Marc doesn't speak."
+ },
+ "parle": {
+  "es": "Marc ne parle pas.",
+  "en": "Marc doesn't speak."
+ },
+ "pas": {
+  "es": "Marc ne parle pas.",
+  "en": "Marc doesn't speak."
+ },
+ "perd": {
+  "es": "Amélie perd une cachette,",
+  "en": "Amélie loses a hiding place,"
+ },
+ "cachette": {
+  "es": "Amélie perd une cachette,",
+  "en": "Amélie loses a hiding place,"
+ },
+ "gagne": {
+  "es": "mais gagne un appartement d'amis.",
+  "en": "but gains an apartment of friends."
+ },
+ "appartement": {
+  "es": "mais gagne un appartement d'amis.",
+  "en": "but gains an apartment of friends."
+ },
+ "amis": {
+  "es": "mais gagne un appartement d'amis.",
+  "en": "but gains an apartment of friends."
+ }
+}

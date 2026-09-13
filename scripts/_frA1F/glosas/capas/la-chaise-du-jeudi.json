@@ -1,0 +1,342 @@
+{
+ "place": {
+  "es": "Une place à table",
+  "en": "A seat at the table"
+ },
+ "à": {
+  "es": "Une place à table",
+  "en": "A seat at the table"
+ },
+ "table": {
+  "es": "Une place à table",
+  "en": "A seat at the table"
+ },
+ "jeudi": {
+  "es": "Le jeudi, Inès garde une chaise rouge",
+  "en": "On Thursdays, Inès saves a red chair"
+ },
+ "garde": {
+  "es": "Le jeudi, Inès garde une chaise rouge",
+  "en": "On Thursdays, Inès saves a red chair"
+ },
+ "chaise": {
+  "es": "Le jeudi, Inès garde une chaise rouge",
+  "en": "On Thursdays, Inès saves a red chair"
+ },
+ "rouge": {
+  "es": "Le jeudi, Inès garde une chaise rouge",
+  "en": "On Thursdays, Inès saves a red chair"
+ },
+ "près": {
+  "es": "près de la table.",
+  "en": "near the table."
+ },
+ "de": {
+  "es": "près de la table.",
+  "en": "near the table."
+ },
+ "arrive": {
+  "es": "Amélie arrive avec Marc.",
+  "en": "Amélie arrives with Marc."
+ },
+ "avec": {
+  "es": "Amélie arrive avec Marc.",
+  "en": "Amélie arrives with Marc."
+ },
+ "personnes": {
+  "es": "Six personnes parlent bas",
+  "en": "Six people talk quietly"
+ },
+ "parlent": {
+  "es": "Six personnes parlent bas",
+  "en": "Six people talk quietly"
+ },
+ "bas": {
+  "es": "Six personnes parlent bas",
+  "en": "Six people talk quietly"
+ },
+ "dans": {
+  "es": "dans la lumière du soleil.",
+  "en": "in the sunlight."
+ },
+ "lumière": {
+  "es": "dans la lumière du soleil.",
+  "en": "in the sunlight."
+ },
+ "soleil": {
+  "es": "dans la lumière du soleil.",
+  "en": "in the sunlight."
+ },
+ "est": {
+  "es": "C'est ta place",
+  "en": "It's your seat"
+ },
+ "ta": {
+  "es": "C'est ta place",
+  "en": "It's your seat"
+ },
+ "dit": {
+  "es": "dit Inès.",
+  "en": "Inès says."
+ },
+ "touche": {
+  "es": "Amélie touche le bois.",
+  "en": "Amélie touches the wood."
+ },
+ "bois": {
+  "es": "Amélie touche le bois.",
+  "en": "Amélie touches the wood."
+ },
+ "je": {
+  "es": "Je ne connais personne à cette table.",
+  "en": "I don't know anyone at this table."
+ },
+ "ne": {
+  "es": "Je ne connais personne à cette table.",
+  "en": "I don't know anyone at this table."
+ },
+ "connais": {
+  "es": "Je ne connais personne à cette table.",
+  "en": "I don't know anyone at this table."
+ },
+ "personne": {
+  "es": "Je ne connais personne à cette table.",
+  "en": "I don't know anyone at this table."
+ },
+ "montre": {
+  "es": "Marc montre une pomme et du fromage,",
+  "en": "Marc points to an apple and some cheese,"
+ },
+ "pomme": {
+  "es": "Marc montre une pomme et du fromage,",
+  "en": "Marc points to an apple and some cheese,"
+ },
+ "et": {
+  "es": "Marc montre une pomme et du fromage,",
+  "en": "Marc points to an apple and some cheese,"
+ },
+ "fromage": {
+  "es": "Marc montre une pomme et du fromage,",
+  "en": "Marc points to an apple and some cheese,"
+ },
+ "puis": {
+  "es": "puis il se tait.",
+  "en": "then he goes quiet."
+ },
+ "il": {
+  "es": "puis il se tait.",
+  "en": "then he goes quiet."
+ },
+ "se": {
+  "es": "puis il se tait.",
+  "en": "then he goes quiet."
+ },
+ "tait": {
+  "es": "puis il se tait.",
+  "en": "then he goes quiet."
+ },
+ "sur": {
+  "es": "Sur la table, il y a",
+  "en": "On the table, there is"
+ },
+ "y": {
+  "es": "Sur la table, il y a",
+  "en": "On the table, there is"
+ },
+ "a": {
+  "es": "Sur la table, il y a",
+  "en": "On the table, there is"
+ },
+ "lait": {
+  "es": "du lait et un œuf.",
+  "en": "some milk and an egg."
+ },
+ "œuf": {
+  "es": "du lait et un œuf.",
+  "en": "some milk and an egg."
+ },
+ "tout": {
+  "es": "Tout le monde prépare le marché du samedi.",
+  "en": "Everyone is getting the Saturday market ready."
+ },
+ "monde": {
+  "es": "Tout le monde prépare le marché du samedi.",
+  "en": "Everyone is getting the Saturday market ready."
+ },
+ "prépare": {
+  "es": "Tout le monde prépare le marché du samedi.",
+  "en": "Everyone is getting the Saturday market ready."
+ },
+ "marché": {
+  "es": "Tout le monde prépare le marché du samedi.",
+  "en": "Everyone is getting the Saturday market ready."
+ },
+ "samedi": {
+  "es": "Tout le monde prépare le marché du samedi.",
+  "en": "Everyone is getting the Saturday market ready."
+ },
+ "pourrait": {
+  "es": "Amélie pourrait partir au parc.",
+  "en": "Amélie could leave for the park."
+ },
+ "partir": {
+  "es": "Amélie pourrait partir au parc.",
+  "en": "Amélie could leave for the park."
+ },
+ "au": {
+  "es": "Amélie pourrait partir au parc.",
+  "en": "Amélie could leave for the park."
+ },
+ "parc": {
+  "es": "Amélie pourrait partir au parc.",
+  "en": "Amélie could leave for the park."
+ },
+ "elle": {
+  "es": "Elle regarde le magasin puis la boutique,",
+  "en": "She looks at the store and then the shop,"
+ },
+ "regarde": {
+  "es": "Elle regarde le magasin puis la boutique,",
+  "en": "She looks at the store and then the shop,"
+ },
+ "magasin": {
+  "es": "Elle regarde le magasin puis la boutique,",
+  "en": "She looks at the store and then the shop,"
+ },
+ "boutique": {
+  "es": "Elle regarde le magasin puis la boutique,",
+  "en": "She looks at the store and then the shop,"
+ },
+ "comme": {
+  "es": "comme si la sortie appelait.",
+  "en": "as if the exit were calling."
+ },
+ "si": {
+  "es": "comme si la sortie appelait.",
+  "en": "as if the exit were calling."
+ },
+ "sortie": {
+  "es": "comme si la sortie appelait.",
+  "en": "as if the exit were calling."
+ },
+ "appelait": {
+  "es": "comme si la sortie appelait.",
+  "en": "as if the exit were calling."
+ },
+ "homme": {
+  "es": "Un homme pose une tomate.",
+  "en": "A man sets down a tomato."
+ },
+ "pose": {
+  "es": "Un homme pose une tomate.",
+  "en": "A man sets down a tomato."
+ },
+ "tomate": {
+  "es": "Un homme pose une tomate.",
+  "en": "A man sets down a tomato."
+ },
+ "tu": {
+  "es": "Tu veux acheter quelque chose avec nous?",
+  "en": "Do you want to buy something with us?"
+ },
+ "veux": {
+  "es": "Tu veux acheter quelque chose avec nous?",
+  "en": "Do you want to buy something with us?"
+ },
+ "acheter": {
+  "es": "Tu veux acheter quelque chose avec nous?",
+  "en": "Do you want to buy something with us?"
+ },
+ "quelque": {
+  "es": "Tu veux acheter quelque chose avec nous?",
+  "en": "Do you want to buy something with us?"
+ },
+ "chose": {
+  "es": "Tu veux acheter quelque chose avec nous?",
+  "en": "Do you want to buy something with us?"
+ },
+ "nous": {
+  "es": "Tu veux acheter quelque chose avec nous?",
+  "en": "Do you want to buy something with us?"
+ },
+ "sourit": {
+  "es": "Amélie sourit.",
+  "en": "Amélie smiles."
+ },
+ "oui": {
+  "es": "Oui, mais j'ai une question.",
+  "en": "Yes, but I have a question."
+ },
+ "mais": {
+  "es": "Oui, mais j'ai une question.",
+  "en": "Yes, but I have a question."
+ },
+ "j": {
+  "es": "Oui, mais j'ai une question.",
+  "en": "Yes, but I have a question."
+ },
+ "question": {
+  "es": "Oui, mais j'ai une question.",
+  "en": "Yes, but I have a question."
+ },
+ "où": {
+  "es": "Où est la bibliothèque près d'ici?",
+  "en": "Where is the library near here?"
+ },
+ "bibliothèque": {
+  "es": "Où est la bibliothèque près d'ici?",
+  "en": "Where is the library near here?"
+ },
+ "ici": {
+  "es": "Où est la bibliothèque près d'ici?",
+  "en": "Where is the library near here?"
+ },
+ "donne": {
+  "es": "Inès donne une pomme à Marc.",
+  "en": "Inès gives an apple to Marc."
+ },
+ "ajoute": {
+  "es": "Il ajoute:",
+  "en": "He adds:"
+ },
+ "viens": {
+  "es": "Je viens avec toi?",
+  "en": "Shall I come with you?"
+ },
+ "toi": {
+  "es": "Je viens avec toi?",
+  "en": "Shall I come with you?"
+ },
+ "répond": {
+  "es": "Amélie répond:",
+  "en": "Amélie replies:"
+ },
+ "après": {
+  "es": "Après.",
+  "en": "Later."
+ },
+ "hui": {
+  "es": "Aujourd'hui, je reste.",
+  "en": "Today, I'm staying."
+ },
+ "reste": {
+  "es": "Aujourd'hui, je reste.",
+  "en": "Today, I'm staying."
+ },
+ "vend": {
+  "es": "Elle ne vend rien,",
+  "en": "She doesn't sell anything,"
+ },
+ "rien": {
+  "es": "Elle ne vend rien,",
+  "en": "She doesn't sell anything,"
+ },
+ "achète": {
+  "es": "mais elle achète sa place du jeudi.",
+  "en": "but she buys her Thursday seat."
+ },
+ "sa": {
+  "es": "mais elle achète sa place du jeudi.",
+  "en": "but she buys her Thursday seat."
+ }
+}

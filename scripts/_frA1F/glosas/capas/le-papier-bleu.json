@@ -1,0 +1,358 @@
+{
+ "papier": {
+  "es": "Le papier bleu",
+  "en": "The blue paper"
+ },
+ "bleu": {
+  "es": "Le papier bleu",
+  "en": "The blue paper"
+ },
+ "libraire": {
+  "es": "Amélie, une libraire de Paris,",
+  "en": "Amélie, a bookseller from Paris,"
+ },
+ "de": {
+  "es": "Amélie, une libraire de Paris,",
+  "en": "Amélie, a bookseller from Paris,"
+ },
+ "paris": {
+  "es": "Amélie, une libraire de Paris,",
+  "en": "Amélie, a bookseller from Paris,"
+ },
+ "arrive": {
+  "es": "arrive chez Marc avec un sac",
+  "en": "arrives at Marc's with a bag"
+ },
+ "chez": {
+  "es": "arrive chez Marc avec un sac",
+  "en": "arrives at Marc's with a bag"
+ },
+ "avec": {
+  "es": "arrive chez Marc avec un sac",
+  "en": "arrives at Marc's with a bag"
+ },
+ "sac": {
+  "es": "arrive chez Marc avec un sac",
+  "en": "arrives at Marc's with a bag"
+ },
+ "et": {
+  "es": "et un grand papier bleu.",
+  "en": "and a big sheet of blue paper."
+ },
+ "grand": {
+  "es": "et un grand papier bleu.",
+  "en": "and a big sheet of blue paper."
+ },
+ "ami": {
+  "es": "Marc, un ami d'Amélie, tient un thé chaud.",
+  "en": "Marc, a friend of Amélie's, holds a hot tea."
+ },
+ "d": {
+  "es": "Marc, un ami d'Amélie, tient un thé chaud.",
+  "en": "Marc, a friend of Amélie's, holds a hot tea."
+ },
+ "tient": {
+  "es": "Marc, un ami d'Amélie, tient un thé chaud.",
+  "en": "Marc, a friend of Amélie's, holds a hot tea."
+ },
+ "thé": {
+  "es": "Marc, un ami d'Amélie, tient un thé chaud.",
+  "en": "Marc, a friend of Amélie's, holds a hot tea."
+ },
+ "chaud": {
+  "es": "Marc, un ami d'Amélie, tient un thé chaud.",
+  "en": "Marc, a friend of Amélie's, holds a hot tea."
+ },
+ "il": {
+  "es": "Il ouvre la cuisine.",
+  "en": "He opens up the kitchen."
+ },
+ "ouvre": {
+  "es": "Il ouvre la cuisine.",
+  "en": "He opens up the kitchen."
+ },
+ "cuisine": {
+  "es": "Il ouvre la cuisine.",
+  "en": "He opens up the kitchen."
+ },
+ "veut": {
+  "es": "Amélie veut parler au groupe.",
+  "en": "Amélie wants to talk to the group."
+ },
+ "parler": {
+  "es": "Amélie veut parler au groupe.",
+  "en": "Amélie wants to talk to the group."
+ },
+ "au": {
+  "es": "Amélie veut parler au groupe.",
+  "en": "Amélie wants to talk to the group."
+ },
+ "groupe": {
+  "es": "Amélie veut parler au groupe.",
+  "en": "Amélie wants to talk to the group."
+ },
+ "sur": {
+  "es": "Sur le papier clair,",
+  "en": "On the pale paper,"
+ },
+ "clair": {
+  "es": "Sur le papier clair,",
+  "en": "On the pale paper,"
+ },
+ "elle": {
+  "es": "elle voit une phrase courte.",
+  "en": "she sees a short sentence."
+ },
+ "voit": {
+  "es": "elle voit une phrase courte.",
+  "en": "she sees a short sentence."
+ },
+ "phrase": {
+  "es": "elle voit une phrase courte.",
+  "en": "she sees a short sentence."
+ },
+ "courte": {
+  "es": "elle voit une phrase courte.",
+  "en": "she sees a short sentence."
+ },
+ "je": {
+  "es": "Je ne comprends pas si c'est gentil",
+  "en": "I don't understand if it's kind"
+ },
+ "ne": {
+  "es": "Je ne comprends pas si c'est gentil",
+  "en": "I don't understand if it's kind"
+ },
+ "comprends": {
+  "es": "Je ne comprends pas si c'est gentil",
+  "en": "I don't understand if it's kind"
+ },
+ "pas": {
+  "es": "Je ne comprends pas si c'est gentil",
+  "en": "I don't understand if it's kind"
+ },
+ "si": {
+  "es": "Je ne comprends pas si c'est gentil",
+  "en": "I don't understand if it's kind"
+ },
+ "est": {
+  "es": "Je ne comprends pas si c'est gentil",
+  "en": "I don't understand if it's kind"
+ },
+ "gentil": {
+  "es": "Je ne comprends pas si c'est gentil",
+  "en": "I don't understand if it's kind"
+ },
+ "avoue": {
+  "es": "avoue Amélie.",
+  "en": "Amélie admits."
+ },
+ "bouge": {
+  "es": "Marc bouge déjà la main.",
+  "en": "Marc is already moving his hand."
+ },
+ "déjà": {
+  "es": "Marc bouge déjà la main.",
+  "en": "Marc is already moving his hand."
+ },
+ "main": {
+  "es": "Marc bouge déjà la main.",
+  "en": "Marc is already moving his hand."
+ },
+ "peux": {
+  "es": "Je peux aider",
+  "en": "I can help"
+ },
+ "aider": {
+  "es": "Je peux aider",
+  "en": "I can help"
+ },
+ "dit": {
+  "es": "dit Marc.",
+  "en": "Marc says."
+ },
+ "respire": {
+  "es": "Amélie respire,",
+  "en": "Amélie breathes,"
+ },
+ "parce": {
+  "es": "parce qu'elle a peur de mal écrire.",
+  "en": "because she's afraid of writing it badly."
+ },
+ "a": {
+  "es": "parce qu'elle a peur de mal écrire.",
+  "en": "because she's afraid of writing it badly."
+ },
+ "peur": {
+  "es": "parce qu'elle a peur de mal écrire.",
+  "en": "because she's afraid of writing it badly."
+ },
+ "mal": {
+  "es": "parce qu'elle a peur de mal écrire.",
+  "en": "because she's afraid of writing it badly."
+ },
+ "écrire": {
+  "es": "parce qu'elle a peur de mal écrire.",
+  "en": "because she's afraid of writing it badly."
+ },
+ "non": {
+  "es": "Non, laisse-moi essayer",
+  "en": "No, let me try"
+ },
+ "laisse-moi": {
+  "es": "Non, laisse-moi essayer",
+  "en": "No, let me try"
+ },
+ "essayer": {
+  "es": "Non, laisse-moi essayer",
+  "en": "No, let me try"
+ },
+ "répond-elle": {
+  "es": "répond-elle.",
+  "en": "she replies."
+ },
+ "puis": {
+  "es": "Puis elle ajoute:",
+  "en": "Then she adds:"
+ },
+ "ajoute": {
+  "es": "Puis elle ajoute:",
+  "en": "Then she adds:"
+ },
+ "cherche": {
+  "es": "Je cherche ma phrase.",
+  "en": "I'm looking for my sentence."
+ },
+ "ma": {
+  "es": "Je cherche ma phrase.",
+  "en": "I'm looking for my sentence."
+ },
+ "montre": {
+  "es": "Marc montre le lundi",
+  "en": "Marc points to Monday"
+ },
+ "lundi": {
+  "es": "Marc montre le lundi",
+  "en": "Marc points to Monday"
+ },
+ "demande": {
+  "es": "et demande si le groupe vient ici.",
+  "en": "and asks if the group is coming here."
+ },
+ "vient": {
+  "es": "et demande si le groupe vient ici.",
+  "en": "and asks if the group is coming here."
+ },
+ "ici": {
+  "es": "et demande si le groupe vient ici.",
+  "en": "and asks if the group is coming here."
+ },
+ "répond": {
+  "es": "Amélie répond:",
+  "en": "Amélie replies:"
+ },
+ "lentement": {
+  "es": "Lentement, Marc.",
+  "en": "Slowly, Marc."
+ },
+ "ta": {
+  "es": "Pas ta phrase.",
+  "en": "Not your sentence."
+ },
+ "ferme": {
+  "es": "Marc ferme la bouche",
+  "en": "Marc shuts his mouth"
+ },
+ "bouche": {
+  "es": "Marc ferme la bouche",
+  "en": "Marc shuts his mouth"
+ },
+ "pousse": {
+  "es": "et pousse le téléphone vers elle.",
+  "en": "and pushes the phone toward her."
+ },
+ "téléphone": {
+  "es": "et pousse le téléphone vers elle.",
+  "en": "and pushes the phone toward her."
+ },
+ "vers": {
+  "es": "et pousse le téléphone vers elle.",
+  "en": "and pushes the phone toward her."
+ },
+ "trouve": {
+  "es": "Amélie trouve sa ligne:",
+  "en": "Amélie finds her line:"
+ },
+ "sa": {
+  "es": "Amélie trouve sa ligne:",
+  "en": "Amélie finds her line:"
+ },
+ "ligne": {
+  "es": "Amélie trouve sa ligne:",
+  "en": "Amélie finds her line:"
+ },
+ "gâteau": {
+  "es": "Lundi, gâteau chez Marc, avec plaisir?",
+  "en": "Monday, cake at Marc's, with pleasure?"
+ },
+ "plaisir": {
+  "es": "Lundi, gâteau chez Marc, avec plaisir?",
+  "en": "Monday, cake at Marc's, with pleasure?"
+ },
+ "petit": {
+  "es": "C'est un petit mot, simple et vrai.",
+  "en": "It's a short note, simple and true."
+ },
+ "mot": {
+  "es": "C'est un petit mot, simple et vrai.",
+  "en": "It's a short note, simple and true."
+ },
+ "simple": {
+  "es": "C'est un petit mot, simple et vrai.",
+  "en": "It's a short note, simple and true."
+ },
+ "vrai": {
+  "es": "C'est un petit mot, simple et vrai.",
+  "en": "It's a short note, simple and true."
+ },
+ "envoie": {
+  "es": "Je l'envoie maintenant.",
+  "en": "I'm sending it now."
+ },
+ "maintenant": {
+  "es": "Je l'envoie maintenant.",
+  "en": "I'm sending it now."
+ },
+ "lit": {
+  "es": "Marc lit, ferme le téléphone et sourit.",
+  "en": "Marc reads, closes the phone and smiles."
+ },
+ "sourit": {
+  "es": "Marc lit, ferme le téléphone et sourit.",
+  "en": "Marc reads, closes the phone and smiles."
+ },
+ "toi": {
+  "es": "C'est toi.",
+  "en": "It's you."
+ },
+ "garde": {
+  "es": "Amélie garde le papier bleu,",
+  "en": "Amélie keeps the blue paper,"
+ },
+ "mais": {
+  "es": "mais elle n'en a plus besoin.",
+  "en": "but she doesn't need it anymore."
+ },
+ "en": {
+  "es": "mais elle n'en a plus besoin.",
+  "en": "but she doesn't need it anymore."
+ },
+ "plus": {
+  "es": "mais elle n'en a plus besoin.",
+  "en": "but she doesn't need it anymore."
+ },
+ "besoin": {
+  "es": "mais elle n'en a plus besoin.",
+  "en": "but she doesn't need it anymore."
+ }
+}

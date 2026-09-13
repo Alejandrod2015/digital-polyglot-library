@@ -1,0 +1,346 @@
+{
+ "thé": {
+  "es": "Un thé possible",
+  "en": "A possible tea"
+ },
+ "possible": {
+  "es": "Un thé possible",
+  "en": "A possible tea"
+ },
+ "matin": {
+  "es": "Le matin, Amélie attend devant la librairie.",
+  "en": "In the morning, Amélie waits outside the bookshop."
+ },
+ "attend": {
+  "es": "Le matin, Amélie attend devant la librairie.",
+  "en": "In the morning, Amélie waits outside the bookshop."
+ },
+ "devant": {
+  "es": "Le matin, Amélie attend devant la librairie.",
+  "en": "In the morning, Amélie waits outside the bookshop."
+ },
+ "librairie": {
+  "es": "Le matin, Amélie attend devant la librairie.",
+  "en": "In the morning, Amélie waits outside the bookshop."
+ },
+ "arrive": {
+  "es": "Mathieu arrive avec une chemise propre",
+  "en": "Mathieu arrives with a clean shirt"
+ },
+ "avec": {
+  "es": "Mathieu arrive avec une chemise propre",
+  "en": "Mathieu arrives with a clean shirt"
+ },
+ "chemise": {
+  "es": "Mathieu arrive avec une chemise propre",
+  "en": "Mathieu arrives with a clean shirt"
+ },
+ "propre": {
+  "es": "Mathieu arrive avec une chemise propre",
+  "en": "Mathieu arrives with a clean shirt"
+ },
+ "et": {
+  "es": "et un journal plié.",
+  "en": "and a folded newspaper."
+ },
+ "journal": {
+  "es": "et un journal plié.",
+  "en": "and a folded newspaper."
+ },
+ "plié": {
+  "es": "et un journal plié.",
+  "en": "and a folded newspaper."
+ },
+ "sur": {
+  "es": "Sur la vitrine, une lumière touche",
+  "en": "On the shop window, a light touches"
+ },
+ "vitrine": {
+  "es": "Sur la vitrine, une lumière touche",
+  "en": "On the shop window, a light touches"
+ },
+ "lumière": {
+  "es": "Sur la vitrine, une lumière touche",
+  "en": "On the shop window, a light touches"
+ },
+ "touche": {
+  "es": "Sur la vitrine, une lumière touche",
+  "en": "On the shop window, a light touches"
+ },
+ "portefeuille": {
+  "es": "le portefeuille dans sa main.",
+  "en": "the wallet in his hand."
+ },
+ "dans": {
+  "es": "le portefeuille dans sa main.",
+  "en": "the wallet in his hand."
+ },
+ "sa": {
+  "es": "le portefeuille dans sa main.",
+  "en": "the wallet in his hand."
+ },
+ "main": {
+  "es": "le portefeuille dans sa main.",
+  "en": "the wallet in his hand."
+ },
+ "veut": {
+  "es": "Amélie veut parler du thé.",
+  "en": "Amélie wants to talk about the tea."
+ },
+ "parler": {
+  "es": "Amélie veut parler du thé.",
+  "en": "Amélie wants to talk about the tea."
+ },
+ "parle": {
+  "es": "Marc parle trop vite.",
+  "en": "Marc talks too fast."
+ },
+ "trop": {
+  "es": "Marc parle trop vite.",
+  "en": "Marc talks too fast."
+ },
+ "vite": {
+  "es": "Marc parle trop vite.",
+  "en": "Marc talks too fast."
+ },
+ "elle": {
+  "es": "Elle veut te voir demain au café.",
+  "en": "She wants to see you tomorrow at the café."
+ },
+ "te": {
+  "es": "Elle veut te voir demain au café.",
+  "en": "She wants to see you tomorrow at the café."
+ },
+ "voir": {
+  "es": "Elle veut te voir demain au café.",
+  "en": "She wants to see you tomorrow at the café."
+ },
+ "demain": {
+  "es": "Elle veut te voir demain au café.",
+  "en": "She wants to see you tomorrow at the café."
+ },
+ "au": {
+  "es": "Elle veut te voir demain au café.",
+  "en": "She wants to see you tomorrow at the café."
+ },
+ "café": {
+  "es": "Elle veut te voir demain au café.",
+  "en": "She wants to see you tomorrow at the café."
+ },
+ "enlève": {
+  "es": "Amélie enlève ses lunettes",
+  "en": "Amélie takes off her glasses"
+ },
+ "ses": {
+  "es": "Amélie enlève ses lunettes",
+  "en": "Amélie takes off her glasses"
+ },
+ "lunettes": {
+  "es": "Amélie enlève ses lunettes",
+  "en": "Amélie takes off her glasses"
+ },
+ "regarde": {
+  "es": "et regarde son crayon.",
+  "en": "and looks at her pencil."
+ },
+ "son": {
+  "es": "et regarde son crayon.",
+  "en": "and looks at her pencil."
+ },
+ "crayon": {
+  "es": "et regarde son crayon.",
+  "en": "and looks at her pencil."
+ },
+ "bureau": {
+  "es": "Sur le bureau, une gomme et une lettre",
+  "en": "On the desk, an eraser and a letter"
+ },
+ "gomme": {
+  "es": "Sur le bureau, une gomme et une lettre",
+  "en": "On the desk, an eraser and a letter"
+ },
+ "lettre": {
+  "es": "Sur le bureau, une gomme et une lettre",
+  "en": "On the desk, an eraser and a letter"
+ },
+ "attendent": {
+  "es": "attendent dans son carnet.",
+  "en": "wait in her notebook."
+ },
+ "carnet": {
+  "es": "attendent dans son carnet.",
+  "en": "wait in her notebook."
+ },
+ "oublie": {
+  "es": "Amélie oublie ses mots un instant,",
+  "en": "Amélie forgets her words for a moment,"
+ },
+ "mots": {
+  "es": "Amélie oublie ses mots un instant,",
+  "en": "Amélie forgets her words for a moment,"
+ },
+ "instant": {
+  "es": "Amélie oublie ses mots un instant,",
+  "en": "Amélie forgets her words for a moment,"
+ },
+ "puis": {
+  "es": "puis respire.",
+  "en": "then breathes."
+ },
+ "respire": {
+  "es": "puis respire.",
+  "en": "then breathes."
+ },
+ "non": {
+  "es": "Non, je veux demander autrement",
+  "en": "No, I want to ask differently"
+ },
+ "je": {
+  "es": "Non, je veux demander autrement",
+  "en": "No, I want to ask differently"
+ },
+ "veux": {
+  "es": "Non, je veux demander autrement",
+  "en": "No, I want to ask differently"
+ },
+ "demander": {
+  "es": "Non, je veux demander autrement",
+  "en": "No, I want to ask differently"
+ },
+ "autrement": {
+  "es": "Non, je veux demander autrement",
+  "en": "No, I want to ask differently"
+ },
+ "dit-elle": {
+  "es": "dit-elle.",
+  "en": "she says."
+ },
+ "reste": {
+  "es": "Mathieu reste poli.",
+  "en": "Mathieu stays polite."
+ },
+ "poli": {
+  "es": "Mathieu reste poli.",
+  "en": "Mathieu stays polite."
+ },
+ "ferme": {
+  "es": "Marc ferme la bouche.",
+  "en": "Marc shuts his mouth."
+ },
+ "bouche": {
+  "es": "Marc ferme la bouche.",
+  "en": "Marc shuts his mouth."
+ },
+ "montre": {
+  "es": "Elle montre la phrase.",
+  "en": "She shows the sentence."
+ },
+ "phrase": {
+  "es": "Elle montre la phrase.",
+  "en": "She shows the sentence."
+ },
+ "tu": {
+  "es": "Mathieu, tu peux venir boire un thé,",
+  "en": "Mathieu, you can come have a tea,"
+ },
+ "peux": {
+  "es": "Mathieu, tu peux venir boire un thé,",
+  "en": "Mathieu, you can come have a tea,"
+ },
+ "venir": {
+  "es": "Mathieu, tu peux venir boire un thé,",
+  "en": "Mathieu, you can come have a tea,"
+ },
+ "boire": {
+  "es": "Mathieu, tu peux venir boire un thé,",
+  "en": "Mathieu, you can come have a tea,"
+ },
+ "si": {
+  "es": "si tu veux.",
+  "en": "if you want."
+ },
+ "sourit": {
+  "es": "Mathieu sourit.",
+  "en": "Mathieu smiles."
+ },
+ "dois": {
+  "es": "Je dois téléphoner d’abord.",
+  "en": "I have to make a call first."
+ },
+ "téléphoner": {
+  "es": "Je dois téléphoner d’abord.",
+  "en": "I have to make a call first."
+ },
+ "abord": {
+  "es": "Je dois téléphoner d’abord.",
+  "en": "I have to make a call first."
+ },
+ "d": {
+  "es": "Je dois téléphoner d’abord.",
+  "en": "I have to make a call first."
+ },
+ "répond": {
+  "es": "Amélie répond:",
+  "en": "Amélie replies:"
+ },
+ "alors": {
+  "es": "Alors tu peux envoyer un mot après.",
+  "en": "Then you can send a note afterwards."
+ },
+ "envoyer": {
+  "es": "Alors tu peux envoyer un mot après.",
+  "en": "Then you can send a note afterwards."
+ },
+ "mot": {
+  "es": "Alors tu peux envoyer un mot après.",
+  "en": "Then you can send a note afterwards."
+ },
+ "après": {
+  "es": "Alors tu peux envoyer un mot après.",
+  "en": "Then you can send a note afterwards."
+ },
+ "lève": {
+  "es": "Marc lève les mains.",
+  "en": "Marc raises his hands."
+ },
+ "mains": {
+  "es": "Marc lève les mains.",
+  "en": "Marc raises his hands."
+ },
+ "réussit": {
+  "es": "Elle réussit une invitation plus timide,",
+  "en": "She pulls off a shyer invitation,"
+ },
+ "invitation": {
+  "es": "Elle réussit une invitation plus timide,",
+  "en": "She pulls off a shyer invitation,"
+ },
+ "plus": {
+  "es": "Elle réussit une invitation plus timide,",
+  "en": "She pulls off a shyer invitation,"
+ },
+ "timide": {
+  "es": "Elle réussit une invitation plus timide,",
+  "en": "She pulls off a shyer invitation,"
+ },
+ "de": {
+  "es": "avec de la place calme aujourd’hui ici.",
+  "en": "with some calm room here today."
+ },
+ "place": {
+  "es": "avec de la place calme aujourd’hui ici.",
+  "en": "with some calm room here today."
+ },
+ "calme": {
+  "es": "avec de la place calme aujourd’hui ici.",
+  "en": "with some calm room here today."
+ },
+ "hui": {
+  "es": "avec de la place calme aujourd’hui ici.",
+  "en": "with some calm room here today."
+ },
+ "ici": {
+  "es": "avec de la place calme aujourd’hui ici.",
+  "en": "with some calm room here today."
+ }
+}

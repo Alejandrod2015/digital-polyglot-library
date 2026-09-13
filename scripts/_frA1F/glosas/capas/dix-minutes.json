@@ -1,0 +1,366 @@
+{
+ "minutes": {
+  "es": "Dix minutes",
+  "en": "Ten minutes"
+ },
+ "corps": {
+  "es": "Le corps d’Amélie se tend devant la porte.",
+  "en": "Amélie's body tenses in front of the door."
+ },
+ "d": {
+  "es": "Le corps d’Amélie se tend devant la porte.",
+  "en": "Amélie's body tenses in front of the door."
+ },
+ "se": {
+  "es": "Le corps d’Amélie se tend devant la porte.",
+  "en": "Amélie's body tenses in front of the door."
+ },
+ "tend": {
+  "es": "Le corps d’Amélie se tend devant la porte.",
+  "en": "Amélie's body tenses in front of the door."
+ },
+ "devant": {
+  "es": "Le corps d’Amélie se tend devant la porte.",
+  "en": "Amélie's body tenses in front of the door."
+ },
+ "porte": {
+  "es": "Le corps d’Amélie se tend devant la porte.",
+  "en": "Amélie's body tenses in front of the door."
+ },
+ "attend": {
+  "es": "Marc attend avec Sophie dans le couloir.",
+  "en": "Marc waits with Sophie in the hallway."
+ },
+ "avec": {
+  "es": "Marc attend avec Sophie dans le couloir.",
+  "en": "Marc waits with Sophie in the hallway."
+ },
+ "dans": {
+  "es": "Marc attend avec Sophie dans le couloir.",
+  "en": "Marc waits with Sophie in the hallway."
+ },
+ "couloir": {
+  "es": "Marc attend avec Sophie dans le couloir.",
+  "en": "Marc waits with Sophie in the hallway."
+ },
+ "lumière": {
+  "es": "Une lumière blanche tombe sur son bras,",
+  "en": "A white light falls on her arm,"
+ },
+ "blanche": {
+  "es": "Une lumière blanche tombe sur son bras,",
+  "en": "A white light falls on her arm,"
+ },
+ "tombe": {
+  "es": "Une lumière blanche tombe sur son bras,",
+  "en": "A white light falls on her arm,"
+ },
+ "sur": {
+  "es": "Une lumière blanche tombe sur son bras,",
+  "en": "A white light falls on her arm,"
+ },
+ "son": {
+  "es": "Une lumière blanche tombe sur son bras,",
+  "en": "A white light falls on her arm,"
+ },
+ "bras": {
+  "es": "Une lumière blanche tombe sur son bras,",
+  "en": "A white light falls on her arm,"
+ },
+ "doigt": {
+  "es": "son doigt et son œil.",
+  "en": "her finger and her eye."
+ },
+ "et": {
+  "es": "son doigt et son œil.",
+  "en": "her finger and her eye."
+ },
+ "œil": {
+  "es": "son doigt et son œil.",
+  "en": "her finger and her eye."
+ },
+ "compte": {
+  "es": "Sophie compte sur ses doigts.",
+  "en": "Sophie counts on her fingers."
+ },
+ "ses": {
+  "es": "Sophie compte sur ses doigts.",
+  "en": "Sophie counts on her fingers."
+ },
+ "doigts": {
+  "es": "Sophie compte sur ses doigts.",
+  "en": "Sophie counts on her fingers."
+ },
+ "tu": {
+  "es": "Tu veux dix minutes, pas plus?",
+  "en": "You want ten minutes, no more?"
+ },
+ "veux": {
+  "es": "Tu veux dix minutes, pas plus?",
+  "en": "You want ten minutes, no more?"
+ },
+ "pas": {
+  "es": "Tu veux dix minutes, pas plus?",
+  "en": "You want ten minutes, no more?"
+ },
+ "plus": {
+  "es": "Tu veux dix minutes, pas plus?",
+  "en": "You want ten minutes, no more?"
+ },
+ "propose": {
+  "es": "Marc propose:",
+  "en": "Marc offers:"
+ },
+ "je": {
+  "es": "Je reste tout l’après-midi.",
+  "en": "I'll stay all afternoon."
+ },
+ "reste": {
+  "es": "Je reste tout l’après-midi.",
+  "en": "I'll stay all afternoon."
+ },
+ "tout": {
+  "es": "Je reste tout l’après-midi.",
+  "en": "I'll stay all afternoon."
+ },
+ "après-midi": {
+  "es": "Je reste tout l’après-midi.",
+  "en": "I'll stay all afternoon."
+ },
+ "secoue": {
+  "es": "Amélie secoue la tête.",
+  "en": "Amélie shakes her head."
+ },
+ "tête": {
+  "es": "Amélie secoue la tête.",
+  "en": "Amélie shakes her head."
+ },
+ "sa": {
+  "es": "Sa peau reste calme.",
+  "en": "Her skin stays calm."
+ },
+ "peau": {
+  "es": "Sa peau reste calme.",
+  "en": "Her skin stays calm."
+ },
+ "calme": {
+  "es": "Sa peau reste calme.",
+  "en": "Her skin stays calm."
+ },
+ "non": {
+  "es": "Non.",
+  "en": "No."
+ },
+ "est": {
+  "es": "C’est trop.",
+  "en": "That's too much."
+ },
+ "trop": {
+  "es": "C’est trop.",
+  "en": "That's too much."
+ },
+ "regarde": {
+  "es": "Sophie regarde sa bouche, puis son oreille.",
+  "en": "Sophie looks at her mouth, then her ear."
+ },
+ "bouche": {
+  "es": "Sophie regarde sa bouche, puis son oreille.",
+  "en": "Sophie looks at her mouth, then her ear."
+ },
+ "puis": {
+  "es": "Sophie regarde sa bouche, puis son oreille.",
+  "en": "Sophie looks at her mouth, then her ear."
+ },
+ "oreille": {
+  "es": "Sophie regarde sa bouche, puis son oreille.",
+  "en": "Sophie looks at her mouth, then her ear."
+ },
+ "veut": {
+  "es": "Amélie veut parler seule,",
+  "en": "Amélie wants to speak by herself,"
+ },
+ "parler": {
+  "es": "Amélie veut parler seule,",
+  "en": "Amélie wants to speak by herself,"
+ },
+ "seule": {
+  "es": "Amélie veut parler seule,",
+  "en": "Amélie wants to speak by herself,"
+ },
+ "pied": {
+  "es": "et son pied faible bouge.",
+  "en": "and her weak foot moves."
+ },
+ "faible": {
+  "es": "et son pied faible bouge.",
+  "en": "and her weak foot moves."
+ },
+ "bouge": {
+  "es": "et son pied faible bouge.",
+  "en": "and her weak foot moves."
+ },
+ "ventre": {
+  "es": "Son ventre est lourd,",
+  "en": "Her belly feels heavy,"
+ },
+ "lourd": {
+  "es": "Son ventre est lourd,",
+  "en": "Her belly feels heavy,"
+ },
+ "dos": {
+  "es": "et son dos touche le mur.",
+  "en": "and her back touches the wall."
+ },
+ "touche": {
+  "es": "et son dos touche le mur.",
+  "en": "and her back touches the wall."
+ },
+ "mur": {
+  "es": "et son dos touche le mur.",
+  "en": "and her back touches the wall."
+ },
+ "elle": {
+  "es": "Elle pense à sa lèvre",
+  "en": "She thinks about her lip"
+ },
+ "pense": {
+  "es": "Elle pense à sa lèvre",
+  "en": "She thinks about her lip"
+ },
+ "à": {
+  "es": "Elle pense à sa lèvre",
+  "en": "She thinks about her lip"
+ },
+ "lèvre": {
+  "es": "Elle pense à sa lèvre",
+  "en": "She thinks about her lip"
+ },
+ "qui": {
+  "es": "qui cherche les mots.",
+  "en": "searching for the words."
+ },
+ "cherche": {
+  "es": "qui cherche les mots.",
+  "en": "searching for the words."
+ },
+ "mots": {
+  "es": "qui cherche les mots.",
+  "en": "searching for the words."
+ },
+ "peux": {
+  "es": "Tu peux attendre dix minutes",
+  "en": "Can you wait ten minutes"
+ },
+ "attendre": {
+  "es": "Tu peux attendre dix minutes",
+  "en": "Can you wait ten minutes"
+ },
+ "ma": {
+  "es": "avec ma dent et ma langue?",
+  "en": "with my tooth and my tongue?"
+ },
+ "dent": {
+  "es": "avec ma dent et ma langue?",
+  "en": "with my tooth and my tongue?"
+ },
+ "langue": {
+  "es": "avec ma dent et ma langue?",
+  "en": "with my tooth and my tongue?"
+ },
+ "demande-t-elle": {
+  "es": "demande-t-elle.",
+  "en": "she asks."
+ },
+ "répond": {
+  "es": "Marc répond:",
+  "en": "Marc replies:"
+ },
+ "oui": {
+  "es": "Dix, oui, je peux faire ça.",
+  "en": "Ten, yes, I can do that."
+ },
+ "faire": {
+  "es": "Dix, oui, je peux faire ça.",
+  "en": "Ten, yes, I can do that."
+ },
+ "ça": {
+  "es": "Dix, oui, je peux faire ça.",
+  "en": "Ten, yes, I can do that."
+ },
+ "ajoute": {
+  "es": "Sophie ajoute:",
+  "en": "Sophie adds:"
+ },
+ "clair": {
+  "es": "C’est clair.",
+  "en": "That's clear."
+ },
+ "main": {
+  "es": "La main d’Amélie s’ouvre,",
+  "en": "Amélie's hand opens,"
+ },
+ "ouvre": {
+  "es": "La main d’Amélie s’ouvre,",
+  "en": "Amélie's hand opens,"
+ },
+ "s": {
+  "es": "La main d’Amélie s’ouvre,",
+  "en": "Amélie's hand opens,"
+ },
+ "estomac": {
+  "es": "et son estomac se serre.",
+  "en": "and her stomach tightens."
+ },
+ "serre": {
+  "es": "et son estomac se serre.",
+  "en": "and her stomach tightens."
+ },
+ "après": {
+  "es": "Après dix minutes, je reste ici.",
+  "en": "After ten minutes, I stay here."
+ },
+ "ici": {
+  "es": "Après dix minutes, je reste ici.",
+  "en": "After ten minutes, I stay here."
+ },
+ "entres": {
+  "es": "Tu entres seule.",
+  "en": "You go in alone."
+ },
+ "épaule": {
+  "es": "Marc touche son épaule,",
+  "en": "Marc touches her shoulder,"
+ },
+ "genou": {
+  "es": "puis son genou bouge vers la sortie.",
+  "en": "then his knee turns toward the exit."
+ },
+ "vers": {
+  "es": "puis son genou bouge vers la sortie.",
+  "en": "then his knee turns toward the exit."
+ },
+ "sortie": {
+  "es": "puis son genou bouge vers la sortie.",
+  "en": "then his knee turns toward the exit."
+ },
+ "reviens": {
+  "es": "Je reviens après",
+  "en": "I'll come back afterwards"
+ },
+ "répond-elle": {
+  "es": "répond-elle.",
+  "en": "she replies."
+ },
+ "petite": {
+  "es": "Cette petite aide suffit.",
+  "en": "This little help is enough."
+ },
+ "aide": {
+  "es": "Cette petite aide suffit.",
+  "en": "This little help is enough."
+ },
+ "suffit": {
+  "es": "Cette petite aide suffit.",
+  "en": "This little help is enough."
+ }
+}

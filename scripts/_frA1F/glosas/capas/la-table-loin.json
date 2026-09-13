@@ -1,0 +1,342 @@
+{
+ "table": {
+  "es": "La table loin",
+  "en": "The far table"
+ },
+ "loin": {
+  "es": "La table loin",
+  "en": "The far table"
+ },
+ "arrive": {
+  "es": "Amélie arrive autour d’un repas.",
+  "en": "Amélie arrives around a meal."
+ },
+ "autour": {
+  "es": "Amélie arrive autour d’un repas.",
+  "en": "Amélie arrives around a meal."
+ },
+ "d": {
+  "es": "Amélie arrive autour d’un repas.",
+  "en": "Amélie arrives around a meal."
+ },
+ "repas": {
+  "es": "Amélie arrive autour d’un repas.",
+  "en": "Amélie arrives around a meal."
+ },
+ "est": {
+  "es": "Marc est avec elle,",
+  "en": "Marc is with her,"
+ },
+ "avec": {
+  "es": "Marc est avec elle,",
+  "en": "Marc is with her,"
+ },
+ "elle": {
+  "es": "Marc est avec elle,",
+  "en": "Marc is with her,"
+ },
+ "mais": {
+  "es": "mais la chaise près de lui est prise.",
+  "en": "but the chair near him is taken."
+ },
+ "chaise": {
+  "es": "mais la chaise près de lui est prise.",
+  "en": "but the chair near him is taken."
+ },
+ "près": {
+  "es": "mais la chaise près de lui est prise.",
+  "en": "but the chair near him is taken."
+ },
+ "de": {
+  "es": "mais la chaise près de lui est prise.",
+  "en": "but the chair near him is taken."
+ },
+ "lui": {
+  "es": "mais la chaise près de lui est prise.",
+  "en": "but the chair near him is taken."
+ },
+ "prise": {
+  "es": "mais la chaise près de lui est prise.",
+  "en": "but the chair near him is taken."
+ },
+ "lumière": {
+  "es": "Une lumière glisse",
+  "en": "A light slides"
+ },
+ "glisse": {
+  "es": "Une lumière glisse",
+  "en": "A light slides"
+ },
+ "sur": {
+  "es": "sur une bouteille et un bol.",
+  "en": "over a bottle and a bowl."
+ },
+ "bouteille": {
+  "es": "sur une bouteille et un bol.",
+  "en": "over a bottle and a bowl."
+ },
+ "et": {
+  "es": "sur une bouteille et un bol.",
+  "en": "over a bottle and a bowl."
+ },
+ "bol": {
+  "es": "sur une bouteille et un bol.",
+  "en": "over a bottle and a bowl."
+ },
+ "montre": {
+  "es": "Baptiste montre la table loin.",
+  "en": "Baptiste points to the far table."
+ },
+ "il": {
+  "es": "Il reste une place là-bas.",
+  "en": "There's one seat left over there."
+ },
+ "reste": {
+  "es": "Il reste une place là-bas.",
+  "en": "There's one seat left over there."
+ },
+ "place": {
+  "es": "Il reste une place là-bas.",
+  "en": "There's one seat left over there."
+ },
+ "là-bas": {
+  "es": "Il reste une place là-bas.",
+  "en": "There's one seat left over there."
+ },
+ "avance": {
+  "es": "Marc avance.",
+  "en": "Marc steps forward."
+ },
+ "je": {
+  "es": "Je peux changer.",
+  "en": "I can switch."
+ },
+ "peux": {
+  "es": "Je peux changer.",
+  "en": "I can switch."
+ },
+ "changer": {
+  "es": "Je peux changer.",
+  "en": "I can switch."
+ },
+ "serre": {
+  "es": "Amélie serre fort.",
+  "en": "Amélie squeezes hard."
+ },
+ "fort": {
+  "es": "Amélie serre fort.",
+  "en": "Amélie squeezes hard."
+ },
+ "nappe": {
+  "es": "Sur la nappe, il y a une carafe,",
+  "en": "On the tablecloth, there is a carafe,"
+ },
+ "y": {
+  "es": "Sur la nappe, il y a une carafe,",
+  "en": "On the tablecloth, there is a carafe,"
+ },
+ "a": {
+  "es": "Sur la nappe, il y a une carafe,",
+  "en": "On the tablecloth, there is a carafe,"
+ },
+ "carafe": {
+  "es": "Sur la nappe, il y a une carafe,",
+  "en": "On the tablecloth, there is a carafe,"
+ },
+ "cuillère": {
+  "es": "une cuillère et une fourchette.",
+  "en": "a spoon and a fork."
+ },
+ "fourchette": {
+  "es": "une cuillère et une fourchette.",
+  "en": "a spoon and a fork."
+ },
+ "veut": {
+  "es": "Amélie veut rester près de son ami,",
+  "en": "Amélie wants to stay near her friend,"
+ },
+ "rester": {
+  "es": "Amélie veut rester près de son ami,",
+  "en": "Amélie wants to stay near her friend,"
+ },
+ "son": {
+  "es": "Amélie veut rester près de son ami,",
+  "en": "Amélie wants to stay near her friend,"
+ },
+ "ami": {
+  "es": "Amélie veut rester près de son ami,",
+  "en": "Amélie wants to stay near her friend,"
+ },
+ "regarde": {
+  "es": "mais elle regarde la table.",
+  "en": "but she looks at the table."
+ },
+ "menu": {
+  "es": "Le menu propose un couteau propre, un plat,",
+  "en": "The menu offers a clean knife, a dish,"
+ },
+ "propose": {
+  "es": "Le menu propose un couteau propre, un plat,",
+  "en": "The menu offers a clean knife, a dish,"
+ },
+ "couteau": {
+  "es": "Le menu propose un couteau propre, un plat,",
+  "en": "The menu offers a clean knife, a dish,"
+ },
+ "propre": {
+  "es": "Le menu propose un couteau propre, un plat,",
+  "en": "The menu offers a clean knife, a dish,"
+ },
+ "plat": {
+  "es": "Le menu propose un couteau propre, un plat,",
+  "en": "The menu offers a clean knife, a dish,"
+ },
+ "salade": {
+  "es": "une salade et une limonade.",
+  "en": "a salad and a lemonade."
+ },
+ "limonade": {
+  "es": "une salade et une limonade.",
+  "en": "a salad and a lemonade."
+ },
+ "coin": {
+  "es": "Le coin n’est pas fermé.",
+  "en": "The corner isn't closed off."
+ },
+ "pas": {
+  "es": "Le coin n’est pas fermé.",
+  "en": "The corner isn't closed off."
+ },
+ "fermé": {
+  "es": "Le coin n’est pas fermé.",
+  "en": "The corner isn't closed off."
+ },
+ "n": {
+  "es": "Le coin n’est pas fermé.",
+  "en": "The corner isn't closed off."
+ },
+ "vais": {
+  "es": "Je vais essayer le repas ici",
+  "en": "I'm going to try the meal here"
+ },
+ "essayer": {
+  "es": "Je vais essayer le repas ici",
+  "en": "I'm going to try the meal here"
+ },
+ "ici": {
+  "es": "Je vais essayer le repas ici",
+  "en": "I'm going to try the meal here"
+ },
+ "annonce": {
+  "es": "annonce Amélie.",
+  "en": "Amélie announces."
+ },
+ "dire": {
+  "es": "Je peux dire bonjour seule.",
+  "en": "I can say hello by myself."
+ },
+ "bonjour": {
+  "es": "Je peux dire bonjour seule.",
+  "en": "I can say hello by myself."
+ },
+ "seule": {
+  "es": "Je peux dire bonjour seule.",
+  "en": "I can say hello by myself."
+ },
+ "écouter": {
+  "es": "Je peux écouter.",
+  "en": "I can listen."
+ },
+ "répond": {
+  "es": "Baptiste répond:",
+  "en": "Baptiste replies:"
+ },
+ "garde": {
+  "es": "Je garde ton mug.",
+  "en": "I'll keep your mug."
+ },
+ "ton": {
+  "es": "Je garde ton mug.",
+  "en": "I'll keep your mug."
+ },
+ "mug": {
+  "es": "Je garde ton mug.",
+  "en": "I'll keep your mug."
+ },
+ "lève": {
+  "es": "Marc lève le pouce.",
+  "en": "Marc gives a thumbs up."
+ },
+ "pouce": {
+  "es": "Marc lève le pouce.",
+  "en": "Marc gives a thumbs up."
+ },
+ "suis": {
+  "es": "Je suis là, pas loin.",
+  "en": "I'm here, not far."
+ },
+ "là": {
+  "es": "Je suis là, pas loin.",
+  "en": "I'm here, not far."
+ },
+ "petit": {
+  "es": "Le repas reste petit.",
+  "en": "The meal stays small."
+ },
+ "prend": {
+  "es": "Elle prend une poire, une banane",
+  "en": "She takes a pear, a banana"
+ },
+ "poire": {
+  "es": "Elle prend une poire, une banane",
+  "en": "She takes a pear, a banana"
+ },
+ "banane": {
+  "es": "Elle prend une poire, une banane",
+  "en": "She takes a pear, a banana"
+ },
+ "peu": {
+  "es": "et un peu de raisin.",
+  "en": "and a few grapes."
+ },
+ "raisin": {
+  "es": "et un peu de raisin.",
+  "en": "and a few grapes."
+ },
+ "citron": {
+  "es": "Le citron reste dans la boisson.",
+  "en": "The lemon stays in the drink."
+ },
+ "dans": {
+  "es": "Le citron reste dans la boisson.",
+  "en": "The lemon stays in the drink."
+ },
+ "boisson": {
+  "es": "Le citron reste dans la boisson.",
+  "en": "The lemon stays in the drink."
+ },
+ "ça": {
+  "es": "Ça va",
+  "en": "It's fine"
+ },
+ "va": {
+  "es": "Ça va",
+  "en": "It's fine"
+ },
+ "dit": {
+  "es": "dit Amélie.",
+  "en": "Amélie says."
+ },
+ "perd": {
+  "es": "Elle perd la place voisine,",
+  "en": "She loses the seat next to him,"
+ },
+ "voisine": {
+  "es": "Elle perd la place voisine,",
+  "en": "She loses the seat next to him,"
+ },
+ "continue": {
+  "es": "mais le repas continue.",
+  "en": "but the meal goes on."
+ }
+}

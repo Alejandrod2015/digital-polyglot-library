@@ -1,0 +1,358 @@
+{
+ "ligne": {
+  "es": "La ligne corrigée",
+  "en": "The corrected line"
+ },
+ "corrigée": {
+  "es": "La ligne corrigée",
+  "en": "The corrected line"
+ },
+ "chez": {
+  "es": "Chez Marc, Amélie donne le dossier fin",
+  "en": "At Marc's, Amélie hands the thin file"
+ },
+ "donne": {
+  "es": "Chez Marc, Amélie donne le dossier fin",
+  "en": "At Marc's, Amélie hands the thin file"
+ },
+ "dossier": {
+  "es": "Chez Marc, Amélie donne le dossier fin",
+  "en": "At Marc's, Amélie hands the thin file"
+ },
+ "fin": {
+  "es": "Chez Marc, Amélie donne le dossier fin",
+  "en": "At Marc's, Amélie hands the thin file"
+ },
+ "à": {
+  "es": "à Marc.",
+  "en": "to Marc."
+ },
+ "il": {
+  "es": "Il reste près de la fenêtre et attend.",
+  "en": "He stays near the window and waits."
+ },
+ "reste": {
+  "es": "Il reste près de la fenêtre et attend.",
+  "en": "He stays near the window and waits."
+ },
+ "près": {
+  "es": "Il reste près de la fenêtre et attend.",
+  "en": "He stays near the window and waits."
+ },
+ "de": {
+  "es": "Il reste près de la fenêtre et attend.",
+  "en": "He stays near the window and waits."
+ },
+ "fenêtre": {
+  "es": "Il reste près de la fenêtre et attend.",
+  "en": "He stays near the window and waits."
+ },
+ "et": {
+  "es": "Il reste près de la fenêtre et attend.",
+  "en": "He stays near the window and waits."
+ },
+ "attend": {
+  "es": "Il reste près de la fenêtre et attend.",
+  "en": "He stays near the window and waits."
+ },
+ "lit": {
+  "es": "Amélie lit l'invitation.",
+  "en": "Amélie reads the invitation."
+ },
+ "invitation": {
+  "es": "Amélie lit l'invitation.",
+  "en": "Amélie reads the invitation."
+ },
+ "manque": {
+  "es": "Il manque un nom dans la ligne",
+  "en": "A name is missing from the line"
+ },
+ "nom": {
+  "es": "Il manque un nom dans la ligne",
+  "en": "A name is missing from the line"
+ },
+ "dans": {
+  "es": "Il manque un nom dans la ligne",
+  "en": "A name is missing from the line"
+ },
+ "dit": {
+  "es": "dit Marc.",
+  "en": "Marc says."
+ },
+ "a": {
+  "es": "Amélie a la main froide.",
+  "en": "Amélie's hand is cold."
+ },
+ "main": {
+  "es": "Amélie a la main froide.",
+  "en": "Amélie's hand is cold."
+ },
+ "froide": {
+  "es": "Amélie a la main froide.",
+  "en": "Amélie's hand is cold."
+ },
+ "son": {
+  "es": "Son train arrive dans une heure",
+  "en": "Her train arrives in an hour"
+ },
+ "train": {
+  "es": "Son train arrive dans une heure",
+  "en": "Her train arrives in an hour"
+ },
+ "arrive": {
+  "es": "Son train arrive dans une heure",
+  "en": "Her train arrives in an hour"
+ },
+ "heure": {
+  "es": "Son train arrive dans une heure",
+  "en": "Her train arrives in an hour"
+ },
+ "murmure-t-elle": {
+  "es": "murmure-t-elle.",
+  "en": "she murmurs."
+ },
+ "nuit": {
+  "es": "La nuit semble déjà proche.",
+  "en": "Night already seems close."
+ },
+ "semble": {
+  "es": "La nuit semble déjà proche.",
+  "en": "Night already seems close."
+ },
+ "déjà": {
+  "es": "La nuit semble déjà proche.",
+  "en": "Night already seems close."
+ },
+ "proche": {
+  "es": "La nuit semble déjà proche.",
+  "en": "Night already seems close."
+ },
+ "parle": {
+  "es": "Marc parle bas.",
+  "en": "Marc speaks quietly."
+ },
+ "bas": {
+  "es": "Marc parle bas.",
+  "en": "Marc speaks quietly."
+ },
+ "on": {
+  "es": "On peut revenir au message demain.",
+  "en": "We can come back to the message tomorrow."
+ },
+ "peut": {
+  "es": "On peut revenir au message demain.",
+  "en": "We can come back to the message tomorrow."
+ },
+ "revenir": {
+  "es": "On peut revenir au message demain.",
+  "en": "We can come back to the message tomorrow."
+ },
+ "au": {
+  "es": "On peut revenir au message demain.",
+  "en": "We can come back to the message tomorrow."
+ },
+ "message": {
+  "es": "On peut revenir au message demain.",
+  "en": "We can come back to the message tomorrow."
+ },
+ "demain": {
+  "es": "On peut revenir au message demain.",
+  "en": "We can come back to the message tomorrow."
+ },
+ "secoue": {
+  "es": "Amélie secoue la tête.",
+  "en": "Amélie shakes her head."
+ },
+ "tête": {
+  "es": "Amélie secoue la tête.",
+  "en": "Amélie shakes her head."
+ },
+ "non": {
+  "es": "Non, je veux finir ici, maintenant",
+  "en": "No, I want to finish here, now"
+ },
+ "je": {
+  "es": "Non, je veux finir ici, maintenant",
+  "en": "No, I want to finish here, now"
+ },
+ "veux": {
+  "es": "Non, je veux finir ici, maintenant",
+  "en": "No, I want to finish here, now"
+ },
+ "finir": {
+  "es": "Non, je veux finir ici, maintenant",
+  "en": "No, I want to finish here, now"
+ },
+ "ici": {
+  "es": "Non, je veux finir ici, maintenant",
+  "en": "No, I want to finish here, now"
+ },
+ "maintenant": {
+  "es": "Non, je veux finir ici, maintenant",
+  "en": "No, I want to finish here, now"
+ },
+ "répond-elle": {
+  "es": "répond-elle.",
+  "en": "she replies."
+ },
+ "elle": {
+  "es": "Elle ne veut perdre personne.",
+  "en": "She doesn't want to lose anyone."
+ },
+ "ne": {
+  "es": "Elle ne veut perdre personne.",
+  "en": "She doesn't want to lose anyone."
+ },
+ "veut": {
+  "es": "Elle ne veut perdre personne.",
+  "en": "She doesn't want to lose anyone."
+ },
+ "perdre": {
+  "es": "Elle ne veut perdre personne.",
+  "en": "She doesn't want to lose anyone."
+ },
+ "personne": {
+  "es": "Elle ne veut perdre personne.",
+  "en": "She doesn't want to lose anyone."
+ },
+ "réponse": {
+  "es": "Elle veut une réponse claire.",
+  "en": "She wants a clear answer."
+ },
+ "claire": {
+  "es": "Elle veut une réponse claire.",
+  "en": "She wants a clear answer."
+ },
+ "passe-moi": {
+  "es": "Passe-moi le stylo noir",
+  "en": "Pass me the black pen"
+ },
+ "stylo": {
+  "es": "Passe-moi le stylo noir",
+  "en": "Pass me the black pen"
+ },
+ "noir": {
+  "es": "Passe-moi le stylo noir",
+  "en": "Pass me the black pen"
+ },
+ "demande": {
+  "es": "demande Amélie.",
+  "en": "Amélie asks."
+ },
+ "sa": {
+  "es": "Sa main tremble,",
+  "en": "Her hand shakes,"
+ },
+ "tremble": {
+  "es": "Sa main tremble,",
+  "en": "Her hand shakes,"
+ },
+ "parce": {
+  "es": "parce qu'elle a peur de rater encore.",
+  "en": "because she's afraid of failing again."
+ },
+ "peur": {
+  "es": "parce qu'elle a peur de rater encore.",
+  "en": "because she's afraid of failing again."
+ },
+ "rater": {
+  "es": "parce qu'elle a peur de rater encore.",
+  "en": "because she's afraid of failing again."
+ },
+ "encore": {
+  "es": "parce qu'elle a peur de rater encore.",
+  "en": "because she's afraid of failing again."
+ },
+ "porte": {
+  "es": "Marc porte le sac et promet:",
+  "en": "Marc carries the bag and promises:"
+ },
+ "sac": {
+  "es": "Marc porte le sac et promet:",
+  "en": "Marc carries the bag and promises:"
+ },
+ "promet": {
+  "es": "Marc porte le sac et promet:",
+  "en": "Marc carries the bag and promises:"
+ },
+ "corrige": {
+  "es": "Amélie corrige la ligne:",
+  "en": "Amélie corrects the line:"
+ },
+ "viens": {
+  "es": "Viens quand tu peux.",
+  "en": "Come when you can."
+ },
+ "quand": {
+  "es": "Viens quand tu peux.",
+  "en": "Come when you can."
+ },
+ "tu": {
+  "es": "Viens quand tu peux.",
+  "en": "Come when you can."
+ },
+ "peux": {
+  "es": "Viens quand tu peux.",
+  "en": "Come when you can."
+ },
+ "sourit": {
+  "es": "Marc sourit.",
+  "en": "Marc smiles."
+ },
+ "est": {
+  "es": "C'est accepté par mon cœur.",
+  "en": "My heart accepts it."
+ },
+ "accepté": {
+  "es": "C'est accepté par mon cœur.",
+  "en": "My heart accepts it."
+ },
+ "par": {
+  "es": "C'est accepté par mon cœur.",
+  "en": "My heart accepts it."
+ },
+ "mon": {
+  "es": "C'est accepté par mon cœur.",
+  "en": "My heart accepts it."
+ },
+ "cœur": {
+  "es": "C'est accepté par mon cœur.",
+  "en": "My heart accepts it."
+ },
+ "rit": {
+  "es": "Il rit doucement.",
+  "en": "He laughs softly."
+ },
+ "doucement": {
+  "es": "Il rit doucement.",
+  "en": "He laughs softly."
+ },
+ "gâteau": {
+  "es": "Le gâteau coûte cher,",
+  "en": "The cake is expensive,"
+ },
+ "coûte": {
+  "es": "Le gâteau coûte cher,",
+  "en": "The cake is expensive,"
+ },
+ "cher": {
+  "es": "Le gâteau coûte cher,",
+  "en": "The cake is expensive,"
+ },
+ "mais": {
+  "es": "mais l'invitation sort juste, enfin.",
+  "en": "but the invitation comes out right, at last."
+ },
+ "sort": {
+  "es": "mais l'invitation sort juste, enfin.",
+  "en": "but the invitation comes out right, at last."
+ },
+ "juste": {
+  "es": "mais l'invitation sort juste, enfin.",
+  "en": "but the invitation comes out right, at last."
+ },
+ "enfin": {
+  "es": "mais l'invitation sort juste, enfin.",
+  "en": "but the invitation comes out right, at last."
+ }
+}
