@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "b1",
+  "variante": "france",
+  "registro": "tension seca de cifras entre amigos: el banco, el contrato y la hoja escrita a mano, dichos con pocas palabras",
+  "espina": "Aurelien y Elodie abren un taller de bicicletas en Fives y su amistad se pone a prueba como socios. Este tema es el dinero: quien pone que, a nombre de quien, y que queda escrito entre los dos.",
+  "recursos": "B1: narrador en passe compose e imparfait con plus-que-parfait; conditionnel de hipotesis (vous pourriez tout perdre); si + imparfait (et si je les mettais); subjonctif tras pour que / vouloir que; discours indirect (Yasmine a explique que le pret etait accepte); reversa cosida (asiente porque Elodie le mira, y cuelga a regañadientes); cambio de ritmo (Il a raccroche a contrecoeur.); espejo concreto (el contrato sin firmar sobre el banco de trabajo y la reconocimiento de deuda firmada sobre el mismo banco).",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Aurelien quiere que el banco preste el dinero del taller.",
+      "impide": "Falta la aportacion personal y Elodie no tiene ni un euro desde que cerro su tienda.",
+      "cuesta": "Pone los treinta mil euros que ahorraba para un piso de dos habitaciones en Wazemmes y renuncia al piso.",
+      "cambia": "Pasa de guardar por prudencia a jugarse sus ahorros por el proyecto comun.",
+      "emocion": "Nervios de examen ante Yasmine; asiente porque Elodie lo mira, y cuelga el telefono de la agencia a regañadientes."
+    },
+    {
+      "slot": "2",
+      "quiere": "Aurelien quiere firmar el prestamo aunque salga solo a su nombre, porque para el no cambia nada.",
+      "impide": "Elodie se niega a ser la empleada de su amigo en un taller que solo seria de el sobre el papel.",
+      "cuesta": "La oferta del banco caduca el viernes sin firma y el tipo de interes sube.",
+      "cambia": "Aurelien entiende que para Elodie el papel es una cuestion de justicia, no de tramites.",
+      "emocion": "Elodie herida en su lugar: lee el contrato dos veces con los labios apretados y se va dando un portazo con las llaves en el bolsillo."
+    },
+    {
+      "slot": "3",
+      "quiere": "Aurelien quiere que los dos pongan lo mismo, sin que nada cambie entre ellos.",
+      "impide": "Elodie acepta el prestamo de su amigo solo con un reconocimiento de deuda firmado y fechado.",
+      "cuesta": "Entre los dos amigos hay por primera vez una cuenta escrita, y el banco firma con un tipo peor.",
+      "cambia": "El taller queda a nombre de los dos, y la amistad aprende a convivir con un papel.",
+      "emocion": "Aurelien se siente desconfiado cuando es al reves; protesta, pero Elodie firma primero con letra aplicada y guarda el boligrafo como si nada."
+    }
+  ]
+}
