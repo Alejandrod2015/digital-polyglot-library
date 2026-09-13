@@ -22,6 +22,7 @@ import { isPortugueseA1A2 } from "./cefr/portugueseA1A2";
 import { isPortugueseB1Lemma } from "./cefr/portugueseB1";
 import { isFrenchA1A2 } from "./cefr/frenchA1A2";
 import { classifyName, getNameBank } from "@/lib/characterNames";
+import { canonicalLanguageName } from "@/lib/languageNames";
 
 // City list mirrored from src/lib/journeyCasts.ts. Inlined because the
 // real cast module pulls in elevenlabs.ts → prisma.ts → server-only,
@@ -294,17 +295,45 @@ const COMMON_PREFIXES_DE = ["ge", "ver", "be", "er", "ent"];
 // "die Wartemarke"+"die Wohnungssuche" y "der Verein"+"der Vorsitz" como misma
 // raiz, y en cambio dejaba pasar "der Antrag"+"die Antragstellerin".
 // Quitar el articulo no afloja el gate: lo hace medir lo que dice medir.
-const ARTICLES_DE = ["der ", "die ", "das "];
+//
+// Articulos por idioma (con su espacio, o el apostrofo pegado del frances e
+// italiano). Una lista por idioma y no una comun: "a " es articulo en
+// portugues y preposicion en espanol ("a pie").
+const ARTICLES_BY_LANG: Record<string, string[]> = {
+  DE: ["der ", "die ", "das ", "den ", "dem ", "des ", "ein ", "eine "],
+  FR: ["le ", "la ", "les ", "l'", "l\u2019"],
+  ES: ["el ", "la ", "los ", "las "],
+  IT: ["il ", "lo ", "la ", "gli ", "le ", "l'", "l\u2019"],
+  PT: ["o ", "a ", "os ", "as "],
+};
+
+function stripArticle(word: string, lang?: string): string {
+  const lower = word.trim().toLowerCase();
+  for (const a of ARTICLES_BY_LANG[(lang ?? "").toUpperCase()] ?? []) {
+    if (lower.startsWith(a) && lower.length > a.length) return lower.slice(a.length);
+  }
+  return lower;
+}
+
+// El validador compara el idioma como CODIGO ("DE", "ES"), pero la base guarda
+// el NOMBRE ("german"). `cierraTema` leyendo de la base le pasaba "german", y
+// todo check atado a "DE" se apagaba sin avisar: entre ellos el recorte del
+// articulo de `vocab-no-same-root`, que volvia a agrupar "der Platz"+"der Park"
+// por "der p". `saveStory` pasa `--lang DE` y no lo veia. Mismo validador,
+// dos resultados segun quien lo llamara.
+const LANGUAGE_CODE: Record<string, string> = {
+  Spanish: "ES", German: "DE", Italian: "IT", French: "FR", Portuguese: "PT", English: "EN",
+};
+
+export function languageCode(value: string | null | undefined): string | undefined {
+  if (!value) return value ?? undefined;
+  const name = canonicalLanguageName(value);
+  return name ? LANGUAGE_CODE[name] : value;
+}
 
 function stripPrefix(word: string, lang?: string): string {
   if (lang !== "DE") return word;
-  let lower = word.toLowerCase();
-  for (const a of ARTICLES_DE) {
-    if (lower.startsWith(a)) {
-      lower = lower.slice(a.length);
-      break;
-    }
-  }
+  const lower = stripArticle(word, lang);
   for (const p of [...SEPARABLE_PREFIXES_DE, ...COMMON_PREFIXES_DE]) {
     if (lower.startsWith(p) && lower.length > p.length + 3) {
       return lower.slice(p.length);
@@ -492,6 +521,7 @@ export async function validateGeneratedStory(
   context: ValidationContext = {}
 ): Promise<ValidationResult> {
   const checks: Check[] = [];
+  context = { ...context, language: languageCode(context.language) };
   // A0 level profile toggle (see A0_VOCAB_TYPES). A0 is the true beginner
   // floor with genuinely different length/synopsis/arcType/def specs.
   const isA0 = (context.level ?? "").toUpperCase() === "A0";
@@ -2218,6 +2248,7 @@ export async function validateGeneratedStory(
   // Same-root duplicates
   const langForRoot = (context.language ?? "").toUpperCase();
   const rootMap = new Map<string, string[]>();
+  const bares: Array<{ word: string; bare: string }> = [];
   for (const v of parsed.vocab) {
     // En aleman la cabeza de una locucion va al FINAL ("unter Druck" -> Druck,
     // "eine halbe Ewigkeit" -> Ewigkeit, "sich entscheiden" -> entscheiden).
@@ -2227,11 +2258,27 @@ export async function validateGeneratedStory(
     // Abstimmung", que es justo el duplicado que este check existe para ver.
     const head =
       langForRoot === "DE" ? v.word.trim().split(/\s+/).pop() ?? v.word : v.word;
-    const root = stripPrefix(head, langForRoot).slice(0, 5);
+    const bare = stripArticle(head, langForRoot);
+    const root = (langForRoot === "DE" ? stripPrefix(bare, langForRoot) : bare).slice(0, 5);
     if (root.length < 3) continue;
     const arr = rootMap.get(root) ?? [];
     arr.push(v.word);
     rootMap.set(root, arr);
+    bares.push({ word: v.word, bare });
+  }
+  // El recorte de prefijos separa lo que comparte raiz de verdad cuando la
+  // palabra ENTERA es el comienzo de la otra: "gegen" se queda en "gegen" y
+  // "gegenüber" pierde el "ge" y da "genüb". Por eso, ademas de la raiz, una
+  // palabra de 5+ letras que abre a otra cuenta como la misma raiz.
+  for (const a of bares) {
+    for (const b of bares) {
+      if (a === b || a.bare.length < 5 || b.bare.length <= a.bare.length) continue;
+      if (!b.bare.startsWith(a.bare)) continue;
+      const key = a.bare.slice(0, 5);
+      const arr = rootMap.get(key) ?? [];
+      for (const w of [a.word, b.word]) if (!arr.includes(w)) arr.push(w);
+      rootMap.set(key, arr);
+    }
   }
   const dupRoots = [...rootMap.entries()].filter(([, words]) => words.length > 1);
   checks.push({
