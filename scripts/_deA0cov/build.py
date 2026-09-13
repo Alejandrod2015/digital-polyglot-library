@@ -31,7 +31,10 @@ def sheet(names):
 
 HEAD = ("LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone "
         "and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. "
-        "No text, letters or numbers anywhere in the image; any postcard, note, letter, book or newspaper in the scene must show a blank or turned away side, never legible writing.\n\n"
+        "No text, letters or numbers anywhere in the image. No readable surfaces, no signs, no posters, no visible writing paper, no open books, no open newspapers, "
+        "no front-facing screens. Any postcard shows only its photograph side, never the written side. Any note, letter or list shows only a plain blank side or its "
+        "folded outside, never legible writing. Any book spine or stack of books shows plain solid-colour spines with no titles, marks or numbers. Any die shows "
+        "plain dot pips, never numerals.\n\n"
         "STYLE: Clean cel-shaded editorial illustration, smooth flat shading, crisp clean linework, vivid warm colour, natural skin with no blush, natural eyes, "
         "bright daylight unless the scene says otherwise, 16:9 landscape.\n\n"
         "FRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\n"
@@ -45,11 +48,11 @@ CELLAR = "the building's shared cellar in Bremen, one bare bulb overhead, severa
 T = [
  ("letters-and-invitations", "Letters & Invitations", ["ANNA", "JAN"], [
   ("karten-ohne-briefmarke", "Karten ohne Briefmarke", 1,
-   f"In {KITCHEN}, morning light through the window, two cups of tea steaming on the table. ANNA sits with a small wooden box overflowing with postcards, every postcard lying blank side up with no writing visible; JAN stands beside the table holding one postcard with its back turned fully towards the viewer, reading it aloud, eyebrows raised. Medium shot across the table, both waist up.", ""),
+   f"In {KITCHEN}, morning light through the window, two cups of tea steaming on the table. ANNA sits with a small wooden box overflowing with postcards, every postcard lying photo side up showing colourful travel landscapes, no writing visible; JAN stands beside the table holding one postcard with its colourful photo side facing the viewer, the written side turned towards himself as he reads it aloud, eyebrows raised. Medium shot across the table, both waist up.", ""),
   ("zwolf-alte-adressen", "Zwölf alte Adressen", 2,
-   f"In {KITCHEN}, afternoon light. JAN holds his phone up with the screen facing fully away from the viewer, pointing at it with one finger; ANNA sits at the table holding a folded sheet of paper close to her chest, its written side turned away from the viewer, a pen in her other hand. Two empty postcards lie face down on the table. Medium shot across the table, both waist up.", ""),
+   f"In {KITCHEN}, afternoon light. JAN holds his phone up with the screen facing fully away from the viewer, pointing at it with one finger; ANNA sits at the table holding a folded sheet of paper close to her chest, its written side turned away from the viewer, a pen in her other hand. Two postcards lie photo side up on the table, colourful travel landscapes, their written versos hidden beneath. Medium shot across the table, both waist up.", ""),
   ("funf-marken-am-sonntag", "Fünf Marken am Sonntag", 3,
-   f"Outside on a quiet cobbled street corner in Bremen's Viertel, late afternoon, a tall bright yellow German mailbox against an ochre building facade. ANNA holds a small stack of postcards flat against her body, blank sides facing the viewer, about to slide them into the mailbox slot; JAN stands close behind her with one arm resting on her shoulder, watching. A small booklet of blank colourful stamp squares peeks from his other hand. Medium shot from the side, both full body.", ""),
+   f"Outside on a quiet cobbled street corner in Bremen's Viertel, late afternoon, a tall bright yellow German mailbox against an ochre building facade. ANNA holds a small stack of postcards flat against her body, colourful photo sides facing the viewer, about to slide them into the mailbox slot; JAN stands close behind her with one arm resting on her shoulder, watching. A small booklet of plain solid-colour stamp squares, no pictures or markings, peeks from his other hand. Medium shot from the side, both full body.", ""),
  ]),
  ("looks-and-memories", "Looks & Memories", ["ANNA", "JAN", "NELE"], [
   ("fotos-am-kuhlschrank", "Fotos am Kühlschrank", 1,
@@ -61,19 +64,19 @@ T = [
  ]),
  ("games-and-rules", "Games & Rules", ["ANNA", "JAN", "FELIX"], [
   ("felix-erklart-zu-schnell", "Felix erklärt zu schnell", 1,
-   f"In {KITCHEN}, evening, warm lamp light, a board game spread across the table with small blank wooden pieces and a single red die. FELIX sits across the table gesturing quickly with both hands over the board; ANNA sits beside JAN holding the red die loosely, looking a little lost; JAN sits close beside her, watching the board. Medium shot across the table, all three waist up.", ""),
+   f"In {KITCHEN}, evening, warm lamp light, a board game spread across the table with small blank wooden pieces and a single red die marked only with plain dot pips. FELIX sits across the table gesturing quickly with both hands over the board; ANNA sits beside JAN holding the red die loosely, looking a little lost; JAN sits close beside her, watching the board. Medium shot across the table, all three waist up.", ""),
   ("annas-roter-wurfel", "Annas roter Würfel", 2,
-   f"In {KITCHEN} late at night, only one warm lamp lit, an old cracked wooden game board on the table with a small open box beside it. ANNA holds a single red die tightly in her closed hand, resting it against her chest; JAN sits across from her arranging a few blank game pieces on the board, glancing up at her. FELIX does not appear in this scene. Close medium shot, both waist up.", "Felix no sale: la escena es solo Anna y Jan en la cocina."),
+   f"In {KITCHEN} late at night, only one warm lamp lit, an old cracked wooden game board on the table with a small open box beside it. ANNA holds a single red die marked only with plain dot pips tightly in her closed hand, resting it against her chest; JAN sits across from her arranging a few blank game pieces on the board, glancing up at her. FELIX does not appear in this scene. Close medium shot, both waist up.", "Felix no sale: la escena es solo Anna y Jan en la cocina."),
   ("eine-vier-im-hof", "Eine Vier im Hof", 3,
    f"In {HOF}, bright afternoon, a small folding table with a board game on it near the cobblestones, an iron floor grate nearby. ANNA stands with both arms raised high in victory, mouth open in a joyful shout; FELIX sits at the table looking down at the grate with one hand reaching towards it, a rueful smile on his face. JAN does not appear in this scene. Medium shot, both full body.", "Jan no sale: la escena es solo Anna y Felix en el patio."),
  ]),
  ("books-and-reading", "Books & Reading", ["ANNA", "JAN", "JOHANNA"], [
   ("bucher-auf-der-treppe", "Bücher auf der Treppe", 1,
-   f"On {STAIRS}, in front of a tall wooden bookcase built into the wall, packed with books of every size, their spines turned towards the viewer with no legible titles. JOHANNA stands beside the bookcase holding a stack of books against one hip, a pencil tucked behind her ear; ANNA sits on a step below her, looking up, hands resting on her knees. JAN does not appear in this scene. Medium shot, both full body.", "Jan no sale: solo se le nombra."),
+   f"On {STAIRS}, in front of a tall wooden bookcase built into the wall, packed with books of every size, every spine a plain solid colour with no titles, marks or numbers. JOHANNA stands beside the bookcase holding a stack of books against one hip, their spines also plain solid colours, a pencil tucked behind her ear; ANNA sits on a step below her, looking up, hands resting on her knees. JAN does not appear in this scene. Medium shot, both full body.", "Jan no sale: solo se le nombra."),
   ("zettel-in-johannas-dose", "Zettel in Johannas Dose", 2,
    f"On {STAIRS}, seated together on a wide step, a small round metal tin open between them overflowing with tiny folded notes, none of them unfolded or legible. JOHANNA holds one folded note up, laughing; ANNA holds a single small yellow folded note pressed flat against her chest with both hands, eyes closed. JAN does not appear in this scene. Close medium shot, both waist up.", "Jan no sale: solo se le nombra."),
   ("seite-vierzig", "Seite vierzig", 3,
-   f"In {KITCHEN}, evening, a pot simmering on the stove. JAN stands at the stove holding a green hardcover book closed against his chest, spine facing the viewer, no title visible; ANNA stands close beside him holding a small yellow folded note flat in her palm, looking at the book rather than the viewer. A wooden bookshelf with a framed photo stands in the background. Medium shot, both waist up.", "Johanna no sale: solo trajo el libro antes de esta escena."),
+   f"In {KITCHEN}, evening, a pot simmering on the stove. JAN stands at the stove holding a green hardcover book closed against his chest, its spine a plain solid green with no title or lettering of any kind; ANNA stands close beside him holding a small yellow folded note flat in her palm, looking at the book rather than the viewer. A wooden bookshelf with a framed photo and books with plain solid-colour spines stands in the background. Medium shot, both waist up.", "Johanna no sale: solo trajo el libro antes de esta escena."),
  ]),
  ("music-and-singing", "Music & Singing", ["ANNA", "JAN", "TIM"], [
   ("tims-trommelstocke", "Tims Trommelstöcke", 1,
@@ -97,7 +100,7 @@ T = [
   ("die-liste-am-kuhlschrank", "Die Liste am Kühlschrank", 2,
    f"In {KITCHEN}, night, only the light from inside the open refrigerator and one small lamp. ANNA stands in front of the fridge holding a sheet of paper flat against its door with one hand, a pen in the other, the written side of the paper facing fully away from the viewer; JAN stands beside her, yawning, one hand rubbing his eye. NIKLAS does not appear in this scene. Medium shot, both waist up.", "Niklas no sale: la escena es solo Anna y Jan de noche."),
   ("die-karte-vom-mai", "Die Karte vom Mai", 3,
-   f"In {KITCHEN}, evening, warm lamp light, two glasses of sparkling wine catching the light on the table. JAN stands at the open refrigerator holding a single postcard with its back turned fully towards the viewer, a small round magnet in his other hand; ANNA stands close beside him, watching him read it, her hand resting lightly on his arm. NIKLAS does not appear in this scene. Close medium shot, both waist up.", "Niklas no sale: ya se fue tras firmar el contrato."),
+   f"In {KITCHEN}, evening, warm lamp light, two glasses of sparkling wine catching the light on the table. JAN stands at the open refrigerator holding a single postcard with its colourful photo side facing the viewer, the written side turned towards himself as he reads it, a small round plain magnet in his other hand; ANNA stands close beside him, watching him read it, her hand resting lightly on his arm. NIKLAS does not appear in this scene. Close medium shot, both waist up.", "Niklas no sale: ya se fue tras firmar el contrato."),
  ]),
 ]
 
@@ -108,3 +111,26 @@ for topic, label, names, stories in T:
 json.dump(out, open("scripts/_deA0cov/portadas.json", "w"), ensure_ascii=False, indent=1)
 open("scripts/_deA0cov/portadas.json", "a").write("\n")
 print(f"{len(out)} temas, {sum(len(t['stories']) for t in out)} portadas")
+
+# --- para-el-doc.txt: mismo formato que scripts/_frA1cov/para-el-doc.txt ---
+doc = []
+doc.append("[Journey-planning, 2026-09-13] PETICIÓN DE A0 Friends: 21 portadas + 7 cast sheets, carpeta alemania-a0-friends bajo la raíz 1sFlqVaqsLy1cGqPNpLh5JJE03Dw1rnZP")
+doc.append("")
+for topic, label, names, stories in T:
+    doc.append(f"TEMA: {label} ({topic})")
+    doc.append("Lugar: Bremen, Germany")
+    doc.append("Reparto:")
+    for nm in names:
+        doc.append(f"- {nm}: {C[nm]}.")
+    doc.append("")
+    doc.append("CAST SHEET:")
+    doc.append(sheet(names))
+    doc.append("")
+    for i, (s, ti, sl, sc, no) in enumerate(stories, start=1):
+        doc.append(f"PORTADA {i}: {ti} ({s})")
+        doc.append(HEAD + sc)
+        doc.append(f"note: {no}")
+        doc.append("")
+    doc.append("")
+open("scripts/_deA0cov/para-el-doc.txt", "w").write("\n".join(doc).rstrip("\n") + "\n")
+print("para-el-doc.txt escrito")
