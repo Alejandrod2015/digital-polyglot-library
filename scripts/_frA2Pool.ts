@@ -13,7 +13,7 @@ async function main() {
   const soloOtro = lemmas.filter(l=>!taughtSame.has(l) && taughtOther.has(l));
   console.log("lemas en lista:", lemmas.length, "| Friends A0+A1 plazas:", total, "en lista:", inList);
   console.log("libres del todo:", libres.length, "| solo ensenados por Expat (otro tipo):", soloOtro.length, "| ya ensenados por Friends:", lemmas.filter(l=>taughtSame.has(l)).length);
-  console.log("LIBRES:", libres.join(", "));
+  require("fs").writeFileSync(process.env.OUT!, libres.join("\n"));
   await p.$disconnect();
 }
 main();
