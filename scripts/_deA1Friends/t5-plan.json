@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a1",
+  "variante": "germany",
+  "registro": "festivo y a escondidas: globos, luces apagadas, susurros y un movil que suena en el peor momento",
+  "espina": "Julia, fisioterapeuta de Rostock recien llegada a Frankfurt, quiere hacer amigos de verdad en una ciudad donde no conoce a nadie; cada tema le cuesta un hilo con Rostock, hasta que en el tema 7 su primera amistad de Frankfurt aguanta una pelea.",
+  "recursos": "A1: Perfekt (hat mitgebracht, war), modales (sollen, will, muss), separables partidos (macht aus, macht an, rufe an), inversion V2 (Um halb acht kommen die Gaeste); revelacion tardia (el cumpleanos de la amiga a la misma hora), gancho a mitad de tema (el movil que suena en el cajon), humor de situacion (Moritz pide azucar para su propio pastel), ancla cultural de Frankfurt (Apfelwein, Handkaese, gruene Sosse)",
+  "historias": [
+    { "slot": "0", "quiere": "organizar la fiesta sorpresa de Moritz con Philipp", "impide": "ese sabado a las ocho es tambien la videollamada del cumpleanos de su mejor amiga", "cuesta": "decide callar y no avisar a Rostock", "cambia": "elige la fiesta de Frankfurt aunque sabe que tiene un precio", "emocion": "agobio: se muerde el labio porque no puede estar en los dos sitios; guarda el movil en el cajon" },
+    { "slot": "1", "quiere": "que Moritz no descubra la fiesta antes de las ocho", "impide": "Moritz llama a su puerta a pedir azucar y alguien se rie detras", "cuesta": "tiene que mentirle a la cara a su amigo", "cambia": "la sorpresa queda en el aire cuando suena el movil", "emocion": "nervios y culpa: miente rapido; Moritz la mira raro" },
+    { "slot": "2", "quiere": "que la sorpresa salga bien", "impide": "la llamada de su mejor amiga suena justo cuando Moritz esta en la puerta", "cuesta": "cuelga a su mejor amiga en su cumpleanos, y la amiga no contesta el mensaje", "cambia": "Moritz tiene su primera fiesta en diez anos y Julia siente que esa noche pertenece a Frankfurt", "emocion": "alegria con una espina: Moritz rie con los ojos brillantes; Julia espera la respuesta y deja el movil" }
+  ]
+}

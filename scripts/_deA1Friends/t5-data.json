@@ -1,0 +1,406 @@
+[
+ {
+  "topic": "birthdays-and-surprises",
+  "slotIndex": 0,
+  "title": "Philipps Geheimnis",
+  "arcType": "late-reveal",
+  "synopsis": "Philipp, a colleague of Moritz from the trams, knocks on Julia's door. Moritz never celebrates his birthday, so Philipp wants a surprise party in Julia's flat. Julia says yes at once. Later she sees that her best friend has a birthday on the same day, with a video call at the same time.",
+  "text": "Julia, die Physiotherapeutin aus Rostock, hört am Dienstagabend ein leises Klopfen. Moritz ist Straßenbahnfahrer und heute noch bei der Arbeit. Sein Kollege Philipp steht vor Julias Tür und ist ziemlich nervös.\n\n“Moritz wird am Samstag fünfunddreißig, aber er feiert nie”, erklärt Philipp leise. “Machen wir eine Überraschungsparty? Hier bei dir, du wohnst ja gegenüber. Er merkt bestimmt nichts.”\n\n“Ehrlich? Ja, sehr gern! Ich backe einen großen Kuchen”, antwortet Julia. Philipp gibt ihr eine Liste: Sekt, Apfelwein, Luftballons und Geschenkpapier.\n\nSpäter schaut Julia in ihren Kalender. Am Samstag hat auch ihre beste Freundin Geburtstag, und um acht gibt es einen Videoanruf mit allen aus Rostock. Die Party für Moritz ist auch um acht.\n\n“Oh nein, das auch noch”, murmelt Julia und beißt sich auf die Lippe. Sie schreibt nichts nach Rostock und legt das Handy in die Schublade. “Beides ist unmöglich”, sagt sie leise zu sich. Der Samstag wird schwierig. Trotzdem backt sie am nächsten Tag.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "der Dienstagabend",
+    "surface": "Dienstagabend",
+    "definition": "The evening of a Tuesday, after work on the second day of the week.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "heute",
+    "surface": "heute",
+    "definition": "Today; on this day, not yesterday and not tomorrow."
+   },
+   {
+    "type": "adjective",
+    "word": "nervös",
+    "surface": "nervös",
+    "definition": "Nervous; a little afraid and not calm about what will happen."
+   },
+   {
+    "type": "noun",
+    "word": "die Überraschungsparty",
+    "surface": "Überraschungsparty",
+    "definition": "A surprise party; friends plan it in secret for one person.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "wohnen",
+    "surface": "wohnst",
+    "definition": "To live in a flat or a house at a certain place."
+   },
+   {
+    "type": "verb",
+    "word": "merken",
+    "surface": "merkt",
+    "definition": "To notice; to see or understand that something is going on."
+   },
+   {
+    "type": "adverb",
+    "word": "bestimmt",
+    "surface": "bestimmt",
+    "definition": "Surely; almost certainly, you are quite sure about it."
+   },
+   {
+    "type": "adverb",
+    "word": "ehrlich",
+    "surface": "Ehrlich",
+    "definition": "Really; you say it when you are surprised and want the truth."
+   },
+   {
+    "type": "verb",
+    "word": "backen",
+    "surface": "backe",
+    "definition": "To bake; to make a cake or bread in the oven."
+   },
+   {
+    "type": "noun",
+    "word": "der Sekt",
+    "surface": "Sekt",
+    "definition": "German sparkling wine; people often drink it at a party.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "der Apfelwein",
+    "surface": "Apfelwein",
+    "definition": "Apple wine; a sour drink made from apples, famous in Frankfurt.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "der Luftballon",
+    "surface": "Luftballons",
+    "definition": "A balloon; a coloured rubber bag full of air for parties."
+   },
+   {
+    "type": "noun",
+    "word": "das Geschenkpapier",
+    "surface": "Geschenkpapier",
+    "definition": "Wrapping paper; nice paper you put around a present.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "auch",
+    "surface": "auch",
+    "definition": "Also; too, in the same way as the other thing."
+   },
+   {
+    "type": "verb",
+    "word": "beißen",
+    "surface": "beißt",
+    "definition": "To bite; to press your teeth hard on something."
+   },
+   {
+    "type": "noun",
+    "word": "die Lippe",
+    "surface": "Lippe",
+    "definition": "A lip; one of the two soft edges of your mouth.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "unmöglich",
+    "surface": "unmöglich",
+    "definition": "Impossible; it cannot happen or cannot be done at all."
+   },
+   {
+    "type": "adjective",
+    "word": "schwierig",
+    "surface": "schwierig",
+    "definition": "Difficult; hard to do, with many problems on the way."
+   },
+   {
+    "type": "adverb",
+    "word": "trotzdem",
+    "surface": "Trotzdem",
+    "definition": "Still; even so, you do it although there is a problem."
+   },
+   {
+    "type": "verb",
+    "word": "murmeln",
+    "surface": "murmelt",
+    "definition": "To mumble; to say something very quietly, almost to yourself."
+   }
+  ]
+ },
+ {
+  "topic": "birthdays-and-surprises",
+  "slotIndex": 1,
+  "title": "Luftballons im Dunkeln",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "Julia's flat is full of balloons, apple wine and Moritz's favourite green sauce. The friends from the running group hide in the dark. Just before eight Moritz knocks and asks for sugar, and Julia has to lie. Then her phone starts to ring very loudly in the drawer.",
+  "text": "Ihr Wohnzimmer ist am Samstag voll mit Luftballons. Philipp hat Handkäse und grüne Soße mitgebracht, das Lieblingsessen von Moritz.\n\nUm halb acht kommen die Gäste leise durch das Treppenhaus: Svenja, Florian und Theresa. “Pst! Er kommt um acht. Keiner sagt ein Wort”, flüstert Philipp und macht das Licht aus.\n\n“Und wo sollen wir jetzt warten?”, fragt Svenja. Alle sitzen heimlich im Dunkeln hinter dem Sofa.\n\nUm fünf vor acht klopft es. Julia öffnet die Tür. Moritz steht barfuß und in Jogginghose im Flur. In der Wohnung ist es warm. “Hallo, Nachbarin. Hast du vielleicht Zucker? Ich backe mir heute selbst einen Kuchen”, sagt er ein wenig traurig.\n\n“Nein, leider nicht. Tut mir leid”, lügt Julia. Hinter ihr kichert jemand. Moritz schaut sie komisch an. “Ist bei dir eigentlich alles in Ordnung?”, fragt er.\n\nIn diesem Moment klingelt ihr Handy in der Schublade. Der Klingelton ist laut und lustig: Es ist der Videoanruf aus Rostock.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "der Handkäse",
+    "surface": "Handkäse",
+    "definition": "A small, strong cheese from the Frankfurt area, often eaten with apple wine.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "grün",
+    "surface": "grüne",
+    "definition": "Green; the colour of grass and of many fresh herbs."
+   },
+   {
+    "type": "noun",
+    "word": "das Lieblingsessen",
+    "surface": "Lieblingsessen",
+    "definition": "Your favourite food; the dish you like best of all.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "halb",
+    "surface": "halb",
+    "definition": "Half; here, thirty minutes before the full hour."
+   },
+   {
+    "type": "verb",
+    "word": "sagen",
+    "surface": "sagt",
+    "definition": "To say; to speak words to someone who listens."
+   },
+   {
+    "type": "verb",
+    "word": "sollen",
+    "surface": "sollen",
+    "definition": "Should; here, to ask what you are supposed to do."
+   },
+   {
+    "type": "verb",
+    "word": "warten",
+    "surface": "warten",
+    "definition": "To wait; to stay in a place until something happens."
+   },
+   {
+    "type": "adverb",
+    "word": "heimlich",
+    "surface": "heimlich",
+    "definition": "Secretly; so that another person does not see or know it."
+   },
+   {
+    "type": "adjective",
+    "word": "dunkel",
+    "surface": "Dunkeln",
+    "definition": "Dark; with no light, so it is hard to see."
+   },
+   {
+    "type": "adverb",
+    "word": "selbst",
+    "surface": "selbst",
+    "definition": "Myself or himself; with no help from other people."
+   },
+   {
+    "type": "adverb",
+    "word": "wenig",
+    "surface": "wenig",
+    "definition": "A little; not much, only a small amount."
+   },
+   {
+    "type": "verb",
+    "word": "kichern",
+    "surface": "kichert",
+    "definition": "To giggle; to laugh quietly in a silly way."
+   },
+   {
+    "type": "adjective",
+    "word": "komisch",
+    "surface": "komisch",
+    "definition": "Strange or funny; a little odd, not normal."
+   },
+   {
+    "type": "adverb",
+    "word": "eigentlich",
+    "surface": "eigentlich",
+    "definition": "Actually or really; you use it to ask what is really true."
+   },
+   {
+    "type": "noun",
+    "word": "die Ordnung",
+    "surface": "Ordnung",
+    "definition": "Order; when everything is okay and nothing is wrong."
+   },
+   {
+    "type": "noun",
+    "word": "der Klingelton",
+    "surface": "Klingelton",
+    "definition": "A ringtone; the sound your phone makes when someone calls.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "lustig",
+    "surface": "lustig",
+    "definition": "Funny; it makes people laugh or smile a lot."
+   },
+   {
+    "type": "adjective",
+    "word": "barfuß",
+    "surface": "barfuß",
+    "definition": "Barefoot; with no shoes and no socks on your feet."
+   },
+   {
+    "type": "noun",
+    "word": "die Jogginghose",
+    "surface": "Jogginghose",
+    "definition": "Tracksuit bottoms; soft, loose trousers you wear at home or for sport.",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "hallo",
+    "surface": "Hallo",
+    "definition": "Hello; a friendly word to greet someone when you meet."
+   }
+  ]
+ },
+ {
+  "topic": "birthdays-and-surprises",
+  "slotIndex": 2,
+  "title": "Überraschung um acht",
+  "arcType": "reframe-turn",
+  "synopsis": "Julia does not answer the call from her best friend, and the surprise works. Moritz is very moved: his last party was ten years ago. They eat, drink and sing, and Julia gives him a voucher for a bakery. Late at night she writes to her friend, but no answer comes.",
+  "text": "Das Handy klingelt. Julia sieht das Gesicht ihrer besten Freundin auf dem kleinen Display. Sie will den Anruf nicht wegdrücken, aber sie muss.\n\n“Wer ist denn da drinnen? Hast du Besuch?”, fragt Moritz. Julia macht die Tür ganz auf, und Philipp macht das Licht an. Alles ist hell. “Überraschung!”, rufen alle zusammen.\n\nMoritz sagt lange nichts. Endlich lacht er herzlich, und seine Augen glänzen. “Meine letzte Party war vor zehn Jahren. Ihr seid echt verrückt”, erzählt er dankbar.\n\nSie essen gemeinsam grüne Soße und trinken Apfelwein. Dann singen alle ein Geburtstagslied.\n\nJulia gibt Moritz eine Grußkarte mit einem Gutschein. “Für die Bäckerei, für deinen nächsten Kuchen”, sagt sie, und alle lachen.\n\nSpäter schreibt Julia nach Rostock: “Alles Gute zum Geburtstag! Es tut mir leid. Ich rufe dich morgen an.” Sie wartet und hofft, aber es kommt keine Antwort. Julia legt das Handy weg. Es ist wahr: Heute gehört sie nach Frankfurt.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "wegdrücken",
+    "surface": "wegdrücken",
+    "definition": "To reject a phone call by pressing the red button."
+   },
+   {
+    "type": "adverb",
+    "word": "drinnen",
+    "surface": "drinnen",
+    "definition": "Inside; in a room or a building, not outside."
+   },
+   {
+    "type": "noun",
+    "word": "das Display",
+    "surface": "Display",
+    "definition": "The screen of a phone, where you see pictures and names."
+   },
+   {
+    "type": "adverb",
+    "word": "endlich",
+    "surface": "Endlich",
+    "definition": "Finally; at last, after a long time of waiting."
+   },
+   {
+    "type": "adverb",
+    "word": "herzlich",
+    "surface": "herzlich",
+    "definition": "Warmly; in a very friendly way that comes from the heart."
+   },
+   {
+    "type": "verb",
+    "word": "glänzen",
+    "surface": "glänzen",
+    "definition": "To shine; here, the eyes look wet and bright."
+   },
+   {
+    "type": "adjective",
+    "word": "letzte",
+    "surface": "letzte",
+    "definition": "Last; the one before now, the most recent one."
+   },
+   {
+    "type": "adjective",
+    "word": "verrückt",
+    "surface": "verrückt",
+    "definition": "Crazy; a little mad, but here in a nice and happy way."
+   },
+   {
+    "type": "adjective",
+    "word": "dankbar",
+    "surface": "dankbar",
+    "definition": "Thankful; happy because someone did something good for you."
+   },
+   {
+    "type": "adjective",
+    "word": "hell",
+    "surface": "hell",
+    "definition": "Bright; full of light and not dark at all."
+   },
+   {
+    "type": "adverb",
+    "word": "echt",
+    "surface": "echt",
+    "definition": "Really; you use it to make a word stronger."
+   },
+   {
+    "type": "verb",
+    "word": "singen",
+    "surface": "singen",
+    "definition": "To sing; to make music with your voice."
+   },
+   {
+    "type": "noun",
+    "word": "das Geburtstagslied",
+    "surface": "Geburtstagslied",
+    "definition": "A birthday song; people sing it for a person on their birthday.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Grußkarte",
+    "surface": "Grußkarte",
+    "definition": "A greeting card; a nice card with a short message for someone.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "hoffen",
+    "surface": "hofft",
+    "definition": "To hope; to want something to happen and think it can."
+   },
+   {
+    "type": "noun",
+    "word": "der Gutschein",
+    "surface": "Gutschein",
+    "definition": "A voucher; a paper you can use to get something for free.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Bäckerei",
+    "surface": "Bäckerei",
+    "definition": "A bakery; a shop where people make and sell bread and cakes.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "morgen",
+    "surface": "morgen",
+    "definition": "Tomorrow; on the day that comes after today."
+   },
+   {
+    "type": "adjective",
+    "word": "klein",
+    "surface": "kleinen",
+    "definition": "Small; not big, taking only a little space."
+   },
+   {
+    "type": "adjective",
+    "word": "wahr",
+    "surface": "wahr",
+    "definition": "True; it is a fact and not a lie."
+   }
+  ]
+ }
+]
