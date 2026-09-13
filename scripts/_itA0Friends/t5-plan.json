@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "italy",
+  "registro": "sensorial y domestico: olor a pan y albahaca, y una pequena catastrofe en la cocina",
+  "espina": "El pacto de la servilleta: Alice calla lo que siente por Matteo; aqui quiere cuidarlo haciendole su pesto, y rompe el mortero de su familia.",
+  "recursos": "A0: repeticion (Piano, in cerchio), contraste con ma (Non importa, ma i suoi occhi sono tristi), imagen concreta final (dos macetas hechas con el mortero roto). Titulos: linea dicha (Il pesto vuole pazienza), objeto torcido (Un mortaio in due pezzi), 'para X' con regionalismo (Trofie per due).",
+  "historias": [
+    { "slot": "0", "quiere": "hacerle a Matteo su pesto de los domingos por primera vez", "impide": "no sabe hacerlo y solo tiene una planta de albahaca pequena", "cuesta": "su domingo libre: trabaja una hora en el mostrador de la focacceria a cambio de la leccion", "cambia": "Lorenzo le dara la albahaca y le ensenara", "emocion": "agitacion: esta agitada porque Matteo llega a las dos, y sujeta la maceta con las dos manos" },
+    { "slot": "1", "quiere": "que el pesto le salga bien en el mortero de Matteo", "impide": "machaca demasiado fuerte y la albahaca se pone negra", "cuesta": "el mortero de marmol de la familia de Matteo se le resbala y se rompe en dos", "cambia": "el pesto esta listo, pero el mortero ya no existe", "emocion": "panico: tiene las manos frias porque es el mortero de Matteo, y grita que no" },
+    { "slot": "2", "quiere": "que Matteo disfrute la comida y confesarle lo del mortero", "impide": "el pesto le encanta y ella tiene que romperle el momento con los dos pedazos", "cuesta": "el mortero de su familia, que no vuelve; Matteo dice que no importa, pero sus ojos estan tristes", "cambia": "Matteo convierte los pedazos en dos macetas, una para cada uno", "emocion": "culpa: tiene el estomago cerrado porque el mortero esta roto, y se seca una lagrima" }
+  ]
+}

@@ -1,0 +1,399 @@
+[
+ {
+  "topic": "cooking-and-recipes",
+  "slotIndex": 0,
+  "title": "Il pesto vuole pazienza",
+  "arcType": null,
+  "synopsis": "Matteo's ferry is late, and Alice wants to make his pesto for the first time. She takes the last basil plant down to the bakery.",
+  "text": "Un messaggio arriva sul telefono di Alice. Matteo scrive: il traghetto è in ritardo, arrivo alle due. Oggi Alice vuole fare il pesto per lui.\n\nMa Alice non sa fare il pesto. Lei prende il piccolo vaso di basilico e scende le scale in ciabatte. Dalla focacceria sale un odore di pane caldo.\n\nLorenzo, il fornaio della focacceria, lavora dalle cinque di mattina. “Buongiorno, Alice! Una focaccia?” chiede lui. “No. Io voglio fare il pesto,” risponde Alice.\n\n“Il pesto? Con questa pianta? È troppo piccola,” dice Lorenzo, e ride.\n\nAlice è agitata, perché Matteo arriva alle due. Lei tiene il vaso con due mani. “Per favore, Lorenzo. È per un amico,” dice Alice.\n\nLorenzo guarda Alice. Poi prende altro basilico da una cassetta. “Va bene. Ma il pesto vuole pazienza,” dice lui.\n\n“Tu lavori qui un'ora e io ti insegno,” dice Lorenzo. Alice mette il grembiule bianco. La sua domenica libera comincia al banco.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "il pesto",
+    "surface": "pesto",
+    "definition": "Pesto; a green sauce with basil, from Genoa."
+   },
+   {
+    "type": "adverb",
+    "word": "non",
+    "surface": "non",
+    "definition": "Not; it makes a sentence negative."
+   },
+   {
+    "type": "preposition",
+    "word": "da",
+    "surface": "da",
+    "definition": "From; here, out of a box."
+   },
+   {
+    "type": "noun",
+    "word": "il fornaio",
+    "surface": "fornaio",
+    "definition": "A baker; he makes bread and focaccia.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "la focacceria",
+    "surface": "focacceria",
+    "definition": "A small shop that bakes and sells focaccia.",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "di mattina",
+    "surface": "di mattina",
+    "definition": "In the morning; early in the day."
+   },
+   {
+    "type": "preposition",
+    "word": "con",
+    "surface": "Con",
+    "definition": "With; together with something or someone."
+   },
+   {
+    "type": "verb",
+    "word": "dire",
+    "surface": "dice",
+    "definition": "To say; to tell with words."
+   },
+   {
+    "type": "expression",
+    "word": "alle due",
+    "surface": "alle due",
+    "definition": "At two o'clock in the afternoon."
+   },
+   {
+    "type": "pronoun",
+    "word": "lui",
+    "surface": "lui",
+    "definition": "He or him; a man we talk about."
+   },
+   {
+    "type": "conjunction",
+    "word": "ma",
+    "surface": "ma",
+    "definition": "But; it shows a contrast."
+   },
+   {
+    "type": "expression",
+    "word": "va bene",
+    "surface": "Va bene",
+    "definition": "All right; OK, I agree."
+   },
+   {
+    "type": "noun",
+    "word": "la pazienza",
+    "surface": "pazienza",
+    "definition": "Patience; you wait calmly and do not hurry."
+   },
+   {
+    "type": "verb",
+    "word": "insegnare",
+    "surface": "insegno",
+    "definition": "To teach; to show someone how to do something."
+   },
+   {
+    "type": "adverb",
+    "word": "qui",
+    "surface": "qui",
+    "definition": "Here; in this place."
+   },
+   {
+    "type": "expression",
+    "word": "la domenica libera",
+    "surface": "domenica libera",
+    "definition": "A free Sunday; a Sunday with no work."
+   },
+   {
+    "type": "expression",
+    "word": "volere fare",
+    "surface": "vuole fare",
+    "definition": "To want to do something."
+   },
+   {
+    "type": "noun",
+    "word": "le ciabatte",
+    "surface": "ciabatte",
+    "definition": "Slippers; soft shoes you wear at home."
+   },
+   {
+    "type": "adjective",
+    "word": "agitato",
+    "surface": "agitata",
+    "definition": "Anxious; nervous and not calm."
+   },
+   {
+    "type": "expression",
+    "word": "buongiorno",
+    "surface": "Buongiorno",
+    "definition": "Good morning; a hello in the day."
+   }
+  ]
+ },
+ {
+  "topic": "cooking-and-recipes",
+  "slotIndex": 1,
+  "title": "Un mortaio in due pezzi",
+  "arcType": null,
+  "synopsis": "Lorenzo comes up to teach Alice how to make pesto in Matteo's old marble mortar. The pesto is good, but the kitchen sink is slippery.",
+  "text": "A mezzogiorno Lorenzo sale da Alice con i pinoli e il formaggio. Lui taglia il formaggio. Sul tavolo c'è il mortaio di marmo di Matteo. “Allora, cominciamo?” chiede Lorenzo.\n\n“Che bel mortaio! È vecchio?” chiede Lorenzo. “Sì. È della famiglia di Matteo,” risponde Alice. Il mortaio pesa molto.\n\n“Prima l'aglio e il sale. Poi il basilico, piano,” dice Lorenzo. Alice usa il pestello troppo forte. “No, no! Così il basilico diventa nero,” dice lui.\n\nAlice ricomincia. Piano, in cerchio, come Lorenzo. In cucina c'è un odore dolce. “Così va bene?” chiede Alice. “Sì, così. Brava! Adesso è un pesto vero. È pronto,” risponde Lorenzo. Alice assaggia e sorride, felice.\n\nLorenzo torna alla focacceria. Alice lava il mortaio nel lavandino. Ma il marmo è bagnato e scivola. Il mortaio cade e si rompe in due pezzi. Alice ha le mani fredde, perché è il mortaio di Matteo. “No!” dice Alice.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "il mezzogiorno",
+    "surface": "mezzogiorno",
+    "definition": "Midday; twelve o'clock in the day."
+   },
+   {
+    "type": "noun",
+    "word": "i pinoli",
+    "surface": "pinoli",
+    "definition": "Pine nuts; small white seeds for pesto.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "il mortaio",
+    "surface": "mortaio",
+    "definition": "A mortar; a heavy bowl to crush food.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "bello",
+    "surface": "bel",
+    "definition": "Beautiful; nice to look at."
+   },
+   {
+    "type": "adverb",
+    "word": "molto",
+    "surface": "molto",
+    "definition": "A lot; very much."
+   },
+   {
+    "type": "noun",
+    "word": "il pestello",
+    "surface": "pestello",
+    "definition": "A pestle; a small stick to crush food in a mortar.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "piano",
+    "surface": "Piano",
+    "definition": "Slowly and gently; not fast or hard."
+   },
+   {
+    "type": "verb",
+    "word": "diventare",
+    "surface": "diventa",
+    "definition": "To become; to change into something else."
+   },
+   {
+    "type": "verb",
+    "word": "ricominciare",
+    "surface": "ricomincia",
+    "definition": "To start again; to begin one more time."
+   },
+   {
+    "type": "expression",
+    "word": "in cerchio",
+    "surface": "in cerchio",
+    "definition": "In a circle; round and round."
+   },
+   {
+    "type": "conjunction",
+    "word": "come",
+    "surface": "come",
+    "definition": "Like; in the same way as."
+   },
+   {
+    "type": "expression",
+    "word": "in cucina",
+    "surface": "In cucina",
+    "definition": "In the kitchen, the room where you cook."
+   },
+   {
+    "type": "adjective",
+    "word": "dolce",
+    "surface": "dolce",
+    "definition": "Sweet; nice and soft to taste or smell."
+   },
+   {
+    "type": "adjective",
+    "word": "pronto",
+    "surface": "pronto",
+    "definition": "Ready; finished and good to use."
+   },
+   {
+    "type": "verb",
+    "word": "assaggiare",
+    "surface": "assaggia",
+    "definition": "To taste; to try a little of some food."
+   },
+   {
+    "type": "verb",
+    "word": "lavare",
+    "surface": "lava",
+    "definition": "To wash; to clean with water."
+   },
+   {
+    "type": "noun",
+    "word": "il lavandino",
+    "surface": "lavandino",
+    "definition": "A sink; you wash dishes in it.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "scivolare",
+    "surface": "scivola",
+    "definition": "To slip; to slide out of your hands."
+   },
+   {
+    "type": "verb",
+    "word": "rompersi",
+    "surface": "si rompe",
+    "definition": "To break; to go into pieces."
+   },
+   {
+    "type": "verb",
+    "word": "tagliare",
+    "surface": "taglia",
+    "definition": "To cut; to make pieces with a knife."
+   }
+  ]
+ },
+ {
+  "topic": "cooking-and-recipes",
+  "slotIndex": 2,
+  "title": "Trofie per due",
+  "arcType": null,
+  "synopsis": "Matteo gets home from the ferry and finds lunch ready on the terrace. He loves the pesto, and then Alice shows him the mortar.",
+  "text": "Matteo entra sulla terrazza alle due, stanco. Alice aspetta al tavolo. Davanti a lei ci sono due piatti di trofie al pesto e una bottiglia d'acqua.\n\n“Che profumo! Chi fa il pesto oggi?” chiede lui. “Io. Con Lorenzo, il fornaio,” risponde Alice. Matteo mangia lentamente e chiude gli occhi. “È più buono del mio. Davvero,” dice lui.\n\nAlice non mangia. Lei ha lo stomaco chiuso, perché in cucina c'è il mortaio rotto. Poi porta i due pezzi sul tavolo, accanto ai piatti. “Mi dispiace tanto. È il mortaio della tua famiglia,” dice Alice piano.\n\nMatteo guarda i due pezzi a lungo e sospira. “Non importa, Alice,” dice lui. Ma i suoi occhi sono tristi. “Per me importa,” risponde Alice, e asciuga una lacrima.\n\nMatteo cerca un po' di terra e la mette nei due pezzi di marmo. “Senza pergola, ma con due vasi. Uno per te e uno per me,” dice lui.",
+  "vocab": [
+   {
+    "type": "adjective",
+    "word": "stanco",
+    "surface": "stanco",
+    "definition": "Tired; you need to rest."
+   },
+   {
+    "type": "noun",
+    "word": "le trofie",
+    "surface": "trofie",
+    "definition": "Trofie; short twisted pasta from Liguria.",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "la bottiglia d'acqua",
+    "surface": "bottiglia d'acqua",
+    "definition": "A bottle of water."
+   },
+   {
+    "type": "expression",
+    "word": "che profumo",
+    "surface": "Che profumo",
+    "definition": "What a lovely smell!"
+   },
+   {
+    "type": "pronoun",
+    "word": "chi",
+    "surface": "Chi",
+    "definition": "Who; which person does it."
+   },
+   {
+    "type": "adverb",
+    "word": "lentamente",
+    "surface": "lentamente",
+    "definition": "Slowly; not fast, with time."
+   },
+   {
+    "type": "expression",
+    "word": "chiudere gli occhi",
+    "surface": "chiude gli occhi",
+    "definition": "To close your eyes."
+   },
+   {
+    "type": "adjective",
+    "word": "buono",
+    "surface": "buono",
+    "definition": "Good; nice to eat."
+   },
+   {
+    "type": "expression",
+    "word": "lo stomaco chiuso",
+    "surface": "stomaco chiuso",
+    "definition": "A closed stomach; too upset to eat."
+   },
+   {
+    "type": "adverb",
+    "word": "accanto",
+    "surface": "accanto",
+    "definition": "Next to; beside something."
+   },
+   {
+    "type": "determiner",
+    "word": "tuo",
+    "surface": "tua",
+    "definition": "Your; it belongs to you."
+   },
+   {
+    "type": "expression",
+    "word": "a lungo",
+    "surface": "a lungo",
+    "definition": "For a long time."
+   },
+   {
+    "type": "verb",
+    "word": "sospirare",
+    "surface": "sospira",
+    "definition": "To sigh; to breathe out long and slow."
+   },
+   {
+    "type": "expression",
+    "word": "non importa",
+    "surface": "Non importa",
+    "definition": "It does not matter."
+   },
+   {
+    "type": "verb",
+    "word": "essere",
+    "surface": "sono",
+    "definition": "To be; here, they are."
+   },
+   {
+    "type": "verb",
+    "word": "asciugare",
+    "surface": "asciuga",
+    "definition": "To dry; to take the water away."
+   },
+   {
+    "type": "noun",
+    "word": "la lacrima",
+    "surface": "lacrima",
+    "definition": "A tear; a drop of water from your eye."
+   },
+   {
+    "type": "expression",
+    "word": "un po' di",
+    "surface": "un po' di",
+    "definition": "A little; a small amount of."
+   },
+   {
+    "type": "preposition",
+    "word": "senza",
+    "surface": "Senza",
+    "definition": "Without; not having something."
+   },
+   {
+    "type": "expression",
+    "word": "uno per te e uno per me",
+    "surface": "Uno per te e uno per me",
+    "definition": "One for you and one for me."
+   }
+  ]
+ }
+]
