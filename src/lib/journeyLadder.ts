@@ -22,7 +22,22 @@
 
 export const ESCALERA = ["a0", "a1", "a2", "b1", "b2", "c1", "c2"] as const;
 
+/**
+ * Journeys que NO cuentan para la contigüidad. Cada entrada lleva su porqué y
+ * su fecha; la lista no crece sin una decisión del usuario.
+ *
+ * - cmroo4w4v0000324ow1o9qlcp (Friends DE C1): test del usuario, 2026-09-13;
+ *   la escalera del Friends DE empieza en el A0. Literal: "en realidad C1 fue
+ *   un test para mí, pero ahora sí vamos a crear el journey bien". Sigue live
+ *   en la base; solo deja de sostener la escalera.
+ */
+export const FUERA_DE_ESCALERA: ReadonlySet<string> = new Set([
+  "cmroo4w4v0000324ow1o9qlcp",
+]);
+
 export type JourneyExistente = {
+  /** Sin id no se puede excluir: un journey sin id cuenta siempre. */
+  id?: string;
   name: string;
   language: string;
   variant: string;
@@ -38,6 +53,7 @@ export function assertLadderContiguous(
   const propios = existentes.filter(
     (j) =>
       j.status !== "archived" &&
+      !(j.id && FUERA_DE_ESCALERA.has(j.id)) &&
       j.language.toLowerCase() === nuevo.language.toLowerCase() &&
       j.variant.toLowerCase() === nuevo.variant.toLowerCase() &&
       j.name.toLowerCase() === nuevo.name.toLowerCase(),
