@@ -4401,6 +4401,11 @@ const styles = StyleSheet.create({
   vocabActionRow: {
     flexDirection: "row",
     justifyContent: "flex-start",
+    // Sin esto el enlace "See conjugation" se pegaba al borde SUPERIOR del
+    // boton (Android lo pinta tocando la linea del chunk de arriba).
+    alignItems: "center",
+    gap: 16,
+    marginTop: 12,
   },
   vocabActionText: {
     color: "#ffffff",
