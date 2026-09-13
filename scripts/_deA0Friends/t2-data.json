@@ -1,0 +1,392 @@
+[
+ {
+  "topic": "looks-and-memories",
+  "slotIndex": 0,
+  "title": "Fotos am Kühlschrank",
+  "arcType": null,
+  "synopsis": "Jan's fridge is full of photos, and Anna is in none of them. A woman with glasses stands next to Jan in every picture. Then Nele comes in.",
+  "text": "Jans Kühlschrank ist voll mit Fotos. Anna wohnt jetzt oben im Haus. Jan kocht heute für die Freunde.\n\nAnna sucht ihr Gesicht auf den Fotos. Jan ist auf jedem Foto. Eine Frau mit Brille steht immer neben ihm. Anna ist auf keinem Foto.\n\nIhr Bauch ist hart, denn diese Frau hat ihren Platz. Sie nimmt ein Foto vom Kühlschrank. Sie drückt das Foto an die Brust.\n\nDie Tür öffnet sich. Jans Nachbarin Nele steht dort. Sie ist Fotografin und trägt eine runde Brille.\n\n“Hallo! Wer bist du?”, ruft Nele.\n\n“Ich bin Anna. Ich wohne oben.”\n\n“Anna aus München? Endlich!”\n\nNele umarmt Anna. Anna hält noch das Foto.\n\n“Das bin ich, mit Jan im Park. Du fehlst auf dem Foto.”\n\n“Acht Jahre fehle ich”, antwortet Anna leise.\n\n“Aber jetzt bist du hier. Ich mache gern ein Foto von dir.”\n\nAnna hängt das Foto wieder an den Kühlschrank. Sie lächelt. Ihr Bauch ist noch ein bisschen hart.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "der Kühlschrank",
+    "surface": "Kühlschrank",
+    "definition": "A fridge; the cold box in a kitchen for food."
+   },
+   {
+    "type": "adverb",
+    "word": "oben",
+    "surface": "oben",
+    "definition": "Upstairs; on a higher floor of the house."
+   },
+   {
+    "type": "verb",
+    "word": "kochen",
+    "surface": "kocht",
+    "definition": "To cook; to make hot food for people."
+   },
+   {
+    "type": "verb",
+    "word": "suchen",
+    "surface": "sucht",
+    "definition": "To look for something you want to find."
+   },
+   {
+    "type": "noun",
+    "word": "das Gesicht",
+    "surface": "Gesicht",
+    "definition": "A face; the front of your head."
+   },
+   {
+    "type": "preposition",
+    "word": "neben",
+    "surface": "neben",
+    "definition": "Next to; at the side of someone."
+   },
+   {
+    "type": "noun",
+    "word": "der Bauch",
+    "surface": "Bauch",
+    "definition": "The belly; the soft front part below your chest."
+   },
+   {
+    "type": "adjective",
+    "word": "hart",
+    "surface": "hart",
+    "definition": "Hard; tight and not soft at all."
+   },
+   {
+    "type": "noun",
+    "word": "der Platz",
+    "surface": "Platz",
+    "definition": "A place; the spot where a person belongs."
+   },
+   {
+    "type": "noun",
+    "word": "die Tür",
+    "surface": "Tür",
+    "definition": "A door; you open it to go into a room."
+   },
+   {
+    "type": "noun",
+    "word": "die Fotografin",
+    "surface": "Fotografin",
+    "definition": "A female photographer; she takes pictures as her job."
+   },
+   {
+    "type": "adjective",
+    "word": "rund",
+    "surface": "runde",
+    "definition": "Round; shaped like a circle."
+   },
+   {
+    "type": "verb",
+    "word": "rufen",
+    "surface": "ruft",
+    "definition": "To call out; to say something loudly."
+   },
+   {
+    "type": "adverb",
+    "word": "gern",
+    "surface": "gern",
+    "definition": "Gladly; with pleasure, because you like it."
+   },
+   {
+    "type": "adverb",
+    "word": "immer",
+    "surface": "immer",
+    "definition": "Always; every time, again and again."
+   },
+   {
+    "type": "adverb",
+    "word": "endlich",
+    "surface": "Endlich",
+    "definition": "At last; after a long time of waiting."
+   },
+   {
+    "type": "verb",
+    "word": "umarmen",
+    "surface": "umarmt",
+    "definition": "To hug; to put your arms around someone."
+   },
+   {
+    "type": "verb",
+    "word": "fehlen",
+    "surface": "fehlst",
+    "definition": "To be missing; not to be there."
+   },
+   {
+    "type": "verb",
+    "word": "antworten",
+    "surface": "antwortet",
+    "definition": "To answer; to say something back to a question."
+   },
+   {
+    "type": "verb",
+    "word": "hängen",
+    "surface": "hängt",
+    "definition": "To hang; to put something up on a wall or door."
+   }
+  ]
+ },
+ {
+  "topic": "looks-and-memories",
+  "slotIndex": 1,
+  "title": "Die Brille von früher",
+  "arcType": null,
+  "synopsis": "Nele finds an old photo of Anna at twenty, with big glasses and long hair. Now Nele wants a new photo of Anna for the fridge.",
+  "text": "Ein altes Foto liegt auf Jans Tisch. Nele findet es in einer Kiste. Anna und Jan sind darauf zwanzig Jahre alt.\n\nAnna trägt auf dem Foto eine große Brille. Ihre Haare sind lang und blond. Jan hat noch keinen Bart.\n\n“Das bist du? Die Brille ist so groß!”, ruft Nele.\n\n“Ich weiß. Ich bin da zwanzig”, antwortet Anna.\n\nNele holt ihre Kamera.\n\n“Ich brauche ein Foto von dir. Für den Kühlschrank.”\n\nIhr Gesicht ist heiß, denn die Anna auf dem Foto ist so jung. Sie hat jetzt Falten um die Augen.\n\n“Nein, bitte nicht. Ich bin nicht mehr zwanzig.”\n\n“Egal. Du bist schön.”\n\nNele macht zehn Fotos. Anna schließt jedes Mal die Augen.\n\nJan steht in der Tür. Er trägt Annas alte Brille. Er macht ein ernstes Gesicht.\n\nAnna lacht laut. Nele macht schnell ein Foto.\n\n“Das Foto ist wunderbar.”\n\nDas neue Foto hängt jetzt am Kühlschrank. Das alte Foto liegt in der Kiste.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "liegen",
+    "surface": "liegt",
+    "definition": "To lie; to rest flat on a table."
+   },
+   {
+    "type": "number",
+    "word": "zwanzig",
+    "surface": "zwanzig",
+    "definition": "Twenty; the number after nineteen."
+   },
+   {
+    "type": "adjective",
+    "word": "groß",
+    "surface": "große",
+    "definition": "Big; large, not small."
+   },
+   {
+    "type": "noun",
+    "word": "die Brille",
+    "surface": "Brille",
+    "definition": "Glasses; you wear them to see better."
+   },
+   {
+    "type": "adjective",
+    "word": "blond",
+    "surface": "blond",
+    "definition": "Blond; with light yellow hair."
+   },
+   {
+    "type": "noun",
+    "word": "der Bart",
+    "surface": "Bart",
+    "definition": "A beard; hair on a man's chin and cheeks."
+   },
+   {
+    "type": "noun",
+    "word": "der Tisch",
+    "surface": "Tisch",
+    "definition": "A table; you eat or put things on it."
+   },
+   {
+    "type": "verb",
+    "word": "brauchen",
+    "surface": "brauche",
+    "definition": "To need; to have to have something."
+   },
+   {
+    "type": "adjective",
+    "word": "wunderbar",
+    "surface": "wunderbar",
+    "definition": "Wonderful; very, very good."
+   },
+   {
+    "type": "number",
+    "word": "zehn",
+    "surface": "zehn",
+    "definition": "Ten; the number after nine."
+   },
+   {
+    "type": "verb",
+    "word": "holen",
+    "surface": "holt",
+    "definition": "To fetch; to go and get something."
+   },
+   {
+    "type": "adjective",
+    "word": "heiß",
+    "surface": "heiß",
+    "definition": "Hot; very warm, here from shame."
+   },
+   {
+    "type": "adjective",
+    "word": "jung",
+    "surface": "jung",
+    "definition": "Young; not old, at the start of life."
+   },
+   {
+    "type": "noun",
+    "word": "die Falte",
+    "surface": "Falten",
+    "definition": "A wrinkle; a small line in the skin."
+   },
+   {
+    "type": "noun",
+    "word": "das Auge",
+    "surface": "Augen",
+    "definition": "An eye; you see with your eyes."
+   },
+   {
+    "type": "adverb",
+    "word": "bitte",
+    "surface": "bitte",
+    "definition": "Please; a polite word when you ask."
+   },
+   {
+    "type": "adjective",
+    "word": "schön",
+    "surface": "schön",
+    "definition": "Beautiful; nice to look at."
+   },
+   {
+    "type": "verb",
+    "word": "schließen",
+    "surface": "schließt",
+    "definition": "To close; to shut your eyes or a door."
+   },
+   {
+    "type": "verb",
+    "word": "lachen",
+    "surface": "lacht",
+    "definition": "To laugh; to make a happy sound."
+   },
+   {
+    "type": "adverb",
+    "word": "schnell",
+    "surface": "schnell",
+    "definition": "Quickly; fast, in a short time."
+   }
+  ]
+ },
+ {
+  "topic": "looks-and-memories",
+  "slotIndex": 2,
+  "title": "Ein Rahmen für drei",
+  "arcType": null,
+  "synopsis": "Anna buys a frame for Jan. She has two photos: an old one of Anna and Jan alone, and a new one with Nele. The frame holds only one.",
+  "text": "Der Rahmen ist aus Holz. Anna kauft ihn für Jan. Sie hat zwei Fotos in der Jacke.\n\nDas erste Foto ist alt. Anna und Jan sind allein am Strand. Das zweite Foto ist neu. Nele steht zwischen Anna und Jan.\n\nAnna sitzt auf der Treppe vor Jans Tür. Die Treppe ist kalt.\n\nIhr Herz ist schwer, denn das alte Foto ist nur für zwei. Sie legt es auf ihr Knie.\n\nJan öffnet die Tür.\n\n“Anna? Warum sitzt du hier?”\n\n“Der Rahmen ist für dich. Aber ich habe zwei Fotos und nur einen Rahmen.”\n\nJan schaut lange auf das alte Foto.\n\n“Wir sind allein am Strand. Und so jung und dünn!”\n\n“Welches Foto willst du?”\n\n“Ich? Du entscheidest”, sagt Jan.\n\nAnna steckt das neue Foto in den Rahmen. Das alte Foto kommt in ihre Jacke.\n\n“Jetzt sind wir drei”, sagt Anna.\n\nJan hängt den Rahmen neben den Kühlschrank. Die beiden stehen lange davor.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "der Rahmen",
+    "surface": "Rahmen",
+    "definition": "A frame; the border you put around a photo."
+   },
+   {
+    "type": "verb",
+    "word": "schauen",
+    "surface": "schaut",
+    "definition": "To look; to turn your eyes to something."
+   },
+   {
+    "type": "verb",
+    "word": "kaufen",
+    "surface": "kauft",
+    "definition": "To buy; to pay money for something."
+   },
+   {
+    "type": "adjective",
+    "word": "allein",
+    "surface": "allein",
+    "definition": "Alone; with nobody else there."
+   },
+   {
+    "type": "adjective",
+    "word": "zweite",
+    "surface": "zweite",
+    "definition": "Second; the one after the first."
+   },
+   {
+    "type": "adjective",
+    "word": "neu",
+    "surface": "neu",
+    "definition": "New; not old, from now."
+   },
+   {
+    "type": "preposition",
+    "word": "zwischen",
+    "surface": "zwischen",
+    "definition": "Between; in the middle of two people."
+   },
+   {
+    "type": "noun",
+    "word": "die Treppe",
+    "surface": "Treppe",
+    "definition": "The stairs; the steps between floors of a house."
+   },
+   {
+    "type": "noun",
+    "word": "das Herz",
+    "surface": "Herz",
+    "definition": "The heart; here, where you feel love and pain."
+   },
+   {
+    "type": "adjective",
+    "word": "schwer",
+    "surface": "schwer",
+    "definition": "Heavy; here, sad and hard to carry."
+   },
+   {
+    "type": "noun",
+    "word": "das Knie",
+    "surface": "Knie",
+    "definition": "The knee; the middle joint of your leg."
+   },
+   {
+    "type": "adverb",
+    "word": "warum",
+    "surface": "Warum",
+    "definition": "Why; the word to ask for a reason."
+   },
+   {
+    "type": "adverb",
+    "word": "lange",
+    "surface": "lange",
+    "definition": "For a long time; not just a short moment."
+   },
+   {
+    "type": "pronoun",
+    "word": "welcher",
+    "surface": "Welches",
+    "definition": "Which; the word to ask about one of several."
+   },
+   {
+    "type": "verb",
+    "word": "wollen",
+    "surface": "willst",
+    "definition": "To want; to wish to have or do something."
+   },
+   {
+    "type": "verb",
+    "word": "entscheiden",
+    "surface": "entscheidest",
+    "definition": "To decide; to choose one thing after thinking."
+   },
+   {
+    "type": "verb",
+    "word": "stecken",
+    "surface": "steckt",
+    "definition": "To put something inside something else."
+   },
+   {
+    "type": "number",
+    "word": "drei",
+    "surface": "drei",
+    "definition": "Three; the number after two."
+   },
+   {
+    "type": "adverb",
+    "word": "jetzt",
+    "surface": "Jetzt",
+    "definition": "Now; at this moment."
+   },
+   {
+    "type": "adverb",
+    "word": "davor",
+    "surface": "davor",
+    "definition": "In front of it; before that thing."
+   }
+  ]
+ }
+]
