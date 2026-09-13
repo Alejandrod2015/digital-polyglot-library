@@ -1,0 +1,433 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "l'apéritif,le détail,le touriste,le verre",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "l'apéritif",
+          "answer": "pre-dinner drinks",
+          "options": [
+            "pre-dinner drinks",
+            "a detail",
+            "a tourist",
+            "a glass"
+          ]
+        },
+        {
+          "word": "le détail",
+          "answer": "a detail",
+          "options": [
+            "pre-dinner drinks",
+            "a detail",
+            "a tourist",
+            "a glass"
+          ]
+        },
+        {
+          "word": "le touriste",
+          "answer": "a tourist",
+          "options": [
+            "pre-dinner drinks",
+            "a detail",
+            "a tourist",
+            "a glass"
+          ]
+        },
+        {
+          "word": "le verre",
+          "answer": "a glass",
+          "options": [
+            "pre-dinner drinks",
+            "a detail",
+            "a tourist",
+            "a glass"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "à lui",
+    "sentence": "Le surnom est bizarre, mais il est [[à lui]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "his own",
+      "options": [
+        "his own",
+        "forgotten",
+        "expensive",
+        "borrowed"
+      ],
+      "audioClip": {
+        "storySlug": "monsieur-crachin",
+        "storySource": "user",
+        "sentence": "Le surnom est bizarre, mais il est à lui.",
+        "targetWord": "à lui",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avoir peur",
+    "sentence": "Il [[a un peu peur]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "is a little scared",
+      "options": [
+        "is a little scared",
+        "is very happy",
+        "feels very tired",
+        "is completely bored"
+      ],
+      "audioClip": {
+        "storySlug": "monsieur-crachin",
+        "storySource": "user",
+        "sentence": "Il a un peu peur.",
+        "targetWord": "a un peu peur",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le souvenir",
+    "sentence": "Il veut sa place dans les [[souvenirs]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "memories",
+      "options": [
+        "memories",
+        "photos",
+        "letters",
+        "songs"
+      ],
+      "audioClip": {
+        "storySlug": "monsieur-crachin",
+        "storySource": "user",
+        "sentence": "Il veut sa place dans les souvenirs.",
+        "targetWord": "souvenirs",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sans oublier",
+    "sentence": "Il continue, [[sans oublier]] un détail.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without leaving out",
+      "options": [
+        "without leaving out",
+        "while forgetting",
+        "after losing",
+        "before finding"
+      ],
+      "audioClip": {
+        "storySlug": "monsieur-crachin",
+        "storySource": "user",
+        "sentence": "Il continue, sans oublier un détail.",
+        "targetWord": "sans oublier",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "au début",
+    "sentence": "[[Au début]], personne ne rit.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at first",
+      "options": [
+        "at first",
+        "at the end",
+        "never",
+        "always"
+      ],
+      "audioClip": {
+        "storySlug": "monsieur-crachin",
+        "storySource": "user",
+        "sentence": "Au début, personne ne rit.",
+        "targetWord": "Au début",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "l'idée",
+    "sentence": "Il regrette son [[idée]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "idea",
+      "options": [
+        "idea",
+        "family",
+        "coat",
+        "key"
+      ],
+      "audioClip": {
+        "storySlug": "monsieur-crachin",
+        "storySource": "user",
+        "sentence": "Il regrette son idée.",
+        "targetWord": "idée",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pour de vrai",
+    "sentence": "Il rit aussi, [[pour de vrai]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "for real",
+      "options": [
+        "for real",
+        "for a moment",
+        "on purpose",
+        "by mistake"
+      ],
+      "audioClip": {
+        "storySlug": "monsieur-crachin",
+        "storySource": "user",
+        "sentence": "Il rit aussi, pour de vrai.",
+        "targetWord": "pour de vrai",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "à partir d'aujourd'hui",
+    "sentence": "[[À partir d'aujourd'hui]], tu t'appelles Monsieur Crachin.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "from today on",
+      "options": [
+        "from today on",
+        "until yesterday",
+        "once a year",
+        "for one hour"
+      ],
+      "audioClip": {
+        "storySlug": "monsieur-crachin",
+        "storySource": "user",
+        "sentence": "À partir d'aujourd'hui, tu t'appelles Monsieur Crachin.",
+        "targetWord": "À partir d'aujourd'hui",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bête",
+    "sentence": "C'est un peu [[bête]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "silly",
+      "options": [
+        "silly",
+        "expensive",
+        "dangerous",
+        "useful"
+      ],
+      "audioClip": {
+        "storySlug": "monsieur-crachin",
+        "storySource": "user",
+        "sentence": "C'est un peu bête.",
+        "targetWord": "bête",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le nez",
+    "sentence": "Il fronce le [[nez]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nose",
+      "options": [
+        "nose",
+        "hand",
+        "ear",
+        "foot"
+      ],
+      "audioClip": {
+        "storySlug": "monsieur-crachin",
+        "storySource": "user",
+        "sentence": "Il fronce le nez.",
+        "targetWord": "nez",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le prénom",
+    "sentence": "Ici, son [[prénom]], personne ne va l'utiliser.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "first name",
+      "options": [
+        "first name",
+        "phone number",
+        "address",
+        "job"
+      ],
+      "audioClip": {
+        "storySlug": "monsieur-crachin",
+        "storySource": "user",
+        "sentence": "Ici, son prénom, personne ne va l'utiliser.",
+        "targetWord": "prénom",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lever",
+    "sentence": "Il [[lève]] son verre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "raises",
+      "options": [
+        "raises",
+        "drops",
+        "fills",
+        "empties"
+      ],
+      "audioClip": {
+        "storySlug": "monsieur-crachin",
+        "storySource": "user",
+        "sentence": "Il lève son verre.",
+        "targetWord": "lève",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "à la santé de",
+    "sentence": "“[[À la santé de]] la bande!”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to the health of",
+      "options": [
+        "to the health of",
+        "to the memory of",
+        "to the surprise of",
+        "to the trouble of"
+      ],
+      "audioClip": {
+        "storySlug": "monsieur-crachin",
+        "storySource": "user",
+        "sentence": "À la santé de la bande!",
+        "targetWord": "À la santé de",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "regrette",
+    "sentence": "Il a dit une bêtise et il le _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "regrette",
+      "options": [
+        "regrette",
+        "oublie",
+        "répète",
+        "cache"
+      ],
+      "translation": "He said something silly and he _____ it.",
+      "optionTranslations": [
+        "regrets",
+        "forgets",
+        "repeats",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "monsieur-crachin",
+        "storySource": "user",
+        "sentence": "Il a dit une bêtise et il le regrette.",
+        "targetWord": "regrette",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "applaudit",
+    "sentence": "Toute la salle _____ à la fin de la chanson.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "applaudit",
+      "options": [
+        "applaudit",
+        "pleure",
+        "dort",
+        "part"
+      ],
+      "translation": "The whole room _____ at the end of the song.",
+      "optionTranslations": [
+        "applauds",
+        "cries",
+        "sleeps",
+        "leaves"
+      ],
+      "audioClip": {
+        "storySlug": "monsieur-crachin",
+        "storySource": "user",
+        "sentence": "Toute la salle applaudit à la fin de la chanson.",
+        "targetWord": "applaudit",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "utiliser",
+    "sentence": "Personne ne va _____ son vrai prénom ici.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "utiliser",
+      "options": [
+        "utiliser",
+        "oublier",
+        "chercher",
+        "vendre"
+      ],
+      "translation": "Nobody is going to _____ his real first name here.",
+      "optionTranslations": [
+        "use",
+        "forget",
+        "look for",
+        "sell"
+      ],
+      "audioClip": {
+        "storySlug": "monsieur-crachin",
+        "storySource": "user",
+        "sentence": "Personne ne va utiliser son vrai prénom ici.",
+        "targetWord": "utiliser",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
+]

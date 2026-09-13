@@ -1,0 +1,206 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "le kouglof,l'appartement,la lettre,le patron",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {"word":"le kouglof","answer":"an Alsatian cake","options":["an Alsatian cake","a flat","a letter","a boss"]},
+        {"word":"l'appartement","answer":"a flat","options":["an Alsatian cake","a flat","a letter","a boss"]},
+        {"word":"la lettre","answer":"a letter","options":["an Alsatian cake","a flat","a letter","a boss"]},
+        {"word":"le patron","answer":"a boss","options":["an Alsatian cake","a flat","a letter","a boss"]}
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "il y a un an",
+    "sentence": "[[Il y a un an]], il est arrivé à Nantes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a year ago",
+      "options": ["a year ago","a week ago","a month ago","ten years ago"],
+      "audioClip": {"storySlug":"un-kouglof-pour-nantes","storySource":"user","sentence":"Il y a un an, il est arrivé à Nantes.","targetWord":"Il y a un an","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la petite sœur",
+    "sentence": "C'est [[la petite sœur]] de la famille.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the little sister",
+      "options": ["the little sister","the big brother","the best friend","the new neighbor"],
+      "audioClip": {"storySlug":"un-kouglof-pour-nantes","storySource":"user","sentence":"C'est la petite sœur de la famille.","targetWord":"la petite sœur","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "l'enfance",
+    "sentence": "C'est le gâteau de [[leur enfance]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "their childhood",
+      "options": ["their childhood","their wedding","their trip","their school"],
+      "audioClip": {"storySlug":"un-kouglof-pour-nantes","storySource":"user","sentence":"C'est le gâteau de leur enfance.","targetWord":"leur enfance","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "l'électricien de la famille",
+    "sentence": "Il est [[l'électricien de la famille]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the family's electrician",
+      "options": ["the family's electrician","the family's doctor","the family's cook","the family's driver"],
+      "audioClip": {"storySlug":"un-kouglof-pour-nantes","storySource":"user","sentence":"Il est l'électricien de la famille.","targetWord":"l'électricien de la famille","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sous le crachin",
+    "sentence": "Le balcon est [[sous le crachin]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "under the light rain",
+      "options": ["under the light rain","under the hot sun","under a tree","under the stairs"],
+      "audioClip": {"storySlug":"un-kouglof-pour-nantes","storySource":"user","sentence":"Le balcon est sous le crachin.","targetWord":"sous le crachin","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "maman",
+    "sentence": "[[Maman]] ne va pas te reconnaître.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Mum",
+      "options": ["Mum","Dad","the boss","the neighbor"],
+      "audioClip": {"storySlug":"un-kouglof-pour-nantes","storySource":"user","sentence":"Maman ne va pas te reconnaître.","targetWord":"Maman","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "un peu surpris",
+    "sentence": "Il rit, [[un peu surpris]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a little surprised",
+      "options": ["a little surprised","very angry","completely bored","extremely tired"],
+      "audioClip": {"storySlug":"un-kouglof-pour-nantes","storySource":"user","sentence":"Il rit, un peu surpris.","targetWord":"un peu surpris","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ancien",
+    "sentence": "[[Ton ancien]] patron veut te reprendre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "your former",
+      "options": ["your former","your future","your favorite","your youngest"],
+      "audioClip": {"storySlug":"un-kouglof-pour-nantes","storySource":"user","sentence":"Ton ancien patron veut te reprendre.","targetWord":"Ton ancien","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le boulot",
+    "sentence": "[[Ton boulot]] t'attend à Strasbourg.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "your job",
+      "options": ["your job","your house","your family","your car"],
+      "audioClip": {"storySlug":"un-kouglof-pour-nantes","storySource":"user","sentence":"Ton boulot t'attend à Strasbourg.","targetWord":"Ton boulot","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pour parler de",
+    "sentence": "Chez nous, [[pour parler de]] Nantes, on dit ça.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to talk about",
+      "options": ["to talk about","to write about","to sing about","to dream about"],
+      "audioClip": {"storySlug":"un-kouglof-pour-nantes","storySource":"user","sentence":"Chez nous, pour parler de Nantes, on dit ça.","targetWord":"pour parler de","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la façon",
+    "sentence": "Même [[ta façon]] de parler change.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "your way",
+      "options": ["your way","your face","your name","your job"],
+      "audioClip": {"storySlug":"un-kouglof-pour-nantes","storySource":"user","sentence":"Même ta façon de parler change.","targetWord":"ta façon","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le salaire",
+    "sentence": "Il propose un meilleur [[salaire]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "salary",
+      "options": ["salary","schedule","office","contract"],
+      "audioClip": {"storySlug":"un-kouglof-pour-nantes","storySource":"user","sentence":"Il propose un meilleur salaire.","targetWord":"salaire","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le choix",
+    "sentence": "[[Le choix]] est pour lui.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the decision",
+      "options": ["the decision","the surprise","the party","the trip"],
+      "audioClip": {"storySlug":"un-kouglof-pour-nantes","storySource":"user","sentence":"Le choix est pour lui.","targetWord":"Le choix","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "reconnaître",
+    "sentence": "Elle a tellement changé que personne ne peut la _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "reconnaître",
+      "options": ["reconnaître","appeler","aider","payer"],
+      "translation": "She's changed so much that no one can _____ her.",
+      "optionTranslations": ["recognize","call","help","pay"],
+      "audioClip": {"storySlug":"un-kouglof-pour-nantes","storySource":"user","sentence":"Elle a tellement changé que personne ne peut la reconnaître.","targetWord":"reconnaître","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "jalouse",
+    "sentence": "Sa sœur n'a rien reçu, alors elle est un peu _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "jalouse",
+      "options": ["jalouse","fière","calme","contente"],
+      "translation": "Her sister got nothing, so she's a little _____.",
+      "optionTranslations": ["jealous","proud","calm","happy"],
+      "audioClip": {"storySlug":"un-kouglof-pour-nantes","storySource":"user","sentence":"Sa sœur n'a rien reçu, alors elle est un peu jalouse.","targetWord":"jalouse","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "meilleur",
+    "sentence": "Ce travail paie beaucoup mieux: c'est un _____ salaire.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "meilleur",
+      "options": ["meilleur","petit","ancien","dernier"],
+      "translation": "This job pays much more: it's a _____ salary.",
+      "optionTranslations": ["better","small","former","last"],
+      "audioClip": {"storySlug":"un-kouglof-pour-nantes","storySource":"user","sentence":"Ce travail paie beaucoup mieux: c'est un meilleur salaire.","targetWord":"meilleur","language":"french"}
+    },
+    "featured": false
+  }
+]

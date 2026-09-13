@@ -1,0 +1,206 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "le sac à dos,le sport,le téléphone,le concert",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {"word":"le sac à dos","answer":"a backpack","options":["a backpack","a sport","a phone","a concert"]},
+        {"word":"le sport","answer":"a sport","options":["a backpack","a sport","a phone","a concert"]},
+        {"word":"le téléphone","answer":"a phone","options":["a backpack","a sport","a phone","a concert"]},
+        {"word":"le concert","answer":"a concert","options":["a backpack","a sport","a phone","a concert"]}
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tous les jeudis",
+    "sentence": "[[Tous les jeudis]], il va à l'escalade avec un ami.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "every Thursday",
+      "options": ["every Thursday","every weekend","every morning","every year"],
+      "audioClip": {"storySlug":"encore-une-voie","storySource":"user","sentence":"Tous les jeudis, il va à l'escalade avec un ami.","targetWord":"Tous les jeudis","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le premier ami",
+    "sentence": "C'est son [[premier ami]] dans cette ville.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "first friend",
+      "options": ["first friend","old friend","best friend","new neighbor"],
+      "audioClip": {"storySlug":"encore-une-voie","storySource":"user","sentence":"C'est son premier ami dans cette ville.","targetWord":"premier ami","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en solo",
+    "sentence": "Ce soir, sa copine chante [[en solo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "alone, by herself",
+      "options": ["alone, by herself","with a group","very loudly","for the first time"],
+      "audioClip": {"storySlug":"encore-une-voie","storySource":"user","sentence":"Ce soir, sa copine chante en solo.","targetWord":"en solo","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "allez",
+    "sentence": "“[[Allez]], une seule voie de plus!”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "come on",
+      "options": ["come on","goodbye","be careful","good night"],
+      "audioClip": {"storySlug":"encore-une-voie","storySource":"user","sentence":"Allez, une seule voie de plus!","targetWord":"Allez","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dans la nuit",
+    "sentence": "Elle part seule [[dans la nuit]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "into the night",
+      "options": ["into the night","into the house","into the car","into the shop"],
+      "audioClip": {"storySlug":"encore-une-voie","storySource":"user","sentence":"Elle part seule dans la nuit.","targetWord":"dans la nuit","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fier de lui",
+    "sentence": "Il répond, [[fier de lui]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "proud of himself",
+      "options": ["proud of himself","afraid of himself","tired of himself","angry with himself"],
+      "audioClip": {"storySlug":"encore-une-voie","storySource":"user","sentence":"Il répond, fier de lui.","targetWord":"fier de lui","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oublier l'heure",
+    "sentence": "Il grimpe encore et [[oublie l'heure]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "loses track of time",
+      "options": ["loses track of time","checks his watch","arrives early","falls asleep"],
+      "audioClip": {"storySlug":"encore-une-voie","storySource":"user","sentence":"Il grimpe encore et oublie l'heure.","targetWord":"oublie l'heure","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vingt et une heures",
+    "sentence": "À [[vingt et une heures]], il a six appels manqués.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nine PM",
+      "options": ["nine PM","nine AM","noon","midnight"],
+      "audioClip": {"storySlug":"encore-une-voie","storySource":"user","sentence":"À vingt et une heures, il a six appels manqués.","targetWord":"vingt et une heures","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sans lui",
+    "sentence": "Elle part [[sans lui]], dans la nuit.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without him",
+      "options": ["without him","together with him","instead of him","because of him"],
+      "audioClip": {"storySlug":"encore-une-voie","storySource":"user","sentence":"Elle part sans lui, dans la nuit.","targetWord":"sans lui","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "proposer encore une",
+    "sentence": "“[[Encore une]]!” insiste-t-il, avant de partir.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "let's do one more",
+      "options": ["let's do one more","let's stop now","let's go home","let's wait here"],
+      "audioClip": {"storySlug":"encore-une-voie","storySource":"user","sentence":"Encore une! insiste-t-il, avant de partir.","targetWord":"Encore une","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "après l'autre",
+    "sentence": "Il raconte une blague [[après l'autre]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "one after another",
+      "options": ["one after another","only once","very slowly","with great care"],
+      "audioClip": {"storySlug":"encore-une-voie","storySource":"user","sentence":"Il raconte une blague après l'autre.","targetWord":"après l'autre","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jusqu'à",
+    "sentence": "Il court [[jusqu'au]] concert.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "all the way to",
+      "options": ["all the way to","far away from","next to","instead of"],
+      "audioClip": {"storySlug":"encore-une-voie","storySource":"user","sentence":"Il court jusqu'au concert.","targetWord":"jusqu'au","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sur les épaules",
+    "sentence": "Elle attend, le manteau [[sur les épaules]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "over her shoulders",
+      "options": ["over her shoulders","under her arm","in her hands","on the ground"],
+      "audioClip": {"storySlug":"encore-une-voie","storySource":"user","sentence":"Elle attend, le manteau sur les épaules.","targetWord":"sur les épaules","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sportif",
+    "sentence": "Il court chaque jour: il est très _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sportif",
+      "options": ["sportif","fatigué","malade","perdu"],
+      "translation": "He runs every day: he is very _____.",
+      "optionTranslations": ["athletic","tired","sick","lost"],
+      "audioClip": {"storySlug":"encore-une-voie","storySource":"user","sentence":"Il court chaque jour: il est très sportif.","targetWord":"sportif","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "à côté",
+    "sentence": "Ne prends pas la voiture, c'est juste _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "à côté",
+      "options": ["à côté","très loin","fermé","dangereux"],
+      "translation": "Don't take the car, it's just _____.",
+      "optionTranslations": ["nearby","very far","closed","dangerous"],
+      "audioClip": {"storySlug":"encore-une-voie","storySource":"user","sentence":"Ne prends pas la voiture, c'est juste à côté.","targetWord":"à côté","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "il fait chaud",
+    "sentence": "Dans la salle, _____, et tout le monde a soif.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "il fait chaud",
+      "options": ["il fait chaud","il fait froid","il pleut","il neige"],
+      "translation": "In the room, _____, and everyone is thirsty.",
+      "optionTranslations": ["it's hot","it's cold","it's raining","it's snowing"],
+      "audioClip": {"storySlug":"encore-une-voie","storySource":"user","sentence":"Dans la salle, il fait chaud, et tout le monde a soif.","targetWord":"il fait chaud","language":"french"}
+    },
+    "featured": false
+  }
+]

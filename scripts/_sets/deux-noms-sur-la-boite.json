@@ -1,0 +1,206 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "la proposition,l'épaule,la Loire,le quai",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {"word":"la proposition","answer":"an offer","options":["an offer","a shoulder","a river","a platform"]},
+        {"word":"l'épaule","answer":"a shoulder","options":["an offer","a shoulder","a river","a platform"]},
+        {"word":"la Loire","answer":"a river","options":["an offer","a shoulder","a river","a platform"]},
+        {"word":"le quai","answer":"a platform","options":["an offer","a shoulder","a river","a platform"]}
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "au petit matin",
+    "sentence": "[[Au petit matin]], il ouvre la porte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "early in the morning",
+      "options": ["early in the morning","late at night","in the afternoon","at noon"],
+      "audioClip": {"storySlug":"deux-noms-sur-la-boite","storySource":"user","sentence":"Au petit matin, il ouvre la porte.","targetWord":"Au petit matin","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avoir peur de",
+    "sentence": "[[J'avais peur de]] parler avant de choisir.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "I was afraid to",
+      "options": ["I was afraid to","I was happy to","I forgot to","I refused to"],
+      "audioClip": {"storySlug":"deux-noms-sur-la-boite","storySource":"user","sentence":"J'avais peur de parler avant de choisir.","targetWord":"J'avais peur de","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "les yeux fatigués",
+    "sentence": "Elle demande, [[les yeux fatigués]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "with tired eyes",
+      "options": ["with tired eyes","with a big smile","with cold hands","with a loud voice"],
+      "audioClip": {"storySlug":"deux-noms-sur-la-boite","storySource":"user","sentence":"Elle demande, les yeux fatigués.","targetWord":"les yeux fatigués","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sans hésiter",
+    "sentence": "Devant elle, [[sans hésiter]], il appelle son ancien patron.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without hesitating",
+      "options": ["without hesitating","very slowly","with a smile","in the morning"],
+      "audioClip": {"storySlug":"deux-noms-sur-la-boite","storySource":"user","sentence":"Devant elle, sans hésiter, il appelle son ancien patron.","targetWord":"sans hésiter","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rester à Nantes",
+    "sentence": "Il préfère [[rester à Nantes]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stay in Nantes",
+      "options": ["to stay in Nantes","to move away","to change jobs","to leave everything"],
+      "audioClip": {"storySlug":"deux-noms-sur-la-boite","storySource":"user","sentence":"Il préfère rester à Nantes.","targetWord":"rester à Nantes","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poser sa tête",
+    "sentence": "Elle [[pose sa tête]] sur son épaule.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "rests her head",
+      "options": ["rests her head","closes her eyes","raises her hand","turns her back"],
+      "audioClip": {"storySlug":"deux-noms-sur-la-boite","storySource":"user","sentence":"Elle pose sa tête sur son épaule.","targetWord":"pose sa tête","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "serrer dans ses bras",
+    "sentence": "Elle [[serre son frère dans ses bras]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hugs her brother",
+      "options": ["hugs her brother","calls her brother","waits for her brother","forgets her brother"],
+      "audioClip": {"storySlug":"deux-noms-sur-la-boite","storySource":"user","sentence":"Elle serre son frère dans ses bras.","targetWord":"serre son frère dans ses bras","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "désormais",
+    "sentence": "[[Désormais]], ils vont se voir deux fois par an.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "from now on",
+      "options": ["from now on","once before","only yesterday","for a moment"],
+      "audioClip": {"storySlug":"deux-noms-sur-la-boite","storySource":"user","sentence":"Désormais, ils vont se voir deux fois par an.","targetWord":"Désormais","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le cœur lourd",
+    "sentence": "Il regarde partir sa sœur, [[le cœur lourd]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "with a heavy heart",
+      "options": ["with a heavy heart","with great joy","without a word","with a big smile"],
+      "audioClip": {"storySlug":"deux-noms-sur-la-boite","storySource":"user","sentence":"Il regarde partir sa sœur, le cœur lourd.","targetWord":"le cœur lourd","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "devant elle",
+    "sentence": "[[Devant elle]], sans hésiter, il appelle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in front of her",
+      "options": ["in front of her","behind the door","next to the window","far from home"],
+      "audioClip": {"storySlug":"deux-noms-sur-la-boite","storySource":"user","sentence":"Devant elle, sans hésiter, il appelle.","targetWord":"Devant elle","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "deux fois par an",
+    "sentence": "Ils vont se voir [[deux fois par an]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "twice a year",
+      "options": ["twice a year","every single day","once in a lifetime","only by accident"],
+      "audioClip": {"storySlug":"deux-noms-sur-la-boite","storySource":"user","sentence":"Ils vont se voir deux fois par an.","targetWord":"deux fois par an","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "à voix haute",
+    "sentence": "Elle lit le nom [[à voix haute]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "out loud",
+      "options": ["out loud","very quietly","twice","in English"],
+      "audioClip": {"storySlug":"deux-noms-sur-la-boite","storySource":"user","sentence":"Elle lit le nom à voix haute.","targetWord":"à voix haute","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "c'est elle qui",
+    "sentence": "[[C'est elle qui]] ajoute le dernier mot.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "she's the one who",
+      "options": ["she's the one who","he's the one who","nobody ever","everyone always"],
+      "audioClip": {"storySlug":"deux-noms-sur-la-boite","storySource":"user","sentence":"C'est elle qui ajoute le dernier mot.","targetWord":"C'est elle qui","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "froid",
+    "sentence": "Elle attend dehors avec un café déjà _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "froid",
+      "options": ["froid","chaud","sucré","plein"],
+      "translation": "She waits outside with a coffee that's already _____.",
+      "optionTranslations": ["cold","hot","sweet","full"],
+      "audioClip": {"storySlug":"deux-noms-sur-la-boite","storySource":"user","sentence":"Elle attend dehors avec un café déjà froid.","targetWord":"froid","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "gris",
+    "sentence": "Le ciel est tout _____ ce matin.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gris",
+      "options": ["gris","bleu","rouge","jaune"],
+      "translation": "The sky is completely _____ this morning.",
+      "optionTranslations": ["grey","blue","red","yellow"],
+      "audioClip": {"storySlug":"deux-noms-sur-la-boite","storySource":"user","sentence":"Le ciel est tout gris ce matin.","targetWord":"gris","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "porte",
+    "sentence": "Il ouvre la _____ pour sortir sur le balcon.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "porte",
+      "options": ["porte","fenêtre","boîte","table"],
+      "translation": "He opens the _____ to go out onto the balcony.",
+      "optionTranslations": ["door","window","box","table"],
+      "audioClip": {"storySlug":"deux-noms-sur-la-boite","storySource":"user","sentence":"Il ouvre la porte pour sortir sur le balcon.","targetWord":"porte","language":"french"}
+    },
+    "featured": false
+  }
+]

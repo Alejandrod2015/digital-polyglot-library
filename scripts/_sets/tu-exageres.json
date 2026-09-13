@@ -1,0 +1,206 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "le canapé,la chanson,le message,le bouquet",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {"word":"le canapé","answer":"a couch","options":["a couch","a song","a text message","a bunch of flowers"]},
+        {"word":"la chanson","answer":"a song","options":["a couch","a song","a text message","a bunch of flowers"]},
+        {"word":"le message","answer":"a text message","options":["a couch","a song","a text message","a bunch of flowers"]},
+        {"word":"le bouquet","answer":"a bunch of flowers","options":["a couch","a song","a text message","a bunch of flowers"]}
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en colère",
+    "sentence": "Ses yeux sont [[en colère]], mais elle reste calme.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "angry",
+      "options": ["angry","happy","sleepy","bored"],
+      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Ses yeux sont en colère, mais elle reste calme.","targetWord":"en colère","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "exagérer",
+    "sentence": "Ce n'est rien, tu [[exagères]] un peu.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "are exaggerating",
+      "options": ["are exaggerating","are joking","are lying","are shouting"],
+      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Ce n'est rien, tu exagères un peu.","targetWord":"exagères","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "décevoir",
+    "sentence": "Il ne vient pas: elle est [[déçue]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "disappointed",
+      "options": ["disappointed","excited","surprised","relieved"],
+      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Il ne vient pas: elle est déçue.","targetWord":"déçue","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dormir mal",
+    "sentence": "Inquiet, il [[dort mal]] sur le canapé.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sleeps badly",
+      "options": ["sleeps badly","sleeps well","falls asleep quickly","wakes up refreshed"],
+      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Inquiet, il dort mal sur le canapé.","targetWord":"dort mal","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vexer",
+    "sentence": "[[Vexée]], elle part dans la chambre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hurt, offended",
+      "options": ["hurt, offended","happy, pleased","tired, sleepy","calm, relaxed"],
+      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Vexée, elle part dans la chambre.","targetWord":"Vexée","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "comprendre vraiment rien",
+    "sentence": "Tu ne [[comprends vraiment rien]], dit-elle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "don't understand at all",
+      "options": ["don't understand at all","understand everything","remember everything","forget nothing"],
+      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Tu ne comprends vraiment rien, dit-elle.","targetWord":"comprends vraiment rien","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "deux heures plus tard",
+    "sentence": "[[Deux heures plus tard]], personne ne dit rien.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "two hours later",
+      "options": ["two hours later","two minutes later","the next morning","the day before"],
+      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Deux heures plus tard, personne ne dit rien.","targetWord":"Deux heures plus tard","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "à midi",
+    "sentence": "[[À midi]], il arrive avec un bouquet.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at noon",
+      "options": ["at noon","at midnight","in the evening","at dawn"],
+      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"À midi, il arrive avec un bouquet.","targetWord":"À midi","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la voix",
+    "sentence": "Sa [[voix]] reste calme, malgré la colère.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "voice",
+      "options": ["voice","face","hand","name"],
+      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Sa voix reste calme, malgré la colère.","targetWord":"voix","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la phrase de trop",
+    "sentence": "C'est [[la phrase de trop]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the last straw",
+      "options": ["the last straw","a nice compliment","a small joke","a good idea"],
+      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"C'est la phrase de trop.","targetWord":"la phrase de trop","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la couverture",
+    "sentence": "Il dort sous une vieille [[couverture]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "blanket",
+      "options": ["blanket","pillow","mattress","curtain"],
+      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Il dort sous une vieille couverture.","targetWord":"couverture","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la fleur",
+    "sentence": "Il reçoit encore des [[fleurs]] rouges.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "flowers",
+      "options": ["flowers","letters","gifts","cookies"],
+      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Il reçoit encore des fleurs rouges.","targetWord":"fleurs","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "toujours des",
+    "sentence": "Des fleurs, [[toujours des]] fleurs.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "always the same",
+      "options": ["always the same","never the same","sometimes new","only once"],
+      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Des fleurs, toujours des fleurs.","targetWord":"toujours des","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "insisté",
+    "sentence": "Il ne veut pas, mais elle a _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "insisté",
+      "options": ["insisté","dormi","chanté","payé"],
+      "translation": "He doesn't want to, but she _____.",
+      "optionTranslations": ["insisted","slept","sang","paid"],
+      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Il ne veut pas, mais elle a insisté.","targetWord":"insisté","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "promis",
+    "sentence": "Il dit qu'il va venir: il l'a _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "promis",
+      "options": ["promis","oublié","caché","vendu"],
+      "translation": "He says he'll come: he _____ it.",
+      "optionTranslations": ["promised","forgot","hid","sold"],
+      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Il dit qu'il va venir: il l'a promis.","targetWord":"promis","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cherché",
+    "sentence": "Il ne la trouve pas: il l'a _____ partout.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cherché",
+      "options": ["cherché","jeté","payé","fermé"],
+      "translation": "He can't find her: he _____ her everywhere.",
+      "optionTranslations": ["looked for","threw away","paid for","closed"],
+      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Il ne la trouve pas: il l'a cherché partout.","targetWord":"cherché","language":"french"}
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,433 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "le chocolat,la bague,le musicien,le discours",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "le chocolat",
+          "answer": "chocolate",
+          "options": [
+            "chocolate",
+            "a ring",
+            "a musician",
+            "a speech"
+          ]
+        },
+        {
+          "word": "la bague",
+          "answer": "a ring",
+          "options": [
+            "chocolate",
+            "a ring",
+            "a musician",
+            "a speech"
+          ]
+        },
+        {
+          "word": "le musicien",
+          "answer": "a musician",
+          "options": [
+            "chocolate",
+            "a ring",
+            "a musician",
+            "a speech"
+          ]
+        },
+        {
+          "word": "le discours",
+          "answer": "a speech",
+          "options": [
+            "chocolate",
+            "a ring",
+            "a musician",
+            "a speech"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dans deux semaines",
+    "sentence": "Son mariage est [[dans deux semaines]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in two weeks",
+      "options": [
+        "in two weeks",
+        "in two days",
+        "last year",
+        "next month"
+      ],
+      "audioClip": {
+        "storySlug": "elise-demande-un-service",
+        "storySource": "user",
+        "sentence": "Son mariage est dans deux semaines.",
+        "targetWord": "dans deux semaines",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ne plus pouvoir venir",
+    "sentence": "Le musicien [[ne peut plus venir]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "can't come anymore",
+      "options": [
+        "can't come anymore",
+        "is coming early",
+        "wants to sing",
+        "forgot his guitar"
+      ],
+      "audioClip": {
+        "storySlug": "elise-demande-un-service",
+        "storySource": "user",
+        "sentence": "Le musicien ne peut plus venir.",
+        "targetWord": "ne peut plus venir",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rendre service",
+    "sentence": "Il accepte de [[rendre service]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "help out",
+      "options": [
+        "help out",
+        "get paid",
+        "say no",
+        "leave early"
+      ],
+      "audioClip": {
+        "storySlug": "elise-demande-un-service",
+        "storySource": "user",
+        "sentence": "Il accepte de rendre service.",
+        "targetWord": "rendre service",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entre amis",
+    "sentence": "C'est un dîner [[entre amis]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "among friends",
+      "options": [
+        "among friends",
+        "at work",
+        "with family",
+        "alone"
+      ],
+      "audioClip": {
+        "storySlug": "elise-demande-un-service",
+        "storySource": "user",
+        "sentence": "C'est un dîner entre amis.",
+        "targetWord": "entre amis",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avoir envie de",
+    "sentence": "Il [[a envie d'y aller]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "feels like going",
+      "options": [
+        "feels like going",
+        "refuses to go",
+        "forgot to go",
+        "is afraid to go"
+      ],
+      "audioClip": {
+        "storySlug": "elise-demande-un-service",
+        "storySource": "user",
+        "sentence": "Il a envie d'y aller.",
+        "targetWord": "a envie d'y aller",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la salle des fêtes",
+    "sentence": "C'est une vieille [[salle des fêtes]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "village hall",
+      "options": [
+        "village hall",
+        "train station",
+        "small hotel",
+        "old church"
+      ],
+      "audioClip": {
+        "storySlug": "elise-demande-un-service",
+        "storySource": "user",
+        "sentence": "C'est une vieille salle des fêtes.",
+        "targetWord": "salle des fêtes",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "un mardi soir",
+    "sentence": "Elle arrive [[un mardi soir]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "one Tuesday evening",
+      "options": [
+        "one Tuesday evening",
+        "one Sunday morning",
+        "one Friday afternoon",
+        "one Saturday night"
+      ],
+      "audioClip": {
+        "storySlug": "elise-demande-un-service",
+        "storySource": "user",
+        "sentence": "Elle arrive un mardi soir.",
+        "targetWord": "un mardi soir",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "couper le gâteau",
+    "sentence": "On a [[coupé le gâteau]] dans le noir.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cut the cake",
+      "options": [
+        "cut the cake",
+        "eaten the cake",
+        "baked the cake",
+        "forgotten the cake"
+      ],
+      "audioClip": {
+        "storySlug": "elise-demande-un-service",
+        "storySource": "user",
+        "sentence": "On a coupé le gâteau dans le noir.",
+        "targetWord": "coupé le gâteau",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "un petit service",
+    "sentence": "Ce n'est pas un [[petit service]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "small favor",
+      "options": [
+        "small favor",
+        "big surprise",
+        "long trip",
+        "new job"
+      ],
+      "audioClip": {
+        "storySlug": "elise-demande-un-service",
+        "storySource": "user",
+        "sentence": "Ce n'est pas un petit service.",
+        "targetWord": "petit service",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "à chaque",
+    "sentence": "[[À chaque]] mariage, la lumière s'éteint.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at every",
+      "options": [
+        "at every",
+        "at no",
+        "at the last",
+        "at one"
+      ],
+      "audioClip": {
+        "storySlug": "elise-demande-un-service",
+        "storySource": "user",
+        "sentence": "À chaque mariage, la lumière s'éteint.",
+        "targetWord": "À chaque",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pendant le dîner",
+    "sentence": "Il travaille [[pendant le dîner]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "during the dinner",
+      "options": [
+        "during the dinner",
+        "before the party",
+        "after the wedding",
+        "instead of lunch"
+      ],
+      "audioClip": {
+        "storySlug": "elise-demande-un-service",
+        "storySource": "user",
+        "sentence": "Il travaille pendant le dîner.",
+        "targetWord": "pendant le dîner",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "passer à",
+    "sentence": "Il va [[passer à]] la salle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stop by",
+      "options": [
+        "stop by",
+        "run away from",
+        "call about",
+        "pay for"
+      ],
+      "audioClip": {
+        "storySlug": "elise-demande-un-service",
+        "storySource": "user",
+        "sentence": "Il va passer à la salle.",
+        "targetWord": "passer à",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le mariage",
+    "sentence": "Le [[mariage]] a lieu dans une salle des fêtes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wedding",
+      "options": [
+        "wedding",
+        "birthday",
+        "concert",
+        "dinner"
+      ],
+      "audioClip": {
+        "storySlug": "elise-demande-un-service",
+        "storySource": "user",
+        "sentence": "Le mariage a lieu dans une salle des fêtes.",
+        "targetWord": "mariage",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "organise",
+    "sentence": "Chaque année, elle _____ un grand dîner pour ses amis.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "organise",
+      "options": [
+        "organise",
+        "oublie",
+        "paie",
+        "déteste"
+      ],
+      "translation": "Every year, she _____ a big dinner for her friends.",
+      "optionTranslations": [
+        "organize",
+        "forget",
+        "pay for",
+        "hate"
+      ],
+      "audioClip": {
+        "storySlug": "elise-demande-un-service",
+        "storySource": "user",
+        "sentence": "Chaque année, elle organise un grand dîner pour ses amis.",
+        "targetWord": "organise",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cousine",
+    "sentence": "Ma _____ est la fille de mon oncle.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cousine",
+      "options": [
+        "cousine",
+        "sœur",
+        "mère",
+        "amie"
+      ],
+      "translation": "My _____ is my uncle's daughter.",
+      "optionTranslations": [
+        "cousin",
+        "sister",
+        "mother",
+        "friend"
+      ],
+      "audioClip": {
+        "storySlug": "elise-demande-un-service",
+        "storySource": "user",
+        "sentence": "Ma cousine est la fille de mon oncle.",
+        "targetWord": "cousine",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "micro",
+    "sentence": "Sans _____, personne n'entend le discours.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "micro",
+      "options": [
+        "micro",
+        "café",
+        "sac",
+        "verre"
+      ],
+      "translation": "Without a _____, nobody hears the speech.",
+      "optionTranslations": [
+        "microphone",
+        "coffee",
+        "bag",
+        "glass"
+      ],
+      "audioClip": {
+        "storySlug": "elise-demande-un-service",
+        "storySource": "user",
+        "sentence": "Sans micro, personne n'entend le discours.",
+        "targetWord": "micro",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
+]

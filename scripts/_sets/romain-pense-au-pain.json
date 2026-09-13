@@ -1,0 +1,433 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "l'assurance,le miel,la belle-mère,la confiture",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "l'assurance",
+          "answer": "insurance",
+          "options": [
+            "insurance",
+            "honey",
+            "a mother-in-law",
+            "jam"
+          ]
+        },
+        {
+          "word": "le miel",
+          "answer": "honey",
+          "options": [
+            "insurance",
+            "honey",
+            "a mother-in-law",
+            "jam"
+          ]
+        },
+        {
+          "word": "la belle-mère",
+          "answer": "a mother-in-law",
+          "options": [
+            "insurance",
+            "honey",
+            "a mother-in-law",
+            "jam"
+          ]
+        },
+        {
+          "word": "la confiture",
+          "answer": "jam",
+          "options": [
+            "insurance",
+            "honey",
+            "a mother-in-law",
+            "jam"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en petits morceaux",
+    "sentence": "Il déchire le papier [[en petits morceaux]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "into little pieces",
+      "options": [
+        "into little pieces",
+        "into two halves",
+        "into the trash",
+        "into an envelope"
+      ],
+      "audioClip": {
+        "storySlug": "romain-pense-au-pain",
+        "storySource": "user",
+        "sentence": "Il déchire le papier en petits morceaux.",
+        "targetWord": "en petits morceaux",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rire de moi",
+    "sentence": "Mon collègue va [[rire de moi]] au travail.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "laugh at me",
+      "options": [
+        "laugh at me",
+        "help me",
+        "wait for me",
+        "call me"
+      ],
+      "audioClip": {
+        "storySlug": "romain-pense-au-pain",
+        "storySource": "user",
+        "sentence": "Mon collègue va rire de moi au travail.",
+        "targetWord": "rire de moi",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tant pis",
+    "sentence": "“[[Tant pis]]”, pense-t-il.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "oh well",
+      "options": [
+        "oh well",
+        "of course",
+        "never again",
+        "right away"
+      ],
+      "audioClip": {
+        "storySlug": "romain-pense-au-pain",
+        "storySource": "user",
+        "sentence": "Tant pis, pense-t-il.",
+        "targetWord": "Tant pis",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "prévoir",
+    "sentence": "Il écrit des choses à [[prévoir]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "plan for",
+      "options": [
+        "plan for",
+        "forget",
+        "forbid",
+        "buy immediately"
+      ],
+      "audioClip": {
+        "storySlug": "romain-pense-au-pain",
+        "storySource": "user",
+        "sentence": "Il écrit des choses à prévoir.",
+        "targetWord": "prévoir",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chaque mois",
+    "sentence": "Les factures arrivent [[chaque mois]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "every month",
+      "options": [
+        "every month",
+        "once a year",
+        "every day",
+        "on Sundays only"
+      ],
+      "audioClip": {
+        "storySlug": "romain-pense-au-pain",
+        "storySource": "user",
+        "sentence": "Les factures arrivent chaque mois.",
+        "targetWord": "chaque mois",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "à partir de maintenant",
+    "sentence": "[[À partir de maintenant]], je surveille tout.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "starting now",
+      "options": [
+        "starting now",
+        "until yesterday",
+        "for one hour",
+        "never again"
+      ],
+      "audioClip": {
+        "storySlug": "romain-pense-au-pain",
+        "storySource": "user",
+        "sentence": "À partir de maintenant, je surveille tout.",
+        "targetWord": "À partir de maintenant",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fatigant",
+    "sentence": "C'est [[fatigant]] de penser à tout.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tiring",
+      "options": [
+        "tiring",
+        "easy",
+        "cheap",
+        "funny"
+      ],
+      "audioClip": {
+        "storySlug": "romain-pense-au-pain",
+        "storySource": "user",
+        "sentence": "C'est fatigant de penser à tout.",
+        "targetWord": "fatigant",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le premier sourire",
+    "sentence": "C'est [[le premier sourire]] de la journée.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the first smile",
+      "options": [
+        "the first smile",
+        "the last word",
+        "the best gift",
+        "the only mistake"
+      ],
+      "audioClip": {
+        "storySlug": "romain-pense-au-pain",
+        "storySource": "user",
+        "sentence": "C'est le premier sourire de la journée.",
+        "targetWord": "le premier sourire",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le pain chaud",
+    "sentence": "L'odeur du [[pain chaud]] remplit la cuisine.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "warm bread",
+      "options": [
+        "warm bread",
+        "fresh coffee",
+        "sweet cake",
+        "hot soup"
+      ],
+      "audioClip": {
+        "storySlug": "romain-pense-au-pain",
+        "storySource": "user",
+        "sentence": "L'odeur du pain chaud remplit la cuisine.",
+        "targetWord": "pain chaud",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sans demander",
+    "sentence": "Je surveille tout, [[sans demander]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without asking",
+      "options": [
+        "without asking",
+        "without paying",
+        "without eating",
+        "without sleeping"
+      ],
+      "audioClip": {
+        "storySlug": "romain-pense-au-pain",
+        "storySource": "user",
+        "sentence": "Je surveille tout, sans demander.",
+        "targetWord": "sans demander",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "penser à tout",
+    "sentence": "C'est fatigant de [[penser à tout]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to think of everything",
+      "options": [
+        "to think of everything",
+        "to forget everything",
+        "to buy everything",
+        "to sell everything"
+      ],
+      "audioClip": {
+        "storySlug": "romain-pense-au-pain",
+        "storySource": "user",
+        "sentence": "C'est fatigant de penser à tout.",
+        "targetWord": "penser à tout",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "surprendre",
+    "sentence": "Elle rentre, [[surprise]], et trouve la liste.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "surprised",
+      "options": [
+        "surprised",
+        "tired",
+        "angry",
+        "happy"
+      ],
+      "audioClip": {
+        "storySlug": "romain-pense-au-pain",
+        "storySource": "user",
+        "sentence": "Elle rentre, surprise, et trouve la liste.",
+        "targetWord": "surprise",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pour une fois",
+    "sentence": "[[Pour une fois]], c'est lui qui descend.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "for once",
+      "options": [
+        "for once",
+        "every day",
+        "never",
+        "twice a week"
+      ],
+      "audioClip": {
+        "storySlug": "romain-pense-au-pain",
+        "storySource": "user",
+        "sentence": "Pour une fois, c'est lui qui descend.",
+        "targetWord": "Pour une fois",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "jette",
+    "sentence": "Il déchire le planning et le _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "jette",
+      "options": [
+        "jette",
+        "garde",
+        "lit",
+        "cherche"
+      ],
+      "translation": "He tears up the schedule and _____ it.",
+      "optionTranslations": [
+        "throws away",
+        "keeps",
+        "reads",
+        "looks for"
+      ],
+      "audioClip": {
+        "storySlug": "romain-pense-au-pain",
+        "storySource": "user",
+        "sentence": "Il déchire le planning et le jette.",
+        "targetWord": "jette",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "surveille",
+    "sentence": "Depuis, c'est lui qui _____ les factures.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "surveille",
+      "options": [
+        "surveille",
+        "oublie",
+        "perd",
+        "vend"
+      ],
+      "translation": "Since then, he's the one who _____ the bills.",
+      "optionTranslations": [
+        "keeps track of",
+        "forgets",
+        "loses",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "romain-pense-au-pain",
+        "storySource": "user",
+        "sentence": "Depuis, c'est lui qui surveille les factures.",
+        "targetWord": "surveille",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "oblige",
+    "sentence": "Il descend seul: personne ne l'y _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "oblige",
+      "options": [
+        "oblige",
+        "aide",
+        "invite",
+        "suit"
+      ],
+      "translation": "He goes down alone: nobody _____ him to.",
+      "optionTranslations": [
+        "forces",
+        "helps",
+        "invites",
+        "follows"
+      ],
+      "audioClip": {
+        "storySlug": "romain-pense-au-pain",
+        "storySource": "user",
+        "sentence": "Il descend seul: personne ne l'y oblige.",
+        "targetWord": "oblige",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
+]

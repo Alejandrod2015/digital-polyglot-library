@@ -1,0 +1,206 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "la chaise,le courage,l'oncle,la tante",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {"word":"la chaise","answer":"a chair","options":["a chair","courage","an uncle","an aunt"]},
+        {"word":"le courage","answer":"courage","options":["a chair","courage","an uncle","an aunt"]},
+        {"word":"l'oncle","answer":"an uncle","options":["a chair","courage","an uncle","an aunt"]},
+        {"word":"la tante","answer":"an aunt","options":["a chair","courage","an uncle","an aunt"]}
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "encore une chose",
+    "sentence": "“[[Encore une chose]]!” annonce-t-elle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "one more thing",
+      "options": ["one more thing","nothing else","the same thing","too many things"],
+      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Encore une chose! annonce-t-elle.","targetWord":"Encore une chose","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dire quelques mots",
+    "sentence": "Tu viens [[dire quelques mots]]?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "say a few words",
+      "options": ["say a few words","sing a whole song","dance with everyone","pour the drinks"],
+      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Tu viens dire quelques mots?","targetWord":"dire quelques mots","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "se tourner vers",
+    "sentence": "Toute la salle [[se tourne vers]] lui.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "turns toward",
+      "options": ["turns toward","walks away from","laughs at","waits for"],
+      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Toute la salle se tourne vers lui.","targetWord":"se tourne vers","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parler devant",
+    "sentence": "[[Parler devant]] cent personnes lui fait peur.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "speaking in front of",
+      "options": ["speaking in front of","dancing with","singing for","cooking for"],
+      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Parler devant cent personnes lui fait peur.","targetWord":"Parler devant","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lever son verre",
+    "sentence": "Elle [[lève son verre]] pour lui donner du courage.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "raises her glass",
+      "options": ["raises her glass","closes her eyes","leaves the table","drops her fork"],
+      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Elle lève son verre pour lui donner du courage.","targetWord":"lève son verre","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la voix tremble",
+    "sentence": "Sa [[voix tremble]] quand il parle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "voice shakes",
+      "options": ["voice shakes","voice is loud","voice is calm","voice disappears"],
+      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Sa voix tremble quand il parle.","targetWord":"voix tremble","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "se sentir de la famille",
+    "sentence": "Pour la première fois, [[je me sens de la famille]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "I feel part of the family",
+      "options": ["I feel part of the family","I feel completely alone","I feel very tired","I feel a little sick"],
+      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Pour la première fois, je me sens de la famille.","targetWord":"je me sens de la famille","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vive les mariés",
+    "sentence": "“[[Vive les mariés]]!” crie tout le monde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "long live the newlyweds",
+      "options": ["long live the newlyweds","goodnight everyone","welcome home","happy birthday"],
+      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Vive les mariés! crie tout le monde.","targetWord":"Vive les mariés","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "crier bravo",
+    "sentence": "Un oncle [[crie bravo]] depuis sa chaise.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shouts bravo",
+      "options": ["shouts bravo","falls asleep","leaves quietly","starts crying"],
+      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Un oncle crie bravo depuis sa chaise.","targetWord":"crie bravo","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cent personnes",
+    "sentence": "Il doit parler devant [[cent personnes]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a hundred people",
+      "options": ["a hundred people","ten friends","one child","no one"],
+      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Il doit parler devant cent personnes.","targetWord":"cent personnes","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vouloir parler à",
+    "sentence": "Les cousins [[veulent parler à]] lui.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "want to talk to",
+      "options": ["want to talk to","want to dance with","want to leave","want to sleep"],
+      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Les cousins veulent parler à lui.","targetWord":"veulent parler à","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "à la fin de",
+    "sentence": "[[À la fin de]] la soirée, il a dix numéros.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at the end of",
+      "options": ["at the end of","at the beginning of","in the middle of","right before"],
+      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"À la fin de la soirée, il a dix numéros.","targetWord":"À la fin de","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la dernière danse",
+    "sentence": "Il rate [[la dernière danse]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the last dance",
+      "options": ["the last dance","the first song","the whole party","the wedding cake"],
+      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Il rate la dernière danse.","targetWord":"la dernière danse","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "reprend",
+    "sentence": "Elle _____ le micro pour annoncer une surprise.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "reprend",
+      "options": ["reprend","casse","cherche","ferme"],
+      "translation": "She _____ the microphone to announce a surprise.",
+      "optionTranslations": ["takes back","breaks","looks for","closes"],
+      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Elle reprend le micro pour annoncer une surprise.","targetWord":"reprend","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "numéros",
+    "sentence": "Il rentre avec dix nouveaux _____ dans son téléphone.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "numéros",
+      "options": ["numéros","cadeaux","photos","gâteaux"],
+      "translation": "He goes home with ten new _____ in his phone.",
+      "optionTranslations": ["phone numbers","gifts","photos","cakes"],
+      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Il rentre avec dix nouveaux numéros dans son téléphone.","targetWord":"numéros","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Bonsoir",
+    "sentence": "“_____, je m'appelle Paul”, dit-il au micro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Bonsoir",
+      "options": ["Bonsoir","Merci","Pardon","Adieu"],
+      "translation": "“_____, my name is Paul”, he says into the mic.",
+      "optionTranslations": ["Good evening","Thank you","Sorry","Farewell"],
+      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Bonsoir, je m'appelle Paul, dit-il au micro.","targetWord":"Bonsoir","language":"french"}
+    },
+    "featured": false
+  }
+]

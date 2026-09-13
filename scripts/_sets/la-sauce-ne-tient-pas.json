@@ -1,0 +1,206 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "la casserole,le feu,l'huile,le citron",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {"word":"la casserole","answer":"a saucepan","options":["a saucepan","fire, heat","oil","a lemon"]},
+        {"word":"le feu","answer":"fire, heat","options":["a saucepan","fire, heat","oil","a lemon"]},
+        {"word":"l'huile","answer":"oil","options":["a saucepan","fire, heat","oil","a lemon"]},
+        {"word":"le citron","answer":"a lemon","options":["a saucepan","fire, heat","oil","a lemon"]}
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le beurre blanc",
+    "sentence": "Elle prépare le [[beurre blanc]] pour le poisson.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "beurre blanc sauce",
+      "options": ["beurre blanc sauce","tomato sauce","chocolate cream","apple jam"],
+      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Elle prépare le beurre blanc pour le poisson.","targetWord":"beurre blanc","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "à feu doux",
+    "sentence": "Il faut tourner [[à feu doux]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on low heat",
+      "options": ["on low heat","on high heat","in cold water","without any heat"],
+      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Il faut tourner à feu doux.","targetWord":"à feu doux","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pas de problème",
+    "sentence": "“[[Pas de problème]]”, répond-il.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "no problem",
+      "options": ["no problem","big problem","not now","of course not"],
+      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Pas de problème, répond-il.","targetWord":"Pas de problème","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la sauce",
+    "sentence": "[[La sauce]] se sépare en deux.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the sauce",
+      "options": ["the sauce","the soup","the salad","the bread"],
+      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"La sauce se sépare en deux.","targetWord":"La sauce","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avec horreur",
+    "sentence": "Il regarde la casserole [[avec horreur]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "with horror",
+      "options": ["with horror","with a smile","with pride","with patience"],
+      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Il regarde la casserole avec horreur.","targetWord":"avec horreur","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le brûlé",
+    "sentence": "Ça sent [[le brûlé]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "something burning",
+      "options": ["something burning","something sweet","something fresh","something salty"],
+      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Ça sent le brûlé.","targetWord":"le brûlé","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ne pas tenir",
+    "sentence": "La sauce [[ne tient pas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "won't hold together",
+      "options": ["won't hold together","tastes amazing","is too cold","is ready"],
+      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"La sauce ne tient pas.","targetWord":"ne tient pas","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pire",
+    "sentence": "À l'hôpital, elle voit [[pire]] tous les jours.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "worse",
+      "options": ["worse","better","nothing","less"],
+      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"À l'hôpital, elle voit pire tous les jours.","targetWord":"pire","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "donner un coup de main",
+    "sentence": "Il veut [[donner un coup de main]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "help out",
+      "options": ["help out","take a break","ask a question","leave the kitchen"],
+      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Il veut donner un coup de main.","targetWord":"donner un coup de main","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "au travail",
+    "sentence": "Il tourne vite, comme [[au travail]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at work",
+      "options": ["at work","at home","on vacation","in the car"],
+      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Il tourne vite, comme au travail.","targetWord":"au travail","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le visage rouge",
+    "sentence": "Il a [[le visage rouge]] de chaleur.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "red-faced",
+      "options": ["red-faced","pale-faced","smiling","sleepy"],
+      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Il a le visage rouge de chaleur.","targetWord":"le visage rouge","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tous les jours",
+    "sentence": "Elle voit ce genre de chose [[tous les jours]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "every day",
+      "options": ["every day","once a year","this morning only","on Sundays"],
+      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Elle voit ce genre de chose tous les jours.","targetWord":"tous les jours","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "monter le feu",
+    "sentence": "Il ne faut pas [[monter le feu]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "turn up the heat",
+      "options": ["turn up the heat","add more salt","wash the pot","open the window"],
+      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Il ne faut pas monter le feu.","targetWord":"monter le feu","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "rapidement",
+    "sentence": "Il tourne trop _____ et le beurre chauffe trop vite.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rapidement",
+      "options": ["rapidement","doucement","rarement","calmement"],
+      "translation": "He stirs too _____ and the butter overheats.",
+      "optionTranslations": ["quickly","slowly","rarely","calmly"],
+      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Il tourne trop rapidement et le beurre chauffe trop vite.","targetWord":"rapidement","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sépare",
+    "sentence": "Le beurre et l'eau: la sauce se _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sépare",
+      "options": ["sépare","mélange","réchauffe","referme"],
+      "translation": "The butter and the water: the sauce _____.",
+      "optionTranslations": ["separates","mixes together","reheats","closes again"],
+      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Le beurre et l'eau: la sauce se sépare.","targetWord":"sépare","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "revient",
+    "sentence": "Elle sort, puis elle _____ sans crier.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "revient",
+      "options": ["revient","part","pleure","tombe"],
+      "translation": "She goes out, then she _____ without shouting.",
+      "optionTranslations": ["comes back","leaves","cries","falls"],
+      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Elle sort, puis elle revient sans crier.","targetWord":"revient","language":"french"}
+    },
+    "featured": false
+  }
+]

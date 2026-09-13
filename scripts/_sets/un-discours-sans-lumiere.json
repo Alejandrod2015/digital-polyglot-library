@@ -1,0 +1,206 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "la vie,l'escalier,la feuille,la musique",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {"word":"la vie","answer":"life","options":["life","stairs","a sheet of paper","music"]},
+        {"word":"l'escalier","answer":"stairs","options":["life","stairs","a sheet of paper","music"]},
+        {"word":"la feuille","answer":"a sheet of paper","options":["life","stairs","a sheet of paper","music"]},
+        {"word":"la musique","answer":"music","options":["life","stairs","a sheet of paper","music"]}
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "l'heure des discours",
+    "sentence": "C'est [[l'heure des discours]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "time for the speeches",
+      "options": ["time for the speeches","time to eat","time to dance","time to leave"],
+      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"C'est l'heure des discours.","targetWord":"l'heure des discours","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "prendre la parole",
+    "sentence": "Elle [[prend la parole]] devant tout le monde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "takes the floor",
+      "options": ["takes the floor","leaves the room","sits down","starts crying"],
+      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Elle prend la parole devant tout le monde.","targetWord":"prend la parole","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "à la main",
+    "sentence": "Elle tient sa feuille [[à la main]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in her hand",
+      "options": ["in her hand","on the table","in her bag","on the floor"],
+      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Elle tient sa feuille à la main.","targetWord":"à la main","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tout s'éteint",
+    "sentence": "Soudain, [[tout s'éteint]]: la musique, les lumières.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "everything goes out",
+      "options": ["everything goes out","everything gets louder","everyone laughs","everyone leaves"],
+      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Soudain, tout s'éteint: la musique, les lumières.","targetWord":"tout s'éteint","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dans le noir complet",
+    "sentence": "[[Dans le noir complet]], les gens rient.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in total darkness",
+      "options": ["in total darkness","in bright light","in complete silence","in heavy rain"],
+      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Dans le noir complet, les gens rient.","targetWord":"Dans le noir complet","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "s'occuper de",
+    "sentence": "Il [[s'occupe du]] vieux tableau électrique.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "takes care of",
+      "options": ["takes care of","is afraid of","talks about","sells"],
+      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Il s'occupe du vieux tableau électrique.","targetWord":"s'occupe du","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sans micro",
+    "sentence": "Elle parle [[sans micro]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without a microphone",
+      "options": ["without a microphone","with a loud voice","in the dark","in a hurry"],
+      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Elle parle sans micro.","targetWord":"sans micro","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pleurer de joie",
+    "sentence": "Elle [[pleure de joie]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cries with joy",
+      "options": ["cries with joy","laughs out loud","falls asleep","runs away"],
+      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Elle pleure de joie.","targetWord":"pleure de joie","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ce soir",
+    "sentence": "[[Ce soir]], je te raconte tout.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tonight",
+      "options": ["tonight","tomorrow","last week","every year"],
+      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Ce soir, je te raconte tout.","targetWord":"Ce soir","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "au milieu de",
+    "sentence": "[[Au milieu de]] la blague, tout s'éteint.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in the middle of",
+      "options": ["in the middle of","at the end of","before","after"],
+      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Au milieu de la blague, tout s'éteint.","targetWord":"Au milieu de","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "au loin",
+    "sentence": "[[Au loin]], il entend une voix.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in the distance",
+      "options": ["in the distance","right beside him","above his head","behind the door"],
+      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Au loin, il entend une voix.","targetWord":"Au loin","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "les mains noires",
+    "sentence": "Il revient avec [[les mains noires]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "black hands",
+      "options": ["black hands","cold hands","empty hands","tired eyes"],
+      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Il revient avec les mains noires.","targetWord":"les mains noires","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la scène",
+    "sentence": "Il court derrière [[la scène]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the stage",
+      "options": ["the stage","the door","the kitchen","the garden"],
+      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Il court derrière la scène.","targetWord":"la scène","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sauvé",
+    "sentence": "Tu as raté le discours, mais tu as _____ la fête.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sauvé",
+      "options": ["sauvé","oublié","cassé","cherché"],
+      "translation": "You missed the speech, but you _____ the party.",
+      "optionTranslations": ["saved","forgot","broke","looked for"],
+      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Tu as raté le discours, mais tu as sauvé la fête.","targetWord":"sauvé","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "embrasse",
+    "sentence": "Elle est contente, alors elle l'_____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "embrasse",
+      "options": ["embrasse","oublie","quitte","cherche"],
+      "translation": "She's happy, so she _____ him.",
+      "optionTranslations": ["kisses","forgets","leaves","looks for"],
+      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Elle est contente, alors elle l'embrasse.","targetWord":"embrasse","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "honneur",
+    "sentence": "Recevoir ce prix est un grand _____ pour elle.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "honneur",
+      "options": ["honneur","problème","secret","cadeau"],
+      "translation": "Receiving this prize is a great _____ for her.",
+      "optionTranslations": ["honor","problem","secret","gift"],
+      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Recevoir ce prix est un grand honneur pour elle.","targetWord":"honneur","language":"french"}
+    },
+    "featured": false
+  }
+]

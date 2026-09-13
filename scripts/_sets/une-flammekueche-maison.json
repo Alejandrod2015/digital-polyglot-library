@@ -1,0 +1,433 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "la pâte,l'oignon,la neige,le frère",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "la pâte",
+          "answer": "dough",
+          "options": [
+            "dough",
+            "an onion",
+            "snow",
+            "a brother"
+          ]
+        },
+        {
+          "word": "l'oignon",
+          "answer": "an onion",
+          "options": [
+            "dough",
+            "an onion",
+            "snow",
+            "a brother"
+          ]
+        },
+        {
+          "word": "la neige",
+          "answer": "snow",
+          "options": [
+            "dough",
+            "an onion",
+            "snow",
+            "a brother"
+          ]
+        },
+        {
+          "word": "le frère",
+          "answer": "a brother",
+          "options": [
+            "dough",
+            "an onion",
+            "snow",
+            "a brother"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la flammekueche",
+    "sentence": "Ils préparent une [[flammekueche]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an Alsatian tart",
+      "options": [
+        "an Alsatian tart",
+        "a chocolate cake",
+        "a fruit salad",
+        "a vegetable soup"
+      ],
+      "audioClip": {
+        "storySlug": "une-flammekueche-maison",
+        "storySource": "user",
+        "sentence": "Ils préparent une flammekueche.",
+        "targetWord": "flammekueche",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "papa",
+    "sentence": "Comme chez [[Papa]] et Maman.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Dad",
+      "options": [
+        "Dad",
+        "the boss",
+        "the neighbor",
+        "the doctor"
+      ],
+      "audioClip": {
+        "storySlug": "une-flammekueche-maison",
+        "storySource": "user",
+        "sentence": "Comme chez Papa et Maman.",
+        "targetWord": "Papa",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la tarte",
+    "sentence": "Il met [[la tarte]] au four.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the tart",
+      "options": [
+        "the tart",
+        "the meat",
+        "the fish",
+        "the soup"
+      ],
+      "audioClip": {
+        "storySlug": "une-flammekueche-maison",
+        "storySource": "user",
+        "sentence": "Il met la tarte au four.",
+        "targetWord": "la tarte",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le marché de Noël",
+    "sentence": "Il pense au [[marché de Noël]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Christmas market",
+      "options": [
+        "Christmas market",
+        "summer festival",
+        "wedding party",
+        "work meeting"
+      ],
+      "audioClip": {
+        "storySlug": "une-flammekueche-maison",
+        "storySource": "user",
+        "sentence": "Il pense au marché de Noël.",
+        "targetWord": "marché de Noël",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avoir le mal du pays",
+    "sentence": "Ce soir, il [[a le mal du pays]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "is homesick",
+      "options": [
+        "is homesick",
+        "is very happy",
+        "feels sick",
+        "is very tired"
+      ],
+      "audioClip": {
+        "storySlug": "une-flammekueche-maison",
+        "storySource": "user",
+        "sentence": "Ce soir, il a le mal du pays.",
+        "targetWord": "a le mal du pays",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "toujours rien",
+    "sentence": "Tu n'as [[toujours rien]] dit à ta copine.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "still nothing",
+      "options": [
+        "still nothing",
+        "already everything",
+        "only a little",
+        "too much"
+      ],
+      "audioClip": {
+        "storySlug": "une-flammekueche-maison",
+        "storySource": "user",
+        "sentence": "Tu n'as toujours rien dit à ta copine.",
+        "targetWord": "toujours rien",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "d'abord",
+    "sentence": "[[D'abord]], il veut réfléchir.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "first",
+      "options": [
+        "first",
+        "never",
+        "always",
+        "finally"
+      ],
+      "audioClip": {
+        "storySlug": "une-flammekueche-maison",
+        "storySource": "user",
+        "sentence": "D'abord, il veut réfléchir.",
+        "targetWord": "D'abord",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bien sûr",
+    "sentence": "“[[Bien sûr]]”, répond-elle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "of course",
+      "options": [
+        "of course",
+        "of course not",
+        "maybe later",
+        "not at all"
+      ],
+      "audioClip": {
+        "storySlug": "une-flammekueche-maison",
+        "storySource": "user",
+        "sentence": "Bien sûr, répond-elle.",
+        "targetWord": "Bien sûr",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la nouvelle",
+    "sentence": "Elle a appris [[la nouvelle]] par une amie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the news",
+      "options": [
+        "the news",
+        "the recipe",
+        "the address",
+        "the price"
+      ],
+      "audioClip": {
+        "storySlug": "une-flammekueche-maison",
+        "storySource": "user",
+        "sentence": "Elle a appris la nouvelle par une amie.",
+        "targetWord": "la nouvelle",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la crème",
+    "sentence": "La pâte fine, [[la crème]], les oignons.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the cream",
+      "options": [
+        "the cream",
+        "the sugar",
+        "the bread",
+        "the fish"
+      ],
+      "audioClip": {
+        "storySlug": "une-flammekueche-maison",
+        "storySource": "user",
+        "sentence": "La pâte fine, la crème, les oignons.",
+        "targetWord": "la crème",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la cathédrale",
+    "sentence": "Il pense à la neige sur [[la cathédrale]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the cathedral",
+      "options": [
+        "the cathedral",
+        "the mountain",
+        "the beach",
+        "the garden"
+      ],
+      "audioClip": {
+        "storySlug": "une-flammekueche-maison",
+        "storySource": "user",
+        "sentence": "Il pense à la neige sur la cathédrale.",
+        "targetWord": "la cathédrale",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tous les dimanches",
+    "sentence": "Il va la faire [[tous les dimanches]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "every Sunday",
+      "options": [
+        "every Sunday",
+        "once a year",
+        "only today",
+        "on his birthday"
+      ],
+      "audioClip": {
+        "storySlug": "une-flammekueche-maison",
+        "storySource": "user",
+        "sentence": "Il va la faire tous les dimanches.",
+        "targetWord": "tous les dimanches",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sans un mot",
+    "sentence": "Elle sort sur le balcon [[sans un mot]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without a word",
+      "options": [
+        "without a word",
+        "with a big smile",
+        "very quickly",
+        "holding her hand"
+      ],
+      "audioClip": {
+        "storySlug": "une-flammekueche-maison",
+        "storySource": "user",
+        "sentence": "Elle sort sur le balcon sans un mot.",
+        "targetWord": "sans un mot",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "délicieux",
+    "sentence": "Elle goûte un morceau et dit que c'est _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "délicieux",
+      "options": [
+        "délicieux",
+        "froid",
+        "salé",
+        "dur"
+      ],
+      "translation": "She tastes a piece and says it's _____.",
+      "optionTranslations": [
+        "delicious",
+        "cold",
+        "salty",
+        "hard"
+      ],
+      "audioClip": {
+        "storySlug": "une-flammekueche-maison",
+        "storySource": "user",
+        "sentence": "Elle goûte un morceau et dit que c'est délicieux.",
+        "targetWord": "délicieux",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "heureuse",
+    "sentence": "Elle sourit, très _____ de la réponse.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "heureuse",
+      "options": [
+        "heureuse",
+        "triste",
+        "fatiguée",
+        "malade"
+      ],
+      "translation": "She smiles, very _____ about the answer.",
+      "optionTranslations": [
+        "happy",
+        "sad",
+        "tired",
+        "sick"
+      ],
+      "audioClip": {
+        "storySlug": "une-flammekueche-maison",
+        "storySource": "user",
+        "sentence": "Elle sourit, très heureuse de la réponse.",
+        "targetWord": "heureuse",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "secret",
+    "sentence": "Il ne dit rien: il garde son _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "secret",
+      "options": [
+        "secret",
+        "cadeau",
+        "argent",
+        "travail"
+      ],
+      "translation": "He says nothing: he keeps his _____.",
+      "optionTranslations": [
+        "secret",
+        "gift",
+        "money",
+        "job"
+      ],
+      "audioClip": {
+        "storySlug": "une-flammekueche-maison",
+        "storySource": "user",
+        "sentence": "Il ne dit rien: il garde son secret.",
+        "targetWord": "secret",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
+]

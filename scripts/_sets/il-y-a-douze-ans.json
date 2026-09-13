@@ -1,0 +1,433 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "l'album,le bac,l'Erdre,l'herbe",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "l'album",
+          "answer": "a photo album",
+          "options": [
+            "a photo album",
+            "a school exam",
+            "a river",
+            "grass"
+          ]
+        },
+        {
+          "word": "le bac",
+          "answer": "a school exam",
+          "options": [
+            "a photo album",
+            "a school exam",
+            "a river",
+            "grass"
+          ]
+        },
+        {
+          "word": "l'Erdre",
+          "answer": "a river",
+          "options": [
+            "a photo album",
+            "a school exam",
+            "a river",
+            "grass"
+          ]
+        },
+        {
+          "word": "l'herbe",
+          "answer": "grass",
+          "options": [
+            "a photo album",
+            "a school exam",
+            "a river",
+            "grass"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "au bord de",
+    "sentence": "Elle part courir [[au bord de]] la Loire.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "along the edge of",
+      "options": [
+        "along the edge of",
+        "in the middle of",
+        "far away from",
+        "on top of"
+      ],
+      "audioClip": {
+        "storySlug": "il-y-a-douze-ans",
+        "storySource": "user",
+        "sentence": "Elle part courir au bord de la Loire.",
+        "targetWord": "au bord de",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "énorme",
+    "sentence": "Elle porte d'[[énormes]] lunettes de soleil.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "huge",
+      "options": [
+        "huge",
+        "tiny",
+        "old",
+        "broken"
+      ],
+      "audioClip": {
+        "storySlug": "il-y-a-douze-ans",
+        "storySource": "user",
+        "sentence": "Elle porte d'énormes lunettes de soleil.",
+        "targetWord": "énormes",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "se mettre debout",
+    "sentence": "Elle [[s'est mise debout]] pour crier plus fort.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stood up",
+      "options": [
+        "stood up",
+        "sat down",
+        "fell asleep",
+        "ran away"
+      ],
+      "audioClip": {
+        "storySlug": "il-y-a-douze-ans",
+        "storySource": "user",
+        "sentence": "Elle s'est mise debout pour crier plus fort.",
+        "targetWord": "s'est mise debout",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tomber à l'eau",
+    "sentence": "Elle est [[tombée à l'eau]], avec la robe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fallen into the water",
+      "options": [
+        "fallen into the water",
+        "gone home early",
+        "sung a song",
+        "missed the boat"
+      ],
+      "audioClip": {
+        "storySlug": "il-y-a-douze-ans",
+        "storySource": "user",
+        "sentence": "Elle est tombée à l'eau, avec la robe.",
+        "targetWord": "tombée à l'eau",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pleurer de rire",
+    "sentence": "On a [[pleuré de rire]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cried laughing",
+      "options": [
+        "cried laughing",
+        "fallen asleep",
+        "gotten angry",
+        "felt scared"
+      ],
+      "audioClip": {
+        "storySlug": "il-y-a-douze-ans",
+        "storySource": "user",
+        "sentence": "On a pleuré de rire.",
+        "targetWord": "pleuré de rire",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fou",
+    "sentence": "Elle rit comme une [[folle]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "madwoman",
+      "options": [
+        "madwoman",
+        "teacher",
+        "sister",
+        "tourist"
+      ],
+      "audioClip": {
+        "storySlug": "il-y-a-douze-ans",
+        "storySource": "user",
+        "sentence": "Elle rit comme une folle.",
+        "targetWord": "folle",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sérieux",
+    "sentence": "La mienne est [[sérieuse]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "serious",
+      "options": [
+        "serious",
+        "funny",
+        "loud",
+        "lazy"
+      ],
+      "audioClip": {
+        "storySlug": "il-y-a-douze-ans",
+        "storySource": "user",
+        "sentence": "La mienne est sérieuse.",
+        "targetWord": "sérieuse",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "se coucher",
+    "sentence": "Elle [[se couche]] à onze heures.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "goes to bed",
+      "options": [
+        "goes to bed",
+        "wakes up",
+        "gets dressed",
+        "leaves home"
+      ],
+      "audioClip": {
+        "storySlug": "il-y-a-douze-ans",
+        "storySource": "user",
+        "sentence": "Elle se couche à onze heures.",
+        "targetWord": "se couche",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "devenir tout blanc",
+    "sentence": "Elle [[devient toute blanche]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "turns completely pale",
+      "options": [
+        "turns completely pale",
+        "smiles very wide",
+        "starts to cry",
+        "runs very fast"
+      ],
+      "audioClip": {
+        "storySlug": "il-y-a-douze-ans",
+        "storySource": "user",
+        "sentence": "Elle devient toute blanche.",
+        "targetWord": "devient toute blanche",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la mienne",
+    "sentence": "Ce n'est pas ma copine: [[la mienne]] est sérieuse.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "mine",
+      "options": [
+        "mine",
+        "yours",
+        "his",
+        "theirs"
+      ],
+      "audioClip": {
+        "storySlug": "il-y-a-douze-ans",
+        "storySource": "user",
+        "sentence": "Ce n'est pas ma copine: la mienne est sérieuse.",
+        "targetWord": "La mienne",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "trop tard",
+    "sentence": "Il comprend [[trop tard]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "too late",
+      "options": [
+        "too late",
+        "right away",
+        "very early",
+        "once again"
+      ],
+      "audioClip": {
+        "storySlug": "il-y-a-douze-ans",
+        "storySource": "user",
+        "sentence": "Il comprend trop tard.",
+        "targetWord": "trop tard",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "elle-même",
+    "sentence": "Elle voulait la raconter [[elle-même]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "herself",
+      "options": [
+        "herself",
+        "together with him",
+        "another day",
+        "before anyone else"
+      ],
+      "audioClip": {
+        "storySlug": "il-y-a-douze-ans",
+        "storySource": "user",
+        "sentence": "Elle voulait la raconter elle-même.",
+        "targetWord": "elle-même",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "un jour",
+    "sentence": "Elle voulait la raconter [[un jour]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "someday",
+      "options": [
+        "someday",
+        "right now",
+        "never",
+        "twice"
+      ],
+      "audioClip": {
+        "storySlug": "il-y-a-douze-ans",
+        "storySource": "user",
+        "sentence": "Elle voulait la raconter un jour.",
+        "targetWord": "un jour",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "hésite",
+    "sentence": "Il ne sait pas quoi dire, alors il _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "hésite",
+      "options": [
+        "hésite",
+        "chante",
+        "mange",
+        "tombe"
+      ],
+      "translation": "He doesn't know what to say, so he _____.",
+      "optionTranslations": [
+        "hesitates",
+        "sings",
+        "eats",
+        "falls"
+      ],
+      "audioClip": {
+        "storySlug": "il-y-a-douze-ans",
+        "storySource": "user",
+        "sentence": "Il ne sait pas quoi dire, alors il hésite.",
+        "targetWord": "hésite",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "conduire",
+    "sentence": "Elle veut _____ le bateau elle-même.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "conduire",
+      "options": [
+        "conduire",
+        "vendre",
+        "laver",
+        "casser"
+      ],
+      "translation": "She wants to _____ the boat herself.",
+      "optionTranslations": [
+        "drive",
+        "sell",
+        "wash",
+        "break"
+      ],
+      "audioClip": {
+        "storySlug": "il-y-a-douze-ans",
+        "storySource": "user",
+        "sentence": "Elle veut conduire le bateau elle-même.",
+        "targetWord": "conduire",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "crier",
+    "sentence": "Elle se lève pour _____ plus fort que les autres.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "crier",
+      "options": [
+        "crier",
+        "chanter",
+        "dormir",
+        "payer"
+      ],
+      "translation": "She stands up to _____ louder than the others.",
+      "optionTranslations": [
+        "shout",
+        "sing",
+        "sleep",
+        "pay"
+      ],
+      "audioClip": {
+        "storySlug": "il-y-a-douze-ans",
+        "storySource": "user",
+        "sentence": "Elle se lève pour crier plus fort que les autres.",
+        "targetWord": "crier",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
+]

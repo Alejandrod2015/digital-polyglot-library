@@ -1,0 +1,206 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "l'armoire,la botte,le blouson,le disque",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {"word":"l'armoire","answer":"a wardrobe","options":["a wardrobe","a boot","a jacket","a record"]},
+        {"word":"la botte","answer":"a boot","options":["a wardrobe","a boot","a jacket","a record"]},
+        {"word":"le blouson","answer":"a jacket","options":["a wardrobe","a boot","a jacket","a record"]},
+        {"word":"le disque","answer":"a record","options":["a wardrobe","a boot","a jacket","a record"]}
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le vêtement",
+    "sentence": "Tous les [[vêtements]] sont dans l'armoire.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clothes",
+      "options": ["clothes","shoes","books","dishes"],
+      "audioClip": {"storySlug":"l-etagere-du-haut","storySource":"user","sentence":"Tous les vêtements sont dans l'armoire.","targetWord":"vêtements","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "l'hiver",
+    "sentence": "Elle n'a pas rangé [[l'hiver]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the winter clothes",
+      "options": ["the winter clothes","the summer clothes","the old photos","the kitchen"],
+      "audioClip": {"storySlug":"l-etagere-du-haut","storySource":"user","sentence":"Elle n'a pas rangé l'hiver.","targetWord":"l'hiver","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hausser les épaules",
+    "sentence": "Il [[hausse les épaules]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shrugs",
+      "options": ["shrugs","nods","waves","smiles"],
+      "audioClip": {"storySlug":"l-etagere-du-haut","storySource":"user","sentence":"Il hausse les épaules.","targetWord":"hausse les épaules","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dans le noir",
+    "sentence": "Il laisse ses disques [[dans le noir]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in the dark",
+      "options": ["in the dark","in the sun","on the table","in a box"],
+      "audioClip": {"storySlug":"l-etagere-du-haut","storySource":"user","sentence":"Il laisse ses disques dans le noir.","targetWord":"dans le noir","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en fait",
+    "sentence": "[[En fait]], elle est à toi depuis le début.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "actually",
+      "options": ["actually","never","maybe","rarely"],
+      "audioClip": {"storySlug":"l-etagere-du-haut","storySource":"user","sentence":"En fait, elle est à toi depuis le début.","targetWord":"En fait","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "depuis le début",
+    "sentence": "Elle est à toi [[depuis le début]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "from the start",
+      "options": ["from the start","since yesterday","until tomorrow","by mistake"],
+      "audioClip": {"storySlug":"l-etagere-du-haut","storySource":"user","sentence":"Elle est à toi depuis le début.","targetWord":"depuis le début","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "faire de la place",
+    "sentence": "Il a [[fait de la place]] pour rien.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "made room",
+      "options": ["made room","spent money","asked a question","lost his keys"],
+      "audioClip": {"storySlug":"l-etagere-du-haut","storySource":"user","sentence":"Il a fait de la place pour rien.","targetWord":"fait de la place","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pour rien",
+    "sentence": "Il a fait de la place [[pour rien]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "for nothing",
+      "options": ["for nothing","for a while","for the party","for his sister"],
+      "audioClip": {"storySlug":"l-etagere-du-haut","storySource":"user","sentence":"Il a fait de la place pour rien.","targetWord":"pour rien","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poser la question",
+    "sentence": "La prochaine fois, il va [[poser la question]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ask first",
+      "options": ["ask first","stay quiet","leave immediately","buy a gift"],
+      "audioClip": {"storySlug":"l-etagere-du-haut","storySource":"user","sentence":"La prochaine fois, il va poser la question.","targetWord":"poser la question","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entier",
+    "sentence": "Ses disques avaient une étagère [[entière]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "whole",
+      "options": ["whole","small","broken","empty"],
+      "audioClip": {"storySlug":"l-etagere-du-haut","storySource":"user","sentence":"Ses disques avaient une étagère entière.","targetWord":"entière","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "l'habitant",
+    "sentence": "Il se sent comme un invité, pas comme [[un habitant]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a resident",
+      "options": ["a resident","a guest","a tourist","a child"],
+      "audioClip": {"storySlug":"l-etagere-du-haut","storySource":"user","sentence":"Il se sent comme un invité, pas comme un habitant.","targetWord":"un habitant","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plutôt",
+    "sentence": "C'est [[plutôt]] bizarre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "rather",
+      "options": ["rather","never","always","barely"],
+      "audioClip": {"storySlug":"l-etagere-du-haut","storySource":"user","sentence":"C'est plutôt bizarre.","targetWord":"plutôt","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bizarre",
+    "sentence": "C'est plutôt [[bizarre]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "strange",
+      "options": ["strange","normal","easy","boring"],
+      "audioClip": {"storySlug":"l-etagere-du-haut","storySource":"user","sentence":"C'est plutôt bizarre.","targetWord":"bizarre","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "installe",
+    "sentence": "Il _____ ses affaires dans son nouvel appartement.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "installe",
+      "options": ["installe","vend","cache","jette"],
+      "translation": "He _____ his things in his new flat.",
+      "optionTranslations": ["sets up","sells","hides","throws away"],
+      "audioClip": {"storySlug":"l-etagere-du-haut","storySource":"user","sentence":"Il installe ses affaires dans son nouvel appartement.","targetWord":"installe","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "déranger",
+    "sentence": "Il ne veut pas te _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "déranger",
+      "options": ["déranger","aider","payer","oublier"],
+      "translation": "He doesn't want to _____ you.",
+      "optionTranslations": ["bother","help","pay","forget"],
+      "audioClip": {"storySlug":"l-etagere-du-haut","storySource":"user","sentence":"Il ne veut pas te déranger.","targetWord":"déranger","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "attraper",
+    "sentence": "L'étagère est trop haute pour l'_____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "attraper",
+      "options": ["attraper","laver","casser","vendre"],
+      "translation": "The shelf is too high to _____ it.",
+      "optionTranslations": ["reach","wash","break","sell"],
+      "audioClip": {"storySlug":"l-etagere-du-haut","storySource":"user","sentence":"L'étagère est trop haute pour l'attraper.","targetWord":"attraper","language":"french"}
+    },
+    "featured": false
+  }
+]

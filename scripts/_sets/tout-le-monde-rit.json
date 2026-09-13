@@ -1,0 +1,433 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "la crêpe,le cidre,le lycée,le bateau",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "la crêpe",
+          "answer": "a crepe",
+          "options": [
+            "a crepe",
+            "cider",
+            "high school",
+            "a boat"
+          ]
+        },
+        {
+          "word": "le cidre",
+          "answer": "cider",
+          "options": [
+            "a crepe",
+            "cider",
+            "high school",
+            "a boat"
+          ]
+        },
+        {
+          "word": "le lycée",
+          "answer": "high school",
+          "options": [
+            "a crepe",
+            "cider",
+            "high school",
+            "a boat"
+          ]
+        },
+        {
+          "word": "le bateau",
+          "answer": "a boat",
+          "options": [
+            "a crepe",
+            "cider",
+            "high school",
+            "a boat"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la bande",
+    "sentence": "[[La bande]] arrive pour l'apéritif.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the group of friends",
+      "options": [
+        "the group of friends",
+        "the neighbor",
+        "the family",
+        "the teacher"
+      ],
+      "audioClip": {
+        "storySlug": "tout-le-monde-rit",
+        "storySource": "user",
+        "sentence": "La bande arrive pour l'apéritif.",
+        "targetWord": "La bande",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le copain",
+    "sentence": "Ce sont les [[copains]] de toujours.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "friends",
+      "options": [
+        "friends",
+        "cousins",
+        "teachers",
+        "strangers"
+      ],
+      "audioClip": {
+        "storySlug": "tout-le-monde-rit",
+        "storySource": "user",
+        "sentence": "Ce sont les copains de toujours.",
+        "targetWord": "copains",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "se souvenir",
+    "sentence": "“Vous vous [[souvenez]] du pédalo?”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "remember",
+      "options": [
+        "remember",
+        "forget",
+        "choose",
+        "sell"
+      ],
+      "audioClip": {
+        "storySlug": "tout-le-monde-rit",
+        "storySource": "user",
+        "sentence": "Vous vous souvenez du pédalo?",
+        "targetWord": "souvenez",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "éclater de rire",
+    "sentence": "La table [[éclate de rire]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bursts out laughing",
+      "options": [
+        "bursts out laughing",
+        "falls asleep",
+        "leaves the room",
+        "starts crying"
+      ],
+      "audioClip": {
+        "storySlug": "tout-le-monde-rit",
+        "storySource": "user",
+        "sentence": "La table éclate de rire.",
+        "targetWord": "éclate de rire",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fermer les yeux",
+    "sentence": "Elle [[ferme les yeux]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "closes her eyes",
+      "options": [
+        "closes her eyes",
+        "opens her mouth",
+        "raises her hand",
+        "shakes her head"
+      ],
+      "audioClip": {
+        "storySlug": "tout-le-monde-rit",
+        "storySource": "user",
+        "sentence": "Elle ferme les yeux.",
+        "targetWord": "ferme les yeux",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "curieux",
+    "sentence": "Son amie, [[curieuse]], demande une question.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "curious",
+      "options": [
+        "curious",
+        "tired",
+        "angry",
+        "bored"
+      ],
+      "audioClip": {
+        "storySlug": "tout-le-monde-rit",
+        "storySource": "user",
+        "sentence": "Son amie, curieuse, demande une question.",
+        "targetWord": "curieuse",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la blague",
+    "sentence": "Tu ris à une [[blague]] que tu ne connais pas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "joke",
+      "options": [
+        "joke",
+        "story",
+        "song",
+        "secret"
+      ],
+      "audioClip": {
+        "storySlug": "tout-le-monde-rit",
+        "storySource": "user",
+        "sentence": "Tu ris à une blague que tu ne connais pas.",
+        "targetWord": "blague",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avoir l'air",
+    "sentence": "Il [[a l'air]] perdu.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "looks",
+      "options": [
+        "looks",
+        "sounds",
+        "feels cold",
+        "seems late"
+      ],
+      "audioClip": {
+        "storySlug": "tout-le-monde-rit",
+        "storySource": "user",
+        "sentence": "Il a l'air perdu.",
+        "targetWord": "a l'air",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "promis",
+    "sentence": "Je te raconte tout, [[promis]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "I promise",
+      "options": [
+        "I promise",
+        "I doubt it",
+        "I forget",
+        "I refuse"
+      ],
+      "audioClip": {
+        "storySlug": "tout-le-monde-rit",
+        "storySource": "user",
+        "sentence": "Je te raconte tout, promis.",
+        "targetWord": "promis",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "faire comme les autres",
+    "sentence": "Il rit aussi, pour [[faire comme les autres]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "do like the others",
+      "options": [
+        "do like the others",
+        "get some sleep",
+        "ask a question",
+        "leave early"
+      ],
+      "audioClip": {
+        "storySlug": "tout-le-monde-rit",
+        "storySource": "user",
+        "sentence": "Il rit aussi, pour faire comme les autres.",
+        "targetWord": "faire comme les autres",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "perdu",
+    "sentence": "Il a l'air [[perdu]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lost",
+      "options": [
+        "lost",
+        "happy",
+        "angry",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "tout-le-monde-rit",
+        "storySource": "user",
+        "sentence": "Il a l'air perdu.",
+        "targetWord": "perdu",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pour la première fois",
+    "sentence": "[[Pour la première fois]] de la soirée, il se sent bien.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "for the first time",
+      "options": [
+        "for the first time",
+        "for the last time",
+        "every single time",
+        "most of the time"
+      ],
+      "audioClip": {
+        "storySlug": "tout-le-monde-rit",
+        "storySource": "user",
+        "sentence": "Pour la première fois de la soirée, il se sent bien.",
+        "targetWord": "Pour la première fois",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la soirée",
+    "sentence": "C'est la première fois de [[la soirée]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the evening",
+      "options": [
+        "the evening",
+        "the morning",
+        "the trip",
+        "the week"
+      ],
+      "audioClip": {
+        "storySlug": "tout-le-monde-rit",
+        "storySource": "user",
+        "sentence": "C'est la première fois de la soirée.",
+        "targetWord": "la soirée",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "adore",
+    "sentence": "Son amie _____ les blagues et rit tout le temps.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "adore",
+      "options": [
+        "adore",
+        "déteste",
+        "oublie",
+        "cherche"
+      ],
+      "translation": "She _____ jokes and laughs all the time.",
+      "optionTranslations": [
+        "loves",
+        "hates",
+        "forgets",
+        "looks for"
+      ],
+      "audioClip": {
+        "storySlug": "tout-le-monde-rit",
+        "storySource": "user",
+        "sentence": "Son amie adore les blagues et rit tout le temps.",
+        "targetWord": "adore",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "moque",
+    "sentence": "Personne ne se _____ de lui, tout le monde rit avec lui.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "moque",
+      "options": [
+        "moque",
+        "souvient",
+        "plaint",
+        "occupe"
+      ],
+      "translation": "Nobody _____ him, everyone laughs with him.",
+      "optionTranslations": [
+        "mocks",
+        "remembers",
+        "complains about",
+        "takes care of"
+      ],
+      "audioClip": {
+        "storySlug": "tout-le-monde-rit",
+        "storySource": "user",
+        "sentence": "Personne ne se moque de lui, tout le monde rit avec lui.",
+        "targetWord": "moque",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "avance",
+    "sentence": "On _____ avec les pieds, comme sur un vélo dans l'eau.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "avance",
+      "options": [
+        "avance",
+        "recule",
+        "tombe",
+        "vole"
+      ],
+      "translation": "You _____ with your feet, like on a bike in the water.",
+      "optionTranslations": [
+        "move forward",
+        "move backward",
+        "fall",
+        "fly"
+      ],
+      "audioClip": {
+        "storySlug": "tout-le-monde-rit",
+        "storySource": "user",
+        "sentence": "On avance avec les pieds, comme sur un vélo dans l'eau.",
+        "targetWord": "avance",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
+]

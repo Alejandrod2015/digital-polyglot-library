@@ -1,0 +1,206 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "le balcon,le nuage,l'entreprise,la douche",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {"word":"le balcon","answer":"a balcony","options":["a balcony","a cloud","a company","a shower"]},
+        {"word":"le nuage","answer":"a cloud","options":["a balcony","a cloud","a company","a shower"]},
+        {"word":"l'entreprise","answer":"a company","options":["a balcony","a cloud","a company","a shower"]},
+        {"word":"la douche","answer":"a shower","options":["a balcony","a cloud","a company","a shower"]}
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "l'automne",
+    "sentence": "[[L'automne]] est doux cette année.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "autumn",
+      "options": ["autumn","winter","summer","spring"],
+      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"L'automne est doux cette année.","targetWord":"L'automne","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bien habillé",
+    "sentence": "Il veut être [[bien habillé]] pour son premier jour.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "well dressed",
+      "options": ["well dressed","very late","well rested","very hungry"],
+      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Il veut être bien habillé pour son premier jour.","targetWord":"bien habillé","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le crachin",
+    "sentence": "Ici, il y a [[le crachin]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "light drizzle",
+      "options": ["light drizzle","strong wind","bright sun","heavy snow"],
+      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Ici, il y a le crachin.","targetWord":"le crachin","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pourtant",
+    "sentence": "[[Pourtant]], ça séchait dehors à Strasbourg.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "and yet",
+      "options": ["and yet","therefore","never","sometimes"],
+      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Pourtant, ça séchait dehors à Strasbourg.","targetWord":"Pourtant","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "humide",
+    "sentence": "Sa chemise est [[humide]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "damp",
+      "options": ["damp","dry","clean","torn"],
+      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Sa chemise est humide.","targetWord":"humide","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mouiller",
+    "sentence": "Le crachin l'a [[mouillée]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "made it wet",
+      "options": ["made it wet","dried it completely","torn it","burned it"],
+      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Le crachin l'a mouillée.","targetWord":"mouillée","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de travers",
+    "sentence": "J'ai tout fait [[de travers]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the wrong way",
+      "options": ["the wrong way","very quickly","on purpose","very well"],
+      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"J'ai tout fait de travers.","targetWord":"de travers","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chez nous",
+    "sentence": "[[Chez nous]], le linge sèche dedans.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in our home",
+      "options": ["in our home","at the office","in the street","at school"],
+      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Chez nous, le linge sèche dedans.","targetWord":"Chez nous","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "finalement",
+    "sentence": "[[Finalement]], le mot lui plaît.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in the end",
+      "options": ["in the end","right away","never","at first"],
+      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Finalement, le mot lui plaît.","targetWord":"Finalement","language":"french"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le tancarville",
+    "sentence": "Elle installe [[un tancarville]] au-dessus de la douche.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a drying rack",
+      "options": ["a drying rack","a mirror","a lamp","a chair"],
+      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Elle installe un tancarville au-dessus de la douche.","targetWord":"un tancarville","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "surtout",
+    "sentence": "Le linge sèche dedans, [[surtout]] en automne.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "especially",
+      "options": ["especially","never","rarely","once"],
+      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Le linge sèche dedans, surtout en automne.","targetWord":"surtout","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lui-même",
+    "sentence": "Il met [[lui-même]] le linge au tancarville.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "himself",
+      "options": ["himself","together with her","for the last time","by accident"],
+      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Il met lui-même le linge au tancarville.","targetWord":"lui-même","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plaire",
+    "sentence": "Le mot [[lui plaît]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pleases him",
+      "options": ["pleases him","scares him","tires him","bores him"],
+      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Le mot lui plaît.","targetWord":"lui plaît","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "tomber",
+    "sentence": "Le ciel est gris: la pluie va _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tomber",
+      "options": ["tomber","chanter","monter","brûler"],
+      "translation": "The sky is grey: the rain is going to _____.",
+      "optionTranslations": ["fall","sing","rise","burn"],
+      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Le ciel est gris: la pluie va tomber.","targetWord":"tomber","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "touche",
+    "sentence": "Il _____ sa chemise: elle est mouillée.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "touche",
+      "options": ["touche","lave","achète","coupe"],
+      "translation": "He _____ his shirt: it's wet.",
+      "optionTranslations": ["touches","washes","buys","cuts"],
+      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Il touche sa chemise: elle est mouillée.","targetWord":"touche","language":"french"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "remarque",
+    "sentence": "Personne ne _____ que sa chemise n'est pas sèche.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "remarque",
+      "options": ["remarque","lave","porte","vend"],
+      "translation": "Nobody _____ that his shirt isn't dry.",
+      "optionTranslations": ["notices","washes","wears","sells"],
+      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Personne ne remarque que sa chemise n'est pas sèche.","targetWord":"remarque","language":"french"}
+    },
+    "featured": false
+  }
+]
