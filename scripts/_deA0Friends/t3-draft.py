@@ -18,7 +18,7 @@ s0 = "\n\n".join([
 s1 = "\n\n".join([
  "Ein roter Würfel liegt in Annas Hand. Sie hat ihn seit der Schulzeit. Er bringt ihr immer Glück.",
  "Es ist spät. Jan und Anna sitzen allein in der Küche. Anna hört nur die Uhr.",
- q("Erklär mir die Regeln. Aber bitte langsam")+", sagt Anna.",
+ q("Erklär mir die Regeln. Aber bitte langsam")+", bittet Anna.",
  q("Gut. Eine Sechs ist gut. Mit einer Sechs startet deine Figur."),
  "Jan stellt die Figuren auf das Brett. Anna würfelt mit ihrem roten Würfel. Sie würfelt drei Sechsen.",
  q("Drei Sechsen? Du bist wieder die Königin!"),
