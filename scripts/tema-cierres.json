@@ -2749,6 +2749,71 @@
       ]
     }
   },
+  "cmu0dqr6y0007j8o52i1s3gf7#clothes-and-style": {
+    "cerrado": "2026-09-13T23:04:39.060Z",
+    "hash": "a54a35da4723747d",
+    "historias": [
+      "clothes-and-style#0 nichts-zum-anziehen",
+      "clothes-and-style#1 die-jacke-aus-rostock",
+      "clothes-and-style#2 ein-fleck-auf-dem-schiff"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"ligero y de mercadillo, con un nudo de pena: telas, perchas y un trueque que duele mas de lo que parece, y una boda con viento\", espina \"Julia, fisioterapeuta de Rostock recien llegada a Frankfurt, quiere hacer amigos de verdad en una ciudad donde no conoce a nadie; cada tema le cuesta un hilo con Rostock, hasta que en el tema 7 su primera amistad de Frankfurt aguanta una pelea.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"sagt\" 40%)",
+      "arranques de parrafo variados (mas repetido \"theresa\", 19%)",
+      "densidad 8.2 palabras por oracion (techo 11 en a1)",
+      "seguidilla 18/49 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 12 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.12 sobre 51 plazas · 46 salen una sola vez | ancladas: 9/60 (15%) | cola: 46/51 portables con un solo encuentro (90%, tope 70%) | de un solo encuentro: verkauft, Überall, findet, dunkelblaues, kostet, schmutzig, voll, geschenkt, altem, viel, nachdenken, Wollen, noch, beste, wieder, geschlafen, wach, sicher, tausche, nimmt, vorsichtig, dünner, darf, spät, sehr, still, fertig, dreht, fühlt, verspricht…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en DE no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "germany",
+      "registro": "ligero y de mercadillo, con un nudo de pena: telas, perchas y un trueque que duele mas de lo que parece, y una boda con viento",
+      "espina": "Julia, fisioterapeuta de Rostock recien llegada a Frankfurt, quiere hacer amigos de verdad en una ciudad donde no conoce a nadie; cada tema le cuesta un hilo con Rostock, hasta que en el tema 7 su primera amistad de Frankfurt aguanta una pelea.",
+      "recursos": "A1: modales (darf, muss, wollen), Perfekt (hat geschenkt, habe getauscht, hat genaeht), separables partidos (schlaegt vor, passe auf), denn, inversion V2 (Ueberall haengen Blusen); objeto con valor doble (la chaqueta como regalo y como moneda), humor de situacion (el vino y el barco), gancho final literal (la flor cosida sobre la mancha)",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "encontrar un vestido para la boda de Svenja",
+          "impide": "su ropa buena sigue en cajas en Rostock y el vestido cuesta mas de lo que lleva",
+          "cuesta": "Theresa le pide a cambio la chaqueta vaquera que le regalo su mejor amiga",
+          "cambia": "entiende que para entrar en la boda tiene que soltar algo de Rostock",
+          "emocion": "tentacion y apego: el vestido le gusta mucho pero la chaqueta es un regalo; aprieta la chaqueta con fuerza"
+        },
+        {
+          "slot": "1",
+          "quiere": "cerrar el trueque sin llorar delante de Theresa",
+          "impide": "la chaqueta tiene diez anos de amistad y la amiga de Rostock no lo va a entender",
+          "cuesta": "la chaqueta, que se queda en el puesto, y una respuesta seca de su mejor amiga",
+          "cambia": "el vestido le queda perfecto y se siente grande",
+          "emocion": "tristeza firme: la voz le sale segura pero los ojos humedos; Theresa deja la chaqueta con cuidado sobre la silla"
+        },
+        {
+          "slot": "2",
+          "quiere": "estar guapa y a gusto en su primera boda de Frankfurt",
+          "impide": "el barco se mueve con el viento y el vino de Moritz cae sobre el vestido",
+          "cuesta": "el vestido ya no esta perfecto: lleva para siempre una flor cosida",
+          "cambia": "baila toda la noche y el grupo la cuida",
+          "emocion": "desanimo y alegria: murmura que primero la chaqueta y ahora esto; luego baila con Moritz"
+        }
+      ]
+    }
+  },
   "cmu0dqr6y0007j8o52i1s3gf7#pets-and-animal-care": {
     "cerrado": "2026-09-13T22:57:49.725Z",
     "hash": "c2e69c9253183626",

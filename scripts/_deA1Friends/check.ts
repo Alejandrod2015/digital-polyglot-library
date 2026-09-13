@@ -30,7 +30,7 @@ for (const s of data) {
   const pills = paras.map((p) => s.vocab.filter((v: any) => p.includes(v.surface)).length);
   console.log(`\n## ${s.title} (${s.title.length}c) · ${words} pal · citado ${(100 * q / words).toFixed(0)}% · frases med ${L[L.length >> 1]} max ${L[L.length - 1]} · parrafos ${paras.length} pills ${pills.join("/")} · vocab ${s.vocab.length}`);
   const blocks = renderedParagraphs(t);
-  console.log("  bloques: " + blocks.map((b: string) => s.vocab.filter((v: any) => b.includes(v.surface)).length).join("/") + (process.argv.includes("-b") ? "\n    " + blocks.join("\n    ") : ""));
+  console.log("  bloques: " + blocks.map((b: string) => s.vocab.filter((v: any) => b.includes(v.surface)).length).join("/") + (process.argv.includes("-w") ? "\n    " + blocks.map((b: string) => "[" + s.vocab.filter((v: any) => b.includes(v.surface)).map((v: any) => v.surface).join(",") + "]").join(" ") : "") + (process.argv.includes("-b") ? "\n    " + blocks.join("\n    ") : ""));
   const probs: string[] = [];
   const roots = new Map<string, string[]>(); for (const v of s.vocab) { const r = sp(v.word).slice(0, 5); roots.set(r, [...(roots.get(r) ?? []), v.word]); }
   for (const [r, ws] of roots) if (ws.length > 1) probs.push(`MISMA-RAIZ ${r}: ${ws.join("+")}`);
