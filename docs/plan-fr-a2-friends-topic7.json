@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a2",
+  "variante": "france",
+  "registro": "nostalgia y eleccion: la hermana trae el olor de Alsacia y una oferta de vuelta, y Romain tiene que decir en voz alta donde vive",
+  "espina": "Un ano despues de llegar a Nantes, Romain habla como la gente de Justine sin darse cuenta; el journey cierra cuando elige quedarse y lo dice delante de ella.",
+  "recursos": "A2: narrador en presente; passe compose (Romain est arrive, tu as choisi, elle a appris); imparfait (J'avais peur); futur proche (Romain va vous la faire, ils vont se voir); espejo concreto (el chez nous que dijo Justine en el tema 1 y que ahora dice ella en el buzon); flashback marcado (Il y a un an). Nada de subjonctif.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Romain quiere ensenar a su hermana Anais su vida en Nantes el primer aniversario de su llegada.",
+      "impide": "Anais le trae un sobre: su antiguo jefe de Strasbourg le ofrece volver con mejor sueldo.",
+      "cuesta": "Pierde la visita tranquila: el sobre queda cerrado sobre la mesa y Justine no sabe nada.",
+      "cambia": "Descubre por Anais que ya habla como un nantes; la pregunta de volver queda abierta.",
+      "emocion": "Se rie sorprendido al oir que ha cambiado; mira el sobre y no lo abre porque no quiere decidir todavia."
+    },
+    {
+      "slot": "2",
+      "quiere": "Romain quiere pensar la oferta a solas antes de hablar con Justine.",
+      "impide": "La flammekueche le da nostalgia, y en la cena Anais menciona Strasbourg creyendo que Justine ya lo sabe.",
+      "cuesta": "Justine se entera por Anais y no por el, y esa noche no le habla.",
+      "cambia": "El secreto se rompe; Romain tiene que elegir ya.",
+      "emocion": "Tiene mal du pays porque el olor le devuelve a casa de sus padres; extiende la masa en silencio y calla ante Justine."
+    },
+    {
+      "slot": "3",
+      "quiere": "Romain quiere recuperar la confianza de Justine y decidir donde vive.",
+      "impide": "Decir que no a Strasbourg es perder a su hermana cerca y un trabajo mejor pagado.",
+      "cuesta": "Rechaza la oferta y a partir de ahora vera a Anais dos veces al ano.",
+      "cambia": "Llama al jefe delante de Justine y escribe su nombre junto al de ella en el buzon; ella dice chez nous.",
+      "emocion": "Se le hace un nudo al despedir a Anais en el anden; en el buzon, al oir a Justine, se siente en casa."
+    }
+  ]
+}
