@@ -2483,5 +2483,70 @@
         }
       ]
     }
+  },
+  "cmu047bkz0007326jsgeptkox#music-and-singing": {
+    "cerrado": "2026-09-13T18:34:35.392Z",
+    "hash": "87b06a4dffb1d497",
+    "historias": [
+      "music-and-singing#0 tims-trommelstocke",
+      "music-and-singing#1 zu-hoch-fur-anna",
+      "music-and-singing#2 ein-lied-fur-jan"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"nervioso y musical: un sotano de ensayo, una voz que se rompe y una cocina de cumpleanos\", espina \"Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 60% (solo avisa)",
+      "acotacion dominante bajo tope (\"sagt\" 33%)",
+      "arranques de parrafo variados (mas repetido \"anna\", 15%)",
+      "densidad 5.3 palabras por oracion (techo 9 en a0)",
+      "seguidilla 24/60 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.20 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 51/61 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en DE no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: music-and-singing (Anna, Tim)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "germany",
+      "registro": "nervioso y musical: un sotano de ensayo, una voz que se rompe y una cocina de cumpleanos",
+      "espina": "Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.",
+      "recursos": "A0: repeticion ritmica (Tim am Schlagzeug, Felix am Klavier, Anna vor dem Kuehlschrank), contraste con aber, imagen concreta (taza entre las manos, manos delante de la boca, microfono con las dos manos)",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "quedarse fuera de la sorpresa musical para el cumpleanos de Jan",
+          "impide": "Tim, amigo del colegio, quiere reunir la banda de antes y ella era la cantante",
+          "cuesta": "asiente sin querer delante de Jan y ya no puede decir que no",
+          "cambia": "vuelve a formar parte de la banda",
+          "emocion": "miedo: el corazon rapido porque su voz lleva anos callada; juega nerviosa con la taza"
+        },
+        {
+          "slot": "1",
+          "quiere": "cantar la cancion de antes en el ensayo del sotano",
+          "impide": "el estribillo es demasiado alto; la voz se le rompe dos veces",
+          "cuesta": "la cancion vieja no vuelve: no la cantara nunca mas",
+          "cambia": "Tim propone escribir una cancion nueva, grave y sencilla, para Jan",
+          "emocion": "verguenza: se tapa la boca con las manos porque Tim oye la nota falsa"
+        },
+        {
+          "slot": "2",
+          "quiere": "cantarle a Jan la cancion nueva en su cumpleanos",
+          "impide": "toda la cocina la mira y le tiemblan las rodillas",
+          "cuesta": "Jan pregunta por la cancion vieja y ella la deja atras delante de todos",
+          "cambia": "canta con voz grave y tranquila; Jan la abraza delante de todos",
+          "emocion": "nervios que se vuelven calma: le tiemblan las rodillas porque todos la miran; agarra el microfono con las dos manos y canta"
+        }
+      ]
+    }
   }
 }

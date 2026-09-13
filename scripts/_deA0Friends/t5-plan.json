@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "germany",
+  "registro": "nervioso y musical: un sotano de ensayo, una voz que se rompe y una cocina de cumpleanos",
+  "espina": "Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.",
+  "recursos": "A0: repeticion ritmica (Tim am Schlagzeug, Felix am Klavier, Anna vor dem Kuehlschrank), contraste con aber, imagen concreta (taza entre las manos, manos delante de la boca, microfono con las dos manos)",
+  "historias": [
+    { "slot": "0", "quiere": "quedarse fuera de la sorpresa musical para el cumpleanos de Jan", "impide": "Tim, amigo del colegio, quiere reunir la banda de antes y ella era la cantante", "cuesta": "asiente sin querer delante de Jan y ya no puede decir que no", "cambia": "vuelve a formar parte de la banda", "emocion": "miedo: el corazon rapido porque su voz lleva anos callada; juega nerviosa con la taza" },
+    { "slot": "1", "quiere": "cantar la cancion de antes en el ensayo del sotano", "impide": "el estribillo es demasiado alto; la voz se le rompe dos veces", "cuesta": "la cancion vieja no vuelve: no la cantara nunca mas", "cambia": "Tim propone escribir una cancion nueva, grave y sencilla, para Jan", "emocion": "verguenza: se tapa la boca con las manos porque Tim oye la nota falsa" },
+    { "slot": "2", "quiere": "cantarle a Jan la cancion nueva en su cumpleanos", "impide": "toda la cocina la mira y le tiemblan las rodillas", "cuesta": "Jan pregunta por la cancion vieja y ella la deja atras delante de todos", "cambia": "canta con voz grave y tranquila; Jan la abraza delante de todos", "emocion": "nervios que se vuelven calma: le tiemblan las rodillas porque todos la miran; agarra el microfono con las dos manos y canta" }
+  ]
+}
