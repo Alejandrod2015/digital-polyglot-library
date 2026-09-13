@@ -8,8 +8,8 @@ Estado: **PLAN, sin aprobar.** No hay journey creado, ni temas en
 | comprobacion | resultado |
 |---|---|
 | `journeysTable.ts`: Friends FR A2 | no existe |
-| Friends FR A0 `cmtwo6cys0007j8yzg6ni3fsc` | LIVE, Marseille, Lea y Hugo |
-| Friends FR A1 `cmtwz1iop000l32jybeo2jg4x` | LIVE, Paris, Amelie |
+| Friends FR A0 `cmtwo6cys0007j8yzg6ni3fsc` | LIVE, Marseille, Léa y Hugo |
+| Friends FR A1 `cmtwz1iop000l32jybeo2jg4x` | LIVE, Paris, Amélie |
 | Escalera (french, france, relationships) | A0 y A1 existen: un A2 queda contiguo |
 | Porton de temas (`scripts/_frA2TopicProbe.ts`, solo lectura) | **PORTON OK**, modo journey-level, 2 personas |
 | Labels y slugs propuestos en `dp_topics_v1` | ninguno existe; cero choques |
@@ -43,7 +43,7 @@ Reconocible sin ser postal: la Loire, el crachin, el muscadet, el beurre blanc.
 
 Lugar central y privado: **el piso de Justine en Chantenay**, en la ladera que
 mira a la Loire, con un balcon estrecho. Los temas 3 y 6 salen de el por
-necesidad de la escena (la casa de la madre en Reze; la salle des fêtes de la
+necesidad de la escena (la casa de la madre en Rezé; la salle des fêtes de la
 boda), y vuelven.
 
 ## 3. Espina
@@ -61,8 +61,8 @@ entiende, pero es frances, porque todo el reparto es nativo de la variante.
 
 ## 4. Reparto
 
-Ninguno sale del A0 (Lea, Hugo, Theo, Chloe, Maxime, Louise, Antoine, Clara),
-del A1 (Amelie, Marc, Camille, Olivier, Ines, Mathieu, Sophie, Baptiste) ni del
+Ninguno sale del A0 (Léa, Hugo, Théo, Chloé, Maxime, Louise, Antoine, Clara),
+del A1 (Amélie, Marc, Camille, Olivier, Inès, Mathieu, Sophie, Baptiste) ni del
 Expat A1 draft (Manon, Pauline, Sylvie, Juliette, Nicolas).
 
 La ropa es de color FIJO: la ficha se repite literal en cada prompt de portada
@@ -71,19 +71,19 @@ cuando toque (regla de portadas, punto 1).
 | quien | tema | edad | que es | aspecto fijo | como habla |
 |---|---|---|---|---|---|
 | **Romain** | fijo, las 21 | 32 | electricista, de Strasbourg | pelo castano claro corto, barba corta, chaqueta verde oliva | preciso, pregunta cuando no entiende, humor seco |
-| **Justine** | fija, 14+ de 21 | 30 | profesora de biologia en un lycée, de Reze | pelo negro rizado a los hombros sin flequillo, chubasquero amarillo | rapido, termina las frases de los demas |
+| **Justine** | fija, 14+ de 21 | 30 | profesora de biologia en un lycée, de Rezé | pelo negro rizado a los hombros sin flequillo, chubasquero amarillo | rapido, termina las frases de los demas |
 | Mathilde | 2 | 30 | la mejor amiga de Justine desde el lycée, florista | pelo castano rojizo recogido, jersey azul marino | guardiana de las bromas de la bande |
 | Nathalie | 3 | 54 | la madre de Justine, enfermera del CHU | pelo castano corto con mechas, cardigan burdeos | vouvoie hasta que decide que no |
 | Julien | 4 | 34 | companero de obra de Romain | gorra negra, sudadera gris | tiene un planning para todo |
 | Karim | 5 | 31 | el primer amigo propio de Romain, de la sala de escalada | pelo negro rapado, camiseta roja | entusiasta, mal consejero |
-| Elise | 6 | 31 | la prima de Justine, la novia | pelo rubio largo, vestido blanco | nerviosa, lo organiza todo |
-| Anais | 7 | 28 | la hermana de Romain, de Strasbourg | pelo castano claro con flequillo, abrigo mostaza | directa, habla de "casa" pensando en Alsacia |
+| Élise | 6 | 31 | la prima de Justine, la novia | pelo rubio largo, vestido blanco | nerviosa, lo organiza todo |
+| Anaïs | 7 | 28 | la hermana de Romain, de Strasbourg | pelo castano claro con flequillo, abrigo mostaza | directa, habla de "casa" pensando en Alsacia |
 
 **Aviso de nombres (warn, no bloquea):** del banco `french/france` solo quedan
-libres Romain y Julien. Justine, Mathilde, Nathalie, Karim, Elise y Anais estan
+libres Romain y Julien. Justine, Mathilde, Nathalie, Karim, Élise y Anaïs estan
 fuera de lista y el validador avisara (`character-names-unverified`). Los
 justifico por generacion: nombres frecuentes entre nacidos de 1970 (Nathalie) a
-1998 (Anais). Karim es un nombre frances corriente, en ortografia francesa.
+1998 (Anaïs). Karim es un nombre frances corriente, en ortografia francesa.
 
 ## 5. Evidencia de los temas
 
@@ -114,8 +114,8 @@ de bar, compra, farmacia ni transporte.
 | 3 | Parents & Sunday Lunch | parents-and-sunday-lunch | Nathalie | el examen que nadie admite |
 | 4 | Chores & Fair Shares | chores-and-fair-shares | Julien | humor de cuentas de pareja |
 | 5 | Arguments & Apologies | arguments-and-apologies | Karim | la primera pelea de verdad |
-| 6 | Weddings & Speeches | weddings-and-speeches | Elise | nervios y emocion en publico |
-| 7 | Homesickness & Belonging | homesickness-and-belonging | Anais | nostalgia y eleccion |
+| 6 | Weddings & Speeches | weddings-and-speeches | Élise | nervios y emocion en publico |
+| 7 | Homesickness & Belonging | homesickness-and-belonging | Anaïs | nostalgia y eleccion |
 
 ### Arco de cada tema (deseo, obstaculo, coste; el slot 3 cierra)
 
@@ -131,7 +131,7 @@ de bar, compra, farmacia ni transporte.
    marcado); Romain entiende la broma y descubre una Justine que no conocia; le
    cuesta la imagen que tenia de ella. (3) Algo le pasa a Romain delante de la
    bande y nace su propio apodo, que no le gusta; lo acepta porque es suyo.
-3. **Parents & Sunday Lunch.** (1) Primer domingo en Reze: vous o tu con
+3. **Parents & Sunday Lunch.** (1) Primer domingo en Rezé: vous o tu con
    Nathalie; lleva un vino de Alsace a una mesa de muscadet y la botella se
    queda cerrada. (2) Quiere ayudar con el beurre blanc y corta la salsa; se
    pierde la salsa y la tranquilidad de la mesa. (3) Salta el cuadro electrico
@@ -148,16 +148,16 @@ de bar, compra, farmacia ni transporte.
    y sale peor. (3) Una disculpa sin "mais"; Romain pide oir la cancion en casa;
    Justine perdona con una condicion.
 6. **Weddings & Speeches.** (1) Justine es testigo y escribe un discurso lleno
-   de bromas de familia; Elise pide a Romain la luz de la sala; pasa la vispera
+   de bromas de familia; Élise pide a Romain la luz de la sala; pasa la vispera
    alli. (2) El dia, falla la corriente en pleno discurso; Romain lo arregla a
-   oscuras y se pierde el discurso de Justine. (3) Elise pide que Romain diga
+   oscuras y se pierde el discurso de Justine. (3) Élise pide que Romain diga
    unas palabras en el vin d'honneur; usa el apodo de la bande y la familia
    aplaude.
-7. **Homesickness & Belonging.** (1) Anais llega de Strasbourg con un kouglof y
-   una noticia: el antiguo jefe quiere a Romain de vuelta; Anais nota que su
+7. **Homesickness & Belonging.** (1) Anaïs llega de Strasbourg con un kouglof y
+   una noticia: el antiguo jefe quiere a Romain de vuelta; Anaïs nota que su
    hermano ya habla como un nantais. (2) Una flammekueche casera le trae el mal
-   du pays; Justine se entera de la oferta por Anais y no por el; se pierde la
-   confianza de esa noche. (3) Romain rechaza la oferta por telefono; Anais se va
+   du pays; Justine se entera de la oferta por Anaïs y no por el; se pierde la
+   confianza de esa noche. (3) Romain rechaza la oferta por telefono; Anaïs se va
    y la vera dos veces al ano; en el buzon pone "Justine et Romain".
 
 ## 7. Banda gramatical A2 (frances)
