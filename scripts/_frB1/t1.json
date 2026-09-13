@@ -459,7 +459,8 @@
     "word": "le badge",
     "surface": "badge",
     "register": "neutral",
-    "definition": "a small card that lets you enter your office building"
+    "definition": "a small card that lets you enter your office building",
+    "anchor": true
    }
   ],
   "arcType": "harmonic-close"

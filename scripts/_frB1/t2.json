@@ -292,7 +292,8 @@
     "word": "le fleuriste",
     "surface": "fleuriste",
     "register": "neutral",
-    "definition": "a person who sells flowers in a shop"
+    "definition": "a person who sells flowers in a shop",
+    "anchor": true
    },
    {
     "type": "expression",
@@ -337,7 +338,8 @@
     "word": "la lampe de poche",
     "surface": "lampe de poche",
     "register": "neutral",
-    "definition": "a small light with batteries that you carry in your hand"
+    "definition": "a small light with batteries that you carry in your hand",
+    "anchor": true
    },
    {
     "type": "noun",
@@ -395,7 +397,8 @@
     "word": "le câble",
     "surface": "câbles",
     "register": "neutral",
-    "definition": "a thick wire that carries electricity from one place to another"
+    "definition": "a thick wire that carries electricity from one place to another",
+    "anchor": true
    },
    {
     "type": "adjective",
@@ -430,14 +433,16 @@
     "word": "l'électricien",
     "surface": "électricien",
     "register": "neutral",
-    "definition": "a person whose job is to install and repair electrical wires"
+    "definition": "a person whose job is to install and repair electrical wires",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "le papier alu",
     "surface": "papier alu",
     "register": "colloquial",
-    "definition": "thin silver metal paper used to wrap food"
+    "definition": "thin silver metal paper used to wrap food",
+    "anchor": true
    },
    {
     "type": "expression",

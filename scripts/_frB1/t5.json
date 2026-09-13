@@ -42,7 +42,8 @@
     "word": "l'infirmière",
     "surface": "infirmière",
     "register": "neutral",
-    "definition": "a woman who takes care of sick people in a hospital"
+    "definition": "a woman who takes care of sick people in a hospital",
+    "anchor": true
    },
    {
     "type": "noun",

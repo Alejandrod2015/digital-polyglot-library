@@ -14,7 +14,7 @@ v1=[
  v("le premier rendez-vous","premier rendez-vous","noun","the first time two people meet to see if they like each other",True),
  v("l'appli de rencontre","appli de rencontre","noun","a phone application for meeting people who want to date",True),
  v("tenir en place","tenait pas en place","expression","to stay calm and still; with ne pas, to be too nervous"),
- v("l'infirmière","infirmière","noun","a woman who takes care of sick people in a hospital"),
+ v("l'infirmière","infirmière","noun","a woman who takes care of sick people in a hospital",True),
  v("le CHU","CHU","noun","a big university hospital in a French city",True,"cultural"),
  v("la garde","garde","noun","a long period of work at night or at weekends in a hospital",True),
  v("tu fais quoi dans la vie","tu fais quoi dans la vie","expression","what is your job, asked in a friendly and informal way"),

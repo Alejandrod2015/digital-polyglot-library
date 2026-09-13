@@ -93,7 +93,7 @@ s3_vocab=[
  v("rouillé","rouillé","adjective","old metal that has turned brown and rough with water"),
  v("le local","local","noun","an empty room or shop that a business can rent"),
  v("la mutuelle","mutuelle","noun","extra health insurance, often paid in part by your job"),
- v("le badge","badge","noun","a small card that lets you enter your office building"),
+ v("le badge","badge","noun","a small card that lets you enter your office building",True),
 ]
 data=[
  {"topic":T,"slotIndex":0,"title":"La tournée jamais offerte","synopsis":"Aurélien a enfin une bonne nouvelle au travail, et il a réservé une table pour la fêter avec Élodie, sa meilleure amie depuis la fac. Mais Élodie arrive avec une nouvelle bien pire que la sienne. Il faudrait choisir laquelle compte ce soir, et Aurélien décide de se taire. La soirée ne se passe pas du tout comme il l'avait prévu.","text":s1_text,"vocab":s1_vocab,"arcType":"reframe-turn"},
