@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a2",
+  "variante": "france",
+  "registro": "comedia domestica tierna: dos adultos que se quieren descubren que compartir un piso pequeno cuesta sitio, sueno y costumbres",
+  "espina": "Romain deja Strasbourg para vivir con Justine en Nantes; entiende las palabras y todavia no lo que la vida de ella espera de el. Este tema es la primera semana: el espacio.",
+  "recursos": "A2: narrador en presente; passe compose e imparfait en el dialogo y en recuerdos marcados de Strasbourg; futur proche; simil simple (comme un invite), espejo concreto (el placard lleno y la etagere vacia), causalidad explicita y humor de situacion. Nada de subjonctif, plus-que-parfait ni gerondif.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Romain quiere un sitio suyo en el placard para sus cosas de Strasbourg el primer dia.",
+      "impide": "El placard esta lleno de la ropa de invierno de Justine y el no quiere molestarla el primer dia.",
+      "cuesta": "Baja sus discos y su chaqueta de cuero a la cave, y los discos se quedan alli: arriba no hay sitio para ellos.",
+      "cambia": "Descubre que Justine ya le habia vaciado la etagere de arriba; entiende que ella pensaba en el antes de su llegada.",
+      "emocion": "Se siente un invitado en su propia casa porque todo es de ella; se sienta en un carton y se toca la barba en la cave."
+    },
+    {
+      "slot": "2",
+      "quiere": "Romain quiere dormir bien la primera semana, en su lado de siempre, junto a la ventana.",
+      "impide": "Justine lee hasta la una con la lampara encendida, y la razon que no dice es que el ronca.",
+      "cuesta": "Pierde para siempre su lado de la ventana: Justine lo necesita porque en el lado del radiador tiene calor.",
+      "cambia": "Cambian de lado; el se acostumbra al lado de la puerta y ella compra tapones para los oidos.",
+      "emocion": "Le da verguenza saber que ronca porque en Strasbourg nadie se quejaba; esconde la cara en la almohada."
+    },
+    {
+      "slot": "3",
+      "quiere": "Romain quiere tender la ropa en el balcon como en Alsacia para tener la camisa blanca seca el lunes.",
+      "impide": "El crachin de Nantes no se ve, y moja la ropa sin que el se de cuenta.",
+      "cuesta": "La camisa blanca no se seca a tiempo y el lunes va a la obra con un jersey viejo.",
+      "cambia": "Justine instala un tancarville en el bano y dice chez nous por primera vez; Romain acepta la costumbre de la casa.",
+      "emocion": "Le frustra hacerlo todo al reves en una semana; sacude la camisa mojada, suspira y al final se rie con ella."
+    }
+  ]
+}
