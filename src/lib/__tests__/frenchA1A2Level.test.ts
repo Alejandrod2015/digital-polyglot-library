@@ -17,33 +17,34 @@ const n = (word: string, extra: Partial<V> = {}): V => ({
   word, definition: "def", type: "noun", ...extra,
 });
 
-describe("vocab-level-frequency FR A1/A2 (lista Lexique383, corte de frecuencia)", () => {
+describe("vocab-level-frequency FR A1/A2 (lista Lexique383, corte de frecuencia = 750)", () => {
   it("una plaza A2 que la fuente recoge pasa", async () => {
-    // Lexique383: souvenir rank 321, blague rank 1423, discours rank 1447.
-    // Muy por dentro del corte de 6000.
+    // Lexique383 al corte 750: souvenir rank 321, habitude rank 603.
     expect(isFrenchA1A2("souvenir")).toBe(true);
-    expect(isFrenchA1A2("le discours")).toBe(true);
-    const c = await levelCheck([n("souvenir"), n("blague"), n("discours")]);
+    expect(isFrenchA1A2("habitude")).toBe(true);
+    const c = await levelCheck([n("souvenir"), n("habitude")]);
     expect(c?.status).toBe("pass");
   });
 
   it("palabras claramente B2/C1 siguen fallando", async () => {
     // Lexique383: revendication rank 9454, dialectique rank 13650,
-    // épistémologie rank 35947. Las tres muy por fuera del corte de 6000
-    // (dialectique, la más frecuente de la muestra académica usada para
-    // calibrar el corte, queda a más del doble del corte).
+    // épistémologie rank 35947. Las tres muy por fuera del corte de 750.
     const c = await levelCheck([n("revendication"), n("dialectique", { type: "adjective" }), n("épistémologie")]);
     expect(c?.status).toBe("fail");
   });
 
-  it("limite conocido: una palabra B1 frecuente puede colarse (tradeoff documentado)", () => {
-    // A diferencia de FLELex (nivel MCER experto por palabra), Lexique383 es
-    // solo frecuencia. "vaisselle", "pardonner" y "dispute" son B1 en
-    // FLELex/Beacco pero caen dentro del corte de 6000 por ser frecuentes
-    // (ranks 2896, 792, 3477). No es un bug: el corte separa "claramente
-    // básico" de "claramente avanzado", no A2 de B1 con precisión de
-    // experto (ver el LÍMITE reconocido en la cabecera de frenchA1A2.ts).
-    for (const w of ["vaisselle", "pardonner", "dispute"]) expect(isFrenchA1A2(w)).toBe(true);
+  it("limite reconocido en la cabecera: el corte que mejor separa (750) sigue dejando pasar palabras B1/B2 realistas, y deja fuera la mayoria de las motivadoras del encargo original", () => {
+    // Segunda vuelta de calibración (2026-09-13): una muestra B2/C1
+    // académica es demasiado fácil de separar; con una muestra B1/B2
+    // realista (FLELex/Beacco, usada solo como referencia de calibración,
+    // no embebida en la lista final) el mejor corte tiene 16% de fuga.
+    // "rapport" y "craindre" (B1/B2 en FLELex/Beacco) SÍ pasan aquí.
+    for (const w of ["rapport", "craindre"]) expect(isFrenchA1A2(w)).toBe(true);
+    // De las 8 palabras que motivaron el encargo original, solo 2 entran
+    // al corte 750 (souvenir, habitude); las otras 6 siguen fuera.
+    for (const w of ["blague", "discours", "accent", "vaisselle", "pardonner", "dispute"]) {
+      expect(isFrenchA1A2(w)).toBe(false);
+    }
   });
 
   it("un ancla cultural pasa como en ES; sin register vuelve a contar", async () => {
