@@ -1,0 +1,464 @@
+[
+ {
+  "topic": "dating-and-romance",
+  "slotIndex": 0,
+  "title": "Rendez-vous sous la Bourse",
+  "synopsis": "Pour la première fois depuis longtemps, Aurélien a un rendez-vous, et la femme qu'il rencontre lui plaît tout de suite. Mais quand elle lui demande ce qu'il fait dans la vie, sa nouvelle vie d'atelier lui paraît soudain trop petite. La réponse qu'il donne va l'aider ce soir, et le suivre ensuite.",
+  "text": "Sur la Grand-Place, sous les lumières de la Vieille Bourse, Aurélien attendait son premier rendez-vous depuis deux ans. Il avait rencontré Marion sur une appli de rencontre, et il ne tenait pas en place.\n\nMarion est une infirmière de nuit au CHU, et elle est arrivée en courant. “Désolée pour le retard, ma garde a fini tard. Alors, tu fais quoi dans la vie?” a demandé Marion.\n\nAurélien a hésité: un associé d'atelier qui n'avait pas un sou, ça lui semblait peu séduisant. Aurélien a menti, sûr de lui: “Je suis expert-comptable, dans un grand cabinet du centre.”\n\n“Les chiffres? Moi, je suis nulle en maths!” a ri Marion, impressionnée. Ils ont parlé deux heures. Aurélien a évité soigneusement les questions sur son travail, et il a gardé pour lui la vérité.\n\n“J'aimerais te revoir. Samedi soir, ça te dit?” lui a proposé Marion. Aurélien a dit oui trop vite, le cœur léger et un mensonge sur la conscience.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "la Vieille Bourse",
+    "surface": "Vieille Bourse",
+    "register": "cultural",
+    "definition": "a famous old building with a courtyard on the main square of Lille",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "le premier rendez-vous",
+    "surface": "premier rendez-vous",
+    "register": "neutral",
+    "definition": "the first time two people meet to see if they like each other",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "l'appli de rencontre",
+    "surface": "appli de rencontre",
+    "register": "neutral",
+    "definition": "a phone application for meeting people who want to date",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "tenir en place",
+    "surface": "tenait pas en place",
+    "register": "neutral",
+    "definition": "to stay calm and still; with ne pas, to be too nervous"
+   },
+   {
+    "type": "noun",
+    "word": "l'infirmière",
+    "surface": "infirmière",
+    "register": "neutral",
+    "definition": "a woman who takes care of sick people in a hospital"
+   },
+   {
+    "type": "noun",
+    "word": "le CHU",
+    "surface": "CHU",
+    "register": "cultural",
+    "definition": "a big university hospital in a French city",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "la garde",
+    "surface": "garde",
+    "register": "neutral",
+    "definition": "a long period of work at night or at weekends in a hospital",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "tu fais quoi dans la vie",
+    "surface": "tu fais quoi dans la vie",
+    "register": "neutral",
+    "definition": "what is your job, asked in a friendly and informal way"
+   },
+   {
+    "type": "adjective",
+    "word": "séduisant",
+    "surface": "séduisant",
+    "register": "neutral",
+    "definition": "attractive, in a way that makes other people interested in you"
+   },
+   {
+    "type": "verb",
+    "word": "mentir",
+    "surface": "menti",
+    "register": "neutral",
+    "definition": "to say something that you know is not true"
+   },
+   {
+    "type": "expression",
+    "word": "être nul en",
+    "surface": "nulle en",
+    "register": "colloquial",
+    "definition": "to be very bad at a school subject or an activity"
+   },
+   {
+    "type": "adjective",
+    "word": "impressionné",
+    "surface": "impressionnée",
+    "register": "neutral",
+    "definition": "feeling admiration because someone seems important or very good"
+   },
+   {
+    "type": "verb",
+    "word": "éviter",
+    "surface": "évité",
+    "register": "neutral",
+    "definition": "to stay away from something because you do not want it"
+   },
+   {
+    "type": "adverb",
+    "word": "soigneusement",
+    "surface": "soigneusement",
+    "register": "neutral",
+    "definition": "very carefully, paying attention to every little detail"
+   },
+   {
+    "type": "expression",
+    "word": "j'aimerais",
+    "surface": "J'aimerais",
+    "register": "neutral",
+    "definition": "I would like, a polite way to say what you want"
+   },
+   {
+    "type": "expression",
+    "word": "ça te dit",
+    "surface": "ça te dit",
+    "register": "neutral",
+    "definition": "would you like that, a friendly way to invite someone"
+   },
+   {
+    "type": "expression",
+    "word": "trop vite",
+    "surface": "trop vite",
+    "register": "neutral",
+    "definition": "too quickly, before thinking about it for long enough"
+   },
+   {
+    "type": "expression",
+    "word": "le cœur léger",
+    "surface": "le cœur léger",
+    "register": "neutral",
+    "definition": "feeling happy and free, without any worry in your mind"
+   },
+   {
+    "type": "noun",
+    "word": "le mensonge",
+    "surface": "mensonge",
+    "register": "neutral",
+    "definition": "something that you say and that you know is not true"
+   },
+   {
+    "type": "expression",
+    "word": "avoir sur la conscience",
+    "surface": "sur la conscience",
+    "register": "neutral",
+    "definition": "to feel guilty because of something bad you did"
+   }
+  ],
+  "arcType": "juxtaposition-discovery"
+ },
+ {
+  "topic": "dating-and-romance",
+  "slotIndex": 1,
+  "title": "Samedi, deux promesses",
+  "synopsis": "Aurélien a promis deux choses pour le même samedi soir, et il ne peut pas être partout. Plutôt que de choisir franchement, il invente une excuse et laisse quelqu'un se débrouiller sans lui. Le dîner est parfait sur le papier, mais une photo reçue à minuit en gâche le goût.",
+  "text": "Deux jours plus tard, Aurélien s'est rendu compte de son erreur. Il avait promis à Élodie de monter les étagères de l'atelier le même samedi soir. Son idée: être à la fois à l'atelier et au restaurant.\n\nAlors il a inventé une excuse bidon. “Je suis malade comme un chien, je ne viendrai pas ce soir, désolé”, prétendait-il d'une voix faible.\n\n“Tant pis. Je les monterai toute seule, et tu me devras une bière, deux même”, lui a répondu Élodie dans la minute.\n\nAu restaurant, Marion racontait sa nuit aux urgences, et Aurélien avait la tête ailleurs. Il pensait aux vis, à l'escabeau trop haut, à Élodie seule dans l'atelier.\n\nÀ minuit, il a reçu une photo: trois étagères bien droites. Sur la photo, on voyait aussi le pouce d'Élodie, entouré d'un pansement. “Mission accomplie. J'espère que tu vas mieux, mon pauvre, et que tu dors bien”, avait écrit Élodie.\n\nAurélien s'est senti coupable. Le dessert, pourtant délicieux, lui a paru sans goût.",
+  "vocab": [
+   {
+    "type": "expression",
+    "word": "se rendre compte",
+    "surface": "s'est rendu compte",
+    "register": "neutral",
+    "definition": "to suddenly understand something that you did not see before"
+   },
+   {
+    "type": "verb",
+    "word": "promettre",
+    "surface": "promis",
+    "register": "neutral",
+    "definition": "to say that you will surely do something for someone"
+   },
+   {
+    "type": "expression",
+    "word": "à la fois",
+    "surface": "à la fois",
+    "register": "neutral",
+    "definition": "at the same time, in two places or ways together"
+   },
+   {
+    "type": "verb",
+    "word": "inventer",
+    "surface": "inventé",
+    "register": "neutral",
+    "definition": "to create a story or a reason that is not true"
+   },
+   {
+    "type": "adjective",
+    "word": "bidon",
+    "surface": "bidon",
+    "register": "colloquial",
+    "definition": "fake, not real or not serious at all"
+   },
+   {
+    "type": "expression",
+    "word": "malade comme un chien",
+    "surface": "malade comme un chien",
+    "register": "colloquial",
+    "definition": "very ill, feeling really bad in your body"
+   },
+   {
+    "type": "adjective",
+    "word": "faible",
+    "surface": "faible",
+    "register": "neutral",
+    "definition": "without much strength or energy, like a quiet tired voice"
+   },
+   {
+    "type": "verb",
+    "word": "devoir",
+    "surface": "devras",
+    "register": "neutral",
+    "definition": "to owe something to someone, like money or a favour"
+   },
+   {
+    "type": "noun",
+    "word": "les urgences",
+    "surface": "urgences",
+    "register": "neutral",
+    "definition": "the part of a hospital for patients who need help immediately",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "avoir la tête ailleurs",
+    "surface": "la tête ailleurs",
+    "register": "neutral",
+    "definition": "to think about something else and not listen to what happens"
+   },
+   {
+    "type": "noun",
+    "word": "la vis",
+    "surface": "vis",
+    "register": "neutral",
+    "definition": "a small pointed metal piece that you turn to fix wood",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "l'escabeau",
+    "surface": "escabeau",
+    "register": "neutral",
+    "definition": "a small folding ladder that you use inside a house",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "droit",
+    "surface": "droites",
+    "register": "neutral",
+    "definition": "straight, not bending to one side or the other"
+   },
+   {
+    "type": "noun",
+    "word": "le pouce",
+    "surface": "pouce",
+    "register": "neutral",
+    "definition": "the short thick finger on the side of your hand"
+   },
+   {
+    "type": "adjective",
+    "word": "entouré",
+    "surface": "entouré",
+    "register": "neutral",
+    "definition": "with something all around it, covering it completely"
+   },
+   {
+    "type": "noun",
+    "word": "le pansement",
+    "surface": "pansement",
+    "register": "neutral",
+    "definition": "a piece of material that you put on a cut or wound",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "mission accomplie",
+    "surface": "Mission accomplie",
+    "register": "neutral",
+    "definition": "the job is done, said with humour when you finish something"
+   },
+   {
+    "type": "expression",
+    "word": "mon pauvre",
+    "surface": "mon pauvre",
+    "register": "neutral",
+    "definition": "poor you, said with a little pity or with irony"
+   },
+   {
+    "type": "adjective",
+    "word": "délicieux",
+    "surface": "délicieux",
+    "register": "neutral",
+    "definition": "very good to eat, with a very nice taste"
+   },
+   {
+    "type": "expression",
+    "word": "sans goût",
+    "surface": "sans goût",
+    "register": "neutral",
+    "definition": "with no taste at all, like water or cardboard"
+   }
+  ],
+  "arcType": "reframe-turn"
+ },
+ {
+  "topic": "dating-and-romance",
+  "slotIndex": 2,
+  "title": "Une vérité trop tard",
+  "synopsis": "Aurélien ne supporte plus son mensonge, et il décide de dire enfin la vérité à la femme qu'il voit depuis quelques semaines. Il espère qu'elle comprendra, parce que son métier n'a rien de honteux. Mais pour elle, le problème n'est pas du tout celui qu'il imagine, et la conversation se termine autrement.",
+  "text": "“Il faut que je te dise la vérité. Je ne suis plus comptable: je répare des vélos à Fives”, a avoué Aurélien, un dimanche matin, dans l'odeur de café de la cafétéria.\n\nMarion a posé son gobelet. Elle sortait d'une garde de douze heures, les yeux cernés. “Le vélo, je m'en fiche. C'est le mensonge qui me gêne”, lui a répondu Marion sans détour.\n\nElle lui a expliqué qu'elle passait ses nuits avec des gens qui mentaient sur leurs symptômes. Elle n'avait plus la force d'en entendre ailleurs.\n\nMarion a conclu: “On en reste là, d'accord? Tu es gentil, mais je ne veux pas commencer comme ça.” Aurélien a hoché la tête, la gorge serrée. Il n'a pas insisté.\n\nIl a traversé Lille à vélo, sous une pluie fine, jusqu'à Fives. À l'atelier, il a tout raconté à Élodie, sans chercher d'excuses. Son amie a écouté jusqu'au bout. Puis elle lui a tendu une clé à molette, sans rien dire.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "avouer",
+    "surface": "avoué",
+    "register": "neutral",
+    "definition": "to say something true that you did not want to tell before"
+   },
+   {
+    "type": "noun",
+    "word": "la cafétéria",
+    "surface": "cafétéria",
+    "register": "neutral",
+    "definition": "a simple restaurant inside a hospital, a school or an office",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "cerné",
+    "surface": "cernés",
+    "register": "neutral",
+    "definition": "with dark circles under the eyes because you are very tired"
+   },
+   {
+    "type": "verb",
+    "word": "gêner",
+    "surface": "gêne",
+    "register": "neutral",
+    "definition": "to make someone feel uncomfortable, annoyed or not at ease"
+   },
+   {
+    "type": "expression",
+    "word": "sans détour",
+    "surface": "sans détour",
+    "register": "neutral",
+    "definition": "in a direct way, without trying to hide what you mean"
+   },
+   {
+    "type": "expression",
+    "word": "passer ses nuits",
+    "surface": "passait ses nuits",
+    "register": "neutral",
+    "definition": "to spend all your nights doing something, often work"
+   },
+   {
+    "type": "noun",
+    "word": "les symptômes",
+    "surface": "symptômes",
+    "register": "neutral",
+    "definition": "the signs in your body that show you are ill",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "la force",
+    "surface": "force",
+    "register": "neutral",
+    "definition": "the energy that you need to continue doing something hard"
+   },
+   {
+    "type": "expression",
+    "word": "en rester là",
+    "surface": "en reste là",
+    "register": "neutral",
+    "definition": "to stop something now and not continue it"
+   },
+   {
+    "type": "adjective",
+    "word": "gentil",
+    "surface": "gentil",
+    "register": "neutral",
+    "definition": "kind and nice to other people, but sometimes not more"
+   },
+   {
+    "type": "verb",
+    "word": "conclure",
+    "surface": "conclu",
+    "register": "neutral",
+    "definition": "to say the last words that end a conversation"
+   },
+   {
+    "type": "expression",
+    "word": "la gorge serrée",
+    "surface": "la gorge serrée",
+    "register": "neutral",
+    "definition": "with a tight throat because you want to cry or feel emotion"
+   },
+   {
+    "type": "verb",
+    "word": "traverser",
+    "surface": "traversé",
+    "register": "neutral",
+    "definition": "to go from one side of a place to the other side"
+   },
+   {
+    "type": "adjective",
+    "word": "fin",
+    "surface": "fine",
+    "register": "neutral",
+    "definition": "for rain, made of very small and light drops"
+   },
+   {
+    "type": "expression",
+    "word": "chercher des excuses",
+    "surface": "chercher d'excuses",
+    "register": "neutral",
+    "definition": "to try to find reasons to make a mistake look less bad"
+   },
+   {
+    "type": "verb",
+    "word": "écouter",
+    "surface": "écouté",
+    "register": "neutral",
+    "definition": "to pay attention to what a person is saying"
+   },
+   {
+    "type": "verb",
+    "word": "tendre",
+    "surface": "tendu",
+    "register": "neutral",
+    "definition": "to hold something out towards a person so they can take it"
+   },
+   {
+    "type": "noun",
+    "word": "la clé à molette",
+    "surface": "clé à molette",
+    "register": "neutral",
+    "definition": "an adjustable metal tool used to turn nuts and bolts",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "commencer",
+    "surface": "commencer",
+    "register": "neutral",
+    "definition": "to start something, like a job or a relationship"
+   },
+   {
+    "type": "verb",
+    "word": "raconter",
+    "surface": "raconté",
+    "register": "neutral",
+    "definition": "to tell someone what happened, from the beginning to the end"
+   }
+  ],
+  "arcType": "harmonic-close"
+ }
+]
