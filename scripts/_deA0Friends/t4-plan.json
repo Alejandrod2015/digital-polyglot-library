@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "germany",
+  "registro": "tranquilo y de escalera: libros compartidos, papelitos olvidados y voz baja",
+  "espina": "Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.",
+  "recursos": "A0: repeticion ritmica (la letra es pequena; la letra es su letra), contraste con aber, imagen concreta (hombros que caen, rodillas blandas, libro verde en la estanteria)",
+  "historias": [
+    { "slot": "0", "quiere": "recuperar el libro verde que dejo hace ocho anos en el armario de libros de la escalera, con una nota para Jan dentro", "impide": "el armario es de todo el edificio y los libros cambian de manos", "cuesta": "el libro ya no esta: se lo llevo una mujer de Hamburgo", "cambia": "conoce a Johanna, la librera, que guarda las notas que encuentra en los libros", "emocion": "desanimo: los hombros caen porque la nota iba dentro; se sienta en el escalon" },
+    { "slot": "1", "quiere": "encontrar su nota entre las cien de la lata de Johanna", "impide": "hay cien papelitos y ella ya no se acuerda de lo que escribio", "cuesta": "descubre que Jan nunca leyo la nota: ocho anos de espera en una lata, sin arreglo", "cambia": "la nota aparece y Johanna apunta el titulo del libro", "emocion": "culpa: las rodillas blandas porque la nota espero ocho anos en una lata; dobla el papel muy pequeno" },
+    { "slot": "2", "quiere": "darle por fin a Jan la nota y la pagina cuarenta", "impide": "el libro viejo no vuelve; solo hay uno nuevo que trae Johanna", "cuesta": "el libro con su letra en los margenes se perdio; el de Jan es una copia sin historia", "cambia": "Anna lee la pagina en voz alta en la cocina y Jan pone el libro en su estanteria", "emocion": "nervios y ternura: la voz le tiembla porque Jan escucha muy quieto; sigue leyendo despacio" }
+  ]
+}

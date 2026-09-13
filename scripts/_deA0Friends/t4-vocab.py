@@ -1,0 +1,73 @@
+import json
+d=json.load(open("scripts/_deA0Friends/t4-texts.json"))
+V=lambda t,w,s,df: {"type":t,"word":w,"surface":s,"definition":df}
+d[0]["synopsis"]="On the stairs there is a cupboard full of books for everyone. Anna looks for a green novel with an old note for Jan inside. Johanna knows where it is."
+d[0]["vocab"]=[
+ V("noun","das Buch","Bücher","A book; pages with words that you read."),
+ V("adjective","dick","dick","Thick; with many pages, not thin."),
+ V("adjective","dünn","dünn","Thin; with only a few pages."),
+ V("noun","das Haus","Haus","A house; the building where people live."),
+ V("adjective","grün","grünes","Green; the colour of grass and leaves."),
+ V("noun","die Buchhändlerin","Buchhändlerin","A female bookseller; she sells books in a shop."),
+ V("noun","der Stapel","Stapel","A pile; things lying one on top of another."),
+ V("adjective","dunkel","dunkel","Dark; with very little light."),
+ V("adjective","wichtig","wichtig","Important; it matters a lot."),
+ V("noun","das Ohr","Ohr","An ear; you hear with it."),
+ V("pronoun","etwas","etwas","Something; a thing, but you do not say which."),
+ V("adjective","bestimmt","Bestimmtes","Particular; one special thing, not just any."),
+ V("noun","der Roman","Roman","A novel; a long book with a story."),
+ V("adverb","leider","leider","Sadly; I am sorry, but it is so."),
+ V("noun","der Magen","Magen","The stomach; where your food goes inside you."),
+ V("verb","seufzen","seufzt","To sigh; to breathe out loudly when you are sad."),
+ V("verb","setzen","setzt","To sit down; sich setzen means to take a seat."),
+ V("noun","die Sorge","Sorge","Worry; keine Sorge means do not worry."),
+ V("verb","sammeln","sammle","To collect; to keep many things of one kind."),
+ V("verb","rennen","rennt","To run; to go very fast on your feet."),
+]
+d[1]["synopsis"]="Johanna reads the old notes from her box out loud on the stairs. Most of them are funny. Then Anna finds a yellow note in her own handwriting."
+d[1]["vocab"]=[
+ V("pronoun","viele","Viele","Many; a lot of them."),
+ V("adjective","klein","kleine","Small; not big, only a little."),
+ V("adverb","zusammen","zusammen","Together; with another person."),
+ V("verb","lesen","liest","To read; to look at words and understand them."),
+ V("noun","die Dose","Dose","A tin; a small metal box with a lid."),
+ V("adjective","traurig","traurig","Sad; not happy, you want to cry."),
+ V("adjective","lustig","lustig","Funny; it makes you laugh."),
+ V("adverb","noch","Noch","Another; one more of the same."),
+ V("noun","die Schrift","Schrift","Handwriting; the way a person writes letters."),
+ V("adjective","schief","schief","Crooked; not straight, going to one side."),
+ V("number","vierzig","vierzig","Forty; the number after thirty-nine."),
+ V("verb","denken","denke","To think; denken an means to think of someone."),
+ V("adjective","leer","leer","Empty; here, she cannot think of anything."),
+ V("preposition","über","über","About; here, laughing at what a note says."),
+ V("verb","warten","wartet","To wait; to stay until something happens."),
+ V("verb","drücken","drückt","To press something hard against you."),
+ V("noun","der Titel","Titel","A title; the name of a book."),
+ V("verb","reichen","reicht","To be enough; you need nothing more."),
+ V("verb","besorgen","besorge","To get; to find and buy something for someone."),
+ V("noun","das Heft","Heft","A notebook; a thin book with empty pages."),
+]
+d[2]["synopsis"]="Johanna brings a new copy of the green book. Anna knocks at Jan's door with the old yellow note, and Jan asks her to read page forty."
+d[2]["vocab"]=[
+ V("noun","die Buchhandlung","Buchhandlung","A bookshop; a shop where you buy books."),
+ V("verb","riechen","riecht","To smell; to have a smell of something."),
+ V("noun","das Papier","Papier","Paper; what the pages of a book are made of."),
+ V("verb","klopfen","klopft","To knock; to hit a door softly with your hand."),
+ V("pronoun","beide","Beide","Both; the two of them together."),
+ V("adverb","gerade","gerade","Right now; at this moment."),
+ V("noun","die Tomatensuppe","Tomatensuppe","Tomato soup; a hot soup made from tomatoes."),
+ V("noun","der Herd","Herd","A cooker; where you cook food in a kitchen."),
+ V("verb","öffnen","öffnet","To open; to make a book or door not closed."),
+ V("adverb","vorsichtig","vorsichtig","Carefully; slowly, so nothing goes wrong."),
+ V("noun","die Zeile","Zeile","A line; one row of words on a page."),
+ V("verb","zittern","zittert","To shake; to move a little because you feel nervous."),
+ V("adjective","ruhig","ruhig","Calm; quiet and not moving."),
+ V("adverb","zweimal","zweimal","Twice; two times, one after the other."),
+ V("adverb","auch","auch","Also; too, in the same way."),
+ V("adjective","gut","gut","Good; fine, nice enough."),
+ V("verb","sehen","sieht","To see; to notice something with your eyes."),
+ V("adverb","daneben","daneben","Next to it; beside that thing."),
+ V("verb","sagen","sagen","To say; to speak words."),
+ V("conjunction","wie","wie","Like; in the same way as."),
+]
+json.dump(d,open("scripts/_deA0Friends/t4-data.json","w"),ensure_ascii=False,indent=1)
