@@ -229,10 +229,18 @@ export default function JourneyClient({
   const [catalog, setCatalog] = useState<CatalogOption[] | null>(null);
   const [catalogLoading, setCatalogLoading] = useState(false);
   const [addingSlug, setAddingSlug] = useState<string | null>(null);
+  // Filtros de región (variant) y tipo sobre la lista de journeys de un
+  // idioma: sin esto, un idioma con varios países × tipos (ej. español
+  // LATAM: 4 países × Traveler/Friends) es una lista plana larga. null =
+  // "Todos" en esa dimensión.
+  const [addRegion, setAddRegion] = useState<string | null>(null);
+  const [addType, setAddType] = useState<string | null>(null);
 
   const openAddPicker = useCallback(() => {
     setLanguageSheetOpen(false);
     setAddLanguage(null);
+    setAddRegion(null);
+    setAddType(null);
     setAddSheetOpen(true);
     if (catalog === null && !catalogLoading) {
       setCatalogLoading(true);
@@ -314,6 +322,45 @@ export default function JourneyClient({
   const catalogForLanguage = useMemo(
     () => (catalog && addLanguage ? catalog.filter((o) => o.language === addLanguage) : []),
     [catalog, addLanguage]
+  );
+
+  // Chips de región (option.variant), en orden de aparición del catálogo.
+  // Solo tiene sentido mostrarlas si el idioma trae más de una (ej. español
+  // trae LATAM/Spain/Mexico/Colombia/Argentina; francés no trae ninguna).
+  const addRegionChips = useMemo(() => {
+    const seen = new Map<string, string>();
+    for (const option of catalogForLanguage) {
+      const key = (option.variant ?? "").trim().toLowerCase();
+      if (!key || seen.has(key)) continue;
+      seen.set(key, formatVariantLabel(option.variant) ?? option.variant ?? key);
+    }
+    return [...seen.entries()].map(([key, label]) => ({ key, label }));
+  }, [catalogForLanguage]);
+
+  const addRegionFiltered = useMemo(
+    () =>
+      addRegion
+        ? catalogForLanguage.filter(
+            (o) => (o.variant ?? "").trim().toLowerCase() === addRegion
+          )
+        : catalogForLanguage,
+    [catalogForLanguage, addRegion]
+  );
+
+  // Chips de tipo (option.label, ej. "Traveler"/"Friends"), calculadas
+  // DESPUÉS del filtro de región para no ofrecer un tipo que ese país no
+  // tiene.
+  const addTypeChips = useMemo(() => {
+    const labels: string[] = [];
+    for (const option of addRegionFiltered) {
+      if (!labels.includes(option.label)) labels.push(option.label);
+    }
+    return labels;
+  }, [addRegionFiltered]);
+
+  const visibleCatalogForLanguage = useMemo(
+    () => (addType ? addRegionFiltered.filter((o) => o.label === addType) : addRegionFiltered),
+    [addRegionFiltered, addType]
   );
 
   const selectedTrack = useMemo(
@@ -796,7 +843,11 @@ export default function JourneyClient({
                 <li key={lang.language}>
                   <button
                     type="button"
-                    onClick={() => setAddLanguage(lang.language)}
+                    onClick={() => {
+                      setAddLanguage(lang.language);
+                      setAddRegion(null);
+                      setAddType(null);
+                    }}
                     className="flex w-full items-center gap-4 rounded-2xl border px-4 py-3 text-left transition-colors"
                     style={{
                       background: "var(--card-bg)",
@@ -835,14 +886,127 @@ export default function JourneyClient({
           <div className="flex flex-col gap-2 pb-6">
             <button
               type="button"
-              onClick={() => setAddLanguage(null)}
+              onClick={() => {
+                setAddLanguage(null);
+                setAddRegion(null);
+                setAddType(null);
+              }}
               className="mb-1 flex items-center gap-1 self-start text-xs font-bold"
               style={{ color: "var(--color-gold)" }}
             >
               ‹ All languages
             </button>
+
+            {addRegionChips.length > 1 ? (
+              <div className="mb-1 flex flex-wrap gap-1.5">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setAddRegion(null);
+                    setAddType(null);
+                  }}
+                  className="rounded-full border px-3 py-1.5 text-xs font-bold transition-colors"
+                  style={
+                    addRegion === null
+                      ? {
+                          background: "rgba(252,211,77,0.14)",
+                          borderColor: "rgba(252,211,77,0.55)",
+                          color: "var(--color-gold)",
+                        }
+                      : {
+                          background: "var(--card-bg)",
+                          borderColor: "var(--card-border)",
+                          color: "var(--muted)",
+                        }
+                  }
+                >
+                  All
+                </button>
+                {addRegionChips.map((chip) => {
+                  const selected = addRegion === chip.key;
+                  return (
+                    <button
+                      key={chip.key}
+                      type="button"
+                      onClick={() => {
+                        setAddRegion(chip.key);
+                        setAddType(null);
+                      }}
+                      className="rounded-full border px-3 py-1.5 text-xs font-bold transition-colors"
+                      style={
+                        selected
+                          ? {
+                              background: "rgba(252,211,77,0.14)",
+                              borderColor: "rgba(252,211,77,0.55)",
+                              color: "var(--color-gold)",
+                            }
+                          : {
+                              background: "var(--card-bg)",
+                              borderColor: "var(--card-border)",
+                              color: "var(--muted)",
+                            }
+                      }
+                    >
+                      {chip.label}
+                    </button>
+                  );
+                })}
+              </div>
+            ) : null}
+
+            {addTypeChips.length > 1 ? (
+              <div className="mb-1 flex flex-wrap gap-1.5">
+                <button
+                  type="button"
+                  onClick={() => setAddType(null)}
+                  className="rounded-full border px-3 py-1.5 text-xs font-bold transition-colors"
+                  style={
+                    addType === null
+                      ? {
+                          background: "rgba(252,211,77,0.14)",
+                          borderColor: "rgba(252,211,77,0.55)",
+                          color: "var(--color-gold)",
+                        }
+                      : {
+                          background: "var(--card-bg)",
+                          borderColor: "var(--card-border)",
+                          color: "var(--muted)",
+                        }
+                  }
+                >
+                  All
+                </button>
+                {addTypeChips.map((label) => {
+                  const selected = addType === label;
+                  return (
+                    <button
+                      key={label}
+                      type="button"
+                      onClick={() => setAddType(label)}
+                      className="rounded-full border px-3 py-1.5 text-xs font-bold transition-colors"
+                      style={
+                        selected
+                          ? {
+                              background: "rgba(252,211,77,0.14)",
+                              borderColor: "rgba(252,211,77,0.55)",
+                              color: "var(--color-gold)",
+                            }
+                          : {
+                              background: "var(--card-bg)",
+                              borderColor: "var(--card-border)",
+                              color: "var(--muted)",
+                            }
+                      }
+                    >
+                      {label}
+                    </button>
+                  );
+                })}
+              </div>
+            ) : null}
+
             <ul className="flex flex-col gap-2">
-              {catalogForLanguage.map((option) => {
+              {visibleCatalogForLanguage.map((option) => {
                 const pill = pillForTrack({
                   id: "",
                   slug: option.slug,

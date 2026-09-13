@@ -249,6 +249,12 @@ export function JourneysPanel({
   const [availableTracks, setAvailableTracks] = useState<JourneysPanelTrack[]>([]);
   const [tracksLoading, setTracksLoading] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  // Filtros de Paso 2, encima de las secciones agrupadas. Sin esto, un
+  // idioma con varios paises x varios tipos (ej. Spanish LATAM: 4 paises x
+  // Traveler/Friends) obliga a hacer scroll por toda la lista para llegar a
+  // una combinacion. null = "Todos" en cada dimension.
+  const [selectedRegionKey, setSelectedRegionKey] = useState<string | null>(null);
+  const [selectedType, setSelectedType] = useState<string | null>(null);
 
   // The panel's only entry point is the sheet's "Add journey" CTA, so
   // it opens straight on the create flow. It used to open on a list of
@@ -262,6 +268,8 @@ export function JourneysPanel({
       setPickedTrackId(null);
       setAvailableTracks([]);
       setTracksLoading(false);
+      setSelectedRegionKey(null);
+      setSelectedType(null);
     }
   }, [open]);
 
@@ -344,6 +352,8 @@ export function JourneysPanel({
       setPickedTrackId(null);
       setAvailableTracks([]);
       setTracksLoading(false);
+      setSelectedRegionKey(null);
+      setSelectedType(null);
     } else {
       // Step 1 is the first screen of the panel, so "back" leaves the
       // panel and returns to the flag sheet the user came from.
@@ -354,6 +364,8 @@ export function JourneysPanel({
   async function pickLanguageAndLoadTracks(option: LanguageOption) {
     setPickedLanguage(option);
     setPickedTrackId(null);
+    setSelectedRegionKey(null);
+    setSelectedType(null);
     // Sync cache hit: if the shell already has the tracks (typically
     // because the open-time prefetch already populated the cache),
     // render them in this same render; no spinner.
@@ -470,6 +482,33 @@ export function JourneysPanel({
     if (b.key === pickedRegion) return 1;
     return a.label.localeCompare(b.label);
   });
+
+  // Chips de region: una por grupo, en el mismo orden que las secciones.
+  // Solo tiene sentido mostrarlas si hay mas de una (ej. Spanish LATAM
+  // trae Latin America/Mexico/Colombia/Argentina; French no trae ninguna).
+  const regionChips = regionGroups.map((g) => ({ key: g.key, label: g.label }));
+  const regionFilteredGroups = selectedRegionKey
+    ? regionGroups.filter((g) => g.key === selectedRegionKey)
+    : regionGroups;
+
+  // Chips de tipo: se calculan DESPUES del filtro de region, para no ofrecer
+  // "Friends" si el pais elegido solo tiene Traveler. Orden = primera
+  // aparicion, que ya viene ordenada por nivel mas bajo desde arriba.
+  const typeChips: string[] = [];
+  for (const group of regionFilteredGroups) {
+    for (const type of group.types) {
+      if (!typeChips.includes(type.label)) typeChips.push(type.label);
+    }
+  }
+
+  const visibleGroups = regionFilteredGroups
+    .map((group) => ({
+      ...group,
+      types: selectedType
+        ? group.types.filter((t) => t.label === selectedType)
+        : group.types,
+    }))
+    .filter((group) => group.types.length > 0);
 
   const selectedTrack = visibleTracks.find((t) => t.id === pickedTrackId) ?? null;
 
@@ -591,6 +630,94 @@ export function JourneysPanel({
               <Text style={styles.focusContextText}>{pickedLanguage.name}</Text>
             </View>
 
+            {!tracksLoading && regionChips.length > 1 ? (
+              <View style={styles.filterRow}>
+                <Pressable
+                  onPress={() => {
+                    setSelectedRegionKey(null);
+                    setSelectedType(null);
+                  }}
+                  style={[
+                    styles.filterChip,
+                    selectedRegionKey === null ? styles.filterChipSelected : null,
+                  ]}
+                >
+                  <Text
+                    style={[
+                      styles.filterChipText,
+                      selectedRegionKey === null ? styles.filterChipTextSelected : null,
+                    ]}
+                  >
+                    All
+                  </Text>
+                </Pressable>
+                {regionChips.map((chip) => {
+                  const selected = selectedRegionKey === chip.key;
+                  return (
+                    <Pressable
+                      key={chip.key}
+                      onPress={() => {
+                        setSelectedRegionKey(chip.key);
+                        setSelectedType(null);
+                      }}
+                      style={[styles.filterChip, selected ? styles.filterChipSelected : null]}
+                    >
+                      <Text
+                        style={[
+                          styles.filterChipText,
+                          selected ? styles.filterChipTextSelected : null,
+                        ]}
+                        numberOfLines={1}
+                      >
+                        {chip.label}
+                      </Text>
+                    </Pressable>
+                  );
+                })}
+              </View>
+            ) : null}
+
+            {!tracksLoading && typeChips.length > 1 ? (
+              <View style={styles.filterRow}>
+                <Pressable
+                  onPress={() => setSelectedType(null)}
+                  style={[
+                    styles.filterChip,
+                    selectedType === null ? styles.filterChipSelected : null,
+                  ]}
+                >
+                  <Text
+                    style={[
+                      styles.filterChipText,
+                      selectedType === null ? styles.filterChipTextSelected : null,
+                    ]}
+                  >
+                    All
+                  </Text>
+                </Pressable>
+                {typeChips.map((label) => {
+                  const selected = selectedType === label;
+                  return (
+                    <Pressable
+                      key={label}
+                      onPress={() => setSelectedType(label)}
+                      style={[styles.filterChip, selected ? styles.filterChipSelected : null]}
+                    >
+                      <Text
+                        style={[
+                          styles.filterChipText,
+                          selected ? styles.filterChipTextSelected : null,
+                        ]}
+                        numberOfLines={1}
+                      >
+                        {label}
+                      </Text>
+                    </Pressable>
+                  );
+                })}
+              </View>
+            ) : null}
+
             {tracksLoading ? (
               <Text style={styles.focusEmptyText}>
                 Loading journeys for {pickedLanguage.name}…
@@ -601,7 +728,7 @@ export function JourneysPanel({
                 {pickedLanguage.variantLabel ? ` (${pickedLanguage.variantLabel})` : ""} yet.
               </Text>
             ) : (
-              regionGroups.map((group) => (
+              visibleGroups.map((group) => (
                 <View key={group.key} style={styles.regionBlock}>
                   <View style={styles.regionHeader}>
                     <LanguageFlag
@@ -884,6 +1011,32 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     fontSize: 14,
     fontWeight: "900",
+  },
+  filterRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 8,
+    marginBottom: 8,
+  },
+  filterChip: {
+    paddingHorizontal: 12,
+    paddingVertical: 7,
+    borderRadius: 999,
+    borderWidth: 1.5,
+    borderColor: "rgba(255,255,255,0.14)",
+    backgroundColor: "rgba(255,255,255,0.04)",
+  },
+  filterChipSelected: {
+    borderColor: "rgba(125, 211, 252, 0.55)",
+    backgroundColor: "rgba(125, 211, 252, 0.12)",
+  },
+  filterChipText: {
+    color: "rgba(255,255,255,0.75)",
+    fontSize: 12.5,
+    fontWeight: "800",
+  },
+  filterChipTextSelected: {
+    color: tokenColor.cyan,
   },
   typeBlock: {
     marginBottom: 4,
