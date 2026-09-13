@@ -5,6 +5,11 @@
 // French top-1500, curado a mano. Sin trazabilidad por palabra.
 //
 // BLOQUE 2: FRENCH_A1_A2_FLELEX_BEACCO (añadido 2026-09-13).
+// NO SUBIR: licencia no comercial (CC BY-NC-SA 4.0), pendiente de sustituir.
+// validateGeneratedStory corre en producción (api/studio/validar,
+// revalidate-qa-pass) de un producto de pago; una fuente NC no puede vivir
+// ahí. Buscando una fuente A1/A2 francesa con nivel MCER y licencia
+// compatible con uso comercial (CC BY, CC BY-SA o dominio público).
 // Fuente EXTERNA: FLELex / Beacco (TreeTagger), CENTAL, UCLouvain.
 //   https://cental.uclouvain.be/cefrlex/flelex/download/  (FleLex_TT_Beacco.tsv)
 //   Pintard, A. & François, T. (2020). Combining expert knowledge with
