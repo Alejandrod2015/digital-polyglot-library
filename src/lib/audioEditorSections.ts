@@ -7,6 +7,7 @@ import { join } from "node:path";
 import { prisma } from "@/lib/prisma";
 import { uploadPublicObject } from "@/lib/objectStorage";
 import { spliceOnModal } from "@/lib/audioEditorSplice";
+import { boundariesOnVoice, measureMaster } from "@/lib/audioSilenceBoundaries";
 
 const GAP_SEC = 0.45;
 const MASTER_BITRATE = "192k";
@@ -264,19 +265,9 @@ function ffprobeDurationFile(path: string): number {
  * se puede arreglar sin gastar nada.
  */
 function assertCorteEnSilencio(masterPath: string, startSec: number, endSec: number): void {
-  const r = spawnSync("ffmpeg", ["-i", masterPath, "-af", "silencedetect=noise=-35dB:d=0.12", "-f", "null", "-"], { encoding: "utf8" });
-  const err = String(r.stderr ?? "");
-  if (!err.includes("silencedetect")) return; // sin ffmpeg utilizable: no se estorba
-  const huecos: Array<[number, number]> = [];
-  let ini: number | null = null;
-  for (const m of err.matchAll(/silence_(start|end): ([0-9.]+)/g)) {
-    if (m[1] === "start") ini = Number(m[2]);
-    else if (ini !== null) { huecos.push([ini, Number(m[2])]); ini = null; }
-  }
-  const TOL = 0.08;
-  const dentro = (t: number) => huecos.some(([a, b]) => t >= a - TOL && t <= b + TOL);
-  const malas = ([["inicio", startSec], ["final", endSec]] as Array<[string, number]>)
-    .filter(([, t]) => t > 0.05 && !dentro(t));
+  const m = measureMaster(masterPath);
+  if (!m.ok) return; // sin ffmpeg utilizable: no se estorba
+  const malas = boundariesOnVoice({ silences: m.silences, startSec, endSec, durationSec: m.durationSec });
   if (malas.length) {
     throw new Error(
       `Los tiempos guardados no describen el master: ${malas.map(([q, t]) => `${q} ${t.toFixed(2)}s cae sobre voz`).join(", ")}. ` +

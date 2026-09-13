@@ -26,7 +26,7 @@
 import { config } from "dotenv";
 config({ path: ".env.local", quiet: true });
 config({ path: ".env", quiet: true });
-import { execFile, spawnSync } from "child_process";
+import { execFile } from "child_process";
 import { mkdtempSync, readFileSync, writeFileSync } from "fs";
 import { tmpdir } from "os";
 import path from "path";
@@ -40,6 +40,7 @@ import {
 } from "../src/lib/elevenlabs";
 import { assertVoiceApproved } from "../src/lib/approvedVoices";
 import { coerceFragments, replaceSectionAndRebuild } from "../src/lib/audioEditorSections";
+import { boundariesOnVoice, measureMaster } from "../src/lib/audioSilenceBoundaries";
 
 const execFileAsync = promisify(execFile);
 const prisma = new PrismaClient();
@@ -123,16 +124,12 @@ async function main() {
   // es el mismo criterio adelantado, para no pagar el TTS de un corte que
   // luego se va a rechazar.
   {
-    const r = spawnSync("ffmpeg", ["-i", story.audioUrl!, "-af", "silencedetect=noise=-35dB:d=0.12", "-f", "null", "-"], { encoding: "utf8" });
-    const sils: Array<[number, number]> = [];
-    let ini: number | null = null;
-    for (const m of String(r.stderr ?? "").matchAll(/silence_(start|end): ([0-9.]+)/g)) {
-      if (m[1] === "start") ini = Number(m[2]);
-      else if (ini !== null) { sils.push([ini, Number(m[2])]); ini = null; }
-    }
-    const dentro = (t: number) => sils.some(([a, b]) => t >= a - 0.08 && t <= b + 0.08);
-    const malas = ([["inicio", Number(frag.startSec)], ["final", Number(frag.endSec)]] as Array<[string, number]>)
-      .filter(([, t]) => t > 0.05 && !dentro(t));
+    // El final del master cuenta como frontera: ver src/lib/audioSilenceBoundaries.ts.
+    const m = measureMaster(story.audioUrl!);
+    const sils = m.silences;
+    const malas = boundariesOnVoice({
+      silences: sils, startSec: Number(frag.startSec), endSec: Number(frag.endSec), durationSec: m.durationSec,
+    });
     if (sils.length && malas.length) {
       throw new Error(
         `FRONTERA SOBRE VOZ: ${malas.map(([q, t]) => `${q} ${t.toFixed(2)}s`).join(", ")} del fragmento ${index}. ` +
