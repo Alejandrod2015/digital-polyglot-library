@@ -5,13 +5,14 @@
   "title": "Bücher auf der Treppe",
   "arcType": null,
   "synopsis": "On the stairs there is a cupboard full of books for everyone. Anna looks for a green novel with an old note for Jan inside. Johanna knows where it is.",
-  "text": "Die Treppe im Haus ist dunkel. Anna ist eine Grafikerin und wohnt oben. Sie steht vor einem alten Schrank. Der Schrank ist voll mit Büchern.\n\nDie Bücher sind dick und dünn, neu und alt. Staub liegt auf den Büchern. Anna sucht ein grünes Buch. Ein Zettel für Jan liegt darin.\n\nJohanna ist eine Buchhändlerin aus dem zweiten Stock. Sie trägt einen Stapel Bücher im Arm und einen Stift hinter dem Ohr.\n\n“Suchst du etwas Bestimmtes?”, fragt Johanna.\n\n“Ja. Einen dicken grünen Roman.”\n\n“Grün? Das Buch ist leider nicht mehr hier. Eine Frau aus Hamburg liest es jetzt.”\n\nAnnas Magen ist schwer, denn der Zettel ist in dem Buch. Sie seufzt und setzt sich auf die Stufe.\n\n“Der Zettel ist für Jan. Er ist wichtig.”\n\n“Keine Sorge. Ich sammle alle Zettel aus den Büchern.”\n\nJohanna rennt in den zweiten Stock. Sie kommt mit einer Dose.",
+  "text": "Die Treppe im Haus ist dunkel. Anna ist eine Grafikerin und wohnt oben. Sie steht vor einem alten Schrank. Der Schrank ist hoch und voll mit Büchern.\n\nDie Bücher sind dick und dünn, neu und alt. Staub liegt auf den Büchern. Anna sucht ein grünes Buch. Ein Zettel für Jan liegt darin.\n\nJohanna ist eine Buchhändlerin aus dem zweiten Stock. Sie trägt einen Stapel Bücher im Arm und einen Stift hinter dem Ohr.\n\n“Suchst du etwas Bestimmtes?”, fragt Johanna.\n\n“Ja. Einen dicken grünen Roman.”\n\n“Grün? Das Buch ist leider nicht mehr hier.”\n\n“Wo ist es?”, flüstert Anna.\n\n“Jemand aus Hamburg liest es jetzt.”\n\nAnnas Magen ist schwer, denn der Zettel ist in dem Buch. Sie seufzt und setzt sich auf die Stufe.\n\n“Der Zettel ist für Jan. Er ist wichtig.”\n\n“Keine Sorge. Ich sammle alle Zettel aus den Büchern.”\n\nJohanna rennt sofort in den zweiten Stock. Sie kommt mit einer Dose.",
   "vocab": [
    {
     "type": "noun",
     "word": "das Buch",
     "surface": "Bücher",
-    "definition": "A book; pages with words that you read."
+    "definition": "A book; pages with words that you read.",
+    "anchor": true
    },
    {
     "type": "adjective",
@@ -34,20 +35,22 @@
    {
     "type": "adjective",
     "word": "grün",
-    "surface": "grünes",
+    "surface": "grün",
     "definition": "Green; the colour of grass and leaves."
    },
    {
     "type": "noun",
     "word": "die Buchhändlerin",
     "surface": "Buchhändlerin",
-    "definition": "A female bookseller; she sells books in a shop."
+    "definition": "A female bookseller; she sells books in a shop.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "der Stapel",
     "surface": "Stapel",
-    "definition": "A pile; things lying one on top of another."
+    "definition": "A pile; things lying one on top of another.",
+    "anchor": true
    },
    {
     "type": "adjective",
@@ -65,7 +68,8 @@
     "type": "noun",
     "word": "das Ohr",
     "surface": "Ohr",
-    "definition": "An ear; you hear with it."
+    "definition": "An ear; you hear with it.",
+    "anchor": true
    },
    {
     "type": "pronoun",
@@ -83,7 +87,8 @@
     "type": "noun",
     "word": "der Roman",
     "surface": "Roman",
-    "definition": "A novel; a long book with a story."
+    "definition": "A novel; a long book with a story.",
+    "anchor": true
    },
    {
     "type": "adverb",
@@ -95,13 +100,15 @@
     "type": "noun",
     "word": "der Magen",
     "surface": "Magen",
-    "definition": "The stomach; where your food goes inside you."
+    "definition": "The stomach; where your food goes inside you.",
+    "anchor": true
    },
    {
     "type": "verb",
     "word": "seufzen",
     "surface": "seufzt",
-    "definition": "To sigh; to breathe out loudly when you are sad."
+    "definition": "To sigh; to breathe out loudly when you are sad.",
+    "anchor": true
    },
    {
     "type": "verb",
@@ -113,13 +120,15 @@
     "type": "noun",
     "word": "die Sorge",
     "surface": "Sorge",
-    "definition": "Worry; keine Sorge means do not worry."
+    "definition": "Worry; keine Sorge means do not worry.",
+    "anchor": true
    },
    {
     "type": "verb",
     "word": "sammeln",
     "surface": "sammle",
-    "definition": "To collect; to keep many things of one kind."
+    "definition": "To collect; to keep many things of one kind.",
+    "anchor": true
    },
    {
     "type": "verb",
@@ -135,7 +144,7 @@
   "title": "Zettel in Johannas Dose",
   "arcType": null,
   "synopsis": "Johanna reads the old notes from her box out loud on the stairs. Most of them are funny. Then Anna finds a yellow note in her own handwriting.",
-  "text": "Viele kleine Zettel liegen in Johannas Dose. Johanna und Anna sitzen zusammen auf der Treppe. Johanna liest die Zettel laut.\n\n“Seite zwölf ist traurig. Danke für das Buch!”\n\nJohanna lacht über jeden Zettel. Die Treppe ist kalt, aber die Zettel sind lustig.\n\n“Noch einer: Der Kaffee ist kalt, das Buch ist gut.”\n\nAnna lächelt. Sie nimmt einen gelben Zettel. Die Schrift ist klein und schief. Die Schrift ist ihre Schrift.\n\n“Jan, lies Seite vierzig. Ich denke an dich. Anna”, liest Anna leise.\n\nJan findet den Zettel nie. Er liest die Seite nie.\n\nAnnas Kopf ist leer, denn der Zettel wartet acht Jahre in einer Dose. Sie drückt den Zettel an ihr Herz.\n\n“Was steht auf Seite vierzig?”, fragt Johanna.\n\n“Ich weiß es nicht mehr. Ich kenne nur den Titel.”\n\n“Der Titel reicht. Ich besorge das Buch für dich.”\n\nJohanna schreibt den Titel in ihr Heft. Anna steckt den gelben Zettel in die Jacke.",
+  "text": "Viele kleine Zettel liegen in Johannas Dose. Johanna und Anna sitzen zusammen auf der Treppe. Johanna liest die Zettel laut.\n\n“Seite zwölf ist traurig. Danke für das Buch!”\n\nJohanna lacht über jeden Zettel. Die Treppe ist kalt, aber die Zettel sind lustig.\n\n“Noch einer: Der Kaffee ist kalt, das Buch ist gut.”\n\nAnna lächelt. Sie nimmt einen gelben Zettel. Die Schrift ist klein und schief. Die Schrift ist ihre Schrift.\n\n“Jan, lies Seite vierzig. Ich denke an dich. Anna”, liest Anna leise.\n\nJan findet den Zettel nie. Er liest die Seite nie.\n\nAnnas Kopf ist leer, denn der Zettel wartet acht Jahre in einer Dose. Sie drückt den Zettel an ihr Herz.\n\n“Was steht auf Seite vierzig?”, fragt Johanna.\n\n“Ich weiß es nicht mehr. Ich kenne nur den Titel.”\n\n“Der Titel reicht. Ich besorge das Buch bald.”\n\nJohanna schreibt den Titel in ihr Heft. Anna steckt den gelben Zettel in die Jacke.",
   "vocab": [
    {
     "type": "pronoun",
@@ -146,7 +155,7 @@
    {
     "type": "adjective",
     "word": "klein",
-    "surface": "kleine",
+    "surface": "klein",
     "definition": "Small; not big, only a little."
    },
    {
@@ -237,7 +246,8 @@
     "type": "noun",
     "word": "der Titel",
     "surface": "Titel",
-    "definition": "A title; the name of a book."
+    "definition": "A title; the name of a book.",
+    "anchor": true
    },
    {
     "type": "verb",
@@ -249,7 +259,8 @@
     "type": "verb",
     "word": "besorgen",
     "surface": "besorge",
-    "definition": "To get; to find and buy something for someone."
+    "definition": "To get; to find and buy something for someone.",
+    "anchor": true
    },
    {
     "type": "noun",
@@ -265,13 +276,14 @@
   "title": "Seite vierzig",
   "arcType": null,
   "synopsis": "Johanna brings a new copy of the green book. Anna knocks at Jan's door with the old yellow note, and Jan asks her to read page forty.",
-  "text": "Ein neues Buch ist da. Es ist grün, genau wie das alte. Johanna bringt es aus ihrer Buchhandlung. Das Buch riecht nach Papier.\n\nAnna klopft zweimal an Jans Tür. Der gelbe Zettel ist in ihrer Hand.\n\n“Anna? Ein Buch für mich?”\n\n“Ein Buch und ein Zettel. Beide sind acht Jahre zu spät.”\n\nJan kocht gerade Tomatensuppe. Er liest den Zettel am Herd. Er setzt sich an den Tisch und öffnet das Buch auf Seite vierzig.\n\n“Lies du. Bitte”, sagt Jan.\n\nAnna liest vorsichtig, Zeile für Zeile. Ihre Stimme zittert, denn Jan sitzt ganz ruhig neben ihr.\n\n“Zwei Freunde sitzen am Meer. Sie sprechen nicht. Sie sind trotzdem zusammen.”\n\n“Wir sitzen nicht am Meer. Wir sitzen in meiner Küche.”\n\n“Die Küche ist auch gut.”\n\nJan stellt das grüne Buch in sein Regal. Anna sieht den Rahmen mit dem Foto daneben. Die beiden essen Suppe und sagen lange nichts.",
+  "text": "Ein neues Buch ist da. Es ist grün, genau wie das alte. Johanna bringt es aus ihrer Buchhandlung. Das Buch riecht nach Papier.\n\nAnna klopft zweimal an Jans Tür. Der gelbe Zettel ist in ihrer Hand.\n\n“Anna? Ein Buch für mich?”\n\n“Ein Buch und ein Zettel. Beide sind acht Jahre zu spät.”\n\nJan kocht gerade Tomatensuppe. Er liest den Zettel am Herd. Er setzt sich an den Tisch und öffnet das Buch auf Seite vierzig.\n\n“Lies du. Bitte”, sagt Jan.\n\nAnna liest vorsichtig, Zeile für Zeile. Ihre Stimme zittert, denn Jan sitzt ganz ruhig neben ihr.\n\n“Zwei Freunde sitzen am Meer. Sie sprechen nicht. Sie sind trotzdem zusammen.”\n\n“Wir sitzen nicht am Meer. Wir sitzen in meiner Küche.”\n\n“Die Küche ist auch schön.”\n\nJan stellt das grüne Buch in sein Regal. Anna sieht den Rahmen mit dem Foto daneben. Die beiden essen Suppe und sagen lange nichts. Jan ist froh.",
   "vocab": [
    {
     "type": "noun",
     "word": "die Buchhandlung",
     "surface": "Buchhandlung",
-    "definition": "A bookshop; a shop where you buy books."
+    "definition": "A bookshop; a shop where you buy books.",
+    "anchor": true
    },
    {
     "type": "verb",
@@ -283,18 +295,20 @@
     "type": "noun",
     "word": "das Papier",
     "surface": "Papier",
-    "definition": "Paper; what the pages of a book are made of."
+    "definition": "Paper; what the pages of a book are made of.",
+    "anchor": true
    },
    {
     "type": "verb",
     "word": "klopfen",
     "surface": "klopft",
-    "definition": "To knock; to hit a door softly with your hand."
+    "definition": "To knock; to hit a door softly with your hand.",
+    "anchor": true
    },
    {
     "type": "pronoun",
     "word": "beide",
-    "surface": "Beide",
+    "surface": "beiden",
     "definition": "Both; the two of them together."
    },
    {
@@ -307,7 +321,8 @@
     "type": "noun",
     "word": "die Tomatensuppe",
     "surface": "Tomatensuppe",
-    "definition": "Tomato soup; a hot soup made from tomatoes."
+    "definition": "Tomato soup; a hot soup made from tomatoes.",
+    "anchor": true
    },
    {
     "type": "noun",
@@ -331,7 +346,8 @@
     "type": "noun",
     "word": "die Zeile",
     "surface": "Zeile",
-    "definition": "A line; one row of words on a page."
+    "definition": "A line; one row of words on a page.",
+    "anchor": true
    },
    {
     "type": "verb",
@@ -358,10 +374,10 @@
     "definition": "Also; too, in the same way."
    },
    {
-    "type": "adjective",
-    "word": "gut",
-    "surface": "gut",
-    "definition": "Good; fine, nice enough."
+    "type": "pronoun",
+    "word": "mein",
+    "surface": "meiner",
+    "definition": "My; it belongs to me."
    },
    {
     "type": "verb",

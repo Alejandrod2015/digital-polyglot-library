@@ -5,7 +5,7 @@
   "title": "Tims Trommelstöcke",
   "arcType": null,
   "synopsis": "Tim, an old school friend of Jan, has a plan for Jan's birthday: the band from school plays again. Anna was the singer, and now she is afraid.",
-  "text": "Ihr altes Lied ist fünfzehn Jahre alt. Anna, die Sängerin von früher, singt es nie mehr. Sie trinkt heute Tee in Jans Küche. Der Tee ist warm.\n\nJans Schulfreund Tim kommt mit zwei Trommelstöcken. Er ist Bankkaufmann, aber er spielt am Wochenende Schlagzeug. Er trägt eine rote Mütze und lacht viel. Jan ist gerade im Hof.\n\n“Jan hat am Samstag Geburtstag. Die Band spielt wieder, wie früher!”, flüstert Tim.\n\n“Die Band? Wer spielt denn?”\n\n“Ich spiele Schlagzeug. Felix spielt Klavier. Und du singst.”\n\nAnna hat plötzlich Angst. Die Stimme von Anna ist seit Jahren still. Sie dreht nervös ihre Tasse.\n\n“Ich singe nicht mehr. Meine Stimme ist alt.”\n\n“Deine Stimme ist nicht alt. Bitte, für Jan.”\n\nDie Tür öffnet sich. Jan kommt in die Küche. Tim versteckt die Stöcke hinter dem Rücken.\n\nAnna nickt schnell. Sie kann nicht mehr Nein sagen. Tim lacht leise.",
+  "text": "Ihr altes Lied ist fünfzehn Jahre alt. Anna, die Sängerin von früher, singt es nie mehr. Sie trinkt heute Tee in Jans Küche. Der Tee ist warm.\n\nJans Schulfreund Tim kommt mit zwei Trommelstöcken. Er ist Bankkaufmann, aber er spielt am Wochenende Schlagzeug. Er trägt eine rote Mütze und lacht oft. Jan ist gerade im Hof.\n\n“Jan hat am Samstag Geburtstag. Die Band spielt wieder, wie früher!”, flüstert Tim.\n\n“Die Band? Wer spielt denn?”\n\n“Ich spiele Schlagzeug. Ein Freund spielt Klavier. Und du singst.”\n\nAnna hat plötzlich Angst. Die Stimme von Anna ist seit Jahren still. Sie dreht nervös ihre Tasse.\n\n“Ich singe nicht mehr gern. Meine Stimme ist alt.”\n\n“Deine Stimme ist nicht alt. Bitte, das ist wichtig. Für Jan.”\n\nDie Tür öffnet sich. Jan kommt in die Küche. Tim versteckt die Stöcke hinter dem Rücken.\n\nAnna nickt schnell. Sie kann nicht mehr Nein sagen. Tim lacht leise.",
   "vocab": [
    {
     "type": "noun",
@@ -23,7 +23,8 @@
     "type": "noun",
     "word": "die Sängerin",
     "surface": "Sängerin",
-    "definition": "A female singer; she sings, often in a band."
+    "definition": "A female singer; she sings, often in a band.",
+    "anchor": true
    },
    {
     "type": "verb",
@@ -35,19 +36,22 @@
     "type": "noun",
     "word": "der Schulfreund",
     "surface": "Schulfreund",
-    "definition": "A school friend; a friend from your school years."
+    "definition": "A school friend; a friend from your school years.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "der Trommelstock",
     "surface": "Trommelstöcken",
-    "definition": "A drumstick; a stick you hit a drum with."
+    "definition": "A drumstick; a stick you hit a drum with.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "der Bankkaufmann",
     "surface": "Bankkaufmann",
-    "definition": "A bank clerk; a man who works in a bank."
+    "definition": "A bank clerk; a man who works in a bank.",
+    "anchor": true
    },
    {
     "type": "noun",
@@ -82,7 +86,7 @@
    {
     "type": "verb",
     "word": "singen",
-    "surface": "singst",
+    "surface": "singt",
     "definition": "To sing; to make music with your voice."
    },
    {
@@ -107,7 +111,8 @@
     "type": "verb",
     "word": "drehen",
     "surface": "dreht",
-    "definition": "To turn something round and round."
+    "definition": "To turn something round and round.",
+    "anchor": true
    },
    {
     "type": "preposition",
@@ -119,7 +124,8 @@
     "type": "noun",
     "word": "der Rücken",
     "surface": "Rücken",
-    "definition": "The back; the part of your body behind you."
+    "definition": "The back; the part of your body behind you.",
+    "anchor": true
    },
    {
     "type": "verb",
@@ -135,13 +141,14 @@
   "title": "Zu hoch für Anna",
   "arcType": null,
   "synopsis": "The band practises in the cold cellar. The old song starts well, but the chorus is too high now, and Anna's voice breaks.",
-  "text": "Es regnet, und der Keller ist kalt. Tims Schlagzeug steht zwischen den Fahrrädern. Anna hält den Text von früher.\n\n“Eins, zwei, drei, vier!”, ruft Tim.\n\nTims Stöcke schlagen auf die Trommel.\n\nAnna singt die erste Strophe. Die tiefen Töne sind gut. Die Stimme klingt warm.\n\nDer Refrain kommt. Der Refrain ist sehr hoch. Annas Stimme bricht. Der Ton ist falsch und laut.\n\nAnna schämt sich, denn Tim hört den falschen Ton. Sie hält die Hände vor den Mund.\n\n“Noch einmal. Ganz ruhig.”\n\nAnna trinkt einen Schluck Wasser. Sie singt noch einmal. Die Stimme bricht wieder.\n\n“Das Lied ist zu hoch für mich. Es geht nicht”, sagt Anna.\n\n“Kein Problem. Wir schreiben bis Samstag ein neues Lied. Ein Lied für Jan, tief und einfach.”\n\n“Und das alte Lied?”, fragt Anna.\n\n“Das alte Lied bleibt im Keller.”\n\nDer alte Text kommt in ihre Tasche. Anna singt das alte Lied nie wieder.",
+  "text": "Es regnet, und der Keller ist kalt. Tims Schlagzeug steht zwischen den Fahrrädern. Anna hält den Text von früher.\n\n“Eins, zwei, drei, vier!”, ruft Tim.\n\nTims Stöcke schlagen auf die Trommel.\n\nAnna singt die erste Strophe. Die tiefen Töne sind nicht schlecht. Die Stimme klingt warm.\n\nDer Refrain kommt. Der Refrain ist sehr hoch. Annas Stimme bricht. Der Ton ist falsch und laut.\n\nAnna schämt sich, denn Tim hört den falschen Ton. Sie hält die Hände vor den Mund.\n\n“Noch einmal. Ganz ruhig.”\n\nAnna trinkt einen Schluck Wasser. Sie singt noch einmal. Die Stimme bricht wieder.\n\n“Das Lied ist zu hoch für mich. Es geht nicht”, sagt Anna.\n\n“Kein Problem. Wir schreiben bis Samstag ein neues Lied. Ein Lied für Jan, tief und einfach.”\n\n“Und das alte Lied?”, fragt Anna.\n\n“Das alte Lied bleibt im Keller.”\n\nDer alte Text kommt in ihre Tasche. Anna singt das alte Lied nie wieder.",
   "vocab": [
    {
     "type": "verb",
     "word": "regnen",
     "surface": "regnet",
-    "definition": "To rain; water falls from the sky."
+    "definition": "To rain; water falls from the sky.",
+    "anchor": true
    },
    {
     "type": "noun",
@@ -153,37 +160,42 @@
     "type": "verb",
     "word": "schlagen",
     "surface": "schlagen",
-    "definition": "To hit; here, to beat a drum."
+    "definition": "To hit; here, to beat a drum.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "die Trommel",
     "surface": "Trommel",
-    "definition": "A drum; you hit it to make music."
+    "definition": "A drum; you hit it to make music.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "die Strophe",
     "surface": "Strophe",
-    "definition": "A verse; one part of a song."
+    "definition": "A verse; one part of a song.",
+    "anchor": true
    },
    {
     "type": "adjective",
     "word": "tief",
-    "surface": "tiefen",
+    "surface": "tief",
     "definition": "Low; a deep sound, not high."
    },
    {
     "type": "noun",
     "word": "der Ton",
     "surface": "Töne",
-    "definition": "A note; one sound in music."
+    "definition": "A note; one sound in music.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "der Refrain",
     "surface": "Refrain",
-    "definition": "A chorus; the part of a song that comes again."
+    "definition": "A chorus; the part of a song that comes again.",
+    "anchor": true
    },
    {
     "type": "adverb",
@@ -201,7 +213,8 @@
     "type": "verb",
     "word": "brechen",
     "surface": "bricht",
-    "definition": "To break; here, the voice suddenly stops working."
+    "definition": "To break; here, the voice suddenly stops working.",
+    "anchor": true
    },
    {
     "type": "adjective",
@@ -213,7 +226,8 @@
     "type": "verb",
     "word": "schämen",
     "surface": "schämt",
-    "definition": "To be ashamed; sich schämen means to feel bad."
+    "definition": "To be ashamed; sich schämen means to feel bad.",
+    "anchor": true
    },
    {
     "type": "preposition",
@@ -237,13 +251,15 @@
     "type": "noun",
     "word": "der Schluck",
     "surface": "Schluck",
-    "definition": "A sip; a small amount of a drink."
+    "definition": "A sip; a small amount of a drink.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "das Wasser",
     "surface": "Wasser",
-    "definition": "Water; the clear drink from the tap."
+    "definition": "Water; the clear drink from the tap.",
+    "anchor": true
    },
    {
     "type": "pronoun",
@@ -265,13 +281,14 @@
   "title": "Ein Lied für Jan",
   "arcType": null,
   "synopsis": "It is Jan's birthday, and the kitchen is full. Anna holds the microphone with both hands and sings a new song, only for Jan.",
-  "text": "Viele Kerzen brennen auf dem Kuchen. Die Küche ist voll, laut und warm. Jan hat heute Geburtstag. Er ist fünfunddreißig.\n\nJemand macht das Licht dunkel. Die Musik beginnt. Tim sitzt am Schlagzeug. Felix sitzt am Klavier. Anna steht vor dem Kühlschrank.\n\nAnnas Knie zittern, denn alle schauen auf sie. Sie hält das Mikrofon mit beiden Händen.\n\n“Jan, dieses Lied ist neu. Es ist nur für dich”, sagt Anna.\n\nTim spielt leise. Anna singt tief und ruhig.\n\n“Eine Straße, ein Haus, eine Tür. Acht Jahre, und die Tür ist noch offen.”\n\nTim spielt den letzten Schlag. Niemand spricht. Jan wischt sich mit dem Ärmel über die Augen.\n\n“Danke. Aber was ist mit dem alten Lied?”, fragt Jan.\n\n“Das alte Lied gehört zu früher. Das neue Lied gehört zu jetzt.”\n\nAlle klatschen und pfeifen. Felix spielt noch einmal die Melodie. Anna singt jetzt ohne Angst, und Jan umarmt sie vor dem Kühlschrank.",
+  "text": "Viele Kerzen brennen auf dem Kuchen. Die Küche ist voll, laut und warm. Jan hat heute Geburtstag. Er ist fünfunddreißig.\n\nJemand macht das Licht dunkel. Die Musik beginnt. Tim sitzt am Schlagzeug. Ein Freund sitzt am Klavier. Anna steht vor dem Kühlschrank.\n\nAnnas Knie zittern, denn alle schauen auf sie. Sie hält das Mikrofon mit beiden Händen.\n\n“Jan, dieses Lied ist neu. Es ist nur für dich”, sagt Anna.\n\nTim spielt leise. Anna singt tief und ruhig.\n\n“Eine Straße, ein Haus, eine Tür. Acht Jahre, und die Tür ist noch offen.”\n\nTim spielt den letzten Schlag. Niemand spricht. Jan wischt sich mit dem Ärmel über die Augen.\n\n“Danke. Aber was ist mit dem alten Lied?”, fragt Jan.\n\n“Das alte Lied gehört zu früher. Das neue Lied gehört zu jetzt.”\n\nAlle klatschen und pfeifen. Der Freund am Klavier spielt noch einmal die Melodie. Anna singt jetzt ohne Angst, und Jan umarmt sie vor dem Kühlschrank.",
   "vocab": [
    {
     "type": "verb",
     "word": "brennen",
     "surface": "brennen",
-    "definition": "To burn; candles give light and heat."
+    "definition": "To burn; candles give light and heat.",
+    "anchor": true
    },
    {
     "type": "number",
@@ -295,7 +312,8 @@
     "type": "noun",
     "word": "das Mikrofon",
     "surface": "Mikrofon",
-    "definition": "A microphone; you sing into it to be louder."
+    "definition": "A microphone; you sing into it to be louder.",
+    "anchor": true
    },
    {
     "type": "preposition",
@@ -325,7 +343,8 @@
     "type": "noun",
     "word": "der Schlag",
     "surface": "Schlag",
-    "definition": "A beat; one hit on a drum."
+    "definition": "A beat; one hit on a drum.",
+    "anchor": true
    },
    {
     "type": "verb",
@@ -337,7 +356,8 @@
     "type": "noun",
     "word": "der Ärmel",
     "surface": "Ärmel",
-    "definition": "A sleeve; the part of a shirt around your arm."
+    "definition": "A sleeve; the part of a shirt around your arm.",
+    "anchor": true
    },
    {
     "type": "pronoun",
@@ -361,19 +381,22 @@
     "type": "verb",
     "word": "klatschen",
     "surface": "klatschen",
-    "definition": "To clap; to hit your hands together."
+    "definition": "To clap; to hit your hands together.",
+    "anchor": true
    },
    {
     "type": "verb",
     "word": "pfeifen",
     "surface": "pfeifen",
-    "definition": "To whistle; to make a high sound with your lips."
+    "definition": "To whistle; to make a high sound with your lips.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "die Melodie",
     "surface": "Melodie",
-    "definition": "A tune; the music line of a song."
+    "definition": "A tune; the music line of a song.",
+    "anchor": true
    },
    {
     "type": "preposition",
@@ -385,7 +408,8 @@
     "type": "noun",
     "word": "die Straße",
     "surface": "Straße",
-    "definition": "A street; a road in a town with houses."
+    "definition": "A street; a road in a town with houses.",
+    "anchor": true
    },
    {
     "type": "adjective",

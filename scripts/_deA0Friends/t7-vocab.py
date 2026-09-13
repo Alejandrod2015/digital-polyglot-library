@@ -1,0 +1,73 @@
+import json
+d=json.load(open("scripts/_deA0Friends/t7-texts.json"))
+V=lambda t,w,s,df: {"type":t,"word":w,"surface":s,"definition":df}
+d[0]["synopsis"]="A note hangs on Anna's door. Niklas, who owns the house, needs an answer about the flat by Friday. Another woman wants it too."
+d[0]["vocab"]=[
+ V("noun","die Notiz","Notiz","A note; a short message on paper."),
+ V("verb","lehnen","lehnt","To lean; to rest your body against something."),
+ V("adjective","höflich","höflich","Polite; with good manners."),
+ V("verb","räuspern","räuspert","To clear your throat before you speak."),
+ V("noun","die Mieterin","Mieterin","A female tenant; she pays to live in a flat."),
+ V("noun","der Hausbesitzer","Hausbesitzer","A landlord; the man who owns the house."),
+ V("adjective","braun","braunen","Brown; the colour of chocolate."),
+ V("noun","der Pullover","Pullover","A jumper; a warm top you wear."),
+ V("adjective","streng","streng","Strict; he wants people to follow the rules."),
+ V("noun","die Wohnung","Wohnung","A flat; rooms where a person lives."),
+ V("adjective","frei","frei","Free; no one lives there yet."),
+ V("adjective","gemütlich","gemütlich","Cosy; warm, nice and comfortable."),
+ V("verb","mögen","mag","To like; to think something is nice."),
+ V("noun","der Freitag","Freitag","Friday; the day after Thursday."),
+ V("verb","quietschen","quietschen","To squeak; to make a high, thin sound."),
+ V("adjective","nett","nett","Nice; kind and pleasant to others."),
+ V("noun","der Schuh","Schuhe","A shoe; you wear it on your foot."),
+ V("adjective","blass","blass","Pale; with very little colour in the face."),
+ V("verb","knüllen","knüllt","To crumple; to press paper into a small ball."),
+ V("noun","die Faust","Faust","A fist; a closed hand."),
+]
+d[1]["synopsis"]="Anna makes a list on Jan's fridge: Munich on one side, Bremen on the other. Jan reads it and sees his own name there."
+d[1]["vocab"]=[
+ V("noun","der Kuli","Kuli","A pen; a biro you write with."),
+ V("noun","die Liste","Liste","A list; words written one under the other."),
+ V("noun","die Spalte","Spalten","A column; a line of words from top to bottom."),
+ V("adverb","links","links","On the left; on the left side."),
+ V("adverb","rechts","rechts","On the right; on the right side."),
+ V("preposition","unter","unter","Under; below something on the list."),
+ V("noun","das Geld","Geld","Money; you pay with it."),
+ V("noun","das Büro","Büro","An office; a room where people work at desks."),
+ V("verb","murmeln","murmelt","To mumble; to speak quietly and not clearly."),
+ V("verb","gähnen","gähnt","To yawn; to open your mouth wide when tired."),
+ V("verb","summen","summt","To hum; to make a low, soft sound."),
+ V("noun","der Grund","Grund","A reason; why you do something."),
+ V("verb","telefonieren","telefoniert","To talk on the phone with someone."),
+ V("verb","bitten","bittet","To ask for something; to say please."),
+ V("noun","die Woche","Woche","A week; seven days."),
+ V("adverb","sofort","sofort","At once; right now, with no waiting."),
+ V("adjective","ratlos","ratlos","At a loss; not knowing what to do."),
+ V("verb","kauen","kaut","To chew; to bite something again and again."),
+ V("verb","schlafen","schläfst","To sleep; to rest with your eyes closed."),
+ V("adjective","kurz","kürzer","Shorter; less long than before."),
+]
+d[2]["synopsis"]="On Friday Anna signs the contract and gets two keys. Then she goes down to Jan's kitchen, where the old postcard from May is still waiting."
+d[2]["vocab"]=[
+ V("verb","unterschreiben","unterschreibt","To sign; to write your name on a paper."),
+ V("noun","der Vertrag","Vertrag","A contract; a paper with rules both people sign."),
+ V("noun","die Tinte","Tinte","Ink; the coloured liquid in a pen."),
+ V("verb","schütteln","schüttelt","To shake; die Hand schütteln means to shake hands."),
+ V("adjective","zufrieden","zufrieden","Happy; pleased with how things are."),
+ V("noun","der Schlüssel","Schlüssel","A key; you open a door with it."),
+ V("pronoun","einer","Einer","One; one of them."),
+ V("verb","tippen","tippt","To type; to write on a phone or keyboard."),
+ V("verb","schlucken","schluckt","To swallow; here, a sign that something is hard."),
+ V("noun","der Sekt","Sekt","Sparkling wine; a German drink with bubbles."),
+ V("verb","klirren","klirren","To clink; glasses make a bright sound."),
+ V("adverb","mindestens","Mindestens","At least; not less than this."),
+ V("interjection","tschüss","Tschüss","Bye; a friendly way to say goodbye."),
+ V("adverb","dann","Dann","Then; so, in that case."),
+ V("interjection","prost","Prost","Cheers; what you say when you drink together."),
+ V("adjective","krumm","krumm","Bent; not straight any more."),
+ V("adverb","darunter","darunter","Under it; below that thing."),
+ V("noun","der Satz","Satz","A sentence; a group of words that says one thing."),
+ V("adjective","beste","beste","Best; better than all the others."),
+ V("noun","der Magnet","Magneten","A magnet; it holds paper on a fridge."),
+]
+json.dump(d,open("scripts/_deA0Friends/t7-data.json","w"),ensure_ascii=False,indent=1)

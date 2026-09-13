@@ -3,21 +3,21 @@ O,C="“","”"
 def q(s): return O+s+C
 T="games-and-rules"
 s0 = "\n\n".join([
- "Donnerstag ist Spielabend in Jans Küche. Die Küche ist warm und laut. Sechs Freunde sitzen um den Tisch. Anna, die Grafikerin von oben, sitzt zwischen Jan und Nele.",
+ "Donnerstag ist Spielabend in Jans Küche. Die Küche ist warm und laut. Sechs Freunde sitzen um den Tisch. Anna, die Grafikerin von oben, sitzt neben Jan.",
  "Felix, ein Mathelehrer aus dem Viertel, bringt ein neues Spiel. Er trägt ein graues T-Shirt. Er kennt alle Regeln.",
  q("Das Spiel ist ganz einfach")+", sagt Felix. "+q("Jeder hat vier Figuren. Du würfelst und läufst."),
  q("Und die Punkte? Wie viele Punkte brauche ich?")+", fragt Anna.",
  q("Die Punkte kommen später. Jetzt bist du dran."),
- "Anna würfelt eine Eins. Sie würfelt noch eine Zwei. Felix erklärt schnell.",
- "Annas Hände sind heiß, denn alle kennen die Regeln. Sie kennt die Regeln nicht. Sie wirft den Würfel zu fest. Der Würfel fällt vom Tisch.",
+ "Anna würfelt eine Eins. Sie würfelt noch eine Zwei. Felix erklärt sehr schnell.",
+ "Annas Hände sind heiß, denn alle kennen die Regeln. Sie kennt die Regeln nicht. Sie wirft den Würfel zu fest. Der Würfel fällt unter den Tisch.",
  q("Früher spielen wir hier ein anderes Spiel."),
  q("Ich weiß. Jan erzählt oft davon."),
  "Anna verliert. Sie ist die Letzte, und die Letzte spült.",
- "Anna steht an der Spüle. Felix bringt ihr die Gläser und lächelt.",
+ "Anna steht müde an der Spüle. Felix bringt ihr die Gläser und lächelt.",
 ])
 s1 = "\n\n".join([
  "Ein roter Würfel liegt in Annas Hand. Sie hat ihn seit der Schulzeit. Er bringt ihr immer Glück.",
- "Es ist spät. Jan und Anna sitzen allein in der Küche. Anna hört nur die Uhr.",
+ "Es ist spät und still. Jan und Anna sitzen allein in der Küche. Anna hört nur die Uhr.",
  q("Erklär mir die Regeln. Aber bitte langsam")+", bittet Anna.",
  q("Gut. Eine Sechs ist gut. Mit einer Sechs startet deine Figur."),
  "Jan stellt die Figuren auf das Brett. Anna würfelt mit ihrem roten Würfel. Sie würfelt drei Sechsen.",
@@ -25,15 +25,15 @@ s1 = "\n\n".join([
  "Jan holt eine alte Kiste aus dem Schrank. Das Spiel von früher ist darin. Das Brett ist kaputt. Drei Figuren fehlen.",
  q("Wo sind die anderen drei Figuren?"),
  q("Keine Ahnung. Acht Jahre sind lang. Das Spiel ist alt."),
- "Annas Augen werden nass, denn das alte Spiel ist kaputt. Sie wischt die Augen schnell.",
+ "Annas Augen werden nass, denn das alte Spiel ist kaputt. Sie wischt die Augen schnell. Jan ist auch traurig.",
  "Jan wirft das alte Spiel in den Müll. Anna legt ihren roten Würfel in die neue Schachtel.",
 ])
 s2 = "\n\n".join([
  "Die Gruppe spielt heute im Hof. Felix sitzt Anna gegenüber.",
- "Das Spiel ist fast zu Ende. Anna und Felix haben noch eine Figur. Alle schauen auf das Brett.",
+ "Das Spiel ist fast zu Ende. Anna und Felix haben noch eine Figur. Alle schauen nervös auf das Brett.",
  q("Ich habe Angst. Mein Würfel muss helfen")+", flüstert Anna.",
- q("Du brauchst eine Vier")+", sagt Felix. "+q("Nur eine Vier."),
- "Anna küsst ihren roten Würfel. Sie würfelt. Eine Vier!",
+ q("Du brauchst jetzt eine Vier")+", sagt Felix. "+q("Nur eine Vier."),
+ "Anna küsst ihren roten Würfel. Sie würfelt. Eine Vier, endlich!",
  q("Ich gewinne! Ich gewinne gegen Felix!"),
  "Anna springt vom Stuhl. Der rote Würfel fliegt aus ihrer Hand. Er fällt durch das Gitter im Boden.",
  "Anna liegt auf dem Boden. Der Würfel ist unten im Keller. Niemand kann den Würfel holen.",
@@ -41,7 +41,7 @@ s2 = "\n\n".join([
  q("Das tut mir leid. Aber du gewinnst trotzdem."),
  "Felix gibt ihr einen blauen Würfel.",
  q("Er ist nicht rot. Aber er ist für die Königin."),
- "Anna lacht. Felix stellt den blauen Würfel neben ihr Glas.",
+ "Anna lacht stolz. Felix stellt den blauen Würfel neben ihr Glas.",
 ])
 out=[
  {"topic":T,"slotIndex":0,"title":"Felix erklärt zu schnell","arcType":None,"synopsis":"","text":s0,"vocab":[]},

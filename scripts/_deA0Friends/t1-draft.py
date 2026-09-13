@@ -2,7 +2,7 @@ import json
 O,C="“","”"
 def q(s): return O+s+C
 s0 = "\n\n".join([
- "Anna, eine Grafikerin aus Bremen, sitzt in einer alten Küche im Viertel. Sie ist wieder in Bremen. Ihre Hände sind kalt.",
+ "Anna, eine Grafikerin aus Bremen, sitzt in einer alten Küche im Viertel. Sie ist zurück in Bremen. Ihre Hände sind kalt.",
  "Jan ist ein Koch und ihr Freund aus der Schulzeit. Er wohnt unten im Haus. Er bringt zwei Tassen Tee.",
  "Anna hat eine Schachtel dabei. Die Schachtel ist voll mit Postkarten. Keine Karte hat eine Briefmarke.",
  q("Was ist das?")+", fragt Jan.",
@@ -12,12 +12,12 @@ s0 = "\n\n".join([
  q("Im Mai? Welcher Mai?"),
  "Anna wird rot, denn dieser Mai ist acht Jahre alt. Sie steckt die Hände in die Jacke.",
  q("Ich weiß. Ich komme nicht. Es tut mir leid."),
- "Jan trinkt seinen Tee. Er öffnet eine Schublade. Die sieben Karten liegen jetzt dort.",
+ "Jan trinkt still seinen Tee. Er öffnet eine Schublade. Die sieben Karten liegen jetzt dort.",
  q("Die Karten bleiben hier bei mir. Und du bleibst auch hier, oder?"),
  "Anna atmet tief. Ihr Tee ist noch warm.",
 ])
 s1 = "\n\n".join([
- "Zwölf Namen stehen auf einem alten Zettel. Der Zettel ist aus der Schulzeit. Anna kennt jeden Namen. Die Küche riecht nach Tee.",
+ "Zwölf Namen stehen auf einem alten Zettel. Der Zettel ist sehr alt. Anna kennt jeden Namen. Die Küche riecht nach Tee.",
  "Anna will jedem Freund eine Postkarte schicken. Die Karte ist eine Einladung für Donnerstag. Alle essen dann bei Jan, wie früher.",
  q("Ich brauche die Adressen")+", sagt Anna.",
  "Jan nimmt sein Handy. Er zeigt auf die Namen.",

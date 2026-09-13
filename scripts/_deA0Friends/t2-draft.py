@@ -23,9 +23,9 @@ s1 = "\n\n".join([
  q("Ich weiß. Ich bin da zwanzig")+", antwortet Anna.",
  "Nele holt ihre Kamera.",
  q("Ich brauche ein Foto von dir. Für den Kühlschrank."),
- "Ihr Gesicht ist heiß, denn die Anna auf dem Foto ist so jung. Sie hat jetzt Falten um die Augen.",
+ "Ihr Gesicht ist heiß, denn Anna auf dem Foto ist so jung. Sie hat jetzt Falten um die Augen.",
  q("Nein, bitte nicht. Ich bin nicht mehr zwanzig."),
- q("Egal. Du bist schön."),
+ q("Egal. Du bist sehr schön."),
  "Nele macht zehn Fotos. Anna schließt jedes Mal die Augen.",
  "Jan steht in der Tür. Er trägt Annas alte Brille. Er macht ein ernstes Gesicht.",
  "Anna lacht laut. Nele macht schnell ein Foto.",
@@ -45,7 +45,7 @@ s2 = "\n\n".join([
  q("Welches Foto willst du?"),
  q("Ich? Du entscheidest")+", sagt Jan.",
  "Anna steckt das neue Foto in den Rahmen. Das alte Foto kommt in ihre Jacke.",
- q("Jetzt sind wir drei")+", sagt Anna.",
+ q("Jetzt sind wir drei. Das ist besser")+", sagt Anna.",
  "Jan hängt den Rahmen neben den Kühlschrank. Die beiden stehen lange davor.",
 ])
 out=[

@@ -5,19 +5,21 @@
   "title": "Felix erklärt zu schnell",
   "arcType": null,
   "synopsis": "Games night at Jan's. Felix, a maths teacher, brings a new game and explains the rules fast. Everyone understands, except Anna.",
-  "text": "Donnerstag ist Spielabend in Jans Küche. Die Küche ist warm und laut. Sechs Freunde sitzen um den Tisch. Anna, die Grafikerin von oben, sitzt zwischen Jan und Nele.\n\nFelix, ein Mathelehrer aus dem Viertel, bringt ein neues Spiel. Er trägt ein graues T-Shirt. Er kennt alle Regeln.\n\n“Das Spiel ist ganz einfach”, sagt Felix. “Jeder hat vier Figuren. Du würfelst und läufst.”\n\n“Und die Punkte? Wie viele Punkte brauche ich?”, fragt Anna.\n\n“Die Punkte kommen später. Jetzt bist du dran.”\n\nAnna würfelt eine Eins. Sie würfelt noch eine Zwei. Felix erklärt schnell.\n\nAnnas Hände sind heiß, denn alle kennen die Regeln. Sie kennt die Regeln nicht. Sie wirft den Würfel zu fest. Der Würfel fällt vom Tisch.\n\n“Früher spielen wir hier ein anderes Spiel.”\n\n“Ich weiß. Jan erzählt oft davon.”\n\nAnna verliert. Sie ist die Letzte, und die Letzte spült.\n\nAnna steht an der Spüle. Felix bringt ihr die Gläser und lächelt.",
+  "text": "Donnerstag ist Spielabend in Jans Küche. Die Küche ist warm und laut. Sechs Freunde sitzen um den Tisch. Anna, die Grafikerin von oben, sitzt neben Jan.\n\nFelix, ein Mathelehrer aus dem Viertel, bringt ein neues Spiel. Er trägt ein graues T-Shirt. Er kennt alle Regeln.\n\n“Das Spiel ist ganz einfach”, sagt Felix. “Jeder hat vier Figuren. Du würfelst und läufst.”\n\n“Und die Punkte? Wie viele Punkte brauche ich?”, fragt Anna.\n\n“Die Punkte kommen später. Jetzt bist du dran.”\n\nAnna würfelt eine Eins. Sie würfelt noch eine Zwei. Felix erklärt sehr schnell.\n\nAnnas Hände sind heiß, denn alle kennen die Regeln. Sie kennt die Regeln nicht. Sie wirft den Würfel zu fest. Der Würfel fällt unter den Tisch.\n\n“Früher spielen wir hier ein anderes Spiel.”\n\n“Ich weiß. Jan erzählt oft davon.”\n\nAnna verliert. Sie ist die Letzte, und die Letzte spült.\n\nAnna steht müde an der Spüle. Felix bringt ihr die Gläser und lächelt.",
   "vocab": [
    {
     "type": "noun",
     "word": "der Spielabend",
     "surface": "Spielabend",
-    "definition": "A games night; an evening when friends play games."
+    "definition": "A games night; an evening when friends play games.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "der Mathelehrer",
     "surface": "Mathelehrer",
-    "definition": "A maths teacher; he teaches numbers at a school."
+    "definition": "A maths teacher; he teaches numbers at a school.",
+    "anchor": true
    },
    {
     "type": "adjective",
@@ -46,20 +48,22 @@
    {
     "type": "verb",
     "word": "würfeln",
-    "surface": "würfelst",
+    "surface": "würfelt",
     "definition": "To roll the dice in a game."
    },
    {
     "type": "verb",
     "word": "laufen",
     "surface": "läufst",
-    "definition": "To move forward; here, your piece goes on the board."
+    "definition": "To move forward; here, your piece goes on the board.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "der Punkt",
     "surface": "Punkte",
-    "definition": "A point; what you win in a game."
+    "definition": "A point; what you win in a game.",
+    "anchor": true
    },
    {
     "type": "adverb",
@@ -125,7 +129,8 @@
     "type": "noun",
     "word": "die Spüle",
     "surface": "Spüle",
-    "definition": "A sink; where you wash the dishes."
+    "definition": "A sink; where you wash the dishes.",
+    "anchor": true
    }
   ]
  },
@@ -135,7 +140,7 @@
   "title": "Annas roter Würfel",
   "arcType": null,
   "synopsis": "Late at night Jan explains the rules to Anna, slowly. Her red dice from school still brings luck. Then Jan finds the old game in a box.",
-  "text": "Ein roter Würfel liegt in Annas Hand. Sie hat ihn seit der Schulzeit. Er bringt ihr immer Glück.\n\nEs ist spät. Jan und Anna sitzen allein in der Küche. Anna hört nur die Uhr.\n\n“Erklär mir die Regeln. Aber bitte langsam”, bittet Anna.\n\n“Gut. Eine Sechs ist gut. Mit einer Sechs startet deine Figur.”\n\nJan stellt die Figuren auf das Brett. Anna würfelt mit ihrem roten Würfel. Sie würfelt drei Sechsen.\n\n“Drei Sechsen? Du bist wieder die Königin!”\n\nJan holt eine alte Kiste aus dem Schrank. Das Spiel von früher ist darin. Das Brett ist kaputt. Drei Figuren fehlen.\n\n“Wo sind die anderen drei Figuren?”\n\n“Keine Ahnung. Acht Jahre sind lang. Das Spiel ist alt.”\n\nAnnas Augen werden nass, denn das alte Spiel ist kaputt. Sie wischt die Augen schnell.\n\nJan wirft das alte Spiel in den Müll. Anna legt ihren roten Würfel in die neue Schachtel.",
+  "text": "Ein roter Würfel liegt in Annas Hand. Sie hat ihn seit der Schulzeit. Er bringt ihr immer Glück.\n\nEs ist spät und still. Jan und Anna sitzen allein in der Küche. Anna hört nur die Uhr.\n\n“Erklär mir die Regeln. Aber bitte langsam”, bittet Anna.\n\n“Gut. Eine Sechs ist gut. Mit einer Sechs startet deine Figur.”\n\nJan stellt die Figuren auf das Brett. Anna würfelt mit ihrem roten Würfel. Sie würfelt drei Sechsen.\n\n“Drei Sechsen? Du bist wieder die Königin!”\n\nJan holt eine alte Kiste aus dem Schrank. Das Spiel von früher ist darin. Das Brett ist kaputt. Drei Figuren fehlen.\n\n“Wo sind die anderen drei Figuren?”\n\n“Keine Ahnung. Acht Jahre sind lang. Das Spiel ist alt.”\n\nAnnas Augen werden nass, denn das alte Spiel ist kaputt. Sie wischt die Augen schnell. Jan ist auch traurig.\n\nJan wirft das alte Spiel in den Müll. Anna legt ihren roten Würfel in die neue Schachtel.",
   "vocab": [
    {
     "type": "noun",
@@ -153,7 +158,8 @@
     "type": "noun",
     "word": "das Glück",
     "surface": "Glück",
-    "definition": "Luck; when good things happen by chance."
+    "definition": "Luck; when good things happen by chance.",
+    "anchor": true
    },
    {
     "type": "adjective",
@@ -225,7 +231,8 @@
     "type": "noun",
     "word": "die Ahnung",
     "surface": "Ahnung",
-    "definition": "An idea; keine Ahnung means I do not know."
+    "definition": "An idea; keine Ahnung means I do not know.",
+    "anchor": true
    },
    {
     "type": "adjective",
@@ -249,7 +256,8 @@
     "type": "noun",
     "word": "die Uhr",
     "surface": "Uhr",
-    "definition": "A clock; it shows you the time."
+    "definition": "A clock; it shows you the time.",
+    "anchor": true
    },
    {
     "type": "verb",
@@ -265,7 +273,7 @@
   "title": "Eine Vier im Hof",
   "arcType": null,
   "synopsis": "The rematch is in the courtyard. Anna needs a four to beat Felix. She wins, but her lucky red dice falls through a metal grid in the ground.",
-  "text": "Die Gruppe spielt heute im Hof. Felix sitzt Anna gegenüber.\n\nDas Spiel ist fast zu Ende. Anna und Felix haben noch eine Figur. Alle schauen auf das Brett.\n\n“Ich habe Angst. Mein Würfel muss helfen”, flüstert Anna.\n\n“Du brauchst eine Vier”, sagt Felix. “Nur eine Vier.”\n\nAnna küsst ihren roten Würfel. Sie würfelt. Eine Vier!\n\n“Ich gewinne! Ich gewinne gegen Felix!”\n\nAnna springt vom Stuhl. Der rote Würfel fliegt aus ihrer Hand. Er fällt durch das Gitter im Boden.\n\nAnna liegt auf dem Boden. Der Würfel ist unten im Keller. Niemand kann den Würfel holen.\n\nIhr Mund ist trocken, denn der Würfel ist seit der Schulzeit bei ihr. Sie legt die Hand auf das Gitter.\n\n“Das tut mir leid. Aber du gewinnst trotzdem.”\n\nFelix gibt ihr einen blauen Würfel.\n\n“Er ist nicht rot. Aber er ist für die Königin.”\n\nAnna lacht. Felix stellt den blauen Würfel neben ihr Glas.",
+  "text": "Die Gruppe spielt heute im Hof. Felix sitzt Anna gegenüber.\n\nDas Spiel ist fast zu Ende. Anna und Felix haben noch eine Figur. Alle schauen nervös auf das Brett.\n\n“Ich habe Angst. Mein Würfel muss helfen”, flüstert Anna.\n\n“Du brauchst jetzt eine Vier”, sagt Felix. “Nur eine Vier.”\n\nAnna küsst ihren roten Würfel. Sie würfelt. Eine Vier, endlich!\n\n“Ich gewinne! Ich gewinne gegen Felix!”\n\nAnna springt vom Stuhl. Der rote Würfel fliegt aus ihrer Hand. Er fällt durch das Gitter im Boden.\n\nAnna liegt auf dem Boden. Der Würfel ist unten im Keller. Niemand kann den Würfel holen.\n\nIhr Mund ist trocken, denn der Würfel ist seit der Schulzeit bei ihr. Sie legt die Hand auf das Gitter.\n\n“Das tut mir leid. Aber du gewinnst trotzdem.”\n\nFelix gibt ihr einen blauen Würfel.\n\n“Er ist nicht rot. Aber er ist für die Königin.”\n\nAnna lacht stolz. Felix stellt den blauen Würfel neben ihr Glas.",
   "vocab": [
    {
     "type": "noun",
@@ -313,37 +321,43 @@
     "type": "verb",
     "word": "küssen",
     "surface": "küsst",
-    "definition": "To kiss; to touch with your lips."
+    "definition": "To kiss; to touch with your lips.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "der Stuhl",
     "surface": "Stuhl",
-    "definition": "A chair; a seat for one person."
+    "definition": "A chair; a seat for one person.",
+    "anchor": true
    },
    {
     "type": "verb",
     "word": "springen",
     "surface": "springt",
-    "definition": "To jump; to move up fast with your legs."
+    "definition": "To jump; to move up fast with your legs.",
+    "anchor": true
    },
    {
     "type": "verb",
     "word": "fliegen",
     "surface": "fliegt",
-    "definition": "To fly; to move through the air."
+    "definition": "To fly; to move through the air.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "das Gitter",
     "surface": "Gitter",
-    "definition": "A metal grid; bars with holes between them."
+    "definition": "A metal grid; bars with holes between them.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "der Boden",
     "surface": "Boden",
-    "definition": "The ground; the floor under your feet."
+    "definition": "The ground; the floor under your feet.",
+    "anchor": true
    },
    {
     "type": "pronoun",
@@ -385,7 +399,8 @@
     "type": "verb",
     "word": "gewinnen",
     "surface": "gewinnst",
-    "definition": "To win; to be the best in a game."
+    "definition": "To win; to be the best in a game.",
+    "anchor": true
    }
   ]
  }

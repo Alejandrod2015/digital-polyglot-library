@@ -3,16 +3,18 @@ O,C="“","”"
 def q(s): return O+s+C
 T="books-and-reading"
 s0 = "\n\n".join([
- "Die Treppe im Haus ist dunkel. Anna ist eine Grafikerin und wohnt oben. Sie steht vor einem alten Schrank. Der Schrank ist voll mit Büchern.",
+ "Die Treppe im Haus ist dunkel. Anna ist eine Grafikerin und wohnt oben. Sie steht vor einem alten Schrank. Der Schrank ist hoch und voll mit Büchern.",
  "Die Bücher sind dick und dünn, neu und alt. Staub liegt auf den Büchern. Anna sucht ein grünes Buch. Ein Zettel für Jan liegt darin.",
  "Johanna ist eine Buchhändlerin aus dem zweiten Stock. Sie trägt einen Stapel Bücher im Arm und einen Stift hinter dem Ohr.",
  q("Suchst du etwas Bestimmtes?")+", fragt Johanna.",
  q("Ja. Einen dicken grünen Roman."),
- q("Grün? Das Buch ist leider nicht mehr hier. Eine Frau aus Hamburg liest es jetzt."),
+ q("Grün? Das Buch ist leider nicht mehr hier."),
+ q("Wo ist es?")+", flüstert Anna.",
+ q("Jemand aus Hamburg liest es jetzt."),
  "Annas Magen ist schwer, denn der Zettel ist in dem Buch. Sie seufzt und setzt sich auf die Stufe.",
  q("Der Zettel ist für Jan. Er ist wichtig."),
  q("Keine Sorge. Ich sammle alle Zettel aus den Büchern."),
- "Johanna rennt in den zweiten Stock. Sie kommt mit einer Dose.",
+ "Johanna rennt sofort in den zweiten Stock. Sie kommt mit einer Dose.",
 ])
 s1 = "\n\n".join([
  "Viele kleine Zettel liegen in Johannas Dose. Johanna und Anna sitzen zusammen auf der Treppe. Johanna liest die Zettel laut.",
@@ -25,7 +27,7 @@ s1 = "\n\n".join([
  "Annas Kopf ist leer, denn der Zettel wartet acht Jahre in einer Dose. Sie drückt den Zettel an ihr Herz.",
  q("Was steht auf Seite vierzig?")+", fragt Johanna.",
  q("Ich weiß es nicht mehr. Ich kenne nur den Titel."),
- q("Der Titel reicht. Ich besorge das Buch für dich."),
+ q("Der Titel reicht. Ich besorge das Buch bald."),
  "Johanna schreibt den Titel in ihr Heft. Anna steckt den gelben Zettel in die Jacke.",
 ])
 s2 = "\n\n".join([
@@ -38,8 +40,8 @@ s2 = "\n\n".join([
  "Anna liest vorsichtig, Zeile für Zeile. Ihre Stimme zittert, denn Jan sitzt ganz ruhig neben ihr.",
  q("Zwei Freunde sitzen am Meer. Sie sprechen nicht. Sie sind trotzdem zusammen."),
  q("Wir sitzen nicht am Meer. Wir sitzen in meiner Küche."),
- q("Die Küche ist auch gut."),
- "Jan stellt das grüne Buch in sein Regal. Anna sieht den Rahmen mit dem Foto daneben. Die beiden essen Suppe und sagen lange nichts.",
+ q("Die Küche ist auch schön."),
+ "Jan stellt das grüne Buch in sein Regal. Anna sieht den Rahmen mit dem Foto daneben. Die beiden essen Suppe und sagen lange nichts. Jan ist froh.",
 ])
 out=[
  {"topic":T,"slotIndex":0,"title":"Bücher auf der Treppe","arcType":None,"synopsis":"","text":s0,"vocab":[]},

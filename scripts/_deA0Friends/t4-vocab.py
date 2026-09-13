@@ -64,7 +64,7 @@ d[2]["vocab"]=[
  V("adjective","ruhig","ruhig","Calm; quiet and not moving."),
  V("adverb","zweimal","zweimal","Twice; two times, one after the other."),
  V("adverb","auch","auch","Also; too, in the same way."),
- V("adjective","gut","gut","Good; fine, nice enough."),
+ V("pronoun","mein","meiner","My; it belongs to me."),
  V("verb","sehen","sieht","To see; to notice something with your eyes."),
  V("adverb","daneben","daneben","Next to it; beside that thing."),
  V("verb","sagen","sagen","To say; to speak words."),

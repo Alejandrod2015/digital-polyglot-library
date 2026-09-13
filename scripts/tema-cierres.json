@@ -2226,8 +2226,8 @@
     ]
   },
   "cmu047bkz0007326jsgeptkox#books-and-reading": {
-    "cerrado": "2026-09-13T18:28:08.001Z",
-    "hash": "b9ca52cab6b9738e",
+    "cerrado": "2026-09-13T18:54:34.145Z",
+    "hash": "3e339fabe5ae4641",
     "historias": [
       "books-and-reading#0 bucher-auf-der-treppe",
       "books-and-reading#1 zettel-in-johannas-dose",
@@ -2238,17 +2238,18 @@
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 53% (solo avisa)",
-      "arranques de parrafo variados (mas repetido \"johanna\", 12%)",
+      "acotacion dominante bajo tope (\"fragt\" 40%)",
+      "arranques de parrafo variados (mas repetido \"johanna\", 11%)",
       "densidad 5.8 palabras por oracion (techo 9 en a0)",
-      "seguidilla 6/47 oraciones cortas narradas",
+      "seguidilla 8/49 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 12/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 12 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Johanna): bucher-auf-der-treppe, zettel-in-johannas-dose, seite-vierzig",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.12 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 54/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.16 sobre 44 plazas · 38 salen una sola vez | ancladas: 16/60 (27%) | cola: 38/44 portables con un solo encuentro (86%, tope 30%) | de un solo encuentro: dick, dünn, Haus, dunkel, wichtig, etwas, Bestimmtes, leider, rennt, Viele, klein, traurig, lustig, Noch, Schrift, schief, denke, leer, über, wartet, drückt, reicht, Heft, riecht, beiden, gerade, Herd, öffnet, vorsichtig, zittert…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en DE no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
@@ -2290,8 +2291,8 @@
     }
   },
   "cmu047bkz0007326jsgeptkox#cooking-and-hosting": {
-    "cerrado": "2026-09-13T18:41:00.494Z",
-    "hash": "bc2cce82c220af10",
+    "cerrado": "2026-09-13T18:55:03.836Z",
+    "hash": "d3cd80322585901f",
     "historias": [
       "cooking-and-hosting#0 ein-rezept-fur-zehn",
       "cooking-and-hosting#1 jans-lieblingstopf",
@@ -2305,7 +2306,7 @@
       "acotacion dominante bajo tope (\"ruft\" 33%)",
       "arranques de parrafo variados (mas repetido \"anna\", 11%)",
       "densidad 5.1 palabras por oracion (techo 9 en a0)",
-      "seguidilla 21/59 oraciones cortas narradas",
+      "seguidilla 19/59 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 12/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
@@ -2313,7 +2314,7 @@
       "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.07 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 56/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.13 sobre 32 plazas · 28 salen una sola vez | ancladas: 28/60 (47%) | cola: 28/32 portables con un solo encuentro (88%, tope 30%) | de un solo encuentro: billig, Donnerstag, mild, mal, scharf, stolz, dreimal, geht, Chefin, freundlich, zurück, vergisst, weint, linken, so, leid, böse, um, acht, gleich, müde, froh, hungrig, passen, verschieden, lecker, besser, satt; pasan del 30%",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en DE no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
@@ -2355,8 +2356,8 @@
     }
   },
   "cmu047bkz0007326jsgeptkox#games-and-rules": {
-    "cerrado": "2026-09-13T18:21:11.046Z",
-    "hash": "33aba08ee8fdd5e0",
+    "cerrado": "2026-09-13T18:53:43.548Z",
+    "hash": "9f2903d5e03132f3",
     "historias": [
       "games-and-rules#0 felix-erklart-zu-schnell",
       "games-and-rules#1 annas-roter-wurfel",
@@ -2370,15 +2371,15 @@
       "acotacion dominante bajo tope (\"sagt\" 40%)",
       "arranques de parrafo variados (mas repetido \"anna\", 20%)",
       "densidad 5.3 palabras por oracion (techo 9 en a0)",
-      "seguidilla 18/59 oraciones cortas narradas",
+      "seguidilla 18/60 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 12/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.18 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 51/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.29 sobre 45 plazas · 35 salen una sola vez | ancladas: 15/60 (25%) | cola: 35/45 portables con un solo encuentro (78%, tope 30%) | de un solo encuentro: graues, einfach, später, dran, erklärt, trägt, fest, anderes, Gläser, oft, verliert, spät, langsam, wieder, Schrank, darin, kaputt, Wo, lang, werden, nass, hört, Hof, gegenüber, fast, muss, heute, kann, helfen, Niemand…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en DE no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
@@ -2420,8 +2421,8 @@
     }
   },
   "cmu047bkz0007326jsgeptkox#letters-and-invitations": {
-    "cerrado": "2026-09-13T18:14:41.256Z",
-    "hash": "47896b7939c11c91",
+    "cerrado": "2026-09-13T18:53:02.309Z",
+    "hash": "7df36454020104ed",
     "historias": [
       "letters-and-invitations#0 karten-ohne-briefmarke",
       "letters-and-invitations#1 zwolf-alte-adressen",
@@ -2435,15 +2436,15 @@
       "acotacion dominante bajo tope (\"fragt\" 33%)",
       "arranques de parrafo variados (mas repetido \"anna\", 29%)",
       "densidad 5.1 palabras por oracion (techo 9 en a0)",
-      "seguidilla 19/58 oraciones cortas narradas",
+      "seguidilla 18/58 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 12/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 6 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Jan): karten-ohne-briefmarke, zwolf-alte-adressen, funf-marken-am-sonntag",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.18 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 49/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.19 sobre 54 plazas · 44 salen una sola vez | ancladas: 6/60 (10%) | cola: 44/54 portables con un solo encuentro (81%, tope 30%) | de un solo encuentro: Grafikerin, Viertel, sitzt, bringt, erste, voll, schicke, laut, rot, nie, weiß, bleiben, atmet, warm, Zwölf, stehen, kennt, früher, zeigt, Strich, zählt, mehr, eng, faltet, schlecht, lächelt, jeden, bald, findet, alte…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en DE no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
@@ -2485,8 +2486,8 @@
     }
   },
   "cmu047bkz0007326jsgeptkox#looks-and-memories": {
-    "cerrado": "2026-09-13T18:14:25.469Z",
-    "hash": "6dbaea29dcbacb40",
+    "cerrado": "2026-09-13T18:53:26.338Z",
+    "hash": "f3ddc70352b9ba03",
     "historias": [
       "looks-and-memories#0 fotos-am-kuhlschrank",
       "looks-and-memories#1 die-brille-von-fruher",
@@ -2505,14 +2506,14 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 6 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Nele): fotos-am-kuhlschrank, die-brille-von-fruher, ein-rahmen-fur-drei",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.23 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 50/60 salen una sola vez · sin marcar ancladas",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Anna): fotos-am-kuhlschrank, die-brille-von-fruher, ein-rahmen-fur-drei",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.27 sobre 55 plazas · 44 salen una sola vez | ancladas: 5/60 (8%) | cola: 44/55 portables con un solo encuentro (80%, tope 30%) | de un solo encuentro: oben, kocht, sucht, hart, runde, gern, immer, Endlich, umarmt, fehlst, liegt, zwanzig, groß, blond, Tisch, brauche, wunderbar, zehn, holt, heiß, Augen, bitte, schön, schließt, lacht, schnell, Rahmen, schaut, kauft, allein…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en DE no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: looks-and-memories (Anna, Nele)"
     ],
     "plan": {
       "tipo": "Friends",
@@ -2550,8 +2551,8 @@
     }
   },
   "cmu047bkz0007326jsgeptkox#music-and-singing": {
-    "cerrado": "2026-09-13T18:34:35.392Z",
-    "hash": "87b06a4dffb1d497",
+    "cerrado": "2026-09-13T18:54:48.877Z",
+    "hash": "dfc30f359d1246d0",
     "historias": [
       "music-and-singing#0 tims-trommelstocke",
       "music-and-singing#1 zu-hoch-fur-anna",
@@ -2564,16 +2565,16 @@
       "acotacion 60% (solo avisa)",
       "acotacion dominante bajo tope (\"sagt\" 33%)",
       "arranques de parrafo variados (mas repetido \"anna\", 15%)",
-      "densidad 5.3 palabras por oracion (techo 9 en a0)",
-      "seguidilla 24/60 oraciones cortas narradas",
+      "densidad 5.4 palabras por oracion (techo 9 en a0)",
+      "seguidilla 23/60 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 12/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.20 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 51/61 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.41 sobre 37 plazas · 25 salen una sola vez | ancladas: 24/61 (39%) | cola: 25/37 portables con un solo encuentro (68%, tope 30%) | de un solo encuentro: fünfzehn, flüstert, Wer, plötzlich, still, nervös, hinter, nickt, Keller, sehr, hoch, falsch, Ganz, Kein, bis, fünfunddreißig, Jemand, beginnt, dieses, nur, wischt, was, Alle, ohne, offen; pasan del 30%",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en DE no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",

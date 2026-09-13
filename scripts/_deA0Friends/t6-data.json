@@ -29,19 +29,22 @@
     "type": "verb",
     "word": "schwimmen",
     "surface": "schwimmt",
-    "definition": "To swim; here, to float in the soup."
+    "definition": "To swim; here, to float in the soup.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "das Rezept",
     "surface": "Rezept",
-    "definition": "A recipe; the steps to cook a dish."
+    "definition": "A recipe; the steps to cook a dish.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "die Köchin",
     "surface": "Köchin",
-    "definition": "A female cook; she cooks food as her job."
+    "definition": "A female cook; she cooks food as her job.",
+    "anchor": true
    },
    {
     "type": "number",
@@ -53,13 +56,15 @@
     "type": "noun",
     "word": "die Schürze",
     "surface": "Schürze",
-    "definition": "An apron; you wear it in the kitchen over your clothes."
+    "definition": "An apron; you wear it in the kitchen over your clothes.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "der Fleck",
     "surface": "Flecken",
-    "definition": "A stain; a dirty mark on cloth."
+    "definition": "A stain; a dirty mark on cloth.",
+    "anchor": true
    },
    {
     "type": "noun",
@@ -71,7 +76,8 @@
     "type": "verb",
     "word": "rechnen",
     "surface": "rechnen",
-    "definition": "To calculate; to work out numbers."
+    "definition": "To calculate; to work out numbers.",
+    "anchor": true
    },
    {
     "type": "adverb",
@@ -83,7 +89,8 @@
     "type": "adjective",
     "word": "spitz",
     "surface": "spitzes",
-    "definition": "Sharp; with a thin point at the end."
+    "definition": "Sharp; with a thin point at the end.",
+    "anchor": true
    },
    {
     "type": "adjective",
@@ -95,13 +102,15 @@
     "type": "verb",
     "word": "tränen",
     "surface": "tränen",
-    "definition": "To water; eyes get wet with tears."
+    "definition": "To water; eyes get wet with tears.",
+    "anchor": true
    },
    {
     "type": "verb",
     "word": "probieren",
     "surface": "probiert",
-    "definition": "To taste; to try a little of the food."
+    "definition": "To taste; to try a little of the food.",
+    "anchor": true
    },
    {
     "type": "noun",
@@ -119,13 +128,15 @@
     "type": "verb",
     "word": "rühren",
     "surface": "rührt",
-    "definition": "To stir; to move a spoon round in a pot."
+    "definition": "To stir; to move a spoon round in a pot.",
+    "anchor": true
    },
    {
     "type": "verb",
     "word": "rutschen",
     "surface": "rutscht",
-    "definition": "To slip; to slide and fall."
+    "definition": "To slip; to slide and fall.",
+    "anchor": true
    }
   ]
  },
@@ -135,25 +146,28 @@
   "title": "Jans Lieblingstopf",
   "arcType": null,
   "synopsis": "Anna cooks alone in Jan's favourite pot. Then the phone rings. It is her old job. Anna listens for a long time and forgets the soup.",
-  "text": "Sein Lieblingstopf ist groß und alt. Er steht auf Jans Herd. Anna kocht heute allein darin.\n\nDas Telefon klingelt dreimal. Die Nummer ist aus München. Anna geht mit dem Telefon in den Flur.\n\nIhre alte Chefin ist freundlich. Sie will Anna zurück in München. Anna hört lange.\n\n“Nach München? Ich weiß nicht. Ich brauche Zeit.”\n\nSie vergisst die Suppe.\n\nRauch kommt aus der Küche. Jan steht in der Tür und hustet.\n\n“Anna! Der Topf!”, ruft Jan.\n\nAnna rennt zum Herd. Die Suppe ist verbrannt. Anna weint fast, denn der Topf ist Jans Lieblingstopf. Sie hält den heißen Deckel in der linken Hand.\n\n“Es tut mir so leid. Ich kaufe einen neuen Topf.”\n\n“Wer ist am Telefon?”\n\n“München. Meine alte Arbeit.”\n\nJan ist nicht böse. Er kratzt lange im Topf.\n\n“Der Topf ist kaputt. Egal. Die Freunde kommen um acht.”\n\nDer schwarze Topf steht jetzt vor der Tür.",
+  "text": "Sein Lieblingstopf ist groß und alt. Er steht auf Jans Herd. Anna kocht heute allein darin.\n\nDas Telefon klingelt dreimal. Die Nummer ist aus München. Anna geht mit dem Telefon in den Flur.\n\nIhre alte Chefin ist freundlich. Sie will Anna zurück in München. Anna hört lange.\n\n“Nach München? Ich weiß nicht. Ich brauche Zeit. Ich antworte später.”\n\nSie vergisst die Suppe.\n\nRauch kommt aus der Küche. Jan steht in der Tür und hustet.\n\n“Anna! Der Topf!”, ruft Jan.\n\nAnna rennt zum Herd. Die Suppe ist verbrannt und hart. Anna weint fast, denn der Topf ist Jans Lieblingstopf. Sie hält den heißen Deckel vorsichtig in der linken Hand.\n\n“Es tut mir so leid. Ich kaufe einen neuen Topf.”\n\n“Wer ist am Telefon?”\n\n“München. Meine alte Arbeit.”\n\nJan ist nicht böse. Er kratzt lange im Topf.\n\n“Der Topf ist kaputt. Egal. Die Freunde kommen um acht.”\n\nDer schwarze Topf steht jetzt vor der Tür.",
   "vocab": [
    {
     "type": "noun",
     "word": "der Lieblingstopf",
     "surface": "Lieblingstopf",
-    "definition": "A favourite pot; the pot someone likes best."
+    "definition": "A favourite pot; the pot someone likes best.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "das Telefon",
     "surface": "Telefon",
-    "definition": "A phone; you use it to call people."
+    "definition": "A phone; you use it to call people.",
+    "anchor": true
    },
    {
     "type": "verb",
     "word": "klingeln",
     "surface": "klingelt",
-    "definition": "To ring; a phone makes a sound."
+    "definition": "To ring; a phone makes a sound.",
+    "anchor": true
    },
    {
     "type": "adverb",
@@ -165,7 +179,8 @@
     "type": "noun",
     "word": "die Nummer",
     "surface": "Nummer",
-    "definition": "A number; here, the phone number that calls."
+    "definition": "A number; here, the phone number that calls.",
+    "anchor": true
    },
    {
     "type": "verb",
@@ -201,7 +216,8 @@
     "type": "verb",
     "word": "husten",
     "surface": "hustet",
-    "definition": "To cough; to push air out of your throat."
+    "definition": "To cough; to push air out of your throat.",
+    "anchor": true
    },
    {
     "type": "verb",
@@ -213,7 +229,8 @@
     "type": "noun",
     "word": "der Deckel",
     "surface": "Deckel",
-    "definition": "A lid; the top that covers a pot."
+    "definition": "A lid; the top that covers a pot.",
+    "anchor": true
    },
    {
     "type": "adjective",
@@ -243,7 +260,8 @@
     "type": "verb",
     "word": "kratzen",
     "surface": "kratzt",
-    "definition": "To scrape; to rub hard with something sharp."
+    "definition": "To scrape; to rub hard with something sharp.",
+    "anchor": true
    },
    {
     "type": "preposition",
@@ -265,31 +283,35 @@
   "title": "Sechs kleine Suppen",
   "arcType": null,
   "synopsis": "The big pot is broken, and the guests come soon. Everyone in the house brings a small pot, and Luisa has a plan: six little soups.",
-  "text": "Drei kleine Töpfe stehen auf dem Herd. Drei kleine Töpfe stehen auf dem Tisch. Es riecht nach Karotten. Jeder im Haus bringt einen Topf.\n\nLuisa kommt mit zwei Tüten Gemüse.\n\n“Sechs Töpfe? Gut! Wir kochen sechs kleine Suppen”, sagt Luisa.\n\n“Aber die Gäste kommen gleich.”\n\n“Wir sind schnell. Hier sind die Karotten.”\n\nAnna schneidet. Luisa würzt mit Kräutern. Die Löffel klappern.\n\nAnna ist müde, aber froh, denn der Abend ist nicht verloren. Sie deckt den Tisch mit zehn Tellern.\n\nDie Gäste kommen. Alle sind hungrig. Nele, Felix, Johanna und Tim sitzen mit Jan am Tisch. Die Löffel passen nicht zusammen. Die Teller sind alle verschieden.\n\n“Das ist meine Suppe von früher. Aber in sechs Töpfen”, sagt Anna.\n\nJan isst zwei Teller und schmatzt.\n\n“Die Suppe ist lecker. Wie früher, nur besser.”\n\nAlle sind satt. Luisa trinkt ein Glas Wein neben Anna. Die sechs Töpfe sind leer.",
+  "text": "Drei kleine Töpfe stehen auf dem Herd. Drei kleine Töpfe stehen auf dem Tisch. Es riecht nach Karotten. Jeder im Haus bringt einen Topf.\n\nLuisa kommt mit zwei Tüten Gemüse.\n\n“Sechs Töpfe? Gut! Wir kochen sechs kleine Suppen”, sagt Luisa.\n\n“Aber die Gäste kommen gleich.”\n\n“Wir sind schnell. Hier sind die Karotten.”\n\nAnna schneidet. Luisa würzt mit Kräutern. Die Löffel klappern.\n\nAnna ist müde, aber froh, denn der Abend ist nicht verloren. Sie deckt den Tisch mit zehn Tellern.\n\nDie Gäste kommen. Alle sind hungrig. Die Nachbarn sitzen mit Jan am Tisch. Die Löffel passen nicht zusammen. Die Teller sind alle verschieden.\n\n“Das ist meine Suppe von früher. Aber in sechs Töpfen”, sagt Anna.\n\nJan isst zwei Teller und schmatzt.\n\n“Die Suppe ist lecker. Wie früher, nur besser.”\n\nAlle sind satt und zufrieden. Luisa trinkt ein Glas Wein neben Anna. Die sechs Töpfe sind leer.",
   "vocab": [
    {
     "type": "verb",
     "word": "schmatzen",
     "surface": "schmatzt",
-    "definition": "To eat noisily; to make sounds with your mouth."
+    "definition": "To eat noisily; to make sounds with your mouth.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "die Karotte",
     "surface": "Karotten",
-    "definition": "A carrot; a long orange vegetable."
+    "definition": "A carrot; a long orange vegetable.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "das Gemüse",
     "surface": "Gemüse",
-    "definition": "Vegetables; plants you eat, like carrots."
+    "definition": "Vegetables; plants you eat, like carrots.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "die Suppe",
     "surface": "Suppen",
-    "definition": "Soup; a hot liquid food."
+    "definition": "Soup; a hot liquid food.",
+    "anchor": true
    },
    {
     "type": "adverb",
@@ -307,19 +329,22 @@
     "type": "verb",
     "word": "würzen",
     "surface": "würzt",
-    "definition": "To season; to add taste to food."
+    "definition": "To season; to add taste to food.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "das Kraut",
     "surface": "Kräutern",
-    "definition": "A herb; a green plant that gives food taste."
+    "definition": "A herb; a green plant that gives food taste.",
+    "anchor": true
    },
    {
     "type": "verb",
     "word": "klappern",
     "surface": "klappern",
-    "definition": "To rattle; to make short hard sounds."
+    "definition": "To rattle; to make short hard sounds.",
+    "anchor": true
    },
    {
     "type": "adjective",
@@ -337,13 +362,15 @@
     "type": "noun",
     "word": "der Abend",
     "surface": "Abend",
-    "definition": "The evening; the time after the day and before night."
+    "definition": "The evening; the time after the day and before night.",
+    "anchor": true
    },
    {
     "type": "verb",
     "word": "decken",
     "surface": "deckt",
-    "definition": "To lay the table; to put plates on it."
+    "definition": "To lay the table; to put plates on it.",
+    "anchor": true
    },
    {
     "type": "adjective",
@@ -385,7 +412,8 @@
     "type": "noun",
     "word": "der Wein",
     "surface": "Wein",
-    "definition": "Wine; a drink made from grapes."
+    "definition": "Wine; a drink made from grapes.",
+    "anchor": true
    }
   ]
  }
