@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "b1",
+  "variante": "france",
+  "registro": "comedia de barrio, el telefono roto: lo que se cuenta en la barra del estaminet cambia de boca en boca",
+  "espina": "Aurelien y Elodie abren un taller de bicicletas en Fives y su amistad se pone a prueba como socios. Este tema es la reputacion: lo que el barrio dice de ellos antes de abrir, y lo que cuesta desmentirlo.",
+  "recursos": "B1: narrador en passe compose e imparfait con plus-que-parfait; plus... plus; subjonctif tras il faut que / pour que; conditionnel (je ne voudrais jamais te faire du mal); discours indirect con concordancia (Florian lui a raconte qu'il tenait l'histoire de la boulangere); reversa cosida (quiere desmentir con calma y cuanto mas explica peor suena); cambio de ritmo (Quelqu'un avait parle, mais qui?); espejo concreto (el rumor que sufre Aurelien vuelve contra Florian y el lo desmiente con cifras).",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Aurelien quiere desmentir con calma el rumor de que lo echaron del cabinet por un error en las cuentas.",
+      "impide": "Florian, el patron del estaminet, repite lo que oye, y cuanto mas se justifica Aurelien, mas sospechoso parece.",
+      "cuesta": "Dos antiguos compañeros, sus primeros clientes, cancelan su reparacion.",
+      "cambia": "Aurelien entiende que el barrio ya tiene una version de el y que alguien la ha empezado.",
+      "emocion": "Estupor e impotencia: casi tira la taza, relee el mensaje mucho rato y se pregunta quien hablo."
+    },
+    {
+      "slot": "2",
+      "quiere": "Aurelien quiere saber quien empezo el rumor.",
+      "impide": "La historia ha pasado por la boulangere, un cliente y la camarera, y al final del hilo esta una broma de Elodie mal repetida.",
+      "cuesta": "La discusion les cuesta la noche de pintar juntos: la pared se queda a medias y mal seca.",
+      "cambia": "Aurelien descubre que su socia tambien habla de el, y que su reputacion ya no es solo suya.",
+      "emocion": "Herido en su orgullo; grita con el pincel dejado sobre la mesa, y Elodie se muerde el labio porque sabe que la frase era suya."
+    },
+    {
+      "slot": "3",
+      "quiere": "Aurelien quiere salvar el estaminet de Florian de un rumor de quiebra.",
+      "impide": "Los numeros no bastan para convencer al barrio; para que le crean tiene que hablar de si mismo.",
+      "cuesta": "Admite delante de los habituales que dejo su trabajo por miedo a fracasar, y pierde su imagen de hombre seguro.",
+      "cambia": "El barrio vuelve al estaminet y al taller, y la verdad de Aurelien pesa mas que el rumor.",
+      "emocion": "Miedo a hablar en voz alta; lo dice con un nudo en el estomago, hay un silencio, y alguien pide una cerveza."
+    }
+  ]
+}
