@@ -4,11 +4,11 @@ def V(t,w,s,d,a=False):
     o={"type":t,"word":w,"surface":s,"definition":d}
     if a: o["anchor"]=True
     return o
-s0=["Ihr erster Lauftreff nach der schweren Woche ist komisch. Der Himmel ist grau und voller Wolken, und am Main ist es windig und kalt. Julia, die Physiotherapeutin aus Rostock, wartet am Ufer. Moritz ist Straßenbahnfahrer und hat heute frei. Er bringt Carolin mit. Carolin ist seine Schwester und arbeitet als Hebamme in einer Klinik.",
-"Alle sind pünktlich, höflich und plötzlich sehr lieb zu Julia. “Heimweh ist ganz normal”, meint Theresa. “Wir sind doch alle für dich da”, meint auch Florian.",
-"Da versteht Julia alles. Nur Moritz weiß von ihrem Geheimnis. Sie wird rot, aber diesmal nicht vor Scham: Sie ist wütend.",
+s0=["Der Lauftreff nach dieser Woche ist komisch. Der Himmel ist grau, voller Wolken, und es ist windig und kalt. Julia, die Physiotherapeutin aus Rostock, wartet am Ufer. Moritz ist Straßenbahnfahrer und hat heute frei. Er bringt Carolin mit. Carolin ist seine Schwester und Hebamme in einer Klinik.",
+"Alle sind pünktlich, höflich und sehr lieb zu Julia. “Heimweh ist ganz normal, Julia”, meint Theresa. “Wir sind doch alle für dich da”, meint auch Florian.",
+"Da versteht Julia alles. In der Gruppe weiß nur Moritz von ihrem Geheimnis. Sie wird rot, aber diesmal nicht vor Scham: Sie ist wütend.",
 "“Du hast es allen erzählt, stimmt's? Die Nachricht war nur für dich! Das war unhöflich und dumm”, ruft Julia.",
-"“Ich wollte dir nur helfen, ehrlich. Ich hatte Angst um dich”, antwortet Moritz. Aber Julia will unbedingt keinen Streit vor der Gruppe. Sie entscheidet schnell und läuft allein nach Hause, links am Ufer entlang."]
+"“Ich wollte dir nur helfen, ehrlich. Ich hatte Angst um dich”, antwortet Moritz. Aber Julia will unbedingt keinen Streit vor der Gruppe. Sie entscheidet schnell und läuft allein links am Ufer nach Hause."]
 s1=["Moritz klopft zweimal am Tag, aber Julia öffnet nicht. Am Dienstag schreibt sie in den Chat vom Lauftreff: Sie ist krank. Das ist eine Ausrede, und Julia weiß es.",
 "Am Mittwochabend klingelt es. Vor der Tür steht nicht Moritz, sondern Carolin, mit einem Apfelkuchen. “Darf ich reinkommen? Ich will nicht streiten”, sagt sie vorsichtig.",
 "Der Kuchen ist noch warm. Sie teilen ihn am Küchentisch. “Mein Bruder weint selten”, erzählt Carolin. “Aber letztes Jahr ist sein bester Freund nach Berlin umgezogen. Moritz war monatelang allein.”",
