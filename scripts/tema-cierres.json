@@ -2225,6 +2225,71 @@
       "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
     ]
   },
+  "cmu04ereh000732z7px7naqa2#arguments-and-apologies": {
+    "cerrado": "2026-09-13T18:58:41.943Z",
+    "hash": "79ced35dd19032b2",
+    "historias": [
+      "arguments-and-apologies#0 encore-une-voie",
+      "arguments-and-apologies#1 tu-exageres",
+      "arguments-and-apologies#2 sans-mais"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"la primera pelea de verdad: una promesa rota por una tarde entre amigos, y una disculpa que solo funciona cuando deja de defenderse\", espina \"Romain por fin tiene un amigo propio en Nantes, y aprende que ganarse un sitio no puede costarle el de Justine; la pareja se pone a prueba con lo que no se dice bien.\")",
+      "validador canonico: 3/3 (perfil narrador)",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dit\" 38%)",
+      "arranques de parrafo variados (mas repetido \"une\", 13%)",
+      "densidad 9.4 palabras por oracion (techo 13 en a2)",
+      "seguidilla 11/38 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.04 sobre 55 plazas · 52 salen una sola vez | ancladas: 5/60 (8%) | cola: 52/55 portables con un solo encuentro (95%, tope 80%) | de un solo encuentro: Tous les jeudis, sport, premier ami, en solo, Encore une, à côté, Allez, il fait chaud, après l'autre, sportif, fier de lui, oublie l'heure, jusqu'au, vingt et une heures, sur les épaules, sans lui, glaciale, insisté, promis, en colère, exagères, phrase de trop, déçue, cherché, dort mal, Vexée, message, toujours des, comprends vraiment rien, voix…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: arguments-and-apologies (Romain, Karim)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a2",
+      "variante": "france",
+      "registro": "la primera pelea de verdad: una promesa rota por una tarde entre amigos, y una disculpa que solo funciona cuando deja de defenderse",
+      "espina": "Romain por fin tiene un amigo propio en Nantes, y aprende que ganarse un sitio no puede costarle el de Justine; la pareja se pone a prueba con lo que no se dice bien.",
+      "recursos": "A2: narrador en presente; passe compose e imparfait en la discusion (Tu avais promis, C'etait ma chanson, J'ai eu tort); futur simple minimo (Romain sera); negacion ne... rien; espejo concreto (la cancion perdida en la sala y la cancion cantada en la cocina); causalidad explicita. Nada de subjonctif ni plus-que-parfait salvo el avais promis marcado.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Romain quiere disfrutar su jueves de escalada con Karim, su primer amigo propio, y llegar al concierto de Justine.",
+          "impide": "Karim insiste en una via mas, el movil se queda en el vestuario y Romain pierde la nocion del tiempo.",
+          "cuesta": "Se pierde el primer solo de Justine con su coral; ella se va sin el.",
+          "cambia": "Romain descubre que su sitio nuevo en Nantes puede quitarle el que ya tenia.",
+          "emocion": "Esta orgulloso y feliz entre amigos; al ver seis llamadas perdidas corre, y la alegria se le cae en la puerta del concierto."
+        },
+        {
+          "slot": "2",
+          "quiere": "Romain quiere que Justine le perdone esa misma noche.",
+          "impide": "Cada disculpa lleva un mais, y la frase tu exageres empeora todo.",
+          "cuesta": "Duerme en el sofa, y el ramo que le aconseja Karim le cuesta la ultima oportunidad del dia.",
+          "cambia": "Nada todavia: Justine sale de casa y Romain se queda con las flores.",
+          "emocion": "Se siente injustamente atacado y luego culpable; da vueltas a su frase en el sofa y se arrepiente."
+        },
+        {
+          "slot": "3",
+          "quiere": "Romain quiere una disculpa de verdad, sin excusas ni flores.",
+          "impide": "Para ser creible tiene que renunciar a algo y aceptar la condicion de Justine.",
+          "cuesta": "Deja la escalada de los jueves de concierto con Karim.",
+          "cambia": "Justine le perdona con una condicion y le canta su cancion en la cocina.",
+          "emocion": "Tiene miedo de que no baste porque ya fallo dos veces; espera en la cocina sin ramo y escucha con el corazon latiendo."
+        }
+      ]
+    }
+  },
   "cmu04ereh000732z7px7naqa2#family-and-manners": {
     "cerrado": "2026-09-13T18:46:01.654Z",
     "hash": "fd4f9fadeca687a4",
