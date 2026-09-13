@@ -1,0 +1,354 @@
+{
+ "cahier": {
+  "es": "Le cahier ouvert",
+  "en": "The open notebook"
+ },
+ "ouvert": {
+  "es": "Le cahier ouvert",
+  "en": "The open notebook"
+ },
+ "est": {
+  "es": "Sophie est une enseignante de Paris",
+  "en": "Sophie is a teacher from Paris"
+ },
+ "enseignante": {
+  "es": "Sophie est une enseignante de Paris",
+  "en": "Sophie is a teacher from Paris"
+ },
+ "de": {
+  "es": "Sophie est une enseignante de Paris",
+  "en": "Sophie is a teacher from Paris"
+ },
+ "paris": {
+  "es": "Sophie est une enseignante de Paris",
+  "en": "Sophie is a teacher from Paris"
+ },
+ "et": {
+  "es": "et ferme la classe après le cours.",
+  "en": "and closes the classroom after the lesson."
+ },
+ "ferme": {
+  "es": "et ferme la classe après le cours.",
+  "en": "and closes the classroom after the lesson."
+ },
+ "classe": {
+  "es": "et ferme la classe après le cours.",
+  "en": "and closes the classroom after the lesson."
+ },
+ "après": {
+  "es": "et ferme la classe après le cours.",
+  "en": "and closes the classroom after the lesson."
+ },
+ "cours": {
+  "es": "et ferme la classe après le cours.",
+  "en": "and closes the classroom after the lesson."
+ },
+ "amie": {
+  "es": "Amélie, une amie de Sophie,",
+  "en": "Amélie, a friend of Sophie's,"
+ },
+ "garde": {
+  "es": "garde son cahier ouvert.",
+  "en": "keeps her notebook open."
+ },
+ "son": {
+  "es": "garde son cahier ouvert.",
+  "en": "keeps her notebook open."
+ },
+ "lumière": {
+  "es": "La lumière reste sur la table.",
+  "en": "The light stays on the table."
+ },
+ "reste": {
+  "es": "La lumière reste sur la table.",
+  "en": "The light stays on the table."
+ },
+ "sur": {
+  "es": "La lumière reste sur la table.",
+  "en": "The light stays on the table."
+ },
+ "table": {
+  "es": "La lumière reste sur la table.",
+  "en": "The light stays on the table."
+ },
+ "regarde": {
+  "es": "Marc regarde la phrase.",
+  "en": "Marc looks at the sentence."
+ },
+ "phrase": {
+  "es": "Marc regarde la phrase.",
+  "en": "Marc looks at the sentence."
+ },
+ "je": {
+  "es": "Je peux aider.",
+  "en": "I can help."
+ },
+ "peux": {
+  "es": "Je peux aider.",
+  "en": "I can help."
+ },
+ "aider": {
+  "es": "Je peux aider.",
+  "en": "I can help."
+ },
+ "montre": {
+  "es": "Sophie montre le livre.",
+  "en": "Sophie points to the book."
+ },
+ "livre": {
+  "es": "Sophie montre le livre.",
+  "en": "Sophie points to the book."
+ },
+ "abord": {
+  "es": "D’abord, Amélie étudie.",
+  "en": "First, Amélie studies."
+ },
+ "étudie": {
+  "es": "D’abord, Amélie étudie.",
+  "en": "First, Amélie studies."
+ },
+ "d": {
+  "es": "D’abord, Amélie étudie.",
+  "en": "First, Amélie studies."
+ },
+ "devient": {
+  "es": "Amélie devient nerveuse devant la prof.",
+  "en": "Amélie gets nervous in front of the teacher."
+ },
+ "nerveuse": {
+  "es": "Amélie devient nerveuse devant la prof.",
+  "en": "Amélie gets nervous in front of the teacher."
+ },
+ "devant": {
+  "es": "Amélie devient nerveuse devant la prof.",
+  "en": "Amélie gets nervous in front of the teacher."
+ },
+ "prof": {
+  "es": "Amélie devient nerveuse devant la prof.",
+  "en": "Amélie gets nervous in front of the teacher."
+ },
+ "texte": {
+  "es": "Le texte parle d’un rendez-vous.",
+  "en": "The text is about a date."
+ },
+ "parle": {
+  "es": "Le texte parle d’un rendez-vous.",
+  "en": "The text is about a date."
+ },
+ "rendez-vous": {
+  "es": "Le texte parle d’un rendez-vous.",
+  "en": "The text is about a date."
+ },
+ "il": {
+  "es": "Il n’est pas mauvais.",
+  "en": "It isn't bad."
+ },
+ "pas": {
+  "es": "Il n’est pas mauvais.",
+  "en": "It isn't bad."
+ },
+ "mauvais": {
+  "es": "Il n’est pas mauvais.",
+  "en": "It isn't bad."
+ },
+ "n": {
+  "es": "Il n’est pas mauvais.",
+  "en": "It isn't bad."
+ },
+ "veut": {
+  "es": "Amélie veut une leçon petite,",
+  "en": "Amélie wants a small lesson,"
+ },
+ "leçon": {
+  "es": "Amélie veut une leçon petite,",
+  "en": "Amélie wants a small lesson,"
+ },
+ "petite": {
+  "es": "Amélie veut une leçon petite,",
+  "en": "Amélie wants a small lesson,"
+ },
+ "note": {
+  "es": "pas une note nouvelle écrite par les autres.",
+  "en": "not a new note written by others."
+ },
+ "nouvelle": {
+  "es": "pas une note nouvelle écrite par les autres.",
+  "en": "not a new note written by others."
+ },
+ "écrite": {
+  "es": "pas une note nouvelle écrite par les autres.",
+  "en": "not a new note written by others."
+ },
+ "par": {
+  "es": "pas une note nouvelle écrite par les autres.",
+  "en": "not a new note written by others."
+ },
+ "autres": {
+  "es": "pas une note nouvelle écrite par les autres.",
+  "en": "not a new note written by others."
+ },
+ "près": {
+  "es": "Sophie reste près de l’école",
+  "en": "Sophie stays near the school"
+ },
+ "école": {
+  "es": "Sophie reste près de l’école",
+  "en": "Sophie stays near the school"
+ },
+ "sans": {
+  "es": "sans prendre le crayon.",
+  "en": "without taking the pencil."
+ },
+ "prendre": {
+  "es": "sans prendre le crayon.",
+  "en": "without taking the pencil."
+ },
+ "crayon": {
+  "es": "sans prendre le crayon.",
+  "en": "without taking the pencil."
+ },
+ "matière": {
+  "es": "La matière reste simple,",
+  "en": "The subject stays simple,"
+ },
+ "simple": {
+  "es": "La matière reste simple,",
+  "en": "The subject stays simple,"
+ },
+ "mais": {
+  "es": "mais la voix d’Amélie tremble.",
+  "en": "but Amélie's voice shakes."
+ },
+ "voix": {
+  "es": "mais la voix d’Amélie tremble.",
+  "en": "but Amélie's voice shakes."
+ },
+ "tremble": {
+  "es": "mais la voix d’Amélie tremble.",
+  "en": "but Amélie's voice shakes."
+ },
+ "lève": {
+  "es": "Amélie lève la main.",
+  "en": "Amélie raises her hand."
+ },
+ "main": {
+  "es": "Amélie lève la main.",
+  "en": "Amélie raises her hand."
+ },
+ "veux": {
+  "es": "Je veux demander une chose.",
+  "en": "I want to ask one thing."
+ },
+ "demander": {
+  "es": "Je veux demander une chose.",
+  "en": "I want to ask one thing."
+ },
+ "chose": {
+  "es": "Je veux demander une chose.",
+  "en": "I want to ask one thing."
+ },
+ "on": {
+  "es": "On comprend?",
+  "en": "Can people understand it?"
+ },
+ "comprend": {
+  "es": "On comprend?",
+  "en": "Can people understand it?"
+ },
+ "répond": {
+  "es": "Sophie répond:",
+  "en": "Sophie replies:"
+ },
+ "oui": {
+  "es": "Oui.",
+  "en": "Yes."
+ },
+ "question": {
+  "es": "La question est claire.",
+  "en": "The question is clear."
+ },
+ "claire": {
+  "es": "La question est claire.",
+  "en": "The question is clear."
+ },
+ "seulement": {
+  "es": "Je regarde seulement le sens.",
+  "en": "I only look at the meaning."
+ },
+ "sens": {
+  "es": "Je regarde seulement le sens.",
+  "en": "I only look at the meaning."
+ },
+ "pose": {
+  "es": "Marc pose le stylo.",
+  "en": "Marc puts down the pen."
+ },
+ "stylo": {
+  "es": "Marc pose le stylo.",
+  "en": "Marc puts down the pen."
+ },
+ "élève": {
+  "es": "Un élève adulte passe près du tableau",
+  "en": "An adult student walks past the board"
+ },
+ "adulte": {
+  "es": "Un élève adulte passe près du tableau",
+  "en": "An adult student walks past the board"
+ },
+ "passe": {
+  "es": "Un élève adulte passe près du tableau",
+  "en": "An adult student walks past the board"
+ },
+ "tableau": {
+  "es": "Un élève adulte passe près du tableau",
+  "en": "An adult student walks past the board"
+ },
+ "avec": {
+  "es": "avec une craie.",
+  "en": "with a piece of chalk."
+ },
+ "craie": {
+  "es": "avec une craie.",
+  "en": "with a piece of chalk."
+ },
+ "sourit": {
+  "es": "Sophie sourit.",
+  "en": "Sophie smiles."
+ },
+ "tu": {
+  "es": "Tu peux travailler avec cette phrase,",
+  "en": "You can work with this sentence,"
+ },
+ "travailler": {
+  "es": "Tu peux travailler avec cette phrase,",
+  "en": "You can work with this sentence,"
+ },
+ "garder": {
+  "es": "et tu peux la garder.",
+  "en": "and you can keep it."
+ },
+ "alors": {
+  "es": "Alors je la garde.",
+  "en": "Then I'll keep it."
+ },
+ "comprends": {
+  "es": "Je comprends.",
+  "en": "I understand."
+ },
+ "elle": {
+  "es": "Elle perd la version parfaite,",
+  "en": "She loses the perfect version,"
+ },
+ "perd": {
+  "es": "Elle perd la version parfaite,",
+  "en": "She loses the perfect version,"
+ },
+ "version": {
+  "es": "Elle perd la version parfaite,",
+  "en": "She loses the perfect version,"
+ },
+ "parfaite": {
+  "es": "Elle perd la version parfaite,",
+  "en": "She loses the perfect version,"
+ }
+}

@@ -1,0 +1,370 @@
+{
+ "avant": {
+  "es": "Avant le retour",
+  "en": "Before the return"
+ },
+ "retour": {
+  "es": "Avant le retour",
+  "en": "Before the return"
+ },
+ "billet": {
+  "es": "Le billet d'Olivier est",
+  "en": "Olivier's ticket is"
+ },
+ "d": {
+  "es": "Le billet d'Olivier est",
+  "en": "Olivier's ticket is"
+ },
+ "est": {
+  "es": "Le billet d'Olivier est",
+  "en": "Olivier's ticket is"
+ },
+ "sur": {
+  "es": "sur la table du café,",
+  "en": "on the café table,"
+ },
+ "table": {
+  "es": "sur la table du café,",
+  "en": "on the café table,"
+ },
+ "café": {
+  "es": "sur la table du café,",
+  "en": "on the café table,"
+ },
+ "pour": {
+  "es": "pour son retour.",
+  "en": "for his return."
+ },
+ "son": {
+  "es": "pour son retour.",
+  "en": "for his return."
+ },
+ "arrive": {
+  "es": "Marc arrive avec lui",
+  "en": "Marc arrives with him"
+ },
+ "avec": {
+  "es": "Marc arrive avec lui",
+  "en": "Marc arrives with him"
+ },
+ "lui": {
+  "es": "Marc arrive avec lui",
+  "en": "Marc arrives with him"
+ },
+ "et": {
+  "es": "et une nouvelle heure.",
+  "en": "and a new time."
+ },
+ "nouvelle": {
+  "es": "et une nouvelle heure.",
+  "en": "and a new time."
+ },
+ "heure": {
+  "es": "et une nouvelle heure.",
+  "en": "and a new time."
+ },
+ "je": {
+  "es": "Je dois l'aider encore",
+  "en": "I have to help him again"
+ },
+ "dois": {
+  "es": "Je dois l'aider encore",
+  "en": "I have to help him again"
+ },
+ "aider": {
+  "es": "Je dois l'aider encore",
+  "en": "I have to help him again"
+ },
+ "encore": {
+  "es": "Je dois l'aider encore",
+  "en": "I have to help him again"
+ },
+ "explique": {
+  "es": "explique Marc.",
+  "en": "Marc explains."
+ },
+ "touche": {
+  "es": "Amélie touche le billet, puis demande:",
+  "en": "Amélie touches the ticket, then asks:"
+ },
+ "puis": {
+  "es": "Amélie touche le billet, puis demande:",
+  "en": "Amélie touches the ticket, then asks:"
+ },
+ "demande": {
+  "es": "Amélie touche le billet, puis demande:",
+  "en": "Amélie touches the ticket, then asks:"
+ },
+ "notre": {
+  "es": "Notre plan facile part sans moi?",
+  "en": "Our easy plan leaves without me?"
+ },
+ "plan": {
+  "es": "Notre plan facile part sans moi?",
+  "en": "Our easy plan leaves without me?"
+ },
+ "facile": {
+  "es": "Notre plan facile part sans moi?",
+  "en": "Our easy plan leaves without me?"
+ },
+ "part": {
+  "es": "Notre plan facile part sans moi?",
+  "en": "Our easy plan leaves without me?"
+ },
+ "sans": {
+  "es": "Notre plan facile part sans moi?",
+  "en": "Our easy plan leaves without me?"
+ },
+ "moi": {
+  "es": "Notre plan facile part sans moi?",
+  "en": "Our easy plan leaves without me?"
+ },
+ "baisse": {
+  "es": "Olivier baisse les yeux.",
+  "en": "Olivier looks down."
+ },
+ "yeux": {
+  "es": "Olivier baisse les yeux.",
+  "en": "Olivier looks down."
+ },
+ "il": {
+  "es": "Il y a un autre voyage long",
+  "en": "There's another long trip"
+ },
+ "y": {
+  "es": "Il y a un autre voyage long",
+  "en": "There's another long trip"
+ },
+ "a": {
+  "es": "Il y a un autre voyage long",
+  "en": "There's another long trip"
+ },
+ "autre": {
+  "es": "Il y a un autre voyage long",
+  "en": "There's another long trip"
+ },
+ "voyage": {
+  "es": "Il y a un autre voyage long",
+  "en": "There's another long trip"
+ },
+ "long": {
+  "es": "Il y a un autre voyage long",
+  "en": "There's another long trip"
+ },
+ "à": {
+  "es": "à vingt heures.",
+  "en": "at eight p.m."
+ },
+ "heures": {
+  "es": "à vingt heures.",
+  "en": "at eight p.m."
+ },
+ "cou": {
+  "es": "Le cou d'Amélie pique",
+  "en": "Amélie's neck prickles"
+ },
+ "pique": {
+  "es": "Le cou d'Amélie pique",
+  "en": "Amélie's neck prickles"
+ },
+ "parce": {
+  "es": "parce qu'elle veut protester",
+  "en": "because she wants to protest"
+ },
+ "elle": {
+  "es": "parce qu'elle veut protester",
+  "en": "because she wants to protest"
+ },
+ "veut": {
+  "es": "parce qu'elle veut protester",
+  "en": "because she wants to protest"
+ },
+ "protester": {
+  "es": "parce qu'elle veut protester",
+  "en": "because she wants to protest"
+ },
+ "rester": {
+  "es": "et rester bonne amie.",
+  "en": "and stay a good friend."
+ },
+ "bonne": {
+  "es": "et rester bonne amie.",
+  "en": "and stay a good friend."
+ },
+ "amie": {
+  "es": "et rester bonne amie.",
+  "en": "and stay a good friend."
+ },
+ "boit": {
+  "es": "Elle boit de l'eau et regarde Marc.",
+  "en": "She drinks some water and looks at Marc."
+ },
+ "de": {
+  "es": "Elle boit de l'eau et regarde Marc.",
+  "en": "She drinks some water and looks at Marc."
+ },
+ "eau": {
+  "es": "Elle boit de l'eau et regarde Marc.",
+  "en": "She drinks some water and looks at Marc."
+ },
+ "regarde": {
+  "es": "Elle boit de l'eau et regarde Marc.",
+  "en": "She drinks some water and looks at Marc."
+ },
+ "pense": {
+  "es": "Elle pense à la route.",
+  "en": "She thinks about the road."
+ },
+ "route": {
+  "es": "Elle pense à la route.",
+  "en": "She thinks about the road."
+ },
+ "tu": {
+  "es": "Tu changes souvent",
+  "en": "You change things often"
+ },
+ "changes": {
+  "es": "Tu changes souvent",
+  "en": "You change things often"
+ },
+ "souvent": {
+  "es": "Tu changes souvent",
+  "en": "You change things often"
+ },
+ "souffle": {
+  "es": "souffle Amélie.",
+  "en": "Amélie whispers."
+ },
+ "murmure": {
+  "es": "Marc murmure:",
+  "en": "Marc murmurs:"
+ },
+ "sais": {
+  "es": "Je sais.",
+  "en": "I know."
+ },
+ "recule": {
+  "es": "Olivier recule vers la porte.",
+  "en": "Olivier steps back toward the door."
+ },
+ "vers": {
+  "es": "Olivier recule vers la porte.",
+  "en": "Olivier steps back toward the door."
+ },
+ "porte": {
+  "es": "Olivier recule vers la porte.",
+  "en": "Olivier steps back toward the door."
+ },
+ "peux": {
+  "es": "Je peux partir.",
+  "en": "I can leave."
+ },
+ "partir": {
+  "es": "Je peux partir.",
+  "en": "I can leave."
+ },
+ "dehors": {
+  "es": "Dehors, le vent froid et sec passe.",
+  "en": "Outside, the cold, dry wind blows by."
+ },
+ "vent": {
+  "es": "Dehors, le vent froid et sec passe.",
+  "en": "Outside, the cold, dry wind blows by."
+ },
+ "froid": {
+  "es": "Dehors, le vent froid et sec passe.",
+  "en": "Outside, the cold, dry wind blows by."
+ },
+ "sec": {
+  "es": "Dehors, le vent froid et sec passe.",
+  "en": "Outside, the cold, dry wind blows by."
+ },
+ "passe": {
+  "es": "Dehors, le vent froid et sec passe.",
+  "en": "Outside, the cold, dry wind blows by."
+ },
+ "réponse": {
+  "es": "Avant la réponse,",
+  "en": "Before the answer,"
+ },
+ "arrête": {
+  "es": "Amélie l'arrête d'une main.",
+  "en": "Amélie stops him with a hand."
+ },
+ "main": {
+  "es": "Amélie l'arrête d'une main.",
+  "en": "Amélie stops him with a hand."
+ },
+ "non": {
+  "es": "Non, reste.",
+  "en": "No, stay."
+ },
+ "reste": {
+  "es": "Non, reste.",
+  "en": "No, stay."
+ },
+ "mais": {
+  "es": "Mais on va dire les changements avant.",
+  "en": "But we'll say the changes beforehand."
+ },
+ "on": {
+  "es": "Mais on va dire les changements avant.",
+  "en": "But we'll say the changes beforehand."
+ },
+ "va": {
+  "es": "Mais on va dire les changements avant.",
+  "en": "But we'll say the changes beforehand."
+ },
+ "dire": {
+  "es": "Mais on va dire les changements avant.",
+  "en": "But we'll say the changes beforehand."
+ },
+ "changements": {
+  "es": "Mais on va dire les changements avant.",
+  "en": "But we'll say the changes beforehand."
+ },
+ "écrit": {
+  "es": "Marc écrit la règle sur le billet:",
+  "en": "Marc writes the rule on the ticket:"
+ },
+ "règle": {
+  "es": "Marc écrit la règle sur le billet:",
+  "en": "Marc writes the rule on the ticket:"
+ },
+ "pas": {
+  "es": "Avant, pas pendant.",
+  "en": "Before, not during."
+ },
+ "pendant": {
+  "es": "Avant, pas pendant.",
+  "en": "Before, not during."
+ },
+ "hoche": {
+  "es": "Amélie hoche la tête.",
+  "en": "Amélie nods."
+ },
+ "tête": {
+  "es": "Amélie hoche la tête.",
+  "en": "Amélie nods."
+ },
+ "nous": {
+  "es": "Pour nous trois.",
+  "en": "For the three of us."
+ },
+ "revient": {
+  "es": "Olivier revient à la table,",
+  "en": "Olivier comes back to the table,"
+ },
+ "ils": {
+  "es": "et ils attendent vingt heures ensemble.",
+  "en": "and they wait for eight p.m. together."
+ },
+ "attendent": {
+  "es": "et ils attendent vingt heures ensemble.",
+  "en": "and they wait for eight p.m. together."
+ },
+ "ensemble": {
+  "es": "et ils attendent vingt heures ensemble.",
+  "en": "and they wait for eight p.m. together."
+ }
+}

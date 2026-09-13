@@ -1,0 +1,342 @@
+{
+ "carte": {
+  "es": "La carte du doute",
+  "en": "The map of doubt"
+ },
+ "doute": {
+  "es": "La carte du doute",
+  "en": "The map of doubt"
+ },
+ "devant": {
+  "es": "Devant le musée, Sophie montre une carte.",
+  "en": "Outside the museum, Sophie shows a map."
+ },
+ "musée": {
+  "es": "Devant le musée, Sophie montre une carte.",
+  "en": "Outside the museum, Sophie shows a map."
+ },
+ "montre": {
+  "es": "Devant le musée, Sophie montre une carte.",
+  "en": "Outside the museum, Sophie shows a map."
+ },
+ "écoute": {
+  "es": "Amélie écoute avec Marc.",
+  "en": "Amélie listens with Marc."
+ },
+ "avec": {
+  "es": "Amélie écoute avec Marc.",
+  "en": "Amélie listens with Marc."
+ },
+ "lumière": {
+  "es": "La lumière tombe sur le fleuve",
+  "en": "The light falls on the river"
+ },
+ "tombe": {
+  "es": "La lumière tombe sur le fleuve",
+  "en": "The light falls on the river"
+ },
+ "sur": {
+  "es": "La lumière tombe sur le fleuve",
+  "en": "The light falls on the river"
+ },
+ "fleuve": {
+  "es": "La lumière tombe sur le fleuve",
+  "en": "The light falls on the river"
+ },
+ "et": {
+  "es": "et la mer dessinée.",
+  "en": "and the drawn sea."
+ },
+ "mer": {
+  "es": "et la mer dessinée.",
+  "en": "and the drawn sea."
+ },
+ "dessinée": {
+  "es": "et la mer dessinée.",
+  "en": "and the drawn sea."
+ },
+ "on": {
+  "es": "On passe par la banque,",
+  "en": "We go by the bank,"
+ },
+ "passe": {
+  "es": "On passe par la banque,",
+  "en": "We go by the bank,"
+ },
+ "par": {
+  "es": "On passe par la banque,",
+  "en": "We go by the bank,"
+ },
+ "banque": {
+  "es": "On passe par la banque,",
+  "en": "We go by the bank,"
+ },
+ "puis": {
+  "es": "puis par le théâtre",
+  "en": "then by the theater"
+ },
+ "théâtre": {
+  "es": "puis par le théâtre",
+  "en": "then by the theater"
+ },
+ "explique": {
+  "es": "explique Sophie.",
+  "en": "Sophie explains."
+ },
+ "elle": {
+  "es": "Elle ajoute:",
+  "en": "She adds:"
+ },
+ "ajoute": {
+  "es": "Elle ajoute:",
+  "en": "She adds:"
+ },
+ "après": {
+  "es": "Après, on va près de la forêt",
+  "en": "Afterwards, we go near the forest"
+ },
+ "va": {
+  "es": "Après, on va près de la forêt",
+  "en": "Afterwards, we go near the forest"
+ },
+ "près": {
+  "es": "Après, on va près de la forêt",
+  "en": "Afterwards, we go near the forest"
+ },
+ "de": {
+  "es": "Après, on va près de la forêt",
+  "en": "Afterwards, we go near the forest"
+ },
+ "forêt": {
+  "es": "Après, on va près de la forêt",
+  "en": "Afterwards, we go near the forest"
+ },
+ "église": {
+  "es": "et de l’église.",
+  "en": "and the church."
+ },
+ "tout": {
+  "es": "Tout semble calme.",
+  "en": "Everything seems calm."
+ },
+ "semble": {
+  "es": "Tout semble calme.",
+  "en": "Everything seems calm."
+ },
+ "calme": {
+  "es": "Tout semble calme.",
+  "en": "Everything seems calm."
+ },
+ "voit": {
+  "es": "Elle voit la plage, la montagne",
+  "en": "She sees the beach, the mountain"
+ },
+ "plage": {
+  "es": "Elle voit la plage, la montagne",
+  "en": "She sees the beach, the mountain"
+ },
+ "montagne": {
+  "es": "Elle voit la plage, la montagne",
+  "en": "She sees the beach, the mountain"
+ },
+ "rivière": {
+  "es": "et la rivière sur le plan,",
+  "en": "and the river on the map,"
+ },
+ "plan": {
+  "es": "et la rivière sur le plan,",
+  "en": "and the river on the map,"
+ },
+ "mais": {
+  "es": "mais le chemin se mélange dans sa tête.",
+  "en": "but the route gets mixed up in her head."
+ },
+ "chemin": {
+  "es": "mais le chemin se mélange dans sa tête.",
+  "en": "but the route gets mixed up in her head."
+ },
+ "se": {
+  "es": "mais le chemin se mélange dans sa tête.",
+  "en": "but the route gets mixed up in her head."
+ },
+ "mélange": {
+  "es": "mais le chemin se mélange dans sa tête.",
+  "en": "but the route gets mixed up in her head."
+ },
+ "dans": {
+  "es": "mais le chemin se mélange dans sa tête.",
+  "en": "but the route gets mixed up in her head."
+ },
+ "sa": {
+  "es": "mais le chemin se mélange dans sa tête.",
+  "en": "but the route gets mixed up in her head."
+ },
+ "tête": {
+  "es": "mais le chemin se mélange dans sa tête.",
+  "en": "but the route gets mixed up in her head."
+ },
+ "papier": {
+  "es": "Le papier reste ouvert.",
+  "en": "The paper stays open."
+ },
+ "reste": {
+  "es": "Le papier reste ouvert.",
+  "en": "The paper stays open."
+ },
+ "ouvert": {
+  "es": "Le papier reste ouvert.",
+  "en": "The paper stays open."
+ },
+ "coin": {
+  "es": "Amélie montre un coin.",
+  "en": "Amélie points to a corner."
+ },
+ "je": {
+  "es": "Je peux demander encore?",
+  "en": "Can I ask again?"
+ },
+ "peux": {
+  "es": "Je peux demander encore?",
+  "en": "Can I ask again?"
+ },
+ "demander": {
+  "es": "Je peux demander encore?",
+  "en": "Can I ask again?"
+ },
+ "encore": {
+  "es": "Je peux demander encore?",
+  "en": "Can I ask again?"
+ },
+ "ne": {
+  "es": "Je ne comprends pas le lac ici,",
+  "en": "I don't understand the lake here,"
+ },
+ "comprends": {
+  "es": "Je ne comprends pas le lac ici,",
+  "en": "I don't understand the lake here,"
+ },
+ "pas": {
+  "es": "Je ne comprends pas le lac ici,",
+  "en": "I don't understand the lake here,"
+ },
+ "lac": {
+  "es": "Je ne comprends pas le lac ici,",
+  "en": "I don't understand the lake here,"
+ },
+ "ici": {
+  "es": "Je ne comprends pas le lac ici,",
+  "en": "I don't understand the lake here,"
+ },
+ "ni": {
+  "es": "ni le port, ni le château,",
+  "en": "or the harbor, or the castle,"
+ },
+ "port": {
+  "es": "ni le port, ni le château,",
+  "en": "or the harbor, or the castle,"
+ },
+ "château": {
+  "es": "ni le port, ni le château,",
+  "en": "or the harbor, or the castle,"
+ },
+ "aéroport": {
+  "es": "ni l’aéroport.",
+  "en": "or the airport."
+ },
+ "répond": {
+  "es": "Sophie répond:",
+  "en": "Sophie replies:"
+ },
+ "oui": {
+  "es": "Oui, on regarde ensemble.",
+  "en": "Yes, let's look together."
+ },
+ "regarde": {
+  "es": "Oui, on regarde ensemble.",
+  "en": "Yes, let's look together."
+ },
+ "ensemble": {
+  "es": "Oui, on regarde ensemble.",
+  "en": "Yes, let's look together."
+ },
+ "parle": {
+  "es": "Marc ne parle pas pour elle.",
+  "en": "Marc doesn't speak for her."
+ },
+ "pour": {
+  "es": "Marc ne parle pas pour elle.",
+  "en": "Marc doesn't speak for her."
+ },
+ "recommence": {
+  "es": "Sophie recommence avec le doigt:",
+  "en": "Sophie starts again with her finger:"
+ },
+ "doigt": {
+  "es": "Sophie recommence avec le doigt:",
+  "en": "Sophie starts again with her finger:"
+ },
+ "traverse": {
+  "es": "le chemin traverse le village,",
+  "en": "the route crosses the village,"
+ },
+ "village": {
+  "es": "le chemin traverse le village,",
+  "en": "the route crosses the village,"
+ },
+ "à": {
+  "es": "passe à côté d’un champ,",
+  "en": "passes by a field,"
+ },
+ "côté": {
+  "es": "passe à côté d’un champ,",
+  "en": "passes by a field,"
+ },
+ "d": {
+  "es": "passe à côté d’un champ,",
+  "en": "passes by a field,"
+ },
+ "champ": {
+  "es": "passe à côté d’un champ,",
+  "en": "passes by a field,"
+ },
+ "arrive": {
+  "es": "puis arrive à la ferme,",
+  "en": "then reaches the farm,"
+ },
+ "ferme": {
+  "es": "puis arrive à la ferme,",
+  "en": "then reaches the farm,"
+ },
+ "boucherie": {
+  "es": "près de la boucherie.",
+  "en": "near the butcher's shop."
+ },
+ "accord": {
+  "es": "D’accord, maintenant je comprends",
+  "en": "Okay, now I understand"
+ },
+ "maintenant": {
+  "es": "D’accord, maintenant je comprends",
+  "en": "Okay, now I understand"
+ },
+ "dit": {
+  "es": "dit Amélie.",
+  "en": "Amélie says."
+ },
+ "plie": {
+  "es": "Elle plie la carte et part devant,",
+  "en": "She folds the map and sets off ahead,"
+ },
+ "part": {
+  "es": "Elle plie la carte et part devant,",
+  "en": "She folds the map and sets off ahead,"
+ },
+ "vers": {
+  "es": "vers la tour.",
+  "en": "toward the tower."
+ },
+ "tour": {
+  "es": "vers la tour.",
+  "en": "toward the tower."
+ }
+}

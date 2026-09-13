@@ -1,0 +1,310 @@
+{
+ "mardi": {
+  "es": "Le mardi choisi",
+  "en": "The chosen Tuesday"
+ },
+ "choisi": {
+  "es": "Le mardi choisi",
+  "en": "The chosen Tuesday"
+ },
+ "est": {
+  "es": "Olivier est un ami organisé du groupe.",
+  "en": "Olivier is an organized friend in the group."
+ },
+ "ami": {
+  "es": "Olivier est un ami organisé du groupe.",
+  "en": "Olivier is an organized friend in the group."
+ },
+ "organisé": {
+  "es": "Olivier est un ami organisé du groupe.",
+  "en": "Olivier is an organized friend in the group."
+ },
+ "groupe": {
+  "es": "Olivier est un ami organisé du groupe.",
+  "en": "Olivier is an organized friend in the group."
+ },
+ "amie": {
+  "es": "Amélie, une amie d'Olivier,",
+  "en": "Amélie, a friend of Olivier's,"
+ },
+ "d": {
+  "es": "Amélie, une amie d'Olivier,",
+  "en": "Amélie, a friend of Olivier's,"
+ },
+ "cherche": {
+  "es": "cherche un jour simple pour le groupe.",
+  "en": "looks for a simple day for the group."
+ },
+ "jour": {
+  "es": "cherche un jour simple pour le groupe.",
+  "en": "looks for a simple day for the group."
+ },
+ "simple": {
+  "es": "cherche un jour simple pour le groupe.",
+  "en": "looks for a simple day for the group."
+ },
+ "pour": {
+  "es": "cherche un jour simple pour le groupe.",
+  "en": "looks for a simple day for the group."
+ },
+ "je": {
+  "es": "Je cherche un jour",
+  "en": "I'm looking for a day"
+ },
+ "dit-elle": {
+  "es": "dit-elle.",
+  "en": "she says."
+ },
+ "femme": {
+  "es": "La femme pose son papier blanc",
+  "en": "The woman sets her white paper"
+ },
+ "pose": {
+  "es": "La femme pose son papier blanc",
+  "en": "The woman sets her white paper"
+ },
+ "son": {
+  "es": "La femme pose son papier blanc",
+  "en": "The woman sets her white paper"
+ },
+ "papier": {
+  "es": "La femme pose son papier blanc",
+  "en": "The woman sets her white paper"
+ },
+ "blanc": {
+  "es": "La femme pose son papier blanc",
+  "en": "The woman sets her white paper"
+ },
+ "sur": {
+  "es": "sur le bureau calme.",
+  "en": "on the quiet desk."
+ },
+ "bureau": {
+  "es": "sur le bureau calme.",
+  "en": "on the quiet desk."
+ },
+ "calme": {
+  "es": "sur le bureau calme.",
+  "en": "on the quiet desk."
+ },
+ "veux": {
+  "es": "Je veux un jour simple",
+  "en": "I want a simple day"
+ },
+ "demande": {
+  "es": "demande Amélie.",
+  "en": "Amélie asks."
+ },
+ "montre": {
+  "es": "Olivier montre deux mots.",
+  "en": "Olivier shows two words."
+ },
+ "mots": {
+  "es": "Olivier montre deux mots.",
+  "en": "Olivier shows two words."
+ },
+ "ou": {
+  "es": "Mardi ou vendredi.",
+  "en": "Tuesday or Friday."
+ },
+ "vendredi": {
+  "es": "Mardi ou vendredi.",
+  "en": "Tuesday or Friday."
+ },
+ "sent": {
+  "es": "Amélie sent sa nuque dure.",
+  "en": "Amélie feels the back of her neck stiff."
+ },
+ "sa": {
+  "es": "Amélie sent sa nuque dure.",
+  "en": "Amélie feels the back of her neck stiff."
+ },
+ "nuque": {
+  "es": "Amélie sent sa nuque dure.",
+  "en": "Amélie feels the back of her neck stiff."
+ },
+ "dure": {
+  "es": "Amélie sent sa nuque dure.",
+  "en": "Amélie feels the back of her neck stiff."
+ },
+ "elle": {
+  "es": "Vendredi, elle a promis un après-midi libre",
+  "en": "On Friday, she promised a free afternoon"
+ },
+ "a": {
+  "es": "Vendredi, elle a promis un après-midi libre",
+  "en": "On Friday, she promised a free afternoon"
+ },
+ "promis": {
+  "es": "Vendredi, elle a promis un après-midi libre",
+  "en": "On Friday, she promised a free afternoon"
+ },
+ "après-midi": {
+  "es": "Vendredi, elle a promis un après-midi libre",
+  "en": "On Friday, she promised a free afternoon"
+ },
+ "libre": {
+  "es": "Vendredi, elle a promis un après-midi libre",
+  "en": "On Friday, she promised a free afternoon"
+ },
+ "à": {
+  "es": "à une amie.",
+  "en": "to a friend."
+ },
+ "va": {
+  "es": "Mardi, elle va fermer son café plus tôt.",
+  "en": "On Tuesday, she'll close her café earlier."
+ },
+ "fermer": {
+  "es": "Mardi, elle va fermer son café plus tôt.",
+  "en": "On Tuesday, she'll close her café earlier."
+ },
+ "café": {
+  "es": "Mardi, elle va fermer son café plus tôt.",
+  "en": "On Tuesday, she'll close her café earlier."
+ },
+ "plus": {
+  "es": "Mardi, elle va fermer son café plus tôt.",
+  "en": "On Tuesday, she'll close her café earlier."
+ },
+ "tôt": {
+  "es": "Mardi, elle va fermer son café plus tôt.",
+  "en": "On Tuesday, she'll close her café earlier."
+ },
+ "semaine": {
+  "es": "Cette semaine est difficile,",
+  "en": "This week is hard,"
+ },
+ "difficile": {
+  "es": "Cette semaine est difficile,",
+  "en": "This week is hard,"
+ },
+ "et": {
+  "es": "et elle le sait.",
+  "en": "and she knows it."
+ },
+ "sait": {
+  "es": "et elle le sait.",
+  "en": "and she knows it."
+ },
+ "respire": {
+  "es": "Elle respire très lentement devant le papier.",
+  "en": "She breathes very slowly in front of the paper."
+ },
+ "très": {
+  "es": "Elle respire très lentement devant le papier.",
+  "en": "She breathes very slowly in front of the paper."
+ },
+ "lentement": {
+  "es": "Elle respire très lentement devant le papier.",
+  "en": "She breathes very slowly in front of the paper."
+ },
+ "devant": {
+  "es": "Elle respire très lentement devant le papier.",
+  "en": "She breathes very slowly in front of the paper."
+ },
+ "ici": {
+  "es": "Ici, maintenant, Olivier attend une seconde.",
+  "en": "Here, now, Olivier waits a second."
+ },
+ "maintenant": {
+  "es": "Ici, maintenant, Olivier attend une seconde.",
+  "en": "Here, now, Olivier waits a second."
+ },
+ "attend": {
+  "es": "Ici, maintenant, Olivier attend une seconde.",
+  "en": "Here, now, Olivier waits a second."
+ },
+ "seconde": {
+  "es": "Ici, maintenant, Olivier attend une seconde.",
+  "en": "Here, now, Olivier waits a second."
+ },
+ "tu": {
+  "es": "Tu peux choisir sans tout expliquer.",
+  "en": "You can choose without explaining everything."
+ },
+ "peux": {
+  "es": "Tu peux choisir sans tout expliquer.",
+  "en": "You can choose without explaining everything."
+ },
+ "choisir": {
+  "es": "Tu peux choisir sans tout expliquer.",
+  "en": "You can choose without explaining everything."
+ },
+ "sans": {
+  "es": "Tu peux choisir sans tout expliquer.",
+  "en": "You can choose without explaining everything."
+ },
+ "tout": {
+  "es": "Tu peux choisir sans tout expliquer.",
+  "en": "You can choose without explaining everything."
+ },
+ "expliquer": {
+  "es": "Tu peux choisir sans tout expliquer.",
+  "en": "You can choose without explaining everything."
+ },
+ "plie": {
+  "es": "Amélie plie le papier.",
+  "en": "Amélie folds the paper."
+ },
+ "peut-être": {
+  "es": "Peut-être que c'est assez.",
+  "en": "Maybe that's enough."
+ },
+ "que": {
+  "es": "Peut-être que c'est assez.",
+  "en": "Maybe that's enough."
+ },
+ "assez": {
+  "es": "Peut-être que c'est assez.",
+  "en": "Maybe that's enough."
+ },
+ "répond-elle": {
+  "es": "répond-elle.",
+  "en": "she replies."
+ },
+ "mais": {
+  "es": "Mais ne dis pas",
+  "en": "But don't say"
+ },
+ "ne": {
+  "es": "Mais ne dis pas",
+  "en": "But don't say"
+ },
+ "dis": {
+  "es": "Mais ne dis pas",
+  "en": "But don't say"
+ },
+ "pas": {
+  "es": "Mais ne dis pas",
+  "en": "But don't say"
+ },
+ "beau": {
+  "es": "que c'est un beau plan.",
+  "en": "that it's a great plan."
+ },
+ "plan": {
+  "es": "que c'est un beau plan.",
+  "en": "that it's a great plan."
+ },
+ "écrit": {
+  "es": "Olivier écrit mardi sur le papier.",
+  "en": "Olivier writes Tuesday on the paper."
+ },
+ "alors": {
+  "es": "Alors c'est mardi, pas parfait.",
+  "en": "So it's Tuesday, not perfect."
+ },
+ "parfait": {
+  "es": "Alors c'est mardi, pas parfait.",
+  "en": "So it's Tuesday, not perfect."
+ },
+ "perd": {
+  "es": "Amélie perd son après-midi libre,",
+  "en": "Amélie loses her free afternoon,"
+ },
+ "garde": {
+  "es": "mais elle garde le jour.",
+  "en": "but she keeps the day."
+ }
+}

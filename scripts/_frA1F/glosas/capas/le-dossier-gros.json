@@ -1,0 +1,346 @@
+{
+ "dossier": {
+  "es": "Le dossier gros",
+  "en": "The fat file"
+ },
+ "gros": {
+  "es": "Le dossier gros",
+  "en": "The fat file"
+ },
+ "dans": {
+  "es": "Dans un café du canal,",
+  "en": "In a café by the canal,"
+ },
+ "café": {
+  "es": "Dans un café du canal,",
+  "en": "In a café by the canal,"
+ },
+ "canal": {
+  "es": "Dans un café du canal,",
+  "en": "In a café by the canal,"
+ },
+ "met": {
+  "es": "Amélie met les idées sur la table.",
+  "en": "Amélie puts the ideas on the table."
+ },
+ "idées": {
+  "es": "Amélie met les idées sur la table.",
+  "en": "Amélie puts the ideas on the table."
+ },
+ "sur": {
+  "es": "Amélie met les idées sur la table.",
+  "en": "Amélie puts the ideas on the table."
+ },
+ "table": {
+  "es": "Amélie met les idées sur la table.",
+  "en": "Amélie puts the ideas on the table."
+ },
+ "pose": {
+  "es": "Marc pose une liste, une photo",
+  "en": "Marc sets down a list, a photo"
+ },
+ "liste": {
+  "es": "Marc pose une liste, une photo",
+  "en": "Marc sets down a list, a photo"
+ },
+ "photo": {
+  "es": "Marc pose une liste, une photo",
+  "en": "Marc sets down a list, a photo"
+ },
+ "et": {
+  "es": "et deux enveloppes.",
+  "en": "and two envelopes."
+ },
+ "enveloppes": {
+  "es": "et deux enveloppes.",
+  "en": "and two envelopes."
+ },
+ "devient": {
+  "es": "Le dossier devient trop gros.",
+  "en": "The file gets too fat."
+ },
+ "trop": {
+  "es": "Le dossier devient trop gros.",
+  "en": "The file gets too fat."
+ },
+ "appelle": {
+  "es": "Marc appelle le groupe.",
+  "en": "Marc calls the group."
+ },
+ "groupe": {
+  "es": "Marc appelle le groupe.",
+  "en": "Marc calls the group."
+ },
+ "réunion": {
+  "es": "La réunion du gâteau passe à quinze heures",
+  "en": "The cake meeting moves to three p.m."
+ },
+ "gâteau": {
+  "es": "La réunion du gâteau passe à quinze heures",
+  "en": "The cake meeting moves to three p.m."
+ },
+ "passe": {
+  "es": "La réunion du gâteau passe à quinze heures",
+  "en": "The cake meeting moves to three p.m."
+ },
+ "à": {
+  "es": "La réunion du gâteau passe à quinze heures",
+  "en": "The cake meeting moves to three p.m."
+ },
+ "heures": {
+  "es": "La réunion du gâteau passe à quinze heures",
+  "en": "The cake meeting moves to three p.m."
+ },
+ "annonce-t-il": {
+  "es": "annonce-t-il.",
+  "en": "he announces."
+ },
+ "voit": {
+  "es": "Amélie voit le bus d'une amie",
+  "en": "Amélie sees a friend's bus"
+ },
+ "bus": {
+  "es": "Amélie voit le bus d'une amie",
+  "en": "Amélie sees a friend's bus"
+ },
+ "d": {
+  "es": "Amélie voit le bus d'une amie",
+  "en": "Amélie sees a friend's bus"
+ },
+ "amie": {
+  "es": "Amélie voit le bus d'une amie",
+  "en": "Amélie sees a friend's bus"
+ },
+ "qui": {
+  "es": "qui part bientôt.",
+  "en": "which leaves soon."
+ },
+ "part": {
+  "es": "qui part bientôt.",
+  "en": "which leaves soon."
+ },
+ "bientôt": {
+  "es": "qui part bientôt.",
+  "en": "which leaves soon."
+ },
+ "on": {
+  "es": "On prend tout",
+  "en": "We take everything"
+ },
+ "prend": {
+  "es": "On prend tout",
+  "en": "We take everything"
+ },
+ "tout": {
+  "es": "On prend tout",
+  "en": "We take everything"
+ },
+ "propose": {
+  "es": "propose Marc.",
+  "en": "Marc suggests."
+ },
+ "serre": {
+  "es": "Amélie serre le dossier.",
+  "en": "Amélie grips the file."
+ },
+ "elle": {
+  "es": "Elle se sent petite,",
+  "en": "She feels small,"
+ },
+ "se": {
+  "es": "Elle se sent petite,",
+  "en": "She feels small,"
+ },
+ "sent": {
+  "es": "Elle se sent petite,",
+  "en": "She feels small,"
+ },
+ "petite": {
+  "es": "Elle se sent petite,",
+  "en": "She feels small,"
+ },
+ "parce": {
+  "es": "parce que les autres décident vite.",
+  "en": "because the others decide quickly."
+ },
+ "que": {
+  "es": "parce que les autres décident vite.",
+  "en": "because the others decide quickly."
+ },
+ "autres": {
+  "es": "parce que les autres décident vite.",
+  "en": "because the others decide quickly."
+ },
+ "décident": {
+  "es": "parce que les autres décident vite.",
+  "en": "because the others decide quickly."
+ },
+ "vite": {
+  "es": "parce que les autres décident vite.",
+  "en": "because the others decide quickly."
+ },
+ "non": {
+  "es": "Non, je lis la liste",
+  "en": "No, I'll read the list"
+ },
+ "je": {
+  "es": "Non, je lis la liste",
+  "en": "No, I'll read the list"
+ },
+ "lis": {
+  "es": "Non, je lis la liste",
+  "en": "No, I'll read the list"
+ },
+ "répond-elle": {
+  "es": "répond-elle.",
+  "en": "she replies."
+ },
+ "serveur": {
+  "es": "Le serveur apporte de l'eau fraîche.",
+  "en": "The waiter brings cool water."
+ },
+ "apporte": {
+  "es": "Le serveur apporte de l'eau fraîche.",
+  "en": "The waiter brings cool water."
+ },
+ "de": {
+  "es": "Le serveur apporte de l'eau fraîche.",
+  "en": "The waiter brings cool water."
+ },
+ "eau": {
+  "es": "Le serveur apporte de l'eau fraîche.",
+  "en": "The waiter brings cool water."
+ },
+ "fraîche": {
+  "es": "Le serveur apporte de l'eau fraîche.",
+  "en": "The waiter brings cool water."
+ },
+ "boit": {
+  "es": "Amélie boit une minute calme.",
+  "en": "Amélie drinks for a calm minute."
+ },
+ "minute": {
+  "es": "Amélie boit une minute calme.",
+  "en": "Amélie drinks for a calm minute."
+ },
+ "calme": {
+  "es": "Amélie boit une minute calme.",
+  "en": "Amélie drinks for a calm minute."
+ },
+ "j": {
+  "es": "J'ai peur d'oublier quelqu'un,",
+  "en": "I'm afraid of forgetting someone,"
+ },
+ "peur": {
+  "es": "J'ai peur d'oublier quelqu'un,",
+  "en": "I'm afraid of forgetting someone,"
+ },
+ "oublier": {
+  "es": "J'ai peur d'oublier quelqu'un,",
+  "en": "I'm afraid of forgetting someone,"
+ },
+ "quelqu": {
+  "es": "J'ai peur d'oublier quelqu'un,",
+  "en": "I'm afraid of forgetting someone,"
+ },
+ "mais": {
+  "es": "mais je choisis maintenant",
+  "en": "but I'm choosing now"
+ },
+ "choisis": {
+  "es": "mais je choisis maintenant",
+  "en": "but I'm choosing now"
+ },
+ "maintenant": {
+  "es": "mais je choisis maintenant",
+  "en": "but I'm choosing now"
+ },
+ "dit-elle": {
+  "es": "dit-elle.",
+  "en": "she says."
+ },
+ "son": {
+  "es": "Marc pose son stylo et attend.",
+  "en": "Marc puts down his pen and waits."
+ },
+ "stylo": {
+  "es": "Marc pose son stylo et attend.",
+  "en": "Marc puts down his pen and waits."
+ },
+ "attend": {
+  "es": "Marc pose son stylo et attend.",
+  "en": "Marc puts down his pen and waits."
+ },
+ "préfère": {
+  "es": "Amélie préfère une phrase courte:",
+  "en": "Amélie prefers a short sentence:"
+ },
+ "phrase": {
+  "es": "Amélie préfère une phrase courte:",
+  "en": "Amélie prefers a short sentence:"
+ },
+ "courte": {
+  "es": "Amélie préfère une phrase courte:",
+  "en": "Amélie prefers a short sentence:"
+ },
+ "lundi": {
+  "es": "Gâteau lundi, venez si vous pouvez.",
+  "en": "Cake Monday, come if you can."
+ },
+ "venez": {
+  "es": "Gâteau lundi, venez si vous pouvez.",
+  "en": "Cake Monday, come if you can."
+ },
+ "si": {
+  "es": "Gâteau lundi, venez si vous pouvez.",
+  "en": "Cake Monday, come if you can."
+ },
+ "vous": {
+  "es": "Gâteau lundi, venez si vous pouvez.",
+  "en": "Cake Monday, come if you can."
+ },
+ "pouvez": {
+  "es": "Gâteau lundi, venez si vous pouvez.",
+  "en": "Cake Monday, come if you can."
+ },
+ "laisse": {
+  "es": "Elle laisse les enveloppes et garde la photo.",
+  "en": "She leaves the envelopes and keeps the photo."
+ },
+ "garde": {
+  "es": "Elle laisse les enveloppes et garde la photo.",
+  "en": "She leaves the envelopes and keeps the photo."
+ },
+ "est": {
+  "es": "C'est peu",
+  "en": "It's not much"
+ },
+ "peu": {
+  "es": "C'est peu",
+  "en": "It's not much"
+ },
+ "murmure": {
+  "es": "murmure Marc.",
+  "en": "Marc murmurs."
+ },
+ "ferme": {
+  "es": "Amélie ferme le dossier.",
+  "en": "Amélie closes the file."
+ },
+ "oui": {
+  "es": "Oui.",
+  "en": "Yes."
+ },
+ "assez": {
+  "es": "C'est assez pour des amis.",
+  "en": "It's enough for friends."
+ },
+ "pour": {
+  "es": "C'est assez pour des amis.",
+  "en": "It's enough for friends."
+ },
+ "amis": {
+  "es": "C'est assez pour des amis.",
+  "en": "It's enough for friends."
+ }
+}

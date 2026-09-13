@@ -1,0 +1,378 @@
+{
+ "appel": {
+  "es": "L'appel court",
+  "en": "The short call"
+ },
+ "court": {
+  "es": "L'appel court",
+  "en": "The short call"
+ },
+ "son": {
+  "es": "Son appel prêt, Amélie regarde la station",
+  "en": "Her call ready, Amélie looks at the station"
+ },
+ "prêt": {
+  "es": "Son appel prêt, Amélie regarde la station",
+  "en": "Her call ready, Amélie looks at the station"
+ },
+ "regarde": {
+  "es": "Son appel prêt, Amélie regarde la station",
+  "en": "Her call ready, Amélie looks at the station"
+ },
+ "station": {
+  "es": "Son appel prêt, Amélie regarde la station",
+  "en": "Her call ready, Amélie looks at the station"
+ },
+ "par": {
+  "es": "par la vitre du métro avec Marc.",
+  "en": "through the metro window with Marc."
+ },
+ "vitre": {
+  "es": "par la vitre du métro avec Marc.",
+  "en": "through the metro window with Marc."
+ },
+ "métro": {
+  "es": "par la vitre du métro avec Marc.",
+  "en": "through the metro window with Marc."
+ },
+ "avec": {
+  "es": "par la vitre du métro avec Marc.",
+  "en": "through the metro window with Marc."
+ },
+ "ami": {
+  "es": "Marc, un ami d'Amélie, tient la barre.",
+  "en": "Marc, a friend of Amélie's, holds the pole."
+ },
+ "d": {
+  "es": "Marc, un ami d'Amélie, tient la barre.",
+  "en": "Marc, a friend of Amélie's, holds the pole."
+ },
+ "tient": {
+  "es": "Marc, un ami d'Amélie, tient la barre.",
+  "en": "Marc, a friend of Amélie's, holds the pole."
+ },
+ "barre": {
+  "es": "Marc, un ami d'Amélie, tient la barre.",
+  "en": "Marc, a friend of Amélie's, holds the pole."
+ },
+ "attend": {
+  "es": "Olivier attend la réunion de quartier",
+  "en": "Olivier waits for the neighborhood meeting"
+ },
+ "réunion": {
+  "es": "Olivier attend la réunion de quartier",
+  "en": "Olivier waits for the neighborhood meeting"
+ },
+ "de": {
+  "es": "Olivier attend la réunion de quartier",
+  "en": "Olivier waits for the neighborhood meeting"
+ },
+ "quartier": {
+  "es": "Olivier attend la réunion de quartier",
+  "en": "Olivier waits for the neighborhood meeting"
+ },
+ "avant": {
+  "es": "avant le dîner.",
+  "en": "before dinner."
+ },
+ "dîner": {
+  "es": "avant le dîner.",
+  "en": "before dinner."
+ },
+ "on": {
+  "es": "On est en retard",
+  "en": "We're late"
+ },
+ "est": {
+  "es": "On est en retard",
+  "en": "We're late"
+ },
+ "en": {
+  "es": "On est en retard",
+  "en": "We're late"
+ },
+ "retard": {
+  "es": "On est en retard",
+  "en": "We're late"
+ },
+ "souffle": {
+  "es": "souffle Marc.",
+  "en": "Marc whispers."
+ },
+ "wagon": {
+  "es": "Le wagon reste immobile,",
+  "en": "The carriage stays still,"
+ },
+ "reste": {
+  "es": "Le wagon reste immobile,",
+  "en": "The carriage stays still,"
+ },
+ "immobile": {
+  "es": "Le wagon reste immobile,",
+  "en": "The carriage stays still,"
+ },
+ "et": {
+  "es": "et la lumière blanche tremble au-dessus d'eux.",
+  "en": "and the white light flickers above them."
+ },
+ "lumière": {
+  "es": "et la lumière blanche tremble au-dessus d'eux.",
+  "en": "and the white light flickers above them."
+ },
+ "blanche": {
+  "es": "et la lumière blanche tremble au-dessus d'eux.",
+  "en": "and the white light flickers above them."
+ },
+ "tremble": {
+  "es": "et la lumière blanche tremble au-dessus d'eux.",
+  "en": "and the white light flickers above them."
+ },
+ "au-dessus": {
+  "es": "et la lumière blanche tremble au-dessus d'eux.",
+  "en": "and the white light flickers above them."
+ },
+ "eux": {
+  "es": "et la lumière blanche tremble au-dessus d'eux.",
+  "en": "and the white light flickers above them."
+ },
+ "serre": {
+  "es": "Amélie serre son téléphone.",
+  "en": "Amélie grips her phone."
+ },
+ "téléphone": {
+  "es": "Amélie serre son téléphone.",
+  "en": "Amélie grips her phone."
+ },
+ "je": {
+  "es": "Je peux appeler",
+  "en": "I can call"
+ },
+ "peux": {
+  "es": "Je peux appeler",
+  "en": "I can call"
+ },
+ "appeler": {
+  "es": "Je peux appeler",
+  "en": "I can call"
+ },
+ "propose": {
+  "es": "propose Marc.",
+  "en": "Marc offers."
+ },
+ "secoue": {
+  "es": "Amélie secoue la tête.",
+  "en": "Amélie shakes her head."
+ },
+ "tête": {
+  "es": "Amélie secoue la tête.",
+  "en": "Amélie shakes her head."
+ },
+ "non": {
+  "es": "Non.",
+  "en": "No."
+ },
+ "moi": {
+  "es": "C'est moi qui arrive tard aujourd'hui",
+  "en": "I'm the one arriving late today"
+ },
+ "qui": {
+  "es": "C'est moi qui arrive tard aujourd'hui",
+  "en": "I'm the one arriving late today"
+ },
+ "arrive": {
+  "es": "C'est moi qui arrive tard aujourd'hui",
+  "en": "I'm the one arriving late today"
+ },
+ "tard": {
+  "es": "C'est moi qui arrive tard aujourd'hui",
+  "en": "I'm the one arriving late today"
+ },
+ "hui": {
+  "es": "C'est moi qui arrive tard aujourd'hui",
+  "en": "I'm the one arriving late today"
+ },
+ "répond-elle": {
+  "es": "répond-elle.",
+  "en": "she replies."
+ },
+ "elle": {
+  "es": "Elle ne veut pas cacher son heure,",
+  "en": "She doesn't want to hide her time,"
+ },
+ "ne": {
+  "es": "Elle ne veut pas cacher son heure,",
+  "en": "She doesn't want to hide her time,"
+ },
+ "veut": {
+  "es": "Elle ne veut pas cacher son heure,",
+  "en": "She doesn't want to hide her time,"
+ },
+ "pas": {
+  "es": "Elle ne veut pas cacher son heure,",
+  "en": "She doesn't want to hide her time,"
+ },
+ "cacher": {
+  "es": "Elle ne veut pas cacher son heure,",
+  "en": "She doesn't want to hide her time,"
+ },
+ "heure": {
+  "es": "Elle ne veut pas cacher son heure,",
+  "en": "She doesn't want to hide her time,"
+ },
+ "maintenant": {
+  "es": "maintenant ni toujours.",
+  "en": "not now and not ever."
+ },
+ "ni": {
+  "es": "maintenant ni toujours.",
+  "en": "not now and not ever."
+ },
+ "toujours": {
+  "es": "maintenant ni toujours.",
+  "en": "not now and not ever."
+ },
+ "appelle": {
+  "es": "Elle appelle Olivier.",
+  "en": "She calls Olivier."
+ },
+ "bonjour": {
+  "es": "Bonjour, c'est Amélie.",
+  "en": "Hello, it's Amélie."
+ },
+ "suis": {
+  "es": "Je suis dans le métro.",
+  "en": "I'm on the metro."
+ },
+ "dans": {
+  "es": "Je suis dans le métro.",
+  "en": "I'm on the metro."
+ },
+ "bientôt": {
+  "es": "J'arrive bientôt.",
+  "en": "I'll be there soon."
+ },
+ "sa": {
+  "es": "Sa joue chauffe",
+  "en": "Her cheek grows hot"
+ },
+ "joue": {
+  "es": "Sa joue chauffe",
+  "en": "Her cheek grows hot"
+ },
+ "chauffe": {
+  "es": "Sa joue chauffe",
+  "en": "Her cheek grows hot"
+ },
+ "parce": {
+  "es": "parce que tout le monde",
+  "en": "because everyone"
+ },
+ "que": {
+  "es": "parce que tout le monde",
+  "en": "because everyone"
+ },
+ "tout": {
+  "es": "parce que tout le monde",
+  "en": "because everyone"
+ },
+ "monde": {
+  "es": "parce que tout le monde",
+  "en": "because everyone"
+ },
+ "va": {
+  "es": "va la voir entrer.",
+  "en": "is going to see her come in."
+ },
+ "voir": {
+  "es": "va la voir entrer.",
+  "en": "is going to see her come in."
+ },
+ "entrer": {
+  "es": "va la voir entrer.",
+  "en": "is going to see her come in."
+ },
+ "range": {
+  "es": "Elle range le téléphone contre son sac.",
+  "en": "She puts the phone away against her bag."
+ },
+ "contre": {
+  "es": "Elle range le téléphone contre son sac.",
+  "en": "She puts the phone away against her bag."
+ },
+ "sac": {
+  "es": "Elle range le téléphone contre son sac.",
+  "en": "She puts the phone away against her bag."
+ },
+ "à": {
+  "es": "À la porte, Olivier sourit.",
+  "en": "At the door, Olivier smiles."
+ },
+ "porte": {
+  "es": "À la porte, Olivier sourit.",
+  "en": "At the door, Olivier smiles."
+ },
+ "sourit": {
+  "es": "À la porte, Olivier sourit.",
+  "en": "At the door, Olivier smiles."
+ },
+ "merci": {
+  "es": "Merci pour l'appel court.",
+  "en": "Thanks for the short call."
+ },
+ "pour": {
+  "es": "Merci pour l'appel court.",
+  "en": "Thanks for the short call."
+ },
+ "entre": {
+  "es": "Amélie entre et salue une fois.",
+  "en": "Amélie comes in and says hello once."
+ },
+ "salue": {
+  "es": "Amélie entre et salue une fois.",
+  "en": "Amélie comes in and says hello once."
+ },
+ "fois": {
+  "es": "Amélie entre et salue une fois.",
+  "en": "Amélie comes in and says hello once."
+ },
+ "là": {
+  "es": "Là, Marc souffle:",
+  "en": "Then Marc whispers:"
+ },
+ "tu": {
+  "es": "Tu as fait plus court.",
+  "en": "You kept it shorter."
+ },
+ "as": {
+  "es": "Tu as fait plus court.",
+  "en": "You kept it shorter."
+ },
+ "fait": {
+  "es": "Tu as fait plus court.",
+  "en": "You kept it shorter."
+ },
+ "plus": {
+  "es": "Tu as fait plus court.",
+  "en": "You kept it shorter."
+ },
+ "répond": {
+  "es": "Amélie répond:",
+  "en": "Amélie replies:"
+ },
+ "ici": {
+  "es": "Ici, Paris est parfois bizarre.",
+  "en": "Here, Paris is sometimes strange."
+ },
+ "paris": {
+  "es": "Ici, Paris est parfois bizarre.",
+  "en": "Here, Paris is sometimes strange."
+ },
+ "parfois": {
+  "es": "Ici, Paris est parfois bizarre.",
+  "en": "Here, Paris is sometimes strange."
+ },
+ "bizarre": {
+  "es": "Ici, Paris est parfois bizarre.",
+  "en": "Here, Paris is sometimes strange."
+ }
+}

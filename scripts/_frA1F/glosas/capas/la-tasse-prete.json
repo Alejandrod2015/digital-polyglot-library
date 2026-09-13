@@ -1,0 +1,362 @@
+{
+ "tasse": {
+  "es": "La tasse prête",
+  "en": "The cup is ready"
+ },
+ "prête": {
+  "es": "La tasse prête",
+  "en": "The cup is ready"
+ },
+ "je": {
+  "es": "Je veux faire quelque chose",
+  "en": "I want to do something"
+ },
+ "veux": {
+  "es": "Je veux faire quelque chose",
+  "en": "I want to do something"
+ },
+ "faire": {
+  "es": "Je veux faire quelque chose",
+  "en": "I want to do something"
+ },
+ "quelque": {
+  "es": "Je veux faire quelque chose",
+  "en": "I want to do something"
+ },
+ "chose": {
+  "es": "Je veux faire quelque chose",
+  "en": "I want to do something"
+ },
+ "annonce": {
+  "es": "annonce Amélie dans la cuisine de Camille",
+  "en": "Amélie announces in Camille's kitchen"
+ },
+ "dans": {
+  "es": "annonce Amélie dans la cuisine de Camille",
+  "en": "Amélie announces in Camille's kitchen"
+ },
+ "cuisine": {
+  "es": "annonce Amélie dans la cuisine de Camille",
+  "en": "Amélie announces in Camille's kitchen"
+ },
+ "de": {
+  "es": "annonce Amélie dans la cuisine de Camille",
+  "en": "Amélie announces in Camille's kitchen"
+ },
+ "matin": {
+  "es": "le matin.",
+  "en": "in the morning."
+ },
+ "est": {
+  "es": "La cuisine est propre.",
+  "en": "The kitchen is clean."
+ },
+ "propre": {
+  "es": "La cuisine est propre.",
+  "en": "The kitchen is clean."
+ },
+ "coupe": {
+  "es": "Marc coupe du pain,",
+  "en": "Marc cuts some bread,"
+ },
+ "pain": {
+  "es": "Marc coupe du pain,",
+  "en": "Marc cuts some bread,"
+ },
+ "et": {
+  "es": "et Camille range trois assiettes.",
+  "en": "and Camille puts away three plates."
+ },
+ "range": {
+  "es": "et Camille range trois assiettes.",
+  "en": "and Camille puts away three plates."
+ },
+ "assiettes": {
+  "es": "et Camille range trois assiettes.",
+  "en": "and Camille puts away three plates."
+ },
+ "assieds-toi": {
+  "es": "Assieds-toi près de la fenêtre",
+  "en": "Sit down near the window"
+ },
+ "près": {
+  "es": "Assieds-toi près de la fenêtre",
+  "en": "Sit down near the window"
+ },
+ "fenêtre": {
+  "es": "Assieds-toi près de la fenêtre",
+  "en": "Sit down near the window"
+ },
+ "répond": {
+  "es": "répond Marc.",
+  "en": "Marc replies."
+ },
+ "tu": {
+  "es": "Tu es notre invitée.",
+  "en": "You are our guest."
+ },
+ "es": {
+  "es": "Tu es notre invitée.",
+  "en": "You are our guest."
+ },
+ "notre": {
+  "es": "Tu es notre invitée.",
+  "en": "You are our guest."
+ },
+ "invitée": {
+  "es": "Tu es notre invitée.",
+  "en": "You are our guest."
+ },
+ "regarde": {
+  "es": "Amélie regarde l'évier vide et garde sa tasse.",
+  "en": "Amélie looks at the empty sink and keeps her cup."
+ },
+ "évier": {
+  "es": "Amélie regarde l'évier vide et garde sa tasse.",
+  "en": "Amélie looks at the empty sink and keeps her cup."
+ },
+ "vide": {
+  "es": "Amélie regarde l'évier vide et garde sa tasse.",
+  "en": "Amélie looks at the empty sink and keeps her cup."
+ },
+ "garde": {
+  "es": "Amélie regarde l'évier vide et garde sa tasse.",
+  "en": "Amélie looks at the empty sink and keeps her cup."
+ },
+ "sa": {
+  "es": "Amélie regarde l'évier vide et garde sa tasse.",
+  "en": "Amélie looks at the empty sink and keeps her cup."
+ },
+ "dit": {
+  "es": "Camille dit:",
+  "en": "Camille says:"
+ },
+ "peux": {
+  "es": "Tu peux dormir encore.",
+  "en": "You can sleep some more."
+ },
+ "dormir": {
+  "es": "Tu peux dormir encore.",
+  "en": "You can sleep some more."
+ },
+ "encore": {
+  "es": "Tu peux dormir encore.",
+  "en": "You can sleep some more."
+ },
+ "tient": {
+  "es": "Amélie tient une tasse.",
+  "en": "Amélie holds a cup."
+ },
+ "elle": {
+  "es": "Elle pense qu'elle ne sert à rien",
+  "en": "She thinks she's no use at all"
+ },
+ "pense": {
+  "es": "Elle pense qu'elle ne sert à rien",
+  "en": "She thinks she's no use at all"
+ },
+ "ne": {
+  "es": "Elle pense qu'elle ne sert à rien",
+  "en": "She thinks she's no use at all"
+ },
+ "sert": {
+  "es": "Elle pense qu'elle ne sert à rien",
+  "en": "She thinks she's no use at all"
+ },
+ "à": {
+  "es": "Elle pense qu'elle ne sert à rien",
+  "en": "She thinks she's no use at all"
+ },
+ "rien": {
+  "es": "Elle pense qu'elle ne sert à rien",
+  "en": "She thinks she's no use at all"
+ },
+ "parce": {
+  "es": "parce que tout est déjà prêt.",
+  "en": "because everything is already ready."
+ },
+ "que": {
+  "es": "parce que tout est déjà prêt.",
+  "en": "because everything is already ready."
+ },
+ "tout": {
+  "es": "parce que tout est déjà prêt.",
+  "en": "because everything is already ready."
+ },
+ "déjà": {
+  "es": "parce que tout est déjà prêt.",
+  "en": "because everything is already ready."
+ },
+ "prêt": {
+  "es": "parce que tout est déjà prêt.",
+  "en": "because everything is already ready."
+ },
+ "main": {
+  "es": "Sa main reste calme sur la tasse.",
+  "en": "Her hand stays calm on the cup."
+ },
+ "reste": {
+  "es": "Sa main reste calme sur la tasse.",
+  "en": "Her hand stays calm on the cup."
+ },
+ "calme": {
+  "es": "Sa main reste calme sur la tasse.",
+  "en": "Her hand stays calm on the cup."
+ },
+ "sur": {
+  "es": "Sa main reste calme sur la tasse.",
+  "en": "Her hand stays calm on the cup."
+ },
+ "café": {
+  "es": "Le café est où?",
+  "en": "Where is the coffee?"
+ },
+ "où": {
+  "es": "Le café est où?",
+  "en": "Where is the coffee?"
+ },
+ "demande": {
+  "es": "demande Amélie.",
+  "en": "Amélie asks."
+ },
+ "lève": {
+  "es": "Camille lève les yeux.",
+  "en": "Camille looks up."
+ },
+ "yeux": {
+  "es": "Camille lève les yeux.",
+  "en": "Camille looks up."
+ },
+ "placard": {
+  "es": "Le café est dans le placard, à gauche.",
+  "en": "The coffee is in the cupboard, on the left."
+ },
+ "gauche": {
+  "es": "Le café est dans le placard, à gauche.",
+  "en": "The coffee is in the cupboard, on the left."
+ },
+ "ajoute": {
+  "es": "Marc ajoute:",
+  "en": "Marc adds:"
+ },
+ "seule": {
+  "es": "Une seule question?",
+  "en": "Just one question?"
+ },
+ "question": {
+  "es": "Une seule question?",
+  "en": "Just one question?"
+ },
+ "miracle": {
+  "es": "Miracle.",
+  "en": "A miracle."
+ },
+ "apprends": {
+  "es": "J'apprends vite.",
+  "en": "I learn fast."
+ },
+ "vite": {
+  "es": "J'apprends vite.",
+  "en": "I learn fast."
+ },
+ "prépare": {
+  "es": "Amélie prépare le café.",
+  "en": "Amélie makes the coffee."
+ },
+ "entre": {
+  "es": "La tasse reste entre ses doigts,",
+  "en": "The cup stays between her fingers,"
+ },
+ "ses": {
+  "es": "La tasse reste entre ses doigts,",
+  "en": "The cup stays between her fingers,"
+ },
+ "doigts": {
+  "es": "La tasse reste entre ses doigts,",
+  "en": "The cup stays between her fingers,"
+ },
+ "personne": {
+  "es": "et personne ne la presse.",
+  "en": "and nobody rushes her."
+ },
+ "presse": {
+  "es": "et personne ne la presse.",
+  "en": "and nobody rushes her."
+ },
+ "met": {
+  "es": "Elle met l'eau, allume la petite machine",
+  "en": "She puts in the water, turns on the little machine"
+ },
+ "eau": {
+  "es": "Elle met l'eau, allume la petite machine",
+  "en": "She puts in the water, turns on the little machine"
+ },
+ "allume": {
+  "es": "Elle met l'eau, allume la petite machine",
+  "en": "She puts in the water, turns on the little machine"
+ },
+ "petite": {
+  "es": "Elle met l'eau, allume la petite machine",
+  "en": "She puts in the water, turns on the little machine"
+ },
+ "machine": {
+  "es": "Elle met l'eau, allume la petite machine",
+  "en": "She puts in the water, turns on the little machine"
+ },
+ "attend": {
+  "es": "et attend.",
+  "en": "and waits."
+ },
+ "demain": {
+  "es": "Demain aussi?",
+  "en": "Tomorrow too?"
+ },
+ "aussi": {
+  "es": "Demain aussi?",
+  "en": "Tomorrow too?"
+ },
+ "pose": {
+  "es": "Amélie pose trois tasses.",
+  "en": "Amélie sets down three cups."
+ },
+ "tasses": {
+  "es": "Amélie pose trois tasses.",
+  "en": "Amélie sets down three cups."
+ },
+ "oui": {
+  "es": "Oui.",
+  "en": "Yes."
+ },
+ "mon": {
+  "es": "C'est mon travail ici.",
+  "en": "It's my job here."
+ },
+ "travail": {
+  "es": "C'est mon travail ici.",
+  "en": "It's my job here."
+ },
+ "ici": {
+  "es": "C'est mon travail ici.",
+  "en": "It's my job here."
+ },
+ "laver": {
+  "es": "Je peux laver après.",
+  "en": "I can wash up afterwards."
+ },
+ "après": {
+  "es": "Je peux laver après.",
+  "en": "I can wash up afterwards."
+ },
+ "goûte": {
+  "es": "Marc goûte et grimace:",
+  "en": "Marc tastes it and grimaces:"
+ },
+ "grimace": {
+  "es": "Marc goûte et grimace:",
+  "en": "Marc tastes it and grimaces:"
+ },
+ "dangereux": {
+  "es": "Travail dangereux.",
+  "en": "Dangerous job."
+ }
+}

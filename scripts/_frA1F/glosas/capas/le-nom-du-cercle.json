@@ -1,0 +1,330 @@
+{
+ "nom": {
+  "es": "Le nom du cercle",
+  "en": "The circle's name"
+ },
+ "cercle": {
+  "es": "Le nom du cercle",
+  "en": "The circle's name"
+ },
+ "dans": {
+  "es": "Dans un café de Paris, Amélie,",
+  "en": "In a café in Paris, Amélie,"
+ },
+ "café": {
+  "es": "Dans un café de Paris, Amélie,",
+  "en": "In a café in Paris, Amélie,"
+ },
+ "de": {
+  "es": "Dans un café de Paris, Amélie,",
+  "en": "In a café in Paris, Amélie,"
+ },
+ "paris": {
+  "es": "Dans un café de Paris, Amélie,",
+  "en": "In a café in Paris, Amélie,"
+ },
+ "libraire": {
+  "es": "la libraire du groupe, porte un manteau rouge.",
+  "en": "the group's bookseller, wears a red coat."
+ },
+ "groupe": {
+  "es": "la libraire du groupe, porte un manteau rouge.",
+  "en": "the group's bookseller, wears a red coat."
+ },
+ "porte": {
+  "es": "la libraire du groupe, porte un manteau rouge.",
+  "en": "the group's bookseller, wears a red coat."
+ },
+ "manteau": {
+  "es": "la libraire du groupe, porte un manteau rouge.",
+  "en": "the group's bookseller, wears a red coat."
+ },
+ "rouge": {
+  "es": "la libraire du groupe, porte un manteau rouge.",
+  "en": "the group's bookseller, wears a red coat."
+ },
+ "veste": {
+  "es": "Marc porte une veste bleu marine.",
+  "en": "Marc wears a navy blue jacket."
+ },
+ "bleu": {
+  "es": "Marc porte une veste bleu marine.",
+  "en": "Marc wears a navy blue jacket."
+ },
+ "marine": {
+  "es": "Marc porte une veste bleu marine.",
+  "en": "Marc wears a navy blue jacket."
+ },
+ "est": {
+  "es": "Baptiste est un patron de café.",
+  "en": "Baptiste is a café owner."
+ },
+ "patron": {
+  "es": "Baptiste est un patron de café.",
+  "en": "Baptiste is a café owner."
+ },
+ "lumière": {
+  "es": "Une lumière tombe sur une écharpe rose,",
+  "en": "A light falls on a pink scarf,"
+ },
+ "tombe": {
+  "es": "Une lumière tombe sur une écharpe rose,",
+  "en": "A light falls on a pink scarf,"
+ },
+ "sur": {
+  "es": "Une lumière tombe sur une écharpe rose,",
+  "en": "A light falls on a pink scarf,"
+ },
+ "écharpe": {
+  "es": "Une lumière tombe sur une écharpe rose,",
+  "en": "A light falls on a pink scarf,"
+ },
+ "rose": {
+  "es": "Une lumière tombe sur une écharpe rose,",
+  "en": "A light falls on a pink scarf,"
+ },
+ "tee-shirt": {
+  "es": "un tee-shirt blanc, une jupe noire",
+  "en": "a white T-shirt, a black skirt"
+ },
+ "blanc": {
+  "es": "un tee-shirt blanc, une jupe noire",
+  "en": "a white T-shirt, a black skirt"
+ },
+ "jupe": {
+  "es": "un tee-shirt blanc, une jupe noire",
+  "en": "a white T-shirt, a black skirt"
+ },
+ "noire": {
+  "es": "un tee-shirt blanc, une jupe noire",
+  "en": "a white T-shirt, a black skirt"
+ },
+ "et": {
+  "es": "et une ceinture.",
+  "en": "and a belt."
+ },
+ "ceinture": {
+  "es": "et une ceinture.",
+  "en": "and a belt."
+ },
+ "montre": {
+  "es": "Baptiste montre le cercle.",
+  "en": "Baptiste points to the circle."
+ },
+ "phrase": {
+  "es": "Une phrase suffit.",
+  "en": "One sentence is enough."
+ },
+ "suffit": {
+  "es": "Une phrase suffit.",
+  "en": "One sentence is enough."
+ },
+ "pas": {
+  "es": "Pas plus.",
+  "en": "No more."
+ },
+ "plus": {
+  "es": "Pas plus.",
+  "en": "No more."
+ },
+ "prend": {
+  "es": "Marc prend une feuille.",
+  "en": "Marc takes a sheet of paper."
+ },
+ "feuille": {
+  "es": "Marc prend une feuille.",
+  "en": "Marc takes a sheet of paper."
+ },
+ "je": {
+  "es": "Je peux préparer une belle forme.",
+  "en": "I can prepare a nice wording."
+ },
+ "peux": {
+  "es": "Je peux préparer une belle forme.",
+  "en": "I can prepare a nice wording."
+ },
+ "préparer": {
+  "es": "Je peux préparer une belle forme.",
+  "en": "I can prepare a nice wording."
+ },
+ "belle": {
+  "es": "Je peux préparer une belle forme.",
+  "en": "I can prepare a nice wording."
+ },
+ "forme": {
+  "es": "Je peux préparer une belle forme.",
+  "en": "I can prepare a nice wording."
+ },
+ "monsieur": {
+  "es": "Un monsieur écoute.",
+  "en": "A gentleman listens."
+ },
+ "écoute": {
+  "es": "Un monsieur écoute.",
+  "en": "A gentleman listens."
+ },
+ "veut": {
+  "es": "Amélie veut dire la vérité,",
+  "en": "Amélie wants to tell the truth,"
+ },
+ "dire": {
+  "es": "Amélie veut dire la vérité,",
+  "en": "Amélie wants to tell the truth,"
+ },
+ "vérité": {
+  "es": "Amélie veut dire la vérité,",
+  "en": "Amélie wants to tell the truth,"
+ },
+ "couleur": {
+  "es": "pas une couleur choisie par un autre.",
+  "en": "not a color chosen by someone else."
+ },
+ "choisie": {
+  "es": "pas une couleur choisie par un autre.",
+  "en": "not a color chosen by someone else."
+ },
+ "par": {
+  "es": "pas une couleur choisie par un autre.",
+  "en": "not a color chosen by someone else."
+ },
+ "autre": {
+  "es": "pas une couleur choisie par un autre.",
+  "en": "not a color chosen by someone else."
+ },
+ "non": {
+  "es": "Non, je vais parler",
+  "en": "No, I'm going to speak"
+ },
+ "vais": {
+  "es": "Non, je vais parler",
+  "en": "No, I'm going to speak"
+ },
+ "parler": {
+  "es": "Non, je vais parler",
+  "en": "No, I'm going to speak"
+ },
+ "répond": {
+  "es": "répond Amélie.",
+  "en": "Amélie replies."
+ },
+ "sa": {
+  "es": "Sa voix reste petite.",
+  "en": "Her voice stays small."
+ },
+ "voix": {
+  "es": "Sa voix reste petite.",
+  "en": "Her voice stays small."
+ },
+ "reste": {
+  "es": "Sa voix reste petite.",
+  "en": "Her voice stays small."
+ },
+ "petite": {
+  "es": "Sa voix reste petite.",
+  "en": "Her voice stays small."
+ },
+ "suis": {
+  "es": "Je suis courageuse ce soir.",
+  "en": "I'm brave tonight."
+ },
+ "courageuse": {
+  "es": "Je suis courageuse ce soir.",
+  "en": "I'm brave tonight."
+ },
+ "soir": {
+  "es": "Je suis courageuse ce soir.",
+  "en": "I'm brave tonight."
+ },
+ "cherche": {
+  "es": "Je cherche une place simple ici.",
+  "en": "I'm looking for a simple place here."
+ },
+ "place": {
+  "es": "Je cherche une place simple ici.",
+  "en": "I'm looking for a simple place here."
+ },
+ "simple": {
+  "es": "Je cherche une place simple ici.",
+  "en": "I'm looking for a simple place here."
+ },
+ "ici": {
+  "es": "Je cherche une place simple ici.",
+  "en": "I'm looking for a simple place here."
+ },
+ "garde": {
+  "es": "Je garde ces mots.",
+  "en": "I'm keeping these words."
+ },
+ "ces": {
+  "es": "Je garde ces mots.",
+  "en": "I'm keeping these words."
+ },
+ "mots": {
+  "es": "Je garde ces mots.",
+  "en": "I'm keeping these words."
+ },
+ "ajoute": {
+  "es": "Baptiste ajoute:",
+  "en": "Baptiste adds:"
+ },
+ "sympathique": {
+  "es": "C’est sympathique.",
+  "en": "That's nice."
+ },
+ "madame": {
+  "es": "Madame Moreau garde sa cravate drôle",
+  "en": "Madame Moreau keeps her funny tie"
+ },
+ "cravate": {
+  "es": "Madame Moreau garde sa cravate drôle",
+  "en": "Madame Moreau keeps her funny tie"
+ },
+ "drôle": {
+  "es": "Madame Moreau garde sa cravate drôle",
+  "en": "Madame Moreau keeps her funny tie"
+ },
+ "gant": {
+  "es": "et un gant dans son sac.",
+  "en": "and a glove in her bag."
+ },
+ "son": {
+  "es": "et un gant dans son sac.",
+  "en": "and a glove in her bag."
+ },
+ "sac": {
+  "es": "et un gant dans son sac.",
+  "en": "and a glove in her bag."
+ },
+ "ferme": {
+  "es": "Marc ferme la feuille.",
+  "en": "Marc folds the sheet."
+ },
+ "ton": {
+  "es": "Ton nom suffit",
+  "en": "Your name is enough"
+ },
+ "répond-il": {
+  "es": "répond-il.",
+  "en": "he replies."
+ },
+ "perd": {
+  "es": "Amélie perd la phrase brillante,",
+  "en": "Amélie loses the brilliant sentence,"
+ },
+ "brillante": {
+  "es": "Amélie perd la phrase brillante,",
+  "en": "Amélie loses the brilliant sentence,"
+ },
+ "mais": {
+  "es": "mais le groupe connaît son nom entier.",
+  "en": "but the group knows her full name."
+ },
+ "connaît": {
+  "es": "mais le groupe connaît son nom entier.",
+  "en": "but the group knows her full name."
+ },
+ "entier": {
+  "es": "mais le groupe connaît son nom entier.",
+  "en": "but the group knows her full name."
+ }
+}
