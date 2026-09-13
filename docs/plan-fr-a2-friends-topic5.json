@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a2",
+  "variante": "france",
+  "registro": "la primera pelea de verdad: una promesa rota por una tarde entre amigos, y una disculpa que solo funciona cuando deja de defenderse",
+  "espina": "Romain por fin tiene un amigo propio en Nantes, y aprende que ganarse un sitio no puede costarle el de Justine; la pareja se pone a prueba con lo que no se dice bien.",
+  "recursos": "A2: narrador en presente; passe compose e imparfait en la discusion (Tu avais promis, C'etait ma chanson, J'ai eu tort); futur simple minimo (Romain sera); negacion ne... rien; espejo concreto (la cancion perdida en la sala y la cancion cantada en la cocina); causalidad explicita. Nada de subjonctif ni plus-que-parfait salvo el avais promis marcado.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Romain quiere disfrutar su jueves de escalada con Karim, su primer amigo propio, y llegar al concierto de Justine.",
+      "impide": "Karim insiste en una via mas, el movil se queda en el vestuario y Romain pierde la nocion del tiempo.",
+      "cuesta": "Se pierde el primer solo de Justine con su coral; ella se va sin el.",
+      "cambia": "Romain descubre que su sitio nuevo en Nantes puede quitarle el que ya tenia.",
+      "emocion": "Esta orgulloso y feliz entre amigos; al ver seis llamadas perdidas corre, y la alegria se le cae en la puerta del concierto."
+    },
+    {
+      "slot": "2",
+      "quiere": "Romain quiere que Justine le perdone esa misma noche.",
+      "impide": "Cada disculpa lleva un mais, y la frase tu exageres empeora todo.",
+      "cuesta": "Duerme en el sofa, y el ramo que le aconseja Karim le cuesta la ultima oportunidad del dia.",
+      "cambia": "Nada todavia: Justine sale de casa y Romain se queda con las flores.",
+      "emocion": "Se siente injustamente atacado y luego culpable; da vueltas a su frase en el sofa y se arrepiente."
+    },
+    {
+      "slot": "3",
+      "quiere": "Romain quiere una disculpa de verdad, sin excusas ni flores.",
+      "impide": "Para ser creible tiene que renunciar a algo y aceptar la condicion de Justine.",
+      "cuesta": "Deja la escalada de los jueves de concierto con Karim.",
+      "cambia": "Justine le perdona con una condicion y le canta su cancion en la cocina.",
+      "emocion": "Tiene miedo de que no baste porque ya fallo dos veces; espera en la cocina sin ramo y escucha con el corazon latiendo."
+    }
+  ]
+}
