@@ -1,7 +1,7 @@
 import { config } from "dotenv";
 config({ path: ".env" }); config({ path: ".env.local" });
 import { assertTopicsGrounded } from "../src/lib/topicEvidence";
-const labels = ["Postcards & Stamps","Photos & Faces","Board Games & Dice","Bikes & Repairs","Songs & Instruments","Buttons & Sewing","Notes & Magnets"];
+const labels = ["Postcards & Stamps","Photos & Faces","Board Games & Dice","Books & Newspapers","Songs & Instruments","Pots & Spoons","Notes & Magnets"];
 const slug = (l: string) => l.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 (async () => {
   await assertTopicsGrounded({

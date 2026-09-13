@@ -1,6 +1,6 @@
 # Plan: Friends DE A0 (Bremen)
 
-Estado: PROPUESTA, pendiente de aprobacion del usuario. Nada escrito en la base.
+Estado: APROBADO por el usuario el 2026-09-13 (via Journey-planning), con Books & Newspapers y Pots & Spoons en lugar de Bikes & Repairs y Buttons & Sewing (vocab anclado de alta frecuencia). Nada escrito en la base.
 Fecha: 2026-09-13. Chat ejecutor: DE_Germany_A0_Friends_1-Texto.
 
 ## 0. Estado comprobado antes de planear
@@ -54,9 +54,9 @@ frecuentes entre nacidos en Alemania entre 1988 y 1996.
 | **Jan** | fijo, en la mitad o mas | 34 | pelo castano corto, barba corta; jersey azul marino; cocinero, vive en el bajo de la casa | "ein Koch aus Bremen" |
 | Nele | nueva, tema 2 | 32 | pelo negro corto; gafas redondas; camisa amarilla; fotografa | "eine Fotografin" |
 | Felix | nuevo, tema 3 | 35 | pelo rubio rizado; camiseta gris; profesor de matematicas | "ein Lehrer" |
-| Johanna | nueva, tema 4 | 30 | trenza pelirroja; peto azul de trabajo; mecanica de bicis en el patio | "eine Mechanikerin" |
+| Johanna | nueva, tema 4 | 30 | trenza pelirroja; peto azul de trabajo; librera, vive en el segundo piso | "eine Buchhändlerin" |
 | Tim | nuevo, tema 5 | 34 | cabeza rapada; camisa de cuadros roja; bateria, trabaja en un banco | "ein Bankkaufmann" o "ein Musiker" |
-| Luisa | nueva, tema 6 | 31 | pelo castano largo recogido; vestido negro; costurera del teatro | "eine Schneiderin" |
+| Luisa | nueva, tema 6 | 31 | pelo castano largo recogido; delantal negro; cocinera, companera de Jan | "eine Köchin" |
 | Niklas | nuevo, tema 7 | 36 | pelo gris oscuro corto (canas tempranas), jersey marron; dueno de la casa | "der Hausbesitzer" |
 
 Presentacion: tres frases de narracion antes de la primera cita, alternando las
@@ -87,9 +87,9 @@ coincide con las 21 etiquetas alemanas existentes ni con el molde de curso
 | 1 | Postcards & Stamps (`postcards-and-stamps`) | - | Anna llega con las postales sin sello; da la primera a Jan, que lee una promesa de hace ocho anos; al final escriben juntos una postal al grupo | la promesa rota queda dicha en voz alta; la postal para Munich va a la basura |
 | 2 | Photos & Faces (`photos-and-faces`) | Nele | En la nevera de Jan hay fotos de ocho anos y Anna no sale en ninguna; Nele, la amiga nueva, no sabe quien es; acaban en un marco las dos fotos, la vieja y la nueva | Anna asume que su sitio de "mejor amiga" es de Nele |
 | 3 | Board Games & Dice (`board-games-and-dice`) | Felix | Noche de juegos: Anna ya no sabe las reglas del juego de siempre; practica con Jan; gana a Felix | pierde su dado de la suerte del colegio por la rejilla del patio |
-| 4 | Bikes & Repairs (`bikes-and-repairs`) | Johanna | La bici vieja de Anna sale del sotano: rueda pinchada, freno roto; Johanna la arregla por partes | la bici no tiene arreglo entero; solo queda el timbre viejo, montado en una bici nueva |
+| 4 | Books & Newspapers (`books-and-newspapers`) | Johanna | En la escalera hay un armario de libros para intercambiar que lleva Johanna; Anna busca el libro que dejo hace ocho anos con una nota para Jan dentro; lo encuentra y lo lee con Jan en voz alta | el libro ya se lo llevo alguien; la nota vuelve, el libro no |
 | 5 | Songs & Instruments (`songs-and-instruments`) | Tim | Tim quiere tocar en el cumpleanos de Jan como el grupo del colegio; Anna cantaba y ya no se atreve | no canta la cancion vieja; canta una nueva, y la vieja se queda sin cantar |
-| 6 | Buttons & Sewing (`buttons-and-sewing`) | Luisa | El abrigo de Munich pierde botones antes de una entrevista de trabajo en Bremen; Luisa le ensena a coser | la entrevista sale con el boton equivocado y el trabajo no es el que queria |
+| 6 | Pots & Spoons (`pots-and-spoons`) | Luisa | Anna quiere cocinar una vez para el grupo del jueves, como de estudiante; Luisa, companera de Jan, le ensena con cucharas y ollas de verdad | se quema la olla grande de Jan y no tiene arreglo |
 | 7 | Notes & Magnets (`notes-and-magnets`) | Niklas | Niklas deja una nota: el piso de arriba es de Anna solo si firma este mes; Munich le ofrece volver; en la nevera, la lista de los jueves | renuncia al trabajo de Munich; cierre sin gancho: su nombre en la lista y la ultima postal con un iman |
 
 Ningun tema termina en mini-cliffhanger en la historia 3: las tres historias
@@ -120,9 +120,9 @@ los journeys alemanes live+draft (el 2026-09-13):
 | 1 | die Postkarte, die Briefmarke, die Adresse | der Brief, der Umschlag, der Stempel, der Absender |
 | 2 | das Foto, das Gesicht, die Brille, der Bart, der Rahmen, der Kühlschrank, der Magnet | das Bild |
 | 3 | der Würfel, die Figur, gewinnen (portable), der Sieger | die Karte, das Feld, die Runde |
-| 4 | der Reifen, die Bremse, das Pedal, der Helm, die Pumpe, die Kette | das Fahrrad, das Werkzeug, die Schraube, die Klingel |
+| 4 | das Buch, die Zeitung, die Bibliothek, die Buchhandlung, der Roman (todas en la lista A1/A2) | die Seite, das Wort, die Geschichte, das Regal |
 | 5 | das Lied, das Klavier, die Trommel, die Geige, die Note, das Mikrofon | die Gitarre, singen |
-| 6 | der Knopf, der Faden, nähen, die Schere | die Nadel, das Loch |
+| 6 | der Topf, der Löffel, die Gabel, kochen (todas en la lista A1/A2) | die Pfanne, die Schüssel, der Herd, das Salz, der Zucker, das Messer, der Teller |
 | 7 | die Notiz, die Liste, der Kuli, der Bleistift | der Zettel, die Nachricht, der Schlüssel |
 
 (Kühlschrank y Magnet se reparten entre los temas 2 y 7, maximo 2 historias cada una.)
