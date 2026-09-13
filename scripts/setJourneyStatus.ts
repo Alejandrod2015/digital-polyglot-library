@@ -40,7 +40,7 @@ async function revalidar(payload: Record<string, unknown>): Promise<boolean> {
   try {
     const res = await fetch(ENDPOINT, {
       method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${secret}` },
+      headers: { "Content-Type": "application/json", "x-dpl-cron-secret": secret },
       body: JSON.stringify(payload),
     });
     if (!res.ok) {
