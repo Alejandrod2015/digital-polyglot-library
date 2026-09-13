@@ -18,6 +18,7 @@ import {
   getPassedJourneyCheckpointKeys,
   getPracticedJourneyTopicKeys,
 } from "@/lib/journeyProgress";
+import { resolveNextJourney } from "@/lib/journeyChain";
 import { orderTracksByPlacement } from "@/lib/journeyTrackOrder";
 import { variantMatchesPreference } from "@/lib/languageVariant";
 import { resolveLearnerVariant } from "@/lib/learnerVariant";
@@ -65,6 +66,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     where: { language: { equals: language, mode: "insensitive" } },
     select: {
       id: true, name: true, variant: true, levels: true, nextJourneyId: true, status: true,
+      typeSlug: true, language: true,
     },
   });
   const journeyPorId = new Map(journeysDelIdioma.map((j) => [j.id, j]));
@@ -293,7 +295,10 @@ export async function GET(req: NextRequest): Promise<Response> {
     // `find` devolvía el hermano equivocado y el puente salía null aunque el
     // puntero estuviera puesto.
     const origen = journeyPorId.get(track.id);
-    const sig = origen?.nextJourneyId ? journeyPorId.get(origen.nextJourneyId) : null;
+    // El siguiente se deriva por tipo, lengua, variante y nivel contiguo si el
+    // puntero falta (ver `journeyChain.ts`): un puente no puede depender de
+    // que alguien se acuerde de escribirlo.
+    const sig = origen ? resolveNextJourney(origen, journeysDelIdioma)?.journey ?? null : null;
     // Se manda SIEMPRE que haya puntero, no solo al terminar. Esconderlo hasta
     // el final significaba que la tarjeta no existía para nadie: el tester más
     // avanzado iba 13/21. Y enseñar lo que viene mientras avanzas motiva más

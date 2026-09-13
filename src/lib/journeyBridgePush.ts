@@ -28,6 +28,7 @@
 import { createClerkClient } from "@clerk/backend";
 import { prisma } from "@/lib/prisma";
 import { isApnsConfigured, sendApnsPush } from "@/lib/apnsPush";
+import { resolveNextJourney } from "@/lib/journeyChain";
 import { normalizeNotificationPrefs } from "@/lib/notifications";
 import {
   JOURNEY_COMPLETION_EVENT_TYPES,
@@ -153,16 +154,17 @@ export async function getBridgePairs(): Promise<{
       nextJourneyId: true,
     },
   });
-  const byId = new Map(journeys.map((j) => [j.id, j]));
-
-  const withPointer = journeys.filter((j) => j.status === "active" && j.nextJourneyId);
+  // Un par por journey vivo con siguiente, sea por puntero o derivado por
+  // tipo, lengua, variante y nivel contiguo (`journeyChain.ts`).
+  const links = journeys
+    .filter((j) => j.status === "active")
+    .map((from) => ({ from, to: resolveNextJourney(from, journeys)?.journey ?? null }))
+    .filter((l): l is { from: (typeof journeys)[number]; to: (typeof journeys)[number] } => l.to !== null);
   const pairs: BridgePair[] = [];
   const rejected: Array<{ from: string; to: string; skip: BridgeSkipReason }> = [];
 
   const ids = new Set<string>();
-  for (const from of withPointer) {
-    const to = byId.get(from.nextJourneyId!);
-    if (!to) continue;
+  for (const { from, to } of links) {
     ids.add(from.id);
     ids.add(to.id);
   }
@@ -181,9 +183,7 @@ export async function getBridgePairs(): Promise<{
     slugsByJourney.set(story.journeyId, list);
   }
 
-  for (const from of withPointer) {
-    const to = byId.get(from.nextJourneyId!);
-    if (!to) continue;
+  for (const { from, to } of links) {
     const label = { from: journeyLabel(from), to: journeyLabel(to) };
 
     // Regla 1: la cadena va por tipo. Sin typeSlug en alguno de los dos no se
