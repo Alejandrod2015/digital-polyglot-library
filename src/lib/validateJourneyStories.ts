@@ -610,7 +610,7 @@ export function validateJourneyStories(
       // "motivo", "detersivo" son presente o sustantivo (medido contra el
       // Friends IT A0 de julio y los Traveler A1/A2). De la -ire van por lista.
       const IMP_IT = new RegExp(`${L}(\\p{Ll}{2,}(?:avo|ava|avamo|avate|avano|evo|eva|evamo|evate|evano|ivamo|ivate)|(?:dorm|sent|fin|cap|ven|part|usc|apr|prefer|segu|sal|dic|fac)(?:iva|ivo|ivano|eva|evano))${R}`, "u");
-      const NO_IMP = /^(?:lava|lavo|cava|cavo|brava|bravo|schiava|schiavo|ottava|ottavo|nava|scava|scavo|beva|devo|deva|beve|leva|levo|neva|salvo|salva|sale|sala)$/;
+      const NO_IMP = /^(?:lava|lavo|cava|cavo|brava|bravo|schiava|schiavo|ottava|ottavo|nava|scava|scavo|beva|devo|deva|beve|leva|levo|neva|salvo|salva|sale|sala|sollievo|allievo|allieva|rilievo)$/;
       const FUT_COND = new RegExp(`${L}\\p{Ll}{2,}(?:erò|irò|arò|erà|irà|arà|eremo|iremo|eranno|iranno|rebbe|rebbero|rei|resti|remmo)${R}`, "u");
       const malas: string[] = [];
       for (const s of stories) {

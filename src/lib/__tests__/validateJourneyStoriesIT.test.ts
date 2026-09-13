@@ -53,6 +53,9 @@ describe("suelo A0 italiano (journey-a0-floor)", () => {
   it("el pasado dentro de comillas es habla real y no cuenta", () => {
     expect(check(run([st("q", "“Ieri ho mangiato troppo,” dice Matteo.")]), "journey-a0-floor").status).toBe("pass");
   });
+  it("sollievo es un sustantivo, no un imperfetto en -evo", () => {
+    expect(check(run([st("so", "Matteo mastica piano e sente sollievo.")]), "journey-a0-floor").status).toBe("pass");
+  });
   it("falsos amigos del imperfetto: arriva, aperitivo, motivo, lava", () => {
     const out = run([st("fa", "Matteo arriva con un aperitivo. Alice lava i piatti senza un motivo.")]);
     expect(check(out, "journey-a0-floor").status).toBe("pass");
