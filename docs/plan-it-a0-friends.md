@@ -1,6 +1,6 @@
 # Plan: Friends IT A0 (Genova)
 
-Estado: PENDIENTE de aprobacion del usuario. Nada escrito en la base salvo el archivado del journey de julio.
+Estado: APROBADO por el usuario el 2026-09-14 (via Journey-planning) con un cambio: Matteo no es cocinero (Jan, del Friends DE A0, ya lo es y los dos journeys pasan en un edificio antiguo). Ahora es marinero de los ferris a Cerdeña; el tema Cooking & Recipes se queda.
 Fecha: 2026-09-14. Chat ejecutor: IT_Italy_A0_Friends_1-Texto.
 
 ## 0. Estado comprobado antes de planear
@@ -45,7 +45,7 @@ Ningun nombre aparece en el Friends de julio ni en los Traveler italianos (A1, A
 | Nombre | Rol | Edad | Ficha fija (se repite en cada escena) | Presentacion (que ES) | Tema |
 |---|---|---|---|---|---|
 | **Alice** | protagonista, en las 21 | 34 | pelo castaño oscuro a la altura de la mandibula, con flequillo; cardigan amarillo mostaza | "un'infermiera di Genova" | todos |
-| **Matteo** | fijo | 35 | pelo negro rizado corto, barba corta; camiseta azul marino | "un cuoco di Genova" | todos |
+| **Matteo** | fijo; marinero en los ferris Genova-Cerdeña, fuera algunos dias, en casa los domingos | 35 | pelo negro rizado corto, barba corta; camiseta azul marino | "un marinaio di Genova" | todos |
 | Francesca | nueva | 33 | pelo rubio largo en coleta, sin flequillo; chaqueta verde | "una biologa dell'Acquario" | 2 |
 | Riccardo | nuevo | 36 | cabeza rapada, barba negra; jersey azul claro | "un tassista del terzo piano" | 3 |
 | Federica | nueva | 31 | pelo rojo rizado largo, sin flequillo; impermeable naranja | "un'architetta del quarto piano" | 4 |
@@ -83,7 +83,7 @@ Nombres de DOMINIO lexico (`project_topic_naming_rule`), ingles, ampersand, 2-4 
 | 2 | Dating & First Impressions (`dating-and-first-impressions`) | Francesca | Matteo tiene una primera cita y le pide ayuda a Alice: la ropa, el mensaje; Alice escribe el mensaje y funciona; Francesca sube a la terraza y es encantadora; al final le dice a Matteo, amable, que el solo habla de Alice | las palabras de Alice sirven para que Matteo quede con otra; la cita se acaba y Matteo no entiende por que |
 | 3 | Football & Rivalries (`football-and-rivalries`) | Riccardo | Derby en la tele de la terraza: Alice y Matteo del Genoa, Riccardo de la Samp; Alice apuesta contra Riccardo la vieja camiseta del Genoa que le regalo Matteo; gana la Samp | la camiseta se va al tercer piso y no vuelve |
 | 4 | Weather & Storms (`weather-and-storms`) | Federica | Alerta roja de lluvia; Alice y Matteo suben a salvar las plantas de la terraza; se va la luz y se quedan en la escalera a oscuras con Federica; a oscuras, Alice casi lo dice y Federica enciende una linterna justo antes | la terraza pierde su albahaca y la pergola; la frase de Alice se queda sin decir |
-| 5 | Cooking & Recipes (`cooking-and-recipes`) | Lorenzo | Cada domingo cocina Matteo; esta vez Alice quiere hacerle pesto a el; Lorenzo, el fornaio de abajo, le enseña con el mortero de marmol de Matteo; el pesto sale bien | el mortero se rompe al fregarlo; Matteo dice "Non importa" y a Alice si le importa |
+| 5 | Cooking & Recipes (`cooking-and-recipes`) | Lorenzo | Cada domingo Matteo hace el pesto de su familia en la terraza; esta vez vuelve tarde del ferry y Alice quiere hacerselo a el; Lorenzo, el fornaio de abajo, le enseña con el mortero de marmol de Matteo; el pesto sale bien | el mortero se rompe al fregarlo; Matteo dice "Non importa" y a Alice si le importa |
 | 6 | Quarrels & Apologies (`quarrels-and-apologies`) | Valentina | Matteo cuenta el pacto como chiste delante de Valentina; Alice se enfada en la escalera y le dice cosas feas; una semana sin domingos en la terraza; Valentina la empuja a pedir perdon y hacen las paces con focaccia | el primer domingo sin terraza en quince años; la amistad queda con una grieta |
 | 7 | Secrets & Confessions (`secrets-and-confessions`) | - | Cumpleaños de Alice, 35; en la terraza le enseña a Matteo la servilleta y le dice la verdad; Matteo le dice que la quiere, pero no asi; el domingo siguiente hay dos platos en la terraza | la esperanza de Alice; la servilleta rota en la papelera |
 
