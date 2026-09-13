@@ -126,6 +126,10 @@ const HABLA_POR_IDIOMA: Record<string, string> = {
       "cuenta|conto|contó|explica|explico|explicó|repite|repitio|repitió|avisa|aviso|avisó|" +
       "grita|grito|gritó|llama|llamo|llamó|pide|pidio|pidió|insiste|insistio|insistió|" +
       "agrega|agrego|agregó|escribe|escribio|escribió|suelta|solto|soltó|corrige|corrigio|corrigió",
+  // Italiano (2026-09-14, Friends IT A0 de Genova). Sin esta lista castOf caia
+  // en la alemana y el reparto salia VACIO, el mismo fallo de PT, FR y ES. Solo
+  // presente: el suelo A0 italiano no admite pasado en la narracion.
+  IT: "dice|chiede|domanda|risponde|aggiunge|spiega|ripete|grida|urla|scrive|racconta|promette|ride|chiama|propone|legge|sussurra|continua|conferma|saluta",
 };
 function castOf(stories: JourneyStoryInput[], lang: string): string[] {
   const HABLA = HABLA_POR_IDIOMA[lang] ?? HABLA_POR_IDIOMA.DE;
@@ -259,11 +263,31 @@ const FORMAS_ES: Array<[string, (n: string) => RegExp]> = [
   ["nombre y oficio", (n) => new RegExp(`(?<!\\p{L})${n}\\s+${VERBO_SER_ES}(?!\\p{L})`, "iu")],
 ];
 
+/**
+ * Las tres formas aprobadas en ITALIANO (2026-09-14), las mismas tres de
+ * [[feedback_introduce_characters]]:
+ *
+ *   dopo il luogo  Sul pianerottolo c'e Riccardo, un tassista del terzo piano.
+ *   aposicion      Alice, un'infermiera di Genova, porta una torta in terrazza.
+ *   con essere     Matteo e un marinaio e il suo migliore amico.
+ *
+ * "dopo il luogo" va PRIMERO porque tambien casa como aposicion: si no, la
+ * variedad contaria dos formas distintas como la misma.
+ */
+const DET_IT = "(?:un|uno|una|un'|il|lo|la|l'|i|gli|le)";
+const NUC_IT = "(?:[a-zà-ù']+\\s+){0,3}[a-zà-ù']+";
+const FORMAS_IT: Array<[string, (n: string) => RegExp]> = [
+  ["dopo il luogo", (n) => new RegExp(`(?<!\\p{L})(?:c'è|ci sono|è|arriva|aspetta)\\s+${n},\\s+${DET_IT}\\s*${NUC_IT}`, "iu")],
+  ["aposicion", (n) => new RegExp(`(?<!\\p{L})${n},\\s+${DET_IT}\\s*${NUC_IT}`, "iu")],
+  ["con essere", (n) => new RegExp(`(?<!\\p{L})${n}\\s+è\\s+${DET_IT}\\s*${NUC_IT}`, "iu")],
+];
+
 const FORMAS_POR_IDIOMA: Record<string, Array<[string, (n: string) => RegExp]>> = {
   DE: FORMAS_DE,
   PT: FORMAS_PT,
   FR: FORMAS_FR,
   ES: FORMAS_ES,
+  IT: FORMAS_IT,
 };
 
 /** Forma de la apertura: que clase de sujeto abre la primera frase. */
@@ -311,6 +335,21 @@ function openingShapeES(text: string): string {
   if (/^(Nadie|Alguien|Todos|Todas|Cada|Dos|Tres|Cuatro|Cinco|Seis|Siete|Ocho|Nueve|Diez|Quince|Veinte|Media|Medio|Nada|Ninguno|Ninguna)$/.test(w)) return "cantidad o pronombre";
   if (/^(Cuando|Mientras|Aunque|Apenas|Si)$/.test(w)) return "subordinada delante";
   if (/^Quien\b/.test(f)) return "quien + verbo";
+  if (/^\p{Lu}\p{Ll}+$/u.test(w)) return "sustantivo o nombre desnudo";
+  return "otra";
+}
+
+/** Forma de la apertura en ITALIANO (2026-09-14), puerto del espanol. */
+function openingShapeIT(text: string): string {
+  const f = sentences(text)[0] ?? "";
+  const w = (f.split(/\s+/)[0] ?? "").replace(/[.,:;]$/, "");
+  if (f.startsWith(QUOTE_OPEN)) return "replica directa";
+  if (/^(Il|Lo|La|I|Gli|Le|L'\S*)$/.test(w)) return "articulo definido + sustantivo";
+  if (/^(Un|Uno|Una|Un'\S*)$/.test(w)) return "articulo indefinido + sustantivo";
+  if (/^(Suo|Sua|Suoi|Sue|Mio|Mia|Nostro|Nostra)$/.test(w)) return "posesivo + sustantivo";
+  if (/^(In|Nel|Nella|Nei|Nelle|Sul|Sulla|Sui|Sulle|Sotto|Sopra|Dentro|Fuori|Davanti|Dietro|Dopo|Prima|Tra|Fra|Al|Alla|Allo|Ai|Alle|A|Da|Dal|Dalla|Con|Per|Oggi|Ieri|Stasera|Stamattina|Adesso|Ora|Qui|Lì|Là|Giù|Su)$/.test(w)) return "lugar o tiempo delante";
+  if (/^(Nessuno|Qualcuno|Tutti|Tutte|Ogni|Due|Tre|Quattro|Cinque|Sei|Sette|Otto|Nove|Dieci|Venti|Mezzo|Mezza|Niente)$/.test(w)) return "cantidad o pronombre";
+  if (/^(Quando|Mentre|Anche|Se|Appena)$/.test(w)) return "subordinada delante";
   if (/^\p{Lu}\p{Ll}+$/u.test(w)) return "sustantivo o nombre desnudo";
   return "otra";
 }
@@ -450,6 +489,7 @@ export function validateJourneyStories(
       const f = lang === "PT" ? openingShapePT(s.text)
         : lang === "FR" ? openingShapeFR(s.text)
         : lang === "ES" ? openingShapeES(s.text)
+        : lang === "IT" ? openingShapeIT(s.text)
         : openingShape(s.text);
       porForma.set(f, [...(porForma.get(f) ?? []), s.slug]);
     }
@@ -535,6 +575,49 @@ export function validateJourneyStories(
       }
       push("journey-a0-floor", "Suelo A0: la narracion va en presente",
         malas.length === 0, malas.slice(0, 8).join(" | "));
+    } else if (lang === "IT") {
+      // Suelo A0 italiano (2026-09-14): la NARRACION va en presente, igual que
+      // en frances; lo citado es habla real y queda fuera. Tres pasados que un
+      // detector ingenuo confunde con presente, y como se evitan:
+      //   - passato prossimo con ESSERE: "e arrabbiata", "sono bagnati" son
+      //     adjetivo, asi que con essere solo cuentan los participios de
+      //     movimiento y cambio de estado de una lista blanca;
+      //   - imperfetto en -ava/-iva: "arriva", "lava", "riva", "oliva" son
+      //     presente o sustantivo, y van a la lista de excepciones;
+      //   - futuro y condizionale se piden por su terminacion acentuada o en
+      //     -rebbe, que no tiene falsos amigos en el lexico A0.
+      const L = "(?<![\\p{L}])";
+      const R = "(?![\\p{L}])";
+      const AUX_AVERE = "(?:ho|hai|ha|abbiamo|avete|hanno)";
+      const AUX_ESSERE = "(?:sono|sei|è|siamo|siete)";
+      const PART = "\\p{Ll}{2,}(?:ato|ata|ati|ate|uto|uta|uti|ute|ito|ita|iti|ite)";
+      const PART_ESSERE = "(?:andat|arrivat|partit|tornat|uscit|entrat|venut|stat|nat|rimast|cadut|salit|sces|successo|success)[oaie]?";
+      const NO_PART = /^(?:fame|sete|freddo|caldo|paura|sonno|ragione|torto|fretta|bisogno|voglia|anni)$/;
+      const PC_AVERE = new RegExp(`${L}${AUX_AVERE}\\s+(?:già\\s+|appena\\s+|sempre\\s+|mai\\s+)?(${PART})${R}`, "iu");
+      const PC_ESSERE = new RegExp(`${L}${AUX_ESSERE}\\s+(?:già\\s+|appena\\s+)?${PART_ESSERE}${R}`, "iu");
+      // -ivo/-iva/-ivano NO se piden por terminacion: "arrivano", "aperitivo",
+      // "motivo", "detersivo" son presente o sustantivo (medido contra el
+      // Friends IT A0 de julio y los Traveler A1/A2). De la -ire van por lista.
+      const IMP_IT = new RegExp(`${L}(\\p{Ll}{2,}(?:avo|ava|avamo|avate|avano|evo|eva|evamo|evate|evano|ivamo|ivate)|(?:dorm|sent|fin|cap|ven|part|usc|apr|prefer|segu|sal|dic|fac)(?:iva|ivo|ivano|eva|evano))${R}`, "u");
+      const NO_IMP = /^(?:lava|lavo|cava|cavo|brava|bravo|schiava|schiavo|ottava|ottavo|nava|scava|scavo|beva|devo|deva|beve|leva|levo|neva|salvo|salva|sale|sala)$/;
+      const FUT_COND = new RegExp(`${L}\\p{Ll}{2,}(?:erò|irò|arò|erà|irà|arà|eremo|iremo|eranno|iranno|rebbe|rebbero|rei|resti|remmo)${R}`, "u");
+      const malas: string[] = [];
+      for (const s of stories) {
+        const narr = s.text.replace(new RegExp(`${QUOTE_OPEN}[^${QUOTE_CLOSE}]*${QUOTE_CLOSE}`, "g"), " ");
+        for (const f of sentences(narr)) {
+          if (f.length < 4) continue;
+          const flags: string[] = [];
+          const pc = f.match(PC_AVERE);
+          if (pc && !NO_PART.test(pc[1].toLowerCase())) flags.push("passato prossimo");
+          if (PC_ESSERE.test(f)) flags.push("passato prossimo");
+          const imp = f.match(IMP_IT);
+          if (imp && !NO_IMP.test(imp[1].toLowerCase())) flags.push("imperfetto");
+          if (FUT_COND.test(f)) flags.push("futuro o condizionale");
+          if (flags.length) malas.push(`${s.slug}: [${[...new Set(flags)].join(" · ")}] ${f.slice(0, 70)}`);
+        }
+      }
+      push("journey-a0-floor", "Suelo A0: la narracion va en presente",
+        malas.length === 0, malas.slice(0, 8).join(" | "));
     } else if (lang !== "DE") {
       noImpl("journey-a0-floor", "Suelo A0: sujeto primero, sin separables partidos, solo presente",
         `El suelo A0 solo esta implementado para DE; este journey es ${lang || "?"}. Escribelo antes de guardar.`);
@@ -563,6 +646,12 @@ export function validateJourneyStories(
     const EDAD = /\b(Kind|Kinder|Junge|Jungen|Mädchen|Baby|Enkel\w*|Oma|Opa|Großmutter|Großvater|Rentner\w*|Greis\w*|Teenager)\b/g;
     const halladas = new Set<string>();
     for (const s of stories) for (const m of s.text.matchAll(EDAD)) halladas.add(m[0]);
+    // Italiano (2026-09-14). "ragazzo/ragazza" NO entra: en italiano es un
+    // adulto joven, y meterlo marcaria a media escena de cualquier A0.
+    if (lang === "IT") {
+      const EDAD_IT = /(?<!\p{L})(bambin[oaie]|nonn[oaie]|nipotin[oaie]|ragazzin[oaie]|adolescent[ei]|anzian[oaie]|pensionat[oaie]|neonat[oaie])(?!\p{L})/giu;
+      for (const s of stories) for (const m of s.text.matchAll(EDAD_IT)) halladas.add(m[0]);
+    }
     push("journey-no-elderly-no-children", "Ni ancianos ni ninos en contenido nuevo",
       halladas.size === 0, [...halladas].join(", "));
   }
@@ -899,9 +988,22 @@ export function validateJourneyStories(
   // merece plaza, asi que el check informa y no bloquea.
   if (stories.some((s) => s.vocab && s.vocab.length)) {
     const idiomaEs = lang === "ES";
+    const tipo = (ctx.journeyType ?? "").trim().toLowerCase();
+    const gateado = tipo === "traveler";
     if (!idiomaEs) {
-      noImplSet("journey-vocab-worth-teaching", "Cada plaza merece ensenarse",
-        `Solo hay lexico graduado hasta C1 en espanol; en ${lang || "?"} no se puede medir la utilidad de una plaza.`);
+      const detalle =
+        `Solo hay lexico graduado hasta C1 en espanol; en ${lang || "?"} no se puede medir la utilidad de una plaza.` +
+        (gateado
+          ? ""
+          : ` Tipo ${tipo || "desconocido"}: no gateado por esta regla; se informa como cobertura pendiente.`);
+      if (gateado) {
+        noImplSet("journey-vocab-worth-teaching", "Cada plaza merece ensenarse", detalle);
+      } else {
+        pushSet("journey-vocab-worth-teaching",
+          "Cada plaza merece ensenarse (sin lexico C1 disponible para este idioma)",
+          true,
+          detalle);
+      }
     } else {
       const fueraDelLexico = (w: string): boolean => {
         const x = w.trim().toLowerCase();
