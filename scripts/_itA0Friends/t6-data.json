@@ -1,0 +1,394 @@
+[
+ {
+  "topic": "quarrels-and-apologies",
+  "slotIndex": 0,
+  "title": "Non è divertente",
+  "arcType": null,
+  "synopsis": "Alice invites a colleague to lunch on the roof terrace. Matteo wants to be funny and tells the story of the old pact.",
+  "text": "Due piatti non bastano: oggi sulla terrazza ci sono tre sedie. Valentina, una collega di Alice, arriva con una torta. È l'ospite. Alice apparecchia la tavola e il sole scalda la terrazza.\n\nMatteo racconta storie di mare e Valentina ride spesso. “Valentina, vuoi ancora un po' di vino?” chiede Alice. Lei è felice, perché il pranzo va bene.\n\nPoi Matteo alza il bicchiere per brindare. “Sai, Valentina? Alice e io abbiamo un patto. Se a trentacinque anni siamo soli, ci sposiamo!” dice lui, e ride forte.\n\nValentina ride. Alice no. Lei diventa bianca e posa la forchetta. Sente vergogna, perché Matteo scherza sul suo segreto davanti a un'altra. “Alice? Che cosa c'è?” chiede Matteo.\n\n“Non è divertente, Matteo. Tu parli troppo e non capisci niente,” dice Alice. Poi si alza ed esce. Sbatte la porta delle scale. Matteo resta con il bicchiere in mano.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "bastare",
+    "surface": "bastano",
+    "definition": "To be enough; to be the right amount."
+   },
+   {
+    "type": "noun",
+    "word": "la collega",
+    "surface": "collega",
+    "definition": "A colleague; a person you work with."
+   },
+   {
+    "type": "noun",
+    "word": "la torta",
+    "surface": "torta",
+    "definition": "A cake; a sweet thing for a party."
+   },
+   {
+    "type": "noun",
+    "word": "l'ospite",
+    "surface": "ospite",
+    "definition": "A guest; a person you invite to your home."
+   },
+   {
+    "type": "verb",
+    "word": "apparecchiare",
+    "surface": "apparecchia",
+    "definition": "To set the table for a meal."
+   },
+   {
+    "type": "verb",
+    "word": "scaldare",
+    "surface": "scalda",
+    "definition": "To warm; to make something warm."
+   },
+   {
+    "type": "verb",
+    "word": "raccontare",
+    "surface": "racconta",
+    "definition": "To tell a story to someone."
+   },
+   {
+    "type": "expression",
+    "word": "storie di mare",
+    "surface": "storie di mare",
+    "definition": "Stories about the sea and sailors."
+   },
+   {
+    "type": "expression",
+    "word": "un po' di vino",
+    "surface": "un po' di vino",
+    "definition": "A little wine; a small glass of wine."
+   },
+   {
+    "type": "verb",
+    "word": "brindare",
+    "surface": "brindare",
+    "definition": "To make a toast; to raise glasses together."
+   },
+   {
+    "type": "number",
+    "word": "trentacinque",
+    "surface": "trentacinque",
+    "definition": "Thirty-five; the number 35."
+   },
+   {
+    "type": "expression",
+    "word": "diventare bianco",
+    "surface": "diventa bianca",
+    "definition": "To go pale; your face loses its colour."
+   },
+   {
+    "type": "verb",
+    "word": "posare",
+    "surface": "posa",
+    "definition": "To put down; to place gently."
+   },
+   {
+    "type": "noun",
+    "word": "la vergogna",
+    "surface": "vergogna",
+    "definition": "Shame; a bad feeling when others see you."
+   },
+   {
+    "type": "verb",
+    "word": "scherzare",
+    "surface": "scherza",
+    "definition": "To joke; to say things only for fun."
+   },
+   {
+    "type": "expression",
+    "word": "che cosa c'è",
+    "surface": "Che cosa c'è",
+    "definition": "What is wrong? What is the matter?"
+   },
+   {
+    "type": "adjective",
+    "word": "divertente",
+    "surface": "divertente",
+    "definition": "Funny; it makes you laugh."
+   },
+   {
+    "type": "verb",
+    "word": "alzarsi",
+    "surface": "si alza",
+    "definition": "To stand up; to get up from a chair."
+   },
+   {
+    "type": "verb",
+    "word": "sbattere",
+    "surface": "Sbatte",
+    "definition": "To slam; to close a door hard and loud."
+   },
+   {
+    "type": "noun",
+    "word": "la tavola",
+    "surface": "tavola",
+    "definition": "The table set for a meal."
+   }
+  ]
+ },
+ {
+  "topic": "quarrels-and-apologies",
+  "slotIndex": 1,
+  "title": "Domenica senza terrazza",
+  "arcType": null,
+  "synopsis": "A week passes and Alice avoids Matteo on the stairs. The terrace is empty at lunchtime, and Valentina comes to see her.",
+  "text": "È domenica, ma la terrazza è vuota. Per la prima volta da anni, Alice e Matteo non pranzano insieme. Da una settimana Alice scende le scale di corsa, per non vedere Matteo. In casa c'è silenzio. Il telefono è spento sul tavolo.\n\nQualcuno bussa. È Valentina, con i capelli neri lunghi e un sacchetto di pane. “Tu e Matteo parlate?” chiede Valentina. “No. Sulle scale io guardo per terra,” risponde Alice. Ha gli occhi gonfi e abbraccia un cuscino.\n\nValentina appoggia il pane e si siede vicino al davanzale. “Alice, lui non sa del patto. Per lui è un vecchio scherzo,” dice lei. Alice ascolta e si morde il labbro, perché Valentina ha ragione.\n\n“Sono arrabbiata con lui. Ma sono arrabbiata anche con me. Sono stupida,” dice Alice piano. “Non sei stupida. Scendi e chiedi scusa, con una focaccia. È un buon consiglio,” risponde Valentina.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "pranzare",
+    "surface": "pranzano",
+    "definition": "To have lunch; to eat in the middle of the day."
+   },
+   {
+    "type": "expression",
+    "word": "per la prima volta da anni",
+    "surface": "Per la prima volta da anni",
+    "definition": "For the first time in years; it never happens."
+   },
+   {
+    "type": "expression",
+    "word": "da una settimana",
+    "surface": "Da una settimana",
+    "definition": "For a week now; since seven days ago."
+   },
+   {
+    "type": "expression",
+    "word": "per non vedere",
+    "surface": "per non vedere",
+    "definition": "So as not to see someone."
+   },
+   {
+    "type": "noun",
+    "word": "i capelli",
+    "surface": "capelli",
+    "definition": "Hair; it grows on your head."
+   },
+   {
+    "type": "adjective",
+    "word": "lungo",
+    "surface": "lunghi",
+    "definition": "Long; not short, of great length."
+   },
+   {
+    "type": "expression",
+    "word": "il sacchetto di pane",
+    "surface": "sacchetto di pane",
+    "definition": "A paper bag of bread."
+   },
+   {
+    "type": "expression",
+    "word": "guardare per terra",
+    "surface": "guardo per terra",
+    "definition": "To look at the ground; not in someone's eyes."
+   },
+   {
+    "type": "adjective",
+    "word": "gonfio",
+    "surface": "gonfi",
+    "definition": "Puffy; big and swollen, here from crying."
+   },
+   {
+    "type": "noun",
+    "word": "il davanzale",
+    "surface": "davanzale",
+    "definition": "A windowsill; the flat part under a window.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "ascoltare",
+    "surface": "ascolta",
+    "definition": "To listen; to hear with attention."
+   },
+   {
+    "type": "verb",
+    "word": "mordersi",
+    "surface": "si morde",
+    "definition": "To bite yourself, here your lip."
+   },
+   {
+    "type": "noun",
+    "word": "il labbro",
+    "surface": "labbro",
+    "definition": "A lip; one of the two parts of the mouth."
+   },
+   {
+    "type": "expression",
+    "word": "avere ragione",
+    "surface": "ha ragione",
+    "definition": "To be right; what you say is true."
+   },
+   {
+    "type": "adjective",
+    "word": "arrabbiato",
+    "surface": "arrabbiata",
+    "definition": "Angry; not happy with someone."
+   },
+   {
+    "type": "adjective",
+    "word": "stupido",
+    "surface": "stupida",
+    "definition": "Stupid; not clever at all."
+   },
+   {
+    "type": "expression",
+    "word": "chiedere scusa",
+    "surface": "chiedi scusa",
+    "definition": "To say sorry; to ask someone to forgive you."
+   },
+   {
+    "type": "noun",
+    "word": "il consiglio",
+    "surface": "consiglio",
+    "definition": "A piece of advice; an idea to help you."
+   },
+   {
+    "type": "adjective",
+    "word": "spento",
+    "surface": "spento",
+    "definition": "Switched off; not working, with no light."
+   },
+   {
+    "type": "verb",
+    "word": "appoggiare",
+    "surface": "appoggia",
+    "definition": "To put something down on a surface."
+   }
+  ]
+ },
+ {
+  "topic": "quarrels-and-apologies",
+  "slotIndex": 2,
+  "title": "Focaccia sulle scale",
+  "arcType": null,
+  "synopsis": "Alice goes down to the second floor with a warm focaccia and knocks on Matteo's door. He opens it, but he does not smile.",
+  "text": "Alice scende al secondo piano con una focaccia calda. Davanti alla porta di Matteo trema un po'. Poi bussa due volte.\n\nMatteo apre e resta sulla soglia. Non sorride. Indossa una vecchia tuta e ha la barba lunga. Dietro di lui c'è disordine.\n\n“Scusa, Matteo. A pranzo sono cattiva con te. Mi dispiace davvero,” dice Alice. “Perché ti arrabbi così? Per un patto di quindici anni fa?” chiede lui.\n\nAlice apre la bocca, ma la verità resta dentro. “Sono stanca. Il lavoro, i turni di notte. Non è colpa tua,” risponde Alice. È una bugia piccola, ma pesa.\n\nLo stomaco di Matteo brontola. Lui annusa la focaccia e finalmente tende la mano. “Va bene. Pace. Ma io non parlo più del patto. Mai più. Promesso,” dice lui.\n\nSi siedono sulle scale e dividono la focaccia in due. La pace è vera, ma c'è una crepa, come nel mortaio di marmo.",
+  "vocab": [
+   {
+    "type": "expression",
+    "word": "il secondo piano",
+    "surface": "secondo piano",
+    "definition": "The second floor of a building."
+   },
+   {
+    "type": "verb",
+    "word": "tremare",
+    "surface": "trema",
+    "definition": "To shake; your body moves from fear or cold."
+   },
+   {
+    "type": "expression",
+    "word": "due volte",
+    "surface": "due volte",
+    "definition": "Twice; two times, one after the other."
+   },
+   {
+    "type": "noun",
+    "word": "la soglia",
+    "surface": "soglia",
+    "definition": "A doorway; the place where you enter a room.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "la tuta",
+    "surface": "tuta",
+    "definition": "A tracksuit; soft clothes for home or sport."
+   },
+   {
+    "type": "noun",
+    "word": "il disordine",
+    "surface": "disordine",
+    "definition": "A mess; things everywhere, not in their place."
+   },
+   {
+    "type": "adjective",
+    "word": "cattivo",
+    "surface": "cattiva",
+    "definition": "Mean; not kind to someone."
+   },
+   {
+    "type": "expression",
+    "word": "quindici anni fa",
+    "surface": "quindici anni fa",
+    "definition": "Fifteen years ago; a long time in the past."
+   },
+   {
+    "type": "expression",
+    "word": "aprire la bocca",
+    "surface": "apre la bocca",
+    "definition": "To open your mouth, ready to speak."
+   },
+   {
+    "type": "noun",
+    "word": "la verità",
+    "surface": "verità",
+    "definition": "The truth; what really is."
+   },
+   {
+    "type": "noun",
+    "word": "il lavoro",
+    "surface": "lavoro",
+    "definition": "Work; the job you do for money."
+   },
+   {
+    "type": "noun",
+    "word": "la colpa",
+    "surface": "colpa",
+    "definition": "Fault; the reason something bad happens."
+   },
+   {
+    "type": "noun",
+    "word": "la bugia",
+    "surface": "bugia",
+    "definition": "A lie; something you say that is not true."
+   },
+   {
+    "type": "verb",
+    "word": "brontolare",
+    "surface": "brontola",
+    "definition": "To rumble; here his stomach makes a noise."
+   },
+   {
+    "type": "verb",
+    "word": "annusare",
+    "surface": "annusa",
+    "definition": "To smell something with your nose."
+   },
+   {
+    "type": "expression",
+    "word": "tendere la mano",
+    "surface": "tende la mano",
+    "definition": "To hold out your hand to someone."
+   },
+   {
+    "type": "noun",
+    "word": "la pace",
+    "surface": "Pace",
+    "definition": "Peace; the end of a fight."
+   },
+   {
+    "type": "expression",
+    "word": "promesso",
+    "surface": "Promesso",
+    "definition": "Promise; I promise it."
+   },
+   {
+    "type": "verb",
+    "word": "dividere",
+    "surface": "dividono",
+    "definition": "To divide; to cut into parts for people."
+   },
+   {
+    "type": "noun",
+    "word": "la crepa",
+    "surface": "crepa",
+    "definition": "A crack; a thin line where something is broken."
+   }
+  ]
+ }
+]
