@@ -5,25 +5,13 @@
   "title": "Il pesto vuole pazienza",
   "arcType": null,
   "synopsis": "Matteo's ferry is late, and Alice wants to make his pesto for the first time. She takes the last basil plant down to the bakery.",
-  "text": "Un messaggio arriva sul telefono di Alice. Matteo scrive: il traghetto è in ritardo, arrivo alle due. Oggi Alice vuole fare il pesto per lui.\n\nMa Alice non sa fare il pesto. Lei prende il piccolo vaso di basilico e scende le scale in ciabatte. Dalla focacceria sale un odore di pane caldo.\n\nLorenzo, il fornaio della focacceria, lavora dalle cinque di mattina. “Buongiorno, Alice! Una focaccia?” chiede lui. “No. Io voglio fare il pesto,” risponde Alice.\n\n“Il pesto? Con questa pianta? È troppo piccola,” dice Lorenzo, e ride.\n\nAlice è agitata, perché Matteo arriva alle due. Lei tiene il vaso con due mani. “Per favore, Lorenzo. È per un amico,” dice Alice.\n\nLorenzo guarda Alice. Poi prende altro basilico da una cassetta. “Va bene. Ma il pesto vuole pazienza,” dice lui.\n\n“Tu lavori qui un'ora e io ti insegno,” dice Lorenzo. Alice mette il grembiule bianco. La sua domenica libera comincia al banco.",
+  "text": "Matteo scrive ad Alice: il traghetto è in ritardo, arrivo alle due. Oggi Alice vuole fare il pesto per lui.\n\nMa Alice non sa fare il pesto. Lei prende il piccolo vaso di basilico e scende le scale in ciabatte. Ha sonno e sbadiglia. C'è odore di pane.\n\nLorenzo, il fornaio della focacceria, impasta dalle cinque di mattina. Sul banco ci sono teglie di focaccia dorata, con olive e rosmarino. “Buongiorno, Alice! Una focaccia?” chiede lui. “No. Io voglio fare il pesto,” risponde Alice.\n\n“Il pesto? Con questa pianta? È troppo piccola,” dice Lorenzo, e ride.\n\nAlice è agitata, perché Matteo arriva alle due. Abbraccia il vaso. “Per favore, Lorenzo. È per un amico,” dice Alice.\n\nLorenzo guarda Alice. “Va bene. Ma il pesto vuole pazienza,” dice lui.\n\n“Tu lavori qui un'ora e io ti insegno,” dice Lorenzo. Alice mette il grembiule e serve i clienti. La sua domenica libera comincia al banco.",
   "vocab": [
    {
     "type": "noun",
     "word": "il pesto",
     "surface": "pesto",
     "definition": "Pesto; a green sauce with basil, from Genoa."
-   },
-   {
-    "type": "adverb",
-    "word": "non",
-    "surface": "non",
-    "definition": "Not; it makes a sentence negative."
-   },
-   {
-    "type": "preposition",
-    "word": "da",
-    "surface": "da",
-    "definition": "From; here, out of a box."
    },
    {
     "type": "noun",
@@ -46,34 +34,10 @@
     "definition": "In the morning; early in the day."
    },
    {
-    "type": "preposition",
-    "word": "con",
-    "surface": "Con",
-    "definition": "With; together with something or someone."
-   },
-   {
-    "type": "verb",
-    "word": "dire",
-    "surface": "dice",
-    "definition": "To say; to tell with words."
-   },
-   {
     "type": "expression",
     "word": "alle due",
     "surface": "alle due",
     "definition": "At two o'clock in the afternoon."
-   },
-   {
-    "type": "pronoun",
-    "word": "lui",
-    "surface": "lui",
-    "definition": "He or him; a man we talk about."
-   },
-   {
-    "type": "conjunction",
-    "word": "ma",
-    "surface": "ma",
-    "definition": "But; it shows a contrast."
    },
    {
     "type": "expression",
@@ -92,12 +56,6 @@
     "word": "insegnare",
     "surface": "insegno",
     "definition": "To teach; to show someone how to do something."
-   },
-   {
-    "type": "adverb",
-    "word": "qui",
-    "surface": "qui",
-    "definition": "Here; in this place."
    },
    {
     "type": "expression",
@@ -125,9 +83,54 @@
    },
    {
     "type": "expression",
-    "word": "buongiorno",
-    "surface": "Buongiorno",
-    "definition": "Good morning; a hello in the day."
+    "word": "avere sonno",
+    "surface": "Ha sonno",
+    "definition": "To be sleepy; to want to sleep."
+   },
+   {
+    "type": "verb",
+    "word": "sbadigliare",
+    "surface": "sbadiglia",
+    "definition": "To yawn; to open your mouth when tired."
+   },
+   {
+    "type": "verb",
+    "word": "impastare",
+    "surface": "impasta",
+    "definition": "To knead dough with your hands."
+   },
+   {
+    "type": "noun",
+    "word": "la teglia",
+    "surface": "teglie",
+    "definition": "A baking tray; a flat metal pan for the oven.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "dorato",
+    "surface": "dorata",
+    "definition": "Golden; brown and shiny from the oven."
+   },
+   {
+    "type": "noun",
+    "word": "le olive",
+    "surface": "olive",
+    "definition": "Olives; small green or black fruits.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "il rosmarino",
+    "surface": "rosmarino",
+    "definition": "Rosemary; a herb with a strong smell.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "servire",
+    "surface": "serve",
+    "definition": "To serve; to give people what they buy."
    }
   ]
  },
@@ -137,7 +140,7 @@
   "title": "Un mortaio in due pezzi",
   "arcType": null,
   "synopsis": "Lorenzo comes up to teach Alice how to make pesto in Matteo's old marble mortar. The pesto is good, but the kitchen sink is slippery.",
-  "text": "A mezzogiorno Lorenzo sale da Alice con i pinoli e il formaggio. Lui taglia il formaggio. Sul tavolo c'è il mortaio di marmo di Matteo. “Allora, cominciamo?” chiede Lorenzo.\n\n“Che bel mortaio! È vecchio?” chiede Lorenzo. “Sì. È della famiglia di Matteo,” risponde Alice. Il mortaio pesa molto.\n\n“Prima l'aglio e il sale. Poi il basilico, piano,” dice Lorenzo. Alice usa il pestello troppo forte. “No, no! Così il basilico diventa nero,” dice lui.\n\nAlice ricomincia. Piano, in cerchio, come Lorenzo. In cucina c'è un odore dolce. “Così va bene?” chiede Alice. “Sì, così. Brava! Adesso è un pesto vero. È pronto,” risponde Lorenzo. Alice assaggia e sorride, felice.\n\nLorenzo torna alla focacceria. Alice lava il mortaio nel lavandino. Ma il marmo è bagnato e scivola. Il mortaio cade e si rompe in due pezzi. Alice ha le mani fredde, perché è il mortaio di Matteo. “No!” dice Alice.",
+  "text": "A mezzogiorno Lorenzo sale da Alice con i pinoli e il formaggio. Lui taglia il formaggio. Sul tavolo c'è il mortaio di marmo di Matteo. “Allora, cominciamo?” chiede Lorenzo.\n\n“Che bel mortaio! È vecchio?” chiede Lorenzo. “Sì. È della famiglia di Matteo,” risponde Alice. Il mortaio pesa molto.\n\n“Prima l'aglio e il sale. Poi il basilico, piano,” dice Lorenzo. Alice schiaccia il basilico con il pestello, troppo forte. “No, no! Così il basilico diventa nero,” dice lui.\n\nAlice ricomincia. Piano, in cerchio, come Lorenzo. In cucina c'è un odore dolce. “Così va bene?” chiede Alice. “Sì, così. Brava! Adesso è un pesto vero. È pronto,” risponde Lorenzo. Alice assaggia e sorride, felice.\n\nLorenzo torna alla focacceria. Alice lava il mortaio nel lavandino. Ma il marmo è bagnato e scivola. Il mortaio cade e si rompe in due pezzi. Alice ha le mani fredde, perché è il mortaio di Matteo. “No!” dice Alice.",
   "vocab": [
    {
     "type": "noun",
@@ -203,12 +206,6 @@
     "definition": "In a circle; round and round."
    },
    {
-    "type": "conjunction",
-    "word": "come",
-    "surface": "come",
-    "definition": "Like; in the same way as."
-   },
-   {
     "type": "expression",
     "word": "in cucina",
     "surface": "In cucina",
@@ -262,6 +259,12 @@
     "word": "tagliare",
     "surface": "taglia",
     "definition": "To cut; to make pieces with a knife."
+   },
+   {
+    "type": "verb",
+    "word": "schiacciare",
+    "surface": "schiaccia",
+    "definition": "To crush; to press hard into small pieces."
    }
   ]
  },
@@ -271,7 +274,7 @@
   "title": "Trofie per due",
   "arcType": null,
   "synopsis": "Matteo gets home from the ferry and finds lunch ready on the terrace. He loves the pesto, and then Alice shows him the mortar.",
-  "text": "Matteo entra sulla terrazza alle due, stanco. Alice aspetta al tavolo. Davanti a lei ci sono due piatti di trofie al pesto e una bottiglia d'acqua.\n\n“Che profumo! Chi fa il pesto oggi?” chiede lui. “Io. Con Lorenzo, il fornaio,” risponde Alice. Matteo mangia lentamente e chiude gli occhi. “È più buono del mio. Davvero,” dice lui.\n\nAlice non mangia. Lei ha lo stomaco chiuso, perché in cucina c'è il mortaio rotto. Poi porta i due pezzi sul tavolo, accanto ai piatti. “Mi dispiace tanto. È il mortaio della tua famiglia,” dice Alice piano.\n\nMatteo guarda i due pezzi a lungo e sospira. “Non importa, Alice,” dice lui. Ma i suoi occhi sono tristi. “Per me importa,” risponde Alice, e asciuga una lacrima.\n\nMatteo cerca un po' di terra e la mette nei due pezzi di marmo. “Senza pergola, ma con due vasi. Uno per te e uno per me,” dice lui.",
+  "text": "Matteo entra sulla terrazza alle due, stanco. Alice aspetta al tavolo. Davanti a lei ci sono due piatti di trofie al pesto e una bottiglia d'acqua.\n\n“Che profumo! Chi fa il pesto oggi?” chiede lui. “Io, con Lorenzo,” risponde Alice. “Ho un appetito da marinaio!” dice lui. Matteo mangia lentamente e chiude gli occhi. Ha il pesto sulla barba. “È più buono del mio,” dice lui.\n\nAlice non mangia. Lei ha lo stomaco chiuso, perché in cucina c'è il mortaio rotto. Poi porta i due pezzi su un vassoio, accanto ai piatti. “Mi dispiace. È il mortaio della tua famiglia,” dice Alice piano.\n\nMatteo guarda i due pezzi a lungo e sospira. “Non importa, Alice,” dice lui. Lui sorride appena, ma i suoi occhi sono tristi. “Per me importa,” risponde Alice, e asciuga una lacrima.\n\nMatteo riempie di terra i due pezzi di marmo. “Uno per te e uno per me,” dice lui.",
   "vocab": [
    {
     "type": "adjective",
@@ -297,12 +300,6 @@
     "word": "che profumo",
     "surface": "Che profumo",
     "definition": "What a lovely smell!"
-   },
-   {
-    "type": "pronoun",
-    "word": "chi",
-    "surface": "Chi",
-    "definition": "Who; which person does it."
    },
    {
     "type": "adverb",
@@ -335,12 +332,6 @@
     "definition": "Next to; beside something."
    },
    {
-    "type": "determiner",
-    "word": "tuo",
-    "surface": "tua",
-    "definition": "Your; it belongs to you."
-   },
-   {
     "type": "expression",
     "word": "a lungo",
     "surface": "a lungo",
@@ -360,12 +351,6 @@
    },
    {
     "type": "verb",
-    "word": "essere",
-    "surface": "sono",
-    "definition": "To be; here, they are."
-   },
-   {
-    "type": "verb",
     "word": "asciugare",
     "surface": "asciuga",
     "definition": "To dry; to take the water away."
@@ -378,21 +363,39 @@
    },
    {
     "type": "expression",
-    "word": "un po' di",
-    "surface": "un po' di",
-    "definition": "A little; a small amount of."
-   },
-   {
-    "type": "preposition",
-    "word": "senza",
-    "surface": "Senza",
-    "definition": "Without; not having something."
-   },
-   {
-    "type": "expression",
     "word": "uno per te e uno per me",
     "surface": "Uno per te e uno per me",
     "definition": "One for you and one for me."
+   },
+   {
+    "type": "noun",
+    "word": "l'appetito",
+    "surface": "appetito",
+    "definition": "Appetite; the wish to eat."
+   },
+   {
+    "type": "noun",
+    "word": "la barba",
+    "surface": "barba",
+    "definition": "A beard; hair on a man's face."
+   },
+   {
+    "type": "noun",
+    "word": "il vassoio",
+    "surface": "vassoio",
+    "definition": "A tray; you carry plates on it."
+   },
+   {
+    "type": "adverb",
+    "word": "appena",
+    "surface": "appena",
+    "definition": "Only just; a very little."
+   },
+   {
+    "type": "verb",
+    "word": "riempire",
+    "surface": "riempie",
+    "definition": "To fill; to put things in until it is full."
    }
   ]
  }
