@@ -37,6 +37,7 @@ import { PrismaClient } from "../src/generated/prisma";
 import { getPublicObjectUrl, uploadPublicObject } from "../src/lib/objectStorage";
 import { practiceVoiceId } from "../src/lib/practiceVoice";
 import { assertVoiceApproved } from "../src/lib/approvedVoices";
+import { F0GateUnavailable, preflightF0Gate, runF0Gate } from "./_f0gateClient"; // gate F0 (_f0gate.py), cerrado
 
 const prisma = new PrismaClient();
 // Voice is resolved per story (the story's narrator); see practiceVoice.ts.
@@ -252,8 +253,10 @@ async function tailClean(mp3Path: string): Promise<{ ok: boolean; db: number | n
 // parselmouth in the ~/.cache/dpl-qa venv) rejects questions whose final
 // contour does not rise. Statements are warn-only there (pitch tracking on
 // final creak octave-jumps, a hard uptalk gate would false-reject).
-const F0_PYTHON = join(process.env.HOME || "", ".cache", "dpl-qa", "venv", "bin", "python");
-let f0GateWarned = false;
+// GATE CERRADO (2026-09-13): antes, si el venv no estaba o la salida no
+// parseaba, f0Ok devolvia ok=true ("skipped") y la toma se subia sin medir.
+// Ahora runF0Gate tira F0GateUnavailable, renderSentence no la reintenta y el
+// bucle principal para sin subir esa toma (ver _f0gateClient.ts).
 // Spanish wh-questions (¿quién/qué/cómo...?) end FALLING by nature: the
 // interrogative word carries the question cue, not a final rise. Only yes/no
 // questions require the rising-final gate. Accented forms only occur in
@@ -262,20 +265,13 @@ let f0GateWarned = false;
 // (Jhenny rendered one falling 8/8; the narration reads it the same way).
 const DELIBERATIVE_QUESTION = /^\s*¿\s*y\s+si\b/i;
 async function f0Ok(mp3Path: string, sentence: string): Promise<{ ok: boolean; detail: string }> {
-  try {
-    const mode =
-      isQuestion(sentence) && !LANG.wh.test(sentence) && !DELIBERATIVE_QUESTION.test(sentence)
-        ? "question"
-        : "statement";
-    const r = await spawnCapture(F0_PYTHON, ["scripts/_f0gate.py", mp3Path, mode]);
-    if (r.code !== 0) throw new Error(r.err.slice(0, 120));
-    const v = JSON.parse(r.out.trim());
-    if (v.reason && v.reason.includes("warn")) console.log(`   f0 warn: ${v.reason} (slope ${v.slope}, end ${v.end})`);
-    return { ok: !!v.ok, detail: `${v.reason} (slope ${v.slope}, end ${v.end})` };
-  } catch (err) {
-    if (!f0GateWarned) { f0GateWarned = true; console.log(`WARN f0 gate skipped (venv/parselmouth unavailable): ${(err as Error).message}`); }
-    return { ok: true, detail: "skipped" };
-  }
+  const mode =
+    isQuestion(sentence) && !LANG.wh.test(sentence) && !DELIBERATIVE_QUESTION.test(sentence)
+      ? "question"
+      : "statement";
+  const v = await runF0Gate(mp3Path, mode); // tira F0GateUnavailable si no mide
+  if (v.reason.includes("warn")) console.log(`   f0 warn: ${v.reason} (slope ${v.slope}, end ${v.end})`);
+  return { ok: v.ok, detail: `${v.reason} (slope ${v.slope}, end ${v.end})` };
 }
 
 async function sttText(buf: Buffer, apiKey: string): Promise<string> {
@@ -370,7 +366,10 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
       const f0 = await f0Ok(outPath, sentence);
       if (!f0.ok) { console.log(`   f0 reject: ${f0.detail} try ${t}`); continue; }
       return { ok: true, dur, tries: t };
-    } catch { /* retry */ }
+    } catch (err) {
+      if (err instanceof F0GateUnavailable) throw err; // sin gate no se reintenta ni se sube
+      /* retry */
+    }
   }
   return { ok: false, dur: 0, tries: MAX_TRIES };
 }
@@ -450,6 +449,8 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
 
   const apiKey = process.env.ELEVENLABS_API_KEY;
   if (!apiKey) throw new Error("ELEVENLABS_API_KEY missing");
+  // Sin gate F0 no se sintetiza nada: se comprueba ANTES del primer credito.
+  if (!process.argv.includes("--relist")) await preflightF0Gate();
   console.log(`voice (story narrator): ${VOICE}`);
 
   const targets = exs
@@ -521,6 +522,7 @@ ${takeOpts}</body></html>`;
 
   const done: Array<{ n: number; word: string; ok: boolean; tries: number; dur: number; file: string; sentence: string }> = [];
   let n = 1;
+  let gateCaido: F0GateUnavailable | null = null;
 
   // --relist: rehace la pagina de audicion con TODOS los clips que ya tiene el
   // set, leyendo el JSON, sin sintetizar nada. Existe porque un reintento de un
@@ -538,7 +540,17 @@ ${takeOpts}</body></html>`;
     const sentence: string = e.payload.audioClip.sentence;
     const file = `${slug}__${strip(e.word).replace(/\s+/g, "-")}.mp3`;
     const outPath = join(outDir, file);
-    const res = await renderSentence(sentence, apiKey, outPath);
+    let res: { ok: boolean; dur: number; tries: number };
+    try {
+      res = await renderSentence(sentence, apiKey, outPath);
+    } catch (err) {
+      if (!(err instanceof F0GateUnavailable)) throw err;
+      // La toma queda sin verificar y NO se sube. Se para aqui, pero antes se
+      // escribe el JSON para no perder los clipUrl ya subidos en esta corrida.
+      console.log(`${n}: ${e.word} [${e.type}] ✗ NO VERIFICADO (${err.message}); paro sin subirla`);
+      gateCaido = err;
+      break;
+    }
     if (res.ok) {
       // Re-render of an existing clip → bump rev so the R2 key (and URL) change.
       if (e.payload.audioClip.clipUrl) e.payload.audioClip.rev = (e.payload.audioClip.rev || 0) + 1;
@@ -554,6 +566,7 @@ ${takeOpts}</body></html>`;
   if (!process.argv.includes("--relist")) {
     writeFileSync(path, JSON.stringify(exs, null, 2) + "\n");
     console.log(`\n${done.filter((d) => d.ok).length}/${done.length} clips ok. JSON updated: ${path}`);
+    if (gateCaido) throw gateCaido;
   } else {
     console.log(`\n${done.length} clips ya rendidos, pagina rehecha sin sintetizar.`);
   }

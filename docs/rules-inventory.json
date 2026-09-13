@@ -70,8 +70,8 @@
     {
       "id": "feedback_audio_qa_gate_mandatory",
       "domain": "audio",
-      "rule": "\"NUNCA sintetizar audio de práctica (ElevenLabs) sin el gate F0 que re-tira hasta afirmación (no uptalk). Aplicar el gate ANTES de la primera generación, no descubrir el problema después. Enforced...",
-      "gate": "scripts/_genWordClips.ts",
+      "rule": "\"NUNCA sintetizar audio de práctica (ElevenLabs) sin el gate F0 que re-tira hasta afirmación (no uptalk). Aplicar el gate ANTES de la primera generación, no descubrir el problema después. Si el gat...",
+      "gate": "scripts/_f0gateClient.ts",
       "source": "memory:feedback_audio_qa_gate_mandatory.md"
     },
     {

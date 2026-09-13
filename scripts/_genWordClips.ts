@@ -8,18 +8,15 @@ import { PrismaClient } from "../src/generated/prisma";
 import { getPublicObjectUrl, uploadPublicObject } from "../src/lib/objectStorage";
 import { assertVoiceApproved } from "../src/lib/approvedVoices";
 import { practiceVoiceId } from "../src/lib/practiceVoice";
+import { F0GateUnavailable, preflightF0Gate, runF0Gate } from "./_f0gateClient"; // gate F0 (_f0gate.py), cerrado
 
 const prisma = new PrismaClient();
 const MODEL = "eleven_multilingual_v2";
 const SETTINGS = { stability: 0.4, similarity_boost: 0.8, style: 0.3, use_speaker_boost: true };
 const WORD_CLIP_VERSION = "w4"; // w4: +90ms lead-in silence (w3 arrancaba en 0ms → primer autoplay en sesión de audio fría cortaba el onset; los clips que funcionan tienen ~60ms de lead-in). marco declarativo + gate F0.
-const F0_PYTHON = join(process.env.HOME || "", ".cache", "dpl-qa", "venv", "bin", "python");
 const MAX_TRIES = 6;
 
 function ff(args: string[]): Promise<void> { return new Promise((res,rej)=>{const p=spawn("ffmpeg",args);let e="";p.stderr.on("data",c=>e+=c);p.on("error",rej);p.on("close",c=>c===0?res():rej(new Error(e.slice(0,150))));}); }
-function spawnCap(cmd: string, args: string[]): Promise<{code:number;out:string;err:string}> {
-  return new Promise((res)=>{const p=spawn(cmd,args);let o="",e="";p.stdout.on("data",c=>o+=c);p.stderr.on("data",c=>e+=c);p.on("error",()=>res({code:-1,out:o,err:e}));p.on("close",c=>res({code:c??-1,out:o,err:e}));});
-}
 async function normalize(raw: Buffer, outPath: string): Promise<void> {
   const d=mkdtempSync(join(tmpdir(),"wc-")); const i=join(d,"i.mp3");
   // adelay=90 = 90ms de silencio al INICIO: el primer autoplay ocurre con la
@@ -65,23 +62,34 @@ async function tts(text: string, voice: string, apiKey: string, carrier: string)
 }
 // GATE INVERTIDO: _f0gate.py en modo "question" devuelve ok=true si el final
 // SUBE. Para una palabra queremos que BAJE → aceptamos cuando el gate de
-// pregunta FALLA (ok=false). Devuelve {rises:boolean, detail}.
-async function endsRising(mp3Path: string): Promise<{rises:boolean;detail:string}> {
-  const r=await spawnCap(F0_PYTHON,["scripts/_f0gate.py",mp3Path,"question"]);
-  if(r.code!==0) return {rises:false,detail:"f0-skip"}; // si el gate no corre, no bloqueamos
-  try{ const v=JSON.parse(r.out.trim()); return {rises:!!v.ok, detail:`slope ${v.slope} end ${v.end}`}; }
-  catch{ return {rises:false,detail:"f0-parse"}; }
+// pregunta FALLA (ok=false).
+// GATE CERRADO (2026-09-13): antes, si el gate no corria o no parseaba,
+// devolvia rises=false y la toma se ACEPTABA ("costar", ES Spain B1). Ahora
+// runF0Gate tira F0GateUnavailable y renderWord la deja escapar: el script
+// para sin subir. Y un final que el gate no puede medir (end=null, "unvoiced
+// tail") tampoco cuenta como "no sube": en modo pregunta sale ok=false, que el
+// gate invertido leia como aceptado. Se trata como no verificado y se re-tira.
+async function endsRising(mp3Path: string): Promise<{verified:boolean;rises:boolean;detail:string}> {
+  const v=await runF0Gate(mp3Path,"question");
+  if(v.end===null) return {verified:false,rises:false,detail:`f0 sin medir (${v.reason})`};
+  return {verified:true,rises:v.ok,detail:`slope ${v.slope} end ${v.end}`};
 }
 async function renderWord(word: string, voice: string, apiKey: string, outPath: string, carrier: string): Promise<{ok:boolean;tries:number;detail:string}> {
+  let last="sigue subiendo tras reintentos";
   for(let t=1;t<=MAX_TRIES;t++){
     try{
       await normalize(await tts(word,voice,apiKey,carrier), outPath);
       const f=await endsRising(outPath);
+      if(!f.verified){ last=f.detail; continue; }
       if(!f.rises) return {ok:true,tries:t,detail:f.detail};
+      last="sigue subiendo tras reintentos";
       // sube = suena a pregunta → re-tira
-    }catch{/* retry */}
+    }catch(err){
+      if(err instanceof F0GateUnavailable) throw err; // no se reintenta a ciegas: para
+      /* retry */
+    }
   }
-  return {ok:false,tries:MAX_TRIES,detail:"sigue subiendo tras reintentos"};
+  return {ok:false,tries:MAX_TRIES,detail:last};
 }
 
 (async()=>{
@@ -91,6 +99,7 @@ async function renderWord(word: string, voice: string, apiKey: string, outPath: 
   const only = onlyArg ? new Set(onlyArg.slice(7).split(",").map(s=>s.trim().toLowerCase())) : null;
   if(!slug) throw new Error("usage: _genWordClips.ts <slug> [--only=w1,w2] [--force]");
   const apiKey = process.env.ELEVENLABS_API_KEY; if(!apiKey) throw new Error("no ELEVENLABS_API_KEY");
+  await preflightF0Gate(); // antes de la primera sintesis: sin gate no se gasta un credito
   const story = await prisma.journeyStory.findFirst({ where:{slug}, select:{ voiceId:true, practiceVoiceId:true, journey:{select:{language:true}}, practiceSet:{select:{exercises:{select:{id:true, word:true, type:true, payload:true}}}} } });
   if(!story?.practiceSet) throw new Error(`no practice set for ${slug}`);
   const voice = practiceVoiceId(story);
