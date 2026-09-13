@@ -78,7 +78,7 @@ correspond in German" (postales, notas, mensajes escritos).
 
 ## 5. Los siete temas
 
-Nombres PROPUESTOS el 2026-09-13 al nivel de dominio, pendientes de aprobacion; en la base siguen los de objeto (Postcards & Stamps, Photos & Faces, Board Games & Dice, Books & Newspapers, Songs & Instruments, Pots & Spoons, Notes & Magnets), rechazados por demasiado especificos. Historias, personajes y vocabulario no cambian.
+Nombres al nivel de dominio APROBADOS por el usuario el 2026-09-13 y renombrados en la base (scripts/_renameFriendsDEa0Topics.ts). Sustituyen a los de objeto (Postcards & Stamps, Photos & Faces, Board Games & Dice, Books & Newspapers, Songs & Instruments, Pots & Spoons, Notes & Magnets), rechazados por demasiado especificos. Historias, personajes y vocabulario no cambian.
 
 Nombres: dominio lexico, ingles, ampersand, 2-4 palabras, sin pais. Ninguno
 coincide con las 21 etiquetas alemanas existentes ni con el molde de curso

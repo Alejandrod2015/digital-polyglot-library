@@ -2225,13 +2225,13 @@
       "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
     ]
   },
-  "cmu047bkz0007326jsgeptkox#postcards-and-stamps": {
-    "cerrado": "2026-09-13T18:04:17.016Z",
+  "cmu047bkz0007326jsgeptkox#letters-and-invitations": {
+    "cerrado": "2026-09-13T18:07:53.810Z",
     "hash": "47896b7939c11c91",
     "historias": [
-      "postcards-and-stamps#0 karten-ohne-briefmarke",
-      "postcards-and-stamps#1 zwolf-alte-adressen",
-      "postcards-and-stamps#2 funf-marken-am-sonntag"
+      "letters-and-invitations#0 karten-ohne-briefmarke",
+      "letters-and-invitations#1 zwolf-alte-adressen",
+      "letters-and-invitations#2 funf-marken-am-sonntag"
     ],
     "checks": [
       "plan del tema completo (registro \"intimo y torpe: dos viejos amigos en una cocina que no saben por donde empezar\", espina \"Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.\")",

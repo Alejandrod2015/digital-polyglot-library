@@ -1,6 +1,6 @@
 [
  {
-  "topic": "postcards-and-stamps",
+  "topic": "letters-and-invitations",
   "slotIndex": 0,
   "title": "Karten ohne Briefmarke",
   "arcType": null,
@@ -9,7 +9,7 @@
   "vocab": []
  },
  {
-  "topic": "postcards-and-stamps",
+  "topic": "letters-and-invitations",
   "slotIndex": 1,
   "title": "Zwölf alte Adressen",
   "arcType": null,
@@ -18,7 +18,7 @@
   "vocab": []
  },
  {
-  "topic": "postcards-and-stamps",
+  "topic": "letters-and-invitations",
   "slotIndex": 2,
   "title": "Fünf Marken am Sonntag",
   "arcType": null,

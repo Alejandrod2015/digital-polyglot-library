@@ -50,9 +50,9 @@ s2 = "\n\n".join([
  "Anna steckt die Karten in den Briefkasten. Jan legt den Arm um ihre Schulter.",
 ])
 out=[
- {"topic":"postcards-and-stamps","slotIndex":0,"title":"Karten ohne Briefmarke","arcType":None,"synopsis":"","text":s0,"vocab":[]},
- {"topic":"postcards-and-stamps","slotIndex":1,"title":"Zwölf alte Adressen","arcType":None,"synopsis":"","text":s1,"vocab":[]},
- {"topic":"postcards-and-stamps","slotIndex":2,"title":"Fünf Marken am Sonntag","arcType":None,"synopsis":"","text":s2,"vocab":[]},
+ {"topic":"letters-and-invitations","slotIndex":0,"title":"Karten ohne Briefmarke","arcType":None,"synopsis":"","text":s0,"vocab":[]},
+ {"topic":"letters-and-invitations","slotIndex":1,"title":"Zwölf alte Adressen","arcType":None,"synopsis":"","text":s1,"vocab":[]},
+ {"topic":"letters-and-invitations","slotIndex":2,"title":"Fünf Marken am Sonntag","arcType":None,"synopsis":"","text":s2,"vocab":[]},
 ]
 json.dump(out,open("scripts/_deA0Friends/t1-texts.json","w"),ensure_ascii=False,indent=1)
 import re
