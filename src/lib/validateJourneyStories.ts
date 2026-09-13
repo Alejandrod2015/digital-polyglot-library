@@ -396,6 +396,12 @@ export function validateJourneyStories(
      *  Friends la jerga coloquial ES el producto. Sin el, ese check mide e
      *  informa pero no bloquea, que es lo prudente cuando no se sabe el tipo. */
     journeyType?: string | null;
+    /** Historias YA guardadas de los temas ANTERIORES del journey, cuando se
+     *  juzga un tema suelto (cierraTema). Son solo contexto: un personaje que
+     *  ya sale en ellas se presento alli y no se vuelve a juzgar aqui, y la
+     *  primera historia del journey esta entre ellas. Ninguna se juzga.
+     *  Puerto de 96bbd127 (rama del Friends FR A0), que no llego a main. */
+    previas?: Array<{ text: string }>;
   }
 ): JourneyCheck[] {
   const out: JourneyCheck[] = [];
@@ -460,7 +466,12 @@ export function validateJourneyStories(
     const formas: string[] = [];
     const malos: string[] = [];
     for (const n of cast) {
-      const primera = stories.find((s) => new RegExp(`(?<!\\p{L})${n}(?!\\p{L})`, "u").test(s.text));
+      const nombre = new RegExp(`(?<!\\p{L})${n}(?!\\p{L})`, "u");
+      // Ya sale en un tema ANTERIOR del journey: se presento alli y alli se
+      // juzgo al cerrarlo. Sin esto, desde el tema 2 cada fijo "aparecia por
+      // primera vez" en su tema y habia que presentarlo otra vez.
+      if (ctx.previas?.some((p) => nombre.test(p.text))) continue;
+      const primera = stories.find((s) => nombre.test(s.text));
       if (!primera) continue;
       const t = primera.text;
       const forma = FORMAS.find(([, re]) => re(n).test(t));
@@ -1211,7 +1222,11 @@ export function validateJourneyStories(
       // medio escribir; quien es fijo, no: el 2026-09-01, con dos temas de
       // siete, Leandro todavia no habia reaparecido fuera del suyo y el check
       // lo daba por intruso en la historia que protagoniza.
-      const enPrimera = nombres.filter((n) => new RegExp(`(?<!\\p{L})${n}(?!\\p{L})`, "u").test(stories[0].text));
+      // Con temas anteriores guardados, stories[0] es la primera del TEMA, no
+      // la del journey (esa esta en ctx.previas y se juzgo al cerrar el tema 1).
+      // Juzgarla aqui pedia que un tema que estrena personaje no lo estrenara
+      // (Friends IT A0, tema 2, 2026-09-14).
+      const enPrimera = ctx.previas?.length ? [] : nombres.filter((n) => new RegExp(`(?<!\\p{L})${n}(?!\\p{L})`, "u").test(stories[0].text));
       push("journey-cast-first-story-only-fixed", "La primera historia del journey no pasa de dos personajes",
         enPrimera.length <= 2,
         `${enPrimera.length} en la primera (${enPrimera.join(", ")}). La abre el reparto ` +
