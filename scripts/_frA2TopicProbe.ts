@@ -3,7 +3,7 @@ import { config } from "dotenv"; config({ path: ".env.local", quiet: true }); co
 import { PrismaClient } from "../src/generated/prisma";
 import { assertTopicsGrounded } from "../src/lib/topicEvidence";
 const prisma = new PrismaClient();
-const TEMAS = ["Habits & Shared Space","Inside Jokes & Memories","Parents & Sunday Lunch","Chores & Fair Shares","Arguments & Apologies","Weddings & Speeches","Homesickness & Belonging"];
+const TEMAS = ["Home Life & Habits","Jokes & Memories","Family & Manners","Housework & Fairness","Arguments & Apologies","Ceremonies & Public Speaking","Homesickness & Belonging"];
 const slug = (l: string) => l.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 async function main() {
   const existentes = (await prisma.journey.findMany({ where:{language:"french", status:{not:"archived"}}, select:{topics:true}})).flatMap(j=>j.topics);
