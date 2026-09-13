@@ -18,13 +18,13 @@ Destinatario sugerido: el contacto que figura en la página de FLELex
 
 Dear CENTAL / FLELex team,
 
-I'm writing on behalf of Digital Polyglot Library, a paid language-learning
+We're writing on behalf of Digital Polyglot Library, a paid language-learning
 product. We would like to use FLELex (the Beacco-graded lemma list, or the
 TreeTagger/CRF variant) to check that vocabulary in French learning content
 matches its intended CEFR level.
 
 FLELex is published under CC BY-NC-SA 4.0, which does not permit commercial
-use, and our product is commercial. Before we look elsewhere, I wanted to
+use, and our product is commercial. Before we look elsewhere, we wanted to
 ask directly: does CENTAL offer a separate commercial license for FLELex (or
 any of the CEFRLex family), or is there a path to obtain permission for
 this specific use case?
