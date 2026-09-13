@@ -2225,6 +2225,70 @@
       "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
     ]
   },
+  "cmu047bkz0007326jsgeptkox#games-and-rules": {
+    "cerrado": "2026-09-13T18:20:20.587Z",
+    "hash": "0b71db5773c90956",
+    "historias": [
+      "games-and-rules#0 felix-erklart-zu-schnell",
+      "games-and-rules#1 annas-roter-wurfel",
+      "games-and-rules#2 eine-vier-im-hof"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"ruidoso y competitivo: noche de juegos con reglas que todos saben menos ella\", espina \"Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 73% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"anna\", 20%)",
+      "densidad 5.3 palabras por oracion (techo 9 en a0)",
+      "seguidilla 17/58 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.18 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 51/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en DE no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: games-and-rules (Anna, Felix)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "germany",
+      "registro": "ruidoso y competitivo: noche de juegos con reglas que todos saben menos ella",
+      "espina": "Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.",
+      "recursos": "A0: repeticion ritmica (una Eins, noch eine Zwei; ich gewinne, ich gewinne), contraste con aber, imagen concreta (dado que cae, tablero roto, mano sobre la rejilla)",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "jugar con el grupo y no quedarse fuera en la noche de juegos",
+          "impide": "Felix trae un juego nuevo y explica las reglas muy rapido; todos las saben menos ella",
+          "cuesta": "pierde la partida y le toca fregar como la ultima",
+          "cambia": "Felix la ayuda con los vasos: el recien llegado a su grupo es amable",
+          "emocion": "frustracion: las manos calientes porque todos saben las reglas menos ella; tira el dado demasiado fuerte y cae de la mesa"
+        },
+        {
+          "slot": "1",
+          "quiere": "aprender las reglas a solas con Jan para no perder otra vez",
+          "impide": "tiene miedo de parecer torpe delante del grupo; solo se atreve de noche con Jan",
+          "cuesta": "el juego viejo de antes esta roto y le faltan fichas; va a la basura",
+          "cambia": "vuelve a ganar con su dado rojo y Jan la llama otra vez reina",
+          "emocion": "pena: los ojos humedos porque el juego de antes esta roto; se los seca rapido"
+        },
+        {
+          "slot": "2",
+          "quiere": "ganarle a Felix en la revancha del patio",
+          "impide": "Felix va por delante; ella necesita un cuatro exacto",
+          "cuesta": "su dado rojo de la escuela se cuela por la rejilla del suelo y no se puede sacar",
+          "cambia": "gana, y Felix le regala un dado azul 'para la reina'",
+          "emocion": "alegria rota: la boca seca porque el dado estaba con ella desde la escuela; pone la mano sobre la rejilla"
+        }
+      ]
+    }
+  },
   "cmu047bkz0007326jsgeptkox#letters-and-invitations": {
     "cerrado": "2026-09-13T18:14:41.256Z",
     "hash": "47896b7939c11c91",

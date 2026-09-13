@@ -1,0 +1,73 @@
+import json
+d=json.load(open("scripts/_deA0Friends/t3-texts.json"))
+V=lambda t,w,s,df: {"type":t,"word":w,"surface":s,"definition":df}
+d[0]["synopsis"]="Games night at Jan's. Felix, a maths teacher, brings a new game and explains the rules fast. Everyone understands, except Anna."
+d[0]["vocab"]=[
+ V("noun","der Spielabend","Spielabend","A games night; an evening when friends play games."),
+ V("noun","der Mathelehrer","Mathelehrer","A maths teacher; he teaches numbers at a school."),
+ V("adjective","grau","graues","Grey; the colour between black and white."),
+ V("noun","die Regel","Regeln","A rule; what you must and must not do in a game."),
+ V("adjective","einfach","einfach","Easy; not hard to understand."),
+ V("noun","die Figur","Figuren","A playing piece; the small thing you move on a board."),
+ V("verb","würfeln","würfelst","To roll the dice in a game."),
+ V("verb","laufen","läufst","To move forward; here, your piece goes on the board."),
+ V("noun","der Punkt","Punkte","A point; what you win in a game."),
+ V("adverb","später","später","Later; after some time, not now."),
+ V("adverb","dran","dran","It is your turn; now you must play."),
+ V("verb","erklären","erklärt","To explain; to tell someone how something works."),
+ V("verb","tragen","trägt","To wear; to have clothes on your body."),
+ V("verb","werfen","wirft","To throw; to make something fly from your hand."),
+ V("adverb","fest","fest","Hard; with a lot of force."),
+ V("adjective","ander","anderes","Other; different, not this one."),
+ V("noun","das Glas","Gläser","A glass; you drink water or juice from it."),
+ V("adverb","oft","oft","Often; many times, again and again."),
+ V("verb","verlieren","verliert","To lose; not to win a game."),
+ V("noun","die Spüle","Spüle","A sink; where you wash the dishes."),
+]
+d[1]["synopsis"]="Late at night Jan explains the rules to Anna, slowly. Her red dice from school still brings luck. Then Jan finds the old game in a box."
+d[1]["vocab"]=[
+ V("noun","der Würfel","Würfel","A dice; a small cube with numbers for games."),
+ V("preposition","seit","seit","Since; from a time in the past until now."),
+ V("noun","das Glück","Glück","Luck; when good things happen by chance."),
+ V("adjective","spät","spät","Late; far into the evening or night."),
+ V("adjective","langsam","langsam","Slowly; not fast, taking your time."),
+ V("verb","stellen","stellt","To put something down so it stands."),
+ V("noun","das Brett","Brett","A board; the flat piece you play a game on."),
+ V("adverb","wieder","wieder","Again; one more time, like before."),
+ V("noun","die Königin","Königin","A queen; here a funny name for the best player."),
+ V("noun","der Schrank","Schrank","A cupboard; a tall box with doors for things."),
+ V("noun","das Spiel","Spiel","A game; something people play for fun."),
+ V("adverb","darin","darin","Inside it; in that box."),
+ V("adjective","kaputt","kaputt","Broken; it does not work any more."),
+ V("adverb","wo","Wo","Where; the word to ask for a place."),
+ V("noun","die Ahnung","Ahnung","An idea; keine Ahnung means I do not know."),
+ V("adjective","lang","lang","Long; a lot of time."),
+ V("verb","werden","werden","To become; to change and get a new state."),
+ V("adjective","nass","nass","Wet; with water on it, here with tears."),
+ V("noun","die Uhr","Uhr","A clock; it shows you the time."),
+ V("verb","hören","hört","To hear; to notice a sound with your ears."),
+]
+d[2]["synopsis"]="The rematch is in the courtyard. Anna needs a four to beat Felix. She wins, but her lucky red dice falls through a metal grid in the ground."
+d[2]["vocab"]=[
+ V("noun","der Hof","Hof","A courtyard; the open space behind a house."),
+ V("preposition","gegenüber","gegenüber","Opposite; on the other side of the table."),
+ V("adverb","fast","fast","Almost; nearly, not quite."),
+ V("verb","müssen","muss","Must; to have to do something."),
+ V("adverb","heute","heute","Today; on this day."),
+ V("verb","können","kann","Can; to be able to do something."),
+ V("verb","helfen","helfen","To help; to make something easier for someone."),
+ V("verb","küssen","küsst","To kiss; to touch with your lips."),
+ V("noun","der Stuhl","Stuhl","A chair; a seat for one person."),
+ V("verb","springen","springt","To jump; to move up fast with your legs."),
+ V("verb","fliegen","fliegt","To fly; to move through the air."),
+ V("noun","das Gitter","Gitter","A metal grid; bars with holes between them."),
+ V("noun","der Boden","Boden","The ground; the floor under your feet."),
+ V("pronoun","niemand","Niemand","Nobody; not one person."),
+ V("noun","der Mund","Mund","The mouth; you speak and eat with it."),
+ V("adjective","trocken","trocken","Dry; with no water, here from shock."),
+ V("adverb","trotzdem","trotzdem","Anyway; still, even so."),
+ V("verb","geben","gibt","To give; to hand something to a person."),
+ V("adjective","blau","blauen","Blue; the colour of the sky."),
+ V("verb","gewinnen","gewinnst","To win; to be the best in a game."),
+]
+json.dump(d,open("scripts/_deA0Friends/t3-data.json","w"),ensure_ascii=False,indent=1)
