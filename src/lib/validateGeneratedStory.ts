@@ -2488,7 +2488,24 @@ export async function validateGeneratedStory(
     };
     const levelChecker = fallbackByLang[lang];
     if (levelChecker) {
-      const outOfLevel = parsed.vocab.filter((v) => !levelChecker(v.word));
+      // FR (2026-09-13): mismas exenciones que ES y que PT B1, y por el mismo
+      // motivo (ver REGISTER_EXEMPT arriba): una expresion no es un lema y un
+      // ancla cultural es rara en cualquier corpus POR DEFINICION. Solo se salta
+      // el eje de frecuencia; el resto de checks de vocab sigue aplicando.
+      // DE/IT/PT A1/A2 no se tocan en este cambio.
+      const EXENTOS_FR = new Set([
+        "slang", "colloquial", "vulgar", "coloquial", "argot", "jerga",
+        "cultural", "realia",
+      ]);
+      const juzgables =
+        lang === "FR"
+          ? parsed.vocab.filter((v) => {
+              const type = (v.type ?? "").toLowerCase();
+              const register = ((v as { register?: string }).register ?? "").toLowerCase();
+              return !(type === "expression" || type === "slang" || EXENTOS_FR.has(register));
+            })
+          : parsed.vocab;
+      const outOfLevel = juzgables.filter((v) => !levelChecker(v.word));
       const status: CheckStatus =
         outOfLevel.length === 0
           ? "pass"
