@@ -2289,6 +2289,71 @@
       ]
     }
   },
+  "cmu047bkz0007326jsgeptkox#cooking-and-hosting": {
+    "cerrado": "2026-09-13T18:41:00.494Z",
+    "hash": "bc2cce82c220af10",
+    "historias": [
+      "cooking-and-hosting#0 ein-rezept-fur-zehn",
+      "cooking-and-hosting#1 jans-lieblingstopf",
+      "cooking-and-hosting#2 sechs-kleine-suppen"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"practico y humeante: cocinar para diez con ollas prestadas y una llamada de Munich en medio\", espina \"Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 65% (solo avisa)",
+      "acotacion dominante bajo tope (\"ruft\" 33%)",
+      "arranques de parrafo variados (mas repetido \"anna\", 11%)",
+      "densidad 5.1 palabras por oracion (techo 9 en a0)",
+      "seguidilla 21/59 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.07 encuentros por plaza (ideal 4, liston de los buenos 2.5) · 56/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en DE no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: cooking-and-hosting (Anna, Luisa)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "germany",
+      "registro": "practico y humeante: cocinar para diez con ollas prestadas y una llamada de Munich en medio",
+      "espina": "Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.",
+      "recursos": "A0: repeticion ritmica (Anna schneidet. Luisa wuerzt.; tres ollas en el fuego, tres en la mesa), contraste con aber, imagen concreta (ojos que lloran con la cebolla, tapa caliente en la mano, seis ollas vacias)",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "cocinar su sopa de estudiante para los diez del jueves",
+          "impide": "su receta es para dos y no sabe cocinar para tantos; necesita a Luisa",
+          "cuesta": "el papel viejo de la receta cae dentro de la olla y se deshace",
+          "cambia": "Luisa le hace ver que la receta ya esta en su cabeza",
+          "emocion": "orgullo: le sube el calor a la cara porque la sopa huele como antes; remueve muy despacio"
+        },
+        {
+          "slot": "1",
+          "quiere": "tener la sopa lista mientras atiende una llamada",
+          "impide": "llaman de su antiguo trabajo en Munich y ella se queda escuchando en el pasillo",
+          "cuesta": "la olla grande de Jan se quema y ya no sirve",
+          "cambia": "Jan sabe ahora que Munich la quiere de vuelta",
+          "emocion": "culpa: casi llora porque es la olla favorita de Jan; se queda con la tapa caliente en la mano"
+        },
+        {
+          "slot": "2",
+          "quiere": "salvar la cena del jueves sin la olla grande",
+          "impide": "los invitados llegan en una hora y no hay olla para diez",
+          "cuesta": "la sopa ya no es la de antes: son seis sopas pequenas en seis ollas prestadas",
+          "cambia": "la cena sale; cada vecino trae su olla y el grupo come junto",
+          "emocion": "cansancio y alegria: esta cansada pero contenta porque la noche no esta perdida; pone la mesa con diez platos distintos"
+        }
+      ]
+    }
+  },
   "cmu047bkz0007326jsgeptkox#games-and-rules": {
     "cerrado": "2026-09-13T18:21:11.046Z",
     "hash": "33aba08ee8fdd5e0",

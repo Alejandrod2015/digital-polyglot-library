@@ -1,0 +1,73 @@
+import json
+d=json.load(open("scripts/_deA0Friends/t6-texts.json"))
+V=lambda t,w,s,df: {"type":t,"word":w,"surface":s,"definition":df}
+d[0]["synopsis"]="Anna wants to cook her old student soup for ten friends. Luisa, a cook from a restaurant, helps her. But the recipe is only for two."
+d[0]["vocab"]=[
+ V("adjective","billig","billig","Cheap; it does not cost much money."),
+ V("noun","der Donnerstag","Donnerstag","Thursday; the day after Wednesday."),
+ V("adjective","mild","mild","Mild; with not much taste or salt."),
+ V("verb","schwimmen","schwimmt","To swim; here, to float in the soup."),
+ V("noun","das Rezept","Rezept","A recipe; the steps to cook a dish."),
+ V("noun","die Köchin","Köchin","A female cook; she cooks food as her job."),
+ V("number","zwei","zwei","Two; the number after one."),
+ V("noun","die Schürze","Schürze","An apron; you wear it in the kitchen over your clothes."),
+ V("noun","der Fleck","Flecken","A stain; a dirty mark on cloth."),
+ V("noun","der Topf","Töpfe","A pot; a deep pan for soup."),
+ V("verb","rechnen","rechnen","To calculate; to work out numbers."),
+ V("adverb","mal","mal","Times; used when you multiply numbers."),
+ V("adjective","spitz","spitzes","Sharp; with a thin point at the end."),
+ V("adjective","scharf","scharf","Strong; here, it makes your eyes hurt."),
+ V("verb","tränen","tränen","To water; eyes get wet with tears."),
+ V("verb","probieren","probiert","To taste; to try a little of the food."),
+ V("noun","der Löffel","Löffel","A spoon; you eat soup with it."),
+ V("adjective","stolz","stolz","Proud; happy about something you do well."),
+ V("verb","rühren","rührt","To stir; to move a spoon round in a pot."),
+ V("verb","rutschen","rutscht","To slip; to slide and fall."),
+]
+d[1]["synopsis"]="Anna cooks alone in Jan's favourite pot. Then the phone rings. It is her old job. Anna listens for a long time and forgets the soup."
+d[1]["vocab"]=[
+ V("noun","der Lieblingstopf","Lieblingstopf","A favourite pot; the pot someone likes best."),
+ V("noun","das Telefon","Telefon","A phone; you use it to call people."),
+ V("verb","klingeln","klingelt","To ring; a phone makes a sound."),
+ V("adverb","dreimal","dreimal","Three times; one, two, three."),
+ V("noun","die Nummer","Nummer","A number; here, the phone number that calls."),
+ V("verb","gehen","geht","To go; to walk to a place."),
+ V("noun","die Chefin","Chefin","A female boss; the woman at the head of a job."),
+ V("adjective","freundlich","freundlich","Friendly; kind and nice to other people."),
+ V("adverb","zurück","zurück","Back; to the place where you were before."),
+ V("verb","vergessen","vergisst","To forget; not to think of something."),
+ V("verb","husten","hustet","To cough; to push air out of your throat."),
+ V("verb","weinen","weint","To cry; tears come from your eyes."),
+ V("noun","der Deckel","Deckel","A lid; the top that covers a pot."),
+ V("adjective","link","linken","Left; on the left side."),
+ V("adverb","so","so","So; very, a lot."),
+ V("adjective","leid","leid","Sorry; es tut mir leid means I am sorry."),
+ V("adjective","böse","böse","Angry; cross with someone."),
+ V("verb","kratzen","kratzt","To scrape; to rub hard with something sharp."),
+ V("preposition","um","um","At; used to say the time."),
+ V("number","acht","acht","Eight; the number after seven."),
+]
+d[2]["synopsis"]="The big pot is broken, and the guests come soon. Everyone in the house brings a small pot, and Luisa has a plan: six little soups."
+d[2]["vocab"]=[
+ V("verb","schmatzen","schmatzt","To eat noisily; to make sounds with your mouth."),
+ V("noun","die Karotte","Karotten","A carrot; a long orange vegetable."),
+ V("noun","das Gemüse","Gemüse","Vegetables; plants you eat, like carrots."),
+ V("noun","die Suppe","Suppen","Soup; a hot liquid food."),
+ V("adverb","gleich","gleich","Soon; in a moment."),
+ V("verb","schneiden","schneidet","To cut; to make pieces with a knife."),
+ V("verb","würzen","würzt","To season; to add taste to food."),
+ V("noun","das Kraut","Kräutern","A herb; a green plant that gives food taste."),
+ V("verb","klappern","klappern","To rattle; to make short hard sounds."),
+ V("adjective","müde","müde","Tired; you want to sleep."),
+ V("adjective","froh","froh","Glad; happy about something."),
+ V("noun","der Abend","Abend","The evening; the time after the day and before night."),
+ V("verb","decken","deckt","To lay the table; to put plates on it."),
+ V("adjective","hungrig","hungrig","Hungry; you want to eat."),
+ V("verb","passen","passen","To match; to look right together."),
+ V("adjective","verschieden","verschieden","Different; not the same as the others."),
+ V("adjective","lecker","lecker","Tasty; food that tastes very good."),
+ V("adjective","besser","besser","Better; more good than before."),
+ V("adjective","satt","satt","Full; you do not want to eat any more."),
+ V("noun","der Wein","Wein","Wine; a drink made from grapes."),
+]
+json.dump(d,open("scripts/_deA0Friends/t6-data.json","w"),ensure_ascii=False,indent=1)
