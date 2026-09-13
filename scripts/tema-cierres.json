@@ -2290,6 +2290,70 @@
       ]
     }
   },
+  "cmu04ereh000732z7px7naqa2#ceremonies-and-public-speaking": {
+    "cerrado": "2026-09-13T19:04:36.506Z",
+    "hash": "850eb13a6fd26b13",
+    "historias": [
+      "ceremonies-and-public-speaking#0 elise-demande-un-service",
+      "ceremonies-and-public-speaking#1 un-discours-sans-lumiere",
+      "ceremonies-and-public-speaking#2 trois-phrases-au-micro"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"nervios y emocion en publico: una boda familiar donde Romain sirve primero con las manos y al final con la voz\", espina \"Romain busca su sitio en el mundo de Justine; en la boda de la prima lo gana dos veces, como electricista a oscuras y como Monsieur Crachin delante de cien personas, y cada vez paga con algo de Justine.\")",
+      "validador canonico: 3/3 (perfil narrador)",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"élise\", 14%)",
+      "densidad 9.4 palabras por oracion (techo 13 en a2)",
+      "seguidilla 8/34 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.04 sobre 51 plazas · 49 salen una sola vez | ancladas: 9/60 (15%) | cola: 49/51 portables con un solo encuentro (96%, tope 80%) | de un solo encuentro: chocolats, cousine, mariage, dans deux semaines, musicien, ne peut plus venir, rendre service, organise, a envie d'y aller, À chaque, cousin, coupé le gâteau, petit service, pendant le dîner, passer à, heure des discours, prend la parole, à la main, vie, Au milieu de, tout s'éteint, dans le noir complet, honneur, s'occupe du, Au loin, sans micro, applaudissements, pleure de joie, mains noires, sauvé…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: ceremonies-and-public-speaking (Justine, Romain)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a2",
+      "variante": "france",
+      "registro": "nervios y emocion en publico: una boda familiar donde Romain sirve primero con las manos y al final con la voz",
+      "espina": "Romain busca su sitio en el mundo de Justine; en la boda de la prima lo gana dos veces, como electricista a oscuras y como Monsieur Crachin delante de cien personas, y cada vez paga con algo de Justine.",
+      "recursos": "A2: narrador en presente; passe compose en el dialogo (on a coupe le gateau, tu l'as rate, tu as sauve la fete); imparfait de descripcion (on dansait dans le noir); futur proche (je vais passer); espejo concreto (el discurso de Justine que Romain no oye y el discurso de Romain que Justine si oye); causalidad explicita. Nada de subjonctif ni plus-que-parfait.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Romain quiere ser util a la familia de Justine y acepta ocuparse de la luz y el micro de la boda de Elise.",
+          "impide": "Elise confiesa que en esa vieja salle des fetes la luz se va en todas las bodas.",
+          "cuesta": "Pasa el viernes solo en la sala con sus herramientas y se pierde la cena de la bande.",
+          "cambia": "Entiende que el pequeno favor es un encargo grande, y que la familia ya cuenta con el.",
+          "emocion": "Duda porque quiere ir a la cena; al oir la verdad se le congela la sonrisa mientras Justine se rie."
+        },
+        {
+          "slot": "2",
+          "quiere": "Romain quiere escuchar el discurso de Justine en la boda.",
+          "impide": "En plena segunda broma se va la luz, el micro se apaga y alguien tiene que arreglarlo ya.",
+          "cuesta": "Se pierde el discurso entero de Justine, que oye de lejos detras del escenario.",
+          "cambia": "Salva la fiesta, y Justine le promete contarle el discurso esa noche.",
+          "emocion": "Siente prisa y soledad detras del escenario; repite vite, vite, y vuelve con las manos negras."
+        },
+        {
+          "slot": "3",
+          "quiere": "Romain quiere pasar desapercibido al final de la boda.",
+          "impide": "Elise le da el micro delante de cien personas para que diga unas palabras.",
+          "cuesta": "Despues todos los primos le piden arreglos y se pierde el ultimo baile con Justine.",
+          "cambia": "Dice tres frases con su apodo y por primera vez se siente de la familia.",
+          "emocion": "Se pone blanco de miedo porque hablar en publico no es lo suyo; le tiembla la voz, busca el vaso de Justine y encuentra valor."
+        }
+      ]
+    }
+  },
   "cmu04ereh000732z7px7naqa2#family-and-manners": {
     "cerrado": "2026-09-13T18:46:01.654Z",
     "hash": "fd4f9fadeca687a4",
