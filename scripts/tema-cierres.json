@@ -4966,8 +4966,8 @@
     }
   },
   "cmu04ereh000732z7px7naqa2#home-life-and-habits": {
-    "cerrado": "2026-09-13T18:28:28.045Z",
-    "hash": "1ada5871b4411ffd",
+    "cerrado": "2026-09-13T20:09:24.862Z",
+    "hash": "3654944f18f854a5",
     "historias": [
       "home-life-and-habits#0 l-etagere-du-haut",
       "home-life-and-habits#1 il-ronfle-elle-lit",
@@ -4978,18 +4978,18 @@
       "validador canonico: 3/3 (perfil narrador)",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"explique\" 20%)",
+      "acotacion dominante bajo tope (\"explique\" 17%)",
       "arranques de parrafo variados (mas repetido \"romain\", 20%)",
-      "densidad 8.4 palabras por oracion (techo 13 en a2)",
-      "seguidilla 17/46 oraciones cortas narradas",
+      "densidad 9.2 palabras por oracion (techo 13 en a2)",
+      "seguidilla 17/45 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 3 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.00 sobre 49 plazas · 48 salen una sola vez | ancladas: 11/60 (18%) | cola: 48/49 portables con un solo encuentro (98%, tope 80%) | de un solo encuentro: vêtements, hiver, hausse les épaules, déranger, dans le noir, entière, habitant, attraper, En fait, depuis le début, fait de la place, pour rien, plutôt, bizarre, pose la question, sommeil, réveille, ronfles, tellement, insupportable, a honte, tais, critiquer, avoue, célibataire, déteste, chaleur, habitude, Au bout de, endort…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.00 sobre 49 plazas · 48 salen una sola vez | ancladas: 11/60 (18%) | cola: 48/49 portables con un solo encuentro (98%, tope 80%) | de un solo encuentro: vêtements, hiver, hausse les épaules, déranger, dans le noir, entière, habitant, attraper, En fait, depuis le début, fait de la place, pour rien, plutôt, bizarre, pose la question, sommeil, réveille, œil, tellement, insupportable, a honte, tais, critiquer, avoue, figure, déteste, chaleur, habitude, Au bout de, endort…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
@@ -5034,8 +5034,8 @@
     ]
   },
   "cmu04ereh000732z7px7naqa2#homesickness-and-belonging": {
-    "cerrado": "2026-09-13T19:13:24.715Z",
-    "hash": "8238bd11e6c81cdf",
+    "cerrado": "2026-09-13T20:11:25.922Z",
+    "hash": "2180f74a75639252",
     "historias": [
       "homesickness-and-belonging#0 un-kouglof-pour-nantes",
       "homesickness-and-belonging#1 une-flammekueche-maison",
@@ -5046,10 +5046,10 @@
       "validador canonico: 3/3 (perfil narrador)",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"répond\" 33%)",
+      "acotacion dominante bajo tope (\"répond\" 22%)",
       "arranques de parrafo variados (mas repetido \"à\", 13%)",
-      "densidad 9.9 palabras por oracion (techo 13 en a2)",
-      "seguidilla 9/36 oraciones cortas narradas",
+      "densidad 10.4 palabras por oracion (techo 13 en a2)",
+      "seguidilla 10/38 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
@@ -5057,11 +5057,11 @@
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.08 sobre 52 plazas · 47 salen una sola vez | ancladas: 8/60 (13%) | cola: 47/52 portables con un solo encuentro (90%, tope 80%) | de un solo encuentro: Il y a un an, petite sœur, enfance, électricien de la famille, jalouse, curiosité, pour parler de, façon, reconnaître, un peu surpris, boulot, meilleur, salaire, choix, Papa, pâte, crème, oignons, étale, neige, a le mal du pays, toujours rien, D'abord, secret, délicieux, Bien sûr, tous les dimanches, heureuse, sans un mot, nouvelle…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.08 sobre 50 plazas · 45 salen una sola vez | ancladas: 10/60 (17%) | cola: 45/50 portables con un solo encuentro (90%, tope 80%) | de un solo encuentro: Il y a un an, petite sœur, enfance, électricien de la famille, jalouse, pour parler de, façon, reconnaître, un peu surpris, boulot, meilleur, salaire, choix, Papa, pâte, crème, oignons, neige, a le mal du pays, toujours rien, D'abord, secret, délicieux, Bien sûr, tous les dimanches, heureuse, sans un mot, nouvelle, Au petit matin, froid…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: homesickness-and-belonging (Romain, Anaïs)"
     ],
     "plan": {
       "tipo": "Friends",
@@ -5099,8 +5099,8 @@
     }
   },
   "cmu04ereh000732z7px7naqa2#housework-and-fairness": {
-    "cerrado": "2026-09-13T18:52:49.560Z",
-    "hash": "7fa58f1fd048f567",
+    "cerrado": "2026-09-13T20:08:12.584Z",
+    "hash": "d245f7601f9448c8",
     "historias": [
       "housework-and-fairness#0 julien-compte-les-points",
       "housework-and-fairness#1 une-liste-dans-la-tete",
@@ -5111,18 +5111,18 @@
       "validador canonico: 3/3 (perfil narrador)",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"dit\" 33%)",
+      "acotacion dominante bajo tope (\"dit\" 29%)",
       "arranques de parrafo variados (mas repetido \"justine\", 20%)",
-      "densidad 9.9 palabras por oracion (techo 13 en a2)",
-      "seguidilla 14/37 oraciones cortas narradas",
+      "densidad 10.0 palabras por oracion (techo 13 en a2)",
+      "seguidilla 15/39 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 12 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.00 sobre 51 plazas · 49 salen una sola vez | ancladas: 9/60 (15%) | cola: 49/51 portables con un solo encuentro (96%, tope 80%) | de un solo encuentro: outils, marié, épouse, Faire la vaisselle, Passer l'aspirateur, total, pratique, respecte, dessine, ménage, plutôt content, rentre tard, enlève, en silence, fatiguée, ambiance, marche, quatre-vingts, au moins, remercies, compte sur ses doigts, dans ma tête, porte, tout à coup, balade, envie, de sa poche, reste à la maison, continue, hier…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 0.98 sobre 50 plazas · 49 salen una sola vez | ancladas: 10/60 (17%) | cola: 49/50 portables con un solo encuentro (98%, tope 80%) | de un solo encuentro: outils, marié, épouse, Faire la vaisselle, Passer l'aspirateur, total, pratique, respecte, dessine, ménage, plutôt content, à neuf heures, deux fois, enlève, en silence, fatiguée, ambiance, marche, quatre-vingts, sortir, remercies, compte sur ses doigts, dans ma tête, porte, tout à coup, balade, envie, de sa poche, reste à la maison, continue…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
@@ -5164,8 +5164,8 @@
     }
   },
   "cmu04ereh000732z7px7naqa2#jokes-and-memories": {
-    "cerrado": "2026-09-13T18:38:26.276Z",
-    "hash": "9c43a92f2ac10d09",
+    "cerrado": "2026-09-13T20:07:59.500Z",
+    "hash": "482f0e98ae34ee2b",
     "historias": [
       "jokes-and-memories#0 tout-le-monde-rit",
       "jokes-and-memories#1 il-y-a-douze-ans",
@@ -5176,22 +5176,22 @@
       "validador canonico: 3/3 (perfil narrador)",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"dit\" 25%)",
+      "acotacion dominante bajo tope (\"dit\" 22%)",
       "arranques de parrafo variados (mas repetido \"mathilde\", 14%)",
-      "densidad 9.7 palabras por oracion (techo 13 en a2)",
-      "seguidilla 14/40 oraciones cortas narradas",
+      "densidad 10.5 palabras por oracion (techo 13 en a2)",
+      "seguidilla 12/37 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 6 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.02 sobre 49 plazas · 46 salen una sola vez | ancladas: 11/60 (18%) | cola: 46/49 portables con un solo encuentro (94%, tope 80%) | de un solo encuentro: copains, adore, souvenez, ferme les yeux, faire comme les autres, curieuse, blague, a l'air, perdu, moque, avance, Pour la première fois, soirée, au bord de, hésite, énormes, conduire, s'est mise debout, crier, tombée à l'eau, pleuré de rire, herbe, folle, sérieuse, couche, La mienne, devient toute blanche, trop tard, elle-même, un jour…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: jokes-and-memories (Romain, Mathilde)"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: jokes-and-memories (Mathilde, Romain)"
     ],
     "plan": {
       "tipo": "Friends",
@@ -5229,8 +5229,8 @@
     }
   },
   "cmu04ereh000732z7px7naqa2#family-and-manners": {
-    "cerrado": "2026-09-13T18:46:01.654Z",
-    "hash": "fd4f9fadeca687a4",
+    "cerrado": "2026-09-13T20:08:05.522Z",
+    "hash": "7d6e987ef3d4bb65",
     "historias": [
       "family-and-manners#0 le-vin-reste-ferme",
       "family-and-manners#1 la-sauce-ne-tient-pas",
@@ -5241,18 +5241,18 @@
       "validador canonico: 3/3 (perfil narrador)",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"répond\" 40%)",
+      "acotacion dominante bajo tope (\"répond\" 33%)",
       "arranques de parrafo variados (mas repetido \"nathalie\", 20%)",
-      "densidad 9.3 palabras por oracion (techo 13 en a2)",
-      "seguidilla 8/37 oraciones cortas narradas",
+      "densidad 10.6 palabras por oracion (techo 13 en a2)",
+      "seguidilla 7/35 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.04 sobre 50 plazas · 48 salen una sola vez | ancladas: 10/60 (17%) | cola: 48/50 portables con un solo encuentro (96%, tope 80%) | de un solo encuentro: banlieue, inquiet, faire bonne impression, sévère, accueille, je vous en prie, vin, bavarde, métier, n'y tient plus, se dit tu, coutume, On verra, rassure, toujours fermé, à feu doux, Pas de problème, feu, sauce, rapidement, au travail, avec horreur, sépare, brûlé, visage rouge, ne tient pas, revient, pire, tous les jours, nature…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.04 sobre 50 plazas · 48 salen una sola vez | ancladas: 10/60 (17%) | cola: 48/50 portables con un solo encuentro (96%, tope 80%) | de un solo encuentro: banlieue, inquiet, faire bonne impression, sévère, accueille, je vous en prie, vin, bavarde, métier, n'y tient plus, se dit tu, coutume, On verra, rassure, toujours fermé, à feu doux, Pas de problème, feu, sauce, rapidement, au travail, avec horreur, sépare, brûlé, visage rouge, ne tient pas, revient, pire, tous les jours, huile…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
@@ -5294,8 +5294,8 @@
     }
   },
   "cmu04ereh000732z7px7naqa2#arguments-and-apologies": {
-    "cerrado": "2026-09-13T18:58:41.943Z",
-    "hash": "79ced35dd19032b2",
+    "cerrado": "2026-09-13T20:10:34.804Z",
+    "hash": "025fd4489b5002db",
     "historias": [
       "arguments-and-apologies#0 encore-une-voie",
       "arguments-and-apologies#1 tu-exageres",
@@ -5307,17 +5307,17 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"dit\" 38%)",
-      "arranques de parrafo variados (mas repetido \"une\", 13%)",
-      "densidad 9.4 palabras por oracion (techo 13 en a2)",
-      "seguidilla 11/38 oraciones cortas narradas",
+      "arranques de parrafo variados (mas repetido \"à\", 13%)",
+      "densidad 8.8 palabras por oracion (techo 13 en a2)",
+      "seguidilla 15/41 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.04 sobre 55 plazas · 52 salen una sola vez | ancladas: 5/60 (8%) | cola: 52/55 portables con un solo encuentro (95%, tope 80%) | de un solo encuentro: Tous les jeudis, sport, premier ami, en solo, Encore une, à côté, Allez, il fait chaud, après l'autre, sportif, fier de lui, oublie l'heure, jusqu'au, vingt et une heures, sur les épaules, sans lui, glaciale, insisté, promis, en colère, exagères, phrase de trop, déçue, cherché, dort mal, Vexée, message, toujours des, comprends vraiment rien, voix…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.02 sobre 52 plazas · 50 salen una sola vez | ancladas: 8/60 (13%) | cola: 50/52 portables con un solo encuentro (96%, tope 80%) | de un solo encuentro: Tous les jeudis, sport, premier ami, en solo, Encore une, à côté, Allez, il fait chaud, dans la nuit, après l'autre, sportif, fier de lui, oublie l'heure, jusqu'au, vingt et une heures, sur les épaules, sans lui, insisté, promis, en colère, exagères, phrase de trop, déçue, cherché, dort mal, Vexée, message, toujours des, comprends vraiment rien, voix…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
@@ -5359,8 +5359,8 @@
     }
   },
   "cmu04ereh000732z7px7naqa2#ceremonies-and-public-speaking": {
-    "cerrado": "2026-09-13T19:04:36.506Z",
-    "hash": "850eb13a6fd26b13",
+    "cerrado": "2026-09-13T20:11:20.147Z",
+    "hash": "2cbbefc4f1a30d03",
     "historias": [
       "ceremonies-and-public-speaking#0 elise-demande-un-service",
       "ceremonies-and-public-speaking#1 un-discours-sans-lumiere",
@@ -5372,20 +5372,20 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "arranques de parrafo variados (mas repetido \"élise\", 14%)",
-      "densidad 9.4 palabras por oracion (techo 13 en a2)",
-      "seguidilla 8/34 oraciones cortas narradas",
+      "densidad 10.6 palabras por oracion (techo 13 en a2)",
+      "seguidilla 6/32 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.04 sobre 51 plazas · 49 salen una sola vez | ancladas: 9/60 (15%) | cola: 49/51 portables con un solo encuentro (96%, tope 80%) | de un solo encuentro: chocolats, cousine, mariage, dans deux semaines, musicien, ne peut plus venir, rendre service, organise, a envie d'y aller, À chaque, cousin, coupé le gâteau, petit service, pendant le dîner, passer à, heure des discours, prend la parole, à la main, vie, Au milieu de, tout s'éteint, dans le noir complet, honneur, s'occupe du, Au loin, sans micro, applaudissements, pleure de joie, mains noires, sauvé…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.04 sobre 52 plazas · 50 salen una sola vez | ancladas: 8/60 (13%) | cola: 50/52 portables con un solo encuentro (96%, tope 80%) | de un solo encuentro: chocolats, cousine, mariage, dans deux semaines, musicien, ne peut plus venir, rendre service, entre amis, organise, a envie d'y aller, À chaque, un mardi soir, coupé le gâteau, petit service, pendant le dîner, passer à, heure des discours, prend la parole, à la main, vie, Au milieu de, tout s'éteint, dans le noir complet, honneur, s'occupe du, Au loin, sans micro, pleure de joie, mains noires, sauvé…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: ceremonies-and-public-speaking (Justine, Romain)"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
     ],
     "plan": {
       "tipo": "Friends",
