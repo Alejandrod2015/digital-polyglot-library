@@ -1,7 +1,7 @@
 import json
 d=json.load(open("scripts/_deA0Friends/t7-texts.json"))
 V=lambda t,w,s,df: {"type":t,"word":w,"surface":s,"definition":df}
-d[0]["synopsis"]="A note hangs on Anna's door. Niklas, who owns the house, needs an answer about the flat by Friday. Another woman wants it too."
+d[0]["synopsis"]="A note hangs on Anna's door. Niklas, who owns the house, needs an answer about the flat this week. Another woman wants it too."
 d[0]["vocab"]=[
  V("noun","die Notiz","Notiz","A note; a short message on paper."),
  V("verb","lehnen","lehnt","To lean; to rest your body against something."),
@@ -47,18 +47,18 @@ d[1]["vocab"]=[
  V("verb","schlafen","schläfst","To sleep; to rest with your eyes closed."),
  V("adjective","kurz","kürzer","Shorter; less long than before."),
 ]
-d[2]["synopsis"]="On Friday Anna signs the contract and gets two keys. Then she goes down to Jan's kitchen, where the old postcard from May is still waiting."
+d[2]["synopsis"]="Anna signs the contract and gets two keys. In Jan's kitchen, her old postcard is still waiting in a drawer."
 d[2]["vocab"]=[
  V("verb","unterschreiben","unterschreibt","To sign; to write your name on a paper."),
  V("noun","der Vertrag","Vertrag","A contract; a paper with rules both people sign."),
  V("noun","die Tinte","Tinte","Ink; the coloured liquid in a pen."),
  V("verb","schütteln","schüttelt","To shake; die Hand schütteln means to shake hands."),
  V("adjective","zufrieden","zufrieden","Happy; pleased with how things are."),
- V("noun","der Schlüssel","Schlüssel","A key; you open a door with it."),
+ V("adverb","dort","dort","There; in that place."),
  V("pronoun","einer","Einer","One; one of them."),
  V("verb","tippen","tippt","To type; to write on a phone or keyboard."),
  V("verb","schlucken","schluckt","To swallow; here, a sign that something is hard."),
- V("noun","der Sekt","Sekt","Sparkling wine; a German drink with bubbles."),
+ V("adjective","sicher","sicher","Sure; you have no doubt."),
  V("verb","klirren","klirren","To clink; glasses make a bright sound."),
  V("adverb","mindestens","Mindestens","At least; not less than this."),
  V("interjection","tschüss","Tschüss","Bye; a friendly way to say goodbye."),

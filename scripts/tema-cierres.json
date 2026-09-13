@@ -2226,7 +2226,7 @@
     ]
   },
   "cmu047bkz0007326jsgeptkox#books-and-reading": {
-    "cerrado": "2026-09-13T18:54:34.145Z",
+    "cerrado": "2026-09-13T18:59:45.251Z",
     "hash": "3e339fabe5ae4641",
     "historias": [
       "books-and-reading#0 bucher-auf-der-treppe",
@@ -2234,7 +2234,7 @@
       "books-and-reading#2 seite-vierzig"
     ],
     "checks": [
-      "plan del tema completo (registro \"tranquilo y de escalera: libros compartidos, papelitos olvidados y voz baja\", espina \"Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.\")",
+      "plan del tema completo (registro \"nervioso y musical: un sotano de ensayo, una voz que se rompe y una cocina de cumpleanos\", espina \"Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.\")",
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 53% (solo avisa)",
@@ -2246,7 +2246,7 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Johanna): bucher-auf-der-treppe, zettel-in-johannas-dose, seite-vierzig",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.16 sobre 44 plazas · 38 salen una sola vez | ancladas: 16/60 (27%) | cola: 38/44 portables con un solo encuentro (86%, tope 30%) | de un solo encuentro: dick, dünn, Haus, dunkel, wichtig, etwas, Bestimmtes, leider, rennt, Viele, klein, traurig, lustig, Noch, Schrift, schief, denke, leer, über, wartet, drückt, reicht, Heft, riecht, beiden, gerade, Herd, öffnet, vorsichtig, zittert…",
@@ -2259,40 +2259,40 @@
       "tipo": "Friends",
       "nivel": "a0",
       "variante": "germany",
-      "registro": "tranquilo y de escalera: libros compartidos, papelitos olvidados y voz baja",
+      "registro": "nervioso y musical: un sotano de ensayo, una voz que se rompe y una cocina de cumpleanos",
       "espina": "Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.",
-      "recursos": "A0: repeticion ritmica (la letra es pequena; la letra es su letra), contraste con aber, imagen concreta (hombros que caen, rodillas blandas, libro verde en la estanteria)",
+      "recursos": "A0: repeticion ritmica (Tim am Schlagzeug, Felix am Klavier, Anna vor dem Kuehlschrank), contraste con aber, imagen concreta (taza entre las manos, manos delante de la boca, microfono con las dos manos)",
       "historias": [
         {
           "slot": "0",
-          "quiere": "recuperar el libro verde que dejo hace ocho anos en el armario de libros de la escalera, con una nota para Jan dentro",
-          "impide": "el armario es de todo el edificio y los libros cambian de manos",
-          "cuesta": "el libro ya no esta: se lo llevo una mujer de Hamburgo",
-          "cambia": "conoce a Johanna, la librera, que guarda las notas que encuentra en los libros",
-          "emocion": "desanimo: los hombros caen porque la nota iba dentro; se sienta en el escalon"
+          "quiere": "quedarse fuera de la sorpresa musical para el cumpleanos de Jan",
+          "impide": "Tim, amigo del colegio, quiere reunir la banda de antes y ella era la cantante",
+          "cuesta": "asiente sin querer delante de Jan y ya no puede decir que no",
+          "cambia": "vuelve a formar parte de la banda",
+          "emocion": "miedo: el corazon rapido porque su voz lleva anos callada; juega nerviosa con la taza"
         },
         {
           "slot": "1",
-          "quiere": "encontrar su nota entre las cien de la lata de Johanna",
-          "impide": "hay cien papelitos y ella ya no se acuerda de lo que escribio",
-          "cuesta": "descubre que Jan nunca leyo la nota: ocho anos de espera en una lata, sin arreglo",
-          "cambia": "la nota aparece y Johanna apunta el titulo del libro",
-          "emocion": "culpa: las rodillas blandas porque la nota espero ocho anos en una lata; dobla el papel muy pequeno"
+          "quiere": "cantar la cancion de antes en el ensayo del sotano",
+          "impide": "el estribillo es demasiado alto; la voz se le rompe dos veces",
+          "cuesta": "la cancion vieja no vuelve: no la cantara nunca mas",
+          "cambia": "Tim propone escribir una cancion nueva, grave y sencilla, para Jan",
+          "emocion": "verguenza: se tapa la boca con las manos porque Tim oye la nota falsa"
         },
         {
           "slot": "2",
-          "quiere": "darle por fin a Jan la nota y la pagina cuarenta",
-          "impide": "el libro viejo no vuelve; solo hay uno nuevo que trae Johanna",
-          "cuesta": "el libro con su letra en los margenes se perdio; el de Jan es una copia sin historia",
-          "cambia": "Anna lee la pagina en voz alta en la cocina y Jan pone el libro en su estanteria",
-          "emocion": "nervios y ternura: la voz le tiembla porque Jan escucha muy quieto; sigue leyendo despacio"
+          "quiere": "cantarle a Jan la cancion nueva en su cumpleanos",
+          "impide": "toda la cocina la mira y le tiemblan las rodillas",
+          "cuesta": "Jan pregunta por la cancion vieja y ella la deja atras delante de todos",
+          "cambia": "canta con voz grave y tranquila; Jan la abraza delante de todos",
+          "emocion": "nervios que se vuelven calma: le tiemblan las rodillas porque todos la miran; agarra el microfono con las dos manos y canta"
         }
       ]
     }
   },
   "cmu047bkz0007326jsgeptkox#cooking-and-hosting": {
-    "cerrado": "2026-09-13T18:55:03.836Z",
-    "hash": "d3cd80322585901f",
+    "cerrado": "2026-09-13T19:02:01.133Z",
+    "hash": "90b01d57ccf8f4ae",
     "historias": [
       "cooking-and-hosting#0 ein-rezept-fur-zehn",
       "cooking-and-hosting#1 jans-lieblingstopf",
@@ -2305,13 +2305,13 @@
       "acotacion 65% (solo avisa)",
       "acotacion dominante bajo tope (\"ruft\" 33%)",
       "arranques de parrafo variados (mas repetido \"anna\", 11%)",
-      "densidad 5.1 palabras por oracion (techo 9 en a0)",
+      "densidad 5.2 palabras por oracion (techo 9 en a0)",
       "seguidilla 19/59 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 12/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.13 sobre 32 plazas · 28 salen una sola vez | ancladas: 28/60 (47%) | cola: 28/32 portables con un solo encuentro (88%, tope 30%) | de un solo encuentro: billig, Donnerstag, mild, mal, scharf, stolz, dreimal, geht, Chefin, freundlich, zurück, vergisst, weint, linken, so, leid, böse, um, acht, gleich, müde, froh, hungrig, passen, verschieden, lecker, besser, satt; pasan del 30%",
@@ -2356,7 +2356,7 @@
     }
   },
   "cmu047bkz0007326jsgeptkox#games-and-rules": {
-    "cerrado": "2026-09-13T18:53:43.548Z",
+    "cerrado": "2026-09-13T18:59:39.204Z",
     "hash": "9f2903d5e03132f3",
     "historias": [
       "games-and-rules#0 felix-erklart-zu-schnell",
@@ -2364,7 +2364,7 @@
       "games-and-rules#2 eine-vier-im-hof"
     ],
     "checks": [
-      "plan del tema completo (registro \"ruidoso y competitivo: noche de juegos con reglas que todos saben menos ella\", espina \"Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.\")",
+      "plan del tema completo (registro \"tranquilo y de escalera: libros compartidos, papelitos olvidados y voz baja\", espina \"Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.\")",
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 73% (solo avisa)",
@@ -2376,7 +2376,7 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.29 sobre 45 plazas · 35 salen una sola vez | ancladas: 15/60 (25%) | cola: 35/45 portables con un solo encuentro (78%, tope 30%) | de un solo encuentro: graues, einfach, später, dran, erklärt, trägt, fest, anderes, Gläser, oft, verliert, spät, langsam, wieder, Schrank, darin, kaputt, Wo, lang, werden, nass, hört, Hof, gegenüber, fast, muss, heute, kann, helfen, Niemand…",
@@ -2389,39 +2389,39 @@
       "tipo": "Friends",
       "nivel": "a0",
       "variante": "germany",
-      "registro": "ruidoso y competitivo: noche de juegos con reglas que todos saben menos ella",
+      "registro": "tranquilo y de escalera: libros compartidos, papelitos olvidados y voz baja",
       "espina": "Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.",
-      "recursos": "A0: repeticion ritmica (una Eins, noch eine Zwei; ich gewinne, ich gewinne), contraste con aber, imagen concreta (dado que cae, tablero roto, mano sobre la rejilla)",
+      "recursos": "A0: repeticion ritmica (la letra es pequena; la letra es su letra), contraste con aber, imagen concreta (hombros que caen, rodillas blandas, libro verde en la estanteria)",
       "historias": [
         {
           "slot": "0",
-          "quiere": "jugar con el grupo y no quedarse fuera en la noche de juegos",
-          "impide": "Felix trae un juego nuevo y explica las reglas muy rapido; todos las saben menos ella",
-          "cuesta": "pierde la partida y le toca fregar como la ultima",
-          "cambia": "Felix la ayuda con los vasos: el recien llegado a su grupo es amable",
-          "emocion": "frustracion: las manos calientes porque todos saben las reglas menos ella; tira el dado demasiado fuerte y cae de la mesa"
+          "quiere": "recuperar el libro verde que dejo hace ocho anos en el armario de libros de la escalera, con una nota para Jan dentro",
+          "impide": "el armario es de todo el edificio y los libros cambian de manos",
+          "cuesta": "el libro ya no esta: se lo llevo una mujer de Hamburgo",
+          "cambia": "conoce a Johanna, la librera, que guarda las notas que encuentra en los libros",
+          "emocion": "desanimo: los hombros caen porque la nota iba dentro; se sienta en el escalon"
         },
         {
           "slot": "1",
-          "quiere": "aprender las reglas a solas con Jan para no perder otra vez",
-          "impide": "tiene miedo de parecer torpe delante del grupo; solo se atreve de noche con Jan",
-          "cuesta": "el juego viejo de antes esta roto y le faltan fichas; va a la basura",
-          "cambia": "vuelve a ganar con su dado rojo y Jan la llama otra vez reina",
-          "emocion": "pena: los ojos humedos porque el juego de antes esta roto; se los seca rapido"
+          "quiere": "encontrar su nota entre las cien de la lata de Johanna",
+          "impide": "hay cien papelitos y ella ya no se acuerda de lo que escribio",
+          "cuesta": "descubre que Jan nunca leyo la nota: ocho anos de espera en una lata, sin arreglo",
+          "cambia": "la nota aparece y Johanna apunta el titulo del libro",
+          "emocion": "culpa: las rodillas blandas porque la nota espero ocho anos en una lata; dobla el papel muy pequeno"
         },
         {
           "slot": "2",
-          "quiere": "ganarle a Felix en la revancha del patio",
-          "impide": "Felix va por delante; ella necesita un cuatro exacto",
-          "cuesta": "su dado rojo de la escuela se cuela por la rejilla del suelo y no se puede sacar",
-          "cambia": "gana, y Felix le regala un dado azul 'para la reina'",
-          "emocion": "alegria rota: la boca seca porque el dado estaba con ella desde la escuela; pone la mano sobre la rejilla"
+          "quiere": "darle por fin a Jan la nota y la pagina cuarenta",
+          "impide": "el libro viejo no vuelve; solo hay uno nuevo que trae Johanna",
+          "cuesta": "el libro con su letra en los margenes se perdio; el de Jan es una copia sin historia",
+          "cambia": "Anna lee la pagina en voz alta en la cocina y Jan pone el libro en su estanteria",
+          "emocion": "nervios y ternura: la voz le tiembla porque Jan escucha muy quieto; sigue leyendo despacio"
         }
       ]
     }
   },
   "cmu047bkz0007326jsgeptkox#letters-and-invitations": {
-    "cerrado": "2026-09-13T18:53:02.309Z",
+    "cerrado": "2026-09-13T19:00:20.673Z",
     "hash": "7df36454020104ed",
     "historias": [
       "letters-and-invitations#0 karten-ohne-briefmarke",
@@ -2441,10 +2441,10 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Jan): karten-ohne-briefmarke, zwolf-alte-adressen, funf-marken-am-sonntag",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.19 sobre 54 plazas · 44 salen una sola vez | ancladas: 6/60 (10%) | cola: 44/54 portables con un solo encuentro (81%, tope 30%) | de un solo encuentro: Grafikerin, Viertel, sitzt, bringt, erste, voll, schicke, laut, rot, nie, weiß, bleiben, atmet, warm, Zwölf, stehen, kennt, früher, zeigt, Strich, zählt, mehr, eng, faltet, schlecht, lächelt, jeden, bald, findet, alte…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.18 sobre 55 plazas · 45 salen una sola vez | ancladas: 5/60 (8%) | cola: 45/55 portables con un solo encuentro (82%, tope 30%) | de un solo encuentro: Grafikerin, Viertel, sitzt, Koch, bringt, erste, voll, schicke, laut, rot, nie, weiß, bleiben, atmet, warm, Zwölf, stehen, kennt, früher, zeigt, Strich, zählt, mehr, eng, faltet, schlecht, lächelt, jeden, bald, findet…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en DE no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
@@ -2486,7 +2486,7 @@
     }
   },
   "cmu047bkz0007326jsgeptkox#looks-and-memories": {
-    "cerrado": "2026-09-13T18:53:26.338Z",
+    "cerrado": "2026-09-13T18:59:33.663Z",
     "hash": "f3ddc70352b9ba03",
     "historias": [
       "looks-and-memories#0 fotos-am-kuhlschrank",
@@ -2494,7 +2494,7 @@
       "looks-and-memories#2 ein-rahmen-fur-drei"
     ],
     "checks": [
-      "plan del tema completo (registro \"calido con pinchazo: risas delante de la nevera y una envidia pequena que nadie dice\", espina \"Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.\")",
+      "plan del tema completo (registro \"ruidoso y competitivo: noche de juegos con reglas que todos saben menos ella\", espina \"Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.\")",
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 67% (solo avisa)",
@@ -2506,7 +2506,7 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Anna): fotos-am-kuhlschrank, die-brille-von-fruher, ein-rahmen-fur-drei",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.27 sobre 55 plazas · 44 salen una sola vez | ancladas: 5/60 (8%) | cola: 44/55 portables con un solo encuentro (80%, tope 30%) | de un solo encuentro: oben, kocht, sucht, hart, runde, gern, immer, Endlich, umarmt, fehlst, liegt, zwanzig, groß, blond, Tisch, brauche, wunderbar, zehn, holt, heiß, Augen, bitte, schön, schließt, lacht, schnell, Rahmen, schaut, kauft, allein…",
@@ -2519,39 +2519,39 @@
       "tipo": "Friends",
       "nivel": "a0",
       "variante": "germany",
-      "registro": "calido con pinchazo: risas delante de la nevera y una envidia pequena que nadie dice",
+      "registro": "ruidoso y competitivo: noche de juegos con reglas que todos saben menos ella",
       "espina": "Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.",
-      "recursos": "A0: repeticion ritmica (el primer foto es viejo, el segundo es nuevo), contraste con aber, imagen concreta (tripa dura, ojos cerrados, marco en la pared)",
+      "recursos": "A0: repeticion ritmica (una Eins, noch eine Zwei; ich gewinne, ich gewinne), contraste con aber, imagen concreta (dado que cae, tablero roto, mano sobre la rejilla)",
       "historias": [
         {
           "slot": "0",
-          "quiere": "encontrarse en las fotos de la nevera de Jan",
-          "impide": "no sale en ninguna desde hace ocho anos; al lado de Jan siempre hay otra mujer, Nele",
-          "cuesta": "la idea de ser la mejor amiga de Jan: ese sitio lleva ocho anos ocupado",
-          "cambia": "conoce a Nele, que sabe quien es ella y la abraza",
-          "emocion": "celos pequenos: la tripa dura porque esa mujer tiene su sitio; coge una foto de la nevera y la aprieta"
+          "quiere": "jugar con el grupo y no quedarse fuera en la noche de juegos",
+          "impide": "Felix trae un juego nuevo y explica las reglas muy rapido; todos las saben menos ella",
+          "cuesta": "pierde la partida y le toca fregar como la ultima",
+          "cambia": "Felix la ayuda con los vasos: el recien llegado a su grupo es amable",
+          "emocion": "frustracion: las manos calientes porque todos saben las reglas menos ella; tira el dado demasiado fuerte y cae de la mesa"
         },
         {
           "slot": "1",
-          "quiere": "que Nele no le haga una foto a su cara de ahora",
-          "impide": "Nele encuentra la foto vieja de Anna con veinte anos y quiere una nueva para la nevera",
-          "cuesta": "la foto joven sale de la nevera y va a una caja; en su sitio queda la cara de ahora, con arrugas",
-          "cambia": "Anna se rie en la foto nueva gracias a Jan con sus gafas viejas",
-          "emocion": "inseguridad: la cara caliente porque la Anna de veinte es tan joven; cierra los ojos en cada foto"
+          "quiere": "aprender las reglas a solas con Jan para no perder otra vez",
+          "impide": "tiene miedo de parecer torpe delante del grupo; solo se atreve de noche con Jan",
+          "cuesta": "el juego viejo de antes esta roto y le faltan fichas; va a la basura",
+          "cambia": "vuelve a ganar con su dado rojo y Jan la llama otra vez reina",
+          "emocion": "pena: los ojos humedos porque el juego de antes esta roto; se los seca rapido"
         },
         {
           "slot": "2",
-          "quiere": "regalarle a Jan un marco con la foto vieja de los dos solos",
-          "impide": "tiene dos fotos y un solo marco: la vieja de los dos y la nueva de los tres con Nele",
-          "cuesta": "la foto de los dos solos no va a la pared; se queda en la chaqueta de Anna",
-          "cambia": "Anna elige la foto de tres: ahora el grupo es otro y ella esta dentro",
-          "emocion": "pena y aceptacion: el corazon pesado porque la foto vieja es solo para dos; la apoya en la rodilla y despues la guarda"
+          "quiere": "ganarle a Felix en la revancha del patio",
+          "impide": "Felix va por delante; ella necesita un cuatro exacto",
+          "cuesta": "su dado rojo de la escuela se cuela por la rejilla del suelo y no se puede sacar",
+          "cambia": "gana, y Felix le regala un dado azul 'para la reina'",
+          "emocion": "alegria rota: la boca seca porque el dado estaba con ella desde la escuela; pone la mano sobre la rejilla"
         }
       ]
     }
   },
   "cmu047bkz0007326jsgeptkox#music-and-singing": {
-    "cerrado": "2026-09-13T18:54:48.877Z",
+    "cerrado": "2026-09-13T18:59:50.564Z",
     "hash": "dfc30f359d1246d0",
     "historias": [
       "music-and-singing#0 tims-trommelstocke",
@@ -2559,7 +2559,7 @@
       "music-and-singing#2 ein-lied-fur-jan"
     ],
     "checks": [
-      "plan del tema completo (registro \"nervioso y musical: un sotano de ensayo, una voz que se rompe y una cocina de cumpleanos\", espina \"Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.\")",
+      "plan del tema completo (registro \"practico y humeante: cocinar para diez con ollas prestadas y una llamada de Munich en medio\", espina \"Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.\")",
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 60% (solo avisa)",
@@ -2571,7 +2571,7 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.41 sobre 37 plazas · 25 salen una sola vez | ancladas: 24/61 (39%) | cola: 25/37 portables con un solo encuentro (68%, tope 30%) | de un solo encuentro: fünfzehn, flüstert, Wer, plötzlich, still, nervös, hinter, nickt, Keller, sehr, hoch, falsch, Ganz, Kein, bis, fünfunddreißig, Jemand, beginnt, dieses, nur, wischt, was, Alle, ohne, offen; pasan del 30%",
@@ -2584,33 +2584,98 @@
       "tipo": "Friends",
       "nivel": "a0",
       "variante": "germany",
-      "registro": "nervioso y musical: un sotano de ensayo, una voz que se rompe y una cocina de cumpleanos",
+      "registro": "practico y humeante: cocinar para diez con ollas prestadas y una llamada de Munich en medio",
       "espina": "Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.",
-      "recursos": "A0: repeticion ritmica (Tim am Schlagzeug, Felix am Klavier, Anna vor dem Kuehlschrank), contraste con aber, imagen concreta (taza entre las manos, manos delante de la boca, microfono con las dos manos)",
+      "recursos": "A0: repeticion ritmica (Anna schneidet. Luisa wuerzt.; tres ollas en el fuego, tres en la mesa), contraste con aber, imagen concreta (ojos que lloran con la cebolla, tapa caliente en la mano, seis ollas vacias)",
       "historias": [
         {
           "slot": "0",
-          "quiere": "quedarse fuera de la sorpresa musical para el cumpleanos de Jan",
-          "impide": "Tim, amigo del colegio, quiere reunir la banda de antes y ella era la cantante",
-          "cuesta": "asiente sin querer delante de Jan y ya no puede decir que no",
-          "cambia": "vuelve a formar parte de la banda",
-          "emocion": "miedo: el corazon rapido porque su voz lleva anos callada; juega nerviosa con la taza"
+          "quiere": "cocinar su sopa de estudiante para los diez del jueves",
+          "impide": "su receta es para dos y no sabe cocinar para tantos; necesita a Luisa",
+          "cuesta": "el papel viejo de la receta cae dentro de la olla y se deshace",
+          "cambia": "Luisa le hace ver que la receta ya esta en su cabeza",
+          "emocion": "orgullo: le sube el calor a la cara porque la sopa huele como antes; remueve muy despacio"
         },
         {
           "slot": "1",
-          "quiere": "cantar la cancion de antes en el ensayo del sotano",
-          "impide": "el estribillo es demasiado alto; la voz se le rompe dos veces",
-          "cuesta": "la cancion vieja no vuelve: no la cantara nunca mas",
-          "cambia": "Tim propone escribir una cancion nueva, grave y sencilla, para Jan",
-          "emocion": "verguenza: se tapa la boca con las manos porque Tim oye la nota falsa"
+          "quiere": "tener la sopa lista mientras atiende una llamada",
+          "impide": "llaman de su antiguo trabajo en Munich y ella se queda escuchando en el pasillo",
+          "cuesta": "la olla grande de Jan se quema y ya no sirve",
+          "cambia": "Jan sabe ahora que Munich la quiere de vuelta",
+          "emocion": "culpa: casi llora porque es la olla favorita de Jan; se queda con la tapa caliente en la mano"
         },
         {
           "slot": "2",
-          "quiere": "cantarle a Jan la cancion nueva en su cumpleanos",
-          "impide": "toda la cocina la mira y le tiemblan las rodillas",
-          "cuesta": "Jan pregunta por la cancion vieja y ella la deja atras delante de todos",
-          "cambia": "canta con voz grave y tranquila; Jan la abraza delante de todos",
-          "emocion": "nervios que se vuelven calma: le tiemblan las rodillas porque todos la miran; agarra el microfono con las dos manos y canta"
+          "quiere": "salvar la cena del jueves sin la olla grande",
+          "impide": "los invitados llegan en una hora y no hay olla para diez",
+          "cuesta": "la sopa ya no es la de antes: son seis sopas pequenas en seis ollas prestadas",
+          "cambia": "la cena sale; cada vecino trae su olla y el grupo come junto",
+          "emocion": "cansancio y alegria: esta cansada pero contenta porque la noche no esta perdida; pone la mesa con diez platos distintos"
+        }
+      ]
+    }
+  },
+  "cmu047bkz0007326jsgeptkox#plans-and-decisions": {
+    "cerrado": "2026-09-13T19:02:16.031Z",
+    "hash": "c95fdff15c73f140",
+    "historias": [
+      "plans-and-decisions#0 eine-notiz-an-annas-tur",
+      "plans-and-decisions#1 die-liste-am-kuhlschrank",
+      "plans-and-decisions#2 die-karte-vom-mai"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"sobrio y decisivo: notas, listas y firmas; menos risas y un si dicho por escrito\", espina \"Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 61% (solo avisa)",
+      "acotacion dominante bajo tope (\"fragt\" 33%)",
+      "arranques de parrafo variados (mas repetido \"jan\", 18%)",
+      "densidad 5.3 palabras por oracion (techo 9 en a0)",
+      "seguidilla 25/59 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.07 sobre 29 plazas · 27 salen una sola vez | ancladas: 31/60 (52%) | cola: 27/29 portables con un solo encuentro (93%, tope 30%) | de un solo encuentro: höflich, braunen, streng, frei, gemütlich, mag, nett, blass, links, rechts, unter, bittet, sofort, ratlos, schläfst, kürzer, zufrieden, dort, Einer, sicher, Mindestens, Tschüss, Dann, Prost, krumm, darunter, beste; pasan del 30%",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en DE no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: plans-and-decisions (Anna, Jan) · presentados tarde: Jan (aparece en la 2a de plans-and-decisions)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "germany",
+      "registro": "sobrio y decisivo: notas, listas y firmas; menos risas y un si dicho por escrito",
+      "espina": "Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.",
+      "recursos": "A0: repeticion ritmica (Muenchen steht links. Bremen steht rechts.; una llave para arriba, una llave para el sotano), contraste con aber, imagen concreta (nota arrugada en la mano, raya sobre un nombre, postal con iman en la nevera)",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "tener mas tiempo para decidir entre Bremen y Munich",
+          "impide": "Niklas, el dueno de la casa, necesita respuesta el viernes: otra mujer quiere el piso",
+          "cuesta": "pierde el quiza: promete una respuesta el viernes, el mismo dia que Munich",
+          "cambia": "la decision tiene fecha",
+          "emocion": "agobio: se pone palida porque Munich tambien espera hasta el viernes; arruga la nota en la mano"
+        },
+        {
+          "slot": "1",
+          "quiere": "decidir con una lista de dos columnas en la nevera de Jan",
+          "impide": "las dos columnas quedan iguales y Jan no quiere ser una razon",
+          "cuesta": "Jan tacha su propio nombre de la columna de Bremen, y Munich le niega una semana mas",
+          "cambia": "Anna entiende que tiene que elegir por ella, no por Jan",
+          "emocion": "desconcierto: no sabe que hacer porque las dos columnas son igual de largas; muerde el boli"
+        },
+        {
+          "slot": "2",
+          "quiere": "quedarse en Bremen y decirselo a Jan",
+          "impide": "decir que no a Munich significa perder el trabajo bueno y el dinero",
+          "cuesta": "el trabajo y el dinero de Munich se van para siempre",
+          "cambia": "firma el contrato, escribe 'Ich bleibe' en la postal de mayo y su nombre vuelve a la lista de los jueves",
+          "emocion": "tristeza pequena y alegria: un poco triste porque el trabajo alli es bueno; respira hondo y sonrie"
         }
       ]
     }

@@ -28,7 +28,7 @@ s1 = "\n\n".join([
  q("Wer ist am Telefon?"),
  q("München. Meine alte Arbeit."),
  "Jan ist nicht böse. Er kratzt lange im Topf.",
- q("Der Topf ist kaputt. Egal. Die Freunde kommen um acht."),
+ q("Der Topf ist kaputt. Kein Drama. Die Freunde kommen um acht."),
  "Der schwarze Topf steht jetzt vor der Tür.",
 ])
 s2 = "\n\n".join([
