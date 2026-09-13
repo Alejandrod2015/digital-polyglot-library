@@ -18,6 +18,44 @@
     "quiere: la lista es un permiso escrito a mano, no un clasificador."
   ],
   "bundles": {
+    "french-friends-france-a2": {
+      "articles": [
+        "ce",
+        "cette",
+        "des",
+        "du",
+        "l",
+        "la",
+        "le",
+        "les",
+        "un",
+        "une"
+      ],
+      "characterNames": [
+        "anaïs",
+        "élise",
+        "julien",
+        "justine",
+        "karim",
+        "mathilde",
+        "nathalie",
+        "romain"
+      ],
+      "numerals": [
+        "cent",
+        "cinq",
+        "deux",
+        "dix",
+        "douze",
+        "neuf",
+        "onze",
+        "quatre-vingts",
+        "six",
+        "trois",
+        "une",
+        "vingt"
+      ]
+    },
     "french-expat-lyon": {
       "articles": [
         "ce",
