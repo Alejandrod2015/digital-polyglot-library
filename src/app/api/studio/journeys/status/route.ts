@@ -21,8 +21,9 @@
 //   que caduque el TTL, y el TTL no lo salva: la entrada caducada se sirve
 //   igualmente mientras revalida por detrás.
 //
-// Auth: sesión de Studio, o `Authorization: Bearer <CRON_SECRET>` para que los
-// scripts puedan llamarlo sin navegador.
+// Auth: sesión de Studio, o la cabecera `x-dpl-cron-secret: <CRON_SECRET>` para
+// que los scripts puedan llamarlo sin navegador (ver src/lib/studioSharedSecret.ts
+// para por qué no `Authorization: Bearer`).
 
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
@@ -30,6 +31,7 @@ import { revalidateTag } from "next/cache";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
 import { buildJourneyVariants } from "@/app/journey/journeyData";
+import { hasStudioSharedSecret } from "@/lib/studioSharedSecret";
 
 export const dynamic = "force-dynamic";
 
@@ -37,8 +39,7 @@ const ALLOWED_STATUS = ["active", "draft", "archived"] as const;
 type AllowedStatus = (typeof ALLOWED_STATUS)[number];
 
 async function isAuthorized(request: Request): Promise<boolean> {
-  const secret = process.env.CRON_SECRET;
-  if (secret && request.headers.get("authorization") === `Bearer ${secret}`) return true;
+  if (hasStudioSharedSecret(request)) return true;
 
   const { userId } = await auth();
   if (!userId) return false;
