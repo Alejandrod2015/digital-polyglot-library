@@ -4,9 +4,9 @@ def v(word,surface,typ,definition,anchor=False,register="neutral"):
     d={"type":typ,"word":word,"surface":surface,"register":register,"definition":definition}
     if anchor: d["anchor"]=True
     return d
-s1_text="""Aurélien, un comptable de trente-cinq ans, attendait à l'estaminet, dans l'odeur chaude des welshs. Il voulait offrir une tournée: sa cheffe lui avait proposé une promotion. Élodie est une mécanicienne de vélos, et elle est arrivée la boule au ventre.
+s1_text="""Aurélien, un comptable de trente-cinq ans, attendait à l'estaminet, dans l'odeur chaude des welshs. Il voulait offrir une tournée: sa cheffe lui avait proposé une promotion. Élodie, une mécanicienne de vélos, est arrivée la boule au ventre.
 
-Élodie a posé son casque: “Mon magasin ferme en janvier. Ils vont licencier tout le monde.” Prudent, Aurélien a gardé pour lui sa nouvelle. “Le chômage, ça ne dure pas, tu verras”, a dit Aurélien, et il s'est senti coupable.
+Élodie a jeté son casque sur la banquette: “Mon magasin ferme en janvier. Ils vont licencier tout le monde.” Prudent, Aurélien a gardé pour lui sa nouvelle. “Le chômage, ça ne dure pas, tu verras”, a dit Aurélien, et il s'est senti coupable.
 
 Fêter une promotion devant elle lui semblait déplacé, et il avait du mal à la regarder. Élodie a ri jaune. “Tu te souviens? À la fac, on rêvait d'ouvrir un atelier. C'est maintenant ou jamais”, lui a rappelé Élodie.
 

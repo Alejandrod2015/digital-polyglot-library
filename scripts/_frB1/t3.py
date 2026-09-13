@@ -6,7 +6,7 @@ s1="""Dans son bureau froid, Yasmine, une conseillère bancaire aux gestes rapid
 
 “J'ai trente mille euros d'économies, mises de côté par prudence pour un deux-pièces à Wazemmes. Et si je les mettais dans l'atelier?” a proposé Aurélien. Yasmine l'a regardé longtemps. “Vous pourriez tout perdre, vous le savez?” l'a prévenu Yasmine.
 
-Aurélien a hoché la tête, parce qu'Élodie le regardait. Le soir même, il a appelé l'agence pour renoncer au deux-pièces. Il a raccroché à contrecœur.
+Aurélien a dit oui, parce qu'Élodie le regardait. Le soir même, il a appelé l'agence pour renoncer au deux-pièces. Il a raccroché à contrecœur.
 
 Dans l'escalier, Élodie lui a serré la main très fort, sans rien dire."""
 v1=[

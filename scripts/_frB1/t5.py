@@ -66,11 +66,11 @@ v2=[
 ]
 s3="""“Il faut que je te dise la vérité. Je ne suis plus comptable: je répare des vélos à Fives”, a avoué Aurélien, un dimanche matin, dans l'odeur de café de la cafétéria.
 
-Marion a posé son gobelet. Elle sortait d'une garde de douze heures, les yeux cernés. “Le vélo, je m'en fiche. C'est le mensonge qui me gêne”, lui a répondu Marion sans détour.
+Marion a tourné son gobelet entre ses doigts. Elle sortait d'une garde de douze heures, les yeux cernés. “Le vélo, je m'en fiche. C'est le mensonge qui me gêne”, lui a répondu Marion sans détour.
 
 Elle lui a expliqué qu'elle passait ses nuits avec des gens qui mentaient sur leurs symptômes. Elle n'avait plus la force d'en entendre ailleurs.
 
-Marion a conclu: “On en reste là, d'accord? Tu es gentil, mais je ne veux pas commencer comme ça.” Aurélien a hoché la tête, la gorge serrée. Il n'a pas insisté.
+Marion a conclu: “On en reste là, d'accord? Tu es gentil, mais je ne veux pas commencer comme ça.” Aurélien n'a rien répondu, la gorge serrée. Il n'a pas insisté.
 
 Il a traversé Lille à vélo, sous une pluie fine, jusqu'à Fives. À l'atelier, il a tout raconté à Élodie, sans chercher d'excuses. Son amie a écouté jusqu'au bout. Puis elle lui a tendu une clé à molette, sans rien dire."""
 v3=[

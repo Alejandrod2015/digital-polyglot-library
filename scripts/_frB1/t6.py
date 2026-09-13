@@ -2,7 +2,7 @@ from comun import v,dump
 T="stress-and-burnout"
 s1="""Trois semaines avant la Braderie, l'atelier sentait la peinture et la sueur. Aurélien et Élodie travaillaient quatorze heures par jour pour ouvrir pendant le grand week-end de septembre.
 
-Leur premier client, Quentin, un médecin généraliste du quartier, est arrivé avec un vieux vélo au dérailleur fatigué. Pendant qu'Élodie réglait les vitesses, il a remarqué que ses mains tremblaient.
+Un nouveau client, Quentin, un médecin généraliste du quartier, est arrivé avec un vieux vélo au dérailleur fatigué. Pendant qu'Élodie réglait les vitesses, il a remarqué que ses mains tremblaient.
 
 “Vous dormez combien d'heures par nuit?” a demandé Quentin. “Assez pour tenir le coup, docteur. On se reposera après l'ouverture, je vous assure”, mentait Élodie en souriant, les yeux cernés.
 
@@ -94,7 +94,7 @@ v3=[
  v("ordinaire","ordinaire","adjective","normal, like every other day, with nothing special"),
 ]
 data=[
- {"topic":T,"slotIndex":0,"title":"Des mains qui tremblent","synopsis":"Les deux associés se sont fixé une date impossible pour ouvrir l'atelier, et ils refusent de la lâcher, même quand leur corps commence à protester. Leur premier client est médecin, et il voit tout de suite ce qu'ils refusent de voir. Élodie dit qu'elle va très bien. Aurélien, lui, préfère ne rien dire.","text":s1,"vocab":v1,"arcType":"reframe-turn"},
+ {"topic":T,"slotIndex":0,"title":"Des mains qui tremblent","synopsis":"Les deux associés se sont fixé une date impossible pour ouvrir l'atelier, et ils refusent de la lâcher, même quand leur corps commence à protester. Un nouveau client est médecin, et il voit tout de suite ce qu'ils refusent de voir. Élodie dit qu'elle va très bien. Aurélien, lui, préfère ne rien dire.","text":s1,"vocab":v1,"arcType":"reframe-turn"},
  {"topic":T,"slotIndex":1,"title":"Endormie contre l'établi","synopsis":"Ce que le médecin avait prévu arrive plus vite que prévu, et Élodie doit s'arrêter. Aurélien jure qu'il va tout faire seul pour garder la date de la Braderie. Pendant trois nuits, il y croit. La quatrième, seul devant la liste des vélos à réparer, il fait enfin ses comptes, et les chiffres lui disent autre chose.","text":s2,"vocab":v2,"arcType":"juxtaposition-discovery"},
  {"topic":T,"slotIndex":2,"title":"Cinq cents prospectus","synopsis":"Les prospectus de la Braderie attendent toujours sur l'établi, et personne n'ose les jeter. Quand Élodie revient, elle découvre que son associé n'est pas en meilleur état qu'elle. Ensemble, ils décident de changer leur façon de travailler, et l'atelier finit par ouvrir, un jour bien ordinaire.","text":s3,"vocab":v3,"arcType":"harmonic-close"},
 ]

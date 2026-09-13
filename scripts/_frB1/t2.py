@@ -2,7 +2,7 @@ from comun import v,dump
 T="advice-and-opinions"
 s1="""Chez Guillaume, à Roubaix, la carbonnade mijotait dans une odeur de bière. Le grand frère d'Aurélien s'appelle Guillaume, et il est agent immobilier. Au dessert, Aurélien a parlé de l'atelier qu'il voulait ouvrir avec Élodie.
 
-Guillaume a posé sa fourchette, sûr de lui. “À ta place, je garderais ton CDI. Un comptable et une mécanicienne, ça ne fait pas une entreprise”, lui a dit Guillaume. Aurélien a serré les dents.
+Guillaume a pointé sa fourchette vers lui, sûr de lui. “À ta place, je garderais ton CDI. Un comptable et une mécanicienne, ça ne fait pas une entreprise”, lui a dit Guillaume. Aurélien a serré les dents.
 
 “Je ne te demande pas de conseils. Je voulais que tu sois content”, a murmuré Aurélien. Guillaume se mêlait de tout et lui coupait la parole. “Il vaut mieux réfléchir avant, crois-moi”, répétait Guillaume.
 

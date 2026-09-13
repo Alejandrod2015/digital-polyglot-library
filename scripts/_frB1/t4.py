@@ -35,7 +35,7 @@ s2="""Aurélien a mené l'enquête toute la matinée, de comptoir en comptoir. F
 
 La serveuse a rougi quand Aurélien l'a interrogée. Elle avait seulement répété une phrase d'Élodie, entendue au zinc: “Mon associé s'est fait virer de sa vie de bureau.”
 
-Ce soir-là, dans l'odeur de peinture fraîche, Aurélien a posé son pinceau. “C'était une blague? Tout le quartier me prend pour un incapable!” a crié Aurélien. Élodie s'est mordu la lèvre.
+Ce soir-là, dans l'odeur de peinture fraîche, Aurélien a lâché son pinceau. “C'était une blague? Tout le quartier me prend pour un incapable!” a crié Aurélien. Élodie s'est mordu la lèvre.
 
 “Je ne voudrais jamais te faire du mal. Je voulais dire que tu avais quitté une vie triste. Ils ont tout déformé”, s'est excusée Élodie. “Et ma réputation, tu t'en fiches?” a répliqué Aurélien, blessé.
 
