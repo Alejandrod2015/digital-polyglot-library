@@ -2,7 +2,7 @@
  *  Las glosas se dejan vacias: las rellena rebuildTapGlosses, que reutiliza
  *  lo que ya este glosado en los bundles hermanos del mismo idioma.
  *  npx tsx scripts/_newbundle.ts <bundle> <lang> <variant> <lvl> */
-import { config } from "dotenv"; config({ path: ".env.local", quiet: true });
+import { config } from "dotenv"; config({ path: ".env.local", quiet: true }); config({ path: ".env", quiet: true });
 import { PrismaClient } from "../src/generated/prisma";
 const p = new PrismaClient();
 async function main(){

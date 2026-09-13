@@ -1,52 +1,436 @@
 {
   "cmtmylg7k0007321h6t7njesx#advice-and-opinions": {
-    "cerrado": "2026-09-05T13:29:37.902Z",
-    "hash": "1878685c44b0bc52",
+    "cerrado": "2026-09-05T18:35:33.940Z",
+    "hash": "f7231214cc881271",
     "historias": [
       "advice-and-opinions#1 un-tinto-que-nadie-pidio",
       "advice-and-opinions#2 la-pasilla-del-jueves",
       "advice-and-opinions#3 la-fila-daba-la-vuelta"
     ],
     "checks": [
+      "plan del tema completo (registro \"conversado y de mostrador: trato corto, precio y clientela\", espina \"un consejo que nadie pidio y que resulta ser el bueno\")",
       "validador canonico: 3/3 (perfil narrador)",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dice\" 33%)",
+      "arranques de parrafo variados (mas repetido \"yo\", 9%)",
       "gate de conjunto sobre el tema: 11/17 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 6 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.00 sobre 42 plazas · 35 salen una sola vez | ancladas: 18/60 (30%) | cola: 35/42 portables con un solo encuentro (83%, tope 85%)",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: advice-and-opinions (Rocío, Esteban)"
-    ]
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "B1",
+      "variante": "LATAM",
+      "registro": "conversado y de mostrador: trato corto, precio y clientela",
+      "espina": "un consejo que nadie pidio y que resulta ser el bueno",
+      "recursos": "imagen concreta, contraste con pero, causalidad explicita, espejo concreto, cambio de ritmo",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "decidir de una vez si quita las mesas y deja solo barra",
+          "impide": "Esteban le da una opinion que ella no pidio, y ademas tiene razon",
+          "cuesta": "tres semanas de darle vueltas que ya no recupera, y el cambio sigue sin hacerse",
+          "cambia": "deja de preguntarse por los muebles y empieza a pensar en la clientela",
+          "emocion": "impaciencia porque lleva semanas sin decidirse; se ve en que se rie a destiempo y no contesta la pregunta"
+        },
+        {
+          "slot": "2",
+          "quiere": "hacer el cambio a su manera, quedandose con la mitad del consejo",
+          "impide": "sube el precio el mismo dia que pone el letrero, y los clientes leen las dos cosas juntas",
+          "cuesta": "un cliente de anos que pide la cuenta y no vuelve en toda la semana",
+          "cambia": "descubre que la mitad que se salto era la que importaba",
+          "emocion": "terquedad defensiva porque sabe que fallo; se ve en que no discute el numero y se pone a mezclar la pasilla"
+        },
+        {
+          "slot": "3",
+          "quiere": "que la fila de la esquina sea merito suyo y no de un consejo ajeno",
+          "impide": "el letrero y el precio viejo juntos son exactamente lo que le dijeron",
+          "cuesta": "tener que decirlo en voz alta delante de el, y le cuesta mas que el cambio",
+          "cambia": "le da la razon con un tinto que no cobra, que es su manera de firmarlo",
+          "emocion": "orgullo herido que cede; se ve en que se calla primero y solo despues sirve el tinto sin cobrarlo"
+        }
+      ]
+    }
+  },
+  "cmtmylg7k0007321h6t7njesx#animals-and-farms": {
+    "cerrado": "2026-09-05T18:03:33.371Z",
+    "hash": "6e13d9768d672c03",
+    "historias": [
+      "animals-and-farms#1 dos-ovejas-en-el-cerco",
+      "animals-and-farms#2 quiltro-con-dueno",
+      "animals-and-farms#3 nadie-gana-un-juicio"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"seco y a la intemperie: viento, barro y frases cortas\", espina \"un dano con dueno conocido que nadie del campo quiere nombrar en voz alta\")",
+      "validador canonico: 3/3 (perfil narrador)",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"contesta\" 22%)",
+      "arranques de parrafo variados (mas repetido \"y\", 11%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 0.82 sobre 44 plazas · 41 salen una sola vez | ancladas: 16/60 (27%) | cola: 41/44 portables con un solo encuentro (93%, tope 85%)",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "B1",
+      "variante": "LATAM",
+      "registro": "seco y a la intemperie: viento, barro y frases cortas",
+      "espina": "un dano con dueno conocido que nadie del campo quiere nombrar en voz alta",
+      "recursos": "imagen concreta, contraste con pero, causalidad explicita, simil simple, espejo concreto, reversa cosida, cambio de ritmo",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "cerrar el parte de las dos ovejas muertas y seguir con la ronda del dia",
+          "impide": "reconoce al perro que las mato, y el dueno es Oscar, que le arreglo la camioneta el invierno pasado",
+          "cuesta": "pierde la manana entera y los tres campos que le quedaban por ver, y no los recupera",
+          "cambia": "entiende que dejar el nombre en blanco tambien es firmar algo",
+          "emocion": "incomodidad porque el vecino la mira esperando el nombre; se ve en que guarda el cuaderno antes de terminar de escribir"
+        },
+        {
+          "slot": "2",
+          "quiere": "que Oscar pague las dos ovejas que valen sus animales",
+          "impide": "Oscar sostiene que su perro mato una sola y que la otra ya estaba enferma",
+          "cuesta": "el favor de la camioneta queda cobrado esa manana y no vuelve a existir",
+          "cambia": "deja de ser la vecina y pasa a ser la que tasa el dano",
+          "emocion": "rabia contenida porque el saca el favor viejo a la mesa; se ve en que aprieta la correa del maletin y no la suelta"
+        },
+        {
+          "slot": "3",
+          "quiere": "que el vecino reclame la diferencia que ella dejo escrita",
+          "impide": "el vecino prefiere el arreglo corto antes que pelearse con quien le presta el bote",
+          "cuesta": "su parte queda por debajo de lo que ella tasó, y no se corrige nunca",
+          "cambia": "firma igual, y aprende cuanto vale su firma en ese campo",
+          "emocion": "impotencia porque nadie hizo nada ilegal y aun asi salio mal; se ve en que arranca la camioneta sin ponerse el cinturon"
+        }
+      ]
+    }
+  },
+  "cmtmylg7k0007321h6t7njesx#distance-and-homecoming": {
+    "cerrado": "2026-09-05T21:19:31.023Z",
+    "hash": "00dc26881d31333a",
+    "historias": [
+      "distance-and-homecoming#1 su-cuarto-era-despensa",
+      "distance-and-homecoming#2 le-corrigieron-la-sal",
+      "distance-and-homecoming#3 dejo-la-llave-en-la-mesa"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"quieto y cortes, de casa con horarios: pasos, puertas y trato de usted\", espina \"una casa que siguio funcionando sin ella y no le guardo sitio\")",
+      "validador canonico: 3/3 (perfil narrador)",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 84% (solo avisa)",
+      "acotacion dominante bajo tope (\"le\" 25%)",
+      "arranques de parrafo variados (mas repetido \"teresa\", 11%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Teresa): su-cuarto-era-despensa, le-corrigieron-la-sal, dejo-la-llave-en-la-mesa",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 0.98 sobre 47 plazas · 45 salen una sola vez | ancladas: 13/60 (22%) | cola: 45/47 portables con un solo encuentro (96%, tope 85%)",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "B1",
+      "variante": "LATAM",
+      "registro": "quieto y cortes, de casa con horarios: pasos, puertas y trato de usted",
+      "espina": "una casa que siguio funcionando sin ella y no le guardo sitio",
+      "recursos": "imagen concreta, espejo concreto, flashback marcado, contraste con pero, causalidad explicita, repeticion ritmica, cambio de ritmo",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "entrar en la casa y encontrar cada cosa donde la dejo hace ocho anos",
+          "impide": "la cocina cambio de sitio y su cuarto es ahora la despensa",
+          "cuesta": "la primera noche, que duerme en el sofa y no se la devuelve nadie",
+          "cambia": "deja de creer que vuelve y empieza a entender que visita",
+          "emocion": "desconcierto que tapa con cortesia; se ve en que pide permiso para abrir su propia alacena"
+        },
+        {
+          "slot": "2",
+          "quiere": "servir para algo en esa casa, aunque sea haciendo la comida del domingo",
+          "impide": "Wilson tiene un metodo y cada cosa ya tiene su hora y su lugar",
+          "cuesta": "el sitio en la cocina, que ya no le devuelven ese viaje",
+          "cambia": "entiende que estorba con la mejor intencion del mundo",
+          "emocion": "humillacion pequena porque le corrigen la sal delante de todos; se ve en que deja la cuchara y se sienta a mirar"
+        },
+        {
+          "slot": "3",
+          "quiere": "irse sin escena y sin prometer que vuelve pronto",
+          "impide": "Wilson le pide que se quede con la llave de la casa",
+          "cuesta": "la llave, que deja igual, y con ella el derecho a entrar sin avisar",
+          "cambia": "acepta en voz alta que es visita, y deja de pelearlo",
+          "emocion": "pena serena porque la casa esta bien sin ella; se ve en que deja la llave en la mesa y cierra la puerta despacio"
+        }
+      ]
+    }
+  },
+  "cmtmylg7k0007321h6t7njesx#faith-and-devotion": {
+    "cerrado": "2026-09-05T18:35:44.272Z",
+    "hash": "dc8b021126a2d7df",
+    "historias": [
+      "faith-and-devotion#1 prometio-cargar-el-anda",
+      "faith-and-devotion#2 cera-en-las-manos",
+      "faith-and-devotion#3 madera-para-el-bastidor"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"solemne y contenido, de taller: madera, aguja y poca voz\", espina \"una deuda que nadie le reclama y que por eso no puede pagar\")",
+      "validador canonico: 3/3 (perfil narrador)",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dice\" 32%)",
+      "arranques de parrafo variados (mas repetido \"el\", 13%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.04 sobre 46 plazas · 41 salen una sola vez | ancladas: 14/60 (23%) | cola: 41/46 portables con un solo encuentro (89%, tope 85%)",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: faith-and-devotion (Nicanor, Delia)"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "B1",
+      "variante": "LATAM",
+      "registro": "solemne y contenido, de taller: madera, aguja y poca voz",
+      "espina": "una deuda que nadie le reclama y que por eso no puede pagar",
+      "recursos": "imagen concreta, contraste con pero, causalidad explicita, espejo concreto, flashback marcado, reversa cosida, cambio de ritmo",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "que su hermana salga bien de la operacion, y poner algo suyo a cambio",
+          "impide": "lo promete en voz alta delante de Delia, y una promesa dicha ya no se deshace",
+          "cuesta": "queda comprometido al jueves de la procesion, que es dia de entrega pagada",
+          "cambia": "pasa de pedir a deber",
+          "emocion": "miedo por la operacion, porque no sabe si sale bien; se ve en que lija tres veces la misma tabla y no la mira"
+        },
+        {
+          "slot": "2",
+          "quiere": "cumplir la promesa y entregar el encargo de Lima, las dos cosas el mismo jueves",
+          "impide": "el camion del encargo sale a la misma hora en que se levanta el anda",
+          "cuesta": "pierde la mitad del pago por entregar tarde, y esa mitad no vuelve",
+          "cambia": "elige el trabajo y no lo dice",
+          "emocion": "verguenza cuando Delia le pregunta a que hora llega, porque ya sabe que no llega; se ve en que contesta mirandole las manos a la madera"
+        },
+        {
+          "slot": "3",
+          "quiere": "que nadie note que falto a su lado del anda",
+          "impide": "Delia cargo ese lado y el barrio entero la vio",
+          "cuesta": "el sitio bajo el anda, que este ano ya no es suyo",
+          "cambia": "nombra la deuda en voz alta, que es lo unico que puede pagar hoy",
+          "emocion": "alivio y verguenza juntos porque ella no se lo reclama; se ve en que le lleva la madera del bastidor sin que se lo pida"
+        }
+      ]
+    }
+  },
+  "cmtmylg7k0007321h6t7njesx#games-and-bets": {
+    "cerrado": "2026-09-05T21:19:18.008Z",
+    "hash": "bc1ca3e2e6e779ac",
+    "historias": [
+      "games-and-bets#1 le-fiaron-en-el-palenque",
+      "games-and-bets#2 gano-y-no-cobro",
+      "games-and-bets#3 la-deuda-tenia-cara"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"rapido y ruidoso, de feria: pregones, musica y cuentas dichas a gritos\", espina \"una deuda de juego que no se anota en ningun lado y que todos recuerdan igual\")",
+      "validador canonico: 3/3 (perfil narrador)",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"le\" 28%)",
+      "arranques de parrafo variados (mas repetido \"hugo\", 11%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Hugo): le-fiaron-en-el-palenque, gano-y-no-cobro, la-deuda-tenia-cara",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.10 sobre 48 plazas · 42 salen una sola vez | ancladas: 12/60 (20%) | cola: 42/48 portables con un solo encuentro (88%, tope 85%)",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "B1",
+      "variante": "LATAM",
+      "registro": "rapido y ruidoso, de feria: pregones, musica y cuentas dichas a gritos",
+      "espina": "una deuda de juego que no se anota en ningun lado y que todos recuerdan igual",
+      "recursos": "repeticion ritmica, contraste con pero, imagen concreta, humor de situacion, gancho final literal, simil simple, cambio de ritmo",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "ganar de una y pagar el permiso del puesto antes de que cierre la feria",
+          "impide": "no tiene con que entrar a la apuesta, y alguien le fia delante de Brenda",
+          "cuesta": "el derecho a decir que el no juega, que ya no recupera en toda la feria",
+          "cambia": "pasa de mirar la apuesta desde el puesto a estar dentro de ella",
+          "emocion": "euforia nerviosa porque quiere que ella lo vea ganar; se ve en que no suelta el boleto y lo dobla en cuatro"
+        },
+        {
+          "slot": "2",
+          "quiere": "cobrar esa misma noche lo que acaba de ganar",
+          "impide": "el que paga cierra la caja y le dice que pase manana, y manana ya no esta",
+          "cuesta": "la ganancia entera, que no vuelve ni se reclama a nadie",
+          "cambia": "entiende que ganar y cobrar son dos cosas distintas",
+          "emocion": "verguenza de haberlo contado antes de tenerlo en la mano; se ve en que guarda el boleto sin ensenarselo a nadie"
+        },
+        {
+          "slot": "3",
+          "quiere": "perder callado y que no se entere nadie del puesto",
+          "impide": "Brenda le dice que el dinero que le fiaron era de ella",
+          "cuesta": "el mes que va a tardar en devolverlo, con la feria ya levantada",
+          "cambia": "la deuda deja de ser un papel y pasa a tener cara",
+          "emocion": "alivio incomodo porque ella no lo humilla delante de nadie; se ve en que le pasa el vaso de agua sin decir nada"
+        }
+      ]
+    }
+  },
+  "cmtmylg7k0007321h6t7njesx#pride-and-envy": {
+    "cerrado": "2026-09-05T21:19:28.773Z",
+    "hash": "705204fc3cfbb887",
+    "historias": [
+      "pride-and-envy#1 contaba-las-bolsas-ajenas",
+      "pride-and-envy#2 el-mismo-pan-dulce",
+      "pride-and-envy#3 nadie-pidio-perdon"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"caliente y cerrado, de obrador de noche: harina, horno y frases que se dicen dos veces\", espina \"un orgullo que no deja decir en voz alta que lo del otro estaba bueno\")",
+      "validador canonico: 3/3 (perfil narrador)",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 95% (solo avisa)",
+      "acotacion dominante bajo tope (\"le\" 22%)",
+      "arranques de parrafo variados (mas repetido \"adrián\", 8%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Adrián): contaba-las-bolsas-ajenas, el-mismo-pan-dulce, nadie-pidio-perdon",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 0.92 sobre 50 plazas · 46 salen una sola vez | ancladas: 10/60 (17%) | cola: 46/50 portables con un solo encuentro (92%, tope 85%)",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "B1",
+      "variante": "LATAM",
+      "registro": "caliente y cerrado, de obrador de noche: harina, horno y frases que se dicen dos veces",
+      "espina": "un orgullo que no deja decir en voz alta que lo del otro estaba bueno",
+      "recursos": "repeticion ritmica, imagen concreta, contraste con pero, causalidad explicita, espejo concreto, simil simple, cambio de ritmo",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "que su panaderia siga siendo la de la esquina de siempre, sin cambiar nada",
+          "impide": "la de Silvana vende el doble desde que le cambio la masa al pan dulce",
+          "cuesta": "la clientela del sabado, que se pasa de vereda y ya no vuelve",
+          "cambia": "pasa de no mirar el otro local a contarle las bolsas todas las tardes",
+          "emocion": "envidia que no se nombra, porque nombrarla seria darle la razon; se ve en que cuenta las bolsas ajenas en voz baja mientras amasa"
+        },
+        {
+          "slot": "2",
+          "quiere": "recuperar el sabado con la misma idea, sin decir de quien es",
+          "impide": "Silvana reconoce su propia receta al primer bocado, en la mesa del domingo",
+          "cuesta": "poder mirarla de frente en esa mesa, cosa que ya no recupera ese mes",
+          "cambia": "la copia deja de ser un secreto y pasa a ser un tema",
+          "emocion": "verguenza disfrazada de orgullo; se ve en que sube la voz y se pone a hablar del horno nuevo"
+        },
+        {
+          "slot": "3",
+          "quiere": "que ella lo diga de una vez o que lo deje pasar para siempre",
+          "impide": "Silvana lo dice, y el no puede pedir disculpas sin darle todavia mas razon",
+          "cuesta": "el domingo en familia, que ese mes no se repite y nadie propone otro",
+          "cambia": "los dos aceptan que quedo dicho, y ninguno lo arregla",
+          "emocion": "alivio aspero porque decirlo pesa menos que callarlo; se ve en que Adrian deja la bandeja de pan en la puerta de ella y no toca el timbre"
+        }
+      ]
+    }
   },
   "cmtmylg7k0007321h6t7njesx#promises-and-excuses": {
-    "cerrado": "2026-09-05T12:59:37.970Z",
-    "hash": "05c7a5f22f560832",
+    "cerrado": "2026-09-05T18:35:22.701Z",
+    "hash": "6a91f904c775cfdb",
     "historias": [
       "promises-and-excuses#1 le-puso-el-ojo-al-cuartel",
       "promises-and-excuses#2 el-motor-arrancaba-bien",
       "promises-and-excuses#3 los-sarmientos-amontonados"
     ],
     "checks": [
+      "plan del tema completo (registro \"seco y de finca: poda, plazos y frases dichas sin levantar la vista\", espina \"una promesa dicha en voz alta que ya no se puede deshacer\")",
       "validador canonico: 3/3 (perfil narrador)",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dice\" 29%)",
+      "arranques de parrafo variados (mas repetido \"no\", 16%)",
       "gate de conjunto sobre el tema: 11/17 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 3 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.05 sobre 43 plazas · 39 salen una sola vez | ancladas: 17/60 (28%) | cola: 39/43 portables con un solo encuentro (91%, tope 85%)",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
-    ]
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "B1",
+      "variante": "LATAM",
+      "registro": "seco y de finca: poda, plazos y frases dichas sin levantar la vista",
+      "espina": "una promesa dicha en voz alta que ya no se puede deshacer",
+      "recursos": "imagen concreta, contraste con pero, causalidad explicita, reversa cosida, cambio de ritmo",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "cerrar la poda del cuartel antes de la helada y no perder el trabajo",
+          "impide": "no ha contado las hileras y le pusieron el ojo en vez de medirlas",
+          "cuesta": "el hombro lastimado, que no dice y que no se le cura solo",
+          "cambia": "pasa de calcular por encima a comprometerse con una fecha",
+          "emocion": "miedo a no llegar, que tapa con seguridad; se ve en que guarda la tijera con lentitud y no mira las hileras que faltan"
+        },
+        {
+          "slot": "2",
+          "quiere": "llegar tarde sin que se note y sin dar explicaciones",
+          "impide": "la camioneta tiene las llaves puestas y el pretexto se cae solo",
+          "cuesta": "media jornada de trabajo, que se descuenta y no vuelve",
+          "cambia": "descubre que lo que se reclama no es la tarea sino el aviso",
+          "emocion": "verguenza defensiva porque la excusa no se sostiene; se ve en que repite el motor y mira la madera en vez de la cara"
+        },
+        {
+          "slot": "3",
+          "quiere": "cumplir tarde y que el atraso quede en nada",
+          "impide": "Damian ya contrato a dos changarines y el cuartel esta podado",
+          "cuesta": "el cuartel entero, que era suyo esta temporada y ya no lo es",
+          "cambia": "deja de justificar y dice lo que le pasaba de verdad",
+          "emocion": "alivio incomodo porque el no se lo reclama; se ve en que confiesa lo del hombro y le cuesta mas que cualquier excusa"
+        }
+      ]
+    }
   }
 }

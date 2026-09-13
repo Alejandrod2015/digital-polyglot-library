@@ -1,448 +1,473 @@
 [
- {
-  "type": "match_meaning",
-  "word": "fila,esquina,cafetal,nevado",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "fila",
-     "answer": "a line of people waiting",
-     "options": [
-      "a line of people waiting",
-      "where two streets meet",
-      "a field of coffee plants",
-      "the snow volcano above the city"
-     ]
-    },
-    {
-     "word": "esquina",
-     "answer": "where two streets meet",
-     "options": [
-      "a line of people waiting",
-      "where two streets meet",
-      "a field of coffee plants",
-      "the snow volcano above the city"
-     ]
-    },
-    {
-     "word": "cafetal",
-     "answer": "a field of coffee plants",
-     "options": [
-      "a line of people waiting",
-      "where two streets meet",
-      "a field of coffee plants",
-      "the snow volcano above the city"
-     ]
-    },
-    {
-     "word": "nevado",
-     "answer": "the snow volcano above the city",
-     "options": [
-      "a line of people waiting",
-      "where two streets meet",
-      "a field of coffee plants",
-      "the snow volcano above the city"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "fila,esquina,cafetal,nevado",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "fila",
+          "answer": "a line of people waiting",
+          "options": [
+            "a line of people waiting",
+            "where two streets meet",
+            "a field of coffee plants",
+            "the snow volcano above the city"
+          ]
+        },
+        {
+          "word": "esquina",
+          "answer": "where two streets meet",
+          "options": [
+            "a line of people waiting",
+            "where two streets meet",
+            "a field of coffee plants",
+            "the snow volcano above the city"
+          ]
+        },
+        {
+          "word": "cafetal",
+          "answer": "a field of coffee plants",
+          "options": [
+            "a line of people waiting",
+            "where two streets meet",
+            "a field of coffee plants",
+            "the snow volcano above the city"
+          ]
+        },
+        {
+          "word": "nevado",
+          "answer": "the snow volcano above the city",
+          "options": [
+            "a line of people waiting",
+            "where two streets meet",
+            "a field of coffee plants",
+            "the snow volcano above the city"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "dar la razón",
-  "sentence": "Le cuesta más [[darle la razón]] que haber cambiado de idea.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "admitting he was right",
-   "options": [
-    "admitting he was right",
-    "asking him for help",
-    "paying him back",
-    "explaining herself"
-   ],
-   "audioClip": {
-    "storySlug": "yo-no-dije-nada",
-    "storySource": "journey",
-    "sentence": "Le cuesta más darle la razón que haber cambiado de idea.",
-    "targetWord": "dar la razón",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/987d0babb36c0672.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "tener razón",
-  "sentence": "“No dije que usted [[tuviera razón]]”, agrega Rocío.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "were right",
-   "options": [
-    "were right",
-    "were late",
-    "were angry",
-    "were leaving"
-   ],
-   "audioClip": {
-    "storySlug": "yo-no-dije-nada",
-    "storySource": "journey",
-    "sentence": "“No dije que usted tuviera razón”, agrega Rocío.",
-    "targetWord": "tener razón",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cd4419b813402f5d.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "cambiar de idea",
-  "sentence": "Le costó menos _____ que decirlo en voz alta.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "cambiar de idea",
-   "options": [
-    "cambiar de idea",
-    "cobrar la cuenta",
-    "abrir la puerta",
-    "subir el precio"
-   ],
-   "translation": "It cost her less to _____ than to say it out loud.",
-   "optionTranslations": [
-    "change her mind",
-    "charge the bill",
-    "open the door",
-    "raise the price"
-   ],
-   "audioClip": {
-    "storySlug": "yo-no-dije-nada",
-    "storySource": "journey",
-    "sentence": "Le costó menos cambiar de idea que decirlo en voz alta.",
-    "targetWord": "cambiar de idea",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/08cf42980a874f23.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "callarse",
-  "sentence": "Dice que esto habría pasado antes, y [[se calla]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "she goes quiet",
-   "options": [
-    "she goes quiet",
-    "she laughs",
-    "she leaves",
-    "she insists"
-   ],
-   "audioClip": {
-    "storySlug": "yo-no-dije-nada",
-    "storySource": "journey",
-    "sentence": "Dice que esto habría pasado antes, y se calla.",
-    "targetWord": "callarse",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e488a761d507f4f3.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "señala",
-  "sentence": "Esteban no contesta: _____ la fila con la mano.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "señala",
-   "options": [
-    "señala",
-    "amarra",
-    "cobra",
-    "tapa"
-   ],
-   "translation": "Esteban does not answer: he _____ at the queue with his hand.",
-   "optionTranslations": [
-    "points",
-    "ties",
-    "charges",
-    "covers"
-   ],
-   "audioClip": {
-    "storySlug": "yo-no-dije-nada",
-    "storySource": "journey",
-    "sentence": "Esteban no contesta: señala la fila con la mano.",
-    "targetWord": "señala",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c7740178374251b.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "notar",
-  "sentence": "“Yo no dije nada”, contesta Esteban, y lo [[nota]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "he notices it",
-   "options": [
-    "he notices it",
-    "he denies it",
-    "he repeats it",
-    "he pays it"
-   ],
-   "audioClip": {
-    "storySlug": "yo-no-dije-nada",
-    "storySource": "journey",
-    "sentence": "“Yo no dije nada”, contesta Esteban, y lo nota.",
-    "targetWord": "notar",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dcbe33c720c07f39.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "de mala gana",
-  "sentence": "“Gracias”, dice ella al fin, [[de mala gana]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "grudgingly",
-   "options": [
-    "grudgingly",
-    "cheerfully",
-    "in a hurry",
-    "out loud"
-   ],
-   "audioClip": {
-    "storySlug": "yo-no-dije-nada",
-    "storySource": "journey",
-    "sentence": "“Gracias”, dice ella al fin, de mala gana.",
-    "targetWord": "de mala gana",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c16fc077f9d02648.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "turno",
-  "sentence": "Esteban espera su [[turno]] con la mazamorra en la mano.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "his turn",
-   "options": [
-    "his turn",
-    "his change",
-    "his coffee",
-    "his seat"
-   ],
-   "audioClip": {
-    "storySlug": "yo-no-dije-nada",
-    "storySource": "journey",
-    "sentence": "Esteban espera su turno con la mazamorra en la mano.",
-    "targetWord": "turno",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4af3090ab7ba2c3c.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "cobrar",
-  "sentence": "Le sirve el tinto sin _____ nada.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "cobrar",
-   "options": [
-    "cobrar",
-    "mezclar",
-    "tapar",
-    "apuntar"
-   ],
-   "translation": "She pours him the coffee without _____ anything.",
-   "optionTranslations": [
-    "charging",
-    "mixing",
-    "covering",
-    "pointing at"
-   ],
-   "audioClip": {
-    "storySlug": "yo-no-dije-nada",
-    "storySource": "journey",
-    "sentence": "Le sirve el tinto sin cobrar nada.",
-    "targetWord": "cobrar",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5d57146f94805d1d.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "amarra",
-  "sentence": "Esteban _____ la caja de chócolo con cabuya.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "amarra",
-   "options": [
-    "amarra",
-    "mezcla",
-    "cobra",
-    "disimula"
-   ],
-   "translation": "Esteban _____ the box of sweet corn with plant string.",
-   "optionTranslations": [
-    "ties",
-    "mixes",
-    "charges",
-    "hides"
-   ],
-   "audioClip": {
-    "storySlug": "yo-no-dije-nada",
-    "storySource": "journey",
-    "sentence": "Esteban amarra la caja de chócolo con cabuya.",
-    "targetWord": "amarra",
-    "language": "spanish"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "nube",
-  "sentence": "Detrás del nevado se arma la [[nube]] de las cuatro.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the cloud",
-   "options": [
-    "the cloud",
-    "the queue",
-    "the smell",
-    "the light"
-   ],
-   "audioClip": {
-    "storySlug": "yo-no-dije-nada",
-    "storySource": "journey",
-    "sentence": "Detrás del nevado se arma la nube de las cuatro.",
-    "targetWord": "nube",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "dar la razón",
+    "sentence": "Le cuesta más [[darle la razón]] que haber cambiado de idea.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "admitting he was right",
+      "options": [
+        "admitting he was right",
+        "asking him for help",
+        "paying him back",
+        "explaining herself"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-dije-nada",
+        "storySource": "journey",
+        "sentence": "Le cuesta más darle la razón que haber cambiado de idea.",
+        "targetWord": "dar la razón",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/987d0babb36c0672.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/3cc4d0cacc7be8ad0e81.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "enfrente",
-  "sentence": "El letrero se ve desde el cafetal de [[enfrente]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "across the way",
-   "options": [
-    "across the way",
-    "down the hill",
-    "behind the house",
-    "inside the cafe"
-   ],
-   "audioClip": {
-    "storySlug": "yo-no-dije-nada",
-    "storySource": "journey",
-    "sentence": "El letrero se ve desde el cafetal de enfrente.",
-    "targetWord": "enfrente",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "tener razón",
+    "sentence": "“No dije que usted [[tuviera razón]]”, agrega Rocío.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "were right",
+      "options": [
+        "were right",
+        "were late",
+        "were angry",
+        "were leaving"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-dije-nada",
+        "storySource": "journey",
+        "sentence": "“No dije que usted tuviera razón”, agrega Rocío.",
+        "targetWord": "tener razón",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cd4419b813402f5d.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/58305d2ac95deee16207.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "precio",
-  "sentence": "El [[precio]] volvió a ser el de antes esa mañana.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the price",
-   "options": [
-    "the price",
-    "the queue",
-    "the sign",
-    "the smell"
-   ],
-   "audioClip": {
-    "storySlug": "yo-no-dije-nada",
-    "storySource": "journey",
-    "sentence": "El precio volvió a ser el de antes esa mañana.",
-    "targetWord": "precio",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "cambiar de idea",
+    "sentence": "Le costó menos _____ que decirlo en voz alta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cambiar de idea",
+      "options": [
+        "cambiar de idea",
+        "cobrar la cuenta",
+        "abrir la puerta",
+        "subir el precio"
+      ],
+      "translation": "It cost her less to _____ than to say it out loud.",
+      "optionTranslations": [
+        "change her mind",
+        "charge the bill",
+        "open the door",
+        "raise the price"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-dije-nada",
+        "storySource": "journey",
+        "sentence": "Le costó menos cambiar de idea que decirlo en voz alta.",
+        "targetWord": "cambiar de idea",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/08cf42980a874f23.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "detrás",
-  "sentence": "[[Detrás]] del nevado se arma la nube de las cuatro.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "behind",
-   "options": [
-    "behind",
-    "above",
-    "beside",
-    "under"
-   ],
-   "audioClip": {
-    "storySlug": "yo-no-dije-nada",
-    "storySource": "journey",
-    "sentence": "Detrás del nevado se arma la nube de las cuatro.",
-    "targetWord": "detrás",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "callarse",
+    "sentence": "Dice que esto habría pasado antes, y [[se calla]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "she goes quiet",
+      "options": [
+        "she goes quiet",
+        "she laughs",
+        "she leaves",
+        "she insists"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-dije-nada",
+        "storySource": "journey",
+        "sentence": "Dice que esto habría pasado antes, y se calla.",
+        "targetWord": "callarse",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e488a761d507f4f3.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/4b91760866a53a36fd23.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "dulce",
-  "sentence": "El olor [[dulce]] del trapiche baja con el aire frío.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "sweet",
-   "options": [
-    "sweet",
-    "bitter",
-    "burnt",
-    "salty"
-   ],
-   "audioClip": {
-    "storySlug": "yo-no-dije-nada",
-    "storySource": "journey",
-    "sentence": "El olor dulce del trapiche baja con el aire frío.",
-    "targetWord": "dulce",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "señala",
+    "sentence": "Esteban no contesta: _____ la fila con la mano.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "señala",
+      "options": [
+        "señala",
+        "amarra",
+        "cobra",
+        "tapa"
+      ],
+      "translation": "Esteban does not answer: he _____ at the queue with his hand.",
+      "optionTranslations": [
+        "points",
+        "ties",
+        "charges",
+        "covers"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-dije-nada",
+        "storySource": "journey",
+        "sentence": "Esteban no contesta: señala la fila con la mano.",
+        "targetWord": "señala",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c7740178374251b.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "responder",
-  "sentence": "“No hace falta que lo diga”, [[responde]] Esteban.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "he answers",
-   "options": [
-    "he answers",
-    "he asks",
-    "he writes",
-    "he leaves"
-   ],
-   "audioClip": {
-    "storySlug": "yo-no-dije-nada",
-    "storySource": "journey",
-    "sentence": "“No hace falta que lo diga”, responde Esteban.",
-    "targetWord": "responder",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "notar",
+    "sentence": "“Yo no dije nada”, contesta Esteban, y lo [[nota]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "he notices it",
+      "options": [
+        "he notices it",
+        "he denies it",
+        "he repeats it",
+        "he pays it"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-dije-nada",
+        "storySource": "journey",
+        "sentence": "“Yo no dije nada”, contesta Esteban, y lo nota.",
+        "targetWord": "notar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dcbe33c720c07f39.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/525189ae3f320a3f433c.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "de mala gana",
+    "sentence": "“Gracias”, dice ella al fin, [[de mala gana]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "grudgingly",
+      "options": [
+        "grudgingly",
+        "cheerfully",
+        "in a hurry",
+        "out loud"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-dije-nada",
+        "storySource": "journey",
+        "sentence": "“Gracias”, dice ella al fin, de mala gana.",
+        "targetWord": "de mala gana",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c16fc077f9d02648.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/fa86a5431637dbf91f2f.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "turno",
+    "sentence": "Esteban espera su [[turno]] con la mazamorra en la mano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "his turn",
+      "options": [
+        "his turn",
+        "his change",
+        "his coffee",
+        "his seat"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-dije-nada",
+        "storySource": "journey",
+        "sentence": "Esteban espera su turno con la mazamorra en la mano.",
+        "targetWord": "turno",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4af3090ab7ba2c3c.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/4f7251646233b02586b8.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cobrar",
+    "sentence": "Le sirve el tinto sin _____ nada.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cobrar",
+      "options": [
+        "cobrar",
+        "mezclar",
+        "tapar",
+        "apuntar"
+      ],
+      "translation": "She pours him the coffee without _____ anything.",
+      "optionTranslations": [
+        "charging",
+        "mixing",
+        "covering",
+        "pointing at"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-dije-nada",
+        "storySource": "journey",
+        "sentence": "Le sirve el tinto sin cobrar nada.",
+        "targetWord": "cobrar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5d57146f94805d1d.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "amarra",
+    "sentence": "Esteban _____ la caja de chócolo con cabuya.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "amarra",
+      "options": [
+        "amarra",
+        "mezcla",
+        "cobra",
+        "disimula"
+      ],
+      "translation": "Esteban _____ the box of sweet corn with plant string.",
+      "optionTranslations": [
+        "ties",
+        "mixes",
+        "charges",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-dije-nada",
+        "storySource": "journey",
+        "sentence": "Esteban amarra la caja de chócolo con cabuya.",
+        "targetWord": "amarra",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5cd915d10bb615b3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nube",
+    "sentence": "Detrás del nevado se arma la [[nube]] de las cuatro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the cloud",
+      "options": [
+        "the cloud",
+        "the queue",
+        "the smell",
+        "the light"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-dije-nada",
+        "storySource": "journey",
+        "sentence": "Detrás del nevado se arma la nube de las cuatro.",
+        "targetWord": "nube",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/cf627fcb5de5900bc8e4.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enfrente",
+    "sentence": "El letrero se ve desde el cafetal de [[enfrente]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "across the way",
+      "options": [
+        "across the way",
+        "down the hill",
+        "behind the house",
+        "inside the cafe"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-dije-nada",
+        "storySource": "journey",
+        "sentence": "El letrero se ve desde el cafetal de enfrente.",
+        "targetWord": "enfrente",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/3288cba51deeb216cfc9.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "precio",
+    "sentence": "El [[precio]] volvió a ser el de antes esa mañana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the price",
+      "options": [
+        "the price",
+        "the queue",
+        "the sign",
+        "the smell"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-dije-nada",
+        "storySource": "journey",
+        "sentence": "El precio volvió a ser el de antes esa mañana.",
+        "targetWord": "precio",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/144b6a0c4a732bc24919.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "detrás",
+    "sentence": "[[Detrás]] del nevado se arma la nube de las cuatro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "behind",
+      "options": [
+        "behind",
+        "above",
+        "beside",
+        "under"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-dije-nada",
+        "storySource": "journey",
+        "sentence": "Detrás del nevado se arma la nube de las cuatro.",
+        "targetWord": "detrás",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f7f551ba9876cdeedf2d.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dulce",
+    "sentence": "El olor [[dulce]] del trapiche baja con el aire frío.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sweet",
+      "options": [
+        "sweet",
+        "bitter",
+        "burnt",
+        "salty"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-dije-nada",
+        "storySource": "journey",
+        "sentence": "El olor dulce del trapiche baja con el aire frío.",
+        "targetWord": "dulce",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/38ac5503a6c66da34de8.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "responder",
+    "sentence": "“No hace falta que lo diga”, [[responde]] Esteban.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "he answers",
+      "options": [
+        "he answers",
+        "he asks",
+        "he writes",
+        "he leaves"
+      ],
+      "audioClip": {
+        "storySlug": "yo-no-dije-nada",
+        "storySource": "journey",
+        "sentence": "“No hace falta que lo diga”, responde Esteban.",
+        "targetWord": "responder",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/0f037a267473dec728a5.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    },
+    "featured": false
+  }
 ]

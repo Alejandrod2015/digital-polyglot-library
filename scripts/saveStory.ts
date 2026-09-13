@@ -773,6 +773,9 @@ function slugify(s: string): string {
   if (journeyId) {
     const p3 = new PrismaClient();
     let todas: JourneyStoryInput[] = [];
+    // Plazas TOTALES del journey (21 en un 7x3), escritas o no. Vive fuera del
+    // try porque el gate de conjunto la necesita: ver `plazasDelJourney`.
+    let plazasJourney = 0;
     const base: JourneyStoryInput[] = [];
     let realPeople: string[] | undefined;
     try {
@@ -785,6 +788,7 @@ function slugify(s: string): string {
       const filas = (await p3.journeyStory.findMany({
         where: { journeyId }, select: { slug: true, title: true, text: true, vocab: true, topic: true, slotIndex: true },
       })).sort((a, b) => (orden.indexOf(a.topic) - orden.indexOf(b.topic)) || (a.slotIndex - b.slotIndex));
+      plazasJourney = filas.length;
       const vistos = new Set<string>();
       for (const f of filas) {
         const k = `${f.topic}#${f.slotIndex}`;
@@ -828,8 +832,12 @@ function slugify(s: string): string {
     // conjunto se juzga entero, exactamente como hasta hoy.
     {
       const completo = todas.length >= 7;
+      // Las plazas TOTALES, no las escritas: la escalera de recirculacion las
+      // necesita para saber si el journey esta entero. Ver el comentario de
+      // `pushSetEscalera` en validateJourneyStories.
       const jc = validateJourneyStories(todas, {
         language: ctx.language, level: ctx.level, realPeople, conjuntoCompleto: completo,
+        plazasDelJourney: plazasJourney || undefined,
       });
       const malos = jc.filter((c) => c.status === "fail" || c.status === "not-implemented");
       const enEspera = jc.filter((c) => c.status === "pending-set");

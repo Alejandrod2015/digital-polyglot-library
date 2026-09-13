@@ -723,7 +723,19 @@ for m in verb_pat.finditer(last):
 if not autorizado:
     print("no_verb"); sys.exit(0)
 # Un disparador, una imagen.
-huella = hashlib.sha1(last.strip().encode("utf-8")).hexdigest()[:16]
+# La huella lleva TAMBIEN cuantas veces ha escrito el usuario ese mismo texto.
+# Con el sha1 del texto a secas, dos mensajes identicos ("genera la portada de
+# le-puse-el-ojo" pedida otra vez tras descartar la primera tirada) colisionaban
+# y la segunda quedaba bloqueada para siempre: el candado no distinguia "otra
+# vez" de un replay. Sigue siendo un disparador = una imagen, porque dentro de
+# un mismo mensaje el ordinal no cambia. (2026-09-10)
+def _limpia(m):
+    m = re.sub(r"<system-reminder>.*?</system-reminder>", "", m or "", flags=re.DOTALL|re.IGNORECASE)
+    m = re.sub(r"<task-notification>.*?</task-notification>", "", m, flags=re.DOTALL|re.IGNORECASE)
+    return m.strip()
+limpio = last.strip()
+ordinal = sum(1 for m in msgs if _limpia(m) == limpio)
+huella = hashlib.sha1(f"{limpio}#{ordinal}".encode("utf-8")).hexdigest()[:16]
 libro = os.path.join(os.path.dirname(tp), "..", "..", ".image-spend")
 libro = os.environ.get("DPL_IMAGE_SPEND_FILE") or ".claude/safety/.image-spend"
 try:

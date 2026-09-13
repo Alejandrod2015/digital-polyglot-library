@@ -27,7 +27,7 @@
  * no estén acentuadas. Lo que no se puede comprobar así (léxico regional,
  * registro) sigue siendo trabajo de leerlo.
  */
-import { config } from "dotenv"; config({ path: ".env.local", quiet: true });
+import { config } from "dotenv"; config({ path: ".env.local", quiet: true }); config({ path: ".env", quiet: true });
 import fs from "node:fs";
 import path from "node:path";
 import { PrismaClient } from "../src/generated/prisma";

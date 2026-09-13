@@ -1,448 +1,473 @@
 [
- {
-  "type": "match_meaning",
-  "word": "cuaderno,jardín,vaso,luces",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "cuaderno",
-     "answer": "the small book of blank pages",
-     "options": [
-      "the small book of blank pages",
-      "the green square of a Mexican town",
-      "the glass you drink water from",
-      "the coloured lamps of a party"
-     ]
-    },
-    {
-     "word": "jardín",
-     "answer": "the green square of a Mexican town",
-     "options": [
-      "the small book of blank pages",
-      "the green square of a Mexican town",
-      "the glass you drink water from",
-      "the coloured lamps of a party"
-     ]
-    },
-    {
-     "word": "vaso",
-     "answer": "the glass you drink water from",
-     "options": [
-      "the small book of blank pages",
-      "the green square of a Mexican town",
-      "the glass you drink water from",
-      "the coloured lamps of a party"
-     ]
-    },
-    {
-     "word": "luces",
-     "answer": "the coloured lamps of a party",
-     "options": [
-      "the small book of blank pages",
-      "the green square of a Mexican town",
-      "the glass you drink water from",
-      "the coloured lamps of a party"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "cuaderno,jardín,vaso,luces",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cuaderno",
+          "answer": "the small book of blank pages",
+          "options": [
+            "the small book of blank pages",
+            "the green square of a Mexican town",
+            "the glass you drink water from",
+            "the coloured lamps of a party"
+          ]
+        },
+        {
+          "word": "jardín",
+          "answer": "the green square of a Mexican town",
+          "options": [
+            "the small book of blank pages",
+            "the green square of a Mexican town",
+            "the glass you drink water from",
+            "the coloured lamps of a party"
+          ]
+        },
+        {
+          "word": "vaso",
+          "answer": "the glass you drink water from",
+          "options": [
+            "the small book of blank pages",
+            "the green square of a Mexican town",
+            "the glass you drink water from",
+            "the coloured lamps of a party"
+          ]
+        },
+        {
+          "word": "luces",
+          "answer": "the coloured lamps of a party",
+          "options": [
+            "the small book of blank pages",
+            "the green square of a Mexican town",
+            "the glass you drink water from",
+            "the coloured lamps of a party"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "callado",
-  "sentence": "Hugo pierde [[callado]], en la última pelea de la tarde.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "without saying a word",
-   "options": [
-    "without saying a word",
-    "without paying",
-    "without watching",
-    "without waiting"
-   ],
-   "audioClip": {
-    "storySlug": "el-cuaderno-abierto",
-    "storySource": "journey",
-    "sentence": "Hugo pierde callado, en la última pelea de la tarde.",
-    "targetWord": "callado",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bb6d513c3dde158f.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "entera",
-  "sentence": "Nadie se _____, y él cuenta con eso.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "entera",
-   "options": [
-    "entera",
-    "esconde",
-    "aclara",
-    "enseña"
-   ],
-   "translation": "Nobody _____, and he is counting on that.",
-   "optionTranslations": [
-    "finds out",
-    "hides",
-    "clarifies",
-    "shows off"
-   ],
-   "audioClip": {
-    "storySlug": "el-cuaderno-abierto",
-    "storySource": "journey",
-    "sentence": "Nadie se entera, y él cuenta con eso.",
-    "targetWord": "entera",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/035383d4ffce0138.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "gusto",
-  "sentence": "Le da [[gusto]] que ella no lo diga fuerte.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "it makes him glad",
-   "options": [
-    "it makes him glad",
-    "it makes him angry",
-    "it costs him money",
-    "it makes him leave"
-   ],
-   "audioClip": {
-    "storySlug": "el-cuaderno-abierto",
-    "storySource": "journey",
-    "sentence": "Le da gusto que ella no lo diga fuerte.",
-    "targetWord": "gusto",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bfd9400b44f32c4b.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "fuerte",
-  "sentence": "Le da gusto que ella no lo diga [[fuerte]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "out loud",
-   "options": [
-    "out loud",
-    "in writing",
-    "too soon",
-    "in front of Nico"
-   ],
-   "audioClip": {
-    "storySlug": "el-cuaderno-abierto",
-    "storySource": "journey",
-    "sentence": "Le da gusto que ella no lo diga fuerte.",
-    "targetWord": "fuerte",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bfd9400b44f32c4b.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "pago",
-  "sentence": "“Se lo _____ en un mes, aunque venda el puesto.”",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "pago",
-   "options": [
-    "pago",
-    "cobro",
-    "aclaro",
-    "enseño"
-   ],
-   "translation": "“I will _____ you in a month, even if I sell the stall.”",
-   "optionTranslations": [
-    "pay",
-    "charge",
-    "clarify",
-    "show"
-   ],
-   "audioClip": {
-    "storySlug": "el-cuaderno-abierto",
-    "storySource": "journey",
-    "sentence": "“Se lo pago en un mes, aunque venda el puesto.”",
-    "targetWord": "pago",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6f9274a211b0f8c7.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "perder",
-  "sentence": "Hugo [[pierde]] callado en la última pelea del día.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "loses",
-   "options": [
-    "loses",
-    "wins",
-    "watches",
-    "pays"
-   ],
-   "audioClip": {
-    "storySlug": "el-cuaderno-abierto",
-    "storySource": "journey",
-    "sentence": "Hugo pierde callado en la última pelea del día.",
-    "targetWord": "perder",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85ee15e59f682a5e.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "aclarar",
-  "sentence": "“El corredor puso mi dinero”, [[aclara]] Brenda.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "she makes clear",
-   "options": [
-    "she makes clear",
-    "she asks",
-    "she forgets",
-    "she jokes"
-   ],
-   "audioClip": {
-    "storySlug": "el-cuaderno-abierto",
-    "storySource": "journey",
-    "sentence": "“El corredor puso mi dinero”, aclara Brenda.",
-    "targetWord": "aclarar",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae2992e441493e77.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "delante",
-  "sentence": "Se queda con el cuaderno abierto [[delante]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "in front of him",
-   "options": [
-    "in front of him",
-    "behind him",
-    "far away",
-    "upside down"
-   ],
-   "audioClip": {
-    "storySlug": "el-cuaderno-abierto",
-    "storySource": "journey",
-    "sentence": "Se queda con el cuaderno abierto delante.",
-    "targetWord": "delante",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b43eea7c2890d0ee.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "mirando",
-  "sentence": "Se queda _____ el jardín donde bajan las luces.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "mirando",
-   "options": [
-    "mirando",
-    "cerrando",
-    "cobrando",
-    "doblando"
-   ],
-   "translation": "He stays _____ at the square where they take the lights down.",
-   "optionTranslations": [
-    "looking",
-    "closing",
-    "charging",
-    "folding"
-   ],
-   "audioClip": {
-    "storySlug": "el-cuaderno-abierto",
-    "storySource": "journey",
-    "sentence": "Se queda mirando el jardín donde bajan las luces.",
-    "targetWord": "mirando",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1a61521e468d4ce3.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "bajando",
-  "sentence": "Ya están _____ las luces de colores del jardín.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "bajando",
-   "options": [
-    "bajando",
-    "contando",
-    "pagando",
-    "abriendo"
-   ],
-   "translation": "They are already _____ the coloured lights of the square.",
-   "optionTranslations": [
-    "taking down",
-    "counting",
-    "paying",
-    "opening"
-   ],
-   "audioClip": {
-    "storySlug": "el-cuaderno-abierto",
-    "storySource": "journey",
-    "sentence": "Ya están bajando las luces de colores del jardín.",
-    "targetWord": "bajando",
-    "language": "spanish"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "mes",
-  "sentence": "“En un [[mes]] ya no hay feria”, responde ella.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a month",
-   "options": [
-    "a month",
-    "a week",
-    "an hour",
-    "a year"
-   ],
-   "audioClip": {
-    "storySlug": "el-cuaderno-abierto",
-    "storySource": "journey",
-    "sentence": "“En un mes ya no hay feria”, responde ella.",
-    "targetWord": "mes",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "callado",
+    "sentence": "Hugo pierde [[callado]], en la última pelea de la tarde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without saying a word",
+      "options": [
+        "without saying a word",
+        "without paying",
+        "without watching",
+        "without waiting"
+      ],
+      "audioClip": {
+        "storySlug": "el-cuaderno-abierto",
+        "storySource": "journey",
+        "sentence": "Hugo pierde callado, en la última pelea de la tarde.",
+        "targetWord": "callado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bb6d513c3dde158f.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/6d0791721adc854c9680.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "voz",
-  "sentence": "Se lo suelta sin levantar la [[voz]], y duele más.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "her voice",
-   "options": [
-    "her voice",
-    "her hand",
-    "her eyes",
-    "her head"
-   ],
-   "audioClip": {
-    "storySlug": "el-cuaderno-abierto",
-    "storySource": "journey",
-    "sentence": "Se lo suelta sin levantar la voz, y duele más.",
-    "targetWord": "voz",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "entera",
+    "sentence": "Nadie se _____, y él cuenta con eso.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "entera",
+      "options": [
+        "entera",
+        "esconde",
+        "aclara",
+        "enseña"
+      ],
+      "translation": "Nobody _____, and he is counting on that.",
+      "optionTranslations": [
+        "finds out",
+        "hides",
+        "clarifies",
+        "shows off"
+      ],
+      "audioClip": {
+        "storySlug": "el-cuaderno-abierto",
+        "storySource": "journey",
+        "sentence": "Nadie se entera, y él cuenta con eso.",
+        "targetWord": "entera",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/035383d4ffce0138.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "tarde",
-  "sentence": "Pierde en la última pelea de la [[tarde]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the afternoon",
-   "options": [
-    "the afternoon",
-    "the fair",
-    "the week",
-    "the night"
-   ],
-   "audioClip": {
-    "storySlug": "el-cuaderno-abierto",
-    "storySource": "journey",
-    "sentence": "Pierde en la última pelea de la tarde.",
-    "targetWord": "tarde",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "gusto",
+    "sentence": "Le da [[gusto]] que ella no lo diga fuerte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "it makes him glad",
+      "options": [
+        "it makes him glad",
+        "it makes him angry",
+        "it costs him money",
+        "it makes him leave"
+      ],
+      "audioClip": {
+        "storySlug": "el-cuaderno-abierto",
+        "storySource": "journey",
+        "sentence": "Le da gusto que ella no lo diga fuerte.",
+        "targetWord": "gusto",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bfd9400b44f32c4b.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f64a6b9e137bb525d89d.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "agua",
-  "sentence": "Brenda le pasa el vaso de [[agua]] y sigue anotando.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "water",
-   "options": [
-    "water",
-    "coffee",
-    "beer",
-    "juice"
-   ],
-   "audioClip": {
-    "storySlug": "el-cuaderno-abierto",
-    "storySource": "journey",
-    "sentence": "Brenda le pasa el vaso de agua y sigue anotando.",
-    "targetWord": "agua",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "fuerte",
+    "sentence": "Le da gusto que ella no lo diga [[fuerte]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "out loud",
+      "options": [
+        "out loud",
+        "in writing",
+        "too soon",
+        "in front of Nico"
+      ],
+      "audioClip": {
+        "storySlug": "el-cuaderno-abierto",
+        "storySource": "journey",
+        "sentence": "Le da gusto que ella no lo diga fuerte.",
+        "targetWord": "fuerte",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bfd9400b44f32c4b.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/be744e6bd0e7ba6a360d.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "colores",
-  "sentence": "Ya están bajando las luces de [[colores]] del jardín.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "colours",
-   "options": [
-    "colours",
-    "prices",
-    "voices",
-    "stalls"
-   ],
-   "audioClip": {
-    "storySlug": "el-cuaderno-abierto",
-    "storySource": "journey",
-    "sentence": "Ya están bajando las luces de colores del jardín.",
-    "targetWord": "colores",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "pago",
+    "sentence": "“Se lo _____ en un mes, aunque venda el puesto.”",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pago",
+      "options": [
+        "pago",
+        "cobro",
+        "aclaro",
+        "enseño"
+      ],
+      "translation": "“I will _____ you in a month, even if I sell the stall.”",
+      "optionTranslations": [
+        "pay",
+        "charge",
+        "clarify",
+        "show"
+      ],
+      "audioClip": {
+        "storySlug": "el-cuaderno-abierto",
+        "storySource": "journey",
+        "sentence": "“Se lo pago en un mes, aunque venda el puesto.”",
+        "targetWord": "pago",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6f9274a211b0f8c7.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "domingo",
-  "sentence": "“Me debe los doscientos, y hoy es [[domingo]].”",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "Sunday",
-   "options": [
-    "Sunday",
-    "Monday",
-    "payday",
-    "market day"
-   ],
-   "audioClip": {
-    "storySlug": "el-cuaderno-abierto",
-    "storySource": "journey",
-    "sentence": "“Me debe los doscientos, y hoy es domingo.”",
-    "targetWord": "domingo",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "perder",
+    "sentence": "Hugo [[pierde]] callado en la última pelea del día.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "loses",
+      "options": [
+        "loses",
+        "wins",
+        "watches",
+        "pays"
+      ],
+      "audioClip": {
+        "storySlug": "el-cuaderno-abierto",
+        "storySource": "journey",
+        "sentence": "Hugo pierde callado en la última pelea del día.",
+        "targetWord": "perder",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85ee15e59f682a5e.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/a384b79c3bee2438e65e.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "aclarar",
+    "sentence": "“El corredor puso mi dinero”, [[aclara]] Brenda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "she makes clear",
+      "options": [
+        "she makes clear",
+        "she asks",
+        "she forgets",
+        "she jokes"
+      ],
+      "audioClip": {
+        "storySlug": "el-cuaderno-abierto",
+        "storySource": "journey",
+        "sentence": "“El corredor puso mi dinero”, aclara Brenda.",
+        "targetWord": "aclarar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae2992e441493e77.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/72f000ed32ddbadf8137.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "delante",
+    "sentence": "Se queda con el cuaderno abierto [[delante]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in front of him",
+      "options": [
+        "in front of him",
+        "behind him",
+        "far away",
+        "upside down"
+      ],
+      "audioClip": {
+        "storySlug": "el-cuaderno-abierto",
+        "storySource": "journey",
+        "sentence": "Se queda con el cuaderno abierto delante.",
+        "targetWord": "delante",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b43eea7c2890d0ee.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/325b555f3c63a7f1cf3f.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "mirando",
+    "sentence": "Se queda _____ el jardín donde bajan las luces.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mirando",
+      "options": [
+        "mirando",
+        "cerrando",
+        "cobrando",
+        "doblando"
+      ],
+      "translation": "He stays _____ at the square where they take the lights down.",
+      "optionTranslations": [
+        "looking",
+        "closing",
+        "charging",
+        "folding"
+      ],
+      "audioClip": {
+        "storySlug": "el-cuaderno-abierto",
+        "storySource": "journey",
+        "sentence": "Se queda mirando el jardín donde bajan las luces.",
+        "targetWord": "mirando",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1a61521e468d4ce3.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "bajando",
+    "sentence": "Ya están _____ las luces de colores del jardín.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bajando",
+      "options": [
+        "bajando",
+        "contando",
+        "pagando",
+        "abriendo"
+      ],
+      "translation": "They are already _____ the coloured lights of the square.",
+      "optionTranslations": [
+        "taking down",
+        "counting",
+        "paying",
+        "opening"
+      ],
+      "audioClip": {
+        "storySlug": "el-cuaderno-abierto",
+        "storySource": "journey",
+        "sentence": "Ya están bajando las luces de colores del jardín.",
+        "targetWord": "bajando",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fce82c3f7fcf19a7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mes",
+    "sentence": "“En un [[mes]] ya no hay feria”, responde ella.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a month",
+      "options": [
+        "a month",
+        "a week",
+        "an hour",
+        "a year"
+      ],
+      "audioClip": {
+        "storySlug": "el-cuaderno-abierto",
+        "storySource": "journey",
+        "sentence": "“En un mes ya no hay feria”, responde ella.",
+        "targetWord": "mes",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f7b6e1a2e1565d49cf28.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "voz",
+    "sentence": "Se lo suelta sin levantar la [[voz]], y duele más.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "her voice",
+      "options": [
+        "her voice",
+        "her hand",
+        "her eyes",
+        "her head"
+      ],
+      "audioClip": {
+        "storySlug": "el-cuaderno-abierto",
+        "storySource": "journey",
+        "sentence": "Se lo suelta sin levantar la voz, y duele más.",
+        "targetWord": "voz",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/7ad2dfee6ea91003ab27.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tarde",
+    "sentence": "Pierde en la última pelea de la [[tarde]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the afternoon",
+      "options": [
+        "the afternoon",
+        "the fair",
+        "the week",
+        "the night"
+      ],
+      "audioClip": {
+        "storySlug": "el-cuaderno-abierto",
+        "storySource": "journey",
+        "sentence": "Pierde en la última pelea de la tarde.",
+        "targetWord": "tarde",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/42fc4782f22180b9cdc4.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agua",
+    "sentence": "Brenda le pasa el vaso de [[agua]] y sigue anotando.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "water",
+      "options": [
+        "water",
+        "coffee",
+        "beer",
+        "juice"
+      ],
+      "audioClip": {
+        "storySlug": "el-cuaderno-abierto",
+        "storySource": "journey",
+        "sentence": "Brenda le pasa el vaso de agua y sigue anotando.",
+        "targetWord": "agua",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/97083d42f5dbc087a205.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "colores",
+    "sentence": "Ya están bajando las luces de [[colores]] del jardín.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "colours",
+      "options": [
+        "colours",
+        "prices",
+        "voices",
+        "stalls"
+      ],
+      "audioClip": {
+        "storySlug": "el-cuaderno-abierto",
+        "storySource": "journey",
+        "sentence": "Ya están bajando las luces de colores del jardín.",
+        "targetWord": "colores",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/7c1ef6b6170e483d8c07.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "domingo",
+    "sentence": "“Me debe los doscientos, y hoy es [[domingo]].”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Sunday",
+      "options": [
+        "Sunday",
+        "Monday",
+        "payday",
+        "market day"
+      ],
+      "audioClip": {
+        "storySlug": "el-cuaderno-abierto",
+        "storySource": "journey",
+        "sentence": "“Me debe los doscientos, y hoy es domingo.”",
+        "targetWord": "domingo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/512f4c97f2c2cb335ac6.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    },
+    "featured": false
+  }
 ]

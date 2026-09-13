@@ -1,455 +1,479 @@
 [
- {
-  "type": "match_meaning",
-  "word": "anda,aliso,bastidor,terciopelo",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "anda",
-     "answer": "the platform carried in procession",
-     "options": [
-      "the platform carried in procession",
-      "a pale Andean wood",
-      "the frame that holds the cloth",
-      "a thick soft cloth"
-     ]
-    },
-    {
-     "word": "aliso",
-     "answer": "a pale Andean wood",
-     "options": [
-      "the platform carried in procession",
-      "a pale Andean wood",
-      "the frame that holds the cloth",
-      "a thick soft cloth"
-     ]
-    },
-    {
-     "word": "bastidor",
-     "answer": "the frame that holds the cloth",
-     "options": [
-      "the platform carried in procession",
-      "a pale Andean wood",
-      "the frame that holds the cloth",
-      "a thick soft cloth"
-     ]
-    },
-    {
-     "word": "terciopelo",
-     "answer": "a thick soft cloth",
-     "options": [
-      "the platform carried in procession",
-      "a pale Andean wood",
-      "the frame that holds the cloth",
-      "a thick soft cloth"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "anda,aliso,bastidor,terciopelo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "anda",
+          "answer": "the platform carried in procession",
+          "options": [
+            "the platform carried in procession",
+            "a pale Andean wood",
+            "the frame that holds the cloth",
+            "a thick soft cloth"
+          ]
+        },
+        {
+          "word": "aliso",
+          "answer": "a pale Andean wood",
+          "options": [
+            "the platform carried in procession",
+            "a pale Andean wood",
+            "the frame that holds the cloth",
+            "a thick soft cloth"
+          ]
+        },
+        {
+          "word": "bastidor",
+          "answer": "the frame that holds the cloth",
+          "options": [
+            "the platform carried in procession",
+            "a pale Andean wood",
+            "the frame that holds the cloth",
+            "a thick soft cloth"
+          ]
+        },
+        {
+          "word": "terciopelo",
+          "answer": "a thick soft cloth",
+          "options": [
+            "the platform carried in procession",
+            "a pale Andean wood",
+            "the frame that holds the cloth",
+            "a thick soft cloth"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "lijar",
-  "sentence": "Nicanor sigue [[lijando]] la misma tabla tres veces.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "sanding",
-   "options": [
-    "sanding",
-    "painting",
-    "measuring",
-    "cutting"
-   ],
-   "audioClip": {
-    "storySlug": "la-tabla-delgada",
-    "storySource": "journey",
-    "sentence": "Nicanor sigue lijando la misma tabla tres veces.",
-    "targetWord": "lijar",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/643c22f9e16e66c8.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "polvo",
-  "sentence": "El [[polvo]] del aliso huele dulce en el taller.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the dust",
-   "options": [
-    "the dust",
-    "the smoke",
-    "the water",
-    "the glue"
-   ],
-   "audioClip": {
-    "storySlug": "la-tabla-delgada",
-    "storySource": "journey",
-    "sentence": "El polvo del aliso huele dulce en el taller.",
-    "targetWord": "polvo",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/89bf90c858ba8cdd.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "tabla",
-  "sentence": "La [[tabla]], cuando la levanta, quedó más delgada.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the board",
-   "options": [
-    "the board",
-    "the needle",
-    "the frame",
-    "the list"
-   ],
-   "audioClip": {
-    "storySlug": "la-tabla-delgada",
-    "storySource": "journey",
-    "sentence": "La tabla, cuando la levanta, quedó más delgada.",
-    "targetWord": "tabla",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e37c2efe1585c518.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "noticia",
-  "sentence": "Su hermana entra a operarse y él espera la _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "noticia",
-   "options": [
-    "noticia",
-    "lista",
-    "aguja",
-    "cofradía"
-   ],
-   "translation": "His sister goes in for her operation and he waits for the _____.",
-   "optionTranslations": [
-    "news",
-    "list",
-    "needle",
-    "brotherhood"
-   ],
-   "audioClip": {
-    "storySlug": "la-tabla-delgada",
-    "storySource": "journey",
-    "sentence": "Su hermana entra a operarse y él espera la noticia.",
-    "targetWord": "noticia",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eaa223b8e147ac8b.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "aguja",
-  "sentence": "Delia deja la [[aguja]] sobre el terciopelo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the needle",
-   "options": [
-    "the needle",
-    "the board",
-    "the candle",
-    "the notebook"
-   ],
-   "audioClip": {
-    "storySlug": "la-tabla-delgada",
-    "storySource": "journey",
-    "sentence": "Delia deja la aguja sobre el terciopelo.",
-    "targetWord": "aguja",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f8344132d656cdac.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "escribe",
-  "sentence": "Ella lo _____ con la letra grande de las listas viejas.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "escribe",
-   "options": [
-    "escribe",
-    "borra",
-    "levanta",
-    "lija"
-   ],
-   "translation": "She _____ it in the big handwriting of the old lists.",
-   "optionTranslations": [
-    "writes",
-    "erases",
-    "lifts",
-    "sands"
-   ],
-   "audioClip": {
-    "storySlug": "la-tabla-delgada",
-    "storySource": "journey",
-    "sentence": "Ella lo escribe con la letra grande de las listas viejas.",
-    "targetWord": "escribe",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/424d4599a2c7e97e.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "borra",
-  "sentence": "“Va a la lista y ya no se _____.”",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "borra",
-   "options": [
-    "borra",
-    "escribe",
-    "levanta",
-    "apunta"
-   ],
-   "translation": "“It goes on the list and it does not _____.”",
-   "optionTranslations": [
-    "come off",
-    "get written",
-    "get lifted",
-    "get noted"
-   ],
-   "audioClip": {
-    "storySlug": "la-tabla-delgada",
-    "storySource": "journey",
-    "sentence": "“Va a la lista y ya no se borra.”",
-    "targetWord": "borra",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8ca684cfe015fdcf.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "delgado",
-  "sentence": "La tabla ha quedado más [[delgada]] que las otras.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "thinner",
-   "options": [
-    "thinner",
-    "longer",
-    "heavier",
-    "darker"
-   ],
-   "audioClip": {
-    "storySlug": "la-tabla-delgada",
-    "storySource": "journey",
-    "sentence": "La tabla ha quedado más delgada que las otras.",
-    "targetWord": "delgado",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0e91ce70b28b8b7.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "letra",
-  "sentence": "Escribe con la [[letra]] grande de las listas viejas.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "handwriting",
-   "options": [
-    "handwriting",
-    "ink",
-    "paper",
-    "number"
-   ],
-   "audioClip": {
-    "storySlug": "la-tabla-delgada",
-    "storySource": "journey",
-    "sentence": "Escribe con la letra grande de las listas viejas.",
-    "targetWord": "letra",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a442234d052d0492.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "avisa",
-  "sentence": "Delia _____ que lo dicho aquí se apunta.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "avisa",
-   "options": [
-    "avisa",
-    "borra",
-    "lija",
-    "cose"
-   ],
-   "translation": "Delia _____ that what is said here gets written down.",
-   "optionTranslations": [
-    "warns",
-    "erases",
-    "sands",
-    "sews"
-   ],
-   "audioClip": {
-    "storySlug": "la-tabla-delgada",
-    "storySource": "journey",
-    "sentence": "Delia avisa que lo dicho aquí se apunta.",
-    "targetWord": "avisa",
-    "language": "spanish"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "sencillo",
-  "sentence": "Nadie le ha dicho si la operación es [[sencilla]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "simple",
-   "options": [
-    "simple",
-    "expensive",
-    "urgent",
-    "finished"
-   ],
-   "audioClip": {
-    "storySlug": "la-tabla-delgada",
-    "storySource": "journey",
-    "sentence": "Nadie le ha dicho si la operación es sencilla.",
-    "targetWord": "sencillo",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "lijar",
+    "sentence": "Nicanor sigue [[lijando]] la misma tabla tres veces.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sanding",
+      "options": [
+        "sanding",
+        "painting",
+        "measuring",
+        "cutting"
+      ],
+      "audioClip": {
+        "storySlug": "la-tabla-delgada",
+        "storySource": "journey",
+        "sentence": "Nicanor sigue lijando la misma tabla tres veces.",
+        "targetWord": "lijar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/643c22f9e16e66c8.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/8075ef30d8fd044aa0fd.mp3",
+        "wordVoiceId": "ulJB4yAMefhHYn0FWgGy"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "levanta",
-  "sentence": "Delia _____ la vista del bastidor cuando él entra.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "levanta",
-   "options": [
-    "levanta",
-    "borra",
-    "lija",
-    "cose"
-   ],
-   "translation": "Delia _____ her eyes from the frame when he comes in.",
-   "optionTranslations": [
-    "lifts",
-    "erases",
-    "sands",
-    "sews"
-   ],
-   "audioClip": {
-    "storySlug": "la-tabla-delgada",
-    "storySource": "journey",
-    "sentence": "Delia levanta la vista del bastidor cuando él entra.",
-    "targetWord": "levanta",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "polvo",
+    "sentence": "El [[polvo]] del aliso huele dulce en el taller.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the dust",
+      "options": [
+        "the dust",
+        "the smoke",
+        "the water",
+        "the glue"
+      ],
+      "audioClip": {
+        "storySlug": "la-tabla-delgada",
+        "storySource": "journey",
+        "sentence": "El polvo del aliso huele dulce en el taller.",
+        "targetWord": "polvo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/89bf90c858ba8cdd.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/85f12aa873077c358608.mp3",
+        "wordVoiceId": "ulJB4yAMefhHYn0FWgGy"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "cofradía",
-  "sentence": "Hace las andas de su [[cofradía]] desde hace años.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "his brotherhood",
-   "options": [
-    "his brotherhood",
-    "his family",
-    "his workshop",
-    "his street"
-   ],
-   "audioClip": {
-    "storySlug": "la-tabla-delgada",
-    "storySource": "journey",
-    "sentence": "Hace las andas de su cofradía desde hace años.",
-    "targetWord": "cofradía",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "tabla",
+    "sentence": "La [[tabla]], cuando la levanta, quedó más delgada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the board",
+      "options": [
+        "the board",
+        "the needle",
+        "the frame",
+        "the list"
+      ],
+      "audioClip": {
+        "storySlug": "la-tabla-delgada",
+        "storySource": "journey",
+        "sentence": "La tabla, cuando la levanta, quedó más delgada.",
+        "targetWord": "tabla",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e37c2efe1585c518.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/90c923007359e314ddbb.mp3",
+        "wordVoiceId": "ulJB4yAMefhHYn0FWgGy"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "miedo",
-  "sentence": "Tiene [[miedo]], porque nadie le ha dicho nada todavía.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "fear",
-   "options": [
-    "fear",
-    "hunger",
-    "doubt",
-    "anger"
-   ],
-   "audioClip": {
-    "storySlug": "la-tabla-delgada",
-    "storySource": "journey",
-    "sentence": "Tiene miedo, porque nadie le ha dicho nada todavía.",
-    "targetWord": "miedo",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "noticia",
+    "sentence": "Su hermana entra a operarse y él espera la _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "noticia",
+      "options": [
+        "noticia",
+        "lista",
+        "aguja",
+        "cofradía"
+      ],
+      "translation": "His sister goes in for her operation and he waits for the _____.",
+      "optionTranslations": [
+        "news",
+        "list",
+        "needle",
+        "brotherhood"
+      ],
+      "audioClip": {
+        "storySlug": "la-tabla-delgada",
+        "storySource": "journey",
+        "sentence": "Su hermana entra a operarse y él espera la noticia.",
+        "targetWord": "noticia",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eaa223b8e147ac8b.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "lista",
-  "sentence": "Si lo dice aquí, va a la [[lista]] de la cofradía.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the list",
-   "options": [
-    "the list",
-    "the shelf",
-    "the window",
-    "the door"
-   ],
-   "audioClip": {
-    "storySlug": "la-tabla-delgada",
-    "storySource": "journey",
-    "sentence": "Si lo dice aquí, va a la lista de la cofradía.",
-    "targetWord": "lista",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "aguja",
+    "sentence": "Delia deja la [[aguja]] sobre el terciopelo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the needle",
+      "options": [
+        "the needle",
+        "the board",
+        "the candle",
+        "the notebook"
+      ],
+      "audioClip": {
+        "storySlug": "la-tabla-delgada",
+        "storySource": "journey",
+        "sentence": "Delia deja la aguja sobre el terciopelo.",
+        "targetWord": "aguja",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f8344132d656cdac.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/01eceb2e017e04a78183.mp3",
+        "wordVoiceId": "ulJB4yAMefhHYn0FWgGy"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "aire",
-  "sentence": "El polvo del aliso huele dulce en el [[aire]] del taller.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the air",
-   "options": [
-    "the air",
-    "the corner",
-    "the floor",
-    "the wood"
-   ],
-   "audioClip": {
-    "storySlug": "la-tabla-delgada",
-    "storySource": "journey",
-    "sentence": "El polvo del aliso huele dulce en el aire del taller.",
-    "targetWord": "aire",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "escribe",
+    "sentence": "Ella lo _____ con la letra grande de las listas viejas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "escribe",
+      "options": [
+        "escribe",
+        "borra",
+        "levanta",
+        "lija"
+      ],
+      "translation": "She _____ it in the big handwriting of the old lists.",
+      "optionTranslations": [
+        "writes",
+        "erases",
+        "lifts",
+        "sands"
+      ],
+      "audioClip": {
+        "storySlug": "la-tabla-delgada",
+        "storySource": "journey",
+        "sentence": "Ella lo escribe con la letra grande de las listas viejas.",
+        "targetWord": "escribe",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/424d4599a2c7e97e.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "fill_blank",
+    "word": "borra",
+    "sentence": "“Va a la lista y ya no se _____.”",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "borra",
+      "options": [
+        "borra",
+        "escribe",
+        "levanta",
+        "apunta"
+      ],
+      "translation": "“It goes on the list and it does not _____.”",
+      "optionTranslations": [
+        "come off",
+        "get written",
+        "get lifted",
+        "get noted"
+      ],
+      "audioClip": {
+        "storySlug": "la-tabla-delgada",
+        "storySource": "journey",
+        "sentence": "“Va a la lista y ya no se borra.”",
+        "targetWord": "borra",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8ca684cfe015fdcf.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "delgado",
+    "sentence": "La tabla ha quedado más [[delgada]] que las otras.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thinner",
+      "options": [
+        "thinner",
+        "longer",
+        "heavier",
+        "darker"
+      ],
+      "audioClip": {
+        "storySlug": "la-tabla-delgada",
+        "storySource": "journey",
+        "sentence": "La tabla ha quedado más delgada que las otras.",
+        "targetWord": "delgado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0e91ce70b28b8b7.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/9b52d8e2f7f9596189dc.mp3",
+        "wordVoiceId": "ulJB4yAMefhHYn0FWgGy"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "letra",
+    "sentence": "Escribe con la [[letra]] grande de las listas viejas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "handwriting",
+      "options": [
+        "handwriting",
+        "ink",
+        "paper",
+        "number"
+      ],
+      "audioClip": {
+        "storySlug": "la-tabla-delgada",
+        "storySource": "journey",
+        "sentence": "Escribe con la letra grande de las listas viejas.",
+        "targetWord": "letra",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a442234d052d0492.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/e557ed75f915abd08cad.mp3",
+        "wordVoiceId": "ulJB4yAMefhHYn0FWgGy"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "avisa",
+    "sentence": "Delia _____ que lo dicho aquí se apunta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "avisa",
+      "options": [
+        "avisa",
+        "borra",
+        "lija",
+        "cose"
+      ],
+      "translation": "Delia _____ that what is said here gets written down.",
+      "optionTranslations": [
+        "warns",
+        "erases",
+        "sands",
+        "sews"
+      ],
+      "audioClip": {
+        "storySlug": "la-tabla-delgada",
+        "storySource": "journey",
+        "sentence": "Delia avisa que lo dicho aquí se apunta.",
+        "targetWord": "avisa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bb29ead385a79738.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sencillo",
+    "sentence": "Nadie le ha dicho si la operación es [[sencilla]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "simple",
+      "options": [
+        "simple",
+        "expensive",
+        "urgent",
+        "finished"
+      ],
+      "audioClip": {
+        "storySlug": "la-tabla-delgada",
+        "storySource": "journey",
+        "sentence": "Nadie le ha dicho si la operación es sencilla.",
+        "targetWord": "sencillo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/0192c1d5b56a6c91ca96.mp3",
+        "wordVoiceId": "ulJB4yAMefhHYn0FWgGy"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "levanta",
+    "sentence": "Delia _____ la vista del bastidor cuando él entra.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "levanta",
+      "options": [
+        "levanta",
+        "borra",
+        "lija",
+        "cose"
+      ],
+      "translation": "Delia _____ her eyes from the frame when he comes in.",
+      "optionTranslations": [
+        "lifts",
+        "erases",
+        "sands",
+        "sews"
+      ],
+      "audioClip": {
+        "storySlug": "la-tabla-delgada",
+        "storySource": "journey",
+        "sentence": "Delia levanta la vista del bastidor cuando él entra.",
+        "targetWord": "levanta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/81c00dda1012f511.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cofradía",
+    "sentence": "Hace las andas de su [[cofradía]] desde hace años.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "his brotherhood",
+      "options": [
+        "his brotherhood",
+        "his family",
+        "his workshop",
+        "his street"
+      ],
+      "audioClip": {
+        "storySlug": "la-tabla-delgada",
+        "storySource": "journey",
+        "sentence": "Hace las andas de su cofradía desde hace años.",
+        "targetWord": "cofradía",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/534da6a3f5cc97945b92.mp3",
+        "wordVoiceId": "ulJB4yAMefhHYn0FWgGy"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "miedo",
+    "sentence": "Tiene [[miedo]], porque nadie le ha dicho nada todavía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fear",
+      "options": [
+        "fear",
+        "hunger",
+        "doubt",
+        "anger"
+      ],
+      "audioClip": {
+        "storySlug": "la-tabla-delgada",
+        "storySource": "journey",
+        "sentence": "Tiene miedo, porque nadie le ha dicho nada todavía.",
+        "targetWord": "miedo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/3068377b115072c8b098.mp3",
+        "wordVoiceId": "ulJB4yAMefhHYn0FWgGy"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lista",
+    "sentence": "Si lo dice aquí, va a la [[lista]] de la cofradía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the list",
+      "options": [
+        "the list",
+        "the shelf",
+        "the window",
+        "the door"
+      ],
+      "audioClip": {
+        "storySlug": "la-tabla-delgada",
+        "storySource": "journey",
+        "sentence": "Si lo dice aquí, va a la lista de la cofradía.",
+        "targetWord": "lista",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/ebb8dfcfd9c57fcfe3e2.mp3",
+        "wordVoiceId": "ulJB4yAMefhHYn0FWgGy"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aire",
+    "sentence": "El polvo del aliso huele dulce en el [[aire]] del taller.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the air",
+      "options": [
+        "the air",
+        "the corner",
+        "the floor",
+        "the wood"
+      ],
+      "audioClip": {
+        "storySlug": "la-tabla-delgada",
+        "storySource": "journey",
+        "sentence": "El polvo del aliso huele dulce en el aire del taller.",
+        "targetWord": "aire",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/4c7911e090c5fe3f6668.mp3",
+        "wordVoiceId": "ulJB4yAMefhHYn0FWgGy"
+      }
+    },
+    "featured": false
+  }
 ]

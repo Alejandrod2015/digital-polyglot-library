@@ -1,455 +1,478 @@
 [
- {
-  "type": "match_meaning",
-  "word": "sancocho,taburete,olla,cuchara",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "sancocho",
-     "answer": "the thick Sunday family soup",
-     "options": [
-      "the thick Sunday family soup",
-      "the low wooden kitchen stool",
-      "the deep pan for a stew",
-      "the tool you taste a sauce with"
-     ]
-    },
-    {
-     "word": "taburete",
-     "answer": "the low wooden kitchen stool",
-     "options": [
-      "the thick Sunday family soup",
-      "the low wooden kitchen stool",
-      "the deep pan for a stew",
-      "the tool you taste a sauce with"
-     ]
-    },
-    {
-     "word": "olla",
-     "answer": "the deep pan for a stew",
-     "options": [
-      "the thick Sunday family soup",
-      "the low wooden kitchen stool",
-      "the deep pan for a stew",
-      "the tool you taste a sauce with"
-     ]
-    },
-    {
-     "word": "cuchara",
-     "answer": "the tool you taste a sauce with",
-     "options": [
-      "the thick Sunday family soup",
-      "the low wooden kitchen stool",
-      "the deep pan for a stew",
-      "the tool you taste a sauce with"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "sancocho,taburete,olla,cuchara",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "sancocho",
+          "answer": "the thick Sunday family soup",
+          "options": [
+            "the thick Sunday family soup",
+            "the low wooden kitchen stool",
+            "the deep pan for a stew",
+            "the tool you taste a sauce with"
+          ]
+        },
+        {
+          "word": "taburete",
+          "answer": "the low wooden kitchen stool",
+          "options": [
+            "the thick Sunday family soup",
+            "the low wooden kitchen stool",
+            "the deep pan for a stew",
+            "the tool you taste a sauce with"
+          ]
+        },
+        {
+          "word": "olla",
+          "answer": "the deep pan for a stew",
+          "options": [
+            "the thick Sunday family soup",
+            "the low wooden kitchen stool",
+            "the deep pan for a stew",
+            "the tool you taste a sauce with"
+          ]
+        },
+        {
+          "word": "cuchara",
+          "answer": "the tool you taste a sauce with",
+          "options": [
+            "the thick Sunday family soup",
+            "the low wooden kitchen stool",
+            "the deep pan for a stew",
+            "the tool you taste a sauce with"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "pica",
-  "sentence": "Teresa pone la olla, _____ y prueba el caldo.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "pica",
-   "options": [
-    "pica",
-    "barre",
-    "cierra",
-    "sirve"
-   ],
-   "translation": "Teresa puts the pot on, _____ and tastes the broth.",
-   "optionTranslations": [
-    "chops",
-    "sweeps",
-    "closes",
-    "serves"
-   ],
-   "audioClip": {
-    "storySlug": "le-falta-sal",
-    "storySource": "journey",
-    "sentence": "Teresa pone la olla, pica y prueba el caldo.",
-    "targetWord": "pica",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/37b3ac40ce3f4548.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "caldo",
-  "sentence": "Wilson prueba el [[caldo]] con una cuchara.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the broth",
-   "options": [
-    "the broth",
-    "the bread",
-    "the salt",
-    "the plate"
-   ],
-   "audioClip": {
-    "storySlug": "le-falta-sal",
-    "storySource": "journey",
-    "sentence": "Wilson prueba el caldo con una cuchara.",
-    "targetWord": "caldo",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bb8dfd85e76c6a01.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "gesto",
-  "sentence": "Hace un [[gesto]] corto con la boca y no dice nada.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a small movement of the face",
-   "options": [
-    "a small movement of the face",
-    "a loud complaint",
-    "a long speech",
-    "a quick bow"
-   ],
-   "audioClip": {
-    "storySlug": "le-falta-sal",
-    "storySource": "journey",
-    "sentence": "Hace un gesto corto con la boca y no dice nada.",
-    "targetWord": "gesto",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3a0df026afcc1a28.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "sal",
-  "sentence": "“Le falta _____”, le señala Wilson delante de todos.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "sal",
-   "options": [
-    "sal",
-    "olla",
-    "cuchara",
-    "prisa"
-   ],
-   "translation": "“It needs _____”, Wilson points out in front of everyone.",
-   "optionTranslations": [
-    "salt",
-    "a pot",
-    "a spoon",
-    "hurry"
-   ],
-   "audioClip": {
-    "storySlug": "le-falta-sal",
-    "storySource": "journey",
-    "sentence": "“Le falta sal”, le señala Wilson delante de todos.",
-    "targetWord": "sal",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4a67476f377d831d.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "único",
-  "sentence": "La comida es lo [[único]] que sabe que sigue siendo suyo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the only thing",
-   "options": [
-    "the only thing",
-    "the last thing",
-    "the best thing",
-    "the first thing"
-   ],
-   "audioClip": {
-    "storySlug": "le-falta-sal",
-    "storySource": "journey",
-    "sentence": "La comida es lo único que sabe que sigue siendo suyo.",
-    "targetWord": "único",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/605e7077bfcaccd7.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "por separado",
-  "sentence": "“Ahora la carantanta va [[por separado]]”, explica él.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "served on its own",
-   "options": [
-    "served on its own",
-    "cooked much longer",
-    "bought in the market",
-    "kept for later"
-   ],
-   "audioClip": {
-    "storySlug": "le-falta-sal",
-    "storySource": "journey",
-    "sentence": "“Ahora la carantanta va por separado”, explica él.",
-    "targetWord": "por separado",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/71b662b61dd50ef9.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ajeno",
-  "sentence": "Ve su cocina como se ve una cocina [[ajena]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "belonging to somebody else",
-   "options": [
-    "belonging to somebody else",
-    "freshly painted",
-    "much bigger",
-    "badly lit"
-   ],
-   "audioClip": {
-    "storySlug": "le-falta-sal",
-    "storySource": "journey",
-    "sentence": "Ve su cocina como se ve una cocina ajena.",
-    "targetWord": "ajeno",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/085b76ef33f219cf.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "acabar",
-  "sentence": "“Terminen ustedes”, dice, y los deja _____ el sancocho.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "acabar",
-   "options": [
-    "acabar",
-    "picar",
-    "probar",
-    "levantar"
-   ],
-   "translation": "“You two finish it”, she says, and lets them _____ the soup.",
-   "optionTranslations": [
-    "finish off",
-    "chop",
-    "taste",
-    "lift"
-   ],
-   "audioClip": {
-    "storySlug": "le-falta-sal",
-    "storySource": "journey",
-    "sentence": "“Terminen ustedes”, dice, y los deja acabar el sancocho.",
-    "targetWord": "acabar",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/26b125e5ac3195bb.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "prueba",
-  "sentence": "Wilson _____ el caldo antes de decir nada.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "prueba",
-   "options": [
-    "prueba",
-    "pica",
-    "acaba",
-    "guarda"
-   ],
-   "translation": "Wilson _____ the broth before saying anything.",
-   "optionTranslations": [
-    "tastes",
-    "chops",
-    "finishes",
-    "keeps"
-   ],
-   "audioClip": {
-    "storySlug": "le-falta-sal",
-    "storySource": "journey",
-    "sentence": "Wilson prueba el caldo antes de decir nada.",
-    "targetWord": "prueba",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a18e451953cdb715.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "despacio",
-  "sentence": "Teresa sigue picando, más [[despacio]] que antes.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "more slowly",
-   "options": [
-    "more slowly",
-    "more quietly",
-    "much later",
-    "far away"
-   ],
-   "audioClip": {
-    "storySlug": "le-falta-sal",
-    "storySource": "journey",
-    "sentence": "Teresa sigue picando, más despacio que antes.",
-    "targetWord": "despacio",
-    "language": "spanish"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "igual",
-  "sentence": "“Es que ahí no calienta [[igual]]”, insiste Wilson.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the same",
-   "options": [
-    "the same",
-    "enough",
-    "today",
-    "at all"
-   ],
-   "audioClip": {
-    "storySlug": "le-falta-sal",
-    "storySource": "journey",
-    "sentence": "“Es que ahí no calienta igual”, insiste Wilson.",
-    "targetWord": "igual",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "pica",
+    "sentence": "Teresa pone la olla, _____ y prueba el caldo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pica",
+      "options": [
+        "pica",
+        "barre",
+        "cierra",
+        "sirve"
+      ],
+      "translation": "Teresa puts the pot on, _____ and tastes the broth.",
+      "optionTranslations": [
+        "chops",
+        "sweeps",
+        "closes",
+        "serves"
+      ],
+      "audioClip": {
+        "storySlug": "le-falta-sal",
+        "storySource": "journey",
+        "sentence": "Teresa pone la olla, pica y prueba el caldo.",
+        "targetWord": "pica",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/37b3ac40ce3f4548.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "levanta",
-  "sentence": "El domingo Teresa se _____ temprano para cocinar.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "levanta",
-   "options": [
-    "levanta",
-    "sienta",
-    "acaba",
-    "despide"
-   ],
-   "translation": "On Sunday Teresa _____ early to cook.",
-   "optionTranslations": [
-    "gets up",
-    "sits down",
-    "finishes",
-    "says goodbye"
-   ],
-   "audioClip": {
-    "storySlug": "le-falta-sal",
-    "storySource": "journey",
-    "sentence": "El domingo Teresa se levanta temprano para cocinar.",
-    "targetWord": "levanta",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "caldo",
+    "sentence": "Wilson prueba el [[caldo]] con una cuchara.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the broth",
+      "options": [
+        "the broth",
+        "the bread",
+        "the salt",
+        "the plate"
+      ],
+      "audioClip": {
+        "storySlug": "le-falta-sal",
+        "storySource": "journey",
+        "sentence": "Wilson prueba el caldo con una cuchara.",
+        "targetWord": "caldo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bb8dfd85e76c6a01.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/07129b5a5f26198e4563.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "vida",
-  "sentence": "“Yo la puse ahí toda la [[vida]]”, contesta ella.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "all my life",
-   "options": [
-    "all my life",
-    "all morning",
-    "all year",
-    "all week"
-   ],
-   "audioClip": {
-    "storySlug": "le-falta-sal",
-    "storySource": "journey",
-    "sentence": "“Yo la puse ahí toda la vida”, contesta ella.",
-    "targetWord": "vida",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "gesto",
+    "sentence": "Hace un [[gesto]] corto con la boca y no dice nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a small movement of the face",
+      "options": [
+        "a small movement of the face",
+        "a loud complaint",
+        "a long speech",
+        "a quick bow"
+      ],
+      "audioClip": {
+        "storySlug": "le-falta-sal",
+        "storySource": "journey",
+        "sentence": "Hace un gesto corto con la boca y no dice nada.",
+        "targetWord": "gesto",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3a0df026afcc1a28.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/4ba7333c6f675ef7ca93.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "todavía",
-  "sentence": "El pipián se hace a las once y [[todavía]] son las nueve.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "still",
-   "options": [
-    "still",
-    "already",
-    "almost",
-    "never"
-   ],
-   "audioClip": {
-    "storySlug": "le-falta-sal",
-    "storySource": "journey",
-    "sentence": "El pipián se hace a las once y todavía son las nueve.",
-    "targetWord": "todavía",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "sal",
+    "sentence": "“Le falta _____”, le señala Wilson delante de todos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sal",
+      "options": [
+        "sal",
+        "olla",
+        "cuchara",
+        "prisa"
+      ],
+      "translation": "“It needs _____”, Wilson points out in front of everyone.",
+      "optionTranslations": [
+        "salt",
+        "a pot",
+        "a spoon",
+        "hurry"
+      ],
+      "audioClip": {
+        "storySlug": "le-falta-sal",
+        "storySource": "journey",
+        "sentence": "“Le falta sal”, le señala Wilson delante de todos.",
+        "targetWord": "sal",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4a67476f377d831d.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "sopa",
-  "sentence": "La carantanta ya no le da sal a la [[sopa]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the soup",
-   "options": [
-    "the soup",
-    "the bread",
-    "the meat",
-    "the rice"
-   ],
-   "audioClip": {
-    "storySlug": "le-falta-sal",
-    "storySource": "journey",
-    "sentence": "La carantanta ya no le da sal a la sopa.",
-    "targetWord": "sopa",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "único",
+    "sentence": "La comida es lo [[único]] que sabe que sigue siendo suyo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the only thing",
+      "options": [
+        "the only thing",
+        "the last thing",
+        "the best thing",
+        "the first thing"
+      ],
+      "audioClip": {
+        "storySlug": "le-falta-sal",
+        "storySource": "journey",
+        "sentence": "La comida es lo único que sabe que sigue siendo suyo.",
+        "targetWord": "único",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/605e7077bfcaccd7.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/11ec48b55cfd1e3e36a3.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "cocina",
-  "sentence": "Nadie la corrió de la [[cocina]], y ya no está en ella.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the kitchen",
-   "options": [
-    "the kitchen",
-    "the table",
-    "the house",
-    "the town"
-   ],
-   "audioClip": {
-    "storySlug": "le-falta-sal",
-    "storySource": "journey",
-    "sentence": "Nadie la corrió de la cocina, y ya no está en ella.",
-    "targetWord": "cocina",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "por separado",
+    "sentence": "“Ahora la carantanta va [[por separado]]”, explica él.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "served on its own",
+      "options": [
+        "served on its own",
+        "cooked much longer",
+        "bought in the market",
+        "kept for later"
+      ],
+      "audioClip": {
+        "storySlug": "le-falta-sal",
+        "storySource": "journey",
+        "sentence": "“Ahora la carantanta va por separado”, explica él.",
+        "targetWord": "por separado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/71b662b61dd50ef9.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/bea08abc647ffa834bf0.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "ajeno",
+    "sentence": "Ve su cocina como se ve una cocina [[ajena]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "belonging to somebody else",
+      "options": [
+        "belonging to somebody else",
+        "freshly painted",
+        "much bigger",
+        "badly lit"
+      ],
+      "audioClip": {
+        "storySlug": "le-falta-sal",
+        "storySource": "journey",
+        "sentence": "Ve su cocina como se ve una cocina ajena.",
+        "targetWord": "ajeno",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/085b76ef33f219cf.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/44bdf80d4428ec8c2207.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "acabar",
+    "sentence": "“Terminen ustedes”, dice, y los deja _____ el sancocho.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "acabar",
+      "options": [
+        "acabar",
+        "picar",
+        "probar",
+        "levantar"
+      ],
+      "translation": "“You two finish it”, she says, and lets them _____ the soup.",
+      "optionTranslations": [
+        "finish off",
+        "chop",
+        "taste",
+        "lift"
+      ],
+      "audioClip": {
+        "storySlug": "le-falta-sal",
+        "storySource": "journey",
+        "sentence": "“Terminen ustedes”, dice, y los deja acabar el sancocho.",
+        "targetWord": "acabar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/26b125e5ac3195bb.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "prueba",
+    "sentence": "Wilson _____ el caldo antes de decir nada.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "prueba",
+      "options": [
+        "prueba",
+        "pica",
+        "acaba",
+        "guarda"
+      ],
+      "translation": "Wilson _____ the broth before saying anything.",
+      "optionTranslations": [
+        "tastes",
+        "chops",
+        "finishes",
+        "keeps"
+      ],
+      "audioClip": {
+        "storySlug": "le-falta-sal",
+        "storySource": "journey",
+        "sentence": "Wilson prueba el caldo antes de decir nada.",
+        "targetWord": "prueba",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a18e451953cdb715.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despacio",
+    "sentence": "Teresa sigue picando, más [[despacio]] que antes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "more slowly",
+      "options": [
+        "more slowly",
+        "more quietly",
+        "much later",
+        "far away"
+      ],
+      "audioClip": {
+        "storySlug": "le-falta-sal",
+        "storySource": "journey",
+        "sentence": "Teresa sigue picando, más despacio que antes.",
+        "targetWord": "despacio",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/0ad4391011ebc49a64a5.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "igual",
+    "sentence": "“Es que ahí no calienta [[igual]]”, insiste Wilson.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the same",
+      "options": [
+        "the same",
+        "enough",
+        "today",
+        "at all"
+      ],
+      "audioClip": {
+        "storySlug": "le-falta-sal",
+        "storySource": "journey",
+        "sentence": "“Es que ahí no calienta igual”, insiste Wilson.",
+        "targetWord": "igual",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/7d4c19481bfd5979cd63.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "levanta",
+    "sentence": "El domingo Teresa se _____ temprano para cocinar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "levanta",
+      "options": [
+        "levanta",
+        "sienta",
+        "acaba",
+        "despide"
+      ],
+      "translation": "On Sunday Teresa _____ early to cook.",
+      "optionTranslations": [
+        "gets up",
+        "sits down",
+        "finishes",
+        "says goodbye"
+      ],
+      "audioClip": {
+        "storySlug": "le-falta-sal",
+        "storySource": "journey",
+        "sentence": "El domingo Teresa se levanta temprano para cocinar.",
+        "targetWord": "levanta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d506b6634556bf70.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vida",
+    "sentence": "“Yo la puse ahí toda la [[vida]]”, contesta ella.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "all my life",
+      "options": [
+        "all my life",
+        "all morning",
+        "all year",
+        "all week"
+      ],
+      "audioClip": {
+        "storySlug": "le-falta-sal",
+        "storySource": "journey",
+        "sentence": "“Yo la puse ahí toda la vida”, contesta ella.",
+        "targetWord": "vida",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/b8ff9992a8e03545db71.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "todavía",
+    "sentence": "El pipián se hace a las once y [[todavía]] son las nueve.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "still",
+      "options": [
+        "still",
+        "already",
+        "almost",
+        "never"
+      ],
+      "audioClip": {
+        "storySlug": "le-falta-sal",
+        "storySource": "journey",
+        "sentence": "El pipián se hace a las once y todavía son las nueve.",
+        "targetWord": "todavía",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/fd392062666404313eb6.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sopa",
+    "sentence": "La carantanta ya no le da sal a la [[sopa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the soup",
+      "options": [
+        "the soup",
+        "the bread",
+        "the meat",
+        "the rice"
+      ],
+      "audioClip": {
+        "storySlug": "le-falta-sal",
+        "storySource": "journey",
+        "sentence": "La carantanta ya no le da sal a la sopa.",
+        "targetWord": "sopa",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/20535e8a87a9fd57110d.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cocina",
+    "sentence": "Nadie la corrió de la [[cocina]], y ya no está en ella.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the kitchen",
+      "options": [
+        "the kitchen",
+        "the table",
+        "the house",
+        "the town"
+      ],
+      "audioClip": {
+        "storySlug": "le-falta-sal",
+        "storySource": "journey",
+        "sentence": "Nadie la corrió de la cocina, y ya no está en ella.",
+        "targetWord": "cocina",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/c178c42142af181afec9.mp3",
+        "wordVoiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    },
+    "featured": false
+  }
 ]

@@ -1,455 +1,478 @@
 [
- {
-  "type": "match_meaning",
-  "word": "fuente,ponele,martes,perdón",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "fuente",
-     "answer": "the flat dish you carry food on",
-     "options": [
-      "the flat dish you carry food on",
-      "an Argentine way of saying let us say",
-      "a weekday with no customers",
-      "the word you say when you were wrong"
-     ]
-    },
-    {
-     "word": "ponele",
-     "answer": "an Argentine way of saying let us say",
-     "options": [
-      "the flat dish you carry food on",
-      "an Argentine way of saying let us say",
-      "a weekday with no customers",
-      "the word you say when you were wrong"
-     ]
-    },
-    {
-     "word": "martes",
-     "answer": "a weekday with no customers",
-     "options": [
-      "the flat dish you carry food on",
-      "an Argentine way of saying let us say",
-      "a weekday with no customers",
-      "the word you say when you were wrong"
-     ]
-    },
-    {
-     "word": "perdón",
-     "answer": "the word you say when you were wrong",
-     "options": [
-      "the flat dish you carry food on",
-      "an Argentine way of saying let us say",
-      "a weekday with no customers",
-      "the word you say when you were wrong"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "fuente,ponele,martes,perdón",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "fuente",
+          "answer": "the flat dish you carry food on",
+          "options": [
+            "the flat dish you carry food on",
+            "an Argentine way of saying let us say",
+            "a weekday with no customers",
+            "the word you say when you were wrong"
+          ]
+        },
+        {
+          "word": "ponele",
+          "answer": "an Argentine way of saying let us say",
+          "options": [
+            "the flat dish you carry food on",
+            "an Argentine way of saying let us say",
+            "a weekday with no customers",
+            "the word you say when you were wrong"
+          ]
+        },
+        {
+          "word": "martes",
+          "answer": "a weekday with no customers",
+          "options": [
+            "the flat dish you carry food on",
+            "an Argentine way of saying let us say",
+            "a weekday with no customers",
+            "the word you say when you were wrong"
+          ]
+        },
+        {
+          "word": "perdón",
+          "answer": "the word you say when you were wrong",
+          "options": [
+            "the flat dish you carry food on",
+            "an Argentine way of saying let us say",
+            "a weekday with no customers",
+            "the word you say when you were wrong"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "vacío",
-  "sentence": "Trae la fuente [[vacía]] que él le mandó llena.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "empty",
-   "options": [
-    "empty",
-    "broken",
-    "covered",
-    "heavy"
-   ],
-   "audioClip": {
-    "storySlug": "la-fuente-en-la-vereda",
-    "storySource": "journey",
-    "sentence": "Trae la fuente vacía que él le mandó llena.",
-    "targetWord": "vacío",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b0f892722ac69e9.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "copiaste",
-  "sentence": "“Lo _____, Adrián”, le dice ella sin levantar la voz.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "copiaste",
-   "options": [
-    "copiaste",
-    "vendiste",
-    "tapaste",
-    "pediste"
-   ],
-   "translation": "“You _____ it, Adrián”, she tells him without raising her voice.",
-   "optionTranslations": [
-    "copied",
-    "sold",
-    "covered",
-    "asked for"
-   ],
-   "audioClip": {
-    "storySlug": "la-fuente-en-la-vereda",
-    "storySource": "journey",
-    "sentence": "“Lo copiaste, Adrián”, le dice ella sin levantar la voz.",
-    "targetWord": "copiaste",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fe8eb14096fee8ef.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "mejoré",
-  "sentence": "“Lo _____, que no es lo mismo”, contesta él.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "mejoré",
-   "options": [
-    "mejoré",
-    "copié",
-    "cerré",
-    "guardé"
-   ],
-   "translation": "“I _____ it, which is not the same”, he answers.",
-   "optionTranslations": [
-    "improved",
-    "copied",
-    "closed",
-    "kept"
-   ],
-   "audioClip": {
-    "storySlug": "la-fuente-en-la-vereda",
-    "storySource": "journey",
-    "sentence": "“Lo mejoré, que no es lo mismo”, contesta él.",
-    "targetWord": "mejoré",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b1783bd2c4ee918.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "de golpe",
-  "sentence": "Se va sin comprar nada y no cierra [[de golpe]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "slamming the door",
-   "options": [
-    "slamming the door",
-    "saying goodbye",
-    "paying the bill",
-    "looking back"
-   ],
-   "audioClip": {
-    "storySlug": "la-fuente-en-la-vereda",
-    "storySource": "journey",
-    "sentence": "Se va sin comprar nada y no cierra de golpe.",
-    "targetWord": "de golpe",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4b79c87f4ddf5700.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "llama",
-  "sentence": "Deja la fuente en la puerta y no _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "llama",
-   "options": [
-    "llama",
-    "compra",
-    "acepta",
-    "copia"
-   ],
-   "translation": "He leaves the dish at the door and does not _____.",
-   "optionTranslations": [
-    "ring",
-    "buy",
-    "accept",
-    "copy"
-   ],
-   "audioClip": {
-    "storySlug": "la-fuente-en-la-vereda",
-    "storySource": "journey",
-    "sentence": "Deja la fuente en la puerta y no llama.",
-    "targetWord": "llama",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/02d2d8481757185b.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "abierto",
-  "sentence": "Esa es la manera de dejar un tema [[abierto]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "unfinished",
-   "options": [
-    "unfinished",
-    "settled",
-    "forgotten",
-    "written down"
-   ],
-   "audioClip": {
-    "storySlug": "la-fuente-en-la-vereda",
-    "storySource": "journey",
-    "sentence": "Esa es la manera de dejar un tema abierto.",
-    "targetWord": "abierto",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bbecc3a4ad296751.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "pedías",
-  "sentence": "“Yo te lo daba, si me lo _____.”",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "pedías",
-   "options": [
-    "pedías",
-    "copiabas",
-    "tapabas",
-    "vendías"
-   ],
-   "translation": "“I would have given it to you, if you had _____ me.”",
-   "optionTranslations": [
-    "asked",
-    "copied",
-    "covered",
-    "sold"
-   ],
-   "audioClip": {
-    "storySlug": "la-fuente-en-la-vereda",
-    "storySource": "journey",
-    "sentence": "“Yo te lo daba, si me lo pedías.”",
-    "targetWord": "pedías",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/43df17a43d2a14f5.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "saber",
-  "sentence": "“Ya [[sé]]. Por eso no te lo dije”, admite él.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "I know",
-   "options": [
-    "I know",
-    "I forgot",
-    "I refuse",
-    "I promise"
-   ],
-   "audioClip": {
-    "storySlug": "la-fuente-en-la-vereda",
-    "storySource": "journey",
-    "sentence": "“Ya sé. Por eso no te lo dije”, admite él.",
-    "targetWord": "saber",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fd6f9056cc5e4621.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "aceptar",
-  "sentence": "“Ponele”, [[acepta]] ella, y no discute más.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "she accepts",
-   "options": [
-    "she accepts",
-    "she refuses",
-    "she explains",
-    "she pays"
-   ],
-   "audioClip": {
-    "storySlug": "la-fuente-en-la-vereda",
-    "storySource": "journey",
-    "sentence": "“Ponele”, acepta ella, y no discute más.",
-    "targetWord": "aceptar",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36ae90629e23c0be.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "puerta",
-  "sentence": "La deja en la [[puerta]] y se va sin llamar.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the door",
-   "options": [
-    "the door",
-    "the window",
-    "the counter",
-    "the pavement"
-   ],
-   "audioClip": {
-    "storySlug": "la-fuente-en-la-vereda",
-    "storySource": "journey",
-    "sentence": "La deja en la puerta y se va sin llamar.",
-    "targetWord": "puerta",
-    "language": "spanish"
-   }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "comprar",
-  "sentence": "Silvana se va sin _____ nada esa mañana.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "comprar",
-   "options": [
-    "comprar",
-    "mejorar",
-    "tapar",
-    "aceptar"
-   ],
-   "translation": "Silvana leaves without _____ anything that morning.",
-   "optionTranslations": [
-    "buying",
-    "improving",
-    "covering",
-    "accepting"
-   ],
-   "audioClip": {
-    "storySlug": "la-fuente-en-la-vereda",
-    "storySource": "journey",
-    "sentence": "Silvana se va sin comprar nada esa mañana.",
-    "targetWord": "comprar",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "vacío",
+    "sentence": "Trae la fuente [[vacía]] que él le mandó llena.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "empty",
+      "options": [
+        "empty",
+        "broken",
+        "covered",
+        "heavy"
+      ],
+      "audioClip": {
+        "storySlug": "la-fuente-en-la-vereda",
+        "storySource": "journey",
+        "sentence": "Trae la fuente vacía que él le mandó llena.",
+        "targetWord": "vacío",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b0f892722ac69e9.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/8014fb0d99a9db0dbf55.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "mismo",
-  "sentence": "“Lo mejoré, que no es lo [[mismo]]”, contesta Adrián.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the same thing",
-   "options": [
-    "the same thing",
-    "a good idea",
-    "his fault",
-    "the recipe"
-   ],
-   "audioClip": {
-    "storySlug": "la-fuente-en-la-vereda",
-    "storySource": "journey",
-    "sentence": "“Lo mejoré, que no es lo mismo”, contesta Adrián.",
-    "targetWord": "mismo",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "copiaste",
+    "sentence": "“Lo _____, Adrián”, le dice ella sin levantar la voz.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "copiaste",
+      "options": [
+        "copiaste",
+        "vendiste",
+        "tapaste",
+        "pediste"
+      ],
+      "translation": "“You _____ it, Adrián”, she tells him without raising her voice.",
+      "optionTranslations": [
+        "copied",
+        "sold",
+        "covered",
+        "asked for"
+      ],
+      "audioClip": {
+        "storySlug": "la-fuente-en-la-vereda",
+        "storySource": "journey",
+        "sentence": "“Lo copiaste, Adrián”, le dice ella sin levantar la voz.",
+        "targetWord": "copiaste",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fe8eb14096fee8ef.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "tapado",
-  "sentence": "Días después cruza con una fuente [[tapada]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "covered",
-   "options": [
-    "covered",
-    "empty",
-    "broken",
-    "warm"
-   ],
-   "audioClip": {
-    "storySlug": "la-fuente-en-la-vereda",
-    "storySource": "journey",
-    "sentence": "Días después cruza con una fuente tapada.",
-    "targetWord": "tapado",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "mejoré",
+    "sentence": "“Lo _____, que no es lo mismo”, contesta él.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mejoré",
+      "options": [
+        "mejoré",
+        "copié",
+        "cerré",
+        "guardé"
+      ],
+      "translation": "“I _____ it, which is not the same”, he answers.",
+      "optionTranslations": [
+        "improved",
+        "copied",
+        "closed",
+        "kept"
+      ],
+      "audioClip": {
+        "storySlug": "la-fuente-en-la-vereda",
+        "storySource": "journey",
+        "sentence": "“Lo mejoré, que no es lo mismo”, contesta él.",
+        "targetWord": "mejoré",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b1783bd2c4ee918.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "salir",
-  "sentence": "La vereda huele a pan recién [[salido]] del horno.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "out of the oven",
-   "options": [
-    "out of the oven",
-    "sold out",
-    "left over",
-    "gone cold"
-   ],
-   "audioClip": {
-    "storySlug": "la-fuente-en-la-vereda",
-    "storySource": "journey",
-    "sentence": "La vereda huele a pan recién salido del horno.",
-    "targetWord": "salir",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "de golpe",
+    "sentence": "Se va sin comprar nada y no cierra [[de golpe]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slamming the door",
+      "options": [
+        "slamming the door",
+        "saying goodbye",
+        "paying the bill",
+        "looking back"
+      ],
+      "audioClip": {
+        "storySlug": "la-fuente-en-la-vereda",
+        "storySource": "journey",
+        "sentence": "Se va sin comprar nada y no cierra de golpe.",
+        "targetWord": "de golpe",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4b79c87f4ddf5700.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/4305af7ba5ec8f8e9b13.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "dos veces",
-  "sentence": "Pedir perdón sería darle la razón [[dos veces]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "twice",
-   "options": [
-    "twice",
-    "out loud",
-    "in public",
-    "for nothing"
-   ],
-   "audioClip": {
-    "storySlug": "la-fuente-en-la-vereda",
-    "storySource": "journey",
-    "sentence": "Pedir perdón sería darle la razón dos veces.",
-    "targetWord": "dos veces",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "llama",
+    "sentence": "Deja la fuente en la puerta y no _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "llama",
+      "options": [
+        "llama",
+        "compra",
+        "acepta",
+        "copia"
+      ],
+      "translation": "He leaves the dish at the door and does not _____.",
+      "optionTranslations": [
+        "ring",
+        "buy",
+        "accept",
+        "copy"
+      ],
+      "audioClip": {
+        "storySlug": "la-fuente-en-la-vereda",
+        "storySource": "journey",
+        "sentence": "Deja la fuente en la puerta y no llama.",
+        "targetWord": "llama",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/02d2d8481757185b.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "llena",
-  "sentence": "Él le mandó la fuente [[llena]] la semana pasada.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "full",
-   "options": [
-    "full",
-    "covered",
-    "empty",
-    "cold"
-   ],
-   "audioClip": {
-    "storySlug": "la-fuente-en-la-vereda",
-    "storySource": "journey",
-    "sentence": "Él le mandó la fuente llena la semana pasada.",
-    "targetWord": "llena",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "abierto",
+    "sentence": "Esa es la manera de dejar un tema [[abierto]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "unfinished",
+      "options": [
+        "unfinished",
+        "settled",
+        "forgotten",
+        "written down"
+      ],
+      "audioClip": {
+        "storySlug": "la-fuente-en-la-vereda",
+        "storySource": "journey",
+        "sentence": "Esa es la manera de dejar un tema abierto.",
+        "targetWord": "abierto",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bbecc3a4ad296751.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/86f939e19ceaa8129200.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "fill_blank",
+    "word": "pedías",
+    "sentence": "“Yo te lo daba, si me lo _____.”",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pedías",
+      "options": [
+        "pedías",
+        "copiabas",
+        "tapabas",
+        "vendías"
+      ],
+      "translation": "“I would have given it to you, if you had _____ me.”",
+      "optionTranslations": [
+        "asked",
+        "copied",
+        "covered",
+        "sold"
+      ],
+      "audioClip": {
+        "storySlug": "la-fuente-en-la-vereda",
+        "storySource": "journey",
+        "sentence": "“Yo te lo daba, si me lo pedías.”",
+        "targetWord": "pedías",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/43df17a43d2a14f5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saber",
+    "sentence": "“Ya [[sé]]. Por eso no te lo dije”, admite él.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "I know",
+      "options": [
+        "I know",
+        "I forgot",
+        "I refuse",
+        "I promise"
+      ],
+      "audioClip": {
+        "storySlug": "la-fuente-en-la-vereda",
+        "storySource": "journey",
+        "sentence": "“Ya sé. Por eso no te lo dije”, admite él.",
+        "targetWord": "saber",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fd6f9056cc5e4621.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/d72b379b181f78338bea.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aceptar",
+    "sentence": "“Ponele”, [[acepta]] ella, y no discute más.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "she accepts",
+      "options": [
+        "she accepts",
+        "she refuses",
+        "she explains",
+        "she pays"
+      ],
+      "audioClip": {
+        "storySlug": "la-fuente-en-la-vereda",
+        "storySource": "journey",
+        "sentence": "“Ponele”, acepta ella, y no discute más.",
+        "targetWord": "aceptar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36ae90629e23c0be.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/dbbfc37bf6f940551019.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "puerta",
+    "sentence": "La deja en la [[puerta]] y se va sin llamar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the door",
+      "options": [
+        "the door",
+        "the window",
+        "the counter",
+        "the pavement"
+      ],
+      "audioClip": {
+        "storySlug": "la-fuente-en-la-vereda",
+        "storySource": "journey",
+        "sentence": "La deja en la puerta y se va sin llamar.",
+        "targetWord": "puerta",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/e5628aa609518556b28c.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "comprar",
+    "sentence": "Silvana se va sin _____ nada esa mañana.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "comprar",
+      "options": [
+        "comprar",
+        "mejorar",
+        "tapar",
+        "aceptar"
+      ],
+      "translation": "Silvana leaves without _____ anything that morning.",
+      "optionTranslations": [
+        "buying",
+        "improving",
+        "covering",
+        "accepting"
+      ],
+      "audioClip": {
+        "storySlug": "la-fuente-en-la-vereda",
+        "storySource": "journey",
+        "sentence": "Silvana se va sin comprar nada esa mañana.",
+        "targetWord": "comprar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/71d317ad77c73fb7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mismo",
+    "sentence": "“Lo mejoré, que no es lo [[mismo]]”, contesta Adrián.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the same thing",
+      "options": [
+        "the same thing",
+        "a good idea",
+        "his fault",
+        "the recipe"
+      ],
+      "audioClip": {
+        "storySlug": "la-fuente-en-la-vereda",
+        "storySource": "journey",
+        "sentence": "“Lo mejoré, que no es lo mismo”, contesta Adrián.",
+        "targetWord": "mismo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/a16fc0c9f84181e4450a.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tapado",
+    "sentence": "Días después cruza con una fuente [[tapada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "covered",
+      "options": [
+        "covered",
+        "empty",
+        "broken",
+        "warm"
+      ],
+      "audioClip": {
+        "storySlug": "la-fuente-en-la-vereda",
+        "storySource": "journey",
+        "sentence": "Días después cruza con una fuente tapada.",
+        "targetWord": "tapado",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/5da61f6548baaa84cc78.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "salir",
+    "sentence": "La vereda huele a pan recién [[salido]] del horno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "out of the oven",
+      "options": [
+        "out of the oven",
+        "sold out",
+        "left over",
+        "gone cold"
+      ],
+      "audioClip": {
+        "storySlug": "la-fuente-en-la-vereda",
+        "storySource": "journey",
+        "sentence": "La vereda huele a pan recién salido del horno.",
+        "targetWord": "salir",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/3c805cc195af902930da.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dos veces",
+    "sentence": "Pedir perdón sería darle la razón [[dos veces]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "twice",
+      "options": [
+        "twice",
+        "out loud",
+        "in public",
+        "for nothing"
+      ],
+      "audioClip": {
+        "storySlug": "la-fuente-en-la-vereda",
+        "storySource": "journey",
+        "sentence": "Pedir perdón sería darle la razón dos veces.",
+        "targetWord": "dos veces",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f552da2c6320c4536bca.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llena",
+    "sentence": "Él le mandó la fuente [[llena]] la semana pasada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "full",
+      "options": [
+        "full",
+        "covered",
+        "empty",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "la-fuente-en-la-vereda",
+        "storySource": "journey",
+        "sentence": "Él le mandó la fuente llena la semana pasada.",
+        "targetWord": "llena",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/70caa009506225e8f331.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    },
+    "featured": false
+  }
 ]

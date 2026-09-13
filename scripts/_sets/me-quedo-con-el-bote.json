@@ -1,455 +1,479 @@
 [
- {
-  "type": "match_meaning",
-  "word": "bote,marea,corral,alga",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "bote",
-     "answer": "the small open island boat",
-     "options": [
-      "the small open island boat",
-      "the rising and falling sea",
-      "the closed yard by the house",
-      "the green sea plant on the shore"
-     ]
-    },
-    {
-     "word": "marea",
-     "answer": "the rising and falling sea",
-     "options": [
-      "the small open island boat",
-      "the rising and falling sea",
-      "the closed yard by the house",
-      "the green sea plant on the shore"
-     ]
-    },
-    {
-     "word": "corral",
-     "answer": "the closed yard by the house",
-     "options": [
-      "the small open island boat",
-      "the rising and falling sea",
-      "the closed yard by the house",
-      "the green sea plant on the shore"
-     ]
-    },
-    {
-     "word": "alga",
-     "answer": "the green sea plant on the shore",
-     "options": [
-      "the small open island boat",
-      "the rising and falling sea",
-      "the closed yard by the house",
-      "the green sea plant on the shore"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "bote,marea,corral,alga",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "bote",
+          "answer": "the small open island boat",
+          "options": [
+            "the small open island boat",
+            "the rising and falling sea",
+            "the closed yard by the house",
+            "the green sea plant on the shore"
+          ]
+        },
+        {
+          "word": "marea",
+          "answer": "the rising and falling sea",
+          "options": [
+            "the small open island boat",
+            "the rising and falling sea",
+            "the closed yard by the house",
+            "the green sea plant on the shore"
+          ]
+        },
+        {
+          "word": "corral",
+          "answer": "the closed yard by the house",
+          "options": [
+            "the small open island boat",
+            "the rising and falling sea",
+            "the closed yard by the house",
+            "the green sea plant on the shore"
+          ]
+        },
+        {
+          "word": "alga",
+          "answer": "the green sea plant on the shore",
+          "options": [
+            "the small open island boat",
+            "the rising and falling sea",
+            "the closed yard by the house",
+            "the green sea plant on the shore"
+          ]
+        }
+      ]
     }
-   ]
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "firma",
-  "sentence": "Cuando el vecino _____, firma por menos de lo tasado.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "firma",
-   "options": [
-    "firma",
-    "pesa",
-    "vende",
-    "mide"
-   ],
-   "translation": "When the neighbour _____, he signs for less than it was valued at.",
-   "optionTranslations": [
-    "signs",
-    "weighs",
-    "sells",
-    "measures"
-   ],
-   "audioClip": {
-    "storySlug": "me-quedo-con-el-bote",
-    "storySource": "journey",
-    "sentence": "Cuando el vecino firma, firma por menos de lo tasado.",
-    "targetWord": "firma",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4e4a0a90e863e2bc.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "tranquilo",
-  "sentence": "“Y él puso menos, y así queda”, contesta el vecino, [[tranquilo]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "calm",
-   "options": [
-    "calm",
-    "furious",
-    "hurried",
-    "frightened"
-   ],
-   "audioClip": {
-    "storySlug": "me-quedo-con-el-bote",
-    "storySource": "journey",
-    "sentence": "“Y él puso menos, y así queda”, contesta el vecino, tranquilo.",
-    "targetWord": "tranquilo",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/34977635f3f5085a.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "conforme",
-  "sentence": "“¿Y usted se queda [[conforme]] con eso?”",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "satisfied with it",
-   "options": [
-    "satisfied with it",
-    "surprised by it",
-    "angry about it",
-    "paid for it"
-   ],
-   "audioClip": {
-    "storySlug": "me-quedo-con-el-bote",
-    "storySource": "journey",
-    "sentence": "“¿Y usted se queda conforme con eso?”",
-    "targetWord": "conforme",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/855dbe65d46ab467.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "juicio",
-  "sentence": "Nadie aquí gana un [[juicio]] y sigue teniendo vecinos.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a court case",
-   "options": [
-    "a court case",
-    "a market day",
-    "a bet",
-    "an argument"
-   ],
-   "audioClip": {
-    "storySlug": "me-quedo-con-el-bote",
-    "storySource": "journey",
-    "sentence": "Nadie aquí gana un juicio y sigue teniendo vecinos.",
-    "targetWord": "juicio",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1e8e6fc815d6077d.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "contra la ley",
-  "sentence": "Nadie hizo nada [[contra la ley]], y aun así salió mal.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "against the law",
-   "options": [
-    "against the law",
-    "against the tide",
-    "against his will",
-    "against the clock"
-   ],
-   "audioClip": {
-    "storySlug": "me-quedo-con-el-bote",
-    "storySource": "journey",
-    "sentence": "Nadie hizo nada contra la ley, y aun así salió mal.",
-    "targetWord": "contra la ley",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8e24d334eb96b985.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "vale",
-  "sentence": "El papel _____ la mitad de lo que ella escribió.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "vale",
-   "options": [
-    "vale",
-    "pesa",
-    "firma",
-    "parte"
-   ],
-   "translation": "The paper is _____ half of what she wrote.",
-   "optionTranslations": [
-    "worth",
-    "weighing",
-    "signing",
-    "leaving"
-   ],
-   "audioClip": {
-    "storySlug": "me-quedo-con-el-bote",
-    "storySource": "journey",
-    "sentence": "El papel vale la mitad de lo que ella escribió.",
-    "targetWord": "vale",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cebfd416ec6cfeca.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "llevo",
-  "sentence": "“Si me peleo con él, mañana no _____ nada a vender.”",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "llevo",
-   "options": [
-    "llevo",
-    "firmo",
-    "entiendo",
-    "tapo"
-   ],
-   "translation": "“If I fall out with him, tomorrow I _____ nothing to market.”",
-   "optionTranslations": [
-    "take",
-    "sign",
-    "understand",
-    "cover"
-   ],
-   "audioClip": {
-    "storySlug": "me-quedo-con-el-bote",
-    "storySource": "journey",
-    "sentence": "“Si me peleo con él, mañana no llevo nada a vender.”",
-    "targetWord": "llevo",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/31c38e034ed75002.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "entender",
-  "sentence": "Ella [[entiende]] la cuenta, y aun así se lo pregunta.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "she understands",
-   "options": [
-    "she understands",
-    "she writes",
-    "she pays",
-    "she refuses"
-   ],
-   "audioClip": {
-    "storySlug": "me-quedo-con-el-bote",
-    "storySource": "journey",
-    "sentence": "Ella entiende la cuenta, y aun así se lo pregunta.",
-    "targetWord": "entender",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fac1b2a19a42046d.mp3"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "de lado",
-  "sentence": "El bote de Óscar queda [[de lado]] sobre el barro.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "on its side",
-   "options": [
-    "on its side",
-    "upside down",
-    "half sunk",
-    "tied up"
-   ],
-   "audioClip": {
-    "storySlug": "me-quedo-con-el-bote",
-    "storySource": "journey",
-    "sentence": "El bote de Óscar queda de lado sobre el barro.",
-    "targetWord": "de lado",
-    "language": "spanish",
-    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bffceb28c677981f.mp3"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "parte",
-  "sentence": "Ella _____ por el camino de pellín sin ponerse el cinturón.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "parte",
-   "options": [
-    "parte",
-    "firma",
-    "vende",
-    "entiende"
-   ],
-   "translation": "She _____ along the beechwood road without her seatbelt on.",
-   "optionTranslations": [
-    "sets off",
-    "signs",
-    "sells",
-    "understands"
-   ],
-   "audioClip": {
-    "storySlug": "me-quedo-con-el-bote",
-    "storySource": "journey",
-    "sentence": "Ella parte por el camino de pellín sin ponerse el cinturón.",
-    "targetWord": "parte",
-    "language": "spanish"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "bolsillo",
-  "sentence": "Dobla el papel y se lo guarda en el [[bolsillo]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "his pocket",
-   "options": [
-    "his pocket",
-    "the glovebox",
-    "the drawer",
-    "the boat"
-   ],
-   "audioClip": {
-    "storySlug": "me-quedo-con-el-bote",
-    "storySource": "journey",
-    "sentence": "Dobla el papel y se lo guarda en el bolsillo.",
-    "targetWord": "bolsillo",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "firma",
+    "sentence": "Cuando el vecino _____, firma por menos de lo tasado.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "firma",
+      "options": [
+        "firma",
+        "pesa",
+        "vende",
+        "mide"
+      ],
+      "translation": "When the neighbour _____, he signs for less than it was valued at.",
+      "optionTranslations": [
+        "signs",
+        "weighs",
+        "sells",
+        "measures"
+      ],
+      "audioClip": {
+        "storySlug": "me-quedo-con-el-bote",
+        "storySource": "journey",
+        "sentence": "Cuando el vecino firma, firma por menos de lo tasado.",
+        "targetWord": "firma",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4e4a0a90e863e2bc.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "cinturón",
-  "sentence": "Parte por el camino sin ponerse el [[cinturón]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the seatbelt",
-   "options": [
-    "the seatbelt",
-    "the coat",
-    "the boots",
-    "the watch"
-   ],
-   "audioClip": {
-    "storySlug": "me-quedo-con-el-bote",
-    "storySource": "journey",
-    "sentence": "Parte por el camino sin ponerse el cinturón.",
-    "targetWord": "cinturón",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "tranquilo",
+    "sentence": "“Y él puso menos, y así queda”, contesta el vecino, [[tranquilo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "calm",
+      "options": [
+        "calm",
+        "furious",
+        "hurried",
+        "frightened"
+      ],
+      "audioClip": {
+        "storySlug": "me-quedo-con-el-bote",
+        "storySource": "journey",
+        "sentence": "“Y él puso menos, y así queda”, contesta el vecino, tranquilo.",
+        "targetWord": "tranquilo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/34977635f3f5085a.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/9d941b97aaed755ef216.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "orilla",
-  "sentence": "Huele a algas desde la [[orilla]] esa mañana.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the shore",
-   "options": [
-    "the shore",
-    "the road",
-    "the yard",
-    "the hill"
-   ],
-   "audioClip": {
-    "storySlug": "me-quedo-con-el-bote",
-    "storySource": "journey",
-    "sentence": "Huele a algas desde la orilla esa mañana.",
-    "targetWord": "orilla",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "conforme",
+    "sentence": "“¿Y usted se queda [[conforme]] con eso?”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "satisfied with it",
+      "options": [
+        "satisfied with it",
+        "surprised by it",
+        "angry about it",
+        "paid for it"
+      ],
+      "audioClip": {
+        "storySlug": "me-quedo-con-el-bote",
+        "storySource": "journey",
+        "sentence": "“¿Y usted se queda conforme con eso?”",
+        "targetWord": "conforme",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/855dbe65d46ab467.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f5ac22448116295f4241.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "isla",
-  "sentence": "En la [[isla]] ese bote pesa más que un papel.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the island",
-   "options": [
-    "the island",
-    "the market",
-    "the family",
-    "the winter"
-   ],
-   "audioClip": {
-    "storySlug": "me-quedo-con-el-bote",
-    "storySource": "journey",
-    "sentence": "En la isla ese bote pesa más que un papel.",
-    "targetWord": "isla",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "juicio",
+    "sentence": "Nadie aquí gana un [[juicio]] y sigue teniendo vecinos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a court case",
+      "options": [
+        "a court case",
+        "a market day",
+        "a bet",
+        "an argument"
+      ],
+      "audioClip": {
+        "storySlug": "me-quedo-con-el-bote",
+        "storySource": "journey",
+        "sentence": "Nadie aquí gana un juicio y sigue teniendo vecinos.",
+        "targetWord": "juicio",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1e8e6fc815d6077d.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/aab47ba3e3a6552c0bf9.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "camino",
-  "sentence": "Parte por el [[camino]] de pellín sin mirar atrás.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the dirt road",
-   "options": [
-    "the dirt road",
-    "the beach",
-    "the fence",
-    "the yard"
-   ],
-   "audioClip": {
-    "storySlug": "me-quedo-con-el-bote",
-    "storySource": "journey",
-    "sentence": "Parte por el camino de pellín sin mirar atrás.",
-    "targetWord": "camino",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "contra la ley",
+    "sentence": "Nadie hizo nada [[contra la ley]], y aun así salió mal.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "against the law",
+      "options": [
+        "against the law",
+        "against the tide",
+        "against his will",
+        "against the clock"
+      ],
+      "audioClip": {
+        "storySlug": "me-quedo-con-el-bote",
+        "storySource": "journey",
+        "sentence": "Nadie hizo nada contra la ley, y aun así salió mal.",
+        "targetWord": "contra la ley",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8e24d334eb96b985.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/486ea54f88cb86de50fa.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "vender",
-  "sentence": "Sin bote no lleva nada a _____ el lunes.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "vender",
-   "options": [
-    "vender",
-    "firmar",
-    "tasar",
-    "cuidar"
-   ],
-   "translation": "Without a boat he takes nothing to _____ on Monday.",
-   "optionTranslations": [
-    "sell",
-    "sign",
-    "value",
-    "look after"
-   ],
-   "audioClip": {
-    "storySlug": "me-quedo-con-el-bote",
-    "storySource": "journey",
-    "sentence": "Sin bote no lleva nada a vender el lunes.",
-    "targetWord": "vender",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "vale",
+    "sentence": "El papel _____ la mitad de lo que ella escribió.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vale",
+      "options": [
+        "vale",
+        "pesa",
+        "firma",
+        "parte"
+      ],
+      "translation": "The paper is _____ half of what she wrote.",
+      "optionTranslations": [
+        "worth",
+        "weighing",
+        "signing",
+        "leaving"
+      ],
+      "audioClip": {
+        "storySlug": "me-quedo-con-el-bote",
+        "storySource": "journey",
+        "sentence": "El papel vale la mitad de lo que ella escribió.",
+        "targetWord": "vale",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cebfd416ec6cfeca.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "fill_blank",
+    "word": "llevo",
+    "sentence": "“Si me peleo con él, mañana no _____ nada a vender.”",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "llevo",
+      "options": [
+        "llevo",
+        "firmo",
+        "entiendo",
+        "tapo"
+      ],
+      "translation": "“If I fall out with him, tomorrow I _____ nothing to market.”",
+      "optionTranslations": [
+        "take",
+        "sign",
+        "understand",
+        "cover"
+      ],
+      "audioClip": {
+        "storySlug": "me-quedo-con-el-bote",
+        "storySource": "journey",
+        "sentence": "“Si me peleo con él, mañana no llevo nada a vender.”",
+        "targetWord": "llevo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/31c38e034ed75002.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entender",
+    "sentence": "Ella [[entiende]] la cuenta, y aun así se lo pregunta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "she understands",
+      "options": [
+        "she understands",
+        "she writes",
+        "she pays",
+        "she refuses"
+      ],
+      "audioClip": {
+        "storySlug": "me-quedo-con-el-bote",
+        "storySource": "journey",
+        "sentence": "Ella entiende la cuenta, y aun así se lo pregunta.",
+        "targetWord": "entender",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fac1b2a19a42046d.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/757148ef699c8dd89083.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de lado",
+    "sentence": "El bote de Óscar queda [[de lado]] sobre el barro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on its side",
+      "options": [
+        "on its side",
+        "upside down",
+        "half sunk",
+        "tied up"
+      ],
+      "audioClip": {
+        "storySlug": "me-quedo-con-el-bote",
+        "storySource": "journey",
+        "sentence": "El bote de Óscar queda de lado sobre el barro.",
+        "targetWord": "de lado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bffceb28c677981f.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/dd3bab85d50a1732c91d.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "parte",
+    "sentence": "Ella _____ por el camino de pellín sin ponerse el cinturón.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "parte",
+      "options": [
+        "parte",
+        "firma",
+        "vende",
+        "entiende"
+      ],
+      "translation": "She _____ along the beechwood road without her seatbelt on.",
+      "optionTranslations": [
+        "sets off",
+        "signs",
+        "sells",
+        "understands"
+      ],
+      "audioClip": {
+        "storySlug": "me-quedo-con-el-bote",
+        "storySource": "journey",
+        "sentence": "Ella parte por el camino de pellín sin ponerse el cinturón.",
+        "targetWord": "parte",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/00065d505991e2cc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bolsillo",
+    "sentence": "Dobla el papel y se lo guarda en el [[bolsillo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "his pocket",
+      "options": [
+        "his pocket",
+        "the glovebox",
+        "the drawer",
+        "the boat"
+      ],
+      "audioClip": {
+        "storySlug": "me-quedo-con-el-bote",
+        "storySource": "journey",
+        "sentence": "Dobla el papel y se lo guarda en el bolsillo.",
+        "targetWord": "bolsillo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/a1b65c7dc233d8ef1af5.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cinturón",
+    "sentence": "Parte por el camino sin ponerse el [[cinturón]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the seatbelt",
+      "options": [
+        "the seatbelt",
+        "the coat",
+        "the boots",
+        "the watch"
+      ],
+      "audioClip": {
+        "storySlug": "me-quedo-con-el-bote",
+        "storySource": "journey",
+        "sentence": "Parte por el camino sin ponerse el cinturón.",
+        "targetWord": "cinturón",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/b47edc82931a9e23444b.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "orilla",
+    "sentence": "Huele a algas desde la [[orilla]] esa mañana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the shore",
+      "options": [
+        "the shore",
+        "the road",
+        "the yard",
+        "the hill"
+      ],
+      "audioClip": {
+        "storySlug": "me-quedo-con-el-bote",
+        "storySource": "journey",
+        "sentence": "Huele a algas desde la orilla esa mañana.",
+        "targetWord": "orilla",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2d090786e486280e180d.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "isla",
+    "sentence": "En la [[isla]] ese bote pesa más que un papel.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the island",
+      "options": [
+        "the island",
+        "the market",
+        "the family",
+        "the winter"
+      ],
+      "audioClip": {
+        "storySlug": "me-quedo-con-el-bote",
+        "storySource": "journey",
+        "sentence": "En la isla ese bote pesa más que un papel.",
+        "targetWord": "isla",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/1ff9541f224598ccecf6.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "camino",
+    "sentence": "Parte por el [[camino]] de pellín sin mirar atrás.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the dirt road",
+      "options": [
+        "the dirt road",
+        "the beach",
+        "the fence",
+        "the yard"
+      ],
+      "audioClip": {
+        "storySlug": "me-quedo-con-el-bote",
+        "storySource": "journey",
+        "sentence": "Parte por el camino de pellín sin mirar atrás.",
+        "targetWord": "camino",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/9e33b4417b76de4758e5.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "vender",
+    "sentence": "Sin bote no lleva nada a _____ el lunes.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vender",
+      "options": [
+        "vender",
+        "firmar",
+        "tasar",
+        "cuidar"
+      ],
+      "translation": "Without a boat he takes nothing to _____ on Monday.",
+      "optionTranslations": [
+        "sell",
+        "sign",
+        "value",
+        "look after"
+      ],
+      "audioClip": {
+        "storySlug": "me-quedo-con-el-bote",
+        "storySource": "journey",
+        "sentence": "Sin bote no lleva nada a vender el lunes.",
+        "targetWord": "vender",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1fa0ee1e1ee0a04f.mp3"
+      }
+    },
+    "featured": false
+  }
 ]

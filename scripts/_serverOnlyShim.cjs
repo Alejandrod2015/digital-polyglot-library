@@ -1,12 +1,14 @@
-// Deja correr en un script de Node los modulos sellados con `server-only`
-// (src/lib/prisma.ts). El sello existe para que ningun client component los
-// bundlee; aqui no hay bundle, solo Node.
+/**
+ * `server-only` es un fence de Next para React Server Components: tira al
+ * importarse fuera de uno. Varios scripts del repo llegan a `src/lib/prisma`,
+ * que lo importa, y por eso no se pueden correr sueltos. Vitest ya lo aliasa
+ * por la misma razon (vitest.config.ts); esto hace lo mismo para tsx.
+ *
+ *   NODE_OPTIONS="--require ./scripts/_serverOnlyShim.cjs" npx tsx <script>
+ */
 const Module = require("module");
-const path = require("path");
-const original = Module._resolveFilename;
-Module._resolveFilename = function (request, ...rest) {
-  if (request === "server-only" || request === "client-only") {
-    return path.join(__dirname, "_noop.cjs");
-  }
-  return original.call(this, request, ...rest);
+const load = Module._load;
+Module._load = function (request, ...rest) {
+  if (request === "server-only") return {};
+  return load.call(this, request, ...rest);
 };
