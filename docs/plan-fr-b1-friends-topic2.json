@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "b1",
+  "variante": "france",
+  "registro": "sobremesa familiar con consejos no pedidos: el hermano mayor que opina de todo y el menor que aprieta los dientes",
+  "espina": "Aurelien y Elodie abren un taller de bicicletas en Fives y su amistad se pone a prueba como socios. Este tema es el mundo de fuera opinando: el hermano de Aurelien, entre la ayuda y el control.",
+  "recursos": "B1: narrador en passe compose e imparfait con plus-que-parfait; conditionnel de consejo (a ta place, je garderais) y de cortesia (je voudrais ton avis); subjonctif tras vouloir que / il faut que; discours indirect con concordancia (Elodie lui avait dit que les gens ne reparaient pas); reversa cosida (la moutarde lui monte au nez pero respira porque su hermano quiere ayudar); cambio de ritmo; espejo concreto (la tarte au sucre sin tocar el domingo y el trozo envuelto en papel alu al final).",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Aurelien quiere que su hermano mayor se alegre por el proyecto del taller en la comida del domingo.",
+      "impide": "Guillaume le da consejos que nadie ha pedido y le corta la palabra, y Aurelien le ha ocultado que ya dimitio.",
+      "cuesta": "Pierde el domingo en paz con su hermano: se va antes del cafe sin reconciliarse.",
+      "cambia": "Descubre que no busca la aprobacion de Guillaume, pero que callarle la dimision tambien fue terquedad suya.",
+      "emocion": "Rabia contenida porque su hermano no escucha; aprieta los dientes, mira la tarta y suelta la verdad de golpe."
+    },
+    {
+      "slot": "2",
+      "quiere": "Aurelien quiere aprovechar el olfato de su hermano para el local sin dejarle decidir por el.",
+      "impide": "Guillaume insiste en un local caro y bien situado en el Vieux-Lille, y desprecia la opinion de Elodie.",
+      "cuesta": "Rechaza la oferta del Vieux-Lille, que se lleva un florista, y Guillaume deja de llamarlo una semana.",
+      "cambia": "Elige Fives por los clientes que necesitan bicis que funcionen, y defiende en voz alta a su socia.",
+      "emocion": "Enfado que se le sube a la nariz, pero respira despacio porque su hermano quiere ayudarle."
+    },
+    {
+      "slot": "3",
+      "quiere": "Aurelien quiere una opinion franca sobre el local de Fives, no un acuerdo.",
+      "impide": "Le cuesta reconocer que su hermano puede tener razon, y Guillaume encuentra la instalacion electrica fuera de norma.",
+      "cuesta": "La apertura se retrasa un mes y tiene que tragarse el orgullo delante de Guillaume.",
+      "cambia": "Admite que su hermano tenia razon, y los dos hacen las paces con el numero de un electricista y un trozo de tarta.",
+      "emocion": "Orgullo herido: tiene ganas de decir que Guillaume exagera, pero los cables ennegrecidos no mienten, y lo admite con la voz baja."
+    }
+  ]
+}

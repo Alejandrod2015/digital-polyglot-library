@@ -13,7 +13,7 @@ import { config } from "dotenv"; config({ path: ".env.local", quiet: true }); co
 import * as fs from "fs";
 
 const W = "[\\p{L}'’-]";
-const SUBJ_TRIG = "(?:il\\s+faut|faut|faudrait|veux|veut|voulait|voudrais|voudrait|voulez|préfère|préférais|préférerais|attends|attendait|bien|avant|pour|sans|condition|jusqu'à\\s+ce|peur|content|contente|dommage|pense\\s+pas|crois\\s+pas|pensait\\s+pas|croyait\\s+pas|étonnant|normal|possible|important|temps|aime\\s+pas)";
+const SUBJ_TRIG = "(?:il\\s+faut|faut|faudrait|veux|veut|voulait|voulais|voulaient|voudrais|voudrait|voulez|préfère|préférais|préférerais|attends|attendait|bien|avant|pour|sans|condition|jusqu'à\\s+ce|peur|content|contente|dommage|pense\\s+pas|crois\\s+pas|pensait\\s+pas|croyait\\s+pas|étonnant|normal|possible|important|temps|aime\\s+pas)";
 const SUBJ_FORMS = new Set(("sois soit soyons soyez soient aie aies ait ayons ayez aient fasse fasses fassions fassiez fassent puisse puisses puissions puissent aille ailles aillent sache saches sachent veuille veuilles veuillent vienne viennes viennent prenne prennes prennent dise dises disent parte partes partent dorme dormes dorment finisse finisses finissent comprenne comprennes comprennent revienne reviennes reviennent sorte sortes sortent lise lises écrive écrives mette mettes mettent boive boives voie voies voient croie crois doive doives doivent reçoive rende rendes attende attendes vende vendes perde perdes réponde répondes connaisse connaisses devienne deviennes tienne tiennes ouvre ouvres rembourse rembourses signe signes parle parles reste restes repose reposes arrête arrêtes rentre rentres appelle appelles occupe occupes change changes").split(/\s+/));
 // Condicional: formas con raiz de futuro; se excluyen imperfectos de verbos en -rer/-rir y palabras que no son verbos.
 const COND_EXCL = new Set("jamais mais vrais frais désormais portrait trait extrait attrait retrait tirait soupirait admirait désirait respirait attirait durait assurait mesurait jurait pleurait demeurait ignorait courait mourait séparait préparait entrait rentrait montrait adorait déclarait espérait exagérait serrait fermait tournait retournait espérais préparais entrais rentrais montrais adorais tirais admirais durais assurais pleurais ignorais courais mourais serrais fermais tournais ouvrait ouvrais souffrait offrait couvrait découvrait expirait inspirait".split(" "));
@@ -27,7 +27,7 @@ export function mide(text: string) {
   const t = text.replace(/[“”«»]/g, " ").replace(/\s+/g, " ");
   const oraciones = t.split(/(?<=[.!?])\s+/).map((s) => s.trim()).filter((s) => /\p{L}/u.test(s));
   let subj = 0; const subjHits: string[] = [];
-  const rxT = new RegExp(`(?<!\\p{L})${SUBJ_TRIG}\\s+(?:que|qu['’])\\s*((?:${W}+[\\s,;:]*){0,5})`, "giu");
+  const rxT = new RegExp(`(?<!\\p{L})${SUBJ_TRIG}(?:\\s+(?:juste|seulement|bien|vraiment|surtout))?\\s+(?:que|qu['’])\\s*((?:${W}+[\\s,;:]*){0,5})`, "giu");
   for (const m of t.matchAll(rxT)) {
     const toks = (m[1] ?? "").toLowerCase().split(/[\s.,!?;:]+/).filter(Boolean);
     if (toks.some((x) => SUBJ_FORMS.has(x.replace(/^(?:n|j|l|m|t|s)['’]/, "")))) { subj++; subjHits.push(m[0].trim()); }
@@ -64,6 +64,7 @@ function control() {
     ["Elle dit que c'est bien.", { ind: 0 }],
     ["J'aurais dû te le dire.", { b2: 1, cond: 0 }],
     ["Il serait parti plus tôt.", { b2: 1, cond: 0 }], ["Il a pensé qu'elle aurait le temps, et il serait heureux.", { cond: 2, b2: 0 }],
+    ["Je voulais que tu sois content pour moi.", { subj: 1 }],
     ["Romain voudrait l'entendre de sa bouche.", { cond: 1 }],
     ["Il n'a jamais dit merci, mais il est vrai et frais.", { cond: 0, ind: 0 }],
   ];
