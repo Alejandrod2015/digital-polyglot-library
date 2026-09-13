@@ -1258,6 +1258,43 @@
         "três",
         "vinte"
       ]
+    },
+    "french-friends-france-a1": {
+      "articles": [
+        "ce",
+        "cette",
+        "des",
+        "du",
+        "l",
+        "la",
+        "le",
+        "les",
+        "un",
+        "une"
+      ],
+      "characterNames": [
+        "amélie",
+        "baptiste",
+        "camille",
+        "caron",
+        "inès",
+        "marc",
+        "mathieu",
+        "moreau",
+        "olivier",
+        "sophie"
+      ],
+      "numerals": [
+        "cinq",
+        "deux",
+        "dix",
+        "mille",
+        "quatre",
+        "quinze",
+        "six",
+        "trois",
+        "vingt"
+      ]
     }
   }
 }
