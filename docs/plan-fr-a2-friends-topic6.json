@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a2",
+  "variante": "france",
+  "registro": "nervios y emocion en publico: una boda familiar donde Romain sirve primero con las manos y al final con la voz",
+  "espina": "Romain busca su sitio en el mundo de Justine; en la boda de la prima lo gana dos veces, como electricista a oscuras y como Monsieur Crachin delante de cien personas, y cada vez paga con algo de Justine.",
+  "recursos": "A2: narrador en presente; passe compose en el dialogo (on a coupe le gateau, tu l'as rate, tu as sauve la fete); imparfait de descripcion (on dansait dans le noir); futur proche (je vais passer); espejo concreto (el discurso de Justine que Romain no oye y el discurso de Romain que Justine si oye); causalidad explicita. Nada de subjonctif ni plus-que-parfait.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Romain quiere ser util a la familia de Justine y acepta ocuparse de la luz y el micro de la boda de Elise.",
+      "impide": "Elise confiesa que en esa vieja salle des fetes la luz se va en todas las bodas.",
+      "cuesta": "Pasa el viernes solo en la sala con sus herramientas y se pierde la cena de la bande.",
+      "cambia": "Entiende que el pequeno favor es un encargo grande, y que la familia ya cuenta con el.",
+      "emocion": "Duda porque quiere ir a la cena; al oir la verdad se le congela la sonrisa mientras Justine se rie."
+    },
+    {
+      "slot": "2",
+      "quiere": "Romain quiere escuchar el discurso de Justine en la boda.",
+      "impide": "En plena segunda broma se va la luz, el micro se apaga y alguien tiene que arreglarlo ya.",
+      "cuesta": "Se pierde el discurso entero de Justine, que oye de lejos detras del escenario.",
+      "cambia": "Salva la fiesta, y Justine le promete contarle el discurso esa noche.",
+      "emocion": "Siente prisa y soledad detras del escenario; repite vite, vite, y vuelve con las manos negras."
+    },
+    {
+      "slot": "3",
+      "quiere": "Romain quiere pasar desapercibido al final de la boda.",
+      "impide": "Elise le da el micro delante de cien personas para que diga unas palabras.",
+      "cuesta": "Despues todos los primos le piden arreglos y se pierde el ultimo baile con Justine.",
+      "cambia": "Dice tres frases con su apodo y por primera vez se siente de la familia.",
+      "emocion": "Se pone blanco de miedo porque hablar en publico no es lo suyo; le tiembla la voz, busca el vaso de Justine y encuentra valor."
+    }
+  ]
+}
