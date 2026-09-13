@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a2",
+  "variante": "france",
+  "registro": "el de fuera en la mesa: la risa de un grupo de amigos antiguos, y un recien llegado que rie sin saber de que",
+  "espina": "Romain entiende las palabras de la gente de Justine y no lo que quieren decir; aqui choca con el pasado compartido de la bande, que no puede aprender, solo ganarse.",
+  "recursos": "A2: narrador en presente; flashback marcado en passe compose e imparfait (Il y a douze ans, la bande a loue un pedalo); simil simple (rit comme une folle); espejo concreto (reir con ellos frente a reir a su lado); humor de situacion. Nada de subjonctif ni plus-que-parfait.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Romain quiere entrar en la bande de Justine la primera noche que cenan juntos.",
+      "impide": "Todos rien con la historia del pedalo, que el no conoce, y Mathilde nota que el rie sin entender.",
+      "cuesta": "Pierde la imagen de tranquilo que queria dar: delante de toda la mesa confiesa que ni sabe que es un pedalo.",
+      "cambia": "Nadie se burla; Mathilde le promete la historia y por primera vez Romain esta con la bande y no a su lado.",
+      "emocion": "Se siente fuera porque la risa es de un pasado sin el; rie demasiado fuerte para disimular y se queda con cara de perdido."
+    },
+    {
+      "slot": "2",
+      "quiere": "Romain quiere conocer la historia del pedalo, y preferiria oirla de Justine.",
+      "impide": "Mathilde llega con el album cuando Justine no esta, y la curiosidad le gana.",
+      "cuesta": "Justine vuelve, ve el album y se pone blanca: esa historia queria contarla ella algun dia, y ya no podra.",
+      "cambia": "Descubre una Justine salvaje y divertida que no conocia, detras de la Justine seria que se acuesta a las once.",
+      "emocion": "Le pica la curiosidad y a la vez la culpa; mira las fotos y al final entiende tarde, viendo que Justine no mira a Mathilde."
+    },
+    {
+      "slot": "3",
+      "quiere": "Romain quiere un recuerdo propio en la bande, no solo escuchar los de los demas.",
+      "impide": "Cuenta su historia del crachin y al principio nadie se rie; teme haber hecho el ridiculo.",
+      "cuesta": "La bande le pone un apodo, Monsieur Crachin, y en ese grupo ya nadie usara su nombre.",
+      "cambia": "Acepta el apodo aunque no le gusta, porque es suyo, y brinda por la bande.",
+      "emocion": "Tiene miedo al silencio porque se expone; se arrepiente en el primer segundo, hace una mueca con el apodo y aun asi levanta la copa."
+    }
+  ]
+}
