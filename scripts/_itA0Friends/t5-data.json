@@ -5,7 +5,7 @@
   "title": "Il pesto vuole pazienza",
   "arcType": null,
   "synopsis": "Matteo's ferry is late, and Alice wants to make his pesto for the first time. She takes the last basil plant down to the bakery.",
-  "text": "Matteo scrive ad Alice: il traghetto è in ritardo, arrivo alle due. Oggi Alice vuole fare il pesto per lui.\n\nMa Alice non sa fare il pesto. Lei prende il piccolo vaso di basilico e scende le scale in ciabatte. Ha sonno e sbadiglia. C'è odore di pane.\n\nLorenzo, il fornaio della focacceria, impasta dalle cinque di mattina. Sul banco ci sono teglie di focaccia dorata, con olive e rosmarino. “Buongiorno, Alice! Una focaccia?” chiede lui. “No. Io voglio fare il pesto,” risponde Alice.\n\n“Il pesto? Con questa pianta? È troppo piccola,” dice Lorenzo, e ride.\n\nAlice è agitata, perché Matteo arriva alle due. Abbraccia il vaso. “Per favore, Lorenzo. È per un amico,” dice Alice.\n\nLorenzo guarda Alice. “Va bene. Ma il pesto vuole pazienza,” dice lui.\n\n“Tu lavori qui un'ora e io ti insegno,” dice Lorenzo. Alice mette il grembiule e serve i clienti. La sua domenica libera comincia al banco.",
+  "text": "Matteo manda un messaggio ad Alice: sono in ritardo, arrivo alle due. Ogni domenica Matteo fa il pesto. Oggi lo vuole fare Alice.\n\nMa Alice non sa fare il pesto. Lei prende il basilico e scende in ciabatte. Ha sonno e sbadiglia. C'è odore di pane.\n\nLorenzo, il fornaio della focacceria, impasta dalle cinque di mattina. Sul banco ci sono teglie di focaccia dorata, con olive e rosmarino. “Buongiorno, Alice! Una focaccia?” chiede lui. “No. Io voglio fare il pesto,” risponde Alice.\n\n“Il pesto? Questa pianta è carina, ma è troppo piccola,” dice Lorenzo, e scherza.\n\nAlice è agitata, perché Matteo arriva alle due. Abbraccia il vaso. “Per favore, Lorenzo. È per un amico,” dice Alice.\n\nLorenzo guarda Alice. “Va bene. Ma il pesto vuole pazienza,” dice lui.\n\n“Tu lavori qui un'ora e io ti insegno,” dice Lorenzo. Alice mette il grembiule e serve i clienti. La sua domenica libera comincia al banco.",
   "vocab": [
    {
     "type": "noun",
@@ -31,13 +31,15 @@
     "type": "expression",
     "word": "di mattina",
     "surface": "di mattina",
-    "definition": "In the morning; early in the day."
+    "definition": "In the morning; early in the day.",
+    "anchor": true
    },
    {
     "type": "expression",
     "word": "alle due",
     "surface": "alle due",
-    "definition": "At two o'clock in the afternoon."
+    "definition": "At two o'clock in the afternoon.",
+    "anchor": true
    },
    {
     "type": "expression",
@@ -61,7 +63,8 @@
     "type": "expression",
     "word": "la domenica libera",
     "surface": "domenica libera",
-    "definition": "A free Sunday; a Sunday with no work."
+    "definition": "A free Sunday; a Sunday with no work.",
+    "anchor": true
    },
    {
     "type": "expression",
@@ -73,7 +76,8 @@
     "type": "noun",
     "word": "le ciabatte",
     "surface": "ciabatte",
-    "definition": "Slippers; soft shoes you wear at home."
+    "definition": "Slippers; soft shoes you wear at home.",
+    "anchor": true
    },
    {
     "type": "adjective",
@@ -91,13 +95,15 @@
     "type": "verb",
     "word": "sbadigliare",
     "surface": "sbadiglia",
-    "definition": "To yawn; to open your mouth when tired."
+    "definition": "To yawn; to open your mouth when tired.",
+    "anchor": true
    },
    {
     "type": "verb",
     "word": "impastare",
     "surface": "impasta",
-    "definition": "To knead dough with your hands."
+    "definition": "To knead dough with your hands.",
+    "anchor": true
    },
    {
     "type": "noun",
@@ -110,7 +116,8 @@
     "type": "adjective",
     "word": "dorato",
     "surface": "dorata",
-    "definition": "Golden; brown and shiny from the oven."
+    "definition": "Golden; brown and shiny from the oven.",
+    "anchor": true
    },
    {
     "type": "noun",
@@ -140,13 +147,14 @@
   "title": "Un mortaio in due pezzi",
   "arcType": null,
   "synopsis": "Lorenzo comes up to teach Alice how to make pesto in Matteo's old marble mortar. The pesto is good, but the kitchen sink is slippery.",
-  "text": "A mezzogiorno Lorenzo sale da Alice con i pinoli e il formaggio. Lui taglia il formaggio. Sul tavolo c'è il mortaio di marmo di Matteo. “Allora, cominciamo?” chiede Lorenzo.\n\n“Che bel mortaio! È vecchio?” chiede Lorenzo. “Sì. È della famiglia di Matteo,” risponde Alice. Il mortaio pesa molto.\n\n“Prima l'aglio e il sale. Poi il basilico, piano,” dice Lorenzo. Alice schiaccia il basilico con il pestello, troppo forte. “No, no! Così il basilico diventa nero,” dice lui.\n\nAlice ricomincia. Piano, in cerchio, come Lorenzo. In cucina c'è un odore dolce. “Così va bene?” chiede Alice. “Sì, così. Brava! Adesso è un pesto vero. È pronto,” risponde Lorenzo. Alice assaggia e sorride, felice.\n\nLorenzo torna alla focacceria. Alice lava il mortaio nel lavandino. Ma il marmo è bagnato e scivola. Il mortaio cade e si rompe in due pezzi. Alice ha le mani fredde, perché è il mortaio di Matteo. “No!” dice Alice.",
+  "text": "A mezzogiorno Lorenzo sale da Alice con i pinoli e il formaggio. Lui taglia il formaggio. Sul tavolo c'è il mortaio di marmo di Matteo.\n\n“Che bel mortaio! È vecchio?” chiede Lorenzo. “Sì. È della famiglia di Matteo,” risponde Alice. Il mortaio è bianco e pesa molto.\n\n“Prima l'aglio e il sale. Poi il basilico, piano,” dice Lorenzo. Alice usa il pestello e schiaccia il basilico troppo forte. “No, no! Così il basilico diventa nero,” dice lui.\n\nAlice ricomincia. Piano, in cerchio, come Lorenzo. In cucina c'è un odore dolce. “Così va bene?” chiede Alice. “Sì, così. Brava! Adesso è un pesto vero. È pronto,” risponde Lorenzo. Alice assaggia e sorride, felice.\n\nLorenzo torna alla focacceria. Alice lava il mortaio nel lavandino. Ma il marmo è bagnato e scivola. Il mortaio cade e si rompe in due pezzi. Alice ha le mani fredde, perché è il mortaio di Matteo. “No!” dice Alice.",
   "vocab": [
    {
     "type": "noun",
     "word": "il mezzogiorno",
     "surface": "mezzogiorno",
-    "definition": "Midday; twelve o'clock in the day."
+    "definition": "Midday; twelve o'clock in the day.",
+    "anchor": true
    },
    {
     "type": "noun",
@@ -203,7 +211,8 @@
     "type": "expression",
     "word": "in cerchio",
     "surface": "in cerchio",
-    "definition": "In a circle; round and round."
+    "definition": "In a circle; round and round.",
+    "anchor": true
    },
    {
     "type": "expression",
@@ -246,25 +255,29 @@
     "type": "verb",
     "word": "scivolare",
     "surface": "scivola",
-    "definition": "To slip; to slide out of your hands."
+    "definition": "To slip; to slide out of your hands.",
+    "anchor": true
    },
    {
     "type": "verb",
     "word": "rompersi",
     "surface": "si rompe",
-    "definition": "To break; to go into pieces."
+    "definition": "To break; to go into pieces.",
+    "anchor": true
    },
    {
     "type": "verb",
     "word": "tagliare",
     "surface": "taglia",
-    "definition": "To cut; to make pieces with a knife."
+    "definition": "To cut; to make pieces with a knife.",
+    "anchor": true
    },
    {
     "type": "verb",
     "word": "schiacciare",
     "surface": "schiaccia",
-    "definition": "To crush; to press hard into small pieces."
+    "definition": "To crush; to press hard into small pieces.",
+    "anchor": true
    }
   ]
  },
@@ -274,7 +287,7 @@
   "title": "Trofie per due",
   "arcType": null,
   "synopsis": "Matteo gets home from the ferry and finds lunch ready on the terrace. He loves the pesto, and then Alice shows him the mortar.",
-  "text": "Matteo entra sulla terrazza alle due, stanco. Alice aspetta al tavolo. Davanti a lei ci sono due piatti di trofie al pesto e una bottiglia d'acqua.\n\n“Che profumo! Chi fa il pesto oggi?” chiede lui. “Io, con Lorenzo,” risponde Alice. “Ho un appetito da marinaio!” dice lui. Matteo mangia lentamente e chiude gli occhi. Ha il pesto sulla barba. “È più buono del mio,” dice lui.\n\nAlice non mangia. Lei ha lo stomaco chiuso, perché in cucina c'è il mortaio rotto. Poi porta i due pezzi su un vassoio, accanto ai piatti. “Mi dispiace. È il mortaio della tua famiglia,” dice Alice piano.\n\nMatteo guarda i due pezzi a lungo e sospira. “Non importa, Alice,” dice lui. Lui sorride appena, ma i suoi occhi sono tristi. “Per me importa,” risponde Alice, e asciuga una lacrima.\n\nMatteo riempie di terra i due pezzi di marmo. “Uno per te e uno per me,” dice lui.",
+  "text": "Matteo entra sulla terrazza alle due, stanco. Alice aspetta al tavolo. Davanti a lei ci sono due piatti di trofie e una bottiglia d'acqua.\n\n“Che profumo! Chi fa il pesto oggi?” chiede lui. “Io, con Lorenzo,” risponde Alice. “Ho un appetito da marinaio!” dice lui. Matteo mangia lentamente e chiude gli occhi. Ha il pesto sulla barba. “È più buono del mio,” dice lui.\n\nAlice non mangia. “Che cosa c'è?” chiede Matteo. Lei ha lo stomaco chiuso, perché in cucina c'è il mortaio rotto. Poi posa i due pezzi su un vassoio, accanto ai piatti. “Mi dispiace. È colpa mia,” dice Alice piano.\n\nMatteo guarda i due pezzi a lungo e sospira. “Non importa, Alice,” dice lui. Lui sorride appena, ma i suoi occhi sono tristi. “Per me importa,” risponde Alice, e asciuga una lacrima.\n\nMatteo riempie di terra i due pezzi di marmo. “Uno per te e uno per me,” dice lui.",
   "vocab": [
    {
     "type": "adjective",
@@ -293,7 +306,8 @@
     "type": "expression",
     "word": "la bottiglia d'acqua",
     "surface": "bottiglia d'acqua",
-    "definition": "A bottle of water."
+    "definition": "A bottle of water.",
+    "anchor": true
    },
    {
     "type": "expression",
@@ -323,7 +337,8 @@
     "type": "expression",
     "word": "lo stomaco chiuso",
     "surface": "stomaco chiuso",
-    "definition": "A closed stomach; too upset to eat."
+    "definition": "A closed stomach; too upset to eat.",
+    "anchor": true
    },
    {
     "type": "adverb",
@@ -365,7 +380,8 @@
     "type": "expression",
     "word": "uno per te e uno per me",
     "surface": "Uno per te e uno per me",
-    "definition": "One for you and one for me."
+    "definition": "One for you and one for me.",
+    "anchor": true
    },
    {
     "type": "noun",
@@ -377,13 +393,15 @@
     "type": "noun",
     "word": "la barba",
     "surface": "barba",
-    "definition": "A beard; hair on a man's face."
+    "definition": "A beard; hair on a man's face.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "il vassoio",
     "surface": "vassoio",
-    "definition": "A tray; you carry plates on it."
+    "definition": "A tray; you carry plates on it.",
+    "anchor": true
    },
    {
     "type": "adverb",

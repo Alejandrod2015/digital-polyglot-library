@@ -5,13 +5,14 @@
   "title": "Trentacinque candeline",
   "arcType": null,
   "synopsis": "It is Alice's thirty-fifth birthday. Matteo keeps his promise and does not say a word about the pact, so Alice goes to get the old napkin.",
-  "text": "Oggi Alice compie trentacinque anni. Il sole tramonta sul mare. Sulla terrazza c'è una torta con le fragole, e Matteo accende le candeline una per una.\n\n“Tanti auguri, Alice! Esprimi un desiderio,” dice Matteo. Alice chiude gli occhi e soffia. “E questo è per te. Apri, dai,” dice lui. È un pacchetto con un nastro rosso. Dentro ci sono due orecchini che brillano. Alice arrossisce, emozionata. “Sono bellissimi. Grazie, Matteo,” dice Alice.\n\nMatteo non parla del patto. Lui mantiene la promessa. Ma il cuore di Alice batte forte. “Sei nervosa? Hai freddo? Vuoi il mio maglione?” chiede Matteo. “No, no. Sto bene. Davvero,” risponde lei.\n\n“Aspetta qui. Torno subito,” dice lei. Lei va in casa e apre il cassetto. Il vecchio tovagliolo è lì, piegato in quattro.\n\nAlice mette il tovagliolo sul tavolo, vicino alla torta. Le sue mani tremano, perché adesso non ha più una scusa. “Leggi, per favore. Ad alta voce,” dice Alice.",
+  "text": "Oggi Alice compie trentacinque anni. Il sole tramonta e la luce è rosa. C'è una torta con le fragole. Matteo accende le candeline una per una.\n\n“Tanti auguri, Alice! Esprimi un desiderio,” dice Matteo. Alice chiude gli occhi e soffia. “E questo è per te. Tieni,” dice lui. Mostra un pacchetto con un nastro rosso. Dentro ci sono due orecchini che brillano. Alice arrossisce, emozionata. “È il regalo più bello. Grazie, Matteo,” dice Alice.\n\nMatteo mantiene la promessa sul patto. Ma il cuore di Alice batte forte nel petto. “Sei nervosa? Tranquilla. Vuoi il mio maglione?” chiede Matteo, gentile. “No. Sto bene,” risponde lei.\n\n“Aspetta qui, Matteo. Torno subito,” dice lei, e si alza. Va in casa e apre il cassetto. Il tovagliolo è lì, piegato in quattro.\n\nAlice mette il tovagliolo sul tavolo, vicino alla torta. Le sue mani tremano: non ha più una scusa. “Leggi, per favore. Ad alta voce,” dice Alice.",
   "vocab": [
    {
     "type": "verb",
     "word": "tramontare",
     "surface": "tramonta",
-    "definition": "To set; the sun goes down in the evening."
+    "definition": "To set; the sun goes down in the evening.",
+    "anchor": true
    },
    {
     "type": "noun",
@@ -24,13 +25,15 @@
     "type": "expression",
     "word": "una per una",
     "surface": "una per una",
-    "definition": "One by one; one after the other."
+    "definition": "One by one; one after the other.",
+    "anchor": true
    },
    {
     "type": "verb",
     "word": "esprimere",
     "surface": "Esprimi",
-    "definition": "To express; here, to make a wish."
+    "definition": "To express; here, to make a wish.",
+    "anchor": true
    },
    {
     "type": "noun",
@@ -42,13 +45,15 @@
     "type": "expression",
     "word": "questo è per te",
     "surface": "questo è per te",
-    "definition": "This is for you; you say it with a gift."
+    "definition": "This is for you; you say it with a gift.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "il nastro",
     "surface": "nastro",
-    "definition": "A ribbon; a thin band of cloth on a present."
+    "definition": "A ribbon; a thin band of cloth on a present.",
+    "anchor": true
    },
    {
     "type": "noun",
@@ -85,13 +90,15 @@
     "type": "expression",
     "word": "andare in casa",
     "surface": "va in casa",
-    "definition": "To go inside the flat."
+    "definition": "To go inside the flat.",
+    "anchor": true
    },
    {
     "type": "expression",
     "word": "in quattro",
     "surface": "in quattro",
-    "definition": "In four; folded into four parts."
+    "definition": "In four; folded into four parts.",
+    "anchor": true
    },
    {
     "type": "noun",
@@ -106,16 +113,11 @@
     "definition": "To read words on paper."
    },
    {
-    "type": "adverb",
-    "word": "lì",
-    "surface": "lì",
-    "definition": "There; in that place."
-   },
-   {
     "type": "expression",
     "word": "vicino alla torta",
     "surface": "vicino alla torta",
-    "definition": "Next to the cake."
+    "definition": "Next to the cake.",
+    "anchor": true
    },
    {
     "type": "verb",
@@ -128,6 +130,12 @@
     "word": "emozionato",
     "surface": "emozionata",
     "definition": "Moved; full of strong happy feeling."
+   },
+   {
+    "type": "noun",
+    "word": "il maglione",
+    "surface": "maglione",
+    "definition": "A jumper; a warm wool top."
    }
   ]
  },
@@ -137,7 +145,7 @@
   "title": "Ti voglio bene, ma",
   "arcType": null,
   "synopsis": "Matteo reads the old pact out loud. This time Alice does not laugh, and she tells him the truth.",
-  "text": "Matteo apre il tovagliolo sul tavolo, davanti ad Alice. Il vento lo muove un po'. La carta è gialla e secca. Legge piano: “Se a trentacinque anni siamo soli, ci sposiamo.” Poi alza gli occhi.\n\n“Alice, io ho una promessa. Non parlo più del patto,” dice lui. “Lo so. Adesso parlo io,” risponde Alice. Lei trova il coraggio con un respiro profondo.\n\n“Per me non è uno scherzo. Io ti amo, Matteo. Da tanti anni. Sono sincera,” dice Alice.\n\nC'è silenzio. Lontano, i gabbiani volano sul mare. Matteo è pallido e guarda il tovagliolo a lungo.\n\n“Alice, io ti voglio bene. Tanto. Ma io non ti amo così. Mi dispiace,” dice Matteo piano.\n\nAlice piange, perché adesso sa la risposta. Lei singhiozza e Matteo le dà un fazzoletto. Non è uno scherzo: è la verità. Matteo non va via. Le accarezza i capelli e resta vicino a lei, fino a sera.",
+  "text": "Matteo apre il tovagliolo sul tavolo, davanti ad Alice. Il vento lo muove. La carta è gialla e secca. Legge ad alta voce: “Se a trentacinque anni siamo soli, ci sposiamo.” Poi alza gli occhi.\n\n“Alice, io ho una promessa. Non parlo più del patto,” dice lui. “Lo so. Adesso parlo io,” risponde Alice. Trova il coraggio con un respiro profondo.\n\n“Per me non è uno scherzo. Io ti amo, Matteo. Penso a te da tanti anni. Sono sincera,” dice Alice.\n\nC'è un silenzio strano. Lontano, i gabbiani volano sul mare. Matteo è pallido e guarda il tovagliolo a lungo.\n\n“Alice, io ti voglio bene. Ma io non ti amo così. Mi dispiace,” dice Matteo piano.\n\nAlice piange, perché adesso sa la risposta. Lei singhiozza e asciuga le lacrime con un fazzoletto. Non è una bugia: è la verità. Matteo non va via. Le accarezza i capelli e resta vicino a lei, fino a sera.",
   "vocab": [
    {
     "type": "adjective",
@@ -173,7 +181,8 @@
     "type": "expression",
     "word": "un respiro profondo",
     "surface": "respiro profondo",
-    "definition": "A deep breath; you take in a lot of air."
+    "definition": "A deep breath; you take in a lot of air.",
+    "anchor": true
    },
    {
     "type": "expression",
@@ -216,7 +225,8 @@
     "type": "verb",
     "word": "singhiozzare",
     "surface": "singhiozza",
-    "definition": "To sob; to cry with short loud breaths."
+    "definition": "To sob; to cry with short loud breaths.",
+    "anchor": true
    },
    {
     "type": "expression",
@@ -234,13 +244,15 @@
     "type": "expression",
     "word": "fino a sera",
     "surface": "fino a sera",
-    "definition": "Until the evening; until it gets dark."
+    "definition": "Until the evening; until it gets dark.",
+    "anchor": true
    },
    {
     "type": "expression",
     "word": "davanti ad Alice",
     "surface": "davanti ad Alice",
-    "definition": "In front of Alice."
+    "definition": "In front of Alice.",
+    "anchor": true
    },
    {
     "type": "verb",
@@ -258,7 +270,8 @@
     "type": "noun",
     "word": "il fazzoletto",
     "surface": "fazzoletto",
-    "definition": "A tissue or handkerchief to dry your eyes."
+    "definition": "A tissue or handkerchief to dry your eyes.",
+    "anchor": true
    }
   ]
  },
@@ -268,19 +281,21 @@
   "title": "Due piatti, come sempre",
   "arcType": null,
   "synopsis": "One week later Matteo climbs to the fifth floor with two plates and a focaccia, and stops in front of Alice's door.",
-  "text": "Una domenica dopo, Matteo sale al quinto piano con due piatti e una focaccia. Ha una camicia pulita e i capelli pettinati. Davanti alla porta di Alice si ferma. Il vento è leggero.\n\n“Pranziamo in terrazza? Come sempre? Io porto la focaccia,” chiede lui, timido. È difficile, ma lei sorride. “Sì. Ma prima devo fare una cosa,” risponde Alice.\n\nLei prende il vecchio tovagliolo. Lo strappa in pezzi piccoli e lo mette nel cestino. Le fa male, ma è giusto. “Adesso niente patti. Siamo amici, e basta,” dice Alice.\n\n“Amici e basta. Promesso. E domenica prossima il pesto lo faccio io,” risponde Matteo. “Il pesto? Senza mortaio?” chiede Alice, e ride.\n\nLontano suonano le campane. Nei due vasi di marmo il basilico cresce, verde e forte. Alice e Matteo mangiano la focaccia al sole, uno davanti all'altra. Matteo mastica piano e sente sollievo. Sul tavolo restano le briciole. Due piatti, come ogni domenica.",
+  "text": "Una domenica dopo, Matteo viene al quinto piano con due piatti e una focaccia. Ha una camicia pulita e i capelli pettinati. Si ferma davanti alla porta di Alice. Il vento è leggero.\n\n“Pranziamo in terrazza? Come sempre? Forse è presto?” chiede lui, timido. È difficile, ma lei sorride. “Sì. Ma prima devo fare una cosa,” risponde Alice.\n\nLei prende il vecchio tovagliolo. Lo strappa lentamente e lo mette nel cestino. Le fa male, ma è giusto. “Niente patti. Siamo amici, e basta. Per sempre,” dice Alice.\n\n“Amici e basta. Promesso. E domenica prossima il pesto lo faccio io,” risponde Matteo. “Senza mortaio?” chiede Alice, e ride. “Con coraggio e pazienza,” risponde lui.\n\nLontano suonano le campane. Nei due vasi di marmo la pianta è viva e cresce, verde. Alice e Matteo pranzano al sole, uno davanti all'altra. Matteo mastica piano e sente sollievo. Le briciole cadono sul tavolo. Due piatti bastano, come ogni domenica.",
   "vocab": [
    {
     "type": "noun",
     "word": "la camicia",
     "surface": "camicia",
-    "definition": "A shirt with buttons and a collar."
+    "definition": "A shirt with buttons and a collar.",
+    "anchor": true
    },
    {
     "type": "adjective",
     "word": "pettinato",
     "surface": "pettinati",
-    "definition": "Combed; hair made tidy with a comb."
+    "definition": "Combed; hair made tidy with a comb.",
+    "anchor": true
    },
    {
     "type": "expression",
@@ -328,7 +343,8 @@
     "type": "expression",
     "word": "domenica prossima",
     "surface": "domenica prossima",
-    "definition": "Next Sunday; the Sunday after this one."
+    "definition": "Next Sunday; the Sunday after this one.",
+    "anchor": true
    },
    {
     "type": "noun",
@@ -359,13 +375,15 @@
     "type": "expression",
     "word": "uno davanti all'altra",
     "surface": "uno davanti all'altra",
-    "definition": "Face to face; one in front of the other."
+    "definition": "Face to face; one in front of the other.",
+    "anchor": true
    },
    {
     "type": "expression",
     "word": "una domenica dopo",
     "surface": "Una domenica dopo",
-    "definition": "One Sunday later; a week after."
+    "definition": "One Sunday later; a week after.",
+    "anchor": true
    },
    {
     "type": "adjective",
@@ -377,7 +395,8 @@
     "type": "verb",
     "word": "masticare",
     "surface": "mastica",
-    "definition": "To chew food in your mouth."
+    "definition": "To chew food in your mouth.",
+    "anchor": true
    },
    {
     "type": "noun",
@@ -389,7 +408,8 @@
     "type": "noun",
     "word": "le briciole",
     "surface": "briciole",
-    "definition": "Crumbs; very small pieces of bread."
+    "definition": "Crumbs; very small pieces of bread.",
+    "anchor": true
    }
   ]
  }

@@ -5,7 +5,7 @@
   "title": "Scrivi tu, per favore",
   "arcType": null,
   "synopsis": "Matteo comes back from the ferry with a photo of Francesca on his phone. He wants to write to her, and he asks Alice for the words.",
-  "text": "Matteo torna dalla Sardegna e sale subito al quinto piano. In mano ha il telefono. Sulle scale c'è odore di focaccia. Sul telefono c'è Francesca, una biologa dell'Acquario di Genova.\n\nAlice apre la porta. Matteo mostra la foto e ride forte. “Lei è Francesca. Studia i delfini. Stasera devo scrivere un messaggio, ma sono un disastro,” dice Matteo.\n\nMatteo scrive con un dito: “Ciao. Sei carina. Pizza?” Alice guarda il telefono e ride. Ma dentro è triste, perché lui è felice per un'altra. Lei stringe le mani sul cardigan.\n\n“No, Matteo. Così no,” dice Alice. “Allora scrivi tu, per favore. Tu sei brava con le parole,” risponde lui. Alice scrive piano: “Il mare è più bello con te. Ci vediamo sabato?” Francesca risponde subito: sì. Matteo abbraccia Alice e corre giù per le scale. Lei resta sulla porta. Sono le sue parole, ma adesso vanno a Francesca.",
+  "text": "Matteo torna dalla Sardegna e sale subito al quinto piano. In mano ha il telefono. Sulle scale c'è odore di focaccia. Sul telefono c'è Francesca, una biologa dell'Acquario di Genova.\n\nAlice apre la porta. Matteo mostra la foto e ride, allegro. “Lei è Francesca. Studia i delfini. Stasera devo scrivere un messaggio, ma sono un disastro,” dice Matteo.\n\nMatteo scrive con un dito: “Ciao. Sei carina. Pizza?” Alice guarda il telefono e sorride appena. Ma dentro è triste, perché lui è felice per un'altra. Lei stringe le mani sul cardigan.\n\n“No, Matteo. Così no,” dice Alice. “Allora scrivi tu, per favore. Tu sei brava con le parole,” risponde lui. Alice scrive piano: “Il mare è più bello con te. Ci vediamo sabato?” Francesca risponde subito: sì. Matteo abbraccia Alice e va via di corsa. Lei resta sulla porta. Sono le sue parole, ma adesso vanno a Francesca.",
   "vocab": [
    {
     "type": "verb",
@@ -81,12 +81,6 @@
     "definition": "Happy; very glad inside."
    },
    {
-    "type": "conjunction",
-    "word": "perché",
-    "surface": "perché",
-    "definition": "Because; it gives the reason for something."
-   },
-   {
     "type": "adverb",
     "word": "così",
     "surface": "Così",
@@ -135,6 +129,12 @@
     "surface": "focaccia",
     "definition": "A flat Italian bread with oil, typical of Genoa.",
     "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "allegro",
+    "surface": "allegro",
+    "definition": "Cheerful; happy and full of life."
    }
   ]
  },
@@ -144,7 +144,7 @@
   "title": "Due spritz in terrazza",
   "arcType": null,
   "synopsis": "Alice lends Matteo her roof terrace for his first date. Francesca arrives early and meets Alice on the stairs.",
-  "text": "Sul tavolo della terrazza ci sono due bicchieri di spritz. Matteo non ha una terrazza e usa quella di Alice. Alice accende le candeline e poi deve sparire.\n\nMa Francesca arriva presto. Sulle scale incontra Alice, con il sacchetto della spazzatura in mano.\n\n“Ciao! Tu sei Alice, vero? Matteo parla sempre di te,” dice Francesca. Alice diventa rossa e nasconde il sacchetto dietro la schiena.\n\n“Sì, sono Alice. Io abito qui sopra,” risponde lei. “Grazie per la terrazza. Sei molto gentile. Vieni anche tu, dopo?” dice Francesca, e sorride.\n\nFrancesca è simpatica. Parla dei delfini e ride forte, come Matteo. Alice cerca un difetto in lei. Non lo trova. Poi Francesca chiede piano: “Tu e Matteo siete solo amici?”\n\nAlice guarda il sacchetto. “Certo. Solo amici. Buona serata,” dice. Poi scende le scale piano piano. Sopra, sulla sua terrazza, le candeline sono accese. La loro luce è per un'altra.",
+  "text": "Sul tavolo della terrazza ci sono due bicchieri di spritz. Matteo non ha una terrazza e usa quella di Alice. Alice accende le candeline e poi deve sparire.\n\nMa Francesca arriva presto. Sulle scale incontra Alice, con il sacchetto della spazzatura in mano.\n\n“Ciao! Tu sei Alice, vero? Matteo parla sempre di te,” dice Francesca. Alice diventa rossa e nasconde il sacchetto dietro la schiena. Si sente stupida.\n\n“Sì, sono Alice. Io abito qui sopra,” risponde lei. “Grazie per la terrazza. Sei molto gentile. Vieni anche tu, dopo?” dice Francesca, e sorride.\n\nFrancesca è simpatica. Racconta dei delfini e ride forte, come Matteo. Alice cerca un difetto in lei. Non lo trova. Poi Francesca chiede piano: “Tu e Matteo siete solo amici?”\n\nAlice guarda il sacchetto. “Certo. Solo amici. Buona serata,” dice. Poi scende le scale piano piano. Sopra, sulla sua terrazza, le candeline brillano. La loro luce è per un'altra.",
   "vocab": [
    {
     "type": "noun",
@@ -187,7 +187,8 @@
     "type": "expression",
     "word": "il sacchetto della spazzatura",
     "surface": "sacchetto della spazzatura",
-    "definition": "A rubbish bag; a bag for things you throw away."
+    "definition": "A rubbish bag; a bag for things you throw away.",
+    "anchor": true
    },
    {
     "type": "expression",
@@ -266,7 +267,8 @@
     "type": "expression",
     "word": "buona serata",
     "surface": "Buona serata",
-    "definition": "Have a nice evening; a way to say goodbye."
+    "definition": "Have a nice evening; a way to say goodbye.",
+    "anchor": true
    }
   ]
  },
@@ -276,7 +278,7 @@
   "title": "I fiori sbagliati",
   "arcType": null,
   "synopsis": "The date ends early. Matteo knocks on Alice's door with red roses and a strange reason from Francesca.",
-  "text": "Qualcuno bussa alla porta di Alice alle dieci. Alice apre: è Matteo, con tre rose rosse in mano. L'appuntamento è già finito.\n\n“Francesca va a casa presto. Dice che io parlo sempre di te. Tutta la sera,” dice Matteo. Lui guarda le rose e non capisce.\n\n“E tu? Tu di cosa parli?” chiede Alice. “Del traghetto, del mare e di te. Sei la mia migliore amica, no?” risponde Matteo. Alice non risponde e fissa le sue scarpe.\n\nAlice sente una piccola speranza, perché forse è una buona notizia. Ma Matteo è triste, e lei non vuole ridere. “Mi dispiace, Matteo. Davvero,” dice lei. Poi Matteo entra in casa. Nella stanza c'è silenzio.\n\nMatteo dà le rose ad Alice. “Sono per te. A me non servono più,” dice lui. Alice mette le rose in un vaso. Sono fiori per un'altra, ma adesso sono sul suo tavolo.",
+  "text": "Qualcuno bussa alla porta di Alice alle dieci. Alice apre: è Matteo, con tre rose rosse in mano. L'appuntamento è già finito.\n\n“Francesca va a casa presto. Dice che io parlo sempre di te. Tutta la sera,” dice Matteo. Lui guarda le rose e non capisce. È strano.\n\n“E tu? Di cosa parli?” chiede Alice. “Del traghetto, del mare e di te. Sei la mia migliore amica, no?” risponde Matteo. Alice non risponde e fissa le sue scarpe.\n\nAlice sente una piccola speranza, perché forse è una buona notizia. Ma Matteo è pallido e triste, e lei non vuole ridere. “Mi dispiace, Matteo. Davvero,” dice lei. Poi Matteo entra in casa. Nella stanza c'è silenzio.\n\nMatteo dà le rose ad Alice. “Sono per te. A me non servono più,” dice lui. Alice riempie un vaso d'acqua e mette le rose. Sono fiori per un'altra, ma adesso sono sul suo tavolo.",
   "vocab": [
    {
     "type": "verb",
@@ -306,7 +308,8 @@
     "type": "expression",
     "word": "tutta la sera",
     "surface": "Tutta la sera",
-    "definition": "All evening; for the whole evening."
+    "definition": "All evening; for the whole evening.",
+    "anchor": true
    },
    {
     "type": "verb",
@@ -366,13 +369,15 @@
     "type": "expression",
     "word": "alle dieci",
     "surface": "alle dieci",
-    "definition": "At ten o'clock in the evening or morning."
+    "definition": "At ten o'clock in the evening or morning.",
+    "anchor": true
    },
    {
     "type": "expression",
     "word": "rose rosse",
     "surface": "rose rosse",
-    "definition": "Red roses; flowers you give for love."
+    "definition": "Red roses; flowers you give for love.",
+    "anchor": true
    },
    {
     "type": "noun",
@@ -388,16 +393,16 @@
     "definition": "Then; after that, next."
    },
    {
-    "type": "determiner",
-    "word": "suo",
-    "surface": "suo",
-    "definition": "His or her; it belongs to that person."
-   },
-   {
     "type": "expression",
     "word": "c'è silenzio",
     "surface": "c'è silenzio",
     "definition": "It is quiet; there is no sound at all."
+   },
+   {
+    "type": "adjective",
+    "word": "strano",
+    "surface": "strano",
+    "definition": "Strange; not normal, a little odd."
    }
   ]
  }

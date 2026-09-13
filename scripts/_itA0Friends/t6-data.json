@@ -5,7 +5,7 @@
   "title": "Non è divertente",
   "arcType": null,
   "synopsis": "Alice invites a colleague to lunch on the roof terrace. Matteo wants to be funny and tells the story of the old pact.",
-  "text": "Due piatti non bastano: oggi sulla terrazza ci sono tre sedie. Valentina, una collega di Alice, arriva con una torta. È l'ospite. Alice apparecchia la tavola e il sole scalda la terrazza.\n\nMatteo racconta storie di mare e Valentina ride spesso. “Valentina, vuoi ancora un po' di vino?” chiede Alice. Lei è felice, perché il pranzo va bene.\n\nPoi Matteo alza il bicchiere per brindare. “Sai, Valentina? Alice e io abbiamo un patto. Se a trentacinque anni siamo soli, ci sposiamo!” dice lui, e ride forte.\n\nValentina ride. Alice no. Lei diventa bianca e posa la forchetta. Sente vergogna, perché Matteo scherza sul suo segreto davanti a un'altra. “Alice? Che cosa c'è?” chiede Matteo.\n\n“Non è divertente, Matteo. Tu parli troppo e non capisci niente,” dice Alice. Poi si alza ed esce. Sbatte la porta delle scale. Matteo resta con il bicchiere in mano.",
+  "text": "Due piatti non bastano: oggi ci sono tre sedie. Valentina, una collega di Alice, arriva con una torta. È l'ospite. Alice apparecchia la tavola e il sole scalda la terrazza.\n\nMatteo racconta storie di mare. Valentina è simpatica e ride spesso. “Valentina, vuoi ancora un po' di vino?” chiede Alice. Lei è contenta, perché il pranzo va bene.\n\nPoi Matteo alza il bicchiere pieno per brindare. “Un brindisi per noi! Sai, Valentina? Alice e io abbiamo un patto. Se a trentacinque anni siamo soli, ci sposiamo!” dice lui, e ride.\n\nValentina ride. Alice no. Lei diventa bianca e posa la forchetta. Sente vergogna, perché Matteo scherza sul suo segreto davanti a un'altra. “Alice? Che cosa c'è?” chiede Matteo.\n\n“Non è divertente, Matteo. Tu parli troppo e non capisci niente,” dice Alice, arrabbiata. Poi si alza ed esce. Sbatte la porta delle scale. Matteo resta con il bicchiere in mano.",
   "vocab": [
    {
     "type": "verb",
@@ -17,7 +17,8 @@
     "type": "noun",
     "word": "la collega",
     "surface": "collega",
-    "definition": "A colleague; a person you work with."
+    "definition": "A colleague; a person you work with.",
+    "anchor": true
    },
    {
     "type": "noun",
@@ -29,13 +30,15 @@
     "type": "noun",
     "word": "l'ospite",
     "surface": "ospite",
-    "definition": "A guest; a person you invite to your home."
+    "definition": "A guest; a person you invite to your home.",
+    "anchor": true
    },
    {
     "type": "verb",
     "word": "apparecchiare",
     "surface": "apparecchia",
-    "definition": "To set the table for a meal."
+    "definition": "To set the table for a meal.",
+    "anchor": true
    },
    {
     "type": "verb",
@@ -53,19 +56,22 @@
     "type": "expression",
     "word": "storie di mare",
     "surface": "storie di mare",
-    "definition": "Stories about the sea and sailors."
+    "definition": "Stories about the sea and sailors.",
+    "anchor": true
    },
    {
     "type": "expression",
     "word": "un po' di vino",
     "surface": "un po' di vino",
-    "definition": "A little wine; a small glass of wine."
+    "definition": "A little wine; a small glass of wine.",
+    "anchor": true
    },
    {
     "type": "verb",
     "word": "brindare",
     "surface": "brindare",
-    "definition": "To make a toast; to raise glasses together."
+    "definition": "To make a toast; to raise glasses together.",
+    "anchor": true
    },
    {
     "type": "number",
@@ -125,7 +131,8 @@
     "type": "noun",
     "word": "la tavola",
     "surface": "tavola",
-    "definition": "The table set for a meal."
+    "definition": "The table set for a meal.",
+    "anchor": true
    }
   ]
  },
@@ -135,7 +142,7 @@
   "title": "Domenica senza terrazza",
   "arcType": null,
   "synopsis": "A week passes and Alice avoids Matteo on the stairs. The terrace is empty at lunchtime, and Valentina comes to see her.",
-  "text": "È domenica, ma la terrazza è vuota. Per la prima volta da anni, Alice e Matteo non pranzano insieme. Da una settimana Alice scende le scale di corsa, per non vedere Matteo. In casa c'è silenzio. Il telefono è spento sul tavolo.\n\nQualcuno bussa. È Valentina, con i capelli neri lunghi e un sacchetto di pane. “Tu e Matteo parlate?” chiede Valentina. “No. Sulle scale io guardo per terra,” risponde Alice. Ha gli occhi gonfi e abbraccia un cuscino.\n\nValentina appoggia il pane e si siede vicino al davanzale. “Alice, lui non sa del patto. Per lui è un vecchio scherzo,” dice lei. Alice ascolta e si morde il labbro, perché Valentina ha ragione.\n\n“Sono arrabbiata con lui. Ma sono arrabbiata anche con me. Sono stupida,” dice Alice piano. “Non sei stupida. Scendi e chiedi scusa, con una focaccia. È un buon consiglio,” risponde Valentina.",
+  "text": "È domenica, ma la terrazza è vuota. Per la prima volta da anni, Alice e Matteo non pranzano insieme. Da una settimana Alice scende le scale di corsa, per non vedere Matteo. In casa c'è silenzio. Il telefono è spento sul tavolo.\n\nFuori il cielo è grigio. Poi arriva Valentina, con i capelli neri lunghi e un sacchetto di pane. “Tu e Matteo fate pace?” chiede Valentina. “No. Sulle scale io guardo per terra,” risponde Alice. Ha gli occhi gonfi e abbraccia un cuscino.\n\nValentina appoggia il pane e si siede accanto al davanzale. “Alice, lui non capisce. Non sa del patto. Per lui è un vecchio scherzo,” dice lei. Alice ascolta, sospira e si morde il labbro, perché Valentina ha ragione.\n\n“Sono arrabbiata con lui. Ma sono arrabbiata anche con me. Sono stupida,” dice Alice piano. “Non sei stupida. Scendi e chiedi scusa, con una focaccia. È un buon consiglio,” risponde Valentina.",
   "vocab": [
    {
     "type": "verb",
@@ -147,13 +154,15 @@
     "type": "expression",
     "word": "per la prima volta da anni",
     "surface": "Per la prima volta da anni",
-    "definition": "For the first time in years; it never happens."
+    "definition": "For the first time in years; it never happens.",
+    "anchor": true
    },
    {
     "type": "expression",
     "word": "da una settimana",
     "surface": "Da una settimana",
-    "definition": "For a week now; since seven days ago."
+    "definition": "For a week now; since seven days ago.",
+    "anchor": true
    },
    {
     "type": "expression",
@@ -177,7 +186,8 @@
     "type": "expression",
     "word": "il sacchetto di pane",
     "surface": "sacchetto di pane",
-    "definition": "A paper bag of bread."
+    "definition": "A paper bag of bread.",
+    "anchor": true
    },
    {
     "type": "expression",
@@ -214,7 +224,8 @@
     "type": "noun",
     "word": "il labbro",
     "surface": "labbro",
-    "definition": "A lip; one of the two parts of the mouth."
+    "definition": "A lip; one of the two parts of the mouth.",
+    "anchor": true
    },
    {
     "type": "expression",
@@ -266,13 +277,14 @@
   "title": "Focaccia sulle scale",
   "arcType": null,
   "synopsis": "Alice goes down to the second floor with a warm focaccia and knocks on Matteo's door. He opens it, but he does not smile.",
-  "text": "Alice scende al secondo piano con una focaccia calda. Davanti alla porta di Matteo trema un po'. Poi bussa due volte.\n\nMatteo apre e resta sulla soglia. Non sorride. Indossa una vecchia tuta e ha la barba lunga. Dietro di lui c'è disordine.\n\n“Scusa, Matteo. A pranzo sono cattiva con te. Mi dispiace davvero,” dice Alice. “Perché ti arrabbi così? Per un patto di quindici anni fa?” chiede lui.\n\nAlice apre la bocca, ma la verità resta dentro. “Sono stanca. Il lavoro, i turni di notte. Non è colpa tua,” risponde Alice. È una bugia piccola, ma pesa.\n\nLo stomaco di Matteo brontola. Lui annusa la focaccia e finalmente tende la mano. “Va bene. Pace. Ma io non parlo più del patto. Mai più. Promesso,” dice lui.\n\nSi siedono sulle scale e dividono la focaccia in due. La pace è vera, ma c'è una crepa, come nel mortaio di marmo.",
+  "text": "Alice scende al secondo piano con una focaccia calda. Davanti alla porta di Matteo trema un po'. Poi bussa due volte.\n\nMatteo apre e resta sulla soglia, pallido. Non sorride. Indossa una vecchia tuta e ha la barba lunga. Dietro di lui c'è disordine.\n\n“Scusa, Matteo. A pranzo sono cattiva con te. Mi dispiace davvero,” dice Alice. “Perché ti arrabbi così? Per un patto di quindici anni fa?” chiede lui.\n\nAlice apre la bocca. La verità, invece, resta dentro. “Sto bene. Sono stanca. Il lavoro, i turni di notte. Non è colpa tua,” risponde Alice. È una bugia piccola, ma pesa.\n\nLo stomaco di Matteo brontola. Lui annusa la focaccia. “Che profumo,” dice. Poi tende la mano. “Va bene. Pace. Ma io non parlo più del patto. Mai più. Promesso,” dice lui.\n\nSi siedono sulle scale e dividono la focaccia in due. La pace è vera. Ma c'è una crepa, come nel mortaio.",
   "vocab": [
    {
     "type": "expression",
     "word": "il secondo piano",
     "surface": "secondo piano",
-    "definition": "The second floor of a building."
+    "definition": "The second floor of a building.",
+    "anchor": true
    },
    {
     "type": "verb",
@@ -284,7 +296,8 @@
     "type": "expression",
     "word": "due volte",
     "surface": "due volte",
-    "definition": "Twice; two times, one after the other."
+    "definition": "Twice; two times, one after the other.",
+    "anchor": true
    },
    {
     "type": "noun",
@@ -297,13 +310,15 @@
     "type": "noun",
     "word": "la tuta",
     "surface": "tuta",
-    "definition": "A tracksuit; soft clothes for home or sport."
+    "definition": "A tracksuit; soft clothes for home or sport.",
+    "anchor": true
    },
    {
     "type": "noun",
     "word": "il disordine",
     "surface": "disordine",
-    "definition": "A mess; things everywhere, not in their place."
+    "definition": "A mess; things everywhere, not in their place.",
+    "anchor": true
    },
    {
     "type": "adjective",
@@ -315,7 +330,8 @@
     "type": "expression",
     "word": "quindici anni fa",
     "surface": "quindici anni fa",
-    "definition": "Fifteen years ago; a long time in the past."
+    "definition": "Fifteen years ago; a long time in the past.",
+    "anchor": true
    },
    {
     "type": "expression",
@@ -351,7 +367,8 @@
     "type": "verb",
     "word": "brontolare",
     "surface": "brontola",
-    "definition": "To rumble; here his stomach makes a noise."
+    "definition": "To rumble; here his stomach makes a noise.",
+    "anchor": true
    },
    {
     "type": "verb",
@@ -387,7 +404,8 @@
     "type": "noun",
     "word": "la crepa",
     "surface": "crepa",
-    "definition": "A crack; a thin line where something is broken."
+    "definition": "A crack; a thin line where something is broken.",
+    "anchor": true
    }
   ]
  }

@@ -5,13 +5,14 @@
   "title": "Una torta per dodici",
   "arcType": null,
   "synopsis": "Alice plans a surprise party on the roof terrace for Matteo's thirty-fifth birthday. The cake is for twelve, but the guests do not come.",
-  "text": "Alice, un'infermiera di Genova, porta una torta in terrazza. È una torta per dodici persone. Oggi Matteo compie trentacinque anni.\n\nMatteo è un marinaio e il suo migliore amico. Lavora sul traghetto e arriva alle otto. Alice mette dodici piatti sul tavolo.\n\nIl telefono suona. Un amico non viene. Poi un altro, e poi tutti. “Anche tu? Va bene. Ciao,” dice Alice al telefono. Lei è triste, perché la festa è finita. Stringe forte il telefono.\n\nAlle otto Matteo apre la porta. Vede i piatti vuoti. “Una festa? Per me? E gli altri dove sono?” chiede Matteo.\n\nAlice diventa rossa. “Sì, è per te. Ma gli amici non vengono. Mi dispiace tanto, davvero,” risponde lei.\n\nMatteo prende due forchette e si siede. “Dodici pezzi per due? Per me va benissimo. Ho fame!” dice lui. “Allora tanti auguri,” dice Alice, e finalmente ride. Il vento è forte, ma le candeline restano accese.",
+  "text": "Alice, un'infermiera di Genova, porta una torta in terrazza. È una torta dolce, per dodici persone. Oggi Matteo compie trentacinque anni.\n\nMatteo è un marinaio e il suo migliore amico. Lavora sul traghetto e arriva alle otto. Alice mette dodici piatti sul tavolo.\n\nIl telefono suona. Un amico non viene. Poi un altro, e poi tutti. “Anche tu? Va bene. Ciao,” dice Alice al telefono. Lei è triste, perché la festa è finita. Stringe forte il telefono.\n\nAlle otto Matteo apre la porta. Fissa i piatti vuoti. “Una festa? Per me? E gli altri dove sono?” chiede Matteo.\n\nAlice diventa rossa. “Sì, è per te. Ma gli amici non vengono. Mi dispiace tanto, davvero,” risponde lei.\n\nMatteo prende due forchette e si siede. “Dodici pezzi per due? Per me va benissimo. Ho fame!” dice lui. “Allora tanti auguri. E un desiderio!” dice Alice, e finalmente ride. Il vento è leggero e le candeline restano accese.",
   "vocab": [
    {
     "type": "noun",
     "word": "l'infermiera",
     "surface": "infermiera",
-    "definition": "A nurse; she works with sick people."
+    "definition": "A nurse; she works with sick people.",
+    "anchor": true
    },
    {
     "type": "adverb",
@@ -29,7 +30,8 @@
     "type": "expression",
     "word": "compiere gli anni",
     "surface": "compie trentacinque anni",
-    "definition": "To have a birthday; here he turns thirty-five."
+    "definition": "To have a birthday; here he turns thirty-five.",
+    "anchor": true
    },
    {
     "type": "expression",
@@ -131,7 +133,8 @@
     "type": "noun",
     "word": "la candelina",
     "surface": "candeline",
-    "definition": "A small birthday candle on a cake."
+    "definition": "A small birthday candle on a cake.",
+    "anchor": true
    },
    {
     "type": "adjective",
@@ -147,7 +150,7 @@
   "title": "È solo uno scherzo",
   "arcType": null,
   "synopsis": "After the cake, Matteo takes an old paper napkin from his wallet. On it is a pact from university, and he reads it out with a laugh.",
-  "text": "Sulla terrazza restano dieci pezzi di torta. Matteo spegne le candeline con un soffio. Poi apre il portafoglio. Dentro c'è un vecchio tovagliolo di carta.\n\nIl tovagliolo è di un bar dell'università. Sopra ci sono due firme. Matteo legge ad alta voce e ride. “Se a trentacinque anni siamo soli, ci sposiamo. Firmato: Alice e Matteo.”\n\nIl cuore di Alice batte forte. Per lei non è uno scherzo. Lei nasconde la faccia dietro il bicchiere. “Io ho trentacinque anni. Tu quasi. E siamo soli, no?” dice Matteo.\n\nAlice guarda il tovagliolo e poi guarda lui. “È solo uno scherzo, Matteo,” dice lei. Poi ride troppo forte. “Certo. Uno scherzo,” risponde Matteo.\n\nMatteo piega il tovagliolo. Poi lo dà ad Alice. “Lo tieni tu? Io perdo sempre tutto,” dice lui. Alice mette il tovagliolo nella tasca del cardigan giallo. Adesso la tasca pesa.",
+  "text": "Sulla terrazza restano dieci pezzi di torta. Matteo spegne le candeline con un soffio. Poi apre il portafoglio. Dentro c'è un vecchio tovagliolo di carta.\n\nIl tovagliolo è di un bar dell'università. La carta è gialla e sporca. Sopra ci sono due firme. Matteo legge ad alta voce e ride. “Se a trentacinque anni siamo soli, ci sposiamo. Firmato: Alice e Matteo.”\n\nIl cuore di Alice batte forte. Per lei non è uno scherzo. Lei nasconde la faccia dietro il bicchiere. “Io ho trentacinque anni. Tu quasi. E siamo soli, no?” dice Matteo.\n\nAlice guarda il tovagliolo e poi guarda lui. “È solo uno scherzo, Matteo,” dice lei. Poi ride troppo forte. “Certo. Uno scherzo,” risponde Matteo.\n\nMatteo piega il tovagliolo. Poi lo dà ad Alice. “Lo tieni tu? Io perdo sempre tutto,” dice lui. Alice mette il tovagliolo nella tasca del cardigan giallo. Adesso la tasca pesa.",
   "vocab": [
    {
     "type": "verb",
@@ -165,7 +168,8 @@
     "type": "noun",
     "word": "il soffio",
     "surface": "soffio",
-    "definition": "A short puff of air from your mouth."
+    "definition": "A short puff of air from your mouth.",
+    "anchor": true
    },
    {
     "type": "adjective",
@@ -243,7 +247,8 @@
     "type": "verb",
     "word": "piegare",
     "surface": "piega",
-    "definition": "To fold paper or cloth in two."
+    "definition": "To fold paper or cloth in two.",
+    "anchor": true
    },
    {
     "type": "verb",
@@ -277,7 +282,7 @@
   "title": "Il traghetto delle sei",
   "arcType": null,
   "synopsis": "Early the next morning Matteo leaves for a week on the ferry. Alice runs down the stairs to tell him the truth before he goes.",
-  "text": "Le scale del palazzo sono buie e fredde. Alice scende piano, in pigiama. Nella tasca ha il tovagliolo del patto.\n\nMatteo parte con il traghetto delle sei. Va in Sardegna per una settimana. Lui aspetta al secondo piano, con lo zaino.\n\n“Alice? Perché sei già sveglia? Sono le sei meno dieci,” chiede Matteo. Lei non risponde subito.\n\nAlice ha paura, perché non vuole perdere il suo amico. Lei stringe il tovagliolo nella tasca. “Matteo, aspetta un momento. Io devo dire una cosa. Una cosa importante,” dice lei.\n\nGiù nel vicolo un clacson suona due volte. “Il taxi! Scusa, sono in ritardo. Parliamo domenica, va bene?” dice Matteo. Lui bacia Alice sulla guancia. Poi corre giù per le scale.\n\n“Buon viaggio, Matteo. Ci vediamo domenica,” risponde Alice. Ma lui non sente più. Alice torna al quinto piano. Mette il tovagliolo in un cassetto. Poi chiude il cassetto, piano piano.",
+  "text": "Le scale del palazzo sono buie e fredde. Alice scende piano, in pigiama. Nella tasca ha il tovagliolo del patto.\n\nMatteo parte con il traghetto delle sei. Va in Sardegna per una settimana. Lui aspetta al secondo piano, stanco, con lo zaino.\n\n“Alice? Perché sei già sveglia? Sono le sei meno dieci,” chiede Matteo. Lei non risponde subito.\n\nAlice ha paura, perché non vuole perdere il suo amico. Lei stringe il tovagliolo nella tasca. “Matteo, aspetta un momento. Io devo dire una cosa. Una cosa difficile,” dice lei.\n\nGiù nel vicolo un clacson suona due volte. “Il taxi! Scusa, sono in ritardo. Parliamo domenica, va bene?” dice Matteo. Lui bacia Alice sulla guancia. Poi corre giù per le scale.\n\n“Buon viaggio, Matteo. Ci vediamo domenica,” risponde Alice. Ma lui non sente più. Alice torna al quinto piano. Ha sonno. Mette il tovagliolo in un cassetto. Poi chiude il cassetto, piano piano.",
   "vocab": [
    {
     "type": "adjective",
@@ -337,7 +342,8 @@
     "type": "expression",
     "word": "meno dieci",
     "surface": "meno dieci",
-    "definition": "Ten to; ten minutes before the hour."
+    "definition": "Ten to; ten minutes before the hour.",
+    "anchor": true
    },
    {
     "type": "expression",
@@ -385,7 +391,8 @@
     "type": "expression",
     "word": "buon viaggio",
     "surface": "Buon viaggio",
-    "definition": "Have a good trip; you say it to someone leaving."
+    "definition": "Have a good trip; you say it to someone leaving.",
+    "anchor": true
    },
    {
     "type": "verb",

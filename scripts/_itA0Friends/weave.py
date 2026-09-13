@@ -1,0 +1,83 @@
+"""Pasada de tejido del Friends IT A0: reusa en la prosa palabras de contenido
+ya ensenadas, cambia las plazas gramaticales por contenido y marca ancladas las
+piezas de escena. Cada cambio es (tema, slot, viejo, nuevo); falla si no casa."""
+import json, re, sys
+E = {
+(1,0):[("È una torta per dodici persone.","È una torta dolce, per dodici persone."),
+       ("Vede i piatti vuoti.","Fissa i piatti vuoti."),
+       ("Il vento è forte, ma le candeline restano accese.","Il vento è leggero e le candeline restano accese.")],
+(1,1):[("Il tovagliolo è di un bar dell'università.","Il tovagliolo è di un bar dell'università. La carta è gialla e sporca."),
+       ("Poi ride troppo forte.","Poi ride troppo forte, pallido in faccia.") ],
+(1,2):[("Lui aspetta al secondo piano, con lo zaino.","Lui aspetta al secondo piano, stanco, con lo zaino."),
+       ("Una cosa importante,","Una cosa difficile,"),
+       ("Alice torna al quinto piano. Mette il tovagliolo in un cassetto.","Alice torna al quinto piano. Ha sonno. Mette il tovagliolo in un cassetto.")],
+(2,0):[("Matteo mostra la foto e ride forte.","Matteo mostra la foto e ride forte, emozionato."),
+       ("Alice guarda il telefono e ride.","Alice guarda il telefono e sorride appena."),
+       ("Matteo abbraccia Alice e corre giù per le scale. Lei resta sulla porta.","Matteo abbraccia Alice e va via di corsa. Lei resta sulla porta.")],
+(2,1):[("Parla dei delfini e ride forte, come Matteo.","Racconta dei delfini e ride forte, come Matteo."),
+       ("Alice diventa rossa e nasconde il sacchetto dietro la schiena.","Alice diventa rossa e nasconde il sacchetto dietro la schiena. Si sente stupida."),
+       ("le candeline sono accese. La loro luce è per un'altra.","le candeline brillano. La loro luce è per un'altra.")],
+(2,2):[("Ma Matteo è triste, e lei non vuole ridere.","Ma Matteo è pallido e triste, e lei non vuole ridere."),
+       ("Alice mette le rose in un vaso.","Alice riempie un vaso d'acqua e mette le rose."),
+       ("“E tu? Tu di cosa parli?” chiede Alice.","“E tu? Che cosa c'è di strano?” chiede Alice.")],
+(3,0):[("Lui mangia la focaccia e non sente.","Lui mangia la focaccia con appetito e non sente."),
+       ("Riccardo stringe la mano di Alice.","Riccardo tende la mano ad Alice.")],
+(3,1):[("Per lui è solo una maglia.","Per lui non importa."),
+       ("Alice guarda la televisione e quasi non respira.","Alice conta i minuti e quasi non respira.")],
+(3,2):[("“Riccardo, no! Quella maglia è importante per me,” dice Alice.","“Riccardo, no! La maglia è importante per me,” dice Alice. Lei piange quasi."),
+       ("Ma prima metti la mia sciarpa della Samp.","Ma prima metti la sciarpa della Samp."),
+       ("Riccardo fa la foto e ride.","Riccardo fa la foto e scherza. Alice sente vergogna."),
+       ("“Questa foto va nel gruppo del palazzo. Per sempre,”","“La foto va nel gruppo del palazzo. Per sempre. È divertente,”"),
+       ("Tiene la vecchia maglia, bagnata e sporca, contro il cuore.","Tiene la vecchia maglia, bagnata e sporca, stretta al cuore."),
+       ("Lui pulisce il vetro con una maglia rossa e blu.","Lui pulisce e strofina il vetro con una maglia rossa e blu.")],
+(4,0):[("Lei torna dall'ospedale, già bagnata.","Lei torna dall'ospedale, già bagnata. Ha freddo."),
+       ("Il vento soffia forte.","Il vento soffia forte e muove la pergola.")],
+(4,1):[("Alice guarda la piccola luce.","Alice alza gli occhi verso la piccola luce e trema."),
+       ("Io sono un'architetta. Questo palazzo è vecchio, ma è forte,","Io sono un'architetta. L'ascensore è bloccato, ma il palazzo è forte,"),
+       ("È la prima volta che dice queste parole ad alta voce.","È la prima volta. Lo dice ad alta voce, sincera."),
+       ("Tu lo dici a lui quando vuoi. Oppure mai,” dice Federica.","Tu lo dici a lui un giorno. Con coraggio,” sussurra Federica.")],
+(4,2):[("Sulla terrazza non c'è più niente: niente pergola, niente sedie.","Sulla terrazza non c'è più la pergola. Ci sono solo fango e foglie."),
+       ("Matteo pulisce il pavimento.","Matteo pulisce il pavimento con la scopa."),
+       ("Per un'ora nessuno parla.","Alice raccoglie le foglie. Per un'ora non parlano."),
+       ("chiede Alice, e sorride.","chiede Alice, e sorride appena."),
+       ("“Abbiamo solo una pianta,” dice Alice.","“C'è solo una pianta, ma è verde,” dice Alice."),
+       ("Ma lei guarda il mare e non dice niente.","Ma lei guarda il mare e non dice nulla.")],
+(5,0):[("Matteo scrive ad Alice: il traghetto è in ritardo, arrivo alle due.","Matteo manda un messaggio ad Alice: sono in ritardo, arrivo alle due."),
+       ("Oggi Alice vuole fare il pesto per lui.","Ogni domenica Matteo fa il pesto. Oggi Alice vuole fare il pesto per lui."),
+       ("dice Lorenzo, e ride.","dice Lorenzo, e scherza."),
+       ("Lorenzo guarda Alice.","Lorenzo guarda Alice. Lei è sincera.")],
+(5,1):[("Il mortaio pesa molto.","Il mortaio è bianco e pesa molto."),
+       ("Lui taglia il formaggio.","Lui taglia il formaggio e annusa il basilico."),
+       ("Alice assaggia e sorride, felice.","Alice assaggia e sorride, contenta.")],
+(5,2):[("“Mi dispiace. È il mortaio della tua famiglia,” dice Alice piano.","“Mi dispiace. È colpa mia,” dice Alice piano."),
+       ("Poi porta i due pezzi su un vassoio, accanto ai piatti.","Poi posa i due pezzi su un vassoio, accanto ai piatti."),
+       ("Matteo riempie di terra i due pezzi di marmo.","Matteo riempie di terra i due pezzi di marmo. Come sempre, non si arrabbia.")],
+(6,0):[("Lei è felice, perché il pranzo va bene.","Lei è contenta, perché il pranzo è buono e va bene."),
+       ("Valentina, una collega di Alice, arriva con una torta.","Valentina, una collega di Alice, arriva con una torta. Lavora con lei in ospedale."),
+       ("Poi Matteo alza il bicchiere per brindare.","Poi Matteo alza il bicchiere pieno per brindare.")],
+(6,1):[("“Tu e Matteo parlate?” chiede Valentina.","“Tu e Matteo fate pace?” chiede Valentina."),
+       ("“Non sei stupida. Scendi e chiedi scusa, con una focaccia. È un buon consiglio,”","“Non sei stupida. Scendi e chiedi scusa, con una focaccia. Coraggio. È giusto,”"),
+       ("Alice ascolta e si morde il labbro,","Alice ascolta, sospira e si morde il labbro,")],
+(6,2):[("Matteo apre e resta sulla soglia. Non sorride.","Matteo apre e resta sulla soglia, pallido. Non sorride."),
+       ("“Sono stanca. Il lavoro, i turni di notte. Non è colpa tua,”","“Sto bene. Sono solo stanca. Il lavoro, i turni di notte. Non è colpa tua,”"),
+       ("Lui annusa la focaccia e finalmente tende la mano.","Lui annusa la focaccia. “Che profumo,” dice. Poi tende la mano.")],
+(7,0):[("Il vecchio tovagliolo è lì, piegato in quattro.","Il vecchio tovagliolo è ancora nel cassetto, piegato in quattro."),
+       ("“Sei nervosa? Hai freddo? Vuoi il mio maglione?”","“Sei nervosa? Tranquilla. Vuoi il mio maglione?”"),
+       ("Le sue mani tremano, perché adesso non ha più una scusa.","Le sue mani tremano, perché adesso non ha più una scusa. Ha paura.")],
+(7,1):[("Legge piano:","Legge ad alta voce:"),
+       ("Non è uno scherzo: è la verità.","Non è una bugia: è la verità."),
+       ("“Per me non è uno scherzo. Io ti amo, Matteo. Da tanti anni. Sono sincera,” dice Alice.","“Per me non è uno scherzo. Io ti amo, Matteo. Penso a te da tanti anni. Sono sincera,” dice Alice.")],
+(7,2):[("Lo strappa in pezzi piccoli e lo mette nel cestino.","Lo strappa lentamente in pezzi piccoli e lo mette nel cestino."),
+       ("Alice e Matteo mangiano la focaccia al sole,","Alice e Matteo pranzano al sole,"),
+       ("Sul tavolo restano le briciole.","Le briciole cadono sul tavolo."),
+       ("“Adesso niente patti. Siamo amici, e basta,”","“Adesso niente patti. Siamo amici, e basta. Per sempre,”")],
+}
+for (t, sl), ch in E.items():
+    p = f"scripts/_itA0Friends/t{t}-data.json"; d = json.load(open(p))
+    s = d[sl]
+    for a, b in ch:
+        if a not in s["text"]:
+            sys.exit(f"NO CASA {t}.{sl+1}: {a}")
+        s["text"] = s["text"].replace(a, b, 1)
+    json.dump(d, open(p, "w"), ensure_ascii=False, indent=1)
+print("tejido aplicado")
