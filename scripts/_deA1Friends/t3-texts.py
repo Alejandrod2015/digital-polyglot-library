@@ -12,7 +12,7 @@ s1=["Ein Hundebett, eine Decke und ein Sack Futter: Florian bringt am Freitagabe
 "Die Hundenase ist nass und warm. Nach einer Stunde streichelt Julia zum ersten Mal das weiche Fell.",
 "Am Samstagmorgen geht Julia allein mit ihm in den Park. Plötzlich sieht der Hund eine Katze und rennt schnell los. Die Leine rutscht aus ihrer Hand."]
 s2=["Zwei Minuten später ist der Hund weg. Julia ruft laut, aber im Park hört sie nur Vögel. Mit zitternden Fingern schreibt sie in den Chat vom Lauftreff.",
-"“Der Hund ist weggelaufen! Bitte, ich brauche Hilfe!” Svenja und Moritz sind nach zehn Minuten da. Svenja kennt den Park genau. “Keine Panik. Hunde laufen oft zum Wasser. Wir suchen am Ufer”, sagt Svenja.",
+"“Der Hund ist weggelaufen! Bitte, ich brauche Hilfe!” Svenja und Moritz sind nach zehn Minuten da. Svenja kennt den Park genau. “Keine Panik. Hunde laufen oft zum Wasser. Wir suchen am Ufer”, erklärt Svenja.",
 "Julia sucht zwischen den Bäumen.",
 "Dann hört Julia ein Bellen. “Da ist er!”, ruft sie. Der Hund steht unter einem Baum. Oben auf einem Ast sitzt die Katze und schaut ganz ruhig nach unten.",
 "Julia geht langsam zu ihm. Ihr Herz schlägt laut, aber ihre Stimme ist ruhig. “Komm, mein Großer. Wir gehen nach Hause”, sagt sie leise. Der Hund ist müde und leckt ihre Hand.",

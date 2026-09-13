@@ -19,7 +19,7 @@ s2=["Der Tag ist sonnig und warm, und Julias neues Kleid ist dunkelblau. Auf ein
 "Moritz trägt einen Anzug und eine schiefe Krawatte. “Ein Rotwein für dich. Prost!”, sagt er. Dann schaukelt das Schiff wild im starken Wind, und der Wein landet auf Julias Kleid.",
 "“Oh nein, das tut mir so leid!”, ruft Moritz. Julia starrt auf den roten Fleck. “Das Kleid, die Jacke, und jetzt das”, flüstert sie.",
 "Theresa kommt sofort mit kaltem Wasser. “Keine Angst, das ist kein Problem. Ich nähe dir eine Blume darüber”, sagt sie. Aus ihrer Handtasche holt sie Nadel, Faden und ein Stück Stoff.",
-"Zehn Minuten später hat das Kleid eine kleine blaue Blume. “Du hast das schönste Kleid auf dem Schiff”, lacht Svenja fröhlich. Julia ist glücklich. Sie tanzt den ganzen Abend mit Moritz, und die Blume hält. “Danke, Theresa!”, ruft Julia."]
+"Zehn Minuten später hat das Kleid eine kleine blaue Blume. “Du hast das schönste Kleid auf dem Schiff”, strahlt Svenja fröhlich. Julia ist glücklich. Sie tanzt den ganzen Abend mit Moritz, und die Blume hält. “Danke, Theresa!”, ruft Julia."]
 out=[{"topic":T,"slotIndex":i,"title":ti,"arcType":ar,"synopsis":"","text":"\n\n".join(tx),"vocab":[]} for i,(ti,tx,ar) in enumerate([("Nichts zum Anziehen",s0,"reframe-turn"),("Die Jacke aus Rostock",s1,"recurring-character-callback"),("Ein Fleck auf dem Schiff",s2,"harmonic-close")])]
 out[0]["vocab"]=[
 V("noun","der Flohmarkt","Flohmarkt","A flea market; people sell old things there at small tables.",True),

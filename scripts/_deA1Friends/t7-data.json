@@ -1,0 +1,404 @@
+[
+ {
+  "topic": "quarrels-and-making-up",
+  "slotIndex": 0,
+  "title": "Alle wissen es",
+  "arcType": "reframe-turn",
+  "synopsis": "At the first run after a hard week everyone is very kind to Julia. Moritz brings his sister Carolin, a midwife. Julia soon understands that Moritz has told the whole group about her homesickness. She is angry, tells Moritz it was rude and stupid, and runs home alone.",
+  "text": "Ihr erster Lauftreff nach der schweren Woche ist komisch. Der Himmel ist grau und voller Wolken, und am Main ist es windig und kalt. Julia, die Physiotherapeutin aus Rostock, wartet am Ufer. Moritz ist Straßenbahnfahrer und hat heute frei. Er bringt Carolin mit. Carolin ist seine Schwester und arbeitet als Hebamme in einer Klinik.\n\nAlle sind pünktlich, höflich und plötzlich sehr lieb zu Julia. “Heimweh ist ganz normal”, meint Theresa. “Wir sind doch alle für dich da”, meint auch Florian.\n\nDa versteht Julia alles. Nur Moritz weiß von ihrem Geheimnis. Sie wird rot, aber diesmal nicht vor Scham: Sie ist wütend.\n\n“Du hast es allen erzählt, stimmt's? Die Nachricht war nur für dich! Das war unhöflich und dumm”, ruft Julia.\n\n“Ich wollte dir nur helfen, ehrlich. Ich hatte Angst um dich”, antwortet Moritz. Aber Julia will unbedingt keinen Streit vor der Gruppe. Sie entscheidet schnell und läuft allein nach Hause, links am Ufer entlang.",
+  "vocab": [
+   {
+    "type": "adjective",
+    "word": "grau",
+    "surface": "grau",
+    "definition": "Grey; the colour of clouds on a day with no sun."
+   },
+   {
+    "type": "noun",
+    "word": "die Wolken",
+    "surface": "Wolken",
+    "definition": "Clouds; white or grey shapes in the sky that bring rain."
+   },
+   {
+    "type": "adjective",
+    "word": "windig",
+    "surface": "windig",
+    "definition": "Windy; there is a lot of wind and the air moves fast."
+   },
+   {
+    "type": "adjective",
+    "word": "frei",
+    "surface": "frei",
+    "definition": "Free; not at work, with a day off."
+   },
+   {
+    "type": "noun",
+    "word": "die Hebamme",
+    "surface": "Hebamme",
+    "definition": "A midwife; a woman whose job is to help mothers when babies come.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Klinik",
+    "surface": "Klinik",
+    "definition": "A clinic or hospital; a place where sick people get care.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "pünktlich",
+    "surface": "pünktlich",
+    "definition": "On time; not late, at exactly the right time."
+   },
+   {
+    "type": "adjective",
+    "word": "höflich",
+    "surface": "höflich",
+    "definition": "Polite; with good manners, kind and careful with others."
+   },
+   {
+    "type": "verb",
+    "word": "meinen",
+    "surface": "meint",
+    "definition": "To say or think; to give your opinion about something."
+   },
+   {
+    "type": "verb",
+    "word": "wissen",
+    "surface": "weiß",
+    "definition": "To know; to have the facts about something in your head."
+   },
+   {
+    "type": "noun",
+    "word": "das Geheimnis",
+    "surface": "Geheimnis",
+    "definition": "A secret; something you tell only one person and nobody else.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Scham",
+    "surface": "Scham",
+    "definition": "Shame; the bad feeling when you think you did something wrong.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "wütend",
+    "surface": "wütend",
+    "definition": "Angry; very cross because someone did something bad to you."
+   },
+   {
+    "type": "verb",
+    "word": "stimmen",
+    "surface": "stimmt",
+    "definition": "To be true; you use it to ask if something is right."
+   },
+   {
+    "type": "adjective",
+    "word": "unhöflich",
+    "surface": "unhöflich",
+    "definition": "Rude; not polite, not kind to other people."
+   },
+   {
+    "type": "adjective",
+    "word": "dumm",
+    "surface": "dumm",
+    "definition": "Stupid; not clever, not a good idea at all."
+   },
+   {
+    "type": "adverb",
+    "word": "unbedingt",
+    "surface": "unbedingt",
+    "definition": "Really; you want it very much and it must be so."
+   },
+   {
+    "type": "noun",
+    "word": "der Streit",
+    "surface": "Streit",
+    "definition": "A fight or argument; two people are angry and say hard words.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "entscheiden",
+    "surface": "entscheidet",
+    "definition": "To decide; to choose what you will do."
+   },
+   {
+    "type": "adverb",
+    "word": "links",
+    "surface": "links",
+    "definition": "On the left; on the left side, not the right."
+   }
+  ]
+ },
+ {
+  "topic": "quarrels-and-making-up",
+  "slotIndex": 1,
+  "title": "Kuchen von Carolin",
+  "arcType": "recurring-character-callback",
+  "synopsis": "For two days Julia does not open the door for Moritz, and she tells the group she is ill. Then Carolin comes with an apple cake. She tells Julia that Moritz was alone for months when his best friend moved away. He was afraid to lose Julia, too.",
+  "text": "Moritz klopft zweimal am Tag, aber Julia öffnet nicht. Am Dienstag schreibt sie in den Chat vom Lauftreff: Sie ist krank. Das ist eine Ausrede, und Julia weiß es.\n\nAm Mittwochabend klingelt es. Vor der Tür steht nicht Moritz, sondern Carolin, mit einem Apfelkuchen. “Darf ich reinkommen? Ich will nicht streiten”, sagt sie vorsichtig.\n\nDer Kuchen ist noch warm. Sie teilen ihn am Küchentisch. “Mein Bruder weint selten”, erzählt Carolin. “Aber letztes Jahr ist sein bester Freund nach Berlin umgezogen. Moritz war monatelang allein.”\n\nBald ist der Teller leer.\n\nJulia sagt lange nichts. “Er hat Angst, dass du Frankfurt verlässt. Deshalb hat er die Gruppe um Hilfe gebeten. Das war dumm, aber nicht böse. Du bist doch klug”, erklärt Carolin. Julia und Moritz sind sich ziemlich ähnlich.\n\nNach dem Besuch sitzt Julia lange in der Küche. Ihr Ärger ist kleiner geworden. Sie will Moritz nicht verlieren. Vielleicht gibt es eine Lösung.",
+  "vocab": [
+   {
+    "type": "adverb",
+    "word": "zweimal",
+    "surface": "zweimal",
+    "definition": "Two times; once and then one more time."
+   },
+   {
+    "type": "adjective",
+    "word": "krank",
+    "surface": "krank",
+    "definition": "Ill; not healthy, your body does not feel well."
+   },
+   {
+    "type": "noun",
+    "word": "die Ausrede",
+    "surface": "Ausrede",
+    "definition": "An excuse; a reason you give that is not the real one.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "der Mittwochabend",
+    "surface": "Mittwochabend",
+    "definition": "The evening of a Wednesday, in the middle of the week.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "der Apfelkuchen",
+    "surface": "Apfelkuchen",
+    "definition": "Apple cake; a sweet cake made with fresh apples.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "reinkommen",
+    "surface": "reinkommen",
+    "definition": "To come in; to go into a room or a flat."
+   },
+   {
+    "type": "verb",
+    "word": "streiten",
+    "surface": "streiten",
+    "definition": "To argue; to have a fight with angry words."
+   },
+   {
+    "type": "verb",
+    "word": "teilen",
+    "surface": "teilen",
+    "definition": "To share; to give a part of something to another person."
+   },
+   {
+    "type": "noun",
+    "word": "der Bruder",
+    "surface": "Bruder",
+    "definition": "A brother; a boy or man with the same parents as you."
+   },
+   {
+    "type": "noun",
+    "word": "der Küchentisch",
+    "surface": "Küchentisch",
+    "definition": "The kitchen table; the table in the kitchen where people eat.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "selten",
+    "surface": "selten",
+    "definition": "Rarely; not often, only a few times in a long while."
+   },
+   {
+    "type": "verb",
+    "word": "umziehen",
+    "surface": "umgezogen",
+    "definition": "To move house; to go and live in a new flat or city."
+   },
+   {
+    "type": "adverb",
+    "word": "monatelang",
+    "surface": "monatelang",
+    "definition": "For months; for a long time of many months."
+   },
+   {
+    "type": "verb",
+    "word": "verlassen",
+    "surface": "verlässt",
+    "definition": "To leave; to go away from a place and not stay."
+   },
+   {
+    "type": "verb",
+    "word": "werden",
+    "surface": "geworden",
+    "definition": "To become; to change and be different than before."
+   },
+   {
+    "type": "adjective",
+    "word": "ähnlich",
+    "surface": "ähnlich",
+    "definition": "Similar; almost the same, like each other in many ways."
+   },
+   {
+    "type": "adjective",
+    "word": "klug",
+    "surface": "klug",
+    "definition": "Clever; smart, you understand things well and quickly."
+   },
+   {
+    "type": "verb",
+    "word": "verlieren",
+    "surface": "verlieren",
+    "definition": "To lose; to not have a person or a thing any more."
+   },
+   {
+    "type": "noun",
+    "word": "die Lösung",
+    "surface": "Lösung",
+    "definition": "A solution; a way to fix a problem."
+   },
+   {
+    "type": "adjective",
+    "word": "leer",
+    "surface": "leer",
+    "definition": "Empty; with nothing left in it or on it."
+   }
+  ]
+ },
+ {
+  "topic": "quarrels-and-making-up",
+  "slotIndex": 2,
+  "title": "Zwei Becher auf der Treppe",
+  "arcType": "harmonic-close",
+  "synopsis": "Early the next morning Julia takes two mugs of coffee across the hall and knocks on Moritz's door. They both say sorry and sit together on the stairs between their flats. Julia will come back to the running group, and Moritz promises to ask her first next time.",
+  "text": "Die Kaffeemaschine zischt am Donnerstagmorgen. Julia füllt zwei Becher mit Kaffee und Milch. Dann geht sie über den Flur und klopft an Moritz' Tür.\n\nMoritz öffnet im Morgenmantel. Er sieht nicht gesund aus und reibt sich das Kinn. “Es tut mir so leid”, sagt er sofort. “Ich erzähle nie wieder ein Geheimnis.”\n\n“Mir tut es auch leid”, antwortet Julia. “Ich war nicht krank. Das war eine Lüge.” Sie stellt die Becher auf die glatte, kalte Treppe, und sie setzen sich nebeneinander.\n\nSie wohnen im selben Haus, aber heute rutscht Moritz ein bisschen näher. “Kommst du Sonntag wieder zum Lauftreff?”, fragt er leise. “Ja. Ich will zurückkommen”, antwortet Julia. “Ich wünsche mir nur eins: Nächstes Mal fragst du mich vorher.”\n\nMoritz hebt seinen Becher, und seine Augen leuchten. Sie genießen den Kaffee. Er ist warm und mild. Hinter ihnen stehen beide Türen weit offen.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "die Kaffeemaschine",
+    "surface": "Kaffeemaschine",
+    "definition": "A coffee machine; it makes hot coffee in the kitchen.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "der Donnerstagmorgen",
+    "surface": "Donnerstagmorgen",
+    "definition": "The morning of a Thursday, before work starts.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "füllen",
+    "surface": "füllt",
+    "definition": "To fill; to put a drink into a cup until it is full."
+   },
+   {
+    "type": "noun",
+    "word": "die Milch",
+    "surface": "Milch",
+    "definition": "Milk; a white drink from cows that people put in coffee."
+   },
+   {
+    "type": "noun",
+    "word": "der Morgenmantel",
+    "surface": "Morgenmantel",
+    "definition": "A dressing gown; a soft coat you wear at home in the morning.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "gesund",
+    "surface": "gesund",
+    "definition": "Healthy; well and not ill, with a body that feels good."
+   },
+   {
+    "type": "noun",
+    "word": "das Kinn",
+    "surface": "Kinn",
+    "definition": "The chin; the bottom part of your face, under your mouth."
+   },
+   {
+    "type": "adverb",
+    "word": "nie",
+    "surface": "nie",
+    "definition": "Never; not one time, not at any time."
+   },
+   {
+    "type": "verb",
+    "word": "stellen",
+    "surface": "stellt",
+    "definition": "To put something down so it stands on a place."
+   },
+   {
+    "type": "adjective",
+    "word": "glatt",
+    "surface": "glatte",
+    "definition": "Smooth; flat and even, with no rough parts."
+   },
+   {
+    "type": "adjective",
+    "word": "selbe",
+    "surface": "selben",
+    "definition": "Same; not a different one, but exactly this one."
+   },
+   {
+    "type": "adjective",
+    "word": "näher",
+    "surface": "näher",
+    "definition": "Closer; a little nearer to someone than before."
+   },
+   {
+    "type": "verb",
+    "word": "zurückkommen",
+    "surface": "zurückkommen",
+    "definition": "To come back; to return to a place or a group."
+   },
+   {
+    "type": "verb",
+    "word": "wünschen",
+    "surface": "wünsche",
+    "definition": "To wish; to want something and hope it will happen."
+   },
+   {
+    "type": "adverb",
+    "word": "vorher",
+    "surface": "vorher",
+    "definition": "Before; at an earlier time, first, before you do it."
+   },
+   {
+    "type": "verb",
+    "word": "heben",
+    "surface": "hebt",
+    "definition": "To lift or raise something up into the air."
+   },
+   {
+    "type": "verb",
+    "word": "leuchten",
+    "surface": "leuchten",
+    "definition": "To shine or glow; here, the eyes look very happy."
+   },
+   {
+    "type": "verb",
+    "word": "genießen",
+    "surface": "genießen",
+    "definition": "To enjoy; to like something very much while you do it."
+   },
+   {
+    "type": "adjective",
+    "word": "mild",
+    "surface": "mild",
+    "definition": "Mild; soft in taste, not strong or bitter."
+   },
+   {
+    "type": "adverb",
+    "word": "nebeneinander",
+    "surface": "nebeneinander",
+    "definition": "Next to each other; side by side, very close together."
+   }
+  ]
+ }
+]

@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a1",
+  "variante": "germany",
+  "registro": "tenso y luego tierno: un rio gris con viento, una puerta que no se abre, un pastel en la cocina y cafe en la escalera",
+  "espina": "Julia, fisioterapeuta de Rostock recien llegada a Frankfurt, quiere hacer amigos de verdad en una ciudad donde no conoce a nadie; cada tema le cuesta un hilo con Rostock, hasta que en el tema 7 su primera amistad de Frankfurt aguanta una pelea.",
+  "recursos": "A1: Perfekt (hast erzaehlt, ist umgezogen, hat gebeten, ist geworden), Praeteritum solo war/hatte/wollte, modales (darf, will), una subordinada con dass por historia como mucho, inversion V2 (Am Mittwochabend klingelt es); reencuadre (la amabilidad del grupo delata el secreto), eco de personaje (la mentira del tema 1 vuelve como excusa), cierre literal sin gancho (dos puertas abiertas)",
+  "historias": [
+    { "slot": "0", "quiere": "volver al grupo como si nada despues de su semana mala", "impide": "todos saben de su morrina y solo Moritz lo sabia", "cuesta": "su secreto ya no es suyo: el grupo entero la ve triste", "cambia": "la primera amistad de Frankfurt se rompe en una discusion", "emocion": "rabia: se pone roja, pero no de verguenza; se va corriendo sola por la orilla" },
+    { "slot": "1", "quiere": "no ver a Moritz y no volver al grupo", "impide": "Carolin llama a su puerta con un pastel y le cuenta por que Moritz lo hizo", "cuesta": "tiene que admitir que su excusa de estar enferma es mentira", "cambia": "el enfado se hace pequeno y aparece el miedo a perder a Moritz", "emocion": "enfado que cede: se queda mucho rato sentada en la cocina; quiere buscar una solucion" },
+    { "slot": "2", "quiere": "hacer las paces sin perder la cara", "impide": "los dos tienen algo de que disculparse", "cuesta": "confiesa la mentira de la excusa y se sienta en la escalera con Moritz", "cambia": "vuelve al grupo del domingo y Moritz promete preguntar antes", "emocion": "calma y carino: a Moritz le brillan los ojos al levantar el vaso; las dos puertas quedan abiertas" }
+  ]
+}

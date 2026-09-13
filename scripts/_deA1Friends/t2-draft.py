@@ -8,7 +8,7 @@ s0=["Die Morgenluft am Main ist um neun noch kühl. Am Uferweg wartet schon eine
 "“Heute laufen wir bis zur Brücke und zurück”, erklärt Svenja. Julia läuft ganz vorne, neben Svenja. “Ich bleibe lieber hinten, ich bin nicht so schnell”, meint Moritz.",
 "Nach zwei Kilometern hat Julia Seitenstechen. Ihr Atem ist laut, und die Beine sind schwer. Sie muss aufhören. Moritz läuft ruhig vorbei.",
 "Svenja kommt zurück und bleibt bei ihr. “Am Anfang ist langsam besser. Das ist ganz normal”, sagt sie. Die anderen verschwinden im Nebel. Julia legt die Hände auf die Oberschenkel. Ihr Gesicht ist heiß, und das liegt nicht nur am Laufen.",
-"“Das ist ziemlich peinlich, oder?”, fragt Julia leise. Svenja lacht. “Nein, wirklich nicht. Nächsten Sonntag läufst du einfach hinten mit”, antwortet sie."]
+"“Das ist ziemlich peinlich, oder?”, fragt Julia leise. Svenja lächelt. “Nein, wirklich nicht. Nächsten Sonntag läufst du einfach hinten mit”, antwortet sie."]
 v0=[V("noun","die Morgenluft","Morgenluft","The fresh air early in the morning, before the day gets warm.",True),
 V("adjective","kühl","kühl","Cool; a little cold, but not really cold."),
 V("noun","der Uferweg","Uferweg","A path that goes along the side of a river or lake.",True),

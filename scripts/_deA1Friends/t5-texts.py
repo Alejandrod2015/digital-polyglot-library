@@ -11,7 +11,7 @@ s0=["Julia, die Physiotherapeutin aus Rostock, hört am Dienstagabend ein leises
 "“Oh nein, das auch noch”, murmelt Julia und beißt sich auf die Lippe. Sie schreibt nichts nach Rostock und legt das Handy in die Schublade. “Beides ist unmöglich”, sagt sie leise zu sich. Der Samstag wird schwierig. Trotzdem backt sie am nächsten Tag."]
 s1=["Ihr Wohnzimmer ist am Samstag voll mit Luftballons. Philipp hat Handkäse und grüne Soße mitgebracht, das Lieblingsessen von Moritz.",
 "Um halb acht kommen die Gäste leise durch das Treppenhaus: Svenja, Florian und Theresa. “Pst! Er kommt um acht. Keiner sagt ein Wort”, flüstert Philipp und macht das Licht aus.",
-"“Und wo sollen wir jetzt warten?”, fragt Svenja. Alle sitzen heimlich im Dunkeln hinter dem Sofa.",
+"“Und wo sollen wir jetzt warten?”, will Svenja wissen. Alle sitzen heimlich im Dunkeln hinter dem Sofa.",
 "Um fünf vor acht klopft es. Julia öffnet die Tür. Moritz steht barfuß und in Jogginghose im Flur. In der Wohnung ist es warm. “Hallo, Nachbarin. Hast du vielleicht Zucker? Ich backe mir heute selbst einen Kuchen”, sagt er ein wenig traurig.",
 "“Nein, leider nicht. Tut mir leid”, lügt Julia. Hinter ihr kichert jemand. Moritz schaut sie komisch an. “Ist bei dir eigentlich alles in Ordnung?”, fragt er.",
 "In diesem Moment klingelt ihr Handy in der Schublade. Der Klingelton ist laut und lustig: Es ist der Videoanruf aus Rostock."]
