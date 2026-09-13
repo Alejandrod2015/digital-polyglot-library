@@ -2879,6 +2879,71 @@
       ]
     }
   },
+  "cmu0dqr6y0007j8o52i1s3gf7#moods-and-feelings": {
+    "cerrado": "2026-09-13T23:20:15.464Z",
+    "hash": "57b2798c14b7205d",
+    "historias": [
+      "moods-and-feelings#0 zu-feste-hande",
+      "moods-and-feelings#1 tee-im-pausenraum",
+      "moods-and-feelings#2 genug-gelogen"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"intimo y sin adornos: una consulta, una sala de descanso con lluvia y una noche de sofa con el movil pesado en la mano\", espina \"Julia, fisioterapeuta de Rostock recien llegada a Frankfurt, quiere hacer amigos de verdad en una ciudad donde no conoce a nadie; cada tema le cuesta un hilo con Rostock, hasta que en el tema 7 su primera amistad de Frankfurt aguanta una pelea.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"fragt\" 29%)",
+      "arranques de parrafo variados (mas repetido \"julia\", 27%)",
+      "densidad 6.9 palabras por oracion (techo 11 en a1)",
+      "seguidilla 21/51 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.04 sobre 49 plazas · 47 salen una sola vez | ancladas: 11/60 (18%) | cola: 47/49 portables con un solo encuentro (96%, tope 70%) | de un solo encuentro: deshalb, schlechte, Schmerzen, hart, falsch, gleich, unruhig, mache, trinkst, freundlich, sauer, bleibt, helfen, täglich, Patient, regnet, nett, schwach, fremd, einsam, schrecklich, glaube, kenne, leicht, erinnert, erstaunt, Woher, lächelt, Früher, zögert…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en DE no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "germany",
+      "registro": "intimo y sin adornos: una consulta, una sala de descanso con lluvia y una noche de sofa con el movil pesado en la mano",
+      "espina": "Julia, fisioterapeuta de Rostock recien llegada a Frankfurt, quiere hacer amigos de verdad en una ciudad donde no conoce a nadie; cada tema le cuesta un hilo con Rostock, hasta que en el tema 7 su primera amistad de Frankfurt aguanta una pelea.",
+      "recursos": "A1: Perfekt (haben wehgetan, habe vergessen, war gemein), modales (kann, will, muss), separables partidos (nimmt auf, nimmt weg), inversion V2 (Im Flur bleibt sie stehen); contraste literal (manos que ayudan y hoy hacen dano), revelacion tardia (Miriam tambien llego de fuera), emocion en tres piezas con gesto visible",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "trabajar como siempre y que no se note que esta mal",
+          "impide": "el enfado por el silencio de su amiga se le va a las manos con un paciente",
+          "cuesta": "su imagen profesional delante de su jefa: Miriam la aparta del paciente",
+          "cambia": "entiende que no puede seguir fingiendo",
+          "emocion": "verguenza y susto: las manos le quedan inquietas porque ha hecho dano; se queda quieta en el pasillo mirandolas"
+        },
+        {
+          "slot": "1",
+          "quiere": "aguantar sin llorar delante de su jefa",
+          "impide": "Miriam le pregunta con calma y las lagrimas llegan solas",
+          "cuesta": "admite en voz alta que tiene morrina y que se siente sola",
+          "cambia": "descubre que Miriam paso por lo mismo",
+          "emocion": "alivio triste: se siente debil; Miriam le da un panuelo y le dice que esta ahi"
+        },
+        {
+          "slot": "2",
+          "quiere": "dejar de mentir a sus amigos de Frankfurt y de Rostock",
+          "impide": "tiene miedo de que la verdad lo estropee todo",
+          "cuesta": "le confiesa a Moritz que a veces quiere volver a Rostock y pide secreto",
+          "cambia": "hace las paces con su mejor amiga",
+          "emocion": "miedo y valor: siente el corazon en la garganta al coger la llamada; al final se rie y llora a la vez"
+        }
+      ]
+    }
+  },
   "cmu0dqr6y0007j8o52i1s3gf7#pets-and-animal-care": {
     "cerrado": "2026-09-13T22:57:49.725Z",
     "hash": "c2e69c9253183626",

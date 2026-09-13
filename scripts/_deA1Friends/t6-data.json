@@ -1,0 +1,403 @@
+[
+ {
+  "topic": "moods-and-feelings",
+  "slotIndex": 0,
+  "title": "Zu feste Hände",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "For three days Julia's best friend in Rostock has not answered, and Julia is in a bad mood. At work her first patient has back pain, and she works much too hard. Miriam, the head of the practice, sees the problem at once and sends Julia to the break room.",
+  "text": "Seit drei Tagen antwortet Julias beste Freundin nicht. Julia, die Physiotherapeutin aus Rostock, hat deshalb schlechte Laune. Miriam, die Chefin der Praxis, merkt es schon am Montagmorgen. “Alles in Ordnung bei dir?”, fragt sie. Julia nickt nur.\n\nIm Behandlungsraum ist es warm. Der erste Patient hat Schmerzen im Rücken. Julia arbeitet schnell und viel zu hart. “Au! Das ist falsch, nicht so fest, bitte!”, ruft der Mann sauer.\n\nJulia nimmt gleich die Hände weg.\n\n“Entschuldigung. Heute ist kein guter Arbeitstag für mich”, sagt sie leise. Ihre Hände sind unruhig.\n\nMiriam kommt in den Raum und schaut sie ruhig an. “Ich mache hier weiter. Du gehst in den Pausenraum und trinkst einen Tee”, sagt sie freundlich, aber bestimmt. Julia kann nichts sagen.\n\nIm Flur bleibt sie stehen und sieht auf ihre Hände. “Diese Hände helfen täglich Menschen. Heute haben sie einem Menschen wehgetan”, denkt sie.",
+  "vocab": [
+   {
+    "type": "adverb",
+    "word": "deshalb",
+    "surface": "deshalb",
+    "definition": "That is why; because of this reason, and so."
+   },
+   {
+    "type": "adjective",
+    "word": "schlecht",
+    "surface": "schlechte",
+    "definition": "Bad; not good, it makes you feel unhappy."
+   },
+   {
+    "type": "noun",
+    "word": "die Laune",
+    "surface": "Laune",
+    "definition": "Mood; how you feel at a certain time, good or bad.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "der Montagmorgen",
+    "surface": "Montagmorgen",
+    "definition": "The morning of a Monday, at the start of the work week.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "der Schmerz",
+    "surface": "Schmerzen",
+    "definition": "Pain; the feeling when a part of your body hurts."
+   },
+   {
+    "type": "adjective",
+    "word": "hart",
+    "surface": "hart",
+    "definition": "Hard; with a lot of force, not soft or gentle."
+   },
+   {
+    "type": "adjective",
+    "word": "falsch",
+    "surface": "falsch",
+    "definition": "Wrong; not right, not the way it should be."
+   },
+   {
+    "type": "noun",
+    "word": "der Behandlungsraum",
+    "surface": "Behandlungsraum",
+    "definition": "A treatment room; the room where a therapist works with patients.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "gleich",
+    "surface": "gleich",
+    "definition": "Right away; at once, without waiting even a moment."
+   },
+   {
+    "type": "noun",
+    "word": "der Arbeitstag",
+    "surface": "Arbeitstag",
+    "definition": "A working day; a day when you go to your job.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "unruhig",
+    "surface": "unruhig",
+    "definition": "Restless; not calm, moving a little all the time."
+   },
+   {
+    "type": "verb",
+    "word": "machen",
+    "surface": "mache",
+    "definition": "To do or make; here, to go on with the work."
+   },
+   {
+    "type": "verb",
+    "word": "trinken",
+    "surface": "trinkst",
+    "definition": "To drink; to take tea, water or another liquid."
+   },
+   {
+    "type": "adjective",
+    "word": "freundlich",
+    "surface": "freundlich",
+    "definition": "Friendly; kind, warm and nice to other people."
+   },
+   {
+    "type": "adjective",
+    "word": "sauer",
+    "surface": "sauer",
+    "definition": "Angry; a little cross because something went wrong."
+   },
+   {
+    "type": "verb",
+    "word": "können",
+    "surface": "kann",
+    "definition": "Can; to be able to do something right now."
+   },
+   {
+    "type": "verb",
+    "word": "bleiben",
+    "surface": "bleibt",
+    "definition": "To stay; to not move away from a place."
+   },
+   {
+    "type": "verb",
+    "word": "helfen",
+    "surface": "helfen",
+    "definition": "To help; to do something good for another person."
+   },
+   {
+    "type": "adverb",
+    "word": "täglich",
+    "surface": "täglich",
+    "definition": "Every day; each and every day, again and again."
+   },
+   {
+    "type": "noun",
+    "word": "der Patient",
+    "surface": "Patient",
+    "definition": "A patient; a person who gets help from a doctor or a therapist."
+   }
+  ]
+ },
+ {
+  "topic": "moods-and-feelings",
+  "slotIndex": 1,
+  "title": "Tee im Pausenraum",
+  "arcType": "late-reveal",
+  "synopsis": "In the warm break room Miriam brings tea and waits. Julia cries and says the truth: she is homesick and often lonely in the evenings. Miriam listens and understands her very well. At the end Julia learns that Miriam also came to Frankfurt from another city many years ago.",
+  "text": "Der Pausenraum ist klein und warm, und draußen regnet es. Miriam bringt zwei Becher Tee und setzt sich neben Julia ans Fenster. Der Tee riecht nach Pfefferminze. “Willst du reden?”, fragt sie.\n\nJulia sagt zuerst nichts. Dann kommen die Tränen, und Julia kann sie nicht stoppen. Julia fühlt sich schwach. Miriam ist nett und geduldig. Sie gibt ihr ein Taschentuch. “Ganz ruhig, ich bin da”, sagt sie.\n\n“Ich habe Heimweh”, sagt Julia endlich. Sie hat hier neue Freunde, aber die Stadt ist noch fremd. Abends ist sie oft einsam, und dieses Gefühl ist schrecklich.\n\nMiriam trinkt einen Schluck Tee. “Weißt du, ich glaube, das kenne ich. Es ist nicht leicht”, antwortet sie. Das Gespräch erinnert sie an ihr erstes Jahr hier.\n\nJulia schaut sie erstaunt an. “Woher kommst du denn?”, fragt sie. Miriam lächelt. “Aus Kiel. Früher war Frankfurt auch für mich ein fremder Ort.”",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "regnen",
+    "surface": "regnet",
+    "definition": "To rain; water falls down from the clouds in the sky."
+   },
+   {
+    "type": "noun",
+    "word": "der Becher",
+    "surface": "Becher",
+    "definition": "A mug; a big cup without a small plate under it.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Pfefferminze",
+    "surface": "Pfefferminze",
+    "definition": "Peppermint; a green plant with a fresh smell, used for tea.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "nett",
+    "surface": "nett",
+    "definition": "Nice; kind and friendly to other people around you."
+   },
+   {
+    "type": "noun",
+    "word": "der Pausenraum",
+    "surface": "Pausenraum",
+    "definition": "A break room; a room at work where people rest and drink tea.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "schwach",
+    "surface": "schwach",
+    "definition": "Weak; with no power, you feel you cannot do much."
+   },
+   {
+    "type": "adverb",
+    "word": "zuerst",
+    "surface": "zuerst",
+    "definition": "At first; before anything else happens or is said."
+   },
+   {
+    "type": "noun",
+    "word": "das Heimweh",
+    "surface": "Heimweh",
+    "definition": "Homesickness; you feel sad because you miss your home.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "fremd",
+    "surface": "fremd",
+    "definition": "Strange and new; you do not know it well yet."
+   },
+   {
+    "type": "adjective",
+    "word": "einsam",
+    "surface": "einsam",
+    "definition": "Lonely; sad because you are alone and have no one close."
+   },
+   {
+    "type": "noun",
+    "word": "das Gefühl",
+    "surface": "Gefühl",
+    "definition": "A feeling; what you feel inside, like fear or joy.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "schrecklich",
+    "surface": "schrecklich",
+    "definition": "Terrible; very bad and very hard to live with."
+   },
+   {
+    "type": "verb",
+    "word": "glauben",
+    "surface": "glaube",
+    "definition": "To believe or think that something is true."
+   },
+   {
+    "type": "verb",
+    "word": "kennen",
+    "surface": "kenne",
+    "definition": "To know; to have felt or seen something before."
+   },
+   {
+    "type": "adjective",
+    "word": "leicht",
+    "surface": "leicht",
+    "definition": "Easy; not hard, you can do it without problems."
+   },
+   {
+    "type": "verb",
+    "word": "erinnern",
+    "surface": "erinnert",
+    "definition": "To remind; to make you think of a thing from before."
+   },
+   {
+    "type": "adjective",
+    "word": "erstaunt",
+    "surface": "erstaunt",
+    "definition": "Surprised; you did not expect it and you look up."
+   },
+   {
+    "type": "adverb",
+    "word": "woher",
+    "surface": "Woher",
+    "definition": "From where; you ask it to know where someone comes from."
+   },
+   {
+    "type": "verb",
+    "word": "lächeln",
+    "surface": "lächelt",
+    "definition": "To smile; to make a happy face with your mouth."
+   },
+   {
+    "type": "adverb",
+    "word": "früher",
+    "surface": "Früher",
+    "definition": "Before; in the past, at an earlier time in your life."
+   }
+  ]
+ },
+ {
+  "topic": "moods-and-feelings",
+  "slotIndex": 2,
+  "title": "Genug gelogen",
+  "arcType": "harmonic-close",
+  "synopsis": "In the evening Julia wants to be brave and honest. She sends Moritz a voice message about her homesickness and asks him to keep it secret. Then she writes to her best friend and says sorry. Later her phone rings, and the two friends laugh and cry together.",
+  "text": "Julia zögert lange auf dem Sofa. Der Gedanke an Rostock tut weh. “Genug gelogen”, denkt sie. Heute will sie mutig sein, wenigstens einmal.\n\nZuerst nimmt sie eine Sprachnachricht für Moritz auf. “Ich habe Heimweh, und manchmal will ich zurück nach Rostock. Bitte sag das niemandem”, spricht sie leise. Dann schreibt sie ihrer besten Freundin: “Das war gemein von mir. Ich habe deinen Geburtstag nicht vergessen, und ich habe ein schlechtes Gewissen.” Danach ist überall Stille. Das Fenster ist offen, und die Luft ist feucht.\n\nUm zehn klingelt das Handy. Julia spürt ihr Herz bis in den Hals. “Hallo?”, fragt sie ängstlich.\n\n“Du fehlst mir, du Idiotin. Komm bald mal wieder”, antwortet die Freundin. Beide lachen und weinen. Sie reden lange. Danach schläft Julia tief, das Handy noch auf der Brust.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "zögern",
+    "surface": "zögert",
+    "definition": "To hesitate; to wait because you are not sure what to do."
+   },
+   {
+    "type": "noun",
+    "word": "der Gedanke",
+    "surface": "Gedanke",
+    "definition": "A thought; an idea or picture in your head."
+   },
+   {
+    "type": "adjective",
+    "word": "genug",
+    "surface": "Genug",
+    "definition": "Enough; as much as you need, so no more is necessary."
+   },
+   {
+    "type": "adjective",
+    "word": "mutig",
+    "surface": "mutig",
+    "definition": "Brave; you do something hard even if you are afraid."
+   },
+   {
+    "type": "adverb",
+    "word": "wenigstens",
+    "surface": "wenigstens",
+    "definition": "At least; not a lot, but this one small thing."
+   },
+   {
+    "type": "adverb",
+    "word": "manchmal",
+    "surface": "manchmal",
+    "definition": "Sometimes; not always, but at some times or on some days."
+   },
+   {
+    "type": "adjective",
+    "word": "gemein",
+    "surface": "gemein",
+    "definition": "Mean; not kind, it hurts other people's feelings."
+   },
+   {
+    "type": "verb",
+    "word": "vergessen",
+    "surface": "vergessen",
+    "definition": "To forget; to not remember something you should remember."
+   },
+   {
+    "type": "adverb",
+    "word": "tief",
+    "surface": "tief",
+    "definition": "Deeply; very well and for a long time, without waking up."
+   },
+   {
+    "type": "adverb",
+    "word": "danach",
+    "surface": "Danach",
+    "definition": "After that; later, when the first thing is over."
+   },
+   {
+    "type": "noun",
+    "word": "die Stille",
+    "surface": "Stille",
+    "definition": "Silence; a moment with no sound at all.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "offen",
+    "surface": "offen",
+    "definition": "Open; not closed, so air can come in."
+   },
+   {
+    "type": "adjective",
+    "word": "feucht",
+    "surface": "feucht",
+    "definition": "Damp; a little wet, like the air after rain."
+   },
+   {
+    "type": "verb",
+    "word": "klingeln",
+    "surface": "klingelt",
+    "definition": "To ring; a phone makes a sound when someone calls."
+   },
+   {
+    "type": "verb",
+    "word": "spüren",
+    "surface": "spürt",
+    "definition": "To feel something in your body, like your heart beating."
+   },
+   {
+    "type": "adjective",
+    "word": "ängstlich",
+    "surface": "ängstlich",
+    "definition": "Anxious; a little afraid and not sure what will happen."
+   },
+   {
+    "type": "verb",
+    "word": "fehlen",
+    "surface": "fehlst",
+    "definition": "To miss; you say someone is missing from your life."
+   },
+   {
+    "type": "adverb",
+    "word": "bald",
+    "surface": "bald",
+    "definition": "Soon; in a short time, not much later."
+   },
+   {
+    "type": "noun",
+    "word": "die Idiotin",
+    "surface": "Idiotin",
+    "definition": "A silly woman; friends can say it in a warm, joking way."
+   },
+   {
+    "type": "noun",
+    "word": "die Brust",
+    "surface": "Brust",
+    "definition": "The chest; the front part of your body above the stomach.",
+    "anchor": true
+   }
+  ]
+ }
+]
