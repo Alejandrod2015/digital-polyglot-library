@@ -111,7 +111,7 @@
  {
   "type": "fill_blank",
   "word": "compliments",
-  "sentence": "Ravie, elle a reçu beaucoup de _____ chaleureux après le spectacle.",
+  "sentence": "Ravie, elle a reçu beaucoup de _____ pour son talent.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "compliments",
@@ -121,7 +121,7 @@
     "questions",
     "excuses"
    ],
-   "translation": "Delighted, she received a lot of warm _____ after the show.",
+   "translation": "Delighted, she received a lot of _____ for her talent.",
    "optionTranslations": [
     "compliments",
     "bills",
@@ -130,7 +130,7 @@
    ],
    "audioClip": {
     "language": "french",
-    "sentence": "Ravie, elle a reçu beaucoup de compliments chaleureux après le spectacle.",
+    "sentence": "Ravie, elle a reçu beaucoup de compliments pour son talent.",
     "storySlug": "derriere-la-cloison",
     "targetWord": "compliments",
     "storySource": "user"
