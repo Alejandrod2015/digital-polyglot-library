@@ -123,6 +123,29 @@ export function verifyLlmForm(transcript: string, formFound?: string | null): Sp
   return { correct: true, formFound: form, via: "llm" };
 }
 
+/**
+ * Un `Favorite.storySlug` llega en DOS formas y la ruta tiene que aceptar las
+ * dos, o no encuentra la historia de casi nadie.
+ *
+ * El lector de journey del movil guarda la palabra con el pseudo-slug
+ * `journey-<JourneyStory.id>`; el resto guarda el slug real. Buscar solo por
+ * `slug` dejaba fuera 776 de los 844 favoritos que hay hoy en la base.
+ *
+ * Devuelve el `where` que hay que darle a Prisma, o null si no hay slug. La
+ * misma forma que ya usan `/api/mobile/favorites` y `/api/user-stories`; el
+ * regex es el de esa segunda ruta, para que las tres no deriven.
+ */
+const PSEUDO_SLUG_DE_JOURNEY = /^journey-([a-z0-9]{20,})$/i;
+
+export function journeyStoryWhereFromSlug(
+  storySlug?: string | null
+): { id: string } | { slug: string } | null {
+  const slug = (storySlug ?? "").trim();
+  if (!slug) return null;
+  const match = PSEUDO_SLUG_DE_JOURNEY.exec(slug);
+  return match ? { id: match[1] } : { slug };
+}
+
 /** G7: nada de lo generado lleva guion largo. */
 export function stripLongDashes(value: string): string {
   return (value ?? "").replace(GUIONES_LARGOS, "; ").replace(/\s+/g, " ").trim();

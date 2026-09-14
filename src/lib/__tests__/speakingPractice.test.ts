@@ -4,6 +4,7 @@ import {
   containsWholeWord,
   gradeDeterministic,
   questionLeaksWord,
+  journeyStoryWhereFromSlug,
   verifyLlmForm,
 } from "../speakingGrading";
 import { createSpeakingExercise, type PracticeFavoriteItem } from "../practiceExercises";
@@ -18,7 +19,10 @@ const favorito = (extra: Partial<PracticeFavoriteItem> = {}): PracticeFavoriteIt
   surface: "vecino",
   translation: "the neighbour",
   exampleSentence: "El vecino saluda desde el balcon cada manana.",
-  storySlug: "el-vecino-del-cuarto",
+  // Forma REAL de la base: el lector de journey del movil guarda el pseudo-slug
+  // y un sourcePath de libro.
+  storySlug: "journey-cmrdqk4eb000232r4rmo619rs",
+  sourcePath: "/books/standalone-stories/le-toca-a-mateo",
   language: "spanish",
   voiceId: "yHD4CsKkghm19ToGLJEC",
   ...extra,
@@ -109,7 +113,7 @@ describe("createSpeakingExercise", () => {
     expect(ex?.type).toBe("speaking");
     expect(ex?.word).toBe("el vecino");
     expect(ex?.translation).toBe("the neighbour");
-    expect(ex?.storySlug).toBe("el-vecino-del-cuarto");
+    expect(ex?.storySlug).toBe("journey-cmrdqk4eb000232r4rmo619rs");
     expect(ex?.sentence).toContain("vecino");
   });
 
@@ -117,10 +121,18 @@ describe("createSpeakingExercise", () => {
     expect(createSpeakingExercise(favorito({ storySlug: null }))).toBeNull();
   });
 
-  it("devuelve null para un favorito de libro, que no tiene reparto ni voz", () => {
-    expect(
-      createSpeakingExercise(favorito({ sourcePath: "/books/venecia/el-canal" }))
-    ).toBeNull();
+  it("NO descarta por sourcePath de libro: es la forma normal de un journey", () => {
+    // Regresion: el filtro por `/books/` tiraba 776 de los 844 favoritos
+    // reales. El lector de journey del movil guarda asi, y quien decide si hay
+    // historia detras es el servidor, no la forma de la ruta.
+    expect(createSpeakingExercise(favorito({ sourcePath: "/books/venecia/el-canal" }))).not.toBeNull();
+  });
+
+  it("acepta tambien el slug real, no solo el pseudo-slug", () => {
+    const ex = createSpeakingExercise(
+      favorito({ storySlug: "el-vecino-del-cuarto", sourcePath: null })
+    );
+    expect(ex?.storySlug).toBe("el-vecino-del-cuarto");
   });
 
   it("devuelve null sin traduccion, que es la pista en pantalla", () => {
@@ -166,5 +178,29 @@ describe("g5: el prompt de calificar no pide la frase modelo cuando ya se acerto
     expect(system.content).toContain("A literal comparison did not find it");
     expect(system.content).toContain('"formFound" is the EXACT substring');
     expect(system.content).toContain(base.sentence);
+  });
+});
+
+describe("journeyStoryWhereFromSlug: las dos formas del storySlug", () => {
+  it("el pseudo-slug del lector de journey busca por id", () => {
+    expect(journeyStoryWhereFromSlug("journey-cmrdqk4eb000232r4rmo619rs")).toEqual({
+      id: "cmrdqk4eb000232r4rmo619rs",
+    });
+  });
+
+  it("un slug normal busca por slug", () => {
+    expect(journeyStoryWhereFromSlug("le-toca-a-mateo")).toEqual({ slug: "le-toca-a-mateo" });
+  });
+
+  it("no confunde un slug que solo EMPIEZA por journey-", () => {
+    // El cuid pide 20 caracteres o mas; un titulo como este es un slug real.
+    expect(journeyStoryWhereFromSlug("journey-al-sur")).toEqual({ slug: "journey-al-sur" });
+  });
+
+  it("sin slug no hay busqueda", () => {
+    expect(journeyStoryWhereFromSlug("")).toBeNull();
+    expect(journeyStoryWhereFromSlug("   ")).toBeNull();
+    expect(journeyStoryWhereFromSlug(null)).toBeNull();
+    expect(journeyStoryWhereFromSlug(undefined)).toBeNull();
   });
 });

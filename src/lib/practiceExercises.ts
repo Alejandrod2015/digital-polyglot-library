@@ -888,24 +888,22 @@ function createListenChooseExercise(
 }
 
 /**
- * G2 del piloto: el speaking sale de una historia de JOURNEY.
+ * G2 del piloto: el speaking sale de una historia de JOURNEY. Lo unico que
+ * exige AQUI es que haya `storySlug`; quien decide si hay historia detras es
+ * el servidor.
  *
- * Un favorito de LIBRO trae `storySlug` igual que uno de journey, asi que
- * exigir el slug no basta: se distinguen por `sourcePath`, que en los libros
- * es `/books/<libro>/<historia>`. Sin historia de journey no hay reparto ni
- * voz que preguntar, asi que el builder devuelve null y el slot lo rellena
- * otro modo.
+ * Por que no se filtra por `sourcePath`: el lector de journey del movil guarda
+ * los favoritos con `sourcePath` de LIBRO (`/books/standalone-stories/...`) y
+ * el slug como pseudo-slug `journey-<JourneyStory.id>`. Un filtro por
+ * `/books/` descartaba 776 de los 844 favoritos reales, o sea casi todos los
+ * que el ejercicio tenia que cubrir. La forma del sourcePath no dice de donde
+ * viene la palabra, y creer que si lo decia dejaba el piloto sin materia.
+ *
+ * Cuando el servidor no encuentra historia de journey responde
+ * `NO_JOURNEY_STORY` y el movil cambia el slot por uno de `context`.
  */
-function isJourneyStoryItem(item: PracticeFavoriteItem): boolean {
-  const slug = normalizeText(item.storySlug);
-  if (!slug) return false;
-  const source = normalizeText(item.sourcePath).toLowerCase();
-  if (source.startsWith("/books/")) return false;
-  return true;
-}
-
 export function createSpeakingExercise(item: PracticeFavoriteItem): SpeakingExercise | null {
-  if (!isJourneyStoryItem(item)) return null;
+  if (!normalizeText(item.storySlug)) return null;
 
   const word = normalizeText(item.word);
   const translation = normalizeText(item.translation);

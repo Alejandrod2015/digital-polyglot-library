@@ -31,6 +31,7 @@ import { prisma } from "@/lib/prisma";
 import {
   clampFeedback,
   gradeDeterministic,
+  journeyStoryWhereFromSlug,
   questionLeaksWord,
   stripLongDashes,
   verifyLlmForm,
@@ -296,12 +297,17 @@ async function handleQuestion(body: QuestionBody, language: string): Promise<Res
     });
   }
 
-  // G2: sin historia de journey no hay nivel, ni reparto, ni voz. El builder ya
-  // filtra los favoritos de libro; esto cierra la puerta por el otro lado.
-  const story = await prisma.journeyStory.findFirst({
-    where: { slug: storySlug },
-    select: { level: true, cast: true, voiceId: true, practiceVoiceId: true },
-  });
+  // G2: sin historia de journey no hay nivel, ni reparto, ni voz. Aqui es donde
+  // se decide, y hay que aceptar las DOS formas del slug: el lector de journey
+  // del movil guarda `journey-<JourneyStory.id>` y el resto guarda el slug
+  // real. Buscar solo por `slug` dejaba fuera a casi todo el mundo.
+  const where = journeyStoryWhereFromSlug(storySlug);
+  const story = where
+    ? await prisma.journeyStory.findFirst({
+        where,
+        select: { level: true, cast: true, voiceId: true, practiceVoiceId: true },
+      })
+    : null;
   if (!story) {
     return NextResponse.json(
       { error: "No journey story for this word.", code: "NO_JOURNEY_STORY" },
