@@ -43,12 +43,13 @@ HEAD = ("LOCK: The image provided is the cast sheet for this story. KEEP every c
         "SCENE: ")
 
 ATELIER = "Aurélien and Élodie's bicycle workshop in the Fives district of Lille, exposed red brick walls, a long wooden workbench covered in tools, bicycle wheels hanging on hooks, a tall factory-style window"
+ATELIER_BARE = "the bare unrenovated space that will become Aurélien and Élodie's bicycle workshop in the Fives district of Lille, exposed red brick walls, a tall factory-style window, no furniture or tools yet, an open electrical fuse box set into one brick wall"
 GUILLAUME_HOME = "the dining room of Guillaume's apartment in Roubaix, warm floral wallpaper, a wooden table set for Sunday lunch, a half-eaten tart"
 VIEUX_LILLE = "a cobbled street in the Vieux-Lille district, tall ornate Flemish-style brick facades, a shop with a large plain glass shopfront window"
 GRAND_PLACE = "the Grand-Place of Lille at night, the ornate stone facade of the Vieille Bourse glowing under warm lights behind them"
 ESTAMINET = "the wooden bar counter of a small Fives estaminet, exposed ceiling beams, a row of beer taps, small round tables behind"
 BANK = "a small bank branch office in Lille, a plain desk, grey filing cabinets, a window with pale daylight"
-CAFETERIA = "a hospital staff cafeteria near Lille, plain round tables, a vending machine, pale fluorescent light"
+CAFETERIA = "a small empty hospital staff break room near Lille, two plain round tables, bare pale-green walls, pale fluorescent light"
 
 T = [
  ("advice-and-opinions", "Advice & Opinions", ["AURELIEN", "GUILLAUME"], [
@@ -57,13 +58,13 @@ T = [
   ("une-vitrine-trop-chic", "Une vitrine trop chic", 2,
    f"On {VIEUX_LILLE}, a cold clear afternoon. GUILLAUME stands in front of a shopfront window gesturing at it proudly, one hand on the glass; AURELIEN stands beside him, arms crossed, unconvinced. Medium shot, both waist up or fuller.", ""),
   ("le-compteur-ne-ment-pas", "Le compteur ne ment pas", 3,
-   f"Inside the bare unfinished space of {ATELIER}, before renovation, dim daylight, exposed wiring on one wall. GUILLAUME crouches by an open electrical fuse box holding a small flashlight, grimacing at what he sees; AURELIEN stands behind him, worried, one hand on the brick wall. Medium shot, both waist up or fuller.", ""),
+   f"Inside {ATELIER_BARE}, dim daylight. GUILLAUME crouches by the open fuse box holding a small flashlight, grimacing at what he sees; AURELIEN stands behind him, worried, one hand on the brick wall. Close medium shot on the two of them by the wall, both waist up.", ""),
  ]),
  ("careers-and-ambitions", "Careers & Ambitions", ["AURELIEN", "ELODIE"], [
   ("la-tournee-jamais-offerte", "La tournée jamais offerte", 1,
    f"In {ESTAMINET}, warm evening light, two plates of welsh and two glasses of beer on the table. ELODIE has just dropped her bicycle helmet onto the bench beside her, tense; AURELIEN sits across from her, forcing a reassuring smile, hiding his own good news. Medium shot across the table, both waist up.", ""),
   ("reponse-avant-vendredi", "Réponse avant vendredi", 2,
-   f"By a window at night with the lit belfry of Lille's beffroi glowing outside, AURELIEN's small living room, a laptop open on a low table showing only its plain closed lid from this angle. ELODIE sits beside him holding out two bottles of beer, insistent; AURELIEN rubs his face, torn. Medium shot, both waist up.", ""),
+   f"By a window at night with the lit belfry of Lille's beffroi glowing outside, AURELIEN's small living room, a closed laptop lying shut on a low table. ELODIE sits beside him holding out two bottles of beer, insistent; AURELIEN rubs his face, torn. Medium shot, both waist up.", ""),
   ("un-carton-sous-le-bras", "Un carton sous le bras", 3,
    f"On a rain-slicked street at dusk, heavy drizzle, warm shopfront lights reflected in puddles. ELODIE sits astride her bicycle holding up a rusty set of keys, teasing; AURELIEN stands beside her holding a plain sealed cardboard box against his hip, tired but relieved. Medium shot, both waist up or fuller.", ""),
  ]),
@@ -79,9 +80,9 @@ T = [
   ("trente-mille-euros", "Trente mille euros", 1,
    f"In {BANK}, a plain closed folder on the desk between them. YASMINE sits behind the desk, serious, one hand on the folder; AURELIEN and ELODIE sit across from her side by side, AURELIEN's hands visibly tense on his knees. Medium shot, all three waist up.", "Yasmine no lleva bata: viste de traje de oficina, distinta de Elodie en ropa y en pelo."),
   ("un-seul-nom-sur-le-contrat", "Un seul nom sur le contrat", 2,
-   f"Inside {ATELIER}, evening lamp light, a single sheet of paper lying face down on the workbench. ELODIE stands with her arms crossed, lips pressed tight, hurt; AURELIEN stands across the bench from her, one hand raised placating. Medium shot, both waist up.", "Yasmine no sale: solo llama por telefono."),
+   f"Inside {ATELIER}, evening lamp light, a single sheet of paper lying face down on the near end of the workbench. ELODIE stands with her arms crossed, lips pressed tight, hurt; AURELIEN stands across the bench from her, one hand raised placating. Close medium shot across the workbench, both waist up.", "Yasmine no sale: solo llama por telefono. Unica escena del tema con la hoja de papel en el banco."),
   ("deux-cents-euros-par-mois", "Deux cents euros par mois", 3,
-   f"Inside {ATELIER}, warm lamp light, a single sheet of paper lying face down on the workbench with a plain pen beside it. ELODIE has just set the pen down, calm and resolute; AURELIEN stands across the bench watching her, subdued. Medium shot, both waist up.", "Yasmine no sale: el banco confirma el lunes, fuera de escena."),
+   f"In {ATELIER}, in the corner by the hanging bicycle wheels, morning light through the tall window. ELODIE has just capped a plain pen, calm and resolute; AURELIEN stands beside her under the hanging wheels, subdued. Wider shot from further back, both full body.", "Yasmine no sale: el banco confirma el lunes, fuera de escena. Sin hoja de papel: para no repetir la 11, el objeto es solo el boligrafo."),
  ]),
  ("pride-and-envy", "Pride & Envy", ["AURELIEN", "ELODIE", "CHARLOTTE"], [
   ("une-photo-pour-le-journal", "Une photo pour le journal", 1,
@@ -89,13 +90,13 @@ T = [
   ("son-nom-n-y-est-pas", "Son nom n'y est pas", 2,
    f"Inside {ATELIER}, midday, a compressor pipe visible on the wall. AURELIEN stands to one side holding a phone to his ear with a guilty, defensive expression; ELODIE stands at the workbench twisting an inner tube tightly between both hands, not looking at him. Medium shot, both waist up.", "Charlotte no sale: esta al telefono. Sin periodico en pantalla."),
   ("derriere-la-cloison", "Derrière la cloison", 3,
-   f"Inside {ATELIER}, early morning, a paper bag of croissants on the workbench. AURELIEN holds out a single sheet of paper face down towards ELODIE, a little nervous; ELODIE stands with her arms crossed, studying him, not yet convinced. Medium shot, both waist up.", ""),
+   f"Just inside the front door of {ATELIER}, early morning, a paper bag of croissants held under one arm. AURELIEN holds out a single sheet of paper face down towards ELODIE, a little nervous; ELODIE stands in the doorway with her arms crossed, studying him, not yet convinced. Medium shot near the doorway, both waist up.", "Segunda y ultima escena del tema con hoja de papel; encuadre en la puerta, no en el banco, para no repetir la 11."),
  ]),
  ("rumours-and-reputation", "Rumours & Reputation", ["AURELIEN", "ELODIE", "FLORIAN"], [
   ("ce-qu-on-raconte-a-fives", "Ce qu'on raconte à Fives", 1,
    f"At {ESTAMINET}. FLORIAN leans on the bar counter pouring a hot drink, giving AURELIEN a sly sideways look; AURELIEN sits on a stool at the counter, holding his cup, caught off guard. Medium shot, both waist up.", "Elodie no sale."),
   ("une-blague-mal-repetee", "Une blague mal répétée", 2,
-   f"Inside {ATELIER} in the evening, a wall half painted in fresh grey over old white, a dripping paintbrush on the floor. AURELIEN stands with his arms spread, upset; ELODIE stands facing him, biting her lip, apologetic. Medium shot, both waist up.", "Florian no sale."),
+   f"In the back corner of {ATELIER} in the evening, a wall half painted in fresh grey over old white, a dripping paintbrush on the floor. AURELIEN stands with his arms spread, upset; ELODIE stands facing him, biting her lip, apologetic. Close medium shot against the painted wall, both waist up.", "Florian no sale. Rincon del fondo (pared pintada), no el banco de trabajo."),
   ("des-comptes-bien-tenus", "Des comptes bien tenus", 3,
    f"At {ESTAMINET}, evening, the bar busier than before. FLORIAN stands behind the counter, relieved, drying a glass; AURELIEN stands at the bar facing him, having just finished speaking, a little exposed but steady. Medium shot, both waist up.", "Elodie no sale en primer plano: aplaude al fondo, fuera del cuadro principal."),
  ]),
