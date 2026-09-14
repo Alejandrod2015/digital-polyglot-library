@@ -55,43 +55,65 @@ function wordsMatch(a: string, b: string): boolean {
 export type Gap = { textWords: string[]; startIdx: number; endIdx: number; anchorBeforeIdx: number | null; anchorAfterIdx: number | null };
 
 /**
- * Busca huecos SIN depender de posicion (a proposito, ver abajo): para cada
- * palabra del texto, mira si aparece PARECIDA en cualquier punto de lo
- * oido (no solo "adelante de un cursor"). Un tramo de `minRun`+ palabras
- * SEGUIDAS del texto sin ninguna parecida en todo lo oido es un hueco real.
+ * Alinea texto contra lo oido con la subsecuencia comun mas larga (LCS,
+ * tolerante a ortografia via wordsMatch): la MISMA idea que
+ * difflib.SequenceMatcher del barrido en Python, un algoritmo GLOBAL, no
+ * un cursor que solo avanza ni una busqueda ciega a la posicion.
  *
- * ADVERTENCIA que costo un falso positivo (2026-09-14): la primera version
- * usaba un cursor que solo avanza (como anclarFragmentos), buscando cada
- * palabra en una ventana ADELANTE del cursor. Si UNA palabra encontraba una
- * coincidencia mas adelante de lo que le tocaba (una repeticion del mismo
- * lema en otro punto de la historia, o una palabra corta y comun), el
- * cursor saltaba de mas y TODAS las palabras siguientes, que si estaban,
- * quedaban detras del cursor y jamas se encontraban: el resto de la
- * historia entera salia marcada como "hueco", sobre un master que la
- * barrida en Python (SequenceMatcher, sin este problema) ya habia
- * confirmado limpio. La busqueda sin cursor no tiene ese modo de fallo: no
- * hay "de mas" que arrastrar, cada palabra se busca en TODO lo oido.
+ * DOS intentos anteriores fallaron, cada uno en una direccion (2026-09-14):
+ *   1. Cursor que solo avanza, busca cada palabra en una ventana ADELANTE:
+ *      si UNA palabra encontraba una coincidencia mas alla de lo que le
+ *      tocaba, el cursor se adelantaba de mas y todo lo que venia despues,
+ *      aunque estuviera, quedaba detras del cursor: marcaba media historia
+ *      como hueco sobre un master que Python ya habia confirmado limpio.
+ *   2. Sin cursor ni posicion ("aparece en cualquier punto"): arreglaba el
+ *      fallo de arriba pero quedaba CIEGO al caso real: una frase que falta
+ *      hecha de palabras corrientes (Justine, et, le, sa) tiene todas sus
+ *      palabras sueltas en OTRO punto de la historia, y no contaba como
+ *      ausente ahi.
+ * La LCS no tiene ninguno de los dos modos de fallo: es el alineamiento
+ * GLOBAL optimo (no local ni greedy), respeta el orden, y una palabra
+ * corriente que aparece en otro sitio solo "tapa" el hueco si ese orden es
+ * compatible con el resto del texto alrededor.
  */
 export function findGaps(textWords: string[], heardWords: string[], minRun = 3): Gap[] {
+  const n = textWords.length, m = heardWords.length;
+  const dp: Int32Array[] = new Array(n + 1);
+  for (let i = 0; i <= n; i++) dp[i] = new Int32Array(m + 1);
+  for (let i = 1; i <= n; i++) {
+    for (let j = 1; j <= m; j++) {
+      dp[i][j] = wordsMatch(textWords[i - 1], heardWords[j - 1])
+        ? dp[i - 1][j - 1] + 1
+        : Math.max(dp[i - 1][j], dp[i][j - 1]);
+    }
+  }
+  const matched = new Array<boolean>(n).fill(false);
+  let i = n, j = m;
+  while (i > 0 && j > 0) {
+    if (wordsMatch(textWords[i - 1], heardWords[j - 1]) && dp[i][j] === dp[i - 1][j - 1] + 1) {
+      matched[i - 1] = true;
+      i--; j--;
+    } else if (dp[i - 1][j] >= dp[i][j - 1]) {
+      i--;
+    } else {
+      j--;
+    }
+  }
+
   const gaps: Gap[] = [];
-  const presente = textWords.map((w) => heardWords.some((h) => wordsMatch(w, h)));
   let run: string[] = [];
   let runStart = -1;
-  for (let i = 0; i < textWords.length; i++) {
-    if (presente[i]) {
-      if (run.length >= minRun) {
-        gaps.push({ textWords: [...run], startIdx: runStart, endIdx: i, anchorBeforeIdx: null, anchorAfterIdx: null });
-      }
+  for (let k = 0; k < n; k++) {
+    if (matched[k]) {
+      if (run.length >= minRun) gaps.push({ textWords: [...run], startIdx: runStart, endIdx: k, anchorBeforeIdx: null, anchorAfterIdx: null });
       run = [];
       runStart = -1;
     } else {
-      if (runStart < 0) runStart = i;
-      run.push(textWords[i]);
+      if (runStart < 0) runStart = k;
+      run.push(textWords[k]);
     }
   }
-  if (run.length >= minRun) {
-    gaps.push({ textWords: [...run], startIdx: runStart, endIdx: textWords.length, anchorBeforeIdx: null, anchorAfterIdx: null });
-  }
+  if (run.length >= minRun) gaps.push({ textWords: [...run], startIdx: runStart, endIdx: n, anchorBeforeIdx: null, anchorAfterIdx: null });
   return gaps;
 }
 
