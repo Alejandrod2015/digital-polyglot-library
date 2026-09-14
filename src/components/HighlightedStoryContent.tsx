@@ -12,35 +12,19 @@ import { normalizeVocabType } from "@/lib/vocabTypes";
 
 type VocabItem = { word: string; surface?: string; type?: string | null; definition?: string };
 
-// Morphology-first vocab type resolution (mismo que StoryContent).
-// La inferencia compartida en @/lib/vocabTypes cae a "noun" demasiado
-// agresivamente cuando la definición tiene formato narrativo. Acá
-// priorizamos morfología inequívoca (verb infinitive -ar/-er/-ir,
-// -mente adverb, multi-word expression) y sólo después miramos el
-// type explícito del data.
+// MISMA resolución que StoryContent.tsx (2026-07-06): el `type` explícito
+// del vocab manda; la inferencia del dominio solo entra cuando falta.
+// Esta función tenía su propia heurística local que miraba el espacio en
+// la palabra ANTES que el type explícito, así que cualquier sustantivo con
+// artículo ("la crêpe", "le lycée") pintaba pill rosa de "expression" aunque
+// la base dijera "noun". Pill y panel deben decir siempre lo mismo.
 function resolveVocabType(item: VocabItem): string {
-  const word = (item.word ?? item.surface ?? "").trim().toLowerCase();
-  const def = (item.definition ?? "").trim().toLowerCase();
-
-  if (word.includes(" ") || word.includes("-")) return "expression";
-  if (word.endsWith("mente") || word.endsWith("ly")) return "adverb";
-
-  const ADJ_SUF = ["oso", "osa", "ivo", "iva", "able", "ible", "iento", "ienta"];
-  if (ADJ_SUF.some((s) => word.endsWith(s))) return "adjective";
-
-  const NOUN_SUF = ["ción", "sión", "dad", "tad", "tud", "aje", "anza", "encia", "ancia", "miento", "ismo", "ista", "ería", "azo", "ote"];
-  if (NOUN_SUF.some((s) => word.endsWith(s))) return "noun";
-
-  if (word.length >= 4 && /(?:ar|er|ir)$/.test(word)) return "verb";
-
-  if (item.type) {
-    const explicit = normalizeVocabType(item.type);
-    if (explicit) return explicit;
-  }
-
-  if (def.startsWith("to ")) return "verb";
-
-  return "other";
+  return (
+    normalizeVocabType(item.type, {
+      word: item.word ?? item.surface ?? "",
+      definition: item.definition ?? "",
+    }) ?? "other"
+  );
 }
 
 type HighlightedStoryContentProps = {
