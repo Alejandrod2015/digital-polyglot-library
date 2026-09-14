@@ -1249,11 +1249,16 @@ export function buildTopicCheckpointPracticeSession(items: PracticeFavoriteItem[
   );
 }
 
-export function getRecommendedPracticeModeFromOnboarding(
+/**
+ * Generico en el fallback a proposito: nunca devuelve "speaking" (el sesgo de
+ * onboarding solo conoce meaning, context y listening), asi que quien le pasa
+ * un modo restringido recupera ese mismo tipo y no tiene que castear.
+ */
+export function getRecommendedPracticeModeFromOnboarding<M extends PracticeMode>(
   items: PracticeFavoriteItem[],
-  fallback: PracticeMode,
+  fallback: M,
   prefs?: OnboardingPracticePrefs
-): PracticeMode {
+): M | "meaning" | "context" | "listening" {
   if (!prefs) return fallback;
   const bias = getPracticeModeBias(prefs);
   if (!bias) return fallback;
