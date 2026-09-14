@@ -3148,8 +3148,8 @@
     }
   },
   "cmu0doigc0007j8e292tycths#advice-and-opinions": {
-    "cerrado": "2026-09-13T23:30:31.420Z",
-    "hash": "b4335d3317466346",
+    "cerrado": "2026-09-14T06:56:06.601Z",
+    "hash": "e1622b6bbcca4ce0",
     "historias": [
       "advice-and-opinions#0 des-conseils-pas-demandes",
       "advice-and-opinions#1 une-vitrine-trop-chic",
@@ -3212,8 +3212,8 @@
     }
   },
   "cmu0doigc0007j8e292tycths#careers-and-ambitions": {
-    "cerrado": "2026-09-13T23:30:15.831Z",
-    "hash": "6a0445024f3030f8",
+    "cerrado": "2026-09-14T06:53:39.605Z",
+    "hash": "94d5b317807f7b3b",
     "historias": [
       "careers-and-ambitions#0 la-tournee-jamais-offerte",
       "careers-and-ambitions#1 reponse-avant-vendredi",
@@ -3225,7 +3225,7 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"a\" 29%)",
-      "arranques de parrafo variados (mas repetido \"élodie\", 21%)",
+      "arranques de parrafo variados (mas repetido \"aurélien\", 21%)",
       "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
@@ -3276,8 +3276,8 @@
     }
   },
   "cmu0doigc0007j8e292tycths#dating-and-romance": {
-    "cerrado": "2026-09-13T23:30:46.929Z",
-    "hash": "94e61e4fa298ba91",
+    "cerrado": "2026-09-14T06:54:39.300Z",
+    "hash": "8450b4c884f5241f",
     "historias": [
       "dating-and-romance#0 rendez-vous-sous-la-bourse",
       "dating-and-romance#1 samedi-deux-promesses",
@@ -3340,8 +3340,8 @@
     }
   },
   "cmu0doigc0007j8e292tycths#money-and-debts": {
-    "cerrado": "2026-09-13T23:26:42.464Z",
-    "hash": "6dcd334d31200bce",
+    "cerrado": "2026-09-14T06:54:09.325Z",
+    "hash": "b5a49e44202ced31",
     "historias": [
       "money-and-debts#0 trente-mille-euros",
       "money-and-debts#1 un-seul-nom-sur-le-contrat",
@@ -3407,7 +3407,7 @@
     ]
   },
   "cmu0doigc0007j8e292tycths#pride-and-envy": {
-    "cerrado": "2026-09-13T23:27:44.126Z",
+    "cerrado": "2026-09-14T06:55:01.766Z",
     "hash": "767e3cec1d4ba4d0",
     "historias": [
       "pride-and-envy#0 une-photo-pour-le-journal",
@@ -3470,8 +3470,8 @@
     }
   },
   "cmu0doigc0007j8e292tycths#rumours-and-reputation": {
-    "cerrado": "2026-09-13T23:26:58.089Z",
-    "hash": "466e229579d9dd56",
+    "cerrado": "2026-09-14T06:54:24.368Z",
+    "hash": "3e104a4224ba1a9d",
     "historias": [
       "rumours-and-reputation#0 ce-qu-on-raconte-a-fives",
       "rumours-and-reputation#1 une-blague-mal-repetee",
@@ -3537,8 +3537,8 @@
     ]
   },
   "cmu0doigc0007j8e292tycths#stress-and-burnout": {
-    "cerrado": "2026-09-13T23:27:29.003Z",
-    "hash": "e0a7371a0cad233d",
+    "cerrado": "2026-09-14T06:54:54.323Z",
+    "hash": "15e9df839de0be12",
     "historias": [
       "stress-and-burnout#0 des-mains-qui-tremblent",
       "stress-and-burnout#1 endormie-contre-l-etabli",
@@ -3550,7 +3550,7 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"mentait\" 20%)",
-      "arranques de parrafo variados (mas repetido \"le\", 13%)",
+      "arranques de parrafo variados (mas repetido \"ils\", 13%)",
       "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
@@ -3604,26 +3604,26 @@
     ]
   },
   "cmu0dpa3i0007j80ugstn0jf0#birthdays-and-wishes": {
-    "cerrado": "2026-09-13T23:30:01.123Z",
-    "hash": "832ccfa65bb33661",
+    "cerrado": "2026-09-14T06:50:55.142Z",
+    "hash": "10e219ed42136274",
     "historias": [
       "birthdays-and-wishes#0 una-torta-per-dodici",
       "birthdays-and-wishes#1 e-solo-uno-scherzo",
       "birthdays-and-wishes#2 il-traghetto-delle-sei"
     ],
     "checks": [
-      "plan del tema completo (registro \"comedia ligera con celos callados: Alice ayuda con gracia a que Matteo quede con otra\", espina \"El pacto de la servilleta: Alice calla lo que siente por Matteo; en este tema sus palabras y su terraza sirven para la cita de Matteo con otra, y aun asi Francesca ve lo que Matteo no ve.\")",
+      "plan del tema completo (registro \"tierno y torpe: una fiesta que sale pequeña y una broma que a una de los dos no le hace gracia\", espina \"Alice y Matteo firmaron en la universidad un pacto en una servilleta (si a los 35 siguen solos, se casan); Matteo cumple 35 y lo recuerda riendo, y para Alice no es broma. Cada tema, el silencio de Alice le cuesta algo, hasta que en el tema 7 se lo dice.\")",
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "arranques de parrafo variados (mas repetido \"alice\", 29%)",
-      "densidad 5.3 palabras por oracion (techo 9 en a0)",
-      "seguidilla 23/63 oraciones cortas narradas",
+      "densidad 5.1 palabras por oracion (techo 9 en a0)",
+      "seguidilla 28/65 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 12/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.18 sobre 57 plazas · 49 salen una sola vez | ancladas: 7/64 (11%) | cola: 49/57 portables con un solo encuentro (86%, tope 30%) | de un solo encuentro: Oggi, porta, migliore amico, Lavora, viene, triste, vuoti, diventa rossa, Mi dispiace, si siede, ho fame, tanti auguri, accese, spegne, vecchio, Sopra, legge ad alta voce, ci sposiamo, batte forte, scherzo, nasconde, quasi, guarda, troppo, Certo, tieni, sempre, perdo, pesa, buie…",
@@ -3631,6 +3631,134 @@
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: birthdays-and-wishes (Matteo, Alice)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "italy",
+      "registro": "tierno y torpe: una fiesta que sale pequeña y una broma que a una de los dos no le hace gracia",
+      "espina": "Alice y Matteo firmaron en la universidad un pacto en una servilleta (si a los 35 siguen solos, se casan); Matteo cumple 35 y lo recuerda riendo, y para Alice no es broma. Cada tema, el silencio de Alice le cuesta algo, hasta que en el tema 7 se lo dice.",
+      "recursos": "A0: repeticion ritmica (Un amico non viene. Poi un altro, e poi tutti.), contraste con ma, imagen concreta final (la tasca pesa, el cajon cerrado). Titulos: objeto torcido, linea dicha, regionalismo (el ferry de las seis de Genova).",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "dar a Matteo una fiesta sorpresa de 35 en la terraza, con doce amigos",
+          "impide": "los amigos cancelan uno a uno por telefono antes de las ocho",
+          "cuesta": "la fiesta que imagino: una tarta para doce y doce platos vacios",
+          "cambia": "la fiesta es solo de los dos y a Matteo le basta; Alice rie",
+          "emocion": "tristeza: triste porque la fiesta ya no existe, y aprieta el telefono"
+        },
+        {
+          "slot": "1",
+          "quiere": "que la noche siga siendo una broma entre amigos",
+          "impide": "Matteo saca del portafoglio la servilleta del pacto y la lee en voz alta",
+          "cuesta": "miente: dice que es solo una broma y se rie demasiado fuerte",
+          "cambia": "Matteo le da la servilleta para que la guarde; ahora la lleva ella",
+          "emocion": "panico: el corazon le late fuerte porque para ella no es broma, y esconde la cara detras del vaso"
+        },
+        {
+          "slot": "2",
+          "quiere": "decirle la verdad a Matteo en la escalera antes de que salga el ferry de las seis",
+          "impide": "el miedo y el taxi que pita en el vicolo; Matteo llega tarde",
+          "cuesta": "la ocasion: solo le dice buen viaje y el se va una semana a Cerdena",
+          "cambia": "guarda la servilleta en un cajon y lo cierra: decide callar",
+          "emocion": "miedo: tiene miedo porque es su amigo, y aprieta la servilleta en el bolsillo"
+        }
+      ]
+    }
+  },
+  "cmu0dpa3i0007j80ugstn0jf0#cooking-and-recipes": {
+    "cerrado": "2026-09-14T06:53:38.717Z",
+    "hash": "dc94d0a0db4092bf",
+    "historias": [
+      "cooking-and-recipes#0 il-pesto-vuole-pazienza",
+      "cooking-and-recipes#1 un-mortaio-in-due-pezzi",
+      "cooking-and-recipes#2 trofie-per-due"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"sensorial y domestico: olor a pan y albahaca, y una pequena catastrofe en la cocina\", espina \"El pacto de la servilleta: Alice calla lo que siente por Matteo; aqui quiere cuidarlo haciendole su pesto, y rompe el mortero de su familia.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"matteo\", 24%)",
+      "densidad 5.9 palabras por oracion (techo 9 en a0)",
+      "seguidilla 31/63 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.13 sobre 32 plazas · 29 salen una sola vez | ancladas: 28/60 (47%) | cola: 29/32 portables con un solo encuentro (91%, tope 30%) | de un solo encuentro: Va bene, pazienza, insegno, vuole fare, agitata, Ha sonno, serve, bel, molto, diventa, ricomincia, dolce, pronto, assaggia, lava, stanco, Che profumo, lentamente, chiude gli occhi, buono, accanto, a lungo, sospira, Non importa, asciuga, lacrima, appetito, appena, riempie; pasan del 30%",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: cooking-and-recipes (Alice, Lorenzo)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "italy",
+      "registro": "sensorial y domestico: olor a pan y albahaca, y una pequena catastrofe en la cocina",
+      "espina": "El pacto de la servilleta: Alice calla lo que siente por Matteo; aqui quiere cuidarlo haciendole su pesto, y rompe el mortero de su familia.",
+      "recursos": "A0: repeticion (Piano, in cerchio), contraste con ma (Non importa, ma i suoi occhi sono tristi), imagen concreta final (dos macetas hechas con el mortero roto). Titulos: linea dicha (Il pesto vuole pazienza), objeto torcido (Un mortaio in due pezzi), 'para X' con regionalismo (Trofie per due).",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "hacerle a Matteo su pesto de los domingos por primera vez",
+          "impide": "no sabe hacerlo y solo tiene una planta de albahaca pequena",
+          "cuesta": "su domingo libre: trabaja una hora en el mostrador de la focacceria a cambio de la leccion",
+          "cambia": "Lorenzo le dara la albahaca y le ensenara",
+          "emocion": "agitacion: esta agitada porque Matteo llega a las dos, y sujeta la maceta con las dos manos"
+        },
+        {
+          "slot": "1",
+          "quiere": "que el pesto le salga bien en el mortero de Matteo",
+          "impide": "machaca demasiado fuerte y la albahaca se pone negra",
+          "cuesta": "el mortero de marmol de la familia de Matteo se le resbala y se rompe en dos",
+          "cambia": "el pesto esta listo, pero el mortero ya no existe",
+          "emocion": "panico: tiene las manos frias porque es el mortero de Matteo, y grita que no"
+        },
+        {
+          "slot": "2",
+          "quiere": "que Matteo disfrute la comida y confesarle lo del mortero",
+          "impide": "el pesto le encanta y ella tiene que romperle el momento con los dos pedazos",
+          "cuesta": "el mortero de su familia, que no vuelve; Matteo dice que no importa, pero sus ojos estan tristes",
+          "cambia": "Matteo convierte los pedazos en dos macetas, una para cada uno",
+          "emocion": "culpa: tiene el estomago cerrado porque el mortero esta roto, y se seca una lagrima"
+        }
+      ]
+    }
+  },
+  "cmu0dpa3i0007j80ugstn0jf0#dating-and-first-impressions": {
+    "cerrado": "2026-09-14T06:51:10.634Z",
+    "hash": "a1630834c3bc8a0c",
+    "historias": [
+      "dating-and-first-impressions#0 scrivi-tu-per-favore",
+      "dating-and-first-impressions#1 due-spritz-in-terrazza",
+      "dating-and-first-impressions#2 i-fiori-sbagliati"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"comedia ligera con celos callados: Alice ayuda con gracia a que Matteo quede con otra\", espina \"El pacto de la servilleta: Alice calla lo que siente por Matteo; en este tema sus palabras y su terraza sirven para la cita de Matteo con otra, y aun asi Francesca ve lo que Matteo no ve.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"matteo\", 20%)",
+      "densidad 5.9 palabras por oracion (techo 9 en a0)",
+      "seguidilla 25/55 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.10 sobre 50 plazas · 46 salen una sola vez | ancladas: 11/61 (18%) | cola: 46/50 portables con un solo encuentro (92%, tope 30%) | de un solo encuentro: sale, quinto, mostra, Studia, Stasera, scrivere, messaggio, carina, dentro, felice, Così, brava, Ci vediamo, più bello, abbraccia, allegro, usa, sparire, arriva, incontra, vero, parla, dietro, abito, gentile, dopo, simpatica, cerca, trova, solo…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: dating-and-first-impressions (Matteo, Alice, Francesca)"
     ],
     "plan": {
       "tipo": "Friends",
@@ -3667,98 +3795,34 @@
       ]
     }
   },
-  "cmu0dpa3i0007j80ugstn0jf0#cooking-and-recipes": {
-    "cerrado": "2026-09-13T23:30:51.299Z",
-    "hash": "c1e1169c6c9df7ba",
+  "cmu0dpa3i0007j80ugstn0jf0#football-and-rivalries": {
+    "cerrado": "2026-09-14T06:53:23.425Z",
+    "hash": "02451b5f87cc10f9",
     "historias": [
-      "cooking-and-recipes#0 il-pesto-vuole-pazienza",
-      "cooking-and-recipes#1 un-mortaio-in-due-pezzi",
-      "cooking-and-recipes#2 trofie-per-due"
-    ],
-    "checks": [
-      "plan del tema completo (registro \"aspero y cortante: una broma que hiere, una semana de silencio y una reconciliacion torpe\", espina \"El pacto de la servilleta: Alice calla lo que siente por Matteo; aqui Matteo cuenta el pacto como chiste delante de otra, se pelean, y Alice pide perdon con una mentira para no confesar.\")",
-      "validador canonico: 3/3",
-      "sin guiones largos ni emojis en el contenido",
-      "acotacion 100% (solo avisa)",
-      "arranques de parrafo variados (mas repetido \"matteo\", 24%)",
-      "densidad 6.1 palabras por oracion (techo 9 en a0)",
-      "seguidilla 29/60 oraciones cortas narradas",
-      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
-    ],
-    "pendientesDeConjunto": [
-      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
-      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.16 sobre 32 plazas · 28 salen una sola vez | ancladas: 28/60 (47%) | cola: 28/32 portables con un solo encuentro (88%, tope 30%) | de un solo encuentro: pazienza, insegno, vuole fare, agitata, Ha sonno, serve, bel, molto, diventa, ricomincia, dolce, pronto, assaggia, lava, stanco, Che profumo, lentamente, chiude gli occhi, buono, accanto, a lungo, sospira, Non importa, asciuga, lacrima, appetito, appena, riempie; pasan del 30%",
-      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: cooking-and-recipes (Alice, Lorenzo)"
-    ],
-    "plan": {
-      "tipo": "Friends",
-      "nivel": "a0",
-      "variante": "italy",
-      "registro": "aspero y cortante: una broma que hiere, una semana de silencio y una reconciliacion torpe",
-      "espina": "El pacto de la servilleta: Alice calla lo que siente por Matteo; aqui Matteo cuenta el pacto como chiste delante de otra, se pelean, y Alice pide perdon con una mentira para no confesar.",
-      "recursos": "A0: repeticion (Sono arrabbiata con lui. Ma sono arrabbiata anche con me), contraste con ma (La pace e vera, ma c'e una crepa), imagen concreta final (la focaccia partida en la escalera, la grieta como en el mortero). Titulos: linea dicha (Non e divertente), fragmento (Domenica senza terrazza), objeto y lugar (Focaccia sulle scale).",
-      "historias": [
-        {
-          "slot": "0",
-          "quiere": "una comida bonita en la terraza para presentar a su companera Valentina",
-          "impide": "Matteo cuenta el pacto como chiste delante de Valentina",
-          "cuesta": "le dice a Matteo que no entiende nada y se va dando un portazo: rompe la comida y la amistad queda herida",
-          "cambia": "empieza la pelea; Matteo se queda solo con el vaso en la mano",
-          "emocion": "verguenza: se pone palida porque Matteo bromea con su secreto delante de otra, y deja el tenedor"
-        },
-        {
-          "slot": "1",
-          "quiere": "seguir enfadada y no ver a Matteo",
-          "impide": "Valentina le dice que Matteo no sabe nada del pacto y que ella si",
-          "cuesta": "el primer domingo sin comida juntos en anos, y admitir que tambien esta enfadada consigo misma",
-          "cambia": "decide bajar a pedir perdon",
-          "emocion": "tristeza y culpa: tiene los ojos hinchados porque Valentina tiene razon, y se muerde el labio"
-        },
-        {
-          "slot": "2",
-          "quiere": "pedir perdon a Matteo sin confesar el motivo",
-          "impide": "Matteo pregunta por que se enfada tanto por un pacto de hace quince anos",
-          "cuesta": "miente (el cansancio, los turnos), y Matteo promete no hablar nunca mas del pacto",
-          "cambia": "hacen las paces en la escalera, pero queda una grieta",
-          "emocion": "miedo: tiembla un poco delante de la puerta porque Matteo puede no abrir, y llama dos veces"
-        }
-      ]
-    }
-  },
-  "cmu0dpa3i0007j80ugstn0jf0#dating-and-first-impressions": {
-    "cerrado": "2026-09-13T23:30:15.821Z",
-    "hash": "06f85d89ddcf22cf",
-    "historias": [
-      "dating-and-first-impressions#0 scrivi-tu-per-favore",
-      "dating-and-first-impressions#1 due-spritz-in-terrazza",
-      "dating-and-first-impressions#2 i-fiori-sbagliati"
+      "football-and-rivalries#0 il-derby-della-lanterna",
+      "football-and-rivalries#1 la-maglia-in-palio",
+      "football-and-rivalries#2 solo-per-una-foto"
     ],
     "checks": [
       "plan del tema completo (registro \"rivalidad ruidosa de derby: orgullo, gritos en la terraza y una apuesta que sale cara\", espina \"El pacto de la servilleta: Alice calla lo que siente por Matteo; aqui apuesta y pierde la vieja camiseta que el le regalo en la universidad, y para Matteo es solo una camiseta.\")",
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "arranques de parrafo variados (mas repetido \"matteo\", 20%)",
-      "densidad 6.1 palabras por oracion (techo 9 en a0)",
-      "seguidilla 21/52 oraciones cortas narradas",
+      "arranques de parrafo variados (mas repetido \"riccardo\", 19%)",
+      "densidad 5.8 palabras por oracion (techo 9 en a0)",
+      "seguidilla 26/59 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 12/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.11 sobre 55 plazas · 50 salen una sola vez | ancladas: 6/61 (10%) | cola: 50/55 portables con un solo encuentro (91%, tope 30%) | de un solo encuentro: sale, quinto, mostra, Studia, Stasera, scrivere, messaggio, carina, dentro, felice, Così, brava, Ci vediamo, più bello, abbraccia, usa, sparire, arriva, incontra, sacchetto della spazzatura, vero, parla, dietro, abito, gentile, dopo, sorride, simpatica, cerca, trova…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.18 sobre 40 plazas · 35 salen una sola vez | ancladas: 21/61 (34%) | cola: 35/40 portables con un solo encuentro (88%, tope 30%) | de un solo encuentro: terzo, vicino, ha caldo in faccia, incrocia le braccia, Allora, mangia, comincia, piccola, grida, ancora, canta, respira, invece, compro, nuova, toglie, È finita, ha freddo, indossa, nervosa, per noi, contenta, fresca, Davanti, bianco, pulisce, lacrime agli occhi, di corsa, anche, prima…; pasan del 30%",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: dating-and-first-impressions (Matteo, Alice, Francesca)"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: football-and-rivalries (Riccardo, Alice)"
     ],
     "plan": {
       "tipo": "Friends",
@@ -3795,73 +3859,9 @@
       ]
     }
   },
-  "cmu0dpa3i0007j80ugstn0jf0#football-and-rivalries": {
-    "cerrado": "2026-09-13T23:30:25.891Z",
-    "hash": "cbf585fd49a07110",
-    "historias": [
-      "football-and-rivalries#0 il-derby-della-lanterna",
-      "football-and-rivalries#1 la-maglia-in-palio",
-      "football-and-rivalries#2 solo-per-una-foto"
-    ],
-    "checks": [
-      "plan del tema completo (registro \"tension y oscuridad intima: la tormenta afuera y una confesion a una desconocida adentro\", espina \"El pacto de la servilleta: Alice calla lo que siente por Matteo; en la tormenta lo dice por primera vez en voz alta, pero a Federica, una vecina, y no a el.\")",
-      "validador canonico: 3/3",
-      "sin guiones largos ni emojis en el contenido",
-      "acotacion 100% (solo avisa)",
-      "arranques de parrafo variados (mas repetido \"alice\", 25%)",
-      "densidad 5.9 palabras por oracion (techo 9 en a0)",
-      "seguidilla 26/58 oraciones cortas narradas",
-      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
-    ],
-    "pendientesDeConjunto": [
-      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
-      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.20 sobre 40 plazas · 35 salen una sola vez | ancladas: 21/61 (34%) | cola: 35/40 portables con un solo encuentro (88%, tope 30%) | de un solo encuentro: terzo, vicino, ha caldo in faccia, incrocia le braccia, Allora, mangia, comincia, piccola, grida, ancora, canta, respira, invece, compro, nuova, toglie, È finita, ha freddo, indossa, nervosa, per noi, contenta, fresca, Davanti, bianco, pulisce, lacrime agli occhi, di corsa, anche, prima…; pasan del 30%",
-      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: football-and-rivalries (Riccardo, Alice)"
-    ],
-    "plan": {
-      "tipo": "Friends",
-      "nivel": "a0",
-      "variante": "italy",
-      "registro": "tension y oscuridad intima: la tormenta afuera y una confesion a una desconocida adentro",
-      "espina": "El pacto de la servilleta: Alice calla lo que siente por Matteo; en la tormenta lo dice por primera vez en voz alta, pero a Federica, una vecina, y no a el.",
-      "recursos": "A0: repeticion (niente pergola, niente sedie), contraste con ma (Questo palazzo e vecchio, ma e forte), imagen concreta final (una sola maceta de albahaca al sol). Titulos: objeto torcido (allerta rossa), linea dicha (Un segreto tra noi due), fragmento de tiempo (Dopo la tempesta).",
-      "historias": [
-        {
-          "slot": "0",
-          "quiere": "salvar la albahaca de Matteo, la del pesto de los domingos, antes de la tormenta",
-          "impide": "el viento tira las macetas y la pergola cae sobre la mesa",
-          "cuesta": "la terraza se pierde: solo se salva una maceta",
-          "cambia": "bajan empapados y conocen a Federica en el rellano",
-          "emocion": "miedo: tiene miedo porque las sillas vuelan, y aun asi coge las macetas"
-        },
-        {
-          "slot": "1",
-          "quiere": "salir del ascensor parado a oscuras",
-          "impide": "el apagon y la pregunta de Federica: Matteo es tu novio?",
-          "cuesta": "el secreto: lo dice por primera vez en voz alta, y a una vecina, no a Matteo",
-          "cambia": "el secreto ya existe fuera de ella; Federica lo guarda",
-          "emocion": "alivio y verguenza: sale con las mejillas calientes porque lo ha dicho, y cuenta hasta diez para respirar"
-        },
-        {
-          "slot": "2",
-          "quiere": "limpiar la terraza rota y volver a la normalidad con Matteo",
-          "impide": "Matteo cuenta que tiene miedo en el ferry y que entonces piensa en ella",
-          "cuesta": "la pergola y las sillas de sus domingos se han perdido para siempre",
-          "cambia": "Alice sabe que para Matteo ella es su lugar seguro, y aun asi calla",
-          "emocion": "ternura: siente calor en el pecho porque el piensa en ella, y mira el mar sin decir nada"
-        }
-      ]
-    }
-  },
   "cmu0dpa3i0007j80ugstn0jf0#quarrels-and-apologies": {
-    "cerrado": "2026-09-13T23:12:19.778Z",
-    "hash": "c8c8beb9d4c2893b",
+    "cerrado": "2026-09-14T06:52:13.320Z",
+    "hash": "59ce8e7c48fedb46",
     "historias": [
       "quarrels-and-apologies#0 non-e-divertente",
       "quarrels-and-apologies#1 domenica-senza-terrazza",
@@ -3872,17 +3872,17 @@
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "arranques de parrafo variados (mas repetido \"matteo\", 13%)",
-      "densidad 6.4 palabras por oracion (techo 9 en a0)",
-      "seguidilla 19/50 oraciones cortas narradas",
+      "arranques de parrafo variados (mas repetido \"matteo\", 20%)",
+      "densidad 5.7 palabras por oracion (techo 9 en a0)",
+      "seguidilla 26/57 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 12/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.00 sobre 58 plazas · 58 salen una sola vez | ancladas: 2/60 (3%) | cola: 58/58 portables con un solo encuentro (100%, tope 30%) | de un solo encuentro: bastano, collega, torta, ospite, apparecchia, scalda, racconta, storie di mare, un po' di vino, brindare, trentacinque, diventa bianca, posa, vergogna, scherza, Che cosa c'è, divertente, si alza, Sbatte, tavola, pranzano, Per la prima volta da anni, Da una settimana, per non vedere, capelli, lunghi, sacchetto di pane, guardo per terra, gonfi, ascolta…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.05 sobre 40 plazas · 38 salen una sola vez | ancladas: 20/60 (33%) | cola: 38/40 portables con un solo encuentro (95%, tope 30%) | de un solo encuentro: bastano, torta, scalda, racconta, trentacinque, diventa bianca, posa, vergogna, scherza, Che cosa c'è, divertente, si alza, Sbatte, pranzano, per non vedere, capelli, lunghi, guardo per terra, gonfi, ascolta, si morde, ha ragione, stupida, chiedi scusa, consiglio, spento, appoggia, trema, cattiva, apre la bocca…; pasan del 30%",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
@@ -3923,30 +3923,94 @@
       ]
     }
   },
+  "cmu0dpa3i0007j80ugstn0jf0#secrets-and-confessions": {
+    "cerrado": "2026-09-14T06:52:28.298Z",
+    "hash": "90dd46640b5f9020",
+    "historias": [
+      "secrets-and-confessions#0 trentacinque-candeline",
+      "secrets-and-confessions#1 ti-voglio-bene-ma",
+      "secrets-and-confessions#2 due-piatti-come-sempre"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"intimo y desnudo: un cumpleanos, una confesion y una amistad que sigue sin mentiras\", espina \"El pacto de la servilleta: Alice calla lo que siente por Matteo; en su cumpleanos 35 se lo dice por fin, Matteo la quiere pero no asi, y el domingo siguiente siguen siendo amigos, sin pacto.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"alice\", 25%)",
+      "densidad 5.8 palabras por oracion (techo 9 en a0)",
+      "seguidilla 22/58 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.06 sobre 36 plazas · 34 salen una sola vez | ancladas: 24/60 (40%) | cola: 34/36 portables con un solo encuentro (94%, tope 30%) | de un solo encuentro: desiderio, arrossisce, mantiene, Sto bene, Torno subito, scusa, Leggi, brillano, emozionata, maglione, gialla, secca, alza gli occhi, Lo so, Da tanti anni, sincera, ti voglio bene, piange, va via, accarezza, muove, pallido, Come sempre, timido, difficile, strappa, Le fa male, giusto, e basta, cresce…; pasan del 30%",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: secrets-and-confessions (Alice, Matteo)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "italy",
+      "registro": "intimo y desnudo: un cumpleanos, una confesion y una amistad que sigue sin mentiras",
+      "espina": "El pacto de la servilleta: Alice calla lo que siente por Matteo; en su cumpleanos 35 se lo dice por fin, Matteo la quiere pero no asi, y el domingo siguiente siguen siendo amigos, sin pacto.",
+      "recursos": "A0: eco del tema 1 (Oggi ... compie trentacinque anni, las velas), repeticion (Amici e basta), contraste con ma (Ti voglio bene, ma), imagen concreta final (dos platos al sol, la albahaca creciendo en el marmol roto). Titulos: objeto (Trentacinque candeline), linea dicha (Ti voglio bene, ma), fragmento (Due piatti, come sempre).",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "decirle a Matteo la verdad el dia que ella cumple 35",
+          "impide": "Matteo cumple su promesa y no menciona el pacto: tiene que sacarlo ella",
+          "cuesta": "rompe el silencio que Matteo le regalo y pone la servilleta sobre la mesa",
+          "cambia": "le pide que la lea en voz alta; ya no hay excusa",
+          "emocion": "miedo: le tiemblan las manos porque ya no tiene excusa, y deja la servilleta junto a la tarta"
+        },
+        {
+          "slot": "1",
+          "quiere": "que Matteo sepa que para ella el pacto nunca fue broma",
+          "impide": "Matteo la quiere, pero no de ese modo",
+          "cuesta": "la esperanza de quince anos",
+          "cambia": "Alice conoce la respuesta; Matteo no se va y se queda con ella hasta la noche",
+          "emocion": "dolor: llora porque ya sabe la respuesta, y no esconde las lagrimas"
+        },
+        {
+          "slot": "2",
+          "quiere": "seguir con los domingos sin fingir",
+          "impide": "la verguenza y la torpeza del primer domingo despues",
+          "cuesta": "rompe la servilleta del pacto y la tira",
+          "cambia": "son amigos y nada mas, y comen en la terraza como siempre",
+          "emocion": "alivio triste: le duele pero es justo, y rompe la servilleta en trozos pequenos"
+        }
+      ]
+    }
+  },
   "cmu0dpa3i0007j80ugstn0jf0#weather-and-storms": {
-    "cerrado": "2026-09-13T23:30:40.855Z",
-    "hash": "d1275034eaa4aaca",
+    "cerrado": "2026-09-14T06:51:42.069Z",
+    "hash": "d86d92ad2eefbd66",
     "historias": [
       "weather-and-storms#0 allerta-rossa",
       "weather-and-storms#1 un-segreto-tra-noi-due",
       "weather-and-storms#2 dopo-la-tempesta"
     ],
     "checks": [
-      "plan del tema completo (registro \"sensorial y domestico: olor a pan y albahaca, y una pequena catastrofe en la cocina\", espina \"El pacto de la servilleta: Alice calla lo que siente por Matteo; aqui quiere cuidarlo haciendole su pesto, y rompe el mortero de su familia.\")",
+      "plan del tema completo (registro \"tension y oscuridad intima: la tormenta afuera y una confesion a una desconocida adentro\", espina \"El pacto de la servilleta: Alice calla lo que siente por Matteo; en la tormenta lo dice por primera vez en voz alta, pero a Federica, una vecina, y no a el.\")",
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "arranques de parrafo variados (mas repetido \"alice\", 13%)",
-      "densidad 6.1 palabras por oracion (techo 9 en a0)",
-      "seguidilla 23/56 oraciones cortas narradas",
+      "densidad 5.8 palabras por oracion (techo 9 en a0)",
+      "seguidilla 27/61 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 12/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.07 sobre 56 plazas · 52 salen una sola vez | ancladas: 6/62 (10%) | cola: 52/56 portables con un solo encuentro (93%, tope 30%) | de un solo encuentro: nero, rossa, soffia, cadono, prendo, per favore, Basta, andiamo giù, per mano, volano, Veloce, È tutto buio, conta, fino a dieci, Tranquilla, accende, spesso, fidanzato, amo, sa, la prima volta, che, ad alta voce, tra noi due, Oppure, mai, esce, guance calde, si ferma, stretto…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.06 sobre 47 plazas · 44 salen una sola vez | ancladas: 15/62 (24%) | cola: 44/47 portables con un solo encuentro (94%, tope 30%) | de un solo encuentro: nero, rossa, soffia, cadono, prendo, per favore, Basta, andiamo giù, per mano, volano, Veloce, conta, Tranquilla, accende, spesso, fidanzato, amo, sa, la prima volta, ad alta voce, mai, esce, si ferma, stretto, bloccato, sussurra, un giorno, tempesta, rotta, altra…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
@@ -3956,33 +4020,33 @@
       "tipo": "Friends",
       "nivel": "a0",
       "variante": "italy",
-      "registro": "sensorial y domestico: olor a pan y albahaca, y una pequena catastrofe en la cocina",
-      "espina": "El pacto de la servilleta: Alice calla lo que siente por Matteo; aqui quiere cuidarlo haciendole su pesto, y rompe el mortero de su familia.",
-      "recursos": "A0: repeticion (Piano, in cerchio), contraste con ma (Non importa, ma i suoi occhi sono tristi), imagen concreta final (dos macetas hechas con el mortero roto). Titulos: linea dicha (Il pesto vuole pazienza), objeto torcido (Un mortaio in due pezzi), 'para X' con regionalismo (Trofie per due).",
+      "registro": "tension y oscuridad intima: la tormenta afuera y una confesion a una desconocida adentro",
+      "espina": "El pacto de la servilleta: Alice calla lo que siente por Matteo; en la tormenta lo dice por primera vez en voz alta, pero a Federica, una vecina, y no a el.",
+      "recursos": "A0: repeticion (niente pergola, niente sedie), contraste con ma (Questo palazzo e vecchio, ma e forte), imagen concreta final (una sola maceta de albahaca al sol). Titulos: objeto torcido (allerta rossa), linea dicha (Un segreto tra noi due), fragmento de tiempo (Dopo la tempesta).",
       "historias": [
         {
           "slot": "0",
-          "quiere": "hacerle a Matteo su pesto de los domingos por primera vez",
-          "impide": "no sabe hacerlo y solo tiene una planta de albahaca pequena",
-          "cuesta": "su domingo libre: trabaja una hora en el mostrador de la focacceria a cambio de la leccion",
-          "cambia": "Lorenzo le dara la albahaca y le ensenara",
-          "emocion": "agitacion: esta agitada porque Matteo llega a las dos, y sujeta la maceta con las dos manos"
+          "quiere": "salvar la albahaca de Matteo, la del pesto de los domingos, antes de la tormenta",
+          "impide": "el viento tira las macetas y la pergola cae sobre la mesa",
+          "cuesta": "la terraza se pierde: solo se salva una maceta",
+          "cambia": "bajan empapados y conocen a Federica en el rellano",
+          "emocion": "miedo: tiene miedo porque las sillas vuelan, y aun asi coge las macetas"
         },
         {
           "slot": "1",
-          "quiere": "que el pesto le salga bien en el mortero de Matteo",
-          "impide": "machaca demasiado fuerte y la albahaca se pone negra",
-          "cuesta": "el mortero de marmol de la familia de Matteo se le resbala y se rompe en dos",
-          "cambia": "el pesto esta listo, pero el mortero ya no existe",
-          "emocion": "panico: tiene las manos frias porque es el mortero de Matteo, y grita que no"
+          "quiere": "salir del ascensor parado a oscuras",
+          "impide": "el apagon y la pregunta de Federica: Matteo es tu novio?",
+          "cuesta": "el secreto: lo dice por primera vez en voz alta, y a una vecina, no a Matteo",
+          "cambia": "el secreto ya existe fuera de ella; Federica lo guarda",
+          "emocion": "alivio y verguenza: sale con las mejillas calientes porque lo ha dicho, y cuenta hasta diez para respirar"
         },
         {
           "slot": "2",
-          "quiere": "que Matteo disfrute la comida y confesarle lo del mortero",
-          "impide": "el pesto le encanta y ella tiene que romperle el momento con los dos pedazos",
-          "cuesta": "el mortero de su familia, que no vuelve; Matteo dice que no importa, pero sus ojos estan tristes",
-          "cambia": "Matteo convierte los pedazos en dos macetas, una para cada uno",
-          "emocion": "culpa: tiene el estomago cerrado porque el mortero esta roto, y se seca una lagrima"
+          "quiere": "limpiar la terraza rota y volver a la normalidad con Matteo",
+          "impide": "Matteo cuenta que tiene miedo en el ferry y que entonces piensa en ella",
+          "cuesta": "la pergola y las sillas de sus domingos se han perdido para siempre",
+          "cambia": "Alice sabe que para Matteo ella es su lugar seguro, y aun asi calla",
+          "emocion": "ternura: siente calor en el pecho porque el piensa en ella, y mira el mar sin decir nada"
         }
       ]
     }

@@ -2,7 +2,7 @@ from comun import v,dump
 T="rumours-and-reputation"
 s1="""Le patron de l'estaminet de Fives s'appelle Florian, et il connaît tout le quartier. Ce matin-là, dans le bruit des tasses, derrière son zinc, il a servi une chicorée brûlante à Aurélien d'un drôle d'air. “Alors, c'est vous, le nouveau de l'atelier de vélos?” a demandé Florian.
 
-Aurélien a hoché la tête sans rien dire. “On vous a viré de votre bureau, paraît-il, pour une erreur dans les comptes”, continuait Florian à voix basse. Aurélien a failli renverser sa tasse.
+Aurélien a hoché la tête, surpris. “On vous a viré de votre bureau, paraît-il, pour une erreur dans les comptes”, continuait Florian à voix basse. Aurélien a failli renverser sa tasse.
 
 “Pas du tout. J'ai démissionné, discrètement, après dix ans de travail”, a démenti Aurélien. Florian a souri, méfiant, comme si de rien n'était. “Bien sûr. C'est ce qu'ils disent tous”, lui a répondu Florian.
 
@@ -62,7 +62,7 @@ v2=[
  v("la traînée","traînées","noun","a long uneven line or mark left on a surface",True),
  v("reprendre","reprendre","verb","to start doing something again after a pause"),
 ]
-s3="""Une semaine plus tard, une autre rumeur a couru: l'estaminet de Florian allait faire faillite. Chaque habitué, prudent, allait boire son demi ailleurs.
+s3="""Dans le quartier, une autre rumeur a couru: l'estaminet de Florian allait faire faillite. Chaque habitué, prudent, allait boire son demi ailleurs.
 
 Derrière son zinc vide, Florian essuyait des verres déjà propres. “C'est faux, mais personne ne me croit. Vous savez ce que c'est, maintenant”, a soupiré Florian.
 
@@ -96,6 +96,6 @@ v3=[
 data=[
  {"topic":T,"slotIndex":0,"title":"Ce qu'on raconte à Fives","synopsis":"Dans un quartier où tout se sait, une mauvaise histoire circule sur le nouvel associé de l'atelier. Elle est fausse, mais elle amuse tout le monde. Plus Aurélien essaie de la corriger, plus on le soupçonne, et l'atelier n'est même pas encore ouvert. Il lui faut une chose: savoir qui a parlé le premier.","text":s1,"vocab":v1,"arcType":"mini-cliffhanger"},
  {"topic":T,"slotIndex":1,"title":"Une blague mal répétée","synopsis":"Aurélien veut savoir qui a lancé la rumeur, et il remonte l'histoire de café en boulangerie. Chaque personne l'a entendue de quelqu'un d'autre, un peu différente à chaque fois. Au bout de la chaîne, il trouve un nom qu'il n'attendait pas, et la soirée de peinture à l'atelier tourne mal.","text":s2,"vocab":v2,"arcType":"late-reveal"},
- {"topic":T,"slotIndex":2,"title":"Des comptes bien tenus","synopsis":"Cette fois, c'est Florian qui est la victime d'une rumeur, et son estaminet se vide. Aurélien a ses chiffres de comptable pour le défendre, mais les chiffres ne suffisent pas toujours à convaincre un quartier. Pour qu'on le croie, il va devoir parler de lui, et dire une chose qu'il n'a jamais dite à personne.","text":s3,"vocab":v3,"arcType":"recurring-character-callback"},
+ {"topic":T,"slotIndex":2,"title":"Des comptes bien tenus","synopsis":"Cette fois, c'est Florian qui est la victime d'une rumeur, et son estaminet se vide. Aurélien étudie ses comptes et voit qu'ils sont sains, mais les chiffres ne suffisent pas à convaincre un quartier. Pour qu'on le croie, il avoue devant les habitués pourquoi il a vraiment quitté son bureau, et le soir même, l'estaminet est de nouveau plein.","text":s3,"vocab":v3,"arcType":"recurring-character-callback"},
 ]
 dump("/Users/alejandrodelcarpio/digital-polyglot-library/scripts/_frB1/t4.json",data)

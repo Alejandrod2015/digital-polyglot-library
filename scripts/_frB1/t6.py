@@ -31,7 +31,7 @@ v1=[
  v("rallumer","rallumé","verb","to turn a machine or a light on again after a pause"),
  v("la ponceuse","ponceuse","noun","an electric tool that makes wood or walls smooth",True),
 ]
-s2="""Le jeudi d'après, dans le silence de l'atelier, Élodie s'est endormie debout. Elle était appuyée contre l'établi, une chambre à air à la main. Aurélien a appelé Quentin, qui est venu au pas de course.
+s2="""Dans le silence de l'atelier, Élodie s'est endormie debout, un jeudi. Elle était appuyée contre l'établi, une chambre à air à la main. Aurélien a appelé Quentin, qui est venu au pas de course.
 
 Après l'avoir examinée, le médecin a sorti son carnet, l'air grave: “Je vous mets en arrêt maladie une semaine. Il faut que vous dormiez, et pas contre votre établi, cette fois.”
 

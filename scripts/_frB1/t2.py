@@ -1,12 +1,12 @@
 from comun import v,dump
 T="advice-and-opinions"
-s1="""Chez Guillaume, à Roubaix, la carbonnade mijotait dans une odeur de bière. Le grand frère d'Aurélien s'appelle Guillaume, et il est agent immobilier. Au dessert, Aurélien a parlé de l'atelier qu'il voulait ouvrir avec Élodie.
+s1="""Chez Guillaume, à Roubaix, la carbonnade mijotait dans une odeur de bière. Le grand frère d'Aurélien s'appelle Guillaume, agent immobilier. Au dessert, Aurélien a parlé de l'atelier qu'il ouvrait avec Élodie.
 
-Guillaume a pointé sa fourchette vers lui, sûr de lui. “À ta place, je garderais ton CDI. Un comptable et une mécanicienne, ça ne fait pas une entreprise”, lui a dit Guillaume. Aurélien a serré les dents.
+Guillaume a pointé sa fourchette, sûr de lui. “À ta place, je garderais ton CDI. Un comptable et une mécanicienne, ça ne fait pas une entreprise”, lui a dit Guillaume. Aurélien a serré les dents.
 
 “Je ne te demande pas de conseils. Je voulais que tu sois content”, a murmuré Aurélien. Guillaume se mêlait de tout et lui coupait la parole. “Il vaut mieux réfléchir avant, crois-moi”, répétait Guillaume.
 
-Aurélien a fixé la tarte au sucre. “C'est trop tard. J'ai démissionné il y a trois semaines.” Guillaume est devenu tout rouge, blessé dans son orgueil. “Et ton frère l'apprend au dessert?” a lancé Guillaume.
+Aurélien a fixé la tarte au sucre. “J'ai démissionné il y a trois semaines. Je te l'ai écrit.” Guillaume est devenu tout rouge, blessé dans son orgueil. “Je ne lis jamais mes messages!” a lancé Guillaume.
 
 Aurélien est parti avant le café, sans claquer la porte et sans se réconcilier. Il en voulait à Guillaume, et à lui-même d'avoir été têtu."""
 v1=[
@@ -31,7 +31,7 @@ v1=[
  v("en vouloir à","en voulait à","expression","to stay angry with someone because of what they did"),
  v("têtu","têtu","adjective","not ready to change your idea, even when others disagree"),
 ]
-s2="""Le mardi suivant, Guillaume a rappelé comme si de rien n'était. Il avait du flair, et il avait trouvé un local dans le Vieux-Lille, avec une vitrine et un loyer abordable. “Viens le voir avant de signer pour Fives”, lui a proposé Guillaume.
+s2="""De Roubaix, Guillaume a rappelé comme si de rien n'était. Il avait du flair, et il avait trouvé un local dans le Vieux-Lille, avec une vitrine et un loyer abordable. “Viens le voir avant de signer pour Fives”, lui a proposé Guillaume.
 
 Dans le froid, les passants grelottaient dans leurs manteaux chics. “L'emplacement est parfait. Tu auras des clients qui paient sans discuter”, expliquait Guillaume. Aurélien était presque convaincu.
 
@@ -96,8 +96,8 @@ v3=[
  v("la bouche pleine","la bouche pleine","expression","with food in your mouth while you are speaking"),
 ]
 data=[
- {"topic":T,"slotIndex":0,"title":"Des conseils pas demandés","synopsis":"Au déjeuner du dimanche, chez son grand frère à Roubaix, Aurélien veut enfin raconter son projet d'atelier. Il espère un peu d'enthousiasme. Guillaume, lui, a un avis sur tout, et il le donne sans qu'on le lui demande. Mais Aurélien a gardé un secret, et le dessert risque de mal finir.","text":s1,"vocab":v1,"arcType":"late-reveal"},
+ {"topic":T,"slotIndex":0,"title":"Des conseils pas demandés","synopsis":"Au déjeuner du dimanche, chez son grand frère à Roubaix, Aurélien veut enfin raconter son projet d'atelier. Il espère un peu d'enthousiasme. Guillaume, lui, a un avis sur tout, et il le donne sans qu'on le lui demande. Mais Guillaume n'a jamais lu le message où son frère lui annonçait sa démission, et le dessert tourne mal.","text":s1,"vocab":v1,"arcType":"late-reveal"},
  {"topic":T,"slotIndex":1,"title":"Une vitrine trop chic","synopsis":"Guillaume a trouvé un local dans le plus beau quartier de Lille, et il est sûr que c'est la bonne affaire. Élodie pense exactement le contraire. Entre l'avis de son frère et celui de son amie, Aurélien doit choisir, et l'un des deux va forcément se sentir trahi.","text":s2,"vocab":v2,"arcType":"reframe-turn"},
- {"topic":T,"slotIndex":2,"title":"Le compteur ne ment pas","synopsis":"Aurélien a toujours détesté admettre que son grand frère avait raison. Cette fois, pourtant, il a besoin de la vérité plus que d'un compliment, et il la demande. Guillaume n'est pas du genre à mentir pour faire plaisir, et ce qu'il découvre risque de coûter à Aurélien du temps, de l'argent et un peu d'orgueil.","text":s3,"vocab":v3,"arcType":"harmonic-close"},
+ {"topic":T,"slotIndex":2,"title":"Le compteur ne ment pas","synopsis":"Aurélien a toujours détesté admettre que son grand frère avait raison. Cette fois, pourtant, il lui demande un avis franc sur le local de Fives. Guillaume y découvre une installation électrique dangereuse, et Aurélien doit reconnaître son erreur. L'ouverture est repoussée d'un mois, mais les deux frères font la paix autour d'une part de tarte.","text":s3,"vocab":v3,"arcType":"harmonic-close"},
 ]
 dump("/Users/alejandrodelcarpio/digital-polyglot-library/scripts/_frB1/t2.json",data)

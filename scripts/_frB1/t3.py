@@ -2,7 +2,7 @@ from comun import v,dump
 T="money-and-debts"
 s1="""Dans son bureau froid, Yasmine, une conseillère bancaire aux gestes rapides, a ouvert leur dossier sans sourire. C'était une amie de fac d'Élodie, mais au travail, elle ne faisait pas de cadeaux. “Vous voulez emprunter quatre-vingt mille euros?” a demandé Yasmine.
 
-“Le taux est bon, mais il manque l'apport personnel”, a expliqué Yasmine. Élodie, fauchée depuis la fermeture du magasin, n'avait pas un sou. Aurélien avait la boule au ventre.
+“Le taux est bon, mais il manque l'apport personnel”, a expliqué Yasmine. Élodie, fauchée depuis la fermeture du magasin, n'avait pas un sou. Aurélien avait les mains moites.
 
 “J'ai trente mille euros d'économies, mises de côté par prudence pour un deux-pièces à Wazemmes. Et si je les mettais dans l'atelier?” a proposé Aurélien. Yasmine l'a regardé longtemps. “Vous pourriez tout perdre, vous le savez?” l'a prévenu Yasmine.
 
@@ -62,13 +62,13 @@ v2=[
  v("valable","valable","adjective","still good and accepted, until a certain date"),
  v("grimper","grimpé","verb","to go up quickly, for example a price or a number"),
 ]
-s3="""Aurélien a trouvé une solution sur un coin de tableur: prêter à Élodie la moitié de ses économies, pour que chacun mette la même somme. Sûr de lui, il est allé à l'atelier.
+s3="""Aurélien a trouvé une solution sur un coin de tableur: prêter à Élodie la moitié de ses économies, pour que chacun mette la même somme. Content de son idée, il est allé à l'atelier.
 
 “Comme ça, l'atelier est à nos deux noms”, lui a expliqué Aurélien. Dans le silence, Élodie n'a pas souri. Elle a posé une condition: “D'accord. Mais je veux une reconnaissance de dette, avec des dates et nos deux signatures.”
 
 “C'est ridicule, entre nous. Tu n'as pas confiance en moi?” a protesté Aurélien. “Justement si. Je veux que notre amitié reste propre”, s'est expliquée Élodie.
 
-Ils l'ont écrite à la main, sur l'établi: deux cents euros par mois, pendant six ans. Élodie a signé la première, d'une écriture appliquée, puis elle a rangé le stylo comme si de rien n'était.
+Ils l'ont écrite à la main, sur l'établi: deux cents euros par mois, pendant six ans. Élodie a signé la première, d'une écriture appliquée, puis elle a rangé le stylo calmement.
 
 Le lundi, Yasmine a validé le prêt, à un taux moins avantageux. Aurélien était soulagé. En rangeant la feuille, il a pensé qu'entre eux, il y avait maintenant un compte écrit."""
 v3=[

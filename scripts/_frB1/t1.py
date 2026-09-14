@@ -4,9 +4,9 @@ def v(word,surface,typ,definition,anchor=False,register="neutral"):
     d={"type":typ,"word":word,"surface":surface,"register":register,"definition":definition}
     if anchor: d["anchor"]=True
     return d
-s1_text="""Aurélien, un comptable de trente-cinq ans, attendait à l'estaminet, dans l'odeur chaude des welshs. Il voulait offrir une tournée: sa cheffe lui avait proposé une promotion. Élodie, une mécanicienne de vélos, est arrivée la boule au ventre.
+s1_text="""Aurélien, un comptable, attendait à l'estaminet, dans l'odeur chaude des welshs. Il voulait offrir une tournée: sa cheffe lui avait proposé une promotion. Élodie, une mécanicienne de vélos, est arrivée la boule au ventre.
 
-Élodie a jeté son casque sur la banquette: “Mon magasin ferme en janvier. Ils vont licencier tout le monde.” Prudent, Aurélien a gardé pour lui sa nouvelle. “Le chômage, ça ne dure pas, tu verras”, a dit Aurélien, et il s'est senti coupable.
+Élodie a jeté son casque sur la banquette: “Mon magasin ferme en janvier. Ils vont licencier tout le monde.” Prudent, et par égard pour son amie, Aurélien a gardé pour lui sa nouvelle. “Le chômage, ça ne dure pas, tu verras”, a dit Aurélien, et il s'est senti coupable.
 
 Fêter une promotion devant elle lui semblait déplacé, et il avait du mal à la regarder. Élodie a ri jaune. “Tu te souviens? À la fac, on rêvait d'ouvrir un atelier. C'est maintenant ou jamais”, lui a rappelé Élodie.
 
@@ -66,7 +66,7 @@ s2_vocab=[
  v("soulagé","soulagé","adjective","feeling better because a worry or a problem has gone away"),
  v("enregistrer","enregistrer","verb","to keep a file on a computer so you can open it again"),
 ]
-s3_text="""Un lundi matin, Aurélien a posé sa lettre de démission sur le bureau de sa cheffe, sans un mot de trop. Il voulait partir discrètement, après son préavis. La nouvelle a pourtant fait le tour du cabinet avant midi.
+s3_text="""Aurélien a posé sa lettre de démission sur le bureau de sa cheffe, sans un mot de trop. Il voulait partir discrètement, après son préavis. La nouvelle a pourtant fait le tour du cabinet avant midi.
 
 Pour une collègue, il était sûrement tombé sur la tête. Au pot de départ, il avait envie de disparaître, un champagne tiède à la main. “Merci à tous, vraiment!” a dit Aurélien pendant les discours gênants, et il a tenu le coup jusqu'au bout.
 
@@ -98,7 +98,7 @@ s3_vocab=[
 data=[
  {"topic":T,"slotIndex":0,"title":"La tournée jamais offerte","synopsis":"Aurélien a enfin une bonne nouvelle au travail, et il a réservé une table pour la fêter avec Élodie, sa meilleure amie depuis la fac. Mais Élodie arrive avec une nouvelle bien pire que la sienne. Il faudrait choisir laquelle compte ce soir, et Aurélien décide de se taire. La soirée ne se passe pas du tout comme il l'avait prévu.","text":s1_text,"vocab":s1_vocab,"arcType":"reframe-turn"},
  {"topic":T,"slotIndex":1,"title":"Réponse avant vendredi","synopsis":"Aurélien voudrait des chiffres sûrs avant de choisir entre son bureau tranquille et un vieux rêve de la fac. Il fait des tableaux, il compte, il recompte. Mais sa cheffe attend une réponse avant vendredi, Élodie en a assez des peut-être, et les chiffres, eux, ne décident rien à sa place. Il faut qu'il choisisse, et vite.","text":s2_text,"vocab":s2_vocab,"arcType":"juxtaposition-discovery"},
- {"topic":T,"slotIndex":2,"title":"Un carton sous le bras","synopsis":"Aurélien quitte le cabinet où il travaille depuis dix ans, et il voudrait partir sans bruit, comme un invité discret. Ses collègues, eux, ont beaucoup de choses à dire sur un homme qui abandonne un poste si sûr. Pendant une semaine, il sourit et il supporte les questions. Et le dernier soir, quelqu'un l'attend en bas avec une surprise.","text":s3_text,"vocab":s3_vocab,"arcType":"harmonic-close"},
+ {"topic":T,"slotIndex":2,"title":"Un carton sous le bras","synopsis":"Aurélien quitte le cabinet où il travaille depuis dix ans, et il voudrait partir sans bruit, comme un invité discret. Ses collègues, eux, ont beaucoup de choses à dire sur un homme qui abandonne un poste si sûr. Il supporte les questions jusqu'au pot de départ. Le dernier soir, Élodie l'attend en bas avec les clés du local de Fives, et une nouvelle vie commence.","text":s3_text,"vocab":s3_vocab,"arcType":"harmonic-close"},
 ]
 json.dump(data,open("/Users/alejandrodelcarpio/digital-polyglot-library/scripts/_frB1/t1.json","w"),ensure_ascii=False,indent=1)
 for d in data:

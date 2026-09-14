@@ -4,7 +4,7 @@ s1="""Sur la Grand-Place, sous les lumières de la Vieille Bourse, Aurélien att
 
 Marion est une infirmière de nuit au CHU, et elle est arrivée en courant. “Désolée pour le retard, ma garde a fini tard. Alors, tu fais quoi dans la vie?” a demandé Marion.
 
-Aurélien a hésité: un associé d'atelier qui n'avait pas un sou, ça lui semblait peu séduisant. Aurélien a menti, sûr de lui: “Je suis expert-comptable, dans un grand cabinet du centre.”
+Aurélien a hésité: un associé d'atelier qui n'avait pas un sou, ça lui semblait peu séduisant. Aurélien a menti sans hésiter: “Je suis expert-comptable, dans un grand cabinet du centre.”
 
 “Les chiffres? Moi, je suis nulle en maths!” a ri Marion, impressionnée. Ils ont parlé deux heures. Aurélien a évité soigneusement les questions sur son travail, et il a gardé pour lui la vérité.
 
@@ -31,7 +31,7 @@ v1=[
  v("le mensonge","mensonge","noun","something that you say and that you know is not true"),
  v("avoir sur la conscience","sur la conscience","expression","to feel guilty because of something bad you did"),
 ]
-s2="""Deux jours plus tard, Aurélien s'est rendu compte de son erreur. Il avait promis à Élodie de monter les étagères de l'atelier le même samedi soir. Son idée: être à la fois à l'atelier et au restaurant.
+s2="""Aurélien s'est rendu compte de son erreur le lundi. Il avait promis à Élodie de monter les étagères de l'atelier le même samedi soir. Son idée: être à la fois à l'atelier et au restaurant.
 
 Alors il a inventé une excuse bidon. “Je suis malade comme un chien, je ne viendrai pas ce soir, désolé”, prétendait-il d'une voix faible.
 
@@ -98,6 +98,6 @@ v3=[
 data=[
  {"topic":T,"slotIndex":0,"title":"Rendez-vous sous la Bourse","synopsis":"Pour la première fois depuis longtemps, Aurélien a un rendez-vous, et la femme qu'il rencontre lui plaît tout de suite. Mais quand elle lui demande ce qu'il fait dans la vie, sa nouvelle vie d'atelier lui paraît soudain trop petite. La réponse qu'il donne va l'aider ce soir, et le suivre ensuite.","text":s1,"vocab":v1,"arcType":"juxtaposition-discovery"},
  {"topic":T,"slotIndex":1,"title":"Samedi, deux promesses","synopsis":"Aurélien a promis deux choses pour le même samedi soir, et il ne peut pas être partout. Plutôt que de choisir franchement, il invente une excuse et laisse quelqu'un se débrouiller sans lui. Le dîner est parfait sur le papier, mais une photo reçue à minuit en gâche le goût.","text":s2,"vocab":v2,"arcType":"reframe-turn"},
- {"topic":T,"slotIndex":2,"title":"Une vérité trop tard","synopsis":"Aurélien ne supporte plus son mensonge, et il décide de dire enfin la vérité à la femme qu'il voit depuis quelques semaines. Il espère qu'elle comprendra, parce que son métier n'a rien de honteux. Mais pour elle, le problème n'est pas du tout celui qu'il imagine, et la conversation se termine autrement.","text":s3,"vocab":v3,"arcType":"harmonic-close"},
+ {"topic":T,"slotIndex":2,"title":"Une vérité trop tard","synopsis":"Aurélien ne supporte plus son mensonge, et il dit enfin la vérité à la femme qu'il voit depuis quelques semaines. Il espère qu'elle comprendra, parce que son métier n'a rien de honteux. Mais pour elle, le problème n'est pas le métier, c'est le mensonge, et elle préfère arrêter là. Aurélien rentre à l'atelier et raconte tout à Élodie.","text":s3,"vocab":v3,"arcType":"harmonic-close"},
 ]
 dump("/Users/alejandrodelcarpio/digital-polyglot-library/scripts/_frB1/t5.json",data)
