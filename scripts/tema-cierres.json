@@ -8430,8 +8430,8 @@
     }
   },
   "cmu1bfmb3000732wxuuwj7j2a#summer-and-holidays": {
-    "cerrado": "2026-09-14T15:32:26.344Z",
-    "hash": "f9eb0516ae93395d",
+    "cerrado": "2026-09-14T15:33:04.824Z",
+    "hash": "8131978da0a6858f",
     "historias": [
       "summer-and-holidays#0 milano-e-vuota",
       "summer-and-holidays#1 gabriele-non-chiude-mai",
@@ -9658,10 +9658,7 @@
           }
         ]
       }
-    },
-    "avisos": [
-      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
-    ]
+    }
   },
   "cmu1bfmb3000732wxuuwj7j2a#work-and-shifts": {
     "cerrado": "2026-09-14T14:32:56.015Z",
