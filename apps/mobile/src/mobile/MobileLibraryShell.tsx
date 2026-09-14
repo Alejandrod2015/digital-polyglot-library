@@ -201,7 +201,10 @@ import {
 } from "../../../../src/lib/practiceExercises";
 // G4: la calificacion del turno hablado, compartida con sus tests. Vive en
 // `src/lib` para que un test la pueda medir sin arrancar Expo.
-import { gradeSentence } from "../../../../src/lib/speakingGrading";
+import {
+  gradeSentence,
+  isSpeakingTurnAlreadyResolved,
+} from "../../../../src/lib/speakingGrading";
 import { TalkingPointsBrowse } from "./TalkingPointsBrowse";
 import {
   fetchTalkingIndex,
@@ -2822,6 +2825,8 @@ export function MobileLibraryShell(args: {
   const [speakingPhase, setSpeakingPhase] = useState<"ready" | "listening" | "done">("ready");
   const [speakingSecondsLeft, setSpeakingSecondsLeft] = useState(SPEAKING_ANSWER_SECONDS);
   const [speakingCountdownRunning, setSpeakingCountdownRunning] = useState(false);
+  /** Id del turno hablado YA resuelto. Ver `isSpeakingTurnAlreadyResolved`. */
+  const speakingResolvedForRef = useRef<string | null>(null);
   // Los dos anillos que laten alrededor del boton, desfasados medio ciclo.
   const speakingPulseA = useRef(new Animated.Value(0)).current;
   const speakingPulseB = useRef(new Animated.Value(0)).current;
@@ -9926,6 +9931,7 @@ export function MobileLibraryShell(args: {
     setSpeakingEmptyRetried(false);
     setSpeakingSecondsLeft(SPEAKING_ANSWER_SECONDS);
     setSpeakingCountdownRunning(false);
+    speakingResolvedForRef.current = null;
   }, [currentSpeakingExercise?.id]);
 
   // ─── Cuenta atras del turno hablado ──────────────────────────────
@@ -9939,6 +9945,10 @@ export function MobileLibraryShell(args: {
   useEffect(() => {
     const ex = currentSpeakingExercise;
     if (!ex) return;
+    // Ya resuelto: `advancePractice` devuelve `practiceRevealed` a false al
+    // cerrar la sesion SIN avanzar el indice, asi que mirar solo eso reabriria
+    // el reloj encima de la pantalla de resultados.
+    if (isSpeakingTurnAlreadyResolved(speakingResolvedForRef.current, ex.id)) return;
     if (practiceRevealed || practiceCountdownActive) return;
     if (speakingCountdownRunning) return;
     // Ya arranco y se paro (se esta grabando): no se rearma.
@@ -10035,6 +10045,16 @@ export function MobileLibraryShell(args: {
    * hablado se veria pero no contaria para nada.
    */
   function resolveSpeakingAnswer(current: PracticeSpeakingExercise, isCorrect: boolean) {
+    // CANDADO. Un turno se resuelve UNA vez, y aqui se cierra la puerta a las
+    // tres vias que apuntan a este mismo sitio: el reloj de contestar, el
+    // resultado del reconocedor y su parada automatica.
+    if (isSpeakingTurnAlreadyResolved(speakingResolvedForRef.current, current.id)) return;
+    speakingResolvedForRef.current = current.id;
+    // Y se apagan las dos que pueden seguir vivas: el reloj deja de correr y
+    // el microfono se aborta sin entregar resultado.
+    setSpeakingCountdownRunning(false);
+    speakingRecorder.cancel();
+
     practiceAnswerT0Ref.current = Date.now();
     revealedSlotIdRef.current = current.id;
     setPracticeRevealed(true);
@@ -12671,6 +12691,10 @@ export function MobileLibraryShell(args: {
   useEffect(() => {
     practiceStartTrackedRef.current = false;
     practiceCompletionTrackedRef.current = false;
+    // El id del turno hablado es `speaking:<palabra>`, asi que repetir la tanda
+    // con la misma palabra reusa el id y el effect de reset por ejercicio no
+    // llega a correr. Sin limpiar aqui, el turno nacería ya resuelto.
+    speakingResolvedForRef.current = null;
   }, [activePracticeMode, practiceExercises.length]);
 
   useEffect(() => {

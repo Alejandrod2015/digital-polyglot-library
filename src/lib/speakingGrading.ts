@@ -84,6 +84,29 @@ export function gradeDeterministic(
 }
 
 /**
+ * El CANDADO del turno hablado: un turno se resuelve UNA vez.
+ *
+ * Al turno hablado le apuntan tres vias (el reloj de contestar, el resultado
+ * del reconocedor y su parada automatica) y todas acaban en el mismo sitio.
+ * Basta con que una llegue tarde para que un acierto ya cantado se vuelva a
+ * calificar como fallo, con su sonido.
+ *
+ * Y llegan tarde de verdad: al resolver el ULTIMO ejercicio de la tanda,
+ * `advancePractice` cierra la sesion poniendo `practiceRevealed` en false SIN
+ * avanzar el indice, asi que el ejercicio en curso sigue siendo el mismo y
+ * cualquier guard que solo mirase "ya esta revelado" se reabria encima de la
+ * pantalla de resultados.
+ *
+ * El candado no mira el estado, que va y viene: mira QUE ejercicio se resolvio.
+ */
+export function isSpeakingTurnAlreadyResolved(
+  resolvedExerciseId: string | null | undefined,
+  exerciseId: string
+): boolean {
+  return Boolean(resolvedExerciseId) && resolvedExerciseId === exerciseId;
+}
+
+/**
  * Cuanta frase hay que decir para que cuente.
  *
  * Decision del usuario el 2026-09-14: "acierto si dijo la palabra y al menos

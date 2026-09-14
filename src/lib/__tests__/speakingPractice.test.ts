@@ -3,6 +3,7 @@ import {
   containsWholeWord,
   gradeDeterministic,
   gradeSentence,
+  isSpeakingTurnAlreadyResolved,
   normalizeForSpeaking,
 } from "../speakingGrading";
 import {
@@ -319,5 +320,26 @@ describe("fillSentenceTranslationBlank", () => {
     expect(fillSentenceTranslationBlank(null, "el balcon", OPCIONES, GLOSAS)).toBeNull();
     expect(fillSentenceTranslationBlank("   ", "el balcon", OPCIONES, GLOSAS)).toBeNull();
     expect(fillSentenceTranslationBlank(undefined, "el balcon", OPCIONES, GLOSAS)).toBeNull();
+  });
+});
+
+describe("isSpeakingTurnAlreadyResolved: el candado del turno", () => {
+  it("un turno sin resolver se puede resolver", () => {
+    expect(isSpeakingTurnAlreadyResolved(null, "speaking:el vecino")).toBe(false);
+    expect(isSpeakingTurnAlreadyResolved(undefined, "speaking:el vecino")).toBe(false);
+    expect(isSpeakingTurnAlreadyResolved("", "speaking:el vecino")).toBe(false);
+  });
+
+  it("el MISMO turno no se resuelve dos veces", () => {
+    // El bug que cierra: con un solo ejercicio, el usuario acerto y sono el
+    // sonido de fallo. `advancePractice` cierra la sesion poniendo
+    // `practiceRevealed` en false SIN avanzar el indice, asi que el ejercicio
+    // en curso seguia siendo el mismo y el reloj se reabria encima de la
+    // pantalla de resultados para calificarlo otra vez, como fallo.
+    expect(isSpeakingTurnAlreadyResolved("speaking:el vecino", "speaking:el vecino")).toBe(true);
+  });
+
+  it("otro turno si se puede resolver", () => {
+    expect(isSpeakingTurnAlreadyResolved("speaking:el vecino", "speaking:la ventana")).toBe(false);
   });
 });
