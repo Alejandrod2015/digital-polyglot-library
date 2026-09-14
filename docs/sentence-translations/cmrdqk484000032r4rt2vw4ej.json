@@ -1,6 +1,6 @@
 {
-  "_comoSeUsa": "Rellena `translation` en cada palabra con la traduccion al ingles de `sentence`, y guarda el fichero como <journeyId>.json (sin .todo). Despues: npx tsx scripts/saveSentenceTranslations.ts docs/sentence-translations/<journeyId>.json",
-  "_fallback": "Una palabra con `fallback: true` lleva una frase que la practica NO ensena hoy (la suya no pasa el filtro de oracion limpia). Traducela igual; si esa palabra vuelve a entrar, ya estara.",
+  "_comoSeUsa": "Formato NUEVO: la clave es la oracion. Para guardar: npx tsx scripts/saveSentenceTranslations.ts docs/sentence-translations/<journeyId>.json",
+  "_migrado": "Convertido desde el formato por palabra por scripts/_migraTraducciones.ts. Las oraciones que quedaron sin traducir viven en <journeyId>.todo2.json.",
   "journeyId": "cmrdqk484000032r4rt2vw4ej",
   "journeyName": "Friends",
   "language": "spanish",
@@ -12,152 +12,110 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "jugoso",
-          "surface": "jugoso",
-          "definition": "juicy and full of scandalous detail, said of gossip",
           "sentence": "Marina entró al apartamento con cara de que traía un chisme bien jugoso.",
+          "words": [
+            "jugoso"
+          ],
           "translation": "Marina walked into the apartment looking like she was carrying some seriously juicy gossip."
         },
         {
-          "word": "parce",
-          "surface": "Parce",
-          "definition": "buddy or mate, the classic Colombian word for a friend",
           "sentence": "“Parce, suelte ese aparato, que esto está muy bacano”, le soltó ella.",
+          "words": [
+            "parce",
+            "bacano"
+          ],
           "translation": "“Buddy, put that thing down, this is really good stuff,” she blurted at him."
         },
         {
-          "word": "bacano",
-          "surface": "bacano",
-          "definition": "cool, great or awesome, a very Colombian compliment",
-          "sentence": "“Parce, suelte ese aparato, que esto está muy bacano”, le soltó ella.",
-          "translation": "“Buddy, put that thing down, this is really good stuff,” she blurted at him."
-        },
-        {
-          "word": "enredo",
-          "surface": "enredo",
-          "definition": "a tangled mess or complicated affair between people",
           "sentence": "Según Marina, alguien del edificio andaba en un enredo tremendo con una vecina.",
+          "words": [
+            "enredo"
+          ],
           "translation": "According to Marina, someone in the building was caught up in a huge mess with a neighbor."
         },
         {
-          "word": "tinto",
-          "surface": "tinto",
-          "definition": "a small cup of black coffee, drunk all day in Colombia",
           "sentence": "Valeria salió de la cocina con un tinto y se sentó a chismosear también.",
+          "words": [
+            "tinto",
+            "chismosear"
+          ],
           "translation": "Valeria came out of the kitchen with a little black coffee and sat down to gossip too."
         },
         {
-          "word": "chismosear",
-          "surface": "chismosear",
-          "definition": "to gossip and swap juicy stories about other people",
-          "sentence": "Valeria salió de la cocina con un tinto y se sentó a chismosear también.",
-          "translation": "Valeria came out of the kitchen with a little black coffee and sat down to gossip too."
-        },
-        {
-          "word": "tener en ascuas",
-          "surface": "en ascuas",
-          "definition": "to keep someone in agonizing suspense, dying to know",
           "sentence": "“Cuente, cuente, no me deje en ascuas”, la apuró, toda intrigada.",
+          "words": [
+            "tener en ascuas"
+          ],
           "translation": "“Tell me, tell me, don't leave me hanging,” she pressed, dying to know."
         },
         {
-          "word": "visaje",
-          "surface": "visaje",
-          "definition": "showy drama or a big fuss made over something",
           "sentence": "Marina bajó la voz como si fuera un secreto de Estado y arrancó con todo el visaje.",
+          "words": [
+            "visaje"
+          ],
           "translation": "Marina lowered her voice as if it were a state secret and launched in with all the drama."
         },
         {
-          "word": "a las malas",
-          "surface": "a las malas",
-          "definition": "by force or on the sly, not the proper honest way",
           "sentence": "Habló de mensajes escondidos, de una fiesta a las malas y de un man sospechoso.",
+          "words": [
+            "a las malas",
+            "man",
+            "de una"
+          ],
           "translation": "She talked about hidden messages, a party thrown on the sly, and a suspicious guy."
         },
         {
-          "word": "man",
-          "surface": "man",
-          "definition": "a guy or dude, borrowed from English and used constantly",
-          "sentence": "Habló de mensajes escondidos, de una fiesta a las malas y de un man sospechoso.",
-          "translation": "She talked about hidden messages, a party thrown on the sly, and a suspicious guy."
-        },
-        {
-          "word": "enganchado",
-          "surface": "enganchado",
-          "definition": "hooked and totally absorbed in something, unable to look away",
           "sentence": "Julián por fin soltó el celular, ya bien enganchado en el cuento.",
+          "words": [
+            "enganchado"
+          ],
           "translation": "Julián finally put his phone down, by then completely hooked on the story."
         },
         {
-          "word": "de una",
-          "surface": "de una",
-          "definition": "right away, at once, without a second thought",
-          "sentence": "Habló de mensajes escondidos, de una fiesta a las malas y de un man sospechoso.",
-          "translation": "She talked about hidden messages, a party thrown on the sly, and a suspicious guy."
-        },
-        {
-          "word": "momentico",
-          "surface": "momentico",
-          "definition": "a tiny little moment, said with the fond Colombian diminutive",
           "sentence": "Se quedó callada un momentico, atando cabos con cara de susto.",
+          "words": [
+            "momentico",
+            "atar cabos"
+          ],
           "translation": "She went quiet for a little second, putting the pieces together with a scared look on her face."
         },
         {
-          "word": "atar cabos",
-          "surface": "atando cabos",
-          "definition": "to put the pieces together and figure something out",
-          "sentence": "Se quedó callada un momentico, atando cabos con cara de susto.",
-          "translation": "She went quiet for a little second, putting the pieces together with a scared look on her face."
-        },
-        {
-          "word": "sofocón",
-          "surface": "sofocón",
-          "definition": "a sudden fluster of shock, heat and embarrassment",
           "sentence": "“Pare ahí”, los frenó de una, entre la risa y el sofocón.",
+          "words": [
+            "sofocón"
+          ],
           "translation": "“Stop right there,” she cut them off at once, half laughing and half flustered."
         },
         {
-          "word": "achantado",
-          "surface": "achantada",
-          "definition": "embarrassed and sheepish, wishing you could vanish on the spot",
           "sentence": "Marina, toda achantada, juró que ella solo repetía lo que le habían rajado.",
+          "words": [
+            "achantado",
+            "rajar"
+          ],
           "translation": "Marina, red faced, swore she was only repeating the dirt other people had spilled to her."
         },
         {
-          "word": "rajar",
-          "surface": "rajado",
-          "definition": "to badmouth or spill gossip about someone behind their back",
-          "sentence": "Marina, toda achantada, juró que ella solo repetía lo que le habían rajado.",
-          "translation": "Marina, red faced, swore she was only repeating the dirt other people had spilled to her."
-        },
-        {
-          "word": "teléfono roto",
-          "surface": "teléfono roto",
-          "definition": "a message so passed around it comes back distorted",
           "sentence": "Al final se rieron un buen rato del teléfono roto en que se volvió el parche.",
+          "words": [
+            "teléfono roto",
+            "parche"
+          ],
           "translation": "In the end they laughed for a good while at the game of telephone their friend group had turned into."
         },
         {
-          "word": "parche",
-          "surface": "parche",
-          "definition": "the friend group, or the hangout where they meet",
-          "sentence": "Al final se rieron un buen rato del teléfono roto en que se volvió el parche.",
-          "translation": "In the end they laughed for a good while at the game of telephone their friend group had turned into."
-        },
-        {
-          "word": "de boca en boca",
-          "surface": "De boca en boca",
-          "definition": "passed from person to person by word of mouth",
           "sentence": "De boca en boca, una reunión familiar se había vuelto un escándalo de telenovela.",
+          "words": [
+            "de boca en boca"
+          ],
           "translation": "Passed from mouth to mouth, a family get together had turned into a soap opera scandal."
         },
         {
-          "word": "inflado",
-          "surface": "inflado",
-          "definition": "blown up and exaggerated far beyond the real facts",
           "sentence": "Así aprendieron que el mejor chisme casi siempre es puro cuento inflado.",
+          "words": [
+            "inflado"
+          ],
           "translation": "That is how they learned that the best gossip is almost always pure blown up nonsense."
         }
       ]
@@ -168,152 +126,104 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "camello",
-          "surface": "camello",
-          "definition": "a job or work, the everyday Colombian word for it",
           "sentence": "Julián llegó del camello bien cascado y con un guayabo del sábado que no lo dejaba.",
+          "words": [
+            "camello",
+            "cascado",
+            "guayabo"
+          ],
           "translation": "Julián came home from work completely wrecked, with a hangover from Saturday that would not let go."
         },
         {
-          "word": "cascado",
-          "surface": "cascado",
-          "definition": "worn out and beat, physically wrecked and exhausted",
-          "sentence": "Julián llegó del camello bien cascado y con un guayabo del sábado que no lo dejaba.",
-          "translation": "Julián came home from work completely wrecked, with a hangover from Saturday that would not let go."
-        },
-        {
-          "word": "guayabo",
-          "surface": "guayabo",
-          "definition": "a hangover, the rough morning after a night of heavy drinking",
-          "sentence": "Julián llegó del camello bien cascado y con un guayabo del sábado que no lo dejaba.",
-          "translation": "Julián came home from work completely wrecked, with a hangover from Saturday that would not let go."
-        },
-        {
-          "word": "amarrado",
-          "surface": "amarrado",
-          "definition": "tied down or forced; ni amarrado means not even by force",
           "sentence": "Se tiró en el sofá jurando que esa noche no salía ni amarrado.",
+          "words": [
+            "amarrado"
+          ],
           "translation": "He flopped onto the couch swearing that he was not going out that night, not for anything."
         },
         {
-          "word": "rumbear",
-          "surface": "rumbear",
-          "definition": "to go out partying and dancing all night long",
           "sentence": "“No me manden a rumbear, parceros, que vengo muerto”, pidió con voz de trapo.",
+          "words": [
+            "rumbear"
+          ],
           "translation": "“Don't send me out partying, guys, I'm dead on my feet,” he pleaded in a worn out voice."
         },
         {
-          "word": "pola",
-          "surface": "polas",
-          "definition": "a beer, the affectionate Colombian word for one",
           "sentence": "Pero el parche insistió, y a las dos polas ya estaba prendido y hablando hasta por los codos.",
+          "words": [
+            "pola",
+            "prendido",
+            "hablar hasta por los codos"
+          ],
           "translation": "But the crew insisted, and two beers in he was already buzzed and talking nonstop."
         },
         {
-          "word": "prendido",
-          "surface": "prendido",
-          "definition": "tipsy and lively, warmed up but not fully drunk",
-          "sentence": "Pero el parche insistió, y a las dos polas ya estaba prendido y hablando hasta por los codos.",
-          "translation": "But the crew insisted, and two beers in he was already buzzed and talking nonstop."
-        },
-        {
-          "word": "hablar hasta por los codos",
-          "surface": "hablando hasta por los codos",
-          "definition": "to talk nonstop and far too much, unable to shut up",
-          "sentence": "Pero el parche insistió, y a las dos polas ya estaba prendido y hablando hasta por los codos.",
-          "translation": "But the crew insisted, and two beers in he was already buzzed and talking nonstop."
-        },
-        {
-          "word": "guaro",
-          "surface": "guaro",
-          "definition": "aguardiente, the anise liquor that fuels Colombian parties",
           "sentence": "Entre risas y guaro, la lengua se le fue soltando más de la cuenta.",
+          "words": [
+            "guaro",
+            "más de la cuenta"
+          ],
           "translation": "Between the laughing and the aguardiente, his tongue loosened up more than it should have."
         },
         {
-          "word": "más de la cuenta",
-          "surface": "más de la cuenta",
-          "definition": "more than you should, past the sensible limit",
-          "sentence": "Entre risas y guaro, la lengua se le fue soltando más de la cuenta.",
-          "translation": "Between the laughing and the aguardiente, his tongue loosened up more than it should have."
-        },
-        {
-          "word": "embarrada",
-          "surface": "embarrada",
-          "definition": "a big blunder or mess up that ruins everything",
           "sentence": "El cuarto entero se quedó callado, y Julián sintió el frío de la embarrada.",
+          "words": [
+            "embarrada"
+          ],
           "translation": "The whole room went silent, and Julián felt the chill of the blunder he had just made."
         },
         {
-          "word": "servido en bandeja",
-          "surface": "servido en bandeja",
-          "definition": "handed over ready and easy, with no effort needed",
           "sentence": "Trató de echar para atrás, pero ya el chisme estaba servido en bandeja.",
+          "words": [
+            "servido en bandeja"
+          ],
           "translation": "He tried to backpedal, but the gossip was already served up on a platter."
         },
         {
-          "word": "sapo",
-          "surface": "sapo",
-          "definition": "a snitch or tattletale who loves spreading news",
           "sentence": "Uno del parche, más sapo que otra cosa, se relamió con la primicia.",
+          "words": [
+            "sapo",
+            "relamerse",
+            "primicia"
+          ],
           "translation": "One of the crew, a snitch more than anything, licked his lips over the scoop."
         },
         {
-          "word": "relamerse",
-          "surface": "se relamió",
-          "definition": "to lick your lips with relish over a tasty piece of news",
-          "sentence": "Uno del parche, más sapo que otra cosa, se relamió con la primicia.",
-          "translation": "One of the crew, a snitch more than anything, licked his lips over the scoop."
-        },
-        {
-          "word": "primicia",
-          "surface": "primicia",
-          "definition": "a fresh scoop, gossip nobody else has heard yet",
-          "sentence": "Uno del parche, más sapo que otra cosa, se relamió con la primicia.",
-          "translation": "One of the crew, a snitch more than anything, licked his lips over the scoop."
-        },
-        {
-          "word": "meter las patas",
-          "surface": "metido las patas",
-          "definition": "to blunder badly and put your foot right in it",
           "sentence": "Sabía que había metido las patas hasta el fondo.",
+          "words": [
+            "meter las patas"
+          ],
           "translation": "He knew he had put his foot in it all the way."
         },
         {
-          "word": "con el corazón en la mano",
-          "surface": "con el corazón en la mano",
-          "definition": "speaking openly and sincerely, laying your feelings bare",
           "sentence": "Llamó a Marina con el corazón en la mano para confesar antes de que le llegara por otro lado.",
+          "words": [
+            "con el corazón en la mano"
+          ],
           "translation": "He called Marina with his heart in his hand to confess before she heard it from someone else."
         },
         {
-          "word": "descolocar",
-          "surface": "descolocó",
-          "definition": "to throw someone off completely, catching them unprepared",
           "sentence": "Cuando por fin se calló, Marina soltó una risa que lo descolocó por completo.",
+          "words": [
+            "descolocar"
+          ],
           "translation": "When he finally stopped talking, Marina let out a laugh that threw him completely off."
         },
         {
-          "word": "güevón",
-          "surface": "güevón",
-          "definition": "dude or fool; a rough word used warmly between friends",
           "sentence": "“Tranquilo, güevón, ese secreto me lo inventé yo”, le confesó sin culpa.",
+          "words": [
+            "güevón"
+          ],
           "translation": "“Relax, dummy, I made that secret up myself,” she confessed without a shred of guilt."
         },
         {
-          "word": "lengua floja",
-          "surface": "lengua floja",
-          "definition": "a loose tongue that cannot keep a secret",
           "sentence": "La lección le quedó grabada: al que tiene la lengua floja, tarde o temprano lo cazan.",
-          "translation": "The lesson stuck with him: sooner or later, a loose tongue gets its owner caught."
-        },
-        {
-          "word": "cazar",
-          "surface": "cazan",
-          "definition": "to catch someone out or trap them in the act",
-          "sentence": "La lección le quedó grabada: al que tiene la lengua floja, tarde o temprano lo cazan.",
+          "words": [
+            "lengua floja",
+            "cazar"
+          ],
           "translation": "The lesson stuck with him: sooner or later, a loose tongue gets its owner caught."
         }
       ]
@@ -324,146 +234,110 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "bravo",
-          "surface": "bravo",
-          "definition": "angry and sulking, cross with someone over a fight",
           "sentence": "Nadie quería seguir bravo, porque la mamera de andar peleados ya cansaba a todos.",
+          "words": [
+            "bravo",
+            "mamera"
+          ],
           "translation": "Nobody wanted to stay angry, because the drag of being at odds was wearing everyone down."
         },
         {
-          "word": "mamera",
-          "surface": "mamera",
-          "definition": "a tiresome drag, something boring and thoroughly annoying",
-          "sentence": "Nadie quería seguir bravo, porque la mamera de andar peleados ya cansaba a todos.",
-          "translation": "Nobody wanted to stay angry, because the drag of being at odds was wearing everyone down."
-        },
-        {
-          "word": "sin rodeos",
-          "surface": "sin rodeos",
-          "definition": "straight to the point, with no beating around the bush",
           "sentence": "“Hablemos sin rodeos y cuadremos esta vaina de una vez”, propuso ella.",
+          "words": [
+            "sin rodeos",
+            "vaina",
+            "cuadrar"
+          ],
           "translation": "“Let's talk straight and sort this thing out once and for all,” she proposed."
         },
         {
-          "word": "vaina",
-          "surface": "vaina",
-          "definition": "a thing or matter, the most common Colombian filler word",
-          "sentence": "“Hablemos sin rodeos y cuadremos esta vaina de una vez”, propuso ella.",
-          "translation": "“Let's talk straight and sort this thing out once and for all,” she proposed."
-        },
-        {
-          "word": "dar la cara",
-          "surface": "dar la cara",
-          "definition": "to face up to something and own your responsibility",
           "sentence": "Julián fue el primero en dar la cara y reconocer que había hablado de más.",
+          "words": [
+            "dar la cara"
+          ],
           "translation": "Julián was the first to face up to it and admit he had said too much."
         },
         {
-          "word": "chévere",
-          "surface": "chévere",
-          "definition": "cool, nice or great, a warm word of approval",
           "sentence": "Marina admitió que su prueba de la lengua floja tampoco había estado muy chévere.",
+          "words": [
+            "chévere"
+          ],
           "translation": "Marina admitted that her loose tongue test had not been very cool either."
         },
         {
-          "word": "arepa",
-          "surface": "arepa",
-          "definition": "a round grilled corn cake, a Colombian staple at any hour",
           "sentence": "El domingo, el parche se juntó en casa de Valeria con arepa y chocolate caliente.",
+          "words": [
+            "arepa"
+          ],
           "translation": "On Sunday the crew got together at Valeria's place with arepas and hot chocolate."
         },
         {
-          "word": "pleito",
-          "surface": "pleitos",
-          "definition": "a quarrel or a nasty falling out between friends",
           "sentence": "Valeria, que odiaba los pleitos, hacía de juez para que nadie se pasara de listo.",
+          "words": [
+            "pleito",
+            "pasarse de listo"
+          ],
           "translation": "Valeria, who hated quarrels, played judge so that nobody would get away with being a smart aleck."
         },
         {
-          "word": "pasarse de listo",
-          "surface": "se pasara de listo",
-          "definition": "to be a smart aleck and take unfair advantage",
-          "sentence": "Valeria, que odiaba los pleitos, hacía de juez para que nadie se pasara de listo.",
-          "translation": "Valeria, who hated quarrels, played judge so that nobody would get away with being a smart aleck."
-        },
-        {
-          "word": "recocha",
-          "surface": "recocha",
-          "definition": "rowdy joking around and playful teasing among friends",
           "sentence": "Poco a poco, la bravura se volvió recocha y risa floja.",
+          "words": [
+            "recocha",
+            "risa floja"
+          ],
           "translation": "Little by little, the anger turned into horsing around and helpless giggles."
         },
         {
-          "word": "marica",
-          "surface": "Marica",
-          "definition": "dude or mate; a rough word used constantly among Colombian friends",
           "sentence": "“Marica, ya, dejemos esta bobada quieta”, soltó Julián estirando la mano.",
+          "words": [
+            "marica",
+            "bobada"
+          ],
           "translation": "“Come on, man, let's drop this silly thing,” blurted Julián, holding out his hand."
         },
         {
-          "word": "bobada",
-          "surface": "bobada",
-          "definition": "a silly little thing not worth arguing over",
-          "sentence": "“Marica, ya, dejemos esta bobada quieta”, soltó Julián estirando la mano.",
-          "translation": "“Come on, man, let's drop this silly thing,” blurted Julián, holding out his hand."
-        },
-        {
-          "word": "quitarse un bulto de encima",
-          "surface": "quitado un bulto de encima",
-          "definition": "to be relieved of a heavy weight or worry",
           "sentence": "El parche entero respiró, como si le hubieran quitado un bulto de encima.",
+          "words": [
+            "quitarse un bulto de encima"
+          ],
           "translation": "The whole crew breathed out, as if a weight had been lifted off their shoulders."
         },
         {
-          "word": "sellar el trato",
-          "surface": "Sellaron el trato",
-          "definition": "to seal the deal and make an agreement final",
           "sentence": "Sellaron el trato con un brindis de chocolate, chocando las tazas como si fueran polas.",
+          "words": [
+            "sellar el trato"
+          ],
           "translation": "They sealed the deal with a chocolate toast, clinking the mugs as if they were beers."
         },
         {
-          "word": "liviano",
-          "surface": "liviano",
-          "definition": "light and unburdened, free of worry or weight",
           "sentence": "Se despidieron con la panza llena de arepa y el corazón liviano.",
+          "words": [
+            "liviano"
+          ],
           "translation": "They said goodbye with their bellies full of arepas and their hearts light."
         },
         {
-          "word": "medio en serio",
-          "surface": "medio en serio y medio en chiste",
-          "definition": "half seriously and half joking, not fully committing",
           "sentence": "Acordaron una regla nueva para el grupo, medio en serio y medio en chiste.",
+          "words": [
+            "medio en serio"
+          ],
           "translation": "They agreed on a new rule for the group, half seriously and half as a joke."
         },
         {
-          "word": "risa floja",
-          "surface": "risa floja",
-          "definition": "helpless giggles you cannot stop once they start",
-          "sentence": "Poco a poco, la bravura se volvió recocha y risa floja.",
-          "translation": "Little by little, the anger turned into horsing around and helpless giggles."
-        },
-        {
-          "word": "soltar prenda",
-          "surface": "soltar prenda",
-          "definition": "to give away a secret or reveal what you know",
           "sentence": "Lo que se hablara en el parche se quedaba en el parche, sin soltar prenda por fuera.",
+          "words": [
+            "soltar prenda"
+          ],
           "translation": "Whatever was said in the group stayed in the group, with nothing given away outside."
         },
         {
-          "word": "hacer las paces",
-          "surface": "hicieron las paces",
-          "definition": "to make up and patch things up after a fight",
           "sentence": "Marina se la apretó e hicieron las paces con un abrazo de esos que valen más que mil perdones.",
+          "words": [
+            "hacer las paces"
+          ],
           "translation": "Marina shook it and they made up with one of those hugs worth more than a thousand apologies."
-        },
-        {
-          "word": "cuadrar",
-          "surface": "cuadremos",
-          "definition": "to sort something out, arrange it or patch it up",
-          "sentence": "“Hablemos sin rodeos y cuadremos esta vaina de una vez”, propuso ella.",
-          "translation": "“Let's talk straight and sort this thing out once and for all,” she proposed."
         }
       ]
     },
@@ -473,179 +347,132 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "codo",
-          "surface": "codo",
-          "definition": "stingy, cheap, hating to spend any money at all",
           "sentence": "Ninguno quería quedar como el codo del cuento, pero a todos les daba hueva soltar la lana.",
+          "words": [
+            "codo",
+            "hueva",
+            "lana"
+          ],
           "translation": "Nobody wanted to end up as the cheapskate of the story, but they were all too lazy to hand over the cash."
         },
         {
-          "word": "hueva",
-          "surface": "hueva",
-          "definition": "laziness, or the reluctance to do something you should do",
-          "sentence": "Ninguno quería quedar como el codo del cuento, pero a todos les daba hueva soltar la lana.",
-          "translation": "Nobody wanted to end up as the cheapskate of the story, but they were all too lazy to hand over the cash."
-        },
-        {
-          "word": "lana",
-          "surface": "lana",
-          "definition": "common Mexican slang for money, cash, or dough",
-          "sentence": "Ninguno quería quedar como el codo del cuento, pero a todos les daba hueva soltar la lana.",
-          "translation": "Nobody wanted to end up as the cheapskate of the story, but they were all too lazy to hand over the cash."
-        },
-        {
-          "word": "vivales",
-          "surface": "vivales",
-          "definition": "a sly opportunist who always looks out for himself",
           "sentence": "Esa noche le tocaba a Mateo, y el muy vivales llevaba días anunciando que andaba corto.",
+          "words": [
+            "vivales",
+            "andar corto"
+          ],
           "translation": "That night it was Mateo's turn, and the sly one had spent days announcing that he was broke."
         },
         {
-          "word": "chela",
-          "surface": "chelas",
-          "definition": "a beer; the everyday Mexican word you hear constantly",
           "sentence": "Llegaron los tacos y las chelas, y él se puso a contar las monedas de su cartera con una lentitud sospechosa.",
-          "fallback": true,
+          "words": [
+            "chela"
+          ],
           "translation": "The tacos and the beers arrived, and he started counting the coins in his wallet with suspicious slowness."
         },
         {
-          "word": "cachar",
-          "surface": "cachó",
-          "definition": "to catch someone in the act or notice something",
           "sentence": "Renata lo cachó de inmediato.",
+          "words": [
+            "cachar"
+          ],
           "translation": "Renata caught him at it right away."
         },
         {
-          "word": "no mames",
-          "surface": "No mames",
-          "definition": "no way, you're kidding; vulgar but constant among Mexican friends",
           "sentence": "“No mames, güey, ni que fueras a quebrar”, le soltó.",
+          "words": [
+            "no mames",
+            "güey"
+          ],
           "translation": "“Come on, dude, it's not like you're about to go broke,” she shot back."
         },
         {
-          "word": "güey",
-          "surface": "güey",
-          "definition": "dude or guy; the most common filler word in Mexican speech",
-          "sentence": "“No mames, güey, ni que fueras a quebrar”, le soltó.",
-          "translation": "“Come on, dude, it's not like you're about to go broke,” she shot back."
-        },
-        {
-          "word": "chotear",
-          "surface": "choteándolo",
-          "definition": "to tease, mock, or make fun of someone playfully",
           "sentence": "Siguió choteándolo, y Pablo levantó la vista del celular para sumarse.",
+          "words": [
+            "chotear"
+          ],
           "translation": "She kept ribbing him, and Pablo looked up from his phone to join in."
         },
         {
-          "word": "vaquita",
-          "surface": "vaquita",
-          "definition": "a whip round where everyone chips in some money",
           "sentence": "Alguien propuso lo de siempre: hacer vaquita y terminar con el asunto.",
+          "words": [
+            "vaquita"
+          ],
           "translation": "Someone suggested the usual: chip in together and be done with it."
         },
         {
-          "word": "echar choro",
-          "surface": "echar choro",
-          "definition": "to talk a lot of smooth nonsense to convince people",
           "sentence": "Pero Mateo se puso a echar choro sobre que él ya había pagado la vez pasada, que le tocaba a otro, que las cuentas no cuadraban.",
-          "fallback": true,
+          "words": [
+            "echar choro"
+          ],
           "translation": "But Mateo started spinning a line about how he had paid last time, how it was someone else's turn, how the numbers did not add up."
         },
         {
-          "word": "mamada",
-          "surface": "mamada",
-          "definition": "nonsense or bullshit; something obviously untrue or ridiculous",
           "sentence": "Pura mamada, y nadie le creyó una palabra.",
+          "words": [
+            "mamada"
+          ],
           "translation": "Pure nonsense, and nobody believed a word of it."
         },
         {
-          "word": "tranzar",
-          "surface": "tranzado",
-          "definition": "to swindle or cheat someone, usually over money",
           "sentence": "Ya los había tranzado igual el mes anterior.",
+          "words": [
+            "tranzar"
+          ],
           "translation": "He had pulled the same trick on them the month before."
         },
         {
-          "word": "zafarse",
-          "surface": "zafarse",
-          "definition": "to wriggle out of an obligation, getting yourself off the hook",
           "sentence": "Intentó zafarse diciendo que había dejado la cartera en el coche.",
+          "words": [
+            "zafarse"
+          ],
           "translation": "He tried to wriggle out of it saying he had left his wallet in the car."
         },
         {
-          "word": "cotorrear",
-          "surface": "cotorrear",
-          "definition": "to chat and joke around, often teasing someone lightly",
           "sentence": "Sofía no dijo nada; lo dejó cotorrear un rato, dejándolo enredarse solito.",
+          "words": [
+            "cotorrear"
+          ],
           "translation": "Sofía said nothing; she let him ramble on for a while and tangle himself up on his own."
         },
         {
-          "word": "sacar la sopa",
-          "surface": "sacó la sopa",
-          "definition": "to get the juicy truth or details out of someone",
           "sentence": "Cuando lo tuvo montado en la mentira, le sacó la sopa: el sábado había ganado una apuesta y traía dinero de sobra.",
-          "fallback": true,
+          "words": [
+            "sacar la sopa",
+            "de sobra"
+          ],
           "translation": "Once she had him deep in the lie, she got the truth out of him: on Saturday he had won a bet and was carrying money to spare."
         },
         {
-          "word": "cabrón",
-          "surface": "cabrón",
-          "definition": "bastard, but among friends it is affectionate, like rascal",
           "sentence": "“Eres un cabrón”, se rió Renata.",
+          "words": [
+            "cabrón"
+          ],
           "translation": "“You are such a rascal,” Renata laughed."
         },
         {
-          "word": "carrilla",
-          "surface": "carrilla",
-          "definition": "nonstop friendly teasing or mockery aimed at one person",
           "sentence": "La mesa se le vino encima con pura carrilla.",
+          "words": [
+            "carrilla"
+          ],
           "translation": "The whole table came down on him with nonstop teasing."
         },
         {
-          "word": "pinche",
-          "surface": "pinche",
-          "definition": "damn or bloody; a very common Mexican intensifier before nouns",
           "sentence": "No hubo defensa posible, así que al pinche Mateo no le quedó de otra que aflojar.",
+          "words": [
+            "pinche",
+            "aflojar",
+            "no quedar de otra"
+          ],
           "translation": "There was no possible defense, so damn Mateo had no choice left but to pay up."
         },
         {
-          "word": "aflojar",
-          "surface": "aflojar",
-          "definition": "to finally hand over money you were reluctant to pay",
-          "sentence": "No hubo defensa posible, así que al pinche Mateo no le quedó de otra que aflojar.",
-          "translation": "There was no possible defense, so damn Mateo had no choice left but to pay up."
-        },
-        {
-          "word": "hacerse pato",
-          "surface": "hacía pato",
-          "definition": "to play dumb and pretend you did not notice",
           "sentence": "Así se cerraba otro jueves: el que se hacía pato pagaba, y encima aguantaba la burla hasta el jueves siguiente.",
-          "fallback": true,
+          "words": [
+            "hacerse pato"
+          ],
           "translation": "So another Thursday wrapped up: whoever played dumb paid, and then put up with the teasing until the following Thursday."
-        },
-        {
-          "word": "andar corto",
-          "surface": "andaba corto",
-          "definition": "to be short on cash, low on money right now",
-          "sentence": "Esa noche le tocaba a Mateo, y el muy vivales llevaba días anunciando que andaba corto.",
-          "translation": "That night it was Mateo's turn, and the sly one had spent days announcing that he was broke."
-        },
-        {
-          "word": "no quedar de otra",
-          "surface": "no le quedó de otra",
-          "definition": "to have no other choice left but to do it",
-          "sentence": "No hubo defensa posible, así que al pinche Mateo no le quedó de otra que aflojar.",
-          "translation": "There was no possible defense, so damn Mateo had no choice left but to pay up."
-        },
-        {
-          "word": "de sobra",
-          "surface": "de sobra",
-          "definition": "more than enough, with plenty of it to spare",
-          "sentence": "Cuando lo tuvo montado en la mentira, le sacó la sopa: el sábado había ganado una apuesta y traía dinero de sobra.",
-          "fallback": true,
-          "translation": "Once she had him deep in the lie, she got the truth out of him: on Saturday he had won a bet and was carrying money to spare."
         }
       ]
     },
@@ -655,167 +482,143 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "banda",
-          "surface": "banda",
-          "definition": "your crew, the group of friends you hang with",
           "sentence": "En la banda de Sofía todos sabían que el reloj de Renata funcionaba distinto.",
+          "words": [
+            "banda"
+          ],
           "translation": "Everyone in Sofía's crew knew that Renata's clock ran on its own time."
         },
         {
-          "word": "ahorita",
-          "surface": "ahorita",
-          "definition": "Mexican now that can mean soon, later, or never",
           "sentence": "Cuando decía “ahorita salgo”, había que sumarle una hora, a veces dos.",
+          "words": [
+            "ahorita"
+          ],
           "translation": "When she said “I'm heading out right now,” you had to add an hour, sometimes two."
         },
         {
-          "word": "echar raíces",
-          "surface": "echando raíces",
-          "definition": "to wait so long you seem rooted to the spot",
           "sentence": "Esa noche los demás llevaban rato echando raíces en la esquina, muertos de frío.",
+          "words": [
+            "echar raíces",
+            "muerto de frío",
+            "llevar rato"
+          ],
           "translation": "That night the others had been putting down roots on the corner for a while, freezing to death."
         },
         {
-          "word": "neta",
-          "surface": "Neta",
-          "definition": "Mexican slang for the honest truth, or seriously",
           "sentence": "Neta, era la reina de llegar tarde, y el grupo lo había convertido en deporte.",
+          "words": [
+            "neta"
+          ],
           "translation": "Honestly, she was the queen of showing up late, and the group had turned it into a sport."
         },
         {
-          "word": "morra",
-          "surface": "morra",
-          "definition": "Mexican slang for a young woman or girl",
           "sentence": "Cuando por fin apareció la morra, Mateo la recibió con una cara de falsa sorpresa.",
+          "words": [
+            "morra"
+          ],
           "translation": "When the girl finally showed up, Mateo greeted her with a face of fake surprise."
         },
         {
-          "word": "qué pedo",
-          "surface": "Qué pedo",
-          "definition": "what's up; a very common vulgar greeting among Mexican friends",
           "sentence": "“¿Qué pedo, ya te acordaste de nosotros?”, anunció, para que lo oyera toda la cuadra.",
+          "words": [
+            "qué pedo"
+          ],
           "translation": "“What's up, did you finally remember we exist?” he announced, loud enough for the whole block to hear."
         },
         {
-          "word": "vacilar",
-          "surface": "vacilar",
-          "definition": "to tease and joke around with someone in fun",
           "sentence": "A Mateo nunca se le iba la oportunidad de vacilar.",
+          "words": [
+            "vacilar"
+          ],
           "translation": "Mateo never let a chance to tease someone slip by."
         },
         {
-          "word": "gacho",
-          "surface": "gachos",
-          "definition": "mean, uncool, or nasty in the way someone acts",
           "sentence": "Los demás se sumaron igual de gachos, cada uno con su versión del mismo chiste.",
+          "words": [
+            "gacho"
+          ],
           "translation": "The others piled on just as mean, each with his own version of the same joke."
         },
         {
-          "word": "culero",
-          "surface": "culero",
-          "definition": "mean or nasty to others; vulgar, and much harsher than gacho",
           "sentence": "Pablo estuvo especialmente culero, contando la vez que los dejó afuera de un cine.",
+          "words": [
+            "culero"
+          ],
           "translation": "Pablo was especially nasty, telling about the time she left them standing outside a movie theater."
         },
         {
-          "word": "sin despeinarse",
-          "surface": "sin despeinarse",
-          "definition": "without breaking a sweat, totally cool and unbothered",
           "sentence": "Renata, sin despeinarse, sacó su pretexto de siempre: el tráfico, el trabajo, la vida.",
+          "words": [
+            "sin despeinarse"
+          ],
           "translation": "Renata, without missing a beat, pulled out her usual excuse: traffic, work, life."
         },
         {
-          "word": "chambear",
-          "surface": "chambear",
-          "definition": "to work; the everyday Mexican word for having a job",
           "sentence": "Dijo que le había tocado chambear hasta tarde, como siempre.",
+          "words": [
+            "chambear"
+          ],
           "translation": "She said she had had to work late, as always."
         },
         {
-          "word": "plantar",
-          "surface": "plantado",
-          "definition": "to stand someone up, leaving them waiting at the meeting place",
           "sentence": "Ya nadie se lo creía, porque los había plantado demasiadas veces como para tener crédito.",
+          "words": [
+            "plantar"
+          ],
           "translation": "Nobody believed her anymore, because she had stood them up too many times to have any credit left."
         },
         {
-          "word": "bronca",
-          "surface": "bronca",
-          "definition": "a problem, an argument, or beef between people",
           "sentence": "Lo raro es que esta vez no se defendió ni armó bronca.",
+          "words": [
+            "bronca"
+          ],
           "translation": "The strange part is that this time she did not defend herself or pick a fight."
         },
         {
-          "word": "movida",
-          "surface": "movida",
-          "definition": "a clever move or arrangement someone pulls off, often kept secret",
           "sentence": "Lo que ninguno sabía es que traía una movida preparada desde el lunes.",
+          "words": [
+            "movida"
+          ],
           "translation": "What none of them knew is that she had a plan ready since Monday."
         },
         {
-          "word": "agandallar",
-          "surface": "agandallando",
-          "definition": "to take advantage of someone, piling on them unfairly",
           "sentence": "Dejó que la siguieran agandallando un rato más, tranquila, esperando su momento.",
+          "words": [
+            "agandallar"
+          ],
           "translation": "She let them keep piling on her a while longer, calm, waiting for her moment."
         },
         {
-          "word": "chido",
-          "surface": "chido",
-          "definition": "Mexican slang for cool, great, or nicely done",
           "sentence": "“Está bien chido”, admitió Mateo, sin poder disimular.",
+          "words": [
+            "chido"
+          ],
           "translation": "“That is really cool,” Mateo admitted, unable to hide it."
         },
         {
-          "word": "apantallar",
-          "surface": "apantalló",
-          "definition": "to impress or dazzle people, usually by showing something off",
           "sentence": "Los apantalló a los tres de una sola vez, con un movimiento bien chingón.",
+          "words": [
+            "apantallar",
+            "chingón"
+          ],
           "translation": "She dazzled all three of them at once, with one seriously badass move."
         },
         {
-          "word": "chingón",
-          "surface": "chingón",
-          "definition": "awesome or badass; strong praise, vulgar but widely used",
-          "sentence": "Los apantalló a los tres de una sola vez, con un movimiento bien chingón.",
-          "translation": "She dazzled all three of them at once, with one seriously badass move."
-        },
-        {
-          "word": "reventón",
-          "surface": "reventón",
-          "definition": "a big party that goes on late into the night",
           "sentence": "El reventón terminó a las cuatro y amanecieron crudos, arrepentidos y felices.",
+          "words": [
+            "reventón",
+            "crudo"
+          ],
           "translation": "The party ended at four and they woke up hungover, regretful and happy."
         },
         {
-          "word": "crudo",
-          "surface": "crudos",
-          "definition": "hungover; feeling terrible the morning after drinking too much",
-          "sentence": "El reventón terminó a las cuatro y amanecieron crudos, arrepentidos y felices.",
-          "translation": "The party ended at four and they woke up hungover, regretful and happy."
-        },
-        {
-          "word": "rifarse",
-          "surface": "se rifó",
-          "definition": "to come through for someone, doing something genuinely impressive",
           "sentence": "Renata se rifó, y por una semana entera nadie le dijo nada de su reloj.",
+          "words": [
+            "rifarse"
+          ],
           "translation": "Renata came through, and for a whole week nobody said a word about her clock."
-        },
-        {
-          "word": "muerto de frío",
-          "surface": "muertos de frío",
-          "definition": "freezing cold, absolutely frozen from waiting around outside",
-          "sentence": "Esa noche los demás llevaban rato echando raíces en la esquina, muertos de frío.",
-          "translation": "That night the others had been putting down roots on the corner for a while, freezing to death."
-        },
-        {
-          "word": "llevar rato",
-          "surface": "llevaban rato",
-          "definition": "to have been somewhere or doing something for a while",
-          "sentence": "Esa noche los demás llevaban rato echando raíces en la esquina, muertos de frío.",
-          "translation": "That night the others had been putting down roots on the corner for a while, freezing to death."
         }
       ]
     },
@@ -825,175 +628,119 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "cursi",
-          "surface": "cursi",
-          "definition": "corny, cheesy, sentimental in a slightly embarrassing way",
           "sentence": "Después de tantos jueves juntos, a Sofía se le ocurrió una idea medio cursi: tomarse una foto de los cuatro para colgarla en el refri.",
-          "fallback": true,
+          "words": [
+            "cursi",
+            "refri"
+          ],
           "translation": "After so many Thursdays together, Sofía came up with a slightly cheesy idea: taking a photo of the four of them to stick on the fridge."
         },
         {
-          "word": "refri",
-          "surface": "refri",
-          "definition": "Mexican short word for the fridge or refrigerator",
-          "sentence": "Después de tantos jueves juntos, a Sofía se le ocurrió una idea medio cursi: tomarse una foto de los cuatro para colgarla en el refri.",
-          "fallback": true,
-          "translation": "After so many Thursdays together, Sofía came up with a slightly cheesy idea: taking a photo of the four of them to stick on the fridge."
-        },
-        {
-          "word": "desmadre",
-          "surface": "desmadre",
-          "definition": "wild chaos or a total noisy mess of fun",
           "sentence": "Lo que nadie imaginó es que algo tan simple se iba a volver semejante desmadre.",
+          "words": [
+            "desmadre"
+          ],
           "translation": "What nobody imagined is that something so simple would turn into such total chaos."
         },
         {
-          "word": "aventarse",
-          "surface": "se aventó",
-          "definition": "to boldly go for it, throwing yourself into something",
           "sentence": "Mateo se aventó una pose de portada de disco que nadie le había pedido, convencido de que era el galán del grupo.",
-          "fallback": true,
+          "words": [
+            "aventarse",
+            "galán"
+          ],
           "translation": "Mateo threw himself into an album cover pose nobody had asked for, convinced he was the group's heartthrob."
         },
         {
-          "word": "galán",
-          "surface": "galán",
-          "definition": "a handsome guy or a smooth ladies man",
-          "sentence": "Mateo se aventó una pose de portada de disco que nadie le había pedido, convencido de que era el galán del grupo.",
-          "fallback": true,
-          "translation": "Mateo threw himself into an album cover pose nobody had asked for, convinced he was the group's heartthrob."
-        },
-        {
-          "word": "mamón",
-          "surface": "mamón",
-          "definition": "stuck up or full of yourself; someone acting superior",
           "sentence": "Se puso hasta adelante, con una cara de mamón que dio risa.",
+          "words": [
+            "mamón",
+            "hasta adelante"
+          ],
           "translation": "He planted himself right at the front, with a smug face that made everyone laugh."
         },
         {
-          "word": "el mero mero",
-          "surface": "el mero mero",
-          "definition": "the top dog, the big boss, the main one",
           "sentence": "Ahí estaba, parado como el mero mero, cuando en realidad se veía bastante chafa.",
+          "words": [
+            "el mero mero",
+            "chafa"
+          ],
           "translation": "There he was, standing like the top dog, when he actually looked pretty cheap."
         },
         {
-          "word": "chafa",
-          "surface": "chafa",
-          "definition": "cheap, tacky or badly done; the opposite of good quality",
-          "sentence": "Ahí estaba, parado como el mero mero, cuando en realidad se veía bastante chafa.",
-          "translation": "There he was, standing like the top dog, when he actually looked pretty cheap."
-        },
-        {
-          "word": "naco",
-          "surface": "naco",
-          "definition": "tacky or lower class; a common and rather harsh Mexican insult",
           "sentence": "“Te ves bien naco”, le dijo Pablo, sin piedad.",
+          "words": [
+            "naco"
+          ],
           "translation": "“You look so tacky,” Pablo told him, showing no mercy."
         },
         {
-          "word": "clavarse",
-          "surface": "clavando",
-          "definition": "to get obsessed with something, spending far too long on it",
           "sentence": "Renata apuraba desde atrás, muerta de hambre, diciendo que se estaban clavando demasiado.",
+          "words": [
+            "clavarse",
+            "muerto de hambre"
+          ],
           "translation": "Renata kept rushing them from the back, starving, saying they were getting way too obsessed with it."
         },
         {
-          "word": "cagada",
-          "surface": "cagada",
-          "definition": "a mess or a bad screw up; vulgar but very common",
           "sentence": "La cagada llegó cuando apoyaron el celular en una silla, corrieron a la marca, y resultó que nadie sabía usar el temporizador.",
-          "fallback": true,
+          "words": [
+            "cagada"
+          ],
           "translation": "The screw up came when they propped the phone on a chair, ran to their spots, and it turned out nobody knew how to use the timer."
         },
         {
-          "word": "qué oso",
-          "surface": "Qué oso",
-          "definition": "how embarrassing, what a cringe moment that was",
           "sentence": "Qué oso.",
+          "words": [
+            "qué oso"
+          ],
           "translation": "How embarrassing."
         },
         {
-          "word": "chutarse",
-          "surface": "Se chutaron",
-          "definition": "to sit through or endure something long and tedious",
           "sentence": "Se chutaron diez intentos antes de que saliera una decente.",
+          "words": [
+            "chutarse"
+          ],
           "translation": "They sat through ten attempts before a decent one came out."
         },
         {
-          "word": "órale",
-          "surface": "Órale",
-          "definition": "wow, or come on; an all purpose Mexican interjection",
           "sentence": "“Órale, ahora sí, todos quietos”, gritaba Sofía cada vez, y cada vez se movía alguien.",
+          "words": [
+            "órale"
+          ],
           "translation": "“All right, now for real, everybody hold still,” Sofía shouted every time, and every time somebody moved."
         },
         {
-          "word": "compa",
-          "surface": "compa",
-          "definition": "buddy or mate; short for compañero, very common in Mexico",
           "sentence": "“Ya, compa, es una foto, no una boda”, le contestaba Mateo desde el fondo.",
+          "words": [
+            "compa"
+          ],
           "translation": "“Come on, buddy, it's a photo, not a wedding,” Mateo answered from the back."
         },
         {
-          "word": "chueco",
-          "surface": "chueca",
-          "definition": "crooked, skewed, or not quite straight at all",
           "sentence": "La décima quedó toda chueca, con la mesa inclinada y medio mantel de protagonista.",
+          "words": [
+            "chueco"
+          ],
           "translation": "The tenth one came out completely crooked, with the table tilted and half a tablecloth stealing the show."
         },
         {
-          "word": "de perdis",
-          "surface": "De perdis",
-          "definition": "at the very least, if nothing else at all",
           "sentence": "De perdis, esa sí los agarró a los cuatro viendo a la cámara, y a esas alturas ya les valía madres.",
+          "words": [
+            "de perdis",
+            "valer madres"
+          ],
           "translation": "At least that one caught all four of them looking at the camera, and by that point they could not care less."
         },
         {
-          "word": "valer madres",
-          "surface": "valía madres",
-          "definition": "to not matter at all; vulgar way of saying who cares",
-          "sentence": "De perdis, esa sí los agarró a los cuatro viendo a la cámara, y a esas alturas ya les valía madres.",
-          "translation": "At least that one caught all four of them looking at the camera, and by that point they could not care less."
-        },
-        {
-          "word": "cuate",
-          "surface": "cuates",
-          "definition": "a close friend or buddy; extremely common in Mexico",
           "sentence": "Al final eso era el grupo: cuates con los que uno la riega, hace pendejadas y termina contento de haberlo hecho.",
-          "fallback": true,
+          "words": [
+            "cuate",
+            "regarla",
+            "pendejada"
+          ],
           "translation": "In the end that was the group: friends you mess up with, do stupid things with, and end up glad you did."
-        },
-        {
-          "word": "regarla",
-          "surface": "la riega",
-          "definition": "to mess something up or make an obvious mistake",
-          "sentence": "Al final eso era el grupo: cuates con los que uno la riega, hace pendejadas y termina contento de haberlo hecho.",
-          "fallback": true,
-          "translation": "In the end that was the group: friends you mess up with, do stupid things with, and end up glad you did."
-        },
-        {
-          "word": "pendejada",
-          "surface": "pendejadas",
-          "definition": "a stupid thing to do or say; vulgar but everyday",
-          "sentence": "Al final eso era el grupo: cuates con los que uno la riega, hace pendejadas y termina contento de haberlo hecho.",
-          "fallback": true,
-          "translation": "In the end that was the group: friends you mess up with, do stupid things with, and end up glad you did."
-        },
-        {
-          "word": "muerto de hambre",
-          "surface": "muerta de hambre",
-          "definition": "starving, extremely hungry and unable to wait any longer",
-          "sentence": "Renata apuraba desde atrás, muerta de hambre, diciendo que se estaban clavando demasiado.",
-          "translation": "Renata kept rushing them from the back, starving, saying they were getting way too obsessed with it."
-        },
-        {
-          "word": "hasta adelante",
-          "surface": "hasta adelante",
-          "definition": "right at the very front of the group",
-          "sentence": "Se puso hasta adelante, con una cara de mamón que dio risa.",
-          "translation": "He planted himself right at the front, with a smug face that made everyone laugh."
         }
       ]
     },
@@ -1003,146 +750,109 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "hecho pelota",
-          "surface": "hecha pelota",
-          "definition": "totally wrecked and worn out, falling apart physically or emotionally",
           "sentence": "Camila entró al bar tirándose en la silla, hecha pelota, y largó todo de una.",
+          "words": [
+            "hecho pelota",
+            "largar"
+          ],
           "translation": "Camila walked into the bar, dropped into her chair completely wrecked, and let it all out at once."
         },
         {
-          "word": "largar",
-          "surface": "largó",
-          "definition": "to blurt out and let everything spill at once",
-          "sentence": "Camila entró al bar tirándose en la silla, hecha pelota, y largó todo de una.",
-          "translation": "Camila walked into the bar, dropped into her chair completely wrecked, and let it all out at once."
-        },
-        {
-          "word": "no dar más",
-          "surface": "no doy más",
-          "definition": "to be completely done, unable to take any more",
           "sentence": "“Che, no doy más con este laburo, boludo”, disparó antes de acomodarse bien.",
+          "words": [
+            "no dar más",
+            "laburo",
+            "boludo"
+          ],
           "translation": "“I can't take this job anymore, dude,” she fired off before even settling in."
         },
         {
-          "word": "laburo",
-          "surface": "laburo",
-          "definition": "a job or work, the everyday Buenos Aires word for it",
-          "sentence": "“Che, no doy más con este laburo, boludo”, disparó antes de acomodarse bien.",
-          "translation": "“I can't take this job anymore, dude,” she fired off before even settling in."
-        },
-        {
-          "word": "boludo",
-          "surface": "boludo",
-          "definition": "dude or idiot; among friends a warm term of address",
-          "sentence": "“Che, no doy más con este laburo, boludo”, disparó antes de acomodarse bien.",
-          "translation": "“I can't take this job anymore, dude,” she fired off before even settling in."
-        },
-        {
-          "word": "quilombo",
-          "surface": "quilombo",
-          "definition": "a chaotic mess, a huge tangle of problems",
           "sentence": "Según ella, el jefe le mandaba un quilombo tras otro sin respiro ni un gracias.",
+          "words": [
+            "quilombo"
+          ],
           "translation": "According to her, the boss sent her one mess after another with no break and no thanks."
         },
         {
-          "word": "renegar",
-          "surface": "renegando",
-          "definition": "to grumble and toil away endlessly in frustration and anger",
           "sentence": "Se quedaba renegando hasta tarde, reventada, mientras los demás rajaban a horario.",
+          "words": [
+            "renegar",
+            "reventado"
+          ],
           "translation": "She stayed late grumbling and grinding away, burnt out, while everyone else took off on time."
         },
         {
-          "word": "reventado",
-          "surface": "reventada",
-          "definition": "utterly exhausted and burnt out, running on empty",
-          "sentence": "Se quedaba renegando hasta tarde, reventada, mientras los demás rajaban a horario.",
-          "translation": "She stayed late grumbling and grinding away, burnt out, while everyone else took off on time."
-        },
-        {
-          "word": "mango",
-          "surface": "mango",
-          "definition": "a peso, a unit of money; not a mango without any",
           "sentence": "Encima el sueldo era una miseria, y con ese mango no le alcanzaba para nada.",
+          "words": [
+            "mango"
+          ],
           "translation": "On top of that the pay was pitiful, and with that kind of money she could not cover anything."
         },
         {
-          "word": "bancar",
-          "surface": "la bancó",
-          "definition": "to support someone and put up with them patiently",
           "sentence": "Tomás la bancó en silencio, dejándola descargar todo el bajón sin interrumpir.",
+          "words": [
+            "bancar",
+            "bajón"
+          ],
           "translation": "Tomás stood by her in silence, letting her unload the whole low mood without interrupting."
         },
         {
-          "word": "bajón",
-          "surface": "bajón",
-          "definition": "a low, gloomy mood, a wave of feeling down",
-          "sentence": "Tomás la bancó en silencio, dejándola descargar todo el bajón sin interrumpir.",
-          "translation": "Tomás stood by her in silence, letting her unload the whole low mood without interrupting."
-        },
-        {
-          "word": "despacharse",
-          "surface": "se despachara",
-          "definition": "to let it all out, unloading everything on your mind",
           "sentence": "Flor le acercó una birra y le dijo que se despachara con confianza.",
+          "words": [
+            "despacharse"
+          ],
           "translation": "Flor slid her a beer and told her to let it all out freely."
         },
         {
-          "word": "garrón",
-          "surface": "garrón",
-          "definition": "a raw deal or a real bummer of a situation",
           "sentence": "“Está todo mal, es un garrón, me quiero borrar de ahí”, cerró Camila.",
+          "words": [
+            "garrón",
+            "borrarse"
+          ],
           "translation": "“Everything is wrong, it's a raw deal, I want out of there,” Camila finished."
         },
         {
-          "word": "borrarse",
-          "surface": "borrar",
-          "definition": "to disappear and get yourself out of somewhere",
-          "sentence": "“Está todo mal, es un garrón, me quiero borrar de ahí”, cerró Camila.",
-          "translation": "“Everything is wrong, it's a raw deal, I want out of there,” Camila finished."
-        },
-        {
-          "word": "al horno",
-          "surface": "al horno",
-          "definition": "in deep trouble, in a really tough spot",
           "sentence": "Se pasó tres semanas al horno, sin dormir, sacando el laburo adelante.",
+          "words": [
+            "al horno"
+          ],
           "translation": "She spent three weeks in the thick of it, not sleeping, pushing the work through."
         },
         {
-          "word": "frenar en seco",
-          "surface": "frenó en seco",
-          "definition": "to stop someone dead in their tracks abruptly",
           "sentence": "Flor la frenó en seco con una pregunta que la dejó pensando.",
+          "words": [
+            "frenar en seco"
+          ],
           "translation": "Flor stopped her dead with a question that left her thinking."
         },
         {
-          "word": "pará",
-          "surface": "Pará",
-          "definition": "hold on, wait a second, said to interrupt",
           "sentence": "“Pará, ¿y por qué te daría el cliente más importante a vos, si te odia?”",
-          "fallback": true,
+          "words": [
+            "pará"
+          ],
           "translation": "“Hold on, why would he give the most important client to you, if he hates you?”"
         },
         {
-          "word": "viejo",
-          "surface": "viejo",
-          "definition": "the old man; here an affectionate word for the boss",
           "sentence": "El viejo la felicitaba por el proyecto y la ascendía a jefa de área.",
+          "words": [
+            "viejo"
+          ],
           "translation": "The old man congratulated her on the project and promoted her to head of the department."
         },
         {
-          "word": "prueba de fuego",
-          "surface": "prueba de fuego",
-          "definition": "a hard trial that tests what you are made of",
           "sentence": "El maltrato no era maltrato, era una prueba de fuego que había pasado.",
+          "words": [
+            "prueba de fuego"
+          ],
           "translation": "The mistreatment was not mistreatment, it was a trial by fire that she had passed."
         },
         {
-          "word": "dar vuelta",
-          "surface": "se le dio vuelta",
-          "definition": "to flip around completely, turning into its opposite",
           "sentence": "El bajón se le dio vuelta y de golpe todo tenía otro sentido.",
+          "words": [
+            "dar vuelta"
+          ],
           "translation": "Her low mood flipped right around, and suddenly everything made a different kind of sense."
         }
       ]
@@ -1153,146 +863,97 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "bajoneado",
-          "surface": "bajoneada",
-          "definition": "feeling down and gloomy, with your spirits scraping the floor",
           "sentence": "Flor llegó bajoneada y Tomás se ofreció de psicólogo improvisado de la barra.",
+          "words": [
+            "bajoneado"
+          ],
           "translation": "Flor arrived feeling down and Tomás offered himself as the bar's improvised therapist."
         },
         {
-          "word": "contame",
-          "surface": "Contame",
-          "definition": "tell me, the voseo form used across Buenos Aires",
           "sentence": "“Contame todo, flaca, que para eso están los amigos”, dijo, muy pancho.",
+          "words": [
+            "contame",
+            "flaco",
+            "pancho"
+          ],
           "translation": "“Tell me everything, girl, that's what friends are for,” he said, totally relaxed."
         },
         {
-          "word": "flaco",
-          "surface": "flaca",
-          "definition": "a term of address for a friend, literally skinny one",
-          "sentence": "“Contame todo, flaca, que para eso están los amigos”, dijo, muy pancho.",
-          "translation": "“Tell me everything, girl, that's what friends are for,” he said, totally relaxed."
-        },
-        {
-          "word": "pancho",
-          "surface": "pancho",
-          "definition": "totally relaxed and unbothered, cool as a cucumber",
-          "sentence": "“Contame todo, flaca, que para eso están los amigos”, dijo, muy pancho.",
-          "translation": "“Tell me everything, girl, that's what friends are for,” he said, totally relaxed."
-        },
-        {
-          "word": "chabón",
-          "surface": "chabón",
-          "definition": "a guy or dude, the porteño word for a man",
           "sentence": "Flor arrancó a contar que el chabón que le gustaba era un careta total.",
+          "words": [
+            "chabón",
+            "careta"
+          ],
           "translation": "Flor started telling them that the guy she liked was a complete fake."
         },
         {
-          "word": "careta",
-          "surface": "careta",
-          "definition": "a fake two faced person who puts on a front",
-          "sentence": "Flor arrancó a contar que el chabón que le gustaba era un careta total.",
-          "translation": "Flor started telling them that the guy she liked was a complete fake."
-        },
-        {
-          "word": "dejar colgado",
-          "surface": "dejado colgada",
-          "definition": "to leave someone hanging, ignored and stuck waiting around",
           "sentence": "La había dejado colgada dos veces y encima chamuyaba a otras minas al mismo tiempo.",
+          "words": [
+            "dejar colgado",
+            "chamuyar",
+            "mina"
+          ],
           "translation": "He had left her hanging twice and was sweet talking other women at the same time."
         },
         {
-          "word": "chamuyar",
-          "surface": "chamuyaba",
-          "definition": "to sweet talk and flirt with smooth persuasive lines",
-          "sentence": "La había dejado colgada dos veces y encima chamuyaba a otras minas al mismo tiempo.",
-          "translation": "He had left her hanging twice and was sweet talking other women at the same time."
-        },
-        {
-          "word": "mina",
-          "surface": "minas",
-          "definition": "a woman or girl, the porteño word for one",
-          "sentence": "La había dejado colgada dos veces y encima chamuyaba a otras minas al mismo tiempo.",
-          "translation": "He had left her hanging twice and was sweet talking other women at the same time."
-        },
-        {
-          "word": "forro",
-          "surface": "forro",
-          "definition": "a jerk or scumbag; a strong porteño insult",
           "sentence": "“Es un forro, sacátelo de la cabeza ya”, sentenció Tomás con autoridad.",
+          "words": [
+            "forro"
+          ],
           "translation": "“He's a jerk, get him out of your head right now,” Tomás declared with authority."
         },
         {
-          "word": "pibe",
-          "surface": "pibe",
-          "definition": "a kid or young guy, very common in Buenos Aires",
           "sentence": "El pibe se mandó una teoría larguísima sobre cómo funcionaba el amor.",
+          "words": [
+            "pibe",
+            "mandarse"
+          ],
           "translation": "The kid launched into an endless theory about how love actually works."
         },
         {
-          "word": "mandarse",
-          "surface": "se mandó",
-          "definition": "to launch into something, here into a long speech",
-          "sentence": "El pibe se mandó una teoría larguísima sobre cómo funcionaba el amor.",
-          "translation": "The kid launched into an endless theory about how love actually works."
-        },
-        {
-          "word": "dar bola",
-          "surface": "des bola",
-          "definition": "to pay attention to someone or take interest in them",
           "sentence": "“Vos tenés que hacerte la difícil, no le des bola tan fácil”, le aconsejaba.",
+          "words": [
+            "dar bola"
+          ],
           "translation": "“You have to play hard to get, don't give him attention so easily,” he advised."
         },
         {
-          "word": "laburar",
-          "surface": "labure",
-          "definition": "to work; here to work hard to earn something",
           "sentence": "“Si te busca, que labure para conseguirte, no le regales nada”, agregaba convencido.",
+          "words": [
+            "laburar"
+          ],
           "translation": "“If he wants you, let him work for it, don't hand him anything,” he added, convinced."
         },
         {
-          "word": "posta",
-          "surface": "posta",
-          "definition": "the real deal, honest truth or solid wisdom",
           "sentence": "“Sos un genio, Tomás, ¿de dónde sacás toda esta posta?”, le preguntó agradecida.",
+          "words": [
+            "posta"
+          ],
           "translation": "“You're a genius, Tomás, where do you get all this real wisdom?” she asked, grateful."
         },
         {
-          "word": "tirar",
-          "surface": "tiró",
-          "definition": "to toss out a comment or remark bluntly",
           "sentence": "“¿En serio este te está dando consejos de mujeres?”, tiró sin filtro.",
+          "words": [
+            "tirar",
+            "sin filtro"
+          ],
           "translation": "“Seriously, this one is giving you advice about women?” she tossed out with no filter."
         },
         {
-          "word": "sin filtro",
-          "surface": "sin filtro",
-          "definition": "saying whatever comes to mind with no restraint",
-          "sentence": "“¿En serio este te está dando consejos de mujeres?”, tiró sin filtro.",
-          "translation": "“Seriously, this one is giving you advice about women?” she tossed out with no filter."
-        },
-        {
-          "word": "lanzado",
-          "surface": "lanzada",
-          "definition": "on a roll and unstoppable, going for it fully",
           "sentence": "Pero Camila ya estaba lanzada y soltó la bomba sin piedad ninguna.",
+          "words": [
+            "lanzado",
+            "soltar la bomba"
+          ],
           "translation": "But Camila was on a roll now and dropped the bomb without any mercy at all."
         },
         {
-          "word": "soltar la bomba",
-          "surface": "soltó la bomba",
-          "definition": "to drop a shocking revelation that stuns everyone present",
-          "sentence": "Pero Camila ya estaba lanzada y soltó la bomba sin piedad ninguna.",
-          "translation": "But Camila was on a roll now and dropped the bomb without any mercy at all."
-        },
-        {
-          "word": "más solo que perro en la calle",
-          "surface": "más solo que perro en la calle",
-          "definition": "utterly alone, as lonely as a stray street dog",
           "sentence": "“Flor, este pibe no tuvo una cita en toda su vida, es más solo que perro en la calle.”",
-          "fallback": true,
+          "words": [
+            "más solo que perro en la calle"
+          ],
           "translation": "“Flor, this kid has never had a single date in his life; he's lonelier than a stray dog.”"
         }
       ]
@@ -1303,145 +964,115 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "previa",
-          "surface": "previa",
-          "definition": "the pre party warm up with drinks before going out",
           "sentence": "En la previa, con música y escabio, Camila y Flor se pusieron a largar todo.",
+          "words": [
+            "previa",
+            "escabio"
+          ],
           "translation": "At the warm up party, with music and booze, Camila and Flor started spilling everything."
         },
         {
-          "word": "escabio",
-          "surface": "escabio",
-          "definition": "booze, the alcohol that fuels a party in Argentina",
-          "sentence": "En la previa, con música y escabio, Camila y Flor se pusieron a largar todo.",
-          "translation": "At the warm up party, with music and booze, Camila and Flor started spilling everything."
-        },
-        {
-          "word": "re",
-          "surface": "re mal",
-          "definition": "super or really, an intensifier stuck before words",
           "sentence": "“Estoy re mal, piba, conocí un pibe soñado”, arrancó Camila con una sonrisa boba.",
+          "words": [
+            "re",
+            "piba"
+          ],
           "translation": "“I'm in really bad shape, girl, I met a dream guy,” Camila began with a goofy smile."
         },
         {
-          "word": "piba",
-          "surface": "piba",
-          "definition": "a girl or young woman, very common in Buenos Aires",
-          "sentence": "“Estoy re mal, piba, conocí un pibe soñado”, arrancó Camila con una sonrisa boba.",
-          "translation": "“I'm in really bad shape, girl, I met a dream guy,” Camila began with a goofy smile."
-        },
-        {
-          "word": "embalado",
-          "surface": "embalada",
-          "definition": "carried away with excitement and rushing headlong into something",
           "sentence": "Flor casi salta de la silla, porque ella también venía embalada con alguien.",
+          "words": [
+            "embalado"
+          ],
           "translation": "Flor almost jumped out of her chair, because she was swept up with someone too."
         },
         {
-          "word": "canchero",
-          "surface": "canchero",
-          "definition": "smooth, confident and effortlessly cool without even trying",
           "sentence": "Camila contó que el suyo era alto, canchero y con una labia impresionante.",
+          "words": [
+            "canchero",
+            "labia"
+          ],
           "translation": "Camila said hers was tall, effortlessly cool and with an impressive gift of the gab."
         },
         {
-          "word": "labia",
-          "surface": "labia",
-          "definition": "a smooth gift of the gab for talking people around",
-          "sentence": "Camila contó que el suyo era alto, canchero y con una labia impresionante.",
-          "translation": "Camila said hers was tall, effortlessly cool and with an impressive gift of the gab."
-        },
-        {
-          "word": "bardo",
-          "surface": "bardo",
-          "definition": "trouble, a mess or a brewing conflict about to blow",
           "sentence": "Siguieron comparando entre risas, sin darse cuenta del bardo que se venía encima.",
+          "words": [
+            "bardo"
+          ],
           "translation": "They kept comparing notes between laughs, without noticing the trouble coming their way."
         },
         {
-          "word": "verso",
-          "surface": "verso",
-          "definition": "a smooth lie or a well rehearsed line to fool someone",
           "sentence": "Los dos pibes las habían invitado al mismo bar, con el mismo verso trillado.",
+          "words": [
+            "verso"
+          ],
           "translation": "The two guys had invited them to the same bar, with the same worn out line."
         },
         {
-          "word": "remera",
-          "surface": "remera",
-          "definition": "a T shirt, the everyday Argentine word for one",
           "sentence": "Hasta la remera que describían, azul con letras blancas, era idéntica.",
+          "words": [
+            "remera"
+          ],
           "translation": "Even the shirt they described, blue with white lettering, was identical."
         },
         {
-          "word": "quedarse duro",
-          "surface": "se quedó dura",
-          "definition": "to freeze stiff, stunned and unable to react",
           "sentence": "Flor se quedó dura, con el vaso a mitad de camino de la boca.",
+          "words": [
+            "quedarse duro"
+          ],
           "translation": "Flor froze stiff, with her glass halfway to her mouth."
         },
         {
-          "word": "chamuyero",
-          "surface": "chamuyero",
-          "definition": "a smooth talker who flirts and lies to charm people",
           "sentence": "El pibe soñado de cada una era un chamuyero serial que las verseaba en paralelo.",
+          "words": [
+            "chamuyero",
+            "versear"
+          ],
           "translation": "Each one's dream guy was the same serial smooth talker feeding both of them lies at once."
         },
         {
-          "word": "versear",
-          "surface": "verseaba",
-          "definition": "to feed someone smooth lies and empty promises",
-          "sentence": "El pibe soñado de cada una era un chamuyero serial que las verseaba en paralelo.",
-          "translation": "Each one's dream guy was the same serial smooth talker feeding both of them lies at once."
-        },
-        {
-          "word": "pincharse",
-          "surface": "se pinchó",
-          "definition": "to deflate suddenly, when the good mood collapses",
           "sentence": "La previa alegre se pinchó de golpe con la calentura subiendo.",
+          "words": [
+            "pincharse",
+            "calentura"
+          ],
           "translation": "The cheerful warm up deflated all at once as the anger rose."
         },
         {
-          "word": "calentura",
-          "surface": "calentura",
-          "definition": "hot anger and worked up fury boiling over inside",
-          "sentence": "La previa alegre se pinchó de golpe con la calentura subiendo.",
-          "translation": "The cheerful warm up deflated all at once as the anger rose."
-        },
-        {
-          "word": "cachetazo",
-          "surface": "cachetazo",
-          "definition": "a slap in the face, a sudden harsh shock",
           "sentence": "Después del cachetazo inicial, las dos se miraron y la calentura cambió de destino.",
+          "words": [
+            "cachetazo"
+          ],
           "translation": "After that first slap in the face, the two looked at each other and their fury changed targets."
         },
         {
-          "word": "aliarse",
-          "surface": "se aliaron",
-          "definition": "to team up and join forces against a common enemy",
           "sentence": "En vez de pelearse entre ellas, se aliaron contra el forro con una sonrisa peligrosa.",
+          "words": [
+            "aliarse"
+          ],
           "translation": "Instead of fighting each other, they teamed up against the jerk with a dangerous smile."
         },
         {
-          "word": "cobrarla",
-          "surface": "cobrarla",
-          "definition": "to make someone pay for what they did",
           "sentence": "Si el pibe quería jugar con las dos, iba a cobrarla doble.",
+          "words": [
+            "cobrarla"
+          ],
           "translation": "If the guy wanted to play with both of them, he was going to pay double."
         },
         {
-          "word": "venganza",
-          "surface": "venganza",
-          "definition": "revenge, getting even with someone who wronged you",
           "sentence": "Armaron un plan de venganza ahí mismo, entre carcajadas y trago va trago viene.",
+          "words": [
+            "venganza"
+          ],
           "translation": "They put together a revenge plan right there, between roars of laughter and round after round."
         },
         {
-          "word": "revancha",
-          "surface": "revancha",
-          "definition": "payback, a rematch to get even and settle the score",
           "sentence": "Nada cura un desamor tan rápido como una amiga con sed de revancha.",
+          "words": [
+            "revancha"
+          ],
           "translation": "Nothing cures heartbreak faster than a friend thirsty for payback."
         }
       ]
@@ -1452,145 +1083,115 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "weón",
-          "surface": "weón",
-          "definition": "dude or guy; the all purpose Chilean word, sometimes an insult",
           "sentence": "“Resulta que el weón llegó con la weá, y le pasó la otra weá al otro weón”, contaba entusiasmado.",
+          "words": [
+            "weón",
+            "weá"
+          ],
           "translation": "“So the dude showed up with the thing, and passed the other thing to the other dude,” he told them excitedly."
         },
         {
-          "word": "weá",
-          "surface": "weá",
-          "definition": "a thing or thingy, the vaguest Chilean word for anything",
-          "sentence": "“Resulta que el weón llegó con la weá, y le pasó la otra weá al otro weón”, contaba entusiasmado.",
-          "translation": "“So the dude showed up with the thing, and passed the other thing to the other dude,” he told them excitedly."
-        },
-        {
-          "word": "weveo",
-          "surface": "weveo",
-          "definition": "messing about and joking around, the Chilean art of banter",
           "sentence": "Nico se cagaba de la risa con el weveo cuático que se armaba.",
+          "words": [
+            "weveo",
+            "cagarse de la risa",
+            "cuático"
+          ],
           "translation": "Nico was dying of laughter at the over the top banter going on."
         },
         {
-          "word": "po",
-          "surface": "po",
-          "definition": "a Chilean filler tacked onto the end for emphasis",
           "sentence": "“Oye, no se te entiende ni una cuando hablái así, po”, lo cortó ella.",
+          "words": [
+            "po",
+            "hablái",
+            "ni una"
+          ],
           "translation": "“Hey, nobody can understand a single word when you talk like that,” she cut in."
         },
         {
-          "word": "hablái",
-          "surface": "hablái",
-          "definition": "you talk, the Chilean voseo ending on the verb",
-          "sentence": "“Oye, no se te entiende ni una cuando hablái así, po”, lo cortó ella.",
-          "translation": "“Hey, nobody can understand a single word when you talk like that,” she cut in."
-        },
-        {
-          "word": "ni una",
-          "surface": "ni una",
-          "definition": "not a single thing, absolutely nothing at all",
-          "sentence": "“Oye, no se te entiende ni una cuando hablái así, po”, lo cortó ella.",
-          "translation": "“Hey, nobody can understand a single word when you talk like that,” she cut in."
-        },
-        {
-          "word": "cagarse de la risa",
-          "surface": "se cagaba de la risa",
-          "definition": "to crack up laughing, to die of pure laughter",
-          "sentence": "Nico se cagaba de la risa con el weveo cuático que se armaba.",
-          "translation": "Nico was dying of laughter at the over the top banter going on."
-        },
-        {
-          "word": "fome",
-          "surface": "fome",
-          "definition": "boring, dull and lame, no fun at all",
           "sentence": "Para Javiera, hablar así de enredado era la cosa más fome del mundo.",
+          "words": [
+            "fome"
+          ],
           "translation": "For Javiera, talking in such a tangled way was the dullest thing in the world."
         },
         {
-          "word": "como las pelotas",
-          "surface": "como las pelotas",
-          "definition": "terrible, a total mess, in a really bad state",
           "sentence": "Encontraba que puro weón y pura weá dejaban la conversación como las pelotas.",
+          "words": [
+            "como las pelotas"
+          ],
           "translation": "She thought all that dude and thingy business left the conversation in a complete mess."
         },
         {
-          "word": "latear",
-          "surface": "latear",
-          "definition": "to bore someone stiff, to be a total drag",
           "sentence": "Pensaba que hablaban en clave a propósito para latear a los de afuera.",
+          "words": [
+            "latear"
+          ],
           "translation": "She thought they spoke in code on purpose to bore anyone outside the group."
         },
         {
-          "word": "achuntar",
-          "surface": "achuntarle",
-          "definition": "to hit the mark, to guess or get it right",
           "sentence": "Benjamín, lejos de achuntarle al reclamo, siguió con su historia igual de vaga.",
+          "words": [
+            "achuntar"
+          ],
           "translation": "Benjamín, far from getting her complaint right, went on with his story just as vague."
         },
         {
-          "word": "regio",
-          "surface": "regio",
-          "definition": "great and lovely, working out perfectly well indeed",
           "sentence": "A pesar de que no se decía ningún nombre, los dos se entendían regio.",
+          "words": [
+            "regio"
+          ],
           "translation": "Even though no name was ever said, the two of them understood each other perfectly."
         },
         {
-          "word": "mueca",
-          "surface": "mueca",
-          "definition": "a face or grimace that carries the real meaning",
           "sentence": "La weá y el weón cambiaban de significado según el tono y la mueca de la cara.",
+          "words": [
+            "mueca"
+          ],
           "translation": "The thing and the dude changed meaning depending on the tone and the face you pulled."
         },
         {
-          "word": "al tiro",
-          "surface": "al tiro",
-          "definition": "right away, immediately, on the spot without delay",
           "sentence": "“Ah, ya, ¿entonces el weón ese hizo la weá con la otra weona?”, lanzó al tiro.",
+          "words": [
+            "al tiro"
+          ],
           "translation": "“Oh right, so that dude did the thing with the other girl?” she fired back straight away."
         },
         {
-          "word": "pillar",
-          "surface": "pillaba",
-          "definition": "to catch on to or figure something out",
           "sentence": "De tanto weviar juntos, tenían un código que nadie de afuera pillaba.",
+          "words": [
+            "pillar"
+          ],
           "translation": "From so much messing around together, they had a code nobody outside ever caught on to."
         },
         {
-          "word": "talla",
-          "surface": "talla",
-          "definition": "a joke or witty crack, the Chilean sense of humor",
           "sentence": "Para entrar al weveo no hay que buscarle la lógica, sino sentirle la talla.",
+          "words": [
+            "talla"
+          ],
           "translation": "To get into the banter you don't look for the logic, you feel out the joke."
         },
         {
-          "word": "choro",
-          "surface": "choro",
-          "definition": "cool, gutsy and full of attitude in a good way",
           "sentence": "En la terraza, mirando el lago del sur, Benjamín arrancó una historia bien choro.",
+          "words": [
+            "choro"
+          ],
           "translation": "On the terrace, looking out at the southern lake, Benjamín launched into a really cool story."
         },
         {
-          "word": "cuático",
-          "surface": "cuático",
-          "definition": "intense, way over the top or wildly complicated stuff",
-          "sentence": "Nico se cagaba de la risa con el weveo cuático que se armaba.",
-          "translation": "Nico was dying of laughter at the over the top banter going on."
-        },
-        {
-          "word": "brígido",
-          "surface": "brígido",
-          "definition": "intense, heavy or a little scary and hardcore",
           "sentence": "Era un idioma secreto medio brígido, que se leía más por la actitud que por la palabra.",
+          "words": [
+            "brígido"
+          ],
           "translation": "It was a secret language, a bit hardcore, read more through attitude than through the words."
         },
         {
-          "word": "avivarse",
-          "surface": "se avivó",
-          "definition": "to wise up and suddenly catch on to something",
           "sentence": "Ahí Javiera se avivó de algo raro que la dejó pensando un buen rato.",
+          "words": [
+            "avivarse"
+          ],
           "translation": "That's when Javiera caught on to something odd that left her thinking for quite a while."
         }
       ]
@@ -1601,152 +1202,104 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "carrete",
-          "surface": "carrete",
-          "definition": "a party, a night out drinking and dancing in Chile",
           "sentence": "El sábado armaron carrete en la casa de Javiera, cada uno poniendo su parte.",
+          "words": [
+            "carrete"
+          ],
           "translation": "On Saturday they threw a party at Javiera's place, each one chipping in their share."
         },
         {
-          "word": "copete",
-          "surface": "copete",
-          "definition": "booze, any alcoholic drink brought for a party",
           "sentence": "“Yo llevo el copete, no se preocupen, tengo un pituto filete”, prometió Benjamín.",
+          "words": [
+            "copete",
+            "pituto",
+            "filete"
+          ],
           "translation": "“I'll bring the booze, don't worry, I've got a great connection,” Benjamín promised."
         },
         {
-          "word": "pituto",
-          "surface": "pituto",
-          "definition": "a handy contact or connection who hooks you up",
-          "sentence": "“Yo llevo el copete, no se preocupen, tengo un pituto filete”, prometió Benjamín.",
-          "translation": "“I'll bring the booze, don't worry, I've got a great connection,” Benjamín promised."
-        },
-        {
-          "word": "filete",
-          "surface": "filete",
-          "definition": "great, excellent, top quality and really first rate",
-          "sentence": "“Yo llevo el copete, no se preocupen, tengo un pituto filete”, prometió Benjamín.",
-          "translation": "“I'll bring the booze, don't worry, I've got a great connection,” Benjamín promised."
-        },
-        {
-          "word": "andar pato",
-          "surface": "andaba pato",
-          "definition": "to be flat broke, without a single coin",
           "sentence": "El problema es que andaba pato, sin un peso partido por la mitad.",
+          "words": [
+            "andar pato"
+          ],
           "translation": "The problem is that he was flat broke, without half a coin to his name."
         },
         {
-          "word": "al lote",
-          "surface": "al lote",
-          "definition": "carelessly and haphazardly, in a sloppy random way",
           "sentence": "Nico lo miró con desconfianza, porque ya conocía sus promesas al lote.",
+          "words": [
+            "al lote"
+          ],
           "translation": "Nico looked at him with distrust, because he knew his sloppy promises all too well."
         },
         {
-          "word": "llegái",
-          "surface": "llegái",
-          "definition": "you arrive, showing the Chilean voseo verb ending",
           "sentence": "“Seguro, cabro, mira que si llegái sin nada, te funamos delante de todos”, lo picó.",
+          "words": [
+            "llegái",
+            "funar",
+            "cabro"
+          ],
           "translation": "“Sure, dude, watch out, if you turn up empty handed we'll call you out in front of everyone,” he needled."
         },
         {
-          "word": "funar",
-          "surface": "funamos",
-          "definition": "to publicly call someone out and shame them",
-          "sentence": "“Seguro, cabro, mira que si llegái sin nada, te funamos delante de todos”, lo picó.",
-          "translation": "“Sure, dude, watch out, if you turn up empty handed we'll call you out in front of everyone,” he needled."
-        },
-        {
-          "word": "engrupir",
-          "surface": "engrupió",
-          "definition": "to con or sweet talk with slick empty promises",
           "sentence": "Benjamín engrupió jurando que el trago estaba asegurado.",
+          "words": [
+            "engrupir"
+          ],
           "translation": "Benjamín sweet talked his way out, swearing the drinks were guaranteed."
         },
         {
-          "word": "a precio de risa",
-          "surface": "a precio de risa",
-          "definition": "dirt cheap, at a laughably low bargain price",
           "sentence": "La idea era simple: un amigo de un amigo le conseguía el copete a precio de risa.",
+          "words": [
+            "a precio de risa"
+          ],
           "translation": "The idea was simple: a friend of a friend would get him the booze dirt cheap."
         },
         {
-          "word": "lucas",
-          "surface": "lucas",
-          "definition": "money in thousands of pesos, the Chilean cash word",
           "sentence": "Con ese pituto pensaba quedar como rey sin gastar casi nada de lucas.",
+          "words": [
+            "lucas",
+            "quedar como rey"
+          ],
           "translation": "With that connection he planned to come off like a king without spending much cash."
         },
         {
-          "word": "quedar como rey",
-          "surface": "quedar como rey",
-          "definition": "to come off looking great and very generous",
-          "sentence": "Con ese pituto pensaba quedar como rey sin gastar casi nada de lucas.",
-          "translation": "With that connection he planned to come off like a king without spending much cash."
-        },
-        {
-          "word": "pegado",
-          "surface": "pegado",
-          "definition": "stuck somewhere, held up and unable to leave",
           "sentence": "“Este gil nos cagó, apuesto que se quedó pegado en otra parte”, reclamó Nico.",
+          "words": [
+            "pegado",
+            "cagar",
+            "gil"
+          ],
           "translation": "“This fool screwed us over, I bet he got stuck somewhere else,” Nico complained."
         },
         {
-          "word": "cagar",
-          "surface": "nos cagó",
-          "definition": "to let someone down badly and screw them over",
-          "sentence": "“Este gil nos cagó, apuesto que se quedó pegado en otra parte”, reclamó Nico.",
-          "translation": "“This fool screwed us over, I bet he got stuck somewhere else,” Nico complained."
-        },
-        {
-          "word": "gil",
-          "surface": "gil",
-          "definition": "a fool or sucker, someone naive and clueless",
-          "sentence": "“Este gil nos cagó, apuesto que se quedó pegado en otra parte”, reclamó Nico.",
-          "translation": "“This fool screwed us over, I bet he got stuck somewhere else,” Nico complained."
-        },
-        {
-          "word": "penca",
-          "surface": "penca",
-          "definition": "lousy, dull and disappointing, a real letdown of a thing",
           "sentence": "El ambiente se estaba poniendo penca, con puro ambiente pesao y nada que tomar.",
+          "words": [
+            "penca",
+            "pesao"
+          ],
           "translation": "The mood was turning lousy, with a heavy vibe all around and nothing to drink."
         },
         {
-          "word": "pesao",
-          "surface": "pesao",
-          "definition": "unpleasant and heavy going, an annoying vibe or person",
-          "sentence": "El ambiente se estaba poniendo penca, con puro ambiente pesao y nada que tomar.",
-          "translation": "The mood was turning lousy, with a heavy vibe all around and nothing to drink."
-        },
-        {
-          "word": "cabro",
-          "surface": "cabro",
-          "definition": "a guy or young dude, a common Chilean word",
-          "sentence": "“Seguro, cabro, mira que si llegái sin nada, te funamos delante de todos”, lo picó.",
-          "translation": "“Sure, dude, watch out, if you turn up empty handed we'll call you out in front of everyone,” he needled."
-        },
-        {
-          "word": "pintar para",
-          "surface": "pintaba para",
-          "definition": "to look like it is heading toward some outcome",
           "sentence": "La cosa pintaba para desastre, y ella ya se imaginaba el ridículo delante de todos.",
+          "words": [
+            "pintar para"
+          ],
           "translation": "The whole thing was shaping up to be a disaster, and she was already picturing the embarrassment in front of everyone."
         },
         {
-          "word": "a un pelo",
-          "surface": "a un pelo",
-          "definition": "a hair away, extremely close to happening now",
           "sentence": "El carrete estaba a un pelo de convertirse en el fracaso del año.",
+          "words": [
+            "a un pelo"
+          ],
           "translation": "The party was a hair away from becoming the flop of the year."
         },
         {
-          "word": "con el alma en un hilo",
-          "surface": "con el alma en un hilo",
-          "definition": "on tenterhooks, sick with worry and gripping suspense",
           "sentence": "Todos se quedaron callados, mirando hacia la entrada con el alma en un hilo.",
+          "words": [
+            "con el alma en un hilo"
+          ],
           "translation": "Everyone went quiet, staring at the doorway with their hearts in their throats."
         }
       ]
@@ -1757,145 +1310,97 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "asado",
-          "surface": "asado",
-          "definition": "a barbecue, a social grill out with good friends",
           "sentence": "El último día del verano, hicieron un asado a la orilla del lago, y quedó la escoba.",
+          "words": [
+            "asado",
+            "quedar la escoba"
+          ],
           "translation": "On the last day of summer, they had an asado by the lake, and it got wild."
         },
         {
-          "word": "quedar la escoba",
-          "surface": "quedó la escoba",
-          "definition": "here it turned out wild; usually a huge mess though",
-          "sentence": "El último día del verano, hicieron un asado a la orilla del lago, y quedó la escoba.",
-          "translation": "On the last day of summer, they had an asado by the lake, and it got wild."
-        },
-        {
-          "word": "parrilla",
-          "surface": "parrilla",
-          "definition": "the grill where the meat is cooked at an asado",
           "sentence": "Benjamín se puso a cargo de la parrilla, jurando que la carne le salía seca.",
+          "words": [
+            "parrilla",
+            "seco"
+          ],
           "translation": "Benjamín took charge of the grill, swearing that his meat always came out perfect."
         },
         {
-          "word": "seco",
-          "surface": "seca",
-          "definition": "really skilled and good at something, a total ace",
-          "sentence": "Benjamín se puso a cargo de la parrilla, jurando que la carne le salía seca.",
-          "translation": "Benjamín took charge of the grill, swearing that his meat always came out perfect."
-        },
-        {
-          "word": "apodo",
-          "surface": "apodo",
-          "definition": "a nickname given affectionately or in playful jest",
           "sentence": "Nico y Javiera lo weviaban: de seco no tenía ni el apodo.",
+          "words": [
+            "apodo",
+            "weviar"
+          ],
           "translation": "Nico and Javiera teased him: he was not an ace, not even in name."
         },
         {
-          "word": "weviar",
-          "surface": "weviaban",
-          "definition": "to tease and mess around with someone playfully",
-          "sentence": "Nico y Javiera lo weviaban: de seco no tenía ni el apodo.",
-          "translation": "Nico and Javiera teased him: he was not an ace, not even in name."
-        },
-        {
-          "word": "en su punto",
-          "surface": "en su punto",
-          "definition": "cooked just right, perfectly done to a turn",
           "sentence": "Contra todo pronóstico y por pura cuea, la carne salió en su punto y quedó rica.",
+          "words": [
+            "en su punto",
+            "cuea"
+          ],
           "translation": "Against all odds and by sheer dumb luck, the meat came out just right and tasted great."
         },
         {
-          "word": "choripán",
-          "surface": "choripán",
-          "definition": "a grilled sausage in bread, a barbecue staple",
           "sentence": "Entre choripán, un terremoto y un pisco, el grupo se instaló a disfrutar la tarde.",
+          "words": [
+            "choripán",
+            "terremoto",
+            "pisco"
+          ],
           "translation": "Between choripán, a terremoto and a pisco, the group settled in to enjoy the afternoon."
         },
         {
-          "word": "terremoto",
-          "surface": "terremoto",
-          "definition": "a sweet potent Chilean drink of wine and ice cream",
-          "sentence": "Entre choripán, un terremoto y un pisco, el grupo se instaló a disfrutar la tarde.",
-          "translation": "Between choripán, a terremoto and a pisco, the group settled in to enjoy the afternoon."
-        },
-        {
-          "word": "pisco",
-          "surface": "pisco",
-          "definition": "the grape brandy at the heart of Chilean drinks",
-          "sentence": "Entre choripán, un terremoto y un pisco, el grupo se instaló a disfrutar la tarde.",
-          "translation": "Between choripán, a terremoto and a pisco, the group settled in to enjoy the afternoon."
-        },
-        {
-          "word": "cuea",
-          "surface": "cuea",
-          "definition": "luck; por pura cuea means by sheer dumb luck",
-          "sentence": "Contra todo pronóstico y por pura cuea, la carne salió en su punto y quedó rica.",
-          "translation": "Against all odds and by sheer dumb luck, the meat came out just right and tasted great."
-        },
-        {
-          "word": "curao",
-          "surface": "curados",
-          "definition": "drunk, tipsy from one too many at the party",
           "sentence": "Todos se rieron ya medio curados, pero por dentro sabían que ese deseo era la firme.",
+          "words": [
+            "curao",
+            "la firme"
+          ],
           "translation": "They all laughed, half drunk by then, but deep down they knew that wish was the honest truth."
         },
         {
-          "word": "dejo",
-          "surface": "dejo",
-          "definition": "a faint trace or gentle hint of a feeling",
           "sentence": "Cada anécdota venía con su carcajada, pero también con un dejo de nostalgia.",
+          "words": [
+            "dejo"
+          ],
           "translation": "Every story came with its burst of laughter, but also with a trace of nostalgia."
         },
         {
-          "word": "agarrar para su lado",
-          "surface": "agarraría para su lado",
-          "definition": "to go each their own separate way in life",
           "sentence": "Pronto cada uno agarraría para su lado, con la pega y la vida tirando fuerte.",
+          "words": [
+            "agarrar para su lado",
+            "pega"
+          ],
           "translation": "Soon each of them would head their own way, with work and life pulling hard."
         },
         {
-          "word": "pega",
-          "surface": "pega",
-          "definition": "a job or work, the Chilean everyday word for it",
-          "sentence": "Pronto cada uno agarraría para su lado, con la pega y la vida tirando fuerte.",
-          "translation": "Soon each of them would head their own way, with work and life pulling hard."
-        },
-        {
-          "word": "apretar el pecho",
-          "surface": "apretó el pecho",
-          "definition": "to feel a tight ache of emotion in your chest",
           "sentence": "La idea de que el grupo se separara les apretó el pecho a todos.",
+          "words": [
+            "apretar el pecho"
+          ],
           "translation": "The idea of the group splitting up made every one of their chests ache."
         },
         {
-          "word": "cachái",
-          "surface": "cachái",
-          "definition": "you get it, the classic Chilean tag on sentences",
           "sentence": "“Igual pase lo que pase, ustedes son mi gente, cachái”, dijo mirando el lago.",
+          "words": [
+            "cachái"
+          ],
           "translation": "“Whatever happens, you people are my people, you know,” he said looking at the lake."
         },
         {
-          "word": "guata",
-          "surface": "guata",
-          "definition": "the belly or tummy, a beloved Chilean word",
           "sentence": "“Por el weveo eterno, aunque estemos viejos y con guata”, declaró con solemnidad falsa.",
+          "words": [
+            "guata"
+          ],
           "translation": "“To endless banter, even when we are old and have bellies,” he declared with fake solemnity."
         },
         {
-          "word": "la firme",
-          "surface": "la firme",
-          "definition": "the honest truth, the real and genuine thing indeed",
-          "sentence": "Todos se rieron ya medio curados, pero por dentro sabían que ese deseo era la firme.",
-          "translation": "They all laughed, half drunk by then, but deep down they knew that wish was the honest truth."
-        },
-        {
-          "word": "dejar huella",
-          "surface": "dejar huella",
-          "definition": "to leave a lasting mark you never quite forget",
           "sentence": "Un weveo no tiene que durar para siempre; le basta con dejar huella.",
+          "words": [
+            "dejar huella"
+          ],
           "translation": "A good time does not have to last forever; leaving a mark is enough."
         }
       ]
@@ -1906,168 +1411,130 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "palomilla",
-          "surface": "palomilla",
-          "definition": "a tight group of friends who hang out together all the time",
           "sentence": "Los sábados, la palomilla de Nayeli se juntaba en el zócalo de Oaxaca a echar relajo hasta que dolía la panza.",
-          "fallback": true,
+          "words": [
+            "palomilla",
+            "relajo"
+          ],
           "translation": "On Saturdays, Nayeli's crew met up in the zócalo in Oaxaca to fool around until their stomachs hurt."
         },
         {
-          "word": "relajo",
-          "surface": "relajo",
-          "definition": "rowdy fun and joking around, a cheerful kind of chaos",
-          "sentence": "Los sábados, la palomilla de Nayeli se juntaba en el zócalo de Oaxaca a echar relajo hasta que dolía la panza.",
-          "fallback": true,
-          "translation": "On Saturdays, Nayeli's crew met up in the zócalo in Oaxaca to fool around until their stomachs hurt."
-        },
-        {
-          "word": "picarse",
-          "surface": "se picaba",
-          "definition": "to take a joke personally and get annoyed or offended",
           "sentence": "En ese grupo, el que se picaba por una broma ya había perdido.",
+          "words": [
+            "picarse"
+          ],
           "translation": "In that group, whoever took a joke personally had already lost."
         },
         {
-          "word": "fresa",
-          "surface": "fresas",
-          "definition": "posh, snobby and preppy, into expensive brands and looks",
           "sentence": "Esa tarde el blanco fue Rodrigo, que llegó estrenando unos tenis bien fresas.",
+          "words": [
+            "fresa"
+          ],
           "translation": "That afternoon the target was Rodrigo, who showed up in some very posh new sneakers."
         },
         {
-          "word": "luego luego",
-          "surface": "luego luego",
-          "definition": "right away, immediately, without any delay at all",
           "sentence": "Itzel arrancó luego luego, diciendo que con esos tenis ya se sentía muy fifí.",
+          "words": [
+            "luego luego",
+            "fifí"
+          ],
           "translation": "Itzel started in right away, saying that with those sneakers he already felt very upper class."
         },
         {
-          "word": "fifí",
-          "surface": "fifí",
-          "definition": "snooty and elitist, acting like high society and above others",
-          "sentence": "Itzel arrancó luego luego, diciendo que con esos tenis ya se sentía muy fifí.",
-          "translation": "Itzel started in right away, saying that with those sneakers he already felt very upper class."
-        },
-        {
-          "word": "vato",
-          "surface": "vato",
-          "definition": "dude or guy, a very common Mexican word for a man",
           "sentence": "El vato aguantó vara sin enojarse, porque defenderse solo lo iba a hundir más.",
+          "words": [
+            "vato",
+            "aguantar vara"
+          ],
           "translation": "The guy took it without getting angry, because defending himself would only sink him further."
         },
         {
-          "word": "aguantar vara",
-          "surface": "aguantó vara",
-          "definition": "to take teasing or a hard time without complaining or cracking",
-          "sentence": "El vato aguantó vara sin enojarse, porque defenderse solo lo iba a hundir más.",
-          "translation": "The guy took it without getting angry, because defending himself would only sink him further."
-        },
-        {
-          "word": "rajarse",
-          "surface": "rajarse",
-          "definition": "to chicken out or back down from something at the last moment",
           "sentence": "En lugar de rajarse, les siguió la corriente e inventó que los tenis eran de oro.",
+          "words": [
+            "rajarse",
+            "seguir la corriente"
+          ],
           "translation": "Instead of backing down, he played along and made up that the sneakers were made of gold."
         },
         {
-          "word": "seguir la corriente",
-          "surface": "siguió la corriente",
-          "definition": "to play along with someone instead of arguing against them",
-          "sentence": "En lugar de rajarse, les siguió la corriente e inventó que los tenis eran de oro.",
-          "translation": "Instead of backing down, he played along and made up that the sneakers were made of gold."
-        },
-        {
-          "word": "salsa",
-          "surface": "muy salsa",
-          "definition": "cocky and full of yourself, acting like a hotshot",
           "sentence": "Cuando Nayeli le preguntó si ya se sentía muy salsa, Rodrigo soltó una carcajada.",
+          "words": [
+            "salsa"
+          ],
           "translation": "When Nayeli asked if he was feeling like a real hotshot now, Rodrigo burst out laughing."
         },
         {
-          "word": "quitado de la pena",
-          "surface": "quitado de la pena",
-          "definition": "totally carefree and unbothered, as if nothing were wrong",
           "sentence": "“Nomás me tienen envidia de la buena”, contestó, bien quitado de la pena.",
+          "words": [
+            "quitado de la pena"
+          ],
           "translation": "“You're all just good and jealous of me,” he answered, without a care in the world."
         },
         {
-          "word": "billete",
-          "surface": "billete",
-          "definition": "money or cash, the informal everyday word for it",
           "sentence": "Itzel no lo soltó y le preguntó de dónde había sacado tanto billete de repente.",
+          "words": [
+            "billete"
+          ],
           "translation": "Itzel would not let it go and asked where he had suddenly got so much cash."
         },
         {
-          "word": "hacerse el occiso",
-          "surface": "se hizo el occiso",
-          "definition": "to play dumb and pretend you have no idea what is happening",
           "sentence": "Rodrigo se hizo el occiso un buen rato, dándole vueltas al asunto.",
+          "words": [
+            "hacerse el occiso"
+          ],
           "translation": "Rodrigo played dumb for quite a while, going around and around the subject."
         },
         {
-          "word": "jale",
-          "surface": "jale",
-          "definition": "a job or a gig, informal word for paid work",
           "sentence": "Resulta que se había apalabrado un jale de guía en una mezcalería del centro.",
+          "words": [
+            "jale"
+          ],
           "translation": "It turned out he had lined up a gig as a guide at a mezcal bar downtown."
         },
         {
-          "word": "ponerse las pilas",
-          "surface": "puesto las pilas",
-          "definition": "to get your act together and put in real effort",
           "sentence": "Se había puesto las pilas durante meses para ahorrar y estrenar en forma.",
+          "words": [
+            "ponerse las pilas"
+          ],
           "translation": "He had gotten his act together for months to save up and start off properly."
         },
         {
-          "word": "armarla",
-          "surface": "la armaste",
-          "definition": "to pull it off or make it happen against the odds",
           "sentence": "“Entonces ya la armaste, mano”, le dijo Nayeli con harto orgullo.",
+          "words": [
+            "armarla",
+            "mano"
+          ],
           "translation": "“So you pulled it off, bro,” Nayeli told him with a lot of pride."
         },
         {
-          "word": "mano",
-          "surface": "mano",
-          "definition": "buddy or bro, short for hermano, used to address a friend",
-          "sentence": "“Entonces ya la armaste, mano”, le dijo Nayeli con harto orgullo.",
-          "translation": "“So you pulled it off, bro,” Nayeli told him with a lot of pride."
-        },
-        {
-          "word": "de volada",
-          "surface": "de volada",
-          "definition": "quickly and right away, in a flash without waiting",
           "sentence": "Itzel, más práctica, de volada preguntó si había descuento para la raza.",
+          "words": [
+            "de volada",
+            "raza"
+          ],
           "translation": "Itzel, more practical, asked right away if there was a discount for the crew."
         },
         {
-          "word": "raza",
-          "surface": "la raza",
-          "definition": "the crew or the people, your close group of friends",
-          "sentence": "Itzel, más práctica, de volada preguntó si había descuento para la raza.",
-          "translation": "Itzel, more practical, asked right away if there was a discount for the crew."
-        },
-        {
-          "word": "de gorra",
-          "surface": "de gorra",
-          "definition": "for free, without paying, at someone else's expense",
           "sentence": "Rodrigo prometió llevarlos a todos de gorra en su primer recorrido de mezcal.",
+          "words": [
+            "de gorra"
+          ],
           "translation": "Rodrigo promised to take them all for free on his first mezcal tour."
         },
         {
-          "word": "caguama",
-          "surface": "caguamas",
-          "definition": "a large family size bottle of beer, shared among friends",
           "sentence": "Brindaron con unas caguamas heladas por el trabajo del que tanto se habían burlado.",
+          "words": [
+            "caguama"
+          ],
           "translation": "They toasted with some ice cold big bottles of beer to the job they had mocked so much."
         },
         {
-          "word": "apapacho",
-          "surface": "apapacho",
-          "definition": "a warm affectionate hug or gesture of caring for someone",
           "sentence": "Esa tarde la carrilla terminó, como casi siempre, en puro apapacho.",
+          "words": [
+            "apapacho"
+          ],
           "translation": "That afternoon the teasing ended, as it almost always did, in pure affection."
         }
       ]
@@ -2078,146 +1545,116 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "entre manos",
-          "surface": "entre manos",
-          "definition": "secretly planning or scheming something, up to something",
           "sentence": "Traía un plan entre manos y no aguantaba las ganas de presumirlo.",
+          "words": [
+            "entre manos",
+            "presumir"
+          ],
           "translation": "He had a plan up his sleeve and could not wait to show it off."
         },
         {
-          "word": "presumir",
-          "surface": "presumirlo",
-          "definition": "to show off or brag about something to others",
-          "sentence": "Traía un plan entre manos y no aguantaba las ganas de presumirlo.",
-          "translation": "He had a plan up his sleeve and could not wait to show it off."
-        },
-        {
-          "word": "pescar",
-          "surface": "pescara",
-          "definition": "to catch on or notice something someone is doing",
           "sentence": "Sin que Itzel lo pescara, le hizo una seña a Nayeli para que se acercara.",
+          "words": [
+            "pescar",
+            "seña"
+          ],
           "translation": "Without Itzel catching on, he signaled to Nayeli to come closer."
         },
         {
-          "word": "echar los perros",
-          "surface": "eché los perros",
-          "definition": "to flirt with someone or make a romantic move on them",
           "sentence": "“Le eché los perros a mi cuate para que salga con Itzel”, le confesó en voz baja.",
+          "words": [
+            "echar los perros"
+          ],
           "translation": "“I worked on my buddy so he would ask Itzel out,” he confessed in a low voice."
         },
         {
-          "word": "borlote",
-          "surface": "borlote",
-          "definition": "a big fuss, commotion or noisy mess of a situation",
           "sentence": "Nayeli abrió los ojos, entre emocionada y asustada por el borlote que se venía.",
+          "words": [
+            "borlote"
+          ],
           "translation": "Nayeli's eyes went wide, half excited and half scared by the commotion coming."
         },
         {
-          "word": "madriza",
-          "surface": "madriza",
-          "definition": "a beating or thrashing; vulgar but very common in Mexico",
           "sentence": "“Si se entera, nos va a poner una madriza”, bromeó Nayeli en voz bajita.",
+          "words": [
+            "madriza"
+          ],
           "translation": "“If she finds out, she's going to beat us senseless,” Nayeli joked in a tiny voice."
         },
         {
-          "word": "lavarse las manos",
-          "surface": "se lavó las manos",
-          "definition": "to disclaim all responsibility, insisting it is not your fault",
           "sentence": "Rodrigo se lavó las manos diciendo que él solo era el mensajero del asunto.",
+          "words": [
+            "lavarse las manos"
+          ],
           "translation": "Rodrigo washed his hands of it, saying he was only the messenger here."
         },
         {
-          "word": "apalabrar",
-          "surface": "apalabrado",
-          "definition": "to arrange or agree on something verbally beforehand",
           "sentence": "Aun así, el muy necio ya había apalabrado todo para el viernes en la noche.",
+          "words": [
+            "apalabrar",
+            "necio"
+          ],
           "translation": "Even so, the stubborn one had already arranged everything for Friday night."
         },
         {
-          "word": "chavo",
-          "surface": "chavo",
-          "definition": "a young guy, a common word for a boy or young man",
           "sentence": "Su amigo, un chavo medio tímido, prometió caer al bar sin falta.",
+          "words": [
+            "chavo",
+            "caer"
+          ],
           "translation": "His friend, a fairly shy young guy, promised to drop by the bar without fail."
         },
         {
-          "word": "caer",
-          "surface": "caer",
-          "definition": "to show up or drop by a place informally",
-          "sentence": "Su amigo, un chavo medio tímido, prometió caer al bar sin falta.",
-          "translation": "His friend, a fairly shy young guy, promised to drop by the bar without fail."
-        },
-        {
-          "word": "pelar",
-          "surface": "pelarlo",
-          "definition": "to pay attention to someone or acknowledge them at all",
           "sentence": "Lo que nadie sabía era si Itzel iba a querer pelarlo siquiera.",
+          "words": [
+            "pelar"
+          ],
           "translation": "What nobody knew was whether Itzel would even give him the time of day."
         },
         {
-          "word": "andar de buenas",
-          "surface": "andaba de buenas",
-          "definition": "to be in a good mood and cheerful for the moment",
           "sentence": "Itzel andaba de buenas, sin sospechar la encerrona que le tenían montada.",
+          "words": [
+            "andar de buenas",
+            "encerrona"
+          ],
           "translation": "Itzel was in a good mood, with no idea about the trap they had set for her."
         },
         {
-          "word": "encerrona",
-          "surface": "encerrona",
-          "definition": "a set up or trap arranged to corner someone by surprise",
-          "sentence": "Itzel andaba de buenas, sin sospechar la encerrona que le tenían montada.",
-          "translation": "Itzel was in a good mood, with no idea about the trap they had set for her."
-        },
-        {
-          "word": "checar",
-          "surface": "checaba",
-          "definition": "to check or keep an eye on something",
           "sentence": "Rodrigo checaba la puerta cada dos minutos, sudando frío por dentro.",
+          "words": [
+            "checar"
+          ],
           "translation": "Rodrigo checked the door every two minutes, sweating cold on the inside."
         },
         {
-          "word": "arrugarse",
-          "surface": "se hubiera arrugado",
-          "definition": "to chicken out and back down out of fear",
           "sentence": "Rodrigo empezó a temer que su amigo se hubiera arrugado a última hora.",
+          "words": [
+            "arrugarse"
+          ],
           "translation": "Rodrigo started to fear that his friend had chickened out at the last minute."
         },
         {
-          "word": "estar cañón",
-          "surface": "poniendo bien cañón",
-          "definition": "to be tough, intense or getting seriously complicated",
           "sentence": "La cosa se estaba poniendo bien cañón para su reputación.",
+          "words": [
+            "estar cañón"
+          ],
           "translation": "Things were getting seriously rough for his reputation."
         },
         {
-          "word": "cantar la retirada",
-          "surface": "cantar la retirada",
-          "definition": "to give up and call it off, admitting defeat",
           "sentence": "Justo cuando iba a cantar la retirada, la puerta se abrió de golpe.",
+          "words": [
+            "cantar la retirada"
+          ],
           "translation": "Just as he was about to call the whole thing off, the door swung open."
         },
         {
-          "word": "quedarse tieso",
-          "surface": "se quedó tiesa",
-          "definition": "to freeze up stiff, unable to move from shock",
           "sentence": "Itzel se quedó tiesa, y el bar entero contuvo el aliento.",
+          "words": [
+            "quedarse tieso"
+          ],
           "translation": "Itzel froze on the spot, and the whole bar held its breath."
-        },
-        {
-          "word": "seña",
-          "surface": "seña",
-          "definition": "a hand signal or gesture to communicate without words",
-          "sentence": "Sin que Itzel lo pescara, le hizo una seña a Nayeli para que se acercara.",
-          "translation": "Without Itzel catching on, he signaled to Nayeli to come closer."
-        },
-        {
-          "word": "necio",
-          "surface": "necio",
-          "definition": "stubborn and insistent, refusing to drop an idea",
-          "sentence": "Aun así, el muy necio ya había apalabrado todo para el viernes en la noche.",
-          "translation": "Even so, the stubborn one had already arranged everything for Friday night."
         }
       ]
     },
@@ -2227,146 +1664,116 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "bola",
-          "surface": "bola",
-          "definition": "the gang, the whole group of friends together",
           "sentence": "El domingo siguiente, la bola se juntó tranquila en casa de Nayeli, con café y pan de yema.",
+          "words": [
+            "bola",
+            "pan de yema"
+          ],
           "translation": "The next Sunday the gang met up quietly at Nayeli's place, with coffee and sweet egg bread."
         },
         {
-          "word": "pan de yema",
-          "surface": "pan de yema",
-          "definition": "a rich egg yolk bread typical of Oaxaca, eaten with coffee",
-          "sentence": "El domingo siguiente, la bola se juntó tranquila en casa de Nayeli, con café y pan de yema.",
-          "translation": "The next Sunday the gang met up quietly at Nayeli's place, with coffee and sweet egg bread."
-        },
-        {
-          "word": "ánimo por los suelos",
-          "surface": "ánimo por los suelos",
-          "definition": "feeling completely down and low in spirits, totally deflated",
           "sentence": "No hubo carrilla esta vez, porque Itzel andaba con el ánimo por los suelos.",
+          "words": [
+            "ánimo por los suelos"
+          ],
           "translation": "There was no teasing this time, because Itzel's spirits were down on the floor."
         },
         {
-          "word": "correr",
-          "surface": "corrido",
-          "definition": "to fire someone or kick them out of a job",
           "sentence": "La habían corrido del trabajo el jueves, así nomás, sin avisar.",
+          "words": [
+            "correr",
+            "así nomás"
+          ],
           "translation": "They had fired her from her job on Thursday, just like that, with no warning."
         },
         {
-          "word": "tejate",
-          "surface": "tejate",
-          "definition": "a cold Oaxacan drink of maize and cacao, foamy on top",
           "sentence": "Nayeli, sin hacer preguntas, le sirvió un tejate bien frío y se sentó a su lado.",
+          "words": [
+            "tejate"
+          ],
           "translation": "Nayeli, without asking questions, poured her a very cold tejate and sat down beside her."
         },
         {
-          "word": "tlayuda",
-          "surface": "tlayudas",
-          "definition": "a large crispy Oaxacan tortilla loaded with beans and toppings",
           "sentence": "Rodrigo llegó cargado de tlayudas, diciendo que nadie llora con la panza llena.",
+          "words": [
+            "tlayuda",
+            "panza llena",
+            "cargado"
+          ],
           "translation": "Rodrigo showed up loaded with tlayudas, saying nobody cries on a full stomach."
         },
         {
-          "word": "guelaguetza",
-          "surface": "guelaguetza",
-          "definition": "the Oaxacan spirit of mutual giving, helping now to be helped later",
           "sentence": "Así funcionaba entre ellos, como una guelaguetza: hoy por ti, mañana por mí.",
+          "words": [
+            "guelaguetza"
+          ],
           "translation": "It worked like that among them, like a guelaguetza: today for you, tomorrow for me."
         },
         {
-          "word": "hacer el paro",
-          "surface": "hacían el paro",
-          "definition": "to do someone a favor or help them out of a jam",
           "sentence": "Cuando a uno se le caía el mundo, los demás le hacían el paro sin que lo pidiera.",
+          "words": [
+            "hacer el paro"
+          ],
           "translation": "When someone's world fell apart, the others stepped in to help without being asked."
         },
         {
-          "word": "cariño del bueno",
-          "surface": "cariño del bueno",
-          "definition": "genuine affection, the real caring kind and not fake",
           "sentence": "No era lástima, era puro cariño del bueno.",
+          "words": [
+            "cariño del bueno"
+          ],
           "translation": "It was not pity, it was pure genuine affection."
         },
         {
-          "word": "aguar",
-          "surface": "aguarles",
-          "definition": "to spoil or dampen a good time for others",
           "sentence": "Itzel intentó disculparse por aguarles el domingo con sus penas.",
+          "words": [
+            "aguar"
+          ],
           "translation": "Itzel tried to apologize for spoiling their Sunday with her troubles."
         },
         {
-          "word": "híjole",
-          "surface": "Híjole",
-          "definition": "an all purpose exclamation of surprise, worry or sympathy",
           "sentence": "“Híjole, ni te disculpes, para eso estamos”, la cortó Rodrigo de inmediato.",
+          "words": [
+            "híjole"
+          ],
           "translation": "“Oh please, don't even apologize, that's what we're here for,” Rodrigo cut in at once."
         },
         {
-          "word": "ni modo",
-          "surface": "Ni modo",
-          "definition": "oh well, there is nothing to be done about it",
           "sentence": "“Ni modo que te dejáramos sola”, remató Nayeli con cariño.",
+          "words": [
+            "ni modo"
+          ],
           "translation": "“As if we were going to leave you alone,” Nayeli finished off warmly."
         },
         {
-          "word": "conecte",
-          "surface": "conecte",
-          "definition": "a useful contact or connection who can hook you up",
           "sentence": "Uno tenía un conecte, otro conocía a alguien que jalaba gente, y así.",
+          "words": [
+            "conecte",
+            "jalar"
+          ],
           "translation": "One had a contact, another knew someone who was hiring people, and so on."
         },
         {
-          "word": "jalar",
-          "surface": "jalaba",
-          "definition": "to recruit or bring people in; also to pull or work",
-          "sentence": "Uno tenía un conecte, otro conocía a alguien que jalaba gente, y así.",
-          "translation": "One had a contact, another knew someone who was hiring people, and so on."
-        },
-        {
-          "word": "puntada",
-          "surface": "puntadas",
-          "definition": "a witty funny remark that makes everyone laugh",
           "sentence": "Para la tarde, Itzel ya se reía otra vez con las puntadas de Rodrigo.",
+          "words": [
+            "puntada"
+          ],
           "translation": "By the afternoon, Itzel was laughing again at Rodrigo's witty cracks."
         },
         {
-          "word": "buena onda",
-          "surface": "buena onda",
-          "definition": "good vibes, a warm and friendly feeling or person",
           "sentence": "La casa de Nayeli olía a pan, a café y a buena onda.",
+          "words": [
+            "buena onda"
+          ],
           "translation": "Nayeli's house smelled of bread, coffee and good vibes."
         },
         {
-          "word": "de a de veras",
-          "surface": "de a de veras",
-          "definition": "for real, genuine and true, with no pretending at all",
           "sentence": "Un amigo de a de veras se reconoce así: aparece con tlayudas justo cuando el mundo se te cae.",
+          "words": [
+            "de a de veras"
+          ],
           "translation": "That is how you spot a real friend: he shows up with tlayudas right when your world falls apart."
-        },
-        {
-          "word": "panza llena",
-          "surface": "panza llena",
-          "definition": "a full belly; nobody stays sad on a full stomach",
-          "sentence": "Rodrigo llegó cargado de tlayudas, diciendo que nadie llora con la panza llena.",
-          "translation": "Rodrigo showed up loaded with tlayudas, saying nobody cries on a full stomach."
-        },
-        {
-          "word": "cargado",
-          "surface": "cargado",
-          "definition": "loaded up and carrying a lot of stuff",
-          "sentence": "Rodrigo llegó cargado de tlayudas, diciendo que nadie llora con la panza llena.",
-          "translation": "Rodrigo showed up loaded with tlayudas, saying nobody cries on a full stomach."
-        },
-        {
-          "word": "así nomás",
-          "surface": "así nomás",
-          "definition": "just like that, with no warning or explanation",
-          "sentence": "La habían corrido del trabajo el jueves, así nomás, sin avisar.",
-          "translation": "They had fired her from her job on Thursday, just like that, with no warning."
         }
       ]
     },
@@ -2376,147 +1783,109 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "paradero",
-          "surface": "paradero",
-          "definition": "a bus stop, the everyday Peruvian word for one",
           "sentence": "En el paradero, esperando la combi bajo el cielo gris de Lima, Diego saludó a Pilar a toda velocidad.",
-          "fallback": true,
+          "words": [
+            "paradero",
+            "combi"
+          ],
           "translation": "At the bus stop, waiting for the minibus under the gray Lima sky, Diego greeted Pilar at full speed."
         },
         {
-          "word": "combi",
-          "surface": "combi",
-          "definition": "a small crowded minibus that runs across Lima",
-          "sentence": "En el paradero, esperando la combi bajo el cielo gris de Lima, Diego saludó a Pilar a toda velocidad.",
-          "fallback": true,
-          "translation": "At the bus stop, waiting for the minibus under the gray Lima sky, Diego greeted Pilar at full speed."
-        },
-        {
-          "word": "asu",
-          "surface": "Asu",
-          "definition": "a Lima exclamation of surprise, like wow or whoa",
           "sentence": "La recibió con un “Asu”, un “habla causa” y un “todo piña” que le salieron de corrido.",
+          "words": [
+            "asu",
+            "habla causa",
+            "piña"
+          ],
           "translation": "He greeted her with a “Whoa,” a “hey buddy” and an “it's all rotten luck” that came out in one breath."
         },
         {
-          "word": "habla causa",
-          "surface": "habla causa",
-          "definition": "hey buddy, a classic Lima greeting between friends",
-          "sentence": "La recibió con un “Asu”, un “habla causa” y un “todo piña” que le salieron de corrido.",
-          "translation": "He greeted her with a “Whoa,” a “hey buddy” and an “it's all rotten luck” that came out in one breath."
-        },
-        {
-          "word": "piña",
-          "surface": "piña",
-          "definition": "bad luck, or being unlucky; todo piña means all going wrong",
-          "sentence": "La recibió con un “Asu”, un “habla causa” y un “todo piña” que le salieron de corrido.",
-          "translation": "He greeted her with a “Whoa,” a “hey buddy” and an “it's all rotten luck” that came out in one breath."
-        },
-        {
-          "word": "cachear",
-          "surface": "cachear",
-          "definition": "to understand or catch on to what is being said",
           "sentence": "Entre tanta palabra nueva, empezó a cachear algo curioso en cómo hablaban.",
+          "words": [
+            "cachear"
+          ],
           "translation": "Among so many new words, she started to catch on to something curious in how they spoke."
         },
         {
-          "word": "al toque",
-          "surface": "al toque",
-          "definition": "right away, immediately, in a flash without waiting",
           "sentence": "Beto se sumó al toque, tirando más jerga encima como si nada.",
+          "words": [
+            "al toque"
+          ],
           "translation": "Beto joined in right away, piling on more slang as if it were nothing."
         },
         {
-          "word": "floro",
-          "surface": "floro",
-          "definition": "smooth talk or nonsense meant to charm or mislead",
           "sentence": "“Tranquila, es floro nomás, no te paltees por la firme”, le dijo entre risas.",
+          "words": [
+            "floro",
+            "paltearse",
+            "por la firme"
+          ],
           "translation": "“Relax, it's just smooth talk, honestly, don't get flustered,” he told her, laughing."
         },
         {
-          "word": "paltearse",
-          "surface": "paltees",
-          "definition": "to get flustered, embarrassed or worried over something",
-          "sentence": "“Tranquila, es floro nomás, no te paltees por la firme”, le dijo entre risas.",
-          "translation": "“Relax, it's just smooth talk, honestly, don't get flustered,” he told her, laughing."
-        },
-        {
-          "word": "por la firme",
-          "surface": "por la firme",
-          "definition": "honestly and for real, no kidding around at all",
-          "sentence": "“Tranquila, es floro nomás, no te paltees por la firme”, le dijo entre risas.",
-          "translation": "“Relax, it's just smooth talk, honestly, don't get flustered,” he told her, laughing."
-        },
-        {
-          "word": "roche",
-          "surface": "roche",
-          "definition": "embarrassment or shame from an awkward humiliating moment",
           "sentence": "Pero cada palabra rara la hundía más en el roche de no entender nada.",
+          "words": [
+            "roche"
+          ],
           "translation": "But every strange word sank her deeper into the shame of understanding nothing."
         },
         {
-          "word": "lorna",
-          "surface": "lorna",
-          "definition": "a clueless fool, someone slow on the uptake",
           "sentence": "Diego notó su cara de lorna perdida y quiso echarle una mano rápido.",
+          "words": [
+            "lorna"
+          ],
           "translation": "Diego noticed her lost and clueless face and wanted to give her a hand fast."
         },
         {
-          "word": "pata",
-          "surface": "pata",
-          "definition": "a friend or buddy, a Lima staple word",
           "sentence": "Le fue traduciendo despacio que causa y pata querían decir amigo del alma.",
+          "words": [
+            "pata"
+          ],
           "translation": "He slowly explained that both of those words meant a friend of the soul."
         },
         {
-          "word": "monse",
-          "surface": "monse",
-          "definition": "dull, lame or clueless, not really with it",
           "sentence": "Pilar asentía, todavía sintiéndose la más monse del paradero.",
+          "words": [
+            "monse"
+          ],
           "translation": "Pilar nodded along, still feeling like the most clueless person at the bus stop."
         },
         {
-          "word": "prenderse el foco",
-          "surface": "se le prendió el foco",
-          "definition": "to have a sudden bright idea, the lightbulb moment",
           "sentence": "De pronto se le prendió el foco y una sonrisa pícara le cruzó la cara.",
+          "words": [
+            "prenderse el foco"
+          ],
           "translation": "Suddenly the lightbulb went on and a mischievous smile crossed her face."
         },
         {
-          "word": "cachado",
-          "surface": "cachado",
-          "definition": "figured out or understood, caught on to it",
           "sentence": "Había cachado que la jerga limeña voltea las palabras para despistar al de afuera.",
+          "words": [
+            "cachado"
+          ],
           "translation": "She had figured out that Lima slang flips words around to throw off any outsider."
         },
         {
-          "word": "chibola",
-          "surface": "chibola",
-          "definition": "a young girl or kid, a Lima word",
           "sentence": "La chibola que hace un rato no pescaba nada les acababa de ganar en su propio juego.",
+          "words": [
+            "chibola"
+          ],
           "translation": "The kid who had not caught a thing a moment ago had just beaten them at their own game."
         },
         {
-          "word": "germa",
-          "surface": "germa",
-          "definition": "a girl or young woman, from mujer flipped around",
           "sentence": "Beto, muerto de risa, soltó que esa germa era una mostra.",
+          "words": [
+            "germa",
+            "mostro"
+          ],
           "translation": "Beto, dying of laughter, blurted out that this girl was something amazing."
         },
         {
-          "word": "mostro",
-          "surface": "mostra",
-          "definition": "awesome, amazing and really impressive, simply top quality",
-          "sentence": "Beto, muerto de risa, soltó que esa germa era una mostra.",
-          "translation": "Beto, dying of laughter, blurted out that this girl was something amazing."
-        },
-        {
-          "word": "yunta",
-          "surface": "yunta",
-          "definition": "a tight crew of close friends, ride or die",
           "sentence": "Para entrar de verdad a una yunta, hay que aprender a hablarles en su propio código.",
+          "words": [
+            "yunta"
+          ],
           "translation": "To really get into a tight crew, you have to learn to speak to them in their own code."
         }
       ]
@@ -2527,145 +1896,97 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "chochera",
-          "surface": "chochera",
-          "definition": "your gang or close group of buddies in Lima",
           "sentence": "Al mediodía, Beto invitó a la chochera a su jato a jamear algo rico.",
+          "words": [
+            "chochera",
+            "jato",
+            "jamear"
+          ],
           "translation": "At midday, Beto invited the gang over to his place to eat something tasty."
         },
         {
-          "word": "jato",
-          "surface": "jato",
-          "definition": "a house or home, where you crash and hang out",
-          "sentence": "Al mediodía, Beto invitó a la chochera a su jato a jamear algo rico.",
-          "translation": "At midday, Beto invited the gang over to his place to eat something tasty."
-        },
-        {
-          "word": "jamear",
-          "surface": "jamear",
-          "definition": "to eat and have yourself a good hearty feed",
-          "sentence": "Al mediodía, Beto invitó a la chochera a su jato a jamear algo rico.",
-          "translation": "At midday, Beto invited the gang over to his place to eat something tasty."
-        },
-        {
-          "word": "ceviche",
-          "surface": "ceviche",
-          "definition": "the classic Peruvian dish of raw fish cured in lime",
           "sentence": "“Pasen, causas, siéntanse en su casa, que ya casi sale el ceviche”, los recibió contento.",
+          "words": [
+            "ceviche"
+          ],
           "translation": "“Come in, guys, make yourselves at home, the ceviche is almost ready,” he welcomed them happily."
         },
         {
-          "word": "hacérsele agua la boca",
-          "surface": "se les hizo agua la boca",
-          "definition": "to make your mouth water with pure hunger",
           "sentence": "La cocina olía a limón y cebolla, y a todos se les hizo agua la boca.",
+          "words": [
+            "hacérsele agua la boca"
+          ],
           "translation": "The kitchen smelled of lime and onion, and everyone's mouth started watering."
         },
         {
-          "word": "misio",
-          "surface": "misio",
-          "definition": "broke, dead flat without a single coin to spare",
           "sentence": "Diego llegó misio como siempre, pero con un hambre de la gran flauta.",
+          "words": [
+            "misio",
+            "de la gran flauta"
+          ],
           "translation": "Diego arrived dead broke as always, but with a monstrous hunger."
         },
         {
-          "word": "de la gran flauta",
-          "surface": "de la gran flauta",
-          "definition": "enormous, a whole heap; here a huge hunger",
-          "sentence": "Diego llegó misio como siempre, pero con un hambre de la gran flauta.",
-          "translation": "Diego arrived dead broke as always, but with a monstrous hunger."
-        },
-        {
-          "word": "broder",
-          "surface": "Broder",
-          "definition": "bro or mate, borrowed from the English brother",
           "sentence": "“Broder, sírveme harto que ando sin un sol en el bolsillo”, pidió sin roche.",
+          "words": [
+            "broder",
+            "harto",
+            "sol"
+          ],
           "translation": "“Bro, give me a big helping, I don't have a single coin in my pocket,” he asked without shame."
         },
         {
-          "word": "harto",
-          "surface": "harto",
-          "definition": "a lot, plenty, a big amount of something",
-          "sentence": "“Broder, sírveme harto que ando sin un sol en el bolsillo”, pidió sin roche.",
-          "translation": "“Bro, give me a big helping, I don't have a single coin in my pocket,” he asked without shame."
-        },
-        {
-          "word": "sol",
-          "surface": "sol",
-          "definition": "the Peruvian currency, a single coin of money",
-          "sentence": "“Broder, sírveme harto que ando sin un sol en el bolsillo”, pidió sin roche.",
-          "translation": "“Bro, give me a big helping, I don't have a single coin in my pocket,” he asked without shame."
-        },
-        {
-          "word": "agarrar calle",
-          "surface": "agarrando calle",
-          "definition": "to get street smarts and learn how things really work",
           "sentence": "Los patas la aplaudieron, orgullosos de cómo la chibola iba agarrando calle.",
+          "words": [
+            "agarrar calle"
+          ],
           "translation": "The guys applauded her, proud of how the kid was getting street smart."
         },
         {
-          "word": "anticucho",
-          "surface": "anticuchos",
-          "definition": "grilled beef heart skewers, a beloved Peruvian street food",
           "sentence": "Diego juraba que una vez se comió veinte anticuchos con ají, y nadie le creía.",
+          "words": [
+            "anticucho",
+            "ají"
+          ],
           "translation": "Diego swore that he once ate twenty anticuchos with chili, and nobody believed him."
         },
         {
-          "word": "florear",
-          "surface": "florees",
-          "definition": "to lay it on thick with smooth talk or tall tales",
           "sentence": "“No florees tanto, pues, que a ti te llena medio plato”, lo picó Pilar.",
+          "words": [
+            "florear",
+            "picar"
+          ],
           "translation": "“Don't lay it on so thick, half a plate fills you up,” Pilar needled him."
         },
         {
-          "word": "picar",
-          "surface": "picó",
-          "definition": "to needle someone and tease them a little",
-          "sentence": "“No florees tanto, pues, que a ti te llena medio plato”, lo picó Pilar.",
-          "translation": "“Don't lay it on so thick, half a plate fills you up,” Pilar needled him."
-        },
-        {
-          "word": "matar el rato",
-          "surface": "matando el rato",
-          "definition": "to kill time and pass the hours casually",
           "sentence": "Total, no tenían apuro, solo estaban matando el rato y haciendo hora.",
+          "words": [
+            "matar el rato"
+          ],
           "translation": "Anyway, they were in no rush, just killing time and letting the hours pass."
         },
         {
-          "word": "del montón",
-          "surface": "del montón",
-          "definition": "just ordinary and plain, nothing special about it really",
           "sentence": "Era un almuerzo del montón, nada del otro mundo, sin planes ni pretensiones.",
+          "words": [
+            "del montón",
+            "nada del otro mundo"
+          ],
           "translation": "It was an ordinary lunch, nothing out of this world, with no plans or pretensions."
         },
         {
-          "word": "nada del otro mundo",
-          "surface": "nada del otro mundo",
-          "definition": "nothing out of this world, quite plain and simple",
-          "sentence": "Era un almuerzo del montón, nada del otro mundo, sin planes ni pretensiones.",
-          "translation": "It was an ordinary lunch, nothing out of this world, with no plans or pretensions."
-        },
-        {
-          "word": "ají",
-          "surface": "ají",
-          "definition": "a hot chili pepper, the soul of Peruvian cooking",
-          "sentence": "Diego juraba que una vez se comió veinte anticuchos con ají, y nadie le creía.",
-          "translation": "Diego swore that he once ate twenty anticuchos with chili, and nobody believed him."
-        },
-        {
-          "word": "sobremesa",
-          "surface": "sobremesa",
-          "definition": "the lazy chat that lingers long after a meal",
           "sentence": "Entre bocado y bocado, empezó la sobremesa con puros cuentos exagerados.",
+          "words": [
+            "sobremesa"
+          ],
           "translation": "Between bites, the after lunch chat began, all of it wildly exaggerated stories."
         },
         {
-          "word": "yapa",
-          "surface": "yapa",
-          "definition": "a little something extra thrown in for free",
           "sentence": "Pilar, que ya iba cachando la jerga, soltó un par de palabras nuevas como yapa.",
+          "words": [
+            "yapa"
+          ],
           "translation": "Pilar, who was picking up the slang by now, threw in a couple of new words as a bonus."
         }
       ]
@@ -2676,146 +1997,116 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "manejar",
-          "surface": "manejaba",
-          "definition": "to handle something skillfully, to have it down pat",
           "sentence": "Semanas después, Pilar ya manejaba la jerga mejor que sus propios maestros.",
+          "words": [
+            "manejar",
+            "maestro",
+            "pro"
+          ],
           "translation": "Weeks later, Pilar handled the slang better than her own teachers did."
         },
         {
-          "word": "cancha",
-          "surface": "cancha",
-          "definition": "your home turf, a place where you feel in command",
           "sentence": "Lo que empezó como pura confusión en el paradero se había vuelto su cancha.",
+          "words": [
+            "cancha"
+          ],
           "translation": "What started as pure confusion at the bus stop had become her home turf."
         },
         {
-          "word": "dejar botado",
-          "surface": "los dejó botados",
-          "definition": "to leave people stumped and stranded, unable to respond",
           "sentence": "En plena reunión, la novata soltó una frase tan cerrada que los dejó botados.",
+          "words": [
+            "dejar botado"
+          ],
           "translation": "Right in the middle of the gathering, the rookie dropped a phrase so closed off it left them stranded."
         },
         {
-          "word": "muletilla",
-          "surface": "muletillas",
-          "definition": "a filler word or verbal tic repeated out of habit",
           "sentence": "Mezcló palabras al revés, apócopes y muletillas que ni ellos habían escuchado antes.",
+          "words": [
+            "muletilla"
+          ],
           "translation": "She mixed backwards words, clipped forms and filler tics that not even they had heard before."
         },
         {
-          "word": "oe",
-          "surface": "Oe",
-          "definition": "hey, a Lima way to call someone's attention",
           "sentence": "Diego admitió con un “Oe” que no había cacheado ni michi de dónde había sacado esa.",
+          "words": [
+            "oe",
+            "ni michi"
+          ],
           "translation": "Diego admitted with a “Hey” that he had not understood a single bit of where she got that one."
         },
         {
-          "word": "ni michi",
-          "surface": "ni michi",
-          "definition": "nothing at all, not even a tiny bit",
-          "sentence": "Diego admitió con un “Oe” que no había cacheado ni michi de dónde había sacado esa.",
-          "translation": "Diego admitted with a “Hey” that he had not understood a single bit of where she got that one."
-        },
-        {
-          "word": "con la misma moneda",
-          "surface": "con la misma moneda",
-          "definition": "to respond in kind, giving back the same treatment",
           "sentence": "Beto trató de responderle con la misma moneda, tirando su mejor floro.",
+          "words": [
+            "con la misma moneda"
+          ],
           "translation": "Beto tried to pay her back in the same coin, throwing out his best smooth talk."
         },
         {
-          "word": "enredado",
-          "surface": "enredada",
-          "definition": "tangled and complicated, really quite hard to follow along",
           "sentence": "Pero Pilar le devolvió otra frase todavía más enredada, sin despeinarse siquiera.",
+          "words": [
+            "enredado"
+          ],
           "translation": "But Pilar fired back an even more tangled phrase, without even breaking a sweat."
         },
         {
-          "word": "maestro",
-          "surface": "maestro",
-          "definition": "master or expert; also a friendly term of respect",
-          "sentence": "Semanas después, Pilar ya manejaba la jerga mejor que sus propios maestros.",
-          "translation": "Weeks later, Pilar handled the slang better than her own teachers did."
-        },
-        {
-          "word": "novato",
-          "surface": "novato",
-          "definition": "a beginner or rookie, still learning the ropes",
           "sentence": "El maestro terminó monse, rascándose la cabeza como el peor novato.",
+          "words": [
+            "novato"
+          ],
           "translation": "The master ended up clueless, scratching his head like the worst beginner."
         },
         {
-          "word": "duelo",
-          "surface": "duelo",
-          "definition": "a duel or showdown between two rivals facing off head to head",
           "sentence": "La cosa se volvió un duelo de jerga en plena mesa del jato.",
+          "words": [
+            "duelo"
+          ],
           "translation": "The whole thing turned into a slang showdown right at the table in his house."
         },
         {
-          "word": "pro",
-          "surface": "pro",
-          "definition": "a pro, really good and skilled at something",
-          "sentence": "Semanas después, Pilar ya manejaba la jerga mejor que sus propios maestros.",
-          "translation": "Weeks later, Pilar handled the slang better than her own teachers did."
-        },
-        {
-          "word": "bajar la cabeza",
-          "surface": "bajar la cabeza",
-          "definition": "to admit defeat and accept you have lost",
           "sentence": "Diego, que se creía el más pro del grupo, tuvo que bajar la cabeza.",
+          "words": [
+            "bajar la cabeza"
+          ],
           "translation": "Diego, who thought he was the best in the group, had to bow his head."
         },
         {
-          "word": "crack",
-          "surface": "crack",
-          "definition": "an ace, someone brilliant and top notch at something",
           "sentence": "“Ya, me rindo, tú ganas, eres una crack, chata”, declaró entre risas.",
+          "words": [
+            "crack",
+            "chato"
+          ],
           "translation": "“All right, I give up, you win, you're an absolute ace, sweetheart,” he declared through laughter."
         },
         {
-          "word": "campeona",
-          "surface": "campeona",
-          "definition": "a champion, the undefeated winner of the entire contest",
           "sentence": "Beto levantó la mano de Pilar como a una campeona de box.",
+          "words": [
+            "campeona"
+          ],
           "translation": "Beto raised Pilar's hand like the hand of a boxing champion."
         },
         {
-          "word": "indiscutible",
-          "surface": "indiscutible",
-          "definition": "undisputed, beyond any argument or the slightest doubt",
           "sentence": "La chibola que llegó sin cachear nada ahora era la reina indiscutible.",
+          "words": [
+            "indiscutible"
+          ],
           "translation": "The kid who arrived without understanding a thing was now the undisputed queen."
         },
         {
-          "word": "subírsele a la cabeza",
-          "surface": "se le subió a la cabeza",
-          "definition": "to let success go to your head and get cocky",
           "sentence": "Pilar disfrutó el momento, pero no se achoró ni se le subió a la cabeza.",
+          "words": [
+            "subírsele a la cabeza",
+            "achorarse"
+          ],
           "translation": "Pilar enjoyed the moment, but she did not get cocky or let it go to her head."
         },
         {
-          "word": "chato",
-          "surface": "chata",
-          "definition": "shorty, an affectionate nickname you call a close friend",
-          "sentence": "“Ya, me rindo, tú ganas, eres una crack, chata”, declaró entre risas.",
-          "translation": "“All right, I give up, you win, you're an absolute ace, sweetheart,” he declared through laughter."
-        },
-        {
-          "word": "disparar",
-          "surface": "disparaba",
-          "definition": "to fire off words or lines one after another",
           "sentence": "Cada uno disparaba palabras más raras, buscando dejar al otro sin respuesta.",
+          "words": [
+            "disparar"
+          ],
           "translation": "Each of them fired off stranger words, trying to leave the other with no answer."
-        },
-        {
-          "word": "achorarse",
-          "surface": "se achoró",
-          "definition": "to get cocky and act tough or aggressive",
-          "sentence": "Pilar disfrutó el momento, pero no se achoró ni se le subió a la cabeza.",
-          "translation": "Pilar enjoyed the moment, but she did not get cocky or let it go to her head."
         }
       ]
     },
@@ -2825,150 +2116,110 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "picó",
-          "surface": "picó",
-          "definition": "a huge coastal sound system that blasts music at parties",
           "sentence": "En la esquina del barrio, con el picó sonando durísimo, se armaba la reunión de siempre.",
+          "words": [
+            "picó"
+          ],
           "translation": "On the neighborhood corner, with the picó blasting away, the usual gathering came together."
         },
         {
-          "word": "fresco",
-          "surface": "fresco",
-          "definition": "cool, relaxed and unbothered, taking everything nice and easy",
           "sentence": "Andrés apareció estrenando corte y caminando bien fresco, como si la calle fuera suya.",
+          "words": [
+            "fresco"
+          ],
           "translation": "Andrés showed up with a brand new haircut, walking all easy, as if the street were his."
         },
         {
-          "word": "ombe",
-          "surface": "Ombe",
-          "definition": "a coastal exclamation like man or come on, showing surprise",
           "sentence": "Apenas lo vio, Daniela le soltó un “Ombe” y le preguntó por ese peinado tan tieso, mane.",
+          "words": [
+            "ombe",
+            "tieso",
+            "mane"
+          ],
           "translation": "The moment she saw him, Daniela let out a “Come on” and asked about that stiff hairdo, dude."
         },
         {
-          "word": "tieso",
-          "surface": "tieso",
-          "definition": "stiff and rigid, said of overly gelled hair here",
-          "sentence": "Apenas lo vio, Daniela le soltó un “Ombe” y le preguntó por ese peinado tan tieso, mane.",
-          "translation": "The moment she saw him, Daniela let out a “Come on” and asked about that stiff hairdo, dude."
-        },
-        {
-          "word": "mane",
-          "surface": "mane",
-          "definition": "a guy or dude on the Colombian coast",
-          "sentence": "Apenas lo vio, Daniela le soltó un “Ombe” y le preguntó por ese peinado tan tieso, mane.",
-          "translation": "The moment she saw him, Daniela let out a “Come on” and asked about that stiff hairdo, dude."
-        },
-        {
-          "word": "montar chercha",
-          "surface": "montando chercha",
-          "definition": "to relentlessly tease and poke fun at someone",
           "sentence": "Yuly se rió de una y le siguió montando chercha sin piedad.",
+          "words": [
+            "montar chercha"
+          ],
           "translation": "Yuly laughed at once and kept ribbing him without mercy."
         },
         {
-          "word": "eche",
-          "surface": "Eche",
-          "definition": "a classic coastal filler exclamation of surprise or disbelief",
           "sentence": "Entre risas, remató con un “Eche”: ese corte se lo había hecho el barbero con los ojos cerrados.",
+          "words": [
+            "eche"
+          ],
           "translation": "Between laughs, she finished with a “Wow”: the barber had given him that cut with his eyes closed."
         },
         {
-          "word": "ajá",
-          "surface": "Ajá",
-          "definition": "a coastal so what or go on, prompting more talk",
           "sentence": "El pelao arrancó con un “Ajá” y prometió, con toda la confianza, que “hoy sí caigo parado con alguna china”.",
-          "fallback": true,
+          "words": [
+            "ajá",
+            "caer parado",
+            "china",
+            "pelao"
+          ],
           "translation": "The kid started with a “Well then” and promised, full of confidence, that “tonight I really do land on my feet with some girl.”"
         },
         {
-          "word": "caer parado",
-          "surface": "caigo parado",
-          "definition": "to land on your feet and come out lucky or winning",
-          "sentence": "El pelao arrancó con un “Ajá” y prometió, con toda la confianza, que “hoy sí caigo parado con alguna china”.",
-          "fallback": true,
-          "translation": "The kid started with a “Well then” and promised, full of confidence, that “tonight I really do land on my feet with some girl.”"
-        },
-        {
-          "word": "china",
-          "surface": "china",
-          "definition": "a girl or young woman on the coast",
-          "sentence": "El pelao arrancó con un “Ajá” y prometió, con toda la confianza, que “hoy sí caigo parado con alguna china”.",
-          "fallback": true,
-          "translation": "The kid started with a “Well then” and promised, full of confidence, that “tonight I really do land on my feet with some girl.”"
-        },
-        {
-          "word": "pelao",
-          "surface": "pelao",
-          "definition": "a kid or young guy, the coastal word for it",
-          "sentence": "El pelao arrancó con un “Ajá” y prometió, con toda la confianza, que “hoy sí caigo parado con alguna china”.",
-          "fallback": true,
-          "translation": "The kid started with a “Well then” and promised, full of confidence, that “tonight I really do land on my feet with some girl.”"
-        },
-        {
-          "word": "tirarse los peros",
-          "surface": "tirándose los peros",
-          "definition": "to try to chat someone up and flirt hard",
           "sentence": "Según ellas, el man llevaba meses tirándose los peros y quedándose siempre solo.",
+          "words": [
+            "tirarse los peros"
+          ],
           "translation": "According to them, the guy had spent months chatting girls up and always ending up alone."
         },
         {
-          "word": "quedar en calabaza",
-          "surface": "terminaba en calabaza",
-          "definition": "to end in nothing, a total flop with no result",
           "sentence": "Cada vacilada suya terminaba en calabaza, y el barrio entero lo sabía de sobra.",
+          "words": [
+            "quedar en calabaza"
+          ],
           "translation": "Every flirty attempt of his ended in nothing, and the whole neighborhood knew it well."
         },
         {
-          "word": "enredarse",
-          "surface": "enredas",
-          "definition": "to get tangled up and fumble what you are doing",
           "sentence": "“Bueno, picaflor, muéstranos entonces cómo se hace, a ver si no te enredas”, lo retó.",
+          "words": [
+            "enredarse",
+            "picaflor"
+          ],
           "translation": "“All right, lover boy, show us how it's done then, let's see if you don't fumble it,” she challenged him."
         },
         {
-          "word": "birra",
-          "surface": "birra",
-          "definition": "a beer, the informal everyday word for one",
           "sentence": "Yuly le pasó una birra fría para darle valor antes del intento.",
+          "words": [
+            "birra"
+          ],
           "translation": "Yuly handed him a cold beer to give him courage before the attempt."
         },
         {
-          "word": "acomodarse",
-          "surface": "se acomodó",
-          "definition": "to adjust or straighten yourself up, fixing your look",
           "sentence": "Andrés se tomó la birra de un solo trago y se acomodó el cuello de la camisa.",
+          "words": [
+            "acomodarse"
+          ],
           "translation": "Andrés drank the beer in one gulp and straightened his shirt collar."
         },
         {
-          "word": "conquistador",
-          "surface": "conquistador",
-          "definition": "a smooth charmer who tries to win people over romantically",
           "sentence": "Justo pasó una vecina, y Andrés le lanzó su mejor sonrisa de conquistador.",
+          "words": [
+            "conquistador"
+          ],
           "translation": "A neighbor happened to walk by, and Andrés flashed her his best charmer's smile."
         },
         {
-          "word": "arrecharse",
-          "surface": "arrecharse",
-          "definition": "to get worked up and angry, a coastal vulgar word",
           "sentence": "Andrés, lejos de arrecharse, se pasó la mano por el pelo bien orgulloso.",
+          "words": [
+            "arrecharse"
+          ],
           "translation": "Andrés, far from getting worked up, ran his hand through his hair, proud as could be."
         },
         {
-          "word": "sacar de casillas",
-          "surface": "sacarlo de casillas",
-          "definition": "to wind someone up until they lose their patience",
           "sentence": "Daniela le montó más chercha para sacarlo de casillas.",
+          "words": [
+            "sacar de casillas"
+          ],
           "translation": "Daniela teased him harder to push him over the edge."
-        },
-        {
-          "word": "picaflor",
-          "surface": "picaflor",
-          "definition": "a flirt or womanizer who chases many people at once",
-          "sentence": "“Bueno, picaflor, muéstranos entonces cómo se hace, a ver si no te enredas”, lo retó.",
-          "translation": "“All right, lover boy, show us how it's done then, let's see if you don't fumble it,” she challenged him."
         }
       ]
     },
@@ -2978,145 +2229,121 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "a millón",
-          "surface": "a millón",
-          "definition": "at full blast, going with maximum energy and intensity",
           "sentence": "El sábado la parranda estaba a millón, con champeta pegada y birras bien frías.",
+          "words": [
+            "a millón",
+            "champeta"
+          ],
           "translation": "On Saturday the party was going full blast, with champeta pounding and ice cold beers."
         },
         {
-          "word": "champeta",
-          "surface": "champeta",
-          "definition": "a fast Afro Caribbean music and dance from Cartagena",
-          "sentence": "El sábado la parranda estaba a millón, con champeta pegada y birras bien frías.",
-          "translation": "On Saturday the party was going full blast, with champeta pounding and ice cold beers."
-        },
-        {
-          "word": "traga",
-          "surface": "traga",
-          "definition": "a crush, the person you are romantically stuck on",
           "sentence": "Andrés no le quitaba el ojo a una traga que bailaba sabroso en la mitad de la pista.",
+          "words": [
+            "traga",
+            "bailar sabroso"
+          ],
           "translation": "Andrés could not take his eyes off a crush of his dancing with real flavor in the middle of the floor."
         },
         {
-          "word": "bailar sabroso",
-          "surface": "bailaba sabroso",
-          "definition": "to dance with great flavor and easy natural rhythm",
-          "sentence": "Andrés no le quitaba el ojo a una traga que bailaba sabroso en la mitad de la pista.",
-          "translation": "Andrés could not take his eyes off a crush of his dancing with real flavor in the middle of the floor."
-        },
-        {
-          "word": "embarrarla",
-          "surface": "embarrar",
-          "definition": "to screw it up and ruin your chance",
           "sentence": "“Ahí está tu momento, galán, no la vayas a embarrar”, le dijo Yuly dándole un codazo.",
+          "words": [
+            "embarrarla",
+            "codazo"
+          ],
           "translation": "“There's your moment, handsome, don't go and ruin it,” Yuly told him with a nudge of her elbow."
         },
         {
-          "word": "codazo",
-          "surface": "codazo",
-          "definition": "a nudge with the elbow to get someone's attention",
-          "sentence": "“Ahí está tu momento, galán, no la vayas a embarrar”, le dijo Yuly dándole un codazo.",
-          "translation": "“There's your moment, handsome, don't go and ruin it,” Yuly told him with a nudge of her elbow."
-        },
-        {
-          "word": "papelón",
-          "surface": "papelón",
-          "definition": "an embarrassing spectacle that makes you look foolish",
           "sentence": "Recordaba el corte tieso y el papelón con la vecina.",
+          "words": [
+            "papelón"
+          ],
           "translation": "She remembered the stiff haircut and the embarrassing scene with the neighbor."
         },
         {
-          "word": "vale",
-          "surface": "vale",
-          "definition": "buddy or mate, a coastal way to address a friend",
           "sentence": "“Esto lo tengo que ver, vale, va a ser un show”, le comentó a Yuly.",
+          "words": [
+            "vale",
+            "show"
+          ],
           "translation": "“I have to see this, buddy, it's going to be a spectacle,” he said to Yuly."
         },
         {
-          "word": "show",
-          "surface": "show",
-          "definition": "a scene or spectacle put on for everyone to watch",
-          "sentence": "“Esto lo tengo que ver, vale, va a ser un show”, le comentó a Yuly.",
-          "translation": "“I have to see this, buddy, it's going to be a spectacle,” he said to Yuly."
-        },
-        {
-          "word": "descoordinado",
-          "surface": "descoordinada",
-          "definition": "clumsy and out of sync, with limbs all over the place",
           "sentence": "Andrés se metió a la pista moviéndose bien descoordinada.",
+          "words": [
+            "descoordinado"
+          ],
           "translation": "Andrés got onto the dance floor moving completely out of sync."
         },
         {
-          "word": "ridiculez",
-          "surface": "ridiculez",
-          "definition": "an absurd silly thing that makes you look ridiculous",
           "sentence": "El parche entero se dobló de la risa al verlo hacer semejante ridiculez.",
+          "words": [
+            "ridiculez"
+          ],
           "translation": "The whole group doubled over laughing at the sight of such an absurd display."
         },
         {
-          "word": "dejar en ridículo",
-          "surface": "dejar en ridículo",
-          "definition": "to publicly humiliate someone and make them look foolish",
           "sentence": "La traga lo miró de arriba abajo, como si lo fuera a dejar en ridículo.",
+          "words": [
+            "dejar en ridículo"
+          ],
           "translation": "The girl looked him up and down, as if she were about to humiliate him."
         },
         {
-          "word": "marcar el paso",
-          "surface": "marcar el paso",
-          "definition": "to guide someone step by step through the dance",
           "sentence": "En vez de irse, se acercó y le empezó a marcar el paso con paciencia.",
+          "words": [
+            "marcar el paso"
+          ],
           "translation": "Instead of walking off, she came closer and started guiding his steps patiently."
         },
         {
-          "word": "congelado",
-          "surface": "congelado",
-          "definition": "frozen stiff, unable to move from shock or nerves",
           "sentence": "Andrés no lo podía creer y por poco se queda congelado de la dicha.",
+          "words": [
+            "congelado"
+          ],
           "translation": "Andrés could not believe it and almost froze stiff with sheer joy."
         },
         {
-          "word": "agarrar el ritmo",
-          "surface": "agarrando el ritmo",
-          "definition": "to get the hang of the rhythm and find your groove",
           "sentence": "Poco a poco fue agarrando el ritmo, llevado por la mano de la china.",
+          "words": [
+            "agarrar el ritmo"
+          ],
           "translation": "Little by little he got the hang of the rhythm, led by the girl's hand."
         },
         {
-          "word": "buenona",
-          "surface": "buenona",
-          "definition": "very good looking and attractive, said of a person",
           "sentence": "El perdedor de siempre estaba bailando pegado con la traga más buenona de la fiesta.",
+          "words": [
+            "buenona"
+          ],
           "translation": "The usual loser was dancing close with the best looking girl at the party."
         },
         {
-          "word": "no joda",
-          "surface": "No joda",
-          "definition": "a coastal come on or no way, half surprise half protest",
           "sentence": "Yuly, todavía en shock, murmuró un “No joda” y admitió que el milagro existía.",
+          "words": [
+            "no joda"
+          ],
           "translation": "Yuly, still in shock, muttered a “Come on” and admitted that miracles do exist."
         },
         {
-          "word": "en las nubes",
-          "surface": "en las nubes",
-          "definition": "walking on air, floating happily far above the ground",
           "sentence": "Cuando terminó la canción, Andrés volvió al parche caminando en las nubes.",
+          "words": [
+            "en las nubes"
+          ],
           "translation": "When the song ended, Andrés walked back to the group on air."
         },
         {
-          "word": "insoportable",
-          "surface": "insoportable",
-          "definition": "unbearable, way too much for anyone to put up with",
           "sentence": "No dijo nada, solo levantó las cejas con una cara de triunfo insoportable.",
+          "words": [
+            "insoportable"
+          ],
           "translation": "He said nothing, he just raised his eyebrows with an unbearably triumphant look."
         },
         {
-          "word": "quedarse con la boca abierta",
-          "surface": "se quedaron con la boca abierta",
-          "definition": "to be left astonished with your jaw dropped in amazement",
           "sentence": "Daniela y Yuly se quedaron con la boca abierta, sin saber si reírse o aplaudir.",
+          "words": [
+            "quedarse con la boca abierta"
+          ],
           "translation": "Daniela and Yuly were left open mouthed, not knowing whether to laugh or applaud."
         }
       ]
@@ -3127,145 +2354,115 @@
       "level": "c1",
       "language": "spanish",
       "variant": "latam",
-      "words": [
+      "sentences": [
         {
-          "word": "jincho",
-          "surface": "jincho",
-          "definition": "drunk and thoroughly wasted from far too much drinking",
           "sentence": "Ya de madrugada, con las birras calientes y medio mundo jincho, la parranda iba de salida.",
+          "words": [
+            "jincho"
+          ],
           "translation": "By the small hours, with warm beers and half the crowd wasted, the party was winding down."
         },
         {
-          "word": "cuadre",
-          "surface": "cuadre",
-          "definition": "a romantic connection or arrangement between two people",
           "sentence": "Andrés por fin tenía el cuadre con la china y no lo pensaba soltar.",
+          "words": [
+            "cuadre"
+          ],
           "translation": "Andrés finally had something going with the girl and he was not about to let it go."
         },
         {
-          "word": "seguir el juego",
-          "surface": "seguía el juego",
-          "definition": "to play along and go with someone's banter or flirting",
           "sentence": "La china se reía de sus chistes malos y le seguía el juego con gusto.",
+          "words": [
+            "seguir el juego"
+          ],
           "translation": "The girl laughed at his bad jokes and played along happily."
         },
         {
-          "word": "bobo",
-          "surface": "bobo",
-          "definition": "a fool or dummy, said with affection here",
           "sentence": "“Míralo, el bobo por fin la está haciendo bien”, susurró Daniela sin poder creerlo.",
+          "words": [
+            "bobo"
+          ],
           "translation": "“Look at him, the big dummy is finally doing it right,” Daniela whispered, unable to believe it."
         },
         {
-          "word": "cruzar los dedos",
-          "surface": "cruzó los dedos",
-          "definition": "to cross your fingers and hope hard for good luck",
           "sentence": "Yuly cruzó los dedos, rogando que Andrés no fuera a embarrarla en el último minuto.",
+          "words": [
+            "cruzar los dedos"
+          ],
           "translation": "Yuly crossed her fingers, praying that Andrés would not blow it at the last minute."
         },
         {
-          "word": "armarse de valor",
-          "surface": "se armó de valor",
-          "definition": "to work up the courage to do something scary",
           "sentence": "Andrés bajó la voz y se armó de valor para lanzar la pregunta clave.",
+          "words": [
+            "armarse de valor"
+          ],
           "translation": "Andrés lowered his voice and worked up the courage to ask the key question."
         },
         {
-          "word": "a mil",
-          "surface": "a mil",
-          "definition": "racing at full speed, pounding with excitement and nerves",
           "sentence": "Estaba a nada de conseguir el número, con el corazón latiendo a mil.",
+          "words": [
+            "a mil"
+          ],
           "translation": "He was a breath away from getting her number, with his heart pounding wildly."
         },
         {
-          "word": "guachimán",
-          "surface": "guachimán",
-          "definition": "a security guard or watchman, from the English watchman",
           "sentence": "Justo en ese momento apareció el guachimán del edificio con cara de pocos amigos.",
+          "words": [
+            "guachimán",
+            "cara de pocos amigos"
+          ],
           "translation": "Right at that moment the building's security guard appeared with a face like thunder."
         },
         {
-          "word": "cara de pocos amigos",
-          "surface": "cara de pocos amigos",
-          "definition": "a sour unfriendly face that warns you to back off",
-          "sentence": "Justo en ese momento apareció el guachimán del edificio con cara de pocos amigos.",
-          "translation": "Right at that moment the building's security guard appeared with a face like thunder."
-        },
-        {
-          "word": "rumba",
-          "surface": "rumba",
-          "definition": "a party, a night of dancing and drinking",
           "sentence": "“Se acabó la rumba, muchachos, a bajarle al ruido ya mismo”, ladró de mal genio.",
+          "words": [
+            "rumba",
+            "bajarle",
+            "mal genio"
+          ],
           "translation": "“The party is over, kids, turn that noise down right now,” he barked in a foul mood."
         },
         {
-          "word": "bajarle",
-          "surface": "bajarle",
-          "definition": "to turn it down or ease off, lower the intensity",
-          "sentence": "“Se acabó la rumba, muchachos, a bajarle al ruido ya mismo”, ladró de mal genio.",
-          "translation": "“The party is over, kids, turn that noise down right now,” he barked in a foul mood."
-        },
-        {
-          "word": "mal genio",
-          "surface": "mal genio",
-          "definition": "a bad temper, being grumpy and short with people",
-          "sentence": "“Se acabó la rumba, muchachos, a bajarle al ruido ya mismo”, ladró de mal genio.",
-          "translation": "“The party is over, kids, turn that noise down right now,” he barked in a foul mood."
-        },
-        {
-          "word": "pegar el grito al cielo",
-          "surface": "pegó el grito al cielo",
-          "definition": "to protest loudly and cry out in outrage",
           "sentence": "La música se cortó de golpe y todo el mundo pegó el grito al cielo.",
+          "words": [
+            "pegar el grito al cielo"
+          ],
           "translation": "The music cut off all at once and everybody cried out in protest."
         },
         {
-          "word": "plantarse",
-          "surface": "se plantó",
-          "definition": "to plant yourself firmly in place, blocking the way",
           "sentence": "El guachimán se plantó entre Andrés y la china, como un muro imposible.",
+          "words": [
+            "plantarse",
+            "muro"
+          ],
           "translation": "The guard planted himself between Andrés and the girl, like an impossible wall."
         },
         {
-          "word": "rogar",
-          "surface": "rogó",
-          "definition": "to beg and plead for something you badly want",
           "sentence": "Andrés le rogó con la mirada un minuto más, uno solo.",
+          "words": [
+            "rogar"
+          ],
           "translation": "Andrés begged him with his eyes for one more minute, just one."
         },
         {
-          "word": "muro",
-          "surface": "muro",
-          "definition": "a wall, here an immovable obstacle in your way",
-          "sentence": "El guachimán se plantó entre Andrés y la china, como un muro imposible.",
-          "translation": "The guard planted himself between Andrés and the girl, like an impossible wall."
-        },
-        {
-          "word": "a medio dar",
-          "surface": "a medio dar",
-          "definition": "half given and left hanging, never actually finished",
           "sentence": "Andrés se quedó con la mano estirada y el número a medio dar, sin saber si lo alcanzó a agarrar.",
+          "words": [
+            "a medio dar",
+            "alcanzar"
+          ],
           "translation": "Andrés was left with his hand out and the number half given, not knowing if she managed to catch it."
         },
         {
-          "word": "alcanzar",
-          "surface": "alcanzó",
-          "definition": "to manage to do something just in time",
-          "sentence": "Andrés se quedó con la mano estirada y el número a medio dar, sin saber si lo alcanzó a agarrar.",
-          "translation": "Andrés was left with his hand out and the number half given, not knowing if she managed to catch it."
-        },
-        {
-          "word": "dañar",
-          "surface": "dañando",
-          "definition": "to ruin or spoil something good, wreck the moment",
           "sentence": "La conversación fluía sabroso, y por primera vez el pelao no estaba dañando el momento.",
+          "words": [
+            "dañar"
+          ],
           "translation": "The conversation was flowing nicely, and for the first time the kid was not ruining the moment."
         },
         {
-          "word": "espantar",
-          "surface": "espantar a la gente",
-          "definition": "to shoo people away and scare them off",
           "sentence": "Pero el hombre no estaba para vacilar y empezó a espantar a la gente sin piedad.",
+          "words": [
+            "espantar"
+          ],
           "translation": "But the man was in no mood for joking and started shooing people away without mercy."
         }
       ]

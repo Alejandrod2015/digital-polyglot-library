@@ -1,0 +1,9 @@
+{
+  "_comoSeUsa": "Oraciones candidatas que el volcado nuevo encontro y nadie ha traducido. Rellena `translation` y guardalo con: npx tsx scripts/saveSentenceTranslations.ts docs/sentence-translations/<journeyId>.todo2.json",
+  "_words": "`words` son las palabras del vocab que usan esa oracion. El validador comprueba que la traduccion no deje ninguna de ellas sin traducir.",
+  "journeyId": "cmss0fkc40007j8dub1zpa1kc",
+  "journeyName": "Traveler",
+  "language": "italian",
+  "variant": "italy",
+  "stories": []
+}
