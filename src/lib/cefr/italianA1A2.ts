@@ -143,36 +143,58 @@ export const ITALIAN_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
 // CC BY-NC-SA 2.0). Solo entran las que KELLY marca A1 o A2. Las del plan que
 // KELLY marca B1 o mas, o que no trae, se quedan fuera a proposito: van en el
 // texto, no en plaza, o cuentan como las 1-2 fuera de nivel que el check tolera.
+// Ampliado tema a tema (2026-09-14, via Journey-planning-2): cada palabra que
+// una historia del journey usa como plaza y KELLY marca A1/A2, nunca una que
+// ninguna historia use. Tema 3 (Neighbours & Noise): 19 palabras.
 // Fuera tambien "straordinario": KELLY lo da A1 como ADJETIVO y el plan lo usa
 // como NOMBRE (horas extra); la lista no distingue categoria.
 const ITALIAN_A1_A2_CURATED: readonly string[] = [
   "adottare",         // KELLY: A1 (VER)
   "amministratore",   // KELLY: A2 (NOM)
+  "bravo",            // KELLY: A2 (ADJ)
+  "calcio",           // KELLY: A2 (NOM)
   "cambio",           // KELLY: A2 (NOM)
   "chiave",           // KELLY: A2 (NOM)
+  "colpa",            // KELLY: A2 (NOM)
+  "concerto",         // KELLY: A2 (NOM)
   "consegnare",       // KELLY: A2 (VER)
   "contare",          // KELLY: A2 (VER)
   "conto",            // KELLY: A1 (NOM)
   "davvero",          // KELLY: A1 (ADV)
+  "discutere",        // KELLY: A2 (VER)
   "dividere",         // KELLY: A2 (VER)
   "euro",             // KELLY: A1 (NOM)
   "giro",             // KELLY: A1 (NOM)
   "giusto",           // KELLY: A1 (ADJ)
+  "gruppo",           // KELLY: A1 (NOM)
   "gusto",            // KELLY: A2 (NOM)
   "insieme",          // KELLY: A1 (ADV)
   "invece",           // KELLY: A1 (ADV)
   "legare",           // KELLY: A1 (VER)
   "mancare",          // KELLY: A1 (VER)
+  "messaggio",        // KELLY: A1 (NOM)
   "nome",             // KELLY: A1 (NOM)
   "ombra",            // KELLY: A2 (NOM)
+  "ormai",            // KELLY: A1 (ADV)
+  "pace",             // KELLY: A1 (NOM)
   "partire",          // KELLY: A1 (VER)
+  "promettere",       // KELLY: A2 (VER)
+  "proporre",         // KELLY: A1 (VER)
+  "ragione",          // KELLY: A1 (NOM)
   "restare",          // KELLY: A1 (VER)
+  "ricercatore",      // KELLY: A2 (NOM)
   "rinunciare",       // KELLY: A2 (VER)
+  "rispetto",         // KELLY: A1 (NOM)
   "sbagliare",        // KELLY: A2 (VER)
+  "scusare",          // KELLY: A2 (VER)
+  "sguardo",          // KELLY: A2 (NOM)
   "silenzio",         // KELLY: A2 (NOM)
+  "squadra",          // KELLY: A2 (NOM)
+  "strano",           // KELLY: A2 (ADJ)
   "suonare",          // KELLY: A2 (VER)
   "usare",            // KELLY: A1 (VER)
   "visita",           // KELLY: A2 (NOM)
+  "votare",           // KELLY: A2 (VER)
 ];
 for (const w of ITALIAN_A1_A2_CURATED) (ITALIAN_A1_A2_LEMMAS as Set<string>).add(w);
 
