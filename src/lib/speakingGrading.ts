@@ -65,11 +65,9 @@ export type SpeakingVerdict = {
 };
 
 /**
- * G4: la calificacion, y toda ella.
- *
- * Vale el lema o la forma de la historia. Se prueban las dos porque el usuario
- * puede decir cualquiera de ellas y las dos son la palabra: pedirle el lema
- * dentro de una frase seria pedirle que hable mal.
+ * La palabra: vale el lema o la forma de la historia. Se prueban las dos
+ * porque el usuario puede decir cualquiera y las dos son la palabra; pedirle
+ * el lema dentro de una frase seria pedirle que hable mal.
  */
 export function gradeDeterministic(
   recognized: string,
@@ -83,4 +81,78 @@ export function gradeDeterministic(
     }
   }
   return { correct: false, formFound: null };
+}
+
+/**
+ * Cuanta frase hay que decir para que cuente.
+ *
+ * Decision del usuario el 2026-09-14: "acierto si dijo la palabra y al menos
+ * la mitad de las demas". La mitad, y no la frase entera, porque el
+ * reconocedor del sistema se come palabras cortas y atonas con total
+ * normalidad; exigir el 100% seria calificar al reconocedor, no al usuario.
+ */
+export const SPEAKING_MIN_COVERAGE = 0.5;
+
+export type SpeakingSentenceVerdict = {
+  /** Acierto del ejercicio: dijo la palabra Y bastante frase. */
+  correct: boolean;
+  /** Dijo la palabra, con independencia de cuanta frase dijera. */
+  wordSaid: boolean;
+  /** Fraccion del RESTO de la frase que aparece en lo reconocido, de 0 a 1. */
+  coverage: number;
+  formFound: string | null;
+};
+
+/**
+ * G4: la calificacion del turno hablado, y toda ella.
+ *
+ * El ejercicio pide la FRASE ENTERA con el hueco relleno, no la palabra
+ * suelta: decir una palabra aislada no se parece a hablar, que es justo lo que
+ * los usuarios piden aprender. Asi que se miden dos cosas y se exigen las dos.
+ *
+ * La cobertura no mira el ORDEN. El reconocedor reordena, junta y parte
+ * palabras segun le va, y penalizar eso seria medir el dictado en vez de la
+ * frase. Tampoco filtra los tokens de una o dos letras: los articulos y las
+ * preposiciones cortas el usuario los dice igual, y quitarlos del denominador
+ * haria la mitad mas facil justo en las frases mas cortas.
+ */
+export function gradeSentence(
+  transcript: string,
+  word: string,
+  surface: string | null | undefined,
+  sentence: string
+): SpeakingSentenceVerdict {
+  const palabra = gradeDeterministic(transcript, word, surface);
+
+  // Los tokens de la palabra objetivo salen del denominador: ya los mide
+  // `wordSaid`, y contarlos dos veces regalaria cobertura al que solo dijo la
+  // palabra.
+  const objetivo = new Set([
+    ...normalizeForSpeaking(word).split(" "),
+    ...normalizeForSpeaking(surface ?? "").split(" "),
+  ].filter(Boolean));
+
+  const resto = normalizeForSpeaking(sentence)
+    .split(" ")
+    .filter((token) => token && !objetivo.has(token));
+
+  // Frase que es solo la palabra: no hay resto que exigir.
+  if (resto.length === 0) {
+    return {
+      correct: palabra.correct,
+      wordSaid: palabra.correct,
+      coverage: 1,
+      formFound: palabra.formFound,
+    };
+  }
+
+  const dichos = resto.filter((token) => containsWholeWord(transcript, token)).length;
+  const coverage = dichos / resto.length;
+
+  return {
+    correct: palabra.correct && coverage >= SPEAKING_MIN_COVERAGE,
+    wordSaid: palabra.correct,
+    coverage,
+    formFound: palabra.formFound,
+  };
 }

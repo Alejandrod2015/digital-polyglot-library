@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import {
   containsWholeWord,
   gradeDeterministic,
+  gradeSentence,
   normalizeForSpeaking,
 } from "../speakingGrading";
 import {
@@ -105,6 +106,90 @@ describe("g4: la calificacion es determinista y local", () => {
 
   it("normaliza quitando acentos, puntuacion y espacios de sobra", () => {
     expect(normalizeForSpeaking("  ¿Dónde   está,  el balcón? ")).toBe("donde esta el balcon");
+  });
+});
+
+describe("g4: el turno pide la FRASE entera, no la palabra suelta", () => {
+  const FRASE = "El vecino saluda desde el balcon cada manana";
+  const grade = (transcript: string) =>
+    gradeSentence(transcript, "el vecino", "vecino", FRASE);
+
+  it("la frase entera y exacta es acierto", () => {
+    const v = grade("El vecino saluda desde el balcon cada manana");
+    expect(v.wordSaid).toBe(true);
+    expect(v.coverage).toBe(1);
+    expect(v.correct).toBe(true);
+  });
+
+  it("decir SOLO la palabra ya no basta", () => {
+    // El cambio de producto entero esta en este caso: antes era acierto.
+    const v = grade("vecino");
+    expect(v.wordSaid).toBe(true);
+    expect(v.coverage).toBeLessThan(0.5);
+    expect(v.correct).toBe(false);
+  });
+
+  it("la frase entera SIN la palabra no es acierto", () => {
+    const v = grade("El saluda desde el balcon cada manana");
+    expect(v.wordSaid).toBe(false);
+    expect(v.coverage).toBe(1);
+    expect(v.correct).toBe(false);
+  });
+
+  it("la mitad justa de las demas, con la palabra, es acierto", () => {
+    // Resto de la frase: saluda, desde, el, balcon, cada, manana (6 tokens;
+    // "el" sale dos veces y cuenta una porque el resto se mide por token).
+    const v = grade("El vecino saluda desde el balcon");
+    expect(v.wordSaid).toBe(true);
+    expect(v.coverage).toBeGreaterThanOrEqual(0.5);
+    expect(v.correct).toBe(true);
+  });
+
+  it("por debajo de la mitad no es acierto aunque diga la palabra", () => {
+    const v = grade("El vecino manana");
+    expect(v.wordSaid).toBe(true);
+    expect(v.coverage).toBeLessThan(0.5);
+    expect(v.correct).toBe(false);
+  });
+
+  it("no le importan las tildes ni la puntuacion del reconocedor", () => {
+    const v = gradeSentence(
+      "¿El vecino saluda desde el balcón, cada mañana?",
+      "el vecino",
+      "vecino",
+      FRASE
+    );
+    expect(v.correct).toBe(true);
+    expect(v.coverage).toBe(1);
+  });
+
+  it("no le importa el orden: el reconocedor reordena y eso no es el examen", () => {
+    const v = grade("manana cada balcon el desde saluda vecino");
+    expect(v.correct).toBe(true);
+  });
+
+  it("cubre el vocab de varias palabras sin contarlo dos veces", () => {
+    // La palabra objetivo sale del denominador: "darse cuenta" no puede
+    // regalarle cobertura a quien solo dijo la palabra.
+    const frase = "Me di cuenta del ruido del patio";
+    const soloPalabra = gradeSentence("di cuenta", "darse cuenta", "di cuenta", frase);
+    expect(soloPalabra.wordSaid).toBe(true);
+    expect(soloPalabra.coverage).toBeLessThan(0.5);
+    expect(soloPalabra.correct).toBe(false);
+
+    const entera = gradeSentence(
+      "Me di cuenta del ruido del patio",
+      "darse cuenta",
+      "di cuenta",
+      frase
+    );
+    expect(entera.correct).toBe(true);
+  });
+
+  it("una frase que es solo la palabra no exige resto", () => {
+    const v = gradeSentence("vecino", "el vecino", "vecino", "El vecino");
+    expect(v.coverage).toBe(1);
+    expect(v.correct).toBe(true);
   });
 });
 
