@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Platform } from "react-native";
 import { Audio, InterruptionModeIOS } from "expo-av";
 import {
   AVAudioSessionCategory,
@@ -183,6 +184,15 @@ export function useSpeakingRecorder() {
   );
 
   useSpeechRecognitionEvent("error", (event) => {
+    // TEMPORAL (diagnostico Android): en Android el modulo NO devuelve el
+    // fallo por el valor de `start`, lo manda por aqui, asi que el motivo real
+    // de un turno que salta solo se ve en esta linea.
+    console.log("[speaking-error]", {
+      platform: Platform.OS,
+      error: event.error,
+      message: event.message,
+      settled: settledRef.current,
+    });
     if (settledRef.current) return;
     // Un error tras haber oido algo no tira lo oido: en escucha continua, el
     // "no-speech" del final de una pausa es corriente.
@@ -223,12 +233,48 @@ export function useSpeakingRecorder() {
    */
   const start = useCallback(
     async (language: string | null | undefined, handlers: Handlers): Promise<SpeakingStartResult> => {
+      // TEMPORAL (diagnostico Android): se quita cuando el bug este cerrado.
+      let available: boolean | null = null;
+      let supportsOnDevice: boolean | null = null;
+      let permissionStatus: string | null = null;
       try {
-        if (!ExpoSpeechRecognitionModule.isRecognitionAvailable()) {
+        available = ExpoSpeechRecognitionModule.isRecognitionAvailable();
+        supportsOnDevice = ExpoSpeechRecognitionModule.supportsOnDeviceRecognition();
+        if (!available) {
+          // TEMPORAL (diagnostico Android)
+          console.log("[speaking-start]", {
+            paso: "unavailable",
+            platform: Platform.OS,
+            available,
+            supportsOnDevice,
+            permission: permissionStatus,
+          });
           return { ok: false, reason: "unavailable" };
         }
         const permission = await ExpoSpeechRecognitionModule.requestPermissionsAsync();
-        if (!permission.granted) return { ok: false, reason: "denied" };
+        permissionStatus = `${permission.status}/granted:${permission.granted}`;
+        if (!permission.granted) {
+          // TEMPORAL (diagnostico Android)
+          console.log("[speaking-start]", {
+            paso: "denied",
+            platform: Platform.OS,
+            available,
+            supportsOnDevice,
+            permission: permissionStatus,
+          });
+          return { ok: false, reason: "denied" };
+        }
+        // TEMPORAL (diagnostico Android): el camino bueno tambien deja rastro,
+        // porque en Android los fallos de `start` NO vuelven por aqui: llegan
+        // despues como evento `error`.
+        console.log("[speaking-start]", {
+          paso: "ok",
+          platform: Platform.OS,
+          available,
+          supportsOnDevice,
+          permission: permissionStatus,
+          lang: localeForSpeaking(language),
+        });
 
         handlersRef.current = handlers;
         settledRef.current = false;
@@ -243,10 +289,20 @@ export function useSpeakingRecorder() {
           // primera y se queda con las dos primeras palabras.
           continuous: true,
           maxAlternatives: 1,
-          // En el dispositivo cuando el sistema lo ofrece para ese idioma; si
-          // no, el reconocimiento del propio sistema. En ningun caso algo
-          // nuestro.
-          requiresOnDeviceRecognition: ExpoSpeechRecognitionModule.supportsOnDeviceRecognition(),
+          // SOLO en iOS: alli `supportsOnDeviceRecognition()` responde por el
+          // reconocedor del idioma que se va a usar, y si dice que no, el
+          // sistema reconoce por red sin que se note.
+          //
+          // En ANDROID la misma llamada es `SpeechRecognizer
+          // .isOnDeviceRecognitionAvailable(context)`, que solo mira si EXISTE
+          // un servicio de reconocimiento en el dispositivo, no si el modelo
+          // del idioma esta descargado. Pedirlo obliga a
+          // `createOnDeviceSpeechRecognizer` con `EXTRA_PREFER_OFFLINE`, y sin
+          // el modelo de ese idioma el turno muere al instante con
+          // ERROR_LANGUAGE_UNAVAILABLE ("supported, but not yet downloaded").
+          // Por red, el reconocedor de Google cubre los nueve idiomas.
+          requiresOnDeviceRecognition:
+            Platform.OS === "ios" ? ExpoSpeechRecognitionModule.supportsOnDeviceRecognition() : false,
           // iOS enruta `playAndRecord` al AURICULAR por defecto; `defaultToSpeaker`
           // la manda al altavoz, que es por donde el usuario espera oir la app.
           //
@@ -279,7 +335,16 @@ export function useSpeakingRecorder() {
         }, MAX_LISTENING_MS);
 
         return { ok: true };
-      } catch {
+      } catch (error) {
+        // TEMPORAL (diagnostico Android)
+        console.log("[speaking-start]", {
+          paso: "failed",
+          platform: Platform.OS,
+          available,
+          supportsOnDevice,
+          permission: permissionStatus,
+          error: String(error),
+        });
         handlersRef.current = null;
         settledRef.current = true;
         if (mountedRef.current) setIsRecording(false);
