@@ -185,7 +185,7 @@ const config = {
     // envios murieron ahi con un "something went wrong" sin motivo; el
     // motivo salio con `xcrun altool --validate-app`, que dice
     // previousBundleVersion 315. La fuente de verdad es Apple.
-    buildNumber: "317",
+    buildNumber: "318",
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
       // Background audio: story playback keeps sounding when the app is
