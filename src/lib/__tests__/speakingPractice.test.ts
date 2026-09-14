@@ -14,6 +14,7 @@ import {
 import {
   buildSentenceTranslationMap,
   fillSentenceTranslationBlank,
+  normalizeSentenceKey,
   resolveSentenceTranslation,
   sentenceTranslationKey,
   translationLeavesWordUntranslated,
@@ -376,6 +377,39 @@ describe("resolveSentenceTranslation: de donde sale la traduccion", () => {
 
   it("la clave de la columna es la misma que casa palabra con ejercicio", () => {
     expect(sentenceTranslationKey("  El Vecino ")).toBe("el vecino");
+  });
+});
+
+describe("normalizeSentenceKey: la clave es la ORACION", () => {
+  const CURVAS = "\u201cEres un cabron\u201d, se rio Renata.";
+  const RECTAS = '"Eres un cabron", se rio Renata.';
+
+  it("las comillas curvas y las rectas dan la misma clave", () => {
+    expect(normalizeSentenceKey(CURVAS)).toBe(normalizeSentenceKey(RECTAS));
+  });
+
+  it("ignora mayusculas, acentos, puntuacion y espacios de sobra", () => {
+    expect(normalizeSentenceKey("  \u00a1El VECINO saluda,  desde el balc\u00f3n!  ")).toBe(
+      "el vecino saluda desde el balcon"
+    );
+  });
+
+  it("dos frases DISTINTAS no comparten clave", () => {
+    const vocab =
+      "Rosa compra il biglietto alla biglietteria automatica della stazione.";
+    const ejercicio = "Il treno per Firenze parte da questa stazione.";
+    expect(normalizeSentenceKey(vocab)).not.toBe(normalizeSentenceKey(ejercicio));
+  });
+
+  it("el punto final no cambia la clave", () => {
+    expect(normalizeSentenceKey("Marta arriva davanti alla chiesa")).toBe(
+      normalizeSentenceKey("Marta arriva davanti alla chiesa.")
+    );
+  });
+
+  it("sin frase, clave vacia", () => {
+    expect(normalizeSentenceKey("")).toBe("");
+    expect(normalizeSentenceKey("   ...  ")).toBe("");
   });
 });
 

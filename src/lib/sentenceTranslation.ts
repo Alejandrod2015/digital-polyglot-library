@@ -129,9 +129,30 @@ export function buildSentenceTranslationMap(params: {
 }
 
 /**
- * La clave con la que se guarda y se busca en la columna. Es el mismo `norm`
- * que la ruta de favoritos usa para casar palabra con ejercicio; vive aqui
- * para que el script que escribe y la ruta que lee no puedan discrepar.
+ * La clave con la que se guarda y se busca en la columna: la ORACION.
+ *
+ * Antes la clave era la PALABRA, y de ahi salia el bug que el usuario vio en
+ * el telefono: la etiqueta MEANING ensenaba una traduccion que no era la de la
+ * frase en pantalla, "a veces mas de la oracion, a veces menos". La columna se
+ * escribio traduciendo la frase del VOCAB, pero el turno hablado pinta la
+ * frase que le llega por otro camino (el `exampleSentence` del favorito, el
+ * item construido desde el texto de la historia, o el `fill_blank` curado), y
+ * para `stazione` esas dos frases eran distintas. Una palabra no identifica
+ * una frase; la frase, si.
+ *
+ * La normalizacion tiene que tragarse las diferencias que NO cambian la frase:
+ * mayusculas, acentos, el tipo de comillas (curvas contra rectas, que es la
+ * diferencia real entre el texto de la historia y lo que copia un dump) y la
+ * puntuacion. Lo que queda son letras, numeros y un espacio entre ellos.
+ */
+export function normalizeSentenceKey(sentence: string): string {
+  return sinAcentosMinusculas(sentence ?? "");
+}
+
+/**
+ * La clave con la que se casa una PALABRA (vocab, ejercicio, favorito). Ya no
+ * indexa la columna de traducciones; sigue viva porque la ruta de favoritos y
+ * el validador la usan para emparejar palabra con ejercicio.
  */
 export function sentenceTranslationKey(word: string): string {
   return (word ?? "").trim().toLowerCase();
