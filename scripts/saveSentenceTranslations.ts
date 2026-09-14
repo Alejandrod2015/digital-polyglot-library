@@ -1,5 +1,5 @@
 /**
- * Guarda en la base las traducciones de frase que escribio un chat ejecutor.
+ * Guarda en la base las traducciones de ORACION que escribio un chat ejecutor.
  *
  * Uso:
  *   npx tsx scripts/saveSentenceTranslations.ts docs/sentence-translations/<journeyId>.json
@@ -10,9 +10,13 @@
  * frases traducidas y otras no, y nadie sabe cuales sin volver a mirarlas una
  * por una.
  *
+ * La clave es la ORACION normalizada (`normalizeSentenceKey`), no la palabra:
+ * una palabra no identifica una frase, y por eso la etiqueta MEANING ensenaba
+ * la traduccion de una oracion distinta de la que se leia en pantalla.
+ *
  * Que se comprueba, y por que cada cosa:
- *   - La palabra existe en el vocab de la historia. Una clave que no casa no
- *     se lee nunca: seria trabajo tirado que nadie echaria de menos.
+ *   - Cada palabra de `words` existe en el vocab de la historia. Una entrada
+ *     que no casa con nada apunta a un volcado viejo: mejor pararlo.
  *   - La traduccion no esta vacia.
  *   - Sin guiones largos, que es regla dura del proyecto y esto va a pantalla.
  *   - Sin caracteres fuera de ASCII salvo los que ya estan en la frase de
@@ -37,6 +41,7 @@ import * as path from "path";
 // patron que usa `scripts/journeysTable.ts`.
 import { PrismaClient } from "../src/generated/prisma";
 import {
+  normalizeSentenceKey,
   sentenceTranslationKey,
   translationLeavesWordUntranslated,
 } from "../src/lib/sentenceTranslation";
@@ -84,17 +89,16 @@ function cargarKeepAsIs(): Record<string, string[]> {
   }
 }
 
-type PalabraEntrada = {
-  word?: unknown;
+type OracionEntrada = {
   sentence?: unknown;
+  /** Las palabras del vocab que usan esa oracion. */
+  words?: unknown;
   translation?: unknown;
-  /** Definicion en ingles, tal como la escribe `dumpVocabSentences.ts`. */
-  definition?: unknown;
 };
 
 type HistoriaEntrada = {
   storySlug?: unknown;
-  words?: unknown;
+  sentences?: unknown;
   /** Idioma de la historia, que elige la lista de terminos a dejar tal cual. */
   language?: unknown;
 };
@@ -113,22 +117,32 @@ function noAscii(texto: string): Set<string> {
   return out;
 }
 
-type Problema = { storySlug: string; word: string; motivo: string };
+type Problema = { storySlug: string; donde: string; motivo: string };
+
+/** Un trozo corto de la oracion, para que el informe se pueda leer. */
+function recorta(sentence: string): string {
+  const t = sentence.trim();
+  return t.length <= 48 ? t : `${t.slice(0, 45)}...`;
+}
 
 function revisar(
   storySlug: string,
-  word: string,
   sentence: string,
   translation: string,
-  definition: string,
-  vocabDeLaHistoria: Set<string>,
+  words: string[],
+  vocabDeLaHistoria: Map<string, string>,
   keepAsIs: readonly string[]
 ): Problema[] {
   const fallos: Problema[] = [];
-  const di = (motivo: string) => fallos.push({ storySlug, word, motivo });
+  const donde = recorta(sentence);
+  const di = (motivo: string) => fallos.push({ storySlug, donde, motivo });
 
-  if (!vocabDeLaHistoria.has(sentenceTranslationKey(word))) {
-    di("la palabra no esta en el vocab de la historia");
+  if (!sentence.trim()) {
+    di("entrada sin `sentence`");
+    return fallos;
+  }
+  if (!normalizeSentenceKey(sentence)) {
+    di("la oracion no deja clave: no tiene letras ni numeros");
   }
   if (!translation.trim()) {
     di("traduccion vacia");
@@ -150,8 +164,18 @@ function revisar(
       di(`largo fuera de banda: ${nDestino} palabras para ${nOrigen} (x${ratio.toFixed(2)})`);
     }
   }
-  if (translationLeavesWordUntranslated(translation, word, definition, keepAsIs)) {
-    di(`la traduccion deja "${word}" sin traducir`);
+  // La regla de "palabra objetivo sin traducir" se mide contra TODAS las
+  // palabras del vocab que usan esta oracion, con las dos exenciones de
+  // siempre: su definicion en ingles, o `keep-as-is.json`.
+  for (const word of words) {
+    const clave = sentenceTranslationKey(word);
+    if (!vocabDeLaHistoria.has(clave)) {
+      di(`"${word}" no esta en el vocab de la historia`);
+      continue;
+    }
+    if (translationLeavesWordUntranslated(translation, word, vocabDeLaHistoria.get(clave), keepAsIs)) {
+      di(`la traduccion deja "${word}" sin traducir`);
+    }
   }
   return fallos;
 }
@@ -188,7 +212,7 @@ async function main() {
     const keepAsIs = keepAsIsPorIdioma[idioma] ?? [];
     const storySlug = typeof historia.storySlug === "string" ? historia.storySlug.trim() : "";
     if (!storySlug) {
-      problemas.push({ storySlug: "(sin slug)", word: "", motivo: "historia sin storySlug" });
+      problemas.push({ storySlug: "(sin slug)", donde: "", motivo: "historia sin storySlug" });
       continue;
     }
     const story = await prisma.journeyStory.findFirst({
@@ -196,36 +220,46 @@ async function main() {
       select: { id: true, vocab: true, practiceSet: { select: { id: true } } },
     });
     if (!story) {
-      problemas.push({ storySlug, word: "", motivo: "no existe esa historia" });
+      problemas.push({ storySlug, donde: "", motivo: "no existe esa historia" });
       continue;
     }
-    const vocabDeLaHistoria = new Set(
-      ((story.vocab as { word?: unknown }[] | null) ?? [])
-        .map((v) => (typeof v?.word === "string" ? sentenceTranslationKey(v.word) : ""))
-        .filter(Boolean)
-    );
+    // Palabra normalizada -> su definicion en ingles, que es la primera
+    // exencion de la regla de "palabra sin traducir".
+    const vocabDeLaHistoria = new Map<string, string>();
+    for (const v of ((story.vocab as { word?: unknown; definition?: unknown }[] | null) ?? [])) {
+      if (typeof v?.word !== "string") continue;
+      vocabDeLaHistoria.set(
+        sentenceTranslationKey(v.word),
+        typeof v?.definition === "string" ? v.definition : ""
+      );
+    }
 
-    const words = Array.isArray(historia.words) ? (historia.words as PalabraEntrada[]) : [];
+    const oraciones = Array.isArray(historia.sentences)
+      ? (historia.sentences as OracionEntrada[])
+      : [];
+    if (oraciones.length === 0) {
+      problemas.push({ storySlug, donde: "", motivo: "historia sin `sentences`" });
+      continue;
+    }
     const mapa: Record<string, string> = {};
-    for (const entrada of words) {
-      const word = typeof entrada.word === "string" ? entrada.word.trim() : "";
+    for (const entrada of oraciones) {
       const sentence = typeof entrada.sentence === "string" ? entrada.sentence.trim() : "";
       const translation =
         typeof entrada.translation === "string" ? entrada.translation.trim() : "";
-      // La definicion en ingles de la palabra: es la que exime a los prestamos.
-      const definition =
-        typeof entrada.definition === "string" ? entrada.definition.trim() : "";
-      if (!word) {
-        problemas.push({ storySlug, word: "(sin palabra)", motivo: "entrada sin `word`" });
+      const words = Array.isArray(entrada.words)
+        ? entrada.words.filter((w): w is string => typeof w === "string" && w.trim().length > 0)
+        : [];
+      if (!sentence) {
+        problemas.push({ storySlug, donde: "", motivo: "entrada sin `sentence`" });
         continue;
       }
-      // Una palabra sin traducir todavia no es un error: el ejecutor puede ir
+      // Una oracion sin traducir todavia no es un error: el ejecutor puede ir
       // por partes. Simplemente no se guarda.
       if (!translation) continue;
       problemas.push(
-        ...revisar(storySlug, word, sentence, translation, definition, vocabDeLaHistoria, keepAsIs)
+        ...revisar(storySlug, sentence, translation, words, vocabDeLaHistoria, keepAsIs)
       );
-      mapa[sentenceTranslationKey(word)] = translation;
+      mapa[normalizeSentenceKey(sentence)] = translation;
     }
     if (Object.keys(mapa).length > 0) porHistoria.set(storySlug, mapa);
   }
@@ -233,13 +267,13 @@ async function main() {
   if (problemas.length > 0) {
     console.error(`${problemas.length} problemas. NO se ha escrito nada:\n`);
     for (const p of problemas) {
-      console.error(`  ${p.storySlug} / ${p.word || "(historia)"}: ${p.motivo}`);
+      console.error(`  ${p.storySlug} / ${p.donde || "(historia)"}: ${p.motivo}`);
     }
     process.exit(1);
   }
 
   if (porHistoria.size === 0) {
-    console.log("Nada que guardar: ninguna palabra trae traduccion.");
+    console.log("Nada que guardar: ninguna oracion trae traduccion.");
     return;
   }
 

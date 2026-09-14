@@ -1078,7 +1078,7 @@
     {
       "id": "sentence-translations-canonical",
       "domain": "practice",
-      "rule": "Las traducciones de frase entran SOLO por scripts/saveSentenceTranslations.ts, que valida todo o nada: la palabra existe en el vocab, sin guiones largos, sin caracteres del idioma origen que no esten en la frase, largo entre 0,5 y 2,5 veces el original y sin dejar la palabra objetivo sin traducir, salvo que su definicion en ingles ya la use o este en docs/sentence-translations/keep-as-is.json, que solo se amplia tocando ese fichero en un commit",
+      "rule": "Las traducciones de frase se guardan por ORACION (clave normalizeSentenceKey, nunca por palabra) y entran SOLO por scripts/saveSentenceTranslations.ts, que valida todo o nada: cada palabra de words existe en el vocab, sin guiones largos, sin caracteres del idioma origen que no esten en la frase, largo entre 0,5 y 2,5 veces el original y sin dejar sin traducir ninguna de esas palabras, salvo que su definicion en ingles ya la use o este en docs/sentence-translations/keep-as-is.json, que solo se amplia tocando ese fichero en un commit",
       "gate": "scripts/saveSentenceTranslations.ts",
       "source": "manual:spec-speaking-piloto"
     },
