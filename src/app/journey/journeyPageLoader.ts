@@ -19,6 +19,7 @@ import {
   getPracticedJourneyTopicKeys,
 } from "@/lib/journeyProgress";
 import { normalizeVariant } from "@/lib/languageVariant";
+import { getEffectivePlanForUserId } from "@/lib/effectiveAccess";
 import {
   getJourneyFocusFromLearningGoal,
   getJourneyVariantFromPreferences,
@@ -136,12 +137,13 @@ export async function loadJourneyPageProps({
 
   const initialVariantId = resolvedTrack?.id ?? "";
 
-  const [completedStoryKeys, passedCheckpointKeys, practicedTopicKeys, dueReviewItems] =
+  const [completedStoryKeys, passedCheckpointKeys, practicedTopicKeys, dueReviewItems, effectivePlan] =
     await Promise.all([
       getCompletedJourneyStoryKeys(),
       getPassedJourneyCheckpointKeys(),
       getPracticedJourneyTopicKeys(),
       getJourneyDueReviewItems(),
+      user ? getEffectivePlanForUserId(user.id) : Promise.resolve(null),
     ]);
 
   const initialTrack = tracks.find((track) => track.id === initialVariantId) ?? tracks[0] ?? null;
@@ -187,5 +189,10 @@ export async function loadJourneyPageProps({
     passedCheckpointKeys: [...passedCheckpointKeys],
     practicedTopicKeys: [...practicedTopicKeys],
     dueReviewItems,
+    // Muro en el mapa (2026-09-14): basic solo lee el tema 1 entero; el resto
+    // del journey lo cierra `canAccessStoryContent` al abrir la historia. Sin
+    // esto el mapa lo pintaba todo abierto y el muro se descubria al tocarlo.
+    // Sin sesion (free) no se marca: ahi el tema 1 tambien pide cuenta.
+    premiumBeyondFirstTopic: effectivePlan === "basic",
   };
 }

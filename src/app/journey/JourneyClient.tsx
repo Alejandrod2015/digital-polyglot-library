@@ -24,6 +24,7 @@ import JourneyTopBar from "@/components/JourneyTopBar";
 import BottomSheet from "@/components/ui/BottomSheet";
 import JourneyTopicBanner from "@/components/JourneyTopicBanner";
 import JourneyStoryCard, { type StoryNodeState } from "@/components/JourneyStoryCard";
+import JourneyTrialCard from "@/components/JourneyTrialCard";
 import { formatCefrDisplay } from "@domain/cefr";
 
 type JourneyClientProps = {
@@ -42,6 +43,8 @@ type JourneyClientProps = {
   passedCheckpointKeys: string[];
   practicedTopicKeys: string[];
   dueReviewItems: JourneyDueReviewItem[];
+  /** Plan basic: solo el primer tema es suyo; el resto se marca Premium en el mapa. */
+  premiumBeyondFirstTopic?: boolean;
 };
 
 // Same order as the iPhone TOPIC_PANEL_PALETTE; cycle across the whole
@@ -163,6 +166,7 @@ export default function JourneyClient({
   passedCheckpointKeys,
   practicedTopicKeys,
   dueReviewItems,
+  premiumBeyondFirstTopic = false,
 }: JourneyClientProps) {
   const router = useRouter();
   const pathname = usePathname();
@@ -205,6 +209,7 @@ export default function JourneyClient({
     stories: Array<{ slug: string; title: string }>;
     storySlugs?: string[];
     ctaHref: string | null;
+    ctaLabel?: string;
     ctaDisabledLabel?: string;
   } | null;
   const [previewTopic, setPreviewTopic] = useState<PreviewState>(null);
@@ -540,11 +545,22 @@ export default function JourneyClient({
   // (`globalJourneyNextStoryId` in MobileLibraryShell). Previously we
   // had one "next" per topic, which lit up the first story of every
   // topic and broke the "this is where to tap" cue.
+  // Primer tema del journey: el suelo de basic (mismo criterio que
+  // `isFirstTopicStorySlug` en el servidor, `Journey.topics[0]`, que es
+  // tambien el orden de `levels[0].topics`).
+  const isPremiumTopic = useCallback(
+    (levelIndex: number, topicIndex: number) =>
+      premiumBeyondFirstTopic && !(levelIndex === 0 && topicIndex === 0),
+    [premiumBeyondFirstTopic]
+  );
+
   const globalNextStoryKey = useMemo<string | null>(() => {
     for (let i = 0; i < levels.length; i++) {
       if (i >= unlockedLevelCount) break;
       const level = levels[i];
-      for (const topic of level.topics) {
+      for (const [topicIndex, topic] of level.topics.entries()) {
+        // El halo no apunta a una historia que el plan no abre.
+        if (isPremiumTopic(i, topicIndex)) return null;
         const firstIncomplete = topic.stories.find(
           (s) => !isJourneyStoryComplete(s, completedStoryKeySet)
         );
@@ -552,13 +568,16 @@ export default function JourneyClient({
       }
     }
     return null;
-  }, [completedStoryKeySet, levels, unlockedLevelCount]);
+  }, [completedStoryKeySet, isPremiumTopic, levels, unlockedLevelCount]);
 
   type FlatTopic = {
     slug: string;
     levelId: string;
     label: string;
     locked: boolean;
+    premium: boolean;
+    /** Basic ha terminado su tema gratis: aqui va la tarjeta de prueba. */
+    showTrialCardAfter: boolean;
     coverUrl?: string | null;
     storyCount: number;
     stories: Array<{
@@ -574,11 +593,12 @@ export default function JourneyClient({
     const out: FlatTopic[] = [];
     levels.forEach((level, levelIndex) => {
       const isLevelUnlocked = levelIndex < unlockedLevelCount;
-      for (const topic of level.topics) {
+      for (const [topicIndex, topic] of level.topics.entries()) {
         // Skip empty topics inside unlocked levels; they only add noise
         // (banner with no rows). Locked levels keep their empty topics so
         // the user sees the upcoming map of what's gated.
         if (isLevelUnlocked && topic.stories.length === 0) continue;
+        const isPremium = isLevelUnlocked && isPremiumTopic(levelIndex, topicIndex);
         const stories = topic.stories.map((story) => {
           const isStoryComplete = isJourneyStoryComplete(story, completedStoryKeySet);
           const isNextRecommended =
@@ -590,6 +610,8 @@ export default function JourneyClient({
             state = "locked";
           } else if (isStoryComplete) {
             state = "done";
+          } else if (isPremium) {
+            state = "premium";
           } else if (isNextRecommended) {
             state = "next";
           } else {
@@ -610,6 +632,13 @@ export default function JourneyClient({
           levelId: level.id.toUpperCase(),
           label: topic.label,
           locked: !isLevelUnlocked,
+          premium: isPremium,
+          showTrialCardAfter:
+            premiumBeyondFirstTopic &&
+            levelIndex === 0 &&
+            topicIndex === 0 &&
+            topic.stories.length > 0 &&
+            topic.stories.every((s) => isJourneyStoryComplete(s, completedStoryKeySet)),
           coverUrl: topic.stories[0]?.coverUrl ?? null,
           storyCount: topic.storyCount,
           stories,
@@ -617,7 +646,14 @@ export default function JourneyClient({
       }
     });
     return out;
-  }, [completedStoryKeySet, levels, globalNextStoryKey, unlockedLevelCount]);
+  }, [
+    completedStoryKeySet,
+    levels,
+    globalNextStoryKey,
+    unlockedLevelCount,
+    isPremiumTopic,
+    premiumBeyondFirstTopic,
+  ]);
 
   if (!selectedTrack) return null;
 
@@ -671,6 +707,7 @@ export default function JourneyClient({
                 title={topic.label}
                 color={color}
                 locked={topic.locked}
+                premium={topic.premium}
                 country={topicCountryLabel(selectedTrack.variant, topic.slug)}
                 onTap={() => {
                   if (topic.locked) return;
@@ -682,11 +719,21 @@ export default function JourneyClient({
                     storyCount: topic.storyCount,
                     stories: topic.stories.map((s) => ({ slug: s.slug, title: s.title })),
                     storySlugs: topic.stories.map((s) => s.slug).filter(Boolean),
-                    ctaHref: topic.stories[0]?.href ? withReturn(topic.stories[0].href) : null,
+                    ctaHref: topic.premium
+                      ? "/plans"
+                      : topic.stories[0]?.href
+                        ? withReturn(topic.stories[0].href)
+                        : null,
+                    ctaLabel: topic.premium ? "Start 7-day free trial" : undefined,
                   });
                   void trackJourneyMetric(
                     "journey_topic_opened",
-                    { variantId: selectedTrack.id, topicId: topic.slug, locked: topic.locked },
+                    {
+                      variantId: selectedTrack.id,
+                      topicId: topic.slug,
+                      locked: topic.locked,
+                      premium: topic.premium,
+                    },
                     topic.slug
                   );
                 }}
@@ -707,6 +754,7 @@ export default function JourneyClient({
                   />
                 ))}
               </div>
+              {topic.showTrialCardAfter ? <JourneyTrialCard /> : null}
             </section>
           );
         })}
@@ -725,6 +773,7 @@ export default function JourneyClient({
         stories={previewTopic?.stories ?? []}
         storySlugs={previewTopic?.storySlugs ?? []}
         ctaHref={previewTopic?.ctaHref ?? null}
+        ctaLabel={previewTopic?.ctaLabel}
         ctaDisabledLabel={previewTopic?.ctaDisabledLabel ?? null}
       />
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { List } from "lucide-react";
+import { List, Lock } from "lucide-react";
 import { formatCefrDisplay } from "@domain/cefr";
 
 type Props = {
@@ -12,6 +12,8 @@ type Props = {
   color: string;
   /** Greys out the banner and disables press states. */
   locked?: boolean;
+  /** Outside the user's plan: stays tappable (opens the trial CTA) but shows a lock. */
+  premium?: boolean;
   /** Country label ("Colombia", "Peru", …) for country-specific topics in
    *  pan-regional (LATAM) journeys. Appended to the level eyebrow. Null = none. */
   country?: string | null;
@@ -32,7 +34,7 @@ type Props = {
  *     the passed color.
  */
 export default function JourneyTopicBanner({
-  levelId, title, color, locked, country, onTap,
+  levelId, title, color, locked, premium, country, onTap,
 }: Props) {
   const bg = locked ? "#3b4a66" : color;
 
@@ -53,7 +55,7 @@ export default function JourneyTopicBanner({
           className="text-[11px] font-black tracking-[0.16em] uppercase"
           style={{ color: locked ? "rgba(255,255,255,0.45)" : "rgba(255,255,255,0.8)" }}
         >
-          {formatCefrDisplay(levelId)}{country ? ` · ${country}` : ""}{locked ? " · Locked" : ""}
+          {formatCefrDisplay(levelId)}{country ? ` · ${country}` : ""}{locked ? " · Locked" : premium ? " · Premium" : ""}
         </span>
         <span
           className="text-[28px] font-black tracking-[-0.02em] leading-[1.1]"
@@ -69,7 +71,7 @@ export default function JourneyTopicBanner({
         className="w-11 h-11 rounded-[14px] grid place-items-center shrink-0 transition-colors"
         style={{ background: "rgba(255,255,255,0.16)", color: "#ffffff" }}
       >
-        <List size={22} />
+        {premium && !locked ? <Lock size={20} /> : <List size={22} />}
       </span>
     </button>
   );
