@@ -22,7 +22,7 @@ import Svg, { Circle, G } from "react-native-svg";
  * con play. Versión Duolingo-like del Daily Goal ring.
  */
 
-export type PracticeModeKey = "meaning" | "context" | "listening" | "match";
+export type PracticeModeKey = "meaning" | "context" | "listening" | "match" | "speaking";
 
 export type PracticeOrbitProps = {
   topicLabel: string | null;
@@ -64,6 +64,7 @@ const MODE_COLORS: Record<PracticeModeKey, string> = {
   context: "#86efac", // verde menta
   listening: "#f0abfc", // rosa
   match: "#7dd3fc", // cyan
+  speaking: "#fca5a5", // coral
 };
 
 // Uniform card fill for all four skills. Each card used to fill with
@@ -74,11 +75,15 @@ const MODE_COLORS: Record<PracticeModeKey, string> = {
 // icon chip and glow, so the ring-segment match is preserved.
 const SKILL_CARD_BG = "rgba(255,255,255,0.05)";
 
-const MODE_ICONS: Record<PracticeModeKey, "zap" | "message-circle" | "headphones" | "link"> = {
+const MODE_ICONS: Record<
+  PracticeModeKey,
+  "zap" | "message-circle" | "headphones" | "link" | "mic"
+> = {
   meaning: "zap",
   context: "message-circle",
   listening: "headphones",
   match: "link",
+  speaking: "mic",
 };
 
 const MODE_LABELS: Record<PracticeModeKey, string> = {
@@ -86,8 +91,13 @@ const MODE_LABELS: Record<PracticeModeKey, string> = {
   context: "Context",
   listening: "Listening",
   match: "Match",
+  speaking: "Speaking",
 };
 
+// Los cuatro modos que el usuario puede elegir a mano. `speaking` se queda
+// FUERA a proposito: en el piloto solo entra como UN slot de la sesion mixta,
+// no como skill suelta, y meterlo aqui romperia el grid 2x2 que hace que la
+// pantalla entre sin scroll en un iPhone 12.
 const MODE_ORDER: PracticeModeKey[] = ["meaning", "context", "listening", "match"];
 
 // Ring un poco más chico que la versión inicial (240 → 210) para
