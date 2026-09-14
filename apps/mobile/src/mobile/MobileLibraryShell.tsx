@@ -5984,7 +5984,9 @@ export function MobileLibraryShell(args: {
     PRACTICE_MODE_CARDS.find(
       (card) => card.key === (currentPracticeExercise?.mode ?? activePracticeMode)
     ) ??
-    (currentPracticeExercise?.kind === "speaking" ? SPEAKING_PRACTICE_CARD : null) ??
+    (currentPracticeExercise?.kind === "speaking" || activePracticeMode === "speaking"
+      ? SPEAKING_PRACTICE_CARD
+      : null) ??
     (activePracticeMode === "mixed" ? MIXED_PRACTICE_CARD : null);
   const currentPracticeFavoriteItem = useMemo<MobileFavoriteItem | null>(() => {
     // Speaking entra aqui igual que multiple-choice: lleva `favorite` y su
@@ -14309,9 +14311,11 @@ export function MobileLibraryShell(args: {
       context: sizeFor("context"),
       listening: sizeFor("listening"),
       match: sizeFor("match"),
-      // Speaking no es una skill que se elija: es UN slot de la sesion mixta.
-      // Contarlo aqui lo pintaria en el anillo y en la rejilla de la orbita.
-      speaking: 0,
+      // Con el plan `polyglot` cuenta como cualquier otra skill. Sin el sale
+      // CERO por partida doble: `speakingEnabled` es false en las prefs, asi
+      // que `sizeFor` ya devolveria 0, y ademas la orbita no pinta su tarjeta.
+      // Nadie que no pueda resolverlo lo ve en el anillo ni en la rejilla.
+      speaking: sizeFor("speaking"),
     };
   }, [duePracticeItems, onboardingPracticePrefs]);
 
@@ -14432,6 +14436,9 @@ export function MobileLibraryShell(args: {
             onEmptyTap={() => setSaveWordsHintVisible(true)}
             reviewSoonCount={reviewSoon.count}
             reviewSoonMinutes={reviewSoon.minutes}
+            // Misma condicion que abre el slot de la sesion mixta: el piloto
+            // hablado es del plan `polyglot` y de nadie mas.
+            speakingEnabled={effectivePlan === "polyglot"}
           />
         </>
       )}
