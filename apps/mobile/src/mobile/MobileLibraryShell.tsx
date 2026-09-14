@@ -201,7 +201,7 @@ import {
 } from "../../../../src/lib/practiceExercises";
 // G4: la calificacion del turno hablado, compartida con sus tests. Vive en
 // `src/lib` para que un test la pueda medir sin arrancar Expo.
-import { gradeDeterministic } from "../../../../src/lib/speakingGrading";
+import { gradeSentence } from "../../../../src/lib/speakingGrading";
 import { TalkingPointsBrowse } from "./TalkingPointsBrowse";
 import {
   fetchTalkingIndex,
@@ -2818,6 +2818,8 @@ export function MobileLibraryShell(args: {
   const speakingPulseA = useRef(new Animated.Value(0)).current;
   const speakingPulseB = useRef(new Animated.Value(0)).current;
   const [speakingHeard, setSpeakingHeard] = useState("");
+  /** Dijo la palabra pero no suficiente frase: el fallo se explica distinto. */
+  const [speakingWordOnly, setSpeakingWordOnly] = useState(false);
   const [speakingError, setSpeakingError] = useState("");
   /** El silencio da UN reintento sin penalizar; el segundo vacio es fallo. */
   const [speakingEmptyRetried, setSpeakingEmptyRetried] = useState(false);
@@ -9911,6 +9913,7 @@ export function MobileLibraryShell(args: {
     if (!currentSpeakingExercise?.id) return;
     setSpeakingPhase("ready");
     setSpeakingHeard("");
+    setSpeakingWordOnly(false);
     setSpeakingError("");
     setSpeakingEmptyRetried(false);
     setSpeakingSecondsLeft(SPEAKING_ANSWER_SECONDS);
@@ -9968,6 +9971,7 @@ export function MobileLibraryShell(args: {
     if (!ex) return;
     setSpeakingCountdownRunning(false);
     setSpeakingHeard("");
+    setSpeakingWordOnly(false);
     setSpeakingPhase("done");
     resolveSpeakingAnswer(ex, false);
   }, [speakingCountdownRunning, speakingSecondsLeft, practiceRevealed, currentSpeakingExercise]);
@@ -10054,6 +10058,7 @@ export function MobileLibraryShell(args: {
       return;
     }
     setSpeakingHeard("");
+    setSpeakingWordOnly(false);
     setSpeakingPhase("done");
     resolveSpeakingAnswer(exercise, false);
   }
@@ -10073,8 +10078,10 @@ export function MobileLibraryShell(args: {
           setSpeakingHeard(heard);
           setSpeakingError("");
           setSpeakingPhase("done");
-          // G4: la comparacion, y toda ella. Lo que no casa es fallo.
-          const verdict = gradeDeterministic(heard, exercise.word, exercise.surface);
+          // G4: la palabra Y al menos la mitad del resto de la frase. Decir la
+          // palabra suelta ya no basta; el ejercicio pide hablar.
+          const verdict = gradeSentence(heard, exercise.word, exercise.surface, exercise.sentence);
+          setSpeakingWordOnly(verdict.wordSaid && !verdict.correct);
           resolveSpeakingAnswer(exercise, verdict.correct);
         },
         onFailure: (code) => {
@@ -15595,6 +15602,13 @@ export function MobileLibraryShell(args: {
                           {/* La palabra se revela SOLO ahora. */}
                           <Text style={styles.speakingRevealWord}>{ex.word}</Text>
                         </View>
+                        {speakingWordOnly ? (
+                          // Dijo la palabra y se quedo ahi. Merece un fallo
+                          // distinto del de no haberla dicho: sabia la palabra.
+                          <Text style={styles.speakingHintNote}>
+                            You said the word. Now try the whole sentence.
+                          </Text>
+                        ) : null}
                       </>
                     ) : (
                       /* El microfono vive en el CUERPO, centrado, no en el pie:
@@ -15702,7 +15716,7 @@ export function MobileLibraryShell(args: {
                         <Text style={styles.speakingMicCaption}>
                           {speakingRecorder.isRecording || speakingPhase === "listening"
                             ? "TAP WHEN YOU ARE DONE"
-                            : "TAP AND SAY THE WORD"}
+                            : "TAP AND SAY THE WHOLE SENTENCE"}
                         </Text>
                       </View>
                     )}
@@ -28018,6 +28032,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "900",
     flexShrink: 1,
+  },
+  speakingHintNote: {
+    marginTop: 10,
+    color: "#f8c15c",
+    fontSize: 13,
+    fontWeight: "700",
+    lineHeight: 18,
   },
   speakingErrorText: {
     marginTop: 10,

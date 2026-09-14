@@ -14,9 +14,13 @@ comfortable speaking", "challenged by verb conjugation and spoken language".
 ## 1. Qué es, en dos líneas
 
 Es `fill_blank` dicho en voz alta: la frase de la historia con el hueco, leída
-con su audio, y el usuario dice la palabra que falta (o la frase entera) por el
+con su audio, y el usuario **dice la frase entera con el hueco relleno** por el
 micrófono. Cuenta como acierto si el reconocimiento de voz del sistema oyó la
-palabra.
+palabra **y al menos la mitad del resto de la frase**.
+
+La palabra suelta no basta, y esa es la decisión (usuario, 2026-09-14, tras
+probar la build): decir una palabra aislada no se parece a hablar, que es justo
+lo que pedían los que escribieron pidiendo esto.
 
 Quinto tipo de ejercicio, al lado de `meaning`, `context`, `listening` y
 `match`: **un turno por palabra, dentro de la sesión mixta**. No es un chat.
@@ -30,7 +34,7 @@ Aspecto: diseño **"A+C 3, Ámbar"**, elegido por el usuario entre mockups el
 |---|---|---|
 | 1 | Pista | Fila superior sobre el fondo oscuro: a la izquierda el chip `SAY IT WITH` (fondo `rgba(248,193,92,0.14)`, borde `rgba(248,193,92,0.35)`, etiqueta en `#f8c15c`) con la **traducción en inglés**; a la derecha la pastilla de tiempo con cronómetro (`0:10`, fondo `rgba(255,255,255,0.06)`, texto `#f8c15c` 13 px 900). La palabra en el idioma meta NO se muestra. Sin chip de personaje: ya no pregunta nadie. |
 | 2 | Frase | Tarjeta ámbar (`linear-gradient(160deg, #f8c15c, #e9a23b)`, radio 28, sombra `0 24px 60px rgba(248,193,92,0.30)`) con **solo** la frase: 28 px, 900, `#2a1a05`, y el hueco como ficha en línea (96x38, radio 12, `rgba(255,255,255,0.45)`, borde discontinuo). Dentro, el chip `PLAY AGAIN`. Su audio suena en autoplay: el clip pre-horneado (`clipUrl`) si existe, y si no `POST /api/practice/sentence-tts` con la voz de la historia, que ya cachea en R2. |
-| 3 | Hablar | Botón circular de 112 px en `#f8c15c` con el micro en `#2a1a05`, centrado bajo la tarjeta (no en el pie), con dos anillos que laten y un anillo de progreso de 168 px que se vacía con la cuenta atrás. Debajo, `TAP AND SAY THE WORD`. Al pulsarlo arranca el reconocimiento del sistema en el idioma de la palabra; tope de 12 s con parada automática y `TAP WHEN YOU ARE DONE` para parar antes. |
+| 3 | Hablar | Botón circular de 112 px en `#f8c15c` con el micro en `#2a1a05`, centrado bajo la tarjeta (no en el pie), con dos anillos que laten y un anillo de progreso de 168 px que se vacía con la cuenta atrás. Debajo, `TAP AND SAY THE WHOLE SENTENCE`. Al pulsarlo arranca el reconocimiento del sistema en el idioma de la palabra; tope de 15 s con parada automática y `TAP WHEN YOU ARE DONE` para parar antes. La escucha es CONTINUA: con `continuous: false` el reconocedor cerraba en la primera pausa y una frase entera lleva pausas. |
 | 4 | Resultado | Lo reconocido (`YOU SAID`), la palabra revelada, acierto o fallo con el sonido del contrato de práctica, y la frase completa en texto **con su audio**, que suena sola al revelar. Auto-avance como en los demás tipos. |
 
 **Cuenta atrás de `SPEAKING_ANSWER_SECONDS` = 10 s** (decisión del usuario,
@@ -91,10 +95,20 @@ Sin reconocimiento disponible para ese idioma en el dispositivo: el slot cae a
 - **G3. Voz aprobada y nunca nueva.** El audio es el clip existente o
   `sentence-tts` con la voz de la historia; esa ruta ya cae a la voz aprobada
   del idioma. Cero código nuevo de TTS.
-- **G4. Calificación determinista.** `gradeDeterministic` de
-  `speakingGrading.ts`: `word` o `surface` como palabra completa en el texto
-  reconocido, sin acentos ni puntuación, con soporte multi-palabra. No hay
-  segunda pasada: sin LLM, lo que no casa es fallo.
+- **G4. Calificación determinista, y de la FRASE.** `gradeSentence` de
+  `speakingGrading.ts` mide dos cosas y exige las dos:
+  - **la palabra**: `word` o `surface` como palabra completa en el texto
+    reconocido, sin acentos ni puntuación, con soporte multi-palabra;
+  - **la cobertura**: fracción del RESTO de la frase (sus tokens normalizados,
+    menos los de la palabra objetivo) que aparece en lo reconocido, sin exigir
+    orden. Tiene que llegar a `SPEAKING_MIN_COVERAGE` = **0,5**.
+
+  La mitad y no la frase entera porque el reconocedor del sistema se come
+  palabras cortas y átonas con normalidad; exigir el 100% sería calificar al
+  reconocedor. Sin orden, por lo mismo. Los tokens de una y dos letras NO se
+  filtran: el usuario dice los artículos igual, y quitarlos del denominador
+  haría la mitad más fácil justo en las frases más cortas. No hay segunda
+  pasada: sin LLM, lo que no casa es fallo.
 - **G5. Sin guiones largos** en el copy nuevo.
 
 ## 5. Datos y API
@@ -175,7 +189,8 @@ vacío), `createSpeakingExercise` (null sin `storySlug`, null cuando
 - Sets curados con speaking y edición en Studio.
 - Cambio del gate a `premium`.
 - Más de un slot por sesión mixta y el checkpoint de tema.
-- Decir la frase entera y medir pronunciación: hoy solo se comprueba la palabra.
+- Medir la **pronunciación**: se comprueba qué palabras se dijeron, no cómo
+  sonaron.
 
 ## 9. Coste
 

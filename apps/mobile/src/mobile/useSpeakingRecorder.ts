@@ -16,13 +16,36 @@ import {
  * Lo que aporta este hook sobre el modulo pelado:
  *   - En iOS pide reconocimiento EN EL DISPOSITIVO cuando el sistema lo
  *     ofrece; si no, el del propio sistema. Nunca un servicio nuestro.
- *   - Tope de 12 s con parada automatica. Una respuesta de un turno no dura
- *     mas, y sin tope un micro olvidado abierto se queda escuchando.
- *   - Un solo resultado FINAL por turno (`interimResults: false`), entregado
- *     por callback, y el turno se cierra solo.
+ *   - Tope de 15 s con parada automatica. El ejercicio pide la FRASE entera, y
+ *     una de doce palabras dicha despacio pasa de doce segundos; sin tope, un
+ *     micro olvidado abierto se queda escuchando.
+ *   - Escucha CONTINUA y un solo texto al final. Con `continuous: false` el
+ *     reconocedor cierra en la primera pausa, y una frase entera lleva pausas;
+ *     asi que escucha hasta el tope o hasta que el usuario para, y lo que
+ *     entrega es la union de los finales que haya mandado el sistema.
  */
 
-const MAX_LISTENING_MS = 12000;
+const MAX_LISTENING_MS = 15000;
+
+/**
+ * Los sistemas no se ponen de acuerdo en como mandan los finales: unos reenvian
+ * la frase ENTERA cada vez, cada vez mas larga, y otros mandan un trozo nuevo
+ * por cada pausa. Concatenar a ciegas duplicaria en el primer caso y quedarse
+ * con el ultimo perderia texto en el segundo, asi que se cubren los dos: un
+ * final que ya esta contenido se ignora, y uno que contiene a otro lo sustituye.
+ */
+function mergeFinalTranscripts(parts: string[]): string {
+  const out: string[] = [];
+  for (const raw of parts) {
+    const part = raw.trim();
+    if (!part) continue;
+    if (out.some((prev) => prev.includes(part))) continue;
+    const index = out.findIndex((prev) => part.includes(prev));
+    if (index >= 0) out[index] = part;
+    else out.push(part);
+  }
+  return out.join(" ").trim();
+}
 
 /**
  * Idioma del favorito a locale BCP-47. La variante de la historia no viaja en
@@ -63,6 +86,8 @@ export function useSpeakingRecorder() {
   const mountedRef = useRef(true);
   /** Evita entregar dos veces el mismo turno (result final y luego end). */
   const settledRef = useRef(true);
+  /** Finales recibidos en el turno en curso, antes de unirlos. */
+  const finalsRef = useRef<string[]>([]);
 
   const clearAutoStop = useCallback(() => {
     if (autoStopRef.current) {
@@ -75,36 +100,44 @@ export function useSpeakingRecorder() {
     clearAutoStop();
     settledRef.current = true;
     handlersRef.current = null;
+    finalsRef.current = [];
     if (mountedRef.current) setIsRecording(false);
   }, [clearAutoStop]);
 
   useSpeechRecognitionEvent("result", (event) => {
-    // Solo el FINAL: con `interimResults: false` no deberian llegar parciales,
-    // pero el guard evita calificar a medio dictado si alguna plataforma los
-    // manda igual.
+    // Solo los FINALES: con `interimResults: false` no deberian llegar
+    // parciales, pero el guard evita mezclar medio dictado si alguna
+    // plataforma los manda igual. En escucha continua pueden llegar varios, y
+    // aqui solo se acumulan: el turno no se cierra hasta `end`.
     if (!event.isFinal) return;
     if (settledRef.current) return;
     const transcript = (event.results?.[0]?.transcript ?? "").trim();
-    const handlers = handlersRef.current;
-    finish();
-    if (transcript) handlers?.onFinal(transcript);
-    else handlers?.onFailure("no-speech");
+    if (transcript) finalsRef.current.push(transcript);
   });
+
+  const settleWithWhatWeHave = useCallback(
+    (fallbackCode: string) => {
+      const heard = mergeFinalTranscripts(finalsRef.current);
+      const handlers = handlersRef.current;
+      finish();
+      if (heard) handlers?.onFinal(heard);
+      else handlers?.onFailure(fallbackCode);
+    },
+    [finish]
+  );
 
   useSpeechRecognitionEvent("error", (event) => {
     if (settledRef.current) return;
-    const handlers = handlersRef.current;
-    finish();
-    handlers?.onFailure(event.error ?? "unknown");
+    // Un error tras haber oido algo no tira lo oido: en escucha continua, el
+    // "no-speech" del final de una pausa es corriente.
+    settleWithWhatWeHave(event.error ?? "unknown");
   });
 
   useSpeechRecognitionEvent("end", () => {
-    // El turno acabo sin resultado ni error explicito (silencio, o el usuario
-    // paro antes de que nadie hablara). Cuenta como turno vacio, no como bug.
+    // Fin del turno: por el tope, por `TAP TO SEND` o porque el sistema cerro.
+    // Aqui es donde se entrega lo dicho, unido.
     if (settledRef.current) return;
-    const handlers = handlersRef.current;
-    finish();
-    handlers?.onFailure("no-speech");
+    settleWithWhatWeHave("no-speech");
   });
 
   useEffect(() => {
@@ -114,6 +147,7 @@ export function useSpeakingRecorder() {
       clearAutoStop();
       handlersRef.current = null;
       settledRef.current = true;
+      finalsRef.current = [];
       // Si el usuario sale a mitad del turno, se corta en seco y sin resultado.
       try {
         ExpoSpeechRecognitionModule.abort();
@@ -141,12 +175,16 @@ export function useSpeakingRecorder() {
 
         handlersRef.current = handlers;
         settledRef.current = false;
+        finalsRef.current = [];
         ExpoSpeechRecognitionModule.start({
           lang: localeForSpeaking(language),
-          // Un turno, un resultado. Nada de dictado continuo ni de parciales:
-          // lo unico que se mide es si la palabra estaba.
+          // Sin parciales: lo que se califica es lo que el usuario acabo
+          // diciendo, no el texto a medias que el reconocedor va corrigiendo.
           interimResults: false,
-          continuous: false,
+          // CONTINUA a proposito: el ejercicio pide la frase entera y una
+          // frase lleva pausas. Con `false`, el reconocedor cierra en la
+          // primera y se queda con las dos primeras palabras.
+          continuous: true,
           maxAlternatives: 1,
           // En el dispositivo cuando el sistema lo ofrece para ese idioma; si
           // no, el reconocimiento del propio sistema. En ningun caso algo
@@ -192,6 +230,7 @@ export function useSpeakingRecorder() {
     clearAutoStop();
     settledRef.current = true;
     handlersRef.current = null;
+    finalsRef.current = [];
     if (mountedRef.current) setIsRecording(false);
     try {
       ExpoSpeechRecognitionModule.abort();
