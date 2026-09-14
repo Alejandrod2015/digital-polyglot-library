@@ -21,9 +21,11 @@
  *     propios, que si se conservan.
  *   - Entre 0,5 y 2,5 veces las palabras de la frase. Fuera de esa banda no es
  *     una traduccion: o falta media frase o sobra un comentario.
- *   - No contiene la palabra objetivo en el idioma de origen. Es el fallo mas
- *     probable de todos: dejar sin traducir justo la palabra que el ejercicio
- *     pide.
+ *   - No deja la palabra objetivo SIN traducir. Es el fallo mas probable de
+ *     todos. Con una excepcion: los prestamos que el ingles usa igual
+ *     (`spaghetti`, `barista`, `pizza`) SI pueden aparecer, y se reconocen
+ *     porque la definicion en ingles de la palabra tambien los usa. Ver
+ *     `translationLeavesWordUntranslated`.
  */
 import { config } from "dotenv";
 config({ path: ".env.local" }); config({ path: ".env" });
@@ -33,7 +35,10 @@ import * as path from "path";
 // sello `server-only`, que bajo tsx se resuelve al entry que TIRA. Es el mismo
 // patron que usa `scripts/journeysTable.ts`.
 import { PrismaClient } from "../src/generated/prisma";
-import { sentenceTranslationKey } from "../src/lib/sentenceTranslation";
+import {
+  sentenceTranslationKey,
+  translationLeavesWordUntranslated,
+} from "../src/lib/sentenceTranslation";
 
 const prisma = new PrismaClient();
 
@@ -57,6 +62,8 @@ type PalabraEntrada = {
   word?: unknown;
   sentence?: unknown;
   translation?: unknown;
+  /** Definicion en ingles, tal como la escribe `dumpVocabSentences.ts`. */
+  definition?: unknown;
 };
 
 type HistoriaEntrada = {
@@ -69,10 +76,6 @@ function palabras(texto: string): string[] {
   return t ? t.split(/\s+/) : [];
 }
 
-function sinAcentos(texto: string): string {
-  return texto.normalize("NFD").replace(/\p{M}/gu, "");
-}
-
 /** Caracteres no ASCII de un texto, en minusculas y sin repetir. */
 function noAscii(texto: string): Set<string> {
   const out = new Set<string>();
@@ -82,24 +85,6 @@ function noAscii(texto: string): Set<string> {
   return out;
 }
 
-function contienePalabraCompleta(texto: string, palabra: string): boolean {
-  const tokens = sinAcentos(texto)
-    .toLowerCase()
-    .replace(/[^\p{L}\p{N}\s]/gu, " ")
-    .split(/\s+/)
-    .filter(Boolean);
-  const buscados = sinAcentos(palabra)
-    .toLowerCase()
-    .replace(/[^\p{L}\p{N}\s]/gu, " ")
-    .split(/\s+/)
-    .filter(Boolean);
-  if (buscados.length === 0) return false;
-  for (let i = 0; i <= tokens.length - buscados.length; i += 1) {
-    if (buscados.every((b, j) => tokens[i + j] === b)) return true;
-  }
-  return false;
-}
-
 type Problema = { storySlug: string; word: string; motivo: string };
 
 function revisar(
@@ -107,6 +92,7 @@ function revisar(
   word: string,
   sentence: string,
   translation: string,
+  definition: string,
   vocabDeLaHistoria: Set<string>
 ): Problema[] {
   const fallos: Problema[] = [];
@@ -135,7 +121,7 @@ function revisar(
       di(`largo fuera de banda: ${nDestino} palabras para ${nOrigen} (x${ratio.toFixed(2)})`);
     }
   }
-  if (contienePalabraCompleta(translation, word)) {
+  if (translationLeavesWordUntranslated(translation, word, definition)) {
     di(`la traduccion deja "${word}" sin traducir`);
   }
   return fallos;
@@ -193,6 +179,9 @@ async function main() {
       const sentence = typeof entrada.sentence === "string" ? entrada.sentence.trim() : "";
       const translation =
         typeof entrada.translation === "string" ? entrada.translation.trim() : "";
+      // La definicion en ingles de la palabra: es la que exime a los prestamos.
+      const definition =
+        typeof entrada.definition === "string" ? entrada.definition.trim() : "";
       if (!word) {
         problemas.push({ storySlug, word: "(sin palabra)", motivo: "entrada sin `word`" });
         continue;
@@ -200,7 +189,9 @@ async function main() {
       // Una palabra sin traducir todavia no es un error: el ejecutor puede ir
       // por partes. Simplemente no se guarda.
       if (!translation) continue;
-      problemas.push(...revisar(storySlug, word, sentence, translation, vocabDeLaHistoria));
+      problemas.push(
+        ...revisar(storySlug, word, sentence, translation, definition, vocabDeLaHistoria)
+      );
       mapa[sentenceTranslationKey(word)] = translation;
     }
     if (Object.keys(mapa).length > 0) porHistoria.set(storySlug, mapa);

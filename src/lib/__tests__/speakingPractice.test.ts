@@ -15,6 +15,7 @@ import {
   fillSentenceTranslationBlank,
   resolveSentenceTranslation,
   sentenceTranslationKey,
+  translationLeavesWordUntranslated,
 } from "../sentenceTranslation";
 
 // Este fichero es el GATE de la fila "g4" de docs/rules-inventory.json. El id
@@ -374,5 +375,76 @@ describe("resolveSentenceTranslation: de donde sale la traduccion", () => {
 
   it("la clave de la columna es la misma que casa palabra con ejercicio", () => {
     expect(sentenceTranslationKey("  El Vecino ")).toBe("el vecino");
+  });
+});
+
+describe("translationLeavesWordUntranslated", () => {
+  it("caza la palabra que se quedo sin traducir", () => {
+    // El fallo que la regla existe para cazar: todo traducido menos justo la
+    // palabra que el ejercicio pide.
+    expect(
+      translationLeavesWordUntranslated(
+        "The vecino waves from the balcony every morning.",
+        "vecino",
+        "neighbour, the person who lives next door"
+      )
+    ).toBe(true);
+  });
+
+  it("deja pasar el prestamo que el ingles dice igual", () => {
+    // `spaghetti` en ingles ES `spaghetti`. La regla tal cual obligaba a
+    // escribir "long thin pasta with bolognese sauce", que es peor traduccion.
+    // La definicion en inglés lo demuestra, y es la que exime.
+    expect(
+      translationLeavesWordUntranslated(
+        "Rosa orders spaghetti with ragu at the corner place.",
+        "spaghetti",
+        "Spaghetti; long thin pasta, the everyday shape in this house"
+      )
+    ).toBe(false);
+    expect(
+      translationLeavesWordUntranslated(
+        "The barista already knows her order by heart.",
+        "barista",
+        "barista, the person who makes the coffee"
+      )
+    ).toBe(false);
+  });
+
+  it("sin definicion que lo respalde, sigue siendo un descuido", () => {
+    expect(
+      translationLeavesWordUntranslated("She orders spaghetti at noon.", "spaghetti", "")
+    ).toBe(true);
+    expect(
+      translationLeavesWordUntranslated("She orders spaghetti at noon.", "spaghetti", null)
+    ).toBe(true);
+    // Una definicion que NO usa la palabra no exime.
+    expect(
+      translationLeavesWordUntranslated(
+        "The vecino waves every morning.",
+        "vecino",
+        "neighbour, the person next door"
+      )
+    ).toBe(true);
+  });
+
+  it("no le afecta la puntuacion ni las mayusculas de la definicion", () => {
+    expect(
+      translationLeavesWordUntranslated(
+        "They shared a pizza on the roof.",
+        "pizza",
+        "Pizza. The round one, shared."
+      )
+    ).toBe(false);
+  });
+
+  it("la traduccion que SI traduce la palabra no se toca", () => {
+    expect(
+      translationLeavesWordUntranslated(
+        "The neighbour waves from the balcony every morning.",
+        "vecino",
+        "neighbour, the person next door"
+      )
+    ).toBe(false);
   });
 });

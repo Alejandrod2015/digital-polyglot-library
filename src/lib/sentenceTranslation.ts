@@ -85,3 +85,49 @@ export function resolveSentenceTranslation(params: {
 export function sentenceTranslationKey(word: string): string {
   return (word ?? "").trim().toLowerCase();
 }
+
+function sinAcentosMinusculas(value: string): string {
+  return (value ?? "")
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function llevaPalabraCompleta(texto: string, palabra: string): boolean {
+  const tokens = sinAcentosMinusculas(texto).split(" ").filter(Boolean);
+  const buscados = sinAcentosMinusculas(palabra).split(" ").filter(Boolean);
+  if (buscados.length === 0 || tokens.length < buscados.length) return false;
+  for (let i = 0; i <= tokens.length - buscados.length; i += 1) {
+    if (buscados.every((b, j) => tokens[i + j] === b)) return true;
+  }
+  return false;
+}
+
+/**
+ * Comprueba si una traduccion dejo la palabra objetivo SIN traducir.
+ *
+ * Es el fallo mas probable al traducir una frase de practica: se traduce todo
+ * menos justo la palabra que el ejercicio pide. Pero la regla tal cual
+ * rechazaba tambien los prestamos que el ingles usa igual (`spaghetti`,
+ * `tagliatelle`, `barista`, `bar`, `pizza`), y para pasar el gate habia que
+ * escribir rodeos como "long thin pasta with bolognese sauce", que es PEOR
+ * traduccion que la palabra correcta.
+ *
+ * La salida es la DEFINICION en ingles de la propia palabra, que ya existe y ya
+ * la reviso alguien: si la definicion en ingles usa esa misma forma
+ * ("Spaghetti; long thin pasta..."), entonces en ingles se dice asi y la
+ * traduccion puede usarla. Si no aparece ahi, sigue siendo un descuido.
+ */
+export function translationLeavesWordUntranslated(
+  translation: string,
+  word: string,
+  definition?: string | null
+): boolean {
+  if (!llevaPalabraCompleta(translation, word)) return false;
+  // Prestamo: el ingles lo dice igual, y la definicion en ingles lo demuestra.
+  if (llevaPalabraCompleta(definition ?? "", word)) return false;
+  return true;
+}
