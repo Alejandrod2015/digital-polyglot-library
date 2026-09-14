@@ -148,6 +148,34 @@ describe("createSpeakingExercise", () => {
     expect(createSpeakingExercise(favorito(), pool())).not.toBeNull();
   });
 
+  it("acepta una oracion de 15 palabras", () => {
+    // Exactamente el tope: entra.
+    const quince = "El vecino baja cada tarde con su perro y saluda a todos desde el portal";
+    expect(quince.trim().split(/\s+/).length).toBe(15);
+    expect(createSpeakingExercise(favorito({ exampleSentence: quince }), pool())).not.toBeNull();
+  });
+
+  it("devuelve null con una oracion de 16 palabras", () => {
+    // Una palabra por encima del tope: fuera. El turno hablado pide decirla de
+    // un tiron, y el tope de caracteres solo medía la pantalla.
+    const dieciseis =
+      "El vecino baja cada tarde con su perro y saluda a todos desde el portal viejo";
+    expect(dieciseis.trim().split(/\s+/).length).toBe(16);
+    expect(createSpeakingExercise(favorito({ exampleSentence: dieciseis }), pool())).toBeNull();
+  });
+
+  it("devuelve null sin oracion limpia, por larga que sea la de ejemplo", () => {
+    // Varias oraciones y mas de 100 caracteres: no hay UNA oracion limpia que
+    // decir. Sin frase de reserva; antes se caia a `getContextSentence` y de
+    // ahi salian las frases de 40 palabras que vio el usuario.
+    const parrafo =
+      "El vecino saluda desde el balcon cada manana. Despues baja con el perro " +
+      "y se queda un rato en el portal hablando con quien pase por delante, " +
+      "aunque llueva y aunque nadie le haya preguntado nada de nada.";
+    expect(parrafo.length).toBeGreaterThan(100);
+    expect(createSpeakingExercise(favorito({ exampleSentence: parrafo }), pool())).toBeNull();
+  });
+
   it("devuelve null sin traduccion, que es la pista en pantalla", () => {
     expect(createSpeakingExercise(favorito({ translation: "" }), pool())).toBeNull();
   });

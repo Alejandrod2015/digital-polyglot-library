@@ -556,6 +556,25 @@ function getDistractorMeanings(
 // palabra para recuperar el balance de modos.
 const MAX_EXERCISE_SENTENCE_CHARS = 100;
 
+/**
+ * Tope de palabras de la frase del ejercicio HABLADO, y solo del hablado.
+ *
+ * El tope de 100 caracteres de arriba mide la pantalla; este mide el aliento.
+ * Una frase que se lee bien en tres lineas puede ser imposible de decir de un
+ * tiron, y el turno hablado pide justamente eso.
+ *
+ * La base (medido el 2026-09-14 sobre 681 favoritos de journey): mediana 13
+ * palabras, p75 21. En la cuenta del usuario aparecieron frases de 42 y 37, que
+ * es lo que destapo el problema. Con 15 entra la mitad larga de la mediana y se
+ * queda fuera el p75; la palabra que no llega no se pierde, la recoge otro modo.
+ */
+const SPEAKING_MAX_WORDS = 15;
+
+function wordCount(sentence: string): number {
+  const trimmed = sentence.trim();
+  return trimmed ? trimmed.split(/\s+/).length : 0;
+}
+
 // REGLA (usuario, 2026-07-24): context/meaning se arma SOLO si la exampleSentence
 // ya es UNA sola oración completa y limpia dentro del tope, SIN necesidad de
 // cortar/extraer nada (nada de splitting heurístico para rescatar un trozo). Si
@@ -923,8 +942,15 @@ export function createSpeakingExercise(
   // La frase COMPLETA, la que se ensena en el fallo. `fill_blank` guarda en
   // `sentence` la version con el hueco, asi que la entera se recompone del
   // mismo sitio del que la saca el.
+  //
+  // Sin frase de reserva a proposito: si no hay UNA oracion limpia, el turno
+  // hablado no existe para esta palabra y el slot lo rellena otro modo. Caer a
+  // `getContextSentence` devolvia el fragmento entero, y de ahi salian las
+  // frases kilometricas.
   const sentence = singleCleanSentence(item);
   if (!sentence) return null;
+  // Y aunque sea limpia, tiene que poder decirse de un tiron.
+  if (wordCount(sentence) > SPEAKING_MAX_WORDS) return null;
 
   return {
     type: "speaking",

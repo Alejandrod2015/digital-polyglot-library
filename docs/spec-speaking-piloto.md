@@ -63,8 +63,15 @@ Sin reconocimiento disponible para ese idioma en el dispositivo: el slot cae a
   de la historia) y `createFillBlankExercise` ya rechaza frases donde la
   palabra aparece dos veces o sin forma limpia. Si el builder de `fill_blank`
   devuelve `null` para el ítem, tampoco hay speaking para él.
-- **G2. Solo palabras con frase de historia.** Sin `storySlug` o sin frase
-  limpia no hay ejercicio (`createSpeakingExercise` devuelve `null`).
+- **G2. Solo palabras con frase de historia, y corta.** Sin `storySlug` o sin
+  UNA oración limpia no hay ejercicio (`createSpeakingExercise` devuelve
+  `null`); no hay frase de reserva, porque caer a `getContextSentence` devolvía
+  el fragmento entero. Y aunque la oración sea limpia, más de
+  **`SPEAKING_MAX_WORDS` = 15 palabras** también es `null`: el tope de 100
+  caracteres mide la pantalla y este mide el aliento, que es lo que pide decir
+  la frase de un tirón. Base medida el 2026-09-14 sobre 681 favoritos de
+  journey: mediana 13 palabras, p75 21; al usuario le salieron frases de 42 y
+  de 37. La palabra que no llega no se pierde: la recoge otro modo.
 - **G3. Voz aprobada y nunca nueva.** El audio es el clip existente o
   `sentence-tts` con la voz de la historia; esa ruta ya cae a la voz aprobada
   del idioma. Cero código nuevo de TTS.
