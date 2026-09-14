@@ -1,5 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Audio, InterruptionModeIOS } from "expo-av";
 import {
+  AVAudioSessionCategory,
+  AVAudioSessionCategoryOptions,
+  AVAudioSessionMode,
   ExpoSpeechRecognitionModule,
   useSpeechRecognitionEvent,
 } from "expo-speech-recognition";
@@ -23,7 +27,37 @@ import {
  *     reconocedor cierra en la primera pausa, y una frase entera lleva pausas;
  *     asi que escucha hasta el tope o hasta que el usuario para, y lo que
  *     entrega es la union de los finales que haya mandado el sistema.
+ *   - DEVUELVE la sesion de audio de iOS al modo de reproduccion en cuanto
+ *     termina. Ver `restaurarModoDeReproduccion`.
  */
+
+/**
+ * La invariante de audio de la app, y por que vive aqui.
+ *
+ * Toda ruta de reproduccion de la practica fija el modo ANTES de sonar con
+ * `allowsRecordingIOS: false`; el comentario de `playPracticePerfectChime` en
+ * `MobileLibraryShell` lo dice y apunta a este fichero. Reconocer voz rompe esa
+ * invariante desde fuera: iOS pasa la sesion a `playAndRecord` y enruta la
+ * SALIDA al auricular, asi que despues de grabar una vez todo suena bajo y
+ * tapado hasta que alguien la devuelve.
+ *
+ * El prototipo de junio lo hacia a mano porque grababa el mismo; la version que
+ * usa el reconocedor del sistema lo dejo de hacer, dando por supuesto que el
+ * modulo se encargaba. No se encarga: sale de `start` con la sesion en modo
+ * grabacion y ahi la deja.
+ *
+ * Asi que se hacen las dos cosas. Al arrancar se le pide al reconocedor que use
+ * el ALTAVOZ aunque este en `playAndRecord`, y al terminar se restaura el modo
+ * de reproduccion de siempre. Lo segundo es lo que arregla el fallo; lo primero
+ * evita que suene por el auricular durante la propia escucha.
+ */
+async function restaurarModoDeReproduccion(): Promise<void> {
+  await Audio.setAudioModeAsync({
+    playsInSilentModeIOS: true,
+    allowsRecordingIOS: false,
+    interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+  });
+}
 
 const MAX_LISTENING_MS = 15000;
 
@@ -88,6 +122,8 @@ export function useSpeakingRecorder() {
   const settledRef = useRef(true);
   /** Finales recibidos en el turno en curso, antes de unirlos. */
   const finalsRef = useRef<string[]>([]);
+  /** La restauracion del modo de audio en curso, para poder esperarla. */
+  const restauracionRef = useRef<Promise<void> | null>(null);
 
   const clearAutoStop = useCallback(() => {
     if (autoStopRef.current) {
@@ -102,6 +138,10 @@ export function useSpeakingRecorder() {
     handlersRef.current = null;
     finalsRef.current = [];
     if (mountedRef.current) setIsRecording(false);
+    // SIEMPRE, y antes de que suene nada: el turno acaba devolviendo la salida
+    // al altavoz. Sin esto, la frase del ejercicio siguiente sale por el
+    // auricular.
+    restauracionRef.current = restaurarModoDeReproduccion().catch(() => {});
   }, [clearAutoStop]);
 
   useSpeechRecognitionEvent("result", (event) => {
@@ -120,8 +160,16 @@ export function useSpeakingRecorder() {
       const heard = mergeFinalTranscripts(finalsRef.current);
       const handlers = handlersRef.current;
       finish();
-      if (heard) handlers?.onFinal(heard);
-      else handlers?.onFailure(fallbackCode);
+      // Calificar suena: el acierto o el fallo, y luego la frase de la
+      // revelacion. Se espera a que el modo este restaurado o esos dos salen
+      // por el auricular, que es el mismo fallo por otra puerta.
+      const seguir = () => {
+        if (heard) handlers?.onFinal(heard);
+        else handlers?.onFailure(fallbackCode);
+      };
+      const pendiente = restauracionRef.current;
+      if (pendiente) void pendiente.then(seguir, seguir);
+      else seguir();
     },
     [finish]
   );
@@ -154,6 +202,7 @@ export function useSpeakingRecorder() {
       } catch {
         // El modulo no estaba escuchando; no hay nada que abortar.
       }
+      void restaurarModoDeReproduccion().catch(() => {});
     };
   }, [clearAutoStop]);
 
@@ -190,6 +239,19 @@ export function useSpeakingRecorder() {
           // no, el reconocimiento del propio sistema. En ningun caso algo
           // nuestro.
           requiresOnDeviceRecognition: ExpoSpeechRecognitionModule.supportsOnDeviceRecognition(),
+          // iOS enruta `playAndRecord` al AURICULAR por defecto. `defaultToSpeaker`
+          // la manda al altavoz, que es por donde el usuario espera oir la app;
+          // `measurement` desactiva el procesado de voz, que es lo que quiere un
+          // reconocedor. Esto arregla la escucha; la salida DESPUES del turno la
+          // arregla `restaurarModoDeReproduccion`.
+          iosCategory: {
+            category: AVAudioSessionCategory.playAndRecord,
+            categoryOptions: [
+              AVAudioSessionCategoryOptions.defaultToSpeaker,
+              AVAudioSessionCategoryOptions.allowBluetooth,
+            ],
+            mode: AVAudioSessionMode.measurement,
+          },
         });
         if (mountedRef.current) setIsRecording(true);
 
@@ -209,6 +271,7 @@ export function useSpeakingRecorder() {
         handlersRef.current = null;
         settledRef.current = true;
         if (mountedRef.current) setIsRecording(false);
+        restauracionRef.current = restaurarModoDeReproduccion().catch(() => {});
         return { ok: false, reason: "failed" };
       }
     },
@@ -237,6 +300,9 @@ export function useSpeakingRecorder() {
     } catch {
       // No estaba escuchando.
     }
+    // Salir del ejercicio o pausar tampoco puede dejar la sesion en modo
+    // grabacion: el siguiente sonido de la app sonaria por el auricular.
+    restauracionRef.current = restaurarModoDeReproduccion().catch(() => {});
   }, [clearAutoStop]);
 
   // Memoizado: el objeto entra en las dependencias de effects de la pantalla,
