@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "die Karotte,das Gemüse,der Abend,der Wein",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "die Karotte",
+     "answer": "a carrot",
+     "options": [
+      "a carrot",
+      "vegetables",
+      "the evening",
+      "wine"
+     ]
+    },
+    {
+     "word": "das Gemüse",
+     "answer": "vegetables",
+     "options": [
+      "a carrot",
+      "vegetables",
+      "the evening",
+      "wine"
+     ]
+    },
+    {
+     "word": "der Abend",
+     "answer": "the evening",
+     "options": [
+      "a carrot",
+      "vegetables",
+      "the evening",
+      "wine"
+     ]
+    },
+    {
+     "word": "der Wein",
+     "answer": "wine",
+     "options": [
+      "a carrot",
+      "vegetables",
+      "the evening",
+      "wine"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schmatzt",
+  "sentence": "Er isst zwei Teller und [[schmatzt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "smacks his lips",
+   "options": [
+    "smacks his lips",
+    "cries",
+    "sings",
+    "whispers"
+   ],
+   "audioClip": {
+    "storySlug": "sechs-kleine-suppen",
+    "storySource": "user",
+    "sentence": "Er isst zwei Teller und schmatzt.",
+    "targetWord": "schmatzt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Suppen",
+  "sentence": "Wir kochen sechs kleine [[Suppen]]”, sagt die Köchin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "soups",
+   "options": [
+    "soups",
+    "cakes",
+    "salads",
+    "breads"
+   ],
+   "audioClip": {
+    "storySlug": "sechs-kleine-suppen",
+    "storySource": "user",
+    "sentence": "Wir kochen sechs kleine Suppen”, sagt die Köchin.",
+    "targetWord": "Suppen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gleich",
+  "sentence": "“Aber die Gäste kommen doch [[gleich]]”, antwortet sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "soon",
+   "options": [
+    "soon",
+    "never",
+    "late",
+    "tomorrow"
+   ],
+   "audioClip": {
+    "storySlug": "sechs-kleine-suppen",
+    "storySource": "user",
+    "sentence": "“Aber die Gäste kommen doch gleich”, antwortet sie.",
+    "targetWord": "gleich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Kräutern",
+  "sentence": "Die Köchin würzt mit [[Kräutern]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "herbs",
+   "options": [
+    "herbs",
+    "salt",
+    "water",
+    "sugar"
+   ],
+   "audioClip": {
+    "storySlug": "sechs-kleine-suppen",
+    "storySource": "user",
+    "sentence": "Die Köchin würzt mit Kräutern.",
+    "targetWord": "Kräutern",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "klappern",
+  "sentence": "Die Löffel [[klappern]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clatter",
+   "options": [
+    "clatter",
+    "shine",
+    "break",
+    "sing"
+   ],
+   "audioClip": {
+    "storySlug": "sechs-kleine-suppen",
+    "storySource": "user",
+    "sentence": "Die Löffel klappern.",
+    "targetWord": "klappern",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "müde",
+  "sentence": "Sie ist [[müde]], aber froh.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tired",
+   "options": [
+    "tired",
+    "hungry",
+    "cold",
+    "angry"
+   ],
+   "audioClip": {
+    "storySlug": "sechs-kleine-suppen",
+    "storySource": "user",
+    "sentence": "Sie ist müde, aber froh.",
+    "targetWord": "müde",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "froh",
+  "sentence": "Sie ist müde, aber [[froh]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "happy",
+   "options": [
+    "happy",
+    "sad",
+    "tired",
+    "bored"
+   ],
+   "audioClip": {
+    "storySlug": "sechs-kleine-suppen",
+    "storySource": "user",
+    "sentence": "Sie ist müde, aber froh.",
+    "targetWord": "froh",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hungrig",
+  "sentence": "Alle sind [[hungrig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hungry",
+   "options": [
+    "hungry",
+    "tired",
+    "full",
+    "cold"
+   ],
+   "audioClip": {
+    "storySlug": "sechs-kleine-suppen",
+    "storySource": "user",
+    "sentence": "Alle sind hungrig.",
+    "targetWord": "hungrig",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "passen",
+  "sentence": "Die Löffel [[passen]] nicht zusammen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "match",
+   "options": [
+    "match",
+    "shine",
+    "break",
+    "fall"
+   ],
+   "audioClip": {
+    "storySlug": "sechs-kleine-suppen",
+    "storySource": "user",
+    "sentence": "Die Löffel passen nicht zusammen.",
+    "targetWord": "passen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "verschieden",
+  "sentence": "Die Teller sind alle [[verschieden]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "different",
+   "options": [
+    "different",
+    "broken",
+    "clean",
+    "empty"
+   ],
+   "audioClip": {
+    "storySlug": "sechs-kleine-suppen",
+    "storySource": "user",
+    "sentence": "Die Teller sind alle verschieden.",
+    "targetWord": "verschieden",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lecker",
+  "sentence": "“Die Suppe ist [[lecker]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tasty",
+   "options": [
+    "tasty",
+    "cold",
+    "cheap",
+    "bad"
+   ],
+   "audioClip": {
+    "storySlug": "sechs-kleine-suppen",
+    "storySource": "user",
+    "sentence": "“Die Suppe ist lecker.",
+    "targetWord": "lecker",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "besser",
+  "sentence": "Wie früher, nur [[besser]]”, meint er.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "better",
+   "options": [
+    "better",
+    "worse",
+    "cheaper",
+    "colder"
+   ],
+   "audioClip": {
+    "storySlug": "sechs-kleine-suppen",
+    "storySource": "user",
+    "sentence": "Wie früher, nur besser”, meint er.",
+    "targetWord": "besser",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "satt",
+  "sentence": "Alle sind [[satt]] und zufrieden.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "full",
+   "options": [
+    "full",
+    "hungry",
+    "tired",
+    "sad"
+   ],
+   "audioClip": {
+    "storySlug": "sechs-kleine-suppen",
+    "storySource": "user",
+    "sentence": "Alle sind satt und zufrieden.",
+    "targetWord": "satt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "schneidet",
+  "sentence": "Sie _____ die Zwiebeln.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schneidet",
+   "options": [
+    "schneidet",
+    "würzt",
+    "kocht",
+    "sucht"
+   ],
+   "translation": "She _____ the onions.",
+   "optionTranslations": [
+    "cuts",
+    "seasons",
+    "cooks",
+    "looks for"
+   ],
+   "audioClip": {
+    "storySlug": "sechs-kleine-suppen",
+    "storySource": "user",
+    "sentence": "Sie schneidet die Zwiebeln.",
+    "targetWord": "schneidet",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "würzt",
+  "sentence": "Die Köchin _____ mit Kräutern.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "würzt",
+   "options": [
+    "würzt",
+    "schneidet",
+    "deckt",
+    "kocht"
+   ],
+   "translation": "The cook _____ with herbs.",
+   "optionTranslations": [
+    "seasons",
+    "cuts",
+    "sets the table",
+    "cooks"
+   ],
+   "audioClip": {
+    "storySlug": "sechs-kleine-suppen",
+    "storySource": "user",
+    "sentence": "Die Köchin würzt mit Kräutern.",
+    "targetWord": "würzt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "deckt",
+  "sentence": "Sie _____ den Tisch mit zehn Tellern.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "deckt",
+   "options": [
+    "deckt",
+    "sucht",
+    "würzt",
+    "schneidet"
+   ],
+   "translation": "She _____ the table with ten plates.",
+   "optionTranslations": [
+    "sets",
+    "looks for",
+    "seasons",
+    "cuts"
+   ],
+   "audioClip": {
+    "storySlug": "sechs-kleine-suppen",
+    "storySource": "user",
+    "sentence": "Sie deckt den Tisch mit zehn Tellern.",
+    "targetWord": "deckt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

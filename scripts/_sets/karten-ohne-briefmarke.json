@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "die Grafikerin,das Viertel,der Koch,die Schublade",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "die Grafikerin",
+     "answer": "a female graphic designer",
+     "options": [
+      "a female graphic designer",
+      "a city district",
+      "a cook",
+      "a drawer"
+     ]
+    },
+    {
+     "word": "das Viertel",
+     "answer": "a city district",
+     "options": [
+      "a female graphic designer",
+      "a city district",
+      "a cook",
+      "a drawer"
+     ]
+    },
+    {
+     "word": "der Koch",
+     "answer": "a cook",
+     "options": [
+      "a female graphic designer",
+      "a city district",
+      "a cook",
+      "a drawer"
+     ]
+    },
+    {
+     "word": "die Schublade",
+     "answer": "a drawer",
+     "options": [
+      "a female graphic designer",
+      "a city district",
+      "a cook",
+      "a drawer"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sitzt",
+  "sentence": "Sie [[sitzt]] in einer alten Küche im Viertel.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sits",
+   "options": [
+    "sits",
+    "stands",
+    "walks",
+    "sleeps"
+   ],
+   "audioClip": {
+    "storySlug": "karten-ohne-briefmarke",
+    "storySource": "user",
+    "sentence": "Sie sitzt in einer alten Küche im Viertel.",
+    "targetWord": "sitzt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "kalt",
+  "sentence": "Ihre Hände sind [[kalt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cold",
+   "options": [
+    "cold",
+    "warm",
+    "wet",
+    "small"
+   ],
+   "audioClip": {
+    "storySlug": "karten-ohne-briefmarke",
+    "storySource": "user",
+    "sentence": "Ihre Hände sind kalt.",
+    "targetWord": "kalt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bringt",
+  "sentence": "Er [[bringt]] zwei Tassen Tee.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "brings",
+   "options": [
+    "brings",
+    "sells",
+    "hides",
+    "breaks"
+   ],
+   "audioClip": {
+    "storySlug": "karten-ohne-briefmarke",
+    "storySource": "user",
+    "sentence": "Er bringt zwei Tassen Tee.",
+    "targetWord": "bringt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "erste",
+  "sentence": "Er nimmt zuerst die [[erste]] Karte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "first",
+   "options": [
+    "first",
+    "last",
+    "second",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "karten-ohne-briefmarke",
+    "storySource": "user",
+    "sentence": "Er nimmt zuerst die erste Karte.",
+    "targetWord": "erste",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "voll",
+  "sentence": "Die Schachtel ist [[voll]] mit Postkarten.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "full",
+   "options": [
+    "full",
+    "empty",
+    "old",
+    "heavy"
+   ],
+   "audioClip": {
+    "storySlug": "karten-ohne-briefmarke",
+    "storySource": "user",
+    "sentence": "Die Schachtel ist voll mit Postkarten.",
+    "targetWord": "voll",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Postkarten",
+  "sentence": "Die Schachtel ist voll mit [[Postkarten]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "postcards",
+   "options": [
+    "postcards",
+    "photos",
+    "books",
+    "letters"
+   ],
+   "audioClip": {
+    "storySlug": "karten-ohne-briefmarke",
+    "storySource": "user",
+    "sentence": "Die Schachtel ist voll mit Postkarten.",
+    "targetWord": "Postkarten",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Briefmarke",
+  "sentence": "Keine Karte hat eine [[Briefmarke]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stamp",
+   "options": [
+    "stamp",
+    "address",
+    "name",
+    "date"
+   ],
+   "audioClip": {
+    "storySlug": "karten-ohne-briefmarke",
+    "storySource": "user",
+    "sentence": "Keine Karte hat eine Briefmarke.",
+    "targetWord": "Briefmarke",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "laut",
+  "sentence": "Er liest [[laut]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "aloud",
+   "options": [
+    "aloud",
+    "quietly",
+    "slowly",
+    "badly"
+   ],
+   "audioClip": {
+    "storySlug": "karten-ohne-briefmarke",
+    "storySource": "user",
+    "sentence": "Er liest laut.",
+    "targetWord": "laut",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rot",
+  "sentence": "Sie wird [[rot]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "red",
+   "options": [
+    "red",
+    "pale",
+    "cold",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "karten-ohne-briefmarke",
+    "storySource": "user",
+    "sentence": "Sie wird rot.",
+    "targetWord": "rot",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Jacke",
+  "sentence": "Sie steckt die Hände in die [[Jacke]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "jacket",
+   "options": [
+    "jacket",
+    "bag",
+    "box",
+    "drawer"
+   ],
+   "audioClip": {
+    "storySlug": "karten-ohne-briefmarke",
+    "storySource": "user",
+    "sentence": "Sie steckt die Hände in die Jacke.",
+    "targetWord": "Jacke",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nie",
+  "sentence": "Ich schicke sie [[nie]]”, antwortet sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "never",
+   "options": [
+    "never",
+    "always",
+    "often",
+    "sometimes"
+   ],
+   "audioClip": {
+    "storySlug": "karten-ohne-briefmarke",
+    "storySource": "user",
+    "sentence": "Ich schicke sie nie”, antwortet sie.",
+    "targetWord": "nie",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "weiß",
+  "sentence": "“Ich [[weiß]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "know",
+   "options": [
+    "know",
+    "forget",
+    "ask",
+    "hope"
+   ],
+   "audioClip": {
+    "storySlug": "karten-ohne-briefmarke",
+    "storySource": "user",
+    "sentence": "“Ich weiß.",
+    "targetWord": "weiß",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "warm",
+  "sentence": "Ihr Tee ist [[warm]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "warm",
+   "options": [
+    "warm",
+    "cold",
+    "sweet",
+    "strong"
+   ],
+   "audioClip": {
+    "storySlug": "karten-ohne-briefmarke",
+    "storySource": "user",
+    "sentence": "Ihr Tee ist warm.",
+    "targetWord": "warm",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "schicke",
+  "sentence": "Ich _____ sie nie”, antwortet sie.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schicke",
+   "options": [
+    "schicke",
+    "lese",
+    "finde",
+    "kaufe"
+   ],
+   "translation": "I never _____ them,\" she answers.",
+   "optionTranslations": [
+    "send",
+    "read",
+    "find",
+    "buy"
+   ],
+   "audioClip": {
+    "storySlug": "karten-ohne-briefmarke",
+    "storySource": "user",
+    "sentence": "Ich schicke sie nie”, antwortet sie.",
+    "targetWord": "schicke",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "atmet",
+  "sentence": "Sie _____ tief.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "atmet",
+   "options": [
+    "atmet",
+    "lacht",
+    "weint",
+    "schläft"
+   ],
+   "translation": "She _____ deeply.",
+   "optionTranslations": [
+    "breathes",
+    "laughs",
+    "cries",
+    "sleeps"
+   ],
+   "audioClip": {
+    "storySlug": "karten-ohne-briefmarke",
+    "storySource": "user",
+    "sentence": "Sie atmet tief.",
+    "targetWord": "atmet",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "bleiben",
+  "sentence": "“Die Karten _____ hier bei mir”, sagt er.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bleiben",
+   "options": [
+    "bleiben",
+    "liegen",
+    "stehen",
+    "warten"
+   ],
+   "translation": "The cards _____ here with me,\" he says.",
+   "optionTranslations": [
+    "stay",
+    "lie",
+    "stand",
+    "wait"
+   ],
+   "audioClip": {
+    "storySlug": "karten-ohne-briefmarke",
+    "storySource": "user",
+    "sentence": "“Die Karten bleiben hier bei mir”, sagt er.",
+    "targetWord": "bleiben",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

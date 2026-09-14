@@ -1,0 +1,73 @@
+import json
+d=json.load(open("scripts/_deA0Friends/t2-texts.json"))
+V=lambda t,w,s,df: {"type":t,"word":w,"surface":s,"definition":df}
+d[0]["synopsis"]="Jan's fridge is full of photos, and Anna is in none of them. A woman with glasses stands next to Jan in every picture. Then Nele comes in."
+d[0]["vocab"]=[
+ V("noun","der Kühlschrank","Kühlschrank","A fridge; the cold box in a kitchen for food."),
+ V("adverb","oben","oben","Upstairs; on a higher floor of the house."),
+ V("verb","kochen","kocht","To cook; to make hot food for people."),
+ V("verb","suchen","sucht","To look for something you want to find."),
+ V("noun","das Gesicht","Gesicht","A face; the front of your head."),
+ V("preposition","neben","neben","Next to; at the side of someone."),
+ V("noun","der Bauch","Bauch","The belly; the soft front part below your chest."),
+ V("adjective","hart","hart","Hard; tight and not soft at all."),
+ V("noun","der Platz","Platz","A place; the spot where a person belongs."),
+ V("noun","die Tür","Tür","A door; you open it to go into a room."),
+ V("noun","die Fotografin","Fotografin","A female photographer; she takes pictures as her job."),
+ V("adjective","rund","runde","Round; shaped like a circle."),
+ V("verb","rufen","ruft","To call out; to say something loudly."),
+ V("adverb","gern","gern","Gladly; with pleasure, because you like it."),
+ V("adverb","immer","immer","Always; every time, again and again."),
+ V("adverb","endlich","Endlich","At last; after a long time of waiting."),
+ V("verb","umarmen","umarmt","To hug; to put your arms around someone."),
+ V("verb","fehlen","fehlst","To be missing; not to be there."),
+ V("verb","antworten","antwortet","To answer; to say something back to a question."),
+ V("verb","hängen","hängt","To hang; to put something up on a wall or door."),
+]
+d[1]["synopsis"]="Nele finds an old photo of Anna at twenty, with big glasses and long hair. Now Nele wants a new photo of Anna for the fridge."
+d[1]["vocab"]=[
+ V("verb","liegen","liegt","To lie; to rest flat on a table."),
+ V("number","zwanzig","zwanzig","Twenty; the number after nineteen."),
+ V("adjective","groß","große","Big; large, not small."),
+ V("noun","die Brille","Brille","Glasses; you wear them to see better."),
+ V("adjective","blond","blond","Blond; with light yellow hair."),
+ V("noun","der Bart","Bart","A beard; hair on a man's chin and cheeks."),
+ V("noun","der Tisch","Tisch","A table; you eat or put things on it."),
+ V("verb","brauchen","brauche","To need; to have to have something."),
+ V("adjective","wunderbar","wunderbar","Wonderful; very, very good."),
+ V("number","zehn","zehn","Ten; the number after nine."),
+ V("verb","holen","holt","To fetch; to go and get something."),
+ V("adjective","heiß","heiß","Hot; very warm, here from shame."),
+ V("adjective","jung","jung","Young; not old, at the start of life."),
+ V("noun","die Falte","Falten","A wrinkle; a small line in the skin."),
+ V("noun","das Auge","Augen","An eye; you see with your eyes."),
+ V("adverb","bitte","bitte","Please; a polite word when you ask."),
+ V("adjective","schön","schön","Beautiful; nice to look at."),
+ V("verb","schließen","schließt","To close; to shut your eyes or a door."),
+ V("verb","lachen","lacht","To laugh; to make a happy sound."),
+ V("adverb","schnell","schnell","Quickly; fast, in a short time."),
+]
+d[2]["synopsis"]="Anna buys a frame for Jan. She has two photos: an old one of Anna and Jan alone, and a new one with Nele. The frame holds only one."
+d[2]["vocab"]=[
+ V("noun","der Rahmen","Rahmen","A frame; the border you put around a photo."),
+ V("verb","schauen","schaut","To look; to turn your eyes to something."),
+ V("verb","kaufen","kauft","To buy; to pay money for something."),
+ V("adjective","allein","allein","Alone; with nobody else there."),
+ V("adjective","zweite","zweite","Second; the one after the first."),
+ V("adjective","neu","neu","New; not old, from now."),
+ V("preposition","zwischen","zwischen","Between; in the middle of two people."),
+ V("noun","die Treppe","Treppe","The stairs; the steps between floors of a house."),
+ V("noun","das Herz","Herz","The heart; here, where you feel love and pain."),
+ V("adjective","schwer","schwer","Heavy; here, sad and hard to carry."),
+ V("noun","das Knie","Knie","The knee; the middle joint of your leg."),
+ V("adverb","warum","Warum","Why; the word to ask for a reason."),
+ V("adverb","lange","lange","For a long time; not just a short moment."),
+ V("pronoun","welcher","Welches","Which; the word to ask about one of several."),
+ V("verb","wollen","willst","To want; to wish to have or do something."),
+ V("verb","entscheiden","entscheidest","To decide; to choose one thing after thinking."),
+ V("verb","stecken","steckt","To put something inside something else."),
+ V("number","drei","drei","Three; the number after two."),
+ V("adverb","jetzt","Jetzt","Now; at this moment."),
+ V("adverb","davor","davor","In front of it; before that thing."),
+]
+json.dump(d,open("scripts/_deA0Friends/t2-data.json","w"),ensure_ascii=False,indent=1)

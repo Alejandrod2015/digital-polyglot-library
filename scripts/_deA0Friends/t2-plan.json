@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "germany",
+  "registro": "calido con pinchazo: risas delante de la nevera y una envidia pequena que nadie dice",
+  "espina": "Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.",
+  "recursos": "A0: repeticion ritmica (el primer foto es viejo, el segundo es nuevo), contraste con aber, imagen concreta (tripa dura, ojos cerrados, marco en la pared)",
+  "historias": [
+    { "slot": "0", "quiere": "encontrarse en las fotos de la nevera de Jan", "impide": "no sale en ninguna desde hace ocho anos; al lado de Jan siempre hay otra mujer, Nele", "cuesta": "la idea de ser la mejor amiga de Jan: ese sitio lleva ocho anos ocupado", "cambia": "conoce a Nele, que sabe quien es ella y la abraza", "emocion": "celos pequenos: la tripa dura porque esa mujer tiene su sitio; coge una foto de la nevera y la aprieta" },
+    { "slot": "1", "quiere": "que Nele no le haga una foto a su cara de ahora", "impide": "Nele encuentra la foto vieja de Anna con veinte anos y quiere una nueva para la nevera", "cuesta": "la foto joven sale de la nevera y va a una caja; en su sitio queda la cara de ahora, con arrugas", "cambia": "Anna se rie en la foto nueva gracias a Jan con sus gafas viejas", "emocion": "inseguridad: la cara caliente porque la Anna de veinte es tan joven; cierra los ojos en cada foto" },
+    { "slot": "2", "quiere": "regalarle a Jan un marco con la foto vieja de los dos solos", "impide": "tiene dos fotos y un solo marco: la vieja de los dos y la nueva de los tres con Nele", "cuesta": "la foto de los dos solos no va a la pared; se queda en la chaqueta de Anna", "cambia": "Anna elige la foto de tres: ahora el grupo es otro y ella esta dentro", "emocion": "pena y aceptacion: el corazon pesado porque la foto vieja es solo para dos; la apoya en la rodilla y despues la guarda" }
+  ]
+}

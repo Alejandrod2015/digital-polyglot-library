@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Spielabend,der Mathelehrer,die Figur,die Spüle",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Spielabend",
+     "answer": "a games night",
+     "options": [
+      "a games night",
+      "a maths teacher",
+      "a playing piece",
+      "a sink"
+     ]
+    },
+    {
+     "word": "der Mathelehrer",
+     "answer": "a maths teacher",
+     "options": [
+      "a games night",
+      "a maths teacher",
+      "a playing piece",
+      "a sink"
+     ]
+    },
+    {
+     "word": "die Figur",
+     "answer": "a playing piece",
+     "options": [
+      "a games night",
+      "a maths teacher",
+      "a playing piece",
+      "a sink"
+     ]
+    },
+    {
+     "word": "die Spüle",
+     "answer": "a sink",
+     "options": [
+      "a games night",
+      "a maths teacher",
+      "a playing piece",
+      "a sink"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "graues",
+  "sentence": "Er trägt ein [[graues]] T-Shirt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "grey",
+   "options": [
+    "grey",
+    "blue",
+    "black",
+    "brown"
+   ],
+   "audioClip": {
+    "storySlug": "felix-erklart-zu-schnell",
+    "storySource": "user",
+    "sentence": "Er trägt ein graues T-Shirt.",
+    "targetWord": "graues",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Regeln",
+  "sentence": "Er kennt alle [[Regeln]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rules",
+   "options": [
+    "rules",
+    "names",
+    "games",
+    "songs"
+   ],
+   "audioClip": {
+    "storySlug": "felix-erklart-zu-schnell",
+    "storySource": "user",
+    "sentence": "Er kennt alle Regeln.",
+    "targetWord": "Regeln",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "einfach",
+  "sentence": "“Das Spiel ist ganz [[einfach]]”, sagt der Lehrer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "easy",
+   "options": [
+    "easy",
+    "hard",
+    "long",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "felix-erklart-zu-schnell",
+    "storySource": "user",
+    "sentence": "“Das Spiel ist ganz einfach”, sagt der Lehrer.",
+    "targetWord": "einfach",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "würfelt",
+  "sentence": "Sie [[würfelt]] eine Eins.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rolls the dice",
+   "options": [
+    "rolls the dice",
+    "draws",
+    "writes",
+    "throws a ball"
+   ],
+   "audioClip": {
+    "storySlug": "felix-erklart-zu-schnell",
+    "storySource": "user",
+    "sentence": "Sie würfelt eine Eins.",
+    "targetWord": "würfelt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "läufst",
+  "sentence": "Du würfelst und [[läufst]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "move forward",
+   "options": [
+    "move forward",
+    "stop",
+    "wait",
+    "sit"
+   ],
+   "audioClip": {
+    "storySlug": "felix-erklart-zu-schnell",
+    "storySource": "user",
+    "sentence": "Du würfelst und läufst.",
+    "targetWord": "läufst",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Punkte",
+  "sentence": "“Und die [[Punkte]]?”, fragt sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "points",
+   "options": [
+    "points",
+    "rules",
+    "cards",
+    "figures"
+   ],
+   "audioClip": {
+    "storySlug": "felix-erklart-zu-schnell",
+    "storySource": "user",
+    "sentence": "“Und die Punkte?”, fragt sie.",
+    "targetWord": "Punkte",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "später",
+  "sentence": "“Die Punkte kommen [[später]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "later",
+   "options": [
+    "later",
+    "never",
+    "now",
+    "first"
+   ],
+   "audioClip": {
+    "storySlug": "felix-erklart-zu-schnell",
+    "storySource": "user",
+    "sentence": "“Die Punkte kommen später.",
+    "targetWord": "später",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dran",
+  "sentence": "“Jetzt bist du [[dran]]”, antwortet der Lehrer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "your turn",
+   "options": [
+    "your turn",
+    "sure",
+    "right",
+    "here"
+   ],
+   "audioClip": {
+    "storySlug": "felix-erklart-zu-schnell",
+    "storySource": "user",
+    "sentence": "“Jetzt bist du dran”, antwortet der Lehrer.",
+    "targetWord": "dran",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "erklärt",
+  "sentence": "Der Lehrer [[erklärt]] sehr schnell.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "explains",
+   "options": [
+    "explains",
+    "plays",
+    "waits",
+    "counts"
+   ],
+   "audioClip": {
+    "storySlug": "felix-erklart-zu-schnell",
+    "storySource": "user",
+    "sentence": "Der Lehrer erklärt sehr schnell.",
+    "targetWord": "erklärt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fest",
+  "sentence": "Sie wirft den Würfel zu [[fest]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hard",
+   "options": [
+    "hard",
+    "softly",
+    "slowly",
+    "quietly"
+   ],
+   "audioClip": {
+    "storySlug": "felix-erklart-zu-schnell",
+    "storySource": "user",
+    "sentence": "Sie wirft den Würfel zu fest.",
+    "targetWord": "fest",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "anderes",
+  "sentence": "“Früher spielen wir hier ein [[anderes]] Spiel”, sagt sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "different",
+   "options": [
+    "different",
+    "new",
+    "old",
+    "easy"
+   ],
+   "audioClip": {
+    "storySlug": "felix-erklart-zu-schnell",
+    "storySource": "user",
+    "sentence": "“Früher spielen wir hier ein anderes Spiel”, sagt sie.",
+    "targetWord": "anderes",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Gläser",
+  "sentence": "Der Lehrer bringt ihr die [[Gläser]] und lächelt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "glasses",
+   "options": [
+    "glasses",
+    "plates",
+    "spoons",
+    "books"
+   ],
+   "audioClip": {
+    "storySlug": "felix-erklart-zu-schnell",
+    "storySource": "user",
+    "sentence": "Der Lehrer bringt ihr die Gläser und lächelt.",
+    "targetWord": "Gläser",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "oft",
+  "sentence": "Der Koch spricht [[oft]] davon”, antwortet er.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "often",
+   "options": [
+    "often",
+    "never",
+    "rarely",
+    "once"
+   ],
+   "audioClip": {
+    "storySlug": "felix-erklart-zu-schnell",
+    "storySource": "user",
+    "sentence": "Der Koch spricht oft davon”, antwortet er.",
+    "targetWord": "oft",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "wirft",
+  "sentence": "Sie _____ den Würfel zu fest.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "wirft",
+   "options": [
+    "wirft",
+    "würfelt",
+    "hält",
+    "sucht"
+   ],
+   "translation": "She _____ the die too hard.",
+   "optionTranslations": [
+    "throws",
+    "rolls",
+    "holds",
+    "looks for"
+   ],
+   "audioClip": {
+    "storySlug": "felix-erklart-zu-schnell",
+    "storySource": "user",
+    "sentence": "Sie wirft den Würfel zu fest.",
+    "targetWord": "wirft",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "verliert",
+  "sentence": "Sie _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "verliert",
+   "options": [
+    "verliert",
+    "gewinnt",
+    "spielt",
+    "wartet"
+   ],
+   "translation": "She _____.",
+   "optionTranslations": [
+    "loses",
+    "wins",
+    "plays",
+    "waits"
+   ],
+   "audioClip": {
+    "storySlug": "felix-erklart-zu-schnell",
+    "storySource": "user",
+    "sentence": "Sie verliert.",
+    "targetWord": "verliert",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "trägt",
+  "sentence": "Er _____ ein graues T-Shirt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "trägt",
+   "options": [
+    "trägt",
+    "kauft",
+    "sucht",
+    "zeigt"
+   ],
+   "translation": "He _____ a gray T-shirt.",
+   "optionTranslations": [
+    "wears",
+    "buys",
+    "looks for",
+    "shows"
+   ],
+   "audioClip": {
+    "storySlug": "felix-erklart-zu-schnell",
+    "storySource": "user",
+    "sentence": "Er trägt ein graues T-Shirt.",
+    "targetWord": "trägt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

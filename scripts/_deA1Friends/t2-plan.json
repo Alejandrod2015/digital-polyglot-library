@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a1",
+  "variante": "germany",
+  "registro": "fisico y con humor contra si misma: aire frio del rio, piernas que duelen y un orgullo que se desinfla a la vista de todos",
+  "espina": "Julia, fisioterapeuta de Rostock recien llegada a Frankfurt, quiere hacer amigos de verdad en una ciudad donde no conoce a nadie; cada tema le cuesta un hilo con Rostock, hasta que en el tema 7 su primera amistad de Frankfurt aguanta una pelea.",
+  "recursos": "A1: Perfekt (war, haben einen Plan), modales (muss, moechte), separables partidos (faengt an, laeuft mit), inversion V2 tras adverbio (Nach zwei Kilometern hat Julia...), denn; humor de situacion (la fisioterapeuta con agujetas que no puede con la escalera), gancho final literal (la cronometro sin mejor marca)",
+  "historias": [
+    { "slot": "0", "quiere": "causar buena impresion en el grupo de correr y no ser la nueva que va detras", "impide": "sale demasiado rapido y a los dos kilometros le da flato", "cuesta": "el orgullo delante de todo el grupo: Moritz la adelanta tranquilo y Svenja tiene que quedarse con ella", "cambia": "acepta empezar desde atras la proxima vez", "emocion": "verguenza: le arde la cara, y no solo por correr; apoya las manos en los muslos" },
+    { "slot": "1", "quiere": "seguir con el grupo del domingo sin perder a sus amigas de Rostock", "impide": "sus amigas ponen la videollamada fija el domingo a las nueve, a la misma hora del grupo", "cuesta": "la llamada del domingo con Rostock, que ella misma deja; y una pregunta de su mejor amiga que no sabe contestar", "cambia": "por primera vez elige Frankfurt sobre Rostock por escrito", "emocion": "culpa y duda: las amigas le importan; se sienta en la escalera y piensa mucho antes de escribir" },
+    { "slot": "2", "quiere": "hacer una buena marca en los diez kilometros", "impide": "a Moritz le falla la rodilla a mitad de camino", "cuesta": "su marca: llega la ultima, sin tiempo que ensenar", "cambia": "se siente parte del grupo por primera vez", "emocion": "alegria tranquila: no esta triste porque hoy no es la nueva; bebe un trago largo y niega con la cabeza" }
+  ]
+}

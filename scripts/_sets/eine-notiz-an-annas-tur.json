@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "die Notiz,die Mieterin,der Hausbesitzer,die Wohnung",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "die Notiz",
+     "answer": "a note",
+     "options": [
+      "a note",
+      "a female tenant",
+      "a landlord",
+      "a flat"
+     ]
+    },
+    {
+     "word": "die Mieterin",
+     "answer": "a female tenant",
+     "options": [
+      "a note",
+      "a female tenant",
+      "a landlord",
+      "a flat"
+     ]
+    },
+    {
+     "word": "der Hausbesitzer",
+     "answer": "a landlord",
+     "options": [
+      "a note",
+      "a female tenant",
+      "a landlord",
+      "a flat"
+     ]
+    },
+    {
+     "word": "die Wohnung",
+     "answer": "a flat",
+     "options": [
+      "a note",
+      "a female tenant",
+      "a landlord",
+      "a flat"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "höflich",
+  "sentence": "Die Notiz ist [[höflich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "polite",
+   "options": [
+    "polite",
+    "rude",
+    "sad",
+    "long"
+   ],
+   "audioClip": {
+    "storySlug": "eine-notiz-an-annas-tur",
+    "storySource": "user",
+    "sentence": "Die Notiz ist höflich.",
+    "targetWord": "höflich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "braunen",
+  "sentence": "Er trägt immer einen [[braunen]] Pullover.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "brown",
+   "options": [
+    "brown",
+    "blue",
+    "old",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "eine-notiz-an-annas-tur",
+    "storySource": "user",
+    "sentence": "Er trägt immer einen braunen Pullover.",
+    "targetWord": "braunen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Pullover",
+  "sentence": "Er trägt immer einen braunen [[Pullover]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "jumper",
+   "options": [
+    "jumper",
+    "coat",
+    "shirt",
+    "hat"
+   ],
+   "audioClip": {
+    "storySlug": "eine-notiz-an-annas-tur",
+    "storySource": "user",
+    "sentence": "Er trägt immer einen braunen Pullover.",
+    "targetWord": "Pullover",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "streng",
+  "sentence": "Er ist nett und freundlich, aber [[streng]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "strict",
+   "options": [
+    "strict",
+    "kind",
+    "funny",
+    "quiet"
+   ],
+   "audioClip": {
+    "storySlug": "eine-notiz-an-annas-tur",
+    "storySource": "user",
+    "sentence": "Er ist nett und freundlich, aber streng.",
+    "targetWord": "streng",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "frei",
+  "sentence": "Die Wohnung ist nur bis Freitag [[frei]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "available",
+   "options": [
+    "available",
+    "expensive",
+    "small",
+    "cold"
+   ],
+   "audioClip": {
+    "storySlug": "eine-notiz-an-annas-tur",
+    "storySource": "user",
+    "sentence": "Die Wohnung ist nur bis Freitag frei.",
+    "targetWord": "frei",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gemütlich",
+  "sentence": "Die Wohnung oben ist klein, aber [[gemütlich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cosy",
+   "options": [
+    "cosy",
+    "cold",
+    "dark",
+    "expensive"
+   ],
+   "audioClip": {
+    "storySlug": "eine-notiz-an-annas-tur",
+    "storySource": "user",
+    "sentence": "Die Wohnung oben ist klein, aber gemütlich.",
+    "targetWord": "gemütlich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mag",
+  "sentence": "Sie [[mag]] den Blick in den Hof.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "likes",
+   "options": [
+    "likes",
+    "hates",
+    "forgets",
+    "fears"
+   ],
+   "audioClip": {
+    "storySlug": "eine-notiz-an-annas-tur",
+    "storySource": "user",
+    "sentence": "Sie mag den Blick in den Hof.",
+    "targetWord": "mag",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Freitag",
+  "sentence": "Die Wohnung ist nur bis [[Freitag]] frei.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Friday",
+   "options": [
+    "Friday",
+    "Monday",
+    "Sunday",
+    "Thursday"
+   ],
+   "audioClip": {
+    "storySlug": "eine-notiz-an-annas-tur",
+    "storySource": "user",
+    "sentence": "Die Wohnung ist nur bis Freitag frei.",
+    "targetWord": "Freitag",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quietschen",
+  "sentence": "Seine Schuhe [[quietschen]] auf der Treppe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "squeak",
+   "options": [
+    "squeak",
+    "shine",
+    "break",
+    "slide"
+   ],
+   "audioClip": {
+    "storySlug": "eine-notiz-an-annas-tur",
+    "storySource": "user",
+    "sentence": "Seine Schuhe quietschen auf der Treppe.",
+    "targetWord": "quietschen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nett",
+  "sentence": "Er ist [[nett]] und freundlich.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nice",
+   "options": [
+    "nice",
+    "strict",
+    "tired",
+    "angry"
+   ],
+   "audioClip": {
+    "storySlug": "eine-notiz-an-annas-tur",
+    "storySource": "user",
+    "sentence": "Er ist nett und freundlich.",
+    "targetWord": "nett",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Schuhe",
+  "sentence": "Seine [[Schuhe]] quietschen auf der Treppe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shoes",
+   "options": [
+    "shoes",
+    "keys",
+    "hands",
+    "glasses"
+   ],
+   "audioClip": {
+    "storySlug": "eine-notiz-an-annas-tur",
+    "storySource": "user",
+    "sentence": "Seine Schuhe quietschen auf der Treppe.",
+    "targetWord": "Schuhe",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "blass",
+  "sentence": "Sie ist [[blass]], denn München wartet auch bis Freitag.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pale",
+   "options": [
+    "pale",
+    "red",
+    "tired",
+    "happy"
+   ],
+   "audioClip": {
+    "storySlug": "eine-notiz-an-annas-tur",
+    "storySource": "user",
+    "sentence": "Sie ist blass, denn München wartet auch bis Freitag.",
+    "targetWord": "blass",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Faust",
+  "sentence": "Sie knüllt die Notiz in der [[Faust]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fist",
+   "options": [
+    "fist",
+    "hand",
+    "pocket",
+    "bag"
+   ],
+   "audioClip": {
+    "storySlug": "eine-notiz-an-annas-tur",
+    "storySource": "user",
+    "sentence": "Sie knüllt die Notiz in der Faust.",
+    "targetWord": "Faust",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "lehnt",
+  "sentence": "Sie _____ am Geländer und liest.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lehnt",
+   "options": [
+    "lehnt",
+    "sitzt",
+    "steht",
+    "geht"
+   ],
+   "translation": "She _____ on the railing and reads.",
+   "optionTranslations": [
+    "leans",
+    "sits",
+    "stands",
+    "walks"
+   ],
+   "audioClip": {
+    "storySlug": "eine-notiz-an-annas-tur",
+    "storySource": "user",
+    "sentence": "Sie lehnt am Geländer und liest.",
+    "targetWord": "lehnt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "räuspert",
+  "sentence": "Er _____ sich.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "räuspert",
+   "options": [
+    "räuspert",
+    "wäscht",
+    "kratzt",
+    "hält"
+   ],
+   "translation": "He _____ his throat.",
+   "optionTranslations": [
+    "clears",
+    "washes",
+    "scratches",
+    "holds"
+   ],
+   "audioClip": {
+    "storySlug": "eine-notiz-an-annas-tur",
+    "storySource": "user",
+    "sentence": "Er räuspert sich.",
+    "targetWord": "räuspert",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "knüllt",
+  "sentence": "Sie _____ die Notiz in der Faust.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "knüllt",
+   "options": [
+    "knüllt",
+    "liest",
+    "zeigt",
+    "sucht"
+   ],
+   "translation": "She _____ the note in her fist.",
+   "optionTranslations": [
+    "crumples",
+    "reads",
+    "shows",
+    "looks for"
+   ],
+   "audioClip": {
+    "storySlug": "eine-notiz-an-annas-tur",
+    "storySource": "user",
+    "sentence": "Sie knüllt die Notiz in der Faust.",
+    "targetWord": "knüllt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

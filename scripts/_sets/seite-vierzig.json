@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "die Buchhandlung,das Papier,die Tomatensuppe,der Herd",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "die Buchhandlung",
+     "answer": "a bookshop",
+     "options": [
+      "a bookshop",
+      "paper",
+      "tomato soup",
+      "a cooker"
+     ]
+    },
+    {
+     "word": "das Papier",
+     "answer": "paper",
+     "options": [
+      "a bookshop",
+      "paper",
+      "tomato soup",
+      "a cooker"
+     ]
+    },
+    {
+     "word": "die Tomatensuppe",
+     "answer": "tomato soup",
+     "options": [
+      "a bookshop",
+      "paper",
+      "tomato soup",
+      "a cooker"
+     ]
+    },
+    {
+     "word": "der Herd",
+     "answer": "a cooker",
+     "options": [
+      "a bookshop",
+      "paper",
+      "tomato soup",
+      "a cooker"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "riecht",
+  "sentence": "Das Buch [[riecht]] nach Papier.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "smells",
+   "options": [
+    "smells",
+    "tastes",
+    "sounds",
+    "feels"
+   ],
+   "audioClip": {
+    "storySlug": "seite-vierzig",
+    "storySource": "user",
+    "sentence": "Das Buch riecht nach Papier.",
+    "targetWord": "riecht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "beiden",
+  "sentence": "[[Beide]] kommen zu spät”, sagt sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Both",
+   "options": [
+    "Both",
+    "Neither",
+    "All",
+    "Some"
+   ],
+   "audioClip": {
+    "storySlug": "seite-vierzig",
+    "storySource": "user",
+    "sentence": "Beide kommen zu spät”, sagt sie.",
+    "targetWord": "beiden",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gerade",
+  "sentence": "Er kocht [[gerade]] Tomatensuppe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "right now",
+   "options": [
+    "right now",
+    "never",
+    "tomorrow",
+    "already"
+   ],
+   "audioClip": {
+    "storySlug": "seite-vierzig",
+    "storySource": "user",
+    "sentence": "Er kocht gerade Tomatensuppe.",
+    "targetWord": "gerade",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vorsichtig",
+  "sentence": "Sie liest [[vorsichtig]], Zeile für Zeile.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "carefully",
+   "options": [
+    "carefully",
+    "quickly",
+    "loudly",
+    "sadly"
+   ],
+   "audioClip": {
+    "storySlug": "seite-vierzig",
+    "storySource": "user",
+    "sentence": "Sie liest vorsichtig, Zeile für Zeile.",
+    "targetWord": "vorsichtig",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Zeile",
+  "sentence": "Sie liest vorsichtig, [[Zeile]] für Zeile.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "line",
+   "options": [
+    "line",
+    "page",
+    "word",
+    "letter"
+   ],
+   "audioClip": {
+    "storySlug": "seite-vierzig",
+    "storySource": "user",
+    "sentence": "Sie liest vorsichtig, Zeile für Zeile.",
+    "targetWord": "Zeile",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ruhig",
+  "sentence": "Er sitzt ganz [[ruhig]] neben ihr.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "calmly",
+   "options": [
+    "calmly",
+    "nervously",
+    "loudly",
+    "quickly"
+   ],
+   "audioClip": {
+    "storySlug": "seite-vierzig",
+    "storySource": "user",
+    "sentence": "Er sitzt ganz ruhig neben ihr.",
+    "targetWord": "ruhig",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zweimal",
+  "sentence": "Sie klopft [[zweimal]] an seine Tür.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "twice",
+   "options": [
+    "twice",
+    "once",
+    "three times",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "seite-vierzig",
+    "storySource": "user",
+    "sentence": "Sie klopft zweimal an seine Tür.",
+    "targetWord": "zweimal",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "auch",
+  "sentence": "“Die Küche ist [[auch]] schön”, antwortet sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "also",
+   "options": [
+    "also",
+    "never",
+    "only",
+    "almost"
+   ],
+   "audioClip": {
+    "storySlug": "seite-vierzig",
+    "storySource": "user",
+    "sentence": "“Die Küche ist auch schön”, antwortet sie.",
+    "targetWord": "auch",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "meiner",
+  "sentence": "“Wir sitzen in [[meiner]] Küche”, lacht er.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "my",
+   "options": [
+    "my",
+    "your",
+    "his",
+    "her"
+   ],
+   "audioClip": {
+    "storySlug": "seite-vierzig",
+    "storySource": "user",
+    "sentence": "“Wir sitzen in meiner Küche”, lacht er.",
+    "targetWord": "meiner",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sieht",
+  "sentence": "Sie [[sieht]] den Rahmen mit dem Foto daneben.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sees",
+   "options": [
+    "sees",
+    "hides",
+    "sells",
+    "breaks"
+   ],
+   "audioClip": {
+    "storySlug": "seite-vierzig",
+    "storySource": "user",
+    "sentence": "Sie sieht den Rahmen mit dem Foto daneben.",
+    "targetWord": "sieht",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "daneben",
+  "sentence": "Sie sieht den Rahmen mit dem Foto [[daneben]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "next to it",
+   "options": [
+    "next to it",
+    "far away",
+    "under it",
+    "behind it"
+   ],
+   "audioClip": {
+    "storySlug": "seite-vierzig",
+    "storySource": "user",
+    "sentence": "Sie sieht den Rahmen mit dem Foto daneben.",
+    "targetWord": "daneben",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sagen",
+  "sentence": "Die beiden essen Suppe und [[sagen]] lange nichts.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "say",
+   "options": [
+    "say",
+    "cook",
+    "sing",
+    "write"
+   ],
+   "audioClip": {
+    "storySlug": "seite-vierzig",
+    "storySource": "user",
+    "sentence": "Die beiden essen Suppe und sagen lange nichts.",
+    "targetWord": "sagen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wie",
+  "sentence": "Es ist grün, genau [[wie]] das alte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "like",
+   "options": [
+    "like",
+    "without",
+    "against",
+    "before"
+   ],
+   "audioClip": {
+    "storySlug": "seite-vierzig",
+    "storySource": "user",
+    "sentence": "Es ist grün, genau wie das alte.",
+    "targetWord": "wie",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "klopft",
+  "sentence": "Sie _____ zweimal an seine Tür.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "klopft",
+   "options": [
+    "klopft",
+    "sucht",
+    "sieht",
+    "ruft"
+   ],
+   "translation": "She _____ twice on his door.",
+   "optionTranslations": [
+    "knocks",
+    "looks for",
+    "sees",
+    "calls"
+   ],
+   "audioClip": {
+    "storySlug": "seite-vierzig",
+    "storySource": "user",
+    "sentence": "Sie klopft zweimal an seine Tür.",
+    "targetWord": "klopft",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "öffnet",
+  "sentence": "Er _____ das Buch auf Seite vierzig.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "öffnet",
+   "options": [
+    "öffnet",
+    "sucht",
+    "liest",
+    "zeigt"
+   ],
+   "translation": "He _____ the book to page forty.",
+   "optionTranslations": [
+    "opens",
+    "looks for",
+    "reads",
+    "shows"
+   ],
+   "audioClip": {
+    "storySlug": "seite-vierzig",
+    "storySource": "user",
+    "sentence": "Er öffnet das Buch auf Seite vierzig.",
+    "targetWord": "öffnet",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "zittert",
+  "sentence": "Ihre Stimme _____ ein bisschen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "zittert",
+   "options": [
+    "zittert",
+    "singt",
+    "lacht",
+    "spricht"
+   ],
+   "translation": "Her voice _____ a little.",
+   "optionTranslations": [
+    "trembles",
+    "sings",
+    "laughs",
+    "speaks"
+   ],
+   "audioClip": {
+    "storySlug": "seite-vierzig",
+    "storySource": "user",
+    "sentence": "Ihre Stimme zittert ein bisschen.",
+    "targetWord": "zittert",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,406 @@
+[
+ {
+  "topic": "running-and-fitness",
+  "slotIndex": 0,
+  "title": "Zu schnell am Main",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Julia goes to Moritz's running group by the river Main for the first time. The group leader Svenja is a police officer. Julia wants to show that she is fast and runs at the very front, but after two kilometres she has to stop. Svenja stays with her while the others run into the fog.",
+  "text": "Die Morgenluft am Main ist um neun noch kühl. Am Uferweg wartet schon eine kleine Gruppe, und alle tragen Laufschuhe. Svenja, eine Polizistin, leitet den Lauftreff und hält eine Stoppuhr in der Hand. Julia ist die Neue und will nicht hinten laufen.\n\n“Heute laufen wir bis zur Brücke und zurück”, erklärt Svenja. Julia läuft ganz vorne, neben Svenja. “Ich bleibe lieber hinten, ich bin nicht so schnell”, meint Moritz.\n\nNach zwei Kilometern hat Julia Seitenstechen. Ihr Atem ist laut, und die Beine sind schwer. Sie muss aufhören. Moritz läuft ruhig vorbei.\n\nSvenja kommt zurück und bleibt bei ihr. “Am Anfang ist langsam besser. Das ist ganz normal”, sagt sie. Die anderen verschwinden im Nebel. Julia legt die Hände auf die Oberschenkel. Ihr Gesicht ist heiß, und das liegt nicht nur am Laufen.\n\n“Das ist ziemlich peinlich, oder?”, fragt Julia leise. Svenja lächelt. “Nein, wirklich nicht. Nächsten Sonntag läufst du einfach hinten mit”, antwortet sie.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "die Morgenluft",
+    "surface": "Morgenluft",
+    "definition": "The fresh air early in the morning, before the day gets warm.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "kühl",
+    "surface": "kühl",
+    "definition": "Cool; a little cold, but not really cold."
+   },
+   {
+    "type": "noun",
+    "word": "der Uferweg",
+    "surface": "Uferweg",
+    "definition": "A path that goes along the side of a river or lake.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Polizistin",
+    "surface": "Polizistin",
+    "definition": "A woman who works for the police and keeps people safe.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Stoppuhr",
+    "surface": "Stoppuhr",
+    "definition": "A stopwatch; a small clock that measures how long something takes.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Brücke",
+    "surface": "Brücke",
+    "definition": "A bridge; you walk or drive over it to cross a river."
+   },
+   {
+    "type": "adverb",
+    "word": "hinten",
+    "surface": "hinten",
+    "definition": "At the back; behind the others and not at the front."
+   },
+   {
+    "type": "adverb",
+    "word": "vorne",
+    "surface": "vorne",
+    "definition": "At the front; in front of the others, in the first place."
+   },
+   {
+    "type": "noun",
+    "word": "der Kilometer",
+    "surface": "Kilometern",
+    "definition": "A kilometre; a distance of one thousand metres."
+   },
+   {
+    "type": "adjective",
+    "word": "schwer",
+    "surface": "schwer",
+    "definition": "Heavy; it feels hard to lift or to move."
+   },
+   {
+    "type": "verb",
+    "word": "aufhören",
+    "surface": "aufhören",
+    "definition": "To stop doing something, like running, talking or working."
+   },
+   {
+    "type": "adjective",
+    "word": "ruhig",
+    "surface": "ruhig",
+    "definition": "Calm; quiet and relaxed, with no stress or hurry."
+   },
+   {
+    "type": "adjective",
+    "word": "langsam",
+    "surface": "langsam",
+    "definition": "Slow; not fast, taking a lot of time."
+   },
+   {
+    "type": "adjective",
+    "word": "normal",
+    "surface": "normal",
+    "definition": "Normal; usual, the way things often are for most people."
+   },
+   {
+    "type": "verb",
+    "word": "verschwinden",
+    "surface": "verschwinden",
+    "definition": "To disappear; to go away so that nobody can see you."
+   },
+   {
+    "type": "noun",
+    "word": "der Nebel",
+    "surface": "Nebel",
+    "definition": "Fog; a thick grey cloud close to the ground.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "der Oberschenkel",
+    "surface": "Oberschenkel",
+    "definition": "The thigh; the top part of your leg, above the knee.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "heiß",
+    "surface": "heiß",
+    "definition": "Hot; very warm, like a face after hard sport."
+   },
+   {
+    "type": "adverb",
+    "word": "einfach",
+    "surface": "einfach",
+    "definition": "Simply; just, without any problem or special plan."
+   },
+   {
+    "type": "adjective",
+    "word": "laut",
+    "surface": "laut",
+    "definition": "Loud; making a lot of noise that others can hear."
+   }
+  ]
+ },
+ {
+  "topic": "running-and-fitness",
+  "slotIndex": 1,
+  "title": "Muskelkater im Treppenhaus",
+  "arcType": "reframe-turn",
+  "synopsis": "The next evening Julia's legs hurt so much that she can hardly climb the stairs. Moritz catches up with her with his shopping. Then her friends in Rostock make a new plan for their video call, on the same morning and at the same hour as the running group. Julia has to choose.",
+  "text": "Einen Tag später, am Montagabend, tut Julia alles weh. Nach acht Stunden schafft sie die Treppe kaum. Langsam geht sie nach oben, und ihre Waden brennen. Im Treppenhaus riecht es nach Suppe.\n\nUnten knarrt die Haustür. Moritz kommt mit einer Einkaufstüte und ist in zehn Sekunden neben ihr. “Muskelkater?”, fragt er.\n\n“Nein, alles gut”, lügt Julia. Moritz grinst. “Bei mir war es nach dem ersten Mal genauso”, erzählt er. Dann trägt er ihre Tasche nach oben.\n\nOben liest Julia den Chat aus Rostock. Ihre Freundinnen haben einen neuen Plan: “Videoanruf jetzt immer am Sonntag um neun!” Um neun ist aber der Lauftreff.\n\nJulia setzt sich auf die Treppe und denkt lange nach, denn die Freundinnen sind ihr wichtig. Dann schreibt sie: “Sonntag um neun geht bei mir nicht mehr. Ich laufe jetzt. Vielleicht am Abend?”\n\nDie Antwort kommt sofort. “Seit wann läufst du denn?”, schreibt ihre beste Freundin. Julia hat keine kurze Antwort.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "riechen",
+    "surface": "riecht",
+    "definition": "To smell; a place or a thing has a smell you notice."
+   },
+   {
+    "type": "adverb",
+    "word": "kaum",
+    "surface": "kaum",
+    "definition": "Hardly; almost not, only with a lot of effort."
+   },
+   {
+    "type": "verb",
+    "word": "gehen",
+    "surface": "geht",
+    "definition": "To walk; to move on your feet, not fast."
+   },
+   {
+    "type": "verb",
+    "word": "schaffen",
+    "surface": "schafft",
+    "definition": "To manage to do something, even if it is hard."
+   },
+   {
+    "type": "verb",
+    "word": "brennen",
+    "surface": "brennen",
+    "definition": "To burn; here, your muscles feel hot and hurt."
+   },
+   {
+    "type": "noun",
+    "word": "die Haustür",
+    "surface": "Haustür",
+    "definition": "The front door of a house, where you go in from the street.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Einkaufstüte",
+    "surface": "Einkaufstüte",
+    "definition": "A shopping bag; you carry the things you buy in it.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Sekunde",
+    "surface": "Sekunden",
+    "definition": "A second; a very short time, sixty of them make a minute."
+   },
+   {
+    "type": "noun",
+    "word": "der Muskelkater",
+    "surface": "Muskelkater",
+    "definition": "Sore muscles; the pain you feel a day after hard sport.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "tragen",
+    "surface": "trägt",
+    "definition": "To carry something in your hands or arms."
+   },
+   {
+    "type": "adjective",
+    "word": "erste",
+    "surface": "ersten",
+    "definition": "First; number one, the one that comes before all the others."
+   },
+   {
+    "type": "verb",
+    "word": "lesen",
+    "surface": "liest",
+    "definition": "To read; to look at words and understand them."
+   },
+   {
+    "type": "verb",
+    "word": "erzählen",
+    "surface": "erzählt",
+    "definition": "To tell; to talk about things that happened or that you know."
+   },
+   {
+    "type": "adverb",
+    "word": "oben",
+    "surface": "Oben",
+    "definition": "Upstairs; at the top, in a higher place."
+   },
+   {
+    "type": "adverb",
+    "word": "immer",
+    "surface": "immer",
+    "definition": "Always; every time, again and again, with no change."
+   },
+   {
+    "type": "verb",
+    "word": "setzen",
+    "surface": "setzt",
+    "definition": "To sit down; to put yourself on a chair or a step."
+   },
+   {
+    "type": "adverb",
+    "word": "lange",
+    "surface": "lange",
+    "definition": "For a long time; not only for a short moment."
+   },
+   {
+    "type": "adjective",
+    "word": "wichtig",
+    "surface": "wichtig",
+    "definition": "Important; it matters a lot to you or to others."
+   },
+   {
+    "type": "adverb",
+    "word": "sofort",
+    "surface": "sofort",
+    "definition": "At once; right away, without waiting even a short time."
+   },
+   {
+    "type": "adjective",
+    "word": "kurz",
+    "surface": "kurze",
+    "definition": "Short; not long, with only a few words or a little time."
+   }
+  ]
+ },
+ {
+  "topic": "running-and-fitness",
+  "slotIndex": 2,
+  "title": "Zehn Kilometer zu zweit",
+  "arcType": "harmonic-close",
+  "synopsis": "One week later Julia runs ten kilometres with the group and wants a good time. After six kilometres Moritz hurts his knee. Julia stops and walks the rest of the way with him along the river. At the finish line there is no best time, but for the first time Julia is not the new one.",
+  "text": "Eine Woche später läuft Julia zehn Kilometer mit. Diesmal fängt sie hinten an. Die Sonne scheint, und auf dem Main fährt ein langes Frachtschiff. “Heute laufe ich eine gute Zeit”, denkt Julia.\n\nNach sechs Kilometern bleibt Moritz plötzlich stehen. Er hält sein Knie und verzieht das Gesicht. “Lauf weiter, du bist gerade so gut”, sagt er. Julia sieht nach vorne und dann wieder zu ihm. “Nein, wir gehen zusammen”, antwortet sie.\n\nSie gehen den Rest langsam am Ufer entlang, unter den Hochhäusern vom Bankenviertel. “Die Linie elf fährt fast bis zu deiner Tür”, sagt Moritz. Julia lacht richtig laut.\n\nAn der Ziellinie wartet Svenja mit einer Wasserflasche. “Für die beiden Letzten!”, ruft jemand, und alle klatschen. Auf der Stoppuhr steht keine Bestzeit.\n\n“Und? Traurig?”, fragt Svenja. Julia trinkt einen großen Schluck und schüttelt den Kopf. “Nein. Heute war ich zum ersten Mal nicht die Neue”, flüstert sie.",
+  "vocab": [
+   {
+    "type": "adverb",
+    "word": "diesmal",
+    "surface": "Diesmal",
+    "definition": "This time; now, and not like the time before."
+   },
+   {
+    "type": "verb",
+    "word": "scheinen",
+    "surface": "scheint",
+    "definition": "To shine; the sun gives bright light and warmth."
+   },
+   {
+    "type": "noun",
+    "word": "das Frachtschiff",
+    "surface": "Frachtschiff",
+    "definition": "A cargo ship; a big ship that carries goods on water.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "plötzlich",
+    "surface": "plötzlich",
+    "definition": "Suddenly; very quickly, at a moment when nobody expects it."
+   },
+   {
+    "type": "verb",
+    "word": "verziehen",
+    "surface": "verzieht",
+    "definition": "To pull your face into a shape that shows pain or dislike."
+   },
+   {
+    "type": "adverb",
+    "word": "gerade",
+    "surface": "gerade",
+    "definition": "Just now; at this moment, at this very time."
+   },
+   {
+    "type": "adverb",
+    "word": "zusammen",
+    "surface": "zusammen",
+    "definition": "Together; with another person or a group, and not alone."
+   },
+   {
+    "type": "preposition",
+    "word": "entlang",
+    "surface": "entlang",
+    "definition": "Along; following the side of a river, a road or a wall."
+   },
+   {
+    "type": "noun",
+    "word": "das Hochhaus",
+    "surface": "Hochhäusern",
+    "definition": "A high-rise; a very tall building with many floors.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "das Bankenviertel",
+    "surface": "Bankenviertel",
+    "definition": "The banking district; the part of Frankfurt with many big banks.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "rufen",
+    "surface": "ruft",
+    "definition": "To call out; to say something loudly so people hear it."
+   },
+   {
+    "type": "adverb",
+    "word": "richtig",
+    "surface": "richtig",
+    "definition": "Really; properly and fully, not just a little bit."
+   },
+   {
+    "type": "noun",
+    "word": "die Ziellinie",
+    "surface": "Ziellinie",
+    "definition": "The finish line; the line at the end of a race.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Wasserflasche",
+    "surface": "Wasserflasche",
+    "definition": "A water bottle; you carry drinking water in it.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "klatschen",
+    "surface": "klatschen",
+    "definition": "To clap; to hit your hands together to show you like something."
+   },
+   {
+    "type": "noun",
+    "word": "die Bestzeit",
+    "surface": "Bestzeit",
+    "definition": "A best time; the fastest time you have ever run."
+   },
+   {
+    "type": "adjective",
+    "word": "traurig",
+    "surface": "Traurig",
+    "definition": "Sad; unhappy because something is not as you wanted."
+   },
+   {
+    "type": "verb",
+    "word": "schütteln",
+    "surface": "schüttelt",
+    "definition": "To shake; to move your head from side to side for no."
+   },
+   {
+    "type": "verb",
+    "word": "flüstern",
+    "surface": "flüstert",
+    "definition": "To whisper; to speak very quietly so only one person hears."
+   },
+   {
+    "type": "adjective",
+    "word": "groß",
+    "surface": "großen",
+    "definition": "Big; large, bigger than what is normal or usual."
+   }
+  ]
+ }
+]

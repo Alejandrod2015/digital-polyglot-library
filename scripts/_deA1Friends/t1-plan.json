@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a1",
+  "variante": "germany",
+  "registro": "intimo y un poco avergonzado: notas de voz, mensajes y llamadas en un rellano de paredes finas, con humor de situacion",
+  "espina": "Julia, fisioterapeuta de Rostock recien llegada a Frankfurt, quiere hacer amigos de verdad en una ciudad donde no conoce a nadie; cada tema le cuesta un hilo con Rostock, hasta que en el tema 7 su primera amistad de Frankfurt aguanta una pelea.",
+  "recursos": "A1: Perfekt (habe kennengelernt, habe verpasst, war), verbos separables partidos (nimmt auf, ruft an, ruft zurueck), modales (muessen, wollen, moechte), inversion V2 tras adverbio, denn; humor de situacion (las paredes finas), gancho final literal (zapatillas junto a la puerta)",
+  "historias": [
+    { "slot": "0", "quiere": "que sus amigas de Rostock crean que en Frankfurt todo va bien", "impide": "Moritz, el vecino de enfrente, oye la nota de voz entera a traves de la pared y nadie en Rostock contesta", "cuesta": "el 'todo va super' se rompe delante de un desconocido: tiene que admitir que no conoce a nadie", "cambia": "Julia dice la verdad y Moritz se presenta", "emocion": "verguenza: se pone roja porque la mentira le da apuro; esconde el movil en la chaqueta" },
+    { "slot": "1", "quiere": "salir la primera vez con Moritz y sus amigos", "impide": "la videollamada con Rostock coincide y pone el movil en silencio", "cuesta": "pierde su primera invitacion en Frankfurt a cambio de una llamada corta y cortada", "cambia": "ve que la llamada de Rostock ya no le da lo que le daba", "emocion": "rabia consigo misma porque la noche en Frankfurt ya paso; aprieta el movil contra la frente" },
+    { "slot": "2", "quiere": "arreglarlo con Moritz sin quedar mal", "impide": "no le salen los mensajes escritos, la linea da ocupado y salta el buzon", "cuesta": "silencia por primera vez el chat de Rostock y deja una nota de voz nueva sin escuchar", "cambia": "llama en vez de escribir y consigue su primer plan en Frankfurt", "emocion": "nervios y valor: le parece una tonteria tener miedo; respira hondo y marca" }
+  ]
+}

@@ -1450,6 +1450,56 @@
         "trinta",
         "vinte"
       ]
+    },
+    "german-friends-a0": {
+      "articles": [
+        "das",
+        "dem",
+        "den",
+        "der",
+        "die",
+        "ein",
+        "eine",
+        "einem",
+        "einen",
+        "einer",
+        "kein",
+        "keine",
+        "keinem",
+        "keinen"
+      ],
+      "characterNames": [
+        "anna",
+        "annas",
+        "felix",
+        "jan",
+        "jans",
+        "johanna",
+        "johannas",
+        "luisa",
+        "nele",
+        "niklas",
+        "tim",
+        "tims"
+      ],
+      "numerals": [
+        "acht",
+        "drei",
+        "eins",
+        "erste",
+        "fünf",
+        "fünfunddreißig",
+        "fünfzehn",
+        "sechs",
+        "vier",
+        "vierzig",
+        "zehn",
+        "zwanzig",
+        "zwei",
+        "zweite",
+        "zweiten",
+        "zwölf"
+      ]
     }
   }
 }

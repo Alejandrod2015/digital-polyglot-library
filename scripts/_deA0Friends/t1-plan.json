@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "germany",
+  "registro": "intimo y torpe: dos viejos amigos en una cocina que no saben por donde empezar",
+  "espina": "Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.",
+  "recursos": "A0: repeticion ritmica (Kiel. Hamburg. Berlin.), contraste con aber, imagen concreta (manos frias, cara roja, tarjeta rota)",
+  "historias": [
+    { "slot": "0", "quiere": "darle a Jan las siete postales que le escribio desde Munich y nunca mando", "impide": "la verguenza: la primera postal promete volver en mayo, hace ocho anos", "cuesta": "el secreto: Jan lee en voz alta la promesa rota y ya no se puede deshacer", "cambia": "Jan guarda las postales en su cajon; se quedan con el, no con ella", "emocion": "verguenza: se pone roja porque ese mayo tiene ocho anos, y mete las manos en la chaqueta" },
+    { "slot": "1", "quiere": "mandar una postal a cada uno de los doce amigos de antes para invitarlos al jueves", "impide": "no tiene las direcciones; las tiene Jan, y casi todos se han ido de Bremen", "cuesta": "ocho postales a la basura: de doce amigos quedan cuatro en Bremen", "cambia": "acepta que el grupo es mas pequeno; Jan se cuenta como el quinto", "emocion": "tristeza: la garganta cerrada porque el grupo es pequeno, y dobla la lista despacio" },
+    { "slot": "2", "quiere": "mandar las cinco postales hoy, antes del jueves", "impide": "es domingo, la oficina de correos esta cerrada y Jan solo tiene cinco sellos viejos para seis postales", "cuesta": "rompe la postal para su antiguo trabajo en Munich: la ultima puerta a Munich", "cambia": "el ultimo sello va a la postal para Jan, que vive abajo; Anna elige Bremen", "emocion": "duele y alivia: le duele porque el trabajo de Munich era bueno, respira hondo y echa los trozos a la basura" }
+  ]
+}

@@ -1022,22 +1022,20 @@ export function validateJourneyStories(
   // merece plaza, asi que el check informa y no bloquea.
   if (stories.some((s) => s.vocab && s.vocab.length)) {
     const idiomaEs = lang === "ES";
-    const tipo = (ctx.journeyType ?? "").trim().toLowerCase();
-    const gateado = tipo === "traveler";
-    if (!idiomaEs) {
-      const detalle =
-        `Solo hay lexico graduado hasta C1 en espanol; en ${lang || "?"} no se puede medir la utilidad de una plaza.` +
-        (gateado
-          ? ""
-          : ` Tipo ${tipo || "desconocido"}: no gateado por esta regla; se informa como cobertura pendiente.`);
-      if (gateado) {
-        noImplSet("journey-vocab-worth-teaching", "Cada plaza merece ensenarse", detalle);
-      } else {
-        pushSet("journey-vocab-worth-teaching",
-          "Cada plaza merece ensenarse (sin lexico C1 disponible para este idioma)",
-          true,
-          detalle);
-      }
+    // El tipo decide ANTES que el idioma (2026-09-13). Este check solo gatea a
+    // los Traveler; en el resto informa. La rama "idioma no ES" devolvia
+    // not-implemented sin mirar el tipo, y saveStory trata eso como fallo: el
+    // Friends DE A0 no podia guardar su ultima historia por un check que, por
+    // su propia regla, no debia bloquearlo. Tipo desconocido sigue sin pasar:
+    // sin saber si es Traveler no se puede decir que no gatea.
+    const tipoWorth = (ctx.journeyType ?? "").trim().toLowerCase();
+    if (!idiomaEs && tipoWorth && tipoWorth !== "traveler") {
+      const motivo = `sin lexico graduado para ${lang || "?"}; en ${tipoWorth} solo informa`;
+      pushSet("journey-vocab-worth-teaching", "Cada plaza merece ensenarse", true, motivo);
+      if (!parcial) out[out.length - 1].detail = motivo;
+    } else if (!idiomaEs) {
+      noImplSet("journey-vocab-worth-teaching", "Cada plaza merece ensenarse",
+        `Solo hay lexico graduado hasta C1 en espanol; en ${lang || "?"} no se puede medir la utilidad de una plaza.`);
     } else {
       const fueraDelLexico = (w: string): boolean => {
         const x = w.trim().toLowerCase();

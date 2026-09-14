@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "germany",
+  "registro": "ruidoso y competitivo: noche de juegos con reglas que todos saben menos ella",
+  "espina": "Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.",
+  "recursos": "A0: repeticion ritmica (una Eins, noch eine Zwei; ich gewinne, ich gewinne), contraste con aber, imagen concreta (dado que cae, tablero roto, mano sobre la rejilla)",
+  "historias": [
+    { "slot": "0", "quiere": "jugar con el grupo y no quedarse fuera en la noche de juegos", "impide": "Felix trae un juego nuevo y explica las reglas muy rapido; todos las saben menos ella", "cuesta": "pierde la partida y le toca fregar como la ultima", "cambia": "Felix la ayuda con los vasos: el recien llegado a su grupo es amable", "emocion": "frustracion: las manos calientes porque todos saben las reglas menos ella; tira el dado demasiado fuerte y cae de la mesa" },
+    { "slot": "1", "quiere": "aprender las reglas a solas con Jan para no perder otra vez", "impide": "tiene miedo de parecer torpe delante del grupo; solo se atreve de noche con Jan", "cuesta": "el juego viejo de antes esta roto y le faltan fichas; va a la basura", "cambia": "vuelve a ganar con su dado rojo y Jan la llama otra vez reina", "emocion": "pena: los ojos humedos porque el juego de antes esta roto; se los seca rapido" },
+    { "slot": "2", "quiere": "ganarle a Felix en la revancha del patio", "impide": "Felix va por delante; ella necesita un cuatro exacto", "cuesta": "su dado rojo de la escuela se cuela por la rejilla del suelo y no se puede sacar", "cambia": "gana, y Felix le regala un dado azul 'para la reina'", "emocion": "alegria rota: la boca seca porque el dado estaba con ella desde la escuela; pone la mano sobre la rejilla" }
+  ]
+}

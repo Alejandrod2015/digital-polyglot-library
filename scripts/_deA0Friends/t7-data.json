@@ -1,0 +1,421 @@
+[
+ {
+  "topic": "plans-and-decisions",
+  "slotIndex": 0,
+  "title": "Eine Notiz an Annas Tür",
+  "arcType": null,
+  "synopsis": "A note hangs on Anna's door. Niklas, who owns the house, needs an answer about the flat this week. Another woman wants it too.",
+  "text": "Eine Notiz klebt an Annas Tür. Anna, die Mieterin auf Probe, lehnt am Geländer und liest. Die Notiz ist höflich.\n\nNiklas ist der Hausbesitzer. Er wohnt im Erdgeschoss und trägt immer einen braunen Pullover. Er ist nett und freundlich, aber streng.\n\n“Liebe Anna, die Wohnung ist nur bis Freitag frei. Bitte gib mir eine Antwort. Niklas”, liest Anna.\n\nDie Wohnung oben ist klein, aber gemütlich. Sie hat viel Licht. Anna mag den Blick in den Hof. Das Fenster ist offen.\n\nNiklas steht plötzlich neben ihr. Er räuspert sich.\n\n“Hallo Anna. Eine Frau aus Hamburg will die Wohnung leider auch”, sagt Niklas.\n\n“Und ich? Ich brauche noch ein bisschen Zeit”, antwortet Anna.\n\n“Ich warte bis Freitag. Der Freitag ist die Grenze”, sagt er.\n\nAnna ist blass, denn München wartet auch bis Freitag. Sie knüllt die Notiz in der Faust.\n\n“Gut. Du bekommst am Freitag eine Antwort”, sagt Anna.\n\nNiklas nickt. Seine Schuhe quietschen auf der Treppe.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "die Notiz",
+    "surface": "Notiz",
+    "definition": "A note; a short message on paper.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "lehnen",
+    "surface": "lehnt",
+    "definition": "To lean; to rest your body against something.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "höflich",
+    "surface": "höflich",
+    "definition": "Polite; with good manners."
+   },
+   {
+    "type": "verb",
+    "word": "räuspern",
+    "surface": "räuspert",
+    "definition": "To clear your throat before you speak.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Mieterin",
+    "surface": "Mieterin",
+    "definition": "A female tenant; she pays to live in a flat."
+   },
+   {
+    "type": "noun",
+    "word": "der Hausbesitzer",
+    "surface": "Hausbesitzer",
+    "definition": "A landlord; the man who owns the house.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "braun",
+    "surface": "braunen",
+    "definition": "Brown; the colour of chocolate."
+   },
+   {
+    "type": "noun",
+    "word": "der Pullover",
+    "surface": "Pullover",
+    "definition": "A jumper; a warm top you wear.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "streng",
+    "surface": "streng",
+    "definition": "Strict; he wants people to follow the rules."
+   },
+   {
+    "type": "noun",
+    "word": "die Wohnung",
+    "surface": "Wohnung",
+    "definition": "A flat; rooms where a person lives.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "frei",
+    "surface": "frei",
+    "definition": "Free; no one lives there yet."
+   },
+   {
+    "type": "adjective",
+    "word": "gemütlich",
+    "surface": "gemütlich",
+    "definition": "Cosy; warm, nice and comfortable."
+   },
+   {
+    "type": "verb",
+    "word": "mögen",
+    "surface": "mag",
+    "definition": "To like; to think something is nice."
+   },
+   {
+    "type": "noun",
+    "word": "der Freitag",
+    "surface": "Freitag",
+    "definition": "Friday; the day after Thursday."
+   },
+   {
+    "type": "verb",
+    "word": "quietschen",
+    "surface": "quietschen",
+    "definition": "To squeak; to make a high, thin sound.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "nett",
+    "surface": "nett",
+    "definition": "Nice; kind and pleasant to others."
+   },
+   {
+    "type": "noun",
+    "word": "der Schuh",
+    "surface": "Schuhe",
+    "definition": "A shoe; you wear it on your foot.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "blass",
+    "surface": "blass",
+    "definition": "Pale; with very little colour in the face."
+   },
+   {
+    "type": "verb",
+    "word": "knüllen",
+    "surface": "knüllt",
+    "definition": "To crumple; to press paper into a small ball.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Faust",
+    "surface": "Faust",
+    "definition": "A fist; a closed hand.",
+    "anchor": true
+   }
+  ]
+ },
+ {
+  "topic": "plans-and-decisions",
+  "slotIndex": 1,
+  "title": "Die Liste am Kühlschrank",
+  "arcType": null,
+  "synopsis": "Anna makes a list on Jan's fridge: Munich on one side, Bremen on the other. Jan reads it and sees his own name there.",
+  "text": "Es ist schon dunkel. Anna steht mit einem Kuli vor Jans Kühlschrank. Sie macht eine Liste mit zwei Spalten.\n\nJan, der Koch, kommt in die Küche und gähnt. Der Kühlschrank summt.\n\n“Was ist das für eine Liste?”, fragt Jan.\n\n“Für Freitag. München oder Bremen”, antwortet Anna.\n\nMünchen steht links. Bremen steht rechts. Anna schreibt unter München: mehr Geld, großes Büro. Sie schreibt unter Bremen: Jan, Freunde, Musik.\n\n“Geld, Büro. Jan, Freunde, Musik”, murmelt Anna.\n\n“Mein Name steht hier. Ich will nicht dein Grund sein. Du entscheidest für dich”, sagt Jan.\n\nJan macht einen Strich durch seinen Namen.\n\nAnna telefoniert dann mit München. Sie bittet um eine Woche mehr. Die Chefin sagt sofort Nein.\n\nAnna kaut auf dem Kuli. Beide Spalten sind fast gleich lang.\n\n“Ich bin ratlos. Und jetzt?”, flüstert sie.\n\n“Jetzt schläfst du. Die Antwort kommt morgen”, sagt Jan.\n\nJan geht leise in den Hof. Die Spalte für Bremen ist jetzt kürzer.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "der Kuli",
+    "surface": "Kuli",
+    "definition": "A pen; a biro you write with.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Liste",
+    "surface": "Liste",
+    "definition": "A list; words written one under the other.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Spalte",
+    "surface": "Spalten",
+    "definition": "A column; a line of words from top to bottom.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "links",
+    "surface": "links",
+    "definition": "On the left; on the left side."
+   },
+   {
+    "type": "adverb",
+    "word": "rechts",
+    "surface": "rechts",
+    "definition": "On the right; on the right side."
+   },
+   {
+    "type": "preposition",
+    "word": "unter",
+    "surface": "unter",
+    "definition": "Under; below something on the list."
+   },
+   {
+    "type": "noun",
+    "word": "das Geld",
+    "surface": "Geld",
+    "definition": "Money; you pay with it."
+   },
+   {
+    "type": "noun",
+    "word": "das Büro",
+    "surface": "Büro",
+    "definition": "An office; a room where people work at desks.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "murmeln",
+    "surface": "murmelt",
+    "definition": "To mumble; to speak quietly and not clearly."
+   },
+   {
+    "type": "verb",
+    "word": "gähnen",
+    "surface": "gähnt",
+    "definition": "To yawn; to open your mouth wide when tired.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "summen",
+    "surface": "summt",
+    "definition": "To hum; to make a low, soft sound.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "der Grund",
+    "surface": "Grund",
+    "definition": "A reason; why you do something.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "telefonieren",
+    "surface": "telefoniert",
+    "definition": "To talk on the phone with someone.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "bitten",
+    "surface": "bittet",
+    "definition": "To ask for something; to say please."
+   },
+   {
+    "type": "noun",
+    "word": "die Woche",
+    "surface": "Woche",
+    "definition": "A week; seven days.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "sofort",
+    "surface": "sofort",
+    "definition": "At once; right now, with no waiting."
+   },
+   {
+    "type": "adjective",
+    "word": "ratlos",
+    "surface": "ratlos",
+    "definition": "At a loss; not knowing what to do."
+   },
+   {
+    "type": "verb",
+    "word": "kauen",
+    "surface": "kaut",
+    "definition": "To chew; to bite something again and again.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "schlafen",
+    "surface": "schläfst",
+    "definition": "To sleep; to rest with your eyes closed."
+   },
+   {
+    "type": "adjective",
+    "word": "kurz",
+    "surface": "kürzer",
+    "definition": "Shorter; less long than before."
+   }
+  ]
+ },
+ {
+  "topic": "plans-and-decisions",
+  "slotIndex": 2,
+  "title": "Die Karte vom Mai",
+  "arcType": null,
+  "synopsis": "Anna signs the contract and gets two keys. In Jan's kitchen, her old postcard is still waiting in a drawer.",
+  "text": "Ihre Hand ist ruhig. Anna unterschreibt den Vertrag mit blauer Tinte. Niklas schüttelt ihr die Hand. Er ist zufrieden.\n\n“So. Das ist mein Name”, sagt Anna.\n\nNiklas gibt ihr zwei Schlüssel. Die Schlüssel sind kalt. Einer ist für den Keller.\n\nAnna tippt an ihre Chefin: Nein, danke. Sie schluckt schwer.\n\nJan wartet unten mit Sekt. Die Gläser klirren.\n\n“Und? Was sagt der Vertrag?”, fragt Jan.\n\n“Zwei Jahre. Mindestens zwei Jahre”, antwortet Anna.\n\n“Und München? Bist du sicher?”, fragt er.\n\n“München sagt Tschüss. Das Geld auch”, lacht Anna.\n\n“Dann Prost!”, ruft Jan.\n\nJan öffnet seine Schublade. Die erste Postkarte liegt noch dort. Die Ecken sind krumm.\n\n“Lieber Jan, ich komme im Mai. Deine Anna”, liest Jan.\n\nAnna schreibt einen neuen Satz darunter.\n\n“Ich bleibe”, liest Jan. “Das ist der beste Satz auf der Karte.”\n\nJan klebt die Karte mit einem Magneten an den Kühlschrank. Annas Name steht jetzt in der Spalte für Bremen.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "unterschreiben",
+    "surface": "unterschreibt",
+    "definition": "To sign; to write your name on a paper.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "der Vertrag",
+    "surface": "Vertrag",
+    "definition": "A contract; a paper with rules both people sign.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Tinte",
+    "surface": "Tinte",
+    "definition": "Ink; the coloured liquid in a pen.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "schütteln",
+    "surface": "schüttelt",
+    "definition": "To shake; die Hand schütteln means to shake hands.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "zufrieden",
+    "surface": "zufrieden",
+    "definition": "Happy; pleased with how things are."
+   },
+   {
+    "type": "adverb",
+    "word": "dort",
+    "surface": "dort",
+    "definition": "There; in that place."
+   },
+   {
+    "type": "pronoun",
+    "word": "einer",
+    "surface": "Einer",
+    "definition": "One; one of them."
+   },
+   {
+    "type": "verb",
+    "word": "tippen",
+    "surface": "tippt",
+    "definition": "To type; to write on a phone or keyboard.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "schlucken",
+    "surface": "schluckt",
+    "definition": "To swallow; here, a sign that something is hard.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "sicher",
+    "surface": "sicher",
+    "definition": "Sure; you have no doubt."
+   },
+   {
+    "type": "verb",
+    "word": "klirren",
+    "surface": "klirren",
+    "definition": "To clink; glasses make a bright sound.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "mindestens",
+    "surface": "Mindestens",
+    "definition": "At least; not less than this."
+   },
+   {
+    "type": "interjection",
+    "word": "tschüss",
+    "surface": "Tschüss",
+    "definition": "Bye; a friendly way to say goodbye."
+   },
+   {
+    "type": "adverb",
+    "word": "dann",
+    "surface": "Dann",
+    "definition": "Then; so, in that case."
+   },
+   {
+    "type": "interjection",
+    "word": "prost",
+    "surface": "Prost",
+    "definition": "Cheers; what you say when you drink together."
+   },
+   {
+    "type": "adjective",
+    "word": "krumm",
+    "surface": "krumm",
+    "definition": "Bent; not straight any more."
+   },
+   {
+    "type": "adverb",
+    "word": "darunter",
+    "surface": "darunter",
+    "definition": "Under it; below that thing."
+   },
+   {
+    "type": "noun",
+    "word": "der Satz",
+    "surface": "Satz",
+    "definition": "A sentence; a group of words that says one thing.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "beste",
+    "surface": "beste",
+    "definition": "Best; better than all the others."
+   },
+   {
+    "type": "noun",
+    "word": "der Magnet",
+    "surface": "Magneten",
+    "definition": "A magnet; it holds paper on a fridge.",
+    "anchor": true
+   }
+  ]
+ }
+]

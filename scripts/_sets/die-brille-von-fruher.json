@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "die Brille,der Bart,der Tisch,die Falte",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "die Brille",
+     "answer": "glasses",
+     "options": [
+      "glasses",
+      "a beard",
+      "a table",
+      "a wrinkle"
+     ]
+    },
+    {
+     "word": "der Bart",
+     "answer": "a beard",
+     "options": [
+      "glasses",
+      "a beard",
+      "a table",
+      "a wrinkle"
+     ]
+    },
+    {
+     "word": "der Tisch",
+     "answer": "a table",
+     "options": [
+      "glasses",
+      "a beard",
+      "a table",
+      "a wrinkle"
+     ]
+    },
+    {
+     "word": "die Falte",
+     "answer": "a wrinkle",
+     "options": [
+      "glasses",
+      "a beard",
+      "a table",
+      "a wrinkle"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "liegt",
+  "sentence": "Ein altes Foto [[liegt]] auf seinem Tisch.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lies",
+   "options": [
+    "lies",
+    "stands",
+    "hangs",
+    "falls"
+   ],
+   "audioClip": {
+    "storySlug": "die-brille-von-fruher",
+    "storySource": "user",
+    "sentence": "Ein altes Foto liegt auf seinem Tisch.",
+    "targetWord": "liegt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zwanzig",
+  "sentence": "Die beiden sind darauf [[zwanzig]] Jahre alt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "twenty",
+   "options": [
+    "twenty",
+    "ten",
+    "thirty",
+    "fifteen"
+   ],
+   "audioClip": {
+    "storySlug": "die-brille-von-fruher",
+    "storySource": "user",
+    "sentence": "Die beiden sind darauf zwanzig Jahre alt.",
+    "targetWord": "zwanzig",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "groß",
+  "sentence": "“Die Brille ist so [[groß]]!”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "big",
+   "options": [
+    "big",
+    "small",
+    "old",
+    "round"
+   ],
+   "audioClip": {
+    "storySlug": "die-brille-von-fruher",
+    "storySource": "user",
+    "sentence": "“Die Brille ist so groß!”",
+    "targetWord": "groß",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "blond",
+  "sentence": "Ihre Haare sind lang und [[blond]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "blond",
+   "options": [
+    "blond",
+    "dark",
+    "red",
+    "short"
+   ],
+   "audioClip": {
+    "storySlug": "die-brille-von-fruher",
+    "storySource": "user",
+    "sentence": "Ihre Haare sind lang und blond.",
+    "targetWord": "blond",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "brauche",
+  "sentence": "“Ich [[brauche]] ein Foto von dir.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "need",
+   "options": [
+    "need",
+    "sell",
+    "find",
+    "forget"
+   ],
+   "audioClip": {
+    "storySlug": "die-brille-von-fruher",
+    "storySource": "user",
+    "sentence": "“Ich brauche ein Foto von dir.",
+    "targetWord": "brauche",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wunderbar",
+  "sentence": "“Das Foto ist [[wunderbar]]”, ruft die Nachbarin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wonderful",
+   "options": [
+    "wonderful",
+    "old",
+    "dark",
+    "small"
+   ],
+   "audioClip": {
+    "storySlug": "die-brille-von-fruher",
+    "storySource": "user",
+    "sentence": "“Das Foto ist wunderbar”, ruft die Nachbarin.",
+    "targetWord": "wunderbar",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zehn",
+  "sentence": "Die Nachbarin macht [[zehn]] Fotos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ten",
+   "options": [
+    "ten",
+    "two",
+    "five",
+    "twenty"
+   ],
+   "audioClip": {
+    "storySlug": "die-brille-von-fruher",
+    "storySource": "user",
+    "sentence": "Die Nachbarin macht zehn Fotos.",
+    "targetWord": "zehn",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "heiß",
+  "sentence": "Ihr Gesicht wird [[heiß]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hot",
+   "options": [
+    "hot",
+    "cold",
+    "pale",
+    "wet"
+   ],
+   "audioClip": {
+    "storySlug": "die-brille-von-fruher",
+    "storySource": "user",
+    "sentence": "Ihr Gesicht wird heiß.",
+    "targetWord": "heiß",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jung",
+  "sentence": "Sie ist auf dem Foto so [[jung]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "young",
+   "options": [
+    "young",
+    "old",
+    "tall",
+    "thin"
+   ],
+   "audioClip": {
+    "storySlug": "die-brille-von-fruher",
+    "storySource": "user",
+    "sentence": "Sie ist auf dem Foto so jung.",
+    "targetWord": "jung",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Augen",
+  "sentence": "Sie hat Falten um die [[Augen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "eyes",
+   "options": [
+    "eyes",
+    "mouth",
+    "hands",
+    "ears"
+   ],
+   "audioClip": {
+    "storySlug": "die-brille-von-fruher",
+    "storySource": "user",
+    "sentence": "Sie hat Falten um die Augen.",
+    "targetWord": "Augen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bitte",
+  "sentence": "“Nein, [[bitte]] nicht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "please",
+   "options": [
+    "please",
+    "never",
+    "always",
+    "sorry"
+   ],
+   "audioClip": {
+    "storySlug": "die-brille-von-fruher",
+    "storySource": "user",
+    "sentence": "“Nein, bitte nicht.",
+    "targetWord": "bitte",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schön",
+  "sentence": "“Du bist sehr [[schön]]”, sagt die Nachbarin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "beautiful",
+   "options": [
+    "beautiful",
+    "young",
+    "tired",
+    "funny"
+   ],
+   "audioClip": {
+    "storySlug": "die-brille-von-fruher",
+    "storySource": "user",
+    "sentence": "“Du bist sehr schön”, sagt die Nachbarin.",
+    "targetWord": "schön",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schnell",
+  "sentence": "Die Nachbarin macht [[schnell]] ein Foto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quickly",
+   "options": [
+    "quickly",
+    "slowly",
+    "never",
+    "sadly"
+   ],
+   "audioClip": {
+    "storySlug": "die-brille-von-fruher",
+    "storySource": "user",
+    "sentence": "Die Nachbarin macht schnell ein Foto.",
+    "targetWord": "schnell",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "holt",
+  "sentence": "Die Nachbarin _____ ihre Kamera.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "holt",
+   "options": [
+    "holt",
+    "sucht",
+    "zeigt",
+    "kauft"
+   ],
+   "translation": "The neighbor _____ her camera.",
+   "optionTranslations": [
+    "gets",
+    "looks for",
+    "shows",
+    "buys"
+   ],
+   "audioClip": {
+    "storySlug": "die-brille-von-fruher",
+    "storySource": "user",
+    "sentence": "Die Nachbarin holt ihre Kamera.",
+    "targetWord": "holt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "schließt",
+  "sentence": "Sie _____ jedes Mal die Augen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schließt",
+   "options": [
+    "schließt",
+    "öffnet",
+    "sieht",
+    "wischt"
+   ],
+   "translation": "She _____ her eyes every time.",
+   "optionTranslations": [
+    "closes",
+    "opens",
+    "sees",
+    "wipes"
+   ],
+   "audioClip": {
+    "storySlug": "die-brille-von-fruher",
+    "storySource": "user",
+    "sentence": "Sie schließt jedes Mal die Augen.",
+    "targetWord": "schließt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "lacht",
+  "sentence": "Sie _____ laut.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lacht",
+   "options": [
+    "lacht",
+    "weint",
+    "singt",
+    "spricht"
+   ],
+   "translation": "She _____ loudly.",
+   "optionTranslations": [
+    "laughs",
+    "cries",
+    "sings",
+    "speaks"
+   ],
+   "audioClip": {
+    "storySlug": "die-brille-von-fruher",
+    "storySource": "user",
+    "sentence": "Sie lacht laut.",
+    "targetWord": "lacht",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

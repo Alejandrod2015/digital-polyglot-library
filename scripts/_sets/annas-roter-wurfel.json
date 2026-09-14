@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Würfel,das Brett,der Schrank,die Königin",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Würfel",
+     "answer": "a dice",
+     "options": [
+      "a dice",
+      "a board",
+      "a cupboard",
+      "a queen"
+     ]
+    },
+    {
+     "word": "das Brett",
+     "answer": "a board",
+     "options": [
+      "a dice",
+      "a board",
+      "a cupboard",
+      "a queen"
+     ]
+    },
+    {
+     "word": "der Schrank",
+     "answer": "a cupboard",
+     "options": [
+      "a dice",
+      "a board",
+      "a cupboard",
+      "a queen"
+     ]
+    },
+    {
+     "word": "die Königin",
+     "answer": "a queen",
+     "options": [
+      "a dice",
+      "a board",
+      "a cupboard",
+      "a queen"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "seit",
+  "sentence": "Sie hat ihn [[seit]] der Schulzeit.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "since",
+   "options": [
+    "since",
+    "without",
+    "after",
+    "before"
+   ],
+   "audioClip": {
+    "storySlug": "annas-roter-wurfel",
+    "storySource": "user",
+    "sentence": "Sie hat ihn seit der Schulzeit.",
+    "targetWord": "seit",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Glück",
+  "sentence": "Er bringt ihr immer [[Glück]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "luck",
+   "options": [
+    "luck",
+    "money",
+    "time",
+    "trouble"
+   ],
+   "audioClip": {
+    "storySlug": "annas-roter-wurfel",
+    "storySource": "user",
+    "sentence": "Er bringt ihr immer Glück.",
+    "targetWord": "Glück",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "spät",
+  "sentence": "Es ist [[spät]] und still.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "late",
+   "options": [
+    "late",
+    "early",
+    "cold",
+    "warm"
+   ],
+   "audioClip": {
+    "storySlug": "annas-roter-wurfel",
+    "storySource": "user",
+    "sentence": "Es ist spät und still.",
+    "targetWord": "spät",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "langsam",
+  "sentence": "“Aber bitte [[langsam]]”, bittet sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "slowly",
+   "options": [
+    "slowly",
+    "quickly",
+    "loudly",
+    "quietly"
+   ],
+   "audioClip": {
+    "storySlug": "annas-roter-wurfel",
+    "storySource": "user",
+    "sentence": "“Aber bitte langsam”, bittet sie.",
+    "targetWord": "langsam",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wieder",
+  "sentence": "Du bist [[wieder]] die Königin!”, ruft er.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "again",
+   "options": [
+    "again",
+    "never",
+    "almost",
+    "still"
+   ],
+   "audioClip": {
+    "storySlug": "annas-roter-wurfel",
+    "storySource": "user",
+    "sentence": "Du bist wieder die Königin!”, ruft er.",
+    "targetWord": "wieder",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Spiel",
+  "sentence": "Das [[Spiel]] von früher ist darin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "game",
+   "options": [
+    "game",
+    "book",
+    "photo",
+    "letter"
+   ],
+   "audioClip": {
+    "storySlug": "annas-roter-wurfel",
+    "storySource": "user",
+    "sentence": "Das Spiel von früher ist darin.",
+    "targetWord": "Spiel",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "darin",
+  "sentence": "Das Spiel von früher ist [[darin]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "inside it",
+   "options": [
+    "inside it",
+    "outside it",
+    "next to it",
+    "under it"
+   ],
+   "audioClip": {
+    "storySlug": "annas-roter-wurfel",
+    "storySource": "user",
+    "sentence": "Das Spiel von früher ist darin.",
+    "targetWord": "darin",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "kaputt",
+  "sentence": "Das Brett ist [[kaputt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "broken",
+   "options": [
+    "broken",
+    "new",
+    "clean",
+    "heavy"
+   ],
+   "audioClip": {
+    "storySlug": "annas-roter-wurfel",
+    "storySource": "user",
+    "sentence": "Das Brett ist kaputt.",
+    "targetWord": "kaputt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Wo",
+  "sentence": "“[[Wo]] sind die anderen drei Figuren?”, fragt sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Where",
+   "options": [
+    "Where",
+    "When",
+    "Why",
+    "Who"
+   ],
+   "audioClip": {
+    "storySlug": "annas-roter-wurfel",
+    "storySource": "user",
+    "sentence": "“Wo sind die anderen drei Figuren?”, fragt sie.",
+    "targetWord": "Wo",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ahnung",
+  "sentence": "“Keine [[Ahnung]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "idea",
+   "options": [
+    "idea",
+    "chance",
+    "time",
+    "luck"
+   ],
+   "audioClip": {
+    "storySlug": "annas-roter-wurfel",
+    "storySource": "user",
+    "sentence": "“Keine Ahnung.",
+    "targetWord": "Ahnung",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lang",
+  "sentence": "Das ist zu [[lang]] her”, antwortet er.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "long",
+   "options": [
+    "long",
+    "short",
+    "near",
+    "soon"
+   ],
+   "audioClip": {
+    "storySlug": "annas-roter-wurfel",
+    "storySource": "user",
+    "sentence": "Das ist zu lang her”, antwortet er.",
+    "targetWord": "lang",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nass",
+  "sentence": "Ihre Augen werden [[nass]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wet",
+   "options": [
+    "wet",
+    "dry",
+    "red",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "annas-roter-wurfel",
+    "storySource": "user",
+    "sentence": "Ihre Augen werden nass.",
+    "targetWord": "nass",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Uhr",
+  "sentence": "Sie hört nur die [[Uhr]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clock",
+   "options": [
+    "clock",
+    "music",
+    "wind",
+    "radio"
+   ],
+   "audioClip": {
+    "storySlug": "annas-roter-wurfel",
+    "storySource": "user",
+    "sentence": "Sie hört nur die Uhr.",
+    "targetWord": "Uhr",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "stellt",
+  "sentence": "Er _____ die Figuren auf das Brett.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "stellt",
+   "options": [
+    "stellt",
+    "sucht",
+    "wirft",
+    "zeigt"
+   ],
+   "translation": "He _____ the pieces on the board.",
+   "optionTranslations": [
+    "sets",
+    "looks for",
+    "throws",
+    "shows"
+   ],
+   "audioClip": {
+    "storySlug": "annas-roter-wurfel",
+    "storySource": "user",
+    "sentence": "Er stellt die Figuren auf das Brett.",
+    "targetWord": "stellt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "werden",
+  "sentence": "Ihre Augen _____ nass.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "werden",
+   "options": [
+    "werden",
+    "bleiben",
+    "sind",
+    "sehen"
+   ],
+   "translation": "Her eyes _____ wet.",
+   "optionTranslations": [
+    "become",
+    "stay",
+    "are",
+    "see"
+   ],
+   "audioClip": {
+    "storySlug": "annas-roter-wurfel",
+    "storySource": "user",
+    "sentence": "Ihre Augen werden nass.",
+    "targetWord": "werden",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "hört",
+  "sentence": "Sie _____ nur die Uhr.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "hört",
+   "options": [
+    "hört",
+    "sieht",
+    "sucht",
+    "zeigt"
+   ],
+   "translation": "She only _____ the clock.",
+   "optionTranslations": [
+    "hears",
+    "sees",
+    "looks for",
+    "shows"
+   ],
+   "audioClip": {
+    "storySlug": "annas-roter-wurfel",
+    "storySource": "user",
+    "sentence": "Sie hört nur die Uhr.",
+    "targetWord": "hört",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

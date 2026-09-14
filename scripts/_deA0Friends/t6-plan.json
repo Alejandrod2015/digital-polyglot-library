@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "germany",
+  "registro": "practico y humeante: cocinar para diez con ollas prestadas y una llamada de Munich en medio",
+  "espina": "Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.",
+  "recursos": "A0: repeticion ritmica (Anna schneidet. Luisa wuerzt.; tres ollas en el fuego, tres en la mesa), contraste con aber, imagen concreta (ojos que lloran con la cebolla, tapa caliente en la mano, seis ollas vacias)",
+  "historias": [
+    { "slot": "0", "quiere": "cocinar su sopa de estudiante para los diez del jueves", "impide": "su receta es para dos y no sabe cocinar para tantos; necesita a Luisa", "cuesta": "el papel viejo de la receta cae dentro de la olla y se deshace", "cambia": "Luisa le hace ver que la receta ya esta en su cabeza", "emocion": "orgullo: le sube el calor a la cara porque la sopa huele como antes; remueve muy despacio" },
+    { "slot": "1", "quiere": "tener la sopa lista mientras atiende una llamada", "impide": "llaman de su antiguo trabajo en Munich y ella se queda escuchando en el pasillo", "cuesta": "la olla grande de Jan se quema y ya no sirve", "cambia": "Jan sabe ahora que Munich la quiere de vuelta", "emocion": "culpa: casi llora porque es la olla favorita de Jan; se queda con la tapa caliente en la mano" },
+    { "slot": "2", "quiere": "salvar la cena del jueves sin la olla grande", "impide": "los invitados llegan en una hora y no hay olla para diez", "cuesta": "la sopa ya no es la de antes: son seis sopas pequenas en seis ollas prestadas", "cambia": "la cena sale; cada vecino trae su olla y el grupo come junto", "emocion": "cansancio y alegria: esta cansada pero contenta porque la noche no esta perdida; pone la mesa con diez platos distintos" }
+  ]
+}

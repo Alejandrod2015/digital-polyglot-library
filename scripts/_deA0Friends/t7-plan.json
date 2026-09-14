@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "germany",
+  "registro": "sobrio y decisivo: notas, listas y firmas; menos risas y un si dicho por escrito",
+  "espina": "Anna vuelve a Bremen tras ocho anos en Munich y quiere recuperar su sitio en el grupo de los jueves en la cocina de Jan; cada tema le cuesta algo de la vida de antes o de la de Munich, hasta que en el tema 7 elige quedarse.",
+  "recursos": "A0: repeticion ritmica (Muenchen steht links. Bremen steht rechts.; una llave para arriba, una llave para el sotano), contraste con aber, imagen concreta (nota arrugada en la mano, raya sobre un nombre, postal con iman en la nevera)",
+  "historias": [
+    { "slot": "0", "quiere": "tener mas tiempo para decidir entre Bremen y Munich", "impide": "Niklas, el dueno de la casa, necesita respuesta el viernes: otra mujer quiere el piso", "cuesta": "pierde el quiza: promete una respuesta el viernes, el mismo dia que Munich", "cambia": "la decision tiene fecha", "emocion": "agobio: se pone palida porque Munich tambien espera hasta el viernes; arruga la nota en la mano" },
+    { "slot": "1", "quiere": "decidir con una lista de dos columnas en la nevera de Jan", "impide": "las dos columnas quedan iguales y Jan no quiere ser una razon", "cuesta": "Jan tacha su propio nombre de la columna de Bremen, y Munich le niega una semana mas", "cambia": "Anna entiende que tiene que elegir por ella, no por Jan", "emocion": "desconcierto: no sabe que hacer porque las dos columnas son igual de largas; muerde el boli" },
+    { "slot": "2", "quiere": "quedarse en Bremen y decirselo a Jan", "impide": "decir que no a Munich significa perder el trabajo bueno y el dinero", "cuesta": "el trabajo y el dinero de Munich se van para siempre", "cambia": "firma el contrato, escribe 'Ich bleibe' en la postal de mayo y su nombre vuelve a la lista de los jueves", "emocion": "tristeza pequena y alegria: un poco triste porque el trabajo alli es bueno; respira hondo y sonrie" }
+  ]
+}

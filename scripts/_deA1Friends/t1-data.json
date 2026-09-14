@@ -1,0 +1,408 @@
+[
+ {
+  "topic": "chats-and-phone-calls",
+  "slotIndex": 0,
+  "title": "Alles super in Frankfurt",
+  "arcType": "reframe-turn",
+  "synopsis": "Julia is new in Frankfurt. On the stairs she records a happy voice message for her friends back in Rostock and says she already knows many people. It is not true. Her neighbour Moritz opens his door, and he has heard every word through the thin walls of the building.",
+  "text": "Julia, eine Physiotherapeutin aus Rostock, sitzt am Abend auf der Treppe in Frankfurt. Moritz ist Straßenbahnfahrer und wohnt gegenüber, aber Julia kennt ihn nicht. Sie nimmt eine Sprachnachricht für ihre Freundinnen auf. “Hallo, ihr Lieben! Frankfurt ist wunderschön, und ich habe schon viele Leute kennengelernt”, sagt sie.\n\nDas ist nicht die Wahrheit. Sie kennt hier noch niemanden. Die Nachricht ist weg, und bloß zwei Haken stehen darunter. Unten knarrt die Haustür. Es ist kalt, und keine Freundin antwortet.\n\nDa geht die Nachbarwohnung auf. Moritz trägt einen dunkelgrünen Kapuzenpullover. “Die Wände hier sind ziemlich dünn”, meint Moritz. “Ich habe alles gehört, auch die vielen Leute.”\n\nJulia wird rot. Die Lüge ist ihr peinlich. Sie hält das Smartphone fest und versteckt es in der Jacke.\n\n“Ich kenne hier wirklich niemanden”, gibt Julia zu. Moritz lacht nicht. “Natürlich nicht, du bist ja neu. Jetzt kennst du mich, Moritz von gegenüber”, antwortet er und trägt seinen Mülleimer nach unten.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "die Physiotherapeutin",
+    "surface": "Physiotherapeutin",
+    "definition": "A woman whose job is helping people move well again after pain.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Sprachnachricht",
+    "surface": "Sprachnachricht",
+    "definition": "A voice message that you record and send on your phone.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "wunderschön",
+    "surface": "wunderschön",
+    "definition": "Very beautiful; really lovely to look at or to be in."
+   },
+   {
+    "type": "verb",
+    "word": "kennenlernen",
+    "surface": "kennengelernt",
+    "definition": "To meet a person for the first time and start to know them."
+   },
+   {
+    "type": "noun",
+    "word": "die Wahrheit",
+    "surface": "Wahrheit",
+    "definition": "The truth; what is really true, not a story you make up."
+   },
+   {
+    "type": "adverb",
+    "word": "weg",
+    "surface": "weg",
+    "definition": "Gone; it has left and it is not here any more."
+   },
+   {
+    "type": "adverb",
+    "word": "bloß",
+    "surface": "bloß",
+    "definition": "Only; just that and nothing more than that."
+   },
+   {
+    "type": "verb",
+    "word": "knarren",
+    "surface": "knarrt",
+    "definition": "To creak; an old door or floor makes a long, low noise."
+   },
+   {
+    "type": "noun",
+    "word": "die Nachbarwohnung",
+    "surface": "Nachbarwohnung",
+    "definition": "The flat next to yours or across the hall from yours.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "der Straßenbahnfahrer",
+    "surface": "Straßenbahnfahrer",
+    "definition": "A man whose job is driving a tram through the city streets.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "dunkelgrün",
+    "surface": "dunkelgrünen",
+    "definition": "Dark green; a deep green colour like the leaves of a tree."
+   },
+   {
+    "type": "noun",
+    "word": "der Kapuzenpullover",
+    "surface": "Kapuzenpullover",
+    "definition": "A hoodie; a warm, soft top with a hood for your head.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "ziemlich",
+    "surface": "ziemlich",
+    "definition": "Quite; more than a little, but not very much."
+   },
+   {
+    "type": "noun",
+    "word": "die Lüge",
+    "surface": "Lüge",
+    "definition": "A lie; something you say that you know is not true."
+   },
+   {
+    "type": "adjective",
+    "word": "peinlich",
+    "surface": "peinlich",
+    "definition": "Embarrassing; it makes you feel awkward in front of other people."
+   },
+   {
+    "type": "verb",
+    "word": "halten",
+    "surface": "hält",
+    "definition": "To hold something in your hand and not let it go."
+   },
+   {
+    "type": "verb",
+    "word": "verstecken",
+    "surface": "versteckt",
+    "definition": "To hide something so that other people cannot see it."
+   },
+   {
+    "type": "adverb",
+    "word": "wirklich",
+    "surface": "wirklich",
+    "definition": "Really; you say it when something is truly the case."
+   },
+   {
+    "type": "adverb",
+    "word": "natürlich",
+    "surface": "Natürlich",
+    "definition": "Of course; you say it when something is clear and normal."
+   },
+   {
+    "type": "noun",
+    "word": "der Mülleimer",
+    "surface": "Mülleimer",
+    "definition": "A rubbish bin; you put old food and paper in it.",
+    "anchor": true
+   }
+  ]
+ },
+ {
+  "topic": "chats-and-phone-calls",
+  "slotIndex": 1,
+  "title": "Ein Abend auf stumm",
+  "arcType": "late-reveal",
+  "synopsis": "Moritz gives Julia his number and invites her to meet his friends that evening. The same evening she has a long video call with her friends in Rostock and puts her phone on silent. When she looks again, it is almost midnight and she has missed the whole evening.",
+  "text": "Am Samstagmorgen klopft Moritz an Julias Tür. Er gibt ihr einen Zettel mit seiner Handynummer. “Ich treffe heute Abend Freunde. Schreib mir, dann hole ich dich ab”, sagt er. “Super, mein erstes Wochenende hier!”, lacht Julia und speichert die Nummer.\n\nAm Abend beginnt der Videoanruf mit Rostock. Fünf Freundinnen reden auf einmal, der Laptop rauscht, und das Bild wackelt ständig. Julia stellt ihr Handy auf stumm. Nach zwanzig Minuten gehen zwei. “Wir telefonieren nächste Woche wieder, ja?”, ruft eine.\n\nKurz vor Mitternacht sieht Julia zwei Nachrichten. Moritz hat sie vorhin geschrieben. Die erste kommt um acht: “Wir sitzen draußen, der Abend ist herrlich. Kommst du?” Die zweite kommt um neun: “Pech. Vielleicht nächstes Mal.”\n\nIm Zimmer ist es kalt, und Julia ist unglücklich. Der Abend in Frankfurt ist vorbei, und die anderen sitzen wahrscheinlich zusammen. Sie drückt das Handy an die Wange. “Tut mir leid, ich habe es verpasst”, schreibt sie. Moritz antwortet nicht mehr.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "der Samstagmorgen",
+    "surface": "Samstagmorgen",
+    "definition": "The morning of a Saturday, before lunch time at the weekend.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Handynummer",
+    "surface": "Handynummer",
+    "definition": "The number you call or text to reach someone's mobile phone.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "treffen",
+    "surface": "treffe",
+    "definition": "To meet people you know at a place and spend time together."
+   },
+   {
+    "type": "verb",
+    "word": "speichern",
+    "surface": "speichert",
+    "definition": "To save a number or a file on your phone or computer."
+   },
+   {
+    "type": "noun",
+    "word": "das Wochenende",
+    "surface": "Wochenende",
+    "definition": "The weekend; Saturday and Sunday, when many people do not work.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "der Videoanruf",
+    "surface": "Videoanruf",
+    "definition": "A video call; you talk and see the other people on a screen.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "reden",
+    "surface": "reden",
+    "definition": "To talk; to speak with other people about something."
+   },
+   {
+    "type": "verb",
+    "word": "rauschen",
+    "surface": "rauscht",
+    "definition": "To make a soft, steady noise like wind or a bad speaker."
+   },
+   {
+    "type": "verb",
+    "word": "wackeln",
+    "surface": "wackelt",
+    "definition": "To wobble; to move a little from side to side."
+   },
+   {
+    "type": "adjective",
+    "word": "stumm",
+    "surface": "stumm",
+    "definition": "Silent; the phone makes no sound when a message comes."
+   },
+   {
+    "type": "noun",
+    "word": "die Mitternacht",
+    "surface": "Mitternacht",
+    "definition": "Midnight; twelve o'clock at night, when one day ends.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "vorhin",
+    "surface": "vorhin",
+    "definition": "A short time ago; earlier today, not long before now."
+   },
+   {
+    "type": "adverb",
+    "word": "draußen",
+    "surface": "draußen",
+    "definition": "Outside; out in the open air and not inside a building."
+   },
+   {
+    "type": "adjective",
+    "word": "herrlich",
+    "surface": "herrlich",
+    "definition": "Wonderful; really lovely and very nice to enjoy."
+   },
+   {
+    "type": "noun",
+    "word": "das Pech",
+    "surface": "Pech",
+    "definition": "Bad luck; when something does not work out the way you want."
+   },
+   {
+    "type": "adjective",
+    "word": "unglücklich",
+    "surface": "unglücklich",
+    "definition": "Unhappy; sad and not pleased about what has happened."
+   },
+   {
+    "type": "adverb",
+    "word": "vorbei",
+    "surface": "vorbei",
+    "definition": "Over; the time for it has already ended."
+   },
+   {
+    "type": "adverb",
+    "word": "wahrscheinlich",
+    "surface": "wahrscheinlich",
+    "definition": "Probably; you think it is very likely, but you do not know."
+   },
+   {
+    "type": "noun",
+    "word": "die Wange",
+    "surface": "Wange",
+    "definition": "The cheek; the soft side of your face under the eye.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "verpassen",
+    "surface": "verpasst",
+    "definition": "To miss something, like a message, a train or a party."
+   }
+  ]
+ },
+ {
+  "topic": "chats-and-phone-calls",
+  "slotIndex": 2,
+  "title": "Lieber einmal anrufen",
+  "arcType": "harmonic-close",
+  "synopsis": "The next morning Julia writes answers to Moritz and deletes them again. In the end she calls him and leaves a message. Moritz calls back from his tram with a plan for the next week, and that evening Julia does not listen to the new voice message from Rostock.",
+  "text": "Am Sonntagmorgen sitzt Julia im Schlafanzug mit einer Kaffeetasse an der Fensterbank. Die Sonne ist schon warm. Sie schreibt eine Antwort an Moritz, löscht sie und schreibt nochmal.\n\n“Das ist doch lächerlich”, murmelt Julia und versucht es anders. Sie holt tief Luft und wählt seine Nummer. Erst ist besetzt, dann kommt die Mailbox.\n\n“Hallo Moritz, hier ist Julia. Mein Handy war gestern aus Versehen auf stumm. Schließlich bin ich neu hier und möchte Leute kennen”, spricht sie nach dem Ton.\n\nZehn Minuten später klingelt ihr Handy. Moritz ruft zurück, und im Hintergrund quietscht eine Straßenbahn voller Fahrgäste. “Wir laufen jeden Sonntag um neun am Main. Willst du nächsten Sonntag mitkommen?”, fragt er. “Gern. Das ist ein guter Plan”, antwortet Julia.\n\nAm Abend kommt eine neue Sprachnachricht aus Rostock. Julia hört sie heute nicht an. Sie stellt ihre Laufschuhe schon an die Tür, eine ganze Woche zu früh.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "die Antwort",
+    "surface": "Antwort",
+    "definition": "An answer; what you write or say back to someone."
+   },
+   {
+    "type": "noun",
+    "word": "der Schlafanzug",
+    "surface": "Schlafanzug",
+    "definition": "Pyjamas; the soft clothes that you wear in bed at night.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Kaffeetasse",
+    "surface": "Kaffeetasse",
+    "definition": "A cup that you drink hot coffee from in the morning.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Fensterbank",
+    "surface": "Fensterbank",
+    "definition": "A windowsill; the flat shelf at the bottom of a window.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "nochmal",
+    "surface": "nochmal",
+    "definition": "Again; one more time, after you have already done it once."
+   },
+   {
+    "type": "adjective",
+    "word": "lächerlich",
+    "surface": "lächerlich",
+    "definition": "Silly or ridiculous; it is so small that people could laugh."
+   },
+   {
+    "type": "verb",
+    "word": "versuchen",
+    "surface": "versucht",
+    "definition": "To try to do something, even if it is not easy."
+   },
+   {
+    "type": "verb",
+    "word": "wählen",
+    "surface": "wählt",
+    "definition": "To dial; to put in a phone number to call someone."
+   },
+   {
+    "type": "adjective",
+    "word": "besetzt",
+    "surface": "besetzt",
+    "definition": "Busy; the phone line is already in use by someone else."
+   },
+   {
+    "type": "noun",
+    "word": "die Mailbox",
+    "surface": "Mailbox",
+    "definition": "Voicemail; a place on the phone where people leave a spoken message.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "gestern",
+    "surface": "gestern",
+    "definition": "Yesterday; the day that came just before today."
+   },
+   {
+    "type": "noun",
+    "word": "das Versehen",
+    "surface": "Versehen",
+    "definition": "A mistake you make without wanting to, by accident."
+   },
+   {
+    "type": "adverb",
+    "word": "schließlich",
+    "surface": "Schließlich",
+    "definition": "After all; you say it to give the main reason for something."
+   },
+   {
+    "type": "noun",
+    "word": "der Hintergrund",
+    "surface": "Hintergrund",
+    "definition": "The background; sounds or things behind the main thing you notice."
+   },
+   {
+    "type": "noun",
+    "word": "der Fahrgast",
+    "surface": "Fahrgäste",
+    "definition": "A passenger; a person who rides on a bus or a tram."
+   },
+   {
+    "type": "verb",
+    "word": "mitkommen",
+    "surface": "mitkommen",
+    "definition": "To come along with someone when they go somewhere."
+   },
+   {
+    "type": "noun",
+    "word": "der Plan",
+    "surface": "Plan",
+    "definition": "A plan; something that you decide to do at a certain time."
+   },
+   {
+    "type": "noun",
+    "word": "die Laufschuhe",
+    "surface": "Laufschuhe",
+    "definition": "Light shoes that you wear when you go running or jogging."
+   },
+   {
+    "type": "adverb",
+    "word": "schon",
+    "surface": "schon",
+    "definition": "Already; earlier than you think, before the usual time."
+   },
+   {
+    "type": "adverb",
+    "word": "früh",
+    "surface": "früh",
+    "definition": "Early; at the start of the day, before most people are up."
+   }
+  ]
+ }
+]

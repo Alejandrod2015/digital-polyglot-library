@@ -1,0 +1,73 @@
+import json
+d=json.load(open("scripts/_deA0Friends/t1-texts.json"))
+V=lambda t,w,s,df: {"type":t,"word":w,"surface":s,"definition":df}
+d[0]["synopsis"]="Anna is back in Bremen after eight years. In Jan's kitchen she opens a box of postcards she never sent him, and the first one holds an old promise."
+d[0]["vocab"]=[
+ V("noun","die Grafikerin","Grafikerin","A female graphic designer; she makes pictures and layouts."),
+ V("noun","das Viertel","Viertel","A city district; here the old Viertel quarter of Bremen."),
+ V("verb","sitzen","sitzt","To sit; to rest on a chair or seat."),
+ V("adjective","kalt","kalt","Cold; not warm at all."),
+ V("noun","der Koch","Koch","A cook; a man who makes food as his job."),
+ V("verb","bringen","bringt","To bring; to carry something to a person."),
+ V("adjective","erste","erste","First; the one that comes before all the others."),
+ V("adjective","voll","voll","Full; with no more space inside."),
+ V("noun","die Postkarte","Postkarten","A postcard; a card with a picture you send by post."),
+ V("noun","die Briefmarke","Briefmarke","A stamp; the small paper you stick on post."),
+ V("verb","schicken","schicke","To send; to make a letter or card go to someone."),
+ V("adjective","laut","laut","Loud; so other people can hear it well."),
+ V("adjective","rot","rot","Red; here her face goes red from shame."),
+ V("noun","die Jacke","Jacke","A jacket; a short coat you wear outside."),
+ V("adverb","nie","nie","Never; not one single time."),
+ V("verb","wissen","weiß","To know; to have the facts in your head."),
+ V("noun","die Schublade","Schublade","A drawer; the box in a table that slides out."),
+ V("verb","bleiben","bleiben","To stay; not to go away from a place."),
+ V("verb","atmen","atmet","To breathe; to take air in and out."),
+ V("adjective","warm","warm","Warm; a little hot, nice to touch or drink."),
+]
+d[1]["synopsis"]="Anna wants to invite her old friends to dinner at Jan's, like before. She has twelve names, but Jan knows where everyone lives now."
+d[1]["vocab"]=[
+ V("number","zwölf","Zwölf","Twelve; the number after eleven."),
+ V("verb","stehen","stehen","To stand; here, to be written on something."),
+ V("verb","kennen","kennt","To know a person or a thing well."),
+ V("adverb","früher","früher","Before; in the past, some years ago."),
+ V("noun","die Adresse","Adressen","An address; the street and house where someone lives."),
+ V("verb","nehmen","nimmt","To take something in your hand."),
+ V("verb","zeigen","zeigt","To point at something so others see it."),
+ V("noun","der Strich","Strich","A line; a short mark you draw with a pen."),
+ V("verb","fragen","fragt","To ask; to say a question to someone."),
+ V("verb","zählen","zählt","To count; to say the numbers one by one."),
+ V("adverb","mehr","mehr","More; one extra, in addition to the others."),
+ V("noun","der Hals","Hals","The throat; the front part of your neck."),
+ V("adjective","eng","eng","Tight; with very little space."),
+ V("number","fünf","fünf","Five; the number after four."),
+ V("verb","falten","faltet","To fold paper so one part lies on the other."),
+ V("noun","der Müll","Müll","Rubbish; things you throw away."),
+ V("adjective","schlecht","schlecht","Bad; not good at all, poor."),
+ V("verb","lächeln","lächelt","To smile; to make a happy face."),
+ V("pronoun","jeder","jeden","Every; each single one of a group."),
+ V("verb","wohnen","wohnt","To live in a place, a flat or a city."),
+]
+d[2]["synopsis"]="The post office is closed today. Jan has five old stamps, Anna has six cards, and one card must stay without a stamp."
+d[2]["vocab"]=[
+ V("adverb","bald","bald","Soon; in a short time from now."),
+ V("verb","finden","findet","To find something you are looking for."),
+ V("adjective","alt","alt","Old; not new, from a long time ago."),
+ V("adverb","genau","Genau","Exactly; not more and not less."),
+ V("noun","das Stück","Stück","A piece; here one single stamp."),
+ V("verb","ziehen","zieht","To pull something out of a place."),
+ V("adverb","nebeneinander","nebeneinander","Side by side; one next to the other."),
+ V("verb","zerreißen","zerreißt","To tear paper into pieces with your hands."),
+ V("adverb","weh","weh","Painful; das tut weh means it hurts."),
+ V("verb","fallen","fallen","To fall; to go down to the ground."),
+ V("adjective","letzte","letzte","Last; the one at the end, with none after it."),
+ V("adverb","unten","unten","Downstairs; on a lower floor of the house."),
+ V("adjective","egal","Egal","It does not matter; all the same to me."),
+ V("number","sechs","sechs","Six; the number after five."),
+ V("verb","bekommen","bekommst","To get; to receive something from someone."),
+ V("verb","kleben","klebt","To stick something on with glue."),
+ V("adjective","gelb","gelbe","Yellow; the colour of German post boxes."),
+ V("noun","die Ecke","Ecke","A corner; where two streets meet."),
+ V("verb","legen","legt","To put something down so it lies flat."),
+ V("adjective","leise","leise","Quietly; with a soft, low voice."),
+]
+json.dump(d,open("scripts/_deA0Friends/t1-data.json","w"),ensure_ascii=False,indent=1)

@@ -1,0 +1,407 @@
+[
+ {
+  "topic": "games-and-rules",
+  "slotIndex": 0,
+  "title": "Felix erklärt zu schnell",
+  "arcType": null,
+  "synopsis": "Games night at Jan's. Felix, a maths teacher, brings a new game and explains the rules fast. Everyone understands, except Anna.",
+  "text": "Donnerstag ist Spielabend in Jans Küche. Die Küche ist warm und laut. Sechs Freunde sitzen um den Tisch. Anna, die Grafikerin von oben, sitzt neben Jan.\n\nFelix, ein Mathelehrer aus dem Viertel, bringt ein neues Spiel. Er trägt ein graues T-Shirt. Er kennt alle Regeln.\n\n“Das Spiel ist ganz einfach”, sagt Felix. “Jeder hat vier Figuren. Du würfelst und läufst.”\n\n“Und die Punkte?”, fragt Anna.\n\n“Die Punkte kommen später. Jetzt bist du dran”, antwortet Felix.\n\nAnna würfelt eine Eins. Sie würfelt dann eine Zwei. Felix erklärt sehr schnell.\n\nAnna wirft den Würfel zu fest. Der Würfel fällt unter den Tisch.\n\n“Alle kennen die Regeln. Nur ich nicht”, murmelt sie.\n\n“Früher spielen wir hier ein anderes Spiel”, sagt Anna zu Felix.\n\n“Ich weiß. Jan spricht oft davon”, antwortet er.\n\nAnna verliert. Sie ist die Letzte, und die Letzte spült.\n\nAnna steht müde an der Spüle. Felix bringt ihr die Gläser und lächelt.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "der Spielabend",
+    "surface": "Spielabend",
+    "definition": "A games night; an evening when friends play games.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "der Mathelehrer",
+    "surface": "Mathelehrer",
+    "definition": "A maths teacher; he teaches numbers at a school.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "grau",
+    "surface": "graues",
+    "definition": "Grey; the colour between black and white."
+   },
+   {
+    "type": "noun",
+    "word": "die Regel",
+    "surface": "Regeln",
+    "definition": "A rule; what you must and must not do in a game."
+   },
+   {
+    "type": "adjective",
+    "word": "einfach",
+    "surface": "einfach",
+    "definition": "Easy; not hard to understand."
+   },
+   {
+    "type": "noun",
+    "word": "die Figur",
+    "surface": "Figuren",
+    "definition": "A playing piece; the small thing you move on a board."
+   },
+   {
+    "type": "verb",
+    "word": "würfeln",
+    "surface": "würfelt",
+    "definition": "To roll the dice in a game."
+   },
+   {
+    "type": "verb",
+    "word": "laufen",
+    "surface": "läufst",
+    "definition": "To move forward; here, your piece goes on the board.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "der Punkt",
+    "surface": "Punkte",
+    "definition": "A point; what you win in a game.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "später",
+    "surface": "später",
+    "definition": "Later; after some time, not now."
+   },
+   {
+    "type": "adverb",
+    "word": "dran",
+    "surface": "dran",
+    "definition": "It is your turn; now you must play."
+   },
+   {
+    "type": "verb",
+    "word": "erklären",
+    "surface": "erklärt",
+    "definition": "To explain; to tell someone how something works."
+   },
+   {
+    "type": "verb",
+    "word": "tragen",
+    "surface": "trägt",
+    "definition": "To wear; to have clothes on your body."
+   },
+   {
+    "type": "verb",
+    "word": "werfen",
+    "surface": "wirft",
+    "definition": "To throw; to make something fly from your hand."
+   },
+   {
+    "type": "adverb",
+    "word": "fest",
+    "surface": "fest",
+    "definition": "Hard; with a lot of force."
+   },
+   {
+    "type": "adjective",
+    "word": "ander",
+    "surface": "anderes",
+    "definition": "Other; different, not this one."
+   },
+   {
+    "type": "noun",
+    "word": "das Glas",
+    "surface": "Gläser",
+    "definition": "A glass; you drink water or juice from it."
+   },
+   {
+    "type": "adverb",
+    "word": "oft",
+    "surface": "oft",
+    "definition": "Often; many times, again and again."
+   },
+   {
+    "type": "verb",
+    "word": "verlieren",
+    "surface": "verliert",
+    "definition": "To lose; not to win a game."
+   },
+   {
+    "type": "noun",
+    "word": "die Spüle",
+    "surface": "Spüle",
+    "definition": "A sink; where you wash the dishes.",
+    "anchor": true
+   }
+  ]
+ },
+ {
+  "topic": "games-and-rules",
+  "slotIndex": 1,
+  "title": "Annas roter Würfel",
+  "arcType": null,
+  "synopsis": "Late at night Jan explains the rules to Anna, slowly. Her red dice from school still brings luck. Then Jan finds the old game in a box.",
+  "text": "Ein roter Würfel liegt in Annas Hand. Sie hat ihn seit der Schulzeit. Er bringt ihr immer Glück.\n\n“Mein Glückswürfel”, flüstert Anna.\n\nEs ist spät und still. Jan und Anna sitzen allein in der Küche. Anna hört nur die Uhr.\n\n“Erklär mir die Regeln. Aber bitte langsam”, bittet sie.\n\n“Gut. Eine Sechs ist gut. Mit einer Sechs startet deine Figur”, sagt Jan.\n\nJan stellt die Figuren auf das Brett. Anna würfelt mit ihrem roten Würfel. Sie würfelt drei Sechsen.\n\n“Drei Sechsen? Du bist wieder die Königin!”, ruft Jan.\n\nJan holt eine alte Kiste aus dem Schrank. Das Spiel von früher ist darin. Das Brett ist kaputt.\n\n“Wo sind die anderen drei Figuren?”, fragt Anna.\n\n“Keine Ahnung. Das ist zu lang her”, antwortet Jan.\n\nAnnas Augen werden nass. Sie wischt die Augen schnell. Jan ist auch traurig.\n\nJan wirft das alte Spiel in den Müll. Anna legt ihren roten Würfel in die neue Schachtel.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "der Würfel",
+    "surface": "Würfel",
+    "definition": "A dice; a small cube with numbers for games."
+   },
+   {
+    "type": "preposition",
+    "word": "seit",
+    "surface": "seit",
+    "definition": "Since; from a time in the past until now."
+   },
+   {
+    "type": "noun",
+    "word": "das Glück",
+    "surface": "Glück",
+    "definition": "Luck; when good things happen by chance.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "spät",
+    "surface": "spät",
+    "definition": "Late; far into the evening or night."
+   },
+   {
+    "type": "adjective",
+    "word": "langsam",
+    "surface": "langsam",
+    "definition": "Slowly; not fast, taking your time."
+   },
+   {
+    "type": "verb",
+    "word": "stellen",
+    "surface": "stellt",
+    "definition": "To put something down so it stands."
+   },
+   {
+    "type": "noun",
+    "word": "das Brett",
+    "surface": "Brett",
+    "definition": "A board; the flat piece you play a game on."
+   },
+   {
+    "type": "adverb",
+    "word": "wieder",
+    "surface": "wieder",
+    "definition": "Again; one more time, like before."
+   },
+   {
+    "type": "noun",
+    "word": "die Königin",
+    "surface": "Königin",
+    "definition": "A queen; here a funny name for the best player."
+   },
+   {
+    "type": "noun",
+    "word": "der Schrank",
+    "surface": "Schrank",
+    "definition": "A cupboard; a tall box with doors for things."
+   },
+   {
+    "type": "noun",
+    "word": "das Spiel",
+    "surface": "Spiel",
+    "definition": "A game; something people play for fun."
+   },
+   {
+    "type": "adverb",
+    "word": "darin",
+    "surface": "darin",
+    "definition": "Inside it; in that box."
+   },
+   {
+    "type": "adjective",
+    "word": "kaputt",
+    "surface": "kaputt",
+    "definition": "Broken; it does not work any more."
+   },
+   {
+    "type": "adverb",
+    "word": "wo",
+    "surface": "Wo",
+    "definition": "Where; the word to ask for a place."
+   },
+   {
+    "type": "noun",
+    "word": "die Ahnung",
+    "surface": "Ahnung",
+    "definition": "An idea; keine Ahnung means I do not know.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "lang",
+    "surface": "lang",
+    "definition": "Long; a lot of time."
+   },
+   {
+    "type": "verb",
+    "word": "werden",
+    "surface": "werden",
+    "definition": "To become; to change and get a new state."
+   },
+   {
+    "type": "adjective",
+    "word": "nass",
+    "surface": "nass",
+    "definition": "Wet; with water on it, here with tears."
+   },
+   {
+    "type": "noun",
+    "word": "die Uhr",
+    "surface": "Uhr",
+    "definition": "A clock; it shows you the time.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "hören",
+    "surface": "hört",
+    "definition": "To hear; to notice a sound with your ears."
+   }
+  ]
+ },
+ {
+  "topic": "games-and-rules",
+  "slotIndex": 2,
+  "title": "Eine Vier im Hof",
+  "arcType": null,
+  "synopsis": "The rematch is in the courtyard. Anna needs a four to beat Felix. She wins, but her lucky red dice falls through a metal grid in the ground.",
+  "text": "Die Gruppe spielt heute im Hof. Felix sitzt Anna gegenüber.\n\n“Heute gewinne ich”, lacht Felix.\n\nDas Spiel ist fast zu Ende. Anna und Felix haben noch eine Figur. Alle schauen nervös auf das Brett.\n\n“Ich habe Angst. Mein Würfel muss helfen”, flüstert Anna.\n\n“Du brauchst jetzt eine Vier”, sagt Felix. “Nur eine Vier.”\n\nAnna küsst ihren roten Würfel. Sie würfelt. Eine Vier, endlich!\n\n“Ich gewinne! Ich gewinne gegen Felix!”, ruft Anna.\n\nAnna springt vom Stuhl. Der rote Würfel fliegt aus ihrer Hand. Er fällt durch das Gitter im Boden.\n\nNiemand kann den Würfel holen.\n\nIhr Mund ist trocken, denn der Würfel ist seit der Schulzeit bei ihr. Sie legt die Hand auf das Gitter.\n\n“Das tut mir leid. Aber du gewinnst trotzdem”, sagt Felix.\n\nFelix gibt ihr einen blauen Würfel.\n\n“Er ist nicht rot. Aber er ist für die Königin”, meint er.\n\nAnna lacht stolz. Felix stellt den blauen Würfel neben ihr Glas.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "der Hof",
+    "surface": "Hof",
+    "definition": "A courtyard; the open space behind a house."
+   },
+   {
+    "type": "preposition",
+    "word": "gegenüber",
+    "surface": "gegenüber",
+    "definition": "Opposite; on the other side of the table."
+   },
+   {
+    "type": "adverb",
+    "word": "fast",
+    "surface": "fast",
+    "definition": "Almost; nearly, not quite."
+   },
+   {
+    "type": "verb",
+    "word": "müssen",
+    "surface": "muss",
+    "definition": "Must; to have to do something."
+   },
+   {
+    "type": "adverb",
+    "word": "heute",
+    "surface": "heute",
+    "definition": "Today; on this day."
+   },
+   {
+    "type": "verb",
+    "word": "können",
+    "surface": "kann",
+    "definition": "Can; to be able to do something."
+   },
+   {
+    "type": "verb",
+    "word": "helfen",
+    "surface": "helfen",
+    "definition": "To help; to make something easier for someone."
+   },
+   {
+    "type": "verb",
+    "word": "küssen",
+    "surface": "küsst",
+    "definition": "To kiss; to touch with your lips.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "der Stuhl",
+    "surface": "Stuhl",
+    "definition": "A chair; a seat for one person.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "springen",
+    "surface": "springt",
+    "definition": "To jump; to move up fast with your legs.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "fliegen",
+    "surface": "fliegt",
+    "definition": "To fly; to move through the air.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "das Gitter",
+    "surface": "Gitter",
+    "definition": "A metal grid; bars with holes between them.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "der Boden",
+    "surface": "Boden",
+    "definition": "The ground; the floor under your feet.",
+    "anchor": true
+   },
+   {
+    "type": "pronoun",
+    "word": "niemand",
+    "surface": "Niemand",
+    "definition": "Nobody; not one person."
+   },
+   {
+    "type": "noun",
+    "word": "der Mund",
+    "surface": "Mund",
+    "definition": "The mouth; you speak and eat with it."
+   },
+   {
+    "type": "adjective",
+    "word": "trocken",
+    "surface": "trocken",
+    "definition": "Dry; with no water, here from shock."
+   },
+   {
+    "type": "adverb",
+    "word": "trotzdem",
+    "surface": "trotzdem",
+    "definition": "Anyway; still, even so."
+   },
+   {
+    "type": "verb",
+    "word": "geben",
+    "surface": "gibt",
+    "definition": "To give; to hand something to a person."
+   },
+   {
+    "type": "adjective",
+    "word": "blau",
+    "surface": "blauen",
+    "definition": "Blue; the colour of the sky."
+   },
+   {
+    "type": "verb",
+    "word": "gewinnen",
+    "surface": "gewinnst",
+    "definition": "To win; to be the best in a game.",
+    "anchor": true
+   }
+  ]
+ }
+]

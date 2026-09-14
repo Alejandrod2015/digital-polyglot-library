@@ -1,0 +1,397 @@
+[
+ {
+  "topic": "letters-and-invitations",
+  "slotIndex": 0,
+  "title": "Karten ohne Briefmarke",
+  "arcType": null,
+  "synopsis": "Anna is back in Bremen after eight years. In Jan's kitchen she opens a box of postcards she never sent him, and the first one holds an old promise.",
+  "text": "Anna, eine Grafikerin aus Bremen, sitzt in einer alten Küche im Viertel. Ihre Hände sind kalt.\n\nJan ist ein Koch und ihr Freund aus der Schulzeit. Er wohnt unten im Haus. Er bringt zwei Tassen Tee.\n\n“Willkommen zurück”, sagt Jan.\n\nAnna hat eine Schachtel dabei. Die Schachtel ist voll mit Postkarten. Keine Karte hat eine Briefmarke.\n\n“Was ist das?”, fragt Jan.\n\n“Meine Karten aus München. Alle für dich. Ich schicke sie nie”, antwortet Anna.\n\nJan nimmt zuerst die erste Karte. Er liest laut:\n\n“Lieber Jan, ich komme im Mai. Deine Anna.”\n\n“Im Mai? Welcher Mai?”, fragt er.\n\nAnna wird rot. Dieser Mai ist acht Jahre alt. Sie steckt die Hände in die Jacke.\n\n“Ich weiß. Es tut mir leid”, flüstert sie.\n\nJan trinkt still seinen Tee. Er öffnet eine Schublade. Die Karten liegen dann dort.\n\n“Die Karten bleiben hier bei mir”, sagt Jan. “Und du bleibst auch, oder?”\n\nAnna atmet tief. Ihr Tee ist warm.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "die Grafikerin",
+    "surface": "Grafikerin",
+    "definition": "A female graphic designer; she makes pictures and layouts."
+   },
+   {
+    "type": "noun",
+    "word": "das Viertel",
+    "surface": "Viertel",
+    "definition": "A city district; here the old Viertel quarter of Bremen."
+   },
+   {
+    "type": "verb",
+    "word": "sitzen",
+    "surface": "sitzt",
+    "definition": "To sit; to rest on a chair or seat."
+   },
+   {
+    "type": "adjective",
+    "word": "kalt",
+    "surface": "kalt",
+    "definition": "Cold; not warm at all."
+   },
+   {
+    "type": "noun",
+    "word": "der Koch",
+    "surface": "Koch",
+    "definition": "A cook; a man who makes food as his job."
+   },
+   {
+    "type": "verb",
+    "word": "bringen",
+    "surface": "bringt",
+    "definition": "To bring; to carry something to a person."
+   },
+   {
+    "type": "adjective",
+    "word": "erste",
+    "surface": "erste",
+    "definition": "First; the one that comes before all the others."
+   },
+   {
+    "type": "adjective",
+    "word": "voll",
+    "surface": "voll",
+    "definition": "Full; with no more space inside."
+   },
+   {
+    "type": "noun",
+    "word": "die Postkarte",
+    "surface": "Postkarten",
+    "definition": "A postcard; a card with a picture you send by post.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "die Briefmarke",
+    "surface": "Briefmarke",
+    "definition": "A stamp; the small paper you stick on post."
+   },
+   {
+    "type": "verb",
+    "word": "schicken",
+    "surface": "schicke",
+    "definition": "To send; to make a letter or card go to someone."
+   },
+   {
+    "type": "adjective",
+    "word": "laut",
+    "surface": "laut",
+    "definition": "Loud; so other people can hear it well."
+   },
+   {
+    "type": "adjective",
+    "word": "rot",
+    "surface": "rot",
+    "definition": "Red; here her face goes red from shame."
+   },
+   {
+    "type": "noun",
+    "word": "die Jacke",
+    "surface": "Jacke",
+    "definition": "A jacket; a short coat you wear outside."
+   },
+   {
+    "type": "adverb",
+    "word": "nie",
+    "surface": "nie",
+    "definition": "Never; not one single time."
+   },
+   {
+    "type": "verb",
+    "word": "wissen",
+    "surface": "weiß",
+    "definition": "To know; to have the facts in your head."
+   },
+   {
+    "type": "noun",
+    "word": "die Schublade",
+    "surface": "Schublade",
+    "definition": "A drawer; the box in a table that slides out."
+   },
+   {
+    "type": "verb",
+    "word": "bleiben",
+    "surface": "bleiben",
+    "definition": "To stay; not to go away from a place."
+   },
+   {
+    "type": "verb",
+    "word": "atmen",
+    "surface": "atmet",
+    "definition": "To breathe; to take air in and out."
+   },
+   {
+    "type": "adjective",
+    "word": "warm",
+    "surface": "warm",
+    "definition": "Warm; a little hot, nice to touch or drink."
+   }
+  ]
+ },
+ {
+  "topic": "letters-and-invitations",
+  "slotIndex": 1,
+  "title": "Zwölf alte Adressen",
+  "arcType": null,
+  "synopsis": "Anna wants to invite her old friends to dinner at Jan's, like before. She has twelve names, but Jan knows where everyone lives now.",
+  "text": "Zwölf Namen stehen auf einem alten Zettel. Der Zettel ist sehr alt. Anna kennt jeden Namen. Die Küche riecht nach Tee.\n\n“Das sind alle Freunde von früher”, sagt Anna zu Jan.\n\nAnna will jedem Freund eine Postkarte schicken. Die Karte ist eine Einladung für Donnerstag.\n\n“Ich brauche die Adressen”, bittet sie.\n\nJan nimmt sein Handy. Er zeigt auf die Namen.\n\n“Er wohnt in Kiel. Sie wohnt in Hamburg. Er wohnt in Berlin”, liest Jan.\n\nAnna macht einen Strich durch jeden Namen. Ein Strich, noch ein Strich.\n\n“Und hier?”, fragt sie.\n\n“Hamburg. Der auch”, antwortet Jan.\n\nAnna zählt. Vier Freunde wohnen noch in Bremen. Acht Karten sind zu viel.\n\nAnna faltet den Zettel langsam. Ihr Hals ist eng. Acht Karten landen im Müll.\n\n“Vier ist nicht schlecht”, meint Jan.\n\n“Vier ist nicht zwölf”, sagt Anna.\n\n“Und ich? Ich bin fünf”, lacht Jan.\n\nAnna lächelt ein bisschen. Sie nimmt eine Karte mehr und schreibt Jans Namen darauf.",
+  "vocab": [
+   {
+    "type": "number",
+    "word": "zwölf",
+    "surface": "Zwölf",
+    "definition": "Twelve; the number after eleven."
+   },
+   {
+    "type": "verb",
+    "word": "stehen",
+    "surface": "stehen",
+    "definition": "To stand; here, to be written on something."
+   },
+   {
+    "type": "verb",
+    "word": "kennen",
+    "surface": "kennt",
+    "definition": "To know a person or a thing well."
+   },
+   {
+    "type": "adverb",
+    "word": "früher",
+    "surface": "früher",
+    "definition": "Before; in the past, some years ago."
+   },
+   {
+    "type": "noun",
+    "word": "die Adresse",
+    "surface": "Adressen",
+    "definition": "An address; the street and house where someone lives.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "nehmen",
+    "surface": "nimmt",
+    "definition": "To take something in your hand."
+   },
+   {
+    "type": "verb",
+    "word": "zeigen",
+    "surface": "zeigt",
+    "definition": "To point at something so others see it."
+   },
+   {
+    "type": "noun",
+    "word": "der Strich",
+    "surface": "Strich",
+    "definition": "A line; a short mark you draw with a pen."
+   },
+   {
+    "type": "verb",
+    "word": "fragen",
+    "surface": "fragt",
+    "definition": "To ask; to say a question to someone."
+   },
+   {
+    "type": "verb",
+    "word": "zählen",
+    "surface": "zählt",
+    "definition": "To count; to say the numbers one by one."
+   },
+   {
+    "type": "adverb",
+    "word": "mehr",
+    "surface": "mehr",
+    "definition": "More; one extra, in addition to the others."
+   },
+   {
+    "type": "noun",
+    "word": "der Hals",
+    "surface": "Hals",
+    "definition": "The throat; the front part of your neck.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "eng",
+    "surface": "eng",
+    "definition": "Tight; with very little space."
+   },
+   {
+    "type": "number",
+    "word": "fünf",
+    "surface": "fünf",
+    "definition": "Five; the number after four."
+   },
+   {
+    "type": "verb",
+    "word": "falten",
+    "surface": "faltet",
+    "definition": "To fold paper so one part lies on the other."
+   },
+   {
+    "type": "noun",
+    "word": "der Müll",
+    "surface": "Müll",
+    "definition": "Rubbish; things you throw away."
+   },
+   {
+    "type": "adjective",
+    "word": "schlecht",
+    "surface": "schlecht",
+    "definition": "Bad; not good at all, poor."
+   },
+   {
+    "type": "verb",
+    "word": "lächeln",
+    "surface": "lächelt",
+    "definition": "To smile; to make a happy face."
+   },
+   {
+    "type": "pronoun",
+    "word": "jeder",
+    "surface": "jeden",
+    "definition": "Every; each single one of a group."
+   },
+   {
+    "type": "verb",
+    "word": "wohnen",
+    "surface": "wohnt",
+    "definition": "To live in a place, a flat or a city."
+   }
+  ]
+ },
+ {
+  "topic": "letters-and-invitations",
+  "slotIndex": 2,
+  "title": "Fünf Marken am Sonntag",
+  "arcType": null,
+  "synopsis": "The post office is closed today. Jan has five old stamps, Anna has six cards, and one card must stay without a stamp.",
+  "text": "Die Post ist am Sonntag geschlossen. Anna hat fünf Karten und keine Briefmarke. Der Donnerstag kommt bald.\n\nJan sucht in seiner Schublade. Er findet ein kleines Heft mit Briefmarken.\n\n“Die Marken sind alte Marken, aber gut”, sagt er. “Fünf Stück. Genau fünf.”\n\nAnna zieht noch eine Karte aus der Jacke.\n\n“Ich habe sechs Karten. Diese Karte ist für München, für meine alte Arbeit”, erklärt sie.\n\n“Sechs Karten und fünf Marken?”, ruft Jan.\n\nAnna legt zwei Karten nebeneinander.\n\n“München oder du”, sagt sie leise.\n\nAnna zerreißt die Karte für München. Das tut weh. Die Stücke fallen in den Müll.\n\n“Die letzte Marke ist für dich”, sagt Anna.\n\n“Ich wohne unten im Haus!”, lacht Jan.\n\n“Egal. Du bekommst eine Karte”, antwortet sie.\n\nJan klebt die Marke auf seine Karte. Die Luft ist kalt. Der gelbe Briefkasten steht an der Ecke.\n\nAnna steckt dann die Karten in den Briefkasten. Jan legt den Arm um ihre Schulter.",
+  "vocab": [
+   {
+    "type": "adverb",
+    "word": "bald",
+    "surface": "bald",
+    "definition": "Soon; in a short time from now."
+   },
+   {
+    "type": "verb",
+    "word": "finden",
+    "surface": "findet",
+    "definition": "To find something you are looking for."
+   },
+   {
+    "type": "adjective",
+    "word": "alt",
+    "surface": "alte",
+    "definition": "Old; not new, from a long time ago."
+   },
+   {
+    "type": "adverb",
+    "word": "genau",
+    "surface": "Genau",
+    "definition": "Exactly; not more and not less."
+   },
+   {
+    "type": "noun",
+    "word": "das Stück",
+    "surface": "Stück",
+    "definition": "A piece; here one single stamp.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "ziehen",
+    "surface": "zieht",
+    "definition": "To pull something out of a place."
+   },
+   {
+    "type": "adverb",
+    "word": "nebeneinander",
+    "surface": "nebeneinander",
+    "definition": "Side by side; one next to the other."
+   },
+   {
+    "type": "verb",
+    "word": "zerreißen",
+    "surface": "zerreißt",
+    "definition": "To tear paper into pieces with your hands."
+   },
+   {
+    "type": "adverb",
+    "word": "weh",
+    "surface": "weh",
+    "definition": "Painful; das tut weh means it hurts."
+   },
+   {
+    "type": "verb",
+    "word": "fallen",
+    "surface": "fallen",
+    "definition": "To fall; to go down to the ground."
+   },
+   {
+    "type": "adjective",
+    "word": "letzte",
+    "surface": "letzte",
+    "definition": "Last; the one at the end, with none after it."
+   },
+   {
+    "type": "adverb",
+    "word": "unten",
+    "surface": "unten",
+    "definition": "Downstairs; on a lower floor of the house."
+   },
+   {
+    "type": "adjective",
+    "word": "egal",
+    "surface": "Egal",
+    "definition": "It does not matter; all the same to me."
+   },
+   {
+    "type": "number",
+    "word": "sechs",
+    "surface": "sechs",
+    "definition": "Six; the number after five."
+   },
+   {
+    "type": "verb",
+    "word": "bekommen",
+    "surface": "bekommst",
+    "definition": "To get; to receive something from someone."
+   },
+   {
+    "type": "verb",
+    "word": "kleben",
+    "surface": "klebt",
+    "definition": "To stick something on with glue."
+   },
+   {
+    "type": "adjective",
+    "word": "gelb",
+    "surface": "gelbe",
+    "definition": "Yellow; the colour of German post boxes."
+   },
+   {
+    "type": "noun",
+    "word": "die Ecke",
+    "surface": "Ecke",
+    "definition": "A corner; where two streets meet.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "legen",
+    "surface": "legt",
+    "definition": "To put something down so it lies flat."
+   },
+   {
+    "type": "adjective",
+    "word": "leise",
+    "surface": "leise",
+    "definition": "Quietly; with a soft, low voice."
+   }
+  ]
+ }
+]

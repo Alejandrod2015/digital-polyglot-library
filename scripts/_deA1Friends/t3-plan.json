@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a1",
+  "variante": "germany",
+  "registro": "tierno y con susto: un perro grande que llena el piso, noches de nervios y una busqueda con prisa entre arboles",
+  "espina": "Julia, fisioterapeuta de Rostock recien llegada a Frankfurt, quiere hacer amigos de verdad en una ciudad donde no conoce a nadie; cada tema le cuesta un hilo con Rostock, hasta que en el tema 7 su primera amistad de Frankfurt aguanta una pelea.",
+  "recursos": "A1: modales (kannst, muss, brauche), Perfekt (ist weggelaufen, hat gezeigt), separables partidos (bringt mit, gibt zu, holt ab), inversion V2 tras adverbio (Zu Hause oeffnet Julia, Oben sitzt die Katze); revelacion tardia literal (el billete de tren a Rostock), gancho a mitad de tema (la correa que se escapa) pagado en la tercera",
+  "historias": [
+    { "slot": "0", "quiere": "decir que si a Florian y ganarse un sitio en el grupo", "impide": "le dan miedo los perros grandes y ese sabado tiene billete a Rostock", "cuesta": "su primer viaje a Rostock: anula el billete y solo le devuelven la mitad", "cambia": "elige quedarse con un compromiso de Frankfurt", "emocion": "miedo callado y pena: no dice que le dan miedo porque quiere amigos; le tiembla un poco la mano al escribir al chat" },
+    { "slot": "1", "quiere": "pasar la primera noche con el perro sin que se note su miedo", "impide": "el perro llora en la puerta y ella no se atreve a acercarse", "cuesta": "admite delante de Moritz que tiene miedo", "cambia": "toca al perro por primera vez, y a la manana se atreve a salir sola con el", "emocion": "miedo que se afloja: la nariz del perro es humeda y tibia; acaricia su pelo por primera vez" },
+    { "slot": "2", "quiere": "encontrar al perro antes de que vuelva Florian", "impide": "el perro se ha escapado detras de un gato y el parque es grande", "cuesta": "tiene que pedir ayuda al chat del grupo y confesar que lo ha perdido", "cambia": "calma al perro ella sola y el grupo responde en diez minutos", "emocion": "panico y luego calma: el corazon le late fuerte pero la voz le sale tranquila; sujeta la correa bien fuerte" }
+  ]
+}

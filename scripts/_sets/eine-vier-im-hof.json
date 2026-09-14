@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Hof,der Stuhl,das Gitter,der Boden",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Hof",
+     "answer": "a courtyard",
+     "options": [
+      "a courtyard",
+      "a chair",
+      "a metal grid",
+      "the ground"
+     ]
+    },
+    {
+     "word": "der Stuhl",
+     "answer": "a chair",
+     "options": [
+      "a courtyard",
+      "a chair",
+      "a metal grid",
+      "the ground"
+     ]
+    },
+    {
+     "word": "das Gitter",
+     "answer": "a metal grid",
+     "options": [
+      "a courtyard",
+      "a chair",
+      "a metal grid",
+      "the ground"
+     ]
+    },
+    {
+     "word": "der Boden",
+     "answer": "the ground",
+     "options": [
+      "a courtyard",
+      "a chair",
+      "a metal grid",
+      "the ground"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gegenüber",
+  "sentence": "Der Lehrer sitzt ihr [[gegenüber]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "across from",
+   "options": [
+    "across from",
+    "next to",
+    "far from",
+    "behind"
+   ],
+   "audioClip": {
+    "storySlug": "eine-vier-im-hof",
+    "storySource": "user",
+    "sentence": "Der Lehrer sitzt ihr gegenüber.",
+    "targetWord": "gegenüber",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fast",
+  "sentence": "Das Spiel ist [[fast]] zu Ende.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "almost",
+   "options": [
+    "almost",
+    "never",
+    "still",
+    "already"
+   ],
+   "audioClip": {
+    "storySlug": "eine-vier-im-hof",
+    "storySource": "user",
+    "sentence": "Das Spiel ist fast zu Ende.",
+    "targetWord": "fast",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "muss",
+  "sentence": "“Mein Würfel [[muss]] helfen”, flüstert sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "must",
+   "options": [
+    "must",
+    "wants to",
+    "likes to",
+    "can"
+   ],
+   "audioClip": {
+    "storySlug": "eine-vier-im-hof",
+    "storySource": "user",
+    "sentence": "“Mein Würfel muss helfen”, flüstert sie.",
+    "targetWord": "muss",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Heute",
+  "sentence": "“[[Heute]] gewinne ich”, lacht der Lehrer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Today",
+   "options": [
+    "Today",
+    "Never",
+    "Tomorrow",
+    "Always"
+   ],
+   "audioClip": {
+    "storySlug": "eine-vier-im-hof",
+    "storySource": "user",
+    "sentence": "“Heute gewinne ich”, lacht der Lehrer.",
+    "targetWord": "Heute",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "kann",
+  "sentence": "Niemand [[kann]] den Würfel holen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "can",
+   "options": [
+    "can",
+    "wants to",
+    "has to",
+    "likes to"
+   ],
+   "audioClip": {
+    "storySlug": "eine-vier-im-hof",
+    "storySource": "user",
+    "sentence": "Niemand kann den Würfel holen.",
+    "targetWord": "kann",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "helfen",
+  "sentence": "Mein Würfel muss [[helfen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "help",
+   "options": [
+    "help",
+    "wait",
+    "decide",
+    "play"
+   ],
+   "audioClip": {
+    "storySlug": "eine-vier-im-hof",
+    "storySource": "user",
+    "sentence": "Mein Würfel muss helfen.",
+    "targetWord": "helfen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "küsst",
+  "sentence": "Sie [[küsst]] ihren roten Würfel.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "kisses",
+   "options": [
+    "kisses",
+    "throws",
+    "hides",
+    "finds"
+   ],
+   "audioClip": {
+    "storySlug": "eine-vier-im-hof",
+    "storySource": "user",
+    "sentence": "Sie küsst ihren roten Würfel.",
+    "targetWord": "küsst",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Niemand",
+  "sentence": "[[Niemand]] kann den Würfel holen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Nobody",
+   "options": [
+    "Nobody",
+    "Everybody",
+    "Somebody",
+    "The teacher"
+   ],
+   "audioClip": {
+    "storySlug": "eine-vier-im-hof",
+    "storySource": "user",
+    "sentence": "Niemand kann den Würfel holen.",
+    "targetWord": "Niemand",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Mund",
+  "sentence": "Ihr [[Mund]] ist trocken.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "mouth",
+   "options": [
+    "mouth",
+    "hand",
+    "hair",
+    "throat"
+   ],
+   "audioClip": {
+    "storySlug": "eine-vier-im-hof",
+    "storySource": "user",
+    "sentence": "Ihr Mund ist trocken.",
+    "targetWord": "Mund",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trocken",
+  "sentence": "Ihr Mund ist [[trocken]], denn der Würfel ist seit der Schulzeit bei ihr.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dry",
+   "options": [
+    "dry",
+    "wet",
+    "cold",
+    "warm"
+   ],
+   "audioClip": {
+    "storySlug": "eine-vier-im-hof",
+    "storySource": "user",
+    "sentence": "Ihr Mund ist trocken, denn der Würfel ist seit der Schulzeit bei ihr.",
+    "targetWord": "trocken",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trotzdem",
+  "sentence": "“Aber du gewinnst [[trotzdem]]”, sagt der Lehrer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "anyway",
+   "options": [
+    "anyway",
+    "never",
+    "almost",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "eine-vier-im-hof",
+    "storySource": "user",
+    "sentence": "“Aber du gewinnst trotzdem”, sagt der Lehrer.",
+    "targetWord": "trotzdem",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "blauen",
+  "sentence": "Der Lehrer gibt ihr einen [[blauen]] Würfel.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "blue",
+   "options": [
+    "blue",
+    "red",
+    "yellow",
+    "green"
+   ],
+   "audioClip": {
+    "storySlug": "eine-vier-im-hof",
+    "storySource": "user",
+    "sentence": "Der Lehrer gibt ihr einen blauen Würfel.",
+    "targetWord": "blauen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gewinnst",
+  "sentence": "“Aber du [[gewinnst]] trotzdem”, sagt der Lehrer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "win",
+   "options": [
+    "win",
+    "lose",
+    "wait",
+    "decide"
+   ],
+   "audioClip": {
+    "storySlug": "eine-vier-im-hof",
+    "storySource": "user",
+    "sentence": "“Aber du gewinnst trotzdem”, sagt der Lehrer.",
+    "targetWord": "gewinnst",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "springt",
+  "sentence": "Sie _____ vom Stuhl.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "springt",
+   "options": [
+    "springt",
+    "fällt",
+    "sitzt",
+    "läuft"
+   ],
+   "translation": "She _____ up from her chair.",
+   "optionTranslations": [
+    "jumps",
+    "falls",
+    "sits",
+    "walks"
+   ],
+   "audioClip": {
+    "storySlug": "eine-vier-im-hof",
+    "storySource": "user",
+    "sentence": "Sie springt vom Stuhl.",
+    "targetWord": "springt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "fliegt",
+  "sentence": "Der rote Würfel _____ aus ihrer Hand.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fliegt",
+   "options": [
+    "fliegt",
+    "fällt",
+    "rollt",
+    "springt"
+   ],
+   "translation": "The red die _____ out of her hand.",
+   "optionTranslations": [
+    "flies",
+    "falls",
+    "rolls",
+    "jumps"
+   ],
+   "audioClip": {
+    "storySlug": "eine-vier-im-hof",
+    "storySource": "user",
+    "sentence": "Der rote Würfel fliegt aus ihrer Hand.",
+    "targetWord": "fliegt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "gibt",
+  "sentence": "Der Lehrer _____ ihr einen blauen Würfel.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gibt",
+   "options": [
+    "gibt",
+    "zeigt",
+    "sucht",
+    "wirft"
+   ],
+   "translation": "The teacher _____ her a blue die.",
+   "optionTranslations": [
+    "gives",
+    "shows",
+    "looks for",
+    "throws"
+   ],
+   "audioClip": {
+    "storySlug": "eine-vier-im-hof",
+    "storySource": "user",
+    "sentence": "Der Lehrer gibt ihr einen blauen Würfel.",
+    "targetWord": "gibt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]
