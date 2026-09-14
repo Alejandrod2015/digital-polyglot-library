@@ -40,6 +40,7 @@ import {
 } from "../src/lib/elevenlabs";
 import { assertVoiceApproved } from "../src/lib/approvedVoices";
 import { coerceFragments, replaceSectionAndRebuild } from "../src/lib/audioEditorSections";
+import { checkMasterCoverage } from "./coverageWhisperCheck";
 
 const execFileAsync = promisify(execFile);
 const prisma = new PrismaClient();
@@ -88,7 +89,7 @@ async function main() {
 
   const story = await prisma.journeyStory.findFirst({
     where: { slug },
-    select: { id: true, title: true, audioUrl: true, audioFragments: true },
+    select: { id: true, title: true, text: true, audioUrl: true, audioFragments: true },
   });
   if (!story) throw new Error(`story ${slug} not found`);
   const frags = coerceFragments(story.audioFragments);
@@ -222,6 +223,37 @@ async function main() {
     normalizeSection: false, // ya normalizado arriba
     ...(retitled ? { newText: source } : {}),
   });
+
+  // CANDADO DE COBERTURA (2026-09-14). Todos los chequeos de arriba miran UN
+  // fragmento aislado contra su propio texto; ninguno vuelve a mirar el
+  // MASTER COMPLETO tras el empalme, que es donde un boundary corrupto deja
+  // huecos o duplicados (le paso a une-liste-dans-la-tete, sin avisar, con
+  // el desfase-check en verde). Transcribe el master nuevo con whisper local
+  // (gratis) y lo compara contra el texto entero; si hay un hueco de 3+
+  // palabras o un tramo de 5+ palabras duplicado, REVIERTE el audioUrl al
+  // master viejo antes de terminar: mejor el master anterior (con sus
+  // defectos ya conocidos) que uno nuevo roto.
+  console.log("\ncomprobando cobertura del master completo (whisper local)...");
+  const refText = `${story.title}. ${story.text}`;
+  let cobertura;
+  try {
+    cobertura = await checkMasterCoverage(r.audioUrl, refText);
+  } catch (e) {
+    console.warn(`  candado de cobertura saltado (whisper no disponible): ${e instanceof Error ? e.message : e}`);
+    cobertura = null;
+  }
+  if (cobertura && !cobertura.ok) {
+    await prisma.journeyStory.update({ where: { id: story.id }, data: { audioUrl: story.audioUrl } });
+    console.error(`\nREVERTIDO: el master nuevo (${r.audioUrl}) no pasa el candado de cobertura.`);
+    for (const g of cobertura.gaps) console.error(`  HUECO: ${g.textWords.join(" ")}`);
+    for (const d of cobertura.duplicates) console.error(`  DUPLICADO: ${d.words.join(" ")}`);
+    console.error(`El audioUrl de la historia volvio a ${story.audioUrl}. El master roto sigue en R2 (${r.audioUrl}) pero ninguna fila apunta ahi.`);
+    process.exitCode = 1;
+    await prisma.$disconnect();
+    return;
+  }
+  if (cobertura) console.log("  cobertura OK: sin huecos ni duplicados");
+
   console.log(`máster nuevo: ${r.audioUrl}`);
   console.log(`máster viejo (rollback): ${story.audioUrl}`);
   console.log("\nOJO: audioWordTimings y audioSegments quedan desfasados. Hay que re-alinear.");
