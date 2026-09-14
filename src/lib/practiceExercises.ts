@@ -563,12 +563,16 @@ const MAX_EXERCISE_SENTENCE_CHARS = 100;
  * Una frase que se lee bien en tres lineas puede ser imposible de decir de un
  * tiron, y el turno hablado pide justamente eso.
  *
- * La base (medido el 2026-09-14 sobre 681 favoritos de journey): mediana 13
- * palabras, p75 21. En la cuenta del usuario aparecieron frases de 42 y 37, que
- * es lo que destapo el problema. Con 15 entra la mitad larga de la mediana y se
- * queda fuera el p75; la palabra que no llega no se pierde, la recoge otro modo.
+ * Por que 12 y no 15 (2026-09-14): el 15 no cambiaba nada. Lo que el usuario
+ * tuvo delante en el telefono fueron oraciones de 15 palabras y 99 caracteres,
+ * o sea justo por debajo de los dos topes, y le siguieron pareciendo largas.
+ * Un tope que no descarta lo que molesta no es un tope. La base medida sobre
+ * 681 favoritos de journey (mediana 13, p75 21) dice ademas que 15 dejaba
+ * pasar la mediana entera.
+ *
+ * La palabra que no llega no se pierde: el slot lo rellena otro modo.
  */
-const SPEAKING_MAX_WORDS = 15;
+const SPEAKING_MAX_WORDS = 12;
 
 function wordCount(sentence: string): number {
   const trimmed = sentence.trim();

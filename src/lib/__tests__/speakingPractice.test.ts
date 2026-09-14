@@ -148,20 +148,27 @@ describe("createSpeakingExercise", () => {
     expect(createSpeakingExercise(favorito(), pool())).not.toBeNull();
   });
 
-  it("acepta una oracion de 15 palabras", () => {
+  it("acepta una oracion de 12 palabras", () => {
     // Exactamente el tope: entra.
-    const quince = "El vecino baja cada tarde con su perro y saluda a todos desde el portal";
-    expect(quince.trim().split(/\s+/).length).toBe(15);
-    expect(createSpeakingExercise(favorito({ exampleSentence: quince }), pool())).not.toBeNull();
+    const doce = "El vecino baja cada tarde con su perro y saluda al portero";
+    expect(doce.trim().split(/\s+/).length).toBe(12);
+    expect(createSpeakingExercise(favorito({ exampleSentence: doce }), pool())).not.toBeNull();
   });
 
-  it("devuelve null con una oracion de 16 palabras", () => {
-    // Una palabra por encima del tope: fuera. El turno hablado pide decirla de
-    // un tiron, y el tope de caracteres solo medía la pantalla.
-    const dieciseis =
-      "El vecino baja cada tarde con su perro y saluda a todos desde el portal viejo";
-    expect(dieciseis.trim().split(/\s+/).length).toBe(16);
-    expect(createSpeakingExercise(favorito({ exampleSentence: dieciseis }), pool())).toBeNull();
+  it("devuelve null con una oracion de 13 palabras", () => {
+    // Una palabra por encima del tope: fuera.
+    const trece = "El vecino baja cada tarde con su perro y saluda al portero joven";
+    expect(trece.trim().split(/\s+/).length).toBe(13);
+    expect(createSpeakingExercise(favorito({ exampleSentence: trece }), pool())).toBeNull();
+  });
+
+  it("descarta la oracion de 15 palabras y 99 caracteres que el usuario vio larga", () => {
+    // El caso real que hizo bajar el tope de 15 a 12: pasaba los dos topes
+    // anteriores (15 palabras, menos de 100 caracteres) y aun asi era larga.
+    const quince = "El vecino baja cada tarde con su perro y saluda a todos desde el portal";
+    expect(quince.trim().split(/\s+/).length).toBe(15);
+    expect(quince.length).toBeLessThan(100);
+    expect(createSpeakingExercise(favorito({ exampleSentence: quince }), pool())).toBeNull();
   });
 
   it("devuelve null sin oracion limpia, por larga que sea la de ejemplo", () => {

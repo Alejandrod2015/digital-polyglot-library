@@ -67,11 +67,14 @@ Sin reconocimiento disponible para ese idioma en el dispositivo: el slot cae a
   UNA oración limpia no hay ejercicio (`createSpeakingExercise` devuelve
   `null`); no hay frase de reserva, porque caer a `getContextSentence` devolvía
   el fragmento entero. Y aunque la oración sea limpia, más de
-  **`SPEAKING_MAX_WORDS` = 15 palabras** también es `null`: el tope de 100
+  **`SPEAKING_MAX_WORDS` = 12 palabras** también es `null`: el tope de 100
   caracteres mide la pantalla y este mide el aliento, que es lo que pide decir
-  la frase de un tirón. Base medida el 2026-09-14 sobre 681 favoritos de
-  journey: mediana 13 palabras, p75 21; al usuario le salieron frases de 42 y
-  de 37. La palabra que no llega no se pierde: la recoge otro modo.
+  la frase de un tirón. Empezó en 15 y no descartaba nada: lo que el usuario
+  tuvo delante en el teléfono fueron oraciones de 15 palabras y 99 caracteres,
+  justo por debajo de los dos topes, y le siguieron pareciendo largas. Base
+  medida el 2026-09-14 sobre 681 favoritos de journey: mediana 13 palabras,
+  p75 21, así que 15 dejaba pasar la mediana entera. La palabra que no llega no
+  se pierde: la recoge otro modo.
 - **G3. Voz aprobada y nunca nueva.** El audio es el clip existente o
   `sentence-tts` con la voz de la historia; esa ruta ya cae a la voz aprobada
   del idioma. Cero código nuevo de TTS.
