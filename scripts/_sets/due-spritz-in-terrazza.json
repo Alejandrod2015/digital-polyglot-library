@@ -1,0 +1,206 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "lo spritz,il sacchetto della spazzatura,il difetto,buona serata",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {"word": "lo spritz", "answer": "an orange drink with wine", "options": ["an orange drink with wine", "a rubbish bag", "a fault", "have a nice evening"]},
+    {"word": "il sacchetto della spazzatura", "answer": "a rubbish bag", "options": ["an orange drink with wine", "a rubbish bag", "a fault", "have a nice evening"]},
+    {"word": "il difetto", "answer": "a fault", "options": ["an orange drink with wine", "a rubbish bag", "a fault", "have a nice evening"]},
+    {"word": "buona serata", "answer": "have a nice evening", "options": ["an orange drink with wine", "a rubbish bag", "a fault", "have a nice evening"]}
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "usare",
+  "sentence": "Lei [[usa]] la terrazza di un'amica.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to use",
+   "options": ["to use", "to sell", "to paint", "to close"],
+   "audioClip": {"storySlug": "due-spritz-in-terrazza", "storySource": "user", "sentence": "Lei usa la terrazza di un'amica.", "targetWord": "usa", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sparire",
+  "sentence": "Deve [[sparire]] prima che arrivi.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to disappear",
+   "options": ["to disappear", "to shout", "to cook", "to knock"],
+   "audioClip": {"storySlug": "due-spritz-in-terrazza", "storySource": "user", "sentence": "Deve sparire prima che arrivi.", "targetWord": "sparire", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "presto",
+  "sentence": "Un'amica arriva [[presto]] stasera.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "early",
+   "options": ["early", "late", "never", "twice"],
+   "audioClip": {"storySlug": "due-spritz-in-terrazza", "storySource": "user", "sentence": "Un'amica arriva presto stasera.", "targetWord": "presto", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "incontrare",
+  "sentence": "Sulle scale [[incontra]] una vicina.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to meet",
+   "options": ["to meet", "to lose", "to call", "to pay"],
+   "audioClip": {"storySlug": "due-spritz-in-terrazza", "storySource": "user", "sentence": "Sulle scale incontra una vicina.", "targetWord": "incontra", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vero?",
+  "sentence": "Tu sei stanca, [[vero]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "right?",
+   "options": ["right?", "perhaps?", "however?", "therefore?"],
+   "audioClip": {"storySlug": "due-spritz-in-terrazza", "storySource": "user", "sentence": "Tu sei stanca, vero?", "targetWord": "vero", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "parlare",
+  "sentence": "Lui [[parla]] sempre di lei.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to talk",
+   "options": ["to talk", "to dream", "to laugh", "to write"],
+   "audioClip": {"storySlug": "due-spritz-in-terrazza", "storySource": "user", "sentence": "Lui parla sempre di lei.", "targetWord": "parla", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dietro",
+  "sentence": "Nasconde il sacchetto [[dietro]] la schiena.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "behind",
+   "options": ["behind", "in front of", "above", "beside"],
+   "audioClip": {"storySlug": "due-spritz-in-terrazza", "storySource": "user", "sentence": "Nasconde il sacchetto dietro la schiena.", "targetWord": "dietro", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "abitare",
+  "sentence": "Io [[abito]] qui sopra.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to live",
+   "options": ["to live", "to work", "to study", "to cook"],
+   "audioClip": {"storySlug": "due-spritz-in-terrazza", "storySource": "user", "sentence": "Io abito qui sopra.", "targetWord": "abito", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gentile",
+  "sentence": "Sei molto [[gentile]] con me.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "kind",
+   "options": ["kind", "strict", "noisy", "careless"],
+   "audioClip": {"storySlug": "due-spritz-in-terrazza", "storySource": "user", "sentence": "Sei molto gentile con me.", "targetWord": "gentile", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dopo",
+  "featured": false,
+  "sentence": "Vieni anche tu, [[dopo]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "later",
+   "options": ["later", "now", "yesterday", "always"],
+   "audioClip": {"storySlug": "due-spritz-in-terrazza", "storySource": "user", "sentence": "Vieni anche tu, dopo?", "targetWord": "dopo", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sorridere",
+  "featured": false,
+  "sentence": "Lei [[sorride]] e saluta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to smile",
+   "options": ["to smile", "to cry", "to shout", "to whisper"],
+   "audioClip": {"storySlug": "due-spritz-in-terrazza", "storySource": "user", "sentence": "Lei sorride e saluta.", "targetWord": "sorride", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "simpatico",
+  "featured": false,
+  "sentence": "È molto [[simpatica]] e allegra.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nice, friendly",
+   "options": ["nice, friendly", "rude", "sleepy", "jealous"],
+   "audioClip": {"storySlug": "due-spritz-in-terrazza", "storySource": "user", "sentence": "È molto simpatica e allegra.", "targetWord": "simpatica", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "solo",
+  "featured": false,
+  "sentence": "Sono [[solo]] amici, niente di più.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "only",
+   "options": ["only", "never", "always", "almost"],
+   "audioClip": {"storySlug": "due-spritz-in-terrazza", "storySource": "user", "sentence": "Sono solo amici, niente di più.", "targetWord": "solo", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "arriva",
+  "featured": false,
+  "sentence": "Il treno è in ritardo e non _____ mai.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "arriva",
+   "options": ["arriva", "parte", "costa", "pesa"],
+   "translation": "The train is late and never _____.",
+   "optionTranslations": ["arrives", "leaves", "costs", "weighs"],
+   "audioClip": {"storySlug": "due-spritz-in-terrazza", "storySource": "user", "sentence": "Il treno è in ritardo e non arriva mai.", "targetWord": "arriva", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cerca",
+  "featured": false,
+  "sentence": "Ha perso le chiavi e le _____ ovunque.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cerca",
+   "options": ["cerca", "compra", "disegna", "racconta"],
+   "translation": "He lost his keys and _____ them everywhere.",
+   "optionTranslations": ["looks for", "buys", "draws", "tells"],
+   "audioClip": {"storySlug": "due-spritz-in-terrazza", "storySource": "user", "sentence": "Ha perso le chiavi e le cerca ovunque.", "targetWord": "cerca", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "trova",
+  "featured": false,
+  "sentence": "Cerca a lungo e finalmente lo _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "trova",
+   "options": ["trova", "perde", "rompe", "vende"],
+   "translation": "He searches for a long time and finally _____ it.",
+   "optionTranslations": ["finds", "loses", "breaks", "sells"],
+   "audioClip": {"storySlug": "due-spritz-in-terrazza", "storySource": "user", "sentence": "Cerca a lungo e finalmente lo trova.", "targetWord": "trova", "language": "italian"}
+  }
+ }
+]

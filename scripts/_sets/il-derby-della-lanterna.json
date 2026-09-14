@@ -1,0 +1,206 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "il derby,la squadra,la maglia,il divano",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {"word": "il derby", "answer": "a match between two teams of the same city", "options": ["a match between two teams of the same city", "a team", "a shirt", "a sofa"]},
+    {"word": "la squadra", "answer": "a team", "options": ["a match between two teams of the same city", "a team", "a shirt", "a sofa"]},
+    {"word": "la maglia", "answer": "a shirt", "options": ["a match between two teams of the same city", "a team", "a shirt", "a sofa"]},
+    {"word": "il divano", "answer": "a sofa", "options": ["a match between two teams of the same city", "a team", "a shirt", "a sofa"]}
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "giocare",
+  "sentence": "La sua squadra [[gioca]] contro un'altra.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to play",
+   "options": ["to play", "to win", "to watch", "to shout"],
+   "audioClip": {"storySlug": "il-derby-della-lanterna", "storySource": "user", "sentence": "La sua squadra gioca contro un'altra.", "targetWord": "gioca", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tifare",
+  "sentence": "Loro [[tifano]] per la stessa squadra.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to support (a team)",
+   "options": ["to support (a team)", "to coach", "to referee", "to sell"],
+   "audioClip": {"storySlug": "il-derby-della-lanterna", "storySource": "user", "sentence": "Loro tifano per la stessa squadra.", "targetWord": "tifano", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "il tassista",
+  "sentence": "Il [[tassista]] guida un taxi bianco.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a taxi driver",
+   "options": ["a taxi driver", "a mechanic", "a waiter", "a barber"],
+   "audioClip": {"storySlug": "il-derby-della-lanterna", "storySource": "user", "sentence": "Il tassista guida un taxi bianco.", "targetWord": "tassista", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "terzo",
+  "sentence": "Abita al [[terzo]] piano del palazzo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "third",
+   "options": ["third", "first", "fifth", "last"],
+   "audioClip": {"storySlug": "il-derby-della-lanterna", "storySource": "user", "sentence": "Abita al terzo piano del palazzo.", "targetWord": "terzo", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vicino",
+  "sentence": "Il divano è [[vicino]] alla televisione.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "near",
+   "options": ["near", "far", "above", "behind"],
+   "audioClip": {"storySlug": "il-derby-della-lanterna", "storySource": "user", "sentence": "Il divano è vicino alla televisione.", "targetWord": "vicino", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "avere caldo in faccia",
+  "sentence": "Quando si arrabbia, [[ha caldo in faccia]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "your face goes hot (anger)",
+   "options": ["your face goes hot (anger)", "you feel sleepy", "you feel hungry", "you get a headache"],
+   "audioClip": {"storySlug": "il-derby-della-lanterna", "storySource": "user", "sentence": "Quando si arrabbia, ha caldo in faccia.", "targetWord": "ha caldo in faccia", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "incrociare le braccia",
+  "sentence": "Lei [[incrocia le braccia]] ed aspetta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to cross your arms",
+   "options": ["to cross your arms", "to raise your hands", "to shake hands", "to clap"],
+   "audioClip": {"storySlug": "il-derby-della-lanterna", "storySource": "user", "sentence": "Lei incrocia le braccia ed aspetta.", "targetWord": "incrocia le braccia", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "allora",
+  "sentence": "[[Allora]] facciamo una scommessa?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "so, then",
+   "options": ["so, then", "never", "maybe not", "unfortunately"],
+   "audioClip": {"storySlug": "il-derby-della-lanterna", "storySource": "user", "sentence": "Allora facciamo una scommessa?", "targetWord": "Allora", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la scommessa",
+  "sentence": "Perdono la [[scommessa]] e pagano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a bet",
+   "options": ["a bet", "a game", "a gift", "a fine"],
+   "audioClip": {"storySlug": "il-derby-della-lanterna", "storySource": "user", "sentence": "Perdono la scommessa e pagano.", "targetWord": "scommessa", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "il regalo",
+  "featured": false,
+  "sentence": "La maglia è un [[regalo]] speciale.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a present",
+   "options": ["a present", "a receipt", "a rule", "a ticket"],
+   "audioClip": {"storySlug": "il-derby-della-lanterna", "storySource": "user", "sentence": "La maglia è un regalo speciale.", "targetWord": "regalo", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "per un mese",
+  "featured": false,
+  "sentence": "Porta la focaccia [[per un mese]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "for a month",
+   "options": ["for a month", "for one day", "for a year", "for an hour"],
+   "audioClip": {"storySlug": "il-derby-della-lanterna", "storySource": "user", "sentence": "Porta la focaccia per un mese.", "targetWord": "per un mese", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la partita",
+  "featured": false,
+  "sentence": "Guardano la [[partita]] sul divano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a match",
+   "options": ["a match", "a film", "a photo", "a song"],
+   "audioClip": {"storySlug": "il-derby-della-lanterna", "storySource": "user", "sentence": "Guardano la partita sul divano.", "targetWord": "partita", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tre a zero",
+  "featured": false,
+  "sentence": "La sua squadra perde [[tre a zero]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "three to nil",
+   "options": ["three to nil", "two to two", "one to nil", "five to one"],
+   "audioClip": {"storySlug": "il-derby-della-lanterna", "storySource": "user", "sentence": "La sua squadra perde tre a zero.", "targetWord": "tre a zero", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "vince",
+  "featured": false,
+  "sentence": "La sua squadra segna tre gol e _____ la partita.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vince",
+   "options": ["vince", "perde", "guarda", "paga"],
+   "translation": "His team scores three goals and _____ the match.",
+   "optionTranslations": ["wins", "loses", "watches", "pays"],
+   "audioClip": {"storySlug": "il-derby-della-lanterna", "storySource": "user", "sentence": "La sua squadra segna tre gol e vince la partita.", "targetWord": "vince", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "mangia",
+  "featured": false,
+  "sentence": "Ha tanta fame e in due minuti _____ tutta la pizza.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mangia",
+   "options": ["mangia", "cucina", "compra", "taglia"],
+   "translation": "He's very hungry, and in two minutes he _____ the whole pizza.",
+   "optionTranslations": ["eats", "cooks", "buys", "cuts"],
+   "audioClip": {"storySlug": "il-derby-della-lanterna", "storySource": "user", "sentence": "Ha tanta fame e in due minuti mangia tutta la pizza.", "targetWord": "mangia", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "comincia",
+  "featured": false,
+  "sentence": "L'arbitro fischia e la partita _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "comincia",
+   "options": ["comincia", "finisce", "si ferma", "continua"],
+   "translation": "The referee blows the whistle and the match _____.",
+   "optionTranslations": ["begins", "ends", "stops", "continues"],
+   "audioClip": {"storySlug": "il-derby-della-lanterna", "storySource": "user", "sentence": "L'arbitro fischia e la partita comincia.", "targetWord": "comincia", "language": "italian"}
+  }
+ }
+]

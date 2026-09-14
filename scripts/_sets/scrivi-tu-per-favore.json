@@ -1,0 +1,218 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la biologa,il messaggio,il delfino,la focaccia",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {"word": "la biologa", "answer": "a woman who studies animals and plants", "options": ["a woman who studies animals and plants", "a message", "a dolphin", "a flat Italian bread"]},
+    {"word": "il messaggio", "answer": "a message", "options": ["a woman who studies animals and plants", "a message", "a dolphin", "a flat Italian bread"]},
+    {"word": "il delfino", "answer": "a dolphin", "options": ["a woman who studies animals and plants", "a message", "a dolphin", "a flat Italian bread"]},
+    {"word": "la focaccia", "answer": "a flat Italian bread", "options": ["a woman who studies animals and plants", "a message", "a dolphin", "a flat Italian bread"]}
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "salire",
+  "sentence": "Lui [[sale]] subito al quinto piano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go up",
+   "options": ["to go up", "to go down", "to fall", "to stop"],
+   "audioClip": {"storySlug": "scrivi-tu-per-favore", "storySource": "user", "sentence": "Lui sale subito al quinto piano.", "targetWord": "sale", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quinto",
+  "sentence": "Abita al [[quinto]] piano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fifth",
+   "options": ["fifth", "second", "sixth", "first"],
+   "audioClip": {"storySlug": "scrivi-tu-per-favore", "storySource": "user", "sentence": "Abita al quinto piano.", "targetWord": "quinto", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "in mano",
+  "sentence": "Ha il telefono [[in mano]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in your hand",
+   "options": ["in your hand", "in the bag", "on the table", "in the pocket"],
+   "audioClip": {"storySlug": "scrivi-tu-per-favore", "storySource": "user", "sentence": "Ha il telefono in mano.", "targetWord": "In mano", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "studiare",
+  "sentence": "Lei [[Studia]] i delfini ogni giorno.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to study",
+   "options": ["to study", "to paint", "to sell", "to count"],
+   "audioClip": {"storySlug": "scrivi-tu-per-favore", "storySource": "user", "sentence": "Lei Studia i delfini ogni giorno.", "targetWord": "Studia", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stasera",
+  "sentence": "[[Stasera]] deve scrivere un messaggio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "this evening",
+   "options": ["this evening", "last year", "next week", "this morning"],
+   "audioClip": {"storySlug": "scrivi-tu-per-favore", "storySource": "user", "sentence": "Stasera deve scrivere un messaggio.", "targetWord": "Stasera", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "carino",
+  "sentence": "Il messaggio è molto [[carino]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pretty, cute",
+   "options": ["pretty, cute", "rude", "long", "boring"],
+   "audioClip": {"storySlug": "scrivi-tu-per-favore", "storySource": "user", "sentence": "Il messaggio è molto carino.", "targetWord": "carino", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dentro",
+  "sentence": "È triste [[dentro]], ma sorride.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "inside",
+   "options": ["inside", "outside", "above", "later"],
+   "audioClip": {"storySlug": "scrivi-tu-per-favore", "storySource": "user", "sentence": "È triste dentro, ma sorride.", "targetWord": "dentro", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "felice",
+  "sentence": "Lui è [[felice]] per il messaggio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "happy",
+   "options": ["happy", "worried", "tired", "confused"],
+   "audioClip": {"storySlug": "scrivi-tu-per-favore", "storySource": "user", "sentence": "Lui è felice per il messaggio.", "targetWord": "felice", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "così",
+  "sentence": "Non scrivere [[così]], è troppo breve.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "like this",
+   "options": ["like this", "never", "tomorrow", "sometimes"],
+   "audioClip": {"storySlug": "scrivi-tu-per-favore", "storySource": "user", "sentence": "Non scrivere così, è troppo breve.", "targetWord": "Così", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bravo",
+  "featured": false,
+  "sentence": "Sei molto [[brava]] con le parole.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "good at something",
+   "options": ["good at something", "careless", "slow", "forgetful"],
+   "audioClip": {"storySlug": "scrivi-tu-per-favore", "storySource": "user", "sentence": "Sei molto brava con le parole.", "targetWord": "brava", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ci vediamo",
+  "featured": false,
+  "sentence": "[[Ci vediamo]] sabato, allora.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "see you",
+   "options": ["see you", "goodbye forever", "come in", "sit down"],
+   "audioClip": {"storySlug": "scrivi-tu-per-favore", "storySource": "user", "sentence": "Ci vediamo sabato, allora.", "targetWord": "Ci vediamo", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "più bello",
+  "featured": false,
+  "sentence": "Il mare è [[più bello]] con te.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "more beautiful",
+   "options": ["more beautiful", "more expensive", "more dangerous", "less interesting"],
+   "audioClip": {"storySlug": "scrivi-tu-per-favore", "storySource": "user", "sentence": "Il mare è più bello con te.", "targetWord": "più bello", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "adesso",
+  "featured": false,
+  "sentence": "[[Adesso]] devo andare via.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "now",
+   "options": ["now", "yesterday", "tomorrow", "never"],
+   "audioClip": {"storySlug": "scrivi-tu-per-favore", "storySource": "user", "sentence": "Adesso devo andare via.", "targetWord": "adesso", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "allegro",
+  "featured": false,
+  "sentence": "Lui mostra la foto, [[allegro]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cheerful",
+   "options": ["cheerful", "nervous", "sleepy", "ashamed"],
+   "audioClip": {"storySlug": "scrivi-tu-per-favore", "storySource": "user", "sentence": "Lui mostra la foto, allegro.", "targetWord": "allegro", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "scrivere",
+  "featured": false,
+  "sentence": "Non sa come cominciare e non riesce a _____ nulla.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "scrivere",
+   "options": ["scrivere", "leggere", "cantare", "disegnare"],
+   "translation": "He doesn't know how to start, and can't _____ anything.",
+   "optionTranslations": ["write", "read", "sing", "draw"],
+   "audioClip": {"storySlug": "scrivi-tu-per-favore", "storySource": "user", "sentence": "Non sa come cominciare e non riesce a scrivere nulla.", "targetWord": "scrivere", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "mostra",
+  "featured": false,
+  "sentence": "È fiero della foto e la _____ a tutti.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mostra",
+   "options": ["mostra", "nasconde", "vende", "rompe"],
+   "translation": "He's proud of the photo and _____ it to everyone.",
+   "optionTranslations": ["shows", "hides", "sells", "breaks"],
+   "audioClip": {"storySlug": "scrivi-tu-per-favore", "storySource": "user", "sentence": "È fiero della foto e la mostra a tutti.", "targetWord": "mostra", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "abbraccia",
+  "featured": false,
+  "sentence": "È felice e la _____ forte.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "abbraccia",
+   "options": ["abbraccia", "saluta", "chiama", "guarda"],
+   "translation": "He's happy and _____ her tightly.",
+   "optionTranslations": ["hugs", "greets", "calls", "looks at"],
+   "audioClip": {"storySlug": "scrivi-tu-per-favore", "storySource": "user", "sentence": "È felice e la abbraccia forte.", "targetWord": "abbraccia", "language": "italian"}
+  }
+ }
+]

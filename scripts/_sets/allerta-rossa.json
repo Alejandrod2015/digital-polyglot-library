@@ -1,0 +1,206 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "l'ospedale,il basilico,il tuono,la pergola",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {"word": "l'ospedale", "answer": "a hospital", "options": ["a hospital", "basil", "thunder", "a pergola"]},
+    {"word": "il basilico", "answer": "basil", "options": ["a hospital", "basil", "thunder", "a pergola"]},
+    {"word": "il tuono", "answer": "thunder", "options": ["a hospital", "basil", "thunder", "a pergola"]},
+    {"word": "la pergola", "answer": "a pergola", "options": ["a hospital", "basil", "thunder", "a pergola"]}
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nero",
+  "sentence": "Il cielo sopra la città è [[nero]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "black",
+   "options": ["black", "blue", "clear", "pink"],
+   "audioClip": {"storySlug": "allerta-rossa", "storySource": "user", "sentence": "Il cielo sopra la città è nero.", "targetWord": "nero", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'allerta",
+  "sentence": "Il telefono avvisa: [[allerta]] rossa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a weather alert",
+   "options": ["a weather alert", "a birthday party", "a football match", "a phone call"],
+   "audioClip": {"storySlug": "allerta-rossa", "storySource": "user", "sentence": "Il telefono avvisa: allerta rossa.", "targetWord": "allerta", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rosso",
+  "sentence": "È allerta [[rossa]] per la pioggia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "red",
+   "options": ["red", "yellow", "green", "white"],
+   "audioClip": {"storySlug": "allerta-rossa", "storySource": "user", "sentence": "È allerta rossa per la pioggia.", "targetWord": "rossa", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "forte",
+  "sentence": "Il vento è troppo [[forte]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "strong",
+   "options": ["strong", "weak", "warm", "slow"],
+   "audioClip": {"storySlug": "allerta-rossa", "storySource": "user", "sentence": "Il vento è troppo forte.", "targetWord": "forte", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "soffiare",
+  "sentence": "Il vento [[soffia]] e muove tutto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to blow",
+   "options": ["to blow", "to rain", "to shine", "to freeze"],
+   "audioClip": {"storySlug": "allerta-rossa", "storySource": "user", "sentence": "Il vento soffia e muove tutto.", "targetWord": "soffia", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "per favore",
+  "sentence": "Prendi le sedie, [[per favore]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "please",
+   "options": ["please", "quickly", "maybe", "of course"],
+   "audioClip": {"storySlug": "allerta-rossa", "storySource": "user", "sentence": "Prendi le sedie, per favore.", "targetWord": "per favore", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "basta",
+  "sentence": "[[Basta]]! Adesso andiamo giù.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "enough",
+   "options": ["enough", "wait", "again", "hurry"],
+   "audioClip": {"storySlug": "allerta-rossa", "storySource": "user", "sentence": "Basta! Adesso andiamo giù.", "targetWord": "Basta", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "andare giù",
+  "sentence": "Qui è pericoloso: [[andiamo giù]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go down",
+   "options": ["to go down", "let's go up", "let's wait here", "let's run away"],
+   "audioClip": {"storySlug": "allerta-rossa", "storySource": "user", "sentence": "Qui è pericoloso: andiamo giù.", "targetWord": "andiamo giù", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "per mano",
+  "sentence": "Lui la prende [[per mano]] e corre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "by the hand",
+   "options": ["by the hand", "by the arm", "on his shoulders", "in a hug"],
+   "audioClip": {"storySlug": "allerta-rossa", "storySource": "user", "sentence": "Lui la prende per mano e corre.", "targetWord": "per mano", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "il pianerottolo",
+  "featured": false,
+  "sentence": "Sul [[pianerottolo]] c'è una donna.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a landing",
+   "options": ["a landing", "a garden", "a rooftop", "a basement"],
+   "audioClip": {"storySlug": "allerta-rossa", "storySource": "user", "sentence": "Sul pianerottolo c'è una donna.", "targetWord": "pianerottolo", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'architetta",
+  "featured": false,
+  "sentence": "Federica è un'[[architetta]] del quarto piano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a woman architect",
+   "options": ["a woman architect", "a nurse", "a taxi driver", "a baker"],
+   "audioClip": {"storySlug": "allerta-rossa", "storySource": "user", "sentence": "Federica è un'architetta del quarto piano.", "targetWord": "architetta", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quarto",
+  "featured": false,
+  "sentence": "Abita al [[quarto]] piano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fourth",
+   "options": ["fourth", "third", "fifth", "second"],
+   "audioClip": {"storySlug": "allerta-rossa", "storySource": "user", "sentence": "Abita al quarto piano.", "targetWord": "quarto", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "veloce",
+  "featured": false,
+  "sentence": "[[Veloce]]! Prendi le sedie!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fast",
+   "options": ["fast", "slowly", "carefully", "later"],
+   "audioClip": {"storySlug": "allerta-rossa", "storySource": "user", "sentence": "Veloce! Prendi le sedie!", "targetWord": "Veloce", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cadono",
+  "featured": false,
+  "sentence": "Il vento è forte e i vasi _____ dalla terrazza.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cadono",
+   "options": ["cadono", "crescono", "brillano", "cambiano"],
+   "translation": "The wind is strong and the pots _____ from the terrace.",
+   "optionTranslations": ["fall", "grow", "shine", "change"],
+   "audioClip": {"storySlug": "allerta-rossa", "storySource": "user", "sentence": "Il vento è forte e i vasi cadono dalla terrazza.", "targetWord": "cadono", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "prendo",
+  "featured": false,
+  "sentence": "Il vento porta via tutto e io _____ le sedie.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "prendo",
+   "options": ["prendo", "perdo", "vendo", "rompo"],
+   "translation": "The wind blows everything away, and I _____ the chairs.",
+   "optionTranslations": ["take", "lose", "sell", "break"],
+   "audioClip": {"storySlug": "allerta-rossa", "storySource": "user", "sentence": "Il vento porta via tutto e io prendo le sedie.", "targetWord": "prendo", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "volano",
+  "featured": false,
+  "sentence": "C'è tanto vento e le foglie _____ ovunque.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "volano",
+   "options": ["volano", "dormono", "parlano", "cucinano"],
+   "translation": "There's a lot of wind, and the leaves _____ everywhere.",
+   "optionTranslations": ["fly", "sleep", "talk", "cook"],
+   "audioClip": {"storySlug": "allerta-rossa", "storySource": "user", "sentence": "C'è tanto vento e le foglie volano ovunque.", "targetWord": "volano", "language": "italian"}
+  }
+ }
+]

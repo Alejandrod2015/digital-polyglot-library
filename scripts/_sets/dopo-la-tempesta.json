@@ -1,0 +1,218 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "le foglie,il fango,la scopa,la tempesta",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {"word": "le foglie", "answer": "leaves", "options": ["leaves", "mud", "a broom", "a storm"]},
+    {"word": "il fango", "answer": "mud", "options": ["leaves", "mud", "a broom", "a storm"]},
+    {"word": "la scopa", "answer": "a broom", "options": ["leaves", "mud", "a broom", "a storm"]},
+    {"word": "la tempesta", "answer": "a storm", "options": ["leaves", "mud", "a broom", "a storm"]}
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rotto",
+  "sentence": "Una sedia è [[rotta]], l'altra bagnata.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "broken",
+   "options": ["broken", "new", "painted", "heavy"],
+   "audioClip": {"storySlug": "dopo-la-tempesta", "storySource": "user", "sentence": "Una sedia è rotta, l'altra bagnata.", "targetWord": "rotta", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "altro",
+  "sentence": "Una è rotta, l'[[altra]] è bagnata.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the other one",
+   "options": ["the other one", "the first one", "the biggest one", "the same one"],
+   "audioClip": {"storySlug": "dopo-la-tempesta", "storySource": "user", "sentence": "Una è rotta, l'altra è bagnata.", "targetWord": "altra", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pieno",
+  "sentence": "Il vicolo è [[pieno]] di foglie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "full",
+   "options": ["full", "empty", "clean", "narrow"],
+   "audioClip": {"storySlug": "dopo-la-tempesta", "storySource": "user", "sentence": "Il vicolo è pieno di foglie.", "targetWord": "pieno", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "per un'ora",
+  "sentence": "[[Per un'ora]] non parlano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "for one hour",
+   "options": ["for one hour", "for one minute", "for a week", "forever"],
+   "audioClip": {"storySlug": "dopo-la-tempesta", "storySource": "user", "sentence": "Per un'ora non parlano.", "targetWord": "Per un'ora", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "di notte",
+  "sentence": "Ha paura delle tempeste [[di notte]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at night",
+   "options": ["at night", "in the morning", "at noon", "on Sundays"],
+   "audioClip": {"storySlug": "dopo-la-tempesta", "storySource": "user", "sentence": "Ha paura delle tempeste di notte.", "targetWord": "di notte", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tanto",
+  "sentence": "Ha [[tanta]] paura sul traghetto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a lot of",
+   "options": ["a lot of", "a little", "no", "some"],
+   "audioClip": {"storySlug": "dopo-la-tempesta", "storySource": "user", "sentence": "Ha tanta paura sul traghetto.", "targetWord": "tanta", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nel petto",
+  "sentence": "Sente caldo [[nel petto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in the chest",
+   "options": ["in the chest", "in the hand", "on the face", "in the foot"],
+   "audioClip": {"storySlug": "dopo-la-tempesta", "storySource": "user", "sentence": "Sente caldo nel petto.", "targetWord": "nel petto", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caldo",
+  "sentence": "Sente [[caldo]] nel petto, perché lui pensa a lei.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "warm",
+   "options": ["warm", "cold", "sharp", "heavy"],
+   "audioClip": {"storySlug": "dopo-la-tempesta", "storySource": "user", "sentence": "Sente caldo nel petto, perché lui pensa a lei.", "targetWord": "caldo", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "più",
+  "sentence": "Non c'è [[più]] la pergola.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "any more",
+   "options": ["any more", "still", "again", "almost"],
+   "audioClip": {"storySlug": "dopo-la-tempesta", "storySource": "user", "sentence": "Non c'è più la pergola.", "targetWord": "più", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vivo",
+  "featured": false,
+  "sentence": "La pianta è piccola, ma è [[viva]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "alive",
+   "options": ["alive", "dead", "dry", "broken"],
+   "audioClip": {"storySlug": "dopo-la-tempesta", "storySource": "user", "sentence": "La pianta è piccola, ma è viva.", "targetWord": "viva", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lo stesso",
+  "featured": false,
+  "sentence": "Domenica fanno il pesto [[lo stesso]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "all the same",
+   "options": ["all the same", "never again", "only once", "for the first time"],
+   "audioClip": {"storySlug": "dopo-la-tempesta", "storySource": "user", "sentence": "Domenica fanno il pesto lo stesso.", "targetWord": "lo stesso", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sotto",
+  "featured": false,
+  "sentence": "Il vicolo [[sotto]] è pieno di foglie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "below",
+   "options": ["below", "above", "beside", "behind"],
+   "audioClip": {"storySlug": "dopo-la-tempesta", "storySource": "user", "sentence": "Il vicolo sotto è pieno di foglie.", "targetWord": "sotto", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "insieme",
+  "featured": false,
+  "sentence": "Mettono il basilico [[insieme]] in un vaso.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "together",
+   "options": ["together", "alone", "quickly", "secretly"],
+   "audioClip": {"storySlug": "dopo-la-tempesta", "storySource": "user", "sentence": "Mettono il basilico insieme in un vaso.", "targetWord": "insieme", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pulito",
+  "featured": false,
+  "sentence": "Dopo la tempesta il cielo è [[pulito]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clean",
+   "options": ["clean", "dark", "grey", "cold"],
+   "audioClip": {"storySlug": "dopo-la-tempesta", "storySource": "user", "sentence": "Dopo la tempesta il cielo è pulito.", "targetWord": "pulito", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "penso",
+  "featured": false,
+  "sentence": "Quando ho paura, _____ a questa terrazza.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "penso",
+   "options": ["penso", "corro", "grido", "dormo"],
+   "translation": "When I'm afraid, I _____ of this terrace.",
+   "optionTranslations": ["think", "run", "shout", "sleep"],
+   "audioClip": {"storySlug": "dopo-la-tempesta", "storySource": "user", "sentence": "Quando ho paura, penso a questa terrazza.", "targetWord": "penso", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "facciamo",
+  "featured": false,
+  "sentence": "Non abbiamo il mortaio, ma il pesto lo _____ lo stesso.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "facciamo",
+   "options": ["facciamo", "compriamo", "rompiamo", "regaliamo"],
+   "translation": "We don't have the mortar, but we _____ the pesto anyway.",
+   "optionTranslations": ["make", "buy", "break", "give away"],
+   "audioClip": {"storySlug": "dopo-la-tempesta", "storySource": "user", "sentence": "Non abbiamo il mortaio, ma il pesto lo facciamo lo stesso.", "targetWord": "facciamo", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "raccoglie",
+  "featured": false,
+  "sentence": "Il vento porta via le foglie e lei le _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "raccoglie",
+   "options": ["raccoglie", "brucia", "conta", "disegna"],
+   "translation": "The wind blows the leaves away, and she _____ them.",
+   "optionTranslations": ["picks up", "burns", "counts", "draws"],
+   "audioClip": {"storySlug": "dopo-la-tempesta", "storySource": "user", "sentence": "Il vento porta via le foglie e lei le raccoglie.", "targetWord": "raccoglie", "language": "italian"}
+  }
+ }
+]

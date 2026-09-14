@@ -1,0 +1,230 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "il patto,la settimana,la cosa,meno dieci",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {"word": "il patto", "answer": "a pact", "options": ["a pact", "a week", "a thing", "ten to (the hour)"]},
+    {"word": "la settimana", "answer": "a week", "options": ["a pact", "a week", "a thing", "ten to (the hour)"]},
+    {"word": "la cosa", "answer": "a thing", "options": ["a pact", "a week", "a thing", "ten to (the hour)"]},
+    {"word": "meno dieci", "answer": "ten to (the hour)", "options": ["a pact", "a week", "a thing", "ten to (the hour)"]}
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "buio",
+  "sentence": "Le scale sono [[buie]] la notte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dark",
+   "options": ["dark", "bright", "narrow", "clean"],
+   "audioClip": {"storySlug": "il-traghetto-delle-sei", "storySource": "user", "sentence": "Le scale sono buie la notte.", "targetWord": "buie", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "freddo",
+  "sentence": "Ha le mani [[fredde]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cold",
+   "options": ["cold", "warm", "wet", "soft"],
+   "audioClip": {"storySlug": "il-traghetto-delle-sei", "storySource": "user", "sentence": "Ha le mani fredde.", "targetWord": "fredde", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "partire",
+  "sentence": "Il traghetto [[parte]] alle sei.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to leave",
+   "options": ["to leave", "to arrive", "to stop", "to sink"],
+   "audioClip": {"storySlug": "il-traghetto-delle-sei", "storySource": "user", "sentence": "Il traghetto parte alle sei.", "targetWord": "parte", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aspettare",
+  "sentence": "Lui [[aspetta]] con lo zaino.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to wait",
+   "options": ["to wait", "to run", "to sleep", "to pay"],
+   "audioClip": {"storySlug": "il-traghetto-delle-sei", "storySource": "user", "sentence": "Lui aspetta con lo zaino.", "targetWord": "aspetta", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sveglio",
+  "sentence": "Perché sei già [[sveglia]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "awake",
+   "options": ["awake", "asleep", "sad", "late"],
+   "audioClip": {"storySlug": "il-traghetto-delle-sei", "storySource": "user", "sentence": "Perché sei già sveglia?", "targetWord": "sveglia", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "subito",
+  "sentence": "Il taxi arriva [[subito]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "right away",
+   "options": ["right away", "tomorrow", "never", "late"],
+   "audioClip": {"storySlug": "il-traghetto-delle-sei", "storySource": "user", "sentence": "Il taxi arriva subito.", "targetWord": "subito", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "avere paura",
+  "sentence": "[[Ha paura]] di perdere il suo amico.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be afraid",
+   "options": ["to be afraid", "to be happy", "to be bored", "to be hungry"],
+   "audioClip": {"storySlug": "il-traghetto-delle-sei", "storySource": "user", "sentence": "Ha paura di perdere il suo amico.", "targetWord": "ha paura", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dovere",
+  "sentence": "[[Devo]] dire una cosa difficile.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "must",
+   "options": ["must", "want", "forget", "refuse"],
+   "audioClip": {"storySlug": "il-traghetto-delle-sei", "storySource": "user", "sentence": "Devo dire una cosa difficile.", "targetWord": "Devo", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "giù",
+  "sentence": "Corre [[giù]] per le scale.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "down",
+   "options": ["down", "up", "around", "inside"],
+   "audioClip": {"storySlug": "il-traghetto-delle-sei", "storySource": "user", "sentence": "Corre giù per le scale.", "targetWord": "giù", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "essere in ritardo",
+  "featured": false,
+  "sentence": "Scusa, [[sono in ritardo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be late",
+   "options": ["to be late", "to be early", "to be ready", "to be lost"],
+   "audioClip": {"storySlug": "il-traghetto-delle-sei", "storySource": "user", "sentence": "Scusa, sono in ritardo.", "targetWord": "sono in ritardo", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "baciare",
+  "featured": false,
+  "sentence": "Lui la [[bacia]] sulla guancia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to kiss",
+   "options": ["to kiss", "to hug", "to hit", "to push"],
+   "audioClip": {"storySlug": "il-traghetto-delle-sei", "storySource": "user", "sentence": "Lui la bacia sulla guancia.", "targetWord": "bacia", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "buon viaggio",
+  "featured": false,
+  "sentence": "[[Buon viaggio]], ci vediamo domenica.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "have a good trip",
+   "options": ["have a good trip", "good luck with the exam", "happy birthday", "congratulations on the job"],
+   "audioClip": {"storySlug": "il-traghetto-delle-sei", "storySource": "user", "sentence": "Buon viaggio, ci vediamo domenica.", "targetWord": "Buon viaggio", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sentire",
+  "featured": false,
+  "sentence": "Non [[sente]] più le sue parole.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hear",
+   "options": ["to hear", "to write", "to read", "to draw"],
+   "audioClip": {"storySlug": "il-traghetto-delle-sei", "storySource": "user", "sentence": "Non sente più le sue parole.", "targetWord": "sente", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tornare",
+  "featured": false,
+  "sentence": "Lei [[torna]] al quinto piano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go back",
+   "options": ["to go back", "to fall", "to sing", "to cook"],
+   "audioClip": {"storySlug": "il-traghetto-delle-sei", "storySource": "user", "sentence": "Lei torna al quinto piano.", "targetWord": "torna", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "piano piano",
+  "featured": false,
+  "sentence": "Chiude il cassetto [[piano piano]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "very slowly",
+   "options": ["very slowly", "very loudly", "very quickly", "very badly"],
+   "audioClip": {"storySlug": "il-traghetto-delle-sei", "storySource": "user", "sentence": "Chiude il cassetto piano piano.", "targetWord": "piano piano", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "scende",
+  "featured": false,
+  "sentence": "Ha fretta e _____ le scale di corsa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "scende",
+   "options": ["scende", "sale", "pulisce", "disegna"],
+   "translation": "She's in a hurry and _____ down the stairs, running.",
+   "optionTranslations": ["goes down", "goes up", "cleans", "draws"],
+   "audioClip": {"storySlug": "il-traghetto-delle-sei", "storySource": "user", "sentence": "Ha fretta e scende le scale di corsa.", "targetWord": "scende", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "corre",
+  "featured": false,
+  "sentence": "Sente il clacson e _____ verso il taxi.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "corre",
+   "options": ["corre", "cammina", "dorme", "canta"],
+   "translation": "He hears the horn and _____ toward the taxi.",
+   "optionTranslations": ["runs", "walks", "sleeps", "sings"],
+   "audioClip": {"storySlug": "il-traghetto-delle-sei", "storySource": "user", "sentence": "Sente il clacson e corre verso il taxi.", "targetWord": "corre", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "chiude",
+  "featured": false,
+  "sentence": "Ha sonno e _____ gli occhi.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chiude",
+   "options": ["chiude", "apre", "lava", "disegna"],
+   "translation": "He's sleepy and _____ his eyes.",
+   "optionTranslations": ["closes", "opens", "washes", "draws"],
+   "audioClip": {"storySlug": "il-traghetto-delle-sei", "storySource": "user", "sentence": "Ha sonno e chiude gli occhi.", "targetWord": "chiude", "language": "italian"}
+  }
+ }
+]

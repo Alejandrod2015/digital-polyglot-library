@@ -1,0 +1,206 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "il gruppo,bianco,blu,in pigiama",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {"word": "il gruppo", "answer": "a group", "options": ["a group", "white", "blue", "in pyjamas"]},
+    {"word": "bianco", "answer": "white", "options": ["a group", "white", "blue", "in pyjamas"]},
+    {"word": "blu", "answer": "blue", "options": ["a group", "white", "blue", "in pyjamas"]},
+    {"word": "in pigiama", "answer": "in pyjamas", "options": ["a group", "white", "blue", "in pyjamas"]}
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fresco",
+  "sentence": "L'aria del mattino è [[fresca]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cool",
+   "options": ["cool", "hot", "dirty", "heavy"],
+   "audioClip": {"storySlug": "solo-per-una-foto", "storySource": "user", "sentence": "L'aria del mattino è fresca.", "targetWord": "fresca", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "davanti",
+  "sentence": "[[Davanti]] al palazzo c'è un taxi.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in front",
+   "options": ["in front", "far away", "on top", "underneath"],
+   "audioClip": {"storySlug": "solo-per-una-foto", "storySource": "user", "sentence": "Davanti al palazzo c'è un taxi.", "targetWord": "Davanti", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le lacrime agli occhi",
+  "sentence": "Ha [[lacrime agli occhi]] per la maglia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tears in your eyes",
+   "options": ["tears in your eyes", "a smile on your face", "a headache", "cold hands"],
+   "audioClip": {"storySlug": "solo-per-una-foto", "storySource": "user", "sentence": "Ha lacrime agli occhi per la maglia.", "targetWord": "lacrime agli occhi", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "di corsa",
+  "sentence": "Scende le scale [[di corsa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "running",
+   "options": ["running", "very slowly", "backwards", "in silence"],
+   "audioClip": {"storySlug": "solo-per-una-foto", "storySource": "user", "sentence": "Scende le scale di corsa.", "targetWord": "di corsa", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "anche",
+  "sentence": "Vede tutto e ride [[anche]] lui.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "also",
+   "options": ["also", "never", "rarely", "hardly"],
+   "audioClip": {"storySlug": "solo-per-una-foto", "storySource": "user", "sentence": "Vede tutto e ride anche lui.", "targetWord": "anche", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prima",
+  "sentence": "[[Prima]] metti la sciarpa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "first",
+   "options": ["first", "never", "after", "finally"],
+   "audioClip": {"storySlug": "solo-per-una-foto", "storySource": "user", "sentence": "Prima metti la sciarpa.", "targetWord": "Prima", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fare una foto",
+  "sentence": "Lui [[fa la foto]] e scherza.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to take a photo",
+   "options": ["to take a photo", "to write a letter", "to sing a song", "to cook dinner"],
+   "audioClip": {"storySlug": "solo-per-una-foto", "storySource": "user", "sentence": "Lui fa la foto e scherza.", "targetWord": "fa la foto", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bagnato",
+  "sentence": "La maglia è [[bagnata]] e sporca.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wet",
+   "options": ["wet", "dry", "new", "warm"],
+   "audioClip": {"storySlug": "solo-per-una-foto", "storySource": "user", "sentence": "La maglia è bagnata e sporca.", "targetWord": "bagnata", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sporco",
+  "sentence": "La maglia è bagnata e [[sporca]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dirty",
+   "options": ["dirty", "clean", "folded", "expensive"],
+   "audioClip": {"storySlug": "solo-per-una-foto", "storySource": "user", "sentence": "La maglia è bagnata e sporca.", "targetWord": "sporca", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "una scommessa è una scommessa",
+  "featured": false,
+  "sentence": "[[Una scommessa è una scommessa]], deve pagare.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a bet is a bet",
+   "options": ["a bet is a bet", "it's a beautiful day", "it's not important", "it's too late now"],
+   "audioClip": {"storySlug": "solo-per-una-foto", "storySource": "user", "sentence": "Una scommessa è una scommessa, deve pagare.", "targetWord": "Una scommessa è una scommessa", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "per sempre",
+  "featured": false,
+  "sentence": "La foto resta nel gruppo [[per sempre]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "forever",
+   "options": ["forever", "for one day", "for a moment", "for a week"],
+   "audioClip": {"storySlug": "solo-per-una-foto", "storySource": "user", "sentence": "La foto resta nel gruppo per sempre.", "targetWord": "Per sempre", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stretta al cuore",
+  "featured": false,
+  "sentence": "Tiene la maglia [[stretta al cuore]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "held tight against the heart",
+   "options": ["held tight against the heart", "hung on the wall", "folded in a box", "thrown in the bin"],
+   "audioClip": {"storySlug": "solo-per-una-foto", "storySource": "user", "sentence": "Tiene la maglia stretta al cuore.", "targetWord": "stretta al cuore", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la sciarpa della Samp",
+  "featured": false,
+  "sentence": "Prima deve mettere [[la sciarpa della Samp]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a scarf of Sampdoria",
+   "options": ["a scarf of Sampdoria", "a hat from the market", "a shirt from work", "a coat from winter"],
+   "audioClip": {"storySlug": "solo-per-una-foto", "storySource": "user", "sentence": "Prima deve mettere la sciarpa della Samp.", "targetWord": "sciarpa della Samp", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pulisce",
+  "featured": false,
+  "sentence": "L'auto è sporca e lui la _____ con cura.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pulisce",
+   "options": ["pulisce", "rompe", "vende", "guida"],
+   "translation": "The car is dirty and he _____ it carefully.",
+   "optionTranslations": ["cleans", "breaks", "sells", "drives"],
+   "audioClip": {"storySlug": "solo-per-una-foto", "storySource": "user", "sentence": "L'auto è sporca e lui la pulisce con cura.", "targetWord": "pulisce", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "vede",
+  "featured": false,
+  "sentence": "Dalla finestra _____ tutta la piazza.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vede",
+   "options": ["vede", "dipinge", "pulisce", "chiude"],
+   "translation": "From the window, he _____ the whole square.",
+   "optionTranslations": ["sees", "paints", "cleans", "closes"],
+   "audioClip": {"storySlug": "solo-per-una-foto", "storySource": "user", "sentence": "Dalla finestra vede tutta la piazza.", "targetWord": "vede", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "strofina",
+  "featured": false,
+  "sentence": "Il vetro è sporco e lui lo _____ forte.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "strofina",
+   "options": ["strofina", "rompe", "disegna", "taglia"],
+   "translation": "The glass is dirty and he _____ it hard.",
+   "optionTranslations": ["rubs", "breaks", "draws", "cuts"],
+   "audioClip": {"storySlug": "solo-per-una-foto", "storySource": "user", "sentence": "Il vetro è sporco e lui lo strofina forte.", "targetWord": "strofina", "language": "italian"}
+  }
+ }
+]

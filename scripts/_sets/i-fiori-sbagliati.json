@@ -1,0 +1,206 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "il vaso,rose rosse,buona notizia,alle dieci",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {"word": "il vaso", "answer": "a vase", "options": ["a vase", "red roses", "good news", "at ten o'clock"]},
+    {"word": "rose rosse", "answer": "red roses", "options": ["a vase", "red roses", "good news", "at ten o'clock"]},
+    {"word": "buona notizia", "answer": "good news", "options": ["a vase", "red roses", "good news", "at ten o'clock"]},
+    {"word": "alle dieci", "answer": "at ten o'clock", "options": ["a vase", "red roses", "good news", "at ten o'clock"]}
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "già",
+  "sentence": "L'appuntamento è [[già]] finito.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "already",
+   "options": ["already", "never", "soon", "rarely"],
+   "audioClip": {"storySlug": "i-fiori-sbagliati", "storySource": "user", "sentence": "L'appuntamento è già finito.", "targetWord": "già", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "finito",
+  "sentence": "L'appuntamento è già [[finito]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "finished",
+   "options": ["finished", "perfect", "difficult", "secret"],
+   "audioClip": {"storySlug": "i-fiori-sbagliati", "storySource": "user", "sentence": "L'appuntamento è già finito.", "targetWord": "finito", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "andare a casa",
+  "sentence": "Un'amica [[va a casa]] presto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go home",
+   "options": ["to go home", "to arrive late", "to stay outside", "to fall asleep"],
+   "audioClip": {"storySlug": "i-fiori-sbagliati", "storySource": "user", "sentence": "Un'amica va a casa presto.", "targetWord": "va a casa", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tutta la sera",
+  "sentence": "Parla di lei [[tutta la sera]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "all evening",
+   "options": ["all evening", "for one minute", "every morning", "twice a week"],
+   "audioClip": {"storySlug": "i-fiori-sbagliati", "storySource": "user", "sentence": "Parla di lei tutta la sera.", "targetWord": "Tutta la sera", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fissare",
+  "sentence": "Lui [[fissa]] le rose e non capisce.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to stare",
+   "options": ["to stare", "to smell", "to count", "to buy"],
+   "audioClip": {"storySlug": "i-fiori-sbagliati", "storySource": "user", "sentence": "Lui fissa le rose e non capisce.", "targetWord": "fissa", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "forse",
+  "sentence": "[[Forse]] è una buona notizia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "maybe",
+   "options": ["maybe", "certainly", "never", "rarely"],
+   "audioClip": {"storySlug": "i-fiori-sbagliati", "storySource": "user", "sentence": "Forse è una buona notizia.", "targetWord": "Forse", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "volere",
+  "sentence": "Non [[vuole]] ridere davanti a lui.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to want",
+   "options": ["to want", "to remember", "to forget", "to promise"],
+   "audioClip": {"storySlug": "i-fiori-sbagliati", "storySource": "user", "sentence": "Non vuole ridere davanti a lui.", "targetWord": "vuole", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "davvero",
+  "sentence": "Povero lui. [[Davvero]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "really",
+   "options": ["really", "perhaps", "never", "almost"],
+   "audioClip": {"storySlug": "i-fiori-sbagliati", "storySource": "user", "sentence": "Povero lui. Davvero.", "targetWord": "Davvero", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "entrare",
+  "sentence": "Poi lui [[entra]] in casa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go in",
+   "options": ["to go in", "to go out", "to fall", "to knock"],
+   "audioClip": {"storySlug": "i-fiori-sbagliati", "storySource": "user", "sentence": "Poi lui entra in casa.", "targetWord": "entra", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "non servire più",
+  "featured": false,
+  "sentence": "I fiori [[non servono più]] a lui.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "no longer needed",
+   "options": ["no longer needed", "still needed", "too expensive", "very fragrant"],
+   "audioClip": {"storySlug": "i-fiori-sbagliati", "storySource": "user", "sentence": "I fiori non servono più a lui.", "targetWord": "non servono più", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "poi",
+  "featured": false,
+  "sentence": "[[Poi]] lui entra in casa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "then",
+   "options": ["then", "never", "before", "always"],
+   "audioClip": {"storySlug": "i-fiori-sbagliati", "storySource": "user", "sentence": "Poi lui entra in casa.", "targetWord": "Poi", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "c'è silenzio",
+  "featured": false,
+  "sentence": "Nella stanza [[c'è silenzio]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it's quiet",
+   "options": ["it's quiet", "it's noisy", "it's dark", "it's cold"],
+   "audioClip": {"storySlug": "i-fiori-sbagliati", "storySource": "user", "sentence": "Nella stanza c'è silenzio.", "targetWord": "c'è silenzio", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "strano",
+  "featured": false,
+  "sentence": "È tutto molto [[strano]] per lei.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "strange",
+   "options": ["strange", "funny", "easy", "cheap"],
+   "audioClip": {"storySlug": "i-fiori-sbagliati", "storySource": "user", "sentence": "È tutto molto strano per lei.", "targetWord": "strano", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "bussa",
+  "featured": false,
+  "sentence": "Nessuno risponde e lui _____ di nuovo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bussa",
+   "options": ["bussa", "canta", "corre", "telefona"],
+   "translation": "No one answers, and he _____ again.",
+   "optionTranslations": ["knocks", "sings", "runs", "calls"],
+   "audioClip": {"storySlug": "i-fiori-sbagliati", "storySource": "user", "sentence": "Nessuno risponde e lui bussa di nuovo.", "targetWord": "bussa", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "capisce",
+  "featured": false,
+  "sentence": "Ascolta bene e alla fine _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "capisce",
+   "options": ["capisce", "dimentica", "rifiuta", "inventa"],
+   "translation": "He listens carefully and finally _____.",
+   "optionTranslations": ["understands", "forgets", "refuses", "makes it up"],
+   "audioClip": {"storySlug": "i-fiori-sbagliati", "storySource": "user", "sentence": "Ascolta bene e alla fine capisce.", "targetWord": "capisce", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "dà",
+  "featured": false,
+  "sentence": "Compra dei fiori e li _____ a lei.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dà",
+   "options": ["dà", "vende", "nasconde", "rompe"],
+   "translation": "He buys some flowers and _____ them to her.",
+   "optionTranslations": ["gives", "sells", "hides", "breaks"],
+   "audioClip": {"storySlug": "i-fiori-sbagliati", "storySource": "user", "sentence": "Compra dei fiori e li dà a lei.", "targetWord": "dà", "language": "italian"}
+  }
+ }
+]

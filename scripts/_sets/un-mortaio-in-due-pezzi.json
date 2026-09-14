@@ -1,0 +1,206 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "i pinoli,il mortaio,il pestello,il lavandino",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {"word": "i pinoli", "answer": "pine nuts", "options": ["pine nuts", "a mortar", "a pestle", "a sink"]},
+    {"word": "il mortaio", "answer": "a mortar", "options": ["pine nuts", "a mortar", "a pestle", "a sink"]},
+    {"word": "il pestello", "answer": "a pestle", "options": ["pine nuts", "a mortar", "a pestle", "a sink"]},
+    {"word": "il lavandino", "answer": "a sink", "options": ["pine nuts", "a mortar", "a pestle", "a sink"]}
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "il mezzogiorno",
+  "sentence": "Arriva verso [[mezzogiorno]] per pranzo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "midday",
+   "options": ["midday", "midnight", "evening", "dawn"],
+   "audioClip": {"storySlug": "un-mortaio-in-due-pezzi", "storySource": "user", "sentence": "Arriva verso mezzogiorno per pranzo.", "targetWord": "mezzogiorno", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bello",
+  "sentence": "Che [[bel]] mortaio di marmo!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "beautiful",
+   "options": ["beautiful", "broken", "heavy", "cheap"],
+   "audioClip": {"storySlug": "un-mortaio-in-due-pezzi", "storySource": "user", "sentence": "Che bel mortaio di marmo!", "targetWord": "bel", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "molto",
+  "sentence": "Il mortaio pesa [[molto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a lot",
+   "options": ["a lot", "very little", "nothing", "almost"],
+   "audioClip": {"storySlug": "un-mortaio-in-due-pezzi", "storySource": "user", "sentence": "Il mortaio pesa molto.", "targetWord": "molto", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "piano",
+  "sentence": "Mescola [[Piano]], senza fretta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "slowly and gently",
+   "options": ["slowly and gently", "very fast", "very loud", "very hard"],
+   "audioClip": {"storySlug": "un-mortaio-in-due-pezzi", "storySource": "user", "sentence": "Mescola Piano, senza fretta.", "targetWord": "Piano", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "diventare",
+  "sentence": "Il basilico [[diventa]] nero se lo schiacci troppo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to become",
+   "options": ["to become", "to smell", "to shine", "to weigh"],
+   "audioClip": {"storySlug": "un-mortaio-in-due-pezzi", "storySource": "user", "sentence": "Il basilico diventa nero se lo schiacci troppo.", "targetWord": "diventa", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ricominciare",
+  "sentence": "Sbaglia e [[ricomincia]] da capo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to start again",
+   "options": ["to start again", "to give up", "to complain", "to sleep"],
+   "audioClip": {"storySlug": "un-mortaio-in-due-pezzi", "storySource": "user", "sentence": "Sbaglia e ricomincia da capo.", "targetWord": "ricomincia", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "in cerchio",
+  "sentence": "Mescola [[in cerchio]], piano piano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in a circle",
+   "options": ["in a circle", "in a straight line", "up and down", "back and forth"],
+   "audioClip": {"storySlug": "un-mortaio-in-due-pezzi", "storySource": "user", "sentence": "Mescola in cerchio, piano piano.", "targetWord": "in cerchio", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "in cucina",
+  "sentence": "[[In cucina]] c'è un odore dolce.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in the kitchen",
+   "options": ["in the kitchen", "in the bathroom", "on the terrace", "in the car"],
+   "audioClip": {"storySlug": "un-mortaio-in-due-pezzi", "storySource": "user", "sentence": "In cucina c'è un odore dolce.", "targetWord": "In cucina", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dolce",
+  "sentence": "Sente un odore [[dolce]] in cucina.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sweet",
+   "options": ["sweet", "sour", "bitter", "salty"],
+   "audioClip": {"storySlug": "un-mortaio-in-due-pezzi", "storySource": "user", "sentence": "Sente un odore dolce in cucina.", "targetWord": "dolce", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pronto",
+  "featured": false,
+  "sentence": "Assaggia il pesto: è [[pronto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ready",
+   "options": ["ready", "burnt", "cold", "spicy"],
+   "audioClip": {"storySlug": "un-mortaio-in-due-pezzi", "storySource": "user", "sentence": "Assaggia il pesto: è pronto.", "targetWord": "pronto", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "assaggiare",
+  "featured": false,
+  "sentence": "Lei [[assaggia]] e sorride, felice.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to taste",
+   "options": ["to taste", "to smell", "to throw away", "to warm up"],
+   "audioClip": {"storySlug": "un-mortaio-in-due-pezzi", "storySource": "user", "sentence": "Lei assaggia e sorride, felice.", "targetWord": "assaggia", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "scivolare",
+  "featured": false,
+  "sentence": "Il mortaio è bagnato e [[scivola]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to slip",
+   "options": ["to slip", "to shine", "to grow", "to whistle"],
+   "audioClip": {"storySlug": "un-mortaio-in-due-pezzi", "storySource": "user", "sentence": "Il mortaio è bagnato e scivola.", "targetWord": "scivola", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schiacciare",
+  "featured": false,
+  "sentence": "Con il pestello [[schiaccia]] il basilico.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to crush",
+   "options": ["to crush", "to wash", "to cook", "to count"],
+   "audioClip": {"storySlug": "un-mortaio-in-due-pezzi", "storySource": "user", "sentence": "Con il pestello schiaccia il basilico.", "targetWord": "schiaccia", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "lava",
+  "featured": false,
+  "sentence": "Il piatto è sporco e lo _____ nel lavandino.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lava",
+   "options": ["lava", "rompe", "taglia", "asciuga"],
+   "translation": "The plate is dirty and she _____ it in the sink.",
+   "optionTranslations": ["washes", "breaks", "cuts", "dries"],
+   "audioClip": {"storySlug": "un-mortaio-in-due-pezzi", "storySource": "user", "sentence": "Il piatto è sporco e lo lava nel lavandino.", "targetWord": "lava", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "taglia",
+  "featured": false,
+  "sentence": "Con il coltello _____ il formaggio a pezzi.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "taglia",
+   "options": ["taglia", "lava", "scalda", "pesa"],
+   "translation": "With the knife, he _____ the cheese into pieces.",
+   "optionTranslations": ["cuts", "washes", "warms", "weighs"],
+   "audioClip": {"storySlug": "un-mortaio-in-due-pezzi", "storySource": "user", "sentence": "Con il coltello taglia il formaggio a pezzi.", "targetWord": "taglia", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "si rompe",
+  "featured": false,
+  "sentence": "Cade sul pavimento e _____ in due pezzi.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "si rompe",
+   "options": ["si rompe", "si asciuga", "si sporca", "si scalda"],
+   "translation": "It falls on the floor and _____ into two pieces.",
+   "optionTranslations": ["breaks", "dries", "gets dirty", "warms up"],
+   "audioClip": {"storySlug": "un-mortaio-in-due-pezzi", "storySource": "user", "sentence": "Cade sul pavimento e si rompe in due pezzi.", "targetWord": "si rompe", "language": "italian"}
+  }
+ }
+]

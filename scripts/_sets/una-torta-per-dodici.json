@@ -1,0 +1,230 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "l'infermiera,il migliore amico,la candelina,tanti auguri",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {"word": "l'infermiera", "answer": "a nurse", "options": ["a nurse", "the best friend", "a birthday candle", "happy birthday"]},
+    {"word": "il migliore amico", "answer": "the best friend", "options": ["a nurse", "the best friend", "a birthday candle", "happy birthday"]},
+    {"word": "la candelina", "answer": "a birthday candle", "options": ["a nurse", "the best friend", "a birthday candle", "happy birthday"]},
+    {"word": "tanti auguri", "answer": "happy birthday", "options": ["a nurse", "the best friend", "a birthday candle", "happy birthday"]}
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "oggi",
+  "sentence": "[[Oggi]] compie trentacinque anni.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "today",
+   "options": ["today", "yesterday", "tomorrow", "never"],
+   "audioClip": {"storySlug": "una-torta-per-dodici", "storySource": "user", "sentence": "Oggi compie trentacinque anni.", "targetWord": "Oggi", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "portare",
+  "sentence": "Lei [[porta]] una torta in terrazza.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to carry, to bring",
+   "options": ["to carry, to bring", "to buy", "to break", "to hide"],
+   "audioClip": {"storySlug": "una-torta-per-dodici", "storySource": "user", "sentence": "Lei porta una torta in terrazza.", "targetWord": "porta", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "compiere gli anni",
+  "sentence": "[[Compie trentacinque anni]] oggi.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to have a birthday",
+   "options": ["to have a birthday", "to leave the house", "to change jobs", "to move to a new city"],
+   "audioClip": {"storySlug": "una-torta-per-dodici", "storySource": "user", "sentence": "Compie trentacinque anni oggi.", "targetWord": "Compie trentacinque anni", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lavorare",
+  "sentence": "[[Lavora]] sul traghetto ogni giorno.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to work",
+   "options": ["to work", "to sleep", "to travel", "to paint"],
+   "audioClip": {"storySlug": "una-torta-per-dodici", "storySource": "user", "sentence": "Lavora sul traghetto ogni giorno.", "targetWord": "Lavora", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "suonare",
+  "sentence": "Il telefono [[suona]] all'improvviso.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to ring",
+   "options": ["to ring", "to break", "to fall", "to shine"],
+   "audioClip": {"storySlug": "una-torta-per-dodici", "storySource": "user", "sentence": "Il telefono suona all'improvviso.", "targetWord": "suona", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "venire",
+  "sentence": "Nessuno [[viene]] alla festa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come",
+   "options": ["to come", "to leave", "to pay", "to sing"],
+   "audioClip": {"storySlug": "una-torta-per-dodici", "storySource": "user", "sentence": "Nessuno viene alla festa.", "targetWord": "viene", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "triste",
+  "sentence": "È [[triste]]: nessuno viene.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sad",
+   "options": ["sad", "hungry", "tired", "angry"],
+   "audioClip": {"storySlug": "una-torta-per-dodici", "storySource": "user", "sentence": "È triste: nessuno viene.", "targetWord": "triste", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stringere",
+  "sentence": "[[Stringe]] forte il telefono.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hold tight",
+   "options": ["to hold tight", "to drop", "to wash", "to sell"],
+   "audioClip": {"storySlug": "una-torta-per-dodici", "storySource": "user", "sentence": "Stringe forte il telefono.", "targetWord": "Stringe", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vuoto",
+  "sentence": "Fissa i piatti [[vuoti]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "empty",
+   "options": ["empty", "full", "clean", "broken"],
+   "audioClip": {"storySlug": "una-torta-per-dodici", "storySource": "user", "sentence": "Fissa i piatti vuoti.", "targetWord": "vuoti", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "diventare rosso",
+  "featured": false,
+  "sentence": "Lei [[diventa rossa]] per la vergogna.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go red",
+   "options": ["to go red", "to turn pale", "to fall asleep", "to smile widely"],
+   "audioClip": {"storySlug": "una-torta-per-dodici", "storySource": "user", "sentence": "Lei diventa rossa per la vergogna.", "targetWord": "diventa rossa", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mi dispiace",
+  "featured": false,
+  "sentence": "[[Mi dispiace]] tanto, davvero.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I'm sorry",
+   "options": ["I'm sorry", "I'm so glad", "I don't care", "I forgot everything"],
+   "audioClip": {"storySlug": "una-torta-per-dodici", "storySource": "user", "sentence": "Mi dispiace tanto, davvero.", "targetWord": "Mi dispiace", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rispondere",
+  "featured": false,
+  "sentence": "Al telefono, lei [[risponde]] triste.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to answer",
+   "options": ["to answer", "to hang up", "to sing", "to shout"],
+   "audioClip": {"storySlug": "una-torta-per-dodici", "storySource": "user", "sentence": "Al telefono, lei risponde triste.", "targetWord": "risponde", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sedersi",
+  "featured": false,
+  "sentence": "Prende una forchetta e [[si siede]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sit down",
+   "options": ["to sit down", "to stand up", "to run away", "to wash his hands"],
+   "audioClip": {"storySlug": "una-torta-per-dodici", "storySource": "user", "sentence": "Prende una forchetta e si siede.", "targetWord": "si siede", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "avere fame",
+  "featured": false,
+  "sentence": "[[Ho fame]]! Mangiamo subito.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be hungry",
+   "options": ["to be hungry", "to be sleepy", "to be cold", "to be bored"],
+   "audioClip": {"storySlug": "una-torta-per-dodici", "storySource": "user", "sentence": "Ho fame! Mangiamo subito.", "targetWord": "Ho fame", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "acceso",
+  "featured": false,
+  "sentence": "Le candeline restano [[accese]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lit",
+   "options": ["lit", "broken", "hidden", "cold"],
+   "audioClip": {"storySlug": "una-torta-per-dodici", "storySource": "user", "sentence": "Le candeline restano accese.", "targetWord": "accese", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "mette",
+  "featured": false,
+  "sentence": "Prepara la tavola e _____ dodici piatti.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mette",
+   "options": ["mette", "lava", "rompe", "conta"],
+   "translation": "She sets the table and _____ twelve plates.",
+   "optionTranslations": ["puts", "washes", "breaks", "counts"],
+   "audioClip": {"storySlug": "una-torta-per-dodici", "storySource": "user", "sentence": "Prepara la tavola e mette dodici piatti.", "targetWord": "mette", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "apre",
+  "featured": false,
+  "sentence": "Sente bussare e _____ la porta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "apre",
+   "options": ["apre", "chiude", "pulisce", "dipinge"],
+   "translation": "He hears knocking and _____ the door.",
+   "optionTranslations": ["opens", "closes", "cleans", "paints"],
+   "audioClip": {"storySlug": "una-torta-per-dodici", "storySource": "user", "sentence": "Sente bussare e apre la porta.", "targetWord": "apre", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "chiede",
+  "featured": false,
+  "sentence": "Non capisce e _____ una spiegazione.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chiede",
+   "options": ["chiede", "dà", "scrive", "inventa"],
+   "translation": "He doesn't understand, and _____ for an explanation.",
+   "optionTranslations": ["asks", "gives", "writes", "makes up"],
+   "audioClip": {"storySlug": "una-torta-per-dodici", "storySource": "user", "sentence": "Non capisce e chiede una spiegazione.", "targetWord": "chiede", "language": "italian"}
+  }
+ }
+]

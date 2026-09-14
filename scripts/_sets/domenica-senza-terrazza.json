@@ -1,0 +1,206 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "i capelli,il davanzale,il labbro,il consiglio",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {"word": "i capelli", "answer": "hair", "options": ["hair", "a windowsill", "a lip", "a piece of advice"]},
+    {"word": "il davanzale", "answer": "a windowsill", "options": ["hair", "a windowsill", "a lip", "a piece of advice"]},
+    {"word": "il labbro", "answer": "a lip", "options": ["hair", "a windowsill", "a lip", "a piece of advice"]},
+    {"word": "il consiglio", "answer": "a piece of advice", "options": ["hair", "a windowsill", "a lip", "a piece of advice"]}
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pranzare",
+  "sentence": "Non [[pranzano]] più insieme.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to have lunch",
+   "options": ["to have lunch", "to sleep", "to travel", "to argue"],
+   "audioClip": {"storySlug": "domenica-senza-terrazza", "storySource": "user", "sentence": "Non pranzano più insieme.", "targetWord": "pranzano", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "per la prima volta da anni",
+  "sentence": "[[Per la prima volta da anni]], sono soli.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "for the first time in years",
+   "options": ["for the first time in years", "for the last time ever", "every single day", "once a month"],
+   "audioClip": {"storySlug": "domenica-senza-terrazza", "storySource": "user", "sentence": "Per la prima volta da anni, sono soli.", "targetWord": "Per la prima volta da anni", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "da una settimana",
+  "sentence": "[[Da una settimana]] non si parlano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "for a week now",
+   "options": ["for a week now", "for one hour", "since this morning", "for a whole year"],
+   "audioClip": {"storySlug": "domenica-senza-terrazza", "storySource": "user", "sentence": "Da una settimana non si parlano.", "targetWord": "Da una settimana", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "per non vedere",
+  "sentence": "Scende in fretta [[per non vedere]] lui.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "so as not to see",
+   "options": ["so as not to see", "in order to greet", "in order to help", "in order to thank"],
+   "audioClip": {"storySlug": "domenica-senza-terrazza", "storySource": "user", "sentence": "Scende in fretta per non vedere lui.", "targetWord": "per non vedere", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lungo",
+  "sentence": "Ha i capelli neri e [[lunghi]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "long",
+   "options": ["long", "short", "curly", "grey"],
+   "audioClip": {"storySlug": "domenica-senza-terrazza", "storySource": "user", "sentence": "Ha i capelli neri e lunghi.", "targetWord": "lunghi", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "il sacchetto di pane",
+  "sentence": "Porta [[un sacchetto di pane]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a bag of bread",
+   "options": ["a bag of bread", "a box of chocolates", "a bottle of milk", "a jar of jam"],
+   "audioClip": {"storySlug": "domenica-senza-terrazza", "storySource": "user", "sentence": "Porta un sacchetto di pane.", "targetWord": "sacchetto di pane", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "guardare per terra",
+  "sentence": "Sulle scale [[guardo per terra]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to look at the ground",
+   "options": ["to look at the ground", "to look at the sky", "to close my eyes", "to sing softly"],
+   "audioClip": {"storySlug": "domenica-senza-terrazza", "storySource": "user", "sentence": "Sulle scale guardo per terra.", "targetWord": "guardo per terra", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gonfio",
+  "sentence": "Ha gli occhi [[gonfi]] di pianto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "puffy",
+   "options": ["puffy", "shining", "closed", "painted"],
+   "audioClip": {"storySlug": "domenica-senza-terrazza", "storySource": "user", "sentence": "Ha gli occhi gonfi di pianto.", "targetWord": "gonfi", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "avere ragione",
+  "sentence": "Valentina [[ha ragione]] su tutto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be right",
+   "options": ["to be right", "to be wrong", "to be late", "to be worried"],
+   "audioClip": {"storySlug": "domenica-senza-terrazza", "storySource": "user", "sentence": "Valentina ha ragione su tutto.", "targetWord": "ha ragione", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "arrabbiato",
+  "featured": false,
+  "sentence": "È [[arrabbiata]] con lui e con se stessa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "angry",
+   "options": ["angry", "happy", "sleepy", "calm"],
+   "audioClip": {"storySlug": "domenica-senza-terrazza", "storySource": "user", "sentence": "È arrabbiata con lui e con se stessa.", "targetWord": "arrabbiata", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stupido",
+  "featured": false,
+  "sentence": "Non sei [[stupida]], sei solo triste.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stupid",
+   "options": ["stupid", "clever", "kind", "tall"],
+   "audioClip": {"storySlug": "domenica-senza-terrazza", "storySource": "user", "sentence": "Non sei stupida, sei solo triste.", "targetWord": "stupida", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chiedere scusa",
+  "featured": false,
+  "sentence": "Scendi e [[chiedi scusa]] a lui.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to say sorry",
+   "options": ["to say sorry", "to sing a song", "to ask a question", "to tell a joke"],
+   "audioClip": {"storySlug": "domenica-senza-terrazza", "storySource": "user", "sentence": "Scendi e chiedi scusa a lui.", "targetWord": "chiedi scusa", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "spento",
+  "featured": false,
+  "sentence": "Il telefono è [[spento]] sul tavolo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "switched off",
+   "options": ["switched off", "broken", "new", "hot"],
+   "audioClip": {"storySlug": "domenica-senza-terrazza", "storySource": "user", "sentence": "Il telefono è spento sul tavolo.", "targetWord": "spento", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "ascolta",
+  "featured": false,
+  "sentence": "Non parla, solo _____ in silenzio.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ascolta",
+   "options": ["ascolta", "canta", "scrive", "dorme"],
+   "translation": "She doesn't speak, she only _____ in silence.",
+   "optionTranslations": ["listens", "sings", "writes", "sleeps"],
+   "audioClip": {"storySlug": "domenica-senza-terrazza", "storySource": "user", "sentence": "Non parla, solo ascolta in silenzio.", "targetWord": "ascolta", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "si morde",
+  "featured": false,
+  "sentence": "È nervosa e _____ il labbro.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "si morde",
+   "options": ["si morde", "si lava", "si tocca", "si trucca"],
+   "translation": "She's nervous and _____ her lip.",
+   "optionTranslations": ["bites", "washes", "touches", "puts makeup on"],
+   "audioClip": {"storySlug": "domenica-senza-terrazza", "storySource": "user", "sentence": "È nervosa e si morde il labbro.", "targetWord": "si morde", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "appoggia",
+  "featured": false,
+  "sentence": "Entra in cucina e _____ le chiavi sul tavolo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "appoggia",
+   "options": ["appoggia", "nasconde", "lancia", "lava"],
+   "translation": "She comes into the kitchen and _____ the keys on the table.",
+   "optionTranslations": ["sets down", "hides", "throws", "washes"],
+   "audioClip": {"storySlug": "domenica-senza-terrazza", "storySource": "user", "sentence": "Entra in cucina e appoggia le chiavi sul tavolo.", "targetWord": "appoggia", "language": "italian"}
+  }
+ }
+]

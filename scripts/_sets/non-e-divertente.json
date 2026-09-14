@@ -1,0 +1,206 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la collega,la torta,l'ospite,la tavola",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {"word": "la collega", "answer": "a colleague", "options": ["a colleague", "a cake", "a guest", "the table"]},
+    {"word": "la torta", "answer": "a cake", "options": ["a colleague", "a cake", "a guest", "the table"]},
+    {"word": "l'ospite", "answer": "a guest", "options": ["a colleague", "a cake", "a guest", "the table"]},
+    {"word": "la tavola", "answer": "the table", "options": ["a colleague", "a cake", "a guest", "the table"]}
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apparecchiare",
+  "sentence": "Lei [[apparecchia]] la tavola per il pranzo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to set the table",
+   "options": ["to set the table", "to clear the table", "to wash the dishes", "to decorate the room"],
+   "audioClip": {"storySlug": "non-e-divertente", "storySource": "user", "sentence": "Lei apparecchia la tavola per il pranzo.", "targetWord": "apparecchia", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "scaldare",
+  "sentence": "Il sole [[scalda]] la terrazza.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to warm",
+   "options": ["to warm", "to cool", "to darken", "to wet"],
+   "audioClip": {"storySlug": "non-e-divertente", "storySource": "user", "sentence": "Il sole scalda la terrazza.", "targetWord": "scalda", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "raccontare",
+  "sentence": "Lui [[racconta]] storie di mare.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to tell (a story)",
+   "options": ["to tell (a story)", "to sing", "to draw", "to forget"],
+   "audioClip": {"storySlug": "non-e-divertente", "storySource": "user", "sentence": "Lui racconta storie di mare.", "targetWord": "racconta", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "storie di mare",
+  "sentence": "Ascoltano [[storie di mare]] a pranzo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stories about the sea",
+   "options": ["stories about the sea", "songs about winter", "jokes about work", "news about sports"],
+   "audioClip": {"storySlug": "non-e-divertente", "storySource": "user", "sentence": "Ascoltano storie di mare a pranzo.", "targetWord": "storie di mare", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "un po' di vino",
+  "sentence": "Vuoi ancora [[un po' di vino]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a little wine",
+   "options": ["a little wine", "a little bread", "a little water", "a little cheese"],
+   "audioClip": {"storySlug": "non-e-divertente", "storySource": "user", "sentence": "Vuoi ancora un po' di vino?", "targetWord": "un po' di vino", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "brindare",
+  "sentence": "Alza il bicchiere per [[brindare]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make a toast",
+   "options": ["to make a toast", "to say goodbye", "to pay the bill", "to wash up"],
+   "audioClip": {"storySlug": "non-e-divertente", "storySource": "user", "sentence": "Alza il bicchiere per brindare.", "targetWord": "brindare", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trentacinque",
+  "sentence": "Oggi compie [[trentacinque]] anni.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thirty-five",
+   "options": ["thirty-five", "fifteen", "fifty", "thirteen"],
+   "audioClip": {"storySlug": "non-e-divertente", "storySource": "user", "sentence": "Oggi compie trentacinque anni.", "targetWord": "trentacinque", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "diventare bianco",
+  "sentence": "Sente vergogna e [[diventa bianca]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go pale",
+   "options": ["to go pale", "to fall asleep", "to get angry", "to start laughing"],
+   "audioClip": {"storySlug": "non-e-divertente", "storySource": "user", "sentence": "Sente vergogna e diventa bianca.", "targetWord": "diventa bianca", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "posare",
+  "sentence": "Lei [[posa]] la forchetta sul piatto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to put down",
+   "options": ["to put down", "to throw", "to wash", "to lift"],
+   "audioClip": {"storySlug": "non-e-divertente", "storySource": "user", "sentence": "Lei posa la forchetta sul piatto.", "targetWord": "posa", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la vergogna",
+  "featured": false,
+  "sentence": "Sente [[vergogna]] davanti a tutti.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shame",
+   "options": ["shame", "hunger", "curiosity", "boredom"],
+   "audioClip": {"storySlug": "non-e-divertente", "storySource": "user", "sentence": "Sente vergogna davanti a tutti.", "targetWord": "vergogna", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "scherzare",
+  "featured": false,
+  "sentence": "Lui [[scherza]] sul suo segreto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to joke",
+   "options": ["to joke", "to argue", "to complain", "to apologize"],
+   "audioClip": {"storySlug": "non-e-divertente", "storySource": "user", "sentence": "Lui scherza sul suo segreto.", "targetWord": "scherza", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "che cosa c'è",
+  "featured": false,
+  "sentence": "[[Che cosa c'è]]? Sei triste?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "what's wrong",
+   "options": ["what's wrong", "how much is it", "where are you", "what time is it"],
+   "audioClip": {"storySlug": "non-e-divertente", "storySource": "user", "sentence": "Che cosa c'è? Sei triste?", "targetWord": "Che cosa c'è", "language": "italian"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "divertente",
+  "featured": false,
+  "sentence": "Non è per niente [[divertente]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "funny",
+   "options": ["funny", "expensive", "dangerous", "difficult"],
+   "audioClip": {"storySlug": "non-e-divertente", "storySource": "user", "sentence": "Non è per niente divertente.", "targetWord": "divertente", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "bastano",
+  "featured": false,
+  "sentence": "Due piatti non _____: siamo in tre.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bastano",
+   "options": ["bastano", "costano", "pesano", "bruciano"],
+   "translation": "Two plates aren't _____: there are three of us.",
+   "optionTranslations": ["enough", "expensive", "heavy", "burnt"],
+   "audioClip": {"storySlug": "non-e-divertente", "storySource": "user", "sentence": "Due piatti non bastano: siamo in tre.", "targetWord": "bastano", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "si alza",
+  "featured": false,
+  "sentence": "Sente la sveglia e subito _____ dal letto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "si alza",
+   "options": ["si alza", "si siede", "si addormenta", "si lava"],
+   "translation": "She hears the alarm and immediately _____ out of bed.",
+   "optionTranslations": ["gets up", "sits down", "falls asleep", "washes herself"],
+   "audioClip": {"storySlug": "non-e-divertente", "storySource": "user", "sentence": "Sente la sveglia e subito si alza dal letto.", "targetWord": "si alza", "language": "italian"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "sbatte",
+  "featured": false,
+  "sentence": "È arrabbiata e _____ la porta forte.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sbatte",
+   "options": ["sbatte", "apre", "pulisce", "dipinge"],
+   "translation": "She's angry and _____ the door hard.",
+   "optionTranslations": ["slams", "opens", "cleans", "paints"],
+   "audioClip": {"storySlug": "non-e-divertente", "storySource": "user", "sentence": "È arrabbiata e sbatte la porta forte.", "targetWord": "sbatte", "language": "italian"}
+  }
+ }
+]
