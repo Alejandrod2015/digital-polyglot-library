@@ -1069,6 +1069,8 @@ type PracticeSpeakingExercise = {
   sentence: string;
   /** La misma frase con `_____` que pinta `fill_blank`: lo que se lee y suena. */
   blanked: string;
+  /** Traduccion al ingles de la frase; solo se ensena al resolver. */
+  sentenceTranslation: string | null;
   storySlug: string;
   language: string;
   voiceId: string | null;
@@ -1692,6 +1694,7 @@ function buildPracticeFavorites(items: MobileFavoriteItem[]): PracticeFavoriteIt
       // Clip PRE-HORNEADO de la PALABRA (meaning + match): ElevenLabs sin runtime.
       wordClipUrl: item.wordClipUrl ?? null,
       wordVoiceId: item.wordVoiceId ?? null,
+      sentenceTranslation: item.sentenceTranslation ?? null,
     }));
 }
 
@@ -1786,6 +1789,7 @@ function mapSharedExerciseToMobile(exercise: ReturnType<typeof buildPracticeSess
         translation: exercise.translation,
         sentence: exercise.sentence,
         blanked: exercise.blanked,
+        sentenceTranslation: exercise.sentenceTranslation ?? null,
         storySlug: exercise.storySlug,
         language: exercise.language,
         voiceId: exercise.voiceId ?? null,
@@ -15587,6 +15591,15 @@ export function MobileLibraryShell(args: {
                       </Pressable>
                     </View>
 
+                    {/* La traduccion de la FRASE, solo al resolver y solo si
+                        el set curado la traia. Antes de responder seria la
+                        respuesta escrita en ingles. */}
+                    {practiceRevealed && ex.sentenceTranslation ? (
+                      <Text style={styles.speakingSentenceTranslation}>
+                        {ex.sentenceTranslation}
+                      </Text>
+                    ) : null}
+
                     {speakingPhase === "done" || practiceRevealed ? (
                       <>
                         <View style={styles.speakingAnswerCard}>
@@ -27999,6 +28012,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "900",
     flexShrink: 1,
+  },
+  speakingSentenceTranslation: {
+    color: "#cdd9ec",
+    fontSize: 14,
+    fontWeight: "600",
+    fontStyle: "italic",
+    lineHeight: 20,
   },
   speakingHintNote: {
     marginTop: 10,

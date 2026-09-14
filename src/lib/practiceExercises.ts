@@ -26,6 +26,11 @@ export type PracticeFavoriteItem = {
   language?: string | null;
   nextReviewAt?: string | null;
   practiceSource?: "curriculum" | "user_saved" | "both" | null;
+  /** Traduccion al ingles de la frase de ejemplo, del set curado de la
+   *  historia, con el hueco ya relleno cuando se pudo. Solo se ensena al
+   *  RESOLVER; no existe para todas las palabras (3.019 de 3.873 ejercicios
+   *  curados la traen) y cuando falta, no se pinta nada. */
+  sentenceTranslation?: string | null;
   /** Voice the source story was narrated with, when known. */
   voiceId?: string | null;
   /** Pre-baked practice sentence-clip URL for this word, joined server-side from
@@ -180,6 +185,8 @@ export type SpeakingExercise = {
   storySlug: string;
   language: string;
   voiceId?: string | null;
+  /** Traduccion al ingles de la frase; se ensena SOLO al resolver. */
+  sentenceTranslation?: string | null;
   /** El mismo clip que lleva `fill_blank`: el pre-horneado si existe, y si no
    *  lo que el cliente pida a `sentence-tts` con la voz de la historia. */
   audioClip?: PracticeAudioClip | null;
@@ -967,6 +974,7 @@ export function createSpeakingExercise(
     storySlug: normalizeText(item.storySlug),
     language,
     voiceId: normalizeText(item.voiceId) || null,
+    sentenceTranslation: normalizeText(item.sentenceTranslation) || null,
     audioClip: fillBlank.audioClip ?? null,
   };
 }

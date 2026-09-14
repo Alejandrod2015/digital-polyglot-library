@@ -10,6 +10,7 @@ import {
   createSpeakingExercise,
   type PracticeFavoriteItem,
 } from "../practiceExercises";
+import { fillSentenceTranslationBlank } from "../sentenceTranslation";
 
 // Este fichero es el GATE de la fila "g4" de docs/rules-inventory.json. El id
 // que ahi se declara es "g4"; el lint del inventario lo busca aqui
@@ -268,7 +269,55 @@ describe("createSpeakingExercise", () => {
     expect(createSpeakingExercise(favorito({ exampleSentence: parrafo }), pool())).toBeNull();
   });
 
+  it("conserva la traduccion de la frase, que se ensena al resolver", () => {
+    const ex = createSpeakingExercise(
+      favorito({ sentenceTranslation: "The neighbour waves from the balcony every morning." }),
+      pool()
+    );
+    expect(ex?.sentenceTranslation).toBe(
+      "The neighbour waves from the balcony every morning."
+    );
+  });
+
+  it("sin traduccion de la frase, el campo viaja como null", () => {
+    expect(createSpeakingExercise(favorito(), pool())?.sentenceTranslation).toBeNull();
+  });
+
   it("devuelve null sin traduccion, que es la pista en pantalla", () => {
     expect(createSpeakingExercise(favorito({ translation: "" }), pool())).toBeNull();
+  });
+});
+
+describe("fillSentenceTranslationBlank", () => {
+  const FRASE = "The neighbour waves from _____ every morning.";
+  const OPCIONES = ["el balcon", "la ventana", "la escalera", "el portal"];
+  const GLOSAS = ["the balcony", "the window", "the staircase", "the doorway"];
+
+  it("rellena el hueco con la glosa de la respuesta", () => {
+    expect(fillSentenceTranslationBlank(FRASE, "el balcon", OPCIONES, GLOSAS)).toBe(
+      "The neighbour waves from the balcony every morning."
+    );
+  });
+
+  it("deja el hueco cuando no hay glosa para la respuesta", () => {
+    // La respuesta esta entre las opciones pero su glosa viene vacia.
+    expect(
+      fillSentenceTranslationBlank(FRASE, "el balcon", OPCIONES, ["", "the window", "", ""])
+    ).toBe(FRASE);
+    // Y cuando no hay `optionTranslations` en absoluto.
+    expect(fillSentenceTranslationBlank(FRASE, "el balcon", OPCIONES, null)).toBe(FRASE);
+    // Y cuando la respuesta no esta entre las opciones.
+    expect(fillSentenceTranslationBlank(FRASE, "la azotea", OPCIONES, GLOSAS)).toBe(FRASE);
+  });
+
+  it("devuelve la frase tal cual cuando no hay hueco", () => {
+    const sinHueco = "The neighbour waves every morning.";
+    expect(fillSentenceTranslationBlank(sinHueco, "el balcon", OPCIONES, GLOSAS)).toBe(sinHueco);
+  });
+
+  it("devuelve null cuando no hay traduccion que ensenar", () => {
+    expect(fillSentenceTranslationBlank(null, "el balcon", OPCIONES, GLOSAS)).toBeNull();
+    expect(fillSentenceTranslationBlank("   ", "el balcon", OPCIONES, GLOSAS)).toBeNull();
+    expect(fillSentenceTranslationBlank(undefined, "el balcon", OPCIONES, GLOSAS)).toBeNull();
   });
 });

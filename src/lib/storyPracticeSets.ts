@@ -74,6 +74,7 @@ function buildPayload(ex: PracticeExercise): { word: string; sentence: string; p
           // El hueco viaja guardado: es lo que se lee y lo que suena, y
           // recalcularlo al leer el set podria dar otro distinto.
           blanked: ex.blanked,
+          sentenceTranslation: ex.sentenceTranslation ?? null,
           storySlug: ex.storySlug,
           language: ex.language,
         },

@@ -7,6 +7,7 @@ import { getActiveMobileSession } from "@/lib/mobileSession";
 import { prisma } from "@/lib/prisma";
 import { extractExampleSentence } from "@/lib/exampleSentence";
 import { getCuratedExampleMap, curatedKey } from "@/lib/curatedExamples";
+import { fillSentenceTranslationBlank } from "@/lib/sentenceTranslation";
 
 type FavoriteBody = {
   word: string;
@@ -108,12 +109,34 @@ export async function GET(req: NextRequest): Promise<Response> {
       voiceId: string | null;
       wordClipUrl: string | null;
       wordVoiceId: string | null;
+      /** Traducción al inglés de la frase, del `fill_blank` de esa palabra. */
+      sentenceTranslation: string | null;
     }
   >;
   const collectClips = (
-    exercises: { word: string | null; payload: unknown }[]
+    exercises: { type: string; word: string | null; payload: unknown }[]
   ): ClipMap => {
     const m: ClipMap = new Map();
+    // La traducción de la frase vive SOLO en el `fill_blank` de la palabra (es
+    // el único que la tiene, con `_____` donde va la respuesta), así que se
+    // recoge en su propia pasada y se casa por palabra con lo demás. 3.019 de
+    // los 3.873 ejercicios curados la traen; el resto se queda sin ella y en
+    // pantalla no se pinta nada, que es preferible a inventarla.
+    const traduccionPorPalabra = new Map<string, string>();
+    for (const ex of exercises) {
+      if (ex.type !== "fill_blank" || !ex.word) continue;
+      const payload = (ex.payload ?? null) as Record<string, unknown> | null;
+      const traduccion = fillSentenceTranslationBlank(
+        payload?.translation,
+        payload?.answer,
+        payload?.options,
+        payload?.optionTranslations
+      );
+      if (!traduccion) continue;
+      const k = norm(ex.word);
+      if (!traduccionPorPalabra.has(k)) traduccionPorPalabra.set(k, traduccion);
+    }
+
     for (const ex of exercises) {
       const ac = ((ex.payload as Record<string, unknown> | null)?.audioClip ??
         null) as Record<string, unknown> | null;
@@ -129,6 +152,7 @@ export async function GET(req: NextRequest): Promise<Response> {
           voiceId: typeof ac?.voiceId === "string" ? ac.voiceId : null,
           wordClipUrl,
           wordVoiceId: typeof ac?.wordVoiceId === "string" ? ac.wordVoiceId : null,
+          sentenceTranslation: traduccionPorPalabra.get(k) ?? null,
         });
       }
     }
@@ -150,7 +174,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       select: {
         id: true,
         journey: { select: { language: true } },
-        practiceSet: { select: { exercises: { select: { word: true, payload: true } } } },
+        practiceSet: { select: { exercises: { select: { type: true, word: true, payload: true } } } },
       },
     });
     for (const r of rows) {
@@ -165,7 +189,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       select: {
         slug: true,
         journey: { select: { language: true } },
-        practiceSet: { select: { exercises: { select: { word: true, payload: true } } } },
+        practiceSet: { select: { exercises: { select: { type: true, word: true, payload: true } } } },
       },
     });
     for (const r of jrows) {
@@ -209,6 +233,7 @@ export async function GET(req: NextRequest): Promise<Response> {
               ...(clip.voiceId ? { voiceId: clip.voiceId } : {}),
               wordClipUrl: clip.wordClipUrl,
               wordVoiceId: clip.wordVoiceId,
+              sentenceTranslation: clip.sentenceTranslation,
             }
           : {}),
       },
