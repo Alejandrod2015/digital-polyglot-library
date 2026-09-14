@@ -17135,6 +17135,18 @@
     "hatte": {
       "g": "had (haben)",
       "t": "verb"
+    },
+    "erste": {
+      "g": "first",
+      "t": "adjective"
+    },
+    "ersten": {
+      "g": "first",
+      "t": "adjective"
+    },
+    "erstes": {
+      "g": "first",
+      "t": "adjective"
     }
   }
 }
