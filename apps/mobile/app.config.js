@@ -136,6 +136,21 @@ const config = {
     ],
     // Solo hace algo cuando el build apunta a un http:// local; ver el plugin.
     "./plugins/allow-local-cleartext",
+    // Reconocimiento de voz del SISTEMA para el ejercicio hablado
+    // (SFSpeechRecognizer en iOS, SpeechRecognizer en Android). Es modulo
+    // nativo: exige prebuild y build local, y no habla con ningun servicio
+    // nuestro. El plugin escribe las dos claves de permiso de iOS y el
+    // RECORD_AUDIO de Android, ademas del filtro de visibilidad de paquetes
+    // que Android 11+ necesita para ver el servicio de reconocimiento.
+    [
+      "expo-speech-recognition",
+      {
+        microphonePermission:
+          "Digital Polyglot uses the microphone so you can answer practice exercises out loud.",
+        speechRecognitionPermission:
+          "Digital Polyglot uses speech recognition to check the word you just said. Your speech is processed on your device or by the system and is never stored.",
+      },
+    ],
     [
       "expo-splash-screen",
       {
@@ -206,6 +221,13 @@ const config = {
     buildNumber: "317",
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
+      // El plugin de expo-speech-recognition tambien las escribe; van aqui
+      // ademas porque el proyecto iOS versionado se construye con xcodebuild
+      // sin pasar por prebuild, y ahi manda el Info.plist del repo.
+      NSMicrophoneUsageDescription:
+        "Digital Polyglot uses the microphone so you can answer practice exercises out loud.",
+      NSSpeechRecognitionUsageDescription:
+        "Digital Polyglot uses speech recognition to check the word you just said. Your speech is processed on your device or by the system and is never stored.",
       // Background audio: story playback keeps sounding when the app is
       // backgrounded or the screen is locked (audiobook-style). Must stay
       // in sync with ios/DigitalPolyglot/Info.plist (the committed native

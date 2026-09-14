@@ -1,43 +1,68 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Audio, InterruptionModeIOS } from "expo-av";
-import * as FileSystem from "expo-file-system/legacy";
+import {
+  ExpoSpeechRecognitionModule,
+  useSpeechRecognitionEvent,
+} from "expo-speech-recognition";
 
 /**
- * El microfono del ejercicio de speaking, sin nada de pantalla.
+ * El reconocimiento de voz del ejercicio hablado, sin nada de pantalla.
  *
- * Sale de `PracticeSpeaking.tsx`, la pantalla suelta del prototipo, para que
- * el turno hablado pueda vivir dentro de la sesion de practica como un
- * ejercicio mas. Lo que hace y por que:
+ * Quien transcribe es EL SISTEMA (SFSpeechRecognizer en iOS, SpeechRecognizer
+ * en Android). Ni grabamos un fichero, ni lo subimos, ni lo guardamos: lo
+ * unico que sale de aqui es el texto final, en memoria, para compararlo con la
+ * palabra. La version anterior mandaba el audio en base64 a Whisper; el
+ * usuario la rechazo entera, y el trabajo que hacia ya lo hace el telefono.
  *
- *   - `allowsRecordingIOS` de IDA Y VUELTA. Grabar lo exige en true, pero
- *     dejarlo asi deja la ruta de audio sesgada a grabacion y el siguiente
- *     ejercicio suena bajito. Se vuelve a false en cuanto se para.
- *   - Tope de 12 s con auto-stop. Una respuesta de un turno no dura mas, y
- *     sin tope un micro olvidado abierto sube un clip largo a Whisper.
- *   - El clip sale en base64 porque `apiFetch` solo manda JSON.
+ * Lo que aporta este hook sobre el modulo pelado:
+ *   - En iOS pide reconocimiento EN EL DISPOSITIVO cuando el sistema lo
+ *     ofrece; si no, el del propio sistema. Nunca un servicio nuestro.
+ *   - Tope de 12 s con parada automatica. Una respuesta de un turno no dura
+ *     mas, y sin tope un micro olvidado abierto se queda escuchando.
+ *   - Un solo resultado FINAL por turno (`interimResults: false`), entregado
+ *     por callback, y el turno se cierra solo.
  */
 
-const MAX_RECORDING_MS = 12000;
+const MAX_LISTENING_MS = 12000;
 
-export type SpeakingRecorderClip = { base64: string; mimeType: string };
+/**
+ * Idioma del favorito a locale BCP-47. La variante de la historia no viaja en
+ * el favorito, asi que cada idioma cae en su locale mas comun; para una sola
+ * palabra la diferencia entre variantes no cambia el reconocimiento.
+ */
+const LOCALE_BY_LANGUAGE: Record<string, string> = {
+  spanish: "es-ES",
+  english: "en-US",
+  french: "fr-FR",
+  german: "de-DE",
+  italian: "it-IT",
+  portuguese: "pt-BR",
+  japanese: "ja-JP",
+  korean: "ko-KR",
+  chinese: "zh-CN",
+};
 
-export type SpeakingRecorderStartResult =
-  | { ok: true }
-  | { ok: false; reason: "denied" | "failed" };
-
-async function setRecordingAudioMode(recording: boolean): Promise<void> {
-  await Audio.setAudioModeAsync({
-    playsInSilentModeIOS: true,
-    allowsRecordingIOS: recording,
-    interruptionModeIOS: InterruptionModeIOS.DoNotMix,
-  });
+export function localeForSpeaking(language?: string | null): string {
+  const key = (language ?? "").trim().toLowerCase();
+  return LOCALE_BY_LANGUAGE[key] ?? "en-US";
 }
+
+export type SpeakingStartResult =
+  | { ok: true }
+  | { ok: false; reason: "denied" | "unavailable" | "failed" };
+
+type Handlers = {
+  onFinal: (transcript: string) => void;
+  /** Se llama con el codigo del modulo cuando el turno muere sin resultado. */
+  onFailure: (code: string) => void;
+};
 
 export function useSpeakingRecorder() {
   const [isRecording, setIsRecording] = useState(false);
-  const recordingRef = useRef<Audio.Recording | null>(null);
+  const handlersRef = useRef<Handlers | null>(null);
   const autoStopRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const mountedRef = useRef(true);
+  /** Evita entregar dos veces el mismo turno (result final y luego end). */
+  const settledRef = useRef(true);
 
   const clearAutoStop = useCallback(() => {
     if (autoStopRef.current) {
@@ -46,73 +71,105 @@ export function useSpeakingRecorder() {
     }
   }, []);
 
+  const finish = useCallback(() => {
+    clearAutoStop();
+    settledRef.current = true;
+    handlersRef.current = null;
+    if (mountedRef.current) setIsRecording(false);
+  }, [clearAutoStop]);
+
+  useSpeechRecognitionEvent("result", (event) => {
+    // Solo el FINAL: con `interimResults: false` no deberian llegar parciales,
+    // pero el guard evita calificar a medio dictado si alguna plataforma los
+    // manda igual.
+    if (!event.isFinal) return;
+    if (settledRef.current) return;
+    const transcript = (event.results?.[0]?.transcript ?? "").trim();
+    const handlers = handlersRef.current;
+    finish();
+    if (transcript) handlers?.onFinal(transcript);
+    else handlers?.onFailure("no-speech");
+  });
+
+  useSpeechRecognitionEvent("error", (event) => {
+    if (settledRef.current) return;
+    const handlers = handlersRef.current;
+    finish();
+    handlers?.onFailure(event.error ?? "unknown");
+  });
+
+  useSpeechRecognitionEvent("end", () => {
+    // El turno acabo sin resultado ni error explicito (silencio, o el usuario
+    // paro antes de que nadie hablara). Cuenta como turno vacio, no como bug.
+    if (settledRef.current) return;
+    const handlers = handlersRef.current;
+    finish();
+    handlers?.onFailure("no-speech");
+  });
+
   useEffect(() => {
     mountedRef.current = true;
     return () => {
       mountedRef.current = false;
       clearAutoStop();
-      // Teardown best-effort si el usuario sale a mitad de la grabacion.
-      const rec = recordingRef.current;
-      if (rec) {
-        recordingRef.current = null;
-        rec.stopAndUnloadAsync().catch(() => {});
-        setRecordingAudioMode(false).catch(() => {});
+      handlersRef.current = null;
+      settledRef.current = true;
+      // Si el usuario sale a mitad del turno, se corta en seco y sin resultado.
+      try {
+        ExpoSpeechRecognitionModule.abort();
+      } catch {
+        // El modulo no estaba escuchando; no hay nada que abortar.
       }
     };
   }, [clearAutoStop]);
 
-  /** Para el micro y devuelve el clip en base64, o null si no habia nada. */
-  const stop = useCallback(async (): Promise<SpeakingRecorderClip | null> => {
-    clearAutoStop();
-    const recording = recordingRef.current;
-    recordingRef.current = null;
-    if (mountedRef.current) setIsRecording(false);
-    if (!recording) return null;
-
-    try {
-      await recording.stopAndUnloadAsync();
-    } catch {
-      // Ya estaba parada; seguimos para recuperar el fichero si lo hay.
-    }
-    await setRecordingAudioMode(false).catch(() => {});
-
-    const uri = recording.getURI();
-    if (!uri) return null;
-    try {
-      const base64 = await FileSystem.readAsStringAsync(uri, {
-        encoding: FileSystem.EncodingType.Base64,
-      });
-      await FileSystem.deleteAsync(uri, { idempotent: true }).catch(() => {});
-      if (!base64) return null;
-      return { base64, mimeType: "audio/m4a" };
-    } catch {
-      return null;
-    }
-  }, [clearAutoStop]);
-
   /**
-   * Arranca el micro. `onMaxDuration` se dispara cuando salta el auto-stop de
-   * los 12 s, para que la pantalla envie el clip sin que el usuario toque nada.
+   * Arranca el reconocimiento para un idioma. Devuelve por que NO pudo cuando
+   * no puede: `denied` (permiso), `unavailable` (el dispositivo no reconoce
+   * ese idioma) o `failed`. La pantalla decide que hacer con cada uno; el spec
+   * los separa porque el primero salta el ejercicio y el segundo lo convierte
+   * en uno de contexto.
    */
   const start = useCallback(
-    async (onMaxDuration?: () => void): Promise<SpeakingRecorderStartResult> => {
+    async (language: string | null | undefined, handlers: Handlers): Promise<SpeakingStartResult> => {
       try {
-        const perm = await Audio.requestPermissionsAsync();
-        if (!perm.granted) return { ok: false, reason: "denied" };
-        await setRecordingAudioMode(true);
-        const { recording } = await Audio.Recording.createAsync(
-          Audio.RecordingOptionsPresets.HIGH_QUALITY
-        );
-        recordingRef.current = recording;
+        if (!ExpoSpeechRecognitionModule.isRecognitionAvailable()) {
+          return { ok: false, reason: "unavailable" };
+        }
+        const permission = await ExpoSpeechRecognitionModule.requestPermissionsAsync();
+        if (!permission.granted) return { ok: false, reason: "denied" };
+
+        handlersRef.current = handlers;
+        settledRef.current = false;
+        ExpoSpeechRecognitionModule.start({
+          lang: localeForSpeaking(language),
+          // Un turno, un resultado. Nada de dictado continuo ni de parciales:
+          // lo unico que se mide es si la palabra estaba.
+          interimResults: false,
+          continuous: false,
+          maxAlternatives: 1,
+          // En el dispositivo cuando el sistema lo ofrece para ese idioma; si
+          // no, el reconocimiento del propio sistema. En ningun caso algo
+          // nuestro.
+          requiresOnDeviceRecognition: ExpoSpeechRecognitionModule.supportsOnDeviceRecognition(),
+        });
         if (mountedRef.current) setIsRecording(true);
+
         clearAutoStop();
         autoStopRef.current = setTimeout(() => {
           autoStopRef.current = null;
-          onMaxDuration?.();
-        }, MAX_RECORDING_MS);
+          // `stop` pide el resultado final; el evento `result` cierra el turno.
+          try {
+            ExpoSpeechRecognitionModule.stop();
+          } catch {
+            // Ya habia parado solo.
+          }
+        }, MAX_LISTENING_MS);
+
         return { ok: true };
       } catch {
-        await setRecordingAudioMode(false).catch(() => {});
+        handlersRef.current = null;
+        settledRef.current = true;
         if (mountedRef.current) setIsRecording(false);
         return { ok: false, reason: "failed" };
       }
@@ -120,27 +177,33 @@ export function useSpeakingRecorder() {
     [clearAutoStop]
   );
 
-  /** Tira la grabacion sin devolver nada (salir del ejercicio, pausar). */
-  const cancel = useCallback(async (): Promise<void> => {
+  /** Para y pide el resultado final; llega por `onFinal` o por `onFailure`. */
+  const stop = useCallback(() => {
     clearAutoStop();
-    const recording = recordingRef.current;
-    recordingRef.current = null;
-    if (mountedRef.current) setIsRecording(false);
-    if (!recording) return;
     try {
-      await recording.stopAndUnloadAsync();
+      ExpoSpeechRecognitionModule.stop();
     } catch {
-      // nada que recuperar
+      // No estaba escuchando.
     }
-    await setRecordingAudioMode(false).catch(() => {});
-    const uri = recording.getURI();
-    if (uri) await FileSystem.deleteAsync(uri, { idempotent: true }).catch(() => {});
+  }, [clearAutoStop]);
+
+  /** Corta el turno sin resultado (salir del ejercicio, pausar). */
+  const cancel = useCallback(() => {
+    clearAutoStop();
+    settledRef.current = true;
+    handlersRef.current = null;
+    if (mountedRef.current) setIsRecording(false);
+    try {
+      ExpoSpeechRecognitionModule.abort();
+    } catch {
+      // No estaba escuchando.
+    }
   }, [clearAutoStop]);
 
   // Memoizado: el objeto entra en las dependencias de effects de la pantalla,
   // y devolverlo nuevo en cada render los haria correr en cada render.
   return useMemo(
-    () => ({ isRecording, start, stop, cancel, maxRecordingMs: MAX_RECORDING_MS }),
+    () => ({ isRecording, start, stop, cancel, maxListeningMs: MAX_LISTENING_MS }),
     [isRecording, start, stop, cancel]
   );
 }
