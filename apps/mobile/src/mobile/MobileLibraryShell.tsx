@@ -9684,6 +9684,24 @@ export function MobileLibraryShell(args: {
       })();
     };
     for (const ex of ahead) {
+      // El turno hablado suena la FRASE entera, igual que el de contexto, y es
+      // el que mas sufre la espera: su frase casi nunca tiene clip
+      // pre-horneado, asi que la primera reproduccion se sintetiza entera
+      // (ElevenLabs, ffmpeg y R2) mientras el usuario mira un boton mudo.
+      // Precargarlo desde el ejercicio ANTERIOR quita esa espera entera.
+      if (ex.kind === "speaking") {
+        const clipHablado = ex.audioClip;
+        const frase = clipHablado?.sentence?.trim();
+        if (frase) {
+          queueWarm(
+            frase,
+            clipHablado?.language ?? ex.language ?? activeJourneyLanguage ?? "italian",
+            clipHablado?.voiceId ?? ex.voiceId ?? undefined,
+            clipHablado?.cachedUrl ?? clipHablado?.clipUrl ?? null
+          );
+        }
+        continue;
+      }
       if (ex.kind !== "multiple-choice") continue;
       const clip = ex.audioClip;
       // #4: derivar del journey en vez de hardcodear un idioma; "italian" queda
@@ -15609,8 +15627,15 @@ export function MobileLibraryShell(args: {
                             color="#2a1a05"
                           />
                         )}
+                        {/* Tres estados, no dos: decir PLAYING mientras se
+                            sintetiza la frase era mentir durante varios
+                            segundos de silencio. */}
                         <Text style={styles.speakingReplayText}>
-                          {audioActive ? "PLAYING" : "PLAY AGAIN"}
+                          {audioLoading
+                            ? "LOADING AUDIO"
+                            : audioActive
+                              ? "PLAYING"
+                              : "PLAY AGAIN"}
                         </Text>
                       </Pressable>
                     </View>
