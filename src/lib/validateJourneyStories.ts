@@ -115,9 +115,27 @@ const HABLA_POR_IDIOMA: Record<string, string> = {
   // historia de cada tema se narra en pasado y con solo el presente el reparto
   // salia vacio (`protagonista ?`).
   PT: "diz|disse|pergunta|perguntou|responde|respondeu|avisa|avisou|repete|repetiu|conta|contou|explica|explicou|grita|gritou|chama|chamou|pede|pediu|ri|riu|ensina|ensinou|escreve|escreveu",
-  // Frances (2026-08-23). Sin esta lista el reparto salia vacio y el cierre a
-  // solas decia "protagonista ?" en las 21: castOf caia en la lista alemana.
-  FR: "dit|demande|répond|ajoute|explique|répète|crie|écrit|raconte|promet|rit|appelle|propose|corrige|note",
+  // Frances (2026-08-23; pasado añadido 2026-09-14, ver [[project_journey_fr_a0_friends_marseille]]).
+  // Sin el presente el reparto salia vacio y el cierre a solas decia
+  // "protagonista ?" en las 21: castOf caia en la lista alemana. Sin el
+  // PASADO, una historia narrada en passe compose/imparfait ("a dit",
+  // "répondait") no casaba con nada de la lista y el reparto salia vacio
+  // otra vez, el mismo fallo con otra cara: castOf mide presente y pasado
+  // (compose con auxiliar, imperfecto, simple) de los mismos quince verbos.
+  FR: "dit|demande|répond|ajoute|explique|répète|crie|écrit|raconte|promet|rit|appelle|propose|corrige|note|" +
+      // passe compose: auxiliar (avoir, todos estos verbos) + participio
+      "a dit|ont dit|a demandé|ont demandé|a répondu|ont répondu|a ajouté|ont ajouté|" +
+      "a expliqué|ont expliqué|a répété|ont répété|a crié|ont crié|a écrit|ont écrit|" +
+      "a raconté|ont raconté|a promis|ont promis|a ri|ont ri|a appelé|ont appelé|" +
+      "a proposé|ont proposé|a corrigé|ont corrigé|a noté|ont noté|" +
+      // imparfait
+      "disait|demandait|répondait|ajoutait|expliquait|répétait|criait|écrivait|" +
+      "racontait|promettait|riait|appelait|proposait|corrigeait|notait|" +
+      // passe simple (3a sg y pl, el que usa un narrador)
+      "dirent|demanda|demandèrent|répondit|répondirent|ajouta|ajoutèrent|" +
+      "expliqua|expliquèrent|répéta|répétèrent|cria|crièrent|écrivit|écrivirent|" +
+      "raconta|racontèrent|promit|promirent|rirent|appela|appelèrent|" +
+      "proposa|proposèrent|corrigea|corrigèrent|nota|notèrent",
   // Espanol (2026-08-31). Sin esta lista `castOf` caia en la alemana y el
   // reparto salia VACIO en los ocho journeys de espanol, que es el mismo fallo
   // que se arreglo en portugues y en frances. Presente Y preterito, porque la
@@ -233,7 +251,12 @@ const NUC_FR = "(?:[a-zà-ÿ']+\\s+){0,3}[a-zà-ÿ']+";
 const FORMAS_FR: Array<[string, (n: string) => RegExp]> = [
   ["aposicion", (n) => new RegExp(`${n},\\s+(?:un|une|le|la|l')\\s*${NUC_FR}`, "iu")],
   ["s'appeler", (n) => new RegExp(`s'appelle\\s+${n}(?!\\p{L})`, "iu")],
-  ["con etre", (n) => new RegExp(`\\b${n}\\s+est\\s+(?:un|une)\\s+${NUC_FR}`, "iu")],
+  // (?<!\p{L}) y no \b: la misma trampa que el resto del fichero (bug PT B1,
+  // 2026-09-06). \b es ASCII y no casa antes de una letra acentuada, asi que
+  // "con etre" nunca reconocia a un nombre que empieza por vocal con tilde
+  // (Élodie, Éric...) y el personaje pasaba por "sin sintagma que diga que
+  // es" aunque el texto SI lo presentara con "est une jeune femme...".
+  ["con etre", (n) => new RegExp(`(?<!\\p{L})${n}\\s+est\\s+(?:un|une)\\s+${NUC_FR}`, "iu")],
 ];
 
 /**
