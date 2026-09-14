@@ -173,33 +173,58 @@ function buildQuestionMessages(params: {
   ];
 }
 
-function buildGradeMessages(params: {
+/**
+ * El prompt de calificar tiene DOS ramas, y confundirlas se paga en pantalla.
+ *
+ * Cuando `gradeDeterministic` ya encontro la palabra, el veredicto esta cerrado
+ * y al modelo solo se le pide la linea de feedback. Decirle ahi que "la
+ * comparacion literal no la encontro" era falso y le daba pie a devolver la
+ * frase modelo del FALLO encima de una respuesta correcta: el usuario acertaba
+ * y leia la correccion de un error que no cometio.
+ */
+export function buildGradeMessages(params: {
   language: string;
   word: string;
   surface?: string | null;
   question: string;
   sentence: string;
   transcript: string;
+  /** true cuando la comparacion literal ya dio la palabra por dicha. */
+  deterministicHit: boolean;
+  /** Forma exacta hallada, cuando `deterministicHit` es true. */
+  formFound?: string | null;
 }) {
   const forms = [params.word, params.surface ?? ""].filter(Boolean).join(" / ");
+  const comun =
+    `A learner of ${params.language} was asked out loud: "${params.question}". ` +
+    `Their spoken answer, transcribed, is: "${params.transcript}". ` +
+    `The target word is "${forms}". `;
+  const cierre = `Do not mention that the answer was transcribed. No long dashes.`;
+
+  const content = params.deterministicHit
+    ? comun +
+      `They DID use the word: it appears in the transcription as "${params.formFound ?? forms}". ` +
+      `The answer is already marked correct, so do not judge it again and do not correct the word. ` +
+      `Reply with a strict JSON object (no markdown fences) of shape {"feedback": string}. ` +
+      `"feedback" is ONE line in ENGLISH, under 20 words: a more natural way to say what they said ` +
+      `if there was a slip, or just "Nice" if there was not. ` +
+      `Never give them a model sentence and never suggest they missed the word. ` +
+      cierre
+    : comun +
+      `A literal comparison did not find it, so decide whether ` +
+      `the answer nevertheless uses that word in some inflected or spelled-out form. ` +
+      `Reply with a strict JSON object (no markdown fences) of shape ` +
+      `{"formFound": string, "feedback": string}. ` +
+      `"formFound" is the EXACT substring of the transcription that is a form of the target word, ` +
+      `copied character for character from the transcription. If there is none, use "". ` +
+      `Never invent a form that is not in the transcription. ` +
+      `"feedback" is ONE line in ENGLISH, under 20 words. If they used the word, give a more ` +
+      `natural version of what they said, or say "Nice" if there was no slip. If they did not, ` +
+      `give them this model sentence with the word: "${params.sentence}". ` +
+      cierre;
+
   return [
-    {
-      role: "system" as const,
-      content:
-        `A learner of ${params.language} was asked out loud: "${params.question}". ` +
-        `Their spoken answer, transcribed, is: "${params.transcript}". ` +
-        `The target word is "${forms}". A literal comparison did not find it, so decide whether ` +
-        `the answer nevertheless uses that word in some inflected or spelled-out form. ` +
-        `Reply with a strict JSON object (no markdown fences) of shape ` +
-        `{"formFound": string, "feedback": string}. ` +
-        `"formFound" is the EXACT substring of the transcription that is a form of the target word, ` +
-        `copied character for character from the transcription. If there is none, use "". ` +
-        `Never invent a form that is not in the transcription. ` +
-        `"feedback" is ONE line in ENGLISH, under 20 words. If they used the word, give a more ` +
-        `natural version of what they said, or say "Nice" if there was no slip. If they did not, ` +
-        `give them this model sentence with the word: "${params.sentence}". ` +
-        `Do not mention that the answer was transcribed. No long dashes.`,
-    },
+    { role: "system" as const, content },
     { role: "user" as const, content: "Grade it now." },
   ];
 }
@@ -383,7 +408,16 @@ async function handleGrade(body: GradeBody, language: string): Promise<Response>
   const deterministic = gradeDeterministic(transcript, word, surface);
 
   const raw = await chatCompletion(
-    buildGradeMessages({ language, word, surface, question, sentence, transcript }),
+    buildGradeMessages({
+      language,
+      word,
+      surface,
+      question,
+      sentence,
+      transcript,
+      deterministicHit: deterministic.correct,
+      formFound: deterministic.formFound,
+    }),
     { temperature: 0.3, maxTokens: 200 }
   );
 

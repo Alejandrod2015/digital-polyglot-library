@@ -7,6 +7,7 @@ import {
   verifyLlmForm,
 } from "../speakingGrading";
 import { createSpeakingExercise, type PracticeFavoriteItem } from "../practiceExercises";
+import { buildGradeMessages } from "@/app/api/mobile/speaking/route";
 
 // Este fichero es el GATE de dos filas de docs/rules-inventory.json. Los ids
 // que ahi se declaran son "g1" y "g5"; el lint del inventario los busca aqui
@@ -128,5 +129,42 @@ describe("createSpeakingExercise", () => {
 
   it("devuelve null sin frase de la historia", () => {
     expect(createSpeakingExercise(favorito({ exampleSentence: null }))).toBeNull();
+  });
+});
+
+describe("g5: el prompt de calificar no pide la frase modelo cuando ya se acerto", () => {
+  const base = {
+    language: "spanish",
+    word: "el vecino",
+    surface: "vecino",
+    question: "Quien vive en el piso de al lado?",
+    sentence: "El vecino saluda desde el balcon cada manana.",
+    transcript: "Mi vecino toca la guitarra por la noche",
+  };
+
+  it("en la rama de ACIERTO no menciona la frase modelo ni vuelve a juzgar", () => {
+    // El fallo que arregla: el prompt afirmaba SIEMPRE que la comparacion
+    // literal no habia encontrado la palabra, tambien cuando si. Con eso el
+    // modelo podia devolver como feedback la correccion de un error que el
+    // usuario no cometio.
+    const [system] = buildGradeMessages({ ...base, deterministicHit: true, formFound: "vecino" });
+    expect(system.content).not.toContain("A literal comparison did not find it");
+    expect(system.content).not.toContain(base.sentence);
+    expect(system.content).toContain("They DID use the word");
+    expect(system.content).toContain('"vecino"');
+    // Solo se le pide la linea de feedback: el veredicto ya esta cerrado.
+    expect(system.content).toContain('{"feedback": string}');
+    expect(system.content).not.toContain('"formFound" is the EXACT substring');
+  });
+
+  it("en la rama de FALLO sigue pidiendo formFound y la frase modelo", () => {
+    const [system] = buildGradeMessages({
+      ...base,
+      transcript: "Vive en el piso de arriba",
+      deterministicHit: false,
+    });
+    expect(system.content).toContain("A literal comparison did not find it");
+    expect(system.content).toContain('"formFound" is the EXACT substring');
+    expect(system.content).toContain(base.sentence);
   });
 });
