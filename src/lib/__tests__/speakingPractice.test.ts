@@ -1,18 +1,18 @@
 import { describe, it, expect } from "vitest";
 import {
-  clampFeedback,
   containsWholeWord,
   gradeDeterministic,
-  questionLeaksWord,
-  journeyStoryWhereFromSlug,
-  verifyLlmForm,
+  normalizeForSpeaking,
 } from "../speakingGrading";
-import { createSpeakingExercise, type PracticeFavoriteItem } from "../practiceExercises";
-import { buildGradeMessages } from "@/app/api/mobile/speaking/route";
+import {
+  buildPracticeSession,
+  createSpeakingExercise,
+  type PracticeFavoriteItem,
+} from "../practiceExercises";
 
-// Este fichero es el GATE de dos filas de docs/rules-inventory.json. Los ids
-// que ahi se declaran son "g1" y "g5"; el lint del inventario los busca aqui
-// literalmente, asi que no se renombran sin tocar tambien esas dos filas.
+// Este fichero es el GATE de la fila "g4" de docs/rules-inventory.json. El id
+// que ahi se declara es "g4"; el lint del inventario lo busca aqui
+// literalmente, asi que no se renombra sin tocar tambien esa fila.
 
 const favorito = (extra: Partial<PracticeFavoriteItem> = {}): PracticeFavoriteItem => ({
   word: "el vecino",
@@ -28,45 +28,61 @@ const favorito = (extra: Partial<PracticeFavoriteItem> = {}): PracticeFavoriteIt
   ...extra,
 });
 
-describe("g1: la pregunta no puede contener la palabra", () => {
-  it("la detecta tal cual", () => {
-    expect(questionLeaksWord("Como se llama tu vecino?", "el vecino", "vecino")).toBe(true);
-  });
+/** Acompanantes solo para que `fill_blank` reuna sus cuatro opciones. Cada uno
+ *  con SU frase: `buildPracticeSession` deduplica por oracion, asi que repetir
+ *  la misma dejaria un solo ejercicio en la tanda. */
+const pool = (): PracticeFavoriteItem[] => [
+  favorito(),
+  favorito({
+    word: "la ventana",
+    surface: "ventana",
+    translation: "the window",
+    exampleSentence: "La ventana da al patio interior del edificio.",
+  }),
+  favorito({
+    word: "el balcon",
+    surface: "balcon",
+    translation: "the balcony",
+    exampleSentence: "El balcon tiene macetas rojas todo el verano.",
+  }),
+  favorito({
+    word: "la escalera",
+    surface: "escalera",
+    translation: "the staircase",
+    exampleSentence: "La escalera cruje cuando alguien sube de noche.",
+  }),
+  favorito({
+    word: "el portal",
+    surface: "portal",
+    translation: "the doorway",
+    exampleSentence: "El portal se cierra solo a las diez en punto.",
+  }),
+  favorito({
+    word: "la azotea",
+    surface: "azotea",
+    translation: "the rooftop",
+    exampleSentence: "La azotea guarda las cuerdas de tender la ropa.",
+  }),
+];
 
-  it("la detecta sin acentos, que es como se regala igual", () => {
-    // La pregunta lleva "trabajó" y la palabra pedida es "trabajo": con tilde o
-    // sin ella, el usuario la lee en pantalla en vez de recuperarla.
-    expect(questionLeaksWord("Donde trabajo tu hermana?", "trabajó", null)).toBe(true);
-    expect(questionLeaksWord("Donde trabajó tu hermana?", "trabajo", null)).toBe(true);
-  });
-
-  it("una pregunta limpia pasa", () => {
-    expect(questionLeaksWord("Quien vive en el piso de al lado?", "el vecino", "vecino")).toBe(false);
-  });
-
-  it("no confunde una palabra contenida en otra", () => {
-    // "por" dentro de "porque" no es la palabra: con un includes suelto, esta
-    // pregunta quedaria descartada sin motivo.
-    expect(questionLeaksWord("Porque no bajaste ayer?", "por", null)).toBe(false);
-    expect(containsWholeWord("Vivir aqui es bonito", "ir")).toBe(false);
-  });
-
-  it("cubre el vocab de varias palabras", () => {
-    expect(questionLeaksWord("Te diste cuenta del ruido?", "darse cuenta", "diste cuenta")).toBe(true);
-  });
-});
-
-describe("g5: la calificacion es verificable y el LLM no aprueba solo", () => {
+describe("g4: la calificacion es determinista y local", () => {
   it("acierta con la forma de la historia", () => {
     const v = gradeDeterministic("Mi vecino toca la guitarra por la noche", "el vecino", "vecino");
     expect(v.correct).toBe(true);
-    expect(v.via).toBe("deterministic");
     expect(v.formFound).toBe("vecino");
   });
 
-  it("acierta con el lema aunque la transcripcion lleve puntuacion y tildes", () => {
-    const v = gradeDeterministic("Si, trabajo en una libreria.", "trabajó", null);
+  it("acierta con el lema aunque el reconocedor meta tildes y puntuacion", () => {
+    // El reconocedor del sistema escribe con acentos y puntua; el usuario dijo
+    // la palabra igual. Comparar en crudo dejaria "trabajo," fuera.
+    expect(gradeDeterministic("Si, trabajo en una libreria.", "trabajó", null).correct).toBe(true);
+    expect(gradeDeterministic("Donde trabajó tu hermana", "trabajo", null).correct).toBe(true);
+  });
+
+  it("cubre el vocab de varias palabras", () => {
+    const v = gradeDeterministic("Me di cuenta del ruido", "darse cuenta", "di cuenta");
     expect(v.correct).toBe(true);
+    expect(v.formFound).toBe("di cuenta");
   });
 
   it("falla cuando la palabra no esta", () => {
@@ -75,132 +91,64 @@ describe("g5: la calificacion es verificable y el LLM no aprueba solo", () => {
     expect(v.formFound).toBeNull();
   });
 
-  it("falla con transcripcion vacia", () => {
+  it("falla con reconocimiento vacio", () => {
     expect(gradeDeterministic("", "el vecino", "vecino").correct).toBe(false);
+    expect(gradeDeterministic("   ", "el vecino", "vecino").correct).toBe(false);
   });
 
-  it("acepta la forma verbal que el LLM senala SI esta en la transcripcion", () => {
-    // Forma flexionada que la comparacion literal no cubre ("trabajaba" contra
-    // el lema "trabajar"): el LLM la senala y el servidor la encuentra.
-    const v = verifyLlmForm("Antes trabajaba en un bar del centro", "trabajaba");
-    expect(v.correct).toBe(true);
-    expect(v.via).toBe("llm");
+  it("no da por buena una palabra contenida en otra", () => {
+    // "por" dentro de "porque" no es la palabra, y "ir" dentro de "vivir"
+    // tampoco: con un includes suelto las dos aprobarian a quien no dijo nada.
+    expect(gradeDeterministic("Porque no bajaste ayer", "por", null).correct).toBe(false);
+    expect(containsWholeWord("Vivir aqui es bonito", "ir")).toBe(false);
   });
 
-  it("RECHAZA una forma que el LLM se invento", () => {
-    // El candado entero del gate: sin esto, un modelo complaciente aprueba una
-    // respuesta que nunca uso la palabra.
-    const v = verifyLlmForm("Vive en el piso de arriba", "trabajaba");
-    expect(v.correct).toBe(false);
-    expect(v.formFound).toBeNull();
-  });
-
-  it("rechaza una forma vacia", () => {
-    expect(verifyLlmForm("Vive en el piso de arriba", "").correct).toBe(false);
-    expect(verifyLlmForm("Vive en el piso de arriba", null).correct).toBe(false);
-  });
-
-  it("recorta el feedback por debajo de 20 palabras", () => {
-    const largo = Array.from({ length: 40 }, (_, i) => `w${i}`).join(" ");
-    expect(clampFeedback(largo).split(" ").length).toBeLessThan(20);
+  it("normaliza quitando acentos, puntuacion y espacios de sobra", () => {
+    expect(normalizeForSpeaking("  ¿Dónde   está,  el balcón? ")).toBe("donde esta el balcon");
   });
 });
 
 describe("createSpeakingExercise", () => {
-  it("arma el ejercicio con lo que necesita la pregunta", () => {
-    const ex = createSpeakingExercise(favorito());
+  it("arma el ejercicio con el hueco y el clip de fill_blank", () => {
+    const ex = createSpeakingExercise(favorito(), pool());
     expect(ex).not.toBeNull();
     expect(ex?.type).toBe("speaking");
-    expect(ex?.word).toBe("el vecino");
     expect(ex?.translation).toBe("the neighbour");
-    expect(ex?.storySlug).toBe("journey-cmrdqk4eb000232r4rmo619rs");
+    // La pista es la traduccion; la frase con hueco NO puede llevar la palabra.
+    expect(ex?.blanked).toContain("_____");
+    expect(ex?.blanked?.toLowerCase()).not.toContain("vecino");
+    // Y la frase COMPLETA si la lleva: es la que se ensena en el fallo.
     expect(ex?.sentence).toContain("vecino");
   });
 
+  it("el hueco es EXACTAMENTE el mismo que pinta fill_blank", () => {
+    // Si los dos se separan, el usuario oye una frase y lee otra.
+    const speaking = createSpeakingExercise(favorito(), pool());
+    const fillBlank = buildPracticeSession([favorito(), ...pool()], "context").find(
+      (ex) => ex.type === "fill_blank" && ex.id === "fill_blank:el vecino"
+    );
+    expect(fillBlank?.type).toBe("fill_blank");
+    if (fillBlank?.type !== "fill_blank") throw new Error("sin fill_blank que comparar");
+    expect(speaking?.blanked).toBe(fillBlank.sentence);
+  });
+
   it("devuelve null sin storySlug", () => {
-    expect(createSpeakingExercise(favorito({ storySlug: null }))).toBeNull();
+    expect(createSpeakingExercise(favorito({ storySlug: null }), pool())).toBeNull();
+  });
+
+  it("devuelve null cuando fill_blank devuelve null", () => {
+    // Sin frase de ejemplo no hay hueco que decir, y el de contexto ya lo
+    // rechaza: este se apoya en esa decision en vez de repetirla.
+    expect(createSpeakingExercise(favorito({ exampleSentence: null }), pool())).toBeNull();
   });
 
   it("NO descarta por sourcePath de libro: es la forma normal de un journey", () => {
-    // Regresion: el filtro por `/books/` tiraba 776 de los 844 favoritos
-    // reales. El lector de journey del movil guarda asi, y quien decide si hay
-    // historia detras es el servidor, no la forma de la ruta.
-    expect(createSpeakingExercise(favorito({ sourcePath: "/books/venecia/el-canal" }))).not.toBeNull();
-  });
-
-  it("acepta tambien el slug real, no solo el pseudo-slug", () => {
-    const ex = createSpeakingExercise(
-      favorito({ storySlug: "el-vecino-del-cuarto", sourcePath: null })
-    );
-    expect(ex?.storySlug).toBe("el-vecino-del-cuarto");
+    // Regresion: un filtro por `/books/` tiraba 776 de los 844 favoritos
+    // reales, porque el lector de journey del movil guarda asi.
+    expect(createSpeakingExercise(favorito(), pool())).not.toBeNull();
   });
 
   it("devuelve null sin traduccion, que es la pista en pantalla", () => {
-    expect(createSpeakingExercise(favorito({ translation: "" }))).toBeNull();
-  });
-
-  it("devuelve null sin frase de la historia", () => {
-    expect(createSpeakingExercise(favorito({ exampleSentence: null }))).toBeNull();
-  });
-});
-
-describe("g5: el prompt de calificar no pide la frase modelo cuando ya se acerto", () => {
-  const base = {
-    language: "spanish",
-    word: "el vecino",
-    surface: "vecino",
-    question: "Quien vive en el piso de al lado?",
-    sentence: "El vecino saluda desde el balcon cada manana.",
-    transcript: "Mi vecino toca la guitarra por la noche",
-  };
-
-  it("en la rama de ACIERTO no menciona la frase modelo ni vuelve a juzgar", () => {
-    // El fallo que arregla: el prompt afirmaba SIEMPRE que la comparacion
-    // literal no habia encontrado la palabra, tambien cuando si. Con eso el
-    // modelo podia devolver como feedback la correccion de un error que el
-    // usuario no cometio.
-    const [system] = buildGradeMessages({ ...base, deterministicHit: true, formFound: "vecino" });
-    expect(system.content).not.toContain("A literal comparison did not find it");
-    expect(system.content).not.toContain(base.sentence);
-    expect(system.content).toContain("They DID use the word");
-    expect(system.content).toContain('"vecino"');
-    // Solo se le pide la linea de feedback: el veredicto ya esta cerrado.
-    expect(system.content).toContain('{"feedback": string}');
-    expect(system.content).not.toContain('"formFound" is the EXACT substring');
-  });
-
-  it("en la rama de FALLO sigue pidiendo formFound y la frase modelo", () => {
-    const [system] = buildGradeMessages({
-      ...base,
-      transcript: "Vive en el piso de arriba",
-      deterministicHit: false,
-    });
-    expect(system.content).toContain("A literal comparison did not find it");
-    expect(system.content).toContain('"formFound" is the EXACT substring');
-    expect(system.content).toContain(base.sentence);
-  });
-});
-
-describe("journeyStoryWhereFromSlug: las dos formas del storySlug", () => {
-  it("el pseudo-slug del lector de journey busca por id", () => {
-    expect(journeyStoryWhereFromSlug("journey-cmrdqk4eb000232r4rmo619rs")).toEqual({
-      id: "cmrdqk4eb000232r4rmo619rs",
-    });
-  });
-
-  it("un slug normal busca por slug", () => {
-    expect(journeyStoryWhereFromSlug("le-toca-a-mateo")).toEqual({ slug: "le-toca-a-mateo" });
-  });
-
-  it("no confunde un slug que solo EMPIEZA por journey-", () => {
-    // El cuid pide 20 caracteres o mas; un titulo como este es un slug real.
-    expect(journeyStoryWhereFromSlug("journey-al-sur")).toEqual({ slug: "journey-al-sur" });
-  });
-
-  it("sin slug no hay busqueda", () => {
-    expect(journeyStoryWhereFromSlug("")).toBeNull();
-    expect(journeyStoryWhereFromSlug("   ")).toBeNull();
-    expect(journeyStoryWhereFromSlug(null)).toBeNull();
-    expect(journeyStoryWhereFromSlug(undefined)).toBeNull();
+    expect(createSpeakingExercise(favorito({ translation: "" }), pool())).toBeNull();
   });
 });

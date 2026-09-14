@@ -1380,38 +1380,3 @@ model MobileDevice {
   @@index([model])
   @@map("dp_mobile_devices_v1")
 }
-
-/// Pregunta hablada cacheada del ejercicio de speaking (piloto 2026-09-14).
-///
-/// Existe por dos motivos y ninguno es guardar al usuario: no pagar dos veces
-/// el mismo LLM ni la misma sintesis para la misma palabra en la misma
-/// historia, y poder editar la pregunta desde Studio mas adelante.
-///
-/// Una fila por (idioma, palabra, historia): la primera vez que alguien llega
-/// a esa palabra se genera y se guarda; las siguientes se leen. NADA del
-/// usuario vive aqui; la transcripcion y el resultado no se persisten en el
-/// piloto (solo el score de SRS y la metrica de sesion, como los otros tipos).
-model SpeakingPrompt {
-  id            String   @id @default(cuid())
-  /// Mismo valor que `Favorite.language` ("spanish", "italian", ...).
-  language      String
-  /// Lema guardado por el usuario.
-  word          String
-  /// Historia de origen (`JourneyStory.slug`).
-  storySlug     String
-  /// Texto de la pregunta, en el idioma meta. Nunca contiene la palabra (G1).
-  question      String
-  /// Personaje del reparto que pregunta; null cuando la historia no tiene
-  /// reparto y pregunta el narrador sin nombre.
-  characterName String?
-  /// Voz con la que se sonaria la pregunta (la de la historia, o la aprobada
-  /// del idioma si la historia no traia ninguna).
-  voiceId       String
-  /// `JourneyStory.level` en el momento de generar; el prompt lo usa para no
-  /// preguntar por encima del nivel de la historia (G2).
-  level         String
-  createdAt     DateTime @default(now())
-
-  @@unique([language, word, storySlug])
-  @@map("dp_speaking_prompts_v1")
-}
