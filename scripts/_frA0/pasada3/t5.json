@@ -1,0 +1,470 @@
+[
+  {
+    "topic": "parties-and-gifts",
+    "slotIndex": 0,
+    "title": "La boule porte-bonheur",
+    "arcType": null,
+    "synopsis": "Samedi, c'est l'anniversaire de Hugo, et Léa n'a plus d'argent. Avec sa sœur, elle cherche un cadeau. La seule chose précieuse est déjà dans un tiroir.",
+    "text": "Aujourd'hui, la tirelire de Léa est vide. Son argent est à Paris, avec Hugo. Samedi, Hugo a trente-trois ans. Léa veut offrir un cadeau.\n\nLa sœur de Léa s'appelle Louise. Elle vient pour aider. “Tu choisis quoi?”, demande Louise. “Un joli cadeau coûte beaucoup”, répond Léa. “Et je n'ai rien. Je compte, et je compte encore.”\n\nLéa ouvre le tiroir. Le tiroir sent le café. Dedans, il y a sa boule porte-bonheur. Cette boule porte chance. “Pourquoi cette boule?”, demande Louise, surprise. “C'est mon porte-bonheur. Je l'aime, mais c'est pour Hugo.”\n\nLouise coupe le papier avec les ciseaux. Léa garde la boule ronde dans sa main. Ensuite, elle la donne. Louise emballe le paquet avec du scotch.\n\nLouise fait un nœud rouge. “Génial!”, dit Louise. “Pas mal, non?”, rit Léa. “Merci, Louise.” “De rien.” Léa cache le paquet sous le comptoir.",
+    "vocab": [
+      {
+        "word": "aujourd'hui",
+        "surface": "Aujourd'hui",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Today; this day, now."
+      },
+      {
+        "word": "le scotch",
+        "surface": "scotch",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Sticky tape; it holds the paper closed."
+      },
+      {
+        "word": "vide",
+        "surface": "vide",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Empty; with nothing inside."
+      },
+      {
+        "word": "offrir",
+        "surface": "offrir",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To give as a present; to give for free."
+      },
+      {
+        "word": "le cadeau",
+        "surface": "cadeau",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Present; something you give on a special day."
+      },
+      {
+        "word": "choisir",
+        "surface": "choisis",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To choose; to take one from many."
+      },
+      {
+        "word": "joli",
+        "surface": "joli",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Pretty; nice to look at."
+      },
+      {
+        "word": "beaucoup",
+        "surface": "beaucoup",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "A lot; very much."
+      },
+      {
+        "word": "le porte-bonheur",
+        "surface": "porte-bonheur",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Lucky charm; a thing that brings good luck."
+      },
+      {
+        "word": "la chance",
+        "surface": "chance",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Luck; good things that just happen to you."
+      },
+      {
+        "word": "aimer",
+        "surface": "aime",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To love, to like; to feel good about something."
+      },
+      {
+        "word": "couper",
+        "surface": "coupe",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To cut; to make two pieces with scissors."
+      },
+      {
+        "word": "pourquoi",
+        "surface": "Pourquoi",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Why; asking for the reason."
+      },
+      {
+        "word": "les ciseaux",
+        "surface": "ciseaux",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Scissors; a tool to cut paper."
+      },
+      {
+        "word": "emballer",
+        "surface": "emballe",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To wrap; to cover a present in paper."
+      },
+      {
+        "word": "le paquet",
+        "surface": "paquet",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Parcel; a thing wrapped in paper."
+      },
+      {
+        "word": "le nœud",
+        "surface": "nœud",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Bow; a pretty tie on top of a present."
+      },
+      {
+        "word": "génial",
+        "surface": "Génial",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Great; really very good."
+      },
+      {
+        "word": "pas mal",
+        "surface": "Pas mal",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Not bad; quite good."
+      },
+      {
+        "word": "cacher",
+        "surface": "cache",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To hide; to put where nobody can see."
+      }
+    ]
+  },
+  {
+    "topic": "parties-and-gifts",
+    "slotIndex": 1,
+    "title": "Trente-trois bougies",
+    "arcType": null,
+    "synopsis": "La placette fête les trente-trois ans de Hugo. À la fin, il y a une dernière partie de pétanque. Cette fois, c'est Léa qui ne veut pas gagner.",
+    "text": "Sous chaque platane, Léa allume un lampion. Il y a une guirlande. On entend la musique.\n\nPour l'anniversaire de Hugo, Léa invite les amis. “Le pastis est sur la table!”, crie Léa.\n\nSur le gâteau, il y a trente-trois bougies. Tout le monde dit: “Joyeux anniversaire!” Hugo souffle et éteint les bougies. “Trente-trois ans, c'est vieux!”, rit Hugo. “Pas du tout!”, répond Léa.\n\nHugo est gai. À la fin, il y a une dernière partie. Tout le monde veut voir. “Le perdant paie le pastis”, dit Hugo. “On parie?” “On parie!”, répond Léa.\n\nSa boule roule loin, exprès. “Attention, Léa! Tu tires mal!”, dit Hugo. Léa laisse gagner Hugo. “Bravo, Hugo! Tu es le gagnant!”, dit Léa.\n\n“Tu perds pour moi?”, demande Hugo. “Non. C'est un jeu”, répond Léa. Léa applaudit vraiment fort, et regarde le banc. Tout le monde chante, danse et fête Hugo.",
+    "vocab": [
+      {
+        "word": "le lampion",
+        "surface": "lampion",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Paper lantern; a small light for a party outside."
+      },
+      {
+        "word": "allumer",
+        "surface": "allume",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To light; to turn on a light."
+      },
+      {
+        "word": "la guirlande",
+        "surface": "guirlande",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Garland; a long line of lights or paper."
+      },
+      {
+        "word": "l'anniversaire",
+        "surface": "anniversaire",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Birthday; the day you were born, every year."
+      },
+      {
+        "word": "inviter",
+        "surface": "invite",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To invite; to ask someone to come."
+      },
+      {
+        "word": "le pastis",
+        "surface": "pastis",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Pastis; the famous cold yellow drink of Marseille."
+      },
+      {
+        "word": "le gâteau",
+        "surface": "gâteau",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Cake; a sweet thing for a party."
+      },
+      {
+        "word": "trente-trois",
+        "surface": "trente-trois",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Thirty-three; the number after thirty-two."
+      },
+      {
+        "word": "la bougie",
+        "surface": "bougies",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Candle; a small light on a cake."
+      },
+      {
+        "word": "joyeux anniversaire",
+        "surface": "Joyeux anniversaire",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Happy birthday; what you say on a birthday."
+      },
+      {
+        "word": "éteindre",
+        "surface": "éteint",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To put out; to stop a light or fire."
+      },
+      {
+        "word": "vieux",
+        "surface": "vieux",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Old; with a lot of years."
+      },
+      {
+        "word": "à la fin",
+        "surface": "À la fin",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "At the end; when it is almost over."
+      },
+      {
+        "word": "voir",
+        "surface": "voir",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To see; to look with your eyes."
+      },
+      {
+        "word": "exprès",
+        "surface": "exprès",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "On purpose; because you want to do it."
+      },
+      {
+        "word": "laisser",
+        "surface": "laisse",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To let; to allow something to happen."
+      },
+      {
+        "word": "le gagnant",
+        "surface": "gagnant",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Winner; the person who wins the game."
+      },
+      {
+        "word": "chanter",
+        "surface": "chante",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To sing; to make music with your voice."
+      },
+      {
+        "word": "danser",
+        "surface": "danse",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To dance; to move your body to music."
+      },
+      {
+        "word": "fêter",
+        "surface": "fête",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To celebrate; to have a party for someone."
+      }
+    ]
+  },
+  {
+    "topic": "parties-and-gifts",
+    "slotIndex": 2,
+    "title": "À toi la boule",
+    "arcType": null,
+    "synopsis": "Le lendemain de la fête, Hugo ouvre enfin son cadeau. Il reconnaît tout de suite le porte-bonheur de Léa, et il ne veut pas la prendre. Alors ils trouvent une autre idée.",
+    "text": "Un gros chat dort sur le banc, sous les feuilles. L'air du matin est froid. La placette est tranquille, mais sale. Léa balaie les miettes.\n\nElle ramasse les bouchons et un lampion rouge. Les restes du gâteau vont à la poubelle. Hugo arrive, pas encore réveillé. Il prend un balai. “Un service pour un service”, dit Hugo.\n\nEnfin, Hugo ouvre le paquet, surpris. Il déchire doucement le papier. C'est la boule porte-bonheur de Léa! “C'est vrai? C'est ton porte-bonheur!”, dit Hugo. “Je ne peux pas.” “Alors, on partage”, répond Léa. “À toi la boule, à moi le cochonnet.”\n\n“Tu joues à Paris?”, demande Léa. “Oui. Chaque fois, je pense à toi.” “Et le retour?” “Un jour. Bientôt. Et je te rends ton argent.” Léa ferme la main de Hugo sur la boule. La main de Léa est douce. À la fin, il rentre chez lui.",
+    "vocab": [
+      {
+        "word": "le chat",
+        "surface": "chat",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Cat; a small pet animal with soft fur."
+      },
+      {
+        "word": "dormir",
+        "surface": "dort",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To sleep; to rest with your eyes closed."
+      },
+      {
+        "word": "tranquille",
+        "surface": "tranquille",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Quiet, calm; with no noise."
+      },
+      {
+        "word": "balayer",
+        "surface": "balaie",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To sweep; to clean the floor with a broom."
+      },
+      {
+        "word": "la miette",
+        "surface": "miettes",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Crumb; a very small piece of bread or cake."
+      },
+      {
+        "word": "le bouchon",
+        "surface": "bouchons",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Cork; it closes a bottle."
+      },
+      {
+        "word": "les restes",
+        "surface": "restes",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Leftovers; the food nobody eats."
+      },
+      {
+        "word": "la poubelle",
+        "surface": "poubelle",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Bin; where you put things you throw away."
+      },
+      {
+        "word": "réveillé",
+        "surface": "réveillé",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Awake; not sleeping anymore."
+      },
+      {
+        "word": "le balai",
+        "surface": "balai",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Broom; a long brush to clean the floor."
+      },
+      {
+        "word": "ouvrir",
+        "surface": "ouvre",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To open; to take the paper off."
+      },
+      {
+        "word": "déchirer",
+        "surface": "déchire",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To tear; to pull paper into pieces."
+      },
+      {
+        "word": "doucement",
+        "surface": "doucement",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Gently; slowly and softly."
+      },
+      {
+        "word": "partager",
+        "surface": "partage",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To share; to give part to someone."
+      },
+      {
+        "word": "à moi",
+        "surface": "à moi",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Mine; it is for me."
+      },
+      {
+        "word": "jouer",
+        "surface": "joues",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To play; to have fun with a game."
+      },
+      {
+        "word": "chaque fois",
+        "surface": "Chaque fois",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Every time; each time it happens."
+      },
+      {
+        "word": "le retour",
+        "surface": "retour",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Return; coming back to a place."
+      },
+      {
+        "word": "un jour",
+        "surface": "Un jour",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "One day; at some time later."
+      },
+      {
+        "word": "rentrer",
+        "surface": "rentre",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To go home; to come back to your place."
+      }
+    ]
+  }
+]

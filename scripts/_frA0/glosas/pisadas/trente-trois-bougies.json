@@ -1,0 +1,42 @@
+{
+ "a": {
+  "es": "Il y a une guirlande.",
+  "en": "There is a string of lights.",
+  "g": "there is (il y a)"
+ },
+ "il": {
+  "es": "Il y a une guirlande.",
+  "en": "There is a string of lights.",
+  "g": "there is (il y a)"
+ },
+ "laisse": {
+  "es": "Léa laisse gagner Hugo.",
+  "en": "Léa lets Hugo win.",
+  "g": "lets (laisser)"
+ },
+ "mal": {
+  "es": "Tu tires mal!",
+  "en": "You shoot badly!",
+  "g": "badly (mal)"
+ },
+ "monde": {
+  "es": "Tout le monde dit:",
+  "en": "Everybody says:",
+  "g": "everybody (tout le monde)"
+ },
+ "pas": {
+  "es": "Pas du tout!",
+  "en": "Not at all!",
+  "g": "not (pas du tout: not at all)"
+ },
+ "tout": {
+  "es": "Tout le monde dit:",
+  "en": "Everybody says:",
+  "g": "everybody (tout le monde)"
+ },
+ "éteint": {
+  "es": "Hugo souffle et éteint les bougies.",
+  "en": "Hugo blows and puts out the candles.",
+  "g": "blows out (éteindre)"
+ }
+}

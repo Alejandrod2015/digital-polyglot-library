@@ -1,0 +1,77 @@
+{
+ "café": {
+  "es": "Léa apporte deux tasses de café.",
+  "en": "Léa brings two cups of coffee.",
+  "g": "coffee (le café)"
+ },
+ "elle": {
+  "es": "Elle porte son tablier, et le mistral arrive.",
+  "en": "She wears her apron, and the mistral arrives.",
+  "g": "she (elle)"
+ },
+ "en": {
+  "es": "Je pars en mars",
+  "en": "I leave in March",
+  "g": "in (en)"
+ },
+ "encore": {
+  "es": "Encore:",
+  "en": "Again:",
+  "g": "again (encore)"
+ },
+ "il": {
+  "es": "Il souffle fort.",
+  "en": "It blows hard.",
+  "g": "it (il: the wind)"
+ },
+ "joue": {
+  "es": "Je joue avec toi, pas seule",
+  "en": "I play with you, not alone",
+  "g": "play (jouer)"
+ },
+ "ne": {
+  "es": "La boule ne va pas droit",
+  "en": "The boule doesn't go straight",
+  "g": "not (ne ... pas)"
+ },
+ "pas": {
+  "es": "Je joue avec toi, pas seule",
+  "en": "I play with you, not alone",
+  "g": "not (pas)"
+ },
+ "porte": {
+  "es": "Elle porte son tablier, et le mistral arrive.",
+  "en": "She wears her apron, and the mistral arrives.",
+  "g": "wears (porter)"
+ },
+ "quelque": {
+  "es": "Hugo veut montrer quelque chose à Léa.",
+  "en": "Hugo wants to show Léa something.",
+  "g": "something (quelque chose)"
+ },
+ "reste": {
+  "es": "Sa boule reste à sa place:",
+  "en": "His boule stays in its place:",
+  "g": "stays (rester)"
+ },
+ "si": {
+  "es": "Si tu rates, tu paies les cafés",
+  "en": "If you miss, you pay for the coffees",
+  "g": "if (si)"
+ },
+ "tire": {
+  "es": "Il tire:",
+  "en": "He shoots:",
+  "g": "shoots, in pétanque (tirer)"
+ },
+ "tout": {
+  "es": "Ils restent à l'ombre tout l'après-midi.",
+  "en": "They stay in the shade all afternoon.",
+  "g": "all (tout)"
+ },
+ "va": {
+  "es": "La boule ne va pas droit",
+  "en": "The boule doesn't go straight",
+  "g": "goes (aller)"
+ }
+}

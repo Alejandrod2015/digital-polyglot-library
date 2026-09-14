@@ -855,11 +855,23 @@ export function validateJourneyStories(
     // niveles: los suelos A0-A2 (y el B1 provisional) quedan INTACTOS y ahora
     // con margen extra, porque una plaza solo puede subir de cuenta con esto,
     // nunca bajar. No se recalibra ninguno.
-    const textos = stories.map((s) => s.text.toLowerCase());
+    const textos = stories.map((s) => s.text.toLowerCase().replace(/’/g, "'"));
     const clave = (v: { word: string; surface?: string | null }) =>
-      String(v.surface ?? v.word).toLowerCase().replace(/^(der|die|das|le|la|el|il|o|a)\s+/, "");
+      String(v.surface ?? v.word).toLowerCase().replace(/’/g, "'").replace(/^(der|die|das|le|la|el|il|o|a)\s+/, "");
     const encuentros = (v: { word: string; surface?: string | null }): number => {
       const k = clave(v);
+      // Una pieza con guion o apostrofo ("la-haut", "aujourd'hui", "Au-dessus")
+      // no puede buscarse en el set de tokens: `tok` parte por letras y la
+      // pieza entera no esta nunca, asi que contaba 0 aunque saliera en cinco
+      // cuerpos (bug de MEDICION, 2026-09-11, Friends FR A0: nueve plazas
+      // sueltas fijas). Se busca ENTERA con bordes de letra, para que un "la"
+      // suelto no cuente como "la-haut". Mismo arreglo, y mismo argumento, que
+      // el de las expresiones de 2026-09-06: una plaza solo puede subir de
+      // cuenta, nunca bajar.
+      if (!k.includes(" ") && !/^\p{L}+$/u.test(k)) {
+        const pieza = new RegExp(`(?<!\\p{L})${k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?!\\p{L})`, "u");
+        return textos.filter((t) => pieza.test(t)).length;
+      }
       if (!k.includes(" ")) return cuerpos.filter((c) => c.has(k)).length;
       const lema = String(v.word).toLowerCase();
       return textos.filter((t) => t.includes(k) || t.includes(lema)).length;
@@ -1022,32 +1034,45 @@ export function validateJourneyStories(
   // merece plaza, asi que el check informa y no bloquea.
   if (stories.some((s) => s.vocab && s.vocab.length)) {
     const idiomaEs = lang === "ES";
+    // FRANCES (2026-09-11, Friends FR A0): el lexico graduado es la lista
+    // A1-A2 de src/lib/cefr/frenchA1A2.ts, asi que solo sabe medir en a0-a2.
+    // Por encima no hay lexico y el check sigue sin saber medir: no pasa en
+    // silencio. Mismo criterio que el espanol (media de plazas fuera del
+    // lexico, gateado solo en Traveler); la lista francesa es mas corta, asi
+    // que marca mas lagunas y hay que JUZGAR cada palabra listada.
+    const idiomaFrBajo = lang === "FR" && ["A0", "A1", "A2"].includes(level);
+    const medible = idiomaEs || idiomaFrBajo;
     // El tipo decide ANTES que el idioma (2026-09-13). Este check solo gatea a
-    // los Traveler; en el resto informa. La rama "idioma no ES" devolvia
+    // los Traveler; en el resto informa. La rama "idioma no medible" devolvia
     // not-implemented sin mirar el tipo, y saveStory trata eso como fallo: el
     // Friends DE A0 no podia guardar su ultima historia por un check que, por
     // su propia regla, no debia bloquearlo. Tipo desconocido sigue sin pasar:
     // sin saber si es Traveler no se puede decir que no gatea.
     const tipoWorth = (ctx.journeyType ?? "").trim().toLowerCase();
-    if (!idiomaEs && tipoWorth && tipoWorth !== "traveler") {
+    if (!medible && tipoWorth && tipoWorth !== "traveler") {
       const motivo = `sin lexico graduado para ${lang || "?"}; en ${tipoWorth} solo informa`;
       pushSet("journey-vocab-worth-teaching", "Cada plaza merece ensenarse", true, motivo);
       if (!parcial) out[out.length - 1].detail = motivo;
-    } else if (!idiomaEs) {
+    } else if (!medible) {
       noImplSet("journey-vocab-worth-teaching", "Cada plaza merece ensenarse",
-        `Solo hay lexico graduado hasta C1 en espanol; en ${lang || "?"} no se puede medir la utilidad de una plaza.`);
+        `Solo hay lexico graduado hasta C1 en espanol y hasta A2 en frances; en ${lang || "?"} ${level || "?"} no se puede medir la utilidad de una plaza.`);
     } else {
       const fueraDelLexico = (w: string): boolean => {
-        const x = w.trim().toLowerCase();
+        let x = w.trim().toLowerCase();
+        // En frances la plaza lleva articulo ("le banc"): sin quitarlo, el
+        // espacio la haria pasar por expresion y ningun sustantivo se mediria.
+        if (idiomaFrBajo) x = x.replace(/^(le|la|les|un|une|des|du)\s+/, "").replace(/^l['’]/, "");
         if (!x || x.includes(" ")) return false; // las expresiones se juzgan aparte
         // Espanol corriente que la lista graduada no tiene (teja, alacena,
         // yema...). Sin esto el gate empuja a cambiar buenas palabras por
         // peores; ver src/lib/cefr/spanishLexiconGaps.ts.
-        if (esHuecoDelLexico(x)) return false;
+        if (idiomaEs && esHuecoDelLexico(x)) return false;
         const formas = [x];
         if (x.endsWith("es") && x.length > 4) formas.push(x.slice(0, -2));
         if (x.endsWith("s") && x.length > 3) formas.push(x.slice(0, -1));
-        return !formas.some((f) => isSpanishUpToLevel(f, "c1"));
+        return idiomaEs
+          ? !formas.some((f) => isSpanishUpToLevel(f, "c1"))
+          : !formas.some((f) => isFrenchA1A2(f));
       };
       // Se juzga por la MEDIA del journey, no por historia suelta, y no es
       // laxitud: el lexico graduado tiene lagunas (`flojo`, `mozo`, `rellano`
@@ -1074,7 +1099,9 @@ export function validateJourneyStories(
           ? `: ${pasadas.slice(0, 4).map((x) => `${x.slug} (${x.fuera.join(", ")})`).join(" · ")}`
           : ": en ninguna historia pasa de 3") +
         ` · el lexico tiene lagunas (flojo, mozo, rellano salen marcados sin serlo): JUZGA cada palabra` +
-        ` · referencias publicadas: Traveler live 0,0-1,0 de media` +
+        (idiomaEs
+          ? ` · referencias publicadas: Traveler live 0,0-1,0 de media`
+          : ` · lexico: lista A1-A2 de frances; no hay Traveler frances publicado con el que calibrar`) +
         (gateado ? "" : ` · tipo ${tipo || "desconocido"}: medido pero NO gateado (en Friends la jerga es el producto; el Friends latam C1 publicado va a 9,8)`);
       pushSet("journey-vocab-worth-teaching",
         `Cada plaza merece ensenarse (media ${TOPE_MEDIA} o menos de palabras fuera del lexico graduado)`,

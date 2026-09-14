@@ -1,0 +1,37 @@
+{
+ "elle": {
+  "es": "Elle ramasse les bouchons et un lampion rouge.",
+  "en": "She picks up the corks and a red paper lantern.",
+  "g": "she (elle)"
+ },
+ "encore": {
+  "es": "Hugo arrive, pas encore réveillé.",
+  "en": "Hugo arrives, not awake yet.",
+  "g": "yet (pas encore: not yet)"
+ },
+ "il": {
+  "es": "Il prend un balai.",
+  "en": "He takes a broom.",
+  "g": "he (il)"
+ },
+ "ne": {
+  "es": "Je ne peux pas.",
+  "en": "I can't.",
+  "g": "not (ne ... pas)"
+ },
+ "pas": {
+  "es": "Hugo arrive, pas encore réveillé.",
+  "en": "Hugo arrives, not awake yet.",
+  "g": "not (pas encore: not yet)"
+ },
+ "restes": {
+  "es": "Les restes du gâteau vont à la poubelle.",
+  "en": "The leftover cake goes in the bin.",
+  "g": "leftovers (les restes)"
+ },
+ "retour": {
+  "es": "Et le retour?",
+  "en": "And coming back?",
+  "g": "return, coming back (le retour)"
+ }
+}

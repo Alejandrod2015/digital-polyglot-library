@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "le frigo,le tiroir,le stylo,la tirelire",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "le frigo",
+     "answer": "a fridge",
+     "options": [
+      "a fridge",
+      "a drawer",
+      "a pen",
+      "a money box"
+     ]
+    },
+    {
+     "word": "le tiroir",
+     "answer": "a drawer",
+     "options": [
+      "a fridge",
+      "a drawer",
+      "a pen",
+      "a money box"
+     ]
+    },
+    {
+     "word": "le stylo",
+     "answer": "a pen",
+     "options": [
+      "a fridge",
+      "a drawer",
+      "a pen",
+      "a money box"
+     ]
+    },
+    {
+     "word": "la tirelire",
+     "answer": "a money box",
+     "options": [
+      "a fridge",
+      "a drawer",
+      "a pen",
+      "a money box"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'argent",
+  "sentence": "Il n'a pas assez d'[[argent]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "money",
+   "options": [
+    "money",
+    "time",
+    "space",
+    "work"
+   ],
+   "audioClip": {
+    "storySlug": "mille-euros-sans-compter",
+    "storySource": "user",
+    "sentence": "Il n'a pas assez d'argent.",
+    "targetWord": "argent",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le loyer",
+  "sentence": "Le [[loyer]] de Paris est cher.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rent for a flat",
+   "options": [
+    "rent for a flat",
+    "food at the market",
+    "a metro ticket",
+    "a hotel room"
+   ],
+   "audioClip": {
+    "storySlug": "mille-euros-sans-compter",
+    "storySource": "user",
+    "sentence": "Le loyer de Paris est cher.",
+    "targetWord": "loyer",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mille",
+  "sentence": "Il a besoin de [[mille]] euros.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a thousand",
+   "options": [
+    "a thousand",
+    "a hundred",
+    "ten thousand",
+    "a million"
+   ],
+   "audioClip": {
+    "storySlug": "mille-euros-sans-compter",
+    "storySource": "user",
+    "sentence": "Il a besoin de mille euros.",
+    "targetWord": "mille",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prêter",
+  "sentence": "“Tu peux me [[prêter]] de l'argent?”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to lend",
+   "options": [
+    "to lend",
+    "to send",
+    "to change",
+    "to show"
+   ],
+   "audioClip": {
+    "storySlug": "mille-euros-sans-compter",
+    "storySource": "user",
+    "sentence": "“Tu peux me prêter de l'argent?”",
+    "targetWord": "prêter",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rendre",
+  "sentence": "Je te [[rends]] tout bientôt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to give back",
+   "options": [
+    "to give back",
+    "to ask for",
+    "to take away",
+    "to spend"
+   ],
+   "audioClip": {
+    "storySlug": "mille-euros-sans-compter",
+    "storySource": "user",
+    "sentence": "Je te rends tout bientôt.",
+    "targetWord": "rends",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "garder",
+  "sentence": "Elle [[garde]] son argent pour une nouvelle machine.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to keep",
+   "options": [
+    "to keep",
+    "to spend",
+    "to lose",
+    "to borrow"
+   ],
+   "audioClip": {
+    "storySlug": "mille-euros-sans-compter",
+    "storySource": "user",
+    "sentence": "Elle garde son argent pour une nouvelle machine.",
+    "targetWord": "garde",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "acheter",
+  "sentence": "Elle n'[[achète]] pas de percolateur.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to buy",
+   "options": [
+    "to buy",
+    "to sell",
+    "to fix",
+    "to rent"
+   ],
+   "audioClip": {
+    "storySlug": "mille-euros-sans-compter",
+    "storySource": "user",
+    "sentence": "Elle n'achète pas de percolateur.",
+    "targetWord": "achète",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "besoin",
+  "sentence": "J'ai _____ d'un parapluie: il pleut.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "besoin",
+   "options": [
+    "besoin",
+    "peur",
+    "honte",
+    "horreur"
+   ],
+   "translation": "I _____ an umbrella: it is raining.",
+   "optionTranslations": [
+    "need",
+    "am afraid of",
+    "am ashamed of",
+    "hate"
+   ],
+   "audioClip": {
+    "storySlug": "mille-euros-sans-compter",
+    "storySource": "user",
+    "sentence": "J'ai besoin d'un parapluie: il pleut.",
+    "targetWord": "besoin",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cassé",
+  "sentence": "Le téléphone ne marche plus: il est _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cassé",
+   "options": [
+    "cassé",
+    "cher",
+    "petit",
+    "propre"
+   ],
+   "translation": "The phone does not work anymore: it is _____.",
+   "optionTranslations": [
+    "broken",
+    "expensive",
+    "small",
+    "clean"
+   ],
+   "audioClip": {
+    "storySlug": "mille-euros-sans-compter",
+    "storySource": "user",
+    "sentence": "Le téléphone ne marche plus: il est cassé.",
+    "targetWord": "cassé",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le percolateur",
+  "sentence": "Près du frigo, le vieux [[percolateur]] est cassé.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an espresso machine",
+   "options": [
+    "an espresso machine",
+    "a washing machine",
+    "a microwave oven",
+    "a dishwasher"
+   ],
+   "audioClip": {
+    "storySlug": "mille-euros-sans-compter",
+    "storySource": "user",
+    "sentence": "Près du frigo, le vieux percolateur est cassé.",
+    "targetWord": "percolateur",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "compter",
+  "sentence": "Elle ne [[compte]] pas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to count",
+   "options": [
+    "to count",
+    "to wait",
+    "to smile",
+    "to pay"
+   ],
+   "audioClip": {
+    "storySlug": "mille-euros-sans-compter",
+    "storySource": "user",
+    "sentence": "Elle ne compte pas.",
+    "targetWord": "compte",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bientôt",
+  "sentence": "Je te rends tout [[bientôt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "soon",
+   "options": [
+    "soon",
+    "today",
+    "never",
+    "every week"
+   ],
+   "audioClip": {
+    "storySlug": "mille-euros-sans-compter",
+    "storySource": "user",
+    "sentence": "Je te rends tout bientôt.",
+    "targetWord": "bientôt",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "combien",
+  "sentence": "“[[Combien]]?”, demande-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "how much?",
+   "options": [
+    "how much?",
+    "when?",
+    "why?",
+    "where?"
+   ],
+   "audioClip": {
+    "storySlug": "mille-euros-sans-compter",
+    "storySource": "user",
+    "sentence": "“Combien?”, demande-t-elle.",
+    "targetWord": "Combien",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "neuf",
+  "sentence": "Elle n'achète pas de percolateur [[neuf]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "brand new",
+   "options": [
+    "brand new",
+    "very small",
+    "very cheap",
+    "very loud"
+   ],
+   "audioClip": {
+    "storySlug": "mille-euros-sans-compter",
+    "storySource": "user",
+    "sentence": "Elle n'achète pas de percolateur neuf.",
+    "targetWord": "neuf",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "donner",
+  "sentence": "Elle ouvre la tirelire et [[donne]] l'argent.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to give",
+   "options": [
+    "to give",
+    "to hide",
+    "to count",
+    "to take"
+   ],
+   "audioClip": {
+    "storySlug": "mille-euros-sans-compter",
+    "storySource": "user",
+    "sentence": "Elle ouvre la tirelire et donne l'argent.",
+    "targetWord": "donne",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "mois",
+  "sentence": "Mars est un _____ de printemps.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mois",
+   "options": [
+    "mois",
+    "jour",
+    "soir",
+    "matin"
+   ],
+   "translation": "March is a spring _____.",
+   "optionTranslations": [
+    "month",
+    "day",
+    "evening",
+    "morning"
+   ],
+   "audioClip": {
+    "storySlug": "mille-euros-sans-compter",
+    "storySource": "user",
+    "sentence": "Mars est un mois de printemps.",
+    "targetWord": "mois",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,84 @@
+{
+ "a": {
+  "es": "En bas, le café n'a pas de réseau.",
+  "en": "Downstairs, the café has no signal.",
+  "g": "has (avoir)"
+ },
+ "appelle": {
+  "es": "Elle appelle Hugo.",
+  "en": "She calls Hugo.",
+  "g": "calls (appeler)"
+ },
+ "bas": {
+  "es": "En bas, le café n'a pas de réseau.",
+  "en": "Downstairs, the café has no signal.",
+  "g": "downstairs, down below (en bas)"
+ },
+ "chance": {
+  "es": "C'est sa dernière chance.",
+  "en": "It is her last chance.",
+  "g": "chance (la chance)"
+ },
+ "elle": {
+  "es": "Elle appelle Hugo.",
+  "en": "She calls Hugo.",
+  "g": "she (elle)"
+ },
+ "en": {
+  "es": "En bas, le café n'a pas de réseau.",
+  "en": "Downstairs, the café has no signal.",
+  "g": "in; en bas, downstairs"
+ },
+ "encore": {
+  "es": "Léa espère encore.",
+  "en": "Léa still hopes.",
+  "g": "still (encore)"
+ },
+ "entre": {
+  "es": "entre les cheminées.",
+  "en": "between the chimneys.",
+  "g": "between (entre)"
+ },
+ "il": {
+  "es": "Il n'entend pas le reste.",
+  "en": "He doesn't hear the rest.",
+  "g": "he (il)"
+ },
+ "pas": {
+  "es": "En bas, le café n'a pas de réseau.",
+  "en": "Downstairs, the café has no signal.",
+  "g": "not (ne ... pas)"
+ },
+ "reste": {
+  "es": "Il n'entend pas le reste.",
+  "en": "He doesn't hear the rest.",
+  "g": "the rest (le reste)",
+  "t": "noun"
+ },
+ "restes": {
+  "es": "Hugo, tu restes ici, avec moi.",
+  "en": "Hugo, you stay here, with me.",
+  "g": "you stay (rester)",
+  "t": "verb"
+ },
+ "rien": {
+  "es": "Rien.",
+  "en": "Nothing.",
+  "g": "nothing (rien)"
+ },
+ "serre": {
+  "es": "Elle serre le portable près du cœur.",
+  "en": "She holds the phone close to her heart.",
+  "g": "holds tight (serrer)"
+ },
+ "sèche": {
+  "es": "Sur le toit, le linge sèche",
+  "en": "On the roof, the washing dries",
+  "g": "dries (sécher)"
+ },
+ "tout": {
+  "es": "Pas du tout.",
+  "en": "Not at all.",
+  "g": "at all (pas du tout)"
+ }
+}

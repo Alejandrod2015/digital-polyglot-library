@@ -1,0 +1,57 @@
+{
+ "a": {
+  "es": "Hugo n'a pas assez d'argent.",
+  "en": "Hugo doesn't have enough money.",
+  "g": "has (avoir)"
+ },
+ "besoin": {
+  "es": "Il a besoin de mille euros.",
+  "en": "He needs a thousand euros.",
+  "g": "to need (avoir besoin de)"
+ },
+ "cher": {
+  "es": "Le loyer de Paris est cher.",
+  "en": "The rent in Paris is expensive.",
+  "g": "expensive (cher)"
+ },
+ "elle": {
+  "es": "Elle ne compte pas.",
+  "en": "She doesn't count.",
+  "g": "she (elle)"
+ },
+ "il": {
+  "es": "Il a besoin de mille euros.",
+  "en": "He needs a thousand euros.",
+  "g": "he (il)"
+ },
+ "machine": {
+  "es": "Léa garde son argent pour une nouvelle machine.",
+  "en": "Léa keeps her money for a new machine.",
+  "g": "coffee machine (la machine)"
+ },
+ "ne": {
+  "es": "Elle ne compte pas.",
+  "en": "She doesn't count.",
+  "g": "not (ne ... pas)"
+ },
+ "pas": {
+  "es": "Hugo n'a pas assez d'argent.",
+  "en": "Hugo doesn't have enough money.",
+  "g": "not (ne ... pas)"
+ },
+ "peu": {
+  "es": "Hugo arrive et attend un peu.",
+  "en": "Hugo arrives and waits a bit.",
+  "g": "a little (un peu)"
+ },
+ "retourne": {
+  "es": "Léa retourne au comptoir.",
+  "en": "Léa goes back to the counter.",
+  "g": "goes back (retourner)"
+ },
+ "tout": {
+  "es": "Je te rends tout bientôt.",
+  "en": "I'll pay it all back soon.",
+  "g": "all, everything (tout)"
+ }
+}

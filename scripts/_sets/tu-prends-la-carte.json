@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la gare,le jus,le sucre,la serviette",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la gare",
+     "answer": "a train station",
+     "options": [
+      "a train station",
+      "a fruit drink",
+      "sugar",
+      "a napkin"
+     ]
+    },
+    {
+     "word": "le jus",
+     "answer": "a fruit drink",
+     "options": [
+      "a train station",
+      "a fruit drink",
+      "sugar",
+      "a napkin"
+     ]
+    },
+    {
+     "word": "le sucre",
+     "answer": "sugar",
+     "options": [
+      "a train station",
+      "a fruit drink",
+      "sugar",
+      "a napkin"
+     ]
+    },
+    {
+     "word": "la serviette",
+     "answer": "a napkin",
+     "options": [
+      "a train station",
+      "a fruit drink",
+      "sugar",
+      "a napkin"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la carte",
+  "sentence": "Elle donne la [[carte]] du café.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the menu",
+   "options": [
+    "the menu",
+    "the bill",
+    "the receipt",
+    "the key"
+   ],
+   "audioClip": {
+    "storySlug": "tu-prends-la-carte",
+    "storySource": "user",
+    "sentence": "Elle donne la carte du café.",
+    "targetWord": "carte",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vouloir dire",
+  "sentence": "“Ah! Ça [[veut dire]] ça!”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to mean",
+   "options": [
+    "to mean",
+    "to want",
+    "to repeat",
+    "to hear"
+   ],
+   "audioClip": {
+    "storySlug": "tu-prends-la-carte",
+    "storySource": "user",
+    "sentence": "“Ah! Ça veut dire ça!”",
+    "targetWord": "veut dire",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "noir",
+  "sentence": "Elle sert un café [[noir]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "black, no milk",
+   "options": [
+    "black, no milk",
+    "white, with milk",
+    "sweet, with sugar",
+    "cold, with ice"
+   ],
+   "audioClip": {
+    "storySlug": "tu-prends-la-carte",
+    "storySource": "user",
+    "sentence": "Elle sert un café noir.",
+    "targetWord": "noir",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "amer",
+  "sentence": "Sans sucre, ce café est trop _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "amer",
+   "options": [
+    "amer",
+    "sucré",
+    "cher",
+    "grand"
+   ],
+   "translation": "Without sugar, this coffee is too _____.",
+   "optionTranslations": [
+    "bitter",
+    "sweet",
+    "expensive",
+    "big"
+   ],
+   "audioClip": {
+    "storySlug": "tu-prends-la-carte",
+    "storySource": "user",
+    "sentence": "Sans sucre, ce café est trop amer.",
+    "targetWord": "amer",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "d'où",
+  "sentence": "“[[D'où]] tu viens?”, demande-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "from where",
+   "options": [
+    "from where",
+    "since when",
+    "with whom",
+    "for whom"
+   ],
+   "audioClip": {
+    "storySlug": "tu-prends-la-carte",
+    "storySource": "user",
+    "sentence": "“D'où tu viens?”, demande-t-elle.",
+    "targetWord": "D'où",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apporter",
+  "sentence": "Elle [[apporte]] un jus d'orange.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to bring",
+   "options": [
+    "to bring",
+    "to order",
+    "to drink",
+    "to sell"
+   ],
+   "audioClip": {
+    "storySlug": "tu-prends-la-carte",
+    "storySource": "user",
+    "sentence": "Elle apporte un jus d'orange.",
+    "targetWord": "apporte",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'ardoise",
+  "sentence": "Sur l'[[ardoise]], elle écrit: “Carte bleue: non.”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a chalkboard",
+   "options": [
+    "a chalkboard",
+    "a notebook",
+    "a receipt",
+    "a window"
+   ],
+   "audioClip": {
+    "storySlug": "tu-prends-la-carte",
+    "storySource": "user",
+    "sentence": "Sur l'ardoise, elle écrit: “Carte bleue: non.”",
+    "targetWord": "ardoise",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "surpris",
+  "sentence": "Il est [[surpris]]: le café est petit.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "surprised",
+   "options": [
+    "surprised",
+    "tired",
+    "angry",
+    "happy"
+   ],
+   "audioClip": {
+    "storySlug": "tu-prends-la-carte",
+    "storySource": "user",
+    "sentence": "Il est surpris: le café est petit.",
+    "targetWord": "surpris",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pas grave",
+  "sentence": "“[[Pas grave]]. C'est combien?”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "no problem",
+   "options": [
+    "no problem",
+    "no thanks",
+    "not now",
+    "not here"
+   ],
+   "audioClip": {
+    "storySlug": "tu-prends-la-carte",
+    "storySource": "user",
+    "sentence": "“Pas grave. C'est combien?”",
+    "targetWord": "Pas grave",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "venir",
+  "sentence": "Il [[vient]] de Paris.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come",
+   "options": [
+    "to come",
+    "to go",
+    "to stay",
+    "to call"
+   ],
+   "audioClip": {
+    "storySlug": "tu-prends-la-carte",
+    "storySource": "user",
+    "sentence": "Il vient de Paris.",
+    "targetWord": "vient",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'ami",
+  "sentence": "Elle apporte un jus d'orange: gratuit, pour un [[ami]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a friend",
+   "options": [
+    "a friend",
+    "a neighbor",
+    "a customer",
+    "a brother"
+   ],
+   "audioClip": {
+    "storySlug": "tu-prends-la-carte",
+    "storySource": "user",
+    "sentence": "Elle apporte un jus d'orange: gratuit, pour un ami.",
+    "targetWord": "ami",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rire",
+  "sentence": "Elle [[rit]] avec la serviette sur la bouche.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to laugh",
+   "options": [
+    "to laugh",
+    "to cry",
+    "to cough",
+    "to eat"
+   ],
+   "audioClip": {
+    "storySlug": "tu-prends-la-carte",
+    "storySource": "user",
+    "sentence": "Elle rit avec la serviette sur la bouche.",
+    "targetWord": "rit",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "expliquer",
+  "sentence": "“Ici, pas de carte bleue”, [[explique]]-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to explain",
+   "options": [
+    "to explain",
+    "to shout",
+    "to forget",
+    "to promise"
+   ],
+   "audioClip": {
+    "storySlug": "tu-prends-la-carte",
+    "storySource": "user",
+    "sentence": "“Ici, pas de carte bleue”, explique-t-elle.",
+    "targetWord": "explique",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "faux",
+  "sentence": "“C'est gratuit?” “[[Faux]]!”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wrong",
+   "options": [
+    "wrong",
+    "true",
+    "funny",
+    "easy"
+   ],
+   "audioClip": {
+    "storySlug": "tu-prends-la-carte",
+    "storySource": "user",
+    "sentence": "“C'est gratuit?” “Faux!”",
+    "targetWord": "Faux",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "chaud",
+  "sentence": "Attends avant de boire: le thé est trop _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chaud",
+   "options": [
+    "chaud",
+    "cher",
+    "petit",
+    "vide"
+   ],
+   "translation": "Wait before drinking: the tea is too _____.",
+   "optionTranslations": [
+    "hot",
+    "expensive",
+    "small",
+    "empty"
+   ],
+   "audioClip": {
+    "storySlug": "tu-prends-la-carte",
+    "storySource": "user",
+    "sentence": "Attends avant de boire: le thé est trop chaud.",
+    "targetWord": "chaud",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "drôle",
+  "sentence": "Tout le monde rit: ce film est très _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "drôle",
+   "options": [
+    "drôle",
+    "triste",
+    "long",
+    "vieux"
+   ],
+   "translation": "Everybody laughs: this film is very _____.",
+   "optionTranslations": [
+    "funny",
+    "sad",
+    "long",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "tu-prends-la-carte",
+    "storySource": "user",
+    "sentence": "Tout le monde rit: ce film est très drôle.",
+    "targetWord": "drôle",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

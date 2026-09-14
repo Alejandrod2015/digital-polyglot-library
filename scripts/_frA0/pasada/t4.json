@@ -1,0 +1,470 @@
+[
+  {
+    "topic": "words-and-meanings",
+    "slotIndex": 0,
+    "title": "Tu prends la carte?",
+    "arcType": null,
+    "synopsis": "Maxime, un ami de Hugo, arrive de Paris. Léa ne veut pas l'aimer: Paris, c'est le départ de Hugo. Mais une petite question au café change tout, et Léa rit malgré elle.",
+    "text": "Maxime est un ami de Hugo. Il vient de Paris. Il arrive de la gare avec un grand sac. Maxime est surpris: le café est petit.\n\nLéa ne veut pas trouver Maxime sympa. Paris, c'est le départ de Hugo. Elle sert un café noir. “Attention, c'est chaud!” “D'où tu viens?”, demande Léa. “De la gare”, répond Maxime.\n\nIl met du sucre, parce que c'est amer. “Merci beaucoup. Tu prends la carte?”, demande Maxime. “La carte? C'est ça. Voilà”, dit Léa. Elle donne la carte.\n\nMaxime rit. “Non! La carte bleue, pour payer!” Léa comprend. “Ah! Ça veut dire ça!” C'est drôle. “Bravo, Léa!”\n\n“Ici, pas de carte bleue”, explique Léa. “Alors, c'est gratuit?” “C'est faux!” “Pas grave. C'est combien?”\n\nLéa rit avec la serviette sur la bouche. Elle apporte un jus d'orange: gratuit, pour un ami de Hugo. Sur l'ardoise, elle écrit: “Carte bleue: non.”",
+    "vocab": [
+      {
+        "word": "venir",
+        "surface": "vient",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To come; to arrive from another place."
+      },
+      {
+        "word": "la gare",
+        "surface": "gare",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Station; where trains arrive and leave."
+      },
+      {
+        "word": "surpris",
+        "surface": "surpris",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Surprised; not ready for what you see."
+      },
+      {
+        "word": "noir",
+        "surface": "noir",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Black; here, coffee with no milk in it."
+      },
+      {
+        "word": "chaud",
+        "surface": "chaud",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Hot; with a high temperature."
+      },
+      {
+        "word": "d'où",
+        "surface": "D'où",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Where from; asking about the place someone comes from."
+      },
+      {
+        "word": "apporter",
+        "surface": "apporte",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To bring; to carry something to someone."
+      },
+      {
+        "word": "le jus",
+        "surface": "jus",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Juice; a drink made from fruit."
+      },
+      {
+        "word": "le sucre",
+        "surface": "sucre",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Sugar; what makes coffee sweet."
+      },
+      {
+        "word": "amer",
+        "surface": "amer",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Bitter; strong and not sweet at all."
+      },
+      {
+        "word": "la carte",
+        "surface": "carte",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Menu or bank card; one word for both things."
+      },
+      {
+        "word": "c'est ça",
+        "surface": "C'est ça",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "That's right; yes, exactly that."
+      },
+      {
+        "word": "rire",
+        "surface": "rit",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To laugh; to make a happy sound."
+      },
+      {
+        "word": "vouloir dire",
+        "surface": "veut dire",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "To mean; what a word says."
+      },
+      {
+        "word": "drôle",
+        "surface": "drôle",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Funny; it makes you laugh."
+      },
+      {
+        "word": "expliquer",
+        "surface": "explique",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To explain; to say how something works."
+      },
+      {
+        "word": "faux",
+        "surface": "Faux",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Wrong; not true or not correct."
+      },
+      {
+        "word": "pas grave",
+        "surface": "Pas grave",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "No problem; it is not important."
+      },
+      {
+        "word": "la serviette",
+        "surface": "serviette",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Napkin; a small cloth or paper for your mouth."
+      },
+      {
+        "word": "l'ardoise",
+        "surface": "ardoise",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Chalkboard; where the café writes its prices."
+      }
+    ]
+  },
+  {
+    "topic": "words-and-meanings",
+    "slotIndex": 1,
+    "title": "Vingt minutes, c'est long",
+    "arcType": null,
+    "synopsis": "Hugo montre sa nouvelle vie à Léa: son travail, le métro, les minutes. Pour lui, Paris n'est pas loin. Pour Léa, les mêmes mots ne disent pas la même chose.",
+    "text": "À Paris, Hugo habite en face du métro. Le loyer coûte mille euros par mois. Ils regardent le plan tous les deux.\n\n“Mon travail est à vingt minutes”, dit Hugo. “Ce n'est pas loin.” “Vingt minutes? C'est long!”, répond Léa. Ici, le port est à dix minutes à pied. Tout est vraiment près.\n\nLe matin, le quai du métro est plein et étroit. Hugo arrive tôt au travail, et il part tard.\n\n“Tu marches un peu?”, demande Léa. “Pas du tout. J'achète un vélo neuf. C'est moins lent.” “Et le métro va vite?” “Ça dépend. Mais je n'ai pas besoin de voiture.”\n\nDehors, on entend le gros bateau du port. L'arrêt du bus est en bas. Pour Léa, vingt minutes, c'est presque toute la ville. Hugo ne comprend pas le sens. Léa pose sa montre sur la table. Elle ne la regarde pas.",
+    "vocab": [
+      {
+        "word": "habiter",
+        "surface": "habite",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To live; to have your home in a place."
+      },
+      {
+        "word": "en face",
+        "surface": "en face",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Opposite; on the other side, facing you."
+      },
+      {
+        "word": "le plan",
+        "surface": "plan",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Map; a drawing of the streets or metro lines."
+      },
+      {
+        "word": "tous les deux",
+        "surface": "tous les deux",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Both; the two people together."
+      },
+      {
+        "word": "long",
+        "surface": "long",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Long; it takes a lot of time."
+      },
+      {
+        "word": "dix",
+        "surface": "dix",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Ten; the number after nine."
+      },
+      {
+        "word": "à pied",
+        "surface": "à pied",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "On foot; walking, not by car or bus."
+      },
+      {
+        "word": "le quai",
+        "surface": "quai",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Platform; where you wait for the train."
+      },
+      {
+        "word": "arriver",
+        "surface": "arrive",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To arrive; to get to a place."
+      },
+      {
+        "word": "tôt",
+        "surface": "tôt",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Early; before the normal time."
+      },
+      {
+        "word": "tard",
+        "surface": "tard",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Late; after the normal time."
+      },
+      {
+        "word": "marcher",
+        "surface": "marches",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To walk; to go on foot."
+      },
+      {
+        "word": "le vélo",
+        "surface": "vélo",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Bike; you ride it with your feet."
+      },
+      {
+        "word": "lent",
+        "surface": "lent",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Slow; not fast at all."
+      },
+      {
+        "word": "vite",
+        "surface": "vite",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Fast; quickly, at high speed."
+      },
+      {
+        "word": "ça dépend",
+        "surface": "Ça dépend",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "It depends; the answer can change."
+      },
+      {
+        "word": "le bateau",
+        "surface": "bateau",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Boat; it goes on the water."
+      },
+      {
+        "word": "l'arrêt",
+        "surface": "arrêt",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Stop; where the bus stops for people."
+      },
+      {
+        "word": "presque",
+        "surface": "presque",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Almost; very nearly, but not quite."
+      },
+      {
+        "word": "la montre",
+        "surface": "montre",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Watch; a small clock you wear on your arm."
+      }
+    ]
+  },
+  {
+    "topic": "words-and-meanings",
+    "slotIndex": 2,
+    "title": "Les mots à l'envers",
+    "arcType": null,
+    "synopsis": "Léa garde un cahier pour les mots difficiles. Ce soir, une phrase simple ne veut pas dire ce qu'elle dit. Hugo explique, et Léa trouve enfin les mots qu'elle cherche.",
+    "text": "Dans son cahier, Léa écrit les mots durs. Chaque nuit, elle écrit au crayon. Le cahier est sur la nappe du café. Elle tourne la page.\n\nCe soir, Hugo boit un café à côté. Léa lit une phrase: “Tu me manques.” Léa ne comprend pas le sens. Elle a mal à la tête. “C'est vrai? Qui est triste?”, demande Léa. “C'est à l'envers”, explique Hugo. Il a raison: c'est difficile.\n\n“Toi, tu es loin. Moi, je suis triste. Alors: tu me manques.” “Ça y est, j'ai compris!”, dit Léa. “Enfin!”, rit Hugo. Elle efface avec la gomme. Elle écrit encore, toute seule: amis pour toujours.\n\nLéa regarde Hugo. “Tu me manques. Déjà.” “Mais je suis là!” “Oui. Déjà.” Hugo serre la main de Léa. “Moi aussi, je pense à toi.” Léa rêve. Dehors, la lune est douce. Sous la lune, il y a une étoile.",
+    "vocab": [
+      {
+        "word": "le cahier",
+        "surface": "cahier",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Notebook; a book with empty pages to write in."
+      },
+      {
+        "word": "écrire",
+        "surface": "écrit",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To write; to put words on paper."
+      },
+      {
+        "word": "dur",
+        "surface": "durs",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Hard; difficult to understand or do."
+      },
+      {
+        "word": "le crayon",
+        "surface": "crayon",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Pencil; you write with it and can erase it."
+      },
+      {
+        "word": "la nappe",
+        "surface": "nappe",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Tablecloth; the cloth on a table."
+      },
+      {
+        "word": "lire",
+        "surface": "lit",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To read; to look at words and understand them."
+      },
+      {
+        "word": "manquer",
+        "surface": "manques",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To miss; tu me manques means I miss you."
+      },
+      {
+        "word": "le sens",
+        "surface": "sens",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Meaning; what a word or sentence says."
+      },
+      {
+        "word": "vrai",
+        "surface": "vrai",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "True; real, not false."
+      },
+      {
+        "word": "à l'envers",
+        "surface": "à l'envers",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Backwards; in the other order."
+      },
+      {
+        "word": "compris",
+        "surface": "compris",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Understood; now clear in your head."
+      },
+      {
+        "word": "enfin",
+        "surface": "Enfin",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "At last; after a long wait."
+      },
+      {
+        "word": "effacer",
+        "surface": "efface",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To erase; to take words off the page."
+      },
+      {
+        "word": "la gomme",
+        "surface": "gomme",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Eraser; it takes pencil marks off paper."
+      },
+      {
+        "word": "pour toujours",
+        "surface": "pour toujours",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Forever; for all time."
+      },
+      {
+        "word": "déjà",
+        "surface": "Déjà",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Already; sooner than you think."
+      },
+      {
+        "word": "penser",
+        "surface": "pense",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To think; to have someone in your head."
+      },
+      {
+        "word": "la lune",
+        "surface": "lune",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Moon; the big light in the sky at night."
+      },
+      {
+        "word": "doux",
+        "surface": "douce",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Soft, gentle; calm and nice."
+      },
+      {
+        "word": "l'étoile",
+        "surface": "étoile",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Star; a small light in the night sky."
+      }
+    ]
+  }
+]

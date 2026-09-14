@@ -1,0 +1,98 @@
+{
+ "a": {
+  "es": "Aujourd'hui, il a une annonce:",
+  "en": "Today, he has a notice:",
+  "g": "has (avoir)"
+ },
+ "cher": {
+  "es": "C'est cher",
+  "en": "It's expensive",
+  "g": "expensive (cher)"
+ },
+ "elle": {
+  "es": "Elle sait, mais elle ne dit rien.",
+  "en": "She knows, but she says nothing.",
+  "g": "she (elle)"
+ },
+ "en": {
+  "es": "Hugo déménage en mars.",
+  "en": "Hugo moves out in March.",
+  "g": "in (en)"
+ },
+ "encore": {
+  "es": "Hugo ne part pas encore!",
+  "en": "Hugo isn't leaving yet!",
+  "g": "yet (pas encore: not yet)"
+ },
+ "entre": {
+  "es": "entre dans le café.",
+  "en": "comes into the café.",
+  "g": "comes in (entrer)"
+ },
+ "habitude": {
+  "es": "D'habitude, il vient le lundi, tard.",
+  "en": "Usually, he comes on Mondays, late.",
+  "g": "usually (d'habitude)"
+ },
+ "haut": {
+  "es": "L'appartement en haut est déjà presque vide.",
+  "en": "The flat upstairs is already almost empty.",
+  "g": "upstairs (en haut)"
+ },
+ "il": {
+  "es": "D'habitude, il vient le lundi, tard.",
+  "en": "Usually, he comes on Mondays, late.",
+  "g": "he (il)"
+ },
+ "lettres": {
+  "es": "Léa lit l'annonce sur la boîte aux lettres.",
+  "en": "Léa reads the notice on the letterbox.",
+  "g": "letterbox (boîte aux lettres)"
+ },
+ "louer": {
+  "es": "À louer.",
+  "en": "For rent.",
+  "g": "for rent (à louer); to rent out (louer)"
+ },
+ "machine": {
+  "es": "Et si je vends ma vieille machine?",
+  "en": "And what if I sell my old machine?",
+  "g": "coffee machine (la machine)"
+ },
+ "ne": {
+  "es": "Hugo ne part pas encore!",
+  "en": "Hugo isn't leaving yet!",
+  "g": "not (ne ... pas)"
+ },
+ "pas": {
+  "es": "Hugo ne part pas encore!",
+  "en": "Hugo isn't leaving yet!",
+  "g": "not (pas encore: not yet)"
+ },
+ "plus": {
+  "es": "Un locataire paie cent euros de plus.",
+  "en": "A tenant pays a hundred euros more.",
+  "g": "more (de plus)"
+ },
+ "porte": {
+  "es": "de la porte de Hugo.",
+  "en": "of Hugo's door.",
+  "g": "door (la porte)",
+  "t": "noun"
+ },
+ "rien": {
+  "es": "Elle sait, mais elle ne dit rien.",
+  "en": "She knows, but she says nothing.",
+  "g": "nothing; says nothing (ne dit rien)"
+ },
+ "si": {
+  "es": "Et si je vends ma vieille machine?",
+  "en": "And what if I sell my old machine?",
+  "g": "if (si)"
+ },
+ "tout": {
+  "es": "Antoine veut louer l'appartement tout de suite.",
+  "en": "Antoine wants to rent out the flat right away.",
+  "g": "right away (tout de suite)"
+ }
+}

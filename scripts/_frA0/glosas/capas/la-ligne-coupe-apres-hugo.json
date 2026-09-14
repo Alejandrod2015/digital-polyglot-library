@@ -1,0 +1,342 @@
+{
+ "ligne": {
+  "es": "La ligne coupe après Hugo",
+  "en": "The line cuts off after Hugo"
+ },
+ "coupe": {
+  "es": "La ligne coupe après Hugo",
+  "en": "The line cuts off after Hugo"
+ },
+ "après": {
+  "es": "La ligne coupe après Hugo",
+  "en": "The line cuts off after Hugo"
+ },
+ "sur": {
+  "es": "Sur le toit, le linge sèche",
+  "en": "On the roof, the washing dries"
+ },
+ "toit": {
+  "es": "Sur le toit, le linge sèche",
+  "en": "On the roof, the washing dries"
+ },
+ "linge": {
+  "es": "Sur le toit, le linge sèche",
+  "en": "On the roof, the washing dries"
+ },
+ "sèche": {
+  "es": "Sur le toit, le linge sèche",
+  "en": "On the roof, the washing dries"
+ },
+ "entre": {
+  "es": "entre les cheminées.",
+  "en": "between the chimneys."
+ },
+ "cheminées": {
+  "es": "entre les cheminées.",
+  "en": "between the chimneys."
+ },
+ "en": {
+  "es": "En bas, le café n'a pas de réseau.",
+  "en": "Downstairs, the café has no signal."
+ },
+ "bas": {
+  "es": "En bas, le café n'a pas de réseau.",
+  "en": "Downstairs, the café has no signal."
+ },
+ "café": {
+  "es": "En bas, le café n'a pas de réseau.",
+  "en": "Downstairs, the café has no signal."
+ },
+ "a": {
+  "es": "En bas, le café n'a pas de réseau.",
+  "en": "Downstairs, the café has no signal."
+ },
+ "pas": {
+  "es": "En bas, le café n'a pas de réseau.",
+  "en": "Downstairs, the café has no signal."
+ },
+ "de": {
+  "es": "En bas, le café n'a pas de réseau.",
+  "en": "Downstairs, the café has no signal."
+ },
+ "réseau": {
+  "es": "En bas, le café n'a pas de réseau.",
+  "en": "Downstairs, the café has no signal."
+ },
+ "alors": {
+  "es": "Alors Léa monte ici.",
+  "en": "So Léa comes up here."
+ },
+ "monte": {
+  "es": "Alors Léa monte ici.",
+  "en": "So Léa comes up here."
+ },
+ "ici": {
+  "es": "Alors Léa monte ici.",
+  "en": "So Léa comes up here."
+ },
+ "vent": {
+  "es": "Le vent est froid, et Léa est seule.",
+  "en": "The wind is cold, and Léa is alone."
+ },
+ "est": {
+  "es": "Le vent est froid, et Léa est seule.",
+  "en": "The wind is cold, and Léa is alone."
+ },
+ "froid": {
+  "es": "Le vent est froid, et Léa est seule.",
+  "en": "The wind is cold, and Léa is alone."
+ },
+ "et": {
+  "es": "Le vent est froid, et Léa est seule.",
+  "en": "The wind is cold, and Léa is alone."
+ },
+ "seule": {
+  "es": "Le vent est froid, et Léa est seule.",
+  "en": "The wind is cold, and Léa is alone."
+ },
+ "elle": {
+  "es": "Elle appelle Hugo.",
+  "en": "She calls Hugo."
+ },
+ "appelle": {
+  "es": "Elle appelle Hugo.",
+  "en": "She calls Hugo."
+ },
+ "portable": {
+  "es": "Le portable sonne deux fois.",
+  "en": "The phone rings twice."
+ },
+ "sonne": {
+  "es": "Le portable sonne deux fois.",
+  "en": "The phone rings twice."
+ },
+ "fois": {
+  "es": "Le portable sonne deux fois.",
+  "en": "The phone rings twice."
+ },
+ "allô": {
+  "es": "Allô, Léa?",
+  "en": "Hello, Léa?"
+ },
+ "répond": {
+  "es": "répond Hugo.",
+  "en": "Hugo answers."
+ },
+ "met": {
+  "es": "Léa met le haut-parleur.",
+  "en": "Léa puts it on speaker."
+ },
+ "haut-parleur": {
+  "es": "Léa met le haut-parleur.",
+  "en": "Léa puts it on speaker."
+ },
+ "paris": {
+  "es": "Paris, c'est génial.",
+  "en": "Paris is great."
+ },
+ "génial": {
+  "es": "Paris, c'est génial.",
+  "en": "Paris is great."
+ },
+ "je": {
+  "es": "Je dois commencer en mars",
+  "en": "I have to start in March"
+ },
+ "dois": {
+  "es": "Je dois commencer en mars",
+  "en": "I have to start in March"
+ },
+ "commencer": {
+  "es": "Je dois commencer en mars",
+  "en": "I have to start in March"
+ },
+ "mars": {
+  "es": "Je dois commencer en mars",
+  "en": "I have to start in March"
+ },
+ "dit": {
+  "es": "dit Hugo.",
+  "en": "Hugo says."
+ },
+ "voix": {
+  "es": "La voix de Hugo est claire.",
+  "en": "Hugo's voice is clear."
+ },
+ "claire": {
+  "es": "La voix de Hugo est claire.",
+  "en": "Hugo's voice is clear."
+ },
+ "espère": {
+  "es": "Léa espère encore.",
+  "en": "Léa still hopes."
+ },
+ "encore": {
+  "es": "Léa espère encore.",
+  "en": "Léa still hopes."
+ },
+ "sa": {
+  "es": "C'est sa dernière chance.",
+  "en": "It is her last chance."
+ },
+ "dernière": {
+  "es": "C'est sa dernière chance.",
+  "en": "It is her last chance."
+ },
+ "chance": {
+  "es": "C'est sa dernière chance.",
+  "en": "It is her last chance."
+ },
+ "veut": {
+  "es": "Elle veut dire une chose avant son départ.",
+  "en": "She wants to say one thing before he leaves."
+ },
+ "dire": {
+  "es": "Elle veut dire une chose avant son départ.",
+  "en": "She wants to say one thing before he leaves."
+ },
+ "chose": {
+  "es": "Elle veut dire une chose avant son départ.",
+  "en": "She wants to say one thing before he leaves."
+ },
+ "avant": {
+  "es": "Elle veut dire une chose avant son départ.",
+  "en": "She wants to say one thing before he leaves."
+ },
+ "son": {
+  "es": "Elle veut dire une chose avant son départ.",
+  "en": "She wants to say one thing before he leaves."
+ },
+ "départ": {
+  "es": "Elle veut dire une chose avant son départ.",
+  "en": "She wants to say one thing before he leaves."
+ },
+ "parle": {
+  "es": "Elle parle fort:",
+  "en": "She speaks loudly:"
+ },
+ "fort": {
+  "es": "Elle parle fort:",
+  "en": "She speaks loudly:"
+ },
+ "tu": {
+  "es": "Hugo, tu restes ici, avec moi.",
+  "en": "Hugo, you stay here, with me."
+ },
+ "restes": {
+  "es": "Hugo, tu restes ici, avec moi.",
+  "en": "Hugo, you stay here, with me."
+ },
+ "avec": {
+  "es": "Hugo, tu restes ici, avec moi.",
+  "en": "Hugo, you stay here, with me."
+ },
+ "moi": {
+  "es": "Hugo, tu restes ici, avec moi.",
+  "en": "Hugo, you stay here, with me."
+ },
+ "mais": {
+  "es": "Mais la ligne est coupée après",
+  "en": "But the line is cut off after"
+ },
+ "coupée": {
+  "es": "Mais la ligne est coupée après",
+  "en": "But the line is cut off after"
+ },
+ "il": {
+  "es": "Il n'entend pas le reste.",
+  "en": "He doesn't hear the rest."
+ },
+ "entend": {
+  "es": "Il n'entend pas le reste.",
+  "en": "He doesn't hear the rest."
+ },
+ "reste": {
+  "es": "Il n'entend pas le reste.",
+  "en": "He doesn't hear the rest."
+ },
+ "attend": {
+  "es": "Léa attend.",
+  "en": "Léa waits."
+ },
+ "rappelle": {
+  "es": "Hugo rappelle.",
+  "en": "Hugo calls back."
+ },
+ "entends": {
+  "es": "Je n'entends pas.",
+  "en": "I can't hear."
+ },
+ "demandes": {
+  "es": "Tu demandes quoi?",
+  "en": "What are you asking?"
+ },
+ "quoi": {
+  "es": "Tu demandes quoi?",
+  "en": "What are you asking?"
+ },
+ "ferme": {
+  "es": "Léa ferme les yeux et retient ses larmes.",
+  "en": "Léa closes her eyes and holds back her tears."
+ },
+ "yeux": {
+  "es": "Léa ferme les yeux et retient ses larmes.",
+  "en": "Léa closes her eyes and holds back her tears."
+ },
+ "retient": {
+  "es": "Léa ferme les yeux et retient ses larmes.",
+  "en": "Léa closes her eyes and holds back her tears."
+ },
+ "ses": {
+  "es": "Léa ferme les yeux et retient ses larmes.",
+  "en": "Léa closes her eyes and holds back her tears."
+ },
+ "larmes": {
+  "es": "Léa ferme les yeux et retient ses larmes.",
+  "en": "Léa closes her eyes and holds back her tears."
+ },
+ "rien": {
+  "es": "Rien.",
+  "en": "Nothing."
+ },
+ "juste": {
+  "es": "Juste bonjour",
+  "en": "Just hello"
+ },
+ "bonjour": {
+  "es": "Juste bonjour",
+  "en": "Just hello"
+ },
+ "es": {
+  "es": "Tu es triste?",
+  "en": "Are you sad?"
+ },
+ "triste": {
+  "es": "Tu es triste?",
+  "en": "Are you sad?"
+ },
+ "demande": {
+  "es": "demande Hugo.",
+  "en": "Hugo asks."
+ },
+ "non": {
+  "es": "Non.",
+  "en": "No."
+ },
+ "tout": {
+  "es": "Pas du tout.",
+  "en": "Not at all."
+ },
+ "serre": {
+  "es": "Elle serre le portable près du cœur.",
+  "en": "She holds the phone close to her heart."
+ },
+ "près": {
+  "es": "Elle serre le portable près du cœur.",
+  "en": "She holds the phone close to her heart."
+ },
+ "cœur": {
+  "es": "Elle serre le portable près du cœur.",
+  "en": "She holds the phone close to her heart."
+ }
+}

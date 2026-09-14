@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "france",
+  "registro": "festivo con nudo en la garganta: luces de papel, velas, la ultima partida en la placette y lo que se regala cuando no hay dinero",
+  "espina": "Enero. El ultimo cumpleanos de Hugo en Marseille. Lea regala lo unico que tiene de valor, pierde a proposito la ultima partida y reparten el juego como promesa de volver.",
+  "recursos": "A0: repeticion ritmica, contraste con mais, imagen concreta (la emocion como gesto visible)",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Lea quiere hacerle a Hugo un regalo que le recuerde Marseille",
+      "impide": "no tiene dinero: presto sus ahorros a Hugo; su hermana Louise viene a ayudar y no hay nada que comprar",
+      "cuesta": "regala su boule de la suerte, la de su primera victoria contra Hugo",
+      "cambia": "el regalo no se compra: se da algo propio",
+      "emocion": "Louise corta el papel y Lea tarda en soltar la boule"
+    },
+    {
+      "slot": "2",
+      "quiere": "Lea quiere que el ultimo cumpleanos de Hugo en la placette sea una fiesta alegre",
+      "impide": "en la ultima partida de petanque Hugo va a perder, y Lea no quiere que pierda esta noche",
+      "cuesta": "Lea pierde a proposito, como el en el tema 1; Hugo lo nota y no dice nada",
+      "cambia": "ahora es ella la que se deja ganar",
+      "emocion": "aplaude muy fuerte y no le mira a los ojos"
+    },
+    {
+      "slot": "3",
+      "quiere": "Hugo quiere devolverle algo a Lea al abrir el regalo",
+      "impide": "reconoce la boule de la suerte y no quiere quitarsela",
+      "cuesta": "reparten el juego: el se lleva la boule, ella se queda el cochonnet; el juego ya no esta entero en la placette",
+      "cambia": "hay una promesa de volver a jugar",
+      "emocion": "Lea le cierra la mano sobre la boule"
+    }
+  ]
+}

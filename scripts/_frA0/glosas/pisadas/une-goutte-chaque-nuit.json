@@ -1,0 +1,62 @@
+{
+ "a": {
+  "es": "Il y a de l'eau partout!",
+  "en": "There is water everywhere!",
+  "g": "there is (il y a)"
+ },
+ "il": {
+  "es": "Il y a de l'eau partout!",
+  "en": "There is water everywhere!",
+  "g": "there is (il y a)"
+ },
+ "besoin": {
+  "es": "Maintenant, tu n'as plus besoin de moi.",
+  "en": "Now you don't need me any more.",
+  "g": "to need (avoir besoin de)"
+ },
+ "elle": {
+  "es": "Elle ouvre le robinet, puis elle le ferme.",
+  "en": "She opens the tap, then she closes it.",
+  "g": "she (elle)"
+ },
+ "ne": {
+  "es": "Tu ne sais pas réparer.",
+  "en": "You don't know how to fix it.",
+  "g": "not (ne ... pas)"
+ },
+ "pas": {
+  "es": "Tu ne sais pas réparer.",
+  "en": "You don't know how to fix it.",
+  "g": "not (ne ... pas)"
+ },
+ "plus": {
+  "es": "Maintenant, tu n'as plus besoin de moi.",
+  "en": "Now you don't need me any more.",
+  "g": "no longer (ne ... plus)"
+ },
+ "raison": {
+  "es": "Tu as raison",
+  "en": "You are right",
+  "g": "to be right (avoir raison)"
+ },
+ "serre": {
+  "es": "Il serre le tuyau, deux fois.",
+  "en": "He tightens the pipe, twice.",
+  "g": "tightens (serrer)"
+ },
+ "sèche": {
+  "es": "Léa sèche le sol avec une éponge.",
+  "en": "Léa dries the floor with a sponge.",
+  "g": "dries (sécher)"
+ },
+ "temps": {
+  "es": "Le robinet du café coule tout le temps.",
+  "en": "The café tap drips all the time.",
+  "g": "all the time (tout le temps)"
+ },
+ "tout": {
+  "es": "Le robinet du café coule tout le temps.",
+  "en": "The café tap drips all the time.",
+  "g": "all the time (tout le temps)"
+ }
+}

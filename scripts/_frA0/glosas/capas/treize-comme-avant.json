@@ -1,0 +1,342 @@
+{
+ "comme": {
+  "es": "Treize, comme avant",
+  "en": "Thirteen, like before"
+ },
+ "avant": {
+  "es": "Treize, comme avant",
+  "en": "Thirteen, like before"
+ },
+ "samedi": {
+  "es": "Un samedi d'avril, Hugo arrive en TGV, heureux.",
+  "en": "One Saturday in April, Hugo arrives by TGV, happy."
+ },
+ "avril": {
+  "es": "Un samedi d'avril, Hugo arrive en TGV, heureux.",
+  "en": "One Saturday in April, Hugo arrives by TGV, happy."
+ },
+ "arrive": {
+  "es": "Un samedi d'avril, Hugo arrive en TGV, heureux.",
+  "en": "One Saturday in April, Hugo arrives by TGV, happy."
+ },
+ "en": {
+  "es": "Un samedi d'avril, Hugo arrive en TGV, heureux.",
+  "en": "One Saturday in April, Hugo arrives by TGV, happy."
+ },
+ "tgv": {
+  "es": "Un samedi d'avril, Hugo arrive en TGV, heureux.",
+  "en": "One Saturday in April, Hugo arrives by TGV, happy."
+ },
+ "heureux": {
+  "es": "Un samedi d'avril, Hugo arrive en TGV, heureux.",
+  "en": "One Saturday in April, Hugo arrives by TGV, happy."
+ },
+ "bon": {
+  "es": "Bon retour, Hugo!",
+  "en": "Welcome back, Hugo!"
+ },
+ "retour": {
+  "es": "Bon retour, Hugo!",
+  "en": "Welcome back, Hugo!"
+ },
+ "dit": {
+  "es": "dit Léa.",
+  "en": "Léa says."
+ },
+ "son": {
+  "es": "Son appartement est à Clara, maintenant.",
+  "en": "His flat is Clara's now."
+ },
+ "appartement": {
+  "es": "Son appartement est à Clara, maintenant.",
+  "en": "His flat is Clara's now."
+ },
+ "est": {
+  "es": "Son appartement est à Clara, maintenant.",
+  "en": "His flat is Clara's now."
+ },
+ "à": {
+  "es": "Son appartement est à Clara, maintenant.",
+  "en": "His flat is Clara's now."
+ },
+ "maintenant": {
+  "es": "Son appartement est à Clara, maintenant.",
+  "en": "His flat is Clara's now."
+ },
+ "il": {
+  "es": "Il dort sur le long canapé du café.",
+  "en": "He sleeps on the long sofa in the café."
+ },
+ "dort": {
+  "es": "Il dort sur le long canapé du café.",
+  "en": "He sleeps on the long sofa in the café."
+ },
+ "sur": {
+  "es": "Il dort sur le long canapé du café.",
+  "en": "He sleeps on the long sofa in the café."
+ },
+ "long": {
+  "es": "Il dort sur le long canapé du café.",
+  "en": "He sleeps on the long sofa in the café."
+ },
+ "canapé": {
+  "es": "Il dort sur le long canapé du café.",
+  "en": "He sleeps on the long sofa in the café."
+ },
+ "café": {
+  "es": "Il dort sur le long canapé du café.",
+  "en": "He sleeps on the long sofa in the café."
+ },
+ "rêve": {
+  "es": "Il rêve sur un vieil oreiller.",
+  "en": "He dreams on an old pillow."
+ },
+ "vieil": {
+  "es": "Il rêve sur un vieil oreiller.",
+  "en": "He dreams on an old pillow."
+ },
+ "oreiller": {
+  "es": "Il rêve sur un vieil oreiller.",
+  "en": "He dreams on an old pillow."
+ },
+ "sent": {
+  "es": "Le café sent la baguette.",
+  "en": "The café smells of baguette."
+ },
+ "baguette": {
+  "es": "Le café sent la baguette.",
+  "en": "The café smells of baguette."
+ },
+ "au": {
+  "es": "Au petit-déjeuner, Hugo a un pain au chocolat.",
+  "en": "At breakfast, Hugo has a chocolate croissant."
+ },
+ "petit-déjeuner": {
+  "es": "Au petit-déjeuner, Hugo a un pain au chocolat.",
+  "en": "At breakfast, Hugo has a chocolate croissant."
+ },
+ "a": {
+  "es": "Au petit-déjeuner, Hugo a un pain au chocolat.",
+  "en": "At breakfast, Hugo has a chocolate croissant."
+ },
+ "pain": {
+  "es": "Au petit-déjeuner, Hugo a un pain au chocolat.",
+  "en": "At breakfast, Hugo has a chocolate croissant."
+ },
+ "chocolat": {
+  "es": "Au petit-déjeuner, Hugo a un pain au chocolat.",
+  "en": "At breakfast, Hugo has a chocolate croissant."
+ },
+ "mange": {
+  "es": "Il mange encore un peu.",
+  "en": "He eats a little more."
+ },
+ "encore": {
+  "es": "Il mange encore un peu.",
+  "en": "He eats a little more."
+ },
+ "peu": {
+  "es": "Il mange encore un peu.",
+  "en": "He eats a little more."
+ },
+ "partie": {
+  "es": "Une partie, comme avant?",
+  "en": "A game, like before?"
+ },
+ "demande": {
+  "es": "demande Hugo.",
+  "en": "Hugo asks."
+ },
+ "oui": {
+  "es": "Oui.",
+  "en": "Yes."
+ },
+ "mais": {
+  "es": "Mais personne ne triche",
+  "en": "But nobody cheats"
+ },
+ "personne": {
+  "es": "Mais personne ne triche",
+  "en": "But nobody cheats"
+ },
+ "ne": {
+  "es": "Mais personne ne triche",
+  "en": "But nobody cheats"
+ },
+ "triche": {
+  "es": "Mais personne ne triche",
+  "en": "But nobody cheats"
+ },
+ "on": {
+  "es": "On joue en treize points.",
+  "en": "We play to thirteen points."
+ },
+ "joue": {
+  "es": "On joue en treize points.",
+  "en": "We play to thirteen points."
+ },
+ "points": {
+  "es": "On joue en treize points.",
+  "en": "We play to thirteen points."
+ },
+ "tu": {
+  "es": "Tu paies le café?",
+  "en": "Are you paying for the coffee?"
+ },
+ "paies": {
+  "es": "Tu paies le café?",
+  "en": "Are you paying for the coffee?"
+ },
+ "parie": {
+  "es": "On parie!",
+  "en": "Let's bet!"
+ },
+ "regarde": {
+  "es": "Clara regarde, dans son manteau jaune.",
+  "en": "Clara watches, in her yellow coat."
+ },
+ "dans": {
+  "es": "Clara regarde, dans son manteau jaune.",
+  "en": "Clara watches, in her yellow coat."
+ },
+ "manteau": {
+  "es": "Clara regarde, dans son manteau jaune.",
+  "en": "Clara watches, in her yellow coat."
+ },
+ "jaune": {
+  "es": "Clara regarde, dans son manteau jaune.",
+  "en": "Clara watches, in her yellow coat."
+ },
+ "tire": {
+  "es": "Hugo tire droit.",
+  "en": "Hugo shoots straight."
+ },
+ "droit": {
+  "es": "Hugo tire droit.",
+  "en": "Hugo shoots straight."
+ },
+ "lance": {
+  "es": "Léa lance.",
+  "en": "Léa throws."
+ },
+ "égalité": {
+  "es": "c'est l'égalité.",
+  "en": "it's a tie."
+ },
+ "et": {
+  "es": "Et la revanche?",
+  "en": "And the rematch?"
+ },
+ "revanche": {
+  "es": "Et la revanche?",
+  "en": "And the rematch?"
+ },
+ "rit": {
+  "es": "rit Hugo.",
+  "en": "Hugo laughs."
+ },
+ "pas": {
+  "es": "Pas encore!",
+  "en": "Not yet!"
+ },
+ "dernière": {
+  "es": "La dernière boule de Léa roule.",
+  "en": "Léa's last boule rolls."
+ },
+ "boule": {
+  "es": "La dernière boule de Léa roule.",
+  "en": "Léa's last boule rolls."
+ },
+ "de": {
+  "es": "La dernière boule de Léa roule.",
+  "en": "Léa's last boule rolls."
+ },
+ "roule": {
+  "es": "La dernière boule de Léa roule.",
+  "en": "Léa's last boule rolls."
+ },
+ "elle": {
+  "es": "Elle touche le cochonnet.",
+  "en": "It touches the jack."
+ },
+ "touche": {
+  "es": "Elle touche le cochonnet.",
+  "en": "It touches the jack."
+ },
+ "cochonnet": {
+  "es": "Elle touche le cochonnet.",
+  "en": "It touches the jack."
+ },
+ "perd": {
+  "es": "Personne ne perd exprès.",
+  "en": "Nobody loses on purpose."
+ },
+ "exprès": {
+  "es": "Personne ne perd exprès.",
+  "en": "Nobody loses on purpose."
+ },
+ "lève": {
+  "es": "Léa lève les bras.",
+  "en": "Léa raises her arms."
+ },
+ "bras": {
+  "es": "Léa lève les bras.",
+  "en": "Léa raises her arms."
+ },
+ "ramasse": {
+  "es": "Hugo ramasse les boules.",
+  "en": "Hugo picks up the boules."
+ },
+ "boules": {
+  "es": "Hugo ramasse les boules.",
+  "en": "Hugo picks up the boules."
+ },
+ "lui": {
+  "es": "Il lui fait la bise, sur la joue.",
+  "en": "He gives her a kiss, on the cheek."
+ },
+ "fait": {
+  "es": "Il lui fait la bise, sur la joue.",
+  "en": "He gives her a kiss, on the cheek."
+ },
+ "bise": {
+  "es": "Il lui fait la bise, sur la joue.",
+  "en": "He gives her a kiss, on the cheek."
+ },
+ "prochaine": {
+  "es": "La prochaine fois, c'est moi",
+  "en": "Next time, it's me"
+ },
+ "fois": {
+  "es": "La prochaine fois, c'est moi",
+  "en": "Next time, it's me"
+ },
+ "moi": {
+  "es": "La prochaine fois, c'est moi",
+  "en": "Next time, it's me"
+ },
+ "sourit": {
+  "es": "sourit Hugo.",
+  "en": "Hugo smiles."
+ },
+ "ici": {
+  "es": "Ici, tu es toujours à la maison",
+  "en": "Here, you are always at home"
+ },
+ "es": {
+  "es": "Ici, tu es toujours à la maison",
+  "en": "Here, you are always at home"
+ },
+ "toujours": {
+  "es": "Ici, tu es toujours à la maison",
+  "en": "Here, you are always at home"
+ },
+ "maison": {
+  "es": "Ici, tu es toujours à la maison",
+  "en": "Here, you are always at home"
+ },
+ "répond": {
+  "es": "répond Léa.",
+  "en": "Léa answers."
+ }
+}

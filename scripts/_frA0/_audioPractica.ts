@@ -10,7 +10,11 @@ const p = new PrismaClient();
   for (const set of sets) for (const e of set.exercises) {
     const pay: any = e.payload ?? {};
     if (e.type === "meaning_in_context") {
-      if (pay.wordClipUrl) wHay++; else { wFalta++; wChars += String(pay.audioClip?.targetWord ?? e.word).length; }
+      // El clip de palabra vive en payload.audioClip.wordClipUrl, que es donde
+      // lo escribe _genWordClips.ts. Leerlo en la raiz (pay.wordClipUrl) daba
+      // "hay 0" SIEMPRE, antes y despues de generar los 272: un campo que no
+      // existe no distingue el trabajo hecho del pendiente.
+      if (pay.audioClip?.wordClipUrl) wHay++; else { wFalta++; wChars += String(pay.audioClip?.targetWord ?? e.word).length; }
     }
     if (e.type === "fill_blank") {
       const frase = String(pay.audioClip?.sentence ?? "");

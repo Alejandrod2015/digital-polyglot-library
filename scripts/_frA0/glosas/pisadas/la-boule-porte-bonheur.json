@@ -1,0 +1,62 @@
+{
+ "a": {
+  "es": "Samedi, Hugo a trente-trois ans.",
+  "en": "On Saturday, Hugo turns thirty-three.",
+  "g": "is ... years old (avoir ... ans)"
+ },
+ "appelle": {
+  "es": "La sœur de Léa s'appelle Louise.",
+  "en": "Léa's sister is called Louise.",
+  "g": "is called, is named (s'appeler)"
+ },
+ "café": {
+  "es": "Le tiroir sent le café.",
+  "en": "The drawer smells of coffee.",
+  "g": "coffee (le café)"
+ },
+ "chance": {
+  "es": "Cette boule porte chance.",
+  "en": "This boule brings luck.",
+  "g": "luck (la chance)"
+ },
+ "elle": {
+  "es": "Elle vient pour aider.",
+  "en": "She comes to help.",
+  "g": "she (elle)"
+ },
+ "encore": {
+  "es": "Je compte, et je compte encore.",
+  "en": "I count, and I count again.",
+  "g": "again (encore)"
+ },
+ "il": {
+  "es": "Dedans, il y a sa boule porte-bonheur.",
+  "en": "Inside, there is her lucky boule.",
+  "g": "there is (il y a)"
+ },
+ "mal": {
+  "es": "Pas mal, non?",
+  "en": "Not bad, is it?",
+  "g": "not bad (pas mal)"
+ },
+ "pas": {
+  "es": "Pas mal, non?",
+  "en": "Not bad, is it?",
+  "g": "not (pas mal: not bad)"
+ },
+ "porte": {
+  "es": "Cette boule porte chance.",
+  "en": "This boule brings luck.",
+  "g": "brings (porter)"
+ },
+ "rien": {
+  "es": "Et je n'ai rien.",
+  "en": "And I have nothing.",
+  "g": "nothing (ne ... rien)"
+ },
+ "sent": {
+  "es": "Le tiroir sent le café.",
+  "en": "The drawer smells of coffee.",
+  "g": "smells of (sentir)"
+ }
+}

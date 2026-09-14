@@ -27,16 +27,18 @@ import * as path from "path";
 
 import { VOZ_POR_TEMA } from "./_a2Voces";
 import { VOZ_POR_TEMA_B1_LATAM } from "./_b1LatamVoces";
+import { VOZ_POR_TEMA_FR_A0 } from "./_frA0Voces";
 
 // Ampliado el 2026-09-07 para el B1 latam (pedir-una-vez): --journey b1-latam
 // usa su journey, su mapa de voces y su bundle de glosas; sin flag, el A2.
 const PERFILES: Record<string, { journey: string; voces: Record<string, string>; bundle: string }> = {
   a2: { journey: "cmtgelq560007j84n3ujx9bpd", voces: VOZ_POR_TEMA, bundle: "spanish-traveler-latam-a2" },
   "b1-latam": { journey: "cmtmylg7k0007321h6t7njesx", voces: VOZ_POR_TEMA_B1_LATAM, bundle: "spanish-traveler-latam-b1" },
+  "fr-a0": { journey: "cmtwo6cys0007j8yzg6ni3fsc", voces: VOZ_POR_TEMA_FR_A0, bundle: "french-friends-a0" },
 };
 const pi = process.argv.indexOf("--journey");
 const PERFIL = PERFILES[pi >= 0 ? process.argv[pi + 1] : "a2"];
-if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam");
+if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam | fr-a0");
 const JOURNEY = PERFIL.journey;
 
 const prisma = new PrismaClient();

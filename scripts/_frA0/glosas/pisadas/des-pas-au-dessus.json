@@ -1,0 +1,84 @@
+{
+ "a": {
+  "es": "Elle a un manteau jaune",
+  "en": "She has a yellow coat",
+  "g": "has (avoir)"
+ },
+ "au-dessus": {
+  "es": "Des pas au-dessus",
+  "en": "Steps upstairs",
+  "g": "upstairs, above (au-dessus)"
+ },
+ "bas": {
+  "es": "Chez moi, c'est en bas.",
+  "en": "My place is downstairs.",
+  "g": "downstairs (en bas)"
+ },
+ "elle": {
+  "es": "Elle veut louer",
+  "en": "She wants to rent it",
+  "g": "she (elle)"
+ },
+ "en": {
+  "es": "Chez moi, c'est en bas.",
+  "en": "My place is downstairs.",
+  "g": "in; en bas, downstairs"
+ },
+ "encore": {
+  "es": "Hugo est encore là.",
+  "en": "Hugo is still here.",
+  "g": "still (encore)"
+ },
+ "il": {
+  "es": "Il est beau, ce chien",
+  "en": "He's beautiful, this dog",
+  "g": "he, it (il: the dog)"
+ },
+ "laisse": {
+  "es": "Le gros chien tire sur sa laisse.",
+  "en": "The big dog pulls on its lead.",
+  "g": "lead for a dog (la laisse)",
+  "t": "noun"
+ },
+ "là": {
+  "es": "Hugo est encore là.",
+  "en": "Hugo is still here.",
+  "g": "still here (encore là)"
+ },
+ "louer": {
+  "es": "Elle veut louer",
+  "en": "She wants to rent it",
+  "g": "to rent (louer)"
+ },
+ "mot": {
+  "es": "Elle laisse un mot:",
+  "en": "She leaves a note:",
+  "g": "a short note (le mot)"
+ },
+ "ne": {
+  "es": "Là-haut, on ne voit rien.",
+  "en": "Up there, you can't see anything.",
+  "g": "not (ne ... rien: nothing)"
+ },
+ "pas": {
+  "es": "Des pas au-dessus",
+  "en": "Steps upstairs",
+  "g": "steps (le pas)",
+  "t": "noun"
+ },
+ "rien": {
+  "es": "Là-haut, on ne voit rien.",
+  "en": "Up there, you can't see anything.",
+  "g": "nothing (ne ... rien)"
+ },
+ "tire": {
+  "es": "Le gros chien tire sur sa laisse.",
+  "en": "The big dog pulls on its lead.",
+  "g": "pulls (tirer)"
+ },
+ "tout": {
+  "es": "Tout à coup, c'est tranquille.",
+  "en": "Suddenly, it's quiet.",
+  "g": "suddenly (tout à coup)"
+ }
+}

@@ -5421,5 +5421,460 @@
         }
       ]
     }
+  },
+  "cmtwo6cys0007j8yzg6ni3fsc#helping-and-favours": {
+    "cerrado": "2026-09-11T11:13:21.326Z",
+    "hash": "8525cb456221fb0f",
+    "historias": [
+      "helping-and-favours#0 le-fauteuil-descend",
+      "helping-and-favours#1 mille-euros-sans-compter",
+      "helping-and-favours#2 une-goutte-chaque-nuit"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"practico y calido: manos ocupadas, cosas que pesan, pequenas deudas entre vecinos y amigos\", espina \"Hugo se va a Paris en marzo. En noviembre los favores empiezan a preparar su ausencia: lo que deja, lo que necesita y lo que arregla para cuando no este.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dit\" 31%)",
+      "arranques de parrafo variados (mas repetido \"hugo\", 20%)",
+      "densidad 5.5 palabras por oracion (techo 9 en a0)",
+      "seguidilla 31/63 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.12 sobre 42 plazas · 37 salen una sola vez | ancladas: 18/60 (30%) | cola: 37/42 portables con un solo encuentro (88%, tope 30%) | de un solo encuentro: en bas, lourd, porter, étroit, aider, gratuit, ensemble, a mal, dos, Merci beaucoup, De rien, tous les jours, argent, mille, cassé, garde, compte, prêter, rends, bientôt, Combien, neuf, achète, donne, mois, coule, chaque nuit, répare, dessous, Bravo…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: helping-and-favours (Hugo, Léa)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "france",
+      "registro": "practico y calido: manos ocupadas, cosas que pesan, pequenas deudas entre vecinos y amigos",
+      "espina": "Hugo se va a Paris en marzo. En noviembre los favores empiezan a preparar su ausencia: lo que deja, lo que necesita y lo que arregla para cuando no este.",
+      "recursos": "A0: repeticion ritmica (une goutte, encore une goutte), contraste con mais, imagen concreta (la emocion como gesto visible)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Lea quiere bajar al cafe el viejo sillon que Hugo le regala antes de irse",
+          "impide": "pesa, la escalera es estrecha y Hugo esta trabajando; Chloe, una vecina con furgoneta, se ofrece a ayudar",
+          "cuesta": "a cambio Chloe pide un cafe gratis cada dia hasta marzo, y el sillon ocupa el rincon de la ventana donde Lea se sentaba",
+          "cambia": "el sitio de Hugo se queda en el cafe aunque el se vaya",
+          "emocion": "Lea se sienta en el sillon, cierra los ojos y huele el jersey de Hugo en el cojin"
+        },
+        {
+          "slot": "2",
+          "quiere": "Hugo necesita dinero para la fianza del piso de Paris y le cuesta pedirlo",
+          "impide": "Lea ahorra en una hucha para un percolateur nuevo; el viejo esta roto",
+          "cuesta": "Lea le presta sus ahorros: no hay percolateur nuevo, y paga ella para que el se vaya",
+          "cambia": "Lea ya no solo acepta la marcha: la ayuda",
+          "emocion": "le da los billetes sin contarlos y vuelve a la barra"
+        },
+        {
+          "slot": "3",
+          "quiere": "Hugo quiere devolver el favor: arreglar el grifo del cafe, que gotea desde siempre",
+          "impide": "no sabe, lo moja todo y Lea se rie",
+          "cuesta": "lo arregla, y la gota que Lea oia cada noche desaparece; el dice que ahora ella ya no le necesita, y ella no contesta",
+          "cambia": "Lea entiende que el arregla las cosas para cuando no este",
+          "emocion": "abre y cierra el grifo dos veces, y no cae ninguna gota"
+        }
+      ]
+    }
+  },
+  "cmtwo6cys0007j8yzg6ni3fsc#houses-and-neighbours": {
+    "cerrado": "2026-09-11T11:14:00.855Z",
+    "hash": "0064822ae795ce4b",
+    "historias": [
+      "houses-and-neighbours#0 l-annonce-du-couloir",
+      "houses-and-neighbours#1 une-plante-pour-lea",
+      "houses-and-neighbours#2 des-pas-au-dessus"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"domestico y vacio: volets, cajas, una planta que regar, pasos de desconocidos en el piso de arriba\", espina \"Febrero. El piso de Hugo, encima del cafe, se queda sin el. Lea quiere guardar su sitio y aprende que un piso vacio se llena de otra gente.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dit\" 29%)",
+      "arranques de parrafo variados (mas repetido \"léa\", 27%)",
+      "densidad 6.2 palabras por oracion (techo 9 en a0)",
+      "seguidilla 25/57 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.10 sobre 42 plazas · 38 salen una sola vez | ancladas: 18/60 (30%) | cola: 38/42 portables con un solo encuentro (90%, tope 30%) | de un solo encuentro: D'habitude, déménage, tout de suite, pas encore, locataire, cent, libre, vends, Désolé, méchant, Demain, vident, tiède, peint, blanc, verte, arroses, tous les matins, s'il te plaît, terre, sèche, vivante, feuilles, grandit, petit à petit, monte, inconnue, Au-dessus, ici, Tout à coup…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: houses-and-neighbours (Léa, Antoine)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "france",
+      "registro": "domestico y vacio: volets, cajas, una planta que regar, pasos de desconocidos en el piso de arriba",
+      "espina": "Febrero. El piso de Hugo, encima del cafe, se queda sin el. Lea quiere guardar su sitio y aprende que un piso vacio se llena de otra gente.",
+      "recursos": "A0: repeticion ritmica, contraste con mais, imagen concreta (la emocion como gesto visible)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Lea quiere que el piso de Hugo se quede libre por si vuelve",
+          "impide": "Antoine, el dueno del edificio, quiere alquilarlo ya; el alquiler es cada mes y Lea no tiene dinero para pagarlo ella",
+          "cuesta": "acepta que el piso tendra otro inquilino; el cartel de a louer va en la puerta",
+          "cambia": "el sitio de Hugo ya no es de Hugo",
+          "emocion": "mira los volets cerrados del piso de arriba"
+        },
+        {
+          "slot": "2",
+          "quiere": "Hugo quiere que Lea cuide su planta cuando el se vaya",
+          "impide": "Lea no quiere una planta: quiere a Hugo en el piso de arriba",
+          "cuesta": "vacian el piso juntos; las paredes quedan blancas y el piso ya no suena a Hugo",
+          "cambia": "Lea acepta la planta y con ella una tarea de cada manana",
+          "emocion": "riega la planta aunque la tierra ya esta mojada"
+        },
+        {
+          "slot": "3",
+          "quiere": "Lea quiere saber quien va a vivir encima del cafe",
+          "impide": "Antoine sube con desconocidos; Lea oye pasos en el techo y no ve a nadie",
+          "cuesta": "baja un desconocido con un perro, simpatico, y Lea no puede odiarle",
+          "cambia": "el piso de arriba empieza a ser de otro",
+          "emocion": "sube el cafe al desconocido y deja la taza en la escalera"
+        }
+      ]
+    }
+  },
+  "cmtwo6cys0007j8yzg6ni3fsc#parties-and-gifts": {
+    "cerrado": "2026-09-11T11:13:47.924Z",
+    "hash": "72177f5f88dca5c1",
+    "historias": [
+      "parties-and-gifts#0 la-boule-porte-bonheur",
+      "parties-and-gifts#1 trente-trois-bougies",
+      "parties-and-gifts#2 a-toi-la-boule"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"festivo con nudo en la garganta: luces de papel, velas, la ultima partida en la placette y lo que se regala cuando no hay dinero\", espina \"Enero. El ultimo cumpleanos de Hugo en Marseille. Lea regala lo unico que tiene de valor, pierde a proposito la ultima partida y reparten el juego como promesa de volver.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dit\" 33%)",
+      "arranques de parrafo variados (mas repetido \"louise\", 13%)",
+      "densidad 6.0 palabras por oracion (techo 9 en a0)",
+      "seguidilla 27/61 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.07 sobre 42 plazas · 39 salen una sola vez | ancladas: 18/60 (30%) | cola: 39/42 portables con un solo encuentro (93%, tope 30%) | de un solo encuentro: Aujourd'hui, vide, offrir, choisis, joli, beaucoup, chance, aime, coupe, Pourquoi, emballe, Génial, Pas mal, cache, allume, invite, Joyeux anniversaire, éteint, vieux, voir, exprès, laisse, gagnant, chante, danse, fête, dort, tranquille, balaie, réveillé…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: parties-and-gifts (Léa, Hugo)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "france",
+      "registro": "festivo con nudo en la garganta: luces de papel, velas, la ultima partida en la placette y lo que se regala cuando no hay dinero",
+      "espina": "Enero. El ultimo cumpleanos de Hugo en Marseille. Lea regala lo unico que tiene de valor, pierde a proposito la ultima partida y reparten el juego como promesa de volver.",
+      "recursos": "A0: repeticion ritmica, contraste con mais, imagen concreta (la emocion como gesto visible)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Lea quiere hacerle a Hugo un regalo que le recuerde Marseille",
+          "impide": "no tiene dinero: presto sus ahorros a Hugo; su hermana Louise viene a ayudar y no hay nada que comprar",
+          "cuesta": "regala su boule de la suerte, la de su primera victoria contra Hugo",
+          "cambia": "el regalo no se compra: se da algo propio",
+          "emocion": "Louise corta el papel y Lea tarda en soltar la boule"
+        },
+        {
+          "slot": "2",
+          "quiere": "Lea quiere que el ultimo cumpleanos de Hugo en la placette sea una fiesta alegre",
+          "impide": "en la ultima partida de petanque Hugo va a perder, y Lea no quiere que pierda esta noche",
+          "cuesta": "Lea pierde a proposito, como el en el tema 1; Hugo lo nota y no dice nada",
+          "cambia": "ahora es ella la que se deja ganar",
+          "emocion": "aplaude muy fuerte y no le mira a los ojos"
+        },
+        {
+          "slot": "3",
+          "quiere": "Hugo quiere devolverle algo a Lea al abrir el regalo",
+          "impide": "reconoce la boule de la suerte y no quiere quitarsela",
+          "cuesta": "reparten el juego: el se lleva la boule, ella se queda el cochonnet; el juego ya no esta entero en la placette",
+          "cambia": "hay una promesa de volver a jugar",
+          "emocion": "Lea le cierra la mano sobre la boule"
+        }
+      ]
+    }
+  },
+  "cmtwo6cys0007j8yzg6ni3fsc#sports-and-games": {
+    "cerrado": "2026-09-11T11:12:30.787Z",
+    "hash": "2e57097aa22f844c",
+    "historias": [
+      "sports-and-games#0 une-boule-sous-le-platane",
+      "sports-and-games#1 deux-carreaux-pour-hugo",
+      "sports-and-games#2 si-je-gagne-tu-restes"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"ligero y soleado: domingo en la placita, bolas que chocan, bromas entre dos amigos de siempre\", espina \"Hugo se va a Paris en marzo. El journey son los seis meses que les quedan en la placita de Le Panier; aqui se anuncia y empieza la cuenta atras.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dit\" 33%)",
+      "arranques de parrafo variados (mas repetido \"hugo\", 27%)",
+      "densidad 5.6 palabras por oracion (techo 9 en a0)",
+      "seguidilla 28/62 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.17 sobre 42 plazas · 36 salen una sola vez | ancladas: 18/60 (30%) | cola: 36/42 portables con un solo encuentro (86%, tope 30%) | de un solo encuentro: perd, lance, roule, À toi, ronde, loin, Vraiment, jeu, quitte, départ, souffle, fort, montrer, dois, tire, droit, rate, paie, facile, comme ça, encore une fois, tête, va, rouge, dernière, partie, parier, restes, sûr, espère…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: sports-and-games (Léa, Hugo)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "france",
+      "registro": "ligero y soleado: domingo en la placita, bolas que chocan, bromas entre dos amigos de siempre",
+      "espina": "Hugo se va a Paris en marzo. El journey son los seis meses que les quedan en la placita de Le Panier; aqui se anuncia y empieza la cuenta atras.",
+      "recursos": "A0: repeticion ritmica (una bola, otra bola), contraste con mais, imagen concreta (la emocion como gesto visible)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Lea quiere ganar a Hugo a la petanque por primera vez",
+          "impide": "Hugo juega siempre mejor y ella lanza con nervios",
+          "cuesta": "gana, pero porque Hugo se deja: la victoria no es suya, y justo despues el dice que se va a Paris en marzo",
+          "cambia": "la partida del domingo ya tiene fecha final",
+          "emocion": "sorpresa y un golpe de tristeza: Lea deja la bola en la mesa y no la mira"
+        },
+        {
+          "slot": "2",
+          "quiere": "Hugo quiere ensenar a Lea a tirar como el antes de irse",
+          "impide": "el mistral mueve el cochonnet y ella no quiere aprender algo para jugar sola",
+          "cuesta": "Lea pierde la apuesta y paga los cafes de la semana",
+          "cambia": "acepta aprender: si el se va, ella se queda con su manera de tirar",
+          "emocion": "enfado que se vuelve risa: tira, falla, y se rie con las manos en la cabeza"
+        },
+        {
+          "slot": "3",
+          "quiere": "Lea apuesta que si gana, Hugo se queda en Marseille",
+          "impide": "Hugo acepta la apuesta pero juega en serio por primera vez",
+          "cuesta": "Lea pierde, y la apuesta que parecia broma no lo era para ella",
+          "cambia": "Hugo entiende que a ella le importa; ninguno lo dice en voz alta",
+          "emocion": "esperanza que cae: Lea recoge las bolas despacio, una a una"
+        }
+      ]
+    }
+  },
+  "cmtwo6cys0007j8yzg6ni3fsc#talking-and-listening": {
+    "cerrado": "2026-09-11T11:13:07.613Z",
+    "hash": "a8404bfac74ed73b",
+    "historias": [
+      "talking-and-listening#0 theo-ecoute-pour-lea",
+      "talking-and-listening#1 la-ligne-coupe-apres-hugo",
+      "talking-and-listening#2 le-torchon-a-la-main"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"intimo y un poco torpe: el ruido del cafe, un telefono que corta, lo que se oye mal y lo que no se quiere oir\", espina \"Hugo se va a Paris en marzo. En octubre ya tiene piso alli, y Lea aprende a escuchar lo que no quiere oir.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"répond\" 33%)",
+      "arranques de parrafo variados (mas repetido \"léa\", 33%)",
+      "densidad 5.4 palabras por oracion (techo 9 en a0)",
+      "seguidilla 30/63 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.26 sobre 42 plazas · 33 salen una sola vez | ancladas: 18/60 (30%) | cola: 33/42 portables con un solo encuentro (79%, tope 30%) | de un solo encuentro: s'appelle, commence, plein, occupée, Pardon, à côté, comprend, gentil, Bien sûr, seule, sonne, deux, Allô, claire, avant, coupée, rappelle, ferme, Juste, pas du tout, heureux, petit, cher, vue, métro, partout, tout le temps, parce que, moins, là-haut…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: talking-and-listening (Léa, Hugo)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "france",
+      "registro": "intimo y un poco torpe: el ruido del cafe, un telefono que corta, lo que se oye mal y lo que no se quiere oir",
+      "espina": "Hugo se va a Paris en marzo. En octubre ya tiene piso alli, y Lea aprende a escuchar lo que no quiere oir.",
+      "recursos": "A0: repeticion ritmica (encore une fois, deux fois), contraste con mais, imagen concreta (la emocion como gesto visible)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Lea quiere escuchar el mensaje de voz de Hugo, que esta en Paris",
+          "impide": "el cafe esta lleno y Theo, el camarero nuevo en su primer dia, le pide ayuda todo el rato",
+          "cuesta": "Theo lo escucha por ella con sus auriculares y se lo repite: Hugo tiene piso en Paris. Se entera por otro",
+          "cambia": "la marcha ya tiene direccion; Theo ya es alguien en el cafe",
+          "emocion": "deja el portable boca abajo en el plateau y sigue sirviendo"
+        },
+        {
+          "slot": "2",
+          "quiere": "Lea quiere decirle a Hugo por telefono que no quiere que se vaya",
+          "impide": "en el cafe no hay red; sube al tejado, entre la ropa tendida, y la linea corta a mitad de frase",
+          "cuesta": "lo dice una vez y el no lo oye; cuando el vuelve a llamar, ella ya no puede decirlo",
+          "cambia": "decide que lo importante se dice a la cara",
+          "emocion": "aprieta el portable contra el pecho y mira las chimeneas"
+        },
+        {
+          "slot": "3",
+          "quiere": "Hugo vuelve y quiere contarle todo de Paris: el piso, la vista, el metro",
+          "impide": "Lea no quiere escuchar; seca tazas y habla de otra cosa",
+          "cuesta": "Hugo se calla y sube a su casa; ella pierde la noche que el queria compartir",
+          "cambia": "ella sube, llama a su puerta y le dice que cuente: escucha",
+          "emocion": "llama a la puerta con el torchon todavia en la mano"
+        }
+      ]
+    }
+  },
+  "cmtwo6cys0007j8yzg6ni3fsc#travel-and-goodbyes": {
+    "cerrado": "2026-09-11T11:14:13.789Z",
+    "hash": "dc5373470261d576",
+    "historias": [
+      "travel-and-goodbyes#0 a-samedi-hugo",
+      "travel-and-goodbyes#1 clara-tient-la-boule",
+      "travel-and-goodbyes#2 treize-comme-avant"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"despedida luminosa: una manana de marzo con coche en marcha, una placette que aprende otro nombre y un sabado de vuelta sin nadie que se deje ganar\", espina \"Marzo. Hugo se va a Paris y Clara ocupa su piso. Un sabado Hugo vuelve a jugar: el juego se completa un dia, la boule de el y el cochonnet de ella, y la amistad sigue en otra forma.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"demande\" 29%)",
+      "arranques de parrafo variados (mas repetido \"hugo\", 20%)",
+      "densidad 5.5 palabras por oracion (techo 9 en a0)",
+      "seguidilla 26/64 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.12 sobre 42 plazas · 37 salen una sola vez | ancladas: 18/60 (30%) | cola: 37/42 portables con un solo encuentro (88%, tope 30%) | de un solo encuentro: premier, met, prêt, sort, sait, nouvelle, parle, À samedi, pleurer, retient, larmes, Bon voyage, Au revoir, lentement, Chaque dimanche, essayer, apprendre, Avec plaisir, tiens, plies, baisses, boit, difficile, élève, sert, peux, rêve, petit-déjeuner, sent, comme avant…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: travel-and-goodbyes (Léa, Hugo)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "france",
+      "registro": "despedida luminosa: una manana de marzo con coche en marcha, una placette que aprende otro nombre y un sabado de vuelta sin nadie que se deje ganar",
+      "espina": "Marzo. Hugo se va a Paris y Clara ocupa su piso. Un sabado Hugo vuelve a jugar: el juego se completa un dia, la boule de el y el cochonnet de ella, y la amistad sigue en otra forma.",
+      "recursos": "A0: repeticion ritmica, contraste con mais, imagen concreta (la emocion como gesto visible)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Lea quiere despedirse de Hugo sin llorar delante de el",
+          "impide": "la voiture espera en la placette y Clara, la nueva inquilina, llega con su perro justo cuando Hugo baja la maleta",
+          "cuesta": "Hugo le da las llaves de su piso a Clara delante de Lea; el piso ya es de otra",
+          "cambia": "Hugo se va, con una promesa concreta: a samedi, para jugar",
+          "emocion": "Lea aprieta el cochonnet en el bolsillo hasta que la voiture gira la esquina"
+        },
+        {
+          "slot": "2",
+          "quiere": "Clara quiere aprender a jugar a la petanque en la placette",
+          "impide": "Lea no quiere ensenar el juego de los domingos a otra persona",
+          "cuesta": "le ensena como Hugo le enseno a ella; el ritual del domingo ya no es solo de los dos",
+          "cambia": "la placette tiene una jugadora nueva",
+          "emocion": "Lea le corrige la mano a Clara con el mismo gesto que Hugo, y se calla"
+        },
+        {
+          "slot": "3",
+          "quiere": "Hugo vuelve un sabado de abril y quiere una ultima partida de verdad",
+          "impide": "los dos saben perder a proposito, y ninguno quiere hacerlo esta vez",
+          "cuesta": "Hugo duerme en el sofa del cafe porque su piso ya es de Clara",
+          "cambia": "la partida se juega en serio y la amistad sigue como antes, en otra forma",
+          "emocion": "Lea gana de verdad y Hugo le da la bise, la boule y el cochonnet juntos por un dia"
+        }
+      ]
+    }
+  },
+  "cmtwo6cys0007j8yzg6ni3fsc#words-and-meanings": {
+    "cerrado": "2026-09-11T11:13:34.857Z",
+    "hash": "6398ab1deebf3029",
+    "historias": [
+      "words-and-meanings#0 tu-prends-la-carte",
+      "words-and-meanings#1 vingt-minutes-c-est-long",
+      "words-and-meanings#2 les-mots-a-l-envers"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"jugueton y de malentendidos: palabras que no significan lo mismo en Paris y en Marseille, y la risa que tapa lo triste\", espina \"Diciembre. Maxime, el amigo parisino de Hugo, trae Paris a la placette, y Lea descubre que la distancia tambien esta en las palabras.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"demande\" 33%)",
+      "arranques de parrafo variados (mas repetido \"léa\", 20%)",
+      "densidad 5.9 palabras por oracion (techo 9 en a0)",
+      "seguidilla 23/55 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.10 sobre 42 plazas · 38 salen una sola vez | ancladas: 18/60 (30%) | cola: 38/42 portables con un solo encuentro (90%, tope 30%) | de un solo encuentro: vient, surpris, noir, chaud, D'où, apporte, amer, ami, veut dire, drôle, Faux, Pas grave, habite, en face, tous les deux, long, dix, à pied, tôt, tard, marches, pose, vite, Ça dépend, presque, durs, lit, manques, sens, vrai…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: words-and-meanings (Hugo, Léa)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "france",
+      "registro": "jugueton y de malentendidos: palabras que no significan lo mismo en Paris y en Marseille, y la risa que tapa lo triste",
+      "espina": "Diciembre. Maxime, el amigo parisino de Hugo, trae Paris a la placette, y Lea descubre que la distancia tambien esta en las palabras.",
+      "recursos": "A0: repeticion ritmica, contraste con mais, imagen concreta (la emocion como gesto visible)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Lea quiere que Maxime, el amigo de Paris de Hugo, no le caiga bien: Paris es el motivo de la marcha",
+          "impide": "Maxime pide la carte y ella le trae un plano de Marseille; los dos se rien",
+          "cuesta": "se rie con el y pierde el rencor que la protegia: Maxime le cae bien",
+          "cambia": "Paris ya tiene una cara amable",
+          "emocion": "tapa la risa con la servilleta"
+        },
+        {
+          "slot": "2",
+          "quiere": "Hugo quiere convencer a Lea de que Paris no esta lejos: veinte minutos de metro no es lejos",
+          "impide": "para Lea, en Marseille, veinte minutos es lejisimos; cerca y lejos no significan lo mismo para los dos",
+          "cuesta": "Lea entiende que el ya mide las cosas como en Paris",
+          "cambia": "la distancia ya no es solo de kilometros",
+          "emocion": "deja el reloj sobre la mesa y no lo mira"
+        },
+        {
+          "slot": "3",
+          "quiere": "Lea quiere entender tu me manques para poder decirselo a Hugo",
+          "impide": "la frase va al reves; la escribe mal en su cuaderno y la borra",
+          "cuesta": "al decirla en voz alta la marcha se vuelve real: ya le echa de menos y el todavia esta",
+          "cambia": "por primera vez se lo dice",
+          "emocion": "escribe la frase, la borra con la goma y la dice en voz alta"
+        }
+      ]
+    }
   }
 }

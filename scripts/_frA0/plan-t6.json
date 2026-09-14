@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "france",
+  "registro": "domestico y vacio: volets, cajas, una planta que regar, pasos de desconocidos en el piso de arriba",
+  "espina": "Febrero. El piso de Hugo, encima del cafe, se queda sin el. Lea quiere guardar su sitio y aprende que un piso vacio se llena de otra gente.",
+  "recursos": "A0: repeticion ritmica, contraste con mais, imagen concreta (la emocion como gesto visible)",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Lea quiere que el piso de Hugo se quede libre por si vuelve",
+      "impide": "Antoine, el dueno del edificio, quiere alquilarlo ya; el alquiler es cada mes y Lea no tiene dinero para pagarlo ella",
+      "cuesta": "acepta que el piso tendra otro inquilino; el cartel de a louer va en la puerta",
+      "cambia": "el sitio de Hugo ya no es de Hugo",
+      "emocion": "mira los volets cerrados del piso de arriba"
+    },
+    {
+      "slot": "2",
+      "quiere": "Hugo quiere que Lea cuide su planta cuando el se vaya",
+      "impide": "Lea no quiere una planta: quiere a Hugo en el piso de arriba",
+      "cuesta": "vacian el piso juntos; las paredes quedan blancas y el piso ya no suena a Hugo",
+      "cambia": "Lea acepta la planta y con ella una tarea de cada manana",
+      "emocion": "riega la planta aunque la tierra ya esta mojada"
+    },
+    {
+      "slot": "3",
+      "quiere": "Lea quiere saber quien va a vivir encima del cafe",
+      "impide": "Antoine sube con desconocidos; Lea oye pasos en el techo y no ve a nadie",
+      "cuesta": "baja un desconocido con un perro, simpatico, y Lea no puede odiarle",
+      "cambia": "el piso de arriba empieza a ser de otro",
+      "emocion": "sube el cafe al desconocido y deja la taza en la escalera"
+    }
+  ]
+}

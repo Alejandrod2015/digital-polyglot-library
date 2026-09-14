@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "le scotch,les ciseaux,le nœud,le cadeau",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "le scotch",
+     "answer": "sticky tape",
+     "options": [
+      "sticky tape",
+      "scissors",
+      "a ribbon bow",
+      "a present"
+     ]
+    },
+    {
+     "word": "les ciseaux",
+     "answer": "scissors",
+     "options": [
+      "sticky tape",
+      "scissors",
+      "a ribbon bow",
+      "a present"
+     ]
+    },
+    {
+     "word": "le nœud",
+     "answer": "a ribbon bow",
+     "options": [
+      "sticky tape",
+      "scissors",
+      "a ribbon bow",
+      "a present"
+     ]
+    },
+    {
+     "word": "le cadeau",
+     "answer": "a present",
+     "options": [
+      "sticky tape",
+      "scissors",
+      "a ribbon bow",
+      "a present"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "offrir",
+  "sentence": "Elle veut [[offrir]] un cadeau.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to give as a present",
+   "options": [
+    "to give as a present",
+    "to sell to someone",
+    "to lend to someone",
+    "to send by post"
+   ],
+   "audioClip": {
+    "storySlug": "la-boule-porte-bonheur",
+    "storySource": "user",
+    "sentence": "Elle veut offrir un cadeau.",
+    "targetWord": "offrir",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le porte-bonheur",
+  "sentence": "Dedans, il y a sa boule [[porte-bonheur]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a lucky charm",
+   "options": [
+    "a lucky charm",
+    "a birthday present",
+    "a favourite toy",
+    "an old souvenir"
+   ],
+   "audioClip": {
+    "storySlug": "la-boule-porte-bonheur",
+    "storySource": "user",
+    "sentence": "Dedans, il y a sa boule porte-bonheur.",
+    "targetWord": "porte-bonheur",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la chance",
+  "sentence": "Cette boule porte [[chance]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "luck",
+   "options": [
+    "luck",
+    "money",
+    "danger",
+    "sadness"
+   ],
+   "audioClip": {
+    "storySlug": "la-boule-porte-bonheur",
+    "storySource": "user",
+    "sentence": "Cette boule porte chance.",
+    "targetWord": "chance",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "choisir",
+  "sentence": "“Tu [[choisis]] quoi?”, demande-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to choose",
+   "options": [
+    "to choose",
+    "to buy",
+    "to make",
+    "to find"
+   ],
+   "audioClip": {
+    "storySlug": "la-boule-porte-bonheur",
+    "storySource": "user",
+    "sentence": "“Tu choisis quoi?”, demande-t-elle.",
+    "targetWord": "choisis",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aimer",
+  "sentence": "Je l'[[aime]], mais c'est pour lui.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to love",
+   "options": [
+    "to love",
+    "to hate",
+    "to keep",
+    "to lose"
+   ],
+   "audioClip": {
+    "storySlug": "la-boule-porte-bonheur",
+    "storySource": "user",
+    "sentence": "Je l'aime, mais c'est pour lui.",
+    "targetWord": "aime",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "couper",
+  "sentence": "Elle [[coupe]] le papier avec les ciseaux.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to cut",
+   "options": [
+    "to cut",
+    "to fold",
+    "to tear",
+    "to glue"
+   ],
+   "audioClip": {
+    "storySlug": "la-boule-porte-bonheur",
+    "storySource": "user",
+    "sentence": "Elle coupe le papier avec les ciseaux.",
+    "targetWord": "coupe",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "emballer",
+  "sentence": "Elle [[emballe]] le paquet avec du scotch.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to wrap",
+   "options": [
+    "to wrap",
+    "to open",
+    "to carry",
+    "to send"
+   ],
+   "audioClip": {
+    "storySlug": "la-boule-porte-bonheur",
+    "storySource": "user",
+    "sentence": "Elle emballe le paquet avec du scotch.",
+    "targetWord": "emballe",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le paquet",
+  "sentence": "Elle cache le [[paquet]] sous le comptoir.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a parcel",
+   "options": [
+    "a parcel",
+    "a bag",
+    "a letter",
+    "a bottle"
+   ],
+   "audioClip": {
+    "storySlug": "la-boule-porte-bonheur",
+    "storySource": "user",
+    "sentence": "Elle cache le paquet sous le comptoir.",
+    "targetWord": "paquet",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cache",
+  "sentence": "Il _____ la clé sous le tapis; personne ne la trouve.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cache",
+   "options": [
+    "cache",
+    "montre",
+    "vend",
+    "lave"
+   ],
+   "translation": "He _____ the key under the rug; nobody finds it.",
+   "optionTranslations": [
+    "hides",
+    "shows",
+    "sells",
+    "washes"
+   ],
+   "audioClip": {
+    "storySlug": "la-boule-porte-bonheur",
+    "storySource": "user",
+    "sentence": "Il cache la clé sous le tapis; personne ne la trouve.",
+    "targetWord": "cache",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aujourd'hui",
+  "sentence": "[[Aujourd'hui]], sa tirelire est vide.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "today",
+   "options": [
+    "today",
+    "yesterday",
+    "tomorrow",
+    "every day"
+   ],
+   "audioClip": {
+    "storySlug": "la-boule-porte-bonheur",
+    "storySource": "user",
+    "sentence": "Aujourd'hui, sa tirelire est vide.",
+    "targetWord": "Aujourd'hui",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "beaucoup",
+  "sentence": "“Un joli cadeau coûte [[beaucoup]]”, répond-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a lot",
+   "options": [
+    "a lot",
+    "a little",
+    "nothing at all",
+    "the same"
+   ],
+   "audioClip": {
+    "storySlug": "la-boule-porte-bonheur",
+    "storySource": "user",
+    "sentence": "“Un joli cadeau coûte beaucoup”, répond-elle.",
+    "targetWord": "beaucoup",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pourquoi",
+  "sentence": "“[[Pourquoi]] cette boule?”, demande-t-elle, surprise.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "why",
+   "options": [
+    "why",
+    "where",
+    "when",
+    "how"
+   ],
+   "audioClip": {
+    "storySlug": "la-boule-porte-bonheur",
+    "storySource": "user",
+    "sentence": "“Pourquoi cette boule?”, demande-t-elle, surprise.",
+    "targetWord": "Pourquoi",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "génial",
+  "sentence": "“[[Génial]]!”, dit-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "really great",
+   "options": [
+    "really great",
+    "really bad",
+    "really strange",
+    "really boring"
+   ],
+   "audioClip": {
+    "storySlug": "la-boule-porte-bonheur",
+    "storySource": "user",
+    "sentence": "“Génial!”, dit-elle.",
+    "targetWord": "Génial",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pas mal",
+  "sentence": "“[[Pas mal]], non?”, rit-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quite good",
+   "options": [
+    "quite good",
+    "quite bad",
+    "very strange",
+    "too expensive"
+   ],
+   "audioClip": {
+    "storySlug": "la-boule-porte-bonheur",
+    "storySource": "user",
+    "sentence": "“Pas mal, non?”, rit-elle.",
+    "targetWord": "Pas mal",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "vide",
+  "sentence": "La bouteille est _____: il n'y a plus d'eau.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vide",
+   "options": [
+    "vide",
+    "pleine",
+    "lourde",
+    "fraîche"
+   ],
+   "translation": "The bottle is _____: there is no more water.",
+   "optionTranslations": [
+    "empty",
+    "full",
+    "heavy",
+    "cool"
+   ],
+   "audioClip": {
+    "storySlug": "la-boule-porte-bonheur",
+    "storySource": "user",
+    "sentence": "La bouteille est vide: il n'y a plus d'eau.",
+    "targetWord": "vide",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "joli",
+  "sentence": "Ce jardin est très _____; tout le monde aime le regarder.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "joli",
+   "options": [
+    "joli",
+    "sale",
+    "triste",
+    "bruyant"
+   ],
+   "translation": "This garden is very _____; everybody likes looking at it.",
+   "optionTranslations": [
+    "pretty",
+    "dirty",
+    "sad",
+    "noisy"
+   ],
+   "audioClip": {
+    "storySlug": "la-boule-porte-bonheur",
+    "storySource": "user",
+    "sentence": "Ce jardin est très joli; tout le monde aime le regarder.",
+    "targetWord": "joli",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

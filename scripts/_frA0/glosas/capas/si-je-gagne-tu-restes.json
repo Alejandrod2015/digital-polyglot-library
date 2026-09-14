@@ -1,0 +1,286 @@
+{
+ "si": {
+  "es": "Si je gagne, tu restes",
+  "en": "If I win, you stay"
+ },
+ "je": {
+  "es": "Si je gagne, tu restes",
+  "en": "If I win, you stay"
+ },
+ "gagne": {
+  "es": "Si je gagne, tu restes",
+  "en": "If I win, you stay"
+ },
+ "tu": {
+  "es": "Si je gagne, tu restes",
+  "en": "If I win, you stay"
+ },
+ "restes": {
+  "es": "Si je gagne, tu restes",
+  "en": "If I win, you stay"
+ },
+ "ciel": {
+  "es": "Le ciel est rouge au-dessus du Panier.",
+  "en": "The sky is red above the Panier."
+ },
+ "est": {
+  "es": "Le ciel est rouge au-dessus du Panier.",
+  "en": "The sky is red above the Panier."
+ },
+ "rouge": {
+  "es": "Le ciel est rouge au-dessus du Panier.",
+  "en": "The sky is red above the Panier."
+ },
+ "au-dessus": {
+  "es": "Le ciel est rouge au-dessus du Panier.",
+  "en": "The sky is red above the Panier."
+ },
+ "gravier": {
+  "es": "Le gravier est encore chaud.",
+  "en": "The gravel is still warm."
+ },
+ "encore": {
+  "es": "Le gravier est encore chaud.",
+  "en": "The gravel is still warm."
+ },
+ "chaud": {
+  "es": "Le gravier est encore chaud.",
+  "en": "The gravel is still warm."
+ },
+ "dessine": {
+  "es": "Hugo dessine un rond avec la craie.",
+  "en": "Hugo draws a circle with the chalk."
+ },
+ "rond": {
+  "es": "Hugo dessine un rond avec la craie.",
+  "en": "Hugo draws a circle with the chalk."
+ },
+ "avec": {
+  "es": "Hugo dessine un rond avec la craie.",
+  "en": "Hugo draws a circle with the chalk."
+ },
+ "craie": {
+  "es": "Hugo dessine un rond avec la craie.",
+  "en": "Hugo draws a circle with the chalk."
+ },
+ "dernière": {
+  "es": "C'est la dernière partie de septembre.",
+  "en": "It is the last game of September."
+ },
+ "partie": {
+  "es": "C'est la dernière partie de septembre.",
+  "en": "It is the last game of September."
+ },
+ "de": {
+  "es": "C'est la dernière partie de septembre.",
+  "en": "It is the last game of September."
+ },
+ "septembre": {
+  "es": "C'est la dernière partie de septembre.",
+  "en": "It is the last game of September."
+ },
+ "sort": {
+  "es": "Léa sort les boules de son sac.",
+  "en": "Léa takes the boules out of her bag."
+ },
+ "boules": {
+  "es": "Léa sort les boules de son sac.",
+  "en": "Léa takes the boules out of her bag."
+ },
+ "son": {
+  "es": "Léa sort les boules de son sac.",
+  "en": "Léa takes the boules out of her bag."
+ },
+ "sac": {
+  "es": "Léa sort les boules de son sac.",
+  "en": "Léa takes the boules out of her bag."
+ },
+ "elle": {
+  "es": "Elle les nettoie avec un chiffon.",
+  "en": "She cleans them with a cloth."
+ },
+ "nettoie": {
+  "es": "Elle les nettoie avec un chiffon.",
+  "en": "She cleans them with a cloth."
+ },
+ "chiffon": {
+  "es": "Elle les nettoie avec un chiffon.",
+  "en": "She cleans them with a cloth."
+ },
+ "veut": {
+  "es": "Léa veut parier:",
+  "en": "Léa wants to bet:"
+ },
+ "parier": {
+  "es": "Léa veut parier:",
+  "en": "Léa wants to bet:"
+ },
+ "à": {
+  "es": "Si je gagne, tu restes à Marseille.",
+  "en": "If I win, you stay in Marseille."
+ },
+ "marseille": {
+  "es": "Si je gagne, tu restes à Marseille.",
+  "en": "If I win, you stay in Marseille."
+ },
+ "ici": {
+  "es": "Tu restes ici, avec moi.",
+  "en": "You stay here, with me."
+ },
+ "moi": {
+  "es": "Tu restes ici, avec moi.",
+  "en": "You stay here, with me."
+ },
+ "pas": {
+  "es": "Hugo n'est pas sûr.",
+  "en": "Hugo isn't sure."
+ },
+ "sûr": {
+  "es": "Hugo n'est pas sûr.",
+  "en": "Hugo isn't sure."
+ },
+ "il": {
+  "es": "Il ne dit jamais non à Léa.",
+  "en": "He never says no to Léa."
+ },
+ "ne": {
+  "es": "Il ne dit jamais non à Léa.",
+  "en": "He never says no to Léa."
+ },
+ "dit": {
+  "es": "Il ne dit jamais non à Léa.",
+  "en": "He never says no to Léa."
+ },
+ "jamais": {
+  "es": "Il ne dit jamais non à Léa.",
+  "en": "He never says no to Léa."
+ },
+ "non": {
+  "es": "Il ne dit jamais non à Léa.",
+  "en": "He never says no to Léa."
+ },
+ "et": {
+  "es": "Et si je gagne?",
+  "en": "And if I win?"
+ },
+ "demande": {
+  "es": "demande Hugo.",
+  "en": "Hugo asks."
+ },
+ "pars": {
+  "es": "Tu pars en mars.",
+  "en": "You leave in March."
+ },
+ "en": {
+  "es": "Tu pars en mars.",
+  "en": "You leave in March."
+ },
+ "mars": {
+  "es": "Tu pars en mars.",
+  "en": "You leave in March."
+ },
+ "tout": {
+  "es": "C'est tout",
+  "en": "That's all"
+ },
+ "répond": {
+  "es": "répond Léa.",
+  "en": "Léa answers."
+ },
+ "plaisir": {
+  "es": "Avec plaisir",
+  "en": "Gladly"
+ },
+ "espère": {
+  "es": "Léa espère, mais ce soir, il joue bien.",
+  "en": "Léa hopes, but this evening he plays well."
+ },
+ "mais": {
+  "es": "Léa espère, mais ce soir, il joue bien.",
+  "en": "Léa hopes, but this evening he plays well."
+ },
+ "soir": {
+  "es": "Léa espère, mais ce soir, il joue bien.",
+  "en": "Léa hopes, but this evening he plays well."
+ },
+ "joue": {
+  "es": "Léa espère, mais ce soir, il joue bien.",
+  "en": "Léa hopes, but this evening he plays well."
+ },
+ "bien": {
+  "es": "Léa espère, mais ce soir, il joue bien.",
+  "en": "Léa hopes, but this evening he plays well."
+ },
+ "sous": {
+  "es": "Sous le lampadaire, il mesure avec une ficelle.",
+  "en": "Under the street lamp, he measures with a piece of string."
+ },
+ "lampadaire": {
+  "es": "Sous le lampadaire, il mesure avec une ficelle.",
+  "en": "Under the street lamp, he measures with a piece of string."
+ },
+ "mesure": {
+  "es": "Sous le lampadaire, il mesure avec une ficelle.",
+  "en": "Under the street lamp, he measures with a piece of string."
+ },
+ "ficelle": {
+  "es": "Sous le lampadaire, il mesure avec une ficelle.",
+  "en": "Under the street lamp, he measures with a piece of string."
+ },
+ "ma": {
+  "es": "Ma boule est plus près",
+  "en": "My boule is closer"
+ },
+ "boule": {
+  "es": "Ma boule est plus près",
+  "en": "My boule is closer"
+ },
+ "plus": {
+  "es": "Ma boule est plus près",
+  "en": "My boule is closer"
+ },
+ "près": {
+  "es": "Ma boule est plus près",
+  "en": "My boule is closer"
+ },
+ "sais": {
+  "es": "Je sais.",
+  "en": "I know."
+ },
+ "perdant": {
+  "es": "Le perdant ramasse",
+  "en": "The loser picks up"
+ },
+ "ramasse": {
+  "es": "Le perdant ramasse",
+  "en": "The loser picks up"
+ },
+ "es": {
+  "es": "Tu es triste?",
+  "en": "Are you sad?"
+ },
+ "triste": {
+  "es": "Tu es triste?",
+  "en": "Are you sad?"
+ },
+ "balaie": {
+  "es": "Je balaie",
+  "en": "I'll sweep"
+ },
+ "fier": {
+  "es": "Hugo n'est pas fier, et il comprend.",
+  "en": "Hugo isn't proud, and he understands."
+ },
+ "comprend": {
+  "es": "Hugo n'est pas fier, et il comprend.",
+  "en": "Hugo isn't proud, and he understands."
+ },
+ "oublie": {
+  "es": "Léa n'oublie pas le pari.",
+  "en": "Léa doesn't forget the bet."
+ },
+ "pari": {
+  "es": "Léa n'oublie pas le pari.",
+  "en": "Léa doesn't forget the bet."
+ }
+}

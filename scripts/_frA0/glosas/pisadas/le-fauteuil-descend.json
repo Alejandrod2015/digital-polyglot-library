@@ -1,0 +1,72 @@
+{
+ "a": {
+  "es": "Chloé, une nouvelle voisine, a une petite camionnette.",
+  "en": "Chloé, a new neighbour, has a small van.",
+  "g": "has (avoir)"
+ },
+ "bas": {
+  "es": "Léa veut le porter en bas, au café.",
+  "en": "Léa wants to carry it downstairs, to the café.",
+  "g": "downstairs (en bas)"
+ },
+ "contre": {
+  "es": "Un service contre un café.",
+  "en": "A favour in exchange for a coffee.",
+  "g": "in exchange for (contre)"
+ },
+ "côté": {
+  "es": "Le tapis est à côté.",
+  "en": "The rug is next to it.",
+  "g": "next to it, nearby (à côté)"
+ },
+ "elle": {
+  "es": "Elle a aussi une corde.",
+  "en": "She also has a rope.",
+  "g": "she (elle)"
+ },
+ "en": {
+  "es": "Hugo déménage en mars.",
+  "en": "Hugo moves out in March.",
+  "g": "in (en)"
+ },
+ "il": {
+  "es": "Il veut offrir le fauteuil à Léa.",
+  "en": "He wants to give the armchair to Léa.",
+  "g": "he (il)"
+ },
+ "mal": {
+  "es": "Léa a mal au dos.",
+  "en": "Léa's back hurts.",
+  "g": "pain; her back hurts (avoir mal au dos)"
+ },
+ "ne": {
+  "es": "Je ne suis jamais fatiguée",
+  "en": "I'm never tired",
+  "g": "not (ne ... jamais: never)"
+ },
+ "pas": {
+  "es": "Pas du tout.",
+  "en": "Not at all.",
+  "g": "not (pas du tout: not at all)"
+ },
+ "rien": {
+  "es": "De rien.",
+  "en": "You're welcome.",
+  "g": "you're welcome (de rien)"
+ },
+ "sent": {
+  "es": "Le coussin sent Hugo.",
+  "en": "The cushion smells of Hugo.",
+  "g": "smells of (sentir)"
+ },
+ "tout": {
+  "es": "Pas du tout.",
+  "en": "Not at all.",
+  "g": "at all (pas du tout)"
+ },
+ "va": {
+  "es": "Ça va?",
+  "en": "Are you OK?",
+  "g": "are you OK? (ça va?)"
+ }
+}

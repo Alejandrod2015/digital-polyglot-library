@@ -1,0 +1,314 @@
+{
+ "boule": {
+  "es": "La boule porte-bonheur",
+  "en": "The lucky boule"
+ },
+ "porte-bonheur": {
+  "es": "La boule porte-bonheur",
+  "en": "The lucky boule"
+ },
+ "hui": {
+  "es": "Aujourd'hui, la tirelire de Léa est vide.",
+  "en": "Today, Léa's piggy bank is empty."
+ },
+ "tirelire": {
+  "es": "Aujourd'hui, la tirelire de Léa est vide.",
+  "en": "Today, Léa's piggy bank is empty."
+ },
+ "de": {
+  "es": "Aujourd'hui, la tirelire de Léa est vide.",
+  "en": "Today, Léa's piggy bank is empty."
+ },
+ "est": {
+  "es": "Aujourd'hui, la tirelire de Léa est vide.",
+  "en": "Today, Léa's piggy bank is empty."
+ },
+ "vide": {
+  "es": "Aujourd'hui, la tirelire de Léa est vide.",
+  "en": "Today, Léa's piggy bank is empty."
+ },
+ "son": {
+  "es": "Son argent est à Paris, avec Hugo.",
+  "en": "Her money is in Paris, with Hugo."
+ },
+ "argent": {
+  "es": "Son argent est à Paris, avec Hugo.",
+  "en": "Her money is in Paris, with Hugo."
+ },
+ "à": {
+  "es": "Son argent est à Paris, avec Hugo.",
+  "en": "Her money is in Paris, with Hugo."
+ },
+ "paris": {
+  "es": "Son argent est à Paris, avec Hugo.",
+  "en": "Her money is in Paris, with Hugo."
+ },
+ "avec": {
+  "es": "Son argent est à Paris, avec Hugo.",
+  "en": "Her money is in Paris, with Hugo."
+ },
+ "samedi": {
+  "es": "Samedi, Hugo a trente-trois ans.",
+  "en": "On Saturday, Hugo turns thirty-three."
+ },
+ "a": {
+  "es": "Samedi, Hugo a trente-trois ans.",
+  "en": "On Saturday, Hugo turns thirty-three."
+ },
+ "ans": {
+  "es": "Samedi, Hugo a trente-trois ans.",
+  "en": "On Saturday, Hugo turns thirty-three."
+ },
+ "veut": {
+  "es": "Léa veut offrir un cadeau.",
+  "en": "Léa wants to give a present."
+ },
+ "offrir": {
+  "es": "Léa veut offrir un cadeau.",
+  "en": "Léa wants to give a present."
+ },
+ "cadeau": {
+  "es": "Léa veut offrir un cadeau.",
+  "en": "Léa wants to give a present."
+ },
+ "sœur": {
+  "es": "La sœur de Léa s'appelle Louise.",
+  "en": "Léa's sister is called Louise."
+ },
+ "appelle": {
+  "es": "La sœur de Léa s'appelle Louise.",
+  "en": "Léa's sister is called Louise."
+ },
+ "elle": {
+  "es": "Elle vient pour aider.",
+  "en": "She comes to help."
+ },
+ "vient": {
+  "es": "Elle vient pour aider.",
+  "en": "She comes to help."
+ },
+ "pour": {
+  "es": "Elle vient pour aider.",
+  "en": "She comes to help."
+ },
+ "aider": {
+  "es": "Elle vient pour aider.",
+  "en": "She comes to help."
+ },
+ "tu": {
+  "es": "Tu choisis quoi?",
+  "en": "What are you choosing?"
+ },
+ "choisis": {
+  "es": "Tu choisis quoi?",
+  "en": "What are you choosing?"
+ },
+ "quoi": {
+  "es": "Tu choisis quoi?",
+  "en": "What are you choosing?"
+ },
+ "demande": {
+  "es": "demande Louise.",
+  "en": "Louise asks."
+ },
+ "joli": {
+  "es": "Un joli cadeau coûte beaucoup",
+  "en": "A nice present costs a lot"
+ },
+ "coûte": {
+  "es": "Un joli cadeau coûte beaucoup",
+  "en": "A nice present costs a lot"
+ },
+ "beaucoup": {
+  "es": "Un joli cadeau coûte beaucoup",
+  "en": "A nice present costs a lot"
+ },
+ "répond": {
+  "es": "répond Léa.",
+  "en": "Léa answers."
+ },
+ "et": {
+  "es": "Et je n'ai rien.",
+  "en": "And I have nothing."
+ },
+ "je": {
+  "es": "Et je n'ai rien.",
+  "en": "And I have nothing."
+ },
+ "n": {
+  "es": "Et je n'ai rien.",
+  "en": "And I have nothing."
+ },
+ "rien": {
+  "es": "Et je n'ai rien.",
+  "en": "And I have nothing."
+ },
+ "compte": {
+  "es": "Je compte, et je compte encore.",
+  "en": "I count, and I count again."
+ },
+ "encore": {
+  "es": "Je compte, et je compte encore.",
+  "en": "I count, and I count again."
+ },
+ "ouvre": {
+  "es": "Léa ouvre le tiroir.",
+  "en": "Léa opens the drawer."
+ },
+ "tiroir": {
+  "es": "Léa ouvre le tiroir.",
+  "en": "Léa opens the drawer."
+ },
+ "sent": {
+  "es": "Le tiroir sent le café.",
+  "en": "The drawer smells of coffee."
+ },
+ "café": {
+  "es": "Le tiroir sent le café.",
+  "en": "The drawer smells of coffee."
+ },
+ "dedans": {
+  "es": "Dedans, il y a sa boule porte-bonheur.",
+  "en": "Inside, there is her lucky boule."
+ },
+ "il": {
+  "es": "Dedans, il y a sa boule porte-bonheur.",
+  "en": "Inside, there is her lucky boule."
+ },
+ "y": {
+  "es": "Dedans, il y a sa boule porte-bonheur.",
+  "en": "Inside, there is her lucky boule."
+ },
+ "sa": {
+  "es": "Dedans, il y a sa boule porte-bonheur.",
+  "en": "Inside, there is her lucky boule."
+ },
+ "porte": {
+  "es": "Cette boule porte chance.",
+  "en": "This boule brings luck."
+ },
+ "chance": {
+  "es": "Cette boule porte chance.",
+  "en": "This boule brings luck."
+ },
+ "pourquoi": {
+  "es": "Pourquoi cette boule?",
+  "en": "Why this boule?"
+ },
+ "surprise": {
+  "es": "demande Louise, surprise.",
+  "en": "Louise asks, surprised."
+ },
+ "mon": {
+  "es": "C'est mon porte-bonheur.",
+  "en": "It is my lucky charm."
+ },
+ "aime": {
+  "es": "Je l'aime, mais c'est pour Hugo.",
+  "en": "I love it, but it is for Hugo."
+ },
+ "mais": {
+  "es": "Je l'aime, mais c'est pour Hugo.",
+  "en": "I love it, but it is for Hugo."
+ },
+ "coupe": {
+  "es": "Louise coupe le papier avec les ciseaux.",
+  "en": "Louise cuts the paper with the scissors."
+ },
+ "papier": {
+  "es": "Louise coupe le papier avec les ciseaux.",
+  "en": "Louise cuts the paper with the scissors."
+ },
+ "ciseaux": {
+  "es": "Louise coupe le papier avec les ciseaux.",
+  "en": "Louise cuts the paper with the scissors."
+ },
+ "garde": {
+  "es": "Léa garde la boule ronde dans sa main.",
+  "en": "Léa keeps the round boule in her hand."
+ },
+ "ronde": {
+  "es": "Léa garde la boule ronde dans sa main.",
+  "en": "Léa keeps the round boule in her hand."
+ },
+ "dans": {
+  "es": "Léa garde la boule ronde dans sa main.",
+  "en": "Léa keeps the round boule in her hand."
+ },
+ "main": {
+  "es": "Léa garde la boule ronde dans sa main.",
+  "en": "Léa keeps the round boule in her hand."
+ },
+ "ensuite": {
+  "es": "Ensuite, elle la donne.",
+  "en": "Then she gives it."
+ },
+ "donne": {
+  "es": "Ensuite, elle la donne.",
+  "en": "Then she gives it."
+ },
+ "emballe": {
+  "es": "Louise emballe le paquet avec du scotch.",
+  "en": "Louise wraps the parcel with sticky tape."
+ },
+ "paquet": {
+  "es": "Louise emballe le paquet avec du scotch.",
+  "en": "Louise wraps the parcel with sticky tape."
+ },
+ "scotch": {
+  "es": "Louise emballe le paquet avec du scotch.",
+  "en": "Louise wraps the parcel with sticky tape."
+ },
+ "fait": {
+  "es": "Louise fait un nœud rouge.",
+  "en": "Louise makes a red bow."
+ },
+ "nœud": {
+  "es": "Louise fait un nœud rouge.",
+  "en": "Louise makes a red bow."
+ },
+ "rouge": {
+  "es": "Louise fait un nœud rouge.",
+  "en": "Louise makes a red bow."
+ },
+ "génial": {
+  "es": "Génial!",
+  "en": "Great!"
+ },
+ "dit": {
+  "es": "dit Louise.",
+  "en": "Louise says."
+ },
+ "pas": {
+  "es": "Pas mal, non?",
+  "en": "Not bad, is it?"
+ },
+ "mal": {
+  "es": "Pas mal, non?",
+  "en": "Not bad, is it?"
+ },
+ "non": {
+  "es": "Pas mal, non?",
+  "en": "Not bad, is it?"
+ },
+ "rit": {
+  "es": "rit Léa.",
+  "en": "Léa laughs."
+ },
+ "merci": {
+  "es": "Merci, Louise.",
+  "en": "Thank you, Louise."
+ },
+ "cache": {
+  "es": "Léa cache le paquet sous le comptoir.",
+  "en": "Léa hides the parcel under the counter."
+ },
+ "sous": {
+  "es": "Léa cache le paquet sous le comptoir.",
+  "en": "Léa hides the parcel under the counter."
+ },
+ "comptoir": {
+  "es": "Léa cache le paquet sous le comptoir.",
+  "en": "Léa hides the parcel under the counter."
+ }
+}

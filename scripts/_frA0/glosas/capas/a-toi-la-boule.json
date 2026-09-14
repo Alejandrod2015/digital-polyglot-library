@@ -1,0 +1,326 @@
+{
+ "à": {
+  "es": "À toi la boule",
+  "en": "The boule is yours"
+ },
+ "toi": {
+  "es": "À toi la boule",
+  "en": "The boule is yours"
+ },
+ "boule": {
+  "es": "À toi la boule",
+  "en": "The boule is yours"
+ },
+ "gros": {
+  "es": "Un gros chat dort sur le banc",
+  "en": "A big cat sleeps on the bench"
+ },
+ "chat": {
+  "es": "Un gros chat dort sur le banc",
+  "en": "A big cat sleeps on the bench"
+ },
+ "dort": {
+  "es": "Un gros chat dort sur le banc",
+  "en": "A big cat sleeps on the bench"
+ },
+ "sur": {
+  "es": "Un gros chat dort sur le banc",
+  "en": "A big cat sleeps on the bench"
+ },
+ "banc": {
+  "es": "Un gros chat dort sur le banc",
+  "en": "A big cat sleeps on the bench"
+ },
+ "sous": {
+  "es": "sous les feuilles.",
+  "en": "under the leaves."
+ },
+ "feuilles": {
+  "es": "sous les feuilles.",
+  "en": "under the leaves."
+ },
+ "air": {
+  "es": "L'air du matin est froid.",
+  "en": "The morning air is cold."
+ },
+ "matin": {
+  "es": "L'air du matin est froid.",
+  "en": "The morning air is cold."
+ },
+ "est": {
+  "es": "L'air du matin est froid.",
+  "en": "The morning air is cold."
+ },
+ "froid": {
+  "es": "L'air du matin est froid.",
+  "en": "The morning air is cold."
+ },
+ "placette": {
+  "es": "La placette est tranquille, mais sale.",
+  "en": "The little square is quiet, but dirty."
+ },
+ "tranquille": {
+  "es": "La placette est tranquille, mais sale.",
+  "en": "The little square is quiet, but dirty."
+ },
+ "mais": {
+  "es": "La placette est tranquille, mais sale.",
+  "en": "The little square is quiet, but dirty."
+ },
+ "sale": {
+  "es": "La placette est tranquille, mais sale.",
+  "en": "The little square is quiet, but dirty."
+ },
+ "balaie": {
+  "es": "Léa balaie les miettes.",
+  "en": "Léa sweeps up the crumbs."
+ },
+ "miettes": {
+  "es": "Léa balaie les miettes.",
+  "en": "Léa sweeps up the crumbs."
+ },
+ "elle": {
+  "es": "Elle ramasse les bouchons et un lampion rouge.",
+  "en": "She picks up the corks and a red paper lantern."
+ },
+ "ramasse": {
+  "es": "Elle ramasse les bouchons et un lampion rouge.",
+  "en": "She picks up the corks and a red paper lantern."
+ },
+ "bouchons": {
+  "es": "Elle ramasse les bouchons et un lampion rouge.",
+  "en": "She picks up the corks and a red paper lantern."
+ },
+ "et": {
+  "es": "Elle ramasse les bouchons et un lampion rouge.",
+  "en": "She picks up the corks and a red paper lantern."
+ },
+ "lampion": {
+  "es": "Elle ramasse les bouchons et un lampion rouge.",
+  "en": "She picks up the corks and a red paper lantern."
+ },
+ "rouge": {
+  "es": "Elle ramasse les bouchons et un lampion rouge.",
+  "en": "She picks up the corks and a red paper lantern."
+ },
+ "restes": {
+  "es": "Les restes du gâteau vont à la poubelle.",
+  "en": "The leftover cake goes in the bin."
+ },
+ "gâteau": {
+  "es": "Les restes du gâteau vont à la poubelle.",
+  "en": "The leftover cake goes in the bin."
+ },
+ "vont": {
+  "es": "Les restes du gâteau vont à la poubelle.",
+  "en": "The leftover cake goes in the bin."
+ },
+ "poubelle": {
+  "es": "Les restes du gâteau vont à la poubelle.",
+  "en": "The leftover cake goes in the bin."
+ },
+ "arrive": {
+  "es": "Hugo arrive, pas encore réveillé.",
+  "en": "Hugo arrives, not awake yet."
+ },
+ "pas": {
+  "es": "Hugo arrive, pas encore réveillé.",
+  "en": "Hugo arrives, not awake yet."
+ },
+ "encore": {
+  "es": "Hugo arrive, pas encore réveillé.",
+  "en": "Hugo arrives, not awake yet."
+ },
+ "réveillé": {
+  "es": "Hugo arrive, pas encore réveillé.",
+  "en": "Hugo arrives, not awake yet."
+ },
+ "il": {
+  "es": "Il prend un balai.",
+  "en": "He takes a broom."
+ },
+ "prend": {
+  "es": "Il prend un balai.",
+  "en": "He takes a broom."
+ },
+ "balai": {
+  "es": "Il prend un balai.",
+  "en": "He takes a broom."
+ },
+ "service": {
+  "es": "Un service pour un service",
+  "en": "A favour for a favour"
+ },
+ "pour": {
+  "es": "Un service pour un service",
+  "en": "A favour for a favour"
+ },
+ "dit": {
+  "es": "dit Hugo.",
+  "en": "Hugo says."
+ },
+ "enfin": {
+  "es": "Enfin, Hugo ouvre le paquet, surpris.",
+  "en": "At last, Hugo opens the parcel, surprised."
+ },
+ "ouvre": {
+  "es": "Enfin, Hugo ouvre le paquet, surpris.",
+  "en": "At last, Hugo opens the parcel, surprised."
+ },
+ "paquet": {
+  "es": "Enfin, Hugo ouvre le paquet, surpris.",
+  "en": "At last, Hugo opens the parcel, surprised."
+ },
+ "surpris": {
+  "es": "Enfin, Hugo ouvre le paquet, surpris.",
+  "en": "At last, Hugo opens the parcel, surprised."
+ },
+ "déchire": {
+  "es": "Il déchire doucement le papier.",
+  "en": "He gently tears the paper."
+ },
+ "doucement": {
+  "es": "Il déchire doucement le papier.",
+  "en": "He gently tears the paper."
+ },
+ "papier": {
+  "es": "Il déchire doucement le papier.",
+  "en": "He gently tears the paper."
+ },
+ "porte-bonheur": {
+  "es": "C'est la boule porte-bonheur de Léa!",
+  "en": "It is Léa's lucky boule!"
+ },
+ "de": {
+  "es": "C'est la boule porte-bonheur de Léa!",
+  "en": "It is Léa's lucky boule!"
+ },
+ "vrai": {
+  "es": "C'est vrai?",
+  "en": "Really?"
+ },
+ "ton": {
+  "es": "C'est ton porte-bonheur!",
+  "en": "It is your lucky charm!"
+ },
+ "je": {
+  "es": "Je ne peux pas.",
+  "en": "I can't."
+ },
+ "ne": {
+  "es": "Je ne peux pas.",
+  "en": "I can't."
+ },
+ "peux": {
+  "es": "Je ne peux pas.",
+  "en": "I can't."
+ },
+ "alors": {
+  "es": "Alors, on partage",
+  "en": "Then we share"
+ },
+ "on": {
+  "es": "Alors, on partage",
+  "en": "Then we share"
+ },
+ "partage": {
+  "es": "Alors, on partage",
+  "en": "Then we share"
+ },
+ "répond": {
+  "es": "répond Léa.",
+  "en": "Léa answers."
+ },
+ "moi": {
+  "es": "À toi la boule, à moi le cochonnet.",
+  "en": "The boule for you, the jack for me."
+ },
+ "cochonnet": {
+  "es": "À toi la boule, à moi le cochonnet.",
+  "en": "The boule for you, the jack for me."
+ },
+ "tu": {
+  "es": "Tu joues à Paris?",
+  "en": "Will you play in Paris?"
+ },
+ "joues": {
+  "es": "Tu joues à Paris?",
+  "en": "Will you play in Paris?"
+ },
+ "paris": {
+  "es": "Tu joues à Paris?",
+  "en": "Will you play in Paris?"
+ },
+ "demande": {
+  "es": "demande Léa.",
+  "en": "Léa asks."
+ },
+ "oui": {
+  "es": "Oui.",
+  "en": "Yes."
+ },
+ "chaque": {
+  "es": "Chaque fois, je pense à toi.",
+  "en": "Every time, I think of you."
+ },
+ "fois": {
+  "es": "Chaque fois, je pense à toi.",
+  "en": "Every time, I think of you."
+ },
+ "pense": {
+  "es": "Chaque fois, je pense à toi.",
+  "en": "Every time, I think of you."
+ },
+ "retour": {
+  "es": "Et le retour?",
+  "en": "And coming back?"
+ },
+ "jour": {
+  "es": "Un jour.",
+  "en": "One day."
+ },
+ "bientôt": {
+  "es": "Bientôt.",
+  "en": "Soon."
+ },
+ "te": {
+  "es": "Et je te rends ton argent.",
+  "en": "And I'll pay you back your money."
+ },
+ "rends": {
+  "es": "Et je te rends ton argent.",
+  "en": "And I'll pay you back your money."
+ },
+ "argent": {
+  "es": "Et je te rends ton argent.",
+  "en": "And I'll pay you back your money."
+ },
+ "ferme": {
+  "es": "Léa ferme la main de Hugo",
+  "en": "Léa closes Hugo's hand"
+ },
+ "main": {
+  "es": "Léa ferme la main de Hugo",
+  "en": "Léa closes Hugo's hand"
+ },
+ "douce": {
+  "es": "La main de Léa est douce.",
+  "en": "Léa's hand is soft."
+ },
+ "fin": {
+  "es": "À la fin, il rentre chez lui.",
+  "en": "In the end, he goes back home."
+ },
+ "rentre": {
+  "es": "À la fin, il rentre chez lui.",
+  "en": "In the end, he goes back home."
+ },
+ "chez": {
+  "es": "À la fin, il rentre chez lui.",
+  "en": "In the end, he goes back home."
+ },
+ "lui": {
+  "es": "À la fin, il rentre chez lui.",
+  "en": "In the end, he goes back home."
+ }
+}

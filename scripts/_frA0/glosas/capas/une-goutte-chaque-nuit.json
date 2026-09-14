@@ -1,0 +1,302 @@
+{
+ "goutte": {
+  "es": "Une goutte chaque nuit",
+  "en": "A drop every night"
+ },
+ "chaque": {
+  "es": "Une goutte chaque nuit",
+  "en": "A drop every night"
+ },
+ "nuit": {
+  "es": "Une goutte chaque nuit",
+  "en": "A drop every night"
+ },
+ "tombe": {
+  "es": "Une goutte tombe du robinet.",
+  "en": "A drop falls from the tap."
+ },
+ "robinet": {
+  "es": "Une goutte tombe du robinet.",
+  "en": "A drop falls from the tap."
+ },
+ "puis": {
+  "es": "Puis une autre goutte.",
+  "en": "Then another drop."
+ },
+ "autre": {
+  "es": "Puis une autre goutte.",
+  "en": "Then another drop."
+ },
+ "café": {
+  "es": "Le robinet du café coule tout le temps.",
+  "en": "The café tap drips all the time."
+ },
+ "coule": {
+  "es": "Le robinet du café coule tout le temps.",
+  "en": "The café tap drips all the time."
+ },
+ "tout": {
+  "es": "Le robinet du café coule tout le temps.",
+  "en": "The café tap drips all the time."
+ },
+ "temps": {
+  "es": "Le robinet du café coule tout le temps.",
+  "en": "The café tap drips all the time."
+ },
+ "écoute": {
+  "es": "Léa écoute les gouttes chaque nuit.",
+  "en": "Léa listens to the drops every night."
+ },
+ "gouttes": {
+  "es": "Léa écoute les gouttes chaque nuit.",
+  "en": "Léa listens to the drops every night."
+ },
+ "cet": {
+  "es": "Cet après-midi, Hugo arrive",
+  "en": "This afternoon, Hugo arrives"
+ },
+ "après-midi": {
+  "es": "Cet après-midi, Hugo arrive",
+  "en": "This afternoon, Hugo arrives"
+ },
+ "arrive": {
+  "es": "Cet après-midi, Hugo arrive",
+  "en": "This afternoon, Hugo arrives"
+ },
+ "avec": {
+  "es": "avec une boîte à outils.",
+  "en": "with a toolbox."
+ },
+ "boîte": {
+  "es": "avec une boîte à outils.",
+  "en": "with a toolbox."
+ },
+ "à": {
+  "es": "avec une boîte à outils.",
+  "en": "with a toolbox."
+ },
+ "outils": {
+  "es": "avec une boîte à outils.",
+  "en": "with a toolbox."
+ },
+ "je": {
+  "es": "Je répare ton robinet.",
+  "en": "I'll fix your tap."
+ },
+ "répare": {
+  "es": "Je répare ton robinet.",
+  "en": "I'll fix your tap."
+ },
+ "ton": {
+  "es": "Je répare ton robinet.",
+  "en": "I'll fix your tap."
+ },
+ "service": {
+  "es": "Un service pour un service.",
+  "en": "A favour for a favour."
+ },
+ "pour": {
+  "es": "Un service pour un service.",
+  "en": "A favour for a favour."
+ },
+ "tu": {
+  "es": "Tu sais réparer?",
+  "en": "Can you fix it?"
+ },
+ "sais": {
+  "es": "Tu sais réparer?",
+  "en": "Can you fix it?"
+ },
+ "réparer": {
+  "es": "Tu sais réparer?",
+  "en": "Can you fix it?"
+ },
+ "demande": {
+  "es": "demande Léa.",
+  "en": "Léa asks."
+ },
+ "met": {
+  "es": "Hugo met un seau dessous.",
+  "en": "Hugo puts a bucket underneath."
+ },
+ "seau": {
+  "es": "Hugo met un seau dessous.",
+  "en": "Hugo puts a bucket underneath."
+ },
+ "dessous": {
+  "es": "Hugo met un seau dessous.",
+  "en": "Hugo puts a bucket underneath."
+ },
+ "tourne": {
+  "es": "Hugo tourne, et l'eau coule partout.",
+  "en": "Hugo turns it, and water runs everywhere."
+ },
+ "et": {
+  "es": "Hugo tourne, et l'eau coule partout.",
+  "en": "Hugo turns it, and water runs everywhere."
+ },
+ "eau": {
+  "es": "Hugo tourne, et l'eau coule partout.",
+  "en": "Hugo turns it, and water runs everywhere."
+ },
+ "partout": {
+  "es": "Hugo tourne, et l'eau coule partout.",
+  "en": "Hugo turns it, and water runs everywhere."
+ },
+ "attention": {
+  "es": "Attention!",
+  "en": "Careful!"
+ },
+ "il": {
+  "es": "Il y a de l'eau partout!",
+  "en": "There is water everywhere!"
+ },
+ "y": {
+  "es": "Il y a de l'eau partout!",
+  "en": "There is water everywhere!"
+ },
+ "a": {
+  "es": "Il y a de l'eau partout!",
+  "en": "There is water everywhere!"
+ },
+ "de": {
+  "es": "Il y a de l'eau partout!",
+  "en": "There is water everywhere!"
+ },
+ "rit": {
+  "es": "rit Léa.",
+  "en": "Léa laughs."
+ },
+ "bravo": {
+  "es": "Bravo, Hugo!",
+  "en": "Well done, Hugo!"
+ },
+ "ne": {
+  "es": "Tu ne sais pas réparer.",
+  "en": "You don't know how to fix it."
+ },
+ "pas": {
+  "es": "Tu ne sais pas réparer.",
+  "en": "You don't know how to fix it."
+ },
+ "tuyau": {
+  "es": "Le tuyau est sale.",
+  "en": "The pipe is dirty."
+ },
+ "est": {
+  "es": "Le tuyau est sale.",
+  "en": "The pipe is dirty."
+ },
+ "sale": {
+  "es": "Le tuyau est sale.",
+  "en": "The pipe is dirty."
+ },
+ "as": {
+  "es": "Tu as raison",
+  "en": "You are right"
+ },
+ "raison": {
+  "es": "Tu as raison",
+  "en": "You are right"
+ },
+ "répond": {
+  "es": "répond Hugo.",
+  "en": "Hugo answers."
+ },
+ "mais": {
+  "es": "Mais je commence à voir.",
+  "en": "But I'm starting to see."
+ },
+ "commence": {
+  "es": "Mais je commence à voir.",
+  "en": "But I'm starting to see."
+ },
+ "voir": {
+  "es": "Mais je commence à voir.",
+  "en": "But I'm starting to see."
+ },
+ "serre": {
+  "es": "Il serre le tuyau, deux fois.",
+  "en": "He tightens the pipe, twice."
+ },
+ "fois": {
+  "es": "Il serre le tuyau, deux fois.",
+  "en": "He tightens the pipe, twice."
+ },
+ "claire": {
+  "es": "L'eau est claire.",
+  "en": "The water is clear."
+ },
+ "sèche": {
+  "es": "Léa sèche le sol avec une éponge.",
+  "en": "Léa dries the floor with a sponge."
+ },
+ "sol": {
+  "es": "Léa sèche le sol avec une éponge.",
+  "en": "Léa dries the floor with a sponge."
+ },
+ "éponge": {
+  "es": "Léa sèche le sol avec une éponge.",
+  "en": "Léa dries the floor with a sponge."
+ },
+ "propre": {
+  "es": "Le sol est propre.",
+  "en": "The floor is clean."
+ },
+ "ça": {
+  "es": "Ça y est.",
+  "en": "There we go."
+ },
+ "fini": {
+  "es": "Fini",
+  "en": "Done"
+ },
+ "dit": {
+  "es": "dit Hugo.",
+  "en": "Hugo says."
+ },
+ "voilà": {
+  "es": "Voilà.",
+  "en": "There you are."
+ },
+ "maintenant": {
+  "es": "Maintenant, tu n'as plus besoin de moi.",
+  "en": "Now you don't need me any more."
+ },
+ "plus": {
+  "es": "Maintenant, tu n'as plus besoin de moi.",
+  "en": "Now you don't need me any more."
+ },
+ "besoin": {
+  "es": "Maintenant, tu n'as plus besoin de moi.",
+  "en": "Now you don't need me any more."
+ },
+ "moi": {
+  "es": "Maintenant, tu n'as plus besoin de moi.",
+  "en": "Now you don't need me any more."
+ },
+ "elle": {
+  "es": "Elle ouvre le robinet, puis elle le ferme.",
+  "en": "She opens the tap, then she closes it."
+ },
+ "ouvre": {
+  "es": "Elle ouvre le robinet, puis elle le ferme.",
+  "en": "She opens the tap, then she closes it."
+ },
+ "ferme": {
+  "es": "Elle ouvre le robinet, puis elle le ferme.",
+  "en": "She opens the tap, then she closes it."
+ },
+ "toute": {
+  "es": "Elle est toute seule avec le silence.",
+  "en": "She is all alone with the silence."
+ },
+ "seule": {
+  "es": "Elle est toute seule avec le silence.",
+  "en": "She is all alone with the silence."
+ },
+ "silence": {
+  "es": "Elle est toute seule avec le silence.",
+  "en": "She is all alone with the silence."
+ }
+}

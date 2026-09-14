@@ -76,7 +76,7 @@ const FAMILIES: Record<string, string[]> = {
     "spanish-traveler-spain-b2",
   ],
   german: ["german-expat", "german-friends", "german-friends-a0", "german-hamburg", "german-traveler-a0", "german-traveler-a1"],
-  french: ["french-traveler", "french-expat-lyon", "french-friends-france-a2"],
+  french: ["french-traveler", "french-expat-lyon", "french-friends-a0", "french-friends-france-a2"],
   italian: ["italian-friends-a0", "italian-traveler-a0", "italian-traveler-a1"],
   portuguese: ["portuguese-traveler-brazil-a0", "portuguese-traveler-brazil-a1", "portuguese-traveler-brazil-b1"],
 };

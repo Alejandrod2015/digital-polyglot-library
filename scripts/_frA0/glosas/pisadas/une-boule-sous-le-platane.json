@@ -1,0 +1,57 @@
+{
+ "a": {
+  "es": "Elle a un café sur la placette.",
+  "en": "She has a café on the little square.",
+  "g": "has (avoir)"
+ },
+ "au-dessus": {
+  "es": "Hugo, un ami de Léa, habite au-dessus.",
+  "en": "Hugo, a friend of Léa's, lives upstairs.",
+  "g": "upstairs (au-dessus)"
+ },
+ "café": {
+  "es": "Elle a un café sur la placette.",
+  "en": "She has a café on the little square.",
+  "g": "café (le café)"
+ },
+ "elle": {
+  "es": "Elle a un café sur la placette.",
+  "en": "She has a café on the little square.",
+  "g": "she (elle)"
+ },
+ "en": {
+  "es": "Léa, je pars à Paris en mars.",
+  "en": "Léa, I'm leaving for Paris in March.",
+  "g": "in (en)"
+ },
+ "joue": {
+  "es": "Hugo joue mal, et sa boule part loin.",
+  "en": "Hugo plays badly, and his boule goes far.",
+  "g": "plays (jouer)"
+ },
+ "mal": {
+  "es": "Hugo joue mal, et sa boule part loin.",
+  "en": "Hugo plays badly, and his boule goes far.",
+  "g": "badly (mal)"
+ },
+ "ne": {
+  "es": "et ne regarde plus sa boule.",
+  "en": "and doesn't look at her boule any more.",
+  "g": "no longer (ne ... plus)"
+ },
+ "plus": {
+  "es": "et ne regarde plus sa boule.",
+  "en": "and doesn't look at her boule any more.",
+  "g": "no longer (ne ... plus)"
+ },
+ "toujours": {
+  "es": "Hugo gagne toujours, et Léa perd toujours.",
+  "en": "Hugo always wins, and Léa always loses.",
+  "g": "always (toujours)"
+ },
+ "tout": {
+  "es": "Sa boule roule tout près.",
+  "en": "Her boule rolls very close.",
+  "g": "very (tout près: very close)"
+ }
+}

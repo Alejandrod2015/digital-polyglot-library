@@ -1,0 +1,62 @@
+{
+ "a": {
+  "es": "Elle a mal à la tête.",
+  "en": "She has a headache.",
+  "g": "has (avoir)"
+ },
+ "côté": {
+  "es": "Ce soir, Hugo boit un café à côté.",
+  "en": "This evening, Hugo drinks a coffee next to her.",
+  "g": "next to her, nearby (à côté)"
+ },
+ "elle": {
+  "es": "Chaque nuit, elle écrit au crayon.",
+  "en": "Every night, she writes in pencil.",
+  "g": "she (elle)"
+ },
+ "encore": {
+  "es": "Elle écrit encore, toute seule:",
+  "en": "She writes again, all alone:",
+  "g": "again (encore)"
+ },
+ "il": {
+  "es": "Il a raison:",
+  "en": "He is right:",
+  "g": "he (il)"
+ },
+ "là": {
+  "es": "Mais je suis là!",
+  "en": "But I'm here!",
+  "g": "here, there for you (être là)"
+ },
+ "mal": {
+  "es": "Elle a mal à la tête.",
+  "en": "She has a headache.",
+  "g": "pain; a headache (avoir mal à la tête)"
+ },
+ "ne": {
+  "es": "Léa ne comprend pas le sens.",
+  "en": "Léa doesn't understand the meaning.",
+  "g": "not (ne ... pas)"
+ },
+ "pas": {
+  "es": "Léa ne comprend pas le sens.",
+  "en": "Léa doesn't understand the meaning.",
+  "g": "not (ne ... pas)"
+ },
+ "raison": {
+  "es": "Il a raison:",
+  "en": "He is right:",
+  "g": "to be right (avoir raison)"
+ },
+ "serre": {
+  "es": "Hugo serre la main de Léa.",
+  "en": "Hugo squeezes Léa's hand.",
+  "g": "squeezes, holds (serrer la main)"
+ },
+ "toujours": {
+  "es": "amis pour toujours.",
+  "en": "friends forever.",
+  "g": "forever (pour toujours)"
+ }
+}

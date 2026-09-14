@@ -1,0 +1,3530 @@
+[
+ {
+  "topic": "sports-and-games",
+  "slotIndex": 0,
+  "title": "Une boule sous le platane",
+  "vocab": [
+   {
+    "word": "la pétanque",
+    "surface": "pétanque",
+    "type": "noun",
+    "def": "Pétanque; a French game with metal balls on sand.",
+    "anchor": true,
+    "ex": "Ils jouent à la pétanque chaque dimanche."
+   },
+   {
+    "word": "la boule",
+    "surface": "boule",
+    "type": "noun",
+    "def": "Boule; the heavy metal ball you throw in pétanque.",
+    "anchor": true,
+    "ex": "Léa prend sa boule ronde et froide."
+   },
+   {
+    "word": "le platane",
+    "surface": "platane",
+    "type": "noun",
+    "def": "Plane tree; the big tree that gives shade on the square.",
+    "anchor": true,
+    "ex": "Les boules attendent sur le banc, sous le platane."
+   },
+   {
+    "word": "la placette",
+    "surface": "placette",
+    "type": "noun",
+    "def": "Little square; a small open place between old houses.",
+    "anchor": true,
+    "ex": "Elle a un café sur la placette."
+   },
+   {
+    "word": "le banc",
+    "surface": "banc",
+    "type": "noun",
+    "def": "Bench; a long seat outside where people sit.",
+    "anchor": true,
+    "ex": "Les boules attendent sur le banc, sous le platane."
+   },
+   {
+    "word": "perdre",
+    "surface": "perd",
+    "type": "verb",
+    "def": "To lose; to not win a game.",
+    "anchor": false,
+    "ex": "Hugo gagne toujours, et Léa perd toujours."
+   },
+   {
+    "word": "lancer",
+    "surface": "lance",
+    "type": "verb",
+    "def": "To throw; to send something through the air with your hand.",
+    "anchor": false,
+    "ex": "Hugo lance le cochonnet, vite."
+   },
+   {
+    "word": "le cochonnet",
+    "surface": "cochonnet",
+    "type": "noun",
+    "def": "Jack; the small ball the players try to get near.",
+    "anchor": true,
+    "ex": "Hugo lance le cochonnet, vite."
+   },
+   {
+    "word": "rouler",
+    "surface": "roule",
+    "type": "verb",
+    "def": "To roll; to move along the ground by turning.",
+    "anchor": false,
+    "ex": "Sa boule roule tout près."
+   },
+   {
+    "word": "à toi",
+    "surface": "À toi",
+    "type": "expression",
+    "def": "Your turn; now it is you who plays.",
+    "anchor": false,
+    "ex": "“À toi”, répond Hugo."
+   },
+   {
+    "word": "rond",
+    "surface": "ronde",
+    "type": "adjective",
+    "def": "Round; with the shape of a ball.",
+    "anchor": false,
+    "ex": "Léa prend sa boule ronde et froide."
+   },
+   {
+    "word": "près",
+    "surface": "près",
+    "type": "adverb",
+    "def": "Near; at a short distance from something.",
+    "anchor": false,
+    "ex": "Sa boule roule tout près."
+   },
+   {
+    "word": "loin",
+    "surface": "loin",
+    "type": "adverb",
+    "def": "Far; at a long distance from something.",
+    "anchor": false,
+    "ex": "Hugo joue mal, et sa boule part loin."
+   },
+   {
+    "word": "vraiment",
+    "surface": "Vraiment",
+    "type": "adverb",
+    "def": "Really; truly, in a real way.",
+    "anchor": false,
+    "ex": "Vraiment?”, demande Léa."
+   },
+   {
+    "word": "le jeu",
+    "surface": "jeu",
+    "type": "noun",
+    "def": "Game; something you play for fun.",
+    "anchor": false,
+    "ex": "C'est un jeu”, répond Hugo."
+   },
+   {
+    "word": "partir",
+    "surface": "part",
+    "type": "verb",
+    "def": "To leave; to go away from a place.",
+    "anchor": false,
+    "ex": "Hugo joue mal, et sa boule part loin."
+   },
+   {
+    "word": "mars",
+    "surface": "mars",
+    "type": "noun",
+    "def": "March; the third month of the year.",
+    "anchor": false,
+    "ex": "“Léa, je pars à Paris en mars."
+   },
+   {
+    "word": "quitter",
+    "surface": "quitte",
+    "type": "verb",
+    "def": "To leave a place or a person for good.",
+    "anchor": false,
+    "ex": "Je quitte Marseille.”"
+   },
+   {
+    "word": "le départ",
+    "surface": "départ",
+    "type": "noun",
+    "def": "Departure; the moment when someone goes away.",
+    "anchor": false,
+    "ex": "Le départ est dans six mois?"
+   },
+   {
+    "word": "triste",
+    "surface": "triste",
+    "type": "adjective",
+    "def": "Sad; not happy about something.",
+    "anchor": false,
+    "ex": "Léa est triste et ne regarde plus sa boule."
+   }
+  ],
+  "slug": "une-boule-sous-le-platane"
+ },
+ {
+  "topic": "sports-and-games",
+  "slotIndex": 1,
+  "title": "Deux carreaux pour Hugo",
+  "vocab": [
+   {
+    "word": "la tasse",
+    "surface": "tasses",
+    "type": "noun",
+    "def": "Cup; a small bowl with a handle for coffee.",
+    "anchor": true,
+    "ex": "Léa apporte deux tasses de café."
+   },
+   {
+    "word": "le tablier",
+    "surface": "tablier",
+    "type": "noun",
+    "def": "Apron; cloth you wear over your clothes at work.",
+    "anchor": true,
+    "ex": "Elle porte son tablier, et le mistral arrive."
+   },
+   {
+    "word": "le mistral",
+    "surface": "mistral",
+    "type": "noun",
+    "def": "Mistral; the strong cold wind of the south of France.",
+    "anchor": true,
+    "ex": "Elle porte son tablier, et le mistral arrive."
+   },
+   {
+    "word": "souffler",
+    "surface": "souffle",
+    "type": "verb",
+    "def": "To blow; what the wind does.",
+    "anchor": false,
+    "ex": "Il souffle fort."
+   },
+   {
+    "word": "fort",
+    "surface": "fort",
+    "type": "adverb",
+    "def": "Hard, strongly; with a lot of force.",
+    "anchor": false,
+    "ex": "Il souffle fort."
+   },
+   {
+    "word": "montrer",
+    "surface": "montrer",
+    "type": "verb",
+    "def": "To show; to let someone see how to do something.",
+    "anchor": false,
+    "ex": "Hugo veut montrer quelque chose à Léa."
+   },
+   {
+    "word": "le carreau",
+    "surface": "carreau",
+    "type": "noun",
+    "def": "Carreau; a perfect shot that takes the other ball's place.",
+    "anchor": true,
+    "ex": "Sa boule reste à sa place: c'est un carreau."
+   },
+   {
+    "word": "devoir",
+    "surface": "dois",
+    "type": "verb",
+    "def": "Must, have to; it is necessary for you.",
+    "anchor": false,
+    "ex": "“Tu dois apprendre à tirer.”"
+   },
+   {
+    "word": "tirer",
+    "surface": "tire",
+    "type": "verb",
+    "def": "To shoot; to throw your ball hard at another ball.",
+    "anchor": false,
+    "ex": "Il tire: carreau."
+   },
+   {
+    "word": "prendre",
+    "surface": "prend",
+    "type": "verb",
+    "def": "To take; to pick something up in your hand.",
+    "anchor": false,
+    "ex": "Mais elle prend une boule."
+   },
+   {
+    "word": "droit",
+    "surface": "droit",
+    "type": "adverb",
+    "def": "Straight; in a line, without turning to the side.",
+    "anchor": false,
+    "ex": "La boule ne va pas droit, et elle rate."
+   },
+   {
+    "word": "rater",
+    "surface": "rate",
+    "type": "verb",
+    "def": "To miss; to not hit what you aim at.",
+    "anchor": false,
+    "ex": "La boule ne va pas droit, et elle rate."
+   },
+   {
+    "word": "le pari",
+    "surface": "pari",
+    "type": "noun",
+    "def": "Bet; a deal where the loser has to pay.",
+    "anchor": true,
+    "ex": "Hugo fait un pari."
+   },
+   {
+    "word": "payer",
+    "surface": "paie",
+    "type": "verb",
+    "def": "To pay; to give money for something.",
+    "anchor": false,
+    "ex": "“Pas grave, je paie."
+   },
+   {
+    "word": "facile",
+    "surface": "facile",
+    "type": "adjective",
+    "def": "Easy; not hard to do.",
+    "anchor": false,
+    "ex": "“C'est facile."
+   },
+   {
+    "word": "comme ça",
+    "surface": "comme ça",
+    "type": "expression",
+    "def": "Like this; in this way, as I show you.",
+    "anchor": false,
+    "ex": "Tu tiens la boule comme ça.”"
+   },
+   {
+    "word": "encore une fois",
+    "surface": "encore une fois",
+    "type": "expression",
+    "def": "One more time; again, as before.",
+    "anchor": false,
+    "ex": "“Encore une fois”, annonce Léa."
+   },
+   {
+    "word": "la tête",
+    "surface": "tête",
+    "type": "noun",
+    "def": "Head; the top part of your body.",
+    "anchor": false,
+    "ex": "Elle rit, les mains sur la tête."
+   },
+   {
+    "word": "l'ombre",
+    "surface": "ombre",
+    "type": "noun",
+    "def": "Shade; the cool dark place under a tree.",
+    "anchor": true,
+    "ex": "Ils restent à l'ombre tout l'après-midi."
+   },
+   {
+    "word": "aller",
+    "surface": "va",
+    "type": "verb",
+    "def": "To go; here, to move in a line.",
+    "anchor": false,
+    "ex": "La boule ne va pas droit, et elle rate."
+   }
+  ],
+  "slug": "deux-carreaux-pour-hugo"
+ },
+ {
+  "topic": "sports-and-games",
+  "slotIndex": 2,
+  "title": "Si je gagne, tu restes",
+  "vocab": [
+   {
+    "word": "rouge",
+    "surface": "rouge",
+    "type": "adjective",
+    "def": "Red; the colour of the sky at sunset.",
+    "anchor": false,
+    "ex": "Le ciel est rouge au-dessus du Panier."
+   },
+   {
+    "word": "le gravier",
+    "surface": "gravier",
+    "type": "noun",
+    "def": "Gravel; small stones on the ground where they play.",
+    "anchor": true,
+    "ex": "Le gravier est encore chaud."
+   },
+   {
+    "word": "la craie",
+    "surface": "craie",
+    "type": "noun",
+    "def": "Chalk; a white stick for drawing on the ground.",
+    "anchor": true,
+    "ex": "Hugo dessine un rond avec la craie."
+   },
+   {
+    "word": "dernier",
+    "surface": "dernière",
+    "type": "adjective",
+    "def": "Last; the one at the end, with no more after.",
+    "anchor": false,
+    "ex": "C'est la dernière partie de septembre."
+   },
+   {
+    "word": "la partie",
+    "surface": "partie",
+    "type": "noun",
+    "def": "Game, match; one full game from start to end.",
+    "anchor": false,
+    "ex": "C'est la dernière partie de septembre."
+   },
+   {
+    "word": "le sac",
+    "surface": "sac",
+    "type": "noun",
+    "def": "Bag; what she carries the balls in.",
+    "anchor": true,
+    "ex": "Léa sort les boules de son sac."
+   },
+   {
+    "word": "le chiffon",
+    "surface": "chiffon",
+    "type": "noun",
+    "def": "Cloth; a small piece of old fabric for cleaning.",
+    "anchor": true,
+    "ex": "Elle les nettoie avec un chiffon."
+   },
+   {
+    "word": "vouloir",
+    "surface": "veut",
+    "type": "verb",
+    "def": "To want; to wish to have or do something.",
+    "anchor": false,
+    "ex": "Léa veut parier: “Si je gagne, tu restes à Marseille."
+   },
+   {
+    "word": "parier",
+    "surface": "parier",
+    "type": "verb",
+    "def": "To bet; to promise something if you lose.",
+    "anchor": false,
+    "ex": "Léa veut parier: “Si je gagne, tu restes à Marseille."
+   },
+   {
+    "word": "rester",
+    "surface": "restes",
+    "type": "verb",
+    "def": "To stay; to not go away from a place.",
+    "anchor": false,
+    "ex": "Léa veut parier: “Si je gagne, tu restes à Marseille."
+   },
+   {
+    "word": "sûr",
+    "surface": "sûr",
+    "type": "adjective",
+    "def": "Sure; certain about what you want to do.",
+    "anchor": false,
+    "ex": "Hugo n'est pas sûr."
+   },
+   {
+    "word": "espérer",
+    "surface": "espère",
+    "type": "verb",
+    "def": "To hope; to want something good to happen.",
+    "anchor": false,
+    "ex": "Léa espère, mais ce soir, il joue bien."
+   },
+   {
+    "word": "jamais",
+    "surface": "jamais",
+    "type": "adverb",
+    "def": "Never; not one time.",
+    "anchor": false,
+    "ex": "Il ne dit jamais non à Léa."
+   },
+   {
+    "word": "le lampadaire",
+    "surface": "lampadaire",
+    "type": "noun",
+    "def": "Street lamp; the tall light on the square at night.",
+    "anchor": true,
+    "ex": "Sous le lampadaire, il mesure avec une ficelle."
+   },
+   {
+    "word": "la ficelle",
+    "surface": "ficelle",
+    "type": "noun",
+    "def": "String; a thin cord used here to measure the distance.",
+    "anchor": true,
+    "ex": "Sous le lampadaire, il mesure avec une ficelle."
+   },
+   {
+    "word": "le perdant",
+    "surface": "perdant",
+    "type": "noun",
+    "def": "Loser; the person who does not win the game.",
+    "anchor": false,
+    "ex": "Le perdant ramasse”, dit Léa."
+   },
+   {
+    "word": "ramasser",
+    "surface": "ramasse",
+    "type": "verb",
+    "def": "To pick up; to take things from the ground.",
+    "anchor": false,
+    "ex": "Le perdant ramasse”, dit Léa."
+   },
+   {
+    "word": "une à une",
+    "surface": "une à une",
+    "type": "expression",
+    "def": "One by one; each one after the other.",
+    "anchor": false,
+    "ex": "Elle ramasse les boules une à une."
+   },
+   {
+    "word": "fier",
+    "surface": "fier",
+    "type": "adjective",
+    "def": "Proud; happy with what you did.",
+    "anchor": false,
+    "ex": "Hugo n'est pas fier, et il comprend."
+   },
+   {
+    "word": "oublier",
+    "surface": "oublie",
+    "type": "verb",
+    "def": "To forget; to not remember something.",
+    "anchor": false,
+    "ex": "Léa n'oublie pas le pari."
+   }
+  ],
+  "slug": "si-je-gagne-tu-restes"
+ },
+ {
+  "topic": "talking-and-listening",
+  "slotIndex": 0,
+  "title": "Théo écoute pour Léa",
+  "vocab": [
+   {
+    "word": "s'appeler",
+    "surface": "s'appelle",
+    "type": "verb",
+    "def": "To be called; to have a name.",
+    "anchor": false,
+    "ex": "Le nouveau serveur s'appelle Théo."
+   },
+   {
+    "word": "le serveur",
+    "surface": "serveur",
+    "type": "noun",
+    "def": "Waiter; the person who brings drinks to the tables.",
+    "anchor": true,
+    "ex": "Le nouveau serveur s'appelle Théo."
+   },
+   {
+    "word": "commencer",
+    "surface": "commence",
+    "type": "verb",
+    "def": "To start; to do something for the first time.",
+    "anchor": false,
+    "ex": "Il commence aujourd'hui."
+   },
+   {
+    "word": "courir",
+    "surface": "court",
+    "type": "verb",
+    "def": "To run; to move very fast on foot.",
+    "anchor": false,
+    "ex": "Il court entre les tables avec son plateau."
+   },
+   {
+    "word": "le plateau",
+    "surface": "plateau",
+    "type": "noun",
+    "def": "Tray; a flat board for carrying cups and glasses.",
+    "anchor": true,
+    "ex": "Il court entre les tables avec son plateau."
+   },
+   {
+    "word": "plein",
+    "surface": "plein",
+    "type": "adjective",
+    "def": "Full; with no free space left.",
+    "anchor": false,
+    "ex": "Le café est plein, et Léa est occupée."
+   },
+   {
+    "word": "occupé",
+    "surface": "occupée",
+    "type": "adjective",
+    "def": "Busy; with a lot of work to do.",
+    "anchor": false,
+    "ex": "Le café est plein, et Léa est occupée."
+   },
+   {
+    "word": "le message vocal",
+    "surface": "message vocal",
+    "type": "noun",
+    "def": "Voice message; a short recording you send by phone.",
+    "anchor": true,
+    "ex": "Un message vocal arrive sur son portable."
+   },
+   {
+    "word": "le portable",
+    "surface": "portable",
+    "type": "noun",
+    "def": "Mobile phone; the phone you carry with you.",
+    "anchor": true,
+    "ex": "Un message vocal arrive sur son portable."
+   },
+   {
+    "word": "écouter",
+    "surface": "écoute",
+    "type": "verb",
+    "def": "To listen; to try to hear something.",
+    "anchor": false,
+    "ex": "Léa écoute, mais il y a trop de bruit."
+   },
+   {
+    "word": "entendre",
+    "surface": "entends",
+    "type": "verb",
+    "def": "To hear; to get a sound with your ears.",
+    "anchor": false,
+    "ex": "Je n'entends rien”, crie Léa."
+   },
+   {
+    "word": "pardon",
+    "surface": "Pardon",
+    "type": "expression",
+    "def": "Sorry, excuse me; a polite word before a question.",
+    "anchor": false,
+    "ex": "“Pardon."
+   },
+   {
+    "word": "dire",
+    "surface": "dit",
+    "type": "verb",
+    "def": "To say; to tell something with words.",
+    "anchor": false,
+    "ex": "J'oublie toujours où sont les tasses”, dit Théo."
+   },
+   {
+    "word": "les écouteurs",
+    "surface": "écouteurs",
+    "type": "noun",
+    "def": "Earphones; small speakers you put in your ears.",
+    "anchor": true,
+    "ex": "Il met les écouteurs dans ses oreilles."
+   },
+   {
+    "word": "quoi",
+    "surface": "quoi",
+    "type": "pronoun",
+    "def": "What; a word to ask about something.",
+    "anchor": false,
+    "ex": "“Quoi?"
+   },
+   {
+    "word": "le tabouret",
+    "surface": "tabouret",
+    "type": "noun",
+    "def": "Stool; a high seat with no back.",
+    "anchor": true,
+    "ex": "Il est sur un tabouret, à côté d'elle."
+   },
+   {
+    "word": "à côté",
+    "surface": "à côté",
+    "type": "expression",
+    "def": "Next to; very near, at the side.",
+    "anchor": false,
+    "ex": "Il est sur un tabouret, à côté d'elle."
+   },
+   {
+    "word": "comprendre",
+    "surface": "comprend",
+    "type": "verb",
+    "def": "To understand; to get what someone means.",
+    "anchor": false,
+    "ex": "Léa comprend."
+   },
+   {
+    "word": "gentil",
+    "surface": "gentil",
+    "type": "adjective",
+    "def": "Kind; nice and ready to help.",
+    "anchor": false,
+    "ex": "Tu es gentil.”"
+   },
+   {
+    "word": "bien sûr",
+    "surface": "Bien sûr",
+    "type": "expression",
+    "def": "Of course; yes, with pleasure.",
+    "anchor": false,
+    "ex": "“Bien sûr”, sourit Théo."
+   }
+  ],
+  "slug": "theo-ecoute-pour-lea"
+ },
+ {
+  "topic": "talking-and-listening",
+  "slotIndex": 1,
+  "title": "La ligne coupe après Hugo",
+  "vocab": [
+   {
+    "word": "le réseau",
+    "surface": "réseau",
+    "type": "noun",
+    "def": "Signal; the phone network that lets you call.",
+    "anchor": true,
+    "ex": "En bas, le café n'a pas de réseau."
+   },
+   {
+    "word": "le toit",
+    "surface": "toit",
+    "type": "noun",
+    "def": "Roof; the top of a building.",
+    "anchor": true,
+    "ex": "Sur le toit, le linge sèche entre les cheminées."
+   },
+   {
+    "word": "le linge",
+    "surface": "linge",
+    "type": "noun",
+    "def": "Laundry; clothes that are washed and drying.",
+    "anchor": true,
+    "ex": "Sur le toit, le linge sèche entre les cheminées."
+   },
+   {
+    "word": "la cheminée",
+    "surface": "cheminées",
+    "type": "noun",
+    "def": "Chimney; the tall pipe on a roof for smoke.",
+    "anchor": true,
+    "ex": "Sur le toit, le linge sèche entre les cheminées."
+   },
+   {
+    "word": "seul",
+    "surface": "seule",
+    "type": "adjective",
+    "def": "Alone; with nobody else there.",
+    "anchor": false,
+    "ex": "Le vent est froid, et Léa est seule."
+   },
+   {
+    "word": "sonner",
+    "surface": "sonne",
+    "type": "verb",
+    "def": "To ring; what a phone does when someone calls.",
+    "anchor": false,
+    "ex": "Le portable sonne deux fois."
+   },
+   {
+    "word": "deux",
+    "surface": "deux",
+    "type": "noun",
+    "def": "Two; the number after one.",
+    "anchor": false,
+    "ex": "Le portable sonne deux fois."
+   },
+   {
+    "word": "allô",
+    "surface": "Allô",
+    "type": "expression",
+    "def": "Hello?; what you say when you answer the phone.",
+    "anchor": false,
+    "ex": "“Allô, Léa?”, répond Hugo."
+   },
+   {
+    "word": "répondre",
+    "surface": "répond",
+    "type": "verb",
+    "def": "To answer; to say something back.",
+    "anchor": false,
+    "ex": "“Allô, Léa?”, répond Hugo."
+   },
+   {
+    "word": "le haut-parleur",
+    "surface": "haut-parleur",
+    "type": "noun",
+    "def": "Speaker; the phone mode where you hear without holding it.",
+    "anchor": true,
+    "ex": "Léa met le haut-parleur."
+   },
+   {
+    "word": "clair",
+    "surface": "claire",
+    "type": "adjective",
+    "def": "Clear; easy to hear, with no noise.",
+    "anchor": false,
+    "ex": "La voix de Hugo est claire."
+   },
+   {
+    "word": "avant",
+    "surface": "avant",
+    "type": "adverb",
+    "def": "Before; earlier than something else.",
+    "anchor": false,
+    "ex": "Elle veut dire une chose avant son départ."
+   },
+   {
+    "word": "la ligne",
+    "surface": "ligne",
+    "type": "noun",
+    "def": "Line; the phone connection between two people.",
+    "anchor": true,
+    "ex": "Mais la ligne est coupée après “Hugo”."
+   },
+   {
+    "word": "coupé",
+    "surface": "coupée",
+    "type": "adjective",
+    "def": "Cut off; stopped suddenly, with no more sound.",
+    "anchor": false,
+    "ex": "Mais la ligne est coupée après “Hugo”."
+   },
+   {
+    "word": "attendre",
+    "surface": "attend",
+    "type": "verb",
+    "def": "To wait; to stay until something happens.",
+    "anchor": false,
+    "ex": "Léa attend."
+   },
+   {
+    "word": "rappeler",
+    "surface": "rappelle",
+    "type": "verb",
+    "def": "To call back; to phone someone again.",
+    "anchor": false,
+    "ex": "Hugo rappelle."
+   },
+   {
+    "word": "demander",
+    "surface": "demande",
+    "type": "verb",
+    "def": "To ask; to want an answer from someone.",
+    "anchor": false,
+    "ex": "“Tu es triste?”, demande Hugo."
+   },
+   {
+    "word": "fermer",
+    "surface": "ferme",
+    "type": "verb",
+    "def": "To close; here, to shut your eyes.",
+    "anchor": false,
+    "ex": "Léa ferme les yeux et retient ses larmes."
+   },
+   {
+    "word": "juste",
+    "surface": "Juste",
+    "type": "adverb",
+    "def": "Just, only; nothing more than this.",
+    "anchor": false,
+    "ex": "Juste bonjour”, répond Léa."
+   },
+   {
+    "word": "pas du tout",
+    "surface": "pas du tout",
+    "type": "expression",
+    "def": "Not at all; really not.",
+    "anchor": false,
+    "ex": "Pas du tout.”"
+   }
+  ],
+  "slug": "la-ligne-coupe-apres-hugo"
+ },
+ {
+  "topic": "talking-and-listening",
+  "slotIndex": 2,
+  "title": "Le torchon à la main",
+  "vocab": [
+   {
+    "word": "la vitrine",
+    "surface": "vitrine",
+    "type": "noun",
+    "def": "Shop window; the big glass front of the café.",
+    "anchor": true,
+    "ex": "La vitrine est noire."
+   },
+   {
+    "word": "sécher",
+    "surface": "sèche",
+    "type": "verb",
+    "def": "To dry; to take the water off something.",
+    "anchor": false,
+    "ex": "Léa sèche les tasses à l'évier avec un torchon."
+   },
+   {
+    "word": "l'évier",
+    "surface": "évier",
+    "type": "noun",
+    "def": "Sink; where you wash cups in the kitchen.",
+    "anchor": true,
+    "ex": "Léa sèche les tasses à l'évier avec un torchon."
+   },
+   {
+    "word": "le torchon",
+    "surface": "torchon",
+    "type": "noun",
+    "def": "Tea towel; a cloth for drying cups and plates.",
+    "anchor": true,
+    "ex": "Léa sèche les tasses à l'évier avec un torchon."
+   },
+   {
+    "word": "l'étagère",
+    "surface": "étagère",
+    "type": "noun",
+    "def": "Shelf; a board on the wall to put things on.",
+    "anchor": true,
+    "ex": "Elle les pose sur l'étagère."
+   },
+   {
+    "word": "heureux",
+    "surface": "heureux",
+    "type": "adjective",
+    "def": "Happy; feeling very good.",
+    "anchor": false,
+    "ex": "Il est heureux."
+   },
+   {
+    "word": "petit",
+    "surface": "petit",
+    "type": "adjective",
+    "def": "Small; not big in size.",
+    "anchor": false,
+    "ex": "Il est petit, et je paie cher.”"
+   },
+   {
+    "word": "cher",
+    "surface": "cher",
+    "type": "adjective",
+    "def": "Expensive; costing a lot of money.",
+    "anchor": false,
+    "ex": "Il est petit, et je paie cher.”"
+   },
+   {
+    "word": "la vue",
+    "surface": "vue",
+    "type": "noun",
+    "def": "View; what you see from a window.",
+    "anchor": false,
+    "ex": "“La vue est belle."
+   },
+   {
+    "word": "le métro",
+    "surface": "métro",
+    "type": "noun",
+    "def": "Underground train; the train under the city.",
+    "anchor": false,
+    "ex": "Le métro est en bas”, explique Hugo."
+   },
+   {
+    "word": "la cafetière",
+    "surface": "cafetière",
+    "type": "noun",
+    "def": "Coffee pot; the pot that makes the coffee.",
+    "anchor": true,
+    "ex": "Elle range la cafetière."
+   },
+   {
+    "word": "partout",
+    "surface": "partout",
+    "type": "adverb",
+    "def": "Everywhere; in every place.",
+    "anchor": false,
+    "ex": "“Théo court partout."
+   },
+   {
+    "word": "tout le temps",
+    "surface": "tout le temps",
+    "type": "expression",
+    "def": "All the time; again and again.",
+    "anchor": false,
+    "ex": "Léa parle tout le temps de Théo."
+   },
+   {
+    "word": "parce que",
+    "surface": "parce que",
+    "type": "expression",
+    "def": "Because; this gives the reason.",
+    "anchor": false,
+    "ex": "Elle ne veut pas écouter, parce que c'est triste."
+   },
+   {
+    "word": "moins",
+    "surface": "moins",
+    "type": "adverb",
+    "def": "Less; not as much.",
+    "anchor": false,
+    "ex": "Hugo reste moins d'une minute."
+   },
+   {
+    "word": "là-haut",
+    "surface": "là-haut",
+    "type": "adverb",
+    "def": "Up there; in a higher place.",
+    "anchor": false,
+    "ex": "Il monte là-haut, à la maison."
+   },
+   {
+    "word": "grand",
+    "surface": "grand",
+    "type": "adjective",
+    "def": "Big; large in size.",
+    "anchor": false,
+    "ex": "Sans lui, le café est grand et vide."
+   },
+   {
+    "word": "la sonnette",
+    "surface": "sonnette",
+    "type": "noun",
+    "def": "Doorbell; the button you press at a door.",
+    "anchor": true,
+    "ex": "Léa monte, mais il n'y a pas de sonnette."
+   },
+   {
+    "word": "frapper",
+    "surface": "frappe",
+    "type": "verb",
+    "def": "To knock; to hit a door with your hand.",
+    "anchor": false,
+    "ex": "Elle frappe, le torchon à la main."
+   },
+   {
+    "word": "raconter",
+    "surface": "racontes",
+    "type": "verb",
+    "def": "To tell; to give the details of a story.",
+    "anchor": false,
+    "ex": "Tu racontes?”, dit Léa."
+   }
+  ],
+  "slug": "le-torchon-a-la-main"
+ },
+ {
+  "topic": "helping-and-favours",
+  "slotIndex": 0,
+  "title": "Le fauteuil descend",
+  "vocab": [
+   {
+    "word": "le fauteuil",
+    "surface": "fauteuil",
+    "type": "noun",
+    "def": "Armchair; a big soft chair with arms.",
+    "anchor": true,
+    "ex": "Le fauteuil de Hugo, là-haut, est large et lourd."
+   },
+   {
+    "word": "en bas",
+    "surface": "en bas",
+    "type": "expression",
+    "def": "Downstairs; on the floor below.",
+    "anchor": false,
+    "ex": "Léa veut le porter en bas, au café."
+   },
+   {
+    "word": "lourd",
+    "surface": "lourd",
+    "type": "adjective",
+    "def": "Heavy; hard to lift or carry.",
+    "anchor": false,
+    "ex": "Le fauteuil de Hugo, là-haut, est large et lourd."
+   },
+   {
+    "word": "porter",
+    "surface": "porter",
+    "type": "verb",
+    "def": "To carry; to hold something and move it.",
+    "anchor": false,
+    "ex": "Léa veut le porter en bas, au café."
+   },
+   {
+    "word": "étroit",
+    "surface": "étroit",
+    "type": "adjective",
+    "def": "Narrow; with very little space from side to side.",
+    "anchor": false,
+    "ex": "Mais l'escalier est étroit."
+   },
+   {
+    "word": "la camionnette",
+    "surface": "camionnette",
+    "type": "noun",
+    "def": "Van; a small truck for carrying things.",
+    "anchor": true,
+    "ex": "Chloé, une nouvelle voisine, a une petite camionnette."
+   },
+   {
+    "word": "la corde",
+    "surface": "corde",
+    "type": "noun",
+    "def": "Rope; a long thick string for pulling or tying.",
+    "anchor": true,
+    "ex": "Elle a aussi une corde."
+   },
+   {
+    "word": "aider",
+    "surface": "aider",
+    "type": "verb",
+    "def": "To help; to do part of the work for someone.",
+    "anchor": false,
+    "ex": "“Je peux aider."
+   },
+   {
+    "word": "gratuit",
+    "surface": "gratuit",
+    "type": "adjective",
+    "def": "Free; it costs no money at all.",
+    "anchor": false,
+    "ex": "C'est gratuit?”, demande Léa."
+   },
+   {
+    "word": "le service",
+    "surface": "service",
+    "type": "noun",
+    "def": "Favour; something you do to help someone.",
+    "anchor": false,
+    "ex": "Un service contre un café.”"
+   },
+   {
+    "word": "ensemble",
+    "surface": "ensemble",
+    "type": "adverb",
+    "def": "Together; with another person, at the same time.",
+    "anchor": false,
+    "ex": "Elles portent le fauteuil lentement, ensemble."
+   },
+   {
+    "word": "la rampe",
+    "surface": "rampe",
+    "type": "noun",
+    "def": "Handrail; what you hold on to on the stairs.",
+    "anchor": true,
+    "ex": "La rampe est froide sous la main."
+   },
+   {
+    "word": "attention",
+    "surface": "Attention",
+    "type": "expression",
+    "def": "Careful!; a word to warn someone of danger.",
+    "anchor": false,
+    "ex": "“Attention!"
+   },
+   {
+    "word": "avoir mal",
+    "surface": "a mal",
+    "type": "expression",
+    "def": "To hurt; to feel pain in a part of the body.",
+    "anchor": false,
+    "ex": "Léa a mal au dos."
+   },
+   {
+    "word": "le dos",
+    "surface": "dos",
+    "type": "noun",
+    "def": "Back; the part of the body behind you.",
+    "anchor": false,
+    "ex": "Léa a mal au dos."
+   },
+   {
+    "word": "le tapis",
+    "surface": "tapis",
+    "type": "noun",
+    "def": "Rug; a piece of thick cloth on the floor.",
+    "anchor": true,
+    "ex": "Le tapis est à côté."
+   },
+   {
+    "word": "merci beaucoup",
+    "surface": "Merci beaucoup",
+    "type": "expression",
+    "def": "Thank you very much; a big thank you.",
+    "anchor": false,
+    "ex": "“Merci beaucoup”, dit Léa."
+   },
+   {
+    "word": "de rien",
+    "surface": "De rien",
+    "type": "expression",
+    "def": "You're welcome; what you say after thank you.",
+    "anchor": false,
+    "ex": "“De rien."
+   },
+   {
+    "word": "tous les jours",
+    "surface": "tous les jours",
+    "type": "expression",
+    "def": "Every day; each day, with no day missed.",
+    "anchor": false,
+    "ex": "Un café tous les jours, jusqu'en mars”, répond Chloé."
+   },
+   {
+    "word": "le coussin",
+    "surface": "coussin",
+    "type": "noun",
+    "def": "Cushion; a soft pillow on a chair.",
+    "anchor": true,
+    "ex": "Le coussin sent Hugo."
+   }
+  ],
+  "slug": "le-fauteuil-descend"
+ },
+ {
+  "topic": "helping-and-favours",
+  "slotIndex": 1,
+  "title": "Mille euros sans compter",
+  "vocab": [
+   {
+    "word": "l'argent",
+    "surface": "argent",
+    "type": "noun",
+    "def": "Money; what you use to pay for things.",
+    "anchor": false,
+    "ex": "Hugo n'a pas assez d'argent."
+   },
+   {
+    "word": "le loyer",
+    "surface": "loyer",
+    "type": "noun",
+    "def": "Rent; the money you pay each month for a flat.",
+    "anchor": true,
+    "ex": "Le loyer de Paris est cher."
+   },
+   {
+    "word": "le besoin",
+    "surface": "besoin",
+    "type": "noun",
+    "def": "Need; avoir besoin de means to need something.",
+    "anchor": false,
+    "ex": "Il a besoin de mille euros."
+   },
+   {
+    "word": "mille",
+    "surface": "mille",
+    "type": "noun",
+    "def": "A thousand; ten times one hundred.",
+    "anchor": false,
+    "ex": "Il a besoin de mille euros."
+   },
+   {
+    "word": "le percolateur",
+    "surface": "percolateur",
+    "type": "noun",
+    "def": "Espresso machine; the big café machine that makes coffee.",
+    "anchor": true,
+    "ex": "Près du frigo, le vieux percolateur est cassé."
+   },
+   {
+    "word": "le frigo",
+    "surface": "frigo",
+    "type": "noun",
+    "def": "Fridge; the cold box that keeps food fresh.",
+    "anchor": true,
+    "ex": "Près du frigo, le vieux percolateur est cassé."
+   },
+   {
+    "word": "cassé",
+    "surface": "cassé",
+    "type": "adjective",
+    "def": "Broken; it does not work anymore.",
+    "anchor": false,
+    "ex": "Près du frigo, le vieux percolateur est cassé."
+   },
+   {
+    "word": "garder",
+    "surface": "garde",
+    "type": "verb",
+    "def": "To keep; to not give or spend something.",
+    "anchor": false,
+    "ex": "Léa garde son argent pour une nouvelle machine."
+   },
+   {
+    "word": "le tiroir",
+    "surface": "tiroir",
+    "type": "noun",
+    "def": "Drawer; a box in a table that slides out.",
+    "anchor": true,
+    "ex": "Dans le tiroir, il y a une tirelire."
+   },
+   {
+    "word": "la tirelire",
+    "surface": "tirelire",
+    "type": "noun",
+    "def": "Money box; a small box where you keep money.",
+    "anchor": true,
+    "ex": "Dans le tiroir, il y a une tirelire."
+   },
+   {
+    "word": "compter",
+    "surface": "compte",
+    "type": "verb",
+    "def": "To count; to add numbers one by one.",
+    "anchor": false,
+    "ex": "Léa compte: mille euros."
+   },
+   {
+    "word": "prêter",
+    "surface": "prêter",
+    "type": "verb",
+    "def": "To lend; to give something that comes back later.",
+    "anchor": false,
+    "ex": "Ensuite, il dit: “Léa, tu peux me prêter de l'argent?"
+   },
+   {
+    "word": "rendre",
+    "surface": "rends",
+    "type": "verb",
+    "def": "To give back; to return what you borrowed.",
+    "anchor": false,
+    "ex": "Je te rends tout bientôt.”"
+   },
+   {
+    "word": "bientôt",
+    "surface": "bientôt",
+    "type": "adverb",
+    "def": "Soon; in a short time from now.",
+    "anchor": false,
+    "ex": "Je te rends tout bientôt.”"
+   },
+   {
+    "word": "combien",
+    "surface": "Combien",
+    "type": "adverb",
+    "def": "How much; asking about a number or a price.",
+    "anchor": false,
+    "ex": "“Combien?”, demande Léa."
+   },
+   {
+    "word": "neuf",
+    "surface": "neuf",
+    "type": "adjective",
+    "def": "Brand new; never used before.",
+    "anchor": false,
+    "ex": "Léa n'achète pas de percolateur neuf."
+   },
+   {
+    "word": "acheter",
+    "surface": "achète",
+    "type": "verb",
+    "def": "To buy; to pay money to get something.",
+    "anchor": false,
+    "ex": "Léa n'achète pas de percolateur neuf."
+   },
+   {
+    "word": "donner",
+    "surface": "donne",
+    "type": "verb",
+    "def": "To give; to put something in someone's hands.",
+    "anchor": false,
+    "ex": "Léa ouvre la tirelire et donne l'argent à Hugo."
+   },
+   {
+    "word": "le stylo",
+    "surface": "stylo",
+    "type": "noun",
+    "def": "Pen; what you write with on paper.",
+    "anchor": true,
+    "ex": "Hugo prend un stylo."
+   },
+   {
+    "word": "le mois",
+    "surface": "mois",
+    "type": "noun",
+    "def": "Month; about four weeks of time.",
+    "anchor": false,
+    "ex": "Je rends dans six mois.”"
+   }
+  ],
+  "slug": "mille-euros-sans-compter"
+ },
+ {
+  "topic": "helping-and-favours",
+  "slotIndex": 2,
+  "title": "Une goutte chaque nuit",
+  "vocab": [
+   {
+    "word": "la goutte",
+    "surface": "goutte",
+    "type": "noun",
+    "def": "Drop; a very small amount of water.",
+    "anchor": true,
+    "ex": "Une goutte tombe du robinet."
+   },
+   {
+    "word": "le robinet",
+    "surface": "robinet",
+    "type": "noun",
+    "def": "Tap; where water comes out over the sink.",
+    "anchor": true,
+    "ex": "Une goutte tombe du robinet."
+   },
+   {
+    "word": "couler",
+    "surface": "coule",
+    "type": "verb",
+    "def": "To drip, to run; what water does from a tap.",
+    "anchor": false,
+    "ex": "Le robinet du café coule tout le temps."
+   },
+   {
+    "word": "chaque nuit",
+    "surface": "chaque nuit",
+    "type": "expression",
+    "def": "Every night; each night, again and again.",
+    "anchor": false,
+    "ex": "Léa écoute les gouttes chaque nuit."
+   },
+   {
+    "word": "la boîte à outils",
+    "surface": "boîte à outils",
+    "type": "noun",
+    "def": "Toolbox; the box where you keep your tools.",
+    "anchor": true,
+    "ex": "Cet après-midi, Hugo arrive avec une boîte à outils."
+   },
+   {
+    "word": "réparer",
+    "surface": "répare",
+    "type": "verb",
+    "def": "To repair; to make a broken thing work again.",
+    "anchor": false,
+    "ex": "“Je répare ton robinet."
+   },
+   {
+    "word": "le seau",
+    "surface": "seau",
+    "type": "noun",
+    "def": "Bucket; an open pot with a handle for water.",
+    "anchor": true,
+    "ex": "Hugo met un seau dessous."
+   },
+   {
+    "word": "dessous",
+    "surface": "dessous",
+    "type": "adverb",
+    "def": "Underneath; in the place below something.",
+    "anchor": false,
+    "ex": "Hugo met un seau dessous."
+   },
+   {
+    "word": "tourner",
+    "surface": "tourne",
+    "type": "verb",
+    "def": "To turn; to move something round and round.",
+    "anchor": false,
+    "ex": "Hugo tourne, et l'eau coule partout."
+   },
+   {
+    "word": "bravo",
+    "surface": "Bravo",
+    "type": "expression",
+    "def": "Well done!; here Léa says it as a joke.",
+    "anchor": false,
+    "ex": "“Bravo, Hugo!"
+   },
+   {
+    "word": "le tuyau",
+    "surface": "tuyau",
+    "type": "noun",
+    "def": "Pipe; the tube that brings the water.",
+    "anchor": true,
+    "ex": "Le tuyau est sale."
+   },
+   {
+    "word": "sale",
+    "surface": "sale",
+    "type": "adjective",
+    "def": "Dirty; not clean at all.",
+    "anchor": false,
+    "ex": "Le tuyau est sale."
+   },
+   {
+    "word": "la raison",
+    "surface": "raison",
+    "type": "noun",
+    "def": "Reason; avoir raison means to be right.",
+    "anchor": false,
+    "ex": "“Tu as raison”, répond Hugo."
+   },
+   {
+    "word": "serrer",
+    "surface": "serre",
+    "type": "verb",
+    "def": "To tighten; to make something closed and firm.",
+    "anchor": false,
+    "ex": "Il serre le tuyau, deux fois."
+   },
+   {
+    "word": "l'éponge",
+    "surface": "éponge",
+    "type": "noun",
+    "def": "Sponge; a soft thing that drinks up water.",
+    "anchor": true,
+    "ex": "Léa sèche le sol avec une éponge."
+   },
+   {
+    "word": "propre",
+    "surface": "propre",
+    "type": "adjective",
+    "def": "Clean; with no dirt on it.",
+    "anchor": false,
+    "ex": "Le sol est propre."
+   },
+   {
+    "word": "ça y est",
+    "surface": "Ça y est",
+    "type": "expression",
+    "def": "That's it; said when a job is finally done.",
+    "anchor": false,
+    "ex": "“Ça y est."
+   },
+   {
+    "word": "fini",
+    "surface": "Fini",
+    "type": "adjective",
+    "def": "Finished; done, with nothing more to do.",
+    "anchor": false,
+    "ex": "Fini”, dit Hugo."
+   },
+   {
+    "word": "voilà",
+    "surface": "Voilà",
+    "type": "expression",
+    "def": "There you go; said when something is ready.",
+    "anchor": false,
+    "ex": "“Voilà."
+   },
+   {
+    "word": "tout seul",
+    "surface": "toute seule",
+    "type": "expression",
+    "def": "On your own; alone, with nobody to help.",
+    "anchor": false,
+    "ex": "Elle est toute seule avec le silence."
+   }
+  ],
+  "slug": "une-goutte-chaque-nuit"
+ },
+ {
+  "topic": "words-and-meanings",
+  "slotIndex": 0,
+  "title": "Tu prends la carte?",
+  "vocab": [
+   {
+    "word": "venir",
+    "surface": "vient",
+    "type": "verb",
+    "def": "To come; to arrive from another place.",
+    "anchor": false,
+    "ex": "Il vient de Paris."
+   },
+   {
+    "word": "la gare",
+    "surface": "gare",
+    "type": "noun",
+    "def": "Station; where trains arrive and leave.",
+    "anchor": true,
+    "ex": "Il arrive de la gare avec un grand sac."
+   },
+   {
+    "word": "surpris",
+    "surface": "surpris",
+    "type": "adjective",
+    "def": "Surprised; not ready for what you see.",
+    "anchor": false,
+    "ex": "Maxime est surpris: le café est petit."
+   },
+   {
+    "word": "noir",
+    "surface": "noir",
+    "type": "adjective",
+    "def": "Black; here, coffee with no milk in it.",
+    "anchor": false,
+    "ex": "Elle sert un café noir."
+   },
+   {
+    "word": "chaud",
+    "surface": "chaud",
+    "type": "adjective",
+    "def": "Hot; with a high temperature.",
+    "anchor": false,
+    "ex": "“Attention, c'est chaud!”"
+   },
+   {
+    "word": "d'où",
+    "surface": "D'où",
+    "type": "adverb",
+    "def": "Where from; asking about the place someone comes from.",
+    "anchor": false,
+    "ex": "“D'où tu viens?”, demande Léa."
+   },
+   {
+    "word": "apporter",
+    "surface": "apporte",
+    "type": "verb",
+    "def": "To bring; to carry something to someone.",
+    "anchor": false,
+    "ex": "Elle apporte un jus d'orange: gratuit, pour un ami de Hugo."
+   },
+   {
+    "word": "le jus",
+    "surface": "jus",
+    "type": "noun",
+    "def": "Juice; a drink made from fruit.",
+    "anchor": true,
+    "ex": "Elle apporte un jus d'orange: gratuit, pour un ami de Hugo."
+   },
+   {
+    "word": "le sucre",
+    "surface": "sucre",
+    "type": "noun",
+    "def": "Sugar; what makes coffee sweet.",
+    "anchor": true,
+    "ex": "Il met du sucre, parce que c'est amer."
+   },
+   {
+    "word": "amer",
+    "surface": "amer",
+    "type": "adjective",
+    "def": "Bitter; strong and not sweet at all.",
+    "anchor": false,
+    "ex": "Il met du sucre, parce que c'est amer."
+   },
+   {
+    "word": "la carte",
+    "surface": "carte",
+    "type": "noun",
+    "def": "Menu or bank card; one word for both things.",
+    "anchor": true,
+    "ex": "Tu prends la carte?”, demande Maxime."
+   },
+   {
+    "word": "l'ami",
+    "surface": "ami",
+    "type": "noun",
+    "def": "Friend; a person you like and trust.",
+    "anchor": false,
+    "ex": "Maxime est un ami de Hugo."
+   },
+   {
+    "word": "rire",
+    "surface": "rit",
+    "type": "verb",
+    "def": "To laugh; to make a happy sound.",
+    "anchor": false,
+    "ex": "Maxime rit."
+   },
+   {
+    "word": "vouloir dire",
+    "surface": "veut dire",
+    "type": "expression",
+    "def": "To mean; what a word says.",
+    "anchor": false,
+    "ex": "Ça veut dire ça!”"
+   },
+   {
+    "word": "drôle",
+    "surface": "drôle",
+    "type": "adjective",
+    "def": "Funny; it makes you laugh.",
+    "anchor": false,
+    "ex": "C'est drôle."
+   },
+   {
+    "word": "expliquer",
+    "surface": "explique",
+    "type": "verb",
+    "def": "To explain; to say how something works.",
+    "anchor": false,
+    "ex": "“Ici, pas de carte bleue”, explique Léa."
+   },
+   {
+    "word": "faux",
+    "surface": "Faux",
+    "type": "adjective",
+    "def": "Wrong; not true or not correct.",
+    "anchor": false,
+    "ex": "“C'est faux!”"
+   },
+   {
+    "word": "pas grave",
+    "surface": "Pas grave",
+    "type": "expression",
+    "def": "No problem; it is not important.",
+    "anchor": false,
+    "ex": "“Pas grave."
+   },
+   {
+    "word": "la serviette",
+    "surface": "serviette",
+    "type": "noun",
+    "def": "Napkin; a small cloth or paper for your mouth.",
+    "anchor": true,
+    "ex": "Léa rit avec la serviette sur la bouche."
+   },
+   {
+    "word": "l'ardoise",
+    "surface": "ardoise",
+    "type": "noun",
+    "def": "Chalkboard; where the café writes its prices.",
+    "anchor": true,
+    "ex": "Sur l'ardoise, elle écrit: “Carte bleue: non.”"
+   }
+  ],
+  "slug": "tu-prends-la-carte"
+ },
+ {
+  "topic": "words-and-meanings",
+  "slotIndex": 1,
+  "title": "Vingt minutes, c'est long",
+  "vocab": [
+   {
+    "word": "habiter",
+    "surface": "habite",
+    "type": "verb",
+    "def": "To live; to have your home in a place.",
+    "anchor": false,
+    "ex": "À Paris, Hugo habite en face du métro."
+   },
+   {
+    "word": "en face",
+    "surface": "en face",
+    "type": "expression",
+    "def": "Opposite; on the other side, facing you.",
+    "anchor": false,
+    "ex": "À Paris, Hugo habite en face du métro."
+   },
+   {
+    "word": "le plan",
+    "surface": "plan",
+    "type": "noun",
+    "def": "Map; a drawing of the streets or metro lines.",
+    "anchor": true,
+    "ex": "Ils regardent le plan tous les deux."
+   },
+   {
+    "word": "tous les deux",
+    "surface": "tous les deux",
+    "type": "expression",
+    "def": "Both; the two people together.",
+    "anchor": false,
+    "ex": "Ils regardent le plan tous les deux."
+   },
+   {
+    "word": "long",
+    "surface": "long",
+    "type": "adjective",
+    "def": "Long; it takes a lot of time.",
+    "anchor": false,
+    "ex": "C'est long!”, répond Léa."
+   },
+   {
+    "word": "dix",
+    "surface": "dix",
+    "type": "noun",
+    "def": "Ten; the number after nine.",
+    "anchor": false,
+    "ex": "Ici, le port est à dix minutes à pied."
+   },
+   {
+    "word": "à pied",
+    "surface": "à pied",
+    "type": "expression",
+    "def": "On foot; walking, not by car or bus.",
+    "anchor": false,
+    "ex": "Ici, le port est à dix minutes à pied."
+   },
+   {
+    "word": "le quai",
+    "surface": "quai",
+    "type": "noun",
+    "def": "Platform; where you wait for the train.",
+    "anchor": true,
+    "ex": "Le matin, le quai du métro est plein et étroit."
+   },
+   {
+    "word": "arriver",
+    "surface": "arrive",
+    "type": "verb",
+    "def": "To arrive; to get to a place.",
+    "anchor": false,
+    "ex": "Hugo arrive tôt au travail, et il part tard."
+   },
+   {
+    "word": "tôt",
+    "surface": "tôt",
+    "type": "adverb",
+    "def": "Early; before the normal time.",
+    "anchor": false,
+    "ex": "Hugo arrive tôt au travail, et il part tard."
+   },
+   {
+    "word": "tard",
+    "surface": "tard",
+    "type": "adverb",
+    "def": "Late; after the normal time.",
+    "anchor": false,
+    "ex": "Hugo arrive tôt au travail, et il part tard."
+   },
+   {
+    "word": "marcher",
+    "surface": "marches",
+    "type": "verb",
+    "def": "To walk; to go on foot.",
+    "anchor": false,
+    "ex": "“Tu marches un peu?”, demande Léa."
+   },
+   {
+    "word": "le vélo",
+    "surface": "vélo",
+    "type": "noun",
+    "def": "Bike; you ride it with your feet.",
+    "anchor": true,
+    "ex": "J'achète un vélo neuf."
+   },
+   {
+    "word": "poser",
+    "surface": "pose",
+    "type": "verb",
+    "def": "To put down; to place something on a table.",
+    "anchor": false,
+    "ex": "Léa pose sa montre sur la table."
+   },
+   {
+    "word": "vite",
+    "surface": "vite",
+    "type": "adverb",
+    "def": "Fast; quickly, at high speed.",
+    "anchor": false,
+    "ex": "“Et le métro va vite?”"
+   },
+   {
+    "word": "ça dépend",
+    "surface": "Ça dépend",
+    "type": "expression",
+    "def": "It depends; the answer can change.",
+    "anchor": false,
+    "ex": "“Ça dépend."
+   },
+   {
+    "word": "le bateau",
+    "surface": "bateau",
+    "type": "noun",
+    "def": "Boat; it goes on the water.",
+    "anchor": true,
+    "ex": "Dehors, on entend le bateau du port."
+   },
+   {
+    "word": "l'arrêt",
+    "surface": "arrêt",
+    "type": "noun",
+    "def": "Stop; where the bus stops for people.",
+    "anchor": true,
+    "ex": "L'arrêt du bus est en bas."
+   },
+   {
+    "word": "presque",
+    "surface": "presque",
+    "type": "adverb",
+    "def": "Almost; very nearly, but not quite.",
+    "anchor": false,
+    "ex": "Pour Léa, vingt minutes, c'est presque toute la ville."
+   },
+   {
+    "word": "la montre",
+    "surface": "montre",
+    "type": "noun",
+    "def": "Watch; a small clock you wear on your arm.",
+    "anchor": true,
+    "ex": "Léa pose sa montre sur la table."
+   }
+  ],
+  "slug": "vingt-minutes-c-est-long"
+ },
+ {
+  "topic": "words-and-meanings",
+  "slotIndex": 2,
+  "title": "Les mots à l'envers",
+  "vocab": [
+   {
+    "word": "le cahier",
+    "surface": "cahier",
+    "type": "noun",
+    "def": "Notebook; a book with empty pages to write in.",
+    "anchor": true,
+    "ex": "Dans son cahier, Léa écrit les mots durs."
+   },
+   {
+    "word": "écrire",
+    "surface": "écrit",
+    "type": "verb",
+    "def": "To write; to put words on paper.",
+    "anchor": false,
+    "ex": "Dans son cahier, Léa écrit les mots durs."
+   },
+   {
+    "word": "dur",
+    "surface": "durs",
+    "type": "adjective",
+    "def": "Hard; difficult to understand or do.",
+    "anchor": false,
+    "ex": "Dans son cahier, Léa écrit les mots durs."
+   },
+   {
+    "word": "le crayon",
+    "surface": "crayon",
+    "type": "noun",
+    "def": "Pencil; you write with it and can erase it.",
+    "anchor": true,
+    "ex": "Chaque nuit, elle écrit au crayon."
+   },
+   {
+    "word": "la nappe",
+    "surface": "nappe",
+    "type": "noun",
+    "def": "Tablecloth; the cloth on a table.",
+    "anchor": true,
+    "ex": "Le cahier est sur la nappe du café."
+   },
+   {
+    "word": "lire",
+    "surface": "lit",
+    "type": "verb",
+    "def": "To read; to look at words and understand them.",
+    "anchor": false,
+    "ex": "Léa lit une phrase: “Tu me manques.”"
+   },
+   {
+    "word": "manquer",
+    "surface": "manques",
+    "type": "verb",
+    "def": "To miss; tu me manques means I miss you.",
+    "anchor": false,
+    "ex": "Léa lit une phrase: “Tu me manques.”"
+   },
+   {
+    "word": "le sens",
+    "surface": "sens",
+    "type": "noun",
+    "def": "Meaning; what a word or sentence says.",
+    "anchor": false,
+    "ex": "Léa ne comprend pas le sens."
+   },
+   {
+    "word": "vrai",
+    "surface": "vrai",
+    "type": "adjective",
+    "def": "True; real, not false.",
+    "anchor": false,
+    "ex": "“C'est vrai?"
+   },
+   {
+    "word": "à l'envers",
+    "surface": "à l'envers",
+    "type": "expression",
+    "def": "Backwards; in the other order.",
+    "anchor": false,
+    "ex": "“C'est à l'envers”, explique Hugo."
+   },
+   {
+    "word": "compris",
+    "surface": "compris",
+    "type": "adjective",
+    "def": "Understood; now clear in your head.",
+    "anchor": false,
+    "ex": "“Ça y est, j'ai compris!”, dit Léa."
+   },
+   {
+    "word": "enfin",
+    "surface": "Enfin",
+    "type": "adverb",
+    "def": "At last; after a long wait.",
+    "anchor": false,
+    "ex": "“Enfin!”, rit Hugo."
+   },
+   {
+    "word": "effacer",
+    "surface": "efface",
+    "type": "verb",
+    "def": "To erase; to take words off the page.",
+    "anchor": false,
+    "ex": "Elle efface avec la gomme."
+   },
+   {
+    "word": "la gomme",
+    "surface": "gomme",
+    "type": "noun",
+    "def": "Eraser; it takes pencil marks off paper.",
+    "anchor": true,
+    "ex": "Elle efface avec la gomme."
+   },
+   {
+    "word": "pour toujours",
+    "surface": "pour toujours",
+    "type": "expression",
+    "def": "Forever; for all time.",
+    "anchor": false,
+    "ex": "Elle écrit encore, toute seule: amis pour toujours."
+   },
+   {
+    "word": "déjà",
+    "surface": "Déjà",
+    "type": "adverb",
+    "def": "Already; sooner than you think.",
+    "anchor": false,
+    "ex": "Déjà.”"
+   },
+   {
+    "word": "penser",
+    "surface": "pense",
+    "type": "verb",
+    "def": "To think; to have someone in your head.",
+    "anchor": false,
+    "ex": "“Moi aussi, je pense à toi.”"
+   },
+   {
+    "word": "la lune",
+    "surface": "lune",
+    "type": "noun",
+    "def": "Moon; the big light in the sky at night.",
+    "anchor": true,
+    "ex": "Dehors, la lune est douce."
+   },
+   {
+    "word": "doux",
+    "surface": "douce",
+    "type": "adjective",
+    "def": "Soft, gentle; calm and nice.",
+    "anchor": false,
+    "ex": "Dehors, la lune est douce."
+   },
+   {
+    "word": "l'étoile",
+    "surface": "étoile",
+    "type": "noun",
+    "def": "Star; a small light in the night sky.",
+    "anchor": true,
+    "ex": "Sous la lune, il y a une étoile."
+   }
+  ],
+  "slug": "les-mots-a-l-envers"
+ },
+ {
+  "topic": "parties-and-gifts",
+  "slotIndex": 0,
+  "title": "La boule porte-bonheur",
+  "vocab": [
+   {
+    "word": "aujourd'hui",
+    "surface": "Aujourd'hui",
+    "type": "adverb",
+    "def": "Today; this day, now.",
+    "anchor": false,
+    "ex": "Aujourd'hui, la tirelire de Léa est vide."
+   },
+   {
+    "word": "le scotch",
+    "surface": "scotch",
+    "type": "noun",
+    "def": "Sticky tape; it holds the paper closed.",
+    "anchor": true,
+    "ex": "Louise emballe le paquet avec du scotch."
+   },
+   {
+    "word": "vide",
+    "surface": "vide",
+    "type": "adjective",
+    "def": "Empty; with nothing inside.",
+    "anchor": false,
+    "ex": "Aujourd'hui, la tirelire de Léa est vide."
+   },
+   {
+    "word": "offrir",
+    "surface": "offrir",
+    "type": "verb",
+    "def": "To give as a present; to give for free.",
+    "anchor": false,
+    "ex": "Léa veut offrir un cadeau."
+   },
+   {
+    "word": "le cadeau",
+    "surface": "cadeau",
+    "type": "noun",
+    "def": "Present; something you give on a special day.",
+    "anchor": true,
+    "ex": "Léa veut offrir un cadeau."
+   },
+   {
+    "word": "choisir",
+    "surface": "choisis",
+    "type": "verb",
+    "def": "To choose; to take one from many.",
+    "anchor": false,
+    "ex": "“Tu choisis quoi?”, demande Louise."
+   },
+   {
+    "word": "joli",
+    "surface": "joli",
+    "type": "adjective",
+    "def": "Pretty; nice to look at.",
+    "anchor": false,
+    "ex": "“Un joli cadeau coûte beaucoup”, répond Léa."
+   },
+   {
+    "word": "beaucoup",
+    "surface": "beaucoup",
+    "type": "adverb",
+    "def": "A lot; very much.",
+    "anchor": false,
+    "ex": "“Un joli cadeau coûte beaucoup”, répond Léa."
+   },
+   {
+    "word": "le porte-bonheur",
+    "surface": "porte-bonheur",
+    "type": "noun",
+    "def": "Lucky charm; a thing that brings good luck.",
+    "anchor": true,
+    "ex": "Dedans, il y a sa boule porte-bonheur."
+   },
+   {
+    "word": "la chance",
+    "surface": "chance",
+    "type": "noun",
+    "def": "Luck; good things that just happen to you.",
+    "anchor": false,
+    "ex": "Cette boule porte chance."
+   },
+   {
+    "word": "aimer",
+    "surface": "aime",
+    "type": "verb",
+    "def": "To love, to like; to feel good about something.",
+    "anchor": false,
+    "ex": "Je l'aime, mais c'est pour Hugo.”"
+   },
+   {
+    "word": "couper",
+    "surface": "coupe",
+    "type": "verb",
+    "def": "To cut; to make two pieces with scissors.",
+    "anchor": false,
+    "ex": "Louise coupe le papier avec les ciseaux."
+   },
+   {
+    "word": "pourquoi",
+    "surface": "Pourquoi",
+    "type": "adverb",
+    "def": "Why; asking for the reason.",
+    "anchor": false,
+    "ex": "“Pourquoi cette boule?”, demande Louise, surprise."
+   },
+   {
+    "word": "les ciseaux",
+    "surface": "ciseaux",
+    "type": "noun",
+    "def": "Scissors; a tool to cut paper.",
+    "anchor": true,
+    "ex": "Louise coupe le papier avec les ciseaux."
+   },
+   {
+    "word": "emballer",
+    "surface": "emballe",
+    "type": "verb",
+    "def": "To wrap; to cover a present in paper.",
+    "anchor": false,
+    "ex": "Louise emballe le paquet avec du scotch."
+   },
+   {
+    "word": "le paquet",
+    "surface": "paquet",
+    "type": "noun",
+    "def": "Parcel; a thing wrapped in paper.",
+    "anchor": true,
+    "ex": "Louise emballe le paquet avec du scotch."
+   },
+   {
+    "word": "le nœud",
+    "surface": "nœud",
+    "type": "noun",
+    "def": "Bow; a pretty tie on top of a present.",
+    "anchor": true,
+    "ex": "Louise fait un nœud rouge."
+   },
+   {
+    "word": "génial",
+    "surface": "Génial",
+    "type": "adjective",
+    "def": "Great; really very good.",
+    "anchor": false,
+    "ex": "“Génial!”, dit Louise."
+   },
+   {
+    "word": "pas mal",
+    "surface": "Pas mal",
+    "type": "expression",
+    "def": "Not bad; quite good.",
+    "anchor": false,
+    "ex": "“Pas mal, non?”, rit Léa."
+   },
+   {
+    "word": "cacher",
+    "surface": "cache",
+    "type": "verb",
+    "def": "To hide; to put where nobody can see.",
+    "anchor": false,
+    "ex": "Léa cache le paquet sous le comptoir."
+   }
+  ],
+  "slug": "la-boule-porte-bonheur"
+ },
+ {
+  "topic": "parties-and-gifts",
+  "slotIndex": 1,
+  "title": "Trente-trois bougies",
+  "vocab": [
+   {
+    "word": "le lampion",
+    "surface": "lampion",
+    "type": "noun",
+    "def": "Paper lantern; a small light for a party outside.",
+    "anchor": true,
+    "ex": "Sous chaque platane, Léa allume un lampion."
+   },
+   {
+    "word": "allumer",
+    "surface": "allume",
+    "type": "verb",
+    "def": "To light; to turn on a light.",
+    "anchor": false,
+    "ex": "Sous chaque platane, Léa allume un lampion."
+   },
+   {
+    "word": "la guirlande",
+    "surface": "guirlande",
+    "type": "noun",
+    "def": "Garland; a long line of lights or paper.",
+    "anchor": true,
+    "ex": "Il y a une guirlande."
+   },
+   {
+    "word": "l'anniversaire",
+    "surface": "anniversaire",
+    "type": "noun",
+    "def": "Birthday; the day you were born, every year.",
+    "anchor": true,
+    "ex": "Pour l'anniversaire de Hugo, Léa invite les amis."
+   },
+   {
+    "word": "inviter",
+    "surface": "invite",
+    "type": "verb",
+    "def": "To invite; to ask someone to come.",
+    "anchor": false,
+    "ex": "Pour l'anniversaire de Hugo, Léa invite les amis."
+   },
+   {
+    "word": "le pastis",
+    "surface": "pastis",
+    "type": "noun",
+    "def": "Pastis; the famous cold yellow drink of Marseille.",
+    "anchor": true,
+    "ex": "“Le pastis est sur la table!”, crie Léa."
+   },
+   {
+    "word": "le gâteau",
+    "surface": "gâteau",
+    "type": "noun",
+    "def": "Cake; a sweet thing for a party.",
+    "anchor": true,
+    "ex": "Sur le gâteau, il y a trente-trois bougies."
+   },
+   {
+    "word": "trente-trois",
+    "surface": "trente-trois",
+    "type": "noun",
+    "def": "Thirty-three; the number after thirty-two.",
+    "anchor": false,
+    "ex": "Sur le gâteau, il y a trente-trois bougies."
+   },
+   {
+    "word": "la bougie",
+    "surface": "bougies",
+    "type": "noun",
+    "def": "Candle; a small light on a cake.",
+    "anchor": true,
+    "ex": "Sur le gâteau, il y a trente-trois bougies."
+   },
+   {
+    "word": "joyeux anniversaire",
+    "surface": "Joyeux anniversaire",
+    "type": "expression",
+    "def": "Happy birthday; what you say on a birthday.",
+    "anchor": false,
+    "ex": "Tout le monde dit: “Joyeux anniversaire!”"
+   },
+   {
+    "word": "éteindre",
+    "surface": "éteint",
+    "type": "verb",
+    "def": "To put out; to stop a light or fire.",
+    "anchor": false,
+    "ex": "Hugo souffle et éteint les bougies."
+   },
+   {
+    "word": "vieux",
+    "surface": "vieux",
+    "type": "adjective",
+    "def": "Old; with a lot of years.",
+    "anchor": false,
+    "ex": "“Trente-trois ans, c'est vieux!”, rit Hugo."
+   },
+   {
+    "word": "à la fin",
+    "surface": "À la fin",
+    "type": "expression",
+    "def": "At the end; when it is almost over.",
+    "anchor": false,
+    "ex": "À la fin, il y a une dernière partie."
+   },
+   {
+    "word": "voir",
+    "surface": "voir",
+    "type": "verb",
+    "def": "To see; to look with your eyes.",
+    "anchor": false,
+    "ex": "Tout le monde veut voir."
+   },
+   {
+    "word": "exprès",
+    "surface": "exprès",
+    "type": "adverb",
+    "def": "On purpose; because you want to do it.",
+    "anchor": false,
+    "ex": "Sa boule roule loin, exprès."
+   },
+   {
+    "word": "laisser",
+    "surface": "laisse",
+    "type": "verb",
+    "def": "To let; to allow something to happen.",
+    "anchor": false,
+    "ex": "Léa laisse gagner Hugo."
+   },
+   {
+    "word": "le gagnant",
+    "surface": "gagnant",
+    "type": "noun",
+    "def": "Winner; the person who wins the game.",
+    "anchor": false,
+    "ex": "Tu es le gagnant!”, dit Léa."
+   },
+   {
+    "word": "chanter",
+    "surface": "chante",
+    "type": "verb",
+    "def": "To sing; to make music with your voice.",
+    "anchor": false,
+    "ex": "Tout le monde chante, danse et fête Hugo."
+   },
+   {
+    "word": "danser",
+    "surface": "danse",
+    "type": "verb",
+    "def": "To dance; to move your body to music.",
+    "anchor": false,
+    "ex": "Tout le monde chante, danse et fête Hugo."
+   },
+   {
+    "word": "fêter",
+    "surface": "fête",
+    "type": "verb",
+    "def": "To celebrate; to have a party for someone.",
+    "anchor": false,
+    "ex": "Tout le monde chante, danse et fête Hugo."
+   }
+  ],
+  "slug": "trente-trois-bougies"
+ },
+ {
+  "topic": "parties-and-gifts",
+  "slotIndex": 2,
+  "title": "À toi la boule",
+  "vocab": [
+   {
+    "word": "le chat",
+    "surface": "chat",
+    "type": "noun",
+    "def": "Cat; a small pet animal with soft fur.",
+    "anchor": true,
+    "ex": "Un gros chat dort sur le banc, sous les feuilles."
+   },
+   {
+    "word": "dormir",
+    "surface": "dort",
+    "type": "verb",
+    "def": "To sleep; to rest with your eyes closed.",
+    "anchor": false,
+    "ex": "Un gros chat dort sur le banc, sous les feuilles."
+   },
+   {
+    "word": "tranquille",
+    "surface": "tranquille",
+    "type": "adjective",
+    "def": "Quiet, calm; with no noise.",
+    "anchor": false,
+    "ex": "La placette est tranquille, mais sale."
+   },
+   {
+    "word": "balayer",
+    "surface": "balaie",
+    "type": "verb",
+    "def": "To sweep; to clean the floor with a broom.",
+    "anchor": false,
+    "ex": "Léa balaie les miettes."
+   },
+   {
+    "word": "la miette",
+    "surface": "miettes",
+    "type": "noun",
+    "def": "Crumb; a very small piece of bread or cake.",
+    "anchor": true,
+    "ex": "Léa balaie les miettes."
+   },
+   {
+    "word": "le bouchon",
+    "surface": "bouchons",
+    "type": "noun",
+    "def": "Cork; it closes a bottle.",
+    "anchor": true,
+    "ex": "Elle ramasse les bouchons et un lampion rouge."
+   },
+   {
+    "word": "les restes",
+    "surface": "restes",
+    "type": "noun",
+    "def": "Leftovers; the food nobody eats.",
+    "anchor": true,
+    "ex": "Les restes du gâteau vont à la poubelle."
+   },
+   {
+    "word": "la poubelle",
+    "surface": "poubelle",
+    "type": "noun",
+    "def": "Bin; where you put things you throw away.",
+    "anchor": true,
+    "ex": "Les restes du gâteau vont à la poubelle."
+   },
+   {
+    "word": "réveillé",
+    "surface": "réveillé",
+    "type": "adjective",
+    "def": "Awake; not sleeping anymore.",
+    "anchor": false,
+    "ex": "Hugo arrive, pas encore réveillé."
+   },
+   {
+    "word": "le balai",
+    "surface": "balai",
+    "type": "noun",
+    "def": "Broom; a long brush to clean the floor.",
+    "anchor": true,
+    "ex": "Il prend un balai."
+   },
+   {
+    "word": "ouvrir",
+    "surface": "ouvre",
+    "type": "verb",
+    "def": "To open; to take the paper off.",
+    "anchor": false,
+    "ex": "Enfin, Hugo ouvre le paquet, surpris."
+   },
+   {
+    "word": "déchirer",
+    "surface": "déchire",
+    "type": "verb",
+    "def": "To tear; to pull paper into pieces.",
+    "anchor": false,
+    "ex": "Il déchire doucement le papier."
+   },
+   {
+    "word": "doucement",
+    "surface": "doucement",
+    "type": "adverb",
+    "def": "Gently; slowly and softly.",
+    "anchor": false,
+    "ex": "Il déchire doucement le papier."
+   },
+   {
+    "word": "partager",
+    "surface": "partage",
+    "type": "verb",
+    "def": "To share; to give part to someone.",
+    "anchor": false,
+    "ex": "“Alors, on partage”, répond Léa."
+   },
+   {
+    "word": "à moi",
+    "surface": "à moi",
+    "type": "expression",
+    "def": "Mine; it is for me.",
+    "anchor": false,
+    "ex": "“À toi la boule, à moi le cochonnet.”"
+   },
+   {
+    "word": "jouer",
+    "surface": "joues",
+    "type": "verb",
+    "def": "To play; to have fun with a game.",
+    "anchor": false,
+    "ex": "“Tu joues à Paris?”, demande Léa."
+   },
+   {
+    "word": "chaque fois",
+    "surface": "Chaque fois",
+    "type": "expression",
+    "def": "Every time; each time it happens.",
+    "anchor": false,
+    "ex": "Chaque fois, je pense à toi.”"
+   },
+   {
+    "word": "le retour",
+    "surface": "retour",
+    "type": "noun",
+    "def": "Return; coming back to a place.",
+    "anchor": false,
+    "ex": "“Et le retour?”"
+   },
+   {
+    "word": "un jour",
+    "surface": "Un jour",
+    "type": "expression",
+    "def": "One day; at some time later.",
+    "anchor": false,
+    "ex": "“Un jour."
+   },
+   {
+    "word": "rentrer",
+    "surface": "rentre",
+    "type": "verb",
+    "def": "To go home; to come back to your place.",
+    "anchor": false,
+    "ex": "À la fin, il rentre chez lui."
+   }
+  ],
+  "slug": "a-toi-la-boule"
+ },
+ {
+  "topic": "houses-and-neighbours",
+  "slotIndex": 0,
+  "title": "L'annonce du couloir",
+  "vocab": [
+   {
+    "word": "d'habitude",
+    "surface": "D'habitude",
+    "type": "expression",
+    "def": "Usually; most of the time.",
+    "anchor": false,
+    "ex": "D'habitude, il vient le lundi, tard."
+   },
+   {
+    "word": "l'annonce",
+    "surface": "annonce",
+    "type": "noun",
+    "def": "Notice; a paper that tells people something.",
+    "anchor": true,
+    "ex": "Aujourd'hui, il a une annonce: “À louer.”"
+   },
+   {
+    "word": "rien",
+    "surface": "rien",
+    "type": "pronoun",
+    "def": "Nothing; not one thing at all.",
+    "anchor": false,
+    "ex": "Elle sait, mais elle ne dit rien."
+   },
+   {
+    "word": "déménager",
+    "surface": "déménage",
+    "type": "verb",
+    "def": "To move out; to go to live somewhere else.",
+    "anchor": false,
+    "ex": "Hugo déménage en mars."
+   },
+   {
+    "word": "en haut",
+    "surface": "en haut",
+    "type": "expression",
+    "def": "Upstairs; on the floor above.",
+    "anchor": false,
+    "ex": "L'appartement en haut est déjà presque vide."
+   },
+   {
+    "word": "louer",
+    "surface": "louer",
+    "type": "verb",
+    "def": "To rent; to pay to live in a place.",
+    "anchor": false,
+    "ex": "Aujourd'hui, il a une annonce: “À louer.”"
+   },
+   {
+    "word": "tout de suite",
+    "surface": "tout de suite",
+    "type": "expression",
+    "def": "Right away; now, with no waiting.",
+    "anchor": false,
+    "ex": "Antoine veut louer l'appartement tout de suite."
+   },
+   {
+    "word": "pas encore",
+    "surface": "pas encore",
+    "type": "expression",
+    "def": "Not yet; later, but not now.",
+    "anchor": false,
+    "ex": "Hugo ne part pas encore!”, dit Léa."
+   },
+   {
+    "word": "le locataire",
+    "surface": "locataire",
+    "type": "noun",
+    "def": "Tenant; a person who rents a flat.",
+    "anchor": false,
+    "ex": "“Un locataire paie cent euros de plus."
+   },
+   {
+    "word": "cent",
+    "surface": "cent",
+    "type": "noun",
+    "def": "A hundred; ten times ten.",
+    "anchor": false,
+    "ex": "“Un locataire paie cent euros de plus."
+   },
+   {
+    "word": "libre",
+    "surface": "libre",
+    "type": "adjective",
+    "def": "Free, empty; nobody lives there.",
+    "anchor": false,
+    "ex": "“Je veux l'appartement libre pour Hugo."
+   },
+   {
+    "word": "vendre",
+    "surface": "vends",
+    "type": "verb",
+    "def": "To sell; to give something for money.",
+    "anchor": false,
+    "ex": "Et si je vends ma vieille machine?”"
+   },
+   {
+    "word": "désolé",
+    "surface": "Désolé",
+    "type": "adjective",
+    "def": "Sorry; sad about what you must do.",
+    "anchor": false,
+    "ex": "“Désolé, Léa”, répond Antoine."
+   },
+   {
+    "word": "méchant",
+    "surface": "méchant",
+    "type": "adjective",
+    "def": "Mean; not kind to other people.",
+    "anchor": false,
+    "ex": "“Je ne suis pas méchant."
+   },
+   {
+    "word": "demain",
+    "surface": "Demain",
+    "type": "adverb",
+    "def": "Tomorrow; the day after today.",
+    "anchor": false,
+    "ex": "Demain, je choisis un locataire.”"
+   },
+   {
+    "word": "la boîte aux lettres",
+    "surface": "boîte aux lettres",
+    "type": "noun",
+    "def": "Letterbox; where the post arrives.",
+    "anchor": true,
+    "ex": "Léa lit l'annonce sur la boîte aux lettres."
+   },
+   {
+    "word": "le couloir",
+    "surface": "couloir",
+    "type": "noun",
+    "def": "Hallway; the long space between rooms.",
+    "anchor": true,
+    "ex": "Le couloir est froid."
+   },
+   {
+    "word": "la cave",
+    "surface": "cave",
+    "type": "noun",
+    "def": "Cellar; the room under the building.",
+    "anchor": true,
+    "ex": "Les meubles de Hugo vont à la cave, dessous."
+   },
+   {
+    "word": "la poignée",
+    "surface": "poignée",
+    "type": "noun",
+    "def": "Handle; what you turn to open a door.",
+    "anchor": true,
+    "ex": "Léa touche doucement la poignée de la porte de Hugo."
+   },
+   {
+    "word": "le volet",
+    "surface": "volets",
+    "type": "noun",
+    "def": "Shutter; the wooden cover outside a window.",
+    "anchor": true,
+    "ex": "En haut, les volets sont fermés."
+   }
+  ],
+  "slug": "l-annonce-du-couloir"
+ },
+ {
+  "topic": "houses-and-neighbours",
+  "slotIndex": 1,
+  "title": "Une plante pour Léa",
+  "vocab": [
+   {
+    "word": "les meubles",
+    "surface": "meubles",
+    "type": "noun",
+    "def": "Furniture; tables, chairs and beds.",
+    "anchor": true,
+    "ex": "L'appartement est vide, sans meubles."
+   },
+   {
+    "word": "vider",
+    "surface": "vident",
+    "type": "verb",
+    "def": "To empty; to take everything out.",
+    "anchor": false,
+    "ex": "Hugo et Léa vident la cuisine ensemble."
+   },
+   {
+    "word": "le chauffage",
+    "surface": "chauffage",
+    "type": "noun",
+    "def": "Heating; what makes a room warm.",
+    "anchor": true,
+    "ex": "Le chauffage est éteint, et l'air est tiède."
+   },
+   {
+    "word": "tiède",
+    "surface": "tiède",
+    "type": "adjective",
+    "def": "Lukewarm; not hot and not cold.",
+    "anchor": false,
+    "ex": "Le chauffage est éteint, et l'air est tiède."
+   },
+   {
+    "word": "le plafond",
+    "surface": "plafond",
+    "type": "noun",
+    "def": "Ceiling; the top of a room.",
+    "anchor": true,
+    "ex": "Au plafond, Hugo allume une vieille ampoule."
+   },
+   {
+    "word": "l'ampoule",
+    "surface": "ampoule",
+    "type": "noun",
+    "def": "Light bulb; the glass part of a lamp.",
+    "anchor": true,
+    "ex": "Au plafond, Hugo allume une vieille ampoule."
+   },
+   {
+    "word": "peindre",
+    "surface": "peint",
+    "type": "verb",
+    "def": "To paint; to put colour on a wall.",
+    "anchor": false,
+    "ex": "Hugo peint le dernier mur en blanc."
+   },
+   {
+    "word": "blanc",
+    "surface": "blanc",
+    "type": "adjective",
+    "def": "White; the colour of milk.",
+    "anchor": false,
+    "ex": "Hugo peint le dernier mur en blanc."
+   },
+   {
+    "word": "la plante",
+    "surface": "plante",
+    "type": "noun",
+    "def": "Plant; a small green thing that grows in a pot.",
+    "anchor": true,
+    "ex": "À la fenêtre, il y a une plante verte."
+   },
+   {
+    "word": "vert",
+    "surface": "verte",
+    "type": "adjective",
+    "def": "Green; the colour of leaves.",
+    "anchor": false,
+    "ex": "À la fenêtre, il y a une plante verte."
+   },
+   {
+    "word": "arroser",
+    "surface": "arroses",
+    "type": "verb",
+    "def": "To water; to give water to a plant.",
+    "anchor": false,
+    "ex": "“Tu l'arroses tous les matins, s'il te plaît?”"
+   },
+   {
+    "word": "tous les matins",
+    "surface": "tous les matins",
+    "type": "expression",
+    "def": "Every morning; each morning, again and again.",
+    "anchor": false,
+    "ex": "“Tu l'arroses tous les matins, s'il te plaît?”"
+   },
+   {
+    "word": "s'il te plaît",
+    "surface": "s'il te plaît",
+    "type": "expression",
+    "def": "Please; a polite word when you ask.",
+    "anchor": false,
+    "ex": "“Tu l'arroses tous les matins, s'il te plaît?”"
+   },
+   {
+    "word": "l'arrosoir",
+    "surface": "arrosoir",
+    "type": "noun",
+    "def": "Watering can; you use it to give water to plants.",
+    "anchor": true,
+    "ex": "Mais elle prend l'arrosoir."
+   },
+   {
+    "word": "la terre",
+    "surface": "terre",
+    "type": "noun",
+    "def": "Earth; what a plant grows in.",
+    "anchor": false,
+    "ex": "La terre est sèche."
+   },
+   {
+    "word": "sec",
+    "surface": "sèche",
+    "type": "adjective",
+    "def": "Dry; with no water.",
+    "anchor": false,
+    "ex": "La terre est sèche."
+   },
+   {
+    "word": "vivant",
+    "surface": "vivante",
+    "type": "adjective",
+    "def": "Alive; living, not dead.",
+    "anchor": false,
+    "ex": "“Elle est vivante, tu vois?"
+   },
+   {
+    "word": "la feuille",
+    "surface": "feuilles",
+    "type": "noun",
+    "def": "Leaf; the green part of a plant.",
+    "anchor": false,
+    "ex": "L'eau coule sur les feuilles."
+   },
+   {
+    "word": "grandir",
+    "surface": "grandit",
+    "type": "verb",
+    "def": "To grow; to get bigger.",
+    "anchor": false,
+    "ex": "“Elle grandit petit à petit”, rit Hugo."
+   },
+   {
+    "word": "petit à petit",
+    "surface": "petit à petit",
+    "type": "expression",
+    "def": "Little by little; slowly, a small bit each time.",
+    "anchor": false,
+    "ex": "“Elle grandit petit à petit”, rit Hugo."
+   }
+  ],
+  "slug": "une-plante-pour-lea"
+ },
+ {
+  "topic": "houses-and-neighbours",
+  "slotIndex": 2,
+  "title": "Des pas au-dessus",
+  "vocab": [
+   {
+    "word": "monter",
+    "surface": "monte",
+    "type": "verb",
+    "def": "To go up; to climb the stairs.",
+    "anchor": false,
+    "ex": "Le matin, Antoine monte avec une inconnue."
+   },
+   {
+    "word": "inconnu",
+    "surface": "inconnue",
+    "type": "noun",
+    "def": "Stranger; a person you do not know.",
+    "anchor": false,
+    "ex": "Le matin, Antoine monte avec une inconnue."
+   },
+   {
+    "word": "au-dessus",
+    "surface": "Au-dessus",
+    "type": "expression",
+    "def": "Above; higher than something.",
+    "anchor": false,
+    "ex": "Au-dessus du café, on entend des pas."
+   },
+   {
+    "word": "les pas",
+    "surface": "pas",
+    "type": "noun",
+    "def": "Footsteps; the sound of someone walking.",
+    "anchor": true,
+    "ex": "Au-dessus du café, on entend des pas."
+   },
+   {
+    "word": "le parquet",
+    "surface": "parquet",
+    "type": "noun",
+    "def": "Wooden floor; a floor made of wood.",
+    "anchor": true,
+    "ex": "Le parquet est vieux."
+   },
+   {
+    "word": "regarder",
+    "surface": "regarde",
+    "type": "verb",
+    "def": "To look; to use your eyes on something.",
+    "anchor": false,
+    "ex": "Léa regarde le plafond."
+   },
+   {
+    "word": "ici",
+    "surface": "ici",
+    "type": "adverb",
+    "def": "Here; in this place, not there.",
+    "anchor": false,
+    "ex": "Les pas vont ici, puis ailleurs."
+   },
+   {
+    "word": "tout à coup",
+    "surface": "Tout à coup",
+    "type": "expression",
+    "def": "Suddenly; all at once.",
+    "anchor": false,
+    "ex": "Tout à coup, c'est tranquille."
+   },
+   {
+    "word": "ensuite",
+    "surface": "Ensuite",
+    "type": "adverb",
+    "def": "Then; after that, next in time.",
+    "anchor": false,
+    "ex": "Ensuite, Antoine descend."
+   },
+   {
+    "word": "sympa",
+    "surface": "sympa",
+    "type": "adjective",
+    "def": "Nice; friendly and easy to like.",
+    "anchor": false,
+    "ex": "“C'est une femme sympa."
+   },
+   {
+    "word": "trop",
+    "surface": "trop",
+    "type": "adverb",
+    "def": "Too; more than you want.",
+    "anchor": false,
+    "ex": "“Elle arrive trop tôt!”, répond Léa."
+   },
+   {
+    "word": "le chien",
+    "surface": "chien",
+    "type": "noun",
+    "def": "Dog; an animal that lives with people.",
+    "anchor": true,
+    "ex": "Puis l'inconnue descend avec un chien."
+   },
+   {
+    "word": "gros",
+    "surface": "gros",
+    "type": "adjective",
+    "def": "Big; large and heavy.",
+    "anchor": false,
+    "ex": "Le gros chien tire sur sa laisse."
+   },
+   {
+    "word": "la laisse",
+    "surface": "laisse",
+    "type": "noun",
+    "def": "Lead; what you hold to walk a dog.",
+    "anchor": true,
+    "ex": "Le gros chien tire sur sa laisse."
+   },
+   {
+    "word": "le manteau",
+    "surface": "manteau",
+    "type": "noun",
+    "def": "Coat; a warm jacket for outside.",
+    "anchor": true,
+    "ex": "Elle a un manteau jaune et les cheveux bruns."
+   },
+   {
+    "word": "brun",
+    "surface": "bruns",
+    "type": "adjective",
+    "def": "Brown; here, the colour of her hair.",
+    "anchor": false,
+    "ex": "Elle a un manteau jaune et les cheveux bruns."
+   },
+   {
+    "word": "saluer",
+    "surface": "salue",
+    "type": "verb",
+    "def": "To greet; to say hello with a smile.",
+    "anchor": false,
+    "ex": "Elle salue Léa avec un sourire."
+   },
+   {
+    "word": "l'écharpe",
+    "surface": "écharpe",
+    "type": "noun",
+    "def": "Scarf; a long cloth you wear around your neck.",
+    "anchor": true,
+    "ex": "Sur la rampe, l'inconnue oublie son écharpe."
+   },
+   {
+    "word": "quelqu'un",
+    "surface": "Quelqu'un",
+    "type": "pronoun",
+    "def": "Someone; a person, but we do not know who.",
+    "anchor": false,
+    "ex": "Quelqu'un prend la place de Hugo."
+   },
+   {
+    "word": "chez moi",
+    "surface": "Chez moi",
+    "type": "expression",
+    "def": "At my place; where I live.",
+    "anchor": false,
+    "ex": "Chez moi, c'est en bas.”"
+   }
+  ],
+  "slug": "des-pas-au-dessus"
+ },
+ {
+  "topic": "travel-and-goodbyes",
+  "slotIndex": 0,
+  "title": "À samedi, Hugo",
+  "vocab": [
+   {
+    "word": "le réveil",
+    "surface": "réveil",
+    "type": "noun",
+    "def": "Alarm clock; it rings to wake you up.",
+    "anchor": true,
+    "ex": "Ce matin, le réveil sonne tôt."
+   },
+   {
+    "word": "la voiture",
+    "surface": "voiture",
+    "type": "noun",
+    "def": "Car; you drive it on the road.",
+    "anchor": true,
+    "ex": "Une voiture attend près du port."
+   },
+   {
+    "word": "le port",
+    "surface": "port",
+    "type": "noun",
+    "def": "Harbour; the place where boats stay.",
+    "anchor": true,
+    "ex": "Une voiture attend près du port."
+   },
+   {
+    "word": "premier",
+    "surface": "premier",
+    "type": "adjective",
+    "def": "First; the one before all the others.",
+    "anchor": false,
+    "ex": "C'est le premier jour de mars."
+   },
+   {
+    "word": "mettre",
+    "surface": "met",
+    "type": "verb",
+    "def": "To put; to place something somewhere.",
+    "anchor": false,
+    "ex": "Il met la valise dans le coffre."
+   },
+   {
+    "word": "le coffre",
+    "surface": "coffre",
+    "type": "noun",
+    "def": "Boot; the back of a car for bags.",
+    "anchor": true,
+    "ex": "Il met la valise dans le coffre."
+   },
+   {
+    "word": "prêt",
+    "surface": "prêt",
+    "type": "adjective",
+    "def": "Ready; all set to go.",
+    "anchor": false,
+    "ex": "“Tu es prêt?”, demande Léa."
+   },
+   {
+    "word": "sortir",
+    "surface": "sort",
+    "type": "verb",
+    "def": "To get out; to leave a car or a room.",
+    "anchor": false,
+    "ex": "Une femme sort d'un taxi, avec son chien."
+   },
+   {
+    "word": "savoir",
+    "surface": "sait",
+    "type": "verb",
+    "def": "To know; to have something in your head.",
+    "anchor": false,
+    "ex": "Léa sait: c'est l'inconnue de l'écharpe."
+   },
+   {
+    "word": "nouveau",
+    "surface": "nouvelle",
+    "type": "adjective",
+    "def": "New; here for the first time.",
+    "anchor": false,
+    "ex": "Clara est une nouvelle locataire, en manteau jaune."
+   },
+   {
+    "word": "parler",
+    "surface": "parle",
+    "type": "verb",
+    "def": "To speak; to say words to someone.",
+    "anchor": false,
+    "ex": "Hugo parle doucement à Léa."
+   },
+   {
+    "word": "à samedi",
+    "surface": "À samedi",
+    "type": "expression",
+    "def": "See you Saturday; we meet again on Saturday.",
+    "anchor": false,
+    "ex": "“À samedi, pour jouer?”"
+   },
+   {
+    "word": "pleurer",
+    "surface": "pleurer",
+    "type": "verb",
+    "def": "To cry; tears come from your eyes.",
+    "anchor": false,
+    "ex": "Je ne veux pas pleurer.”"
+   },
+   {
+    "word": "retenir",
+    "surface": "retient",
+    "type": "verb",
+    "def": "To hold back; to stop tears from coming.",
+    "anchor": false,
+    "ex": "Elle retient ses larmes."
+   },
+   {
+    "word": "la larme",
+    "surface": "larmes",
+    "type": "noun",
+    "def": "Tear; a drop of water from your eye.",
+    "anchor": false,
+    "ex": "Elle retient ses larmes."
+   },
+   {
+    "word": "bon voyage",
+    "surface": "Bon voyage",
+    "type": "expression",
+    "def": "Have a good trip; said to someone who leaves.",
+    "anchor": false,
+    "ex": "“Bon voyage, Hugo”, dit Léa."
+   },
+   {
+    "word": "au revoir",
+    "surface": "Au revoir",
+    "type": "expression",
+    "def": "Goodbye; what you say when someone leaves.",
+    "anchor": false,
+    "ex": "“Au revoir, Léa”, répond Hugo."
+   },
+   {
+    "word": "le mouchoir",
+    "surface": "mouchoir",
+    "type": "noun",
+    "def": "Tissue; a small soft paper for your eyes and nose.",
+    "anchor": true,
+    "ex": "Hugo lui donne un mouchoir."
+   },
+   {
+    "word": "lentement",
+    "surface": "lentement",
+    "type": "adverb",
+    "def": "Slowly; not fast at all.",
+    "anchor": false,
+    "ex": "La voiture part lentement."
+   },
+   {
+    "word": "le klaxon",
+    "surface": "klaxon",
+    "type": "noun",
+    "def": "Car horn; it makes a loud sound in the street.",
+    "anchor": true,
+    "ex": "Le klaxon sonne deux fois."
+   }
+  ],
+  "slug": "a-samedi-hugo"
+ },
+ {
+  "topic": "travel-and-goodbyes",
+  "slotIndex": 1,
+  "title": "Clara tient la boule",
+  "vocab": [
+   {
+    "word": "chaque dimanche",
+    "surface": "Chaque dimanche",
+    "type": "expression",
+    "def": "Every Sunday; each Sunday, again and again.",
+    "anchor": false,
+    "ex": "Chaque dimanche, Léa joue à la pétanque, seule maintenant."
+   },
+   {
+    "word": "le printemps",
+    "surface": "printemps",
+    "type": "noun",
+    "def": "Spring; the season after winter.",
+    "anchor": true,
+    "ex": "C'est le printemps, et le soleil est chaud."
+   },
+   {
+    "word": "la poussière",
+    "surface": "poussière",
+    "type": "noun",
+    "def": "Dust; very small bits of dry earth.",
+    "anchor": true,
+    "ex": "La poussière vole."
+   },
+   {
+    "word": "la gourde",
+    "surface": "gourde",
+    "type": "noun",
+    "def": "Water bottle; a bottle you carry with you.",
+    "anchor": true,
+    "ex": "Léa pose sa gourde sur le banc."
+   },
+   {
+    "word": "descendre",
+    "surface": "descend",
+    "type": "verb",
+    "def": "To come down; to go down the stairs.",
+    "anchor": false,
+    "ex": "Clara descend avec son chien."
+   },
+   {
+    "word": "la casquette",
+    "surface": "casquette",
+    "type": "noun",
+    "def": "Cap; a hat with a front part against the sun.",
+    "anchor": true,
+    "ex": "Clara a une casquette verte et des lunettes."
+   },
+   {
+    "word": "les lunettes",
+    "surface": "lunettes",
+    "type": "noun",
+    "def": "Glasses; here, dark ones against the sun.",
+    "anchor": true,
+    "ex": "Clara a une casquette verte et des lunettes."
+   },
+   {
+    "word": "essayer",
+    "surface": "essayer",
+    "type": "verb",
+    "def": "To try; to do something for the first time.",
+    "anchor": false,
+    "ex": "“Je peux essayer?”, demande Clara."
+   },
+   {
+    "word": "apprendre",
+    "surface": "apprendre",
+    "type": "verb",
+    "def": "To learn; to start to know how to do something.",
+    "anchor": false,
+    "ex": "“Tu veux apprendre?”, demande Léa."
+   },
+   {
+    "word": "avec plaisir",
+    "surface": "Avec plaisir",
+    "type": "expression",
+    "def": "With pleasure; yes, gladly.",
+    "anchor": false,
+    "ex": "“Avec plaisir!”"
+   },
+   {
+    "word": "tenir",
+    "surface": "tiens",
+    "type": "verb",
+    "def": "To hold; to keep something in your hand.",
+    "anchor": false,
+    "ex": "“Tu tiens la boule comme ça."
+   },
+   {
+    "word": "plier",
+    "surface": "plies",
+    "type": "verb",
+    "def": "To bend; to make your legs not straight.",
+    "anchor": false,
+    "ex": "Tu plies les genoux."
+   },
+   {
+    "word": "baisser",
+    "surface": "baisses",
+    "type": "verb",
+    "def": "To lower; to move something down.",
+    "anchor": false,
+    "ex": "Tu baisses le coude”, explique Léa."
+   },
+   {
+    "word": "le coude",
+    "surface": "coude",
+    "type": "noun",
+    "def": "Elbow; the middle part of your arm.",
+    "anchor": true,
+    "ex": "Tu baisses le coude”, explique Léa."
+   },
+   {
+    "word": "boire",
+    "surface": "boit",
+    "type": "verb",
+    "def": "To drink; to take water or coffee.",
+    "anchor": false,
+    "ex": "Clara boit encore un peu à la gourde."
+   },
+   {
+    "word": "difficile",
+    "surface": "difficile",
+    "type": "adjective",
+    "def": "Difficult; not easy to do.",
+    "anchor": false,
+    "ex": "“C'est difficile!”, rit Clara."
+   },
+   {
+    "word": "toujours",
+    "surface": "Toujours",
+    "type": "adverb",
+    "def": "Always; every time, again and again.",
+    "anchor": false,
+    "ex": "“Toujours, au début.”"
+   },
+   {
+    "word": "l'élève",
+    "surface": "élève",
+    "type": "noun",
+    "def": "Student; a person who learns from someone.",
+    "anchor": false,
+    "ex": "Clara est une bonne élève."
+   },
+   {
+    "word": "servir",
+    "surface": "sert",
+    "type": "verb",
+    "def": "To serve; to give drinks to people.",
+    "anchor": false,
+    "ex": "Après, Léa sert deux cafés."
+   },
+   {
+    "word": "pouvoir",
+    "surface": "peux",
+    "type": "verb",
+    "def": "Can; to be able to do something.",
+    "anchor": false,
+    "ex": "“Je peux essayer?”, demande Clara."
+   }
+  ],
+  "slug": "clara-tient-la-boule"
+ },
+ {
+  "topic": "travel-and-goodbyes",
+  "slotIndex": 2,
+  "title": "Treize, comme avant",
+  "vocab": [
+   {
+    "word": "le TGV",
+    "surface": "TGV",
+    "type": "noun",
+    "def": "TGV; the fast French train.",
+    "anchor": true,
+    "ex": "Un samedi d'avril, Hugo arrive en TGV, heureux."
+   },
+   {
+    "word": "le canapé",
+    "surface": "canapé",
+    "type": "noun",
+    "def": "Sofa; a long soft seat for two or three people.",
+    "anchor": true,
+    "ex": "Il dort sur le long canapé du café."
+   },
+   {
+    "word": "l'oreiller",
+    "surface": "oreiller",
+    "type": "noun",
+    "def": "Pillow; you put your head on it in bed.",
+    "anchor": true,
+    "ex": "Il rêve sur un vieil oreiller."
+   },
+   {
+    "word": "rêver",
+    "surface": "rêve",
+    "type": "verb",
+    "def": "To dream; to see pictures when you sleep.",
+    "anchor": false,
+    "ex": "Il rêve sur un vieil oreiller."
+   },
+   {
+    "word": "le petit-déjeuner",
+    "surface": "petit-déjeuner",
+    "type": "noun",
+    "def": "Breakfast; the first meal of the day.",
+    "anchor": false,
+    "ex": "Au petit-déjeuner, Hugo a un pain au chocolat."
+   },
+   {
+    "word": "la baguette",
+    "surface": "baguette",
+    "type": "noun",
+    "def": "Baguette; the long French bread.",
+    "anchor": true,
+    "ex": "Le café sent la baguette."
+   },
+   {
+    "word": "le pain au chocolat",
+    "surface": "pain au chocolat",
+    "type": "noun",
+    "def": "Pain au chocolat; soft bread with chocolate inside.",
+    "anchor": true,
+    "ex": "Au petit-déjeuner, Hugo a un pain au chocolat."
+   },
+   {
+    "word": "sentir",
+    "surface": "sent",
+    "type": "verb",
+    "def": "To smell of; to have the smell of something.",
+    "anchor": false,
+    "ex": "Le café sent la baguette."
+   },
+   {
+    "word": "encore un peu",
+    "surface": "encore un peu",
+    "type": "expression",
+    "def": "A little more; some more of it.",
+    "anchor": false,
+    "ex": "Il mange encore un peu."
+   },
+   {
+    "word": "comme avant",
+    "surface": "comme avant",
+    "type": "expression",
+    "def": "Like before; the same as in the past.",
+    "anchor": false,
+    "ex": "“Une partie, comme avant?”, demande Hugo."
+   },
+   {
+    "word": "tricher",
+    "surface": "triche",
+    "type": "verb",
+    "def": "To cheat; to not play by the rules.",
+    "anchor": false,
+    "ex": "Mais personne ne triche”, dit Léa."
+   },
+   {
+    "word": "treize",
+    "surface": "treize",
+    "type": "noun",
+    "def": "Thirteen; the score you need to win at pétanque.",
+    "anchor": false,
+    "ex": "“On joue en treize points."
+   },
+   {
+    "word": "jaune",
+    "surface": "jaune",
+    "type": "adjective",
+    "def": "Yellow; the colour of Clara's coat.",
+    "anchor": false,
+    "ex": "Clara regarde, dans son manteau jaune."
+   },
+   {
+    "word": "l'égalité",
+    "surface": "égalité",
+    "type": "noun",
+    "def": "Tie; the same score for both players.",
+    "anchor": false,
+    "ex": "Douze à douze: c'est l'égalité."
+   },
+   {
+    "word": "la revanche",
+    "surface": "revanche",
+    "type": "noun",
+    "def": "Rematch; a new game to try to win back.",
+    "anchor": false,
+    "ex": "“Et la revanche?”, rit Hugo."
+   },
+   {
+    "word": "lever",
+    "surface": "lève",
+    "type": "verb",
+    "def": "To lift; to move something up.",
+    "anchor": false,
+    "ex": "Léa lève les bras."
+   },
+   {
+    "word": "la bise",
+    "surface": "bise",
+    "type": "noun",
+    "def": "Kiss on the cheek; how friends say hello in France.",
+    "anchor": true,
+    "ex": "Il lui fait la bise, sur la joue."
+   },
+   {
+    "word": "la joue",
+    "surface": "joue",
+    "type": "noun",
+    "def": "Cheek; the side of your face.",
+    "anchor": false,
+    "ex": "“On joue en treize points."
+   },
+   {
+    "word": "faire",
+    "surface": "fait",
+    "type": "verb",
+    "def": "To do, to make; here, to give a kiss.",
+    "anchor": false,
+    "ex": "Il lui fait la bise, sur la joue."
+   },
+   {
+    "word": "à la maison",
+    "surface": "à la maison",
+    "type": "expression",
+    "def": "At home; in the place where you live.",
+    "anchor": false,
+    "ex": "“Ici, tu es toujours à la maison”, répond Léa."
+   }
+  ],
+  "slug": "treize-comme-avant"
+ }
+]

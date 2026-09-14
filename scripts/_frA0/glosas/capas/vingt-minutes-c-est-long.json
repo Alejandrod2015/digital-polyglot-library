@@ -1,0 +1,318 @@
+{
+ "minutes": {
+  "es": "Vingt minutes, c'est long",
+  "en": "Twenty minutes is a long time"
+ },
+ "est": {
+  "es": "Vingt minutes, c'est long",
+  "en": "Twenty minutes is a long time"
+ },
+ "long": {
+  "es": "Vingt minutes, c'est long",
+  "en": "Twenty minutes is a long time"
+ },
+ "à": {
+  "es": "À Paris, Hugo habite en face du métro.",
+  "en": "In Paris, Hugo lives opposite the metro."
+ },
+ "paris": {
+  "es": "À Paris, Hugo habite en face du métro.",
+  "en": "In Paris, Hugo lives opposite the metro."
+ },
+ "habite": {
+  "es": "À Paris, Hugo habite en face du métro.",
+  "en": "In Paris, Hugo lives opposite the metro."
+ },
+ "en": {
+  "es": "À Paris, Hugo habite en face du métro.",
+  "en": "In Paris, Hugo lives opposite the metro."
+ },
+ "face": {
+  "es": "À Paris, Hugo habite en face du métro.",
+  "en": "In Paris, Hugo lives opposite the metro."
+ },
+ "métro": {
+  "es": "À Paris, Hugo habite en face du métro.",
+  "en": "In Paris, Hugo lives opposite the metro."
+ },
+ "loyer": {
+  "es": "Le loyer coûte mille euros par mois.",
+  "en": "The rent costs a thousand euros a month."
+ },
+ "coûte": {
+  "es": "Le loyer coûte mille euros par mois.",
+  "en": "The rent costs a thousand euros a month."
+ },
+ "euros": {
+  "es": "Le loyer coûte mille euros par mois.",
+  "en": "The rent costs a thousand euros a month."
+ },
+ "par": {
+  "es": "Le loyer coûte mille euros par mois.",
+  "en": "The rent costs a thousand euros a month."
+ },
+ "mois": {
+  "es": "Le loyer coûte mille euros par mois.",
+  "en": "The rent costs a thousand euros a month."
+ },
+ "ils": {
+  "es": "Ils regardent le plan tous les deux.",
+  "en": "They both look at the map."
+ },
+ "regardent": {
+  "es": "Ils regardent le plan tous les deux.",
+  "en": "They both look at the map."
+ },
+ "plan": {
+  "es": "Ils regardent le plan tous les deux.",
+  "en": "They both look at the map."
+ },
+ "tous": {
+  "es": "Ils regardent le plan tous les deux.",
+  "en": "They both look at the map."
+ },
+ "mon": {
+  "es": "Mon travail est à vingt minutes",
+  "en": "My work is twenty minutes away"
+ },
+ "travail": {
+  "es": "Mon travail est à vingt minutes",
+  "en": "My work is twenty minutes away"
+ },
+ "dit": {
+  "es": "dit Hugo.",
+  "en": "Hugo says."
+ },
+ "pas": {
+  "es": "Ce n'est pas loin.",
+  "en": "It isn't far."
+ },
+ "loin": {
+  "es": "Ce n'est pas loin.",
+  "en": "It isn't far."
+ },
+ "répond": {
+  "es": "répond Léa.",
+  "en": "Léa answers."
+ },
+ "ici": {
+  "es": "Ici, le port est à dix minutes",
+  "en": "Here, the harbour is ten minutes away"
+ },
+ "port": {
+  "es": "Ici, le port est à dix minutes",
+  "en": "Here, the harbour is ten minutes away"
+ },
+ "pied": {
+  "es": "à dix minutes à pied.",
+  "en": "ten minutes on foot."
+ },
+ "tout": {
+  "es": "Tout est près.",
+  "en": "Everything is near."
+ },
+ "près": {
+  "es": "Tout est près.",
+  "en": "Everything is near."
+ },
+ "matin": {
+  "es": "Le matin, le quai du métro",
+  "en": "In the morning, the metro platform"
+ },
+ "quai": {
+  "es": "Le matin, le quai du métro",
+  "en": "In the morning, the metro platform"
+ },
+ "plein": {
+  "es": "est plein et étroit.",
+  "en": "is full and narrow."
+ },
+ "et": {
+  "es": "est plein et étroit.",
+  "en": "is full and narrow."
+ },
+ "étroit": {
+  "es": "est plein et étroit.",
+  "en": "is full and narrow."
+ },
+ "arrive": {
+  "es": "Hugo arrive tôt au travail",
+  "en": "Hugo gets to work early"
+ },
+ "tôt": {
+  "es": "Hugo arrive tôt au travail",
+  "en": "Hugo gets to work early"
+ },
+ "au": {
+  "es": "Hugo arrive tôt au travail",
+  "en": "Hugo gets to work early"
+ },
+ "il": {
+  "es": "et il part tard.",
+  "en": "and he leaves late."
+ },
+ "part": {
+  "es": "et il part tard.",
+  "en": "and he leaves late."
+ },
+ "tard": {
+  "es": "et il part tard.",
+  "en": "and he leaves late."
+ },
+ "tu": {
+  "es": "Tu marches un peu?",
+  "en": "Do you walk a bit?"
+ },
+ "marches": {
+  "es": "Tu marches un peu?",
+  "en": "Do you walk a bit?"
+ },
+ "peu": {
+  "es": "Tu marches un peu?",
+  "en": "Do you walk a bit?"
+ },
+ "demande": {
+  "es": "demande Léa.",
+  "en": "Léa asks."
+ },
+ "achète": {
+  "es": "J'achète un vélo neuf.",
+  "en": "I'm buying a new bike."
+ },
+ "vélo": {
+  "es": "J'achète un vélo neuf.",
+  "en": "I'm buying a new bike."
+ },
+ "neuf": {
+  "es": "J'achète un vélo neuf.",
+  "en": "I'm buying a new bike."
+ },
+ "moins": {
+  "es": "C'est moins lent.",
+  "en": "It is less slow."
+ },
+ "lent": {
+  "es": "C'est moins lent.",
+  "en": "It is less slow."
+ },
+ "va": {
+  "es": "Et le métro va vite?",
+  "en": "And is the metro fast?"
+ },
+ "vite": {
+  "es": "Et le métro va vite?",
+  "en": "And is the metro fast?"
+ },
+ "ça": {
+  "es": "Ça dépend.",
+  "en": "It depends."
+ },
+ "dépend": {
+  "es": "Ça dépend.",
+  "en": "It depends."
+ },
+ "mais": {
+  "es": "Mais je n'ai pas besoin de voiture.",
+  "en": "But I don't need a car."
+ },
+ "je": {
+  "es": "Mais je n'ai pas besoin de voiture.",
+  "en": "But I don't need a car."
+ },
+ "n": {
+  "es": "Mais je n'ai pas besoin de voiture.",
+  "en": "But I don't need a car."
+ },
+ "besoin": {
+  "es": "Mais je n'ai pas besoin de voiture.",
+  "en": "But I don't need a car."
+ },
+ "de": {
+  "es": "Mais je n'ai pas besoin de voiture.",
+  "en": "But I don't need a car."
+ },
+ "voiture": {
+  "es": "Mais je n'ai pas besoin de voiture.",
+  "en": "But I don't need a car."
+ },
+ "dehors": {
+  "es": "Dehors, on entend le bateau du port.",
+  "en": "Outside, you can hear the boat in the harbour."
+ },
+ "on": {
+  "es": "Dehors, on entend le bateau du port.",
+  "en": "Outside, you can hear the boat in the harbour."
+ },
+ "entend": {
+  "es": "Dehors, on entend le bateau du port.",
+  "en": "Outside, you can hear the boat in the harbour."
+ },
+ "bateau": {
+  "es": "Dehors, on entend le bateau du port.",
+  "en": "Outside, you can hear the boat in the harbour."
+ },
+ "arrêt": {
+  "es": "L'arrêt du bus est en bas.",
+  "en": "The bus stop is downstairs."
+ },
+ "bus": {
+  "es": "L'arrêt du bus est en bas.",
+  "en": "The bus stop is downstairs."
+ },
+ "bas": {
+  "es": "L'arrêt du bus est en bas.",
+  "en": "The bus stop is downstairs."
+ },
+ "pour": {
+  "es": "Pour Léa, vingt minutes",
+  "en": "For Léa, twenty minutes"
+ },
+ "presque": {
+  "es": "c'est presque toute la ville.",
+  "en": "is almost the whole town."
+ },
+ "toute": {
+  "es": "c'est presque toute la ville.",
+  "en": "is almost the whole town."
+ },
+ "ville": {
+  "es": "c'est presque toute la ville.",
+  "en": "is almost the whole town."
+ },
+ "ne": {
+  "es": "Hugo ne comprend pas.",
+  "en": "Hugo doesn't understand."
+ },
+ "comprend": {
+  "es": "Hugo ne comprend pas.",
+  "en": "Hugo doesn't understand."
+ },
+ "pose": {
+  "es": "Léa pose sa montre sur la table.",
+  "en": "Léa puts her watch down on the table."
+ },
+ "sa": {
+  "es": "Léa pose sa montre sur la table.",
+  "en": "Léa puts her watch down on the table."
+ },
+ "montre": {
+  "es": "Léa pose sa montre sur la table.",
+  "en": "Léa puts her watch down on the table."
+ },
+ "sur": {
+  "es": "Léa pose sa montre sur la table.",
+  "en": "Léa puts her watch down on the table."
+ },
+ "table": {
+  "es": "Léa pose sa montre sur la table.",
+  "en": "Léa puts her watch down on the table."
+ },
+ "elle": {
+  "es": "Elle ne la regarde pas.",
+  "en": "She doesn't look at it."
+ },
+ "regarde": {
+  "es": "Elle ne la regarde pas.",
+  "en": "She doesn't look at it."
+ }
+}

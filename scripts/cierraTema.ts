@@ -307,6 +307,8 @@ function desdeJson(fichero: string) {
     esperadas: Number(obj.storiesPerTopic ?? 3),
     historiasDelJourney: Number(obj.historiasDelJourney ?? historias.length),
     realPeople: obj.realPeople as string[] | undefined,
+    // Historias de temas anteriores, solo como contexto (ver desdeBase).
+    previas: ((obj.previas ?? []) as Array<{ text?: string }>).map((s) => ({ text: String(s.text ?? "") })),
   };
 }
 
@@ -316,6 +318,7 @@ function desdeJson(fichero: string) {
   let datos: {
     historias: Historia[]; language: string; level: string; variant: string;
     esperadas: number; historiasDelJourney: number; realPeople?: string[];
+    previas?: Array<{ text: string }>;
   };
 
   if (modoJson) {

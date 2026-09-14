@@ -1334,6 +1334,7 @@
         "cette",
         "des",
         "du",
+        "l",
         "la",
         "le",
         "les",
@@ -1360,6 +1361,9 @@
         "treize",
         "trente-trois",
         "vingt"
+      ],
+      "placeNames": [
+        "panier"
       ]
     },
     "french-friends-france-a1": {

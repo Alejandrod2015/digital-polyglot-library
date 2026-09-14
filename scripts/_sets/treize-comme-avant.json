@@ -1,0 +1,433 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "le canapé,l'oreiller,la joue,la baguette",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "le canapé",
+          "answer": "a sofa",
+          "options": [
+            "a sofa",
+            "a pillow",
+            "a cheek",
+            "a long loaf of bread"
+          ]
+        },
+        {
+          "word": "l'oreiller",
+          "answer": "a pillow",
+          "options": [
+            "a sofa",
+            "a pillow",
+            "a cheek",
+            "a long loaf of bread"
+          ]
+        },
+        {
+          "word": "la joue",
+          "answer": "a cheek",
+          "options": [
+            "a sofa",
+            "a pillow",
+            "a cheek",
+            "a long loaf of bread"
+          ]
+        },
+        {
+          "word": "la baguette",
+          "answer": "a long loaf of bread",
+          "options": [
+            "a sofa",
+            "a pillow",
+            "a cheek",
+            "a long loaf of bread"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le TGV",
+    "sentence": "Il arrive en [[TGV]], heureux.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "by fast train",
+      "options": [
+        "by fast train",
+        "by plane",
+        "by bus",
+        "by boat"
+      ],
+      "audioClip": {
+        "storySlug": "treize-comme-avant",
+        "storySource": "user",
+        "sentence": "Il arrive en TGV, heureux.",
+        "targetWord": "TGV",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le pain au chocolat",
+    "sentence": "Au petit-déjeuner, il a un [[pain au chocolat]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a chocolate pastry",
+      "options": [
+        "a chocolate pastry",
+        "a chocolate cake",
+        "a hot chocolate",
+        "a chocolate bar"
+      ],
+      "audioClip": {
+        "storySlug": "treize-comme-avant",
+        "storySource": "user",
+        "sentence": "Au petit-déjeuner, il a un pain au chocolat.",
+        "targetWord": "pain au chocolat",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la bise",
+    "sentence": "Il lui fait la [[bise]], sur la joue.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a kiss on the cheek",
+      "options": [
+        "a kiss on the cheek",
+        "a slap on the cheek",
+        "a pat on the back",
+        "a handshake"
+      ],
+      "audioClip": {
+        "storySlug": "treize-comme-avant",
+        "storySource": "user",
+        "sentence": "Il lui fait la bise, sur la joue.",
+        "targetWord": "bise",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la revanche",
+    "sentence": "“Et la [[revanche]]?”, rit-il.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rematch",
+      "options": [
+        "a rematch",
+        "a prize",
+        "a break",
+        "a bet"
+      ],
+      "audioClip": {
+        "storySlug": "treize-comme-avant",
+        "storySource": "user",
+        "sentence": "“Et la revanche?”, rit-il.",
+        "targetWord": "revanche",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "l'égalité",
+    "sentence": "C'est l'[[égalité]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the same score",
+      "options": [
+        "the same score",
+        "the best score",
+        "the last score",
+        "the first score"
+      ],
+      "audioClip": {
+        "storySlug": "treize-comme-avant",
+        "storySource": "user",
+        "sentence": "C'est l'égalité.",
+        "targetWord": "égalité",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tricher",
+    "sentence": "Mais personne ne [[triche]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to cheat",
+      "options": [
+        "to cheat",
+        "to lose",
+        "to win",
+        "to shout"
+      ],
+      "audioClip": {
+        "storySlug": "treize-comme-avant",
+        "storySource": "user",
+        "sentence": "Mais personne ne triche.",
+        "targetWord": "triche",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "comme avant",
+    "sentence": "“Une partie, [[comme avant]]?”, demande-t-il.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "like before",
+      "options": [
+        "like before",
+        "for the first time",
+        "for the last time",
+        "like everyone else"
+      ],
+      "audioClip": {
+        "storySlug": "treize-comme-avant",
+        "storySource": "user",
+        "sentence": "“Une partie, comme avant?”, demande-t-il.",
+        "targetWord": "comme avant",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "à la maison",
+    "sentence": "“Ici, tu es toujours [[à la maison]]”, répond-elle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at home",
+      "options": [
+        "at home",
+        "at work",
+        "at school",
+        "at the café"
+      ],
+      "audioClip": {
+        "storySlug": "treize-comme-avant",
+        "storySource": "user",
+        "sentence": "“Ici, tu es toujours à la maison”, répond-elle.",
+        "targetWord": "à la maison",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "treize",
+    "sentence": "Le vendredi _____, beaucoup de gens ont peur.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "treize",
+      "options": [
+        "treize",
+        "onze",
+        "quatorze",
+        "dix"
+      ],
+      "translation": "On Friday the _____, many people are afraid.",
+      "optionTranslations": [
+        "thirteen",
+        "eleven",
+        "fourteen",
+        "ten"
+      ],
+      "audioClip": {
+        "storySlug": "treize-comme-avant",
+        "storySource": "user",
+        "sentence": "Le vendredi treize, beaucoup de gens ont peur.",
+        "targetWord": "treize",
+        "language": "french"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rêver",
+    "sentence": "Il [[rêve]] sur un vieil oreiller.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to dream",
+      "options": [
+        "to dream",
+        "to sleep",
+        "to read",
+        "to sing"
+      ],
+      "audioClip": {
+        "storySlug": "treize-comme-avant",
+        "storySource": "user",
+        "sentence": "Il rêve sur un vieil oreiller.",
+        "targetWord": "rêve",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sentir",
+    "sentence": "Le café [[sent]] la baguette.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to smell of",
+      "options": [
+        "to smell of",
+        "to taste of",
+        "to sell",
+        "to look like"
+      ],
+      "audioClip": {
+        "storySlug": "treize-comme-avant",
+        "storySource": "user",
+        "sentence": "Le café sent la baguette.",
+        "targetWord": "sent",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "encore un peu",
+    "sentence": "Il mange [[encore un peu]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a little more",
+      "options": [
+        "a little more",
+        "a little less",
+        "a lot more",
+        "not at all"
+      ],
+      "audioClip": {
+        "storySlug": "treize-comme-avant",
+        "storySource": "user",
+        "sentence": "Il mange encore un peu.",
+        "targetWord": "encore un peu",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jaune",
+    "sentence": "Elle regarde, dans son manteau [[jaune]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "yellow",
+      "options": [
+        "yellow",
+        "green",
+        "red",
+        "blue"
+      ],
+      "audioClip": {
+        "storySlug": "treize-comme-avant",
+        "storySource": "user",
+        "sentence": "Elle regarde, dans son manteau jaune.",
+        "targetWord": "jaune",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lever",
+    "sentence": "Elle [[lève]] les bras.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to raise",
+      "options": [
+        "to raise",
+        "to lower",
+        "to cross",
+        "to shake"
+      ],
+      "audioClip": {
+        "storySlug": "treize-comme-avant",
+        "storySource": "user",
+        "sentence": "Elle lève les bras.",
+        "targetWord": "lève",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "petit-déjeuner",
+    "sentence": "Le matin, avant le travail, je prends mon _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "petit-déjeuner",
+      "options": [
+        "petit-déjeuner",
+        "dîner",
+        "goûter",
+        "apéro"
+      ],
+      "translation": "In the morning, before work, I have my _____.",
+      "optionTranslations": [
+        "breakfast",
+        "dinner",
+        "afternoon snack",
+        "pre-dinner drink"
+      ],
+      "audioClip": {
+        "storySlug": "treize-comme-avant",
+        "storySource": "user",
+        "sentence": "Le matin, avant le travail, je prends mon petit-déjeuner.",
+        "targetWord": "petit-déjeuner",
+        "language": "french"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "fait",
+    "sentence": "Le matin, il _____ du sport au parc.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fait",
+      "options": [
+        "fait",
+        "boit",
+        "lit",
+        "vend"
+      ],
+      "translation": "In the morning, he _____ sport in the park.",
+      "optionTranslations": [
+        "does",
+        "drinks",
+        "reads",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "treize-comme-avant",
+        "storySource": "user",
+        "sentence": "Le matin, il fait du sport au parc.",
+        "targetWord": "fait",
+        "language": "french"
+      }
+    },
+    "featured": false
+  }
+]

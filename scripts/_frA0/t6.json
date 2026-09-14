@@ -1,0 +1,470 @@
+[
+  {
+    "topic": "houses-and-neighbours",
+    "slotIndex": 0,
+    "title": "L'annonce du couloir",
+    "arcType": null,
+    "synopsis": "Hugo part en mars, et le propriétaire veut déjà un nouveau locataire. Léa veut garder l'appartement pour Hugo. Mais son argent est à Paris, et une annonce arrive dans le couloir.",
+    "text": "Antoine, le propriétaire de l'immeuble, entre dans le café. D'habitude, il vient le lundi, tard. Aujourd'hui, il a une annonce: “À louer.” Hugo déménage en mars. L'appartement en haut est déjà presque vide.\n\nAntoine veut louer l'appartement tout de suite. “Pourquoi? Hugo ne part pas encore!”, dit Léa. “Un locataire paie cent euros de plus”, explique Antoine. “Ce n'est pas drôle!”\n\n“Je veux l'appartement libre pour Hugo. Et si je vends ma vieille machine?” “Désolé, Léa”, répond Antoine. “Je ne suis pas méchant. Demain, je choisis un locataire.”\n\nL'annonce est sur la boîte aux lettres. Le couloir est froid. Les meubles de Hugo vont à la cave, dessous. Léa touche la poignée de la porte de Hugo. En haut, les volets sont fermés. Léa regarde les volets. Léa n'aime pas ça, mais elle ne dit rien.",
+    "vocab": [
+      {
+        "word": "d'habitude",
+        "surface": "D'habitude",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Usually; most of the time."
+      },
+      {
+        "word": "l'annonce",
+        "surface": "annonce",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Notice; a paper that tells people something."
+      },
+      {
+        "word": "à louer",
+        "surface": "À louer",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "For rent; you can rent this place."
+      },
+      {
+        "word": "déménager",
+        "surface": "déménage",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To move out; to go to live somewhere else."
+      },
+      {
+        "word": "en haut",
+        "surface": "en haut",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Upstairs; on the floor above."
+      },
+      {
+        "word": "louer",
+        "surface": "louer",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To rent; to pay to live in a place."
+      },
+      {
+        "word": "tout de suite",
+        "surface": "tout de suite",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Right away; now, with no waiting."
+      },
+      {
+        "word": "pas encore",
+        "surface": "pas encore",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Not yet; later, but not now."
+      },
+      {
+        "word": "le locataire",
+        "surface": "locataire",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Tenant; a person who rents a flat."
+      },
+      {
+        "word": "cent",
+        "surface": "cent",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A hundred; ten times ten."
+      },
+      {
+        "word": "libre",
+        "surface": "libre",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Free, empty; nobody lives there."
+      },
+      {
+        "word": "vendre",
+        "surface": "vends",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To sell; to give something for money."
+      },
+      {
+        "word": "désolé",
+        "surface": "Désolé",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Sorry; sad about what you must do."
+      },
+      {
+        "word": "méchant",
+        "surface": "méchant",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Mean; not kind to other people."
+      },
+      {
+        "word": "demain",
+        "surface": "Demain",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Tomorrow; the day after today."
+      },
+      {
+        "word": "la boîte aux lettres",
+        "surface": "boîte aux lettres",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Letterbox; where the post arrives."
+      },
+      {
+        "word": "le couloir",
+        "surface": "couloir",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Hallway; the long space between rooms."
+      },
+      {
+        "word": "la cave",
+        "surface": "cave",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Cellar; the room under the building."
+      },
+      {
+        "word": "la poignée",
+        "surface": "poignée",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Handle; what you turn to open a door."
+      },
+      {
+        "word": "le volet",
+        "surface": "volets",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Shutter; the wooden cover outside a window."
+      }
+    ]
+  },
+  {
+    "topic": "houses-and-neighbours",
+    "slotIndex": 1,
+    "title": "Une plante pour Léa",
+    "arcType": null,
+    "synopsis": "Hugo et Léa vident l'appartement du haut. Il reste des murs blancs, une vieille ampoule et une plante. Hugo a une dernière demande, et Léa ne veut pas dire oui.",
+    "text": "Hugo et Léa vident la cuisine ensemble. Il n'y a plus de meubles. Le chauffage est éteint, et l'air est tiède.\n\nAu plafond, il y a une vieille ampoule. Hugo peint le dernier mur en blanc. “C'est fini”, dit Hugo. “C'est joli”, répond Léa. “Mais ce n'est plus chez toi.”\n\nÀ la fenêtre, il y a une plante verte. “Elle est pour toi”, explique Hugo. “Tu l'arroses tous les matins, s'il te plaît?” “Pourquoi moi?”, demande Léa.\n\nLéa ne veut pas de plante. Elle veut Hugo, en haut. Mais elle prend l'arrosoir. La terre est sèche. “Elle est vivante, tu vois? On partage, tous les deux”, sourit Hugo.\n\nLéa verse l'eau doucement. L'eau coule sur les feuilles. La terre est déjà mouillée, mais Léa arrose encore. “Elle grandit petit à petit”, rit Hugo. “Pour toujours?”, demande Léa. “Pour toujours.”",
+    "vocab": [
+      {
+        "word": "les meubles",
+        "surface": "meubles",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Furniture; tables, chairs and beds."
+      },
+      {
+        "word": "vider",
+        "surface": "vident",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To empty; to take everything out."
+      },
+      {
+        "word": "le chauffage",
+        "surface": "chauffage",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Heating; what makes a room warm."
+      },
+      {
+        "word": "tiède",
+        "surface": "tiède",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Lukewarm; not hot and not cold."
+      },
+      {
+        "word": "le plafond",
+        "surface": "plafond",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Ceiling; the top of a room."
+      },
+      {
+        "word": "l'ampoule",
+        "surface": "ampoule",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Light bulb; the glass part of a lamp."
+      },
+      {
+        "word": "peindre",
+        "surface": "peint",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To paint; to put colour on a wall."
+      },
+      {
+        "word": "blanc",
+        "surface": "blanc",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "White; the colour of milk."
+      },
+      {
+        "word": "la plante",
+        "surface": "plante",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Plant; a small green thing that grows in a pot."
+      },
+      {
+        "word": "vert",
+        "surface": "verte",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Green; the colour of leaves."
+      },
+      {
+        "word": "arroser",
+        "surface": "arroses",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To water; to give water to a plant."
+      },
+      {
+        "word": "tous les matins",
+        "surface": "tous les matins",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Every morning; each morning, again and again."
+      },
+      {
+        "word": "s'il te plaît",
+        "surface": "s'il te plaît",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Please; a polite word when you ask."
+      },
+      {
+        "word": "l'arrosoir",
+        "surface": "arrosoir",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Watering can; you use it to give water to plants."
+      },
+      {
+        "word": "la terre",
+        "surface": "terre",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Earth; what a plant grows in."
+      },
+      {
+        "word": "sec",
+        "surface": "sèche",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Dry; with no water."
+      },
+      {
+        "word": "vivant",
+        "surface": "vivante",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Alive; living, not dead."
+      },
+      {
+        "word": "la feuille",
+        "surface": "feuilles",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Leaf; the green part of a plant."
+      },
+      {
+        "word": "grandir",
+        "surface": "grandit",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To grow; to get bigger."
+      },
+      {
+        "word": "petit à petit",
+        "surface": "petit à petit",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Little by little; slowly, a small bit each time."
+      }
+    ]
+  },
+  {
+    "topic": "houses-and-neighbours",
+    "slotIndex": 2,
+    "title": "Des pas au-dessus",
+    "arcType": null,
+    "synopsis": "Antoine fait visiter l'appartement de Hugo. Léa entend quelqu'un marcher là-haut, mais elle ne voit rien. Puis une femme descend l'escalier, avec un chien.",
+    "text": "Le matin, Antoine monte avec une inconnue. Au-dessus du café, on entend des pas. Le parquet est vieux.\n\nLéa regarde le plafond. Là-haut, on ne voit rien. Les pas vont ici, puis ailleurs. Tout à coup, c'est tranquille.\n\nEnsuite, Antoine descend. “C'est une femme sympa”, explique Antoine. “Elle aime le quartier.” “Elle arrive trop tôt!”, répond Léa. “Hugo est encore là.” “Un jour, Hugo rentre, peut-être”, dit Antoine.\n\nPuis l'inconnue descend avec un chien. Le gros chien tire sur sa laisse. “Il est beau, ce chien”, dit Léa.\n\nElle a un manteau jaune et les cheveux bruns. Elle salue Léa avec un sourire. Léa ne peut pas être méchante.\n\nSur la rampe, l'inconnue oublie son écharpe. Quelqu'un prend la place de Hugo. Léa monte l'écharpe. Elle laisse un mot: “Pour la nouvelle voisine, avec un café. Chez moi, c'est en bas.”",
+    "vocab": [
+      {
+        "word": "monter",
+        "surface": "monte",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To go up; to climb the stairs."
+      },
+      {
+        "word": "inconnu",
+        "surface": "inconnue",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Stranger; a person you do not know."
+      },
+      {
+        "word": "au-dessus",
+        "surface": "Au-dessus",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Above; higher than something."
+      },
+      {
+        "word": "les pas",
+        "surface": "pas",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Footsteps; the sound of someone walking."
+      },
+      {
+        "word": "le parquet",
+        "surface": "parquet",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Wooden floor; a floor made of wood."
+      },
+      {
+        "word": "regarder",
+        "surface": "regarde",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To look; to use your eyes on something."
+      },
+      {
+        "word": "ailleurs",
+        "surface": "ailleurs",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Somewhere else; in another place."
+      },
+      {
+        "word": "tout à coup",
+        "surface": "Tout à coup",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Suddenly; all at once."
+      },
+      {
+        "word": "ensuite",
+        "surface": "Ensuite",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Then; after that, next in time."
+      },
+      {
+        "word": "sympa",
+        "surface": "sympa",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Nice; friendly and easy to like."
+      },
+      {
+        "word": "trop",
+        "surface": "trop",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Too; more than you want."
+      },
+      {
+        "word": "le chien",
+        "surface": "chien",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Dog; an animal that lives with people."
+      },
+      {
+        "word": "gros",
+        "surface": "gros",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Big; large and heavy."
+      },
+      {
+        "word": "la laisse",
+        "surface": "laisse",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Lead; what you hold to walk a dog."
+      },
+      {
+        "word": "le manteau",
+        "surface": "manteau",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Coat; a warm jacket for outside."
+      },
+      {
+        "word": "brun",
+        "surface": "bruns",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Brown; here, the colour of her hair."
+      },
+      {
+        "word": "saluer",
+        "surface": "salue",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To greet; to say hello with a smile."
+      },
+      {
+        "word": "l'écharpe",
+        "surface": "écharpe",
+        "type": "noun",
+        "register": "neutral",
+        "anchor": true,
+        "definition": "Scarf; a long cloth you wear around your neck."
+      },
+      {
+        "word": "quelqu'un",
+        "surface": "Quelqu'un",
+        "type": "pronoun",
+        "register": "neutral",
+        "definition": "Someone; a person, but we do not know who."
+      },
+      {
+        "word": "chez moi",
+        "surface": "Chez moi",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "At my place; where I live."
+      }
+    ]
+  }
+]

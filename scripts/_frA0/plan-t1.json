@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "france",
+  "registro": "ligero y soleado: domingo en la placita, bolas que chocan, bromas entre dos amigos de siempre",
+  "espina": "Hugo se va a Paris en marzo. El journey son los seis meses que les quedan en la placita de Le Panier; aqui se anuncia y empieza la cuenta atras.",
+  "recursos": "A0: repeticion ritmica (una bola, otra bola), contraste con mais, imagen concreta (la emocion como gesto visible)",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Lea quiere ganar a Hugo a la petanque por primera vez",
+      "impide": "Hugo juega siempre mejor y ella lanza con nervios",
+      "cuesta": "gana, pero porque Hugo se deja: la victoria no es suya, y justo despues el dice que se va a Paris en marzo",
+      "cambia": "la partida del domingo ya tiene fecha final",
+      "emocion": "sorpresa y un golpe de tristeza: Lea deja la bola en la mesa y no la mira"
+    },
+    {
+      "slot": "2",
+      "quiere": "Hugo quiere ensenar a Lea a tirar como el antes de irse",
+      "impide": "el mistral mueve el cochonnet y ella no quiere aprender algo para jugar sola",
+      "cuesta": "Lea pierde la apuesta y paga los cafes de la semana",
+      "cambia": "acepta aprender: si el se va, ella se queda con su manera de tirar",
+      "emocion": "enfado que se vuelve risa: tira, falla, y se rie con las manos en la cabeza"
+    },
+    {
+      "slot": "3",
+      "quiere": "Lea apuesta que si gana, Hugo se queda en Marseille",
+      "impide": "Hugo acepta la apuesta pero juega en serio por primera vez",
+      "cuesta": "Lea pierde, y la apuesta que parecia broma no lo era para ella",
+      "cambia": "Hugo entiende que a ella le importa; ninguno lo dice en voz alta",
+      "emocion": "esperanza que cae: Lea recoge las bolas despacio, una a una"
+    }
+  ]
+}

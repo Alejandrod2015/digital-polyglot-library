@@ -1,0 +1,338 @@
+{
+ "torchon": {
+  "es": "Le torchon à la main",
+  "en": "Tea towel in hand"
+ },
+ "à": {
+  "es": "Le torchon à la main",
+  "en": "Tea towel in hand"
+ },
+ "main": {
+  "es": "Le torchon à la main",
+  "en": "Tea towel in hand"
+ },
+ "sèche": {
+  "es": "Léa sèche les tasses à l'évier",
+  "en": "Léa dries the cups at the sink"
+ },
+ "tasses": {
+  "es": "Léa sèche les tasses à l'évier",
+  "en": "Léa dries the cups at the sink"
+ },
+ "évier": {
+  "es": "Léa sèche les tasses à l'évier",
+  "en": "Léa dries the cups at the sink"
+ },
+ "avec": {
+  "es": "avec un torchon.",
+  "en": "with a tea towel."
+ },
+ "vitrine": {
+  "es": "La vitrine est noire.",
+  "en": "The shop window is dark."
+ },
+ "est": {
+  "es": "La vitrine est noire.",
+  "en": "The shop window is dark."
+ },
+ "noire": {
+  "es": "La vitrine est noire.",
+  "en": "The shop window is dark."
+ },
+ "eau": {
+  "es": "L'eau est tiède.",
+  "en": "The water is lukewarm."
+ },
+ "tiède": {
+  "es": "L'eau est tiède.",
+  "en": "The water is lukewarm."
+ },
+ "elle": {
+  "es": "Elle les pose sur l'étagère.",
+  "en": "She puts them on the shelf."
+ },
+ "pose": {
+  "es": "Elle les pose sur l'étagère.",
+  "en": "She puts them on the shelf."
+ },
+ "sur": {
+  "es": "Elle les pose sur l'étagère.",
+  "en": "She puts them on the shelf."
+ },
+ "étagère": {
+  "es": "Elle les pose sur l'étagère.",
+  "en": "She puts them on the shelf."
+ },
+ "entre": {
+  "es": "Hugo entre avec son portable.",
+  "en": "Hugo comes in with his phone."
+ },
+ "son": {
+  "es": "Hugo entre avec son portable.",
+  "en": "Hugo comes in with his phone."
+ },
+ "portable": {
+  "es": "Hugo entre avec son portable.",
+  "en": "Hugo comes in with his phone."
+ },
+ "il": {
+  "es": "Il est heureux.",
+  "en": "He is happy."
+ },
+ "heureux": {
+  "es": "Il est heureux.",
+  "en": "He is happy."
+ },
+ "je": {
+  "es": "Léa, je te montre l'appartement!",
+  "en": "Léa, I'll show you the flat!"
+ },
+ "te": {
+  "es": "Léa, je te montre l'appartement!",
+  "en": "Léa, I'll show you the flat!"
+ },
+ "montre": {
+  "es": "Léa, je te montre l'appartement!",
+  "en": "Léa, I'll show you the flat!"
+ },
+ "appartement": {
+  "es": "Léa, je te montre l'appartement!",
+  "en": "Léa, I'll show you the flat!"
+ },
+ "petit": {
+  "es": "Il est petit, et je paie cher.",
+  "en": "It is small, and I pay a lot."
+ },
+ "et": {
+  "es": "Il est petit, et je paie cher.",
+  "en": "It is small, and I pay a lot."
+ },
+ "paie": {
+  "es": "Il est petit, et je paie cher.",
+  "en": "It is small, and I pay a lot."
+ },
+ "cher": {
+  "es": "Il est petit, et je paie cher.",
+  "en": "It is small, and I pay a lot."
+ },
+ "vue": {
+  "es": "La vue est belle.",
+  "en": "The view is beautiful."
+ },
+ "belle": {
+  "es": "La vue est belle.",
+  "en": "The view is beautiful."
+ },
+ "métro": {
+  "es": "Le métro est en bas",
+  "en": "The metro is downstairs"
+ },
+ "en": {
+  "es": "Le métro est en bas",
+  "en": "The metro is downstairs"
+ },
+ "bas": {
+  "es": "Le métro est en bas",
+  "en": "The metro is downstairs"
+ },
+ "explique": {
+  "es": "explique Hugo.",
+  "en": "Hugo explains."
+ },
+ "fier": {
+  "es": "Hugo est fier.",
+  "en": "Hugo is proud."
+ },
+ "secoue": {
+  "es": "Léa secoue la tête.",
+  "en": "Léa shakes her head."
+ },
+ "tête": {
+  "es": "Léa secoue la tête.",
+  "en": "Léa shakes her head."
+ },
+ "range": {
+  "es": "Elle range la cafetière.",
+  "en": "She puts the coffee pot away."
+ },
+ "cafetière": {
+  "es": "Elle range la cafetière.",
+  "en": "She puts the coffee pot away."
+ },
+ "court": {
+  "es": "Théo court partout.",
+  "en": "Théo runs everywhere."
+ },
+ "partout": {
+  "es": "Théo court partout.",
+  "en": "Théo runs everywhere."
+ },
+ "casse": {
+  "es": "Il casse des tasses",
+  "en": "He breaks cups"
+ },
+ "répond": {
+  "es": "répond Léa.",
+  "en": "Léa answers."
+ },
+ "parle": {
+  "es": "Léa parle tout le temps de Théo.",
+  "en": "Léa talks about Théo all the time."
+ },
+ "tout": {
+  "es": "Léa parle tout le temps de Théo.",
+  "en": "Léa talks about Théo all the time."
+ },
+ "temps": {
+  "es": "Léa parle tout le temps de Théo.",
+  "en": "Léa talks about Théo all the time."
+ },
+ "de": {
+  "es": "Léa parle tout le temps de Théo.",
+  "en": "Léa talks about Théo all the time."
+ },
+ "ne": {
+  "es": "Elle ne veut pas écouter",
+  "en": "She doesn't want to listen"
+ },
+ "veut": {
+  "es": "Elle ne veut pas écouter",
+  "en": "She doesn't want to listen"
+ },
+ "pas": {
+  "es": "Elle ne veut pas écouter",
+  "en": "She doesn't want to listen"
+ },
+ "écouter": {
+  "es": "Elle ne veut pas écouter",
+  "en": "She doesn't want to listen"
+ },
+ "parce": {
+  "es": "parce que c'est triste.",
+  "en": "because it is sad."
+ },
+ "que": {
+  "es": "parce que c'est triste.",
+  "en": "because it is sad."
+ },
+ "triste": {
+  "es": "parce que c'est triste.",
+  "en": "because it is sad."
+ },
+ "reste": {
+  "es": "Hugo reste moins d'une minute.",
+  "en": "Hugo stays less than a minute."
+ },
+ "moins": {
+  "es": "Hugo reste moins d'une minute.",
+  "en": "Hugo stays less than a minute."
+ },
+ "d": {
+  "es": "Hugo reste moins d'une minute.",
+  "en": "Hugo stays less than a minute."
+ },
+ "minute": {
+  "es": "Hugo reste moins d'une minute.",
+  "en": "Hugo stays less than a minute."
+ },
+ "bon": {
+  "es": "Bon.",
+  "en": "Well."
+ },
+ "au": {
+  "es": "Au revoir, Léa.",
+  "en": "Goodbye, Léa."
+ },
+ "revoir": {
+  "es": "Au revoir, Léa.",
+  "en": "Goodbye, Léa."
+ },
+ "monte": {
+  "es": "Il monte là-haut, à la maison.",
+  "en": "He goes up there, home."
+ },
+ "là-haut": {
+  "es": "Il monte là-haut, à la maison.",
+  "en": "He goes up there, home."
+ },
+ "maison": {
+  "es": "Il monte là-haut, à la maison.",
+  "en": "He goes up there, home."
+ },
+ "sans": {
+  "es": "Sans lui, le café est grand et vide.",
+  "en": "Without him, the café is big and empty."
+ },
+ "lui": {
+  "es": "Sans lui, le café est grand et vide.",
+  "en": "Without him, the café is big and empty."
+ },
+ "café": {
+  "es": "Sans lui, le café est grand et vide.",
+  "en": "Without him, the café is big and empty."
+ },
+ "grand": {
+  "es": "Sans lui, le café est grand et vide.",
+  "en": "Without him, the café is big and empty."
+ },
+ "vide": {
+  "es": "Sans lui, le café est grand et vide.",
+  "en": "Without him, the café is big and empty."
+ },
+ "mais": {
+  "es": "mais il n'y a pas de sonnette.",
+  "en": "but there is no doorbell."
+ },
+ "y": {
+  "es": "mais il n'y a pas de sonnette.",
+  "en": "but there is no doorbell."
+ },
+ "a": {
+  "es": "mais il n'y a pas de sonnette.",
+  "en": "but there is no doorbell."
+ },
+ "sonnette": {
+  "es": "mais il n'y a pas de sonnette.",
+  "en": "but there is no doorbell."
+ },
+ "frappe": {
+  "es": "Elle frappe, le torchon à la main.",
+  "en": "She knocks, tea towel in hand."
+ },
+ "toi": {
+  "es": "À toi, Hugo.",
+  "en": "Your turn, Hugo."
+ },
+ "tu": {
+  "es": "Tu racontes?",
+  "en": "Will you tell me?"
+ },
+ "racontes": {
+  "es": "Tu racontes?",
+  "en": "Will you tell me?"
+ },
+ "dit": {
+  "es": "dit Léa.",
+  "en": "Léa says."
+ },
+ "comme": {
+  "es": "Comme ça, maintenant?",
+  "en": "Just like that, now?"
+ },
+ "ça": {
+  "es": "Comme ça, maintenant?",
+  "en": "Just like that, now?"
+ },
+ "maintenant": {
+  "es": "Comme ça, maintenant?",
+  "en": "Just like that, now?"
+ },
+ "écoute": {
+  "es": "J'écoute.",
+  "en": "I'm listening."
+ },
+ "photos": {
+  "es": "Il montre les photos, une à une.",
+  "en": "He shows the photos, one by one."
+ }
+}

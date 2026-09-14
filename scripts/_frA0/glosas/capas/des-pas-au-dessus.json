@@ -1,0 +1,326 @@
+{
+ "pas": {
+  "es": "Des pas au-dessus",
+  "en": "Steps upstairs"
+ },
+ "au-dessus": {
+  "es": "Des pas au-dessus",
+  "en": "Steps upstairs"
+ },
+ "matin": {
+  "es": "Le matin, Antoine monte avec une inconnue.",
+  "en": "In the morning, Antoine goes up with a stranger."
+ },
+ "monte": {
+  "es": "Le matin, Antoine monte avec une inconnue.",
+  "en": "In the morning, Antoine goes up with a stranger."
+ },
+ "avec": {
+  "es": "Le matin, Antoine monte avec une inconnue.",
+  "en": "In the morning, Antoine goes up with a stranger."
+ },
+ "inconnue": {
+  "es": "Le matin, Antoine monte avec une inconnue.",
+  "en": "In the morning, Antoine goes up with a stranger."
+ },
+ "café": {
+  "es": "Au-dessus du café, on entend des pas.",
+  "en": "Above the café, you can hear steps."
+ },
+ "on": {
+  "es": "Au-dessus du café, on entend des pas.",
+  "en": "Above the café, you can hear steps."
+ },
+ "entend": {
+  "es": "Au-dessus du café, on entend des pas.",
+  "en": "Above the café, you can hear steps."
+ },
+ "parquet": {
+  "es": "Le parquet est vieux.",
+  "en": "The wooden floor is old."
+ },
+ "est": {
+  "es": "Le parquet est vieux.",
+  "en": "The wooden floor is old."
+ },
+ "vieux": {
+  "es": "Le parquet est vieux.",
+  "en": "The wooden floor is old."
+ },
+ "regarde": {
+  "es": "Léa regarde le plafond.",
+  "en": "Léa looks at the ceiling."
+ },
+ "plafond": {
+  "es": "Léa regarde le plafond.",
+  "en": "Léa looks at the ceiling."
+ },
+ "là-haut": {
+  "es": "Là-haut, on ne voit rien.",
+  "en": "Up there, you can't see anything."
+ },
+ "ne": {
+  "es": "Là-haut, on ne voit rien.",
+  "en": "Up there, you can't see anything."
+ },
+ "voit": {
+  "es": "Là-haut, on ne voit rien.",
+  "en": "Up there, you can't see anything."
+ },
+ "rien": {
+  "es": "Là-haut, on ne voit rien.",
+  "en": "Up there, you can't see anything."
+ },
+ "vont": {
+  "es": "Les pas vont ici, puis ailleurs.",
+  "en": "The steps go here, then somewhere else."
+ },
+ "ici": {
+  "es": "Les pas vont ici, puis ailleurs.",
+  "en": "The steps go here, then somewhere else."
+ },
+ "puis": {
+  "es": "Les pas vont ici, puis ailleurs.",
+  "en": "The steps go here, then somewhere else."
+ },
+ "ailleurs": {
+  "es": "Les pas vont ici, puis ailleurs.",
+  "en": "The steps go here, then somewhere else."
+ },
+ "tout": {
+  "es": "Tout à coup, c'est tranquille.",
+  "en": "Suddenly, it's quiet."
+ },
+ "à": {
+  "es": "Tout à coup, c'est tranquille.",
+  "en": "Suddenly, it's quiet."
+ },
+ "coup": {
+  "es": "Tout à coup, c'est tranquille.",
+  "en": "Suddenly, it's quiet."
+ },
+ "tranquille": {
+  "es": "Tout à coup, c'est tranquille.",
+  "en": "Suddenly, it's quiet."
+ },
+ "ensuite": {
+  "es": "Ensuite, Antoine descend.",
+  "en": "Then Antoine comes down."
+ },
+ "descend": {
+  "es": "Ensuite, Antoine descend.",
+  "en": "Then Antoine comes down."
+ },
+ "femme": {
+  "es": "C'est une femme sympa.",
+  "en": "She's a nice woman."
+ },
+ "sympa": {
+  "es": "C'est une femme sympa.",
+  "en": "She's a nice woman."
+ },
+ "elle": {
+  "es": "Elle veut louer",
+  "en": "She wants to rent it"
+ },
+ "veut": {
+  "es": "Elle veut louer",
+  "en": "She wants to rent it"
+ },
+ "louer": {
+  "es": "Elle veut louer",
+  "en": "She wants to rent it"
+ },
+ "explique": {
+  "es": "explique Antoine.",
+  "en": "Antoine explains."
+ },
+ "aime": {
+  "es": "Elle aime le quartier.",
+  "en": "She likes the neighbourhood."
+ },
+ "quartier": {
+  "es": "Elle aime le quartier.",
+  "en": "She likes the neighbourhood."
+ },
+ "arrive": {
+  "es": "Elle arrive trop tôt!",
+  "en": "She's coming too early!"
+ },
+ "trop": {
+  "es": "Elle arrive trop tôt!",
+  "en": "She's coming too early!"
+ },
+ "tôt": {
+  "es": "Elle arrive trop tôt!",
+  "en": "She's coming too early!"
+ },
+ "répond": {
+  "es": "répond Léa.",
+  "en": "Léa answers."
+ },
+ "encore": {
+  "es": "Hugo est encore là.",
+  "en": "Hugo is still here."
+ },
+ "là": {
+  "es": "Hugo est encore là.",
+  "en": "Hugo is still here."
+ },
+ "jour": {
+  "es": "Un jour, Hugo rentre, peut-être",
+  "en": "One day, Hugo comes back, maybe"
+ },
+ "rentre": {
+  "es": "Un jour, Hugo rentre, peut-être",
+  "en": "One day, Hugo comes back, maybe"
+ },
+ "peut-être": {
+  "es": "Un jour, Hugo rentre, peut-être",
+  "en": "One day, Hugo comes back, maybe"
+ },
+ "dit": {
+  "es": "dit Antoine.",
+  "en": "Antoine says."
+ },
+ "chien": {
+  "es": "Puis l'inconnue descend avec un chien.",
+  "en": "Then the stranger comes down with a dog."
+ },
+ "gros": {
+  "es": "Le gros chien tire sur sa laisse.",
+  "en": "The big dog pulls on its lead."
+ },
+ "tire": {
+  "es": "Le gros chien tire sur sa laisse.",
+  "en": "The big dog pulls on its lead."
+ },
+ "sur": {
+  "es": "Le gros chien tire sur sa laisse.",
+  "en": "The big dog pulls on its lead."
+ },
+ "sa": {
+  "es": "Le gros chien tire sur sa laisse.",
+  "en": "The big dog pulls on its lead."
+ },
+ "laisse": {
+  "es": "Le gros chien tire sur sa laisse.",
+  "en": "The big dog pulls on its lead."
+ },
+ "il": {
+  "es": "Il est beau, ce chien",
+  "en": "He's beautiful, this dog"
+ },
+ "beau": {
+  "es": "Il est beau, ce chien",
+  "en": "He's beautiful, this dog"
+ },
+ "a": {
+  "es": "Elle a un manteau jaune",
+  "en": "She has a yellow coat"
+ },
+ "manteau": {
+  "es": "Elle a un manteau jaune",
+  "en": "She has a yellow coat"
+ },
+ "jaune": {
+  "es": "Elle a un manteau jaune",
+  "en": "She has a yellow coat"
+ },
+ "et": {
+  "es": "et les cheveux bruns.",
+  "en": "and brown hair."
+ },
+ "cheveux": {
+  "es": "et les cheveux bruns.",
+  "en": "and brown hair."
+ },
+ "bruns": {
+  "es": "et les cheveux bruns.",
+  "en": "and brown hair."
+ },
+ "salue": {
+  "es": "Elle salue Léa avec un sourire.",
+  "en": "She greets Léa with a smile."
+ },
+ "sourire": {
+  "es": "Elle salue Léa avec un sourire.",
+  "en": "She greets Léa with a smile."
+ },
+ "peut": {
+  "es": "Léa ne peut pas être méchante.",
+  "en": "Léa can't be mean."
+ },
+ "être": {
+  "es": "Léa ne peut pas être méchante.",
+  "en": "Léa can't be mean."
+ },
+ "méchante": {
+  "es": "Léa ne peut pas être méchante.",
+  "en": "Léa can't be mean."
+ },
+ "rampe": {
+  "es": "Sur la rampe, l'inconnue oublie son écharpe.",
+  "en": "On the handrail, the stranger forgets her scarf."
+ },
+ "oublie": {
+  "es": "Sur la rampe, l'inconnue oublie son écharpe.",
+  "en": "On the handrail, the stranger forgets her scarf."
+ },
+ "son": {
+  "es": "Sur la rampe, l'inconnue oublie son écharpe.",
+  "en": "On the handrail, the stranger forgets her scarf."
+ },
+ "écharpe": {
+  "es": "Sur la rampe, l'inconnue oublie son écharpe.",
+  "en": "On the handrail, the stranger forgets her scarf."
+ },
+ "quelqu": {
+  "es": "Quelqu'un prend la place de Hugo.",
+  "en": "Someone takes Hugo's place."
+ },
+ "prend": {
+  "es": "Quelqu'un prend la place de Hugo.",
+  "en": "Someone takes Hugo's place."
+ },
+ "place": {
+  "es": "Quelqu'un prend la place de Hugo.",
+  "en": "Someone takes Hugo's place."
+ },
+ "de": {
+  "es": "Quelqu'un prend la place de Hugo.",
+  "en": "Someone takes Hugo's place."
+ },
+ "mot": {
+  "es": "Elle laisse un mot:",
+  "en": "She leaves a note:"
+ },
+ "pour": {
+  "es": "Pour la nouvelle voisine, avec un café.",
+  "en": "For the new neighbour, with a coffee."
+ },
+ "nouvelle": {
+  "es": "Pour la nouvelle voisine, avec un café.",
+  "en": "For the new neighbour, with a coffee."
+ },
+ "voisine": {
+  "es": "Pour la nouvelle voisine, avec un café.",
+  "en": "For the new neighbour, with a coffee."
+ },
+ "chez": {
+  "es": "Chez moi, c'est en bas.",
+  "en": "My place is downstairs."
+ },
+ "moi": {
+  "es": "Chez moi, c'est en bas.",
+  "en": "My place is downstairs."
+ },
+ "en": {
+  "es": "Chez moi, c'est en bas.",
+  "en": "My place is downstairs."
+ },
+ "bas": {
+  "es": "Chez moi, c'est en bas.",
+  "en": "My place is downstairs."
+ }
+}

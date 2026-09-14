@@ -13928,5 +13928,1895 @@
       "g": "people",
       "t": "noun"
     }
+  },
+  "french-friends-a0": {
+    "nouveau": {
+      "g": "new (nouveau)",
+      "t": "adjective"
+    },
+    "serveur": {
+      "g": "waiter (le serveur)",
+      "t": "noun"
+    },
+    "plateau": {
+      "g": "tray (le plateau)",
+      "t": "noun"
+    },
+    "plein": {
+      "g": "full, busy with people (plein)",
+      "t": "adjective"
+    },
+    "occupée": {
+      "g": "busy, with a lot to do (occupé)",
+      "t": "adjective"
+    },
+    "message": {
+      "g": "message (le message)",
+      "t": "noun"
+    },
+    "vocal": {
+      "g": "voice, spoken (message vocal: voice message)",
+      "t": "adjective"
+    },
+    "portable": {
+      "g": "mobile phone (le portable)",
+      "t": "noun"
+    },
+    "paris": {
+      "g": "Paris, the capital of France",
+      "t": "noun"
+    },
+    "entends": {
+      "g": "hear (entendre)",
+      "t": "verb"
+    },
+    "pardon": {
+      "g": "sorry, excuse me (pardon)",
+      "t": "interjection"
+    },
+    "tasses": {
+      "g": "cups (la tasse)",
+      "t": "noun"
+    },
+    "écouter": {
+      "g": "to listen (écouter)",
+      "t": "verb"
+    },
+    "écouteurs": {
+      "g": "earphones (les écouteurs)",
+      "t": "noun"
+    },
+    "oreilles": {
+      "g": "ears (l'oreille)",
+      "t": "noun"
+    },
+    "tabouret": {
+      "g": "stool, a seat with no back (le tabouret)",
+      "t": "noun"
+    },
+    "côté": {
+      "g": "side; next to, nearby (à côté)",
+      "t": "noun"
+    },
+    "part": {
+      "g": "leaves, goes off (partir)",
+      "t": "verb"
+    },
+    "vraiment": {
+      "g": "really (vraiment)",
+      "t": "adverb"
+    },
+    "mars": {
+      "g": "March (mars)",
+      "t": "noun"
+    },
+    "es": {
+      "g": "are (être, tu form)",
+      "t": "verb"
+    },
+    "gentil": {
+      "g": "kind, nice (gentil)",
+      "t": "adjective"
+    },
+    "retourne": {
+      "g": "turns over; goes back (retourner)",
+      "t": "verb"
+    },
+    "sert": {
+      "g": "serves (servir)",
+      "t": "verb"
+    },
+    "torchon": {
+      "g": "tea towel (le torchon)",
+      "t": "noun"
+    },
+    "sèche": {
+      "g": "dries (sécher); dry (sec)",
+      "t": "verb"
+    },
+    "évier": {
+      "g": "sink (l'évier)",
+      "t": "noun"
+    },
+    "vitrine": {
+      "g": "shop window (la vitrine)",
+      "t": "noun"
+    },
+    "tiède": {
+      "g": "lukewarm, only a little warm (tiède)",
+      "t": "adjective"
+    },
+    "étagère": {
+      "g": "shelf (l'étagère)",
+      "t": "noun"
+    },
+    "heureux": {
+      "g": "happy (heureux)",
+      "t": "adjective"
+    },
+    "vue": {
+      "g": "view (la vue)",
+      "t": "noun"
+    },
+    "métro": {
+      "g": "underground, metro (le métro)",
+      "t": "noun"
+    },
+    "bas": {
+      "g": "down, below; downstairs (en bas)",
+      "t": "adverb"
+    },
+    "fier": {
+      "g": "proud (fier)",
+      "t": "adjective"
+    },
+    "secoue": {
+      "g": "shakes (secouer)",
+      "t": "verb"
+    },
+    "cafetière": {
+      "g": "coffee pot (la cafetière)",
+      "t": "noun"
+    },
+    "partout": {
+      "g": "everywhere (partout)",
+      "t": "adverb"
+    },
+    "casse": {
+      "g": "breaks (casser)",
+      "t": "verb"
+    },
+    "ne": {
+      "g": "not (ne ... pas); no longer (ne ... plus)",
+      "t": "adverb"
+    },
+    "pas": {
+      "g": "not (ne ... pas); steps (le pas)",
+      "t": "adverb"
+    },
+    "parce": {
+      "g": "because (parce que)",
+      "t": "conjunction"
+    },
+    "triste": {
+      "g": "sad (triste)",
+      "t": "adjective"
+    },
+    "minute": {
+      "g": "minute (la minute)",
+      "t": "noun"
+    },
+    "au": {
+      "g": "at the, to the (à + le)",
+      "t": "preposition"
+    },
+    "revoir": {
+      "g": "goodbye (au revoir)",
+      "t": "expression"
+    },
+    "là-haut": {
+      "g": "up there (là-haut)",
+      "t": "adverb"
+    },
+    "sonnette": {
+      "g": "doorbell (la sonnette)",
+      "t": "noun"
+    },
+    "racontes": {
+      "g": "you tell, you talk about it (raconter)",
+      "t": "verb"
+    },
+    "photos": {
+      "g": "photos (la photo)",
+      "t": "noun"
+    },
+    "goutte": {
+      "g": "drop of water (la goutte)",
+      "t": "noun"
+    },
+    "nuit": {
+      "g": "night (la nuit)",
+      "t": "noun"
+    },
+    "robinet": {
+      "g": "tap (le robinet)",
+      "t": "noun"
+    },
+    "coule": {
+      "g": "runs, drips (couler)",
+      "t": "verb"
+    },
+    "gouttes": {
+      "g": "drops of water (la goutte)",
+      "t": "noun"
+    },
+    "après-midi": {
+      "g": "afternoon (l'après-midi)",
+      "t": "noun"
+    },
+    "outils": {
+      "g": "tools (l'outil)",
+      "t": "noun"
+    },
+    "service": {
+      "g": "favour, a thing you do to help (le service)",
+      "t": "noun"
+    },
+    "réparer": {
+      "g": "to repair, to fix (réparer)",
+      "t": "verb"
+    },
+    "seau": {
+      "g": "bucket (le seau)",
+      "t": "noun"
+    },
+    "dessous": {
+      "g": "underneath, below (dessous)",
+      "t": "adverb"
+    },
+    "attention": {
+      "g": "careful!, watch out! (attention)",
+      "t": "interjection"
+    },
+    "tuyau": {
+      "g": "pipe (le tuyau)",
+      "t": "noun"
+    },
+    "sale": {
+      "g": "dirty (sale)",
+      "t": "adjective"
+    },
+    "raison": {
+      "g": "reason; to be right (avoir raison)",
+      "t": "noun"
+    },
+    "voir": {
+      "g": "to see (voir)",
+      "t": "verb"
+    },
+    "serre": {
+      "g": "squeezes, holds tight (serrer); shakes hands (serrer la main)",
+      "t": "verb"
+    },
+    "fois": {
+      "g": "time, as in once or twice (la fois)",
+      "t": "noun"
+    },
+    "claire": {
+      "g": "clear (clair)",
+      "t": "adjective"
+    },
+    "sol": {
+      "g": "floor (le sol)",
+      "t": "noun"
+    },
+    "éponge": {
+      "g": "sponge (l'éponge)",
+      "t": "noun"
+    },
+    "propre": {
+      "g": "clean (propre)",
+      "t": "adjective"
+    },
+    "plus": {
+      "g": "no longer (ne ... plus); more (plus)",
+      "t": "adverb"
+    },
+    "besoin": {
+      "g": "need; to need (avoir besoin de)",
+      "t": "noun"
+    },
+    "seule": {
+      "g": "alone (seul)",
+      "t": "adjective"
+    },
+    "prends": {
+      "g": "take; here, pay with (prendre)",
+      "t": "verb"
+    },
+    "ami": {
+      "g": "friend (l'ami)",
+      "t": "noun"
+    },
+    "vient": {
+      "g": "comes (venir)",
+      "t": "verb"
+    },
+    "gare": {
+      "g": "train station (la gare)",
+      "t": "noun"
+    },
+    "sac": {
+      "g": "bag (le sac)",
+      "t": "noun"
+    },
+    "surpris": {
+      "g": "surprised (surpris)",
+      "t": "adjective"
+    },
+    "trouver": {
+      "g": "to find; to think someone is (trouver)",
+      "t": "verb"
+    },
+    "sympa": {
+      "g": "nice, friendly (sympa)",
+      "t": "adjective"
+    },
+    "départ": {
+      "g": "departure, leaving (le départ)",
+      "t": "noun"
+    },
+    "noir": {
+      "g": "black; black coffee (café noir)",
+      "t": "adjective"
+    },
+    "sucre": {
+      "g": "sugar (le sucre)",
+      "t": "noun"
+    },
+    "amer": {
+      "g": "bitter (amer)",
+      "t": "adjective"
+    },
+    "ah": {
+      "g": "ah!, oh!",
+      "t": "interjection"
+    },
+    "drôle": {
+      "g": "funny (drôle)",
+      "t": "adjective"
+    },
+    "gratuit": {
+      "g": "free, it costs nothing (gratuit)",
+      "t": "adjective"
+    },
+    "faux": {
+      "g": "wrong, not true (faux)",
+      "t": "adjective"
+    },
+    "grave": {
+      "g": "serious; no problem (pas grave)",
+      "t": "adjective"
+    },
+    "serviette": {
+      "g": "napkin (la serviette)",
+      "t": "noun"
+    },
+    "bouche": {
+      "g": "mouth (la bouche)",
+      "t": "noun"
+    },
+    "jus": {
+      "g": "juice (le jus)",
+      "t": "noun"
+    },
+    "orange": {
+      "g": "orange (l'orange)",
+      "t": "noun"
+    },
+    "ardoise": {
+      "g": "chalkboard, slate (l'ardoise)",
+      "t": "noun"
+    },
+    "minutes": {
+      "g": "minutes (la minute)",
+      "t": "noun"
+    },
+    "long": {
+      "g": "long (long)",
+      "t": "adjective"
+    },
+    "habite": {
+      "g": "lives (habiter)",
+      "t": "verb"
+    },
+    "face": {
+      "g": "opposite (en face de)",
+      "t": "expression"
+    },
+    "loyer": {
+      "g": "rent (le loyer)",
+      "t": "noun"
+    },
+    "mois": {
+      "g": "month (le mois)",
+      "t": "noun"
+    },
+    "regardent": {
+      "g": "they look at (regarder)",
+      "t": "verb"
+    },
+    "plan": {
+      "g": "map (le plan)",
+      "t": "noun"
+    },
+    "mon": {
+      "g": "my (mon)",
+      "t": "determiner"
+    },
+    "travail": {
+      "g": "work, job (le travail)",
+      "t": "noun"
+    },
+    "port": {
+      "g": "harbour, port (le port)",
+      "t": "noun"
+    },
+    "pied": {
+      "g": "foot; on foot (à pied)",
+      "t": "noun"
+    },
+    "près": {
+      "g": "near, close (près)",
+      "t": "adverb"
+    },
+    "quai": {
+      "g": "platform (le quai)",
+      "t": "noun"
+    },
+    "étroit": {
+      "g": "narrow (étroit)",
+      "t": "adjective"
+    },
+    "marches": {
+      "g": "you walk (marcher)",
+      "t": "verb"
+    },
+    "achète": {
+      "g": "buy, buys (acheter)",
+      "t": "verb"
+    },
+    "vélo": {
+      "g": "bike (le vélo)",
+      "t": "noun"
+    },
+    "lent": {
+      "g": "slow (lent)",
+      "t": "adjective"
+    },
+    "dépend": {
+      "g": "it depends (ça dépend)",
+      "t": "expression"
+    },
+    "bateau": {
+      "g": "boat (le bateau)",
+      "t": "noun"
+    },
+    "bus": {
+      "g": "bus (le bus)",
+      "t": "noun"
+    },
+    "mots": {
+      "g": "words (le mot)",
+      "t": "noun"
+    },
+    "envers": {
+      "g": "backwards, the wrong way round (à l'envers)",
+      "t": "expression"
+    },
+    "cahier": {
+      "g": "notebook (le cahier)",
+      "t": "noun"
+    },
+    "durs": {
+      "g": "hard, difficult (dur)",
+      "t": "adjective"
+    },
+    "crayon": {
+      "g": "pencil (le crayon)",
+      "t": "noun"
+    },
+    "nappe": {
+      "g": "tablecloth (la nappe)",
+      "t": "noun"
+    },
+    "page": {
+      "g": "page (la page)",
+      "t": "noun"
+    },
+    "soir": {
+      "g": "evening (le soir)",
+      "t": "noun"
+    },
+    "lit": {
+      "g": "reads (lire)",
+      "t": "verb"
+    },
+    "phrase": {
+      "g": "sentence (la phrase)",
+      "t": "noun"
+    },
+    "manques": {
+      "g": "I miss you (tu me manques)",
+      "t": "verb"
+    },
+    "mal": {
+      "g": "badly; pain (avoir mal); not bad (pas mal)",
+      "t": "adverb"
+    },
+    "j": {
+      "g": "I (j', from je before a vowel)",
+      "t": "pronoun"
+    },
+    "compris": {
+      "g": "understood (comprendre)",
+      "t": "verb"
+    },
+    "efface": {
+      "g": "rubs out (effacer)",
+      "t": "verb"
+    },
+    "gomme": {
+      "g": "rubber, eraser (la gomme)",
+      "t": "noun"
+    },
+    "amis": {
+      "g": "friends (l'ami)",
+      "t": "noun"
+    },
+    "pense": {
+      "g": "think (penser)",
+      "t": "verb"
+    },
+    "rêve": {
+      "g": "dreams (rêver)",
+      "t": "verb"
+    },
+    "lune": {
+      "g": "moon (la lune)",
+      "t": "noun"
+    },
+    "étoile": {
+      "g": "star (l'étoile)",
+      "t": "noun"
+    },
+    "boule": {
+      "g": "boule, the metal ball of pétanque (la boule)",
+      "t": "noun"
+    },
+    "porte-bonheur": {
+      "g": "lucky charm (le porte-bonheur)",
+      "t": "noun"
+    },
+    "tirelire": {
+      "g": "piggy bank (la tirelire)",
+      "t": "noun"
+    },
+    "argent": {
+      "g": "money (l'argent)",
+      "t": "noun"
+    },
+    "samedi": {
+      "g": "Saturday (samedi)",
+      "t": "noun"
+    },
+    "offrir": {
+      "g": "to give as a present (offrir)",
+      "t": "verb"
+    },
+    "cadeau": {
+      "g": "present, gift (le cadeau)",
+      "t": "noun"
+    },
+    "aider": {
+      "g": "to help (aider)",
+      "t": "verb"
+    },
+    "choisis": {
+      "g": "choose (choisir)",
+      "t": "verb"
+    },
+    "joli": {
+      "g": "pretty, nice (joli)",
+      "t": "adjective"
+    },
+    "tiroir": {
+      "g": "drawer (le tiroir)",
+      "t": "noun"
+    },
+    "chance": {
+      "g": "luck; chance (la chance)",
+      "t": "noun"
+    },
+    "pourquoi": {
+      "g": "why (pourquoi)",
+      "t": "adverb"
+    },
+    "surprise": {
+      "g": "surprised (surpris)",
+      "t": "adjective"
+    },
+    "aime": {
+      "g": "like, love (aimer)",
+      "t": "verb"
+    },
+    "ciseaux": {
+      "g": "scissors (les ciseaux)",
+      "t": "noun"
+    },
+    "ronde": {
+      "g": "round (rond)",
+      "t": "adjective"
+    },
+    "ensuite": {
+      "g": "then, after that (ensuite)",
+      "t": "adverb"
+    },
+    "emballe": {
+      "g": "wraps (emballer)",
+      "t": "verb"
+    },
+    "paquet": {
+      "g": "parcel, package (le paquet)",
+      "t": "noun"
+    },
+    "scotch": {
+      "g": "sticky tape (le scotch)",
+      "t": "noun"
+    },
+    "fait": {
+      "g": "makes, does (faire)",
+      "t": "verb"
+    },
+    "nœud": {
+      "g": "bow, knot (le nœud)",
+      "t": "noun"
+    },
+    "génial": {
+      "g": "great!, brilliant (génial)",
+      "t": "adjective"
+    },
+    "cache": {
+      "g": "hides (cacher)",
+      "t": "verb"
+    },
+    "bougies": {
+      "g": "candles (la bougie)",
+      "t": "noun"
+    },
+    "platane": {
+      "g": "plane tree, the big tree of southern squares (le platane)",
+      "t": "noun"
+    },
+    "lampion": {
+      "g": "paper lantern (le lampion)",
+      "t": "noun"
+    },
+    "guirlande": {
+      "g": "string of lights (la guirlande)",
+      "t": "noun"
+    },
+    "anniversaire": {
+      "g": "birthday (l'anniversaire)",
+      "t": "noun"
+    },
+    "pastis": {
+      "g": "pastis, an aniseed drink from Marseille (le pastis)",
+      "t": "noun"
+    },
+    "gâteau": {
+      "g": "cake (le gâteau)",
+      "t": "noun"
+    },
+    "joyeux": {
+      "g": "happy (joyeux anniversaire: happy birthday)",
+      "t": "adjective"
+    },
+    "souffle": {
+      "g": "blows (souffler)",
+      "t": "verb"
+    },
+    "éteint": {
+      "g": "blows out (éteindre); switched off (éteint)",
+      "t": "verb"
+    },
+    "gai": {
+      "g": "cheerful (gai)",
+      "t": "adjective"
+    },
+    "partie": {
+      "g": "game, a round of pétanque (la partie)",
+      "t": "noun"
+    },
+    "perdant": {
+      "g": "loser (le perdant)",
+      "t": "noun"
+    },
+    "parie": {
+      "g": "bet (parier)",
+      "t": "verb"
+    },
+    "roule": {
+      "g": "rolls (rouler)",
+      "t": "verb"
+    },
+    "tires": {
+      "g": "you shoot, in pétanque (tirer)",
+      "t": "verb"
+    },
+    "gagner": {
+      "g": "to win (gagner)",
+      "t": "verb"
+    },
+    "gagnant": {
+      "g": "winner (le gagnant)",
+      "t": "noun"
+    },
+    "perds": {
+      "g": "lose (perdre)",
+      "t": "verb"
+    },
+    "jeu": {
+      "g": "game (le jeu)",
+      "t": "noun"
+    },
+    "banc": {
+      "g": "bench (le banc)",
+      "t": "noun"
+    },
+    "chante": {
+      "g": "sings (chanter)",
+      "t": "verb"
+    },
+    "fête": {
+      "g": "celebrates (fêter)",
+      "t": "verb"
+    },
+    "gros": {
+      "g": "big, fat (gros)",
+      "t": "adjective"
+    },
+    "chat": {
+      "g": "cat (le chat)",
+      "t": "noun"
+    },
+    "feuilles": {
+      "g": "leaves (la feuille)",
+      "t": "noun"
+    },
+    "froid": {
+      "g": "cold (froid)",
+      "t": "adjective"
+    },
+    "placette": {
+      "g": "small square (la placette)",
+      "t": "noun"
+    },
+    "tranquille": {
+      "g": "quiet, calm (tranquille)",
+      "t": "adjective"
+    },
+    "balaie": {
+      "g": "sweep, sweeps (balayer)",
+      "t": "verb"
+    },
+    "miettes": {
+      "g": "crumbs (la miette)",
+      "t": "noun"
+    },
+    "ramasse": {
+      "g": "picks up (ramasser)",
+      "t": "verb"
+    },
+    "bouchons": {
+      "g": "corks, bottle tops (le bouchon)",
+      "t": "noun"
+    },
+    "restes": {
+      "g": "leftovers (les restes); you stay (rester)",
+      "t": "noun"
+    },
+    "vont": {
+      "g": "go (aller)",
+      "t": "verb"
+    },
+    "poubelle": {
+      "g": "bin (la poubelle)",
+      "t": "noun"
+    },
+    "réveillé": {
+      "g": "awake (réveillé)",
+      "t": "adjective"
+    },
+    "balai": {
+      "g": "broom (le balai)",
+      "t": "noun"
+    },
+    "déchire": {
+      "g": "tears, rips (déchirer)",
+      "t": "verb"
+    },
+    "partage": {
+      "g": "share (partager)",
+      "t": "verb"
+    },
+    "cochonnet": {
+      "g": "jack, the small target ball in pétanque (le cochonnet)",
+      "t": "noun"
+    },
+    "retour": {
+      "g": "return; welcome back (bon retour)",
+      "t": "noun"
+    },
+    "jour": {
+      "g": "day (le jour)",
+      "t": "noun"
+    },
+    "bientôt": {
+      "g": "soon (bientôt)",
+      "t": "adverb"
+    },
+    "rends": {
+      "g": "give back, pay back (rendre)",
+      "t": "verb"
+    },
+    "gagne": {
+      "g": "win, wins (gagner)",
+      "t": "verb"
+    },
+    "au-dessus": {
+      "g": "above; upstairs (au-dessus)",
+      "t": "adverb"
+    },
+    "gravier": {
+      "g": "gravel (le gravier)",
+      "t": "noun"
+    },
+    "dessine": {
+      "g": "draws (dessiner)",
+      "t": "verb"
+    },
+    "rond": {
+      "g": "circle (le rond)",
+      "t": "noun"
+    },
+    "craie": {
+      "g": "chalk (la craie)",
+      "t": "noun"
+    },
+    "boules": {
+      "g": "boules, the metal balls of pétanque (la boule)",
+      "t": "noun"
+    },
+    "nettoie": {
+      "g": "cleans (nettoyer)",
+      "t": "verb"
+    },
+    "chiffon": {
+      "g": "cloth, rag (le chiffon)",
+      "t": "noun"
+    },
+    "parier": {
+      "g": "to bet (parier)",
+      "t": "verb"
+    },
+    "marseille": {
+      "g": "Marseille, the port city in the south of France",
+      "t": "noun"
+    },
+    "pars": {
+      "g": "leave (partir)",
+      "t": "verb"
+    },
+    "plaisir": {
+      "g": "pleasure; gladly (avec plaisir)",
+      "t": "noun"
+    },
+    "espère": {
+      "g": "hopes (espérer)",
+      "t": "verb"
+    },
+    "lampadaire": {
+      "g": "street lamp (le lampadaire)",
+      "t": "noun"
+    },
+    "mesure": {
+      "g": "measures (mesurer)",
+      "t": "verb"
+    },
+    "ficelle": {
+      "g": "string (la ficelle)",
+      "t": "noun"
+    },
+    "pari": {
+      "g": "bet (le pari)",
+      "t": "noun"
+    },
+    "compter": {
+      "g": "to count (compter)",
+      "t": "verb"
+    },
+    "frigo": {
+      "g": "fridge (le frigo)",
+      "t": "noun"
+    },
+    "percolateur": {
+      "g": "big coffee machine of a café (le percolateur)",
+      "t": "noun"
+    },
+    "cassé": {
+      "g": "broken (cassé)",
+      "t": "adjective"
+    },
+    "machine": {
+      "g": "machine; here, the coffee machine (la machine)",
+      "t": "noun"
+    },
+    "prêter": {
+      "g": "to lend (prêter)",
+      "t": "verb"
+    },
+    "stylo": {
+      "g": "pen (le stylo)",
+      "t": "noun"
+    },
+    "quitte": {
+      "g": "leave, leaves (quitter)",
+      "t": "verb"
+    },
+    "réveil": {
+      "g": "alarm clock (le réveil)",
+      "t": "noun"
+    },
+    "coffre": {
+      "g": "boot of a car (le coffre)",
+      "t": "noun"
+    },
+    "femme": {
+      "g": "woman (la femme)",
+      "t": "noun"
+    },
+    "taxi": {
+      "g": "taxi (le taxi)",
+      "t": "noun"
+    },
+    "chien": {
+      "g": "dog (le chien)",
+      "t": "noun"
+    },
+    "locataire": {
+      "g": "tenant (le locataire)",
+      "t": "noun"
+    },
+    "manteau": {
+      "g": "coat (le manteau)",
+      "t": "noun"
+    },
+    "inconnue": {
+      "g": "stranger, a woman nobody knows (l'inconnue)",
+      "t": "noun"
+    },
+    "écharpe": {
+      "g": "scarf (l'écharpe)",
+      "t": "noun"
+    },
+    "clés": {
+      "g": "keys (la clé)",
+      "t": "noun"
+    },
+    "bienvenue": {
+      "g": "welcome! (bienvenue)",
+      "t": "interjection"
+    },
+    "arroses": {
+      "g": "you water (arroser)",
+      "t": "verb"
+    },
+    "plante": {
+      "g": "plant (la plante)",
+      "t": "noun"
+    },
+    "arrose": {
+      "g": "water, waters (arroser)",
+      "t": "verb"
+    },
+    "jouer": {
+      "g": "to play (jouer)",
+      "t": "verb"
+    },
+    "pleurer": {
+      "g": "to cry (pleurer)",
+      "t": "verb"
+    },
+    "larmes": {
+      "g": "tears (la larme)",
+      "t": "noun"
+    },
+    "voyage": {
+      "g": "trip; have a good trip (bon voyage)",
+      "t": "noun"
+    },
+    "mouchoir": {
+      "g": "handkerchief, tissue (le mouchoir)",
+      "t": "noun"
+    },
+    "lentement": {
+      "g": "slowly (lentement)",
+      "t": "adverb"
+    },
+    "klaxon": {
+      "g": "car horn (le klaxon)",
+      "t": "noun"
+    },
+    "poche": {
+      "g": "pocket (la poche)",
+      "t": "noun"
+    },
+    "dimanche": {
+      "g": "Sunday (dimanche)",
+      "t": "noun"
+    },
+    "pétanque": {
+      "g": "pétanque, the boules game of the south of France (la pétanque)",
+      "t": "noun"
+    },
+    "printemps": {
+      "g": "spring (le printemps)",
+      "t": "noun"
+    },
+    "poussière": {
+      "g": "dust (la poussière)",
+      "t": "noun"
+    },
+    "vole": {
+      "g": "flies (voler)",
+      "t": "verb"
+    },
+    "gourde": {
+      "g": "water bottle (la gourde)",
+      "t": "noun"
+    },
+    "casquette": {
+      "g": "cap (la casquette)",
+      "t": "noun"
+    },
+    "lunettes": {
+      "g": "glasses (les lunettes)",
+      "t": "noun"
+    },
+    "essayer": {
+      "g": "to try (essayer)",
+      "t": "verb"
+    },
+    "gentille": {
+      "g": "kind, nice (gentil)",
+      "t": "adjective"
+    },
+    "apprendre": {
+      "g": "to learn (apprendre)",
+      "t": "verb"
+    },
+    "tiens": {
+      "g": "hold (tenir)",
+      "t": "verb"
+    },
+    "plies": {
+      "g": "you bend (plier)",
+      "t": "verb"
+    },
+    "genoux": {
+      "g": "knees (le genou)",
+      "t": "noun"
+    },
+    "baisses": {
+      "g": "you lower (baisser)",
+      "t": "verb"
+    },
+    "coude": {
+      "g": "elbow (le coude)",
+      "t": "noun"
+    },
+    "début": {
+      "g": "beginning, start (le début)",
+      "t": "noun"
+    },
+    "bonne": {
+      "g": "good (bon)",
+      "t": "adjective"
+    },
+    "élève": {
+      "g": "pupil, student (l'élève)",
+      "t": "noun"
+    },
+    "jolie": {
+      "g": "pretty, nice (joli)",
+      "t": "adjective"
+    },
+    "tgv": {
+      "g": "TGV, the French high-speed train",
+      "t": "noun"
+    },
+    "canapé": {
+      "g": "sofa (le canapé)",
+      "t": "noun"
+    },
+    "vieil": {
+      "g": "old (vieux, before a vowel)",
+      "t": "adjective"
+    },
+    "oreiller": {
+      "g": "pillow (l'oreiller)",
+      "t": "noun"
+    },
+    "petit-déjeuner": {
+      "g": "breakfast (le petit-déjeuner)",
+      "t": "noun"
+    },
+    "pain": {
+      "g": "bread; chocolate croissant (pain au chocolat)",
+      "t": "noun"
+    },
+    "chocolat": {
+      "g": "chocolate (le chocolat)",
+      "t": "noun"
+    },
+    "triche": {
+      "g": "cheats (tricher)",
+      "t": "verb"
+    },
+    "points": {
+      "g": "points (le point)",
+      "t": "noun"
+    },
+    "paies": {
+      "g": "you pay (payer)",
+      "t": "verb"
+    },
+    "tire": {
+      "g": "shoots, in pétanque (tirer); pulls (tirer)",
+      "t": "verb"
+    },
+    "droit": {
+      "g": "straight (droit)",
+      "t": "adverb"
+    },
+    "lance": {
+      "g": "throws (lancer)",
+      "t": "verb"
+    },
+    "égalité": {
+      "g": "tie, the same score (l'égalité)",
+      "t": "noun"
+    },
+    "revanche": {
+      "g": "rematch (la revanche)",
+      "t": "noun"
+    },
+    "lève": {
+      "g": "raises, lifts (lever)",
+      "t": "verb"
+    },
+    "bras": {
+      "g": "arms (le bras)",
+      "t": "noun"
+    },
+    "bise": {
+      "g": "kiss on the cheek (faire la bise)",
+      "t": "noun"
+    },
+    "prochaine": {
+      "g": "next (prochain)",
+      "t": "adjective"
+    },
+    "jouent": {
+      "g": "they play (jouer)",
+      "t": "verb"
+    },
+    "désolé": {
+      "g": "sorry (désolé)",
+      "t": "adjective"
+    },
+    "ligne": {
+      "g": "phone line (la ligne)",
+      "t": "noun"
+    },
+    "linge": {
+      "g": "washing, laundry (le linge)",
+      "t": "noun"
+    },
+    "cheminées": {
+      "g": "chimneys (la cheminée)",
+      "t": "noun"
+    },
+    "réseau": {
+      "g": "phone signal (le réseau)",
+      "t": "noun"
+    },
+    "allô": {
+      "g": "hello?, on the phone (allô)",
+      "t": "interjection"
+    },
+    "haut-parleur": {
+      "g": "loudspeaker (le haut-parleur)",
+      "t": "noun"
+    },
+    "commencer": {
+      "g": "to start (commencer)",
+      "t": "verb"
+    },
+    "chose": {
+      "g": "thing (la chose)",
+      "t": "noun"
+    },
+    "coupée": {
+      "g": "cut off (coupé)",
+      "t": "adjective"
+    },
+    "rappelle": {
+      "g": "calls back (rappeler)",
+      "t": "verb"
+    },
+    "demandes": {
+      "g": "you ask (demander)",
+      "t": "verb"
+    },
+    "yeux": {
+      "g": "eyes (l'œil)",
+      "t": "noun"
+    },
+    "bonjour": {
+      "g": "hello (bonjour)",
+      "t": "interjection"
+    },
+    "cœur": {
+      "g": "heart (le cœur)",
+      "t": "noun"
+    },
+    "fauteuil": {
+      "g": "armchair (le fauteuil)",
+      "t": "noun"
+    },
+    "large": {
+      "g": "wide (large)",
+      "t": "adjective"
+    },
+    "déménage": {
+      "g": "moves out, moves house (déménager)",
+      "t": "verb"
+    },
+    "porter": {
+      "g": "to carry (porter)",
+      "t": "verb"
+    },
+    "camionnette": {
+      "g": "small van (la camionnette)",
+      "t": "noun"
+    },
+    "corde": {
+      "g": "rope (la corde)",
+      "t": "noun"
+    },
+    "contre": {
+      "g": "in exchange for; against (contre)",
+      "t": "preposition"
+    },
+    "portent": {
+      "g": "they carry (porter)",
+      "t": "verb"
+    },
+    "rampe": {
+      "g": "banister, handrail (la rampe)",
+      "t": "noun"
+    },
+    "dos": {
+      "g": "back (le dos)",
+      "t": "noun"
+    },
+    "sûre": {
+      "g": "sure (sûr)",
+      "t": "adjective"
+    },
+    "fatiguée": {
+      "g": "tired (fatigué)",
+      "t": "adjective"
+    },
+    "jours": {
+      "g": "days (le jour)",
+      "t": "noun"
+    },
+    "coussin": {
+      "g": "cushion (le coussin)",
+      "t": "noun"
+    },
+    "annonce": {
+      "g": "notice, advert (l'annonce)",
+      "t": "noun"
+    },
+    "propriétaire": {
+      "g": "owner, landlord (le propriétaire)",
+      "t": "noun"
+    },
+    "habitude": {
+      "g": "habit; usually (d'habitude)",
+      "t": "noun"
+    },
+    "louer": {
+      "g": "to rent out; for rent (à louer)",
+      "t": "verb"
+    },
+    "vends": {
+      "g": "sell (vendre)",
+      "t": "verb"
+    },
+    "méchant": {
+      "g": "mean, unkind (méchant)",
+      "t": "adjective"
+    },
+    "aux": {
+      "g": "to the, at the (à + les)",
+      "t": "preposition"
+    },
+    "lettres": {
+      "g": "letters; letterbox (boîte aux lettres)",
+      "t": "noun"
+    },
+    "meubles": {
+      "g": "furniture (les meubles)",
+      "t": "noun"
+    },
+    "cave": {
+      "g": "cellar (la cave)",
+      "t": "noun"
+    },
+    "poignée": {
+      "g": "door handle (la poignée)",
+      "t": "noun"
+    },
+    "volets": {
+      "g": "shutters (le volet)",
+      "t": "noun"
+    },
+    "fermés": {
+      "g": "closed (fermé)",
+      "t": "adjective"
+    },
+    "carreaux": {
+      "g": "carreaux, perfect pétanque shots (le carreau)",
+      "t": "noun"
+    },
+    "tablier": {
+      "g": "apron (le tablier)",
+      "t": "noun"
+    },
+    "mistral": {
+      "g": "mistral, the strong cold wind of Provence (le mistral)",
+      "t": "noun"
+    },
+    "montrer": {
+      "g": "to show (montrer)",
+      "t": "verb"
+    },
+    "carreau": {
+      "g": "carreau, a shot that knocks the other boule away and stays in its place (le carreau)",
+      "t": "noun"
+    },
+    "rates": {
+      "g": "you miss (rater)",
+      "t": "verb"
+    },
+    "facile": {
+      "g": "easy (facile)",
+      "t": "adjective"
+    },
+    "montres": {
+      "g": "you show (montrer)",
+      "t": "verb"
+    },
+    "ombre": {
+      "g": "shade (l'ombre)",
+      "t": "noun"
+    },
+    "vident": {
+      "g": "they empty (vider)",
+      "t": "verb"
+    },
+    "chauffage": {
+      "g": "heating (le chauffage)",
+      "t": "noun"
+    },
+    "plafond": {
+      "g": "ceiling (le plafond)",
+      "t": "noun"
+    },
+    "ampoule": {
+      "g": "light bulb (l'ampoule)",
+      "t": "noun"
+    },
+    "peint": {
+      "g": "paints (peindre)",
+      "t": "verb"
+    },
+    "mur": {
+      "g": "wall (le mur)",
+      "t": "noun"
+    },
+    "blanc": {
+      "g": "white (blanc)",
+      "t": "adjective"
+    },
+    "plaît": {
+      "g": "please (s'il te plaît)",
+      "t": "expression"
+    },
+    "arrosoir": {
+      "g": "watering can (l'arrosoir)",
+      "t": "noun"
+    },
+    "vivante": {
+      "g": "alive (vivant)",
+      "t": "adjective"
+    },
+    "vois": {
+      "g": "you see (voir)",
+      "t": "verb"
+    },
+    "verse": {
+      "g": "pours (verser)",
+      "t": "verb"
+    },
+    "grandit": {
+      "g": "grows (grandir)",
+      "t": "verb"
+    },
+    "parquet": {
+      "g": "wooden floor (le parquet)",
+      "t": "noun"
+    },
+    "ailleurs": {
+      "g": "somewhere else (ailleurs)",
+      "t": "adverb"
+    },
+    "coup": {
+      "g": "suddenly (tout à coup)",
+      "t": "expression"
+    },
+    "cheveux": {
+      "g": "hair (les cheveux)",
+      "t": "noun"
+    },
+    "bruns": {
+      "g": "brown, dark (brun)",
+      "t": "adjective"
+    },
+    "salue": {
+      "g": "greets, says hello to (saluer)",
+      "t": "verb"
+    },
+    "sourire": {
+      "g": "smile (le sourire)",
+      "t": "noun"
+    },
+    "être": {
+      "g": "to be (être)",
+      "t": "verb"
+    },
+    "méchante": {
+      "g": "mean, unkind (méchant)",
+      "t": "adjective"
+    },
+    "mot": {
+      "g": "word; a short note (le mot)",
+      "t": "noun"
+    },
+    "appelle": {
+      "g": "is called, is named (s'appeler); calls (appeler)",
+      "t": "verb"
+    },
+    "court": {
+      "g": "runs (courir)",
+      "t": "verb"
+    },
+    "oublie": {
+      "g": "forget, forgets (oublier)",
+      "t": "verb"
+    },
+    "peux": {
+      "g": "can (pouvoir)",
+      "t": "verb"
+    },
+    "répond": {
+      "g": "answers (répondre)",
+      "t": "verb"
+    },
+    "entend": {
+      "g": "hears (entendre)",
+      "t": "verb"
+    },
+    "dort": {
+      "g": "sleeps (dormir)",
+      "t": "verb"
+    },
+    "dois": {
+      "g": "must, have to (devoir)",
+      "t": "verb"
+    },
+    "cafés": {
+      "g": "coffees (le café)",
+      "t": "noun"
+    },
+    "noire": {
+      "g": "black, dark (noir)",
+      "t": "adjective"
+    },
+    "montre": {
+      "g": "shows (montrer); watch (la montre)",
+      "t": "verb"
+    },
+    "bon": {
+      "g": "well, OK; good (bon)",
+      "t": "adjective"
+    },
+    "maison": {
+      "g": "home, house; at home (à la maison)",
+      "t": "noun"
+    },
+    "sais": {
+      "g": "know (savoir)",
+      "t": "verb"
+    },
+    "tourne": {
+      "g": "turns (tourner)",
+      "t": "verb"
+    },
+    "ouvre": {
+      "g": "opens (ouvrir)",
+      "t": "verb"
+    },
+    "carte": {
+      "g": "card, bank card; menu (la carte)",
+      "t": "noun"
+    },
+    "bleue": {
+      "g": "blue (bleu); bank card (carte bleue)",
+      "t": "adjective"
+    },
+    "neuf": {
+      "g": "new, brand new (neuf)",
+      "t": "adjective"
+    },
+    "va": {
+      "g": "goes (aller); how are you? (ça va?)",
+      "t": "verb"
+    },
+    "sens": {
+      "g": "meaning (le sens)",
+      "t": "noun"
+    },
+    "porte": {
+      "g": "brings, wears (porter); door (la porte)",
+      "t": "verb"
+    },
+    "laisse": {
+      "g": "lets, leaves (laisser); lead for a dog (la laisse)",
+      "t": "verb"
+    },
+    "joues": {
+      "g": "you play (jouer)",
+      "t": "verb"
+    },
+    "joue": {
+      "g": "plays (jouer); cheek (la joue)",
+      "t": "verb"
+    },
+    "assez": {
+      "g": "enough (assez)",
+      "t": "adverb"
+    },
+    "juste": {
+      "g": "just, only (juste)",
+      "t": "adverb"
+    },
+    "retient": {
+      "g": "holds back (retenir)",
+      "t": "verb"
+    },
+    "tirer": {
+      "g": "to shoot, in pétanque: to throw at a boule (tirer)",
+      "t": "verb"
+    },
+    "rate": {
+      "g": "misses (rater)",
+      "t": "verb"
+    },
+    "trouve": {
+      "g": "finds, thinks (trouver)",
+      "t": "verb"
+    },
+    "voisine": {
+      "g": "neighbour (la voisine)",
+      "t": "noun"
+    },
+    "libre": {
+      "g": "free, available (libre)",
+      "t": "adjective"
+    },
+    "tapis": {
+      "g": "rug (le tapis)",
+      "t": "noun"
+    },
+    "haut": {
+      "g": "high, up; upstairs (en haut)",
+      "t": "adverb"
+    },
+    "tape": {
+      "g": "hits, knocks (taper)",
+      "t": "verb"
+    },
+    "place": {
+      "g": "place, spot (la place)",
+      "t": "noun"
+    },
+    "terre": {
+      "g": "soil, earth (la terre)",
+      "t": "noun"
+    },
+    "tables": {
+      "g": "tables (la table)",
+      "t": "noun"
+    },
+    "donne": {
+      "g": "gives (donner)",
+      "t": "verb"
+    },
+    "difficile": {
+      "g": "difficult, hard (difficile)",
+      "t": "adjective"
+    },
+    "petit": {
+      "g": "small (petit)",
+      "t": "adjective"
+    },
+    "paie": {
+      "g": "pay, pays (payer)",
+      "t": "verb"
+    },
+    "explique": {
+      "g": "explains (expliquer)",
+      "t": "verb"
+    },
+    "range": {
+      "g": "puts away, tidies (ranger)",
+      "t": "verb"
+    },
+    "monte": {
+      "g": "goes up, climbs (monter)",
+      "t": "verb"
+    },
+    "vide": {
+      "g": "empty (vide)",
+      "t": "adjective"
+    },
+    "boîte": {
+      "g": "box (la boîte)",
+      "t": "noun"
+    },
+    "silence": {
+      "g": "silence (le silence)",
+      "t": "noun"
+    },
+    "écrit": {
+      "g": "writes (écrire)",
+      "t": "verb"
+    },
+    "coûte": {
+      "g": "costs (coûter)",
+      "t": "verb"
+    },
+    "euros": {
+      "g": "euros (l'euro)",
+      "t": "noun"
+    },
+    "tôt": {
+      "g": "early (tôt)",
+      "t": "adverb"
+    },
+    "dehors": {
+      "g": "outside (dehors)",
+      "t": "adverb"
+    },
+    "arrêt": {
+      "g": "stop, bus stop (l'arrêt)",
+      "t": "noun"
+    },
+    "presque": {
+      "g": "almost (presque)",
+      "t": "adverb"
+    },
+    "vrai": {
+      "g": "true (vrai)",
+      "t": "adjective"
+    },
+    "enfin": {
+      "g": "at last, finally (enfin)",
+      "t": "adverb"
+    },
+    "sœur": {
+      "g": "sister (la sœur)",
+      "t": "noun"
+    },
+    "compte": {
+      "g": "count, counts (compter)",
+      "t": "verb"
+    },
+    "dedans": {
+      "g": "inside (dedans)",
+      "t": "adverb"
+    },
+    "coupe": {
+      "g": "cuts (couper)",
+      "t": "verb"
+    },
+    "papier": {
+      "g": "paper (le papier)",
+      "t": "noun"
+    },
+    "garde": {
+      "g": "keeps (garder)",
+      "t": "verb"
+    },
+    "comptoir": {
+      "g": "counter, bar (le comptoir)",
+      "t": "noun"
+    },
+    "allume": {
+      "g": "lights, switches on (allumer)",
+      "t": "verb"
+    },
+    "musique": {
+      "g": "music (la musique)",
+      "t": "noun"
+    },
+    "invite": {
+      "g": "invites (inviter)",
+      "t": "verb"
+    },
+    "dernière": {
+      "g": "last (dernier)",
+      "t": "adjective"
+    },
+    "exprès": {
+      "g": "on purpose (exprès)",
+      "t": "adverb"
+    },
+    "fort": {
+      "g": "hard, loudly (fort)",
+      "t": "adverb"
+    },
+    "doucement": {
+      "g": "gently, softly (doucement)",
+      "t": "adverb"
+    },
+    "rentre": {
+      "g": "goes back home (rentrer)",
+      "t": "verb"
+    },
+    "sort": {
+      "g": "takes out; gets out (sortir)",
+      "t": "verb"
+    },
+    "sonne": {
+      "g": "rings (sonner)",
+      "t": "verb"
+    },
+    "jaune": {
+      "g": "yellow (jaune)",
+      "t": "adjective"
+    },
+    "sait": {
+      "g": "knows (savoir)",
+      "t": "verb"
+    },
+    "tient": {
+      "g": "holds (tenir)",
+      "t": "verb"
+    },
+    "corrige": {
+      "g": "corrects (corriger)",
+      "t": "verb"
+    },
+    "mange": {
+      "g": "eats (manger)",
+      "t": "verb"
+    },
+    "personne": {
+      "g": "nobody (personne)",
+      "t": "pronoun"
+    },
+    "jeune": {
+      "g": "young (jeune)",
+      "t": "adjective"
+    },
+    "voix": {
+      "g": "voice (la voix)",
+      "t": "noun"
+    },
+    "escalier": {
+      "g": "stairs (l'escalier)",
+      "t": "noun"
+    },
+    "coin": {
+      "g": "corner (le coin)",
+      "t": "noun"
+    },
+    "lundi": {
+      "g": "Monday (le lundi)",
+      "t": "noun"
+    },
+    "cuisine": {
+      "g": "kitchen (la cuisine)",
+      "t": "noun"
+    },
+    "fenêtre": {
+      "g": "window (la fenêtre)",
+      "t": "noun"
+    },
+    "voit": {
+      "g": "sees (voir)",
+      "t": "verb"
+    },
+    "propose": {
+      "g": "suggests (proposer)",
+      "t": "verb"
+    },
+    "mouillée": {
+      "g": "wet (mouillé)",
+      "t": "adjective"
+    },
+    "beaucoup": {
+      "g": "a lot, very much (beaucoup)",
+      "t": "adverb"
+    },
+    "bruit": {
+      "g": "noise (le bruit)",
+      "t": "noun"
+    },
+    "ensemble": {
+      "g": "together (ensemble)",
+      "t": "adverb"
+    },
+    "vieux": {
+      "g": "old (vieux)",
+      "t": "adjective"
+    },
+    "veux": {
+      "g": "want (vouloir)",
+      "t": "verb"
+    },
+    "viens": {
+      "g": "come (venir)",
+      "t": "verb"
+    },
+    "combien": {
+      "g": "how much, how many (combien)",
+      "t": "adverb"
+    },
+    "pose": {
+      "g": "puts down (poser)",
+      "t": "verb"
+    },
+    "baguette": {
+      "g": "baguette, a long French loaf (la baguette)",
+      "t": "noun"
+    }
   }
 }

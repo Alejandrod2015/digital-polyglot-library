@@ -1,0 +1,318 @@
+{
+ "écoute": {
+  "es": "Théo écoute pour Léa",
+  "en": "Théo listens for Léa"
+ },
+ "pour": {
+  "es": "Théo écoute pour Léa",
+  "en": "Théo listens for Léa"
+ },
+ "il": {
+  "es": "Il y a du bruit dans le café.",
+  "en": "There is noise in the café."
+ },
+ "y": {
+  "es": "Il y a du bruit dans le café.",
+  "en": "There is noise in the café."
+ },
+ "a": {
+  "es": "Il y a du bruit dans le café.",
+  "en": "There is noise in the café."
+ },
+ "bruit": {
+  "es": "Il y a du bruit dans le café.",
+  "en": "There is noise in the café."
+ },
+ "dans": {
+  "es": "Il y a du bruit dans le café.",
+  "en": "There is noise in the café."
+ },
+ "café": {
+  "es": "Il y a du bruit dans le café.",
+  "en": "There is noise in the café."
+ },
+ "nouveau": {
+  "es": "Le nouveau serveur s'appelle Théo.",
+  "en": "The new waiter is called Théo."
+ },
+ "serveur": {
+  "es": "Le nouveau serveur s'appelle Théo.",
+  "en": "The new waiter is called Théo."
+ },
+ "appelle": {
+  "es": "Le nouveau serveur s'appelle Théo.",
+  "en": "The new waiter is called Théo."
+ },
+ "commence": {
+  "es": "Il commence aujourd'hui.",
+  "en": "He starts today."
+ },
+ "hui": {
+  "es": "Il commence aujourd'hui.",
+  "en": "He starts today."
+ },
+ "court": {
+  "es": "Il court entre les tables avec son plateau.",
+  "en": "He runs between the tables with his tray."
+ },
+ "entre": {
+  "es": "Il court entre les tables avec son plateau.",
+  "en": "He runs between the tables with his tray."
+ },
+ "tables": {
+  "es": "Il court entre les tables avec son plateau.",
+  "en": "He runs between the tables with his tray."
+ },
+ "avec": {
+  "es": "Il court entre les tables avec son plateau.",
+  "en": "He runs between the tables with his tray."
+ },
+ "son": {
+  "es": "Il court entre les tables avec son plateau.",
+  "en": "He runs between the tables with his tray."
+ },
+ "plateau": {
+  "es": "Il court entre les tables avec son plateau.",
+  "en": "He runs between the tables with his tray."
+ },
+ "est": {
+  "es": "Le café est plein, et Léa est occupée.",
+  "en": "The café is full, and Léa is busy."
+ },
+ "plein": {
+  "es": "Le café est plein, et Léa est occupée.",
+  "en": "The café is full, and Léa is busy."
+ },
+ "et": {
+  "es": "Le café est plein, et Léa est occupée.",
+  "en": "The café is full, and Léa is busy."
+ },
+ "occupée": {
+  "es": "Le café est plein, et Léa est occupée.",
+  "en": "The café is full, and Léa is busy."
+ },
+ "message": {
+  "es": "Un message vocal arrive sur son portable.",
+  "en": "A voice message arrives on her phone."
+ },
+ "vocal": {
+  "es": "Un message vocal arrive sur son portable.",
+  "en": "A voice message arrives on her phone."
+ },
+ "arrive": {
+  "es": "Un message vocal arrive sur son portable.",
+  "en": "A voice message arrives on her phone."
+ },
+ "sur": {
+  "es": "Un message vocal arrive sur son portable.",
+  "en": "A voice message arrives on her phone."
+ },
+ "portable": {
+  "es": "Un message vocal arrive sur son portable.",
+  "en": "A voice message arrives on her phone."
+ },
+ "à": {
+  "es": "Il est à Paris, loin d'ici.",
+  "en": "He is in Paris, far from here."
+ },
+ "paris": {
+  "es": "Il est à Paris, loin d'ici.",
+  "en": "He is in Paris, far from here."
+ },
+ "loin": {
+  "es": "Il est à Paris, loin d'ici.",
+  "en": "He is in Paris, far from here."
+ },
+ "ici": {
+  "es": "Il est à Paris, loin d'ici.",
+  "en": "He is in Paris, far from here."
+ },
+ "mais": {
+  "es": "mais il y a trop de bruit.",
+  "en": "but there is too much noise."
+ },
+ "trop": {
+  "es": "mais il y a trop de bruit.",
+  "en": "but there is too much noise."
+ },
+ "de": {
+  "es": "mais il y a trop de bruit.",
+  "en": "but there is too much noise."
+ },
+ "quoi": {
+  "es": "Quoi?",
+  "en": "What?"
+ },
+ "je": {
+  "es": "Je n'entends rien",
+  "en": "I can't hear anything"
+ },
+ "entends": {
+  "es": "Je n'entends rien",
+  "en": "I can't hear anything"
+ },
+ "rien": {
+  "es": "Je n'entends rien",
+  "en": "I can't hear anything"
+ },
+ "crie": {
+  "es": "crie Léa.",
+  "en": "Léa shouts."
+ },
+ "pardon": {
+  "es": "Pardon.",
+  "en": "Sorry."
+ },
+ "oublie": {
+  "es": "J'oublie toujours où sont les tasses",
+  "en": "I always forget where the cups are"
+ },
+ "toujours": {
+  "es": "J'oublie toujours où sont les tasses",
+  "en": "I always forget where the cups are"
+ },
+ "où": {
+  "es": "J'oublie toujours où sont les tasses",
+  "en": "I always forget where the cups are"
+ },
+ "sont": {
+  "es": "J'oublie toujours où sont les tasses",
+  "en": "I always forget where the cups are"
+ },
+ "tasses": {
+  "es": "J'oublie toujours où sont les tasses",
+  "en": "I always forget where the cups are"
+ },
+ "dit": {
+  "es": "dit Théo.",
+  "en": "Théo says."
+ },
+ "donne": {
+  "es": "Léa donne son portable à Théo.",
+  "en": "Léa gives her phone to Théo."
+ },
+ "difficile": {
+  "es": "C'est difficile ici.",
+  "en": "It is hard here."
+ },
+ "tu": {
+  "es": "Tu peux écouter pour moi?",
+  "en": "Can you listen for me?"
+ },
+ "peux": {
+  "es": "Tu peux écouter pour moi?",
+  "en": "Can you listen for me?"
+ },
+ "écouter": {
+  "es": "Tu peux écouter pour moi?",
+  "en": "Can you listen for me?"
+ },
+ "moi": {
+  "es": "Tu peux écouter pour moi?",
+  "en": "Can you listen for me?"
+ },
+ "demande": {
+  "es": "demande Léa.",
+  "en": "Léa asks."
+ },
+ "prend": {
+  "es": "Théo prend le portable.",
+  "en": "Théo takes the phone."
+ },
+ "met": {
+  "es": "Il met les écouteurs dans ses oreilles.",
+  "en": "He puts the earphones in his ears."
+ },
+ "écouteurs": {
+  "es": "Il met les écouteurs dans ses oreilles.",
+  "en": "He puts the earphones in his ears."
+ },
+ "ses": {
+  "es": "Il met les écouteurs dans ses oreilles.",
+  "en": "He puts the earphones in his ears."
+ },
+ "oreilles": {
+  "es": "Il met les écouteurs dans ses oreilles.",
+  "en": "He puts the earphones in his ears."
+ },
+ "tabouret": {
+  "es": "Il est sur un tabouret, à côté d'elle.",
+  "en": "He is on a stool, next to her."
+ },
+ "côté": {
+  "es": "Il est sur un tabouret, à côté d'elle.",
+  "en": "He is on a stool, next to her."
+ },
+ "elle": {
+  "es": "Il est sur un tabouret, à côté d'elle.",
+  "en": "He is on a stool, next to her."
+ },
+ "attend": {
+  "es": "Léa attend.",
+  "en": "Léa waits."
+ },
+ "appartement": {
+  "es": "Hugo a un appartement à Paris",
+  "en": "Hugo has a flat in Paris"
+ },
+ "répond": {
+  "es": "répond Théo.",
+  "en": "Théo answers."
+ },
+ "part": {
+  "es": "Il part vraiment en mars.",
+  "en": "He is really leaving in March."
+ },
+ "vraiment": {
+  "es": "Il part vraiment en mars.",
+  "en": "He is really leaving in March."
+ },
+ "en": {
+  "es": "Il part vraiment en mars.",
+  "en": "He is really leaving in March."
+ },
+ "mars": {
+  "es": "Il part vraiment en mars.",
+  "en": "He is really leaving in March."
+ },
+ "comprend": {
+  "es": "Léa comprend.",
+  "en": "Léa understands."
+ },
+ "merci": {
+  "es": "Merci, Théo.",
+  "en": "Thank you, Théo."
+ },
+ "es": {
+  "es": "Tu es gentil.",
+  "en": "You are kind."
+ },
+ "gentil": {
+  "es": "Tu es gentil.",
+  "en": "You are kind."
+ },
+ "bien": {
+  "es": "Bien sûr",
+  "en": "Of course"
+ },
+ "sûr": {
+  "es": "Bien sûr",
+  "en": "Of course"
+ },
+ "sourit": {
+  "es": "sourit Théo.",
+  "en": "Théo smiles."
+ },
+ "retourne": {
+  "es": "Léa retourne le portable et sert les cafés.",
+  "en": "Léa turns the phone over and serves the coffees."
+ },
+ "sert": {
+  "es": "Léa retourne le portable et sert les cafés.",
+  "en": "Léa turns the phone over and serves the coffees."
+ },
+ "cafés": {
+  "es": "Léa retourne le portable et sert les cafés.",
+  "en": "Léa turns the phone over and serves the coffees."
+ }
+}
