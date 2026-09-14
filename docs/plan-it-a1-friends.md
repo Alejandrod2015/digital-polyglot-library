@@ -1,6 +1,6 @@
 # Plan: Friends IT A1 (Milano)
 
-Estado: PENDIENTE de revision del chat de planificacion (Journey-planning-2).
+Estado: APROBADO por Journey-planning-2 el 2026-09-14 (ciudad, reparto, espina, banda, escalera y temas); seccion 6 ajustada al techo de lista el mismo dia, pendiente de ok antes del tema 1.
 Fecha: 2026-09-14. Chat ejecutor: IT_Italy_A1_Friends_1-Texto.
 Fuera de este plan: fila `Journey`, temas en la base, historias, audio, portadas, glosas, practica, push y correos.
 
@@ -108,25 +108,31 @@ Lectura honesta: la frase de Susan sostiene el SUELO (italiano basico, entender 
 
 ### Forma
 
-- **20 plazas por historia: 15 portables y 5 ancladas** (25% de ancladas, margen bajo el tope del 30%).
+- **20 plazas por historia: 15 portables y 5 ancladas** (25% de ancladas, margen bajo el tope del 30%), de ellas **18 o mas dentro de `italianA1A2.ts`**.
 - **Solape:** lo ANCLADO a cero contra los tres journeys italianos vigentes; la capa PORTABLE (verbo, adjetivo, adverbio, expresion) se reabre, tambien la del A0 de Genova (`project_vocab_portable_layer_between_levels`, la que ya aplica `saveStory`). Clasificacion portable/anclada a mano, no por `type`.
-- Ancla cultural siempre en plaza: casa di ringhiera, Ferragosto, fontanella, cortile.
+- **Techo de lista (decidido 2026-09-14, via Journey-planning):** una plaza tiene que estar en `italianA1A2.ts`, ya con el bloque curado por palabra de KELLY (commit `600f24ca`). Lo que queda fuera (B1 o mas en KELLY, o ausente de KELLY) va en el TEXTO, y como mucho **2 plazas fuera de lista por historia** (`vocab-level-frequency`: 1-2 avisa, 3 falla). La lista no se amplia mas.
+- Esas 2 plazas fuera de lista van primero al ancla cultural de la historia (casa di ringhiera, Ferragosto, fontanella, cortile), que siempre tiene plaza.
+- Los reflexivos que la lista no trae en `-rsi` (`lamentarsi`, `arrabbiarsi`, `calmarsi`) no pueden ser plaza aunque su base este (`arrabbiare`): cuentan como fuera de lista.
 - Nunca cognados transparentes (hostess, yoga, microchip, trolley van en el texto, no en plaza) ni universales.
 - Suelo de escalera A1 del gate: media 1,6, cola 70%, ancladas 30%. **Objetivo del plan: media 2,0 o mas, cola 55% o menos.** Se mide al cerrar cada tema con un `recirc.ts` portado del A0.
 
 ### Campo por tema
 
-Cruzado el 2026-09-14 contra las 1.152 superficies de vocab de los tres journeys italianos. `*` = fuera de `italianA1A2.ts` (ver bloqueo 8.2).
+Medido el 2026-09-14 con `scripts/_itA1Friends/enLista.ts` y `estado.ts` (lista con el bloque KELLY; vocab de los tres journeys italianos vigentes). **Reabrible** = portable que ya enseno otro journey italiano, admitida como plaza por la capa portable.
 
-| # | Libres (candidatas a plaza) | Ya ensenadas en otro journey italiano (solo texto) |
-|---|---|---|
-| 1 | randagio, collare, ciotola, cuccia, crocchette, zampa, pelo, abbaiare, adottare, padrone, cortile, portone, legare, spaventato, ringhiera, canile, cucciolo | cane, guinzaglio, coda, coperta, magro, asciugamano, bagnato, tremare |
-| 2 | sveglia, volo, pausa, ferie, straordinario, stipendio, divisa, pacco, in anticipo, dimenticare, giro, cambio | turno, orario, lettera, consegnare, scambiare, valigia, capo, sbagliare, stanco |
-| 3 | lamentarsi, bigliettino, condominio, amministratore, campanello, disturbare, silenzioso, fastidio, arrabbiarsi, calmarsi, tapparella, ululare | rumore, silenzio, riunione, muro, sottile, pianerottolo, bussare |
-| 4 | bolletta, spese, risparmiare, prestito, debito, veterinario, visita, calzino, inghiottire, ricevuta, costoso, bonifico, salvadanaio | quaderno, dividere, restituire, portafoglio, conto, soldi, metà, scontrino |
-| 5 | trapano, cacciavite, martello, chiodo, vite, colla, aggiustare, rompere, graffiare, gamba, attrezzi, bottega, falegname, vernice, pennello, dipingere, misurare, maniglia | mordere, sedia, legno, divano, cuscino |
-| 6 | ferie (si no la gasta el 2), afa, zanzara, ventilatore, condizionatore, ghiacciolo, fontanella, sudare, Ferragosto, abbronzato, cono, coppetta, gusto, pistacchio, abbassare | caldo, vuoto, ombra, serranda, gelato, spiaggia, mare |
-| 7 | convivere, allergia, starnutire, fidanzata, trasloco, scatolone, rinunciare, chiavi, fare spazio | fidanzato, armadio, cassetto, spazzolino, scegliere, tenere, nome, salutare, mancare |
+| # | Dentro de lista, libres (plaza) | Dentro de lista, reabribles (plaza) | Fuera de lista (texto; hasta 2 plazas por historia) |
+|---|---|---|---|
+| 1 | ciotola, adottare, legare, spaventare, chiave, pioggia, quartiere, aiutare, lenzuolo | aspettare, cercare, trovare, sporco, piccolo, lasciare | randagio, collare, cuccia, crocchette, zampa, pelo, abbaiare, padrone, cortile, portone, spaventato, ringhiera, canile, cucciolo |
+| 2 | stipendio, dimenticare, giro, cambio, impiego, mattina, pomeriggio, preoccupato, ultimo, velocemente | lavorare, lento, presto, tardi, arrivare, tornare, partire, stanco | sveglia, volo, pausa, ferie, straordinario, divisa, pacco, in anticipo |
+| 3 | amministratore, rifiutare, invitare, preoccupare, mentire, soluzione, problema, idea | tranquillo, nervoso, arrabbiato, suonare, chiudere, aprire, dormire | lamentarsi, bigliettino, condominio, campanello, disturbare, silenzioso, fastidio, arrabbiarsi, calmarsi, tapparella, ululare |
+| 4 | visita, calzino, euro, medicina, salute | dividere, contare, prestare, economico, caro, pagare, comprare, perdere, giusto | bolletta, spese, risparmiare, prestito, debito, veterinario, inghiottire, ricevuta, costoso, bonifico, salvadanaio |
+| 5 | vite, aggiustare, rompere, gamba, lampada, tappeto, soffitto, appartamento, coltello | riparare, morbido, duro, tirare, spingere, mettere, togliere, vecchio, nuovo | trapano, cacciavite, martello, chiodo, colla, graffiare, attrezzi, bottega, falegname, vernice, pennello, dipingere, misurare, maniglia |
+| 6 | gusto, agosto, fiume, biscotto, sorpresa, nuvola, lontano | restare, vuoto, pieno, secco | afa, zanzara, ventilatore, condizionatore, ghiacciolo, fontanella, sudare, Ferragosto, abbronzato, cono, coppetta, pistacchio, abbassare, fresco |
+| 7 | rinunciare, amore, vita, sogno, camera da letto (chiave y lenzuolo si no los gasto el 1) | decidere, insieme, scegliere, tenere, salutare, mancare, pulire | convivere, allergia, starnutire, fidanzata, trasloco, scatolone, fare spazio |
+
+Ya ensenadas como anclada en otro journey italiano (solo texto, nunca plaza): cane, guinzaglio, coda, coperta, magro, asciugamano (1); turno, orario, lettera, valigia, capo (2); rumore, silenzio, riunione, muro (3); quaderno, restituire, portafoglio, conto, soldi, scontrino (4); sedia, legno, divano, cuscino (5); ombra, serranda, gelato, spiaggia, mare, lago, latte (6); armadio, cassetto, spazzolino, nome, letto (7).
+
+**Lo que cuesta este techo, medido.** De las 95 candidatas libres de escena de la version anterior, 17 quedan dentro de lista. Cada historia necesita 18 plazas dentro de lista y el filtro de tema no deja repetir plaza entre las tres historias de un tema, asi que cada tema pide unas 54. Los temas dan de 5 a 10 palabras libres de su escena: el resto sale de la capa reabrible (222 portables en toda la lista) y de palabras libres genericas. Aritmeticamente cabe (269 libres, 222 reabribles y 328 bloqueadas de 819 lemas, con una plaza en 2 historias como mucho), pero **unas tres de cada cuatro plazas seran portables corrientes que otros journeys italianos ya ensenan** (aspettare, stanco, tornare), y el vocabulario de escena (collare, bolletta, trapano, zanzara) se aprende por el texto y la glosa, no por la plaza. Riesgo a vigilar desde el tema 1: `vocab-pedagogical-redundancy` y `journey-vocab-worth-teaching`.
 
 ### Escalera desde el A0 de Genova (recirculacion en el TEXTO)
 
@@ -154,21 +160,22 @@ La leccion del A0 de Genova: la escalera bloquea el guardado del ULTIMO tema si 
 
 | Palabra (tema de entrada) | Vuelve en |
 |---|---|
-| abbaiare (1) | 3, 6, 7 |
-| spaventato (1) | 3, 5 |
 | legare (1) | 4, 6 |
 | adottare (1) | 7 |
+| spaventare (1) | 3, 5 |
+| aiutare (1) | 4, 6 |
 | dimenticare (2) | 4, 5, 7 |
-| in anticipo (2) | 5, 6 |
-| sveglia (2) | 3, 6 |
 | stipendio (2) | 4 |
-| lamentarsi (3) | 5, 7 |
-| arrabbiarsi (3) | 4, 7 |
-| disturbare (3) | 6, 7 |
-| calmarsi (3) | 4, 6 |
-| risparmiare (4) | 6, 7 |
-| costoso (4) | 5, 7 |
+| giro (2) | 3, 6 |
+| preoccupato (2) | 5, 7 |
+| rifiutare (3) | 6, 7 |
+| invitare (3) | 6 |
+| problema (3) | 5, 7 |
+| amministratore (3) | 5 |
+| visita (4) | 6 |
 | aggiustare, rompere (5) | 7 |
+
+Las palabras de escena fuera de lista (abbaiare, collare, sveglia, bolletta) tambien vuelven en el texto: no cuentan para la media del gate, que solo mide plazas, pero sostienen la lectura.
 
 La lista se copia al JSON de plan de cada tema, y el cierre de cada tema mide la escalera acumulada antes de seguir.
 
@@ -180,15 +187,15 @@ Por tema, del 1 al 7: `rulesFor.ts story vocab journey` y `journeysTable.ts --jo
 
 Al final: lectura seguida de las 21 buscando plantillas en 3 o mas historias.
 
-## 8. Bloqueos de codigo que hay que decidir ANTES del tema 1
+## 8. Bloqueos de codigo (estado 2026-09-14)
 
-1. **El reparto italiano solo lee presente.** `HABLA_POR_IDIOMA.IT` (`src/lib/validateJourneyStories.ts`) no tiene passato prossimo ("ha detto", "ha chiesto"). En un A1 que lo use, `castOf` sale vacio y los checks de reparto pasan sin medir, el mismo fallo que se arreglo en frances hoy. Arreglo: anadir las formas con auxiliar y un test en `validateJourneyStoriesIT.test.ts`.
-2. **La lista de nivel italiana no da para un A1.** `italianA1A2.ts` tiene 797 lemas y `vocab-level-frequency` falla en a1 con 3 o mas plazas fuera de lista. Casi todo el campo libre de la tabla 6 esta fuera (hasta `nome`, `chiavi`, `euro`). Medido: el Traveler IT A1 live tiene de 7 a 20 plazas fuera de lista por historia. Sin decision, ninguna historia guarda. Propuesta: ampliar la lista con el Vocabolario di base y los temarios CILS A1/A2 en tandas, con el visto bueno del usuario (legitimo segun `feedback_vocab_zero_overlap_across_journeys`: la palabra tiene que estar en un temario A1/A2, no pasar una historia concreta).
-3. **Sin sonda de gramatica italiana.** La banda de la seccion 2 hoy solo la aplica quien escribe. Propuesta: portar el detector del suelo A0 italiano (imperfetto, futuro, condizionale, congiuntivo, stare + gerundio ya los reconoce) a un marcador por tema que el cierre imprima.
+1. **Reparto con passato prossimo: RESUELTO.** `HABLA_POR_IDIOMA.IT` lee ahora las formas con `ha`/`hanno` de sus veinte verbos, con dos tests en `validateJourneyStoriesIT.test.ts` que fallan sin el cambio.
+2. **Lista de nivel: RESUELTO por decision del chat de planificacion.** Bloque curado por palabra con nivel KELLY citado (27 lemas y el plural en -i de los nombres en -e), cherry-pick `600f24ca`. Sin mas ampliacion; efecto en la seccion 6.
+3. **Sonda de gramatica italiana: NO se construye.** La banda de la seccion 2 queda como medida declarada floja: la aplica quien escribe y la revisa la lectura.
 
 ## 9. Decisiones para el usuario
 
 1. Milano, la casa di ringhiera de via Padova y la espina del perro "metà e metà", con final agridulce.
 2. Los siete temas y su orden.
 3. Elisa y Davide como fijos, y el reparto de la seccion 3.
-4. Los tres bloqueos de la seccion 8.
+4. El coste del techo de lista de la seccion 6 (plazas mayoritariamente portables).

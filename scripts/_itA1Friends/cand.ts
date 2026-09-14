@@ -2,7 +2,7 @@
 import { readFileSync } from "fs";
 import { isItalianA1A2 } from "../../src/lib/cefr/italianA1A2";
 const d = JSON.parse(readFileSync(process.argv[2], "utf8"));
-const strip = (w: string) => w.toLowerCase().trim().replace(/^(il|lo|la|l'|i|gli|le|un|una|uno)\s*/, "");
+const strip = (w: string) => w.toLowerCase().trim().replace(/^(?:(?:il|lo|la|i|gli|le|un|una|uno)\s+|l'|un')/, "");
 const taught = new Map<string, Set<string>>();
 for (const j of d.js.filter((j: any) => j.language === "italian"))
   for (const s of j.stories) for (const v of s.vocab ?? []) {

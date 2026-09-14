@@ -99,6 +99,33 @@ describe("ninos y ancianos en italiano", () => {
   });
 });
 
+describe("reparto italiano con passato prossimo (Friends IT A1)", () => {
+  const stA1 = (slug: string, text: string): JourneyStoryInput => ({ slug, title: slug, text, language: "IT", level: "A1", topic: "t1" });
+  const runA1 = (stories: JourneyStoryInput[]) =>
+    validateJourneyStories(stories, { language: "IT", level: "A1", realPeople: ["Zzzz"] });
+  // Elisa y Davide solo hablan en passato prossimo: antes castOf salia vacio
+  // y el check de protagonista pasaba o se quejaba sin saber de quien.
+  const PASSATO = [
+    stA1("p1", "Elisa, un'hostess di Linate, apre il portone. Davide è un postino di via Padova.\n\n“Chi è?” ha chiesto Elisa. “Un cane,” ha risposto Davide."),
+    stA1("p2", "Il cortile è bagnato. Il cane trema sotto la ringhiera.\n\n“Lo teniamo?” ha detto Davide. Elisa ha riso. “Metà e metà,” hanno detto insieme."),
+  ];
+  it("los que hablan solo en passato prossimo entran en el reparto y se juzga su presentacion", () => {
+    const out = runA1(PASSATO);
+    expect(check(out, "journey-character-introduction").status).toBe("pass");
+    // Con el reparto vacio este check dice que no puede medir y pide arreglar HABLA.
+    expect(check(out, "journey-cast-protagonist-in-all").detail ?? "").not.toContain("HABLA_POR_IDIOMA");
+  });
+  it("un personaje que habla en passato prossimo sin presentarse falla con su nombre", () => {
+    const sinPresentar = [
+      stA1("q1", "Il portone si apre.\n\n“Chi è?” ha chiesto Serena. “Un cane,” Elisa ha risposto."),
+      stA1("q2", "Il cortile è vuoto.\n\n“Silenzio,” ha detto Serena. Elisa ha salutato."),
+    ];
+    const c = check(runA1(sinPresentar), "journey-character-introduction");
+    expect(c.status).toBe("fail");
+    expect(c.detail).toContain("Serena");
+  });
+});
+
 describe("ctx.previas: un tema suelto con los temas anteriores delante", () => {
   // Tema 2: los fijos ya salieron en el tema 1 (previas) y Francesca se estrena.
   const TEMA2 = [
