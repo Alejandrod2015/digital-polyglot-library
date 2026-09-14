@@ -330,7 +330,7 @@ STYLE: Clean cel-shaded editorial illustration anchored to the published FR A0 F
 
 FRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.
 
-SCENE: In the living room of Justine's small bright apartment in the Chantenay district of Nantes, on the hillside above the Loire, white walls, pale wooden floorboards, tall French windows, Saturday afternoon, a round fluted kouglof cake dusted with sugar on the table. ANAÏS places a sealed white envelope blank side up and with no writing on the table, looking at her brother seriously; ROMAIN sits across from her staring at the envelope, surprised. Medium shot across the table, both waist up.
+SCENE: In the living room of Justine's small bright apartment in the Chantenay district of Nantes, on the hillside above the Loire, white walls, pale wooden floorboards, tall French windows, Saturday afternoon, a round fluted kouglof cake dusted with sugar on the table. ANAÏS slides a sealed envelope face down across the table, only its closed flap showing, looking at her brother seriously; ROMAIN sits across from her staring at it, surprised. Medium shot across the table, both waist up.
 note: Justine no sale: esta en la cocina y no oye nada. El sobre va cerrado y sin letras.
 
 PORTADA 2: Une flammekueche maison (une-flammekueche-maison)
