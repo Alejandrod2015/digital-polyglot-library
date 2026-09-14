@@ -1076,6 +1076,13 @@
       "source": "memory:project_practice_word_speed.md"
     },
     {
+      "id": "sentence-translations-canonical",
+      "domain": "practice",
+      "rule": "Las traducciones de frase entran SOLO por scripts/saveSentenceTranslations.ts, que valida todo o nada: la palabra existe en el vocab, sin guiones largos, sin caracteres del idioma origen que no esten en la frase, largo entre 0,5 y 2,5 veces el original y sin dejar la palabra objetivo sin traducir",
+      "gate": "scripts/saveSentenceTranslations.ts",
+      "source": "manual:spec-speaking-piloto"
+    },
+    {
       "id": "speaking-practice-g4",
       "domain": "practice",
       "rule": "El ejercicio hablado se califica SOLO de forma determinista y en el cliente: la palabra o su forma de la historia, completa y sin acentos, dentro de lo que reconocio el sistema; sin LLM y sin segunda pasada, lo que no casa es fallo",

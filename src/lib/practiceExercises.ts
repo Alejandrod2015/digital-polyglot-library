@@ -593,7 +593,7 @@ function wordCount(sentence: string): number {
 // o pasa el tope, devolvemos null → esa palabra va a listening/match (solo
 // necesitan la palabra). El split dialogue-aware se usa únicamente para CONTAR
 // (¿es exactamente 1 oración?), nunca para elegir un pedazo.
-function singleCleanSentence(item: PracticeFavoriteItem): string | null {
+export function singleCleanSentence(item: PracticeFavoriteItem): string | null {
   const raw = normalizeText(item.exampleSentence);
   if (!raw) return null;
   if (raw.length > MAX_EXERCISE_SENTENCE_CHARS) return null;
@@ -702,7 +702,7 @@ function stripOrphanLeadingPunctuation(sentence: string): string {
   return first !== upper ? upper + cleaned.slice(1) : cleaned;
 }
 
-function getContextSentence(item: PracticeFavoriteItem): string {
+export function getContextSentence(item: PracticeFavoriteItem): string {
   const sentence = normalizeText(item.exampleSentence);
   if (!sentence) return "";
 
