@@ -135,7 +135,7 @@ function createPrismaClient() {
   });
 }
 
-type PrismaClientWithRetry = ReturnType<typeof createPrismaClient>;
+export type PrismaClientWithRetry = ReturnType<typeof createPrismaClient>;
 
 type GlobalPrisma = typeof globalThis & {
   prisma?: PrismaClientWithRetry;

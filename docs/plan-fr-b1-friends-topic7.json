@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "b1",
+  "variante": "france",
+  "registro": "orgullo herido y reparacion: una foto de periodico, un nombre que falta y un gesto sin discurso",
+  "espina": "Aurelien y Elodie abren un taller de bicicletas en Fives y su amistad se pone a prueba como socios. Este tema cierra la pregunta del journey: quien se lleva el merito, y que esta dispuesto a ceder Aurelien para que la amistad siga siendo de dos.",
+  "recursos": "B1: narrador en passe compose e imparfait con plus-que-parfait; conditionnel (ce serait plus joli, une note que personne ne lirait); subjonctif tras il faut que (il faut que les gens sachent); discours indirect con concordancia (c'est toi qui m'as dit que l'idee etait de toi); reversa cosida (Aurelien quiere culpar a la periodista y recuerda que la frase fue suya); simil (comme si elle voulait l'etrangler); espejo concreto (Elodie floue al fondo de la foto y Elodie en el mostrador al final, con Aurelien detras del tabique).",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Aurelien quiere que el articulo sobre el taller cuente su historia de contable que lo dejo todo.",
+      "impide": "Charlotte solo le pregunta a el, y a Elodie la pone detras para la foto sin pedirle su opinion.",
+      "cuesta": "Elodie queda borrosa al fondo del retrato de su propio taller.",
+      "cambia": "Aurelien disfruta de ser la estrella y no ve lo que se esta perdiendo al lado.",
+      "emocion": "Vanidad de Aurelien, orgulloso como un pavo real; Elodie asiente con los labios apretados y se queda atras."
+    },
+    {
+      "slot": "2",
+      "quiere": "Aurelien quiere que la periodista reconozca su error y ponga el nombre de Elodie.",
+      "impide": "Charlotte no deformo nada: fue Aurelien quien dijo que la idea era suya, para darse importancia.",
+      "cuesta": "Elodie, herida en su orgullo, pasa la tarde sin dirigirle la palabra.",
+      "cambia": "Aurelien descubre que el error es suyo y no del periodico.",
+      "emocion": "Furia que se vuelve verguenza: cuelga con las mejillas rojas mientras Elodie retuerce una camara de aire."
+    },
+    {
+      "slot": "3",
+      "quiere": "Aurelien quiere reparar el daño sin grandes palabras.",
+      "impide": "El periodico no publica rectificacion, y Elodie desconfia de un gesto hecho por lastima.",
+      "cuesta": "Cede a Elodie la gerencia y el mostrador y se queda con las cuentas en la trastienda: pierde el escaparate y los elogios que empezaban a gustarle.",
+      "cambia": "El nombre de Elodie va primero en el papel, y el primer cliente pregunta por la mecanica.",
+      "emocion": "Nervios contenidos al darle la hoja; ella lo mira con los brazos cruzados, y al oir al cliente Aurelien sonrie detras del tabique."
+    }
+  ]
+}

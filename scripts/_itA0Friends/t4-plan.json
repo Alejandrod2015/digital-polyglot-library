@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "italy",
+  "registro": "tension y oscuridad intima: la tormenta afuera y una confesion a una desconocida adentro",
+  "espina": "El pacto de la servilleta: Alice calla lo que siente por Matteo; en la tormenta lo dice por primera vez en voz alta, pero a Federica, una vecina, y no a el.",
+  "recursos": "A0: repeticion (niente pergola, niente sedie), contraste con ma (Questo palazzo e vecchio, ma e forte), imagen concreta final (una sola maceta de albahaca al sol). Titulos: objeto torcido (allerta rossa), linea dicha (Un segreto tra noi due), fragmento de tiempo (Dopo la tempesta).",
+  "historias": [
+    { "slot": "0", "quiere": "salvar la albahaca de Matteo, la del pesto de los domingos, antes de la tormenta", "impide": "el viento tira las macetas y la pergola cae sobre la mesa", "cuesta": "la terraza se pierde: solo se salva una maceta", "cambia": "bajan empapados y conocen a Federica en el rellano", "emocion": "miedo: tiene miedo porque las sillas vuelan, y aun asi coge las macetas" },
+    { "slot": "1", "quiere": "salir del ascensor parado a oscuras", "impide": "el apagon y la pregunta de Federica: Matteo es tu novio?", "cuesta": "el secreto: lo dice por primera vez en voz alta, y a una vecina, no a Matteo", "cambia": "el secreto ya existe fuera de ella; Federica lo guarda", "emocion": "alivio y verguenza: sale con las mejillas calientes porque lo ha dicho, y cuenta hasta diez para respirar" },
+    { "slot": "2", "quiere": "limpiar la terraza rota y volver a la normalidad con Matteo", "impide": "Matteo cuenta que tiene miedo en el ferry y que entonces piensa en ella", "cuesta": "la pergola y las sillas de sus domingos se han perdido para siempre", "cambia": "Alice sabe que para Matteo ella es su lugar seguro, y aun asi calla", "emocion": "ternura: siente calor en el pecho porque el piensa en ella, y mira el mar sin decir nada" }
+  ]
+}

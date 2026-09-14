@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "b1",
+  "variante": "france",
+  "registro": "agotamiento contenido, sin melodrama: manos que tiemblan, noches en blanco y una lista de reglas escrita por dos personas cansadas",
+  "espina": "Aurelien y Elodie abren un taller de bicicletas en Fives y su amistad se pone a prueba como socios. Este tema es el precio del cuerpo: la fecha de la Braderie contra el cansancio de los dos.",
+  "recursos": "B1: narrador en passe compose e imparfait con plus-que-parfait; subjonctif tras il faut que (il faut que vous dormiez); conditionnel de futuro en el pasado (la Braderie ne reviendrait que dans un an); discours indirect con concordancia (Elodie lui a repete qu'on ne gagnait rien); reversa cosida (Aurelien quiere decirle que pare y calla porque la fecha tambien le importa); cambio de ritmo (Puis il a fait le calcul: impossible.); espejo concreto (el medico ve temblar las manos de Elodie y despues Elodie ve las manos humedas de Aurelien).",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Aurelien y Elodie quieren abrir el taller el fin de semana de la Braderie, trabajando catorce horas al dia.",
+      "impide": "Quentin, el primer cliente y medico del barrio, ve que a Elodie le tiemblan las manos y le avisa de que va a reventar.",
+      "cuesta": "Elodie miente sobre su cansancio y Aurelien calla, y pierden la ocasion de parar a tiempo.",
+      "cambia": "El aviso queda dicho delante de los dos, aunque ninguno lo quiera escuchar todavia.",
+      "emocion": "Negacion: Elodie sonrie con ojeras mientras miente, y Aurelien vuelve a encender la lijadora para no hablar."
+    },
+    {
+      "slot": "2",
+      "quiere": "Aurelien quiere mantener la fecha de la Braderie haciendolo todo solo mientras Elodie esta de baja.",
+      "impide": "Elodie se duerme de pie, Quentin le da una semana de baja, y el trabajo pendiente no cabe en las noches de un solo hombre.",
+      "cuesta": "Pierden la inauguracion en la Braderie, que no vuelve hasta dentro de un año.",
+      "cambia": "Aurelien hace la cuenta y acepta que es imposible: aplaza la apertura.",
+      "emocion": "Obstinacion y derrota: tres noches en blanco, y la cuarta, sin fuerzas, relee la lista de espera y deja de fingir."
+    },
+    {
+      "slot": "3",
+      "quiere": "Aurelien quiere seguir pareciendo capaz de todo delante de Elodie.",
+      "impide": "Elodie vuelve antes y lo encuentra sentado en el suelo, con vertigos y las manos humedas.",
+      "cuesta": "Tiran los quinientos folletos con la fecha de la Braderie y Aurelien se traga el orgullo de hacerlo todo solo.",
+      "cambia": "Escriben juntos sus reglas (domingo cerrado, el derecho a decir basta) y abren un martes cualquiera.",
+      "emocion": "Verguenza que se afloja: niega con la cabeza, luego se traga el orgullo y dice que no puede mas."
+    }
+  ]
+}

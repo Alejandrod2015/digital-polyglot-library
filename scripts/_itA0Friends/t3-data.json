@@ -1,0 +1,419 @@
+[
+ {
+  "topic": "football-and-rivalries",
+  "slotIndex": 0,
+  "title": "Il derby della Lanterna",
+  "arcType": null,
+  "synopsis": "It is derby night in Genoa. On the roof terrace, a Sampdoria fan from the third floor laughs at Alice's team, and she makes a bet.",
+  "text": "Il derby di Genova è stasera. Il Genoa gioca contro la Sampdoria. Alice e Matteo tifano Genoa. Alle otto arriva Riccardo, un tassista del terzo piano.\n\nRiccardo ha una sciarpa blu. Lui si siede sul divano, vicino alla televisione. “Stasera vince la Samp. Voi perdete tre a zero,” dice Riccardo, e ride.\n\nRiccardo ride della sua squadra. Alice ha caldo in faccia. Lei incrocia le braccia. “Allora facciamo una scommessa?” chiede Alice.\n\n“Va bene. Se vince la Samp, tu mi dai la tua maglia,” risponde Riccardo. È una vecchia maglia del Genoa. È un regalo di Matteo, dell'università.\n\nAlice guarda Matteo. Lui mangia la focaccia con appetito e non sente. “E se vince il Genoa, tu porti la focaccia per un mese,” dice Alice. Riccardo tende la mano ad Alice. La partita comincia.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "il derby",
+    "surface": "derby",
+    "definition": "A match between two teams of the same city.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "giocare",
+    "surface": "gioca",
+    "definition": "To play a game or a sport."
+   },
+   {
+    "type": "verb",
+    "word": "tifare",
+    "surface": "tifano",
+    "definition": "To support a sports team with passion.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "il tassista",
+    "surface": "tassista",
+    "definition": "A taxi driver; he drives people for money.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "terzo",
+    "surface": "terzo",
+    "definition": "Third; number three in a row."
+   },
+   {
+    "type": "noun",
+    "word": "la squadra",
+    "surface": "squadra",
+    "definition": "A team; a group of players.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "vicino",
+    "surface": "vicino",
+    "definition": "Near; close to something."
+   },
+   {
+    "type": "verb",
+    "word": "vincere",
+    "surface": "vince",
+    "definition": "To win; to be first in a game."
+   },
+   {
+    "type": "expression",
+    "word": "avere caldo in faccia",
+    "surface": "ha caldo in faccia",
+    "definition": "To feel your face go hot, from anger."
+   },
+   {
+    "type": "expression",
+    "word": "incrociare le braccia",
+    "surface": "incrocia le braccia",
+    "definition": "To cross your arms over your chest."
+   },
+   {
+    "type": "adverb",
+    "word": "allora",
+    "surface": "Allora",
+    "definition": "So; then, in that case."
+   },
+   {
+    "type": "noun",
+    "word": "la scommessa",
+    "surface": "scommessa",
+    "definition": "A bet; you win or lose something on a game.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "la maglia",
+    "surface": "maglia",
+    "definition": "A shirt; here a football shirt.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "il regalo",
+    "surface": "regalo",
+    "definition": "A present; something you give to someone."
+   },
+   {
+    "type": "verb",
+    "word": "mangiare",
+    "surface": "mangia",
+    "definition": "To eat; to put food in your mouth."
+   },
+   {
+    "type": "expression",
+    "word": "per un mese",
+    "surface": "per un mese",
+    "definition": "For a month; for about four weeks.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "cominciare",
+    "surface": "comincia",
+    "definition": "To start; to begin."
+   },
+   {
+    "type": "noun",
+    "word": "la partita",
+    "surface": "partita",
+    "definition": "A match; a football game.",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "tre a zero",
+    "surface": "tre a zero",
+    "definition": "Three to nil; the score of a game.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "il divano",
+    "surface": "divano",
+    "definition": "A sofa; a long soft seat for two or three.",
+    "anchor": true
+   }
+  ]
+ },
+ {
+  "topic": "football-and-rivalries",
+  "slotIndex": 1,
+  "title": "La maglia in palio",
+  "arcType": null,
+  "synopsis": "Genoa scores first and the terrace goes wild. Then, in the last minutes, the match changes, and so does the bet.",
+  "text": "Tre sedie, patatine e una televisione piccola aspettano la partita. Matteo ha il telecomando. Alice indossa la vecchia maglia del Genoa. Riccardo aspetta con la sciarpa blu.\n\nAlice è nervosa, ma sorride. “Io non perdo mai. Il Genoa vince stasera,” dice Alice. “Certo. Tre a zero per noi,” risponde Matteo.\n\nIl Genoa gioca bene. Al minuto venti Matteo salta in piedi. “Gol! Uno a zero! Alice, sei contenta?” grida Matteo. Alice abbraccia Matteo e ride forte.\n\nMa al minuto novanta la Samp segna. Poi segna ancora. Riccardo canta e balla sulla sedia. Alice conta i minuti e quasi non respira. “Due a uno. È finita,” dice Alice piano.\n\n“Dai, Alice. È solo una maglia, no? Io compro una maglia nuova,” dice Matteo. Per lui non importa. Per lei, invece, è il suo regalo. Alice toglie la maglia e la dà a Riccardo. Adesso ha freddo.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "le patatine",
+    "surface": "patatine",
+    "definition": "Crisps; thin salty fried potato snacks.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "il telecomando",
+    "surface": "telecomando",
+    "definition": "A remote control for the television.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "piccolo",
+    "surface": "piccola",
+    "definition": "Small; not big, little in size."
+   },
+   {
+    "type": "adverb",
+    "word": "bene",
+    "surface": "bene",
+    "definition": "Well; in a good way."
+   },
+   {
+    "type": "expression",
+    "word": "saltare in piedi",
+    "surface": "salta in piedi",
+    "definition": "To jump up to your feet.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "gridare",
+    "surface": "grida",
+    "definition": "To shout; to speak very loudly."
+   },
+   {
+    "type": "verb",
+    "word": "segnare",
+    "surface": "segna",
+    "definition": "To score a goal in a game.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "ancora",
+    "surface": "ancora",
+    "definition": "Again; one more time."
+   },
+   {
+    "type": "verb",
+    "word": "cantare",
+    "surface": "canta",
+    "definition": "To sing; to make music with your voice."
+   },
+   {
+    "type": "verb",
+    "word": "respirare",
+    "surface": "respira",
+    "definition": "To breathe; to take air in and out."
+   },
+   {
+    "type": "adverb",
+    "word": "invece",
+    "surface": "invece",
+    "definition": "Instead; on the other hand."
+   },
+   {
+    "type": "verb",
+    "word": "comprare",
+    "surface": "compro",
+    "definition": "To buy; to get something with money."
+   },
+   {
+    "type": "adjective",
+    "word": "nuovo",
+    "surface": "nuova",
+    "definition": "New; not old, just bought."
+   },
+   {
+    "type": "verb",
+    "word": "togliere",
+    "surface": "toglie",
+    "definition": "To take off clothes or remove something."
+   },
+   {
+    "type": "expression",
+    "word": "al minuto venti",
+    "surface": "Al minuto venti",
+    "definition": "In the twentieth minute of the game.",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "essere finita",
+    "surface": "È finita",
+    "definition": "It is over; there is nothing more to do."
+   },
+   {
+    "type": "expression",
+    "word": "avere freddo",
+    "surface": "ha freddo",
+    "definition": "To feel cold; your body is not warm."
+   },
+   {
+    "type": "verb",
+    "word": "indossare",
+    "surface": "indossa",
+    "definition": "To wear; to have clothes on your body."
+   },
+   {
+    "type": "adjective",
+    "word": "nervoso",
+    "surface": "nervosa",
+    "definition": "Nervous; a little worried and tense."
+   },
+   {
+    "type": "expression",
+    "word": "per noi",
+    "surface": "per noi",
+    "definition": "For us; on our side."
+   },
+   {
+    "type": "adjective",
+    "word": "contento",
+    "surface": "contenta",
+    "definition": "Glad; happy about something."
+   }
+  ]
+ },
+ {
+  "topic": "football-and-rivalries",
+  "slotIndex": 2,
+  "title": "Solo per una foto",
+  "arcType": null,
+  "synopsis": "The next morning Alice sees her lost shirt again, in a very wrong place, and she runs down to the street.",
+  "text": "La mattina dopo Alice apre la finestra. L'aria è fresca. Davanti al palazzo c'è il taxi bianco di Riccardo. Lui pulisce e strofina il vetro con una maglia rossa e blu.\n\nÈ la sua maglia. Alice ha le lacrime agli occhi, perché è il regalo di Matteo. Lei scende le scale di corsa, in pigiama.\n\n“Riccardo, no! La maglia è importante per me,” dice Alice. Lei quasi piange. “Una scommessa è una scommessa,” risponde lui. Ma guarda la faccia di Alice.\n\n“Okay. La maglia torna a te. Ma prima metti la sciarpa della Samp. Solo per una foto,” dice Riccardo.\n\nAlice mette la sciarpa blu. Riccardo fa la foto e scherza. Alice sente vergogna. Dalla terrazza, Matteo vede tutto e ride anche lui.\n\n“La foto va nel gruppo del palazzo. Per sempre. È divertente,” dice Riccardo. Alice non risponde. Tiene la vecchia maglia, bagnata e sporca, stretta al cuore.",
+  "vocab": [
+   {
+    "type": "adjective",
+    "word": "fresco",
+    "surface": "fresca",
+    "definition": "Cool; a little cold, in a nice way."
+   },
+   {
+    "type": "adverb",
+    "word": "davanti",
+    "surface": "Davanti",
+    "definition": "In front; before something."
+   },
+   {
+    "type": "adjective",
+    "word": "bianco",
+    "surface": "bianco",
+    "definition": "White; the colour of milk."
+   },
+   {
+    "type": "verb",
+    "word": "pulire",
+    "surface": "pulisce",
+    "definition": "To clean; to take the dirt away."
+   },
+   {
+    "type": "expression",
+    "word": "le lacrime agli occhi",
+    "surface": "lacrime agli occhi",
+    "definition": "Tears in your eyes; almost crying."
+   },
+   {
+    "type": "expression",
+    "word": "di corsa",
+    "surface": "di corsa",
+    "definition": "Running; very fast, in a hurry."
+   },
+   {
+    "type": "adverb",
+    "word": "anche",
+    "surface": "anche",
+    "definition": "Also; too, in the same way."
+   },
+   {
+    "type": "adverb",
+    "word": "prima",
+    "surface": "prima",
+    "definition": "First; before doing something else."
+   },
+   {
+    "type": "verb",
+    "word": "vedere",
+    "surface": "vede",
+    "definition": "To see; to notice with your eyes."
+   },
+   {
+    "type": "expression",
+    "word": "fare una foto",
+    "surface": "fa la foto",
+    "definition": "To take a photo.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "il gruppo",
+    "surface": "gruppo",
+    "definition": "A group; here a group chat of neighbours.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "bagnato",
+    "surface": "bagnata",
+    "definition": "Wet; with water on it."
+   },
+   {
+    "type": "adjective",
+    "word": "sporco",
+    "surface": "sporca",
+    "definition": "Dirty; not clean, with marks on it."
+   },
+   {
+    "type": "adjective",
+    "word": "blu",
+    "surface": "blu",
+    "definition": "Blue; the colour of the sky."
+   },
+   {
+    "type": "expression",
+    "word": "una scommessa è una scommessa",
+    "surface": "Una scommessa è una scommessa",
+    "definition": "A bet is a bet; you must pay.",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "per sempre",
+    "surface": "Per sempre",
+    "definition": "Forever; for all time."
+   },
+   {
+    "type": "verb",
+    "word": "strofinare",
+    "surface": "strofina",
+    "definition": "To rub hard to clean something.",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "stretta al cuore",
+    "surface": "stretta al cuore",
+    "definition": "Held tight against the heart.",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "in pigiama",
+    "surface": "in pigiama",
+    "definition": "In pyjamas; still in night clothes."
+   },
+   {
+    "type": "expression",
+    "word": "la sciarpa della Samp",
+    "surface": "sciarpa della Samp",
+    "definition": "A scarf of Sampdoria, the other Genoa team.",
+    "anchor": true
+   }
+  ]
+ }
+]

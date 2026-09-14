@@ -1,0 +1,419 @@
+[
+ {
+  "topic": "weather-and-storms",
+  "slotIndex": 0,
+  "title": "Allerta rossa",
+  "arcType": null,
+  "synopsis": "A red weather alert hits the city. Alice and Matteo run up to the roof terrace to save the plants before the storm takes them.",
+  "text": "Il cielo sopra Genova è nero. Il telefono di Alice suona: allerta rossa per la pioggia. Lei torna dall'ospedale, già bagnata. Ha freddo.\n\nOggi il traghetto non parte. Matteo aspetta Alice sulle scale. “Il vento è troppo forte. Il basilico è ancora sulla terrazza!” dice Matteo. “Arrivo subito,” risponde Alice.\n\nAlice e Matteo salgono. Il vento soffia forte e muove la pergola. I vasi di basilico cadono. “Il mio basilico! Il pesto della domenica!” grida Matteo.\n\n“Io prendo il basilico. Tu prendi le sedie, per favore. Veloce!” grida Alice. Le sedie volano! Lei ha paura.\n\nArriva un tuono. La pergola cade sul tavolo. “Basta, Alice. Adesso andiamo giù. Qui è pericoloso,” dice Matteo. Lui prende Alice per mano e corre.\n\nSul pianerottolo c'è una donna con due asciugamani. Federica è un'architetta del quarto piano. Lei dà un asciugamano ad Alice e sorride. Nelle mani di Matteo c'è un solo vaso di basilico.",
+  "vocab": [
+   {
+    "type": "adjective",
+    "word": "nero",
+    "surface": "nero",
+    "definition": "Black; the darkest colour."
+   },
+   {
+    "type": "noun",
+    "word": "l'allerta",
+    "surface": "allerta",
+    "definition": "A weather alert; a warning of danger.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "rosso",
+    "surface": "rossa",
+    "definition": "Red; here the highest level of danger."
+   },
+   {
+    "type": "noun",
+    "word": "l'ospedale",
+    "surface": "ospedale",
+    "definition": "A hospital; where sick people get care.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "il basilico",
+    "surface": "basilico",
+    "definition": "Basil; a green herb for pesto and pasta."
+   },
+   {
+    "type": "adjective",
+    "word": "forte",
+    "surface": "forte",
+    "definition": "Strong; with a lot of power."
+   },
+   {
+    "type": "verb",
+    "word": "soffiare",
+    "surface": "soffia",
+    "definition": "To blow, like the wind."
+   },
+   {
+    "type": "verb",
+    "word": "cadere",
+    "surface": "cadono",
+    "definition": "To fall; to go down to the ground."
+   },
+   {
+    "type": "verb",
+    "word": "prendere",
+    "surface": "prendo",
+    "definition": "To take; to pick something up."
+   },
+   {
+    "type": "expression",
+    "word": "per favore",
+    "surface": "per favore",
+    "definition": "Please; a polite word when you ask."
+   },
+   {
+    "type": "noun",
+    "word": "il tuono",
+    "surface": "tuono",
+    "definition": "Thunder; the loud noise in a storm.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "la pergola",
+    "surface": "pergola",
+    "definition": "A pergola; a wooden roof for plants.",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "basta",
+    "surface": "Basta",
+    "definition": "Enough; stop now, that is all."
+   },
+   {
+    "type": "expression",
+    "word": "andare giù",
+    "surface": "andiamo giù",
+    "definition": "To go down; here, down the stairs."
+   },
+   {
+    "type": "expression",
+    "word": "per mano",
+    "surface": "per mano",
+    "definition": "By the hand; holding someone's hand."
+   },
+   {
+    "type": "noun",
+    "word": "il pianerottolo",
+    "surface": "pianerottolo",
+    "definition": "A landing; the flat space between stairs.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "volare",
+    "surface": "volano",
+    "definition": "To fly; to move through the air."
+   },
+   {
+    "type": "noun",
+    "word": "l'architetta",
+    "surface": "architetta",
+    "definition": "A woman who designs houses and buildings.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "quarto",
+    "surface": "quarto",
+    "definition": "Fourth; number four in a row."
+   },
+   {
+    "type": "adverb",
+    "word": "veloce",
+    "surface": "Veloce",
+    "definition": "Fast; quickly, with no time to lose."
+   }
+  ]
+ },
+ {
+  "topic": "weather-and-storms",
+  "slotIndex": 1,
+  "title": "Un segreto tra noi due",
+  "arcType": null,
+  "synopsis": "The power goes out and the old lift stops between two floors. Alice is stuck in the dark with Federica, the architect from the fourth floor.",
+  "text": "Alice sale al quinto piano in ascensore. Nell'ascensore Alice incontra Federica. L'ascensore è stretto. Tra il terzo e il quarto piano la luce si spegne e l'ascensore si ferma.\n\nÈ tutto buio. Alice respira forte e conta fino a dieci. “Tranquilla. Io sono un'architetta. L'ascensore è bloccato, ma il palazzo è forte,” dice Federica. Lei accende la torcia del telefono.\n\nFederica vede spesso Alice con Matteo. “Tu sei Alice, vero? Matteo è il tuo fidanzato?” chiede Federica. Alice alza gli occhi verso la piccola luce e trema. “No. Ma io amo Matteo. Lui non lo sa,” risponde Alice. È la prima volta. Alice parla ad alta voce, sincera.\n\nFederica ascolta e non ride. Lei spegne la torcia. “Allora questo è un segreto tra noi due. Tu lo dici a lui un giorno. Oppure mai,” sussurra Federica. La luce torna e l'ascensore sale. Alice esce al quinto piano con le guance calde.",
+  "vocab": [
+   {
+    "type": "expression",
+    "word": "è tutto buio",
+    "surface": "È tutto buio",
+    "definition": "It is all dark; there is no light.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "contare",
+    "surface": "conta",
+    "definition": "To count numbers, one, two, three."
+   },
+   {
+    "type": "expression",
+    "word": "fino a dieci",
+    "surface": "fino a dieci",
+    "definition": "Up to ten; from one to ten.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "tranquillo",
+    "surface": "Tranquilla",
+    "definition": "Calm; not worried, relaxed and quiet."
+   },
+   {
+    "type": "verb",
+    "word": "accendere",
+    "surface": "accende",
+    "definition": "To switch on a light or a lamp."
+   },
+   {
+    "type": "adverb",
+    "word": "spesso",
+    "surface": "spesso",
+    "definition": "Often; many times, again and again."
+   },
+   {
+    "type": "noun",
+    "word": "il fidanzato",
+    "surface": "fidanzato",
+    "definition": "A boyfriend; the man you are in love with."
+   },
+   {
+    "type": "verb",
+    "word": "amare",
+    "surface": "amo",
+    "definition": "To love; to feel strong love for someone."
+   },
+   {
+    "type": "verb",
+    "word": "sapere",
+    "surface": "sa",
+    "definition": "To know; to have the information."
+   },
+   {
+    "type": "expression",
+    "word": "la prima volta",
+    "surface": "la prima volta",
+    "definition": "The first time; never before."
+   },
+   {
+    "type": "expression",
+    "word": "ad alta voce",
+    "surface": "ad alta voce",
+    "definition": "Out loud; so that other people hear."
+   },
+   {
+    "type": "expression",
+    "word": "tra noi due",
+    "surface": "tra noi due",
+    "definition": "Between the two of us; nobody else knows.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "mai",
+    "surface": "mai",
+    "definition": "Never; not at any time."
+   },
+   {
+    "type": "verb",
+    "word": "uscire",
+    "surface": "esce",
+    "definition": "To go out; to leave a room or place."
+   },
+   {
+    "type": "expression",
+    "word": "le guance calde",
+    "surface": "guance calde",
+    "definition": "Warm cheeks; a hot face from strong feeling.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "fermarsi",
+    "surface": "si ferma",
+    "definition": "To stop; to not move any more."
+   },
+   {
+    "type": "adjective",
+    "word": "stretto",
+    "surface": "stretto",
+    "definition": "Narrow; with little space inside."
+   },
+   {
+    "type": "noun",
+    "word": "la torcia",
+    "surface": "torcia",
+    "definition": "A torch; a small light you hold in your hand.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "bloccato",
+    "surface": "bloccato",
+    "definition": "Stuck; it cannot move."
+   },
+   {
+    "type": "verb",
+    "word": "sussurrare",
+    "surface": "sussurra",
+    "definition": "To whisper; to speak very quietly."
+   },
+   {
+    "type": "expression",
+    "word": "un giorno",
+    "surface": "un giorno",
+    "definition": "One day; at some time in the future."
+   }
+  ]
+ },
+ {
+  "topic": "weather-and-storms",
+  "slotIndex": 2,
+  "title": "Dopo la tempesta",
+  "arcType": null,
+  "synopsis": "The next morning the sun is back and the terrace is broken. While they clean, Matteo tells Alice something about storms at sea.",
+  "text": "Dopo la tempesta, il cielo è pulito. Sulla terrazza non c'è più la pergola. C'è fango ovunque. C'è solo un vaso di basilico.\n\nMatteo pulisce con la scopa. Alice cerca le sedie. Una è rotta, l'altra è bagnata. Il vicolo sotto è pieno di foglie. Alice raccoglie le foglie. Per un'ora non parlano.\n\n“Io ho paura delle tempeste. Sul traghetto, di notte, ho tanta paura,” dice Matteo. “Tu? Un marinaio?” chiede Alice, e sorride.\n\n“Sì. E quando ho paura, penso a questa terrazza. Penso a te e alla focaccia della domenica,” dice lui. Alice sente caldo nel petto, perché lui pensa a lei. Ma lei guarda il mare e non dice nulla.\n\n“C'è solo una pianta, ma è verde,” dice Alice. Insieme mettono il basilico in un vaso nuovo. La pianta è piccola, ma è viva. “Domenica facciamo il pesto lo stesso,” dice Matteo, e mette il vaso al sole.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "la tempesta",
+    "surface": "tempesta",
+    "definition": "A storm; very strong wind and rain."
+   },
+   {
+    "type": "adjective",
+    "word": "rotto",
+    "surface": "rotta",
+    "definition": "Broken; in pieces, it does not work."
+   },
+   {
+    "type": "adjective",
+    "word": "altro",
+    "surface": "altra",
+    "definition": "The other one; the second of two."
+   },
+   {
+    "type": "adjective",
+    "word": "pieno",
+    "surface": "pieno",
+    "definition": "Full; with a lot of things inside."
+   },
+   {
+    "type": "noun",
+    "word": "le foglie",
+    "surface": "foglie",
+    "definition": "Leaves; the green parts of a tree or plant.",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "per un'ora",
+    "surface": "Per un'ora",
+    "definition": "For one hour; for sixty minutes.",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "di notte",
+    "surface": "di notte",
+    "definition": "At night; when it is dark."
+   },
+   {
+    "type": "adjective",
+    "word": "tanto",
+    "surface": "tanta",
+    "definition": "A lot of; very much."
+   },
+   {
+    "type": "verb",
+    "word": "pensare",
+    "surface": "penso",
+    "definition": "To think of someone or something."
+   },
+   {
+    "type": "expression",
+    "word": "nel petto",
+    "surface": "nel petto",
+    "definition": "In the chest; where you feel your heart."
+   },
+   {
+    "type": "adjective",
+    "word": "caldo",
+    "surface": "caldo",
+    "definition": "Warm; a little hot, a nice feeling."
+   },
+   {
+    "type": "adverb",
+    "word": "più",
+    "surface": "più",
+    "definition": "Any more; no longer, with non."
+   },
+   {
+    "type": "adjective",
+    "word": "vivo",
+    "surface": "viva",
+    "definition": "Alive; not dead, still growing."
+   },
+   {
+    "type": "verb",
+    "word": "fare",
+    "surface": "facciamo",
+    "definition": "To make or do something."
+   },
+   {
+    "type": "expression",
+    "word": "lo stesso",
+    "surface": "lo stesso",
+    "definition": "All the same; anyway, even so."
+   },
+   {
+    "type": "adverb",
+    "word": "sotto",
+    "surface": "sotto",
+    "definition": "Below; under, on a lower level."
+   },
+   {
+    "type": "adverb",
+    "word": "insieme",
+    "surface": "insieme",
+    "definition": "Together; with another person."
+   },
+   {
+    "type": "adjective",
+    "word": "pulito",
+    "surface": "pulito",
+    "definition": "Clean; here the sky has no clouds."
+   },
+   {
+    "type": "noun",
+    "word": "il fango",
+    "surface": "fango",
+    "definition": "Mud; wet dirty earth.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "la scopa",
+    "surface": "scopa",
+    "definition": "A broom; you clean the floor with it.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "raccogliere",
+    "surface": "raccoglie",
+    "definition": "To pick things up from the ground."
+   }
+  ]
+ }
+]

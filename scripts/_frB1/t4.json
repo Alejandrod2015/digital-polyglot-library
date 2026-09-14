@@ -1,0 +1,463 @@
+[
+ {
+  "topic": "rumours-and-reputation",
+  "slotIndex": 0,
+  "title": "Ce qu'on raconte à Fives",
+  "synopsis": "Dans un quartier où tout se sait, une mauvaise histoire circule sur le nouvel associé de l'atelier. Elle est fausse, mais elle amuse tout le monde. Plus Aurélien essaie de la corriger, plus on le soupçonne, et l'atelier n'est même pas encore ouvert. Il lui faut une chose: savoir qui a parlé le premier.",
+  "text": "Le patron de l'estaminet de Fives s'appelle Florian, et il connaît tout le quartier. Ce matin-là, dans le bruit des tasses, derrière son zinc, il a servi une chicorée brûlante à Aurélien d'un drôle d'air. “Alors, c'est vous, le nouveau de l'atelier de vélos?” a demandé Florian.\n\nAurélien a hoché la tête, surpris. “On vous a viré de votre bureau, paraît-il, pour une erreur dans les comptes”, continuait Florian à voix basse. Aurélien a failli renverser sa tasse.\n\n“Pas du tout. J'ai démissionné, discrètement, après dix ans de travail”, a démenti Aurélien. Florian a souri, méfiant, comme si de rien n'était. “Bien sûr. C'est ce qu'ils disent tous”, lui a répondu Florian.\n\nPlus Aurélien se justifiait, plus son histoire avait l'air louche. La rumeur avait déjà fait le tour du quartier.\n\nÀ midi, deux anciens collègues, ses premiers clients, ont annulé leur réparation par message. Aurélien a relu l'écran longtemps. Quelqu'un avait parlé, mais qui?",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "le zinc",
+    "surface": "zinc",
+    "register": "cultural",
+    "definition": "the metal bar counter of a traditional French café",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "ce matin-là",
+    "surface": "Ce matin-là",
+    "register": "neutral",
+    "definition": "on that morning in the past, not this morning"
+   },
+   {
+    "type": "noun",
+    "word": "la chicorée",
+    "surface": "chicorée",
+    "register": "cultural",
+    "definition": "a hot drink like coffee made from a root, loved in the north",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "d'un drôle d'air",
+    "surface": "d'un drôle d'air",
+    "register": "neutral",
+    "definition": "with a strange look, as if something is not normal"
+   },
+   {
+    "type": "verb",
+    "word": "virer",
+    "surface": "viré",
+    "register": "colloquial",
+    "definition": "to make someone leave their job, often suddenly"
+   },
+   {
+    "type": "expression",
+    "word": "paraît-il",
+    "surface": "paraît-il",
+    "register": "neutral",
+    "definition": "so people say; it seems, but nobody is really sure"
+   },
+   {
+    "type": "noun",
+    "word": "les comptes",
+    "surface": "comptes",
+    "register": "neutral",
+    "definition": "the numbers that show the money a company gets and spends",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "à voix basse",
+    "surface": "à voix basse",
+    "register": "neutral",
+    "definition": "speaking very quietly so that other people cannot hear"
+   },
+   {
+    "type": "verb",
+    "word": "faillir",
+    "surface": "failli",
+    "register": "neutral",
+    "definition": "to almost do something, but not do it in the end"
+   },
+   {
+    "type": "verb",
+    "word": "renverser",
+    "surface": "renverser",
+    "register": "neutral",
+    "definition": "to make a cup or glass fall so that the liquid goes out"
+   },
+   {
+    "type": "verb",
+    "word": "démentir",
+    "surface": "démenti",
+    "register": "neutral",
+    "definition": "to say clearly that a piece of news is not true"
+   },
+   {
+    "type": "adjective",
+    "word": "méfiant",
+    "surface": "méfiant",
+    "register": "neutral",
+    "definition": "not trusting someone, thinking they might lie to you"
+   },
+   {
+    "type": "expression",
+    "word": "c'est ce qu'ils disent tous",
+    "surface": "C'est ce qu'ils disent tous",
+    "register": "neutral",
+    "definition": "that is what everyone says, so it is probably not true"
+   },
+   {
+    "type": "expression",
+    "word": "plus... plus",
+    "surface": "Plus Aurélien se justifiait, plus",
+    "register": "neutral",
+    "definition": "the more you do one thing, the more another thing happens"
+   },
+   {
+    "type": "verb",
+    "word": "se justifier",
+    "surface": "se justifiait",
+    "register": "neutral",
+    "definition": "to explain why you did something because people think it was wrong"
+   },
+   {
+    "type": "adjective",
+    "word": "louche",
+    "surface": "louche",
+    "register": "colloquial",
+    "definition": "strange in a way that makes you think something is wrong"
+   },
+   {
+    "type": "adjective",
+    "word": "brûlant",
+    "surface": "brûlante",
+    "register": "neutral",
+    "definition": "very hot, so hot that it can hurt your mouth or hand"
+   },
+   {
+    "type": "verb",
+    "word": "annuler",
+    "surface": "annulé",
+    "register": "neutral",
+    "definition": "to say that something that was planned will not happen"
+   },
+   {
+    "type": "noun",
+    "word": "la réparation",
+    "surface": "réparation",
+    "register": "neutral",
+    "definition": "work to make a broken thing, like a bike, work again"
+   },
+   {
+    "type": "verb",
+    "word": "relire",
+    "surface": "relu",
+    "register": "neutral",
+    "definition": "to read something again because you cannot believe it"
+   }
+  ],
+  "arcType": "mini-cliffhanger"
+ },
+ {
+  "topic": "rumours-and-reputation",
+  "slotIndex": 1,
+  "title": "Une blague mal répétée",
+  "synopsis": "Aurélien veut savoir qui a lancé la rumeur, et il remonte l'histoire de café en boulangerie. Chaque personne l'a entendue de quelqu'un d'autre, un peu différente à chaque fois. Au bout de la chaîne, il trouve un nom qu'il n'attendait pas, et la soirée de peinture à l'atelier tourne mal.",
+  "text": "Aurélien a mené l'enquête toute la matinée, de comptoir en comptoir. Florian lui a raconté qu'il tenait l'histoire de la boulangère. La boulangère la tenait d'un client, et le client, de la serveuse de l'estaminet.\n\nLa serveuse a rougi quand Aurélien l'a interrogée. Elle avait seulement répété une phrase d'Élodie, entendue au zinc: “Mon associé s'est fait virer de sa vie de bureau.”\n\nCe soir-là, dans l'odeur de peinture fraîche, Aurélien a lâché son pinceau. “C'était une blague? Tout le quartier me prend pour un incapable!” a crié Aurélien. Élodie s'est mordu la lèvre.\n\n“Je ne voudrais jamais te faire du mal. Je voulais dire que tu avais quitté une vie triste. Ils ont tout déformé”, s'est excusée Élodie. “Et ma réputation, tu t'en fiches?” a répliqué Aurélien, blessé.\n\nÉlodie est rentrée chez elle à contrecœur, sans finir le mur. Le lendemain, la peinture avait séché en traînées, à moitié grise, à moitié blanche, et personne n'avait envie de la reprendre.",
+  "vocab": [
+   {
+    "type": "expression",
+    "word": "mener l'enquête",
+    "surface": "mené l'enquête",
+    "register": "neutral",
+    "definition": "to ask questions everywhere to discover the truth about something"
+   },
+   {
+    "type": "expression",
+    "word": "de comptoir en comptoir",
+    "surface": "de comptoir en comptoir",
+    "register": "neutral",
+    "definition": "going from one café counter to the next, asking people"
+   },
+   {
+    "type": "expression",
+    "word": "tenir de",
+    "surface": "tenait l'histoire de",
+    "register": "neutral",
+    "definition": "to have heard a story or news from a certain person"
+   },
+   {
+    "type": "noun",
+    "word": "la boulangère",
+    "surface": "boulangère",
+    "register": "neutral",
+    "definition": "a woman who makes or sells bread in a bakery",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "la serveuse",
+    "surface": "serveuse",
+    "register": "neutral",
+    "definition": "a woman who brings drinks and food to people in a café",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "rougir",
+    "surface": "rougi",
+    "register": "neutral",
+    "definition": "when your face becomes red because you feel shy or ashamed"
+   },
+   {
+    "type": "verb",
+    "word": "interroger",
+    "surface": "interrogée",
+    "register": "neutral",
+    "definition": "to ask someone many questions to find out what happened"
+   },
+   {
+    "type": "noun",
+    "word": "l'associé",
+    "surface": "associé",
+    "register": "neutral",
+    "definition": "a person who owns and runs a business with you"
+   },
+   {
+    "type": "noun",
+    "word": "la peinture fraîche",
+    "surface": "peinture fraîche",
+    "register": "neutral",
+    "definition": "paint that is still wet because it was just put on",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "le pinceau",
+    "surface": "pinceau",
+    "register": "neutral",
+    "definition": "a tool with soft hair that you use to paint walls",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "prendre pour",
+    "surface": "prend pour",
+    "register": "neutral",
+    "definition": "to wrongly think that someone is a certain kind of person"
+   },
+   {
+    "type": "noun",
+    "word": "l'incapable",
+    "surface": "incapable",
+    "register": "neutral",
+    "definition": "a person who cannot do anything right, used as an insult"
+   },
+   {
+    "type": "expression",
+    "word": "se mordre la lèvre",
+    "surface": "s'est mordu la lèvre",
+    "register": "neutral",
+    "definition": "to bite your lip because you feel guilty or want to stay quiet"
+   },
+   {
+    "type": "verb",
+    "word": "déformer",
+    "surface": "déformé",
+    "register": "neutral",
+    "definition": "to change someone's words so that the meaning is different"
+   },
+   {
+    "type": "noun",
+    "word": "la réputation",
+    "surface": "réputation",
+    "register": "neutral",
+    "definition": "what people think and say about a person"
+   },
+   {
+    "type": "expression",
+    "word": "s'en ficher",
+    "surface": "t'en fiches",
+    "register": "colloquial",
+    "definition": "to not care at all about something, even if it is important"
+   },
+   {
+    "type": "verb",
+    "word": "répliquer",
+    "surface": "répliqué",
+    "register": "neutral",
+    "definition": "to answer quickly, often in an angry or sharp way"
+   },
+   {
+    "type": "verb",
+    "word": "sécher",
+    "surface": "séché",
+    "register": "neutral",
+    "definition": "to become dry after being wet, like paint on a wall"
+   },
+   {
+    "type": "noun",
+    "word": "la traînée",
+    "surface": "traînées",
+    "register": "neutral",
+    "definition": "a long uneven line or mark left on a surface",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "reprendre",
+    "surface": "reprendre",
+    "register": "neutral",
+    "definition": "to start doing something again after a pause"
+   }
+  ],
+  "arcType": "late-reveal"
+ },
+ {
+  "topic": "rumours-and-reputation",
+  "slotIndex": 2,
+  "title": "Des comptes bien tenus",
+  "synopsis": "Cette fois, c'est Florian qui est la victime d'une rumeur, et son estaminet se vide. Aurélien étudie ses comptes et voit qu'ils sont sains, mais les chiffres ne suffisent pas à convaincre un quartier. Pour qu'on le croie, il avoue devant les habitués pourquoi il a vraiment quitté son bureau, et le soir même, l'estaminet est de nouveau plein.",
+  "text": "Dans le quartier, une autre rumeur a couru: l'estaminet de Florian allait faire faillite. Chaque habitué, prudent, allait boire son demi ailleurs.\n\nDerrière son zinc vide, Florian essuyait des verres déjà propres. “C'est faux, mais personne ne me croit. Vous savez ce que c'est, maintenant”, a soupiré Florian.\n\nAurélien a pris le temps de calculer, avec les factures et le cahier de caisse. “Vos comptes sont sains. Il faut que le quartier le sache”, lui a promis Aurélien.\n\nLe samedi, devant les habitués réunis au zinc, il a parlé la boule au ventre. Pour qu'on le croie, il a dû admettre une chose: “J'ai quitté mon bureau parce que j'avais peur de rater ma vie, pas parce qu'on m'a viré, je vous le jure.”\n\nIl y a eu un silence, puis quelqu'un a commandé un demi. Au fond de la salle, Élodie applaudissait. Aurélien avait perdu son image d'homme sûr de lui, mais le soir, l'estaminet était bondé, et l'atelier avait trois vélos à réparer.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "la rumeur",
+    "surface": "rumeur",
+    "register": "neutral",
+    "definition": "a story that people repeat, which may not be true"
+   },
+   {
+    "type": "expression",
+    "word": "faire faillite",
+    "surface": "faire faillite",
+    "register": "neutral",
+    "definition": "when a business has no more money and must close"
+   },
+   {
+    "type": "noun",
+    "word": "l'habitué",
+    "surface": "habitué",
+    "register": "neutral",
+    "definition": "a person who comes to the same café very often"
+   },
+   {
+    "type": "noun",
+    "word": "le demi",
+    "surface": "demi",
+    "register": "cultural",
+    "definition": "a glass of beer in a French café, about a quarter litre",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "ailleurs",
+    "surface": "ailleurs",
+    "register": "neutral",
+    "definition": "in another place, somewhere different from here or from usual"
+   },
+   {
+    "type": "verb",
+    "word": "essuyer",
+    "surface": "essuyait",
+    "register": "neutral",
+    "definition": "to make something dry or clean with a cloth"
+   },
+   {
+    "type": "expression",
+    "word": "c'est faux",
+    "surface": "C'est faux",
+    "register": "neutral",
+    "definition": "that is not true at all, it is completely wrong"
+   },
+   {
+    "type": "expression",
+    "word": "savoir ce que c'est",
+    "surface": "savez ce que c'est",
+    "register": "neutral",
+    "definition": "to know how something feels because it happened to you too"
+   },
+   {
+    "type": "noun",
+    "word": "la facture",
+    "surface": "factures",
+    "register": "neutral",
+    "definition": "a paper that shows how much money you must pay",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "le cahier de caisse",
+    "surface": "cahier de caisse",
+    "register": "neutral",
+    "definition": "a notebook where a shop writes all the money of the day",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "sain",
+    "surface": "sains",
+    "register": "neutral",
+    "definition": "healthy; for money or a business, in a good state"
+   },
+   {
+    "type": "adjective",
+    "word": "réuni",
+    "surface": "réunis",
+    "register": "neutral",
+    "definition": "together in one place, as a group of people"
+   },
+   {
+    "type": "verb",
+    "word": "croire",
+    "surface": "croie",
+    "register": "neutral",
+    "definition": "to think that what someone says is true"
+   },
+   {
+    "type": "expression",
+    "word": "rater sa vie",
+    "surface": "rater ma vie",
+    "register": "neutral",
+    "definition": "to fail in life, to not do what really matters to you"
+   },
+   {
+    "type": "expression",
+    "word": "prendre le temps de",
+    "surface": "pris le temps de",
+    "register": "neutral",
+    "definition": "to do something slowly and carefully, without hurrying"
+   },
+   {
+    "type": "expression",
+    "word": "au fond de",
+    "surface": "Au fond de",
+    "register": "neutral",
+    "definition": "at the back of a room, far from the door"
+   },
+   {
+    "type": "verb",
+    "word": "applaudir",
+    "surface": "applaudissait",
+    "register": "neutral",
+    "definition": "to hit your hands together to show that you like something"
+   },
+   {
+    "type": "adjective",
+    "word": "bondé",
+    "surface": "bondé",
+    "register": "neutral",
+    "definition": "so full of people that there is almost no free space"
+   },
+   {
+    "type": "noun",
+    "word": "l'image",
+    "surface": "image",
+    "register": "neutral",
+    "definition": "the idea that other people have of you"
+   },
+   {
+    "type": "verb",
+    "word": "réparer",
+    "surface": "réparer",
+    "register": "neutral",
+    "definition": "to make a broken thing, like a bike, work again"
+   }
+  ],
+  "arcType": "recurring-character-callback"
+ }
+]

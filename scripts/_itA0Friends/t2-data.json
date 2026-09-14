@@ -1,0 +1,409 @@
+[
+ {
+  "topic": "dating-and-first-impressions",
+  "slotIndex": 0,
+  "title": "Scrivi tu, per favore",
+  "arcType": null,
+  "synopsis": "Matteo comes back from the ferry with a photo of Francesca on his phone. He wants to write to her, and he asks Alice for the words.",
+  "text": "Matteo torna dalla Sardegna e sale subito al quinto piano. In mano ha il telefono. Sulle scale c'è odore di focaccia. Sul telefono c'è Francesca, una biologa dell'Acquario di Genova.\n\nAlice apre la porta. Matteo mostra la foto e ride, allegro. “Lei è Francesca. Studia i delfini. Stasera devo scrivere un messaggio, ma sono un disastro,” dice Matteo.\n\nMatteo scrive con un dito: “Ciao. Sei carina. Pizza?” Alice guarda il telefono e sorride appena. Ma dentro è triste. Lui è felice, e non per lei. Lei stringe le mani sul cardigan.\n\n“No, Matteo. Così no,” dice Alice. “Allora scrivi tu, per favore. Tu sei brava con le parole,” risponde lui. Alice scrive piano: “Il mare è più bello con te. Ci vediamo sabato?” Francesca risponde subito: sì. Matteo abbraccia Alice e va via di corsa. Lei resta sulla porta. Sono le sue parole, ma adesso vanno a Francesca.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "salire",
+    "surface": "sale",
+    "definition": "To go up, for example up the stairs."
+   },
+   {
+    "type": "adjective",
+    "word": "quinto",
+    "surface": "quinto",
+    "definition": "Fifth; number five in a row."
+   },
+   {
+    "type": "expression",
+    "word": "in mano",
+    "surface": "In mano",
+    "definition": "In your hand; holding something."
+   },
+   {
+    "type": "noun",
+    "word": "la biologa",
+    "surface": "biologa",
+    "definition": "A woman who studies animals and plants.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "mostrare",
+    "surface": "mostra",
+    "definition": "To show; to let someone see something."
+   },
+   {
+    "type": "verb",
+    "word": "studiare",
+    "surface": "Studia",
+    "definition": "To study; to learn about something."
+   },
+   {
+    "type": "adverb",
+    "word": "stasera",
+    "surface": "Stasera",
+    "definition": "This evening; later today, at night."
+   },
+   {
+    "type": "verb",
+    "word": "scrivere",
+    "surface": "scrivere",
+    "definition": "To write words on paper or a phone."
+   },
+   {
+    "type": "noun",
+    "word": "il messaggio",
+    "surface": "messaggio",
+    "definition": "A message; a short text on the phone."
+   },
+   {
+    "type": "adjective",
+    "word": "carino",
+    "surface": "carina",
+    "definition": "Pretty or cute; nice to look at."
+   },
+   {
+    "type": "adverb",
+    "word": "dentro",
+    "surface": "dentro",
+    "definition": "Inside; in the heart or in a place."
+   },
+   {
+    "type": "adjective",
+    "word": "felice",
+    "surface": "felice",
+    "definition": "Happy; very glad inside."
+   },
+   {
+    "type": "adverb",
+    "word": "così",
+    "surface": "Così",
+    "definition": "Like this; in this way."
+   },
+   {
+    "type": "adjective",
+    "word": "bravo",
+    "surface": "brava",
+    "definition": "Good at something; clever and able."
+   },
+   {
+    "type": "expression",
+    "word": "ci vediamo",
+    "surface": "Ci vediamo",
+    "definition": "See you; we meet again."
+   },
+   {
+    "type": "expression",
+    "word": "più bello",
+    "surface": "più bello",
+    "definition": "More beautiful; nicer than before."
+   },
+   {
+    "type": "verb",
+    "word": "abbracciare",
+    "surface": "abbraccia",
+    "definition": "To hug; to hold someone in your arms."
+   },
+   {
+    "type": "adverb",
+    "word": "adesso",
+    "surface": "adesso",
+    "definition": "Now; at this moment."
+   },
+   {
+    "type": "noun",
+    "word": "il delfino",
+    "surface": "delfini",
+    "definition": "A dolphin; a clever sea animal.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "la focaccia",
+    "surface": "focaccia",
+    "definition": "A flat Italian bread with oil, typical of Genoa.",
+    "anchor": true
+   },
+   {
+    "type": "adjective",
+    "word": "allegro",
+    "surface": "allegro",
+    "definition": "Cheerful; happy and full of life."
+   }
+  ]
+ },
+ {
+  "topic": "dating-and-first-impressions",
+  "slotIndex": 1,
+  "title": "Due spritz in terrazza",
+  "arcType": null,
+  "synopsis": "Alice lends Matteo her roof terrace for his first date. Francesca arrives early and meets Alice on the stairs.",
+  "text": "Sul tavolo della terrazza ci sono due bicchieri di spritz. Matteo non ha una terrazza e usa quella di Alice. Alice accende le candeline e deve sparire.\n\nMa Francesca arriva presto. Sulle scale incontra Alice, con il sacchetto della spazzatura in mano.\n\n“Ciao! Tu sei Alice, vero? Matteo parla sempre di te,” dice Francesca. Alice diventa rossa e nasconde il sacchetto dietro la schiena. Si sente stupida.\n\n“Sì, sono Alice. Io abito qui sopra,” risponde lei. “Grazie per la terrazza. Sei molto gentile. Vieni anche tu, dopo?” dice Francesca, e sorride.\n\nFrancesca è simpatica. Racconta dei delfini e ride forte, come Matteo. Alice cerca un difetto in lei. Non lo trova. Francesca chiede piano: “Tu e Matteo siete solo amici?”\n\nAlice guarda il sacchetto. “Certo. Solo amici. Buona serata,” dice. Scende le scale piano piano. Sopra, sulla sua terrazza, le candeline brillano. La loro luce è per un'altra.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "lo spritz",
+    "surface": "spritz",
+    "definition": "An orange drink with wine, popular in Italy.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "usare",
+    "surface": "usa",
+    "definition": "To use; to take something for a job."
+   },
+   {
+    "type": "verb",
+    "word": "sparire",
+    "surface": "sparire",
+    "definition": "To disappear; to go away so nobody sees you."
+   },
+   {
+    "type": "verb",
+    "word": "arrivare",
+    "surface": "arriva",
+    "definition": "To arrive; to come to a place."
+   },
+   {
+    "type": "adverb",
+    "word": "presto",
+    "surface": "presto",
+    "definition": "Early; before the planned time."
+   },
+   {
+    "type": "verb",
+    "word": "incontrare",
+    "surface": "incontra",
+    "definition": "To meet someone, often by chance."
+   },
+   {
+    "type": "expression",
+    "word": "il sacchetto della spazzatura",
+    "surface": "sacchetto della spazzatura",
+    "definition": "A rubbish bag; a bag for things you throw away.",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "vero?",
+    "surface": "vero",
+    "definition": "Right?; you add it to check something."
+   },
+   {
+    "type": "verb",
+    "word": "parlare",
+    "surface": "parla",
+    "definition": "To talk; to speak with words."
+   },
+   {
+    "type": "adverb",
+    "word": "dietro",
+    "surface": "dietro",
+    "definition": "Behind; at the back of something."
+   },
+   {
+    "type": "verb",
+    "word": "abitare",
+    "surface": "abito",
+    "definition": "To live in a house or flat."
+   },
+   {
+    "type": "adjective",
+    "word": "gentile",
+    "surface": "gentile",
+    "definition": "Kind; nice and good to other people."
+   },
+   {
+    "type": "adverb",
+    "word": "dopo",
+    "surface": "dopo",
+    "definition": "Later; after this moment."
+   },
+   {
+    "type": "verb",
+    "word": "sorridere",
+    "surface": "sorride",
+    "definition": "To smile; to make a happy face."
+   },
+   {
+    "type": "adjective",
+    "word": "simpatico",
+    "surface": "simpatica",
+    "definition": "Nice and friendly; easy to like."
+   },
+   {
+    "type": "verb",
+    "word": "cercare",
+    "surface": "cerca",
+    "definition": "To look for something you want to find."
+   },
+   {
+    "type": "noun",
+    "word": "il difetto",
+    "surface": "difetto",
+    "definition": "A fault; a small bad thing in someone.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "trovare",
+    "surface": "trova",
+    "definition": "To find; to see what you look for."
+   },
+   {
+    "type": "adverb",
+    "word": "solo",
+    "surface": "solo",
+    "definition": "Only; just this and nothing more."
+   },
+   {
+    "type": "expression",
+    "word": "buona serata",
+    "surface": "Buona serata",
+    "definition": "Have a nice evening; a way to say goodbye.",
+    "anchor": true
+   }
+  ]
+ },
+ {
+  "topic": "dating-and-first-impressions",
+  "slotIndex": 2,
+  "title": "I fiori sbagliati",
+  "arcType": null,
+  "synopsis": "The date ends early. Matteo knocks on Alice's door with red roses and a strange reason from Francesca.",
+  "text": "Qualcuno bussa alla porta di Alice alle dieci. Alice apre: è Matteo, con tre rose rosse in mano. L'appuntamento è già finito.\n\n“Francesca va a casa presto. Dice che io parlo sempre di te. Tutta la sera,” dice Matteo. Lui guarda le rose e non capisce. È strano.\n\n“E tu? Di cosa parli?” chiede Alice. “Del traghetto, del mare e di te. Sei la mia migliore amica, no?” risponde Matteo. Alice non risponde e fissa le sue scarpe.\n\n“Forse è una buona notizia,” pensa Alice. Ma Matteo è pallido e triste, e lei non vuole ridere. “Povero Matteo. Davvero,” dice lei. Poi Matteo entra in casa. Nella stanza c'è silenzio.\n\nMatteo dà le rose ad Alice. “Sono per te. A me non servono più,” dice lui. Alice riempie un vaso d'acqua e mette le rose. Sono fiori per un'altra, ma adesso sono sul suo tavolo.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "bussare",
+    "surface": "bussa",
+    "definition": "To knock on a door with your hand."
+   },
+   {
+    "type": "adverb",
+    "word": "già",
+    "surface": "già",
+    "definition": "Already; before now, sooner than you think."
+   },
+   {
+    "type": "adjective",
+    "word": "finito",
+    "surface": "finito",
+    "definition": "Finished; over, with nothing more to come."
+   },
+   {
+    "type": "expression",
+    "word": "andare a casa",
+    "surface": "va a casa",
+    "definition": "To go home; to go back to your house."
+   },
+   {
+    "type": "expression",
+    "word": "tutta la sera",
+    "surface": "Tutta la sera",
+    "definition": "All evening; for the whole evening.",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "capire",
+    "surface": "capisce",
+    "definition": "To understand; to know what something means."
+   },
+   {
+    "type": "verb",
+    "word": "fissare",
+    "surface": "fissa",
+    "definition": "To stare; to look at one thing for a long time."
+   },
+   {
+    "type": "adverb",
+    "word": "forse",
+    "surface": "forse",
+    "definition": "Maybe; perhaps, it is not sure."
+   },
+   {
+    "type": "expression",
+    "word": "buona notizia",
+    "surface": "buona notizia",
+    "definition": "Good news; something nice to hear."
+   },
+   {
+    "type": "verb",
+    "word": "volere",
+    "surface": "vuole",
+    "definition": "To want; to wish for something."
+   },
+   {
+    "type": "adverb",
+    "word": "davvero",
+    "surface": "Davvero",
+    "definition": "Really; truly, I mean it."
+   },
+   {
+    "type": "verb",
+    "word": "entrare",
+    "surface": "entra",
+    "definition": "To go in; to come inside."
+   },
+   {
+    "type": "verb",
+    "word": "dare",
+    "surface": "dà",
+    "definition": "To give; to put something in someone's hand."
+   },
+   {
+    "type": "expression",
+    "word": "non servire più",
+    "surface": "non servono più",
+    "definition": "To be no longer needed or useful."
+   },
+   {
+    "type": "expression",
+    "word": "alle dieci",
+    "surface": "alle dieci",
+    "definition": "At ten o'clock in the evening or morning.",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "rose rosse",
+    "surface": "rose rosse",
+    "definition": "Red roses; flowers you give for love.",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "il vaso",
+    "surface": "vaso",
+    "definition": "A vase; a pot for flowers and water.",
+    "anchor": true
+   },
+   {
+    "type": "adverb",
+    "word": "poi",
+    "surface": "Poi",
+    "definition": "Then; after that, next."
+   },
+   {
+    "type": "expression",
+    "word": "c'è silenzio",
+    "surface": "c'è silenzio",
+    "definition": "It is quiet; there is no sound at all."
+   },
+   {
+    "type": "adjective",
+    "word": "strano",
+    "surface": "strano",
+    "definition": "Strange; not normal, a little odd."
+   }
+  ]
+ }
+]

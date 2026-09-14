@@ -2224,5 +2224,1831 @@
     "avisos": [
       "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
     ]
+  },
+  "cmtwz1iop000l32jybeo2jg4x#circles-and-introductions": {
+    "cerrado": "2026-09-12T08:41:18.527Z",
+    "hash": "fae2ecdbc206372b",
+    "historias": [
+      "circles-and-introductions#0 le-nom-du-cercle",
+      "circles-and-introductions#1 la-table-loin",
+      "circles-and-introductions#2 le-mercredi-ouvert"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"cierre social optimista, con autonomia visible y pertenencia tranquila\", espina \"Amelie termina dentro del circulo, pero ya no entra por la voz de Marc.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"répond\" 38%)",
+      "arranques de parrafo variados (mas repetido \"baptiste\", 19%)",
+      "densidad 7.2 palabras por oracion (techo 11 en a1)",
+      "seguidilla 18/49 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 0.95 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 59/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "france",
+      "registro": "cierre social optimista, con autonomia visible y pertenencia tranquila",
+      "espina": "Amelie termina dentro del circulo, pero ya no entra por la voz de Marc.",
+      "recursos": "presentacion, mesa lejos, calendario abierto, pequenas perdidas que ganan autonomia",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "presentarse en el circulo con una frase propia",
+          "impide": "Marc trae una frase demasiado perfecta",
+          "cuesta": "pierde la presentacion brillante",
+          "cambia": "usa una frase pequena y verdadera",
+          "emocion": "voz pequena pero sostenida ante todos"
+        },
+        {
+          "slot": "2",
+          "quiere": "sentarse lejos de Marc en una comida",
+          "impide": "la silla familiar no esta libre",
+          "cuesta": "pierde la place voisine",
+          "cambia": "saluda y escucha por su cuenta",
+          "emocion": "mano apretada, luego calma con el primer bonjour"
+        },
+        {
+          "slot": "3",
+          "quiere": "aceptar el grupo sin aceptar todos los planes",
+          "impide": "el calendario se llena rapido",
+          "cuesta": "pierde el si facil",
+          "cambia": "propone miercoles como limite propio",
+          "emocion": "espera la respuesta del grupo sin retirar su limite"
+        }
+      ]
+    }
+  },
+  "cmtwz1iop000l32jybeo2jg4x#group-notes-and-plans": {
+    "cerrado": "2026-09-12T08:30:01.055Z",
+    "hash": "c3a6630bdd07ff50",
+    "historias": [
+      "group-notes-and-plans#0 le-papier-bleu",
+      "group-notes-and-plans#1 le-dossier-gros",
+      "group-notes-and-plans#2 la-ligne-corrigee"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"social, cercano y ligero, con pequenos roces de autonomia dentro del grupo\", espina \"Amelie aprende a hablar al grupo con su propia voz, sin que Marc ordene sus relaciones por ella.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dit\" 25%)",
+      "arranques de parrafo variados (mas repetido \"amélie\", 47%)",
+      "densidad 7.7 palabras por oracion (techo 11 en a1)",
+      "seguidilla 21/50 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.15 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 52/61 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: group-notes-and-plans (Marc, Amélie)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "france",
+      "registro": "social, cercano y ligero, con pequenos roces de autonomia dentro del grupo",
+      "espina": "Amelie aprende a hablar al grupo con su propia voz, sin que Marc ordene sus relaciones por ella.",
+      "recursos": "dialogo breve, objetos concretos de portada, frases A1, giro social pequeno al final",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "mandar una nota azul para organizar un cumpleanos sorpresa",
+          "impide": "Marc intenta corregir cada frase para ayudar",
+          "cuesta": "pierde la comodidad de dejar que Marc hable por ella",
+          "cambia": "envia una frase simple y propia",
+          "emocion": "nervios visibles en la respiracion y alivio cuando Marc se calla"
+        },
+        {
+          "slot": "2",
+          "quiere": "convertir un dossier enorme de planes en una invitacion calida",
+          "impide": "Nadine y Marc lo hacen demasiado serio",
+          "cuesta": "renuncia a controlar todos los detalles del plan",
+          "cambia": "elige solo lo necesario y deja espacio a la amistad",
+          "emocion": "se siente pequena ante la lista, luego se rie al cerrarla"
+        },
+        {
+          "slot": "3",
+          "quiere": "corregir una linea de invitacion para incluir a Camille",
+          "impide": "Marc propone volver a escribirlo todo y retrasar el envio",
+          "cuesta": "acepta mandar una invitacion imperfecta esa noche",
+          "cambia": "elige una palabra mas generosa y firma ella",
+          "emocion": "miedo de equivocarse, sostenido por un gesto firme con el stylo noir"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
+  },
+  "cmtwz1iop000l32jybeo2jg4x#hosting-and-care": {
+    "cerrado": "2026-09-12T08:32:05.508Z",
+    "hash": "5e7d0cf10ad9ad49",
+    "historias": [
+      "hosting-and-care#0 chez-camille",
+      "hosting-and-care#1 la-tasse-prete",
+      "hosting-and-care#2 la-clef-dedans"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"hospitalidad amistosa, con humor suave y cuidado practico\", espina \"Amelie aprende a aceptar cuidado de una amiga sin convertir cada gesto en una deuda.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"répond\" 36%)",
+      "arranques de parrafo variados (mas repetido \"camille\", 27%)",
+      "densidad 7.3 palabras por oracion (techo 11 en a1)",
+      "seguidilla 27/54 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.16 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 51/61 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: hosting-and-care (Camille, Amélie)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "france",
+      "registro": "hospitalidad amistosa, con humor suave y cuidado practico",
+      "espina": "Amelie aprende a aceptar cuidado de una amiga sin convertir cada gesto en una deuda.",
+      "recursos": "casa como espacio social, objetos de portada, dialogo corto, tension de gratitud y limite",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "aceptar quedarse en casa de Camille antes de un plan de grupo",
+          "impide": "cada detalle preparado le parece demasiado",
+          "cuesta": "deja de esconder la incomodidad con bromas",
+          "cambia": "pide solo la clef y acepta el resto",
+          "emocion": "vergüenza en la mano que aprieta la serviette, alivio cuando recibe la clef"
+        },
+        {
+          "slot": "2",
+          "quiere": "ayudar en la cocina para no sentirse invitada pasiva",
+          "impide": "Camille y Marc ya prepararon todo",
+          "cuesta": "renuncia a demostrar utilidad todo el tiempo",
+          "cambia": "elige una tarea pequena y propia: preparar el cafe",
+          "emocion": "inutilidad junto a la taza, luego orgullo pequeno al servir tres tasses"
+        },
+        {
+          "slot": "3",
+          "quiere": "salir limpia de casa de Camille hacia el almuerzo del grupo",
+          "impide": "deja la clef dentro",
+          "cuesta": "pierde el plan facil de la manana",
+          "cambia": "pide perdon una vez y se queda a comer",
+          "emocion": "culpa contenida, reparada por espera compartida en el banc"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
+  },
+  "cmtwz1iop000l32jybeo2jg4x#hosting-and-guest-care": {
+    "cerrado": "2026-09-11T15:31:43.222Z",
+    "hash": "582ba369aa641cfc",
+    "historias": [
+      "hosting-and-guest-care#0 chez-camille",
+      "hosting-and-guest-care#1 la-tasse-prete",
+      "hosting-and-guest-care#2 la-clef-dedans"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"intimo y practico, con incomodidad de sofa cama y bromas pequenas para no decir gracias demasiado pronto\", espina \"Amélie quiere aceptar un lugar en la vida de Camille en Paris sin convertirse en una invitada que molesta.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"répond\" 36%)",
+      "arranques de parrafo variados (mas repetido \"camille\", 27%)",
+      "densidad 7.2 palabras por oracion (techo 11 en a1)",
+      "seguidilla 27/54 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.16 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 52/61 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: hosting-and-guest-care (Camille, Amélie)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "france",
+      "registro": "intimo y practico, con incomodidad de sofa cama y bromas pequenas para no decir gracias demasiado pronto",
+      "espina": "Amélie quiere aceptar un lugar en la vida de Camille en Paris sin convertirse en una invitada que molesta.",
+      "recursos": "A1 narrado con presente, futur proche minimo, parce que, mais, quand, il faut, pouvoir, vouloir, devoir, preguntas cortas, habla citada en banda 25-35%, una sola ancla sensorial por historia y vocabulario de casa usado como situacion, no como inventario.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Amélie quiere aceptar dormir en casa de Camille para no depender del sofa de Marc.",
+          "impide": "Camille prepara demasiadas cosas y Amélie siente que cada gesto aumenta la deuda.",
+          "cuesta": "Pierde la comodidad de decir que no y pagar un hotel; acepta una ayuda concreta que no controla.",
+          "cambia": "Nombra una sola necesidad, la llave, y acepta el resto como cuidado adulto.",
+          "emocion": "Se le aprieta el pecho porque teme molestar; dobla la servilleta, mira la llave y dice gracias sin hacer chiste."
+        },
+        {
+          "slot": "2",
+          "quiere": "Amélie quiere ayudar en el piso de Camille para equilibrar la hospitalidad.",
+          "impide": "Marc y Camille le dicen que descanse, y cada tarea que intenta ya esta hecha.",
+          "cuesta": "Pierde la fantasia de pagar la ayuda con utilidad inmediata; se queda un rato sin papel claro.",
+          "cambia": "Encuentra una tarea pequena, preparar el cafe de la manana, y la hace sin pedir permiso tres veces.",
+          "emocion": "Se siente inutil porque todos la cuidan; deja la taza quieta, respira y pregunta una vez donde esta el cafe."
+        },
+        {
+          "slot": "3",
+          "quiere": "Amélie quiere salir de la casa de Camille dejando una buena impresion.",
+          "impide": "Olvida la llave dentro y el grupo debe cambiar el plan de la manana.",
+          "cuesta": "Pierde la salida limpia que queria y obliga a Marc a llegar tarde a una comida.",
+          "cambia": "Acepta disculparse sin exagerar, espera al cerrajero con Camille y se queda a comer despues.",
+          "emocion": "Tiene calor de verguenza porque el error confirma su miedo; aprieta el abrigo, luego abre la mano y se disculpa claro."
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
+  },
+  "cmtwz1iop000l32jybeo2jg4x#invitations-and-boundaries": {
+    "cerrado": "2026-09-11T16:52:11.990Z",
+    "hash": "edb324ae0a17bda3",
+    "historias": [
+      "invitations-and-boundaries#0 une-fete-courte",
+      "invitations-and-boundaries#1 un-the-possible",
+      "invitations-and-boundaries#2 le-pantalon-noir"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"amistad adulta, invitaciones concretas, limites dichos con calma y pequenas decisiones sociales en Paris\", espina \"Amélie quiere entrar en planes nuevos sin decir si a todo ni dejar que Marc decida su lugar.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"amélie\", 19%)",
+      "densidad 8.6 palabras por oracion (techo 11 en a1)",
+      "seguidilla 16/43 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.12 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 54/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: invitations-and-boundaries (Amélie, Mathieu)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "france",
+      "registro": "amistad adulta, invitaciones concretas, limites dichos con calma y pequenas decisiones sociales en Paris",
+      "espina": "Amélie quiere entrar en planes nuevos sin decir si a todo ni dejar que Marc decida su lugar.",
+      "recursos": "A1 narrado con presente, futur proche minimo, parce que, mais, quand, il faut, pouvoir, vouloir, devoir, preguntas cortas, habla citada en banda 25-35%, una sola ancla sensorial por historia y vocabulario social usado en accion.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Amélie quiere aceptar una invitacion de Mathieu sin quedarse toda la tarde.",
+          "impide": "Mathieu presenta el plan como si todos fueran a quedarse hasta el final.",
+          "cuesta": "Pierde la comodidad de decir si para caer bien y debe marcar una hora de salida.",
+          "cambia": "Acepta el principio de la fiesta y nombra su limite sin disculparse demasiado.",
+          "emocion": "Siente presion en la garganta, mira la luz de la sala y habla antes de que Marc responda."
+        },
+        {
+          "slot": "2",
+          "quiere": "Amélie quiere invitar a Mathieu a un cafe sin que parezca una obligacion.",
+          "impide": "Marc empuja la invitacion con entusiasmo y vuelve el gesto demasiado grande.",
+          "cuesta": "Pierde el refugio de dejar que Marc traduzca sus intenciones sociales.",
+          "cambia": "Reformula la invitacion como una opcion simple y deja espacio a un no.",
+          "emocion": "Se tensa cuando Marc habla antes; toca su montre y recupera la frase."
+        },
+        {
+          "slot": "3",
+          "quiere": "Amélie quiere rechazar una segunda invitacion para proteger su noche.",
+          "impide": "El grupo insiste con amabilidad y Mathieu cree que ella solo duda.",
+          "cuesta": "Pierde una imagen de persona siempre disponible y acepta parecer menos facil.",
+          "cambia": "Dice no a la segunda parte, propone otro dia y se queda en la amistad.",
+          "emocion": "Tiene miedo de enfriar el ambiente, pero la luz de la calle le da una salida clara."
+        }
+      ]
+    }
+  },
+  "cmtwz1iop000l32jybeo2jg4x#invites-and-boundaries": {
+    "cerrado": "2026-09-12T08:38:31.674Z",
+    "hash": "edb324ae0a17bda3",
+    "historias": [
+      "invites-and-boundaries#0 une-fete-courte",
+      "invites-and-boundaries#1 un-the-possible",
+      "invites-and-boundaries#2 le-pantalon-noir"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"invitaciones sociales con limites claros y una tension romantica ligera\", espina \"Amelie aprende a aceptar planes sin entregar todo su tiempo ni su comodidad.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"amélie\", 19%)",
+      "densidad 8.6 palabras por oracion (techo 11 en a1)",
+      "seguidilla 16/43 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.12 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 54/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: invites-and-boundaries (Amélie, Mathieu)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "france",
+      "registro": "invitaciones sociales con limites claros y una tension romantica ligera",
+      "espina": "Amelie aprende a aceptar planes sin entregar todo su tiempo ni su comodidad.",
+      "recursos": "fiesta corta, te posible, ropa para salir, respuestas breves y limites visibles",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "aceptar una fiesta sin quedarse todo el dia",
+          "impide": "Marc responde demasiado rapido por ella",
+          "cuesta": "pierde el si facil que agradaba a todos",
+          "cambia": "da una hora de salida clara",
+          "emocion": "silencio largo, luego alivio al mirar la montre"
+        },
+        {
+          "slot": "2",
+          "quiere": "invitar a Mathieu a tomar te sin obligarlo",
+          "impide": "Marc agranda la invitacion",
+          "cuesta": "acepta que Mathieu puede decir no",
+          "cambia": "hace una invitacion pequena y abierta",
+          "emocion": "olvida las palabras, respira y recupera la frase"
+        },
+        {
+          "slot": "3",
+          "quiere": "salir con ropa propia, no para agradar",
+          "impide": "las opiniones del grupo empujan la eleccion",
+          "cuesta": "renuncia al disfraz social perfecto",
+          "cambia": "elige el pantalon negro por comodidad",
+          "emocion": "duda ante el espejo, calma al nombrar su limite"
+        }
+      ]
+    }
+  },
+  "cmtwz1iop000l32jybeo2jg4x#paperwork-and-appointments": {
+    "cerrado": "2026-09-11T15:31:11.755Z",
+    "hash": "946a97983df8e0ca",
+    "historias": [
+      "paperwork-and-appointments#0 le-papier-bleu",
+      "paperwork-and-appointments#1 le-dossier-gros",
+      "paperwork-and-appointments#2 la-ligne-corrigee"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"practico y contenido, con papeles, mostradores y ayuda que Amélie aprende a aceptar solo cuando la pide\", espina \"Amélie quiere entrar en un circulo nuevo de Paris sin depender de Marc para entender cada paso practico.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"répond\" 20%)",
+      "arranques de parrafo variados (mas repetido \"amélie\", 27%)",
+      "densidad 7.4 palabras por oracion (techo 11 en a1)",
+      "seguidilla 29/58 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.20 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 49/61 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "france",
+      "registro": "practico y contenido, con papeles, mostradores y ayuda que Amélie aprende a aceptar solo cuando la pide",
+      "espina": "Amélie quiere entrar en un circulo nuevo de Paris sin depender de Marc para entender cada paso practico.",
+      "recursos": "A1 narrado con presente, futur proche minimo, parce que, mais, il faut, pouvoir, vouloir, preguntas cortas, habla citada en banda 25-35%, una sola ancla sensorial por historia y vocabulario administrativo usado como accion.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Amélie quiere confirmar sola una cita municipal para demostrar que puede manejar el tramite sin Marc.",
+          "impide": "El formulario pide un justificatif y Amélie no entiende que documento sirve.",
+          "cuesta": "Pierde la comodidad de dejar que Marc traduzca y acepta quedar como principiante delante de Nadine.",
+          "cambia": "Pregunta ella misma y obtiene una respuesta clara a su nombre.",
+          "emocion": "Siente verguenza porque Marc la mira con ganas de ayudar; baja el movil, respira y pregunta ella."
+        },
+        {
+          "slot": "2",
+          "quiere": "Amélie quiere llevar el dossier correcto para no retrasar el plan de la tarde.",
+          "impide": "Marc anade papeles de mas y Nadine cambia la hora de la cita.",
+          "cuesta": "Pierde una caminata que queria hacer con Marc junto al canal.",
+          "cambia": "Aprende a elegir lo necesario y deja fuera un papel inutil aunque Marc insista.",
+          "emocion": "Se enfada porque la ayuda de Marc la hace sentir pequena; alinea los papeles y le dice que espere."
+        },
+        {
+          "slot": "3",
+          "quiere": "Amélie quiere salir del guichet con una respuesta simple y volver tranquila.",
+          "impide": "El agente encuentra un error minimo en la direccion y Marc propone volver otro dia.",
+          "cuesta": "Pierde el tren comodo y paga mas por terminar el tramite ella misma.",
+          "cambia": "Corrige la linea, firma y acepta el coste de terminar sin esconderse.",
+          "emocion": "Le tiembla la mano al escribir porque teme fallar otra vez; mira a Marc, sonríe poco y corrige la linea."
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
+  },
+  "cmtwz1iop000l32jybeo2jg4x#plans-and-timing": {
+    "cerrado": "2026-09-12T08:35:07.899Z",
+    "hash": "c9af735fd08dfb6f",
+    "historias": [
+      "plans-and-timing#0 le-mardi-choisi",
+      "plans-and-timing#1 l-appel-court",
+      "plans-and-timing#2 avant-le-retour"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"planes de grupo con tension afectiva ligera y decisiones pequenas\", espina \"Amelie aprende a decir que dia, que retraso y que cambio necesita sin esconderse detras de Marc.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 92% (solo avisa)",
+      "acotacion dominante bajo tope (\"répond\" 29%)",
+      "arranques de parrafo variados (mas repetido \"olivier\", 13%)",
+      "densidad 8.0 palabras por oracion (techo 11 en a1)",
+      "seguidilla 18/46 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.23 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 46/61 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: plans-and-timing (Amélie, Olivier, Marc) · presentados tarde: Marc (aparece en la 2a de plans-and-timing)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "france",
+      "registro": "planes de grupo con tension afectiva ligera y decisiones pequenas",
+      "espina": "Amelie aprende a decir que dia, que retraso y que cambio necesita sin esconderse detras de Marc.",
+      "recursos": "calendario social, llamada breve, regla compartida, frases directas A1",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "elegir un dia para cenar con el grupo",
+          "impide": "cada opcion rompe una promesa pequena",
+          "cuesta": "pierde una tarde libre",
+          "cambia": "elige martes sin venderlo como perfecto",
+          "emocion": "tension en la nuca, alivio cuando Olivier no exige explicacion"
+        },
+        {
+          "slot": "2",
+          "quiere": "llegar a tiempo a una reunion de amigos",
+          "impide": "el metro se para",
+          "cuesta": "pierde la primera impresion tranquila",
+          "cambia": "llama ella misma y entra tarde sin esconderse",
+          "emocion": "calor en la mejilla, gesto de guardar el telefono"
+        },
+        {
+          "slot": "3",
+          "quiere": "cerrar un plan antes del regreso de Olivier",
+          "impide": "Marc cambia una hora demasiado tarde",
+          "cuesta": "pierde el plan facil",
+          "cambia": "pone una regla: los cambios se dicen antes",
+          "emocion": "ganas de protestar contenidas, mano que detiene la salida"
+        }
+      ]
+    }
+  },
+  "cmtwz1iop000l32jybeo2jg4x#seats-and-tables": {
+    "cerrado": "2026-09-12T08:37:20.060Z",
+    "hash": "7d531b72b47b3dae",
+    "historias": [
+      "seats-and-tables#0 la-boite-du-hall",
+      "seats-and-tables#1 la-chaise-du-jeudi",
+      "seats-and-tables#2 une-carte-calme"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"pertenencia social cotidiana, con gestos pequenos en espacios compartidos\", espina \"Amelie deja de ser la invitada de Marc y empieza a ocupar un lugar propio en la mesa.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"la\", 20%)",
+      "densidad 7.7 palabras por oracion (techo 11 en a1)",
+      "seguidilla 14/46 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.07 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 57/61 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "france",
+      "registro": "pertenencia social cotidiana, con gestos pequenos en espacios compartidos",
+      "espina": "Amelie deja de ser la invitada de Marc y empieza a ocupar un lugar propio en la mesa.",
+      "recursos": "hall, silla, tarjeta, objetos concretos de grupo, frases breves de limite",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "dejar una nota en el hall para encontrar al grupo",
+          "impide": "Marc quiere colocarla por ella",
+          "cuesta": "pierde la comodidad de esconderse detras de Marc",
+          "cambia": "escribe ella la nota bajo el cuatro",
+          "emocion": "mano lenta antes del trazo, alivio cuando nadie habla por ella"
+        },
+        {
+          "slot": "2",
+          "quiere": "sentarse en una mesa donde no conoce a todos",
+          "impide": "la silla guardada la hace sentirse observada",
+          "cuesta": "renuncia a irse al parque",
+          "cambia": "hace una pregunta en voz alta y se queda",
+          "emocion": "toca la madera para calmarse, luego acepta la place"
+        },
+        {
+          "slot": "3",
+          "quiere": "caminar con Marc sin que el nombre del lugar pese demasiado",
+          "impide": "Marc usa una palabra grande demasiado pronto",
+          "cuesta": "corrige a un amigo que quiere cuidarla",
+          "cambia": "elige una palabra mas pequena: carte calme",
+          "emocion": "garganta cerrada, mano sobre la carte"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
+  },
+  "cmtwz1iop000l32jybeo2jg4x#settling-and-belonging": {
+    "cerrado": "2026-09-11T15:59:31.477Z",
+    "hash": "8e319f757cb2558f",
+    "historias": [
+      "settling-and-belonging#0 la-boite-du-hall",
+      "settling-and-belonging#1 la-chaise-du-jeudi",
+      "settling-and-belonging#2 une-carte-calme"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"calmo y domestico, con objetos de edificio, pequenas rutinas y pertenencia que aparece sin anuncio\", espina \"Amélie quiere sentir que Paris tambien puede ser suyo sin convertir cada gesto nuevo en una prueba.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"la\", 20%)",
+      "densidad 7.6 palabras por oracion (techo 11 en a1)",
+      "seguidilla 14/46 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 12 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.07 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 57/61 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "france",
+      "registro": "calmo y domestico, con objetos de edificio, pequenas rutinas y pertenencia que aparece sin anuncio",
+      "espina": "Amélie quiere sentir que Paris tambien puede ser suyo sin convertir cada gesto nuevo en una prueba.",
+      "recursos": "A1 narrado con presente, futur proche minimo, parce que, mais, quand, il faut, pouvoir, vouloir, devoir, preguntas cortas, habla citada en banda 25-35%, una sola ancla sensorial por historia y vocabulario de instalacion usado como accion cotidiana.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Amélie quiere poner su nombre en la boite del edificio sin pedirle a Marc que lo haga.",
+          "impide": "Inès le muestra una regla informal del hall que Amélie no conocia.",
+          "cuesta": "Pierde la comodidad de quedar de paso y acepta que una vecina ya la vea como parte del lugar.",
+          "cambia": "Escribe su nombre pequeno y acepta usar el mismo codigo que los vecinos.",
+          "emocion": "Siente calor en la cara porque el nombre parece definitivo; mira la etiqueta, pega el papel y no lo arranca."
+        },
+        {
+          "slot": "2",
+          "quiere": "Amélie quiere adoptar una rutina simple de jueves para no depender siempre de invitaciones.",
+          "impide": "La silla que Inès le guarda esta en medio de un grupo que ya tiene costumbres.",
+          "cuesta": "Pierde la salida facil de mirar desde fuera y debe quedarse aunque no sepa cuando hablar.",
+          "cambia": "Hace una pregunta breve, espera su turno y vuelve la semana siguiente.",
+          "emocion": "Se tensa porque todos parecen conocer el ritmo; toca el borde de la silla y levanta la vista."
+        },
+        {
+          "slot": "3",
+          "quiere": "Amélie quiere decir que el barrio empieza a sentirse suyo sin sonar exagerada.",
+          "impide": "Marc usa la palabra casa demasiado pronto y ella se cierra.",
+          "cuesta": "Pierde una tarde tranquila con Marc porque necesita nombrar el limite.",
+          "cambia": "Corrige la palabra y propone una version mas pequena: un repere.",
+          "emocion": "Le pesa el pecho porque teme herir a Marc; toca la llave, respira y elige una palabra menos grande."
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
+  },
+  "cmtwz1iop000l32jybeo2jg4x#social-circles-and-introductions": {
+    "cerrado": "2026-09-11T17:00:25.557Z",
+    "hash": "fae2ecdbc206372b",
+    "historias": [
+      "social-circles-and-introductions#0 le-nom-du-cercle",
+      "social-circles-and-introductions#1 la-table-loin",
+      "social-circles-and-introductions#2 le-mercredi-ouvert"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"entrada social concreta, presentaciones breves, pequenas renuncias y un cierre mas abierto que celebratorio\", espina \"Amélie quiere entrar en un circulo nuevo sin usar a Marc como voz prestada ni quedarse pegada a una sola etiqueta.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"répond\" 38%)",
+      "arranques de parrafo variados (mas repetido \"baptiste\", 19%)",
+      "densidad 7.2 palabras por oracion (techo 11 en a1)",
+      "seguidilla 18/49 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 0.95 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 59/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "france",
+      "registro": "entrada social concreta, presentaciones breves, pequenas renuncias y un cierre mas abierto que celebratorio",
+      "espina": "Amélie quiere entrar en un circulo nuevo sin usar a Marc como voz prestada ni quedarse pegada a una sola etiqueta.",
+      "recursos": "A1 narrado con presente, parce que, mais, quand, pouvoir, vouloir, il faut, preguntas cortas, presentaciones con etre para variar la forma, habla citada en banda 25-35%, una ancla sensorial por historia y vocabulario concreto de circulos, ropa, objetos y pequenos gestos sociales.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Amélie quiere presentarse en un cercle de quartier sin sonar como una ficha.",
+          "impide": "Baptiste pide una presentacion corta y Marc esta listo para completarla por ella.",
+          "cuesta": "Pierde la presentacion perfecta que Marc le ofrece.",
+          "cambia": "Elige decir una frase simple y propia, aunque sea menos brillante.",
+          "emocion": "La luz del café cae sobre sa manche y ella mira la chaise libre antes de hablar."
+        },
+        {
+          "slot": "2",
+          "quiere": "Amélie quiere sentarse con dos personas nuevas sin quedar atada a Marc.",
+          "impide": "La mesa conocida esta llena y el asiento libre queda lejos de el.",
+          "cuesta": "Pierde el refugio de la place junto a Marc.",
+          "cambia": "Acepta una place separada y conserva un saludo claro.",
+          "emocion": "Aprieta sa bague, cuenta las tasses y suelta una respiracion pequena."
+        },
+        {
+          "slot": "3",
+          "quiere": "Amélie quiere invitar al grupo a un plan pequeno.",
+          "impide": "El cercle propone otro horario y ella teme parecer dificil.",
+          "cuesta": "Pierde la idea de que entrar significa decir siempre que si.",
+          "cambia": "Propone una alternativa concreta y espera la respuesta sin corregirse.",
+          "emocion": "Guarda la tarjeta, mira la ombre de la porte y deja la frase en la mesa."
+        }
+      ]
+    }
+  },
+  "cmtwz1iop000l32jybeo2jg4x#timing-and-deadlines": {
+    "cerrado": "2026-09-11T15:32:13.887Z",
+    "hash": "851ebe00057dd95c",
+    "historias": [
+      "timing-and-deadlines#0 le-mardi-choisi",
+      "timing-and-deadlines#1 l-appel-court",
+      "timing-and-deadlines#2 avant-le-retour"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"urgente pero sobrio, con relojes, mensajes cortos y una presion adulta que no se resuelve con correr\", espina \"Amélie quiere decidir si la vida nueva de Marc en Paris puede tener un ritmo compartido con ella sin perder su propio calendario en Marseille.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 92% (solo avisa)",
+      "acotacion dominante bajo tope (\"répond\" 29%)",
+      "arranques de parrafo variados (mas repetido \"olivier\", 13%)",
+      "densidad 7.9 palabras por oracion (techo 11 en a1)",
+      "seguidilla 18/46 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.20 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 48/61 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: timing-and-deadlines (Amélie, Olivier, Marc) · presentados tarde: Marc (aparece en la 2a de timing-and-deadlines)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "france",
+      "registro": "urgente pero sobrio, con relojes, mensajes cortos y una presion adulta que no se resuelve con correr",
+      "espina": "Amélie quiere decidir si la vida nueva de Marc en Paris puede tener un ritmo compartido con ella sin perder su propio calendario en Marseille.",
+      "recursos": "A1 narrado con presente, futur proche minimo, parce que, mais, quand, il faut, pouvoir, devoir, vouloir, preguntas de hora y dia, habla citada en banda 25-35%, una sola ancla sensorial por historia y vocabulario de fechas usado como coste real.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Amélie quiere fijar con Olivier una fecha simple para volver a Paris sin que Marc organice todo.",
+          "impide": "Olivier solo tiene dos horarios posibles y ambos rompen algo que Amélie ya prometio en Marseille.",
+          "cuesta": "Pierde la comodidad de decir que el problema es Paris; cancela una tarde libre que esperaba para si misma.",
+          "cambia": "Elige una fecha imperfecta y pide que Marc no la venda como plan bonito.",
+          "emocion": "Siente presion en la nuca porque el calendario parece decidir por ella; dobla el papel, mira la hora y responde claro."
+        },
+        {
+          "slot": "2",
+          "quiere": "Amélie quiere llegar a tiempo a una reunion de barrio para conocer el ritmo de Marc.",
+          "impide": "El metro se retrasa y Marc propone avisar por ella para evitar el mal momento.",
+          "cuesta": "Pierde la primera impresion tranquila que queria dar; entra tarde y todos la ven llegar.",
+          "cambia": "Manda ella misma el mensaje corto y entra sin disculparse diez veces.",
+          "emocion": "Tiene calor porque llegar tarde confirma su miedo de no encajar; guarda el telefono, respira y saluda una sola vez."
+        },
+        {
+          "slot": "3",
+          "quiere": "Amélie quiere cerrar el fin de semana con un plan claro antes de volver a Marseille.",
+          "impide": "Marc cambia una hora para ayudar a Olivier y deja el regreso de Amélie apretado.",
+          "cuesta": "Pierde el tren comodo y acepta una espera mas larga para no convertir el favor en reproche.",
+          "cambia": "Propone una regla simple para futuros viajes: cambiar planes si ambos lo dicen antes.",
+          "emocion": "Le pica la garganta porque quiere protestar y cuidar la amistad a la vez; toca el billete, mira a Marc y negocia sin sonrisa."
+        }
+      ]
+    }
+  },
+  "cmtwz1iop000l32jybeo2jg4x#trust-and-doubts": {
+    "cerrado": "2026-09-12T08:40:21.215Z",
+    "hash": "9f60ee289970ed21",
+    "historias": [
+      "trust-and-doubts#0 le-cahier-ouvert",
+      "trust-and-doubts#1 dix-minutes",
+      "trust-and-doubts#2 la-carte-du-doute"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"confianza entre amigos, con reparaciones pequenas y calma explicita\", espina \"Amelie aprende a pedir seguridad concreta sin entregar su voz ni exigir una promesa enorme.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"marc\", 25%)",
+      "densidad 8.4 palabras por oracion (techo 11 en a1)",
+      "seguidilla 16/46 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.02 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 59/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "france",
+      "registro": "confianza entre amigos, con reparaciones pequenas y calma explicita",
+      "espina": "Amelie aprende a pedir seguridad concreta sin entregar su voz ni exigir una promesa enorme.",
+      "recursos": "cuaderno, espera de diez minutos, tarjeta de duda, gestos fisicos simples",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "enviar una frase al grupo y saber si se entiende",
+          "impide": "Marc quiere corregirlo todo",
+          "cuesta": "renuncia a la version perfecta",
+          "cambia": "pide una comprobacion limitada a Sophie",
+          "emocion": "nervios ante el cahier, alivio al guardar la frase"
+        },
+        {
+          "slot": "2",
+          "quiere": "tener apoyo antes de entrar a hablar",
+          "impide": "Marc ofrece demasiado apoyo",
+          "cuesta": "entra sola despues de diez minutos",
+          "cambia": "pide una ayuda pequena y medible",
+          "emocion": "cuerpo tenso, mano que se abre cuando acepta el limite"
+        },
+        {
+          "slot": "3",
+          "quiere": "nombrar una duda sin romper la amistad",
+          "impide": "la tarjeta hace visible lo que queria callar",
+          "cuesta": "pierde la apariencia de tranquilidad",
+          "cambia": "usa la carte para pedir una respuesta honesta",
+          "emocion": "duda en la mano, calma cuando el grupo no se rompe"
+        }
+      ]
+    }
+  },
+  "cmtwz1iop000l32jybeo2jg4x#trust-and-reassurance": {
+    "cerrado": "2026-09-11T16:32:45.242Z",
+    "hash": "9f60ee289970ed21",
+    "historias": [
+      "trust-and-reassurance#0 le-cahier-ouvert",
+      "trust-and-reassurance#1 dix-minutes",
+      "trust-and-reassurance#2 la-carte-du-doute"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"confianza tranquila, dudas pequenas, apoyo entre adultos y frases claras que no prometen demasiado\", espina \"Amélie quiere pedir seguridad sin convertir a sus amigos en salvavidas ni borrar su propia voz.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"marc\", 25%)",
+      "densidad 8.4 palabras por oracion (techo 11 en a1)",
+      "seguidilla 16/46 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.02 encuentros por plaza (ideal 4, liston de los buenos 1.6) · 59/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en FR no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "france",
+      "registro": "confianza tranquila, dudas pequenas, apoyo entre adultos y frases claras que no prometen demasiado",
+      "espina": "Amélie quiere pedir seguridad sin convertir a sus amigos en salvavidas ni borrar su propia voz.",
+      "recursos": "A1 narrado con presente, futur proche minimo, parce que, mais, quand, il faut, pouvoir, vouloir, devoir, preguntas cortas, habla citada en banda 25-35%, una sola ancla sensorial por historia y vocabulario concreto de estudio, cuerpo y ciudad.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Amélie quiere comprobar un mensaje dificil sin que Marc lo corrija entero.",
+          "impide": "Sophie le ofrece ayuda muy directa y Amélie teme desaparecer de la frase.",
+          "cuesta": "Pierde la seguridad de una version perfecta y conserva una frase imperfecta suya.",
+          "cambia": "Pide una confirmacion limitada: solo si se entiende.",
+          "emocion": "Siente la mano tensa sobre el cahier, mira la luz de la mesa y sostiene la pregunta."
+        },
+        {
+          "slot": "2",
+          "quiere": "Amélie quiere confiar en que Marc la espere sin pedir una promesa grande.",
+          "impide": "Marc ofrece quedarse todo el dia y eso vuelve la ayuda demasiado pesada.",
+          "cuesta": "Pierde la fantasia de apoyo total y acepta una ayuda mas pequena.",
+          "cambia": "Pide que la espere diez minutos, no que cargue con toda la tarde.",
+          "emocion": "Se le aprieta el pecho, pero habla antes de asentir por miedo."
+        },
+        {
+          "slot": "3",
+          "quiere": "Amélie quiere decir una duda delante de Sophie y Mathieu.",
+          "impide": "La sala esta amable, pero todos parecen seguros y ella no.",
+          "cuesta": "Pierde la imagen de alumna facil y acepta necesitar repeticion.",
+          "cambia": "Pide una segunda explicacion sin pedir perdon.",
+          "emocion": "Nota la luz blanca en los papeles y deja de esconder el cahier."
+        }
+      ]
+    }
+  },
+  "cmu0doigc0007j8e292tycths#advice-and-opinions": {
+    "cerrado": "2026-09-14T06:56:06.601Z",
+    "hash": "e1622b6bbcca4ce0",
+    "historias": [
+      "advice-and-opinions#0 des-conseils-pas-demandes",
+      "advice-and-opinions#1 une-vitrine-trop-chic",
+      "advice-and-opinions#2 le-compteur-ne-ment-pas"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"sobremesa familiar con consejos no pedidos: el hermano mayor que opina de todo y el menor que aprieta los dientes\", espina \"Aurelien y Elodie abren un taller de bicicletas en Fives y su amistad se pone a prueba como socios. Este tema es el mundo de fuera opinando: el hermano de Aurelien, entre la ayuda y el control.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"lui\" 33%)",
+      "arranques de parrafo variados (mas repetido \"aurélien\", 19%)",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.00 sobre 48 plazas · 47 salen una sola vez | ancladas: 12/60 (20%) | cola: 47/48 portables con un solo encuentro (98%, tope 80%) | de un solo encuentro: mijotait, grand frère, sûr de lui, À ta place, serré les dents, conseils, se mêlait de, coupait la parole, Il vaut mieux, crois-moi, devenu tout rouge, blessé, orgueil, claquer la porte, se réconcilier, en voulait à, têtu, comme si de rien n'était, avait du flair, abordable, grelottaient, passants, chics, sans discuter, convaincu, la veille, n'y connaît rien, tranché, la moutarde lui monter au nez, respiré…",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en FR. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "b1",
+      "variante": "france",
+      "registro": "sobremesa familiar con consejos no pedidos: el hermano mayor que opina de todo y el menor que aprieta los dientes",
+      "espina": "Aurelien y Elodie abren un taller de bicicletas en Fives y su amistad se pone a prueba como socios. Este tema es el mundo de fuera opinando: el hermano de Aurelien, entre la ayuda y el control.",
+      "recursos": "B1: narrador en passe compose e imparfait con plus-que-parfait; conditionnel de consejo (a ta place, je garderais) y de cortesia (je voudrais ton avis); subjonctif tras vouloir que / il faut que; discours indirect con concordancia (Elodie lui avait dit que les gens ne reparaient pas); reversa cosida (la moutarde lui monte au nez pero respira porque su hermano quiere ayudar); cambio de ritmo; espejo concreto (la tarte au sucre sin tocar el domingo y el trozo envuelto en papel alu al final).",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Aurelien quiere que su hermano mayor se alegre por el proyecto del taller en la comida del domingo.",
+          "impide": "Guillaume le da consejos que nadie ha pedido y le corta la palabra, y Aurelien le ha ocultado que ya dimitio.",
+          "cuesta": "Pierde el domingo en paz con su hermano: se va antes del cafe sin reconciliarse.",
+          "cambia": "Descubre que no busca la aprobacion de Guillaume, pero que callarle la dimision tambien fue terquedad suya.",
+          "emocion": "Rabia contenida porque su hermano no escucha; aprieta los dientes, mira la tarta y suelta la verdad de golpe."
+        },
+        {
+          "slot": "2",
+          "quiere": "Aurelien quiere aprovechar el olfato de su hermano para el local sin dejarle decidir por el.",
+          "impide": "Guillaume insiste en un local caro y bien situado en el Vieux-Lille, y desprecia la opinion de Elodie.",
+          "cuesta": "Rechaza la oferta del Vieux-Lille, que se lleva un florista, y Guillaume deja de llamarlo una semana.",
+          "cambia": "Elige Fives por los clientes que necesitan bicis que funcionen, y defiende en voz alta a su socia.",
+          "emocion": "Enfado que se le sube a la nariz, pero respira despacio porque su hermano quiere ayudarle."
+        },
+        {
+          "slot": "3",
+          "quiere": "Aurelien quiere una opinion franca sobre el local de Fives, no un acuerdo.",
+          "impide": "Le cuesta reconocer que su hermano puede tener razon, y Guillaume encuentra la instalacion electrica fuera de norma.",
+          "cuesta": "La apertura se retrasa un mes y tiene que tragarse el orgullo delante de Guillaume.",
+          "cambia": "Admite que su hermano tenia razon, y los dos hacen las paces con el numero de un electricista y un trozo de tarta.",
+          "emocion": "Orgullo herido: tiene ganas de decir que Guillaume exagera, pero los cables ennegrecidos no mienten, y lo admite con la voz baja."
+        }
+      ]
+    }
+  },
+  "cmu0doigc0007j8e292tycths#careers-and-ambitions": {
+    "cerrado": "2026-09-14T06:53:39.605Z",
+    "hash": "94d5b317807f7b3b",
+    "historias": [
+      "careers-and-ambitions#0 la-tournee-jamais-offerte",
+      "careers-and-ambitions#1 reponse-avant-vendredi",
+      "careers-and-ambitions#2 un-carton-sous-le-bras"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"comedia agridulce de oficina y de estaminet: dos amigos que se dicen las noticias importantes a medias y con una cerveza delante\", espina \"Aurelien y Elodie, amigos desde la fac, deciden abrir juntos un taller de bicicletas en Fives; la pregunta es si su amistad sobrevive a ser socios. Este tema es la decision: el trabajo seguro que Aurelien deja atras.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"a\" 29%)",
+      "arranques de parrafo variados (mas repetido \"aurélien\", 21%)",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.00 sobre 44 plazas · 44 salen una sola vez | ancladas: 16/60 (27%) | cola: 44/44 portables con un solo encuentro (100%, tope 80%) | de un solo encuentro: offrir une tournée, Ce soir-là, la boule au ventre, licencier, Prudent, gardé pour lui, avait du mal à, déplacé, senti coupable, ri jaune, rêvait d', hoché la tête, griffonné, une seule fois, débarqué, calculer, peser le pour et le contre, À force de, me précipiter, tapé, sauter le pas, agaçait, par prudence, poliment, moites, serrait la gorge, ambitieux, dans la minute, soulagé, enregistrer…",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "b1",
+      "variante": "france",
+      "registro": "comedia agridulce de oficina y de estaminet: dos amigos que se dicen las noticias importantes a medias y con una cerveza delante",
+      "espina": "Aurelien y Elodie, amigos desde la fac, deciden abrir juntos un taller de bicicletas en Fives; la pregunta es si su amistad sobrevive a ser socios. Este tema es la decision: el trabajo seguro que Aurelien deja atras.",
+      "recursos": "B1: narrador en passe compose e imparfait con plus-que-parfait; subjonctif tras il faut que / pour que / vouloir que; conditionnel de hipotesis y de futuro en el pasado; discours indirect con concordancia; reversa cosida (querer aceptar por prudencia y decir otra cosa, con el beffroi como gesto); cambio de ritmo; simil simple; espejo concreto (la serviette en papier de la primera noche que vuelve al vaciar la mesa).",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Aurelien quiere celebrar con Elodie en el estaminet que su jefa le ha ofrecido un ascenso.",
+          "impide": "Elodie llega con la noticia de que su tienda cierra en diciembre y la despiden; celebrar a su lado le parece fuera de lugar.",
+          "cuesta": "Se guarda la noticia y pierde para siempre su noche de celebracion: la ronda que queria pagar no la paga nunca.",
+          "cambia": "Medio en broma, garabatea en una servilleta el taller que soñaban en la fac, y vuelve a casa sin pensar en el ascenso.",
+          "emocion": "Culpa por tener una buena noticia junto a la mala de su amiga; asiente, calla y dibuja en la servilleta en vez de hablar."
+        },
+        {
+          "slot": "2",
+          "quiere": "Aurelien quiere estudiar el proyecto con cifras antes de decidir nada.",
+          "impide": "La jefa pide respuesta antes del viernes y Elodie no acepta un quizas: le dice que nadie da el salto estando seguro de todo.",
+          "cuesta": "Rechaza el ascenso, que se lleva un compañero y no volvera.",
+          "cambia": "Pasa de calcular a decidir: cierra la hoja de calculo sin guardarla.",
+          "emocion": "Miedo de prudente: quiere decir que si por seguridad, le sudan las manos, mira el beffroi encendido por la ventana y dice que no."
+        },
+        {
+          "slot": "3",
+          "quiere": "Aurelien quiere irse del cabinet sin drama, discretamente, al final del preaviso.",
+          "impide": "La noticia da la vuelta a la oficina: nadie entiende que deje un CDI a los treinta y cinco, y le montan una despedida incomoda.",
+          "cuesta": "Pierde el sueldo fijo, la mutuelle y la mesa con vista al beffroi.",
+          "cambia": "Elodie lo espera abajo con las llaves del local de Fives, y Aurelien guarda las llaves donde antes llevaba su tarjeta de la oficina.",
+          "emocion": "Verguenza de ser el tema de conversacion; sonrie por educacion y aguanta con la copa en la mano, y la broma de Elodie bajo la lluvia lo alivia."
+        }
+      ]
+    }
+  },
+  "cmu0doigc0007j8e292tycths#dating-and-romance": {
+    "cerrado": "2026-09-14T06:54:39.300Z",
+    "hash": "8450b4c884f5241f",
+    "historias": [
+      "dating-and-romance#0 rendez-vous-sous-la-bourse",
+      "dating-and-romance#1 samedi-deux-promesses",
+      "dating-and-romance#2 une-verite-trop-tard"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"romance torpe y honesto: una cita bajo las luces de la Grand-Place, una excusa de sabado y una verdad a la salida de una guardia\", espina \"Aurelien y Elodie abren un taller de bicicletas en Fives y su amistad se pone a prueba como socios. Este tema es la vida privada de Aurelien chocando con el taller: la mentira sobre quien es ahora.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"lui\" 40%)",
+      "arranques de parrafo variados (mas repetido \"marion\", 19%)",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.00 sobre 47 plazas · 46 salen una sola vez | ancladas: 13/60 (22%) | cola: 46/47 portables con un solo encuentro (98%, tope 80%) | de un solo encuentro: tenait pas en place, tu fais quoi dans la vie, séduisant, menti, nulle en, impressionnée, évité, soigneusement, J'aimerais, ça te dit, trop vite, le cœur léger, sur la conscience, s'est rendu compte, promis, à la fois, inventé, bidon, malade comme un chien, faible, devras, la tête ailleurs, droites, pouce, entouré, Mission accomplie, mon pauvre, délicieux, sans goût, avoué…",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en FR. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "b1",
+      "variante": "france",
+      "registro": "romance torpe y honesto: una cita bajo las luces de la Grand-Place, una excusa de sabado y una verdad a la salida de una guardia",
+      "espina": "Aurelien y Elodie abren un taller de bicicletas en Fives y su amistad se pone a prueba como socios. Este tema es la vida privada de Aurelien chocando con el taller: la mentira sobre quien es ahora.",
+      "recursos": "B1: narrador en passe compose e imparfait con plus-que-parfait; conditionnel de cortesia (j'aimerais te revoir); subjonctif tras il faut que; discours indirect con concordancia (elle lui a explique qu'elle passait ses nuits); reversa cosida (quiere decir la verdad y dice expert-comptable porque un socio sin un euro le parece poco seductor); cambio de ritmo (Il n'a pas insiste.); espejo concreto (la mentira del principio y la llave inglesa que Elodie le tiende al final, sin palabras).",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Aurelien quiere gustarle a Marion en su primera cita en dos años.",
+          "impide": "Cuando ella pregunta a que se dedica, su nueva vida de socio sin dinero le parece poco seductora.",
+          "cuesta": "Miente: dice que es expert-comptable, y la cita empieza con esa mentira.",
+          "cambia": "Marion quiere volver a verlo, y Aurelien se va contento pero con la mentira en la conciencia.",
+          "emocion": "Nervios de primera cita: no se esta quieto; duda un segundo y miente muy seguro de si mismo."
+        },
+        {
+          "slot": "2",
+          "quiere": "Aurelien quiere estar a la vez en la segunda cita con Marion y montando las estanterias del taller con Elodie.",
+          "impide": "Las dos cosas caen el mismo sabado por la noche y no se atreve a elegir de frente.",
+          "cuesta": "Le miente tambien a Elodie, que monta sola las estanterias y se hace daño en el pulgar.",
+          "cambia": "Aurelien entiende que su mentira ya no solo le afecta a el.",
+          "emocion": "Culpa: esta en la cena con la cabeza en otra parte, ve la foto del pulgar vendado y el postre le sabe a nada."
+        },
+        {
+          "slot": "3",
+          "quiere": "Aurelien quiere decirle la verdad a Marion y que ella lo acepte como es.",
+          "impide": "A Marion no le molesta el oficio sino la mentira: pasa las noches con gente que miente y no quiere empezar asi.",
+          "cuesta": "Pierde la relacion con Marion.",
+          "cambia": "Vuelve al taller y se lo cuenta todo a Elodie sin excusas, y ella lo devuelve al trabajo con una llave inglesa.",
+          "emocion": "Nudo en la garganta; asiente sin insistir y cruza Lille en bicicleta bajo la lluvia fina."
+        }
+      ]
+    }
+  },
+  "cmu0doigc0007j8e292tycths#money-and-debts": {
+    "cerrado": "2026-09-14T06:54:09.325Z",
+    "hash": "b5a49e44202ced31",
+    "historias": [
+      "money-and-debts#0 trente-mille-euros",
+      "money-and-debts#1 un-seul-nom-sur-le-contrat",
+      "money-and-debts#2 deux-cents-euros-par-mois"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"tension seca de cifras entre amigos: el banco, el contrato y la hoja escrita a mano, dichos con pocas palabras\", espina \"Aurelien y Elodie abren un taller de bicicletas en Fives y su amistad se pone a prueba como socios. Este tema es el dinero: quien pone que, a nombre de quien, y que queda escrito entre los dos.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"a\" 33%)",
+      "arranques de parrafo variados (mas repetido \"le\", 27%)",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista ?): trente-mille-euros, un-seul-nom-sur-le-contrat, deux-cents-euros-par-mois",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.04 sobre 51 plazas · 49 salen una sola vez | ancladas: 9/60 (15%) | cola: 49/51 portables con un solo encuentro (96%, tope 80%) | de un solo encuentro: faisait pas de cadeaux, emprunter, fauchée, fermeture, pas un sou, mises de côté, longtemps, tout perdre, Le soir même, renoncer au, raccroché, à contrecœur, serré la main, sans rien dire, à un seul nom, le sien, comptait, assuré, signature, les lèvres serrées, Sur le papier, employée, paperasse, justice, négocier, fasse de moi, invitée, tentait, offre, valable…",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en FR. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "b1",
+      "variante": "france",
+      "registro": "tension seca de cifras entre amigos: el banco, el contrato y la hoja escrita a mano, dichos con pocas palabras",
+      "espina": "Aurelien y Elodie abren un taller de bicicletas en Fives y su amistad se pone a prueba como socios. Este tema es el dinero: quien pone que, a nombre de quien, y que queda escrito entre los dos.",
+      "recursos": "B1: narrador en passe compose e imparfait con plus-que-parfait; conditionnel de hipotesis (vous pourriez tout perdre); si + imparfait (et si je les mettais); subjonctif tras pour que / vouloir que; discours indirect (Yasmine a explique que le pret etait accepte); reversa cosida (asiente porque Elodie le mira, y cuelga a regañadientes); cambio de ritmo (Il a raccroche a contrecoeur.); espejo concreto (el contrato sin firmar sobre el banco de trabajo y la reconocimiento de deuda firmada sobre el mismo banco).",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Aurelien quiere que el banco preste el dinero del taller.",
+          "impide": "Falta la aportacion personal y Elodie no tiene ni un euro desde que cerro su tienda.",
+          "cuesta": "Pone los treinta mil euros que ahorraba para un piso de dos habitaciones en Wazemmes y renuncia al piso.",
+          "cambia": "Pasa de guardar por prudencia a jugarse sus ahorros por el proyecto comun.",
+          "emocion": "Nervios de examen ante Yasmine; asiente porque Elodie lo mira, y cuelga el telefono de la agencia a regañadientes."
+        },
+        {
+          "slot": "2",
+          "quiere": "Aurelien quiere firmar el prestamo aunque salga solo a su nombre, porque para el no cambia nada.",
+          "impide": "Elodie se niega a ser la empleada de su amigo en un taller que solo seria de el sobre el papel.",
+          "cuesta": "La oferta del banco caduca el viernes sin firma y el tipo de interes sube.",
+          "cambia": "Aurelien entiende que para Elodie el papel es una cuestion de justicia, no de tramites.",
+          "emocion": "Elodie herida en su lugar: lee el contrato dos veces con los labios apretados y se va dando un portazo con las llaves en el bolsillo."
+        },
+        {
+          "slot": "3",
+          "quiere": "Aurelien quiere que los dos pongan lo mismo, sin que nada cambie entre ellos.",
+          "impide": "Elodie acepta el prestamo de su amigo solo con un reconocimiento de deuda firmado y fechado.",
+          "cuesta": "Entre los dos amigos hay por primera vez una cuenta escrita, y el banco firma con un tipo peor.",
+          "cambia": "El taller queda a nombre de los dos, y la amistad aprende a convivir con un papel.",
+          "emocion": "Aurelien se siente desconfiado cuando es al reves; protesta, pero Elodie firma primero con letra aplicada y guarda el boligrafo como si nada."
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
+  },
+  "cmu0doigc0007j8e292tycths#pride-and-envy": {
+    "cerrado": "2026-09-14T06:55:01.766Z",
+    "hash": "767e3cec1d4ba4d0",
+    "historias": [
+      "pride-and-envy#0 une-photo-pour-le-journal",
+      "pride-and-envy#1 son-nom-n-y-est-pas",
+      "pride-and-envy#2 derriere-la-cloison"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"orgullo herido y reparacion: una foto de periodico, un nombre que falta y un gesto sin discurso\", espina \"Aurelien y Elodie abren un taller de bicicletas en Fives y su amistad se pone a prueba como socios. Este tema cierra la pregunta del journey: quien se lleva el merito, y que esta dispuesto a ceder Aurelien para que la amistad siga siendo de dos.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"un\", 13%)",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.00 sobre 50 plazas · 49 salen una sola vez | ancladas: 10/60 (17%) | cola: 49/50 portables con un solo encuentro (98%, tope 80%) | de un solo encuentro: camarade, cherchait une belle histoire, plaque, lecteurs, s'est enthousiasmée, s'adressait, tenait la vedette, Flatté, sans s'arrêter, changeait un pneu, restée en retrait, tu es un amour, ajoutait, à peine, fier comme un paon, occupait, devinait, apparaissait, nulle part, content de toi, plus rien, adresser la parole, Furieux, autant que, le mien, faisait la une, mon vieux, s'est souvenu de, se donner de l'importance, la honte aux joues…",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en FR. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "b1",
+      "variante": "france",
+      "registro": "orgullo herido y reparacion: una foto de periodico, un nombre que falta y un gesto sin discurso",
+      "espina": "Aurelien y Elodie abren un taller de bicicletas en Fives y su amistad se pone a prueba como socios. Este tema cierra la pregunta del journey: quien se lleva el merito, y que esta dispuesto a ceder Aurelien para que la amistad siga siendo de dos.",
+      "recursos": "B1: narrador en passe compose e imparfait con plus-que-parfait; conditionnel (ce serait plus joli, une note que personne ne lirait); subjonctif tras il faut que (il faut que les gens sachent); discours indirect con concordancia (c'est toi qui m'as dit que l'idee etait de toi); reversa cosida (Aurelien quiere culpar a la periodista y recuerda que la frase fue suya); simil (comme si elle voulait l'etrangler); espejo concreto (Elodie floue al fondo de la foto y Elodie en el mostrador al final, con Aurelien detras del tabique).",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Aurelien quiere que el articulo sobre el taller cuente su historia de contable que lo dejo todo.",
+          "impide": "Charlotte solo le pregunta a el, y a Elodie la pone detras para la foto sin pedirle su opinion.",
+          "cuesta": "Elodie queda borrosa al fondo del retrato de su propio taller.",
+          "cambia": "Aurelien disfruta de ser la estrella y no ve lo que se esta perdiendo al lado.",
+          "emocion": "Vanidad de Aurelien, orgulloso como un pavo real; Elodie asiente con los labios apretados y se queda atras."
+        },
+        {
+          "slot": "2",
+          "quiere": "Aurelien quiere que la periodista reconozca su error y ponga el nombre de Elodie.",
+          "impide": "Charlotte no deformo nada: fue Aurelien quien dijo que la idea era suya, para darse importancia.",
+          "cuesta": "Elodie, herida en su orgullo, pasa la tarde sin dirigirle la palabra.",
+          "cambia": "Aurelien descubre que el error es suyo y no del periodico.",
+          "emocion": "Furia que se vuelve verguenza: cuelga con las mejillas rojas mientras Elodie retuerce una camara de aire."
+        },
+        {
+          "slot": "3",
+          "quiere": "Aurelien quiere reparar el daño sin grandes palabras.",
+          "impide": "El periodico no publica rectificacion, y Elodie desconfia de un gesto hecho por lastima.",
+          "cuesta": "Cede a Elodie la gerencia y el mostrador y se queda con las cuentas en la trastienda: pierde el escaparate y los elogios que empezaban a gustarle.",
+          "cambia": "El nombre de Elodie va primero en el papel, y el primer cliente pregunta por la mecanica.",
+          "emocion": "Nervios contenidos al darle la hoja; ella lo mira con los brazos cruzados, y al oir al cliente Aurelien sonrie detras del tabique."
+        }
+      ]
+    }
+  },
+  "cmu0doigc0007j8e292tycths#rumours-and-reputation": {
+    "cerrado": "2026-09-14T06:54:24.368Z",
+    "hash": "3e104a4224ba1a9d",
+    "historias": [
+      "rumours-and-reputation#0 ce-qu-on-raconte-a-fives",
+      "rumours-and-reputation#1 une-blague-mal-repetee",
+      "rumours-and-reputation#2 des-comptes-bien-tenus"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"comedia de barrio, el telefono roto: lo que se cuenta en la barra del estaminet cambia de boca en boca\", espina \"Aurelien y Elodie abren un taller de bicicletas en Fives y su amistad se pone a prueba como socios. Este tema es la reputacion: lo que el barrio dice de ellos antes de abrir, y lo que cuesta desmentirlo.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"a\" 33%)",
+      "arranques de parrafo variados (mas repetido \"aurélien\", 20%)",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista ?): ce-qu-on-raconte-a-fives, une-blague-mal-repetee, des-comptes-bien-tenus",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.02 sobre 49 plazas · 47 salen una sola vez | ancladas: 11/60 (18%) | cola: 47/49 portables con un solo encuentro (96%, tope 80%) | de un solo encuentro: Ce matin-là, d'un drôle d'air, paraît-il, à voix basse, failli, renverser, démenti, méfiant, C'est ce qu'ils disent tous, Plus Aurélien se justifiait, plus, se justifiait, louche, brûlante, annulé, réparation, relu, mené l'enquête, de comptoir en comptoir, tenait l'histoire de, rougi, interrogée, associé, prend pour, incapable, s'est mordu la lèvre, déformé, réputation, t'en fiches, répliqué, séché…",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en FR. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "b1",
+      "variante": "france",
+      "registro": "comedia de barrio, el telefono roto: lo que se cuenta en la barra del estaminet cambia de boca en boca",
+      "espina": "Aurelien y Elodie abren un taller de bicicletas en Fives y su amistad se pone a prueba como socios. Este tema es la reputacion: lo que el barrio dice de ellos antes de abrir, y lo que cuesta desmentirlo.",
+      "recursos": "B1: narrador en passe compose e imparfait con plus-que-parfait; plus... plus; subjonctif tras il faut que / pour que; conditionnel (je ne voudrais jamais te faire du mal); discours indirect con concordancia (Florian lui a raconte qu'il tenait l'histoire de la boulangere); reversa cosida (quiere desmentir con calma y cuanto mas explica peor suena); cambio de ritmo (Quelqu'un avait parle, mais qui?); espejo concreto (el rumor que sufre Aurelien vuelve contra Florian y el lo desmiente con cifras).",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Aurelien quiere desmentir con calma el rumor de que lo echaron del cabinet por un error en las cuentas.",
+          "impide": "Florian, el patron del estaminet, repite lo que oye, y cuanto mas se justifica Aurelien, mas sospechoso parece.",
+          "cuesta": "Dos antiguos compañeros, sus primeros clientes, cancelan su reparacion.",
+          "cambia": "Aurelien entiende que el barrio ya tiene una version de el y que alguien la ha empezado.",
+          "emocion": "Estupor e impotencia: casi tira la taza, relee el mensaje mucho rato y se pregunta quien hablo."
+        },
+        {
+          "slot": "2",
+          "quiere": "Aurelien quiere saber quien empezo el rumor.",
+          "impide": "La historia ha pasado por la boulangere, un cliente y la camarera, y al final del hilo esta una broma de Elodie mal repetida.",
+          "cuesta": "La discusion les cuesta la noche de pintar juntos: la pared se queda a medias y mal seca.",
+          "cambia": "Aurelien descubre que su socia tambien habla de el, y que su reputacion ya no es solo suya.",
+          "emocion": "Herido en su orgullo; grita con el pincel dejado sobre la mesa, y Elodie se muerde el labio porque sabe que la frase era suya."
+        },
+        {
+          "slot": "3",
+          "quiere": "Aurelien quiere salvar el estaminet de Florian de un rumor de quiebra.",
+          "impide": "Los numeros no bastan para convencer al barrio; para que le crean tiene que hablar de si mismo.",
+          "cuesta": "Admite delante de los habituales que dejo su trabajo por miedo a fracasar, y pierde su imagen de hombre seguro.",
+          "cambia": "El barrio vuelve al estaminet y al taller, y la verdad de Aurelien pesa mas que el rumor.",
+          "emocion": "Miedo a hablar en voz alta; lo dice con un nudo en el estomago, hay un silencio, y alguien pide una cerveza."
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
+  },
+  "cmu0doigc0007j8e292tycths#stress-and-burnout": {
+    "cerrado": "2026-09-14T06:54:54.323Z",
+    "hash": "15e9df839de0be12",
+    "historias": [
+      "stress-and-burnout#0 des-mains-qui-tremblent",
+      "stress-and-burnout#1 endormie-contre-l-etabli",
+      "stress-and-burnout#2 cinq-cents-prospectus"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"agotamiento contenido, sin melodrama: manos que tiemblan, noches en blanco y una lista de reglas escrita por dos personas cansadas\", espina \"Aurelien y Elodie abren un taller de bicicletas en Fives y su amistad se pone a prueba como socios. Este tema es el precio del cuerpo: la fecha de la Braderie contra el cansancio de los dos.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"mentait\" 20%)",
+      "arranques de parrafo variados (mas repetido \"ils\", 13%)",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista ?): des-mains-qui-tremblent, endormie-contre-l-etabli, cinq-cents-prospectus",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.04 sobre 49 plazas · 47 salen una sola vez | ancladas: 11/60 (18%) | cola: 47/49 portables con un solo encuentro (96%, tope 80%) | de un solo encuentro: sentait, sueur, réglait, tremblaient, reposera, en souriant, À ce rythme, craquer, ralentir, Pourtant, s'en passer, rallumé, endormie debout, appuyée, au pas de course, examinée, l'air grave, pâle comme un linge, juré, tout seul, nuits blanches, de suite, roues, à bout de forces, fait le calcul, impossible, reviendrait, dans un an, promis, osait…",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en FR. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "b1",
+      "variante": "france",
+      "registro": "agotamiento contenido, sin melodrama: manos que tiemblan, noches en blanco y una lista de reglas escrita por dos personas cansadas",
+      "espina": "Aurelien y Elodie abren un taller de bicicletas en Fives y su amistad se pone a prueba como socios. Este tema es el precio del cuerpo: la fecha de la Braderie contra el cansancio de los dos.",
+      "recursos": "B1: narrador en passe compose e imparfait con plus-que-parfait; subjonctif tras il faut que (il faut que vous dormiez); conditionnel de futuro en el pasado (la Braderie ne reviendrait que dans un an); discours indirect con concordancia (Elodie lui a repete qu'on ne gagnait rien); reversa cosida (Aurelien quiere decirle que pare y calla porque la fecha tambien le importa); cambio de ritmo (Puis il a fait le calcul: impossible.); espejo concreto (el medico ve temblar las manos de Elodie y despues Elodie ve las manos humedas de Aurelien).",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Aurelien y Elodie quieren abrir el taller el fin de semana de la Braderie, trabajando catorce horas al dia.",
+          "impide": "Quentin, el primer cliente y medico del barrio, ve que a Elodie le tiemblan las manos y le avisa de que va a reventar.",
+          "cuesta": "Elodie miente sobre su cansancio y Aurelien calla, y pierden la ocasion de parar a tiempo.",
+          "cambia": "El aviso queda dicho delante de los dos, aunque ninguno lo quiera escuchar todavia.",
+          "emocion": "Negacion: Elodie sonrie con ojeras mientras miente, y Aurelien vuelve a encender la lijadora para no hablar."
+        },
+        {
+          "slot": "2",
+          "quiere": "Aurelien quiere mantener la fecha de la Braderie haciendolo todo solo mientras Elodie esta de baja.",
+          "impide": "Elodie se duerme de pie, Quentin le da una semana de baja, y el trabajo pendiente no cabe en las noches de un solo hombre.",
+          "cuesta": "Pierden la inauguracion en la Braderie, que no vuelve hasta dentro de un año.",
+          "cambia": "Aurelien hace la cuenta y acepta que es imposible: aplaza la apertura.",
+          "emocion": "Obstinacion y derrota: tres noches en blanco, y la cuarta, sin fuerzas, relee la lista de espera y deja de fingir."
+        },
+        {
+          "slot": "3",
+          "quiere": "Aurelien quiere seguir pareciendo capaz de todo delante de Elodie.",
+          "impide": "Elodie vuelve antes y lo encuentra sentado en el suelo, con vertigos y las manos humedas.",
+          "cuesta": "Tiran los quinientos folletos con la fecha de la Braderie y Aurelien se traga el orgullo de hacerlo todo solo.",
+          "cambia": "Escriben juntos sus reglas (domingo cerrado, el derecho a decir basta) y abren un martes cualquiera.",
+          "emocion": "Verguenza que se afloja: niega con la cabeza, luego se traga el orgullo y dice que no puede mas."
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
+  },
+  "cmu0dpa3i0007j80ugstn0jf0#birthdays-and-wishes": {
+    "cerrado": "2026-09-14T06:50:55.142Z",
+    "hash": "10e219ed42136274",
+    "historias": [
+      "birthdays-and-wishes#0 una-torta-per-dodici",
+      "birthdays-and-wishes#1 e-solo-uno-scherzo",
+      "birthdays-and-wishes#2 il-traghetto-delle-sei"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"tierno y torpe: una fiesta que sale pequeña y una broma que a una de los dos no le hace gracia\", espina \"Alice y Matteo firmaron en la universidad un pacto en una servilleta (si a los 35 siguen solos, se casan); Matteo cumple 35 y lo recuerda riendo, y para Alice no es broma. Cada tema, el silencio de Alice le cuesta algo, hasta que en el tema 7 se lo dice.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"alice\", 29%)",
+      "densidad 5.1 palabras por oracion (techo 9 en a0)",
+      "seguidilla 28/65 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.18 sobre 57 plazas · 49 salen una sola vez | ancladas: 7/64 (11%) | cola: 49/57 portables con un solo encuentro (86%, tope 30%) | de un solo encuentro: Oggi, porta, migliore amico, Lavora, viene, triste, vuoti, diventa rossa, Mi dispiace, si siede, ho fame, tanti auguri, accese, spegne, vecchio, Sopra, legge ad alta voce, ci sposiamo, batte forte, scherzo, nasconde, quasi, guarda, troppo, Certo, tieni, sempre, perdo, pesa, buie…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: birthdays-and-wishes (Matteo, Alice)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "italy",
+      "registro": "tierno y torpe: una fiesta que sale pequeña y una broma que a una de los dos no le hace gracia",
+      "espina": "Alice y Matteo firmaron en la universidad un pacto en una servilleta (si a los 35 siguen solos, se casan); Matteo cumple 35 y lo recuerda riendo, y para Alice no es broma. Cada tema, el silencio de Alice le cuesta algo, hasta que en el tema 7 se lo dice.",
+      "recursos": "A0: repeticion ritmica (Un amico non viene. Poi un altro, e poi tutti.), contraste con ma, imagen concreta final (la tasca pesa, el cajon cerrado). Titulos: objeto torcido, linea dicha, regionalismo (el ferry de las seis de Genova).",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "dar a Matteo una fiesta sorpresa de 35 en la terraza, con doce amigos",
+          "impide": "los amigos cancelan uno a uno por telefono antes de las ocho",
+          "cuesta": "la fiesta que imagino: una tarta para doce y doce platos vacios",
+          "cambia": "la fiesta es solo de los dos y a Matteo le basta; Alice rie",
+          "emocion": "tristeza: triste porque la fiesta ya no existe, y aprieta el telefono"
+        },
+        {
+          "slot": "1",
+          "quiere": "que la noche siga siendo una broma entre amigos",
+          "impide": "Matteo saca del portafoglio la servilleta del pacto y la lee en voz alta",
+          "cuesta": "miente: dice que es solo una broma y se rie demasiado fuerte",
+          "cambia": "Matteo le da la servilleta para que la guarde; ahora la lleva ella",
+          "emocion": "panico: el corazon le late fuerte porque para ella no es broma, y esconde la cara detras del vaso"
+        },
+        {
+          "slot": "2",
+          "quiere": "decirle la verdad a Matteo en la escalera antes de que salga el ferry de las seis",
+          "impide": "el miedo y el taxi que pita en el vicolo; Matteo llega tarde",
+          "cuesta": "la ocasion: solo le dice buen viaje y el se va una semana a Cerdena",
+          "cambia": "guarda la servilleta en un cajon y lo cierra: decide callar",
+          "emocion": "miedo: tiene miedo porque es su amigo, y aprieta la servilleta en el bolsillo"
+        }
+      ]
+    }
+  },
+  "cmu0dpa3i0007j80ugstn0jf0#cooking-and-recipes": {
+    "cerrado": "2026-09-14T06:53:38.717Z",
+    "hash": "dc94d0a0db4092bf",
+    "historias": [
+      "cooking-and-recipes#0 il-pesto-vuole-pazienza",
+      "cooking-and-recipes#1 un-mortaio-in-due-pezzi",
+      "cooking-and-recipes#2 trofie-per-due"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"sensorial y domestico: olor a pan y albahaca, y una pequena catastrofe en la cocina\", espina \"El pacto de la servilleta: Alice calla lo que siente por Matteo; aqui quiere cuidarlo haciendole su pesto, y rompe el mortero de su familia.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"matteo\", 24%)",
+      "densidad 5.9 palabras por oracion (techo 9 en a0)",
+      "seguidilla 31/63 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.13 sobre 32 plazas · 29 salen una sola vez | ancladas: 28/60 (47%) | cola: 29/32 portables con un solo encuentro (91%, tope 30%) | de un solo encuentro: Va bene, pazienza, insegno, vuole fare, agitata, Ha sonno, serve, bel, molto, diventa, ricomincia, dolce, pronto, assaggia, lava, stanco, Che profumo, lentamente, chiude gli occhi, buono, accanto, a lungo, sospira, Non importa, asciuga, lacrima, appetito, appena, riempie; pasan del 30%",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: cooking-and-recipes (Alice, Lorenzo)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "italy",
+      "registro": "sensorial y domestico: olor a pan y albahaca, y una pequena catastrofe en la cocina",
+      "espina": "El pacto de la servilleta: Alice calla lo que siente por Matteo; aqui quiere cuidarlo haciendole su pesto, y rompe el mortero de su familia.",
+      "recursos": "A0: repeticion (Piano, in cerchio), contraste con ma (Non importa, ma i suoi occhi sono tristi), imagen concreta final (dos macetas hechas con el mortero roto). Titulos: linea dicha (Il pesto vuole pazienza), objeto torcido (Un mortaio in due pezzi), 'para X' con regionalismo (Trofie per due).",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "hacerle a Matteo su pesto de los domingos por primera vez",
+          "impide": "no sabe hacerlo y solo tiene una planta de albahaca pequena",
+          "cuesta": "su domingo libre: trabaja una hora en el mostrador de la focacceria a cambio de la leccion",
+          "cambia": "Lorenzo le dara la albahaca y le ensenara",
+          "emocion": "agitacion: esta agitada porque Matteo llega a las dos, y sujeta la maceta con las dos manos"
+        },
+        {
+          "slot": "1",
+          "quiere": "que el pesto le salga bien en el mortero de Matteo",
+          "impide": "machaca demasiado fuerte y la albahaca se pone negra",
+          "cuesta": "el mortero de marmol de la familia de Matteo se le resbala y se rompe en dos",
+          "cambia": "el pesto esta listo, pero el mortero ya no existe",
+          "emocion": "panico: tiene las manos frias porque es el mortero de Matteo, y grita que no"
+        },
+        {
+          "slot": "2",
+          "quiere": "que Matteo disfrute la comida y confesarle lo del mortero",
+          "impide": "el pesto le encanta y ella tiene que romperle el momento con los dos pedazos",
+          "cuesta": "el mortero de su familia, que no vuelve; Matteo dice que no importa, pero sus ojos estan tristes",
+          "cambia": "Matteo convierte los pedazos en dos macetas, una para cada uno",
+          "emocion": "culpa: tiene el estomago cerrado porque el mortero esta roto, y se seca una lagrima"
+        }
+      ]
+    }
+  },
+  "cmu0dpa3i0007j80ugstn0jf0#dating-and-first-impressions": {
+    "cerrado": "2026-09-14T06:51:10.634Z",
+    "hash": "a1630834c3bc8a0c",
+    "historias": [
+      "dating-and-first-impressions#0 scrivi-tu-per-favore",
+      "dating-and-first-impressions#1 due-spritz-in-terrazza",
+      "dating-and-first-impressions#2 i-fiori-sbagliati"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"comedia ligera con celos callados: Alice ayuda con gracia a que Matteo quede con otra\", espina \"El pacto de la servilleta: Alice calla lo que siente por Matteo; en este tema sus palabras y su terraza sirven para la cita de Matteo con otra, y aun asi Francesca ve lo que Matteo no ve.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"matteo\", 20%)",
+      "densidad 5.9 palabras por oracion (techo 9 en a0)",
+      "seguidilla 25/55 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.10 sobre 50 plazas · 46 salen una sola vez | ancladas: 11/61 (18%) | cola: 46/50 portables con un solo encuentro (92%, tope 30%) | de un solo encuentro: sale, quinto, mostra, Studia, Stasera, scrivere, messaggio, carina, dentro, felice, Così, brava, Ci vediamo, più bello, abbraccia, allegro, usa, sparire, arriva, incontra, vero, parla, dietro, abito, gentile, dopo, simpatica, cerca, trova, solo…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: dating-and-first-impressions (Matteo, Alice, Francesca)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "italy",
+      "registro": "comedia ligera con celos callados: Alice ayuda con gracia a que Matteo quede con otra",
+      "espina": "El pacto de la servilleta: Alice calla lo que siente por Matteo; en este tema sus palabras y su terraza sirven para la cita de Matteo con otra, y aun asi Francesca ve lo que Matteo no ve.",
+      "recursos": "A0: contraste con ma (Sono le sue parole, ma adesso vanno a Francesca), repeticion (Solo amici), imagen concreta final (las rosas de otra en su mesa). Titulos: linea dicha, regionalismo (spritz), objeto torcido.",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "ayudar a Matteo con el mensaje para Francesca, como buena amiga",
+          "impide": "Matteo escribe fatal y Alice tiene que poner sus propias palabras",
+          "cuesta": "sus palabras de amor, las que ella le diria a el, se van a otra",
+          "cambia": "Francesca dice que si; la cita existe gracias a Alice",
+          "emocion": "tristeza callada: triste porque el esta feliz por otra, y aprieta las manos en el cardigan"
+        },
+        {
+          "slot": "1",
+          "quiere": "dejar la terraza lista para la cita y desaparecer sin ver a Francesca",
+          "impide": "Francesca llega pronto y se la encuentra en la escalera con la bolsa de basura",
+          "cuesta": "le dice a su rival que Matteo y ella son solo amigos, y le deja su terraza",
+          "cambia": "Francesca le cae bien: no puede odiarla",
+          "emocion": "verguenza: se pone roja porque la pillan con la basura y oye que Matteo habla de ella, y esconde la bolsa detras de la espalda"
+        },
+        {
+          "slot": "2",
+          "quiere": "consolar a Matteo sin delatarse cuando la cita acaba pronto",
+          "impide": "Matteo cuenta que Francesca se fue porque el solo habla de Alice, y no lo entiende",
+          "cuesta": "recibe las rosas que eran para otra: el regalo le llega de rebote",
+          "cambia": "Alice sabe que Matteo habla de ella todo el tiempo, y el sigue sin verlo",
+          "emocion": "esperanza y pena: siente esperanza porque quiza es buena noticia, y no se rie porque el esta triste"
+        }
+      ]
+    }
+  },
+  "cmu0dpa3i0007j80ugstn0jf0#football-and-rivalries": {
+    "cerrado": "2026-09-14T06:53:23.425Z",
+    "hash": "02451b5f87cc10f9",
+    "historias": [
+      "football-and-rivalries#0 il-derby-della-lanterna",
+      "football-and-rivalries#1 la-maglia-in-palio",
+      "football-and-rivalries#2 solo-per-una-foto"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"rivalidad ruidosa de derby: orgullo, gritos en la terraza y una apuesta que sale cara\", espina \"El pacto de la servilleta: Alice calla lo que siente por Matteo; aqui apuesta y pierde la vieja camiseta que el le regalo en la universidad, y para Matteo es solo una camiseta.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"riccardo\", 19%)",
+      "densidad 5.8 palabras por oracion (techo 9 en a0)",
+      "seguidilla 26/59 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.18 sobre 40 plazas · 35 salen una sola vez | ancladas: 21/61 (34%) | cola: 35/40 portables con un solo encuentro (88%, tope 30%) | de un solo encuentro: terzo, vicino, ha caldo in faccia, incrocia le braccia, Allora, mangia, comincia, piccola, grida, ancora, canta, respira, invece, compro, nuova, toglie, È finita, ha freddo, indossa, nervosa, per noi, contenta, fresca, Davanti, bianco, pulisce, lacrime agli occhi, di corsa, anche, prima…; pasan del 30%",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: football-and-rivalries (Riccardo, Alice)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "italy",
+      "registro": "rivalidad ruidosa de derby: orgullo, gritos en la terraza y una apuesta que sale cara",
+      "espina": "El pacto de la servilleta: Alice calla lo que siente por Matteo; aqui apuesta y pierde la vieja camiseta que el le regalo en la universidad, y para Matteo es solo una camiseta.",
+      "recursos": "A0: repeticion (Poi segna ancora), contraste per lui / per lei invece, imagen concreta final (la camiseta mojada y sucia contra el corazon). Titulos: regionalismo (derby della Lanterna), objeto torcido (la maglia in palio), linea dicha (Solo per una foto).",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "callar a Riccardo, que se rie del Genoa en su propia terraza",
+          "impide": "Riccardo propone apostar la camiseta del Genoa que Matteo le regalo",
+          "cuesta": "por orgullo pone en juego el regalo de Matteo, y Matteo ni lo oye",
+          "cambia": "la apuesta esta hecha y la partita empieza",
+          "emocion": "rabbia: se le calienta la cara porque se rie de su equipo, y cruza los brazos"
+        },
+        {
+          "slot": "1",
+          "quiere": "que gane el Genoa para no perder la camiseta",
+          "impide": "la Samp marca dos goles en los ultimos minutos",
+          "cuesta": "entrega la camiseta a Riccardo delante de Matteo",
+          "cambia": "Matteo dice que es solo una camiseta; Alice ve que para el no significa lo mismo",
+          "emocion": "desolacion: casi no respira porque se acaba el partido, y luego tiene frio sin la camiseta"
+        },
+        {
+          "slot": "2",
+          "quiere": "recuperar la camiseta, que Riccardo usa como trapo para el taxi",
+          "impide": "Riccardo dice que una apuesta es una apuesta",
+          "cuesta": "su orgullo: se pone la bufanda de la Samp para una foto que ira al grupo del edificio para siempre",
+          "cambia": "recupera la camiseta, mojada y sucia, y Matteo se rie desde la terraza",
+          "emocion": "pena: se le llenan los ojos de lagrimas porque es el regalo de Matteo, y baja corriendo en pijama"
+        }
+      ]
+    }
+  },
+  "cmu0dpa3i0007j80ugstn0jf0#quarrels-and-apologies": {
+    "cerrado": "2026-09-14T06:52:13.320Z",
+    "hash": "59ce8e7c48fedb46",
+    "historias": [
+      "quarrels-and-apologies#0 non-e-divertente",
+      "quarrels-and-apologies#1 domenica-senza-terrazza",
+      "quarrels-and-apologies#2 focaccia-sulle-scale"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"aspero y cortante: una broma que hiere, una semana de silencio y una reconciliacion torpe\", espina \"El pacto de la servilleta: Alice calla lo que siente por Matteo; aqui Matteo cuenta el pacto como chiste delante de otra, se pelean, y Alice pide perdon con una mentira para no confesar.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"matteo\", 20%)",
+      "densidad 5.7 palabras por oracion (techo 9 en a0)",
+      "seguidilla 26/57 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.05 sobre 40 plazas · 38 salen una sola vez | ancladas: 20/60 (33%) | cola: 38/40 portables con un solo encuentro (95%, tope 30%) | de un solo encuentro: bastano, torta, scalda, racconta, trentacinque, diventa bianca, posa, vergogna, scherza, Che cosa c'è, divertente, si alza, Sbatte, pranzano, per non vedere, capelli, lunghi, guardo per terra, gonfi, ascolta, si morde, ha ragione, stupida, chiedi scusa, consiglio, spento, appoggia, trema, cattiva, apre la bocca…; pasan del 30%",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: quarrels-and-apologies (Alice, Valentina)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "italy",
+      "registro": "aspero y cortante: una broma que hiere, una semana de silencio y una reconciliacion torpe",
+      "espina": "El pacto de la servilleta: Alice calla lo que siente por Matteo; aqui Matteo cuenta el pacto como chiste delante de otra, se pelean, y Alice pide perdon con una mentira para no confesar.",
+      "recursos": "A0: repeticion (Sono arrabbiata con lui. Ma sono arrabbiata anche con me), contraste con ma (La pace e vera, ma c'e una crepa), imagen concreta final (la focaccia partida en la escalera, la grieta como en el mortero). Titulos: linea dicha (Non e divertente), fragmento (Domenica senza terrazza), objeto y lugar (Focaccia sulle scale).",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "una comida bonita en la terraza para presentar a su companera Valentina",
+          "impide": "Matteo cuenta el pacto como chiste delante de Valentina",
+          "cuesta": "le dice a Matteo que no entiende nada y se va dando un portazo: rompe la comida y la amistad queda herida",
+          "cambia": "empieza la pelea; Matteo se queda solo con el vaso en la mano",
+          "emocion": "verguenza: se pone palida porque Matteo bromea con su secreto delante de otra, y deja el tenedor"
+        },
+        {
+          "slot": "1",
+          "quiere": "seguir enfadada y no ver a Matteo",
+          "impide": "Valentina le dice que Matteo no sabe nada del pacto y que ella si",
+          "cuesta": "el primer domingo sin comida juntos en anos, y admitir que tambien esta enfadada consigo misma",
+          "cambia": "decide bajar a pedir perdon",
+          "emocion": "tristeza y culpa: tiene los ojos hinchados porque Valentina tiene razon, y se muerde el labio"
+        },
+        {
+          "slot": "2",
+          "quiere": "pedir perdon a Matteo sin confesar el motivo",
+          "impide": "Matteo pregunta por que se enfada tanto por un pacto de hace quince anos",
+          "cuesta": "miente (el cansancio, los turnos), y Matteo promete no hablar nunca mas del pacto",
+          "cambia": "hacen las paces en la escalera, pero queda una grieta",
+          "emocion": "miedo: tiembla un poco delante de la puerta porque Matteo puede no abrir, y llama dos veces"
+        }
+      ]
+    }
+  },
+  "cmu0dpa3i0007j80ugstn0jf0#secrets-and-confessions": {
+    "cerrado": "2026-09-14T06:52:28.298Z",
+    "hash": "90dd46640b5f9020",
+    "historias": [
+      "secrets-and-confessions#0 trentacinque-candeline",
+      "secrets-and-confessions#1 ti-voglio-bene-ma",
+      "secrets-and-confessions#2 due-piatti-come-sempre"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"intimo y desnudo: un cumpleanos, una confesion y una amistad que sigue sin mentiras\", espina \"El pacto de la servilleta: Alice calla lo que siente por Matteo; en su cumpleanos 35 se lo dice por fin, Matteo la quiere pero no asi, y el domingo siguiente siguen siendo amigos, sin pacto.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"alice\", 25%)",
+      "densidad 5.8 palabras por oracion (techo 9 en a0)",
+      "seguidilla 22/58 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.06 sobre 36 plazas · 34 salen una sola vez | ancladas: 24/60 (40%) | cola: 34/36 portables con un solo encuentro (94%, tope 30%) | de un solo encuentro: desiderio, arrossisce, mantiene, Sto bene, Torno subito, scusa, Leggi, brillano, emozionata, maglione, gialla, secca, alza gli occhi, Lo so, Da tanti anni, sincera, ti voglio bene, piange, va via, accarezza, muove, pallido, Come sempre, timido, difficile, strappa, Le fa male, giusto, e basta, cresce…; pasan del 30%",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: secrets-and-confessions (Alice, Matteo)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "italy",
+      "registro": "intimo y desnudo: un cumpleanos, una confesion y una amistad que sigue sin mentiras",
+      "espina": "El pacto de la servilleta: Alice calla lo que siente por Matteo; en su cumpleanos 35 se lo dice por fin, Matteo la quiere pero no asi, y el domingo siguiente siguen siendo amigos, sin pacto.",
+      "recursos": "A0: eco del tema 1 (Oggi ... compie trentacinque anni, las velas), repeticion (Amici e basta), contraste con ma (Ti voglio bene, ma), imagen concreta final (dos platos al sol, la albahaca creciendo en el marmol roto). Titulos: objeto (Trentacinque candeline), linea dicha (Ti voglio bene, ma), fragmento (Due piatti, come sempre).",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "decirle a Matteo la verdad el dia que ella cumple 35",
+          "impide": "Matteo cumple su promesa y no menciona el pacto: tiene que sacarlo ella",
+          "cuesta": "rompe el silencio que Matteo le regalo y pone la servilleta sobre la mesa",
+          "cambia": "le pide que la lea en voz alta; ya no hay excusa",
+          "emocion": "miedo: le tiemblan las manos porque ya no tiene excusa, y deja la servilleta junto a la tarta"
+        },
+        {
+          "slot": "1",
+          "quiere": "que Matteo sepa que para ella el pacto nunca fue broma",
+          "impide": "Matteo la quiere, pero no de ese modo",
+          "cuesta": "la esperanza de quince anos",
+          "cambia": "Alice conoce la respuesta; Matteo no se va y se queda con ella hasta la noche",
+          "emocion": "dolor: llora porque ya sabe la respuesta, y no esconde las lagrimas"
+        },
+        {
+          "slot": "2",
+          "quiere": "seguir con los domingos sin fingir",
+          "impide": "la verguenza y la torpeza del primer domingo despues",
+          "cuesta": "rompe la servilleta del pacto y la tira",
+          "cambia": "son amigos y nada mas, y comen en la terraza como siempre",
+          "emocion": "alivio triste: le duele pero es justo, y rompe la servilleta en trozos pequenos"
+        }
+      ]
+    }
+  },
+  "cmu0dpa3i0007j80ugstn0jf0#weather-and-storms": {
+    "cerrado": "2026-09-14T06:51:42.069Z",
+    "hash": "d86d92ad2eefbd66",
+    "historias": [
+      "weather-and-storms#0 allerta-rossa",
+      "weather-and-storms#1 un-segreto-tra-noi-due",
+      "weather-and-storms#2 dopo-la-tempesta"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"tension y oscuridad intima: la tormenta afuera y una confesion a una desconocida adentro\", espina \"El pacto de la servilleta: Alice calla lo que siente por Matteo; en la tormenta lo dice por primera vez en voz alta, pero a Federica, una vecina, y no a el.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"alice\", 13%)",
+      "densidad 5.8 palabras por oracion (techo 9 en a0)",
+      "seguidilla 27/61 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 12/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.06 sobre 47 plazas · 44 salen una sola vez | ancladas: 15/62 (24%) | cola: 44/47 portables con un solo encuentro (94%, tope 30%) | de un solo encuentro: nero, rossa, soffia, cadono, prendo, per favore, Basta, andiamo giù, per mano, volano, Veloce, conta, Tranquilla, accende, spesso, fidanzato, amo, sa, la prima volta, ad alta voce, mai, esce, si ferma, stretto, bloccato, sussurra, un giorno, tempesta, rotta, altra…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: weather-and-storms (Alice, Matteo)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a0",
+      "variante": "italy",
+      "registro": "tension y oscuridad intima: la tormenta afuera y una confesion a una desconocida adentro",
+      "espina": "El pacto de la servilleta: Alice calla lo que siente por Matteo; en la tormenta lo dice por primera vez en voz alta, pero a Federica, una vecina, y no a el.",
+      "recursos": "A0: repeticion (niente pergola, niente sedie), contraste con ma (Questo palazzo e vecchio, ma e forte), imagen concreta final (una sola maceta de albahaca al sol). Titulos: objeto torcido (allerta rossa), linea dicha (Un segreto tra noi due), fragmento de tiempo (Dopo la tempesta).",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "salvar la albahaca de Matteo, la del pesto de los domingos, antes de la tormenta",
+          "impide": "el viento tira las macetas y la pergola cae sobre la mesa",
+          "cuesta": "la terraza se pierde: solo se salva una maceta",
+          "cambia": "bajan empapados y conocen a Federica en el rellano",
+          "emocion": "miedo: tiene miedo porque las sillas vuelan, y aun asi coge las macetas"
+        },
+        {
+          "slot": "1",
+          "quiere": "salir del ascensor parado a oscuras",
+          "impide": "el apagon y la pregunta de Federica: Matteo es tu novio?",
+          "cuesta": "el secreto: lo dice por primera vez en voz alta, y a una vecina, no a Matteo",
+          "cambia": "el secreto ya existe fuera de ella; Federica lo guarda",
+          "emocion": "alivio y verguenza: sale con las mejillas calientes porque lo ha dicho, y cuenta hasta diez para respirar"
+        },
+        {
+          "slot": "2",
+          "quiere": "limpiar la terraza rota y volver a la normalidad con Matteo",
+          "impide": "Matteo cuenta que tiene miedo en el ferry y que entonces piensa en ella",
+          "cuesta": "la pergola y las sillas de sus domingos se han perdido para siempre",
+          "cambia": "Alice sabe que para Matteo ella es su lugar seguro, y aun asi calla",
+          "emocion": "ternura: siente calor en el pecho porque el piensa en ella, y mira el mar sin decir nada"
+        }
+      ]
+    }
   }
 }

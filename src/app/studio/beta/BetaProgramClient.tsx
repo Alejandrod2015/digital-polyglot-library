@@ -20,7 +20,7 @@ import { canonicalVariantLabel, hasVariantOptions, targetVariantLabel } from "@/
 
 const ACCENT = "#14b8a6";
 
-type Tab = "review" | "demand" | "origin" | "testers" | "feedback" | "releases" | "rules";
+type Tab = "review" | "demand" | "origin" | "testers" | "feedback" | "releases" | "rules" | "duplicates";
 
 /**
  * Silent capture from the browser at form mount: where they came from and
@@ -1320,6 +1320,7 @@ export default function BetaProgramClient() {
     { key: "feedback", label: "Feedback", count: data.stats.openFeedback },
     { key: "releases", label: "Build notes", count: data.releases.length },
     { key: "rules", label: "Rules" },
+    { key: "duplicates", label: "Possible duplicates" },
   ];
 
   return (
@@ -1424,6 +1425,8 @@ export default function BetaProgramClient() {
       {tab === "rules" && (
         <RulesPanel rules={data.rules} health={data.health} onReload={load} say={say} />
       )}
+
+      {tab === "duplicates" && <DuplicatesPanel say={say} />}
     </div>
   );
 }
@@ -2558,6 +2561,138 @@ function RulesPanel({
       <button style={btn} disabled={saving} onClick={save}>
         {saving ? "Saving..." : "Save rules"}
       </button>
+    </div>
+  );
+}
+
+/* ── possible duplicates ── */
+
+type DuplicateCandidateUser = {
+  userId: string;
+  name: string | null;
+  email: string | null;
+  provider: string | null;
+  createdAt: string;
+};
+
+type DuplicateCandidate = {
+  userA: DuplicateCandidateUser;
+  userB: DuplicateCandidateUser;
+  score: number;
+  reasons: string[];
+};
+
+function scoreColor(score: number): string {
+  if (score >= 80) return "#f87171";
+  if (score >= 60) return "#fbbf24";
+  return "var(--muted)";
+}
+
+function DuplicatesPanel({ say }: { say: (msg: string) => void }) {
+  const [candidates, setCandidates] = useState<DuplicateCandidate[] | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [merging, setMerging] = useState<string | null>(null);
+  const [merged, setMerged] = useState<Set<string>>(new Set());
+
+  const load = useCallback(async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/studio/beta/duplicates");
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(json.error ?? `HTTP ${res.status}`);
+      setCandidates(json.candidates);
+    } catch (err) {
+      setError(String(err));
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  async function merge(c: DuplicateCandidate, alias: DuplicateCandidateUser, canon: DuplicateCandidateUser) {
+    if (!confirm(`Fusionar la actividad de ${alias.name ?? alias.email ?? alias.userId} dentro de ${canon.name ?? canon.email ?? canon.userId}? Solo métricas, no toca login ni billing.`)) {
+      return;
+    }
+    setMerging(alias.userId);
+    try {
+      const res = await fetch("/api/studio/beta/duplicates", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ aliasUserId: alias.userId, canonicalUserId: canon.userId }),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(json.error ?? `HTTP ${res.status}`);
+      say(`Fusionado: ${alias.email ?? alias.userId} → ${canon.email ?? canon.userId}`);
+      setMerged((prev) => new Set(prev).add(alias.userId));
+    } catch (err) {
+      say(`Failed: ${String(err)}`);
+    } finally {
+      setMerging(null);
+    }
+  }
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+      <div style={card}>
+        <div style={{ fontSize: 13, color: "var(--foreground)" }}>
+          Solo une la actividad para métricas (DAU/WAU/historias). No toca Clerk, login ni billing. Confirma cada
+          par a mano antes de fusionar.
+        </div>
+        <button style={{ ...ghostBtn, marginTop: 10 }} disabled={loading} onClick={load}>
+          {loading ? "Buscando..." : candidates ? "Reload" : "Buscar duplicados"}
+        </button>
+      </div>
+
+      {error && <div style={{ ...card, color: "#f87171", fontSize: 13 }}>{error}</div>}
+
+      {candidates && candidates.length === 0 && !loading && (
+        <div style={{ ...card, fontSize: 13, color: "var(--muted)" }}>Ningún par por encima del umbral.</div>
+      )}
+
+      {candidates?.map((c) => {
+        const key = `${c.userA.userId}:${c.userB.userId}`;
+        const aliasDone = merged.has(c.userA.userId) || merged.has(c.userB.userId);
+        return (
+          <div key={key} style={card}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div style={{ fontSize: 13, fontWeight: 600, color: scoreColor(c.score) }}>{c.score}% probable</div>
+              <div style={{ fontSize: 11, color: "var(--muted)" }}>{c.reasons.join(" · ")}</div>
+            </div>
+            <div style={{ display: "flex", gap: 16, marginTop: 8, flexWrap: "wrap" }}>
+              {[c.userA, c.userB].map((u) => (
+                <div key={u.userId} style={{ fontSize: 12 }}>
+                  <div style={{ fontWeight: 600 }}>{u.name ?? "(sin nombre)"}</div>
+                  <div style={{ color: "var(--muted)" }}>{u.email ?? u.userId}</div>
+                  <div style={{ color: "var(--muted)" }}>
+                    {u.provider ?? "?"} · {onDate(u.createdAt)}
+                  </div>
+                </div>
+              ))}
+            </div>
+            {aliasDone ? (
+              <div style={{ fontSize: 12, color: ACCENT, marginTop: 10 }}>Fusionado.</div>
+            ) : (
+              <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
+                <button
+                  style={ghostBtn}
+                  disabled={merging !== null}
+                  onClick={() => merge(c, c.userA, c.userB)}
+                >
+                  {merging === c.userA.userId ? "Fusionando..." : `Fusionar A → B (deja B)`}
+                </button>
+                <button
+                  style={ghostBtn}
+                  disabled={merging !== null}
+                  onClick={() => merge(c, c.userB, c.userA)}
+                >
+                  {merging === c.userB.userId ? "Fusionando..." : `Fusionar B → A (deja A)`}
+                </button>
+              </div>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }

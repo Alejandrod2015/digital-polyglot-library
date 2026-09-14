@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "italy",
+  "registro": "aspero y cortante: una broma que hiere, una semana de silencio y una reconciliacion torpe",
+  "espina": "El pacto de la servilleta: Alice calla lo que siente por Matteo; aqui Matteo cuenta el pacto como chiste delante de otra, se pelean, y Alice pide perdon con una mentira para no confesar.",
+  "recursos": "A0: repeticion (Sono arrabbiata con lui. Ma sono arrabbiata anche con me), contraste con ma (La pace e vera, ma c'e una crepa), imagen concreta final (la focaccia partida en la escalera, la grieta como en el mortero). Titulos: linea dicha (Non e divertente), fragmento (Domenica senza terrazza), objeto y lugar (Focaccia sulle scale).",
+  "historias": [
+    { "slot": "0", "quiere": "una comida bonita en la terraza para presentar a su companera Valentina", "impide": "Matteo cuenta el pacto como chiste delante de Valentina", "cuesta": "le dice a Matteo que no entiende nada y se va dando un portazo: rompe la comida y la amistad queda herida", "cambia": "empieza la pelea; Matteo se queda solo con el vaso en la mano", "emocion": "verguenza: se pone palida porque Matteo bromea con su secreto delante de otra, y deja el tenedor" },
+    { "slot": "1", "quiere": "seguir enfadada y no ver a Matteo", "impide": "Valentina le dice que Matteo no sabe nada del pacto y que ella si", "cuesta": "el primer domingo sin comida juntos en anos, y admitir que tambien esta enfadada consigo misma", "cambia": "decide bajar a pedir perdon", "emocion": "tristeza y culpa: tiene los ojos hinchados porque Valentina tiene razon, y se muerde el labio" },
+    { "slot": "2", "quiere": "pedir perdon a Matteo sin confesar el motivo", "impide": "Matteo pregunta por que se enfada tanto por un pacto de hace quince anos", "cuesta": "miente (el cansancio, los turnos), y Matteo promete no hablar nunca mas del pacto", "cambia": "hacen las paces en la escalera, pero queda una grieta", "emocion": "miedo: tiembla un poco delante de la puerta porque Matteo puede no abrir, y llama dos veces" }
+  ]
+}

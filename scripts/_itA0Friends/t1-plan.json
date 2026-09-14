@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "italy",
+  "registro": "tierno y torpe: una fiesta que sale pequeña y una broma que a una de los dos no le hace gracia",
+  "espina": "Alice y Matteo firmaron en la universidad un pacto en una servilleta (si a los 35 siguen solos, se casan); Matteo cumple 35 y lo recuerda riendo, y para Alice no es broma. Cada tema, el silencio de Alice le cuesta algo, hasta que en el tema 7 se lo dice.",
+  "recursos": "A0: repeticion ritmica (Un amico non viene. Poi un altro, e poi tutti.), contraste con ma, imagen concreta final (la tasca pesa, el cajon cerrado). Titulos: objeto torcido, linea dicha, regionalismo (el ferry de las seis de Genova).",
+  "historias": [
+    { "slot": "0", "quiere": "dar a Matteo una fiesta sorpresa de 35 en la terraza, con doce amigos", "impide": "los amigos cancelan uno a uno por telefono antes de las ocho", "cuesta": "la fiesta que imagino: una tarta para doce y doce platos vacios", "cambia": "la fiesta es solo de los dos y a Matteo le basta; Alice rie", "emocion": "tristeza: triste porque la fiesta ya no existe, y aprieta el telefono" },
+    { "slot": "1", "quiere": "que la noche siga siendo una broma entre amigos", "impide": "Matteo saca del portafoglio la servilleta del pacto y la lee en voz alta", "cuesta": "miente: dice que es solo una broma y se rie demasiado fuerte", "cambia": "Matteo le da la servilleta para que la guarde; ahora la lleva ella", "emocion": "panico: el corazon le late fuerte porque para ella no es broma, y esconde la cara detras del vaso" },
+    { "slot": "2", "quiere": "decirle la verdad a Matteo en la escalera antes de que salga el ferry de las seis", "impide": "el miedo y el taxi que pita en el vicolo; Matteo llega tarde", "cuesta": "la ocasion: solo le dice buen viaje y el se va una semana a Cerdena", "cambia": "guarda la servilleta en un cajon y lo cierra: decide callar", "emocion": "miedo: tiene miedo porque es su amigo, y aprieta la servilleta en el bolsillo" }
+  ]
+}

@@ -1,0 +1,462 @@
+[
+ {
+  "topic": "pride-and-envy",
+  "slotIndex": 0,
+  "title": "Une photo pour le journal",
+  "synopsis": "Une journaliste qui a connu les deux associés à la fac vient écrire sur leur atelier. L'histoire du comptable qui a tout quitté plaît beaucoup à la journaliste, et Aurélien aime qu'on l'écoute. Pendant qu'il parle, quelqu'un d'autre reste au fond de l'atelier, et personne ne pense à lui demander quoi que ce soit.",
+  "text": "Un mois après l'ouverture, une ancienne camarade de fac est venue à l'atelier avec un appareil photo. Charlotte est une journaliste d'un journal local. Elle cherchait une belle histoire pour le week-end.\n\n“Un comptable qui plaque son CDI pour réparer des vélos, mes lecteurs vont adorer!” s'est enthousiasmée Charlotte. Pendant tout l'entretien, elle ne s'adressait qu'à Aurélien, qui tenait la vedette.\n\n“Et ton pot de départ, c'était comment? Et les nuits blanches?” Flatté, Aurélien racontait tout sans s'arrêter. Au fond de l'atelier, dans l'odeur de graisse, Élodie changeait un pneu. Personne ne lui a demandé son avis.\n\n“Tu peux te mettre derrière lui, pour la photo? Ce serait plus joli avec l'établi”, a proposé Charlotte. Élodie a hoché la tête, les lèvres serrées, et elle est restée en retrait, un peu floue.\n\n“Merci, tu es un amour”, ajoutait Charlotte, qui l'a à peine regardée. Aurélien n'a rien vu. Il pensait déjà à l'article, fier comme un paon.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "la camarade",
+    "surface": "camarade",
+    "register": "neutral",
+    "definition": "a person who studied at the same school or university as you"
+   },
+   {
+    "type": "noun",
+    "word": "l'appareil photo",
+    "surface": "appareil photo",
+    "register": "neutral",
+    "definition": "a small machine that you use to take pictures",
+    "anchor": true
+   },
+   {
+    "type": "noun",
+    "word": "le journal local",
+    "surface": "journal local",
+    "register": "neutral",
+    "definition": "a newspaper that tells news about one city or area",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "chercher une belle histoire",
+    "surface": "cherchait une belle histoire",
+    "register": "neutral",
+    "definition": "for a journalist, to look for a good story that people will like"
+   },
+   {
+    "type": "verb",
+    "word": "plaquer",
+    "surface": "plaque",
+    "register": "colloquial",
+    "definition": "to leave something suddenly, like a job or a partner"
+   },
+   {
+    "type": "noun",
+    "word": "le lecteur",
+    "surface": "lecteurs",
+    "register": "neutral",
+    "definition": "a person who reads a newspaper, a magazine or a book"
+   },
+   {
+    "type": "verb",
+    "word": "s'enthousiasmer",
+    "surface": "s'est enthousiasmée",
+    "register": "neutral",
+    "definition": "to become very excited and happy about an idea"
+   },
+   {
+    "type": "noun",
+    "word": "l'entretien",
+    "surface": "entretien",
+    "register": "neutral",
+    "definition": "a meeting where a journalist asks someone many questions",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "s'adresser à",
+    "surface": "s'adressait",
+    "register": "neutral",
+    "definition": "to speak to a particular person and not to the others"
+   },
+   {
+    "type": "expression",
+    "word": "tenir la vedette",
+    "surface": "tenait la vedette",
+    "register": "neutral",
+    "definition": "to be the star, the person that everyone looks at"
+   },
+   {
+    "type": "adjective",
+    "word": "flatté",
+    "surface": "Flatté",
+    "register": "neutral",
+    "definition": "happy and proud because someone gives you a lot of attention"
+   },
+   {
+    "type": "expression",
+    "word": "sans s'arrêter",
+    "surface": "sans s'arrêter",
+    "register": "neutral",
+    "definition": "without stopping, continuing to talk or work all the time"
+   },
+   {
+    "type": "expression",
+    "word": "changer un pneu",
+    "surface": "changeait un pneu",
+    "register": "neutral",
+    "definition": "to take off an old bike tyre and put on a new one"
+   },
+   {
+    "type": "expression",
+    "word": "rester en retrait",
+    "surface": "restée en retrait",
+    "register": "neutral",
+    "definition": "to stay in the background, not in front of other people"
+   },
+   {
+    "type": "adjective",
+    "word": "flou",
+    "surface": "floue",
+    "register": "neutral",
+    "definition": "not clear in a photo, with soft edges that you cannot see well"
+   },
+   {
+    "type": "expression",
+    "word": "tu es un amour",
+    "surface": "tu es un amour",
+    "register": "neutral",
+    "definition": "you are very kind, said quickly to thank someone"
+   },
+   {
+    "type": "verb",
+    "word": "ajouter",
+    "surface": "ajoutait",
+    "register": "neutral",
+    "definition": "to say something more after what you have already said"
+   },
+   {
+    "type": "expression",
+    "word": "à peine",
+    "surface": "à peine",
+    "register": "neutral",
+    "definition": "almost not, only a very little, for a short moment"
+   },
+   {
+    "type": "noun",
+    "word": "l'article",
+    "surface": "article",
+    "register": "neutral",
+    "definition": "a piece of writing about one subject in a newspaper",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "fier comme un paon",
+    "surface": "fier comme un paon",
+    "register": "neutral",
+    "definition": "very proud, in a way that other people can easily see"
+   }
+  ],
+  "arcType": "reframe-turn"
+ },
+ {
+  "topic": "pride-and-envy",
+  "slotIndex": 1,
+  "title": "Son nom n'y est pas",
+  "synopsis": "L'article sort enfin, avec une grande photo, mais il manque quelque chose d'important. Élodie ne dit rien et travaille tout l'après-midi sans un regard pour son associé. Aurélien veut accuser la journaliste, jusqu'au moment où elle lui rappelle ce qu'il a dit lui-même pendant l'entretien.",
+  "text": "La photo d'Aurélien faisait la une et occupait la moitié de la page, sous un grand titre sur le comptable qui avait tout plaqué. Derrière lui, un peu floue, on devinait Élodie. Son nom n'apparaissait nulle part.\n\nÉlodie a lu l'article une seule fois, puis elle l'a posé sur l'établi, blessée dans son orgueil. “Tu as l'air content de toi.” Ensuite, plus rien: tout l'après-midi, dans le bruit du compresseur, elle a travaillé sans lui adresser la parole.\n\nFurieux, Aurélien a appelé Charlotte. “Pourquoi tu n'as pas mis son nom? Il faut que les gens sachent que c'est son atelier autant que le mien!”\n\n“Je n'ai rien déformé. C'est toi qui m'as dit que l'idée était de toi, mon vieux”, lui a répondu Charlotte. Aurélien s'est souvenu de l'entretien: il avait bien dit ça, pour se donner de l'importance.\n\nIl a raccroché, la honte aux joues. De l'autre côté de l'atelier, Élodie tordait une chambre à air entre ses mains, comme si elle voulait l'étrangler.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "occuper",
+    "surface": "occupait",
+    "register": "neutral",
+    "definition": "to fill a space, for example half of a newspaper page"
+   },
+   {
+    "type": "noun",
+    "word": "le titre",
+    "surface": "titre",
+    "register": "neutral",
+    "definition": "the big words at the top of a newspaper article",
+    "anchor": true
+   },
+   {
+    "type": "verb",
+    "word": "deviner",
+    "surface": "devinait",
+    "register": "neutral",
+    "definition": "to see something only a little, without seeing it clearly"
+   },
+   {
+    "type": "verb",
+    "word": "apparaître",
+    "surface": "apparaissait",
+    "register": "neutral",
+    "definition": "to be visible or written somewhere so that people can see it"
+   },
+   {
+    "type": "expression",
+    "word": "nulle part",
+    "surface": "nulle part",
+    "register": "neutral",
+    "definition": "in no place at all, not anywhere in the text"
+   },
+   {
+    "type": "expression",
+    "word": "content de soi",
+    "surface": "content de toi",
+    "register": "neutral",
+    "definition": "too pleased with yourself, in a way that annoys other people"
+   },
+   {
+    "type": "expression",
+    "word": "plus rien",
+    "surface": "plus rien",
+    "register": "neutral",
+    "definition": "nothing more at all, not one more word"
+   },
+   {
+    "type": "noun",
+    "word": "le compresseur",
+    "surface": "compresseur",
+    "register": "neutral",
+    "definition": "a machine that pushes air, used to fill bike tyres",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "adresser la parole",
+    "surface": "adresser la parole",
+    "register": "neutral",
+    "definition": "to speak to someone; with sans, to ignore them completely"
+   },
+   {
+    "type": "adjective",
+    "word": "furieux",
+    "surface": "Furieux",
+    "register": "neutral",
+    "definition": "very angry, so angry that you want to act immediately"
+   },
+   {
+    "type": "expression",
+    "word": "autant que",
+    "surface": "autant que",
+    "register": "neutral",
+    "definition": "as much as, in the same way and amount as"
+   },
+   {
+    "type": "expression",
+    "word": "le mien",
+    "surface": "le mien",
+    "register": "neutral",
+    "definition": "mine, the thing that belongs to me and not to you"
+   },
+   {
+    "type": "expression",
+    "word": "faire la une",
+    "surface": "faisait la une",
+    "register": "neutral",
+    "definition": "to be the main story on the front page of a newspaper"
+   },
+   {
+    "type": "expression",
+    "word": "mon vieux",
+    "surface": "mon vieux",
+    "register": "colloquial",
+    "definition": "old friend, a familiar way to speak to a man"
+   },
+   {
+    "type": "expression",
+    "word": "se souvenir de",
+    "surface": "s'est souvenu de",
+    "register": "neutral",
+    "definition": "to remember something that happened in the past"
+   },
+   {
+    "type": "expression",
+    "word": "se donner de l'importance",
+    "surface": "se donner de l'importance",
+    "register": "neutral",
+    "definition": "to try to look more important than you really are"
+   },
+   {
+    "type": "expression",
+    "word": "la honte aux joues",
+    "surface": "la honte aux joues",
+    "register": "neutral",
+    "definition": "with red cheeks because you feel ashamed of what you did"
+   },
+   {
+    "type": "expression",
+    "word": "de l'autre côté de",
+    "surface": "De l'autre côté de",
+    "register": "neutral",
+    "definition": "on the opposite side of a room or a street"
+   },
+   {
+    "type": "verb",
+    "word": "tordre",
+    "surface": "tordait",
+    "register": "neutral",
+    "definition": "to turn something hard with your hands so that it bends"
+   },
+   {
+    "type": "verb",
+    "word": "étrangler",
+    "surface": "étrangler",
+    "register": "neutral",
+    "definition": "to squeeze a neck very hard so that someone cannot breathe"
+   }
+  ],
+  "arcType": "late-reveal"
+ },
+ {
+  "topic": "pride-and-envy",
+  "slotIndex": 2,
+  "title": "Derrière la cloison",
+  "synopsis": "Le journal ne corrigera pas son erreur, et Aurélien ne veut pas réparer les choses avec de grandes phrases. Il arrive un matin avant son associée, avec des croissants et une décision. Ce qu'il propose lui coûte la partie de l'atelier qu'il commençait à aimer, et c'est justement pour ça qu'il le propose.",
+  "text": "Le journal a refusé de publier un rectificatif: Charlotte proposait seulement une petite note sur internet, que personne ne lirait.\n\nLe lendemain, Aurélien est arrivé avant Élodie, dans l'odeur des croissants tièdes. Il avait longtemps cherché les mots, puis il avait décidé d'aller droit au but.\n\nIl lui a tendu une feuille, sans préambule. “Dès aujourd'hui, c'est toi la gérante. Moi, je fais les comptes dans l'arrière-boutique.”\n\nÉlodie l'a regardé longtemps, les bras croisés. “Tu ne fais pas ça par pitié, j'espère?” “Non. Par justice, et parce que tu es bien meilleure que moi avec les clients, tu le sais”, lui a répondu Aurélien.\n\nSur le papier, le nom d'Élodie était maintenant écrit en premier. “Un café, monsieur le comptable de l'arrière-boutique?” a dit Élodie en souriant.\n\nAurélien a repris sa place derrière la cloison. Le premier client de la journée a demandé à voir la mécanicienne, et Élodie s'est levée. Aurélien avait perdu la vitrine et les compliments, et pourtant, en l'entendant, il a souri.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "publier",
+    "surface": "publier",
+    "register": "neutral",
+    "definition": "to print something in a newspaper or put it online"
+   },
+   {
+    "type": "noun",
+    "word": "le rectificatif",
+    "surface": "rectificatif",
+    "register": "neutral",
+    "definition": "a short text in a newspaper that corrects a mistake",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "sur internet",
+    "surface": "sur internet",
+    "register": "neutral",
+    "definition": "online, on a website instead of on paper"
+   },
+   {
+    "type": "expression",
+    "word": "cherché les mots",
+    "surface": "cherché les mots",
+    "register": "neutral",
+    "definition": "to look for the right words to say something difficult"
+   },
+   {
+    "type": "expression",
+    "word": "aller droit au but",
+    "surface": "aller droit au but",
+    "register": "neutral",
+    "definition": "to say the important thing directly, without a long introduction"
+   },
+   {
+    "type": "expression",
+    "word": "sans préambule",
+    "surface": "sans préambule",
+    "register": "neutral",
+    "definition": "directly, without any introduction before the important part"
+   },
+   {
+    "type": "expression",
+    "word": "dès aujourd'hui",
+    "surface": "Dès aujourd'hui",
+    "register": "neutral",
+    "definition": "starting today, from this very day and for the future"
+   },
+   {
+    "type": "noun",
+    "word": "la gérante",
+    "surface": "gérante",
+    "register": "neutral",
+    "definition": "a woman who manages a shop or a small business",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "faire les comptes",
+    "surface": "fais les comptes",
+    "register": "neutral",
+    "definition": "to take care of the money and numbers of a business"
+   },
+   {
+    "type": "noun",
+    "word": "l'arrière-boutique",
+    "surface": "arrière-boutique",
+    "register": "neutral",
+    "definition": "the private room at the back of a shop",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "les bras croisés",
+    "surface": "les bras croisés",
+    "register": "neutral",
+    "definition": "with your arms folded, often because you are not sure"
+   },
+   {
+    "type": "expression",
+    "word": "par pitié",
+    "surface": "par pitié",
+    "register": "neutral",
+    "definition": "because you feel sorry for someone, not for a good reason"
+   },
+   {
+    "type": "expression",
+    "word": "en premier",
+    "surface": "en premier",
+    "register": "neutral",
+    "definition": "first, before all the other names or things"
+   },
+   {
+    "type": "expression",
+    "word": "reprendre sa place",
+    "surface": "repris sa place",
+    "register": "neutral",
+    "definition": "to go back to your usual place or role"
+   },
+   {
+    "type": "noun",
+    "word": "la cloison",
+    "surface": "cloison",
+    "register": "neutral",
+    "definition": "a thin wall that separates two parts of a room",
+    "anchor": true
+   },
+   {
+    "type": "expression",
+    "word": "demander à voir",
+    "surface": "demandé à voir",
+    "register": "neutral",
+    "definition": "to ask to speak to a particular person"
+   },
+   {
+    "type": "noun",
+    "word": "la mécanicienne",
+    "surface": "mécanicienne",
+    "register": "neutral",
+    "definition": "a woman whose job is to repair machines, like bikes"
+   },
+   {
+    "type": "noun",
+    "word": "les compliments",
+    "surface": "compliments",
+    "register": "neutral",
+    "definition": "nice words that people say to show they admire you"
+   },
+   {
+    "type": "expression",
+    "word": "en l'entendant",
+    "surface": "en l'entendant",
+    "register": "neutral",
+    "definition": "while hearing it, at the moment that you hear it"
+   },
+   {
+    "type": "adjective",
+    "word": "tiède",
+    "surface": "tièdes",
+    "register": "neutral",
+    "definition": "a little warm, not hot and not cold"
+   }
+  ],
+  "arcType": "harmonic-close"
+ }
+]

@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "italy",
+  "registro": "comedia ligera con celos callados: Alice ayuda con gracia a que Matteo quede con otra",
+  "espina": "El pacto de la servilleta: Alice calla lo que siente por Matteo; en este tema sus palabras y su terraza sirven para la cita de Matteo con otra, y aun asi Francesca ve lo que Matteo no ve.",
+  "recursos": "A0: contraste con ma (Sono le sue parole, ma adesso vanno a Francesca), repeticion (Solo amici), imagen concreta final (las rosas de otra en su mesa). Titulos: linea dicha, regionalismo (spritz), objeto torcido.",
+  "historias": [
+    { "slot": "0", "quiere": "ayudar a Matteo con el mensaje para Francesca, como buena amiga", "impide": "Matteo escribe fatal y Alice tiene que poner sus propias palabras", "cuesta": "sus palabras de amor, las que ella le diria a el, se van a otra", "cambia": "Francesca dice que si; la cita existe gracias a Alice", "emocion": "tristeza callada: triste porque el esta feliz por otra, y aprieta las manos en el cardigan" },
+    { "slot": "1", "quiere": "dejar la terraza lista para la cita y desaparecer sin ver a Francesca", "impide": "Francesca llega pronto y se la encuentra en la escalera con la bolsa de basura", "cuesta": "le dice a su rival que Matteo y ella son solo amigos, y le deja su terraza", "cambia": "Francesca le cae bien: no puede odiarla", "emocion": "verguenza: se pone roja porque la pillan con la basura y oye que Matteo habla de ella, y esconde la bolsa detras de la espalda" },
+    { "slot": "2", "quiere": "consolar a Matteo sin delatarse cuando la cita acaba pronto", "impide": "Matteo cuenta que Francesca se fue porque el solo habla de Alice, y no lo entiende", "cuesta": "recibe las rosas que eran para otra: el regalo le llega de rebote", "cambia": "Alice sabe que Matteo habla de ella todo el tiempo, y el sigue sin verlo", "emocion": "esperanza y pena: siente esperanza porque quiza es buena noticia, y no se rie porque el esta triste" }
+  ]
+}

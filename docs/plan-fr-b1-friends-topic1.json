@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "b1",
+  "variante": "france",
+  "registro": "comedia agridulce de oficina y de estaminet: dos amigos que se dicen las noticias importantes a medias y con una cerveza delante",
+  "espina": "Aurelien y Elodie, amigos desde la fac, deciden abrir juntos un taller de bicicletas en Fives; la pregunta es si su amistad sobrevive a ser socios. Este tema es la decision: el trabajo seguro que Aurelien deja atras.",
+  "recursos": "B1: narrador en passe compose e imparfait con plus-que-parfait; subjonctif tras il faut que / pour que / vouloir que; conditionnel de hipotesis y de futuro en el pasado; discours indirect con concordancia; reversa cosida (querer aceptar por prudencia y decir otra cosa, con el beffroi como gesto); cambio de ritmo; simil simple; espejo concreto (la serviette en papier de la primera noche que vuelve al vaciar la mesa).",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Aurelien quiere celebrar con Elodie en el estaminet que su jefa le ha ofrecido un ascenso.",
+      "impide": "Elodie llega con la noticia de que su tienda cierra en diciembre y la despiden; celebrar a su lado le parece fuera de lugar.",
+      "cuesta": "Se guarda la noticia y pierde para siempre su noche de celebracion: la ronda que queria pagar no la paga nunca.",
+      "cambia": "Medio en broma, garabatea en una servilleta el taller que soñaban en la fac, y vuelve a casa sin pensar en el ascenso.",
+      "emocion": "Culpa por tener una buena noticia junto a la mala de su amiga; asiente, calla y dibuja en la servilleta en vez de hablar."
+    },
+    {
+      "slot": "2",
+      "quiere": "Aurelien quiere estudiar el proyecto con cifras antes de decidir nada.",
+      "impide": "La jefa pide respuesta antes del viernes y Elodie no acepta un quizas: le dice que nadie da el salto estando seguro de todo.",
+      "cuesta": "Rechaza el ascenso, que se lleva un compañero y no volvera.",
+      "cambia": "Pasa de calcular a decidir: cierra la hoja de calculo sin guardarla.",
+      "emocion": "Miedo de prudente: quiere decir que si por seguridad, le sudan las manos, mira el beffroi encendido por la ventana y dice que no."
+    },
+    {
+      "slot": "3",
+      "quiere": "Aurelien quiere irse del cabinet sin drama, discretamente, al final del preaviso.",
+      "impide": "La noticia da la vuelta a la oficina: nadie entiende que deje un CDI a los treinta y cinco, y le montan una despedida incomoda.",
+      "cuesta": "Pierde el sueldo fijo, la mutuelle y la mesa con vista al beffroi.",
+      "cambia": "Elodie lo espera abajo con las llaves del local de Fives, y Aurelien guarda las llaves donde antes llevaba su tarjeta de la oficina.",
+      "emocion": "Verguenza de ser el tema de conversacion; sonrie por educacion y aguanta con la copa en la mano, y la broma de Elodie bajo la lluvia lo alivia."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "b1",
+  "variante": "france",
+  "registro": "romance torpe y honesto: una cita bajo las luces de la Grand-Place, una excusa de sabado y una verdad a la salida de una guardia",
+  "espina": "Aurelien y Elodie abren un taller de bicicletas en Fives y su amistad se pone a prueba como socios. Este tema es la vida privada de Aurelien chocando con el taller: la mentira sobre quien es ahora.",
+  "recursos": "B1: narrador en passe compose e imparfait con plus-que-parfait; conditionnel de cortesia (j'aimerais te revoir); subjonctif tras il faut que; discours indirect con concordancia (elle lui a explique qu'elle passait ses nuits); reversa cosida (quiere decir la verdad y dice expert-comptable porque un socio sin un euro le parece poco seductor); cambio de ritmo (Il n'a pas insiste.); espejo concreto (la mentira del principio y la llave inglesa que Elodie le tiende al final, sin palabras).",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Aurelien quiere gustarle a Marion en su primera cita en dos años.",
+      "impide": "Cuando ella pregunta a que se dedica, su nueva vida de socio sin dinero le parece poco seductora.",
+      "cuesta": "Miente: dice que es expert-comptable, y la cita empieza con esa mentira.",
+      "cambia": "Marion quiere volver a verlo, y Aurelien se va contento pero con la mentira en la conciencia.",
+      "emocion": "Nervios de primera cita: no se esta quieto; duda un segundo y miente muy seguro de si mismo."
+    },
+    {
+      "slot": "2",
+      "quiere": "Aurelien quiere estar a la vez en la segunda cita con Marion y montando las estanterias del taller con Elodie.",
+      "impide": "Las dos cosas caen el mismo sabado por la noche y no se atreve a elegir de frente.",
+      "cuesta": "Le miente tambien a Elodie, que monta sola las estanterias y se hace daño en el pulgar.",
+      "cambia": "Aurelien entiende que su mentira ya no solo le afecta a el.",
+      "emocion": "Culpa: esta en la cena con la cabeza en otra parte, ve la foto del pulgar vendado y el postre le sabe a nada."
+    },
+    {
+      "slot": "3",
+      "quiere": "Aurelien quiere decirle la verdad a Marion y que ella lo acepte como es.",
+      "impide": "A Marion no le molesta el oficio sino la mentira: pasa las noches con gente que miente y no quiere empezar asi.",
+      "cuesta": "Pierde la relacion con Marion.",
+      "cambia": "Vuelve al taller y se lo cuenta todo a Elodie sin excusas, y ella lo devuelve al trabajo con una llave inglesa.",
+      "emocion": "Nudo en la garganta; asiente sin insistir y cruza Lille en bicicleta bajo la lluvia fina."
+    }
+  ]
+}
