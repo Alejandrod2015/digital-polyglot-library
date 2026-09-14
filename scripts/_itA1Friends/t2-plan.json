@@ -1,0 +1,298 @@
+{
+  "tipo": "Friends",
+  "nivel": "a1",
+  "variante": "italy",
+  "registro": "practico y culpable: horarios que no encajan, un trato que alguien paga en silencio y una manana de perro solo",
+  "espina": "El trato metà e metà choca con los turnos: Davide paga un mes de sabados para cubrir un martes, un fallo deja al perro ocho horas solo (y la vecina ya escribe), y Elisa renuncia a parte de su sueldo para que el trato funcione.",
+  "recursos": "A1: causalidad explicita con perche, humor de situacion (la vecina que cuenta las horas), gancho literal (Noi due). Passato prossimo 3, 6 y 3. Oraciones narradas mas largas que en el tema 1 (acotacion con accion, acotacion delante de la cita). Parrafos 5, 5 y 6.",
+  "historias": [
+    {
+      "slot": "0",
+      "quiere": "que alguien se quede con el perro el martes, cuando Elisa vuela a las seis y Davide trabaja a las seis",
+      "impide": "el calendario nuevo de turnos: ninguno de los dos esta libre",
+      "cuesta": "Davide regala a Nicola cuatro sabados libres, sin decirlo",
+      "cambia": "el martes queda cubierto por Nicola y Elisa descubre el precio",
+      "emocion": "culpa: tiene las mejillas calientes porque el precio lo paga Davide por su turno, y mira a Davide"
+    },
+    {
+      "slot": "1",
+      "quiere": "Davide quiere dejar al perro con Elisa e ir a su giro",
+      "impide": "el vuelo de Elisa no sale y su telefono esta muerto: el perro queda solo",
+      "cuesta": "ocho horas de perro solo y la paciencia de la vecina, que deja una nota",
+      "cambia": "los dos entienden que el trato puede fallar, y que el fallo es de los dos",
+      "emocion": "culpa: Elisa tiene un peso en el estomago porque el perro estuvo solo ocho horas, y se sienta en el suelo a abrazarlo"
+    },
+    {
+      "slot": "2",
+      "quiere": "que no vuelva a pasar",
+      "impide": "los vuelos de noche de Elisa, que pagan mas",
+      "cuesta": "Elisa pide un cambio y renuncia al dinero de los vuelos de noche",
+      "cambia": "un calendario rojo y azul en el frigo, y el perro duerme tranquilo entre los dos",
+      "emocion": "decision que duele: mira el papel mucho rato porque ese dinero es parte de su sueldo, y luego responde fuerte"
+    }
+  ],
+  "reencuentro": {
+    "regla": "surface exacta de las portables del tema 1 que vuelven en el cuerpo del tema 2 (el gate cuenta tokens exactos en minusculas)",
+    "portables_tema1": 52,
+    "vuelven": 22,
+    "detalle": [
+      {
+        "surface": "appena",
+        "en": []
+      },
+      {
+        "surface": "tornata",
+        "en": []
+      },
+      {
+        "surface": "dormire",
+        "en": []
+      },
+      {
+        "surface": "magro",
+        "en": []
+      },
+      {
+        "surface": "legato",
+        "en": [
+          1
+        ]
+      },
+      {
+        "surface": "lasciato",
+        "en": [
+          2
+        ]
+      },
+      {
+        "surface": "suona",
+        "en": []
+      },
+      {
+        "surface": "giù",
+        "en": []
+      },
+      {
+        "surface": "cerca",
+        "en": []
+      },
+      {
+        "surface": "scende",
+        "en": []
+      },
+      {
+        "surface": "domani",
+        "en": [
+          3
+        ]
+      },
+      {
+        "surface": "lavoro",
+        "en": []
+      },
+      {
+        "surface": "sente",
+        "en": [
+          2,
+          3
+        ]
+      },
+      {
+        "surface": "toglie",
+        "en": []
+      },
+      {
+        "surface": "solo",
+        "en": [
+          2,
+          3
+        ]
+      },
+      {
+        "surface": "piccolo",
+        "en": []
+      },
+      {
+        "surface": "sopra",
+        "en": []
+      },
+      {
+        "surface": "mangia",
+        "en": []
+      },
+      {
+        "surface": "oggi",
+        "en": [
+          1
+        ]
+      },
+      {
+        "surface": "manda",
+        "en": []
+      },
+      {
+        "surface": "chiede",
+        "en": [
+          2,
+          3
+        ]
+      },
+      {
+        "surface": "risposto",
+        "en": []
+      },
+      {
+        "surface": "conosce",
+        "en": []
+      },
+      {
+        "surface": "subito",
+        "en": [
+          1,
+          2
+        ]
+      },
+      {
+        "surface": "perso",
+        "en": []
+      },
+      {
+        "surface": "terzo",
+        "en": [
+          2
+        ]
+      },
+      {
+        "surface": "arrabbiata",
+        "en": []
+      },
+      {
+        "surface": "abbaia",
+        "en": [
+          2
+        ]
+      },
+      {
+        "surface": "preoccupata",
+        "en": [
+          1
+        ]
+      },
+      {
+        "surface": "trovato",
+        "en": []
+      },
+      {
+        "surface": "nuove",
+        "en": []
+      },
+      {
+        "surface": "siede",
+        "en": [
+          2
+        ]
+      },
+      {
+        "surface": "vecchio",
+        "en": []
+      },
+      {
+        "surface": "scelto",
+        "en": [
+          1
+        ]
+      },
+      {
+        "surface": "povero",
+        "en": []
+      },
+      {
+        "surface": "apre",
+        "en": []
+      },
+      {
+        "surface": "legge",
+        "en": [
+          1,
+          2
+        ]
+      },
+      {
+        "surface": "porto",
+        "en": []
+      },
+      {
+        "surface": "giusto",
+        "en": [
+          1
+        ]
+      },
+      {
+        "surface": "puoi",
+        "en": []
+      },
+      {
+        "surface": "già",
+        "en": [
+          2
+        ]
+      },
+      {
+        "surface": "conta",
+        "en": [
+          1
+        ]
+      },
+      {
+        "surface": "resta",
+        "en": [
+          1
+        ]
+      },
+      {
+        "surface": "pagato",
+        "en": []
+      },
+      {
+        "surface": "scrive",
+        "en": [
+          3
+        ]
+      },
+      {
+        "surface": "vengo",
+        "en": []
+      },
+      {
+        "surface": "comprano",
+        "en": []
+      },
+      {
+        "surface": "serve",
+        "en": []
+      },
+      {
+        "surface": "adesso",
+        "en": [
+          1
+        ]
+      },
+      {
+        "surface": "mai",
+        "en": []
+      },
+      {
+        "surface": "ancora",
+        "en": [
+          2
+        ]
+      },
+      {
+        "surface": "sotto",
+        "en": [
+          3
+        ]
+      }
+    ]
+  }
+}
