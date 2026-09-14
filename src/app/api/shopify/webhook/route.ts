@@ -6,6 +6,7 @@ import { shopifybundles } from "@/data/shopifybundles";
 import { sendClaimEmail } from "@/lib/email";
 import { prisma } from "@/lib/prisma";
 import { getCatalogBookMeta } from "@/lib/catalog";
+import { parseShopifyOrder } from "@/lib/shopifyOrderAttribution";
 
 const SHOPIFY_WEBHOOK_SECRET = process.env.SHOPIFY_WEBHOOK_SECRET;
 
@@ -44,6 +45,22 @@ function pickLineItems(obj: unknown): Array<{ sku?: string; handle?: string }> {
   return Array.isArray(o.line_items) ? o.line_items : [];
 }
 
+async function recordShopifyOrder(payload: unknown): Promise<void> {
+  const order = parseShopifyOrder(payload);
+  if (!order) return;
+  const { id, ...data } = order;
+  try {
+    await prisma.shopifyOrder.upsert({
+      where: { id },
+      create: { id, ...data },
+      update: data,
+    });
+  } catch (err) {
+    // Una analitica no puede tumbar la entrega del libro.
+    console.error("shopify order record failed", err);
+  }
+}
+
 // --- 🚀 Webhook endpoint ---
 export async function POST(req: Request) {
   try {
@@ -76,6 +93,12 @@ export async function POST(req: Request) {
 
     // 3️⃣ Parsear JSON validado
     const parsed = JSON.parse(rawBody) as unknown;
+
+    // Guardar el pedido con su origen ANTES de la logica de claim, que sale
+    // antes de tiempo en pedidos sin email o sin edicion digital. Upsert: el
+    // mismo pedido puede llegar varias veces (reintentos, varios topics).
+    await recordShopifyOrder(parsed);
+
     const email = pickEmail(parsed);
     console.log("📧 Email detectado:", email);
     if (!email) {

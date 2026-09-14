@@ -98,6 +98,7 @@ export const ADMIN_ONLY_HREFS = new Set<string>([
   "/studio/config",
   "/studio/beta",
   "/studio/visits",
+  "/studio/pedidos",
   "/studio/team",
   "/studio/notificaciones",
 ]);

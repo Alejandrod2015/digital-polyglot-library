@@ -880,6 +880,45 @@ model OutboundClick {
   @@map("dp_outbound_clicks_v1")
 }
 
+// Pedido de Shopify con su origen, escrito por el webhook de pedidos
+// (/api/shopify/webhook). Existe porque Meta solo cuenta las compras que su
+// pixel le atribuye, y el origen real (UTM, referrer, primera pagina) solo se
+// veia abriendo cada pedido en el admin de Shopify. El token de Admin API no
+// tiene read_orders, asi que esta tabla es la unica fuente fuera de Shopify.
+model ShopifyOrder {
+  /** id numerico del pedido en Shopify, como texto. Clave para el upsert. */
+  id            String   @id
+  /** Numero visible, p. ej. "#3956". */
+  name          String
+  orderedAt     DateTime
+  /** Total en la moneda de la tienda (EUR). */
+  totalShop     Decimal  @db.Decimal(12, 2)
+  shopCurrency  String
+  /** Total en la moneda que pago el cliente. */
+  totalPaid     Decimal  @db.Decimal(12, 2)
+  paidCurrency  String
+  /** meta_paid | meta_organic | dp_web | google | email | referral | direct | unknown */
+  channel       String
+  landingSite   String?
+  referringSite String?
+  sourceName    String?
+  utmSource     String?
+  utmMedium     String?
+  utmCampaign   String?
+  utmContent    String?
+  utmTerm       String?
+  hasFbclid     Boolean  @default(false)
+  country       String?
+  /** Titulos de las lineas, en orden. */
+  items         String[]
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([orderedAt])
+  @@index([channel])
+  @@map("dp_shopify_orders_v1")
+}
+
 model ClaimToken {
   id             String    @id @default(cuid())
   token          String    @unique
