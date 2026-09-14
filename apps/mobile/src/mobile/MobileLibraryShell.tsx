@@ -15729,15 +15729,6 @@ export function MobileLibraryShell(args: {
                       </Pressable>
                     </View>
 
-                    {/* La traduccion de la FRASE, solo al resolver y solo si
-                        el set curado la traia. Antes de responder seria la
-                        respuesta escrita en ingles. */}
-                    {practiceRevealed && ex.sentenceTranslation ? (
-                      <Text style={styles.speakingSentenceTranslation}>
-                        {ex.sentenceTranslation}
-                      </Text>
-                    ) : null}
-
                     {speakingPhase === "done" || practiceRevealed ? (
                       <>
                         <View style={styles.speakingAnswerCard}>
@@ -15745,6 +15736,18 @@ export function MobileLibraryShell(args: {
                           <Text style={styles.speakingAnswerText}>
                             {speakingHeard || "I couldn't hear you."}
                           </Text>
+                          {/* La traduccion de la FRASE, como segunda linea de
+                              esta misma tarjeta: lo que dijiste y lo que
+                              significa, juntos. Sin traduccion no se pinta ni
+                              la etiqueta. */}
+                          {ex.sentenceTranslation ? (
+                            <>
+                              <Text style={styles.speakingMeaningLabel}>MEANING</Text>
+                              <Text style={styles.speakingSentenceTranslation}>
+                                {ex.sentenceTranslation}
+                              </Text>
+                            </>
+                          ) : null}
                         </View>
                         <View
                           style={[
@@ -28030,11 +28033,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 22,
     gap: 16,
     alignItems: "flex-start",
-    shadowColor: "#f8c15c",
-    shadowOpacity: 0.3,
-    shadowRadius: 30,
-    shadowOffset: { width: 0, height: 24 },
-    elevation: 8,
+    // Sin sombra: la de color del diseno se veia en el telefono como un halo
+    // amarillo debajo de la tarjeta, no como profundidad.
   },
   speakingSentenceText: {
     color: "#2a1a05",
@@ -28150,6 +28150,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "900",
     flexShrink: 1,
+  },
+  speakingMeaningLabel: {
+    color: "#9cb0c9",
+    fontSize: 10,
+    fontWeight: "800",
+    letterSpacing: 1.3,
+    marginTop: 12,
+    marginBottom: 5,
   },
   speakingSentenceTranslation: {
     color: "#cdd9ec",
