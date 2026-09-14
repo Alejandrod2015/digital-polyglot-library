@@ -2685,8 +2685,8 @@
     ]
   },
   "cmu0dqr6y0007j8o52i1s3gf7#birthdays-and-surprises": {
-    "cerrado": "2026-09-13T23:28:36.092Z",
-    "hash": "6b2aaa465cd9273a",
+    "cerrado": "2026-09-14T07:00:02.622Z",
+    "hash": "838f5da2533df6af",
     "historias": [
       "birthdays-and-surprises#0 philipps-geheimnis",
       "birthdays-and-surprises#1 luftballons-im-dunkeln",
@@ -2697,21 +2697,21 @@
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"sagt\" 23%)",
-      "arranques de parrafo variados (mas repetido \"julia\", 12%)",
-      "densidad 7.4 palabras por oracion (techo 11 en a1)",
-      "seguidilla 14/48 oraciones cortas narradas",
+      "acotacion dominante bajo tope (\"sagt\" 19%)",
+      "arranques de parrafo variados (mas repetido \"um\", 18%)",
+      "densidad 7.3 palabras por oracion (techo 11 en a1)",
+      "seguidilla 19/51 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.15 sobre 46 plazas · 41 salen una sola vez | ancladas: 14/60 (23%) | cola: 41/46 portables con un solo encuentro (89%, tope 70%) | de un solo encuentro: nervös, wohnst, merkt, bestimmt, Ehrlich, auch, beißt, unmöglich, schwierig, Trotzdem, murmelt, halb, sollen, warten, heimlich, Dunkeln, selbst, wenig, kichert, komisch, eigentlich, Ordnung, lustig, barfuß, Hallo, wegdrücken, drinnen, Display, Endlich, herzlich…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.13 sobre 46 plazas · 41 salen una sola vez | ancladas: 14/60 (23%) | cola: 41/46 portables con un solo encuentro (89%, tope 70%) | de un solo encuentro: nervös, wohnst, merkt, bestimmt, Ehrlich, auch, beißt, unmöglich, schwierig, Trotzdem, murmelt, halb, sollen, warten, heimlich, Dunkeln, selbst, wenig, kichert, komisch, eigentlich, Ordnung, lustig, barfuß, Hallo, wegdrücken, drinnen, Display, Endlich, herzlich…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en DE no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en DE. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
     ],
     "plan": {
@@ -2750,7 +2750,7 @@
     }
   },
   "cmu0dqr6y0007j8o52i1s3gf7#chats-and-phone-calls": {
-    "cerrado": "2026-09-13T22:40:45.217Z",
+    "cerrado": "2026-09-14T06:59:09.435Z",
     "hash": "2635a7ba584adbdc",
     "historias": [
       "chats-and-phone-calls#0 alles-super-in-frankfurt",
@@ -2770,7 +2770,7 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 3 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.05 sobre 44 plazas · 42 salen una sola vez | ancladas: 16/60 (27%) | cola: 42/44 portables con un solo encuentro (95%, tope 70%) | de un solo encuentro: wunderschön, kennengelernt, Wahrheit, weg, bloß, knarrt, dunkelgrünen, ziemlich, Lüge, peinlich, hält, versteckt, wirklich, Natürlich, treffe, speichert, reden, rauscht, wackelt, vorhin, draußen, herrlich, Pech, unglücklich, vorbei, wahrscheinlich, verpasst, Antwort, nochmal, lächerlich…",
@@ -2815,8 +2815,8 @@
     }
   },
   "cmu0dqr6y0007j8o52i1s3gf7#clothes-and-style": {
-    "cerrado": "2026-09-13T23:28:20.624Z",
-    "hash": "1aabee0efb45c42a",
+    "cerrado": "2026-09-14T06:57:59.994Z",
+    "hash": "c80821eb17d5db3b",
     "historias": [
       "clothes-and-style#0 nichts-zum-anziehen",
       "clothes-and-style#1 die-jacke-aus-rostock",
@@ -2827,18 +2827,18 @@
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"sagt\" 40%)",
+      "acotacion dominante bajo tope (\"sagt\" 33%)",
       "arranques de parrafo variados (mas repetido \"theresa\", 19%)",
-      "densidad 8.2 palabras por oracion (techo 11 en a1)",
-      "seguidilla 18/49 oraciones cortas narradas",
+      "densidad 7.6 palabras por oracion (techo 11 en a1)",
+      "seguidilla 19/52 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.12 sobre 51 plazas · 46 salen una sola vez | ancladas: 9/60 (15%) | cola: 46/51 portables con un solo encuentro (90%, tope 70%) | de un solo encuentro: verkauft, Überall, findet, dunkelblaues, kostet, schmutzig, voll, geschenkt, altem, viel, nachdenken, Wollen, noch, beste, wieder, geschlafen, wach, sicher, tausche, nimmt, vorsichtig, dünner, darf, spät, sehr, still, fertig, dreht, fühlt, verspricht…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.14 sobre 51 plazas · 45 salen una sola vez | ancladas: 9/60 (15%) | cola: 45/51 portables con un solo encuentro (88%, tope 70%) | de un solo encuentro: verkauft, Überall, findet, dunkelblaues, kostet, schmutzig, voll, geschenkt, altem, viel, nachdenken, Wollen, beste, wieder, geschlafen, wach, sicher, tausche, nimmt, vorsichtig, dünner, darf, spät, sehr, still, fertig, dreht, fühlt, verspricht, hier…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en DE no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
@@ -2880,8 +2880,8 @@
     }
   },
   "cmu0dqr6y0007j8o52i1s3gf7#moods-and-feelings": {
-    "cerrado": "2026-09-13T23:20:15.464Z",
-    "hash": "57b2798c14b7205d",
+    "cerrado": "2026-09-14T07:00:17.820Z",
+    "hash": "4d542a97920ea68c",
     "historias": [
       "moods-and-feelings#0 zu-feste-hande",
       "moods-and-feelings#1 tee-im-pausenraum",
@@ -2894,16 +2894,16 @@
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"fragt\" 29%)",
       "arranques de parrafo variados (mas repetido \"julia\", 27%)",
-      "densidad 6.9 palabras por oracion (techo 11 en a1)",
-      "seguidilla 21/51 oraciones cortas narradas",
+      "densidad 6.8 palabras por oracion (techo 11 en a1)",
+      "seguidilla 22/52 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.04 sobre 49 plazas · 47 salen una sola vez | ancladas: 11/60 (18%) | cola: 47/49 portables con un solo encuentro (96%, tope 70%) | de un solo encuentro: deshalb, schlechte, Schmerzen, hart, falsch, gleich, unruhig, mache, trinkst, freundlich, sauer, bleibt, helfen, täglich, Patient, regnet, nett, schwach, fremd, einsam, schrecklich, glaube, kenne, leicht, erinnert, erstaunt, Woher, lächelt, Früher, zögert…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.06 sobre 49 plazas · 46 salen una sola vez | ancladas: 11/60 (18%) | cola: 46/49 portables con un solo encuentro (94%, tope 70%) | de un solo encuentro: deshalb, schlechte, Schmerzen, hart, falsch, gleich, unruhig, mache, trinkst, freundlich, sauer, bleibt, helfen, täglich, Patient, regnet, nett, schwach, fremd, einsam, schrecklich, glaube, kenne, erinnert, erstaunt, Woher, lächelt, Früher, zögert, Gedanke…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en DE no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
@@ -2945,8 +2945,8 @@
     }
   },
   "cmu0dqr6y0007j8o52i1s3gf7#pets-and-animal-care": {
-    "cerrado": "2026-09-13T23:28:05.333Z",
-    "hash": "c294e0e2aff85004",
+    "cerrado": "2026-09-14T06:57:45.422Z",
+    "hash": "0a4286b55b08e485",
     "historias": [
       "pets-and-animal-care#0 ein-hund-furs-wochenende",
       "pets-and-animal-care#1 nachts-vor-der-tur",
@@ -2957,18 +2957,18 @@
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"fragt\" 25%)",
+      "acotacion dominante bajo tope (\"sagt\" 29%)",
       "arranques de parrafo variados (mas repetido \"julia\", 24%)",
-      "densidad 7.5 palabras por oracion (techo 11 en a1)",
-      "seguidilla 12/47 oraciones cortas narradas",
+      "densidad 7.3 palabras por oracion (techo 11 en a1)",
+      "seguidilla 16/50 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.27 sobre 56 plazas · 42 salen una sola vez | ancladas: 5/61 (8%) | cola: 42/56 portables con un solo encuentro (75%, tope 70%) | de un solo encuentro: muss, braunen, arbeiten, weit, leider, gern, klar, öffnet, fährt, zurück, Ticket, nächsten, bisschen, bringt, bellt, liegt, bewegt, klopft, nass, rennt, gemütlich, weiche, allein, gut, schnell, streichelt, laufen, Vögel, weggelaufen, brauche…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.27 sobre 56 plazas · 42 salen una sola vez | ancladas: 5/61 (8%) | cola: 42/56 portables con un solo encuentro (75%, tope 70%) | de un solo encuentro: muss, braunen, arbeiten, weit, leider, gern, klar, öffnet, fährt, zurück, Ticket, nächsten, bisschen, bringt, bellt, liegt, bewegt, klopft, nass, rennt, gemütlich, weiche, allein, gut, schnell, streichelt, laufen, Vögel, schreibt, weggelaufen…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en DE no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en DE. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
@@ -3010,8 +3010,8 @@
     }
   },
   "cmu0dqr6y0007j8o52i1s3gf7#quarrels-and-making-up": {
-    "cerrado": "2026-09-13T23:31:33.313Z",
-    "hash": "2487baf69f9d0ae3",
+    "cerrado": "2026-09-14T07:00:33.248Z",
+    "hash": "bb7563762b96a753",
     "historias": [
       "quarrels-and-making-up#0 alle-wissen-es",
       "quarrels-and-making-up#1 kuchen-von-carolin",
@@ -3024,8 +3024,8 @@
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"antwortet\" 27%)",
       "arranques de parrafo variados (mas repetido \"moritz\", 19%)",
-      "densidad 7.3 palabras por oracion (techo 11 en a1)",
-      "seguidilla 17/48 oraciones cortas narradas",
+      "densidad 7.1 palabras por oracion (techo 11 en a1)",
+      "seguidilla 19/48 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
@@ -3075,8 +3075,8 @@
     }
   },
   "cmu0dqr6y0007j8o52i1s3gf7#running-and-fitness": {
-    "cerrado": "2026-09-13T23:27:50.441Z",
-    "hash": "8c26112903b16526",
+    "cerrado": "2026-09-14T06:50:53.500Z",
+    "hash": "ac284ee579627bed",
     "historias": [
       "running-and-fitness#0 zu-schnell-am-main",
       "running-and-fitness#1 muskelkater-im-treppenhaus",
@@ -3089,13 +3089,13 @@
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"sagt\" 19%)",
       "arranques de parrafo variados (mas repetido \"die\", 13%)",
-      "densidad 7.5 palabras por oracion (techo 11 en a1)",
-      "seguidilla 22/55 oraciones cortas narradas",
+      "densidad 7.4 palabras por oracion (techo 11 en a1)",
+      "seguidilla 23/55 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.15 sobre 46 plazas · 40 salen una sola vez | ancladas: 14/60 (23%) | cola: 40/46 portables con un solo encuentro (87%, tope 70%) | de un solo encuentro: kühl, Brücke, schwer, aufhören, ruhig, normal, verschwinden, heiß, einfach, riecht, kaum, geht, schafft, brennen, Sekunden, trägt, liest, erzählt, Oben, immer, setzt, lange, wichtig, sofort, kurze, Diesmal, scheint, plötzlich, verzieht, gerade…",

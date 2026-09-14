@@ -5,7 +5,7 @@
   "title": "Ein Hund fürs Wochenende",
   "arcType": "late-reveal",
   "synopsis": "After the weekly run Florian, a friend from the running group, comes with his big brown dog. He has to work far away at the weekend and asks Julia to look after the dog. Julia is afraid of big dogs, but she says yes. Then she remembers her train ticket to Rostock for that same weekend.",
-  "text": "Nach dem Lauftreff steht Julia, die Physiotherapeutin aus Rostock, mit Moritz am Ufer. Die Sonne ist schon warm. Svenjas Laufpartner Florian kommt mit einem großen braunen Hund. Florian ist Elektriker und muss am Wochenende weit weg arbeiten.\n\n“Kannst du auf meinen Hund aufpassen? Von Freitag bis Sonntag. Er ist ganz lieb, wirklich”, fragt Florian. “Moritz hat leider keine Zeit.” Der Hund legt seinen schweren Kopf auf Julias Schuh.\n\nJulia hat Angst vor großen Hunden, aber das sagt sie nicht. “Ja, klar, das mache ich gern”, antwortet sie. Florian gibt ihr erleichtert die Leine.\n\nZu Hause öffnet Julia die App der Bahn. Am Samstag fährt ihr Zug nach Rostock, zum ersten Mal seit dem Umzug.\n\nJulia storniert das Ticket und bekommt nur die Hälfte zurück. “Tut mir leid, ich komme erst nächsten Monat. Hier ist ein Hund”, schreibt sie in den Chat. Ihre Hand zittert ein bisschen.",
+  "text": "Nach dem Lauftreff steht Julia mit Moritz am Ufer. Die Sonne ist schon warm. Florian aus dem Lauftreff kommt mit einem großen braunen Hund. Florian ist Elektriker und muss am Wochenende weit weg arbeiten.\n\n“Kannst du auf meinen Hund aufpassen? Von Freitag bis Sonntag. Er ist ganz lieb, wirklich”, fragt Florian. “Moritz kann leider nicht.” Der Hund legt seinen schweren Kopf auf Julias Schuh.\n\nJulia hat Angst vor großen Hunden. Das sagt sie nicht. “Ja, klar, das mache ich gern”, antwortet sie. “Danke, wirklich!”, sagt Florian erleichtert.\n\nZu Hause öffnet Julia die App der Bahn. “Oh nein, mein Zug nach Rostock!”, murmelt sie. Er fährt am Samstag, ihre erste Reise nach Hause seit dem Umzug.\n\nJulia storniert das Ticket und bekommt nur die Hälfte zurück. Sie legt die Leine auf den Tisch. “Rostock muss bis nächsten Monat warten”, sagt sie zu der Leine und lacht ein bisschen. Ihre Hand zittert.",
   "vocab": [
    {
     "type": "noun",
@@ -59,9 +59,9 @@
    },
    {
     "type": "verb",
-    "word": "geben",
-    "surface": "gibt",
-    "definition": "To give; to hand something to another person."
+    "word": "haben",
+    "surface": "hat",
+    "definition": "To have; here, to feel something, like fear or no time."
    },
    {
     "type": "verb",

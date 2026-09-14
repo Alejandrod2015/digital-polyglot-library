@@ -4,23 +4,23 @@ def V(t,w,s,d,a=False):
     o={"type":t,"word":w,"surface":s,"definition":d}
     if a: o["anchor"]=True
     return o
-s0=["Julia, die Physiotherapeutin aus Rostock, hört am Dienstagabend ein leises Klopfen. Moritz ist Straßenbahnfahrer und heute noch bei der Arbeit. Sein Kollege Philipp steht vor Julias Tür und ist ziemlich nervös.",
+s0=["Ein leises Klopfen kommt am Dienstagabend an Julias Tür. Draußen ist es schon kalt. Moritz ist heute noch mit seiner Straßenbahn unterwegs. Sein Kollege Philipp steht vor Julias Tür und ist ziemlich nervös.",
 "“Moritz wird am Samstag fünfunddreißig, aber er feiert nie”, erklärt Philipp leise. “Machen wir eine Überraschungsparty? Hier bei dir, du wohnst ja gegenüber. Er merkt bestimmt nichts.”",
 "“Ehrlich? Ja, sehr gern! Ich backe einen großen Kuchen”, antwortet Julia. Philipp gibt ihr eine Liste: Sekt, Apfelwein, Luftballons und Geschenkpapier.",
 "Später schaut Julia in ihren Kalender. Am Samstag hat auch ihre beste Freundin Geburtstag, und um acht gibt es einen Videoanruf mit allen aus Rostock. Die Party für Moritz ist auch um acht.",
-"“Oh nein, das auch noch”, murmelt Julia und beißt sich auf die Lippe. Sie schreibt nichts nach Rostock und legt das Handy in die Schublade. “Beides ist unmöglich”, sagt sie leise zu sich. Der Samstag wird schwierig. Trotzdem backt sie am nächsten Tag."]
+"“Oh nein, das auch noch”, murmelt Julia und beißt sich auf die Lippe. Sie schreibt nichts nach Rostock. “Beides ist unmöglich”, denkt sie. Der Samstag wird schwierig. Trotzdem backt sie am nächsten Tag."]
 s1=["Ihr Wohnzimmer ist am Samstag voll mit Luftballons. Philipp hat Handkäse und grüne Soße mitgebracht, das Lieblingsessen von Moritz.",
 "Um halb acht kommen die Gäste leise durch das Treppenhaus: Svenja, Florian und Theresa. “Pst! Er kommt um acht. Keiner sagt ein Wort”, flüstert Philipp und macht das Licht aus.",
 "“Und wo sollen wir jetzt warten?”, will Svenja wissen. Alle sitzen heimlich im Dunkeln hinter dem Sofa.",
 "Um fünf vor acht klopft es. Julia öffnet die Tür. Moritz steht barfuß und in Jogginghose im Flur. In der Wohnung ist es warm. “Hallo, Nachbarin. Hast du vielleicht Zucker? Ich backe mir heute selbst einen Kuchen”, sagt er ein wenig traurig.",
-"“Nein, leider nicht. Tut mir leid”, lügt Julia. Hinter ihr kichert jemand. Moritz schaut sie komisch an. “Ist bei dir eigentlich alles in Ordnung?”, fragt er.",
-"In diesem Moment klingelt ihr Handy in der Schublade. Der Klingelton ist laut und lustig: Es ist der Videoanruf aus Rostock."]
+"“Nein, leider nicht”, lügt Julia. Hinter ihr kichert jemand. Moritz schaut sie komisch an. “Ist bei dir eigentlich alles in Ordnung?”, fragt er.",
+"In diesem Moment klingelt ihr Handy in der Küche. Der Klingelton ist laut und lustig: Es ist der Videoanruf aus Rostock."]
 s2=["Das Handy klingelt. Julia sieht das Gesicht ihrer besten Freundin auf dem kleinen Display. Sie will den Anruf nicht wegdrücken, aber sie muss.",
 "“Wer ist denn da drinnen? Hast du Besuch?”, fragt Moritz. Julia macht die Tür ganz auf, und Philipp macht das Licht an. Alles ist hell. “Überraschung!”, rufen alle zusammen.",
 "Moritz sagt lange nichts. Endlich lacht er herzlich, und seine Augen glänzen. “Meine letzte Party war vor zehn Jahren. Ihr seid echt verrückt”, erzählt er dankbar.",
 "Sie essen gemeinsam grüne Soße und trinken Apfelwein. Dann singen alle ein Geburtstagslied.",
 "Julia gibt Moritz eine Grußkarte mit einem Gutschein. “Für die Bäckerei, für deinen nächsten Kuchen”, sagt sie, und alle lachen.",
-"Später schreibt Julia nach Rostock: “Alles Gute zum Geburtstag! Es tut mir leid. Ich rufe dich morgen an.” Sie wartet und hofft, aber es kommt keine Antwort. Julia legt das Handy weg. Es ist wahr: Heute gehört sie nach Frankfurt."]
+"Um Mitternacht sind die Gäste weg, nur Moritz hilft noch. Julia denkt an Rostock. “Morgen gibt es Ärger, das weiß ich”, sagt sie. “Ich hoffe, deine Freundin versteht es”, meint Moritz. “Aber es ist wahr: Heute gehöre ich nach Frankfurt”, antwortet sie."]
 out=[{"topic":T,"slotIndex":i,"title":ti,"arcType":ar,"synopsis":"","text":"\n\n".join(tx),"vocab":[]} for i,(ti,tx,ar) in enumerate([("Philipps Geheimnis",s0,"late-reveal"),("Luftballons im Dunkeln",s1,"mini-cliffhanger"),("Überraschung um acht",s2,"reframe-turn")])]
 out[0]["vocab"]=[
 V("noun","der Dienstagabend","Dienstagabend","The evening of a Tuesday, after work on the second day of the week.",True),
@@ -79,7 +79,7 @@ V("adverb","echt","echt","Really; you use it to make a word stronger."),
 V("verb","singen","singen","To sing; to make music with your voice."),
 V("noun","das Geburtstagslied","Geburtstagslied","A birthday song; people sing it for a person on their birthday.",True),
 V("noun","die Grußkarte","Grußkarte","A greeting card; a nice card with a short message for someone.",True),
-V("verb","hoffen","hofft","To hope; to want something to happen and think it can."),
+V("verb","hoffen","hoffe","To hope; to want something to happen and think it can."),
 V("noun","der Gutschein","Gutschein","A voucher; a paper you can use to get something for free.",True),
 V("noun","die Bäckerei","Bäckerei","A bakery; a shop where people make and sell bread and cakes.",True),
 V("adverb","morgen","morgen","Tomorrow; on the day that comes after today."),

@@ -1,10 +1,10 @@
 import json
 T="pets-and-animal-care"
-s0=["Nach dem Lauftreff steht Julia, die Physiotherapeutin aus Rostock, mit Moritz am Ufer. Die Sonne ist schon warm. Svenjas Laufpartner Florian kommt mit einem großen braunen Hund. Florian ist Elektriker und muss am Wochenende weit weg arbeiten.",
-"“Kannst du auf meinen Hund aufpassen? Von Freitag bis Sonntag. Er ist ganz lieb, wirklich”, fragt Florian. “Moritz hat leider keine Zeit.” Der Hund legt seinen schweren Kopf auf Julias Schuh.",
-"Julia hat Angst vor großen Hunden, aber das sagt sie nicht. “Ja, klar, das mache ich gern”, antwortet sie. Florian gibt ihr erleichtert die Leine.",
-"Zu Hause öffnet Julia die App der Bahn. Am Samstag fährt ihr Zug nach Rostock, zum ersten Mal seit dem Umzug.",
-"Julia storniert das Ticket und bekommt nur die Hälfte zurück. “Tut mir leid, ich komme erst nächsten Monat. Hier ist ein Hund”, schreibt sie in den Chat. Ihre Hand zittert ein bisschen."]
+s0=["Nach dem Lauftreff steht Julia mit Moritz am Ufer. Die Sonne ist schon warm. Florian aus dem Lauftreff kommt mit einem großen braunen Hund. Florian ist Elektriker und muss am Wochenende weit weg arbeiten.",
+"“Kannst du auf meinen Hund aufpassen? Von Freitag bis Sonntag. Er ist ganz lieb, wirklich”, fragt Florian. “Moritz kann leider nicht.” Der Hund legt seinen schweren Kopf auf Julias Schuh.",
+"Julia hat Angst vor großen Hunden. Das sagt sie nicht. “Ja, klar, das mache ich gern”, antwortet sie. “Danke, wirklich!”, sagt Florian erleichtert.",
+"Zu Hause öffnet Julia die App der Bahn. “Oh nein, mein Zug nach Rostock!”, murmelt sie. Er fährt am Samstag, ihre erste Reise nach Hause seit dem Umzug.",
+"Julia storniert das Ticket und bekommt nur die Hälfte zurück. Sie legt die Leine auf den Tisch. “Rostock muss bis nächsten Monat warten”, sagt sie zu der Leine und lacht ein bisschen. Ihre Hand zittert."]
 s1=["Ein Hundebett, eine Decke und ein Sack Futter: Florian bringt am Freitagabend den Hund und alles mit. “Zweimal am Tag füttern und dreimal raus. Er ist lieb, aber er bellt bei Katzen”, erklärt er.",
 "Der Hund liegt nicht im Hundebett. Er liegt vor der Tür und jault leise. Julia sitzt auf dem Sofa und bewegt sich kaum.",
 "Später klopft Moritz. “Ich höre ihn durch die Wand. Alles gut?”, fragt er.",
@@ -33,7 +33,7 @@ V("verb","arbeiten","arbeiten","To work; to do your job and earn money for it.")
 V("adjective","weit","weit","Far; a long way away from here, not close at all."),
 V("adjective","lieb","lieb","Sweet and kind; nice to people and easy to be with."),
 V("adverb","leider","leider","Sadly; unfortunately, you are sorry that it is like this."),
-V("verb","geben","gibt","To give; to hand something to another person."),
+V("verb","haben","hat","To have; here, to feel something, like fear or no time."),
 V("verb","stehen","steht","To stand; to be on your feet and not sit down."),
 V("adverb","gern","gern","Gladly; you are happy to do it and you like it."),
 V("adverb","klar","klar","Sure; of course, you say it when you agree at once."),

@@ -4,7 +4,7 @@ def V(t,w,s,d,a=False):
     o={"type":t,"word":w,"surface":s,"definition":d}
     if a: o["anchor"]=True
     return o
-s0=["Seit drei Tagen antwortet Julias beste Freundin nicht. Julia, die Physiotherapeutin aus Rostock, hat deshalb schlechte Laune. Miriam, die Chefin der Praxis, merkt es schon am Montagmorgen. “Alles in Ordnung bei dir?”, fragt sie. Julia nickt nur.",
+s0=["Seit drei Tagen antwortet Julias beste Freundin nicht. Julia hat deshalb schlechte Laune. Miriam, die Chefin der Praxis, merkt es schon am Montagmorgen. “Alles in Ordnung bei dir?”, fragt sie. Julia nickt nur.",
 "Im Behandlungsraum ist es warm. Der erste Patient hat Schmerzen im Rücken. Julia arbeitet schnell und viel zu hart. “Au! Das ist falsch, nicht so fest, bitte!”, ruft der Mann sauer.",
 "Julia nimmt gleich die Hände weg.",
 "“Entschuldigung. Heute ist kein guter Arbeitstag für mich”, sagt sie leise. Ihre Hände sind unruhig.",
@@ -18,7 +18,7 @@ s1=["Der Pausenraum ist klein und warm, und draußen regnet es. Miriam bringt zw
 s2=["Julia zögert lange auf dem Sofa. Der Gedanke an Rostock tut weh. “Genug gelogen”, denkt sie. Heute will sie mutig sein, wenigstens einmal.",
 "Zuerst nimmt sie eine Sprachnachricht für Moritz auf. “Ich habe Heimweh, und manchmal will ich zurück nach Rostock. Bitte sag das niemandem”, spricht sie leise. Dann schreibt sie ihrer besten Freundin: “Das war gemein von mir. Ich habe deinen Geburtstag nicht vergessen, und ich habe ein schlechtes Gewissen.” Danach ist überall Stille. Das Fenster ist offen, und die Luft ist feucht.",
 "Um zehn klingelt das Handy. Julia spürt ihr Herz bis in den Hals. “Hallo?”, fragt sie ängstlich.",
-"“Du fehlst mir, du Idiotin. Komm bald mal wieder”, antwortet die Freundin. Beide lachen und weinen. Sie reden lange. Danach schläft Julia tief, das Handy noch auf der Brust."]
+"“Du fehlst mir, du Idiotin. Komm bald mal wieder”, antwortet die Freundin. Beide lachen und weinen. Sie reden lange. Danach schläft Julia tief. Draußen hört der Regen auf, und ihre Brust ist endlich leicht."]
 out=[{"topic":T,"slotIndex":i,"title":ti,"arcType":ar,"synopsis":"","text":"\n\n".join(tx),"vocab":[]} for i,(ti,tx,ar) in enumerate([("Zu feste Hände",s0,"juxtaposition-discovery"),("Tee im Pausenraum",s1,"late-reveal"),("Genug gelogen",s2,"harmonic-close")])]
 out[0]["vocab"]=[
 V("adverb","deshalb","deshalb","That is why; because of this reason, and so."),
@@ -84,7 +84,7 @@ V("verb","fehlen","fehlst","To miss; you say someone is missing from your life."
 V("adverb","bald","bald","Soon; in a short time, not much later."),
 V("noun","die Idiotin","Idiotin","A silly woman; friends can say it in a warm, joking way."),
 V("noun","die Brust","Brust","The chest; the front part of your body above the stomach.",True),]
-syn=["For three days Julia's best friend in Rostock has not answered, and Julia is in a bad mood. At work her first patient has back pain, and she works much too hard. Miriam, the head of the practice, sees the problem at once and sends Julia to the break room.",
+syn=["For three days Julia's best friend back home has not answered, and Julia is in a bad mood. At work her first patient has back pain, and she works much too hard. Miriam, the head of the practice, sees the problem at once and sends Julia to the break room.",
 "In the warm break room Miriam brings tea and waits. Julia cries and says the truth: she is homesick and often lonely in the evenings. Miriam listens and understands her very well. At the end Julia learns that Miriam also came to Frankfurt from another city many years ago.",
 "In the evening Julia wants to be brave and honest. She sends Moritz a voice message about her homesickness and asks him to keep it secret. Then she writes to her best friend and says sorry. Later her phone rings, and the two friends laugh and cry together."]
 for o,sy in zip(out,syn): o["synopsis"]=sy

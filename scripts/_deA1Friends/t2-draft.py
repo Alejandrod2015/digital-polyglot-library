@@ -57,7 +57,7 @@ V("adverb","sofort","sofort","At once; right away, without waiting even a short 
 V("adjective","kurz","kurze","Short; not long, with only a few words or a little time."),]
 s2=["Eine Woche später läuft Julia zehn Kilometer mit. Diesmal fängt sie hinten an. Die Sonne scheint, und auf dem Main fährt ein langes Frachtschiff. “Heute laufe ich eine gute Zeit”, denkt Julia.",
 "Nach sechs Kilometern bleibt Moritz plötzlich stehen. Er hält sein Knie und verzieht das Gesicht. “Lauf weiter, du bist gerade so gut”, sagt er. Julia sieht nach vorne und dann wieder zu ihm. “Nein, wir gehen zusammen”, antwortet sie.",
-"Sie gehen den Rest langsam am Ufer entlang, unter den Hochhäusern vom Bankenviertel. “Die Linie elf fährt fast bis zu deiner Tür”, sagt Moritz. Julia lacht zum ersten Mal richtig laut.",
+"Sie gehen den Rest langsam am Ufer entlang, unter den Hochhäusern vom Bankenviertel. “Die Linie elf fährt fast bis zu deiner Tür”, sagt Moritz. Julia lacht richtig laut.",
 "An der Ziellinie wartet Svenja mit einer Wasserflasche. “Für die beiden Letzten!”, ruft jemand, und alle klatschen. Auf der Stoppuhr steht keine Bestzeit.",
 "“Und? Traurig?”, fragt Svenja. Julia trinkt einen großen Schluck und schüttelt den Kopf. “Nein. Heute war ich zum ersten Mal nicht die Neue”, flüstert sie."]
 v2=[V("adverb","diesmal","Diesmal","This time; now, and not like the time before."),

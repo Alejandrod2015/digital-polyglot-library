@@ -4,20 +4,20 @@ def V(t,w,s,d,a=False):
     o={"type":t,"word":w,"surface":s,"definition":d}
     if a: o["anchor"]=True
     return o
-s0=["Überall auf dem Flohmarkt am Museumsufer hängen Blusen und Röcke, und es riecht nach altem Stoff. Julia, die Physiotherapeutin aus Rostock, sucht ein Kleid, denn Svenja heiratet in drei Wochen. Ihre Sachen sind noch in Rostock.",
+s0=["Überall auf dem Flohmarkt am Museumsufer hängen Blusen und Röcke, und es riecht nach altem Stoff. Julia sucht ein Kleid, denn Svenja heiratet in drei Wochen. Ihre Sachen sind noch in Rostock.",
 "Theresa ist Schneiderin und verkauft alte Kleider an einem kleinen Stand.",
 "Julia findet ein dunkelblaues Kleid aus weichem Stoff. Es ist wunderschön, aber viel zu weit. “Wie viel kostet es?”, fragt Julia.",
 "“Vierzig Euro. Und ich nähe es enger, dann passt es genau”, antwortet Theresa. “Ich habe bloß fünfundzwanzig Euro dabei”, sagt Julia. Traurig hängt sie das Kleid zurück.",
 "Theresa schaut auf Julias alte Jeansjacke. Sie ist ein bisschen schmutzig und voll mit bunten Knöpfen. “Die Jacke ist toll. Wollen wir tauschen? Deine Jacke gegen das Kleid”, schlägt Theresa vor.",
 "Julia hält die Jacke fest. Ihre beste Freundin hat sie ihr vor zehn Jahren geschenkt. “Ich brauche das Kleid wirklich, aber ich muss erst nachdenken”, sagt Julia leise."]
-s1=["Zwei Tage später steht Julia wieder am Stand. In der Nacht hat sie kaum geschlafen und war lange wach. Jetzt ist sie sicher.",
-"“Ich tausche”, sagt Julia. Ihre Stimme ist fest, aber ihre Augen sind nass. Die Jacke ist weich und warm. Theresa nimmt sie vorsichtig und legt sie über ihren Stuhl. “Danke. Ich passe gut auf sie auf”, antwortet sie.",
+s1=["Zwei Tage später steht Julia wieder am Stand. In der Nacht hat sie kaum geschlafen und war lange wach. “Jetzt bin ich sicher”, denkt sie. Die Luft ist noch kalt.",
+"“Ich tausche”, sagt Julia. Ihre Stimme ist fest, aber ihre Augen sind nass. Theresa nimmt die Jacke vorsichtig und legt sie über ihren Stuhl. “Danke. Ich passe gut auf sie auf”, antwortet sie.",
 "Hinter dem Stand hängt ein dünner Vorhang. Dort darf Julia das Kleid anziehen, und Theresa steckt Nadeln in den Stoff. “Bitte ganz still stehen, ja?”, sagt sie.",
-"Dann ist Theresa fertig. Julia dreht sich vor dem Spiegel. Das Kleid passt jetzt, und sie fühlt sich plötzlich groß. “Du siehst toll aus. Und deine Jacke bekommt bei mir einen guten Platz”, verspricht Theresa.",
-"Am Abend schreibt Julia ihrer besten Freundin: “Ich habe deine Jacke getauscht, gegen ein Kleid für eine Hochzeit hier.” Die Antwort kommt spät, und sie ist sehr kurz: “Okay.”"]
+"“Fertig!”, strahlt Theresa. Julia dreht sich vor dem Spiegel. Das Kleid passt jetzt, und sie fühlt sich plötzlich groß. “Du siehst toll aus. Und deine Jacke bekommt bei mir einen guten Platz”, verspricht Theresa.",
+"Am Abend hängt Julia das Kleid in ihren Schrank. Daneben ist ein Haken frei. “Hier war zehn Jahre lang die Jacke”, flüstert sie. Spät schaut sie sehr lange auf den Haken."]
 s2=["Der Tag ist sonnig und warm, und Julias neues Kleid ist dunkelblau. Auf einem Schiff feiern fünfzig Gäste Svenjas Hochzeit. Theresa ist auch da, denn sie hat Svenjas Kleid genäht.",
 "Moritz trägt einen Anzug und eine schiefe Krawatte. “Ein Rotwein für dich. Prost!”, sagt er. Dann schaukelt das Schiff wild im starken Wind, und der Wein landet auf Julias Kleid.",
-"“Oh nein, das tut mir so leid!”, ruft Moritz. Julia starrt auf den roten Fleck. “Das Kleid, die Jacke, und jetzt das”, flüstert sie.",
+"“Oh nein! So ein Mist!”, ruft Moritz blass. Julia starrt auf den roten Fleck. “Das Kleid, die Jacke, und jetzt das”, flüstert sie.",
 "Theresa kommt sofort mit kaltem Wasser. “Keine Angst, das ist kein Problem. Ich nähe dir eine Blume darüber”, sagt sie. Aus ihrer Handtasche holt sie Nadel, Faden und ein Stück Stoff.",
 "Zehn Minuten später hat das Kleid eine kleine blaue Blume. “Du hast das schönste Kleid auf dem Schiff”, strahlt Svenja fröhlich. Julia ist glücklich. Sie tanzt den ganzen Abend mit Moritz, und die Blume hält. “Danke, Theresa!”, ruft Julia."]
 out=[{"topic":T,"slotIndex":i,"title":ti,"arcType":ar,"synopsis":"","text":"\n\n".join(tx),"vocab":[]} for i,(ti,tx,ar) in enumerate([("Nichts zum Anziehen",s0,"reframe-turn"),("Die Jacke aus Rostock",s1,"recurring-character-callback"),("Ein Fleck auf dem Schiff",s2,"harmonic-close")])]

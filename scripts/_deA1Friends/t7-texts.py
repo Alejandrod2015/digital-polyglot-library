@@ -4,7 +4,7 @@ def V(t,w,s,d,a=False):
     o={"type":t,"word":w,"surface":s,"definition":d}
     if a: o["anchor"]=True
     return o
-s0=["Der Lauftreff nach dieser Woche ist komisch. Der Himmel ist grau, voller Wolken, und es ist windig und kalt. Julia, die Physiotherapeutin aus Rostock, wartet am Ufer. Moritz ist Straßenbahnfahrer und hat heute frei. Er bringt Carolin mit. Carolin ist seine Schwester und Hebamme in einer Klinik.",
+s0=["Der Lauftreff nach dieser Woche ist komisch. Der Himmel ist grau, voller Wolken, und es ist windig und kalt. Julia wartet am Ufer. Moritz hat heute frei. Er bringt Carolin mit. Carolin ist seine Schwester und Hebamme in einer Klinik.",
 "Alle sind pünktlich, höflich und sehr lieb zu Julia. “Heimweh ist ganz normal, Julia”, meint Theresa. “Wir sind doch alle für dich da”, meint auch Florian.",
 "Da versteht Julia alles. In der Gruppe weiß nur Moritz von ihrem Geheimnis. Sie wird rot, aber diesmal nicht vor Scham: Sie ist wütend.",
 "“Du hast es allen erzählt, stimmt's? Die Nachricht war nur für dich! Das war unhöflich und dumm”, ruft Julia.",
@@ -13,11 +13,11 @@ s1=["Moritz klopft zweimal am Tag, aber Julia öffnet nicht. Am Dienstag schreib
 "Am Mittwochabend klingelt es. Vor der Tür steht nicht Moritz, sondern Carolin, mit einem Apfelkuchen. “Darf ich reinkommen? Ich will nicht streiten”, sagt sie vorsichtig.",
 "Der Kuchen ist noch warm. Sie teilen ihn am Küchentisch. “Mein Bruder weint selten”, erzählt Carolin. “Aber letztes Jahr ist sein bester Freund nach Berlin umgezogen. Moritz war monatelang allein.”",
 "Bald ist der Teller leer.",
-"Julia sagt lange nichts. “Er hat Angst, dass du Frankfurt verlässt. Deshalb hat er die Gruppe um Hilfe gebeten. Das war dumm, aber nicht böse. Du bist doch klug”, erklärt Carolin. Julia und Moritz sind sich ziemlich ähnlich.",
+"Julia schweigt. “Er hat Angst, dass du Frankfurt verlässt. Deshalb hat er die Gruppe um Hilfe gebeten. Das war dumm, aber nicht böse. Du bist doch klug”, erklärt Carolin. Julia und Moritz sind sich ziemlich ähnlich.",
 "Nach dem Besuch sitzt Julia lange in der Küche. Ihr Ärger ist kleiner geworden. Sie will Moritz nicht verlieren. Vielleicht gibt es eine Lösung."]
 s2=["Die Kaffeemaschine zischt am Donnerstagmorgen. Julia füllt zwei Becher mit Kaffee und Milch. Dann geht sie über den Flur und klopft an Moritz' Tür.",
 "Moritz öffnet im Morgenmantel. Er sieht nicht gesund aus und reibt sich das Kinn. “Es tut mir so leid”, sagt er sofort. “Ich erzähle nie wieder ein Geheimnis.”",
-"“Mir tut es auch leid”, antwortet Julia. “Ich war nicht krank. Das war eine Lüge.” Sie stellt die Becher auf die glatte, kalte Treppe, und sie setzen sich nebeneinander.",
+"“Ich war auch nicht fair”, antwortet Julia. “Ich war nicht krank. Das war eine Lüge.” Sie stellt die Becher auf die glatte, kalte Treppe, und sie setzen sich nebeneinander.",
 "Sie wohnen im selben Haus, aber heute rutscht Moritz ein bisschen näher. “Kommst du Sonntag wieder zum Lauftreff?”, fragt er leise. “Ja. Ich will zurückkommen”, antwortet Julia. “Ich wünsche mir nur eins: Nächstes Mal fragst du mich vorher.”",
 "Moritz hebt seinen Becher, und seine Augen leuchten. Sie genießen den Kaffee. Er ist warm und mild. Hinter ihnen stehen beide Türen weit offen."]
 out=[{"topic":T,"slotIndex":i,"title":ti,"arcType":ar,"synopsis":"","text":"\n\n".join(tx),"vocab":[]} for i,(ti,tx,ar) in enumerate([("Alle wissen es",s0,"reframe-turn"),("Kuchen von Carolin",s1,"recurring-character-callback"),("Zwei Becher auf der Treppe",s2,"harmonic-close")])]
