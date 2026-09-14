@@ -65,6 +65,49 @@ function aparecenEnOrden(trozos: string[], textoNorm: string): boolean {
   return true;
 }
 
+/** Determinantes y pronombres cortos de los cinco idiomas del catalogo
+ *  (ES/FR/DE/IT/PT). Un trozo que, quitando la palabra tocada, solo trae uno
+ *  de estos, es intrinsecamente corto: su traduccion coincide con la glosa
+ *  sin que eso sea la glosa disfrazada de trozo ("Le chômage" -> el trozo ES
+ *  el sustantivo con su articulo, no una definicion pegada). */
+const DETERMINANTES_Y_PRONOMBRES = new Set([
+  // Espanol
+  "el", "la", "los", "las", "un", "una", "unos", "unas", "lo", "le", "les",
+  "se", "te", "me", "nos", "os", "tu", "tú", "su", "sus", "mi", "mis", "yo",
+  "él", "ella", "ellos", "ellas", "usted", "ustedes", "esto", "eso", "aquello",
+  "este", "esta", "ese", "esa", "aquel", "aquella",
+  // Frances
+  "l", "un", "une", "des", "ce", "cet", "cette", "ces", "mon", "ma", "mes",
+  "ton", "ta", "tes", "son", "sa", "ses", "notre", "nos", "votre", "vos",
+  "leur", "leurs", "je", "il", "elle", "on", "nous", "vous", "ils", "elles",
+  "moi", "toi", "lui", "eux", "y", "en", "là", "ci", "tous", "tout", "toute",
+  "toutes",
+  // Aleman
+  "der", "die", "das", "den", "dem", "des", "ein", "eine", "einer", "einem",
+  "einen", "eines", "ich", "du", "er", "sie", "es", "wir", "ihr", "mein",
+  "dein", "sein", "ihre", "unser", "euer", "mich", "dich", "sich", "uns",
+  "euch", "ihn", "ihm", "ihnen",
+  // Italiano
+  "il", "gli", "i", "uno", "io", "lui", "lei", "noi", "voi", "loro", "mi",
+  "ti", "si", "ci", "vi", "li", "ne", "questo", "questa", "questi", "queste",
+  "quello", "quella", "quelli", "quelle",
+  // Portugues
+  "o", "a", "os", "as", "um", "uma", "uns", "umas", "eu", "ele", "ela", "nós",
+  "vós", "eles", "elas", "vos", "lhe", "lhes", "meu", "minha", "teu", "tua",
+  "seu", "sua", "esse", "essa", "aquele", "aquela",
+]);
+
+/** ¿Cuantas palabras quedan en `c.es` si se quita la palabra tocada y los
+ *  determinantes/pronombres? Un trozo corto de verdad ("Le chômage", "tu
+ *  verras") deja 0 o 1: no es una glosa disfrazada, es que el trozo ES
+ *  corto. Separa tambien por guion para "soir-là" -> ["soir","là"]. */
+function palabrasSustantivasRestantes(esNorm: string, palabraNorm: string): string[] {
+  return esNorm
+    .split(/[\s-]+/)
+    .filter(Boolean)
+    .filter((t) => t !== palabraNorm && !DETERMINANTES_Y_PRONOMBRES.has(t));
+}
+
 export type VeredictoGlossContext =
   | { ok: true }
   | { ok: false; motivo: "es-es-la-palabra-sola" | "en-es-la-glosa" | "es-no-esta-en-el-texto" };
@@ -104,7 +147,15 @@ export function evaluarEntradaGlossContext(args: {
   // disfrazada de trozo es que la glosa cubre la MAYOR PARTE de c.en, no solo
   // su primer token: exigimos que las palabras de `g` sean al menos el 60%
   // de las de `c.en` ademas de ir al principio.
-  if (gNorm.length > 0 && enNorm.length > 0 && enNorm.startsWith(gNorm)) {
+  //
+  // Y no dispara cuando el TROZO mismo es corto de verdad: "Le chômage" ->
+  // "Unemployment" o "tu verras" -> "you'll see" no son una glosa disfrazada,
+  // son que el trozo es la palabra con su articulo o su pronombre, y su
+  // traduccion coincide con la glosa porque ahi no hay mas que traducir. Si
+  // quitando la palabra tocada y los determinantes/pronombres de c.es queda
+  // 0 o 1 palabra, (b) no se aplica.
+  const trozoEsCorto = palabrasSustantivasRestantes(esNorm, palabraNorm).length <= 1;
+  if (!trozoEsCorto && gNorm.length > 0 && enNorm.length > 0 && enNorm.startsWith(gNorm)) {
     const palabrasG = gNorm.split(" ").length;
     const palabrasEn = enNorm.split(" ").length;
     if (palabrasG / palabrasEn >= 0.6) {

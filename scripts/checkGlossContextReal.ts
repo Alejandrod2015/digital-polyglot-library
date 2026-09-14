@@ -23,9 +23,8 @@
  * scripts/gloss-context-real-baseline.json como un CONJUNTO de entradas
  * (`slug|palabra`), no un numero, para que un hueco nuevo se distinga de uno
  * viejo (src/lib/glossContextBaseline.ts). Un bundle sin linea base sale a 0.
- * EXCLUIDO adrede de la linea base: french-friends-france-b1, que se esta
- * rehaciendo en otro chat ahora mismo. Tiene que llegar a 0 por su cuenta, no
- * congelarse.
+ * Ningun bundle se excluye de la linea base: quien cierre un journey a 0
+ * simplemente aprieta el trinquete y su cupo baja, como cualquier otro.
  *
  * Run:  npm run lint:gloss-context-real                (todos, contra la linea base)
  *       npx tsx scripts/checkGlossContextReal.ts <bundle>   (uno, a cero)
@@ -43,10 +42,6 @@ import { apretarLineaBase, clavesDelBundle, compararConLineaBase, type LineaBase
 
 const prisma = new PrismaClient();
 const BASELINE = path.join(__dirname, "gloss-context-real-baseline.json");
-
-// Se esta rehaciendo en otro chat ahora mismo (2026-09-14): nunca se congela,
-// tiene que salir a 0 por su cuenta cuando ese chat lo cierre.
-const NUNCA_CONGELAR = new Set(["french-friends-france-b1"]);
 
 async function medirBundle(bundle: string): Promise<{ malas: Set<string>; total: number; ejemplos: string[] }> {
   const rows = await prisma.tapGlossSet.findMany({
@@ -116,13 +111,9 @@ async function medirBundle(bundle: string): Promise<{ malas: Set<string>; total:
     const { malas, ejemplos } = await medirBundle(b);
     medido[b] = malas;
     const { nuevos: nuevosDelBundle, viejos } = compararConLineaBase(b, malas, baseline);
-    const nuevosSinExcusa = NUNCA_CONGELAR.has(b) ? [...malas] : nuevosDelBundle;
-    if (nuevosSinExcusa.length) {
-      nuevos += nuevosSinExcusa.length;
-      const motivo = NUNCA_CONGELAR.has(b)
-        ? " (se esta rehaciendo, no se congela)"
-        : ` (linea base ${clavesDelBundle(b, baseline).size})`;
-      console.error(`${b}: ${nuevosSinExcusa.length} hueco(s) NUEVOS${motivo}`);
+    if (nuevosDelBundle.length) {
+      nuevos += nuevosDelBundle.length;
+      console.error(`${b}: ${nuevosDelBundle.length} hueco(s) NUEVOS (linea base ${clavesDelBundle(b, baseline).size})`);
       for (const e of ejemplos.slice(0, 6)) console.error(e);
     } else if (viejos.length > 0) {
       deudaVieja += viejos.length;
@@ -131,7 +122,7 @@ async function medirBundle(bundle: string): Promise<{ malas: Set<string>; total:
   }
 
   if (apretar) {
-    const nueva = apretarLineaBase(medido, NUNCA_CONGELAR);
+    const nueva = apretarLineaBase(medido, new Set());
     fs.writeFileSync(BASELINE, JSON.stringify(nueva, null, 2) + "\n");
     const total = Object.values(nueva).reduce((acc, arr) => acc + arr.length, 0);
     console.log(`gloss-context-real: linea base apretada (${Object.keys(nueva).length} bundles, ${total} entradas congeladas).`);

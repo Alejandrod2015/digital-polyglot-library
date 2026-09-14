@@ -55,15 +55,55 @@ describe("evaluarEntradaGlossContext", () => {
     if (!v.ok) expect(v.motivo).toBe("es-no-esta-en-el-texto");
   });
 
-  it("falla si c.en empieza por la glosa aunque traiga mas palabras detras", () => {
+  it("falla si c.en empieza por la glosa aunque traiga mas palabras detras (trozo largo, no un articulo suelto)", () => {
     const v = evaluarEntradaGlossContext({
-      palabra: "red",
-      c: { es: "la red se sacude", en: "a network of people celebrating" },
-      g: "a network of people",
-      texto: "El balón entra y la red se sacude con el gol.",
+      palabra: "primero",
+      c: { es: "el primero por adelantado", en: "the first one in advance" },
+      g: "the first one",
+      texto: "Paga el primero por adelantado y el resto al terminar.",
     });
     expect(v.ok).toBe(false);
     if (!v.ok) expect(v.motivo).toBe("en-es-la-glosa");
+  });
+
+  it("pasa un trozo corto de verdad: sustantivo con su articulo (Le chômage)", () => {
+    const v = evaluarEntradaGlossContext({
+      palabra: "chômage",
+      c: { es: "Le chômage", en: "Unemployment" },
+      g: "unemployment",
+      texto: "Le chômage touche toute la famille cette année-là.",
+    });
+    expect(v.ok).toBe(true);
+  });
+
+  it("pasa un trozo corto de verdad: pronombre sujeto mas el verbo (tu verras)", () => {
+    const v = evaluarEntradaGlossContext({
+      palabra: "verras",
+      c: { es: "tu verras", en: "you'll see" },
+      g: "you will see",
+      texto: "Attends un peu, tu verras ce qu'il a préparé.",
+    });
+    expect(v.ok).toBe(true);
+  });
+
+  it("pasa un trozo corto de verdad: demostrativo mas sustantivo (Ce soir-là)", () => {
+    const v = evaluarEntradaGlossContext({
+      palabra: "soir",
+      c: { es: "Ce soir-là", en: "That evening" },
+      g: "evening",
+      texto: "Ce soir-là, personne n'a voulu rentrer tôt.",
+    });
+    expect(v.ok).toBe(true);
+  });
+
+  it("pasa un trozo corto de verdad: locucion con preposicion y pronombre (Merci à tous)", () => {
+    const v = evaluarEntradaGlossContext({
+      palabra: "merci",
+      c: { es: "Merci à tous", en: "Thank you, everyone" },
+      g: "thank you",
+      texto: "Merci à tous d'être venus ce soir.",
+    });
+    expect(v.ok).toBe(true);
   });
 
   it("pasa un verbo separable aleman citado con elipsis, sin pegar las dos mitades", () => {
