@@ -53,7 +53,8 @@ export type PracticeMode =
   | "meaning"
   | "context"
   | "listening"
-  | "match";
+  | "match"
+  | "speaking";
 
 export type FillBlankExercise = {
   id: string;
@@ -156,11 +157,40 @@ export type PracticeAudioClip = {
   wordVoiceId?: string | null;
 };
 
+/**
+ * Quinto tipo de ejercicio: UN turno hablado por palabra.
+ *
+ * Un personaje de la historia donde el usuario guardo la palabra le hace una
+ * pregunta con su voz; el usuario responde por el microfono y cuenta como
+ * acierto si uso la palabra. No es un chat ni un role-play: una pregunta, una
+ * respuesta, y de vuelta a la sesion mixta.
+ *
+ * El ejercicio que viaja del builder al cliente NO trae la pregunta: esa la
+ * pide el movil a `/api/mobile/speaking` (accion "question"), que la genera o
+ * la lee de `SpeakingPrompt`. Aqui solo viaja lo que hace falta para pedirla
+ * y para calificar: la palabra, su traduccion (la pista en pantalla), la
+ * frase de la historia y la voz con la que hay que sonarla.
+ */
+export type SpeakingExercise = {
+  type: "speaking";
+  id: string;
+  word: string;
+  surface?: string | null;
+  translation: string;
+  storySlug: string;
+  language: string;
+  voiceId?: string | null;
+  /** Frase de la historia; alimenta el prompt de la pregunta y la frase modelo
+   *  que se ensena cuando el usuario falla. */
+  sentence: string;
+};
+
 export type PracticeExercise =
   | FillBlankExercise
   | MeaningContextExercise
   | ListenChooseExercise
-  | MatchMeaningExercise;
+  | MatchMeaningExercise
+  | SpeakingExercise;
 
 function normalizeText(value?: string | null): string {
   return typeof value === "string" ? value.trim() : "";
@@ -858,6 +888,52 @@ function createListenChooseExercise(
 }
 
 /**
+ * G2 del piloto: el speaking sale de una historia de JOURNEY.
+ *
+ * Un favorito de LIBRO trae `storySlug` igual que uno de journey, asi que
+ * exigir el slug no basta: se distinguen por `sourcePath`, que en los libros
+ * es `/books/<libro>/<historia>`. Sin historia de journey no hay reparto ni
+ * voz que preguntar, asi que el builder devuelve null y el slot lo rellena
+ * otro modo.
+ */
+function isJourneyStoryItem(item: PracticeFavoriteItem): boolean {
+  const slug = normalizeText(item.storySlug);
+  if (!slug) return false;
+  const source = normalizeText(item.sourcePath).toLowerCase();
+  if (source.startsWith("/books/")) return false;
+  return true;
+}
+
+export function createSpeakingExercise(item: PracticeFavoriteItem): SpeakingExercise | null {
+  if (!isJourneyStoryItem(item)) return null;
+
+  const word = normalizeText(item.word);
+  const translation = normalizeText(item.translation);
+  const language = normalizeText(item.language);
+  // La pista en pantalla es la TRADUCCION en ingles; sin ella el ejercicio
+  // pediria una palabra que no ha nombrado. Y sin idioma no hay ni voz ni
+  // pista de Whisper.
+  if (!word || !translation || !language) return null;
+
+  // La frase de la historia alimenta el prompt de la pregunta y la frase
+  // modelo del fallo. Sin frase el personaje no tiene de que preguntar.
+  const sentence = singleCleanSentence(item) || getContextSentence(item);
+  if (!sentence) return null;
+
+  return {
+    type: "speaking",
+    id: `speaking:${normalizeKey(item.word)}`,
+    word,
+    surface: normalizeText(item.surface) || null,
+    translation,
+    storySlug: normalizeText(item.storySlug),
+    language,
+    voiceId: normalizeText(item.voiceId) || null,
+    sentence,
+  };
+}
+
+/**
  * Una traduccion que CONTIENE la propia palabra convierte el match en un
  * regalo: la tarjeta de significado lleva escrita la respuesta.
  *
@@ -1000,6 +1076,21 @@ export function buildPracticeSession(
   const languageAwarePool = uniqueByWord([...source, ...catalogPool]);
   const exercises: PracticeExercise[] = [];
 
+  // SPEAKING: piloto de plan `polyglot`. El slot no existe si el cliente no
+  // lo habilita, y ningun usuario real ve un ejercicio que su plan no puede
+  // resolver (la ruta le devolveria 403). La web pasa siempre `false`.
+  if (mode === "speaking") {
+    if (!prefs?.speakingEnabled) return [];
+    for (const item of uniqueByWord(source)) {
+      if (exercises.length >= 10) break;
+      const exercise = createSpeakingExercise(item);
+      if (!exercise) continue;
+      if (exercises.some((existing) => existing.id === exercise.id)) continue;
+      exercises.push(exercise);
+    }
+    return exercises;
+  }
+
   if (mode === "match") {
     let remaining = uniqueByWord(source);
     for (let i = 0; i < 3 && exercises.length < 10; i += 1) {
@@ -1066,14 +1157,23 @@ function getExerciseAnchor(exercise: PracticeExercise): string {
       return normalizeKey(exercise.answer);
     case "match_meaning":
       return normalizeKey(exercise.pairs.map((pair) => pair.word).join("|"));
+    case "speaking":
+      return normalizeKey(exercise.word);
   }
 }
 
 /**
- * Reparto canónico de una sesión MIXTA: 4 contexto, 3 significado, 2 escucha
- * y 1 emparejar. Es el plan que ya servía el set curado de cada historia; vive
- * aquí para que el móvil pueda usar el mismo sin importar `storyPracticeSets`
- * (que arrastra prisma) y para que los dos no puedan derivar.
+ * Reparto canónico de una sesión MIXTA: 3 contexto, 3 significado, 2 escucha,
+ * 1 emparejar y 1 hablado. Es el plan que ya servía el set curado de cada
+ * historia; vive aquí para que el móvil pueda usar el mismo sin importar
+ * `storyPracticeSets` (que arrastra prisma) y para que los dos no puedan
+ * derivar.
+ *
+ * El slot 8 era el TERCER contexto y ahora es el de speaking (piloto,
+ * 2026-09-14). Cuando el cliente no habilita speaking, `buildPracticeSession`
+ * devuelve cero ejercicios para ese modo y el relleno del final de
+ * `buildMixedPracticeSession` recupera el hueco con los cuatro modos de
+ * siempre: la sesión de quien no tiene el piloto sigue siendo de 10.
  */
 export const MIXED_PRACTICE_PLAN: PracticeMode[] = [
   "context",
@@ -1083,7 +1183,7 @@ export const MIXED_PRACTICE_PLAN: PracticeMode[] = [
   "meaning",
   "listening",
   "match",
-  "context",
+  "speaking",
   "meaning",
   "context",
 ];
