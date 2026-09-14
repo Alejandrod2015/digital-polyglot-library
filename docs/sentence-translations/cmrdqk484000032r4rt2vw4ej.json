@@ -619,6 +619,13 @@
             "rifarse"
           ],
           "translation": "Renata came through, and for a whole week nobody said a word about her clock."
+        },
+        {
+          "sentence": "“¿Qué pedo, ya te acordaste de nosotros?”",
+          "words": [
+            "qué pedo"
+          ],
+          "translation": "“What's up, did you finally remember we exist?”"
         }
       ]
     },
@@ -955,6 +962,27 @@
             "más solo que perro en la calle"
           ],
           "translation": "“Flor, this kid has never had a single date in his life; he's lonelier than a stray dog.”"
+        },
+        {
+          "sentence": "“Sos un genio, Tomás, ¿de dónde sacás toda esta posta?”",
+          "words": [
+            "posta"
+          ],
+          "translation": "“You're a genius, Tomás, where do you get all this real wisdom?”"
+        },
+        {
+          "sentence": "“¿En serio este te está dando consejos de mujeres?”",
+          "words": [
+            "tirar"
+          ],
+          "translation": "“Seriously, this one is giving you advice about women?”"
+        },
+        {
+          "sentence": ", tiró sin filtro.",
+          "words": [
+            "sin filtro"
+          ],
+          "translation": ", she tossed out with no filter."
         }
       ]
     },
@@ -1193,6 +1221,13 @@
             "avivarse"
           ],
           "translation": "That's when Javiera caught on to something odd that left her thinking for quite a while."
+        },
+        {
+          "sentence": ", lanzó al tiro.",
+          "words": [
+            "al tiro"
+          ],
+          "translation": ", she fired back straight away."
         }
       ]
     },
