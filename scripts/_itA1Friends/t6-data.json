@@ -1,0 +1,452 @@
+[
+  {
+    "topic": "summer-and-holidays",
+    "slotIndex": 0,
+    "title": "Milano è vuota",
+    "arcType": "daily-encounter",
+    "synopsis": "In the middle of summer the city is empty and hot, and only the ice cream shop of Gabriele is still open. Davide is at the sea in the south with his cousin, and Elisa stays at home with the dog, the heat and the mosquitoes. Then her flight is cancelled.",
+    "text": "È agosto, e in via Padova i negozi sono chiusi. Resta aperta solo la gelateria di Gabriele, un gelataio di NoLo. L'aria è umida, e non c'è una nuvola.\n\nDavide, invece, è partito per il sud, dal cugino in Puglia. Prima della partenza ha lasciato un bigliettino: “Dieci giorni. Il cane è tuo, e anche il caldo.”\n\nDi notte Elisa si sveglia, e il lenzuolo è tiepido. Sulle piastrelle del bagno dorme il cane. Elisa guarda fuori, ma non vede le stelle. “Io voglio la neve,” dice al cane.\n\nAlle sei Davide ha chiamato. “Vedi? Qui c'è il mare, e ogni mattina nuoto. Vieni anche tu?” dice lui. “Che fortuna. Qui c'è solo l'afa, e l'erba non è più verde,” risponde Elisa, e ride.\n\nPoi arriva una notizia: il suo volo di domani è cancellato. Elisa apre il frigo: due uova, una mela e un biscotto per il cane. “Ecco la nostra cena.”",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "agosto",
+        "surface": "agosto",
+        "definition": "August; the hot summer month when many Italians are on holiday.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la gelateria",
+        "surface": "gelateria",
+        "definition": "An ice cream shop, where people make and sell gelato.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "umido",
+        "surface": "umida",
+        "definition": "Humid; the air is hot and full of water.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la nuvola",
+        "surface": "nuvola",
+        "definition": "A cloud; a white or grey shape in the sky.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "il sud",
+        "surface": "sud",
+        "definition": "The south; here, the south part of Italy, near the sea.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "il cugino",
+        "surface": "cugino",
+        "definition": "A cousin; the son of your aunt or uncle.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la partenza",
+        "surface": "partenza",
+        "definition": "Departure; the moment when someone leaves for a trip.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "svegliarsi",
+        "surface": "sveglia",
+        "definition": "To wake up after sleeping, for example in the night.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il lenzuolo",
+        "surface": "lenzuolo",
+        "definition": "A sheet; the thin cloth you sleep on in bed.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "tiepido",
+        "surface": "tiepido",
+        "definition": "Warm; not hot and not cold, a little warm.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la piastrella",
+        "surface": "piastrelle",
+        "definition": "A tile; a flat square piece on a floor or wall.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "vedere",
+        "surface": "vede",
+        "definition": "To see; to notice something with your eyes.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la stella",
+        "surface": "stelle",
+        "definition": "A star; a small light in the sky at night.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la neve",
+        "surface": "neve",
+        "definition": "Snow; cold white ice that falls from the sky in winter.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "nuotare",
+        "surface": "nuoto",
+        "definition": "To swim; to move in the water with your arms and legs.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "erba",
+        "surface": "erba",
+        "definition": "Grass; the green plants that cover a park.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la notizia",
+        "surface": "notizia",
+        "definition": "A piece of news; new information about something.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "uovo",
+        "surface": "uova",
+        "definition": "An egg; eggs come from chickens and you can cook them.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la mela",
+        "surface": "mela",
+        "definition": "An apple; a round fruit, red, green or yellow.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "il biscotto",
+        "surface": "biscotto",
+        "definition": "A biscuit; a small, dry and sweet food.",
+        "anchor": true
+      }
+    ]
+  },
+  {
+    "topic": "summer-and-holidays",
+    "slotIndex": 1,
+    "title": "Gabriele non chiude mai",
+    "arcType": "recurring-character-callback",
+    "synopsis": "At midday Elisa takes the dog to a small street fountain. Gabriele, the ice cream maker, comes out with water for the dog and gives them two ice creams. Elisa tells him about her week, and he invites her to join the neighbours who stay in the city.",
+    "text": "A mezzogiorno Elisa porta il cane alla fontanella dell'angolo. Per un minuto intero il cane ha bevuto, poi si siede all'ombra. Sull'acqua girano due mosche, un'ape gira su un fiore, ed Elisa vede un gatto sotto una macchina.\n\nDalla gelateria è uscito Gabriele, con la maglietta bianca e una ciotola d'acqua. “Con questo caldo, anche un cane ha bisogno di un gelato,” dice. “Che gusto preferisce?” chiede Elisa, e sorride.\n\n“Per lui fragola, senza zucchero. Per te pistacchio, verde e dolce. Lo regalo io,” risponde Gabriele, e le dà due coppette. “Che sorpresa. Grazie!” dice Elisa.\n\nElisa racconta del caldo, della notizia e di Davide, dal cugino in Puglia. Gabriele vive sopra la gelateria. “Ogni settimana invito i vicini che restano in città. Vieni anche tu?” chiede lui. “Credo di sì,” risponde Elisa.\n\nIntanto il cane ha finito la sua coppetta. Per un momento, l'aria umida pesa un po' meno. È una buona giornata.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "la fontanella",
+        "surface": "fontanella",
+        "definition": "A small public water fountain in the street.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la mosca",
+        "surface": "mosche",
+        "definition": "A fly; a small insect with wings that flies around.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "ape",
+        "surface": "ape",
+        "definition": "A bee; a small insect that makes honey.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "il fiore",
+        "surface": "fiore",
+        "definition": "A flower; the coloured part of a plant.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "il gatto",
+        "surface": "gatto",
+        "definition": "A cat; a small animal that lives with people.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la macchina",
+        "surface": "macchina",
+        "definition": "A car; a vehicle with four wheels and an engine.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "bianco",
+        "surface": "bianca",
+        "definition": "White; the colour of milk, snow or clouds.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il gusto",
+        "surface": "gusto",
+        "definition": "A flavour; here, the type of ice cream you choose.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "preferire",
+        "surface": "preferisce",
+        "definition": "To prefer; to like one thing more than another.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la fragola",
+        "surface": "fragola",
+        "definition": "A strawberry; a small, red and sweet fruit.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "il pistacchio",
+        "surface": "pistacchio",
+        "definition": "A pistachio; a small green nut, a very popular gelato flavour.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "verde",
+        "surface": "verde",
+        "definition": "Green; the colour of grass and of leaves.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "dolce",
+        "surface": "dolce",
+        "definition": "Sweet; with the taste of sugar or honey.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "regalare",
+        "surface": "regalo",
+        "definition": "To give something as a present, for free.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "dare",
+        "surface": "dà",
+        "definition": "To give; to put something in someone's hands.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "vivere",
+        "surface": "vive",
+        "definition": "To live; to have your home in a place.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "invitare",
+        "surface": "invito",
+        "definition": "To invite; to ask people to come to your place.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "credere",
+        "surface": "Credo",
+        "definition": "To believe or think; credo di sì means I think so.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la settimana",
+        "surface": "settimana",
+        "definition": "A week; seven days, from Monday to Sunday.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "buono",
+        "surface": "buona",
+        "definition": "Good; nice and pleasant, not bad at all.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "summer-and-holidays",
+    "slotIndex": 2,
+    "title": "Davide torna prima",
+    "arcType": "harmonic-close",
+    "synopsis": "Elisa has a new flight at the weekend and nobody can take the dog. She calls Davide at the sea and asks for nothing, but he takes the night train and loses two days of holiday. At the station he keeps the deal, and he tells her he has met someone.",
+    "text": "Il volo di Elisa ha una nuova data: sabato, per tre giorni. “E adesso? Con chi lascio il cane?” chiede Elisa. Gabriele lavora, e Serena viaggia in montagna.\n\nLa sera Elisa fa una chiamata a Davide. “Non ti chiedo niente,” dice. “Hai bisogno di me?” chiede lui. Elisa sente la voce di una ragazza.\n\nIl giorno seguente è arrivato un messaggio: “Il mio ritorno è stanotte, con il treno veloce. L'arrivo è alle sei.” Davide ha perso due giorni di mare e la festa di Ferragosto.\n\nAlle sei Elisa è alla stazione con il cane. Davide scende dal treno grigio, abbronzato. A casa Elisa gli prepara un caffè nero, e lui si veste per il lavoro. “Grazie, davvero,” dice Elisa. “Il patto è il patto. È la vita,” risponde lui.\n\n“In Puglia ho conosciuto una persona. Non mi interessa altro,” racconta lui, con gioia. Sembra un sogno, ed Elisa sorride.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "viaggiare",
+        "surface": "viaggia",
+        "definition": "To travel; to go on a trip to another place.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la chiamata",
+        "surface": "chiamata",
+        "definition": "A phone call; you talk to someone on the phone.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il bisogno",
+        "surface": "bisogno",
+        "definition": "Need; avere bisogno di means you need someone or something.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la ragazza",
+        "surface": "ragazza",
+        "definition": "A girl or a young woman, not a child.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "seguente",
+        "surface": "seguente",
+        "definition": "Next; the one that comes after, like the next day.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il ritorno",
+        "surface": "ritorno",
+        "definition": "The return; the moment you come back home.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "veloce",
+        "surface": "veloce",
+        "definition": "Fast; quick, it does not take a long time.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "arrivo",
+        "surface": "arrivo",
+        "definition": "Arrival; the moment a train or a person arrives.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "Ferragosto",
+        "surface": "Ferragosto",
+        "definition": "The Italian summer holiday on the fifteenth of August.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "grigio",
+        "surface": "grigio",
+        "definition": "Grey; the colour between black and white, like clouds.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "abbronzato",
+        "surface": "abbronzato",
+        "definition": "Tanned; with skin that is darker after days in the sun.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "il patto",
+        "surface": "patto",
+        "definition": "A deal or an agreement between two friends.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la vita",
+        "surface": "vita",
+        "definition": "Life; here, è la vita means that is how life is.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "preparare",
+        "surface": "prepara",
+        "definition": "To prepare; to make food or a drink for someone.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "nero",
+        "surface": "nero",
+        "definition": "Black; the colour of the night, or coffee with no milk.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "vestirsi",
+        "surface": "veste",
+        "definition": "To get dressed; to put on your clothes.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "interessare",
+        "surface": "interessa",
+        "definition": "To interest; here, nothing else matters to him.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la gioia",
+        "surface": "gioia",
+        "definition": "Joy; a strong and happy feeling inside you.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il sogno",
+        "surface": "sogno",
+        "definition": "A dream; something beautiful you imagine or want.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "raccontare",
+        "surface": "racconta",
+        "definition": "To tell; to say what happened to someone.",
+        "anchor": false
+      }
+    ]
+  }
+]

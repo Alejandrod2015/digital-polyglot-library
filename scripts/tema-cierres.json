@@ -8429,6 +8429,1240 @@
       }
     }
   },
+  "cmu1bfmb3000732wxuuwj7j2a#summer-and-holidays": {
+    "cerrado": "2026-09-14T15:31:44.598Z",
+    "hash": "f9eb0516ae93395d",
+    "historias": [
+      "summer-and-holidays#0 milano-e-vuota",
+      "summer-and-holidays#1 gabriele-non-chiude-mai",
+      "summer-and-holidays#2 davide-torna-prima"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"de verano solo en la ciudad: calor, una heladeria abierta y un tren de noche que cuesta el mar\", espina \"El trato metà e metà llega a las vacaciones: Davide se va al sur y Elisa se queda sola con el perro y el calor; Gabriele, el heladero, le hace compania; cuando el vuelo de Elisa cambia, Davide vuelve antes y pierde dos dias de mar, y cuenta que ha conocido a alguien.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"alle\", 13%)",
+      "densidad 8.0 palabras por oracion (techo 11 en a1)",
+      "seguidilla 15/44 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.21 sobre 34 plazas · 27 salen una sola vez | ancladas: 26/60 (43%) | cola: 27/34 portables con un solo encuentro (79%, tope 70%) | de un solo encuentro: sveglia, tiepido, nuoto, bianca, preferisce, dolce, regalo, dà, vive, invito, Credo, settimana, buona, viaggia, chiamata, ragazza, seguente, veloce, grigio, patto, vita, prepara, nero, veste, interessa, gioia, sogno; pasan del 30%",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol y hasta A2 en frances; en IT A1 no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "italy",
+      "registro": "de verano solo en la ciudad: calor, una heladeria abierta y un tren de noche que cuesta el mar",
+      "espina": "El trato metà e metà llega a las vacaciones: Davide se va al sur y Elisa se queda sola con el perro y el calor; Gabriele, el heladero, le hace compania; cuando el vuelo de Elisa cambia, Davide vuelve antes y pierde dos dias de mar, y cuenta que ha conocido a alguien.",
+      "recursos": "A1: humor de situacion (Io voglio la neve; Per lui fragola, senza zucchero), causalidad explicita, gancho literal suave (ha conosciuto una persona) sin cliffhanger. Passato prossimo 3 por historia. Parrafos 5, 5 y 5 con largos distintos. Titulos sin X del Y.",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "Elisa quiere pasar agosto tranquila con el perro",
+          "impide": "el calor, la ciudad vacia y un vuelo cancelado; Davide esta en el mar",
+          "cuesta": "sus dias de trabajo y la cena normal: dos huevos, una manzana y una galleta",
+          "cambia": "la unica tienda abierta es la heladeria de Gabriele",
+          "emocion": "soledad con humor: se despierta con la sabana tibia porque hace calor, y le dice al perro que quiere nieve"
+        },
+        {
+          "slot": "1",
+          "quiere": "que el perro no sufra el calor",
+          "impide": "el sol del mediodia y la fuente tibia",
+          "cuesta": "la soledad de la semana, que Elisa cuenta en voz alta",
+          "cambia": "Gabriele le regala un helado y la invita a la cena de los vecinos que se quedan",
+          "emocion": "alivio: sonrie porque alguien la escucha, y dice Che sorpresa"
+        },
+        {
+          "slot": "2",
+          "quiere": "Elisa necesita a alguien para el perro el sabado sin pedirselo a Davide",
+          "impide": "Davide esta de vacaciones en Puglia",
+          "cuesta": "dos dias de mar y la fiesta de Ferragosto de Davide",
+          "cambia": "Davide vuelve en tren de noche y cumple el patto; cuenta que ha conocido a una persona",
+          "emocion": "gratitud y alegria compartida: Elisa le prepara un cafe porque no sabe como darle las gracias, y sonrie cuando el habla de la persona"
+        }
+      ],
+      "lista_ampliada": {
+        "commit": "38815247",
+        "palabras": [
+          "arrivo",
+          "bisogno",
+          "dolce",
+          "notizia",
+          "partenza",
+          "patto",
+          "piastrella",
+          "ritorno",
+          "sud"
+        ],
+        "fuente": "KELLY Italian, nivel y categoria citados por palabra en italianA1A2.ts"
+      },
+      "reencuentro": {
+        "regla": "surface exacta de portables de los temas 1-5 que vuelven en el cuerpo del tema 6; sin reensenanza como plaza",
+        "portables_previas": 271,
+        "vuelven": 30,
+        "detalle": [
+          {
+            "surface": "appena",
+            "en": []
+          },
+          {
+            "surface": "tornata",
+            "en": []
+          },
+          {
+            "surface": "dormire",
+            "en": []
+          },
+          {
+            "surface": "magro",
+            "en": []
+          },
+          {
+            "surface": "legato",
+            "en": []
+          },
+          {
+            "surface": "lasciato",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "suona",
+            "en": []
+          },
+          {
+            "surface": "giù",
+            "en": []
+          },
+          {
+            "surface": "cerca",
+            "en": []
+          },
+          {
+            "surface": "scende",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "domani",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "lavoro",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "sente",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "toglie",
+            "en": []
+          },
+          {
+            "surface": "solo",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "piccolo",
+            "en": []
+          },
+          {
+            "surface": "sopra",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "mangia",
+            "en": []
+          },
+          {
+            "surface": "oggi",
+            "en": []
+          },
+          {
+            "surface": "manda",
+            "en": []
+          },
+          {
+            "surface": "chiede",
+            "en": [
+              2,
+              3
+            ]
+          },
+          {
+            "surface": "risposto",
+            "en": []
+          },
+          {
+            "surface": "conosce",
+            "en": []
+          },
+          {
+            "surface": "subito",
+            "en": []
+          },
+          {
+            "surface": "perso",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "terzo",
+            "en": []
+          },
+          {
+            "surface": "arrabbiata",
+            "en": []
+          },
+          {
+            "surface": "abbaia",
+            "en": []
+          },
+          {
+            "surface": "preoccupata",
+            "en": []
+          },
+          {
+            "surface": "trovato",
+            "en": []
+          },
+          {
+            "surface": "nuove",
+            "en": []
+          },
+          {
+            "surface": "siede",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "vecchio",
+            "en": []
+          },
+          {
+            "surface": "scelto",
+            "en": []
+          },
+          {
+            "surface": "povero",
+            "en": []
+          },
+          {
+            "surface": "apre",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "legge",
+            "en": []
+          },
+          {
+            "surface": "porto",
+            "en": []
+          },
+          {
+            "surface": "giusto",
+            "en": []
+          },
+          {
+            "surface": "puoi",
+            "en": []
+          },
+          {
+            "surface": "già",
+            "en": []
+          },
+          {
+            "surface": "conta",
+            "en": []
+          },
+          {
+            "surface": "resta",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "pagato",
+            "en": []
+          },
+          {
+            "surface": "scrive",
+            "en": []
+          },
+          {
+            "surface": "vengo",
+            "en": []
+          },
+          {
+            "surface": "comprano",
+            "en": []
+          },
+          {
+            "surface": "serve",
+            "en": []
+          },
+          {
+            "surface": "adesso",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "mai",
+            "en": []
+          },
+          {
+            "surface": "ancora",
+            "en": []
+          },
+          {
+            "surface": "sotto",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "arrivato",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "aspetta",
+            "en": []
+          },
+          {
+            "surface": "davanti",
+            "en": []
+          },
+          {
+            "surface": "esce",
+            "en": []
+          },
+          {
+            "surface": "tardi",
+            "en": []
+          },
+          {
+            "surface": "dopo",
+            "en": []
+          },
+          {
+            "surface": "insieme",
+            "en": []
+          },
+          {
+            "surface": "gentile",
+            "en": []
+          },
+          {
+            "surface": "giallo",
+            "en": []
+          },
+          {
+            "surface": "faccio",
+            "en": []
+          },
+          {
+            "surface": "vuoi",
+            "en": []
+          },
+          {
+            "surface": "davvero",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "felice",
+            "en": []
+          },
+          {
+            "surface": "prima",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "partire",
+            "en": []
+          },
+          {
+            "surface": "libero",
+            "en": []
+          },
+          {
+            "surface": "calde",
+            "en": []
+          },
+          {
+            "surface": "piano",
+            "en": []
+          },
+          {
+            "surface": "martedì",
+            "en": []
+          },
+          {
+            "surface": "chiave",
+            "en": []
+          },
+          {
+            "surface": "presto",
+            "en": []
+          },
+          {
+            "surface": "vuota",
+            "en": []
+          },
+          {
+            "surface": "piena",
+            "en": []
+          },
+          {
+            "surface": "corre",
+            "en": []
+          },
+          {
+            "surface": "chiama",
+            "en": []
+          },
+          {
+            "surface": "pensa",
+            "en": []
+          },
+          {
+            "surface": "nervoso",
+            "en": []
+          },
+          {
+            "surface": "velocemente",
+            "en": []
+          },
+          {
+            "surface": "entra",
+            "en": []
+          },
+          {
+            "surface": "stanca",
+            "en": []
+          },
+          {
+            "surface": "sporca",
+            "en": []
+          },
+          {
+            "surface": "dimenticato",
+            "en": []
+          },
+          {
+            "surface": "morto",
+            "en": []
+          },
+          {
+            "surface": "spiega",
+            "en": []
+          },
+          {
+            "surface": "salta",
+            "en": []
+          },
+          {
+            "surface": "contento",
+            "en": []
+          },
+          {
+            "surface": "abbraccia",
+            "en": []
+          },
+          {
+            "surface": "triste",
+            "en": []
+          },
+          {
+            "surface": "mattina",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "grande",
+            "en": []
+          },
+          {
+            "surface": "rosso",
+            "en": []
+          },
+          {
+            "surface": "blu",
+            "en": []
+          },
+          {
+            "surface": "bene",
+            "en": []
+          },
+          {
+            "surface": "ricorda",
+            "en": []
+          },
+          {
+            "surface": "bassa",
+            "en": []
+          },
+          {
+            "surface": "deve",
+            "en": []
+          },
+          {
+            "surface": "sempre",
+            "en": []
+          },
+          {
+            "surface": "lungo",
+            "en": []
+          },
+          {
+            "surface": "stipendio",
+            "en": []
+          },
+          {
+            "surface": "decide",
+            "en": []
+          },
+          {
+            "surface": "forte",
+            "en": []
+          },
+          {
+            "surface": "cambio",
+            "en": []
+          },
+          {
+            "surface": "meglio",
+            "en": []
+          },
+          {
+            "surface": "capisce",
+            "en": []
+          },
+          {
+            "surface": "mettono",
+            "en": []
+          },
+          {
+            "surface": "tranquillo",
+            "en": []
+          },
+          {
+            "surface": "lunedì",
+            "en": []
+          },
+          {
+            "surface": "studia",
+            "en": []
+          },
+          {
+            "surface": "pace",
+            "en": []
+          },
+          {
+            "surface": "comincia",
+            "en": []
+          },
+          {
+            "surface": "brutta",
+            "en": []
+          },
+          {
+            "surface": "parla",
+            "en": []
+          },
+          {
+            "surface": "alta",
+            "en": []
+          },
+          {
+            "surface": "scusate",
+            "en": []
+          },
+          {
+            "surface": "difficile",
+            "en": []
+          },
+          {
+            "surface": "chiuso",
+            "en": []
+          },
+          {
+            "surface": "finita",
+            "en": []
+          },
+          {
+            "surface": "ragione",
+            "en": []
+          },
+          {
+            "surface": "sguardo",
+            "en": []
+          },
+          {
+            "surface": "educata",
+            "en": []
+          },
+          {
+            "surface": "canta",
+            "en": []
+          },
+          {
+            "surface": "tempo",
+            "en": []
+          },
+          {
+            "surface": "ascoltano",
+            "en": []
+          },
+          {
+            "surface": "troppo",
+            "en": []
+          },
+          {
+            "surface": "male",
+            "en": []
+          },
+          {
+            "surface": "rispetto",
+            "en": []
+          },
+          {
+            "surface": "alzato",
+            "en": []
+          },
+          {
+            "surface": "colpa",
+            "en": []
+          },
+          {
+            "surface": "promesso",
+            "en": []
+          },
+          {
+            "surface": "discutono",
+            "en": []
+          },
+          {
+            "surface": "votano",
+            "en": []
+          },
+          {
+            "surface": "fuori",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "ultima",
+            "en": []
+          },
+          {
+            "surface": "spaventa",
+            "en": []
+          },
+          {
+            "surface": "facile",
+            "en": []
+          },
+          {
+            "surface": "ormai",
+            "en": []
+          },
+          {
+            "surface": "lontano",
+            "en": []
+          },
+          {
+            "surface": "dentro",
+            "en": []
+          },
+          {
+            "surface": "giovedì",
+            "en": []
+          },
+          {
+            "surface": "aiuto",
+            "en": []
+          },
+          {
+            "surface": "prossimi",
+            "en": []
+          },
+          {
+            "surface": "messaggio",
+            "en": [
+              3
+            ]
+          },
+          {
+            "surface": "gruppo",
+            "en": []
+          },
+          {
+            "surface": "gioca",
+            "en": []
+          },
+          {
+            "surface": "calcio",
+            "en": []
+          },
+          {
+            "surface": "squadra",
+            "en": []
+          },
+          {
+            "surface": "vince",
+            "en": []
+          },
+          {
+            "surface": "scuro",
+            "en": []
+          },
+          {
+            "surface": "strano",
+            "en": []
+          },
+          {
+            "surface": "aperta",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "bravo",
+            "en": []
+          },
+          {
+            "surface": "salito",
+            "en": []
+          },
+          {
+            "surface": "simpatica",
+            "en": []
+          },
+          {
+            "surface": "tenere",
+            "en": []
+          },
+          {
+            "surface": "propone",
+            "en": []
+          },
+          {
+            "surface": "rifiutare",
+            "en": []
+          },
+          {
+            "surface": "prende",
+            "en": []
+          },
+          {
+            "surface": "bella",
+            "en": []
+          },
+          {
+            "surface": "cena",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "dura",
+            "en": []
+          },
+          {
+            "surface": "manca",
+            "en": []
+          },
+          {
+            "surface": "studio",
+            "en": []
+          },
+          {
+            "surface": "visita",
+            "en": []
+          },
+          {
+            "surface": "successo",
+            "en": []
+          },
+          {
+            "surface": "forse",
+            "en": []
+          },
+          {
+            "surface": "pericoloso",
+            "en": []
+          },
+          {
+            "surface": "seria",
+            "en": []
+          },
+          {
+            "surface": "grave",
+            "en": []
+          },
+          {
+            "surface": "tirato",
+            "en": []
+          },
+          {
+            "surface": "salva",
+            "en": []
+          },
+          {
+            "surface": "riceve",
+            "en": []
+          },
+          {
+            "surface": "euro",
+            "en": []
+          },
+          {
+            "surface": "costa",
+            "en": []
+          },
+          {
+            "surface": "cara",
+            "en": []
+          },
+          {
+            "surface": "speso",
+            "en": []
+          },
+          {
+            "surface": "vale",
+            "en": []
+          },
+          {
+            "surface": "matita",
+            "en": []
+          },
+          {
+            "surface": "elenco",
+            "en": []
+          },
+          {
+            "surface": "intero",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "calcola",
+            "en": []
+          },
+          {
+            "surface": "parti",
+            "en": []
+          },
+          {
+            "surface": "semplice",
+            "en": []
+          },
+          {
+            "surface": "dividiamo",
+            "en": []
+          },
+          {
+            "surface": "uguali",
+            "en": []
+          },
+          {
+            "surface": "presti",
+            "en": []
+          },
+          {
+            "surface": "differenza",
+            "en": []
+          },
+          {
+            "surface": "segnato",
+            "en": []
+          },
+          {
+            "surface": "attenzione",
+            "en": []
+          },
+          {
+            "surface": "bevuto",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "importo",
+            "en": []
+          },
+          {
+            "surface": "inutile",
+            "en": []
+          },
+          {
+            "surface": "sbagliata",
+            "en": []
+          },
+          {
+            "surface": "cancellare",
+            "en": []
+          },
+          {
+            "surface": "gomma",
+            "en": []
+          },
+          {
+            "surface": "nasconde",
+            "en": []
+          },
+          {
+            "surface": "ricordo",
+            "en": []
+          },
+          {
+            "surface": "preziosa",
+            "en": []
+          },
+          {
+            "surface": "pulita",
+            "en": []
+          },
+          {
+            "surface": "pomeriggio",
+            "en": []
+          },
+          {
+            "surface": "giovane",
+            "en": []
+          },
+          {
+            "surface": "ricco",
+            "en": []
+          },
+          {
+            "surface": "prova",
+            "en": []
+          },
+          {
+            "surface": "gira",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "trattano",
+            "en": []
+          },
+          {
+            "surface": "affare",
+            "en": []
+          },
+          {
+            "surface": "accetta",
+            "en": []
+          },
+          {
+            "surface": "coraggio",
+            "en": []
+          },
+          {
+            "surface": "tocca",
+            "en": []
+          },
+          {
+            "surface": "saluta",
+            "en": []
+          },
+          {
+            "surface": "pari",
+            "en": []
+          },
+          {
+            "surface": "venduto",
+            "en": []
+          },
+          {
+            "surface": "cambia",
+            "en": []
+          },
+          {
+            "surface": "offro",
+            "en": []
+          },
+          {
+            "surface": "ride",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "accende",
+            "en": []
+          },
+          {
+            "surface": "lampada",
+            "en": []
+          },
+          {
+            "surface": "gamba",
+            "en": []
+          },
+          {
+            "surface": "rotta",
+            "en": []
+          },
+          {
+            "surface": "cade",
+            "en": []
+          },
+          {
+            "surface": "esperto",
+            "en": []
+          },
+          {
+            "surface": "sicuro",
+            "en": []
+          },
+          {
+            "surface": "debole",
+            "en": []
+          },
+          {
+            "surface": "aggiusto",
+            "en": []
+          },
+          {
+            "surface": "capace",
+            "en": []
+          },
+          {
+            "surface": "passano",
+            "en": []
+          },
+          {
+            "surface": "consiglio",
+            "en": []
+          },
+          {
+            "surface": "antico",
+            "en": []
+          },
+          {
+            "surface": "strumenti",
+            "en": []
+          },
+          {
+            "surface": "metro",
+            "en": []
+          },
+          {
+            "surface": "fortuna",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "pesante",
+            "en": []
+          },
+          {
+            "surface": "unico",
+            "en": []
+          },
+          {
+            "surface": "video",
+            "en": []
+          },
+          {
+            "surface": "segue",
+            "en": []
+          },
+          {
+            "surface": "punto",
+            "en": []
+          },
+          {
+            "surface": "mostra",
+            "en": []
+          },
+          {
+            "surface": "spinge",
+            "en": []
+          },
+          {
+            "surface": "corta",
+            "en": []
+          },
+          {
+            "surface": "morbido",
+            "en": []
+          },
+          {
+            "surface": "stretto",
+            "en": []
+          },
+          {
+            "surface": "largo",
+            "en": []
+          },
+          {
+            "surface": "attento",
+            "en": []
+          },
+          {
+            "surface": "peggio",
+            "en": []
+          },
+          {
+            "surface": "lentamente",
+            "en": []
+          },
+          {
+            "surface": "riesce",
+            "en": []
+          },
+          {
+            "surface": "muove",
+            "en": []
+          },
+          {
+            "surface": "pulita",
+            "en": []
+          },
+          {
+            "surface": "funziona",
+            "en": []
+          },
+          {
+            "surface": "quasi",
+            "en": []
+          },
+          {
+            "surface": "abbastanza",
+            "en": []
+          },
+          {
+            "surface": "invece",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "costruiamo",
+            "en": []
+          },
+          {
+            "surface": "riparo",
+            "en": []
+          },
+          {
+            "surface": "maestro",
+            "en": []
+          },
+          {
+            "surface": "impara",
+            "en": []
+          },
+          {
+            "surface": "tagliare",
+            "en": []
+          },
+          {
+            "surface": "coltello",
+            "en": []
+          },
+          {
+            "surface": "lezione",
+            "en": []
+          },
+          {
+            "surface": "lenta",
+            "en": []
+          },
+          {
+            "surface": "chiara",
+            "en": []
+          },
+          {
+            "surface": "diversa",
+            "en": []
+          },
+          {
+            "surface": "liscio",
+            "en": []
+          },
+          {
+            "surface": "leggero",
+            "en": []
+          },
+          {
+            "surface": "ruvido",
+            "en": []
+          },
+          {
+            "surface": "marroni",
+            "en": []
+          },
+          {
+            "surface": "sorpresa",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "momento",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "insegna",
+            "en": []
+          },
+          {
+            "surface": "vivo",
+            "en": []
+          }
+        ]
+      }
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
+  },
   "cmu1bfmb3000732wxuuwj7j2a#work-and-shifts": {
     "cerrado": "2026-09-14T14:32:56.015Z",
     "hash": "80cd3398031f55b0",
