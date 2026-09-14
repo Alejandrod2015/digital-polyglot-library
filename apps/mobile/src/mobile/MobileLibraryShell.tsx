@@ -4072,13 +4072,12 @@ export function MobileLibraryShell(args: {
     // Bug previo: el body iba con `journeys: []` y el backend borraba
     // la metadata, perdiendo todas las journeys tras kill+launch.
     const nextJourneys = dedupeJourneysById([newJourney, ...preferences.journeys]);
-    // Añadir un journey NO cambia el que estás leyendo. Antes sí: crearlo te
-    // sacaba de tu journey y te dejaba en el nuevo, con su idioma, su nivel y
-    // su contenido cargados, sin que lo hubieras pedido. Ahora se queda en la
-    // lista y entras tocándolo. La excepción es la cuenta sin ningún journey:
-    // ahí no hay nada de lo que sacarte, y quedarse sin activo dejaría la
-    // pantalla vacía.
-    const becomesActive = !preferences.activeJourneyId || preferences.journeys.length === 0;
+    // Añadir un journey te lleva a él y lo deja como actual. Decision del
+    // usuario (2026-09-14): quien toca "Add Elementary (A1)" quiere empezar
+    // ese journey, y devolverle a la lista le obligaba a buscarlo y tocarlo
+    // otra vez. Sustituye a la regla del 2026-09-05 ("crear no cambia el
+    // activo"); los journeys que ya tenia siguen en la lista, intactos.
+    const becomesActive = true;
     const nextActiveId = becomesActive ? newJourney.id : preferences.activeJourneyId;
     // `targetLanguages` es el canal legacy que aún dice "cuál es el activo"
     // por su primer elemento, así que solo se reordena cuando de verdad se
@@ -20749,11 +20748,9 @@ export function MobileLibraryShell(args: {
         onCreate={async (input) => {
           await handleJourneyCreate(input);
           setJourneysPanelOpen(false);
-          // De vuelta a la lista de journeys, con el nuevo ya dentro. Es
-          // donde el usuario decide si entra en él: crear ya no le mueve
-          // de donde estaba.
-          setLanguageSwitchMode("switch");
-          setLanguageSwitchOpen(true);
+          // Directo al journey recien creado, que ya es el activo.
+          setLanguageSwitchOpen(false);
+          setActiveScreen("home");
         }}
         getTracksForLanguage={getTracksForLanguage}
         getTracksForLanguageSync={getTracksForLanguageSync}
