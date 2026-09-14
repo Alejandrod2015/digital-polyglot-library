@@ -1187,24 +1187,28 @@ const SPEAKING_RING_SIZE = 168;
 const SPEAKING_RING_RADIUS = 78;
 const SPEAKING_RING_CIRCUMFERENCE = 2 * Math.PI * SPEAKING_RING_RADIUS;
 
-function formatSpeakingSeconds(seconds: number): string {
-  const safe = Math.max(0, Math.ceil(seconds));
-  return `0:${String(safe).padStart(2, "0")}`;
+/**
+ * El hueco de la frase es un SUBRAYADO, no un cuadro: un recuadro relleno
+ * parecia un campo de formulario vacio en medio de una frase, y lo que hace
+ * falta es la raya sobre la que se escribe.
+ *
+ * `createFillBlankExercise` deja el hueco como una corrida de `_`, asi que se
+ * parte por ahi y se intercala la raya. El ancho lo marca la palabra que falta
+ * (11 px por letra, minimo 48) para que el hueco no delate una palabra corta
+ * siendo enorme ni ahogue una larga.
+ */
+function speakingBlankWidth(answer: string): number {
+  return Math.max(48, 11 * answer.trim().length);
 }
 
-/**
- * El hueco de la frase no se pinta con guiones bajos: es una ficha en linea,
- * como en el diseno. `createFillBlankExercise` deja el hueco como una corrida
- * de `_`, asi que se parte por ahi y se intercala la ficha.
- */
-function renderSpeakingBlank(blanked: string): React.ReactNode {
+function renderSpeakingBlank(blanked: string, answer: string): React.ReactNode {
   const partes = blanked.split(/_{3,}/);
   if (partes.length === 1) return blanked;
   return partes.map((parte, index) => (
     <Text key={`blank-${index}`}>
       {parte}
       {index < partes.length - 1 ? (
-        <Text style={styles.speakingBlankSlot}>{"      "}</Text>
+        <View style={[styles.speakingBlankSlot, { width: speakingBlankWidth(answer) }]} />
       ) : null}
     </Text>
   ));
@@ -14493,8 +14497,29 @@ export function MobileLibraryShell(args: {
   // declarados más abajo. Sin esto el "next-step CTA" del result card
   // dispararía ReferenceError por TDZ.
   const renderPracticeSessionView = () => {
+    // El turno hablado tiene SU reloj (10 s, arranca al acabar el audio), pero
+    // se enseña con la insignia y la barra de siempre: que cada tipo invente
+    // su forma de mostrar el tiempo es lo que hacia la pastilla, y sobraba.
+    const isSpeakingSlot = currentPracticeExercise?.kind === "speaking";
+    const timerSecondsLeft = isSpeakingSlot ? speakingSecondsLeft : practiceTimerRemaining;
+    const timerTotalSeconds = isSpeakingSlot
+      ? SPEAKING_ANSWER_SECONDS
+      : currentPracticeExercise?.kind === "match"
+        ? 20
+        : 15;
     const timerVisualColor =
-      practiceTimerRemaining <= 2 ? "#ff5f5f" : practiceTimerRemaining <= 5 ? "#ff9a57" : "#f8c15c";
+      timerSecondsLeft <= 2 ? "#ff5f5f" : timerSecondsLeft <= 5 ? "#ff9a57" : "#f8c15c";
+    /**
+     * Cuando NO se enseña el tiempo. En el hablado hay dos momentos mas que en
+     * los otros tipos: mientras se graba (ahi manda el tope del microfono, no
+     * el de contestar) y en cuanto se responde.
+     */
+    const timerHidden =
+      practiceCountdownActive ||
+      practiceComplete ||
+      practiceLaunchLoading ||
+      (isSpeakingSlot &&
+        (practiceRevealed || speakingRecorder.isRecording || speakingPhase !== "ready"));
     return activePracticeMode && activePracticeCard ? (
       <View
         style={[
@@ -14596,13 +14621,13 @@ export function MobileLibraryShell(args: {
               </View>
             </View>
             {(() => {
-              // Badge "Xs" arriba a la derecha. Visible para
-              // multiple-choice (10 s) y para match (20 s). En match se
-              // oculta cuando todos los pares ya están matched para no
-              // distraer en los últimos 1-2 segundos antes del auto-advance.
-              if (practiceCountdownActive || practiceComplete || practiceLaunchLoading) return null;
+              // Badge "Xs" arriba a la derecha. Visible para multiple-choice
+              // (15 s), match (20 s) y el hablado (10 s). En match se oculta
+              // cuando todos los pares ya están matched para no distraer en
+              // los últimos 1-2 segundos antes del auto-advance.
+              if (timerHidden) return null;
               const kind = currentPracticeExercise?.kind;
-              if (kind !== "multiple-choice" && kind !== "match") return null;
+              if (kind !== "multiple-choice" && kind !== "match" && kind !== "speaking") return null;
               if (kind === "match" && currentPracticeExercise && matchedWords.length >= currentPracticeExercise.pairs.length) {
                 return null;
               }
@@ -14614,30 +14639,30 @@ export function MobileLibraryShell(args: {
                   ]}
                 >
                   <Text style={[styles.practiceTimerBadgeText, { color: timerVisualColor }]}>
-                    {practiceTimerRemaining}s
+                    {timerSecondsLeft}s
                   </Text>
                 </View>
               );
             })()}
           </View>
 
-          {/* Barra de timer del ejercicio: multiple-choice = 10 s,
-              match = 20 s. Misma regla de visibilidad que el badge. */}
+          {/* Barra de timer del ejercicio: multiple-choice = 15 s,
+              match = 20 s, hablado = 10 s. Misma regla de visibilidad que
+              el badge, y el mismo par de valores. */}
           {(() => {
-            if (practiceCountdownActive || practiceComplete || practiceLaunchLoading) return null;
+            if (timerHidden) return null;
             const kind = currentPracticeExercise?.kind;
-            if (kind !== "multiple-choice" && kind !== "match") return null;
+            if (kind !== "multiple-choice" && kind !== "match" && kind !== "speaking") return null;
             if (kind === "match" && currentPracticeExercise && matchedWords.length >= currentPracticeExercise.pairs.length) {
               return null;
             }
-            const totalSec = kind === "match" ? 20 : 15;
             return (
               <View style={styles.practiceTimerBarTrack}>
                 <View
                   style={[
                     styles.practiceTimerBarFill,
                     {
-                      width: `${Math.max(0, Math.min(100, (practiceTimerRemaining / totalSec) * 100))}%`,
+                      width: `${Math.max(0, Math.min(100, (timerSecondsLeft / timerTotalSeconds) * 100))}%`,
                       backgroundColor: timerVisualColor,
                     },
                   ]}
@@ -15531,21 +15556,11 @@ export function MobileLibraryShell(args: {
                       (1 - Math.max(0, Math.min(1, speakingSecondsLeft / SPEAKING_ANSWER_SECONDS)));
                     return (
                   <View style={styles.speakingShell}>
-                    <View style={styles.speakingTopRow}>
-                      <View style={styles.speakingHintChip}>
-                        <Text style={styles.speakingHintLabel}>SAY IT WITH</Text>
-                        {/* La pista es la TRADUCCION en ingles. La palabra en el
-                            idioma meta no aparece hasta despues de calificar: se
-                            prueba recuperarla, no leerla. */}
-                        <Text style={styles.speakingHintValue}>{ex.translation}</Text>
-                      </View>
-                      <View style={styles.speakingTimePill}>
-                        <Feather name="clock" size={12} color="#f8c15c" />
-                        <Text style={styles.speakingTimeText}>
-                          {formatSpeakingSeconds(speakingSecondsLeft)}
-                        </Text>
-                      </View>
-                    </View>
+                    {/* La pista es la TRADUCCION en ingles, a secas. La palabra
+                        en el idioma meta no aparece hasta despues de calificar:
+                        se prueba recuperarla, no leerla. El tiempo lo lleva la
+                        insignia de la cabecera, como en los demas tipos. */}
+                    <Text style={styles.speakingHintValue}>{ex.translation}</Text>
 
                     {/* Tarjeta ambar: SOLO la frase. Es lo unico que el usuario
                         tiene que leer mientras piensa la palabra. */}
@@ -15553,7 +15568,7 @@ export function MobileLibraryShell(args: {
                       <Text style={styles.speakingSentenceText}>
                         {practiceRevealed
                           ? ex.sentence
-                          : renderSpeakingBlank(ex.blanked)}
+                          : renderSpeakingBlank(ex.blanked, ex.surface || ex.word)}
                       </Text>
                       <Pressable
                         onPress={() => void playPracticeContextClipBest()}
@@ -27861,49 +27876,11 @@ const styles = StyleSheet.create({
     flex: 1,
     gap: 18,
   },
-  speakingTopRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: 10,
-  },
-  speakingHintChip: {
-    flexShrink: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 6,
-    paddingVertical: 7,
-    paddingHorizontal: 12,
-    borderRadius: 999,
-    backgroundColor: "rgba(248,193,92,0.14)",
-    borderWidth: 1,
-    borderColor: "rgba(248,193,92,0.35)",
-  },
-  speakingHintLabel: {
-    color: "#f8c15c",
-    fontSize: 10,
-    fontWeight: "900",
-    letterSpacing: 1.3,
-  },
   speakingHintValue: {
-    color: "#ffffff",
-    fontSize: 13,
-    fontWeight: "900",
-    flexShrink: 1,
-  },
-  speakingTimePill: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 6,
-    paddingVertical: 7,
-    paddingHorizontal: 12,
-    borderRadius: 999,
-    backgroundColor: "rgba(255,255,255,0.06)",
-  },
-  speakingTimeText: {
-    color: "#f8c15c",
-    fontSize: 13,
-    fontWeight: "900",
+    color: "#e8eefb",
+    fontSize: 15,
+    fontWeight: "600",
+    lineHeight: 20,
   },
   // La tarjeta ambar lleva SOLO la frase: es lo unico que hay que leer
   // mientras se piensa la palabra.
@@ -27927,13 +27904,15 @@ const styles = StyleSheet.create({
     lineHeight: 34,
     letterSpacing: -0.3,
   },
-  /** El hueco: ficha en linea, no una corrida de guiones bajos. */
+  /** El hueco: la raya sobre la que se escribe, sin fondo.
+   *  `height` 24 y no 30: con 30 el View empujaba la linea y rompia el
+   *  `lineHeight` de 34 de la frase, que es lo que la mantiene legible en dos
+   *  y tres lineas. El ancho lo pone `speakingBlankWidth`. */
   speakingBlankSlot: {
-    color: "transparent",
-    backgroundColor: "rgba(255,255,255,0.45)",
-    borderRadius: 12,
-    fontSize: 28,
-    fontWeight: "900",
+    height: 24,
+    borderBottomWidth: 4,
+    borderBottomColor: "rgba(42,26,5,0.55)",
+    marginHorizontal: 3,
   },
   speakingReplayButton: {
     flexDirection: "row",
