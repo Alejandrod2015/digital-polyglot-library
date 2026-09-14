@@ -2592,11 +2592,22 @@ export function ReaderScreen(args: {
             // `surface` es tambien una forma del texto, no el lema, asi que
             // vale de respaldo cuando el toque no trae token (las frases de
             // varias palabras y el render legacy).
+            // Las formas (`f`, la conjugacion) salen de la misma glosa que el
+            // trozo: sin ellas una palabra resaltada perdia "See conjugation",
+            // que la web si pinta para el vocabulario curado.
+            const gloss =
+              (tapped ? lookupGloss(tapGlosses, tapped)?.gloss : undefined) ??
+              (item.surface ? lookupGloss(tapGlosses, item.surface)?.gloss : undefined);
             const chunk =
               (tapped ? lookupGloss(tapGlosses, tapped)?.gloss.c : undefined) ??
               (item.surface ? lookupGloss(tapGlosses, item.surface)?.gloss.c : undefined);
             const base = contextSentence ? { ...item, note: contextSentence } : item;
-            setSelectedVocab(chunk ? { ...base, chunk } : base);
+            setSelectedVocab({
+              ...base,
+              ...(chunk ? { chunk } : {}),
+              ...(gloss?.f ? { forms: gloss.f } : {}),
+            });
+            setFormsOpen(false);
             trackReaderEventRef.current?.("vocab_clicked", {
               storySlug: story.slug ?? story.id,
               bookSlug: book.slug,
