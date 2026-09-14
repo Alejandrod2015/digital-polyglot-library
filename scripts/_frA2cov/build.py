@@ -99,7 +99,7 @@ T = [
  ]),
  ("homesickness-and-belonging", "Homesickness & Belonging", ["ROMAIN", "JUSTINE", "ANAÏS"], [
   ("un-kouglof-pour-nantes", "Un kouglof pour Nantes", 1,
-   f"In the living room of {APT}, Saturday afternoon, a round fluted kouglof cake dusted with sugar on the table. ANAÏS places a sealed white envelope blank side up and with no writing on the table, looking at her brother seriously; ROMAIN sits across from her staring at the envelope, surprised. Medium shot across the table, both waist up.", "Justine no sale: esta en la cocina y no oye nada. El sobre va cerrado y sin letras."),
+   f"In the living room of {APT}, Saturday afternoon, a round fluted kouglof cake dusted with sugar on the table. ANAÏS slides a sealed envelope face down across the table, only its closed flap showing, looking at her brother seriously; ROMAIN sits across from her staring at it, surprised. Medium shot across the table, both waist up.", "Justine no sale: esta en la cocina y no oye nada. El sobre va cerrado y sin letras."),
   ("une-flammekueche-maison", "Une flammekueche maison", 2,
    f"In {KITCHEN}, Sunday evening, a thin rectangular flammekueche with cream and onions on a wooden board. JUSTINE has just put her fork down and stares at ROMAIN, hurt and shocked; ANAÏS sits beside her with one hand over her mouth, embarrassed; ROMAIN sits across the table looking down at his plate. Medium shot across the table, all three waist up.", ""),
   ("deux-noms-sur-la-boite", "Deux noms sur la boîte", 3,
