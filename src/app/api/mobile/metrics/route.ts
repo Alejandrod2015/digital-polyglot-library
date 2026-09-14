@@ -34,6 +34,10 @@ const ALLOWED_EVENT_TYPES = new Set([
   "practice_recommended_mode_opened",
   "practice_session_started",
   "practice_session_completed",
+  // Turno hablado que no llego a jugarse porque el usuario nego el microfono.
+  // No puntua ni cuenta como sesion; se registra para saber cuanta gente
+  // choca con el permiso antes de decidir si el piloto sale del plan polyglot.
+  "speaking_skipped_no_mic",
   "reminder_scheduled",
   "reminder_tapped",
   "reminder_destination_opened",
