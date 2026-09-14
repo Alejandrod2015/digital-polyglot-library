@@ -419,6 +419,11 @@ const IT_IRR: Record<string, string[]> = {
   valere:  ["valgo","vali","vale","valiamo","valete","valgono"],
   spegnere:["spengo","spegni","spegne","spegniamo","spegnete","spengono"],
   comparire:["compaio","compari","compare","compariamo","comparite","compaiono"],
+  // Sin esta fila la regla de -ere producia "compii"/"compiiamo"/"compiete":
+  // la raiz "compi" acaba en i y el branch -ere no pasa por itRaiz (solo lo
+  // hace el de -are), asi que la i de la raiz y la de la terminacion se
+  // sumaban sin colapsar. Mismo bug de fondo que fischii/soffiiamo, otra cola.
+  compiere:["compio","compi","compie","compiamo","compite","compiono"],
   dispiacere:["dispiaccio","dispiaci","dispiace","dispiacciamo","dispiacete","dispiacciono"],
 };
 
