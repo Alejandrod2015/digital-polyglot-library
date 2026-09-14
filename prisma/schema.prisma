@@ -390,6 +390,18 @@ model StoryPracticeSet {
   /// When false, the seed script will overwrite this set the next time
   /// it runs. Set to true once an editor has reviewed/approved.
   locked    Boolean  @default(false)
+  /// Traducciones al ingles de la frase de cada palabra, escritas a mano.
+  ///
+  /// Forma: `{ [palabraNormalizada]: "English sentence" }`, con la clave igual
+  /// al `norm(word)` (minusculas y sin espacios alrededor) que ya usa la ruta
+  /// de favoritos para casar palabra con ejercicio.
+  ///
+  /// Por que una columna y no el payload del ejercicio: el `fill_blank` curado
+  /// solo existe para 4 a 6 palabras por historia, asi que de las 682 palabras
+  /// guardadas hoy solo 39 tienen traduccion de frase. Las demas las redacta un
+  /// chat ejecutor por journey y necesitan sitio propio, independiente de que
+  /// esa palabra tenga o no ejercicio de contexto.
+  sentenceTranslations Json?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
