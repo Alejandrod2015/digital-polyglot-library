@@ -457,6 +457,8 @@ export default function PracticePage() {
   const contextRevealAudioRef = useRef<string | null>(null);
   // Last exercise id whose audio we warmed into the HTTP cache (so play is instant).
   const preloadedExerciseRef = useRef<string | null>(null);
+  // Listening exercises whose audio has already been warmed (current + next).
+  const listenWarmedRef = useRef<Set<string>>(new Set());
   // Tracks the last meaning exercise whose target word we auto-played on
   // appearance (iPhone autoplays the word so the learner hears it while
   // choosing the meaning). Fires once per exercise.
@@ -2039,6 +2041,62 @@ export default function PracticePage() {
       };
     }
 
+    // Listening (feedback de Tawnis, 2026-09-14, "the audio started late on
+    // word exercises that involved listening"): era el UNICO tipo cuyo audio
+    // se resolvia AL TOCAR. Ninguna fila listen_choose lleva clip pre-horneado
+    // (0 de 619 en ES), asi que el toque hacia el POST a sentence-tts y luego
+    // la descarga del mp3 antes de sonar. Aqui se resuelve la URL al aparecer
+    // el ejercicio, con la MISMA peticion y clave de cache que usa
+    // playHqContextClip al tocar, y se calienta tambien el SIGUIENTE ejercicio
+    // para que el primer toque no llegue antes que la sintesis. Sin `cancelled`
+    // a proposito: guardar la URL de un ejercicio que ya no es el actual es
+    // correcto (es el siguiente) y el cleanup se dispara con cada cambio de
+    // deps, no solo al cambiar de ejercicio.
+    const warmListen = (ex: PracticeExercise | null | undefined) => {
+      if (!ex || ex.type !== "listen_choose") return;
+      if (listenWarmedRef.current.has(ex.id)) return;
+      listenWarmedRef.current.add(ex.id);
+      const listenClip = ex.audioClip ?? null;
+      const explicitUrl =
+        typeof listenClip?.clipUrl === "string" && listenClip.clipUrl.trim() ? listenClip.clipUrl.trim() : null;
+      if (explicitUrl) {
+        warm(explicitUrl);
+        return;
+      }
+      if (listenClip) {
+        const storyAudio =
+          listenClip.storySource === "standalone"
+            ? standaloneStoryAudioBySlug[normalizeStorySlug(listenClip.storySlug)]
+            : userStoryAudioBySlug[normalizeStorySlug(listenClip.storySlug)];
+        if (storyAudio?.audioUrl && findSegmentForClip(storyAudio, listenClip)) {
+          warm(storyAudio.audioUrl);
+          return;
+        }
+      }
+      const sentence = (listenClip?.sentence ?? ex.speechText ?? "").trim();
+      const language = listenClip ? listenClip.language ?? null : ex.language ?? null;
+      if (!sentence || !language) return;
+      const cacheKey = `${language}|${sentence}`;
+      if (hqUrlBySentence[cacheKey]) {
+        warm(hqUrlBySentence[cacheKey]);
+        return;
+      }
+      void fetch("/api/practice/sentence-tts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ sentence, language }),
+      })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((d: { url?: string } | null) => {
+          if (!d?.url) return;
+          setHqUrlBySentence((prev) => (prev[cacheKey] ? prev : { ...prev, [cacheKey]: d.url! }));
+          warm(d.url);
+        })
+        .catch(() => {});
+    };
+    warmListen(currentExercise);
+    warmListen(exercises[exerciseIndex + 1] ?? null);
+
     const clip =
       currentExercise.type === "meaning_in_context" || currentExercise.type === "fill_blank"
         ? currentExercise.audioClip
@@ -2058,7 +2116,16 @@ export default function PracticePage() {
     return () => {
       cancelled = true;
     };
-  }, [currentExercise, userStoryAudioBySlug, wordUrlByKey, narratorVoiceId]);
+  }, [
+    currentExercise,
+    exercises,
+    exerciseIndex,
+    userStoryAudioBySlug,
+    standaloneStoryAudioBySlug,
+    wordUrlByKey,
+    hqUrlBySentence,
+    narratorVoiceId,
+  ]);
 
   // Context-mode reveal audio (iPhone parity): no autoplay while the user is
   // thinking, but the moment they reveal the answer we play the full sentence
