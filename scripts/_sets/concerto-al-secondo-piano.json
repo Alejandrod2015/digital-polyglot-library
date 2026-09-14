@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "quartiere,lunedì,ricercatore,pace",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "quartiere",
+     "answer": "a neighbourhood",
+     "options": [
+      "a neighbourhood",
+      "monday",
+      "a researcher",
+      "peace"
+     ]
+    },
+    {
+     "word": "lunedì",
+     "answer": "monday",
+     "options": [
+      "a neighbourhood",
+      "monday",
+      "a researcher",
+      "peace"
+     ]
+    },
+    {
+     "word": "ricercatore",
+     "answer": "a researcher",
+     "options": [
+      "a neighbourhood",
+      "monday",
+      "a researcher",
+      "peace"
+     ]
+    },
+    {
+     "word": "pace",
+     "answer": "peace",
+     "options": [
+      "a neighbourhood",
+      "monday",
+      "a researcher",
+      "peace"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "parla",
+  "sentence": "Alza la voce al telefono e _____ per molto tempo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "parla",
+   "options": [
+    "parla",
+    "canta",
+    "cammina",
+    "aspetta"
+   ],
+   "translation": "He raises his voice on the phone and _____ for a long time.",
+   "optionTranslations": [
+    "to speak",
+    "sings",
+    "walks",
+    "waits"
+   ],
+   "audioClip": {
+    "storySlug": "concerto-al-secondo-piano",
+    "storySource": "user",
+    "sentence": "Alza la voce al telefono e parla per molto tempo.",
+    "targetWord": "parla",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "alta",
+  "sentence": "Tutti devono sentirla, così parla a voce _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "alta",
+   "options": [
+    "alta",
+    "bassa",
+    "stanca",
+    "strana"
+   ],
+   "translation": "Everyone needs to hear her, so she speaks in a _____ voice.",
+   "optionTranslations": [
+    "high or loud",
+    "low",
+    "tired",
+    "strange"
+   ],
+   "audioClip": {
+    "storySlug": "concerto-al-secondo-piano",
+    "storySource": "user",
+    "sentence": "Tutti devono sentirla, così parla a voce alta.",
+    "targetWord": "alta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "difficile",
+  "sentence": "L'esame aveva tante domande ed era molto _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "difficile",
+   "options": [
+    "difficile",
+    "facile",
+    "semplice",
+    "breve"
+   ],
+   "translation": "The exam had so many questions and was very _____.",
+   "optionTranslations": [
+    "difficult",
+    "easy",
+    "simple",
+    "short"
+   ],
+   "audioClip": {
+    "storySlug": "concerto-al-secondo-piano",
+    "storySource": "user",
+    "sentence": "L'esame aveva tante domande ed era molto difficile.",
+    "targetWord": "difficile",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "studiare",
+  "sentence": "che [[studia]] e lavora da casa, in pace.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to study",
+   "options": [
+    "to study",
+    "to fall down",
+    "to suggest",
+    "to adopt"
+   ],
+   "audioClip": {
+    "storySlug": "concerto-al-secondo-piano",
+    "storySource": "user",
+    "sentence": "che studia e lavora da casa, in pace.",
+    "targetWord": "studia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cominciare",
+  "sentence": "Poi [[comincia]] a ululare,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to start",
+   "options": [
+    "to start",
+    "to put",
+    "to prepare",
+    "to ask"
+   ],
+   "audioClip": {
+    "storySlug": "concerto-al-secondo-piano",
+    "storySource": "user",
+    "sentence": "Poi comincia a ululare,",
+    "targetWord": "comincia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ululare",
+  "sentence": "Poi comincia a [[ululare]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to howl",
+   "options": [
+    "to howl",
+    "to break",
+    "to offer",
+    "to answer"
+   ],
+   "audioClip": {
+    "storySlug": "concerto-al-secondo-piano",
+    "storySource": "user",
+    "sentence": "Poi comincia a ululare,",
+    "targetWord": "ululare",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "brutto",
+  "sentence": "È una [[brutta]] giornata: Elisa è partita,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bad or ugly",
+   "options": [
+    "bad or ugly",
+    "serious",
+    "soft",
+    "sure"
+   ],
+   "audioClip": {
+    "storySlug": "concerto-al-secondo-piano",
+    "storySource": "user",
+    "sentence": "È una brutta giornata: Elisa è partita,",
+    "targetWord": "brutta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "scusare",
+  "sentence": "[[Scusate]], al terzo piano c'è un concerto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to excuse",
+   "options": [
+    "to excuse",
+    "to receive",
+    "to follow",
+    "to give up"
+   ],
+   "audioClip": {
+    "storySlug": "concerto-al-secondo-piano",
+    "storySource": "user",
+    "sentence": "Scusate, al terzo piano c'è un concerto.",
+    "targetWord": "Scusate",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "concerto",
+  "sentence": "[[Concerto]] al secondo piano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a concert",
+   "options": [
+    "a concert",
+    "the August holiday",
+    "the apartment building",
+    "attention"
+   ],
+   "audioClip": {
+    "storySlug": "concerto-al-secondo-piano",
+    "storySource": "user",
+    "sentence": "Concerto al secondo piano.",
+    "targetWord": "concerto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chiudere",
+  "sentence": "Serena ha [[chiuso]] il computer",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to close",
+   "options": [
+    "to close",
+    "can",
+    "to think about",
+    "to try"
+   ],
+   "audioClip": {
+    "storySlug": "concerto-al-secondo-piano",
+    "storySource": "user",
+    "sentence": "Serena ha chiuso il computer",
+    "targetWord": "chiuso",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "finire",
+  "sentence": "La mia riunione è [[finita]] male.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to end",
+   "options": [
+    "to end",
+    "to examine",
+    "to feel",
+    "to sell"
+   ],
+   "audioClip": {
+    "storySlug": "concerto-al-secondo-piano",
+    "storySource": "user",
+    "sentence": "La mia riunione è finita male.",
+    "targetWord": "finita",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ragione",
+  "sentence": "Davide abbassa lo sguardo: Serena ha [[ragione]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "reason",
+   "options": [
+    "reason",
+    "a pistachio",
+    "a dream",
+    "a video"
+   ],
+   "audioClip": {
+    "storySlug": "concerto-al-secondo-piano",
+    "storySource": "user",
+    "sentence": "Davide abbassa lo sguardo: Serena ha ragione.",
+    "targetWord": "ragione",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sguardo",
+  "sentence": "Davide abbassa lo [[sguardo]]: Serena ha ragione.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a look",
+   "options": [
+    "a look",
+    "dry dog food",
+    "a bee",
+    "a garden"
+   ],
+   "audioClip": {
+    "storySlug": "concerto-al-secondo-piano",
+    "storySource": "user",
+    "sentence": "Davide abbassa lo sguardo: Serena ha ragione.",
+    "targetWord": "sguardo",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "educato",
+  "sentence": "Sono una persona [[educata]], ma domani chiamo l'amministratore,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "polite",
+   "options": [
+    "polite",
+    "narrow",
+    "right",
+    "last"
+   ],
+   "audioClip": {
+    "storySlug": "concerto-al-secondo-piano",
+    "storySource": "user",
+    "sentence": "Sono una persona educata, ma domani chiamo l'amministratore,",
+    "targetWord": "educata",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "amministratore",
+  "sentence": "Sono una persona educata, ma domani chiamo l'[[amministratore]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the building manager",
+   "options": [
+    "the building manager",
+    "a leg",
+    "toothpaste",
+    "time"
+   ],
+   "audioClip": {
+    "storySlug": "concerto-al-secondo-piano",
+    "storySource": "user",
+    "sentence": "Sono una persona educata, ma domani chiamo l'amministratore,",
+    "targetWord": "amministratore",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cantare",
+  "sentence": "Il vostro cane [[canta]] da ore,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sing",
+   "options": [
+    "to sing",
+    "to give",
+    "to take off",
+    "to decide"
+   ],
+   "audioClip": {
+    "storySlug": "concerto-al-secondo-piano",
+    "storySource": "user",
+    "sentence": "Il vostro cane canta da ore,",
+    "targetWord": "canta",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

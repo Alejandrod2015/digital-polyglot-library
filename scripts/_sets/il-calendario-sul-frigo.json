@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "mattina,frigo,cambio,calamita",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "mattina",
+     "answer": "morning",
+     "options": [
+      "morning",
+      "the fridge",
+      "a change",
+      "a magnet"
+     ]
+    },
+    {
+     "word": "frigo",
+     "answer": "the fridge",
+     "options": [
+      "morning",
+      "the fridge",
+      "a change",
+      "a magnet"
+     ]
+    },
+    {
+     "word": "cambio",
+     "answer": "a change",
+     "options": [
+      "morning",
+      "the fridge",
+      "a change",
+      "a magnet"
+     ]
+    },
+    {
+     "word": "calamita",
+     "answer": "a magnet",
+     "options": [
+      "morning",
+      "the fridge",
+      "a change",
+      "a magnet"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "stipendio",
+  "sentence": "Ogni mese l'azienda gli paga lo _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "stipendio",
+   "options": [
+    "stipendio",
+    "consiglio",
+    "rispetto",
+    "coraggio"
+   ],
+   "translation": "Every month the company pays him his _____.",
+   "optionTranslations": [
+    "a salary",
+    "advice",
+    "respect",
+    "courage"
+   ],
+   "audioClip": {
+    "storySlug": "il-calendario-sul-frigo",
+    "storySource": "user",
+    "sentence": "Ogni mese l'azienda gli paga lo stipendio.",
+    "targetWord": "stipendio",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "capisce",
+  "sentence": "Legge la stessa frase varie volte, ma non _____ niente.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "capisce",
+   "options": [
+    "capisce",
+    "preferisce",
+    "finisce",
+    "starnutisce"
+   ],
+   "translation": "She reads the same sentence several times, but doesn't _____ anything.",
+   "optionTranslations": [
+    "to understand",
+    "prefers",
+    "finishes",
+    "sneezes"
+   ],
+   "audioClip": {
+    "storySlug": "il-calendario-sul-frigo",
+    "storySource": "user",
+    "sentence": "Legge la stessa frase varie volte, ma non capisce niente.",
+    "targetWord": "capisce",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "tranquillo",
+  "sentence": "Non c'è nessun rumore in casa: è tutto molto _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tranquillo",
+   "options": [
+    "tranquillo",
+    "strano",
+    "difficile",
+    "stretto"
+   ],
+   "translation": "There's no noise at home: everything is very _____.",
+   "optionTranslations": [
+    "calm",
+    "strange",
+    "difficult",
+    "narrow"
+   ],
+   "audioClip": {
+    "storySlug": "il-calendario-sul-frigo",
+    "storySource": "user",
+    "sentence": "Non c'è nessun rumore in casa: è tutto molto tranquillo.",
+    "targetWord": "tranquillo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "grande",
+  "sentence": "un foglio [[grande]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "big",
+   "options": [
+    "big",
+    "humid",
+    "dirty",
+    "famous"
+   ],
+   "audioClip": {
+    "storySlug": "il-calendario-sul-frigo",
+    "storySource": "user",
+    "sentence": "un foglio grande",
+    "targetWord": "grande",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rosso",
+  "sentence": "il [[rosso]] è per lui,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "red",
+   "options": [
+    "red",
+    "heavy",
+    "cold",
+    "white"
+   ],
+   "audioClip": {
+    "storySlug": "il-calendario-sul-frigo",
+    "storySource": "user",
+    "sentence": "il rosso è per lui,",
+    "targetWord": "rosso",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "blu",
+  "sentence": "il [[blu]] per Elisa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "blue",
+   "options": [
+    "blue",
+    "new",
+    "weak",
+    "brave"
+   ],
+   "audioClip": {
+    "storySlug": "il-calendario-sul-frigo",
+    "storySource": "user",
+    "sentence": "il blu per Elisa.",
+    "targetWord": "blu",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bene",
+  "sentence": "Elisa non ha dormito [[bene]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "well",
+   "options": [
+    "well",
+    "instead",
+    "now",
+    "enough"
+   ],
+   "audioClip": {
+    "storySlug": "il-calendario-sul-frigo",
+    "storySource": "user",
+    "sentence": "Elisa non ha dormito bene,",
+    "targetWord": "bene",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ricordare",
+  "sentence": "e [[ricorda]] il biglietto della vicina.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to remember",
+   "options": [
+    "to remember",
+    "to wait for",
+    "to eat",
+    "to discuss"
+   ],
+   "audioClip": {
+    "storySlug": "il-calendario-sul-frigo",
+    "storySource": "user",
+    "sentence": "e ricorda il biglietto della vicina.",
+    "targetWord": "ricorda",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "basso",
+  "sentence": "con la voce [[bassa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "low",
+   "options": [
+    "low",
+    "thin",
+    "useless",
+    "polite"
+   ],
+   "audioClip": {
+    "storySlug": "il-calendario-sul-frigo",
+    "storySource": "user",
+    "sentence": "con la voce bassa.",
+    "targetWord": "bassa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dovere",
+  "sentence": "Il telefono [[deve]] essere sempre carico.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "must",
+   "options": [
+    "must",
+    "to explain",
+    "to excuse",
+    "to see"
+   ],
+   "audioClip": {
+    "storySlug": "il-calendario-sul-frigo",
+    "storySource": "user",
+    "sentence": "Il telefono deve essere sempre carico.",
+    "targetWord": "deve",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sempre",
+  "sentence": "Il telefono deve essere [[sempre]] carico.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "always",
+   "options": [
+    "always",
+    "late",
+    "really",
+    "behind"
+   ],
+   "audioClip": {
+    "storySlug": "il-calendario-sul-frigo",
+    "storySource": "user",
+    "sentence": "Il telefono deve essere sempre carico.",
+    "targetWord": "sempre",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lungo",
+  "sentence": "Elisa guarda il foglio a [[lungo]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "long",
+   "options": [
+    "long",
+    "warm",
+    "full",
+    "green"
+   ],
+   "audioClip": {
+    "storySlug": "il-calendario-sul-frigo",
+    "storySource": "user",
+    "sentence": "Elisa guarda il foglio a lungo,",
+    "targetWord": "lungo",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "decidere",
+  "sentence": "Poi [[decide]], e risponde forte:",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to decide",
+   "options": [
+    "to decide",
+    "to work",
+    "to promise",
+    "to clean"
+   ],
+   "audioClip": {
+    "storySlug": "il-calendario-sul-frigo",
+    "storySource": "user",
+    "sentence": "Poi decide, e risponde forte:",
+    "targetWord": "decide",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "forte",
+  "sentence": "Poi decide, e risponde [[forte]]:",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "loud or strong",
+   "options": [
+    "loud or strong",
+    "nervous",
+    "light",
+    "happy"
+   ],
+   "audioClip": {
+    "storySlug": "il-calendario-sul-frigo",
+    "storySource": "user",
+    "sentence": "Poi decide, e risponde forte:",
+    "targetWord": "forte",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "meglio",
+  "sentence": "Ma è [[meglio]] così,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "better",
+   "options": [
+    "better",
+    "worse",
+    "on top of",
+    "before"
+   ],
+   "audioClip": {
+    "storySlug": "il-calendario-sul-frigo",
+    "storySource": "user",
+    "sentence": "Ma è meglio così,",
+    "targetWord": "meglio",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mettere",
+  "sentence": "[[Mettono]] il foglio sul frigo con due calamite.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to put",
+   "options": [
+    "to put",
+    "to come",
+    "to look at",
+    "to jump"
+   ],
+   "audioClip": {
+    "storySlug": "il-calendario-sul-frigo",
+    "storySource": "user",
+    "sentence": "Mettono il foglio sul frigo con due calamite.",
+    "targetWord": "Mettono",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

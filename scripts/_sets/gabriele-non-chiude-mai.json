@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "fontanella,mosca,ape,fiore",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "fontanella",
+     "answer": "a drinking fountain",
+     "options": [
+      "a drinking fountain",
+      "a fly",
+      "a bee",
+      "a flower"
+     ]
+    },
+    {
+     "word": "mosca",
+     "answer": "a fly",
+     "options": [
+      "a drinking fountain",
+      "a fly",
+      "a bee",
+      "a flower"
+     ]
+    },
+    {
+     "word": "ape",
+     "answer": "a bee",
+     "options": [
+      "a drinking fountain",
+      "a fly",
+      "a bee",
+      "a flower"
+     ]
+    },
+    {
+     "word": "fiore",
+     "answer": "a flower",
+     "options": [
+      "a drinking fountain",
+      "a fly",
+      "a bee",
+      "a flower"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "preferisce",
+  "sentence": "Tra vari gusti disponibili, _____ sempre quello alla fragola.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "preferisce",
+   "options": [
+    "preferisce",
+    "finisce",
+    "capisce",
+    "starnutisce"
+   ],
+   "translation": "Among several flavors available, he always _____ the strawberry one.",
+   "optionTranslations": [
+    "to prefer",
+    "finishes",
+    "understands",
+    "sneezes"
+   ],
+   "audioClip": {
+    "storySlug": "gabriele-non-chiude-mai",
+    "storySource": "user",
+    "sentence": "Tra vari gusti disponibili, preferisce sempre quello alla fragola.",
+    "targetWord": "preferisce",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "dolce",
+  "sentence": "Questa torta ha molto zucchero: è davvero _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dolce",
+   "options": [
+    "dolce",
+    "cara",
+    "leggera",
+    "strana"
+   ],
+   "translation": "This cake has a lot of sugar: it's really _____.",
+   "optionTranslations": [
+    "sweet",
+    "expensive",
+    "light",
+    "strange"
+   ],
+   "audioClip": {
+    "storySlug": "gabriele-non-chiude-mai",
+    "storySource": "user",
+    "sentence": "Questa torta ha molto zucchero: è davvero dolce.",
+    "targetWord": "dolce",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "Credo",
+  "sentence": "Non sono sicuro, ma _____ che il negozio sia aperto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Credo",
+   "options": [
+    "Credo",
+    "spero",
+    "ricordo",
+    "spiego"
+   ],
+   "translation": "I'm not sure, but I _____ the shop is open.",
+   "optionTranslations": [
+    "to believe or think",
+    "hope",
+    "remember",
+    "explain"
+   ],
+   "audioClip": {
+    "storySlug": "gabriele-non-chiude-mai",
+    "storySource": "user",
+    "sentence": "Non sono sicuro, ma Credo che il negozio sia aperto.",
+    "targetWord": "Credo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gatto",
+  "sentence": "ed Elisa vede un [[gatto]] sotto una macchina.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a cat",
+   "options": [
+    "a cat",
+    "a young woman",
+    "morning",
+    "an apple"
+   ],
+   "audioClip": {
+    "storySlug": "gabriele-non-chiude-mai",
+    "storySource": "user",
+    "sentence": "ed Elisa vede un gatto sotto una macchina.",
+    "targetWord": "gatto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "macchina",
+  "sentence": "ed Elisa vede un gatto sotto una [[macchina]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a car",
+   "options": [
+    "a car",
+    "a tile",
+    "a leg",
+    "a sheet"
+   ],
+   "audioClip": {
+    "storySlug": "gabriele-non-chiude-mai",
+    "storySource": "user",
+    "sentence": "ed Elisa vede un gatto sotto una macchina.",
+    "targetWord": "macchina",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bianco",
+  "sentence": "con la maglietta [[bianca]] e una ciotola d'acqua.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "white",
+   "options": [
+    "white",
+    "brave",
+    "low",
+    "angry"
+   ],
+   "audioClip": {
+    "storySlug": "gabriele-non-chiude-mai",
+    "storySource": "user",
+    "sentence": "con la maglietta bianca e una ciotola d'acqua.",
+    "targetWord": "bianca",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gusto",
+  "sentence": "Che [[gusto]] preferisce?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a flavour",
+   "options": [
+    "a flavour",
+    "an expert",
+    "a message",
+    "arrival"
+   ],
+   "audioClip": {
+    "storySlug": "gabriele-non-chiude-mai",
+    "storySource": "user",
+    "sentence": "Che gusto preferisce?",
+    "targetWord": "gusto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fragola",
+  "sentence": "Per lui [[fragola]], senza zucchero.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a strawberry",
+   "options": [
+    "a strawberry",
+    "a tape measure",
+    "a cloud",
+    "a piece of news"
+   ],
+   "audioClip": {
+    "storySlug": "gabriele-non-chiude-mai",
+    "storySource": "user",
+    "sentence": "Per lui fragola, senza zucchero.",
+    "targetWord": "fragola",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pistacchio",
+  "sentence": "Per te [[pistacchio]], verde e dolce.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a pistachio",
+   "options": [
+    "a pistachio",
+    "time",
+    "a star",
+    "the August holiday"
+   ],
+   "audioClip": {
+    "storySlug": "gabriele-non-chiude-mai",
+    "storySource": "user",
+    "sentence": "Per te pistacchio, verde e dolce.",
+    "targetWord": "pistacchio",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "verde",
+  "sentence": "Per te pistacchio, [[verde]] e dolce.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "green",
+   "options": [
+    "green",
+    "next",
+    "simple",
+    "full"
+   ],
+   "audioClip": {
+    "storySlug": "gabriele-non-chiude-mai",
+    "storySource": "user",
+    "sentence": "Per te pistacchio, verde e dolce.",
+    "targetWord": "verde",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "regalare",
+  "sentence": "Lo [[regalo]] io,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to give as a gift",
+   "options": [
+    "to give as a gift",
+    "to count",
+    "to excuse",
+    "to eat"
+   ],
+   "audioClip": {
+    "storySlug": "gabriele-non-chiude-mai",
+    "storySource": "user",
+    "sentence": "Lo regalo io,",
+    "targetWord": "regalo",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dare",
+  "sentence": "risponde Gabriele, e le [[dà]] due coppette.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to give",
+   "options": [
+    "to give",
+    "to put",
+    "to sit down",
+    "to surprise"
+   ],
+   "audioClip": {
+    "storySlug": "gabriele-non-chiude-mai",
+    "storySource": "user",
+    "sentence": "risponde Gabriele, e le dà due coppette.",
+    "targetWord": "dà",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vivere",
+  "sentence": "Gabriele [[vive]] sopra la gelateria.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to live",
+   "options": [
+    "to live",
+    "to learn",
+    "to open",
+    "to walk"
+   ],
+   "audioClip": {
+    "storySlug": "gabriele-non-chiude-mai",
+    "storySource": "user",
+    "sentence": "Gabriele vive sopra la gelateria.",
+    "targetWord": "vive",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "invitare",
+  "sentence": "Ogni settimana [[invito]] i vicini",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to invite",
+   "options": [
+    "to invite",
+    "to bark",
+    "to erase",
+    "to help"
+   ],
+   "audioClip": {
+    "storySlug": "gabriele-non-chiude-mai",
+    "storySource": "user",
+    "sentence": "Ogni settimana invito i vicini",
+    "targetWord": "invito",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "settimana",
+  "sentence": "Ogni [[settimana]] invito i vicini",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a week",
+   "options": [
+    "a week",
+    "a phone call",
+    "an animal's fur",
+    "football"
+   ],
+   "audioClip": {
+    "storySlug": "gabriele-non-chiude-mai",
+    "storySource": "user",
+    "sentence": "Ogni settimana invito i vicini",
+    "targetWord": "settimana",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "buono",
+  "sentence": "È una [[buona]] giornata.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "good",
+   "options": [
+    "good",
+    "nervous",
+    "easy",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "gabriele-non-chiude-mai",
+    "storySource": "user",
+    "sentence": "È una buona giornata.",
+    "targetWord": "buona",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

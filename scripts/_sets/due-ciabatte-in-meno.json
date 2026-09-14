@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "mangiare,oggi,giro,mandare",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "mangiare",
+     "answer": "to eat",
+     "options": [
+      "to eat",
+      "today",
+      "a round",
+      "to send"
+     ]
+    },
+    {
+     "word": "oggi",
+     "answer": "today",
+     "options": [
+      "to eat",
+      "today",
+      "a round",
+      "to send"
+     ]
+    },
+    {
+     "word": "giro",
+     "answer": "a round",
+     "options": [
+      "to eat",
+      "today",
+      "a round",
+      "to send"
+     ]
+    },
+    {
+     "word": "mandare",
+     "answer": "to send",
+     "options": [
+      "to eat",
+      "today",
+      "a round",
+      "to send"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "arrabbiata",
+  "sentence": "Urla per il rumore e non sorride mai: è molto _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "arrabbiata",
+   "options": [
+    "arrabbiata",
+    "felice",
+    "stanca",
+    "preoccupata"
+   ],
+   "translation": "She shouts about the noise and never smiles: she's very _____.",
+   "optionTranslations": [
+    "angry",
+    "happy",
+    "tired",
+    "worried"
+   ],
+   "audioClip": {
+    "storySlug": "due-ciabatte-in-meno",
+    "storySource": "user",
+    "sentence": "Urla per il rumore e non sorride mai: è molto arrabbiata.",
+    "targetWord": "arrabbiata",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "preoccupata",
+  "sentence": "Il cane è sparito da ore: è molto _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "preoccupata",
+   "options": [
+    "preoccupata",
+    "felice",
+    "arrabbiata",
+    "stanca"
+   ],
+   "translation": "The dog has been missing for hours: she is very _____.",
+   "optionTranslations": [
+    "worried",
+    "happy",
+    "angry",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "due-ciabatte-in-meno",
+    "storySource": "user",
+    "sentence": "Il cane è sparito da ore: è molto preoccupata.",
+    "targetWord": "preoccupata",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "povero",
+  "sentence": "Nessuno si prende cura di lui: è un cane _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "povero",
+   "options": [
+    "povero",
+    "ricco",
+    "vecchio",
+    "stanco"
+   ],
+   "translation": "Nobody takes care of him: he's a _____ dog.",
+   "optionTranslations": [
+    "poor",
+    "rich",
+    "old",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "due-ciabatte-in-meno",
+    "storySource": "user",
+    "sentence": "Nessuno si prende cura di lui: è un cane povero.",
+    "targetWord": "povero",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "condominio",
+  "sentence": "nel gruppo del [[condominio]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the apartment building",
+   "options": [
+    "the apartment building",
+    "an ice cream shop",
+    "luck",
+    "a salary"
+   ],
+   "audioClip": {
+    "storySlug": "due-ciabatte-in-meno",
+    "storySource": "user",
+    "sentence": "nel gruppo del condominio",
+    "targetWord": "condominio",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chiedere",
+  "sentence": "[[chiede]] Davide al cane.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to ask",
+   "options": [
+    "to ask",
+    "to come back",
+    "to look for",
+    "to ring"
+   ],
+   "audioClip": {
+    "storySlug": "due-ciabatte-in-meno",
+    "storySource": "user",
+    "sentence": "chiede Davide al cane.",
+    "targetWord": "chiede",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rispondere",
+  "sentence": "Nel gruppo nessuno ha [[risposto]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to answer",
+   "options": [
+    "to answer",
+    "to go down",
+    "to refuse",
+    "to calculate"
+   ],
+   "audioClip": {
+    "storySlug": "due-ciabatte-in-meno",
+    "storySource": "user",
+    "sentence": "Nel gruppo nessuno ha risposto,",
+    "targetWord": "risposto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "conoscere",
+  "sentence": "Al bar nessuno lo [[conosce]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to know",
+   "options": [
+    "to know",
+    "to understand",
+    "to wake up",
+    "to greet"
+   ],
+   "audioClip": {
+    "storySlug": "due-ciabatte-in-meno",
+    "storySource": "user",
+    "sentence": "Al bar nessuno lo conosce,",
+    "targetWord": "conosce",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "subito",
+  "sentence": "Il telefono suona ed Elisa risponde [[subito]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "immediately",
+   "options": [
+    "immediately",
+    "tomorrow",
+    "only",
+    "unfortunately"
+   ],
+   "audioClip": {
+    "storySlug": "due-ciabatte-in-meno",
+    "storySource": "user",
+    "sentence": "Il telefono suona ed Elisa risponde subito.",
+    "targetWord": "subito",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "perdere",
+  "sentence": "Ha [[perso]] un cane?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to lose",
+   "options": [
+    "to lose",
+    "to move",
+    "to study",
+    "to go down"
+   ],
+   "audioClip": {
+    "storySlug": "due-ciabatte-in-meno",
+    "storySource": "user",
+    "sentence": "Ha perso un cane?",
+    "targetWord": "perso",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "terzo",
+  "sentence": "No: è la vicina del [[terzo]] piano, arrabbiata,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "third",
+   "options": [
+    "third",
+    "loud or strong",
+    "rich",
+    "dirty"
+   ],
+   "audioClip": {
+    "storySlug": "due-ciabatte-in-meno",
+    "storySource": "user",
+    "sentence": "No: è la vicina del terzo piano, arrabbiata,",
+    "targetWord": "terzo",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "abbaiare",
+  "sentence": "perché il cane [[abbaia]] di notte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to bark",
+   "options": [
+    "to bark",
+    "to promise",
+    "to travel",
+    "to forget"
+   ],
+   "audioClip": {
+    "storySlug": "due-ciabatte-in-meno",
+    "storySource": "user",
+    "sentence": "perché il cane abbaia di notte.",
+    "targetWord": "abbaia",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trovare",
+  "sentence": "ha [[trovato]] le ciabatte",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to find",
+   "options": [
+    "to find",
+    "to want",
+    "to scare",
+    "to hope"
+   ],
+   "audioClip": {
+    "storySlug": "due-ciabatte-in-meno",
+    "storySource": "user",
+    "sentence": "ha trovato le ciabatte",
+    "targetWord": "trovato",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nuovo",
+  "sentence": "le ciabatte [[nuove]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "new",
+   "options": [
+    "new",
+    "sure",
+    "yellow",
+    "young"
+   ],
+   "audioClip": {
+    "storySlug": "due-ciabatte-in-meno",
+    "storySource": "user",
+    "sentence": "le ciabatte nuove",
+    "targetWord": "nuove",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sedersi",
+  "sentence": "Il cane si [[siede]] sui suoi piedi, caldo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sit down",
+   "options": [
+    "to sit down",
+    "to go up",
+    "to show",
+    "to enter"
+   ],
+   "audioClip": {
+    "storySlug": "due-ciabatte-in-meno",
+    "storySource": "user",
+    "sentence": "Il cane si siede sui suoi piedi, caldo.",
+    "targetWord": "siede",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vecchio",
+  "sentence": "come un [[vecchio]] amico",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "old",
+   "options": [
+    "old",
+    "grey",
+    "humid",
+    "expensive"
+   ],
+   "audioClip": {
+    "storySlug": "due-ciabatte-in-meno",
+    "storySource": "user",
+    "sentence": "come un vecchio amico",
+    "targetWord": "vecchio",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "scegliere",
+  "sentence": "Ti ha [[scelto]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to choose",
+   "options": [
+    "to choose",
+    "to feel",
+    "to hug",
+    "to touch"
+   ],
+   "audioClip": {
+    "storySlug": "due-ciabatte-in-meno",
+    "storySource": "user",
+    "sentence": "Ti ha scelto,",
+    "targetWord": "scelto",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

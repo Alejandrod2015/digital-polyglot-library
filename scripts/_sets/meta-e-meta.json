@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "canile,aprire,leggere,portare",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "canile",
+     "answer": "a dog shelter",
+     "options": [
+      "a dog shelter",
+      "to open",
+      "to read",
+      "to bring"
+     ]
+    },
+    {
+     "word": "aprire",
+     "answer": "to open",
+     "options": [
+      "a dog shelter",
+      "to open",
+      "to read",
+      "to bring"
+     ]
+    },
+    {
+     "word": "leggere",
+     "answer": "to read",
+     "options": [
+      "a dog shelter",
+      "to open",
+      "to read",
+      "to bring"
+     ]
+    },
+    {
+     "word": "portare",
+     "answer": "to bring",
+     "options": [
+      "a dog shelter",
+      "to open",
+      "to read",
+      "to bring"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "giusto",
+  "sentence": "Dividono tutto in parti uguali: è molto _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "giusto",
+   "options": [
+    "giusto",
+    "difficile",
+    "strano",
+    "vecchio"
+   ],
+   "translation": "They split everything equally: it's very _____.",
+   "optionTranslations": [
+    "right",
+    "difficult",
+    "strange",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "meta-e-meta",
+    "storySource": "user",
+    "sentence": "Dividono tutto in parti uguali: è molto giusto.",
+    "targetWord": "giusto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "resta",
+  "sentence": "Tutti sono usciti e lei _____ da sola in casa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "resta",
+   "options": [
+    "resta",
+    "cammina",
+    "cucina",
+    "lavora"
+   ],
+   "translation": "Everyone has gone out and she _____ home alone.",
+   "optionTranslations": [
+    "to stay",
+    "walks",
+    "cooks",
+    "works"
+   ],
+   "audioClip": {
+    "storySlug": "meta-e-meta",
+    "storySource": "user",
+    "sentence": "Tutti sono usciti e lei resta da sola in casa.",
+    "targetWord": "resta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pagato",
+  "sentence": "Ha comprato il biglietto e ha già _____ tutto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pagato",
+   "options": [
+    "pagato",
+    "trovato",
+    "perso",
+    "portato"
+   ],
+   "translation": "She bought the ticket and has already _____ for everything.",
+   "optionTranslations": [
+    "to pay",
+    "found",
+    "lost",
+    "carried"
+   ],
+   "audioClip": {
+    "storySlug": "meta-e-meta",
+    "storySource": "user",
+    "sentence": "Ha comprato il biglietto e ha già pagato tutto.",
+    "targetWord": "pagato",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "potere",
+  "sentence": "Non [[puoi]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "can",
+   "options": [
+    "can",
+    "to look at",
+    "to spend",
+    "to lose"
+   ],
+   "audioClip": {
+    "storySlug": "meta-e-meta",
+    "storySource": "user",
+    "sentence": "Non puoi.",
+    "targetWord": "puoi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "già",
+  "sentence": "Ha [[già]] scelto te,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "already",
+   "options": [
+    "already",
+    "today",
+    "inside",
+    "better"
+   ],
+   "audioClip": {
+    "storySlug": "meta-e-meta",
+    "storySource": "user",
+    "sentence": "Ha già scelto te,",
+    "targetWord": "già",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "contare",
+  "sentence": "Davide [[conta]] sulle dita.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to count",
+   "options": [
+    "to count",
+    "to teach",
+    "to negotiate",
+    "to win"
+   ],
+   "audioClip": {
+    "storySlug": "meta-e-meta",
+    "storySource": "user",
+    "sentence": "Davide conta sulle dita.",
+    "targetWord": "conta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "metà e metà",
+  "sentence": "[[Metà e metà]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "half and half",
+   "options": [
+    "half and half",
+    "badly",
+    "enough",
+    "slowly"
+   ],
+   "audioClip": {
+    "storySlug": "meta-e-meta",
+    "storySource": "user",
+    "sentence": "Metà e metà.",
+    "targetWord": "Metà e metà",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "scrivere",
+  "sentence": "Poi [[scrive]] all'albergo: non vengo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to write",
+   "options": [
+    "to write",
+    "to sell",
+    "to fix",
+    "to manage"
+   ],
+   "audioClip": {
+    "storySlug": "meta-e-meta",
+    "storySource": "user",
+    "sentence": "Poi scrive all'albergo: non vengo.",
+    "targetWord": "scrive",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "venire",
+  "sentence": "Poi scrive all'albergo: non [[vengo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come",
+   "options": [
+    "to come",
+    "to close",
+    "to look for",
+    "to live"
+   ],
+   "audioClip": {
+    "storySlug": "meta-e-meta",
+    "storySource": "user",
+    "sentence": "Poi scrive all'albergo: non vengo.",
+    "targetWord": "vengo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "comprare",
+  "sentence": "[[comprano]] una ciotola",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to buy",
+   "options": [
+    "to buy",
+    "to invite",
+    "to think about",
+    "to offer"
+   ],
+   "audioClip": {
+    "storySlug": "meta-e-meta",
+    "storySource": "user",
+    "sentence": "comprano una ciotola",
+    "targetWord": "comprano",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ciotola",
+  "sentence": "comprano una [[ciotola]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a bowl",
+   "options": [
+    "a bowl",
+    "a surprise",
+    "a flavour",
+    "fault"
+   ],
+   "audioClip": {
+    "storySlug": "meta-e-meta",
+    "storySource": "user",
+    "sentence": "comprano una ciotola",
+    "targetWord": "ciotola",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "servire",
+  "sentence": "Adesso [[serve]] un nome,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be needed",
+   "options": [
+    "to be needed",
+    "to repair",
+    "to get dressed",
+    "to give up"
+   ],
+   "audioClip": {
+    "storySlug": "meta-e-meta",
+    "storySource": "user",
+    "sentence": "Adesso serve un nome,",
+    "targetWord": "serve",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "adesso",
+  "sentence": "[[Adesso]] serve un nome,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "now",
+   "options": [
+    "now",
+    "just",
+    "after",
+    "far away"
+   ],
+   "audioClip": {
+    "storySlug": "meta-e-meta",
+    "storySource": "user",
+    "sentence": "Adesso serve un nome,",
+    "targetWord": "Adesso",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mai",
+  "sentence": "[[Mai]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "never",
+   "options": [
+    "never",
+    "almost",
+    "early",
+    "quickly"
+   ],
+   "audioClip": {
+    "storySlug": "meta-e-meta",
+    "storySource": "user",
+    "sentence": "Mai,",
+    "targetWord": "Mai",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ancora",
+  "sentence": "È [[ancora]] sul divano di Davide,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "still",
+   "options": [
+    "still",
+    "really",
+    "immediately",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "meta-e-meta",
+    "storySource": "user",
+    "sentence": "È ancora sul divano di Davide,",
+    "targetWord": "ancora",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sotto",
+  "sentence": "Nel negozio [[sotto]] casa",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "under",
+   "options": [
+    "under",
+    "well",
+    "by now",
+    "slowly"
+   ],
+   "audioClip": {
+    "storySlug": "meta-e-meta",
+    "storySource": "user",
+    "sentence": "Nel negozio sotto casa",
+    "targetWord": "sotto",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

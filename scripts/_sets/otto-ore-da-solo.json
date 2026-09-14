@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "chiave,presto,pieno,correre",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "chiave",
+     "answer": "a key",
+     "options": [
+      "a key",
+      "early",
+      "full",
+      "to run"
+     ]
+    },
+    {
+     "word": "presto",
+     "answer": "early",
+     "options": [
+      "a key",
+      "early",
+      "full",
+      "to run"
+     ]
+    },
+    {
+     "word": "pieno",
+     "answer": "full",
+     "options": [
+      "a key",
+      "early",
+      "full",
+      "to run"
+     ]
+    },
+    {
+     "word": "correre",
+     "answer": "to run",
+     "options": [
+      "a key",
+      "early",
+      "full",
+      "to run"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "vuota",
+  "sentence": "Non c'è nessuno e non c'è niente dentro: la casa è _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vuota",
+   "options": [
+    "vuota",
+    "piena",
+    "sporca",
+    "vecchia"
+   ],
+   "translation": "There's nobody and nothing inside: the house is _____.",
+   "optionTranslations": [
+    "empty",
+    "full",
+    "dirty",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "otto-ore-da-solo",
+    "storySource": "user",
+    "sentence": "Non c'è nessuno e non c'è niente dentro: la casa è vuota.",
+    "targetWord": "vuota",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "stanca",
+  "sentence": "Ha lavorato tutto il giorno e ora deve riposare: è molto _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "stanca",
+   "options": [
+    "stanca",
+    "felice",
+    "nervosa",
+    "sporca"
+   ],
+   "translation": "She worked all day and now needs to rest: she's very _____.",
+   "optionTranslations": [
+    "tired",
+    "happy",
+    "nervous",
+    "dirty"
+   ],
+   "audioClip": {
+    "storySlug": "otto-ore-da-solo",
+    "storySource": "user",
+    "sentence": "Ha lavorato tutto il giorno e ora deve riposare: è molto stanca.",
+    "targetWord": "stanca",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "spiega",
+  "sentence": "Racconta perché è arrivato tardi e _____ tutto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "spiega",
+   "options": [
+    "spiega",
+    "dimentica",
+    "ricorda",
+    "aspetta"
+   ],
+   "translation": "He tells why he arrived late and _____ everything.",
+   "optionTranslations": [
+    "to explain",
+    "forgets",
+    "remembers",
+    "waits"
+   ],
+   "audioClip": {
+    "storySlug": "otto-ore-da-solo",
+    "storySource": "user",
+    "sentence": "Racconta perché è arrivato tardi e spiega tutto.",
+    "targetWord": "spiega",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chiamare",
+  "sentence": "All'una Davide [[chiama]] Elisa tre volte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to call",
+   "options": [
+    "to call",
+    "to go out",
+    "to pass",
+    "to switch on"
+   ],
+   "audioClip": {
+    "storySlug": "otto-ore-da-solo",
+    "storySource": "user",
+    "sentence": "All'una Davide chiama Elisa tre volte.",
+    "targetWord": "chiama",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pensare",
+  "sentence": "Davide [[pensa]] al cane,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to think about",
+   "options": [
+    "to think about",
+    "to teach",
+    "to stay",
+    "to sleep"
+   ],
+   "audioClip": {
+    "storySlug": "otto-ore-da-solo",
+    "storySource": "user",
+    "sentence": "Davide pensa al cane,",
+    "targetWord": "pensa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nervoso",
+  "sentence": "risponde Davide, [[nervoso]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nervous",
+   "options": [
+    "nervous",
+    "small",
+    "only",
+    "loud or strong"
+   ],
+   "audioClip": {
+    "storySlug": "otto-ore-da-solo",
+    "storySource": "user",
+    "sentence": "risponde Davide, nervoso.",
+    "targetWord": "nervoso",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "velocemente",
+  "sentence": "torna [[velocemente]] ed entra nel portone.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quickly",
+   "options": [
+    "quickly",
+    "together",
+    "just",
+    "inside"
+   ],
+   "audioClip": {
+    "storySlug": "otto-ore-da-solo",
+    "storySource": "user",
+    "sentence": "torna velocemente ed entra nel portone.",
+    "targetWord": "velocemente",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "entrare",
+  "sentence": "torna velocemente ed [[entra]] nel portone.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to enter",
+   "options": [
+    "to enter",
+    "to sit down",
+    "to bring",
+    "to lend"
+   ],
+   "audioClip": {
+    "storySlug": "otto-ore-da-solo",
+    "storySource": "user",
+    "sentence": "torna velocemente ed entra nel portone.",
+    "targetWord": "entra",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "divisa",
+  "sentence": "con la [[divisa]] sporca.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a uniform",
+   "options": [
+    "a uniform",
+    "a bowl",
+    "high school",
+    "a decision"
+   ],
+   "audioClip": {
+    "storySlug": "otto-ore-da-solo",
+    "storySource": "user",
+    "sentence": "con la divisa sporca.",
+    "targetWord": "divisa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sporco",
+  "sentence": "con la divisa [[sporca]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dirty",
+   "options": [
+    "dirty",
+    "simple",
+    "difficult",
+    "clean"
+   ],
+   "audioClip": {
+    "storySlug": "otto-ore-da-solo",
+    "storySource": "user",
+    "sentence": "con la divisa sporca.",
+    "targetWord": "sporca",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dimenticare",
+  "sentence": "e ho [[dimenticato]] il caricatore,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to forget",
+   "options": [
+    "to forget",
+    "to remember",
+    "to divide",
+    "to use something"
+   ],
+   "audioClip": {
+    "storySlug": "otto-ore-da-solo",
+    "storySource": "user",
+    "sentence": "e ho dimenticato il caricatore,",
+    "targetWord": "dimenticato",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "morire",
+  "sentence": "Il telefono è [[morto]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to die",
+   "options": [
+    "to die",
+    "to be needed",
+    "to laugh",
+    "to want"
+   ],
+   "audioClip": {
+    "storySlug": "otto-ore-da-solo",
+    "storySource": "user",
+    "sentence": "Il telefono è morto,",
+    "targetWord": "morto",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "saltare",
+  "sentence": "Contento, il cane [[salta]] sulle loro gambe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to jump",
+   "options": [
+    "to jump",
+    "to play",
+    "to listen",
+    "to leave"
+   ],
+   "audioClip": {
+    "storySlug": "otto-ore-da-solo",
+    "storySource": "user",
+    "sentence": "Contento, il cane salta sulle loro gambe.",
+    "targetWord": "salta",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "contento",
+  "sentence": "[[Contento]], il cane salta sulle loro gambe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "happy",
+   "options": [
+    "happy",
+    "very serious",
+    "bad or ugly",
+    "brown"
+   ],
+   "audioClip": {
+    "storySlug": "otto-ore-da-solo",
+    "storySource": "user",
+    "sentence": "Contento, il cane salta sulle loro gambe.",
+    "targetWord": "Contento",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "abbracciare",
+  "sentence": "si siede per terra e lo [[abbraccia]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hug",
+   "options": [
+    "to hug",
+    "to count",
+    "to share",
+    "to spend"
+   ],
+   "audioClip": {
+    "storySlug": "otto-ore-da-solo",
+    "storySource": "user",
+    "sentence": "si siede per terra e lo abbraccia.",
+    "targetWord": "abbraccia",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "triste",
+  "sentence": "risponde Davide, [[triste]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sad",
+   "options": [
+    "sad",
+    "low",
+    "worried",
+    "sweet"
+   ],
+   "audioClip": {
+    "storySlug": "otto-ore-da-solo",
+    "storySource": "user",
+    "sentence": "risponde Davide, triste.",
+    "targetWord": "triste",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

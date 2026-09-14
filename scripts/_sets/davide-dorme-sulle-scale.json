@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "amore,tosse,medico,scelta",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "amore",
+     "answer": "love",
+     "options": [
+      "love",
+      "a cough",
+      "a doctor",
+      "a choice"
+     ]
+    },
+    {
+     "word": "tosse",
+     "answer": "a cough",
+     "options": [
+      "love",
+      "a cough",
+      "a doctor",
+      "a choice"
+     ]
+    },
+    {
+     "word": "medico",
+     "answer": "a doctor",
+     "options": [
+      "love",
+      "a cough",
+      "a doctor",
+      "a choice"
+     ]
+    },
+    {
+     "word": "scelta",
+     "answer": "a choice",
+     "options": [
+      "love",
+      "a cough",
+      "a doctor",
+      "a choice"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "spera",
+  "sentence": "Non sa se domani farà bel tempo, ma lo _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "spera",
+   "options": [
+    "spera",
+    "pensa",
+    "ricorda",
+    "spiega"
+   ],
+   "translation": "He doesn't know if tomorrow will be nice, but he _____ so.",
+   "optionTranslations": [
+    "to hope",
+    "thinks",
+    "remembers",
+    "explains"
+   ],
+   "audioClip": {
+    "storySlug": "davide-dorme-sulle-scale",
+    "storySource": "user",
+    "sentence": "Non sa se domani farà bel tempo, ma lo spera.",
+    "targetWord": "spera",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "soffre",
+  "sentence": "Ha la tosse secca da giorni: _____ molto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "soffre",
+   "options": [
+    "soffre",
+    "ride",
+    "dorme",
+    "corre"
+   ],
+   "translation": "He's had a dry cough for days: he _____ a lot.",
+   "optionTranslations": [
+    "to suffer",
+    "laughs",
+    "sleeps",
+    "runs"
+   ],
+   "audioClip": {
+    "storySlug": "davide-dorme-sulle-scale",
+    "storySource": "user",
+    "sentence": "Ha la tosse secca da giorni: soffre molto.",
+    "targetWord": "soffre",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cattivo",
+  "sentence": "Non è mai gentile con gli altri: è un ragazzo _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cattivo",
+   "options": [
+    "cattivo",
+    "gentile",
+    "felice",
+    "libero"
+   ],
+   "translation": "He's never kind to others: he's a _____ boy.",
+   "optionTranslations": [
+    "bad",
+    "kind",
+    "happy",
+    "free"
+   ],
+   "audioClip": {
+    "storySlug": "davide-dorme-sulle-scale",
+    "storySource": "user",
+    "sentence": "Non è mai gentile con gli altri: è un ragazzo cattivo.",
+    "targetWord": "cattivo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mentire",
+  "sentence": "Per una settimana Davide ha [[mentito]] per amore.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to lie",
+   "options": [
+    "to lie",
+    "to teach",
+    "to go out",
+    "to accept"
+   ],
+   "audioClip": {
+    "storySlug": "davide-dorme-sulle-scale",
+    "storySource": "user",
+    "sentence": "Per una settimana Davide ha mentito per amore.",
+    "targetWord": "mentito",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "magari",
+  "sentence": "Spera: [[magari]] l'allergia passa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "maybe",
+   "options": [
+    "maybe",
+    "out",
+    "never",
+    "badly"
+   ],
+   "audioClip": {
+    "storySlug": "davide-dorme-sulle-scale",
+    "storySource": "user",
+    "sentence": "Spera: magari l'allergia passa.",
+    "targetWord": "magari",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "purtroppo",
+  "sentence": "[[Purtroppo]] Arianna soffre di tosse secca,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "unfortunately",
+   "options": [
+    "unfortunately",
+    "under",
+    "down",
+    "worse"
+   ],
+   "audioClip": {
+    "storySlug": "davide-dorme-sulle-scale",
+    "storySource": "user",
+    "sentence": "Purtroppo Arianna soffre di tosse secca,",
+    "targetWord": "Purtroppo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "secco",
+  "sentence": "Purtroppo Arianna soffre di tosse [[secca]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dry",
+   "options": [
+    "dry",
+    "white",
+    "serious",
+    "clean"
+   ],
+   "audioClip": {
+    "storySlug": "davide-dorme-sulle-scale",
+    "storySource": "user",
+    "sentence": "Purtroppo Arianna soffre di tosse secca,",
+    "targetWord": "secca",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "amare",
+  "sentence": "Davide [[ama]] Arianna, e ama anche il cane:",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to love",
+   "options": [
+    "to love",
+    "to hug",
+    "to adopt",
+    "to sing"
+   ],
+   "audioClip": {
+    "storySlug": "davide-dorme-sulle-scale",
+    "storySource": "user",
+    "sentence": "Davide ama Arianna, e ama anche il cane:",
+    "targetWord": "ama",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dietro",
+  "sentence": "[[dietro]] la porta",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "behind",
+   "options": [
+    "behind",
+    "well",
+    "now",
+    "quietly"
+   ],
+   "audioClip": {
+    "storySlug": "davide-dorme-sulle-scale",
+    "storySource": "user",
+    "sentence": "dietro la porta",
+    "targetWord": "dietro",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "freddo",
+  "sentence": "Sulle scale [[fredde]] scopre Davide,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cold",
+   "options": [
+    "cold",
+    "beautiful or good",
+    "shy",
+    "smooth"
+   ],
+   "audioClip": {
+    "storySlug": "davide-dorme-sulle-scale",
+    "storySource": "user",
+    "sentence": "Sulle scale fredde scopre Davide,",
+    "targetWord": "fredde",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "domandare",
+  "sentence": "[[domanda]] Elisa a bassa voce.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to ask",
+   "options": [
+    "to ask",
+    "to leave behind",
+    "to take",
+    "to stay"
+   ],
+   "audioClip": {
+    "storySlug": "davide-dorme-sulle-scale",
+    "storySource": "user",
+    "sentence": "domanda Elisa a bassa voce.",
+    "targetWord": "domanda",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pelo",
+  "sentence": "e accarezza il [[pelo]] tiepido del cane.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an animal's fur",
+   "options": [
+    "an animal's fur",
+    "a strawberry",
+    "rain",
+    "pasta sauce"
+   ],
+   "audioClip": {
+    "storySlug": "davide-dorme-sulle-scale",
+    "storySource": "user",
+    "sentence": "e accarezza il pelo tiepido del cane.",
+    "targetWord": "pelo",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "primo",
+  "sentence": "Elisa si siede sul [[primo]] gradino.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "first",
+   "options": [
+    "first",
+    "open",
+    "tired",
+    "strange"
+   ],
+   "audioClip": {
+    "storySlug": "davide-dorme-sulle-scale",
+    "storySource": "user",
+    "sentence": "Elisa si siede sul primo gradino.",
+    "targetWord": "primo",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "finalmente",
+  "sentence": "dice Elisa, e [[finalmente]] Davide ride.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "finally",
+   "options": [
+    "finally",
+    "too much",
+    "late",
+    "almost"
+   ],
+   "audioClip": {
+    "storySlug": "davide-dorme-sulle-scale",
+    "storySource": "user",
+    "sentence": "dice Elisa, e finalmente Davide ride.",
+    "targetWord": "finalmente",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pranzo",
+  "sentence": "Domani invito te e Arianna a [[pranzo]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lunch",
+   "options": [
+    "lunch",
+    "five-a-side football",
+    "a flower",
+    "a lamp"
+   ],
+   "audioClip": {
+    "storySlug": "davide-dorme-sulle-scale",
+    "storySource": "user",
+    "sentence": "Domani invito te e Arianna a pranzo,",
+    "targetWord": "pranzo",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "scoprire",
+  "sentence": "Sulle scale fredde [[scopre]] Davide,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to discover",
+   "options": [
+    "to discover",
+    "to happen",
+    "to scare",
+    "to prepare"
+   ],
+   "audioClip": {
+    "storySlug": "davide-dorme-sulle-scale",
+    "storySource": "user",
+    "sentence": "Sulle scale fredde scopre Davide,",
+    "targetWord": "scopre",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

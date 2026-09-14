@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "agosto,gelateria,nuvola,sud",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "agosto",
+     "answer": "august",
+     "options": [
+      "august",
+      "an ice cream shop",
+      "a cloud",
+      "the south"
+     ]
+    },
+    {
+     "word": "gelateria",
+     "answer": "an ice cream shop",
+     "options": [
+      "august",
+      "an ice cream shop",
+      "a cloud",
+      "the south"
+     ]
+    },
+    {
+     "word": "nuvola",
+     "answer": "a cloud",
+     "options": [
+      "august",
+      "an ice cream shop",
+      "a cloud",
+      "the south"
+     ]
+    },
+    {
+     "word": "sud",
+     "answer": "the south",
+     "options": [
+      "august",
+      "an ice cream shop",
+      "a cloud",
+      "the south"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "umida",
+  "sentence": "Vicino al mare, l'aria è sempre molto _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "umida",
+   "options": [
+    "umida",
+    "fredda",
+    "calda",
+    "secca"
+   ],
+   "translation": "Near the sea, the air is always very _____.",
+   "optionTranslations": [
+    "humid",
+    "cold",
+    "warm",
+    "dry"
+   ],
+   "audioClip": {
+    "storySlug": "milano-e-vuota",
+    "storySource": "user",
+    "sentence": "Vicino al mare, l'aria è sempre molto umida.",
+    "targetWord": "umida",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cugino",
+  "sentence": "Il figlio di sua zia è suo _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cugino",
+   "options": [
+    "cugino",
+    "amico",
+    "vicino",
+    "postino"
+   ],
+   "translation": "His aunt's son is his _____.",
+   "optionTranslations": [
+    "a cousin",
+    "friend",
+    "neighbor",
+    "mailman"
+   ],
+   "audioClip": {
+    "storySlug": "milano-e-vuota",
+    "storySource": "user",
+    "sentence": "Il figlio di sua zia è suo cugino.",
+    "targetWord": "cugino",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "sveglia",
+  "sentence": "Sente la sveglia suonare e subito si _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sveglia",
+   "options": [
+    "sveglia",
+    "veste",
+    "riposa",
+    "ferma"
+   ],
+   "translation": "She hears the alarm ring and immediately _____.",
+   "optionTranslations": [
+    "to wake up",
+    "gets dressed",
+    "rests",
+    "stops"
+   ],
+   "audioClip": {
+    "storySlug": "milano-e-vuota",
+    "storySource": "user",
+    "sentence": "Sente la sveglia suonare e subito si sveglia.",
+    "targetWord": "sveglia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "partenza",
+  "sentence": "Prima della [[partenza]] ha lasciato un bigliettino:",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "departure",
+   "options": [
+    "departure",
+    "a carpenter",
+    "October",
+    "a concert"
+   ],
+   "audioClip": {
+    "storySlug": "milano-e-vuota",
+    "storySource": "user",
+    "sentence": "Prima della partenza ha lasciato un bigliettino:",
+    "targetWord": "partenza",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lenzuolo",
+  "sentence": "e il [[lenzuolo]] è tiepido.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a sheet",
+   "options": [
+    "a sheet",
+    "a change",
+    "a magnet",
+    "a collar"
+   ],
+   "audioClip": {
+    "storySlug": "milano-e-vuota",
+    "storySource": "user",
+    "sentence": "e il lenzuolo è tiepido.",
+    "targetWord": "lenzuolo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tiepido",
+  "sentence": "e il lenzuolo è [[tiepido]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "warm",
+   "options": [
+    "warm",
+    "careful",
+    "beautiful or good",
+    "smooth"
+   ],
+   "audioClip": {
+    "storySlug": "milano-e-vuota",
+    "storySource": "user",
+    "sentence": "e il lenzuolo è tiepido.",
+    "targetWord": "tiepido",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "piastrella",
+  "sentence": "Sulle [[piastrelle]] del bagno",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a tile",
+   "options": [
+    "a tile",
+    "reason",
+    "a memory",
+    "a salary"
+   ],
+   "audioClip": {
+    "storySlug": "milano-e-vuota",
+    "storySource": "user",
+    "sentence": "Sulle piastrelle del bagno",
+    "targetWord": "piastrelle",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vedere",
+  "sentence": "Elisa guarda fuori, ma non [[vede]] le stelle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to see",
+   "options": [
+    "to see",
+    "to love",
+    "to cook",
+    "to laugh"
+   ],
+   "audioClip": {
+    "storySlug": "milano-e-vuota",
+    "storySource": "user",
+    "sentence": "Elisa guarda fuori, ma non vede le stelle.",
+    "targetWord": "vede",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stella",
+  "sentence": "Elisa guarda fuori, ma non vede le [[stelle]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a star",
+   "options": [
+    "a star",
+    "a shared-balcony building",
+    "a cat",
+    "a tape measure"
+   ],
+   "audioClip": {
+    "storySlug": "milano-e-vuota",
+    "storySource": "user",
+    "sentence": "Elisa guarda fuori, ma non vede le stelle.",
+    "targetWord": "stelle",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "neve",
+  "sentence": "Io voglio la [[neve]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "snow",
+   "options": [
+    "snow",
+    "a rug",
+    "a cardboard box",
+    "lunch"
+   ],
+   "audioClip": {
+    "storySlug": "milano-e-vuota",
+    "storySource": "user",
+    "sentence": "Io voglio la neve,",
+    "targetWord": "neve",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nuotare",
+  "sentence": "Qui c'è il mare, e ogni mattina [[nuoto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to swim",
+   "options": [
+    "to swim",
+    "to find",
+    "to think about",
+    "to use something"
+   ],
+   "audioClip": {
+    "storySlug": "milano-e-vuota",
+    "storySource": "user",
+    "sentence": "Qui c'è il mare, e ogni mattina nuoto.",
+    "targetWord": "nuoto",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "erba",
+  "sentence": "e l'[[erba]] non è più verde,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "grass",
+   "options": [
+    "grass",
+    "the fridge",
+    "a tool",
+    "a cooking pot"
+   ],
+   "audioClip": {
+    "storySlug": "milano-e-vuota",
+    "storySource": "user",
+    "sentence": "e l'erba non è più verde,",
+    "targetWord": "erba",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "notizia",
+  "sentence": "Poi arriva una [[notizia]]:",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a piece of news",
+   "options": [
+    "a piece of news",
+    "a group",
+    "a vet",
+    "pepper"
+   ],
+   "audioClip": {
+    "storySlug": "milano-e-vuota",
+    "storySource": "user",
+    "sentence": "Poi arriva una notizia:",
+    "targetWord": "notizia",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "uovo",
+  "sentence": "Elisa apre il frigo: due [[uova]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an egg",
+   "options": [
+    "an egg",
+    "a frying pan",
+    "an expert",
+    "respect"
+   ],
+   "audioClip": {
+    "storySlug": "milano-e-vuota",
+    "storySource": "user",
+    "sentence": "Elisa apre il frigo: due uova,",
+    "targetWord": "uova",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mela",
+  "sentence": "una [[mela]] e un biscotto per il cane.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an apple",
+   "options": [
+    "an apple",
+    "a team",
+    "the difference",
+    "a young woman"
+   ],
+   "audioClip": {
+    "storySlug": "milano-e-vuota",
+    "storySource": "user",
+    "sentence": "una mela e un biscotto per il cane.",
+    "targetWord": "mela",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "biscotto",
+  "sentence": "un [[biscotto]] per il cane",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a biscuit",
+   "options": [
+    "a biscuit",
+    "a part",
+    "medicine",
+    "happiness"
+   ],
+   "audioClip": {
+    "storySlug": "milano-e-vuota",
+    "storySource": "user",
+    "sentence": "un biscotto per il cane",
+    "targetWord": "biscotto",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]
