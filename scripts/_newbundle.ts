@@ -1,13 +1,15 @@
 /** Crea la fila global de un bundle nuevo con los slugs de un journey.
  *  Las glosas se dejan vacias: las rellena rebuildTapGlosses, que reutiliza
  *  lo que ya este glosado en los bundles hermanos del mismo idioma.
- *  npx tsx scripts/_newbundle.ts <bundle> <lang> <variant> <lvl> */
+ *  npx tsx scripts/_newbundle.ts <bundle> <lang> <variant> <lvl> [typeSlug]
+ *  typeSlug hace falta cuando dos journeys comparten lengua, variante y nivel
+ *  (Traveler y Friends DE A1): sin el, el bundle mezcla las 42 historias. */
 import { config } from "dotenv"; config({ path: ".env.local", quiet: true });
 import { PrismaClient } from "../src/generated/prisma";
 const p = new PrismaClient();
 async function main(){
- const [bundle, language, variant, lvl] = process.argv.slice(2);
- const js = await p.journey.findMany({ where: { status: { in: ["active","draft"] }, language, variant, levels: { has: lvl } }, select: { stories: { select: { slug: true } } } });
+ const [bundle, language, variant, lvl, typeSlug] = process.argv.slice(2);
+ const js = await p.journey.findMany({ where: { status: { in: ["active","draft"] }, language, variant, levels: { has: lvl }, ...(typeSlug ? { typeSlug } : {}) }, select: { stories: { select: { slug: true } } } });
  const slugs = js.flatMap(j => j.stories.map(s => s.slug!)).filter(Boolean);
  await p.tapGlossSet.upsert({
    where: { bundle_slug: { bundle, slug: "" } },

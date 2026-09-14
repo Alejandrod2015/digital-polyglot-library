@@ -1580,6 +1580,56 @@
         "zweiten",
         "zwölf"
       ]
+    },
+    "german-friends-a1": {
+      "articles": [
+        "das",
+        "dem",
+        "den",
+        "der",
+        "die",
+        "ein",
+        "eine",
+        "einem",
+        "einen",
+        "einer",
+        "kein",
+        "keine",
+        "keinen"
+      ],
+      "characterNames": [
+        "carolin",
+        "florian",
+        "julia",
+        "julias",
+        "miriam",
+        "moritz",
+        "philipp",
+        "philipps",
+        "svenja",
+        "svenjas",
+        "theresa"
+      ],
+      "numerals": [
+        "acht",
+        "drei",
+        "eins",
+        "elf",
+        "erste",
+        "ersten",
+        "erstes",
+        "fünf",
+        "fünfunddreißig",
+        "fünfundzwanzig",
+        "fünfzig",
+        "neun",
+        "sechs",
+        "vierzig",
+        "zehn",
+        "zwanzig",
+        "zwei",
+        "zweite"
+      ]
     }
   }
 }
