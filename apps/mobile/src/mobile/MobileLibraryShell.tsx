@@ -62,6 +62,7 @@ import { DownloadProgressRing } from "./DownloadProgressRing";
 import { getCoverUrl } from "./coverUrl";
 import { NextActionGlow } from "./NextActionGlow";
 import { PracticeOrbit, type PracticeModeKey as OrbitModeKey } from "./PracticeOrbit";
+import { useSpeakingRecorder } from "./useSpeakingRecorder";
 import { PulseDots } from "./PulseDots";
 import { HomeSkeleton } from "./HomeSkeleton";
 import { ALL_LANGUAGES, LanguageFlag, regionFamily } from "./LanguageFlag";
@@ -981,7 +982,7 @@ type ProgressStat = {
   icon: React.ComponentProps<typeof Feather>["name"];
 };
 
-type PracticeModeKey = "meaning" | "context" | "listening" | "match";
+type PracticeModeKey = "meaning" | "context" | "listening" | "match" | "speaking";
 
 /**
  * Modo a nivel de SESIÓN. Una tanda mixta reparte los cuatro modos, así que
@@ -1044,7 +1045,37 @@ type PracticeMatchExercise = {
   }>;
 };
 
-type PracticeExercise = PracticeMultipleChoiceExercise | PracticeMatchExercise;
+/**
+ * Quinto tipo: UN turno hablado. No tiene opciones ni respuesta que elegir, asi
+ * que no puede colarse en ningun guard de `multiple-choice`; lleva `favorite`
+ * con la misma forma que los demas para que el SRS, la tarjeta de resultados y
+ * la metrica lo traten como a cualquier otro ejercicio sin caso aparte.
+ */
+type PracticeSpeakingExercise = {
+  id: string;
+  mode: "speaking";
+  kind: "speaking";
+  prompt: string;
+  helper: string;
+  word: string;
+  surface: string | null;
+  /** Pista en pantalla: la traduccion en ingles. La palabra en el idioma meta
+   *  NO se muestra hasta despues de calificar; se prueba recuperarla. */
+  translation: string;
+  sentence: string;
+  storySlug: string;
+  language: string;
+  voiceId: string | null;
+  favorite: Pick<
+    PracticeFavoriteItem,
+    "word" | "translation" | "wordType" | "exampleSentence" | "language" | "storySlug" | "storyTitle" | "sourcePath"
+  >;
+};
+
+type PracticeExercise =
+  | PracticeMultipleChoiceExercise
+  | PracticeMatchExercise
+  | PracticeSpeakingExercise;
 type ReviewScore = "again" | "good";
 type StoryAudioData = {
   audioUrl: string | null;
@@ -1136,6 +1167,21 @@ const PRACTICE_MODE_CARDS: PracticeModeCard[] = [
  * necesitan carta para los dos momentos en los que no hay ejercicio en curso
  * del que sacar el chrome: mientras carga y en la pantalla de resultado.
  */
+// Speaking no se elige a mano (no esta en MODE_ORDER de la orbita), pero SI
+// necesita su tarjeta: el chrome de la sesion sale del ejercicio en curso via
+// `activePracticeCard`, y sin fila aqui la pantalla entera se quedaria en
+// blanco al llegar al slot hablado.
+const SPEAKING_PRACTICE_CARD: PracticeModeCard = {
+  key: "speaking",
+  title: "Speaking",
+  eyebrow: "Say it out loud",
+  detail: "Answer a character from the story out loud.",
+  caption: "Best for pulling a word out of memory under pressure.",
+  accent: "#fca5a5",
+  background: "#b8481f",
+  icon: "mic",
+};
+
 const MIXED_PRACTICE_CARD: PracticeModeCard = {
   key: "mixed",
   title: "Practice",
@@ -1681,6 +1727,31 @@ function mapSharedExerciseToMobile(exercise: ReturnType<typeof buildPracticeSess
           sourcePath: null,
         },
       };
+    case "speaking":
+      return {
+        id: exercise.id,
+        mode: "speaking",
+        kind: "speaking",
+        prompt: "Answer out loud using this word.",
+        helper: "Tap the mic, answer, tap again to send.",
+        word: exercise.word,
+        surface: exercise.surface ?? null,
+        translation: exercise.translation,
+        sentence: exercise.sentence,
+        storySlug: exercise.storySlug,
+        language: exercise.language,
+        voiceId: exercise.voiceId ?? null,
+        favorite: {
+          word: exercise.word,
+          translation: exercise.translation,
+          wordType: null,
+          exampleSentence: exercise.sentence,
+          language: exercise.language,
+          storySlug: exercise.storySlug,
+          storyTitle: null,
+          sourcePath: null,
+        },
+      };
     case "match_meaning":
       return {
         id: exercise.id,
@@ -1712,6 +1783,8 @@ type PracticeBuildPrefs = {
   interests: readonly string[];
   learningGoal: OnboardingGoal | null;
   dailyMinutes: number | null;
+  /** Piloto del ejercicio hablado: solo el plan `polyglot`. */
+  speakingEnabled?: boolean;
 };
 
 /** Orden con el que entran las palabras a cualquier tanda: dues primero,
@@ -1790,7 +1863,7 @@ function buildExercisesWithDistractors(
   targets: PracticeFavoriteItem[],
   pool: PracticeFavoriteItem[],
   modes: PracticeModeKey[],
-  prefs?: { interests: readonly string[]; learningGoal: OnboardingGoal | null; dailyMinutes: number | null }
+  prefs?: PracticeBuildPrefs
 ): PracticeExercise[] {
   const targetKeys = new Set(targets.map((item) => normalizePracticeWord(item.word)));
   const companions = pool.filter(
@@ -1839,6 +1912,9 @@ function getRecommendedPracticeModeFromItems(source: PracticeFavoriteItem[]): Pr
     context: 0,
     listening: 0,
     match: 0,
+    // Speaking nunca se recomienda como modo de una tanda: es UN slot de la
+    // sesion mixta, y una tanda entera hablada no esta en el piloto.
+    speaking: 0,
   };
 
   for (const item of dueItems) {
@@ -2686,6 +2762,23 @@ export function MobileLibraryShell(args: {
   const isCompactMeaningViewport = viewportHeight < 880;
   const isTightMeaningViewport = viewportHeight < 780;
   const [practiceReviewScores, setPracticeReviewScores] = useState<Record<string, ReviewScore>>({});
+  // Ejercicio hablado (piloto). Una sola pieza de estado por turno; se resetea
+  // al cambiar de ejercicio.
+  const speakingRecorder = useSpeakingRecorder();
+  const [speakingPhase, setSpeakingPhase] = useState<
+    "loading" | "ready" | "recording" | "thinking" | "done" | "no_mic" | "error"
+  >("loading");
+  const [speakingQuestion, setSpeakingQuestion] = useState("");
+  const [speakingCharacter, setSpeakingCharacter] = useState<string | null>(null);
+  const [speakingQuestionVoiceId, setSpeakingQuestionVoiceId] = useState<string | null>(null);
+  const [speakingTranscript, setSpeakingTranscript] = useState("");
+  const [speakingFeedback, setSpeakingFeedback] = useState("");
+  const [speakingError, setSpeakingError] = useState("");
+  /** El silencio da UN reintento sin penalizar; el segundo vacio es fallo. */
+  const [speakingEmptyRetried, setSpeakingEmptyRetried] = useState(false);
+  const [speakingQuestionPlaying, setSpeakingQuestionPlaying] = useState(false);
+  const speakingQuestionSoundRef = useRef<Audio.Sound | null>(null);
+  const speakingLoadedForRef = useRef<string | null>(null);
   const [practiceCheckpointToken, setPracticeCheckpointToken] = useState<string | null>(null);
   const [practiceCheckpointResponses, setPracticeCheckpointResponses] = useState<Record<string, string>>({});
   const [practiceCheckpointSaveState, setPracticeCheckpointSaveState] = useState<
@@ -5720,8 +5813,12 @@ export function MobileLibraryShell(args: {
       interests: preferences.interests,
       learningGoal: preferences.learningGoal,
       dailyMinutes: preferences.dailyMinutes,
+      // Piloto: solo el plan `polyglot`. Es la capa de CLIENTE del gate; la
+      // ruta ademas devuelve 403 a cualquier otro plan. Sin esto el slot
+      // entraria en la sesion mixta de gente que no puede resolverlo.
+      speakingEnabled: effectivePlan === "polyglot",
     }),
-    [preferences.dailyMinutes, preferences.interests, preferences.learningGoal]
+    [effectivePlan, preferences.dailyMinutes, preferences.interests, preferences.learningGoal]
   );
   // Scope practice to the active journey language so changing language
   // anywhere (Favorites pill, Explore picker, Practice flag) actually
@@ -5886,9 +5983,14 @@ export function MobileLibraryShell(args: {
   const activePracticeCard =
     PRACTICE_MODE_CARDS.find(
       (card) => card.key === (currentPracticeExercise?.mode ?? activePracticeMode)
-    ) ?? (activePracticeMode === "mixed" ? MIXED_PRACTICE_CARD : null);
+    ) ??
+    (currentPracticeExercise?.kind === "speaking" ? SPEAKING_PRACTICE_CARD : null) ??
+    (activePracticeMode === "mixed" ? MIXED_PRACTICE_CARD : null);
   const currentPracticeFavoriteItem = useMemo<MobileFavoriteItem | null>(() => {
-    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return null;
+    // Speaking entra aqui igual que multiple-choice: lleva `favorite` y su
+    // palabra tiene que poder guardarse desde la cabecera de la sesion. Solo
+    // `match` queda fuera, porque son cuatro palabras a la vez y no una.
+    if (!currentPracticeExercise || currentPracticeExercise.kind === "match") return null;
     return {
       word: currentPracticeExercise.favorite.word,
       translation: currentPracticeExercise.favorite.translation,
@@ -9255,6 +9357,15 @@ export function MobileLibraryShell(args: {
     if (practicePaused) return;
     const current = practiceExercises[practiceIndex];
     if (!current) return;
+
+    // El turno hablado necesita mas aire que un multiple-choice: en pantalla
+    // hay transcripcion, la palabra recien revelada y una linea de feedback.
+    // Con 1,5 s el usuario no llega a leer lo que dijo.
+    if (current.kind === "speaking") {
+      const id = setTimeout(() => advancePractice(), 4000);
+      return () => clearTimeout(id);
+    }
+
     if (current.kind !== "multiple-choice" && current.kind !== "match") return;
 
     if (current.kind === "multiple-choice" && current.mode === "context") {
@@ -9315,6 +9426,10 @@ export function MobileLibraryShell(args: {
     ) {
       return;
     }
+    // El turno hablado suena su PREGUNTA desde su propio effect, con la voz de
+    // la historia. El autoplay generico no tiene nada que reproducir aqui y
+    // marcar el id como ya sonado confundiria el diagnostico.
+    if (currentPracticeExercise?.kind === "speaking") return;
     if (lastAutoplayedExerciseIdRef.current === exId) return;
     lastAutoplayedExerciseIdRef.current = exId;
     // Diagnóstico del audio que suena DURANTE la cuenta atrás y luego otra vez.
@@ -9700,6 +9815,293 @@ export function MobileLibraryShell(args: {
       isCorrect,
       isCorrect && getPracticeComboTier(practiceSessionStreak + 1) >= 1
     );
+  }
+
+  // Ejercicio hablado: pregunta, micro y veredicto.
+  //
+  // Un turno por palabra. El servidor hace tres cosas y ninguna vive aqui:
+  // escribe la pregunta (y la cachea por palabra e historia), transcribe con
+  // Whisper y califica. El cliente pone la pantalla, el micro y el audio de
+  // la pregunta, que pide a `sentence-tts` como cualquier otro tipo.
+
+  const currentSpeakingExercise =
+    currentPracticeExercise?.kind === "speaking" ? currentPracticeExercise : null;
+
+  const stopSpeakingQuestionAudio = useCallback(async () => {
+    const sound = speakingQuestionSoundRef.current;
+    speakingQuestionSoundRef.current = null;
+    setSpeakingQuestionPlaying(false);
+    if (!sound) return;
+    try { await sound.stopAsync(); } catch { /* ya parado */ }
+    try { await sound.unloadAsync(); } catch { /* ya descargado */ }
+  }, []);
+
+  const playSpeakingQuestionAudio = useCallback(
+    async (question: string, voiceId: string | null, language: string) => {
+      if (!question.trim() || !sessionToken) return;
+      await stopSpeakingQuestionAudio();
+      try {
+        const resp = await apiFetch<{ url?: string }>({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: "/api/practice/sentence-tts",
+          method: "POST",
+          token: sessionToken,
+          timeoutMs: 45000,
+          // G4: la voz de la historia. Cuando viene vacia, la ruta cae sola a
+          // la voz aprobada del idioma; aqui no se elige ninguna.
+          body: { sentence: question, language, ...(voiceId ? { voiceId } : {}) },
+        });
+        if (!resp?.url) return;
+        // El micro deja `allowsRecordingIOS` en true mientras graba; sin
+        // volver a fijar el modo, la pregunta sale enrutada al auricular y
+        // suena inaudible.
+        await Audio.setAudioModeAsync({
+          playsInSilentModeIOS: true,
+          allowsRecordingIOS: false,
+          interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+        });
+        const { sound } = await Audio.Sound.createAsync(
+          { uri: resp.url },
+          { shouldPlay: false },
+          (status) => {
+            if ("didJustFinish" in status && status.didJustFinish) {
+              void stopSpeakingQuestionAudio();
+            }
+          }
+        );
+        speakingQuestionSoundRef.current = sound;
+        setSpeakingQuestionPlaying(true);
+        try { await sound.playAsync(); } catch { await stopSpeakingQuestionAudio(); }
+      } catch {
+        // Sin audio el ejercicio sigue siendo jugable: la pregunta esta
+        // escrita en pantalla y hay boton para reintentar el sonido.
+        await stopSpeakingQuestionAudio();
+      }
+    },
+    [sessionToken, stopSpeakingQuestionAudio]
+  );
+
+  /**
+   * Cuando la pregunta filtra la palabra dos veces seguidas, el problema no es
+   * la suerte: el servidor lo dice con `fallbackToContext` y el slot se cambia
+   * por uno de `context` sobre la misma palabra, que el builder ya sabe armar.
+   */
+  const replaceSpeakingWithContext = useCallback(
+    (exercise: PracticeSpeakingExercise) => {
+      const pool = practiceSeedItems ?? buildPracticeFavorites(journeyScopedFavoriteWords);
+      const target = pool.find(
+        (item) => normalizePracticeWord(item.word) === normalizePracticeWord(exercise.word)
+      );
+      const replacement = target
+        ? buildExercisesWithDistractors(
+            [target],
+            pool,
+            ["context", "meaning"],
+            onboardingPracticePrefs
+          )[0]
+        : undefined;
+      setPracticeExercises((current) => {
+        const index = current.findIndex((ex) => ex.id === exercise.id);
+        if (index < 0) return current;
+        const next = [...current];
+        if (replacement) next[index] = replacement;
+        else next.splice(index, 1);
+        return next;
+      });
+    },
+    [journeyScopedFavoriteWords, onboardingPracticePrefs, practiceSeedItems]
+  );
+
+  // Carga la pregunta al entrar en el slot hablado. Una vez por ejercicio: el
+  // ref lo ata al id, asi que un re-render no vuelve a pedirla (y la segunda
+  // sesion con la misma palabra la sirve la cache del servidor).
+  useEffect(() => {
+    if (!currentSpeakingExercise) return;
+    if (practiceCountdownActive) return;
+    if (!sessionToken) return;
+    const exercise = currentSpeakingExercise;
+    if (speakingLoadedForRef.current === exercise.id) return;
+    speakingLoadedForRef.current = exercise.id;
+
+    let cancelled = false;
+    setSpeakingPhase("loading");
+    setSpeakingQuestion("");
+    setSpeakingCharacter(null);
+    setSpeakingTranscript("");
+    setSpeakingFeedback("");
+    setSpeakingError("");
+    setSpeakingEmptyRetried(false);
+
+    (async () => {
+      try {
+        const res = await apiFetch<{
+          question?: string;
+          characterName?: string | null;
+          voiceId?: string | null;
+          fallbackToContext?: boolean;
+          error?: string;
+        }>({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: "/api/mobile/speaking",
+          token: sessionToken,
+          method: "POST",
+          timeoutMs: 40000,
+          body: {
+            action: "question",
+            word: exercise.word,
+            surface: exercise.surface,
+            translation: exercise.translation,
+            sentence: exercise.sentence,
+            storySlug: exercise.storySlug,
+            language: exercise.language,
+          },
+        });
+        if (cancelled) return;
+        if (res.fallbackToContext || !res.question) {
+          replaceSpeakingWithContext(exercise);
+          return;
+        }
+        setSpeakingQuestion(res.question);
+        setSpeakingCharacter(res.characterName ?? null);
+        setSpeakingQuestionVoiceId(res.voiceId ?? null);
+        setSpeakingPhase("ready");
+        void playSpeakingQuestionAudio(res.question, res.voiceId ?? null, exercise.language);
+      } catch {
+        if (cancelled) return;
+        // Sin pregunta no hay ejercicio; el slot cae a context en vez de
+        // dejar al usuario mirando un error a mitad de la sesion.
+        replaceSpeakingWithContext(exercise);
+      }
+    })();
+
+    return () => { cancelled = true; };
+  }, [
+    currentSpeakingExercise,
+    practiceCountdownActive,
+    sessionToken,
+    playSpeakingQuestionAudio,
+    replaceSpeakingWithContext,
+  ]);
+
+  // Al salir del slot hablado (o de la sesion) se corta el audio y se tira
+  // cualquier grabacion a medias.
+  useEffect(() => {
+    if (currentSpeakingExercise) return;
+    void stopSpeakingQuestionAudio();
+    void speakingRecorder.cancel();
+  }, [currentSpeakingExercise, speakingRecorder, stopSpeakingQuestionAudio]);
+
+  /**
+   * Mismo contrato que `resolvePracticeMultipleChoiceAnswer`: nota de SRS,
+   * marcador, racha de la sesion y sonido de feedback. Sin esto el turno
+   * hablado se veria pero no contaria para nada.
+   */
+  function resolveSpeakingAnswer(current: PracticeSpeakingExercise, isCorrect: boolean) {
+    practiceAnswerT0Ref.current = Date.now();
+    revealedSlotIdRef.current = current.id;
+    setPracticeRevealed(true);
+    setPracticeTimedOut(false);
+    setPracticeReviewScores((currentScores) => ({
+      ...currentScores,
+      [normalizePracticeWord(current.favorite.word)]: isCorrect ? "good" : "again",
+    }));
+    if (isCorrect) {
+      setPracticeScore((value) => value + 1);
+      setPracticeLastResult("correct");
+      setPracticeSessionStreak((value) => value + 1);
+    } else {
+      setPracticeLastResult("wrong");
+      setPracticeSessionStreak(0);
+    }
+    void playPracticeFeedbackSound(
+      isCorrect,
+      isCorrect && getPracticeComboTier(practiceSessionStreak + 1) >= 1
+    );
+  }
+
+  async function submitSpeakingAnswer() {
+    const exercise = currentSpeakingExercise;
+    if (!exercise || !sessionToken) return;
+    const clip = await speakingRecorder.stop();
+    setSpeakingPhase("thinking");
+    if (!clip) {
+      setSpeakingPhase("ready");
+      setSpeakingError("I couldn't hear you. Try again.");
+      return;
+    }
+    try {
+      const res = await apiFetch<{
+        transcript?: string;
+        empty?: boolean;
+        correct?: boolean;
+        formFound?: string | null;
+        feedback?: string;
+      }>({
+        baseUrl: mobileConfig.apiBaseUrl,
+        path: "/api/mobile/speaking",
+        token: sessionToken,
+        method: "POST",
+        timeoutMs: 60000,
+        body: {
+          action: "grade",
+          word: exercise.word,
+          surface: exercise.surface,
+          question: speakingQuestion,
+          sentence: exercise.sentence,
+          language: exercise.language,
+          audioBase64: clip.base64,
+          mimeType: clip.mimeType,
+        },
+      });
+
+      // Silencio: UN reintento sin penalizar. El segundo vacio ya cuenta.
+      if (res.empty || !(res.transcript ?? "").trim()) {
+        if (!speakingEmptyRetried) {
+          setSpeakingEmptyRetried(true);
+          setSpeakingError("I couldn't hear you. One more try.");
+          setSpeakingPhase("ready");
+          return;
+        }
+        setSpeakingTranscript("");
+        setSpeakingFeedback(res.feedback || exercise.sentence);
+        setSpeakingPhase("done");
+        resolveSpeakingAnswer(exercise, false);
+        return;
+      }
+
+      setSpeakingTranscript(res.transcript ?? "");
+      setSpeakingFeedback(res.feedback ?? "");
+      setSpeakingError("");
+      setSpeakingPhase("done");
+      resolveSpeakingAnswer(exercise, Boolean(res.correct));
+    } catch {
+      setSpeakingPhase("ready");
+      setSpeakingError("Something went wrong. Try again.");
+    }
+  }
+
+  async function startSpeakingRecording() {
+    const exercise = currentSpeakingExercise;
+    if (!exercise) return;
+    setSpeakingError("");
+    await stopSpeakingQuestionAudio();
+    const result = await speakingRecorder.start(() => { void submitSpeakingAnswer(); });
+    if (result.ok) {
+      setSpeakingPhase("recording");
+      return;
+    }
+    if (result.reason === "denied") {
+      // Permiso denegado: el ejercicio se salta SIN nota y la sesion sigue.
+      setSpeakingPhase("no_mic");
+      void trackPracticeMetric("speaking_skipped_no_mic", {
+        mode: "speaking",
+        word: exercise.word,
+      });
+      advancePractice();
+      return;
+    }
+    setSpeakingPhase("ready");
+    setSpeakingError("Couldn't start recording. Try again.");
   }
 
   function triggerPracticeComboToast(nextStreak: number) {
@@ -12056,7 +12458,12 @@ export function MobileLibraryShell(args: {
   }, [favoriteWords, practiceExercises]);
 
   async function trackPracticeMetric(
-    eventType: "practice_session_started" | "practice_session_completed",
+    eventType:
+      | "practice_session_started"
+      | "practice_session_completed"
+      // El turno hablado que se salta porque el usuario nego el microfono. No
+      // es una sesion: es un slot que no llego a jugarse y no puntua.
+      | "speaking_skipped_no_mic",
     extra?: Record<string, unknown>
   ) {
     if (!sessionToken || !activePracticeSeedFavorite) return;
@@ -13887,7 +14294,7 @@ export function MobileLibraryShell(args: {
   // pool general cuando dueItems está vacío.
   const orbitModeBreakdown = useMemo(() => {
     if (duePracticeItems.length === 0) {
-      return { meaning: 0, context: 0, listening: 0, match: 0 };
+      return { meaning: 0, context: 0, listening: 0, match: 0, speaking: 0 };
     }
     const sizeFor = (mode: OrbitModeKey) =>
       buildPracticeExercisesFromItems(duePracticeItems, mode, false, onboardingPracticePrefs).length;
@@ -13896,6 +14303,9 @@ export function MobileLibraryShell(args: {
       context: sizeFor("context"),
       listening: sizeFor("listening"),
       match: sizeFor("match"),
+      // Speaking no es una skill que se elija: es UN slot de la sesion mixta.
+      // Contarlo aqui lo pintaria en el anillo y en la rejilla de la orbita.
+      speaking: 0,
     };
   }, [duePracticeItems, onboardingPracticePrefs]);
 
@@ -15053,6 +15463,93 @@ export function MobileLibraryShell(args: {
                   </View>
                     );
                   })()
+                ) : currentPracticeExercise.kind === "speaking" ? (
+                  (() => {
+                    const ex = currentPracticeExercise;
+                    const askedBy = speakingCharacter ?? "The narrator";
+                    return (
+                  <View style={[styles.practiceQuestionCard, styles.practiceQuestionCardMeaning]}>
+                    <View style={styles.speakingHintRow}>
+                      <View style={styles.speakingWhoChip}>
+                        <Feather name="mic" size={12} color="#fca5a5" />
+                        <Text style={styles.speakingWhoText}>{askedBy.toUpperCase()}</Text>
+                      </View>
+                      <Text style={styles.speakingHintLabel}>SAY IT WITH:</Text>
+                      {/* La pista es la TRADUCCION en ingles. La palabra en el
+                          idioma meta no aparece hasta despues de calificar: se
+                          prueba recuperarla, no leerla. */}
+                      <Text style={styles.speakingHintValue}>{ex.translation}</Text>
+                    </View>
+
+                    <View style={styles.speakingQuestionCard}>
+                      {speakingPhase === "loading" ? (
+                        <ActivityIndicator color="#fca5a5" />
+                      ) : (
+                        <>
+                          <Text style={styles.speakingQuestionText}>{speakingQuestion}</Text>
+                          <Pressable
+                            onPress={() =>
+                              void playSpeakingQuestionAudio(
+                                speakingQuestion,
+                                speakingQuestionVoiceId,
+                                ex.language
+                              )
+                            }
+                            disabled={speakingQuestionPlaying || !speakingQuestion}
+                            accessibilityRole="button"
+                            accessibilityLabel="Play the question again"
+                            testID="qa-speaking-replay"
+                            style={styles.speakingReplayButton}
+                          >
+                            <Feather
+                              name={speakingQuestionPlaying ? "volume-2" : "rotate-ccw"}
+                              size={14}
+                              color="#cdd9ec"
+                            />
+                            <Text style={styles.speakingReplayText}>
+                              {speakingQuestionPlaying ? "PLAYING" : "PLAY AGAIN"}
+                            </Text>
+                          </Pressable>
+                        </>
+                      )}
+                    </View>
+
+                    {speakingPhase === "done" ? (
+                      <>
+                        <View style={styles.speakingAnswerCard}>
+                          <Text style={styles.speakingCardLabel}>YOU SAID</Text>
+                          <Text style={styles.speakingAnswerText}>
+                            {speakingTranscript || "I couldn't hear you."}
+                          </Text>
+                        </View>
+                        <View
+                          style={[
+                            styles.speakingRevealCard,
+                            practiceLastResult === "correct"
+                              ? styles.speakingRevealCardOk
+                              : styles.speakingRevealCardWrong,
+                          ]}
+                        >
+                          <Feather
+                            name={practiceLastResult === "correct" ? "check" : "x"}
+                            size={16}
+                            color={practiceLastResult === "correct" ? "#86efac" : "#fb7185"}
+                          />
+                          {/* La palabra se revela SOLO ahora. */}
+                          <Text style={styles.speakingRevealWord}>{ex.word}</Text>
+                        </View>
+                        {speakingFeedback ? (
+                          <Text style={styles.speakingFeedbackText}>{speakingFeedback}</Text>
+                        ) : null}
+                      </>
+                    ) : null}
+
+                    {speakingError ? (
+                      <Text style={styles.speakingErrorText}>{speakingError}</Text>
+                    ) : null}
+                  </View>
+                    );
+                  })()
                 ) : (() => {
                   const totalPairs = currentPracticeExercise.pairs.length;
                   const matchedCount = matchedWords.length;
@@ -15377,7 +15874,45 @@ export function MobileLibraryShell(args: {
                   >
                     <Text style={[styles.inlineButtonText, styles.primaryButtonText, styles.practiceMeaningFooterButtonText]}>Check answer</Text>
                   </Pressable>
-                ) : currentPracticeExercise.kind === "match" ? (() => {
+                ) : currentPracticeExercise.kind === "speaking" ? (() => {
+                  if (speakingPhase === "thinking") {
+                    return (
+                      <View style={styles.speakingThinkingRow}>
+                        <ActivityIndicator color="#fca5a5" />
+                        <Text style={styles.speakingThinkingText}>Listening…</Text>
+                      </View>
+                    );
+                  }
+                  if (speakingPhase === "loading" || speakingPhase === "no_mic") {
+                    return <Text style={styles.practiceFooterHint}>One moment…</Text>;
+                  }
+                  if (speakingRecorder.isRecording) {
+                    return (
+                      <Pressable
+                        onPress={() => void submitSpeakingAnswer()}
+                        accessibilityRole="button"
+                        accessibilityLabel="Stop recording and send"
+                        testID="qa-speaking-stop"
+                        style={[styles.speakingMicButton, styles.speakingMicButtonRecording]}
+                      >
+                        <Feather name="square" size={20} color="#ffffff" />
+                        <Text style={styles.speakingMicButtonRecordingText}>TAP TO SEND</Text>
+                      </Pressable>
+                    );
+                  }
+                  return (
+                    <Pressable
+                      onPress={() => void startSpeakingRecording()}
+                      accessibilityRole="button"
+                      accessibilityLabel="Record your answer"
+                      testID="qa-speaking-record"
+                      style={styles.speakingMicButton}
+                    >
+                      <Feather name="mic" size={20} color="#2a0d07" />
+                      <Text style={styles.speakingMicButtonText}>TAP TO SPEAK</Text>
+                    </Pressable>
+                  );
+                })() : currentPracticeExercise.kind === "match" ? (() => {
                   // Match footer: sólo hint. El veredicto se dispara
                   // solo desde el effect de auto-validación (~350 ms
                   // después del último pair); ya no hay botón "Check".
@@ -27174,6 +27709,167 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     alignItems: "center",
     justifyContent: "center",
+  },
+  // Ejercicio hablado. Coral, el mismo acento que la orbita le da al modo.
+  speakingHintRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    flexWrap: "wrap",
+    gap: 8,
+    marginBottom: 12,
+  },
+  speakingWhoChip: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+    backgroundColor: "rgba(252,165,165,0.14)",
+    borderColor: "rgba(252,165,165,0.35)",
+    borderWidth: 1,
+    borderRadius: 999,
+    paddingVertical: 4,
+    paddingHorizontal: 9,
+  },
+  speakingWhoText: {
+    color: "#fca5a5",
+    fontSize: 10,
+    fontWeight: "900",
+    letterSpacing: 0.9,
+  },
+  speakingHintLabel: {
+    color: "#9cb0c9",
+    fontSize: 10,
+    fontWeight: "800",
+    letterSpacing: 1.3,
+  },
+  speakingHintValue: {
+    color: "#ffffff",
+    fontSize: 17,
+    fontWeight: "900",
+    flexShrink: 1,
+  },
+  speakingQuestionCard: {
+    backgroundColor: "rgba(255,255,255,0.05)",
+    borderColor: "rgba(255,255,255,0.08)",
+    borderWidth: 1,
+    borderRadius: 18,
+    padding: 16,
+    gap: 12,
+    alignItems: "flex-start",
+  },
+  speakingQuestionText: {
+    color: "#ffffff",
+    fontSize: 19,
+    fontWeight: "800",
+    lineHeight: 26,
+  },
+  speakingReplayButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    backgroundColor: "rgba(255,255,255,0.06)",
+    borderRadius: 999,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+  },
+  speakingReplayText: {
+    color: "#cdd9ec",
+    fontSize: 10,
+    fontWeight: "800",
+    letterSpacing: 1,
+  },
+  speakingAnswerCard: {
+    marginTop: 14,
+    backgroundColor: "rgba(255,255,255,0.04)",
+    borderColor: "rgba(255,255,255,0.06)",
+    borderWidth: 1,
+    borderRadius: 16,
+    padding: 14,
+  },
+  speakingCardLabel: {
+    color: "#9cb0c9",
+    fontSize: 10,
+    fontWeight: "800",
+    letterSpacing: 1.3,
+    marginBottom: 5,
+  },
+  speakingAnswerText: {
+    color: "#e8eefb",
+    fontSize: 16,
+    fontWeight: "600",
+    lineHeight: 22,
+  },
+  speakingRevealCard: {
+    marginTop: 10,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    borderWidth: 1,
+    borderRadius: 16,
+    paddingVertical: 12,
+    paddingHorizontal: 14,
+  },
+  speakingRevealCardOk: {
+    backgroundColor: "rgba(134,239,172,0.10)",
+    borderColor: "rgba(134,239,172,0.30)",
+  },
+  speakingRevealCardWrong: {
+    backgroundColor: "rgba(251,113,133,0.10)",
+    borderColor: "rgba(251,113,133,0.30)",
+  },
+  speakingRevealWord: {
+    color: "#ffffff",
+    fontSize: 20,
+    fontWeight: "900",
+    flexShrink: 1,
+  },
+  speakingFeedbackText: {
+    marginTop: 10,
+    color: "#cdd9ec",
+    fontSize: 14,
+    fontWeight: "600",
+    lineHeight: 20,
+  },
+  speakingErrorText: {
+    marginTop: 10,
+    color: "#ffd2d2",
+    fontSize: 13,
+    fontWeight: "600",
+  },
+  speakingMicButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 10,
+    backgroundColor: "#fca5a5",
+    borderRadius: 999,
+    paddingVertical: 15,
+  },
+  speakingMicButtonText: {
+    color: "#2a0d07",
+    fontSize: 13,
+    fontWeight: "900",
+    letterSpacing: 1,
+  },
+  speakingMicButtonRecording: {
+    backgroundColor: "#ef4444",
+  },
+  speakingMicButtonRecordingText: {
+    color: "#ffffff",
+    fontSize: 13,
+    fontWeight: "900",
+    letterSpacing: 1,
+  },
+  speakingThinkingRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 10,
+    paddingVertical: 14,
+  },
+  speakingThinkingText: {
+    color: "#cdd9ec",
+    fontSize: 14,
+    fontWeight: "700",
   },
   practiceFooterHint: {
     color: "rgba(226,232,244,0.74)",
