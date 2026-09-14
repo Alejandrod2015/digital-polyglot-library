@@ -1,0 +1,3874 @@
+{
+  "_comoSeUsa": "Rellena `translation` en cada palabra con la traduccion al ingles de `sentence`, y guarda el fichero como <journeyId>.json (sin .todo). Despues: npx tsx scripts/saveSentenceTranslations.ts docs/sentence-translations/<journeyId>.json",
+  "_fallback": "Una palabra con `fallback: true` lleva una frase que la practica NO ensena hoy (la suya no pasa el filtro de oracion limpia). Traducela igual; si esa palabra vuelve a entrar, ya estara.",
+  "journeyId": "cmss0fkc40007j8dub1zpa1kc",
+  "journeyName": "Traveler",
+  "language": "italian",
+  "variant": "italy",
+  "stories": [
+    {
+      "storySlug": "niente-spalle-scoperte",
+      "storyTitle": "Niente spalle scoperte",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "chiesa",
+          "surface": "chiesa",
+          "definition": "Church; the building where people go to pray.",
+          "sentence": "Marta arriva davanti alla chiesa con il vestito senza maniche e il biglietto in mano.",
+          "translation": "Marta arrives at the church in a sleeveless dress, her ticket in her hand."
+        },
+        {
+          "word": "vestito",
+          "surface": "vestito",
+          "definition": "Dress; the one-piece clothing many women wear.",
+          "sentence": "Marta arriva davanti alla chiesa con il vestito senza maniche e il biglietto in mano.",
+          "translation": "Marta arrives at the church in a sleeveless dress, her ticket in her hand."
+        },
+        {
+          "word": "manica",
+          "surface": "maniche",
+          "definition": "Sleeve; the part of clothing that covers the arm.",
+          "sentence": "Marta arriva davanti alla chiesa con il vestito senza maniche e il biglietto in mano.",
+          "translation": "Marta arrives at the church in a sleeveless dress, her ticket in her hand."
+        },
+        {
+          "word": "ingresso",
+          "surface": "ingresso",
+          "definition": "Entrance; the way into a building.",
+          "sentence": "Un uomo all'ingresso la ferma e indica un cartello con due disegni.",
+          "translation": "A man at the entrance stops her and points to a sign with two drawings."
+        },
+        {
+          "word": "disegno",
+          "surface": "disegni",
+          "definition": "Drawing; a picture made with lines.",
+          "sentence": "Un uomo all'ingresso la ferma e indica un cartello con due disegni.",
+          "translation": "A man at the entrance stops her and points to a sign with two drawings."
+        },
+        {
+          "word": "braccio",
+          "surface": "braccia",
+          "definition": "Arm; the part of the body between shoulder and hand.",
+          "sentence": "Il disegno dice che dentro le braccia stanno coperte.",
+          "translation": "The drawing says that arms stay covered inside."
+        },
+        {
+          "word": "aprire",
+          "surface": "apre",
+          "definition": "Opens; makes a bag or a door no longer closed.",
+          "sentence": "Marta apre lo zaino e trova soltanto un ombrello e una bottiglia.",
+          "translation": "Marta opens her backpack and finds only an umbrella and a bottle."
+        },
+        {
+          "word": "trovare",
+          "surface": "trova",
+          "definition": "Finds; sees what was hidden or looked for.",
+          "sentence": "Marta apre lo zaino e trova soltanto un ombrello e una bottiglia.",
+          "translation": "Marta opens her backpack and finds only an umbrella and a bottle."
+        },
+        {
+          "word": "ombrello",
+          "surface": "ombrello",
+          "definition": "Umbrella; what keeps the rain off your head.",
+          "sentence": "Marta apre lo zaino e trova soltanto un ombrello e una bottiglia.",
+          "translation": "Marta opens her backpack and finds only an umbrella and a bottle."
+        },
+        {
+          "word": "bottiglia",
+          "surface": "bottiglia",
+          "definition": "Bottle; the tall thing you carry water or wine in.",
+          "sentence": "Marta apre lo zaino e trova soltanto un ombrello e una bottiglia.",
+          "translation": "Marta opens her backpack and finds only an umbrella and a bottle."
+        },
+        {
+          "word": "scatola",
+          "surface": "scatola",
+          "definition": "Box; a thing with straight sides you keep objects in.",
+          "sentence": "L'uomo tira fuori da una scatola una sciarpa di carta azzurra.",
+          "translation": "The man pulls a light blue paper scarf out of a box."
+        },
+        {
+          "word": "sciarpa",
+          "surface": "sciarpa",
+          "definition": "Scarf; the long cloth you put over shoulders or neck.",
+          "sentence": "L'uomo tira fuori da una scatola una sciarpa di carta azzurra.",
+          "translation": "The man pulls a light blue paper scarf out of a box."
+        },
+        {
+          "word": "azzurro",
+          "surface": "azzurra",
+          "definition": "Light blue; the colour of the Italian sky.",
+          "sentence": "L'uomo tira fuori da una scatola una sciarpa di carta azzurra.",
+          "translation": "The man pulls a light blue paper scarf out of a box."
+        },
+        {
+          "word": "addosso",
+          "surface": "addosso",
+          "definition": "On your body; worn over the clothes.",
+          "sentence": "Lei se la mette addosso e passa senza pagare niente in più.",
+          "translation": "She puts it on over her clothes and goes in without paying anything extra."
+        },
+        {
+          "word": "aria",
+          "surface": "aria",
+          "definition": "Air; what you breathe, warm outside and cool inside.",
+          "sentence": "Dentro la chiesa l'aria è fresca e il silenzio arriva prima degli occhi.",
+          "translation": "Inside the church the air is cool, and the silence reaches you before your eyes do."
+        },
+        {
+          "word": "silenzio",
+          "surface": "silenzio",
+          "definition": "Silence; the absence of any sound.",
+          "sentence": "Dentro la chiesa l'aria è fresca e il silenzio arriva prima degli occhi.",
+          "translation": "Inside the church the air is cool, and the silence reaches you before your eyes do."
+        },
+        {
+          "word": "occhio",
+          "surface": "occhi",
+          "definition": "Eye; the part of the face you see with.",
+          "sentence": "Dentro la chiesa l'aria è fresca e il silenzio arriva prima degli occhi.",
+          "translation": "Inside the church the air is cool, and the silence reaches you before your eyes do."
+        },
+        {
+          "word": "candela",
+          "surface": "candele",
+          "definition": "Candle; the wax stick that burns with a small flame.",
+          "sentence": "Le candele bruciano davanti a un affresco scuro e molto antico.",
+          "translation": "Candles burn in front of a dark, very old fresco."
+        },
+        {
+          "word": "bruciare",
+          "surface": "bruciano",
+          "definition": "Burn; make flame and heat.",
+          "sentence": "Le candele bruciano davanti a un affresco scuro e molto antico.",
+          "translation": "Candles burn in front of a dark, very old fresco."
+        },
+        {
+          "word": "affresco",
+          "surface": "affresco",
+          "definition": "Fresco; a painting made straight onto a wall.",
+          "sentence": "Le candele bruciano davanti a un affresco scuro e molto antico.",
+          "translation": "Candles burn in front of a dark, very old fresco."
+        },
+        {
+          "word": "antico",
+          "surface": "antico",
+          "definition": "Ancient; made a very long time ago.",
+          "sentence": "Le candele bruciano davanti a un affresco scuro e molto antico.",
+          "translation": "Candles burn in front of a dark, very old fresco."
+        },
+        {
+          "word": "pavimento",
+          "surface": "pavimento",
+          "definition": "Floor; the surface you walk on inside.",
+          "sentence": "Marta cammina piano, perché il pavimento manda un suono lungo.",
+          "translation": "Marta walks softly, because the floor gives off a long sound."
+        },
+        {
+          "word": "uscita",
+          "surface": "uscita",
+          "definition": "Exit; the way out of a building.",
+          "sentence": "All'uscita lei restituisce la sciarpa dentro la stessa scatola di legno.",
+          "translation": "On the way out she puts the scarf back in the same wooden box."
+        },
+        {
+          "word": "piegare",
+          "surface": "piega",
+          "definition": "Folds; bends cloth or paper over itself.",
+          "sentence": "L'uomo la piega bene e la lascia pronta per la turista dopo.",
+          "translation": "The man folds it neatly and leaves it ready for the next tourist."
+        },
+        {
+          "word": "regola",
+          "surface": "regola",
+          "definition": "Rule; what you must do and must not do.",
+          "sentence": "La regola sta scritta soltanto in due disegni, e a tutti basta.",
+          "translation": "The rule is written in just two drawings, and that is enough for everyone."
+        }
+      ]
+    },
+    {
+      "storySlug": "i-gradini-non-finiscono-mai",
+      "storyTitle": "I gradini non finiscono mai",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "cupola",
+          "surface": "cupola",
+          "definition": "Dome; the round roof over a big church.",
+          "sentence": "La fila per la cupola gira intorno alla piazza e non sembra muoversi.",
+          "translation": "The line for the dome wraps around the square and does not seem to move."
+        },
+        {
+          "word": "muoversi",
+          "surface": "muoversi",
+          "definition": "Move; change place or position.",
+          "sentence": "La fila per la cupola gira intorno alla piazza e non sembra muoversi.",
+          "translation": "The line for the dome wraps around the square and does not seem to move."
+        },
+        {
+          "word": "telefono",
+          "surface": "telefono",
+          "definition": "Phone; the small screen you call and pay with.",
+          "sentence": "Marta compra il biglietto sul telefono e aspetta il suo turno al sole.",
+          "translation": "Marta buys the ticket on her phone and waits her turn in the sun."
+        },
+        {
+          "word": "turno",
+          "surface": "turno",
+          "definition": "Turn; the moment when it is finally you.",
+          "sentence": "Marta compra il biglietto sul telefono e aspetta il suo turno al sole.",
+          "translation": "Marta buys the ticket on her phone and waits her turn in the sun."
+        },
+        {
+          "word": "avviso",
+          "surface": "avviso",
+          "definition": "Notice; a short written warning for everybody.",
+          "sentence": "Un avviso all'entrata ricorda che dentro non c'è nessun ascensore.",
+          "translation": "A notice at the entrance reminds you that there is no lift inside."
+        },
+        {
+          "word": "ricordare",
+          "surface": "ricorda",
+          "definition": "Reminds; makes someone think of something again.",
+          "sentence": "Un avviso all'entrata ricorda che dentro non c'è nessun ascensore.",
+          "translation": "A notice at the entrance reminds you that there is no lift inside."
+        },
+        {
+          "word": "ascensore",
+          "surface": "ascensore",
+          "definition": "Lift; the small room that carries you up floors.",
+          "sentence": "Un avviso all'entrata ricorda che dentro non c'è nessun ascensore.",
+          "translation": "A notice at the entrance reminds you that there is no lift inside."
+        },
+        {
+          "word": "scala",
+          "surface": "scala",
+          "definition": "Stairs; the steps that take you up or down.",
+          "sentence": "La scala sale stretta fra due muri e nessuno può passare avanti.",
+          "translation": "The staircase is narrow as it climbs between two walls, and nobody can get past."
+        },
+        {
+          "word": "qualcuno",
+          "surface": "qualcuno",
+          "definition": "Someone; a person you do not name.",
+          "sentence": "Ogni tanto qualcuno si ferma per respirare e blocca tutta la coda.",
+          "translation": "Every so often someone stops to breathe and blocks the whole line."
+        },
+        {
+          "word": "respirare",
+          "surface": "respirare",
+          "definition": "Breathe; take air in and let it out.",
+          "sentence": "Ogni tanto qualcuno si ferma per respirare e blocca tutta la coda.",
+          "translation": "Every so often someone stops to breathe and blocks the whole line."
+        },
+        {
+          "word": "bloccare",
+          "surface": "blocca",
+          "definition": "Blocks; stops others from going on.",
+          "sentence": "Ogni tanto qualcuno si ferma per respirare e blocca tutta la coda.",
+          "translation": "Every so often someone stops to breathe and blocks the whole line."
+        },
+        {
+          "word": "gradino",
+          "surface": "gradini",
+          "definition": "Step; one level of a staircase.",
+          "sentence": "Marta conta i gradini fino a cento, poi lascia perdere.",
+          "translation": "Marta counts the steps up to a hundred, then gives up."
+        },
+        {
+          "word": "cima",
+          "surface": "cima",
+          "definition": "Top; the highest point of something.",
+          "sentence": "In cima il vento arriva forte e la città diventa piccola e rossa.",
+          "translation": "At the top the wind hits hard, and the city turns small and red."
+        },
+        {
+          "word": "vento",
+          "surface": "vento",
+          "definition": "Wind; air moving strongly outside.",
+          "sentence": "In cima il vento arriva forte e la città diventa piccola e rossa.",
+          "translation": "At the top the wind hits hard, and the city turns small and red."
+        },
+        {
+          "word": "città",
+          "surface": "città",
+          "definition": "City; a big town with many people.",
+          "sentence": "In cima il vento arriva forte e la città diventa piccola e rossa.",
+          "translation": "At the top the wind hits hard, and the city turns small and red."
+        },
+        {
+          "word": "diventare",
+          "surface": "diventa",
+          "definition": "Becomes; changes into something else.",
+          "sentence": "In cima il vento arriva forte e la città diventa piccola e rossa.",
+          "translation": "At the top the wind hits hard, and the city turns small and red."
+        },
+        {
+          "word": "rosso",
+          "surface": "rossa",
+          "definition": "Red; the colour of blood or of roof tiles.",
+          "sentence": "In cima il vento arriva forte e la città diventa piccola e rossa.",
+          "translation": "At the top the wind hits hard, and the city turns small and red."
+        },
+        {
+          "word": "tetto",
+          "surface": "tetti",
+          "definition": "Roof; the top of a house that keeps rain out.",
+          "sentence": "I tetti stanno tutti vicini, con le antenne e i panni stesi.",
+          "translation": "The roofs all sit close together, with antennas and laundry hung out to dry."
+        },
+        {
+          "word": "panno",
+          "surface": "panni",
+          "definition": "Cloth; here, the washing hung out to dry.",
+          "sentence": "I tetti stanno tutti vicini, con le antenne e i panni stesi.",
+          "translation": "The roofs all sit close together, with antennas and laundry hung out to dry."
+        },
+        {
+          "word": "muretto",
+          "surface": "muretto",
+          "definition": "Low wall you can lean on or sit against.",
+          "sentence": "Marta appoggia le mani sul muretto e respira con la bocca aperta.",
+          "translation": "Marta rests her hands on the low wall and breathes with her mouth open."
+        },
+        {
+          "word": "bocca",
+          "surface": "bocca",
+          "definition": "Mouth; the part of the face you eat and breathe with.",
+          "sentence": "Marta appoggia le mani sul muretto e respira con la bocca aperta.",
+          "translation": "Marta rests her hands on the low wall and breathes with her mouth open."
+        },
+        {
+          "word": "discesa",
+          "surface": "discesa",
+          "definition": "Way down; the part of a path that goes down.",
+          "sentence": "La discesa è peggio della salita, perché le gambe tremano un poco.",
+          "translation": "Going down is worse than going up, because your legs shake a little."
+        },
+        {
+          "word": "salita",
+          "surface": "salita",
+          "definition": "Climb; the part of a path that goes up.",
+          "sentence": "La discesa è peggio della salita, perché le gambe tremano un poco.",
+          "translation": "Going down is worse than going up, because your legs shake a little."
+        },
+        {
+          "word": "tremare",
+          "surface": "tremano",
+          "definition": "Shake; move a little without wanting to.",
+          "sentence": "La discesa è peggio della salita, perché le gambe tremano un poco.",
+          "translation": "Going down is worse than going up, because your legs shake a little."
+        },
+        {
+          "word": "basso",
+          "surface": "bassa",
+          "definition": "Low; close to the ground and not high.",
+          "sentence": "La cupola da sotto adesso sembra molto più bassa.",
+          "translation": "From below, the dome now looks much lower."
+        }
+      ]
+    },
+    {
+      "storySlug": "la-piazza-si-riempie-alle-sei",
+      "storyTitle": "La piazza si riempie alle sei",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "sole",
+          "surface": "sole",
+          "definition": "Sun; the light and heat that come from the sky.",
+          "sentence": "Alle cinque la piazza è vuota e il sole batte sulle pietre gialle.",
+          "translation": "At five the square is empty and the sun beats down on the yellow stones."
+        },
+        {
+          "word": "battere",
+          "surface": "batte",
+          "definition": "Beats down; hits a surface again and again.",
+          "sentence": "Alle cinque la piazza è vuota e il sole batte sulle pietre gialle.",
+          "translation": "At five the square is empty and the sun beats down on the yellow stones."
+        },
+        {
+          "word": "pietra",
+          "surface": "pietre",
+          "definition": "Stone; the hard material of old streets.",
+          "sentence": "Alle cinque la piazza è vuota e il sole batte sulle pietre gialle.",
+          "translation": "At five the square is empty and the sun beats down on the yellow stones."
+        },
+        {
+          "word": "ragazzo",
+          "surface": "ragazzi",
+          "definition": "Young man; a man in his twenties or so.",
+          "sentence": "Due ragazzi giocano a pallone davanti alla fontana spenta.",
+          "translation": "Two young men play football in front of the fountain, with the water switched off."
+        },
+        {
+          "word": "giocare",
+          "surface": "giocano",
+          "definition": "Play; do something for fun.",
+          "sentence": "Due ragazzi giocano a pallone davanti alla fontana spenta.",
+          "translation": "Two young men play football in front of the fountain, with the water switched off."
+        },
+        {
+          "word": "pallone",
+          "surface": "pallone",
+          "definition": "Football; the big ball you kick.",
+          "sentence": "Due ragazzi giocano a pallone davanti alla fontana spenta.",
+          "translation": "Two young men play football in front of the fountain, with the water switched off."
+        },
+        {
+          "word": "fontana",
+          "surface": "fontana",
+          "definition": "Fountain; the stone basin with water in a square.",
+          "sentence": "Due ragazzi giocano a pallone davanti alla fontana spenta.",
+          "translation": "Two young men play football in front of the fountain, with the water switched off."
+        },
+        {
+          "word": "spento",
+          "surface": "spenta",
+          "definition": "Switched off; not working at this moment.",
+          "sentence": "Due ragazzi giocano a pallone davanti alla fontana spenta.",
+          "translation": "Two young men play football in front of the fountain, with the water switched off."
+        },
+        {
+          "word": "panchina",
+          "surface": "panchina",
+          "definition": "Bench; the long seat in a street or a park.",
+          "sentence": "Marta si siede su una panchina e guarda le famiglie che arrivano.",
+          "translation": "Marta sits down on a bench and watches the families arriving."
+        },
+        {
+          "word": "serranda",
+          "surface": "serrande",
+          "definition": "Metal shutter that closes a shop front.",
+          "sentence": "Verso le sei le serrande si alzano e i tavolini escono dai bar.",
+          "translation": "Around six the metal shutters go up and the little tables come out of the bars."
+        },
+        {
+          "word": "famiglia",
+          "surface": "famiglie",
+          "definition": "Family; parents and their relatives together.",
+          "sentence": "Marta si siede su una panchina e guarda le famiglie che arrivano.",
+          "translation": "Marta sits down on a bench and watches the families arriving."
+        },
+        {
+          "word": "cane",
+          "surface": "cani",
+          "definition": "Dog; the animal that lives with people.",
+          "sentence": "I cani al guinzaglio e le voci alte riempiono la piazza, senza nessun segnale.",
+          "translation": "Dogs on their leads and loud voices fill the square, with no signal at all."
+        },
+        {
+          "word": "guinzaglio",
+          "surface": "guinzaglio",
+          "definition": "Lead; the strap that holds a dog.",
+          "sentence": "I cani al guinzaglio e le voci alte riempiono la piazza, senza nessun segnale.",
+          "translation": "Dogs on their leads and loud voices fill the square, with no signal at all."
+        },
+        {
+          "word": "voce",
+          "surface": "voci",
+          "definition": "Voice; the sound a person makes when speaking.",
+          "sentence": "I cani al guinzaglio e le voci alte riempiono la piazza, senza nessun segnale.",
+          "translation": "Dogs on their leads and loud voices fill the square, with no signal at all."
+        },
+        {
+          "word": "segnale",
+          "surface": "segnale",
+          "definition": "Signal; a sign that tells people to start.",
+          "sentence": "I cani al guinzaglio e le voci alte riempiono la piazza, senza nessun segnale.",
+          "translation": "Dogs on their leads and loud voices fill the square, with no signal at all."
+        },
+        {
+          "word": "gelato",
+          "surface": "gelato",
+          "definition": "Ice cream; the cold sweet eaten walking in Italy.",
+          "sentence": "Marta compra un gelato e cammina insieme agli altri, senza una direzione.",
+          "translation": "Marta buys an ice cream and walks along with everyone else, with no direction."
+        },
+        {
+          "word": "direzione",
+          "surface": "direzione",
+          "definition": "Direction; the way you are going.",
+          "sentence": "Marta compra un gelato e cammina insieme agli altri, senza una direzione.",
+          "translation": "Marta buys an ice cream and walks along with everyone else, with no direction."
+        },
+        {
+          "word": "avanti",
+          "surface": "avanti",
+          "definition": "Forward; towards the front.",
+          "sentence": "Due ragazzi giocano a pallone davanti alla fontana spenta.",
+          "translation": "Two young men play football in front of the fountain, with the water switched off."
+        },
+        {
+          "word": "indietro",
+          "surface": "indietro",
+          "definition": "Backwards; towards the back.",
+          "sentence": "Tutti girano intorno alla stessa fontana, avanti e indietro, molto lentamente.",
+          "translation": "Everyone circles the same fountain, back and forth, very slowly."
+        },
+        {
+          "word": "di corsa",
+          "surface": "di corsa",
+          "definition": "In a rush; running because there is no time.",
+          "sentence": "Nessuno qui sembra avere un posto dove andare di corsa.",
+          "translation": "Nobody here seems to have anywhere to be in a rush."
+        },
+        {
+          "word": "svuotarsi",
+          "surface": "si svuota",
+          "definition": "Empties; loses all the people inside.",
+          "sentence": "Alle otto la piazza si svuota, come per un accordo segreto.",
+          "translation": "At eight the square empties, as if by some secret agreement."
+        },
+        {
+          "word": "accordo",
+          "surface": "accordo",
+          "definition": "Agreement; a plan everybody accepts.",
+          "sentence": "Alle otto la piazza si svuota, come per un accordo segreto.",
+          "translation": "At eight the square empties, as if by some secret agreement."
+        },
+        {
+          "word": "passeggiata",
+          "surface": "passeggiata",
+          "definition": "Evening walk Italians take together before dinner.",
+          "sentence": "La passeggiata non ha un orario scritto, però tutti lo conoscono.",
+          "translation": "The evening walk has no written timetable, and yet everyone knows it."
+        },
+        {
+          "word": "portico",
+          "surface": "portici",
+          "definition": "Covered walkway with arches along a street.",
+          "sentence": "Nessun tavolino sta fuori e nessuno cammina sotto i portici.",
+          "translation": "Not one table is outside, and nobody walks under the arcades."
+        },
+        {
+          "word": "segreto",
+          "surface": "segreto",
+          "definition": "Secret; known only by some people.",
+          "sentence": "Alle otto la piazza si svuota, come per un accordo segreto.",
+          "translation": "At eight the square empties, as if by some secret agreement."
+        }
+      ]
+    },
+    {
+      "storySlug": "il-caffe-si-beve-in-piedi",
+      "storyTitle": "Il caffè si beve in piedi",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "bar",
+          "surface": "bar",
+          "definition": "Café; the place for coffee, sweets and quick drinks.",
+          "sentence": "Teo entra in un bar dei Quartieri Spagnoli e si siede a un tavolino piccolo.",
+          "translation": "Teo walks into a cafe in the Quartieri Spagnoli and sits down at a small table."
+        },
+        {
+          "word": "sedersi",
+          "surface": "si siede",
+          "definition": "Sits down; takes a seat somewhere.",
+          "sentence": "Teo entra in un bar dei Quartieri Spagnoli e si siede a un tavolino piccolo.",
+          "translation": "Teo walks into a cafe in the Quartieri Spagnoli and sits down at a small table."
+        },
+        {
+          "word": "tavolino",
+          "surface": "tavolino",
+          "definition": "Small table, the kind you find in a café.",
+          "sentence": "Teo entra in un bar dei Quartieri Spagnoli e si siede a un tavolino piccolo.",
+          "translation": "Teo walks into a cafe in the Quartieri Spagnoli and sits down at a small table."
+        },
+        {
+          "word": "cameriere",
+          "surface": "cameriere",
+          "definition": "Waiter; the person who brings food to your table.",
+          "sentence": "Il cameriere arriva subito e porta il caffè con un bicchiere d'acqua fredda.",
+          "translation": "The waiter comes over at once and brings the coffee with a glass of cold water."
+        },
+        {
+          "word": "portare",
+          "surface": "porta",
+          "definition": "Brings; carries something to a person or a place.",
+          "sentence": "Il cameriere arriva subito e porta il caffè con un bicchiere d'acqua fredda.",
+          "translation": "The waiter comes over at once and brings the coffee with a glass of cold water."
+        },
+        {
+          "word": "bicchiere",
+          "surface": "bicchiere",
+          "definition": "Glass; what you drink water from.",
+          "sentence": "Il cameriere arriva subito e porta il caffè con un bicchiere d'acqua fredda.",
+          "translation": "The waiter comes over at once and brings the coffee with a glass of cold water."
+        },
+        {
+          "word": "freddo",
+          "surface": "fredda",
+          "definition": "Cold; with a low temperature.",
+          "sentence": "Il cameriere arriva subito e porta il caffè con un bicchiere d'acqua fredda.",
+          "translation": "The waiter comes over at once and brings the coffee with a glass of cold water."
+        },
+        {
+          "word": "conto",
+          "surface": "conto",
+          "definition": "Bill; the paper that says how much you must pay.",
+          "sentence": "Il conto sul piattino dice due euro e cinquanta.",
+          "translation": "The bill on the saucer says two euros fifty."
+        },
+        {
+          "word": "piattino",
+          "surface": "piattino",
+          "definition": "Small plate; the saucer under a coffee cup.",
+          "sentence": "Il conto sul piattino dice due euro e cinquanta.",
+          "translation": "The bill on the saucer says two euros fifty."
+        },
+        {
+          "word": "banco",
+          "surface": "banco",
+          "definition": "Counter; the long bar you stand at to drink.",
+          "sentence": "Al banco, accanto a lui, tre uomini bevono lo stesso caffè in piedi.",
+          "translation": "At the counter next to him, three men drink the same coffee standing up."
+        },
+        {
+          "word": "bere",
+          "surface": "bevono",
+          "definition": "Drink; take liquid into the mouth.",
+          "sentence": "Al banco, accanto a lui, tre uomini bevono lo stesso caffè in piedi.",
+          "translation": "At the counter next to him, three men drink the same coffee standing up."
+        },
+        {
+          "word": "in piedi",
+          "surface": "in piedi",
+          "definition": "Standing up; on your feet and not sitting.",
+          "sentence": "Al banco, accanto a lui, tre uomini bevono lo stesso caffè in piedi.",
+          "translation": "At the counter next to him, three men drink the same coffee standing up."
+        },
+        {
+          "word": "pagare",
+          "surface": "pagano",
+          "definition": "Pay; give money for something.",
+          "sentence": "Loro pagano un euro e dieci e restano dentro il bar due minuti.",
+          "translation": "They pay one euro ten and stay inside the cafe for two minutes."
+        },
+        {
+          "word": "restare",
+          "surface": "restano",
+          "definition": "Stay; remain in a place.",
+          "sentence": "Loro pagano un euro e dieci e restano dentro il bar due minuti.",
+          "translation": "They pay one euro ten and stay inside the cafe for two minutes."
+        },
+        {
+          "word": "listino",
+          "surface": "listino",
+          "definition": "Price list on the wall of a café.",
+          "sentence": "Teo legge il listino sul muro e trova due prezzi diversi.",
+          "translation": "Teo reads the price list on the wall and finds two different prices."
+        },
+        {
+          "word": "prezzo",
+          "surface": "prezzi",
+          "definition": "Price; how much money a thing costs.",
+          "sentence": "Teo legge il listino sul muro e trova due prezzi diversi.",
+          "translation": "Teo reads the price list on the wall and finds two different prices."
+        },
+        {
+          "word": "diverso",
+          "surface": "diversi",
+          "definition": "Different; not the same.",
+          "sentence": "Teo legge il listino sul muro e trova due prezzi diversi.",
+          "translation": "Teo reads the price list on the wall and finds two different prices."
+        },
+        {
+          "word": "spiegare",
+          "surface": "spiega",
+          "definition": "Explains; makes something clear with words.",
+          "sentence": "Il cameriere spiega che il tavolino costa, mentre il banco no.",
+          "translation": "The waiter explains that the table costs extra, while the counter does not."
+        },
+        {
+          "word": "servizio",
+          "surface": "servizio",
+          "definition": "Service; the work of bringing things to a customer.",
+          "sentence": "“Al tavolino è un altro servizio”, dice, e non sembra dispiaciuto.",
+          "translation": "“At a table it is a different service,” he says, and he does not seem sorry."
+        },
+        {
+          "word": "discutere",
+          "surface": "discutere",
+          "definition": "Argue; speak against what another person says.",
+          "sentence": "Teo paga senza discutere e guarda ancora quegli uomini in piedi.",
+          "translation": "Teo pays without arguing and looks again at those men standing up."
+        },
+        {
+          "word": "dritto",
+          "surface": "dritto",
+          "definition": "Straight; without turning left or right.",
+          "sentence": "Il giorno dopo Teo entra nello stesso bar e va dritto al banco.",
+          "translation": "The next day Teo walks into the same cafe and goes straight to the counter."
+        },
+        {
+          "word": "sorso",
+          "surface": "sorsi",
+          "definition": "Sip; the small amount you drink at one time.",
+          "sentence": "Beve il caffè in due sorsi, con il gomito appoggiato sul marmo.",
+          "translation": "He drinks the coffee in two sips, with his elbow resting on the marble."
+        },
+        {
+          "word": "gomito",
+          "surface": "gomito",
+          "definition": "Elbow; the middle joint of the arm.",
+          "sentence": "Beve il caffè in due sorsi, con il gomito appoggiato sul marmo.",
+          "translation": "He drinks the coffee in two sips, with his elbow resting on the marble."
+        },
+        {
+          "word": "marmo",
+          "surface": "marmo",
+          "definition": "Marble; the hard shiny stone of café counters.",
+          "sentence": "Beve il caffè in due sorsi, con il gomito appoggiato sul marmo.",
+          "translation": "He drinks the coffee in two sips, with his elbow resting on the marble."
+        },
+        {
+          "word": "sapore",
+          "surface": "sapore",
+          "definition": "Taste; what a food or drink is like in the mouth.",
+          "sentence": "Il sapore è lo stesso, e al banco nessuno porta il conto.",
+          "translation": "The taste is the same, and at the counter nobody brings you a bill."
+        }
+      ]
+    },
+    {
+      "storySlug": "prima-si-paga-poi-si-beve",
+      "storyTitle": "Prima si paga, poi si beve",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "cassa",
+          "surface": "cassa",
+          "definition": "Till; the desk where you pay before ordering.",
+          "sentence": "Alla cassa del bar c'è una fila lunga e nessuno tiene in mano una tazza.",
+          "translation": "There is a long queue at the cafe till, and nobody is holding a cup."
+        },
+        {
+          "word": "tazza",
+          "surface": "tazza",
+          "definition": "Cup; what you drink coffee or tea from.",
+          "sentence": "Alla cassa del bar c'è una fila lunga e nessuno tiene in mano una tazza.",
+          "translation": "There is a long queue at the cafe till, and nobody is holding a cup."
+        },
+        {
+          "word": "coda",
+          "surface": "coda",
+          "definition": "Queue; a line of people waiting their turn.",
+          "sentence": "Teo si mette in coda dietro una signora con un cane piccolo.",
+          "translation": "Teo joins the queue behind a lady with a small dog."
+        },
+        {
+          "word": "cassiera",
+          "surface": "cassiera",
+          "definition": "Cashier; the woman who takes the money.",
+          "sentence": "La cassiera chiede che cosa vuole prima di battere lo scontrino.",
+          "translation": "The cashier asks what he wants before ringing up the receipt."
+        },
+        {
+          "word": "volere",
+          "surface": "vuole",
+          "definition": "Wants; would like to have something.",
+          "sentence": "La cassiera chiede che cosa vuole prima di battere lo scontrino.",
+          "translation": "The cashier asks what he wants before ringing up the receipt."
+        },
+        {
+          "word": "scontrino",
+          "surface": "scontrino",
+          "definition": "Receipt; the small printed paper proving you paid.",
+          "sentence": "La cassiera chiede che cosa vuole prima di battere lo scontrino.",
+          "translation": "The cashier asks what he wants before ringing up the receipt."
+        },
+        {
+          "word": "ordinare",
+          "surface": "ordina",
+          "definition": "Orders; asks for food or drink in a place.",
+          "sentence": "Teo ordina un cornetto e un caffè e riceve un foglietto lungo e stretto.",
+          "translation": "Teo orders a croissant and a coffee and receives a long, narrow slip of paper."
+        },
+        {
+          "word": "cornetto",
+          "surface": "cornetto",
+          "definition": "Italian breakfast pastry, soft and shaped like a horn.",
+          "sentence": "Teo ordina un cornetto e un caffè e riceve un foglietto lungo e stretto.",
+          "translation": "Teo orders a croissant and a coffee and receives a long, narrow slip of paper."
+        },
+        {
+          "word": "ricevere",
+          "surface": "riceve",
+          "definition": "Receives; gets something from another person.",
+          "sentence": "Teo ordina un cornetto e un caffè e riceve un foglietto lungo e stretto.",
+          "translation": "Teo orders a croissant and a coffee and receives a long, narrow slip of paper."
+        },
+        {
+          "word": "foglietto",
+          "surface": "foglietto",
+          "definition": "Small piece of paper.",
+          "sentence": "Teo ordina un cornetto e un caffè e riceve un foglietto lungo e stretto.",
+          "translation": "Teo orders a croissant and a coffee and receives a long, narrow slip of paper."
+        },
+        {
+          "word": "appoggiare",
+          "surface": "appoggia",
+          "definition": "Rests it; puts a thing gently on a surface.",
+          "sentence": "Poi porta lo scontrino al banco e lo appoggia vicino alla macchina.",
+          "translation": "Then he takes the receipt to the counter and rests it next to the machine."
+        },
+        {
+          "word": "barista",
+          "surface": "barista",
+          "definition": "Barman; the person who makes coffee behind the counter.",
+          "sentence": "Il barista legge il foglietto e comincia a lavorare senza parlare.",
+          "translation": "The barista reads the slip and starts working without a word."
+        },
+        {
+          "word": "leggere",
+          "surface": "legge",
+          "definition": "Reads; looks at words and understands them.",
+          "sentence": "Il barista legge il foglietto e comincia a lavorare senza parlare.",
+          "translation": "The barista reads the slip and starts working without a word."
+        },
+        {
+          "word": "riempire",
+          "surface": "riempie",
+          "definition": "Fills; puts something in until there is no space.",
+          "sentence": "La macchina fa un rumore forte e riempie la tazzina soltanto a metà.",
+          "translation": "The machine makes a loud noise and fills the tiny cup only halfway."
+        },
+        {
+          "word": "tazzina",
+          "surface": "tazzina",
+          "definition": "Tiny cup made for Italian espresso.",
+          "sentence": "La macchina fa un rumore forte e riempie la tazzina soltanto a metà.",
+          "translation": "The machine makes a loud noise and fills the tiny cup only halfway."
+        },
+        {
+          "word": "zucchero",
+          "surface": "zucchero",
+          "definition": "Sugar; the white powder that makes things sweet.",
+          "sentence": "Il barista mette lo zucchero accanto, con un cucchiaino e un tovagliolo.",
+          "translation": "The barista puts the sugar beside it, with a teaspoon and a napkin."
+        },
+        {
+          "word": "cucchiaino",
+          "surface": "cucchiaino",
+          "definition": "Teaspoon; the small spoon for coffee.",
+          "sentence": "Il barista mette lo zucchero accanto, con un cucchiaino e un tovagliolo.",
+          "translation": "The barista puts the sugar beside it, with a teaspoon and a napkin."
+        },
+        {
+          "word": "tovagliolo",
+          "surface": "tovagliolo",
+          "definition": "Napkin; the paper for your hands and mouth.",
+          "sentence": "Il barista mette lo zucchero accanto, con un cucchiaino e un tovagliolo.",
+          "translation": "The barista puts the sugar beside it, with a teaspoon and a napkin."
+        },
+        {
+          "word": "caldo",
+          "surface": "caldo",
+          "definition": "Hot; with a high temperature.",
+          "sentence": "Il cornetto arriva caldo e lascia le dita unte di zucchero.",
+          "translation": "The croissant comes out hot and leaves your fingers greasy with sugar."
+        },
+        {
+          "word": "dito",
+          "surface": "dita",
+          "definition": "Finger; one of the five parts of the hand.",
+          "sentence": "Il cornetto arriva caldo e lascia le dita unte di zucchero.",
+          "translation": "The croissant comes out hot and leaves your fingers greasy with sugar."
+        },
+        {
+          "word": "turista",
+          "surface": "turista",
+          "definition": "Tourist; a person visiting a place for a short time.",
+          "sentence": "Un turista salta la cassa e ordina direttamente al banco, ma nessuno lo serve.",
+          "translation": "A tourist skips the till and orders directly at the counter, but nobody serves him."
+        },
+        {
+          "word": "saltare",
+          "surface": "salta",
+          "definition": "Skips; passes over a step without doing it.",
+          "sentence": "Un turista salta la cassa e ordina direttamente al banco, ma nessuno lo serve.",
+          "translation": "A tourist skips the till and orders directly at the counter, but nobody serves him."
+        },
+        {
+          "word": "servire",
+          "surface": "serve",
+          "definition": "Serves; brings what a customer asked for.",
+          "sentence": "Un turista salta la cassa e ordina direttamente al banco, ma nessuno lo serve.",
+          "translation": "A tourist skips the till and orders directly at the counter, but nobody serves him."
+        },
+        {
+          "word": "riconoscere",
+          "surface": "riconosce",
+          "definition": "Recognises; knows again someone seen before.",
+          "sentence": "Teo lo guarda e riconosce se stesso di quindici minuti prima.",
+          "translation": "Teo watches him and recognises himself from fifteen minutes earlier."
+        },
+        {
+          "word": "direttamente",
+          "surface": "direttamente",
+          "definition": "Directly; without any step in between.",
+          "sentence": "Un turista salta la cassa e ordina direttamente al banco, ma nessuno lo serve.",
+          "translation": "A tourist skips the till and orders directly at the counter, but nobody serves him."
+        }
+      ]
+    },
+    {
+      "storySlug": "il-caffe-sospeso",
+      "storyTitle": "Il caffè sospeso",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "giallo",
+          "surface": "giallo",
+          "definition": "Yellow; the colour of the sun or of lemons.",
+          "sentence": "Teo chiede al barista che cosa significa quel cartello giallo e vecchio.",
+          "translation": "Teo asks the barista what that old yellow sign means."
+        },
+        {
+          "word": "parola",
+          "surface": "parole",
+          "definition": "Word; one piece of language with a meaning.",
+          "sentence": "Sul muro del bar c'è un foglio scritto a mano con due parole soltanto.",
+          "translation": "On the wall of the cafe there is a handwritten sheet with only two words."
+        },
+        {
+          "word": "significare",
+          "surface": "significa",
+          "definition": "Means; has this sense.",
+          "sentence": "Teo chiede al barista che cosa significa quel cartello giallo e vecchio.",
+          "translation": "Teo asks the barista what that old yellow sign means."
+        },
+        {
+          "word": "cartello",
+          "surface": "cartello",
+          "definition": "Sign; a paper or board with a short message.",
+          "sentence": "Teo chiede al barista che cosa significa quel cartello giallo e vecchio.",
+          "translation": "Teo asks the barista what that old yellow sign means."
+        },
+        {
+          "word": "vecchio",
+          "surface": "vecchio",
+          "definition": "Old; here, used for a long time already.",
+          "sentence": "Teo chiede al barista che cosa significa quel cartello giallo e vecchio.",
+          "translation": "Teo asks the barista what that old yellow sign means."
+        },
+        {
+          "word": "alzare",
+          "surface": "alza",
+          "definition": "Lifts; moves something up.",
+          "sentence": "Il barista alza le spalle e continua a pulire la macchina.",
+          "translation": "The barista shrugs his shoulders and goes on cleaning the machine."
+        },
+        {
+          "word": "spalla",
+          "surface": "spalle",
+          "definition": "Shoulder; the top of the arm next to the neck.",
+          "sentence": "Il barista alza le spalle e continua a pulire la macchina.",
+          "translation": "The barista shrugs his shoulders and goes on cleaning the machine."
+        },
+        {
+          "word": "pulire",
+          "surface": "pulire",
+          "definition": "Cleans; takes the dirt away from something.",
+          "sentence": "Il barista alza le spalle e continua a pulire la macchina.",
+          "translation": "The barista shrugs his shoulders and goes on cleaning the machine."
+        },
+        {
+          "word": "cappotto",
+          "surface": "cappotto",
+          "definition": "Coat; the long warm jacket for cold days.",
+          "sentence": "Un uomo con il cappotto blu paga due caffè e ne beve uno solo.",
+          "translation": "A man in a blue coat pays for two coffees and drinks only one."
+        },
+        {
+          "word": "blu",
+          "surface": "blu",
+          "definition": "Blue; the colour of a clear sky.",
+          "sentence": "Un uomo con il cappotto blu paga due caffè e ne beve uno solo.",
+          "translation": "A man in a blue coat pays for two coffees and drinks only one."
+        },
+        {
+          "word": "segno",
+          "surface": "segno",
+          "definition": "Mark; a short line you write to count something.",
+          "sentence": "Il barista fa un segno con la penna sul quaderno accanto alla cassa.",
+          "translation": "The barista makes a mark with his pen in the notebook next to the till."
+        },
+        {
+          "word": "penna",
+          "surface": "penna",
+          "definition": "Pen; what you write with.",
+          "sentence": "Il barista fa un segno con la penna sul quaderno accanto alla cassa.",
+          "translation": "The barista makes a mark with his pen in the notebook next to the till."
+        },
+        {
+          "word": "quaderno",
+          "surface": "quaderno",
+          "definition": "Notebook; joined pages for writing.",
+          "sentence": "Il barista fa un segno con la penna sul quaderno accanto alla cassa.",
+          "translation": "The barista makes a mark with his pen in the notebook next to the till."
+        },
+        {
+          "word": "uscire",
+          "surface": "esce",
+          "definition": "Goes out; leaves a place.",
+          "sentence": "L'uomo esce in fretta, senza salutare e senza guardare nessuno.",
+          "translation": "The man goes out in a hurry, without saying goodbye and without looking at anyone."
+        },
+        {
+          "word": "in fretta",
+          "surface": "in fretta",
+          "definition": "In a hurry; quickly and without stopping.",
+          "sentence": "L'uomo esce in fretta, senza salutare e senza guardare nessuno.",
+          "translation": "The man goes out in a hurry, without saying goodbye and without looking at anyone."
+        },
+        {
+          "word": "salutare",
+          "surface": "salutare",
+          "definition": "Says hello or goodbye to someone.",
+          "sentence": "L'uomo esce in fretta, senza salutare e senza guardare nessuno.",
+          "translation": "The man goes out in a hurry, without saying goodbye and without looking at anyone."
+        },
+        {
+          "word": "soldi",
+          "surface": "soldi",
+          "definition": "Money; what you pay with.",
+          "sentence": "“Il secondo caffè resta qui, per chi oggi non ha soldi”, dice il barista.",
+          "translation": "“The second coffee stays here, for whoever has no money today,” says the barista."
+        },
+        {
+          "word": "aperto",
+          "surface": "aperto",
+          "definition": "Open; not closed, so you can see inside.",
+          "sentence": "Teo guarda il quaderno aperto e conta sette segni sotto la data di oggi.",
+          "translation": "Teo looks at the open notebook and counts seven marks under today's date."
+        },
+        {
+          "word": "data",
+          "surface": "data",
+          "definition": "Date; the day, month and year written down.",
+          "sentence": "Teo guarda il quaderno aperto e conta sette segni sotto la data di oggi.",
+          "translation": "Teo looks at the open notebook and counts seven marks under today's date."
+        },
+        {
+          "word": "scrivere",
+          "surface": "scrive",
+          "definition": "Writes; puts words on paper.",
+          "sentence": "Nessuno scrive il nome di chi paga e di chi beve.",
+          "translation": "Nobody writes down the name of who pays and who drinks."
+        },
+        {
+          "word": "nome",
+          "surface": "nome",
+          "definition": "Name; what a person is called.",
+          "sentence": "Nessuno scrive il nome di chi paga e di chi beve.",
+          "translation": "Nobody writes down the name of who pays and who drinks."
+        },
+        {
+          "word": "lasciare",
+          "surface": "lascia",
+          "definition": "Leaves; puts something down and does not take it back.",
+          "sentence": "Prima di uscire Teo lascia due monete in più sul piattino del caffè.",
+          "translation": "Before going out, Teo leaves two extra coins on the coffee saucer."
+        },
+        {
+          "word": "grazie",
+          "surface": "grazie",
+          "definition": "Thank you; the word for saying you are grateful.",
+          "sentence": "Il barista fa un segno nuovo e non dice neanche grazie.",
+          "translation": "The barista makes a new mark and does not even say thank you."
+        },
+        {
+          "word": "offrire",
+          "surface": "offre",
+          "definition": "Offers; pays or gives something to another person.",
+          "sentence": "A Napoli il caffè si offre anche a chi non c'è ancora.",
+          "translation": "In Naples, coffee is offered even to someone who is not there yet."
+        },
+        {
+          "word": "ancora",
+          "surface": "ancora",
+          "definition": "Yet; up to now and maybe later.",
+          "sentence": "A Napoli il caffè si offre anche a chi non c'è ancora.",
+          "translation": "In Naples, coffee is offered even to someone who is not there yet."
+        }
+      ]
+    },
+    {
+      "storySlug": "qui-non-ce-la-bolognese",
+      "storyTitle": "Qui non c'è la bolognese",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "trattoria",
+          "surface": "trattoria",
+          "definition": "Simple family restaurant with home cooking and low prices.",
+          "sentence": "Irene entra in una trattoria vicino alle due torri e legge il menu appeso alla porta.",
+          "translation": "Irene walks into a small family restaurant near the two towers and reads the menu hung on the door."
+        },
+        {
+          "word": "torre",
+          "surface": "torri",
+          "definition": "Tower; a tall narrow building above the roofs.",
+          "sentence": "Irene entra in una trattoria vicino alle due torri e legge il menu appeso alla porta.",
+          "translation": "Irene walks into a small family restaurant near the two towers and reads the menu hung on the door."
+        },
+        {
+          "word": "menu",
+          "surface": "menu",
+          "definition": "Menu; the list of dishes a place serves.",
+          "sentence": "Irene entra in una trattoria vicino alle due torri e legge il menu appeso alla porta.",
+          "translation": "Irene walks into a small family restaurant near the two towers and reads the menu hung on the door."
+        },
+        {
+          "word": "tavolo",
+          "surface": "tavoli",
+          "definition": "Table; the flat top on legs where you eat.",
+          "sentence": "Dentro ci sono sei tavoli con la tovaglia a quadretti e nessun turista.",
+          "translation": "Inside there are six tables with checked tablecloths and not a single tourist."
+        },
+        {
+          "word": "tovaglia",
+          "surface": "tovaglia",
+          "definition": "Tablecloth; the cloth over a table before a meal.",
+          "sentence": "Dentro ci sono sei tavoli con la tovaglia a quadretti e nessun turista.",
+          "translation": "Inside there are six tables with checked tablecloths and not a single tourist."
+        },
+        {
+          "word": "grembiule",
+          "surface": "grembiule",
+          "definition": "Apron; the cloth a cook wears over the clothes.",
+          "sentence": "Un uomo con il grembiule bianco le indica il posto accanto alla finestra.",
+          "translation": "A man in a white apron points her to the seat by the window."
+        },
+        {
+          "word": "bianco",
+          "surface": "bianco",
+          "definition": "White; the colour of milk or of clean paper.",
+          "sentence": "Un uomo con il grembiule bianco le indica il posto accanto alla finestra.",
+          "translation": "A man in a white apron points her to the seat by the window."
+        },
+        {
+          "word": "posto",
+          "surface": "posto",
+          "definition": "Seat; the place where one person sits.",
+          "sentence": "Un uomo con il grembiule bianco le indica il posto accanto alla finestra.",
+          "translation": "A man in a white apron points her to the seat by the window."
+        },
+        {
+          "word": "finestra",
+          "surface": "finestra",
+          "definition": "Window; the glass opening in a wall.",
+          "sentence": "Un uomo con il grembiule bianco le indica il posto accanto alla finestra.",
+          "translation": "A man in a white apron points her to the seat by the window."
+        },
+        {
+          "word": "spaghetti",
+          "surface": "spaghetti",
+          "definition": "Spaghetti; long thin pasta, round and smooth.",
+          "sentence": "Irene cerca gli spaghetti alla bolognese e non li trova da nessuna parte.",
+          "translation": "Irene looks for spaghetti bolognese and cannot find it anywhere."
+        },
+        {
+          "word": "oste",
+          "surface": "oste",
+          "definition": "Innkeeper; the man who owns a small restaurant.",
+          "sentence": "L'oste sorride e spiega che a Bologna il ragù sta sopra le tagliatelle.",
+          "translation": "The innkeeper smiles and explains that in Bologna the ragù goes on the tagliatelle."
+        },
+        {
+          "word": "sorridere",
+          "surface": "sorride",
+          "definition": "Smiles; makes a friendly face without speaking.",
+          "sentence": "L'oste sorride e spiega che a Bologna il ragù sta sopra le tagliatelle.",
+          "translation": "The innkeeper smiles and explains that in Bologna the ragù goes on the tagliatelle."
+        },
+        {
+          "word": "ragù",
+          "surface": "ragù",
+          "definition": "Meat sauce cooked slowly, the pride of Bologna.",
+          "sentence": "L'oste sorride e spiega che a Bologna il ragù sta sopra le tagliatelle.",
+          "translation": "The innkeeper smiles and explains that in Bologna the ragù goes on the tagliatelle."
+        },
+        {
+          "word": "tagliatelle",
+          "surface": "tagliatelle",
+          "definition": "Flat wide egg pasta, the local shape in Bologna.",
+          "sentence": "L'oste sorride e spiega che a Bologna il ragù sta sopra le tagliatelle.",
+          "translation": "The innkeeper smiles and explains that in Bologna the ragù goes on the tagliatelle."
+        },
+        {
+          "word": "largo",
+          "surface": "larghe",
+          "definition": "Wide; big from one side to the other.",
+          "sentence": "Le tagliatelle arrivano larghe, gialle e coperte di un ragù denso.",
+          "translation": "The tagliatelle comes out wide and yellow, covered in a thick ragù."
+        },
+        {
+          "word": "coperto",
+          "surface": "coperte",
+          "definition": "Covered; with something over the whole surface.",
+          "sentence": "Le tagliatelle arrivano larghe, gialle e coperte di un ragù denso.",
+          "translation": "The tagliatelle comes out wide and yellow, covered in a thick ragù."
+        },
+        {
+          "word": "denso",
+          "surface": "denso",
+          "definition": "Thick; not liquid and not easy to pour.",
+          "sentence": "Le tagliatelle arrivano larghe, gialle e coperte di un ragù denso.",
+          "translation": "The tagliatelle comes out wide and yellow, covered in a thick ragù."
+        },
+        {
+          "word": "girare",
+          "surface": "gira",
+          "definition": "Turns; makes something go round.",
+          "sentence": "Irene gira la forchetta piano e sente la carne, il burro e il pomodoro.",
+          "translation": "Irene turns her fork slowly and tastes the meat, the butter and the tomato."
+        },
+        {
+          "word": "forchetta",
+          "surface": "forchetta",
+          "definition": "Fork; the tool with points for eating.",
+          "sentence": "Irene gira la forchetta piano e sente la carne, il burro e il pomodoro.",
+          "translation": "Irene turns her fork slowly and tastes the meat, the butter and the tomato."
+        },
+        {
+          "word": "carne",
+          "surface": "carne",
+          "definition": "Meat; food that comes from an animal.",
+          "sentence": "Irene gira la forchetta piano e sente la carne, il burro e il pomodoro.",
+          "translation": "Irene turns her fork slowly and tastes the meat, the butter and the tomato."
+        },
+        {
+          "word": "burro",
+          "surface": "burro",
+          "definition": "Butter; the soft yellow fat made from milk.",
+          "sentence": "Irene gira la forchetta piano e sente la carne, il burro e il pomodoro.",
+          "translation": "Irene turns her fork slowly and tastes the meat, the butter and the tomato."
+        },
+        {
+          "word": "lentamente",
+          "surface": "lentamente",
+          "definition": "Slowly; taking a lot of time.",
+          "sentence": "Il piatto è piccolo, però lei mangia lentamente per farlo durare.",
+          "translation": "The plate is small, but she eats slowly to make it last."
+        },
+        {
+          "word": "domandare",
+          "surface": "domanda",
+          "definition": "Asks; says words to get an answer.",
+          "sentence": "L'oste torna e domanda se va tutto bene, con le mani dietro la schiena.",
+          "translation": "The innkeeper comes back and asks if everything is fine, hands behind his back."
+        },
+        {
+          "word": "schiena",
+          "surface": "schiena",
+          "definition": "Back; the side of the body behind the chest.",
+          "sentence": "L'oste torna e domanda se va tutto bene, con le mani dietro la schiena.",
+          "translation": "The innkeeper comes back and asks if everything is fine, hands behind his back."
+        },
+        {
+          "word": "fame",
+          "surface": "fame",
+          "definition": "Hunger; the feeling of needing to eat.",
+          "sentence": "Il nome del piatto è sbagliato, la fame no.",
+          "translation": "The name of the dish is wrong; the hunger is not."
+        }
+      ]
+    },
+    {
+      "storySlug": "il-coperto-si-paga-sempre",
+      "storyTitle": "Il coperto si paga sempre",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "riga",
+          "surface": "riga",
+          "definition": "Line; one row of writing on a page.",
+          "sentence": "In fondo alla pagina del menu c'è una riga piccola con due parole e un numero.",
+          "translation": "At the bottom of the menu page there is a small line with two words and a number."
+        },
+        {
+          "word": "pagina",
+          "surface": "pagina",
+          "definition": "Page; one side of a sheet in a book.",
+          "sentence": "In fondo alla pagina del menu c'è una riga piccola con due parole e un numero.",
+          "translation": "At the bottom of the menu page there is a small line with two words and a number."
+        },
+        {
+          "word": "coprire",
+          "surface": "copre",
+          "definition": "Covers; here, includes something inside a price.",
+          "sentence": "Irene domanda al cameriere che cosa copre esattamente quel prezzo.",
+          "translation": "Irene asks the waiter what exactly that price covers."
+        },
+        {
+          "word": "esattamente",
+          "surface": "esattamente",
+          "definition": "Exactly; with no difference at all.",
+          "sentence": "Irene domanda al cameriere che cosa copre esattamente quel prezzo.",
+          "translation": "Irene asks the waiter what exactly that price covers."
+        },
+        {
+          "word": "rispondere",
+          "surface": "risponde",
+          "definition": "Answers; says something back to a question.",
+          "sentence": "Lui risponde con calma: il pane, la tovaglia e il lavoro dei camerieri.",
+          "translation": "He answers calmly: the bread, the tablecloth and the waiters' work."
+        },
+        {
+          "word": "calma",
+          "surface": "calma",
+          "definition": "Calm; being quiet and slow, with no hurry.",
+          "sentence": "Lui risponde con calma: il pane, la tovaglia e il lavoro dei camerieri.",
+          "translation": "He answers calmly: the bread, the tablecloth and the waiters' work."
+        },
+        {
+          "word": "pane",
+          "surface": "pane",
+          "definition": "Bread; the basic food made of flour and water.",
+          "sentence": "Lui risponde con calma: il pane, la tovaglia e il lavoro dei camerieri.",
+          "translation": "He answers calmly: the bread, the tablecloth and the waiters' work."
+        },
+        {
+          "word": "cestino",
+          "surface": "cestino",
+          "definition": "Small basket, here for bread on a table.",
+          "sentence": "Il cestino del pane arriva pieno, con due tipi di pane e un grissino lungo.",
+          "translation": "The bread basket comes full, with two kinds of bread and one long breadstick."
+        },
+        {
+          "word": "pieno",
+          "surface": "pieno",
+          "definition": "Full; with no space left inside.",
+          "sentence": "Il cestino del pane arriva pieno, con due tipi di pane e un grissino lungo.",
+          "translation": "The bread basket comes full, with two kinds of bread and one long breadstick."
+        },
+        {
+          "word": "tipo",
+          "surface": "tipi",
+          "definition": "Kind; one sort of thing among others.",
+          "sentence": "Il cestino del pane arriva pieno, con due tipi di pane e un grissino lungo.",
+          "translation": "The bread basket comes full, with two kinds of bread and one long breadstick."
+        },
+        {
+          "word": "grissino",
+          "surface": "grissino",
+          "definition": "Long thin dry breadstick, common on Italian tables.",
+          "sentence": "Il cestino del pane arriva pieno, con due tipi di pane e un grissino lungo.",
+          "translation": "The bread basket comes full, with two kinds of bread and one long breadstick."
+        },
+        {
+          "word": "lungo",
+          "surface": "lungo",
+          "definition": "Long; big from one end to the other.",
+          "sentence": "Il cestino del pane arriva pieno, con due tipi di pane e un grissino lungo.",
+          "translation": "The bread basket comes full, with two kinds of bread and one long breadstick."
+        },
+        {
+          "word": "errore",
+          "surface": "errore",
+          "definition": "Mistake; something done the wrong way.",
+          "sentence": "Nessuno qui considera il pane un errore della cucina.",
+          "translation": "Nobody here treats the bread as a mistake from the kitchen."
+        },
+        {
+          "word": "cucina",
+          "surface": "cucina",
+          "definition": "Kitchen; the room where food is cooked.",
+          "sentence": "Nessuno qui considera il pane un errore della cucina.",
+          "translation": "Nobody here treats the bread as a mistake from the kitchen."
+        },
+        {
+          "word": "mostrare",
+          "surface": "mostra",
+          "definition": "Shows; lets another person see something.",
+          "sentence": "Alla fine il conto mostra una riga per il coperto e nessuna riga per la mancia.",
+          "translation": "In the end the bill shows a line for the cover charge and no line for the tip."
+        },
+        {
+          "word": "mancia",
+          "surface": "mancia",
+          "definition": "Tip; extra money left for the waiter.",
+          "sentence": "Alla fine il conto mostra una riga per il coperto e nessuna riga per la mancia.",
+          "translation": "In the end the bill shows a line for the cover charge and no line for the tip."
+        },
+        {
+          "word": "abitudine",
+          "surface": "abitudine",
+          "definition": "Habit; something a person always does.",
+          "sentence": "Irene lascia due monete sul piattino, per abitudine straniera, e il cameriere ringrazia sorpreso.",
+          "translation": "Irene leaves two coins on the saucer, a foreign habit, and the waiter thanks her, surprised."
+        },
+        {
+          "word": "straniero",
+          "surface": "straniera",
+          "definition": "Foreign; coming from another country.",
+          "sentence": "Irene lascia due monete sul piattino, per abitudine straniera, e il cameriere ringrazia sorpreso.",
+          "translation": "Irene leaves two coins on the saucer, a foreign habit, and the waiter thanks her, surprised."
+        },
+        {
+          "word": "ringraziare",
+          "surface": "ringrazia",
+          "definition": "Thanks; says thank you to someone.",
+          "sentence": "Irene lascia due monete sul piattino, per abitudine straniera, e il cameriere ringrazia sorpreso.",
+          "translation": "Irene leaves two coins on the saucer, a foreign habit, and the waiter thanks her, surprised."
+        },
+        {
+          "word": "sorpreso",
+          "surface": "sorpreso",
+          "definition": "Surprised; not expecting what happens.",
+          "sentence": "Irene lascia due monete sul piattino, per abitudine straniera, e il cameriere ringrazia sorpreso.",
+          "translation": "Irene leaves two coins on the saucer, a foreign habit, and the waiter thanks her, surprised."
+        },
+        {
+          "word": "obbligo",
+          "surface": "obbligo",
+          "definition": "Duty; something you must do.",
+          "sentence": "La mancia in Italia non è un obbligo, è una piccola sorpresa.",
+          "translation": "In Italy the tip is not a duty; it is a small surprise."
+        },
+        {
+          "word": "ristorante",
+          "surface": "ristorante",
+          "definition": "Restaurant; a place where meals are served.",
+          "sentence": "Un ristorante scrive “coperto zero” a lettere grandi, quasi con orgoglio.",
+          "translation": "One restaurant writes “no cover charge” in big letters, almost with pride."
+        },
+        {
+          "word": "lettera",
+          "surface": "lettere",
+          "definition": "Letter; one of the signs you write words with.",
+          "sentence": "Un ristorante scrive “coperto zero” a lettere grandi, quasi con orgoglio.",
+          "translation": "One restaurant writes “no cover charge” in big letters, almost with pride."
+        },
+        {
+          "word": "orgoglio",
+          "surface": "orgoglio",
+          "definition": "Pride; the good feeling about what is yours.",
+          "sentence": "Un ristorante scrive “coperto zero” a lettere grandi, quasi con orgoglio.",
+          "translation": "One restaurant writes “no cover charge” in big letters, almost with pride."
+        },
+        {
+          "word": "a parte",
+          "surface": "a parte",
+          "definition": "Separately; charged or served on its own.",
+          "sentence": "In quel posto, però, il pane si paga a parte.",
+          "translation": "In that place, though, the bread is paid for separately."
+        }
+      ]
+    },
+    {
+      "storySlug": "il-conto-non-arriva-da-solo",
+      "storyTitle": "Il conto non arriva da solo",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "finire",
+          "surface": "finisce",
+          "definition": "Finishes; comes to the end of something.",
+          "sentence": "Irene finisce il secondo piatto e aspetta con la borsa già sulle ginocchia.",
+          "translation": "Irene finishes her second course and waits with her bag already on her knees."
+        },
+        {
+          "word": "secondo",
+          "surface": "secondo",
+          "definition": "Second course; the meat or fish part of a meal.",
+          "sentence": "Irene finisce il secondo piatto e aspetta con la borsa già sulle ginocchia.",
+          "translation": "Irene finishes her second course and waits with her bag already on her knees."
+        },
+        {
+          "word": "ginocchio",
+          "surface": "ginocchia",
+          "definition": "Knee; the middle joint of the leg.",
+          "sentence": "Irene finisce il secondo piatto e aspetta con la borsa già sulle ginocchia.",
+          "translation": "Irene finishes her second course and waits with her bag already on her knees."
+        },
+        {
+          "word": "volta",
+          "surface": "volte",
+          "definition": "Time; one single occasion among others.",
+          "sentence": "Il cameriere passa tre volte, riempie l'acqua e non porta altro.",
+          "translation": "The waiter goes by three times, tops up the water and brings nothing else."
+        },
+        {
+          "word": "cliente",
+          "surface": "clienti",
+          "definition": "Customer; a person who buys or orders something.",
+          "sentence": "I clienti accanto parlano da un'ora davanti a due bicchieri vuoti.",
+          "translation": "The customers next to her have been talking for an hour over two empty glasses."
+        },
+        {
+          "word": "parlare",
+          "surface": "parlano",
+          "definition": "Speak; say words to another person.",
+          "sentence": "I clienti accanto parlano da un'ora davanti a due bicchieri vuoti.",
+          "translation": "The customers next to her have been talking for an hour over two empty glasses."
+        },
+        {
+          "word": "vuoto",
+          "surface": "vuoti",
+          "definition": "Empty; with nothing inside.",
+          "sentence": "I clienti accanto parlano da un'ora davanti a due bicchieri vuoti.",
+          "translation": "The customers next to her have been talking for an hour over two empty glasses."
+        },
+        {
+          "word": "spingere",
+          "surface": "spinge",
+          "definition": "Pushes; moves someone or something away with force.",
+          "sentence": "In Italia nessuno spinge fuori chi finisce di mangiare.",
+          "translation": "In Italy nobody pushes you out once you have finished eating."
+        },
+        {
+          "word": "mangiare",
+          "surface": "mangiare",
+          "definition": "Eat; put food in the mouth.",
+          "sentence": "In Italia nessuno spinge fuori chi finisce di mangiare.",
+          "translation": "In Italy nobody pushes you out once you have finished eating."
+        },
+        {
+          "word": "persona",
+          "surface": "persona",
+          "definition": "Person; one human being.",
+          "sentence": "Il tavolo resta della stessa persona fino al momento che decide lei.",
+          "translation": "The table stays with the same person until the moment she decides."
+        },
+        {
+          "word": "decidere",
+          "surface": "decide",
+          "definition": "Decides; chooses what to do.",
+          "sentence": "Il tavolo resta della stessa persona fino al momento che decide lei.",
+          "translation": "The table stays with the same person until the moment she decides."
+        },
+        {
+          "word": "orologio",
+          "surface": "orologio",
+          "definition": "Clock or watch; the thing that shows the time.",
+          "sentence": "Irene guarda l'orologio e capisce che il problema è suo.",
+          "translation": "Irene looks at the clock and realises the problem is hers."
+        },
+        {
+          "word": "mano",
+          "surface": "mano",
+          "definition": "Hand; the part of the body at the end of the arm.",
+          "sentence": "Lei alza la mano e dice tre parole al cameriere che passa vicino.",
+          "translation": "She raises her hand and says three words to the waiter passing nearby."
+        },
+        {
+          "word": "per favore",
+          "surface": "per favore",
+          "definition": "Please; the polite words for asking something.",
+          "sentence": "“Il conto, per favore”, e il conto arriva dopo un minuto.",
+          "translation": "“The bill, please,” and the bill arrives a minute later."
+        },
+        {
+          "word": "contento",
+          "surface": "contento",
+          "definition": "Happy; pleased with how things are.",
+          "sentence": "Il cameriere sembra contento, perché adesso conosce la risposta.",
+          "translation": "The waiter looks happy, because now he knows the answer."
+        },
+        {
+          "word": "conoscere",
+          "surface": "conosce",
+          "definition": "Knows; is familiar with a person or a thing.",
+          "sentence": "Il cameriere sembra contento, perché adesso conosce la risposta.",
+          "translation": "The waiter looks happy, because now he knows the answer."
+        },
+        {
+          "word": "risposta",
+          "surface": "risposta",
+          "definition": "Answer; what you say back to a question.",
+          "sentence": "Il cameriere sembra contento, perché adesso conosce la risposta.",
+          "translation": "The waiter looks happy, because now he knows the answer."
+        },
+        {
+          "word": "contanti",
+          "surface": "contanti",
+          "definition": "Cash; notes and coins instead of a card.",
+          "sentence": "Irene paga in contanti e infila lo scontrino sotto il bicchiere.",
+          "translation": "Irene pays in cash and slips the receipt under the glass."
+        },
+        {
+          "word": "piazza",
+          "surface": "piazza",
+          "definition": "Square; the open public space between buildings.",
+          "sentence": "Fuori la piazza è piena di gente che cammina senza fretta.",
+          "translation": "Outside, the square is full of people walking with no hurry."
+        },
+        {
+          "word": "gente",
+          "surface": "gente",
+          "definition": "People; a group of persons together.",
+          "sentence": "Fuori la piazza è piena di gente che cammina senza fretta.",
+          "translation": "Outside, the square is full of people walking with no hurry."
+        },
+        {
+          "word": "camminare",
+          "surface": "cammina",
+          "definition": "Walks; moves along on foot.",
+          "sentence": "Fuori la piazza è piena di gente che cammina senza fretta.",
+          "translation": "Outside, the square is full of people walking with no hurry."
+        },
+        {
+          "word": "fretta",
+          "surface": "fretta",
+          "definition": "Hurry; the need to do things fast.",
+          "sentence": "Fuori la piazza è piena di gente che cammina senza fretta.",
+          "translation": "Outside, the square is full of people walking with no hurry."
+        },
+        {
+          "word": "gratis",
+          "surface": "gratis",
+          "definition": "Free; costing no money at all.",
+          "sentence": "I clienti accanto restano seduti, con i bicchieri vuoti e il tempo gratis.",
+          "translation": "The customers next to her stay seated, with empty glasses and time that costs nothing."
+        },
+        {
+          "word": "acqua",
+          "surface": "acqua",
+          "definition": "Water; the clear drink that comes out of a tap.",
+          "sentence": "Il cameriere passa tre volte, riempie l'acqua e non porta altro.",
+          "translation": "The waiter goes by three times, tops up the water and brings nothing else."
+        },
+        {
+          "word": "riempire",
+          "surface": "riempie",
+          "definition": "Fills; puts liquid in until the glass is full.",
+          "sentence": "Il cameriere passa tre volte, riempie l'acqua e non porta altro.",
+          "translation": "The waiter goes by three times, tops up the water and brings nothing else."
+        }
+      ]
+    },
+    {
+      "storySlug": "a-palermo-si-dice-arancina",
+      "storyTitle": "A Palermo si dice arancina",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "friggitoria",
+          "surface": "friggitoria",
+          "definition": "Small shop selling hot fried street food.",
+          "sentence": "Il banco della friggitoria sta all'angolo del mercato, sotto un tendone verde.",
+          "translation": "The fried food stall stands on the corner of the market, under a big green awning."
+        },
+        {
+          "word": "angolo",
+          "surface": "angolo",
+          "definition": "Corner; the point where two streets or walls meet.",
+          "sentence": "Il banco della friggitoria sta all'angolo del mercato, sotto un tendone verde.",
+          "translation": "The fried food stall stands on the corner of the market, under a big green awning."
+        },
+        {
+          "word": "mercato",
+          "surface": "mercato",
+          "definition": "Market; the place with many stalls selling food.",
+          "sentence": "Il banco della friggitoria sta all'angolo del mercato, sotto un tendone verde.",
+          "translation": "The fried food stall stands on the corner of the market, under a big green awning."
+        },
+        {
+          "word": "tendone",
+          "surface": "tendone",
+          "definition": "Big cloth roof over a stall or a stage.",
+          "sentence": "Il banco della friggitoria sta all'angolo del mercato, sotto un tendone verde.",
+          "translation": "The fried food stall stands on the corner of the market, under a big green awning."
+        },
+        {
+          "word": "verde",
+          "surface": "verde",
+          "definition": "Green; the colour of grass and leaves.",
+          "sentence": "Il banco della friggitoria sta all'angolo del mercato, sotto un tendone verde.",
+          "translation": "The fried food stall stands on the corner of the market, under a big green awning."
+        },
+        {
+          "word": "palla",
+          "surface": "palla",
+          "definition": "Ball; anything round you can hold.",
+          "sentence": "Nico indica una palla di riso dorata e la chiama arancino, come a Catania.",
+          "translation": "Nico points at a golden rice ball and calls it arancino, the way they do in Catania."
+        },
+        {
+          "word": "riso",
+          "surface": "riso",
+          "definition": "Rice; the small white grain cooked in water.",
+          "sentence": "Nico indica una palla di riso dorata e la chiama arancino, come a Catania.",
+          "translation": "Nico points at a golden rice ball and calls it arancino, the way they do in Catania."
+        },
+        {
+          "word": "dorato",
+          "surface": "dorata",
+          "definition": "Golden; with the warm colour of fried food.",
+          "sentence": "Nico indica una palla di riso dorata e la chiama arancino, come a Catania.",
+          "translation": "Nico points at a golden rice ball and calls it arancino, the way they do in Catania."
+        },
+        {
+          "word": "chiamare",
+          "surface": "chiama",
+          "definition": "Calls; uses a name for a person or a thing.",
+          "sentence": "Nico indica una palla di riso dorata e la chiama arancino, come a Catania.",
+          "translation": "Nico points at a golden rice ball and calls it arancino, the way they do in Catania."
+        },
+        {
+          "word": "correggere",
+          "surface": "corregge",
+          "definition": "Corrects; says the right way after a mistake.",
+          "sentence": "La signora dietro il banco lo corregge subito, senza cattiveria.",
+          "translation": "The woman behind the counter corrects him at once, with no unkindness."
+        },
+        {
+          "word": "cattiveria",
+          "surface": "cattiveria",
+          "definition": "Unkindness; the wish to hurt another person.",
+          "sentence": "La signora dietro il banco lo corregge subito, senza cattiveria.",
+          "translation": "The woman behind the counter corrects him at once, with no unkindness."
+        },
+        {
+          "word": "femminile",
+          "surface": "femminile",
+          "definition": "Feminine; the grammar group of words like arancina.",
+          "sentence": "“Qui è arancina, femminile, perché sembra una piccola arancia”, dice lei.",
+          "translation": "“Here it is arancina, feminine, because it looks like a little orange,” she says."
+        },
+        {
+          "word": "arancia",
+          "surface": "arancia",
+          "definition": "Orange; the round sweet fruit with thick skin.",
+          "sentence": "“Qui è arancina, femminile, perché sembra una piccola arancia”, dice lei.",
+          "translation": "“Here it is arancina, feminine, because it looks like a little orange,” she says."
+        },
+        {
+          "word": "difendere",
+          "surface": "difende",
+          "definition": "Defends; speaks in favour of someone or something.",
+          "sentence": "Un uomo in fila alza il dito e difende invece la parola arancino.",
+          "translation": "A man in the queue raises a finger and defends the word arancino instead."
+        },
+        {
+          "word": "intero",
+          "surface": "intero",
+          "definition": "Whole; all of it, with nothing left out.",
+          "sentence": "Il mercato intero sembra pronto a litigare per una vocale.",
+          "translation": "The whole market seems ready to fight over one vowel."
+        },
+        {
+          "word": "pronto",
+          "surface": "pronto",
+          "definition": "Ready; able to start right now.",
+          "sentence": "Il mercato intero sembra pronto a litigare per una vocale.",
+          "translation": "The whole market seems ready to fight over one vowel."
+        },
+        {
+          "word": "litigare",
+          "surface": "litigare",
+          "definition": "Argue loudly; fight with words.",
+          "sentence": "Il mercato intero sembra pronto a litigare per una vocale.",
+          "translation": "The whole market seems ready to fight over one vowel."
+        },
+        {
+          "word": "vocale",
+          "surface": "vocale",
+          "definition": "Vowel; a letter like a, e, i, o or u.",
+          "sentence": "Il mercato intero sembra pronto a litigare per una vocale.",
+          "translation": "The whole market seems ready to fight over one vowel."
+        },
+        {
+          "word": "carta",
+          "surface": "carta",
+          "definition": "Paper; what wrapping and pages are made of.",
+          "sentence": "Nico paga due euro e riceve la palla calda dentro un foglio di carta.",
+          "translation": "Nico pays two euros and gets the hot ball wrapped in a sheet of paper."
+        },
+        {
+          "word": "pisello",
+          "surface": "piselli",
+          "definition": "Pea; the small round green vegetable.",
+          "sentence": "Dentro ci sono riso giallo, ragù, piselli e un cuore di formaggio.",
+          "translation": "Inside there is yellow rice, ragù, peas and a heart of cheese."
+        },
+        {
+          "word": "cuore",
+          "surface": "cuore",
+          "definition": "Heart; here, the soft middle of a food.",
+          "sentence": "Dentro ci sono riso giallo, ragù, piselli e un cuore di formaggio.",
+          "translation": "Inside there is yellow rice, ragù, peas and a heart of cheese."
+        },
+        {
+          "word": "formaggio",
+          "surface": "formaggio",
+          "definition": "Cheese; the food made from milk.",
+          "sentence": "Dentro ci sono riso giallo, ragù, piselli e un cuore di formaggio.",
+          "translation": "Inside there is yellow rice, ragù, peas and a heart of cheese."
+        },
+        {
+          "word": "mordere",
+          "surface": "morde",
+          "definition": "Bites; cuts food with the teeth.",
+          "sentence": "Lui morde piano e capisce che il nome adesso conta poco.",
+          "translation": "He bites slowly and understands that the name matters little now."
+        },
+        {
+          "word": "domani",
+          "surface": "domani",
+          "definition": "Tomorrow; the day after today.",
+          "sentence": "“Torna domani e chiedila con la a”, dice, quasi come un ordine.",
+          "translation": "“Come back tomorrow and ask for it with the a,” she says, almost like an order."
+        },
+        {
+          "word": "ordine",
+          "surface": "ordine",
+          "definition": "Order; words that tell someone what to do.",
+          "sentence": "“Torna domani e chiedila con la a”, dice, quasi come un ordine.",
+          "translation": "“Come back tomorrow and ask for it with the a,” she says, almost like an order."
+        }
+      ]
+    },
+    {
+      "storySlug": "nessuno-ha-spiccioli",
+      "storyTitle": "Nessuno ha spiccioli",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "limone",
+          "surface": "limoni",
+          "definition": "Lemon; the yellow fruit with a sour taste.",
+          "sentence": "Nico compra tre limoni a una bancarella e paga con una banconota grande.",
+          "translation": "Nico buys three lemons at a market stall and pays with a big banknote."
+        },
+        {
+          "word": "bancarella",
+          "surface": "bancarella",
+          "definition": "Market stall; a small open shop in the street.",
+          "sentence": "Nico compra tre limoni a una bancarella e paga con una banconota grande.",
+          "translation": "Nico buys three lemons at a market stall and pays with a big banknote."
+        },
+        {
+          "word": "banconota",
+          "surface": "banconota",
+          "definition": "Banknote; money printed on paper, not a coin.",
+          "sentence": "Nico compra tre limoni a una bancarella e paga con una banconota grande.",
+          "translation": "Nico buys three lemons at a market stall and pays with a big banknote."
+        },
+        {
+          "word": "venditore",
+          "surface": "venditore",
+          "definition": "Seller; the person who sells things.",
+          "sentence": "Il venditore guarda il foglio, poi guarda Nico, poi guarda il cielo.",
+          "translation": "The seller looks at the note, then looks at Nico, then looks at the sky."
+        },
+        {
+          "word": "cielo",
+          "surface": "cielo",
+          "definition": "Sky; what is above you when you go outside.",
+          "sentence": "Il venditore guarda il foglio, poi guarda Nico, poi guarda il cielo.",
+          "translation": "The seller looks at the note, then looks at Nico, then looks at the sky."
+        },
+        {
+          "word": "chiunque",
+          "surface": "chiunque",
+          "definition": "Anyone; any person at all.",
+          "sentence": "Cinquanta euro per tre limoni sono troppi per chiunque.",
+          "translation": "Fifty euros for three lemons is too much for anyone."
+        },
+        {
+          "word": "vicino",
+          "surface": "vicino",
+          "definition": "Neighbour; the person right next to you.",
+          "sentence": "Il venditore chiama il vicino di banco e domanda se ha spiccioli.",
+          "translation": "The seller calls over the neighbour at the next stall and asks if he has small change."
+        },
+        {
+          "word": "spiccioli",
+          "surface": "spiccioli",
+          "definition": "Small change; coins of little value.",
+          "sentence": "Il venditore chiama il vicino di banco e domanda se ha spiccioli.",
+          "translation": "The seller calls over the neighbour at the next stall and asks if he has small change."
+        },
+        {
+          "word": "barattolo",
+          "surface": "barattolo",
+          "definition": "Jar or tin used to keep small things.",
+          "sentence": "Il vicino apre un barattolo di latta e conta poche monete piccole.",
+          "translation": "The neighbour opens a tin jar and counts a few small coins."
+        },
+        {
+          "word": "latta",
+          "surface": "latta",
+          "definition": "Tin; the thin metal of cans and boxes.",
+          "sentence": "Il vicino apre un barattolo di latta e conta poche monete piccole.",
+          "translation": "The neighbour opens a tin jar and counts a few small coins."
+        },
+        {
+          "word": "poco",
+          "surface": "poche",
+          "definition": "Few; a small number of things.",
+          "sentence": "Il vicino apre un barattolo di latta e conta poche monete piccole.",
+          "translation": "The neighbour opens a tin jar and counts a few small coins."
+        },
+        {
+          "word": "resto",
+          "surface": "resto",
+          "definition": "Change; the money given back after you pay.",
+          "sentence": "Nessuno in tutto il mercato tiene il resto per una banconota così.",
+          "translation": "Nobody in the whole market keeps change for a note like that."
+        },
+        {
+          "word": "tenere",
+          "surface": "tiene",
+          "definition": "Keeps; holds something and does not give it away.",
+          "sentence": "Nessuno in tutto il mercato tiene il resto per una banconota così.",
+          "translation": "Nobody in the whole market keeps change for a note like that."
+        },
+        {
+          "word": "spalla",
+          "surface": "spalle",
+          "definition": "Shoulder; the top of the arm next to the neck.",
+          "sentence": "Alla fine il venditore mette i limoni in un sacchetto e alza le spalle.",
+          "translation": "In the end the seller puts the lemons in a bag and shrugs his shoulders."
+        },
+        {
+          "word": "avere",
+          "surface": "hai",
+          "definition": "Have; hold or own something.",
+          "sentence": "“Paghi domani, quando hai spiccioli”, dice, e serve la signora dietro.",
+          "translation": "“Pay tomorrow, when you have small change,” he says, and serves the woman behind."
+        },
+        {
+          "word": "fermo",
+          "surface": "fermo",
+          "definition": "Still; not moving at all.",
+          "sentence": "Nico resta fermo con i limoni in mano e la banconota intatta.",
+          "translation": "Nico stands still with the lemons in his hand and the note untouched."
+        },
+        {
+          "word": "intatto",
+          "surface": "intatta",
+          "definition": "Untouched; exactly as it was before.",
+          "sentence": "Nico resta fermo con i limoni in mano e la banconota intatta.",
+          "translation": "Nico stands still with the lemons in his hand and the note untouched."
+        },
+        {
+          "word": "giorno",
+          "surface": "giorno",
+          "definition": "Day; the time between one night and the next.",
+          "sentence": "Il giorno dopo Nico torna al banco con le monete contate nel pugno.",
+          "translation": "The next day Nico comes back to the stall with the coins counted in his fist."
+        },
+        {
+          "word": "tornare",
+          "surface": "torna",
+          "definition": "Comes back; goes again to a place.",
+          "sentence": "Il giorno dopo Nico torna al banco con le monete contate nel pugno.",
+          "translation": "The next day Nico comes back to the stall with the coins counted in his fist."
+        },
+        {
+          "word": "pugno",
+          "surface": "pugno",
+          "definition": "Fist; the hand closed tight.",
+          "sentence": "Il giorno dopo Nico torna al banco con le monete contate nel pugno.",
+          "translation": "The next day Nico comes back to the stall with the coins counted in his fist."
+        },
+        {
+          "word": "lontano",
+          "surface": "lontano",
+          "definition": "Far away; at a long distance.",
+          "sentence": "Il venditore lo riconosce da lontano e ride prima ancora di parlare.",
+          "translation": "The seller recognises him from far away and laughs before he even speaks."
+        },
+        {
+          "word": "ridere",
+          "surface": "ride",
+          "definition": "Laughs; makes a happy sound with the voice.",
+          "sentence": "Il venditore lo riconosce da lontano e ride prima ancora di parlare.",
+          "translation": "The seller recognises him from far away and laughs before he even speaks."
+        },
+        {
+          "word": "fiducia",
+          "surface": "fiducia",
+          "definition": "Trust; believing another person will do the right thing.",
+          "sentence": "A Ballarò la fiducia costa meno di un caffè.",
+          "translation": "At Ballarò, trust costs less than a coffee."
+        },
+        {
+          "word": "costare",
+          "surface": "costa",
+          "definition": "Costs; has this price.",
+          "sentence": "A Ballarò la fiducia costa meno di un caffè.",
+          "translation": "At Ballarò, trust costs less than a coffee."
+        },
+        {
+          "word": "comprare",
+          "surface": "compra",
+          "definition": "Buys; gets something by paying money.",
+          "sentence": "Nico compra tre limoni a una bancarella e paga con una banconota grande.",
+          "translation": "Nico buys three lemons at a market stall and pays with a big banknote."
+        }
+      ]
+    },
+    {
+      "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+      "storyTitle": "Il prezzo lo dice il pescivendolo",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "cassetta",
+          "surface": "cassette",
+          "definition": "Crate; the wooden box that holds fish or fruit.",
+          "sentence": "Sulle cassette di pesce non c'è nessun cartello con i numeri.",
+          "translation": "There is no sign with numbers on the crates of fish."
+        },
+        {
+          "word": "pesce",
+          "surface": "pesce",
+          "definition": "Fish; the animal that lives in water and is eaten.",
+          "sentence": "Sulle cassette di pesce non c'è nessun cartello con i numeri.",
+          "translation": "There is no sign with numbers on the crates of fish."
+        },
+        {
+          "word": "sarda",
+          "surface": "sarde",
+          "definition": "Sardine; the small silver fish of Sicilian markets.",
+          "sentence": "Nico guarda le sarde sopra il ghiaccio e non sa quanto costano.",
+          "translation": "Nico looks at the sardines on the ice and does not know what they cost."
+        },
+        {
+          "word": "ghiaccio",
+          "surface": "ghiaccio",
+          "definition": "Ice; water made hard by the cold.",
+          "sentence": "Nico guarda le sarde sopra il ghiaccio e non sa quanto costano.",
+          "translation": "Nico looks at the sardines on the ice and does not know what they cost."
+        },
+        {
+          "word": "sapere",
+          "surface": "sa",
+          "definition": "Knows; has the information in the head.",
+          "sentence": "Nico guarda le sarde sopra il ghiaccio e non sa quanto costano.",
+          "translation": "Nico looks at the sardines on the ice and does not know what they cost."
+        },
+        {
+          "word": "pescivendolo",
+          "surface": "pescivendolo",
+          "definition": "Fishmonger; the man who sells fish at the market.",
+          "sentence": "Il pescivendolo urla il prezzo per tutta la strada, ogni pochi secondi.",
+          "translation": "The fishmonger shouts the price down the whole street, every few seconds."
+        },
+        {
+          "word": "urlare",
+          "surface": "urla",
+          "definition": "Shouts; says something very loudly.",
+          "sentence": "Il pescivendolo urla il prezzo per tutta la strada, ogni pochi secondi.",
+          "translation": "The fishmonger shouts the price down the whole street, every few seconds."
+        },
+        {
+          "word": "secondo",
+          "surface": "secondi",
+          "definition": "Second; the shortest ordinary piece of time.",
+          "sentence": "Il pescivendolo urla il prezzo per tutta la strada, ogni pochi secondi.",
+          "translation": "The fishmonger shouts the price down the whole street, every few seconds."
+        },
+        {
+          "word": "mezzo",
+          "surface": "mezzo",
+          "definition": "Half; one of two equal parts.",
+          "sentence": "Nico domanda quanto costa mezzo chilo di sarde fresche.",
+          "translation": "Nico asks how much half a kilo of fresh sardines costs."
+        },
+        {
+          "word": "chilo",
+          "surface": "chilo",
+          "definition": "Kilo; the weight of one thousand grams.",
+          "sentence": "Nico domanda quanto costa mezzo chilo di sarde fresche.",
+          "translation": "Nico asks how much half a kilo of fresh sardines costs."
+        },
+        {
+          "word": "fresco",
+          "surface": "fresche",
+          "definition": "Fresh; caught or made a very short time ago.",
+          "sentence": "Nico domanda quanto costa mezzo chilo di sarde fresche.",
+          "translation": "Nico asks how much half a kilo of fresh sardines costs."
+        },
+        {
+          "word": "pesare",
+          "surface": "pesa",
+          "definition": "Weighs; measures how heavy something is.",
+          "sentence": "L'uomo pesa il pesce sulla bilancia e guarda il numero.",
+          "translation": "The man weighs the fish on the scales and looks at the number."
+        },
+        {
+          "word": "bilancia",
+          "surface": "bilancia",
+          "definition": "Scales; the machine that shows a weight.",
+          "sentence": "L'uomo pesa il pesce sulla bilancia e guarda il numero.",
+          "translation": "The man weighs the fish on the scales and looks at the number."
+        },
+        {
+          "word": "cifra",
+          "surface": "cifra",
+          "definition": "Figure; a number said as a price.",
+          "sentence": "Il pescivendolo dice una cifra tonda e aggiunge il prezzemolo gratis.",
+          "translation": "The fishmonger says a round figure and throws in the parsley for free."
+        },
+        {
+          "word": "tondo",
+          "surface": "tonda",
+          "definition": "Round; here, a number with no small parts.",
+          "sentence": "Il pescivendolo dice una cifra tonda e aggiunge il prezzemolo gratis.",
+          "translation": "The fishmonger says a round figure and throws in the parsley for free."
+        },
+        {
+          "word": "togliere",
+          "surface": "toglie",
+          "definition": "Takes away; removes part of something.",
+          "sentence": "Poi toglie un euro, senza spiegare il motivo.",
+          "translation": "Then he takes a euro off, without explaining why."
+        },
+        {
+          "word": "prezzemolo",
+          "surface": "prezzemolo",
+          "definition": "Parsley; the green herb given free with fish.",
+          "sentence": "Il pescivendolo dice una cifra tonda e aggiunge il prezzemolo gratis.",
+          "translation": "The fishmonger says a round figure and throws in the parsley for free."
+        },
+        {
+          "word": "trattare",
+          "surface": "tratta",
+          "definition": "Bargains; talks to get a lower price.",
+          "sentence": "Una signora accanto tratta con calma e ottiene lo stesso sconto.",
+          "translation": "A woman next to him bargains calmly and gets the same discount."
+        },
+        {
+          "word": "ottenere",
+          "surface": "ottiene",
+          "definition": "Gets; ends up with what was asked for.",
+          "sentence": "Una signora accanto tratta con calma e ottiene lo stesso sconto.",
+          "translation": "A woman next to him bargains calmly and gets the same discount."
+        },
+        {
+          "word": "sconto",
+          "surface": "sconto",
+          "definition": "Discount; money taken off the normal price.",
+          "sentence": "Una signora accanto tratta con calma e ottiene lo stesso sconto.",
+          "translation": "A woman next to him bargains calmly and gets the same discount."
+        },
+        {
+          "word": "totale",
+          "surface": "totale",
+          "definition": "Total; the whole amount to pay.",
+          "sentence": "Il pescivendolo scrive il totale sul bordo del bancone con un pennarello.",
+          "translation": "The fishmonger writes the total on the edge of the counter with a marker pen."
+        },
+        {
+          "word": "bordo",
+          "surface": "bordo",
+          "definition": "Edge; the outside line of a surface.",
+          "sentence": "Il pescivendolo scrive il totale sul bordo del bancone con un pennarello.",
+          "translation": "The fishmonger writes the total on the edge of the counter with a marker pen."
+        },
+        {
+          "word": "bancone",
+          "surface": "bancone",
+          "definition": "Long counter where goods are shown and sold.",
+          "sentence": "Il pescivendolo scrive il totale sul bordo del bancone con un pennarello.",
+          "translation": "The fishmonger writes the total on the edge of the counter with a marker pen."
+        },
+        {
+          "word": "pennarello",
+          "surface": "pennarello",
+          "definition": "Marker pen with thick dark ink.",
+          "sentence": "Il pescivendolo scrive il totale sul bordo del bancone con un pennarello.",
+          "translation": "The fishmonger writes the total on the edge of the counter with a marker pen."
+        },
+        {
+          "word": "pacchetto",
+          "surface": "pacchetto",
+          "definition": "Small parcel wrapped in paper.",
+          "sentence": "Nico paga e porta via il pacchetto freddo, con il ghiaccio dentro.",
+          "translation": "Nico pays and carries away the cold parcel, with the ice inside."
+        }
+      ]
+    },
+    {
+      "storySlug": "due-baci-e-basta",
+      "storyTitle": "Due baci e basta",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "casa",
+          "surface": "casa",
+          "definition": "House; the place where a person lives.",
+          "sentence": "Dario entra nella casa di un amico romano e trova otto persone in cucina.",
+          "translation": "Dario walks into the house of a Roman friend and finds eight people in the kitchen."
+        },
+        {
+          "word": "amico",
+          "surface": "amico",
+          "definition": "Friend; a person you like and see often.",
+          "sentence": "Dario entra nella casa di un amico romano e trova otto persone in cucina.",
+          "translation": "Dario walks into the house of a Roman friend and finds eight people in the kitchen."
+        },
+        {
+          "word": "romano",
+          "surface": "romano",
+          "definition": "Roman; from the city of Rome.",
+          "sentence": "Dario entra nella casa di un amico romano e trova otto persone in cucina.",
+          "translation": "Dario walks into the house of a Roman friend and finds eight people in the kitchen."
+        },
+        {
+          "word": "donna",
+          "surface": "donna",
+          "definition": "Woman; a grown female person.",
+          "sentence": "Una donna gli prende le braccia e gli dà un bacio su ogni guancia.",
+          "translation": "A woman takes him by the arms and gives him a kiss on each cheek."
+        },
+        {
+          "word": "dare",
+          "surface": "dà",
+          "definition": "Gives; puts something in another person's hands.",
+          "sentence": "Una donna gli prende le braccia e gli dà un bacio su ogni guancia.",
+          "translation": "A woman takes him by the arms and gives him a kiss on each cheek."
+        },
+        {
+          "word": "bacio",
+          "surface": "bacio",
+          "definition": "Kiss; touching someone with the lips as a greeting.",
+          "sentence": "Una donna gli prende le braccia e gli dà un bacio su ogni guancia.",
+          "translation": "A woman takes him by the arms and gives him a kiss on each cheek."
+        },
+        {
+          "word": "guancia",
+          "surface": "guancia",
+          "definition": "Cheek; the soft side of the face.",
+          "sentence": "Una donna gli prende le braccia e gli dà un bacio su ogni guancia.",
+          "translation": "A woman takes him by the arms and gives him a kiss on each cheek."
+        },
+        {
+          "word": "vino",
+          "surface": "vino",
+          "definition": "Wine; the drink made from grapes.",
+          "sentence": "Lui resta fermo, con il vino ancora in mano.",
+          "translation": "He stands there frozen, with the wine still in his hand."
+        },
+        {
+          "word": "modo",
+          "surface": "modo",
+          "definition": "Way; how a thing is done.",
+          "sentence": "In pochi minuti tutti lo salutano allo stesso modo, senza chiedere il permesso.",
+          "translation": "Within a few minutes everyone greets him the same way, without asking permission."
+        },
+        {
+          "word": "permesso",
+          "surface": "permesso",
+          "definition": "Permission; the yes you ask for before doing something.",
+          "sentence": "In pochi minuti tutti lo salutano allo stesso modo, senza chiedere il permesso.",
+          "translation": "Within a few minutes everyone greets him the same way, without asking permission."
+        },
+        {
+          "word": "provare",
+          "surface": "prova",
+          "definition": "Tries; does something to see if it works.",
+          "sentence": "Dario prova a stringere la mano al primo uomo e sbaglia il ritmo.",
+          "translation": "Dario tries to shake the first man's hand and gets the rhythm wrong."
+        },
+        {
+          "word": "stringere",
+          "surface": "stringere",
+          "definition": "Shakes or holds tight, as with a hand.",
+          "sentence": "Dario prova a stringere la mano al primo uomo e sbaglia il ritmo.",
+          "translation": "Dario tries to shake the first man's hand and gets the rhythm wrong."
+        },
+        {
+          "word": "sbagliare",
+          "surface": "sbaglia",
+          "definition": "Gets it wrong; does something the wrong way.",
+          "sentence": "Dario prova a stringere la mano al primo uomo e sbaglia il ritmo.",
+          "translation": "Dario tries to shake the first man's hand and gets the rhythm wrong."
+        },
+        {
+          "word": "ritmo",
+          "surface": "ritmo",
+          "definition": "Rhythm; the regular timing of a movement.",
+          "sentence": "Dario prova a stringere la mano al primo uomo e sbaglia il ritmo.",
+          "translation": "Dario tries to shake the first man's hand and gets the rhythm wrong."
+        },
+        {
+          "word": "usare",
+          "surface": "usa",
+          "definition": "Uses; does something with a thing or a habit.",
+          "sentence": "L'uomo ride e spiega che la mano si usa soltanto in ufficio.",
+          "translation": "The man laughs and explains that the handshake is only used at the office."
+        },
+        {
+          "word": "ufficio",
+          "surface": "ufficio",
+          "definition": "Office; the room where people work at desks.",
+          "sentence": "L'uomo ride e spiega che la mano si usa soltanto in ufficio.",
+          "translation": "The man laughs and explains that the handshake is only used at the office."
+        },
+        {
+          "word": "destro",
+          "surface": "destra",
+          "definition": "Right; the side opposite the left one.",
+          "sentence": "“Due baci: prima la guancia destra, poi la sinistra”, dice la donna.",
+          "translation": "“Two kisses: the right cheek first, then the left,” says the woman."
+        },
+        {
+          "word": "sinistro",
+          "surface": "sinistra",
+          "definition": "Left; the side opposite the right one.",
+          "sentence": "“Due baci: prima la guancia destra, poi la sinistra”, dice la donna.",
+          "translation": "“Two kisses: the right cheek first, then the left,” says the woman."
+        },
+        {
+          "word": "ripetere",
+          "surface": "ripete",
+          "definition": "Repeats; does or says the same thing again.",
+          "sentence": "Dario ripete il movimento con la persona dopo e lo fa quasi bene.",
+          "translation": "Dario repeats the movement with the next person and almost gets it right."
+        },
+        {
+          "word": "movimento",
+          "surface": "movimento",
+          "definition": "Movement; the way a body part moves.",
+          "sentence": "Dario ripete il movimento con la persona dopo e lo fa quasi bene.",
+          "translation": "Dario repeats the movement with the next person and almost gets it right."
+        },
+        {
+          "word": "sentire",
+          "surface": "sentono",
+          "definition": "Feel or hear; notice with the body.",
+          "sentence": "Nessuno conta i baci, però tutti sentono quando sono finiti.",
+          "translation": "Nobody counts the kisses, and yet everyone feels when they are over."
+        },
+        {
+          "word": "sera",
+          "surface": "sera",
+          "definition": "Evening; the hours between afternoon and night.",
+          "sentence": "Alla fine della sera Dario saluta di nuovo tutti, uno per uno.",
+          "translation": "At the end of the evening Dario says goodbye to everyone again, one by one."
+        },
+        {
+          "word": "di nuovo",
+          "surface": "di nuovo",
+          "definition": "Again; one more time.",
+          "sentence": "Alla fine della sera Dario saluta di nuovo tutti, uno per uno.",
+          "translation": "At the end of the evening Dario says goodbye to everyone again, one by one."
+        },
+        {
+          "word": "ciao",
+          "surface": "ciao",
+          "definition": "Hi or bye; the friendly greeting between equals.",
+          "sentence": "La stessa donna gli dice ciao e gli dà altri due baci.",
+          "translation": "The same woman says hi to him and gives him two more kisses."
+        },
+        {
+          "word": "serata",
+          "surface": "serata",
+          "definition": "Evening seen as a whole event with people.",
+          "sentence": "Sedici baci in una serata sono il suo nuovo normale.",
+          "translation": "Sixteen kisses in one evening are his new normal."
+        }
+      ]
+    },
+    {
+      "storySlug": "nessuno-mangia-da-solo-qui",
+      "storyTitle": "Nessuno mangia da solo qui",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "birra",
+          "surface": "birra",
+          "definition": "Beer; the cold drink people share at night.",
+          "sentence": "Dario ordina una birra al banco e apre il libro sul tavolino di fuori.",
+          "translation": "Dario orders a beer at the counter and opens his book at the little table outside."
+        },
+        {
+          "word": "libro",
+          "surface": "libro",
+          "definition": "Book; printed pages you read.",
+          "sentence": "Dario ordina una birra al banco e apre il libro sul tavolino di fuori.",
+          "translation": "Dario orders a beer at the counter and opens his book at the little table outside."
+        },
+        {
+          "word": "cappello",
+          "surface": "cappello",
+          "definition": "Hat; what you wear on your head.",
+          "sentence": "Un uomo con il cappello si siede davanti a lui, senza chiedere niente.",
+          "translation": "A man in a hat sits down across from him, without asking anything."
+        },
+        {
+          "word": "sedia",
+          "surface": "sedie",
+          "definition": "Chair; the seat with a back for one person.",
+          "sentence": "Il tavolo ha quattro sedie e soltanto due persone.",
+          "translation": "The table has four chairs and only two people."
+        },
+        {
+          "word": "venire",
+          "surface": "viene",
+          "definition": "Comes; moves towards the person speaking.",
+          "sentence": "L'uomo domanda da dove viene Dario e quanti giorni resta a Roma.",
+          "translation": "The man asks where Dario comes from and how many days he is staying in Rome."
+        },
+        {
+          "word": "domanda",
+          "surface": "domanda",
+          "definition": "Question; what you say when you want to know.",
+          "sentence": "L'uomo domanda da dove viene Dario e quanti giorni resta a Roma.",
+          "translation": "The man asks where Dario comes from and how many days he is staying in Rome."
+        },
+        {
+          "word": "continuare",
+          "surface": "continua",
+          "definition": "Continues; keeps doing the same thing.",
+          "sentence": "L'uomo continua tranquillo, perché una domanda tira l'altra.",
+          "translation": "The man carries on calmly, because one question leads to another."
+        },
+        {
+          "word": "tranquillo",
+          "surface": "tranquillo",
+          "definition": "Calm; quiet and not worried.",
+          "sentence": "L'uomo continua tranquillo, perché una domanda tira l'altra.",
+          "translation": "The man carries on calmly, because one question leads to another."
+        },
+        {
+          "word": "tirare",
+          "surface": "tira",
+          "definition": "Pulls; here, one question brings another.",
+          "sentence": "L'uomo continua tranquillo, perché una domanda tira l'altra.",
+          "translation": "The man carries on calmly, because one question leads to another."
+        },
+        {
+          "word": "chiuso",
+          "surface": "chiuso",
+          "definition": "Closed; shut and not open any more.",
+          "sentence": "Dopo dieci minuti il libro resta chiuso, con il segnalibro dentro.",
+          "translation": "After ten minutes the book stays closed, with the bookmark inside."
+        },
+        {
+          "word": "segnalibro",
+          "surface": "segnalibro",
+          "definition": "Bookmark; the paper that keeps your page.",
+          "sentence": "Dopo dieci minuti il libro resta chiuso, con il segnalibro dentro.",
+          "translation": "After ten minutes the book stays closed, with the bookmark inside."
+        },
+        {
+          "word": "raccontare",
+          "surface": "racconta",
+          "definition": "Tells; says what happened to you.",
+          "sentence": "Dario racconta il suo lavoro, la sua città e il viaggio in treno.",
+          "translation": "Dario tells him about his job, his city and the train journey."
+        },
+        {
+          "word": "lavoro",
+          "surface": "lavoro",
+          "definition": "Work; the job a person does for money.",
+          "sentence": "Dario racconta il suo lavoro, la sua città e il viaggio in treno.",
+          "translation": "Dario tells him about his job, his city and the train journey."
+        },
+        {
+          "word": "viaggio",
+          "surface": "viaggio",
+          "definition": "Journey; going from one place to another.",
+          "sentence": "Dario racconta il suo lavoro, la sua città e il viaggio in treno.",
+          "translation": "Dario tells him about his job, his city and the train journey."
+        },
+        {
+          "word": "ascoltare",
+          "surface": "ascolta",
+          "definition": "Listens; pays attention to a sound or a voice.",
+          "sentence": "L'uomo ascolta e offre la seconda birra senza avvisare nessuno.",
+          "translation": "The man listens and offers the second beer without warning anyone."
+        },
+        {
+          "word": "avvisare",
+          "surface": "avvisare",
+          "definition": "Warns; tells someone before doing something.",
+          "sentence": "L'uomo ascolta e offre la seconda birra senza avvisare nessuno.",
+          "translation": "The man listens and offers the second beer without warning anyone."
+        },
+        {
+          "word": "alzarsi",
+          "surface": "si alza",
+          "definition": "Stands up; gets up from a seat.",
+          "sentence": "Quando Dario si alza, l'uomo gli stringe la mano e dice finalmente il suo nome.",
+          "translation": "When Dario stands up, the man shakes his hand and at last says his name."
+        },
+        {
+          "word": "finalmente",
+          "surface": "finalmente",
+          "definition": "At last; after waiting a long time.",
+          "sentence": "Quando Dario si alza, l'uomo gli stringe la mano e dice finalmente il suo nome.",
+          "translation": "When Dario stands up, the man shakes his hand and at last says his name."
+        },
+        {
+          "word": "scambiare",
+          "surface": "scambiano",
+          "definition": "Exchange; each one gives and gets something.",
+          "sentence": "Loro non si scambiano il numero e forse non si incontrano mai più.",
+          "translation": "They do not exchange numbers, and maybe they will never meet again."
+        },
+        {
+          "word": "numero",
+          "surface": "numero",
+          "definition": "Number; here, the digits of a phone.",
+          "sentence": "Loro non si scambiano il numero e forse non si incontrano mai più.",
+          "translation": "They do not exchange numbers, and maybe they will never meet again."
+        },
+        {
+          "word": "forse",
+          "surface": "forse",
+          "definition": "Maybe; possibly true and possibly not.",
+          "sentence": "Loro non si scambiano il numero e forse non si incontrano mai più.",
+          "translation": "They do not exchange numbers, and maybe they will never meet again."
+        },
+        {
+          "word": "incontrare",
+          "surface": "incontrano",
+          "definition": "Meet; find each other in the same place.",
+          "sentence": "Loro non si scambiano il numero e forse non si incontrano mai più.",
+          "translation": "They do not exchange numbers, and maybe they will never meet again."
+        },
+        {
+          "word": "ora",
+          "surface": "ora",
+          "definition": "Hour; the sixty minutes that make part of a day.",
+          "sentence": "L'uomo resta seduto e aspetta un'altra ora di compagnia.",
+          "translation": "The man stays seated and waits for another hour of company."
+        },
+        {
+          "word": "compagnia",
+          "surface": "compagnia",
+          "definition": "Company; having someone with you.",
+          "sentence": "L'uomo resta seduto e aspetta un'altra ora di compagnia.",
+          "translation": "The man stays seated and waits for another hour of company."
+        },
+        {
+          "word": "ordinare",
+          "surface": "ordina",
+          "definition": "Orders; asks for a drink or food in a place.",
+          "sentence": "Dario ordina una birra al banco e apre il libro sul tavolino di fuori.",
+          "translation": "Dario orders a beer at the counter and opens his book at the little table outside."
+        }
+      ]
+    },
+    {
+      "storySlug": "ci-vediamo-a-trastevere",
+      "storyTitle": "Ci vediamo a Trastevere",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "ci vediamo",
+          "surface": "ci vediamo",
+          "definition": "See you; a goodbye with no date attached.",
+          "sentence": "“Ci vediamo verso le nove a Trastevere”, dice Livia al telefono.",
+          "translation": "“See you around nine in Trastevere,” Livia says on the phone."
+        },
+        {
+          "word": "verso",
+          "surface": "verso",
+          "definition": "Around; near that time but not exactly.",
+          "sentence": "“Ci vediamo verso le nove a Trastevere”, dice Livia al telefono.",
+          "translation": "“See you around nine in Trastevere,” Livia says on the phone."
+        },
+        {
+          "word": "esatto",
+          "surface": "esatte",
+          "definition": "Exact; with no minute more and no minute less.",
+          "sentence": "Dario arriva alle nove esatte davanti alla fontana e non trova nessuno.",
+          "translation": "Dario arrives at nine exactly in front of the fountain and finds nobody there."
+        },
+        {
+          "word": "arrivare",
+          "surface": "arriva",
+          "definition": "Arrives; gets to the place.",
+          "sentence": "Dario arriva alle nove esatte davanti alla fontana e non trova nessuno.",
+          "translation": "Dario arrives at nine exactly in front of the fountain and finds nobody there."
+        },
+        {
+          "word": "somigliarsi",
+          "surface": "si somigliano",
+          "definition": "Look alike; are hard to tell apart.",
+          "sentence": "Le piazze intorno sono piene e si somigliano tutte.",
+          "translation": "The squares around are full and they all look alike."
+        },
+        {
+          "word": "scarpa",
+          "surface": "scarpe",
+          "definition": "Shoe; what you wear on your foot.",
+          "sentence": "Alle nove e venti Livia arriva senza fretta, con le scarpe basse e il sorriso largo.",
+          "translation": "At twenty past nine Livia turns up in no hurry, in flat shoes and with a wide smile."
+        },
+        {
+          "word": "sorriso",
+          "surface": "sorriso",
+          "definition": "Smile; the friendly shape of a happy mouth.",
+          "sentence": "Alle nove e venti Livia arriva senza fretta, con le scarpe basse e il sorriso largo.",
+          "translation": "At twenty past nine Livia turns up in no hurry, in flat shoes and with a wide smile."
+        },
+        {
+          "word": "significare",
+          "surface": "significa",
+          "definition": "Means; has this sense.",
+          "sentence": "Lei spiega che verso le nove significa fra le nove e le dieci.",
+          "translation": "She explains that around nine means between nine and ten."
+        },
+        {
+          "word": "vicolo",
+          "surface": "vicoli",
+          "definition": "Alley; a very narrow street between two walls.",
+          "sentence": "Loro camminano nei vicoli stretti, sotto i panni stesi e le luci gialle.",
+          "translation": "They walk through the narrow alleys, under laundry hung out to dry and yellow lights."
+        },
+        {
+          "word": "steso",
+          "surface": "stesi",
+          "definition": "Hung out; put outside to dry.",
+          "sentence": "Loro camminano nei vicoli stretti, sotto i panni stesi e le luci gialle.",
+          "translation": "They walk through the narrow alleys, under laundry hung out to dry and yellow lights."
+        },
+        {
+          "word": "saluto",
+          "surface": "saluto",
+          "definition": "Greeting; the words or gesture for hello.",
+          "sentence": "Ogni saluto dura poco, però nessuno guarda mai l'orologio.",
+          "translation": "Every greeting is short, and yet nobody ever looks at the clock."
+        },
+        {
+          "word": "frase",
+          "surface": "frase",
+          "definition": "Sentence; a few words that say one thing.",
+          "sentence": "Dario capisce che questa frase non è una promessa esatta.",
+          "translation": "Dario understands that this sentence is not an exact promise."
+        },
+        {
+          "word": "promessa",
+          "surface": "promessa",
+          "definition": "Promise; saying you will surely do something.",
+          "sentence": "Dario capisce che questa frase non è una promessa esatta.",
+          "translation": "Dario understands that this sentence is not an exact promise."
+        },
+        {
+          "word": "gentile",
+          "surface": "gentile",
+          "definition": "Kind; treating other people well.",
+          "sentence": "Dario ripete ci vediamo, gentile, con la porta del bar ancora aperta.",
+          "translation": "Dario politely repeats see you, with the cafe door still open."
+        },
+        {
+          "word": "porta",
+          "surface": "porta",
+          "definition": "Door; the way in and out of a room.",
+          "sentence": "Dario ripete ci vediamo, gentile, con la porta del bar ancora aperta.",
+          "translation": "Dario politely repeats see you, with the cafe door still open."
+        },
+        {
+          "word": "minuto",
+          "surface": "minuti",
+          "definition": "Minute; the sixty seconds inside one hour.",
+          "sentence": "Livia saluta tre persone in cinque minuti e si ferma ogni volta.",
+          "translation": "Livia greets three people in five minutes and stops every time."
+        },
+        {
+          "word": "fermarsi",
+          "surface": "si ferma",
+          "definition": "Stops; stays in one place instead of going on.",
+          "sentence": "Livia saluta tre persone in cinque minuti e si ferma ogni volta.",
+          "translation": "Livia greets three people in five minutes and stops every time."
+        },
+        {
+          "word": "largo",
+          "surface": "largo",
+          "definition": "Wide; big from one side to the other.",
+          "sentence": "Alle nove e venti Livia arriva senza fretta, con le scarpe basse e il sorriso largo.",
+          "translation": "At twenty past nine Livia turns up in no hurry, in flat shoes and with a wide smile."
+        },
+        {
+          "word": "indicare",
+          "surface": "indicare",
+          "definition": "Points at; names a day or a place clearly.",
+          "sentence": "Alla fine della serata Livia dice ci vediamo, senza indicare un giorno.",
+          "translation": "At the end of the evening Livia says see you, without naming a day."
+        },
+        {
+          "word": "fine",
+          "surface": "fine",
+          "definition": "End; the last part of something.",
+          "sentence": "Alla fine della serata Livia dice ci vediamo, senza indicare un giorno.",
+          "translation": "At the end of the evening Livia says see you, without naming a day."
+        },
+        {
+          "word": "decidere",
+          "surface": "decide",
+          "definition": "Decides; chooses what to do.",
+          "sentence": "Dario guarda l'orologio e decide di non dire niente.",
+          "translation": "Dario looks at the clock and decides to say nothing."
+        },
+        {
+          "word": "intorno",
+          "surface": "intorno",
+          "definition": "Around; on every side of a place.",
+          "sentence": "Le piazze intorno sono piene e si somigliano tutte.",
+          "translation": "The squares around are full and they all look alike."
+        },
+        {
+          "word": "telefono",
+          "surface": "telefono",
+          "definition": "Phone; what you call people with.",
+          "sentence": "“Ci vediamo verso le nove a Trastevere”, dice Livia al telefono.",
+          "translation": "“See you around nine in Trastevere,” Livia says on the phone."
+        },
+        {
+          "word": "pieno",
+          "surface": "piene",
+          "definition": "Full; with many people inside.",
+          "sentence": "Le piazze intorno sono piene e si somigliano tutte.",
+          "translation": "The squares around are full and they all look alike."
+        },
+        {
+          "word": "fontana",
+          "surface": "fontana",
+          "definition": "Fountain; the stone basin with water in a square.",
+          "sentence": "Dario arriva alle nove esatte davanti alla fontana e non trova nessuno.",
+          "translation": "Dario arrives at nine exactly in front of the fountain and finds nobody there."
+        }
+      ]
+    },
+    {
+      "storySlug": "il-traghetto-non-aspetta-nessuno",
+      "storyTitle": "Il traghetto non aspetta nessuno",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "traghetto",
+          "surface": "traghetto",
+          "definition": "Ferry; the boat that carries people to an island.",
+          "sentence": "Il traghetto per l'isola parte alle sette e venti dal molo piccolo.",
+          "translation": "The ferry to the island leaves at seven twenty from the small pier."
+        },
+        {
+          "word": "isola",
+          "surface": "isola",
+          "definition": "Island; land with water all around it.",
+          "sentence": "Il traghetto per l'isola parte alle sette e venti dal molo piccolo.",
+          "translation": "The ferry to the island leaves at seven twenty from the small pier."
+        },
+        {
+          "word": "molo",
+          "surface": "molo",
+          "definition": "Pier; the stone arm where boats stop.",
+          "sentence": "Il traghetto per l'isola parte alle sette e venti dal molo piccolo.",
+          "translation": "The ferry to the island leaves at seven twenty from the small pier."
+        },
+        {
+          "word": "marinaio",
+          "surface": "marinaio",
+          "definition": "Sailor; a person who works on a boat.",
+          "sentence": "Un marinaio tira già la corda dalla banchina.",
+          "translation": "A sailor is already pulling in the rope from the quay."
+        },
+        {
+          "word": "corda",
+          "surface": "corda",
+          "definition": "Rope; the thick string that holds a boat.",
+          "sentence": "Un marinaio tira già la corda dalla banchina.",
+          "translation": "A sailor is already pulling in the rope from the quay."
+        },
+        {
+          "word": "banchina",
+          "surface": "banchina",
+          "definition": "Quay; the flat edge where you board a boat.",
+          "sentence": "Un marinaio tira già la corda dalla banchina.",
+          "translation": "A sailor is already pulling in the rope from the quay."
+        },
+        {
+          "word": "saltare",
+          "surface": "salta",
+          "definition": "Jumps; pushes off the ground with both feet.",
+          "sentence": "Lei salta a bordo e il motore comincia a spingere l'acqua indietro.",
+          "translation": "She jumps on board and the engine starts pushing the water backwards."
+        },
+        {
+          "word": "a bordo",
+          "surface": "a bordo",
+          "definition": "On board; inside a boat, a train or a plane.",
+          "sentence": "Lei salta a bordo e il motore comincia a spingere l'acqua indietro.",
+          "translation": "She jumps on board and the engine starts pushing the water backwards."
+        },
+        {
+          "word": "motore",
+          "surface": "motore",
+          "definition": "Engine; the machine that makes a vehicle move.",
+          "sentence": "Lei salta a bordo e il motore comincia a spingere l'acqua indietro.",
+          "translation": "She jumps on board and the engine starts pushing the water backwards."
+        },
+        {
+          "word": "porto",
+          "surface": "porto",
+          "definition": "Harbour; the safe water where boats wait.",
+          "sentence": "Il porto diventa piccolo in due minuti, con le case gialle e rosa.",
+          "translation": "The harbour shrinks in two minutes, with its yellow and pink houses."
+        },
+        {
+          "word": "rosa",
+          "surface": "rosa",
+          "definition": "Pink; the colour between red and white.",
+          "sentence": "Il porto diventa piccolo in due minuti, con le case gialle e rosa.",
+          "translation": "The harbour shrinks in two minutes, with its yellow and pink houses."
+        },
+        {
+          "word": "bicchierino",
+          "surface": "bicchierini",
+          "definition": "Tiny cup, the size for one coffee.",
+          "sentence": "Un uomo vende caffè in bicchierini di plastica e cammina fra i sedili.",
+          "translation": "A man sells coffee in tiny plastic cups and walks between the seats."
+        },
+        {
+          "word": "plastica",
+          "surface": "plastica",
+          "definition": "Plastic; the light material of cheap cups.",
+          "sentence": "Un uomo vende caffè in bicchierini di plastica e cammina fra i sedili.",
+          "translation": "A man sells coffee in tiny plastic cups and walks between the seats."
+        },
+        {
+          "word": "sedile",
+          "surface": "sedili",
+          "definition": "Seat in a boat, a bus or a car.",
+          "sentence": "Un uomo vende caffè in bicchierini di plastica e cammina fra i sedili.",
+          "translation": "A man sells coffee in tiny plastic cups and walks between the seats."
+        },
+        {
+          "word": "onda",
+          "surface": "onde",
+          "definition": "Wave; the water that rises and falls at sea.",
+          "sentence": "Le onde battono contro il fianco della barca e bagnano i primi posti.",
+          "translation": "The waves hit the side of the boat and soak the front seats."
+        },
+        {
+          "word": "fianco",
+          "surface": "fianco",
+          "definition": "Side; the long outer wall of a boat.",
+          "sentence": "Le onde battono contro il fianco della barca e bagnano i primi posti.",
+          "translation": "The waves hit the side of the boat and soak the front seats."
+        },
+        {
+          "word": "barca",
+          "surface": "barca",
+          "definition": "Boat; the small vessel that goes on water.",
+          "sentence": "Le onde battono contro il fianco della barca e bagnano i primi posti.",
+          "translation": "The waves hit the side of the boat and soak the front seats."
+        },
+        {
+          "word": "bagnare",
+          "surface": "bagnano",
+          "definition": "Wet; make something covered with water.",
+          "sentence": "Le onde battono contro il fianco della barca e bagnano i primi posti.",
+          "translation": "The waves hit the side of the boat and soak the front seats."
+        },
+        {
+          "word": "spostare",
+          "surface": "sposta",
+          "definition": "Moves; puts a thing in another place.",
+          "sentence": "Gaia sposta lo zaino e ride insieme agli altri passeggeri.",
+          "translation": "Gaia moves her backpack and laughs along with the other passengers."
+        },
+        {
+          "word": "passeggero",
+          "surface": "passeggeri",
+          "definition": "Passenger; a person travelling in a vehicle.",
+          "sentence": "Gaia sposta lo zaino e ride insieme agli altri passeggeri.",
+          "translation": "Gaia moves her backpack and laughs along with the other passengers."
+        },
+        {
+          "word": "apparire",
+          "surface": "appare",
+          "definition": "Appears; comes into sight.",
+          "sentence": "L'isola appare dietro uno scoglio, bassa e verde sopra il mare.",
+          "translation": "The island appears behind a rock, low and green above the sea."
+        },
+        {
+          "word": "scoglio",
+          "surface": "scoglio",
+          "definition": "Rock rising out of the sea near the coast.",
+          "sentence": "L'isola appare dietro uno scoglio, bassa e verde sopra il mare.",
+          "translation": "The island appears behind a rock, low and green above the sea."
+        },
+        {
+          "word": "mare",
+          "surface": "mare",
+          "definition": "Sea; the big salt water around the coast.",
+          "sentence": "L'isola appare dietro uno scoglio, bassa e verde sopra il mare.",
+          "translation": "The island appears behind a rock, low and green above the sea."
+        },
+        {
+          "word": "sirena",
+          "surface": "sirena",
+          "definition": "Horn; the loud sound a boat makes.",
+          "sentence": "Il traghetto rallenta e la sirena avvisa il porto piccolo.",
+          "translation": "The ferry slows down and the horn warns the small harbour."
+        },
+        {
+          "word": "giornata",
+          "surface": "giornata",
+          "definition": "Day seen as the hours you spend in it.",
+          "sentence": "Due minuti di ritardo cambiano tutta la giornata.",
+          "translation": "Two minutes of delay change the whole day."
+        }
+      ]
+    },
+    {
+      "storySlug": "la-spiaggia-libera-e-piccola",
+      "storyTitle": "La spiaggia libera è piccola",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "ombrellone",
+          "surface": "ombrelloni",
+          "definition": "Beach umbrella; the big one you rent for shade.",
+          "sentence": "Le file di ombrelloni arancioni coprono quasi tutta la sabbia della baia.",
+          "translation": "Rows of orange beach umbrellas cover almost all the sand in the bay."
+        },
+        {
+          "word": "arancione",
+          "surface": "arancioni",
+          "definition": "Orange; the colour between red and yellow.",
+          "sentence": "Le file di ombrelloni arancioni coprono quasi tutta la sabbia della baia.",
+          "translation": "Rows of orange beach umbrellas cover almost all the sand in the bay."
+        },
+        {
+          "word": "sabbia",
+          "surface": "sabbia",
+          "definition": "Sand; the tiny stones that cover a beach.",
+          "sentence": "Le file di ombrelloni arancioni coprono quasi tutta la sabbia della baia.",
+          "translation": "Rows of orange beach umbrellas cover almost all the sand in the bay."
+        },
+        {
+          "word": "baia",
+          "surface": "baia",
+          "definition": "Bay; the curve of coast where the sea comes in.",
+          "sentence": "Le file di ombrelloni arancioni coprono quasi tutta la sabbia della baia.",
+          "translation": "Rows of orange beach umbrellas cover almost all the sand in the bay."
+        },
+        {
+          "word": "stabilimento",
+          "surface": "stabilimenti",
+          "definition": "Beach club; the part of the sand you pay to use.",
+          "sentence": "Fra due stabilimenti resta una striscia di spiaggia senza niente sopra.",
+          "translation": "Between two beach clubs a strip of beach is left with nothing on it."
+        },
+        {
+          "word": "striscia",
+          "surface": "striscia",
+          "definition": "Strip; a long narrow piece of something.",
+          "sentence": "Fra due stabilimenti resta una striscia di spiaggia senza niente sopra.",
+          "translation": "Between two beach clubs a strip of beach is left with nothing on it."
+        },
+        {
+          "word": "spiaggia",
+          "surface": "spiaggia",
+          "definition": "Beach; the sand between the town and the sea.",
+          "sentence": "Fra due stabilimenti resta una striscia di spiaggia senza niente sopra.",
+          "translation": "Between two beach clubs a strip of beach is left with nothing on it."
+        },
+        {
+          "word": "stendere",
+          "surface": "stende",
+          "definition": "Spreads out; lays a cloth flat on a surface.",
+          "sentence": "Gaia stende l'asciugamano lì, fra due famiglie e una barca vecchia.",
+          "translation": "Gaia spreads out her towel there, between two families and an old boat."
+        },
+        {
+          "word": "asciugamano",
+          "surface": "asciugamano",
+          "definition": "Towel; the cloth for drying your body.",
+          "sentence": "Gaia stende l'asciugamano lì, fra due famiglie e una barca vecchia.",
+          "translation": "Gaia spreads out her towel there, between two families and an old boat."
+        },
+        {
+          "word": "bagnino",
+          "surface": "bagnino",
+          "definition": "Lifeguard; the person who watches swimmers.",
+          "sentence": "Un bagnino spiega che il lettino costa venti euro per tutta la giornata.",
+          "translation": "A lifeguard explains that a sunbed costs twenty euros for the whole day."
+        },
+        {
+          "word": "lettino",
+          "surface": "lettino",
+          "definition": "Sunbed; the low bed you rent on a beach.",
+          "sentence": "Un bagnino spiega che il lettino costa venti euro per tutta la giornata.",
+          "translation": "A lifeguard explains that a sunbed costs twenty euros for the whole day."
+        },
+        {
+          "word": "libero",
+          "surface": "libera",
+          "definition": "Free; here, open to everybody at no cost.",
+          "sentence": "Sulla spiaggia libera invece non si paga, però lo spazio è poco.",
+          "translation": "On the free beach, though, you pay nothing, but there is little space."
+        },
+        {
+          "word": "spazio",
+          "surface": "spazio",
+          "definition": "Space; the room there is for people or things.",
+          "sentence": "Sulla spiaggia libera invece non si paga, però lo spazio è poco.",
+          "translation": "On the free beach, though, you pay nothing, but there is little space."
+        },
+        {
+          "word": "uguale",
+          "surface": "uguale",
+          "definition": "The same; equal in every way.",
+          "sentence": "Il mare qui è uguale, con lo stesso colore e le stesse onde.",
+          "translation": "The sea here is the same, with the same colour and the same waves."
+        },
+        {
+          "word": "colore",
+          "surface": "colore",
+          "definition": "Colour; what makes something red, blue or green.",
+          "sentence": "Il mare qui è uguale, con lo stesso colore e le stesse onde.",
+          "translation": "The sea here is the same, with the same colour and the same waves."
+        },
+        {
+          "word": "nuotare",
+          "surface": "nuota",
+          "definition": "Swims; moves through water with arms and legs.",
+          "sentence": "Gaia nuota fino allo scoglio e torna con i capelli pieni di sale.",
+          "translation": "Gaia swims out to the rock and comes back with her hair full of salt."
+        },
+        {
+          "word": "capello",
+          "surface": "capelli",
+          "definition": "Hair; what grows on a person's head.",
+          "sentence": "Gaia nuota fino allo scoglio e torna con i capelli pieni di sale.",
+          "translation": "Gaia swims out to the rock and comes back with her hair full of salt."
+        },
+        {
+          "word": "sale",
+          "surface": "sale",
+          "definition": "Salt; what makes sea water taste sharp.",
+          "sentence": "Gaia nuota fino allo scoglio e torna con i capelli pieni di sale.",
+          "translation": "Gaia swims out to the rock and comes back with her hair full of salt."
+        },
+        {
+          "word": "prestare",
+          "surface": "presta",
+          "definition": "Lends; gives something to be given back later.",
+          "sentence": "Un ragazzo le presta una bottiglia d'acqua dolce per la faccia.",
+          "translation": "A young man lends her a bottle of fresh water for her face."
+        },
+        {
+          "word": "dolce",
+          "surface": "dolce",
+          "definition": "Sweet; here, water with no salt in it.",
+          "sentence": "Un ragazzo le presta una bottiglia d'acqua dolce per la faccia.",
+          "translation": "A young man lends her a bottle of fresh water for her face."
+        },
+        {
+          "word": "faccia",
+          "surface": "faccia",
+          "definition": "Face; the front of the head.",
+          "sentence": "Un ragazzo le presta una bottiglia d'acqua dolce per la faccia.",
+          "translation": "A young man lends her a bottle of fresh water for her face."
+        },
+        {
+          "word": "scottare",
+          "surface": "scotta",
+          "definition": "Burns; is too hot to touch.",
+          "sentence": "Alle due la striscia libera è piena e la sabbia scotta troppo.",
+          "translation": "By two the free strip is full and the sand burns too much."
+        },
+        {
+          "word": "raccogliere",
+          "surface": "raccoglie",
+          "definition": "Picks up; takes a thing from the ground.",
+          "sentence": "Gaia raccoglie l'asciugamano e passa davanti agli ombrelloni ancora vuoti.",
+          "translation": "Gaia picks up her towel and walks past the beach umbrellas, still empty."
+        },
+        {
+          "word": "ombra",
+          "surface": "ombra",
+          "definition": "Shade; the cool dark place out of the sun.",
+          "sentence": "Venti euro comprano l'ombra, non il mare.",
+          "translation": "Twenty euros buy the shade, not the sea."
+        },
+        {
+          "word": "peso",
+          "surface": "peso",
+          "definition": "Weight; here, the importance given to something.",
+          "sentence": "Le persone stanno vicine e nessuno sembra darci peso.",
+          "translation": "People sit close together and nobody seems to mind."
+        }
+      ]
+    },
+    {
+      "storySlug": "alle-sette-il-mare-e-gelato",
+      "storyTitle": "Alle sette il mare è gelato",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "mattino",
+          "surface": "mattino",
+          "definition": "Morning; the first hours after the night.",
+          "sentence": "Presto, di mattino, la baia è vuota e il sole non arriva ancora sull'acqua.",
+          "translation": "Early in the morning the bay is empty and the sun does not reach the water yet."
+        },
+        {
+          "word": "scendere",
+          "surface": "scende",
+          "definition": "Goes down; moves to a lower place.",
+          "sentence": "Gaia scende gli scalini di pietra fino alla piattaforma di legno.",
+          "translation": "Gaia goes down the stone steps to the wooden platform."
+        },
+        {
+          "word": "scalino",
+          "surface": "scalini",
+          "definition": "Step; one level of a staircase.",
+          "sentence": "Gaia scende gli scalini di pietra fino alla piattaforma di legno.",
+          "translation": "Gaia goes down the stone steps to the wooden platform."
+        },
+        {
+          "word": "piattaforma",
+          "surface": "piattaforma",
+          "definition": "Platform; the flat place built over the water.",
+          "sentence": "Gaia scende gli scalini di pietra fino alla piattaforma di legno.",
+          "translation": "Gaia goes down the stone steps to the wooden platform."
+        },
+        {
+          "word": "legno",
+          "surface": "legno",
+          "definition": "Wood; the hard material that comes from trees.",
+          "sentence": "Gaia scende gli scalini di pietra fino alla piattaforma di legno.",
+          "translation": "Gaia goes down the stone steps to the wooden platform."
+        },
+        {
+          "word": "liscio",
+          "surface": "liscio",
+          "definition": "Smooth; flat, with nothing rough on it.",
+          "sentence": "Il mare è liscio come un vetro e sembra quasi fermo.",
+          "translation": "The sea is smooth as glass and looks almost still."
+        },
+        {
+          "word": "vetro",
+          "surface": "vetro",
+          "definition": "Glass; the hard clear material of windows.",
+          "sentence": "Il mare è liscio come un vetro e sembra quasi fermo.",
+          "translation": "The sea is smooth as glass and looks almost still."
+        },
+        {
+          "word": "piede",
+          "surface": "piede",
+          "definition": "Foot; the part of the body you stand on.",
+          "sentence": "Lei mette un piede dentro e lo toglie subito, perché l'acqua è gelata.",
+          "translation": "She puts one foot in and pulls it straight out, because the water is freezing."
+        },
+        {
+          "word": "gelato",
+          "surface": "gelata",
+          "definition": "Freezing; so cold it hurts a little.",
+          "sentence": "Lei mette un piede dentro e lo toglie subito, perché l'acqua è gelata.",
+          "translation": "She puts one foot in and pulls it straight out, because the water is freezing."
+        },
+        {
+          "word": "cuffia",
+          "surface": "cuffie",
+          "definition": "Swimming cap; the tight hat that keeps hair dry.",
+          "sentence": "Due donne nuotano già lontano, con le cuffie colorate in testa.",
+          "translation": "Two women are already swimming far out, with colourful swimming caps on their heads."
+        },
+        {
+          "word": "colorato",
+          "surface": "colorate",
+          "definition": "Colourful; with bright colours.",
+          "sentence": "Due donne nuotano già lontano, con le cuffie colorate in testa.",
+          "translation": "Two women are already swimming far out, with colourful swimming caps on their heads."
+        },
+        {
+          "word": "testa",
+          "surface": "testa",
+          "definition": "Head; the top part of the body.",
+          "sentence": "Due donne nuotano già lontano, con le cuffie colorate in testa.",
+          "translation": "Two women are already swimming far out, with colourful swimming caps on their heads."
+        },
+        {
+          "word": "boa",
+          "surface": "boa",
+          "definition": "Buoy; the floating ball that marks the water.",
+          "sentence": "Loro parlano tranquille mentre girano intorno alla boa.",
+          "translation": "They chat calmly as they swim around the buoy."
+        },
+        {
+          "word": "pezzo",
+          "surface": "pezzo",
+          "definition": "Piece; one part of a bigger whole.",
+          "sentence": "Gaia entra piano, un pezzo alla volta, e trema per un minuto intero.",
+          "translation": "Gaia goes in slowly, a bit at a time, and shivers for a whole minute."
+        },
+        {
+          "word": "tremare",
+          "surface": "trema",
+          "definition": "Shivers; shakes because of cold or fear.",
+          "sentence": "Gaia entra piano, un pezzo alla volta, e trema per un minuto intero.",
+          "translation": "Gaia goes in slowly, a bit at a time, and shivers for a whole minute."
+        },
+        {
+          "word": "corpo",
+          "surface": "corpo",
+          "definition": "Body; all of a person, from head to feet.",
+          "sentence": "Poi il corpo si abitua e il freddo diventa una cosa normale.",
+          "translation": "Then the body gets used to it and the cold becomes something normal."
+        },
+        {
+          "word": "abituarsi",
+          "surface": "si abitua",
+          "definition": "Gets used to it; stops finding it strange.",
+          "sentence": "Poi il corpo si abitua e il freddo diventa una cosa normale.",
+          "translation": "Then the body gets used to it and the cold becomes something normal."
+        },
+        {
+          "word": "freddo",
+          "surface": "freddo",
+          "definition": "Cold; the low temperature you feel on the skin.",
+          "sentence": "Poi il corpo si abitua e il freddo diventa una cosa normale.",
+          "translation": "Then the body gets used to it and the cold becomes something normal."
+        },
+        {
+          "word": "fondo",
+          "surface": "fondo",
+          "definition": "Bottom; the lowest part, under the water.",
+          "sentence": "Il fondo si vede benissimo, con i sassi bianchi e i pesci piccoli.",
+          "translation": "You can see the bottom very well, with the white stones and the little fish."
+        },
+        {
+          "word": "benissimo",
+          "surface": "benissimo",
+          "definition": "Very well; better than well.",
+          "sentence": "Il fondo si vede benissimo, con i sassi bianchi e i pesci piccoli.",
+          "translation": "You can see the bottom very well, with the white stones and the little fish."
+        },
+        {
+          "word": "sasso",
+          "surface": "sassi",
+          "definition": "Stone; a small hard piece of rock.",
+          "sentence": "Il fondo si vede benissimo, con i sassi bianchi e i pesci piccoli.",
+          "translation": "You can see the bottom very well, with the white stones and the little fish."
+        },
+        {
+          "word": "perdere",
+          "surface": "perde",
+          "definition": "Loses; no longer has something.",
+          "sentence": "Alle nove arrivano le prime barche e l'acqua perde il vetro.",
+          "translation": "At nine the first boats come in and the water loses its glassy surface."
+        },
+        {
+          "word": "asciugarsi",
+          "surface": "si asciuga",
+          "definition": "Dries off; takes the water off the body.",
+          "sentence": "Gaia esce e si asciuga sopra la pietra già calda.",
+          "translation": "Gaia gets out and dries off on the already warm stone."
+        },
+        {
+          "word": "pietra",
+          "surface": "pietra",
+          "definition": "Stone; the hard material of steps and walls.",
+          "sentence": "Gaia scende gli scalini di pietra fino alla piattaforma di legno.",
+          "translation": "Gaia goes down the stone steps to the wooden platform."
+        },
+        {
+          "word": "ancora",
+          "surface": "ancora",
+          "definition": "Yet; up to this moment and maybe later.",
+          "sentence": "Presto, di mattino, la baia è vuota e il sole non arriva ancora sull'acqua.",
+          "translation": "Early in the morning the bay is empty and the sun does not reach the water yet."
+        }
+      ]
+    },
+    {
+      "storySlug": "la-macchinetta-gialla",
+      "storyTitle": "La macchinetta gialla",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "biglietto",
+          "surface": "biglietto",
+          "definition": "Ticket; the paper you need to travel by train.",
+          "sentence": "Rosa compra il biglietto alla biglietteria automatica della stazione e mette il foglio nella tasca.",
+          "translation": "Rosa buys her ticket at the machine in the station and puts the printed sheet in her pocket."
+        },
+        {
+          "word": "foglio",
+          "surface": "foglio",
+          "definition": "Sheet of paper; here, the printed ticket itself.",
+          "sentence": "Rosa compra il biglietto alla biglietteria automatica della stazione e mette il foglio nella tasca.",
+          "translation": "Rosa buys her ticket at the machine in the station and puts the printed sheet in her pocket."
+        },
+        {
+          "word": "stazione",
+          "surface": "stazione",
+          "definition": "Station; the building where trains stop for passengers.",
+          "sentence": "Rosa compra il biglietto alla biglietteria automatica della stazione e mette il foglio nella tasca.",
+          "translation": "Rosa buys her ticket at the machine in the station and puts the printed sheet in her pocket."
+        },
+        {
+          "word": "tasca",
+          "surface": "tasca",
+          "definition": "Pocket; the small bag sewn inside your clothes.",
+          "sentence": "Rosa compra il biglietto alla biglietteria automatica della stazione e mette il foglio nella tasca.",
+          "translation": "Rosa buys her ticket at the machine in the station and puts the printed sheet in her pocket."
+        },
+        {
+          "word": "partire",
+          "surface": "parte",
+          "definition": "Leaves; goes away from a place at a certain time.",
+          "sentence": "Il treno per Firenze parte tra dieci minuti dal binario cinque, in fondo a destra.",
+          "translation": "The train to Florence leaves in ten minutes from platform five, at the far right."
+        },
+        {
+          "word": "binario",
+          "surface": "binario",
+          "definition": "Platform; the numbered place where a train waits for you.",
+          "sentence": "Il treno per Firenze parte tra dieci minuti dal binario cinque, in fondo a destra.",
+          "translation": "The train to Florence leaves in ten minutes from platform five, at the far right."
+        },
+        {
+          "word": "valigia",
+          "surface": "valigia",
+          "definition": "Suitcase; the big bag you travel with.",
+          "sentence": "Lei cammina veloce con la valigia pesante e cerca la sua carrozza.",
+          "translation": "She walks fast with her heavy suitcase and looks for her carriage."
+        },
+        {
+          "word": "pesante",
+          "surface": "pesante",
+          "definition": "Heavy; hard to lift or to carry.",
+          "sentence": "Lei cammina veloce con la valigia pesante e cerca la sua carrozza.",
+          "translation": "She walks fast with her heavy suitcase and looks for her carriage."
+        },
+        {
+          "word": "cercare",
+          "surface": "cerca",
+          "definition": "Looks for; tries to find something.",
+          "sentence": "Lei cammina veloce con la valigia pesante e cerca la sua carrozza.",
+          "translation": "She walks fast with her heavy suitcase and looks for her carriage."
+        },
+        {
+          "word": "carrozza",
+          "surface": "carrozza",
+          "definition": "Carriage; one numbered part of a long train.",
+          "sentence": "Lei cammina veloce con la valigia pesante e cerca la sua carrozza.",
+          "translation": "She walks fast with her heavy suitcase and looks for her carriage."
+        },
+        {
+          "word": "giubbotto",
+          "surface": "giubbotto",
+          "definition": "Jacket; a short coat for the street.",
+          "sentence": "Un uomo con il giubbotto arancione la ferma prima della porta del treno.",
+          "translation": "A man in an orange jacket stops her before the train door."
+        },
+        {
+          "word": "fermare",
+          "surface": "ferma",
+          "definition": "Stops someone; makes a person wait before going on.",
+          "sentence": "Un uomo con il giubbotto arancione la ferma prima della porta del treno.",
+          "translation": "A man in an orange jacket stops her before the train door."
+        },
+        {
+          "word": "indicare",
+          "surface": "indica",
+          "definition": "Points at; shows something with a finger.",
+          "sentence": "Lui indica una macchinetta gialla vicino al muro e non dice altro.",
+          "translation": "He points at a little yellow machine near the wall and says nothing else."
+        },
+        {
+          "word": "muro",
+          "surface": "muro",
+          "definition": "Wall; the flat side that closes a room or a street.",
+          "sentence": "Lui indica una macchinetta gialla vicino al muro e non dice altro.",
+          "translation": "He points at a little yellow machine near the wall and says nothing else."
+        },
+        {
+          "word": "capire",
+          "surface": "capisce",
+          "definition": "Understands; knows what something means.",
+          "sentence": "Rosa guarda il suo biglietto e non capisce che cosa manca.",
+          "translation": "Rosa looks at her ticket and does not understand what is missing."
+        },
+        {
+          "word": "mancare",
+          "surface": "manca",
+          "definition": "Is missing; is not there and is still needed.",
+          "sentence": "Rosa guarda il suo biglietto e non capisce che cosa manca.",
+          "translation": "Rosa looks at her ticket and does not understand what is missing."
+        },
+        {
+          "word": "macchinetta",
+          "surface": "macchinetta",
+          "definition": "Small yellow machine that stamps your ticket before you board.",
+          "sentence": "Lui indica una macchinetta gialla vicino al muro e non dice altro.",
+          "translation": "He points at a little yellow machine near the wall and says nothing else."
+        },
+        {
+          "word": "mettere",
+          "surface": "mette",
+          "definition": "Puts; places a thing inside or on something.",
+          "sentence": "Rosa compra il biglietto alla biglietteria automatica della stazione e mette il foglio nella tasca.",
+          "translation": "Rosa buys her ticket at the machine in the station and puts the printed sheet in her pocket."
+        },
+        {
+          "word": "aspettare",
+          "surface": "aspetta",
+          "definition": "Waits; stays until something happens.",
+          "sentence": "L'uomo prende il foglio, lo mette dentro la macchinetta e aspetta un rumore corto.",
+          "translation": "The man takes the sheet, puts it into the machine and waits for a short noise."
+        },
+        {
+          "word": "rumore",
+          "surface": "rumore",
+          "definition": "Noise; a sound with no clear shape.",
+          "sentence": "L'uomo prende il foglio, lo mette dentro la macchinetta e aspetta un rumore corto.",
+          "translation": "The man takes the sheet, puts it into the machine and waits for a short noise."
+        },
+        {
+          "word": "stampare",
+          "surface": "stampa",
+          "definition": "Prints; marks letters or numbers onto paper.",
+          "sentence": "La macchinetta stampa l'ora sopra il numero del treno e restituisce il biglietto.",
+          "translation": "The machine prints the time above the train number and gives the ticket back."
+        },
+        {
+          "word": "restituire",
+          "surface": "restituisce",
+          "definition": "Gives back; returns a thing to its owner.",
+          "sentence": "La macchinetta stampa l'ora sopra il numero del treno e restituisce il biglietto.",
+          "translation": "The machine prints the time above the train number and gives the ticket back."
+        },
+        {
+          "word": "valido",
+          "surface": "valido",
+          "definition": "Valid; good to use and accepted by the rules.",
+          "sentence": "“Adesso è valido”, dice lui, e torna subito al suo lavoro.",
+          "translation": "“Now it is valid,” he says, and goes straight back to his work."
+        },
+        {
+          "word": "salire",
+          "surface": "sale",
+          "definition": "Gets on; goes up into a train, a bus or a car.",
+          "sentence": "Rosa sale sul treno e tiene il biglietto stampato in mano per tutto il viaggio.",
+          "translation": "Rosa gets on the train and holds the stamped ticket in her hand the whole journey."
+        },
+        {
+          "word": "controllore",
+          "surface": "controllore",
+          "definition": "Inspector; the person who checks tickets on the train.",
+          "sentence": "Il controllore passa dopo pochi minuti e guarda soltanto l'ora sul foglio.",
+          "translation": "The inspector comes by a few minutes later and looks only at the time on the sheet."
+        }
+      ]
+    },
+    {
+      "storySlug": "il-regionale-ferma-dappertutto",
+      "storyTitle": "Il regionale ferma dappertutto",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "tabellone",
+          "surface": "tabellone",
+          "definition": "Big board in a station listing trains and their times.",
+          "sentence": "Rosa guarda il tabellone e sceglie il treno più economico per Firenze.",
+          "translation": "Rosa looks at the departures board and chooses the cheapest train to Florence."
+        },
+        {
+          "word": "scegliere",
+          "surface": "sceglie",
+          "definition": "Chooses; takes one thing instead of another.",
+          "sentence": "Rosa guarda il tabellone e sceglie il treno più economico per Firenze.",
+          "translation": "Rosa looks at the departures board and chooses the cheapest train to Florence."
+        },
+        {
+          "word": "economico",
+          "surface": "economico",
+          "definition": "Cheap; costing little money.",
+          "sentence": "Rosa guarda il tabellone e sceglie il treno più economico per Firenze.",
+          "translation": "Rosa looks at the departures board and chooses the cheapest train to Florence."
+        },
+        {
+          "word": "metà",
+          "surface": "metà",
+          "definition": "Half; one of the two equal parts of something.",
+          "sentence": "Il regionale costa la metà del treno veloce e parte dallo stesso binario.",
+          "translation": "The local train costs half of the fast one and leaves from the same platform."
+        },
+        {
+          "word": "veloce",
+          "surface": "veloce",
+          "definition": "Fast; moving or going in little time.",
+          "sentence": "Il regionale costa la metà del treno veloce e parte dallo stesso binario.",
+          "translation": "The local train costs half of the fast one and leaves from the same platform."
+        },
+        {
+          "word": "finestrino",
+          "surface": "finestrino",
+          "definition": "Window of a train, a bus or a car.",
+          "sentence": "Lei sale con la valigia e trova un posto vicino al finestrino.",
+          "translation": "She gets on with her suitcase and finds a seat by the window."
+        },
+        {
+          "word": "orario",
+          "surface": "orario",
+          "definition": "Timetable; here, leaving at exactly the right time.",
+          "sentence": "Il treno parte in orario, però si ferma in ogni paese piccolo.",
+          "translation": "The train leaves on time, but it stops in every small town."
+        },
+        {
+          "word": "paese",
+          "surface": "paese",
+          "definition": "Small town; a place smaller than a city.",
+          "sentence": "Il treno parte in orario, però si ferma in ogni paese piccolo.",
+          "translation": "The train leaves on time, but it stops in every small town."
+        },
+        {
+          "word": "zaino",
+          "surface": "zaino",
+          "definition": "Backpack; the bag you carry on your shoulders.",
+          "sentence": "Salgono studenti con lo zaino, signore con le borse della spesa e un ragazzo con la bicicletta.",
+          "translation": "Students get on with backpacks, women with shopping bags and a young man with a bicycle."
+        },
+        {
+          "word": "borsa",
+          "surface": "borse",
+          "definition": "Bag; the thing you carry shopping or papers in.",
+          "sentence": "Salgono studenti con lo zaino, signore con le borse della spesa e un ragazzo con la bicicletta.",
+          "translation": "Students get on with backpacks, women with shopping bags and a young man with a bicycle."
+        },
+        {
+          "word": "spesa",
+          "surface": "spesa",
+          "definition": "Food shopping; the things you buy to eat at home.",
+          "sentence": "Salgono studenti con lo zaino, signore con le borse della spesa e un ragazzo con la bicicletta.",
+          "translation": "Students get on with backpacks, women with shopping bags and a young man with a bicycle."
+        },
+        {
+          "word": "bicicletta",
+          "surface": "bicicletta",
+          "definition": "Bicycle; the vehicle with two wheels and pedals.",
+          "sentence": "Salgono studenti con lo zaino, signore con le borse della spesa e un ragazzo con la bicicletta.",
+          "translation": "Students get on with backpacks, women with shopping bags and a young man with a bicycle."
+        },
+        {
+          "word": "contare",
+          "surface": "conta",
+          "definition": "Counts; says the numbers one after another.",
+          "sentence": "Rosa conta le fermate e capisce che il viaggio dura tre ore.",
+          "translation": "Rosa counts the stops and works out that the journey lasts three hours."
+        },
+        {
+          "word": "fermata",
+          "surface": "fermate",
+          "definition": "Stop; a place where the train or bus waits shortly.",
+          "sentence": "Rosa conta le fermate e capisce che il viaggio dura tre ore.",
+          "translation": "Rosa counts the stops and works out that the journey lasts three hours."
+        },
+        {
+          "word": "durare",
+          "surface": "dura",
+          "definition": "Lasts; goes on for a certain time.",
+          "sentence": "Rosa conta le fermate e capisce che il viaggio dura tre ore.",
+          "translation": "Rosa counts the stops and works out that the journey lasts three hours."
+        },
+        {
+          "word": "campo",
+          "surface": "campi",
+          "definition": "Field; open land outside the city where plants grow.",
+          "sentence": "Fuori dal finestrino passano campi gialli, case basse e colline piene di ulivi.",
+          "translation": "Yellow fields, low houses and hills full of olive trees go by outside the window."
+        },
+        {
+          "word": "collina",
+          "surface": "colline",
+          "definition": "Hill; ground that goes up, lower than a mountain.",
+          "sentence": "Fuori dal finestrino passano campi gialli, case basse e colline piene di ulivi.",
+          "translation": "Yellow fields, low houses and hills full of olive trees go by outside the window."
+        },
+        {
+          "word": "ulivo",
+          "surface": "ulivi",
+          "definition": "Olive tree; the grey tree that grows all over Italy.",
+          "sentence": "Fuori dal finestrino passano campi gialli, case basse e colline piene di ulivi.",
+          "translation": "Yellow fields, low houses and hills full of olive trees go by outside the window."
+        },
+        {
+          "word": "sacchetto",
+          "surface": "sacchetto",
+          "definition": "Small bag of paper or plastic.",
+          "sentence": "Una signora accanto a lei apre un sacchetto di carta e offre un panino a Rosa.",
+          "translation": "A woman next to her opens a paper bag and offers Rosa a sandwich."
+        },
+        {
+          "word": "offrire",
+          "surface": "offre",
+          "definition": "Offers; holds something out for another person to take.",
+          "sentence": "Una signora accanto a lei apre un sacchetto di carta e offre un panino a Rosa.",
+          "translation": "A woman next to her opens a paper bag and offers Rosa a sandwich."
+        },
+        {
+          "word": "accettare",
+          "surface": "accetta",
+          "definition": "Accepts; takes what someone gives.",
+          "sentence": "Rosa accetta e mangia piano, mentre il treno rallenta un'altra volta.",
+          "translation": "Rosa accepts and eats slowly, while the train slows down once again."
+        },
+        {
+          "word": "rallentare",
+          "surface": "rallenta",
+          "definition": "Slows down; starts going less fast.",
+          "sentence": "Rosa accetta e mangia piano, mentre il treno rallenta un'altra volta.",
+          "translation": "Rosa accepts and eats slowly, while the train slows down once again."
+        },
+        {
+          "word": "ritardo",
+          "surface": "ritardo",
+          "definition": "Delay; time later than the hour written on the board.",
+          "sentence": "Il treno arriva a Firenze con quaranta minuti di ritardo e nessuno sembra sorpreso.",
+          "translation": "The train reaches Florence forty minutes late and nobody seems surprised."
+        },
+        {
+          "word": "marciapiede",
+          "surface": "marciapiede",
+          "definition": "Platform edge or pavement where people walk.",
+          "sentence": "Rosa scende sul marciapiede con le gambe stanche e la testa leggera.",
+          "translation": "Rosa steps down onto the platform with tired legs and a light head."
+        },
+        {
+          "word": "stanco",
+          "surface": "stanche",
+          "definition": "Tired; needing to rest.",
+          "sentence": "Rosa scende sul marciapiede con le gambe stanche e la testa leggera.",
+          "translation": "Rosa steps down onto the platform with tired legs and a light head."
+        }
+      ]
+    },
+    {
+      "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+      "storyTitle": "I biglietti li vende il tabaccaio",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "words": [
+        {
+          "word": "rotto",
+          "surface": "rotta",
+          "definition": "Broken; not working any more.",
+          "sentence": "La macchina dei biglietti alla fermata è rotta e lampeggia una luce rossa.",
+          "translation": "The ticket machine at the stop is broken and a red light is flashing."
+        },
+        {
+          "word": "lampeggiare",
+          "surface": "lampeggia",
+          "definition": "Flashes; turns a light on and off quickly.",
+          "sentence": "La macchina dei biglietti alla fermata è rotta e lampeggia una luce rossa.",
+          "translation": "The ticket machine at the stop is broken and a red light is flashing."
+        },
+        {
+          "word": "luce",
+          "surface": "luce",
+          "definition": "Light; what lets you see in the dark.",
+          "sentence": "La macchina dei biglietti alla fermata è rotta e lampeggia una luce rossa.",
+          "translation": "The ticket machine at the stop is broken and a red light is flashing."
+        },
+        {
+          "word": "autobus",
+          "surface": "autobus",
+          "definition": "Bus; the long vehicle that carries people around a city.",
+          "sentence": "L'autobus per il museo passa fra cinque minuti e Rosa non ha nessun biglietto.",
+          "translation": "The bus to the museum comes in five minutes and Rosa has no ticket."
+        },
+        {
+          "word": "museo",
+          "surface": "museo",
+          "definition": "Museum; the building where old or beautiful things are shown.",
+          "sentence": "L'autobus per il museo passa fra cinque minuti e Rosa non ha nessun biglietto.",
+          "translation": "The bus to the museum comes in five minutes and Rosa has no ticket."
+        },
+        {
+          "word": "chiedere",
+          "surface": "chiede",
+          "definition": "Asks; says words to get help or an answer.",
+          "sentence": "Lei chiede aiuto a un ragazzo con il casco sotto il braccio.",
+          "translation": "She asks for help from a young man with a helmet under his arm."
+        },
+        {
+          "word": "aiuto",
+          "surface": "aiuto",
+          "definition": "Help; what someone gives to make things easier.",
+          "sentence": "Lei chiede aiuto a un ragazzo con il casco sotto il braccio.",
+          "translation": "She asks for help from a young man with a helmet under his arm."
+        },
+        {
+          "word": "casco",
+          "surface": "casco",
+          "definition": "Helmet; the hard hat you wear on a motorbike.",
+          "sentence": "Lei chiede aiuto a un ragazzo con il casco sotto il braccio.",
+          "translation": "She asks for help from a young man with a helmet under his arm."
+        },
+        {
+          "word": "braccio",
+          "surface": "braccio",
+          "definition": "Arm; the part of the body between shoulder and hand.",
+          "sentence": "Lei chiede aiuto a un ragazzo con il casco sotto il braccio.",
+          "translation": "She asks for help from a young man with a helmet under his arm."
+        },
+        {
+          "word": "stretto",
+          "surface": "stretta",
+          "definition": "Narrow; small from one side to the other.",
+          "sentence": "Il ragazzo indica una porta stretta dall'altra parte della strada, con una T bianca sopra.",
+          "translation": "The young man points at a narrow door across the street, with a white T above it."
+        },
+        {
+          "word": "strada",
+          "surface": "strada",
+          "definition": "Street; the way cars and people go through a town.",
+          "sentence": "Il ragazzo indica una porta stretta dall'altra parte della strada, con una T bianca sopra.",
+          "translation": "The young man points at a narrow door across the street, with a white T above it."
+        },
+        {
+          "word": "tabaccaio",
+          "surface": "tabaccaio",
+          "definition": "Tobacconist; the small shop with a white T that sells bus tickets.",
+          "sentence": "“Il tabaccaio vende i biglietti”, dice lui, e attraversa insieme a lei.",
+          "translation": "“The tobacconist sells the tickets,” he says, and crosses over with her."
+        },
+        {
+          "word": "attraversare",
+          "surface": "attraversa",
+          "definition": "Crosses; goes from one side of the street to the other.",
+          "sentence": "“Il tabaccaio vende i biglietti”, dice lui, e attraversa insieme a lei.",
+          "translation": "“The tobacconist sells the tickets,” he says, and crosses over with her."
+        },
+        {
+          "word": "negozio",
+          "surface": "negozio",
+          "definition": "Shop; the place where things are sold.",
+          "sentence": "Dentro il negozio ci sono giornali, caramelle, francobolli e una fila corta.",
+          "translation": "Inside the shop there are newspapers, sweets, stamps and a short queue."
+        },
+        {
+          "word": "caramella",
+          "surface": "caramelle",
+          "definition": "Sweet; a small hard piece of sugar.",
+          "sentence": "Dentro il negozio ci sono giornali, caramelle, francobolli e una fila corta.",
+          "translation": "Inside the shop there are newspapers, sweets, stamps and a short queue."
+        },
+        {
+          "word": "francobollo",
+          "surface": "francobolli",
+          "definition": "Stamp; the small paper you stick on a letter.",
+          "sentence": "Dentro il negozio ci sono giornali, caramelle, francobolli e una fila corta.",
+          "translation": "Inside the shop there are newspapers, sweets, stamps and a short queue."
+        },
+        {
+          "word": "fila",
+          "surface": "fila",
+          "definition": "Queue; a line of people waiting their turn.",
+          "sentence": "Dentro il negozio ci sono giornali, caramelle, francobolli e una fila corta.",
+          "translation": "Inside the shop there are newspapers, sweets, stamps and a short queue."
+        },
+        {
+          "word": "blocchetto",
+          "surface": "blocchetto",
+          "definition": "Small pad of tickets or paper joined together.",
+          "sentence": "Il tabaccaio prende un blocchetto e stacca due biglietti sottili senza fare domande.",
+          "translation": "The tobacconist takes a pad and tears off two thin tickets without asking anything."
+        },
+        {
+          "word": "staccare",
+          "surface": "stacca",
+          "definition": "Tears off; separates one piece from the rest.",
+          "sentence": "Il tabaccaio prende un blocchetto e stacca due biglietti sottili senza fare domande.",
+          "translation": "The tobacconist takes a pad and tears off two thin tickets without asking anything."
+        },
+        {
+          "word": "sottile",
+          "surface": "sottili",
+          "definition": "Thin; very little from one side to the other.",
+          "sentence": "Il tabaccaio prende un blocchetto e stacca due biglietti sottili senza fare domande.",
+          "translation": "The tobacconist takes a pad and tears off two thin tickets without asking anything."
+        },
+        {
+          "word": "moneta",
+          "surface": "moneta",
+          "definition": "Coin; money made of metal.",
+          "sentence": "Rosa paga con una moneta e infila i biglietti dentro il portafoglio.",
+          "translation": "Rosa pays with a coin and slips the tickets into her wallet."
+        },
+        {
+          "word": "infilare",
+          "surface": "infila",
+          "definition": "Slips in; puts a thing quickly inside something.",
+          "sentence": "Rosa paga con una moneta e infila i biglietti dentro il portafoglio.",
+          "translation": "Rosa pays with a coin and slips the tickets into her wallet."
+        },
+        {
+          "word": "portafoglio",
+          "surface": "portafoglio",
+          "definition": "Wallet; the small folder for money and cards.",
+          "sentence": "Rosa paga con una moneta e infila i biglietti dentro il portafoglio.",
+          "translation": "Rosa pays with a coin and slips the tickets into her wallet."
+        },
+        {
+          "word": "puntuale",
+          "surface": "puntuale",
+          "definition": "On time; arriving at exactly the right hour.",
+          "sentence": "Fuori l'autobus arriva puntuale e apre le porte davanti alla fermata.",
+          "translation": "Outside, the bus arrives on time and opens its doors at the stop."
+        },
+        {
+          "word": "autista",
+          "surface": "autista",
+          "definition": "Driver; the person who drives a bus or a taxi.",
+          "sentence": "Rosa sale, cerca la macchinetta accanto all'autista e stampa il biglietto da sola.",
+          "translation": "Rosa gets on, finds the little machine next to the driver and stamps her ticket herself."
+        }
+      ]
+    }
+  ]
+}
