@@ -158,31 +158,31 @@ export type PracticeAudioClip = {
 };
 
 /**
- * Quinto tipo de ejercicio: UN turno hablado por palabra.
+ * Quinto tipo de ejercicio: `fill_blank` DICHO EN VOZ ALTA.
  *
- * Un personaje de la historia donde el usuario guardo la palabra le hace una
- * pregunta con su voz; el usuario responde por el microfono y cuenta como
- * acierto si uso la palabra. No es un chat ni un role-play: una pregunta, una
- * respuesta, y de vuelta a la sesion mixta.
- *
- * El ejercicio que viaja del builder al cliente NO trae la pregunta: esa la
- * pide el movil a `/api/mobile/speaking` (accion "question"), que la genera o
- * la lee de `SpeakingPrompt`. Aqui solo viaja lo que hace falta para pedirla
- * y para calificar: la palabra, su traduccion (la pista en pantalla), la
- * frase de la historia y la voz con la que hay que sonarla.
+ * Misma frase con hueco y mismo clip que el ejercicio de contexto; lo unico
+ * que cambia es que la respuesta entra por el microfono en vez de por una
+ * opcion. El reconocimiento lo pone el sistema operativo del telefono y la
+ * calificacion es local, asi que no hay ruta, ni tabla, ni clave de nadie.
  */
 export type SpeakingExercise = {
   type: "speaking";
   id: string;
   word: string;
   surface?: string | null;
+  /** Pista en pantalla: la traduccion en ingles. La palabra en el idioma meta
+   *  no se muestra hasta despues de calificar. */
   translation: string;
+  /** Frase COMPLETA de la historia; se ensena en el fallo, con su audio. */
+  sentence: string;
+  /** La misma frase con `_____` en el hueco que pinta `fill_blank`. */
+  blanked: string;
   storySlug: string;
   language: string;
   voiceId?: string | null;
-  /** Frase de la historia; alimenta el prompt de la pregunta y la frase modelo
-   *  que se ensena cuando el usuario falla. */
-  sentence: string;
+  /** El mismo clip que lleva `fill_blank`: el pre-horneado si existe, y si no
+   *  lo que el cliente pida a `sentence-tts` con la voz de la historia. */
+  audioClip?: PracticeAudioClip | null;
 };
 
 export type PracticeExercise =
@@ -888,34 +888,42 @@ function createListenChooseExercise(
 }
 
 /**
- * G2 del piloto: el speaking sale de una historia de JOURNEY. Lo unico que
- * exige AQUI es que haya `storySlug`; quien decide si hay historia detras es
- * el servidor.
+ * G1 y G2 salen GRATIS al apoyarse en `fill_blank`.
  *
- * Por que no se filtra por `sourcePath`: el lector de journey del movil guarda
- * los favoritos con `sourcePath` de LIBRO (`/books/standalone-stories/...`) y
- * el slug como pseudo-slug `journey-<JourneyStory.id>`. Un filtro por
- * `/books/` descartaba 776 de los 844 favoritos reales, o sea casi todos los
- * que el ejercicio tenia que cubrir. La forma del sourcePath no dice de donde
- * viene la palabra, y creer que si lo decia dejaba el piloto sin materia.
+ * El hueco, el clip y el rechazo de las frases que no sirven ya estan
+ * resueltos ahi: `createFillBlankExercise` tira la frase donde la palabra
+ * aparece dos veces, la que no deja dos palabras de contexto alrededor del
+ * hueco y la que no tiene forma limpia. Reimplementar ese criterio aqui era
+ * garantizar que los dos se separaran. Si el de contexto dice que no, este
+ * tampoco.
  *
- * Cuando el servidor no encuentra historia de journey responde
- * `NO_JOURNEY_STORY` y el movil cambia el slot por uno de `context`.
+ * No se filtra por `sourcePath`: el lector de journey del movil guarda los
+ * favoritos con `sourcePath` de LIBRO (`/books/standalone-stories/...`) y el
+ * slug como pseudo-slug `journey-<JourneyStory.id>`. Un filtro por `/books/`
+ * descartaba 776 de los 844 favoritos reales, o sea casi todos los que el
+ * ejercicio tenia que cubrir.
  */
-export function createSpeakingExercise(item: PracticeFavoriteItem): SpeakingExercise | null {
+export function createSpeakingExercise(
+  item: PracticeFavoriteItem,
+  pool: PracticeFavoriteItem[]
+): SpeakingExercise | null {
   if (!normalizeText(item.storySlug)) return null;
 
   const word = normalizeText(item.word);
   const translation = normalizeText(item.translation);
   const language = normalizeText(item.language);
   // La pista en pantalla es la TRADUCCION en ingles; sin ella el ejercicio
-  // pediria una palabra que no ha nombrado. Y sin idioma no hay ni voz ni
-  // pista de Whisper.
+  // pediria una palabra que no ha nombrado. Sin idioma no hay locale que
+  // darle al reconocedor del sistema.
   if (!word || !translation || !language) return null;
 
-  // La frase de la historia alimenta el prompt de la pregunta y la frase
-  // modelo del fallo. Sin frase el personaje no tiene de que preguntar.
-  const sentence = singleCleanSentence(item) || getContextSentence(item);
+  const fillBlank = createFillBlankExercise(item, pool);
+  if (!fillBlank) return null;
+
+  // La frase COMPLETA, la que se ensena en el fallo. `fill_blank` guarda en
+  // `sentence` la version con el hueco, asi que la entera se recompone del
+  // mismo sitio del que la saca el.
+  const sentence = singleCleanSentence(item);
   if (!sentence) return null;
 
   return {
@@ -924,10 +932,12 @@ export function createSpeakingExercise(item: PracticeFavoriteItem): SpeakingExer
     word,
     surface: normalizeText(item.surface) || null,
     translation,
+    sentence,
+    blanked: fillBlank.sentence,
     storySlug: normalizeText(item.storySlug),
     language,
     voiceId: normalizeText(item.voiceId) || null,
-    sentence,
+    audioClip: fillBlank.audioClip ?? null,
   };
 }
 
@@ -1075,13 +1085,13 @@ export function buildPracticeSession(
   const exercises: PracticeExercise[] = [];
 
   // SPEAKING: piloto de plan `polyglot`. El slot no existe si el cliente no
-  // lo habilita, y ningun usuario real ve un ejercicio que su plan no puede
-  // resolver (la ruta le devolveria 403). La web pasa siempre `false`.
+  // lo habilita. La web pasa siempre `false`: el microfono del navegador queda
+  // fuera del piloto.
   if (mode === "speaking") {
     if (!prefs?.speakingEnabled) return [];
     for (const item of uniqueByWord(source)) {
       if (exercises.length >= 10) break;
-      const exercise = createSpeakingExercise(item);
+      const exercise = createSpeakingExercise(item, languageAwarePool);
       if (!exercise) continue;
       if (exercises.some((existing) => existing.id === exercise.id)) continue;
       exercises.push(exercise);
