@@ -119,10 +119,39 @@ case "$COMMAND" in
         ;;
 esac
 
-# 2. Hard-block: ln -sf / ln -fs / ln -f targeting .env* in the REPO ROOT.
-#    The bug that started this: applying the worktree-symlink rule outside a worktree.
+# 2. ln -sf / ln -fs / ln -f targeting .env* via the '../../../.env' pattern.
+#    That pattern is CORRECT and expected inside .claude/worktrees/<name>/ (it
+#    resolves to the repo root's real .env) and WRONG anywhere else (the bug
+#    that started this rule: applying the worktree-symlink pattern outside a
+#    worktree, which silently links to garbage or nothing).
+#
+#    So: resolve the EFFECTIVE directory the command runs in (honouring a
+#    leading `cd <path> &&`, since the hook's own $PWD is the invoker's cwd
+#    but the command may `cd` elsewhere first), and gate on THAT:
+#      - inside a worktree  -> needs is_authorized, like every other rule here.
+#      - outside a worktree -> always blocked, no exceptions.
 if printf '%s' "$COMMAND" | grep -qE '\bln[[:space:]]+-[A-Za-z]*f[A-Za-z]*[[:space:]]+\.{0,2}/?\.\./\.\./\.\./?\.env'; then
-    block "ln -f overwriting .env in repo root. The '../../../.env' pattern ONLY makes sense inside .claude/worktrees/<name>/, never in the repo root. Verify pwd with 'git rev-parse --show-toplevel' first."
+    _EFFECTIVE_DIR="$PWD"
+    _CD_MATCH="$(printf '%s' "$COMMAND" | grep -oE "cd[[:space:]]+'?[^&;|']+" | head -1 || true)"
+    if [ -n "$_CD_MATCH" ]; then
+        _CD_PATH="$(printf '%s' "$_CD_MATCH" | sed -E "s/^cd[[:space:]]+//; s/^'//; s/'\$//" | sed -E 's/[[:space:]]+$//')"
+        case "$_CD_PATH" in
+            /*) _EFFECTIVE_DIR="$_CD_PATH" ;;
+            *)  _EFFECTIVE_DIR="$PWD/$_CD_PATH" ;;
+        esac
+    fi
+    # Canonicalize; if the dir doesn't exist (yet), fall back to the raw path
+    # so we still classify it (and still block: an inexistent dir is not a
+    # worktree either).
+    _RESOLVED_DIR="$(cd "$_EFFECTIVE_DIR" 2>/dev/null && pwd -P || printf '%s' "$_EFFECTIVE_DIR")"
+    case "$_RESOLVED_DIR" in
+        "$REPO_ROOT"/.claude/worktrees/?*)
+            is_authorized || block "ln -f overwriting .env inside a worktree ($_RESOLVED_DIR). The '../../../.env' pattern is correct here, but still needs explicit user authorization like every other rule in this guard: ask the user, or prefix with CLAUDE_AUTHORIZED=1 only after they've said an imperative verb in chat."
+            ;;
+        *)
+            block "ln -f overwriting .env outside a worktree ($_RESOLVED_DIR). The '../../../.env' pattern ONLY makes sense inside .claude/worktrees/<name>/, never here. Verify pwd with 'git rev-parse --show-toplevel' first."
+            ;;
+    esac
 fi
 
 # 3. Hard-block: rm/rm -rf on .env files.
