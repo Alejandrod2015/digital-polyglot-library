@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Samstagmorgen,die Handynummer,das Wochenende,der Videoanruf",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Samstagmorgen",
+     "answer": "Saturday morning",
+     "options": [
+      "Saturday morning",
+      "a phone number",
+      "the weekend",
+      "a video call"
+     ]
+    },
+    {
+     "word": "die Handynummer",
+     "answer": "a phone number",
+     "options": [
+      "Saturday morning",
+      "a phone number",
+      "the weekend",
+      "a video call"
+     ]
+    },
+    {
+     "word": "das Wochenende",
+     "answer": "the weekend",
+     "options": [
+      "Saturday morning",
+      "a phone number",
+      "the weekend",
+      "a video call"
+     ]
+    },
+    {
+     "word": "der Videoanruf",
+     "answer": "a video call",
+     "options": [
+      "Saturday morning",
+      "a phone number",
+      "the weekend",
+      "a video call"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "reden",
+  "sentence": "Willst du jetzt mit mir [[reden]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "talk",
+   "options": [
+    "talk",
+    "cook",
+    "run",
+    "wait"
+   ],
+   "audioClip": {
+    "storySlug": "ein-abend-auf-stumm",
+    "storySource": "user",
+    "sentence": "Willst du jetzt mit mir reden?",
+    "targetWord": "reden",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rauscht",
+  "sentence": "Der Laptop [[rauscht]] die ganze Zeit.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "crackles",
+   "options": [
+    "crackles",
+    "shines",
+    "sleeps",
+    "smells"
+   ],
+   "audioClip": {
+    "storySlug": "ein-abend-auf-stumm",
+    "storySource": "user",
+    "sentence": "Der Laptop rauscht die ganze Zeit.",
+    "targetWord": "rauscht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wackelt",
+  "sentence": "Das Bild [[wackelt]] auf dem Bildschirm.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wobbles",
+   "options": [
+    "wobbles",
+    "stops",
+    "grows",
+    "disappears"
+   ],
+   "audioClip": {
+    "storySlug": "ein-abend-auf-stumm",
+    "storySource": "user",
+    "sentence": "Das Bild wackelt auf dem Bildschirm.",
+    "targetWord": "wackelt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stumm",
+  "sentence": "Ihr Handy ist heute [[stumm]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "silent",
+   "options": [
+    "silent",
+    "loud",
+    "broken",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "ein-abend-auf-stumm",
+    "storySource": "user",
+    "sentence": "Ihr Handy ist heute stumm.",
+    "targetWord": "stumm",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Mitternacht",
+  "sentence": "Kurz vor [[Mitternacht]] klingelt es.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "midnight",
+   "options": [
+    "midnight",
+    "noon",
+    "dawn",
+    "sunset"
+   ],
+   "audioClip": {
+    "storySlug": "ein-abend-auf-stumm",
+    "storySource": "user",
+    "sentence": "Kurz vor Mitternacht klingelt es.",
+    "targetWord": "Mitternacht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vorhin",
+  "sentence": "Er hat das [[vorhin]] geschrieben.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a while ago",
+   "options": [
+    "a while ago",
+    "tomorrow",
+    "right now",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "ein-abend-auf-stumm",
+    "storySource": "user",
+    "sentence": "Er hat das vorhin geschrieben.",
+    "targetWord": "vorhin",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "draußen",
+  "sentence": "Wir sitzen heute Abend [[draußen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "outside",
+   "options": [
+    "outside",
+    "upstairs",
+    "nearby",
+    "alone"
+   ],
+   "audioClip": {
+    "storySlug": "ein-abend-auf-stumm",
+    "storySource": "user",
+    "sentence": "Wir sitzen heute Abend draußen.",
+    "targetWord": "draußen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "herrlich",
+  "sentence": "Der Abend ist wirklich [[herrlich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wonderful",
+   "options": [
+    "wonderful",
+    "short",
+    "cold",
+    "busy"
+   ],
+   "audioClip": {
+    "storySlug": "ein-abend-auf-stumm",
+    "storySource": "user",
+    "sentence": "Der Abend ist wirklich herrlich.",
+    "targetWord": "herrlich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Pech",
+  "sentence": "So ein [[Pech]], das tut mir leid.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bad luck",
+   "options": [
+    "bad luck",
+    "great luck",
+    "bad weather",
+    "hard work"
+   ],
+   "audioClip": {
+    "storySlug": "ein-abend-auf-stumm",
+    "storySource": "user",
+    "sentence": "So ein Pech, das tut mir leid.",
+    "targetWord": "Pech",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "unglücklich",
+  "sentence": "Sie fühlt sich heute [[unglücklich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "unhappy",
+   "options": [
+    "unhappy",
+    "tired",
+    "nervous",
+    "bored"
+   ],
+   "audioClip": {
+    "storySlug": "ein-abend-auf-stumm",
+    "storySource": "user",
+    "sentence": "Sie fühlt sich heute unglücklich.",
+    "targetWord": "unglücklich",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vorbei",
+  "sentence": "Der schöne Abend ist [[vorbei]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "over",
+   "options": [
+    "over",
+    "near",
+    "late",
+    "early"
+   ],
+   "audioClip": {
+    "storySlug": "ein-abend-auf-stumm",
+    "storySource": "user",
+    "sentence": "Der schöne Abend ist vorbei.",
+    "targetWord": "vorbei",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wahrscheinlich",
+  "sentence": "Die anderen sitzen [[wahrscheinlich]] noch zusammen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "probably",
+   "options": [
+    "probably",
+    "never",
+    "already",
+    "rarely"
+   ],
+   "audioClip": {
+    "storySlug": "ein-abend-auf-stumm",
+    "storySource": "user",
+    "sentence": "Die anderen sitzen wahrscheinlich noch zusammen.",
+    "targetWord": "wahrscheinlich",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Wange",
+  "sentence": "Sie drückt das Handy an die [[Wange]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cheek",
+   "options": [
+    "cheek",
+    "chin",
+    "ear",
+    "hand"
+   ],
+   "audioClip": {
+    "storySlug": "ein-abend-auf-stumm",
+    "storySource": "user",
+    "sentence": "Sie drückt das Handy an die Wange.",
+    "targetWord": "Wange",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "treffe",
+  "sentence": "Ich _____ heute Abend Freunde.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "treffe",
+   "options": [
+    "treffe",
+    "rufe",
+    "suche",
+    "frage"
+   ],
+   "translation": "I'm _____ friends this evening.",
+   "optionTranslations": [
+    "meeting",
+    "calling",
+    "looking for",
+    "asking"
+   ],
+   "audioClip": {
+    "storySlug": "ein-abend-auf-stumm",
+    "storySource": "user",
+    "sentence": "Ich treffe heute Abend Freunde.",
+    "targetWord": "treffe",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "speichert",
+  "sentence": "Sie _____ die neue Nummer sofort.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "speichert",
+   "options": [
+    "speichert",
+    "sucht",
+    "löscht",
+    "liest"
+   ],
+   "translation": "She _____ the new number right away.",
+   "optionTranslations": [
+    "saves",
+    "looks for",
+    "deletes",
+    "reads"
+   ],
+   "audioClip": {
+    "storySlug": "ein-abend-auf-stumm",
+    "storySource": "user",
+    "sentence": "Sie speichert die neue Nummer sofort.",
+    "targetWord": "speichert",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "verpasst",
+  "sentence": "Er _____ den wichtigen Anruf.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "verpasst",
+   "options": [
+    "verpasst",
+    "hört",
+    "sucht",
+    "mag"
+   ],
+   "translation": "He _____ the important call.",
+   "optionTranslations": [
+    "misses",
+    "hears",
+    "looks for",
+    "likes"
+   ],
+   "audioClip": {
+    "storySlug": "ein-abend-auf-stumm",
+    "storySource": "user",
+    "sentence": "Er verpasst den wichtigen Anruf.",
+    "targetWord": "verpasst",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

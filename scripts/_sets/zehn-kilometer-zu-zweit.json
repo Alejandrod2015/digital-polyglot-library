@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "das Frachtschiff,die Ziellinie,die Wasserflasche,die Bestzeit",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "das Frachtschiff",
+     "answer": "a cargo ship",
+     "options": [
+      "a cargo ship",
+      "the finish line",
+      "a water bottle",
+      "a best time"
+     ]
+    },
+    {
+     "word": "die Ziellinie",
+     "answer": "the finish line",
+     "options": [
+      "a cargo ship",
+      "the finish line",
+      "a water bottle",
+      "a best time"
+     ]
+    },
+    {
+     "word": "die Wasserflasche",
+     "answer": "a water bottle",
+     "options": [
+      "a cargo ship",
+      "the finish line",
+      "a water bottle",
+      "a best time"
+     ]
+    },
+    {
+     "word": "die Bestzeit",
+     "answer": "a best time",
+     "options": [
+      "a cargo ship",
+      "the finish line",
+      "a water bottle",
+      "a best time"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Diesmal",
+  "sentence": "[[Diesmal]] fängt sie hinten an.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "this time",
+   "options": [
+    "this time",
+    "last time",
+    "next time",
+    "every time"
+   ],
+   "audioClip": {
+    "storySlug": "zehn-kilometer-zu-zweit",
+    "storySource": "user",
+    "sentence": "Diesmal fängt sie hinten an.",
+    "targetWord": "Diesmal",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "plötzlich",
+  "sentence": "Er bleibt [[plötzlich]] stehen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "suddenly",
+   "options": [
+    "suddenly",
+    "slowly",
+    "quietly",
+    "finally"
+   ],
+   "audioClip": {
+    "storySlug": "zehn-kilometer-zu-zweit",
+    "storySource": "user",
+    "sentence": "Er bleibt plötzlich stehen.",
+    "targetWord": "plötzlich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "verzieht",
+  "sentence": "Er hält sein Knie und [[verzieht]] das Gesicht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pulls a face",
+   "options": [
+    "pulls a face",
+    "closes his eyes",
+    "shakes his head",
+    "holds his breath"
+   ],
+   "audioClip": {
+    "storySlug": "zehn-kilometer-zu-zweit",
+    "storySource": "user",
+    "sentence": "Er hält sein Knie und verzieht das Gesicht.",
+    "targetWord": "verzieht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gerade",
+  "sentence": "„Du bist [[gerade]] so gut“, sagt er.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "right now",
+   "options": [
+    "right now",
+    "again",
+    "always",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "zehn-kilometer-zu-zweit",
+    "storySource": "user",
+    "sentence": "„Du bist gerade so gut“, sagt er.",
+    "targetWord": "gerade",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zusammen",
+  "sentence": "„Wir gehen [[zusammen]]“, antwortet sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "together",
+   "options": [
+    "together",
+    "alone",
+    "fast",
+    "slowly"
+   ],
+   "audioClip": {
+    "storySlug": "zehn-kilometer-zu-zweit",
+    "storySource": "user",
+    "sentence": "„Wir gehen zusammen“, antwortet sie.",
+    "targetWord": "zusammen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "entlang",
+  "sentence": "Sie gehen den Rest [[entlang]] am Ufer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "along",
+   "options": [
+    "along",
+    "across",
+    "around",
+    "under"
+   ],
+   "audioClip": {
+    "storySlug": "zehn-kilometer-zu-zweit",
+    "storySource": "user",
+    "sentence": "Sie gehen den Rest entlang am Ufer.",
+    "targetWord": "entlang",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Hochhäusern",
+  "sentence": "Sie gehen unter den [[Hochhäusern]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "high-rises",
+   "options": [
+    "high-rises",
+    "bridges",
+    "trees",
+    "houses"
+   ],
+   "audioClip": {
+    "storySlug": "zehn-kilometer-zu-zweit",
+    "storySource": "user",
+    "sentence": "Sie gehen unter den Hochhäusern.",
+    "targetWord": "Hochhäusern",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Bankenviertel",
+  "sentence": "Sie gehen durch das [[Bankenviertel]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "banking district",
+   "options": [
+    "banking district",
+    "old town",
+    "shopping street",
+    "train station"
+   ],
+   "audioClip": {
+    "storySlug": "zehn-kilometer-zu-zweit",
+    "storySource": "user",
+    "sentence": "Sie gehen durch das Bankenviertel.",
+    "targetWord": "Bankenviertel",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "richtig",
+  "sentence": "Sie lacht [[richtig]] laut.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "really",
+   "options": [
+    "really",
+    "hardly",
+    "rarely",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "zehn-kilometer-zu-zweit",
+    "storySource": "user",
+    "sentence": "Sie lacht richtig laut.",
+    "targetWord": "richtig",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "klatschen",
+  "sentence": "Alle [[klatschen]] für die beiden Letzten.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clap",
+   "options": [
+    "clap",
+    "laugh",
+    "sing",
+    "cheer loudly"
+   ],
+   "audioClip": {
+    "storySlug": "zehn-kilometer-zu-zweit",
+    "storySource": "user",
+    "sentence": "Alle klatschen für die beiden Letzten.",
+    "targetWord": "klatschen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Traurig",
+  "sentence": "„[[Traurig]]?“, fragt sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sad",
+   "options": [
+    "sad",
+    "tired",
+    "hungry",
+    "angry"
+   ],
+   "audioClip": {
+    "storySlug": "zehn-kilometer-zu-zweit",
+    "storySource": "user",
+    "sentence": "„Traurig?“, fragt sie.",
+    "targetWord": "Traurig",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schüttelt",
+  "sentence": "Sie [[schüttelt]] den Kopf.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shakes",
+   "options": [
+    "shakes",
+    "turns",
+    "holds",
+    "nods"
+   ],
+   "audioClip": {
+    "storySlug": "zehn-kilometer-zu-zweit",
+    "storySource": "user",
+    "sentence": "Sie schüttelt den Kopf.",
+    "targetWord": "schüttelt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "flüstert",
+  "sentence": "„Heute war ich neu“, [[flüstert]] sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "whispers",
+   "options": [
+    "whispers",
+    "shouts",
+    "laughs",
+    "sighs"
+   ],
+   "audioClip": {
+    "storySlug": "zehn-kilometer-zu-zweit",
+    "storySource": "user",
+    "sentence": "„Heute war ich neu“, flüstert sie.",
+    "targetWord": "flüstert",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "scheint",
+  "sentence": "Die Sonne _____ hell am Main.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "scheint",
+   "options": [
+    "scheint",
+    "regnet",
+    "brennt",
+    "weht"
+   ],
+   "translation": "The sun _____ brightly by the Main.",
+   "optionTranslations": [
+    "shines",
+    "rains",
+    "burns",
+    "blows"
+   ],
+   "audioClip": {
+    "storySlug": "zehn-kilometer-zu-zweit",
+    "storySource": "user",
+    "sentence": "Die Sonne scheint hell am Main.",
+    "targetWord": "scheint",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "ruft",
+  "sentence": "„Für die Letzten!“, _____ jemand laut.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ruft",
+   "options": [
+    "ruft",
+    "flüstert",
+    "fragt",
+    "denkt"
+   ],
+   "translation": "\"For the last ones!\" someone _____ loudly.",
+   "optionTranslations": [
+    "calls",
+    "whispers",
+    "asks",
+    "thinks"
+   ],
+   "audioClip": {
+    "storySlug": "zehn-kilometer-zu-zweit",
+    "storySource": "user",
+    "sentence": "„Für die Letzten!“, ruft jemand laut.",
+    "targetWord": "ruft",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "großen",
+  "sentence": "Am Ufer wartet eine _____ Gruppe.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "großen",
+   "options": [
+    "großen",
+    "kleinen",
+    "neuen",
+    "stillen"
+   ],
+   "translation": "A _____ group waits by the riverbank.",
+   "optionTranslations": [
+    "large",
+    "small",
+    "new",
+    "quiet"
+   ],
+   "audioClip": {
+    "storySlug": "zehn-kilometer-zu-zweit",
+    "storySource": "user",
+    "sentence": "Am Ufer wartet eine großen Gruppe.",
+    "targetWord": "großen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Apfelkuchen,der Bruder,der Küchentisch,die Lösung",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Apfelkuchen",
+     "answer": "apple cake",
+     "options": [
+      "apple cake",
+      "a brother",
+      "the kitchen table",
+      "a solution"
+     ]
+    },
+    {
+     "word": "der Bruder",
+     "answer": "a brother",
+     "options": [
+      "apple cake",
+      "a brother",
+      "the kitchen table",
+      "a solution"
+     ]
+    },
+    {
+     "word": "der Küchentisch",
+     "answer": "the kitchen table",
+     "options": [
+      "apple cake",
+      "a brother",
+      "the kitchen table",
+      "a solution"
+     ]
+    },
+    {
+     "word": "die Lösung",
+     "answer": "a solution",
+     "options": [
+      "apple cake",
+      "a brother",
+      "the kitchen table",
+      "a solution"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zweimal",
+  "sentence": "Er klopft [[zweimal]] am Tag.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "twice",
+   "options": [
+    "twice",
+    "once",
+    "often",
+    "rarely"
+   ],
+   "audioClip": {
+    "storySlug": "kuchen-von-carolin",
+    "storySource": "user",
+    "sentence": "Er klopft zweimal am Tag.",
+    "targetWord": "zweimal",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "krank",
+  "sentence": "Sie schreibt, sie ist [[krank]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ill",
+   "options": [
+    "ill",
+    "busy",
+    "tired",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "kuchen-von-carolin",
+    "storySource": "user",
+    "sentence": "Sie schreibt, sie ist krank.",
+    "targetWord": "krank",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ausrede",
+  "sentence": "Das ist nur eine [[Ausrede]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "excuse",
+   "options": [
+    "excuse",
+    "secret",
+    "story",
+    "question"
+   ],
+   "audioClip": {
+    "storySlug": "kuchen-von-carolin",
+    "storySource": "user",
+    "sentence": "Das ist nur eine Ausrede.",
+    "targetWord": "Ausrede",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Mittwochabend",
+  "sentence": "Am [[Mittwochabend]] klingelt es.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Wednesday evening",
+   "options": [
+    "Wednesday evening",
+    "Monday morning",
+    "Friday night",
+    "Sunday afternoon"
+   ],
+   "audioClip": {
+    "storySlug": "kuchen-von-carolin",
+    "storySource": "user",
+    "sentence": "Am Mittwochabend klingelt es.",
+    "targetWord": "Mittwochabend",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "reinkommen",
+  "sentence": "„Darf ich [[reinkommen]]?“",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "come in",
+   "options": [
+    "come in",
+    "stay outside",
+    "go home",
+    "call back"
+   ],
+   "audioClip": {
+    "storySlug": "kuchen-von-carolin",
+    "storySource": "user",
+    "sentence": "„Darf ich reinkommen?“",
+    "targetWord": "reinkommen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "selten",
+  "sentence": "Mein Bruder weint [[selten]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rarely",
+   "options": [
+    "rarely",
+    "often",
+    "loudly",
+    "quickly"
+   ],
+   "audioClip": {
+    "storySlug": "kuchen-von-carolin",
+    "storySource": "user",
+    "sentence": "Mein Bruder weint selten.",
+    "targetWord": "selten",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "umgezogen",
+  "sentence": "Sein bester Freund ist nach Berlin [[umgezogen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "moved",
+   "options": [
+    "moved",
+    "travelled",
+    "written",
+    "called"
+   ],
+   "audioClip": {
+    "storySlug": "kuchen-von-carolin",
+    "storySource": "user",
+    "sentence": "Sein bester Freund ist nach Berlin umgezogen.",
+    "targetWord": "umgezogen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "monatelang",
+  "sentence": "Er war [[monatelang]] allein.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "for months",
+   "options": [
+    "for months",
+    "for years",
+    "for hours",
+    "for weeks"
+   ],
+   "audioClip": {
+    "storySlug": "kuchen-von-carolin",
+    "storySource": "user",
+    "sentence": "Er war monatelang allein.",
+    "targetWord": "monatelang",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "geworden",
+  "sentence": "Ihr Ärger ist kleiner [[geworden]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "become",
+   "options": [
+    "become",
+    "stayed",
+    "made",
+    "gone"
+   ],
+   "audioClip": {
+    "storySlug": "kuchen-von-carolin",
+    "storySource": "user",
+    "sentence": "Ihr Ärger ist kleiner geworden.",
+    "targetWord": "geworden",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ähnlich",
+  "sentence": "Sie und er sind sich [[ähnlich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "alike",
+   "options": [
+    "alike",
+    "strange",
+    "different",
+    "angry"
+   ],
+   "audioClip": {
+    "storySlug": "kuchen-von-carolin",
+    "storySource": "user",
+    "sentence": "Sie und er sind sich ähnlich.",
+    "targetWord": "ähnlich",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "klug",
+  "sentence": "„Du bist doch [[klug]]“, sagt sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clever",
+   "options": [
+    "clever",
+    "tired",
+    "quiet",
+    "shy"
+   ],
+   "audioClip": {
+    "storySlug": "kuchen-von-carolin",
+    "storySource": "user",
+    "sentence": "„Du bist doch klug“, sagt sie.",
+    "targetWord": "klug",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "verlieren",
+  "sentence": "Sie will ihn nicht [[verlieren]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lose",
+   "options": [
+    "lose",
+    "find",
+    "forget",
+    "hurt"
+   ],
+   "audioClip": {
+    "storySlug": "kuchen-von-carolin",
+    "storySource": "user",
+    "sentence": "Sie will ihn nicht verlieren.",
+    "targetWord": "verlieren",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "leer",
+  "sentence": "Bald ist der Teller [[leer]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "empty",
+   "options": [
+    "empty",
+    "full",
+    "clean",
+    "warm"
+   ],
+   "audioClip": {
+    "storySlug": "kuchen-von-carolin",
+    "storySource": "user",
+    "sentence": "Bald ist der Teller leer.",
+    "targetWord": "leer",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "streiten",
+  "sentence": "Ich will nicht mit dir _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "streiten",
+   "options": [
+    "streiten",
+    "reden",
+    "spielen",
+    "kochen"
+   ],
+   "translation": "I don't want to _____ with you.",
+   "optionTranslations": [
+    "argue",
+    "talk",
+    "play",
+    "cook"
+   ],
+   "audioClip": {
+    "storySlug": "kuchen-von-carolin",
+    "storySource": "user",
+    "sentence": "Ich will nicht mit dir streiten.",
+    "targetWord": "streiten",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "teilen",
+  "sentence": "Sie _____ den Kuchen am Tisch.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "teilen",
+   "options": [
+    "teilen",
+    "backen",
+    "kaufen",
+    "suchen"
+   ],
+   "translation": "They _____ the cake at the table.",
+   "optionTranslations": [
+    "share",
+    "bake",
+    "buy",
+    "look for"
+   ],
+   "audioClip": {
+    "storySlug": "kuchen-von-carolin",
+    "storySource": "user",
+    "sentence": "Sie teilen den Kuchen am Tisch.",
+    "targetWord": "teilen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "verlässt",
+  "sentence": "Er hat Angst, dass du Frankfurt _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "verlässt",
+   "options": [
+    "verlässt",
+    "besuchst",
+    "magst",
+    "findest"
+   ],
+   "translation": "He's afraid you'll _____ Frankfurt.",
+   "optionTranslations": [
+    "leave",
+    "visit",
+    "like",
+    "find"
+   ],
+   "audioClip": {
+    "storySlug": "kuchen-von-carolin",
+    "storySource": "user",
+    "sentence": "Er hat Angst, dass du Frankfurt verlässt.",
+    "targetWord": "verlässt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

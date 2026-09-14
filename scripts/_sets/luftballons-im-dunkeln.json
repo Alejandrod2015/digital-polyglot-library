@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Handkäse,das Lieblingsessen,der Klingelton,die Jogginghose",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Handkäse",
+     "answer": "a strong cheese",
+     "options": [
+      "a strong cheese",
+      "favourite food",
+      "a ringtone",
+      "tracksuit bottoms"
+     ]
+    },
+    {
+     "word": "das Lieblingsessen",
+     "answer": "favourite food",
+     "options": [
+      "a strong cheese",
+      "favourite food",
+      "a ringtone",
+      "tracksuit bottoms"
+     ]
+    },
+    {
+     "word": "der Klingelton",
+     "answer": "a ringtone",
+     "options": [
+      "a strong cheese",
+      "favourite food",
+      "a ringtone",
+      "tracksuit bottoms"
+     ]
+    },
+    {
+     "word": "die Jogginghose",
+     "answer": "tracksuit bottoms",
+     "options": [
+      "a strong cheese",
+      "favourite food",
+      "a ringtone",
+      "tracksuit bottoms"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "grüne",
+  "sentence": "Er trägt eine [[grüne]] Jacke.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "green",
+   "options": [
+    "green",
+    "blue",
+    "red",
+    "black"
+   ],
+   "audioClip": {
+    "storySlug": "luftballons-im-dunkeln",
+    "storySource": "user",
+    "sentence": "Er trägt eine grüne Jacke.",
+    "targetWord": "grüne",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "halb",
+  "sentence": "Um [[halb]] acht ist die Party.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "half",
+   "options": [
+    "half",
+    "quarter",
+    "almost",
+    "after"
+   ],
+   "audioClip": {
+    "storySlug": "luftballons-im-dunkeln",
+    "storySource": "user",
+    "sentence": "Um halb acht ist die Party.",
+    "targetWord": "halb",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "heimlich",
+  "sentence": "Sie sitzen [[heimlich]] im Dunkeln.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "secretly",
+   "options": [
+    "secretly",
+    "loudly",
+    "slowly",
+    "together"
+   ],
+   "audioClip": {
+    "storySlug": "luftballons-im-dunkeln",
+    "storySource": "user",
+    "sentence": "Sie sitzen heimlich im Dunkeln.",
+    "targetWord": "heimlich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Dunkeln",
+  "sentence": "Alle warten im [[Dunkeln]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the dark",
+   "options": [
+    "the dark",
+    "the rain",
+    "the cold",
+    "the sun"
+   ],
+   "audioClip": {
+    "storySlug": "luftballons-im-dunkeln",
+    "storySource": "user",
+    "sentence": "Alle warten im Dunkeln.",
+    "targetWord": "Dunkeln",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "selbst",
+  "sentence": "Ich koche das Essen [[selbst]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "myself",
+   "options": [
+    "myself",
+    "together",
+    "again",
+    "later"
+   ],
+   "audioClip": {
+    "storySlug": "luftballons-im-dunkeln",
+    "storySource": "user",
+    "sentence": "Ich koche das Essen selbst.",
+    "targetWord": "selbst",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wenig",
+  "sentence": "Sie hat nur [[wenig]] Zeit.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a little",
+   "options": [
+    "a little",
+    "a lot",
+    "enough",
+    "no"
+   ],
+   "audioClip": {
+    "storySlug": "luftballons-im-dunkeln",
+    "storySource": "user",
+    "sentence": "Sie hat nur wenig Zeit.",
+    "targetWord": "wenig",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "kichert",
+  "sentence": "Jemand [[kichert]] leise hinter der Tür.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "giggles",
+   "options": [
+    "giggles",
+    "cries",
+    "sleeps",
+    "sneezes"
+   ],
+   "audioClip": {
+    "storySlug": "luftballons-im-dunkeln",
+    "storySource": "user",
+    "sentence": "Jemand kichert leise hinter der Tür.",
+    "targetWord": "kichert",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "komisch",
+  "sentence": "Das war wirklich [[komisch]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "strange",
+   "options": [
+    "strange",
+    "normal",
+    "clear",
+    "easy"
+   ],
+   "audioClip": {
+    "storySlug": "luftballons-im-dunkeln",
+    "storySource": "user",
+    "sentence": "Das war wirklich komisch.",
+    "targetWord": "komisch",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "eigentlich",
+  "sentence": "Was ist [[eigentlich]] los mit dir?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "actually",
+   "options": [
+    "actually",
+    "never",
+    "already",
+    "still"
+   ],
+   "audioClip": {
+    "storySlug": "luftballons-im-dunkeln",
+    "storySource": "user",
+    "sentence": "Was ist eigentlich los mit dir?",
+    "targetWord": "eigentlich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ordnung",
+  "sentence": "Ist bei dir alles in [[Ordnung]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "order",
+   "options": [
+    "order",
+    "danger",
+    "trouble",
+    "secret"
+   ],
+   "audioClip": {
+    "storySlug": "luftballons-im-dunkeln",
+    "storySource": "user",
+    "sentence": "Ist bei dir alles in Ordnung?",
+    "targetWord": "Ordnung",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lustig",
+  "sentence": "Der Klingelton ist sehr [[lustig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "funny",
+   "options": [
+    "funny",
+    "loud",
+    "old",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "luftballons-im-dunkeln",
+    "storySource": "user",
+    "sentence": "Der Klingelton ist sehr lustig.",
+    "targetWord": "lustig",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "barfuß",
+  "sentence": "Er steht [[barfuß]] im Flur.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "barefoot",
+   "options": [
+    "barefoot",
+    "dressed",
+    "tired",
+    "cold"
+   ],
+   "audioClip": {
+    "storySlug": "luftballons-im-dunkeln",
+    "storySource": "user",
+    "sentence": "Er steht barfuß im Flur.",
+    "targetWord": "barfuß",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Hallo",
+  "sentence": "„[[Hallo]], Nachbarin!“, sagt er.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hello",
+   "options": [
+    "hello",
+    "goodbye",
+    "sorry",
+    "thanks"
+   ],
+   "audioClip": {
+    "storySlug": "luftballons-im-dunkeln",
+    "storySource": "user",
+    "sentence": "„Hallo, Nachbarin!“, sagt er.",
+    "targetWord": "Hallo",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "sagt",
+  "sentence": "Er _____ nichts und geht schnell weg.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sagt",
+   "options": [
+    "sagt",
+    "hört",
+    "sieht",
+    "fragt"
+   ],
+   "translation": "He _____ nothing and quickly walks away.",
+   "optionTranslations": [
+    "says",
+    "hears",
+    "sees",
+    "asks"
+   ],
+   "audioClip": {
+    "storySlug": "luftballons-im-dunkeln",
+    "storySource": "user",
+    "sentence": "Er sagt nichts und geht schnell weg.",
+    "targetWord": "sagt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "soll",
+  "sentence": "Was _____ ich jetzt nur tun?",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "soll",
+   "options": [
+    "soll",
+    "kann",
+    "will",
+    "muss"
+   ],
+   "translation": "What _____ I do now?",
+   "optionTranslations": [
+    "should",
+    "can",
+    "want to",
+    "must"
+   ],
+   "audioClip": {
+    "storySlug": "luftballons-im-dunkeln",
+    "storySource": "user",
+    "sentence": "Was soll ich jetzt nur tun?",
+    "targetWord": "soll",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "warten",
+  "sentence": "Wir müssen jetzt kurz _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "warten",
+   "options": [
+    "warten",
+    "gehen",
+    "essen",
+    "schlafen"
+   ],
+   "translation": "We have to _____ for a moment now.",
+   "optionTranslations": [
+    "wait",
+    "go",
+    "eat",
+    "sleep"
+   ],
+   "audioClip": {
+    "storySlug": "luftballons-im-dunkeln",
+    "storySource": "user",
+    "sentence": "Wir müssen jetzt kurz warten.",
+    "targetWord": "warten",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

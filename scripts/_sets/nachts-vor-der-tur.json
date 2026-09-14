@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "das Hundebett,der Freitagabend,der Park,gemütlich",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "das Hundebett",
+     "answer": "a dog bed",
+     "options": [
+      "a dog bed",
+      "Friday evening",
+      "a park",
+      "cosy and relaxed"
+     ]
+    },
+    {
+     "word": "der Freitagabend",
+     "answer": "Friday evening",
+     "options": [
+      "a dog bed",
+      "Friday evening",
+      "a park",
+      "cosy and relaxed"
+     ]
+    },
+    {
+     "word": "der Park",
+     "answer": "a park",
+     "options": [
+      "a dog bed",
+      "Friday evening",
+      "a park",
+      "cosy and relaxed"
+     ]
+    },
+    {
+     "word": "gemütlich",
+     "answer": "cosy and relaxed",
+     "options": [
+      "a dog bed",
+      "Friday evening",
+      "a park",
+      "cosy and relaxed"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bellt",
+  "sentence": "Der Hund [[bellt]] laut bei Katzen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "barks",
+   "options": [
+    "barks",
+    "sleeps",
+    "eats",
+    "runs"
+   ],
+   "audioClip": {
+    "storySlug": "nachts-vor-der-tur",
+    "storySource": "user",
+    "sentence": "Der Hund bellt laut bei Katzen.",
+    "targetWord": "bellt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "liegt",
+  "sentence": "Der Hund [[liegt]] vor der Tür.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lies",
+   "options": [
+    "lies",
+    "sits",
+    "stands",
+    "jumps"
+   ],
+   "audioClip": {
+    "storySlug": "nachts-vor-der-tur",
+    "storySource": "user",
+    "sentence": "Der Hund liegt vor der Tür.",
+    "targetWord": "liegt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sitzt",
+  "sentence": "Sie [[sitzt]] auf dem Sofa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sits",
+   "options": [
+    "sits",
+    "lies",
+    "stands",
+    "sleeps"
+   ],
+   "audioClip": {
+    "storySlug": "nachts-vor-der-tur",
+    "storySource": "user",
+    "sentence": "Sie sitzt auf dem Sofa.",
+    "targetWord": "sitzt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Später",
+  "sentence": "[[Später]] klopft er an die Tür.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "later",
+   "options": [
+    "later",
+    "earlier",
+    "now",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "nachts-vor-der-tur",
+    "storySource": "user",
+    "sentence": "Später klopft er an die Tür.",
+    "targetWord": "Später",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "klopft",
+  "sentence": "Jemand [[klopft]] leise an die Tür.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "knocks",
+   "options": [
+    "knocks",
+    "rings",
+    "waits",
+    "opens"
+   ],
+   "audioClip": {
+    "storySlug": "nachts-vor-der-tur",
+    "storySource": "user",
+    "sentence": "Jemand klopft leise an die Tür.",
+    "targetWord": "klopft",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "leise",
+  "sentence": "Der Hund jault ganz [[leise]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quietly",
+   "options": [
+    "quietly",
+    "loudly",
+    "happily",
+    "angrily"
+   ],
+   "audioClip": {
+    "storySlug": "nachts-vor-der-tur",
+    "storySource": "user",
+    "sentence": "Der Hund jault ganz leise.",
+    "targetWord": "leise",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nass",
+  "sentence": "Die Hundenase ist [[nass]] und warm.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wet",
+   "options": [
+    "wet",
+    "dry",
+    "cold",
+    "warm"
+   ],
+   "audioClip": {
+    "storySlug": "nachts-vor-der-tur",
+    "storySource": "user",
+    "sentence": "Die Hundenase ist nass und warm.",
+    "targetWord": "nass",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rennt",
+  "sentence": "Der Hund [[rennt]] schnell zur Katze.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "runs",
+   "options": [
+    "runs",
+    "walks",
+    "sits",
+    "waits"
+   ],
+   "audioClip": {
+    "storySlug": "nachts-vor-der-tur",
+    "storySource": "user",
+    "sentence": "Der Hund rennt schnell zur Katze.",
+    "targetWord": "rennt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "weiche",
+  "sentence": "Sie streichelt das [[weiche]] Fell.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "soft",
+   "options": [
+    "soft",
+    "hard",
+    "wet",
+    "thin"
+   ],
+   "audioClip": {
+    "storySlug": "nachts-vor-der-tur",
+    "storySource": "user",
+    "sentence": "Sie streichelt das weiche Fell.",
+    "targetWord": "weiche",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "allein",
+  "sentence": "Sie geht [[allein]] in den Park.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "alone",
+   "options": [
+    "alone",
+    "early",
+    "fast",
+    "quietly"
+   ],
+   "audioClip": {
+    "storySlug": "nachts-vor-der-tur",
+    "storySource": "user",
+    "sentence": "Sie geht allein in den Park.",
+    "targetWord": "allein",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gut",
+  "sentence": "„Alles [[gut]]?“, fragt er.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fine",
+   "options": [
+    "fine",
+    "new",
+    "easy",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "nachts-vor-der-tur",
+    "storySource": "user",
+    "sentence": "„Alles gut?“, fragt er.",
+    "targetWord": "gut",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schnell",
+  "sentence": "Der Hund rennt sehr [[schnell]] los.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fast",
+   "options": [
+    "fast",
+    "slowly",
+    "far",
+    "quietly"
+   ],
+   "audioClip": {
+    "storySlug": "nachts-vor-der-tur",
+    "storySource": "user",
+    "sentence": "Der Hund rennt sehr schnell los.",
+    "targetWord": "schnell",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "streichelt",
+  "sentence": "Nach einer Stunde [[streichelt]] sie den Hund.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "strokes",
+   "options": [
+    "strokes",
+    "washes",
+    "holds",
+    "feeds"
+   ],
+   "audioClip": {
+    "storySlug": "nachts-vor-der-tur",
+    "storySource": "user",
+    "sentence": "Nach einer Stunde streichelt sie den Hund.",
+    "targetWord": "streichelt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "bringt",
+  "sentence": "Er _____ am Freitag den Hund.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bringt",
+   "options": [
+    "bringt",
+    "holt",
+    "sucht",
+    "füttert"
+   ],
+   "translation": "He _____ the dog on Friday.",
+   "optionTranslations": [
+    "brings",
+    "fetches",
+    "looks for",
+    "feeds"
+   ],
+   "audioClip": {
+    "storySlug": "nachts-vor-der-tur",
+    "storySource": "user",
+    "sentence": "Er bringt am Freitag den Hund.",
+    "targetWord": "bringt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "erklärt",
+  "sentence": "Er _____ ihr die Regeln kurz.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "erklärt",
+   "options": [
+    "erklärt",
+    "fragt",
+    "zeigt",
+    "erzählt"
+   ],
+   "translation": "He briefly _____ the rules to her.",
+   "optionTranslations": [
+    "explains",
+    "asks",
+    "shows",
+    "tells"
+   ],
+   "audioClip": {
+    "storySlug": "nachts-vor-der-tur",
+    "storySource": "user",
+    "sentence": "Er erklärt ihr die Regeln kurz.",
+    "targetWord": "erklärt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "bewegt",
+  "sentence": "Sie sitzt still und _____ sich kaum.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bewegt",
+   "options": [
+    "bewegt",
+    "setzt",
+    "fühlt",
+    "fragt"
+   ],
+   "translation": "She sits still and hardly _____.",
+   "optionTranslations": [
+    "moves",
+    "sits down",
+    "feels",
+    "asks"
+   ],
+   "audioClip": {
+    "storySlug": "nachts-vor-der-tur",
+    "storySource": "user",
+    "sentence": "Sie sitzt still und bewegt sich kaum.",
+    "targetWord": "bewegt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]
