@@ -1,0 +1,452 @@
+[
+  {
+    "topic": "repairs-and-diy",
+    "slotIndex": 0,
+    "title": "Tre gambe e mezzo",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "The dog chews the leg of an old chair that belonged to Elisa's mother. Davide promises to repair it himself. In the courtyard there is Tommaso, an expert carpenter, who gives Davide good advice, but Davide wants to do everything alone and says no thanks.",
+    "text": "Elisa è tornata tardi dal volo e accende la lampada in cucina, ma la luce è debole. Sul pavimento ci sono pezzi di legno: la vecchia sedia di sua madre ha una gamba rotta, e cade appena la tocca.\n\nDavide è salito subito. Nella bottega del cortile c'è Tommaso, un falegname molto esperto. Ma Davide è sicuro e ha deciso: fa tutto da solo.\n\n“È un ricordo di mia madre. Per me è preziosa,” dice Elisa, e tocca la gamba con attenzione. “La aggiusto io. Sono capace,” risponde Davide. “Forse è difficile, e costa troppo se sbagli,” dice lei.\n\nIl giorno dopo passano davanti alla bottega. Tommaso li saluta e dà un consiglio: “È legno antico. Servono gli strumenti giusti e un metro.” “Grazie, ma faccio io,” risponde Davide. “Allora buona fortuna,” dice Tommaso.\n\nElisa ha il cuore pesante, perché quella sedia è l'unico ricordo di sua madre. Ma Davide è felice, e lei sorride.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "accendere",
+        "surface": "accende",
+        "definition": "To switch on, for example a light or a lamp.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la lampada",
+        "surface": "lampada",
+        "definition": "A lamp; a small light for a room or a table.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la gamba",
+        "surface": "gamba",
+        "definition": "A leg; here, one of the legs of a chair.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "rompere",
+        "surface": "rotta",
+        "definition": "To break; here, the leg of the chair is broken.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "cadere",
+        "surface": "cade",
+        "definition": "To fall down to the floor, for example from a chair.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la bottega",
+        "surface": "bottega",
+        "definition": "A small workshop where a craftsman makes and repairs things.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "il falegname",
+        "surface": "falegname",
+        "definition": "A carpenter; a person who works with wood.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "esperto",
+        "surface": "esperto",
+        "definition": "An expert; a person who knows a job very well.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "sicuro",
+        "surface": "sicuro",
+        "definition": "Sure; you have no doubts at all about something.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "debole",
+        "surface": "debole",
+        "definition": "Weak; not strong, like a light that is not bright.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "aggiustare",
+        "surface": "aggiusto",
+        "definition": "To fix; to make something that is broken work again.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "capace",
+        "surface": "capace",
+        "definition": "Able; you know how to do something well.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "passare",
+        "surface": "passano",
+        "definition": "To pass; to go past a place without stopping.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il consiglio",
+        "surface": "consiglio",
+        "definition": "A piece of advice; an idea that helps someone decide.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "antico",
+        "surface": "antico",
+        "definition": "Very old; made a long time ago, many years back.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "lo strumento",
+        "surface": "strumenti",
+        "definition": "A tool; something you use with your hands for a job.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il metro",
+        "surface": "metro",
+        "definition": "A tape measure; you use it to measure things.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la fortuna",
+        "surface": "fortuna",
+        "definition": "Luck; good things that happen to you by chance.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "pesante",
+        "surface": "pesante",
+        "definition": "Heavy; here, a sad heart that feels heavy.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "unico",
+        "surface": "unico",
+        "definition": "Only; there is not another one like it.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "repairs-and-diy",
+    "slotIndex": 1,
+    "title": "Davide prende il trapano",
+    "arcType": "reframe-turn",
+    "synopsis": "Davide tries to fix the chair with a drill, some screws and a video on his phone. Every step makes the leg worse, and after three hours it is in two pieces. Tired and sorry, Davide takes the pieces and goes down to ask Tommaso for help.",
+    "text": "Domenica pomeriggio, davanti a Elisa, Davide prende il trapano e una scatola di viti. Guarda un video sul telefono e lo segue, punto per punto. Intanto il cane scappa dentro l'armadio.\n\n“Hai fatto le parti uguali?” chiede Elisa. “Non serve. Il video mostra tutto,” risponde Davide. Poi spinge una vite corta nel legno morbido.\n\nIl buco prima è stretto, poi è troppo largo. “Stai attento. Adesso è peggio,” dice Elisa, lentamente.\n\nDavide ha provato per tre ore, ma non riesce. La gamba si muove ancora, e la cucina pulita è piena di polvere. “Non funziona. È quasi impossibile,” dice lui, e si siede per terra, stanco.\n\nElisa ride e piange insieme. “Il tuo video è inutile. Hai sbagliato tutto,” dice. “Scusa. Forse non sono abbastanza bravo,” risponde Davide.\n\nPoi Davide si alza e prende i pezzi. “Andiamo da Tommaso. Ormai è l'unica soluzione,” dice. Scendono insieme le scale, e il cane li segue piano.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "il trapano",
+        "surface": "trapano",
+        "definition": "A drill; a tool that makes holes in wood or walls.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la vite",
+        "surface": "viti",
+        "definition": "A screw; a small piece of metal that holds wood together.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "il video",
+        "surface": "video",
+        "definition": "A short film you watch on a phone or computer.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "seguire",
+        "surface": "segue",
+        "definition": "To follow; to do the same things in the same order.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il punto",
+        "surface": "punto",
+        "definition": "A point; here, punto per punto means step by step.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "mostrare",
+        "surface": "mostra",
+        "definition": "To show; to let someone see how to do something.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "spingere",
+        "surface": "spinge",
+        "definition": "To push; to press something forward with force.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "corto",
+        "surface": "corta",
+        "definition": "Short; not long enough for the job he wants to do.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "morbido",
+        "surface": "morbido",
+        "definition": "Soft; not hard when you press or touch it.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "stretto",
+        "surface": "stretto",
+        "definition": "Narrow; with very little space inside it, too small.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "largo",
+        "surface": "largo",
+        "definition": "Wide; with a lot of space, too big.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "attento",
+        "surface": "attento",
+        "definition": "Careful; you pay attention so nothing bad happens.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "peggio",
+        "surface": "peggio",
+        "definition": "Worse; more bad than it was before, not better.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "lentamente",
+        "surface": "lentamente",
+        "definition": "Slowly; not fast, one word after the other.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "riuscire",
+        "surface": "riesce",
+        "definition": "To manage; to be able to do something difficult.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "muovere",
+        "surface": "muove",
+        "definition": "To move; to change position, not stay still.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "pulito",
+        "surface": "pulita",
+        "definition": "Clean; not dirty, washed and nice to see.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "funzionare",
+        "surface": "funziona",
+        "definition": "To work; here, the plan or the machine does not work.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "quasi",
+        "surface": "quasi",
+        "definition": "Almost; nearly, but not completely, only a little missing.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "abbastanza",
+        "surface": "abbastanza",
+        "definition": "Enough; as much as you need, not less.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "repairs-and-diy",
+    "slotIndex": 2,
+    "title": "Una gamba diversa",
+    "arcType": "harmonic-close",
+    "synopsis": "In his workshop Tommaso teaches Davide how to build a new leg for the chair. The new wood is lighter and different from the old wood. The chair stands again, not the same as before, and this time the dog only smells the new leg.",
+    "text": "Nella bottega Elisa sente odore di legno e di colla. Tommaso guarda i pezzi e ride. “Chi ha lavorato qui? Un cane o un postino?” chiede. “Tutti e due,” risponde Davide, rosso.\n\n“La gamba vecchia è persa. Costruiamo una gamba nuova. Io riparo sedie da vent'anni,” dice Tommaso. Oggi lui è il maestro: insegna, e Davide impara a tagliare.\n\n“Tagliare è pericoloso?” chiede Elisa. “Solo senza attenzione,” risponde Tommaso, e ha preso un coltello. La sua lezione è lenta e chiara.\n\nAlla fine hanno finito: la sedia sta in piedi. Tre gambe sono marroni, e una è chiara e diversa. “Che sorpresa!” dice Elisa. “Adesso la sedia ha la vostra storia,” risponde Tommaso.\n\nIl legno nuovo è liscio e leggero, e il vecchio è ruvido. “Il legno è vivo,” dice lui. Per un momento Elisa si siede sulla sedia, e la sedia tiene. Invece il cane annusa la gamba nuova e non la morde.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "la colla",
+        "surface": "colla",
+        "definition": "Glue; a thick liquid that sticks two things together.",
+        "anchor": true
+      },
+      {
+        "type": "adverb",
+        "word": "invece",
+        "surface": "Invece",
+        "definition": "Instead; we do this, and not the other thing.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "costruire",
+        "surface": "Costruiamo",
+        "definition": "To build; to make something new from pieces.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "riparare",
+        "surface": "riparo",
+        "definition": "To repair; to fix something that is broken.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il maestro",
+        "surface": "maestro",
+        "definition": "A master or teacher; a person who teaches a skill.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "imparare",
+        "surface": "impara",
+        "definition": "To learn; to get a new skill or new knowledge.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "tagliare",
+        "surface": "tagliare",
+        "definition": "To cut; to divide something with a knife or a saw.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il coltello",
+        "surface": "coltello",
+        "definition": "A knife; a tool with a sharp side for cutting.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la lezione",
+        "surface": "lezione",
+        "definition": "A lesson; a time when someone teaches you something.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "lento",
+        "surface": "lenta",
+        "definition": "Slow; not fast, so you can follow every step.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "chiaro",
+        "surface": "chiara",
+        "definition": "Clear or light in colour; easy to understand or see.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "diverso",
+        "surface": "diversa",
+        "definition": "Different; not the same as the other one.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "liscio",
+        "surface": "liscio",
+        "definition": "Smooth; with no rough parts when you touch it.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "leggero",
+        "surface": "leggero",
+        "definition": "Light; not heavy, so it is easy to lift.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "ruvido",
+        "surface": "ruvido",
+        "definition": "Rough; not smooth at all when you touch it.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "marrone",
+        "surface": "marroni",
+        "definition": "Brown; the colour of wood, coffee or chocolate.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la sorpresa",
+        "surface": "sorpresa",
+        "definition": "A surprise; something that you do not expect to see.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il momento",
+        "surface": "momento",
+        "definition": "A moment; a very short time, just a few seconds.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "insegnare",
+        "surface": "insegna",
+        "definition": "To teach; to show someone how to do something.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "vivo",
+        "surface": "vivo",
+        "definition": "Alive; here, wood that still changes and moves a little.",
+        "anchor": false
+      }
+    ]
+  }
+]
