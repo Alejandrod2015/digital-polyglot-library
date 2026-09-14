@@ -678,6 +678,266 @@ function deConjuga(inf: string, tiempo: Tiempo): string[] | null {
   return deDebil(inf, tiempo);
 }
 
+// ── Francés ──────────────────────────────────────────────────────────────
+// Presente e imperfecto. El passé simple es literario y el passé composé son
+// dos palabras (auxiliar + participio): ninguno de los dos se conjuga aqui, y
+// el participio suelto (`ouvert`, `fini`) se queda sin bloque.
+//
+// El frances tiene dos trampas que las otras lenguas de este fichero no:
+//
+//   1. Los -ir son DOS conjugaciones que la forma no distingue: finir mete
+//      -iss- (finissons) y partir pierde la consonante (je pars). Solo se
+//      conjugan los que estan en una de las dos listas; el resto, sin bloque.
+//   2. En -er, las cuatro personas tonicas COINCIDEN en la escritura (parle,
+//      parles, parle, parlent). Que fila se enciende lo decide el sujeto que
+//      tiene delante en el texto, no la forma. Ver `filaFrancesa`.
+const FR_PERSONAS = ["je", "tu", "il, elle, on", "nous", "vous", "ils, elles"];
+
+/** Irregulares del presente, enteros. `être` va el PRIMERO: `suis` es tambien
+ *  la primera de `suivre`, y en el indice gana quien entra antes. */
+const FR_IRR: Record<string, string[]> = {
+  être:     ["suis","es","est","sommes","êtes","sont"],
+  avoir:    ["ai","as","a","avons","avez","ont"],
+  aller:    ["vais","vas","va","allons","allez","vont"],
+  faire:    ["fais","fais","fait","faisons","faites","font"],
+  dire:     ["dis","dis","dit","disons","dites","disent"],
+  pouvoir:  ["peux","peux","peut","pouvons","pouvez","peuvent"],
+  vouloir:  ["veux","veux","veut","voulons","voulez","veulent"],
+  devoir:   ["dois","dois","doit","devons","devez","doivent"],
+  savoir:   ["sais","sais","sait","savons","savez","savent"],
+  voir:     ["vois","vois","voit","voyons","voyez","voient"],
+  revoir:   ["revois","revois","revoit","revoyons","revoyez","revoient"],
+  prévoir:  ["prévois","prévois","prévoit","prévoyons","prévoyez","prévoient"],
+  recevoir: ["reçois","reçois","reçoit","recevons","recevez","reçoivent"],
+  apercevoir:["aperçois","aperçois","aperçoit","apercevons","apercevez","aperçoivent"],
+  décevoir: ["déçois","déçois","déçoit","décevons","décevez","déçoivent"],
+  boire:    ["bois","bois","boit","buvons","buvez","boivent"],
+  croire:   ["crois","crois","croit","croyons","croyez","croient"],
+  lire:     ["lis","lis","lit","lisons","lisez","lisent"],
+  relire:   ["relis","relis","relit","relisons","relisez","relisent"],
+  écrire:   ["écris","écris","écrit","écrivons","écrivez","écrivent"],
+  décrire:  ["décris","décris","décrit","décrivons","décrivez","décrivent"],
+  inscrire: ["inscris","inscris","inscrit","inscrivons","inscrivez","inscrivent"],
+  rire:     ["ris","ris","rit","rions","riez","rient"],
+  sourire:  ["souris","souris","sourit","sourions","souriez","sourient"],
+  suivre:   ["suis","suis","suit","suivons","suivez","suivent"],
+  poursuivre:["poursuis","poursuis","poursuit","poursuivons","poursuivez","poursuivent"],
+  vivre:    ["vis","vis","vit","vivons","vivez","vivent"],
+  survivre: ["survis","survis","survit","survivons","survivez","survivent"],
+  plaire:   ["plais","plais","plaît","plaisons","plaisez","plaisent"],
+  envoyer:  ["envoie","envoies","envoie","envoyons","envoyez","envoient"],
+  renvoyer: ["renvoie","renvoies","renvoie","renvoyons","renvoyez","renvoient"],
+  asseoir:  ["assieds","assieds","assied","asseyons","asseyez","asseyent"],
+  valoir:   ["vaux","vaux","vaut","valons","valez","valent"],
+  fuir:     ["fuis","fuis","fuit","fuyons","fuyez","fuient"],
+  mourir:   ["meurs","meurs","meurt","mourons","mourez","meurent"],
+  conclure: ["conclus","conclus","conclut","concluons","concluez","concluent"],
+  naître:   ["nais","nais","naît","naissons","naissez","naissent"],
+};
+
+/** -ir de la SEGUNDA conjugacion (finir). Nombrados uno a uno: la forma no
+ *  dice si un -ir mete -iss-. */
+const FR_IR_ISS = new Set([
+  "finir","choisir","réussir","grandir","remplir","réfléchir","rougir","obéir","agir","bâtir",
+  "saisir","nourrir","guérir","punir","établir","unir","réunir","avertir","applaudir","maigrir",
+  "grossir","vieillir","ralentir","investir","fournir","franchir","envahir","garantir","jaillir",
+  "noircir","pâlir","rafraîchir","accomplir","atterrir","blanchir","démolir","élargir","épanouir",
+  "frémir","gémir","trahir","vomir","raccourcir","rugir","subir","surgir","adoucir","affaiblir",
+  "approfondir","définir","durcir","éclaircir","embellir","enrichir","étourdir","fleurir","ravir",
+  "rétablir","salir","ternir","abolir","aboutir","alourdir","amortir","anéantir",
+  "arrondir","assainir","assouplir","assombrir","attendrir","bondir","brunir","chérir","convertir",
+  "divertir","engloutir","enfouir","évanouir","gravir","hennir",
+  "munir","obscurcir","périr","pourrir","raidir","rajeunir","refroidir","réjouir","resplendir",
+  "retentir","rôtir","ralentir","sertir","vernir","brandir","éblouir","emplir","jouir","moisir",
+]);
+
+/** -ir de la TERCERA que pierden la consonante en el singular (je pars). */
+const FR_IR_PARTIR = new Set([
+  "partir","repartir","sortir","ressortir","dormir","endormir","rendormir","sentir","ressentir",
+  "consentir","pressentir","servir","desservir","mentir","démentir","repentir",
+]);
+
+/** -er que abren la e de la raiz (achète, préfère) o doblan la consonante
+ *  (appelle, jette) en las cuatro personas tonicas. La raiz cambiada se
+ *  escribe ENTERA, igual que `RAIZ_TONICA` del español. */
+const FR_RAIZ_TONICA: Record<string, string> = {
+  acheter: "achèt", racheter: "rachèt", lever: "lèv", enlever: "enlèv", élever: "élèv",
+  soulever: "soulèv", relever: "relèv", mener: "mèn", amener: "amèn", emmener: "emmèn",
+  ramener: "ramèn", promener: "promèn", peser: "pès", geler: "gèl", achever: "achèv",
+  semer: "sèm", crever: "crèv", harceler: "harcèl", modeler: "modèl", congeler: "congèl",
+  préférer: "préfèr", espérer: "espèr", répéter: "répèt", sécher: "sèch", célébrer: "célèbr",
+  compléter: "complèt", considérer: "considèr", exagérer: "exagèr", inquiéter: "inquièt",
+  posséder: "possèd", régler: "règl", suggérer: "suggèr", pénétrer: "pénètr", refléter: "reflèt",
+  digérer: "digèr", révéler: "révèl", libérer: "libèr", opérer: "opèr", tolérer: "tolèr",
+  accélérer: "accélèr", protéger: "protèg", céder: "cèd", précéder: "précèd", succéder: "succèd",
+  interpréter: "interprèt", récupérer: "récupèr", gérer: "gèr", différer: "diffèr",
+  interférer: "interfèr", lécher: "lèch", sevrer: "sèvr", énumérer: "énumèr", régner: "règn",
+  appeler: "appell", rappeler: "rappell", épeler: "épell", renouveler: "renouvell",
+  jeter: "jett", rejeter: "rejett", projeter: "projett", feuilleter: "feuillett",
+};
+
+const FR_VOCAL = /[aeiouyàâäéèêëîïôöûùüœæ]/;
+/** Raiz de -er con una sola consonante (o un grupo de consonante + l/r) detras
+ *  de e o é: ahi puede abrirse o doblarse, y la forma no dice cual. Si el verbo
+ *  no esta en `FR_RAIZ_TONICA`, se queda sin bloque. */
+const FR_ER_DUDOSO = /[eé](?:[bcdfgjklmnpqrstvwxz]|[bcdfgptv][lr]|ch|gn)er$/;
+
+/** Presente de un verbo frances, o null si no se sabe conjugar sin adivinar. */
+function frPresente(inf: string): string[] | null {
+  if (FR_IRR[inf]) return [...FR_IRR[inf]];
+  if (inf.endsWith("er")) {
+    const raiz = inf.slice(0, -2);
+    // -ayer admite dos formas (paie / paye) y ninguna es "la" buena.
+    if (/ayer$/.test(inf)) return null;
+    const tonica = FR_RAIZ_TONICA[inf];
+    if (!tonica && FR_ER_DUDOSO.test(inf)) return null;
+    // nettoyer, appuyer: la y pasa a i delante de e muda.
+    const rt = tonica ?? (/[ou]yer$/.test(inf) ? `${raiz.slice(0, -1)}i` : raiz);
+    // commencer -> commençons, manger -> mangeons: la ortografia protege el sonido.
+    const nous = raiz.endsWith("c") ? `${raiz.slice(0, -1)}ç` : raiz.endsWith("g") ? `${raiz}e` : raiz;
+    return [`${rt}e`, `${rt}es`, `${rt}e`, `${nous}ons`, `${raiz}ez`, `${rt}ent`];
+  }
+  if (inf.endsWith("ir")) {
+    const raiz = inf.slice(0, -2);
+    if (FR_IR_ISS.has(inf)) {
+      return [`${raiz}is`, `${raiz}is`, `${raiz}it`, `${raiz}issons`, `${raiz}issez`, `${raiz}issent`];
+    }
+    if (FR_IR_PARTIR.has(inf)) {
+      const corta = raiz.slice(0, -1);
+      return [`${corta}s`, `${corta}s`, `${corta}t`, `${raiz}ons`, `${raiz}ez`, `${raiz}ent`];
+    }
+    // ouvrir, offrir, cueillir: presente de -er.
+    if (/(ouvrir|offrir|souffrir|cueillir)$/.test(inf)) {
+      return [`${raiz}e`, `${raiz}es`, `${raiz}e`, `${raiz}ons`, `${raiz}ez`, `${raiz}ent`];
+    }
+    // venir, tenir y sus familias (devenir, obtenir, appartenir...).
+    const vt = /^(.*)(v|t)enir$/.exec(inf);
+    if (vt) {
+      const [, pre, l] = vt;
+      return [`${pre}${l}iens`, `${pre}${l}iens`, `${pre}${l}ient`, `${pre}${l}enons`, `${pre}${l}enez`, `${pre}${l}iennent`];
+    }
+    const cour = /^(.*)courir$/.exec(inf);
+    if (cour) {
+      const p = cour[1];
+      return [`${p}cours`, `${p}cours`, `${p}court`, `${p}courons`, `${p}courez`, `${p}courent`];
+    }
+    return null;
+  }
+  if (inf.endsWith("re")) {
+    const pren = /^(.*)prendre$/.exec(inf);
+    if (pren) {
+      const p = `${pren[1]}pren`;
+      return [`${p}ds`, `${p}ds`, `${p}d`, `${p}ons`, `${p}ez`, `${p}nent`];
+    }
+    const met = /^(.*)mettre$/.exec(inf);
+    if (met) {
+      const p = met[1];
+      return [`${p}mets`, `${p}mets`, `${p}met`, `${p}mettons`, `${p}mettez`, `${p}mettent`];
+    }
+    const bat = /^(.*)battre$/.exec(inf);
+    if (bat) {
+      const p = bat[1];
+      return [`${p}bats`, `${p}bats`, `${p}bat`, `${p}battons`, `${p}battez`, `${p}battent`];
+    }
+    // craindre, peindre, joindre: la n pasa a gn en el plural.
+    if (/[aeo]indre$/.test(inf)) {
+      const r = inf.slice(0, -4);
+      return [`${r}ns`, `${r}ns`, `${r}nt`, `${r}gnons`, `${r}gnez`, `${r}gnent`];
+    }
+    // conduire, construire, produire, traduire.
+    if (/uire$/.test(inf)) {
+      const r = inf.slice(0, -2);
+      return [`${r}s`, `${r}s`, `${r}t`, `${r}sons`, `${r}sez`, `${r}sent`];
+    }
+    // connaître, paraître, disparaître.
+    if (/aître$/.test(inf)) {
+      const r = inf.slice(0, -5);
+      return [`${r}ais`, `${r}ais`, `${r}aît`, `${r}aissons`, `${r}aissez`, `${r}aissent`];
+    }
+    // rompre y familia: la tercera lleva t.
+    if (/ompre$/.test(inf)) {
+      const r = inf.slice(0, -2);
+      return [`${r}s`, `${r}s`, `${r}t`, `${r}ons`, `${r}ez`, `${r}ent`];
+    }
+    // vendre, attendre, répondre, perdre: los -dre regulares. coudre, moudre y
+    // résoudre no lo son.
+    if (/dre$/.test(inf) && !/oudre$/.test(inf)) {
+      const r = inf.slice(0, -2);
+      return [`${r}s`, `${r}s`, r, `${r}ons`, `${r}ez`, `${r}ent`];
+    }
+    return null;
+  }
+  return null;
+}
+
+/** Imperfecto: la raiz de `nous` del presente + -ais. Un solo irregular. */
+function frImperfecto(inf: string): string[] | null {
+  if (inf === "être") return ["étais", "étais", "était", "étions", "étiez", "étaient"];
+  const pres = frPresente(inf);
+  if (!pres || !pres[3].endsWith("ons")) return null;
+  const r = pres[3].slice(0, -3);
+  // Delante de i la ç y la e de apoyo sobran: commencions, mangions.
+  const ri = r.replace(/ç$/, "c").replace(/ge$/, "g");
+  return [`${r}ais`, `${r}ais`, `${r}ait`, `${ri}ions`, `${ri}iez`, `${r}aient`];
+}
+
+function frConjuga(inf: string, tiempo: Tiempo): string[] | null {
+  if (tiempo === "presente") return frPresente(inf);
+  if (tiempo === "imperfecto") return frImperfecto(inf);
+  return null;
+}
+
+/** Palabras que pueden ir entre el sujeto y el verbo: "je ne te le dis pas". */
+const FR_CLITICOS = new Set(["ne","n","me","m","te","t","se","s","le","la","les","l","lui","leur","y","en"]);
+const FR_SUJETO: Record<string, number> = { je: 0, j: 0, tu: 1, il: 2, elle: 2, on: 2, nous: 3, vous: 4, ils: 5, elles: 5 };
+
+/** Que fila encender cuando la forma sale en varias (parle = je y il). Manda el
+ *  sujeto que tiene delante; sin pronombre delante ("Marc parle") es una
+ *  tercera persona. Si ni asi cae en una de las filas posibles, ninguna. */
+function filaFrancesa(filas: string[], forma: string, palabras: string[], i: number): number {
+  const posibles = filas.map((f, idx) => (f.toLowerCase() === forma ? idx : -1)).filter((x) => x >= 0);
+  if (posibles.length === 1) return posibles[0];
+  let j = i - 1;
+  while (j >= 0 && FR_CLITICOS.has(palabras[j])) j--;
+  const sujeto = j >= 0 ? FR_SUJETO[palabras[j]] : undefined;
+  if (sujeto !== undefined) return posibles.includes(sujeto) ? sujeto : -1;
+  if (posibles.includes(2)) return 2;
+  if (posibles.includes(5)) return 5;
+  return -1;
+}
+
+const FR_DETERMINANTES = new Set(["un","une","des","du","au","aux","sa","son","ses","ma","mon","mes","ta","ton","tes","notre","votre","nos","vos","leurs","cette","cet"]);
+const FR_AUXILIARES = new Set([
+  "ai","as","a","avons","avez","ont","avais","avait","avions","aviez","avaient",
+  "suis","es","est","sommes","êtes","sont","étais","était","étions","étiez","étaient",
+]);
+/** Lo que cabe entre el auxiliar y el participio: "n'a pas encore dit". */
+const FR_ENTRE_AUX = new Set([...FR_CLITICOS, "pas","jamais","rien","déjà","bien","encore","vraiment","plus","toujours"]);
+
+/** La ocurrencia `i` de la palabra NO es un verbo conjugado: un sustantivo con
+ *  determinante delante ("sa montre", "une note"), un participio o adjetivo
+ *  detras de auxiliar ("a dit", "est dure", "n'est pas sèche"), la primera
+ *  mitad de un compuesto ("porte-bonheur") o "au fait". Una tabla de montrer
+ *  sobre el reloj enseña algo falso, asi que basta UNA ocurrencia asi para que
+ *  la palabra se quede sin bloque en esa historia. */
+function frUsoNoVerbal(palabras: string[], i: number, sigueGuion: boolean): boolean {
+  if (sigueGuion) return true;
+  const prev = palabras[i - 1] ?? "";
+  if (FR_DETERMINANTES.has(prev) && !(prev === "un" && palabras[i - 2] === "quelqu")) return true;
+  if (prev === "au" && palabras[i] === "fait") return true;
+  let j = i - 1;
+  while (j >= 0 && FR_ENTRE_AUX.has(palabras[j])) j--;
+  return j >= 0 && FR_AUXILIARES.has(palabras[j]) && !FR_AUXILIARES.has(palabras[i]);
+}
+
+/** `je` se apostrofa delante de vocal y de h MUDA: j'ouvre, j'habite. La h
+ *  aspirada no (je hurle, je hais), asi que la h solo cuenta en las raices
+ *  nombradas. */
+function frEtiqueta(persona: string, forma: string): string {
+  const apostrofa = FR_VOCAL.test(forma[0] ?? "") || /^h(abit|ésit|abill|érit|umili|ébèrg|ébergi)/.test(forma);
+  return persona === "je" && apostrofa ? "j'" : persona;
+}
+
 export type Tiempo = "presente" | "pretérito" | "imperfecto";
 const TIEMPOS: Array<{ id: Tiempo; fn: (inf: string, v: string) => string[] | null }> = [
   { id: "presente", fn: (inf, v) => presente(inf, v) },
@@ -692,6 +952,7 @@ const IDIOMAS: Record<string, { personas: (v: string) => string[]; conjuga: (inf
   portuguese: { personas: () => PT_PERSONAS, conjuga: (inf, t) => ptConjuga(inf, t) },
   italian: { personas: () => IT_PERSONAS, conjuga: (inf, t) => itConjuga(inf, t) },
   german: { personas: () => DE_PERSONAS, conjuga: (inf, t) => deConjuga(inf, t) },
+  french: { personas: () => FR_PERSONAS, conjuga: (inf, t) => frConjuga(inf, t) },
 };
 
 /** Del infinitivo a las formas: sirve para saber qué palabra del texto es qué.
@@ -721,6 +982,12 @@ export function indicePorForma(infinitivos: string[], variante: string, idioma: 
       // no es "steige … um". Sin esto la palabra del texto se queda sin tabla.
       // Entra con here = -1, que es justo lo que es: un infinitivo, ninguna
       // persona encendida.
+      // En frances igual, por otra razon: el infinitivo tampoco es ninguna fila
+      // ("je peux aider"). Entra con la tabla del presente y ninguna persona
+      // encendida (2026-09-14, el usuario toco `aider` y no tenia tabla).
+      if (idioma === "french" && id === "presente" && !mapa.has(inf.toLowerCase())) {
+        mapa.set(inf.toLowerCase(), { inf, i: -1, tiempo: id });
+      }
       if (idioma === "german" && id === "presente" && !mapa.has(inf.toLowerCase())
           && !DE_NO_RESOLVER.has(inf.toLowerCase())) {
         mapa.set(inf.toLowerCase(), { inf, i: -1, tiempo: id });
@@ -821,15 +1088,32 @@ async function main() {
     idioma === "italian" ? Object.keys(IT_IRR)
       : idioma === "portuguese" ? Object.keys(PT_IRR)
       : idioma === "german" ? Object.keys(DE_IRR)
+      : idioma === "french"
+        ? [...Object.keys(FR_IRR), ...FR_IR_ISS, ...FR_IR_PARTIR, ...Object.keys(FR_RAIZ_TONICA)]
       : [...Object.keys(IRREGULARES), ...CONOCIDOS]
   );
-  for (const [k, v] of Object.entries(bundle.glosses)) {
+  // En frances muchas glosas no nombran el infinitivo ("es=are"), y un -er
+  // regular solo se conjuga si alguien lo nombra. Los bundles franceses
+  // comparten lengua, asi que el infinitivo que nombra uno vale para todos.
+  const glosasParaInfinitivos: Array<Record<string, Entrada>> = [bundle.glosses];
+  if (idioma === "french") {
+    const hermanos = await prisma.tapGlossSet.findMany({
+      where: { language: { equals: "french", mode: "insensitive" }, slug: "" },
+      select: { glosses: true },
+    });
+    for (const h of hermanos) glosasParaInfinitivos.push(h.glosses as Record<string, Entrada>);
+  }
+  for (const glosas of glosasParaInfinitivos) for (const [k, v] of Object.entries(glosas)) {
     const FIN_INF = idioma === "italian" ? /(are|ere|ire)$/
       : idioma === "german" ? /(en|eln|ern)$/
+      : idioma === "french" ? /(er|ir|re|oir)$/
       : /(ar|er|ir)$/;
     if (v?.t === "verb" && FIN_INF.test(k)) infinitivos.add(k);
     const m = idioma === "italian"
       ? /\(([a-zàèéìòù]+(?:are|ere|ire))\)/.exec(v?.g ?? "")
+      : idioma === "french"
+        // "(se lever)", "(s'asseoir)": el reflexivo no forma parte del infinitivo.
+        ? /\((?:se |s')?([a-zàâçéèêëîïôûùüÿœæ]+(?:er|ir|re|oir))\b/.exec(v?.g ?? "")
       : /\(([a-záéíóúñ]+(?:ar|er|ir))\)/.exec(v?.g ?? "");
     if (m) infinitivos.add(m[1]);
   }
@@ -845,7 +1129,7 @@ async function main() {
       if (bundle.glosses[w]?.t !== "verb") continue;
       // Terminaciones que solo puede tener un -ar, por idioma. En -er / -ir no
       // se hace: sus pasados coinciden y la etiqueta saldria inventada.
-      if (idioma === "italian" || idioma === "german") continue; // ver el comentario de arriba
+      if (idioma === "italian" || idioma === "german" || idioma === "french") continue; // ver el comentario de arriba
       const FIN = idioma === "portuguese"
         ? /^(.+?)(ou|aram|ava|avam|ávamos|ei|amos)$/
         : /^(.+?)(ó|aron|aba|abas|ábamos|aban|é|aste|amos|asteis)$/;
@@ -897,8 +1181,19 @@ async function main() {
     // de contexto escrita a mano no podia recibir nunca su conjugacion: se
     // saltaba entera y sus verbos se quedaban sin tabla (2026-09-04).
     if (yaEscrita && !soloFormas) { saltadas.push(slug); continue; }
+    // `--solo-formas` completa capas que YA existen. Crear una fila nueva para
+    // una historia que solo vivia en la global la haria contar como escrita, y
+    // gloss-context la veria llena de palabras sin frase (french-traveler,
+    // 2026-09-14).
+    if (soloFormas && !salida[slug]) { saltadas.push(slug); continue; }
     const entradas = (salida[slug] ??= {});
-    const palabras = (texto.match(/\p{L}+/gu) ?? []).map((w) => w.toLowerCase());
+    const tokens = [...texto.matchAll(/\p{L}+/gu)];
+    const palabras = tokens.map((m) => m[0].toLowerCase());
+    // "porte-bonheur": la palabra pegada a un guion es la mitad de un compuesto.
+    // "dit-il", "regarde-moi" no: detras del guion va un pronombre.
+    const PRON_GUION = /^(il|elle|on|ils|elles|je|tu|nous|vous|t|moi|toi|le|la|les|lui|leur|y|en)$/;
+    const guionDetras = tokens.map((m, k) =>
+      texto[(m.index ?? 0) + m[0].length] === "-" && !PRON_GUION.test(palabras[k + 1] ?? ""));
     const vistas = new Set<string>();
 
     palabras.forEach((palabra, i) => {
@@ -906,29 +1201,52 @@ async function main() {
       const base = bundle.glosses[palabra];
       if (!base) return;
       vistas.add(palabra);
-      const previa = entradas[palabra] ?? {};
+      const previa = entradas[palabra];
+      // La capa de la historia SUSTITUYE a la global palabra por palabra (no se
+      // fusionan campos, ver `getTapGlosses`). Una entrada nueva que solo
+      // llevara `f` borraria la glosa y el tipo de la global en la tarjeta, asi
+      // que se parte de la global entera.
       const entrada: Entrada = soloFormas
-        ? { ...previa }
-        : { ...previa, g: base.g, t: base.t };
-      if (soloFormas && previa.f) return; // ya tiene bloque: no se toca
+        ? { ...(previa ?? base) }
+        : { ...(previa ?? {}), g: base.g, t: base.t };
+      if (soloFormas && previa?.f) return; // ya tiene bloque: no se toca
       // La tabla se REHACE, no se hereda: si esta pasada ya no sabe conjugar
       // la palabra, tiene que quedarse sin bloque. Heredandola, un arreglo del
       // motor dejaba viva la tabla equivocada que el arreglo venia a quitar.
       delete entrada.f;
 
-      if (base.t === "verb") {
+      // En la capa de la historia manda SU tipo: "porte" puede ser verbo en la
+      // global y la puerta en esta frase. Una tabla de porter sobre la puerta
+      // enseña algo falso.
+      if ((soloFormas ? entrada.t : base.t) === "verb") {
         const hit = porForma.get(palabra);
         if (hit) {
           // El tiempo lo decide la forma que sale en la historia, no el script:
           // estas narran en pasado y una tabla de presente enseñaria otro
           // paradigma que el que el lector tiene delante.
           const filas = motor.conjuga(hit.inf, hit.tiempo, variante)!;
+          const frances = idioma === "french";
+          let hereFr = -1;
+          if (frances) {
+            // Todas las ocurrencias de la palabra en la historia comparten
+            // entrada, asi que se miran todas: una no verbal quita la tabla, y
+            // si los sujetos no coinciden no se enciende ninguna fila.
+            const usos = palabras.flatMap((w, k) => (w === palabra ? [k] : []));
+            if (usos.some((k) => frUsoNoVerbal(palabras, k, guionDetras[k]))) {
+              sinNada++;
+              if (!previa) return;
+              entradas[palabra] = entrada;
+              return;
+            }
+            const filasUso = new Set(usos.map((k) => filaFrancesa(filas, palabra, palabras, k)));
+            hereFr = filasUso.size === 1 ? [...filasUso][0] : -1;
+          }
           entrada.f = {
             kind: "expand",
             link: "See conjugation",
             lemma: hit.tiempo === "presente" ? hit.inf : `${hit.inf} (${hit.tiempo})`,
-            rows: filas.map((f, idx) => [P[idx], f]),
-            here: hit.i,
+            rows: filas.map((f, idx) => [frances ? frEtiqueta(P[idx], f) : P[idx], f]),
+            here: frances ? hereFr : hit.i,
           };
           verbos++;
         } else sinNada++;
@@ -955,6 +1273,9 @@ async function main() {
         } else sinNada++;
       } else sinNada++;
 
+      // Sin bloque nuevo y sin entrada previa no hay nada que escribir: copiar
+      // la global a la capa solo congelaria una glosa que mañana se corrige.
+      if (soloFormas && !previa && !entrada.f) return;
       entradas[palabra] = entrada;
     });
   }
@@ -965,6 +1286,20 @@ async function main() {
       (saltadas.length ? `\n  intactas por estar escritas a mano: ${saltadas.join(", ")}` : "")
   );
   if (dry) {
+    // `--dump <archivo>` vuelca las tablas nuevas para leerlas antes de escribir.
+    const dump = process.argv[process.argv.indexOf("--dump") + 1];
+    if (process.argv.includes("--dump") && dump) {
+      const lineas: string[] = [];
+      for (const [slug, entradas] of Object.entries(salida)) {
+        for (const [w, e] of Object.entries(entradas)) {
+          if (!e.f || e.f.kind !== "expand") continue;
+          const filas = e.f.rows.map(([p, f], idx) => (idx === e.f!.here ? `[${p} ${f}]` : `${p} ${f}`)).join(" / ");
+          lineas.push(`${slug}\t${w}\t${e.f.lemma}\t${filas}`);
+        }
+      }
+      fs.writeFileSync(dump, lineas.join("\n"));
+      console.log(`${lineas.length} tablas -> ${dump}`);
+    }
     console.log("(--dry: no se ha escrito nada)");
     return;
   }
