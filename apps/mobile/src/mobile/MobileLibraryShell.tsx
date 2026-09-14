@@ -15556,12 +15556,6 @@ export function MobileLibraryShell(args: {
                       (1 - Math.max(0, Math.min(1, speakingSecondsLeft / SPEAKING_ANSWER_SECONDS)));
                     return (
                   <View style={styles.speakingShell}>
-                    {/* La pista es la TRADUCCION en ingles, a secas. La palabra
-                        en el idioma meta no aparece hasta despues de calificar:
-                        se prueba recuperarla, no leerla. El tiempo lo lleva la
-                        insignia de la cabecera, como en los demas tipos. */}
-                    <Text style={styles.speakingHintValue}>{ex.translation}</Text>
-
                     {/* Tarjeta ambar: SOLO la frase. Es lo unico que el usuario
                         tiene que leer mientras piensa la palabra. */}
                     <View style={styles.speakingSentenceCard}>
@@ -27875,12 +27869,6 @@ const styles = StyleSheet.create({
   speakingShell: {
     flex: 1,
     gap: 18,
-  },
-  speakingHintValue: {
-    color: "#e8eefb",
-    fontSize: 15,
-    fontWeight: "600",
-    lineHeight: 20,
   },
   // La tarjeta ambar lleva SOLO la frase: es lo unico que hay que leer
   // mientras se piensa la palabra.
