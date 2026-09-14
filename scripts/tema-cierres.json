@@ -6687,6 +6687,410 @@
       }
     }
   },
+  "cmu1bfmb3000732wxuuwj7j2a#couples-and-living-together": {
+    "cerrado": "2026-09-14T16:05:36.069Z",
+    "hash": "e0d99351c3efd0e9",
+    "historias": [
+      "couples-and-living-together#0 arianna-starnutisce",
+      "couples-and-living-together#1 davide-dorme-sulle-scale",
+      "couples-and-living-together#2 si-chiama-biscotto"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"de pareja nueva en la casa de ringhiera: una mudanza, estornudos, una mentira por amor y una decision que cierra el trato\", espina \"El trato metà e metà se acaba: Arianna, la persona que Davide conocio en Puglia, se muda con el y es alergica al perro; Davide intenta sostener su mitad sin decirlo y duerme en la escalera; Elisa lo descubre y decide ella: se queda el perro entero. La mitad se acaba; la amistad no.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"arianna\", 27%)",
+      "densidad 9.0 palabras por oracion (techo 11 en a1)",
+      "seguidilla 12/41 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.06 sobre 53 plazas · 50 salen una sola vez | ancladas: 7/60 (12%) | cola: 50/53 portables con un solo encuentro (94%, tope 70%) | de un solo encuentro: settembre, guarda, insegnante, timida, Piacere, pentola, padella, usa, Condividiamo, dentifricio, coppia, cucina, pepe, Salute, medicina, lava, mentito, spera, magari, Purtroppo, soffre, secca, medico, ama, scelta, dietro, fredde, domanda, cattivo, finalmente…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol y hasta A2 en frances; en IT A1 no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: couples-and-living-together (Elisa, Davide)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a1",
+      "variante": "italy",
+      "registro": "de pareja nueva en la casa de ringhiera: una mudanza, estornudos, una mentira por amor y una decision que cierra el trato",
+      "espina": "El trato metà e metà se acaba: Arianna, la persona que Davide conocio en Puglia, se muda con el y es alergica al perro; Davide intenta sostener su mitad sin decirlo y duerme en la escalera; Elisa lo descubre y decide ella: se queda el perro entero. La mitad se acaba; la amistad no.",
+      "recursos": "A1: humor de situacion (Salute! E il pepe; Sei un cattivo attore), revelacion tardia de la alergia, callback al nombre rechazado en el tema 1 (Biscotto), cierre agridulce sin gancho. Passato prossimo 3 por historia. Parrafos 6, 5 y 4. Titulos sin X del Y.",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "Arianna quiere empezar bien su vida con Davide y caerle bien a Elisa y al perro",
+          "impide": "estornuda desde el primer momento, y Davide lo atribuye a la pimienta",
+          "cuesta": "el primer dia tranquilo en la casa nueva: Arianna tiene que tomar una medicina y confesar",
+          "cambia": "Arianna dice en voz baja que es alergica a los perros, aunque este le gusta",
+          "emocion": "ternura con inquietud: Arianna sonrie y acaricia al perro, y la confesion sale bajito porque no quiere estropear la cena; Davide friega los platos en silencio"
+        },
+        {
+          "slot": "1",
+          "quiere": "Davide quiere proteger a Arianna sin romper el trato con Elisa",
+          "impide": "la tos de Arianna y el medico, que culpa al perro",
+          "cuesta": "sus noches: duerme en la escalera fria con el perro, y miente a Elisa una semana",
+          "cambia": "Elisa lo descubre en la escalera y no se cree su excusa; invita a la pareja a comer",
+          "emocion": "culpa y cariño: Davide dice que el resto no le importa porque no quiere fallar el trato, y al final se rie cuando Elisa le dice que es mal actor"
+        },
+        {
+          "slot": "2",
+          "quiere": "Elisa quiere que nadie pierda la casa ni el perro",
+          "impide": "el trato a medias ya no funciona con Arianna en casa de Davide",
+          "cuesta": "Davide renuncia a su mitad y Elisa a su sabado libre",
+          "cambia": "Elisa adopta el perro entero y le pone nombre: Biscotto, el que rechazo el primer dia; Davide pasa a ser el paseo del domingo",
+          "emocion": "agridulce: Elisa mira desde arriba con su cafe porque ya no es metà e metà, pero es la vida"
+        }
+      ],
+      "lista_ampliada": {
+        "commit": "dcf8fcb1",
+        "palabras": [
+          "compagno",
+          "condividere",
+          "coppia",
+          "decisione",
+          "finalmente",
+          "guardare",
+          "magari",
+          "medico",
+          "pronto",
+          "purtroppo",
+          "ringraziare",
+          "scelta",
+          "scoprire",
+          "soffrire",
+          "sperare"
+        ],
+        "fuente": "KELLY Italian, nivel y categoria citados por palabra en italianA1A2.ts"
+      },
+      "reencuentro": {
+        "regla": "surface exacta de portables de los temas 1-6 que vuelven en el cuerpo del tema 7; las 24 del tema 6 con un solo encuentro vuelven todas; sin reensenanza como plaza",
+        "portables_previas": 305,
+        "vuelven": 51,
+        "detalle": [
+          {
+            "surface": "dormire",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "giù",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "scende",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "domani",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "lavoro",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "solo",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "oggi",
+            "en": [
+              0,
+              2
+            ]
+          },
+          {
+            "surface": "chiede",
+            "en": [
+              1,
+              2
+            ]
+          },
+          {
+            "surface": "siede",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "vecchio",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "già",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "mai",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "ancora",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "tardi",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "insieme",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "faccio",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "libero",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "piano",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "corre",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "chiama",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "bassa",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "deve",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "cambio",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "difficile",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "colpa",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "ride",
+            "en": [
+              0,
+              1
+            ]
+          },
+          {
+            "surface": "sveglia",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "tiepido",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "nuoto",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "bianca",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "preferisce",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "dolce",
+            "en": [
+              0,
+              2
+            ]
+          },
+          {
+            "surface": "regalo",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "vive",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "invito",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "credo",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "settimana",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "viaggia",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "chiamata",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "ragazza",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "seguente",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "veloce",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "grigio",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "patto",
+            "en": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "surface": "vita",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "prepara",
+            "en": [
+              0
+            ]
+          },
+          {
+            "surface": "nero",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "veste",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "interessa",
+            "en": [
+              1
+            ]
+          },
+          {
+            "surface": "gioia",
+            "en": [
+              2
+            ]
+          },
+          {
+            "surface": "sogno",
+            "en": [
+              2
+            ]
+          }
+        ]
+      }
+    }
+  },
   "cmu1bfmb3000732wxuuwj7j2a#neighbours-and-noise": {
     "cerrado": "2026-09-14T14:55:11.525Z",
     "hash": "15d8e893cdf23186",
