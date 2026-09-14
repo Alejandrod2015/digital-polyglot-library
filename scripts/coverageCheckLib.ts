@@ -55,49 +55,43 @@ function wordsMatch(a: string, b: string): boolean {
 export type Gap = { textWords: string[]; startIdx: number; endIdx: number; anchorBeforeIdx: number | null; anchorAfterIdx: number | null };
 
 /**
- * Alinea texto contra lo oido con un cursor que solo avanza (como
- * anclarFragmentos en remeasureFragmentsLib.ts), tolerando ortografia via
- * wordsMatch. Busca cada palabra del texto en una ventana adelante del
- * cursor; si no aparece, se acumula como parte de un hueco.
+ * Busca huecos SIN depender de posicion (a proposito, ver abajo): para cada
+ * palabra del texto, mira si aparece PARECIDA en cualquier punto de lo
+ * oido (no solo "adelante de un cursor"). Un tramo de `minRun`+ palabras
+ * SEGUIDAS del texto sin ninguna parecida en todo lo oido es un hueco real.
+ *
+ * ADVERTENCIA que costo un falso positivo (2026-09-14): la primera version
+ * usaba un cursor que solo avanza (como anclarFragmentos), buscando cada
+ * palabra en una ventana ADELANTE del cursor. Si UNA palabra encontraba una
+ * coincidencia mas adelante de lo que le tocaba (una repeticion del mismo
+ * lema en otro punto de la historia, o una palabra corta y comun), el
+ * cursor saltaba de mas y TODAS las palabras siguientes, que si estaban,
+ * quedaban detras del cursor y jamas se encontraban: el resto de la
+ * historia entera salia marcada como "hueco", sobre un master que la
+ * barrida en Python (SequenceMatcher, sin este problema) ya habia
+ * confirmado limpio. La busqueda sin cursor no tiene ese modo de fallo: no
+ * hay "de mas" que arrastrar, cada palabra se busca en TODO lo oido.
  */
-export function findGaps(textWords: string[], heardWords: string[], minRun = 3, window = 15): Gap[] {
+export function findGaps(textWords: string[], heardWords: string[], minRun = 3): Gap[] {
   const gaps: Gap[] = [];
-  let cursor = 0;
+  const presente = textWords.map((w) => heardWords.some((h) => wordsMatch(w, h)));
   let run: string[] = [];
   let runStart = -1;
-  let lastMatchedHeardIdx: number | null = null;
-
-  const flush = (endIdx: number) => {
-    if (run.length >= minRun) {
-      gaps.push({
-        textWords: [...run],
-        startIdx: runStart,
-        endIdx,
-        anchorBeforeIdx: lastMatchedHeardIdx,
-        anchorAfterIdx: cursor < heardWords.length ? cursor : null,
-      });
-    }
-    run = [];
-    runStart = -1;
-  };
-
   for (let i = 0; i < textWords.length; i++) {
-    const w = textWords[i];
-    let found = -1;
-    const lo = cursor, hi = Math.min(heardWords.length, cursor + window);
-    for (let j = lo; j < hi; j++) {
-      if (wordsMatch(w, heardWords[j])) { found = j; break; }
-    }
-    if (found >= 0) {
-      flush(i);
-      cursor = found + 1;
-      lastMatchedHeardIdx = found;
+    if (presente[i]) {
+      if (run.length >= minRun) {
+        gaps.push({ textWords: [...run], startIdx: runStart, endIdx: i, anchorBeforeIdx: null, anchorAfterIdx: null });
+      }
+      run = [];
+      runStart = -1;
     } else {
       if (runStart < 0) runStart = i;
-      run.push(w);
+      run.push(textWords[i]);
     }
   }
-  flush(textWords.length);
+  if (run.length >= minRun) {
+    gaps.push({ textWords: [...run], startIdx: runStart, endIdx: textWords.length, anchorBeforeIdx: null, anchorAfterIdx: null });
+  }
   return gaps;
 }
 
