@@ -753,6 +753,16 @@ model BetaFeedback {
   releaseId  String?
   release    BetaRelease? @relation(fields: [releaseId], references: [id], onDelete: SetNull)
 
+  // La respuesta personal a ESTE reporte, enviada desde Studio (boton Reply).
+  // Hasta el 2026-09-14 la unica forma de cerrar el circulo con quien escribio
+  // era la nota de release, que solo existe para builds moviles: un arreglo
+  // web, o un simple "lo estamos mirando", no tenia camino. Se guarda el texto
+  // tal cual salio para que la fila cuente lo que se le dijo.
+  repliedAt       DateTime?
+  replySubject    String?
+  replyText       String?
+  replyProviderId String?
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 

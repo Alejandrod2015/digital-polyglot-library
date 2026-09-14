@@ -211,6 +211,10 @@ type Feedback = {
   status: string;
   adminNotes: string | null;
   releaseId: string | null;
+  // The personal reply sent from this screen, if any (see the Reply button).
+  repliedAt: string | null;
+  replySubject: string | null;
+  replyText: string | null;
   createdAt: string;
   signup: { id: string; firstName: string | null; email: string } | null;
 };
@@ -1214,6 +1218,31 @@ export default function BetaProgramClient() {
     [load, say],
   );
 
+  // Personal reply to one report. Returns true when it went out so the box can
+  // close; a failure keeps the draft on screen instead of losing it.
+  const feedbackReply = useCallback(
+    async (id: string, subject: string, body: string): Promise<boolean> => {
+      setBusy(id);
+      try {
+        const res = await fetch("/api/studio/beta/feedback/reply", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id, subject, body }),
+        });
+        if (!res.ok) throw new Error((await res.json().catch(() => ({}))).error ?? `HTTP ${res.status}`);
+        say("Reply sent.");
+        await load();
+        return true;
+      } catch (err) {
+        say(`Reply failed: ${String(err)}`);
+        return false;
+      } finally {
+        setBusy(null);
+      }
+    },
+    [load, say],
+  );
+
   // Every applicant, flat, for reading outside this screen. Attribution columns
   // included: they are the reason anyone exports this rather than screenshotting
   // the queue.
@@ -1415,6 +1444,7 @@ export default function BetaProgramClient() {
           releases={data.releases}
           busy={busy}
           onPatch={feedbackPatch}
+          onReply={feedbackReply}
         />
       )}
 
@@ -2135,18 +2165,44 @@ function Testers({
 
 const FEEDBACK_STATUSES = ["new", "triaged", "in_progress", "fixed", "wont_fix", "duplicate"];
 
+// Prefilled body for the Reply box. Their words quoted, one sentence about
+// reading everything, and a blank line for what actually changed. No "you
+// asked so we built it": the decision is the product's, the message is thanked.
+function replyDraftFor(f: Feedback): string {
+  const quote = f.message.trim().replace(/\s+/g, " ");
+  return [
+    `Thank you for writing to us about this: "${quote}". We read every message, and this one pointed at something real.`,
+    "",
+    "",
+    "",
+    "If you try it and anything still feels off, just reply to this email. Every note you send goes straight to what we build next.",
+  ].join("\n");
+}
+
 function FeedbackList({
   feedback,
   releases,
   busy,
   onPatch,
+  onReply,
 }: {
   feedback: Feedback[];
   releases: Release[];
   busy: string | null;
   onPatch: (id: string, patch: Record<string, unknown>) => Promise<void>;
+  onReply: (id: string, subject: string, body: string) => Promise<boolean>;
 }) {
   const [showAll, setShowAll] = useState(false);
+  // Which row has its Reply box open, and what is typed in it.
+  const [replyOpen, setReplyOpen] = useState<string | null>(null);
+  const [replySubject, setReplySubject] = useState("");
+  const [replyBody, setReplyBody] = useState("");
+
+  const openReply = (f: Feedback) => {
+    setReplyOpen(f.id);
+    setReplySubject(f.replySubject ?? "About what you wrote to us");
+    setReplyBody(f.replyText ?? replyDraftFor(f));
+  };
   const visible = useMemo(
     () => (showAll ? feedback : feedback.filter((f) => f.status === "new" || f.status === "triaged" || f.status === "in_progress")),
     [feedback, showAll],
@@ -2220,7 +2276,61 @@ function FeedbackList({
                 </option>
               ))}
             </select>
+
+            {/* A personal note to the person who wrote. Their address, their
+                words quoted, sent as typed. The build note only reaches
+                reports attached to a mobile release; this reaches everyone. */}
+            {replyOpen === f.id ? (
+              <button style={ghostBtn} onClick={() => setReplyOpen(null)}>
+                Close
+              </button>
+            ) : (
+              <button style={f.repliedAt ? ghostBtn : btn} disabled={busy === f.id} onClick={() => openReply(f)}>
+                {f.repliedAt ? "Reply again" : "Reply"}
+              </button>
+            )}
+            {f.repliedAt && (
+              <span style={pill("fixed")} title={f.replySubject ?? ""}>
+                replied {ago(f.repliedAt)}
+              </span>
+            )}
           </div>
+
+          {replyOpen === f.id && (
+            <div style={{ display: "flex", flexDirection: "column", gap: 8, marginTop: 12 }}>
+              <div style={{ fontSize: 12, color: "var(--muted)" }}>
+                To {f.email}
+                {f.signup?.firstName ? ` (opens with "Hi ${f.signup.firstName},")` : " (no first name on file, no greeting)"}
+                . Plain personal email, signed Alejandro, replies go to support@.
+              </div>
+              <input
+                value={replySubject}
+                onChange={(e) => setReplySubject(e.target.value)}
+                placeholder="Subject"
+                style={inputStyle}
+              />
+              <textarea
+                value={replyBody}
+                onChange={(e) => setReplyBody(e.target.value)}
+                style={{ ...areaStyle, height: 220 }}
+              />
+              <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                <button
+                  style={btn}
+                  disabled={busy === f.id || replySubject.trim().length === 0 || replyBody.trim().length === 0}
+                  onClick={async () => {
+                    const ok = await onReply(f.id, replySubject, replyBody);
+                    if (ok) setReplyOpen(null);
+                  }}
+                >
+                  {busy === f.id ? "Sending..." : `Send to ${f.signup?.firstName ?? f.email}`}
+                </button>
+                <span style={{ fontSize: 12, color: "var(--muted)" }}>
+                  Blank lines separate paragraphs. Sends immediately.
+                </span>
+              </div>
+            </div>
+          )}
         </div>
       ))}
     </div>
