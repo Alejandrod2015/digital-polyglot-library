@@ -34,7 +34,7 @@ STYLE: Clean cel-shaded editorial illustration anchored to the published FR A0 F
 
 FRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.
 
-SCENE: On a cobbled street in the Vieux-Lille district, tall ornate Flemish-style brick facades, a shop with a large plain glass shopfront window, a cold clear afternoon, passers-by in warm coats out of frame. GUILLAUME stands in front of a shopfront window gesturing at it proudly, one hand on the glass; AURELIEN stands beside him, arms crossed, unconvinced. Medium shot, both waist up or fuller.
+SCENE: On a cobbled street in the Vieux-Lille district, tall ornate Flemish-style brick facades, a shop with a large plain glass shopfront window, a cold clear afternoon. GUILLAUME stands in front of a shopfront window gesturing at it proudly, one hand on the glass; AURELIEN stands beside him, arms crossed, unconvinced. Medium shot, both waist up or fuller.
 note: 
 
 PORTADA 3: Le compteur ne ment pas (le-compteur-ne-ment-pas)

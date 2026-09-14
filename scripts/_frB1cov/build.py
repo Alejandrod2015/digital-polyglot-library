@@ -55,7 +55,7 @@ T = [
   ("des-conseils-pas-demandes", "Des conseils pas demandés", 1,
    f"In {GUILLAUME_HOME}, Sunday midday. GUILLAUME points a fork across the table, sure of himself, mid-lecture; AURELIEN sits across from him staring down at a slice of sugar tart, jaw clenched, hurt. Medium shot across the table, both waist up.", ""),
   ("une-vitrine-trop-chic", "Une vitrine trop chic", 2,
-   f"On {VIEUX_LILLE}, a cold clear afternoon, passers-by in warm coats out of frame. GUILLAUME stands in front of a shopfront window gesturing at it proudly, one hand on the glass; AURELIEN stands beside him, arms crossed, unconvinced. Medium shot, both waist up or fuller.", ""),
+   f"On {VIEUX_LILLE}, a cold clear afternoon. GUILLAUME stands in front of a shopfront window gesturing at it proudly, one hand on the glass; AURELIEN stands beside him, arms crossed, unconvinced. Medium shot, both waist up or fuller.", ""),
   ("le-compteur-ne-ment-pas", "Le compteur ne ment pas", 3,
    f"Inside the bare unfinished space of {ATELIER}, before renovation, dim daylight, exposed wiring on one wall. GUILLAUME crouches by an open electrical fuse box holding a small flashlight, grimacing at what he sees; AURELIEN stands behind him, worried, one hand on the brick wall. Medium shot, both waist up or fuller.", ""),
  ]),
