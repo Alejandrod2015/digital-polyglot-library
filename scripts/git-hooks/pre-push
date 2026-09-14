@@ -110,6 +110,7 @@ checkNoEmojis        -
 checkVoicesPublished db
 checkKaraokeFresh    db
 checkGlossContext    db
+checkGlossContextReal db
 checkGlossesReviewed db
 checkHardRules       memoria
 checkRulesInventory  -
@@ -261,6 +262,19 @@ EOM
 
 EOM
       ;;
+    checkGlossContextReal)
+      cat >&2 <<'EOM'
+
+======================================================================
+  PUSH BLOCKED: contexto de glosa FALSO, no solo ausente
+
+  c.es es la palabra sola, c.en repite la glosa del diccionario, o c.es
+  no esta literal en la historia. Escribe el trozo REAL traducido.
+  Comprueba con:  npm run lint:gloss-context-real
+======================================================================
+
+EOM
+      ;;
     checkTypes)
       cat >&2 <<'EOM'
 
@@ -395,6 +409,9 @@ EOM
 #                        con la forma vieja y nada avisa.
 #   checkGlossContext    Palabra tocable sin la frase donde cae: la tarjeta
 #                        repite la definicion dos veces.
+#   checkGlossContextReal Contexto FALSO aunque `c` exista: la palabra sola,
+#                        la glosa repetida en vez de la traduccion, o un
+#                        trozo que no esta literal en la historia.
 #   checkGlossesReviewed Una glosa copiada trae el sentido del journey de
 #                        ORIGEN; no sale de aqui sin que alguien la lea.
 #   checkHardRules       Una memoria que se declara dura tiene que nombrar
