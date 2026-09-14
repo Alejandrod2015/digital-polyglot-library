@@ -82,7 +82,7 @@ T = [
  ]),
  ("clothes-and-style", "Clothes & Style", ["JULIA", "THERESA"], [
   ("nichts-zum-anziehen", "Nichts zum Anziehen", 1,
-   f"At {MUSEUMSUFER}, a sunny afternoon, dresses and blouses hanging from a clothes rack. JULIA holds a dark-blue dress against herself, looking at the price; THERESA stands behind her folding table, glancing at Julia's worn denim jacket covered in colourful buttons with a considering look. Medium shot, both waist up or fuller.", ""),
+   f"At {MUSEUMSUFER}, a sunny afternoon, dresses and blouses hanging from a clothes rack. JULIA holds a dark-blue dress against herself, looking into her open wallet with a worried face; THERESA stands behind her folding table, glancing at Julia's worn denim jacket covered in colourful buttons with a considering look. Medium shot, both waist up or fuller.", ""),
   ("die-jacke-aus-rostock", "Die Jacke aus Rostock", 2,
    f"Behind a thin hanging curtain at {MUSEUMSUFER}, soft daylight. THERESA kneels pinning fabric at the hem of the dark-blue dress JULIA is wearing, a small tin of pins beside her; JULIA stands very still in front of a plain freestanding mirror, looking at her own reflection with damp eyes. Medium shot, both waist up or fuller.", ""),
   ("ein-fleck-auf-dem-schiff", "Ein Fleck auf dem Schiff", 3,
