@@ -1175,6 +1175,41 @@ const PRACTICE_MODE_CARDS: PracticeModeCard[] = [
  * necesitan carta para los dos momentos en los que no hay ejercicio en curso
  * del que sacar el chrome: mientras carga y en la pantalla de resultado.
  */
+/**
+ * Segundos para contestar un turno hablado. Decision del usuario el
+ * 2026-09-14: diez. La cuenta arranca cuando TERMINA el audio de la frase, no
+ * al pintar, porque el reloj no puede correr mientras el usuario escucha.
+ */
+const SPEAKING_ANSWER_SECONDS = 10;
+
+/** Anillo de progreso del boton de micro: 168 px de diametro, trazo de 6. */
+const SPEAKING_RING_SIZE = 168;
+const SPEAKING_RING_RADIUS = 78;
+const SPEAKING_RING_CIRCUMFERENCE = 2 * Math.PI * SPEAKING_RING_RADIUS;
+
+function formatSpeakingSeconds(seconds: number): string {
+  const safe = Math.max(0, Math.ceil(seconds));
+  return `0:${String(safe).padStart(2, "0")}`;
+}
+
+/**
+ * El hueco de la frase no se pinta con guiones bajos: es una ficha en linea,
+ * como en el diseno. `createFillBlankExercise` deja el hueco como una corrida
+ * de `_`, asi que se parte por ahi y se intercala la ficha.
+ */
+function renderSpeakingBlank(blanked: string): React.ReactNode {
+  const partes = blanked.split(/_{3,}/);
+  if (partes.length === 1) return blanked;
+  return partes.map((parte, index) => (
+    <Text key={`blank-${index}`}>
+      {parte}
+      {index < partes.length - 1 ? (
+        <Text style={styles.speakingBlankSlot}>{"      "}</Text>
+      ) : null}
+    </Text>
+  ));
+}
+
 // Speaking no se elige a mano (no esta en MODE_ORDER de la orbita), pero SI
 // necesita su tarjeta: el chrome de la sesion sale del ejercicio en curso via
 // `activePracticeCard`, y sin fila aqui la pantalla entera se quedaria en
@@ -1185,8 +1220,8 @@ const SPEAKING_PRACTICE_CARD: PracticeModeCard = {
   eyebrow: "Say it out loud",
   detail: "Hear the sentence and say the missing word.",
   caption: "Best for pulling a word out of memory and off your tongue.",
-  accent: "#fca5a5",
-  background: "#b8481f",
+  accent: "#f8c15c",
+  background: "#8a5a10",
   icon: "mic",
 };
 
@@ -2777,6 +2812,10 @@ export function MobileLibraryShell(args: {
   // veredicto se decide aqui.
   const speakingRecorder = useSpeakingRecorder();
   const [speakingPhase, setSpeakingPhase] = useState<"ready" | "listening" | "done">("ready");
+  const [speakingSecondsLeft, setSpeakingSecondsLeft] = useState(SPEAKING_ANSWER_SECONDS);
+  // Los dos anillos que laten alrededor del boton, desfasados medio ciclo.
+  const speakingPulseA = useRef(new Animated.Value(0)).current;
+  const speakingPulseB = useRef(new Animated.Value(0)).current;
   const [speakingHeard, setSpeakingHeard] = useState("");
   const [speakingError, setSpeakingError] = useState("");
   /** El silencio da UN reintento sin penalizar; el segundo vacio es fallo. */
@@ -9867,6 +9906,44 @@ export function MobileLibraryShell(args: {
     setSpeakingEmptyRetried(false);
   }, [currentSpeakingExercise?.id]);
 
+  // Latido de los dos anillos del boton de micro. Solo corre mientras hay
+  // turno hablado sin revelar; parado, no gasta frames de fondo.
+  useEffect(() => {
+    if (!currentSpeakingExercise?.id || practiceRevealed) {
+      speakingPulseA.stopAnimation();
+      speakingPulseB.stopAnimation();
+      speakingPulseA.setValue(0);
+      speakingPulseB.setValue(0);
+      return;
+    }
+    const cicloA = Animated.loop(
+      Animated.timing(speakingPulseA, {
+        toValue: 1,
+        duration: 1600,
+        easing: Easing.out(Easing.ease),
+        useNativeDriver: true,
+      })
+    );
+    const cicloB = Animated.loop(
+      Animated.timing(speakingPulseB, {
+        toValue: 1,
+        duration: 1600,
+        easing: Easing.out(Easing.ease),
+        useNativeDriver: true,
+      })
+    );
+    cicloA.start();
+    // Medio ciclo de desfase, para que siempre haya un anillo saliendo.
+    const desfase = setTimeout(() => cicloB.start(), 800);
+    return () => {
+      clearTimeout(desfase);
+      cicloA.stop();
+      cicloB.stop();
+      speakingPulseA.setValue(0);
+      speakingPulseB.setValue(0);
+    };
+  }, [currentSpeakingExercise?.id, practiceRevealed, speakingPulseA, speakingPulseB]);
+
   // Al salir del slot hablado (o de la sesion) se corta el turno en seco.
   const speakingRecorderCancel = speakingRecorder.cancel;
   useEffect(() => {
@@ -15365,24 +15442,36 @@ export function MobileLibraryShell(args: {
                     const audioActive =
                       playingPracticeClipId === ex.id || playingHqPracticeClipId === ex.id;
                     const audioLoading = loadingPracticeAudioId === ex.id;
+                    // El anillo se VACIA con la cuenta atras: `strokeDashoffset`
+                    // va de 0 (entero) a la circunferencia (vacio).
+                    const ringOffset =
+                      SPEAKING_RING_CIRCUMFERENCE *
+                      (1 - Math.max(0, Math.min(1, speakingSecondsLeft / SPEAKING_ANSWER_SECONDS)));
                     return (
-                  <View style={[styles.practiceQuestionCard, styles.practiceQuestionCardMeaning]}>
-                    <View style={styles.speakingHintRow}>
-                      <View style={styles.speakingWhoChip}>
-                        <Feather name="mic" size={12} color="#fca5a5" />
-                        <Text style={styles.speakingWhoText}>SAY IT WITH:</Text>
+                  <View style={styles.speakingShell}>
+                    <View style={styles.speakingTopRow}>
+                      <View style={styles.speakingHintChip}>
+                        <Text style={styles.speakingHintLabel}>SAY IT WITH</Text>
+                        {/* La pista es la TRADUCCION en ingles. La palabra en el
+                            idioma meta no aparece hasta despues de calificar: se
+                            prueba recuperarla, no leerla. */}
+                        <Text style={styles.speakingHintValue}>{ex.translation}</Text>
                       </View>
-                      {/* La pista es la TRADUCCION en ingles. La palabra en el
-                          idioma meta no aparece hasta despues de calificar: se
-                          prueba recuperarla, no leerla. */}
-                      <Text style={styles.speakingHintValue}>{ex.translation}</Text>
+                      <View style={styles.speakingTimePill}>
+                        <Feather name="clock" size={12} color="#f8c15c" />
+                        <Text style={styles.speakingTimeText}>
+                          {formatSpeakingSeconds(speakingSecondsLeft)}
+                        </Text>
+                      </View>
                     </View>
 
+                    {/* Tarjeta ambar: SOLO la frase. Es lo unico que el usuario
+                        tiene que leer mientras piensa la palabra. */}
                     <View style={styles.speakingSentenceCard}>
-                      {/* La MISMA frase con hueco que pinta el ejercicio de
-                          contexto, y el mismo clip. */}
                       <Text style={styles.speakingSentenceText}>
-                        {practiceRevealed ? ex.sentence : ex.blanked}
+                        {practiceRevealed
+                          ? ex.sentence
+                          : renderSpeakingBlank(ex.blanked)}
                       </Text>
                       <Pressable
                         onPress={() => void playPracticeContextClipBest()}
@@ -15393,12 +15482,12 @@ export function MobileLibraryShell(args: {
                         style={styles.speakingReplayButton}
                       >
                         {audioLoading ? (
-                          <ActivityIndicator size="small" color="#cdd9ec" />
+                          <ActivityIndicator size="small" color="#2a1a05" />
                         ) : (
                           <Feather
-                            name={audioActive ? "volume-2" : "rotate-ccw"}
-                            size={14}
-                            color="#cdd9ec"
+                            name={audioActive ? "volume-2" : "play"}
+                            size={12}
+                            color="#2a1a05"
                           />
                         )}
                         <Text style={styles.speakingReplayText}>
@@ -15407,7 +15496,7 @@ export function MobileLibraryShell(args: {
                       </Pressable>
                     </View>
 
-                    {speakingPhase === "done" ? (
+                    {speakingPhase === "done" || practiceRevealed ? (
                       <>
                         <View style={styles.speakingAnswerCard}>
                           <Text style={styles.speakingCardLabel}>YOU SAID</Text>
@@ -15432,7 +15521,116 @@ export function MobileLibraryShell(args: {
                           <Text style={styles.speakingRevealWord}>{ex.word}</Text>
                         </View>
                       </>
-                    ) : null}
+                    ) : (
+                      /* El microfono vive en el CUERPO, centrado, no en el pie:
+                         es el protagonista de la pantalla y el pie solo guarda
+                         el boton de avanzar. */
+                      <View style={styles.speakingMicWrap}>
+                        <View style={styles.speakingMicStage}>
+                          <Svg
+                            width={SPEAKING_RING_SIZE}
+                            height={SPEAKING_RING_SIZE}
+                            style={StyleSheet.absoluteFill}
+                          >
+                            <Circle
+                              cx={SPEAKING_RING_SIZE / 2}
+                              cy={SPEAKING_RING_SIZE / 2}
+                              r={SPEAKING_RING_RADIUS}
+                              fill="none"
+                              stroke="rgba(255,255,255,0.08)"
+                              strokeWidth={6}
+                            />
+                            <Circle
+                              cx={SPEAKING_RING_SIZE / 2}
+                              cy={SPEAKING_RING_SIZE / 2}
+                              r={SPEAKING_RING_RADIUS}
+                              fill="none"
+                              stroke="#f8c15c"
+                              strokeWidth={6}
+                              strokeLinecap="round"
+                              strokeDasharray={`${SPEAKING_RING_CIRCUMFERENCE}`}
+                              strokeDashoffset={ringOffset}
+                              transform={`rotate(-90 ${SPEAKING_RING_SIZE / 2} ${SPEAKING_RING_SIZE / 2})`}
+                            />
+                          </Svg>
+                          {/* Dos anillos que laten, desfasados medio ciclo. */}
+                          <Animated.View
+                            pointerEvents="none"
+                            style={[
+                              styles.speakingMicPulse,
+                              {
+                                opacity: speakingPulseA.interpolate({
+                                  inputRange: [0, 1],
+                                  outputRange: [0.55, 0],
+                                }),
+                                transform: [
+                                  {
+                                    scale: speakingPulseA.interpolate({
+                                      inputRange: [0, 1],
+                                      outputRange: [1, 1.9],
+                                    }),
+                                  },
+                                ],
+                              },
+                            ]}
+                          />
+                          <Animated.View
+                            pointerEvents="none"
+                            style={[
+                              styles.speakingMicPulse,
+                              {
+                                opacity: speakingPulseB.interpolate({
+                                  inputRange: [0, 1],
+                                  outputRange: [0.55, 0],
+                                }),
+                                transform: [
+                                  {
+                                    scale: speakingPulseB.interpolate({
+                                      inputRange: [0, 1],
+                                      outputRange: [1, 1.9],
+                                    }),
+                                  },
+                                ],
+                              },
+                            ]}
+                          />
+                          <Pressable
+                            onPress={
+                              speakingRecorder.isRecording || speakingPhase === "listening"
+                                ? submitSpeakingTurn
+                                : startSpeakingTurn
+                            }
+                            accessibilityRole="button"
+                            accessibilityLabel={
+                              speakingRecorder.isRecording || speakingPhase === "listening"
+                                ? "Stop listening and check"
+                                : "Say the missing word"
+                            }
+                            testID={
+                              speakingRecorder.isRecording || speakingPhase === "listening"
+                                ? "qa-speaking-stop"
+                                : "qa-speaking-record"
+                            }
+                            style={styles.speakingMicButton}
+                          >
+                            <Feather
+                              name={
+                                speakingRecorder.isRecording || speakingPhase === "listening"
+                                  ? "square"
+                                  : "mic"
+                              }
+                              size={28}
+                              color="#2a1a05"
+                            />
+                          </Pressable>
+                        </View>
+                        <Text style={styles.speakingMicCaption}>
+                          {speakingRecorder.isRecording || speakingPhase === "listening"
+                            ? "TAP WHEN YOU ARE DONE"
+                            : "TAP AND SAY THE WORD"}
+                        </Text>
+                      </View>
+                    )}
 
                     {speakingError ? (
                       <Text style={styles.speakingErrorText}>{speakingError}</Text>
@@ -15764,34 +15962,12 @@ export function MobileLibraryShell(args: {
                   >
                     <Text style={[styles.inlineButtonText, styles.primaryButtonText, styles.practiceMeaningFooterButtonText]}>Check answer</Text>
                   </Pressable>
-                ) : currentPracticeExercise.kind === "speaking" ? (() => {
-                  if (speakingRecorder.isRecording || speakingPhase === "listening") {
-                    return (
-                      <Pressable
-                        onPress={submitSpeakingTurn}
-                        accessibilityRole="button"
-                        accessibilityLabel="Stop listening and check"
-                        testID="qa-speaking-stop"
-                        style={[styles.speakingMicButton, styles.speakingMicButtonRecording]}
-                      >
-                        <Feather name="square" size={20} color="#ffffff" />
-                        <Text style={styles.speakingMicButtonRecordingText}>TAP TO SEND</Text>
-                      </Pressable>
-                    );
-                  }
-                  return (
-                    <Pressable
-                      onPress={startSpeakingTurn}
-                      accessibilityRole="button"
-                      accessibilityLabel="Say the missing word"
-                      testID="qa-speaking-record"
-                      style={styles.speakingMicButton}
-                    >
-                      <Feather name="mic" size={20} color="#2a0d07" />
-                      <Text style={styles.speakingMicButtonText}>TAP TO SPEAK</Text>
-                    </Pressable>
-                  );
-                })() : currentPracticeExercise.kind === "match" ? (() => {
+                ) : currentPracticeExercise.kind === "speaking" ? (
+                  // El microfono del turno hablado vive en el CUERPO, centrado
+                  // bajo la tarjeta ambar. Aqui no queda nada: el pie solo
+                  // guarda el boton de avanzar, que pinta la rama de arriba.
+                  null
+                ) : currentPracticeExercise.kind === "match" ? (() => {
                   // Match footer: sólo hint. El veredicto se dispara
                   // solo desde el effect de auto-validación (~350 ms
                   // después del último pair); ya no hay botón "Check".
@@ -27590,65 +27766,138 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   // Ejercicio hablado. Coral, el mismo acento que la orbita le da al modo.
-  speakingHintRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    flexWrap: "wrap",
-    gap: 8,
-    marginBottom: 12,
+  // Turno hablado, diseno "Ambar" (elegido por el usuario entre mockups el
+  // 2026-09-14). Los valores salen del mockup, no de aproximarlos.
+  speakingShell: {
+    flex: 1,
+    gap: 18,
   },
-  speakingWhoChip: {
+  speakingTopRow: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 5,
-    backgroundColor: "rgba(252,165,165,0.14)",
-    borderColor: "rgba(252,165,165,0.35)",
-    borderWidth: 1,
+    justifyContent: "space-between",
+    gap: 10,
+  },
+  speakingHintChip: {
+    flexShrink: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    paddingVertical: 7,
+    paddingHorizontal: 12,
     borderRadius: 999,
-    paddingVertical: 4,
-    paddingHorizontal: 9,
+    backgroundColor: "rgba(248,193,92,0.14)",
+    borderWidth: 1,
+    borderColor: "rgba(248,193,92,0.35)",
   },
-  speakingWhoText: {
-    color: "#fca5a5",
+  speakingHintLabel: {
+    color: "#f8c15c",
     fontSize: 10,
     fontWeight: "900",
-    letterSpacing: 0.9,
+    letterSpacing: 1.3,
   },
   speakingHintValue: {
     color: "#ffffff",
-    fontSize: 17,
+    fontSize: 13,
     fontWeight: "900",
     flexShrink: 1,
   },
+  speakingTimePill: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    paddingVertical: 7,
+    paddingHorizontal: 12,
+    borderRadius: 999,
+    backgroundColor: "rgba(255,255,255,0.06)",
+  },
+  speakingTimeText: {
+    color: "#f8c15c",
+    fontSize: 13,
+    fontWeight: "900",
+  },
+  // La tarjeta ambar lleva SOLO la frase: es lo unico que hay que leer
+  // mientras se piensa la palabra.
   speakingSentenceCard: {
-    backgroundColor: "rgba(255,255,255,0.05)",
-    borderColor: "rgba(255,255,255,0.08)",
-    borderWidth: 1,
-    borderRadius: 18,
-    padding: 16,
-    gap: 12,
+    borderRadius: 28,
+    backgroundColor: "#f8c15c",
+    paddingVertical: 24,
+    paddingHorizontal: 22,
+    gap: 16,
     alignItems: "flex-start",
+    shadowColor: "#f8c15c",
+    shadowOpacity: 0.3,
+    shadowRadius: 30,
+    shadowOffset: { width: 0, height: 24 },
+    elevation: 8,
   },
   speakingSentenceText: {
-    color: "#ffffff",
-    fontSize: 19,
-    fontWeight: "800",
-    lineHeight: 26,
+    color: "#2a1a05",
+    fontSize: 28,
+    fontWeight: "900",
+    lineHeight: 34,
+    letterSpacing: -0.3,
+  },
+  /** El hueco: ficha en linea, no una corrida de guiones bajos. */
+  speakingBlankSlot: {
+    color: "transparent",
+    backgroundColor: "rgba(255,255,255,0.45)",
+    borderRadius: 12,
+    fontSize: 28,
+    fontWeight: "900",
   },
   speakingReplayButton: {
     flexDirection: "row",
     alignItems: "center",
     gap: 6,
-    backgroundColor: "rgba(255,255,255,0.06)",
-    borderRadius: 999,
-    paddingVertical: 6,
+    paddingVertical: 8,
     paddingHorizontal: 12,
+    borderRadius: 999,
+    backgroundColor: "rgba(42,26,5,0.14)",
   },
   speakingReplayText: {
-    color: "#cdd9ec",
+    color: "#2a1a05",
+    fontSize: 10,
+    fontWeight: "900",
+    letterSpacing: 1,
+  },
+  speakingMicWrap: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 14,
+  },
+  speakingMicStage: {
+    width: 168,
+    height: 168,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  speakingMicPulse: {
+    position: "absolute",
+    width: 112,
+    height: 112,
+    borderRadius: 999,
+    backgroundColor: "rgba(248,193,92,0.28)",
+  },
+  speakingMicButton: {
+    width: 112,
+    height: 112,
+    borderRadius: 999,
+    backgroundColor: "#f8c15c",
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: "#f8c15c",
+    shadowOpacity: 0.35,
+    shadowRadius: 20,
+    shadowOffset: { width: 0, height: 16 },
+    elevation: 10,
+  },
+  speakingMicCaption: {
+    color: "#9cb0c9",
     fontSize: 10,
     fontWeight: "800",
-    letterSpacing: 1,
+    letterSpacing: 1.3,
   },
   speakingAnswerCard: {
     marginTop: 14,
@@ -27700,30 +27949,6 @@ const styles = StyleSheet.create({
     color: "#ffd2d2",
     fontSize: 13,
     fontWeight: "600",
-  },
-  speakingMicButton: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 10,
-    backgroundColor: "#fca5a5",
-    borderRadius: 999,
-    paddingVertical: 15,
-  },
-  speakingMicButtonText: {
-    color: "#2a0d07",
-    fontSize: 13,
-    fontWeight: "900",
-    letterSpacing: 1,
-  },
-  speakingMicButtonRecording: {
-    backgroundColor: "#ef4444",
-  },
-  speakingMicButtonRecordingText: {
-    color: "#ffffff",
-    fontSize: 13,
-    fontWeight: "900",
-    letterSpacing: 1,
   },
   practiceFooterHint: {
     color: "rgba(226,232,244,0.74)",

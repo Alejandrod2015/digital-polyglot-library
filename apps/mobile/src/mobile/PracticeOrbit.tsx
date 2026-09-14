@@ -68,7 +68,7 @@ const MODE_COLORS: Record<PracticeModeKey, string> = {
   context: "#86efac", // verde menta
   listening: "#f0abfc", // rosa
   match: "#7dd3fc", // cyan
-  speaking: "#fca5a5", // coral
+  speaking: "#f8c15c", // ambar, el color del turno hablado desde el 2026-09-14
 };
 
 // Uniform card fill for all four skills. Each card used to fill with
