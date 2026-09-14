@@ -145,7 +145,7 @@ export const ITALIAN_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
 // texto, no en plaza, o cuentan como las 1-2 fuera de nivel que el check tolera.
 // Ampliado tema a tema (2026-09-14, via Journey-planning-2): cada palabra que
 // una historia del journey usa como plaza y KELLY marca A1/A2, nunca una que
-// ninguna historia use. Tema 3 (Neighbours & Noise): 19 palabras. Tema 4 (Bills & Expenses): 33. Tema 5 (Repairs & DIY): 21.
+// ninguna historia use. Tema 3 (Neighbours & Noise): 19 palabras. Tema 4 (Bills & Expenses): 33. Tema 5 (Repairs & DIY): 21. Tema 6 (Summer & Holidays): 9.
 // Fuera tambien "straordinario": KELLY lo da A1 como ADJETIVO y el plan lo usa
 // como NOMBRE (horas extra); la lista no distingue categoria.
 const ITALIAN_A1_A2_CURATED: readonly string[] = [
@@ -153,8 +153,10 @@ const ITALIAN_A1_A2_CURATED: readonly string[] = [
   "affare",           // KELLY: A2 (NOM)
   "amministratore",   // KELLY: A2 (NOM)
   "antico",           // KELLY: A1 (ADJ)
+  "arrivo",           // KELLY: A2 (NOM)
   "attento",          // KELLY: A2 (ADJ)
   "attenzione",       // KELLY: A1 (NOM)
+  "bisogno",          // KELLY: A1 (NOM)
   "bravo",            // KELLY: A2 (ADJ)
   "calcio",           // KELLY: A2 (NOM)
   "calcolare",        // KELLY: A2 (VER)
@@ -177,6 +179,7 @@ const ITALIAN_A1_A2_CURATED: readonly string[] = [
   "discutere",        // KELLY: A2 (VER)
   "diverso",          // KELLY: A1 (ADJ)
   "dividere",         // KELLY: A2 (VER)
+  "dolce",            // KELLY: A2 (ADJ)
   "elenco",           // KELLY: A2 (NOM)
   "esperto",          // KELLY: A2 (NOM)
   "euro",             // KELLY: A1 (NOM)
@@ -201,15 +204,19 @@ const ITALIAN_A1_A2_CURATED: readonly string[] = [
   "metro",            // KELLY: A2 (NOM)
   "nascondere",       // KELLY: A2 (VER)
   "nome",             // KELLY: A1 (NOM)
+  "notizia",          // KELLY: A1 (NOM)
   "ombra",            // KELLY: A2 (NOM)
   "ormai",            // KELLY: A1 (ADV)
   "pace",             // KELLY: A1 (NOM)
   "pari",             // KELLY: A1 (ADJ)
   "parte",            // KELLY: A1 (NOM)
+  "partenza",         // KELLY: A2 (NOM)
   "partire",          // KELLY: A1 (VER)
   "passare",          // KELLY: A1 (VER)
+  "patto",            // KELLY: A2 (NOM)
   "pericoloso",       // KELLY: A2 (ADJ)
   "pesante",          // KELLY: A2 (ADJ)
+  "piastrella",       // KELLY: A2 (NOM)
   "prezioso",         // KELLY: A2 (ADJ)
   "promettere",       // KELLY: A2 (VER)
   "proporre",         // KELLY: A1 (VER)
@@ -222,6 +229,7 @@ const ITALIAN_A1_A2_CURATED: readonly string[] = [
   "ridere",           // KELLY: A2 (VER)
   "rinunciare",       // KELLY: A2 (VER)
   "rispetto",         // KELLY: A1 (NOM)
+  "ritorno",          // KELLY: A2 (NOM)
   "riuscire",         // KELLY: A1 (VER)
   "salvare",          // KELLY: A2 (VER)
   "sbagliare",        // KELLY: A2 (VER)
@@ -238,6 +246,7 @@ const ITALIAN_A1_A2_CURATED: readonly string[] = [
   "strumento",        // KELLY: A1 (NOM)
   "studio",           // KELLY: A1 (NOM)
   "succedere",        // KELLY: A1 (VER)
+  "sud",              // KELLY: A2 (NOM)
   "suonare",          // KELLY: A2 (VER)
   "toccare",          // KELLY: A2 (VER)
   "trattare",         // KELLY: A1 (VER)
