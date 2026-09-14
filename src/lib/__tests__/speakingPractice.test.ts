@@ -8,6 +8,10 @@ import {
 } from "../speakingGrading";
 import { createSpeakingExercise, type PracticeFavoriteItem } from "../practiceExercises";
 
+// Este fichero es el GATE de dos filas de docs/rules-inventory.json. Los ids
+// que ahi se declaran son "g1" y "g5"; el lint del inventario los busca aqui
+// literalmente, asi que no se renombran sin tocar tambien esas dos filas.
+
 const favorito = (extra: Partial<PracticeFavoriteItem> = {}): PracticeFavoriteItem => ({
   word: "el vecino",
   surface: "vecino",

@@ -1076,6 +1076,20 @@
       "source": "memory:project_practice_word_speed.md"
     },
     {
+      "id": "speaking-practice-g1",
+      "domain": "practice",
+      "rule": "La pregunta del ejercicio hablado NUNCA contiene la palabra que pide, ni su forma de la historia, comparando sin acentos y por palabra completa; si la contiene se regenera UNA vez y despues el slot cae a context",
+      "gate": "src/lib/__tests__/speakingPractice.test.ts#g1",
+      "source": "manual:spec-speaking-piloto"
+    },
+    {
+      "id": "speaking-practice-g5",
+      "domain": "practice",
+      "rule": "El ejercicio hablado se califica primero de forma determinista; el LLM solo entra si eso falla y NUNCA aprueba solo: tiene que devolver la forma exacta y el servidor comprueba que esta en la transcripcion",
+      "gate": "src/lib/__tests__/speakingPractice.test.ts#g5",
+      "source": "manual:spec-speaking-piloto"
+    },
+    {
       "id": "arctype-valid",
       "domain": "process",
       "rule": "A0 lleva arcType nulo; los demas, uno de la lista",
