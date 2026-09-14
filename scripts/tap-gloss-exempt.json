@@ -385,6 +385,44 @@
         "trenta"
       ]
     },
+    "italian-friends-italy-a0": {
+      "articles": [
+        "dei",
+        "gli",
+        "i",
+        "il",
+        "la",
+        "le",
+        "lo",
+        "un",
+        "una",
+        "uno"
+      ],
+      "characterNames": [
+        "alice",
+        "federica",
+        "francesca",
+        "lorenzo",
+        "matteo",
+        "riccardo",
+        "valentina"
+      ],
+      "numerals": [
+        "cinque",
+        "dieci",
+        "dodici",
+        "due",
+        "novanta",
+        "otto",
+        "quattro",
+        "quindici",
+        "sei",
+        "tre",
+        "trentacinque",
+        "venti",
+        "zero"
+      ]
+    },
     "italian-traveler-a0": {
       "articles": [
         "dei",
