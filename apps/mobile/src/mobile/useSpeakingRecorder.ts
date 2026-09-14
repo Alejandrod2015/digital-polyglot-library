@@ -33,29 +33,21 @@ import {
  */
 
 /**
- * Devuelve la sesion de audio de iOS a reproduccion. Dos llamadas, y las dos
- * hacen falta.
+ * Devuelve la sesion de audio de iOS a reproduccion.
  *
- * El primer intento de arreglo (commit 8734c3bb) uso solo `setAudioModeAsync`
- * de expo-av y NO funciono. Leyendo `expo-av/ios/EXAV/EXAudioSessionManager.m`
- * se ve por que, y son dos motivos independientes:
+ * LA CAUSA, en dos frases: expo-av no fija el MODE de la AVAudioSession (solo
+ * la categoria) y ademas cachea la ultima categoria que puso, asi que tras el
+ * reconocimiento se saltaba la llamada y dejaba el modo `measurement`, que
+ * apaga el procesado de salida. Por eso la restauracion la hace el modulo de
+ * RECONOCIMIENTO con `setCategoryIOS`, que toca la sesion directamente,
+ * categoria y modo, y el `setAudioModeAsync` de expo-av va detras solo para
+ * dejarlo en sincronia con las otras nueve rutas de sonido de la app.
  *
- * 1. Expo-av llama a `setCategory:withOptions:` y a nada mas. En todo su codigo
- *    de iOS no hay un solo `setMode`. Asi que NO puede quitar el MODE de la
- *    AVAudioSession, y el `measurement` que dejaba puesto el reconocimiento
- *    seguia ahi. Ese modo desactiva el procesado de salida: el sonido sale bajo
- *    y apagado, que es exactamente lo que se oia.
- * 2. Ademas, expo-av CACHEA la ultima categoria que fijo
- *    (`if (!_activeCategory || ![category isEqualToString:_activeCategory] ...)`)
- *    y se salta la llamada cuando coincide. Como el reconocedor cambia la
- *    sesion por detras sin que expo-av se entere, expo-av seguia creyendo que
- *    estaba en `playback` y no llamaba a nada. La restauracion era literalmente
- *    una funcion vacia.
- *
- * `setCategoryIOS` del propio modulo de reconocimiento si toca la sesion
- * directamente, categoria Y modo, asi que va primero; el `setAudioModeAsync` de
- * despues mantiene a expo-av en sincronia con lo que acabamos de hacer, que es
- * lo que usan las otras nueve rutas de sonido de la app.
+ * La prueba esta en `expo-av/ios/EXAV/EXAudioSessionManager.m`: solo llama a
+ * `setCategory:withOptions:`, no hay un `setMode` en todo su codigo de iOS, y
+ * el guard `if (!_activeCategory || ![category isEqualToString:_activeCategory]
+ * ...)` es el que se saltaba la llamada. Sin esto, la restauracion del commit
+ * 8734c3bb era literalmente una funcion vacia.
  */
 async function restaurarModoDeReproduccion(): Promise<void> {
   try {
@@ -73,22 +65,6 @@ async function restaurarModoDeReproduccion(): Promise<void> {
     allowsRecordingIOS: false,
     interruptionModeIOS: InterruptionModeIOS.DoNotMix,
   });
-}
-
-/**
- * Deja en el log la categoria y el modo REALES de la sesion, para poder leerlos
- * con `idevicesyslog` en vez de deducirlos. TEMPORAL: se quita en cuanto el
- * chat de planificacion confirme que el sonido vuelve bien.
- */
-export function logSpeakingAudioSession(donde: string): void {
-  try {
-    const estado = ExpoSpeechRecognitionModule.getAudioSessionCategoryAndOptionsIOS();
-    console.log(
-      `[speaking-audio] ${donde} category=${estado.category} mode=${estado.mode} options=${estado.categoryOptions.join(",") || "(ninguna)"}`
-    );
-  } catch {
-    console.log(`[speaking-audio] ${donde} sin sesion que leer (Android o no iniciada)`);
-  }
 }
 
 const MAX_LISTENING_MS = 15000;
