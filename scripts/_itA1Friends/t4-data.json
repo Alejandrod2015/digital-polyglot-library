@@ -1,0 +1,452 @@
+[
+  {
+    "topic": "bills-and-expenses",
+    "slotIndex": 0,
+    "title": "Chi paga il calzino?",
+    "arcType": "late-reveal",
+    "synopsis": "One cold night the dog does not eat and a sock is missing. Elisa and Davide run to Noemi, the vet of the neighbourhood, who takes the sock out. The dog is fine, but the bill is very high, and Davide cannot pay his half until his salary arrives.",
+    "text": "La notte è fredda, e il cane non mangia la cena: ha la pancia dura. Manca un calzino, ed Elisa chiama Davide. Davide prende il cane, e insieme corrono in via Padova. Noemi è la veterinaria del quartiere: il suo studio apre di notte.\n\nNoemi visita il cane e chiede: “Che cosa è successo? Ha mangiato qualcosa di strano?” “Forse un calzino,” risponde Davide. “Un calzino è pericoloso. È una cosa seria,” dice Noemi.\n\nDopo un'ora Noemi ha tirato fuori il calzino e salva il cane: niente di grave. “Grazie, Noemi. Grazie davvero,” dice Elisa. Poi Elisa riceve il conto e legge: “Trecentottanta euro.” “Costa tanto,” dice Davide. “Adesso non posso. Lo stipendio arriva a fine mese.”\n\n“Pago io,” dice Elisa, e paga con la carta. È una cifra cara, e ha un nodo nello stomaco: ha speso i soldi del cappotto nuovo. Poi guarda il cane e sorride: “Vale ogni euro.”",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "la cena",
+        "surface": "cena",
+        "definition": "Dinner; the meal you eat in the evening.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "duro",
+        "surface": "dura",
+        "definition": "Hard; not soft when you touch it with your hand.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "mancare",
+        "surface": "Manca",
+        "definition": "To be missing; something is not in its place.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il calzino",
+        "surface": "calzino",
+        "definition": "A sock; you wear it on your foot in a shoe.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la veterinaria",
+        "surface": "veterinaria",
+        "definition": "A vet; a doctor who takes care of animals.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "lo studio",
+        "surface": "studio",
+        "definition": "Here, the office where a doctor or a vet works.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "visitare",
+        "surface": "visita",
+        "definition": "To examine; a doctor or a vet checks an animal or a person.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "succedere",
+        "surface": "successo",
+        "definition": "To happen; here, she asks what happened to the dog.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "forse",
+        "surface": "Forse",
+        "definition": "Maybe; perhaps, it is possible but not sure.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "pericoloso",
+        "surface": "pericoloso",
+        "definition": "Dangerous; it can hurt you or make you ill.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "serio",
+        "surface": "seria",
+        "definition": "Serious; important, so you must be careful about it.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "grave",
+        "surface": "grave",
+        "definition": "Very serious; very bad, for example for your health.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "tirare",
+        "surface": "tirato",
+        "definition": "To pull; here, tirare fuori means to take out.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "salvare",
+        "surface": "salva",
+        "definition": "To save; to help someone out of danger.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "ricevere",
+        "surface": "riceve",
+        "definition": "To receive; to get something that someone gives you.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "euro",
+        "surface": "euro",
+        "definition": "The money of Italy and many other countries in Europe.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "costare",
+        "surface": "Costa",
+        "definition": "To cost; to have a price you must pay.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "caro",
+        "surface": "cara",
+        "definition": "Expensive; it costs a lot of money to buy.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "spendere",
+        "surface": "speso",
+        "definition": "To spend; to use your money to pay for something.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "valere",
+        "surface": "Vale",
+        "definition": "To be worth; here, the dog is worth every euro.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "bills-and-expenses",
+    "slotIndex": 1,
+    "title": "Anche il caffè?",
+    "arcType": "reframe-turn",
+    "synopsis": "Elisa starts a notebook with every expense for the dog, and she divides everything into equal parts. When Davide sees that she writes down even a coffee they drank together at the bar, he gets angry. For the first time, numbers stand between the two friends.",
+    "text": "Un quaderno nuovo è sul tavolo di Elisa. Con una matita lei ha fatto un elenco intero delle spese del cane, e poi calcola la metà di tutto.\n\nVeterinaria, trecentottanta euro. Crocchette, ventidue euro. “Dividiamo in parti uguali,” dice Elisa. “Va bene. Mi presti la differenza fino allo stipendio?” chiede Davide.\n\nElisa ha segnato tutto con attenzione, anche un caffè bevuto insieme al bar: importo, due euro e cinquanta. “Scrivi anche il caffè?” chiede Davide. “Un conto è un conto,” risponde lei.\n\nIn cucina c'è silenzio. Davide chiude il quaderno e dice, con la voce forte: “Non è semplice, lo so. Ma io non sono una banca, e questo elenco è inutile.” Elisa vuole cancellare la riga sbagliata, ma non trova la gomma.\n\nQuella sera Davide non sale al terzo piano, e nasconde il telefono. Poi manda un messaggio: “Scusa. Non è grave, è solo un caffè.” Elisa non ha risposto subito.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "la matita",
+        "surface": "matita",
+        "definition": "A pencil; you write with it and you can erase it.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "elenco",
+        "surface": "elenco",
+        "definition": "A list; many things written one under the other.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "intero",
+        "surface": "intero",
+        "definition": "Whole; complete, with nothing missing from the list.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "calcolare",
+        "surface": "calcola",
+        "definition": "To calculate; to find a number with maths.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la parte",
+        "surface": "parti",
+        "definition": "A part; one of the pieces of something.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "semplice",
+        "surface": "semplice",
+        "definition": "Simple; easy to understand and not complicated at all.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "dividere",
+        "surface": "Dividiamo",
+        "definition": "To divide; to share something into two or more parts.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "uguale",
+        "surface": "uguali",
+        "definition": "Equal; the same size or the same amount.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "prestare",
+        "surface": "presti",
+        "definition": "To lend; to give something that must come back later.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la differenza",
+        "surface": "differenza",
+        "definition": "The difference; the part that is missing between two amounts.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "segnare",
+        "surface": "segnato",
+        "definition": "To write down something so you do not forget it.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "attenzione",
+        "surface": "attenzione",
+        "definition": "Attention; con attenzione means carefully, step by step.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "le crocchette",
+        "surface": "Crocchette",
+        "definition": "Dry food for dogs, in small hard pieces.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "bere",
+        "surface": "bevuto",
+        "definition": "To drink something, for example a coffee or water.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "importo",
+        "surface": "importo",
+        "definition": "The amount; how much money you must pay.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "inutile",
+        "surface": "inutile",
+        "definition": "Useless; it does not help and has no purpose.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "sbagliare",
+        "surface": "sbagliata",
+        "definition": "To make a mistake; to do something the wrong way.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "cancellare",
+        "surface": "cancellare",
+        "definition": "To erase or delete something you have written.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la gomma",
+        "surface": "gomma",
+        "definition": "An eraser; you use it to take away pencil marks.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "nascondere",
+        "surface": "nasconde",
+        "definition": "To hide; to put something where nobody can see it.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "bills-and-expenses",
+    "slotIndex": 2,
+    "title": "Davide vende la bici",
+    "arcType": "harmonic-close",
+    "synopsis": "Davide sells his old yellow bike, a memory from school, to a young man who comes to the courtyard. In the evening he brings Elisa his half of the money. Elisa understands what it cost him, and she tears the page of expenses out of the notebook.",
+    "text": "Davide ha una bici vecchia, un ricordo del liceo. Per lui è preziosa. Domenica l'ha pulita e ha scritto un annuncio: centoventi euro.\n\nNel pomeriggio arriva un ragazzo giovane e ricco. Prova la bici davanti a Davide. Gira in cortile, nella luce del sole.\n\nPoi trattano sul prezzo: la bici vale di più, ma fanno un affare a cento euro. Davide accetta con coraggio, tocca la bici e la saluta.\n\nLa sera Davide sale da Elisa. “Ecco la mia metà, con la differenza. Adesso siamo pari,” dice lui.\n\nElisa guarda il cortile: la bici non c'è più. “Hai venduto la tua bici? Per un calzino?” chiede lei, triste. “Per il cane. Il cane cambia tutto,” risponde Davide.\n\nElisa prende il quaderno e strappa la pagina delle spese. “È semplice: da oggi scriviamo solo le cose grandi. E il caffè lo offro io,” dice. Davide ride, e sotto il tavolo il cane mangia le crocchette.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "il ricordo",
+        "surface": "ricordo",
+        "definition": "A memory; something that makes you think of the past.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il liceo",
+        "surface": "liceo",
+        "definition": "Italian secondary school, for students from about fourteen to nineteen.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "prezioso",
+        "surface": "preziosa",
+        "definition": "Precious; very important and very dear to you.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "pulire",
+        "surface": "pulita",
+        "definition": "To clean; to make something nice and not dirty.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il pomeriggio",
+        "surface": "pomeriggio",
+        "definition": "Afternoon; the part of the day after lunch.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "giovane",
+        "surface": "giovane",
+        "definition": "Young; not old, in the first part of life.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "ricco",
+        "surface": "ricco",
+        "definition": "Rich; a person with a lot of money.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "provare",
+        "surface": "Prova",
+        "definition": "To try; to test something before you buy it.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "girare",
+        "surface": "gira",
+        "definition": "To go around; here, he rides the bike in a circle.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "trattare",
+        "surface": "trattano",
+        "definition": "To discuss the price to find a better one.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "affare",
+        "surface": "affare",
+        "definition": "A deal; here, a good price for both people.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "accettare",
+        "surface": "accetta",
+        "definition": "To accept; to say yes to an offer.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "il coraggio",
+        "surface": "coraggio",
+        "definition": "Courage; you do something difficult even if it hurts.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "toccare",
+        "surface": "tocca",
+        "definition": "To touch something with your hand or your fingers.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "salutare",
+        "surface": "saluta",
+        "definition": "To say goodbye or hello to someone or something.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "pari",
+        "surface": "pari",
+        "definition": "Even; here, nobody owes money to the other person.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "vendere",
+        "surface": "venduto",
+        "definition": "To sell; to give something to someone for money.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "cambiare",
+        "surface": "cambia",
+        "definition": "To change; to make something different from before.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "offrire",
+        "surface": "offro",
+        "definition": "To offer; here, she will pay for the coffee.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "ridere",
+        "surface": "ride",
+        "definition": "To laugh; to make a happy sound because something is funny.",
+        "anchor": false
+      }
+    ]
+  }
+]
