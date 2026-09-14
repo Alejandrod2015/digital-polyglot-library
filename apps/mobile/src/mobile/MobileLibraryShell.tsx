@@ -11834,7 +11834,7 @@ export function MobileLibraryShell(args: {
       ...continueReadingCards.slice(0, 3).map((c) => c.coverUrl),
     ].filter(Boolean);
     for (const url of urls) {
-      Image.prefetch(url);
+      void Image.prefetch(url).catch(() => undefined);
     }
   }, [latestBookCards, continueReadingCards]);
 
