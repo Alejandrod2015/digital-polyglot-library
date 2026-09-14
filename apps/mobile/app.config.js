@@ -228,7 +228,7 @@ const config = {
     // cada subida a Play; Play rechaza un versionCode repetido o menor.
     // El 25 se gastó en el build de EAS del 2026-08-14, así que el siguiente
     // sale con este 26 o Play lo rechaza.
-    versionCode: 26,
+    versionCode: 27,
     adaptiveIcon: {
       // Android recorta el foreground a un círculo/squircle según el launcher y
       // solo respeta el 66% central, así que reusar `icon.png` (el mark llena
