@@ -54,3 +54,34 @@ export function fillSentenceTranslationBlank(
 
   return frase.replace(HUECO, glosa);
 }
+
+/**
+ * De donde sale la traduccion de la frase de una palabra, y en que orden.
+ *
+ * 1. La COLUMNA `StoryPracticeSet.sentenceTranslations`, escrita a mano. Manda
+ *    porque cubre todas las palabras de la historia y porque alguien la
+ *    reviso; el hueco ya viene relleno, sin `_____` que resolver.
+ * 2. El `fill_blank` curado, como reserva. Solo existe para 4 a 6 palabras por
+ *    historia, asi que cubre poco, pero lo que cubre es bueno.
+ * 3. Nada. Y entonces en pantalla no se pinta nada, que es preferible a
+ *    inventar una traduccion.
+ */
+export function resolveSentenceTranslation(params: {
+  /** Valor de la columna para ESA palabra, ya buscado por clave normalizada. */
+  fromColumn: unknown;
+  /** Lo que devolvio `fillSentenceTranslationBlank` para su `fill_blank`. */
+  fromFillBlank: string | null;
+}): string | null {
+  const columna = texto(params.fromColumn);
+  if (columna) return columna;
+  return params.fromFillBlank || null;
+}
+
+/**
+ * La clave con la que se guarda y se busca en la columna. Es el mismo `norm`
+ * que la ruta de favoritos usa para casar palabra con ejercicio; vive aqui
+ * para que el script que escribe y la ruta que lee no puedan discrepar.
+ */
+export function sentenceTranslationKey(word: string): string {
+  return (word ?? "").trim().toLowerCase();
+}

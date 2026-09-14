@@ -7,7 +7,11 @@ import { getActiveMobileSession } from "@/lib/mobileSession";
 import { prisma } from "@/lib/prisma";
 import { extractExampleSentence } from "@/lib/exampleSentence";
 import { getCuratedExampleMap, curatedKey } from "@/lib/curatedExamples";
-import { fillSentenceTranslationBlank } from "@/lib/sentenceTranslation";
+import {
+  fillSentenceTranslationBlank,
+  resolveSentenceTranslation,
+  sentenceTranslationKey,
+} from "@/lib/sentenceTranslation";
 
 type FavoriteBody = {
   word: string;
@@ -114,8 +118,13 @@ export async function GET(req: NextRequest): Promise<Response> {
     }
   >;
   const collectClips = (
-    exercises: { type: string; word: string | null; payload: unknown }[]
+    exercises: { type: string; word: string | null; payload: unknown }[],
+    sentenceTranslations: unknown
   ): ClipMap => {
+    // Las traducciones escritas a mano, por clave normalizada. Mandan sobre el
+    // `fill_blank`: cubren TODAS las palabras de la historia y ya vienen sin
+    // hueco que resolver.
+    const escritas = (sentenceTranslations ?? null) as Record<string, unknown> | null;
     const m: ClipMap = new Map();
     // La traducción de la frase vive SOLO en el `fill_blank` de la palabra (es
     // el único que la tiene, con `_____` donde va la respuesta), así que se
@@ -152,7 +161,10 @@ export async function GET(req: NextRequest): Promise<Response> {
           voiceId: typeof ac?.voiceId === "string" ? ac.voiceId : null,
           wordClipUrl,
           wordVoiceId: typeof ac?.wordVoiceId === "string" ? ac.wordVoiceId : null,
-          sentenceTranslation: traduccionPorPalabra.get(k) ?? null,
+          sentenceTranslation: resolveSentenceTranslation({
+            fromColumn: escritas?.[sentenceTranslationKey(ex.word)],
+            fromFillBlank: traduccionPorPalabra.get(k) ?? null,
+          }),
         });
       }
     }
@@ -174,12 +186,20 @@ export async function GET(req: NextRequest): Promise<Response> {
       select: {
         id: true,
         journey: { select: { language: true } },
-        practiceSet: { select: { exercises: { select: { type: true, word: true, payload: true } } } },
+        practiceSet: {
+          select: {
+            sentenceTranslations: true,
+            exercises: { select: { type: true, word: true, payload: true } },
+          },
+        },
       },
     });
     for (const r of rows) {
       const key = `${JOURNEY_PREFIX}${r.id}`;
-      liveByKey.set(key, collectClips(r.practiceSet?.exercises ?? []));
+      liveByKey.set(
+        key,
+        collectClips(r.practiceSet?.exercises ?? [], r.practiceSet?.sentenceTranslations)
+      );
       langByKey.set(key, r.journey?.language ?? null);
     }
   }
@@ -189,12 +209,20 @@ export async function GET(req: NextRequest): Promise<Response> {
       select: {
         slug: true,
         journey: { select: { language: true } },
-        practiceSet: { select: { exercises: { select: { type: true, word: true, payload: true } } } },
+        practiceSet: {
+          select: {
+            sentenceTranslations: true,
+            exercises: { select: { type: true, word: true, payload: true } },
+          },
+        },
       },
     });
     for (const r of jrows) {
       if (r.slug) {
-        liveByKey.set(r.slug, collectClips(r.practiceSet?.exercises ?? []));
+        liveByKey.set(
+          r.slug,
+          collectClips(r.practiceSet?.exercises ?? [], r.practiceSet?.sentenceTranslations)
+        );
         langByKey.set(r.slug, r.journey?.language ?? null);
       }
     }

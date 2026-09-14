@@ -11,7 +11,11 @@ import {
   createSpeakingExercise,
   type PracticeFavoriteItem,
 } from "../practiceExercises";
-import { fillSentenceTranslationBlank } from "../sentenceTranslation";
+import {
+  fillSentenceTranslationBlank,
+  resolveSentenceTranslation,
+  sentenceTranslationKey,
+} from "../sentenceTranslation";
 
 // Este fichero es el GATE de la fila "g4" de docs/rules-inventory.json. El id
 // que ahi se declara es "g4"; el lint del inventario lo busca aqui
@@ -341,5 +345,34 @@ describe("isSpeakingTurnAlreadyResolved: el candado del turno", () => {
 
   it("otro turno si se puede resolver", () => {
     expect(isSpeakingTurnAlreadyResolved("speaking:el vecino", "speaking:la ventana")).toBe(false);
+  });
+});
+
+describe("resolveSentenceTranslation: de donde sale la traduccion", () => {
+  it("la COLUMNA escrita a mano gana al fill_blank", () => {
+    expect(
+      resolveSentenceTranslation({
+        fromColumn: "The neighbour waves from the balcony every morning.",
+        fromFillBlank: "The neighbour waves from _____ every morning.",
+      })
+    ).toBe("The neighbour waves from the balcony every morning.");
+  });
+
+  it("sin columna, el fill_blank es la reserva", () => {
+    const reserva = "The neighbour waves from the balcony every morning.";
+    expect(resolveSentenceTranslation({ fromColumn: null, fromFillBlank: reserva })).toBe(reserva);
+    expect(resolveSentenceTranslation({ fromColumn: undefined, fromFillBlank: reserva })).toBe(reserva);
+    // Una columna vacia o de otro tipo no cuenta como escrita.
+    expect(resolveSentenceTranslation({ fromColumn: "   ", fromFillBlank: reserva })).toBe(reserva);
+    expect(resolveSentenceTranslation({ fromColumn: 42, fromFillBlank: reserva })).toBe(reserva);
+  });
+
+  it("sin ninguna de las dos, nada", () => {
+    expect(resolveSentenceTranslation({ fromColumn: null, fromFillBlank: null })).toBeNull();
+    expect(resolveSentenceTranslation({ fromColumn: "", fromFillBlank: "" })).toBeNull();
+  });
+
+  it("la clave de la columna es la misma que casa palabra con ejercicio", () => {
+    expect(sentenceTranslationKey("  El Vecino ")).toBe("el vecino");
   });
 });
