@@ -1,0 +1,206 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "le zinc,la chicorée,les comptes,la réparation",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {"word": "le zinc", "answer": "the bar counter", "options": ["the bar counter", "chicory coffee", "the accounts", "a repair"]},
+    {"word": "la chicorée", "answer": "chicory coffee", "options": ["the bar counter", "chicory coffee", "the accounts", "a repair"]},
+    {"word": "les comptes", "answer": "the accounts", "options": ["the bar counter", "chicory coffee", "the accounts", "a repair"]},
+    {"word": "la réparation", "answer": "a repair", "options": ["the bar counter", "chicory coffee", "the accounts", "a repair"]}
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "viré",
+  "sentence": "Le patron l'a _____ pour une erreur dans les comptes.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "viré",
+   "options": ["viré", "félicité", "payé", "promu"],
+   "translation": "The boss _____ him over a mistake in the accounts.",
+   "optionTranslations": ["fired", "congratulated", "paid", "promoted"],
+   "audioClip": {"language": "french", "sentence": "Le patron l'a viré pour une erreur dans les comptes.", "storySlug": "ce-qu-on-raconte-a-fives", "targetWord": "viré", "storySource": "user"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "renverser",
+  "sentence": "Attention, tu vas _____ ton verre d'eau !",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "renverser",
+   "options": ["renverser", "laver", "remplir", "chercher"],
+   "translation": "Watch out, you're going to _____ your glass of water!",
+   "optionTranslations": ["knock over", "wash", "fill", "look for"],
+   "audioClip": {"language": "french", "sentence": "Attention, tu vas renverser ton verre d'eau !", "storySlug": "ce-qu-on-raconte-a-fives", "targetWord": "renverser", "storySource": "user"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "brûlante",
+  "sentence": "Ne touche pas cette assiette, elle est encore _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "brûlante",
+   "options": ["brûlante", "froide", "propre", "cassée"],
+   "translation": "Don't touch this plate, it's still _____.",
+   "optionTranslations": ["hot", "cold", "clean", "broken"],
+   "audioClip": {"language": "french", "sentence": "Ne touche pas cette assiette, elle est encore brûlante.", "storySlug": "ce-qu-on-raconte-a-fives", "targetWord": "brûlante", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ce matin-là",
+  "sentence": "[[Ce matin-là]], il faisait très froid dans la rue.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "that morning",
+   "options": ["that morning", "every morning", "tomorrow morning", "last night"],
+   "audioClip": {"language": "french", "sentence": "Ce matin-là, il faisait très froid dans la rue.", "storySlug": "ce-qu-on-raconte-a-fives", "targetWord": "Ce matin-là", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "paraît-il",
+  "sentence": "Le café va fermer, [[paraît-il]], à la fin du mois.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "so it seems",
+   "options": ["so it seems", "that's certain", "never again", "right now"],
+   "audioClip": {"language": "french", "sentence": "Le café va fermer, paraît-il, à la fin du mois.", "storySlug": "ce-qu-on-raconte-a-fives", "targetWord": "paraît-il", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "méfiant",
+  "sentence": "Après cette histoire, le chien restait [[méfiant]] envers les inconnus.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wary, distrustful",
+   "options": ["wary, distrustful", "friendly, trusting", "curious, playful", "calm, relaxed"],
+   "audioClip": {"language": "french", "sentence": "Après cette histoire, le chien restait méfiant envers les inconnus.", "storySlug": "ce-qu-on-raconte-a-fives", "targetWord": "méfiant", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "louche",
+  "sentence": "Ce type raconte une histoire un peu [[louche]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shady, suspicious",
+   "options": ["shady, suspicious", "boring, dull", "funny, silly", "clear, obvious"],
+   "audioClip": {"language": "french", "sentence": "Ce type raconte une histoire un peu louche.", "storySlug": "ce-qu-on-raconte-a-fives", "targetWord": "louche", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "annuler",
+  "sentence": "Le client a [[annulé]] sa commande au dernier moment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cancelled",
+   "options": ["cancelled", "confirmed", "paid for", "forgotten"],
+   "audioClip": {"language": "french", "sentence": "Le client a annulé sa commande au dernier moment.", "storySlug": "ce-qu-on-raconte-a-fives", "targetWord": "annulé", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "relire",
+  "sentence": "Elle a [[relu]] le message trois fois avant de répondre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "reread",
+   "options": ["reread", "deleted", "sent", "ignored"],
+   "audioClip": {"language": "french", "sentence": "Elle a relu le message trois fois avant de répondre.", "storySlug": "ce-qu-on-raconte-a-fives", "targetWord": "relu", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "d'un drôle d'air",
+  "sentence": "Il l'a regardé [[d'un drôle d'air]], sans rien dire.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "with a strange look",
+   "options": ["with a strange look", "with a big smile", "with total confidence", "without looking up"],
+   "audioClip": {"language": "french", "sentence": "Il l'a regardé d'un drôle d'air, sans rien dire.", "storySlug": "ce-qu-on-raconte-a-fives", "targetWord": "d'un drôle d'air", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "à voix basse",
+  "sentence": "Elle a parlé [[à voix basse]] pour ne pas réveiller le bébé.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in a low voice",
+   "options": ["in a low voice", "very loudly", "in English", "while laughing"],
+   "audioClip": {"language": "french", "sentence": "Elle a parlé à voix basse pour ne pas réveiller le bébé.", "storySlug": "ce-qu-on-raconte-a-fives", "targetWord": "à voix basse", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "faillir",
+  "sentence": "Il a [[failli]] tomber dans l'escalier.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "almost (did something)",
+   "options": ["almost (did something)", "finally (did something)", "refused to", "forgot to"],
+   "audioClip": {"language": "french", "sentence": "Il a failli tomber dans l'escalier.", "storySlug": "ce-qu-on-raconte-a-fives", "targetWord": "failli", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "démentir",
+  "sentence": "Le maire a [[démenti]] la rumeur devant les journalistes.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "denied",
+   "options": ["denied", "confirmed", "repeated", "invented"],
+   "audioClip": {"language": "french", "sentence": "Le maire a démenti la rumeur devant les journalistes.", "storySlug": "ce-qu-on-raconte-a-fives", "targetWord": "démenti", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "c'est ce qu'ils disent tous",
+  "sentence": "[[C'est ce qu'ils disent tous]], mais personne ne le prouve.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "that's what they all say",
+   "options": ["that's what they all say", "nobody has ever said that", "that's completely new information", "that's a private secret"],
+   "audioClip": {"language": "french", "sentence": "C'est ce qu'ils disent tous, mais personne ne le prouve.", "storySlug": "ce-qu-on-raconte-a-fives", "targetWord": "C'est ce qu'ils disent tous", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "plus... plus",
+  "sentence": "[[Plus]] on attend, plus c'est difficile.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the more... the more",
+   "options": ["the more... the more", "never ever", "at least", "by the way"],
+   "audioClip": {"language": "french", "sentence": "Plus on attend, plus c'est difficile.", "storySlug": "ce-qu-on-raconte-a-fives", "targetWord": "Plus", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "se justifier",
+  "sentence": "Il a essayé de [[se justifier]] devant tout le monde.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to explain oneself, justify",
+   "options": ["to explain oneself, justify", "to apologize sincerely", "to change the subject", "to stay silent"],
+   "audioClip": {"language": "french", "sentence": "Il a essayé de se justifier devant tout le monde.", "storySlug": "ce-qu-on-raconte-a-fives", "targetWord": "se justifier", "storySource": "user"}
+  },
+  "featured": false
+ }
+]

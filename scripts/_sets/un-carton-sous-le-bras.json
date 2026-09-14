@@ -1,0 +1,206 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la lettre de démission,le préavis,le CDI,la drache",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {"word": "la lettre de démission", "answer": "a resignation letter", "options": ["a resignation letter", "a notice period", "a permanent contract", "heavy cold rain"]},
+    {"word": "le préavis", "answer": "a notice period", "options": ["a resignation letter", "a notice period", "a permanent contract", "heavy cold rain"]},
+    {"word": "le CDI", "answer": "a permanent contract", "options": ["a resignation letter", "a notice period", "a permanent contract", "heavy cold rain"]},
+    {"word": "la drache", "answer": "heavy cold rain", "options": ["a resignation letter", "a notice period", "a permanent contract", "heavy cold rain"]}
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "disparaître",
+  "sentence": "Il aimerait pouvoir _____ pendant quelques jours.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "disparaître",
+   "options": ["disparaître", "travailler", "téléphoner", "cuisiner"],
+   "translation": "He'd like to be able to _____ for a few days.",
+   "optionTranslations": ["disappear", "work", "call", "cook"],
+   "audioClip": {"language": "french", "sentence": "Il aimerait pouvoir disparaître pendant quelques jours.", "storySlug": "un-carton-sous-le-bras", "targetWord": "disparaître", "storySource": "user"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pèse",
+  "sentence": "Ce sac _____ vraiment très lourd.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pèse",
+   "options": ["pèse", "coûte", "sent", "brille"],
+   "translation": "This bag really _____ a lot.",
+   "optionTranslations": ["weighs", "costs", "smells", "shines"],
+   "audioClip": {"language": "french", "sentence": "Ce sac pèse vraiment très lourd.", "storySlug": "un-carton-sous-le-bras", "targetWord": "pèse", "storySource": "user"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "rouillé",
+  "sentence": "Ce vieux vélo est complètement _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rouillé",
+   "options": ["rouillé", "neuf", "propre", "léger"],
+   "translation": "This old bike is completely _____.",
+   "optionTranslations": ["rusty", "new", "clean", "light"],
+   "audioClip": {"language": "french", "sentence": "Ce vieux vélo est complètement rouillé.", "storySlug": "un-carton-sous-le-bras", "targetWord": "rouillé", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le pot de départ",
+  "sentence": "Ses collègues ont organisé [[un pot de départ]] pour son dernier jour.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a farewell drinks party",
+   "options": ["a farewell drinks party", "a surprise exam", "a birthday cake", "a business trip"],
+   "audioClip": {"language": "french", "sentence": "Ses collègues ont organisé un pot de départ pour son dernier jour.", "storySlug": "un-carton-sous-le-bras", "targetWord": "pot de départ", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la mutuelle",
+  "sentence": "Sa [[mutuelle]] rembourse une partie des lunettes.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "supplementary health insurance",
+   "options": ["supplementary health insurance", "monthly salary", "bus ticket", "phone bill"],
+   "audioClip": {"language": "french", "sentence": "Sa mutuelle rembourse une partie des lunettes.", "storySlug": "un-carton-sous-le-bras", "targetWord": "mutuelle", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le badge",
+  "sentence": "Sans [[son badge]], il ne peut pas entrer dans le bureau.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "his access card",
+   "options": ["his access card", "his umbrella", "his lunch", "his notebook"],
+   "audioClip": {"language": "french", "sentence": "Sans son badge, il ne peut pas entrer dans le bureau.", "storySlug": "un-carton-sous-le-bras", "targetWord": "badge", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "discrètement",
+  "sentence": "Il est sorti de la réunion [[discrètement]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quietly",
+   "options": ["quietly", "loudly", "angrily", "proudly"],
+   "audioClip": {"language": "french", "sentence": "Il est sorti de la réunion discrètement.", "storySlug": "un-carton-sous-le-bras", "targetWord": "discrètement", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gênant",
+  "sentence": "Ces silences [[gênants]] rendaient le dîner difficile.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "awkward",
+   "options": ["awkward", "funny", "short", "normal"],
+   "audioClip": {"language": "french", "sentence": "Ces silences gênants rendaient le dîner difficile.", "storySlug": "un-carton-sous-le-bras", "targetWord": "gênants", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tenir le coup",
+  "sentence": "Malgré la fatigue, elle a [[tenu le coup]] jusqu'à la fin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "held on, coped",
+   "options": ["held on, coped", "given up quickly", "fallen asleep", "left immediately"],
+   "audioClip": {"language": "french", "sentence": "Malgré la fatigue, elle a tenu le coup jusqu'à la fin.", "storySlug": "un-carton-sous-le-bras", "targetWord": "tenu le coup", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le trousseau",
+  "sentence": "Elle a perdu [[son trousseau]] de clés dans la rue.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "her set of keys",
+   "options": ["her set of keys", "her old jacket", "her phone charger", "her lunch box"],
+   "audioClip": {"language": "french", "sentence": "Elle a perdu son trousseau de clés dans la rue.", "storySlug": "un-carton-sous-le-bras", "targetWord": "trousseau", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le local",
+  "sentence": "Ils cherchent [[un local]] pour ouvrir leur boutique.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a space, premises",
+   "options": ["a space, premises", "a customer", "a delivery", "a meeting"],
+   "audioClip": {"language": "french", "sentence": "Ils cherchent un local pour ouvrir leur boutique.", "storySlug": "un-carton-sous-le-bras", "targetWord": "local", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sans un mot de trop",
+  "sentence": "Il a expliqué la situation [[sans un mot de trop]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "without saying more than necessary",
+   "options": ["without saying more than necessary", "while shouting loudly", "with a lot of jokes", "in complete silence"],
+   "audioClip": {"language": "french", "sentence": "Il a expliqué la situation sans un mot de trop.", "storySlug": "un-carton-sous-le-bras", "targetWord": "sans un mot de trop", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "faire le tour",
+  "sentence": "La nouvelle a [[fait le tour]] du bureau en une heure.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gone around",
+   "options": ["gone around", "stayed secret", "been forgotten", "disappeared completely"],
+   "audioClip": {"language": "french", "sentence": "La nouvelle a fait le tour du bureau en une heure.", "storySlug": "un-carton-sous-le-bras", "targetWord": "fait le tour", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tomber sur la tête",
+  "sentence": "Accepter ce prix, tu es [[tombé sur la tête]]!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lost your mind",
+   "options": ["lost your mind", "made a smart choice", "been very generous", "found a bargain"],
+   "audioClip": {"language": "french", "sentence": "Accepter ce prix, tu es tombé sur la tête!", "storySlug": "un-carton-sous-le-bras", "targetWord": "tombé sur la tête", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jusqu'au bout",
+  "sentence": "Il a défendu son idée [[jusqu'au bout]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to the very end",
+   "options": ["to the very end", "for only a minute", "without any reason", "by pure luck"],
+   "audioClip": {"language": "french", "sentence": "Il a défendu son idée jusqu'au bout.", "storySlug": "un-carton-sous-le-bras", "targetWord": "jusqu'au bout", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "à cheval sur",
+  "sentence": "Le chat était assis [[à cheval sur]] la barrière.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "straddling",
+   "options": ["straddling", "far away from", "hiding behind", "running toward"],
+   "audioClip": {"language": "french", "sentence": "Le chat était assis à cheval sur la barrière.", "storySlug": "un-carton-sous-le-bras", "targetWord": "à cheval sur", "storySource": "user"}
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,206 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la camarade,l'appareil photo,le journal local,l'article",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {"word": "la camarade", "answer": "a classmate (fem.)", "options": ["a classmate (fem.)", "a camera", "a local newspaper", "an article"]},
+    {"word": "l'appareil photo", "answer": "a camera", "options": ["a classmate (fem.)", "a camera", "a local newspaper", "an article"]},
+    {"word": "le journal local", "answer": "a local newspaper", "options": ["a classmate (fem.)", "a camera", "a local newspaper", "an article"]},
+    {"word": "l'article", "answer": "an article", "options": ["a classmate (fem.)", "a camera", "a local newspaper", "an article"]}
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "plaque",
+  "sentence": "Il _____ tout du jour au lendemain, sans explication.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "plaque",
+   "options": ["plaque", "organise", "répare", "explique"],
+   "translation": "He _____ everything overnight, without explanation.",
+   "optionTranslations": ["drops", "organizes", "fixes", "explains"],
+   "audioClip": {"language": "french", "sentence": "Il plaque tout du jour au lendemain, sans explication.", "storySlug": "une-photo-pour-le-journal", "targetWord": "plaque", "storySource": "user"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "s'est enthousiasmée",
+  "sentence": "En entendant l'idée, elle _____ tout de suite.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "s'est enthousiasmée",
+   "options": ["s'est enthousiasmée", "s'est fâchée", "s'est endormie", "s'est excusée"],
+   "translation": "Hearing the idea, she _____ right away.",
+   "optionTranslations": ["got excited", "got angry", "fell asleep", "apologized"],
+   "audioClip": {"language": "french", "sentence": "En entendant l'idée, elle s'est enthousiasmée tout de suite.", "storySlug": "une-photo-pour-le-journal", "targetWord": "s'est enthousiasmée", "storySource": "user"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "ajoutait",
+  "sentence": "Elle _____ toujours un détail à la fin de son histoire.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ajoutait",
+   "options": ["ajoutait", "effaçait", "oubliait", "cachait"],
+   "translation": "She always _____ a detail at the end of her story.",
+   "optionTranslations": ["added", "erased", "forgot", "hid"],
+   "audioClip": {"language": "french", "sentence": "Elle ajoutait toujours un détail à la fin de son histoire.", "storySlug": "une-photo-pour-le-journal", "targetWord": "ajoutait", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le lecteur",
+  "sentence": "Ce journal a des milliers de [[lecteurs]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "readers",
+   "options": ["readers", "writers", "photographers", "printers"],
+   "audioClip": {"language": "french", "sentence": "Ce journal a des milliers de lecteurs.", "storySlug": "une-photo-pour-le-journal", "targetWord": "lecteurs", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'entretien",
+  "sentence": "Le journaliste a préparé ses questions avant [[l'entretien]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the interview",
+   "options": ["the interview", "the wedding", "the meal", "the trip"],
+   "audioClip": {"language": "french", "sentence": "Le journaliste a préparé ses questions avant l'entretien.", "storySlug": "une-photo-pour-le-journal", "targetWord": "entretien", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chercher une belle histoire",
+  "sentence": "La journaliste [[cherchait une belle histoire]] pour son article.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "was looking for a good story",
+   "options": ["was looking for a good story", "was avoiding all stories", "had already written everything", "was leaving the newspaper"],
+   "audioClip": {"language": "french", "sentence": "La journaliste cherchait une belle histoire pour son article.", "storySlug": "une-photo-pour-le-journal", "targetWord": "cherchait une belle histoire", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sans s'arrêter",
+  "sentence": "Il a parlé pendant une heure [[sans s'arrêter]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "without stopping",
+   "options": ["without stopping", "for one minute", "very quietly", "by mistake"],
+   "audioClip": {"language": "french", "sentence": "Il a parlé pendant une heure sans s'arrêter.", "storySlug": "une-photo-pour-le-journal", "targetWord": "sans s'arrêter", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "flou",
+  "sentence": "Sur cette photo, son visage est un peu [[flou]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "blurry",
+   "options": ["blurry", "sharp", "dark", "colorful"],
+   "audioClip": {"language": "french", "sentence": "Sur cette photo, son visage est un peu flou.", "storySlug": "une-photo-pour-le-journal", "targetWord": "floue", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "flatté",
+  "sentence": "[[Flatté]] par cette question, il a souri.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "flattered",
+   "options": ["flattered", "annoyed", "worried", "confused"],
+   "audioClip": {"language": "french", "sentence": "Flatté par cette question, il a souri.", "storySlug": "une-photo-pour-le-journal", "targetWord": "Flatté", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tenir la vedette",
+  "sentence": "Pendant la fête, c'est lui qui [[tenait la vedette]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stole the show",
+   "options": ["stole the show", "stayed in the kitchen", "left very early", "fell asleep quickly"],
+   "audioClip": {"language": "french", "sentence": "Pendant la fête, c'est lui qui tenait la vedette.", "storySlug": "une-photo-pour-le-journal", "targetWord": "tenait la vedette", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "changer un pneu",
+  "sentence": "Dans l'atelier, elle [[changeait un pneu]] de vélo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "was changing a tire",
+   "options": ["was changing a tire", "was reading a book", "was cooking dinner", "was writing a letter"],
+   "audioClip": {"language": "french", "sentence": "Dans l'atelier, elle changeait un pneu de vélo.", "storySlug": "une-photo-pour-le-journal", "targetWord": "changeait un pneu", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rester en retrait",
+  "sentence": "Timide, elle est [[restée en retrait]] pendant la fête.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stayed in the background",
+   "options": ["stayed in the background", "danced all night", "spoke to everyone", "left immediately"],
+   "audioClip": {"language": "french", "sentence": "Timide, elle est restée en retrait pendant la fête.", "storySlug": "une-photo-pour-le-journal", "targetWord": "restée en retrait", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tu es un amour",
+  "sentence": "Merci pour ce cadeau, [[tu es un amour]]!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "you're a sweetheart",
+   "options": ["you're a sweetheart", "you're always late", "you're very strict", "you're so serious"],
+   "audioClip": {"language": "french", "sentence": "Merci pour ce cadeau, tu es un amour!", "storySlug": "une-photo-pour-le-journal", "targetWord": "tu es un amour", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "à peine",
+  "sentence": "Elle a [[à peine]] touché à son repas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "barely",
+   "options": ["barely", "always", "never", "suddenly"],
+   "audioClip": {"language": "french", "sentence": "Elle a à peine touché à son repas.", "storySlug": "une-photo-pour-le-journal", "targetWord": "à peine", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fier comme un paon",
+  "sentence": "Avec son nouveau titre, il était [[fier comme un paon]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "proud as a peacock",
+   "options": ["proud as a peacock", "sad as a rainy day", "quiet as a mouse", "busy as a bee"],
+   "audioClip": {"language": "french", "sentence": "Avec son nouveau titre, il était fier comme un paon.", "storySlug": "une-photo-pour-le-journal", "targetWord": "fier comme un paon", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "s'adresser à",
+  "sentence": "Pendant la réunion, elle [[s'adressait]] surtout au directeur.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "was speaking to",
+   "options": ["was speaking to", "was avoiding", "was writing to", "was waiting for"],
+   "audioClip": {"language": "french", "sentence": "Pendant la réunion, elle s'adressait surtout au directeur.", "storySlug": "une-photo-pour-le-journal", "targetWord": "s'adressait", "storySource": "user"}
+  },
+  "featured": false
+ }
+]

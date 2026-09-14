@@ -1,0 +1,206 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "le Vieux-Lille,l'emplacement,le fleuriste,l'avis",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {"word": "le Vieux-Lille", "answer": "Old Lille (historic center)", "options": ["Old Lille (historic center)", "a location", "a florist", "an opinion"]},
+    {"word": "l'emplacement", "answer": "a location", "options": ["Old Lille (historic center)", "a location", "a florist", "an opinion"]},
+    {"word": "le fleuriste", "answer": "a florist", "options": ["Old Lille (historic center)", "a location", "a florist", "an opinion"]},
+    {"word": "l'avis", "answer": "an opinion", "options": ["Old Lille (historic center)", "a location", "a florist", "an opinion"]}
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "convaincu",
+  "sentence": "Son discours a _____ toute la salle.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "convaincu",
+   "options": ["convaincu", "ennuyé", "fatigué", "dérangé"],
+   "translation": "His speech _____ the whole room.",
+   "optionTranslations": ["convinced", "bored", "tired", "disturbed"],
+   "audioClip": {"language": "french", "sentence": "Son discours a convaincu toute la salle.", "storySlug": "une-vitrine-trop-chic", "targetWord": "convaincu", "storySource": "user"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "respiré",
+  "sentence": "Avant l'examen, elle a _____ profondément pour se calmer.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "respiré",
+   "options": ["respiré", "crié", "chanté", "couru"],
+   "translation": "Before the exam, she _____ deeply to calm down.",
+   "optionTranslations": ["breathed", "shouted", "sang", "ran"],
+   "audioClip": {"language": "french", "sentence": "Avant l'examen, elle a respiré profondément pour se calmer.", "storySlug": "une-vitrine-trop-chic", "targetWord": "respiré", "storySource": "user"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "lâché",
+  "sentence": "Fatigué de discuter, il a _____ une phrase sèche.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lâché",
+   "options": ["lâché", "chanté", "oublié", "corrigé"],
+   "translation": "Tired of arguing, he _____ a curt sentence.",
+   "optionTranslations": ["blurted out", "sang", "forgot", "corrected"],
+   "audioClip": {"language": "french", "sentence": "Fatigué de discuter, il a lâché une phrase sèche.", "storySlug": "une-vitrine-trop-chic", "targetWord": "lâché", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le passant",
+  "sentence": "Les [[passants]] regardaient la vitrine avec curiosité.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "passersby",
+   "options": ["passersby", "workers", "students", "tourists only"],
+   "audioClip": {"language": "french", "sentence": "Les passants regardaient la vitrine avec curiosité.", "storySlug": "une-vitrine-trop-chic", "targetWord": "passants", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la veille",
+  "sentence": "Il avait tout préparé [[la veille]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the day before",
+   "options": ["the day before", "the next day", "a year later", "the same hour"],
+   "audioClip": {"language": "french", "sentence": "Il avait tout préparé la veille.", "storySlug": "une-vitrine-trop-chic", "targetWord": "la veille", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "comme si de rien n'était",
+  "sentence": "Il est parti [[comme si de rien n'était]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "as if nothing had happened",
+   "options": ["as if nothing had happened", "in a great hurry", "with a big smile", "without any money"],
+   "audioClip": {"language": "french", "sentence": "Il est parti comme si de rien n'était.", "storySlug": "une-vitrine-trop-chic", "targetWord": "comme si de rien n'était", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "avoir du flair",
+  "sentence": "Ce vendeur [[avait du flair]] pour trouver les bonnes affaires.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "had a good instinct",
+   "options": ["had a good instinct", "had no idea", "had bad luck", "had a lot of money"],
+   "audioClip": {"language": "french", "sentence": "Ce vendeur avait du flair pour trouver les bonnes affaires.", "storySlug": "une-vitrine-trop-chic", "targetWord": "avait du flair", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trancher",
+  "sentence": "Après des heures de débat, elle a enfin [[tranché]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "made the final call",
+   "options": ["made the final call", "changed her mind again", "asked for more time", "left the meeting"],
+   "audioClip": {"language": "french", "sentence": "Après des heures de débat, elle a enfin tranché.", "storySlug": "une-vitrine-trop-chic", "targetWord": "tranché", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "abordable",
+  "sentence": "Ce quartier est encore [[abordable]] pour les jeunes couples.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "affordable",
+   "options": ["affordable", "very expensive", "dangerous", "noisy"],
+   "audioClip": {"language": "french", "sentence": "Ce quartier est encore abordable pour les jeunes couples.", "storySlug": "une-vitrine-trop-chic", "targetWord": "abordable", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'ouvrier",
+  "sentence": "Les [[ouvriers]] réparent la route depuis lundi.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "workers",
+   "options": ["workers", "tourists", "students", "doctors"],
+   "audioClip": {"language": "french", "sentence": "Les ouvriers réparent la route depuis lundi.", "storySlug": "une-vitrine-trop-chic", "targetWord": "ouvriers", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sans discuter",
+  "sentence": "Elle a accepté l'offre [[sans discuter]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "without arguing",
+   "options": ["without arguing", "after a long fight", "with great anger", "by pure chance"],
+   "audioClip": {"language": "french", "sentence": "Elle a accepté l'offre sans discuter.", "storySlug": "une-vitrine-trop-chic", "targetWord": "sans discuter", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "s'y connaître",
+  "sentence": "En cuisine, il [[n'y connaît rien]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "knows nothing about it",
+   "options": ["knows nothing about it", "is an expert at it", "has forgotten it all", "loves it deeply"],
+   "audioClip": {"language": "french", "sentence": "En cuisine, il n'y connaît rien.", "storySlug": "une-vitrine-trop-chic", "targetWord": "n'y connaît rien", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la moutarde monte au nez",
+  "sentence": "À force d'attendre, [[la moutarde lui montait au nez]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "he was getting angry",
+   "options": ["he was getting angry", "he was falling asleep", "he was getting hungry", "he was feeling proud"],
+   "audioClip": {"language": "french", "sentence": "À force d'attendre, la moutarde lui montait au nez.", "storySlug": "une-vitrine-trop-chic", "targetWord": "la moutarde lui monter au nez", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chic",
+  "sentence": "Les gens portaient des vêtements très [[chics]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "elegant, upscale",
+   "options": ["elegant, upscale", "old, worn out", "dirty, torn", "cheap, plain"],
+   "audioClip": {"language": "french", "sentence": "Les gens portaient des vêtements très chics.", "storySlug": "une-vitrine-trop-chic", "targetWord": "chics", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "grelotter",
+  "sentence": "Sous la pluie froide, les enfants [[grelottaient]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "were shivering",
+   "options": ["were shivering", "were laughing", "were singing", "were sleeping"],
+   "audioClip": {"language": "french", "sentence": "Sous la pluie froide, les enfants grelottaient.", "storySlug": "une-vitrine-trop-chic", "targetWord": "grelottaient", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de la semaine",
+  "sentence": "Il n'a pas appelé une seule fois [[de la semaine]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "all week",
+   "options": ["all week", "this morning", "last year", "right now"],
+   "audioClip": {"language": "french", "sentence": "Il n'a pas appelé une seule fois de la semaine.", "storySlug": "une-vitrine-trop-chic", "targetWord": "de la semaine", "storySource": "user"}
+  },
+  "featured": false
+ }
+]

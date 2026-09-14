@@ -1,0 +1,206 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "le tableur,le salaire fixe,le délai,le beffroi",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {"word": "le tableur", "answer": "a spreadsheet", "options": ["a spreadsheet", "a fixed salary", "a deadline", "a belfry tower"]},
+    {"word": "le salaire fixe", "answer": "a fixed salary", "options": ["a spreadsheet", "a fixed salary", "a deadline", "a belfry tower"]},
+    {"word": "le délai", "answer": "a deadline", "options": ["a spreadsheet", "a fixed salary", "a deadline", "a belfry tower"]},
+    {"word": "le beffroi", "answer": "a belfry tower", "options": ["a spreadsheet", "a fixed salary", "a deadline", "a belfry tower"]}
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "débarqué",
+  "sentence": "Ils ont _____ chez nous sans prévenir.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "débarqué",
+   "options": ["débarqué", "téléphoné", "écrit", "attendu"],
+   "translation": "They _____ at our place without warning.",
+   "optionTranslations": ["showed up", "phoned", "wrote", "waited"],
+   "audioClip": {"language": "french", "sentence": "Ils ont débarqué chez nous sans prévenir.", "storySlug": "reponse-avant-vendredi", "targetWord": "débarqué", "storySource": "user"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "calculer",
+  "sentence": "Elle a pris son temps pour _____ le prix total.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "calculer",
+   "options": ["calculer", "oublier", "deviner", "cacher"],
+   "translation": "She took her time to _____ the total price.",
+   "optionTranslations": ["calculate", "forget", "guess", "hide"],
+   "audioClip": {"language": "french", "sentence": "Elle a pris son temps pour calculer le prix total.", "storySlug": "reponse-avant-vendredi", "targetWord": "calculer", "storySource": "user"}
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "agaçait",
+  "sentence": "Ce bruit répétitif l'_____ énormément.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "agaçait",
+   "options": ["agaçait", "aidait", "amusait", "endormait"],
+   "translation": "That repetitive noise _____ him enormously.",
+   "optionTranslations": ["annoyed", "helped", "amused", "put to sleep"],
+   "audioClip": {"language": "french", "sentence": "Ce bruit répétitif l'agaçait énormément.", "storySlug": "reponse-avant-vendredi", "targetWord": "agaçait", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "peser le pour et le contre",
+  "sentence": "Avant de démissionner, il faut [[peser le pour et le contre]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "weigh the pros and cons",
+   "options": ["weigh the pros and cons", "forget about it completely", "ask everyone for money", "decide in one minute"],
+   "audioClip": {"language": "french", "sentence": "Avant de démissionner, il faut peser le pour et le contre.", "storySlug": "reponse-avant-vendredi", "targetWord": "peser le pour et le contre", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "se précipiter",
+  "sentence": "Je ne veux pas [[me précipiter]] dans cette décision.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rush",
+   "options": ["rush", "wait forever", "complain", "celebrate"],
+   "audioClip": {"language": "french", "sentence": "Je ne veux pas me précipiter dans cette décision.", "storySlug": "reponse-avant-vendredi", "targetWord": "me précipiter", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "taper",
+  "sentence": "Il a [[tapé]] un long message sur son téléphone.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "typed",
+   "options": ["typed", "erased", "printed", "read"],
+   "audioClip": {"language": "french", "sentence": "Il a tapé un long message sur son téléphone.", "storySlug": "reponse-avant-vendredi", "targetWord": "tapé", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "poliment",
+  "sentence": "Elle a refusé l'offre [[poliment]] mais fermement.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "politely",
+   "options": ["politely", "rudely", "loudly", "secretly"],
+   "audioClip": {"language": "french", "sentence": "Elle a refusé l'offre poliment mais fermement.", "storySlug": "reponse-avant-vendredi", "targetWord": "poliment", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ambitieux",
+  "sentence": "Il est jeune, mais déjà très [[ambitieux]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ambitious",
+   "options": ["ambitious", "lazy", "shy", "clumsy"],
+   "audioClip": {"language": "french", "sentence": "Il est jeune, mais déjà très ambitieux.", "storySlug": "reponse-avant-vendredi", "targetWord": "ambitieux", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "soulagé",
+  "sentence": "En apprenant la bonne nouvelle, il était [[soulagé]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "relieved",
+   "options": ["relieved", "furious", "jealous", "confused"],
+   "audioClip": {"language": "french", "sentence": "En apprenant la bonne nouvelle, il était soulagé.", "storySlug": "reponse-avant-vendredi", "targetWord": "soulagé", "storySource": "user"}
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "à force de",
+  "sentence": "[[À force de]] répéter, elle a fini par comprendre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "from doing so much",
+   "options": ["from doing so much", "without ever trying", "for no reason at all", "by pure luck"],
+   "audioClip": {"language": "french", "sentence": "À force de répéter, elle a fini par comprendre.", "storySlug": "reponse-avant-vendredi", "targetWord": "À force de", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sauter le pas",
+  "sentence": "Après des mois d'hésitation, elle a enfin [[sauté le pas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "taken the plunge",
+   "options": ["taken the plunge", "changed her mind again", "given up completely", "asked for advice"],
+   "audioClip": {"language": "french", "sentence": "Après des mois d'hésitation, elle a enfin sauté le pas.", "storySlug": "reponse-avant-vendredi", "targetWord": "sauter le pas", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "par prudence",
+  "sentence": "Il a fermé la fenêtre [[par prudence]], à cause de l'orage.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "as a precaution",
+   "options": ["as a precaution", "by accident", "out of anger", "for fun"],
+   "audioClip": {"language": "french", "sentence": "Il a fermé la fenêtre par prudence, à cause de l'orage.", "storySlug": "reponse-avant-vendredi", "targetWord": "par prudence", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "moite",
+  "sentence": "Avant l'examen, ses mains étaient [[moites]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sweaty",
+   "options": ["sweaty", "warm", "clean", "cold"],
+   "audioClip": {"language": "french", "sentence": "Avant l'examen, ses mains étaient moites.", "storySlug": "reponse-avant-vendredi", "targetWord": "moites", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "serrer la gorge",
+  "sentence": "Cette mauvaise nouvelle lui [[serrait la gorge]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "made his throat tighten",
+   "options": ["made his throat tighten", "made him laugh loudly", "gave him a great idea", "made him very hungry"],
+   "audioClip": {"language": "french", "sentence": "Cette mauvaise nouvelle lui serrait la gorge.", "storySlug": "reponse-avant-vendredi", "targetWord": "serrait la gorge", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dans la minute",
+  "sentence": "Elle a répondu [[dans la minute]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "immediately",
+   "options": ["immediately", "a week later", "never", "by accident"],
+   "audioClip": {"language": "french", "sentence": "Elle a répondu dans la minute.", "storySlug": "reponse-avant-vendredi", "targetWord": "dans la minute", "storySource": "user"}
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "enregistrer",
+  "sentence": "N'oublie pas d'[[enregistrer]] le document avant de fermer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "save",
+   "options": ["save", "delete", "print", "copy"],
+   "audioClip": {"language": "french", "sentence": "N'oublie pas d'enregistrer le document avant de fermer.", "storySlug": "reponse-avant-vendredi", "targetWord": "enregistrer", "storySource": "user"}
+  },
+  "featured": false
+ }
+]
