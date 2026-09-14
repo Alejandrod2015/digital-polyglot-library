@@ -438,6 +438,47 @@ describe("translationLeavesWordUntranslated", () => {
     ).toBe(false);
   });
 
+  it("deja pasar el termino cultural que esta en la lista", () => {
+    // `barista` esta definido como "Barman; ...", asi que la definicion NO lo
+    // respalda; pero un texto en ingles lo escribe igual. Para eso existe la
+    // lista de `docs/sentence-translations/keep-as-is.json`.
+    expect(
+      translationLeavesWordUntranslated(
+        "The barista already knows her order by heart.",
+        "barista",
+        "Barman; the person behind the counter",
+        ["barista", "ragù", "tagliatelle"]
+      )
+    ).toBe(false);
+    // Y casa sin acentos: `ragù` de la lista contra `ragu` de la traduccion.
+    expect(
+      translationLeavesWordUntranslated(
+        "Rosa orders pasta with ragu at the corner place.",
+        "ragù",
+        "Meat sauce, slow cooked",
+        ["barista", "ragù", "tagliatelle"]
+      )
+    ).toBe(false);
+  });
+
+  it("fuera de la lista y sin respaldo en la definicion, sigue siendo un descuido", () => {
+    expect(
+      translationLeavesWordUntranslated(
+        "The vecino waves every morning.",
+        "vecino",
+        "neighbour, the person next door",
+        ["barista", "ragù", "tagliatelle"]
+      )
+    ).toBe(true);
+    // Una lista vacia o ausente no exime a nadie.
+    expect(
+      translationLeavesWordUntranslated("She orders spaghetti.", "spaghetti", "", [])
+    ).toBe(true);
+    expect(
+      translationLeavesWordUntranslated("She orders spaghetti.", "spaghetti", "", null)
+    ).toBe(true);
+  });
+
   it("la traduccion que SI traduce la palabra no se toca", () => {
     expect(
       translationLeavesWordUntranslated(

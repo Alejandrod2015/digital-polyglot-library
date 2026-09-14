@@ -22,10 +22,11 @@
  *   - Entre 0,5 y 2,5 veces las palabras de la frase. Fuera de esa banda no es
  *     una traduccion: o falta media frase o sobra un comentario.
  *   - No deja la palabra objetivo SIN traducir. Es el fallo mas probable de
- *     todos. Con una excepcion: los prestamos que el ingles usa igual
- *     (`spaghetti`, `barista`, `pizza`) SI pueden aparecer, y se reconocen
- *     porque la definicion en ingles de la palabra tambien los usa. Ver
- *     `translationLeavesWordUntranslated`.
+ *     todos. Con dos salidas: que la definicion en ingles de la palabra use esa
+ *     misma forma ("Spaghetti; long thin pasta..."), o que el termino este en
+ *     `docs/sentence-translations/keep-as-is.json`, la lista de los que un
+ *     traductor deja tal cual aunque su definicion diga otra cosa (`barista`
+ *     esta definido como "Barman; ..."). Ver `translationLeavesWordUntranslated`.
  */
 import { config } from "dotenv";
 config({ path: ".env.local" }); config({ path: ".env" });
@@ -58,6 +59,31 @@ const GUIONES_LARGOS = new RegExp(`[${String.fromCharCode(8212, 8211)}]`, "g");
 const MIN_RATIO = 0.5;
 const MAX_RATIO = 2.5;
 
+/**
+ * Terminos que se dejan tal cual, por idioma. Vive en `docs/` y no aqui a
+ * proposito: ampliarla exige tocar un fichero en un commit, que es lo unico que
+ * impide que crezca por pereza cada vez que el gate moleste.
+ */
+const KEEP_AS_IS = path.join(process.cwd(), "docs", "sentence-translations", "keep-as-is.json");
+
+function cargarKeepAsIs(): Record<string, string[]> {
+  try {
+    const crudo = JSON.parse(fs.readFileSync(KEEP_AS_IS, "utf8")) as Record<string, unknown>;
+    const out: Record<string, string[]> = {};
+    for (const [idioma, valor] of Object.entries(crudo)) {
+      if (idioma.startsWith("_")) continue;
+      if (Array.isArray(valor)) {
+        out[idioma.toLowerCase()] = valor.filter((v): v is string => typeof v === "string");
+      }
+    }
+    return out;
+  } catch {
+    // Sin lista, el validador sigue funcionando: solo exime por definicion.
+    console.error(`Aviso: no pude leer ${path.relative(process.cwd(), KEEP_AS_IS)}.`);
+    return {};
+  }
+}
+
 type PalabraEntrada = {
   word?: unknown;
   sentence?: unknown;
@@ -69,6 +95,8 @@ type PalabraEntrada = {
 type HistoriaEntrada = {
   storySlug?: unknown;
   words?: unknown;
+  /** Idioma de la historia, que elige la lista de terminos a dejar tal cual. */
+  language?: unknown;
 };
 
 function palabras(texto: string): string[] {
@@ -93,7 +121,8 @@ function revisar(
   sentence: string,
   translation: string,
   definition: string,
-  vocabDeLaHistoria: Set<string>
+  vocabDeLaHistoria: Set<string>,
+  keepAsIs: readonly string[]
 ): Problema[] {
   const fallos: Problema[] = [];
   const di = (motivo: string) => fallos.push({ storySlug, word, motivo });
@@ -121,7 +150,7 @@ function revisar(
       di(`largo fuera de banda: ${nDestino} palabras para ${nOrigen} (x${ratio.toFixed(2)})`);
     }
   }
-  if (translationLeavesWordUntranslated(translation, word, definition)) {
+  if (translationLeavesWordUntranslated(translation, word, definition, keepAsIs)) {
     di(`la traduccion deja "${word}" sin traducir`);
   }
   return fallos;
@@ -151,8 +180,12 @@ async function main() {
 
   const problemas: Problema[] = [];
   const porHistoria = new Map<string, Record<string, string>>();
+  const keepAsIsPorIdioma = cargarKeepAsIs();
 
   for (const historia of historias) {
+    const idioma =
+      typeof historia.language === "string" ? historia.language.trim().toLowerCase() : "";
+    const keepAsIs = keepAsIsPorIdioma[idioma] ?? [];
     const storySlug = typeof historia.storySlug === "string" ? historia.storySlug.trim() : "";
     if (!storySlug) {
       problemas.push({ storySlug: "(sin slug)", word: "", motivo: "historia sin storySlug" });
@@ -190,7 +223,7 @@ async function main() {
       // por partes. Simplemente no se guarda.
       if (!translation) continue;
       problemas.push(
-        ...revisar(storySlug, word, sentence, translation, definition, vocabDeLaHistoria)
+        ...revisar(storySlug, word, sentence, translation, definition, vocabDeLaHistoria, keepAsIs)
       );
       mapa[sentenceTranslationKey(word)] = translation;
     }

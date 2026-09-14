@@ -111,23 +111,36 @@ function llevaPalabraCompleta(texto: string, palabra: string): boolean {
  *
  * Es el fallo mas probable al traducir una frase de practica: se traduce todo
  * menos justo la palabra que el ejercicio pide. Pero la regla tal cual
- * rechazaba tambien los prestamos que el ingles usa igual (`spaghetti`,
- * `tagliatelle`, `barista`, `bar`, `pizza`), y para pasar el gate habia que
- * escribir rodeos como "long thin pasta with bolognese sauce", que es PEOR
- * traduccion que la palabra correcta.
+ * rechazaba tambien los prestamos que el ingles usa igual, y para pasar el gate
+ * habia que escribir rodeos como "long thin pasta with bolognese sauce", que es
+ * PEOR traduccion que la palabra correcta.
  *
- * La salida es la DEFINICION en ingles de la propia palabra, que ya existe y ya
- * la reviso alguien: si la definicion en ingles usa esa misma forma
- * ("Spaghetti; long thin pasta..."), entonces en ingles se dice asi y la
- * traduccion puede usarla. Si no aparece ahi, sigue siendo un descuido.
+ * Hay DOS salidas, y el orden importa:
+ *
+ * 1. La DEFINICION en ingles de la propia palabra. Es la preferible porque el
+ *    dato ya existe y ya lo reviso alguien: si la definicion usa esa misma
+ *    forma ("Spaghetti; long thin pasta..."), en ingles se dice asi.
+ * 2. La LISTA de terminos que se dejan tal cual
+ *    (`docs/sentence-translations/keep-as-is.json`), para cuando la definicion
+ *    dice otra cosa: `barista` esta definido como "Barman; ...", y `ragù` como
+ *    "Meat sauce...", pero un texto en ingles los escribe igual.
+ *
+ * La lista se pasa como DATO, no se lee desde aqui: esta funcion se mide en un
+ * test y no puede depender del disco.
  */
 export function translationLeavesWordUntranslated(
   translation: string,
   word: string,
-  definition?: string | null
+  definition?: string | null,
+  keepAsIs?: readonly string[] | null
 ): boolean {
   if (!llevaPalabraCompleta(translation, word)) return false;
-  // Prestamo: el ingles lo dice igual, y la definicion en ingles lo demuestra.
+  // 1. El ingles lo dice igual, y su propia definicion lo demuestra.
   if (llevaPalabraCompleta(definition ?? "", word)) return false;
+  // 2. O esta en la lista de terminos culturales que se dejan tal cual.
+  const normalizada = sinAcentosMinusculas(word);
+  if (normalizada && (keepAsIs ?? []).some((t) => sinAcentosMinusculas(t) === normalizada)) {
+    return false;
+  }
   return true;
 }
