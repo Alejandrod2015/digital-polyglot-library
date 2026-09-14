@@ -23,12 +23,25 @@ Quinto tipo de ejercicio, al lado de `meaning`, `context`, `listening` y
 
 ## 2. Flujo del ejercicio (móvil)
 
+Aspecto: diseño **"A+C 3, Ámbar"**, elegido por el usuario entre mockups el
+2026-09-14. Los valores se copian del mockup, no se aproximan.
+
 | Paso | Pantalla | Detalle |
 |---|---|---|
-| 1 | Pista | Etiqueta `SAY IT WITH:` seguida de la **traducción en inglés** de la palabra. La palabra en el idioma meta NO se muestra: se prueba recuperarla. |
-| 2 | Frase | La frase de la historia con `_____` en el hueco, la misma que arma `createFillBlankExercise`. Su audio suena en autoplay: el clip pre-horneado (`clipUrl`) si existe, y si no `POST /api/practice/sentence-tts` con la voz de la historia, que ya cachea en R2. Botón para repetir. |
-| 3 | Hablar | `TAP TO SPEAK`: arranca el reconocimiento de voz del sistema en el idioma de la palabra. Tope de 12 s con parada automática; `TAP TO SEND` para parar antes. Sin cuenta atrás de sesión: el temporizador de 15 s NO aplica a este tipo. |
-| 4 | Resultado | Lo reconocido (`YOU HEARD` no: `YOU SAID`), la palabra revelada, acierto o fallo con el sonido del contrato de práctica, y en el fallo la frase completa en texto con su audio. Auto-avance como en los demás tipos. |
+| 1 | Pista | Fila superior sobre el fondo oscuro: a la izquierda el chip `SAY IT WITH` (fondo `rgba(248,193,92,0.14)`, borde `rgba(248,193,92,0.35)`, etiqueta en `#f8c15c`) con la **traducción en inglés**; a la derecha la pastilla de tiempo con cronómetro (`0:10`, fondo `rgba(255,255,255,0.06)`, texto `#f8c15c` 13 px 900). La palabra en el idioma meta NO se muestra. Sin chip de personaje: ya no pregunta nadie. |
+| 2 | Frase | Tarjeta ámbar (`linear-gradient(160deg, #f8c15c, #e9a23b)`, radio 28, sombra `0 24px 60px rgba(248,193,92,0.30)`) con **solo** la frase: 28 px, 900, `#2a1a05`, y el hueco como ficha en línea (96x38, radio 12, `rgba(255,255,255,0.45)`, borde discontinuo). Dentro, el chip `PLAY AGAIN`. Su audio suena en autoplay: el clip pre-horneado (`clipUrl`) si existe, y si no `POST /api/practice/sentence-tts` con la voz de la historia, que ya cachea en R2. |
+| 3 | Hablar | Botón circular de 112 px en `#f8c15c` con el micro en `#2a1a05`, centrado bajo la tarjeta (no en el pie), con dos anillos que laten y un anillo de progreso de 168 px que se vacía con la cuenta atrás. Debajo, `TAP AND SAY THE WORD`. Al pulsarlo arranca el reconocimiento del sistema en el idioma de la palabra; tope de 12 s con parada automática y `TAP WHEN YOU ARE DONE` para parar antes. |
+| 4 | Resultado | Lo reconocido (`YOU SAID`), la palabra revelada, acierto o fallo con el sonido del contrato de práctica, y la frase completa en texto **con su audio**, que suena sola al revelar. Auto-avance como en los demás tipos. |
+
+**Cuenta atrás de `SPEAKING_ANSWER_SECONDS` = 10 s** (decisión del usuario,
+2026-09-14). Arranca cuando **termina** el audio de la frase, no al pintar: el
+reloj no puede correr mientras el usuario escucha. Si la palabra no tiene clip
+o el audio falla, arranca al pintar. Se ve en la pastilla y en el anillo del
+botón. **Se detiene al empezar a grabar** (a partir de ahí manda el tope de 12 s
+de la grabación) y `PLAY AGAIN` no la reinicia. Al llegar a cero sin haber
+hablado cuenta como fallo, con la frase completa y su audio, y sigue el
+auto-avance. El temporizador genérico de 15 s de la sesión sigue sin aplicar a
+este tipo: este lo sustituye.
 
 Silencio o nada reconocido: "I couldn't hear you", UN reintento sin
 penalizar; el segundo vacío cuenta como fallo.

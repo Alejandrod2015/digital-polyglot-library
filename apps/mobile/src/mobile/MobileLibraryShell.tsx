@@ -2813,6 +2813,7 @@ export function MobileLibraryShell(args: {
   const speakingRecorder = useSpeakingRecorder();
   const [speakingPhase, setSpeakingPhase] = useState<"ready" | "listening" | "done">("ready");
   const [speakingSecondsLeft, setSpeakingSecondsLeft] = useState(SPEAKING_ANSWER_SECONDS);
+  const [speakingCountdownRunning, setSpeakingCountdownRunning] = useState(false);
   // Los dos anillos que laten alrededor del boton, desfasados medio ciclo.
   const speakingPulseA = useRef(new Animated.Value(0)).current;
   const speakingPulseB = useRef(new Animated.Value(0)).current;
@@ -9530,8 +9531,16 @@ export function MobileLibraryShell(args: {
     if (practiceComplete) return;
     if (practicePaused) return;
     if (!currentPracticeExercise) return;
-    if (currentPracticeExercise.kind !== "multiple-choice") return;
-    if (currentPracticeExercise.mode !== "context") return;
+    // Contexto y hablado: los dos ensenan la frase COMPLETA al revelar y los
+    // dos la suenan. En el hablado es ademas la unica forma de oir bien lo que
+    // habia que decir cuando se ha fallado.
+    if (currentPracticeExercise.kind === "match") return;
+    if (
+      currentPracticeExercise.kind === "multiple-choice" &&
+      currentPracticeExercise.mode !== "context"
+    ) {
+      return;
+    }
     if (!currentPracticeExercise.audioClip) return;
     const exId = currentPracticeExercise.id;
     // Race guard: this effect re-runs whenever currentPracticeExercise
@@ -9904,7 +9913,64 @@ export function MobileLibraryShell(args: {
     setSpeakingHeard("");
     setSpeakingError("");
     setSpeakingEmptyRetried(false);
+    setSpeakingSecondsLeft(SPEAKING_ANSWER_SECONDS);
+    setSpeakingCountdownRunning(false);
   }, [currentSpeakingExercise?.id]);
+
+  // ─── Cuenta atras del turno hablado ──────────────────────────────
+  //
+  // Tres effects y una regla: el reloj no corre mientras el usuario escucha.
+  //
+  // (1) ARRANQUE. Al terminar el audio de la frase, no al pintar: el tiempo
+  //     de contestar empieza cuando hay algo que contestar. Si la palabra no
+  //     tiene clip, o el audio falla, `contextAudioFinishedFor` se publica
+  //     igual y el reloj arranca en cuanto se pinta.
+  useEffect(() => {
+    const ex = currentSpeakingExercise;
+    if (!ex) return;
+    if (practiceRevealed || practiceCountdownActive) return;
+    if (speakingCountdownRunning) return;
+    // Ya arranco y se paro (se esta grabando): no se rearma.
+    if (speakingSecondsLeft < SPEAKING_ANSWER_SECONDS) return;
+    if (speakingRecorder.isRecording) return;
+    const esperaAudio = Boolean(ex.audioClip) && contextAudioFinishedFor !== ex.id;
+    if (esperaAudio) return;
+    setSpeakingCountdownRunning(true);
+  }, [
+    currentSpeakingExercise,
+    contextAudioFinishedFor,
+    practiceRevealed,
+    practiceCountdownActive,
+    speakingCountdownRunning,
+    speakingSecondsLeft,
+    speakingRecorder.isRecording,
+  ]);
+
+  // (2) TICK. Se congela con la pausa de la sesion, como los otros relojes.
+  useEffect(() => {
+    if (!speakingCountdownRunning) return;
+    if (practicePaused || practiceRevealed) return;
+    if (speakingSecondsLeft <= 0) return;
+    const id = setTimeout(() => {
+      setSpeakingSecondsLeft((value) => Math.max(0, value - 1));
+    }, 1000);
+    return () => clearTimeout(id);
+  }, [speakingCountdownRunning, practicePaused, practiceRevealed, speakingSecondsLeft]);
+
+  // (3) CERO sin haber hablado: cuenta como fallo, con la frase completa y su
+  //     audio, y de ahi sigue el auto-avance normal. El temporizador generico
+  //     de 15 s de la sesion NO aplica a este tipo; este lo sustituye.
+  useEffect(() => {
+    if (!speakingCountdownRunning) return;
+    if (speakingSecondsLeft > 0) return;
+    if (practiceRevealed) return;
+    const ex = currentSpeakingExercise;
+    if (!ex) return;
+    setSpeakingCountdownRunning(false);
+    setSpeakingHeard("");
+    setSpeakingPhase("done");
+    resolveSpeakingAnswer(ex, false);
+  }, [speakingCountdownRunning, speakingSecondsLeft, practiceRevealed, currentSpeakingExercise]);
 
   // Latido de los dos anillos del boton de micro. Solo corre mientras hay
   // turno hablado sin revelar; parado, no gasta frames de fondo.
@@ -10036,6 +10102,9 @@ export function MobileLibraryShell(args: {
       });
 
       if (result.ok) {
+        // El reloj se detiene aqui: a partir de ahora manda el tope de la
+        // grabacion (12 s en el hook), no el de contestar.
+        setSpeakingCountdownRunning(false);
         setSpeakingPhase("listening");
         return;
       }
@@ -11572,7 +11641,13 @@ export function MobileLibraryShell(args: {
     }
 
     const exIdAtPlay = currentPracticeExercise.id;
-    const isContextAtPlay = currentPracticeExercise.mode === "context";
+    // Publican "el audio termino" el ejercicio de contexto (que lo usa para
+    // el auto-avance) y el hablado (que arranca ahi su cuenta atras). En los
+    // dos casos el aviso se manda tambien cuando el audio FALLA, para que
+    // nadie se quede esperando a un sonido que no va a llegar.
+    const isContextAtPlay =
+      currentPracticeExercise.mode === "context" ||
+      currentPracticeExercise.kind === "speaking";
 
     try {
       await Audio.setAudioModeAsync({
