@@ -16,13 +16,10 @@
 import { config } from "dotenv"; config({ path: ".env.local", quiet:true }); config({ path: ".env", quiet:true });
 import { execFileSync, spawnSync } from "child_process";
 import { PrismaClient } from "../src/generated/prisma";
+import { anclarFragmentos, tiemposDesordenados, norm, type Frag, type W } from "./remeasureFragmentsLib";
 
 const p = new PrismaClient();
 const apiKey = process.env.ELEVENLABS_API_KEY!;
-type Frag = { index:number; startSec:number; endSec:number; text?:string; [k:string]:unknown };
-type W = { text:string; start?:number; end?:number; type?:string };
-
-const norm = (s:string) => s.normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9\s]/gi," ").replace(/\s+/g," ").trim().toLowerCase();
 
 async function transcribe(url:string): Promise<W[]> {
   const buf = Buffer.from(await (await fetch(url)).arrayBuffer());
@@ -85,52 +82,25 @@ function alSilencio(t:number, sils:Array<[number,number]>): number {
   console.log(`${slug}: máster ${dur.toFixed(2)}s · ${words.length} palabras oídas · ${sils.length} silencios`);
 
   // Se recorre la transcripción en orden, consumiendo las palabras de cada
-  // fragmento. Así cada uno queda anclado donde suena de verdad.
+  // fragmento. Así cada uno queda anclado donde suena de verdad. Lógica en
+  // remeasureFragmentsLib.ts (testeada aparte, scripts/__tests__/).
   const orden = [...frags].sort((a,b)=>a.index-b.index);
+  const { inicios, sinAnclar } = anclarFragmentos(orden, words);
 
-  // Primero SOLO los inicios, anclando por las 3 primeras palabras de cada
-  // fragmento: una sola palabra ("Ele", "A") se repite por toda la historia y
-  // el cursor saltaba a la ocurrencia equivocada, dejando fragmentos solapados.
-  const inicios: number[] = [];
-  const sinAnclar: number[] = [];
-  let cursor = 0;
-  for (const f of orden) {
-    const objetivo = norm(String(f.text ?? "")).split(" ").filter(Boolean);
-    if (!objetivo.length) { inicios.push(cursor); continue; }
-    const buscaClave = (largo: number): number => {
-      const clave = objetivo.slice(0, Math.min(largo, objetivo.length));
-      for (let i = cursor; i <= words.length - clave.length; i++) {
-        let casan = true;
-        for (let k = 0; k < clave.length; k++) {
-          if (norm(words[i + k].text) !== clave[k]) { casan = false; break; }
-        }
-        if (casan) return i;
-      }
-      return -1;
-    };
-    // La clave de 3 palabras falla en cuanto el STT junta o parte una: oyo
-    // "Landa" donde el texto dice "El anda", y el fragmento se anclaba en el
-    // CURSOR, o sea dentro del titulo, con la frontera cayendo sobre voz. Se
-    // afloja la clave y, en ultimo termino, se ancla por la palabra mas larga
-    // del parrafo, que es la que el STT casi nunca confunde.
-    let ini = buscaClave(3);
-    if (ini < 0) ini = buscaClave(2);
-    if (ini < 0) {
-      // La busqueda va ACOTADA a la vecindad del cursor. Sin tope, una palabra
-      // que se repite mas adelante arrastraba el ancla al otro extremo de la
-      // historia y descuadraba todos los fragmentos siguientes.
-      const tope = Math.min(words.length, cursor + objetivo.length + 8);
-      for (const larga of [...objetivo].sort((a, b) => b.length - a.length)) {
-        if (larga.length < 5) break;
-        for (let i = cursor; i < tope; i++) {
-          if (norm(words[i].text) === larga) { ini = i; break; }
-        }
-        if (ini >= 0) break;
-      }
-    }
-    if (ini < 0) { sinAnclar.push(f.index); ini = cursor; }
-    inicios.push(ini);
-    cursor = ini + Math.max(1, objetivo.length - 2);
+  // GUARD DE ORDEN (2026-09-14). El índice de ancla es monótono por
+  // construcción, pero el TIEMPO que trae la palabra en ese índice no lo es
+  // siempre: scribe_v1 puede devolver `words[i].start` fuera de orden en un
+  // tramo dudoso. Sin este chequeo, une-liste-dans-la-tete escribió un
+  // fragmento con endSec menor que su propio startSec y nadie lo notó hasta
+  // que el usuario lo oyó mal. Mismo criterio que el chequeo de silencio de
+  // abajo: mejor no escribir que escribir tiempos invertidos.
+  const desorden = tiemposDesordenados(orden, inicios, words);
+  if (desorden.length) {
+    console.log(`\n  NO SE ESCRIBE: timestamps del transcriptor fuera de orden en el/los fragmento(s) ${desorden.join(", ")}.`);
+    console.log(`  El indice de ancla es correcto pero scribe_v1 devolvio su tiempo antes que el del fragmento previo.`);
+    console.log(`  No hay arreglo automatico seguro aqui: revisar de oido o re-tirar ese fragmento por otra via.`);
+    process.exitCode = 1;
+    return;
   }
 
   const nuevos: Frag[] = [];
