@@ -133,17 +133,33 @@ function primeraPalabra(s: string): string {
  * Caso real (2026-09-05): "añade" y "remata" cerraban 8 de las 9 historias del
  * B1 de España; cada historia pasaba sola y el tema sonaba a plantilla.
  */
-const VERBO_TRAS_CITA = new RegExp(`[${String.fromCharCode(0x201d)}"],\\s*([a-záéíóúñ]+)`, "g");
+// Con \p{Ll} (letra minuscula unicode) en vez de [a-záéíóúñ]: el francés
+// tiene vocales que ese charset no cubria (ê, â, ô, û, ç...) y el apostrofe
+// de las elisiones ("s'exclame").
+const VERBO_TRAS_CITA = new RegExp(`[${String.fromCharCode(0x201d)}"],\\s*([\\p{Ll}']+)(?:\\s+([\\p{Ll}']+))?`, "gu");
+
+// AUXILIARES DEL FRANCES (2026-09-14, ver [[project_journey_fr_a0_friends_marseille]]):
+// en passe compose la acotacion narra "a dit", "ont repondu", nunca "dit" a
+// solas. Contar la primera palabra sin mas marcaba SIEMPRE el mismo auxiliar
+// ("a") como el tic dominante del tema, sin importar el verbo real que
+// seguia. Se salta el auxiliar y se cuenta el PARTICIPIO, que es la palabra
+// que de verdad varia.
+const AUX_ACOTACION_FR = new Set([
+  "a", "ont", "est", "sont", "avait", "avaient", "était", "étaient",
+  "fut", "furent", "eut", "eurent",
+]);
 const TOPE_ACOTACION_DOMINANTE = 0.40;
 const MINIMO_ACOTACIONES = 5;
 
-function verbosDeAcotacion(textos: string[]): { total: number; cuenta: Map<string, number> } {
+function verbosDeAcotacion(textos: string[], lang = ""): { total: number; cuenta: Map<string, number> } {
   const cuenta = new Map<string, number>();
   let total = 0;
   for (const t of textos)
     for (const m of t.matchAll(VERBO_TRAS_CITA)) {
       total++;
-      cuenta.set(m[1], (cuenta.get(m[1]) ?? 0) + 1);
+      let verbo = m[1];
+      if (lang === "FR" && AUX_ACOTACION_FR.has(verbo.toLowerCase()) && m[2]) verbo = m[2];
+      cuenta.set(verbo, (cuenta.get(verbo) ?? 0) + 1);
     }
   return { total, cuenta };
 }
@@ -446,7 +462,7 @@ function desdeJson(fichero: string) {
   const textos = conTexto.map((s) => String(s.text ?? ""));
 
   // (a) Un verbo de acotacion que se come el tema.
-  const va = verbosDeAcotacion(textos);
+  const va = verbosDeAcotacion(textos, language);
   if (va.total >= MINIMO_ACOTACIONES) {
     const [verbo, n] = [...va.cuenta.entries()].sort((x, y) => y[1] - x[1])[0];
     const cuota = n / va.total;
