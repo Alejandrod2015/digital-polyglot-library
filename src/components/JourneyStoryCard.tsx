@@ -2,7 +2,9 @@
 
 import { Check, Lock, Play } from "lucide-react";
 
-export type StoryNodeState = "done" | "next" | "available" | "locked";
+// "premium": fuera del plan basic. Sigue enlazando (la historia abre su avance
+// con el boton a /plans), pero el candado avisa antes de tocarla.
+export type StoryNodeState = "done" | "next" | "available" | "locked" | "premium";
 
 type Story = {
   /** Where the card navigates. */
@@ -49,6 +51,7 @@ export default function JourneyStoryCard({ story, color, waveOffset }: Props) {
     next:      <Check size={14} strokeWidth={3}/>,
     available: <Check size={14} strokeWidth={2.5}/>,
     locked:    <Lock size={13} strokeWidth={2.5}/>,
+    premium:   <Lock size={13} strokeWidth={2.5}/>,
   }[story.state];
 
   return (
@@ -68,6 +71,7 @@ export default function JourneyStoryCard({ story, color, waveOffset }: Props) {
           "group flex items-center gap-4 p-3 pr-[18px] rounded-[22px] w-full max-w-[440px] min-w-0 cursor-pointer relative",
           "transition-[filter,transform] duration-75",
           disabled ? "opacity-55 cursor-not-allowed" : "hover:[filter:brightness(1.10)] active:translate-y-[3px]",
+          story.state === "premium" ? "opacity-75" : "",
           active ? "active-card" : "",
         ].join(" ")}
         style={{
@@ -117,6 +121,7 @@ export default function JourneyStoryCard({ story, color, waveOffset }: Props) {
             story.state === "next"      ? "" : "",
             story.state === "available" ? "border-[var(--card-border)]" : "",
             story.state === "locked"    ? "border-[var(--card-border)]" : "",
+            story.state === "premium"   ? "border-[var(--color-gold)]" : "",
           ].join(" ")}
           style={
             story.state === "done"
@@ -129,6 +134,8 @@ export default function JourneyStoryCard({ story, color, waveOffset }: Props) {
                   }
                 : story.state === "available"
                   ? { color: active ? "rgba(255,255,255,0.85)" : "var(--muted)" }
+                  : story.state === "premium"
+                    ? { color: "var(--color-gold)" }
                   : story.state === "locked"
                     ? { color: active ? "rgba(255,255,255,0.45)" : "rgba(120,120,128,0.5)" }
                     : undefined
