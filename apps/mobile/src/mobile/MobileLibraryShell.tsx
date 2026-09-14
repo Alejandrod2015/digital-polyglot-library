@@ -62,7 +62,7 @@ import { DownloadProgressRing } from "./DownloadProgressRing";
 import { getCoverUrl } from "./coverUrl";
 import { NextActionGlow } from "./NextActionGlow";
 import { PracticeOrbit, type PracticeModeKey as OrbitModeKey } from "./PracticeOrbit";
-import { useSpeakingRecorder } from "./useSpeakingRecorder";
+import { logSpeakingAudioSession, useSpeakingRecorder } from "./useSpeakingRecorder";
 import { PulseDots } from "./PulseDots";
 import { HomeSkeleton } from "./HomeSkeleton";
 import { ALL_LANGUAGES, LanguageFlag, regionFamily } from "./LanguageFlag";
@@ -11783,6 +11783,12 @@ export function MobileLibraryShell(args: {
     }
 
     const exIdAtPlay = currentPracticeExercise.id;
+    // TEMPORAL: la categoria y el modo REALES de la sesion justo antes de
+    // sonar, para leerlos con `idevicesyslog` en vez de deducirlos. Se quita
+    // cuando el chat de planificacion confirme que el sonido vuelve bien.
+    if (currentPracticeExercise.kind === "speaking") {
+      logSpeakingAudioSession("antes de la frase");
+    }
     // Publican "el audio termino" el ejercicio de contexto (que lo usa para
     // el auto-avance) y el hablado (que arranca ahi su cuenta atras). En los
     // dos casos el aviso se manda tambien cuando el audio FALLA, para que

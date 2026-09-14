@@ -8,6 +8,7 @@ import {
   useSpeechRecognitionEvent,
 } from "expo-speech-recognition";
 
+
 /**
  * El reconocimiento de voz del ejercicio hablado, sin nada de pantalla.
  *
@@ -32,31 +33,62 @@ import {
  */
 
 /**
- * La invariante de audio de la app, y por que vive aqui.
+ * Devuelve la sesion de audio de iOS a reproduccion. Dos llamadas, y las dos
+ * hacen falta.
  *
- * Toda ruta de reproduccion de la practica fija el modo ANTES de sonar con
- * `allowsRecordingIOS: false`; el comentario de `playPracticePerfectChime` en
- * `MobileLibraryShell` lo dice y apunta a este fichero. Reconocer voz rompe esa
- * invariante desde fuera: iOS pasa la sesion a `playAndRecord` y enruta la
- * SALIDA al auricular, asi que despues de grabar una vez todo suena bajo y
- * tapado hasta que alguien la devuelve.
+ * El primer intento de arreglo (commit 8734c3bb) uso solo `setAudioModeAsync`
+ * de expo-av y NO funciono. Leyendo `expo-av/ios/EXAV/EXAudioSessionManager.m`
+ * se ve por que, y son dos motivos independientes:
  *
- * El prototipo de junio lo hacia a mano porque grababa el mismo; la version que
- * usa el reconocedor del sistema lo dejo de hacer, dando por supuesto que el
- * modulo se encargaba. No se encarga: sale de `start` con la sesion en modo
- * grabacion y ahi la deja.
+ * 1. Expo-av llama a `setCategory:withOptions:` y a nada mas. En todo su codigo
+ *    de iOS no hay un solo `setMode`. Asi que NO puede quitar el MODE de la
+ *    AVAudioSession, y el `measurement` que dejaba puesto el reconocimiento
+ *    seguia ahi. Ese modo desactiva el procesado de salida: el sonido sale bajo
+ *    y apagado, que es exactamente lo que se oia.
+ * 2. Ademas, expo-av CACHEA la ultima categoria que fijo
+ *    (`if (!_activeCategory || ![category isEqualToString:_activeCategory] ...)`)
+ *    y se salta la llamada cuando coincide. Como el reconocedor cambia la
+ *    sesion por detras sin que expo-av se entere, expo-av seguia creyendo que
+ *    estaba en `playback` y no llamaba a nada. La restauracion era literalmente
+ *    una funcion vacia.
  *
- * Asi que se hacen las dos cosas. Al arrancar se le pide al reconocedor que use
- * el ALTAVOZ aunque este en `playAndRecord`, y al terminar se restaura el modo
- * de reproduccion de siempre. Lo segundo es lo que arregla el fallo; lo primero
- * evita que suene por el auricular durante la propia escucha.
+ * `setCategoryIOS` del propio modulo de reconocimiento si toca la sesion
+ * directamente, categoria Y modo, asi que va primero; el `setAudioModeAsync` de
+ * despues mantiene a expo-av en sincronia con lo que acabamos de hacer, que es
+ * lo que usan las otras nueve rutas de sonido de la app.
  */
 async function restaurarModoDeReproduccion(): Promise<void> {
+  try {
+    ExpoSpeechRecognitionModule.setCategoryIOS({
+      category: AVAudioSessionCategory.playback,
+      categoryOptions: [],
+      mode: AVAudioSessionMode.default,
+    });
+  } catch {
+    // En Android no existe; en iOS, si la sesion no estaba tocada, no hay nada
+    // que devolver. En ninguno de los dos casos es un error.
+  }
   await Audio.setAudioModeAsync({
     playsInSilentModeIOS: true,
     allowsRecordingIOS: false,
     interruptionModeIOS: InterruptionModeIOS.DoNotMix,
   });
+}
+
+/**
+ * Deja en el log la categoria y el modo REALES de la sesion, para poder leerlos
+ * con `idevicesyslog` en vez de deducirlos. TEMPORAL: se quita en cuanto el
+ * chat de planificacion confirme que el sonido vuelve bien.
+ */
+export function logSpeakingAudioSession(donde: string): void {
+  try {
+    const estado = ExpoSpeechRecognitionModule.getAudioSessionCategoryAndOptionsIOS();
+    console.log(
+      `[speaking-audio] ${donde} category=${estado.category} mode=${estado.mode} options=${estado.categoryOptions.join(",") || "(ninguna)"}`
+    );
+  } catch {
+    console.log(`[speaking-audio] ${donde} sin sesion que leer (Android o no iniciada)`);
+  }
 }
 
 const MAX_LISTENING_MS = 15000;
@@ -239,18 +271,22 @@ export function useSpeakingRecorder() {
           // no, el reconocimiento del propio sistema. En ningun caso algo
           // nuestro.
           requiresOnDeviceRecognition: ExpoSpeechRecognitionModule.supportsOnDeviceRecognition(),
-          // iOS enruta `playAndRecord` al AURICULAR por defecto. `defaultToSpeaker`
-          // la manda al altavoz, que es por donde el usuario espera oir la app;
-          // `measurement` desactiva el procesado de voz, que es lo que quiere un
-          // reconocedor. Esto arregla la escucha; la salida DESPUES del turno la
-          // arregla `restaurarModoDeReproduccion`.
+          // iOS enruta `playAndRecord` al AURICULAR por defecto; `defaultToSpeaker`
+          // la manda al altavoz, que es por donde el usuario espera oir la app.
+          //
+          // El modo es `default` y NO `measurement`, aunque `measurement` sea el
+          // que recomiendan para reconocer: desactiva el procesado de SALIDA, y
+          // si un turno se queda a medias (una excepcion, el usuario saliendo de
+          // la pantalla) ese modo se hereda y todo lo que suene despues sale
+          // bajo y apagado. Un reconocimiento un pelo peor es mejor que una app
+          // que se queda muda a la primera.
           iosCategory: {
             category: AVAudioSessionCategory.playAndRecord,
             categoryOptions: [
               AVAudioSessionCategoryOptions.defaultToSpeaker,
               AVAudioSessionCategoryOptions.allowBluetooth,
             ],
-            mode: AVAudioSessionMode.measurement,
+            mode: AVAudioSessionMode.default,
           },
         });
         if (mountedRef.current) setIsRecording(true);
