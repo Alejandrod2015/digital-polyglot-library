@@ -62,7 +62,6 @@ import { DownloadProgressRing } from "./DownloadProgressRing";
 import { getCoverUrl } from "./coverUrl";
 import { NextActionGlow } from "./NextActionGlow";
 import { PracticeOrbit, type PracticeModeKey as OrbitModeKey } from "./PracticeOrbit";
-import { PracticeSpeaking } from "./PracticeSpeaking";
 import { PulseDots } from "./PulseDots";
 import { HomeSkeleton } from "./HomeSkeleton";
 import { ALL_LANGUAGES, LanguageFlag, regionFamily } from "./LanguageFlag";
@@ -2436,7 +2435,6 @@ export function MobileLibraryShell(args: {
   // seconds so the glow is attention-grabbing but not permanent.
   const [highlightedNextStoryId, setHighlightedNextStoryId] = useState<string | null>(null);
   const [speakingPracticePromptId, setSpeakingPracticePromptId] = useState<string | null>(null);
-  const [speakingPracticeOpen, setSpeakingPracticeOpen] = useState(false);
   const [playingPracticeClipId, setPlayingPracticeClipId] = useState<string | null>(null);
   const [playingHqPracticeClipId, setPlayingHqPracticeClipId] = useState<string | null>(null);
   // Id del ejercicio context cuyo audio de reveal terminó de sonar.
@@ -3391,7 +3389,6 @@ export function MobileLibraryShell(args: {
     if (progressSheetOpen) { setProgressSheetOpen(false); return true; }
     if (legalSheetOpen) { setLegalSheetOpen(false); return true; }
     if (timePickerOpen) { setTimePickerOpen(false); return true; }
-    if (speakingPracticeOpen) { setSpeakingPracticeOpen(false); return true; }
     if (topicPreviewOpen) { setTopicPreviewOpen(null); return true; }
     if (levelTestOfferOpen) { setLevelTestOfferOpen(null); return true; }
     // Reader open → back to the story list.
@@ -10082,8 +10079,8 @@ export function MobileLibraryShell(args: {
       // que no lo hacian, y en iOS eso significa que suenan con el modo que
       // dejara el ultimo que lo toco: si venia de un modo con
       // allowsRecordingIOS true, la salida se enruta al auricular y el sonido
-      // queda inaudible. PracticeSpeaking ya documenta la invariante ("la ruta
-      // normal de playback, que SIEMPRE lo pone en false").
+      // queda inaudible. `useSpeakingRecorder` documenta la invariante: la
+      // ruta normal de playback SIEMPRE lo pone en false.
       //
       // CORRECCION 2026-08-06: aqui decia "en Android estos flags son no-ops,
       // el fallo solo se nota en iPhone". Es FALSO, y era deduccion mia a
@@ -14020,29 +14017,6 @@ export function MobileLibraryShell(args: {
             reviewSoonCount={reviewSoon.count}
             reviewSoonMinutes={reviewSoon.minutes}
           />
-          {effectivePlan === "polyglot" ? (
-            <Pressable
-              onPress={() => setSpeakingPracticeOpen(true)}
-              accessibilityRole="button"
-              accessibilityLabel="Open Speak with AI"
-              testID="qa-practice-speaking-entry"
-              style={({ pressed }) => [
-                styles.speakingEntryCard,
-                pressed ? styles.speakingEntryCardPressed : null,
-              ]}
-            >
-              <View style={styles.speakingEntryIcon}>
-                <Feather name="mic" size={20} color="#f8c15c" />
-              </View>
-              <View style={{ flex: 1 }}>
-                <Text style={styles.speakingEntryTitle}>Speak with AI</Text>
-                <Text style={styles.speakingEntrySubtitle}>
-                  Answer one question out loud
-                </Text>
-              </View>
-              <Feather name="chevron-right" size={20} color="#9cb0c9" />
-            </Pressable>
-          ) : null}
         </>
       )}
     </>
@@ -19933,27 +19907,6 @@ export function MobileLibraryShell(args: {
         vocabWords={selectedBookVocabList.map((item) => item.word)}
         aboutText={selectedBook.description?.trim() || selectedBook.subtitle?.trim() || "No description available yet."}
       />
-    );
-  }
-
-  if (speakingPracticeOpen) {
-    const speakingLanguage =
-      activeJourney?.language ??
-      activeJourneyLanguage ??
-      preferences.targetLanguages[0] ??
-      settingsPrimaryLanguage ??
-      "Spanish";
-    const speakingLevel = preferences.preferredLevel || "Intermediate";
-    return (
-      <View style={{ flex: 1, paddingTop: 32 }}>
-        <PracticeSpeaking
-          baseUrl={mobileConfig.apiBaseUrl}
-          token={sessionToken ?? null}
-          language={speakingLanguage}
-          level={speakingLevel}
-          onClose={() => setSpeakingPracticeOpen(false)}
-        />
-      </View>
     );
   }
 
@@ -26130,42 +26083,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 32,
     paddingBottom: 22,
-  },
-  speakingEntryCard: {
-    marginTop: 16,
-    marginHorizontal: 20,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 12,
-    backgroundColor: "#152844",
-    borderColor: "#2d476b",
-    borderWidth: 1,
-    borderRadius: 16,
-    paddingVertical: 14,
-    paddingHorizontal: 16,
-  },
-  speakingEntryCardPressed: {
-    opacity: 0.85,
-    transform: [{ scale: 0.99 }],
-  },
-  speakingEntryIcon: {
-    width: 40,
-    height: 40,
-    borderRadius: 12,
-    backgroundColor: "rgba(248,193,92,0.18)",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  speakingEntryTitle: {
-    color: "#ffffff",
-    fontSize: 15,
-    fontWeight: "900",
-  },
-  speakingEntrySubtitle: {
-    color: "#9cb0c9",
-    fontSize: 12,
-    fontWeight: "600",
-    marginTop: 2,
   },
   practiceSessionShellCompact: {
     paddingHorizontal: 16,
