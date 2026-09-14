@@ -9923,7 +9923,6 @@ export function MobileLibraryShell(args: {
     if (speakingLoadedForRef.current === exercise.id) return;
     speakingLoadedForRef.current = exercise.id;
 
-    let cancelled = false;
     setSpeakingPhase("loading");
     setSpeakingQuestion("");
     setSpeakingCharacter(null);
@@ -9956,7 +9955,9 @@ export function MobileLibraryShell(args: {
             language: exercise.language,
           },
         });
-        if (cancelled) return;
+        // Seguimos en el mismo slot? El ref es la unica fuente fiable: un
+        // avance lo reescribe antes de que esta promesa resuelva.
+        if (speakingLoadedForRef.current !== exercise.id) return;
         if (res.fallbackToContext || !res.question) {
           replaceSpeakingWithContext(exercise);
           return;
@@ -9967,16 +9968,16 @@ export function MobileLibraryShell(args: {
         setSpeakingPhase("ready");
         void playSpeakingQuestionAudio(res.question, res.voiceId ?? null, exercise.language);
       } catch {
-        if (cancelled) return;
+        if (speakingLoadedForRef.current !== exercise.id) return;
         // Sin pregunta no hay ejercicio; el slot cae a context en vez de
         // dejar al usuario mirando un error a mitad de la sesion.
         replaceSpeakingWithContext(exercise);
       }
     })();
-
-    return () => { cancelled = true; };
+    // Sin cleanup a proposito: ver el comentario del ref mas arriba.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
-    currentSpeakingExercise,
+    currentSpeakingExercise?.id,
     practiceCountdownActive,
     sessionToken,
     playSpeakingQuestionAudio,
@@ -9985,11 +9986,12 @@ export function MobileLibraryShell(args: {
 
   // Al salir del slot hablado (o de la sesion) se corta el audio y se tira
   // cualquier grabacion a medias.
+  const speakingRecorderCancel = speakingRecorder.cancel;
   useEffect(() => {
-    if (currentSpeakingExercise) return;
+    if (currentSpeakingExercise?.id) return;
     void stopSpeakingQuestionAudio();
-    void speakingRecorder.cancel();
-  }, [currentSpeakingExercise, speakingRecorder, stopSpeakingQuestionAudio]);
+    void speakingRecorderCancel();
+  }, [currentSpeakingExercise?.id, speakingRecorderCancel, stopSpeakingQuestionAudio]);
 
   /**
    * Mismo contrato que `resolvePracticeMultipleChoiceAnswer`: nota de SRS,
@@ -10022,8 +10024,8 @@ export function MobileLibraryShell(args: {
   async function submitSpeakingAnswer() {
     const exercise = currentSpeakingExercise;
     if (!exercise || !sessionToken) return;
-    const clip = await speakingRecorder.stop();
     setSpeakingPhase("thinking");
+    const clip = await speakingRecorder.stop();
     if (!clip) {
       setSpeakingPhase("ready");
       setSpeakingError("I couldn't hear you. Try again.");
@@ -12613,6 +12615,10 @@ export function MobileLibraryShell(args: {
   useEffect(() => {
     practiceStartTrackedRef.current = false;
     practiceCompletionTrackedRef.current = false;
+    // El id del ejercicio hablado es `speaking:<palabra>`, asi que repetir la
+    // tanda con la misma palabra lo repite: sin limpiar el ref, el slot se
+    // daria por cargado y la pregunta no volveria a pedirse.
+    speakingLoadedForRef.current = null;
   }, [activePracticeMode, practiceExercises.length]);
 
   useEffect(() => {

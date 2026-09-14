@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Audio, InterruptionModeIOS } from "expo-av";
 import * as FileSystem from "expo-file-system/legacy";
 
@@ -137,5 +137,10 @@ export function useSpeakingRecorder() {
     if (uri) await FileSystem.deleteAsync(uri, { idempotent: true }).catch(() => {});
   }, [clearAutoStop]);
 
-  return { isRecording, start, stop, cancel, maxRecordingMs: MAX_RECORDING_MS };
+  // Memoizado: el objeto entra en las dependencias de effects de la pantalla,
+  // y devolverlo nuevo en cada render los haria correr en cada render.
+  return useMemo(
+    () => ({ isRecording, start, stop, cancel, maxRecordingMs: MAX_RECORDING_MS }),
+    [isRecording, start, stop, cancel]
+  );
 }
