@@ -6,10 +6,46 @@
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
-    {"word": "le rectificatif", "answer": "a correction (in print)", "options": ["a correction (in print)", "a manager (fem.)", "a thin wall", "a mechanic (fem.)"]},
-    {"word": "la gérante", "answer": "a manager (fem.)", "options": ["a correction (in print)", "a manager (fem.)", "a thin wall", "a mechanic (fem.)"]},
-    {"word": "la cloison", "answer": "a thin wall", "options": ["a correction (in print)", "a manager (fem.)", "a thin wall", "a mechanic (fem.)"]},
-    {"word": "la mécanicienne", "answer": "a mechanic (fem.)", "options": ["a correction (in print)", "a manager (fem.)", "a thin wall", "a mechanic (fem.)"]}
+    {
+     "word": "le rectificatif",
+     "answer": "a correction (in print)",
+     "options": [
+      "a correction (in print)",
+      "a manager (fem.)",
+      "a thin wall",
+      "a mechanic (fem.)"
+     ]
+    },
+    {
+     "word": "la gérante",
+     "answer": "a manager (fem.)",
+     "options": [
+      "a correction (in print)",
+      "a manager (fem.)",
+      "a thin wall",
+      "a mechanic (fem.)"
+     ]
+    },
+    {
+     "word": "la cloison",
+     "answer": "a thin wall",
+     "options": [
+      "a correction (in print)",
+      "a manager (fem.)",
+      "a thin wall",
+      "a mechanic (fem.)"
+     ]
+    },
+    {
+     "word": "la mécanicienne",
+     "answer": "a mechanic (fem.)",
+     "options": [
+      "a correction (in print)",
+      "a manager (fem.)",
+      "a thin wall",
+      "a mechanic (fem.)"
+     ]
+    }
    ],
    "audioClip": null
   }
@@ -21,36 +57,84 @@
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "publier",
-   "options": ["publier", "acheter", "perdre", "chercher"],
+   "options": [
+    "publier",
+    "acheter",
+    "perdre",
+    "chercher"
+   ],
    "translation": "The newspaper refuses to _____ this photo.",
-   "optionTranslations": ["publish", "buy", "lose", "look for"],
-   "audioClip": {"language": "french", "sentence": "Le journal refuse de publier cette photo.", "storySlug": "derriere-la-cloison", "targetWord": "publier", "storySource": "user"}
+   "optionTranslations": [
+    "publish",
+    "buy",
+    "lose",
+    "look for"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Le journal refuse de publier cette photo.",
+    "storySlug": "derriere-la-cloison",
+    "targetWord": "publier",
+    "storySource": "user"
+   }
   }
  },
  {
   "type": "fill_blank",
   "word": "tièdes",
-  "sentence": "Ces croissants ne sont plus chauds, juste _____.",
+  "sentence": "Ces croissants ne sont plus brûlants, juste encore un peu _____.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "tièdes",
-   "options": ["tièdes", "froids", "salés", "durs"],
-   "translation": "These croissants aren't hot anymore, just _____.",
-   "optionTranslations": ["lukewarm", "cold", "salty", "hard"],
-   "audioClip": {"language": "french", "sentence": "Ces croissants ne sont plus chauds, juste tièdes.", "storySlug": "derriere-la-cloison", "targetWord": "tièdes", "storySource": "user"}
+   "options": [
+    "tièdes",
+    "froids",
+    "salés",
+    "durs"
+   ],
+   "translation": "These croissants aren't scalding anymore, just still a little _____.",
+   "optionTranslations": [
+    "warm",
+    "cold",
+    "salty",
+    "hard"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Ces croissants ne sont plus brûlants, juste encore un peu tièdes.",
+    "storySlug": "derriere-la-cloison",
+    "targetWord": "tièdes",
+    "storySource": "user"
+   }
   }
  },
  {
   "type": "fill_blank",
   "word": "compliments",
-  "sentence": "Après le spectacle, elle a reçu beaucoup de _____.",
+  "sentence": "Ravie, elle a reçu beaucoup de _____ chaleureux après le spectacle.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "compliments",
-   "options": ["compliments", "factures", "questions", "excuses"],
-   "translation": "After the show, she received a lot of _____.",
-   "optionTranslations": ["compliments", "bills", "questions", "excuses"],
-   "audioClip": {"language": "french", "sentence": "Après le spectacle, elle a reçu beaucoup de compliments.", "storySlug": "derriere-la-cloison", "targetWord": "compliments", "storySource": "user"}
+   "options": [
+    "compliments",
+    "factures",
+    "questions",
+    "excuses"
+   ],
+   "translation": "Delighted, she received a lot of warm _____ after the show.",
+   "optionTranslations": [
+    "compliments",
+    "bills",
+    "questions",
+    "apologies"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Ravie, elle a reçu beaucoup de compliments chaleureux après le spectacle.",
+    "storySlug": "derriere-la-cloison",
+    "targetWord": "compliments",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -60,8 +144,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "online",
-   "options": ["online", "in a book", "on the radio", "by letter"],
-   "audioClip": {"language": "french", "sentence": "Cette information est disponible sur internet.", "storySlug": "derriere-la-cloison", "targetWord": "sur internet", "storySource": "user"}
+   "options": [
+    "online",
+    "in a book",
+    "on the radio",
+    "by letter"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Cette information est disponible sur internet.",
+    "storySlug": "derriere-la-cloison",
+    "targetWord": "sur internet",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -71,8 +166,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "get straight to the point",
-   "options": ["get straight to the point", "tell a long story first", "ask many small questions", "wait several days"],
-   "audioClip": {"language": "french", "sentence": "Dans une lettre officielle, il vaut mieux aller droit au but.", "storySlug": "derriere-la-cloison", "targetWord": "aller droit au but", "storySource": "user"}
+   "options": [
+    "get straight to the point",
+    "tell a long story first",
+    "ask many small questions",
+    "wait several days"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Dans une lettre officielle, il vaut mieux aller droit au but.",
+    "storySlug": "derriere-la-cloison",
+    "targetWord": "aller droit au but",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -82,8 +188,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "starting today",
-   "options": ["starting today", "only on Sundays", "since last year", "never again"],
-   "audioClip": {"language": "french", "sentence": "Dès aujourd'hui, le magasin ouvre à huit heures.", "storySlug": "derriere-la-cloison", "targetWord": "Dès aujourd'hui", "storySource": "user"}
+   "options": [
+    "starting today",
+    "only on Sundays",
+    "since last year",
+    "never again"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Dès aujourd'hui, le magasin ouvre à huit heures.",
+    "storySlug": "derriere-la-cloison",
+    "targetWord": "Dès aujourd'hui",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -93,8 +210,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "do the accounts",
-   "options": ["do the accounts", "clean the floor", "call my family", "read the news"],
-   "audioClip": {"language": "french", "sentence": "Chaque soir, je fais les comptes de la journée.", "storySlug": "derriere-la-cloison", "targetWord": "fais les comptes", "storySource": "user"}
+   "options": [
+    "do the accounts",
+    "clean the floor",
+    "call my family",
+    "read the news"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Chaque soir, je fais les comptes de la journée.",
+    "storySlug": "derriere-la-cloison",
+    "targetWord": "fais les comptes",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -104,8 +232,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "the back room",
-   "options": ["the back room", "the front window", "the parking lot", "the bathroom"],
-   "audioClip": {"language": "french", "sentence": "Le comptable travaille dans l'arrière-boutique.", "storySlug": "derriere-la-cloison", "targetWord": "arrière-boutique", "storySource": "user"}
+   "options": [
+    "the back room",
+    "the front window",
+    "the parking lot",
+    "the bathroom"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Le comptable travaille dans l'arrière-boutique.",
+    "storySlug": "derriere-la-cloison",
+    "targetWord": "arrière-boutique",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -115,8 +254,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "went back to his spot",
-   "options": ["went back to his spot", "left the building", "changed his mind", "fallen asleep"],
-   "audioClip": {"language": "french", "sentence": "Après la pause, il a repris sa place derrière le comptoir.", "storySlug": "derriere-la-cloison", "targetWord": "repris sa place", "storySource": "user"}
+   "options": [
+    "went back to his spot",
+    "left the building",
+    "changed his mind",
+    "fallen asleep"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Après la pause, il a repris sa place derrière le comptoir.",
+    "storySlug": "derriere-la-cloison",
+    "targetWord": "repris sa place",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -126,8 +276,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "searched for the right words",
-   "options": ["searched for the right words", "forgotten every word", "shouted every word", "written a long letter"],
-   "audioClip": {"language": "french", "sentence": "Il a longtemps cherché les mots justes.", "storySlug": "derriere-la-cloison", "targetWord": "cherché les mots", "storySource": "user"}
+   "options": [
+    "searched for the right words",
+    "forgotten every word",
+    "shouted every word",
+    "written a long letter"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il a longtemps cherché les mots justes.",
+    "storySlug": "derriere-la-cloison",
+    "targetWord": "cherché les mots",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -138,8 +299,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "without introduction",
-   "options": ["without introduction", "with a long speech", "in complete silence", "after a joke"],
-   "audioClip": {"language": "french", "sentence": "Elle a annoncé la nouvelle sans préambule.", "storySlug": "derriere-la-cloison", "targetWord": "sans préambule", "storySource": "user"}
+   "options": [
+    "without introduction",
+    "with a long speech",
+    "in complete silence",
+    "after a joke"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Elle a annoncé la nouvelle sans préambule.",
+    "storySlug": "derriere-la-cloison",
+    "targetWord": "sans préambule",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -150,8 +322,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "with arms crossed",
-   "options": ["with arms crossed", "with a big smile", "while dancing", "while running away"],
-   "audioClip": {"language": "french", "sentence": "Elle l'a regardé les bras croisés, sans un mot.", "storySlug": "derriere-la-cloison", "targetWord": "les bras croisés", "storySource": "user"}
+   "options": [
+    "with arms crossed",
+    "with a big smile",
+    "while dancing",
+    "while running away"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Elle l'a regardé les bras croisés, sans un mot.",
+    "storySlug": "derriere-la-cloison",
+    "targetWord": "les bras croisés",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -162,8 +345,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "out of pity",
-   "options": ["out of pity", "by accident", "for money", "for fun"],
-   "audioClip": {"language": "french", "sentence": "Il ne l'a pas aidée par pitié, mais par amitié.", "storySlug": "derriere-la-cloison", "targetWord": "par pitié", "storySource": "user"}
+   "options": [
+    "out of pity",
+    "by accident",
+    "for money",
+    "for fun"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il ne l'a pas aidée par pitié, mais par amitié.",
+    "storySlug": "derriere-la-cloison",
+    "targetWord": "par pitié",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -174,8 +368,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "first",
-   "options": ["first", "last", "never", "twice"],
-   "audioClip": {"language": "french", "sentence": "Sur la liste, son nom apparaît en premier.", "storySlug": "derriere-la-cloison", "targetWord": "en premier", "storySource": "user"}
+   "options": [
+    "first",
+    "last",
+    "never",
+    "twice"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Sur la liste, son nom apparaît en premier.",
+    "storySlug": "derriere-la-cloison",
+    "targetWord": "en premier",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -186,8 +391,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "asked to see",
-   "options": ["asked to see", "refused to pay", "forgotten to call", "decided to leave"],
-   "audioClip": {"language": "french", "sentence": "Un client a demandé à voir le responsable.", "storySlug": "derriere-la-cloison", "targetWord": "demandé à voir", "storySource": "user"}
+   "options": [
+    "asked to see",
+    "refused to pay",
+    "forgotten to call",
+    "decided to leave"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Un client a demandé à voir le responsable.",
+    "storySlug": "derriere-la-cloison",
+    "targetWord": "demandé à voir",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -198,8 +414,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "hearing him speak",
-   "options": ["hearing him speak", "without listening at all", "before meeting him", "after forgetting him"],
-   "audioClip": {"language": "french", "sentence": "En l'entendant parler, elle a tout de suite compris.", "storySlug": "derriere-la-cloison", "targetWord": "En l'entendant", "storySource": "user"}
+   "options": [
+    "hearing him speak",
+    "without listening at all",
+    "before meeting him",
+    "after forgetting him"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "En l'entendant parler, elle a tout de suite compris.",
+    "storySlug": "derriere-la-cloison",
+    "targetWord": "En l'entendant",
+    "storySource": "user"
+   }
   },
   "featured": false
  }

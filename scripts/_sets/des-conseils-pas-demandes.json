@@ -6,10 +6,46 @@
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
-    {"word": "la carbonnade", "answer": "a beef-and-beer stew", "options": ["a beef-and-beer stew", "an older brother", "a real-estate agent", "a sugar tart"]},
-    {"word": "le grand frère", "answer": "an older brother", "options": ["a beef-and-beer stew", "an older brother", "a real-estate agent", "a sugar tart"]},
-    {"word": "l'agent immobilier", "answer": "a real-estate agent", "options": ["a beef-and-beer stew", "an older brother", "a real-estate agent", "a sugar tart"]},
-    {"word": "la tarte au sucre", "answer": "a sugar tart", "options": ["a beef-and-beer stew", "an older brother", "a real-estate agent", "a sugar tart"]}
+    {
+     "word": "la carbonnade",
+     "answer": "a beef-and-beer stew",
+     "options": [
+      "a beef-and-beer stew",
+      "an older brother",
+      "a real-estate agent",
+      "a sugar tart"
+     ]
+    },
+    {
+     "word": "le grand frère",
+     "answer": "an older brother",
+     "options": [
+      "a beef-and-beer stew",
+      "an older brother",
+      "a real-estate agent",
+      "a sugar tart"
+     ]
+    },
+    {
+     "word": "l'agent immobilier",
+     "answer": "a real-estate agent",
+     "options": [
+      "a beef-and-beer stew",
+      "an older brother",
+      "a real-estate agent",
+      "a sugar tart"
+     ]
+    },
+    {
+     "word": "la tarte au sucre",
+     "answer": "a sugar tart",
+     "options": [
+      "a beef-and-beer stew",
+      "an older brother",
+      "a real-estate agent",
+      "a sugar tart"
+     ]
+    }
    ],
    "audioClip": null
   }
@@ -21,23 +57,55 @@
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "mijotait",
-   "options": ["mijotait", "brûlait", "gelait", "séchait"],
+   "options": [
+    "mijotait",
+    "brûlait",
+    "gelait",
+    "séchait"
+   ],
    "translation": "The stew had been _____ for two hours on the stove.",
-   "optionTranslations": ["simmering", "burning", "freezing", "drying"],
-   "audioClip": {"language": "french", "sentence": "Le ragoût mijotait depuis deux heures sur le feu.", "storySlug": "des-conseils-pas-demandes", "targetWord": "mijotait", "storySource": "user"}
+   "optionTranslations": [
+    "simmering",
+    "burning",
+    "freezing",
+    "drying"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Le ragoût mijotait depuis deux heures sur le feu.",
+    "storySlug": "des-conseils-pas-demandes",
+    "targetWord": "mijotait",
+    "storySource": "user"
+   }
   }
  },
  {
   "type": "fill_blank",
   "word": "blessé",
-  "sentence": "Après cette remarque, il se sentait vraiment _____.",
+  "sentence": "Après cette remarque cruelle, il se sentait vraiment _____.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "blessé",
-   "options": ["blessé", "fier", "amusé", "calme"],
-   "translation": "After that remark, he felt really _____.",
-   "optionTranslations": ["hurt", "proud", "amused", "calm"],
-   "audioClip": {"language": "french", "sentence": "Après cette remarque, il se sentait vraiment blessé.", "storySlug": "des-conseils-pas-demandes", "targetWord": "blessé", "storySource": "user"}
+   "options": [
+    "blessé",
+    "fier",
+    "amusé",
+    "calme"
+   ],
+   "translation": "After that cruel remark, he felt really _____.",
+   "optionTranslations": [
+    "hurt",
+    "proud",
+    "amused",
+    "calm"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Après cette remarque cruelle, il se sentait vraiment blessé.",
+    "storySlug": "des-conseils-pas-demandes",
+    "targetWord": "blessé",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -47,10 +115,26 @@
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "têtu",
-   "options": ["têtu", "fatigué", "riche", "jeune"],
+   "options": [
+    "têtu",
+    "fatigué",
+    "riche",
+    "jeune"
+   ],
    "translation": "Impossible to make him change his mind, he's too _____.",
-   "optionTranslations": ["stubborn", "tired", "rich", "young"],
-   "audioClip": {"language": "french", "sentence": "Impossible de le faire changer d'avis, il est trop têtu.", "storySlug": "des-conseils-pas-demandes", "targetWord": "têtu", "storySource": "user"}
+   "optionTranslations": [
+    "stubborn",
+    "tired",
+    "rich",
+    "young"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Impossible de le faire changer d'avis, il est trop têtu.",
+    "storySlug": "des-conseils-pas-demandes",
+    "targetWord": "têtu",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -60,8 +144,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "piece of advice",
-   "options": ["piece of advice", "strict order", "funny joke", "old habit"],
-   "audioClip": {"language": "french", "sentence": "Merci pour ce conseil, je vais suivre ton idée.", "storySlug": "des-conseils-pas-demandes", "targetWord": "conseils", "storySource": "user"}
+   "options": [
+    "piece of advice",
+    "strict order",
+    "funny joke",
+    "old habit"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Merci pour ce conseil, je vais suivre ton idée.",
+    "storySlug": "des-conseils-pas-demandes",
+    "targetWord": "conseils",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -71,8 +166,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "pride",
-   "options": ["pride", "money", "time", "fear"],
-   "audioClip": {"language": "french", "sentence": "Il a mis son orgueil de côté pour s'excuser.", "storySlug": "des-conseils-pas-demandes", "targetWord": "orgueil", "storySource": "user"}
+   "options": [
+    "pride",
+    "money",
+    "time",
+    "fear"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il a mis son orgueil de côté pour s'excuser.",
+    "storySlug": "des-conseils-pas-demandes",
+    "targetWord": "orgueil",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -82,8 +188,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "confident",
-   "options": ["confident", "nervous", "late", "silent"],
-   "audioClip": {"language": "french", "sentence": "Il est arrivé à l'entretien sûr de lui.", "storySlug": "des-conseils-pas-demandes", "targetWord": "sûr de lui", "storySource": "user"}
+   "options": [
+    "confident",
+    "nervous",
+    "late",
+    "silent"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il est arrivé à l'entretien sûr de lui.",
+    "storySlug": "des-conseils-pas-demandes",
+    "targetWord": "sûr de lui",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -93,8 +210,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "if I were you",
-   "options": ["if I were you", "if you insist", "if it's true", "if we agree"],
-   "audioClip": {"language": "french", "sentence": "À ta place, je dirais non tout de suite.", "storySlug": "des-conseils-pas-demandes", "targetWord": "À ta place", "storySource": "user"}
+   "options": [
+    "if I were you",
+    "if you insist",
+    "if it's true",
+    "if we agree"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "À ta place, je dirais non tout de suite.",
+    "storySlug": "des-conseils-pas-demandes",
+    "targetWord": "À ta place",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -104,8 +232,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "it's better to",
-   "options": ["it's better to", "it's forbidden to", "it's useless to", "it's too late to"],
-   "audioClip": {"language": "french", "sentence": "Il vaut mieux partir tôt pour éviter les embouteillages.", "storySlug": "des-conseils-pas-demandes", "targetWord": "Il vaut mieux", "storySource": "user"}
+   "options": [
+    "it's better to",
+    "it's forbidden to",
+    "it's useless to",
+    "it's too late to"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il vaut mieux partir tôt pour éviter les embouteillages.",
+    "storySlug": "des-conseils-pas-demandes",
+    "targetWord": "Il vaut mieux",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -115,8 +254,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "make up, reconcile",
-   "options": ["make up, reconcile", "move away", "start a business", "get divorced"],
-   "audioClip": {"language": "french", "sentence": "Après des années sans se parler, ils ont enfin pu se réconcilier.", "storySlug": "des-conseils-pas-demandes", "targetWord": "se réconcilier", "storySource": "user"}
+   "options": [
+    "make up, reconcile",
+    "move away",
+    "start a business",
+    "get divorced"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Après des années sans se parler, ils ont enfin pu se réconcilier.",
+    "storySlug": "des-conseils-pas-demandes",
+    "targetWord": "se réconcilier",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -126,8 +276,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "gritted his teeth",
-   "options": ["gritted his teeth", "fallen asleep", "started laughing", "called for help"],
-   "audioClip": {"language": "french", "sentence": "Malgré la douleur, il a serré les dents.", "storySlug": "des-conseils-pas-demandes", "targetWord": "serré les dents", "storySource": "user"}
+   "options": [
+    "gritted his teeth",
+    "fallen asleep",
+    "started laughing",
+    "called for help"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Malgré la douleur, il a serré les dents.",
+    "storySlug": "des-conseils-pas-demandes",
+    "targetWord": "serré les dents",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -138,8 +299,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "meddled in",
-   "options": ["meddled in", "refused to talk about", "paid for", "forgot about"],
-   "audioClip": {"language": "french", "sentence": "Il se mêlait de tout, même sans qu'on lui demande.", "storySlug": "des-conseils-pas-demandes", "targetWord": "se mêlait de", "storySource": "user"}
+   "options": [
+    "meddled in",
+    "refused to talk about",
+    "paid for",
+    "forgot about"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il se mêlait de tout, même sans qu'on lui demande.",
+    "storySlug": "des-conseils-pas-demandes",
+    "targetWord": "se mêlait de",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -150,8 +322,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "interrupted",
-   "options": ["interrupted", "listened carefully to", "agreed with", "thanked"],
-   "audioClip": {"language": "french", "sentence": "Il coupait la parole à tout le monde pendant la réunion.", "storySlug": "des-conseils-pas-demandes", "targetWord": "coupait la parole", "storySource": "user"}
+   "options": [
+    "interrupted",
+    "listened carefully to",
+    "agreed with",
+    "thanked"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il coupait la parole à tout le monde pendant la réunion.",
+    "storySlug": "des-conseils-pas-demandes",
+    "targetWord": "coupait la parole",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -162,8 +345,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "believe me",
-   "options": ["believe me", "forget me", "call me", "follow me"],
-   "audioClip": {"language": "french", "sentence": "Crois-moi, cette décision est la bonne.", "storySlug": "des-conseils-pas-demandes", "targetWord": "crois-moi", "storySource": "user"}
+   "options": [
+    "believe me",
+    "forget me",
+    "call me",
+    "follow me"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Crois-moi, cette décision est la bonne.",
+    "storySlug": "des-conseils-pas-demandes",
+    "targetWord": "crois-moi",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -174,8 +368,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "turned bright red",
-   "options": ["turned bright red", "gone very pale", "fallen asleep", "started to cry"],
-   "audioClip": {"language": "french", "sentence": "En entendant la question, il est devenu tout rouge.", "storySlug": "des-conseils-pas-demandes", "targetWord": "devenu tout rouge", "storySource": "user"}
+   "options": [
+    "turned bright red",
+    "gone very pale",
+    "fallen asleep",
+    "started to cry"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "En entendant la question, il est devenu tout rouge.",
+    "storySlug": "des-conseils-pas-demandes",
+    "targetWord": "devenu tout rouge",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -186,8 +391,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "slam the door",
-   "options": ["slam the door", "open the window", "turn off the light", "lock the car"],
-   "audioClip": {"language": "french", "sentence": "Il ne faut jamais claquer la porte en partant.", "storySlug": "des-conseils-pas-demandes", "targetWord": "claquer la porte", "storySource": "user"}
+   "options": [
+    "slam the door",
+    "open the window",
+    "turn off the light",
+    "lock the car"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il ne faut jamais claquer la porte en partant.",
+    "storySlug": "des-conseils-pas-demandes",
+    "targetWord": "claquer la porte",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -198,8 +414,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "was angry at",
-   "options": ["was angry at", "was grateful to", "was waiting for", "was proud of"],
-   "audioClip": {"language": "french", "sentence": "Elle en voulait à son collègue depuis des semaines.", "storySlug": "des-conseils-pas-demandes", "targetWord": "en voulait à", "storySource": "user"}
+   "options": [
+    "was angry at",
+    "was grateful to",
+    "was waiting for",
+    "was proud of"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Elle en voulait à son collègue depuis des semaines.",
+    "storySlug": "des-conseils-pas-demandes",
+    "targetWord": "en voulait à",
+    "storySource": "user"
+   }
   },
   "featured": false
  }

@@ -6,10 +6,46 @@
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
-    {"word": "la rumeur", "answer": "a rumor", "options": ["a rumor", "a regular customer", "a small beer", "a bill"]},
-    {"word": "l'habitué", "answer": "a regular customer", "options": ["a rumor", "a regular customer", "a small beer", "a bill"]},
-    {"word": "le demi", "answer": "a small beer", "options": ["a rumor", "a regular customer", "a small beer", "a bill"]},
-    {"word": "la facture", "answer": "a bill", "options": ["a rumor", "a regular customer", "a small beer", "a bill"]}
+    {
+     "word": "la rumeur",
+     "answer": "a rumor",
+     "options": [
+      "a rumor",
+      "a regular customer",
+      "a small beer",
+      "a bill"
+     ]
+    },
+    {
+     "word": "l'habitué",
+     "answer": "a regular customer",
+     "options": [
+      "a rumor",
+      "a regular customer",
+      "a small beer",
+      "a bill"
+     ]
+    },
+    {
+     "word": "le demi",
+     "answer": "a small beer",
+     "options": [
+      "a rumor",
+      "a regular customer",
+      "a small beer",
+      "a bill"
+     ]
+    },
+    {
+     "word": "la facture",
+     "answer": "a bill",
+     "options": [
+      "a rumor",
+      "a regular customer",
+      "a small beer",
+      "a bill"
+     ]
+    }
    ],
    "audioClip": null
   }
@@ -21,10 +57,26 @@
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "essuyait",
-   "options": ["essuyait", "cassait", "achetait", "cherchait"],
+   "options": [
+    "essuyait",
+    "cassait",
+    "achetait",
+    "cherchait"
+   ],
    "translation": "Before leaving, she _____ the table.",
-   "optionTranslations": ["wiped", "broke", "bought", "looked for"],
-   "audioClip": {"language": "french", "sentence": "Avant de partir, elle essuyait la table.", "storySlug": "des-comptes-bien-tenus", "targetWord": "essuyait", "storySource": "user"}
+   "optionTranslations": [
+    "wiped",
+    "broke",
+    "bought",
+    "looked for"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Avant de partir, elle essuyait la table.",
+    "storySlug": "des-comptes-bien-tenus",
+    "targetWord": "essuyait",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -34,23 +86,55 @@
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "réparer",
-   "options": ["réparer", "vendre", "peindre", "perdre"],
+   "options": [
+    "réparer",
+    "vendre",
+    "peindre",
+    "perdre"
+   ],
    "translation": "The mechanic can _____ this bike in an hour.",
-   "optionTranslations": ["repair", "sell", "paint", "lose"],
-   "audioClip": {"language": "french", "sentence": "Le mécanicien peut réparer ce vélo en une heure.", "storySlug": "des-comptes-bien-tenus", "targetWord": "réparer", "storySource": "user"}
+   "optionTranslations": [
+    "repair",
+    "sell",
+    "paint",
+    "lose"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Le mécanicien peut réparer ce vélo en une heure.",
+    "storySlug": "des-comptes-bien-tenus",
+    "targetWord": "réparer",
+    "storySource": "user"
+   }
   }
  },
  {
   "type": "fill_blank",
   "word": "bondé",
-  "sentence": "Le samedi, ce café est toujours _____.",
+  "sentence": "On ne trouve jamais de place: ce café est toujours _____.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "bondé",
-   "options": ["bondé", "vide", "fermé", "calme"],
-   "translation": "On Saturdays, this café is always _____.",
-   "optionTranslations": ["packed", "empty", "closed", "quiet"],
-   "audioClip": {"language": "french", "sentence": "Le samedi, ce café est toujours bondé.", "storySlug": "des-comptes-bien-tenus", "targetWord": "bondé", "storySource": "user"}
+   "options": [
+    "bondé",
+    "vide",
+    "fermé",
+    "calme"
+   ],
+   "translation": "You can never find a seat: this café is always _____.",
+   "optionTranslations": [
+    "packed",
+    "empty",
+    "closed",
+    "quiet"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "On ne trouve jamais de place: ce café est toujours bondé.",
+    "storySlug": "des-comptes-bien-tenus",
+    "targetWord": "bondé",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -60,8 +144,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "somewhere else",
-   "options": ["somewhere else", "right here", "tomorrow", "for free"],
-   "audioClip": {"language": "french", "sentence": "Ce magasin est fermé, il faut aller ailleurs.", "storySlug": "des-comptes-bien-tenus", "targetWord": "ailleurs", "storySource": "user"}
+   "options": [
+    "somewhere else",
+    "right here",
+    "tomorrow",
+    "for free"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Ce magasin est fermé, il faut aller ailleurs.",
+    "storySlug": "des-comptes-bien-tenus",
+    "targetWord": "ailleurs",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -71,8 +166,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "sound, healthy",
-   "options": ["sound, healthy", "in serious trouble", "completely empty", "very old"],
-   "audioClip": {"language": "french", "sentence": "Après le contrôle, les comptes étaient sains.", "storySlug": "des-comptes-bien-tenus", "targetWord": "sains", "storySource": "user"}
+   "options": [
+    "sound, healthy",
+    "in serious trouble",
+    "completely empty",
+    "very old"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Après le contrôle, les comptes étaient sains.",
+    "storySlug": "des-comptes-bien-tenus",
+    "targetWord": "sains",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -82,8 +188,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "believe",
-   "options": ["believe", "forget", "punish", "follow"],
-   "audioClip": {"language": "french", "sentence": "Il faut qu'on te croie, alors explique bien.", "storySlug": "des-comptes-bien-tenus", "targetWord": "croie", "storySource": "user"}
+   "options": [
+    "believe",
+    "forget",
+    "punish",
+    "follow"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il faut qu'on te croie, alors explique bien.",
+    "storySlug": "des-comptes-bien-tenus",
+    "targetWord": "croie",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -93,8 +210,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "at the back of",
-   "options": ["at the back of", "right in front of", "outside of", "above"],
-   "audioClip": {"language": "french", "sentence": "Au fond de la salle, personne ne parlait.", "storySlug": "des-comptes-bien-tenus", "targetWord": "Au fond de", "storySource": "user"}
+   "options": [
+    "at the back of",
+    "right in front of",
+    "outside of",
+    "above"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Au fond de la salle, personne ne parlait.",
+    "storySlug": "des-comptes-bien-tenus",
+    "targetWord": "Au fond de",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -104,8 +232,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "the image, reputation",
-   "options": ["the image, reputation", "the money, budget", "the address", "the schedule"],
-   "audioClip": {"language": "french", "sentence": "Ce scandale a abîmé l'image de l'entreprise.", "storySlug": "des-comptes-bien-tenus", "targetWord": "image", "storySource": "user"}
+   "options": [
+    "the image, reputation",
+    "the money, budget",
+    "the address",
+    "the schedule"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Ce scandale a abîmé l'image de l'entreprise.",
+    "storySlug": "des-comptes-bien-tenus",
+    "targetWord": "image",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -115,8 +254,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "go bankrupt",
-   "options": ["go bankrupt", "close for the weekend", "change owners", "move to another street"],
-   "audioClip": {"language": "french", "sentence": "Sans nouveaux clients, la boutique va faire faillite.", "storySlug": "des-comptes-bien-tenus", "targetWord": "faire faillite", "storySource": "user"}
+   "options": [
+    "go bankrupt",
+    "close for the weekend",
+    "change owners",
+    "move to another street"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Sans nouveaux clients, la boutique va faire faillite.",
+    "storySlug": "des-comptes-bien-tenus",
+    "targetWord": "faire faillite",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -126,8 +276,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "the cash ledger",
-   "options": ["the cash ledger", "the phone book", "the shopping list", "the guest book"],
-   "audioClip": {"language": "french", "sentence": "Chaque vente est notée dans le cahier de caisse.", "storySlug": "des-comptes-bien-tenus", "targetWord": "le cahier de caisse", "storySource": "user"}
+   "options": [
+    "the cash ledger",
+    "the phone book",
+    "the shopping list",
+    "the guest book"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Chaque vente est notée dans le cahier de caisse.",
+    "storySlug": "des-comptes-bien-tenus",
+    "targetWord": "le cahier de caisse",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -138,8 +299,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "gathered together",
-   "options": ["gathered together", "far apart", "asleep", "angry"],
-   "audioClip": {"language": "french", "sentence": "Tous les voisins étaient réunis devant l'immeuble.", "storySlug": "des-comptes-bien-tenus", "targetWord": "réunis", "storySource": "user"}
+   "options": [
+    "gathered together",
+    "far apart",
+    "asleep",
+    "angry"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Tous les voisins étaient réunis devant l'immeuble.",
+    "storySlug": "des-comptes-bien-tenus",
+    "targetWord": "réunis",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -150,8 +322,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to fail in life",
-   "options": ["to fail in life", "to travel a lot", "to earn money fast", "to make new friends"],
-   "audioClip": {"language": "french", "sentence": "Il avait peur de rater sa vie.", "storySlug": "des-comptes-bien-tenus", "targetWord": "rater ma vie", "storySource": "user"}
+   "options": [
+    "to fail in life",
+    "to travel a lot",
+    "to earn money fast",
+    "to make new friends"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il avait peur de rater sa vie.",
+    "storySlug": "des-comptes-bien-tenus",
+    "targetWord": "rater ma vie",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -162,8 +345,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "taken the time to",
-   "options": ["taken the time to", "forgotten completely to", "refused completely to", "decided quickly to"],
-   "audioClip": {"language": "french", "sentence": "Elle a pris le temps de bien réfléchir.", "storySlug": "des-comptes-bien-tenus", "targetWord": "pris le temps de", "storySource": "user"}
+   "options": [
+    "taken the time to",
+    "forgotten completely to",
+    "refused completely to",
+    "decided quickly to"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Elle a pris le temps de bien réfléchir.",
+    "storySlug": "des-comptes-bien-tenus",
+    "targetWord": "pris le temps de",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -174,8 +368,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "was applauding",
-   "options": ["was applauding", "was sleeping", "was crying", "was leaving"],
-   "audioClip": {"language": "french", "sentence": "Toute la salle applaudissait à la fin du spectacle.", "storySlug": "des-comptes-bien-tenus", "targetWord": "applaudissait", "storySource": "user"}
+   "options": [
+    "was applauding",
+    "was sleeping",
+    "was crying",
+    "was leaving"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Toute la salle applaudissait à la fin du spectacle.",
+    "storySlug": "des-comptes-bien-tenus",
+    "targetWord": "applaudissait",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -186,8 +391,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "that's not true",
-   "options": ["that's not true", "that's completely true", "that's a good idea", "that's very kind"],
-   "audioClip": {"language": "french", "sentence": "C'est faux, je n'ai jamais dit ça.", "storySlug": "des-comptes-bien-tenus", "targetWord": "C'est faux", "storySource": "user"}
+   "options": [
+    "that's not true",
+    "that's completely true",
+    "that's a good idea",
+    "that's very kind"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "C'est faux, je n'ai jamais dit ça.",
+    "storySlug": "des-comptes-bien-tenus",
+    "targetWord": "C'est faux",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -198,8 +414,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "you know how it feels",
-   "options": ["you know how it feels", "you have never felt that", "you always feel great", "you never lost anything"],
-   "audioClip": {"language": "french", "sentence": "Vous avez déjà perdu votre travail, vous savez ce que c'est.", "storySlug": "des-comptes-bien-tenus", "targetWord": "savez ce que c'est", "storySource": "user"}
+   "options": [
+    "you know how it feels",
+    "you have never felt that",
+    "you always feel great",
+    "you never lost anything"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Vous avez déjà perdu votre travail, vous savez ce que c'est.",
+    "storySlug": "des-comptes-bien-tenus",
+    "targetWord": "savez ce que c'est",
+    "storySource": "user"
+   }
   },
   "featured": false
  }

@@ -6,10 +6,46 @@
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
-    {"word": "la chambre à air", "answer": "a bike inner tube", "options": ["a bike inner tube", "official sick leave", "a wheel", "a waiting list"]},
-    {"word": "l'arrêt maladie", "answer": "official sick leave", "options": ["a bike inner tube", "official sick leave", "a wheel", "a waiting list"]},
-    {"word": "la roue", "answer": "a wheel", "options": ["a bike inner tube", "official sick leave", "a wheel", "a waiting list"]},
-    {"word": "la liste d'attente", "answer": "a waiting list", "options": ["a bike inner tube", "official sick leave", "a wheel", "a waiting list"]}
+    {
+     "word": "la chambre à air",
+     "answer": "a bike inner tube",
+     "options": [
+      "a bike inner tube",
+      "official sick leave",
+      "a wheel",
+      "a waiting list"
+     ]
+    },
+    {
+     "word": "l'arrêt maladie",
+     "answer": "official sick leave",
+     "options": [
+      "a bike inner tube",
+      "official sick leave",
+      "a wheel",
+      "a waiting list"
+     ]
+    },
+    {
+     "word": "la roue",
+     "answer": "a wheel",
+     "options": [
+      "a bike inner tube",
+      "official sick leave",
+      "a wheel",
+      "a waiting list"
+     ]
+    },
+    {
+     "word": "la liste d'attente",
+     "answer": "a waiting list",
+     "options": [
+      "a bike inner tube",
+      "official sick leave",
+      "a wheel",
+      "a waiting list"
+     ]
+    }
    ],
    "audioClip": null
   }
@@ -21,23 +57,55 @@
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "examinée",
-   "options": ["examinée", "saluée", "appelée", "oubliée"],
+   "options": [
+    "examinée",
+    "saluée",
+    "appelée",
+    "oubliée"
+   ],
    "translation": "The doctor _____ the patient carefully.",
-   "optionTranslations": ["examined", "greeted", "called", "forgot"],
-   "audioClip": {"language": "french", "sentence": "Le médecin a examinée la patiente avec attention.", "storySlug": "endormie-contre-l-etabli", "targetWord": "examinée", "storySource": "user"}
+   "optionTranslations": [
+    "examined",
+    "greeted",
+    "called",
+    "forgot"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Le médecin a examinée la patiente avec attention.",
+    "storySlug": "endormie-contre-l-etabli",
+    "targetWord": "examinée",
+    "storySource": "user"
+   }
   }
  },
  {
   "type": "fill_blank",
   "word": "juré",
-  "sentence": "Il m'a _____ de dire la vérité.",
+  "sentence": "Il m'a _____, la main sur le cœur, de dire la vérité.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "juré",
-   "options": ["juré", "interdit", "proposé", "conseillé"],
-   "translation": "He _____ to tell me the truth.",
-   "optionTranslations": ["swore", "forbade", "offered", "advised"],
-   "audioClip": {"language": "french", "sentence": "Il m'a juré de dire la vérité.", "storySlug": "endormie-contre-l-etabli", "targetWord": "juré", "storySource": "user"}
+   "options": [
+    "juré",
+    "interdit",
+    "remercié",
+    "empêché"
+   ],
+   "translation": "He _____, hand on heart, to tell me the truth.",
+   "optionTranslations": [
+    "swore",
+    "forbade me",
+    "thanked me",
+    "stopped me"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il m'a juré, la main sur le cœur, de dire la vérité.",
+    "storySlug": "endormie-contre-l-etabli",
+    "targetWord": "juré",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -47,10 +115,26 @@
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "impossible",
-   "options": ["impossible", "facile", "rapide", "gratuit"],
+   "options": [
+    "impossible",
+    "facile",
+    "rapide",
+    "gratuit"
+   ],
    "translation": "Without money or time, this project is _____.",
-   "optionTranslations": ["impossible", "easy", "quick", "free"],
-   "audioClip": {"language": "french", "sentence": "Sans argent et sans temps, ce projet est impossible.", "storySlug": "endormie-contre-l-etabli", "targetWord": "impossible", "storySource": "user"}
+   "optionTranslations": [
+    "impossible",
+    "easy",
+    "quick",
+    "free"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Sans argent et sans temps, ce projet est impossible.",
+    "storySlug": "endormie-contre-l-etabli",
+    "targetWord": "impossible",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -60,8 +144,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "asleep on his feet",
-   "options": ["asleep on his feet", "wide awake and happy", "very hungry", "completely lost"],
-   "audioClip": {"language": "french", "sentence": "Après le travail de nuit, il était endormie debout.", "storySlug": "endormie-contre-l-etabli", "targetWord": "endormie debout", "storySource": "user"}
+   "options": [
+    "asleep on his feet",
+    "wide awake and happy",
+    "very hungry",
+    "completely lost"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Après le travail de nuit, il était endormie debout.",
+    "storySlug": "endormie-contre-l-etabli",
+    "targetWord": "endormie debout",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -71,8 +166,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "leaning",
-   "options": ["leaning", "sitting far away", "running quickly", "jumping high"],
-   "audioClip": {"language": "french", "sentence": "Elle était appuyée contre le mur, épuisée.", "storySlug": "endormie-contre-l-etabli", "targetWord": "appuyée", "storySource": "user"}
+   "options": [
+    "leaning",
+    "sitting far away",
+    "running quickly",
+    "jumping high"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Elle était appuyée contre le mur, épuisée.",
+    "storySlug": "endormie-contre-l-etabli",
+    "targetWord": "appuyée",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -82,8 +188,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "with a serious look",
-   "options": ["with a serious look", "with a huge smile", "without any expression", "while laughing loudly"],
-   "audioClip": {"language": "french", "sentence": "Elle m'a regardé l'air grave avant de parler.", "storySlug": "endormie-contre-l-etabli", "targetWord": "l'air grave", "storySource": "user"}
+   "options": [
+    "with a serious look",
+    "with a huge smile",
+    "without any expression",
+    "while laughing loudly"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Elle m'a regardé l'air grave avant de parler.",
+    "storySlug": "endormie-contre-l-etabli",
+    "targetWord": "l'air grave",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -93,8 +210,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "sleepless nights",
-   "options": ["sleepless nights", "long vacations", "quiet mornings", "short meetings"],
-   "audioClip": {"language": "french", "sentence": "Après trois nuits blanches, elle ne tenait plus debout.", "storySlug": "endormie-contre-l-etabli", "targetWord": "nuits blanches", "storySource": "user"}
+   "options": [
+    "sleepless nights",
+    "long vacations",
+    "quiet mornings",
+    "short meetings"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Après trois nuits blanches, elle ne tenait plus debout.",
+    "storySlug": "endormie-contre-l-etabli",
+    "targetWord": "nuits blanches",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -104,8 +232,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "completely exhausted",
-   "options": ["completely exhausted", "very proud", "a bit thirsty", "totally confused"],
-   "audioClip": {"language": "french", "sentence": "Après la course, il était à bout de forces.", "storySlug": "endormie-contre-l-etabli", "targetWord": "à bout de forces", "storySource": "user"}
+   "options": [
+    "completely exhausted",
+    "very proud",
+    "a bit thirsty",
+    "totally confused"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Après la course, il était à bout de forces.",
+    "storySlug": "endormie-contre-l-etabli",
+    "targetWord": "à bout de forces",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -115,8 +254,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "would come back",
-   "options": ["would come back", "would forget everything", "would sell the house", "would stay forever"],
-   "audioClip": {"language": "french", "sentence": "Elle a promis qu'elle reviendrait bientôt.", "storySlug": "endormie-contre-l-etabli", "targetWord": "reviendrait", "storySource": "user"}
+   "options": [
+    "would come back",
+    "would forget everything",
+    "would sell the house",
+    "would stay forever"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Elle a promis qu'elle reviendrait bientôt.",
+    "storySlug": "endormie-contre-l-etabli",
+    "targetWord": "reviendrait",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -126,8 +276,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "at a run",
-   "options": ["at a run", "very slowly", "by taxi", "the day before"],
-   "audioClip": {"language": "french", "sentence": "Il est arrivé au pas de course pour ne pas être en retard.", "storySlug": "endormie-contre-l-etabli", "targetWord": "au pas de course", "storySource": "user"}
+   "options": [
+    "at a run",
+    "very slowly",
+    "by taxi",
+    "the day before"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il est arrivé au pas de course pour ne pas être en retard.",
+    "storySlug": "endormie-contre-l-etabli",
+    "targetWord": "au pas de course",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -138,8 +299,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "as white as a sheet",
-   "options": ["as white as a sheet", "as red as a tomato", "as happy as a child", "as calm as a lake"],
-   "audioClip": {"language": "french", "sentence": "En apprenant la nouvelle, il est devenu pâle comme un linge.", "storySlug": "endormie-contre-l-etabli", "targetWord": "pâle comme un linge", "storySource": "user"}
+   "options": [
+    "as white as a sheet",
+    "as red as a tomato",
+    "as happy as a child",
+    "as calm as a lake"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "En apprenant la nouvelle, il est devenu pâle comme un linge.",
+    "storySlug": "endormie-contre-l-etabli",
+    "targetWord": "pâle comme un linge",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -150,8 +322,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "all alone",
-   "options": ["all alone", "with the team", "by phone", "for money"],
-   "audioClip": {"language": "french", "sentence": "Il a fini le travail tout seul, sans aide.", "storySlug": "endormie-contre-l-etabli", "targetWord": "tout seul", "storySource": "user"}
+   "options": [
+    "all alone",
+    "with the team",
+    "by phone",
+    "for money"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il a fini le travail tout seul, sans aide.",
+    "storySlug": "endormie-contre-l-etabli",
+    "targetWord": "tout seul",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -162,8 +345,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "in a row",
-   "options": ["in a row", "by mistake", "very slowly", "too late"],
-   "audioClip": {"language": "french", "sentence": "Il a répondu à trois messages de suite.", "storySlug": "endormie-contre-l-etabli", "targetWord": "de suite", "storySource": "user"}
+   "options": [
+    "in a row",
+    "by mistake",
+    "very slowly",
+    "too late"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il a répondu à trois messages de suite.",
+    "storySlug": "endormie-contre-l-etabli",
+    "targetWord": "de suite",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -174,8 +368,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "done the math",
-   "options": ["done the math", "forgotten the date", "changed her mind", "lost the paper"],
-   "audioClip": {"language": "french", "sentence": "Elle a fait le calcul avant d'accepter le contrat.", "storySlug": "endormie-contre-l-etabli", "targetWord": "fait le calcul", "storySource": "user"}
+   "options": [
+    "done the math",
+    "forgotten the date",
+    "changed her mind",
+    "lost the paper"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Elle a fait le calcul avant d'accepter le contrat.",
+    "storySlug": "endormie-contre-l-etabli",
+    "targetWord": "fait le calcul",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -186,8 +391,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "in a year",
-   "options": ["in a year", "in a week", "yesterday", "right now"],
-   "audioClip": {"language": "french", "sentence": "Ce festival n'aura pas lieu dans un an, mais dans deux.", "storySlug": "endormie-contre-l-etabli", "targetWord": "dans un an", "storySource": "user"}
+   "options": [
+    "in a year",
+    "in a week",
+    "yesterday",
+    "right now"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Ce festival n'aura pas lieu dans un an, mais dans deux.",
+    "storySlug": "endormie-contre-l-etabli",
+    "targetWord": "dans un an",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -198,8 +414,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "I promise",
-   "options": ["I promise", "I doubt it", "I forgot", "I refuse"],
-   "audioClip": {"language": "french", "sentence": "Promis, je ne serai pas en retard.", "storySlug": "endormie-contre-l-etabli", "targetWord": "Promis", "storySource": "user"}
+   "options": [
+    "I promise",
+    "I doubt it",
+    "I forgot",
+    "I refuse"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Promis, je ne serai pas en retard.",
+    "storySlug": "endormie-contre-l-etabli",
+    "targetWord": "Promis",
+    "storySource": "user"
+   }
   },
   "featured": false
  }

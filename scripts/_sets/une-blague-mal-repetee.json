@@ -6,10 +6,46 @@
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
-    {"word": "la boulangère", "answer": "the baker (fem.)", "options": ["the baker (fem.)", "the waitress", "a paintbrush", "a streak, smear"]},
-    {"word": "la serveuse", "answer": "the waitress", "options": ["the baker (fem.)", "the waitress", "a paintbrush", "a streak, smear"]},
-    {"word": "le pinceau", "answer": "a paintbrush", "options": ["the baker (fem.)", "the waitress", "a paintbrush", "a streak, smear"]},
-    {"word": "la traînée", "answer": "a streak, smear", "options": ["the baker (fem.)", "the waitress", "a paintbrush", "a streak, smear"]}
+    {
+     "word": "la boulangère",
+     "answer": "the baker (fem.)",
+     "options": [
+      "the baker (fem.)",
+      "the waitress",
+      "a paintbrush",
+      "a streak, smear"
+     ]
+    },
+    {
+     "word": "la serveuse",
+     "answer": "the waitress",
+     "options": [
+      "the baker (fem.)",
+      "the waitress",
+      "a paintbrush",
+      "a streak, smear"
+     ]
+    },
+    {
+     "word": "le pinceau",
+     "answer": "a paintbrush",
+     "options": [
+      "the baker (fem.)",
+      "the waitress",
+      "a paintbrush",
+      "a streak, smear"
+     ]
+    },
+    {
+     "word": "la traînée",
+     "answer": "a streak, smear",
+     "options": [
+      "the baker (fem.)",
+      "the waitress",
+      "a paintbrush",
+      "a streak, smear"
+     ]
+    }
    ],
    "audioClip": null
   }
@@ -17,40 +53,88 @@
  {
   "type": "fill_blank",
   "word": "rougi",
-  "sentence": "En recevant ce compliment, elle a _____.",
+  "sentence": "Gênée par ce compliment inattendu, elle a _____, les joues toutes roses.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "rougi",
-   "options": ["rougi", "pleuré", "ri", "crié"],
-   "translation": "Receiving that compliment, she _____.",
-   "optionTranslations": ["blushed", "cried", "laughed", "shouted"],
-   "audioClip": {"language": "french", "sentence": "En recevant ce compliment, elle a rougi.", "storySlug": "une-blague-mal-repetee", "targetWord": "rougi", "storySource": "user"}
+   "options": [
+    "rougi",
+    "pleuré",
+    "ri",
+    "crié"
+   ],
+   "translation": "Embarrassed by the unexpected compliment, she _____, her cheeks turning pink.",
+   "optionTranslations": [
+    "blushed",
+    "cried",
+    "laughed",
+    "shouted"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Gênée par ce compliment inattendu, elle a rougi, les joues toutes roses.",
+    "storySlug": "une-blague-mal-repetee",
+    "targetWord": "rougi",
+    "storySource": "user"
+   }
   }
  },
  {
   "type": "fill_blank",
   "word": "déformé",
-  "sentence": "Les journaux ont _____ ses propos.",
+  "sentence": "Furieux, il a affirmé que les journaux avaient _____ ses propos.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "déformé",
-   "options": ["déformé", "cité", "traduit", "imprimé"],
-   "translation": "The newspapers _____ his words.",
-   "optionTranslations": ["twisted", "quoted", "translated", "printed"],
-   "audioClip": {"language": "french", "sentence": "Les journaux ont déformé ses propos.", "storySlug": "une-blague-mal-repetee", "targetWord": "déformé", "storySource": "user"}
+   "options": [
+    "déformé",
+    "cité",
+    "traduit",
+    "imprimé"
+   ],
+   "translation": "Furious, he claimed the papers had _____ his words.",
+   "optionTranslations": [
+    "twisted",
+    "quoted",
+    "translated",
+    "printed"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Furieux, il a affirmé que les journaux avaient déformé ses propos.",
+    "storySlug": "une-blague-mal-repetee",
+    "targetWord": "déformé",
+    "storySource": "user"
+   }
   }
  },
  {
   "type": "fill_blank",
   "word": "séché",
-  "sentence": "La peinture a _____ pendant la nuit.",
+  "sentence": "Le mur est tout sec: la peinture a _____ pendant la nuit.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "séché",
-   "options": ["séché", "coulé", "brûlé", "gelé"],
-   "translation": "The paint _____ during the night.",
-   "optionTranslations": ["dried", "dripped", "burned", "froze"],
-   "audioClip": {"language": "french", "sentence": "La peinture a séché pendant la nuit.", "storySlug": "une-blague-mal-repetee", "targetWord": "séché", "storySource": "user"}
+   "options": [
+    "séché",
+    "coulé",
+    "brûlé",
+    "gelé"
+   ],
+   "translation": "The wall is completely dry: the paint _____ during the night.",
+   "optionTranslations": [
+    "dried",
+    "dripped",
+    "burned",
+    "froze"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Le mur est tout sec: la peinture a séché pendant la nuit.",
+    "storySlug": "une-blague-mal-repetee",
+    "targetWord": "séché",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -60,8 +144,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "business partner",
-   "options": ["business partner", "landlord", "customer", "competitor"],
-   "audioClip": {"language": "french", "sentence": "Mon associé s'occupe des finances de l'entreprise.", "storySlug": "une-blague-mal-repetee", "targetWord": "associé", "storySource": "user"}
+   "options": [
+    "business partner",
+    "landlord",
+    "customer",
+    "competitor"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Mon associé s'occupe des finances de l'entreprise.",
+    "storySlug": "une-blague-mal-repetee",
+    "targetWord": "associé",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -71,8 +166,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "reputation",
-   "options": ["reputation", "health", "salary", "schedule"],
-   "audioClip": {"language": "french", "sentence": "Ce mensonge a abîmé sa réputation.", "storySlug": "une-blague-mal-repetee", "targetWord": "réputation", "storySource": "user"}
+   "options": [
+    "reputation",
+    "health",
+    "salary",
+    "schedule"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Ce mensonge a abîmé sa réputation.",
+    "storySlug": "une-blague-mal-repetee",
+    "targetWord": "réputation",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -82,8 +188,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "conducted the investigation",
-   "options": ["conducted the investigation", "closed the shop", "organized the party", "painted the office"],
-   "audioClip": {"language": "french", "sentence": "La police a mené l'enquête pendant des semaines.", "storySlug": "une-blague-mal-repetee", "targetWord": "mené l'enquête", "storySource": "user"}
+   "options": [
+    "conducted the investigation",
+    "closed the shop",
+    "organized the party",
+    "painted the office"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "La police a mené l'enquête pendant des semaines.",
+    "storySlug": "une-blague-mal-repetee",
+    "targetWord": "mené l'enquête",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -93,8 +210,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "questioned",
-   "options": ["questioned", "thanked", "paid", "invited"],
-   "audioClip": {"language": "french", "sentence": "La police l'a interrogée pendant une heure.", "storySlug": "une-blague-mal-repetee", "targetWord": "interrogée", "storySource": "user"}
+   "options": [
+    "questioned",
+    "thanked",
+    "paid",
+    "invited"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "La police l'a interrogée pendant une heure.",
+    "storySlug": "une-blague-mal-repetee",
+    "targetWord": "interrogée",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -104,8 +232,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "shot back",
-   "options": ["shot back", "stayed silent", "smiled kindly", "left the room"],
-   "audioClip": {"language": "french", "sentence": "Il a répliqué sans réfléchir, blessé par la remarque.", "storySlug": "une-blague-mal-repetee", "targetWord": "répliqué", "storySource": "user"}
+   "options": [
+    "shot back",
+    "stayed silent",
+    "smiled kindly",
+    "left the room"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il a répliqué sans réfléchir, blessé par la remarque.",
+    "storySlug": "une-blague-mal-repetee",
+    "targetWord": "répliqué",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -115,8 +254,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "resume, start again",
-   "options": ["resume, start again", "stop completely", "forget about", "sell"],
-   "audioClip": {"language": "french", "sentence": "Après la pause, ils vont reprendre le travail.", "storySlug": "une-blague-mal-repetee", "targetWord": "reprendre", "storySource": "user"}
+   "options": [
+    "resume, start again",
+    "stop completely",
+    "forget about",
+    "sell"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Après la pause, ils vont reprendre le travail.",
+    "storySlug": "une-blague-mal-repetee",
+    "targetWord": "reprendre",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -126,8 +276,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "wet paint",
-   "options": ["wet paint", "broken glass", "hot water", "dry cement"],
-   "audioClip": {"language": "french", "sentence": "Attention, peinture fraîche, ne touchez pas le mur.", "storySlug": "une-blague-mal-repetee", "targetWord": "peinture fraîche", "storySource": "user"}
+   "options": [
+    "wet paint",
+    "broken glass",
+    "hot water",
+    "dry cement"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Attention, peinture fraîche, ne touchez pas le mur.",
+    "storySlug": "une-blague-mal-repetee",
+    "targetWord": "peinture fraîche",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -138,8 +299,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "someone useless",
-   "options": ["someone useless", "a real expert", "a great leader", "a fast learner"],
-   "audioClip": {"language": "french", "sentence": "Il se sentait comme un incapable devant cette machine.", "storySlug": "une-blague-mal-repetee", "targetWord": "incapable", "storySource": "user"}
+   "options": [
+    "someone useless",
+    "a real expert",
+    "a great leader",
+    "a fast learner"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il se sentait comme un incapable devant cette machine.",
+    "storySlug": "une-blague-mal-repetee",
+    "targetWord": "incapable",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -150,8 +322,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "from one counter to the next",
-   "options": ["from one counter to the next", "only in one place", "completely by accident", "without anyone noticing"],
-   "audioClip": {"language": "french", "sentence": "La rumeur a circulé de comptoir en comptoir.", "storySlug": "une-blague-mal-repetee", "targetWord": "de comptoir en comptoir", "storySource": "user"}
+   "options": [
+    "from one counter to the next",
+    "only in one place",
+    "completely by accident",
+    "without anyone noticing"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "La rumeur a circulé de comptoir en comptoir.",
+    "storySlug": "une-blague-mal-repetee",
+    "targetWord": "de comptoir en comptoir",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -162,8 +345,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "had heard the story from",
-   "options": ["had heard the story from", "had invented completely", "had written a book about", "had forgotten entirely"],
-   "audioClip": {"language": "french", "sentence": "Il tenait l'histoire de son grand-père.", "storySlug": "une-blague-mal-repetee", "targetWord": "tenait l'histoire de", "storySource": "user"}
+   "options": [
+    "had heard the story from",
+    "had invented completely",
+    "had written a book about",
+    "had forgotten entirely"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il tenait l'histoire de son grand-père.",
+    "storySlug": "une-blague-mal-repetee",
+    "targetWord": "tenait l'histoire de",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -174,8 +368,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "sees him as",
-   "options": ["sees him as", "never sees", "always thanks", "completely forgets"],
-   "audioClip": {"language": "french", "sentence": "Le quartier le prend pour un incapable.", "storySlug": "une-blague-mal-repetee", "targetWord": "prend pour", "storySource": "user"}
+   "options": [
+    "sees him as",
+    "never sees",
+    "always thanks",
+    "completely forgets"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Le quartier le prend pour un incapable.",
+    "storySlug": "une-blague-mal-repetee",
+    "targetWord": "prend pour",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -186,8 +391,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "bit her lip",
-   "options": ["bit her lip", "clapped her hands", "closed her eyes", "raised her voice"],
-   "audioClip": {"language": "french", "sentence": "Gênée, elle s'est mordu la lèvre.", "storySlug": "une-blague-mal-repetee", "targetWord": "s'est mordu la lèvre", "storySource": "user"}
+   "options": [
+    "bit her lip",
+    "clapped her hands",
+    "closed her eyes",
+    "raised her voice"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Gênée, elle s'est mordu la lèvre.",
+    "storySlug": "une-blague-mal-repetee",
+    "targetWord": "s'est mordu la lèvre",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -198,8 +414,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "don't care at all",
-   "options": ["don't care at all", "care a lot", "always agree", "never listen"],
-   "audioClip": {"language": "french", "sentence": "Toi, tu t'en fiches complètement de son avis.", "storySlug": "une-blague-mal-repetee", "targetWord": "t'en fiches", "storySource": "user"}
+   "options": [
+    "don't care at all",
+    "care a lot",
+    "always agree",
+    "never listen"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Toi, tu t'en fiches complètement de son avis.",
+    "storySlug": "une-blague-mal-repetee",
+    "targetWord": "t'en fiches",
+    "storySource": "user"
+   }
   },
   "featured": false
  }

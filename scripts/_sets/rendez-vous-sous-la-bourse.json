@@ -6,10 +6,46 @@
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
-    {"word": "la Vieille Bourse", "answer": "an old landmark building", "options": ["an old landmark building", "a dating app", "a university hospital", "a lie"]},
-    {"word": "l'appli de rencontre", "answer": "a dating app", "options": ["an old landmark building", "a dating app", "a university hospital", "a lie"]},
-    {"word": "le CHU", "answer": "a university hospital", "options": ["an old landmark building", "a dating app", "a university hospital", "a lie"]},
-    {"word": "le mensonge", "answer": "a lie", "options": ["an old landmark building", "a dating app", "a university hospital", "a lie"]}
+    {
+     "word": "la Vieille Bourse",
+     "answer": "an old landmark building",
+     "options": [
+      "an old landmark building",
+      "a dating app",
+      "a university hospital",
+      "a lie"
+     ]
+    },
+    {
+     "word": "l'appli de rencontre",
+     "answer": "a dating app",
+     "options": [
+      "an old landmark building",
+      "a dating app",
+      "a university hospital",
+      "a lie"
+     ]
+    },
+    {
+     "word": "le CHU",
+     "answer": "a university hospital",
+     "options": [
+      "an old landmark building",
+      "a dating app",
+      "a university hospital",
+      "a lie"
+     ]
+    },
+    {
+     "word": "le mensonge",
+     "answer": "a lie",
+     "options": [
+      "an old landmark building",
+      "a dating app",
+      "a university hospital",
+      "a lie"
+     ]
+    }
    ],
    "audioClip": null
   }
@@ -21,36 +57,84 @@
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "menti",
-   "options": ["menti", "pleuré", "ri", "dormi"],
+   "options": [
+    "menti",
+    "pleuré",
+    "ri",
+    "dormi"
+   ],
    "translation": "He _____ so as not to hurt her.",
-   "optionTranslations": ["lied", "cried", "laughed", "slept"],
-   "audioClip": {"language": "french", "sentence": "Il a menti pour ne pas la blesser.", "storySlug": "rendez-vous-sous-la-bourse", "targetWord": "menti", "storySource": "user"}
+   "optionTranslations": [
+    "lied",
+    "cried",
+    "laughed",
+    "slept"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il a menti pour ne pas la blesser.",
+    "storySlug": "rendez-vous-sous-la-bourse",
+    "targetWord": "menti",
+    "storySource": "user"
+   }
   }
  },
  {
   "type": "fill_blank",
   "word": "évité",
-  "sentence": "Toute la journée, il a _____ son collègue.",
+  "sentence": "Pour ne pas s'excuser, il a _____ son collègue toute la journée.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "évité",
-   "options": ["évité", "appelé", "aidé", "remercié"],
-   "translation": "All day, he _____ his colleague.",
-   "optionTranslations": ["avoided", "called", "helped", "thanked"],
-   "audioClip": {"language": "french", "sentence": "Toute la journée, il a évité son collègue.", "storySlug": "rendez-vous-sous-la-bourse", "targetWord": "évité", "storySource": "user"}
+   "options": [
+    "évité",
+    "appelé",
+    "aidé",
+    "remercié"
+   ],
+   "translation": "To avoid apologizing, he _____ his colleague all day.",
+   "optionTranslations": [
+    "avoided",
+    "called",
+    "helped",
+    "thanked"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Pour ne pas s'excuser, il a évité son collègue toute la journée.",
+    "storySlug": "rendez-vous-sous-la-bourse",
+    "targetWord": "évité",
+    "storySource": "user"
+   }
   }
  },
  {
   "type": "fill_blank",
   "word": "séduisant",
-  "sentence": "Ce projet n'est pas très _____, franchement.",
+  "sentence": "Cette idée manque d'originalité: ce projet n'est pas très _____, franchement.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "séduisant",
-   "options": ["séduisant", "cher", "ancien", "lourd"],
-   "translation": "This project isn't very _____, honestly.",
-   "optionTranslations": ["appealing", "expensive", "old", "heavy"],
-   "audioClip": {"language": "french", "sentence": "Ce projet n'est pas très séduisant, franchement.", "storySlug": "rendez-vous-sous-la-bourse", "targetWord": "séduisant", "storySource": "user"}
+   "options": [
+    "séduisant",
+    "cher",
+    "ancien",
+    "lourd"
+   ],
+   "translation": "This idea lacks originality: this project isn't very _____, frankly.",
+   "optionTranslations": [
+    "appealing",
+    "expensive",
+    "old",
+    "heavy"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Cette idée manque d'originalité: ce projet n'est pas très séduisant, franchement.",
+    "storySlug": "rendez-vous-sous-la-bourse",
+    "targetWord": "séduisant",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -60,8 +144,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "her first date",
-   "options": ["her first date", "her exam results", "her job interview", "her flight"],
-   "audioClip": {"language": "french", "sentence": "Elle était nerveuse avant son premier rendez-vous.", "storySlug": "rendez-vous-sous-la-bourse", "targetWord": "premier rendez-vous", "storySource": "user"}
+   "options": [
+    "her first date",
+    "her exam results",
+    "her job interview",
+    "her flight"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Elle était nerveuse avant son premier rendez-vous.",
+    "storySlug": "rendez-vous-sous-la-bourse",
+    "targetWord": "premier rendez-vous",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -71,8 +166,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "nurse",
-   "options": ["nurse", "teacher", "cook", "driver"],
-   "audioClip": {"language": "french", "sentence": "Elle travaille comme infirmière de nuit.", "storySlug": "rendez-vous-sous-la-bourse", "targetWord": "infirmière", "storySource": "user"}
+   "options": [
+    "nurse",
+    "teacher",
+    "cook",
+    "driver"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Elle travaille comme infirmière de nuit.",
+    "storySlug": "rendez-vous-sous-la-bourse",
+    "targetWord": "infirmière",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -82,8 +188,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "couldn't sit still",
-   "options": ["couldn't sit still", "fell asleep quickly", "stayed completely silent", "left the room"],
-   "audioClip": {"language": "french", "sentence": "Excité par la nouvelle, il ne tenait pas en place.", "storySlug": "rendez-vous-sous-la-bourse", "targetWord": "tenait pas en place", "storySource": "user"}
+   "options": [
+    "couldn't sit still",
+    "fell asleep quickly",
+    "stayed completely silent",
+    "left the room"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Excité par la nouvelle, il ne tenait pas en place.",
+    "storySlug": "rendez-vous-sous-la-bourse",
+    "targetWord": "tenait pas en place",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -93,8 +210,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "terrible at",
-   "options": ["terrible at", "excellent at", "famous for", "bored by"],
-   "audioClip": {"language": "french", "sentence": "Je suis nulle en mathématiques, je l'admets.", "storySlug": "rendez-vous-sous-la-bourse", "targetWord": "nulle en", "storySource": "user"}
+   "options": [
+    "terrible at",
+    "excellent at",
+    "famous for",
+    "bored by"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Je suis nulle en mathématiques, je l'admets.",
+    "storySlug": "rendez-vous-sous-la-bourse",
+    "targetWord": "nulle en",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -104,8 +232,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "impressed",
-   "options": ["impressed", "bored", "angry", "confused"],
-   "audioClip": {"language": "french", "sentence": "Après ce discours, tout le monde était impressionné.", "storySlug": "rendez-vous-sous-la-bourse", "targetWord": "impressionnée", "storySource": "user"}
+   "options": [
+    "impressed",
+    "bored",
+    "angry",
+    "confused"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Après ce discours, tout le monde était impressionné.",
+    "storySlug": "rendez-vous-sous-la-bourse",
+    "targetWord": "impressionnée",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -115,8 +254,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "are you interested",
-   "options": ["are you interested", "are you angry", "are you lost", "are you tired"],
-   "audioClip": {"language": "french", "sentence": "On va au cinéma ce soir, ça te dit?", "storySlug": "rendez-vous-sous-la-bourse", "targetWord": "ça te dit", "storySource": "user"}
+   "options": [
+    "are you interested",
+    "are you angry",
+    "are you lost",
+    "are you tired"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "On va au cinéma ce soir, ça te dit?",
+    "storySlug": "rendez-vous-sous-la-bourse",
+    "targetWord": "ça te dit",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -126,8 +276,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "shift",
-   "options": ["shift", "vacation", "meeting", "meal"],
-   "audioClip": {"language": "french", "sentence": "Après une longue garde à l'hôpital, elle était épuisée.", "storySlug": "rendez-vous-sous-la-bourse", "targetWord": "garde", "storySource": "user"}
+   "options": [
+    "shift",
+    "vacation",
+    "meeting",
+    "meal"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Après une longue garde à l'hôpital, elle était épuisée.",
+    "storySlug": "rendez-vous-sous-la-bourse",
+    "targetWord": "garde",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -138,8 +299,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "what do you do for work",
-   "options": ["what do you do for work", "where do you live now", "how old are you", "what's your name"],
-   "audioClip": {"language": "french", "sentence": "Tu fais quoi dans la vie?", "storySlug": "rendez-vous-sous-la-bourse", "targetWord": "tu fais quoi dans la vie", "storySource": "user"}
+   "options": [
+    "what do you do for work",
+    "where do you live now",
+    "how old are you",
+    "what's your name"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Tu fais quoi dans la vie?",
+    "storySlug": "rendez-vous-sous-la-bourse",
+    "targetWord": "tu fais quoi dans la vie",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -150,8 +322,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "carefully",
-   "options": ["carefully", "quickly", "badly", "loudly"],
-   "audioClip": {"language": "french", "sentence": "Elle a rangé ses papiers soigneusement.", "storySlug": "rendez-vous-sous-la-bourse", "targetWord": "soigneusement", "storySource": "user"}
+   "options": [
+    "carefully",
+    "quickly",
+    "badly",
+    "loudly"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Elle a rangé ses papiers soigneusement.",
+    "storySlug": "rendez-vous-sous-la-bourse",
+    "targetWord": "soigneusement",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -162,8 +345,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "I would like",
-   "options": ["I would like", "I refuse", "I forgot", "I doubt"],
-   "audioClip": {"language": "french", "sentence": "J'aimerais te revoir bientôt.", "storySlug": "rendez-vous-sous-la-bourse", "targetWord": "J'aimerais", "storySource": "user"}
+   "options": [
+    "I would like",
+    "I refuse",
+    "I forgot",
+    "I doubt"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "J'aimerais te revoir bientôt.",
+    "storySlug": "rendez-vous-sous-la-bourse",
+    "targetWord": "J'aimerais",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -174,8 +368,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "too quickly",
-   "options": ["too quickly", "too slowly", "too politely", "too rarely"],
-   "audioClip": {"language": "french", "sentence": "Il a répondu trop vite, sans réfléchir.", "storySlug": "rendez-vous-sous-la-bourse", "targetWord": "trop vite", "storySource": "user"}
+   "options": [
+    "too quickly",
+    "too slowly",
+    "too politely",
+    "too rarely"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il a répondu trop vite, sans réfléchir.",
+    "storySlug": "rendez-vous-sous-la-bourse",
+    "targetWord": "trop vite",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -186,8 +391,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "light-hearted, worry-free",
-   "options": ["light-hearted, worry-free", "very anxious", "completely broke", "extremely tired"],
-   "audioClip": {"language": "french", "sentence": "Elle est partie en vacances le cœur léger.", "storySlug": "rendez-vous-sous-la-bourse", "targetWord": "le cœur léger", "storySource": "user"}
+   "options": [
+    "light-hearted, worry-free",
+    "very anxious",
+    "completely broke",
+    "extremely tired"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Elle est partie en vacances le cœur léger.",
+    "storySlug": "rendez-vous-sous-la-bourse",
+    "targetWord": "le cœur léger",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -198,8 +414,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "weighing on his conscience",
-   "options": ["weighing on his conscience", "written in his diary", "forgotten completely", "shared with everyone"],
-   "audioClip": {"language": "french", "sentence": "Il avait ce mensonge sur la conscience.", "storySlug": "rendez-vous-sous-la-bourse", "targetWord": "sur la conscience", "storySource": "user"}
+   "options": [
+    "weighing on his conscience",
+    "written in his diary",
+    "forgotten completely",
+    "shared with everyone"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il avait ce mensonge sur la conscience.",
+    "storySlug": "rendez-vous-sous-la-bourse",
+    "targetWord": "sur la conscience",
+    "storySource": "user"
+   }
   },
   "featured": false
  }

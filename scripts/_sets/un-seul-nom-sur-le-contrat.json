@@ -6,10 +6,46 @@
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
-    {"word": "le contrat", "answer": "a contract", "options": ["a contract", "a workbench", "a signature", "an offer"]},
-    {"word": "l'établi", "answer": "a workbench", "options": ["a contract", "a workbench", "a signature", "an offer"]},
-    {"word": "la signature", "answer": "a signature", "options": ["a contract", "a workbench", "a signature", "an offer"]},
-    {"word": "l'offre", "answer": "an offer", "options": ["a contract", "a workbench", "a signature", "an offer"]}
+    {
+     "word": "le contrat",
+     "answer": "a contract",
+     "options": [
+      "a contract",
+      "a workbench",
+      "a signature",
+      "an offer"
+     ]
+    },
+    {
+     "word": "l'établi",
+     "answer": "a workbench",
+     "options": [
+      "a contract",
+      "a workbench",
+      "a signature",
+      "an offer"
+     ]
+    },
+    {
+     "word": "la signature",
+     "answer": "a signature",
+     "options": [
+      "a contract",
+      "a workbench",
+      "a signature",
+      "an offer"
+     ]
+    },
+    {
+     "word": "l'offre",
+     "answer": "an offer",
+     "options": [
+      "a contract",
+      "a workbench",
+      "a signature",
+      "an offer"
+     ]
+    }
    ],
    "audioClip": null
   }
@@ -21,10 +57,26 @@
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "comptait",
-   "options": ["comptait", "changeait", "coûtait", "manquait"],
+   "options": [
+    "comptait",
+    "changeait",
+    "coûtait",
+    "manquait"
+   ],
    "translation": "For the bank, her opinion didn't really _____.",
-   "optionTranslations": ["matter", "change", "cost", "lack"],
-   "audioClip": {"language": "french", "sentence": "Pour la banque, son avis ne comptait pas vraiment.", "storySlug": "un-seul-nom-sur-le-contrat", "targetWord": "comptait", "storySource": "user"}
+   "optionTranslations": [
+    "matter",
+    "change",
+    "cost",
+    "lack"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Pour la banque, son avis ne comptait pas vraiment.",
+    "storySlug": "un-seul-nom-sur-le-contrat",
+    "targetWord": "comptait",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -34,23 +86,55 @@
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "négocier",
-   "options": ["négocier", "oublier", "payer", "cacher"],
+   "options": [
+    "négocier",
+    "oublier",
+    "payer",
+    "cacher"
+   ],
    "translation": "Before signing, it's better to _____ the price.",
-   "optionTranslations": ["negotiate", "forget", "pay", "hide"],
-   "audioClip": {"language": "french", "sentence": "Avant de signer, il vaut mieux négocier le prix.", "storySlug": "un-seul-nom-sur-le-contrat", "targetWord": "négocier", "storySource": "user"}
+   "optionTranslations": [
+    "negotiate",
+    "forget",
+    "pay",
+    "hide"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Avant de signer, il vaut mieux négocier le prix.",
+    "storySlug": "un-seul-nom-sur-le-contrat",
+    "targetWord": "négocier",
+    "storySource": "user"
+   }
   }
  },
  {
   "type": "fill_blank",
   "word": "grimpé",
-  "sentence": "Le prix de l'essence a encore _____ ce mois-ci.",
+  "sentence": "Encore une hausse: le prix de l'essence a _____ ce mois-ci.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "grimpé",
-   "options": ["grimpé", "baissé", "disparu", "changé"],
-   "translation": "The price of gas has _____ again this month.",
-   "optionTranslations": ["gone up", "gone down", "disappeared", "changed"],
-   "audioClip": {"language": "french", "sentence": "Le prix de l'essence a encore grimpé ce mois-ci.", "storySlug": "un-seul-nom-sur-le-contrat", "targetWord": "grimpé", "storySource": "user"}
+   "options": [
+    "grimpé",
+    "baissé",
+    "disparu",
+    "changé"
+   ],
+   "translation": "Another increase: the price of gas has _____ this month.",
+   "optionTranslations": [
+    "gone up",
+    "gone down",
+    "disappeared",
+    "changed"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Encore une hausse: le prix de l'essence a grimpé ce mois-ci.",
+    "storySlug": "un-seul-nom-sur-le-contrat",
+    "targetWord": "grimpé",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -60,8 +144,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "employee",
-   "options": ["employee", "manager", "customer", "visitor"],
-   "audioClip": {"language": "french", "sentence": "Cette employée travaille ici depuis dix ans.", "storySlug": "un-seul-nom-sur-le-contrat", "targetWord": "employée", "storySource": "user"}
+   "options": [
+    "employee",
+    "manager",
+    "customer",
+    "visitor"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Cette employée travaille ici depuis dix ans.",
+    "storySlug": "un-seul-nom-sur-le-contrat",
+    "targetWord": "employée",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -71,8 +166,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "fairness",
-   "options": ["fairness", "money", "fear", "luck"],
-   "audioClip": {"language": "french", "sentence": "Il a fait ça par justice, pas par colère.", "storySlug": "un-seul-nom-sur-le-contrat", "targetWord": "justice", "storySource": "user"}
+   "options": [
+    "fairness",
+    "money",
+    "fear",
+    "luck"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il a fait ça par justice, pas par colère.",
+    "storySlug": "un-seul-nom-sur-le-contrat",
+    "targetWord": "justice",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -82,8 +188,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "under one name",
-   "options": ["under one name", "under two names", "under no name", "under a false name"],
-   "audioClip": {"language": "french", "sentence": "Le compte est à un seul nom, pas à deux.", "storySlug": "un-seul-nom-sur-le-contrat", "targetWord": "à un seul nom", "storySource": "user"}
+   "options": [
+    "under one name",
+    "under two names",
+    "under no name",
+    "under a false name"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Le compte est à un seul nom, pas à deux.",
+    "storySlug": "un-seul-nom-sur-le-contrat",
+    "targetWord": "à un seul nom",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -93,8 +210,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "assured",
-   "options": ["assured", "doubted", "forgotten", "refused"],
-   "audioClip": {"language": "french", "sentence": "Il m'a assuré que tout irait bien.", "storySlug": "un-seul-nom-sur-le-contrat", "targetWord": "assuré", "storySource": "user"}
+   "options": [
+    "assured",
+    "doubted",
+    "forgotten",
+    "refused"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il m'a assuré que tout irait bien.",
+    "storySlug": "un-seul-nom-sur-le-contrat",
+    "targetWord": "assuré",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -104,8 +232,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "own",
-   "options": ["own", "shared", "old", "secret"],
-   "audioClip": {"language": "french", "sentence": "Chacun doit garder son propre budget.", "storySlug": "un-seul-nom-sur-le-contrat", "targetWord": "propre", "storySource": "user"}
+   "options": [
+    "own",
+    "shared",
+    "old",
+    "secret"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Chacun doit garder son propre budget.",
+    "storySlug": "un-seul-nom-sur-le-contrat",
+    "targetWord": "propre",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -115,8 +254,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "valid",
-   "options": ["valid", "expensive", "free", "lost"],
-   "audioClip": {"language": "french", "sentence": "Ce billet n'est plus valable après minuit.", "storySlug": "un-seul-nom-sur-le-contrat", "targetWord": "valable", "storySource": "user"}
+   "options": [
+    "valid",
+    "expensive",
+    "free",
+    "lost"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Ce billet n'est plus valable après minuit.",
+    "storySlug": "un-seul-nom-sur-le-contrat",
+    "targetWord": "valable",
+    "storySource": "user"
+   }
   }
  },
  {
@@ -126,8 +276,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "paperwork",
-   "options": ["paperwork", "cooking", "cleaning", "shopping"],
-   "audioClip": {"language": "french", "sentence": "Je déteste remplir toute cette paperasse.", "storySlug": "un-seul-nom-sur-le-contrat", "targetWord": "paperasse", "storySource": "user"}
+   "options": [
+    "paperwork",
+    "cooking",
+    "cleaning",
+    "shopping"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Je déteste remplir toute cette paperasse.",
+    "storySlug": "un-seul-nom-sur-le-contrat",
+    "targetWord": "paperasse",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -138,8 +299,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "a guest",
-   "options": ["a guest", "an owner", "a worker", "a thief"],
-   "audioClip": {"language": "french", "sentence": "Elle se sentait comme une invitée dans sa propre maison.", "storySlug": "un-seul-nom-sur-le-contrat", "targetWord": "invitée", "storySource": "user"}
+   "options": [
+    "a guest",
+    "an owner",
+    "a worker",
+    "a thief"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Elle se sentait comme une invitée dans sa propre maison.",
+    "storySlug": "un-seul-nom-sur-le-contrat",
+    "targetWord": "invitée",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -150,8 +322,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "his/hers",
-   "options": ["his/hers", "mine", "ours", "theirs"],
-   "audioClip": {"language": "french", "sentence": "Ce n'est pas mon parapluie, c'est le sien.", "storySlug": "un-seul-nom-sur-le-contrat", "targetWord": "le sien", "storySource": "user"}
+   "options": [
+    "his/hers",
+    "mine",
+    "ours",
+    "theirs"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Ce n'est pas mon parapluie, c'est le sien.",
+    "storySlug": "un-seul-nom-sur-le-contrat",
+    "targetWord": "le sien",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -162,8 +345,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "with lips pressed tight",
-   "options": ["with lips pressed tight", "with a big smile", "while eating slowly", "while singing softly"],
-   "audioClip": {"language": "french", "sentence": "Elle a écouté les lèvres serrées, sans un mot.", "storySlug": "un-seul-nom-sur-le-contrat", "targetWord": "les lèvres serrées", "storySource": "user"}
+   "options": [
+    "with lips pressed tight",
+    "with a big smile",
+    "while eating slowly",
+    "while singing softly"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Elle a écouté les lèvres serrées, sans un mot.",
+    "storySlug": "un-seul-nom-sur-le-contrat",
+    "targetWord": "les lèvres serrées",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -174,8 +368,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "on paper",
-   "options": ["on paper", "in real life", "by accident", "for a joke"],
-   "audioClip": {"language": "french", "sentence": "Sur le papier, le projet semble parfait.", "storySlug": "un-seul-nom-sur-le-contrat", "targetWord": "Sur le papier", "storySource": "user"}
+   "options": [
+    "on paper",
+    "in real life",
+    "by accident",
+    "for a joke"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Sur le papier, le projet semble parfait.",
+    "storySlug": "un-seul-nom-sur-le-contrat",
+    "targetWord": "Sur le papier",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -186,8 +391,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "was trying",
-   "options": ["was trying", "was refusing", "was forgetting", "was sleeping"],
-   "audioClip": {"language": "french", "sentence": "Il tentait de la convaincre depuis une heure.", "storySlug": "un-seul-nom-sur-le-contrat", "targetWord": "tentait", "storySource": "user"}
+   "options": [
+    "was trying",
+    "was refusing",
+    "was forgetting",
+    "was sleeping"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il tentait de la convaincre depuis une heure.",
+    "storySlug": "un-seul-nom-sur-le-contrat",
+    "targetWord": "tentait",
+    "storySource": "user"
+   }
   },
   "featured": false
  },
@@ -198,8 +414,19 @@
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "turn me into",
-   "options": ["turn me into", "forget about", "wait for", "talk about"],
-   "audioClip": {"language": "french", "sentence": "Je ne veux pas qu'on fasse de moi un exemple.", "storySlug": "un-seul-nom-sur-le-contrat", "targetWord": "fasse de moi", "storySource": "user"}
+   "options": [
+    "turn me into",
+    "forget about",
+    "wait for",
+    "talk about"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Je ne veux pas qu'on fasse de moi un exemple.",
+    "storySlug": "un-seul-nom-sur-le-contrat",
+    "targetWord": "fasse de moi",
+    "storySource": "user"
+   }
   },
   "featured": false
  }
