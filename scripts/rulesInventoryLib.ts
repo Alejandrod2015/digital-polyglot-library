@@ -46,6 +46,23 @@ export function dirMemoria(): string {
   return path.join(process.env.HOME ?? "", ".claude", "projects", slug, "memory");
 }
 
+/**
+ * Ids de check citados en el TEXTO de un validador: por `id: "..."` de
+ * objeto, o por llamada suelta a `push`/`noImpl`/`pushSet`/`noImplSet`.
+ *
+ * El lookbehind del segundo patron exige que la llamada NO venga precedida
+ * de `.` ni de otra letra: sin el, `flags.push("imperfetto")` (un array
+ * cualquiera dentro de un check, nada que ver con el inventario) se leia
+ * como si registrara un check nuevo llamado "imperfetto". Separada de
+ * `checksImplementados` para poder probarla sin tocar el arbol del repo.
+ */
+export function idsDeChecksEnTexto(txt: string): string[] {
+  const ids = new Set<string>();
+  for (const m of txt.matchAll(/id:\s*"([a-z0-9-]+)"/g)) ids.add(m[1]);
+  for (const m of txt.matchAll(/(?<![.\w])(?:push|noImpl)(?:Set)?\(\s*"([a-z0-9-]+)"/g)) ids.add(m[1]);
+  return [...ids].sort();
+}
+
 /** Ids de check implementados de verdad, por fichero de validador. */
 export function checksImplementados(): Map<string, string[]> {
   const out = new Map<string, string[]>();
@@ -53,11 +70,7 @@ export function checksImplementados(): Map<string, string[]> {
     const p = path.join(REPO, f);
     if (!fs.existsSync(p)) continue;
     const txt = fs.readFileSync(p, "utf8");
-    const ids = new Set<string>();
-    for (const m of txt.matchAll(/id:\s*"([a-z0-9-]+)"/g)) ids.add(m[1]);
-    // `push`, `noImpl` y sus variantes de conjunto (`pushSet`, `noImplSet`).
-    for (const m of txt.matchAll(/(?:push|noImpl)(?:Set)?\(\s*"([a-z0-9-]+)"/g)) ids.add(m[1]);
-    out.set(f, [...ids].sort());
+    out.set(f, idsDeChecksEnTexto(txt));
   }
   return out;
 }
