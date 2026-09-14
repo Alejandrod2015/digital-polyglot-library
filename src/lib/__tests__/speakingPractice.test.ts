@@ -14,8 +14,8 @@ import {
 import {
   buildSentenceTranslationMap,
   fillSentenceTranslationBlank,
+  lookupSentenceTranslation,
   normalizeSentenceKey,
-  resolveSentenceTranslation,
   sentenceTranslationKey,
   translationLeavesWordUntranslated,
 } from "../sentenceTranslation";
@@ -277,9 +277,14 @@ describe("createSpeakingExercise", () => {
     expect(createSpeakingExercise(favorito({ exampleSentence: parrafo }), pool())).toBeNull();
   });
 
-  it("conserva la traduccion de la frase, que se ensena al resolver", () => {
+  it("saca del mapa la traduccion de SU frase", () => {
     const ex = createSpeakingExercise(
-      favorito({ sentenceTranslation: "The neighbour waves from the balcony every morning." }),
+      favorito({
+        sentenceTranslations: {
+          "el vecino saluda desde el balcon cada manana":
+            "The neighbour waves from the balcony every morning.",
+        },
+      }),
       pool()
     );
     expect(ex?.sentenceTranslation).toBe(
@@ -287,7 +292,23 @@ describe("createSpeakingExercise", () => {
     );
   });
 
-  it("sin traduccion de la frase, el campo viaja como null", () => {
+  it("el mapa con OTRA frase no traduce esta", () => {
+    // El bug del telefono: la columna traia la frase del vocab y el ejercicio
+    // pintaba otra, asi que MEANING ensenaba "a veces mas de la oracion, a
+    // veces menos". Sin coincidencia exacta no se ensena nada.
+    const ex = createSpeakingExercise(
+      favorito({
+        sentenceTranslations: {
+          "rosa compra il biglietto alla biglietteria automatica della stazione":
+            "Rosa buys the ticket at the station machine.",
+        },
+      }),
+      pool()
+    );
+    expect(ex?.sentenceTranslation).toBeNull();
+  });
+
+  it("sin mapa, el campo viaja como null", () => {
     expect(createSpeakingExercise(favorito(), pool())?.sentenceTranslation).toBeNull();
   });
 
@@ -351,65 +372,36 @@ describe("isSpeakingTurnAlreadyResolved: el candado del turno", () => {
   });
 });
 
-describe("resolveSentenceTranslation: de donde sale la traduccion", () => {
-  it("la COLUMNA escrita a mano gana al fill_blank", () => {
+describe("lookupSentenceTranslation: solo la coincidencia exacta", () => {
+  const MAPA = {
+    "el vecino saluda desde el balcon cada manana":
+      "The neighbour waves from the balcony every morning.",
+  };
+
+  it("casa aunque cambien acentos, mayusculas y puntuacion", () => {
     expect(
-      resolveSentenceTranslation({
-        fromColumn: "The neighbour waves from the balcony every morning.",
-        fromFillBlank: "The neighbour waves from _____ every morning.",
-      })
+      lookupSentenceTranslation(MAPA, "\u00a1El vecino saluda desde el balc\u00f3n cada ma\u00f1ana!")
     ).toBe("The neighbour waves from the balcony every morning.");
   });
 
-  it("sin columna, el fill_blank es la reserva", () => {
-    const reserva = "The neighbour waves from the balcony every morning.";
-    expect(resolveSentenceTranslation({ fromColumn: null, fromFillBlank: reserva })).toBe(reserva);
-    expect(resolveSentenceTranslation({ fromColumn: undefined, fromFillBlank: reserva })).toBe(reserva);
-    // Una columna vacia o de otro tipo no cuenta como escrita.
-    expect(resolveSentenceTranslation({ fromColumn: "   ", fromFillBlank: reserva })).toBe(reserva);
-    expect(resolveSentenceTranslation({ fromColumn: 42, fromFillBlank: reserva })).toBe(reserva);
+  it("acepta tambien un Map ya construido", () => {
+    expect(lookupSentenceTranslation(new Map(Object.entries(MAPA)), "El vecino saluda desde el balcon cada manana.")).toBe(
+      "The neighbour waves from the balcony every morning."
+    );
   });
 
-  it("sin ninguna de las dos, nada", () => {
-    expect(resolveSentenceTranslation({ fromColumn: null, fromFillBlank: null })).toBeNull();
-    expect(resolveSentenceTranslation({ fromColumn: "", fromFillBlank: "" })).toBeNull();
+  it("otra frase no saca nada", () => {
+    expect(lookupSentenceTranslation(MAPA, "El vecino baja con el perro.")).toBeNull();
   });
 
-  it("la clave de la columna es la misma que casa palabra con ejercicio", () => {
+  it("sin mapa o sin frase, nada", () => {
+    expect(lookupSentenceTranslation(null, "El vecino saluda desde el balcon cada manana.")).toBeNull();
+    expect(lookupSentenceTranslation(MAPA, "")).toBeNull();
+    expect(lookupSentenceTranslation({ "el vecino saluda desde el balcon cada manana": "  " }, "El vecino saluda desde el balcon cada manana.")).toBeNull();
+  });
+
+  it("la clave de una PALABRA sigue siendo la palabra", () => {
     expect(sentenceTranslationKey("  El Vecino ")).toBe("el vecino");
-  });
-});
-
-describe("normalizeSentenceKey: la clave es la ORACION", () => {
-  const CURVAS = "\u201cEres un cabron\u201d, se rio Renata.";
-  const RECTAS = '"Eres un cabron", se rio Renata.';
-
-  it("las comillas curvas y las rectas dan la misma clave", () => {
-    expect(normalizeSentenceKey(CURVAS)).toBe(normalizeSentenceKey(RECTAS));
-  });
-
-  it("ignora mayusculas, acentos, puntuacion y espacios de sobra", () => {
-    expect(normalizeSentenceKey("  \u00a1El VECINO saluda,  desde el balc\u00f3n!  ")).toBe(
-      "el vecino saluda desde el balcon"
-    );
-  });
-
-  it("dos frases DISTINTAS no comparten clave", () => {
-    const vocab =
-      "Rosa compra il biglietto alla biglietteria automatica della stazione.";
-    const ejercicio = "Il treno per Firenze parte da questa stazione.";
-    expect(normalizeSentenceKey(vocab)).not.toBe(normalizeSentenceKey(ejercicio));
-  });
-
-  it("el punto final no cambia la clave", () => {
-    expect(normalizeSentenceKey("Marta arriva davanti alla chiesa")).toBe(
-      normalizeSentenceKey("Marta arriva davanti alla chiesa.")
-    );
-  });
-
-  it("sin frase, clave vacia", () => {
-    expect(normalizeSentenceKey("")).toBe("");
-    expect(normalizeSentenceKey("   ...  ")).toBe("");
   });
 });
 
@@ -525,11 +517,15 @@ describe("translationLeavesWordUntranslated", () => {
   });
 });
 
-describe("buildSentenceTranslationMap", () => {
+describe("buildSentenceTranslationMap: indexado por ORACION", () => {
+  const FRASE_VOCAB =
+    "Rosa compra il biglietto alla biglietteria automatica della stazione.";
+  const FRASE_CURADA = "La macchinetta gialla della stazione non funziona mai.";
   const FILL_BLANK = {
     type: "fill_blank",
     word: "stazione",
     payload: {
+      sentence: "La macchinetta gialla della _____ non funziona mai.",
       translation: "The yellow machine at _____ never works.",
       answer: "stazione",
       options: ["stazione", "piazza", "strada", "porta"],
@@ -537,52 +533,68 @@ describe("buildSentenceTranslationMap", () => {
     },
   };
 
-  it("da traduccion a una palabra CON columna y SIN ejercicio", () => {
-    // El bug real: `biglietto` y `mettere` estaban en la columna de
-    // `la-macchinetta-gialla` (25 claves) y la ruta no las devolvia, porque la
-    // columna se leia dentro del bucle de EJERCICIOS y esas dos no tenian.
+  it("la columna entra por su ORACION, tenga o no ejercicio esa palabra", () => {
     const mapa = buildSentenceTranslationMap({
       column: {
-        stazione: "The yellow machine at the station never works.",
-        biglietto: "You buy the ticket before you get on.",
-        mettere: "You have to put the ticket in the machine.",
+        [FRASE_VOCAB]: "Rosa buys the ticket at the station machine.",
+        "Poi mette il foglio nella tasca.": "Then she puts the slip in her pocket.",
       },
       exercises: [FILL_BLANK],
     });
-    expect(mapa.get("biglietto")).toBe("You buy the ticket before you get on.");
-    expect(mapa.get("mettere")).toBe("You have to put the ticket in the machine.");
+    expect(mapa.get(normalizeSentenceKey(FRASE_VOCAB))).toBe(
+      "Rosa buys the ticket at the station machine."
+    );
+    expect(mapa.get(normalizeSentenceKey("Poi mette il foglio nella tasca."))).toBe(
+      "Then she puts the slip in her pocket."
+    );
+    // Y la del curado sigue ahi, porque es OTRA oracion: ninguna se pisa.
     expect(mapa.size).toBe(3);
   });
 
-  it("sin columna, el fill_blank sigue siendo la reserva", () => {
+  it("el fill_blank entra con la oracion ENTERA, no con el hueco", () => {
     const mapa = buildSentenceTranslationMap({ column: null, exercises: [FILL_BLANK] });
-    expect(mapa.get("stazione")).toBe("The yellow machine at the station never works.");
+    expect(mapa.get(normalizeSentenceKey(FRASE_CURADA))).toBe(
+      "The yellow machine at the station never works."
+    );
     expect(mapa.size).toBe(1);
   });
 
-  it("la columna pisa al fill_blank de la misma palabra", () => {
+  it("la columna pisa al fill_blank de la MISMA oracion", () => {
     const mapa = buildSentenceTranslationMap({
-      column: { stazione: "Escrita a mano y revisada." },
+      column: { [FRASE_CURADA]: "Escrita a mano y revisada." },
       exercises: [FILL_BLANK],
     });
-    expect(mapa.get("stazione")).toBe("Escrita a mano y revisada.");
+    expect(mapa.size).toBe(1);
+    expect(mapa.get(normalizeSentenceKey(FRASE_CURADA))).toBe("Escrita a mano y revisada.");
   });
 
-  it("normaliza la clave de la columna", () => {
+  it("una clave con comillas curvas casa con la version de comillas rectas", () => {
+    const curvas = "\u201cEres un cabron\u201d, se rio Renata.";
+    const rectas = '"Eres un cabron", se rio Renata.';
     const mapa = buildSentenceTranslationMap({
-      column: { "  Biglietto ": "You buy the ticket first." },
+      column: { [curvas]: "\u201cYou are such a jerk\u201d, Renata laughed." },
       exercises: [],
     });
-    expect(mapa.get("biglietto")).toBe("You buy the ticket first.");
+    expect(mapa.get(normalizeSentenceKey(rectas))).toBe(
+      "\u201cYou are such a jerk\u201d, Renata laughed."
+    );
   });
 
-  it("ignora los valores vacios o que no son texto", () => {
+  it("ignora los valores vacios, los que no son texto y las claves sin letras", () => {
     const mapa = buildSentenceTranslationMap({
-      column: { a: "", b: "   ", c: 42, d: null, e: "Vale." },
+      column: { "Una.": "", "Dos.": "   ", "Tres.": 42, "Cuatro.": null, "...": "x", "Cinco.": "Vale." },
       exercises: [],
     });
     expect(mapa.size).toBe(1);
-    expect(mapa.get("e")).toBe("Vale.");
+    expect(mapa.get(normalizeSentenceKey("Cinco."))).toBe("Vale.");
+  });
+
+  it("un fill_blank sin frase guardada no entra", () => {
+    const mapa = buildSentenceTranslationMap({
+      column: null,
+      exercises: [{ ...FILL_BLANK, payload: { ...FILL_BLANK.payload, sentence: "" } }],
+    });
+    expect(mapa.size).toBe(0);
   });
 
   it("sin columna ni ejercicios, mapa vacio", () => {

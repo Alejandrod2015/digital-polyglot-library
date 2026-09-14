@@ -1697,7 +1697,7 @@ function buildPracticeFavorites(items: MobileFavoriteItem[]): PracticeFavoriteIt
       // Clip PRE-HORNEADO de la PALABRA (meaning + match): ElevenLabs sin runtime.
       wordClipUrl: item.wordClipUrl ?? null,
       wordVoiceId: item.wordVoiceId ?? null,
-      sentenceTranslation: item.sentenceTranslation ?? null,
+      sentenceTranslations: item.sentenceTranslations ?? null,
     }));
 }
 

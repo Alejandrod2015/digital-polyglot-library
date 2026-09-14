@@ -56,39 +56,30 @@ export function fillSentenceTranslationBlank(
 }
 
 /**
- * De donde sale la traduccion de la frase de una palabra, y en que orden.
+ * Todas las traducciones de frase de UNA historia, por ORACION normalizada.
  *
- * 1. La COLUMNA `StoryPracticeSet.sentenceTranslations`, escrita a mano. Manda
- *    porque cubre todas las palabras de la historia y porque alguien la
- *    reviso; el hueco ya viene relleno, sin `_____` que resolver.
- * 2. El `fill_blank` curado, como reserva. Solo existe para 4 a 6 palabras por
- *    historia, asi que cubre poco, pero lo que cubre es bueno.
- * 3. Nada. Y entonces en pantalla no se pinta nada, que es preferible a
- *    inventar una traduccion.
- */
-export function resolveSentenceTranslation(params: {
-  /** Valor de la columna para ESA palabra, ya buscado por clave normalizada. */
-  fromColumn: unknown;
-  /** Lo que devolvio `fillSentenceTranslationBlank` para su `fill_blank`. */
-  fromFillBlank: string | null;
-}): string | null {
-  const columna = texto(params.fromColumn);
-  if (columna) return columna;
-  return params.fromFillBlank || null;
-}
-
-/**
- * Todas las traducciones de frase de UNA historia, por palabra normalizada.
+ * La clave es la oracion y no la palabra. Con la palabra por clave, el turno
+ * hablado pintaba la traduccion de la frase del VOCAB debajo de una frase
+ * distinta: la suya puede venir del `exampleSentence` del favorito, del item
+ * construido desde el texto de la historia o del `fill_blank` curado. Para
+ * `stazione` el vocab decia "Rosa compra il biglietto alla biglietteria
+ * automatica della stazione..." y en pantalla se leia "Il treno per Firenze
+ * parte da questa stazione.".
  *
- * Se construye por HISTORIA y no por ejercicio, y ese es justo el arreglo: la
- * version anterior leia la columna dentro del bucle que empareja palabras con
- * EJERCICIOS curados, asi que una palabra sin ejercicio (o con ejercicio pero
- * sin clip) no llegaba nunca a la columna. En `la-macchinetta-gialla`, con 25
- * traducciones escritas, solo `stazione` salia con traduccion; `biglietto` y
- * `mettere` no, porque no tenian ejercicio.
+ * Se construye por HISTORIA y no por ejercicio: una palabra sin ejercicio (o
+ * con ejercicio pero sin clip) tambien tiene que llegar a la columna.
  *
- * La columna es la fuente principal y cubre toda la historia; el `fill_blank`
- * se queda de reserva para las palabras que la columna no traiga.
+ * Dos fuentes, y la columna gana:
+ *
+ * 1. El `fill_blank` curado, de reserva. Su frase se guarda CON el hueco, asi
+ *    que para indexarla por oracion hay que devolverle la respuesta al sitio
+ *    del que salio; la normalizacion se traga lo demas (mayuscula inicial,
+ *    puntuacion, comillas).
+ * 2. La COLUMNA `StoryPracticeSet.sentenceTranslations`, escrita a mano y ya
+ *    indexada por oracion normalizada.
+ *
+ * Lo que no este en ninguna de las dos no se pinta. Ensenar la traduccion de
+ * otra frase es peor que no ensenar ninguna.
  */
 export function buildSentenceTranslationMap(params: {
   /** `StoryPracticeSet.sentenceTranslations` tal cual sale de la base. */
@@ -98,11 +89,9 @@ export function buildSentenceTranslationMap(params: {
 }): Map<string, string> {
   const out = new Map<string, string>();
 
-  // 1. La reserva primero, para que la columna la pise si trae esa palabra.
+  // 1. La reserva primero, para que la columna la pise si trae esa oracion.
   for (const ex of params.exercises) {
     if (ex?.type !== "fill_blank") continue;
-    const word = typeof ex.word === "string" ? ex.word : "";
-    if (!word) continue;
     const payload = (ex.payload ?? null) as Record<string, unknown> | null;
     const traduccion = fillSentenceTranslationBlank(
       payload?.translation,
@@ -111,21 +100,59 @@ export function buildSentenceTranslationMap(params: {
       payload?.optionTranslations
     );
     if (!traduccion) continue;
-    const clave = sentenceTranslationKey(word);
-    if (!out.has(clave)) out.set(clave, traduccion);
+    const entera = sentenceFromBlanked(payload?.sentence, payload?.answer);
+    if (!entera) continue;
+    const clave = normalizeSentenceKey(entera);
+    if (clave && !out.has(clave)) out.set(clave, traduccion);
   }
 
-  // 2. La columna manda, y entra para TODA palabra que traiga, tenga o no
+  // 2. La columna manda, y entra para TODA oracion que traiga, tenga o no
   //    ejercicio en el set.
   const escritas = (params.column ?? null) as Record<string, unknown> | null;
   if (escritas && typeof escritas === "object") {
-    for (const [palabra, valor] of Object.entries(escritas)) {
+    for (const [oracion, valor] of Object.entries(escritas)) {
       if (typeof valor !== "string" || !valor.trim()) continue;
-      out.set(sentenceTranslationKey(palabra), valor.trim());
+      const clave = normalizeSentenceKey(oracion);
+      if (clave) out.set(clave, valor.trim());
     }
   }
 
   return out;
+}
+
+/**
+ * La oracion ENTERA de un `fill_blank`, que la guarda con el hueco puesto.
+ * Devuelve null si no hay hueco que rellenar o no se sabe con que.
+ */
+export function sentenceFromBlanked(blanked: unknown, answer: unknown): string | null {
+  const frase = texto(blanked);
+  const respuesta = texto(answer);
+  if (!frase || !respuesta) return null;
+  if (!HUECO.test(frase)) return frase;
+  return frase.replace(HUECO, respuesta);
+}
+
+/**
+ * Busca en el mapa la traduccion de ESTA frase, y solo de esta. Sin
+ * coincidencia exacta (ya normalizada) devuelve null y no se pinta nada.
+ */
+export function lookupSentenceTranslation(
+  map: unknown,
+  sentence: string
+): string | null {
+  const clave = normalizeSentenceKey(sentence);
+  if (!clave) return null;
+  if (map instanceof Map) {
+    const hallado = map.get(clave);
+    return typeof hallado === "string" && hallado.trim() ? hallado.trim() : null;
+  }
+  if (map && typeof map === "object") {
+    for (const [oracion, valor] of Object.entries(map as Record<string, unknown>)) {
+      if (typeof valor !== "string" || !valor.trim()) continue;
+      if (normalizeSentenceKey(oracion) === clave) return valor.trim();
+    }
+  }
+  return null;
 }
 
 /**

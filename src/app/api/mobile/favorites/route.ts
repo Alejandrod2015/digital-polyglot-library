@@ -112,9 +112,9 @@ export async function GET(req: NextRequest): Promise<Response> {
     }
   >;
   // OJO: este mapa solo tiene las palabras CON clip. La traducción de la frase
-  // NO puede vivir aquí, y ahí estaba el bug: se leía dentro de este bucle, así
-  // que una palabra sin ejercicio (o con ejercicio pero sin clip) no llegaba
-  // nunca a la columna. Va en `translationsByKey`, que se arma por HISTORIA.
+  // NO puede vivir aquí: se leía dentro de este bucle, así que una palabra sin
+  // ejercicio (o con ejercicio pero sin clip) no llegaba nunca a la columna. Va
+  // en `translationsByKey`, que se arma por HISTORIA y se indexa por ORACIÓN.
   const collectClips = (
     exercises: { type: string; word: string | null; payload: unknown }[]
   ): ClipMap => {
@@ -143,9 +143,9 @@ export async function GET(req: NextRequest): Promise<Response> {
   // Historia viva = JourneyStory publicada + journey no archived/draft.
   const LIVE_JOURNEY: Prisma.JourneyWhereInput = { status: { notIn: ["archived", "draft"] } };
   const liveByKey = new Map<string, ClipMap>(); // key: el storySlug original
-  // Traducciones de frase por historia y palabra: la columna escrita a mano más
-  // el `fill_blank` de reserva. Separado de los clips A PROPÓSITO; ver el
-  // comentario de `collectClips`.
+  // Traducciones de frase por historia y ORACIÓN normalizada: la columna
+  // escrita a mano más el `fill_blank` de reserva. Separado de los clips A
+  // PROPÓSITO; ver el comentario de `collectClips`.
   const translationsByKey = new Map<string, Map<string, string>>();
   // #4/#7c (audit 2026-07-24): idioma de la historia por key, para RELLENAR
   // favorite.language cuando es null (favoritos guardados sin idioma). Sin esto,
@@ -232,14 +232,19 @@ export async function GET(req: NextRequest): Promise<Response> {
     // `wordClipUrl` (palabra pre-horneada) alimenta meaning y match sin runtime.
     // #7: adjuntar `voiceId` (narración) SIEMPRE que exista, no solo cuando hay
     // clip de oración (antes desincronizaba la voz para meaning/context).
-    // La traducción de la frase va FUERA del `if (clip)`: depende de la
-    // HISTORIA, no de que esa palabra tenga ejercicio curado con audio.
-    const sentenceTranslation = translationsByKey.get(f.storySlug)?.get(norm(f.word)) ?? null;
+    // Las traducciones de frase van FUERA del `if (clip)`: dependen de la
+    // HISTORIA, no de que esa palabra tenga ejercicio curado con audio. Y viaja
+    // el MAPA entero de la historia, no una cadena: el cliente no sabe aquí qué
+    // frase acabará pintando (la del favorito, la del texto, la del curado), y
+    // elegirla en el servidor era justo el bug. Quien pinta, resuelve.
+    const sentenceTranslations = Object.fromEntries(
+      translationsByKey.get(f.storySlug) ?? new Map<string, string>()
+    );
     return [
       {
         ...f,
         language,
-        sentenceTranslation,
+        sentenceTranslations,
         ...(clip
           ? {
               ...(clip.clipUrl ? { clipUrl: clip.clipUrl } : {}),

@@ -8,6 +8,7 @@ import {
 import { normalizeVocabType } from "@/lib/vocabTypes";
 import { getSegmentIdFromSourcePath, getStorySource, isStandaloneSourcePath } from "@/lib/storySource";
 import { splitSentences } from "@/lib/exampleSentence";
+import { lookupSentenceTranslation } from "@/lib/sentenceTranslation";
 
 export type PracticeFavoriteItem = {
   word: string;
@@ -26,11 +27,13 @@ export type PracticeFavoriteItem = {
   language?: string | null;
   nextReviewAt?: string | null;
   practiceSource?: "curriculum" | "user_saved" | "both" | null;
-  /** Traduccion al ingles de la frase de ejemplo, del set curado de la
-   *  historia, con el hueco ya relleno cuando se pudo. Solo se ensena al
-   *  RESOLVER; no existe para todas las palabras (3.019 de 3.873 ejercicios
-   *  curados la traen) y cuando falta, no se pinta nada. */
-  sentenceTranslation?: string | null;
+  /** Traducciones al ingles de las frases de la HISTORIA de la que sale esta
+   *  palabra, indexadas por `normalizeSentenceKey`. Viaja el mapa entero y no
+   *  una cadena porque quien sabe que frase se va a pintar es el ejercicio, no
+   *  el servidor: el turno hablado busca la SUYA y, si no casa exacto, no
+   *  ensena nada. Con una cadena por palabra, la etiqueta MEANING mostraba la
+   *  traduccion de otra oracion. */
+  sentenceTranslations?: Record<string, string> | null;
   /** Voice the source story was narrated with, when known. */
   voiceId?: string | null;
   /** Pre-baked practice sentence-clip URL for this word, joined server-side from
@@ -974,7 +977,9 @@ export function createSpeakingExercise(
     storySlug: normalizeText(item.storySlug),
     language,
     voiceId: normalizeText(item.voiceId) || null,
-    sentenceTranslation: normalizeText(item.sentenceTranslation) || null,
+    // La traduccion se resuelve contra la frase que ESTE ejercicio pinta, y
+    // solo si casa exacto (ya normalizada). Sin coincidencia, null.
+    sentenceTranslation: lookupSentenceTranslation(item.sentenceTranslations, sentence),
     audioClip: fillBlank.audioClip ?? null,
   };
 }
