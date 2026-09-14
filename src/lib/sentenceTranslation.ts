@@ -78,6 +78,57 @@ export function resolveSentenceTranslation(params: {
 }
 
 /**
+ * Todas las traducciones de frase de UNA historia, por palabra normalizada.
+ *
+ * Se construye por HISTORIA y no por ejercicio, y ese es justo el arreglo: la
+ * version anterior leia la columna dentro del bucle que empareja palabras con
+ * EJERCICIOS curados, asi que una palabra sin ejercicio (o con ejercicio pero
+ * sin clip) no llegaba nunca a la columna. En `la-macchinetta-gialla`, con 25
+ * traducciones escritas, solo `stazione` salia con traduccion; `biglietto` y
+ * `mettere` no, porque no tenian ejercicio.
+ *
+ * La columna es la fuente principal y cubre toda la historia; el `fill_blank`
+ * se queda de reserva para las palabras que la columna no traiga.
+ */
+export function buildSentenceTranslationMap(params: {
+  /** `StoryPracticeSet.sentenceTranslations` tal cual sale de la base. */
+  column: unknown;
+  /** Los ejercicios del set; solo se miran los `fill_blank`. */
+  exercises: readonly { type?: unknown; word?: unknown; payload?: unknown }[];
+}): Map<string, string> {
+  const out = new Map<string, string>();
+
+  // 1. La reserva primero, para que la columna la pise si trae esa palabra.
+  for (const ex of params.exercises) {
+    if (ex?.type !== "fill_blank") continue;
+    const word = typeof ex.word === "string" ? ex.word : "";
+    if (!word) continue;
+    const payload = (ex.payload ?? null) as Record<string, unknown> | null;
+    const traduccion = fillSentenceTranslationBlank(
+      payload?.translation,
+      payload?.answer,
+      payload?.options,
+      payload?.optionTranslations
+    );
+    if (!traduccion) continue;
+    const clave = sentenceTranslationKey(word);
+    if (!out.has(clave)) out.set(clave, traduccion);
+  }
+
+  // 2. La columna manda, y entra para TODA palabra que traiga, tenga o no
+  //    ejercicio en el set.
+  const escritas = (params.column ?? null) as Record<string, unknown> | null;
+  if (escritas && typeof escritas === "object") {
+    for (const [palabra, valor] of Object.entries(escritas)) {
+      if (typeof valor !== "string" || !valor.trim()) continue;
+      out.set(sentenceTranslationKey(palabra), valor.trim());
+    }
+  }
+
+  return out;
+}
+
+/**
  * La clave con la que se guarda y se busca en la columna. Es el mismo `norm`
  * que la ruta de favoritos usa para casar palabra con ejercicio; vive aqui
  * para que el script que escribe y la ruta que lee no puedan discrepar.

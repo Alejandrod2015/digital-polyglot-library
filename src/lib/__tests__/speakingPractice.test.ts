@@ -12,6 +12,7 @@ import {
   type PracticeFavoriteItem,
 } from "../practiceExercises";
 import {
+  buildSentenceTranslationMap,
   fillSentenceTranslationBlank,
   resolveSentenceTranslation,
   sentenceTranslationKey,
@@ -487,5 +488,70 @@ describe("translationLeavesWordUntranslated", () => {
         "neighbour, the person next door"
       )
     ).toBe(false);
+  });
+});
+
+describe("buildSentenceTranslationMap", () => {
+  const FILL_BLANK = {
+    type: "fill_blank",
+    word: "stazione",
+    payload: {
+      translation: "The yellow machine at _____ never works.",
+      answer: "stazione",
+      options: ["stazione", "piazza", "strada", "porta"],
+      optionTranslations: ["the station", "the square", "the street", "the door"],
+    },
+  };
+
+  it("da traduccion a una palabra CON columna y SIN ejercicio", () => {
+    // El bug real: `biglietto` y `mettere` estaban en la columna de
+    // `la-macchinetta-gialla` (25 claves) y la ruta no las devolvia, porque la
+    // columna se leia dentro del bucle de EJERCICIOS y esas dos no tenian.
+    const mapa = buildSentenceTranslationMap({
+      column: {
+        stazione: "The yellow machine at the station never works.",
+        biglietto: "You buy the ticket before you get on.",
+        mettere: "You have to put the ticket in the machine.",
+      },
+      exercises: [FILL_BLANK],
+    });
+    expect(mapa.get("biglietto")).toBe("You buy the ticket before you get on.");
+    expect(mapa.get("mettere")).toBe("You have to put the ticket in the machine.");
+    expect(mapa.size).toBe(3);
+  });
+
+  it("sin columna, el fill_blank sigue siendo la reserva", () => {
+    const mapa = buildSentenceTranslationMap({ column: null, exercises: [FILL_BLANK] });
+    expect(mapa.get("stazione")).toBe("The yellow machine at the station never works.");
+    expect(mapa.size).toBe(1);
+  });
+
+  it("la columna pisa al fill_blank de la misma palabra", () => {
+    const mapa = buildSentenceTranslationMap({
+      column: { stazione: "Escrita a mano y revisada." },
+      exercises: [FILL_BLANK],
+    });
+    expect(mapa.get("stazione")).toBe("Escrita a mano y revisada.");
+  });
+
+  it("normaliza la clave de la columna", () => {
+    const mapa = buildSentenceTranslationMap({
+      column: { "  Biglietto ": "You buy the ticket first." },
+      exercises: [],
+    });
+    expect(mapa.get("biglietto")).toBe("You buy the ticket first.");
+  });
+
+  it("ignora los valores vacios o que no son texto", () => {
+    const mapa = buildSentenceTranslationMap({
+      column: { a: "", b: "   ", c: 42, d: null, e: "Vale." },
+      exercises: [],
+    });
+    expect(mapa.size).toBe(1);
+    expect(mapa.get("e")).toBe("Vale.");
+  });
+
+  it("sin columna ni ejercicios, mapa vacio", () => {
+    expect(buildSentenceTranslationMap({ column: null, exercises: [] }).size).toBe(0);
   });
 });

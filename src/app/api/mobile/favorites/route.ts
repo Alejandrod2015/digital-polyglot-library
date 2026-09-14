@@ -7,11 +7,7 @@ import { getActiveMobileSession } from "@/lib/mobileSession";
 import { prisma } from "@/lib/prisma";
 import { extractExampleSentence } from "@/lib/exampleSentence";
 import { getCuratedExampleMap, curatedKey } from "@/lib/curatedExamples";
-import {
-  fillSentenceTranslationBlank,
-  resolveSentenceTranslation,
-  sentenceTranslationKey,
-} from "@/lib/sentenceTranslation";
+import { buildSentenceTranslationMap } from "@/lib/sentenceTranslation";
 
 type FavoriteBody = {
   word: string;
@@ -113,39 +109,16 @@ export async function GET(req: NextRequest): Promise<Response> {
       voiceId: string | null;
       wordClipUrl: string | null;
       wordVoiceId: string | null;
-      /** Traducción al inglés de la frase, del `fill_blank` de esa palabra. */
-      sentenceTranslation: string | null;
     }
   >;
+  // OJO: este mapa solo tiene las palabras CON clip. La traducción de la frase
+  // NO puede vivir aquí, y ahí estaba el bug: se leía dentro de este bucle, así
+  // que una palabra sin ejercicio (o con ejercicio pero sin clip) no llegaba
+  // nunca a la columna. Va en `translationsByKey`, que se arma por HISTORIA.
   const collectClips = (
-    exercises: { type: string; word: string | null; payload: unknown }[],
-    sentenceTranslations: unknown
+    exercises: { type: string; word: string | null; payload: unknown }[]
   ): ClipMap => {
-    // Las traducciones escritas a mano, por clave normalizada. Mandan sobre el
-    // `fill_blank`: cubren TODAS las palabras de la historia y ya vienen sin
-    // hueco que resolver.
-    const escritas = (sentenceTranslations ?? null) as Record<string, unknown> | null;
     const m: ClipMap = new Map();
-    // La traducción de la frase vive SOLO en el `fill_blank` de la palabra (es
-    // el único que la tiene, con `_____` donde va la respuesta), así que se
-    // recoge en su propia pasada y se casa por palabra con lo demás. 3.019 de
-    // los 3.873 ejercicios curados la traen; el resto se queda sin ella y en
-    // pantalla no se pinta nada, que es preferible a inventarla.
-    const traduccionPorPalabra = new Map<string, string>();
-    for (const ex of exercises) {
-      if (ex.type !== "fill_blank" || !ex.word) continue;
-      const payload = (ex.payload ?? null) as Record<string, unknown> | null;
-      const traduccion = fillSentenceTranslationBlank(
-        payload?.translation,
-        payload?.answer,
-        payload?.options,
-        payload?.optionTranslations
-      );
-      if (!traduccion) continue;
-      const k = norm(ex.word);
-      if (!traduccionPorPalabra.has(k)) traduccionPorPalabra.set(k, traduccion);
-    }
-
     for (const ex of exercises) {
       const ac = ((ex.payload as Record<string, unknown> | null)?.audioClip ??
         null) as Record<string, unknown> | null;
@@ -161,10 +134,6 @@ export async function GET(req: NextRequest): Promise<Response> {
           voiceId: typeof ac?.voiceId === "string" ? ac.voiceId : null,
           wordClipUrl,
           wordVoiceId: typeof ac?.wordVoiceId === "string" ? ac.wordVoiceId : null,
-          sentenceTranslation: resolveSentenceTranslation({
-            fromColumn: escritas?.[sentenceTranslationKey(ex.word)],
-            fromFillBlank: traduccionPorPalabra.get(k) ?? null,
-          }),
         });
       }
     }
@@ -174,6 +143,10 @@ export async function GET(req: NextRequest): Promise<Response> {
   // Historia viva = JourneyStory publicada + journey no archived/draft.
   const LIVE_JOURNEY: Prisma.JourneyWhereInput = { status: { notIn: ["archived", "draft"] } };
   const liveByKey = new Map<string, ClipMap>(); // key: el storySlug original
+  // Traducciones de frase por historia y palabra: la columna escrita a mano más
+  // el `fill_blank` de reserva. Separado de los clips A PROPÓSITO; ver el
+  // comentario de `collectClips`.
+  const translationsByKey = new Map<string, Map<string, string>>();
   // #4/#7c (audit 2026-07-24): idioma de la historia por key, para RELLENAR
   // favorite.language cuando es null (favoritos guardados sin idioma). Sin esto,
   // word-tts/sentence-tts defaulteaban a 'es' → acento equivocado en palabras
@@ -196,9 +169,13 @@ export async function GET(req: NextRequest): Promise<Response> {
     });
     for (const r of rows) {
       const key = `${JOURNEY_PREFIX}${r.id}`;
-      liveByKey.set(
+      liveByKey.set(key, collectClips(r.practiceSet?.exercises ?? []));
+      translationsByKey.set(
         key,
-        collectClips(r.practiceSet?.exercises ?? [], r.practiceSet?.sentenceTranslations)
+        buildSentenceTranslationMap({
+          column: r.practiceSet?.sentenceTranslations,
+          exercises: r.practiceSet?.exercises ?? [],
+        })
       );
       langByKey.set(key, r.journey?.language ?? null);
     }
@@ -219,9 +196,13 @@ export async function GET(req: NextRequest): Promise<Response> {
     });
     for (const r of jrows) {
       if (r.slug) {
-        liveByKey.set(
+        liveByKey.set(r.slug, collectClips(r.practiceSet?.exercises ?? []));
+        translationsByKey.set(
           r.slug,
-          collectClips(r.practiceSet?.exercises ?? [], r.practiceSet?.sentenceTranslations)
+          buildSentenceTranslationMap({
+            column: r.practiceSet?.sentenceTranslations,
+            exercises: r.practiceSet?.exercises ?? [],
+          })
         );
         langByKey.set(r.slug, r.journey?.language ?? null);
       }
@@ -251,17 +232,20 @@ export async function GET(req: NextRequest): Promise<Response> {
     // `wordClipUrl` (palabra pre-horneada) alimenta meaning y match sin runtime.
     // #7: adjuntar `voiceId` (narración) SIEMPRE que exista, no solo cuando hay
     // clip de oración (antes desincronizaba la voz para meaning/context).
+    // La traducción de la frase va FUERA del `if (clip)`: depende de la
+    // HISTORIA, no de que esa palabra tenga ejercicio curado con audio.
+    const sentenceTranslation = translationsByKey.get(f.storySlug)?.get(norm(f.word)) ?? null;
     return [
       {
         ...f,
         language,
+        sentenceTranslation,
         ...(clip
           ? {
               ...(clip.clipUrl ? { clipUrl: clip.clipUrl } : {}),
               ...(clip.voiceId ? { voiceId: clip.voiceId } : {}),
               wordClipUrl: clip.wordClipUrl,
               wordVoiceId: clip.wordVoiceId,
-              sentenceTranslation: clip.sentenceTranslation,
             }
           : {}),
       },
