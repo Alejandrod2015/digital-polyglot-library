@@ -11,8 +11,14 @@
 //     en lo oido. Tolera diferencias de ortografia del transcriptor
 //     (whisper-small confunde "goutte"/"goute", "vous la"/"voula"): usa
 //     distancia de edicion por palabra, no comparacion exacta.
-//   - DUPLICADO: un tramo de 5+ palabras OIDAS que se repite identico dos
-//     veces (la misma sintesis sonando dos veces en el master).
+//   - DUPLICADO: un tramo de 5+ palabras OIDAS que suena MAS veces de las
+//     que aparece en el texto (la misma sintesis sonando dos veces en el
+//     master). Si el texto tambien lo repite (un titulo que vuelve en el
+//     cuerpo), no es duplicado.
+//
+// Antes de comparar, los numeros se llevan a cifra en los dos lados
+// (canonNumbers): whisper escribe "21h" donde el texto dice "vingt et une
+// heures", y eso no es un hueco.
 
 export type HeardWord = { text: string; start: number; end: number };
 
@@ -48,8 +54,100 @@ function levenshtein(a: string, b: string): number {
 function wordsMatch(a: string, b: string): boolean {
   if (!a || !b) return false;
   if (a === b) return true;
+  // Dos cifras solo son la misma si son iguales: 20 y 21 estan a distancia 1.
+  if (/^\d+$/.test(a) || /^\d+$/.test(b)) return false;
   const dist = levenshtein(a, b);
   return dist <= Math.max(1, Math.floor(Math.min(a.length, b.length) * 0.34));
+}
+
+// --- Numeros: letra y cifra son equivalentes -------------------------------
+// Francés, que es lo que transcribe whisper aqui (-l fr). Las palabras llegan
+// ya normalizadas (sin guiones ni tildes), asi que "dix-sept" es "dixsept" y
+// "quatre-vingts" es "quatrevingts": cada token se descompone en morfemas.
+const UNITS: Record<string, number> = {
+  zero: 0, un: 1, une: 1, deux: 2, trois: 3, quatre: 4, cinq: 5, six: 6, sept: 7, huit: 8, neuf: 9,
+  dix: 10, onze: 11, douze: 12, treize: 13, quatorze: 14, quinze: 15, seize: 16,
+};
+const TENS: Record<string, number> = { vingt: 20, vingts: 20, trente: 30, quarante: 40, cinquante: 50, soixante: 60 };
+const MORPHEMES = [...Object.keys(UNITS), ...Object.keys(TENS), "cent", "cents", "mille", "et"]
+  .sort((x, y) => y.length - x.length);
+
+/** Descompone un token en morfemas numericos, o null si no es un numero. */
+function numberMorphemes(token: string): string[] | null {
+  const out: string[] = [];
+  let rest = token;
+  while (rest) {
+    const m = MORPHEMES.find((x) => rest.startsWith(x));
+    if (!m) return null;
+    out.push(m);
+    rest = rest.slice(m.length);
+  }
+  return out;
+}
+
+/** Valor de una secuencia de morfemas ("vingt et une", "quatre vingt dix"). */
+function numberValue(ms: string[]): number | null {
+  let total = 0, current = 0;
+  for (let k = 0; k < ms.length; k++) {
+    const m = ms[k];
+    if (m === "et") continue;
+    if (m in UNITS) current += UNITS[m];
+    else if (m === "vingt" || m === "vingts") current = current === 4 ? 80 : current + 20;
+    else if (m in TENS) current += TENS[m];
+    else if (m === "cent" || m === "cents") current = (current || 1) * 100;
+    else if (m === "mille") { total += (current || 1) * 1000; current = 0; }
+    else return null;
+  }
+  return total + current;
+}
+
+/**
+ * Lleva a cifra los numeros de una lista de palabras normalizadas:
+ * "vingt et une heures" -> "21 heures", "21h" -> "21 heures", "10" -> "10".
+ * "un"/"une" sueltos se quedan como estan: casi siempre son articulo
+ * ("encore une voie"); solo cuentan dentro de un compuesto ("vingt et une").
+ */
+export function canonNumbers(words: string[]): string[] {
+  const out: string[] = [];
+  let k = 0;
+  while (k < words.length) {
+    const w = words[k];
+    const hour = /^(\d+)h(\d*)$/.exec(w);
+    if (hour) {
+      out.push(String(Number(hour[1])), "heures");
+      if (hour[2]) out.push(String(Number(hour[2])));
+      k++;
+      continue;
+    }
+    if (/^\d+$/.test(w)) { out.push(String(Number(w))); k++; continue; }
+
+    // Junta la tirada mas larga de tokens numericos que forme un numero valido.
+    const run: string[] = [];
+    let end = k;
+    while (end < words.length) {
+      const ms = numberMorphemes(words[end]);
+      if (!ms) break;
+      run.push(...ms);
+      end++;
+    }
+    let taken = 0, value: number | null = null;
+    for (let e = end; e > k; e--) {
+      const ms = words.slice(k, e).flatMap((x) => numberMorphemes(x)!);
+      const standaloneArticle = ms.length === 1 && (ms[0] === "un" || ms[0] === "une");
+      const dangling = ms[0] === "et" || ms[ms.length - 1] === "et";
+      if (standaloneArticle || dangling) continue;
+      const v = numberValue(ms);
+      if (v !== null) { taken = e - k; value = v; break; }
+    }
+    if (taken > 0 && value !== null) {
+      out.push(String(value));
+      k += taken;
+    } else {
+      out.push(w);
+      k++;
+    }
+  }
+  return out;
 }
 
 export type Gap = { textWords: string[]; startIdx: number; endIdx: number; anchorBeforeIdx: number | null; anchorAfterIdx: number | null };
@@ -117,25 +215,48 @@ export function findGaps(textWords: string[], heardWords: string[], minRun = 3):
   return gaps;
 }
 
-export type Duplicate = { words: string[]; firstIdx: number; secondIdx: number };
+export type Duplicate = { words: string[]; firstIdx: number; secondIdx: number; heardCount: number; textCount: number };
 
-/** Tramo de `window`+ palabras OIDAS que se repite identico (exacto, no
- *  tolerante: una repeticion real viene de la MISMA sintesis, misma
- *  ortografia). */
-export function findDuplicates(heardWords: string[], window = 5): Duplicate[] {
-  const dups: Duplicate[] = [];
-  const seen = new Map<string, number>();
-  let i = 0;
-  while (i + window <= heardWords.length) {
+/** Veces que `gram` aparece en `words`, tolerando ortografia palabra a palabra. */
+function countOccurrences(words: string[], gram: string[]): number {
+  let c = 0;
+  for (let i = 0; i + gram.length <= words.length; i++) {
+    let ok = true;
+    for (let j = 0; j < gram.length && ok; j++) ok = wordsMatch(words[i + j], gram[j]);
+    if (ok) { c++; i += gram.length - 1; }
+  }
+  return c;
+}
+
+/** Tramo de `window`+ palabras OIDAS que suena mas veces de las que aparece
+ *  en el texto. En lo oido se busca exacto (una repeticion real viene de la
+ *  MISMA sintesis, misma ortografia); en el texto, tolerante, para que un
+ *  error de transcripcion no convierta en duplicado un titulo que el texto
+ *  ya repite. */
+export function findDuplicates(heardWords: string[], textWords: string[], window = 5): Duplicate[] {
+  const positions = new Map<string, number[]>();
+  for (let i = 0; i + window <= heardWords.length; i++) {
     const key = heardWords.slice(i, i + window).join(" ");
-    const prev = seen.get(key);
-    if (prev !== undefined) {
-      dups.push({ words: heardWords.slice(i, i + window), firstIdx: prev, secondIdx: i });
-      i += window;
-    } else {
-      seen.set(key, i);
-      i += 1;
-    }
+    const arr = positions.get(key);
+    if (arr) { if (i >= arr[arr.length - 1] + window) arr.push(i); }
+    else positions.set(key, [i]);
+  }
+  const found: Duplicate[] = [];
+  for (const [key, pos] of positions) {
+    if (pos.length < 2) continue;
+    const words = key.split(" ");
+    const textCount = countOccurrences(textWords, words);
+    if (pos.length <= textCount) continue;
+    found.push({ words, firstIdx: pos[0], secondIdx: pos[Math.max(1, textCount)], heardCount: pos.length, textCount });
+  }
+  // Un tramo duplicado largo produce muchas ventanas solapadas: se informa una
+  // por cada `window` palabras, como antes.
+  found.sort((a, b) => a.secondIdx - b.secondIdx);
+  const dups: Duplicate[] = [];
+  for (const d of found) {
+    const last = dups[dups.length - 1];
+    if (last && d.secondIdx < last.secondIdx + window) continue;
+    dups.push(d);
   }
   return dups;
 }
@@ -143,7 +264,9 @@ export function findDuplicates(heardWords: string[], window = 5): Duplicate[] {
 export type CoverageResult = { gaps: Gap[]; duplicates: Duplicate[]; ok: boolean };
 
 export function checkCoverage(textWords: string[], heardWords: string[]): CoverageResult {
-  const gaps = findGaps(textWords, heardWords);
-  const duplicates = findDuplicates(heardWords);
+  const text = canonNumbers(textWords);
+  const heard = canonNumbers(heardWords);
+  const gaps = findGaps(text, heard);
+  const duplicates = findDuplicates(heard, text);
   return { gaps, duplicates, ok: gaps.length === 0 && duplicates.length === 0 };
 }
