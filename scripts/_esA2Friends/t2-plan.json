@@ -1,0 +1,14 @@
+{
+  "tipo": "Friends",
+  "nivel": "a2",
+  "variante": "spain",
+  "registro": "comico con fondo amargo: el barrio entero opina de un video viejo y los dos se enteran por una pantalla rota de lo que no se dijeron en 2012",
+  "espina": "La Rana vuelve para las Ferias; en este tema el video de 2012 que grabo Jaime ensena a todo el barrio a Ruben solo en el escenario, y lo que Lorena no vio le cuesta a Ruben su nombre en el parque de bomberos.",
+  "recursos": "A2: simil simple (la pantalla como una tela de arana), habla referida en boca de un testigo en preterito (Jaime cuenta lo que paso en 2012), imperfecto descriptivo del video frente al indefinido de 2026. Parrafos 5, 4 y 6. Franjas: tarde de ensayo, la misma tarde con el video, mediodia del dia siguiente.",
+  "reencuentro": "Vuelven en el texto, con surface exacta del tema 1: demasiado, necesitamos, intentó, rota, No importa, Todavía, enormes, se equivocó, despacio, golpeó, se quedó quieto, Sacó, guardó, sin decir nada, en voz baja, por fin, riéndose, empezó, joven, apretó, Lo siento, tardó, llamó, ya no, Perdona, pensó en, otra vez.",
+  "historias": [
+    { "slot": "0", "quiere": "Ruben quiere abrir un perfil de La Rana para que el barrio sepa que vuelven", "impide": "Lorena no quiere su cara en internet, la foto desde una silla sale mal y Ruben no se sabe la contrasena", "cuesta": "Ruben se cae de la silla y la pantalla de su movil queda rota", "cambia": "Jaime llama a la puerta del garaje: grabo el concierto de 2012 y tiene el video", "emocion": "miedo: a Lorena se le quedan frias las manos al oir 2012 en boca de un desconocido, y guarda la guitarra sin decir nada" },
+    { "slot": "1", "quiere": "Jaime quiere ensenarles su video de 2012", "impide": "el movil viejo no tiene bateria y Lorena no quiere mirar", "cuesta": "Lorena ve lo que no vio en 2012: Ruben esperando a su cantante y las baquetas en el suelo; y Ruben deja que el video salga a internet", "cambia": "Ruben dice que lo suban porque es la verdad", "emocion": "culpa: le duele el pecho porque en el video Ruben la busca entre la gente, y aprieta los labios" },
+    { "slot": "2", "quiere": "Lorena quiere borrar el video cuando lo ve en el movil de una alumna", "impide": "todo el barrio ya lo comparte y Ruben no quiere borrarlo", "cuesta": "en el parque de bomberos a Ruben ya no le llaman por su nombre: ahora es la Rana", "cambia": "Lorena escribe debajo del video que en 2026 la cantante si esta", "emocion": "verguenza que se vuelve decision: pregunta si sale mal otra vez, Ruben contesta que esta vez estan los dos, y ella escribe el comentario" }
+  ]
+}
