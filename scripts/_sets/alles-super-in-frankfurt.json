@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "das Smartphone,die Sprachnachricht,der Kapuzenpullover,der Mülleimer",
+  "sentence": "",
+  "payload": {
+   "pairs": [
+    {
+     "word": "das Smartphone",
+     "answer": "a smartphone",
+     "options": [
+      "a smartphone",
+      "a voice message",
+      "a hoodie",
+      "a rubbish bin"
+     ]
+    },
+    {
+     "word": "die Sprachnachricht",
+     "answer": "a voice message",
+     "options": [
+      "a smartphone",
+      "a voice message",
+      "a hoodie",
+      "a rubbish bin"
+     ]
+    },
+    {
+     "word": "der Kapuzenpullover",
+     "answer": "a hoodie",
+     "options": [
+      "a smartphone",
+      "a voice message",
+      "a hoodie",
+      "a rubbish bin"
+     ]
+    },
+    {
+     "word": "der Mülleimer",
+     "answer": "a rubbish bin",
+     "options": [
+      "a smartphone",
+      "a voice message",
+      "a hoodie",
+      "a rubbish bin"
+     ]
+    }
+   ],
+   "prompt": "Match the words to their meanings."
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wunderschön",
+  "sentence": "Die Stadt ist wirklich [[wunderschön]].",
+  "payload": {
+   "answer": "beautiful",
+   "prompt": "Choose the meaning in context.",
+   "options": [
+    "beautiful",
+    "old",
+    "loud",
+    "empty"
+   ],
+   "audioClip": {
+    "language": "german",
+    "sentence": "Die Stadt ist wirklich wunderschön.",
+    "storySlug": "alles-super-in-frankfurt",
+    "targetWord": "wunderschön",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Wahrheit",
+  "sentence": "Das ist nicht die [[Wahrheit]].",
+  "payload": {
+   "answer": "truth",
+   "prompt": "Choose the meaning in context.",
+   "options": [
+    "truth",
+    "secret",
+    "story",
+    "joke"
+   ],
+   "audioClip": {
+    "language": "german",
+    "sentence": "Das ist nicht die Wahrheit.",
+    "storySlug": "alles-super-in-frankfurt",
+    "targetWord": "Wahrheit",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "weg",
+  "sentence": "Die Nachricht ist plötzlich [[weg]].",
+  "payload": {
+   "answer": "gone",
+   "prompt": "Choose the meaning in context.",
+   "options": [
+    "gone",
+    "new",
+    "long",
+    "short"
+   ],
+   "audioClip": {
+    "language": "german",
+    "sentence": "Die Nachricht ist plötzlich weg.",
+    "storySlug": "alles-super-in-frankfurt",
+    "targetWord": "weg",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bloß",
+  "sentence": "Sie hat [[bloß]] zwei Freunde hier.",
+  "payload": {
+   "answer": "only",
+   "prompt": "Choose the meaning in context.",
+   "options": [
+    "only",
+    "almost",
+    "already",
+    "still"
+   ],
+   "audioClip": {
+    "language": "german",
+    "sentence": "Sie hat bloß zwei Freunde hier.",
+    "storySlug": "alles-super-in-frankfurt",
+    "targetWord": "bloß",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Nachbarwohnung",
+  "sentence": "Da geht die [[Nachbarwohnung]] auf.",
+  "payload": {
+   "answer": "the flat next door",
+   "prompt": "Choose the meaning in context.",
+   "options": [
+    "the flat next door",
+    "the front door",
+    "the kitchen window",
+    "the garden gate"
+   ],
+   "audioClip": {
+    "language": "german",
+    "sentence": "Da geht die Nachbarwohnung auf.",
+    "storySlug": "alles-super-in-frankfurt",
+    "targetWord": "Nachbarwohnung",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Abend",
+  "sentence": "Am [[Abend]] ist es draußen schon dunkel.",
+  "payload": {
+   "answer": "evening",
+   "prompt": "Choose the meaning in context.",
+   "options": [
+    "evening",
+    "morning",
+    "lunchtime",
+    "weekend"
+   ],
+   "audioClip": {
+    "language": "german",
+    "sentence": "Am Abend ist es draußen schon dunkel.",
+    "storySlug": "alles-super-in-frankfurt",
+    "targetWord": "Abend",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dunkelgrünen",
+  "sentence": "Er trägt einen [[dunkelgrünen]] Pullover.",
+  "payload": {
+   "answer": "dark green",
+   "prompt": "Choose the meaning in context.",
+   "options": [
+    "dark green",
+    "light blue",
+    "bright red",
+    "pale grey"
+   ],
+   "audioClip": {
+    "language": "german",
+    "sentence": "Er trägt einen dunkelgrünen Pullover.",
+    "storySlug": "alles-super-in-frankfurt",
+    "targetWord": "dunkelgrünen",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ziemlich",
+  "sentence": "Die Wände hier sind [[ziemlich]] dünn.",
+  "payload": {
+   "answer": "quite",
+   "prompt": "Choose the meaning in context.",
+   "options": [
+    "quite",
+    "never",
+    "hardly",
+    "barely"
+   ],
+   "audioClip": {
+    "language": "german",
+    "sentence": "Die Wände hier sind ziemlich dünn.",
+    "storySlug": "alles-super-in-frankfurt",
+    "targetWord": "ziemlich",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Lüge",
+  "sentence": "Diese Geschichte war eine [[Lüge]].",
+  "payload": {
+   "answer": "lie",
+   "prompt": "Choose the meaning in context.",
+   "options": [
+    "lie",
+    "joke",
+    "secret",
+    "surprise"
+   ],
+   "audioClip": {
+    "language": "german",
+    "sentence": "Diese Geschichte war eine Lüge.",
+    "storySlug": "alles-super-in-frankfurt",
+    "targetWord": "Lüge",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "peinlich",
+  "sentence": "Das ist ihr sehr [[peinlich]].",
+  "payload": {
+   "answer": "embarrassing",
+   "prompt": "Choose the meaning in context.",
+   "options": [
+    "embarrassing",
+    "funny",
+    "sad",
+    "strange"
+   ],
+   "audioClip": {
+    "language": "german",
+    "sentence": "Das ist ihr sehr peinlich.",
+    "storySlug": "alles-super-in-frankfurt",
+    "targetWord": "peinlich",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hält",
+  "sentence": "Sie [[hält]] das Handy ganz fest.",
+  "payload": {
+   "answer": "holds",
+   "prompt": "Choose the meaning in context.",
+   "options": [
+    "holds",
+    "drops",
+    "throws",
+    "opens"
+   ],
+   "audioClip": {
+    "language": "german",
+    "sentence": "Sie hält das Handy ganz fest.",
+    "storySlug": "alles-super-in-frankfurt",
+    "targetWord": "hält",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wirklich",
+  "sentence": "Kennst du hier [[wirklich]] niemanden?",
+  "payload": {
+   "answer": "really",
+   "prompt": "Choose the meaning in context.",
+   "options": [
+    "really",
+    "never",
+    "already",
+    "still"
+   ],
+   "audioClip": {
+    "language": "german",
+    "sentence": "Kennst du hier wirklich niemanden?",
+    "storySlug": "alles-super-in-frankfurt",
+    "targetWord": "wirklich",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Natürlich",
+  "sentence": "[[Natürlich]] nicht, du bist ja neu.",
+  "payload": {
+   "answer": "of course",
+   "prompt": "Choose the meaning in context.",
+   "options": [
+    "of course",
+    "maybe",
+    "rarely",
+    "almost"
+   ],
+   "audioClip": {
+    "language": "german",
+    "sentence": "Natürlich nicht, du bist ja neu.",
+    "storySlug": "alles-super-in-frankfurt",
+    "targetWord": "Natürlich",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "kennengelernt",
+  "sentence": "Sie hat schon viele Leute _____.",
+  "payload": {
+   "answer": "kennengelernt",
+   "prompt": "Complete the sentence.",
+   "options": [
+    "kennengelernt",
+    "besucht",
+    "gefragt",
+    "gegrüßt"
+   ],
+   "audioClip": {
+    "language": "german",
+    "sentence": "Sie hat schon viele Leute kennengelernt.",
+    "storySlug": "alles-super-in-frankfurt",
+    "targetWord": "kennengelernt",
+    "storySource": "user"
+   },
+   "translation": "She has already _____ many people.",
+   "optionTranslations": [
+    "met",
+    "visited",
+    "asked",
+    "greeted"
+   ]
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "knarrt",
+  "sentence": "Die alte Tür _____ laut.",
+  "payload": {
+   "answer": "knarrt",
+   "prompt": "Complete the sentence.",
+   "options": [
+    "knarrt",
+    "klingelt",
+    "brennt",
+    "schwimmt"
+   ],
+   "audioClip": {
+    "language": "german",
+    "sentence": "Die alte Tür knarrt laut.",
+    "storySlug": "alles-super-in-frankfurt",
+    "targetWord": "knarrt",
+    "storySource": "user"
+   },
+   "translation": "The old door _____ loudly.",
+   "optionTranslations": [
+    "creaks",
+    "rings",
+    "burns",
+    "swims"
+   ]
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "versteckt",
+  "sentence": "Er _____ das Geschenk im Schrank.",
+  "payload": {
+   "answer": "versteckt",
+   "prompt": "Complete the sentence.",
+   "options": [
+    "versteckt",
+    "sucht",
+    "malt",
+    "trägt"
+   ],
+   "audioClip": {
+    "language": "german",
+    "sentence": "Er versteckt das Geschenk im Schrank.",
+    "storySlug": "alles-super-in-frankfurt",
+    "targetWord": "versteckt",
+    "storySource": "user"
+   },
+   "translation": "He _____ the present in the wardrobe.",
+   "optionTranslations": [
+    "hides",
+    "looks for",
+    "paints",
+    "carries"
+   ]
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,137 @@
+[
+  {
+    "topic": "chats-and-phone-calls",
+    "slotIndex": 0,
+    "title": "Alles super in Frankfurt",
+    "slug": "alles-super-in-frankfurt",
+    "synopsis": "Julia is new in Frankfurt. On the stairs she records a happy voice message for her friends back in Rostock and says she already knows many people. It is not true. Her neighbour Moritz opens his door, and he has heard every word through the thin walls of the building.",
+    "text": "Julia, eine Physiotherapeutin aus Rostock, sitzt am Abend auf der Treppe in Frankfurt. Moritz ist Straßenbahnfahrer und wohnt gegenüber, aber Julia kennt ihn nicht. Sie nimmt eine Sprachnachricht für ihre Freundinnen auf. “Hallo, ihr Lieben! Frankfurt ist wunderschön, und ich habe schon viele Leute kennengelernt”, sagt sie.\n\nDas ist nicht die Wahrheit. Sie kennt hier noch niemanden. Die Nachricht ist weg, und bloß zwei Haken stehen darunter. Unten knarrt die Haustür. Es ist kalt, und keine Freundin antwortet.\n\nDa geht die Nachbarwohnung auf. Moritz trägt einen dunkelgrünen Kapuzenpullover. “Die Wände hier sind ziemlich dünn”, meint Moritz. “Ich habe alles gehört, auch die vielen Leute.”\n\nJulia wird rot. Die Lüge ist ihr peinlich. Sie hält das Smartphone fest und versteckt es in der Jacke.\n\n“Ich kenne hier wirklich niemanden”, gibt Julia zu. Moritz lacht nicht. “Natürlich nicht, du bist ja neu. Jetzt kennst du mich, Moritz von gegenüber”, antwortet er und trägt seinen Mülleimer nach unten.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "der Abend",
+        "surface": "Abend",
+        "definition": "The evening; the part of the day after work and before night."
+      },
+      {
+        "type": "noun",
+        "word": "die Sprachnachricht",
+        "anchor": true,
+        "surface": "Sprachnachricht",
+        "definition": "A voice message that you record and send on your phone."
+      },
+      {
+        "type": "adjective",
+        "word": "wunderschön",
+        "surface": "wunderschön",
+        "definition": "Very beautiful; really lovely to look at or to be in."
+      },
+      {
+        "type": "verb",
+        "word": "kennenlernen",
+        "surface": "kennengelernt",
+        "definition": "To meet a person for the first time and start to know them."
+      },
+      {
+        "type": "noun",
+        "word": "die Wahrheit",
+        "surface": "Wahrheit",
+        "definition": "The truth; what is really true, not a story you make up."
+      },
+      {
+        "type": "adverb",
+        "word": "weg",
+        "surface": "weg",
+        "definition": "Gone; it has left and it is not here any more."
+      },
+      {
+        "type": "adverb",
+        "word": "bloß",
+        "surface": "bloß",
+        "definition": "Only; just that and nothing more than that."
+      },
+      {
+        "type": "verb",
+        "word": "knarren",
+        "surface": "knarrt",
+        "definition": "To creak; an old door or floor makes a long, low noise."
+      },
+      {
+        "type": "noun",
+        "word": "die Nachbarwohnung",
+        "anchor": true,
+        "surface": "Nachbarwohnung",
+        "definition": "The flat next to yours or across the hall from yours."
+      },
+      {
+        "type": "noun",
+        "word": "das Smartphone",
+        "surface": "Smartphone",
+        "definition": "A mobile phone that you use for calls, messages and the internet."
+      },
+      {
+        "type": "adjective",
+        "word": "dunkelgrün",
+        "surface": "dunkelgrünen",
+        "definition": "Dark green; a deep green colour like the leaves of a tree."
+      },
+      {
+        "type": "noun",
+        "word": "der Kapuzenpullover",
+        "anchor": true,
+        "surface": "Kapuzenpullover",
+        "definition": "A hoodie; a warm, soft top with a hood for your head."
+      },
+      {
+        "type": "adverb",
+        "word": "ziemlich",
+        "surface": "ziemlich",
+        "definition": "Quite; more than a little, but not very much."
+      },
+      {
+        "type": "noun",
+        "word": "die Lüge",
+        "surface": "Lüge",
+        "definition": "A lie; something you say that you know is not true."
+      },
+      {
+        "type": "adjective",
+        "word": "peinlich",
+        "surface": "peinlich",
+        "definition": "Embarrassing; it makes you feel awkward in front of other people."
+      },
+      {
+        "type": "verb",
+        "word": "halten",
+        "surface": "hält",
+        "definition": "To hold something in your hand and not let it go."
+      },
+      {
+        "type": "verb",
+        "word": "verstecken",
+        "surface": "versteckt",
+        "definition": "To hide something so that other people cannot see it."
+      },
+      {
+        "type": "adverb",
+        "word": "wirklich",
+        "surface": "wirklich",
+        "definition": "Really; you say it when something is truly the case."
+      },
+      {
+        "type": "adverb",
+        "word": "natürlich",
+        "surface": "Natürlich",
+        "definition": "Of course; you say it when something is clear and normal."
+      },
+      {
+        "type": "noun",
+        "word": "der Mülleimer",
+        "anchor": true,
+        "surface": "Mülleimer",
+        "definition": "A rubbish bin; you put old food and paper in it."
+      }
+    ],
+    "arcType": "reframe-turn"
+  }
+]
