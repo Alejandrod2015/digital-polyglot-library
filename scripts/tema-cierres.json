@@ -5943,6 +5943,72 @@
       ]
     }
   },
+  "cmu36dk1d0007j8p7grgcyiok#couples-and-dating": {
+    "cerrado": "2026-09-15T22:18:58.354Z",
+    "hash": "a775441c02320ccd",
+    "historias": [
+      "couples-and-dating#0 raul-lee-poesia",
+      "couples-and-dating#1 agua-en-el-local",
+      "couples-and-dating#2 raul-no-llama"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"tierno y agridulce, de dos citas junto al rio: un hombre timido que escucha y una mujer que por fin dice en voz alta lo que callo catorce anos\", espina \"La Rana se prepara para las Ferias; en este tema Lorena cuenta por primera vez a alguien, un desconocido, por que no fue al concierto de 2012, y el grupo le cuesta una relacion que empezaba.\")",
+      "validador canonico: 3/3 (perfil narrador)",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dijo\" 33%)",
+      "arranques de parrafo variados (mas repetido \"raúl\", 13%)",
+      "densidad 8.6 palabras por oracion (techo 13 en a2)",
+      "seguidilla 12/40 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.00 sobre 44 plazas · 44 salen una sola vez | ancladas: 16/60 (27%) | cola: 44/44 portables con un solo encuentro (100%, tope 80%) | de un solo encuentro: cinco minutos tarde, conocían, tímido, simpático, hablaron, me suena, un mal día, nada más, poco a poco, leyó, invito, despedirse, Vale, en la otra orilla, soy yo, Me voy, fui, Tenía miedo, Nunca, a nadie, cogió, Gracias por, entra, mojan, sin prisa, salió corriendo, De pronto, vacía, Justo entonces, Tres días después…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: couples-and-dating (Raúl, Lorena)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a2",
+      "variante": "spain",
+      "registro": "tierno y agridulce, de dos citas junto al rio: un hombre timido que escucha y una mujer que por fin dice en voz alta lo que callo catorce anos",
+      "espina": "La Rana se prepara para las Ferias; en este tema Lorena cuenta por primera vez a alguien, un desconocido, por que no fue al concierto de 2012, y el grupo le cuesta una relacion que empezaba.",
+      "recursos": "A2: preterito e imperfecto en el relato de 2012 dentro del dialogo (llegue a la plaza, vi a mucha gente, tenia miedo), espejo concreto (el restaurante vacio que Raul no quiere esperar), gancho literal (lo de 2012 guardado para las Ferias). Parrafos 5, 4 y 6. Franjas: una tarde en la terraza, la noche del viernes, tres dias despues.",
+      "reencuentro": "Vuelven en el texto 19 de las 90 portables de los temas 1 a 5 que salian una sola vez (medido al cerrar): se cayó, Mucha gente, cruzaron, cansada, pesa, en medio de, con cuidado, sin preguntar nada, seca, al final, suave, encima, No pasa nada, escuchó, con atención, juntos, sin mirar atrás, enseguida, todo el mundo.",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "Lorena quiere que su primera cita con Raul salga bien",
+          "impide": "Raul la reconoce del video de 2012 y le pregunta por aquel concierto",
+          "cuesta": "Lorena pierde el secreto: un desconocido ya sabe que en 2012 no estaba en el escenario",
+          "cambia": "Raul la escucha sin preguntar mas y la invita a cenar el viernes",
+          "emocion": "nervios que se calman: se le cae la servilleta al oir la pregunta y poco a poco se siente tranquila junto al rio"
+        },
+        {
+          "slot": "1",
+          "quiere": "Lorena quiere contarle a Raul la verdad de 2012",
+          "impide": "el restaurante da a la Plaza Mayor, donde tenia que tocar, y en mitad de la cena Ruben llama porque entra agua en el local",
+          "cuesta": "la cena con Raul, que se queda solo en la mesa",
+          "cambia": "Lorena elige al grupo y sale corriendo a la lluvia",
+          "emocion": "miedo dicho en voz alta y despues culpa: habla en voz baja, Raul le coge la mano, y ella se va cansada sin mirar atras"
+        },
+        {
+          "slot": "2",
+          "quiere": "Lorena quiere arreglar las cosas con Raul",
+          "impide": "Raul no quiere ser el novio que espera mientras ella vive para La Rana",
+          "cuesta": "Raul no vuelve a llamar",
+          "cambia": "Lorena lo entiende y se guarda lo de 2012 para contarselo a Ruben en las Ferias",
+          "emocion": "tristeza tranquila: tiene la boca seca, deja el libro y esa noche dice que con la guitarra todo pesa menos"
+        }
+      ]
+    }
+  },
   "cmu36dk1d0007j8p7grgcyiok#driving-and-cars": {
     "cerrado": "2026-09-15T21:54:09.733Z",
     "hash": "1609baf9e748f2ca",
