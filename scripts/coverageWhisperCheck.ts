@@ -8,12 +8,26 @@ import { execFileSync } from "child_process";
 import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "fs";
 import { tmpdir } from "os";
 import path from "path";
-import { checkCoverage, norm, type CoverageResult } from "./coverageCheckLib";
+import { checkCoverage, norm, type CoverageResult, type NumberLang } from "./coverageCheckLib";
 
 const WHISPER_CLI = "/opt/homebrew/bin/whisper-cli";
 const MODEL = path.join(
   __dirname, "..", "scripts", "tts", "whisper-models", "ggml-small.bin"
 );
+
+// Idioma del journey -> codigo de whisper -l y tabla de numeros de
+// coverageCheckLib. Probado en seco (2026-09-15) contra 3 masters reales del
+// Friends DE C1 publicado: "-l fr" (el default historico) da huecos falsos en
+// aleman (numeros y ortografia mal leidos, 2 de 3); "-l de" sale limpio salvo
+// una linea real en dialecto (no un fallo del candado). Sin entrada = frances,
+// que es el comportamiento de siempre para los journeys que ya usaban esto.
+const WHISPER_LANG: Record<string, string> = { german: "de" };
+export function whisperLangFor(journeyLanguage?: string | null): string {
+  return (journeyLanguage && WHISPER_LANG[journeyLanguage]) || "fr";
+}
+export function numberLangFor(journeyLanguage?: string | null): NumberLang {
+  return journeyLanguage === "german" ? "de" : "fr";
+}
 
 type RawWord = { text: string; start: number; end: number };
 
@@ -38,7 +52,7 @@ function parseWhisperJson(jsonPath: string): RawWord[] {
   return words.filter((w) => norm(w.text));
 }
 
-export async function transcribeMaster(masterUrl: string): Promise<RawWord[]> {
+export async function transcribeMaster(masterUrl: string, whisperLang = "fr"): Promise<RawWord[]> {
   const dir = mkdtempSync(path.join(tmpdir(), "covcheck-"));
   try {
     const mp3 = path.join(dir, "a.mp3");
@@ -47,16 +61,26 @@ export async function transcribeMaster(masterUrl: string): Promise<RawWord[]> {
     const wav = path.join(dir, "a.wav");
     execFileSync("ffmpeg", ["-v", "error", "-i", mp3, "-ar", "16000", "-ac", "1", "-c:a", "pcm_s16le", wav, "-y"]);
     const out = path.join(dir, "a");
-    execFileSync(WHISPER_CLI, ["-m", MODEL, "-l", "fr", "-np", "-ml", "1", "-ojf", "-of", out, wav], { stdio: "pipe" });
+    execFileSync(WHISPER_CLI, ["-m", MODEL, "-l", whisperLang, "-np", "-ml", "1", "-ojf", "-of", out, wav], { stdio: "pipe" });
     return parseWhisperJson(`${out}.json`);
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
 }
 
-export async function checkMasterCoverage(masterUrl: string, referenceText: string): Promise<CoverageResult> {
-  const heard = await transcribeMaster(masterUrl);
+/**
+ * `journeyLanguage` es el `Journey.language` ("german", "french", ...);
+ * decide el `-l` de whisper y la tabla de numeros (ver whisperLangFor /
+ * numberLangFor arriba). Sin argumento, frances: el comportamiento de
+ * siempre para los journeys que ya llamaban esto sin idioma.
+ */
+export async function checkMasterCoverage(
+  masterUrl: string,
+  referenceText: string,
+  journeyLanguage?: string | null
+): Promise<CoverageResult> {
+  const heard = await transcribeMaster(masterUrl, whisperLangFor(journeyLanguage));
   const textWords = referenceText.split(/\s+/).map(norm).filter(Boolean);
   const heardWords = heard.map((w) => norm(w.text)).filter(Boolean);
-  return checkCoverage(textWords, heardWords);
+  return checkCoverage(textWords, heardWords, numberLangFor(journeyLanguage));
 }

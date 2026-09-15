@@ -152,3 +152,46 @@ describe("masters reales FR A2", () => {
     });
   }
 });
+
+describe("canonNumbers aleman", () => {
+  it("compuestos con und y hundert", () => {
+    expect(canonNumbers(w("einundzwanzig"), "de")).toEqual(["21"]);
+    expect(canonNumbers(w("fünfundzwanzig"), "de")).toEqual(["25"]);
+    expect(canonNumbers(w("dreißig"), "de")).toEqual(["30"]);
+    expect(canonNumbers(w("hundertfünfzig"), "de")).toEqual(["150"]);
+    expect(canonNumbers(w("dreizehn Uhr"), "de")).toEqual(["13", "uhr"]);
+  });
+
+  it("ein suelto sigue siendo articulo, eins no", () => {
+    expect(canonNumbers(w("ein Hund"), "de")).toEqual(["ein", "hund"]);
+    expect(canonNumbers(w("es sind eins"), "de")).toEqual(["es", "sind", "1"]);
+  });
+
+  it("no cambia el comportamiento frances por defecto (lang omitido)", () => {
+    expect(canonNumbers(w("vingt et une heures"))).toEqual(["21", "heures"]);
+  });
+});
+
+// Masters REALES del Friends DE C1 publicado, transcritos con
+// `whisper-cli -l de` (probado en seco 2026-09-15 antes del Friends DE A1:
+// con -l fr, 2 de los 3 daban huecos falsos por numeros/ortografia mal
+// leidos; con -l de, limpios salvo "alaaf-fur-die-neue", que falla en una
+// linea real en dialecto colones que whisper transcribe distinto, no un
+// fallo del candado, y por eso no entra en este fixture).
+describe("masters reales DE C1", () => {
+  type Fx = { slug: string; expected: "limpio" | "roto"; text: string; heard: string[] };
+  const fixtures = JSON.parse(
+    readFileSync(path.join(__dirname, "fixtures", "coverage-de-c1-masters.json"), "utf8"),
+  ) as Fx[];
+
+  it("hay 2 masters", () => {
+    expect(fixtures.length).toBe(2);
+  });
+
+  for (const f of fixtures) {
+    it(`${f.slug} sale limpio con la tabla de numeros alemana`, () => {
+      const res = checkCoverage(w(f.text), f.heard.map(norm).filter(Boolean), "de");
+      expect(res.ok).toBe(true);
+    });
+  }
+});

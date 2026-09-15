@@ -50,7 +50,7 @@ function silencios(url: string): Array<[number, number]> {
   const originalUrl = process.argv[3];
   if (!slug || !originalUrl) throw new Error("uso: <slug> <originalUrl>");
 
-  const s = await p.journeyStory.findFirst({ where: { slug }, select: { id: true, title: true, text: true } });
+  const s = await p.journeyStory.findFirst({ where: { slug }, select: { id: true, title: true, text: true, journey: { select: { language: true } } } });
   if (!s) throw new Error("no story");
 
   await p.journeyStory.update({
@@ -61,7 +61,7 @@ function silencios(url: string): Array<[number, number]> {
   await generateWordTimingsForStory(s.id);
   console.log("alineacion OK (Modal, contra el original)");
 
-  const cov = await checkMasterCoverage(originalUrl, `${s.title}. ${s.text}`);
+  const cov = await checkMasterCoverage(originalUrl, `${s.title}. ${s.text}`, s.journey.language);
   console.log("cobertura:", cov.ok ? "OK" : "FALLA");
   cov.gaps.forEach((g) => console.log("  HUECO:", g.textWords.join(" ")));
   cov.duplicates.forEach((d) => console.log("  DUP:", d.words.join(" ")));

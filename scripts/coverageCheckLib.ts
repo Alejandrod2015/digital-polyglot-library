@@ -61,23 +61,49 @@ function wordsMatch(a: string, b: string): boolean {
 }
 
 // --- Numeros: letra y cifra son equivalentes -------------------------------
-// Francés, que es lo que transcribe whisper aqui (-l fr). Las palabras llegan
-// ya normalizadas (sin guiones ni tildes), asi que "dix-sept" es "dixsept" y
-// "quatre-vingts" es "quatrevingts": cada token se descompone en morfemas.
-const UNITS: Record<string, number> = {
+// Una tabla de morfemas por idioma (el idioma se lo pasa el llamador; hoy
+// frances o aleman, whisper transcribe en ese idioma con -l). Las palabras
+// llegan ya normalizadas (sin guiones ni tildes ni ß, ver norm()), asi que
+// "dix-sept" es "dixsept" y "dreißig" es "dreiig": cada token se descompone
+// en morfemas.
+export type NumberLang = "fr" | "de";
+
+const UNITS_FR: Record<string, number> = {
   zero: 0, un: 1, une: 1, deux: 2, trois: 3, quatre: 4, cinq: 5, six: 6, sept: 7, huit: 8, neuf: 9,
   dix: 10, onze: 11, douze: 12, treize: 13, quatorze: 14, quinze: 15, seize: 16,
 };
-const TENS: Record<string, number> = { vingt: 20, vingts: 20, trente: 30, quarante: 40, cinquante: 50, soixante: 60 };
-const MORPHEMES = [...Object.keys(UNITS), ...Object.keys(TENS), "cent", "cents", "mille", "et"]
+const TENS_FR: Record<string, number> = { vingt: 20, vingts: 20, trente: 30, quarante: 40, cinquante: 50, soixante: 60 };
+const MORPHEMES_FR = [...Object.keys(UNITS_FR), ...Object.keys(TENS_FR), "cent", "cents", "mille", "et"]
   .sort((x, y) => y.length - x.length);
 
+// Aleman: "eins" es el numero suelto (cuenta, "eins zwei drei"); "ein" solo
+// cuenta como numero dentro de un compuesto ("einundzwanzig"), nunca solo
+// (es el articulo indefinido en casi todo texto real, "ein Hund"). Los
+// numeros del 13 al 19 son morfemas propios (dreizehn...), no compuestos de
+// "und". "ß" ya se elimina en norm(), asi que "dreißig" llega como "dreiig".
+const UNITS_DE: Record<string, number> = {
+  null: 0, eins: 1, ein: 1, zwei: 2, drei: 3, vier: 4, funf: 5, sechs: 6, sieben: 7, acht: 8, neun: 9,
+  zehn: 10, elf: 11, zwolf: 12, dreizehn: 13, vierzehn: 14, funfzehn: 15, sechzehn: 16, siebzehn: 17,
+  achtzehn: 18, neunzehn: 19,
+};
+const TENS_DE: Record<string, number> = {
+  zwanzig: 20, dreiig: 30, vierzig: 40, funfzig: 50, sechzig: 60, siebzig: 70, achtzig: 80, neunzig: 90,
+};
+const MORPHEMES_DE = [...Object.keys(UNITS_DE), ...Object.keys(TENS_DE), "hundert", "tausend", "und"]
+  .sort((x, y) => y.length - x.length);
+
+function tablesFor(lang: NumberLang) {
+  return lang === "de"
+    ? { UNITS: UNITS_DE, TENS: TENS_DE, MORPHEMES: MORPHEMES_DE }
+    : { UNITS: UNITS_FR, TENS: TENS_FR, MORPHEMES: MORPHEMES_FR };
+}
+
 /** Descompone un token en morfemas numericos, o null si no es un numero. */
-function numberMorphemes(token: string): string[] | null {
+function numberMorphemes(token: string, morphemes: string[]): string[] | null {
   const out: string[] = [];
   let rest = token;
   while (rest) {
-    const m = MORPHEMES.find((x) => rest.startsWith(x));
+    const m = morphemes.find((x) => rest.startsWith(x));
     if (!m) return null;
     out.push(m);
     rest = rest.slice(m.length);
@@ -85,17 +111,18 @@ function numberMorphemes(token: string): string[] | null {
   return out;
 }
 
-/** Valor de una secuencia de morfemas ("vingt et une", "quatre vingt dix"). */
-function numberValue(ms: string[]): number | null {
+/** Valor de una secuencia de morfemas ("vingt et une" / "ein und zwanzig"). */
+function numberValue(ms: string[], lang: NumberLang): number | null {
+  const { UNITS, TENS } = tablesFor(lang);
   let total = 0, current = 0;
   for (let k = 0; k < ms.length; k++) {
     const m = ms[k];
-    if (m === "et") continue;
+    if (m === "et" || m === "und") continue;
     if (m in UNITS) current += UNITS[m];
-    else if (m === "vingt" || m === "vingts") current = current === 4 ? 80 : current + 20;
+    else if (lang === "fr" && (m === "vingt" || m === "vingts")) current = current === 4 ? 80 : current + 20;
     else if (m in TENS) current += TENS[m];
-    else if (m === "cent" || m === "cents") current = (current || 1) * 100;
-    else if (m === "mille") { total += (current || 1) * 1000; current = 0; }
+    else if (m === "cent" || m === "cents" || m === "hundert") current = (current || 1) * 100;
+    else if (m === "mille" || m === "tausend") { total += (current || 1) * 1000; current = 0; }
     else return null;
   }
   return total + current;
@@ -104,17 +131,23 @@ function numberValue(ms: string[]): number | null {
 /**
  * Lleva a cifra los numeros de una lista de palabras normalizadas:
  * "vingt et une heures" -> "21 heures", "21h" -> "21 heures", "10" -> "10".
- * "un"/"une" sueltos se quedan como estan: casi siempre son articulo
- * ("encore une voie"); solo cuentan dentro de un compuesto ("vingt et une").
+ * Un articulo/numeral suelto ("un"/"une" en frances, "ein" en aleman) se
+ * queda como esta: casi siempre es articulo; solo cuenta dentro de un
+ * compuesto ("vingt et une", "einundzwanzig"). `lang` por defecto "fr", que
+ * es el comportamiento historico de este candado.
  */
-export function canonNumbers(words: string[]): string[] {
+export function canonNumbers(words: string[], lang: NumberLang = "fr"): string[] {
+  const { MORPHEMES } = tablesFor(lang);
+  const hourWord = lang === "de" ? "uhr" : "heures";
+  const standaloneArticles = lang === "de" ? ["ein"] : ["un", "une"];
+  const connector = lang === "de" ? "und" : "et";
   const out: string[] = [];
   let k = 0;
   while (k < words.length) {
     const w = words[k];
     const hour = /^(\d+)h(\d*)$/.exec(w);
-    if (hour) {
-      out.push(String(Number(hour[1])), "heures");
+    if (hour && lang === "fr") {
+      out.push(String(Number(hour[1])), hourWord);
       if (hour[2]) out.push(String(Number(hour[2])));
       k++;
       continue;
@@ -125,18 +158,18 @@ export function canonNumbers(words: string[]): string[] {
     const run: string[] = [];
     let end = k;
     while (end < words.length) {
-      const ms = numberMorphemes(words[end]);
+      const ms = numberMorphemes(words[end], MORPHEMES);
       if (!ms) break;
       run.push(...ms);
       end++;
     }
     let taken = 0, value: number | null = null;
     for (let e = end; e > k; e--) {
-      const ms = words.slice(k, e).flatMap((x) => numberMorphemes(x)!);
-      const standaloneArticle = ms.length === 1 && (ms[0] === "un" || ms[0] === "une");
-      const dangling = ms[0] === "et" || ms[ms.length - 1] === "et";
+      const ms = words.slice(k, e).flatMap((x) => numberMorphemes(x, MORPHEMES)!);
+      const standaloneArticle = ms.length === 1 && standaloneArticles.includes(ms[0]);
+      const dangling = ms[0] === connector || ms[ms.length - 1] === connector;
       if (standaloneArticle || dangling) continue;
-      const v = numberValue(ms);
+      const v = numberValue(ms, lang);
       if (v !== null) { taken = e - k; value = v; break; }
     }
     if (taken > 0 && value !== null) {
@@ -263,9 +296,9 @@ export function findDuplicates(heardWords: string[], textWords: string[], window
 
 export type CoverageResult = { gaps: Gap[]; duplicates: Duplicate[]; ok: boolean };
 
-export function checkCoverage(textWords: string[], heardWords: string[]): CoverageResult {
-  const text = canonNumbers(textWords);
-  const heard = canonNumbers(heardWords);
+export function checkCoverage(textWords: string[], heardWords: string[], lang: NumberLang = "fr"): CoverageResult {
+  const text = canonNumbers(textWords, lang);
+  const heard = canonNumbers(heardWords, lang);
   const gaps = findGaps(text, heard);
   const duplicates = findDuplicates(heard, text);
   return { gaps, duplicates, ok: gaps.length === 0 && duplicates.length === 0 };
