@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-import { assertTopicsGrounded, TopicEvidenceError, type TopicProposal } from "../topicEvidence";
+import { assertTopicsGrounded, reportTopicEvidence, TopicEvidenceError, type TopicProposal } from "../topicEvidence";
 import type { PrismaClient } from "@/generated/prisma";
 
 /**
@@ -48,107 +48,125 @@ const EXPAT_FRENCH: TopicProposal[] = [
   { label: "First Day At Work", evidence: ["work"] },
 ];
 
-describe("assertTopicsGrounded", () => {
-  it("rechaza los siete temas del Expat francés respaldados por el desplegable", async () => {
-    const err = await assertTopicsGrounded({
-      language: "French",
-      proposals: EXPAT_FRENCH,
-      prisma: fakePrisma(),
-    }).catch((e) => e);
+type Row = { targetLanguage: string; motivation: string | null; learningGoal: string | null; applicationReason: string | null };
+const rows = (r: Row[]) => r as unknown as typeof ROWS;
 
-    expect(err).toBeInstanceOf(TopicEvidenceError);
-    // Los siete, no uno: ninguno se sostiene con un clic.
-    for (const p of EXPAT_FRENCH) expect(String(err.message)).toContain(`"${p.label}"`);
-    expect(String(err.message)).toContain("demasiado cortas");
+// Desde el 2026-09-15 las motivaciones son PISTA, no filtro: la falta de cita
+// avisa y no tira. Solo tiran las reglas de nombre.
+describe("reportTopicEvidence", () => {
+  it("marca los siete temas del Expat francés como sin pista, sin tirar", async () => {
+    const r = await reportTopicEvidence({ language: "French", proposals: EXPAT_FRENCH, prisma: fakePrisma() });
+
+    expect(r.topics.every((t) => !t.cited)).toBe(true);
+    for (const p of EXPAT_FRENCH) expect(r.evidenceWarnings.join("\n")).toContain(`"${p.label}"`);
+    expect(r.evidenceWarnings.join("\n")).toContain("demasiado cortas");
+    expect(r.nameProblems).toEqual([]);
   });
 
-  it("rechaza el valor enlatado aunque el idioma tenga texto libre al lado", async () => {
-    const err = await assertTopicsGrounded({
+  it("no cuenta el valor enlatado del desplegable como pista", async () => {
+    const r = await reportTopicEvidence({
       language: "French",
       proposals: [{ label: "Family & Relatives", evidence: ["family connection"] }],
-      prisma: fakePrisma([
+      prisma: fakePrisma(rows([
         { targetLanguage: "French", motivation: "Family connection", learningGoal: null, applicationReason: "To try new ways to learn" },
-      ]),
-    }).catch((e) => e);
-
-    expect(err).toBeInstanceOf(TopicEvidenceError);
-    expect(String(err.message)).toContain('"Family & Relatives"');
+      ])),
+    });
+    expect(r.cannedClicks).toBe(1);
+    expect(r.topics[0].cited).toBe(false);
   });
 
-  it("rechaza una cita larga que nadie escribió", async () => {
-    const err = await assertTopicsGrounded({
+  it("avisa de una cita larga que nadie escribió", async () => {
+    const r = await reportTopicEvidence({
       language: "French",
       proposals: [{ label: "Houses & Mortgages", evidence: ["buying a house in Lyon next year"] }],
       prisma: fakePrisma(),
-    }).catch((e) => e);
-
-    expect(err).toBeInstanceOf(TopicEvidenceError);
-    expect(String(err.message)).toContain("nadie escribió");
+    });
+    expect(r.evidenceWarnings.join("\n")).toContain("nadie escribió");
   });
 
-  it("cuenta las frases ESCRITAS, no las filas, cuando falla", async () => {
-    const err = await assertTopicsGrounded({
+  it("cuenta las frases ESCRITAS, no las filas", async () => {
+    const r = await reportTopicEvidence({
       language: "French",
       proposals: [{ label: "Phone & Internet", evidence: ["move abroad"] }],
       prisma: fakePrisma(),
-    }).catch((e) => e);
-
+    });
     // 2 clics + 2 applicationReason: cero motivaciones escritas.
-    expect(String(err.message)).toContain("Hay 0 frases de learningGoal y 2 applicationReason");
+    expect(r).toMatchObject({ writtenMotivations: 0, applicationReasons: 2, cannedClicks: 2, corpusSize: 2 });
   });
 
-  it("acepta temas citando texto libre de verdad", async () => {
-    await expect(
-      assertTopicsGrounded({
-        language: "French",
-        proposals: [
-          { label: "Moving & Deadlines", slug: "moving-and-deadlines", evidence: ["plan to move there in 6-8 months"] },
-          { label: "Apps & Learning", slug: "apps-and-learning", evidence: ["development of a useful app"] },
-        ],
-        prisma: fakePrisma(),
-      }),
-    ).resolves.toBeUndefined();
+  it("reconoce texto libre de verdad, de motivation, learningGoal y applicationReason", async () => {
+    const fr = await reportTopicEvidence({
+      language: "French",
+      proposals: [{ label: "Moving & Deadlines", evidence: ["plan to move there in 6-8 months"] }],
+      prisma: fakePrisma(),
+    });
+    expect(fr.topics[0]).toMatchObject({ cited: true, applicants: 1 });
+    expect(fr.evidenceWarnings).toEqual([]);
+
+    const es = await reportTopicEvidence({
+      language: "Spanish",
+      proposals: [{ label: "Neighbours & Favours", evidence: ["wish to talk to neighbours"] }],
+      prisma: fakePrisma(),
+    });
+    expect(es.topics[0].cited).toBe(true);
+
+    const pt = await reportTopicEvidence({
+      language: "Portuguese",
+      proposals: [{ label: "Markets & Fruit", evidence: ["buy fruit at the market"] }],
+      prisma: fakePrisma(rows([
+        { targetLanguage: "Portuguese", motivation: "Travel", learningGoal: "I want to buy fruit at the market without pointing", applicationReason: "Curious about the new app" },
+      ])),
+    });
+    expect(pt.topics[0].cited).toBe(true);
   });
 
-  it("acepta la motivación escrita a mano por la opción Other", async () => {
-    await expect(
-      assertTopicsGrounded({
-        language: "Spanish",
-        proposals: [
-          { label: "Neighbours & Favours", slug: "neighbours-and-favours", evidence: ["wish to talk to neighbours"] },
-        ],
-        prisma: fakePrisma(),
-      }),
-    ).resolves.toBeUndefined();
-  });
-
-  it("acepta una cita de learningGoal, que es la línea escrita del formulario", async () => {
-    await expect(
-      assertTopicsGrounded({
-        language: "Portuguese",
-        proposals: [
-          { label: "Markets & Fruit", slug: "markets-and-fruit", evidence: ["buy fruit at the market"] },
-        ],
-        prisma: fakePrisma([
-          {
-            targetLanguage: "Portuguese",
-            motivation: "Travel",
-            learningGoal: "I want to buy fruit at the market without pointing",
-            applicationReason: "Curious about the new app",
-          },
-        ]),
-      }),
-    ).resolves.toBeUndefined();
-  });
-
-  it("tira si el idioma solo tiene clics del desplegable", async () => {
-    const err = await assertTopicsGrounded({
+  it("avisa si el idioma solo tiene clics del desplegable", async () => {
+    const r = await reportTopicEvidence({
       language: "Polish",
       proposals: [{ label: "Family & Relatives", evidence: ["something"] }],
-      prisma: fakePrisma([{ targetLanguage: "Polish", motivation: "Work", learningGoal: null, applicationReason: null }]),
-    }).catch((e) => e);
+      prisma: fakePrisma(rows([{ targetLanguage: "Polish", motivation: "Work", learningGoal: null, applicationReason: null }])),
+    });
+    expect(r.evidenceWarnings.join("\n")).toContain("cero frases escritas");
+  });
+});
 
+describe("assertTopicsGrounded", () => {
+  it("NO tira por temas sin cita: avisa y devuelve el informe", async () => {
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+    vi.spyOn(console, "log").mockImplementation(() => {});
+    const r = await assertTopicsGrounded({ language: "French", proposals: EXPAT_FRENCH, prisma: fakePrisma() });
+    expect(r.topics).toHaveLength(7);
+    expect(warn).toHaveBeenCalledWith(expect.stringContaining("pista, no filtro"));
+    vi.restoreAllMocks();
+  });
+
+  it("NO tira aunque el idioma no tenga ninguna frase escrita", async () => {
+    vi.spyOn(console, "warn").mockImplementation(() => {});
+    vi.spyOn(console, "log").mockImplementation(() => {});
+    await expect(
+      assertTopicsGrounded({
+        language: "Polish",
+        proposals: [{ label: "Family & Relatives", slug: "family-and-relatives" }],
+        prisma: fakePrisma(rows([{ targetLanguage: "Polish", motivation: "Work", learningGoal: null, applicationReason: null }])),
+      }),
+    ).resolves.toMatchObject({ corpusSize: 0 });
+    vi.restoreAllMocks();
+  });
+
+  it("SIGUE tirando por las reglas de nombre, que no dependen de ningún beta", async () => {
+    vi.spyOn(console, "log").mockImplementation(() => {});
+    vi.spyOn(console, "warn").mockImplementation(() => {});
+    const err = await assertTopicsGrounded({
+      language: "French",
+      proposals: [
+        { label: "Food And Drink", evidence: ["plan to move there in 6-8 months"] },
+        { label: "Moving & Deadlines", slug: "moving", evidence: ["plan to move there in 6-8 months"] },
+      ],
+      prisma: fakePrisma(),
+    }).catch((e) => e);
     expect(err).toBeInstanceOf(TopicEvidenceError);
-    expect(String(err.message)).toContain("Cero frases escritas");
+    expect(String(err.message)).toContain('"And"');
+    expect(String(err.message)).toContain("no deriva del nombre");
+    vi.restoreAllMocks();
   });
 });
