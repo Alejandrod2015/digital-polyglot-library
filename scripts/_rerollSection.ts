@@ -52,6 +52,25 @@ function arg(flag: string, dflt?: string) {
   return i >= 0 ? process.argv[i + 1] : dflt;
 }
 
+/**
+ * Revierte la fila al estado previo al empalme cuando el candado de
+ * cobertura falla. Extraida a funcion propia (2026-09-15) para poder
+ * testear que SIEMPRE revierte audioUrl y audioFragments JUNTOS: revertir
+ * solo audioUrl dejaba los fragmentos describiendo un master fantasma (ver
+ * scripts/__tests__/rerollRollback.test.ts).
+ */
+export async function revertCoverageFailure(
+  prismaLike: { journeyStory: { update: (args: { where: { id: string }; data: Record<string, unknown> }) => Promise<unknown> } },
+  storyId: string,
+  prevAudioUrl: string | null,
+  prevAudioFragments: unknown
+): Promise<void> {
+  await prismaLike.journeyStory.update({
+    where: { id: storyId },
+    data: { audioUrl: prevAudioUrl, audioFragments: prevAudioFragments },
+  });
+}
+
 async function f0(file: string): Promise<number | null> {
   try {
     const { stdout } = await execFileAsync(F0_PY, ["scripts/_f0gate.py", file, "statement"]);
@@ -243,18 +262,7 @@ async function main() {
     cobertura = null;
   }
   if (cobertura && !cobertura.ok) {
-    // REVIERTE audioUrl Y audioFragments JUNTOS (2026-09-15). Revertir solo
-    // audioUrl dejaba los fragmentos con los startSec/endSec del intento
-    // fallido (que applyInPlace ya habia escrito antes de este chequeo):
-    // el corte de la SIGUIENTE re-tirada caia en la ventana de silencio
-    // equivocada y arrastraba la cola del fragmento reemplazado, duplicando
-    // la ultima frase. Pasaba igual con cualquier candidato limpio porque el
-    // defecto no estaba en la sintesis: estaba en el estado heredado de
-    // audioFragments de la reversion anterior.
-    await prisma.journeyStory.update({
-      where: { id: story.id },
-      data: { audioUrl: story.audioUrl, audioFragments: story.audioFragments as any },
-    });
+    await revertCoverageFailure(prisma, story.id, story.audioUrl, story.audioFragments);
     console.error(`\nREVERTIDO: el master nuevo (${r.audioUrl}) no pasa el candado de cobertura.`);
     for (const g of cobertura.gaps) console.error(`  HUECO: ${g.textWords.join(" ")}`);
     for (const d of cobertura.duplicates) console.error(`  DUPLICADO: ${d.words.join(" ")}`);
@@ -271,7 +279,11 @@ async function main() {
   await prisma.$disconnect();
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+// Solo corre main() al ejecutar el script directamente (tsx ...), no al
+// importar revertCoverageFailure desde un test (2026-09-15).
+if (require.main === module) {
+  main().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
+}
