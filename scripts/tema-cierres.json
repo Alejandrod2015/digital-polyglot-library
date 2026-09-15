@@ -5877,6 +5877,72 @@
       ]
     }
   },
+  "cmu36dk1d0007j8p7grgcyiok#clothes-and-looks": {
+    "cerrado": "2026-09-15T22:11:29.365Z",
+    "hash": "edb8b71d0838f444",
+    "historias": [
+      "clothes-and-looks#0 la-chaqueta-ya-no-cierra",
+      "clothes-and-looks#1 ruben-sin-barba",
+      "clothes-and-looks#2 un-jersey-amarillo"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"ligero y un poco melancolico, de espejo: dos treintaneros que se miran como eran en 2012 y se rien de lo que ya no les cabe\", espina \"La Rana necesita una foto y un dibujo para el programa de las Ferias; en este tema Lorena y Ruben intentan parecerse a la foto de 2012, no lo consiguen, y aceptan salir en el programa como son ahora.\")",
+      "validador canonico: 3/3 (perfil narrador)",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dijo\" 33%)",
+      "arranques de parrafo variados (mas repetido \"rubén\", 19%)",
+      "densidad 8.9 palabras por oracion (techo 13 en a2)",
+      "seguidilla 8/37 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.07 sobre 44 plazas · 42 salen una sola vez | ancladas: 16/60 (27%) | cola: 42/44 portables con un solo encuentro (95%, tope 80%) | de un solo encuentro: Aquella tarde, llenos de, raros, esta mañana, cierra, Tiré, se rompió, escuchó, con atención, brillantes, rápidamente, Diez minutos después, delante de, Esa soy yo, negra, Pareces otro, guapo, reconozco, se tocó, Hoy, afeitado, los dos, largo, cambiado, hacemos la foto, de ahora, juntos, Una semana después, Pensó, decidió…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: clothes-and-looks (Rubén, Lorena)"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a2",
+      "variante": "spain",
+      "registro": "ligero y un poco melancolico, de espejo: dos treintaneros que se miran como eran en 2012 y se rien de lo que ya no les cabe",
+      "espina": "La Rana necesita una foto y un dibujo para el programa de las Ferias; en este tema Lorena y Ruben intentan parecerse a la foto de 2012, no lo consiguen, y aceptan salir en el programa como son ahora.",
+      "recursos": "A2: imperfecto descriptivo para la foto de 2012 (era delgado, tenia el pelo largo, llevaba la chaqueta) frente al indefinido de 2026, preterito perfecto en el dialogo (me he probado, me he afeitado), gancho literal (el jersey amarillo del programa). Parrafos 5, 6 y 4. Franjas: una tarde en el estudio, el dia de la foto, una semana despues.",
+      "reencuentro": "Singles de los temas 1 a 3 que todavia no han vuelto (46), a traer de vuelta en el texto con surface exacta, al menos 20: explicando, Buscan, recordaban, preparado, Enchufaron, red social, se cayó, delgado, primera fila, esperó, Mucha gente, subo, en rojo, enseñó, borramos, comparte, volvemos, sale mal, cabía, pequeño, quejaban, deja, Cargaron, sorprendido, hizo una raya, bajarlo, Condujo, aparcó, después, amarillo, venía, llena, Siéntate, a nombre de, mandó, próxima, Desde ese día, llevar, Tengo una idea, por primera vez, cruzaron, cansada, pesa, más que, abierta, también.",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "Lorena quiere salir en la foto del programa con su chaqueta roja de 2012",
+          "impide": "la chaqueta ya no le cierra y la cremallera se rompe",
+          "cuesta": "la cremallera de la chaqueta de 2012, rota",
+          "cambia": "Sergio dibuja la rana nueva del grupo con una chaqueta roja abierta",
+          "emocion": "verguenza que se vuelve risa: esta triste por la chaqueta hasta que ve la rana con la chaqueta abierta y se rie por primera vez aquel dia"
+        },
+        {
+          "slot": "1",
+          "quiere": "Ruben quiere parecerse al de la foto de 2012",
+          "impide": "catorce anos: ya no es el chico delgado de la foto",
+          "cuesta": "Ruben se afeita la barba que llevaba desde hacia diez anos",
+          "cambia": "Lorena le dice que ya no son los de 2012 y hacen la foto como son ahora",
+          "emocion": "nostalgia comica: Ruben no se reconoce en el espejo, se toca la cara sin barba, y Lorena lo mira sorprendida"
+        },
+        {
+          "slot": "2",
+          "quiere": "Lorena quiere cerrar lo de 2012 antes de las Ferias",
+          "impide": "la chaqueta roja sigue en su armario y pesa mas que la ropa",
+          "cuesta": "Lorena regala la chaqueta roja, lo ultimo que guardaba de 2012",
+          "cambia": "en el programa de las Ferias sale La Rana con Lorena en una chaqueta amarilla nueva",
+          "emocion": "alivio: siente la bolsa ligera al dejar la chaqueta y sonrie al ver el programa"
+        }
+      ]
+    }
+  },
   "cmu36dk1d0007j8p7grgcyiok#driving-and-cars": {
     "cerrado": "2026-09-15T21:54:09.733Z",
     "hash": "1609baf9e748f2ca",
