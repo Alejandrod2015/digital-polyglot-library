@@ -53,7 +53,7 @@ Lugar: Bremen, Germany
 Reparto:
 - ANNA: woman, exactly 33 years old, slim build, medium height, fair skin, dark-blonde hair falling to the shoulders, WITHOUT fringe, no glasses; wears an olive-green cotton jacket over a plain white t-shirt, dark blue jeans and brown leather ankle boots.
 - JAN: man, exactly 34 years old, stocky build, a head taller than ANNA, fair skin, short brown hair, short neat brown beard, no glasses; wears a navy-blue knit sweater over a white collared shirt, dark blue jeans and brown leather boots.
-- NELE: woman, exactly 32 years old, athletic build, a little shorter than ANNA, light skin, short black hair in a chin-length bob, WITHOUT fringe, round tortoiseshell glasses; wears a mustard-yellow blouse, dark grey trousers and white canvas sneakers.
+- NELE: woman, exactly 32 years old, athletic build, a little shorter than ANNA, light skin, short black hair in a chin-length bob swept fully behind both ears, forehead completely bare with no hair falling forward, round tortoiseshell glasses; wears a mustard-yellow blouse, dark grey trousers and white canvas sneakers.
 
 CAST SHEET:
 Character model sheet for a story series, clean cel-shaded editorial illustration, crisp clean linework, flat vivid warm colour fills, plain pure white background, landscape 16:9.
@@ -64,7 +64,7 @@ LEFT is ANNA: woman, exactly 33 years old, slim build, medium height, fair skin,
 
 CENTER is JAN: man, exactly 34 years old, stocky build, a head taller than ANNA, fair skin, short brown hair, short neat brown beard, no glasses; wears a navy-blue knit sweater over a white collared shirt, dark blue jeans and brown leather boots.
 
-RIGHT is NELE: woman, exactly 32 years old, athletic build, a little shorter than ANNA, light skin, short black hair in a chin-length bob, WITHOUT fringe, round tortoiseshell glasses; wears a mustard-yellow blouse, dark grey trousers and white canvas sneakers.
+RIGHT is NELE: woman, exactly 32 years old, athletic build, a little shorter than ANNA, light skin, short black hair in a chin-length bob swept fully behind both ears, forehead completely bare with no hair falling forward, round tortoiseshell glasses; wears a mustard-yellow blouse, dark grey trousers and white canvas sneakers.
 
 Generous white margin around every figure, no props, no animals, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.
 
@@ -308,7 +308,7 @@ Lugar: Bremen, Germany
 Reparto:
 - ANNA: woman, exactly 33 years old, slim build, medium height, fair skin, dark-blonde hair falling to the shoulders, WITHOUT fringe, no glasses; wears an olive-green cotton jacket over a plain white t-shirt, dark blue jeans and brown leather ankle boots.
 - JAN: man, exactly 34 years old, stocky build, a head taller than ANNA, fair skin, short brown hair, short neat brown beard, no glasses; wears a navy-blue knit sweater over a white collared shirt, dark blue jeans and brown leather boots.
-- NIKLAS: man, exactly 36 years old, heavy build with a round belly, a little shorter than JAN, ruddy fair skin, short dark-grey hair with early streaks of grey, clean-shaven, thin rectangular black-framed glasses; wears a brown wool sweater over a checked shirt collar, grey trousers and brown leather loafers.
+- NIKLAS: man, exactly 36 years old and looking no older than that, heavy build with a round belly, a little shorter than JAN, smooth unwrinkled face, ruddy fair skin, short brown hair with only faint early strands of grey at the temples (never fully grey), clean-shaven, thin rectangular black-framed glasses; wears a brown wool sweater over a checked shirt collar, grey trousers and brown leather loafers.
 
 CAST SHEET:
 Character model sheet for a story series, clean cel-shaded editorial illustration, crisp clean linework, flat vivid warm colour fills, plain pure white background, landscape 16:9.
@@ -319,7 +319,7 @@ LEFT is ANNA: woman, exactly 33 years old, slim build, medium height, fair skin,
 
 CENTER is JAN: man, exactly 34 years old, stocky build, a head taller than ANNA, fair skin, short brown hair, short neat brown beard, no glasses; wears a navy-blue knit sweater over a white collared shirt, dark blue jeans and brown leather boots.
 
-RIGHT is NIKLAS: man, exactly 36 years old, heavy build with a round belly, a little shorter than JAN, ruddy fair skin, short dark-grey hair with early streaks of grey, clean-shaven, thin rectangular black-framed glasses; wears a brown wool sweater over a checked shirt collar, grey trousers and brown leather loafers.
+RIGHT is NIKLAS: man, exactly 36 years old and looking no older than that, heavy build with a round belly, a little shorter than JAN, smooth unwrinkled face, ruddy fair skin, short brown hair with only faint early strands of grey at the temples (never fully grey), clean-shaven, thin rectangular black-framed glasses; wears a brown wool sweater over a checked shirt collar, grey trousers and brown leather loafers.
 
 Generous white margin around every figure, no props, no animals, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.
 
