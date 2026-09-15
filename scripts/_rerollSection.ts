@@ -243,11 +243,22 @@ async function main() {
     cobertura = null;
   }
   if (cobertura && !cobertura.ok) {
-    await prisma.journeyStory.update({ where: { id: story.id }, data: { audioUrl: story.audioUrl } });
+    // REVIERTE audioUrl Y audioFragments JUNTOS (2026-09-15). Revertir solo
+    // audioUrl dejaba los fragmentos con los startSec/endSec del intento
+    // fallido (que applyInPlace ya habia escrito antes de este chequeo):
+    // el corte de la SIGUIENTE re-tirada caia en la ventana de silencio
+    // equivocada y arrastraba la cola del fragmento reemplazado, duplicando
+    // la ultima frase. Pasaba igual con cualquier candidato limpio porque el
+    // defecto no estaba en la sintesis: estaba en el estado heredado de
+    // audioFragments de la reversion anterior.
+    await prisma.journeyStory.update({
+      where: { id: story.id },
+      data: { audioUrl: story.audioUrl, audioFragments: story.audioFragments as any },
+    });
     console.error(`\nREVERTIDO: el master nuevo (${r.audioUrl}) no pasa el candado de cobertura.`);
     for (const g of cobertura.gaps) console.error(`  HUECO: ${g.textWords.join(" ")}`);
     for (const d of cobertura.duplicates) console.error(`  DUPLICADO: ${d.words.join(" ")}`);
-    console.error(`El audioUrl de la historia volvio a ${story.audioUrl}. El master roto sigue en R2 (${r.audioUrl}) pero ninguna fila apunta ahi.`);
+    console.error(`El audioUrl y los audioFragments de la historia volvieron a como estaban. El master roto sigue en R2 (${r.audioUrl}) pero ninguna fila apunta ahi.`);
     process.exitCode = 1;
     await prisma.$disconnect();
     return;
