@@ -6075,6 +6075,72 @@
       ]
     }
   },
+  "cmu36dk1d0007j8p7grgcyiok#fairs-and-street-parties": {
+    "cerrado": "2026-09-15T22:28:52.330Z",
+    "hash": "ddf1290a27785a94",
+    "historias": [
+      "fairs-and-street-parties#0 tocais-los-ultimos",
+      "fairs-and-street-parties#1 yo-tambien-tenia-miedo",
+      "fairs-and-street-parties#2 la-ultima-cancion"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"de fiesta mojada y confesion a media voz: musica de las casetas, una tormenta que retrasa todo y dos amigos que por fin se dicen la verdad antes de subir\", espina \"Cierre del journey: La Rana toca en las Ferias de septiembre; antes de subir, Lorena le cuenta a Ruben por que no fue en 2012, Ruben le cuenta su propio miedo de aquella noche, y terminan la cancion que se quedo a medias, aunque la guitarra de la universidad no vuelve a sonar.\")",
+      "validador canonico: 3/3 (perfil narrador)",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dijo\" 17%)",
+      "arranques de parrafo variados (mas repetido \"lorena\", 20%)",
+      "densidad 8.8 palabras por oracion (techo 13 en a2)",
+      "seguidilla 10/41 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.08 sobre 48 plazas · 44 salen una sola vez | ancladas: 12/60 (20%) | cola: 44/48 portables con un solo encuentro (92%, tope 80%) | de un solo encuentro: junto al, lejos de, temprano, veían, se puso negro, tiene que, últimos, paraba, mover, a lo lejos, Con lluvia o sin lluvia, Desde allí, ya no queda nadie, respiró hondo, Era el momento, levantó la cabeza, tan, grande, durante un rato, abrazó, Por eso, terminar, lloraba, a la vez, valiente, mojada, empezó a llover, se quedó casi vacía, fina, caía…",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Sin hilo en 1 tema(s): fairs-and-street-parties (tocais-los-ultimos, yo-tambien-tenia-miedo, la-ultima-cancion)",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Friends",
+      "nivel": "a2",
+      "variante": "spain",
+      "registro": "de fiesta mojada y confesion a media voz: musica de las casetas, una tormenta que retrasa todo y dos amigos que por fin se dicen la verdad antes de subir",
+      "espina": "Cierre del journey: La Rana toca en las Ferias de septiembre; antes de subir, Lorena le cuenta a Ruben por que no fue en 2012, Ruben le cuenta su propio miedo de aquella noche, y terminan la cancion que se quedo a medias, aunque la guitarra de la universidad no vuelve a sonar.",
+      "recursos": "A2: relato de 2012 en preterito e imperfecto dentro del dialogo (llegue a la plaza, vi a mucha gente, me fui, tenia miedo), espejo concreto (Ruben tocaba tan rapido en 2012 porque tambien tenia miedo), gancho literal cerrado (Ruben guarda las baquetas y la acompana a casa por el Puente Romano). Parrafos 5, 6 y 4. Franjas: la tarde de las Ferias, la hora de la tormenta, la noche del concierto.",
+      "reencuentro": "Portables de los temas 1 a 6 que salen una sola vez y tienen que volver en el texto (objetivo 20 o mas, se mide al cerrar): Enchufaron, primera fila, recordaban, nervioso, limpio, tanto, primer, con calma, y ya está, entre los dos, que nunca, esta mañana, se rompió, brillantes, rápidamente, Diez minutos después, cambiado, decidió, ligera, poco a poco, Vale, Tenía miedo, cogió, Gracias por, sin prisa, De pronto, Justo entonces, seguía, en silencio, entiendo, Tampoco, Estás bien, Claro, menos, Esa noche, fui, Aquella tarde, nada más, Hoy, Me voy.",
+      "historias": [
+        {
+          "slot": "0",
+          "quiere": "Lorena y Ruben quieren hacer la prueba de sonido y tocar a las ocho en el escenario de los grupos del barrio",
+          "impide": "llega una tormenta y Silvia, la tecnica de sonido del ayuntamiento, retrasa todo",
+          "cuesta": "pierden su hora: tocaran los ultimos, a las once, con menos gente",
+          "cambia": "esperan debajo de una caseta, con la guitarra y la caja de La Rana, mirando las luces de la Plaza Mayor",
+          "emocion": "nervios de antes de tocar: Ruben no para de mover las baquetas, Lorena respira con calma y mira las luces de la plaza donde no llego en 2012"
+        },
+        {
+          "slot": "1",
+          "quiere": "Lorena quiere contarle a Ruben la verdad de 2012 antes de subir",
+          "impide": "catorce anos de silencio y el miedo a perder otra vez a su amigo",
+          "cuesta": "Lorena pierde su secreto y Ruben pierde la historia que se contaba: que a ella no le importaba el grupo",
+          "cambia": "Ruben le cuenta que en 2012 tambien tenia miedo y por eso toco tan rapido; deciden tocar aunque llueva",
+          "emocion": "alivio despues del miedo: a Lorena le tiembla la voz al decirlo, Ruben le coge la mano en silencio y los dos se rien"
+        },
+        {
+          "slot": "2",
+          "quiere": "tocar la cancion de 2012 entera, por fin",
+          "impide": "la lluvia, cuarenta personas con paraguas y un cable mojado",
+          "cuesta": "la guitarra de la universidad se moja y no vuelve a sonar",
+          "cambia": "terminan la cancion; Ruben guarda las baquetas y acompana a Lorena a casa por el Puente Romano",
+          "emocion": "alegria mojada y tranquila: canta con los ojos abiertos esta vez, y al final siente la guitarra ligera aunque ya no suene"
+        }
+      ]
+    }
+  },
   "cmu36dk1d0007j8p7grgcyiok#money-and-loans": {
     "cerrado": "2026-09-15T22:02:07.280Z",
     "hash": "0978e2b16bdb30df",
@@ -6207,8 +6273,8 @@
     }
   },
   "cmu36dk1d0007j8p7grgcyiok#phones-and-social-media": {
-    "cerrado": "2026-09-15T21:41:06.953Z",
-    "hash": "7c8a0f39a52d0299",
+    "cerrado": "2026-09-15T22:28:23.046Z",
+    "hash": "a36d8cbcb9e121f4",
     "historias": [
       "phones-and-social-media#0 una-foto-sin-caras",
       "phones-and-social-media#1 jaime-lo-grabo-todo",
@@ -6227,14 +6293,14 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 6 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.16 sobre 43 plazas · 38 salen una sola vez | ancladas: 17/60 (28%) | cola: 38/43 portables con un solo encuentro (88%, tope 80%) | de un solo encuentro: abrió, red social, cerca, se cayó, quedó, funciona, salió, tres veces, Entonces, en la mano, frío, puso, por todas partes, encontró, delgado, primera fila, contó, esperó, Luego, tocaba, rápido, Mucha gente, subo, un poco, en rojo, enseñó, triste, devolvió, oía, Hasta…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: phones-and-social-media (Lorena, Rubén)"
     ],
     "plan": {
       "tipo": "Friends",

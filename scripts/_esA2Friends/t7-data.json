@@ -1,0 +1,453 @@
+[
+  {
+    "topic": "fairs-and-street-parties",
+    "slotIndex": 0,
+    "title": "Tocáis los últimos",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "It is the day of the festival. The small stage for local bands is by the river, far from the lights of the main square, and the sound technician checks every cable. Then the sky changes, and the band's plans for the evening change with it. Rubén is nervous, but Lorena seems calmer than ever.",
+    "text": "El escenario de los grupos del barrio estaba junto al río, lejos de la Plaza Mayor. Silvia era una técnica de sonido del ayuntamiento, con una camiseta negra y un micrófono en la mano. Lorena y Rubén llegaron temprano con el carrito.\n\nEnchufaron los cables en silencio. Desde allí se veían las luces brillantes de la Plaza Mayor y la música de las casetas.\n\nDe pronto, el cielo se puso negro. “Viene una tormenta”, avisó Silvia, mirando las nubes. “Lo siento. La prueba de sonido tiene que esperar, y vuestra hora también. Tocáis los últimos, a las once.”\n\nRubén no paraba de mover las baquetas. Estaba nervioso, más que nunca. “A las once ya no queda nadie”, protestó.\n\nLorena respiró con calma y miró la plaza a lo lejos, la plaza de 2012. Luego se sentó con él en una caseta. “Hoy sí tocamos, Rubén. Con lluvia o sin lluvia.”",
+    "vocab": [
+      {
+        "type": "expression",
+        "word": "junto a",
+        "surface": "junto al",
+        "definition": "Next to; very close to something, at its side.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "lejos de",
+        "surface": "lejos de",
+        "definition": "Far from; at a long distance from a place.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el micrófono",
+        "surface": "micrófono",
+        "definition": "A microphone; the thing you speak or sing into to be louder.",
+        "anchor": true
+      },
+      {
+        "type": "adverb",
+        "word": "temprano",
+        "surface": "temprano",
+        "definition": "Early; before the normal time, when there are still few people.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "verse",
+        "surface": "veían",
+        "definition": "To be seen; when you can see something from a place.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la caseta",
+        "surface": "casetas",
+        "definition": "A small festival booth with music, food and drinks at a Spanish fair.",
+        "anchor": true,
+        "register": "cultural"
+      },
+      {
+        "type": "noun",
+        "word": "el cielo",
+        "surface": "cielo",
+        "definition": "The sky; the space above you where you see clouds.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "ponerse negro",
+        "surface": "se puso negro",
+        "definition": "To turn black; when the sky gets very dark before a storm.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la nube",
+        "surface": "nubes",
+        "definition": "A cloud; a white or grey shape in the sky made of water.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "tener que",
+        "surface": "tiene que",
+        "definition": "To have to; used when something must happen.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "último",
+        "surface": "últimos",
+        "definition": "Last; the one that comes after all the others.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "a las once",
+        "surface": "a las once",
+        "definition": "At eleven o'clock; here, late at night when many people go home.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "parar",
+        "surface": "paraba",
+        "definition": "To stop; to not continue doing something, even for a moment.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "mover",
+        "surface": "mover",
+        "definition": "To move; to change the place or position of something.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "respirar",
+        "surface": "respiró",
+        "definition": "To breathe; to take air into your body and let it out.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "a lo lejos",
+        "surface": "a lo lejos",
+        "definition": "In the distance; far away, but you can still see it.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la plaza",
+        "surface": "plaza",
+        "definition": "A square; a big open place in a town, with buildings around.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "con lluvia o sin lluvia",
+        "surface": "Con lluvia o sin lluvia",
+        "definition": "Rain or no rain; it will happen in any kind of weather.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "desde allí",
+        "surface": "Desde allí",
+        "definition": "From there; from that place you can see or hear something.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "ya no queda nadie",
+        "surface": "ya no queda nadie",
+        "definition": "There is nobody left; everyone has already gone.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "fairs-and-street-parties",
+    "slotIndex": 1,
+    "title": "Yo también tenía miedo",
+    "arcType": "late-reveal",
+    "synopsis": "The rain empties the fair while the band waits under a small booth. Lorena knows this is the moment, and she finally tells Rubén what really happened on the night of the concert years ago. Rubén listens in silence, and then he has something to confess too.",
+    "text": "Cuando empezó a llover, la feria se quedó casi vacía. Lorena y Rubén esperaban en la caseta, sentados entre dos cajas de cerveza. Hacía frío y todo estaba mojado.\n\nLorena respiró hondo. Era el momento. “En 2012 yo sí fui a la plaza”, susurró. Rubén levantó la cabeza, sorprendido.\n\n“Llegué a las ocho y vi a toda la gente y el escenario tan grande. Tenía miedo, y me fui a casa.” Aquí la voz de Lorena se rompió.\n\nRubén no dijo nada durante un rato. La lluvia sonaba sobre el techo. Luego le cogió la mano y la abrazó.\n\n“Yo también tenía miedo”, confesó por fin. “Por eso aquella noche toqué tan rápido: para terminar pronto.” Durante catorce años, Rubén pensó que a Lorena no le importaba el grupo.\n\nLorena lloraba y se reía a la vez. “Eres valiente, Lore. Ahora lo entiendo, y ya está”, dijo él, con la ropa mojada.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "la feria",
+        "surface": "feria",
+        "definition": "A fair; a big city party with music, rides and food stalls.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la cerveza",
+        "surface": "cerveza",
+        "definition": "Beer; a cold alcoholic drink that people often have at fairs.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "respirar hondo",
+        "surface": "respiró hondo",
+        "definition": "To take a deep breath, often before you say or do something hard.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "era el momento",
+        "surface": "Era el momento",
+        "definition": "It was the time; the right moment to do something important.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "levantar la cabeza",
+        "surface": "levantó la cabeza",
+        "definition": "To lift your head; to look up because something surprises you.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la gente",
+        "surface": "gente",
+        "definition": "People; men and women in a place, many of them together.",
+        "anchor": true
+      },
+      {
+        "type": "adverb",
+        "word": "tan",
+        "surface": "tan",
+        "definition": "So; very, used to make an adjective stronger.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "grande",
+        "surface": "grande",
+        "definition": "Big; large in size, much more than normal.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la voz",
+        "surface": "voz",
+        "definition": "The voice; the sound a person makes when they speak or sing.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "durante un rato",
+        "surface": "durante un rato",
+        "definition": "For a while; for some time, not very long.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "abrazar",
+        "surface": "abrazó",
+        "definition": "To hug; to put your arms around another person.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "por eso",
+        "surface": "Por eso",
+        "definition": "That is why; for that reason, because of what I just said.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "terminar",
+        "surface": "terminar",
+        "definition": "To finish; to get to the end of something.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "pronto",
+        "surface": "pronto",
+        "definition": "Soon, early; after a short time or before the normal time.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "llorar",
+        "surface": "lloraba",
+        "definition": "To cry; when water comes from your eyes because of strong feelings.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "a la vez",
+        "surface": "a la vez",
+        "definition": "At the same time; two things happening together.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "valiente",
+        "surface": "valiente",
+        "definition": "Brave; a person who does something difficult even with fear.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "mojado",
+        "surface": "mojada",
+        "definition": "Wet; covered with water, for example after rain.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "empezar a llover",
+        "surface": "empezó a llover",
+        "definition": "To start raining; the moment when the first rain begins to fall.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "quedarse vacío",
+        "surface": "se quedó casi vacía",
+        "definition": "To become empty; when almost all the people leave a place.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "fairs-and-street-parties",
+    "slotIndex": 2,
+    "title": "La última canción",
+    "arcType": "harmonic-close",
+    "synopsis": "Late at night, in the rain, the band finally goes on stage in front of a small group of people with umbrellas. The first songs are not perfect, but the two friends play together without fear. When the old song from their student days ends, one important thing stays silent for ever.",
+    "text": "Una lluvia fina caía a las once. En primera fila había unas cuarenta personas con paraguas. Silvia les dio la señal a Lorena y a Rubén. “Ya podéis subir, chicos. ¡Mucha suerte!”, dijo Silvia, y subieron al escenario con la mochila.\n\n“Buenas noches. Somos La Rana”, se presentó Lorena al micrófono. La primera canción salió lenta, y la segunda, mejor. “Suena bien, Lore”, comentó Rubén. “Suena como nosotros”, contestó ella.\n\n“Esta es la canción de 2012, la que no terminamos aquella noche”, anunció Lorena. Esta vez cantó con los ojos abiertos, y la gente aplaudía y bailaba en la lluvia.\n\nAl final, la guitarra de la universidad se calló para siempre. “¿Estás bien?”, preguntó Rubén. “Claro. La canción ya está terminada”, contestó Lorena. Rubén guardó las baquetas y la acompañó a casa por la orilla del Tormes, con la guitarra en la espalda, sin miedo.",
+    "vocab": [
+      {
+        "type": "adjective",
+        "word": "fino",
+        "surface": "fina",
+        "definition": "Fine, light; very thin, like soft rain that falls slowly.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "caer",
+        "surface": "caía",
+        "definition": "To fall; to come down from the sky or from a high place.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "dar la señal",
+        "surface": "dio la señal",
+        "definition": "To give the signal; to tell someone it is time to start.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el paraguas",
+        "surface": "paraguas",
+        "definition": "An umbrella; the thing you open over your head when it rains.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la mochila",
+        "surface": "mochila",
+        "definition": "A backpack; a bag you carry on your back.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "mejor",
+        "surface": "mejor",
+        "definition": "Better; good in a higher way than before.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "con los ojos abiertos",
+        "surface": "con los ojos abiertos",
+        "definition": "With open eyes; not closing your eyes, looking at everything.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "aplaudir",
+        "surface": "aplaudía",
+        "definition": "To clap; to hit your hands together to show you like something.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "bailar",
+        "surface": "bailaba",
+        "definition": "To dance; to move your body to music.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "sonar bien",
+        "surface": "Suena bien",
+        "definition": "To sound good; when music or a voice is nice to hear.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "callarse",
+        "surface": "calló",
+        "definition": "To go quiet; to stop making any sound.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "para siempre",
+        "surface": "para siempre",
+        "definition": "Forever; from now and for all the time after.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "acompañar",
+        "surface": "acompañó",
+        "definition": "To go with someone, for example to walk them home.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la orilla",
+        "surface": "orilla",
+        "definition": "The bank of a river; the land right next to the water.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "sin miedo",
+        "surface": "sin miedo",
+        "definition": "Without fear; feeling calm and brave, not worried at all.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "en la espalda",
+        "surface": "en la espalda",
+        "definition": "On your back; carried behind you on your body.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "terminado",
+        "surface": "terminada",
+        "definition": "Finished; complete, with nothing more to do or to play.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "presentarse",
+        "surface": "se presentó",
+        "definition": "To introduce yourself; to say your name to people you do not know.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "aquella noche",
+        "surface": "aquella noche",
+        "definition": "That night; the night in the past that the story talks about.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "como nosotros",
+        "surface": "como nosotros",
+        "definition": "Like us; in the same way that we are or we play.",
+        "anchor": false
+      }
+    ]
+  }
+]
