@@ -53,7 +53,7 @@
  {
   "type": "fill_blank",
   "word": "rotta",
-  "sentence": "La gamba della sedia era vecchia ed è _____ subito.",
+  "sentence": "La sedia è molto vecchia: la gamba si è _____ subito.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "rotta",
@@ -63,7 +63,7 @@
     "chiusa",
     "aperta"
    ],
-   "translation": "The chair leg was old and got _____ right away.",
+   "translation": "The chair is very old: the leg _____ right away.",
    "optionTranslations": [
     "to break",
     "clean",
@@ -73,7 +73,7 @@
    "audioClip": {
     "storySlug": "tre-gambe-e-mezzo",
     "storySource": "user",
-    "sentence": "La gamba della sedia era vecchia ed è rotta subito.",
+    "sentence": "La sedia è molto vecchia: la gamba si è rotta subito.",
     "targetWord": "rotta",
     "language": "italian"
    }

@@ -53,7 +53,7 @@
  {
   "type": "fill_blank",
   "word": "rispetto",
-  "sentence": "Vuole solo che gli altri lo trattino bene: chiede _____.",
+  "sentence": "Vuole solo essere trattato bene dagli altri: chiede _____.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "rispetto",
@@ -63,7 +63,7 @@
     "coraggio",
     "consiglio"
    ],
-   "translation": "He just wants others to treat him well: he asks for _____.",
+   "translation": "She just wants to be treated well by others: she asks for _____.",
    "optionTranslations": [
     "respect",
     "help",
@@ -73,7 +73,7 @@
    "audioClip": {
     "storySlug": "le-regole-del-cortile",
     "storySource": "user",
-    "sentence": "Vuole solo che gli altri lo trattino bene: chiede rispetto.",
+    "sentence": "Vuole solo essere trattato bene dagli altri: chiede rispetto.",
     "targetWord": "rispetto",
     "language": "italian"
    }

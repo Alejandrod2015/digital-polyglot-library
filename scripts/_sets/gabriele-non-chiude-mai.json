@@ -111,7 +111,7 @@
  {
   "type": "fill_blank",
   "word": "credo",
-  "sentence": "Vedo la macchina parcheggiata davanti: _____ che è in casa.",
+  "sentence": "Ho visto la luce accesa, quindi _____ di sì.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "credo",
@@ -121,7 +121,7 @@
     "ricordo",
     "spiego"
    ],
-   "translation": "I see the car parked outside: I _____ he is home.",
+   "translation": "I saw the light on, so I _____ so.",
    "optionTranslations": [
     "believe",
     "hope",
@@ -131,7 +131,7 @@
    "audioClip": {
     "storySlug": "gabriele-non-chiude-mai",
     "storySource": "user",
-    "sentence": "Vedo la macchina parcheggiata davanti: credo che è in casa.",
+    "sentence": "Ho visto la luce accesa, quindi credo di sì.",
     "targetWord": "credo",
     "language": "italian"
    }

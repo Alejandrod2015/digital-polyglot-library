@@ -111,7 +111,7 @@
  {
   "type": "fill_blank",
   "word": "difficile",
-  "sentence": "L'esame aveva tante domande ed era molto _____.",
+  "sentence": "Questo esame ha tante domande ed è molto _____.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "difficile",
@@ -121,7 +121,7 @@
     "semplice",
     "breve"
    ],
-   "translation": "The exam had so many questions and was very _____.",
+   "translation": "This exam has so many questions and is very _____.",
    "optionTranslations": [
     "difficult",
     "easy",
@@ -131,7 +131,7 @@
    "audioClip": {
     "storySlug": "concerto-al-secondo-piano",
     "storySource": "user",
-    "sentence": "L'esame aveva tante domande ed era molto difficile.",
+    "sentence": "Questo esame ha tante domande ed è molto difficile.",
     "targetWord": "difficile",
     "language": "italian"
    }
