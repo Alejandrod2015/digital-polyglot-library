@@ -82,27 +82,27 @@
  {
   "type": "fill_blank",
   "word": "resta",
-  "sentence": "Tutti sono usciti e lei _____ da sola in casa.",
+  "sentence": "Non vuole andare da nessuna parte oggi: _____ tutto il giorno.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "resta",
    "options": [
     "resta",
-    "cammina",
-    "cucina",
-    "lavora"
+    "esce",
+    "parte",
+    "torna"
    ],
-   "translation": "Everyone has gone out and she _____ home alone.",
+   "translation": "She doesn't want to go anywhere today: she _____ all day.",
    "optionTranslations": [
-    "to stay",
-    "walks",
-    "cooks",
-    "works"
+    "stays",
+    "goes out",
+    "leaves",
+    "comes back"
    ],
    "audioClip": {
     "storySlug": "meta-e-meta",
     "storySource": "user",
-    "sentence": "Tutti sono usciti e lei resta da sola in casa.",
+    "sentence": "Non vuole andare da nessuna parte oggi: resta tutto il giorno.",
     "targetWord": "resta",
     "language": "italian"
    }

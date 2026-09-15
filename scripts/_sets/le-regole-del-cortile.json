@@ -111,7 +111,7 @@
  {
   "type": "fill_blank",
   "word": "aiuto",
-  "sentence": "Non riesce a farlo da solo e chiede _____.",
+  "sentence": "Da solo non riesce a spostare il divano: chiede _____.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "aiuto",
@@ -121,7 +121,7 @@
     "rispetto",
     "coraggio"
    ],
-   "translation": "He can't do it alone and asks for _____.",
+   "translation": "He can't move the sofa alone: he asks for _____.",
    "optionTranslations": [
     "to help",
     "advice",
@@ -131,7 +131,7 @@
    "audioClip": {
     "storySlug": "le-regole-del-cortile",
     "storySource": "user",
-    "sentence": "Non riesce a farlo da solo e chiede aiuto.",
+    "sentence": "Da solo non riesce a spostare il divano: chiede aiuto.",
     "targetWord": "aiuto",
     "language": "italian"
    }

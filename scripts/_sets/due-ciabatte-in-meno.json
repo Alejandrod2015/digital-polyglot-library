@@ -53,7 +53,7 @@
  {
   "type": "fill_blank",
   "word": "arrabbiata",
-  "sentence": "Urla per il rumore e non sorride mai: è molto _____.",
+  "sentence": "Urla e sbatte la porta per il rumore: è molto _____.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "arrabbiata",
@@ -63,7 +63,7 @@
     "stanca",
     "preoccupata"
    ],
-   "translation": "She shouts about the noise and never smiles: she's very _____.",
+   "translation": "She shouts and slams the door because of the noise: she is very _____.",
    "optionTranslations": [
     "angry",
     "happy",
@@ -73,7 +73,7 @@
    "audioClip": {
     "storySlug": "due-ciabatte-in-meno",
     "storySource": "user",
-    "sentence": "Urla per il rumore e non sorride mai: è molto arrabbiata.",
+    "sentence": "Urla e sbatte la porta per il rumore: è molto arrabbiata.",
     "targetWord": "arrabbiata",
     "language": "italian"
    }
@@ -82,7 +82,7 @@
  {
   "type": "fill_blank",
   "word": "preoccupata",
-  "sentence": "Il cane è sparito da ore: è molto _____.",
+  "sentence": "Cerca il cane da ore e non lo trova: è molto _____.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "preoccupata",
@@ -92,7 +92,7 @@
     "arrabbiata",
     "stanca"
    ],
-   "translation": "The dog has been missing for hours: she is very _____.",
+   "translation": "She's been looking for the dog for hours and can't find it: she's very _____.",
    "optionTranslations": [
     "worried",
     "happy",
@@ -102,7 +102,7 @@
    "audioClip": {
     "storySlug": "due-ciabatte-in-meno",
     "storySource": "user",
-    "sentence": "Il cane è sparito da ore: è molto preoccupata.",
+    "sentence": "Cerca il cane da ore e non lo trova: è molto preoccupata.",
     "targetWord": "preoccupata",
     "language": "italian"
    }

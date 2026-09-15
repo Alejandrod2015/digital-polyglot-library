@@ -111,7 +111,7 @@
  {
   "type": "fill_blank",
   "word": "pesante",
-  "sentence": "La scatola è così _____ che non riesce a sollevarla da sola.",
+  "sentence": "È piena di libri, così _____ che fa male alla schiena.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "pesante",
@@ -121,7 +121,7 @@
     "grande",
     "piccola"
    ],
-   "translation": "The box is so _____ that she can't lift it alone.",
+   "translation": "It's full of books, so _____ that it hurts your back.",
    "optionTranslations": [
     "heavy",
     "light",
@@ -131,7 +131,7 @@
    "audioClip": {
     "storySlug": "tre-gambe-e-mezzo",
     "storySource": "user",
-    "sentence": "La scatola è così pesante che non riesce a sollevarla da sola.",
+    "sentence": "È piena di libri, così pesante che fa male alla schiena.",
     "targetWord": "pesante",
     "language": "italian"
    }

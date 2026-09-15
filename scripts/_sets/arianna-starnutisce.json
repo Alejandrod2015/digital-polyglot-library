@@ -81,13 +81,13 @@
  },
  {
   "type": "fill_blank",
-  "word": "Condividiamo",
+  "word": "condividiamo",
   "sentence": "Abbiamo un solo tubetto di dentifricio, così lo _____.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "Condividiamo",
+   "answer": "condividiamo",
    "options": [
-    "Condividiamo",
+    "condividiamo",
     "compriamo",
     "puliamo",
     "usiamo"
@@ -102,8 +102,8 @@
    "audioClip": {
     "storySlug": "arianna-starnutisce",
     "storySource": "user",
-    "sentence": "Abbiamo un solo tubetto di dentifricio, così lo Condividiamo.",
-    "targetWord": "Condividiamo",
+    "sentence": "Abbiamo un solo tubetto di dentifricio, così lo condividiamo.",
+    "targetWord": "condividiamo",
     "language": "italian"
    }
   }

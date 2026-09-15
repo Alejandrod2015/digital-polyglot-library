@@ -53,7 +53,7 @@
  {
   "type": "fill_blank",
   "word": "parla",
-  "sentence": "Alza la voce al telefono e _____ per molto tempo.",
+  "sentence": "Litiga al telefono e _____ ad alta voce senza fermarsi mai.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "parla",
@@ -63,7 +63,7 @@
     "cammina",
     "aspetta"
    ],
-   "translation": "He raises his voice on the phone and _____ for a long time.",
+   "translation": "She argues on the phone and _____ loudly without ever stopping.",
    "optionTranslations": [
     "to speak",
     "sings",
@@ -73,7 +73,7 @@
    "audioClip": {
     "storySlug": "concerto-al-secondo-piano",
     "storySource": "user",
-    "sentence": "Alza la voce al telefono e parla per molto tempo.",
+    "sentence": "Litiga al telefono e parla ad alta voce senza fermarsi mai.",
     "targetWord": "parla",
     "language": "italian"
    }

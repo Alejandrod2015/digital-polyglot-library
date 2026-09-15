@@ -53,7 +53,7 @@
  {
   "type": "fill_blank",
   "word": "aspetta",
-  "sentence": "Il autobus non arriva, e lei _____ pazientemente alla fermata.",
+  "sentence": "L'autobus non arriva, e lei _____ pazientemente alla fermata.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "aspetta",
@@ -73,7 +73,7 @@
    "audioClip": {
     "storySlug": "quattro-sabati-per-nicola",
     "storySource": "user",
-    "sentence": "Il autobus non arriva, e lei aspetta pazientemente alla fermata.",
+    "sentence": "L'autobus non arriva, e lei aspetta pazientemente alla fermata.",
     "targetWord": "aspetta",
     "language": "italian"
    }

@@ -53,7 +53,7 @@
  {
   "type": "fill_blank",
   "word": "spera",
-  "sentence": "Non sa se domani farà bel tempo, ma lo _____.",
+  "sentence": "È triste oggi, ma _____ un giorno migliore domani.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "spera",
@@ -63,7 +63,7 @@
     "ricorda",
     "spiega"
    ],
-   "translation": "He doesn't know if tomorrow will be nice, but he _____ so.",
+   "translation": "She's sad today, but she _____ for a better day tomorrow.",
    "optionTranslations": [
     "to hope",
     "thinks",
@@ -73,7 +73,7 @@
    "audioClip": {
     "storySlug": "davide-dorme-sulle-scale",
     "storySource": "user",
-    "sentence": "Non sa se domani farà bel tempo, ma lo spera.",
+    "sentence": "È triste oggi, ma spera un giorno migliore domani.",
     "targetWord": "spera",
     "language": "italian"
    }

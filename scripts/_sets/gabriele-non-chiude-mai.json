@@ -110,20 +110,20 @@
  },
  {
   "type": "fill_blank",
-  "word": "Credo",
-  "sentence": "Non sono sicuro, ma _____ che il negozio sia aperto.",
+  "word": "credo",
+  "sentence": "Vedo la macchina parcheggiata davanti: _____ che è in casa.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "Credo",
+   "answer": "credo",
    "options": [
-    "Credo",
+    "credo",
     "spero",
     "ricordo",
     "spiego"
    ],
-   "translation": "I'm not sure, but I _____ the shop is open.",
+   "translation": "I see the car parked outside: I _____ he is home.",
    "optionTranslations": [
-    "to believe or think",
+    "believe",
     "hope",
     "remember",
     "explain"
@@ -131,8 +131,8 @@
    "audioClip": {
     "storySlug": "gabriele-non-chiude-mai",
     "storySource": "user",
-    "sentence": "Non sono sicuro, ma Credo che il negozio sia aperto.",
-    "targetWord": "Credo",
+    "sentence": "Vedo la macchina parcheggiata davanti: credo che è in casa.",
+    "targetWord": "credo",
     "language": "italian"
    }
   }

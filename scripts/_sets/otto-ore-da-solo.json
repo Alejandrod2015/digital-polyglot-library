@@ -111,7 +111,7 @@
  {
   "type": "fill_blank",
   "word": "spiega",
-  "sentence": "Racconta perché è arrivato tardi e _____ tutto.",
+  "sentence": "Nessuno capisce perché è in ritardo, così lui _____ tutto per bene.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "spiega",
@@ -121,7 +121,7 @@
     "ricorda",
     "aspetta"
    ],
-   "translation": "He tells why he arrived late and _____ everything.",
+   "translation": "Nobody understands why he's late, so he _____ everything properly.",
    "optionTranslations": [
     "to explain",
     "forgets",
@@ -131,7 +131,7 @@
    "audioClip": {
     "storySlug": "otto-ore-da-solo",
     "storySource": "user",
-    "sentence": "Racconta perché è arrivato tardi e spiega tutto.",
+    "sentence": "Nessuno capisce perché è in ritardo, così lui spiega tutto per bene.",
     "targetWord": "spiega",
     "language": "italian"
    }

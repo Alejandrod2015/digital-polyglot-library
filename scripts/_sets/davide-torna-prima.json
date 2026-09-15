@@ -82,7 +82,7 @@
  {
   "type": "fill_blank",
   "word": "abbronzato",
-  "sentence": "Ha passato tanti giorni al mare sotto il sole: è molto _____.",
+  "sentence": "Dopo giorni al sole, ha la pelle scura: è molto _____.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "abbronzato",
@@ -92,7 +92,7 @@
     "magro",
     "sporco"
    ],
-   "translation": "He spent many days at the sea under the sun: he's very _____.",
+   "translation": "After days in the sun, his skin is dark: he's very _____.",
    "optionTranslations": [
     "tanned",
     "tired",
@@ -102,7 +102,7 @@
    "audioClip": {
     "storySlug": "davide-torna-prima",
     "storySource": "user",
-    "sentence": "Ha passato tanti giorni al mare sotto il sole: è molto abbronzato.",
+    "sentence": "Dopo giorni al sole, ha la pelle scura: è molto abbronzato.",
     "targetWord": "abbronzato",
     "language": "italian"
    }

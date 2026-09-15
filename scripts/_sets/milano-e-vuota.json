@@ -53,7 +53,7 @@
  {
   "type": "fill_blank",
   "word": "umida",
-  "sentence": "Vicino al mare, l'aria è sempre molto _____.",
+  "sentence": "Non riesci mai ad asciugare i vestiti qui: l'aria è sempre _____.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "umida",
@@ -63,7 +63,7 @@
     "calda",
     "secca"
    ],
-   "translation": "Near the sea, the air is always very _____.",
+   "translation": "You can never dry your clothes here: the air is always _____.",
    "optionTranslations": [
     "humid",
     "cold",
@@ -73,7 +73,7 @@
    "audioClip": {
     "storySlug": "milano-e-vuota",
     "storySource": "user",
-    "sentence": "Vicino al mare, l'aria è sempre molto umida.",
+    "sentence": "Non riesci mai ad asciugare i vestiti qui: l'aria è sempre umida.",
     "targetWord": "umida",
     "language": "italian"
    }
