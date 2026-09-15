@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Montagmorgen,der Flur,der Arbeitstag,der Patient",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Montagmorgen",
+     "answer": "Monday morning",
+     "options": [
+      "Monday morning",
+      "a hallway",
+      "a working day",
+      "a patient"
+     ]
+    },
+    {
+     "word": "der Flur",
+     "answer": "a hallway",
+     "options": [
+      "Monday morning",
+      "a hallway",
+      "a working day",
+      "a patient"
+     ]
+    },
+    {
+     "word": "der Arbeitstag",
+     "answer": "a working day",
+     "options": [
+      "Monday morning",
+      "a hallway",
+      "a working day",
+      "a patient"
+     ]
+    },
+    {
+     "word": "der Patient",
+     "answer": "a patient",
+     "options": [
+      "Monday morning",
+      "a hallway",
+      "a working day",
+      "a patient"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "deshalb",
+  "sentence": "Sie hat [[deshalb]] schlechte Laune.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "that's why",
+   "options": [
+    "that's why",
+    "never",
+    "already",
+    "sometimes"
+   ],
+   "audioClip": {
+    "storySlug": "zu-feste-hande",
+    "storySource": "user",
+    "sentence": "Sie hat deshalb schlechte Laune.",
+    "targetWord": "deshalb",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schlechte",
+  "sentence": "Sie hat heute [[schlechte]] Laune.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bad",
+   "options": [
+    "bad",
+    "good",
+    "funny",
+    "strange"
+   ],
+   "audioClip": {
+    "storySlug": "zu-feste-hande",
+    "storySource": "user",
+    "sentence": "Sie hat heute schlechte Laune.",
+    "targetWord": "schlechte",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Laune",
+  "sentence": "Sie hat deshalb schlechte [[Laune]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "mood",
+   "options": [
+    "mood",
+    "idea",
+    "news",
+    "luck"
+   ],
+   "audioClip": {
+    "storySlug": "zu-feste-hande",
+    "storySource": "user",
+    "sentence": "Sie hat deshalb schlechte Laune.",
+    "targetWord": "Laune",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Schmerzen",
+  "sentence": "Der Patient hat [[Schmerzen]] im Rücken.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pain",
+   "options": [
+    "pain",
+    "fear",
+    "hunger",
+    "cold"
+   ],
+   "audioClip": {
+    "storySlug": "zu-feste-hande",
+    "storySource": "user",
+    "sentence": "Der Patient hat Schmerzen im Rücken.",
+    "targetWord": "Schmerzen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hart",
+  "sentence": "Sie arbeitet heute viel zu [[hart]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hard",
+   "options": [
+    "hard",
+    "slow",
+    "long",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "zu-feste-hande",
+    "storySource": "user",
+    "sentence": "Sie arbeitet heute viel zu hart.",
+    "targetWord": "hart",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "falsch",
+  "sentence": "Das war [[falsch]], nicht so fest!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wrong",
+   "options": [
+    "wrong",
+    "strange",
+    "hard",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "zu-feste-hande",
+    "storySource": "user",
+    "sentence": "Das war falsch, nicht so fest!",
+    "targetWord": "falsch",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gleich",
+  "sentence": "Sie nimmt [[gleich]] die Hände weg.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "right away",
+   "options": [
+    "right away",
+    "slowly",
+    "carefully",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "zu-feste-hande",
+    "storySource": "user",
+    "sentence": "Sie nimmt gleich die Hände weg.",
+    "targetWord": "gleich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "unruhig",
+  "sentence": "Ihre Hände sind heute [[unruhig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "restless",
+   "options": [
+    "restless",
+    "warm",
+    "tired",
+    "weak"
+   ],
+   "audioClip": {
+    "storySlug": "zu-feste-hande",
+    "storySource": "user",
+    "sentence": "Ihre Hände sind heute unruhig.",
+    "targetWord": "unruhig",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "freundlich",
+  "sentence": "Sie spricht ganz [[freundlich]] mit ihr.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "kindly",
+   "options": [
+    "kindly",
+    "quietly",
+    "angrily",
+    "sadly"
+   ],
+   "audioClip": {
+    "storySlug": "zu-feste-hande",
+    "storySource": "user",
+    "sentence": "Sie spricht ganz freundlich mit ihr.",
+    "targetWord": "freundlich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sauer",
+  "sentence": "Der Mann ruft ganz [[sauer]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "angrily",
+   "options": [
+    "angrily",
+    "happily",
+    "calmly",
+    "sadly"
+   ],
+   "audioClip": {
+    "storySlug": "zu-feste-hande",
+    "storySource": "user",
+    "sentence": "Der Mann ruft ganz sauer.",
+    "targetWord": "sauer",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "kann",
+  "sentence": "Sie [[kann]] heute nichts sagen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "can",
+   "options": [
+    "can",
+    "must",
+    "wants to",
+    "should"
+   ],
+   "audioClip": {
+    "storySlug": "zu-feste-hande",
+    "storySource": "user",
+    "sentence": "Sie kann heute nichts sagen.",
+    "targetWord": "kann",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "helfen",
+  "sentence": "Diese Hände [[helfen]] täglich Menschen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "help",
+   "options": [
+    "help",
+    "hurt",
+    "touch",
+    "find"
+   ],
+   "audioClip": {
+    "storySlug": "zu-feste-hande",
+    "storySource": "user",
+    "sentence": "Diese Hände helfen täglich Menschen.",
+    "targetWord": "helfen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "täglich",
+  "sentence": "Diese Hände helfen [[täglich]] Menschen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "daily",
+   "options": [
+    "daily",
+    "rarely",
+    "never",
+    "once"
+   ],
+   "audioClip": {
+    "storySlug": "zu-feste-hande",
+    "storySource": "user",
+    "sentence": "Diese Hände helfen täglich Menschen.",
+    "targetWord": "täglich",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "mache",
+  "sentence": "Ich _____ hier ruhig weiter.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mache",
+   "options": [
+    "mache",
+    "gehe",
+    "bleibe",
+    "warte"
+   ],
+   "translation": "I'll just _____ carrying on here.",
+   "optionTranslations": [
+    "do",
+    "go",
+    "stay",
+    "wait"
+   ],
+   "audioClip": {
+    "storySlug": "zu-feste-hande",
+    "storySource": "user",
+    "sentence": "Ich mache hier ruhig weiter.",
+    "targetWord": "mache",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "trinkst",
+  "sentence": "Du _____ jetzt einen warmen Tee.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "trinkst",
+   "options": [
+    "trinkst",
+    "kochst",
+    "suchst",
+    "isst"
+   ],
+   "translation": "You _____ a warm tea now.",
+   "optionTranslations": [
+    "drink",
+    "cook",
+    "look for",
+    "eat"
+   ],
+   "audioClip": {
+    "storySlug": "zu-feste-hande",
+    "storySource": "user",
+    "sentence": "Du trinkst jetzt einen warmen Tee.",
+    "targetWord": "trinkst",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "bleibt",
+  "sentence": "Sie _____ heute lieber zu Hause.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bleibt",
+   "options": [
+    "bleibt",
+    "arbeitet",
+    "kocht",
+    "läuft"
+   ],
+   "translation": "She'd rather _____ at home today.",
+   "optionTranslations": [
+    "stay",
+    "work",
+    "cook",
+    "run"
+   ],
+   "audioClip": {
+    "storySlug": "zu-feste-hande",
+    "storySource": "user",
+    "sentence": "Sie bleibt heute lieber zu Hause.",
+    "targetWord": "bleibt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]
