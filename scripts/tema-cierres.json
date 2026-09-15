@@ -5878,8 +5878,8 @@
     }
   },
   "cmu36dk1d0007j8p7grgcyiok#clothes-and-looks": {
-    "cerrado": "2026-09-15T22:11:29.365Z",
-    "hash": "edb8b71d0838f444",
+    "cerrado": "2026-09-15T22:39:55.116Z",
+    "hash": "6a3ecd631d0c2cd6",
     "historias": [
       "clothes-and-looks#0 la-chaqueta-ya-no-cierra",
       "clothes-and-looks#1 ruben-sin-barba",
@@ -5893,12 +5893,12 @@
       "acotacion dominante bajo tope (\"dijo\" 33%)",
       "arranques de parrafo variados (mas repetido \"rubén\", 19%)",
       "densidad 8.9 palabras por oracion (techo 13 en a2)",
-      "seguidilla 8/37 oraciones cortas narradas",
+      "seguidilla 8/38 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.07 sobre 44 plazas · 42 salen una sola vez | ancladas: 16/60 (27%) | cola: 42/44 portables con un solo encuentro (95%, tope 80%) | de un solo encuentro: Aquella tarde, llenos de, raros, esta mañana, cierra, Tiré, se rompió, escuchó, con atención, brillantes, rápidamente, Diez minutos después, delante de, Esa soy yo, negra, Pareces otro, guapo, reconozco, se tocó, Hoy, afeitado, los dos, largo, cambiado, hacemos la foto, de ahora, juntos, Una semana después, Pensó, decidió…",
@@ -5944,8 +5944,8 @@
     }
   },
   "cmu36dk1d0007j8p7grgcyiok#couples-and-dating": {
-    "cerrado": "2026-09-15T22:18:58.354Z",
-    "hash": "a775441c02320ccd",
+    "cerrado": "2026-09-15T22:43:06.873Z",
+    "hash": "23a6d4f1d602138a",
     "historias": [
       "couples-and-dating#0 raul-lee-poesia",
       "couples-and-dating#1 agua-en-el-local",
@@ -5958,13 +5958,13 @@
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"dijo\" 33%)",
       "arranques de parrafo variados (mas repetido \"raúl\", 13%)",
-      "densidad 8.6 palabras por oracion (techo 13 en a2)",
-      "seguidilla 12/40 oraciones cortas narradas",
+      "densidad 8.7 palabras por oracion (techo 13 en a2)",
+      "seguidilla 13/40 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.00 sobre 44 plazas · 44 salen una sola vez | ancladas: 16/60 (27%) | cola: 44/44 portables con un solo encuentro (100%, tope 80%) | de un solo encuentro: cinco minutos tarde, conocían, tímido, simpático, hablaron, me suena, un mal día, nada más, poco a poco, leyó, invito, despedirse, Vale, en la otra orilla, soy yo, Me voy, fui, Tenía miedo, Nunca, a nadie, cogió, Gracias por, entra, mojan, sin prisa, salió corriendo, De pronto, vacía, Justo entonces, Tres días después…",
@@ -6010,8 +6010,8 @@
     }
   },
   "cmu36dk1d0007j8p7grgcyiok#driving-and-cars": {
-    "cerrado": "2026-09-15T21:54:09.733Z",
-    "hash": "1609baf9e748f2ca",
+    "cerrado": "2026-09-15T22:42:35.907Z",
+    "hash": "cf516eed8be2db91",
     "historias": [
       "driving-and-cars#0 la-bateria-no-cabe",
       "driving-and-cars#1 olga-no-tiene-prisa",
@@ -6024,13 +6024,13 @@
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"contestó\" 27%)",
       "arranques de parrafo variados (mas repetido \"la\", 13%)",
-      "densidad 9.3 palabras por oracion (techo 13 en a2)",
+      "densidad 9.1 palabras por oracion (techo 13 en a2)",
       "seguidilla 13/43 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.09 sobre 44 plazas · 41 salen una sola vez | ancladas: 16/60 (27%) | cola: 41/44 portables con un solo encuentro (93%, tope 80%) | de un solo encuentro: cabía, pequeño, quejaban, deja, Cargaron, sorprendido, hizo una raya, bajarlo, Condujo, aparcó, después, amarillo, sin mirarla, a las ocho, venía, medio, llena, Siéntate, todo el barrio, a nombre de, dos veces, Casi, mandó, pagó, próxima, sonriendo, lento, con los brazos cruzados, pidió, Desde ese día…",
@@ -6076,8 +6076,8 @@
     }
   },
   "cmu36dk1d0007j8p7grgcyiok#fairs-and-street-parties": {
-    "cerrado": "2026-09-15T22:28:52.330Z",
-    "hash": "ddf1290a27785a94",
+    "cerrado": "2026-09-15T22:40:26.328Z",
+    "hash": "a37227e1ee871048",
     "historias": [
       "fairs-and-street-parties#0 tocais-los-ultimos",
       "fairs-and-street-parties#1 yo-tambien-tenia-miedo",
@@ -6088,10 +6088,10 @@
       "validador canonico: 3/3 (perfil narrador)",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"dijo\" 17%)",
+      "acotacion dominante bajo tope (\"contestó\" 17%)",
       "arranques de parrafo variados (mas repetido \"lorena\", 20%)",
-      "densidad 8.8 palabras por oracion (techo 13 en a2)",
-      "seguidilla 10/41 oraciones cortas narradas",
+      "densidad 8.9 palabras por oracion (techo 13 en a2)",
+      "seguidilla 11/42 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
@@ -6142,8 +6142,8 @@
     }
   },
   "cmu36dk1d0007j8p7grgcyiok#money-and-loans": {
-    "cerrado": "2026-09-15T22:02:07.280Z",
-    "hash": "0978e2b16bdb30df",
+    "cerrado": "2026-09-15T22:42:51.290Z",
+    "hash": "467a72ddbbe263ce",
     "historias": [
       "money-and-loans#0 huele-a-quemado",
       "money-and-loans#1 las-gafas-pueden-esperar",
@@ -6162,7 +6162,7 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 12 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.11 sobre 44 plazas · 40 salen una sola vez | ancladas: 16/60 (27%) | cola: 40/44 portables con un solo encuentro (91%, tope 80%) | de un solo encuentro: en medio de, de pelo castaño, nervioso, de atrás, con cuidado, limpio, cuesta, un buen precio, tanto, al mes, ahorraba, desde junio, primer, a su lado, llego a fin de mes, cobrado, con calma, nuevas, miró, sin preguntar nada, seca, deberte, al final, suave, y ya está, quiero, entre los dos, pagó en efectivo, Aquí, encima…",
@@ -6273,8 +6273,8 @@
     }
   },
   "cmu36dk1d0007j8p7grgcyiok#phones-and-social-media": {
-    "cerrado": "2026-09-15T22:28:23.046Z",
-    "hash": "a36d8cbcb9e121f4",
+    "cerrado": "2026-09-15T22:42:20.195Z",
+    "hash": "1bf7df24341119fb",
     "historias": [
       "phones-and-social-media#0 una-foto-sin-caras",
       "phones-and-social-media#1 jaime-lo-grabo-todo",
@@ -6285,18 +6285,18 @@
       "validador canonico: 3/3 (perfil narrador)",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"contestó\" 21%)",
+      "acotacion dominante bajo tope (\"preguntó\" 21%)",
       "arranques de parrafo variados (mas repetido \"rubén\", 13%)",
       "densidad 8.6 palabras por oracion (techo 13 en a2)",
-      "seguidilla 11/40 oraciones cortas narradas",
+      "seguidilla 14/41 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/18 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.16 sobre 43 plazas · 38 salen una sola vez | ancladas: 17/60 (28%) | cola: 38/43 portables con un solo encuentro (88%, tope 80%) | de un solo encuentro: abrió, red social, cerca, se cayó, quedó, funciona, salió, tres veces, Entonces, en la mano, frío, puso, por todas partes, encontró, delgado, primera fila, contó, esperó, Luego, tocaba, rápido, Mucha gente, subo, un poco, en rojo, enseñó, triste, devolvió, oía, Hasta…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.14 sobre 43 plazas · 38 salen una sola vez | ancladas: 17/60 (28%) | cola: 38/43 portables con un solo encuentro (88%, tope 80%) | de un solo encuentro: abrió, red social, cerca, se cayó, quedó, funciona, salió, tres veces, Entonces, en la mano, frío, puso, por todas partes, encontró, delgado, primera fila, contó, esperó, Luego, tocaba, rápido, Mucha gente, subo, un poco, en rojo, enseñó, triste, devolvió, oía, Hasta…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
