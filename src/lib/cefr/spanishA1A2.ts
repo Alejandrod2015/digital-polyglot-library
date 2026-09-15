@@ -741,6 +741,9 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
 const SPANISH_A1_A2_CURATED: readonly string[] = [
   // Tema 1, Music & Bands
   "bombero",          // PCIC A1, 11.6 Servicios de proteccion y seguridad: "policia, bombero"
+  // Tema 2, Phones & Social Media
+  "cantante",         // PCIC A1, 18.2 Musica y danza: "cantante"
+  "concierto",        // PCIC A1, 8.2 Espectaculos y exposiciones: "pelicula, concierto"
 ];
 for (const w of SPANISH_A1_A2_CURATED) (SPANISH_A1_A2_LEMMAS as Set<string>).add(w);
 
