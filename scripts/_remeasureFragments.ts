@@ -17,6 +17,7 @@ import { config } from "dotenv"; config({ path: ".env.local", quiet:true }); con
 import { execFileSync, spawnSync } from "child_process";
 import { PrismaClient } from "../src/generated/prisma";
 import { anclarFragmentos, tiemposDesordenados, norm, type Frag, type W } from "./remeasureFragmentsLib";
+import { boundaryFor } from "./silenceBoundaryLib";
 
 const p = new PrismaClient();
 const apiKey = process.env.ELEVENLABS_API_KEY!;
@@ -51,33 +52,14 @@ function silencios(url:string): Array<[number,number]> {
   return out;
 }
 
-/**
- * Frontera de corte para una palabra que empieza en `t`.
- *
- * Tiene que caer ANTES de que empiece la palabra, dentro del silencio que la
- * precede. Buscar "el silencio más cercano" no vale: si el más cercano es el
- * que viene DESPUÉS, el corte deja pegado el arranque de la palabra vieja y se
- * oye dos veces ("Bia, Bia desce", 2026-08-17).
- */
-function alSilencio(t:number, sils:Array<[number,number]>): number {
-  // Si `t` cae DENTRO de un hueco real (a<=t<=b), ese es el hueco correcto:
-  // no seguir buscando. El bug real (2026-09-15): mirar solo huecos que
-  // TERMINAN antes de `t` (b<=t+0.02) descartaba el hueco ancho y correcto
-  // cuando `t` caia dentro de el por el margen de error del STT, y snapeaba
-  // a una pausa interna de la frase (una coma) mas cercana por distancia
-  // pero incorrecta, cortando a mitad de oracion.
-  const contenedor = sils.find(([a,b]) => t >= a - 0.02 && t <= b + 0.02);
-  if (contenedor) return (contenedor[0] + contenedor[1]) / 2;
-  let mejor = t, dist = Infinity;
-  for (const [a,b] of sils) {
-    if (b > t + 0.02) continue;            // silencio posterior: no sirve
-    const d = t - b;                        // cuánto antes de la palabra acaba
-    if (d < dist && d < 1.5) { dist = d; mejor = (a + b) / 2; }
-  }
-  // Sin silencio previo utilizable, un margen fijo antes de la palabra es
-  // mejor que cortar justo encima de ella.
-  return mejor === t ? Math.max(0, t - 0.06) : mejor;
-}
+// La frontera de corte para una palabra que empieza en `t` vive en
+// silenceBoundaryLib.ts (boundaryFor), compartida con _restoreOriginal.ts y
+// testeada en scripts/__tests__/silenceBoundaryLib.test.ts: deja `t` tal
+// cual si ya cae dentro de la tolerancia de un hueco real, y solo si no
+// cae en ninguno busca el hueco mas cercano por distancia (sin la
+// restriccion direccional del bug original de alSilencio, que solo miraba
+// huecos que TERMINAN antes de `t` y por eso descartaba huecos anchos y
+// correctos que CONTIENEN a `t`).
 
 (async()=>{
   const slug = process.argv[2];
@@ -124,8 +106,8 @@ function alSilencio(t:number, sils:Array<[number,number]>): number {
     const endBruto = n === orden.length - 1 || sigIdx === undefined
       ? dur
       : Number(words[sigIdx]?.start ?? f.endSec);
-    const start = n === 0 ? 0 : alSilencio(startBruto, sils);
-    const end = n === orden.length - 1 ? dur : alSilencio(endBruto, sils);
+    const start = n === 0 ? 0 : boundaryFor(startBruto, sils);
+    const end = n === orden.length - 1 ? dur : boundaryFor(endBruto, sils);
     const antes = `${Number(f.startSec).toFixed(2)}-${Number(f.endSec).toFixed(2)}`;
     console.log(`  [${f.index}] ${antes}  ->  ${start.toFixed(2)}-${end.toFixed(2)}   ${String(f.text ?? "").slice(0,44)}`);
     nuevos.push({ ...f, startSec: Number(start.toFixed(3)), endSec: Number(end.toFixed(3)) });

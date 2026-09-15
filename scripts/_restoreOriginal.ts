@@ -10,6 +10,7 @@ import { generateWordTimingsForStory } from "../src/lib/audioWordTimings";
 import { uploadPublicObject } from "../src/lib/objectStorage";
 import { rapidasDe } from "./checkNarrationPace";
 import { checkMasterCoverage } from "./coverageWhisperCheck";
+import { boundaryFor } from "./silenceBoundaryLib";
 
 const p = new PrismaClient();
 const norm = (t: string) =>
@@ -29,23 +30,20 @@ function silencios(url: string): Array<[number, number]> {
   }
   return out;
 }
-function alSilencio(t: number, sils: Array<[number, number]>): number {
-  // Si `t` cae DENTRO de un hueco real (a<=t<=b), ese es el hueco correcto:
-  // no seguir buscando. El bug real (2026-09-15): mirar solo huecos que
-  // TERMINAN antes de `t` (b<=t+0.02) descartaba el hueco ancho y correcto
-  // cuando `t` caia dentro de el por el margen de error del STT, y snapeaba
-  // a una pausa interna de la frase (una coma) mas cercana por distancia
-  // pero incorrecta, cortando a mitad de oracion.
-  const contenedor = sils.find(([a, b]) => t >= a - 0.02 && t <= b + 0.02);
-  if (contenedor) return (contenedor[0] + contenedor[1]) / 2;
-  let mejor = t, dist = Infinity;
-  for (const [a, b] of sils) {
-    if (b > t + 0.02) continue;
-    const d = t - b;
-    if (d < dist && d < 1.5) { dist = d; mejor = (a + b) / 2; }
-  }
-  return mejor === t ? Math.max(0, t - 0.06) : mejor;
-}
+// alSilencio() (la version anterior, propia de este archivo) ya no existe:
+// la frontera de corte vive en silenceBoundaryLib.ts (boundaryFor).
+// Diferencia real que importa aqui (2026-09-15): este script agrupa por
+// PARRAFO acumulando palabras de `audioSegments`, y el punto que le pasaba a
+// alSilencio() era el arranque BRUTO del siguiente grupo (`grupos[i+1].start`),
+// no un punto medio entre oraciones reales. Eso hacia que el "contenedor"
+// (bbf20063) recentrara al medio de un hueco ANCHO y mal medido -perdiendo
+// una frase entera del master ("la boule au ventre", ver
+// scripts/__tests__/silenceBoundaryLib.test.ts). El arreglo real es doble:
+// 1) estimar el limite como el punto medio entre el FIN de la ultima
+//    oracion del grupo anterior y el INICIO de la primera del siguiente
+//    (mas preciso que el arranque bruto de un grupo), y
+// 2) boundaryFor() prefiere ese estimado tal cual si ya cae en un hueco
+//    real, y solo recentra cuando no cae en ninguno.
 
 (async () => {
   const slug = process.argv[2];
@@ -77,28 +75,34 @@ function alSilencio(t: number, sils: Array<[number, number]>): number {
 
   // Deriva fragmentos por parrafo (para poder re-tirar despues si hace falta)
   const paras = String(s.text).split(/\n\n+/).map((x) => x.trim()).filter(Boolean);
-  const grupos: { start: number; end: number }[] = [];
+  const grupos: { start: number; end: number; lastIdx: number }[] = [];
   let si = 0;
   for (const para of paras) {
     const objetivo = norm(para).split(" ").filter(Boolean).length;
     let acum = 0;
     const inicio = segs[si]?.startSec;
     let fin2 = inicio;
+    let lastIdx = si;
     while (si < segs.length && acum < objetivo) {
       acum += norm(segs[si].text).split(" ").filter(Boolean).length;
       fin2 = segs[si].endSec;
+      lastIdx = si;
       si++;
     }
-    grupos.push({ start: inicio, end: fin2 });
+    grupos.push({ start: inicio, end: fin2, lastIdx });
   }
   const dur = Number(execFileSync("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", originalUrl], { encoding: "utf8" }).trim());
   const sils = silencios(originalUrl);
+  // Estimado = punto medio entre el FIN de la ultima oracion del grupo
+  // anterior y el INICIO de la primera del siguiente (no el arranque bruto
+  // de un grupo: ver la nota de arriba sobre "la boule au ventre").
+  const estimar = (finPrev: number, inicioNext: number) => (finPrev + inicioNext) / 2;
   const bounds: { index: number; startSec: number; endSec: number; text: string }[] = [
-    { index: 0, startSec: 0, endSec: grupos[0] ? alSilencio(grupos[0].start, sils) : 0, text: s.title },
+    { index: 0, startSec: 0, endSec: grupos[0] ? boundaryFor(estimar(0, grupos[0].start), sils) : 0, text: s.title },
   ];
   grupos.forEach((gr, i) => {
-    const start = i === 0 ? bounds[0].endSec : alSilencio(gr.start, sils);
-    const end = i === grupos.length - 1 ? dur : alSilencio(grupos[i + 1].start, sils);
+    const start = i === 0 ? bounds[0].endSec : boundaryFor(estimar(segs[grupos[i - 1].lastIdx].endSec, gr.start), sils);
+    const end = i === grupos.length - 1 ? dur : boundaryFor(estimar(segs[gr.lastIdx].endSec, grupos[i + 1].start), sils);
     bounds.push({ index: i + 1, startSec: start, endSec: end, text: paras[i] });
   });
   let ordenOk = true;
