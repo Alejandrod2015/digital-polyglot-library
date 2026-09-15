@@ -239,7 +239,7 @@
     {
       "id": "topics-grounded",
       "gate": "hook",
-      "rule": "Cada tema cita una motivacion real escrita por un solicitante; en un idioma con menos frases de proposito que temas, el porton admite el modo journey-level declarado (minimo 2 citas verbatim de 2 personas distintas para el journey entero)",
+      "rule": "Las motivaciones escritas por solicitantes son PISTA, no filtro (2026-09-15): assertTopicsGrounded imprime que tema cita que motivacion y AVISA de los temas sin cita sin tirar; pre-topic-guard.sh avisa sin bloquear; las reglas de nombre comprobables desde la cadena si tiran",
       "memory": "project_topic_naming_rule",
       "hook": "pre-topic-guard.sh"
     },
