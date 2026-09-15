@@ -744,6 +744,8 @@ const SPANISH_A1_A2_CURATED: readonly string[] = [
   // Tema 2, Phones & Social Media
   "cantante",         // PCIC A1, 18.2 Musica y danza: "cantante"
   "concierto",        // PCIC A1, 8.2 Espectaculos y exposiciones: "pelicula, concierto"
+  // Tema 3, Driving & Cars
+  "euro",             // PCIC A1, 12.4 Pagos y 11.3 Servicios financieros: "dinero, euro, centimo (de euro)"
 ];
 for (const w of SPANISH_A1_A2_CURATED) (SPANISH_A1_A2_LEMMAS as Set<string>).add(w);
 
