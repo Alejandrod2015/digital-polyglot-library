@@ -17,7 +17,10 @@ const norm = (t: string) =>
 
 function silencios(url: string): Array<[number, number]> {
   const out: Array<[number, number]> = [];
-  const r = spawnSync("ffmpeg", ["-i", url, "-af", "silencedetect=noise=-35dB:d=0.18", "-f", "null", "-"], { encoding: "utf8" });
+  // d=0.12: el MISMO umbral que assertCorteEnSilencio en produccion
+  // (audioEditorSections.ts), para no medir con un criterio distinto del
+  // que el splice real va a exigir despues.
+  const r = spawnSync("ffmpeg", ["-i", url, "-af", "silencedetect=noise=-35dB:d=0.12", "-f", "null", "-"], { encoding: "utf8" });
   const err = String(r.stderr ?? "");
   let ini: number | null = null;
   for (const m of err.matchAll(/silence_(start|end): ([\d.]+)/g)) {
@@ -27,6 +30,14 @@ function silencios(url: string): Array<[number, number]> {
   return out;
 }
 function alSilencio(t: number, sils: Array<[number, number]>): number {
+  // Si `t` cae DENTRO de un hueco real (a<=t<=b), ese es el hueco correcto:
+  // no seguir buscando. El bug real (2026-09-15): mirar solo huecos que
+  // TERMINAN antes de `t` (b<=t+0.02) descartaba el hueco ancho y correcto
+  // cuando `t` caia dentro de el por el margen de error del STT, y snapeaba
+  // a una pausa interna de la frase (una coma) mas cercana por distancia
+  // pero incorrecta, cortando a mitad de oracion.
+  const contenedor = sils.find(([a, b]) => t >= a - 0.02 && t <= b + 0.02);
+  if (contenedor) return (contenedor[0] + contenedor[1]) / 2;
   let mejor = t, dist = Infinity;
   for (const [a, b] of sils) {
     if (b > t + 0.02) continue;
