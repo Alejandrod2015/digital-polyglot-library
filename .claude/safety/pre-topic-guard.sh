@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
-# PreToolUse: ningún tema de journey se escribe sin pasar por el portón de
-# evidencia (`assertTopicsGrounded`, src/lib/topicEvidence.ts).
+# PreToolUse: AVISA (no bloquea) cuando se escriben temas de journey sin pasar
+# por el informe de pistas (`assertTopicsGrounded`, src/lib/topicEvidence.ts).
 #
-# WHY (2026-08-17): cinco de los siete temas del A1 España salieron del molde
-# de un curso de principiante en vez de las motivaciones reales de usuario.
-# La regla vivía en memoria y se saltó sola.
+# WHY (2026-09-15, decision del usuario, literal): "La motivación de unos
+# cuántos beta testers no puede ser un filtro, solo una pista." Hasta ese dia
+# este hook BLOQUEABA toda escritura de temas que no llamara al porton de
+# evidencia. Ahora las motivaciones inspiran temas y no los vetan: el hook solo
+# recuerda que el informe existe. Salida siempre 0.
 #
-# Solo gatea la ESCRITURA de temas. Leer y consultar pasa. No protege ficheros:
-# si el portón cambia, se ve en el diff.
+# Origen (2026-08-17): cinco de los siete temas del A1 España salieron del molde
+# de un curso de principiante. El informe sigue sirviendo para verlo.
+#
+# Solo mira la ESCRITURA de temas. Leer y consultar pasa sin aviso.
 
 DPL_HOOK_PAYLOAD="$(cat)"; export DPL_HOOK_PAYLOAD
 RESULT="$(/usr/bin/python3 - <<'PY'
@@ -33,21 +37,12 @@ for m in re.finditer(r"(?:^|\s)((?:scripts|src)/[\w./-]+\.(?:ts|tsx|js|mjs))", c
     except Exception:
         pass
 
-print("PASS" if (not WRITE.search(hay)) or ("assertTopicsGrounded" in hay) else "BLOCK")
+print("PASS" if (not WRITE.search(hay)) or ("assertTopicsGrounded" in hay) else "WARN")
 PY
 )"
 
-if [ "$RESULT" = "BLOCK" ]; then
-  cat >&2 <<'MSG'
-[topic-gate] BLOCKED: escritura de temas sin portón de evidencia.
-
-Un tema nombra el dominio léxico de sus tres historias y sale de lo que la
-gente ESCRIBIÓ, no del molde de un curso.
-
-  1. npx tsx scripts/userEvidence.ts <idioma>
-  2. Llama a `assertTopicsGrounded` pasando, por cada tema, la cita verbatim
-     que lo justifica. Si la cita no está en BetaSignup, tira.
-MSG
-  exit 2
+if [ "$RESULT" = "WARN" ]; then
+  MSG='[topic-hint] AVISO, no bloquea: escritura de temas sin el informe de pistas (assertTopicsGrounded). Las motivaciones beta son pista, no filtro (2026-09-15). Si quieres verlas: npx tsx scripts/userEvidence.ts <idioma>. Las reglas de NOMBRE de temas siguen valiendo y assertTopicsGrounded las comprueba.'
+  DPL_MSG="$MSG" /usr/bin/python3 -c 'import json,os; m=os.environ["DPL_MSG"]; print(json.dumps({"systemMessage": m, "hookSpecificOutput": {"hookEventName": "PreToolUse", "additionalContext": m}}))'
 fi
 exit 0
