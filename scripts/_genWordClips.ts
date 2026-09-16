@@ -118,18 +118,27 @@ async function renderWord(word: string, voice: string, apiKey: string, outPath: 
 (async()=>{
   const slug = process.argv[2];
   const force = process.argv.includes("--force");
+  const featuredOnly = process.argv.includes("--featured");
   const onlyArg = process.argv.find(a=>a.startsWith("--only="));
   const only = onlyArg ? new Set(onlyArg.slice(7).split(",").map(s=>s.trim().toLowerCase())) : null;
-  if(!slug) throw new Error("usage: _genWordClips.ts <slug> [--only=w1,w2] [--force]");
+  if(!slug) throw new Error("usage: _genWordClips.ts <slug> [--featured] [--only=w1,w2] [--force]");
   const apiKey = process.env.ELEVENLABS_API_KEY; if(!apiKey) throw new Error("no ELEVENLABS_API_KEY");
   await preflightF0Gate(); // antes de la primera sintesis: sin gate no se gasta un credito
-  const story = await prisma.journeyStory.findFirst({ where:{slug}, select:{ voiceId:true, practiceVoiceId:true, journey:{select:{language:true}}, practiceSet:{select:{exercises:{select:{id:true, word:true, type:true, payload:true}}}} } });
+  const story = await prisma.journeyStory.findFirst({ where:{slug}, select:{ voiceId:true, practiceVoiceId:true, journey:{select:{language:true}}, practiceSet:{select:{exercises:{select:{id:true, word:true, type:true, payload:true, featured:true}}}} } });
   if(!story?.practiceSet) throw new Error(`no practice set for ${slug}`);
   const voice = practiceVoiceId(story);
   const langKey = resolveLangKey(story.journey?.language);
   let targets = story.practiceSet.exercises.filter(e=>e.type==="meaning_in_context" && e.word);
+  // --featured: solo los ejercicios de la sesion de despues de la historia, como
+  // ya hace _genPracticeClips.ts para las frases. Lee el campo `featured` de la
+  // FILA (nunca una lista escrita a mano por historia: eso es justo donde se
+  // cuela un olvido), asi que sirve igual para cualquier journey DB-native sin
+  // mantenimiento por historia. `featured !== false` porque un ejercicio sin el
+  // campo (viejo, o autobuilder que no lo puso) cuenta como featured por
+  // defecto, igual que el filtro de _genPracticeClips.ts.
+  if(featuredOnly) targets = targets.filter(e=>e.featured !== false);
   if(only) targets = targets.filter(e=>only.has((e.word||"").trim().toLowerCase()));
-  console.log(`${slug}: voz=${voice} | lang=${story.journey?.language} carrier palabra="${WORD_CARRIER[langKey]}" | ${targets.length} palabras${only?" (--only)":""}`);
+  console.log(`${slug}: voz=${voice} | lang=${story.journey?.language} carrier palabra="${WORD_CARRIER[langKey]}" | ${targets.length} palabras${featuredOnly?" (--featured)":""}${only?" (--only)":""}`);
   const outDir=mkdtempSync(join(tmpdir(),"wcout-"));
   let ok=0;
   for(const e of targets){
