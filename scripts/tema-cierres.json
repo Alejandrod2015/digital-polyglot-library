@@ -5878,8 +5878,8 @@
     }
   },
   "cmu410zep000732szrw94t2sl#stalls-and-crowds": {
-    "cerrado": "2026-09-16T13:04:34.176Z",
-    "hash": "0b9b5fadf697a61a",
+    "cerrado": "2026-09-16T13:08:49.403Z",
+    "hash": "da50e10eb57515dc",
     "historias": [
       "stalls-and-crowds#1 sin-patente-no-hay-puesto",
       "stalls-and-crowds#2 el-hilo-curado-corta-todo",
@@ -6065,8 +6065,8 @@
     }
   },
   "cmu410zep000732szrw94t2sl#vigils-and-waiting": {
-    "cerrado": "2026-09-16T12:34:48.915Z",
-    "hash": "2e2228a7549d05d8",
+    "cerrado": "2026-09-16T13:06:47.042Z",
+    "hash": "2f2962d426f87121",
     "historias": [
       "vigils-and-waiting#1 el-aserrin-no-se-guarda",
       "vigils-and-waiting#2 nadie-duerme-el-jueves",
@@ -6083,7 +6083,7 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.02 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 58/60 salen una sola vez · sin marcar ancladas",
