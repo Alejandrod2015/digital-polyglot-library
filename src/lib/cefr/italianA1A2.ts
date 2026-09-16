@@ -134,6 +134,48 @@ export const ITALIAN_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "salute","malattia","dolore","medicina","cura","sport","musica","canzone","film",
 ]);
 
+// BLOQUE 2: ITALIAN_A1_A2_CURATED (2026-09-14). Mismo metodo que el bloque
+// curado de frenchA1A2.ts: palabra por palabra, solo las que el plan del
+// Friends IT A1 (docs/plan-it-a1-friends.md, commit 6405c2a8) necesita y que
+// faltaban en el bloque 1. Cada una lleva su nivel y su categoria en KELLY
+// Italian (Kilgarriff et al., ssharoff.github.io/kelly), usado solo como
+// referencia de nivel por palabra; la lista KELLY no se redistribuye (es
+// CC BY-NC-SA 2.0). Solo entran las que KELLY marca A1 o A2. Las del plan que
+// KELLY marca B1 o mas, o que no trae, se quedan fuera a proposito: van en el
+// texto, no en plaza, o cuentan como las 1-2 fuera de nivel que el check tolera.
+// Fuera tambien "straordinario": KELLY lo da A1 como ADJETIVO y el plan lo usa
+// como NOMBRE (horas extra); la lista no distingue categoria.
+const ITALIAN_A1_A2_CURATED: readonly string[] = [
+  "adottare",         // KELLY: A1 (VER)
+  "amministratore",   // KELLY: A2 (NOM)
+  "cambio",           // KELLY: A2 (NOM)
+  "chiave",           // KELLY: A2 (NOM)
+  "consegnare",       // KELLY: A2 (VER)
+  "contare",          // KELLY: A2 (VER)
+  "conto",            // KELLY: A1 (NOM)
+  "davvero",          // KELLY: A1 (ADV)
+  "dividere",         // KELLY: A2 (VER)
+  "euro",             // KELLY: A1 (NOM)
+  "giro",             // KELLY: A1 (NOM)
+  "giusto",           // KELLY: A1 (ADJ)
+  "gusto",            // KELLY: A2 (NOM)
+  "insieme",          // KELLY: A1 (ADV)
+  "invece",           // KELLY: A1 (ADV)
+  "legare",           // KELLY: A1 (VER)
+  "mancare",          // KELLY: A1 (VER)
+  "nome",             // KELLY: A1 (NOM)
+  "ombra",            // KELLY: A2 (NOM)
+  "partire",          // KELLY: A1 (VER)
+  "restare",          // KELLY: A1 (VER)
+  "rinunciare",       // KELLY: A2 (VER)
+  "sbagliare",        // KELLY: A2 (VER)
+  "silenzio",         // KELLY: A2 (NOM)
+  "suonare",          // KELLY: A2 (VER)
+  "usare",            // KELLY: A1 (VER)
+  "visita",           // KELLY: A2 (NOM)
+];
+for (const w of ITALIAN_A1_A2_CURATED) (ITALIAN_A1_A2_LEMMAS as Set<string>).add(w);
+
 export function isItalianA1A2(word: string): boolean {
   const lemma = word.toLowerCase().trim();
   if (ITALIAN_A1_A2_LEMMAS.has(lemma)) return true;
@@ -144,6 +186,8 @@ export function isItalianA1A2(word: string): boolean {
   if (lemma.endsWith("e") || lemma.endsWith("i")) {
     const sing = lemma.slice(0, -1) + (lemma.endsWith("i") ? "o" : "a");
     if (ITALIAN_A1_A2_LEMMAS.has(sing)) return true;
+    // Plural en -i de nombres en -e ("chiavi" -> "chiave").
+    if (lemma.endsWith("i") && ITALIAN_A1_A2_LEMMAS.has(lemma.slice(0, -1) + "e")) return true;
   }
   return false;
 }
