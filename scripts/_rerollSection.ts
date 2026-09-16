@@ -40,6 +40,7 @@ import {
 } from "../src/lib/elevenlabs";
 import { assertVoiceApproved } from "../src/lib/approvedVoices";
 import { coerceFragments, replaceSectionAndRebuild } from "../src/lib/audioEditorSections";
+import { checkMasterCoverage } from "./coverageWhisperCheck";
 
 const execFileAsync = promisify(execFile);
 const prisma = new PrismaClient();
@@ -49,6 +50,25 @@ const UPTALK_ST = 4.0; // same threshold the pipeline uses today
 function arg(flag: string, dflt?: string) {
   const i = process.argv.indexOf(flag);
   return i >= 0 ? process.argv[i + 1] : dflt;
+}
+
+/**
+ * Revierte la fila al estado previo al empalme cuando el candado de
+ * cobertura falla. Extraida a funcion propia (2026-09-15) para poder
+ * testear que SIEMPRE revierte audioUrl y audioFragments JUNTOS: revertir
+ * solo audioUrl dejaba los fragmentos describiendo un master fantasma (ver
+ * scripts/__tests__/rerollRollback.test.ts).
+ */
+export async function revertCoverageFailure(
+  prismaLike: { journeyStory: { update: (args: { where: { id: string }; data: Record<string, unknown> }) => Promise<unknown> } },
+  storyId: string,
+  prevAudioUrl: string | null,
+  prevAudioFragments: unknown
+): Promise<void> {
+  await prismaLike.journeyStory.update({
+    where: { id: storyId },
+    data: { audioUrl: prevAudioUrl, audioFragments: prevAudioFragments },
+  });
 }
 
 async function f0(file: string): Promise<number | null> {
@@ -88,7 +108,7 @@ async function main() {
 
   const story = await prisma.journeyStory.findFirst({
     where: { slug },
-    select: { id: true, title: true, audioUrl: true, audioFragments: true },
+    select: { id: true, title: true, text: true, audioUrl: true, audioFragments: true },
   });
   if (!story) throw new Error(`story ${slug} not found`);
   const frags = coerceFragments(story.audioFragments);
@@ -222,13 +242,48 @@ async function main() {
     normalizeSection: false, // ya normalizado arriba
     ...(retitled ? { newText: source } : {}),
   });
+
+  // CANDADO DE COBERTURA (2026-09-14). Todos los chequeos de arriba miran UN
+  // fragmento aislado contra su propio texto; ninguno vuelve a mirar el
+  // MASTER COMPLETO tras el empalme, que es donde un boundary corrupto deja
+  // huecos o duplicados (le paso a une-liste-dans-la-tete, sin avisar, con
+  // el desfase-check en verde). Transcribe el master nuevo con whisper local
+  // (gratis) y lo compara contra el texto entero; si hay un hueco de 3+
+  // palabras o un tramo de 5+ palabras duplicado, REVIERTE el audioUrl al
+  // master viejo antes de terminar: mejor el master anterior (con sus
+  // defectos ya conocidos) que uno nuevo roto.
+  console.log("\ncomprobando cobertura del master completo (whisper local)...");
+  const refText = `${story.title}. ${story.text}`;
+  let cobertura;
+  try {
+    cobertura = await checkMasterCoverage(r.audioUrl, refText);
+  } catch (e) {
+    console.warn(`  candado de cobertura saltado (whisper no disponible): ${e instanceof Error ? e.message : e}`);
+    cobertura = null;
+  }
+  if (cobertura && !cobertura.ok) {
+    await revertCoverageFailure(prisma, story.id, story.audioUrl, story.audioFragments);
+    console.error(`\nREVERTIDO: el master nuevo (${r.audioUrl}) no pasa el candado de cobertura.`);
+    for (const g of cobertura.gaps) console.error(`  HUECO: ${g.textWords.join(" ")}`);
+    for (const d of cobertura.duplicates) console.error(`  DUPLICADO: ${d.words.join(" ")}`);
+    console.error(`El audioUrl y los audioFragments de la historia volvieron a como estaban. El master roto sigue en R2 (${r.audioUrl}) pero ninguna fila apunta ahi.`);
+    process.exitCode = 1;
+    await prisma.$disconnect();
+    return;
+  }
+  if (cobertura) console.log("  cobertura OK: sin huecos ni duplicados");
+
   console.log(`máster nuevo: ${r.audioUrl}`);
   console.log(`máster viejo (rollback): ${story.audioUrl}`);
   console.log("\nOJO: audioWordTimings y audioSegments quedan desfasados. Hay que re-alinear.");
   await prisma.$disconnect();
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+// Solo corre main() al ejecutar el script directamente (tsx ...), no al
+// importar revertCoverageFailure desde un test (2026-09-15).
+if (require.main === module) {
+  main().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
+}

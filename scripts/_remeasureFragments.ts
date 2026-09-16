@@ -16,13 +16,11 @@
 import { config } from "dotenv"; config({ path: ".env.local", quiet:true }); config({ path: ".env", quiet:true });
 import { execFileSync, spawnSync } from "child_process";
 import { PrismaClient } from "../src/generated/prisma";
+import { anclarFragmentos, tiemposDesordenados, norm, type Frag, type W } from "./remeasureFragmentsLib";
+import { boundaryFor } from "./silenceBoundaryLib";
 
 const p = new PrismaClient();
 const apiKey = process.env.ELEVENLABS_API_KEY!;
-type Frag = { index:number; startSec:number; endSec:number; text?:string; [k:string]:unknown };
-type W = { text:string; start?:number; end?:number; type?:string };
-
-const norm = (s:string) => s.normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9\s]/gi," ").replace(/\s+/g," ").trim().toLowerCase();
 
 async function transcribe(url:string): Promise<W[]> {
   const buf = Buffer.from(await (await fetch(url)).arrayBuffer());
@@ -40,7 +38,10 @@ function silencios(url:string): Array<[number,number]> {
   const out: Array<[number,number]> = [];
   let err = "";
   try {
-    const r = spawnSync("ffmpeg", ["-i", url, "-af", "silencedetect=noise=-35dB:d=0.18", "-f", "null", "-"], { encoding:"utf8" });
+    // d=0.12: el MISMO umbral que assertCorteEnSilencio en produccion
+    // (audioEditorSections.ts), para no medir con un criterio distinto del
+    // que el splice real va a exigir despues.
+    const r = spawnSync("ffmpeg", ["-i", url, "-af", "silencedetect=noise=-35dB:d=0.12", "-f", "null", "-"], { encoding:"utf8" });
     err = String(r.stderr ?? "");
   } catch { /* sin ffmpeg: se sigue sin ajuste a silencio */ }
   let ini: number | null = null;
@@ -51,25 +52,14 @@ function silencios(url:string): Array<[number,number]> {
   return out;
 }
 
-/**
- * Frontera de corte para una palabra que empieza en `t`.
- *
- * Tiene que caer ANTES de que empiece la palabra, dentro del silencio que la
- * precede. Buscar "el silencio más cercano" no vale: si el más cercano es el
- * que viene DESPUÉS, el corte deja pegado el arranque de la palabra vieja y se
- * oye dos veces ("Bia, Bia desce", 2026-08-17).
- */
-function alSilencio(t:number, sils:Array<[number,number]>): number {
-  let mejor = t, dist = Infinity;
-  for (const [a,b] of sils) {
-    if (b > t + 0.02) continue;            // silencio posterior: no sirve
-    const d = t - b;                        // cuánto antes de la palabra acaba
-    if (d < dist && d < 1.5) { dist = d; mejor = (a + b) / 2; }
-  }
-  // Sin silencio previo utilizable, un margen fijo antes de la palabra es
-  // mejor que cortar justo encima de ella.
-  return mejor === t ? Math.max(0, t - 0.06) : mejor;
-}
+// La frontera de corte para una palabra que empieza en `t` vive en
+// silenceBoundaryLib.ts (boundaryFor), compartida con _restoreOriginal.ts y
+// testeada en scripts/__tests__/silenceBoundaryLib.test.ts: deja `t` tal
+// cual si ya cae dentro de la tolerancia de un hueco real, y solo si no
+// cae en ninguno busca el hueco mas cercano por distancia (sin la
+// restriccion direccional del bug original de alSilencio, que solo miraba
+// huecos que TERMINAN antes de `t` y por eso descartaba huecos anchos y
+// correctos que CONTIENEN a `t`).
 
 (async()=>{
   const slug = process.argv[2];
@@ -85,52 +75,25 @@ function alSilencio(t:number, sils:Array<[number,number]>): number {
   console.log(`${slug}: máster ${dur.toFixed(2)}s · ${words.length} palabras oídas · ${sils.length} silencios`);
 
   // Se recorre la transcripción en orden, consumiendo las palabras de cada
-  // fragmento. Así cada uno queda anclado donde suena de verdad.
+  // fragmento. Así cada uno queda anclado donde suena de verdad. Lógica en
+  // remeasureFragmentsLib.ts (testeada aparte, scripts/__tests__/).
   const orden = [...frags].sort((a,b)=>a.index-b.index);
+  const { inicios, sinAnclar } = anclarFragmentos(orden, words);
 
-  // Primero SOLO los inicios, anclando por las 3 primeras palabras de cada
-  // fragmento: una sola palabra ("Ele", "A") se repite por toda la historia y
-  // el cursor saltaba a la ocurrencia equivocada, dejando fragmentos solapados.
-  const inicios: number[] = [];
-  const sinAnclar: number[] = [];
-  let cursor = 0;
-  for (const f of orden) {
-    const objetivo = norm(String(f.text ?? "")).split(" ").filter(Boolean);
-    if (!objetivo.length) { inicios.push(cursor); continue; }
-    const buscaClave = (largo: number): number => {
-      const clave = objetivo.slice(0, Math.min(largo, objetivo.length));
-      for (let i = cursor; i <= words.length - clave.length; i++) {
-        let casan = true;
-        for (let k = 0; k < clave.length; k++) {
-          if (norm(words[i + k].text) !== clave[k]) { casan = false; break; }
-        }
-        if (casan) return i;
-      }
-      return -1;
-    };
-    // La clave de 3 palabras falla en cuanto el STT junta o parte una: oyo
-    // "Landa" donde el texto dice "El anda", y el fragmento se anclaba en el
-    // CURSOR, o sea dentro del titulo, con la frontera cayendo sobre voz. Se
-    // afloja la clave y, en ultimo termino, se ancla por la palabra mas larga
-    // del parrafo, que es la que el STT casi nunca confunde.
-    let ini = buscaClave(3);
-    if (ini < 0) ini = buscaClave(2);
-    if (ini < 0) {
-      // La busqueda va ACOTADA a la vecindad del cursor. Sin tope, una palabra
-      // que se repite mas adelante arrastraba el ancla al otro extremo de la
-      // historia y descuadraba todos los fragmentos siguientes.
-      const tope = Math.min(words.length, cursor + objetivo.length + 8);
-      for (const larga of [...objetivo].sort((a, b) => b.length - a.length)) {
-        if (larga.length < 5) break;
-        for (let i = cursor; i < tope; i++) {
-          if (norm(words[i].text) === larga) { ini = i; break; }
-        }
-        if (ini >= 0) break;
-      }
-    }
-    if (ini < 0) { sinAnclar.push(f.index); ini = cursor; }
-    inicios.push(ini);
-    cursor = ini + Math.max(1, objetivo.length - 2);
+  // GUARD DE ORDEN (2026-09-14). El índice de ancla es monótono por
+  // construcción, pero el TIEMPO que trae la palabra en ese índice no lo es
+  // siempre: scribe_v1 puede devolver `words[i].start` fuera de orden en un
+  // tramo dudoso. Sin este chequeo, une-liste-dans-la-tete escribió un
+  // fragmento con endSec menor que su propio startSec y nadie lo notó hasta
+  // que el usuario lo oyó mal. Mismo criterio que el chequeo de silencio de
+  // abajo: mejor no escribir que escribir tiempos invertidos.
+  const desorden = tiemposDesordenados(orden, inicios, words);
+  if (desorden.length) {
+    console.log(`\n  NO SE ESCRIBE: timestamps del transcriptor fuera de orden en el/los fragmento(s) ${desorden.join(", ")}.`);
+    console.log(`  El indice de ancla es correcto pero scribe_v1 devolvio su tiempo antes que el del fragmento previo.`);
+    console.log(`  No hay arreglo automatico seguro aqui: revisar de oido o re-tirar ese fragmento por otra via.`);
+    process.exitCode = 1;
+    return;
   }
 
   const nuevos: Frag[] = [];
@@ -143,8 +106,8 @@ function alSilencio(t:number, sils:Array<[number,number]>): number {
     const endBruto = n === orden.length - 1 || sigIdx === undefined
       ? dur
       : Number(words[sigIdx]?.start ?? f.endSec);
-    const start = n === 0 ? 0 : alSilencio(startBruto, sils);
-    const end = n === orden.length - 1 ? dur : alSilencio(endBruto, sils);
+    const start = n === 0 ? 0 : boundaryFor(startBruto, sils);
+    const end = n === orden.length - 1 ? dur : boundaryFor(endBruto, sils);
     const antes = `${Number(f.startSec).toFixed(2)}-${Number(f.endSec).toFixed(2)}`;
     console.log(`  [${f.index}] ${antes}  ->  ${start.toFixed(2)}-${end.toFixed(2)}   ${String(f.text ?? "").slice(0,44)}`);
     nuevos.push({ ...f, startSec: Number(start.toFixed(3)), endSec: Number(end.toFixed(3)) });
