@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "incienso,pétalo,cepillo,plantilla",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "incienso",
+     "answer": "incense",
+     "options": [
+      "incense",
+      "a petal",
+      "a brush",
+      "a stencil"
+     ]
+    },
+    {
+     "word": "pétalo",
+     "answer": "a petal",
+     "options": [
+      "incense",
+      "a petal",
+      "a brush",
+      "a stencil"
+     ]
+    },
+    {
+     "word": "cepillo",
+     "answer": "a brush",
+     "options": [
+      "incense",
+      "a petal",
+      "a brush",
+      "a stencil"
+     ]
+    },
+    {
+     "word": "plantilla",
+     "answer": "a stencil",
+     "options": [
+      "incense",
+      "a petal",
+      "a brush",
+      "a stencil"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vigilia",
+  "sentence": "La [[vigilia]] no era la espera de la alfombra",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a night kept awake",
+   "options": [
+    "a night kept awake",
+    "a walk at dawn",
+    "a meal at midnight",
+    "a rest after work"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-duerme-el-jueves",
+    "storySource": "user",
+    "sentence": "La vigilia no era la espera de la alfombra",
+    "targetWord": "vigilia",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "franja",
+  "sentence": "Había que ser precisa con cada [[franja]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a band of colour",
+   "options": [
+    "a band of colour",
+    "a grain of dust",
+    "a line of people",
+    "a length of cloth"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-duerme-el-jueves",
+    "storySource": "user",
+    "sentence": "Había que ser precisa con cada franja",
+    "targetWord": "franja",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "consecuencia",
+  "sentence": "La [[consecuencia]] era obvia",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "what would follow",
+   "options": [
+    "what would follow",
+    "what had failed",
+    "what was missing",
+    "what came first"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-duerme-el-jueves",
+    "storySource": "user",
+    "sentence": "La consecuencia era obvia",
+    "targetWord": "consecuencia",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "velar",
+  "sentence": "decidió evitarla [[velando]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to stay awake through the night",
+   "options": [
+    "to stay awake through the night",
+    "to leave before the crowd",
+    "to work faster than the rest",
+    "to hide behind the others"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-duerme-el-jueves",
+    "storySource": "user",
+    "sentence": "decidió evitarla velando",
+    "targetWord": "velando",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tenaz",
+  "sentence": "Se esforzó hasta el amanecer, [[tenaz]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dogged",
+   "options": [
+    "dogged",
+    "cheerful",
+    "careless",
+    "anxious"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-duerme-el-jueves",
+    "storySource": "user",
+    "sentence": "Se esforzó hasta el amanecer, tenaz",
+    "targetWord": "tenaz",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "circunstancia",
+  "sentence": "El resultado quedó en las [[circunstancias]] más humildes",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the conditions around it",
+   "options": [
+    "the conditions around it",
+    "the hands that made it",
+    "the colours it carried",
+    "the hours it took"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-duerme-el-jueves",
+    "storySource": "user",
+    "sentence": "El resultado quedó en las circunstancias más humildes",
+    "targetWord": "circunstancias",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "obvia",
+  "sentence": "Nadie tuvo que explicarlo: la respuesta era _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "obvia",
+   "options": [
+    "obvia",
+    "larga",
+    "escrita",
+    "cara"
+   ],
+   "translation": "Nobody had to explain it: the answer was _____.",
+   "optionTranslations": [
+    "obvious",
+    "long",
+    "written",
+    "expensive"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-duerme-el-jueves",
+    "storySource": "user",
+    "sentence": "Nadie tuvo que explicarlo: la respuesta era obvia.",
+    "targetWord": "obvia",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "precisa",
+  "sentence": "La receta pide una medida _____, ni un gramo de más.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "precisa",
+   "options": [
+    "precisa",
+    "dulce",
+    "fría",
+    "doble"
+   ],
+   "translation": "The recipe wants a _____ measure, not a gram more.",
+   "optionTranslations": [
+    "exact",
+    "sweet",
+    "cold",
+    "double"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-duerme-el-jueves",
+    "storySource": "user",
+    "sentence": "La receta pide una medida precisa, ni un gramo de más.",
+    "targetWord": "precisa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "calcular",
+  "sentence": "Ella [[calculó]] el instante justo",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to work out",
+   "options": [
+    "to work out",
+    "to write down",
+    "to guess at",
+    "to wait for"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-duerme-el-jueves",
+    "storySource": "user",
+    "sentence": "Ella calculó el instante justo",
+    "targetWord": "calculó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "evitar",
+  "sentence": "decidió [[evitarla]] velando",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to avoid",
+   "options": [
+    "to avoid",
+    "to explain",
+    "to accept",
+    "to repeat"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-duerme-el-jueves",
+    "storySource": "user",
+    "sentence": "decidió evitarla velando",
+    "targetWord": "evitarla",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cuidadoso",
+  "sentence": "Hay que ser [[cuidadosa]], nada más",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "careful",
+   "options": [
+    "careful",
+    "quick",
+    "quiet",
+    "strong"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-duerme-el-jueves",
+    "storySource": "user",
+    "sentence": "Hay que ser cuidadosa, nada más",
+    "targetWord": "cuidadosa",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "reflexionar",
+  "sentence": "De madrugada logró [[reflexionar]] sin pena",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to think things over",
+   "options": [
+    "to think things over",
+    "to fall asleep at last",
+    "to speak up at last",
+    "to stand up straight"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-duerme-el-jueves",
+    "storySource": "user",
+    "sentence": "De madrugada logró reflexionar sin pena",
+    "targetWord": "reflexionar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "esforzarse",
+  "sentence": "[[Se esforzó]] hasta el amanecer",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to push oneself",
+   "options": [
+    "to push oneself",
+    "to hold oneself back",
+    "to help oneself out",
+    "to give oneself up"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-duerme-el-jueves",
+    "storySource": "user",
+    "sentence": "Se esforzó hasta el amanecer",
+    "targetWord": "Se esforzó",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "resultado",
+  "sentence": "El [[resultado]] quedó en las circunstancias más humildes",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the outcome",
+   "options": [
+    "the outcome",
+    "the payment",
+    "the drawing",
+    "the promise"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-duerme-el-jueves",
+    "storySource": "user",
+    "sentence": "El resultado quedó en las circunstancias más humildes",
+    "targetWord": "resultado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lograr",
+  "sentence": "De madrugada [[logró]] reflexionar sin pena",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to manage to",
+   "options": [
+    "to manage to",
+    "to refuse to",
+    "to forget to",
+    "to offer to"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-duerme-el-jueves",
+    "storySource": "user",
+    "sentence": "De madrugada logró reflexionar sin pena",
+    "targetWord": "logró",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ni un minuto antes",
+  "sentence": "Calculó el instante, [[ni un minuto antes]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "not a moment early",
+   "options": [
+    "not a moment early",
+    "not a moment late",
+    "not once again",
+    "not for long"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-duerme-el-jueves",
+    "storySource": "user",
+    "sentence": "Calculó el instante, ni un minuto antes",
+    "targetWord": "ni un minuto antes",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

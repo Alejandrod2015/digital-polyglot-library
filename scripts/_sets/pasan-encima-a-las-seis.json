@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "capirote,imagen,memoria,motivo",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "capirote",
+     "answer": "a pointed hood",
+     "options": [
+      "a pointed hood",
+      "a picture",
+      "a memory",
+      "a reason"
+     ]
+    },
+    {
+     "word": "imagen",
+     "answer": "a picture",
+     "options": [
+      "a pointed hood",
+      "a picture",
+      "a memory",
+      "a reason"
+     ]
+    },
+    {
+     "word": "memoria",
+     "answer": "a memory",
+     "options": [
+      "a pointed hood",
+      "a picture",
+      "a memory",
+      "a reason"
+     ]
+    },
+    {
+     "word": "motivo",
+     "answer": "a reason",
+     "options": [
+      "a pointed hood",
+      "a picture",
+      "a memory",
+      "a reason"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "marcha",
+  "sentence": "Antes del amanecer ya sonaba la [[marcha]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the slow band music",
+   "options": [
+    "the slow band music",
+    "the church bell",
+    "the crowd noise",
+    "the first light"
+   ],
+   "audioClip": {
+    "storySlug": "pasan-encima-a-las-seis",
+    "storySource": "user",
+    "sentence": "Antes del amanecer ya sonaba la marcha",
+    "targetWord": "marcha",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "morado",
+  "sentence": "El capirote [[morado]] no era práctico",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "purple",
+   "options": [
+    "purple",
+    "yellow",
+    "grey",
+    "green"
+   ],
+   "audioClip": {
+    "storySlug": "pasan-encima-a-las-seis",
+    "storySource": "user",
+    "sentence": "El capirote morado no era práctico",
+    "targetWord": "morado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nostalgia",
+  "sentence": "La [[nostalgia]] le llegó con retraso",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a soft sadness for what is gone",
+   "options": [
+    "a soft sadness for what is gone",
+    "a sharp worry about what comes",
+    "a quiet pride in what was done",
+    "a dull anger at what was lost"
+   ],
+   "audioClip": {
+    "storySlug": "pasan-encima-a-las-seis",
+    "storySource": "user",
+    "sentence": "La nostalgia le llegó con retraso",
+    "targetWord": "nostalgia",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sacrificio",
+  "sentence": "Era el logro, no el [[sacrificio]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the giving up of something",
+   "options": [
+    "the giving up of something",
+    "the winning of a prize",
+    "the start of the work",
+    "the end of the day"
+   ],
+   "audioClip": {
+    "storySlug": "pasan-encima-a-las-seis",
+    "storySource": "user",
+    "sentence": "Era el logro, no el sacrificio",
+    "targetWord": "sacrificio",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ventaja",
+  "sentence": "la calle estaba barrida y el patio vacío, sin [[ventaja]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "anything gained",
+   "options": [
+    "anything gained",
+    "anywhere to sit",
+    "anyone in sight",
+    "anything to say"
+   ],
+   "audioClip": {
+    "storySlug": "pasan-encima-a-las-seis",
+    "storySource": "user",
+    "sentence": "la calle estaba barrida y el patio vacío, sin ventaja",
+    "targetWord": "ventaja",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "afecto",
+  "sentence": "con [[afecto]] y una ternura rara",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "warm liking",
+   "options": [
+    "warm liking",
+    "sharp regret",
+    "open envy",
+    "quiet fear"
+   ],
+   "audioClip": {
+    "storySlug": "pasan-encima-a-las-seis",
+    "storySource": "user",
+    "sentence": "con afecto y una ternura rara",
+    "targetWord": "afecto",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "despertó",
+  "sentence": "El teléfono sonó muy temprano y _____ a toda la casa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "despertó",
+   "options": [
+    "despertó",
+    "alimentó",
+    "limpió",
+    "pintó"
+   ],
+   "translation": "The phone rang very early and it _____ the whole house.",
+   "optionTranslations": [
+    "woke up",
+    "fed",
+    "cleaned",
+    "painted"
+   ],
+   "audioClip": {
+    "storySlug": "pasan-encima-a-las-seis",
+    "storySource": "user",
+    "sentence": "El teléfono sonó muy temprano y despertó a toda la casa.",
+    "targetWord": "despertó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "útil",
+  "sentence": "Para pelar fruta, ese cuchillo pequeño es más _____ que el grande.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "útil",
+   "options": [
+    "útil",
+    "caro",
+    "pesado",
+    "brillante"
+   ],
+   "translation": "For peeling fruit, that small knife is more _____ than the big one.",
+   "optionTranslations": [
+    "useful",
+    "expensive",
+    "heavy",
+    "shiny"
+   ],
+   "audioClip": {
+    "storySlug": "pasan-encima-a-las-seis",
+    "storySource": "user",
+    "sentence": "Para pelar fruta, ese cuchillo pequeño es más útil que el grande.",
+    "targetWord": "útil",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "práctico",
+  "sentence": "El capirote morado no era [[práctico]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "practical",
+   "options": [
+    "practical",
+    "modern",
+    "cheap",
+    "light"
+   ],
+   "audioClip": {
+    "storySlug": "pasan-encima-a-las-seis",
+    "storySource": "user",
+    "sentence": "El capirote morado no era práctico",
+    "targetWord": "práctico",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lógico",
+  "sentence": "Nadie diría que era [[lógico]] defenderlo",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "logical",
+   "options": [
+    "logical",
+    "kind",
+    "urgent",
+    "easy"
+   ],
+   "audioClip": {
+    "storySlug": "pasan-encima-a-las-seis",
+    "storySource": "user",
+    "sentence": "Nadie diría que era lógico defenderlo",
+    "targetWord": "lógico",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "abandonar",
+  "sentence": "Entendió que [[abandonar]] la foto fue el motivo",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to give up on",
+   "options": [
+    "to give up on",
+    "to hold on to",
+    "to look for",
+    "to pay for"
+   ],
+   "audioClip": {
+    "storySlug": "pasan-encima-a-las-seis",
+    "storySource": "user",
+    "sentence": "Entendió que abandonar la foto fue el motivo",
+    "targetWord": "abandonar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "identificar",
+  "sentence": "[[Identificó]] los moldes",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to recognise",
+   "options": [
+    "to recognise",
+    "to gather up",
+    "to hand back",
+    "to set aside"
+   ],
+   "audioClip": {
+    "storySlug": "pasan-encima-a-las-seis",
+    "storySource": "user",
+    "sentence": "Identificó los moldes",
+    "targetWord": "Identificó",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "entero",
+  "sentence": "lo único útil que seguía [[entero]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in one piece",
+   "options": [
+    "in one piece",
+    "out of reach",
+    "worth keeping",
+    "freshly made"
+   ],
+   "audioClip": {
+    "storySlug": "pasan-encima-a-las-seis",
+    "storySource": "user",
+    "sentence": "lo único útil que seguía entero",
+    "targetWord": "entero",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "regalado",
+  "sentence": "[[Regalado]], dijo el teñidor",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "free of charge",
+   "options": [
+    "free of charge",
+    "for a good price",
+    "in exchange",
+    "on loan"
+   ],
+   "audioClip": {
+    "storySlug": "pasan-encima-a-las-seis",
+    "storySource": "user",
+    "sentence": "Regalado, dijo el teñidor",
+    "targetWord": "Regalado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pedir",
+  "sentence": "Pero el número me lo [[pides]] tú",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to ask for",
+   "options": [
+    "to ask for",
+    "to write down",
+    "to give out",
+    "to look up"
+   ],
+   "audioClip": {
+    "storySlug": "pasan-encima-a-las-seis",
+    "storySource": "user",
+    "sentence": "Pero el número me lo pides tú",
+    "targetWord": "pides",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "con retraso",
+  "sentence": "La nostalgia le llegó [[con retraso]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "later than expected",
+   "options": [
+    "later than expected",
+    "all at once",
+    "for a moment",
+    "again and again"
+   ],
+   "audioClip": {
+    "storySlug": "pasan-encima-a-las-seis",
+    "storySource": "user",
+    "sentence": "La nostalgia le llegó con retraso",
+    "targetWord": "con retraso",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

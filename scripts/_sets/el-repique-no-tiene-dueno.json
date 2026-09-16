@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "fogata,piel,golpe,vereda",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "fogata",
+     "answer": "a bonfire",
+     "options": [
+      "a bonfire",
+      "an animal hide",
+      "a single beat",
+      "a pavement"
+     ]
+    },
+    {
+     "word": "piel",
+     "answer": "an animal hide",
+     "options": [
+      "a bonfire",
+      "an animal hide",
+      "a single beat",
+      "a pavement"
+     ]
+    },
+    {
+     "word": "golpe",
+     "answer": "a single beat",
+     "options": [
+      "a bonfire",
+      "an animal hide",
+      "a single beat",
+      "a pavement"
+     ]
+    },
+    {
+     "word": "vereda",
+     "answer": "a pavement",
+     "options": [
+      "a bonfire",
+      "an animal hide",
+      "a single beat",
+      "a pavement"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lonja",
+  "sentence": "que templa la [[lonja]] al fuego lento",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the drumhead",
+   "options": [
+    "the drumhead",
+    "the stretcher",
+    "the mallet",
+    "the tuning peg"
+   ],
+   "audioClip": {
+    "storySlug": "el-repique-no-tiene-dueno",
+    "storySource": "user",
+    "sentence": "que templa la lonja al fuego lento",
+    "targetWord": "lonja",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "repique",
+  "sentence": "¿Cuál querés, el chico o el [[repique]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the middle drum",
+   "options": [
+    "the middle drum",
+    "the smallest drum",
+    "the deepest drum",
+    "the spare drum"
+   ],
+   "audioClip": {
+    "storySlug": "el-repique-no-tiene-dueno",
+    "storySource": "user",
+    "sentence": "¿Cuál querés, el chico o el repique?",
+    "targetWord": "repique",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "candombe",
+  "sentence": "En el [[candombe]] hay una jerarquía",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Afro-Uruguayan drum music",
+   "options": [
+    "Afro-Uruguayan drum music",
+    "Afro-Cuban guitar music",
+    "Andean flute music",
+    "Brazilian street music"
+   ],
+   "audioClip": {
+    "storySlug": "el-repique-no-tiene-dueno",
+    "storySource": "user",
+    "sentence": "En el candombe hay una jerarquía",
+    "targetWord": "candombe",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "comparsa",
+  "sentence": "la [[comparsa]] se viste",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the parade group",
+   "options": [
+    "the parade group",
+    "the town council",
+    "the dance floor",
+    "the drum store"
+   ],
+   "audioClip": {
+    "storySlug": "el-repique-no-tiene-dueno",
+    "storySource": "user",
+    "sentence": "la comparsa se viste",
+    "targetWord": "comparsa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cuerda",
+  "sentence": "El tambor es de la [[cuerda]], no del que lo toca",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the line of drummers",
+   "options": [
+    "the line of drummers",
+    "the leather strap",
+    "the hanging rope",
+    "the stack of hides"
+   ],
+   "audioClip": {
+    "storySlug": "el-repique-no-tiene-dueno",
+    "storySource": "user",
+    "sentence": "El tambor es de la cuerda, no del que lo toca",
+    "targetWord": "cuerda",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jerarquía",
+  "sentence": "En el candombe hay una [[jerarquía]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a pecking order",
+   "options": [
+    "a pecking order",
+    "a written rule",
+    "a yearly prize",
+    "a shared cost"
+   ],
+   "audioClip": {
+    "storySlug": "el-repique-no-tiene-dueno",
+    "storySource": "user",
+    "sentence": "En el candombe hay una jerarquía",
+    "targetWord": "jerarquía",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "lealtad",
+  "sentence": "Rechazó más dinero de otro equipo por pura _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lealtad",
+   "options": [
+    "lealtad",
+    "envidia",
+    "costumbre",
+    "vergüenza"
+   ],
+   "translation": "She turned down more money from another team out of pure _____.",
+   "optionTranslations": [
+    "loyalty",
+    "envy",
+    "habit",
+    "embarrassment"
+   ],
+   "audioClip": {
+    "storySlug": "el-repique-no-tiene-dueno",
+    "storySource": "user",
+    "sentence": "Rechazó más dinero de otro equipo por pura lealtad.",
+    "targetWord": "lealtad",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pasaje",
+  "sentence": "El tren sale temprano y el _____ de ida cuesta poco.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pasaje",
+   "options": [
+    "pasaje",
+    "andén",
+    "retraso",
+    "equipaje"
+   ],
+   "translation": "The train leaves early and the one-way _____ costs little.",
+   "optionTranslations": [
+    "fare",
+    "platform",
+    "delay",
+    "luggage"
+   ],
+   "audioClip": {
+    "storySlug": "el-repique-no-tiene-dueno",
+    "storySource": "user",
+    "sentence": "El tren sale temprano y el pasaje de ida cuesta poco.",
+    "targetWord": "pasaje",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aprendiz",
+  "sentence": "El [[aprendiz]] carga y el veterano manda",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a learner",
+   "options": [
+    "a learner",
+    "a visitor",
+    "a buyer",
+    "a guard"
+   ],
+   "audioClip": {
+    "storySlug": "el-repique-no-tiene-dueno",
+    "storySource": "user",
+    "sentence": "El aprendiz carga y el veterano manda",
+    "targetWord": "aprendiz",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "veterano",
+  "sentence": "El aprendiz carga y el [[veterano]] manda",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the old hand",
+   "options": [
+    "the old hand",
+    "the youngest one",
+    "the loudest one",
+    "the tallest one"
+   ],
+   "audioClip": {
+    "storySlug": "el-repique-no-tiene-dueno",
+    "storySource": "user",
+    "sentence": "El aprendiz carga y el veterano manda",
+    "targetWord": "veterano",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "miembro",
+  "sentence": "Vos podés ser [[miembro]], pero dueña no",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a member",
+   "options": [
+    "a member",
+    "an owner",
+    "a guest",
+    "a rival"
+   ],
+   "audioClip": {
+    "storySlug": "el-repique-no-tiene-dueno",
+    "storySource": "user",
+    "sentence": "Vos podés ser miembro, pero dueña no",
+    "targetWord": "miembro",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tambor",
+  "sentence": "Los [[tambores]] esperaban en fila con su piel gastada",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a drum",
+   "options": [
+    "a drum",
+    "a chair",
+    "a flag",
+    "a case"
+   ],
+   "audioClip": {
+    "storySlug": "el-repique-no-tiene-dueno",
+    "storySource": "user",
+    "sentence": "Los tambores esperaban en fila con su piel gastada",
+    "targetWord": "tambores",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ritmo",
+  "sentence": "El golpe debe sonar parejo o el [[ritmo]] se cae",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the beat",
+   "options": [
+    "the beat",
+    "the tune",
+    "the pitch",
+    "the pace"
+   ],
+   "audioClip": {
+    "storySlug": "el-repique-no-tiene-dueno",
+    "storySource": "user",
+    "sentence": "El golpe debe sonar parejo o el ritmo se cae",
+    "targetWord": "ritmo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "integrar",
+  "sentence": "Le costó [[integrar]] eso",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to take in",
+   "options": [
+    "to take in",
+    "to explain",
+    "to accept",
+    "to repeat"
+   ],
+   "audioClip": {
+    "storySlug": "el-repique-no-tiene-dueno",
+    "storySource": "user",
+    "sentence": "Le costó integrar eso",
+    "targetWord": "integrar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "respetar",
+  "sentence": "[[respetando]] un conjunto que la dejaba afuera",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to respect",
+   "options": [
+    "to respect",
+    "to envy",
+    "to study",
+    "to follow"
+   ],
+   "audioClip": {
+    "storySlug": "el-repique-no-tiene-dueno",
+    "storySource": "user",
+    "sentence": "respetando un conjunto que la dejaba afuera",
+    "targetWord": "respetando",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "conjunto",
+  "sentence": "respetando un [[conjunto]] que la dejaba afuera",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a group as a whole",
+   "options": [
+    "a group as a whole",
+    "a rule of the street",
+    "a night of the year",
+    "a piece of music"
+   ],
+   "audioClip": {
+    "storySlug": "el-repique-no-tiene-dueno",
+    "storySource": "user",
+    "sentence": "respetando un conjunto que la dejaba afuera",
+    "targetWord": "conjunto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

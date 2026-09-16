@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "instrumento,tamborilero,redoble,instante",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "instrumento",
+     "answer": "a musical instrument",
+     "options": [
+      "a musical instrument",
+      "a drummer",
+      "a drum roll",
+      "a moment"
+     ]
+    },
+    {
+     "word": "tamborilero",
+     "answer": "a drummer",
+     "options": [
+      "a musical instrument",
+      "a drummer",
+      "a drum roll",
+      "a moment"
+     ]
+    },
+    {
+     "word": "redoble",
+     "answer": "a drum roll",
+     "options": [
+      "a musical instrument",
+      "a drummer",
+      "a drum roll",
+      "a moment"
+     ]
+    },
+    {
+     "word": "instante",
+     "answer": "a moment",
+     "options": [
+      "a musical instrument",
+      "a drummer",
+      "a drum roll",
+      "a moment"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "templar",
+  "sentence": "No lo [[templaste]], le explicó la lonjera",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to heat until it sounds right",
+   "options": [
+    "to heat until it sounds right",
+    "to tie until it holds fast",
+    "to rub until it shines",
+    "to soak until it softens"
+   ],
+   "audioClip": {
+    "storySlug": "un-tambor-frio-no-suena",
+    "storySource": "user",
+    "sentence": "No lo templaste, le explicó la lonjera",
+    "targetWord": "templaste",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "disciplina",
+  "sentence": "Esperó el instante con [[disciplina]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "discipline",
+   "options": [
+    "discipline",
+    "impatience",
+    "cheerfulness",
+    "confusion"
+   ],
+   "audioClip": {
+    "storySlug": "un-tambor-frio-no-suena",
+    "storySource": "user",
+    "sentence": "Esperó el instante con disciplina",
+    "targetWord": "disciplina",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apagado",
+  "sentence": "El tambor sonó [[apagado]] y vacío",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dull",
+   "options": [
+    "dull",
+    "sharp",
+    "loud",
+    "clear"
+   ],
+   "audioClip": {
+    "storySlug": "un-tambor-frio-no-suena",
+    "storySource": "user",
+    "sentence": "El tambor sonó apagado y vacío",
+    "targetWord": "apagado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "desprecio",
+  "sentence": "le explicó la lonjera, sin [[desprecio]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "scorn",
+   "options": [
+    "scorn",
+    "hurry",
+    "doubt",
+    "pity"
+   ],
+   "audioClip": {
+    "storySlug": "un-tambor-frio-no-suena",
+    "storySource": "user",
+    "sentence": "le explicó la lonjera, sin desprecio",
+    "targetWord": "desprecio",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vergonzoso",
+  "sentence": "con el cuero doblado bajo el brazo y una idea [[vergonzosa]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "embarrassing",
+   "options": [
+    "embarrassing",
+    "expensive",
+    "promising",
+    "sudden"
+   ],
+   "audioClip": {
+    "storySlug": "un-tambor-frio-no-suena",
+    "storySource": "user",
+    "sentence": "con el cuero doblado bajo el brazo y una idea vergonzosa",
+    "targetWord": "vergonzosa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prestar",
+  "sentence": "Le [[prestaron]] un chico templado en la fogata",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to lend",
+   "options": [
+    "to lend",
+    "to sell",
+    "to hide",
+    "to mend"
+   ],
+   "audioClip": {
+    "storySlug": "un-tambor-frio-no-suena",
+    "storySource": "user",
+    "sentence": "Le prestaron un chico templado en la fogata",
+    "targetWord": "prestaron",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "vacío",
+  "sentence": "Bebió el último sorbo y no quedó nada: el vaso estaba _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vacío",
+   "options": [
+    "vacío",
+    "caliente",
+    "limpio",
+    "roto"
+   ],
+   "translation": "He drank the last sip and nothing was left: the glass was _____.",
+   "optionTranslations": [
+    "empty",
+    "hot",
+    "clean",
+    "broken"
+   ],
+   "audioClip": {
+    "storySlug": "un-tambor-frio-no-suena",
+    "storySource": "user",
+    "sentence": "Bebió el último sorbo y no quedó nada: el vaso estaba vacío.",
+    "targetWord": "vacío",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "colgar",
+  "sentence": "Va a _____ el abrigo detrás de la puerta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "colgar",
+   "options": [
+    "colgar",
+    "lavar",
+    "doblar",
+    "comprar"
+   ],
+   "translation": "She is going to _____ the coat behind the door.",
+   "optionTranslations": [
+    "hang up",
+    "wash",
+    "fold",
+    "buy"
+   ],
+   "audioClip": {
+    "storySlug": "un-tambor-frio-no-suena",
+    "storySource": "user",
+    "sentence": "Va a colgar el abrigo detrás de la puerta.",
+    "targetWord": "colgar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pegar",
+  "sentence": "Ella [[pegó]] y el tambor no sonó",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to strike",
+   "options": [
+    "to strike",
+    "to lift",
+    "to turn",
+    "to hold"
+   ],
+   "audioClip": {
+    "storySlug": "un-tambor-frio-no-suena",
+    "storySource": "user",
+    "sentence": "Ella pegó y el tambor no sonó",
+    "targetWord": "pegó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "adelante",
+  "sentence": "El redoble empezó [[adelante]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at the front",
+   "options": [
+    "at the front",
+    "at the back",
+    "from above",
+    "from outside"
+   ],
+   "audioClip": {
+    "storySlug": "un-tambor-frio-no-suena",
+    "storySource": "user",
+    "sentence": "El redoble empezó adelante",
+    "targetWord": "adelante",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "devolver",
+  "sentence": "[[Devolvió]] el instrumento con las manos abiertas",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to give back",
+   "options": [
+    "to give back",
+    "to pass on",
+    "to put down",
+    "to take up"
+   ],
+   "audioClip": {
+    "storySlug": "un-tambor-frio-no-suena",
+    "storySource": "user",
+    "sentence": "Devolvió el instrumento con las manos abiertas",
+    "targetWord": "Devolvió",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "discutir",
+  "sentence": "renunció sin [[discutirlo]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to argue about",
+   "options": [
+    "to argue about",
+    "to think about",
+    "to ask about",
+    "to write about"
+   ],
+   "audioClip": {
+    "storySlug": "un-tambor-frio-no-suena",
+    "storySource": "user",
+    "sentence": "renunció sin discutirlo",
+    "targetWord": "discutirlo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "reaccionar",
+  "sentence": "tardó en [[reaccionar]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to react",
+   "options": [
+    "to react",
+    "to recover",
+    "to decide",
+    "to arrive"
+   ],
+   "audioClip": {
+    "storySlug": "un-tambor-frio-no-suena",
+    "storySource": "user",
+    "sentence": "tardó en reaccionar",
+    "targetWord": "reaccionar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "debajo",
+  "sentence": "registró el teléfono detrás del mismo papel, [[debajo]] del otro",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "underneath",
+   "options": [
+    "underneath",
+    "alongside",
+    "in front of",
+    "far from"
+   ],
+   "audioClip": {
+    "storySlug": "un-tambor-frio-no-suena",
+    "storySource": "user",
+    "sentence": "registró el teléfono detrás del mismo papel, debajo del otro",
+    "targetWord": "debajo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "darse vuelta",
+  "sentence": "Los tamborileros [[se dieron vuelta]] y ella quedó fuera",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to turn round",
+   "options": [
+    "to turn round",
+    "to step back",
+    "to sit down",
+    "to speak up"
+   ],
+   "audioClip": {
+    "storySlug": "un-tambor-frio-no-suena",
+    "storySource": "user",
+    "sentence": "Los tamborileros se dieron vuelta y ella quedó fuera",
+    "targetWord": "se dieron vuelta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fuera de todo",
+  "sentence": "ella quedó [[fuera de todo]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "left out of everything",
+   "options": [
+    "left out of everything",
+    "done with everything",
+    "sure about everything",
+    "tired of everything"
+   ],
+   "audioClip": {
+    "storySlug": "un-tambor-frio-no-suena",
+    "storySource": "user",
+    "sentence": "ella quedó fuera de todo",
+    "targetWord": "fuera de todo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

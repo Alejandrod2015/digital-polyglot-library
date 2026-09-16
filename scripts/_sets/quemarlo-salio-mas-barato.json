@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "acera,humo,brasa,fuego",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "acera",
+     "answer": "a pavement",
+     "options": [
+      "a pavement",
+      "smoke",
+      "an ember",
+      "fire"
+     ]
+    },
+    {
+     "word": "humo",
+     "answer": "smoke",
+     "options": [
+      "a pavement",
+      "smoke",
+      "an ember",
+      "fire"
+     ]
+    },
+    {
+     "word": "brasa",
+     "answer": "an ember",
+     "options": [
+      "a pavement",
+      "smoke",
+      "an ember",
+      "fire"
+     ]
+    },
+    {
+     "word": "fuego",
+     "answer": "fire",
+     "options": [
+      "a pavement",
+      "smoke",
+      "an ember",
+      "fire"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gasolina",
+  "sentence": "trajo la [[gasolina]] y lideraba la cuadra sin decirlo",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "petrol",
+   "options": [
+    "petrol",
+    "matches",
+    "water",
+    "paint"
+   ],
+   "audioClip": {
+    "storySlug": "quemarlo-salio-mas-barato",
+    "storySource": "user",
+    "sentence": "trajo la gasolina y lideraba la cuadra sin decirlo",
+    "targetWord": "gasolina",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "uva",
+  "sentence": "Las [[uvas]] de medianoche se repartieron mal",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a grape",
+   "options": [
+    "a grape",
+    "a biscuit",
+    "a candle",
+    "a coin"
+   ],
+   "audioClip": {
+    "storySlug": "quemarlo-salio-mas-barato",
+    "storySource": "user",
+    "sentence": "Las uvas de medianoche se repartieron mal",
+    "targetWord": "uvas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "propósito",
+  "sentence": "le pareció el mejor [[propósito]] del año",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a resolution",
+   "options": [
+    "a resolution",
+    "a bargain",
+    "a reason",
+    "a surprise"
+   ],
+   "audioClip": {
+    "storySlug": "quemarlo-salio-mas-barato",
+    "storySource": "user",
+    "sentence": "le pareció el mejor propósito del año",
+    "targetWord": "propósito",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cierre",
+  "sentence": "ese [[cierre]] significativo le pareció el mejor propósito",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an ending",
+   "options": [
+    "an ending",
+    "a promise",
+    "a journey",
+    "a reward"
+   ],
+   "audioClip": {
+    "storySlug": "quemarlo-salio-mas-barato",
+    "storySource": "user",
+    "sentence": "ese cierre significativo le pareció el mejor propósito",
+    "targetWord": "cierre",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rencor",
+  "sentence": "agregó una viuda, ya sin [[rencor]] ni celos",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a grudge",
+   "options": [
+    "a grudge",
+    "a regret",
+    "a wish",
+    "a fear"
+   ],
+   "audioClip": {
+    "storySlug": "quemarlo-salio-mas-barato",
+    "storySource": "user",
+    "sentence": "agregó una viuda, ya sin rencor ni celos",
+    "targetWord": "rencor",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "perdonar",
+  "sentence": "[[Perdonar]] el año cuesta menos que cargarlo",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to forgive",
+   "options": [
+    "to forgive",
+    "to forget",
+    "to repay",
+    "to explain"
+   ],
+   "audioClip": {
+    "storySlug": "quemarlo-salio-mas-barato",
+    "storySource": "user",
+    "sentence": "Perdonar el año cuesta menos que cargarlo",
+    "targetWord": "Perdonar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "último",
+  "sentence": "Cuando ya no quedaba nadie, salió el _____ de la casa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "último",
+   "options": [
+    "último",
+    "primero",
+    "mismo",
+    "otro"
+   ],
+   "translation": "When nobody was left, the _____ one went out of the house.",
+   "optionTranslations": [
+    "last",
+    "first",
+    "same",
+    "other"
+   ],
+   "audioClip": {
+    "storySlug": "quemarlo-salio-mas-barato",
+    "storySource": "user",
+    "sentence": "Cuando ya no quedaba nadie, salió el último de la casa.",
+    "targetWord": "último",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "minuto",
+  "sentence": "La sopa se calienta en un _____ y ya está lista.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "minuto",
+   "options": [
+    "minuto",
+    "kilo",
+    "peso",
+    "paso"
+   ],
+   "translation": "The soup heats in a _____ and it is ready.",
+   "optionTranslations": [
+    "minute",
+    "kilo",
+    "peso",
+    "step"
+   ],
+   "audioClip": {
+    "storySlug": "quemarlo-salio-mas-barato",
+    "storySource": "user",
+    "sentence": "La sopa se calienta en un minuto y ya está lista.",
+    "targetWord": "minuto",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "actual",
+  "sentence": "Es lo [[actual]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "of right now",
+   "options": [
+    "of right now",
+    "of long ago",
+    "of next year",
+    "of every day"
+   ],
+   "audioClip": {
+    "storySlug": "quemarlo-salio-mas-barato",
+    "storySource": "user",
+    "sentence": "Es lo actual",
+    "targetWord": "actual",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "viajar",
+  "sentence": "Lo frágil no [[viaja]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to travel",
+   "options": [
+    "to travel",
+    "to break",
+    "to sell",
+    "to last"
+   ],
+   "audioClip": {
+    "storySlug": "quemarlo-salio-mas-barato",
+    "storySource": "user",
+    "sentence": "Lo frágil no viaja",
+    "targetWord": "viaja",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "doce",
+  "sentence": "Las [[doce]] uvas se repartieron mal",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "twelve",
+   "options": [
+    "twelve",
+    "twenty",
+    "thirty",
+    "fifty"
+   ],
+   "audioClip": {
+    "storySlug": "quemarlo-salio-mas-barato",
+    "storySource": "user",
+    "sentence": "Las doce uvas se repartieron mal",
+    "targetWord": "doce",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "liderar",
+  "sentence": "trajo la gasolina y [[lideraba]] la cuadra sin decirlo",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to lead",
+   "options": [
+    "to lead",
+    "to pay",
+    "to watch",
+    "to join"
+   ],
+   "audioClip": {
+    "storySlug": "quemarlo-salio-mas-barato",
+    "storySource": "user",
+    "sentence": "trajo la gasolina y lideraba la cuadra sin decirlo",
+    "targetWord": "lideraba",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "repartir",
+  "sentence": "Las uvas de medianoche [[se repartieron]] mal",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hand out",
+   "options": [
+    "to hand out",
+    "to put away",
+    "to count up",
+    "to throw out"
+   ],
+   "audioClip": {
+    "storySlug": "quemarlo-salio-mas-barato",
+    "storySource": "user",
+    "sentence": "Las uvas de medianoche se repartieron mal",
+    "targetWord": "se repartieron",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "traer",
+  "sentence": "[[Traer]] es fácil; dejarlo aquí es lo esencial",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to bring",
+   "options": [
+    "to bring",
+    "to keep",
+    "to sell",
+    "to lift"
+   ],
+   "audioClip": {
+    "storySlug": "quemarlo-salio-mas-barato",
+    "storySource": "user",
+    "sentence": "Traer es fácil; dejarlo aquí es lo esencial",
+    "targetWord": "Traer",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "celos",
+  "sentence": "ya sin rencor ni [[celos]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "jealousy",
+   "options": [
+    "jealousy",
+    "laughter",
+    "hunger",
+    "hurry"
+   ],
+   "audioClip": {
+    "storySlug": "quemarlo-salio-mas-barato",
+    "storySource": "user",
+    "sentence": "ya sin rencor ni celos",
+    "targetWord": "celos",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "realizar",
+  "sentence": "Lo principal ya lo [[realizaste]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to carry out",
+   "options": [
+    "to carry out",
+    "to talk about",
+    "to give up",
+    "to think over"
+   ],
+   "audioClip": {
+    "storySlug": "quemarlo-salio-mas-barato",
+    "storySource": "user",
+    "sentence": "Lo principal ya lo realizaste",
+    "targetWord": "realizaste",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "funcionario,mesa,multitud,público",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "funcionario",
+     "answer": "a town official",
+     "options": [
+      "a town official",
+      "a table",
+      "a big crowd",
+      "an audience"
+     ]
+    },
+    {
+     "word": "mesa",
+     "answer": "a table",
+     "options": [
+      "a town official",
+      "a table",
+      "a big crowd",
+      "an audience"
+     ]
+    },
+    {
+     "word": "multitud",
+     "answer": "a big crowd",
+     "options": [
+      "a town official",
+      "a table",
+      "a big crowd",
+      "an audience"
+     ]
+    },
+    {
+     "word": "público",
+     "answer": "an audience",
+     "options": [
+      "a town official",
+      "a table",
+      "a big crowd",
+      "an audience"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "patente",
+  "sentence": "Sin [[patente]] municipal no se vende en la ramada",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a trading licence",
+   "options": [
+    "a trading licence",
+    "a stall number",
+    "a sales receipt",
+    "a market map"
+   ],
+   "audioClip": {
+    "storySlug": "sin-patente-no-hay-puesto",
+    "storySource": "user",
+    "sentence": "Sin patente municipal no se vende en la ramada",
+    "targetWord": "patente",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ramada",
+  "sentence": "no se vende en la [[ramada]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a branch-roofed hall",
+   "options": [
+    "a branch-roofed hall",
+    "a covered market",
+    "a walled garden",
+    "a wooden stage"
+   ],
+   "audioClip": {
+    "storySlug": "sin-patente-no-hay-puesto",
+    "storySource": "user",
+    "sentence": "no se vende en la ramada",
+    "targetWord": "ramada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "volantín",
+  "sentence": "Calculó los [[volantines]] que podía vender allá",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a paper kite",
+   "options": [
+    "a paper kite",
+    "a paper lantern",
+    "a paper flower",
+    "a paper fan"
+   ],
+   "audioClip": {
+    "storySlug": "sin-patente-no-hay-puesto",
+    "storySource": "user",
+    "sentence": "Calculó los volantines que podía vender allá",
+    "targetWord": "volantines",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "control",
+  "sentence": "La mitad del [[control]] lo paso yo",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the checking",
+   "options": [
+    "the checking",
+    "the paperwork",
+    "the stock",
+    "the rent"
+   ],
+   "audioClip": {
+    "storySlug": "sin-patente-no-hay-puesto",
+    "storySource": "user",
+    "sentence": "La mitad del control lo paso yo",
+    "targetWord": "control",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "inversión",
+  "sentence": "nadie miraba el tamaño de su [[inversión]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "her investment",
+   "options": [
+    "her investment",
+    "her luggage",
+    "her worry",
+    "her family"
+   ],
+   "audioClip": {
+    "storySlug": "sin-patente-no-hay-puesto",
+    "storySource": "user",
+    "sentence": "nadie miraba el tamaño de su inversión",
+    "targetWord": "inversión",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "competencia",
+  "sentence": "sin contar [[competencia]] ni porcentaje",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rival sellers",
+   "options": [
+    "rival sellers",
+    "travel costs",
+    "opening hours",
+    "bad weather"
+   ],
+   "audioClip": {
+    "storySlug": "sin-patente-no-hay-puesto",
+    "storySource": "user",
+    "sentence": "sin contar competencia ni porcentaje",
+    "targetWord": "competencia",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pérdida",
+  "sentence": "Vendió el coche por poco dinero y la _____ fue grande.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pérdida",
+   "options": [
+    "pérdida",
+    "fiesta",
+    "cola",
+    "tienda"
+   ],
+   "translation": "He sold the car cheap and the _____ was large.",
+   "optionTranslations": [
+    "loss",
+    "party",
+    "queue",
+    "shop"
+   ],
+   "audioClip": {
+    "storySlug": "sin-patente-no-hay-puesto",
+    "storySource": "user",
+    "sentence": "Vendió el coche por poco dinero y la pérdida fue grande.",
+    "targetWord": "pérdida",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "demanda",
+  "sentence": "En verano sube la _____ de agua fría y no queda ninguna.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "demanda",
+   "options": [
+    "demanda",
+    "arena",
+    "sombra",
+    "marea"
+   ],
+   "translation": "In summer the _____ for cold water rises and none is left.",
+   "optionTranslations": [
+    "demand",
+    "sand",
+    "shade",
+    "tide"
+   ],
+   "audioClip": {
+    "storySlug": "sin-patente-no-hay-puesto",
+    "storySource": "user",
+    "sentence": "En verano sube la demanda de agua fría y no queda ninguna.",
+    "targetWord": "demanda",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "porcentaje",
+  "sentence": "sin contar competencia ni [[porcentaje]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a cut of the takings",
+   "options": [
+    "a cut of the takings",
+    "a fixed daily rent",
+    "a signed agreement",
+    "a printed ticket"
+   ],
+   "audioClip": {
+    "storySlug": "sin-patente-no-hay-puesto",
+    "storySource": "user",
+    "sentence": "sin contar competencia ni porcentaje",
+    "targetWord": "porcentaje",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "eficiente",
+  "sentence": "El sistema es [[eficiente]] para quien ya está dentro",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "efficient",
+   "options": [
+    "efficient",
+    "expensive",
+    "recent",
+    "unfair"
+   ],
+   "audioClip": {
+    "storySlug": "sin-patente-no-hay-puesto",
+    "storySource": "user",
+    "sentence": "El sistema es eficiente para quien ya está dentro",
+    "targetWord": "eficiente",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "municipal",
+  "sentence": "Sin patente [[municipal]] no se vende",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "from the town hall",
+   "options": [
+    "from the town hall",
+    "from the police",
+    "from the market",
+    "from the owner"
+   ],
+   "audioClip": {
+    "storySlug": "sin-patente-no-hay-puesto",
+    "storySource": "user",
+    "sentence": "Sin patente municipal no se vende",
+    "targetWord": "municipal",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sugerir",
+  "sentence": "El papel sale más tarde, [[sugirió]] el funcionario",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to suggest",
+   "options": [
+    "to suggest",
+    "to demand",
+    "to promise",
+    "to refuse"
+   ],
+   "audioClip": {
+    "storySlug": "sin-patente-no-hay-puesto",
+    "storySource": "user",
+    "sentence": "El papel sale más tarde, sugirió el funcionario",
+    "targetWord": "sugirió",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gestionar",
+  "sentence": "[[Gestionar]] eso en septiembre no sirve",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sort out the paperwork",
+   "options": [
+    "to sort out the paperwork",
+    "to pay off the debt",
+    "to look for a buyer",
+    "to build a new stall"
+   ],
+   "audioClip": {
+    "storySlug": "sin-patente-no-hay-puesto",
+    "storySource": "user",
+    "sentence": "Gestionar eso en septiembre no sirve",
+    "targetWord": "Gestionar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "honesto",
+  "sentence": "fue [[honesto]] el volantinero",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "straight with her",
+   "options": [
+    "straight with her",
+    "hard on her",
+    "short with her",
+    "kind to her"
+   ],
+   "audioClip": {
+    "storySlug": "sin-patente-no-hay-puesto",
+    "storySource": "user",
+    "sentence": "fue honesto el volantinero",
+    "targetWord": "honesto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "legal",
+  "sentence": "El trato era [[legal]] a medias",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "within the rules",
+   "options": [
+    "within the rules",
+    "open to all",
+    "clear to read",
+    "free of charge"
+   ],
+   "audioClip": {
+    "storySlug": "sin-patente-no-hay-puesto",
+    "storySource": "user",
+    "sentence": "El trato era legal a medias",
+    "targetWord": "legal",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a mi nombre",
+  "sentence": "Está [[a mi nombre]], contestó",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in my name",
+   "options": [
+    "in my name",
+    "on my street",
+    "at my price",
+    "for my use"
+   ],
+   "audioClip": {
+    "storySlug": "sin-patente-no-hay-puesto",
+    "storySource": "user",
+    "sentence": "Está a mi nombre, contestó",
+    "targetWord": "a mi nombre",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

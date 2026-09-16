@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "aserrín,pino,balde,testigo",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "aserrín",
+     "answer": "sawdust",
+     "options": [
+      "sawdust",
+      "pine",
+      "a bucket",
+      "a witness"
+     ]
+    },
+    {
+     "word": "pino",
+     "answer": "pine",
+     "options": [
+      "sawdust",
+      "pine",
+      "a bucket",
+      "a witness"
+     ]
+    },
+    {
+     "word": "balde",
+     "answer": "a bucket",
+     "options": [
+      "sawdust",
+      "pine",
+      "a bucket",
+      "a witness"
+     ]
+    },
+    {
+     "word": "testigo",
+     "answer": "a witness",
+     "options": [
+      "sawdust",
+      "pine",
+      "a bucket",
+      "a witness"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "teñir",
+  "sentence": "Quien tiñe es el [[teñidor]] de Antigua, Guatemala",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to dye",
+   "options": [
+    "to dye",
+    "to draw",
+    "to sweep",
+    "to sell"
+   ],
+   "audioClip": {
+    "storySlug": "el-aserrin-no-se-guarda",
+    "storySource": "user",
+    "sentence": "Quien tiñe es el teñidor de Antigua, Guatemala",
+    "targetWord": "teñidor",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cucurucho",
+  "sentence": "Los [[cucuruchos]] pasaron respetando el turno",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a man in a purple robe",
+   "options": [
+    "a man in a purple robe",
+    "a musician with a brass horn",
+    "a woman with a wide basket",
+    "a man with a long broom"
+   ],
+   "audioClip": {
+    "storySlug": "el-aserrin-no-se-guarda",
+    "storySource": "user",
+    "sentence": "Los cucuruchos pasaron respetando el turno",
+    "targetWord": "cucuruchos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "procesión",
+  "sentence": "La [[procesión]] que la pisa no la valora menos",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a slow religious parade",
+   "options": [
+    "a slow religious parade",
+    "a busy morning market",
+    "a long family lunch",
+    "a loud street party"
+   ],
+   "audioClip": {
+    "storySlug": "el-aserrin-no-se-guarda",
+    "storySource": "user",
+    "sentence": "La procesión que la pisa no la valora menos",
+    "targetWord": "procesión",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "efímero",
+  "sentence": "Aquí la alfombra es [[efímera]] por vocación",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "short-lived",
+   "options": [
+    "short-lived",
+    "hand-made",
+    "hard-wearing",
+    "brightly dyed"
+   ],
+   "audioClip": {
+    "storySlug": "el-aserrin-no-se-guarda",
+    "storySource": "user",
+    "sentence": "Aquí la alfombra es efímera por vocación",
+    "targetWord": "efímera",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vocación",
+  "sentence": "Aquí la alfombra es efímera por [[vocación]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "by its calling",
+   "options": [
+    "by its calling",
+    "by mistake",
+    "by old habit",
+    "by bad luck"
+   ],
+   "audioClip": {
+    "storySlug": "el-aserrin-no-se-guarda",
+    "storySource": "user",
+    "sentence": "Aquí la alfombra es efímera por vocación",
+    "targetWord": "vocación",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "herencia",
+  "sentence": "La [[herencia]] se transmitía sin hablar",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "what is handed down",
+   "options": [
+    "what is handed down",
+    "what is written out",
+    "what is paid for",
+    "what is set aside"
+   ],
+   "audioClip": {
+    "storySlug": "el-aserrin-no-se-guarda",
+    "storySource": "user",
+    "sentence": "La herencia se transmitía sin hablar",
+    "targetWord": "herencia",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "barren",
+  "sentence": "Después de la feria _____ la plaza y no queda nada.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "barren",
+   "options": [
+    "barren",
+    "pintan",
+    "riegan",
+    "cierran"
+   ],
+   "translation": "After the fair they _____ the square and nothing is left.",
+   "optionTranslations": [
+    "sweep",
+    "paint",
+    "water",
+    "close"
+   ],
+   "audioClip": {
+    "storySlug": "el-aserrin-no-se-guarda",
+    "storySource": "user",
+    "sentence": "Después de la feria barren la plaza y no queda nada.",
+    "targetWord": "barren",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "hábil",
+  "sentence": "Con una mano tan _____ arregló el reloj en un rato.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "hábil",
+   "options": [
+    "hábil",
+    "fría",
+    "sucia",
+    "lenta"
+   ],
+   "translation": "With a hand so _____ he fixed the watch in no time.",
+   "optionTranslations": [
+    "skilful",
+    "cold",
+    "dirty",
+    "slow"
+   ],
+   "audioClip": {
+    "storySlug": "el-aserrin-no-se-guarda",
+    "storySource": "user",
+    "sentence": "Con una mano tan hábil arregló el reloj en un rato.",
+    "targetWord": "hábil",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "valorar",
+  "sentence": "La procesión que la pisa no la [[valora]] menos",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to value",
+   "options": [
+    "to value",
+    "to notice",
+    "to protect",
+    "to describe"
+   ],
+   "audioClip": {
+    "storySlug": "el-aserrin-no-se-guarda",
+    "storySource": "user",
+    "sentence": "La procesión que la pisa no la valora menos",
+    "targetWord": "valora",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "transmitir",
+  "sentence": "La herencia [[se transmitía]] sin hablar",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to pass on",
+   "options": [
+    "to pass on",
+    "to write down",
+    "to speak out",
+    "to hold back"
+   ],
+   "audioClip": {
+    "storySlug": "el-aserrin-no-se-guarda",
+    "storySource": "user",
+    "sentence": "La herencia se transmitía sin hablar",
+    "targetWord": "se transmitía",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "constante",
+  "sentence": "testigo de que ella era [[constante]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "steady at it",
+   "options": [
+    "steady at it",
+    "quick at it",
+    "new to it",
+    "tired of it"
+   ],
+   "audioClip": {
+    "storySlug": "el-aserrin-no-se-guarda",
+    "storySource": "user",
+    "sentence": "testigo de que ella era constante",
+    "targetWord": "constante",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "evidente",
+  "sentence": "Era [[evidente]] quién era experto",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "obvious",
+   "options": [
+    "obvious",
+    "likely",
+    "strange",
+    "awkward"
+   ],
+   "audioClip": {
+    "storySlug": "el-aserrin-no-se-guarda",
+    "storySource": "user",
+    "sentence": "Era evidente quién era experto",
+    "targetWord": "evidente",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "experto",
+  "sentence": "Era evidente quién era [[experto]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the expert",
+   "options": [
+    "the expert",
+    "the owner",
+    "the eldest",
+    "the visitor"
+   ],
+   "audioClip": {
+    "storySlug": "el-aserrin-no-se-guarda",
+    "storySource": "user",
+    "sentence": "Era evidente quién era experto",
+    "targetWord": "experto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sensato",
+  "sentence": "Nadie la invitó a esa jornada, y fue [[sensata]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sensible",
+   "options": [
+    "sensible",
+    "cheerful",
+    "stubborn",
+    "shy"
+   ],
+   "audioClip": {
+    "storySlug": "el-aserrin-no-se-guarda",
+    "storySource": "user",
+    "sentence": "Nadie la invitó a esa jornada, y fue sensata",
+    "targetWord": "sensata",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "atento",
+  "sentence": "Se puso a teñir, [[atenta]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "paying close attention",
+   "options": [
+    "paying close attention",
+    "working very fast",
+    "chatting all the while",
+    "looking rather bored"
+   ],
+   "audioClip": {
+    "storySlug": "el-aserrin-no-se-guarda",
+    "storySource": "user",
+    "sentence": "Se puso a teñir, atenta",
+    "targetWord": "atenta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cooperar",
+  "sentence": "[[Cooperar]] ahí no se pide ni se paga",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to pitch in",
+   "options": [
+    "to pitch in",
+    "to sign up",
+    "to pay up",
+    "to stand by"
+   ],
+   "audioClip": {
+    "storySlug": "el-aserrin-no-se-guarda",
+    "storySource": "user",
+    "sentence": "Cooperar ahí no se pide ni se paga",
+    "targetWord": "Cooperar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

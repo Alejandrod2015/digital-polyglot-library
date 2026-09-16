@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "monigote,paja,máscara,cuerpo",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "monigote",
+     "answer": "a straw dummy",
+     "options": [
+      "a straw dummy",
+      "dry straw",
+      "a face mask",
+      "a body"
+     ]
+    },
+    {
+     "word": "paja",
+     "answer": "dry straw",
+     "options": [
+      "a straw dummy",
+      "dry straw",
+      "a face mask",
+      "a body"
+     ]
+    },
+    {
+     "word": "máscara",
+     "answer": "a face mask",
+     "options": [
+      "a straw dummy",
+      "dry straw",
+      "a face mask",
+      "a body"
+     ]
+    },
+    {
+     "word": "cuerpo",
+     "answer": "a body",
+     "options": [
+      "a straw dummy",
+      "dry straw",
+      "a face mask",
+      "a body"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quema",
+  "sentence": "¿No hay riesgo de dejar la cuadra sin [[quema]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a burning",
+   "options": [
+    "a burning",
+    "a payment",
+    "a meeting",
+    "a wait"
+   ],
+   "audioClip": {
+    "storySlug": "aldo-se-lo-vende-sin-mas",
+    "storySource": "user",
+    "sentence": "¿No hay riesgo de dejar la cuadra sin quema?",
+    "targetWord": "quema",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pólvora",
+  "sentence": "Olía a [[pólvora]] desde temprano",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gunpowder",
+   "options": [
+    "gunpowder",
+    "fresh paint",
+    "wet earth",
+    "burnt sugar"
+   ],
+   "audioClip": {
+    "storySlug": "aldo-se-lo-vende-sin-mas",
+    "storySource": "user",
+    "sentence": "Olía a pólvora desde temprano",
+    "targetWord": "pólvora",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vecindario",
+  "sentence": "el [[vecindario]] entero arma los años viejos de la cuadra",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the neighbourhood",
+   "options": [
+    "the neighbourhood",
+    "the workshop",
+    "the market",
+    "the family"
+   ],
+   "audioClip": {
+    "storySlug": "aldo-se-lo-vende-sin-mas",
+    "storySource": "user",
+    "sentence": "el vecindario entero arma los años viejos de la cuadra",
+    "targetWord": "vecindario",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sereno",
+  "sentence": "Ese es el motivo del precio, dijo él, [[sereno]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "calm",
+   "options": [
+    "calm",
+    "amused",
+    "hurried",
+    "annoyed"
+   ],
+   "audioClip": {
+    "storySlug": "aldo-se-lo-vende-sin-mas",
+    "storySource": "user",
+    "sentence": "Ese es el motivo del precio, dijo él, sereno",
+    "targetWord": "sereno",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tolerante",
+  "sentence": "Él no es [[tolerante]] con el que compra y se va",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "easy-going",
+   "options": [
+    "easy-going",
+    "generous",
+    "curious",
+    "cheerful"
+   ],
+   "audioClip": {
+    "storySlug": "aldo-se-lo-vende-sin-mas",
+    "storySource": "user",
+    "sentence": "Él no es tolerante con el que compra y se va",
+    "targetWord": "tolerante",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "solidario",
+  "sentence": "La cuadra es [[solidaria]], no tonta",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "looks after its own",
+   "options": [
+    "looks after its own",
+    "quick to argue",
+    "slow to move",
+    "fond of noise"
+   ],
+   "audioClip": {
+    "storySlug": "aldo-se-lo-vende-sin-mas",
+    "storySource": "user",
+    "sentence": "La cuadra es solidaria, no tonta",
+    "targetWord": "solidaria",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "frustrada",
+  "sentence": "Trabajó un mes y no le pagaron; quedó _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "frustrada",
+   "options": [
+    "frustrada",
+    "contenta",
+    "agradecida",
+    "tranquila"
+   ],
+   "translation": "She worked a month and was not paid; she was left _____.",
+   "optionTranslations": [
+    "frustrated",
+    "pleased",
+    "grateful",
+    "calm"
+   ],
+   "audioClip": {
+    "storySlug": "aldo-se-lo-vende-sin-mas",
+    "storySource": "user",
+    "sentence": "Trabajó un mes y no le pagaron; quedó frustrada.",
+    "targetWord": "frustrada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "precio",
+  "sentence": "No compró el abrigo porque el _____ era muy alto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "precio",
+   "options": [
+    "precio",
+    "color",
+    "tamaño",
+    "diseño"
+   ],
+   "translation": "She did not buy the coat because the _____ was very high.",
+   "optionTranslations": [
+    "price",
+    "colour",
+    "size",
+    "design"
+   ],
+   "audioClip": {
+    "storySlug": "aldo-se-lo-vende-sin-mas",
+    "storySource": "user",
+    "sentence": "No compró el abrigo porque el precio era muy alto.",
+    "targetWord": "precio",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "discurso",
+  "sentence": "Ella se quedó con medio [[discurso]] dentro",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a speech",
+   "options": [
+    "a speech",
+    "a doubt",
+    "a promise",
+    "a debt"
+   ],
+   "audioClip": {
+    "storySlug": "aldo-se-lo-vende-sin-mas",
+    "storySource": "user",
+    "sentence": "Ella se quedó con medio discurso dentro",
+    "targetWord": "discurso",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "respetable",
+  "sentence": "Ella preguntó, y eso le pareció [[respetable]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "worthy of respect",
+   "options": [
+    "worthy of respect",
+    "hard to believe",
+    "out of place",
+    "rather funny"
+   ],
+   "audioClip": {
+    "storySlug": "aldo-se-lo-vende-sin-mas",
+    "storySource": "user",
+    "sentence": "Ella preguntó, y eso le pareció respetable",
+    "targetWord": "respetable",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "complejo",
+  "sentence": "frustrada de un modo [[complejo]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "complicated",
+   "options": [
+    "complicated",
+    "childish",
+    "familiar",
+    "sudden"
+   ],
+   "audioClip": {
+    "storySlug": "aldo-se-lo-vende-sin-mas",
+    "storySource": "user",
+    "sentence": "frustrada de un modo complejo",
+    "targetWord": "complejo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sobrio",
+  "sentence": "El monigotero siguió armando, [[sobrio]], sin cara de arrepentido",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "plain and quiet",
+   "options": [
+    "plain and quiet",
+    "loud and proud",
+    "tired and slow",
+    "warm and open"
+   ],
+   "audioClip": {
+    "storySlug": "aldo-se-lo-vende-sin-mas",
+    "storySource": "user",
+    "sentence": "El monigotero siguió armando, sobrio, sin cara de arrepentido",
+    "targetWord": "sobrio",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "arrepentido",
+  "sentence": "sin cara de [[arrepentido]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sorry",
+   "options": [
+    "sorry",
+    "worried",
+    "bored",
+    "pleased"
+   ],
+   "audioClip": {
+    "storySlug": "aldo-se-lo-vende-sin-mas",
+    "storySource": "user",
+    "sentence": "sin cara de arrepentido",
+    "targetWord": "arrepentido",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tonto",
+  "sentence": "La cuadra es solidaria, no [[tonta]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "foolish",
+   "options": [
+    "foolish",
+    "greedy",
+    "timid",
+    "noisy"
+   ],
+   "audioClip": {
+    "storySlug": "aldo-se-lo-vende-sin-mas",
+    "storySource": "user",
+    "sentence": "La cuadra es solidaria, no tonta",
+    "targetWord": "tonta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "productivo",
+  "sentence": "Nada de eso era [[productivo]] para nadie",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "worth the effort",
+   "options": [
+    "worth the effort",
+    "clear to anybody",
+    "new to the street",
+    "easy to explain"
+   ],
+   "audioClip": {
+    "storySlug": "aldo-se-lo-vende-sin-mas",
+    "storySource": "user",
+    "sentence": "Nada de eso era productivo para nadie",
+    "targetWord": "productivo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "así de rápido",
+  "sentence": "Está entero y es tuyo. [[Así de rápido]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "just like that",
+   "options": [
+    "just like that",
+    "little by little",
+    "one more time",
+    "for a good reason"
+   ],
+   "audioClip": {
+    "storySlug": "aldo-se-lo-vende-sin-mas",
+    "storySource": "user",
+    "sentence": "Está entero y es tuyo. Así de rápido.",
+    "targetWord": "Así de rápido",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

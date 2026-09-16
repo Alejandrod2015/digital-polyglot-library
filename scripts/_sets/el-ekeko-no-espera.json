@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "fila,bombín,aguayo,tamaño",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "fila",
+     "answer": "a queue",
+     "options": [
+      "a queue",
+      "a bowler hat",
+      "a woven carrying cloth",
+      "a size"
+     ]
+    },
+    {
+     "word": "bombín",
+     "answer": "a bowler hat",
+     "options": [
+      "a queue",
+      "a bowler hat",
+      "a woven carrying cloth",
+      "a size"
+     ]
+    },
+    {
+     "word": "aguayo",
+     "answer": "a woven carrying cloth",
+     "options": [
+      "a queue",
+      "a bowler hat",
+      "a woven carrying cloth",
+      "a size"
+     ]
+    },
+    {
+     "word": "tamaño",
+     "answer": "a size",
+     "options": [
+      "a queue",
+      "a bowler hat",
+      "a woven carrying cloth",
+      "a size"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "alasita",
+  "sentence": "llevaba horas en la fila de la [[alasita]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the La Paz fair of miniatures",
+   "options": [
+    "the La Paz fair of miniatures",
+    "the La Paz market of wool",
+    "the La Paz feast of water",
+    "the La Paz parade of masks"
+   ],
+   "audioClip": {
+    "storySlug": "el-ekeko-no-espera",
+    "storySource": "user",
+    "sentence": "llevaba horas en la fila de la alasita",
+    "targetWord": "alasita",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ekeko",
+  "sentence": "le pusieron el [[ekeko]] en la mano",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the Andean figure of plenty",
+   "options": [
+    "the Andean figure of plenty",
+    "the Andean drum of the hills",
+    "the Andean coin of the market",
+    "the Andean cloth of the fair"
+   ],
+   "audioClip": {
+    "storySlug": "el-ekeko-no-espera",
+    "storySource": "user",
+    "sentence": "le pusieron el ekeko en la mano",
+    "targetWord": "ekeko",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jornada",
+  "sentence": "esa [[jornada]] le cuidaba el puesto del mercado",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a working day",
+   "options": [
+    "a working day",
+    "a market stall",
+    "a small favour",
+    "a long queue"
+   ],
+   "audioClip": {
+    "storySlug": "el-ekeko-no-espera",
+    "storySource": "user",
+    "sentence": "esa jornada le cuidaba el puesto del mercado",
+    "targetWord": "jornada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ocasión",
+  "sentence": "esta [[ocasión]] no vuelve hasta enero",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a chance",
+   "options": [
+    "a chance",
+    "a season",
+    "a promise",
+    "a payment"
+   ],
+   "audioClip": {
+    "storySlug": "el-ekeko-no-espera",
+    "storySource": "user",
+    "sentence": "esta ocasión no vuelve hasta enero",
+    "targetWord": "ocasión",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "costo",
+  "sentence": "Pertenecer a esta cola es el [[costo]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the price you pay",
+   "options": [
+    "the price you pay",
+    "the time you save",
+    "the place you keep",
+    "the rule you follow"
+   ],
+   "audioClip": {
+    "storySlug": "el-ekeko-no-espera",
+    "storySource": "user",
+    "sentence": "Pertenecer a esta cola es el costo",
+    "targetWord": "costo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "decepción",
+  "sentence": "con una [[decepción]] y una pena que no supo explicar",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "disappointment",
+   "options": [
+    "disappointment",
+    "impatience",
+    "embarrassment",
+    "exhaustion"
+   ],
+   "audioClip": {
+    "storySlug": "el-ekeko-no-espera",
+    "storySource": "user",
+    "sentence": "con una decepción y una pena que no supo explicar",
+    "targetWord": "decepción",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "irritado",
+  "sentence": "Contestó el teléfono _____ porque llevaba una hora esperando.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "irritado",
+   "options": [
+    "irritado",
+    "dormido",
+    "mojado",
+    "tranquilo"
+   ],
+   "translation": "He answered the phone _____ because he had been waiting an hour.",
+   "optionTranslations": [
+    "annoyed",
+    "asleep",
+    "wet",
+    "calm"
+   ],
+   "audioClip": {
+    "storySlug": "el-ekeko-no-espera",
+    "storySource": "user",
+    "sentence": "Contestó el teléfono irritado porque llevaba una hora esperando.",
+    "targetWord": "irritado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cargado",
+  "sentence": "Llegó a casa _____ de bolsas y no podía abrir.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cargado",
+   "options": [
+    "cargado",
+    "descalzo",
+    "perdido",
+    "enfermo"
+   ],
+   "translation": "He got home _____ with bags and could not open the door.",
+   "optionTranslations": [
+    "loaded",
+    "barefoot",
+    "lost",
+    "ill"
+   ],
+   "audioClip": {
+    "storySlug": "el-ekeko-no-espera",
+    "storySource": "user",
+    "sentence": "Llegó a casa cargado de bolsas y no podía abrir.",
+    "targetWord": "cargado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pertenecer",
+  "sentence": "[[Pertenecer]] a esta cola es el costo",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to belong",
+   "options": [
+    "to belong",
+    "to arrive",
+    "to complain",
+    "to pay up"
+   ],
+   "audioClip": {
+    "storySlug": "el-ekeko-no-espera",
+    "storySource": "user",
+    "sentence": "Pertenecer a esta cola es el costo",
+    "targetWord": "Pertenecer",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ganas",
+  "sentence": "se le fueron las [[ganas]] de mirarlo",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the urge",
+   "options": [
+    "the urge",
+    "the time",
+    "the money",
+    "the words"
+   ],
+   "audioClip": {
+    "storySlug": "el-ekeko-no-espera",
+    "storySource": "user",
+    "sentence": "se le fueron las ganas de mirarlo",
+    "targetWord": "ganas",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pena",
+  "sentence": "con una decepción y una [[pena]] que no supo explicar",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sadness",
+   "options": [
+    "sadness",
+    "fright",
+    "hurry",
+    "pride"
+   ],
+   "audioClip": {
+    "storySlug": "el-ekeko-no-espera",
+    "storySource": "user",
+    "sentence": "con una decepción y una pena que no supo explicar",
+    "targetWord": "pena",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "esfuerzo",
+  "sentence": "¿Y eso paga el [[esfuerzo]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the effort",
+   "options": [
+    "the effort",
+    "the ticket",
+    "the delay",
+    "the risk"
+   ],
+   "audioClip": {
+    "storySlug": "el-ekeko-no-espera",
+    "storySource": "user",
+    "sentence": "¿Y eso paga el esfuerzo?",
+    "targetWord": "esfuerzo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "escoger",
+  "sentence": "ya está [[escogido]] y no se devuelve",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to choose",
+   "options": [
+    "to choose",
+    "to wrap up",
+    "to pay for",
+    "to set aside"
+   ],
+   "audioClip": {
+    "storySlug": "el-ekeko-no-espera",
+    "storySource": "user",
+    "sentence": "ya está escogido y no se devuelve",
+    "targetWord": "escogido",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "por lo menos",
+  "sentence": "[[Por lo menos]] media feria esperaba antes que ella",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at least",
+   "options": [
+    "at least",
+    "at most",
+    "by now",
+    "as well"
+   ],
+   "audioClip": {
+    "storySlug": "el-ekeko-no-espera",
+    "storySource": "user",
+    "sentence": "Por lo menos media feria esperaba antes que ella",
+    "targetWord": "Por lo menos",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a mediodía en punto",
+  "sentence": "El tallador abre [[a mediodía en punto]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at twelve exactly",
+   "options": [
+    "at twelve exactly",
+    "around midday",
+    "before noon",
+    "after lunch"
+   ],
+   "audioClip": {
+    "storySlug": "el-ekeko-no-espera",
+    "storySource": "user",
+    "sentence": "El tallador abre a mediodía en punto",
+    "targetWord": "a mediodía en punto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "en todo caso",
+  "sentence": "[[En todo caso]], ya está escogido y no se devuelve",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "either way",
+   "options": [
+    "either way",
+    "for once",
+    "by chance",
+    "at last"
+   ],
+   "audioClip": {
+    "storySlug": "el-ekeko-no-espera",
+    "storySource": "user",
+    "sentence": "En todo caso, ya está escogido y no se devuelve",
+    "targetWord": "En todo caso",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

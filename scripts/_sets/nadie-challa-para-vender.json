@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "carpa,serpentina,mistura,ternura",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "carpa",
+     "answer": "a marquee",
+     "options": [
+      "a marquee",
+      "paper streamers",
+      "coloured confetti",
+      "tenderness"
+     ]
+    },
+    {
+     "word": "serpentina",
+     "answer": "paper streamers",
+     "options": [
+      "a marquee",
+      "paper streamers",
+      "coloured confetti",
+      "tenderness"
+     ]
+    },
+    {
+     "word": "mistura",
+     "answer": "coloured confetti",
+     "options": [
+      "a marquee",
+      "paper streamers",
+      "coloured confetti",
+      "tenderness"
+     ]
+    },
+    {
+     "word": "ternura",
+     "answer": "tenderness",
+     "options": [
+      "a marquee",
+      "paper streamers",
+      "coloured confetti",
+      "tenderness"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "challar",
+  "sentence": "Puede que no te lo [[challe]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to bless with alcohol and petals",
+   "options": [
+    "to bless with alcohol and petals",
+    "to wrap in a woven cloth",
+    "to carve from a soft wood",
+    "to sell at a fixed price"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-challa-para-vender",
+    "storySource": "user",
+    "sentence": "Puede que no te lo challe",
+    "targetWord": "challe",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "yatiri",
+  "sentence": "La [[yatiri]] levantó la vista",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the Aymara ritual specialist",
+   "options": [
+    "the Aymara ritual specialist",
+    "the Aymara market inspector",
+    "the Aymara street musician",
+    "the Aymara weaving teacher"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-challa-para-vender",
+    "storySource": "user",
+    "sentence": "La yatiri levantó la vista",
+    "targetWord": "yatiri",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "creencia",
+  "sentence": "Una [[creencia]] así me cuesta media venta del año",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a belief",
+   "options": [
+    "a belief",
+    "a delay",
+    "a rumour",
+    "a custom"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-challa-para-vender",
+    "storySource": "user",
+    "sentence": "Una creencia así me cuesta media venta del año",
+    "targetWord": "creencia",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "privilegio",
+  "sentence": "como quien da un [[privilegio]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a favour not given to all",
+   "options": [
+    "a favour not given to all",
+    "a price fixed for all",
+    "a warning meant for all",
+    "a rule known to all"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-challa-para-vender",
+    "storySource": "user",
+    "sentence": "como quien da un privilegio",
+    "targetWord": "privilegio",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "discreto",
+  "sentence": "La había acompañado, [[discreto]] como siempre",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "keeping himself out of it",
+   "options": [
+    "keeping himself out of it",
+    "talking through all of it",
+    "hurrying ahead of it",
+    "complaining about all of it"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-challa-para-vender",
+    "storySource": "user",
+    "sentence": "La había acompañado, discreto como siempre",
+    "targetWord": "discreto",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "renunciar",
+  "sentence": "Ella [[renunció]] a la pieza sin decirlo",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to give up",
+   "options": [
+    "to give up",
+    "to pay for",
+    "to ask for",
+    "to hand over"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-challa-para-vender",
+    "storySource": "user",
+    "sentence": "Ella renunció a la pieza sin decirlo",
+    "targetWord": "renunció",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "molesta",
+  "sentence": "Le pisaron el pie y siguió _____ toda la cena.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "molesta",
+   "options": [
+    "molesta",
+    "agradecida",
+    "dormida",
+    "sentada"
+   ],
+   "translation": "Someone stepped on her foot and she stayed _____ all dinner.",
+   "optionTranslations": [
+    "annoyed",
+    "grateful",
+    "asleep",
+    "seated"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-challa-para-vender",
+    "storySource": "user",
+    "sentence": "Le pisaron el pie y siguió molesta toda la cena.",
+    "targetWord": "molesta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "humildes",
+  "sentence": "Vivían en unos cuartos _____, sin nada de lujo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "humildes",
+   "options": [
+    "humildes",
+    "ruidosos",
+    "fríos",
+    "altos"
+   ],
+   "translation": "They lived in some _____ rooms, with no luxury at all.",
+   "optionTranslations": [
+    "modest",
+    "noisy",
+    "cold",
+    "tall"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-challa-para-vender",
+    "storySource": "user",
+    "sentence": "Vivían en unos cuartos humildes, sin nada de lujo.",
+    "targetWord": "humildes",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "negarse",
+  "sentence": "Yo pago y ya, [[se negó]] ella",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to refuse",
+   "options": [
+    "to refuse",
+    "to insist",
+    "to agree",
+    "to explain"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-challa-para-vender",
+    "storySource": "user",
+    "sentence": "Yo pago y ya, se negó ella",
+    "targetWord": "se negó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "suponer",
+  "sentence": "[[Supuso]] que bastaría con callarse",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to assume",
+   "options": [
+    "to assume",
+    "to notice",
+    "to admit",
+    "to decide"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-challa-para-vender",
+    "storySource": "user",
+    "sentence": "Supuso que bastaría con callarse",
+    "targetWord": "Supuso",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prudente",
+  "sentence": "[[Prudente]], sin prisa, preguntó de quién era la figurita",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "careful",
+   "options": [
+    "careful",
+    "curious",
+    "cheerful",
+    "distracted"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-challa-para-vender",
+    "storySource": "user",
+    "sentence": "Prudente, sin prisa, preguntó de quién era la figurita",
+    "targetWord": "Prudente",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apuntar",
+  "sentence": "[[apuntó]] al hombre antes de pensarlo",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to point at",
+   "options": [
+    "to point at",
+    "to call out to",
+    "to walk up to",
+    "to turn away from"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-challa-para-vender",
+    "storySource": "user",
+    "sentence": "apuntó al hombre antes de pensarlo",
+    "targetWord": "apuntó",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tolerar",
+  "sentence": "antes de [[tolerar]] la idea de decirlo en voz alta",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to put up with",
+   "options": [
+    "to put up with",
+    "to give in to",
+    "to laugh off",
+    "to think through"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-challa-para-vender",
+    "storySource": "user",
+    "sentence": "antes de tolerar la idea de decirlo en voz alta",
+    "targetWord": "tolerar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "puede que",
+  "sentence": "[[Puede que]] no te lo challe",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it may be that",
+   "options": [
+    "it may be that",
+    "it must be that",
+    "it is clear that",
+    "it is a pity that"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-challa-para-vender",
+    "storySource": "user",
+    "sentence": "Puede que no te lo challe",
+    "targetWord": "Puede que",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "se trata de",
+  "sentence": "[[Se trata del]] deseo de alguien",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it is about",
+   "options": [
+    "it is about",
+    "it depends on",
+    "it comes from",
+    "it ends with"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-challa-para-vender",
+    "storySource": "user",
+    "sentence": "Se trata del deseo de alguien",
+    "targetWord": "Se trata del",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mejor dicho",
+  "sentence": "[[Mejor dicho]]: antes de tolerar la idea",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "or rather",
+   "options": [
+    "or rather",
+    "in short",
+    "for once",
+    "after all"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-challa-para-vender",
+    "storySource": "user",
+    "sentence": "Mejor dicho: antes de tolerar la idea",
+    "targetWord": "Mejor dicho",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]
