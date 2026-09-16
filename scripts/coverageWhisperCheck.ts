@@ -21,12 +21,18 @@ const MODEL = path.join(
 // aleman (numeros y ortografia mal leidos, 2 de 3); "-l de" sale limpio salvo
 // una linea real en dialecto (no un fallo del candado). Sin entrada = frances,
 // que es el comportamiento de siempre para los journeys que ya usaban esto.
-const WHISPER_LANG: Record<string, string> = { german: "de" };
+// Ampliado el 2026-09-16 para italiano (Friends IT A0): sin masters reales
+// todavia que probar en seco (0 historias narradas), a diferencia del aleman
+// (probado contra 3 masters del Friends DE C1 ya publicado). "-l it" es el
+// codigo whisper.cpp estandar; se revisa contra la primera muestra real.
+const WHISPER_LANG: Record<string, string> = { german: "de", italian: "it" };
 export function whisperLangFor(journeyLanguage?: string | null): string {
   return (journeyLanguage && WHISPER_LANG[journeyLanguage]) || "fr";
 }
 export function numberLangFor(journeyLanguage?: string | null): NumberLang {
-  return journeyLanguage === "german" ? "de" : "fr";
+  if (journeyLanguage === "german") return "de";
+  if (journeyLanguage === "italian") return "it";
+  return "fr";
 }
 
 type RawWord = { text: string; start: number; end: number };

@@ -66,7 +66,7 @@ function wordsMatch(a: string, b: string): boolean {
 // llegan ya normalizadas (sin guiones ni tildes ni ß, ver norm()), asi que
 // "dix-sept" es "dixsept" y "dreißig" es "dreiig": cada token se descompone
 // en morfemas.
-export type NumberLang = "fr" | "de";
+export type NumberLang = "fr" | "de" | "it";
 
 const UNITS_FR: Record<string, number> = {
   zero: 0, un: 1, une: 1, deux: 2, trois: 3, quatre: 4, cinq: 5, six: 6, sept: 7, huit: 8, neuf: 9,
@@ -97,6 +97,42 @@ function tablesFor(lang: NumberLang) {
     ? { UNITS: UNITS_DE, TENS: TENS_DE, MORPHEMES: MORPHEMES_DE }
     : { UNITS: UNITS_FR, TENS: TENS_FR, MORPHEMES: MORPHEMES_FR };
 }
+
+// Italiano: NO cabe en el esquema de morfemas de arriba porque los compuestos
+// llevan elision de vocal ("venti" + "uno" -> "ventuno", pierde la "i"; "otto"
+// tambien elide: "ventotto"), asi que "venti" no es prefijo literal de
+// "ventuno" y numberMorphemes() no lo encontraria. Cada numero de 0 a 99 se
+// construye una vez en una tabla directa (palabra completa -> valor); no hay
+// deteccion de "cento"/"mille" compuestos (fuera de alcance: las 21 historias
+// A0 no narran cifras de tres cifras). El acento de las decenas+tre
+// ("ventitré") desaparece con norm() (NFD + strip de marcas), asi que la
+// forma sin tilde que se construye aqui ya coincide con lo que normalize()
+// deja de la transcripcion de whisper.
+const UNITS_WORDS_IT = ["", "uno", "due", "tre", "quattro", "cinque", "sei", "sette", "otto", "nove"];
+const TEENS_IT: Record<string, number> = {
+  zero: 0, uno: 1, due: 2, tre: 3, quattro: 4, cinque: 5, sei: 6, sette: 7, otto: 8, nove: 9,
+  dieci: 10, undici: 11, dodici: 12, tredici: 13, quattordici: 14, quindici: 15, sedici: 16,
+  diciassette: 17, diciotto: 18, diciannove: 19,
+};
+const TENS_WORDS_IT: Record<number, string> = {
+  20: "venti", 30: "trenta", 40: "quaranta", 50: "cinquanta",
+  60: "sessanta", 70: "settanta", 80: "ottanta", 90: "novanta",
+};
+function buildNumbersIt(): Record<string, number> {
+  const out: Record<string, number> = { ...TEENS_IT, cento: 100 };
+  for (const [tenStr, tenWord] of Object.entries(TENS_WORDS_IT)) {
+    const ten = Number(tenStr);
+    out[tenWord] = ten;
+    for (let u = 1; u <= 9; u++) {
+      const unit = UNITS_WORDS_IT[u];
+      // Elision: "venti"+"uno"/"otto" pierde la vocal final de la decena.
+      const word = (u === 1 || u === 8) ? tenWord.slice(0, -1) + unit : tenWord + unit;
+      out[word] = ten + u;
+    }
+  }
+  return out;
+}
+const NUMBERS_IT = buildNumbersIt();
 
 /** Descompone un token en morfemas numericos, o null si no es un numero. */
 function numberMorphemes(token: string, morphemes: string[]): string[] | null {
@@ -137,6 +173,15 @@ function numberValue(ms: string[], lang: NumberLang): number | null {
  * es el comportamiento historico de este candado.
  */
 export function canonNumbers(words: string[], lang: NumberLang = "fr"): string[] {
+  // Italiano: sustitucion directa palabra a palabra (ver NUMBERS_IT arriba),
+  // sin la logica de tiradas/morfemas de frances y aleman, que no aplica por
+  // la elision de vocal en los compuestos.
+  if (lang === "it") {
+    return words.map((w) => {
+      if (/^\d+$/.test(w)) return String(Number(w));
+      return w in NUMBERS_IT ? String(NUMBERS_IT[w]) : w;
+    });
+  }
   const { MORPHEMES } = tablesFor(lang);
   const hourWord = lang === "de" ? "uhr" : "heures";
   const standaloneArticles = lang === "de" ? ["ein"] : ["un", "une"];
