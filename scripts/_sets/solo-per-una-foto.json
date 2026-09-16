@@ -69,8 +69,7 @@
         "sentence": "L'aria del mattino è fresca.",
         "storySlug": "solo-per-una-foto",
         "targetWord": "fresca",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5bddeb37922a3e19.mp3"
+        "storySource": "user"
       }
     },
     "featured": true
@@ -93,8 +92,7 @@
         "sentence": "Davanti al palazzo c'è un taxi.",
         "storySlug": "solo-per-una-foto",
         "targetWord": "Davanti al",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a1a4ffaadb83903c.mp3"
+        "storySource": "user"
       }
     },
     "featured": true
@@ -117,8 +115,7 @@
         "sentence": "Ha lacrime agli occhi per la maglia.",
         "storySlug": "solo-per-una-foto",
         "targetWord": "lacrime agli occhi",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8b21f72d29c03e9c.mp3"
+        "storySource": "user"
       }
     },
     "featured": true
@@ -141,8 +138,7 @@
         "sentence": "Scende le scale di corsa.",
         "storySlug": "solo-per-una-foto",
         "targetWord": "di corsa",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/80bea88f5466d04a.mp3"
+        "storySource": "user"
       }
     },
     "featured": true
@@ -165,8 +161,7 @@
         "sentence": "Vede tutto e ride anche lui.",
         "storySlug": "solo-per-una-foto",
         "targetWord": "anche",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e5f409b5dd114382.mp3"
+        "storySource": "user"
       }
     },
     "featured": true
@@ -189,8 +184,7 @@
         "sentence": "Prima metti la sciarpa.",
         "storySlug": "solo-per-una-foto",
         "targetWord": "Prima",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d579a188c44caf6.mp3"
+        "storySource": "user"
       }
     },
     "featured": true
@@ -213,8 +207,7 @@
         "sentence": "Lui fa la foto e scherza.",
         "storySlug": "solo-per-una-foto",
         "targetWord": "fa la foto",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/efff3362efc417b1.mp3"
+        "storySource": "user"
       }
     },
     "featured": true
@@ -237,8 +230,7 @@
         "sentence": "La maglia è bagnata e sporca.",
         "storySlug": "solo-per-una-foto",
         "targetWord": "bagnata",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1dba5e1e6b84ebcc.mp3"
+        "storySource": "user"
       }
     },
     "featured": true
@@ -261,30 +253,29 @@
         "sentence": "La maglia è bagnata e sporca.",
         "storySlug": "solo-per-una-foto",
         "targetWord": "sporca",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1dba5e1e6b84ebcc.mp3"
+        "storySource": "user"
       }
     },
     "featured": true
   },
   {
     "type": "meaning_in_context",
-    "word": "la faccia",
-    "sentence": "Ma guarda la [[faccia]] di Alice.",
+    "word": "una scommessa è una scommessa",
+    "sentence": "[[Una scommessa è una scommessa]], deve pagare.",
     "payload": {
-      "answer": "face",
+      "answer": "a bet is a bet",
       "prompt": "Choose the meaning in context.",
       "options": [
-        "face",
-        "hand",
-        "shoulder",
-        "hair"
+        "a bet is a bet",
+        "it's a beautiful day",
+        "it's not important",
+        "it's too late now"
       ],
       "audioClip": {
         "language": "italian",
-        "sentence": "Ma guarda la faccia di Alice.",
+        "sentence": "Una scommessa è una scommessa, deve pagare.",
         "storySlug": "solo-per-una-foto",
-        "targetWord": "faccia",
+        "targetWord": "Una scommessa è una scommessa",
         "storySource": "user"
       }
     },
@@ -377,8 +368,7 @@
         "sentence": "L'auto è sporca e lui la pulisce con cura.",
         "storySlug": "solo-per-una-foto",
         "targetWord": "pulisce",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/53d04f132b9f147b.mp3"
+        "storySource": "user"
       },
       "translation": "The car is dirty and he _____ it carefully.",
       "optionTranslations": [
@@ -408,8 +398,7 @@
         "sentence": "Dalla finestra vede tutta la piazza.",
         "storySlug": "solo-per-una-foto",
         "targetWord": "vede",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/42ab8af01ec6b682.mp3"
+        "storySource": "user"
       },
       "translation": "From the window, he _____ the whole square.",
       "optionTranslations": [
@@ -439,8 +428,7 @@
         "sentence": "Il vetro è sporco e lui lo strofina forte.",
         "storySlug": "solo-per-una-foto",
         "targetWord": "strofina",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/95036e144f89eab1.mp3"
+        "storySource": "user"
       },
       "translation": "The glass is dirty and he _____ it hard.",
       "optionTranslations": [

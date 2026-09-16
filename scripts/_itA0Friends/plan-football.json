@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a0",
+  "variante": "italy",
+  "registro": "rivalidad ruidosa de derby: orgullo, gritos en la terraza y una apuesta que sale cara",
+  "espina": "El pacto de la servilleta: Alice calla lo que siente por Matteo; aqui apuesta y pierde la vieja camiseta que el le regalo en la universidad, y para Matteo es solo una camiseta.",
+  "recursos": "A0: repeticion (Poi segna ancora), contraste per lui / per lei invece, imagen concreta final (la camiseta mojada y sucia contra el corazon). Titulos: regionalismo (derby della Lanterna), objeto torcido (la maglia in palio), linea dicha (Solo per una foto).",
+  "historias": [
+    {
+      "slot": "0",
+      "quiere": "callar a Riccardo, que se rie del Genoa en su propia terraza",
+      "impide": "Riccardo propone apostar la camiseta del Genoa que Matteo le regalo",
+      "cuesta": "por orgullo pone en juego el regalo de Matteo, y Matteo ni lo oye",
+      "cambia": "la apuesta esta hecha y la partita empieza",
+      "emocion": "rabbia: se le calienta la cara porque se rie de su equipo, y cruza los brazos"
+    },
+    {
+      "slot": "1",
+      "quiere": "que gane el Genoa para no perder la camiseta",
+      "impide": "la Samp marca dos goles en los ultimos minutos",
+      "cuesta": "entrega la camiseta a Riccardo delante de Matteo",
+      "cambia": "Matteo dice que es solo una camiseta; Alice ve que para el no significa lo mismo",
+      "emocion": "desolacion: casi no respira porque se acaba el partido, y luego tiene frio sin la camiseta"
+    },
+    {
+      "slot": "2",
+      "quiere": "recuperar la camiseta, que Riccardo usa como trapo para el taxi",
+      "impide": "Riccardo dice que una apuesta es una apuesta",
+      "cuesta": "su orgullo: se pone la bufanda de la Samp para una foto que ira al grupo del edificio para siempre",
+      "cambia": "recupera la camiseta, mojada y sucia, y Matteo se rie desde la terraza",
+      "emocion": "pena: se le llenan los ojos de lagrimas porque es el regalo de Matteo, y baja corriendo en pijama"
+    }
+  ]
+}

@@ -69,8 +69,7 @@
         "sentence": "La carta è gialla e vecchia.",
         "storySlug": "ti-voglio-bene-ma",
         "targetWord": "gialla",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1415bab36e4a0a69.mp3"
+        "storySource": "user"
       }
     },
     "featured": true
@@ -93,8 +92,7 @@
         "sentence": "Lui alza gli occhi e guarda.",
         "storySlug": "ti-voglio-bene-ma",
         "targetWord": "alza gli occhi",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85ecb49fa5f43693.mp3"
+        "storySource": "user"
       }
     },
     "featured": true
@@ -117,8 +115,7 @@
         "sentence": "Lo so già, non dirlo.",
         "storySlug": "ti-voglio-bene-ma",
         "targetWord": "Lo so",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/32190183f1c833fe.mp3"
+        "storySource": "user"
       }
     },
     "featured": true
@@ -141,8 +138,7 @@
         "sentence": "Trova coraggio con un respiro profondo.",
         "storySlug": "ti-voglio-bene-ma",
         "targetWord": "respiro profondo",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/527c1e4d431ac374.mp3"
+        "storySource": "user"
       }
     },
     "featured": true
@@ -165,8 +161,7 @@
         "sentence": "Da tanti anni pensa a lui.",
         "storySlug": "ti-voglio-bene-ma",
         "targetWord": "Da tanti anni",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2f68809a062a6690.mp3"
+        "storySource": "user"
       }
     },
     "featured": true
@@ -189,8 +184,7 @@
         "sentence": "È sincera: dice la verità.",
         "storySlug": "ti-voglio-bene-ma",
         "targetWord": "sincera",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0a87231977fb88ff.mp3"
+        "storySource": "user"
       }
     },
     "featured": true
@@ -213,8 +207,7 @@
         "sentence": "Lontano, i gabbiani volano sul mare.",
         "storySlug": "ti-voglio-bene-ma",
         "targetWord": "Lontano",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d8a9e4ff6efdc4a9.mp3"
+        "storySource": "user"
       }
     },
     "featured": true
@@ -237,32 +230,30 @@
         "sentence": "Gli dice: ti voglio bene, ma non ti amo.",
         "storySlug": "ti-voglio-bene-ma",
         "targetWord": "ti voglio bene",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d66cf0580f028bc.mp3"
+        "storySource": "user"
       }
     },
     "featured": true
   },
   {
     "type": "meaning_in_context",
-    "word": "il silenzio",
-    "sentence": "C'è un [[silenzio]] strano.",
+    "word": "singhiozzare",
+    "sentence": "Lei piange e [[singhiozza]] forte.",
     "payload": {
-      "answer": "silence",
+      "answer": "to sob",
       "prompt": "Choose the meaning in context.",
       "options": [
-        "silence",
-        "noise",
-        "music",
-        "laughter"
+        "to sob",
+        "to laugh",
+        "to sing",
+        "to sneeze"
       ],
       "audioClip": {
         "language": "italian",
-        "sentence": "C'è un silenzio strano.",
+        "sentence": "Lei piange e singhiozza forte.",
         "storySlug": "ti-voglio-bene-ma",
-        "targetWord": "silenzio",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d3c18d20031d05cf.mp3"
+        "targetWord": "singhiozza",
+        "storySource": "user"
       }
     },
     "featured": true
@@ -377,8 +368,7 @@
         "sentence": "Sente una grande tristezza e piange.",
         "storySlug": "ti-voglio-bene-ma",
         "targetWord": "piange",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3bfe671d8172973f.mp3"
+        "storySource": "user"
       },
       "translation": "She feels very sad and _____.",
       "optionTranslations": [
@@ -408,8 +398,7 @@
         "sentence": "Il taxi arriva e lui va via subito.",
         "storySlug": "ti-voglio-bene-ma",
         "targetWord": "va via",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/81e03c8b791598a4.mp3"
+        "storySource": "user"
       },
       "translation": "The taxi arrives and he _____ right away.",
       "optionTranslations": [
@@ -439,8 +428,7 @@
         "sentence": "C'è vento forte che muove le foglie.",
         "storySlug": "ti-voglio-bene-ma",
         "targetWord": "muove",
-        "storySource": "user",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ea03e5115bd4f7c6.mp3"
+        "storySource": "user"
       },
       "translation": "There's a strong wind that _____ the leaves.",
       "optionTranslations": [

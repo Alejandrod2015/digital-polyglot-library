@@ -1,0 +1,139 @@
+[
+  {
+    "topic": "secrets-and-confessions",
+    "slotIndex": 1,
+    "title": "Ti voglio bene, ma",
+    "slug": "ti-voglio-bene-ma",
+    "synopsis": "Matteo reads the old pact out loud. This time Alice does not laugh, and she tells him the truth.",
+    "text": "Matteo apre il tovagliolo sul tavolo, davanti ad Alice. Il vento lo muove. La carta è gialla e secca. Legge ad alta voce: “Se a trentacinque anni siamo soli, ci sposiamo.” Poi alza gli occhi.\n\n“Alice, io ho una promessa. Non parlo più del patto,” dice lui. “Lo so. Adesso parlo io,” risponde Alice. Trova il coraggio con un respiro profondo.\n\n“Per me non è uno scherzo. Io ti amo, Matteo. Penso a te da tanti anni. Sono sincera,” dice Alice.\n\nC'è un silenzio strano. Lontano, i gabbiani volano sul mare. Matteo è pallido e guarda il tovagliolo a lungo.\n\n“Alice, io ti voglio bene. Ma io non ti amo così. Mi dispiace,” dice Matteo piano.\n\nAlice piange, perché adesso sa la risposta. Lei singhiozza e asciuga le lacrime con un fazzoletto. Non è una bugia: è la verità. Matteo non va via. Le accarezza i capelli e resta vicino a lei, fino a sera.",
+    "vocab": [
+      {
+        "type": "adjective",
+        "word": "giallo",
+        "surface": "gialla",
+        "definition": "Yellow; here old paper that is not white any more."
+      },
+      {
+        "type": "adjective",
+        "word": "secco",
+        "surface": "secca",
+        "definition": "Dry; with no water, a little hard."
+      },
+      {
+        "type": "expression",
+        "word": "alzare gli occhi",
+        "surface": "alza gli occhi",
+        "definition": "To look up; to raise your eyes."
+      },
+      {
+        "type": "expression",
+        "word": "lo so",
+        "surface": "Lo so",
+        "definition": "I know; you say it when you already know."
+      },
+      {
+        "type": "noun",
+        "word": "il coraggio",
+        "surface": "coraggio",
+        "definition": "Courage; you are brave and not afraid."
+      },
+      {
+        "type": "expression",
+        "word": "un respiro profondo",
+        "anchor": true,
+        "surface": "respiro profondo",
+        "definition": "A deep breath; you take in a lot of air."
+      },
+      {
+        "type": "expression",
+        "word": "da tanti anni",
+        "surface": "Da tanti anni",
+        "definition": "For many years; a long time now."
+      },
+      {
+        "type": "adjective",
+        "word": "sincero",
+        "surface": "sincera",
+        "definition": "Sincere; honest, saying what you really feel."
+      },
+      {
+        "type": "adverb",
+        "word": "lontano",
+        "surface": "Lontano",
+        "definition": "Far away; not near."
+      },
+      {
+        "type": "noun",
+        "word": "i gabbiani",
+        "anchor": true,
+        "surface": "gabbiani",
+        "definition": "Seagulls; white sea birds."
+      },
+      {
+        "type": "expression",
+        "word": "ti voglio bene",
+        "surface": "ti voglio bene",
+        "definition": "I care for you; I love you as a friend."
+      },
+      {
+        "type": "verb",
+        "word": "piangere",
+        "surface": "piange",
+        "definition": "To cry; tears come from your eyes."
+      },
+      {
+        "type": "verb",
+        "word": "singhiozzare",
+        "anchor": true,
+        "surface": "singhiozza",
+        "definition": "To sob; to cry with short loud breaths."
+      },
+      {
+        "type": "expression",
+        "word": "andare via",
+        "surface": "va via",
+        "definition": "To go away; to leave."
+      },
+      {
+        "type": "verb",
+        "word": "accarezzare",
+        "surface": "accarezza",
+        "definition": "To stroke gently with your hand."
+      },
+      {
+        "type": "expression",
+        "word": "fino a sera",
+        "anchor": true,
+        "surface": "fino a sera",
+        "definition": "Until the evening; until it gets dark."
+      },
+      {
+        "type": "noun",
+        "word": "il tovagliolo",
+        "anchor": true,
+        "surface": "tovagliolo",
+        "definition": "A napkin; cloth or paper to clean your mouth."
+      },
+      {
+        "type": "verb",
+        "word": "muovere",
+        "surface": "muove",
+        "definition": "To move; to make something change place."
+      },
+      {
+        "type": "adjective",
+        "word": "pallido",
+        "surface": "pallido",
+        "definition": "Pale; with a white face, with no colour."
+      },
+      {
+        "type": "noun",
+        "word": "il fazzoletto",
+        "anchor": true,
+        "surface": "fazzoletto",
+        "definition": "A tissue or handkerchief to dry your eyes."
+      }
+    ],
+    "arcType": null
+  }
+]

@@ -1,0 +1,139 @@
+[
+  {
+    "topic": "football-and-rivalries",
+    "slotIndex": 2,
+    "title": "Solo per una foto",
+    "slug": "solo-per-una-foto",
+    "synopsis": "The next morning Alice sees her lost shirt again, in a very wrong place, and she runs down to the street.",
+    "text": "La mattina dopo Alice apre la finestra. L'aria è fresca. Davanti al palazzo c'è il taxi bianco di Riccardo. Lui pulisce e strofina il vetro con una maglia rossa e blu.\n\nÈ la sua maglia. Alice ha le lacrime agli occhi, perché è il regalo di Matteo. Lei scende le scale di corsa, in pigiama.\n\n“Riccardo, no! La maglia è importante per me,” dice Alice. Lei quasi piange. “Una scommessa è una scommessa,” risponde lui. Ma guarda la faccia di Alice.\n\n“Okay. La maglia torna a te. Ma prima metti la sciarpa della Samp. Solo per una foto,” dice Riccardo.\n\nAlice mette la sciarpa blu. Riccardo fa la foto e scherza. Alice sente vergogna. Dalla terrazza, Matteo vede tutto e ride anche lui.\n\n“La foto va nel gruppo del palazzo. Per sempre. È divertente,” dice Riccardo. Alice non risponde. Tiene la vecchia maglia, bagnata e sporca, stretta al cuore.",
+    "vocab": [
+      {
+        "type": "adjective",
+        "word": "fresco",
+        "surface": "fresca",
+        "definition": "Cool; a little cold, in a nice way."
+      },
+      {
+        "type": "expression",
+        "word": "davanti a",
+        "surface": "Davanti al",
+        "definition": "In front of; on the front side of a place."
+      },
+      {
+        "type": "adjective",
+        "word": "bianco",
+        "surface": "bianco",
+        "definition": "White; the colour of milk."
+      },
+      {
+        "type": "verb",
+        "word": "pulire",
+        "surface": "pulisce",
+        "definition": "To clean; to take the dirt away."
+      },
+      {
+        "type": "expression",
+        "word": "le lacrime agli occhi",
+        "surface": "lacrime agli occhi",
+        "definition": "Tears in your eyes; almost crying."
+      },
+      {
+        "type": "expression",
+        "word": "di corsa",
+        "surface": "di corsa",
+        "definition": "Running; very fast, in a hurry."
+      },
+      {
+        "type": "adverb",
+        "word": "anche",
+        "surface": "anche",
+        "definition": "Also; too, in the same way."
+      },
+      {
+        "type": "adverb",
+        "word": "prima",
+        "surface": "prima",
+        "definition": "First; before doing something else."
+      },
+      {
+        "type": "verb",
+        "word": "vedere",
+        "surface": "vede",
+        "definition": "To see; to notice with your eyes."
+      },
+      {
+        "type": "expression",
+        "word": "fare una foto",
+        "anchor": true,
+        "surface": "fa la foto",
+        "definition": "To take a photo."
+      },
+      {
+        "type": "noun",
+        "word": "il gruppo",
+        "anchor": true,
+        "surface": "gruppo",
+        "definition": "A group; here a group chat of neighbours."
+      },
+      {
+        "type": "adjective",
+        "word": "bagnato",
+        "surface": "bagnata",
+        "definition": "Wet; with water on it."
+      },
+      {
+        "type": "adjective",
+        "word": "sporco",
+        "surface": "sporca",
+        "definition": "Dirty; not clean, with marks on it."
+      },
+      {
+        "type": "adjective",
+        "word": "blu",
+        "surface": "blu",
+        "definition": "Blue; the colour of the sky."
+      },
+      {
+        "type": "expression",
+        "word": "una scommessa è una scommessa",
+        "anchor": true,
+        "surface": "Una scommessa è una scommessa",
+        "definition": "A bet is a bet; you must pay."
+      },
+      {
+        "type": "expression",
+        "word": "per sempre",
+        "surface": "Per sempre",
+        "definition": "Forever; for all time."
+      },
+      {
+        "type": "verb",
+        "word": "strofinare",
+        "anchor": true,
+        "surface": "strofina",
+        "definition": "To rub hard to clean something."
+      },
+      {
+        "type": "expression",
+        "word": "stretta al cuore",
+        "anchor": true,
+        "surface": "stretta al cuore",
+        "definition": "Held tight against the heart."
+      },
+      {
+        "type": "expression",
+        "word": "in pigiama",
+        "surface": "in pigiama",
+        "definition": "In pyjamas; still in night clothes."
+      },
+      {
+        "type": "expression",
+        "word": "la sciarpa della Samp",
+        "anchor": true,
+        "surface": "sciarpa della Samp",
+        "definition": "A scarf of Sampdoria, the other Genoa team."
+      }
+    ],
+    "arcType": null
+  }
+]
