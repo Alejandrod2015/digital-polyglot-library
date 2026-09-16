@@ -13,7 +13,7 @@ import { F0GateUnavailable, preflightF0Gate, runF0Gate } from "./_f0gateClient";
 const prisma = new PrismaClient();
 const MODEL = "eleven_multilingual_v2";
 const SETTINGS = { stability: 0.4, similarity_boost: 0.8, style: 0.3, use_speaker_boost: true };
-const WORD_CLIP_VERSION = "w4"; // w4: +90ms lead-in silence (w3 arrancaba en 0ms → primer autoplay en sesión de audio fría cortaba el onset; los clips que funcionan tienen ~60ms de lead-in). marco declarativo + gate F0.
+const WORD_CLIP_VERSION = "w5"; // w5 (2026-09-16): un SINTAGMA se enmarca como frase (ver PHRASE_CARRIER). Cambia la receta del render, asi que cambia la clave de R2 y ninguna re-tirada se queda servida por la copia inmutable anterior. w4: +90ms lead-in silence (w3 arrancaba en 0ms → primer autoplay en sesión de audio fría cortaba el onset; los clips que funcionan tienen ~60ms de lead-in). marco declarativo + gate F0.
 const MAX_TRIES = 6;
 
 function ff(args: string[]): Promise<void> { return new Promise((res,rej)=>{const p=spawn("ffmpeg",args);let e="";p.stderr.on("data",c=>e+=c);p.on("error",rej);p.on("close",c=>c===0?res():rej(new Error(e.slice(0,150))));}); }
@@ -41,22 +41,44 @@ const WORD_CARRIER: Record<string, string> = {
   pt: "A palavra é:",
   en: "The word is:",
 };
+// Carrier de SINTAGMA. "Le mot est:" anuncia UNA palabra; detras de una
+// oracion entera ("c'est ce qu'ils disent tous") el modelo la lee como si
+// siguiera hablando y la deja subiendo: los seis sintagmas del FR B1 agotaron
+// sus seis tomas cada uno con "sigue subiendo tras reintentos". Con el marco de
+// FRASE que ya usa _genPracticeClips.ts, cinco tomas de cuatro sintagmas
+// distintos bajaron todas (end entre -5.4 y +1.3 st, 2026-09-16).
+const PHRASE_CARRIER: Record<string, { prev: string; next: string }> = {
+  es: { prev: "Ahora escucha esta frase.", next: "Muy bien. Ahora sigamos con la siguiente." },
+  de: { prev: "Hör dir diesen Satz an.", next: "Gut. Weiter zum nächsten Satz." },
+  it: { prev: "Ora ascolta questa frase.", next: "Bene. Passiamo alla prossima." },
+  fr: { prev: "Maintenant, écoute cette phrase.", next: "Très bien. Passons à la suivante." },
+  pt: { prev: "Agora escute esta frase.", next: "Muito bem. Vamos para a próxima." },
+  en: { prev: "Now listen to this sentence.", next: "Good. Let us move on to the next one." },
+};
+/** Un objetivo con espacio es un sintagma, no una palabra. */
+function esSintagma(target: string): boolean { return /\s/.test(target.trim()); }
 const JOURNEY_LANG_TO_KEY: Record<string, string> = {
   spanish: "es", german: "de", italian: "it", french: "fr", portuguese: "pt", english: "en",
 };
-function resolveCarrier(journeyLanguage: string | null | undefined): string {
+function resolveLangKey(journeyLanguage: string | null | undefined): string {
   const key = JOURNEY_LANG_TO_KEY[(journeyLanguage ?? "").trim().toLowerCase()];
-  const carrier = key ? WORD_CARRIER[key] : undefined;
-  if (!carrier) throw new Error(`[lang-guard] journey.language "${journeyLanguage}" no mapea a carrier de palabra (${Object.keys(JOURNEY_LANG_TO_KEY).join(", ")})`);
-  return carrier;
+  if (!key || !WORD_CARRIER[key] || !PHRASE_CARRIER[key])
+    throw new Error(`[lang-guard] journey.language "${journeyLanguage}" no mapea a carrier (${Object.keys(JOURNEY_LANG_TO_KEY).join(", ")})`);
+  return key;
 }
-async function tts(text: string, voice: string, apiKey: string, carrier: string): Promise<Buffer> {
+/** Marco segun el objetivo: anuncio de palabra, o marco de frase si es sintagma. */
+function marcoDe(langKey: string, target: string): { prev: string; next: string } {
+  return esSintagma(target)
+    ? PHRASE_CARRIER[langKey]
+    : { prev: WORD_CARRIER[langKey], next: " " };
+}
+async function tts(text: string, voice: string, apiKey: string, marco: { prev: string; next: string }): Promise<Buffer> {
   assertVoiceApproved(voice, "word-clip");
   // Marco DECLARATIVO: previous_text (carrier del idioma) como enunciado en
   // curso + punto final + next_text=" " (continuación) → empujan la entonación
   // a BAJAR (no pregunta) y fijan el idioma correcto.
   const r=await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voice}`,{method:"POST",headers:{"xi-api-key":apiKey,"Content-Type":"application/json"},
-    body:JSON.stringify({ text: `${text.replace(/[.?!]+$/,"")}.`, model_id:MODEL, voice_settings:SETTINGS, previous_text:carrier, next_text:" " })});
+    body:JSON.stringify({ text: `${text.replace(/[.?!]+$/,"")}.`, model_id:MODEL, voice_settings:SETTINGS, previous_text:marco.prev, next_text:marco.next })});
   if(!r.ok) throw new Error(`TTS ${r.status} ${(await r.text()).slice(0,80)}`);
   return Buffer.from(await r.arrayBuffer());
 }
@@ -74,11 +96,12 @@ async function endsRising(mp3Path: string): Promise<{verified:boolean;rises:bool
   if(v.end===null) return {verified:false,rises:false,detail:`f0 sin medir (${v.reason})`};
   return {verified:true,rises:v.ok,detail:`slope ${v.slope} end ${v.end}`};
 }
-async function renderWord(word: string, voice: string, apiKey: string, outPath: string, carrier: string): Promise<{ok:boolean;tries:number;detail:string}> {
+async function renderWord(word: string, voice: string, apiKey: string, outPath: string, langKey: string): Promise<{ok:boolean;tries:number;detail:string}> {
+  const marco = marcoDe(langKey, word);
   let last="sigue subiendo tras reintentos";
   for(let t=1;t<=MAX_TRIES;t++){
     try{
-      await normalize(await tts(word,voice,apiKey,carrier), outPath);
+      await normalize(await tts(word,voice,apiKey,marco), outPath);
       const f=await endsRising(outPath);
       if(!f.verified){ last=f.detail; continue; }
       if(!f.rises) return {ok:true,tries:t,detail:f.detail};
@@ -103,10 +126,10 @@ async function renderWord(word: string, voice: string, apiKey: string, outPath: 
   const story = await prisma.journeyStory.findFirst({ where:{slug}, select:{ voiceId:true, practiceVoiceId:true, journey:{select:{language:true}}, practiceSet:{select:{exercises:{select:{id:true, word:true, type:true, payload:true}}}} } });
   if(!story?.practiceSet) throw new Error(`no practice set for ${slug}`);
   const voice = practiceVoiceId(story);
-  const carrier = resolveCarrier(story.journey?.language);
+  const langKey = resolveLangKey(story.journey?.language);
   let targets = story.practiceSet.exercises.filter(e=>e.type==="meaning_in_context" && e.word);
   if(only) targets = targets.filter(e=>only.has((e.word||"").trim().toLowerCase()));
-  console.log(`${slug}: voz=${voice} | lang=${story.journey?.language} carrier="${carrier}" | ${targets.length} palabras${only?" (--only)":""}`);
+  console.log(`${slug}: voz=${voice} | lang=${story.journey?.language} carrier palabra="${WORD_CARRIER[langKey]}" | ${targets.length} palabras${only?" (--only)":""}`);
   const outDir=mkdtempSync(join(tmpdir(),"wcout-"));
   let ok=0;
   for(const e of targets){
@@ -114,7 +137,7 @@ async function renderWord(word: string, voice: string, apiKey: string, outPath: 
     const ac = ((e.payload as any)?.audioClip) ?? {};
     if(ac.wordClipUrl && !force){ ok++; continue; }
     const outPath=join(outDir,"w.mp3");
-    const res=await renderWord(word,voice,apiKey,outPath,carrier);
+    const res=await renderWord(word,voice,apiKey,outPath,langKey);
     if(!res.ok){ console.log(`  ✗ "${word}" (${res.detail})`); continue; }
     const k=key(voice,word);
     await uploadPublicObject({ key:k, body:readFileSync(outPath), contentType:"audio/mpeg" });
