@@ -19506,5 +19506,1079 @@
    "g": "first",
    "t": "adjective"
   }
+ },
+ "italian-friends-italy-a1": {
+  "arrivato": {
+   "g": "arrived (arrivare)",
+   "t": "verb"
+  },
+  "calendario": {
+   "g": "calendar",
+   "t": "noun"
+  },
+  "poste": {
+   "g": "the Post Office",
+   "t": "noun"
+  },
+  "legato": {
+   "g": "tied up (legare)",
+   "t": "verb"
+  },
+  "esce": {
+   "g": "goes out (uscire)",
+   "t": "verb"
+  },
+  "gilet": {
+   "g": "hi-vis vest",
+   "t": "noun"
+  },
+  "volo": {
+   "g": "I fly (volare); the flight",
+   "t": "verb"
+  },
+  "sabati": {
+   "g": "Saturdays",
+   "t": "noun"
+  },
+  "tuoi": {
+   "g": "your (plural)",
+   "t": "adjective"
+  },
+  "miei": {
+   "g": "my (plural)",
+   "t": "adjective"
+  },
+  "detto": {
+   "g": "said (dire)",
+   "t": "verb"
+  },
+  "unico": {
+   "g": "only, sole",
+   "t": "adjective"
+  },
+  "calde": {
+   "g": "hot, warm (feminine plural)",
+   "t": "adjective"
+  },
+  "scelto": {
+   "g": "chosen (scegliere)",
+   "t": "verb"
+  },
+  "teniamo": {
+   "g": "we keep (tenere)",
+   "t": "verb"
+  },
+  "nervoso": {
+   "g": "nervous",
+   "t": "adjective"
+  },
+  "velocemente": {
+   "g": "quickly",
+   "t": "adverb"
+  },
+  "portone": {
+   "g": "main entrance, front door",
+   "t": "noun"
+  },
+  "vostro": {
+   "g": "your (formal, plural)",
+   "t": "adjective"
+  },
+  "abbaia": {
+   "g": "barks (abbaiare)",
+   "t": "verb"
+  },
+  "divisa": {
+   "g": "uniform",
+   "t": "noun"
+  },
+  "partito": {
+   "g": "left, departed (partire)",
+   "t": "verb"
+  },
+  "caricatore": {
+   "g": "charger",
+   "t": "noun"
+  },
+  "dormito": {
+   "g": "slept (dormire)",
+   "t": "verb"
+  },
+  "carico": {
+   "g": "charged (of a phone)",
+   "t": "adjective"
+  },
+  "portato": {
+   "g": "brought (portare)",
+   "t": "verb"
+  },
+  "pennarelli": {
+   "g": "markers, felt-tip pens",
+   "t": "noun"
+  },
+  "frigo": {
+   "g": "fridge",
+   "t": "noun"
+  },
+  "voli": {
+   "g": "flights",
+   "t": "noun"
+  },
+  "quei": {
+   "g": "those",
+   "t": "adjective"
+  },
+  "capo": {
+   "g": "boss",
+   "t": "noun"
+  },
+  "chiedo": {
+   "g": "I ask (chiedere)",
+   "t": "verb"
+  },
+  "cambio": {
+   "g": "shift change (noun); I change (cambiare)",
+   "t": "noun"
+  },
+  "calamite": {
+   "g": "magnets",
+   "t": "noun"
+  },
+  "ringhiera": {
+   "g": "railing, balcony walkway",
+   "t": "noun"
+  },
+  "ricercatrice": {
+   "g": "researcher (female)",
+   "t": "noun"
+  },
+  "politecnico": {
+   "g": "the Polytechnic (university)",
+   "t": "noun"
+  },
+  "ululare": {
+   "g": "to howl",
+   "t": "verb"
+  },
+  "scusate": {
+   "g": "excuse me (plural, formal)",
+   "t": "expression"
+  },
+  "male": {
+   "g": "badly",
+   "t": "adverb"
+  },
+  "brutta": {
+   "g": "bad, awful (feminine)",
+   "t": "adjective"
+  },
+  "sguardo": {
+   "g": "gaze, look",
+   "t": "noun"
+  },
+  "amministratore": {
+   "g": "building manager",
+   "t": "noun"
+  },
+  "tornata": {
+   "g": "returned (feminine, tornare)",
+   "t": "verb"
+  },
+  "condominio": {
+   "g": "apartment building, condo association",
+   "t": "noun"
+  },
+  "bigliettino": {
+   "g": "little note",
+   "t": "noun"
+  },
+  "rispetto": {
+   "g": "respect",
+   "t": "noun"
+  },
+  "alzato": {
+   "g": "gotten up, stood up (alzarsi)",
+   "t": "verb"
+  },
+  "discutono": {
+   "g": "they argue, discuss (discutere)",
+   "t": "verb"
+  },
+  "votano": {
+   "g": "they vote (votare)",
+   "t": "verb"
+  },
+  "ultima": {
+   "g": "last (feminine)",
+   "t": "adjective"
+  },
+  "facile": {
+   "g": "easy",
+   "t": "adjective"
+  },
+  "lavoriamo": {
+   "g": "we work (lavorare)",
+   "t": "verb"
+  },
+  "soluzione": {
+   "g": "solution",
+   "t": "noun"
+  },
+  "giovedì": {
+   "g": "Thursday",
+   "t": "noun"
+  },
+  "calcetto": {
+   "g": "five-a-side football",
+   "t": "noun"
+  },
+  "regole": {
+   "g": "rules",
+   "t": "noun"
+  },
+  "pancia": {
+   "g": "belly, stomach",
+   "t": "noun"
+  },
+  "corrono": {
+   "g": "they run (correre)",
+   "t": "verb"
+  },
+  "padova": {
+   "g": "Padova (the street, named after the city)",
+   "t": "noun"
+  },
+  "veterinaria": {
+   "g": "vet (female)",
+   "t": "noun"
+  },
+  "studio": {
+   "g": "clinic, office",
+   "t": "noun"
+  },
+  "mangiato": {
+   "g": "eaten (mangiare)",
+   "t": "verb"
+  },
+  "seria": {
+   "g": "serious (feminine)",
+   "t": "adjective"
+  },
+  "tirato": {
+   "g": "pulled (tirare)",
+   "t": "verb"
+  },
+  "salva": {
+   "g": "saves (salvare)",
+   "t": "verb"
+  },
+  "grave": {
+   "g": "serious, severe",
+   "t": "adjective"
+  },
+  "trecentottanta": {
+   "g": "three hundred eighty",
+   "t": "adjective"
+  },
+  "posso": {
+   "g": "I can (potere)",
+   "t": "verb"
+  },
+  "cara": {
+   "g": "expensive, dear (feminine)",
+   "t": "adjective"
+  },
+  "speso": {
+   "g": "spent (spendere)",
+   "t": "verb"
+  },
+  "liceo": {
+   "g": "high school",
+   "t": "noun"
+  },
+  "preziosa": {
+   "g": "precious (feminine)",
+   "t": "adjective"
+  },
+  "annuncio": {
+   "g": "ad, listing",
+   "t": "noun"
+  },
+  "centoventi": {
+   "g": "one hundred twenty",
+   "t": "adjective"
+  },
+  "pomeriggio": {
+   "g": "afternoon",
+   "t": "noun"
+  },
+  "trattano": {
+   "g": "they negotiate, haggle (trattare)",
+   "t": "verb"
+  },
+  "fanno": {
+   "g": "they do, make (fare)",
+   "t": "verb"
+  },
+  "ecco": {
+   "g": "here is, there",
+   "t": "adverb"
+  },
+  "differenza": {
+   "g": "difference",
+   "t": "noun"
+  },
+  "pari": {
+   "g": "even, equal",
+   "t": "adjective"
+  },
+  "venduto": {
+   "g": "sold (vendere)",
+   "t": "verb"
+  },
+  "tua": {
+   "g": "your (feminine singular)",
+   "t": "adjective"
+  },
+  "cambia": {
+   "g": "changes (cambiare)",
+   "t": "verb"
+  },
+  "spese": {
+   "g": "expenses",
+   "t": "noun"
+  },
+  "scriviamo": {
+   "g": "we write (scrivere)",
+   "t": "verb"
+  },
+  "offro": {
+   "g": "I offer (offrire)",
+   "t": "verb"
+  },
+  "cassetto": {
+   "g": "drawer",
+   "t": "noun"
+  },
+  "madre": {
+   "g": "mother",
+   "t": "noun"
+  },
+  "gamba": {
+   "g": "leg",
+   "t": "noun"
+  },
+  "salito": {
+   "g": "gone up, climbed (salire)",
+   "t": "verb"
+  },
+  "bottega": {
+   "g": "workshop, small shop",
+   "t": "noun"
+  },
+  "falegname": {
+   "g": "carpenter",
+   "t": "noun"
+  },
+  "esperto": {
+   "g": "expert",
+   "t": "adjective"
+  },
+  "deciso": {
+   "g": "decided (decidere)",
+   "t": "verb"
+  },
+  "attenzione": {
+   "g": "attention, carefully",
+   "t": "noun"
+  },
+  "capace": {
+   "g": "capable",
+   "t": "adjective"
+  },
+  "sbagli": {
+   "g": "you make mistakes (sbagliare)",
+   "t": "verb"
+  },
+  "servono": {
+   "g": "are needed (servire)",
+   "t": "verb"
+  },
+  "strumenti": {
+   "g": "tools",
+   "t": "noun"
+  },
+  "giusti": {
+   "g": "right, correct (plural)",
+   "t": "adjective"
+  },
+  "metro": {
+   "g": "tape measure",
+   "t": "noun"
+  },
+  "fortuna": {
+   "g": "luck",
+   "t": "noun"
+  },
+  "tace": {
+   "g": "stays silent (tacere)",
+   "t": "verb"
+  },
+  "trapano": {
+   "g": "drill",
+   "t": "noun"
+  },
+  "viti": {
+   "g": "screws",
+   "t": "noun"
+  },
+  "video": {
+   "g": "video",
+   "t": "noun"
+  },
+  "punto": {
+   "g": "point, step (punto per punto: step by step)",
+   "t": "noun"
+  },
+  "intanto": {
+   "g": "meanwhile",
+   "t": "adverb"
+  },
+  "scappa": {
+   "g": "escapes, runs off (scappare)",
+   "t": "verb"
+  },
+  "parti": {
+   "g": "parts",
+   "t": "noun"
+  },
+  "uguali": {
+   "g": "equal",
+   "t": "adjective"
+  },
+  "vite": {
+   "g": "screw",
+   "t": "noun"
+  },
+  "morbido": {
+   "g": "soft",
+   "t": "adjective"
+  },
+  "buco": {
+   "g": "hole",
+   "t": "noun"
+  },
+  "stai": {
+   "g": "you are, you stay (stare)",
+   "t": "verb"
+  },
+  "attento": {
+   "g": "careful",
+   "t": "adjective"
+  },
+  "provato": {
+   "g": "tried (provare)",
+   "t": "verb"
+  },
+  "riesce": {
+   "g": "manages, succeeds (riuscire)",
+   "t": "verb"
+  },
+  "polvere": {
+   "g": "dust",
+   "t": "noun"
+  },
+  "funziona": {
+   "g": "works, functions (funzionare)",
+   "t": "verb"
+  },
+  "impossibile": {
+   "g": "impossible",
+   "t": "adjective"
+  },
+  "inutile": {
+   "g": "useless",
+   "t": "adjective"
+  },
+  "bravo": {
+   "g": "good, skilled",
+   "t": "adjective"
+  },
+  "scendono": {
+   "g": "they go down (scendere)",
+   "t": "verb"
+  },
+  "chiusi": {
+   "g": "closed (plural)",
+   "t": "adjective"
+  },
+  "gelateria": {
+   "g": "ice cream shop",
+   "t": "noun"
+  },
+  "gelataio": {
+   "g": "ice cream maker, seller",
+   "t": "noun"
+  },
+  "nolo": {
+   "g": "NoLo (Milan neighborhood)",
+   "t": "noun"
+  },
+  "nuvola": {
+   "g": "cloud",
+   "t": "noun"
+  },
+  "sud": {
+   "g": "south",
+   "t": "noun"
+  },
+  "cugino": {
+   "g": "cousin",
+   "t": "noun"
+  },
+  "puglia": {
+   "g": "Puglia (region in southern Italy)",
+   "t": "noun"
+  },
+  "partenza": {
+   "g": "departure",
+   "t": "noun"
+  },
+  "lenzuolo": {
+   "g": "bedsheet",
+   "t": "noun"
+  },
+  "tiepido": {
+   "g": "lukewarm",
+   "t": "adjective"
+  },
+  "piastrelle": {
+   "g": "tiles",
+   "t": "noun"
+  },
+  "bagno": {
+   "g": "bathroom",
+   "t": "noun"
+  },
+  "neve": {
+   "g": "snow",
+   "t": "noun"
+  },
+  "chiamato": {
+   "g": "called (chiamare)",
+   "t": "verb"
+  },
+  "vedi": {
+   "g": "you see (vedere)",
+   "t": "verb"
+  },
+  "nuoto": {
+   "g": "I swim (nuotare)",
+   "t": "verb"
+  },
+  "afa": {
+   "g": "mugginess, sultry heat",
+   "t": "noun"
+  },
+  "cancellato": {
+   "g": "cancelled (cancellare)",
+   "t": "verb"
+  },
+  "vengo": {
+   "g": "I come (venire)",
+   "t": "verb"
+  },
+  "prossimi": {
+   "g": "next (plural)",
+   "t": "adjective"
+  },
+  "calcio": {
+   "g": "football, soccer",
+   "t": "noun"
+  },
+  "sparito": {
+   "g": "disappeared (sparire)",
+   "t": "verb"
+  },
+  "preoccupato": {
+   "g": "worried",
+   "t": "adjective"
+  },
+  "tappeto": {
+   "g": "rug, carpet",
+   "t": "noun"
+  },
+  "puoi": {
+   "g": "you can (potere)",
+   "t": "verb"
+  },
+  "tenere": {
+   "g": "to keep",
+   "t": "verb"
+  },
+  "capito": {
+   "g": "understood (capire)",
+   "t": "verb"
+  },
+  "rifiutare": {
+   "g": "to refuse",
+   "t": "verb"
+  },
+  "matita": {
+   "g": "pencil",
+   "t": "noun"
+  },
+  "elenco": {
+   "g": "list",
+   "t": "noun"
+  },
+  "calcola": {
+   "g": "calculates (calcolare)",
+   "t": "verb"
+  },
+  "crocchette": {
+   "g": "kibble, dog food pellets",
+   "t": "noun"
+  },
+  "ventidue": {
+   "g": "twenty-two",
+   "t": "adjective"
+  },
+  "dividiamo": {
+   "g": "we divide (dividere)",
+   "t": "verb"
+  },
+  "segnato": {
+   "g": "written down, noted (segnare)",
+   "t": "verb"
+  },
+  "bevuto": {
+   "g": "drunk (bere)",
+   "t": "verb"
+  },
+  "importo": {
+   "g": "amount (of money)",
+   "t": "noun"
+  },
+  "banca": {
+   "g": "bank",
+   "t": "noun"
+  },
+  "cancellare": {
+   "g": "to cross out, delete",
+   "t": "verb"
+  },
+  "gomma": {
+   "g": "eraser",
+   "t": "noun"
+  },
+  "risposto": {
+   "g": "answered (rispondere)",
+   "t": "verb"
+  },
+  "scatoloni": {
+   "g": "boxes (moving boxes)",
+   "t": "noun"
+  },
+  "insegnante": {
+   "g": "teacher",
+   "t": "noun"
+  },
+  "yoga": {
+   "g": "yoga",
+   "t": "noun"
+  },
+  "timida": {
+   "g": "shy (feminine)",
+   "t": "adjective"
+  },
+  "maglietta": {
+   "g": "t-shirt",
+   "t": "noun"
+  },
+  "padella": {
+   "g": "frying pan",
+   "t": "noun"
+  },
+  "avuto": {
+   "g": "had (avere)",
+   "t": "verb"
+  },
+  "starnutisce": {
+   "g": "sneezes (starnutire)",
+   "t": "verb"
+  },
+  "condividiamo": {
+   "g": "we share (condividere)",
+   "t": "verb"
+  },
+  "dentifricio": {
+   "g": "toothpaste",
+   "t": "noun"
+  },
+  "pepe": {
+   "g": "pepper",
+   "t": "noun"
+  },
+  "salute": {
+   "g": "bless you",
+   "t": "expression"
+  },
+  "preso": {
+   "g": "taken (prendere)",
+   "t": "verb"
+  },
+  "medicina": {
+   "g": "medicine",
+   "t": "noun"
+  },
+  "allergica": {
+   "g": "allergic (feminine)",
+   "t": "adjective"
+  },
+  "piace": {
+   "g": "pleases, is liked (piacere)",
+   "t": "verb"
+  },
+  "amore": {
+   "g": "love",
+   "t": "noun"
+  },
+  "suoi": {
+   "g": "his, her, its (plural)",
+   "t": "adjective"
+  },
+  "spera": {
+   "g": "hopes (sperare)",
+   "t": "verb"
+  },
+  "magari": {
+   "g": "maybe, perhaps",
+   "t": "adverb"
+  },
+  "allergia": {
+   "g": "allergy",
+   "t": "noun"
+  },
+  "chiamata": {
+   "g": "phone call",
+   "t": "noun"
+  },
+  "purtroppo": {
+   "g": "unfortunately",
+   "t": "adverb"
+  },
+  "soffre": {
+   "g": "suffers (soffrire)",
+   "t": "verb"
+  },
+  "tosse": {
+   "g": "cough",
+   "t": "noun"
+  },
+  "ama": {
+   "g": "loves (amare)",
+   "t": "verb"
+  },
+  "scelta": {
+   "g": "choice",
+   "t": "noun"
+  },
+  "sentito": {
+   "g": "heard (sentire)",
+   "t": "verb"
+  },
+  "fredde": {
+   "g": "cold (feminine plural)",
+   "t": "adjective"
+  },
+  "fai": {
+   "g": "you do, make (fare)",
+   "t": "verb"
+  },
+  "pelo": {
+   "g": "fur",
+   "t": "noun"
+  },
+  "gradino": {
+   "g": "step (stair)",
+   "t": "noun"
+  },
+  "interessa": {
+   "g": "interests (interessare)",
+   "t": "verb"
+  },
+  "credo": {
+   "g": "I believe, think (credere)",
+   "t": "verb"
+  },
+  "cattivo": {
+   "g": "bad, mean",
+   "t": "adjective"
+  },
+  "attore": {
+   "g": "actor",
+   "t": "noun"
+  },
+  "invito": {
+   "g": "I invite (invitare)",
+   "t": "verb"
+  },
+  "seguente": {
+   "g": "following, next",
+   "t": "adjective"
+  },
+  "compagna": {
+   "g": "girlfriend, partner (female)",
+   "t": "noun"
+  },
+  "saliti": {
+   "g": "gone up, come up (salire)",
+   "t": "verb"
+  },
+  "decisione": {
+   "g": "decision",
+   "t": "noun"
+  },
+  "adotto": {
+   "g": "I adopt (adottare)",
+   "t": "verb"
+  },
+  "nostro": {
+   "g": "our",
+   "t": "adjective"
+  },
+  "rinunci": {
+   "g": "you give up (rinunciare)",
+   "t": "verb"
+  },
+  "felicità": {
+   "g": "happiness",
+   "t": "noun"
+  },
+  "coraggiosa": {
+   "g": "brave (feminine)",
+   "t": "adjective"
+  },
+  "sogno": {
+   "g": "dream",
+   "t": "noun"
+  },
+  "consegna": {
+   "g": "hands over, delivers (consegnare)",
+   "t": "verb"
+  },
+  "collare": {
+   "g": "collar",
+   "t": "noun"
+  },
+  "targhetta": {
+   "g": "tag, nametag",
+   "t": "noun"
+  },
+  "rifiutato": {
+   "g": "refused (rifiutare)",
+   "t": "verb"
+  },
+  "famoso": {
+   "g": "famous",
+   "t": "adjective"
+  },
+  "giardini": {
+   "g": "gardens, park",
+   "t": "noun"
+  },
+  "colla": {
+   "g": "glue",
+   "t": "noun"
+  },
+  "lavorato": {
+   "g": "worked (lavorare)",
+   "t": "verb"
+  },
+  "postino": {
+   "g": "mailman",
+   "t": "noun"
+  },
+  "costruiamo": {
+   "g": "we build (costruire)",
+   "t": "verb"
+  },
+  "riparo": {
+   "g": "I repair (riparare)",
+   "t": "verb"
+  },
+  "maestro": {
+   "g": "master, teacher (craftsman)",
+   "t": "noun"
+  },
+  "impara": {
+   "g": "learns (imparare)",
+   "t": "verb"
+  },
+  "tagliare": {
+   "g": "to cut",
+   "t": "verb"
+  },
+  "coltello": {
+   "g": "knife",
+   "t": "noun"
+  },
+  "lezione": {
+   "g": "lesson",
+   "t": "noun"
+  },
+  "chiara": {
+   "g": "clear (feminine)",
+   "t": "adjective"
+  },
+  "diversa": {
+   "g": "different (feminine)",
+   "t": "adjective"
+  },
+  "vostra": {
+   "g": "your (formal, plural feminine)",
+   "t": "adjective"
+  },
+  "storia": {
+   "g": "story, history",
+   "t": "noun"
+  },
+  "ruvido": {
+   "g": "rough (texture)",
+   "t": "adjective"
+  },
+  "hostess": {
+   "g": "flight attendant (female)",
+   "t": "noun"
+  },
+  "linate": {
+   "g": "Linate (Milan airport)",
+   "t": "noun"
+  },
+  "slega": {
+   "g": "unties, unleashes (slegare)",
+   "t": "verb"
+  },
+  "collo": {
+   "g": "neck",
+   "t": "noun"
+  },
+  "foulard": {
+   "g": "scarf",
+   "t": "noun"
+  },
+  "rovinato": {
+   "g": "ruined (rovinare)",
+   "t": "verb"
+  },
+  "chiami": {
+   "g": "you call, you are called (chiamare, chiamarsi)",
+   "t": "verb"
+  },
+  "perso": {
+   "g": "lost (perdere)",
+   "t": "verb"
+  },
+  "trovato": {
+   "g": "found (trovare)",
+   "t": "verb"
+  },
+  "nuove": {
+   "g": "new (feminine plural)",
+   "t": "adjective"
+  },
+  "mie": {
+   "g": "my (feminine plural)",
+   "t": "adjective"
+  },
+  "voglia": {
+   "g": "desire, urge (ha voglia di ridere: feels like laughing)",
+   "t": "noun"
+  },
+  "canile": {
+   "g": "dog shelter, kennel",
+   "t": "noun"
+  },
+  "indirizzo": {
+   "g": "address",
+   "t": "noun"
+  },
+  "tanti": {
+   "g": "many",
+   "t": "adjective"
+  },
+  "weekend": {
+   "g": "weekend",
+   "t": "noun"
+  },
+  "como": {
+   "g": "Como (lake and city)",
+   "t": "noun"
+  },
+  "fontanella": {
+   "g": "small drinking fountain",
+   "t": "noun"
+  },
+  "mosche": {
+   "g": "flies (insects)",
+   "t": "noun"
+  },
+  "ape": {
+   "g": "bee",
+   "t": "noun"
+  },
+  "fiore": {
+   "g": "flower",
+   "t": "noun"
+  },
+  "uscito": {
+   "g": "gone out, come out (uscire)",
+   "t": "verb"
+  },
+  "bisogno": {
+   "g": "need",
+   "t": "noun"
+  },
+  "pistacchio": {
+   "g": "pistachio",
+   "t": "noun"
+  },
+  "coppette": {
+   "g": "small cups (ice cream cups)",
+   "t": "noun"
+  },
+  "coppetta": {
+   "g": "small cup (ice cream cup)",
+   "t": "noun"
+  },
+  "lascio": {
+   "g": "I leave (lasciare)",
+   "t": "verb"
+  },
+  "montagna": {
+   "g": "mountain",
+   "t": "noun"
+  },
+  "ritorno": {
+   "g": "return",
+   "t": "noun"
+  },
+  "arrivo": {
+   "g": "arrival",
+   "t": "noun"
+  },
+  "ferragosto": {
+   "g": "Ferragosto (August 15 holiday)",
+   "t": "noun"
+  },
+  "abbronzato": {
+   "g": "tanned",
+   "t": "adjective"
+  },
+  "conosciuto": {
+   "g": "met (conoscere)",
+   "t": "verb"
+  }
  }
 }

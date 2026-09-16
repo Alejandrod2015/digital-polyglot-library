@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "colla,maestro,coltello,lezione",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "colla",
+     "answer": "glue",
+     "options": [
+      "glue",
+      "a master or teacher",
+      "a knife",
+      "a lesson"
+     ]
+    },
+    {
+     "word": "maestro",
+     "answer": "a master or teacher",
+     "options": [
+      "glue",
+      "a master or teacher",
+      "a knife",
+      "a lesson"
+     ]
+    },
+    {
+     "word": "coltello",
+     "answer": "a knife",
+     "options": [
+      "glue",
+      "a master or teacher",
+      "a knife",
+      "a lesson"
+     ]
+    },
+    {
+     "word": "lezione",
+     "answer": "a lesson",
+     "options": [
+      "glue",
+      "a master or teacher",
+      "a knife",
+      "a lesson"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "liscio",
+  "sentence": "Ha lavorato bene il legno: ora è perfettamente _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "liscio",
+   "options": [
+    "liscio",
+    "ruvido",
+    "duro",
+    "pesante"
+   ],
+   "translation": "He worked the wood well: now it's perfectly _____.",
+   "optionTranslations": [
+    "smooth",
+    "rough",
+    "hard",
+    "heavy"
+   ],
+   "audioClip": {
+    "storySlug": "una-gamba-diversa",
+    "storySource": "user",
+    "sentence": "Ha lavorato bene il legno: ora è perfettamente liscio.",
+    "targetWord": "liscio",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "leggero",
+  "sentence": "Questo zaino non pesa niente: è molto _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "leggero",
+   "options": [
+    "leggero",
+    "pesante",
+    "vecchio",
+    "pieno"
+   ],
+   "translation": "This backpack weighs nothing: it's very _____.",
+   "optionTranslations": [
+    "light",
+    "heavy",
+    "old",
+    "full"
+   ],
+   "audioClip": {
+    "storySlug": "una-gamba-diversa",
+    "storySource": "user",
+    "sentence": "Questo zaino non pesa niente: è molto leggero.",
+    "targetWord": "leggero",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "ruvido",
+  "sentence": "Questo vecchio tessuto è duro al tatto: è molto _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ruvido",
+   "options": [
+    "ruvido",
+    "liscio",
+    "morbido",
+    "leggero"
+   ],
+   "translation": "This old fabric feels harsh to the touch: it's very _____.",
+   "optionTranslations": [
+    "rough",
+    "smooth",
+    "soft",
+    "light"
+   ],
+   "audioClip": {
+    "storySlug": "una-gamba-diversa",
+    "storySource": "user",
+    "sentence": "Questo vecchio tessuto è duro al tatto: è molto ruvido.",
+    "targetWord": "ruvido",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "invece",
+  "sentence": "[[Invece]] il cane annusa",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "instead",
+   "options": [
+    "instead",
+    "on top of",
+    "behind",
+    "enough"
+   ],
+   "audioClip": {
+    "storySlug": "una-gamba-diversa",
+    "storySource": "user",
+    "sentence": "Invece il cane annusa",
+    "targetWord": "Invece",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "costruire",
+  "sentence": "[[Costruiamo]] una gamba nuova.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to build",
+   "options": [
+    "to build",
+    "to answer",
+    "to be needed",
+    "to spend"
+   ],
+   "audioClip": {
+    "storySlug": "una-gamba-diversa",
+    "storySource": "user",
+    "sentence": "Costruiamo una gamba nuova.",
+    "targetWord": "Costruiamo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "riparare",
+  "sentence": "Io [[riparo]] sedie da vent'anni,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to repair",
+   "options": [
+    "to repair",
+    "to choose",
+    "to wash",
+    "to go around"
+   ],
+   "audioClip": {
+    "storySlug": "una-gamba-diversa",
+    "storySource": "user",
+    "sentence": "Io riparo sedie da vent'anni,",
+    "targetWord": "riparo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "imparare",
+  "sentence": "e Davide [[impara]] a tagliare.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to learn",
+   "options": [
+    "to learn",
+    "to pay",
+    "to swim",
+    "to remember"
+   ],
+   "audioClip": {
+    "storySlug": "una-gamba-diversa",
+    "storySource": "user",
+    "sentence": "e Davide impara a tagliare.",
+    "targetWord": "impara",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tagliare",
+  "sentence": "e Davide impara a [[tagliare]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to cut",
+   "options": [
+    "to cut",
+    "to hand over",
+    "to prefer",
+    "must"
+   ],
+   "audioClip": {
+    "storySlug": "una-gamba-diversa",
+    "storySource": "user",
+    "sentence": "e Davide impara a tagliare.",
+    "targetWord": "tagliare",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lento",
+  "sentence": "La sua lezione è [[lenta]] e chiara.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "slow",
+   "options": [
+    "slow",
+    "wide",
+    "big",
+    "hard"
+   ],
+   "audioClip": {
+    "storySlug": "una-gamba-diversa",
+    "storySource": "user",
+    "sentence": "La sua lezione è lenta e chiara.",
+    "targetWord": "lenta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chiaro",
+  "sentence": "La sua lezione è lenta e [[chiara]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clear or light in colour",
+   "options": [
+    "clear or light in colour",
+    "weak",
+    "black",
+    "bad or ugly"
+   ],
+   "audioClip": {
+    "storySlug": "una-gamba-diversa",
+    "storySource": "user",
+    "sentence": "La sua lezione è lenta e chiara.",
+    "targetWord": "chiara",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "diverso",
+  "sentence": "Una gamba [[diversa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "different",
+   "options": [
+    "different",
+    "only",
+    "good or clever",
+    "worried"
+   ],
+   "audioClip": {
+    "storySlug": "una-gamba-diversa",
+    "storySource": "user",
+    "sentence": "Una gamba diversa.",
+    "targetWord": "diversa",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "marrone",
+  "sentence": "Tre gambe sono [[marroni]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "brown",
+   "options": [
+    "brown",
+    "short",
+    "thin",
+    "dry"
+   ],
+   "audioClip": {
+    "storySlug": "una-gamba-diversa",
+    "storySource": "user",
+    "sentence": "Tre gambe sono marroni,",
+    "targetWord": "marroni",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sorpresa",
+  "sentence": "Che [[sorpresa]]!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a surprise",
+   "options": [
+    "a surprise",
+    "September",
+    "partner",
+    "fault"
+   ],
+   "audioClip": {
+    "storySlug": "una-gamba-diversa",
+    "storySource": "user",
+    "sentence": "Che sorpresa!",
+    "targetWord": "sorpresa",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "momento",
+  "sentence": "Per un [[momento]] Elisa si siede sulla sedia,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a moment",
+   "options": [
+    "a moment",
+    "a teacher",
+    "a fly",
+    "a car"
+   ],
+   "audioClip": {
+    "storySlug": "una-gamba-diversa",
+    "storySource": "user",
+    "sentence": "Per un momento Elisa si siede sulla sedia,",
+    "targetWord": "momento",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "insegnare",
+  "sentence": "Oggi lui è il maestro: [[insegna]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to teach",
+   "options": [
+    "to teach",
+    "to do",
+    "to thank someone",
+    "to help"
+   ],
+   "audioClip": {
+    "storySlug": "una-gamba-diversa",
+    "storySource": "user",
+    "sentence": "Oggi lui è il maestro: insegna,",
+    "targetWord": "insegna",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vivo",
+  "sentence": "Il legno è [[vivo]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "alive",
+   "options": [
+    "alive",
+    "careful",
+    "very serious",
+    "polite"
+   ],
+   "audioClip": {
+    "storySlug": "una-gamba-diversa",
+    "storySource": "user",
+    "sentence": "Il legno è vivo,",
+    "targetWord": "vivo",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

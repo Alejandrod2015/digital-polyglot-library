@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "tempo,bigliettino,colpa,giovedì",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "tempo",
+     "answer": "time",
+     "options": [
+      "time",
+      "a short note",
+      "fault",
+      "thursday"
+     ]
+    },
+    {
+     "word": "bigliettino",
+     "answer": "a short note",
+     "options": [
+      "time",
+      "a short note",
+      "fault",
+      "thursday"
+     ]
+    },
+    {
+     "word": "colpa",
+     "answer": "fault",
+     "options": [
+      "time",
+      "a short note",
+      "fault",
+      "thursday"
+     ]
+    },
+    {
+     "word": "giovedì",
+     "answer": "thursday",
+     "options": [
+      "time",
+      "a short note",
+      "fault",
+      "thursday"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "rispetto",
+  "sentence": "Vuole solo essere trattato bene dagli altri: chiede _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rispetto",
+   "options": [
+    "rispetto",
+    "aiuto",
+    "coraggio",
+    "consiglio"
+   ],
+   "translation": "She just wants to be treated well by others: she asks for _____.",
+   "optionTranslations": [
+    "respect",
+    "help",
+    "courage",
+    "advice"
+   ],
+   "audioClip": {
+    "storySlug": "le-regole-del-cortile",
+    "storySource": "user",
+    "sentence": "Vuole solo essere trattato bene dagli altri: chiede rispetto.",
+    "targetWord": "rispetto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "facile",
+  "sentence": "Con le istruzioni chiare, il compito diventa molto _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "facile",
+   "options": [
+    "facile",
+    "difficile",
+    "pericoloso",
+    "lungo"
+   ],
+   "translation": "With clear instructions, the task becomes very _____.",
+   "optionTranslations": [
+    "easy",
+    "difficult",
+    "dangerous",
+    "long"
+   ],
+   "audioClip": {
+    "storySlug": "le-regole-del-cortile",
+    "storySource": "user",
+    "sentence": "Con le istruzioni chiare, il compito diventa molto facile.",
+    "targetWord": "facile",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "aiuto",
+  "sentence": "Da solo non riesce a spostare il divano: chiede _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aiuto",
+   "options": [
+    "aiuto",
+    "consiglio",
+    "rispetto",
+    "coraggio"
+   ],
+   "translation": "He can't move the sofa alone: he asks for _____.",
+   "optionTranslations": [
+    "to help",
+    "advice",
+    "respect",
+    "courage"
+   ],
+   "audioClip": {
+    "storySlug": "le-regole-del-cortile",
+    "storySource": "user",
+    "sentence": "Da solo non riesce a spostare il divano: chiede aiuto.",
+    "targetWord": "aiuto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ascoltare",
+  "sentence": "Trenta vicini [[ascoltano]] in silenzio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to listen",
+   "options": [
+    "to listen",
+    "to pay",
+    "to buy",
+    "to manage"
+   ],
+   "audioClip": {
+    "storySlug": "le-regole-del-cortile",
+    "storySource": "user",
+    "sentence": "Trenta vicini ascoltano in silenzio.",
+    "targetWord": "ascoltano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "troppo",
+  "sentence": "Quando è solo, abbaia [[troppo]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "too much",
+   "options": [
+    "too much",
+    "slowly",
+    "after",
+    "better"
+   ],
+   "audioClip": {
+    "storySlug": "le-regole-del-cortile",
+    "storySource": "user",
+    "sentence": "Quando è solo, abbaia troppo,",
+    "targetWord": "troppo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "male",
+  "sentence": "e io lavoro [[male]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "badly",
+   "options": [
+    "badly",
+    "in front of",
+    "immediately",
+    "well"
+   ],
+   "audioClip": {
+    "storySlug": "le-regole-del-cortile",
+    "storySource": "user",
+    "sentence": "e io lavoro male.",
+    "targetWord": "male",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "alzarsi",
+  "sentence": "Davide si è [[alzato]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to stand up",
+   "options": [
+    "to stand up",
+    "to enter",
+    "to end",
+    "to pull"
+   ],
+   "audioClip": {
+    "storySlug": "le-regole-del-cortile",
+    "storySource": "user",
+    "sentence": "Davide si è alzato.",
+    "targetWord": "alzato",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "promettere",
+  "sentence": "[[Promesso]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to promise",
+   "options": [
+    "to promise",
+    "to hope",
+    "to travel",
+    "to understand"
+   ],
+   "audioClip": {
+    "storySlug": "le-regole-del-cortile",
+    "storySource": "user",
+    "sentence": "Promesso.",
+    "targetWord": "Promesso",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "discutere",
+  "sentence": "I vicini [[discutono]] a lungo,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to discuss",
+   "options": [
+    "to discuss",
+    "to change",
+    "to be worth",
+    "to forget"
+   ],
+   "audioClip": {
+    "storySlug": "le-regole-del-cortile",
+    "storySource": "user",
+    "sentence": "I vicini discutono a lungo,",
+    "targetWord": "discutono",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "votare",
+  "sentence": "poi [[votano]] una regola:",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to vote",
+   "options": [
+    "to vote",
+    "to love",
+    "to ring",
+    "to run"
+   ],
+   "audioClip": {
+    "storySlug": "le-regole-del-cortile",
+    "storySource": "user",
+    "sentence": "poi votano una regola:",
+    "targetWord": "votano",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fuori",
+  "sentence": "se il cane abbaia ancora, va [[fuori]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "out",
+   "options": [
+    "out",
+    "quietly",
+    "tomorrow",
+    "always"
+   ],
+   "audioClip": {
+    "storySlug": "le-regole-del-cortile",
+    "storySource": "user",
+    "sentence": "se il cane abbaia ancora, va fuori.",
+    "targetWord": "fuori",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ultimo",
+  "sentence": "È l'[[ultima]] volta, e questo spaventa Elisa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "last",
+   "options": [
+    "last",
+    "red",
+    "good or clever",
+    "expensive"
+   ],
+   "audioClip": {
+    "storySlug": "le-regole-del-cortile",
+    "storySource": "user",
+    "sentence": "È l'ultima volta, e questo spaventa Elisa.",
+    "targetWord": "ultima",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "spaventare",
+  "sentence": "È l'ultima volta, e questo [[spaventa]] Elisa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to scare",
+   "options": [
+    "to scare",
+    "to howl",
+    "to know",
+    "to leave behind"
+   ],
+   "audioClip": {
+    "storySlug": "le-regole-del-cortile",
+    "storySource": "user",
+    "sentence": "È l'ultima volta, e questo spaventa Elisa.",
+    "targetWord": "spaventa",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ormai",
+  "sentence": "perché il cane [[ormai]] è anche suo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "by now",
+   "options": [
+    "by now",
+    "finally",
+    "tomorrow",
+    "always"
+   ],
+   "audioClip": {
+    "storySlug": "le-regole-del-cortile",
+    "storySource": "user",
+    "sentence": "perché il cane ormai è anche suo.",
+    "targetWord": "ormai",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lontano",
+  "sentence": "Lo sentono da [[lontano]], dentro ogni casa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "far away",
+   "options": [
+    "far away",
+    "still",
+    "slowly",
+    "really"
+   ],
+   "audioClip": {
+    "storySlug": "le-regole-del-cortile",
+    "storySource": "user",
+    "sentence": "Lo sentono da lontano, dentro ogni casa.",
+    "targetWord": "lontano",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dentro",
+  "sentence": "Lo sentono da lontano, [[dentro]] ogni casa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "inside",
+   "options": [
+    "inside",
+    "already",
+    "early",
+    "today"
+   ],
+   "audioClip": {
+    "storySlug": "le-regole-del-cortile",
+    "storySource": "user",
+    "sentence": "Lo sentono da lontano, dentro ogni casa.",
+    "targetWord": "dentro",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

@@ -1667,6 +1667,47 @@
         "zwei",
         "zweite"
       ]
+    },
+    "italian-friends-italy-a1": {
+      "articles": [
+        "dei",
+        "gli",
+        "i",
+        "il",
+        "l",
+        "la",
+        "le",
+        "lo",
+        "un",
+        "una"
+      ],
+      "characterNames": [
+        "arianna",
+        "biscotto",
+        "davide",
+        "elisa",
+        "gabriele",
+        "nicola",
+        "noemi",
+        "serena",
+        "tommaso"
+      ],
+      "numerals": [
+        "cento",
+        "cinque",
+        "cinquanta",
+        "dieci",
+        "due",
+        "nove",
+        "otto",
+        "quattro",
+        "sei",
+        "sette",
+        "trenta",
+        "tre",
+        "un",
+        "una"
+      ]
     }
   }
 }

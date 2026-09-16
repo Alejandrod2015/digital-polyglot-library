@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "cena,calzino,studio,euro",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "cena",
+     "answer": "dinner",
+     "options": [
+      "dinner",
+      "a sock",
+      "an office",
+      "the euro"
+     ]
+    },
+    {
+     "word": "calzino",
+     "answer": "a sock",
+     "options": [
+      "dinner",
+      "a sock",
+      "an office",
+      "the euro"
+     ]
+    },
+    {
+     "word": "studio",
+     "answer": "an office",
+     "options": [
+      "dinner",
+      "a sock",
+      "an office",
+      "the euro"
+     ]
+    },
+    {
+     "word": "euro",
+     "answer": "the euro",
+     "options": [
+      "dinner",
+      "a sock",
+      "an office",
+      "the euro"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "veterinaria",
+  "sentence": "Il gatto è malato e ha bisogno di una _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "veterinaria",
+   "options": [
+    "veterinaria",
+    "ricercatrice",
+    "amica",
+    "compagna"
+   ],
+   "translation": "The cat is sick and needs a _____.",
+   "optionTranslations": [
+    "a vet",
+    "researcher",
+    "friend",
+    "partner"
+   ],
+   "audioClip": {
+    "storySlug": "chi-paga-il-calzino",
+    "storySource": "user",
+    "sentence": "Il gatto è malato e ha bisogno di una veterinaria.",
+    "targetWord": "veterinaria",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pericoloso",
+  "sentence": "Quel cane non è socievole: può essere molto _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pericoloso",
+   "options": [
+    "pericoloso",
+    "gentile",
+    "libero",
+    "stanco"
+   ],
+   "translation": "That dog isn't friendly: it can be very _____.",
+   "optionTranslations": [
+    "dangerous",
+    "kind",
+    "free",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "chi-paga-il-calzino",
+    "storySource": "user",
+    "sentence": "Quel cane non è socievole: può essere molto pericoloso.",
+    "targetWord": "pericoloso",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cara",
+  "sentence": "Quella borsa costa troppo: è troppo _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cara",
+   "options": [
+    "cara",
+    "leggera",
+    "vecchia",
+    "piccola"
+   ],
+   "translation": "That bag costs too much: it's too _____.",
+   "optionTranslations": [
+    "expensive",
+    "light",
+    "old",
+    "small"
+   ],
+   "audioClip": {
+    "storySlug": "chi-paga-il-calzino",
+    "storySource": "user",
+    "sentence": "Quella borsa costa troppo: è troppo cara.",
+    "targetWord": "cara",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "duro",
+  "sentence": "ha la pancia [[dura]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hard",
+   "options": [
+    "hard",
+    "clear or light in colour",
+    "third",
+    "empty"
+   ],
+   "audioClip": {
+    "storySlug": "chi-paga-il-calzino",
+    "storySource": "user",
+    "sentence": "ha la pancia dura.",
+    "targetWord": "dura",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mancare",
+  "sentence": "[[Manca]] un calzino, ed Elisa chiama Davide.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be missing",
+   "options": [
+    "to be missing",
+    "to choose",
+    "to drink",
+    "to open"
+   ],
+   "audioClip": {
+    "storySlug": "chi-paga-il-calzino",
+    "storySource": "user",
+    "sentence": "Manca un calzino, ed Elisa chiama Davide.",
+    "targetWord": "Manca",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "visitare",
+  "sentence": "Noemi [[visita]] il cane e chiede:",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to examine",
+   "options": [
+    "to examine",
+    "to speak",
+    "to negotiate",
+    "to calculate"
+   ],
+   "audioClip": {
+    "storySlug": "chi-paga-il-calzino",
+    "storySource": "user",
+    "sentence": "Noemi visita il cane e chiede:",
+    "targetWord": "visita",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "succedere",
+  "sentence": "Che cosa è [[successo]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to happen",
+   "options": [
+    "to happen",
+    "to make a mistake",
+    "to refuse",
+    "to go around"
+   ],
+   "audioClip": {
+    "storySlug": "chi-paga-il-calzino",
+    "storySource": "user",
+    "sentence": "Che cosa è successo?",
+    "targetWord": "successo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "forse",
+  "sentence": "[[Forse]] un calzino,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "maybe",
+   "options": [
+    "maybe",
+    "by now",
+    "far away",
+    "too much"
+   ],
+   "audioClip": {
+    "storySlug": "chi-paga-il-calzino",
+    "storySource": "user",
+    "sentence": "Forse un calzino,",
+    "targetWord": "Forse",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "serio",
+  "sentence": "È una cosa [[seria]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "serious",
+   "options": [
+    "serious",
+    "angry",
+    "fast",
+    "young"
+   ],
+   "audioClip": {
+    "storySlug": "chi-paga-il-calzino",
+    "storySource": "user",
+    "sentence": "È una cosa seria,",
+    "targetWord": "seria",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "grave",
+  "sentence": "niente di [[grave]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "very serious",
+   "options": [
+    "very serious",
+    "blue",
+    "old",
+    "big"
+   ],
+   "audioClip": {
+    "storySlug": "chi-paga-il-calzino",
+    "storySource": "user",
+    "sentence": "niente di grave.",
+    "targetWord": "grave",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tirare",
+  "sentence": "ha [[tirato]] fuori il calzino",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to pull",
+   "options": [
+    "to pull",
+    "to tell",
+    "to go up",
+    "to help"
+   ],
+   "audioClip": {
+    "storySlug": "chi-paga-il-calzino",
+    "storySource": "user",
+    "sentence": "ha tirato fuori il calzino",
+    "targetWord": "tirato",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "salvare",
+  "sentence": "e [[salva]] il cane",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to save",
+   "options": [
+    "to save",
+    "to come back",
+    "to call",
+    "to prefer"
+   ],
+   "audioClip": {
+    "storySlug": "chi-paga-il-calzino",
+    "storySource": "user",
+    "sentence": "e salva il cane",
+    "targetWord": "salva",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ricevere",
+  "sentence": "Poi Elisa [[riceve]] il conto e legge:",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to receive",
+   "options": [
+    "to receive",
+    "must",
+    "to take",
+    "to cut"
+   ],
+   "audioClip": {
+    "storySlug": "chi-paga-il-calzino",
+    "storySource": "user",
+    "sentence": "Poi Elisa riceve il conto e legge:",
+    "targetWord": "riceve",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "costare",
+  "sentence": "[[Costa]] tanto,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to cost",
+   "options": [
+    "to cost",
+    "to do",
+    "to give as a gift",
+    "to walk"
+   ],
+   "audioClip": {
+    "storySlug": "chi-paga-il-calzino",
+    "storySource": "user",
+    "sentence": "Costa tanto,",
+    "targetWord": "Costa",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "spendere",
+  "sentence": "ha [[speso]] i soldi del cappotto nuovo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to spend",
+   "options": [
+    "to spend",
+    "to suffer",
+    "to send",
+    "to live"
+   ],
+   "audioClip": {
+    "storySlug": "chi-paga-il-calzino",
+    "storySource": "user",
+    "sentence": "ha speso i soldi del cappotto nuovo.",
+    "targetWord": "speso",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "valere",
+  "sentence": "[[Vale]] ogni euro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be worth",
+   "options": [
+    "to be worth",
+    "to show",
+    "to wake up",
+    "to lie"
+   ],
+   "audioClip": {
+    "storySlug": "chi-paga-il-calzino",
+    "storySource": "user",
+    "sentence": "Vale ogni euro.",
+    "targetWord": "Vale",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

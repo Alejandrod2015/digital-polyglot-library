@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "calendario,arrivare,davanti,uscire",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "calendario",
+     "answer": "a calendar",
+     "options": [
+      "a calendar",
+      "to arrive",
+      "in front of",
+      "to go out"
+     ]
+    },
+    {
+     "word": "arrivare",
+     "answer": "to arrive",
+     "options": [
+      "a calendar",
+      "to arrive",
+      "in front of",
+      "to go out"
+     ]
+    },
+    {
+     "word": "davanti",
+     "answer": "in front of",
+     "options": [
+      "a calendar",
+      "to arrive",
+      "in front of",
+      "to go out"
+     ]
+    },
+    {
+     "word": "uscire",
+     "answer": "to go out",
+     "options": [
+      "a calendar",
+      "to arrive",
+      "in front of",
+      "to go out"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "aspetta",
+  "sentence": "L'autobus non arriva, e lei _____ pazientemente alla fermata.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aspetta",
+   "options": [
+    "aspetta",
+    "cammina",
+    "dorme",
+    "mangia"
+   ],
+   "translation": "The bus doesn't come, and she _____ patiently at the stop.",
+   "optionTranslations": [
+    "to wait for",
+    "walks",
+    "sleeps",
+    "eats"
+   ],
+   "audioClip": {
+    "storySlug": "quattro-sabati-per-nicola",
+    "storySource": "user",
+    "sentence": "L'autobus non arriva, e lei aspetta pazientemente alla fermata.",
+    "targetWord": "aspetta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "tardi",
+  "sentence": "Perde l'autobus e arriva _____ al lavoro.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tardi",
+   "options": [
+    "tardi",
+    "presto",
+    "insieme",
+    "davvero"
+   ],
+   "translation": "He misses the bus and arrives _____ for work.",
+   "optionTranslations": [
+    "late",
+    "early",
+    "together",
+    "really"
+   ],
+   "audioClip": {
+    "storySlug": "quattro-sabati-per-nicola",
+    "storySource": "user",
+    "sentence": "Perde l'autobus e arriva tardi al lavoro.",
+    "targetWord": "tardi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "felice",
+  "sentence": "Ha ricevuto una buona notizia ed è molto _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "felice",
+   "options": [
+    "felice",
+    "triste",
+    "gentile",
+    "difficile"
+   ],
+   "translation": "She got good news and is very _____.",
+   "optionTranslations": [
+    "happy",
+    "sad",
+    "kind",
+    "difficult"
+   ],
+   "audioClip": {
+    "storySlug": "quattro-sabati-per-nicola",
+    "storySource": "user",
+    "sentence": "Ha ricevuto una buona notizia ed è molto felice.",
+    "targetWord": "felice",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dopo",
+  "sentence": "Davide esce tardi [[dopo]] il giro, con Nicola,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "after",
+   "options": [
+    "after",
+    "today",
+    "quickly",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "quattro-sabati-per-nicola",
+    "storySource": "user",
+    "sentence": "Davide esce tardi dopo il giro, con Nicola,",
+    "targetWord": "dopo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "insieme",
+  "sentence": "Lo teniamo [[insieme]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "together",
+   "options": [
+    "together",
+    "finally",
+    "already",
+    "unfortunately"
+   ],
+   "audioClip": {
+    "storySlug": "quattro-sabati-per-nicola",
+    "storySource": "user",
+    "sentence": "Lo teniamo insieme,",
+    "targetWord": "insieme",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gentile",
+  "sentence": "Nicola è [[gentile]] e ha un gilet giallo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "kind",
+   "options": [
+    "kind",
+    "rough",
+    "very old",
+    "able"
+   ],
+   "audioClip": {
+    "storySlug": "quattro-sabati-per-nicola",
+    "storySource": "user",
+    "sentence": "Nicola è gentile e ha un gilet giallo.",
+    "targetWord": "gentile",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "giallo",
+  "sentence": "Nicola è gentile e ha un gilet [[giallo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "yellow",
+   "options": [
+    "yellow",
+    "dark",
+    "open",
+    "dangerous"
+   ],
+   "audioClip": {
+    "storySlug": "quattro-sabati-per-nicola",
+    "storySource": "user",
+    "sentence": "Nicola è gentile e ha un gilet giallo.",
+    "targetWord": "giallo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fare",
+  "sentence": "Io [[faccio]] il tuo giro del martedì,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to do",
+   "options": [
+    "to do",
+    "to touch",
+    "to win",
+    "to accept"
+   ],
+   "audioClip": {
+    "storySlug": "quattro-sabati-per-nicola",
+    "storySource": "user",
+    "sentence": "Io faccio il tuo giro del martedì,",
+    "targetWord": "faccio",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "volere",
+  "sentence": "se [[vuoi]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to want",
+   "options": [
+    "to want",
+    "to stir",
+    "to cook",
+    "to look for"
+   ],
+   "audioClip": {
+    "storySlug": "quattro-sabati-per-nicola",
+    "storySource": "user",
+    "sentence": "se vuoi,",
+    "targetWord": "vuoi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "davvero",
+  "sentence": "risponde subito Davide, [[davvero]] felice.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "really",
+   "options": [
+    "really",
+    "still",
+    "down",
+    "maybe"
+   ],
+   "audioClip": {
+    "storySlug": "quattro-sabati-per-nicola",
+    "storySource": "user",
+    "sentence": "risponde subito Davide, davvero felice.",
+    "targetWord": "davvero",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prima",
+  "sentence": "ma [[prima]] si gira.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "before",
+   "options": [
+    "before",
+    "out",
+    "almost",
+    "early"
+   ],
+   "audioClip": {
+    "storySlug": "quattro-sabati-per-nicola",
+    "storySource": "user",
+    "sentence": "ma prima si gira.",
+    "targetWord": "prima",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "partire",
+  "sentence": "Nicola sale in bicicletta per [[partire]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to leave",
+   "options": [
+    "to leave",
+    "to hug",
+    "to hand over",
+    "to close"
+   ],
+   "audioClip": {
+    "storySlug": "quattro-sabati-per-nicola",
+    "storySource": "user",
+    "sentence": "Nicola sale in bicicletta per partire,",
+    "targetWord": "partire",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "libero",
+  "sentence": "Il sabato è il tuo unico giorno [[libero]]!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "free",
+   "options": [
+    "free",
+    "allergic",
+    "different",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "quattro-sabati-per-nicola",
+    "storySource": "user",
+    "sentence": "Il sabato è il tuo unico giorno libero!",
+    "targetWord": "libero",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caldo",
+  "sentence": "Ha le guance [[calde]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "warm or hot",
+   "options": [
+    "warm or hot",
+    "strange",
+    "slow",
+    "next"
+   ],
+   "audioClip": {
+    "storySlug": "quattro-sabati-per-nicola",
+    "storySource": "user",
+    "sentence": "Ha le guance calde,",
+    "targetWord": "calde",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "piano",
+  "sentence": "risponde [[piano]] Davide.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quietly",
+   "options": [
+    "quietly",
+    "under",
+    "badly",
+    "only"
+   ],
+   "audioClip": {
+    "storySlug": "quattro-sabati-per-nicola",
+    "storySource": "user",
+    "sentence": "risponde piano Davide.",
+    "targetWord": "piano",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "martedì",
+  "sentence": "[[Martedì]] io volo alle sette,",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tuesday",
+   "options": [
+    "tuesday",
+    "a surprise",
+    "snow",
+    "joy"
+   ],
+   "audioClip": {
+    "storySlug": "quattro-sabati-per-nicola",
+    "storySource": "user",
+    "sentence": "Martedì io volo alle sette,",
+    "targetWord": "martedì",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

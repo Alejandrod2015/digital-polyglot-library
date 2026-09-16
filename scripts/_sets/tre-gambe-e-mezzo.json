@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "lampada,gamba,bottega,falegname",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "lampada",
+     "answer": "a lamp",
+     "options": [
+      "a lamp",
+      "a leg",
+      "a small workshop",
+      "a carpenter"
+     ]
+    },
+    {
+     "word": "gamba",
+     "answer": "a leg",
+     "options": [
+      "a lamp",
+      "a leg",
+      "a small workshop",
+      "a carpenter"
+     ]
+    },
+    {
+     "word": "bottega",
+     "answer": "a small workshop",
+     "options": [
+      "a lamp",
+      "a leg",
+      "a small workshop",
+      "a carpenter"
+     ]
+    },
+    {
+     "word": "falegname",
+     "answer": "a carpenter",
+     "options": [
+      "a lamp",
+      "a leg",
+      "a small workshop",
+      "a carpenter"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "rotta",
+  "sentence": "La sedia è molto vecchia: la gamba si è _____ subito.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rotta",
+   "options": [
+    "rotta",
+    "pulita",
+    "chiusa",
+    "aperta"
+   ],
+   "translation": "The chair is very old: the leg _____ right away.",
+   "optionTranslations": [
+    "to break",
+    "clean",
+    "closed",
+    "open"
+   ],
+   "audioClip": {
+    "storySlug": "tre-gambe-e-mezzo",
+    "storySource": "user",
+    "sentence": "La sedia è molto vecchia: la gamba si è rotta subito.",
+    "targetWord": "rotta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "sicuro",
+  "sentence": "Conosce bene la risposta ed è molto _____ di sé.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sicuro",
+   "options": [
+    "sicuro",
+    "nervoso",
+    "stanco",
+    "triste"
+   ],
+   "translation": "He knows the answer well and is very _____ of himself.",
+   "optionTranslations": [
+    "sure",
+    "nervous",
+    "tired",
+    "sad"
+   ],
+   "audioClip": {
+    "storySlug": "tre-gambe-e-mezzo",
+    "storySource": "user",
+    "sentence": "Conosce bene la risposta ed è molto sicuro di sé.",
+    "targetWord": "sicuro",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pesante",
+  "sentence": "È piena di libri, così _____ che fa male alla schiena.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pesante",
+   "options": [
+    "pesante",
+    "leggera",
+    "grande",
+    "piccola"
+   ],
+   "translation": "It's full of books, so _____ that it hurts your back.",
+   "optionTranslations": [
+    "heavy",
+    "light",
+    "big",
+    "small"
+   ],
+   "audioClip": {
+    "storySlug": "tre-gambe-e-mezzo",
+    "storySource": "user",
+    "sentence": "È piena di libri, così pesante che fa male alla schiena.",
+    "targetWord": "pesante",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "accendere",
+  "sentence": "[[accende]] la lampada in cucina",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to switch on",
+   "options": [
+    "to switch on",
+    "to arrive",
+    "to sing",
+    "to read"
+   ],
+   "audioClip": {
+    "storySlug": "tre-gambe-e-mezzo",
+    "storySource": "user",
+    "sentence": "accende la lampada in cucina",
+    "targetWord": "accende",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cadere",
+  "sentence": "e [[cade]] appena la tocca.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to fall down",
+   "options": [
+    "to fall down",
+    "to interest",
+    "to keep",
+    "to bark"
+   ],
+   "audioClip": {
+    "storySlug": "tre-gambe-e-mezzo",
+    "storySource": "user",
+    "sentence": "e cade appena la tocca.",
+    "targetWord": "cade",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "esperto",
+  "sentence": "un falegname molto [[esperto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an expert",
+   "options": [
+    "an expert",
+    "arrival",
+    "a cloud",
+    "a biscuit"
+   ],
+   "audioClip": {
+    "storySlug": "tre-gambe-e-mezzo",
+    "storySource": "user",
+    "sentence": "un falegname molto esperto.",
+    "targetWord": "esperto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "debole",
+  "sentence": "ma la luce è [[debole]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "weak",
+   "options": [
+    "weak",
+    "yellow",
+    "even",
+    "sad"
+   ],
+   "audioClip": {
+    "storySlug": "tre-gambe-e-mezzo",
+    "storySource": "user",
+    "sentence": "ma la luce è debole.",
+    "targetWord": "debole",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aggiustare",
+  "sentence": "La [[aggiusto]] io.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to fix",
+   "options": [
+    "to fix",
+    "to die",
+    "to believe or think",
+    "to greet"
+   ],
+   "audioClip": {
+    "storySlug": "tre-gambe-e-mezzo",
+    "storySource": "user",
+    "sentence": "La aggiusto io.",
+    "targetWord": "aggiusto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "capace",
+  "sentence": "Sono [[capace]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "able",
+   "options": [
+    "able",
+    "black",
+    "precious",
+    "pink"
+   ],
+   "audioClip": {
+    "storySlug": "tre-gambe-e-mezzo",
+    "storySource": "user",
+    "sentence": "Sono capace,",
+    "targetWord": "capace",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "passare",
+  "sentence": "Il giorno dopo [[passano]] davanti alla bottega.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to pass",
+   "options": [
+    "to pass",
+    "to go down",
+    "to repair",
+    "to scare"
+   ],
+   "audioClip": {
+    "storySlug": "tre-gambe-e-mezzo",
+    "storySource": "user",
+    "sentence": "Il giorno dopo passano davanti alla bottega.",
+    "targetWord": "passano",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "consiglio",
+  "sentence": "Tommaso li saluta e dà un [[consiglio]]:",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a piece of advice",
+   "options": [
+    "a piece of advice",
+    "a lesson",
+    "health",
+    "a point"
+   ],
+   "audioClip": {
+    "storySlug": "tre-gambe-e-mezzo",
+    "storySource": "user",
+    "sentence": "Tommaso li saluta e dà un consiglio:",
+    "targetWord": "consiglio",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "antico",
+  "sentence": "È legno [[antico]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "very old",
+   "options": [
+    "very old",
+    "poor",
+    "calm",
+    "rich"
+   ],
+   "audioClip": {
+    "storySlug": "tre-gambe-e-mezzo",
+    "storySource": "user",
+    "sentence": "È legno antico.",
+    "targetWord": "antico",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "strumento",
+  "sentence": "Servono gli [[strumenti]] giusti e un metro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a tool",
+   "options": [
+    "a tool",
+    "an apple",
+    "morning",
+    "a neighbourhood"
+   ],
+   "audioClip": {
+    "storySlug": "tre-gambe-e-mezzo",
+    "storySource": "user",
+    "sentence": "Servono gli strumenti giusti e un metro.",
+    "targetWord": "strumenti",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "metro",
+  "sentence": "Servono gli strumenti giusti e un [[metro]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a tape measure",
+   "options": [
+    "a tape measure",
+    "a choice",
+    "a calendar",
+    "a pencil"
+   ],
+   "audioClip": {
+    "storySlug": "tre-gambe-e-mezzo",
+    "storySource": "user",
+    "sentence": "Servono gli strumenti giusti e un metro.",
+    "targetWord": "metro",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fortuna",
+  "sentence": "Allora buona [[fortuna]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "luck",
+   "options": [
+    "luck",
+    "a cough",
+    "a flavour",
+    "the euro"
+   ],
+   "audioClip": {
+    "storySlug": "tre-gambe-e-mezzo",
+    "storySource": "user",
+    "sentence": "Allora buona fortuna,",
+    "targetWord": "fortuna",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "unico",
+  "sentence": "l'[[unico]] ricordo di sua madre",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "only",
+   "options": [
+    "only",
+    "free",
+    "hard",
+    "dry"
+   ],
+   "audioClip": {
+    "storySlug": "tre-gambe-e-mezzo",
+    "storySource": "user",
+    "sentence": "l'unico ricordo di sua madre",
+    "targetWord": "unico",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "settembre,scatolone,insegnante,pentola",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "settembre",
+     "answer": "September",
+     "options": [
+      "September",
+      "a cardboard box",
+      "a teacher",
+      "a cooking pot"
+     ]
+    },
+    {
+     "word": "scatolone",
+     "answer": "a cardboard box",
+     "options": [
+      "September",
+      "a cardboard box",
+      "a teacher",
+      "a cooking pot"
+     ]
+    },
+    {
+     "word": "insegnante",
+     "answer": "a teacher",
+     "options": [
+      "September",
+      "a cardboard box",
+      "a teacher",
+      "a cooking pot"
+     ]
+    },
+    {
+     "word": "pentola",
+     "answer": "a cooking pot",
+     "options": [
+      "September",
+      "a cardboard box",
+      "a teacher",
+      "a cooking pot"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "timida",
+  "sentence": "Non parla mai con persone nuove: è molto _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "timida",
+   "options": [
+    "timida",
+    "simpatica",
+    "arrabbiata",
+    "stanca"
+   ],
+   "translation": "She never talks to new people: she's very _____.",
+   "optionTranslations": [
+    "shy",
+    "nice",
+    "angry",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "arianna-starnutisce",
+    "storySource": "user",
+    "sentence": "Non parla mai con persone nuove: è molto timida.",
+    "targetWord": "timida",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "condividiamo",
+  "sentence": "Abbiamo un solo tubetto di dentifricio, così lo _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "condividiamo",
+   "options": [
+    "condividiamo",
+    "compriamo",
+    "puliamo",
+    "usiamo"
+   ],
+   "translation": "We only have one tube of toothpaste, so we _____ it.",
+   "optionTranslations": [
+    "to share",
+    "buy",
+    "clean",
+    "use"
+   ],
+   "audioClip": {
+    "storySlug": "arianna-starnutisce",
+    "storySource": "user",
+    "sentence": "Abbiamo un solo tubetto di dentifricio, così lo condividiamo.",
+    "targetWord": "condividiamo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "allergica",
+  "sentence": "Starnutisce sempre vicino ai gatti: è _____ agli animali.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "allergica",
+   "options": [
+    "allergica",
+    "stanca",
+    "arrabbiata",
+    "timida"
+   ],
+   "translation": "She always sneezes near cats: she's _____ to animals.",
+   "optionTranslations": [
+    "allergic",
+    "tired",
+    "angry",
+    "shy"
+   ],
+   "audioClip": {
+    "storySlug": "arianna-starnutisce",
+    "storySource": "user",
+    "sentence": "Starnutisce sempre vicino ai gatti: è allergica agli animali.",
+    "targetWord": "allergica",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "guardare",
+  "sentence": "si sveglia e [[guarda]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to look at",
+   "options": [
+    "to look at",
+    "to ask",
+    "to fix",
+    "to follow"
+   ],
+   "audioClip": {
+    "storySlug": "arianna-starnutisce",
+    "storySource": "user",
+    "sentence": "si sveglia e guarda",
+    "targetWord": "guarda",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "piacere",
+  "sentence": "[[Piacere]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nice to meet you",
+   "options": [
+    "nice to meet you",
+    "in a hurry",
+    "really",
+    "today"
+   ],
+   "audioClip": {
+    "storySlug": "arianna-starnutisce",
+    "storySource": "user",
+    "sentence": "Piacere.",
+    "targetWord": "Piacere",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "padella",
+  "sentence": "lascia la pentola e la [[padella]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a frying pan",
+   "options": [
+    "a frying pan",
+    "a female friend",
+    "the amount",
+    "a deal"
+   ],
+   "audioClip": {
+    "storySlug": "arianna-starnutisce",
+    "storySource": "user",
+    "sentence": "lascia la pentola e la padella",
+    "targetWord": "padella",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ogni tanto",
+  "sentence": "[[ogni tanto]] usa un fazzoletto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sometimes",
+   "options": [
+    "sometimes",
+    "still",
+    "better",
+    "early"
+   ],
+   "audioClip": {
+    "storySlug": "arianna-starnutisce",
+    "storySource": "user",
+    "sentence": "ogni tanto usa un fazzoletto.",
+    "targetWord": "ogni tanto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "usare",
+  "sentence": "ogni tanto [[usa]] un fazzoletto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to use something",
+   "options": [
+    "to use something",
+    "to travel",
+    "to surprise",
+    "to go up"
+   ],
+   "audioClip": {
+    "storySlug": "arianna-starnutisce",
+    "storySource": "user",
+    "sentence": "ogni tanto usa un fazzoletto.",
+    "targetWord": "usa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dentifricio",
+  "sentence": "Condividiamo tutto, anche il [[dentifricio]],",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "toothpaste",
+   "options": [
+    "toothpaste",
+    "an eraser",
+    "tuesday",
+    "courage"
+   ],
+   "audioClip": {
+    "storySlug": "arianna-starnutisce",
+    "storySource": "user",
+    "sentence": "Condividiamo tutto, anche il dentifricio,",
+    "targetWord": "dentifricio",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "coppia",
+  "sentence": "Elisa sorride: “Siete già una [[coppia]] vera.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a couple",
+   "options": [
+    "a couple",
+    "departure",
+    "love",
+    "need"
+   ],
+   "audioClip": {
+    "storySlug": "arianna-starnutisce",
+    "storySource": "user",
+    "sentence": "Elisa sorride: “Siete già una coppia vera.",
+    "targetWord": "coppia",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cucinare",
+  "sentence": "Arianna [[cucina]] per tre",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to cook",
+   "options": [
+    "to cook",
+    "to show",
+    "to know",
+    "to switch on"
+   ],
+   "audioClip": {
+    "storySlug": "arianna-starnutisce",
+    "storySource": "user",
+    "sentence": "Arianna cucina per tre",
+    "targetWord": "cucina",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sugo",
+  "sentence": "prepara il [[sugo]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pasta sauce",
+   "options": [
+    "pasta sauce",
+    "a drinking fountain",
+    "a uniform",
+    "a cousin"
+   ],
+   "audioClip": {
+    "storySlug": "arianna-starnutisce",
+    "storySource": "user",
+    "sentence": "prepara il sugo",
+    "targetWord": "sugo",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pepe",
+  "sentence": "con molto [[pepe]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pepper",
+   "options": [
+    "pepper",
+    "a master or teacher",
+    "monday",
+    "luck"
+   ],
+   "audioClip": {
+    "storySlug": "arianna-starnutisce",
+    "storySource": "user",
+    "sentence": "con molto pepe",
+    "targetWord": "pepe",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "salute",
+  "sentence": "Poi starnutisce ancora, e Davide ride: “[[Salute]]!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "health",
+   "options": [
+    "health",
+    "a list",
+    "a dog shelter",
+    "dinner"
+   ],
+   "audioClip": {
+    "storySlug": "arianna-starnutisce",
+    "storySource": "user",
+    "sentence": "Poi starnutisce ancora, e Davide ride: “Salute!",
+    "targetWord": "Salute",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "medicina",
+  "sentence": "Arianna ha preso una [[medicina]], e dice piano:",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "medicine",
+   "options": [
+    "medicine",
+    "the return",
+    "life",
+    "a doctor"
+   ],
+   "audioClip": {
+    "storySlug": "arianna-starnutisce",
+    "storySource": "user",
+    "sentence": "Arianna ha preso una medicina, e dice piano:",
+    "targetWord": "medicina",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lavare",
+  "sentence": "Davide [[lava]] i piatti in silenzio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to wash",
+   "options": [
+    "to wash",
+    "to enter",
+    "to come",
+    "to make a mistake"
+   ],
+   "audioClip": {
+    "storySlug": "arianna-starnutisce",
+    "storySource": "user",
+    "sentence": "Davide lava i piatti in silenzio.",
+    "targetWord": "lava",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]
