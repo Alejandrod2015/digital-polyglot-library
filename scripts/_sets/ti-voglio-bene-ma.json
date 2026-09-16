@@ -306,22 +306,22 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "davanti a",
-    "sentence": "Il tovagliolo è [[davanti a]] lei.",
+    "word": "il tovagliolo",
+    "sentence": "Matteo apre il [[tovagliolo]] sul tavolo.",
     "payload": {
-      "answer": "in front of",
+      "answer": "napkin",
       "prompt": "Choose the meaning in context.",
       "options": [
-        "in front of",
-        "behind",
-        "next to",
-        "under"
+        "napkin",
+        "blanket",
+        "envelope",
+        "newspaper"
       ],
       "audioClip": {
         "language": "italian",
-        "sentence": "Il tovagliolo è davanti a lei.",
+        "sentence": "Matteo apre il tovagliolo sul tavolo.",
         "storySlug": "ti-voglio-bene-ma",
-        "targetWord": "davanti a",
+        "targetWord": "tovagliolo",
         "storySource": "user"
       }
     },
