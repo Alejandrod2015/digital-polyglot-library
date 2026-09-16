@@ -1,0 +1,462 @@
+[
+  {
+    "topic": "music-and-bands",
+    "slotIndex": 0,
+    "title": "¿Tocamos otra vez?",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "Lorena is in the middle of a driving lesson when someone knocks on the car window. It is Rubén, her old friend from university. They played in a band together, but they have not spoken for fourteen years. He has a paper from the city in his hand and a question she does not want to answer.",
+    "text": "Alguien golpeó la ventanilla del coche. Lorena, una profesora de autoescuela de Salamanca, estaba explicando una rotonda a un alumno. Levantó la vista y vio a Rubén. Hacía catorce años que no hablaban.\n\nRubén era un bombero de la ciudad. Traía un papel del ayuntamiento. “Buscan grupos para las Ferias de septiembre”, dijo. “¿Tocamos otra vez, como antes?”\n\nA Lorena se le puso roja la cara. No quería hablar de 2012 delante del alumno. “No, Rubén. Tengo clase hasta las ocho”, contestó, y apretó las llaves, que sonaron.\n\nRubén sacó de su mochila un disco con una rana dibujada, la de la Universidad. “Son nuestras canciones de los jueves. Es la única copia y ahora es tuya”, añadió en voz baja.\n\nLorena guardó el disco en la guantera sin decir nada. “Seguimos con la clase. Ahora giramos a la derecha”, le dijo al alumno. En el espejo, Rubén se quedó quieto en la acera.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "golpear",
+        "surface": "golpeó",
+        "definition": "To hit something hard with your hand, for example a window.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la ventanilla",
+        "surface": "ventanilla",
+        "definition": "The small window in the door of a car or a bus.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "explicar",
+        "surface": "explicando",
+        "definition": "To tell someone how something works so that they can understand it.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "levantar la vista",
+        "surface": "Levantó la vista",
+        "definition": "To look up from what you are doing at that moment.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el bombero",
+        "surface": "bombero",
+        "definition": "A firefighter; a person whose job is to put out fires.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "traer",
+        "surface": "Traía",
+        "definition": "To bring something with you when you come to a place.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "buscar",
+        "surface": "Buscan",
+        "definition": "To look for someone or something that you need or want.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el grupo",
+        "surface": "grupos",
+        "definition": "A band; a small group of people who play music together.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "otra vez",
+        "surface": "otra vez",
+        "definition": "Again; one more time, the same way as it happened before.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "ponerse rojo",
+        "surface": "se le puso roja",
+        "definition": "To go red in the face, for example because of shame or anger.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la clase",
+        "surface": "clase",
+        "definition": "A lesson; here, a driving lesson with a student in the car.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "apretar",
+        "surface": "apretó",
+        "definition": "To hold something very hard and tight inside your hand.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "sacar",
+        "surface": "Sacó",
+        "definition": "To take something out of a bag, a box or a pocket.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el disco",
+        "surface": "disco",
+        "definition": "A CD; a round flat disc with recorded music on it.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la rana",
+        "surface": "rana",
+        "register": "cultural",
+        "definition": "Frog; a small stone frog hidden on Salamanca University's famous old front wall.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "único",
+        "surface": "única",
+        "definition": "Only; there is just one of it and no other one.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "en voz baja",
+        "surface": "en voz baja",
+        "definition": "Quietly; speaking softly so that other people cannot hear you well.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "guardar",
+        "surface": "guardó",
+        "definition": "To put something away in a safe place so you keep it.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "sin decir nada",
+        "surface": "sin decir nada",
+        "definition": "Without saying a single word; staying completely silent about something.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "quedarse quieto",
+        "surface": "se quedó quieto",
+        "definition": "To stay in the same place without moving your body at all.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "music-and-bands",
+    "slotIndex": 1,
+    "title": "Casi a la una",
+    "arcType": "reframe-turn",
+    "synopsis": "Late at night, Lorena sits on the floor of her flat with the old CD and her student guitar. The songs take her back to the years when she and Rubén played every week. She tries to play along, but her fingers and the old machine do not help her, and something cannot be saved.",
+    "text": "El reproductor viejo hizo un ruido raro y, por fin, empezó la primera canción. Lorena estaba sentada en el suelo de su piso junto al Tormes, con la vieja guitarra de la universidad.\n\nEn la grabación, su voz sonaba joven. “¿De verdad esa soy yo?”, preguntó Lorena en voz alta. Sintió un nudo en la garganta y subió el volumen. Rubén tocaba la batería demasiado rápido, como siempre.\n\nLorena intentó tocar con ellos. Una cuerda estaba rota y sus dedos ya no recordaban nada. Entonces el disco saltó, repitió tres veces una palabra y se paró.\n\nCasi a la una, Lorena llamó a Rubén. Él contestó medio dormido. “El disco se ha roto. Lo siento, era la única copia”, dijo ella. Rubén tardó en hablar. “No importa, Lore. Las canciones las tenemos en la cabeza.” “¿El jueves a qué hora?”, preguntó Lorena. “A las siete, en mi garaje. Yo llevo cuerdas nuevas”, contestó él.",
+    "vocab": [
+      {
+        "type": "expression",
+        "word": "por fin",
+        "surface": "por fin",
+        "definition": "At last; something finally happens after you wait for some time.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "empezar",
+        "surface": "empezó",
+        "definition": "To start; the moment when something begins to happen or play.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el piso",
+        "surface": "piso",
+        "definition": "A flat; a home on one floor of a bigger building.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "el Tormes",
+        "surface": "Tormes",
+        "register": "cultural",
+        "definition": "The river that runs through Salamanca, next to its old Roman bridge.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la universidad",
+        "surface": "universidad",
+        "definition": "University; the place where people study after school, like Lorena did.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "joven",
+        "surface": "joven",
+        "definition": "Young; from the time when a person was around twenty years old.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "un nudo en la garganta",
+        "surface": "un nudo en la garganta",
+        "definition": "A lump in your throat; the feeling when you almost start crying.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la batería",
+        "surface": "batería",
+        "definition": "The drums; the set of drums that one person plays in a band.",
+        "anchor": true
+      },
+      {
+        "type": "adverb",
+        "word": "demasiado",
+        "surface": "demasiado",
+        "definition": "Too much; more than is right, good or comfortable for the song.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "como siempre",
+        "surface": "como siempre",
+        "definition": "As always; in the same way as every other time before.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "intentar",
+        "surface": "intentó",
+        "definition": "To try to do something, especially something that is not easy.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la cuerda",
+        "surface": "cuerda",
+        "definition": "A string; one of the thin lines on a guitar that make sound.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "roto",
+        "surface": "rota",
+        "definition": "Broken; damaged, so it does not work or play any more.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "recordar",
+        "surface": "recordaban",
+        "definition": "To remember; to still have something in your mind from before.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "repetir",
+        "surface": "repitió",
+        "definition": "To say or do the same thing again, one more time.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "llamar",
+        "surface": "llamó",
+        "definition": "To phone someone; to call a person on the telephone.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "dormido",
+        "surface": "dormido",
+        "definition": "Asleep, or almost asleep; not completely awake yet in the night.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "lo siento",
+        "surface": "Lo siento",
+        "definition": "I am sorry; what you say when something bad is your fault.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "tardar",
+        "surface": "tardó",
+        "definition": "To take some time before you do or say something.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "no importa",
+        "surface": "No importa",
+        "definition": "It does not matter; it is not a real problem for me.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "music-and-bands",
+    "slotIndex": 2,
+    "title": "Ya no hay sábados libres",
+    "arcType": "harmonic-close",
+    "synopsis": "Lorena goes to Rubén's garage for the first practice in fourteen years. Their hands are slow, they make mistakes, and they only talk about cables and rhythm, never about the past. When the old song finally comes back, the band needs more time, and Lorena has to give something up.",
+    "text": "El garaje de Rubén, en el Barrio del Oeste, olía a gasolina y a café. Dentro esperaban la batería y dos altavoces enormes.\n\nLorena llegó tarde, con la guitarra. “Perdona. Tenía clase hasta las siete. ¿Estás preparado?”, preguntó. “Desde 2012”, contestó Rubén.\n\nEnchufaron los cables y empezaron. Rubén iba lento y Lorena se equivocó dos veces. Solo hablaban de cables y de ritmo. “Más rápido, Rubén”, pidió ella.\n\nA la cuarta vez, la melodía volvió entera. A Lorena le pareció tener veintidós años, y cantó con los ojos cerrados. “¿Ves? Todavía te acuerdas de todo”, dijo Rubén, riéndose detrás de la batería.\n\n“Para las Ferias necesitamos ensayar jueves y sábados”, dijo Rubén. Lorena pensó en sus alumnos del sábado, los que mejor pagaban. Luego escribió a su jefa: “Los sábados por la tarde ya no puedo.”\n\nLorena firmó el papel del ayuntamiento. “¿Qué nombre ponemos?”, preguntó Rubén. Ella escribió despacio: La Rana.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "oler",
+        "surface": "olía",
+        "definition": "To smell; to have a smell that you notice, good or bad.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el Barrio del Oeste",
+        "surface": "Barrio del Oeste",
+        "register": "cultural",
+        "definition": "A Salamanca neighbourhood famous for the big paintings on its street walls.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "enorme",
+        "surface": "enormes",
+        "definition": "Very, very big; much bigger than a normal thing of its kind.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el altavoz",
+        "surface": "altavoces",
+        "definition": "A speaker; a box that makes the sound of music much louder.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "llegar tarde",
+        "surface": "llegó tarde",
+        "definition": "To arrive late, after the time that you agreed with someone.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "perdona",
+        "surface": "Perdona",
+        "definition": "Sorry; a short, friendly way to say sorry to a friend.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "preparado",
+        "surface": "preparado",
+        "definition": "Ready; with everything done so you can start at any moment.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "enchufar",
+        "surface": "Enchufaron",
+        "definition": "To plug in; to connect a machine or a guitar to electricity.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el cable",
+        "surface": "cables",
+        "definition": "A long wire that connects a guitar or a speaker to power.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "equivocarse",
+        "surface": "se equivocó",
+        "definition": "To make a mistake; to do something the wrong way by accident.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el ritmo",
+        "surface": "ritmo",
+        "definition": "Rhythm; the speed and the regular beat of a song or music.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la melodía",
+        "surface": "melodía",
+        "definition": "The tune of a song; the part of the music you can sing.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "reírse",
+        "surface": "riéndose",
+        "definition": "To laugh; to make happy sounds because something is funny or nice.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "todavía",
+        "surface": "Todavía",
+        "definition": "Still; something continues from a time before until now.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "acordarse",
+        "surface": "acuerdas",
+        "definition": "To remember something; to bring something back into your mind.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "necesitar",
+        "surface": "necesitamos",
+        "definition": "To need; to have to have something because it is important.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "pensar en",
+        "surface": "pensó en",
+        "definition": "To think about someone or something, and keep it in your mind.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la jefa",
+        "surface": "jefa",
+        "definition": "The boss; the woman who is in charge of you at work.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "ya no",
+        "surface": "ya no",
+        "definition": "Not any more; something was true before but it stops now.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "firmar",
+        "surface": "firmó",
+        "definition": "To sign; to write your name at the bottom of a paper.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "despacio",
+        "surface": "despacio",
+        "definition": "Slowly; not fast, taking your time to do something carefully.",
+        "anchor": false
+      }
+    ]
+  }
+]

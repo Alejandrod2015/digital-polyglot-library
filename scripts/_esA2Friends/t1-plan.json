@@ -1,0 +1,13 @@
+{
+  "tipo": "Friends",
+  "nivel": "a2",
+  "variante": "spain",
+  "registro": "tenso y contenido: dos personas que llevan catorce anos sin hablarse y hablan de cables, cuerdas y horarios para no hablar de 2012",
+  "espina": "Lorena y Ruben tenian un grupo en la universidad, La Rana, y Lorena no aparecio en su concierto de las Ferias de 2012; en 2026 Ruben la busca para volver a tocar en las Ferias de septiembre, y cada tema le cuesta algo a uno de los dos hasta que en el tema 7 Lorena cuenta por que no fue.",
+  "recursos": "A2: flashback marcado (En aquella epoca, en 2012), espejo concreto (el espejo del coche con Ruben quieto), imperfecto habitual para 2012 frente al indefinido de 2026. Narracion en pasado. Parrafos 5, 4 y 6. Franjas: manana de clase, casi la una de la noche, jueves por la tarde.",
+  "historias": [
+    { "slot": "0", "quiere": "Ruben quiere que Lorena vuelva a tocar con el en las Ferias de septiembre", "impide": "Lorena no quiere hablar de 2012, y menos en mitad de una clase con un alumno delante", "cuesta": "Ruben le da el unico disco con las canciones de los jueves, y ya no lo tiene", "cambia": "Lorena dice que no, pero guarda el disco en la guantera", "emocion": "verguenza con rabia: se le pone roja la cara porque Ruben nombra 2012 delante del alumno, y aprieta las llaves del coche" },
+    { "slot": "1", "quiere": "Lorena quiere saber si todavia puede tocar las canciones del disco", "impide": "una cuerda rota, los dedos que ya no recuerdan los acordes y un reproductor viejo", "cuesta": "el disco salta, se para y no vuelve a sonar: la unica grabacion de La Rana se pierde", "cambia": "Lorena llama a Ruben casi a la una y pregunta a que hora es el jueves", "emocion": "nostalgia: siente un nudo en la garganta al oir su voz de veintidos anos, y sube el volumen" },
+    { "slot": "2", "quiere": "Lorena y Ruben quieren tocar la cancion entera una vez antes de apuntarse", "impide": "catorce anos sin ensayar, un ritmo lento, errores y el silencio sobre 2012", "cuesta": "Lorena deja sus clases de los sabados por la tarde, las que mejor le pagan", "cambia": "firman la inscripcion de las Ferias con el nombre La Rana", "emocion": "alegria sorprendida: le parece tener veintidos anos otra vez porque la melodia vuelve entera, y canta con los ojos cerrados" }
+  ]
+}

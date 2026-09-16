@@ -1,0 +1,455 @@
+[
+  {
+    "topic": "driving-and-cars",
+    "slotIndex": 0,
+    "title": "La batería no cabe",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "The neighbours of the garage are tired of the noise, and the band needs to move the drums to a new practice room. Rubén's small car is not enough, so Lorena breaks a rule at work and borrows the driving school car. It is only for a few minutes, but in the city a few minutes can be too long.",
+    "text": "Un sábado, Olga, una gruista del ayuntamiento, daba vueltas con su grúa. Lorena y Rubén tenían un problema: el bombo no cabía en el coche pequeño de Rubén. Los vecinos se quejaban del ruido y Rubén encontró un local de ensayo al otro lado del río.\n\n“Mi jefa no me deja usar el coche de la autoescuela fuera de clase”, avisó Lorena. Rubén levantó la vista del móvil, sorprendido. “Es sábado y tu jefa no está. Diez minutos, Lore.”\n\nCargaron el bombo, y el platillo hizo una raya blanca en la puerta. A Lorena se le puso roja la cara. Condujo hasta el local y aparcó cerca, en la zona de carga y descarga.\n\n“Solo un poco, mientras subimos todo”, prometió Rubén. Veinte minutos después, Olga levantaba el coche con la grúa, con su chaleco amarillo. “¡Es el coche de mi trabajo!”, gritó Lorena. “Lo siento, ya no puedo bajarlo”, contestó Olga sin mirarla.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "caber",
+        "surface": "cabía",
+        "definition": "To fit; to have enough space inside something, like a car.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "pequeño",
+        "surface": "pequeño",
+        "definition": "Small; not big, with little space inside it.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "quejarse",
+        "surface": "quejaban",
+        "definition": "To complain; to say that something, like a noise, is bad.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el ensayo",
+        "surface": "ensayo",
+        "definition": "A practice; the time when a band plays together to get better.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "dejar",
+        "surface": "deja",
+        "definition": "To let; to give someone permission to do something.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "fuera de",
+        "surface": "fuera de",
+        "definition": "Outside of; not during a certain time, like working hours.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "cargar",
+        "surface": "Cargaron",
+        "definition": "To load; to put heavy things inside a car or a truck.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "sorprendido",
+        "surface": "sorprendido",
+        "definition": "Surprised; feeling that something is strange because you did not expect it.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el platillo",
+        "surface": "platillo",
+        "definition": "A cymbal; the round metal plate of a drum set.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "hacer una raya",
+        "surface": "hizo una raya",
+        "definition": "To make a scratch; to leave a long thin mark on something.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "bajar",
+        "surface": "bajarlo",
+        "definition": "To bring something down to a lower place, like a car from a truck.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "conducir",
+        "surface": "Condujo",
+        "definition": "To drive; to control a car and move it on the road.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "aparcar",
+        "surface": "aparcó",
+        "definition": "To park; to leave a car in a place and stop there.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la zona de carga y descarga",
+        "surface": "zona de carga y descarga",
+        "definition": "A Spanish street area only for vans to load and unload goods.",
+        "anchor": true,
+        "register": "cultural"
+      },
+      {
+        "type": "adverb",
+        "word": "después",
+        "surface": "después",
+        "definition": "Later; after some time has passed since something else happened.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el chaleco",
+        "surface": "chaleco",
+        "definition": "A vest; a jacket without sleeves, often bright for safety at work.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "amarillo",
+        "surface": "amarillo",
+        "definition": "Yellow; the bright colour of the sun or a lemon.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el trabajo",
+        "surface": "trabajo",
+        "definition": "Work; the place and the job where a person earns money.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "gritar",
+        "surface": "gritó",
+        "definition": "To shout; to speak very loudly because you are angry or scared.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "sin mirar",
+        "surface": "sin mirarla",
+        "definition": "Without looking at someone; keeping your eyes on something else.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "driving-and-cars",
+    "slotIndex": 1,
+    "title": "Olga no tiene prisa",
+    "arcType": "harmonic-close",
+    "synopsis": "Early the next week, Lorena and a very tired Rubén go to get the car back from the city. The office is full, the woman from the tow truck is there again, and the car is not in Lorena's name. To take it home, Lorena has to make a phone call she does not want to make.",
+    "text": "A las ocho, Lorena ya estaba en el depósito. Olía a gasolina y a café frío, y Rubén venía detrás, medio dormido.\n\nLa sala estaba llena. Detrás de la ventanilla estaba Olga otra vez. “¿El coche de la autoescuela? Siéntate, esto va lento”, murmuró. “Lo sabe todo el barrio”, contestó Rubén con un bostezo.\n\n“Está a nombre de la autoescuela. Necesito la firma de tu jefa”, explicó Olga.\n\nLorena llamó a su jefa desde la puerta. Repitió la historia dos veces: el bombo, la raya en la puerta, la grúa. Al otro lado no se oía nada.\n\nLuego la jefa mandó la firma. Olga contó el dinero: doscientos diez euros entre multa y grúa. “Pago yo, Lore”, dijo Rubén. “Esta vez no”, contestó Lorena, y pagó con su tarjeta.\n\nOlga les devolvió las llaves. “La próxima vez, aparca en la zona azul”, dijo, casi sonriendo. El coche salió con su raya blanca.",
+    "vocab": [
+      {
+        "type": "expression",
+        "word": "a las ocho",
+        "surface": "a las ocho",
+        "definition": "At eight o'clock; at that exact time in the morning.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "venir",
+        "surface": "venía",
+        "definition": "To come; to arrive at a place with someone or after them.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "medio",
+        "surface": "medio",
+        "definition": "Half; not completely, for example half asleep in the morning.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "lleno",
+        "surface": "llena",
+        "definition": "Full; with a lot of people inside, with no free space.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "sentarse",
+        "surface": "Siéntate",
+        "definition": "To sit down on a chair or a seat.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "todo el barrio",
+        "surface": "todo el barrio",
+        "definition": "The whole neighbourhood; all the people who live in the same area.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "a nombre de",
+        "surface": "a nombre de",
+        "definition": "In the name of; the official owner written on a document.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la historia",
+        "surface": "historia",
+        "definition": "A story; what happened, told from the beginning to the end.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "dos veces",
+        "surface": "dos veces",
+        "definition": "Twice; one time and then one more time again.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "al otro lado",
+        "surface": "Al otro lado",
+        "definition": "On the other side; here, the person at the other end of the phone.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "casi",
+        "surface": "Casi",
+        "definition": "Almost; very near to something, but not completely.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "mandar",
+        "surface": "mandó",
+        "definition": "To send something to someone, for example by phone.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el euro",
+        "surface": "euros",
+        "definition": "The money used in Spain and many other European countries.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "pagar",
+        "surface": "pagó",
+        "definition": "To pay; to give money for something you must pay for.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la tarjeta",
+        "surface": "tarjeta",
+        "definition": "A bank card; a small plastic card you use to pay.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "próximo",
+        "surface": "próxima",
+        "definition": "Next; the one that comes after this one.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la zona azul",
+        "surface": "zona azul",
+        "definition": "Blue zone; Spanish street parking where you pay for a short time.",
+        "anchor": true,
+        "register": "cultural"
+      },
+      {
+        "type": "verb",
+        "word": "sonreír",
+        "surface": "sonriendo",
+        "definition": "To smile; to move your mouth up a little because you are happy.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la sala",
+        "surface": "sala",
+        "definition": "A room; a big room where people wait for their turn.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "lento",
+        "surface": "lento",
+        "definition": "Slow; taking a long time, not fast at all.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "driving-and-cars",
+    "slotIndex": 2,
+    "title": "Un carrito para el bombo",
+    "arcType": "reframe-turn",
+    "synopsis": "Lorena's boss is angry about the scratch on the car and takes back her keys. Without a car, the band has a real problem before the next practice. Then Rubén remembers how they moved their things when they were students, and the two friends cross the old bridge in a very unusual way.",
+    "text": "La jefa esperaba en la autoescuela, con los brazos cruzados, y le pidió las llaves. Desde ese día, Lorena ya no podía llevar el coche fuera de clase.\n\nPor la noche, Rubén la llamó y ella le contó lo del coche. “Ya no tenemos coche, y el sábado hay ensayo”, dijo. Rubén tardó un rato. “Tengo una idea. ¿Te acuerdas del carrito del supermercado?”\n\nEn 2012, como siempre que tocaban en un bar del centro, llevaban los altavoces en un carrito. Lorena sonrió por primera vez.\n\nEl sábado cruzaron el Puente Romano empujando el bombo. Todo sonaba sobre las piedras. “Esto pesa mucho más que en 2012”, protestó Lorena. “Y nosotros también, Lore”, dijo Rubén.\n\nAl otro lado del Tormes, el local los esperaba con la puerta abierta. “¿Ves? No necesitamos coche”, gritó Rubén desde detrás del bombo. “Mañana me va a doler todo”, contestó Lorena, cansada, pero esta vez sonreía.",
+    "vocab": [
+      {
+        "type": "expression",
+        "word": "con los brazos cruzados",
+        "surface": "con los brazos cruzados",
+        "definition": "With your arms crossed, often because you are angry or waiting.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "pedir",
+        "surface": "pidió",
+        "definition": "To ask for something; to say that you want someone to give it.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "desde ese día",
+        "surface": "Desde ese día",
+        "definition": "From that day; starting on that day and continuing after it.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "llevar",
+        "surface": "llevar",
+        "definition": "To take something with you from one place to another.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "por la noche",
+        "surface": "Por la noche",
+        "definition": "At night; during the dark hours after the evening.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "tener una idea",
+        "surface": "Tengo una idea",
+        "definition": "To have an idea; to suddenly think of a possible solution.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el carrito",
+        "surface": "carrito",
+        "definition": "A shopping trolley; a small cart with wheels from a supermarket.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "el supermercado",
+        "surface": "supermercado",
+        "definition": "A supermarket; a big shop where you buy food and other things.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "el bar",
+        "surface": "bar",
+        "definition": "A bar; a place where people drink, eat something and listen to music.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "el centro",
+        "surface": "centro",
+        "definition": "The centre; the middle part of a city, with shops and bars.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "por primera vez",
+        "surface": "por primera vez",
+        "definition": "For the first time; something happens now and never before that.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "cruzar",
+        "surface": "cruzaron",
+        "definition": "To cross; to go from one side of a bridge to the other.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el Puente Romano",
+        "surface": "Puente Romano",
+        "definition": "Salamanca's old Roman stone bridge over the river Tormes, only for walking.",
+        "anchor": true,
+        "register": "cultural"
+      },
+      {
+        "type": "adjective",
+        "word": "cansado",
+        "surface": "cansada",
+        "definition": "Tired; feeling that your body needs to rest after hard work.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "sonar",
+        "surface": "sonaba",
+        "definition": "To make a sound; to be heard, for example wheels on stones.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la piedra",
+        "surface": "piedras",
+        "definition": "A stone; a small hard piece of rock, like on an old bridge.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "pesar",
+        "surface": "pesa",
+        "definition": "To weigh; to be heavy, difficult to carry or push.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "más que",
+        "surface": "más que",
+        "definition": "More than; used to compare two things or two moments in time.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "abierto",
+        "surface": "abierta",
+        "definition": "Open; not closed, so people can come in.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "también",
+        "surface": "también",
+        "definition": "Too, also; in the same way as someone else.",
+        "anchor": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,454 @@
+[
+  {
+    "topic": "money-and-loans",
+    "slotIndex": 0,
+    "title": "Huele a quemado",
+    "arcType": "daily-encounter",
+    "synopsis": "In the middle of a practice, the band's old amplifier starts to burn, and they cannot play at the festival without one. Lorena remembers a small sign in a shop window on a busy shopping street. The woman in the shop has exactly what they need, but the price is too high for two friends with normal jobs.",
+    "text": "Cuando el amplificador viejo se quemó en medio del ensayo, Lorena se acordó de un anuncio. Estaba en el escaparate de una óptica de la calle Toro, debajo de unas gafas.\n\nDetrás del mostrador estaba Raquel, una óptica de pelo castaño con canas. Rubén traía el amplificador quemado en la mano, y todavía olía a humo.\n\n“Se quemó en medio de una canción”, explicó Rubén, un poco nervioso. “Y para las Ferias necesitamos uno.” Raquel abrió la puerta de atrás. “Este es de mi hermano. Ya no toca, pero todavía funciona.”\n\nRubén lo enchufó con cuidado y probó la guitarra de Lorena. El sonido salió fuerte y limpio. “¿Cuánto cuesta?”, preguntó Lorena. “Cuatrocientos euros. Es un buen precio”, contestó Raquel.\n\nLorena y Rubén no tenían tanto dinero. “Podéis pagarlo a plazos, cien euros al mes”, dijo Raquel, sonriendo. Lorena firmó la oferta, y el amplificador de 2012 se quedó en la basura.",
+    "vocab": [
+      {
+        "type": "expression",
+        "word": "en medio de",
+        "surface": "en medio de",
+        "definition": "In the middle of; while something is still happening.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el escaparate",
+        "surface": "escaparate",
+        "definition": "A shop window; the glass at the front where a shop shows things.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la calle Toro",
+        "surface": "calle Toro",
+        "definition": "A busy shopping street in the old centre of Salamanca.",
+        "anchor": true,
+        "register": "cultural"
+      },
+      {
+        "type": "noun",
+        "word": "las gafas",
+        "surface": "gafas",
+        "definition": "Glasses; the two lenses you wear in front of your eyes to see.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "de pelo castaño",
+        "surface": "de pelo castaño",
+        "definition": "With brown hair; used to describe what a person looks like.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el sonido",
+        "surface": "sonido",
+        "definition": "The sound; what you hear when an instrument or a machine plays.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la canción",
+        "surface": "canción",
+        "definition": "A song; a short piece of music with words that people sing.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "nervioso",
+        "surface": "nervioso",
+        "definition": "Nervous; a little worried and not calm about something.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "de atrás",
+        "surface": "de atrás",
+        "definition": "At the back; the part of a shop or car that is behind.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "con cuidado",
+        "surface": "con cuidado",
+        "definition": "Carefully; slowly and paying attention so nothing breaks.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "probar",
+        "surface": "probó",
+        "definition": "To try; to use something for a moment to see if it works.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "fuerte",
+        "surface": "fuerte",
+        "definition": "Loud or strong; with a lot of power or volume.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "limpio",
+        "surface": "limpio",
+        "definition": "Clean; here, a clear sound without any strange noise in it.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "costar",
+        "surface": "cuesta",
+        "definition": "To cost; to have a price that you must pay for something.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "preguntar",
+        "surface": "preguntó",
+        "definition": "To ask; to say something because you want an answer.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "un buen precio",
+        "surface": "un buen precio",
+        "definition": "A good price; not too expensive for what you get.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "tanto",
+        "surface": "tanto",
+        "definition": "So much; a quantity as big as the one someone has just said.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "a plazos",
+        "surface": "a plazos",
+        "definition": "In instalments; paying a little money every month, not everything at once.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "al mes",
+        "surface": "al mes",
+        "definition": "Per month; every month, one time in each month.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la oferta",
+        "surface": "oferta",
+        "definition": "An offer; a paper with a price and the conditions to buy.",
+        "anchor": true
+      }
+    ]
+  },
+  {
+    "topic": "money-and-loans",
+    "slotIndex": 1,
+    "title": "Las gafas pueden esperar",
+    "arcType": "reframe-turn",
+    "synopsis": "Lorena has saved money for months to buy new glasses, and she also has to make the first payment for the band's amplifier. At the shop, Rubén arrives with bad news about his money this month. Lorena makes a quick decision, and her friend has to accept something that hurts his pride.",
+    "text": "Sus gafas viejas tenían un cristal rayado, y Lorena ahorraba desde junio para unas nuevas. El viernes fue a la óptica con ese dinero y con el primer plazo del amplificador.\n\nRubén llegó tarde y se sentó a su lado. “No llego a fin de mes, Lore. El taller me ha cobrado doscientos euros por el coche”, confesó en voz baja.\n\nLorena contó los billetes con calma. Luego pagó los dos plazos, su mitad y la de Rubén, y miró las gafas nuevas del escaparate. “Mis gafas pueden esperar”, le dijo a Raquel, que le trajo un café sin preguntar nada.\n\nRubén miró el recibo y no lo tocó, con la boca seca. “No quiero deberte dinero”, dijo al final. “No es un regalo. Me lo devuelves en septiembre, y ya está”, contestó Lorena, y le dio un golpe suave en el brazo.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "ahorrar",
+        "surface": "ahorraba",
+        "definition": "To save money; to keep money and not spend it.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "desde junio",
+        "surface": "desde junio",
+        "definition": "Since June; starting in June and continuing until now.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el viernes",
+        "surface": "viernes",
+        "definition": "Friday; the day of the week that comes before the weekend.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "primero",
+        "surface": "primer",
+        "definition": "First; the one that comes before all the others in order.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "a su lado",
+        "surface": "a su lado",
+        "definition": "Next to her; in the place just beside another person.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "llegar a fin de mes",
+        "surface": "llego a fin de mes",
+        "definition": "To make ends meet; to have enough money until the month ends.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "cobrar",
+        "surface": "cobrado",
+        "definition": "To charge; to ask someone to pay money for a service.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "con calma",
+        "surface": "con calma",
+        "definition": "Calmly; slowly and without nerves, taking the time you need.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la mitad",
+        "surface": "mitad",
+        "definition": "Half; one of two equal parts of something, like a payment.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "nuevo",
+        "surface": "nuevas",
+        "definition": "New; bought recently and never used before by anyone.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "mirar",
+        "surface": "miró",
+        "definition": "To look at something or someone with your eyes.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "sin preguntar nada",
+        "surface": "sin preguntar nada",
+        "definition": "Without asking anything; quietly, without wanting to know more.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "seco",
+        "surface": "seca",
+        "definition": "Dry; with no water, like your mouth when you are nervous.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "deber",
+        "surface": "deberte",
+        "definition": "To owe; to have to give money back to someone.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "al final",
+        "surface": "al final",
+        "definition": "In the end; after some time, when something finally happens.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "suave",
+        "surface": "suave",
+        "definition": "Soft, gentle; done with little force, in a kind way.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "septiembre",
+        "surface": "septiembre",
+        "definition": "September; the ninth month of the year, at the end of summer.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "y ya está",
+        "surface": "y ya está",
+        "definition": "And that is it; used to say that nothing more is needed.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el golpe",
+        "surface": "golpe",
+        "definition": "A hit; a quick touch with the hand, here a friendly one.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "querer",
+        "surface": "quiero",
+        "definition": "To want; to wish to have or to do something.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "money-and-loans",
+    "slotIndex": 2,
+    "title": "Rubén vende la moto",
+    "arcType": "harmonic-close",
+    "synopsis": "Rubén wants to give Lorena her money back, and he has only one thing that is worth enough: the motorbike he has had since his student years. Nobody seems to want it. When he finally has the money, Lorena does something with it that neither of them expected, and the band's practice sounds better than ever.",
+    "text": "Nadie llamaba por el anuncio de la moto. Rubén la tenía desde 2012, cuando iba con Lorena a los conciertos, con la guitarra entre los dos.\n\nPor fin, un domingo por la noche, llamó un chico de Zamora. Vino, probó la moto por todas partes y pagó en efectivo.\n\nEl lunes, Rubén llegó al local con un sobre. “Aquí están mis dos plazos”, anunció, y lo dejó encima del amplificador. “¿Y la moto? ¿Qué has hecho, Rubén?”, preguntó Lorena.\n\n“Ya no tengo moto. Ahora voy en autobús, como un estudiante”, contestó Rubén. “No pasa nada, de verdad. Me gusta el autobús.”\n\nLorena no guardó el dinero. Buscó una caja de zapatos, dibujó una rana verde y metió el sobre dentro. “Es la caja de La Rana. Para cuerdas y multas”, explicó.\n\nEn el ensayo, el amplificador nuevo sonaba más fuerte que nunca. Rubén tocaba con los ojos cerrados, sin moto y sin dinero, pero feliz.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "la moto",
+        "surface": "moto",
+        "definition": "A motorbike; a vehicle with two wheels and an engine.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "entre los dos",
+        "surface": "entre los dos",
+        "definition": "Between the two of them; in the space in the middle of two people.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el domingo",
+        "surface": "domingo",
+        "definition": "Sunday; the last day of the week, when many people rest.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "Zamora",
+        "surface": "Zamora",
+        "definition": "A small city near Salamanca, about one hour away by car.",
+        "anchor": true,
+        "register": "cultural"
+      },
+      {
+        "type": "expression",
+        "word": "pagar en efectivo",
+        "surface": "pagó en efectivo",
+        "definition": "To pay in cash; to pay with notes and coins, not with a card.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el lunes",
+        "surface": "lunes",
+        "definition": "Monday; the first day of the working week.",
+        "anchor": true
+      },
+      {
+        "type": "adverb",
+        "word": "aquí",
+        "surface": "Aquí",
+        "definition": "Here; in this place, near the person who is speaking.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "encima",
+        "surface": "encima",
+        "definition": "On top; in a higher place, touching the thing below.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "ahora",
+        "surface": "Ahora",
+        "definition": "Now; at this moment, different from how it was before.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "ir en autobús",
+        "surface": "voy en autobús",
+        "definition": "To go by bus; to travel from one place to another on a bus.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el estudiante",
+        "surface": "estudiante",
+        "definition": "A student; a person who studies at a school or university.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "no pasa nada",
+        "surface": "No pasa nada",
+        "definition": "It is fine; there is no problem, so do not worry.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "de verdad",
+        "surface": "de verdad",
+        "definition": "Really, truly; used to say that you mean what you say.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "dibujar",
+        "surface": "dibujó",
+        "definition": "To draw; to make a picture with a pen or a pencil.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "meter",
+        "surface": "metió",
+        "definition": "To put something inside a box, a bag or a pocket.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "dentro",
+        "surface": "dentro",
+        "definition": "Inside; in the inner part of something, like a box.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el zapato",
+        "surface": "zapatos",
+        "definition": "A shoe; what you wear on your foot when you go outside.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "que nunca",
+        "surface": "que nunca",
+        "definition": "Than ever; more than at any other time before.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "sin dinero",
+        "surface": "sin dinero",
+        "definition": "Without money; having no money to spend at that moment.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "feliz",
+        "surface": "feliz",
+        "definition": "Happy; feeling very good and pleased about your life or a moment.",
+        "anchor": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,453 @@
+[
+  {
+    "topic": "phones-and-social-media",
+    "slotIndex": 0,
+    "title": "Una foto sin caras",
+    "arcType": "daily-encounter",
+    "synopsis": "Rubén wants the band to have a page on social media so that the neighbourhood knows they are back. Lorena agrees to a photo, but not with her face. The photo session goes badly, and then a stranger knocks on the garage door with something from the past that Lorena does not want to see.",
+    "text": "Rubén abrió un perfil de La Rana en una red social. Estaba detrás, con el móvil demasiado cerca de la cara. “Necesitamos una foto del grupo”, le dijo a Lorena.\n\n“Una foto sí, pero sin mi cara. Mis alumnos no pueden verla”, contestó ella. Rubén intentó hacerla desde una silla, pero se cayó, y la pantalla quedó rota. “No importa, todavía funciona”, avisó Rubén desde el suelo.\n\nLa foto salió sin caras: guitarra, baquetas y altavoces enormes. Rubén se equivocó con la contraseña tres veces, y Lorena la escribió despacio.\n\nEntonces alguien golpeó la puerta del garaje. Era Jaime, un programador del Barrio del Oeste, con el móvil en la mano. “He visto vuestra foto. ¡Yo estuve en las Ferias de 2012!”\n\nRubén se quedó quieto y Jaime sacó un móvil viejo: “Lo grabé todo”. Fuera hacía frío. “No quiero verlo, Rubén”, susurró, y guardó la guitarra.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "abrir",
+        "surface": "abrió",
+        "definition": "To open or start something new, like a page on the internet.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el perfil",
+        "surface": "perfil",
+        "definition": "A profile; a page about a person or a band on social media.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "red social",
+        "surface": "red social",
+        "definition": "Social media; a website or app where people share photos and videos.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "detrás",
+        "surface": "detrás",
+        "definition": "Behind; at the back of something, so it is in front of you.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "cerca",
+        "surface": "cerca",
+        "definition": "Near; at a very short distance from something or someone.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "contestar",
+        "surface": "contestó",
+        "definition": "To answer; to say something back when someone speaks to you.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "caerse",
+        "surface": "se cayó",
+        "definition": "To fall down to the ground by accident, for example from a chair.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la pantalla",
+        "surface": "pantalla",
+        "definition": "The screen; the glass part of a phone where you see things.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "quedar",
+        "surface": "quedó",
+        "definition": "To end up in a certain state after something happens.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "funcionar",
+        "surface": "funciona",
+        "definition": "To work; when a machine still does what it has to do.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "salir",
+        "surface": "salió",
+        "definition": "To turn out; how something is in the end, for example a photo.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la contraseña",
+        "surface": "contraseña",
+        "definition": "A password; the secret word you write to open an account.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "tres veces",
+        "surface": "tres veces",
+        "definition": "Three times; the same thing happens once, twice and then again.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "escribir",
+        "surface": "escribió",
+        "definition": "To write letters or words, for example with a keyboard.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "entonces",
+        "surface": "Entonces",
+        "definition": "Then; at that moment, just after something else happened.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el garaje",
+        "surface": "garaje",
+        "definition": "A garage; a room for a car, here used for band practice.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "en la mano",
+        "surface": "en la mano",
+        "definition": "In your hand; holding something with your fingers at that moment.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "las Ferias",
+        "surface": "Ferias",
+        "definition": "Salamanca's big city festival in September, with concerts, food and fairs.",
+        "anchor": true,
+        "register": "cultural"
+      },
+      {
+        "type": "adjective",
+        "word": "viejo",
+        "surface": "viejo",
+        "definition": "Old; used for many years and not new any more.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el frío",
+        "surface": "frío",
+        "definition": "Cold; the feeling of low temperature, for example in your hands.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "phones-and-social-media",
+    "slotIndex": 1,
+    "title": "Jaime lo grabó todo",
+    "arcType": "late-reveal",
+    "synopsis": "Jaime has an old phone with a video of the concert from years ago. Nobody has watched it together until today. On the broken screen, Lorena sees for the first time what happened on the night she was not there, and Rubén must decide if other people can see it too.",
+    "text": "Jaime puso su móvil viejo sobre un altavoz, pero no tenía batería. Rubén y Lorena buscaron un cargador por todas partes, y por fin Rubén encontró uno en una caja. “Mi garaje no es una tienda”, protestó, riéndose.\n\nEl vídeo empezó con mucho ruido. En el escenario solo estaba Rubén, joven y delgado, detrás de su batería. “Yo estaba en primera fila”, contó Jaime. “Rubén esperó diez minutos a su cantante. Luego empezó solo.”\n\nEn la pantalla rota, aquel Rubén de 2012 tocaba demasiado rápido. Se le cayeron las baquetas y la gente se rio. Lorena apretó los labios, con un dolor en el pecho: en el vídeo, Rubén la buscaba a ella.\n\n“Lo siento”, dijo Lorena despacio. “No importa”, contestó Rubén sin mirarla. “¿Lo subo a internet? Mucha gente de aquel concierto vive todavía en el barrio”, preguntó Jaime. Rubén tardó un poco. “Súbelo. Es la verdad.” Luego apagó el móvil viejo.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "poner",
+        "surface": "puso",
+        "definition": "To put something in a place, for example on a table.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el cargador",
+        "surface": "cargador",
+        "definition": "A charger; the cable that gives power back to a phone.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "por todas partes",
+        "surface": "por todas partes",
+        "definition": "Everywhere; in every place, looking in all the corners.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "encontrar",
+        "surface": "encontró",
+        "definition": "To find something after you look for it for some time.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el escenario",
+        "surface": "escenario",
+        "definition": "The stage; the high place where a band plays for people.",
+        "anchor": true
+      },
+      {
+        "type": "adverb",
+        "word": "solo",
+        "surface": "solo",
+        "definition": "Only; nobody else was there, just this one person.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "delgado",
+        "surface": "delgado",
+        "definition": "Thin; with a slim body, not fat at all.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "primera fila",
+        "surface": "primera fila",
+        "definition": "The front row; the place closest to the stage at a concert.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "contar",
+        "surface": "contó",
+        "definition": "To tell; to say what happened in a story or in the past.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "esperar",
+        "surface": "esperó",
+        "definition": "To wait for someone who has not arrived yet.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la cantante",
+        "surface": "cantante",
+        "definition": "The singer; the person who sings the songs in a band.",
+        "anchor": true
+      },
+      {
+        "type": "adverb",
+        "word": "luego",
+        "surface": "Luego",
+        "definition": "Then, later; after that moment, when some time has passed.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "tocar",
+        "surface": "tocaba",
+        "definition": "To play a musical instrument, for example the drums or guitar.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "rápido",
+        "surface": "rápido",
+        "definition": "Fast; quickly, at a high speed, for example when playing music.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el concierto",
+        "surface": "concierto",
+        "definition": "A concert; a show where a band plays music for many people.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "el dolor",
+        "surface": "dolor",
+        "definition": "Pain; the bad feeling in part of your body when it hurts.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "el barrio",
+        "surface": "barrio",
+        "definition": "A neighbourhood; the area of a city where people live together.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "mucha gente",
+        "surface": "Mucha gente",
+        "definition": "A lot of people; many people together or in the same place.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "subir",
+        "surface": "subo",
+        "definition": "To upload; to put a video or photo on the internet.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "un poco",
+        "surface": "un poco",
+        "definition": "A little; for a short time or in a small amount.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "phones-and-social-media",
+    "slotIndex": 2,
+    "title": "Ahora le llaman Rana",
+    "arcType": "reframe-turn",
+    "synopsis": "The next day, the old video is everywhere in the neighbourhood. Lorena finds it by accident on a student's phone during a driving lesson and reads what people write about it. She wants it to disappear, but Rubén sees the video in a different way, even after the joke at his work.",
+    "text": "En un semáforo en rojo, la alumna de Lorena le enseñó el móvil, muy contenta. Era el vídeo de Jaime, con tres mil visitas y muchos comentarios.\n\nUno decía: el batería más triste de Salamanca. Otro solo decía: ¿y la cantante? Lorena le devolvió el móvil sin decir nada.\n\nA mediodía, Lorena llamó a Rubén. Detrás de él se oía el ruido de una sirena. “En el parque de bomberos ya no me llaman Rubén”, explicó él. “Ahora soy la Rana. Hasta el jefe me llama así.”\n\n“Lo siento. ¿Lo borramos?”, preguntó Lorena. “Perdona, pero no”, respondió Rubén. “Todo el barrio lo comparte. Así la gente sabe que volvemos para las Ferias.”\n\nLorena pensó en la chica que no llegó al escenario en 2012. “¿Y si sale mal otra vez?”, preguntó Lorena, muy seria. “Esta vez estamos los dos”, dijo Rubén.\n\nAntes de dormir, Lorena escribió debajo del vídeo: 2012, sin cantante; 2026, con Lorena.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "el semáforo",
+        "surface": "semáforo",
+        "definition": "A traffic light; red means stop and green means you can go.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "en rojo",
+        "surface": "en rojo",
+        "definition": "On red; when the traffic light tells cars to stop and wait.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la alumna",
+        "surface": "alumna",
+        "definition": "A student; here, a woman who is learning to drive a car.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "enseñar",
+        "surface": "enseñó",
+        "definition": "To show; to let someone look at something you have.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la visita",
+        "surface": "visitas",
+        "definition": "A view; one time that a person watches a video online.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "triste",
+        "surface": "triste",
+        "definition": "Sad; feeling bad, or making other people feel bad and unhappy.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "devolver",
+        "surface": "devolvió",
+        "definition": "To give something back to the person it belongs to.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el mediodía",
+        "surface": "mediodía",
+        "definition": "Midday; the middle of the day, around twelve or one o'clock.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "oír",
+        "surface": "oía",
+        "definition": "To hear; to notice a sound with your ears.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la sirena",
+        "surface": "sirena",
+        "definition": "A siren; the loud sound of a fire engine or an ambulance.",
+        "anchor": true
+      },
+      {
+        "type": "adverb",
+        "word": "hasta",
+        "surface": "Hasta",
+        "definition": "Even; used when something is surprising, like the boss doing it too.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el jefe",
+        "surface": "jefe",
+        "definition": "The boss; the man who is in charge of the others at work.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "borrar",
+        "surface": "borramos",
+        "definition": "To delete; to make a photo or video disappear from the internet.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "compartir",
+        "surface": "comparte",
+        "definition": "To share; to send a video or photo so other people see it.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "saber",
+        "surface": "sabe",
+        "definition": "To know; to have some information about something.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "volver",
+        "surface": "volvemos",
+        "definition": "To come back; to return to something you did before.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "llegar",
+        "surface": "llegó",
+        "definition": "To arrive; to get to a place, for example a stage.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "salir mal",
+        "surface": "sale mal",
+        "definition": "To go wrong; when something does not happen the way you wanted.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "esta vez",
+        "surface": "Esta vez",
+        "definition": "This time; now, different from the other times before.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "debajo",
+        "surface": "debajo",
+        "definition": "Under, below; in a lower place than something else.",
+        "anchor": false
+      }
+    ]
+  }
+]

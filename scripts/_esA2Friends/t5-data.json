@@ -1,0 +1,452 @@
+[
+  {
+    "topic": "clothes-and-looks",
+    "slotIndex": 0,
+    "title": "La chaqueta ya no cierra",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "The city wants a photo and a drawing of each band for the festival programme. Lorena tried on her old red jacket from her student years, and it went badly. The two friends visit a tattoo artist in their neighbourhood, and his notebook full of frogs gives the band a new face.",
+    "text": "Sergio era un tatuador del Barrio del Oeste, con los brazos llenos de dibujos. Aquella tarde tenía dos clientes raros en su estudio: Lorena y Rubén, sentados en un sofá pequeño. El estudio olía a tinta.\n\nRubén estaba explicando el problema. “El ayuntamiento nos mandó un correo. Buscan una foto de cada grupo y un dibujo para el programa de las Ferias.”\n\n“Y esta mañana me he probado mi chaqueta roja de 2012”, dijo Lorena, triste. “Ya no me cierra. Tiré de la cremallera y se rompió.” Sergio la escuchó con atención.\n\nLuego les enseñó un cuaderno con muchas ranas: ranas con gafas, con barba, con guitarra. “Tengo una idea”, anunció Sergio, y empezó a dibujar rápidamente.\n\nDiez minutos después, les enseñó una rana con una chaqueta roja abierta, delante de una batería. Lorena se rio por primera vez ese día. “Esa soy yo, pero más feliz”, dijo, con los ojos brillantes. Rubén también sonrió.",
+    "vocab": [
+      {
+        "type": "expression",
+        "word": "aquella tarde",
+        "surface": "Aquella tarde",
+        "definition": "That afternoon; on the afternoon of the day the story is about.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "lleno de",
+        "surface": "llenos de",
+        "definition": "Full of; with a lot of something, for example drawings on the skin.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "raro",
+        "surface": "raros",
+        "definition": "Strange, unusual; different from what you normally see.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el estudio",
+        "surface": "estudio",
+        "definition": "A studio; the room where an artist works, like a tattoo artist.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "el programa",
+        "surface": "programa",
+        "definition": "A programme; a small printed guide with the plan of a festival.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "esta mañana",
+        "surface": "esta mañana",
+        "definition": "This morning; earlier today, before the afternoon started.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la chaqueta",
+        "surface": "chaqueta",
+        "definition": "A jacket; a short coat you wear over a shirt or T-shirt.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "rojo",
+        "surface": "roja",
+        "definition": "Red; the colour of blood or of a tomato.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "cerrar",
+        "surface": "cierra",
+        "definition": "To close; here, when a jacket can be done up at the front.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "tirar",
+        "surface": "Tiré",
+        "definition": "To pull; to move something towards you with your hand.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la cremallera",
+        "surface": "cremallera",
+        "definition": "A zip; the metal or plastic line that closes a jacket.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "romperse",
+        "surface": "se rompió",
+        "definition": "To break; to stop working because a part is damaged.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "escuchar",
+        "surface": "escuchó",
+        "definition": "To listen; to pay attention to what someone says.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "con atención",
+        "surface": "con atención",
+        "definition": "Carefully, attentively; listening or looking without thinking of other things.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "brillante",
+        "surface": "brillantes",
+        "definition": "Shining, bright; here, eyes that shine because someone is happy or moved.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "rápidamente",
+        "surface": "rápidamente",
+        "definition": "Quickly; in a fast way, without taking much time.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "diez minutos después",
+        "surface": "Diez minutos después",
+        "definition": "Ten minutes later; after a short time of ten minutes.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "delante de",
+        "surface": "delante de",
+        "definition": "In front of; in the place before something, not behind it.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el dibujo",
+        "surface": "dibujo",
+        "definition": "A drawing; a picture made with a pen or a pencil.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "esa soy yo",
+        "surface": "Esa soy yo",
+        "definition": "That is me; what you say when you see yourself in a picture.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "clothes-and-looks",
+    "slotIndex": 1,
+    "title": "Rubén sin barba",
+    "arcType": "late-reveal",
+    "synopsis": "On the day of the band photo, Lorena and the tattoo artist wait at the studio door. A man they do not recognise walks towards them. Rubén has changed his face to look like the young drummer from the old picture, but the result is not what he expected, and Lorena has another idea.",
+    "text": "En la puerta del estudio, Lorena esperó a Rubén. Sergio ya estaba preparado con la cámara. Por la calle venía un hombre sin barba, con una camiseta negra. El sol de septiembre calentaba la acera.\n\n“¿Rubén? ¡Pareces otro!”, dijo Lorena. Sergio, sorprendido, bajó la cámara. “Estás más guapo, pero no te reconozco”, añadió.\n\n“Quería parecer el de 2012”, explicó Rubén, y se tocó la cara. “Hoy me he afeitado y en el espejo no me reconocía. ¿Y si la foto sale mal?”\n\nLorena buscó en su móvil la foto de 2012. Allí estaban los dos. Rubén era delgado y tenía el pelo largo, y Lorena llevaba la chaqueta roja.\n\n“Ya no somos esos chicos, Rubén. Hemos cambiado, y está bien”, insistió Lorena. “Siéntate aquí y hacemos la foto de ahora, juntos.”\n\nRubén se sentó a su lado, todavía tocándose la cara. Los dos se reían en la foto nueva, más que en 2012.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "la cámara",
+        "surface": "cámara",
+        "definition": "A camera; the machine you use to take photos.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "el hombre",
+        "surface": "hombre",
+        "definition": "A man; an adult male person, here someone Lorena does not recognise.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la barba",
+        "surface": "barba",
+        "definition": "A beard; the hair that grows on a man's face.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la camiseta",
+        "surface": "camiseta",
+        "definition": "A T-shirt; a light shirt with short sleeves and no buttons.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "negro",
+        "surface": "negra",
+        "definition": "Black; the darkest colour, like the sky at night.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "parecer otro",
+        "surface": "Pareces otro",
+        "definition": "To look like a different person; to look very changed.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "guapo",
+        "surface": "guapo",
+        "definition": "Good-looking; nice to look at, attractive to other people.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "reconocer",
+        "surface": "reconozco",
+        "definition": "To recognise; to know who someone is when you see them.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "tocarse",
+        "surface": "se tocó",
+        "definition": "To touch a part of your own body with your hand.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "hoy",
+        "surface": "Hoy",
+        "definition": "Today; on this day, not yesterday or tomorrow.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "afeitarse",
+        "surface": "afeitado",
+        "definition": "To shave; to cut the hair on your face with a razor.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "allí",
+        "surface": "Allí",
+        "definition": "There; in that place, a bit far from the speaker.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "los dos",
+        "surface": "los dos",
+        "definition": "Both of them; the two people together, one and the other.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el pelo",
+        "surface": "pelo",
+        "definition": "Hair; the soft lines that grow on the top of your head.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "largo",
+        "surface": "largo",
+        "definition": "Long; measuring a lot from one end to the other.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el chico",
+        "surface": "chicos",
+        "definition": "A young man; a boy or a man who is not old.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "cambiar",
+        "surface": "cambiado",
+        "definition": "To change; to become different from how you were before.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "hacer la foto",
+        "surface": "hacemos la foto",
+        "definition": "To take the photo; to use a camera to make a picture of people.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "de ahora",
+        "surface": "de ahora",
+        "definition": "Of now; from the present time, not from the past.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "juntos",
+        "surface": "juntos",
+        "definition": "Together; with each other, at the same time and place.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "clothes-and-looks",
+    "slotIndex": 2,
+    "title": "Un jersey amarillo",
+    "arcType": "harmonic-close",
+    "synopsis": "A week later, Lorena opens her wardrobe and looks at the broken red jacket from the past. She decides to do something she could not do for fourteen years. A few days after that, the festival programme comes out, and the band's new photo and drawing surprise many people in the neighbourhood.",
+    "text": "Una semana después, Lorena abrió el armario. Allí estaba la chaqueta roja, con la cremallera rota. Ya no le cabía, y pesaba más que toda su ropa.\n\nPensó un momento y decidió llevar la chaqueta a una tienda de segunda mano. Estaba llena y olía a polvo.\n\nLorena dejó la chaqueta y salió sin mirar atrás, con la bolsa ligera. Después, compró un jersey amarillo, barato, para ella.\n\nEl sábado salió el programa de las Ferias, y Rubén la llamó enseguida. “¿Lo has visto? Lo comparte todo el mundo en la red social. ¡Volvemos, Lore!”\n\nLorena miró el programa con el jersey amarillo puesto. “¿Y tu chaqueta roja?”, preguntó Rubén. “Ya no está. Ahora tengo un jersey amarillo: es feo, pero es ancho, cómodo y me queda bien. La próxima vez te lo pones tú”, respondió Lorena. Fuera, el sol daba en el jersey amarillo.",
+    "vocab": [
+      {
+        "type": "expression",
+        "word": "una semana después",
+        "surface": "Una semana después",
+        "definition": "A week later; seven days after something happened.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el armario",
+        "surface": "armario",
+        "definition": "A wardrobe; a tall piece of furniture where you keep clothes.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la ropa",
+        "surface": "ropa",
+        "definition": "Clothes; the things you wear, like shirts, trousers and jackets.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "pensar",
+        "surface": "Pensó",
+        "definition": "To think; to have an idea or say something in your head.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "decidir",
+        "surface": "decidió",
+        "definition": "To decide; to choose what you are going to do.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la tienda",
+        "surface": "tienda",
+        "definition": "A shop; a place where you can buy things.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "de segunda mano",
+        "surface": "de segunda mano",
+        "definition": "Second-hand; used before by another person and sold again.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "sin mirar atrás",
+        "surface": "sin mirar atrás",
+        "definition": "Without looking back; leaving a place or a past without regrets.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "ligero",
+        "surface": "ligera",
+        "definition": "Light; not heavy, so it is easy to carry in your hand.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "comprar",
+        "surface": "compró",
+        "definition": "To buy; to pay money to get something.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el jersey",
+        "surface": "jersey",
+        "definition": "A jumper; a warm piece of clothing for the top of your body.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "ancho",
+        "surface": "ancho",
+        "definition": "Wide, loose; not tight on your body, with a lot of space.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "cómodo",
+        "surface": "cómodo",
+        "definition": "Comfortable; nice to wear, it does not hurt or feel tight.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "barato",
+        "surface": "barato",
+        "definition": "Cheap; it does not cost a lot of money.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "enseguida",
+        "surface": "enseguida",
+        "definition": "Right away; very quickly, just after something happens.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "todo el mundo",
+        "surface": "todo el mundo",
+        "definition": "Everybody; all the people, or a very big number of people.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el sábado",
+        "surface": "sábado",
+        "definition": "Saturday; the day of the week after Friday, when many people rest.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "ponerse",
+        "surface": "pones",
+        "definition": "To put on clothes, like a jumper or a jacket.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "feo",
+        "surface": "feo",
+        "definition": "Ugly; not nice to look at, not beautiful at all.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "quedar bien",
+        "surface": "queda bien",
+        "definition": "To look good on someone, for example a piece of clothing.",
+        "anchor": false
+      }
+    ]
+  }
+]

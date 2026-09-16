@@ -729,6 +729,26 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "terminar","cerrar","decidir","cambiar","guardar","abrir",
 ]);
 
+// BLOQUE CURADO: SPANISH_A1_A2_CURATED (2026-09-15). Mismo metodo que el bloque
+// curado de italianA1A2.ts, con otra vara: el inventario de NOCIONES ESPECIFICAS
+// A1-A2 del Plan Curricular del Instituto Cervantes (PCIC, seccion 9,
+// cvc.cervantes.es/ensenanza/biblioteca_ele/plan_curricular/niveles/
+// 09_nociones_especificas_inventario_a1-a2.htm). Entra una palabra solo si una
+// historia del Friends ES spain A2 (docs/plan-es-a2-friends-spain.md) la usa como
+// plaza, faltaba arriba y el PCIC la pone en A1 o A2 CON EL SENTIDO de la
+// historia. Una linea por palabra con su nivel y su noción citados. Nada B1 o mas,
+// y nada que no use una historia: el resto de palabras de escena va en el texto.
+const SPANISH_A1_A2_CURATED: readonly string[] = [
+  // Tema 1, Music & Bands
+  "bombero",          // PCIC A1, 11.6 Servicios de proteccion y seguridad: "policia, bombero"
+  // Tema 2, Phones & Social Media
+  "cantante",         // PCIC A1, 18.2 Musica y danza: "cantante"
+  "concierto",        // PCIC A1, 8.2 Espectaculos y exposiciones: "pelicula, concierto"
+  // Tema 3, Driving & Cars
+  "euro",             // PCIC A1, 12.4 Pagos y 11.3 Servicios financieros: "dinero, euro, centimo (de euro)"
+];
+for (const w of SPANISH_A1_A2_CURATED) (SPANISH_A1_A2_LEMMAS as Set<string>).add(w);
+
 /**
  * Normalize a Spanish lemma for lookup. Lowercase + trim, keeping
  * diacritics (the list preserves them). Strips leading articles

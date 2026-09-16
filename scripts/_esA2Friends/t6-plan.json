@@ -1,0 +1,35 @@
+{
+  "tipo": "Friends",
+  "nivel": "a2",
+  "variante": "spain",
+  "registro": "tierno y agridulce, de dos citas junto al rio: un hombre timido que escucha y una mujer que por fin dice en voz alta lo que callo catorce anos",
+  "espina": "La Rana se prepara para las Ferias; en este tema Lorena cuenta por primera vez a alguien, un desconocido, por que no fue al concierto de 2012, y el grupo le cuesta una relacion que empezaba.",
+  "recursos": "A2: preterito e imperfecto en el relato de 2012 dentro del dialogo (llegue a la plaza, vi a mucha gente, tenia miedo), espejo concreto (el restaurante vacio que Raul no quiere esperar), gancho literal (lo de 2012 guardado para las Ferias). Parrafos 5, 4 y 6. Franjas: una tarde en la terraza, la noche del viernes, tres dias despues.",
+  "reencuentro": "Vuelven en el texto 19 de las 90 portables de los temas 1 a 5 que salian una sola vez (medido al cerrar): se cayó, Mucha gente, cruzaron, cansada, pesa, en medio de, con cuidado, sin preguntar nada, seca, al final, suave, encima, No pasa nada, escuchó, con atención, juntos, sin mirar atrás, enseguida, todo el mundo.",
+  "historias": [
+    {
+      "slot": "0",
+      "quiere": "Lorena quiere que su primera cita con Raul salga bien",
+      "impide": "Raul la reconoce del video de 2012 y le pregunta por aquel concierto",
+      "cuesta": "Lorena pierde el secreto: un desconocido ya sabe que en 2012 no estaba en el escenario",
+      "cambia": "Raul la escucha sin preguntar mas y la invita a cenar el viernes",
+      "emocion": "nervios que se calman: se le cae la servilleta al oir la pregunta y poco a poco se siente tranquila junto al rio"
+    },
+    {
+      "slot": "1",
+      "quiere": "Lorena quiere contarle a Raul la verdad de 2012",
+      "impide": "el restaurante da a la Plaza Mayor, donde tenia que tocar, y en mitad de la cena Ruben llama porque entra agua en el local",
+      "cuesta": "la cena con Raul, que se queda solo en la mesa",
+      "cambia": "Lorena elige al grupo y sale corriendo a la lluvia",
+      "emocion": "miedo dicho en voz alta y despues culpa: habla en voz baja, Raul le coge la mano, y ella se va cansada sin mirar atras"
+    },
+    {
+      "slot": "2",
+      "quiere": "Lorena quiere arreglar las cosas con Raul",
+      "impide": "Raul no quiere ser el novio que espera mientras ella vive para La Rana",
+      "cuesta": "Raul no vuelve a llamar",
+      "cambia": "Lorena lo entiende y se guarda lo de 2012 para contarselo a Ruben en las Ferias",
+      "emocion": "tristeza tranquila: tiene la boca seca, deja el libro y esa noche dice que con la guitarra todo pesa menos"
+    }
+  ]
+}

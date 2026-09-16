@@ -1,0 +1,453 @@
+[
+  {
+    "topic": "couples-and-dating",
+    "slotIndex": 0,
+    "title": "Raúl lee poesía",
+    "arcType": "daily-encounter",
+    "synopsis": "Lorena has a first date with a quiet man she met through a dating app. They meet on a terrace by the river, and it starts well. Then he says something that shows he knows more about her past than she expected, and Lorena must decide how much to tell a new person.",
+    "text": "En una terraza junto al Tormes esperaba Raúl, un bibliotecario de la universidad, con un libro abierto. Lorena llegó cinco minutos tarde.\n\nSe conocían por una aplicación y era su primera cita. Raúl era simpático y hablaba despacio. “Tu cara me suena”, añadió por fin. “¿Eres la cantante del vídeo de La Rana?”\n\nLa servilleta de Lorena se cayó al suelo. “Sí, soy yo, pero en 2012 no estaba en el escenario”, contestó. “No pasa nada. Todo el mundo tiene un mal día”, dijo Raúl, un poco tímido.\n\nRaúl la escuchó con atención, sin preguntar nada más. Pidió agua y hablaron poco a poco de libros y de canciones. El río sonaba debajo de la terraza.\n\nAl final, Raúl leyó un poema en voz alta. “¿Te invito a cenar el viernes?”, preguntó al despedirse. Cruzaron juntos el puente y, en la otra orilla, Lorena contestó: “Vale.” Raúl sonrió y volvió a abrir el libro.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "el libro",
+        "surface": "libro",
+        "definition": "A book; pages with a story or poems inside a cover.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "cinco minutos tarde",
+        "surface": "cinco minutos tarde",
+        "definition": "Five minutes late; arriving five minutes after the agreed time.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "conocerse",
+        "surface": "conocían",
+        "definition": "To know each other; to have met another person before.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la aplicación",
+        "surface": "aplicación",
+        "definition": "An app; a program on your phone, for example to meet people.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la cita",
+        "surface": "cita",
+        "definition": "A date; a meeting with someone you like romantically.",
+        "anchor": true
+      },
+      {
+        "type": "adjective",
+        "word": "tímido",
+        "surface": "tímido",
+        "definition": "Shy; a person who feels nervous talking to people he does not know.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "simpático",
+        "surface": "simpático",
+        "definition": "Friendly and nice; easy to talk to and pleasant.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el agua",
+        "surface": "agua",
+        "definition": "Water; the clear liquid you drink when you are thirsty.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "hablar",
+        "surface": "hablaron",
+        "definition": "To speak, to talk; to say words to another person.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "me suena",
+        "surface": "me suena",
+        "definition": "It looks or sounds familiar; I think I know it from before.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "un mal día",
+        "surface": "un mal día",
+        "definition": "A bad day; a day when things go wrong for you.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "nada más",
+        "surface": "nada más",
+        "definition": "Nothing else; no more than what was already said or done.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "poco a poco",
+        "surface": "poco a poco",
+        "definition": "Little by little; slowly, a small change at a time.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "el río",
+        "surface": "río",
+        "definition": "A river; a long line of water that moves across the land.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "leer",
+        "surface": "leyó",
+        "definition": "To read; to look at words and understand them, or say them aloud.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "invitar",
+        "surface": "invito",
+        "definition": "To invite; to ask someone to come with you, and often to pay.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "despedirse",
+        "surface": "despedirse",
+        "definition": "To say goodbye; to say something kind before you leave.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "vale",
+        "surface": "Vale",
+        "definition": "OK; a short word to say yes in Spain.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "en la otra orilla",
+        "surface": "en la otra orilla",
+        "definition": "On the other side of the river; on the opposite bank.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "soy yo",
+        "surface": "soy yo",
+        "definition": "It is me; what you say when someone asks if you are that person.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "couples-and-dating",
+    "slotIndex": 1,
+    "title": "Agua en el local",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "On their second date, Lorena and Raúl eat at a small restaurant with a view of the main square. Something about the place makes Lorena finally say the truth about the concert she missed years ago. It is a special moment, but then her phone starts to shake on the table.",
+    "text": "Su segunda cita fue en un restaurante pequeño con ventanas a la Plaza Mayor. Lorena tenía el móvil encima de la mesa, por si llamaba Rubén, y el tenedor en medio del plato. Raúl esperaba sin prisa, y fuera la lluvia sonaba contra los cristales.\n\n“Aquí iba a ser nuestro concierto de 2012”, dijo Lorena despacio. “Llegué a la plaza, vi a mucha gente y me fui a casa. Tenía miedo. Nunca se lo conté a nadie.”\n\nRaúl le cogió la mano con cuidado. “Gracias por contármelo”, susurró. Justo entonces el móvil empezó a moverse encima de la mesa. Era Rubén. “¡Lore, entra agua en el local por la tormenta! ¡Se mojan los altavoces!”\n\nLorena miró a Raúl, cansada. “Lo siento. Me voy”, dijo. Dejó veinte euros junto al plato y salió corriendo a la lluvia, sin mirar atrás. De pronto, la plaza estaba vacía.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "la mesa",
+        "surface": "mesa",
+        "definition": "A table; a piece of furniture where you eat or put things.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "el restaurante",
+        "surface": "restaurante",
+        "definition": "A restaurant; a place where you pay to eat a meal.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la ventana",
+        "surface": "ventanas",
+        "definition": "A window; the glass in a wall that lets you see outside.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la Plaza Mayor",
+        "surface": "Plaza Mayor",
+        "definition": "Salamanca's famous main square, a big old square full of cafés.",
+        "anchor": true,
+        "register": "cultural"
+      },
+      {
+        "type": "expression",
+        "word": "me voy",
+        "surface": "Me voy",
+        "definition": "I am leaving; what you say when you must go away now.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "irse",
+        "surface": "fui",
+        "definition": "To leave, to go away from a place.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "tener miedo",
+        "surface": "Tenía miedo",
+        "definition": "To be afraid; to feel fear because something could go badly.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "nunca",
+        "surface": "Nunca",
+        "definition": "Never; not one single time, not at any moment.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "a nadie",
+        "surface": "a nadie",
+        "definition": "To nobody; not to any person at all.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "coger",
+        "surface": "cogió",
+        "definition": "To take or hold something, like someone's hand.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "gracias por",
+        "surface": "Gracias por",
+        "definition": "Thank you for; used before the thing someone did for you.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "entrar",
+        "surface": "entra",
+        "definition": "To come in; to go into a place from outside.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la tormenta",
+        "surface": "tormenta",
+        "definition": "A storm; very bad weather with strong rain, wind and thunder.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "mojarse",
+        "surface": "mojan",
+        "definition": "To get wet; when water falls on something.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "sin prisa",
+        "surface": "sin prisa",
+        "definition": "Without hurry; calmly, taking all the time that you need.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "salir corriendo",
+        "surface": "salió corriendo",
+        "definition": "To run out; to leave a place very quickly, running.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la lluvia",
+        "surface": "lluvia",
+        "definition": "Rain; the water that falls from the clouds when the weather is bad.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "de pronto",
+        "surface": "De pronto",
+        "definition": "Suddenly; in a very short moment, without warning.",
+        "anchor": false
+      },
+      {
+        "type": "adjective",
+        "word": "vacío",
+        "surface": "vacía",
+        "definition": "Empty; with nobody inside, so the place looks very quiet.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "justo entonces",
+        "surface": "Justo entonces",
+        "definition": "Just then; at exactly that moment, while something else was happening.",
+        "anchor": false
+      }
+    ]
+  },
+  {
+    "topic": "couples-and-dating",
+    "slotIndex": 2,
+    "title": "Raúl no llama",
+    "arcType": "reframe-turn",
+    "synopsis": "Days after the interrupted dinner, Lorena's phone stays silent. She decides to go and see Raúl at his job with a book. He is kind and honest with her, and what he says is not what she wanted to hear. That night she talks to Rubén, but she does not tell him everything.",
+    "text": "Tres días después, Rubén y Lorena tenían el local seco, pero el móvil de Lorena seguía en silencio. Raúl no llamaba.\n\nPor la tarde, Lorena fue a la biblioteca de la universidad con un libro de poesía. Raúl estaba detrás del mostrador. Tenía los ojos tristes, pero sonrió al verla.\n\n“Te debo una cena y media conversación”, dijo Lorena. “No me debes nada”, contestó Raúl con voz suave. “Me gustas mucho, Lorena. Pero ahora tu vida es La Rana, y yo no quiero ser el novio que espera en un restaurante vacío.”\n\nLorena no contestó enseguida. Tardó en contestar. “Lo entiendo. Tampoco quiero eso para ti”, respondió al final, y dejó el libro encima del mostrador.\n\nEsa noche le contó a Rubén solo la mitad: la cita, la lluvia, la biblioteca. Lo de 2012 lo guardó para las Ferias.\n\n“¿Estás bien?”, preguntó Rubén. “Claro. Con la guitarra, a veces todo pesa menos”, contestó ella.",
+    "vocab": [
+      {
+        "type": "expression",
+        "word": "tres días después",
+        "surface": "Tres días después",
+        "definition": "Three days later; after three days have passed.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "seguir",
+        "surface": "seguía",
+        "definition": "To continue; to stay the same as before.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "en silencio",
+        "surface": "en silencio",
+        "definition": "In silence; without any sound, for example a phone that never rings.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "por la tarde",
+        "surface": "Por la tarde",
+        "definition": "In the afternoon; after lunch and before the evening.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la biblioteca",
+        "surface": "biblioteca",
+        "definition": "A library; a place where you can read and borrow books.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "la poesía",
+        "surface": "poesía",
+        "definition": "Poetry; writing with short lines and beautiful words.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "al ver",
+        "surface": "al verla",
+        "definition": "When he saw her; at the moment of seeing someone arrive.",
+        "anchor": false
+      },
+      {
+        "type": "verb",
+        "word": "gustar",
+        "surface": "gustas",
+        "definition": "To like; used to say someone is attractive or pleasant to you.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la vida",
+        "surface": "vida",
+        "definition": "Life; the things you do and care about every day.",
+        "anchor": true
+      },
+      {
+        "type": "noun",
+        "word": "el novio",
+        "surface": "novio",
+        "definition": "A boyfriend; the man someone has a romantic relationship with.",
+        "anchor": true
+      },
+      {
+        "type": "verb",
+        "word": "entender",
+        "surface": "entiendo",
+        "definition": "To understand; to know why something is the way it is.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "tampoco",
+        "surface": "Tampoco",
+        "definition": "Neither, not either; used to add a second negative idea.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "para ti",
+        "surface": "para ti",
+        "definition": "For you; good or right for the other person.",
+        "anchor": false
+      },
+      {
+        "type": "noun",
+        "word": "la noche",
+        "surface": "noche",
+        "definition": "The night; the dark hours after the evening.",
+        "anchor": true
+      },
+      {
+        "type": "expression",
+        "word": "lo de",
+        "surface": "Lo de",
+        "definition": "The thing about; used to talk about a known situation.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "estar bien",
+        "surface": "Estás bien",
+        "definition": "To be OK; to feel fine, not sad or hurt.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "claro",
+        "surface": "Claro",
+        "definition": "Of course; used to say yes in a very sure way.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "a veces",
+        "surface": "a veces",
+        "definition": "Sometimes; not always, but on some days or in some moments.",
+        "anchor": false
+      },
+      {
+        "type": "adverb",
+        "word": "menos",
+        "surface": "menos",
+        "definition": "Less; a smaller amount than before, for example of weight or pain.",
+        "anchor": false
+      },
+      {
+        "type": "expression",
+        "word": "esa noche",
+        "surface": "Esa noche",
+        "definition": "That night; during the night of the same day in the story.",
+        "anchor": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "tipo": "Friends",
+  "nivel": "a2",
+  "variante": "spain",
+  "registro": "de enredo y prisa, con humor de oficina: una grua, un deposito municipal, una cola y una jefa que no perdona, contado casi como una comedia de errores",
+  "espina": "La Rana necesita llevar la bateria a un local nuevo para seguir ensayando para las Ferias; en este tema Lorena rompe una regla de su trabajo por el grupo y lo paga con dinero y con la confianza de su jefa, y los dos vuelven a moverse como en 2012.",
+  "recursos": "A2: imperfecto habitual de 2012 (llevaban los altavoces en un carrito) frente al indefinido de 2026, humor de situacion (Olga otra vez en la ventanilla), gancho literal (la raya blanca en la puerta). Parrafos 4, 6 y 5. Franjas: un sabado, las ocho de la manana, esa tarde y el sabado siguiente.",
+  "reencuentro": "Vuelven en el texto, con surface exacta, portables de los temas 1 y 2 (32): Levantó la vista, otra vez, se le puso roja, un nudo en la garganta, como siempre, repitió, llamó, dormido, Lo siento, tardó, olía, riéndose, acuerdas, necesitamos, ya no, detrás, cerca, contestó, salió, frío, puso, encontró, solo, contó, Luego, un poco, triste, devolvió, oía, Hasta, sabe, Esta vez.",
+  "historias": [
+    {
+      "slot": "0",
+      "quiere": "Lorena y Ruben quieren llevar el bombo al local de ensayo nuevo, al otro lado del rio",
+      "impide": "el bombo no cabe en el coche de Ruben y la jefa de Lorena no deja usar el coche de la autoescuela fuera de clase",
+      "cuesta": "el platillo deja una raya blanca en la puerta del coche de la autoescuela",
+      "cambia": "Olga, la gruista, se lleva el coche de la zona de carga y descarga",
+      "emocion": "verguenza con miedo: a Lorena se le pone roja la cara al ver la raya, porque el coche no es suyo, y conduce sin decir nada"
+    },
+    {
+      "slot": "1",
+      "quiere": "Lorena quiere recuperar el coche antes de su primera clase",
+      "impide": "la cola del deposito, Olga sin prisa y el coche a nombre de la autoescuela, que pide la firma de la jefa",
+      "cuesta": "doscientos diez euros de multa y grua, que paga Lorena sin dejar pagar a Ruben",
+      "cambia": "Lorena tiene que contarle todo a su jefa por telefono",
+      "emocion": "verguenza: tiene un nudo en la garganta porque tiene que confesar a su jefa, y repite la historia dos veces"
+    },
+    {
+      "slot": "2",
+      "quiere": "seguir ensayando sin coche",
+      "impide": "la jefa le quita las llaves a Lorena y el local esta al otro lado del Tormes",
+      "cuesta": "Lorena ya no puede usar el coche de la autoescuela fuera de clase nunca mas",
+      "cambia": "cruzan el Puente Romano con el bombo en un carrito, como en 2012",
+      "emocion": "alivio con risa: Lorena se rie por primera vez en todo el dia al recordar el carrito, y sonrie cansada al otro lado del rio"
+    }
+  ]
+}
