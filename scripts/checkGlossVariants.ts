@@ -174,7 +174,18 @@ function revisa(fichero: string, bundle: Bundle, textos?: Map<string, string>): 
   for (const [historia, entradas] of Object.entries(bundle.byStory ?? {})) {
     const cuerpo = textos?.get(historia);
     const oraciones = cuerpo
-      ? cuerpo.split(/(?<=[.?!”])\s+/).map((o) => normalizaTrozo(o))
+      // Corte de oracion. Antes era /(?<=[.?!”])\s+/, que partia en CUALQUIER
+      // comilla de cierre y por tanto separaba la replica de su etiqueta
+      // narrativa: «"Mai," risponde lei.» quedaba en dos, y «"E il nostro
+      // patto?" chiede.» dejaba la oracion "chiede" ella sola. Con eso, el
+      // trozo correcto de una etiqueta narrativa (que por contrato LLEVA la
+      // cita delante) no era subcadena de ninguna oracion y salia como
+      // "el trozo no sale tal cual". Ahora se exige el final de oracion de
+      // verdad: [.?!], la comilla de cierre opcional, y que lo siguiente
+      // arranque oracion (mayuscula o comilla/signo de apertura). El cambio
+      // solo UNE unidades que antes estaban partidas, asi que ningun trozo
+      // que pasaba puede empezar a fallar.
+      ? cuerpo.split(/(?<=[.?!][”"»]?)\s+(?=[“"«¿¡\p{Lu}])/u).map((o) => normalizaTrozo(o))
       : null;
     for (const [palabra, entrada] of Object.entries(entradas)) {
       const es = (entrada as { c?: { es?: string; en?: string } }).c?.es;
