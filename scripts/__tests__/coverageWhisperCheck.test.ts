@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
-import { transcribeWithRetries, referenceWordsFor } from "../coverageWhisperCheck";
-import { checkCoverage, norm } from "../coverageCheckLib";
+import { transcribeWithRetries, referenceWordsFor, isGapStillMissing } from "../coverageWhisperCheck";
+import { checkCoverage, norm, type Gap } from "../coverageCheckLib";
 
 // Datos reales: master "rendez-vous-sous-la-bourse" (Friends FR B1, 68053ms
 // por ffprobe). whisper-cli con -ml 1 (y con cualquier otra combinacion de
@@ -138,5 +138,42 @@ describe("referenceWordsFor / eco del titulo en el cuerpo", () => {
 
   it("sin titulo (parametro omitido), referenceWordsFor no cambia el comportamiento de siempre", () => {
     expect(referenceWordsFor(undefined, "Bonjour le monde")).toEqual(w("Bonjour le monde"));
+  });
+});
+
+// Fixture real: domenica-senza-terrazza (Friends IT A0). El pase completo
+// (whisper-small sobre un master de 79s) perdio "non sa del patto per lui e
+// un vecchio scherzo" (10 palabras); aislando y re-transcribiendo ESE
+// fragmento (43,78-62,82s) por separado, whisper lo oye completo y correcto.
+// Confirmado a mano dos veces en el mismo journey (aqui y en
+// solo-per-una-foto) antes de escribir este fix.
+describe("isGapStillMissing (candado de falsos positivos, 2026-09-16)", () => {
+  const gap: Gap = {
+    textWords: w("non sa del patto per lui e un vecchio scherzo"),
+    startIdx: 100,
+    endIdx: 110,
+    anchorBeforeIdx: 42,
+    anchorAfterIdx: 55,
+  };
+
+  it("FALSO POSITIVO: las palabras SI aparecen al re-escuchar solo la ventana -> el hueco se descarta", () => {
+    // Lo que de verdad transcribe whisper al aislar el fragmento 3 completo
+    // (confirmado a mano, 2026-09-16): la frase entera esta ahi.
+    const rehardWords = w(
+      "Valentina appoggia il pane e si siede accanto al davanzale Alice lui non capisce " +
+      "non sa del patto per lui e un vecchio scherzo dice lei Alice ascolta sospira e si morde il labbro Valentina ha ragione"
+    );
+    expect(isGapStillMissing(gap, rehardWords, "it")).toBe(false);
+  });
+
+  it("HUECO REAL: las palabras siguen sin aparecer ni en la ventana re-escuchada -> el hueco se mantiene", () => {
+    // Mismo fragmento pero de verdad le falta el tramo (empalme roto, por
+    // ejemplo): el candado no puede ablandarse hasta el punto de nunca
+    // marcar nada.
+    const rehardWords = w(
+      "Valentina appoggia il pane e si siede accanto al davanzale Alice lui non capisce " +
+      "dice lei Alice ascolta sospira e si morde il labbro Valentina ha ragione"
+    );
+    expect(isGapStillMissing(gap, rehardWords, "it")).toBe(true);
   });
 });

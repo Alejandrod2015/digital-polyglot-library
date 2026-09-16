@@ -219,10 +219,16 @@ export function findGaps(textWords: string[], heardWords: string[], minRun = 3):
     }
   }
   const matched = new Array<boolean>(n).fill(false);
+  // indice EN heardWords (no en textWords) de la palabra oida que casa con
+  // textWords[k], para poder ubicar en el tiempo el hueco: el llamador tiene
+  // los timestamps de heardWords y puede acotar una ventana [anchorBefore,
+  // anchorAfter] para volver a escuchar solo ese tramo (ver checkMasterCoverage).
+  const heardIdxForText = new Array<number | null>(n).fill(null);
   let i = n, j = m;
   while (i > 0 && j > 0) {
     if (wordsMatch(textWords[i - 1], heardWords[j - 1]) && dp[i][j] === dp[i - 1][j - 1] + 1) {
       matched[i - 1] = true;
+      heardIdxForText[i - 1] = j - 1;
       i--; j--;
     } else if (dp[i - 1][j] >= dp[i][j - 1]) {
       i--;
@@ -231,12 +237,23 @@ export function findGaps(textWords: string[], heardWords: string[], minRun = 3):
     }
   }
 
+  const anchorBefore = (startIdx: number): number | null => {
+    for (let k = startIdx - 1; k >= 0; k--) if (heardIdxForText[k] !== null) return heardIdxForText[k];
+    return null;
+  };
+  const anchorAfter = (endIdx: number): number | null => {
+    for (let k = endIdx; k < n; k++) if (heardIdxForText[k] !== null) return heardIdxForText[k];
+    return null;
+  };
+
   const gaps: Gap[] = [];
   let run: string[] = [];
   let runStart = -1;
   for (let k = 0; k < n; k++) {
     if (matched[k]) {
-      if (run.length >= minRun) gaps.push({ textWords: [...run], startIdx: runStart, endIdx: k, anchorBeforeIdx: null, anchorAfterIdx: null });
+      if (run.length >= minRun) {
+        gaps.push({ textWords: [...run], startIdx: runStart, endIdx: k, anchorBeforeIdx: anchorBefore(runStart), anchorAfterIdx: anchorAfter(k) });
+      }
       run = [];
       runStart = -1;
     } else {
@@ -244,7 +261,9 @@ export function findGaps(textWords: string[], heardWords: string[], minRun = 3):
       run.push(textWords[k]);
     }
   }
-  if (run.length >= minRun) gaps.push({ textWords: [...run], startIdx: runStart, endIdx: n, anchorBeforeIdx: null, anchorAfterIdx: null });
+  if (run.length >= minRun) {
+    gaps.push({ textWords: [...run], startIdx: runStart, endIdx: n, anchorBeforeIdx: anchorBefore(runStart), anchorAfterIdx: anchorAfter(n) });
+  }
   return gaps;
 }
 
