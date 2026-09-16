@@ -274,7 +274,7 @@
       "id": "project_android_reader_clipped_letters",
       "domain": "audio",
       "rule": "\"Lector Android sin la ultima letra de cada palabra (captura de Jazlin, 2026-09-09): sin arreglar, flota real sin Pixel, telemetria de aparato y migraciones divergidas\"",
-      "gate": "none",
+      "gate": "process",
       "source": "memory:project_android_reader_clipped_letters.md"
     },
     {
@@ -295,7 +295,7 @@
       "id": "project_ios_audio_session_after_speech_recognition",
       "domain": "audio",
       "rule": "Tras reconocer voz en iOS el audio sale bajo y tapado; expo-av no puede restaurar la sesión (no fija el modo y cachea la categoría); se restaura con setCategoryIOS del módulo de reconocimiento",
-      "gate": "none",
+      "gate": "process",
       "source": "memory:project_ios_audio_session_after_speech_recognition.md"
     },
     {
@@ -442,7 +442,7 @@
       "id": "feedback_ads_testing_single_version",
       "domain": "comms",
       "rule": "\"Anuncios de Meta en fase de test: renderizar UNA sola version (9:16), nunca los dos formatos; los formatos se piden despues\"",
-      "gate": "none",
+      "gate": "process",
       "source": "memory:feedback_ads_testing_single_version.md"
     },
     {
@@ -595,15 +595,15 @@
     {
       "id": "project_meta_ads_manager_automation",
       "domain": "comms",
-      "rule": "Como se maneja Ads Manager desde claude-in-chrome sin romper nada: subir video, toggles, product set bloqueado",
-      "gate": "none",
+      "rule": "\"Como se maneja Ads Manager desde claude-in-chrome sin romper nada: subir video, toggles, product set bloqueado\"",
+      "gate": "process",
       "source": "memory:project_meta_ads_manager_automation.md"
     },
     {
       "id": "project_metrics_userid_merge_system",
       "domain": "comms",
       "rule": "\"Panel manual en /studio/beta ('Possible duplicates') detecta y fusiona actividad (no cuenta) de Clerk userIds que son la misma persona\"",
-      "gate": "none",
+      "gate": "process",
       "source": "memory:project_metrics_userid_merge_system.md"
     },
     {
@@ -742,8 +742,8 @@
     {
       "id": "feedback_one_journey_per_chat",
       "domain": "cover",
-      "rule": "Un chat ejecutor por journey Y por fase (texto, glosas, portadas, audio, publicar), cada fase con su modelo y esfuerzo; nunca mezclar journeys",
-      "gate": "none",
+      "rule": "\"Un chat ejecutor por journey Y por fase (texto, glosas, portadas, audio, publicar), cada fase con su modelo y esfuerzo; nunca mezclar journeys\"",
+      "gate": "process",
       "source": "memory:feedback_one_journey_per_chat.md"
     },
     {
@@ -771,14 +771,14 @@
       "id": "project_journey_it_a0_friends",
       "domain": "cover",
       "rule": "\"Friends IT A0: el de julio (Elena, 7 ciudades) ARCHIVADO el 2026-09-14; el vigente es el de Genova (cmu0dpa3i0007j80ugstn0jf0), 21/21 en draft, sin audio/portadas/glosas/practica\"",
-      "gate": "none",
+      "gate": "process",
       "source": "memory:project_journey_it_a0_friends.md"
     },
     {
       "id": "project_planning_handoff_2026_09_15",
       "domain": "cover",
       "rule": "\"Estado del chat de planificación Journey-planning-2 al cierre del 2026-09-15: 6 Friends en obra (portadas, audio, bloqueos), ramas sin push y reglas de proceso nuevas\"",
-      "gate": "none",
+      "gate": "process",
       "source": "memory:project_planning_handoff_2026_09_15.md"
     },
     {
@@ -848,7 +848,7 @@
       "id": "feedback_no_external_ai_at_runtime",
       "domain": "journey",
       "rule": "\"Ninguna función del producto depende de OpenAI ni de otro modelo por API en runtime; lo que el usuario usa en la app se resuelve con el sistema del teléfono, con datos ya generados o con lógica de...",
-      "gate": "none",
+      "gate": "process",
       "source": "memory:feedback_no_external_ai_at_runtime.md"
     },
     {
@@ -1086,7 +1086,7 @@
       "id": "project_planning_handoff_2026_09_14",
       "domain": "journey",
       "rule": "\"Traspaso del chat de planificación (Journey-planning) del 2026-09-14: estado de los 5 Friends nuevos, chats abiertos, pendientes y reglas de proceso\"",
-      "gate": "none",
+      "gate": "process",
       "source": "memory:project_planning_handoff_2026_09_14.md"
     },
     {
@@ -1324,7 +1324,7 @@
       "id": "feedback_link_instagram_handles",
       "domain": "process",
       "rule": "\"Todo handle de Instagram que yo escriba va como enlace clicable, nunca como texto suelto\"",
-      "gate": "none",
+      "gate": "stop-ig-handle-link-guard.sh",
       "source": "memory:feedback_link_instagram_handles.md"
     },
     {
@@ -1421,8 +1421,8 @@
     {
       "id": "feedback_phone_dev_build_is_newest",
       "domain": "process",
-      "rule": "La build de desarrollo del móvil del usuario es su versión MÁS NUEVA; nunca desinstalarla ni mandarle a Play, que va por detrás",
-      "gate": "none",
+      "rule": "\"La build de desarrollo del móvil del usuario es su versión MÁS NUEVA; nunca desinstalarla ni mandarle a Play, que va por detrás\"",
+      "gate": "process",
       "source": "memory:feedback_phone_dev_build_is_newest.md"
     },
     {
@@ -2115,7 +2115,7 @@
       "id": "feedback_no_shared_cast_across_journeys",
       "domain": "vocab",
       "rule": "\"Un journey nuevo NO hereda personajes del nivel anterior salvo que el usuario lo pida; la continuidad entre niveles es de vocabulario, no de reparto\"",
-      "gate": "none",
+      "gate": "process",
       "source": "memory:feedback_no_shared_cast_across_journeys.md"
     },
     {
