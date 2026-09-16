@@ -1,0 +1,83 @@
+[
+  {
+    "n": 1,
+    "url": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/e962308debb7f0b408aa.mp3",
+    "word": "caldo",
+    "journey": "italian/italy/a1",
+    "grupo": "alta",
+    "slope": 20.6,
+    "span": 0.27
+  },
+  {
+    "n": 2,
+    "url": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/6a55b9d561f0629a7992.mp3",
+    "word": "lieb",
+    "journey": "german/germany/a1",
+    "grupo": "banda",
+    "slope": 10.5,
+    "span": 0.16
+  },
+  {
+    "n": 3,
+    "url": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/6f2185d1647b3358ded6.mp3",
+    "word": "cara",
+    "journey": "spanish/spain/a2",
+    "grupo": "control",
+    "slope": -28.6,
+    "span": 0.22
+  },
+  {
+    "n": 4,
+    "url": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/789ce63dadf6f8f8df56.mp3",
+    "word": "buraco",
+    "journey": "portuguese/brazil/a1",
+    "grupo": "alta",
+    "slope": 32,
+    "span": 0.32
+  },
+  {
+    "n": 5,
+    "url": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/9b57d399532f7add80b3.mp3",
+    "word": "placer",
+    "journey": "french/france/a1",
+    "grupo": "alta",
+    "slope": 156.6,
+    "span": 0.08
+  },
+  {
+    "n": 6,
+    "url": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/053decacbb4dfc6d162d.mp3",
+    "word": "couper",
+    "journey": "french/france/a0",
+    "grupo": "control",
+    "slope": -59.6,
+    "span": 0.28
+  },
+  {
+    "n": 7,
+    "url": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/1bbb1b72ccbc6727af69.mp3",
+    "word": "atraso",
+    "journey": "portuguese/brazil/a2",
+    "grupo": "banda",
+    "slope": 15.8,
+    "span": 0.33
+  },
+  {
+    "n": 8,
+    "url": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/904a38fe526131d10104.mp3",
+    "word": "rennt",
+    "journey": "german/germany/a1",
+    "grupo": "banda",
+    "slope": 11.7,
+    "span": 0.31
+  },
+  {
+    "n": 9,
+    "url": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/e6d5076c219ea915ad90.mp3",
+    "word": "feliz",
+    "journey": "spanish/latam/a0",
+    "grupo": "control",
+    "slope": -28.2,
+    "span": 0.26
+  }
+]
