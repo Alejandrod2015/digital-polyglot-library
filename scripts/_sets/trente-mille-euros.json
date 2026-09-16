@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la conseillère bancaire,le taux,l'apport personnel,le deux-pièces",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la conseillère bancaire",
+     "answer": "a bank advisor",
+     "options": [
+      "a bank advisor",
+      "an interest rate",
+      "a down payment",
+      "a one-bedroom flat"
+     ]
+    },
+    {
+     "word": "le taux",
+     "answer": "an interest rate",
+     "options": [
+      "a bank advisor",
+      "an interest rate",
+      "a down payment",
+      "a one-bedroom flat"
+     ]
+    },
+    {
+     "word": "l'apport personnel",
+     "answer": "a down payment",
+     "options": [
+      "a bank advisor",
+      "an interest rate",
+      "a down payment",
+      "a one-bedroom flat"
+     ]
+    },
+    {
+     "word": "le deux-pièces",
+     "answer": "a one-bedroom flat",
+     "options": [
+      "a bank advisor",
+      "an interest rate",
+      "a down payment",
+      "a one-bedroom flat"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "emprunter",
+  "sentence": "Pour acheter la maison, ils ont dû _____ de l'argent.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "emprunter",
+   "options": [
+    "emprunter",
+    "prêter",
+    "compter",
+    "cacher"
+   ],
+   "translation": "To buy the house, they had to _____ money.",
+   "optionTranslations": [
+    "borrow",
+    "lend",
+    "count",
+    "hide"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Pour acheter la maison, ils ont dû emprunter de l'argent.",
+    "storySlug": "trente-mille-euros",
+    "targetWord": "emprunter",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "renoncer",
+  "sentence": "Faute d'argent, il a dû _____ au voyage.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "renoncer",
+   "options": [
+    "renoncer",
+    "participer",
+    "réfléchir",
+    "courir"
+   ],
+   "translation": "For lack of money, he had to _____ the trip.",
+   "optionTranslations": [
+    "give up",
+    "take part in",
+    "think about",
+    "run"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Faute d'argent, il a dû renoncer au voyage.",
+    "storySlug": "trente-mille-euros",
+    "targetWord": "renoncer",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "raccroché",
+  "sentence": "Fâchée, elle a _____ sans dire au revoir.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "raccroché",
+   "options": [
+    "raccroché",
+    "toussé",
+    "sifflé",
+    "applaudi"
+   ],
+   "translation": "Angry, she _____ without saying goodbye.",
+   "optionTranslations": [
+    "hung up",
+    "coughed",
+    "whistled",
+    "clapped"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Fâchée, elle a raccroché sans dire au revoir.",
+    "storySlug": "trente-mille-euros",
+    "targetWord": "raccroché",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la fermeture",
+  "sentence": "La [[fermeture]] du magasin a surpris tout le quartier.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "closing",
+   "options": [
+    "closing",
+    "opening",
+    "renovation",
+    "sale"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "La fermeture du magasin a surpris tout le quartier.",
+    "storySlug": "trente-mille-euros",
+    "targetWord": "fermeture",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "les économies",
+  "sentence": "Elle a dépensé toutes ses [[économies]] pour ce voyage.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "savings",
+   "options": [
+    "savings",
+    "debts",
+    "salary",
+    "bills"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Elle a dépensé toutes ses économies pour ce voyage.",
+    "storySlug": "trente-mille-euros",
+    "targetWord": "économies",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pas un sou",
+  "sentence": "Après ce voyage, il n'avait [[pas un sou]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "not a penny",
+   "options": [
+    "not a penny",
+    "a lot of money",
+    "many friends",
+    "plenty of time"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Après ce voyage, il n'avait pas un sou.",
+    "storySlug": "trente-mille-euros",
+    "targetWord": "pas un sou",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "longtemps",
+  "sentence": "Ils se connaissent depuis [[longtemps]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a long time",
+   "options": [
+    "a long time",
+    "yesterday",
+    "a short while",
+    "never"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Ils se connaissent depuis longtemps.",
+    "storySlug": "trente-mille-euros",
+    "targetWord": "longtemps",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prévenir",
+  "sentence": "Elle m'a [[prévenu]] du danger avant que je parte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "warned",
+   "options": [
+    "warned",
+    "forgotten",
+    "congratulated",
+    "invited"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Elle m'a prévenu du danger avant que je parte.",
+    "storySlug": "trente-mille-euros",
+    "targetWord": "prévenu",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "à contrecœur",
+  "sentence": "Il a accepté [[à contrecœur]], sans vraiment le vouloir.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "reluctantly",
+   "options": [
+    "reluctantly",
+    "happily",
+    "immediately",
+    "proudly"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il a accepté à contrecœur, sans vraiment le vouloir.",
+    "storySlug": "trente-mille-euros",
+    "targetWord": "à contrecœur",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tout perdre",
+  "sentence": "En investissant sans réfléchir, on peut [[tout perdre]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lose everything",
+   "options": [
+    "lose everything",
+    "win a lot",
+    "earn a bonus",
+    "save money"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "En investissant sans réfléchir, on peut tout perdre.",
+    "storySlug": "trente-mille-euros",
+    "targetWord": "tout perdre",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ne pas faire de cadeaux",
+  "sentence": "Au travail, elle ne [[faisait pas de cadeaux]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "showed no mercy",
+   "options": [
+    "showed no mercy",
+    "gave many gifts",
+    "arrived very late",
+    "smiled all day"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Au travail, elle ne faisait pas de cadeaux.",
+    "storySlug": "trente-mille-euros",
+    "targetWord": "faisait pas de cadeaux",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mettre de côté",
+  "sentence": "Ces économies étaient [[mises de côté]] pour les études des enfants.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "set aside",
+   "options": [
+    "set aside",
+    "completely spent",
+    "given away",
+    "forgotten"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Ces économies étaient mises de côté pour les études des enfants.",
+    "storySlug": "trente-mille-euros",
+    "targetWord": "mises de côté",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le soir même",
+  "sentence": "[[Le soir même]], il a envoyé sa réponse.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "that very evening",
+   "options": [
+    "that very evening",
+    "a month later",
+    "the next morning",
+    "never again"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Le soir même, il a envoyé sa réponse.",
+    "storySlug": "trente-mille-euros",
+    "targetWord": "Le soir même",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "serrer la main",
+  "sentence": "Ils se sont [[serré la main]] pour conclure l'accord.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shook hands",
+   "options": [
+    "shook hands",
+    "waved goodbye",
+    "exchanged gifts",
+    "argued loudly"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Ils se sont serré la main pour conclure l'accord.",
+    "storySlug": "trente-mille-euros",
+    "targetWord": "serré la main",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sans rien dire",
+  "sentence": "Elle est partie [[sans rien dire]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "without saying a word",
+   "options": [
+    "without saying a word",
+    "while singing loudly",
+    "after a long speech",
+    "with a big smile"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Elle est partie sans rien dire.",
+    "storySlug": "trente-mille-euros",
+    "targetWord": "sans rien dire",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fauché",
+  "sentence": "En fin de mois, il est toujours un peu [[fauché]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "broke",
+   "options": [
+    "broke",
+    "rich",
+    "busy",
+    "tired"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "En fin de mois, il est toujours un peu fauché.",
+    "storySlug": "trente-mille-euros",
+    "targetWord": "fauchée",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ }
+]

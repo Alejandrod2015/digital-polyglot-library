@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la somme,la reconnaissance de dette,la feuille,le compte",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la somme",
+     "answer": "an amount of money",
+     "options": [
+      "an amount of money",
+      "an IOU",
+      "a sheet of paper",
+      "an account record"
+     ]
+    },
+    {
+     "word": "la reconnaissance de dette",
+     "answer": "an IOU",
+     "options": [
+      "an amount of money",
+      "an IOU",
+      "a sheet of paper",
+      "an account record"
+     ]
+    },
+    {
+     "word": "la feuille",
+     "answer": "a sheet of paper",
+     "options": [
+      "an amount of money",
+      "an IOU",
+      "a sheet of paper",
+      "an account record"
+     ]
+    },
+    {
+     "word": "le compte",
+     "answer": "an account record",
+     "options": [
+      "an amount of money",
+      "an IOU",
+      "a sheet of paper",
+      "an account record"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "protesté",
+  "sentence": "Devant ce prix trop élevé, le client a _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "protesté",
+   "options": [
+    "protesté",
+    "payé",
+    "souri",
+    "dormi"
+   ],
+   "translation": "Faced with such a high price, the customer _____.",
+   "optionTranslations": [
+    "protested",
+    "paid",
+    "smiled",
+    "slept"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Devant ce prix trop élevé, le client a protesté.",
+    "storySlug": "deux-cents-euros-par-mois",
+    "targetWord": "protesté",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "valider",
+  "sentence": "Le directeur doit _____ ce document avant vendredi.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "valider",
+   "options": [
+    "valider",
+    "perdre",
+    "cacher",
+    "brûler"
+   ],
+   "translation": "The director must _____ this document before Friday.",
+   "optionTranslations": [
+    "approve",
+    "lose",
+    "hide",
+    "burn"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Le directeur doit valider ce document avant vendredi.",
+    "storySlug": "deux-cents-euros-par-mois",
+    "targetWord": "valider",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pensé",
+  "sentence": "Elle a longtemps _____ à cette décision.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pensé",
+   "options": [
+    "pensé",
+    "cherché",
+    "goûté",
+    "profité"
+   ],
+   "translation": "She _____ about this decision for a long time.",
+   "optionTranslations": [
+    "thought",
+    "searched",
+    "tasted",
+    "benefited"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Elle a longtemps pensé à cette décision.",
+    "storySlug": "deux-cents-euros-par-mois",
+    "targetWord": "pensé",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "entre nous",
+  "sentence": "[[Entre nous]], cette idée n'est pas très bonne.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "between us",
+   "options": [
+    "between us",
+    "in front of everyone",
+    "on the phone",
+    "by letter"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Entre nous, cette idée n'est pas très bonne.",
+    "storySlug": "deux-cents-euros-par-mois",
+    "targetWord": "entre nous",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prêter",
+  "sentence": "Peux-tu me [[prêter]] vingt euros jusqu'à demain?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lend",
+   "options": [
+    "lend",
+    "give",
+    "steal",
+    "find"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Peux-tu me prêter vingt euros jusqu'à demain?",
+    "storySlug": "deux-cents-euros-par-mois",
+    "targetWord": "prêter",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sourire",
+  "sentence": "En voyant la photo, elle a [[souri]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "smiled",
+   "options": [
+    "smiled",
+    "cried",
+    "screamed",
+    "fainted"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "En voyant la photo, elle a souri.",
+    "storySlug": "deux-cents-euros-par-mois",
+    "targetWord": "souri",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rester",
+  "sentence": "Même fâchée, elle [[reste]] polie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stays, remains",
+   "options": [
+    "stays, remains",
+    "becomes",
+    "leaves",
+    "forgets"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Même fâchée, elle reste polie.",
+    "storySlug": "deux-cents-euros-par-mois",
+    "targetWord": "reste",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "par mois",
+  "sentence": "Le loyer coûte six cents euros [[par mois]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a month",
+   "options": [
+    "a month",
+    "a week",
+    "a year",
+    "a day"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Le loyer coûte six cents euros par mois.",
+    "storySlug": "deux-cents-euros-par-mois",
+    "targetWord": "par mois",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "avantageux",
+  "sentence": "Cette banque propose un taux très [[avantageux]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "favorable",
+   "options": [
+    "favorable",
+    "complicated",
+    "dangerous",
+    "secret"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Cette banque propose un taux très avantageux.",
+    "storySlug": "deux-cents-euros-par-mois",
+    "targetWord": "avantageux",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "à nos deux noms",
+  "sentence": "Le compte est [[à nos deux noms]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in both our names",
+   "options": [
+    "in both our names",
+    "in nobody's name",
+    "in a stranger's name",
+    "in the bank's name"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Le compte est à nos deux noms.",
+    "storySlug": "deux-cents-euros-par-mois",
+    "targetWord": "à nos deux noms",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "avoir confiance en",
+  "sentence": "Tu n'[[as pas confiance en]] moi, je le sens.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "don't trust",
+   "options": [
+    "don't trust",
+    "don't remember",
+    "don't understand",
+    "don't like"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Tu n'as pas confiance en moi, je le sens.",
+    "storySlug": "deux-cents-euros-par-mois",
+    "targetWord": "as pas confiance en",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "justement si",
+  "sentence": "[[Justement si]], c'est exactement pour ça que je m'inquiète.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "yes, exactly for that reason",
+   "options": [
+    "yes, exactly for that reason",
+    "no, not at all",
+    "maybe, we'll see",
+    "never, absolutely not"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Justement si, c'est exactement pour ça que je m'inquiète.",
+    "storySlug": "deux-cents-euros-par-mois",
+    "targetWord": "Justement si",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "s'expliquer",
+  "sentence": "Elle [[s'est expliquée]] calmement devant tout le monde.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "explained herself",
+   "options": [
+    "explained herself",
+    "hidden completely",
+    "left immediately",
+    "laughed loudly"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Elle s'est expliquée calmement devant tout le monde.",
+    "storySlug": "deux-cents-euros-par-mois",
+    "targetWord": "s'est expliquée",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "d'une écriture appliquée",
+  "sentence": "Elle a signé [[d'une écriture appliquée]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in careful, neat handwriting",
+   "options": [
+    "in careful, neat handwriting",
+    "in a big hurry",
+    "with her left hand",
+    "without reading it"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Elle a signé d'une écriture appliquée.",
+    "storySlug": "deux-cents-euros-par-mois",
+    "targetWord": "d'une écriture appliquée",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "en rangeant",
+  "sentence": "[[En rangeant]] ses papiers, elle a retrouvé une vieille photo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "while tidying up",
+   "options": [
+    "while tidying up",
+    "while sleeping",
+    "while cooking",
+    "while driving"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "En rangeant ses papiers, elle a retrouvé une vieille photo.",
+    "storySlug": "deux-cents-euros-par-mois",
+    "targetWord": "En rangeant",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ridicule",
+  "sentence": "Porter un manteau d'hiver en été, c'est [[ridicule]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ridiculous",
+   "options": [
+    "ridiculous",
+    "practical",
+    "normal",
+    "elegant"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Porter un manteau d'hiver en été, c'est ridicule.",
+    "storySlug": "deux-cents-euros-par-mois",
+    "targetWord": "ridicule",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ }
+]

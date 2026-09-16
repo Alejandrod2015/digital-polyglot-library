@@ -109,6 +109,46 @@
         "trois"
       ]
     },
+    "french-friends-france-b1": {
+      "articles": [
+        "ce",
+        "cette",
+        "des",
+        "du",
+        "l",
+        "la",
+        "le",
+        "les",
+        "un",
+        "une"
+      ],
+      "characterNames": [
+        "aurélien",
+        "charlotte",
+        "élodie",
+        "florian",
+        "guillaume",
+        "marion",
+        "quentin",
+        "yasmine"
+      ],
+      "numerals": [
+        "cent",
+        "cents",
+        "cinq",
+        "deux",
+        "dix",
+        "douze",
+        "mille",
+        "quatorze",
+        "quatre-vingt",
+        "six",
+        "trente",
+        "trois",
+        "un",
+        "une"
+      ]
+    },
     "german-expat": {
       "articles": [
         "das",

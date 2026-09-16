@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la lampe de poche,le compteur,l'électricien,le papier alu",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la lampe de poche",
+     "answer": "a flashlight",
+     "options": [
+      "a flashlight",
+      "an electric meter",
+      "an electrician",
+      "aluminum foil"
+     ]
+    },
+    {
+     "word": "le compteur",
+     "answer": "an electric meter",
+     "options": [
+      "a flashlight",
+      "an electric meter",
+      "an electrician",
+      "aluminum foil"
+     ]
+    },
+    {
+     "word": "l'électricien",
+     "answer": "an electrician",
+     "options": [
+      "a flashlight",
+      "an electric meter",
+      "an electrician",
+      "aluminum foil"
+     ]
+    },
+    {
+     "word": "le papier alu",
+     "answer": "aluminum foil",
+     "options": [
+      "a flashlight",
+      "an electric meter",
+      "an electrician",
+      "aluminum foil"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "tapoté",
+  "sentence": "Il a _____ sur la table pour attirer son attention.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tapoté",
+   "options": [
+    "tapoté",
+    "dessiné",
+    "lavé",
+    "cassé"
+   ],
+   "translation": "He _____ on the table to get her attention.",
+   "optionTranslations": [
+    "tapped",
+    "drew",
+    "washed",
+    "broke"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il a tapoté sur la table pour attirer son attention.",
+    "storySlug": "le-compteur-ne-ment-pas",
+    "targetWord": "tapoté",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "grimacé",
+  "sentence": "En goûtant le plat trop salé, elle a _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "grimacé",
+   "options": [
+    "grimacé",
+    "applaudi",
+    "bâillé",
+    "éternué"
+   ],
+   "translation": "Tasting the overly salty dish, she _____.",
+   "optionTranslations": [
+    "winced",
+    "clapped",
+    "yawned",
+    "sneezed"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "En goûtant le plat trop salé, elle a grimacé.",
+    "storySlug": "le-compteur-ne-ment-pas",
+    "targetWord": "grimacé",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "admettre",
+  "sentence": "Il est difficile d'_____ ses propres erreurs.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "admettre",
+   "options": [
+    "admettre",
+    "cacher",
+    "répéter",
+    "inventer"
+   ],
+   "translation": "It's hard to _____ your own mistakes.",
+   "optionTranslations": [
+    "admit",
+    "hide",
+    "repeat",
+    "invent"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il est difficile d'admettre ses propres erreurs.",
+    "storySlug": "le-compteur-ne-ment-pas",
+    "targetWord": "admettre",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'humidité",
+  "sentence": "Dans cette cave, on sent [[l'humidité]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the damp",
+   "options": [
+    "the damp",
+    "the heat",
+    "the cold wind",
+    "the dust"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Dans cette cave, on sent l'humidité.",
+    "storySlug": "le-compteur-ne-ment-pas",
+    "targetWord": "humidité",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'installation électrique",
+  "sentence": "[[L'installation électrique]] de cette vieille maison doit être refaite.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the electrical wiring",
+   "options": [
+    "the electrical wiring",
+    "the water pipes",
+    "the front door",
+    "the garden fence"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "L'installation électrique de cette vieille maison doit être refaite.",
+    "storySlug": "le-compteur-ne-ment-pas",
+    "targetWord": "installation électrique",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'ouverture",
+  "sentence": "L'[[ouverture]] du nouveau magasin aura lieu samedi.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the opening",
+   "options": [
+    "the opening",
+    "the closing",
+    "the renovation",
+    "the sale"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "L'ouverture du nouveau magasin aura lieu samedi.",
+    "storySlug": "le-compteur-ne-ment-pas",
+    "targetWord": "ouverture",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ravaler sa fierté",
+  "sentence": "Il a dû [[ravaler sa fierté]] pour demander de l'aide.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "swallow his pride",
+   "options": [
+    "swallow his pride",
+    "raise his voice",
+    "change his mind",
+    "lose his temper"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il a dû ravaler sa fierté pour demander de l'aide.",
+    "storySlug": "le-compteur-ne-ment-pas",
+    "targetWord": "ravalé sa fierté",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "franc",
+  "sentence": "Merci d'être [[franc]] avec moi, même si c'est difficile à entendre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "honest, direct",
+   "options": [
+    "honest, direct",
+    "polite",
+    "funny",
+    "quiet"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Merci d'être franc avec moi, même si c'est difficile à entendre.",
+    "storySlug": "le-compteur-ne-ment-pas",
+    "targetWord": "franc",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aux normes",
+  "sentence": "Cette installation n'est pas [[aux normes]] de sécurité.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "up to code",
+   "options": [
+    "up to code",
+    "very expensive",
+    "brand new",
+    "for sale"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Cette installation n'est pas aux normes de sécurité.",
+    "storySlug": "le-compteur-ne-ment-pas",
+    "targetWord": "aux normes",
+    "storySource": "user"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le câble",
+  "sentence": "Les [[câbles]] derrière la télé sont tout emmêlés.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cables",
+   "options": [
+    "cables",
+    "chairs",
+    "windows",
+    "plates"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Les câbles derrière la télé sont tout emmêlés.",
+    "storySlug": "le-compteur-ne-ment-pas",
+    "targetWord": "câbles",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "être d'accord",
+  "sentence": "Je ne suis pas [[d'accord]] avec cette décision.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in agreement",
+   "options": [
+    "in agreement",
+    "in a hurry",
+    "afraid",
+    "proud"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Je ne suis pas d'accord avec cette décision.",
+    "storySlug": "le-compteur-ne-ment-pas",
+    "targetWord": "être d'accord",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fissuré",
+  "sentence": "Le mur du garage est [[fissuré]] depuis le tremblement de terre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cracked",
+   "options": [
+    "cracked",
+    "painted",
+    "clean",
+    "new"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Le mur du garage est fissuré depuis le tremblement de terre.",
+    "storySlug": "le-compteur-ne-ment-pas",
+    "targetWord": "fissuré",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "noirci",
+  "sentence": "Les murs de la cuisine sont [[noircis]] par la fumée.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "blackened",
+   "options": [
+    "blackened",
+    "painted white",
+    "cracked",
+    "wet"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Les murs de la cuisine sont noircis par la fumée.",
+    "storySlug": "le-compteur-ne-ment-pas",
+    "targetWord": "noircis",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "repousser",
+  "sentence": "La réunion a été [[repoussée]] à la semaine prochaine.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "postponed",
+   "options": [
+    "postponed",
+    "cancelled",
+    "recorded",
+    "organized"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "La réunion a été repoussée à la semaine prochaine.",
+    "storySlug": "le-compteur-ne-ment-pas",
+    "targetWord": "repoussée",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sans rancune",
+  "sentence": "On s'est disputés hier, mais [[sans rancune]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "no hard feelings",
+   "options": [
+    "no hard feelings",
+    "with great anger",
+    "for a long time",
+    "without any reason"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "On s'est disputés hier, mais sans rancune.",
+    "storySlug": "le-compteur-ne-ment-pas",
+    "targetWord": "Sans rancune",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la bouche pleine",
+  "sentence": "Il a répondu [[la bouche pleine]], pendant le repas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "with his mouth full",
+   "options": [
+    "with his mouth full",
+    "with his eyes closed",
+    "in a loud voice",
+    "without saying a word"
+   ],
+   "audioClip": {
+    "language": "french",
+    "sentence": "Il a répondu la bouche pleine, pendant le repas.",
+    "storySlug": "le-compteur-ne-ment-pas",
+    "targetWord": "la bouche pleine",
+    "storySource": "user"
+   }
+  },
+  "featured": false
+ }
+]
