@@ -1756,6 +1756,55 @@
         "cuatrocientos",
         "mil"
       ]
+    },
+    "spanish-cultural-latam-b1": {
+      "articles": [
+        "el",
+        "la",
+        "las",
+        "los",
+        "un",
+        "una",
+        "unos",
+        "unas"
+      ],
+      "characterNames": [
+        "alondra",
+        "ulises",
+        "aldo",
+        "perla",
+        "gerardo",
+        "mayra",
+        "saúl",
+        "saul",
+        "brenda"
+      ],
+      "numerals": [
+        "catorce",
+        "cien",
+        "ciento",
+        "cinco",
+        "cincuenta",
+        "cuarenta",
+        "cuatro",
+        "dieciseis",
+        "diez",
+        "doce",
+        "dos",
+        "doscientos",
+        "mil",
+        "noventa",
+        "nueve",
+        "ocho",
+        "once",
+        "quince",
+        "seis",
+        "siete",
+        "trece",
+        "tres",
+        "veinte",
+        "veinticuatro"
+      ]
     }
   }
 }
