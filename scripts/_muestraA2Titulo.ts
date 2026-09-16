@@ -16,9 +16,10 @@
  *
  * Uso: NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_muestraA2Titulo.ts <slug>
  */
-import { config } from "dotenv";
-config({ path: ".env.local", quiet: true });
-config({ path: ".env", quiet: true });
+// PRIMERO, y de efecto lateral: ver scripts/_loadEnv.ts. Un config() de dotenv
+// escrito aqui arriba corre DESPUES de cargarse elevenlabs.ts, porque los
+// import se izan.
+import "./_loadEnv";
 
 import * as fs from "fs";
 import * as path from "path";

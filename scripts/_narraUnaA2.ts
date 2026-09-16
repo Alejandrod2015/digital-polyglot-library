@@ -14,9 +14,10 @@
  * Uso:  DPL_AUDIO_FULL_OK=1 NODE_OPTIONS="--conditions=react-server" \
  *         npx tsx scripts/_narraUnaA2.ts <slug>
  */
-import { config } from "dotenv";
-config({ path: ".env.local", quiet: true });
-config({ path: ".env", quiet: true });
+// PRIMERO, y de efecto lateral: los import se izan, asi que un config() de
+// dotenv escrito aqui arriba corre DESPUES de cargarse elevenlabs.ts y su
+// cliente de OpenAI se queda a null. Ver scripts/_loadEnv.ts.
+import "./_loadEnv";
 
 import { PrismaClient } from "../src/generated/prisma";
 import { generateAndUploadMultiVoiceAudio } from "../src/lib/elevenlabs";
