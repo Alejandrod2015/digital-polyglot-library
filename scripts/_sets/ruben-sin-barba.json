@@ -274,7 +274,7 @@
   {
     "type": "fill_blank",
     "word": "reconozco",
-    "sentence": "No llevas gafas y no te _____.",
+    "sentence": "Te cambió mucho la cara y no te _____.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "reconozco",
@@ -284,7 +284,7 @@
         "oigo",
         "creo"
       ],
-      "translation": "You're not wearing glasses and I don't _____ you.",
+      "translation": "Your face changed so much that I don't _____ you.",
       "optionTranslations": [
         "recognise",
         "see",
@@ -294,7 +294,7 @@
       "audioClip": {
         "storySlug": "ruben-sin-barba",
         "storySource": "user",
-        "sentence": "No llevas gafas y no te reconozco.",
+        "sentence": "Te cambió mucho la cara y no te reconozco.",
         "targetWord": "reconozco",
         "language": "spanish"
       }
@@ -304,7 +304,7 @@
   {
     "type": "fill_blank",
     "word": "se tocó",
-    "sentence": "Le dolía la cara y _____ despacio.",
+    "sentence": "Para saber si le dolía, se _____ la mejilla con cuidado.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "se tocó",
@@ -314,7 +314,7 @@
         "se cubrió",
         "se rascó"
       ],
-      "translation": "His face hurt and he _____ it slowly.",
+      "translation": "To find out if it hurt, he _____ his cheek carefully.",
       "optionTranslations": [
         "touched",
         "washed",
@@ -324,7 +324,7 @@
       "audioClip": {
         "storySlug": "ruben-sin-barba",
         "storySource": "user",
-        "sentence": "Le dolía la cara y se tocó despacio.",
+        "sentence": "Para saber si le dolía, se tocó la mejilla con cuidado.",
         "targetWord": "se tocó",
         "language": "spanish"
       }

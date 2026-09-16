@@ -304,7 +304,7 @@
   {
     "type": "fill_blank",
     "word": "cuesta",
-    "sentence": "¿Cuánto _____ esta guitarra usada?",
+    "sentence": "En la tienda, antes de pagar, ¿cuánto _____ esta guitarra?",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "cuesta",
@@ -314,7 +314,7 @@
         "mide",
         "dura"
       ],
-      "translation": "How much does this used guitar _____?",
+      "translation": "In the shop, before paying, how much does this guitar _____?",
       "optionTranslations": [
         "cost",
         "weigh",
@@ -324,7 +324,7 @@
       "audioClip": {
         "storySlug": "huele-a-quemado",
         "storySource": "user",
-        "sentence": "¿Cuánto cuesta esta guitarra usada?",
+        "sentence": "En la tienda, antes de pagar, ¿cuánto cuesta esta guitarra?",
         "targetWord": "cuesta",
         "language": "spanish"
       }
@@ -334,7 +334,7 @@
   {
     "type": "fill_blank",
     "word": "preguntó",
-    "sentence": "Ella no sabía el precio y _____.",
+    "sentence": "No sabía el precio, así que se acercó y _____.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "preguntó",
@@ -344,7 +344,7 @@
         "adivinó",
         "olvidó"
       ],
-      "translation": "She didn't know the price, so she _____.",
+      "translation": "She didn't know the price, so she went up and _____.",
       "optionTranslations": [
         "asked",
         "paid",
@@ -354,7 +354,7 @@
       "audioClip": {
         "storySlug": "huele-a-quemado",
         "storySource": "user",
-        "sentence": "Ella no sabía el precio y preguntó.",
+        "sentence": "No sabía el precio, así que se acercó y preguntó.",
         "targetWord": "preguntó",
         "language": "spanish"
       }
@@ -394,7 +394,7 @@
   {
     "type": "fill_blank",
     "word": "con cuidado",
-    "sentence": "Llevaba el vaso lleno y caminó _____.",
+    "sentence": "Llevaba el vaso lleno y caminó _____ para no derramarlo.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "con cuidado",
@@ -404,7 +404,7 @@
         "hacia atrás",
         "en voz alta"
       ],
-      "translation": "She was carrying the full glass and walked _____.",
+      "translation": "She was carrying the full glass and walked _____ so as not to spill it.",
       "optionTranslations": [
         "carefully",
         "quickly",
@@ -414,7 +414,7 @@
       "audioClip": {
         "storySlug": "huele-a-quemado",
         "storySource": "user",
-        "sentence": "Llevaba el vaso lleno y caminó con cuidado.",
+        "sentence": "Llevaba el vaso lleno y caminó con cuidado para no derramarlo.",
         "targetWord": "con cuidado",
         "language": "spanish"
       }

@@ -125,9 +125,9 @@
       "answer": "ready",
       "options": [
         "ready",
-        "tired",
-        "lost",
-        "worried"
+        "busy",
+        "early",
+        "calm"
       ],
       "audioClip": {
         "storySlug": "ya-no-hay-sabados-libres",
@@ -364,7 +364,7 @@
   {
     "type": "fill_blank",
     "word": "se equivocó",
-    "sentence": "Al escribir el número, ella _____.",
+    "sentence": "Al escribir el número, ella _____ y tuvo que borrarlo.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "se equivocó",
@@ -374,7 +374,7 @@
         "se rio",
         "se paró"
       ],
-      "translation": "While writing the number, she _____.",
+      "translation": "While writing the number, she _____ and had to erase it.",
       "optionTranslations": [
         "made a mistake",
         "hurried",
@@ -384,7 +384,7 @@
       "audioClip": {
         "storySlug": "ya-no-hay-sabados-libres",
         "storySource": "user",
-        "sentence": "Al escribir el número, ella se equivocó.",
+        "sentence": "Al escribir el número, ella se equivocó y tuvo que borrarlo.",
         "targetWord": "se equivocó",
         "language": "spanish"
       }
@@ -394,7 +394,7 @@
   {
     "type": "fill_blank",
     "word": "riéndose",
-    "sentence": "Contó el chiste _____ mucho.",
+    "sentence": "Contó el chiste _____ mucho, y todos se contagiaron de la risa.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "riéndose",
@@ -404,7 +404,7 @@
         "gritando",
         "cantando"
       ],
-      "translation": "He told the joke, _____ a lot.",
+      "translation": "He told the joke _____ a lot, and everyone caught the laughter.",
       "optionTranslations": [
         "laughing",
         "crying",
@@ -414,7 +414,7 @@
       "audioClip": {
         "storySlug": "ya-no-hay-sabados-libres",
         "storySource": "user",
-        "sentence": "Contó el chiste riéndose mucho.",
+        "sentence": "Contó el chiste riéndose mucho, y todos se contagiaron de la risa.",
         "targetWord": "riéndose",
         "language": "spanish"
       }
@@ -431,20 +431,20 @@
       "options": [
         "acuerdas",
         "quejas",
-        "ríes",
-        "olvidas"
+        "preocupas",
+        "ríes"
       ],
       "translation": "Do you still _____ his name?",
       "optionTranslations": [
         "remember",
         "complain about",
-        "laugh at",
-        "forget"
+        "worry about",
+        "laugh at"
       ],
       "audioClip": {
         "storySlug": "ya-no-hay-sabados-libres",
         "storySource": "user",
-        "sentence": "¿Todavía te acuerdas de su nombre?",
+        "sentence": "Todavía te acuerdas de su nombre.",
         "targetWord": "acuerdas",
         "language": "spanish"
       }
@@ -454,7 +454,7 @@
   {
     "type": "fill_blank",
     "word": "firmó",
-    "sentence": "Antes de irse, él _____ el contrato.",
+    "sentence": "Antes de irse, él _____ el contrato con su nombre.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "firmó",
@@ -464,7 +464,7 @@
         "perdió",
         "rompió"
       ],
-      "translation": "Before leaving, he _____ the contract.",
+      "translation": "Before leaving, he _____ the contract with his name.",
       "optionTranslations": [
         "signed",
         "read",
@@ -474,7 +474,7 @@
       "audioClip": {
         "storySlug": "ya-no-hay-sabados-libres",
         "storySource": "user",
-        "sentence": "Antes de irse, él firmó el contrato.",
+        "sentence": "Antes de irse, él firmó el contrato con su nombre.",
         "targetWord": "firmó",
         "language": "spanish"
       }

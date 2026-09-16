@@ -257,7 +257,7 @@
       "answer": "and that is it",
       "options": [
         "and that is it",
-        "and nothing more happens",
+        "and I'm still angry",
         "and I'll forget it",
         "and we'll see"
       ],
@@ -274,27 +274,27 @@
   {
     "type": "fill_blank",
     "word": "ahorraba",
-    "sentence": "Cada mes, ella _____ un poco de dinero.",
+    "sentence": "Cada mes, ella _____ un poco en una hucha, sin gastarlo.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "ahorraba",
       "options": [
         "ahorraba",
         "gastaba",
-        "perdía",
-        "contaba"
+        "regalaba",
+        "prestaba"
       ],
-      "translation": "Every month, she _____ a little money.",
+      "translation": "Every month, she _____ a little in a piggy bank, without spending it.",
       "optionTranslations": [
         "saved",
         "spent",
-        "lost",
-        "counted"
+        "gave away",
+        "lent"
       ],
       "audioClip": {
         "storySlug": "las-gafas-pueden-esperar",
         "storySource": "user",
-        "sentence": "Cada mes, ella ahorraba un poco de dinero.",
+        "sentence": "Cada mes, ella ahorraba un poco en una hucha, sin gastarlo.",
         "targetWord": "ahorraba",
         "language": "spanish"
       }
@@ -334,7 +334,7 @@
   {
     "type": "fill_blank",
     "word": "miró",
-    "sentence": "Ella _____ el reloj y suspiró.",
+    "sentence": "Ella _____ el reloj varias veces y suspiró, nerviosa por la hora.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "miró",
@@ -344,7 +344,7 @@
         "vendió",
         "escondió"
       ],
-      "translation": "She _____ at the clock and sighed.",
+      "translation": "She _____ at the clock several times and sighed, nervous about the time.",
       "optionTranslations": [
         "looked",
         "broke",
@@ -354,7 +354,7 @@
       "audioClip": {
         "storySlug": "las-gafas-pueden-esperar",
         "storySource": "user",
-        "sentence": "Ella miró el reloj y suspiró.",
+        "sentence": "Ella miró el reloj varias veces y suspiró, nerviosa por la hora.",
         "targetWord": "miró",
         "language": "spanish"
       }
@@ -364,7 +364,7 @@
   {
     "type": "fill_blank",
     "word": "deberte",
-    "sentence": "No quiero _____ dinero.",
+    "sentence": "Prefiero pagar todo yo mismo, así que no quiero _____ dinero.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "deberte",
@@ -374,7 +374,7 @@
         "pedirte",
         "darte"
       ],
-      "translation": "I don't want to _____ money.",
+      "translation": "I'd rather pay everything myself, so I don't want to _____ money.",
       "optionTranslations": [
         "owe you",
         "lend you",
@@ -384,7 +384,7 @@
       "audioClip": {
         "storySlug": "las-gafas-pueden-esperar",
         "storySource": "user",
-        "sentence": "No quiero deberte dinero.",
+        "sentence": "Prefiero pagar todo yo mismo, así que no quiero deberte dinero.",
         "targetWord": "deberte",
         "language": "spanish"
       }
@@ -394,7 +394,7 @@
   {
     "type": "fill_blank",
     "word": "suave",
-    "sentence": "Le dio un golpe _____ en el brazo.",
+    "sentence": "Bromeando, le dio un golpe _____ en el brazo, casi sin tocarlo.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "suave",
@@ -404,7 +404,7 @@
         "frío",
         "ruidoso"
       ],
-      "translation": "She gave him a _____ tap on the arm.",
+      "translation": "Joking, he gave him a _____ tap on the arm, barely touching him.",
       "optionTranslations": [
         "gentle",
         "hard",
@@ -414,7 +414,7 @@
       "audioClip": {
         "storySlug": "las-gafas-pueden-esperar",
         "storySource": "user",
-        "sentence": "Le dio un golpe suave en el brazo.",
+        "sentence": "Bromeando, le dio un golpe suave en el brazo, casi sin tocarlo.",
         "targetWord": "suave",
         "language": "spanish"
       }
@@ -424,7 +424,7 @@
   {
     "type": "fill_blank",
     "word": "quiero",
-    "sentence": "_____ pagar mi parte, no la tuya.",
+    "sentence": "Nadie me lo pidió, pero _____ pagar mi parte, no la tuya.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "quiero",
@@ -434,7 +434,7 @@
         "rechazo",
         "prometo"
       ],
-      "translation": "I _____ to pay my share, not yours.",
+      "translation": "Nobody asked me to, but I _____ to pay my share, not yours.",
       "optionTranslations": [
         "want",
         "forget",
@@ -444,7 +444,7 @@
       "audioClip": {
         "storySlug": "las-gafas-pueden-esperar",
         "storySource": "user",
-        "sentence": "Quiero pagar mi parte, no la tuya.",
+        "sentence": "Nadie me lo pidió, pero quiero pagar mi parte, no la tuya.",
         "targetWord": "quiero",
         "language": "spanish"
       }

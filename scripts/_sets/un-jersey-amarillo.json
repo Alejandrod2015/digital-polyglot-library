@@ -274,7 +274,7 @@
   {
     "type": "fill_blank",
     "word": "pensó",
-    "sentence": "Miró el armario y _____ un momento.",
+    "sentence": "Miró el armario, se cruzó de brazos y _____ un momento.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "pensó",
@@ -284,7 +284,7 @@
         "durmió",
         "esperó"
       ],
-      "translation": "She looked at the wardrobe and _____ for a moment.",
+      "translation": "She looked at the wardrobe, crossed her arms, and _____ for a moment.",
       "optionTranslations": [
         "thought",
         "laughed",
@@ -294,7 +294,7 @@
       "audioClip": {
         "storySlug": "un-jersey-amarillo",
         "storySource": "user",
-        "sentence": "Miró el armario y pensó un momento.",
+        "sentence": "Miró el armario, se cruzó de brazos y pensó un momento.",
         "targetWord": "pensó",
         "language": "spanish"
       }
@@ -304,7 +304,7 @@
   {
     "type": "fill_blank",
     "word": "decidió",
-    "sentence": "Al final, ella _____ vender la chaqueta.",
+    "sentence": "Después de pensarlo mucho, al final ella _____ vender la chaqueta.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "decidió",
@@ -314,7 +314,7 @@
         "intentó",
         "quiso"
       ],
-      "translation": "In the end, she _____ to sell the jacket.",
+      "translation": "After thinking about it a lot, in the end she _____ to sell the jacket.",
       "optionTranslations": [
         "decided",
         "forgot",
@@ -324,7 +324,7 @@
       "audioClip": {
         "storySlug": "un-jersey-amarillo",
         "storySource": "user",
-        "sentence": "Al final, ella decidió vender la chaqueta.",
+        "sentence": "Después de pensarlo mucho, al final ella decidió vender la chaqueta.",
         "targetWord": "decidió",
         "language": "spanish"
       }
@@ -334,7 +334,7 @@
   {
     "type": "fill_blank",
     "word": "compró",
-    "sentence": "En la tienda, _____ un jersey amarillo.",
+    "sentence": "Con su propio dinero, _____ un jersey amarillo en la tienda.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "compró",
@@ -344,7 +344,7 @@
         "robó",
         "devolvió"
       ],
-      "translation": "At the shop, she _____ a yellow jumper.",
+      "translation": "With her own money, she _____ a yellow jumper at the shop.",
       "optionTranslations": [
         "bought",
         "sold",
@@ -354,7 +354,7 @@
       "audioClip": {
         "storySlug": "un-jersey-amarillo",
         "storySource": "user",
-        "sentence": "En la tienda, compró un jersey amarillo.",
+        "sentence": "Con su propio dinero, compró un jersey amarillo en la tienda.",
         "targetWord": "compró",
         "language": "spanish"
       }
@@ -364,7 +364,7 @@
   {
     "type": "fill_blank",
     "word": "enseguida",
-    "sentence": "Vio el mensaje y llamó _____.",
+    "sentence": "Vio el mensaje y llamó _____, sin esperar ni un minuto.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "enseguida",
@@ -374,7 +374,7 @@
         "por error",
         "en voz baja"
       ],
-      "translation": "She saw the message and called _____.",
+      "translation": "She saw the message and called _____, without waiting even a minute.",
       "optionTranslations": [
         "right away",
         "later",
@@ -384,7 +384,7 @@
       "audioClip": {
         "storySlug": "un-jersey-amarillo",
         "storySource": "user",
-        "sentence": "Vio el mensaje y llamó enseguida.",
+        "sentence": "Vio el mensaje y llamó enseguida, sin esperar ni un minuto.",
         "targetWord": "enseguida",
         "language": "spanish"
       }
@@ -394,7 +394,7 @@
   {
     "type": "fill_blank",
     "word": "pones",
-    "sentence": "La próxima vez, tú te _____ el jersey.",
+    "sentence": "La próxima vez que haga frío, tú te _____ el jersey.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "pones",
@@ -404,7 +404,7 @@
         "pierdes",
         "vendes"
       ],
-      "translation": "Next time, you _____ the jumper.",
+      "translation": "Next time it's cold, you _____ the jumper.",
       "optionTranslations": [
         "put on",
         "wash",
@@ -414,7 +414,7 @@
       "audioClip": {
         "storySlug": "un-jersey-amarillo",
         "storySource": "user",
-        "sentence": "La próxima vez, tú te pones el jersey.",
+        "sentence": "La próxima vez que haga frío, tú te pones el jersey.",
         "targetWord": "pones",
         "language": "spanish"
       }

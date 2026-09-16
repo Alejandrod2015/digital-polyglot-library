@@ -274,7 +274,7 @@
   {
     "type": "fill_blank",
     "word": "conocían",
-    "sentence": "Antes de la cita, no se _____.",
+    "sentence": "Antes de la cita, no se _____: era su primera charla.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "conocían",
@@ -284,7 +284,7 @@
         "entendían",
         "fiaban"
       ],
-      "translation": "Before the date, they didn't _____ each other.",
+      "translation": "Before the date, they didn't _____ each other: it was their first talk.",
       "optionTranslations": [
         "know",
         "like",
@@ -294,7 +294,7 @@
       "audioClip": {
         "storySlug": "raul-lee-poesia",
         "storySource": "user",
-        "sentence": "Antes de la cita, no se conocían.",
+        "sentence": "Antes de la cita, no se conocían: era su primera charla.",
         "targetWord": "conocían",
         "language": "spanish"
       }
@@ -304,7 +304,7 @@
   {
     "type": "fill_blank",
     "word": "hablaron",
-    "sentence": "Los amigos _____ toda la tarde.",
+    "sentence": "Los amigos _____ toda la tarde por teléfono.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "hablaron",
@@ -314,7 +314,7 @@
         "leyeron",
         "esperaron"
       ],
-      "translation": "The friends _____ all afternoon.",
+      "translation": "The friends _____ on the phone all afternoon.",
       "optionTranslations": [
         "talked",
         "walked",
@@ -324,7 +324,7 @@
       "audioClip": {
         "storySlug": "raul-lee-poesia",
         "storySource": "user",
-        "sentence": "Los amigos hablaron toda la tarde.",
+        "sentence": "Los amigos hablaron toda la tarde por teléfono.",
         "targetWord": "hablaron",
         "language": "spanish"
       }
@@ -334,7 +334,7 @@
   {
     "type": "fill_blank",
     "word": "leyó",
-    "sentence": "Antes de dormir, ella _____ un poema.",
+    "sentence": "Antes de dormir, ella _____ un poema, pasando las páginas del libro.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "leyó",
@@ -344,7 +344,7 @@
         "cantó",
         "olvidó"
       ],
-      "translation": "Before sleeping, she _____ a poem.",
+      "translation": "Before sleeping, she _____ a poem, turning the pages of the book.",
       "optionTranslations": [
         "read",
         "wrote",
@@ -354,7 +354,7 @@
       "audioClip": {
         "storySlug": "raul-lee-poesia",
         "storySource": "user",
-        "sentence": "Antes de dormir, ella leyó un poema.",
+        "sentence": "Antes de dormir, ella leyó un poema, pasando las páginas del libro.",
         "targetWord": "leyó",
         "language": "spanish"
       }
@@ -394,7 +394,7 @@
   {
     "type": "fill_blank",
     "word": "despedirse",
-    "sentence": "Antes de irse, quiso _____ con un abrazo.",
+    "sentence": "Antes de irse para siempre, quiso _____ de todos con un abrazo.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "despedirse",
@@ -404,7 +404,7 @@
         "disculparse",
         "reírse"
       ],
-      "translation": "Before leaving, he wanted to _____ with a hug.",
+      "translation": "Before leaving forever, he wanted to _____ everyone with a hug.",
       "optionTranslations": [
         "say goodbye",
         "say hello",
@@ -414,7 +414,7 @@
       "audioClip": {
         "storySlug": "raul-lee-poesia",
         "storySource": "user",
-        "sentence": "Antes de irse, quiso despedirse con un abrazo.",
+        "sentence": "Antes de irse para siempre, quiso despedirse de todos con un abrazo.",
         "targetWord": "despedirse",
         "language": "spanish"
       }

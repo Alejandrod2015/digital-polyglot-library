@@ -304,7 +304,7 @@
   {
     "type": "fill_blank",
     "word": "aplaudía",
-    "sentence": "Cuando acabó la canción, el público _____.",
+    "sentence": "Cuando acabó la canción, el público _____ con las manos.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "aplaudía",
@@ -314,7 +314,7 @@
         "dormía",
         "gritaba"
       ],
-      "translation": "When the song ended, the audience _____.",
+      "translation": "When the song ended, the audience _____ with their hands.",
       "optionTranslations": [
         "clapped",
         "left",
@@ -324,7 +324,7 @@
       "audioClip": {
         "storySlug": "la-ultima-cancion",
         "storySource": "user",
-        "sentence": "Cuando acabó la canción, el público aplaudía.",
+        "sentence": "Cuando acabó la canción, el público aplaudía con las manos.",
         "targetWord": "aplaudía",
         "language": "spanish"
       }
@@ -334,7 +334,7 @@
   {
     "type": "fill_blank",
     "word": "bailaba",
-    "sentence": "La niña _____ feliz en la fiesta.",
+    "sentence": "Con la música sonando, ella _____ feliz en la fiesta.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "bailaba",
@@ -344,7 +344,7 @@
         "leía",
         "lloraba"
       ],
-      "translation": "The girl was _____ happily at the party.",
+      "translation": "With the music playing, she was _____ happily at the party.",
       "optionTranslations": [
         "dancing",
         "eating",
@@ -354,7 +354,7 @@
       "audioClip": {
         "storySlug": "la-ultima-cancion",
         "storySource": "user",
-        "sentence": "La niña bailaba feliz en la fiesta.",
+        "sentence": "Con la música sonando, ella bailaba feliz en la fiesta.",
         "targetWord": "bailaba",
         "language": "spanish"
       }
@@ -364,27 +364,27 @@
   {
     "type": "fill_blank",
     "word": "calló",
-    "sentence": "De repente, todo el público se _____.",
+    "sentence": "El profesor levantó la mano, y la clase se _____.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "calló",
       "options": [
         "calló",
-        "fue",
         "enfadó",
-        "durmió"
+        "aplaudió",
+        "bailó"
       ],
-      "translation": "Suddenly, the whole audience went _____.",
+      "translation": "The teacher raised his hand, and the class went _____.",
       "optionTranslations": [
         "quiet",
-        "away",
         "angry",
-        "to sleep"
+        "clapped",
+        "danced"
       ],
       "audioClip": {
         "storySlug": "la-ultima-cancion",
         "storySource": "user",
-        "sentence": "De repente, todo el público se calló.",
+        "sentence": "El profesor levantó la mano, y la clase se calló.",
         "targetWord": "calló",
         "language": "spanish"
       }
@@ -394,7 +394,7 @@
   {
     "type": "fill_blank",
     "word": "acompañó",
-    "sentence": "Como llovía, él la _____ hasta la puerta.",
+    "sentence": "Como llovía, él la _____ con su paraguas hasta la puerta.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "acompañó",
@@ -404,7 +404,7 @@
         "llamó",
         "olvidó"
       ],
-      "translation": "Since it was raining, he _____ her to the door.",
+      "translation": "Since it was raining, he _____ her with his umbrella to the door.",
       "optionTranslations": [
         "walked with",
         "waited for",
@@ -414,7 +414,7 @@
       "audioClip": {
         "storySlug": "la-ultima-cancion",
         "storySource": "user",
-        "sentence": "Como llovía, él la acompañó hasta la puerta.",
+        "sentence": "Como llovía, él la acompañó con su paraguas hasta la puerta.",
         "targetWord": "acompañó",
         "language": "spanish"
       }
@@ -424,7 +424,7 @@
   {
     "type": "fill_blank",
     "word": "se presentó",
-    "sentence": "Al llegar, ella _____ con una sonrisa.",
+    "sentence": "Al llegar a la fiesta, ella _____ y dio su nombre.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "se presentó",
@@ -434,7 +434,7 @@
         "se sentó",
         "se fue"
       ],
-      "translation": "On arriving, she _____ with a smile.",
+      "translation": "On arriving at the party, she _____ and gave her name.",
       "optionTranslations": [
         "introduced herself",
         "said goodbye",
@@ -444,7 +444,7 @@
       "audioClip": {
         "storySlug": "la-ultima-cancion",
         "storySource": "user",
-        "sentence": "Al llegar, ella se presentó con una sonrisa.",
+        "sentence": "Al llegar a la fiesta, ella se presentó y dio su nombre.",
         "targetWord": "se presentó",
         "language": "spanish"
       }

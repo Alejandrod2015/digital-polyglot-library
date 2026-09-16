@@ -274,7 +274,7 @@
   {
     "type": "fill_blank",
     "word": "venía",
-    "sentence": "Cada mañana, él _____ tarde a trabajar.",
+    "sentence": "Cada mañana, él _____ tarde y su jefe se enfadaba.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "venía",
@@ -284,7 +284,7 @@
         "llamaba",
         "corría"
       ],
-      "translation": "Every morning, he _____ late to work.",
+      "translation": "Every morning, he _____ late and his boss got angry.",
       "optionTranslations": [
         "came",
         "left",
@@ -294,7 +294,7 @@
       "audioClip": {
         "storySlug": "olga-no-tiene-prisa",
         "storySource": "user",
-        "sentence": "Cada mañana, él venía tarde a trabajar.",
+        "sentence": "Cada mañana, él venía tarde y su jefe se enfadaba.",
         "targetWord": "venía",
         "language": "spanish"
       }
@@ -304,7 +304,7 @@
   {
     "type": "fill_blank",
     "word": "Siéntate",
-    "sentence": "_____, esto va a tardar un rato.",
+    "sentence": "_____ y ponte cómoda, esto va a tardar un rato.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "Siéntate",
@@ -314,7 +314,7 @@
         "Cállate",
         "Levántate"
       ],
-      "translation": "_____, this is going to take a while.",
+      "translation": "_____ and get comfortable, this is going to take a while.",
       "optionTranslations": [
         "Sit down",
         "Hurry up",
@@ -324,7 +324,7 @@
       "audioClip": {
         "storySlug": "olga-no-tiene-prisa",
         "storySource": "user",
-        "sentence": "Siéntate, esto va a tardar un rato.",
+        "sentence": "Siéntate y ponte cómoda, esto va a tardar un rato.",
         "targetWord": "Siéntate",
         "language": "spanish"
       }
@@ -394,7 +394,7 @@
   {
     "type": "fill_blank",
     "word": "sonriendo",
-    "sentence": "Se despidió _____ un poco.",
+    "sentence": "Se despidió _____ un poco, con los ojos brillantes de alegría.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "sonriendo",
@@ -404,7 +404,7 @@
         "gritando",
         "corriendo"
       ],
-      "translation": "She said goodbye, _____ a little.",
+      "translation": "She said goodbye, _____ a little, with eyes shining with joy.",
       "optionTranslations": [
         "smiling",
         "crying",
@@ -414,7 +414,7 @@
       "audioClip": {
         "storySlug": "olga-no-tiene-prisa",
         "storySource": "user",
-        "sentence": "Se despidió sonriendo un poco.",
+        "sentence": "Se despidió sonriendo un poco, con los ojos brillantes de alegría.",
         "targetWord": "sonriendo",
         "language": "spanish"
       }

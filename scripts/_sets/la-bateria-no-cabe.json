@@ -311,7 +311,7 @@
   {
     "type": "fill_blank",
     "word": "Cargaron",
-    "sentence": "_____ las cajas entre los amigos.",
+    "sentence": "_____ las cajas pesadas entre los amigos, para subirlas al coche.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "Cargaron",
@@ -321,7 +321,7 @@
         "Pintaron",
         "Perdieron"
       ],
-      "translation": "_____ the boxes between the friends.",
+      "translation": "They _____ the heavy boxes between the friends, to load them into the car.",
       "optionTranslations": [
         "loaded",
         "counted",
@@ -331,7 +331,7 @@
       "audioClip": {
         "storySlug": "la-bateria-no-cabe",
         "storySource": "user",
-        "sentence": "Cargaron las cajas entre los amigos.",
+        "sentence": "Cargaron las cajas pesadas entre los amigos, para subirlas al coche.",
         "targetWord": "Cargaron",
         "language": "spanish"
       }
@@ -371,7 +371,7 @@
   {
     "type": "fill_blank",
     "word": "Condujo",
-    "sentence": "Como no había autobús, ella _____ hasta el pueblo.",
+    "sentence": "No había autobús, así que ella cogió el coche y _____.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "Condujo",
@@ -381,7 +381,7 @@
         "Voló",
         "Nadó"
       ],
-      "translation": "Since there was no bus, she _____ to the village.",
+      "translation": "There was no bus, so she grabbed the car and _____.",
       "optionTranslations": [
         "drove",
         "walked",
@@ -391,7 +391,7 @@
       "audioClip": {
         "storySlug": "la-bateria-no-cabe",
         "storySource": "user",
-        "sentence": "Como no había autobús, ella condujo hasta el pueblo.",
+        "sentence": "No había autobús, así que ella cogió el coche y condujo.",
         "targetWord": "Condujo",
         "language": "spanish"
       }
@@ -401,7 +401,7 @@
   {
     "type": "fill_blank",
     "word": "aparcó",
-    "sentence": "No había sitio, así que _____ lejos.",
+    "sentence": "No había sitio para el coche, así que _____ lejos.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "aparcó",
@@ -411,7 +411,7 @@
         "caminó",
         "gritó"
       ],
-      "translation": "There was no space, so she _____ far away.",
+      "translation": "There was no space for the car, so she _____ far away.",
       "optionTranslations": [
         "parked",
         "waited",
@@ -421,7 +421,7 @@
       "audioClip": {
         "storySlug": "la-bateria-no-cabe",
         "storySource": "user",
-        "sentence": "No había sitio, así que aparcó lejos.",
+        "sentence": "No había sitio para el coche, así que aparcó lejos.",
         "targetWord": "aparcó",
         "language": "spanish"
       }
@@ -431,7 +431,7 @@
   {
     "type": "fill_blank",
     "word": "gritó",
-    "sentence": "Al ver el coche, ella _____ de sorpresa.",
+    "sentence": "Al ver el coche, ella _____ tan fuerte que todos miraron.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "gritó",
@@ -441,7 +441,7 @@
         "lloró",
         "susurró"
       ],
-      "translation": "On seeing the car, she _____ in surprise.",
+      "translation": "On seeing the car, she _____ so loudly that everyone looked.",
       "optionTranslations": [
         "shouted",
         "laughed",
@@ -451,7 +451,7 @@
       "audioClip": {
         "storySlug": "la-bateria-no-cabe",
         "storySource": "user",
-        "sentence": "Al ver el coche, ella gritó de sorpresa.",
+        "sentence": "Al ver el coche, ella gritó tan fuerte que todos miraron.",
         "targetWord": "gritó",
         "language": "spanish"
       }

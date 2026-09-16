@@ -334,7 +334,7 @@
   {
     "type": "fill_blank",
     "word": "recordaban",
-    "sentence": "Sus manos ya no _____ la canción.",
+    "sentence": "Sus manos ya no _____ la canción de memoria.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "recordaban",
@@ -344,7 +344,7 @@
         "oían",
         "sabían"
       ],
-      "translation": "Her hands no longer _____ the song.",
+      "translation": "Her hands no longer _____ the song by heart.",
       "optionTranslations": [
         "remembered",
         "played",
@@ -354,7 +354,7 @@
       "audioClip": {
         "storySlug": "casi-a-la-una",
         "storySource": "user",
-        "sentence": "Sus manos ya no recordaban la canción.",
+        "sentence": "Sus manos ya no recordaban la canción de memoria.",
         "targetWord": "recordaban",
         "language": "spanish"
       }
@@ -364,7 +364,7 @@
   {
     "type": "fill_blank",
     "word": "repitió",
-    "sentence": "El profesor _____ la pregunta muchas veces.",
+    "sentence": "El alumno no entendía, y el profesor _____ la pregunta.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "repitió",
@@ -374,7 +374,7 @@
         "escribió",
         "contestó"
       ],
-      "translation": "The teacher _____ the question many times.",
+      "translation": "The student didn't understand, and the teacher _____ the question.",
       "optionTranslations": [
         "repeated",
         "forgot",
@@ -384,7 +384,7 @@
       "audioClip": {
         "storySlug": "casi-a-la-una",
         "storySource": "user",
-        "sentence": "El profesor repitió la pregunta muchas veces.",
+        "sentence": "El alumno no entendía, y el profesor repitió la pregunta.",
         "targetWord": "repitió",
         "language": "spanish"
       }
@@ -394,7 +394,7 @@
   {
     "type": "fill_blank",
     "word": "llamó",
-    "sentence": "Antes de salir, ella lo _____ por teléfono.",
+    "sentence": "Antes de salir, ella lo _____ por teléfono para oír su voz.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "llamó",
@@ -404,7 +404,7 @@
         "escribió",
         "siguió"
       ],
-      "translation": "Before leaving, she _____ him on the phone.",
+      "translation": "Before leaving, she _____ him on the phone to hear his voice.",
       "optionTranslations": [
         "called",
         "waited for",
@@ -414,7 +414,7 @@
       "audioClip": {
         "storySlug": "casi-a-la-una",
         "storySource": "user",
-        "sentence": "Antes de salir, ella lo llamó por teléfono.",
+        "sentence": "Antes de salir, ella lo llamó por teléfono para oír su voz.",
         "targetWord": "llamó",
         "language": "spanish"
       }
@@ -430,16 +430,16 @@
       "answer": "tardó",
       "options": [
         "tardó",
-        "dudó",
-        "insistió",
-        "pensó"
+        "corrió",
+        "cantó",
+        "durmió"
       ],
       "translation": "Since he couldn't find the words, he _____ a long time to answer.",
       "optionTranslations": [
-        "took",
-        "hesitated",
-        "insisted",
-        "thought"
+        "took a while",
+        "ran",
+        "sang",
+        "slept"
       ],
       "audioClip": {
         "storySlug": "casi-a-la-una",

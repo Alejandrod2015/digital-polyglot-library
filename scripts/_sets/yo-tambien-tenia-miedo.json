@@ -274,7 +274,7 @@
   {
     "type": "fill_blank",
     "word": "abrazó",
-    "sentence": "Al verla llorar, él la _____ fuerte.",
+    "sentence": "Al verla llorar, él la _____ fuerte y no la soltó.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "abrazó",
@@ -284,7 +284,7 @@
         "llamó",
         "miró"
       ],
-      "translation": "On seeing her cry, he _____ her tight.",
+      "translation": "On seeing her cry, he _____ her tight and didn't let go.",
       "optionTranslations": [
         "hugged",
         "left",
@@ -294,7 +294,7 @@
       "audioClip": {
         "storySlug": "yo-tambien-tenia-miedo",
         "storySource": "user",
-        "sentence": "Al verla llorar, él la abrazó fuerte.",
+        "sentence": "Al verla llorar, él la abrazó fuerte y no la soltó.",
         "targetWord": "abrazó",
         "language": "spanish"
       }
@@ -304,7 +304,7 @@
   {
     "type": "fill_blank",
     "word": "terminar",
-    "sentence": "Quería _____ el trabajo antes de la hora.",
+    "sentence": "Quería _____ el trabajo pronto, sin quedarse hasta tarde.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "terminar",
@@ -314,7 +314,7 @@
         "vender",
         "esconder"
       ],
-      "translation": "He wanted to _____ the work before five.",
+      "translation": "He wanted to _____ the work soon, without staying late.",
       "optionTranslations": [
         "finish",
         "start",
@@ -324,7 +324,7 @@
       "audioClip": {
         "storySlug": "yo-tambien-tenia-miedo",
         "storySource": "user",
-        "sentence": "Quería terminar el trabajo antes de la hora.",
+        "sentence": "Quería terminar el trabajo pronto, sin quedarse hasta tarde.",
         "targetWord": "terminar",
         "language": "spanish"
       }
@@ -364,7 +364,7 @@
   {
     "type": "fill_blank",
     "word": "lloraba",
-    "sentence": "La película era tan triste que ella _____.",
+    "sentence": "La película era tan triste que se le llenaron los ojos: _____.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "lloraba",
@@ -374,7 +374,7 @@
         "dormía",
         "salía"
       ],
-      "translation": "The film was so sad that she _____.",
+      "translation": "The film was so sad that her eyes filled with tears and she _____.",
       "optionTranslations": [
         "cried",
         "laughed",
@@ -384,7 +384,7 @@
       "audioClip": {
         "storySlug": "yo-tambien-tenia-miedo",
         "storySource": "user",
-        "sentence": "La película era tan triste que ella lloraba.",
+        "sentence": "La película era tan triste que se le llenaron los ojos: lloraba.",
         "targetWord": "lloraba",
         "language": "spanish"
       }
@@ -394,7 +394,7 @@
   {
     "type": "fill_blank",
     "word": "empezó a llover",
-    "sentence": "Estábamos en el parque cuando _____.",
+    "sentence": "Estábamos en el parque cuando cayeron las primeras gotas y _____.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "empezó a llover",
@@ -404,7 +404,7 @@
         "hizo frío",
         "paró de llover"
       ],
-      "translation": "We were in the park when it _____.",
+      "translation": "We were in the park when the first drops fell and it _____.",
       "optionTranslations": [
         "started raining",
         "got dark",
@@ -414,7 +414,7 @@
       "audioClip": {
         "storySlug": "yo-tambien-tenia-miedo",
         "storySource": "user",
-        "sentence": "Estábamos en el parque cuando empezó a llover.",
+        "sentence": "Estábamos en el parque cuando cayeron las primeras gotas y empezó a llover.",
         "targetWord": "empezó a llover",
         "language": "spanish"
       }

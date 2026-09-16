@@ -274,7 +274,7 @@
   {
     "type": "fill_blank",
     "word": "puso",
-    "sentence": "Ella _____ las llaves sobre la mesa.",
+    "sentence": "Con cuidado, ella _____ las llaves sobre la mesa, sin hacer ruido.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "puso",
@@ -284,7 +284,7 @@
         "tiró",
         "vendió"
       ],
-      "translation": "She _____ the keys on the table.",
+      "translation": "Carefully, she _____ the keys on the table, without making noise.",
       "optionTranslations": [
         "put",
         "hid",
@@ -294,7 +294,7 @@
       "audioClip": {
         "storySlug": "jaime-lo-grabo-todo",
         "storySource": "user",
-        "sentence": "Ella puso las llaves sobre la mesa.",
+        "sentence": "Con cuidado, ella puso las llaves sobre la mesa, sin hacer ruido.",
         "targetWord": "puso",
         "language": "spanish"
       }
@@ -334,7 +334,7 @@
   {
     "type": "fill_blank",
     "word": "contó",
-    "sentence": "Ella _____ toda la historia sin parar.",
+    "sentence": "Ella _____ toda la historia en voz alta, sin parar.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "contó",
@@ -344,7 +344,7 @@
         "olvidó",
         "cantó"
       ],
-      "translation": "She _____ the whole story without stopping.",
+      "translation": "She _____ the whole story aloud, without stopping.",
       "optionTranslations": [
         "told",
         "wrote",
@@ -354,7 +354,7 @@
       "audioClip": {
         "storySlug": "jaime-lo-grabo-todo",
         "storySource": "user",
-        "sentence": "Ella contó toda la historia sin parar.",
+        "sentence": "Ella contó toda la historia en voz alta, sin parar.",
         "targetWord": "contó",
         "language": "spanish"
       }
@@ -364,7 +364,7 @@
   {
     "type": "fill_blank",
     "word": "esperó",
-    "sentence": "Él _____ media hora en la puerta.",
+    "sentence": "Él _____ media hora en la puerta, mirando el reloj sin parar.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "esperó",
@@ -374,7 +374,7 @@
         "durmió",
         "trabajó"
       ],
-      "translation": "He _____ half an hour at the door.",
+      "translation": "He _____ half an hour at the door, constantly checking the clock.",
       "optionTranslations": [
         "waited",
         "sang",
@@ -384,7 +384,7 @@
       "audioClip": {
         "storySlug": "jaime-lo-grabo-todo",
         "storySource": "user",
-        "sentence": "Él esperó media hora en la puerta.",
+        "sentence": "Él esperó media hora en la puerta, mirando el reloj sin parar.",
         "targetWord": "esperó",
         "language": "spanish"
       }

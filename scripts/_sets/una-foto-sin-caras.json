@@ -274,7 +274,7 @@
   {
     "type": "fill_blank",
     "word": "abrió",
-    "sentence": "Con la llave, ella _____ la puerta.",
+    "sentence": "Con la llave, ella _____ la puerta, entró y encendió la luz.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "abrió",
@@ -284,7 +284,7 @@
         "pintó",
         "encontró"
       ],
-      "translation": "With the key, she _____ the door.",
+      "translation": "With the key, she _____ the door, went in and turned on the light.",
       "optionTranslations": [
         "opened",
         "closed",
@@ -294,7 +294,7 @@
       "audioClip": {
         "storySlug": "una-foto-sin-caras",
         "storySource": "user",
-        "sentence": "Con la llave, ella abrió la puerta.",
+        "sentence": "Con la llave, ella abrió la puerta, entró y encendió la luz.",
         "targetWord": "abrió",
         "language": "spanish"
       }
@@ -304,7 +304,7 @@
   {
     "type": "fill_blank",
     "word": "contestó",
-    "sentence": "El teléfono sonó y él _____ enseguida.",
+    "sentence": "El teléfono sonó y él _____ enseguida: “Diga.”",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "contestó",
@@ -314,7 +314,7 @@
         "perdió",
         "tiró"
       ],
-      "translation": "The phone rang and he _____ right away.",
+      "translation": "The phone rang and he _____ right away: 'Hello?'",
       "optionTranslations": [
         "answered",
         "hung up",
@@ -324,7 +324,7 @@
       "audioClip": {
         "storySlug": "una-foto-sin-caras",
         "storySource": "user",
-        "sentence": "El teléfono sonó y él contestó enseguida.",
+        "sentence": "El teléfono sonó y él contestó enseguida: Diga.",
         "targetWord": "contestó",
         "language": "spanish"
       }
@@ -334,7 +334,7 @@
   {
     "type": "fill_blank",
     "word": "se cayó",
-    "sentence": "El vaso _____ y se rompió.",
+    "sentence": "El vidrio del cuadro _____ y se rompió en pedazos.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "se cayó",
@@ -344,7 +344,7 @@
         "desapareció",
         "brilló"
       ],
-      "translation": "The glass _____ and broke.",
+      "translation": "The picture's glass _____ and broke into pieces.",
       "optionTranslations": [
         "fell",
         "floated",
@@ -354,7 +354,7 @@
       "audioClip": {
         "storySlug": "una-foto-sin-caras",
         "storySource": "user",
-        "sentence": "El vaso se cayó y se rompió.",
+        "sentence": "El vidrio del cuadro se cayó y se rompió en pedazos.",
         "targetWord": "se cayó",
         "language": "spanish"
       }
@@ -364,7 +364,7 @@
   {
     "type": "fill_blank",
     "word": "funciona",
-    "sentence": "El coche es viejo, pero todavía _____.",
+    "sentence": "El coche es viejo, pero el motor todavía _____ bien.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "funciona",
@@ -374,7 +374,7 @@
         "brilla",
         "se mueve"
       ],
-      "translation": "The car is old, but it still _____.",
+      "translation": "The car is old, but the engine still _____ well.",
       "optionTranslations": [
         "works",
         "costs",
@@ -384,7 +384,7 @@
       "audioClip": {
         "storySlug": "una-foto-sin-caras",
         "storySource": "user",
-        "sentence": "El coche es viejo, pero todavía funciona.",
+        "sentence": "El coche es viejo, pero el motor todavía funciona bien.",
         "targetWord": "funciona",
         "language": "spanish"
       }
@@ -424,7 +424,7 @@
   {
     "type": "fill_blank",
     "word": "escribió",
-    "sentence": "Con mucho cuidado, ella _____ su nombre.",
+    "sentence": "Con mucho cuidado, ella _____ su nombre en el papel.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "escribió",
@@ -434,7 +434,7 @@
         "cantó",
         "olvidó"
       ],
-      "translation": "Very carefully, she _____ her name.",
+      "translation": "Very carefully, she _____ her name on the paper.",
       "optionTranslations": [
         "wrote",
         "said",
@@ -444,7 +444,7 @@
       "audioClip": {
         "storySlug": "una-foto-sin-caras",
         "storySource": "user",
-        "sentence": "Con mucho cuidado, ella escribió su nombre.",
+        "sentence": "Con mucho cuidado, ella escribió su nombre en el papel.",
         "targetWord": "escribió",
         "language": "spanish"
       }

@@ -274,7 +274,7 @@
   {
     "type": "fill_blank",
     "word": "golpeó",
-    "sentence": "El viento _____ la ventana toda la noche.",
+    "sentence": "El viento _____ la ventana toda la noche sin parar.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "golpeó",
@@ -284,7 +284,7 @@
         "limpió",
         "pintó"
       ],
-      "translation": "The wind _____ the window all night.",
+      "translation": "The wind _____ the window all night without stopping.",
       "optionTranslations": [
         "hit",
         "opened",
@@ -294,7 +294,7 @@
       "audioClip": {
         "storySlug": "tocamos-otra-vez",
         "storySource": "user",
-        "sentence": "El viento golpeó la ventana toda la noche.",
+        "sentence": "El viento golpeó la ventana toda la noche sin parar.",
         "targetWord": "golpeó",
         "language": "spanish"
       }
@@ -304,7 +304,7 @@
   {
     "type": "fill_blank",
     "word": "explicando",
-    "sentence": "El profesor seguía _____ el ejercicio.",
+    "sentence": "El profesor seguía _____ el ejercicio en voz alta, pero nadie entendía.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "explicando",
@@ -314,7 +314,7 @@
         "perdiendo",
         "olvidando"
       ],
-      "translation": "The teacher kept _____ the exercise.",
+      "translation": "The teacher kept _____ the exercise aloud, but nobody understood.",
       "optionTranslations": [
         "explaining",
         "copying",
@@ -324,7 +324,7 @@
       "audioClip": {
         "storySlug": "tocamos-otra-vez",
         "storySource": "user",
-        "sentence": "El profesor seguía explicando el ejercicio.",
+        "sentence": "El profesor seguía explicando el ejercicio en voz alta, pero nadie entendía.",
         "targetWord": "explicando",
         "language": "spanish"
       }
@@ -334,7 +334,7 @@
   {
     "type": "fill_blank",
     "word": "Traía",
-    "sentence": "Cuando llegó, _____ flores para todos.",
+    "sentence": "Cuando llegó a la fiesta, _____ flores para todos.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "Traía",
@@ -344,7 +344,7 @@
         "Dibujaba",
         "Escondía"
       ],
-      "translation": "When he arrived, he _____ flowers for everyone.",
+      "translation": "When he arrived at the party, he _____ flowers for everyone.",
       "optionTranslations": [
         "was bringing",
         "was selling",
@@ -354,7 +354,7 @@
       "audioClip": {
         "storySlug": "tocamos-otra-vez",
         "storySource": "user",
-        "sentence": "Cuando llegó, traía flores para todos.",
+        "sentence": "Cuando llegó a la fiesta, traía flores para todos.",
         "targetWord": "Traía",
         "language": "spanish"
       }
@@ -364,7 +364,7 @@
   {
     "type": "fill_blank",
     "word": "apretó",
-    "sentence": "Con miedo, ella _____ la mano de su amigo.",
+    "sentence": "Con miedo, ella _____ la mano de su amigo, sin soltarla.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "apretó",
@@ -374,7 +374,7 @@
         "besó",
         "soltó"
       ],
-      "translation": "With fear, she _____ her friend's hand.",
+      "translation": "With fear, she _____ her friend's hand, without letting go.",
       "optionTranslations": [
         "squeezed",
         "washed",
@@ -384,7 +384,7 @@
       "audioClip": {
         "storySlug": "tocamos-otra-vez",
         "storySource": "user",
-        "sentence": "Con miedo, ella apretó la mano de su amigo.",
+        "sentence": "Con miedo, ella apretó la mano de su amigo, sin soltarla.",
         "targetWord": "apretó",
         "language": "spanish"
       }
@@ -424,7 +424,7 @@
   {
     "type": "fill_blank",
     "word": "guardó",
-    "sentence": "Ella _____ la carta en un cajón.",
+    "sentence": "Ella _____ la carta en un cajón, para leerla algún día.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "guardó",
@@ -434,7 +434,7 @@
         "leyó",
         "perdió"
       ],
-      "translation": "She _____ the letter in a drawer.",
+      "translation": "She _____ the letter in a drawer, to read it someday.",
       "optionTranslations": [
         "kept",
         "burned",
@@ -444,7 +444,7 @@
       "audioClip": {
         "storySlug": "tocamos-otra-vez",
         "storySource": "user",
-        "sentence": "Ella guardó la carta en un cajón.",
+        "sentence": "Ella guardó la carta en un cajón, para leerla algún día.",
         "targetWord": "guardó",
         "language": "spanish"
       }

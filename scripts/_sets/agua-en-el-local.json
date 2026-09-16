@@ -274,7 +274,7 @@
   {
     "type": "fill_blank",
     "word": "me voy",
-    "sentence": "Ya es tarde, _____.",
+    "sentence": "Ya es tarde y tengo que volver a casa: _____.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "me voy",
@@ -284,7 +284,7 @@
         "como",
         "trabajo"
       ],
-      "translation": "It's late already, _____.",
+      "translation": "It's late already and I have to go home: _____.",
       "optionTranslations": [
         "I'm leaving",
         "I'm falling asleep",
@@ -294,7 +294,7 @@
       "audioClip": {
         "storySlug": "agua-en-el-local",
         "storySource": "user",
-        "sentence": "Ya es tarde, me voy.",
+        "sentence": "Ya es tarde y tengo que volver a casa: me voy.",
         "targetWord": "me voy",
         "language": "spanish"
       }
@@ -304,7 +304,7 @@
   {
     "type": "fill_blank",
     "word": "fui",
-    "sentence": "Tuve miedo y _____ a casa.",
+    "sentence": "Tuve miedo y _____ a casa caminando despacio.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "fui",
@@ -314,7 +314,7 @@
         "llamé",
         "escribí"
       ],
-      "translation": "I was scared and _____ home.",
+      "translation": "I was scared and _____ home walking slowly.",
       "optionTranslations": [
         "went",
         "ran",
@@ -324,7 +324,7 @@
       "audioClip": {
         "storySlug": "agua-en-el-local",
         "storySource": "user",
-        "sentence": "Tuve miedo y fui a casa.",
+        "sentence": "Tuve miedo y fui a casa caminando despacio.",
         "targetWord": "fui",
         "language": "spanish"
       }
@@ -334,7 +334,7 @@
   {
     "type": "fill_blank",
     "word": "cogió",
-    "sentence": "Con cuidado, él le _____ la mano.",
+    "sentence": "Con cuidado, él le _____ la mano para cruzar la calle.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "cogió",
@@ -344,7 +344,7 @@
         "besó",
         "soltó"
       ],
-      "translation": "Gently, he _____ her hand.",
+      "translation": "Gently, he _____ her hand to cross the street.",
       "optionTranslations": [
         "took",
         "washed",
@@ -354,7 +354,7 @@
       "audioClip": {
         "storySlug": "agua-en-el-local",
         "storySource": "user",
-        "sentence": "Con cuidado, él le cogió la mano.",
+        "sentence": "Con cuidado, él le cogió la mano para cruzar la calle.",
         "targetWord": "cogió",
         "language": "spanish"
       }
@@ -364,7 +364,7 @@
   {
     "type": "fill_blank",
     "word": "entra",
-    "sentence": "¡Cuidado, _____ agua por la ventana!",
+    "sentence": "¡Cuidado, _____ agua por la ventana y va a mojar el suelo!",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "entra",
@@ -374,7 +374,7 @@
         "hierve",
         "se congela"
       ],
-      "translation": "Careful, water is _____ through the window!",
+      "translation": "Careful, water is _____ through the window and it's going to wet the floor!",
       "optionTranslations": [
         "coming in",
         "going out",
@@ -384,7 +384,7 @@
       "audioClip": {
         "storySlug": "agua-en-el-local",
         "storySource": "user",
-        "sentence": "Cuidado, entra agua por la ventana.",
+        "sentence": "Cuidado, entra agua por la ventana y va a mojar el suelo.",
         "targetWord": "entra",
         "language": "spanish"
       }
@@ -394,7 +394,7 @@
   {
     "type": "fill_blank",
     "word": "mojan",
-    "sentence": "Cierra la ventana o se _____ los libros.",
+    "sentence": "Está lloviendo: cierra la ventana o se _____ los libros.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "mojan",
@@ -404,7 +404,7 @@
         "rompen",
         "ensucian"
       ],
-      "translation": "Close the window or the books will _____.",
+      "translation": "It's raining: close the window or the books will _____.",
       "optionTranslations": [
         "get wet",
         "get lost",
@@ -414,7 +414,7 @@
       "audioClip": {
         "storySlug": "agua-en-el-local",
         "storySource": "user",
-        "sentence": "Cierra la ventana o se mojan los libros.",
+        "sentence": "Está lloviendo: cierra la ventana o se mojan los libros.",
         "targetWord": "mojan",
         "language": "spanish"
       }

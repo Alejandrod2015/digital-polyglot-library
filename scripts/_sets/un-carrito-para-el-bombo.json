@@ -274,7 +274,7 @@
   {
     "type": "fill_blank",
     "word": "pidió",
-    "sentence": "Al llegar, ella _____ un café.",
+    "sentence": "En el bar, ella se sentó y _____ un café.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "pidió",
@@ -284,7 +284,7 @@
         "tiró",
         "olvidó"
       ],
-      "translation": "On arriving, she _____ a coffee.",
+      "translation": "At the bar, she sat down and _____ a coffee.",
       "optionTranslations": [
         "asked for",
         "made",
@@ -294,7 +294,7 @@
       "audioClip": {
         "storySlug": "un-carrito-para-el-bombo",
         "storySource": "user",
-        "sentence": "Al llegar, ella pidió un café.",
+        "sentence": "En el bar, ella se sentó y pidió un café.",
         "targetWord": "pidió",
         "language": "spanish"
       }
@@ -364,7 +364,7 @@
   {
     "type": "fill_blank",
     "word": "sonaba",
-    "sentence": "El teléfono _____ sin parar.",
+    "sentence": "El teléfono _____ sin parar y todos se taparon los oídos.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "sonaba",
@@ -374,7 +374,7 @@
         "brillaba",
         "se movía"
       ],
-      "translation": "The phone _____ nonstop.",
+      "translation": "The phone _____ nonstop and everyone covered their ears.",
       "optionTranslations": [
         "rang",
         "vibrated",
@@ -384,7 +384,7 @@
       "audioClip": {
         "storySlug": "un-carrito-para-el-bombo",
         "storySource": "user",
-        "sentence": "El teléfono sonaba sin parar.",
+        "sentence": "El teléfono sonaba sin parar y todos se taparon los oídos.",
         "targetWord": "sonaba",
         "language": "spanish"
       }
@@ -394,7 +394,7 @@
   {
     "type": "fill_blank",
     "word": "pesa",
-    "sentence": "Esta maleta _____ demasiado para el avión.",
+    "sentence": "Esta maleta _____ demasiado para el avión: no la puedo levantar.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "pesa",
@@ -404,7 +404,7 @@
         "mide",
         "brilla"
       ],
-      "translation": "This suitcase _____ too much for the plane.",
+      "translation": "This suitcase _____ too much for the plane: I can't lift it.",
       "optionTranslations": [
         "weighs",
         "costs",
@@ -414,7 +414,7 @@
       "audioClip": {
         "storySlug": "un-carrito-para-el-bombo",
         "storySource": "user",
-        "sentence": "Esta maleta pesa demasiado para el avión.",
+        "sentence": "Esta maleta pesa demasiado para el avión: no la puedo levantar.",
         "targetWord": "pesa",
         "language": "spanish"
       }
@@ -424,7 +424,7 @@
   {
     "type": "fill_blank",
     "word": "también",
-    "sentence": "Ella toca la guitarra, y yo _____.",
+    "sentence": "Ella toca la guitarra, y yo _____ la toco.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "también",
@@ -434,7 +434,7 @@
         "mal",
         "solo"
       ],
-      "translation": "She plays guitar, and I do _____.",
+      "translation": "She plays the guitar, and I play it _____.",
       "optionTranslations": [
         "too",
         "never",
@@ -444,7 +444,7 @@
       "audioClip": {
         "storySlug": "un-carrito-para-el-bombo",
         "storySource": "user",
-        "sentence": "Ella toca la guitarra, y yo también.",
+        "sentence": "Ella toca la guitarra, y yo también la toco.",
         "targetWord": "también",
         "language": "spanish"
       }

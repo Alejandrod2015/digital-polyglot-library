@@ -103,9 +103,9 @@
       "answer": "strange, unusual",
       "options": [
         "strange, unusual",
-        "friendly",
-        "young",
-        "rich"
+        "grumpy",
+        "boring",
+        "annoying"
       ],
       "audioClip": {
         "storySlug": "la-chaqueta-ya-no-cierra",
@@ -274,7 +274,7 @@
   {
     "type": "fill_blank",
     "word": "cierra",
-    "sentence": "La ventana no _____ bien por el frío.",
+    "sentence": "La ventana no _____ bien: siempre queda una rendija abierta.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "cierra",
@@ -284,7 +284,7 @@
         "rompe",
         "brilla"
       ],
-      "translation": "The window doesn't _____ properly because of the cold.",
+      "translation": "The window doesn't _____ properly: there's always a gap left open.",
       "optionTranslations": [
         "close",
         "open",
@@ -294,7 +294,7 @@
       "audioClip": {
         "storySlug": "la-chaqueta-ya-no-cierra",
         "storySource": "user",
-        "sentence": "La ventana no cierra bien por el frío.",
+        "sentence": "La ventana no cierra bien: siempre queda una rendija abierta.",
         "targetWord": "cierra",
         "language": "spanish"
       }
@@ -334,7 +334,7 @@
   {
     "type": "fill_blank",
     "word": "se rompió",
-    "sentence": "El vaso cayó al suelo y _____.",
+    "sentence": "Al cerrar la puerta con fuerza, el cristal de la ventana _____.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "se rompió",
@@ -344,7 +344,7 @@
         "brilló",
         "flotó"
       ],
-      "translation": "The glass fell to the floor and _____.",
+      "translation": "When the door slammed shut, the window's glass _____.",
       "optionTranslations": [
         "broke",
         "disappeared",
@@ -354,7 +354,7 @@
       "audioClip": {
         "storySlug": "la-chaqueta-ya-no-cierra",
         "storySource": "user",
-        "sentence": "El vaso cayó al suelo y se rompió.",
+        "sentence": "Al cerrar la puerta con fuerza, el cristal de la ventana se rompió.",
         "targetWord": "se rompió",
         "language": "spanish"
       }
@@ -364,7 +364,7 @@
   {
     "type": "fill_blank",
     "word": "escuchó",
-    "sentence": "Ella _____ la canción con los ojos cerrados.",
+    "sentence": "Ella _____ la canción con los ojos cerrados, callada.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "escuchó",
@@ -374,7 +374,7 @@
         "escribió",
         "olvidó"
       ],
-      "translation": "She _____ the song with her eyes closed.",
+      "translation": "She _____ to the song with her eyes closed, silent.",
       "optionTranslations": [
         "listened to",
         "sang",
@@ -384,7 +384,7 @@
       "audioClip": {
         "storySlug": "la-chaqueta-ya-no-cierra",
         "storySource": "user",
-        "sentence": "Ella escuchó la canción con los ojos cerrados.",
+        "sentence": "Ella escuchó la canción con los ojos cerrados, callada.",
         "targetWord": "escuchó",
         "language": "spanish"
       }
@@ -394,7 +394,7 @@
   {
     "type": "fill_blank",
     "word": "rápidamente",
-    "sentence": "Al oír el ruido, salió _____ de casa.",
+    "sentence": "Al oír el ruido, salió _____ de casa, casi corriendo.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "rápidamente",
@@ -404,7 +404,7 @@
         "felizmente",
         "sola"
       ],
-      "translation": "On hearing the noise, she left home _____.",
+      "translation": "On hearing the noise, she left home _____, almost running.",
       "optionTranslations": [
         "quickly",
         "quietly",
@@ -414,7 +414,7 @@
       "audioClip": {
         "storySlug": "la-chaqueta-ya-no-cierra",
         "storySource": "user",
-        "sentence": "Al oír el ruido, salió rápidamente de casa.",
+        "sentence": "Al oír el ruido, salió rápidamente de casa, casi corriendo.",
         "targetWord": "rápidamente",
         "language": "spanish"
       }
