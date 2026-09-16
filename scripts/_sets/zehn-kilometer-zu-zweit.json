@@ -1,16 +1,16 @@
 [
  {
   "type": "match_meaning",
-  "word": "das Frachtschiff,die Ziellinie,die Wasserflasche,die Bestzeit",
+  "word": "das Knie,die Ziellinie,die Wasserflasche,die Bestzeit",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
     {
-     "word": "das Frachtschiff",
-     "answer": "a cargo ship",
+     "word": "das Knie",
+     "answer": "a knee",
      "options": [
-      "a cargo ship",
+      "a knee",
       "the finish line",
       "a water bottle",
       "a best time"
@@ -20,7 +20,7 @@
      "word": "die Ziellinie",
      "answer": "the finish line",
      "options": [
-      "a cargo ship",
+      "a knee",
       "the finish line",
       "a water bottle",
       "a best time"
@@ -30,7 +30,7 @@
      "word": "die Wasserflasche",
      "answer": "a water bottle",
      "options": [
-      "a cargo ship",
+      "a knee",
       "the finish line",
       "a water bottle",
       "a best time"
@@ -40,7 +40,7 @@
      "word": "die Bestzeit",
      "answer": "a best time",
      "options": [
-      "a cargo ship",
+      "a knee",
       "the finish line",
       "a water bottle",
       "a best time"
@@ -205,13 +205,13 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "Bankenviertel",
-  "sentence": "Sie gehen durch das [[Bankenviertel]].",
+  "word": "Ufer",
+  "sentence": "Sie gehen den Rest langsam am [[Ufer]] entlang.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "banking district",
+   "answer": "riverbank",
    "options": [
-    "banking district",
+    "riverbank",
     "old town",
     "shopping street",
     "train station"
@@ -219,8 +219,8 @@
    "audioClip": {
     "storySlug": "zehn-kilometer-zu-zweit",
     "storySource": "user",
-    "sentence": "Sie gehen durch das Bankenviertel.",
-    "targetWord": "Bankenviertel",
+    "sentence": "Sie gehen den Rest langsam am Ufer entlang.",
+    "targetWord": "Ufer",
     "language": "german"
    }
   }

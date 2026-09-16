@@ -1,0 +1,34 @@
+{
+ "tipo": "Friends",
+ "nivel": "a1",
+ "variante": "germany",
+ "registro": "intimo y sin adornos: una consulta, una sala de descanso con lluvia y una noche de sofa con el movil pesado en la mano",
+ "espina": "Julia, fisioterapeuta de Rostock recien llegada a Frankfurt, quiere hacer amigos de verdad en una ciudad donde no conoce a nadie; cada tema le cuesta un hilo con Rostock, hasta que en el tema 7 su primera amistad de Frankfurt aguanta una pelea.",
+ "recursos": "A1: Perfekt (haben wehgetan, habe vergessen, war gemein), modales (kann, will, muss), separables partidos (nimmt auf, nimmt weg), inversion V2 (Im Flur bleibt sie stehen); contraste literal (manos que ayudan y hoy hacen dano), revelacion tardia (Miriam tambien llego de fuera), emocion en tres piezas con gesto visible",
+ "historias": [
+  {
+   "slot": "0",
+   "quiere": "trabajar como siempre y que no se note que esta mal",
+   "impide": "el enfado por el silencio de su amiga se le va a las manos con un paciente",
+   "cuesta": "su imagen profesional delante de su jefa: Miriam la aparta del paciente",
+   "cambia": "entiende que no puede seguir fingiendo",
+   "emocion": "verguenza y susto: las manos le quedan inquietas porque ha hecho dano; se queda quieta en el pasillo mirandolas"
+  },
+  {
+   "slot": "1",
+   "quiere": "aguantar sin llorar delante de su jefa",
+   "impide": "Miriam le pregunta con calma y las lagrimas llegan solas",
+   "cuesta": "admite en voz alta que tiene morrina y que se siente sola",
+   "cambia": "descubre que Miriam paso por lo mismo",
+   "emocion": "alivio triste: se siente debil; Miriam le da un panuelo y le dice que esta ahi"
+  },
+  {
+   "slot": "2",
+   "quiere": "dejar de mentir a sus amigos de Frankfurt y de Rostock",
+   "impide": "tiene miedo de que la verdad lo estropee todo",
+   "cuesta": "le confiesa a Moritz que a veces quiere volver a Rostock y pide secreto",
+   "cambia": "hace las paces con su mejor amiga",
+   "emocion": "miedo y valor: siente el corazon en la garganta al coger la llamada; al final se rie y llora a la vez"
+  }
+ ]
+}

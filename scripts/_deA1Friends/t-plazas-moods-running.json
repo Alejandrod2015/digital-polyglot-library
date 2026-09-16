@@ -1,0 +1,273 @@
+[
+ {
+  "topic": "moods-and-feelings",
+  "slotIndex": 0,
+  "title": "Zu feste Hände",
+  "slug": "zu-feste-hande",
+  "synopsis": "For three days Julia's best friend back home has not answered, and Julia is in a bad mood. At work her first patient has back pain, and she works much too hard. Miriam, the head of the practice, sees the problem at once and sends Julia to the break room.",
+  "text": "Seit drei Tagen antwortet Julias beste Freundin nicht. Julia hat deshalb schlechte Laune. Miriam, die Chefin der Praxis, merkt es schon am Montagmorgen. “Alles in Ordnung bei dir?”, fragt sie. Julia nickt nur.\n\nIm Behandlungsraum ist es warm. Der erste Patient hat Schmerzen im Rücken. Julia arbeitet schnell und viel zu hart. “Au! Das ist falsch, nicht so fest, bitte!”, ruft der Mann sauer.\n\nJulia nimmt gleich die Hände weg.\n\n“Entschuldigung. Heute ist kein guter Arbeitstag für mich”, sagt sie leise. Ihre Hände sind unruhig.\n\nMiriam kommt in den Raum und schaut sie ruhig an. “Ich mache hier weiter. Du gehst in den Pausenraum und trinkst einen Tee”, sagt sie freundlich, aber bestimmt. Julia kann nichts sagen.\n\nIm Flur bleibt sie stehen und sieht auf ihre Hände. “Diese Hände helfen täglich Menschen. Heute haben sie einem Menschen wehgetan”, denkt sie.",
+  "vocab": [
+   {
+    "type": "adverb",
+    "word": "deshalb",
+    "surface": "deshalb",
+    "definition": "That is why; because of this reason, and so."
+   },
+   {
+    "type": "adjective",
+    "word": "schlecht",
+    "surface": "schlechte",
+    "definition": "Bad; not good, it makes you feel unhappy."
+   },
+   {
+    "type": "noun",
+    "word": "die Laune",
+    "anchor": true,
+    "surface": "Laune",
+    "definition": "Mood; how you feel at a certain time, good or bad."
+   },
+   {
+    "type": "noun",
+    "word": "der Montagmorgen",
+    "anchor": true,
+    "surface": "Montagmorgen",
+    "definition": "The morning of a Monday, at the start of the work week."
+   },
+   {
+    "type": "noun",
+    "word": "der Schmerz",
+    "surface": "Schmerzen",
+    "definition": "Pain; the feeling when a part of your body hurts."
+   },
+   {
+    "type": "adjective",
+    "word": "hart",
+    "surface": "hart",
+    "definition": "Hard; with a lot of force, not soft or gentle."
+   },
+   {
+    "type": "adjective",
+    "word": "falsch",
+    "surface": "falsch",
+    "definition": "Wrong; not right, not the way it should be."
+   },
+   {
+    "type": "noun",
+    "word": "der Flur",
+    "anchor": true,
+    "surface": "Flur",
+    "definition": "A hallway; the long space inside a house that leads to other rooms."
+   },
+   {
+    "type": "adverb",
+    "word": "gleich",
+    "surface": "gleich",
+    "definition": "Right away; at once, without waiting even a moment."
+   },
+   {
+    "type": "noun",
+    "word": "der Arbeitstag",
+    "anchor": true,
+    "surface": "Arbeitstag",
+    "definition": "A working day; a day when you go to your job."
+   },
+   {
+    "type": "adjective",
+    "word": "unruhig",
+    "surface": "unruhig",
+    "definition": "Restless; not calm, moving a little all the time."
+   },
+   {
+    "type": "verb",
+    "word": "machen",
+    "surface": "mache",
+    "definition": "To do or make; here, to go on with the work."
+   },
+   {
+    "type": "verb",
+    "word": "trinken",
+    "surface": "trinkst",
+    "definition": "To drink; to take tea, water or another liquid."
+   },
+   {
+    "type": "adjective",
+    "word": "freundlich",
+    "surface": "freundlich",
+    "definition": "Friendly; kind, warm and nice to other people."
+   },
+   {
+    "type": "adjective",
+    "word": "sauer",
+    "surface": "sauer",
+    "definition": "Angry; a little cross because something went wrong."
+   },
+   {
+    "type": "verb",
+    "word": "können",
+    "surface": "kann",
+    "definition": "Can; to be able to do something right now."
+   },
+   {
+    "type": "verb",
+    "word": "bleiben",
+    "surface": "bleibt",
+    "definition": "To stay; to not move away from a place."
+   },
+   {
+    "type": "verb",
+    "word": "helfen",
+    "surface": "helfen",
+    "definition": "To help; to do something good for another person."
+   },
+   {
+    "type": "adverb",
+    "word": "täglich",
+    "surface": "täglich",
+    "definition": "Every day; each and every day, again and again."
+   },
+   {
+    "type": "noun",
+    "word": "der Patient",
+    "surface": "Patient",
+    "definition": "A patient; a person who gets help from a doctor or a therapist."
+   }
+  ],
+  "arcType": "juxtaposition-discovery"
+ },
+ {
+  "topic": "running-and-fitness",
+  "slotIndex": 2,
+  "title": "Zehn Kilometer zu zweit",
+  "slug": "zehn-kilometer-zu-zweit",
+  "synopsis": "One week later Julia runs ten kilometres with the group and wants a good time. After six kilometres Moritz hurts his knee. Julia stops and walks the rest of the way with him along the river. At the finish line there is no best time, but for the first time Julia is not the new one.",
+  "text": "Eine Woche später läuft Julia zehn Kilometer mit. Diesmal fängt sie hinten an. Die Sonne scheint, und auf dem Main fährt ein langes Frachtschiff. “Heute laufe ich eine gute Zeit”, denkt Julia.\n\nNach sechs Kilometern bleibt Moritz plötzlich stehen. Er hält sein Knie und verzieht das Gesicht. “Lauf weiter, du bist gerade so gut”, sagt er. Julia sieht nach vorne und dann wieder zu ihm. “Nein, wir gehen zusammen”, antwortet sie.\n\nSie gehen den Rest langsam am Ufer entlang, unter den Hochhäusern vom Bankenviertel. “Die Linie elf fährt fast bis zu deiner Tür”, sagt Moritz. Julia lacht richtig laut.\n\nAn der Ziellinie wartet Svenja mit einer Wasserflasche. “Für die beiden Letzten!”, ruft jemand, und alle klatschen. Auf der Stoppuhr steht keine Bestzeit.\n\n“Und? Traurig?”, fragt Svenja. Julia trinkt einen großen Schluck und schüttelt den Kopf. “Nein. Heute war ich zum ersten Mal nicht die Neue”, flüstert sie.",
+  "vocab": [
+   {
+    "type": "adverb",
+    "word": "diesmal",
+    "surface": "Diesmal",
+    "definition": "This time; now, and not like the time before."
+   },
+   {
+    "type": "verb",
+    "word": "scheinen",
+    "surface": "scheint",
+    "definition": "To shine; the sun gives bright light and warmth."
+   },
+   {
+    "type": "noun",
+    "word": "das Knie",
+    "anchor": true,
+    "surface": "Knie",
+    "definition": "The knee; the joint in the middle of your leg."
+   },
+   {
+    "type": "adverb",
+    "word": "plötzlich",
+    "surface": "plötzlich",
+    "definition": "Suddenly; very quickly, at a moment when nobody expects it."
+   },
+   {
+    "type": "verb",
+    "word": "verziehen",
+    "surface": "verzieht",
+    "definition": "To pull your face into a shape that shows pain or dislike."
+   },
+   {
+    "type": "adverb",
+    "word": "gerade",
+    "surface": "gerade",
+    "definition": "Just now; at this moment, at this very time."
+   },
+   {
+    "type": "adverb",
+    "word": "zusammen",
+    "surface": "zusammen",
+    "definition": "Together; with another person or a group, and not alone."
+   },
+   {
+    "type": "preposition",
+    "word": "entlang",
+    "surface": "entlang",
+    "definition": "Along; following the side of a river, a road or a wall."
+   },
+   {
+    "type": "noun",
+    "word": "das Hochhaus",
+    "anchor": true,
+    "surface": "Hochhäusern",
+    "definition": "A high-rise; a very tall building with many floors."
+   },
+   {
+    "type": "noun",
+    "word": "das Ufer",
+    "anchor": true,
+    "surface": "Ufer",
+    "definition": "The riverbank; the land at the edge of a river."
+   },
+   {
+    "type": "verb",
+    "word": "rufen",
+    "surface": "ruft",
+    "definition": "To call out; to say something loudly so people hear it."
+   },
+   {
+    "type": "adverb",
+    "word": "richtig",
+    "surface": "richtig",
+    "definition": "Really; properly and fully, not just a little bit."
+   },
+   {
+    "type": "noun",
+    "word": "die Ziellinie",
+    "anchor": true,
+    "surface": "Ziellinie",
+    "definition": "The finish line; the line at the end of a race."
+   },
+   {
+    "type": "noun",
+    "word": "die Wasserflasche",
+    "anchor": true,
+    "surface": "Wasserflasche",
+    "definition": "A water bottle; you carry drinking water in it."
+   },
+   {
+    "type": "verb",
+    "word": "klatschen",
+    "surface": "klatschen",
+    "definition": "To clap; to hit your hands together to show you like something."
+   },
+   {
+    "type": "noun",
+    "word": "die Bestzeit",
+    "surface": "Bestzeit",
+    "definition": "A best time; the fastest time you have ever run."
+   },
+   {
+    "type": "adjective",
+    "word": "traurig",
+    "surface": "Traurig",
+    "definition": "Sad; unhappy because something is not as you wanted."
+   },
+   {
+    "type": "verb",
+    "word": "schütteln",
+    "surface": "schüttelt",
+    "definition": "To shake; to move your head from side to side for no."
+   },
+   {
+    "type": "verb",
+    "word": "flüstern",
+    "surface": "flüstert",
+    "definition": "To whisper; to speak very quietly so only one person hears."
+   },
+   {
+    "type": "adjective",
+    "word": "groß",
+    "surface": "großen",
+    "definition": "Big; large, bigger than what is normal or usual."
+   }
+  ],
+  "arcType": "harmonic-close"
+ }
+]

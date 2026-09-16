@@ -1,7 +1,7 @@
 [
  {
   "type": "match_meaning",
-  "word": "der Montagmorgen,der Behandlungsraum,der Arbeitstag,der Patient",
+  "word": "der Montagmorgen,der Flur,der Arbeitstag,der Patient",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
@@ -11,17 +11,17 @@
      "answer": "Monday morning",
      "options": [
       "Monday morning",
-      "a treatment room",
+      "a hallway",
       "a working day",
       "a patient"
      ]
     },
     {
-     "word": "der Behandlungsraum",
-     "answer": "a treatment room",
+     "word": "der Flur",
+     "answer": "a hallway",
      "options": [
       "Monday morning",
-      "a treatment room",
+      "a hallway",
       "a working day",
       "a patient"
      ]
@@ -31,7 +31,7 @@
      "answer": "a working day",
      "options": [
       "Monday morning",
-      "a treatment room",
+      "a hallway",
       "a working day",
       "a patient"
      ]
@@ -41,7 +41,7 @@
      "answer": "a patient",
      "options": [
       "Monday morning",
-      "a treatment room",
+      "a hallway",
       "a working day",
       "a patient"
      ]
