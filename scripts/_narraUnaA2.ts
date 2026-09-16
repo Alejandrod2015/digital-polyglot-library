@@ -128,6 +128,16 @@ const prisma = new PrismaClient();
   } as any);
   if (!result) throw new Error("el render devolvio null");
 
+  // gateFlags (sin re-tiro, 2026-09-16) se adjuntan al fragmento que
+  // marcaron, dentro del mismo JSON de audioFragments: asi el artifact de
+  // revision los lee directo de la fila, sin re-derivar la clave de cache.
+  const fragmentsConGateFlags = result.fragments?.length
+    ? result.fragments.map((f) => {
+        const flags = result.gateFlags.filter((g) => g.index === f.index);
+        return flags.length ? { ...f, gateFlags: flags } : f;
+      })
+    : result.fragments;
+
   await prisma.journeyStory.update({
     where: { id: s.id },
     data: {
@@ -135,10 +145,13 @@ const prisma = new PrismaClient();
       audioFilename: result.filename, audioStatus: "ready", voiceId,
       audioQaStatus: result.audioQa?.status ?? null, audioQaScore: result.audioQa?.score ?? null,
       audioQaNotes: result.audioQa?.notes?.join("\n") ?? null,
-      ...(result.fragments?.length ? { audioFragments: result.fragments as object } : {}),
+      ...(fragmentsConGateFlags?.length ? { audioFragments: fragmentsConGateFlags as object } : {}),
     },
   });
   console.log("master:", result.url);
+  if (result.gateFlags.length) {
+    console.log(`${result.gateFlags.length} gateFlag(s): revisa con el artifact antes de dar la historia por buena.`);
+  }
 
   try { await generateWordTimingsForStory(s.id); console.log("alineacion OK"); }
   catch (e: any) { console.warn("alineacion FALLO:", e.message?.slice(0, 140)); }

@@ -71,7 +71,7 @@
       "id": "feedback_audio_qa_gate_mandatory",
       "domain": "audio",
       "rule": "\"NUNCA sintetizar audio de práctica (ElevenLabs) sin el gate F0 que re-tira hasta afirmación (no uptalk). Aplicar el gate ANTES de la primera generación, no descubrir el problema después. Si el gat...",
-      "gate": "scripts/_f0gateClient.ts",
+      "gate": "pre-bash-guard.sh",
       "source": "memory:feedback_audio_qa_gate_mandatory.md"
     },
     {
@@ -136,6 +136,13 @@
       "rule": "Nunca describir en el texto cómo suena/qué acento tiene un personaje",
       "gate": "src/lib/validateJourneyStories.ts",
       "source": "memory:feedback_no_accent_mentions.md"
+    },
+    {
+      "id": "feedback_no_auto_retry_in_narration",
+      "domain": "audio",
+      "rule": "\"La narración de historias se sintetiza a UNA toma: los gates miden y avisan, pero el re-tiro lo decide el usuario sobre un artifact de revisión; el gate F0 de los clips de práctica NO cambia\"",
+      "gate": "src/lib/elevenlabs.ts",
+      "source": "manual:2026-09-16, gate real en ttsSegment (retryGates=false) + buildGateFlags; pedido del usuario tras revisar 7 gateFlags del Friends DE A1 (6/7 falsos positivos)"
     },
     {
       "id": "feedback_no_false_claims",
@@ -264,6 +271,13 @@
       "source": "story-rules:opening-rhythm-rotation (project_a0_narration_story_mold) + validator:src/lib/validateGeneratedStory.ts"
     },
     {
+      "id": "project_android_reader_clipped_letters",
+      "domain": "audio",
+      "rule": "\"Lector Android sin la ultima letra de cada palabra (captura de Jazlin, 2026-09-09): sin arreglar, flota real sin Pixel, telemetria de aparato y migraciones divergidas\"",
+      "gate": "none",
+      "source": "memory:project_android_reader_clipped_letters.md"
+    },
+    {
       "id": "project_audio_dual_path",
       "domain": "audio",
       "rule": "Hay dos motores TTS independientes (Piper interno vs ElevenLabs externo) y para saber cuál generó un audio hay que mirar la metadata del MP3, no la DB.",
@@ -276,6 +290,13 @@
       "rule": "Todo empalme de seccion deja cola de la toma vieja si los offsets no se re-miden; se coteja el master con el texto",
       "gate": "src/lib/audioEditorSections.ts",
       "source": "memory:project_audio_splice_seam_residue.md"
+    },
+    {
+      "id": "project_ios_audio_session_after_speech_recognition",
+      "domain": "audio",
+      "rule": "Tras reconocer voz en iOS el audio sale bajo y tapado; expo-av no puede restaurar la sesión (no fija el modo y cachea la categoría); se restaura con setCategoryIOS del módulo de reconocimiento",
+      "gate": "none",
+      "source": "memory:project_ios_audio_session_after_speech_recognition.md"
     },
     {
       "id": "project_ios_wsola_mono_artifact",
@@ -418,11 +439,25 @@
       "source": "manual"
     },
     {
+      "id": "feedback_ads_testing_single_version",
+      "domain": "comms",
+      "rule": "\"Anuncios de Meta en fase de test: renderizar UNA sola version (9:16), nunca los dos formatos; los formatos se piden despues\"",
+      "gate": "none",
+      "source": "memory:feedback_ads_testing_single_version.md"
+    },
+    {
       "id": "feedback_announcement_must_be_live_everywhere",
       "domain": "comms",
       "rule": "Un correo que anuncia algo no sale hasta comprobar que eso se ve en web, iOS y Android; autorizado no es cierto",
       "gate": "pre-bash-guard.sh",
       "source": "memory:feedback_announcement_must_be_live_everywhere.md"
+    },
+    {
+      "id": "feedback_beta_motivation_hint_not_filter",
+      "domain": "comms",
+      "rule": "\"Lo que escriben los beta testers es PISTA para el contenido (temas, escenas), nunca filtro que obligue a citar; la demanda por idioma sí sirve para decidir qué journey crear\"",
+      "gate": "pre-topic-guard.sh",
+      "source": "memory:feedback_beta_motivation_hint_not_filter.md"
     },
     {
       "id": "feedback_beta_wording_soften_dont_erase",
@@ -558,6 +593,20 @@
       "source": "memory:project_meta_ads_beta_campaign.md"
     },
     {
+      "id": "project_meta_ads_manager_automation",
+      "domain": "comms",
+      "rule": "Como se maneja Ads Manager desde claude-in-chrome sin romper nada: subir video, toggles, product set bloqueado",
+      "gate": "none",
+      "source": "memory:project_meta_ads_manager_automation.md"
+    },
+    {
+      "id": "project_metrics_userid_merge_system",
+      "domain": "comms",
+      "rule": "\"Panel manual en /studio/beta ('Possible duplicates') detecta y fusiona actividad (no cuenta) de Clerk userIds que son la misma persona\"",
+      "gate": "none",
+      "source": "memory:project_metrics_userid_merge_system.md"
+    },
+    {
       "id": "project_shop_beta_touchpoints_missing",
       "domain": "comms",
       "rule": "De los tres puntos de contacto de la tienda hacia la beta solo funcionaba el email del freebie; el de pedido se instalo el 2026-08-28 y la pantalla tras el claim sigue sin CTA",
@@ -691,11 +740,25 @@
       "source": "memory:feedback_no_test_renders_on_approved.md"
     },
     {
+      "id": "feedback_one_journey_per_chat",
+      "domain": "cover",
+      "rule": "Un chat ejecutor por journey Y por fase (texto, glosas, portadas, audio, publicar), cada fase con su modelo y esfuerzo; nunca mezclar journeys",
+      "gate": "none",
+      "source": "memory:feedback_one_journey_per_chat.md"
+    },
+    {
       "id": "project_cover_style_lock",
       "domain": "cover",
       "rule": "\"Candado de estilo de covers: estilo B aprobado en scripts/cover-style.json; SIEMPRE generar covers con scripts/generateCover.ts; el hook bloquea cualquier otro path\"",
       "gate": "scripts/generateCover.ts",
       "source": "memory:project_cover_style_lock.md"
+    },
+    {
+      "id": "project_cover_upload_artifact",
+      "domain": "cover",
+      "rule": "\"Las portadas del B1 latam se generan en OTRA laptop (ChatGPT/Gemini con cast sheet) y llegan por el artifact 'Taller de portadas B1'; se leen con read_db + read_asset\"",
+      "gate": "process",
+      "source": "memory:project_cover_upload_artifact.md"
     },
     {
       "id": "project_el_mural",
@@ -705,11 +768,32 @@
       "source": "memory:project_el_mural.md"
     },
     {
+      "id": "project_journey_it_a0_friends",
+      "domain": "cover",
+      "rule": "\"Friends IT A0: el de julio (Elena, 7 ciudades) ARCHIVADO el 2026-09-14; el vigente es el de Genova (cmu0dpa3i0007j80ugstn0jf0), 21/21 en draft, sin audio/portadas/glosas/practica\"",
+      "gate": "none",
+      "source": "memory:project_journey_it_a0_friends.md"
+    },
+    {
+      "id": "project_planning_handoff_2026_09_15",
+      "domain": "cover",
+      "rule": "\"Estado del chat de planificación Journey-planning-2 al cierre del 2026-09-15: 6 Friends en obra (portadas, audio, bloqueos), ramas sin push y reglas de proceso nuevas\"",
+      "gate": "none",
+      "source": "memory:project_planning_handoff_2026_09_15.md"
+    },
+    {
       "id": "arc-continuity",
       "domain": "journey",
       "rule": "Las tres historias de un tema se leen en secuencia 1 a N y encajan",
       "gate": "none",
       "source": "story-rules:arc-continuity (feedback_story_arc_continuity_gate)"
+    },
+    {
+      "id": "body-word-count",
+      "domain": "journey",
+      "rule": "Cuerpo dentro de la banda del spec por nivel (A0-A2 128-155, B1-B2 140-166, C1-C2 150-177); fuera, FALLA. Live ya fuera el 2026-09-11: igual o mejor (src/lib/bodyWordBandBaseline.ts)",
+      "gate": "src/lib/validateGeneratedStory.ts#body-word-count",
+      "source": "story-rules:body-word-count (project_a0_gate_profile) + validator:src/lib/validateGeneratedStory.ts"
     },
     {
       "id": "cefr-two-level-rule",
@@ -733,6 +817,13 @@
       "source": "memory:feedback_journey_table_after_every_topic.md"
     },
     {
+      "id": "feedback_level_measured_externally",
+      "domain": "journey",
+      "rule": "El nivel de un journey se mide con la gramática de SU idioma contra una vara que no salga de nuestro propio catálogo; nunca se da por bueno porque el validador pase",
+      "gate": "scripts/cierraTema.ts",
+      "source": "memory:feedback_level_measured_externally.md"
+    },
+    {
       "id": "feedback_mandatory_gestalt_read_full_bodies",
       "domain": "journey",
       "rule": "La lectura consecutiva de los cuerpos COMPLETOS como usuario final es paso OBLIGATORIO no-negociable antes de declarar listo un journey/lote; nunca ofrecerla como opción ni saltarla",
@@ -752,6 +843,13 @@
       "rule": "\"PROHIBIDO permanente: personajes viejos/ancianos y niños/adolescentes en historias y casts, en TODOS los journeys e idiomas ('Nunca más', 2026-07-07)\"",
       "gate": "none",
       "source": "memory:feedback_no_elderly_no_children.md"
+    },
+    {
+      "id": "feedback_no_external_ai_at_runtime",
+      "domain": "journey",
+      "rule": "\"Ninguna función del producto depende de OpenAI ni de otro modelo por API en runtime; lo que el usuario usa en la app se resuelve con el sistema del teléfono, con datos ya generados o con lógica de...",
+      "gate": "none",
+      "source": "memory:feedback_no_external_ai_at_runtime.md"
     },
     {
       "id": "feedback_stories_need_stakes",
@@ -985,6 +1083,13 @@
       "source": "memory:project_levels_raised_2026_09_10.md"
     },
     {
+      "id": "project_planning_handoff_2026_09_14",
+      "domain": "journey",
+      "rule": "\"Traspaso del chat de planificación (Journey-planning) del 2026-09-14: estado de los 5 Friends nuevos, chats abiertos, pendientes y reglas de proceso\"",
+      "gate": "none",
+      "source": "memory:project_planning_handoff_2026_09_14.md"
+    },
+    {
       "id": "project_story_id_two_forms",
       "domain": "journey",
       "rule": "La misma historia de journey tiene dos ids (journey:<id> y journey-<id>); comparar en crudo nunca casa",
@@ -1090,13 +1195,6 @@
       "source": "story-rules:body-a0-sentence-length (project_a0_gate_profile) + validator:src/lib/validateGeneratedStory.ts"
     },
     {
-      "id": "body-word-count",
-      "domain": "process",
-      "rule": "Cuerpo dentro de la banda del spec por nivel (A0-A2 128-155, B1-B2 140-166, C1-C2 150-177); fuera, FALLA. Live ya fuera el 2026-09-11: igual o mejor (src/lib/bodyWordBandBaseline.ts)",
-      "gate": "src/lib/validateGeneratedStory.ts#body-word-count",
-      "source": "story-rules:body-word-count (project_a0_gate_profile) + validator:src/lib/validateGeneratedStory.ts"
-    },
-    {
       "id": "claude-md-pedir-una-vez-bloqueante-2026-09-05",
       "domain": "process",
       "rule": "Pedir una vez",
@@ -1139,6 +1237,13 @@
       "source": "memory:feedback_answer_short_by_default.md"
     },
     {
+      "id": "feedback_ask_before_deleting_old_worktree",
+      "domain": "process",
+      "rule": "\"Al cerrar un chat con OLD_, preguntar al usuario si se puede borrar su worktree; nunca borrarlo por iniciativa propia\"",
+      "gate": "process",
+      "source": "memory:feedback_ask_before_deleting_old_worktree.md"
+    },
+    {
       "id": "feedback_city_country_comma",
       "domain": "process",
       "rule": "\"Ciudad y pais se dicen con coma, no con dos preposiciones: 'En Arequipa, Peru', nunca 'en Arequipa, en Peru'\"",
@@ -1146,11 +1251,25 @@
       "source": "memory:feedback_city_country_comma.md"
     },
     {
+      "id": "feedback_close_batch_scope",
+      "domain": "process",
+      "rule": "\"Una tanda de trabajo con varios chats lleva alcance cerrado desde el principio; lo nuevo va a una lista de pendientes, y nunca se dice 'queda poco' sin mirar el estado\"",
+      "gate": "process",
+      "source": "memory:feedback_close_batch_scope.md"
+    },
+    {
       "id": "feedback_commit_to_recommendations",
       "domain": "process",
       "rule": "\"UNA sola recomendación, fraseada para responder sí/no; nunca menús de alternativas, y sostenerla cuando pregunta \\\"¿seguro?\\\". En modo ejecución, elegir el mejor camino y arrancar\"",
       "gate": "stop-single-rec-guard.sh",
       "source": "memory:feedback_commit_to_recommendations.md"
+    },
+    {
+      "id": "feedback_creative_batches_sample_first",
+      "domain": "process",
+      "rule": "\"Videos y creatividades en tanda: SIEMPRE una muestra primero y parar hasta que el usuario confirme; nunca la tanda entera de golpe\"",
+      "gate": "process",
+      "source": "memory:feedback_creative_batches_sample_first.md"
     },
     {
       "id": "feedback_dev_server_port_3000",
@@ -1205,7 +1324,7 @@
       "id": "feedback_link_instagram_handles",
       "domain": "process",
       "rule": "\"Todo handle de Instagram que yo escriba va como enlace clicable, nunca como texto suelto\"",
-      "gate": "stop-ig-handle-link-guard.sh",
+      "gate": "none",
       "source": "memory:feedback_link_instagram_handles.md"
     },
     {
@@ -1291,6 +1410,20 @@
       "rule": "\"NUNCA sugerir \\\"lectura nativa\\\" / \\\"que lo lea un nativo\\\" como pendiente o caveat\"",
       "gate": "process",
       "source": "memory:feedback_no_native_read_suggestion.md"
+    },
+    {
+      "id": "feedback_phone_before_testflight",
+      "domain": "process",
+      "rule": "\"Nunca sugerir TestFlight/Play con código que no se ha probado en el móvil del usuario; el orden es build local a su teléfono, él prueba, y solo después distribución\"",
+      "gate": "process",
+      "source": "memory:feedback_phone_before_testflight.md"
+    },
+    {
+      "id": "feedback_phone_dev_build_is_newest",
+      "domain": "process",
+      "rule": "La build de desarrollo del móvil del usuario es su versión MÁS NUEVA; nunca desinstalarla ni mandarle a Play, que va por detrás",
+      "gate": "none",
+      "source": "memory:feedback_phone_dev_build_is_newest.md"
     },
     {
       "id": "feedback_push_budget_hard_limit",
@@ -1977,6 +2110,13 @@
       "rule": "\"Que falte contenido para un idioma, nivel o región NO es un problema ni un motivo para excluir a nadie; es una señal de qué crear\"",
       "gate": "process",
       "source": "memory:feedback_missing_content_is_an_opportunity.md"
+    },
+    {
+      "id": "feedback_no_shared_cast_across_journeys",
+      "domain": "vocab",
+      "rule": "\"Un journey nuevo NO hereda personajes del nivel anterior salvo que el usuario lo pida; la continuidad entre niveles es de vocabulario, no de reparto\"",
+      "gate": "none",
+      "source": "memory:feedback_no_shared_cast_across_journeys.md"
     },
     {
       "id": "feedback_vocab_scales_with_length",

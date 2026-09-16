@@ -161,6 +161,28 @@ function contentDivergence(expected: string, heard: string): string | null {
  *  REESCRIBIR esas oraciones, no seguir pagando tomas. */
 export type ContentGateMiss = { text: string; voiceId: string; heard: string; detalle: string };
 
+/** Un gate que MIDIÓ un problema en la unica toma (sin re-tirar; ver
+ *  `retryGates`). `pitchSt` solo en `kind:"uptalk"`. La toma se sube igual;
+ *  esto es la señal para que un humano decida si re-tirar, no un bloqueo. */
+export type GateFlag = { index: number; kind: "content" | "uptalk"; detail: string; pitchSt?: number };
+
+/** Construye los GateFlag de una sola toma a partir de lo que midieron los
+ *  gates (divergencia de contenido, pitch final). Pura: sin red, sin re-tiro,
+ *  facil de testear. `index` lo pone el llamador (posicion del fragmento). */
+export function buildGateFlags(
+  index: number,
+  divergence: string | null,
+  pitchSt: number | null,
+  uptalkThresholdSt: number
+): GateFlag[] {
+  const flags: GateFlag[] = [];
+  if (divergence) flags.push({ index, kind: "content", detail: divergence });
+  if (pitchSt !== null && pitchSt >= uptalkThresholdSt) {
+    flags.push({ index, kind: "uptalk", detail: `+${pitchSt.toFixed(1)} st`, pitchSt });
+  }
+  return flags;
+}
+
 /** Final-contour endpoint of an MP3 buffer in semitones above its median
  *  (scripts/_f0gate.py statement mode). Higher = more rising. Null when the
  *  venv is unavailable or the tail is unvoiced (caller then skips the gate). */
@@ -1177,8 +1199,26 @@ async function ttsSegment(args: {
    *  acertar, devuelve la última y apunta el fragmento en `contentMisses`
    *  para que un humano REESCRIBA la oración. */
   contentGate?: boolean;
-  /** Buzón donde el gate deja los fragmentos que no logró arreglar. */
+  /** Buzón donde el gate deja los fragmentos que no logró arreglar. Solo se
+   *  llena con `retryGates: true` (agotó los re-tiros); con `retryGates:
+   *  false` el hallazgo va a `gateFlags`, no aquí. */
   contentMisses?: ContentGateMiss[];
+  /** Si el gate que falla RE-TIRA (hasta agotar tomas, como hacía siempre)
+   *  o mide una sola vez y deja constancia en `gateFlags`. Default true
+   *  (compatibilidad). `generateAndUploadMultiVoiceAudio` (narracion de
+   *  historias) pasa SIEMPRE false: el 2026-09-16 el usuario revisó de oido
+   *  7 fragmentos que el gate habia re-tirado solo y 6 eran falsos
+   *  positivos (regla puesta ese dia, ver docs/rules-inventory.json). Los
+   *  clips de practica (_genPracticeClips.ts, _genWordClips.ts) usan su
+   *  propio gate F0 (_f0gateClient.ts), no este flag, y siguen re-tirando. */
+  retryGates?: boolean;
+  /** Buzón donde el gate deja lo que midió en la unica toma cuando
+   *  `retryGates` es false. La toma se sube igual; el humano decide si
+   *  re-tirar (via `_rerollSection.ts`) despues de oír. */
+  gateFlags?: GateFlag[];
+  /** Posicion del fragmento en la historia (0 = titulo). Solo se usa para
+   *  etiquetar `gateFlags`; el llamador la conoce (es el indice del loop). */
+  gateFlagIndex?: number;
 }): Promise<Buffer | null> {
   const model = args.model ?? ELEVENLABS_MODEL_V2;
   const softened = softenPunctuationForTts(args.text);
@@ -1331,6 +1371,45 @@ async function ttsSegment(args: {
   // (contenido agotado: se apunta para REESCRIBIR; entonación agotada: se
   // queda la que menos sube, cacheada, como en el bloque de abajo).
   const uptalkComp = args.antiUptalk === true && isStatementForGate(softened);
+
+  // SIN RE-TIRO (2026-09-16). El pipeline media siempre; lo que cambia es
+  // que ya no decide re-tirar por su cuenta. `retryGates: false` (lo que
+  // manda SIEMPRE `generateAndUploadMultiVoiceAudio`, narracion de
+  // historias) mide una sola toma y deja el hallazgo en `gateFlags`, sin
+  // segunda tirada y sin "quedarme con la menos mala" en silencio: la toma
+  // sube igual, marcada. El humano decide si vale la pena re-tirar
+  // (`_rerollSection.ts`) despues de oírla, no el gate solo.
+  //
+  // WHY: el 2026-09-15/16, en el Friends DE A1, el usuario revisó de oído
+  // (con un artifact por fragmento, marca falso-positivo/defecto-real) los
+  // 7 fragmentos que el re-tiro automatico había disparado en 75 narrados:
+  // 6 eran falsos positivos y solo 1 (un título con +8,6 st) un defecto
+  // real. Gastar 2-3 tomas extra por cada falsa alarma no se justifica
+  // cuando el humano lo revisa de todas formas.
+  //
+  // Los clips de practica (_genPracticeClips.ts, _genWordClips.ts) NO pasan
+  // por aqui: usan su propio gate F0 (_f0gateClient.ts) y siguen re-tirando
+  // (regla 6e de CLAUDE.md, sin cambios).
+  if ((contentGate || uptalkComp) && args.retryGates === false) {
+    const buf = (await readCache()) ?? (await renderFresh());
+    if (!buf) return null;
+    let divergence: string | null = null;
+    if (contentGate) {
+      const oido = await transcribeSegmentText(buf, args.apiKey, args.language);
+      divergence = oido === null ? null : contentDivergence(args.text, oido);
+      if (divergence) console.log(`[elevenlabs] contenido: diverge (${divergence}), medido sin re-tirar ${cacheKey}`);
+    }
+    let pitch: number | null = null;
+    if (uptalkComp) {
+      pitch = await measureFinalPitchSt(buf);
+      if (pitch !== null && pitch >= F0_UPTALK_ST) {
+        console.log(`[elevenlabs] anti-uptalk: sube (+${pitch.toFixed(1)} st), medido sin re-tirar ${cacheKey}`);
+      }
+    }
+    args.gateFlags?.push(...buildGateFlags(args.gateFlagIndex ?? 0, divergence, pitch, F0_UPTALK_ST));
+    return buf;
+  }
+
   if (contentGate) {
     let ultima: Buffer | null = null;
     let ultimoOido = "";
@@ -1741,6 +1820,11 @@ export async function generateAndUploadMultiVoiceAudio(args: {
    *  modelo tropieza siempre en el mismo punto (2026-08-17: "dobra a esquina",
    *  "para a calçada"). Vacío es lo normal. */
   contentMisses: ContentGateMiss[];
+  /** Fragmentos donde el gate midió un problema en su UNICA toma (sin
+   *  re-tirar; ver `retryGates` en `ttsSegment`) y la subió igual. El
+   *  llamador reporta esto (consola, artifact de revisión); nunca lo trata
+   *  como "listo". Vacío es lo normal. */
+  gateFlags: GateFlag[];
 } | null> {
   const apiKey = process.env.ELEVENLABS_API_KEY;
   if (!apiKey) {
@@ -1784,6 +1868,7 @@ export async function generateAndUploadMultiVoiceAudio(args: {
   // deja el flag solo para poder apagarlo en una prueba, nunca en producción.
   const effContentGate = args.contentGate !== false;
   const contentMisses: ContentGateMiss[] = [];
+  const gateFlags: GateFlag[] = [];
   if (isAllNarrator && (args.disableStitching !== true || args.antiUptalkGate !== true)) {
     console.log(
       "[elevenlabs] single-voice narrator render → FORCING gold config " +
@@ -1849,6 +1934,11 @@ export async function generateAndUploadMultiVoiceAudio(args: {
       antiUptalk: effAntiUptalkGate,
       contentGate: effContentGate,
       contentMisses,
+      // Nunca re-tira aqui (2026-09-16): mide y marca en gateFlags; el
+      // humano decide desde el artifact de revision, no el gate solo.
+      retryGates: false,
+      gateFlags,
+      gateFlagIndex: i,
     });
     if (!buf) return null;
     audioBuffers.push(args.normalizePerSegment ? await normalizeLoudness(buf) : buf);
@@ -1858,6 +1948,13 @@ export async function generateAndUploadMultiVoiceAudio(args: {
     // Grito al final del render: en un log de 21 historias, un aviso por
     // fragmento se pierde entre cientos de líneas y el audio se da por bueno.
     console.log(`\n[elevenlabs] ${describeContentMisses(contentMisses)}\n`);
+  }
+  if (gateFlags.length) {
+    console.log(
+      `\n[elevenlabs] ${gateFlags.length} gateFlag(s) sin re-tirar: ` +
+        gateFlags.map((f) => `[${f.index}] ${f.kind}(${f.detail})`).join(", ") +
+        "; revisar con el artifact antes de dar la historia por buena.\n"
+    );
   }
 
   const concatBuffer = await concatMp3Buffers(audioBuffers, DIALOGUE_GAP_SEC, titleText ? TITLE_GAP_SEC : undefined);
@@ -1998,6 +2095,7 @@ export async function generateAndUploadMultiVoiceAudio(args: {
     speakerVoiceMap,
     fragments: fragmentsValid ? fragmentOffsets : [],
     contentMisses,
+    gateFlags,
   };
 }
 
