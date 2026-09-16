@@ -1,0 +1,410 @@
+[
+  {
+    "topic": "endings-and-forgiveness",
+    "slotIndex": 1,
+    "title": "Aldo se lo vende sin más",
+    "slug": "aldo-se-lo-vende-sin-mas",
+    "arcType": "reframe-turn",
+    "synopsis": "Alondra llega a Guayaquil el treinta y uno con la ultima de sus siete piezas ya elegida y con toda la conversacion preparada en la cabeza, porque en seis fiestas seguidas le han dicho que no. Aldo la escucha media frase y le dice que si. Lo que tarda en entender es a quien le esta quitando el monigote, y para entonces ya lo tiene en los brazos.",
+    "text": "Su última parada fue Guayaquil, Ecuador, donde Aldo es el monigotero del vecindario y arma los años viejos de la cuadra. Olía a pólvora desde temprano.\n\n“Vengo por el monigote grande”, empezó. “Pago lo que sea.”\n\n“Llévatelo”, respondió él sin levantar la vista de la paja. “Está entero y es tuyo. Así de rápido.”\n\nAlondra se quedó con medio discurso dentro. En seis fiestas nadie le había dicho que sí.\n\n“¿Y no es el de la cuadra?”, preguntó, ya sin calma. “¿No hay riesgo de dejarlos sin quema?”\n\n“Ese es el motivo del precio”, dijo él, sereno. “Sería lógico quemar otro, pero no hay otro.”\n\nAldo no es tolerante con el que compra y se va.\n\nElla preguntó, y eso le pareció respetable.\n\nLa cuadra es solidaria, no tonta.\n\nNada de eso era productivo para nadie.\n\nLa máscara pesaba más que el cuerpo junto.\n\nAlondra cargó la quema de una cuadra entera, frustrada de un modo complejo.\n\nAldo siguió armando, sobrio, sin cara de arrepentido.",
+    "vocab": [
+      {
+        "word": "monigote",
+        "surface": "monigote",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the man-shaped dummy burned at midnight on the last day"
+      },
+      {
+        "word": "paja",
+        "surface": "paja",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "dry grass stalks used to fill the dummy up inside"
+      },
+      {
+        "word": "máscara",
+        "surface": "máscara",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the face put on the dummy, often of a known person"
+      },
+      {
+        "word": "vecindario",
+        "surface": "vecindario",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the houses of one street taken together as a group"
+      },
+      {
+        "word": "quema",
+        "surface": "quema",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the burning of the dummy at the end of the year"
+      },
+      {
+        "word": "pólvora",
+        "surface": "pólvora",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the black powder that makes fireworks go off"
+      },
+      {
+        "word": "discurso",
+        "surface": "discurso",
+        "type": "noun",
+        "definition": "the words you had ready to say to somebody else"
+      },
+      {
+        "word": "sereno",
+        "surface": "sereno",
+        "type": "adjective",
+        "definition": "calm in a way that nothing around seems to break"
+      },
+      {
+        "word": "tolerante",
+        "surface": "tolerante",
+        "type": "adjective",
+        "definition": "letting other people be as they are without complaining"
+      },
+      {
+        "word": "respetable",
+        "surface": "respetable",
+        "type": "adjective",
+        "definition": "deserving that other people should think well of it"
+      },
+      {
+        "word": "solidario",
+        "surface": "solidaria",
+        "type": "adjective",
+        "definition": "standing with the others when they need the help"
+      },
+      {
+        "word": "frustrado",
+        "surface": "frustrada",
+        "type": "adjective",
+        "definition": "angry because a thing did not work out for you"
+      },
+      {
+        "word": "complejo",
+        "surface": "complejo",
+        "type": "adjective",
+        "definition": "made of many parts and therefore hard to follow"
+      },
+      {
+        "word": "sobrio",
+        "surface": "sobrio",
+        "type": "adjective",
+        "definition": "plain and quiet, without anything shown off at all"
+      },
+      {
+        "word": "arrepentido",
+        "surface": "arrepentido",
+        "type": "adjective",
+        "definition": "sorry about a thing that you have already done"
+      },
+      {
+        "word": "cuerpo",
+        "surface": "cuerpo",
+        "type": "noun",
+        "definition": "the whole of a person or an animal from head down"
+      },
+      {
+        "word": "precio",
+        "surface": "precio",
+        "type": "noun",
+        "definition": "the money you have to give for a thing"
+      },
+      {
+        "word": "tonto",
+        "surface": "tonta",
+        "type": "adjective",
+        "definition": "not thinking clearly about what is going on"
+      },
+      {
+        "word": "productivo",
+        "surface": "productivo",
+        "type": "adjective",
+        "definition": "giving back more than it costs to keep it going",
+        "register": ""
+      },
+      {
+        "word": "así de rápido",
+        "surface": "Así de rápido",
+        "type": "expression",
+        "definition": "with no delay and with nothing else to discuss"
+      }
+    ]
+  },
+  {
+    "topic": "endings-and-forgiveness",
+    "slotIndex": 2,
+    "title": "El testamento la nombra",
+    "slug": "el-testamento-la-nombra",
+    "arcType": "late-reveal",
+    "synopsis": "A las once de la noche un vecino saca una hoja doblada y la cuadra se calla, porque el testamento del ano es la unica hora en que se dicen las cosas en voz alta y nadie se ofende. Alondra escucha tres nombres antes del suyo. Lo que le dejan en herencia no cuesta dinero y no se puede meter en una caja.",
+    "text": "Un vecino con corbata vieja se subió a una silla a las once.\n\nEl ruido de la cuadra se apagó solo.\n\n“Yo, el Año Viejo, difunto de este barrio, dejo mis deudas y mi memoria”, leyó.\n\nLas viudas de luto se rieron primero, con más ruido que llanto.\n\n“A Don Aldo le lego mi cabeza.”\n\n“Es lo único mío que fue experto en algo.”\n\nUlises le explicó a Alondra que el testamento es el balance del año y se lee siempre así, uno por uno.\n\n“Y a la señora de Bolivia, que compró mi cuerpo y no mi herencia”, siguió el vecino.\n\nLe dejaba el beneficio de la duda, el sacrificio de cargarlo y la ventaja de no conocerlo.\n\nAlguien lo llamó envidioso y otro lo llamó íntegro, y un celoso lo habría dicho más feo.\n\nHubo aplausos y un cohete. “Que se queme con deudas”, agregó el vecino. Alondra aplaudió, sin compasión hacia ella misma, y le pareció obvia la lección y sensata la forma.",
+    "vocab": [
+      {
+        "word": "testamento",
+        "surface": "testamento",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the joking will read out loud before midnight that night"
+      },
+      {
+        "word": "difunto",
+        "surface": "difunto",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the one who has died, here the year that is ending"
+      },
+      {
+        "word": "legar",
+        "surface": "lego",
+        "type": "verb",
+        "register": "cultural",
+        "definition": "to leave a thing to somebody in a written will"
+      },
+      {
+        "word": "viuda",
+        "surface": "viudas",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "people dressed in black who weep for the dying year"
+      },
+      {
+        "word": "luto",
+        "surface": "luto",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the black clothes worn when somebody has died"
+      },
+      {
+        "word": "cohete",
+        "surface": "cohete",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "a firework that goes up and bangs once"
+      },
+      {
+        "word": "corbata",
+        "surface": "corbata",
+        "type": "noun",
+        "definition": "a long strip of cloth worn knotted at the neck"
+      },
+      {
+        "word": "silla",
+        "surface": "silla",
+        "type": "noun",
+        "definition": "the seat with a back that one person sits on"
+      },
+      {
+        "word": "duda",
+        "surface": "duda",
+        "type": "noun",
+        "definition": "not being sure whether a thing is so or not"
+      },
+      {
+        "word": "envidioso",
+        "surface": "envidioso",
+        "type": "adjective",
+        "definition": "wanting badly the thing that belongs to another person"
+      },
+      {
+        "word": "celoso",
+        "surface": "celoso",
+        "type": "adjective",
+        "definition": "sour about what somebody else has got instead of you"
+      },
+      {
+        "word": "íntegro",
+        "surface": "íntegro",
+        "type": "adjective",
+        "definition": "honest all the way through, with nothing at all hidden"
+      },
+      {
+        "word": "llanto",
+        "surface": "llanto",
+        "type": "noun",
+        "definition": "the crying that comes with tears and with sound"
+      },
+      {
+        "word": "balance",
+        "surface": "balance",
+        "type": "noun",
+        "definition": "the count of what went well and what did not"
+      },
+      {
+        "word": "cabeza",
+        "surface": "cabeza",
+        "type": "noun",
+        "definition": "the part of the body above the neck"
+      },
+      {
+        "word": "lección",
+        "surface": "lección",
+        "type": "noun",
+        "definition": "the thing that an experience ends up teaching you"
+      },
+      {
+        "word": "forma",
+        "surface": "forma",
+        "type": "noun",
+        "definition": "the way in which a thing is said or done"
+      },
+      {
+        "word": "reírse",
+        "surface": "se rieron",
+        "type": "verb",
+        "definition": "to make the sound you make when a thing is funny"
+      },
+      {
+        "word": "seguir",
+        "surface": "siguió",
+        "type": "verb",
+        "definition": "to carry on with what you were already doing"
+      },
+      {
+        "word": "uno por uno",
+        "surface": "uno por uno",
+        "type": "expression",
+        "definition": "taking each person or thing on its own turn"
+      }
+    ]
+  },
+  {
+    "topic": "endings-and-forgiveness",
+    "slotIndex": 3,
+    "title": "Quemarlo salió más barato",
+    "slug": "quemarlo-salio-mas-barato",
+    "arcType": "harmonic-close",
+    "synopsis": "Faltan diez minutos y el monigote sigue atado sobre el techo del carro de Alondra, listo para un viaje de tres mil kilometros. La cuadra no le pide nada y esa es la parte que no puede pagar. Lo que hace en esos diez minutos decide como vuelve a su puesto, y no tiene nada que ver con lo que traia apuntado en el cuaderno.",
+    "text": "Aldo esperaba en la acera cuando Alondra bajó el monigote, entre humo y ruido.\n\n“Si pudiera me lo llevaba igual”, le dijo a Ulises. “Pero hay un límite y creo que es este.”\n\n“Yo lo quemaría sin pensarlo”, soltó él.\n\n“Lo frágil no viaja. Esa es la dificultad y también la solución.”\n\nAldo trajo la gasolina y lideraba la cuadra sin decirlo. Las doce uvas se repartieron mal.\n\nAlgunos ni las contaron.\n\n“Lo principal ya lo realizaste”, dijo Aldo. Traer es fácil; dejarlo aquí es lo esencial, y eso no es legal ni es negocio: es de vecinos.\n\nSe quemó en un minuto y medio, hasta la última brasa. La máscara fue lo último en irse, hábil hasta para eso.\n\n“Perdonar el año cuesta menos que cargarlo”, agregó una viuda, ya sin rencor ni celos. “Es lo actual.”\n\nAlondra miró el fuego sin sacar el teléfono. “Seis números y ninguna pieza”, le dijo a Ulises, y ese cierre significativo le pareció el mejor propósito del año.",
+    "vocab": [
+      {
+        "word": "acera",
+        "surface": "acera",
+        "type": "noun",
+        "definition": "the raised path at the side of a street"
+      },
+      {
+        "word": "gasolina",
+        "surface": "gasolina",
+        "type": "noun",
+        "definition": "the liquid that makes a car engine run"
+      },
+      {
+        "word": "uva",
+        "surface": "uvas",
+        "type": "noun",
+        "definition": "the small round fruit that grows in bunches"
+      },
+      {
+        "word": "propósito",
+        "surface": "propósito",
+        "type": "noun",
+        "definition": "a thing you decide that you will do from now on"
+      },
+      {
+        "word": "cierre",
+        "surface": "cierre",
+        "type": "noun",
+        "definition": "the act of shutting a thing for the very last time"
+      },
+      {
+        "word": "perdonar",
+        "surface": "Perdonar",
+        "type": "verb",
+        "definition": "to stop holding a wrong against somebody else"
+      },
+      {
+        "word": "rencor",
+        "surface": "rencor",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "anger kept alive long after the thing happened"
+      },
+      {
+        "word": "viajar",
+        "surface": "viaja",
+        "type": "verb",
+        "definition": "to go from one place to a place far away"
+      },
+      {
+        "word": "doce",
+        "surface": "doce",
+        "type": "noun",
+        "definition": "the number after eleven, and the hour of midnight"
+      },
+      {
+        "word": "liderar",
+        "surface": "lideraba",
+        "type": "verb",
+        "definition": "to go in front and have the other people follow",
+        "register": ""
+      },
+      {
+        "word": "actual",
+        "surface": "actual",
+        "type": "adjective",
+        "definition": "belonging to the present time and not to the past"
+      },
+      {
+        "word": "repartir",
+        "surface": "repartieron",
+        "type": "verb",
+        "definition": "to hand a thing out to everybody in a group"
+      },
+      {
+        "word": "brasa",
+        "surface": "brasa",
+        "type": "noun",
+        "definition": "a piece of wood still red hot after the flame"
+      },
+      {
+        "word": "traer",
+        "surface": "Traer",
+        "type": "verb",
+        "definition": "to carry a thing to the place where you are"
+      },
+      {
+        "word": "humo",
+        "surface": "humo",
+        "type": "noun",
+        "definition": "the grey cloud that comes off a thing that burns"
+      },
+      {
+        "word": "minuto",
+        "surface": "minuto",
+        "type": "noun",
+        "definition": "sixty seconds of time, one small part of an hour"
+      },
+      {
+        "word": "último",
+        "surface": "último",
+        "type": "adjective",
+        "definition": "coming after all the others, with none left"
+      },
+      {
+        "word": "fuego",
+        "surface": "fuego",
+        "type": "noun",
+        "definition": "the hot bright thing that burns and gives light"
+      },
+      {
+        "word": "celos",
+        "surface": "celos",
+        "type": "noun",
+        "definition": "the sour feeling when another gets what you wanted"
+      },
+      {
+        "word": "realizar",
+        "surface": "realizaste",
+        "type": "verb",
+        "definition": "to carry out a plan that you already had in mind"
+      }
+    ]
+  }
+]

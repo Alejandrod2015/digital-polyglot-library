@@ -5877,9 +5877,124 @@
       ]
     }
   },
+  "cmu410zep000732szrw94t2sl#endings-and-forgiveness": {
+    "cerrado": "2026-09-16T13:49:11.459Z",
+    "hash": "e3e1e18047f07e76",
+    "historias": [
+      "endings-and-forgiveness#1 aldo-se-lo-vende-sin-mas",
+      "endings-and-forgiveness#2 el-testamento-la-nombra",
+      "endings-and-forgiveness#3 quemarlo-salio-mas-barato"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"de ultimo dia: ruido de petardos, gente que hace cuentas del ano en voz alta y se rie de si misma; el unico momento serio dura un minuto\", espina \"Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto, y cada pieza esta hecha para no durar. La septima existe para arder a medianoche. Esta vez nadie le dice que no: se la venden, y el problema es lo que la venta deja sin quemar a una cuadra entera.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 87% (solo avisa)",
+      "acotacion dominante bajo tope (\"dijo\" 17%)",
+      "arranques de parrafo variados (mas repetido \"aldo\", 12%)",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.07 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 56/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en ES. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Cultural",
+      "nivel": "b1",
+      "variante": "LATAM",
+      "registro": "de ultimo dia: ruido de petardos, gente que hace cuentas del ano en voz alta y se rie de si misma; el unico momento serio dura un minuto",
+      "espina": "Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto, y cada pieza esta hecha para no durar. La septima existe para arder a medianoche. Esta vez nadie le dice que no: se la venden, y el problema es lo que la venta deja sin quemar a una cuadra entera.",
+      "recursos": "vuelta de tuerca sobre el patron del journey (aqui SI se la venden), testamento como voz colectiva, humor de barrio, cierre de journey sin gancho; nada figurado por encima de B1",
+      "metodo_nuevo": {
+        "por_que": "En el tema 6 se cayeron 11 de las 30 superficies y los tres marcadores de banda salieron a cero, siempre por lo mismo: los ecos y el condicional viven en la narracion, y la narracion es lo que se convierte en dialogo al pelear la banda de citado.",
+        "regla": "Las 30 superficies y los tres marcadores de banda van DENTRO de las replicas desde el primer borrador. Lo que esta en boca de un personaje no se lo lleva la conversion.",
+        "banda_en_dialogo": "condicional en 'yo lo quemaria igual'; subjuntivo imperfecto en 'si pudiera'; el estilo indirecto es el unico que no cabe en una replica y va en una sola frase de narrador, protegida."
+      },
+      "escalera_reservada": {
+        "objetivo": "cola acumulada 64% o menos al cerrar el journey; 30 superficies EXACTAS de los temas 1 a 6, todas dentro de replicas",
+        "historia_1": [
+          "ocasión",
+          "riesgo",
+          "suerte",
+          "calma",
+          "honesto",
+          "útil",
+          "entero",
+          "motivo",
+          "lógico",
+          "evidente"
+        ],
+        "historia_2": [
+          "herencia",
+          "memoria",
+          "afecto",
+          "compasión",
+          "sacrificio",
+          "ventaja",
+          "beneficio",
+          "obvia",
+          "sensata",
+          "experto"
+        ],
+        "historia_3": [
+          "límite",
+          "frágil",
+          "solución",
+          "dificultad",
+          "principal",
+          "esencial",
+          "significativo",
+          "así de fácil",
+          "hábil",
+          "legal"
+        ]
+      },
+      "aperturas": {
+        "estado": "de 18 historias: nombre desnudo 3, lugar o tiempo 3, cantidad 4, articulo definido 3, articulo indefinido 2, subordinada 3. Con 21 el tope sube a 7 y el posesivo sigue a cero.",
+        "historia_1": "posesivo (Su)",
+        "historia_2": "articulo indefinido (Un)",
+        "historia_3": "nombre desnudo (Alondra)"
+      },
+      "cierres": "La 1 cierra sobre Aldo, la 2 en linea citada del testamento y la 3 en imagen de fuego. Ninguna con la formula 'no era X, era Y' ni con Alondra recogiendo un resto.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "el monigote del vecindario, la septima y ultima de sus piezas",
+          "impide": "nada; por primera vez en siete fiestas se lo venden sin discutir, y ese es el problema",
+          "cuesta": "paga y se lo lleva, y con eso deja a la cuadra sin su Ano Viejo despues de cuarenta anos seguidos",
+          "cambia": "descubre que conseguir la pieza le sale mas caro que no conseguirla",
+          "emocion": "triunfo que se enfria en dos minutos; el gesto es no soltar el monigote aunque le pese"
+        },
+        {
+          "slot": "2",
+          "quiere": "quedarse con la pieza y ademas quedar bien con la cuadra",
+          "impide": "el escribano lee el testamento del ano delante de todos y en el testamento sale ella",
+          "cuesta": "la lectura publica, que no es cruel pero es exacta",
+          "cambia": "entiende que el monigote no es de Aldo ni suyo: es de la cuadra que lo va a quemar",
+          "emocion": "verguenza que no puede tapar con dinero; el gesto es aplaudir el testamento con todos"
+        },
+        {
+          "slot": "3",
+          "quiere": "cerrar el ano con algo que llevarse a casa",
+          "impide": "a medianoche el monigote arde, y ese es el punto entero de la fiesta",
+          "cuesta": "la septima pieza, y con ella la idea con la que salio de su mercado hace un ano",
+          "cambia": "quema el monigote con la cuadra y vuelve con seis telefonos, que es lo que de verdad sirve",
+          "emocion": "alivio limpio, sin triunfo; el gesto es mirar arder y no sacar el telefono"
+        }
+      ]
+    }
+  },
   "cmu410zep000732szrw94t2sl#hosting-and-processions": {
-    "cerrado": "2026-09-16T13:17:47.807Z",
-    "hash": "2d7bbe61521f8aae",
+    "cerrado": "2026-09-16T13:34:22.111Z",
+    "hash": "e972505250dd36e4",
     "historias": [
       "hosting-and-processions#1 la-pinata-se-rompe-entera",
       "hosting-and-processions#2 tres-veces-te-dicen-no",
@@ -5891,7 +6006,7 @@
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"le\" 17%)",
-      "arranques de parrafo variados (mas repetido \"perla\", 14%)",
+      "arranques de parrafo variados (mas repetido \"perla\", 18%)",
       "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
@@ -5993,8 +6108,8 @@
     }
   },
   "cmu410zep000732szrw94t2sl#stalls-and-crowds": {
-    "cerrado": "2026-09-16T13:08:49.403Z",
-    "hash": "da50e10eb57515dc",
+    "cerrado": "2026-09-16T13:48:43.880Z",
+    "hash": "50c5b2f4bb53c62c",
     "historias": [
       "stalls-and-crowds#1 sin-patente-no-hay-puesto",
       "stalls-and-crowds#2 el-hilo-curado-corta-todo",
@@ -6005,13 +6120,13 @@
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
-      "acotacion dominante bajo tope (\"contestó\" 20%)",
+      "acotacion dominante bajo tope (\"dijo\" 20%)",
       "arranques de parrafo variados (mas repetido \"el\", 21%)",
       "gate de conjunto sobre el tema: 11/19 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista ?): sin-patente-no-hay-puesto, el-hilo-curado-corta-todo, el-volantin-vuela-una-vez",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.00 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 60/60 salen una sola vez · sin marcar ancladas",
@@ -6116,8 +6231,8 @@
     }
   },
   "cmu410zep000732szrw94t2sl#turns-and-belonging": {
-    "cerrado": "2026-09-16T12:12:07.132Z",
-    "hash": "7f15e625c9f6a3a4",
+    "cerrado": "2026-09-16T13:33:41.342Z",
+    "hash": "9433155102577af4",
     "historias": [
       "turns-and-belonging#1 el-repique-no-tiene-dueno",
       "turns-and-belonging#2 lo-que-se-tira-cada-verano",
@@ -6134,7 +6249,7 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 6 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.15 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 52/60 salen una sola vez · sin marcar ancladas",
@@ -6180,8 +6295,8 @@
     }
   },
   "cmu410zep000732szrw94t2sl#vigils-and-waiting": {
-    "cerrado": "2026-09-16T13:06:47.042Z",
-    "hash": "2f2962d426f87121",
+    "cerrado": "2026-09-16T13:48:11.853Z",
+    "hash": "0d8efa3b8d89f3a7",
     "historias": [
       "vigils-and-waiting#1 el-aserrin-no-se-guarda",
       "vigils-and-waiting#2 nadie-duerme-el-jueves",
@@ -6198,7 +6313,7 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.02 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 58/60 salen una sola vez · sin marcar ancladas",
@@ -6280,8 +6395,8 @@
     }
   },
   "cmu410zep000732szrw94t2sl#weight-and-endurance": {
-    "cerrado": "2026-09-16T12:50:34.001Z",
-    "hash": "1efbed684ac89d64",
+    "cerrado": "2026-09-16T13:34:00.137Z",
+    "hash": "abd1387d2f96283a",
     "historias": [
       "weight-and-endurance#1 la-silleta-dura-un-dia",
       "weight-and-endurance#2 nadie-carga-sin-dos-anos",
@@ -6298,7 +6413,7 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 12 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.08 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 57/60 salen una sola vez · sin marcar ancladas",
