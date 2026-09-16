@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Schlafanzug,die Kaffeetasse,die Mailbox,der Plan",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Schlafanzug",
+     "answer": "pyjamas",
+     "options": [
+      "pyjamas",
+      "a coffee cup",
+      "voicemail",
+      "a plan"
+     ]
+    },
+    {
+     "word": "die Kaffeetasse",
+     "answer": "a coffee cup",
+     "options": [
+      "pyjamas",
+      "a coffee cup",
+      "voicemail",
+      "a plan"
+     ]
+    },
+    {
+     "word": "die Mailbox",
+     "answer": "voicemail",
+     "options": [
+      "pyjamas",
+      "a coffee cup",
+      "voicemail",
+      "a plan"
+     ]
+    },
+    {
+     "word": "der Plan",
+     "answer": "a plan",
+     "options": [
+      "pyjamas",
+      "a coffee cup",
+      "voicemail",
+      "a plan"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Antwort",
+  "sentence": "Sie schreibt eine kurze [[Antwort]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "reply",
+   "options": [
+    "reply",
+    "question",
+    "secret",
+    "story"
+   ],
+   "audioClip": {
+    "storySlug": "lieber-einmal-anrufen",
+    "storySource": "user",
+    "sentence": "Sie schreibt eine kurze Antwort.",
+    "targetWord": "Antwort",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Fensterbank",
+  "sentence": "Sie sitzt an der [[Fensterbank]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "windowsill",
+   "options": [
+    "windowsill",
+    "kitchen table",
+    "front door",
+    "bus stop"
+   ],
+   "audioClip": {
+    "storySlug": "lieber-einmal-anrufen",
+    "storySource": "user",
+    "sentence": "Sie sitzt an der Fensterbank.",
+    "targetWord": "Fensterbank",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nochmal",
+  "sentence": "Sie schreibt den Text [[nochmal]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "again",
+   "options": [
+    "again",
+    "never",
+    "already",
+    "almost"
+   ],
+   "audioClip": {
+    "storySlug": "lieber-einmal-anrufen",
+    "storySource": "user",
+    "sentence": "Sie schreibt den Text nochmal.",
+    "targetWord": "nochmal",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lächerlich",
+  "sentence": "Das ist doch [[lächerlich]]!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ridiculous",
+   "options": [
+    "ridiculous",
+    "normal",
+    "clever",
+    "boring"
+   ],
+   "audioClip": {
+    "storySlug": "lieber-einmal-anrufen",
+    "storySource": "user",
+    "sentence": "Das ist doch lächerlich!",
+    "targetWord": "lächerlich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "besetzt",
+  "sentence": "Die Leitung ist gerade [[besetzt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "busy",
+   "options": [
+    "busy",
+    "free",
+    "broken",
+    "quiet"
+   ],
+   "audioClip": {
+    "storySlug": "lieber-einmal-anrufen",
+    "storySource": "user",
+    "sentence": "Die Leitung ist gerade besetzt.",
+    "targetWord": "besetzt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gestern",
+  "sentence": "Ihr Handy war [[gestern]] auf stumm.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "yesterday",
+   "options": [
+    "yesterday",
+    "today",
+    "tomorrow",
+    "tonight"
+   ],
+   "audioClip": {
+    "storySlug": "lieber-einmal-anrufen",
+    "storySource": "user",
+    "sentence": "Ihr Handy war gestern auf stumm.",
+    "targetWord": "gestern",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Versehen",
+  "sentence": "Das war nur ein [[Versehen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "mistake",
+   "options": [
+    "mistake",
+    "secret",
+    "joke",
+    "plan"
+   ],
+   "audioClip": {
+    "storySlug": "lieber-einmal-anrufen",
+    "storySource": "user",
+    "sentence": "Das war nur ein Versehen.",
+    "targetWord": "Versehen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Schließlich",
+  "sentence": "[[Schließlich]] bin ich neu hier.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "after all",
+   "options": [
+    "after all",
+    "never",
+    "always",
+    "rarely"
+   ],
+   "audioClip": {
+    "storySlug": "lieber-einmal-anrufen",
+    "storySource": "user",
+    "sentence": "Schließlich bin ich neu hier.",
+    "targetWord": "Schließlich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Hintergrund",
+  "sentence": "Im [[Hintergrund]] hört man eine Straßenbahn.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "background",
+   "options": [
+    "background",
+    "distance",
+    "kitchen",
+    "street"
+   ],
+   "audioClip": {
+    "storySlug": "lieber-einmal-anrufen",
+    "storySource": "user",
+    "sentence": "Im Hintergrund hört man eine Straßenbahn.",
+    "targetWord": "Hintergrund",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Fahrgäste",
+  "sentence": "Die Straßenbahn ist voller [[Fahrgäste]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "passengers",
+   "options": [
+    "passengers",
+    "children",
+    "workers",
+    "tourists"
+   ],
+   "audioClip": {
+    "storySlug": "lieber-einmal-anrufen",
+    "storySource": "user",
+    "sentence": "Die Straßenbahn ist voller Fahrgäste.",
+    "targetWord": "Fahrgäste",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Laufschuhe",
+  "sentence": "Sie zieht ihre [[Laufschuhe]] an.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "running shoes",
+   "options": [
+    "running shoes",
+    "warm socks",
+    "new gloves",
+    "old boots"
+   ],
+   "audioClip": {
+    "storySlug": "lieber-einmal-anrufen",
+    "storySource": "user",
+    "sentence": "Sie zieht ihre Laufschuhe an.",
+    "targetWord": "Laufschuhe",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schon",
+  "sentence": "Es klingelt [[schon]] nach zehn Minuten.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "already",
+   "options": [
+    "already",
+    "never",
+    "rarely",
+    "hardly"
+   ],
+   "audioClip": {
+    "storySlug": "lieber-einmal-anrufen",
+    "storySource": "user",
+    "sentence": "Es klingelt schon nach zehn Minuten.",
+    "targetWord": "schon",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "früh",
+  "sentence": "Sie stellt die Schuhe eine Woche zu [[früh]] hin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "early",
+   "options": [
+    "early",
+    "late",
+    "far",
+    "close"
+   ],
+   "audioClip": {
+    "storySlug": "lieber-einmal-anrufen",
+    "storySource": "user",
+    "sentence": "Sie stellt die Schuhe eine Woche zu früh hin.",
+    "targetWord": "früh",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "versucht",
+  "sentence": "Sie _____ es noch einmal.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "versucht",
+   "options": [
+    "versucht",
+    "vergisst",
+    "findet",
+    "hört"
+   ],
+   "translation": "She _____ it once more.",
+   "optionTranslations": [
+    "tries",
+    "forgets",
+    "finds",
+    "hears"
+   ],
+   "audioClip": {
+    "storySlug": "lieber-einmal-anrufen",
+    "storySource": "user",
+    "sentence": "Sie versucht es noch einmal.",
+    "targetWord": "versucht",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "wählt",
+  "sentence": "Er _____ langsam die Nummer.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "wählt",
+   "options": [
+    "wählt",
+    "sucht",
+    "liest",
+    "schreibt"
+   ],
+   "translation": "He _____ the number slowly.",
+   "optionTranslations": [
+    "dials",
+    "looks for",
+    "reads",
+    "writes"
+   ],
+   "audioClip": {
+    "storySlug": "lieber-einmal-anrufen",
+    "storySource": "user",
+    "sentence": "Er wählt langsam die Nummer.",
+    "targetWord": "wählt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "mitkommen",
+  "sentence": "Willst du nächsten Sonntag _____?",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mitkommen",
+   "options": [
+    "mitkommen",
+    "bleiben",
+    "schlafen",
+    "kochen"
+   ],
+   "translation": "Do you want to _____ next Sunday?",
+   "optionTranslations": [
+    "come along",
+    "stay",
+    "sleep",
+    "cook"
+   ],
+   "audioClip": {
+    "storySlug": "lieber-einmal-anrufen",
+    "storySource": "user",
+    "sentence": "Willst du nächsten Sonntag mitkommen?",
+    "targetWord": "mitkommen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "die Hebamme,die Klinik,das Geheimnis,der Streit",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "die Hebamme",
+     "answer": "a midwife",
+     "options": [
+      "a midwife",
+      "a clinic",
+      "a secret",
+      "a fight"
+     ]
+    },
+    {
+     "word": "die Klinik",
+     "answer": "a clinic",
+     "options": [
+      "a midwife",
+      "a clinic",
+      "a secret",
+      "a fight"
+     ]
+    },
+    {
+     "word": "das Geheimnis",
+     "answer": "a secret",
+     "options": [
+      "a midwife",
+      "a clinic",
+      "a secret",
+      "a fight"
+     ]
+    },
+    {
+     "word": "der Streit",
+     "answer": "a fight",
+     "options": [
+      "a midwife",
+      "a clinic",
+      "a secret",
+      "a fight"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "grau",
+  "sentence": "Der Himmel ist heute [[grau]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "grey",
+   "options": [
+    "grey",
+    "blue",
+    "bright",
+    "clear"
+   ],
+   "audioClip": {
+    "storySlug": "alle-wissen-es",
+    "storySource": "user",
+    "sentence": "Der Himmel ist heute grau.",
+    "targetWord": "grau",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Wolken",
+  "sentence": "Der Himmel ist voller [[Wolken]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clouds",
+   "options": [
+    "clouds",
+    "rain",
+    "wind",
+    "stars"
+   ],
+   "audioClip": {
+    "storySlug": "alle-wissen-es",
+    "storySource": "user",
+    "sentence": "Der Himmel ist voller Wolken.",
+    "targetWord": "Wolken",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "windig",
+  "sentence": "Es ist heute [[windig]] und kalt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "windy",
+   "options": [
+    "windy",
+    "sunny",
+    "warm",
+    "dry"
+   ],
+   "audioClip": {
+    "storySlug": "alle-wissen-es",
+    "storySource": "user",
+    "sentence": "Es ist heute windig und kalt.",
+    "targetWord": "windig",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "frei",
+  "sentence": "Er hat heute [[frei]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "off",
+   "options": [
+    "off",
+    "time",
+    "work",
+    "fun"
+   ],
+   "audioClip": {
+    "storySlug": "alle-wissen-es",
+    "storySource": "user",
+    "sentence": "Er hat heute frei.",
+    "targetWord": "frei",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pünktlich",
+  "sentence": "Alle sind heute [[pünktlich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "punctual",
+   "options": [
+    "punctual",
+    "tired",
+    "late",
+    "nervous"
+   ],
+   "audioClip": {
+    "storySlug": "alle-wissen-es",
+    "storySource": "user",
+    "sentence": "Alle sind heute pünktlich.",
+    "targetWord": "pünktlich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "höflich",
+  "sentence": "Sie sind alle sehr [[höflich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "polite",
+   "options": [
+    "polite",
+    "quiet",
+    "funny",
+    "shy"
+   ],
+   "audioClip": {
+    "storySlug": "alle-wissen-es",
+    "storySource": "user",
+    "sentence": "Sie sind alle sehr höflich.",
+    "targetWord": "höflich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Scham",
+  "sentence": "Sie wird rot, aber nicht vor [[Scham]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shame",
+   "options": [
+    "shame",
+    "joy",
+    "fear",
+    "anger"
+   ],
+   "audioClip": {
+    "storySlug": "alle-wissen-es",
+    "storySource": "user",
+    "sentence": "Sie wird rot, aber nicht vor Scham.",
+    "targetWord": "Scham",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wütend",
+  "sentence": "Sie ist einfach nur [[wütend]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "angry",
+   "options": [
+    "angry",
+    "sad",
+    "tired",
+    "afraid"
+   ],
+   "audioClip": {
+    "storySlug": "alle-wissen-es",
+    "storySource": "user",
+    "sentence": "Sie ist einfach nur wütend.",
+    "targetWord": "wütend",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stimmt",
+  "sentence": "„Das [[stimmt]] doch, oder?“",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "is true",
+   "options": [
+    "is true",
+    "is new",
+    "is easy",
+    "is late"
+   ],
+   "audioClip": {
+    "storySlug": "alle-wissen-es",
+    "storySource": "user",
+    "sentence": "„Das stimmt doch, oder?“",
+    "targetWord": "stimmt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "unhöflich",
+  "sentence": "Das war [[unhöflich]] und dumm.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rude",
+   "options": [
+    "rude",
+    "funny",
+    "strange",
+    "kind"
+   ],
+   "audioClip": {
+    "storySlug": "alle-wissen-es",
+    "storySource": "user",
+    "sentence": "Das war unhöflich und dumm.",
+    "targetWord": "unhöflich",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dumm",
+  "sentence": "Das war unhöflich und [[dumm]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stupid",
+   "options": [
+    "stupid",
+    "clever",
+    "fair",
+    "true"
+   ],
+   "audioClip": {
+    "storySlug": "alle-wissen-es",
+    "storySource": "user",
+    "sentence": "Das war unhöflich und dumm.",
+    "targetWord": "dumm",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "unbedingt",
+  "sentence": "Sie will [[unbedingt]] keinen Streit.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "really",
+   "options": [
+    "really",
+    "never",
+    "hardly",
+    "rarely"
+   ],
+   "audioClip": {
+    "storySlug": "alle-wissen-es",
+    "storySource": "user",
+    "sentence": "Sie will unbedingt keinen Streit.",
+    "targetWord": "unbedingt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "links",
+  "sentence": "Sie läuft allein [[links]] am Ufer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to the left",
+   "options": [
+    "to the left",
+    "to the right",
+    "straight ahead",
+    "back home"
+   ],
+   "audioClip": {
+    "storySlug": "alle-wissen-es",
+    "storySource": "user",
+    "sentence": "Sie läuft allein links am Ufer.",
+    "targetWord": "links",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "weiß",
+  "sentence": "Nur er _____ von dem Geheimnis.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "weiß",
+   "options": [
+    "weiß",
+    "fragt",
+    "hört",
+    "sagt"
+   ],
+   "translation": "Only he _____ about the secret.",
+   "optionTranslations": [
+    "knows",
+    "asks",
+    "hears",
+    "says"
+   ],
+   "audioClip": {
+    "storySlug": "alle-wissen-es",
+    "storySource": "user",
+    "sentence": "Nur er weiß von dem Geheimnis.",
+    "targetWord": "weiß",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "meint",
+  "sentence": "„Das ist normal“, _____ sie.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "meint",
+   "options": [
+    "meint",
+    "fragt",
+    "ruft",
+    "denkt"
+   ],
+   "translation": "\"That's normal,\" she _____.",
+   "optionTranslations": [
+    "says",
+    "asks",
+    "calls",
+    "thinks"
+   ],
+   "audioClip": {
+    "storySlug": "alle-wissen-es",
+    "storySource": "user",
+    "sentence": "„Das ist normal“, meint sie.",
+    "targetWord": "meint",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "entscheidet",
+  "sentence": "Sie _____ sich schnell für den Heimweg.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "entscheidet",
+   "options": [
+    "entscheidet",
+    "fragt",
+    "wartet",
+    "schaut"
+   ],
+   "translation": "She quickly _____ to go home.",
+   "optionTranslations": [
+    "decides",
+    "asks",
+    "waits",
+    "looks"
+   ],
+   "audioClip": {
+    "storySlug": "alle-wissen-es",
+    "storySource": "user",
+    "sentence": "Sie entscheidet sich schnell für den Heimweg.",
+    "targetWord": "entscheidet",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

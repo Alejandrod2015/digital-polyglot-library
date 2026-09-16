@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Vorhang,fertig,toll,jetzt",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Vorhang",
+     "answer": "a curtain",
+     "options": [
+      "a curtain",
+      "finished",
+      "great",
+      "now"
+     ]
+    },
+    {
+     "word": "fertig",
+     "answer": "finished",
+     "options": [
+      "a curtain",
+      "finished",
+      "great",
+      "now"
+     ]
+    },
+    {
+     "word": "toll",
+     "answer": "great",
+     "options": [
+      "a curtain",
+      "finished",
+      "great",
+      "now"
+     ]
+    },
+    {
+     "word": "jetzt",
+     "answer": "now",
+     "options": [
+      "a curtain",
+      "finished",
+      "great",
+      "now"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wieder",
+  "sentence": "Sie ruft ihn [[wieder]] an.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "again",
+   "options": [
+    "again",
+    "first",
+    "never",
+    "already"
+   ],
+   "audioClip": {
+    "storySlug": "die-jacke-aus-rostock",
+    "storySource": "user",
+    "sentence": "Sie ruft ihn wieder an.",
+    "targetWord": "wieder",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wach",
+  "sentence": "Sie war die ganze Nacht [[wach]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "awake",
+   "options": [
+    "awake",
+    "tired",
+    "asleep",
+    "sick"
+   ],
+   "audioClip": {
+    "storySlug": "die-jacke-aus-rostock",
+    "storySource": "user",
+    "sentence": "Sie war die ganze Nacht wach.",
+    "targetWord": "wach",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sicher",
+  "sentence": "Jetzt bin ich mir [[sicher]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sure",
+   "options": [
+    "sure",
+    "worried",
+    "afraid",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "die-jacke-aus-rostock",
+    "storySource": "user",
+    "sentence": "Jetzt bin ich mir sicher.",
+    "targetWord": "sicher",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vorsichtig",
+  "sentence": "Sie nimmt die Jacke ganz [[vorsichtig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "carefully",
+   "options": [
+    "carefully",
+    "quickly",
+    "loudly",
+    "slowly"
+   ],
+   "audioClip": {
+    "storySlug": "die-jacke-aus-rostock",
+    "storySource": "user",
+    "sentence": "Sie nimmt die Jacke ganz vorsichtig.",
+    "targetWord": "vorsichtig",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dünner",
+  "sentence": "Hinter dem Stand hängt ein [[dünner]] Vorhang.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thin",
+   "options": [
+    "thin",
+    "thick",
+    "heavy",
+    "long"
+   ],
+   "audioClip": {
+    "storySlug": "die-jacke-aus-rostock",
+    "storySource": "user",
+    "sentence": "Hinter dem Stand hängt ein dünner Vorhang.",
+    "targetWord": "dünner",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "darf",
+  "sentence": "Hier [[darf]] sie das Kleid anziehen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "may",
+   "options": [
+    "may",
+    "must",
+    "should",
+    "wants to"
+   ],
+   "audioClip": {
+    "storySlug": "die-jacke-aus-rostock",
+    "storySource": "user",
+    "sentence": "Hier darf sie das Kleid anziehen.",
+    "targetWord": "darf",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "spät",
+  "sentence": "Sie schaut noch [[spät]] auf den Haken.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "late",
+   "options": [
+    "late",
+    "early",
+    "long",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "die-jacke-aus-rostock",
+    "storySource": "user",
+    "sentence": "Sie schaut noch spät auf den Haken.",
+    "targetWord": "spät",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sehr",
+  "sentence": "Ihre Augen sind [[sehr]] müde.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "very",
+   "options": [
+    "very",
+    "hardly",
+    "almost",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "die-jacke-aus-rostock",
+    "storySource": "user",
+    "sentence": "Ihre Augen sind sehr müde.",
+    "targetWord": "sehr",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "still",
+  "sentence": "Bitte ganz [[still]] stehen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "still",
+   "options": [
+    "still",
+    "fast",
+    "far",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "die-jacke-aus-rostock",
+    "storySource": "user",
+    "sentence": "Bitte ganz still stehen.",
+    "targetWord": "still",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dreht",
+  "sentence": "Sie [[dreht]] sich vor dem Spiegel.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "turns",
+   "options": [
+    "turns",
+    "stands",
+    "sits",
+    "runs"
+   ],
+   "audioClip": {
+    "storySlug": "die-jacke-aus-rostock",
+    "storySource": "user",
+    "sentence": "Sie dreht sich vor dem Spiegel.",
+    "targetWord": "dreht",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fühlt",
+  "sentence": "Sie [[fühlt]] sich plötzlich groß.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "feels",
+   "options": [
+    "feels",
+    "looks",
+    "sounds",
+    "seems"
+   ],
+   "audioClip": {
+    "storySlug": "die-jacke-aus-rostock",
+    "storySource": "user",
+    "sentence": "Sie fühlt sich plötzlich groß.",
+    "targetWord": "fühlt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "verspricht",
+  "sentence": "Sie [[verspricht]] ihr einen guten Platz.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "promises",
+   "options": [
+    "promises",
+    "shows",
+    "gives",
+    "sells"
+   ],
+   "audioClip": {
+    "storySlug": "die-jacke-aus-rostock",
+    "storySource": "user",
+    "sentence": "Sie verspricht ihr einen guten Platz.",
+    "targetWord": "verspricht",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hier",
+  "sentence": "Deine Jacke bekommt [[hier]] einen guten Platz.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "here",
+   "options": [
+    "here",
+    "there",
+    "outside",
+    "upstairs"
+   ],
+   "audioClip": {
+    "storySlug": "die-jacke-aus-rostock",
+    "storySource": "user",
+    "sentence": "Deine Jacke bekommt hier einen guten Platz.",
+    "targetWord": "hier",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "geschlafen",
+  "sentence": "Sie hat kaum _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "geschlafen",
+   "options": [
+    "geschlafen",
+    "gegessen",
+    "gelacht",
+    "gewartet"
+   ],
+   "translation": "She has hardly _____.",
+   "optionTranslations": [
+    "slept",
+    "eaten",
+    "laughed",
+    "waited"
+   ],
+   "audioClip": {
+    "storySlug": "die-jacke-aus-rostock",
+    "storySource": "user",
+    "sentence": "Sie hat kaum geschlafen.",
+    "targetWord": "geschlafen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "tausche",
+  "sentence": "Ich _____ meine Jacke gegen dein Kleid.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tausche",
+   "options": [
+    "tausche",
+    "kaufe",
+    "trage",
+    "suche"
+   ],
+   "translation": "I'll _____ my jacket for your dress.",
+   "optionTranslations": [
+    "swap",
+    "buy",
+    "wear",
+    "look for"
+   ],
+   "audioClip": {
+    "storySlug": "die-jacke-aus-rostock",
+    "storySource": "user",
+    "sentence": "Ich tausche meine Jacke gegen dein Kleid.",
+    "targetWord": "tausche",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "nimmt",
+  "sentence": "Sie _____ die Jacke vom Haken.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nimmt",
+   "options": [
+    "nimmt",
+    "kauft",
+    "zeigt",
+    "malt"
+   ],
+   "translation": "She _____ the jacket off the hook.",
+   "optionTranslations": [
+    "takes",
+    "buys",
+    "shows",
+    "paints"
+   ],
+   "audioClip": {
+    "storySlug": "die-jacke-aus-rostock",
+    "storySource": "user",
+    "sentence": "Sie nimmt die Jacke vom Haken.",
+    "targetWord": "nimmt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

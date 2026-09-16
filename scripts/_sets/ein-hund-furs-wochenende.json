@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Elektriker,die Leine,das Ticket,warm",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Elektriker",
+     "answer": "an electrician",
+     "options": [
+      "an electrician",
+      "a lead",
+      "a ticket",
+      "warm"
+     ]
+    },
+    {
+     "word": "die Leine",
+     "answer": "a lead",
+     "options": [
+      "an electrician",
+      "a lead",
+      "a ticket",
+      "warm"
+     ]
+    },
+    {
+     "word": "das Ticket",
+     "answer": "a ticket",
+     "options": [
+      "an electrician",
+      "a lead",
+      "a ticket",
+      "warm"
+     ]
+    },
+    {
+     "word": "warm",
+     "answer": "warm",
+     "options": [
+      "an electrician",
+      "a lead",
+      "a ticket",
+      "warm"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "braunen",
+  "sentence": "Er kommt mit einem [[braunen]] Hund.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "brown",
+   "options": [
+    "brown",
+    "black",
+    "white",
+    "grey"
+   ],
+   "audioClip": {
+    "storySlug": "ein-hund-furs-wochenende",
+    "storySource": "user",
+    "sentence": "Er kommt mit einem braunen Hund.",
+    "targetWord": "braunen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "weit",
+  "sentence": "Er muss heute [[weit]] weg arbeiten.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "far",
+   "options": [
+    "far",
+    "early",
+    "late",
+    "alone"
+   ],
+   "audioClip": {
+    "storySlug": "ein-hund-furs-wochenende",
+    "storySource": "user",
+    "sentence": "Er muss heute weit weg arbeiten.",
+    "targetWord": "weit",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lieb",
+  "sentence": "Der Hund ist ganz [[lieb]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sweet",
+   "options": [
+    "sweet",
+    "big",
+    "fast",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "ein-hund-furs-wochenende",
+    "storySource": "user",
+    "sentence": "Der Hund ist ganz lieb.",
+    "targetWord": "lieb",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "leider",
+  "sentence": "Er kann [[leider]] nicht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "unfortunately",
+   "options": [
+    "unfortunately",
+    "gladly",
+    "almost",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "ein-hund-furs-wochenende",
+    "storySource": "user",
+    "sentence": "Er kann leider nicht.",
+    "targetWord": "leider",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hat",
+  "sentence": "Sie [[hat]] Angst vor großen Hunden.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "has",
+   "options": [
+    "has",
+    "loses",
+    "hides",
+    "feels"
+   ],
+   "audioClip": {
+    "storySlug": "ein-hund-furs-wochenende",
+    "storySource": "user",
+    "sentence": "Sie hat Angst vor großen Hunden.",
+    "targetWord": "hat",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "steht",
+  "sentence": "Der Hund [[steht]] neben ihr.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stands",
+   "options": [
+    "stands",
+    "sits",
+    "runs",
+    "sleeps"
+   ],
+   "audioClip": {
+    "storySlug": "ein-hund-furs-wochenende",
+    "storySource": "user",
+    "sentence": "Der Hund steht neben ihr.",
+    "targetWord": "steht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gern",
+  "sentence": "Das mache ich [[gern]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gladly",
+   "options": [
+    "gladly",
+    "rarely",
+    "never",
+    "hardly"
+   ],
+   "audioClip": {
+    "storySlug": "ein-hund-furs-wochenende",
+    "storySource": "user",
+    "sentence": "Das mache ich gern.",
+    "targetWord": "gern",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "klar",
+  "sentence": "Ja, [[klar]], kein Problem.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "of course",
+   "options": [
+    "of course",
+    "maybe",
+    "never",
+    "almost"
+   ],
+   "audioClip": {
+    "storySlug": "ein-hund-furs-wochenende",
+    "storySource": "user",
+    "sentence": "Ja, klar, kein Problem.",
+    "targetWord": "klar",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "öffnet",
+  "sentence": "Sie [[öffnet]] die App der Bahn.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "opens",
+   "options": [
+    "opens",
+    "closes",
+    "finds",
+    "checks"
+   ],
+   "audioClip": {
+    "storySlug": "ein-hund-furs-wochenende",
+    "storySource": "user",
+    "sentence": "Sie öffnet die App der Bahn.",
+    "targetWord": "öffnet",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zurück",
+  "sentence": "Sie bekommt nur die Hälfte [[zurück]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "back",
+   "options": [
+    "back",
+    "free",
+    "now",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "ein-hund-furs-wochenende",
+    "storySource": "user",
+    "sentence": "Sie bekommt nur die Hälfte zurück.",
+    "targetWord": "zurück",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nächsten",
+  "sentence": "Rostock muss bis [[nächsten]] Monat warten.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "next",
+   "options": [
+    "next",
+    "last",
+    "this",
+    "every"
+   ],
+   "audioClip": {
+    "storySlug": "ein-hund-furs-wochenende",
+    "storySource": "user",
+    "sentence": "Rostock muss bis nächsten Monat warten.",
+    "targetWord": "nächsten",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bisschen",
+  "sentence": "Sie lacht ein [[bisschen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a little bit",
+   "options": [
+    "a little bit",
+    "a lot",
+    "not at all",
+    "only once"
+   ],
+   "audioClip": {
+    "storySlug": "ein-hund-furs-wochenende",
+    "storySource": "user",
+    "sentence": "Sie lacht ein bisschen.",
+    "targetWord": "bisschen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "antwortet",
+  "sentence": "„Ja, klar“, [[antwortet]] sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "answers",
+   "options": [
+    "answers",
+    "asks",
+    "whispers",
+    "laughs"
+   ],
+   "audioClip": {
+    "storySlug": "ein-hund-furs-wochenende",
+    "storySource": "user",
+    "sentence": "„Ja, klar“, antwortet sie.",
+    "targetWord": "antwortet",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "muss",
+  "sentence": "Er _____ am Wochenende arbeiten.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "muss",
+   "options": [
+    "muss",
+    "kann",
+    "will",
+    "soll"
+   ],
+   "translation": "He _____ work on the weekend.",
+   "optionTranslations": [
+    "has to",
+    "can",
+    "wants to",
+    "should"
+   ],
+   "audioClip": {
+    "storySlug": "ein-hund-furs-wochenende",
+    "storySource": "user",
+    "sentence": "Er muss am Wochenende arbeiten.",
+    "targetWord": "muss",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "arbeiten",
+  "sentence": "Er muss weit weg _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "arbeiten",
+   "options": [
+    "arbeiten",
+    "schlafen",
+    "warten",
+    "kochen"
+   ],
+   "translation": "He has to _____ far away.",
+   "optionTranslations": [
+    "work",
+    "sleep",
+    "wait",
+    "cook"
+   ],
+   "audioClip": {
+    "storySlug": "ein-hund-furs-wochenende",
+    "storySource": "user",
+    "sentence": "Er muss weit weg arbeiten.",
+    "targetWord": "arbeiten",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "fährt",
+  "sentence": "Der Zug _____ am Samstag.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fährt",
+   "options": [
+    "fährt",
+    "kommt",
+    "wartet",
+    "hält"
+   ],
+   "translation": "The train _____ on Saturday.",
+   "optionTranslations": [
+    "leaves",
+    "arrives",
+    "waits",
+    "stops"
+   ],
+   "audioClip": {
+    "storySlug": "ein-hund-furs-wochenende",
+    "storySource": "user",
+    "sentence": "Der Zug fährt am Samstag.",
+    "targetWord": "fährt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

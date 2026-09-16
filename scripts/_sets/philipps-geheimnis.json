@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Sekt,der Apfelwein,der Luftballon,das Geschenkpapier",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Sekt",
+     "answer": "sparkling wine",
+     "options": [
+      "sparkling wine",
+      "apple wine",
+      "a balloon",
+      "wrapping paper"
+     ]
+    },
+    {
+     "word": "der Apfelwein",
+     "answer": "apple wine",
+     "options": [
+      "sparkling wine",
+      "apple wine",
+      "a balloon",
+      "wrapping paper"
+     ]
+    },
+    {
+     "word": "der Luftballon",
+     "answer": "a balloon",
+     "options": [
+      "sparkling wine",
+      "apple wine",
+      "a balloon",
+      "wrapping paper"
+     ]
+    },
+    {
+     "word": "das Geschenkpapier",
+     "answer": "wrapping paper",
+     "options": [
+      "sparkling wine",
+      "apple wine",
+      "a balloon",
+      "wrapping paper"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Dienstagabend",
+  "sentence": "Am [[Dienstagabend]] ist die Wohnung ganz still.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Tuesday evening",
+   "options": [
+    "Tuesday evening",
+    "Monday morning",
+    "Friday night",
+    "Sunday afternoon"
+   ],
+   "audioClip": {
+    "storySlug": "philipps-geheimnis",
+    "storySource": "user",
+    "sentence": "Am Dienstagabend ist die Wohnung ganz still.",
+    "targetWord": "Dienstagabend",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "heute",
+  "sentence": "Er ist [[heute]] sehr nervös.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "today",
+   "options": [
+    "today",
+    "tomorrow",
+    "yesterday",
+    "tonight"
+   ],
+   "audioClip": {
+    "storySlug": "philipps-geheimnis",
+    "storySource": "user",
+    "sentence": "Er ist heute sehr nervös.",
+    "targetWord": "heute",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nervös",
+  "sentence": "Sein Kollege ist ganz [[nervös]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nervous",
+   "options": [
+    "nervous",
+    "tired",
+    "hungry",
+    "bored"
+   ],
+   "audioClip": {
+    "storySlug": "philipps-geheimnis",
+    "storySource": "user",
+    "sentence": "Sein Kollege ist ganz nervös.",
+    "targetWord": "nervös",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Überraschungsparty",
+  "sentence": "Sie planen eine [[Überraschungsparty]] für ihn.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a surprise party",
+   "options": [
+    "a surprise party",
+    "a wedding",
+    "a picnic",
+    "a meeting"
+   ],
+   "audioClip": {
+    "storySlug": "philipps-geheimnis",
+    "storySource": "user",
+    "sentence": "Sie planen eine Überraschungsparty für ihn.",
+    "targetWord": "Überraschungsparty",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bestimmt",
+  "sentence": "Er merkt [[bestimmt]] nichts davon.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "surely",
+   "options": [
+    "surely",
+    "rarely",
+    "never",
+    "sometimes"
+   ],
+   "audioClip": {
+    "storySlug": "philipps-geheimnis",
+    "storySource": "user",
+    "sentence": "Er merkt bestimmt nichts davon.",
+    "targetWord": "bestimmt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ehrlich",
+  "sentence": "„[[Ehrlich]]?“, fragt sie überrascht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "really",
+   "options": [
+    "really",
+    "quietly",
+    "slowly",
+    "finally"
+   ],
+   "audioClip": {
+    "storySlug": "philipps-geheimnis",
+    "storySource": "user",
+    "sentence": "„Ehrlich?“, fragt sie überrascht.",
+    "targetWord": "Ehrlich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "auch",
+  "sentence": "Ich mache das [[auch]] gern.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "also",
+   "options": [
+    "also",
+    "never",
+    "rarely",
+    "hardly"
+   ],
+   "audioClip": {
+    "storySlug": "philipps-geheimnis",
+    "storySource": "user",
+    "sentence": "Ich mache das auch gern.",
+    "targetWord": "auch",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "beißt",
+  "sentence": "Sie [[beißt]] sich auf die Lippe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bites",
+   "options": [
+    "bites",
+    "touches",
+    "scratches",
+    "rubs"
+   ],
+   "audioClip": {
+    "storySlug": "philipps-geheimnis",
+    "storySource": "user",
+    "sentence": "Sie beißt sich auf die Lippe.",
+    "targetWord": "beißt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Lippe",
+  "sentence": "Sie beißt sich auf die [[Lippe]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lip",
+   "options": [
+    "lip",
+    "cheek",
+    "chin",
+    "nose"
+   ],
+   "audioClip": {
+    "storySlug": "philipps-geheimnis",
+    "storySource": "user",
+    "sentence": "Sie beißt sich auf die Lippe.",
+    "targetWord": "Lippe",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "unmöglich",
+  "sentence": "Beides zusammen ist einfach [[unmöglich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "impossible",
+   "options": [
+    "impossible",
+    "unusual",
+    "unfair",
+    "unclear"
+   ],
+   "audioClip": {
+    "storySlug": "philipps-geheimnis",
+    "storySource": "user",
+    "sentence": "Beides zusammen ist einfach unmöglich.",
+    "targetWord": "unmöglich",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schwierig",
+  "sentence": "Der Tag wird sehr [[schwierig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "difficult",
+   "options": [
+    "difficult",
+    "short",
+    "quiet",
+    "busy"
+   ],
+   "audioClip": {
+    "storySlug": "philipps-geheimnis",
+    "storySource": "user",
+    "sentence": "Der Tag wird sehr schwierig.",
+    "targetWord": "schwierig",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Trotzdem",
+  "sentence": "[[Trotzdem]] backt sie einen Kuchen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "still, even so",
+   "options": [
+    "still, even so",
+    "usually",
+    "rarely",
+    "suddenly"
+   ],
+   "audioClip": {
+    "storySlug": "philipps-geheimnis",
+    "storySource": "user",
+    "sentence": "Trotzdem backt sie einen Kuchen.",
+    "targetWord": "Trotzdem",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "murmelt",
+  "sentence": "Er [[murmelt]] leise vor sich hin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "mumbles",
+   "options": [
+    "mumbles",
+    "shouts",
+    "sings",
+    "laughs"
+   ],
+   "audioClip": {
+    "storySlug": "philipps-geheimnis",
+    "storySource": "user",
+    "sentence": "Er murmelt leise vor sich hin.",
+    "targetWord": "murmelt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "wohnt",
+  "sentence": "Meine Schwester _____ jetzt in Berlin.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "wohnt",
+   "options": [
+    "wohnt",
+    "kommt",
+    "bleibt",
+    "arbeitet"
+   ],
+   "translation": "My sister _____ in Berlin now.",
+   "optionTranslations": [
+    "lives",
+    "comes",
+    "stays",
+    "works"
+   ],
+   "audioClip": {
+    "storySlug": "philipps-geheimnis",
+    "storySource": "user",
+    "sentence": "Meine Schwester wohnt jetzt in Berlin.",
+    "targetWord": "wohnt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "merkt",
+  "sentence": "Niemand _____ das kleine Geheimnis.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "merkt",
+   "options": [
+    "merkt",
+    "kennt",
+    "mag",
+    "sucht"
+   ],
+   "translation": "Nobody _____ the little secret.",
+   "optionTranslations": [
+    "notices",
+    "knows",
+    "likes",
+    "looks for"
+   ],
+   "audioClip": {
+    "storySlug": "philipps-geheimnis",
+    "storySource": "user",
+    "sentence": "Niemand merkt das kleine Geheimnis.",
+    "targetWord": "merkt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "backe",
+  "sentence": "Ich _____ morgen einen Kuchen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "backe",
+   "options": [
+    "backe",
+    "koche",
+    "kaufe",
+    "teile"
+   ],
+   "translation": "I'm _____ a cake tomorrow.",
+   "optionTranslations": [
+    "baking",
+    "cooking",
+    "buying",
+    "sharing"
+   ],
+   "audioClip": {
+    "storySlug": "philipps-geheimnis",
+    "storySource": "user",
+    "sentence": "Ich backe morgen einen Kuchen.",
+    "targetWord": "backe",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

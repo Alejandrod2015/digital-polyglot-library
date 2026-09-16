@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Anzug,die Krawatte,der Rotwein,die Hochzeit",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Anzug",
+     "answer": "a suit",
+     "options": [
+      "a suit",
+      "a tie",
+      "red wine",
+      "a wedding"
+     ]
+    },
+    {
+     "word": "die Krawatte",
+     "answer": "a tie",
+     "options": [
+      "a suit",
+      "a tie",
+      "red wine",
+      "a wedding"
+     ]
+    },
+    {
+     "word": "der Rotwein",
+     "answer": "red wine",
+     "options": [
+      "a suit",
+      "a tie",
+      "red wine",
+      "a wedding"
+     ]
+    },
+    {
+     "word": "die Hochzeit",
+     "answer": "a wedding",
+     "options": [
+      "a suit",
+      "a tie",
+      "red wine",
+      "a wedding"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "neues",
+  "sentence": "Sie trägt ein [[neues]] Kleid.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "new",
+   "options": [
+    "new",
+    "old",
+    "dark",
+    "light"
+   ],
+   "audioClip": {
+    "storySlug": "ein-fleck-auf-dem-schiff",
+    "storySource": "user",
+    "sentence": "Sie trägt ein neues Kleid.",
+    "targetWord": "neues",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Gäste",
+  "sentence": "Fünfzig [[Gäste]] feiern auf dem Schiff.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "guests",
+   "options": [
+    "guests",
+    "friends",
+    "dancers",
+    "cooks"
+   ],
+   "audioClip": {
+    "storySlug": "ein-fleck-auf-dem-schiff",
+    "storySource": "user",
+    "sentence": "Fünfzig Gäste feiern auf dem Schiff.",
+    "targetWord": "Gäste",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wild",
+  "sentence": "Das Schiff schaukelt [[wild]] im Wind.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wildly",
+   "options": [
+    "wildly",
+    "slowly",
+    "gently",
+    "quietly"
+   ],
+   "audioClip": {
+    "storySlug": "ein-fleck-auf-dem-schiff",
+    "storySource": "user",
+    "sentence": "Das Schiff schaukelt wild im Wind.",
+    "targetWord": "wild",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "starken",
+  "sentence": "Der Wein landet im [[starken]] Wind.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "strong",
+   "options": [
+    "strong",
+    "cold",
+    "warm",
+    "light"
+   ],
+   "audioClip": {
+    "storySlug": "ein-fleck-auf-dem-schiff",
+    "storySource": "user",
+    "sentence": "Der Wein landet im starken Wind.",
+    "targetWord": "starken",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "landet",
+  "sentence": "Der Wein [[landet]] auf ihrem Kleid.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lands",
+   "options": [
+    "lands",
+    "falls",
+    "flies",
+    "runs"
+   ],
+   "audioClip": {
+    "storySlug": "ein-fleck-auf-dem-schiff",
+    "storySource": "user",
+    "sentence": "Der Wein landet auf ihrem Kleid.",
+    "targetWord": "landet",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "roten",
+  "sentence": "Sie starrt auf den [[roten]] Fleck.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "red",
+   "options": [
+    "red",
+    "blue",
+    "dark",
+    "small"
+   ],
+   "audioClip": {
+    "storySlug": "ein-fleck-auf-dem-schiff",
+    "storySource": "user",
+    "sentence": "Sie starrt auf den roten Fleck.",
+    "targetWord": "roten",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "kaltem",
+  "sentence": "Sie kommt mit [[kaltem]] Wasser.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cold",
+   "options": [
+    "cold",
+    "warm",
+    "clean",
+    "fresh"
+   ],
+   "audioClip": {
+    "storySlug": "ein-fleck-auf-dem-schiff",
+    "storySource": "user",
+    "sentence": "Sie kommt mit kaltem Wasser.",
+    "targetWord": "kaltem",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Stoff",
+  "sentence": "Sie holt ein Stück [[Stoff]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fabric",
+   "options": [
+    "fabric",
+    "paper",
+    "bread",
+    "glass"
+   ],
+   "audioClip": {
+    "storySlug": "ein-fleck-auf-dem-schiff",
+    "storySource": "user",
+    "sentence": "Sie holt ein Stück Stoff.",
+    "targetWord": "Stoff",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "darüber",
+  "sentence": "Ich nähe eine Blume [[darüber]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "over it",
+   "options": [
+    "over it",
+    "under it",
+    "beside it",
+    "instead"
+   ],
+   "audioClip": {
+    "storySlug": "ein-fleck-auf-dem-schiff",
+    "storySource": "user",
+    "sentence": "Ich nähe eine Blume darüber.",
+    "targetWord": "darüber",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "blaue",
+  "sentence": "Das Kleid hat jetzt eine [[blaue]] Blume.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "blue",
+   "options": [
+    "blue",
+    "green",
+    "yellow",
+    "white"
+   ],
+   "audioClip": {
+    "storySlug": "ein-fleck-auf-dem-schiff",
+    "storySource": "user",
+    "sentence": "Das Kleid hat jetzt eine blaue Blume.",
+    "targetWord": "blaue",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fröhlich",
+  "sentence": "Sie strahlt ganz [[fröhlich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cheerful",
+   "options": [
+    "cheerful",
+    "tired",
+    "nervous",
+    "surprised"
+   ],
+   "audioClip": {
+    "storySlug": "ein-fleck-auf-dem-schiff",
+    "storySource": "user",
+    "sentence": "Sie strahlt ganz fröhlich.",
+    "targetWord": "fröhlich",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "glücklich",
+  "sentence": "Sie ist heute wirklich [[glücklich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "happy",
+   "options": [
+    "happy",
+    "sad",
+    "angry",
+    "worried"
+   ],
+   "audioClip": {
+    "storySlug": "ein-fleck-auf-dem-schiff",
+    "storySource": "user",
+    "sentence": "Sie ist heute wirklich glücklich.",
+    "targetWord": "glücklich",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tanzt",
+  "sentence": "Sie [[tanzt]] den ganzen Abend.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dances",
+   "options": [
+    "dances",
+    "sings",
+    "laughs",
+    "walks"
+   ],
+   "audioClip": {
+    "storySlug": "ein-fleck-auf-dem-schiff",
+    "storySource": "user",
+    "sentence": "Sie tanzt den ganzen Abend.",
+    "targetWord": "tanzt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "feiern",
+  "sentence": "Fünfzig Gäste _____ die Hochzeit.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "feiern",
+   "options": [
+    "feiern",
+    "kochen",
+    "tanzen",
+    "singen"
+   ],
+   "translation": "Fifty guests _____ the wedding.",
+   "optionTranslations": [
+    "celebrate",
+    "cook",
+    "dance",
+    "sing"
+   ],
+   "audioClip": {
+    "storySlug": "ein-fleck-auf-dem-schiff",
+    "storySource": "user",
+    "sentence": "Fünfzig Gäste feiern die Hochzeit.",
+    "targetWord": "feiern",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "genäht",
+  "sentence": "Sie hat das schöne Kleid _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "genäht",
+   "options": [
+    "genäht",
+    "gekauft",
+    "gefunden",
+    "gemalt"
+   ],
+   "translation": "She has _____ the lovely dress.",
+   "optionTranslations": [
+    "sewn",
+    "bought",
+    "found",
+    "painted"
+   ],
+   "audioClip": {
+    "storySlug": "ein-fleck-auf-dem-schiff",
+    "storySource": "user",
+    "sentence": "Sie hat das schöne Kleid genäht.",
+    "targetWord": "genäht",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "holt",
+  "sentence": "Sie _____ sofort kaltes Wasser.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "holt",
+   "options": [
+    "holt",
+    "trinkt",
+    "sucht",
+    "kauft"
+   ],
+   "translation": "She _____ cold water right away.",
+   "optionTranslations": [
+    "fetches",
+    "drinks",
+    "looks for",
+    "buys"
+   ],
+   "audioClip": {
+    "storySlug": "ein-fleck-auf-dem-schiff",
+    "storySource": "user",
+    "sentence": "Sie holt sofort kaltes Wasser.",
+    "targetWord": "holt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

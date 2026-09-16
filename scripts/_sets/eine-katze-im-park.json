@@ -1,0 +1,455 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "die Vögel,die Panik,die Katze,der Sonntagabend",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "die Vögel",
+     "answer": "birds",
+     "options": [
+      "birds",
+      "panic",
+      "a cat",
+      "Sunday evening"
+     ]
+    },
+    {
+     "word": "die Panik",
+     "answer": "panic",
+     "options": [
+      "birds",
+      "panic",
+      "a cat",
+      "Sunday evening"
+     ]
+    },
+    {
+     "word": "die Katze",
+     "answer": "a cat",
+     "options": [
+      "birds",
+      "panic",
+      "a cat",
+      "Sunday evening"
+     ]
+    },
+    {
+     "word": "der Sonntagabend",
+     "answer": "Sunday evening",
+     "options": [
+      "birds",
+      "panic",
+      "a cat",
+      "Sunday evening"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "weggelaufen",
+  "sentence": "Der Hund ist plötzlich [[weggelaufen]]!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "run away",
+   "options": [
+    "run away",
+    "fallen asleep",
+    "come back",
+    "stopped"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-park",
+    "storySource": "user",
+    "sentence": "Der Hund ist plötzlich weggelaufen!",
+    "targetWord": "weggelaufen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "brauche",
+  "sentence": "Ich [[brauche]] jetzt wirklich Hilfe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "need",
+   "options": [
+    "need",
+    "want",
+    "have",
+    "find"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-park",
+    "storySource": "user",
+    "sentence": "Ich brauche jetzt wirklich Hilfe.",
+    "targetWord": "brauche",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "genau",
+  "sentence": "Sie kennt den Park [[genau]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "exactly",
+   "options": [
+    "exactly",
+    "hardly",
+    "rarely",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-park",
+    "storySource": "user",
+    "sentence": "Sie kennt den Park genau.",
+    "targetWord": "genau",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Bäumen",
+  "sentence": "Sie sucht zwischen den [[Bäumen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "trees",
+   "options": [
+    "trees",
+    "houses",
+    "cars",
+    "people"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-park",
+    "storySource": "user",
+    "sentence": "Sie sucht zwischen den Bäumen.",
+    "targetWord": "Bäumen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "da",
+  "sentence": "„[[Da]] ist er!“, ruft sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "there",
+   "options": [
+    "there",
+    "here",
+    "near",
+    "far"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-park",
+    "storySource": "user",
+    "sentence": "„Da ist er!“, ruft sie.",
+    "targetWord": "da",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schaut",
+  "sentence": "Die Katze [[schaut]] ganz ruhig nach unten.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "looks",
+   "options": [
+    "looks",
+    "runs",
+    "climbs",
+    "sleeps"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-park",
+    "storySource": "user",
+    "sentence": "Die Katze schaut ganz ruhig nach unten.",
+    "targetWord": "schaut",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "unten",
+  "sentence": "Die Katze schaut ruhig nach [[unten]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "down",
+   "options": [
+    "down",
+    "up",
+    "away",
+    "around"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-park",
+    "storySource": "user",
+    "sentence": "Die Katze schaut ruhig nach unten.",
+    "targetWord": "unten",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schlägt",
+  "sentence": "Ihr Herz [[schlägt]] ganz laut.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "beats",
+   "options": [
+    "beats",
+    "stops",
+    "hurts",
+    "shakes"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-park",
+    "storySource": "user",
+    "sentence": "Ihr Herz schlägt ganz laut.",
+    "targetWord": "schlägt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "oft",
+  "sentence": "Hunde laufen [[oft]] zum Wasser.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "often",
+   "options": [
+    "often",
+    "never",
+    "rarely",
+    "always"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-park",
+    "storySource": "user",
+    "sentence": "Hunde laufen oft zum Wasser.",
+    "targetWord": "oft",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zitternden",
+  "sentence": "Sie schreibt mit [[zitternden]] Fingern.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "trembling",
+   "options": [
+    "trembling",
+    "cold",
+    "small",
+    "dirty"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-park",
+    "storySource": "user",
+    "sentence": "Sie schreibt mit zitternden Fingern.",
+    "targetWord": "zitternden",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lacht",
+  "sentence": "Sie [[lacht]] am Ende erleichtert.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "laughs",
+   "options": [
+    "laughs",
+    "cries",
+    "screams",
+    "sighs"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-park",
+    "storySource": "user",
+    "sentence": "Sie lacht am Ende erleichtert.",
+    "targetWord": "lacht",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ganz",
+  "sentence": "Die Katze sitzt [[ganz]] ruhig.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quite",
+   "options": [
+    "quite",
+    "never",
+    "almost",
+    "barely"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-park",
+    "storySource": "user",
+    "sentence": "Die Katze sitzt ganz ruhig.",
+    "targetWord": "ganz",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nur",
+  "sentence": "Im Park hört sie [[nur]] Vögel.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "only",
+   "options": [
+    "only",
+    "also",
+    "never",
+    "always"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-park",
+    "storySource": "user",
+    "sentence": "Im Park hört sie nur Vögel.",
+    "targetWord": "nur",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "müde",
+  "sentence": "Der Hund ist danach ganz [[müde]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tired",
+   "options": [
+    "tired",
+    "hungry",
+    "happy",
+    "afraid"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-park",
+    "storySource": "user",
+    "sentence": "Der Hund ist danach ganz müde.",
+    "targetWord": "müde",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "laufen",
+  "sentence": "Hunde _____ oft zum Wasser.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "laufen",
+   "options": [
+    "laufen",
+    "schwimmen",
+    "springen",
+    "schlafen"
+   ],
+   "translation": "Dogs often _____ to the water.",
+   "optionTranslations": [
+    "run",
+    "swim",
+    "jump",
+    "sleep"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-park",
+    "storySource": "user",
+    "sentence": "Hunde laufen oft zum Wasser.",
+    "targetWord": "laufen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "schreibt",
+  "sentence": "Sie _____ in den Chat der Gruppe.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schreibt",
+   "options": [
+    "schreibt",
+    "ruft",
+    "sucht",
+    "hört"
+   ],
+   "translation": "She _____ in the group chat.",
+   "optionTranslations": [
+    "writes",
+    "calls",
+    "looks for",
+    "hears"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-park",
+    "storySource": "user",
+    "sentence": "Sie schreibt in den Chat der Gruppe.",
+    "targetWord": "schreibt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "gezeigt",
+  "sentence": "Der Hund hat ihr den Park _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gezeigt",
+   "options": [
+    "gezeigt",
+    "gebracht",
+    "erklärt",
+    "gegeben"
+   ],
+   "translation": "The dog has _____ her the park.",
+   "optionTranslations": [
+    "shown",
+    "brought",
+    "explained",
+    "given"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-park",
+    "storySource": "user",
+    "sentence": "Der Hund hat ihr den Park gezeigt.",
+    "targetWord": "gezeigt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

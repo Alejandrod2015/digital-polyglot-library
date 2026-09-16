@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "das Display,das Geburtstagslied,die Grußkarte,der Gutschein",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "das Display",
+     "answer": "a screen",
+     "options": [
+      "a screen",
+      "a birthday song",
+      "a greeting card",
+      "a voucher"
+     ]
+    },
+    {
+     "word": "das Geburtstagslied",
+     "answer": "a birthday song",
+     "options": [
+      "a screen",
+      "a birthday song",
+      "a greeting card",
+      "a voucher"
+     ]
+    },
+    {
+     "word": "die Grußkarte",
+     "answer": "a greeting card",
+     "options": [
+      "a screen",
+      "a birthday song",
+      "a greeting card",
+      "a voucher"
+     ]
+    },
+    {
+     "word": "der Gutschein",
+     "answer": "a voucher",
+     "options": [
+      "a screen",
+      "a birthday song",
+      "a greeting card",
+      "a voucher"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "drinnen",
+  "sentence": "Wer ist denn da [[drinnen]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "inside",
+   "options": [
+    "inside",
+    "outside",
+    "upstairs",
+    "nearby"
+   ],
+   "audioClip": {
+    "storySlug": "uberraschung-um-acht",
+    "storySource": "user",
+    "sentence": "Wer ist denn da drinnen?",
+    "targetWord": "drinnen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Endlich",
+  "sentence": "[[Endlich]] lacht er wieder.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "finally",
+   "options": [
+    "finally",
+    "suddenly",
+    "quietly",
+    "slowly"
+   ],
+   "audioClip": {
+    "storySlug": "uberraschung-um-acht",
+    "storySource": "user",
+    "sentence": "Endlich lacht er wieder.",
+    "targetWord": "Endlich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "herzlich",
+  "sentence": "Er lacht ganz [[herzlich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "warmly",
+   "options": [
+    "warmly",
+    "loudly",
+    "nervously",
+    "sadly"
+   ],
+   "audioClip": {
+    "storySlug": "uberraschung-um-acht",
+    "storySource": "user",
+    "sentence": "Er lacht ganz herzlich.",
+    "targetWord": "herzlich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "letzte",
+  "sentence": "Das war meine [[letzte]] Party.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "last",
+   "options": [
+    "last",
+    "first",
+    "best",
+    "next"
+   ],
+   "audioClip": {
+    "storySlug": "uberraschung-um-acht",
+    "storySource": "user",
+    "sentence": "Das war meine letzte Party.",
+    "targetWord": "letzte",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "verrückt",
+  "sentence": "Ihr seid wirklich [[verrückt]]!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "crazy",
+   "options": [
+    "crazy",
+    "kind",
+    "quiet",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "uberraschung-um-acht",
+    "storySource": "user",
+    "sentence": "Ihr seid wirklich verrückt!",
+    "targetWord": "verrückt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dankbar",
+  "sentence": "Er ist sehr [[dankbar]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "grateful",
+   "options": [
+    "grateful",
+    "angry",
+    "surprised",
+    "worried"
+   ],
+   "audioClip": {
+    "storySlug": "uberraschung-um-acht",
+    "storySource": "user",
+    "sentence": "Er ist sehr dankbar.",
+    "targetWord": "dankbar",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hell",
+  "sentence": "Das Zimmer ist ganz [[hell]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bright",
+   "options": [
+    "bright",
+    "dark",
+    "cold",
+    "small"
+   ],
+   "audioClip": {
+    "storySlug": "uberraschung-um-acht",
+    "storySource": "user",
+    "sentence": "Das Zimmer ist ganz hell.",
+    "targetWord": "hell",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "echt",
+  "sentence": "Das ist [[echt]] ein guter Plan.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "really",
+   "options": [
+    "really",
+    "never",
+    "almost",
+    "hardly"
+   ],
+   "audioClip": {
+    "storySlug": "uberraschung-um-acht",
+    "storySource": "user",
+    "sentence": "Das ist echt ein guter Plan.",
+    "targetWord": "echt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hoffe",
+  "sentence": "Ich [[hoffe]], du verstehst es.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hope",
+   "options": [
+    "hope",
+    "forget",
+    "doubt",
+    "fear"
+   ],
+   "audioClip": {
+    "storySlug": "uberraschung-um-acht",
+    "storySource": "user",
+    "sentence": "Ich hoffe, du verstehst es.",
+    "targetWord": "hoffe",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Bäckerei",
+  "sentence": "Der Kuchen kommt aus der [[Bäckerei]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bakery",
+   "options": [
+    "bakery",
+    "kitchen",
+    "garden",
+    "market"
+   ],
+   "audioClip": {
+    "storySlug": "uberraschung-um-acht",
+    "storySource": "user",
+    "sentence": "Der Kuchen kommt aus der Bäckerei.",
+    "targetWord": "Bäckerei",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "morgen",
+  "sentence": "Wir sehen uns [[morgen]] wieder.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tomorrow",
+   "options": [
+    "tomorrow",
+    "today",
+    "yesterday",
+    "tonight"
+   ],
+   "audioClip": {
+    "storySlug": "uberraschung-um-acht",
+    "storySource": "user",
+    "sentence": "Wir sehen uns morgen wieder.",
+    "targetWord": "morgen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "kleinen",
+  "sentence": "Sie sieht es auf dem [[kleinen]] Display.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "small",
+   "options": [
+    "small",
+    "big",
+    "old",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "uberraschung-um-acht",
+    "storySource": "user",
+    "sentence": "Sie sieht es auf dem kleinen Display.",
+    "targetWord": "kleinen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wahr",
+  "sentence": "Diese Geschichte ist wirklich [[wahr]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "true",
+   "options": [
+    "true",
+    "funny",
+    "sad",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "uberraschung-um-acht",
+    "storySource": "user",
+    "sentence": "Diese Geschichte ist wirklich wahr.",
+    "targetWord": "wahr",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "wegdrücken",
+  "sentence": "Sie will den Anruf nicht _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "wegdrücken",
+   "options": [
+    "wegdrücken",
+    "anrufen",
+    "hören",
+    "suchen"
+   ],
+   "translation": "She doesn't want to _____ the call.",
+   "optionTranslations": [
+    "reject",
+    "make",
+    "hear",
+    "look for"
+   ],
+   "audioClip": {
+    "storySlug": "uberraschung-um-acht",
+    "storySource": "user",
+    "sentence": "Sie will den Anruf nicht wegdrücken.",
+    "targetWord": "wegdrücken",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "glänzen",
+  "sentence": "Seine Augen _____ vor Freude.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "glänzen",
+   "options": [
+    "glänzen",
+    "weinen",
+    "brennen",
+    "zittern"
+   ],
+   "translation": "His eyes _____ with joy.",
+   "optionTranslations": [
+    "shine",
+    "cry",
+    "burn",
+    "shake"
+   ],
+   "audioClip": {
+    "storySlug": "uberraschung-um-acht",
+    "storySource": "user",
+    "sentence": "Seine Augen glänzen vor Freude.",
+    "targetWord": "glänzen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "singen",
+  "sentence": "Alle Freunde _____ ein Lied.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "singen",
+   "options": [
+    "singen",
+    "tanzen",
+    "kochen",
+    "lachen"
+   ],
+   "translation": "All the friends _____ a song.",
+   "optionTranslations": [
+    "sing",
+    "dance",
+    "cook",
+    "laugh"
+   ],
+   "audioClip": {
+    "storySlug": "uberraschung-um-acht",
+    "storySource": "user",
+    "sentence": "Alle Freunde singen ein Lied.",
+    "targetWord": "singen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

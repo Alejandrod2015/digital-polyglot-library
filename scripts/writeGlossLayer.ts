@@ -3,7 +3,13 @@
  *
  *   npx tsx scripts/writeGlossLayer.ts <bundle> <slug> <trozos.json>
  *
- * `trozos.json`: { "palabra": { "es": "...", "en": "...", "gm"?, "g"?, "t"? }
+ * `trozos.json`: { "palabra": { "es": "...", "en": "...", "gm"?, "g"?, "t"?, "here"?, "nof"? }
+ *
+ * `here` corrige la fila encendida de la tabla del generador, que elige la
+ * PRIMERA fila con esa forma: `war` sale "ich war" en "Das war dumm", y
+ * `sitzen` sale "wir" en "Alle sitzen". -1 es un infinitivo, ninguna fila.
+ * `nof: true` quita la tabla cuando la palabra no es ese verbo aqui
+ * (`sein` posesivo, `Tränen` sustantivo).
  *
  * `g` y `t` solo se ponen cuando el bundle eligio el OTRO sentido: `cuenta` es
  * la cuenta del bar en el mapa global y aqui es "ella cuenta que viene de
@@ -25,7 +31,7 @@ import fs from "node:fs";
 import { PrismaClient } from "../src/generated/prisma";
 
 const prisma = new PrismaClient();
-type Trozo = { es: string; en: string; gm?: string; g?: string; t?: string };
+type Trozo = { es: string; en: string; gm?: string; g?: string; t?: string; here?: number; nof?: boolean };
 
 async function main() {
   const [bundle, slug, fichero] = process.argv.slice(2);
@@ -55,6 +61,12 @@ async function main() {
     if (t.gm) e.gm = t.gm;
     if (t.g) e.g = t.g;
     if (t.t) e.t = t.t;
+    if (t.nof) delete e.f;
+    if (t.here !== undefined) {
+      const f = e.f as { here: number } | undefined;
+      if (!f) { console.error(`${w}: here sin tabla, no escribo`); process.exit(1); }
+      f.here = t.here;
+    }
     capa[w] = e;
   }
   await prisma.tapGlossSet.upsert({
