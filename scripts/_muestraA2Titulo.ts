@@ -29,6 +29,7 @@ import { VOZ_POR_TEMA_B1_LATAM } from "./_b1LatamVoces";
 import { VOZ_POR_TEMA_FR_A0 } from "./_frA0Voces";
 import { VOZ_POR_TEMA_FR_A2 } from "./_frA2Voces";
 import { VOZ_POR_TEMA_FR_B1 } from "./_frB1Voces";
+import { VOZ_POR_TEMA_DE_A1_FRIENDS } from "./_deA1FriendsVoces";
 
 // Ampliado el 2026-09-07 para el B1 latam (pedir-una-vez: se amplia el script
 // en un commit, no se clona): --journey b1-latam usa su journey y su mapa de
@@ -39,10 +40,11 @@ const PERFILES: Record<string, { journey: string; voces: Record<string, string>;
   "fr-a0": { journey: "cmtwo6cys0007j8yzg6ni3fsc", voces: VOZ_POR_TEMA_FR_A0 },
   "fr-a2-friends": { journey: "cmu04ereh000732z7px7naqa2", voces: VOZ_POR_TEMA_FR_A2, language: "french" },
   "fr-b1-friends": { journey: "cmu0doigc0007j8e292tycths", voces: VOZ_POR_TEMA_FR_B1, language: "french" },
+  "de-a1-friends": { journey: "cmu0dqr6y0007j8o52i1s3gf7", voces: VOZ_POR_TEMA_DE_A1_FRIENDS, language: "german" },
 };
 const pi = process.argv.indexOf("--journey");
 const PERFIL = PERFILES[pi >= 0 ? process.argv[pi + 1] : "a2"];
-if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam | fr-a0 | fr-a2-friends | fr-b1-friends");
+if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam | fr-a0 | fr-a2-friends | fr-b1-friends | de-a1-friends");
 const JOURNEY = PERFIL.journey;
 const REGISTRO = path.join(__dirname, "a2-muestras.json");
 

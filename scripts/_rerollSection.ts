@@ -108,7 +108,7 @@ async function main() {
 
   const story = await prisma.journeyStory.findFirst({
     where: { slug },
-    select: { id: true, title: true, text: true, audioUrl: true, audioFragments: true },
+    select: { id: true, title: true, text: true, audioUrl: true, audioFragments: true, journey: { select: { language: true } } },
   });
   if (!story) throw new Error(`story ${slug} not found`);
   const frags = coerceFragments(story.audioFragments);
@@ -256,7 +256,7 @@ async function main() {
   const refText = `${story.title}. ${story.text}`;
   let cobertura;
   try {
-    cobertura = await checkMasterCoverage(r.audioUrl, refText);
+    cobertura = await checkMasterCoverage(r.audioUrl, refText, story.journey.language);
   } catch (e) {
     console.warn(`  candado de cobertura saltado (whisper no disponible): ${e instanceof Error ? e.message : e}`);
     cobertura = null;
