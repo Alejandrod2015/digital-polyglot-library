@@ -61,7 +61,7 @@ function silencios(url: string): Array<[number, number]> {
   await generateWordTimingsForStory(s.id);
   console.log("alineacion OK (Modal, contra el original)");
 
-  const cov = await checkMasterCoverage(originalUrl, `${s.title}. ${s.text}`, s.journey.language);
+  const cov = await checkMasterCoverage(originalUrl, s.text, s.journey.language, s.title);
   console.log("cobertura:", cov.ok ? "OK" : "FALLA");
   cov.gaps.forEach((g) => console.log("  HUECO:", g.textWords.join(" ")));
   cov.duplicates.forEach((d) => console.log("  DUP:", d.words.join(" ")));

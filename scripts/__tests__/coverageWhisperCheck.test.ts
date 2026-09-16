@@ -1,5 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
-import { transcribeWithRetries } from "../coverageWhisperCheck";
+import { transcribeWithRetries, referenceWordsFor, isGapStillMissing } from "../coverageWhisperCheck";
+import { checkCoverage, norm, type Gap } from "../coverageCheckLib";
 
 // Datos reales: master "rendez-vous-sous-la-bourse" (Friends FR B1, 68053ms
 // por ffprobe). whisper-cli con -ml 1 (y con cualquier otra combinacion de
@@ -85,5 +86,94 @@ describe("transcribeWithRetries", () => {
     expect(words).toHaveLength(3);
     expect(warn).toHaveBeenCalledWith(expect.stringContaining("tras 3 intentos"));
     warn.mockRestore();
+  });
+});
+
+const w = (s: string) => s.split(/\s+/).map(norm).filter(Boolean);
+
+// Fixture real: un-segreto-tra-noi-due (Friends IT A0, Genova). El titulo se
+// dice UNA vez como fragmento [0] del master y el CUERPO lo repite una vez
+// mas, a proposito, como eco narrativo en el dialogo final. El master real
+// (whisper-small, 2026-09-16) oye el titulo dos veces en total. La misma
+// clase de falso positivo (fase, no arreglada, "descartada a mano") ya se
+// habia visto antes en el Friends FR A2 ("La sauce ne tient pas", "Il y a
+// douze ans").
+const TITLE = "Un segreto tra noi due";
+const TEXT =
+  "Alice sale al quinto piano in ascensore. Nell'ascensore Alice incontra Federica. " +
+  "L'ascensore e stretto. Tra il terzo e il quarto piano la luce si spegne e l'ascensore si ferma. " +
+  "E tutto buio. Alice respira forte e conta fino a dieci. Tranquilla. Io sono un'architetta. " +
+  "L'ascensore e bloccato, ma il palazzo e forte, dice Federica. Lei accende la torcia del telefono. " +
+  "Federica vede spesso Alice con Matteo. Tu sei Alice, vero? Matteo e il tuo fidanzato? chiede Federica. " +
+  "Alice alza gli occhi verso la piccola luce e trema. No. Ma io amo Matteo. Lui non lo sa, risponde Alice. " +
+  "E la prima volta. Alice parla ad alta voce, sincera. " +
+  "Federica ascolta e non ride. Lei spegne la torcia. Allora questo e un segreto tra noi due. " +
+  "Tu lo dici a lui un giorno. Oppure mai, sussurra Federica. La luce torna e l'ascensore sale. " +
+  "Alice esce al quinto piano con le guance calde.";
+
+// Lo que dice el master de verdad: el titulo como fragmento [0], despues el
+// cuerpo (que ya contiene su propio eco del titulo).
+const HEARD = w(`${TITLE}. ${TEXT}`);
+
+describe("referenceWordsFor / eco del titulo en el cuerpo", () => {
+  it("BUG (comportamiento viejo): comparar solo contra el cuerpo marca un duplicado falso", () => {
+    // Antes del fix, checkMasterCoverage tokenizaba solo `referenceText`
+    // (el cuerpo), nunca el titulo. Reproducido aqui sin red: el titulo se
+    // oye 2 veces (fragmento [0] + eco en el cuerpo) pero el texto de
+    // referencia solo lo tiene 1 vez (el eco), asi que 2 > 1 dispara
+    // findDuplicates.
+    const textWordsSoloCuerpo = w(TEXT);
+    const res = checkCoverage(textWordsSoloCuerpo, HEARD);
+    expect(res.ok).toBe(false);
+    expect(res.duplicates.length).toBeGreaterThan(0);
+  });
+
+  it("FIX: referenceWordsFor(title, text) cuenta las 2 veces y no marca duplicado", () => {
+    const textWordsConTitulo = referenceWordsFor(TITLE, TEXT).map(norm);
+    const res = checkCoverage(textWordsConTitulo, HEARD);
+    expect(res.ok).toBe(true);
+    expect(res.duplicates).toEqual([]);
+    expect(res.gaps).toEqual([]);
+  });
+
+  it("sin titulo (parametro omitido), referenceWordsFor no cambia el comportamiento de siempre", () => {
+    expect(referenceWordsFor(undefined, "Bonjour le monde")).toEqual(w("Bonjour le monde"));
+  });
+});
+
+// Fixture real: domenica-senza-terrazza (Friends IT A0). El pase completo
+// (whisper-small sobre un master de 79s) perdio "non sa del patto per lui e
+// un vecchio scherzo" (10 palabras); aislando y re-transcribiendo ESE
+// fragmento (43,78-62,82s) por separado, whisper lo oye completo y correcto.
+// Confirmado a mano dos veces en el mismo journey (aqui y en
+// solo-per-una-foto) antes de escribir este fix.
+describe("isGapStillMissing (candado de falsos positivos, 2026-09-16)", () => {
+  const gap: Gap = {
+    textWords: w("non sa del patto per lui e un vecchio scherzo"),
+    startIdx: 100,
+    endIdx: 110,
+    anchorBeforeIdx: 42,
+    anchorAfterIdx: 55,
+  };
+
+  it("FALSO POSITIVO: las palabras SI aparecen al re-escuchar solo la ventana -> el hueco se descarta", () => {
+    // Lo que de verdad transcribe whisper al aislar el fragmento 3 completo
+    // (confirmado a mano, 2026-09-16): la frase entera esta ahi.
+    const rehardWords = w(
+      "Valentina appoggia il pane e si siede accanto al davanzale Alice lui non capisce " +
+      "non sa del patto per lui e un vecchio scherzo dice lei Alice ascolta sospira e si morde il labbro Valentina ha ragione"
+    );
+    expect(isGapStillMissing(gap, rehardWords, "it")).toBe(false);
+  });
+
+  it("HUECO REAL: las palabras siguen sin aparecer ni en la ventana re-escuchada -> el hueco se mantiene", () => {
+    // Mismo fragmento pero de verdad le falta el tramo (empalme roto, por
+    // ejemplo): el candado no puede ablandarse hasta el punto de nunca
+    // marcar nada.
+    const rehardWords = w(
+      "Valentina appoggia il pane e si siede accanto al davanzale Alice lui non capisce " +
+      "dice lei Alice ascolta sospira e si morde il labbro Valentina ha ragione"
+    );
+    expect(isGapStillMissing(gap, rehardWords, "it")).toBe(true);
   });
 });

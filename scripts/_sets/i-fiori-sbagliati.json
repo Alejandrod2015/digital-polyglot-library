@@ -1,0 +1,455 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "il vaso,rose rosse,buona notizia,alle dieci",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "il vaso",
+          "answer": "a vase",
+          "options": [
+            "a vase",
+            "red roses",
+            "good news",
+            "at ten o'clock"
+          ]
+        },
+        {
+          "word": "rose rosse",
+          "answer": "red roses",
+          "options": [
+            "a vase",
+            "red roses",
+            "good news",
+            "at ten o'clock"
+          ]
+        },
+        {
+          "word": "buona notizia",
+          "answer": "good news",
+          "options": [
+            "a vase",
+            "red roses",
+            "good news",
+            "at ten o'clock"
+          ]
+        },
+        {
+          "word": "alle dieci",
+          "answer": "at ten o'clock",
+          "options": [
+            "a vase",
+            "red roses",
+            "good news",
+            "at ten o'clock"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "già",
+    "sentence": "L'appuntamento è [[già]] finito.",
+    "payload": {
+      "answer": "already",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "already",
+        "never",
+        "soon",
+        "rarely"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "L'appuntamento è già finito.",
+        "storySlug": "i-fiori-sbagliati",
+        "targetWord": "già",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2f896087675e2c3a.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "finito",
+    "sentence": "L'appuntamento è già [[finito]].",
+    "payload": {
+      "answer": "finished",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "finished",
+        "perfect",
+        "difficult",
+        "secret"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "L'appuntamento è già finito.",
+        "storySlug": "i-fiori-sbagliati",
+        "targetWord": "finito",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2f896087675e2c3a.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "andare a casa",
+    "sentence": "Un'amica [[va a casa]] presto.",
+    "payload": {
+      "answer": "to go home",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to go home",
+        "to arrive late",
+        "to stay outside",
+        "to fall asleep"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Un'amica va a casa presto.",
+        "storySlug": "i-fiori-sbagliati",
+        "targetWord": "va a casa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/675ef10e3574878b.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tutta la sera",
+    "sentence": "Parla di lei [[tutta la sera]].",
+    "payload": {
+      "answer": "all evening",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "all evening",
+        "for one minute",
+        "every morning",
+        "twice a week"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Parla di lei tutta la sera.",
+        "storySlug": "i-fiori-sbagliati",
+        "targetWord": "Tutta la sera",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0fea688df581596.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fissare",
+    "sentence": "Lui [[fissa]] le rose e non capisce.",
+    "payload": {
+      "answer": "to stare",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to stare",
+        "to smell",
+        "to count",
+        "to buy"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Lui fissa le rose e non capisce.",
+        "storySlug": "i-fiori-sbagliati",
+        "targetWord": "fissa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1963560d33ac1329.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "forse",
+    "sentence": "[[Forse]] è una buona notizia.",
+    "payload": {
+      "answer": "maybe",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "maybe",
+        "certainly",
+        "never",
+        "rarely"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Forse è una buona notizia.",
+        "storySlug": "i-fiori-sbagliati",
+        "targetWord": "Forse",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6c65f82c7d2597c8.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "volere",
+    "sentence": "Non [[vuole]] ridere davanti a lui.",
+    "payload": {
+      "answer": "to want",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to want",
+        "to remember",
+        "to forget",
+        "to promise"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Non vuole ridere davanti a lui.",
+        "storySlug": "i-fiori-sbagliati",
+        "targetWord": "vuole",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/14e5555ab13988db.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "davvero",
+    "sentence": "Povero lui. [[Davvero]].",
+    "payload": {
+      "answer": "really",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "really",
+        "perhaps",
+        "never",
+        "almost"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Povero lui. Davvero.",
+        "storySlug": "i-fiori-sbagliati",
+        "targetWord": "Davvero",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6930b17382c52402.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entrare",
+    "sentence": "Poi lui [[entra]] in casa.",
+    "payload": {
+      "answer": "to go in",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to go in",
+        "to go out",
+        "to fall",
+        "to knock"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Poi lui entra in casa.",
+        "storySlug": "i-fiori-sbagliati",
+        "targetWord": "entra",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ab282bc620f883c.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "non servire più",
+    "sentence": "I fiori [[non servono più]] a lui.",
+    "payload": {
+      "answer": "no longer needed",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "no longer needed",
+        "still needed",
+        "too expensive",
+        "very fragrant"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "I fiori non servono più a lui.",
+        "storySlug": "i-fiori-sbagliati",
+        "targetWord": "non servono più",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poi",
+    "sentence": "[[Poi]] lui entra in casa.",
+    "payload": {
+      "answer": "then",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "then",
+        "never",
+        "before",
+        "always"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Poi lui entra in casa.",
+        "storySlug": "i-fiori-sbagliati",
+        "targetWord": "Poi",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "c'è silenzio",
+    "sentence": "Nella stanza [[c'è silenzio]].",
+    "payload": {
+      "answer": "it's quiet",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "it's quiet",
+        "it's noisy",
+        "it's dark",
+        "it's cold"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Nella stanza c'è silenzio.",
+        "storySlug": "i-fiori-sbagliati",
+        "targetWord": "c'è silenzio",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "strano",
+    "sentence": "È tutto molto [[strano]] per lei.",
+    "payload": {
+      "answer": "strange",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "strange",
+        "funny",
+        "easy",
+        "cheap"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "È tutto molto strano per lei.",
+        "storySlug": "i-fiori-sbagliati",
+        "targetWord": "strano",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bussa",
+    "sentence": "Nessuno risponde e lui _____ di nuovo.",
+    "payload": {
+      "answer": "bussa",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "bussa",
+        "canta",
+        "corre",
+        "telefona"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Nessuno risponde e lui bussa di nuovo.",
+        "storySlug": "i-fiori-sbagliati",
+        "targetWord": "bussa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d6a97ec49fbed12.mp3"
+      },
+      "translation": "No one answers, and he _____ again.",
+      "optionTranslations": [
+        "knocks",
+        "sings",
+        "runs",
+        "calls"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "capisce",
+    "sentence": "Ascolta bene e alla fine _____.",
+    "payload": {
+      "answer": "capisce",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "capisce",
+        "dimentica",
+        "rifiuta",
+        "inventa"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Ascolta bene e alla fine capisce.",
+        "storySlug": "i-fiori-sbagliati",
+        "targetWord": "capisce",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85261daf3ab7f925.mp3"
+      },
+      "translation": "He listens carefully and finally _____.",
+      "optionTranslations": [
+        "understands",
+        "forgets",
+        "refuses",
+        "makes it up"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dà",
+    "sentence": "Compra dei fiori e li _____ a lei.",
+    "payload": {
+      "answer": "dà",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "dà",
+        "vende",
+        "nasconde",
+        "rompe"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Compra dei fiori e li dà a lei.",
+        "storySlug": "i-fiori-sbagliati",
+        "targetWord": "dà",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1dd14e9b3dfbff6b.mp3"
+      },
+      "translation": "He buys some flowers and _____ them to her.",
+      "optionTranslations": [
+        "gives",
+        "sells",
+        "hides",
+        "breaks"
+      ]
+    },
+    "featured": false
+  }
+]

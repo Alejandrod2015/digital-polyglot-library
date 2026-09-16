@@ -1,0 +1,546 @@
+[
+  {
+    "topic": "football-and-rivalries",
+    "slotIndex": 2,
+    "title": "Solo per una foto",
+    "slug": "solo-per-una-foto",
+    "synopsis": "The next morning Alice sees her lost shirt again, in a very wrong place, and she runs down to the street.",
+    "text": "La mattina dopo Alice apre la finestra. L'aria è fresca. Davanti al palazzo c'è il taxi bianco di Riccardo. Lui pulisce e strofina il vetro con una maglia rossa e blu.\n\nÈ la sua maglia. Alice ha le lacrime agli occhi, perché è il regalo di Matteo. Lei scende le scale di corsa, in pigiama.\n\n“Riccardo, no! La maglia è importante per me,” dice Alice. Lei quasi piange. “Una scommessa è una scommessa,” risponde lui. Ma guarda la faccia di Alice.\n\n“Okay. La maglia torna a te. Ma prima metti la sciarpa della Samp. Solo per una foto,” dice Riccardo.\n\nAlice mette la sciarpa blu. Riccardo fa la foto e scherza. Alice sente vergogna. Dalla terrazza, Matteo vede tutto e ride anche lui.\n\n“La foto va nel gruppo del palazzo. Per sempre. È divertente,” dice Riccardo. Alice non risponde. Tiene la vecchia maglia, bagnata e sporca, stretta al cuore.",
+    "vocab": [
+      {
+        "type": "adjective",
+        "word": "fresco",
+        "surface": "fresca",
+        "definition": "Cool; a little cold, in a nice way."
+      },
+      {
+        "type": "expression",
+        "word": "davanti a",
+        "surface": "Davanti al",
+        "definition": "In front of; on the front side of a place."
+      },
+      {
+        "type": "adjective",
+        "word": "bianco",
+        "surface": "bianco",
+        "definition": "White; the colour of milk."
+      },
+      {
+        "type": "verb",
+        "word": "pulire",
+        "surface": "pulisce",
+        "definition": "To clean; to take the dirt away."
+      },
+      {
+        "type": "expression",
+        "word": "le lacrime agli occhi",
+        "surface": "lacrime agli occhi",
+        "definition": "Tears in your eyes; almost crying."
+      },
+      {
+        "type": "expression",
+        "word": "di corsa",
+        "surface": "di corsa",
+        "definition": "Running; very fast, in a hurry."
+      },
+      {
+        "type": "adverb",
+        "word": "anche",
+        "surface": "anche",
+        "definition": "Also; too, in the same way."
+      },
+      {
+        "type": "adverb",
+        "word": "prima",
+        "surface": "prima",
+        "definition": "First; before doing something else."
+      },
+      {
+        "type": "verb",
+        "word": "vedere",
+        "surface": "vede",
+        "definition": "To see; to notice with your eyes."
+      },
+      {
+        "type": "expression",
+        "word": "fare una foto",
+        "anchor": true,
+        "surface": "fa la foto",
+        "definition": "To take a photo."
+      },
+      {
+        "type": "noun",
+        "word": "il gruppo",
+        "anchor": true,
+        "surface": "gruppo",
+        "definition": "A group; here a group chat of neighbours."
+      },
+      {
+        "type": "adjective",
+        "word": "bagnato",
+        "surface": "bagnata",
+        "definition": "Wet; with water on it."
+      },
+      {
+        "type": "adjective",
+        "word": "sporco",
+        "surface": "sporca",
+        "definition": "Dirty; not clean, with marks on it."
+      },
+      {
+        "type": "adjective",
+        "word": "blu",
+        "surface": "blu",
+        "definition": "Blue; the colour of the sky."
+      },
+      {
+        "type": "noun",
+        "word": "la faccia",
+        "surface": "faccia",
+        "definition": "A face; the front part of your head."
+      },
+      {
+        "type": "expression",
+        "word": "per sempre",
+        "surface": "Per sempre",
+        "definition": "Forever; for all time."
+      },
+      {
+        "type": "verb",
+        "word": "strofinare",
+        "anchor": true,
+        "surface": "strofina",
+        "definition": "To rub hard to clean something."
+      },
+      {
+        "type": "expression",
+        "word": "stretta al cuore",
+        "anchor": true,
+        "surface": "stretta al cuore",
+        "definition": "Held tight against the heart."
+      },
+      {
+        "type": "expression",
+        "word": "in pigiama",
+        "surface": "in pigiama",
+        "definition": "In pyjamas; still in night clothes."
+      },
+      {
+        "type": "expression",
+        "word": "la sciarpa della Samp",
+        "anchor": true,
+        "surface": "sciarpa della Samp",
+        "definition": "A scarf of Sampdoria, the other Genoa team."
+      }
+    ],
+    "arcType": null
+  },
+  {
+    "topic": "cooking-and-recipes",
+    "slotIndex": 2,
+    "title": "Trofie per due",
+    "slug": "trofie-per-due",
+    "synopsis": "Matteo gets home from the ferry and finds lunch ready on the terrace. He loves the pesto, and then Alice shows him the mortar.",
+    "text": "Matteo entra sulla terrazza alle due, stanco. Alice aspetta al tavolo. Davanti a lei ci sono due piatti di trofie e una bottiglia d'acqua.\n\n“Che profumo! Chi fa il pesto oggi?” chiede lui. “Io, con Lorenzo,” risponde Alice. “Ho un appetito da marinaio!” dice lui. Matteo mangia lentamente e chiude gli occhi. Ha il pesto sulla barba. “È più buono del mio,” dice lui.\n\nAlice non mangia. “Che cosa c'è?” chiede Matteo. Lei ha lo stomaco chiuso, perché in cucina c'è il mortaio rotto. Posa i due pezzi su un vassoio, accanto ai piatti. “Mi dispiace. È colpa mia,” dice Alice piano.\n\nMatteo guarda i due pezzi a lungo e sospira. “Non importa, Alice,” dice lui. Lui sorride appena, ma i suoi occhi sono tristi. “Per me importa,” risponde Alice, e asciuga una lacrima.\n\nMatteo riempie di terra i due pezzi di marmo. “Uno per te e uno per me,” dice lui.",
+    "vocab": [
+      {
+        "type": "adjective",
+        "word": "stanco",
+        "surface": "stanco",
+        "definition": "Tired; you need to rest."
+      },
+      {
+        "type": "noun",
+        "word": "le trofie",
+        "anchor": true,
+        "surface": "trofie",
+        "definition": "Trofie; short twisted pasta from Liguria."
+      },
+      {
+        "type": "expression",
+        "word": "la bottiglia d'acqua",
+        "anchor": true,
+        "surface": "bottiglia d'acqua",
+        "definition": "A bottle of water."
+      },
+      {
+        "type": "expression",
+        "word": "che profumo",
+        "surface": "Che profumo",
+        "definition": "What a lovely smell!"
+      },
+      {
+        "type": "adverb",
+        "word": "lentamente",
+        "surface": "lentamente",
+        "definition": "Slowly; not fast, with time."
+      },
+      {
+        "type": "expression",
+        "word": "chiudere gli occhi",
+        "surface": "chiude gli occhi",
+        "definition": "To close your eyes."
+      },
+      {
+        "type": "adjective",
+        "word": "buono",
+        "surface": "buono",
+        "definition": "Good; nice to eat."
+      },
+      {
+        "type": "expression",
+        "word": "lo stomaco chiuso",
+        "anchor": true,
+        "surface": "stomaco chiuso",
+        "definition": "A closed stomach; too upset to eat."
+      },
+      {
+        "type": "adverb",
+        "word": "accanto",
+        "surface": "accanto",
+        "definition": "Next to; beside something."
+      },
+      {
+        "type": "expression",
+        "word": "a lungo",
+        "surface": "a lungo",
+        "definition": "For a long time."
+      },
+      {
+        "type": "verb",
+        "word": "sospirare",
+        "surface": "sospira",
+        "definition": "To sigh; to breathe out long and slow."
+      },
+      {
+        "type": "expression",
+        "word": "non importa",
+        "surface": "Non importa",
+        "definition": "It does not matter."
+      },
+      {
+        "type": "verb",
+        "word": "asciugare",
+        "surface": "asciuga",
+        "definition": "To dry; to take the water away."
+      },
+      {
+        "type": "noun",
+        "word": "la lacrima",
+        "surface": "lacrima",
+        "definition": "A tear; a drop of water from your eye."
+      },
+      {
+        "type": "noun",
+        "word": "il piatto",
+        "surface": "piatti",
+        "definition": "A plate; you put food on it to eat."
+      },
+      {
+        "type": "noun",
+        "word": "l'appetito",
+        "surface": "appetito",
+        "definition": "Appetite; the wish to eat."
+      },
+      {
+        "type": "noun",
+        "word": "la barba",
+        "anchor": true,
+        "surface": "barba",
+        "definition": "A beard; hair on a man's face."
+      },
+      {
+        "type": "noun",
+        "word": "il vassoio",
+        "anchor": true,
+        "surface": "vassoio",
+        "definition": "A tray; you carry plates on it."
+      },
+      {
+        "type": "adverb",
+        "word": "appena",
+        "surface": "appena",
+        "definition": "Only just; a very little."
+      },
+      {
+        "type": "verb",
+        "word": "riempire",
+        "surface": "riempie",
+        "definition": "To fill; to put things in until it is full."
+      }
+    ],
+    "arcType": null
+  },
+  {
+    "topic": "quarrels-and-apologies",
+    "slotIndex": 1,
+    "title": "Domenica senza terrazza",
+    "slug": "domenica-senza-terrazza",
+    "synopsis": "A week passes and Alice avoids Matteo on the stairs. The terrace is empty at lunchtime, and Valentina comes to see her.",
+    "text": "È domenica, ma la terrazza è vuota. Per la prima volta da anni, Alice e Matteo non pranzano insieme. Da una settimana Alice scende le scale di corsa, per non vedere Matteo. In casa c'è silenzio. Il telefono è spento sul tavolo.\n\nFuori il cielo è grigio. Arriva Valentina, con i capelli neri lunghi e un sacchetto di pane. “Tu e Matteo fate pace?” chiede Valentina. “No. Sulle scale io guardo per terra,” risponde Alice. Ha gli occhi gonfi e abbraccia un cuscino.\n\nValentina appoggia il pane e si siede accanto al davanzale. “Alice, lui non capisce. Non sa del patto. Per lui è un vecchio scherzo,” dice lei. Alice ascolta, sospira e si morde il labbro. Valentina ha ragione.\n\n“Sono arrabbiata con lui. Ma sono arrabbiata anche con me. Sono stupida,” dice Alice piano. “Non sei stupida. Scendi e chiedi scusa, con una focaccia. È un buon consiglio,” risponde Valentina.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "pranzare",
+        "surface": "pranzano",
+        "definition": "To have lunch; to eat in the middle of the day."
+      },
+      {
+        "type": "expression",
+        "word": "per la prima volta",
+        "anchor": true,
+        "surface": "Per la prima volta",
+        "definition": "For the first time; something that has never happened before."
+      },
+      {
+        "type": "expression",
+        "word": "da una settimana",
+        "anchor": true,
+        "surface": "Da una settimana",
+        "definition": "For a week now; since seven days ago."
+      },
+      {
+        "type": "expression",
+        "word": "per non vedere",
+        "surface": "per non vedere",
+        "definition": "So as not to see someone."
+      },
+      {
+        "type": "noun",
+        "word": "i capelli",
+        "surface": "capelli",
+        "definition": "Hair; it grows on your head."
+      },
+      {
+        "type": "adjective",
+        "word": "lungo",
+        "surface": "lunghi",
+        "definition": "Long; not short, of great length."
+      },
+      {
+        "type": "expression",
+        "word": "il sacchetto di pane",
+        "anchor": true,
+        "surface": "sacchetto di pane",
+        "definition": "A paper bag of bread."
+      },
+      {
+        "type": "expression",
+        "word": "guardare per terra",
+        "surface": "guardo per terra",
+        "definition": "To look at the ground; not in someone's eyes."
+      },
+      {
+        "type": "adjective",
+        "word": "gonfio",
+        "surface": "gonfi",
+        "definition": "Puffy; big and swollen, here from crying."
+      },
+      {
+        "type": "noun",
+        "word": "il davanzale",
+        "anchor": true,
+        "surface": "davanzale",
+        "definition": "A windowsill; the flat part under a window."
+      },
+      {
+        "type": "verb",
+        "word": "ascoltare",
+        "surface": "ascolta",
+        "definition": "To listen; to hear with attention."
+      },
+      {
+        "type": "verb",
+        "word": "mordersi",
+        "surface": "si morde",
+        "definition": "To bite yourself, here your lip."
+      },
+      {
+        "type": "noun",
+        "word": "il labbro",
+        "anchor": true,
+        "surface": "labbro",
+        "definition": "A lip; one of the two parts of the mouth."
+      },
+      {
+        "type": "expression",
+        "word": "avere ragione",
+        "surface": "ha ragione",
+        "definition": "To be right; what you say is true."
+      },
+      {
+        "type": "adjective",
+        "word": "arrabbiato",
+        "surface": "arrabbiata",
+        "definition": "Angry; not happy with someone."
+      },
+      {
+        "type": "adjective",
+        "word": "stupido",
+        "surface": "stupida",
+        "definition": "Stupid; not clever at all."
+      },
+      {
+        "type": "expression",
+        "word": "chiedere scusa",
+        "surface": "chiedi scusa",
+        "definition": "To say sorry; to ask someone to forgive you."
+      },
+      {
+        "type": "noun",
+        "word": "il consiglio",
+        "surface": "consiglio",
+        "definition": "A piece of advice; an idea to help you."
+      },
+      {
+        "type": "adjective",
+        "word": "spento",
+        "surface": "spento",
+        "definition": "Switched off; not working, with no light."
+      },
+      {
+        "type": "verb",
+        "word": "appoggiare",
+        "surface": "appoggia",
+        "definition": "To put something down on a surface."
+      }
+    ],
+    "arcType": null
+  },
+  {
+    "topic": "secrets-and-confessions",
+    "slotIndex": 1,
+    "title": "Ti voglio bene, ma",
+    "slug": "ti-voglio-bene-ma",
+    "synopsis": "Matteo reads the old pact out loud. This time Alice does not laugh, and she tells him the truth.",
+    "text": "Matteo apre il tovagliolo sul tavolo, davanti ad Alice. Il vento lo muove. La carta è gialla e secca. Legge ad alta voce: “Se a trentacinque anni siamo soli, ci sposiamo.” Poi alza gli occhi.\n\n“Alice, io ho una promessa. Non parlo più del patto,” dice lui. “Lo so. Adesso parlo io,” risponde Alice. Trova il coraggio con un respiro profondo.\n\n“Per me non è uno scherzo. Io ti amo, Matteo. Penso a te da tanti anni. Sono sincera,” dice Alice.\n\nC'è un silenzio strano. Lontano, i gabbiani volano sul mare. Matteo è pallido e guarda il tovagliolo a lungo.\n\n“Alice, io ti voglio bene. Ma io non ti amo così. Mi dispiace,” dice Matteo piano.\n\nAlice piange, perché adesso sa la risposta. Lei singhiozza e asciuga le lacrime con un fazzoletto. Non è una bugia: è la verità. Matteo non va via. Le accarezza i capelli e resta vicino a lei, fino a sera.",
+    "vocab": [
+      {
+        "type": "adjective",
+        "word": "giallo",
+        "surface": "gialla",
+        "definition": "Yellow; here old paper that is not white any more."
+      },
+      {
+        "type": "adjective",
+        "word": "secco",
+        "surface": "secca",
+        "definition": "Dry; with no water, a little hard."
+      },
+      {
+        "type": "expression",
+        "word": "alzare gli occhi",
+        "surface": "alza gli occhi",
+        "definition": "To look up; to raise your eyes."
+      },
+      {
+        "type": "expression",
+        "word": "lo so",
+        "surface": "Lo so",
+        "definition": "I know; you say it when you already know."
+      },
+      {
+        "type": "noun",
+        "word": "il coraggio",
+        "surface": "coraggio",
+        "definition": "Courage; you are brave and not afraid."
+      },
+      {
+        "type": "expression",
+        "word": "un respiro profondo",
+        "anchor": true,
+        "surface": "respiro profondo",
+        "definition": "A deep breath; you take in a lot of air."
+      },
+      {
+        "type": "expression",
+        "word": "da tanti anni",
+        "surface": "Da tanti anni",
+        "definition": "For many years; a long time now."
+      },
+      {
+        "type": "adjective",
+        "word": "sincero",
+        "surface": "sincera",
+        "definition": "Sincere; honest, saying what you really feel."
+      },
+      {
+        "type": "adverb",
+        "word": "lontano",
+        "surface": "Lontano",
+        "definition": "Far away; not near."
+      },
+      {
+        "type": "noun",
+        "word": "i gabbiani",
+        "anchor": true,
+        "surface": "gabbiani",
+        "definition": "Seagulls; white sea birds."
+      },
+      {
+        "type": "expression",
+        "word": "ti voglio bene",
+        "surface": "ti voglio bene",
+        "definition": "I care for you; I love you as a friend."
+      },
+      {
+        "type": "verb",
+        "word": "piangere",
+        "surface": "piange",
+        "definition": "To cry; tears come from your eyes."
+      },
+      {
+        "type": "noun",
+        "word": "il silenzio",
+        "surface": "silenzio",
+        "definition": "Silence; when there is no sound at all."
+      },
+      {
+        "type": "expression",
+        "word": "andare via",
+        "surface": "va via",
+        "definition": "To go away; to leave."
+      },
+      {
+        "type": "verb",
+        "word": "accarezzare",
+        "surface": "accarezza",
+        "definition": "To stroke gently with your hand."
+      },
+      {
+        "type": "expression",
+        "word": "fino a sera",
+        "anchor": true,
+        "surface": "fino a sera",
+        "definition": "Until the evening; until it gets dark."
+      },
+      {
+        "type": "noun",
+        "word": "il tovagliolo",
+        "anchor": true,
+        "surface": "tovagliolo",
+        "definition": "A napkin; cloth or paper to clean your mouth."
+      },
+      {
+        "type": "verb",
+        "word": "muovere",
+        "surface": "muove",
+        "definition": "To move; to make something change place."
+      },
+      {
+        "type": "adjective",
+        "word": "pallido",
+        "surface": "pallido",
+        "definition": "Pale; with a white face, with no colour."
+      },
+      {
+        "type": "noun",
+        "word": "il fazzoletto",
+        "anchor": true,
+        "surface": "fazzoletto",
+        "definition": "A tissue or handkerchief to dry your eyes."
+      }
+    ],
+    "arcType": null
+  }
+]

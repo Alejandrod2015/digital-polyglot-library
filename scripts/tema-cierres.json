@@ -5039,8 +5039,8 @@
     }
   },
   "cmu0dpa3i0007j80ugstn0jf0#cooking-and-recipes": {
-    "cerrado": "2026-09-14T06:53:38.717Z",
-    "hash": "dc94d0a0db4092bf",
+    "cerrado": "2026-09-16T12:06:49.861Z",
+    "hash": "a8c83315b2d295f9",
     "historias": [
       "cooking-and-recipes#0 il-pesto-vuole-pazienza",
       "cooking-and-recipes#1 un-mortaio-in-due-pezzi",
@@ -5061,8 +5061,8 @@
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.13 sobre 32 plazas · 29 salen una sola vez | ancladas: 28/60 (47%) | cola: 29/32 portables con un solo encuentro (91%, tope 30%) | de un solo encuentro: Va bene, pazienza, insegno, vuole fare, agitata, Ha sonno, serve, bel, molto, diventa, ricomincia, dolce, pronto, assaggia, lava, stanco, Che profumo, lentamente, chiude gli occhi, buono, accanto, a lungo, sospira, Non importa, asciuga, lacrima, appetito, appena, riempie; pasan del 30%",
-      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.12 sobre 33 plazas · 30 salen una sola vez | ancladas: 27/60 (45%) | cola: 30/33 portables con un solo encuentro (91%, tope 30%) | de un solo encuentro: Va bene, pazienza, insegno, vuole fare, agitata, Ha sonno, serve, bel, molto, diventa, ricomincia, dolce, pronto, assaggia, lava, stanco, Che profumo, lentamente, chiude gli occhi, buono, accanto, a lungo, sospira, Non importa, asciuga, lacrima, piatti, appetito, appena, riempie; pasan del 30%",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol y hasta A2 en frances; en IT A0 no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: cooking-and-recipes (Alice, Lorenzo)"
@@ -5167,8 +5167,8 @@
     }
   },
   "cmu0dpa3i0007j80ugstn0jf0#football-and-rivalries": {
-    "cerrado": "2026-09-14T06:53:23.425Z",
-    "hash": "02451b5f87cc10f9",
+    "cerrado": "2026-09-16T12:06:36.207Z",
+    "hash": "54862dd2bf189dcf",
     "historias": [
       "football-and-rivalries#0 il-derby-della-lanterna",
       "football-and-rivalries#1 la-maglia-in-palio",
@@ -5189,8 +5189,8 @@
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.18 sobre 40 plazas · 35 salen una sola vez | ancladas: 21/61 (34%) | cola: 35/40 portables con un solo encuentro (88%, tope 30%) | de un solo encuentro: terzo, vicino, ha caldo in faccia, incrocia le braccia, Allora, mangia, comincia, piccola, grida, ancora, canta, respira, invece, compro, nuova, toglie, È finita, ha freddo, indossa, nervosa, per noi, contenta, fresca, Davanti, bianco, pulisce, lacrime agli occhi, di corsa, anche, prima…; pasan del 30%",
-      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.20 sobre 41 plazas · 35 salen una sola vez | ancladas: 20/61 (33%) | cola: 35/41 portables con un solo encuentro (85%, tope 30%) | de un solo encuentro: terzo, vicino, ha caldo in faccia, incrocia le braccia, Allora, mangia, comincia, piccola, grida, ancora, canta, respira, invece, compro, nuova, toglie, È finita, ha freddo, indossa, nervosa, per noi, contenta, fresca, Davanti al, bianco, pulisce, lacrime agli occhi, di corsa, anche, prima…; pasan del 30%",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol y hasta A2 en frances; en IT A0 no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: football-and-rivalries (Riccardo, Alice)"
@@ -5231,8 +5231,8 @@
     }
   },
   "cmu0dpa3i0007j80ugstn0jf0#quarrels-and-apologies": {
-    "cerrado": "2026-09-14T06:52:13.320Z",
-    "hash": "59ce8e7c48fedb46",
+    "cerrado": "2026-09-16T12:06:56.997Z",
+    "hash": "c15b4d746d8e16a6",
     "historias": [
       "quarrels-and-apologies#0 non-e-divertente",
       "quarrels-and-apologies#1 domenica-senza-terrazza",
@@ -5254,7 +5254,7 @@
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.05 sobre 40 plazas · 38 salen una sola vez | ancladas: 20/60 (33%) | cola: 38/40 portables con un solo encuentro (95%, tope 30%) | de un solo encuentro: bastano, torta, scalda, racconta, trentacinque, diventa bianca, posa, vergogna, scherza, Che cosa c'è, divertente, si alza, Sbatte, pranzano, per non vedere, capelli, lunghi, guardo per terra, gonfi, ascolta, si morde, ha ragione, stupida, chiedi scusa, consiglio, spento, appoggia, trema, cattiva, apre la bocca…; pasan del 30%",
-      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol y hasta A2 en frances; en IT A0 no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: quarrels-and-apologies (Alice, Valentina)"
@@ -5295,8 +5295,8 @@
     }
   },
   "cmu0dpa3i0007j80ugstn0jf0#secrets-and-confessions": {
-    "cerrado": "2026-09-14T06:52:28.298Z",
-    "hash": "90dd46640b5f9020",
+    "cerrado": "2026-09-16T12:07:02.242Z",
+    "hash": "f2b72d01561c6278",
     "historias": [
       "secrets-and-confessions#0 trentacinque-candeline",
       "secrets-and-confessions#1 ti-voglio-bene-ma",
@@ -5317,8 +5317,8 @@
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.06 sobre 36 plazas · 34 salen una sola vez | ancladas: 24/60 (40%) | cola: 34/36 portables con un solo encuentro (94%, tope 30%) | de un solo encuentro: desiderio, arrossisce, mantiene, Sto bene, Torno subito, scusa, Leggi, brillano, emozionata, maglione, gialla, secca, alza gli occhi, Lo so, Da tanti anni, sincera, ti voglio bene, piange, va via, accarezza, muove, pallido, Come sempre, timido, difficile, strappa, Le fa male, giusto, e basta, cresce…; pasan del 30%",
-      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.05 sobre 37 plazas · 35 salen una sola vez | ancladas: 23/60 (38%) | cola: 35/37 portables con un solo encuentro (95%, tope 30%) | de un solo encuentro: desiderio, arrossisce, mantiene, Sto bene, Torno subito, scusa, Leggi, brillano, emozionata, maglione, gialla, secca, alza gli occhi, Lo so, Da tanti anni, sincera, ti voglio bene, piange, silenzio, va via, accarezza, muove, pallido, Come sempre, timido, difficile, strappa, Le fa male, giusto, e basta…; pasan del 30%",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol y hasta A2 en frances; en IT A0 no se puede medir la utilidad de una plaza.",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: secrets-and-confessions (Alice, Matteo)"

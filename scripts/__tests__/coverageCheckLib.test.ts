@@ -172,6 +172,30 @@ describe("canonNumbers aleman", () => {
   });
 });
 
+describe("canonNumbers italiano", () => {
+  it("compuestos con elision de vocal (uno/otto) y sin ella", () => {
+    expect(canonNumbers(w("ventuno anni"), "it")).toEqual(["21", "anni"]);
+    expect(canonNumbers(w("ventotto anni"), "it")).toEqual(["28", "anni"]);
+    expect(canonNumbers(w("ventitre anni"), "it")).toEqual(["23", "anni"]); // acento ya lo quita norm()
+    expect(canonNumbers(w("trentacinque euro"), "it")).toEqual(["35", "euro"]);
+    expect(canonNumbers(w("novantanove"), "it")).toEqual(["99"]);
+  });
+
+  it("decenas y teens sueltos", () => {
+    expect(canonNumbers(w("venti minuti"), "it")).toEqual(["20", "minuti"]);
+    expect(canonNumbers(w("diciassette anni"), "it")).toEqual(["17", "anni"]);
+    expect(canonNumbers(w("dodici euro"), "it")).toEqual(["12", "euro"]);
+  });
+
+  it("letra y cifra llegan a lo mismo", () => {
+    expect(canonNumbers(w("ha ventitre anni"), "it")).toEqual(canonNumbers(w("ha 23 anni"), "it"));
+  });
+
+  it("no cambia el comportamiento frances por defecto (lang omitido)", () => {
+    expect(canonNumbers(w("vingt et une heures"))).toEqual(["21", "heures"]);
+  });
+});
+
 // Masters REALES del Friends DE C1 publicado, transcritos con
 // `whisper-cli -l de` (probado en seco 2026-09-15 antes del Friends DE A1:
 // con -l fr, 2 de los 3 daban huecos falsos por numeros/ortografia mal

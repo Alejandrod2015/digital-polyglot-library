@@ -30,7 +30,7 @@ config({ path: ".env.local", quiet: true });
 config({ path: ".env", quiet: true });
 import crypto from "node:crypto";
 import { spawn } from "node:child_process";
-import { mkdtempSync, readFileSync, writeFileSync, rmSync, mkdirSync } from "node:fs";
+import { mkdtempSync, readFileSync, writeFileSync, rmSync, mkdirSync, existsSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { PrismaClient } from "../src/generated/prisma";
@@ -207,9 +207,21 @@ async function normalise(raw: Buffer, outPath: string): Promise<number> {
 // transcribed token END vs is there loud audio after it. Threshold measured on
 // 31 labeled mole clips: artifacts sat at -7.6 and -12.4 dB max-volume after
 // the last token; every clean clip was ≤ -25.0 dB. -20 splits with margin.
-// Uses local whisper.cpp (brew install whisper-cpp + ggml-base at
-// ~/.cache/whisper/); if missing, the gate is skipped with a warning.
-const WHISPER_MODEL = join(process.env.HOME || "", ".cache", "whisper", "ggml-base.bin");
+// Uses local whisper.cpp (brew install whisper-cpp). Prefers ggml-base at
+// ~/.cache/whisper/; if that is not installed, falls back to the ggml-small
+// model kept for the Python pipeline (scripts/tts/whisper-models/), which is
+// MORE accurate than base, only slower. Never silent about which one ran:
+// printed once per invocation (2026-09-16, gate needed for a language with no
+// base model on disk). If neither exists, the gate is skipped with a warning.
+const WHISPER_MODEL_CANDIDATES = [
+  { path: join(process.env.HOME || "", ".cache", "whisper", "ggml-base.bin"), label: "ggml-base" },
+  { path: join(__dirname, "tts", "whisper-models", "ggml-small.bin"), label: "ggml-small (fallback, sin ggml-base)" },
+];
+function resolveWhisperModel(): { path: string; label: string } | null {
+  for (const c of WHISPER_MODEL_CANDIDATES) if (existsSync(c.path)) return c;
+  return null;
+}
+let whisperModelAnnounced = false;
 const TAIL_MAX_DB = -20;
 let tailGateWarned = false;
 function spawnCapture(cmd: string, args: string[]): Promise<{ code: number; out: string; err: string }> {
@@ -226,7 +238,10 @@ async function tailClean(mp3Path: string): Promise<{ ok: boolean; db: number | n
     await ff(["-y", "-loglevel", "error", "-i", mp3Path, "-ar", "16000", "-ac", "1", wav]);
     let json: any;
     try {
-      const r = await spawnCapture("whisper-cli", ["-m", WHISPER_MODEL, "-l", LANG.whisper, "-np", "-ojf", "-of", join(dir, "a"), wav]);
+      const model = resolveWhisperModel();
+      if (!model) throw new Error("ni ggml-base ni ggml-small (fallback) presentes");
+      if (!whisperModelAnnounced) { whisperModelAnnounced = true; console.log(`tail gate: midiendo con ${model.label}`); }
+      const r = await spawnCapture("whisper-cli", ["-m", model.path, "-l", LANG.whisper, "-np", "-ojf", "-of", join(dir, "a"), wav]);
       if (r.code !== 0) throw new Error(r.err.slice(0, 120));
       json = JSON.parse(readFileSync(join(dir, "a.json"), "utf8"));
     } catch (err) {
@@ -305,6 +320,27 @@ const NUM_WORDS: Record<string, number> = {
   quarante: 40, cuarenta: 40, quaranta: 40, cinquante: 50, cincuenta: 50, cinquanta: 50,
   cent: 100, cien: 100, cento: 100, hundert: 100, mille: 1000, mil: 1000,
 };
+
+// El italiano compone 21-99 PEGADO, sin guion ("ventuno", "trentacinque"), asi
+// que el split por "-" de numValue() no los separa: sin esto, cualquier
+// frase con una edad o una cantidad de dos cifras ("compie trentacinque
+// anni") quemaba las MAX_TRIES intentos completas contra un falso "miss" del
+// STT (Scribe normaliza a cifra, "trentacinque" nunca hace match con "35").
+// Confirmado en produccion (Friends IT A0, una-torta-per-dodici: "oggi" y
+// "compiere gli anni" fallaron las 4 tomas hasta anadir esto). Elision de
+// vocal en uno/otto ("venti"+"uno" -> "ventuno"), igual que
+// coverageCheckLib.ts canonNumbers() para el mismo idioma.
+(function addItalianCompounds() {
+  const units = ["", "uno", "due", "tre", "quattro", "cinque", "sei", "sette", "otto", "nove"];
+  const tens: Record<number, string> = { 20: "venti", 30: "trenta", 40: "quaranta", 50: "cinquanta", 60: "sessanta", 70: "settanta", 80: "ottanta", 90: "novanta" };
+  for (const [tenStr, tenWord] of Object.entries(tens)) {
+    const ten = Number(tenStr);
+    for (let u = 1; u <= 9; u++) {
+      const word = (u === 1 || u === 8) ? tenWord.slice(0, -1) + units[u] : tenWord + units[u];
+      NUM_WORDS[word] = ten + u;
+    }
+  }
+})();
 
 /** Valor de una palabra-número, incluidos los compuestos con guion
  *  ("vingt-deux" = 22, "veintidós" no hace falta: va suelto). */

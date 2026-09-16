@@ -1,0 +1,478 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "le patatine,il telecomando,al minuto venti,per noi",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "le patatine",
+          "answer": "crisps",
+          "options": [
+            "crisps",
+            "a remote control",
+            "in the twentieth minute",
+            "for us"
+          ]
+        },
+        {
+          "word": "il telecomando",
+          "answer": "a remote control",
+          "options": [
+            "crisps",
+            "a remote control",
+            "in the twentieth minute",
+            "for us"
+          ]
+        },
+        {
+          "word": "al minuto venti",
+          "answer": "in the twentieth minute",
+          "options": [
+            "crisps",
+            "a remote control",
+            "in the twentieth minute",
+            "for us"
+          ]
+        },
+        {
+          "word": "per noi",
+          "answer": "for us",
+          "options": [
+            "crisps",
+            "a remote control",
+            "in the twentieth minute",
+            "for us"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "piccolo",
+    "sentence": "Guardano una televisione [[piccola]].",
+    "payload": {
+      "answer": "small",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "small",
+        "broken",
+        "expensive",
+        "old"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Guardano una televisione piccola.",
+        "storySlug": "la-maglia-in-palio",
+        "targetWord": "piccola",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9210c5e8d6ff070b.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bene",
+    "sentence": "Il Genoa gioca [[bene]] stasera.",
+    "payload": {
+      "answer": "well",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "well",
+        "badly",
+        "rarely",
+        "late"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Il Genoa gioca bene stasera.",
+        "storySlug": "la-maglia-in-palio",
+        "targetWord": "bene",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3650a2a077e5f1a5.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saltare in piedi",
+    "sentence": "Al gol lui [[salta in piedi]].",
+    "payload": {
+      "answer": "to jump up",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to jump up",
+        "to sit down",
+        "to fall asleep",
+        "to leave the room"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Al gol lui salta in piedi.",
+        "storySlug": "la-maglia-in-palio",
+        "targetWord": "salta in piedi",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cc6cecc2ca20731d.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "segnare",
+    "sentence": "La squadra avversaria [[segna]] due volte.",
+    "payload": {
+      "answer": "to score a goal",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to score a goal",
+        "to lose",
+        "to defend",
+        "to referee"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "La squadra avversaria segna due volte.",
+        "storySlug": "la-maglia-in-palio",
+        "targetWord": "segna",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cf959c68a7f4479e.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ancora",
+    "sentence": "Poi segna [[ancora]] un altro gol.",
+    "payload": {
+      "answer": "again",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "again",
+        "never",
+        "rarely",
+        "almost"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Poi segna ancora un altro gol.",
+        "storySlug": "la-maglia-in-palio",
+        "targetWord": "ancora",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ba5fdbfac4c36307.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "respirare",
+    "sentence": "È così tesa che quasi non [[respira]].",
+    "payload": {
+      "answer": "to breathe",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to breathe",
+        "to speak",
+        "to move",
+        "to sleep"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "È così tesa che quasi non respira.",
+        "storySlug": "la-maglia-in-palio",
+        "targetWord": "respira",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3bbbdf9307ae68c9.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "invece",
+    "sentence": "Per lui non importa; per lei, [[invece]], sì.",
+    "payload": {
+      "answer": "instead",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "instead",
+        "also",
+        "sometimes",
+        "rarely"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Per lui non importa; per lei, invece, sì.",
+        "storySlug": "la-maglia-in-palio",
+        "targetWord": "invece",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c89e54c20ef52a27.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nuovo",
+    "sentence": "Compra una maglia [[nuova]].",
+    "payload": {
+      "answer": "new",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "new",
+        "cheap",
+        "dirty",
+        "heavy"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Compra una maglia nuova.",
+        "storySlug": "la-maglia-in-palio",
+        "targetWord": "nuova",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/afda8ae43a6433fb.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "togliere",
+    "sentence": "Alla fine [[toglie]] la maglia.",
+    "payload": {
+      "answer": "to take off",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to take off",
+        "to wash",
+        "to fold",
+        "to buy"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Alla fine toglie la maglia.",
+        "storySlug": "la-maglia-in-palio",
+        "targetWord": "toglie",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b01cbceb471a6c44.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "essere finita",
+    "sentence": "[[È finita]]: hanno perso la partita.",
+    "payload": {
+      "answer": "it's over",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "it's over",
+        "it's starting",
+        "it's easy",
+        "it's a secret"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "È finita: hanno perso la partita.",
+        "storySlug": "la-maglia-in-palio",
+        "targetWord": "È finita",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avere freddo",
+    "sentence": "Senza la maglia, [[ha freddo]].",
+    "payload": {
+      "answer": "to feel cold",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to feel cold",
+        "to feel sleepy",
+        "to feel proud",
+        "to feel hungry"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Senza la maglia, ha freddo.",
+        "storySlug": "la-maglia-in-palio",
+        "targetWord": "ha freddo",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "indossare",
+    "sentence": "Lei [[indossa]] la vecchia maglia.",
+    "payload": {
+      "answer": "to wear",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to wear",
+        "to wash",
+        "to sell",
+        "to fold"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Lei indossa la vecchia maglia.",
+        "storySlug": "la-maglia-in-palio",
+        "targetWord": "indossa",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nervoso",
+    "sentence": "È un po' [[nervosa]] ma sorride.",
+    "payload": {
+      "answer": "nervous",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "nervous",
+        "bored",
+        "sleepy",
+        "angry"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "È un po' nervosa ma sorride.",
+        "storySlug": "la-maglia-in-palio",
+        "targetWord": "nervosa",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "contento",
+    "sentence": "Sei [[contenta]] del risultato?",
+    "payload": {
+      "answer": "glad",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "glad",
+        "tired",
+        "hungry",
+        "cold"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Sei contenta del risultato?",
+        "storySlug": "la-maglia-in-palio",
+        "targetWord": "contenta",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "grida",
+    "sentence": "Vede il gol e _____ di gioia.",
+    "payload": {
+      "answer": "grida",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "grida",
+        "piange",
+        "dorme",
+        "tace"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Vede il gol e grida di gioia.",
+        "storySlug": "la-maglia-in-palio",
+        "targetWord": "grida",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/00a14a6cbf15a518.mp3"
+      },
+      "translation": "He sees the goal and _____ with joy.",
+      "optionTranslations": [
+        "shouts",
+        "cries",
+        "sleeps",
+        "stays silent"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "canta",
+    "sentence": "Vince la partita e _____ tutta la sera.",
+    "payload": {
+      "answer": "canta",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "canta",
+        "piange",
+        "studia",
+        "lavora"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Vince la partita e canta tutta la sera.",
+        "storySlug": "la-maglia-in-palio",
+        "targetWord": "canta",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a0edc93e082fec37.mp3"
+      },
+      "translation": "He wins the match and _____ all evening.",
+      "optionTranslations": [
+        "sings",
+        "cries",
+        "studies",
+        "works"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "compro",
+    "sentence": "Ho rotto il telecomando e ne _____ uno nuovo.",
+    "payload": {
+      "answer": "compro",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "compro",
+        "rompo",
+        "perdo",
+        "regalo"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Ho rotto il telecomando e ne compro uno nuovo.",
+        "storySlug": "la-maglia-in-palio",
+        "targetWord": "compro",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c7d6b9b26da3883e.mp3"
+      },
+      "translation": "I broke the remote, and I'll _____ a new one.",
+      "optionTranslations": [
+        "buy",
+        "break",
+        "lose",
+        "give away"
+      ]
+    },
+    "featured": false
+  }
+]

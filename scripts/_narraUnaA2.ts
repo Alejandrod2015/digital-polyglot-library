@@ -32,6 +32,7 @@ import { VOZ_POR_TEMA_FR_A2 } from "./_frA2Voces";
 import { VOZ_POR_TEMA_FR_B1 } from "./_frB1Voces";
 import { VOZ_POR_TEMA_DE_A1_FRIENDS } from "./_deA1FriendsVoces";
 import { VOZ_POR_TEMA_DE_A0_FRIENDS } from "./_deA0FriendsVoces";
+import { VOZ_POR_TEMA_IT_A0_FRIENDS } from "./_itA0FriendsVoces";
 
 // Ampliado el 2026-09-07 para el B1 latam (pedir-una-vez): --journey b1-latam
 // usa su journey, su mapa de voces y su bundle de glosas; sin flag, el A2.
@@ -43,10 +44,11 @@ const PERFILES: Record<string, { journey: string; voces: Record<string, string>;
   "fr-b1-friends": { journey: "cmu0doigc0007j8e292tycths", voces: VOZ_POR_TEMA_FR_B1, bundle: "french-friends-france-b1", language: "french" },
   "de-a1-friends": { journey: "cmu0dqr6y0007j8o52i1s3gf7", voces: VOZ_POR_TEMA_DE_A1_FRIENDS, bundle: "german-friends-a1", language: "german" },
   "de-a0-friends": { journey: "cmu047bkz0007326jsgeptkox", voces: VOZ_POR_TEMA_DE_A0_FRIENDS, bundle: "german-friends-a0", language: "german" },
+  "it-a0-friends": { journey: "cmu0dpa3i0007j80ugstn0jf0", voces: VOZ_POR_TEMA_IT_A0_FRIENDS, bundle: "italian-friends-italy-a0", language: "italian" },
 };
 const pi = process.argv.indexOf("--journey");
 const PERFIL = PERFILES[pi >= 0 ? process.argv[pi + 1] : "a2"];
-if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam | fr-a0 | fr-a2-friends | fr-b1-friends | de-a1-friends | de-a0-friends");
+if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam | fr-a0 | fr-a2-friends | fr-b1-friends | de-a1-friends | de-a0-friends | it-a0-friends");
 const JOURNEY = PERFIL.journey;
 
 const prisma = new PrismaClient();
