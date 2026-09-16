@@ -30,24 +30,49 @@ import numpy as np
 import parselmouth
 
 
+# Minimos para que exista una medicion. El piso viejo (10 frames sonoros en
+# TODO el clip, 100 ms) no era una propiedad del audio sino del medidor: una
+# monosilaba francesa como "chic" /Sik/ tiene 40-50 ms de vocal y NADA mas
+# sonoro, asi que el gate devolvia "unvoiced-tail" y el generador quemaba sus
+# seis tomas contra un limite propio. Medido el 2026-09-16 sobre seis re-tiros
+# reales de chic y propre: 5 de 6 caian por este piso, no por su entonacion.
+MIN_VOICED = 4
+MIN_TAIL = 4
+
+# Por debajo de este tramo sonoro el clip es una silaba suelta, y la regla del
+# ENDPOINT deja de valer: el endpoint se mide contra la mediana del propio
+# clip, que en una monosilaba es ESA MISMA vocal, asi que una pregunta como
+# "chic ?" marca solo +2.2 st y pasaba por afirmacion. En ese caso manda la
+# PENDIENTE dentro de la vocal, que si separa: los re-tiros que caen van de
+# -25 a -122 st/s y las dos preguntas de control suben a +21 y +50.
+SHORT_SPAN_S = 0.35
+SHORT_RISE_ST_PER_S = 10.0
+
+
 def final_contour(path):
     snd = parselmouth.Sound(path)
     pitch = snd.to_pitch(time_step=0.01, pitch_floor=75, pitch_ceiling=500)
     t = pitch.xs()
     f = pitch.selected_array["frequency"]
     voiced = f > 0
-    if voiced.sum() < 10:
+    if voiced.sum() < MIN_VOICED:
         return None
     tv, fv = t[voiced], f[voiced]
+    span = float(tv[-1] - tv[0])
     st = 12 * np.log2(fv / np.median(fv))
-    # drop the last 2 voiced frames: boundary creak often octave-jumps there
-    tv, st = tv[:-2], st[:-2]
+    # drop the last 2 voiced frames: boundary creak often octave-jumps there.
+    # Never below MIN_TAIL: en una palabra corta esos 2 frames son media vocal
+    # y quitarlos dejaba sin ventana a un clip perfectamente medible.
+    drop = min(2, max(0, len(st) - MIN_TAIL))
+    if drop:
+        tv, st = tv[:-drop], st[:-drop]
     tail = tv >= tv[-1] - 0.45
-    if tail.sum() < 4:
+    if tail.sum() < MIN_TAIL:
         return None
     slope = float(np.polyfit(tv[tail], st[tail], 1)[0])
     end = float(st[tail][-3:].mean())
-    return slope, end
+    window = (float(tv[tail][0]), float(tv[tail][-1]), int(tail.sum()), span)
+    return slope, end, window
 
 
 # --- statement-multi -------------------------------------------------------
@@ -175,19 +200,29 @@ def main():
         ok = mode != "question"
         print(json.dumps({"ok": ok, "slope": None, "end": None, "reason": "unvoiced-tail" + ("" if ok else ", question unverifiable")}))
         return
-    slope, end = r
+    slope, end, (w0, w1, wn, span) = r
+    # Siempre se dice QUE tramo se midio: un veredicto sin ventana no se puede
+    # discutir, y las tomas que caian lo hacian por la ventana, no por el tono.
+    window = f"{w0:.2f}-{w1:.2f}s, {wn} frames, tramo sonoro {span:.2f}s"
     if mode == "question":
-        # Calibrated against the gold standard (the same sentence inside the
-        # story narration, same voice): a real question rise ENDS high, +11.1
-        # st above the clip median. Flat-sounding clips maxed at +1.3 st even
-        # when their tail slope was positive (+12..+17 st/s), and the user's
-        # ear rejected them: the ENDPOINT is the perceptual cue, not the slope.
-        ok = end >= 4.0
-        reason = "rising final" if ok else "question ends flat/falling"
+        if span < SHORT_SPAN_S:
+            # Silaba suelta: manda la pendiente (ver SHORT_SPAN_S arriba).
+            ok = slope > SHORT_RISE_ST_PER_S
+            reason = ("rising final (pendiente, silaba corta)" if ok
+                      else "question ends flat/falling (pendiente, silaba corta)")
+        else:
+            # Calibrated against the gold standard (the same sentence inside
+            # the story narration, same voice): a real question rise ENDS high,
+            # +11.1 st above the clip median. Flat-sounding clips maxed at +1.3
+            # st even when their tail slope was positive (+12..+17 st/s), and
+            # the user's ear rejected them: the ENDPOINT is the perceptual cue.
+            ok = end >= 4.0
+            reason = "rising final" if ok else "question ends flat/falling"
     else:
         ok = True
         reason = "uptalk-suspect (warn only)" if (end > 6 and slope > 15) else "ok"
-    print(json.dumps({"ok": ok, "slope": round(slope, 1), "end": round(end, 1), "reason": reason}))
+    print(json.dumps({"ok": ok, "slope": round(slope, 1), "end": round(end, 1),
+                      "window": window, "reason": reason}))
 
 
 main()
