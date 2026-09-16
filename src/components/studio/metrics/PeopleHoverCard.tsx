@@ -18,10 +18,25 @@ const NAME_LIMIT = 8;
 /**
  * Cómo se llama alguien en la tarjeta. Quien entró con código por correo o con
  * Apple escondiendo el nombre no deja `firstName` en Clerk, así que el correo
- * es el segundo mejor identificador y el id, el último recurso.
+ * es el segundo mejor identificador.
+ *
+ * Lo que NUNCA se devuelve es un trozo de id. Antes se caía a
+ * `userId.slice(-8)`, y el 2026-09-16 el DAU enseñó "Z1FpjrAf" y "2pxcPUip"
+ * en una lista de nombres de personas: se leen como si fueran alguien. Eran
+ * dos cuentas borradas que conservan sus filas de métricas. Cuando no hay
+ * nombre, la tarjeta dice POR QUÉ no lo hay, que es la información que la
+ * cifra necesita para interpretarse.
  */
 export function kpiUserLabel(u: MetricsKpiUser): string {
-  return u.name || u.email || u.userId.slice(-8);
+  if (u.name) return u.name;
+  if (u.email) return u.email;
+  if (u.identityStatus === "deleted") return "Cuenta borrada";
+  return "Sin identificar";
+}
+
+/** True cuando la etiqueta no es una persona sino una explicación. */
+export function kpiUserLabelIsPlaceholder(u: MetricsKpiUser): boolean {
+  return !u.name && !u.email;
 }
 
 /**
@@ -104,7 +119,16 @@ export function PeopleHoverCard({
               style={{ display: "flex", gap: 8, fontSize: 11.5, lineHeight: 1.5, alignItems: "baseline" }}
             >
               <span
-                style={{ flex: 1, minWidth: 0, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}
+                style={{
+                  flex: 1,
+                  minWidth: 0,
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  ...(kpiUserLabelIsPlaceholder(u)
+                    ? { opacity: 0.55, fontStyle: "italic" as const }
+                    : null),
+                }}
               >
                 {kpiUserLabel(u)}
               </span>

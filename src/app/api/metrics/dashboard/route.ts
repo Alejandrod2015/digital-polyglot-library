@@ -6,6 +6,7 @@ import { prisma } from "@/lib/prisma";
 import { getInternalUserIds, isMetricsAccessAllowed } from "@/lib/metricsAccess";
 import { buildMetricsUserScope, parseMetricsCohort } from "@/lib/metricsCohort";
 import { resolveUserEmails, resolveUserIdentities } from "@/lib/metricsUserEmails";
+import type { MetricsIdentityStatus } from "@/lib/metricsUserEmails";
 import { localDayKey, startOfLocalDay, startOfLocalDaysAgo } from "@/lib/metricsTime";
 import { ACTIVITY_EVENT_WHERE, isProgressEvent } from "@/lib/metricsActivity";
 import { books } from "@/data/books";
@@ -17,6 +18,11 @@ import {
   type LearningPracticeRow,
   type LearningVocabRow,
 } from "@/lib/learningMetrics";
+import {
+  computeRatingsMetrics,
+  emptyRatingsMetrics,
+  type RatingsMetrics,
+} from "@/lib/metricsRatings";
 
 const METRICS_DASHBOARD_CACHE_TTL_MS = 60 * 1000;
 const RECENT_TRIAL_STARTS_LIMIT = 20;
@@ -92,6 +98,8 @@ type MetricsKpiUser = {
   userId: string;
   name: string | null;
   email: string | null;
+  /** Si Clerk conoce la cuenta. `deleted` es la que ya no existe. */
+  identityStatus: MetricsIdentityStatus;
   /** Eventos suyos en la ventana de la tarjeta (hoy en DAU, 7d en WAU). */
   events: number;
   /** Minutos de audio en esa ventana: lo que un recuento de eventos no dice. */
@@ -299,6 +307,7 @@ type DashboardResponse = {
     perUser: MetricsPerUserRow[];
   };
   learning: LearningMetrics;
+  ratings: RatingsMetrics;
 };
 
 type DashboardSection =
@@ -435,6 +444,7 @@ function createEmptyDashboardResponse(from: Date, to: Date, days: number): Dashb
       perUser: [],
     },
     learning: emptyLearningMetrics(),
+    ratings: emptyRatingsMetrics(),
   };
 }
 
@@ -1842,6 +1852,12 @@ export async function GET(req: NextRequest): Promise<Response> {
       ])
     : [new Map<string, string>(), new Map<string, string>()];
 
+  // Solo Engagement los pinta. Van aparte del Promise.all grande porque
+  // necesitan cruzar correos (Clerk) antes de poder separar lo de casa.
+  const ratingsPayload = needsEngagementData
+    ? await computeRatingsMetrics({ userScope, from, to, storySlug, bookSlug })
+    : emptyRatingsMetrics();
+
   const learningPayload = computeLearningMetrics({
     practiceRows: practiceList,
     vocabRows: vocabList,
@@ -1867,7 +1883,7 @@ export async function GET(req: NextRequest): Promise<Response> {
   const wauRaw = wauRows as unknown as KpiRawRow[];
   const kpiIdentities = needsOverviewData
     ? await resolveUserIdentities([...wauRaw, ...dauRaw].map((r) => r.userId))
-    : new Map<string, { name: string | null; email: string | null }>();
+    : new Map<string, { name: string | null; email: string | null; status: MetricsIdentityStatus }>();
   const toKpiUsers = (rows: KpiRawRow[]): MetricsKpiUser[] => {
     type Acc = { events: number; last: Date; minutos: number };
     const porPersona = new Map<string, Acc>();
@@ -1899,6 +1915,7 @@ export async function GET(req: NextRequest): Promise<Response> {
           userId,
           name: who?.name ?? null,
           email: who?.email ?? null,
+          identityStatus: who?.status ?? "unavailable",
           events: acc.events,
           minutes: Math.round(acc.minutos * 10) / 10,
           lastAt: acc.last.toISOString(),
@@ -1984,7 +2001,7 @@ export async function GET(req: NextRequest): Promise<Response> {
   const antes = resumePorPersona(filasAntes as FilaCruda[]);
   const identidadesPerUser = needsAudienceData
     ? await resolveUserIdentities(Array.from(ahora.keys()))
-    : new Map<string, { name: string | null; email: string | null }>();
+    : new Map<string, { name: string | null; email: string | null; status: MetricsIdentityStatus }>();
   const perUser: MetricsPerUserRow[] = Array.from(ahora.entries())
     .map(([userId, r]) => {
       const antesR = antes.get(userId);
@@ -2122,6 +2139,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       perUser,
     },
     learning: learningPayload,
+    ratings: ratingsPayload,
   };
 
   metricsDashboardCache.set(cacheKey, {

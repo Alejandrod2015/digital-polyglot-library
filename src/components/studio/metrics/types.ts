@@ -4,6 +4,9 @@
  * can stay strongly typed without importing server-only modules.
  */
 
+// Solo el tipo: `@/lib/metricsRatings` importa Prisma y no viaja al cliente.
+import type { RatingsMetrics } from "@/lib/metricsRatings";
+
 export type DashboardKpis = {
   dau: number;
   wau: number;
@@ -47,6 +50,11 @@ export type MetricsKpiUser = {
   userId: string;
   name: string | null;
   email: string | null;
+  /**
+   * Si Clerk conoce la cuenta. Falta en respuestas cacheadas viejas, donde
+   * se trata como `unavailable`: no saber no es lo mismo que estar borrada.
+   */
+  identityStatus?: "ok" | "deleted" | "unavailable";
   /** Eventos suyos en la ventana de la tarjeta: hoy en DAU, 7d en WAU. */
   events: number;
   /** Minutos de audio en esa ventana. Falta en respuestas cacheadas viejas. */
@@ -233,6 +241,8 @@ export type DashboardData = {
       unknownStory: number;
     };
   };
+  /** Falta en respuestas cacheadas de antes de que existiera el panel. */
+  ratings?: RatingsMetrics;
 };
 
 export type PipelineData = {
