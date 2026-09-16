@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-import { transcribeWithRetries, referenceWordsFor, isGapStillMissing } from "../coverageWhisperCheck";
+import { transcribeWithRetries, referenceWordsFor, isGapStillMissing, whisperLangFor, numberLangFor } from "../coverageWhisperCheck";
 import { checkCoverage, norm, type Gap } from "../coverageCheckLib";
 
 // Datos reales: master "rendez-vous-sous-la-bourse" (Friends FR B1, 68053ms
@@ -175,5 +175,19 @@ describe("isGapStillMissing (candado de falsos positivos, 2026-09-16)", () => {
       "dice lei Alice ascolta sospira e si morde il labbro Valentina ha ragione"
     );
     expect(isGapStillMissing(gap, rehardWords, "it")).toBe(true);
+  });
+});
+
+describe("idioma del journey", () => {
+  it("el espanol transcribe con -l es y usa la tabla de numeros espanola", () => {
+    expect(whisperLangFor("spanish")).toBe("es");
+    expect(numberLangFor("spanish")).toBe("es");
+  });
+
+  it("aleman y frances no cambian", () => {
+    expect(whisperLangFor("german")).toBe("de");
+    expect(numberLangFor("german")).toBe("de");
+    expect(whisperLangFor("french")).toBe("fr");
+    expect(numberLangFor(null)).toBe("fr");
   });
 });

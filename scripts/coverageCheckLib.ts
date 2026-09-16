@@ -62,11 +62,11 @@ function wordsMatch(a: string, b: string): boolean {
 
 // --- Numeros: letra y cifra son equivalentes -------------------------------
 // Una tabla de morfemas por idioma (el idioma se lo pasa el llamador; hoy
-// frances o aleman, whisper transcribe en ese idioma con -l). Las palabras
+// frances, aleman o espanol, whisper transcribe en ese idioma con -l). Las palabras
 // llegan ya normalizadas (sin guiones ni tildes ni ß, ver norm()), asi que
 // "dix-sept" es "dixsept" y "dreißig" es "dreiig": cada token se descompone
 // en morfemas.
-export type NumberLang = "fr" | "de";
+export type NumberLang = "fr" | "de" | "es";
 
 const UNITS_FR: Record<string, number> = {
   zero: 0, un: 1, une: 1, deux: 2, trois: 3, quatre: 4, cinq: 5, six: 6, sept: 7, huit: 8, neuf: 9,
@@ -92,10 +92,36 @@ const TENS_DE: Record<string, number> = {
 const MORPHEMES_DE = [...Object.keys(UNITS_DE), ...Object.keys(TENS_DE), "hundert", "tausend", "und"]
   .sort((x, y) => y.length - x.length);
 
+// Espanol: del 16 al 29 son palabra unica ("dieciseis", "veintidos"), asi que
+// van enteros en la tabla y no se descomponen; del 31 en adelante son tres
+// tokens unidos por "y" ("treinta y uno"). Las centenas irregulares
+// (quinientos, setecientos, novecientos) tambien van enteras, porque su raiz
+// no es la unidad; las regulares salen de unidad + "cientos". norm() ya quito
+// las tildes, asi que "dieciseis" y "veintidos" llegan sin ellas.
+const UNITS_ES: Record<string, number> = {
+  cero: 0, uno: 1, una: 1, un: 1, dos: 2, tres: 3, cuatro: 4, cinco: 5, seis: 6, siete: 7,
+  ocho: 8, nueve: 9, diez: 10, once: 11, doce: 12, trece: 13, catorce: 14, quince: 15,
+  dieciseis: 16, diecisiete: 17, dieciocho: 18, diecinueve: 19,
+  veintiuno: 21, veintiuna: 21, veintiun: 21, veintidos: 22, veintitres: 23, veinticuatro: 24,
+  veinticinco: 25, veintiseis: 26, veintisiete: 27, veintiocho: 28, veintinueve: 29,
+};
+const TENS_ES: Record<string, number> = {
+  veinte: 20, treinta: 30, cuarenta: 40, cincuenta: 50, sesenta: 60, setenta: 70,
+  ochenta: 80, noventa: 90,
+};
+const HUNDREDS_ES: Record<string, number> = {
+  quinientos: 500, quinientas: 500, setecientos: 700, setecientas: 700,
+  novecientos: 900, novecientas: 900,
+};
+const MORPHEMES_ES = [
+  ...Object.keys(UNITS_ES), ...Object.keys(TENS_ES), ...Object.keys(HUNDREDS_ES),
+  "cientos", "cientas", "ciento", "cien", "mil", "y",
+].sort((x, y) => y.length - x.length);
+
 function tablesFor(lang: NumberLang) {
-  return lang === "de"
-    ? { UNITS: UNITS_DE, TENS: TENS_DE, MORPHEMES: MORPHEMES_DE }
-    : { UNITS: UNITS_FR, TENS: TENS_FR, MORPHEMES: MORPHEMES_FR };
+  if (lang === "de") return { UNITS: UNITS_DE, TENS: TENS_DE, MORPHEMES: MORPHEMES_DE };
+  if (lang === "es") return { UNITS: { ...UNITS_ES, ...HUNDREDS_ES }, TENS: TENS_ES, MORPHEMES: MORPHEMES_ES };
+  return { UNITS: UNITS_FR, TENS: TENS_FR, MORPHEMES: MORPHEMES_FR };
 }
 
 /** Descompone un token en morfemas numericos, o null si no es un numero. */
@@ -117,12 +143,13 @@ function numberValue(ms: string[], lang: NumberLang): number | null {
   let total = 0, current = 0;
   for (let k = 0; k < ms.length; k++) {
     const m = ms[k];
-    if (m === "et" || m === "und") continue;
+    if (m === "et" || m === "und" || m === "y") continue;
     if (m in UNITS) current += UNITS[m];
     else if (lang === "fr" && (m === "vingt" || m === "vingts")) current = current === 4 ? 80 : current + 20;
     else if (m in TENS) current += TENS[m];
     else if (m === "cent" || m === "cents" || m === "hundert") current = (current || 1) * 100;
-    else if (m === "mille" || m === "tausend") { total += (current || 1) * 1000; current = 0; }
+    else if (m === "cien" || m === "ciento" || m === "cientos" || m === "cientas") current = (current || 1) * 100;
+    else if (m === "mille" || m === "tausend" || m === "mil") { total += (current || 1) * 1000; current = 0; }
     else return null;
   }
   return total + current;
@@ -139,8 +166,9 @@ function numberValue(ms: string[], lang: NumberLang): number | null {
 export function canonNumbers(words: string[], lang: NumberLang = "fr"): string[] {
   const { MORPHEMES } = tablesFor(lang);
   const hourWord = lang === "de" ? "uhr" : "heures";
-  const standaloneArticles = lang === "de" ? ["ein"] : ["un", "une"];
-  const connector = lang === "de" ? "und" : "et";
+  const standaloneArticles =
+    lang === "de" ? ["ein"] : lang === "es" ? ["un", "uno", "una"] : ["un", "une"];
+  const connector = lang === "de" ? "und" : lang === "es" ? "y" : "et";
   const out: string[] = [];
   let k = 0;
   while (k < words.length) {

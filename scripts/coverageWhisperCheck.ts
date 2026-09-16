@@ -21,12 +21,17 @@ const MODEL = path.join(
 // aleman (numeros y ortografia mal leidos, 2 de 3); "-l de" sale limpio salvo
 // una linea real en dialecto (no un fallo del candado). Sin entrada = frances,
 // que es el comportamiento de siempre para los journeys que ya usaban esto.
-const WHISPER_LANG: Record<string, string> = { german: "de" };
+//
+// El espanol se anadio el 2026-09-17, antes de narrar el Friends ES A2: con
+// "-l fr" whisper transcribe el espanol como si fuera frances y el candado
+// reporta la historia entera como hueco, que es peor que no tenerlo.
+const WHISPER_LANG: Record<string, string> = { german: "de", spanish: "es" };
 export function whisperLangFor(journeyLanguage?: string | null): string {
   return (journeyLanguage && WHISPER_LANG[journeyLanguage]) || "fr";
 }
+const NUMBER_LANG: Record<string, NumberLang> = { german: "de", spanish: "es" };
 export function numberLangFor(journeyLanguage?: string | null): NumberLang {
-  return journeyLanguage === "german" ? "de" : "fr";
+  return (journeyLanguage && NUMBER_LANG[journeyLanguage]) || "fr";
 }
 
 type RawWord = { text: string; start: number; end: number };

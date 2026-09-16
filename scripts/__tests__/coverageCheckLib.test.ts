@@ -195,3 +195,38 @@ describe("masters reales DE C1", () => {
     });
   }
 });
+
+describe("canonNumbers espanol", () => {
+  it("palabra unica del 16 al 29, y compuestos con y", () => {
+    expect(canonNumbers(w("dieciséis euros"), "es")).toEqual(["16", "euros"]);
+    expect(canonNumbers(w("veintidós años"), "es")).toEqual(["22", "anos"]);
+    expect(canonNumbers(w("treinta y uno"), "es")).toEqual(["31"]);
+    expect(canonNumbers(w("cuarenta y cinco minutos"), "es")).toEqual(["45", "minutos"]);
+  });
+
+  it("centenas regulares e irregulares, y mil", () => {
+    expect(canonNumbers(w("doscientos euros"), "es")).toEqual(["200", "euros"]);
+    expect(canonNumbers(w("quinientas personas"), "es")).toEqual(["500", "personas"]);
+    expect(canonNumbers(w("mil doscientos"), "es")).toEqual(["1200"]);
+    expect(canonNumbers(w("ciento veinte"), "es")).toEqual(["120"]);
+  });
+
+  it("cifra y letra dicen lo mismo", () => {
+    expect(canonNumbers(w("son las diez"), "es")).toEqual(canonNumbers(w("son las 10"), "es"));
+    expect(canonNumbers(w("treinta y dos"), "es")).toEqual(canonNumbers(w("32"), "es"));
+  });
+
+  it("un, una y uno sueltos siguen siendo articulo, y la y sigue siendo conjuncion", () => {
+    expect(canonNumbers(w("un jersey amarillo"), "es")).toEqual(["un", "jersey", "amarillo"]);
+    expect(canonNumbers(w("una foto sin caras"), "es")).toEqual(["una", "foto", "sin", "caras"]);
+    expect(canonNumbers(w("Lorena y Rubén"), "es")).toEqual(["lorena", "y", "ruben"]);
+  });
+
+  it("palabras corrientes que empiezan por morfema numerico no se vuelven cifra", () => {
+    // El riesgo de descomponer por prefijo: si alguna de estas colara, el
+    // candado convertiria prosa normal en numeros y reportaria huecos falsos.
+    for (const palabra of ["unos", "unas", "dosis", "docena", "miles", "milagro", "ciencia", "tresillo", "ya", "yo"]) {
+      expect(canonNumbers(w(palabra), "es")).toEqual([norm(palabra)]);
+    }
+  });
+});
