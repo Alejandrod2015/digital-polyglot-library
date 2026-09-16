@@ -377,7 +377,8 @@
         "sentence": "Non parla, solo ascolta in silenzio.",
         "storySlug": "domenica-senza-terrazza",
         "targetWord": "ascolta",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d42aba0d0e53035.mp3"
       },
       "translation": "She doesn't speak, she only _____ in silence.",
       "optionTranslations": [
@@ -407,7 +408,8 @@
         "sentence": "È nervosa e si morde il labbro.",
         "storySlug": "domenica-senza-terrazza",
         "targetWord": "si morde",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/02247504a0eca7fa.mp3"
       },
       "translation": "She's nervous and _____ her lip.",
       "optionTranslations": [
@@ -437,7 +439,8 @@
         "sentence": "Entra in cucina e appoggia le chiavi sul tavolo.",
         "storySlug": "domenica-senza-terrazza",
         "targetWord": "appoggia",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4195a96385910a85.mp3"
       },
       "translation": "She comes into the kitchen and _____ the keys on the table.",
       "optionTranslations": [

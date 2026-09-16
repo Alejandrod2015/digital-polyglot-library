@@ -400,7 +400,8 @@
         "sentence": "Ha paura del buio e conta fino a dieci.",
         "storySlug": "un-segreto-tra-noi-due",
         "targetWord": "conta",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/67c118c34d391c10.mp3"
       },
       "translation": "She's afraid of the dark, and she _____ to ten.",
       "optionTranslations": [
@@ -430,7 +431,8 @@
         "sentence": "Non vede niente e accende la torcia del telefono.",
         "storySlug": "un-segreto-tra-noi-due",
         "targetWord": "accende",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c4a8789adda7c6cf.mp3"
       },
       "translation": "She can't see anything, and _____ the phone's torch.",
       "optionTranslations": [
@@ -460,7 +462,8 @@
         "sentence": "L'ascensore si apre e lei esce al quinto piano.",
         "storySlug": "un-segreto-tra-noi-due",
         "targetWord": "esce",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/296210fe58bee5dd.mp3"
       },
       "translation": "The elevator opens and she _____ at the fifth floor.",
       "optionTranslations": [

@@ -377,7 +377,8 @@
         "sentence": "È stanco del lavoro e sospira forte.",
         "storySlug": "trofie-per-due",
         "targetWord": "sospira",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0dee3f646b2764da.mp3"
       },
       "translation": "He's tired of work, and he _____ deeply.",
       "optionTranslations": [
@@ -407,7 +408,8 @@
         "sentence": "Ha le mani bagnate e le asciuga con un asciugamano.",
         "storySlug": "trofie-per-due",
         "targetWord": "asciuga",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/70b15e095035c515.mp3"
       },
       "translation": "His hands are wet, and he _____ them with a towel.",
       "optionTranslations": [
@@ -437,7 +439,8 @@
         "sentence": "Ha sete e riempie il bicchiere d'acqua.",
         "storySlug": "trofie-per-due",
         "targetWord": "riempie",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/79e4bfdff1e7688f.mp3"
       },
       "translation": "He's thirsty and _____ the glass with water.",
       "optionTranslations": [

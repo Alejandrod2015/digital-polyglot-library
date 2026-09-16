@@ -377,7 +377,8 @@
         "sentence": "Il vento è forte e i vasi cadono dalla terrazza.",
         "storySlug": "allerta-rossa",
         "targetWord": "cadono",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/42991de209c679e9.mp3"
       },
       "translation": "The wind is strong and the pots _____ from the terrace.",
       "optionTranslations": [
@@ -407,7 +408,8 @@
         "sentence": "Il vento porta via tutto e io prendo le sedie.",
         "storySlug": "allerta-rossa",
         "targetWord": "prendo",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/059537da91db3e0b.mp3"
       },
       "translation": "The wind blows everything away, and I _____ the chairs.",
       "optionTranslations": [
@@ -437,7 +439,8 @@
         "sentence": "C'è tanto vento e le foglie volano ovunque.",
         "storySlug": "allerta-rossa",
         "targetWord": "volano",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1df83d5cca19753d.mp3"
       },
       "translation": "There's a lot of wind, and the leaves _____ everywhere.",
       "optionTranslations": [

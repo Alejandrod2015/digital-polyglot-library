@@ -400,7 +400,8 @@
         "sentence": "Non sa come cominciare e non riesce a scrivere nulla.",
         "storySlug": "scrivi-tu-per-favore",
         "targetWord": "scrivere",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ea9ca017980a6475.mp3"
       },
       "translation": "He doesn't know how to start, and can't _____ anything.",
       "optionTranslations": [
@@ -430,7 +431,8 @@
         "sentence": "È fiero della foto e la mostra a tutti.",
         "storySlug": "scrivi-tu-per-favore",
         "targetWord": "mostra",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/44c8f6647fba3528.mp3"
       },
       "translation": "He's proud of the photo and _____ it to everyone.",
       "optionTranslations": [
@@ -460,7 +462,8 @@
         "sentence": "È felice e la abbraccia forte.",
         "storySlug": "scrivi-tu-per-favore",
         "targetWord": "abbraccia",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/65eae944042f142a.mp3"
       },
       "translation": "He's happy and _____ her tightly.",
       "optionTranslations": [

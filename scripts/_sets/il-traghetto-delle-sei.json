@@ -422,7 +422,8 @@
         "sentence": "Ha fretta e scende le scale di corsa.",
         "storySlug": "il-traghetto-delle-sei",
         "targetWord": "scende",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d919ec88e0f242e0.mp3"
       },
       "translation": "She's in a hurry and _____ down the stairs, running.",
       "optionTranslations": [
@@ -452,7 +453,8 @@
         "sentence": "Sente il clacson e corre verso il taxi.",
         "storySlug": "il-traghetto-delle-sei",
         "targetWord": "corre",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8dfc6f56a6a7fd20.mp3"
       },
       "translation": "He hears the horn and _____ toward the taxi.",
       "optionTranslations": [
@@ -482,7 +484,8 @@
         "sentence": "Ha sonno e chiude gli occhi.",
         "storySlug": "il-traghetto-delle-sei",
         "targetWord": "chiude",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/caabaab623255d10.mp3"
       },
       "translation": "He's sleepy and _____ his eyes.",
       "optionTranslations": [

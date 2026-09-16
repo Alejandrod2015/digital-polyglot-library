@@ -377,7 +377,8 @@
         "sentence": "La sua squadra segna tre gol e vince la partita.",
         "storySlug": "il-derby-della-lanterna",
         "targetWord": "vince",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8de94cba9e32688d.mp3"
       },
       "translation": "His team scores three goals and _____ the match.",
       "optionTranslations": [
@@ -407,7 +408,8 @@
         "sentence": "Ha tanta fame e in due minuti mangia tutta la pizza.",
         "storySlug": "il-derby-della-lanterna",
         "targetWord": "mangia",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aff3849d6513e195.mp3"
       },
       "translation": "He's very hungry, and in two minutes he _____ the whole pizza.",
       "optionTranslations": [
@@ -437,7 +439,8 @@
         "sentence": "L'arbitro fischia e la partita comincia.",
         "storySlug": "il-derby-della-lanterna",
         "targetWord": "comincia",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/490f3ab5d5e75f6a.mp3"
       },
       "translation": "The referee blows the whistle and the match _____.",
       "optionTranslations": [

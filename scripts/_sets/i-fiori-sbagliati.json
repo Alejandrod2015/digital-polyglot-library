@@ -377,7 +377,8 @@
         "sentence": "Nessuno risponde e lui bussa di nuovo.",
         "storySlug": "i-fiori-sbagliati",
         "targetWord": "bussa",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d6a97ec49fbed12.mp3"
       },
       "translation": "No one answers, and he _____ again.",
       "optionTranslations": [
@@ -407,7 +408,8 @@
         "sentence": "Ascolta bene e alla fine capisce.",
         "storySlug": "i-fiori-sbagliati",
         "targetWord": "capisce",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85261daf3ab7f925.mp3"
       },
       "translation": "He listens carefully and finally _____.",
       "optionTranslations": [
@@ -437,7 +439,8 @@
         "sentence": "Compra dei fiori e li dà a lei.",
         "storySlug": "i-fiori-sbagliati",
         "targetWord": "dà",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1dd14e9b3dfbff6b.mp3"
       },
       "translation": "He buys some flowers and _____ them to her.",
       "optionTranslations": [

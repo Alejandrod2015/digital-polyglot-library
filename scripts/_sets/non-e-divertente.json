@@ -376,7 +376,8 @@
         "sentence": "Due piatti non bastano: siamo in tre.",
         "storySlug": "non-e-divertente",
         "targetWord": "bastano",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/003db29fade603b6.mp3"
       },
       "translation": "Two plates aren't _____: there are three of us.",
       "optionTranslations": [
@@ -406,7 +407,8 @@
         "sentence": "Sente la sveglia e subito si alza dal letto.",
         "storySlug": "non-e-divertente",
         "targetWord": "si alza",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/617dfe14df9d176a.mp3"
       },
       "translation": "She hears the alarm and immediately _____ out of bed.",
       "optionTranslations": [
@@ -436,7 +438,8 @@
         "sentence": "È arrabbiata e sbatte la porta forte.",
         "storySlug": "non-e-divertente",
         "targetWord": "sbatte",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3833653cab367563.mp3"
       },
       "translation": "She's angry and _____ the door hard.",
       "optionTranslations": [

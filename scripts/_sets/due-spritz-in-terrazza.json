@@ -376,7 +376,8 @@
         "sentence": "Il treno è in ritardo e non arriva mai.",
         "storySlug": "due-spritz-in-terrazza",
         "targetWord": "arriva",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b14ac9c295ba149f.mp3"
       },
       "translation": "The train is late and never _____.",
       "optionTranslations": [
@@ -406,7 +407,8 @@
         "sentence": "Ha perso le chiavi e le cerca ovunque.",
         "storySlug": "due-spritz-in-terrazza",
         "targetWord": "cerca",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c1850481854af8d9.mp3"
       },
       "translation": "He lost his keys and _____ them everywhere.",
       "optionTranslations": [
@@ -436,7 +438,8 @@
         "sentence": "Cerca a lungo e finalmente lo trova.",
         "storySlug": "due-spritz-in-terrazza",
         "targetWord": "trova",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4d2ccd15d91bf65a.mp3"
       },
       "translation": "He searches for a long time and finally _____ it.",
       "optionTranslations": [

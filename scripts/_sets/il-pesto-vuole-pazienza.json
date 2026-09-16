@@ -377,7 +377,8 @@
         "sentence": "Ogni mattina il fornaio impasta il pane a mano.",
         "storySlug": "il-pesto-vuole-pazienza",
         "targetWord": "impasta",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e6782fe70fdc0681.mp3"
       },
       "translation": "Every morning the baker _____ the bread by hand.",
       "optionTranslations": [
@@ -407,7 +408,8 @@
         "sentence": "Ha sonno e sbadiglia più volte.",
         "storySlug": "il-pesto-vuole-pazienza",
         "targetWord": "sbadiglia",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae69474fd491b664.mp3"
       },
       "translation": "She's sleepy, and she _____ several times.",
       "optionTranslations": [
@@ -437,7 +439,8 @@
         "sentence": "Alle sette il fornaio apre e serve i primi clienti.",
         "storySlug": "il-pesto-vuole-pazienza",
         "targetWord": "serve",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bce17d6e0f65e205.mp3"
       },
       "translation": "At seven the baker opens, and he _____ the first customers.",
       "optionTranslations": [

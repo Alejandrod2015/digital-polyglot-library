@@ -377,7 +377,8 @@
         "sentence": "Sente una grande tristezza e piange.",
         "storySlug": "ti-voglio-bene-ma",
         "targetWord": "piange",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3bfe671d8172973f.mp3"
       },
       "translation": "She feels very sad and _____.",
       "optionTranslations": [
@@ -407,7 +408,8 @@
         "sentence": "Il taxi arriva e lui va via subito.",
         "storySlug": "ti-voglio-bene-ma",
         "targetWord": "va via",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/81e03c8b791598a4.mp3"
       },
       "translation": "The taxi arrives and he _____ right away.",
       "optionTranslations": [
@@ -437,7 +439,8 @@
         "sentence": "C'è vento forte che muove le foglie.",
         "storySlug": "ti-voglio-bene-ma",
         "targetWord": "muove",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ea03e5115bd4f7c6.mp3"
       },
       "translation": "There's a strong wind that _____ the leaves.",
       "optionTranslations": [

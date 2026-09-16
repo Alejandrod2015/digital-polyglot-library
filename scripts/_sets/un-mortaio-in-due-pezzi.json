@@ -377,7 +377,8 @@
         "sentence": "Il piatto è sporco e lo lava nel lavandino.",
         "storySlug": "un-mortaio-in-due-pezzi",
         "targetWord": "lava",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ce36028e9a42d4e.mp3"
       },
       "translation": "The plate is dirty and she _____ it in the sink.",
       "optionTranslations": [
@@ -407,7 +408,8 @@
         "sentence": "Con il coltello taglia il formaggio a pezzi.",
         "storySlug": "un-mortaio-in-due-pezzi",
         "targetWord": "taglia",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/74e0de144a770a71.mp3"
       },
       "translation": "With the knife, he _____ the cheese into pieces.",
       "optionTranslations": [
@@ -437,7 +439,8 @@
         "sentence": "Cade sul pavimento e si rompe in due pezzi.",
         "storySlug": "un-mortaio-in-due-pezzi",
         "targetWord": "si rompe",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e259c90882e548ce.mp3"
       },
       "translation": "It falls on the floor and _____ into two pieces.",
       "optionTranslations": [

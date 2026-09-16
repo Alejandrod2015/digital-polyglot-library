@@ -400,7 +400,8 @@
         "sentence": "Vede il gol e grida di gioia.",
         "storySlug": "la-maglia-in-palio",
         "targetWord": "grida",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/00a14a6cbf15a518.mp3"
       },
       "translation": "He sees the goal and _____ with joy.",
       "optionTranslations": [
@@ -430,7 +431,8 @@
         "sentence": "Vince la partita e canta tutta la sera.",
         "storySlug": "la-maglia-in-palio",
         "targetWord": "canta",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a0edc93e082fec37.mp3"
       },
       "translation": "He wins the match and _____ all evening.",
       "optionTranslations": [
@@ -460,7 +462,8 @@
         "sentence": "Ho rotto il telecomando e ne compro uno nuovo.",
         "storySlug": "la-maglia-in-palio",
         "targetWord": "compro",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c7d6b9b26da3883e.mp3"
       },
       "translation": "I broke the remote, and I'll _____ a new one.",
       "optionTranslations": [

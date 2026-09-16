@@ -377,7 +377,8 @@
         "sentence": "Non mangia da ore e lo stomaco gli brontola.",
         "storySlug": "focaccia-sulle-scale",
         "targetWord": "brontola",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e9f418e3558de6d6.mp3"
       },
       "translation": "He hasn't eaten for hours, and his stomach _____.",
       "optionTranslations": [
@@ -407,7 +408,8 @@
         "sentence": "Sente un buon profumo e lo annusa con piacere.",
         "storySlug": "focaccia-sulle-scale",
         "targetWord": "annusa",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8e13e50c49343c2c.mp3"
       },
       "translation": "He smells something nice, and he _____ it with pleasure.",
       "optionTranslations": [
@@ -437,7 +439,8 @@
         "sentence": "Hanno solo una focaccia e la dividono in due.",
         "storySlug": "focaccia-sulle-scale",
         "targetWord": "dividono",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bddc8c0b7bbbc0c0.mp3"
       },
       "translation": "They only have one focaccia, and they _____ it in two.",
       "optionTranslations": [

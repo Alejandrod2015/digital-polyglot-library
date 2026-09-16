@@ -400,7 +400,8 @@
         "sentence": "Quando ho paura, penso a questa terrazza.",
         "storySlug": "dopo-la-tempesta",
         "targetWord": "penso",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2dce22a926f79abc.mp3"
       },
       "translation": "When I'm afraid, I _____ of this terrace.",
       "optionTranslations": [
@@ -430,7 +431,8 @@
         "sentence": "Non abbiamo il mortaio, ma il pesto lo facciamo lo stesso.",
         "storySlug": "dopo-la-tempesta",
         "targetWord": "facciamo",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/641debfb69312791.mp3"
       },
       "translation": "We don't have the mortar, but we _____ the pesto anyway.",
       "optionTranslations": [
@@ -460,7 +462,8 @@
         "sentence": "Il vento porta via le foglie e lei le raccoglie.",
         "storySlug": "dopo-la-tempesta",
         "targetWord": "raccoglie",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/da96ffdb2d9f432c.mp3"
       },
       "translation": "The wind blows the leaves away, and she _____ them.",
       "optionTranslations": [

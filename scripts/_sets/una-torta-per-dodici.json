@@ -423,7 +423,8 @@
         "sentence": "Prepara la tavola e mette dodici piatti.",
         "storySlug": "una-torta-per-dodici",
         "targetWord": "mette",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/360076d7c4343d1b.mp3"
       },
       "translation": "She sets the table and _____ twelve plates.",
       "optionTranslations": [
@@ -453,7 +454,8 @@
         "sentence": "Sente bussare e apre la porta.",
         "storySlug": "una-torta-per-dodici",
         "targetWord": "apre",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/881fe3726ba1a1c5.mp3"
       },
       "translation": "He hears knocking and _____ the door.",
       "optionTranslations": [
@@ -483,7 +485,8 @@
         "sentence": "Non capisce e chiede una spiegazione.",
         "storySlug": "una-torta-per-dodici",
         "targetWord": "chiede",
-        "storySource": "user"
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/86c96b999486a5a0.mp3"
       },
       "translation": "He doesn't understand, and _____ for an explanation.",
       "optionTranslations": [
