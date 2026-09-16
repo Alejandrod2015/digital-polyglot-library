@@ -1,0 +1,138 @@
+[
+ {
+  "topic": "music-and-singing",
+  "slotIndex": 0,
+  "title": "Tims Trommelstöcke",
+  "slug": "tims-trommelstocke",
+  "synopsis": "Tim, an old school friend of Jan, has a plan for Jan's birthday: the band from school plays again. Anna was the singer, and now she is afraid.",
+  "text": "Ihr altes Lied ist fünfzehn Jahre alt. Anna, die Sängerin von früher, singt es nie mehr. Sie trinkt heute Tee in Jans Küche. Der Tee ist warm.\n\nJans Schulfreund Tim kommt mit zwei Trommelstöcken. Er ist Bankkaufmann, aber er spielt am Wochenende Schlagzeug. Jan ist gerade im Hof.\n\n“Jan hat am Samstag Geburtstag. Die Band spielt wieder, wie früher!”, flüstert Tim.\n\n“Die Band? Wer spielt denn?”, fragt Anna.\n\n“Ich spiele Schlagzeug. Ein Freund spielt Klavier. Und du singst”, sagt Tim.\n\nTim lacht oft. Anna nicht. Sie dreht nervös ihre Tasse. Die Stimme von Anna ist seit Jahren still.\n\n“Ich singe nicht mehr gern. Meine Stimme ist alt”, sagt sie leise.\n\n“Deine Stimme ist nicht alt. Bitte, das ist wichtig. Für Jan”, antwortet Tim.\n\nDie Tür öffnet sich. Jan kommt in die Küche. Tim versteckt die Stöcke hinter dem Rücken.\n\nAnna nickt plötzlich. Sie kann nicht Nein sagen. Tim lacht leise.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "das Lied",
+    "surface": "Lied",
+    "definition": "A song; music with words that you sing."
+   },
+   {
+    "type": "number",
+    "word": "fünfzehn",
+    "surface": "fünfzehn",
+    "definition": "Fifteen; the number after fourteen."
+   },
+   {
+    "type": "noun",
+    "word": "die Sängerin",
+    "anchor": true,
+    "surface": "Sängerin",
+    "definition": "A female singer; she sings, often in a band."
+   },
+   {
+    "type": "verb",
+    "word": "trinken",
+    "surface": "trinkt",
+    "definition": "To drink; to take water, tea or coffee."
+   },
+   {
+    "type": "noun",
+    "word": "der Schulfreund",
+    "anchor": true,
+    "surface": "Schulfreund",
+    "definition": "A school friend; a friend from your school years."
+   },
+   {
+    "type": "noun",
+    "word": "der Trommelstock",
+    "anchor": true,
+    "surface": "Trommelstöcken",
+    "definition": "A drumstick; a stick you hit a drum with."
+   },
+   {
+    "type": "noun",
+    "word": "die Stimme",
+    "surface": "Stimme",
+    "definition": "The voice; the sound you make when you speak or sing."
+   },
+   {
+    "type": "noun",
+    "word": "das Schlagzeug",
+    "surface": "Schlagzeug",
+    "definition": "A drum kit; many drums played by one person."
+   },
+   {
+    "type": "noun",
+    "word": "der Geburtstag",
+    "surface": "Geburtstag",
+    "definition": "A birthday; the day you were born, every year."
+   },
+   {
+    "type": "verb",
+    "word": "flüstern",
+    "surface": "flüstert",
+    "definition": "To whisper; to speak very quietly."
+   },
+   {
+    "type": "pronoun",
+    "word": "wer",
+    "surface": "Wer",
+    "definition": "Who; the word to ask about a person."
+   },
+   {
+    "type": "noun",
+    "word": "das Klavier",
+    "surface": "Klavier",
+    "definition": "A piano; a big instrument with black and white keys."
+   },
+   {
+    "type": "verb",
+    "word": "singen",
+    "surface": "singt",
+    "definition": "To sing; to make music with your voice."
+   },
+   {
+    "type": "adverb",
+    "word": "plötzlich",
+    "surface": "plötzlich",
+    "definition": "Suddenly; very fast and without warning."
+   },
+   {
+    "type": "adjective",
+    "word": "still",
+    "surface": "still",
+    "definition": "Silent; quiet, with no sound."
+   },
+   {
+    "type": "adjective",
+    "word": "nervös",
+    "surface": "nervös",
+    "definition": "Nervous; a little afraid and not calm."
+   },
+   {
+    "type": "verb",
+    "word": "drehen",
+    "anchor": true,
+    "surface": "dreht",
+    "definition": "To turn something round and round."
+   },
+   {
+    "type": "preposition",
+    "word": "hinter",
+    "surface": "hinter",
+    "definition": "Behind; at the back of something."
+   },
+   {
+    "type": "noun",
+    "word": "der Rücken",
+    "anchor": true,
+    "surface": "Rücken",
+    "definition": "The back; the part of your body behind you."
+   },
+   {
+    "type": "verb",
+    "word": "nicken",
+    "surface": "nickt",
+    "definition": "To nod; to move your head up and down for yes."
+   }
+  ],
+  "arcType": null
+ }
+]
