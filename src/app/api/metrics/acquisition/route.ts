@@ -145,7 +145,12 @@ export async function GET(req: NextRequest): Promise<Response> {
 
   const days = Math.max(1, Math.min(365, Number(req.nextUrl.searchParams.get("days") ?? "30")));
   const metricsCohort = parseMetricsCohort(req.nextUrl.searchParams.get("cohort"));
-  const cacheKey = `acq:${days}:${metricsCohort}`;
+  const platformParam = req.nextUrl.searchParams.get("platform");
+  const retentionPlatform: "all" | "web" | "ios" | "android" =
+    platformParam === "web" || platformParam === "ios" || platformParam === "android"
+      ? platformParam
+      : "all";
+  const cacheKey = `acq:${days}:${metricsCohort}:${retentionPlatform}`;
   if (cache && cache.key === cacheKey && Date.now() - cache.at < CACHE_TTL_MS) {
     return NextResponse.json(cache.payload);
   }
@@ -682,7 +687,9 @@ export async function GET(req: NextRequest): Promise<Response> {
     // Se calculan las dos granularidades de una vez y viajan juntas: el
     // panel alterna semanal/diario en el cliente, y volver a pedir esto por
     // un clic significaria listar Clerk entero otra vez.
-    const retentionSignups = cohort.map((u) => ({
+    const retentionCohort =
+      retentionPlatform === "all" ? cohort : cohort.filter((u) => platformFor(u) === retentionPlatform);
+    const retentionSignups = retentionCohort.map((u) => ({
       userId: u.id,
       createdAt: new Date(u.createdAt),
     }));
@@ -729,6 +736,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     const payload = {
       source: "clerk" as const,
       windowDays: days,
+      retentionPlatform,
       retention,
       retentionDaily,
       retentionUsers,
