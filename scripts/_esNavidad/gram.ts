@@ -2,7 +2,7 @@
  *  imprime una por una, para revisarlas a mano. No es una segunda medida. */
 import { config } from "dotenv"; config({ path: ".env.local", quiet: true }); config({ path: ".env", quiet: true })
 import { PrismaClient } from '../../src/generated/prisma'
-import { RE } from '../_gramProbe'
+import { RE } from '../../src/lib/gramProbePatterns'
 const p = new PrismaClient()
 async function main() {
   const id = process.argv[2]
