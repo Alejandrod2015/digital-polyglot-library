@@ -1,0 +1,26 @@
+{
+  "tipo": "Cultural", "nivel": "b1", "variante": "LATAM",
+  "registro": "mas fisico y mas corto de frase que el tema 1: fuego, cuero y turnos; lo que se discute se discute de pie",
+  "espina": "Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto en el mercado de La Paz, y cada pieza esta hecha para no durar. La segunda es un tambor, y el tambor no tiene dueno: es de la cuerda.",
+  "recursos": "contraste entre comprar y pertenecer, regla dicha en boca de otro y no por el narrador, humor seco de oficio, gancho final en gesto; nada figurado por encima de B1",
+  "historias": [
+    { "slot": "1",
+      "quiere": "comprar un tambor retirado de la comparsa para el puesto, como segunda de las siete piezas",
+      "impide": "el tambor pertenece a la cuerda, no a quien lo toca, y eso no se negocia con dinero",
+      "cuesta": "la noche del desfile, que mira desde la vereda sin intentar nada, y el viaje ya pagado",
+      "cambia": "entiende que hay piezas cuyo dueno no es una persona",
+      "emocion": "extraneza ante una regla que no se compra; el gesto es mirar la fila de tambores contra la pared" },
+    { "slot": "2",
+      "quiere": "al menos la lonja vieja, el cuero gastado que la cuerda cambia cada ano",
+      "impide": "cambiar la lonja cuesta dinero y la comparsa no lo tiene guardado",
+      "cuesta": "paga la lonja nueva entera, que era el presupuesto del viaje siguiente",
+      "cambia": "se lleva el cuero viejo, y con el una deuda que nadie le reclama",
+      "emocion": "satisfaccion que dura poco; el gesto es doblar el cuero y que no quepa en el bolso" },
+    { "slot": "3",
+      "quiere": "el tambor entero, ahora que ya pago la lonja y cree tener derecho",
+      "impide": "el lugar en la fila es prestado y ella no sabe templar: el tambor frio no suena",
+      "cuesta": "el ridiculo delante de la cuerda entera, y con el la idea de que la pieza se compra",
+      "cambia": "se va con el cuero viejo y el telefono de Mayra, que es la segunda de las seis fichas que juntara",
+      "emocion": "verguenza que se vuelve algo mas limpio; el gesto es devolver el tambor con las dos manos" }
+  ]
+}

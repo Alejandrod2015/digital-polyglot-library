@@ -1,7 +1,9 @@
 import { config } from "dotenv"; config({ path: ".env.local", quiet: true }); config({ path: ".env", quiet: true });
 import { PrismaClient } from "../src/generated/prisma";
 const p = new PrismaClient();
-const RE: Array<[string, RegExp]> = [
+// Exportado (2026-09-16) para que la revision token a token de las marcas
+// use ESTAS mismas expresiones y no una copia que se desincronice.
+export const RE: Array<[string, RegExp]> = [
   ["pretérito", /\b[a-zá-ú]+(ó|aron|ieron)\b|\b(fue|fueron|tuvo|hizo|dijo|vino|dio|puso|quiso)\b/gi],
   // -ía fuera: "día", "policía", "panadería" la disparaban. Solo -aba/-aban
   // y la lista cerrada de irregulares frecuentes.
