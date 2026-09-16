@@ -118,44 +118,44 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "hacer una raya",
-    "sentence": "El platillo [[hizo una raya]] en la puerta.",
+    "word": "dar vueltas",
+    "sentence": "Olga [[daba vueltas]] por el barrio.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "made a scratch",
+      "answer": "drove round and round",
       "options": [
-        "made a scratch",
-        "made a hole",
-        "made a sound",
-        "made a mess"
+        "drove round and round",
+        "parked for a while",
+        "waited at a stop",
+        "drove straight home"
       ],
       "audioClip": {
         "storySlug": "la-bateria-no-cabe",
         "storySource": "user",
-        "sentence": "El platillo hizo una raya en la puerta.",
-        "targetWord": "hizo una raya",
+        "sentence": "Olga daba vueltas por el barrio.",
+        "targetWord": "daba vueltas",
         "language": "spanish"
       }
     }
   },
   {
     "type": "meaning_in_context",
-    "word": "zona de carga y descarga",
-    "sentence": "Aparcó en la [[zona de carga y descarga]].",
+    "word": "la grúa",
+    "sentence": "Olga levantaba el coche con la [[grúa]].",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "the loading and unloading zone",
+      "answer": "a tow truck",
       "options": [
-        "the loading and unloading zone",
-        "a private garage",
-        "a bus stop",
-        "a bike lane"
+        "a tow truck",
+        "a police car",
+        "a taxi",
+        "a bicycle"
       ],
       "audioClip": {
         "storySlug": "la-bateria-no-cabe",
         "storySource": "user",
-        "sentence": "Aparcó en la zona de carga y descarga.",
-        "targetWord": "zona de carga y descarga",
+        "sentence": "Olga levantaba el coche con la grúa.",
+        "targetWord": "grúa",
         "language": "spanish"
       }
     }

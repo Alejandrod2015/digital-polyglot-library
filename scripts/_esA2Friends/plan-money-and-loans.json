@@ -1,0 +1,35 @@
+{
+ "tipo": "Friends",
+ "nivel": "a2",
+ "variante": "spain",
+ "registro": "intimo e incomodo: dinero entre amigos, cuentas en voz baja y orgullo, con una optica que mira sin preguntar",
+ "espina": "La Rana necesita equipo propio para las Ferias; en este tema el grupo se compra un amplificador a plazos, Lorena paga la parte de Ruben con el dinero de sus gafas y Ruben vende la moto de 2012 para devolverselo, y el dinero pasa a ser del grupo.",
+ "recursos": "A2: imperfecto habitual de 2012 (iba con Lorena a los conciertos en moto), pretérito perfecto en el dialogo (el taller me ha cobrado), gancho literal (la caja de zapatos con una rana). Parrafos 5, 4 y 6. Franjas: un ensayo, el viernes, un domingo por la noche y el lunes.",
+ "reencuentro": "Vuelven en el texto portables de los temas 1 a 3 que salian una sola vez (lista medida al cerrar).",
+ "historias": [
+  {
+   "slot": "0",
+   "quiere": "Lorena y Ruben quieren un amplificador que funcione para las Ferias",
+   "impide": "el viejo se quema en un ensayo y no tienen cuatrocientos euros",
+   "cuesta": "el amplificador de 2012 acaba en la basura de la calle Toro",
+   "cambia": "Raquel les vende el de su hermano a plazos, cien euros al mes",
+   "emocion": "nervios con alivio: Ruben explica nervioso lo que paso, y el primer acorde suena limpio"
+  },
+  {
+   "slot": "1",
+   "quiere": "Lorena quiere comprarse gafas nuevas con lo que ahorra desde junio",
+   "impide": "Ruben no llega a fin de mes y no puede pagar su plazo",
+   "cuesta": "Lorena paga los dos plazos con el dinero de sus gafas, que se quedan en el escaparate",
+   "cambia": "Ruben acepta deberle dinero a Lorena hasta septiembre",
+   "emocion": "orgullo herido en Ruben: se queda con la boca seca y los brazos cruzados porque su amiga paga por el"
+  },
+  {
+   "slot": "2",
+   "quiere": "Ruben quiere devolverle a Lorena sus dos plazos",
+   "impide": "nadie llama por el anuncio de su moto",
+   "cuesta": "Ruben vende la moto que tenia desde 2012 y va en autobus",
+   "cambia": "Lorena mete el dinero en una caja de zapatos: la caja de La Rana",
+   "emocion": "alegria sin moto: Ruben se rie detras de la bateria y por primera vez no le importa no tener dinero"
+  }
+ ]
+}

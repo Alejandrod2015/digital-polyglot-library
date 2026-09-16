@@ -5878,7 +5878,7 @@
     }
   },
   "cmu36dk1d0007j8p7grgcyiok#clothes-and-looks": {
-    "cerrado": "2026-09-15T22:39:55.116Z",
+    "cerrado": "2026-09-16T22:18:27.460Z",
     "hash": "6a3ecd631d0c2cd6",
     "historias": [
       "clothes-and-looks#0 la-chaqueta-ya-no-cierra",
@@ -5887,7 +5887,7 @@
     ],
     "checks": [
       "plan del tema completo (registro \"ligero y un poco melancolico, de espejo: dos treintaneros que se miran como eran en 2012 y se rien de lo que ya no les cabe\", espina \"La Rana necesita una foto y un dibujo para el programa de las Ferias; en este tema Lorena y Ruben intentan parecerse a la foto de 2012, no lo consiguen, y aceptan salir en el programa como son ahora.\")",
-      "validador canonico: 3/3 (perfil narrador)",
+      "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"dijo\" 33%)",
@@ -6010,8 +6010,8 @@
     }
   },
   "cmu36dk1d0007j8p7grgcyiok#driving-and-cars": {
-    "cerrado": "2026-09-15T22:42:35.907Z",
-    "hash": "cf516eed8be2db91",
+    "cerrado": "2026-09-16T22:18:13.456Z",
+    "hash": "48a550f4888ffbb9",
     "historias": [
       "driving-and-cars#0 la-bateria-no-cabe",
       "driving-and-cars#1 olga-no-tiene-prisa",
@@ -6019,7 +6019,7 @@
     ],
     "checks": [
       "plan del tema completo (registro \"de enredo y prisa, con humor de oficina: una grua, un deposito municipal, una cola y una jefa que no perdona, contado casi como una comedia de errores\", espina \"La Rana necesita llevar la bateria a un local nuevo para seguir ensayando para las Ferias; en este tema Lorena rompe una regla de su trabajo por el grupo y lo paga con dinero y con la confianza de su jefa, y los dos vuelven a moverse como en 2012.\")",
-      "validador canonico: 3/3 (perfil narrador)",
+      "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"contestó\" 27%)",
@@ -6033,7 +6033,7 @@
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.09 sobre 44 plazas · 41 salen una sola vez | ancladas: 16/60 (27%) | cola: 41/44 portables con un solo encuentro (93%, tope 80%) | de un solo encuentro: cabía, pequeño, quejaban, deja, Cargaron, sorprendido, hizo una raya, bajarlo, Condujo, aparcó, después, amarillo, sin mirarla, a las ocho, venía, medio, llena, Siéntate, todo el barrio, a nombre de, dos veces, Casi, mandó, pagó, próxima, sonriendo, lento, con los brazos cruzados, pidió, Desde ese día…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.09 sobre 44 plazas · 41 salen una sola vez | ancladas: 16/60 (27%) | cola: 41/44 portables con un solo encuentro (93%, tope 80%) | de un solo encuentro: cabía, pequeño, quejaban, deja, Cargaron, sorprendido, daba vueltas, bajarlo, Condujo, aparcó, después, amarillo, sin mirarla, a las ocho, venía, medio, llena, Siéntate, todo el barrio, a nombre de, dos veces, Casi, mandó, pagó, próxima, sonriendo, lento, con los brazos cruzados, pidió, Desde ese día…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
@@ -6142,8 +6142,8 @@
     }
   },
   "cmu36dk1d0007j8p7grgcyiok#money-and-loans": {
-    "cerrado": "2026-09-15T22:42:51.290Z",
-    "hash": "467a72ddbbe263ce",
+    "cerrado": "2026-09-16T22:18:20.562Z",
+    "hash": "3e590092f354c63a",
     "historias": [
       "money-and-loans#0 huele-a-quemado",
       "money-and-loans#1 las-gafas-pueden-esperar",
@@ -6151,7 +6151,7 @@
     ],
     "checks": [
       "plan del tema completo (registro \"intimo e incomodo: dinero entre amigos, cuentas en voz baja y orgullo, con una optica que mira sin preguntar\", espina \"La Rana necesita equipo propio para las Ferias; en este tema el grupo se compra un amplificador a plazos, Lorena paga la parte de Ruben con el dinero de sus gafas y Ruben vende la moto de 2012 para devolverselo, y el dinero pasa a ser del grupo.\")",
-      "validador canonico: 3/3 (perfil narrador)",
+      "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"contestó\" 25%)",
@@ -6165,7 +6165,7 @@
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.11 sobre 44 plazas · 40 salen una sola vez | ancladas: 16/60 (27%) | cola: 40/44 portables con un solo encuentro (91%, tope 80%) | de un solo encuentro: en medio de, de pelo castaño, nervioso, de atrás, con cuidado, limpio, cuesta, un buen precio, tanto, al mes, ahorraba, desde junio, primer, a su lado, llego a fin de mes, cobrado, con calma, nuevas, miró, sin preguntar nada, seca, deberte, al final, suave, y ya está, quiero, entre los dos, pagó en efectivo, Aquí, encima…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.11 sobre 44 plazas · 40 salen una sola vez | ancladas: 16/60 (27%) | cola: 40/44 portables con un solo encuentro (91%, tope 80%) | de un solo encuentro: en medio de, de pelo castaño, nervioso, de atrás, con cuidado, limpio, cuesta, un buen precio, tanto, al mes, ahorraba, desde junio, primer, a su lado, taller, cobrado, con calma, nuevas, miró, sin preguntar nada, seca, recibo, al final, suave, y ya está, quiero, entre los dos, pagó en efectivo, Aquí, encima…",
       "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
