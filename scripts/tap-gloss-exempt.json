@@ -1580,6 +1580,54 @@
         "zweiten",
         "zwölf"
       ]
+    },
+    "spanish-friends-spain-a2": {
+      "articles": [
+        "el",
+        "la",
+        "las",
+        "los",
+        "un",
+        "una",
+        "unos",
+        "unas"
+      ],
+      "characterNames": [
+        "lorena",
+        "lore",
+        "rubén",
+        "ruben",
+        "raúl",
+        "raul",
+        "jaime",
+        "olga",
+        "raquel",
+        "silvia",
+        "sergio"
+      ],
+      "numerals": [
+        "dos",
+        "tres",
+        "cuatro",
+        "cinco",
+        "seis",
+        "siete",
+        "ocho",
+        "nueve",
+        "diez",
+        "once",
+        "doce",
+        "catorce",
+        "quince",
+        "veinte",
+        "veintidós",
+        "treinta",
+        "cuarenta",
+        "cien",
+        "ciento",
+        "cuatrocientos",
+        "mil"
+      ]
     }
   }
 }

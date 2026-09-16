@@ -15818,5 +15818,583 @@
       "g": "baguette, a long French loaf (la baguette)",
       "t": "noun"
     }
+  },
+  "spanish-friends-spain-a2": {
+    "amplificador": {
+      "g": "amplifier (el amplificador)",
+      "t": "noun"
+    },
+    "acordó": {
+      "g": "remembered (acordarse de)",
+      "t": "verb"
+    },
+    "escaparate": {
+      "g": "shop window (el escaparate)",
+      "t": "noun"
+    },
+    "óptica": {
+      "g": "optician's shop (la óptica)",
+      "t": "noun"
+    },
+    "castaño": {
+      "g": "chestnut brown (castaño)",
+      "t": "adjective"
+    },
+    "canas": {
+      "g": "grey hairs (las canas)",
+      "t": "noun"
+    },
+    "traía": {
+      "g": "was carrying (traer)",
+      "t": "verb"
+    },
+    "ferias": {
+      "g": "the city's September fair (las Ferias)",
+      "t": "noun"
+    },
+    "enchufó": {
+      "g": "plugged in (enchufar)",
+      "t": "verb"
+    },
+    "salió": {
+      "g": "came out, sounded (salir)",
+      "t": "verb"
+    },
+    "podéis": {
+      "g": "you can (poder, to more than one person)",
+      "t": "verb"
+    },
+    "pagarlo": {
+      "g": "to pay for it (pagar)",
+      "t": "verb"
+    },
+    "estudio": {
+      "g": "studio (el estudio)",
+      "t": "noun"
+    },
+    "sorprendido": {
+      "g": "surprised (sorprendido)",
+      "t": "adjective"
+    },
+    "bajó": {
+      "g": "lowered (bajar)",
+      "t": "verb"
+    },
+    "reconozco": {
+      "g": "I recognise (reconocer)",
+      "t": "verb"
+    },
+    "parecer": {
+      "g": "to look like (parecer)",
+      "t": "verb"
+    },
+    "afeitado": {
+      "g": "shaved (afeitarse)",
+      "t": "verb"
+    },
+    "reconocía": {
+      "g": "recognised (reconocer)",
+      "t": "verb"
+    },
+    "delgado": {
+      "g": "thin, slim (delgado)",
+      "t": "adjective"
+    },
+    "llevaba": {
+      "g": "was wearing (llevar)",
+      "t": "verb"
+    },
+    "tocándose": {
+      "g": "touching (tocarse)",
+      "t": "verb"
+    },
+    "reían": {
+      "g": "were laughing (reírse)",
+      "t": "verb"
+    },
+    "cremallera": {
+      "g": "zip (la cremallera)",
+      "t": "noun"
+    },
+    "jersey": {
+      "g": "jumper, sweater (el jersey)",
+      "t": "noun"
+    },
+    "has": {
+      "g": "have (haber, forms the perfect)",
+      "t": "verb"
+    },
+    "social": {
+      "g": "social (la red social, social network)",
+      "t": "adjective"
+    },
+    "volvemos": {
+      "g": "we are back (volver)",
+      "t": "verb"
+    },
+    "puesto": {
+      "g": "on (llevar puesto, to have on)",
+      "t": "verb"
+    },
+    "poesía": {
+      "g": "poetry (la poesía)",
+      "t": "noun"
+    },
+    "debes": {
+      "g": "you owe (deber)",
+      "t": "verb"
+    },
+    "gustas": {
+      "g": "I like you (gustar)",
+      "t": "verb"
+    },
+    "rana": {
+      "g": "frog (la rana)",
+      "t": "noun"
+    },
+    "guardó": {
+      "g": "kept, put away (guardar)",
+      "t": "verb"
+    },
+    "técnica": {
+      "g": "technician (la técnica)",
+      "t": "noun"
+    },
+    "ayuntamiento": {
+      "g": "city council (el ayuntamiento)",
+      "t": "noun"
+    },
+    "enchufaron": {
+      "g": "plugged in (enchufar)",
+      "t": "verb"
+    },
+    "cables": {
+      "g": "cables (los cables)",
+      "t": "noun"
+    },
+    "cielo": {
+      "g": "sky (el cielo)",
+      "t": "noun"
+    },
+    "nubes": {
+      "g": "clouds (las nubes)",
+      "t": "noun"
+    },
+    "vuestra": {
+      "g": "your (vuestra, of more than one person)",
+      "t": "determiner"
+    },
+    "tocáis": {
+      "g": "you play (tocar, to more than one person)",
+      "t": "verb"
+    },
+    "últimos": {
+      "g": "last (últimos)",
+      "t": "adjective"
+    },
+    "baquetas": {
+      "g": "drumsticks (las baquetas)",
+      "t": "noun"
+    },
+    "tocamos": {
+      "g": "we play (tocar)",
+      "t": "verb"
+    },
+    "fina": {
+      "g": "fine, light (fino)",
+      "t": "adjective"
+    },
+    "caía": {
+      "g": "was falling (caer)",
+      "t": "verb"
+    },
+    "buenas": {
+      "g": "good (buenas noches, good evening)",
+      "t": "adjective"
+    },
+    "presentó": {
+      "g": "introduced herself (presentarse)",
+      "t": "verb"
+    },
+    "terminamos": {
+      "g": "we finished (terminar)",
+      "t": "verb"
+    },
+    "acompañó": {
+      "g": "walked her home (acompañar)",
+      "t": "verb"
+    },
+    "tormes": {
+      "g": "the Tormes, the river of Salamanca",
+      "t": "noun"
+    },
+    "perfil": {
+      "g": "profile, account (el perfil)",
+      "t": "noun"
+    },
+    "hacerla": {
+      "g": "to take it (hacer, of a photo)",
+      "t": "verb"
+    },
+    "altavoces": {
+      "g": "speakers (los altavoces)",
+      "t": "noun"
+    },
+    "equivocó": {
+      "g": "got it wrong (equivocarse)",
+      "t": "verb"
+    },
+    "garaje": {
+      "g": "garage (el garaje)",
+      "t": "noun"
+    },
+    "programador": {
+      "g": "programmer (el programador)",
+      "t": "noun"
+    },
+    "sacó": {
+      "g": "took out (sacar)",
+      "t": "verb"
+    },
+    "grabé": {
+      "g": "I recorded (grabar)",
+      "t": "verb"
+    },
+    "hacía": {
+      "g": "it was (hacer, of weather); it had been (hacer, of time)",
+      "t": "verb"
+    },
+    "ahorraba": {
+      "g": "was saving up (ahorrar)",
+      "t": "verb"
+    },
+    "cobrado": {
+      "g": "charged (cobrar)",
+      "t": "verb"
+    },
+    "baja": {
+      "g": "low, quiet (en voz baja, in a low voice)",
+      "t": "adjective"
+    },
+    "seca": {
+      "g": "dry (seco)",
+      "t": "adjective"
+    },
+    "deberte": {
+      "g": "to owe you (deber)",
+      "t": "verb"
+    },
+    "devuelves": {
+      "g": "you give it back (devolver)",
+      "t": "verb"
+    },
+    "bibliotecario": {
+      "g": "librarian (el bibliotecario)",
+      "t": "noun"
+    },
+    "hablaba": {
+      "g": "spoke (hablar)",
+      "t": "verb"
+    },
+    "vídeo": {
+      "g": "video (el vídeo)",
+      "t": "noun"
+    },
+    "hablaron": {
+      "g": "they talked (hablar)",
+      "t": "verb"
+    },
+    "poema": {
+      "g": "poem (el poema)",
+      "t": "noun"
+    },
+    "cristales": {
+      "g": "windowpanes (los cristales)",
+      "t": "noun"
+    },
+    "fui": {
+      "g": "I went (ir)",
+      "t": "verb"
+    },
+    "cogió": {
+      "g": "took (coger)",
+      "t": "verb"
+    },
+    "contármelo": {
+      "g": "telling me about it (contar)",
+      "t": "verb"
+    },
+    "voy": {
+      "g": "I am off (irse); I go (ir)",
+      "t": "verb"
+    },
+    "autoescuela": {
+      "g": "driving school (la autoescuela)",
+      "t": "noun"
+    },
+    "supermercado": {
+      "g": "supermarket (el supermercado)",
+      "t": "noun"
+    },
+    "tocaban": {
+      "g": "they played (tocar)",
+      "t": "verb"
+    },
+    "romano": {
+      "g": "Roman (el Puente Romano, the Roman bridge)",
+      "t": "adjective"
+    },
+    "doler": {
+      "g": "to hurt (doler)",
+      "t": "verb"
+    },
+    "sonreía": {
+      "g": "was smiling (sonreír)",
+      "t": "verb"
+    },
+    "zamora": {
+      "g": "Zamora, a city near Salamanca",
+      "t": "noun"
+    },
+    "efectivo": {
+      "g": "cash (en efectivo, in cash)",
+      "t": "noun"
+    },
+    "están": {
+      "g": "are (estar)",
+      "t": "verb"
+    },
+    "estudiante": {
+      "g": "student (el estudiante)",
+      "t": "noun"
+    },
+    "dibujó": {
+      "g": "drew (dibujar)",
+      "t": "verb"
+    },
+    "multas": {
+      "g": "fines (las multas)",
+      "t": "noun"
+    },
+    "sentados": {
+      "g": "sitting (sentado)",
+      "t": "adjective"
+    },
+    "hondo": {
+      "g": "deeply (respirar hondo, to take a deep breath)",
+      "t": "adverb"
+    },
+    "rompió": {
+      "g": "broke (romperse)",
+      "t": "verb"
+    },
+    "toqué": {
+      "g": "I played (tocar)",
+      "t": "verb"
+    },
+    "visitas": {
+      "g": "views (las visitas)",
+      "t": "noun"
+    },
+    "comentarios": {
+      "g": "comments (los comentarios)",
+      "t": "noun"
+    },
+    "salamanca": {
+      "g": "Salamanca, a city in western Spain",
+      "t": "noun"
+    },
+    "sirena": {
+      "g": "siren (la sirena)",
+      "t": "noun"
+    },
+    "bomberos": {
+      "g": "firefighters (parque de bomberos, fire station)",
+      "t": "noun"
+    },
+    "llaman": {
+      "g": "they call (llamar)",
+      "t": "verb"
+    },
+    "así": {
+      "g": "like that (así)",
+      "t": "adverb"
+    },
+    "borramos": {
+      "g": "shall we delete it (borrar)",
+      "t": "verb"
+    },
+    "perdona": {
+      "g": "sorry (perdonar)",
+      "t": "verb"
+    },
+    "tatuador": {
+      "g": "tattoo artist (el tatuador)",
+      "t": "noun"
+    },
+    "dibujos": {
+      "g": "drawings, tattoos (los dibujos)",
+      "t": "noun"
+    },
+    "explicando": {
+      "g": "explaining (explicar)",
+      "t": "verb"
+    },
+    "probado": {
+      "g": "tried on (probarse)",
+      "t": "verb"
+    },
+    "tiré": {
+      "g": "I pulled (tirar de)",
+      "t": "verb"
+    },
+    "ranas": {
+      "g": "frogs (las ranas)",
+      "t": "noun"
+    },
+    "dibujar": {
+      "g": "to draw (dibujar)",
+      "t": "verb"
+    },
+    "rápidamente": {
+      "g": "quickly (rápidamente)",
+      "t": "adverb"
+    },
+    "ritmo": {
+      "g": "rhythm (el ritmo)",
+      "t": "noun"
+    },
+    "pagaban": {
+      "g": "paid (pagar)",
+      "t": "verb"
+    },
+    "ponemos": {
+      "g": "shall we give it (poner, of a name)",
+      "t": "verb"
+    },
+    "rotonda": {
+      "g": "roundabout (la rotonda)",
+      "t": "noun"
+    },
+    "alumno": {
+      "g": "learner, pupil (el alumno)",
+      "t": "noun"
+    },
+    "bombero": {
+      "g": "firefighter (el bombero)",
+      "t": "noun"
+    },
+    "sonaron": {
+      "g": "jingled (sonar)",
+      "t": "verb"
+    },
+    "dibujada": {
+      "g": "drawn (dibujar)",
+      "t": "verb"
+    },
+    "guantera": {
+      "g": "glove compartment (la guantera)",
+      "t": "noun"
+    },
+    "giramos": {
+      "g": "we turn (girar)",
+      "t": "verb"
+    },
+    "derecha": {
+      "g": "right (a la derecha, to the right)",
+      "t": "noun"
+    },
+    "reproductor": {
+      "g": "player (el reproductor)",
+      "t": "noun"
+    },
+    "vieja": {
+      "g": "old (viejo)",
+      "t": "adjective"
+    },
+    "grabación": {
+      "g": "recording (la grabación)",
+      "t": "noun"
+    },
+    "recordaban": {
+      "g": "remembered (recordar)",
+      "t": "verb"
+    },
+    "paró": {
+      "g": "stopped (pararse)",
+      "t": "verb"
+    },
+    "roto": {
+      "g": "broken (romperse)",
+      "t": "verb"
+    },
+    "llevo": {
+      "g": "I am bringing (llevar)",
+      "t": "verb"
+    },
+    "buscaron": {
+      "g": "looked for (buscar)",
+      "t": "verb"
+    },
+    "pecho": {
+      "g": "chest (el pecho)",
+      "t": "noun"
+    },
+    "subo": {
+      "g": "shall I upload it (subir)",
+      "t": "verb"
+    },
+    "súbelo": {
+      "g": "upload it (subir)",
+      "t": "verb"
+    },
+    "apagó": {
+      "g": "turned off (apagar)",
+      "t": "verb"
+    },
+    "bostezo": {
+      "g": "yawn (el bostezo)",
+      "t": "noun"
+    },
+    "grúa": {
+      "g": "tow truck (la grúa)",
+      "t": "noun"
+    },
+    "multa": {
+      "g": "fine (la multa)",
+      "t": "noun"
+    },
+    "tarjeta": {
+      "g": "card (la tarjeta)",
+      "t": "noun"
+    },
+    "aparca": {
+      "g": "park (aparcar)",
+      "t": "verb"
+    },
+    "gruista": {
+      "g": "tow-truck driver (la gruista)",
+      "t": "noun"
+    },
+    "quejaban": {
+      "g": "complained (quejarse)",
+      "t": "verb"
+    },
+    "cargaron": {
+      "g": "loaded (cargar)",
+      "t": "verb"
+    },
+    "condujo": {
+      "g": "drove (conducir)",
+      "t": "verb"
+    },
+    "aparcó": {
+      "g": "parked (aparcar)",
+      "t": "verb"
+    },
+    "bajarlo": {
+      "g": "to take it down (bajar)",
+      "t": "verb"
+    }
   }
 }
