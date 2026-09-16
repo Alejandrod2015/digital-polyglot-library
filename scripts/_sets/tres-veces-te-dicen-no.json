@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "umbral,estrofa,peregrino,vela",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "umbral",
+     "answer": "a doorstep",
+     "options": [
+      "a doorstep",
+      "a verse",
+      "a pilgrim",
+      "a candle"
+     ]
+    },
+    {
+     "word": "estrofa",
+     "answer": "a verse",
+     "options": [
+      "a doorstep",
+      "a verse",
+      "a pilgrim",
+      "a candle"
+     ]
+    },
+    {
+     "word": "peregrino",
+     "answer": "a pilgrim",
+     "options": [
+      "a doorstep",
+      "a verse",
+      "a pilgrim",
+      "a candle"
+     ]
+    },
+    {
+     "word": "vela",
+     "answer": "a candle",
+     "options": [
+      "a doorstep",
+      "a verse",
+      "a pilgrim",
+      "a candle"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "negativa",
+  "sentence": "La [[negativa]] fue precisa y sin desprecio",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a refusal",
+   "options": [
+    "a refusal",
+    "a warning",
+    "an apology",
+    "an order"
+   ],
+   "audioClip": {
+    "storySlug": "tres-veces-te-dicen-no",
+    "storySource": "user",
+    "sentence": "La negativa fue precisa y sin desprecio",
+    "targetWord": "negativa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "argumento",
+  "sentence": "Ella no entendía el [[argumento]] de la piñatera",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the reasoning",
+   "options": [
+    "the reasoning",
+    "the accent",
+    "the hurry",
+    "the joke"
+   ],
+   "audioClip": {
+    "storySlug": "tres-veces-te-dicen-no",
+    "storySource": "user",
+    "sentence": "Ella no entendía el argumento de la piñatera",
+    "targetWord": "argumento",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "anfitriona",
+  "sentence": "La recibió con calma de [[anfitriona]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a hostess",
+   "options": [
+    "a hostess",
+    "a neighbour",
+    "a cousin",
+    "a stranger"
+   ],
+   "audioClip": {
+    "storySlug": "tres-veces-te-dicen-no",
+    "storySource": "user",
+    "sentence": "La recibió con calma de anfitriona",
+    "targetWord": "anfitriona",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "perspectiva",
+  "sentence": "con una [[perspectiva]] de mercado que ahí no servía",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an outlook",
+   "options": [
+    "an outlook",
+    "a contract",
+    "a schedule",
+    "a discount"
+   ],
+   "audioClip": {
+    "storySlug": "tres-veces-te-dicen-no",
+    "storySource": "user",
+    "sentence": "con una perspectiva de mercado que ahí no servía",
+    "targetWord": "perspectiva",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "afrontar",
+  "sentence": "[[Afrontar]] la segunda es lo esencial",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to face",
+   "options": [
+    "to face",
+    "to avoid",
+    "to delay",
+    "to forget"
+   ],
+   "audioClip": {
+    "storySlug": "tres-veces-te-dicen-no",
+    "storySource": "user",
+    "sentence": "Afrontar la segunda es lo esencial",
+    "targetWord": "Afrontar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ignorar",
+  "sentence": "[[Ignorar]] la puerta cerrada es lo básico",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to ignore",
+   "options": [
+    "to ignore",
+    "to answer",
+    "to repeat",
+    "to write down"
+   ],
+   "audioClip": {
+    "storySlug": "tres-veces-te-dicen-no",
+    "storySource": "user",
+    "sentence": "Ignorar la puerta cerrada es lo básico",
+    "targetWord": "Ignorar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "mojados",
+  "sentence": "Caminó bajo la lluvia y llegó con los zapatos _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mojados",
+   "options": [
+    "mojados",
+    "limpios",
+    "nuevos",
+    "rotos"
+   ],
+   "translation": "She walked in the rain and arrived with _____ shoes.",
+   "optionTranslations": [
+    "wet",
+    "clean",
+    "new",
+    "broken"
+   ],
+   "audioClip": {
+    "storySlug": "tres-veces-te-dicen-no",
+    "storySource": "user",
+    "sentence": "Caminó bajo la lluvia y llegó con los zapatos mojados.",
+    "targetWord": "mojados",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "confusa",
+  "sentence": "Explicó la regla otra vez y la idea seguía _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "confusa",
+   "options": [
+    "confusa",
+    "escrita",
+    "corta",
+    "antigua"
+   ],
+   "translation": "He explained the rule twice and the idea was still _____.",
+   "optionTranslations": [
+    "unclear",
+    "written",
+    "short",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "tres-veces-te-dicen-no",
+    "storySource": "user",
+    "sentence": "Explicó la regla otra vez y la idea seguía confusa.",
+    "targetWord": "confusa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "servir",
+  "sentence": "le [[sirvió]] ponche con compasión de los pies mojados",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to pour out",
+   "options": [
+    "to pour out",
+    "to drink up",
+    "to set down",
+    "to hand back"
+   ],
+   "audioClip": {
+    "storySlug": "tres-veces-te-dicen-no",
+    "storySource": "user",
+    "sentence": "le sirvió ponche con compasión de los pies mojados",
+    "targetWord": "sirvió",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "situación",
+  "sentence": "testigo de una [[situación]] inusual",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a scene",
+   "options": [
+    "a scene",
+    "a rule",
+    "a story",
+    "a favour"
+   ],
+   "audioClip": {
+    "storySlug": "tres-veces-te-dicen-no",
+    "storySource": "user",
+    "sentence": "testigo de una situación inusual",
+    "targetWord": "situación",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "básico",
+  "sentence": "Ignorar la puerta cerrada es lo [[básico]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the basic part",
+   "options": [
+    "the basic part",
+    "the odd part",
+    "the last part",
+    "the hard part"
+   ],
+   "audioClip": {
+    "storySlug": "tres-veces-te-dicen-no",
+    "storySource": "user",
+    "sentence": "Ignorar la puerta cerrada es lo básico",
+    "targetWord": "básico",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "esencial",
+  "sentence": "Afrontar la segunda es lo [[esencial]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the essential part",
+   "options": [
+    "the essential part",
+    "the easy part",
+    "the quick part",
+    "the usual part"
+   ],
+   "audioClip": {
+    "storySlug": "tres-veces-te-dicen-no",
+    "storySource": "user",
+    "sentence": "Afrontar la segunda es lo esencial",
+    "targetWord": "esencial",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "inusual",
+  "sentence": "testigo de una situación [[inusual]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "out of the ordinary",
+   "options": [
+    "out of the ordinary",
+    "hard to reach",
+    "easy to miss",
+    "free of charge"
+   ],
+   "audioClip": {
+    "storySlug": "tres-veces-te-dicen-no",
+    "storySource": "user",
+    "sentence": "testigo de una situación inusual",
+    "targetWord": "inusual",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "reservado",
+  "sentence": "[[Reservada]] como siempre, le sirvió ponche",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "keeping to herself",
+   "options": [
+    "keeping to herself",
+    "quick to laugh",
+    "slow to move",
+    "fond of company"
+   ],
+   "audioClip": {
+    "storySlug": "tres-veces-te-dicen-no",
+    "storySource": "user",
+    "sentence": "Reservada como siempre, le sirvió ponche",
+    "targetWord": "Reservada",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "recibir",
+  "sentence": "La [[recibió]] con calma de anfitriona",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to welcome in",
+   "options": [
+    "to welcome in",
+    "to send away",
+    "to call over",
+    "to walk past"
+   ],
+   "audioClip": {
+    "storySlug": "tres-veces-te-dicen-no",
+    "storySource": "user",
+    "sentence": "La recibió con calma de anfitriona",
+    "targetWord": "recibió",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a la cuarta",
+  "sentence": "[[A la cuarta]] abren y ya está",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on the fourth try",
+   "options": [
+    "on the fourth try",
+    "on the last day",
+    "at the same hour",
+    "in the same house"
+   ],
+   "audioClip": {
+    "storySlug": "tres-veces-te-dicen-no",
+    "storySource": "user",
+    "sentence": "A la cuarta abren y ya está",
+    "targetWord": "A la cuarta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

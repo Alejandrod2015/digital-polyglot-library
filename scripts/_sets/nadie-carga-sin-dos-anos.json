@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "cargadera,nuca,cintura,bajada",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "cargadera",
+     "answer": "a carrying harness",
+     "options": [
+      "a carrying harness",
+      "the back of the neck",
+      "a waist",
+      "the way down"
+     ]
+    },
+    {
+     "word": "nuca",
+     "answer": "the back of the neck",
+     "options": [
+      "a carrying harness",
+      "the back of the neck",
+      "a waist",
+      "the way down"
+     ]
+    },
+    {
+     "word": "cintura",
+     "answer": "a waist",
+     "options": [
+      "a carrying harness",
+      "the back of the neck",
+      "a waist",
+      "the way down"
+     ]
+    },
+    {
+     "word": "bajada",
+     "answer": "the way down",
+     "options": [
+      "a carrying harness",
+      "the back of the neck",
+      "a waist",
+      "the way down"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "monumental",
+  "sentence": "Una [[monumental]] pesa mucho más que las otras",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the largest size of frame",
+   "options": [
+    "the largest size of frame",
+    "the oldest style of frame",
+    "the plainest kind of frame",
+    "the lightest sort of frame"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-carga-sin-dos-anos",
+    "storySource": "user",
+    "sentence": "Una monumental pesa mucho más que las otras",
+    "targetWord": "monumental",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tradicional",
+  "sentence": "Esta es [[tradicional]] y pesa menos",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the old garden-flower kind",
+   "options": [
+    "the old garden-flower kind",
+    "the new painted kind",
+    "the tall showpiece kind",
+    "the small practice kind"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-carga-sin-dos-anos",
+    "storySource": "user",
+    "sentence": "Esta es tradicional y pesa menos",
+    "targetWord": "tradicional",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "resistencia",
+  "sentence": "La [[resistencia]] y la nuca se hacen igual",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stamina",
+   "options": [
+    "stamina",
+    "balance",
+    "patience",
+    "courage"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-carga-sin-dos-anos",
+    "storySource": "user",
+    "sentence": "La resistencia y la nuca se hacen igual",
+    "targetWord": "resistencia",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fatiga",
+  "sentence": "La [[fatiga]] llega mucho antes que el límite",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tiredness",
+   "options": [
+    "tiredness",
+    "hunger",
+    "thirst",
+    "boredom"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-carga-sin-dos-anos",
+    "storySource": "user",
+    "sentence": "La fatiga llega mucho antes que el límite",
+    "targetWord": "fatiga",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "límite",
+  "sentence": "La fatiga llega mucho antes que el [[límite]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the breaking point",
+   "options": [
+    "the breaking point",
+    "the meeting point",
+    "the starting line",
+    "the finish line"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-carga-sin-dos-anos",
+    "storySource": "user",
+    "sentence": "La fatiga llega mucho antes que el límite",
+    "targetWord": "límite",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "imprudente",
+  "sentence": "Fue [[imprudente]]: enfrentar ese riesgo una tarde",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "reckless",
+   "options": [
+    "reckless",
+    "generous",
+    "stubborn",
+    "impatient"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-carga-sin-dos-anos",
+    "storySource": "user",
+    "sentence": "Fue imprudente: enfrentar ese riesgo una tarde",
+    "targetWord": "imprudente",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "sólido",
+  "sentence": "Este banco de roble es tan _____ que no se mueve.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sólido",
+   "options": [
+    "sólido",
+    "estrecho",
+    "barato",
+    "nuevo"
+   ],
+   "translation": "This oak bench is so _____ that it does not move.",
+   "optionTranslations": [
+    "solid",
+    "narrow",
+    "cheap",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-carga-sin-dos-anos",
+    "storySource": "user",
+    "sentence": "Este banco de roble es tan sólido que no se mueve.",
+    "targetWord": "sólido",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "lesión",
+  "sentence": "Se torció el tobillo jugando y la _____ tardó un mes.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lesión",
+   "options": [
+    "lesión",
+    "clase",
+    "apuesta",
+    "tormenta"
+   ],
+   "translation": "He twisted his ankle playing and the _____ took a month.",
+   "optionTranslations": [
+    "injury",
+    "class",
+    "bet",
+    "storm"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-carga-sin-dos-anos",
+    "storySource": "user",
+    "sentence": "Se torció el tobillo jugando y la lesión tardó un mes.",
+    "targetWord": "lesión",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "acostumbrarse",
+  "sentence": "como si el cuerpo [[se acostumbrara]] solo",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to get used to it",
+   "options": [
+    "to get used to it",
+    "to give out on you",
+    "to warm itself up",
+    "to heal on its own"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-carga-sin-dos-anos",
+    "storySource": "user",
+    "sentence": "como si el cuerpo se acostumbrara solo",
+    "targetWord": "se acostumbrara",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apretar",
+  "sentence": "[[Apretaba]] caliente",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to press tight",
+   "options": [
+    "to press tight",
+    "to slide loose",
+    "to rub raw",
+    "to hang low"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-carga-sin-dos-anos",
+    "storySource": "user",
+    "sentence": "Apretaba caliente",
+    "targetWord": "Apretaba",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "soportar",
+  "sentence": "El armazón sólido [[soporta]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to take the weight",
+   "options": [
+    "to take the weight",
+    "to spread the load",
+    "to soften the blow",
+    "to hold the shape"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-carga-sin-dos-anos",
+    "storySource": "user",
+    "sentence": "El armazón sólido soporta",
+    "targetWord": "soporta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "enfrentar",
+  "sentence": "[[enfrentar]] ese riesgo una tarde",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to take on",
+   "options": [
+    "to take on",
+    "to walk away from",
+    "to warn about",
+    "to prepare for"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-carga-sin-dos-anos",
+    "storySource": "user",
+    "sentence": "enfrentar ese riesgo una tarde",
+    "targetWord": "enfrentar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "impacto",
+  "sentence": "El [[impacto]] no dejó evidencia",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the blow",
+   "options": [
+    "the blow",
+    "the fall",
+    "the pain",
+    "the noise"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-carga-sin-dos-anos",
+    "storySource": "user",
+    "sentence": "El impacto no dejó evidencia",
+    "targetWord": "impacto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "evidencia",
+  "sentence": "El impacto no dejó [[evidencia]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "any mark",
+   "options": [
+    "any mark",
+    "any doubt",
+    "any choice",
+    "any sound"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-carga-sin-dos-anos",
+    "storySource": "user",
+    "sentence": "El impacto no dejó evidencia",
+    "targetWord": "evidencia",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "frustración",
+  "sentence": "La [[frustración]] duró la bajada",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "frustration",
+   "options": [
+    "frustration",
+    "dizziness",
+    "relief",
+    "shame"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-carga-sin-dos-anos",
+    "storySource": "user",
+    "sentence": "La frustración duró la bajada",
+    "targetWord": "frustración",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de las que no se ven",
+  "sentence": "Fue una lesión [[de las que no se ven]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "of the invisible kind",
+   "options": [
+    "of the invisible kind",
+    "of the lasting kind",
+    "of the common kind",
+    "of the painful kind"
+   ],
+   "audioClip": {
+    "storySlug": "nadie-carga-sin-dos-anos",
+    "storySource": "user",
+    "sentence": "Fue una lesión de las que no se ven",
+    "targetWord": "de las que no se ven",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "barro,pico,ponche,vecindad",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "barro",
+     "answer": "clay",
+     "options": [
+      "clay",
+      "a point",
+      "hot fruit punch",
+      "a shared courtyard"
+     ]
+    },
+    {
+     "word": "pico",
+     "answer": "a point",
+     "options": [
+      "clay",
+      "a point",
+      "hot fruit punch",
+      "a shared courtyard"
+     ]
+    },
+    {
+     "word": "ponche",
+     "answer": "hot fruit punch",
+     "options": [
+      "clay",
+      "a point",
+      "hot fruit punch",
+      "a shared courtyard"
+     ]
+    },
+    {
+     "word": "vecindad",
+     "answer": "a shared courtyard",
+     "options": [
+      "clay",
+      "a point",
+      "hot fruit punch",
+      "a shared courtyard"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "piñata",
+  "sentence": "Una [[piñata]] entera no obedece a nada",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a paper-covered clay pot",
+   "options": [
+    "a paper-covered clay pot",
+    "a paper street lantern",
+    "a clay cooking pot",
+    "a paper party hat"
+   ],
+   "audioClip": {
+    "storySlug": "la-pinata-se-rompe-entera",
+    "storySource": "user",
+    "sentence": "Una piñata entera no obedece a nada",
+    "targetWord": "piñata",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "posada",
+  "sentence": "la responsable de que haya una cada [[posada]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "one of the December house parties",
+   "options": [
+    "one of the December house parties",
+    "one of the summer street fairs",
+    "one of the autumn night markets",
+    "one of the spring church fairs"
+   ],
+   "audioClip": {
+    "storySlug": "la-pinata-se-rompe-entera",
+    "storySource": "user",
+    "sentence": "la responsable de que haya una cada posada",
+    "targetWord": "posada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tarea",
+  "sentence": "Armar una es una [[tarea]] larga y el trabajo es frecuente",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a job",
+   "options": [
+    "a job",
+    "a favour",
+    "a habit",
+    "a promise"
+   ],
+   "audioClip": {
+    "storySlug": "la-pinata-se-rompe-entera",
+    "storySource": "user",
+    "sentence": "Armar una es una tarea larga y el trabajo es frecuente",
+    "targetWord": "tarea",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rutina",
+  "sentence": "La [[rutina]] no cambia: barro, papel, picos",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the routine",
+   "options": [
+    "the routine",
+    "the recipe",
+    "the order",
+    "the excuse"
+   ],
+   "audioClip": {
+    "storySlug": "la-pinata-se-rompe-entera",
+    "storySource": "user",
+    "sentence": "La rutina no cambia: barro, papel, picos",
+    "targetWord": "rutina",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "responsable",
+  "sentence": "Ella es la [[responsable]] de que haya una cada posada",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the one in charge",
+   "options": [
+    "the one in charge",
+    "the one who pays",
+    "the one who sings",
+    "the one who waits"
+   ],
+   "audioClip": {
+    "storySlug": "la-pinata-se-rompe-entera",
+    "storySource": "user",
+    "sentence": "Ella es la responsable de que haya una cada posada",
+    "targetWord": "responsable",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dificultad",
+  "sentence": "Ahí está la [[dificultad]], señaló la piñatera",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the hard part",
+   "options": [
+    "the hard part",
+    "the good part",
+    "the fast part",
+    "the cheap part"
+   ],
+   "audioClip": {
+    "storySlug": "la-pinata-se-rompe-entera",
+    "storySource": "user",
+    "sentence": "Ahí está la dificultad, señaló la piñatera",
+    "targetWord": "dificultad",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "solución",
+  "sentence": "El grifo goteaba y nadie encontraba la _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "solución",
+   "options": [
+    "solución",
+    "receta",
+    "factura",
+    "entrada"
+   ],
+   "translation": "The tap was dripping and nobody could find the _____.",
+   "optionTranslations": [
+    "solution",
+    "recipe",
+    "bill",
+    "ticket"
+   ],
+   "audioClip": {
+    "storySlug": "la-pinata-se-rompe-entera",
+    "storySource": "user",
+    "sentence": "El grifo goteaba y nadie encontraba la solución.",
+    "targetWord": "solución",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "capacidad",
+  "sentence": "Esta jarra pequeña no tiene _____ para tantos vasos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "capacidad",
+   "options": [
+    "capacidad",
+    "altura",
+    "tapa",
+    "asa"
+   ],
+   "translation": "This small jug has no _____ for so many glasses.",
+   "optionTranslations": [
+    "capacity",
+    "height",
+    "lid",
+    "handle"
+   ],
+   "audioClip": {
+    "storySlug": "la-pinata-se-rompe-entera",
+    "storySource": "user",
+    "sentence": "Esta jarra pequeña no tiene capacidad para tantos vasos.",
+    "targetWord": "capacidad",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "obedecer",
+  "sentence": "Una piñata entera no [[obedece]] a nada",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to obey",
+   "options": [
+    "to obey",
+    "to belong",
+    "to matter",
+    "to last"
+   ],
+   "audioClip": {
+    "storySlug": "la-pinata-se-rompe-entera",
+    "storySource": "user",
+    "sentence": "Una piñata entera no obedece a nada",
+    "targetWord": "obedece",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aguantar",
+  "sentence": "La mía es que [[aguante]] unos palos y no más",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hold out",
+   "options": [
+    "to hold out",
+    "to break open",
+    "to swing back",
+    "to fall down"
+   ],
+   "audioClip": {
+    "storySlug": "la-pinata-se-rompe-entera",
+    "storySource": "user",
+    "sentence": "La mía es que aguante unos palos y no más",
+    "targetWord": "aguante",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "principal",
+  "sentence": "Esa es la parte [[principal]] del oficio",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "main",
+   "options": [
+    "main",
+    "hidden",
+    "final",
+    "cheap"
+   ],
+   "audioClip": {
+    "storySlug": "la-pinata-se-rompe-entera",
+    "storySource": "user",
+    "sentence": "Esa es la parte principal del oficio",
+    "targetWord": "principal",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "secundario",
+  "sentence": "lo demás es [[secundario]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "of second importance",
+   "options": [
+    "of second importance",
+    "of great value",
+    "of no cost",
+    "of long use"
+   ],
+   "audioClip": {
+    "storySlug": "la-pinata-se-rompe-entera",
+    "storySource": "user",
+    "sentence": "lo demás es secundario",
+    "targetWord": "secundario",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "simple",
+  "sentence": "con una creencia [[simple]]: quien paga elige",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "plain",
+   "options": [
+    "plain",
+    "strange",
+    "recent",
+    "shared"
+   ],
+   "audioClip": {
+    "storySlug": "la-pinata-se-rompe-entera",
+    "storySource": "user",
+    "sentence": "con una creencia simple: quien paga elige",
+    "targetWord": "simple",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "frecuente",
+  "sentence": "el trabajo es [[frecuente]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "steady",
+   "options": [
+    "steady",
+    "seasonal",
+    "unpaid",
+    "light"
+   ],
+   "audioClip": {
+    "storySlug": "la-pinata-se-rompe-entera",
+    "storySource": "user",
+    "sentence": "el trabajo es frecuente",
+    "targetWord": "frecuente",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "elegir",
+  "sentence": "quien paga [[elige]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to choose",
+   "options": [
+    "to choose",
+    "to decide",
+    "to argue",
+    "to wait"
+   ],
+   "audioClip": {
+    "storySlug": "la-pinata-se-rompe-entera",
+    "storySource": "user",
+    "sentence": "quien paga elige",
+    "targetWord": "elige",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "por adelantado",
+  "sentence": "La compradora pagó todas las piñatas [[por adelantado]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in advance",
+   "options": [
+    "in advance",
+    "in cash",
+    "in halves",
+    "in secret"
+   ],
+   "audioClip": {
+    "storySlug": "la-pinata-se-rompe-entera",
+    "storySource": "user",
+    "sentence": "La compradora pagó todas las piñatas por adelantado",
+    "targetWord": "por adelantado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

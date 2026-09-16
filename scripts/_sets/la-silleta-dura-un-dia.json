@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "clavel,tallo,semilla,esterilla",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "clavel",
+     "answer": "a carnation",
+     "options": [
+      "a carnation",
+      "a stem",
+      "a seed",
+      "a straw mat"
+     ]
+    },
+    {
+     "word": "tallo",
+     "answer": "a stem",
+     "options": [
+      "a carnation",
+      "a stem",
+      "a seed",
+      "a straw mat"
+     ]
+    },
+    {
+     "word": "semilla",
+     "answer": "a seed",
+     "options": [
+      "a carnation",
+      "a stem",
+      "a seed",
+      "a straw mat"
+     ]
+    },
+    {
+     "word": "esterilla",
+     "answer": "a straw mat",
+     "options": [
+      "a carnation",
+      "a stem",
+      "a seed",
+      "a straw mat"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "silleta",
+  "sentence": "La silletera armaba la [[silleta]] sobre una esterilla",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a flower frame worn on the back",
+   "options": [
+    "a flower frame worn on the back",
+    "a flower stand set on a table",
+    "a flower basket carried by hand",
+    "a flower crown worn on the head"
+   ],
+   "audioClip": {
+    "storySlug": "la-silleta-dura-un-dia",
+    "storySource": "user",
+    "sentence": "La silletera armaba la silleta sobre una esterilla",
+    "targetWord": "silleta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ladera",
+  "sentence": "Una [[ladera]] olía a clavel cortado",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a hillside",
+   "options": [
+    "a hillside",
+    "a courtyard",
+    "a riverbank",
+    "a rooftop"
+   ],
+   "audioClip": {
+    "storySlug": "la-silleta-dura-un-dia",
+    "storySource": "user",
+    "sentence": "Una ladera olía a clavel cortado",
+    "targetWord": "ladera",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "invernadero",
+  "sentence": "En el [[invernadero]] de la finca un experto lo nota",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a greenhouse",
+   "options": [
+    "a greenhouse",
+    "a storeroom",
+    "a workshop",
+    "a market hall"
+   ],
+   "audioClip": {
+    "storySlug": "la-silleta-dura-un-dia",
+    "storySource": "user",
+    "sentence": "En el invernadero de la finca un experto lo nota",
+    "targetWord": "invernadero",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "finca",
+  "sentence": "En el invernadero de la [[finca]] un experto lo nota",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a country farm",
+   "options": [
+    "a country farm",
+    "a town office",
+    "a flower shop",
+    "a packing plant"
+   ],
+   "audioClip": {
+    "storySlug": "la-silleta-dura-un-dia",
+    "storySource": "user",
+    "sentence": "En el invernadero de la finca un experto lo nota",
+    "targetWord": "finca",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "armazón",
+  "sentence": "Debajo había un [[armazón]] de madera con patas cortas",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a bare frame",
+   "options": [
+    "a bare frame",
+    "a wide tray",
+    "a low bench",
+    "a deep box"
+   ],
+   "audioClip": {
+    "storySlug": "la-silleta-dura-un-dia",
+    "storySource": "user",
+    "sentence": "Debajo había un armazón de madera con patas cortas",
+    "targetWord": "armazón",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "entorno",
+  "sentence": "Ese es el [[entorno]] del oficio",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the surroundings",
+   "options": [
+    "the surroundings",
+    "the future",
+    "the payment",
+    "the schedule"
+   ],
+   "audioClip": {
+    "storySlug": "la-silleta-dura-un-dia",
+    "storySource": "user",
+    "sentence": "Ese es el entorno del oficio",
+    "targetWord": "entorno",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "frágil",
+  "sentence": "Envuelve bien la copa: un golpe y se rompe, es _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "frágil",
+   "options": [
+    "frágil",
+    "caro",
+    "oscuro",
+    "antiguo"
+   ],
+   "translation": "Wrap the glass well: one knock and it breaks, it is _____.",
+   "optionTranslations": [
+    "fragile",
+    "expensive",
+    "dark",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "la-silleta-dura-un-dia",
+    "storySource": "user",
+    "sentence": "Envuelve bien la copa: un golpe y se rompe, es frágil.",
+    "targetWord": "frágil",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "ajena",
+  "sentence": "No toques esa bicicleta, que es _____ y la van a buscar.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ajena",
+   "options": [
+    "ajena",
+    "vieja",
+    "lenta",
+    "cara"
+   ],
+   "translation": "Do not touch that bicycle, it is _____ and they will come for it.",
+   "optionTranslations": [
+    "someone else's",
+    "old",
+    "slow",
+    "expensive"
+   ],
+   "audioClip": {
+    "storySlug": "la-silleta-dura-un-dia",
+    "storySource": "user",
+    "sentence": "No toques esa bicicleta, que es ajena y la van a buscar.",
+    "targetWord": "ajena",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "variedad",
+  "sentence": "Muchas [[variedades]], y el tallo manda",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a kind",
+   "options": [
+    "a kind",
+    "a colour",
+    "a bunch",
+    "a field"
+   ],
+   "audioClip": {
+    "storySlug": "la-silleta-dura-un-dia",
+    "storySource": "user",
+    "sentence": "Muchas variedades, y el tallo manda",
+    "targetWord": "variedades",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "preparación",
+  "sentence": "La [[preparación]] empieza en la semilla",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the getting ready",
+   "options": [
+    "the getting ready",
+    "the planting out",
+    "the first sale",
+    "the final count"
+   ],
+   "audioClip": {
+    "storySlug": "la-silleta-dura-un-dia",
+    "storySource": "user",
+    "sentence": "La preparación empieza en la semilla",
+    "targetWord": "preparación",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "desventaja",
+  "sentence": "Él calculó la [[desventaja]] de esa oportunidad",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the downside",
+   "options": [
+    "the downside",
+    "the true cost",
+    "the long wait",
+    "the fair share"
+   ],
+   "audioClip": {
+    "storySlug": "la-silleta-dura-un-dia",
+    "storySource": "user",
+    "sentence": "Él calculó la desventaja de esa oportunidad",
+    "targetWord": "desventaja",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "perjuicio",
+  "sentence": "sin [[perjuicio]] para nadie",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "harm",
+   "options": [
+    "harm",
+    "payment",
+    "delay",
+    "notice"
+   ],
+   "audioClip": {
+    "storySlug": "la-silleta-dura-un-dia",
+    "storySource": "user",
+    "sentence": "sin perjuicio para nadie",
+    "targetWord": "perjuicio",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pata",
+  "sentence": "un armazón de madera con [[patas]] cortas",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a leg",
+   "options": [
+    "a leg",
+    "a strap",
+    "a nail",
+    "a board"
+   ],
+   "audioClip": {
+    "storySlug": "la-silleta-dura-un-dia",
+    "storySource": "user",
+    "sentence": "un armazón de madera con patas cortas",
+    "targetWord": "patas",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "montaje",
+  "sentence": "Le dio la vuelta al [[montaje]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the assembled piece",
+   "options": [
+    "the assembled piece",
+    "the folded cloth",
+    "the finished list",
+    "the open door"
+   ],
+   "audioClip": {
+    "storySlug": "la-silleta-dura-un-dia",
+    "storySource": "user",
+    "sentence": "Le dio la vuelta al montaje",
+    "targetWord": "montaje",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "agacharse",
+  "sentence": "Ella [[se agachó]] a mirar el armazón",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to crouch down",
+   "options": [
+    "to crouch down",
+    "to reach up",
+    "to step back",
+    "to lean over"
+   ],
+   "audioClip": {
+    "storySlug": "la-silleta-dura-un-dia",
+    "storySource": "user",
+    "sentence": "Ella se agachó a mirar el armazón",
+    "targetWord": "se agachó",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dar la vuelta",
+  "sentence": "[[Le dio la vuelta]] al montaje",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to turn it over",
+   "options": [
+    "to turn it over",
+    "to hand it back",
+    "to walk around it",
+    "to take it apart"
+   ],
+   "audioClip": {
+    "storySlug": "la-silleta-dura-un-dia",
+    "storySource": "user",
+    "sentence": "Le dio la vuelta al montaje",
+    "targetWord": "Le dio la vuelta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

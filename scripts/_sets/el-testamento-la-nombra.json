@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "luto,corbata,silla,cabeza",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "luto",
+     "answer": "mourning black",
+     "options": [
+      "mourning black",
+      "a tie",
+      "a chair",
+      "a head"
+     ]
+    },
+    {
+     "word": "corbata",
+     "answer": "a tie",
+     "options": [
+      "mourning black",
+      "a tie",
+      "a chair",
+      "a head"
+     ]
+    },
+    {
+     "word": "silla",
+     "answer": "a chair",
+     "options": [
+      "mourning black",
+      "a tie",
+      "a chair",
+      "a head"
+     ]
+    },
+    {
+     "word": "cabeza",
+     "answer": "a head",
+     "options": [
+      "mourning black",
+      "a tie",
+      "a chair",
+      "a head"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "testamento",
+  "sentence": "el [[testamento]] es el balance del año y se lee siempre así",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a will read aloud",
+   "options": [
+    "a will read aloud",
+    "a list of debts",
+    "a song of farewell",
+    "a count of guests"
+   ],
+   "audioClip": {
+    "storySlug": "el-testamento-la-nombra",
+    "storySource": "user",
+    "sentence": "el testamento es el balance del año y se lee siempre así",
+    "targetWord": "testamento",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "difunto",
+  "sentence": "Yo, el Año Viejo, [[difunto]] de este barrio",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the dead one",
+   "options": [
+    "the dead one",
+    "the oldest one",
+    "the quiet one",
+    "the last one"
+   ],
+   "audioClip": {
+    "storySlug": "el-testamento-la-nombra",
+    "storySource": "user",
+    "sentence": "Yo, el Año Viejo, difunto de este barrio",
+    "targetWord": "difunto",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "viuda",
+  "sentence": "Las [[viudas]] de luto se rieron con más ruido que llanto",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a widow",
+   "options": [
+    "a widow",
+    "a cousin",
+    "a neighbour",
+    "a dancer"
+   ],
+   "audioClip": {
+    "storySlug": "el-testamento-la-nombra",
+    "storySource": "user",
+    "sentence": "Las viudas de luto se rieron con más ruido que llanto",
+    "targetWord": "viudas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cohete",
+  "sentence": "Hubo aplausos y un [[cohete]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a firework",
+   "options": [
+    "a firework",
+    "a whistle",
+    "a drum",
+    "a bell"
+   ],
+   "audioClip": {
+    "storySlug": "el-testamento-la-nombra",
+    "storySource": "user",
+    "sentence": "Hubo aplausos y un cohete",
+    "targetWord": "cohete",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "envidioso",
+  "sentence": "Alguien lo llamó [[envidioso]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "envious",
+   "options": [
+    "envious",
+    "impatient",
+    "forgetful",
+    "careless"
+   ],
+   "audioClip": {
+    "storySlug": "el-testamento-la-nombra",
+    "storySource": "user",
+    "sentence": "Alguien lo llamó envidioso",
+    "targetWord": "envidioso",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "íntegro",
+  "sentence": "otro lo llamó [[íntegro]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "upright",
+   "options": [
+    "upright",
+    "talkative",
+    "generous",
+    "stubborn"
+   ],
+   "audioClip": {
+    "storySlug": "el-testamento-la-nombra",
+    "storySource": "user",
+    "sentence": "otro lo llamó íntegro",
+    "targetWord": "íntegro",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "llanto",
+  "sentence": "Oyó un _____ largo y supo que ella lloraba.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "llanto",
+   "options": [
+    "llanto",
+    "silencio",
+    "golpe",
+    "paso"
+   ],
+   "translation": "She heard a long _____ and knew that she was weeping.",
+   "optionTranslations": [
+    "crying",
+    "silence",
+    "knock",
+    "footstep"
+   ],
+   "audioClip": {
+    "storySlug": "el-testamento-la-nombra",
+    "storySource": "user",
+    "sentence": "Oyó un llanto largo y supo que ella lloraba.",
+    "targetWord": "llanto",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "duda",
+  "sentence": "No firmó el contrato porque le quedaba una _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "duda",
+   "options": [
+    "duda",
+    "copia",
+    "llave",
+    "factura"
+   ],
+   "translation": "She did not sign the contract because she still had a _____.",
+   "optionTranslations": [
+    "doubt",
+    "copy",
+    "key",
+    "bill"
+   ],
+   "audioClip": {
+    "storySlug": "el-testamento-la-nombra",
+    "storySource": "user",
+    "sentence": "No firmó el contrato porque le quedaba una duda.",
+    "targetWord": "duda",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "balance",
+  "sentence": "el testamento es el [[balance]] del año",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a reckoning",
+   "options": [
+    "a reckoning",
+    "a warning",
+    "a promise",
+    "a rumour"
+   ],
+   "audioClip": {
+    "storySlug": "el-testamento-la-nombra",
+    "storySource": "user",
+    "sentence": "el testamento es el balance del año",
+    "targetWord": "balance",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "celoso",
+  "sentence": "un [[celoso]] lo habría dicho más feo",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a jealous man",
+   "options": [
+    "a jealous man",
+    "a shy man",
+    "a rich man",
+    "a tired man"
+   ],
+   "audioClip": {
+    "storySlug": "el-testamento-la-nombra",
+    "storySource": "user",
+    "sentence": "un celoso lo habría dicho más feo",
+    "targetWord": "celoso",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lección",
+  "sentence": "le pareció obvia la [[lección]] y sensata la forma",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the lesson",
+   "options": [
+    "the lesson",
+    "the joke",
+    "the excuse",
+    "the answer"
+   ],
+   "audioClip": {
+    "storySlug": "el-testamento-la-nombra",
+    "storySource": "user",
+    "sentence": "le pareció obvia la lección y sensata la forma",
+    "targetWord": "lección",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "forma",
+  "sentence": "le pareció obvia la lección y sensata la [[forma]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the way it was done",
+   "options": [
+    "the way it was done",
+    "the time it took",
+    "the place it happened",
+    "the price it cost"
+   ],
+   "audioClip": {
+    "storySlug": "el-testamento-la-nombra",
+    "storySource": "user",
+    "sentence": "le pareció obvia la lección y sensata la forma",
+    "targetWord": "forma",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "legar",
+  "sentence": "Al vecino de enfrente le [[lego]] mi cabeza",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to leave in a will",
+   "options": [
+    "to leave in a will",
+    "to sell in a hurry",
+    "to lend for a night",
+    "to hide from view"
+   ],
+   "audioClip": {
+    "storySlug": "el-testamento-la-nombra",
+    "storySource": "user",
+    "sentence": "Al vecino de enfrente le lego mi cabeza",
+    "targetWord": "lego",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "reírse",
+  "sentence": "Las viudas de luto [[se rieron]] con más ruido que llanto",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to laugh",
+   "options": [
+    "to laugh",
+    "to cry",
+    "to shout",
+    "to whisper"
+   ],
+   "audioClip": {
+    "storySlug": "el-testamento-la-nombra",
+    "storySource": "user",
+    "sentence": "Las viudas de luto se rieron con más ruido que llanto",
+    "targetWord": "se rieron",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "seguir",
+  "sentence": "que compró mi cuerpo y no mi herencia, [[siguió]] el vecino",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to carry on",
+   "options": [
+    "to carry on",
+    "to stop short",
+    "to look up",
+    "to step down"
+   ],
+   "audioClip": {
+    "storySlug": "el-testamento-la-nombra",
+    "storySource": "user",
+    "sentence": "que compró mi cuerpo y no mi herencia, siguió el vecino",
+    "targetWord": "siguió",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "uno por uno",
+  "sentence": "el balance del año y se lee siempre así, [[uno por uno]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "one by one",
+   "options": [
+    "one by one",
+    "all at once",
+    "now and then",
+    "over and over"
+   ],
+   "audioClip": {
+    "storySlug": "el-testamento-la-nombra",
+    "storySource": "user",
+    "sentence": "el balance del año y se lee siempre así, uno por uno",
+    "targetWord": "uno por uno",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

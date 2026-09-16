@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "muñeca,vara,ruido,corte",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "muñeca",
+     "answer": "a wrist",
+     "options": [
+      "a wrist",
+      "a thin cane",
+      "a noise",
+      "a cut"
+     ]
+    },
+    {
+     "word": "vara",
+     "answer": "a thin cane",
+     "options": [
+      "a wrist",
+      "a thin cane",
+      "a noise",
+      "a cut"
+     ]
+    },
+    {
+     "word": "ruido",
+     "answer": "a noise",
+     "options": [
+      "a wrist",
+      "a thin cane",
+      "a noise",
+      "a cut"
+     ]
+    },
+    {
+     "word": "corte",
+     "answer": "a cut",
+     "options": [
+      "a wrist",
+      "a thin cane",
+      "a noise",
+      "a cut"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "encumbrar",
+  "sentence": "le enseñó a [[encumbrar]] con la muñeca",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to fly a kite high",
+   "options": [
+    "to fly a kite high",
+    "to wind a line in",
+    "to mend a torn wing",
+    "to tie a knot fast"
+   ],
+   "audioClip": {
+    "storySlug": "el-hilo-curado-corta-todo",
+    "storySource": "user",
+    "sentence": "le enseñó a encumbrar con la muñeca",
+    "targetWord": "encumbrar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "curado",
+  "sentence": "Ese de abajo va con [[curado]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "coated with ground glass",
+   "options": [
+    "coated with ground glass",
+    "made of thicker paper",
+    "doubled over twice",
+    "dyed a darker colour"
+   ],
+   "audioClip": {
+    "storySlug": "el-hilo-curado-corta-todo",
+    "storySource": "user",
+    "sentence": "Ese de abajo va con curado",
+    "targetWord": "curado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "racha",
+  "sentence": "Un volantín bien hecho soporta la [[racha]] del cerro",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a gust of wind",
+   "options": [
+    "a gust of wind",
+    "a heavy shower",
+    "a long climb",
+    "a hard knock"
+   ],
+   "audioClip": {
+    "storySlug": "el-hilo-curado-corta-todo",
+    "storySource": "user",
+    "sentence": "Un volantín bien hecho soporta la racha del cerro",
+    "targetWord": "racha",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "molido",
+  "sentence": "Vidrio [[molido]] pegado a la cuerda",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ground into powder",
+   "options": [
+    "ground into powder",
+    "melted by heat",
+    "washed in water",
+    "wrapped in cloth"
+   ],
+   "audioClip": {
+    "storySlug": "el-hilo-curado-corta-todo",
+    "storySource": "user",
+    "sentence": "Vidrio molido pegado a la cuerda",
+    "targetWord": "molido",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "delito",
+  "sentence": "Es [[delito]] y la gente igual lo usa",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a crime",
+   "options": [
+    "a crime",
+    "a habit",
+    "a bother",
+    "a shame"
+   ],
+   "audioClip": {
+    "storySlug": "el-hilo-curado-corta-todo",
+    "storySource": "user",
+    "sentence": "Es delito y la gente igual lo usa",
+    "targetWord": "delito",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prensa",
+  "sentence": "Según la [[prensa]], hubo muchos heridos graves",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the press",
+   "options": [
+    "the press",
+    "the hospital",
+    "the police",
+    "the council"
+   ],
+   "audioClip": {
+    "storySlug": "el-hilo-curado-corta-todo",
+    "storySource": "user",
+    "sentence": "Según la prensa, hubo muchos heridos graves",
+    "targetWord": "prensa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "heridos",
+  "sentence": "Chocaron dos coches y llevaron a los _____ al hospital.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "heridos",
+   "options": [
+    "heridos",
+    "testigos",
+    "bomberos",
+    "vecinos"
+   ],
+   "translation": "Two cars crashed and they took the _____ to hospital.",
+   "optionTranslations": [
+    "injured people",
+    "witnesses",
+    "firefighters",
+    "neighbours"
+   ],
+   "audioClip": {
+    "storySlug": "el-hilo-curado-corta-todo",
+    "storySource": "user",
+    "sentence": "Chocaron dos coches y llevaron a los heridos al hospital.",
+    "targetWord": "heridos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "graves",
+  "sentence": "Los enfermos leves salieron pronto; los _____ se quedaron.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "graves",
+   "options": [
+    "graves",
+    "antiguos",
+    "alegres",
+    "ricos"
+   ],
+   "translation": "The mild cases left soon; the _____ ones stayed.",
+   "optionTranslations": [
+    "serious",
+    "old",
+    "cheerful",
+    "rich"
+   ],
+   "audioClip": {
+    "storySlug": "el-hilo-curado-corta-todo",
+    "storySource": "user",
+    "sentence": "Los enfermos leves salieron pronto; los graves se quedaron.",
+    "targetWord": "graves",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "indignación",
+  "sentence": "La [[indignación]] le duró hasta que él contó los heridos",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "outrage",
+   "options": [
+    "outrage",
+    "surprise",
+    "boredom",
+    "relief"
+   ],
+   "audioClip": {
+    "storySlug": "el-hilo-curado-corta-todo",
+    "storySource": "user",
+    "sentence": "La indignación le duró hasta que él contó los heridos",
+    "targetWord": "indignación",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "luchar",
+  "sentence": "Nadie [[lucha]] contra eso desde arriba",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to fight",
+   "options": [
+    "to fight",
+    "to argue",
+    "to complain",
+    "to escape"
+   ],
+   "audioClip": {
+    "storySlug": "el-hilo-curado-corta-todo",
+    "storySource": "user",
+    "sentence": "Nadie lucha contra eso desde arriba",
+    "targetWord": "lucha",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "garantizar",
+  "sentence": "el viento no [[garantiza]] nada",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to guarantee",
+   "options": [
+    "to guarantee",
+    "to explain",
+    "to measure",
+    "to improve"
+   ],
+   "audioClip": {
+    "storySlug": "el-hilo-curado-corta-todo",
+    "storySource": "user",
+    "sentence": "el viento no garantiza nada",
+    "targetWord": "garantiza",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "género",
+  "sentence": "Fue imprudente subir con todo el [[género]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "goods to sell",
+   "options": [
+    "goods to sell",
+    "tools to use",
+    "food to eat",
+    "clothes to wear"
+   ],
+   "audioClip": {
+    "storySlug": "el-hilo-curado-corta-todo",
+    "storySource": "user",
+    "sentence": "Fue imprudente subir con todo el género",
+    "targetWord": "género",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ofendido",
+  "sentence": "Ella quedó [[ofendida]] un rato",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "offended",
+   "options": [
+    "offended",
+    "confused",
+    "exhausted",
+    "amused"
+   ],
+   "audioClip": {
+    "storySlug": "el-hilo-curado-corta-todo",
+    "storySource": "user",
+    "sentence": "Ella quedó ofendida un rato",
+    "targetWord": "ofendida",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vencer",
+  "sentence": "No se puede [[vencer]] al que corta",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to beat",
+   "options": [
+    "to beat",
+    "to reach",
+    "to name",
+    "to follow"
+   ],
+   "audioClip": {
+    "storySlug": "el-hilo-curado-corta-todo",
+    "storySource": "user",
+    "sentence": "No se puede vencer al que corta",
+    "targetWord": "vencer",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "simpatía",
+  "sentence": "después sintió hasta [[simpatía]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a liking",
+   "options": [
+    "a liking",
+    "a duty",
+    "a debt",
+    "a fright"
+   ],
+   "audioClip": {
+    "storySlug": "el-hilo-curado-corta-todo",
+    "storySource": "user",
+    "sentence": "después sintió hasta simpatía",
+    "targetWord": "simpatía",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "según la prensa",
+  "sentence": "[[Según la prensa]], hubo muchos heridos graves",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "as the papers reported",
+   "options": [
+    "as the papers reported",
+    "as the doctor counted",
+    "as the judge decided",
+    "as the crowd remembered"
+   ],
+   "audioClip": {
+    "storySlug": "el-hilo-curado-corta-todo",
+    "storySource": "user",
+    "sentence": "Según la prensa, hubo muchos heridos graves",
+    "targetWord": "Según la prensa",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

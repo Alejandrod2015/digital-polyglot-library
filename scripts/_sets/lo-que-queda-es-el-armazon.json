@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "silletero,premio,agosto,mayor",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "silletero",
+     "answer": "a frame carrier",
+     "options": [
+      "a frame carrier",
+      "a prize",
+      "August",
+      "an elder"
+     ]
+    },
+    {
+     "word": "premio",
+     "answer": "a prize",
+     "options": [
+      "a frame carrier",
+      "a prize",
+      "August",
+      "an elder"
+     ]
+    },
+    {
+     "word": "agosto",
+     "answer": "August",
+     "options": [
+      "a frame carrier",
+      "a prize",
+      "August",
+      "an elder"
+     ]
+    },
+    {
+     "word": "mayor",
+     "answer": "an elder",
+     "options": [
+      "a frame carrier",
+      "a prize",
+      "August",
+      "an elder"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "heredar",
+  "sentence": "Ser miembro [[se hereda]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be passed down in the family",
+   "options": [
+    "to be passed down in the family",
+    "to be paid for once a year",
+    "to be voted on by the group",
+    "to be earned by long service"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-queda-es-el-armazon",
+    "storySource": "user",
+    "sentence": "Ser miembro se hereda",
+    "targetWord": "se hereda",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "marchito",
+  "sentence": "las flores acabaron [[marchitas]] en la era",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "withered",
+   "options": [
+    "withered",
+    "scattered",
+    "gathered",
+    "replanted"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-queda-es-el-armazon",
+    "storySource": "user",
+    "sentence": "las flores acabaron marchitas en la era",
+    "targetWord": "marchitas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "persistir",
+  "sentence": "[[Persistir]] tiene un beneficio que no se cobra",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to keep at it",
+   "options": [
+    "to keep at it",
+    "to start over",
+    "to speak up",
+    "to give way"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-queda-es-el-armazon",
+    "storySource": "user",
+    "sentence": "Persistir tiene un beneficio que no se cobra",
+    "targetWord": "Persistir",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "beneficio",
+  "sentence": "Persistir tiene un [[beneficio]] que no se cobra",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a benefit",
+   "options": [
+    "a benefit",
+    "a warning",
+    "a duty",
+    "a cost"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-queda-es-el-armazon",
+    "storySource": "user",
+    "sentence": "Persistir tiene un beneficio que no se cobra",
+    "targetWord": "beneficio",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "influencia",
+  "sentence": "Su [[influencia]] no venía del premio",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "her standing",
+   "options": [
+    "her standing",
+    "her patience",
+    "her income",
+    "her method"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-queda-es-el-armazon",
+    "storySource": "user",
+    "sentence": "Su influencia no venía del premio",
+    "targetWord": "influencia",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "compasión",
+  "sentence": "Una cosa más, agregó, sin [[compasión]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pity",
+   "options": [
+    "pity",
+    "warning",
+    "delay",
+    "doubt"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-queda-es-el-armazon",
+    "storySource": "user",
+    "sentence": "Una cosa más, agregó, sin compasión",
+    "targetWord": "compasión",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "resentida",
+  "sentence": "La dejaron fuera del viaje y quedó _____ con todos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "resentida",
+   "options": [
+    "resentida",
+    "cansada",
+    "perdida",
+    "enferma"
+   ],
+   "translation": "They left her out of the trip and she was _____ with everyone.",
+   "optionTranslations": [
+    "resentful",
+    "tired",
+    "lost",
+    "ill"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-queda-es-el-armazon",
+    "storySource": "user",
+    "sentence": "La dejaron fuera del viaje y quedó resentida con todos.",
+    "targetWord": "resentida",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "resistente",
+  "sentence": "Compra una mochila _____ para cargar libros pesados cada día.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "resistente",
+   "options": [
+    "resistente",
+    "pequeña",
+    "barata",
+    "clara"
+   ],
+   "translation": "Buy a _____ backpack to carry heavy books every day.",
+   "optionTranslations": [
+    "hard-wearing",
+    "small",
+    "cheap",
+    "light-coloured"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-queda-es-el-armazon",
+    "storySource": "user",
+    "sentence": "Compra una mochila resistente para cargar libros pesados cada día.",
+    "targetWord": "resistente",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "señalar",
+  "sentence": "dijo, y [[señaló]] el armazón viejo de la pared",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to point at",
+   "options": [
+    "to point at",
+    "to reach for",
+    "to lift down",
+    "to lean on"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-queda-es-el-armazon",
+    "storySource": "user",
+    "sentence": "dijo, y señaló el armazón viejo de la pared",
+    "targetWord": "señaló",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "permitir",
+  "sentence": "Eso [[permite]] empezar",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to allow",
+   "options": [
+    "to allow",
+    "to require",
+    "to prevent",
+    "to explain"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-queda-es-el-armazon",
+    "storySource": "user",
+    "sentence": "Eso permite empezar",
+    "targetWord": "permite",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lavar",
+  "sentence": "La madera [[se lava]] y se guarda",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to wash",
+   "options": [
+    "to wash",
+    "to sand",
+    "to paint",
+    "to burn"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-queda-es-el-armazon",
+    "storySource": "user",
+    "sentence": "La madera se lava y se guarda",
+    "targetWord": "se lava",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "guardar",
+  "sentence": "La madera se lava y [[se guarda]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to put away",
+   "options": [
+    "to put away",
+    "to give out",
+    "to sell on",
+    "to break up"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-queda-es-el-armazon",
+    "storySource": "user",
+    "sentence": "La madera se lava y se guarda",
+    "targetWord": "se guarda",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tirar",
+  "sentence": "Mañana [[se tira]] todo, no queda ni una",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to throw away",
+   "options": [
+    "to throw away",
+    "to hand over",
+    "to set aside",
+    "to count up"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-queda-es-el-armazon",
+    "storySource": "user",
+    "sentence": "Mañana se tira todo, no queda ni una",
+    "targetWord": "se tira",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ilusionado",
+  "sentence": "casi [[ilusionada]], y era lo único práctico",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quietly hopeful",
+   "options": [
+    "quietly hopeful",
+    "openly proud",
+    "deeply tired",
+    "rather cross"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-queda-es-el-armazon",
+    "storySource": "user",
+    "sentence": "casi ilusionada, y era lo único práctico",
+    "targetWord": "ilusionada",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "parar",
+  "sentence": "el sacrificio no era el peso, era no [[parar]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to stop",
+   "options": [
+    "to stop",
+    "to bend",
+    "to rush",
+    "to look"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-queda-es-el-armazon",
+    "storySource": "user",
+    "sentence": "el sacrificio no era el peso, era no parar",
+    "targetWord": "parar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cuarenta desfiles encima",
+  "sentence": "Tiene [[cuarenta desfiles encima]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "forty parades behind it",
+   "options": [
+    "forty parades behind it",
+    "forty flowers along it",
+    "forty owners before it",
+    "forty kilos upon it"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-queda-es-el-armazon",
+    "storySource": "user",
+    "sentence": "Tiene cuarenta desfiles encima",
+    "targetWord": "cuarenta desfiles encima",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

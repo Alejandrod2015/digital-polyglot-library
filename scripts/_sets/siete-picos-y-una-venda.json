@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "venda,servilleta,portón,cacahuate",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "venda",
+     "answer": "a blindfold",
+     "options": [
+      "a blindfold",
+      "a napkin",
+      "a big gate",
+      "a peanut"
+     ]
+    },
+    {
+     "word": "servilleta",
+     "answer": "a napkin",
+     "options": [
+      "a blindfold",
+      "a napkin",
+      "a big gate",
+      "a peanut"
+     ]
+    },
+    {
+     "word": "portón",
+     "answer": "a big gate",
+     "options": [
+      "a blindfold",
+      "a napkin",
+      "a big gate",
+      "a peanut"
+     ]
+    },
+    {
+     "word": "cacahuate",
+     "answer": "a peanut",
+     "options": [
+      "a blindfold",
+      "a napkin",
+      "a big gate",
+      "a peanut"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "colación",
+  "sentence": "el barro cedió: [[colación]], caña y cacahuates",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hard sugar sweets",
+   "options": [
+    "hard sugar sweets",
+    "small paper flags",
+    "thin wax candles",
+    "dried orange peel"
+   ],
+   "audioClip": {
+    "storySlug": "siete-picos-y-una-venda",
+    "storySource": "user",
+    "sentence": "el barro cedió: colación, caña y cacahuates",
+    "targetWord": "colación",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caña",
+  "sentence": "colación, [[caña]] y cacahuates",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sugar cane",
+   "options": [
+    "sugar cane",
+    "dry reeds",
+    "fishing rods",
+    "thin straws"
+   ],
+   "audioClip": {
+    "storySlug": "siete-picos-y-una-venda",
+    "storySource": "user",
+    "sentence": "colación, caña y cacahuates",
+    "targetWord": "caña",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "letanía",
+  "sentence": "apuntó la [[letanía]] de afuera en una servilleta",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the call-and-response song",
+   "options": [
+    "the call-and-response song",
+    "the list of guests",
+    "the note of thanks",
+    "the price of entry"
+   ],
+   "audioClip": {
+    "storySlug": "siete-picos-y-una-venda",
+    "storySource": "user",
+    "sentence": "apuntó la letanía de afuera en una servilleta",
+    "targetWord": "letanía",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ceder",
+  "sentence": "con esa ternura suya de no [[ceder]] nunca",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to give in",
+   "options": [
+    "to give in",
+    "to speak up",
+    "to stay on",
+    "to move out"
+   ],
+   "audioClip": {
+    "storySlug": "siete-picos-y-una-venda",
+    "storySource": "user",
+    "sentence": "con esa ternura suya de no ceder nunca",
+    "targetWord": "ceder",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fallar",
+  "sentence": "[[Falló]] y el barro no cedió",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to miss",
+   "options": [
+    "to miss",
+    "to fall",
+    "to stop",
+    "to shout"
+   ],
+   "audioClip": {
+    "storySlug": "siete-picos-y-una-venda",
+    "storySource": "user",
+    "sentence": "Falló y el barro no cedió",
+    "targetWord": "Falló",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "consideración",
+  "sentence": "le dieron el palo, sin ninguna [[consideración]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "going easy on her",
+   "options": [
+    "going easy on her",
+    "looking at her",
+    "waiting for her",
+    "talking to her"
+   ],
+   "audioClip": {
+    "storySlug": "siete-picos-y-una-venda",
+    "storySource": "user",
+    "sentence": "le dieron el palo, sin ninguna consideración",
+    "targetWord": "consideración",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "girar",
+  "sentence": "Le tapamos los ojos y la vamos a _____ en el sitio.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "girar",
+   "options": [
+    "girar",
+    "peinar",
+    "lavar",
+    "vestir"
+   ],
+   "translation": "We cover her eyes and we are going to _____ her on the spot.",
+   "optionTranslations": [
+    "spin round",
+    "comb",
+    "wash",
+    "dress"
+   ],
+   "audioClip": {
+    "storySlug": "siete-picos-y-una-venda",
+    "storySource": "user",
+    "sentence": "Le tapamos los ojos y la vamos a girar en el sitio.",
+    "targetWord": "girar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "caliente",
+  "sentence": "Salió del horno y quemaba al tocarlo, todavía _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "caliente",
+   "options": [
+    "caliente",
+    "crudo",
+    "duro",
+    "viejo"
+   ],
+   "translation": "It came out of the oven and burned to the touch, still _____.",
+   "optionTranslations": [
+    "hot",
+    "raw",
+    "hard",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "siete-picos-y-una-venda",
+    "storySource": "user",
+    "sentence": "Salió del horno y quemaba al tocarlo, todavía caliente.",
+    "targetWord": "caliente",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "planificar",
+  "sentence": "[[Planificar]] esto no sirve",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to plan",
+   "options": [
+    "to plan",
+    "to repeat",
+    "to explain",
+    "to pay for"
+   ],
+   "audioClip": {
+    "storySlug": "siete-picos-y-una-venda",
+    "storySource": "user",
+    "sentence": "Planificar esto no sirve",
+    "targetWord": "Planificar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "detallar",
+  "sentence": "No quiso [[detallar]] más",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go into detail",
+   "options": [
+    "to go into detail",
+    "to keep talking",
+    "to start over",
+    "to write down"
+   ],
+   "audioClip": {
+    "storySlug": "siete-picos-y-una-venda",
+    "storySource": "user",
+    "sentence": "No quiso detallar más",
+    "targetWord": "detallar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "creativo",
+  "sentence": "agregó, [[creativa]] hasta en eso",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "resourceful",
+   "options": [
+    "resourceful",
+    "impatient",
+    "careless",
+    "formal"
+   ],
+   "audioClip": {
+    "storySlug": "siete-picos-y-una-venda",
+    "storySource": "user",
+    "sentence": "agregó, creativa hasta en eso",
+    "targetWord": "creativa",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "habitual",
+  "sentence": "y debajo medio patio, lo [[habitual]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the usual thing",
+   "options": [
+    "the usual thing",
+    "the best thing",
+    "the last thing",
+    "the odd thing"
+   ],
+   "audioClip": {
+    "storySlug": "siete-picos-y-una-venda",
+    "storySource": "user",
+    "sentence": "y debajo medio patio, lo habitual",
+    "targetWord": "habitual",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "clásico",
+  "sentence": "La [[clásica]], la de la calle",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the classic one",
+   "options": [
+    "the classic one",
+    "the shortest one",
+    "the newest one",
+    "the loudest one"
+   ],
+   "audioClip": {
+    "storySlug": "siete-picos-y-una-venda",
+    "storySource": "user",
+    "sentence": "La clásica, la de la calle",
+    "targetWord": "clásica",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aproximado",
+  "sentence": "Salió cantando a media voz, en tono [[aproximado]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "roughly right",
+   "options": [
+    "roughly right",
+    "perfectly clear",
+    "far too low",
+    "rather sad"
+   ],
+   "audioClip": {
+    "storySlug": "siete-picos-y-una-venda",
+    "storySource": "user",
+    "sentence": "Salió cantando a media voz, en tono aproximado",
+    "targetWord": "aproximado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "significativo",
+  "sentence": "Fue [[significativo]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "meaningful",
+   "options": [
+    "meaningful",
+    "surprising",
+    "expensive",
+    "unusual"
+   ],
+   "audioClip": {
+    "storySlug": "siete-picos-y-una-venda",
+    "storySource": "user",
+    "sentence": "Fue significativo",
+    "targetWord": "significativo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a media voz",
+  "sentence": "Salió cantando [[a media voz]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "under her breath",
+   "options": [
+    "under her breath",
+    "at full volume",
+    "out of tune",
+    "word by word"
+   ],
+   "audioClip": {
+    "storySlug": "siete-picos-y-una-venda",
+    "storySource": "user",
+    "sentence": "Salió cantando a media voz",
+    "targetWord": "a media voz",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

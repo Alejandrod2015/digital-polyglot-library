@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "molde,vendedor,tari,caserito",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "molde",
+     "answer": "a mould",
+     "options": [
+      "a mould",
+      "a seller",
+      "a small woven cloth",
+      "a familiar word for a regular customer"
+     ]
+    },
+    {
+     "word": "vendedor",
+     "answer": "a seller",
+     "options": [
+      "a mould",
+      "a seller",
+      "a small woven cloth",
+      "a familiar word for a regular customer"
+     ]
+    },
+    {
+     "word": "tari",
+     "answer": "a small woven cloth",
+     "options": [
+      "a mould",
+      "a seller",
+      "a small woven cloth",
+      "a familiar word for a regular customer"
+     ]
+    },
+    {
+     "word": "caserito",
+     "answer": "a familiar word for a regular customer",
+     "options": [
+      "a mould",
+      "a seller",
+      "a small woven cloth",
+      "a familiar word for a regular customer"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "imitación",
+  "sentence": "Esto es una [[imitación]], y usted lo sabe igual que yo",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a fake passed off as real",
+   "options": [
+    "a fake passed off as real",
+    "a piece made to order",
+    "a sample given for free",
+    "a tool used by the carver"
+   ],
+   "audioClip": {
+    "storySlug": "el-tari-guarda-un-nombre",
+    "storySource": "user",
+    "sentence": "Esto es una imitación, y usted lo sabe igual que yo",
+    "targetWord": "imitación",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "réplica",
+  "sentence": "es una [[réplica]], y se vende igual",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a copy sold as a copy",
+   "options": [
+    "a copy sold as a copy",
+    "a piece carved by hand",
+    "a model kept for display",
+    "a one-off made to order"
+   ],
+   "audioClip": {
+    "storySlug": "el-tari-guarda-un-nombre",
+    "storySource": "user",
+    "sentence": "es una réplica, y se vende igual",
+    "targetWord": "réplica",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "artificial",
+  "sentence": "Todo lo que quedaba era [[artificial]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "machine-made",
+   "options": [
+    "machine-made",
+    "second-hand",
+    "overpriced",
+    "badly kept"
+   ],
+   "audioClip": {
+    "storySlug": "el-tari-guarda-un-nombre",
+    "storySource": "user",
+    "sentence": "Todo lo que quedaba era artificial",
+    "targetWord": "artificial",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "genuino",
+  "sentence": "Buscaba un objeto [[genuino]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the real thing",
+   "options": [
+    "the real thing",
+    "the cheapest thing",
+    "the newest thing",
+    "the smallest thing"
+   ],
+   "audioClip": {
+    "storySlug": "el-tari-guarda-un-nombre",
+    "storySource": "user",
+    "sentence": "Buscaba un objeto genuino",
+    "targetWord": "genuino",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "admiración",
+  "sentence": "con una calma que le dio hasta [[admiración]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "respect",
+   "options": [
+    "respect",
+    "suspicion",
+    "impatience",
+    "relief"
+   ],
+   "audioClip": {
+    "storySlug": "el-tari-guarda-un-nombre",
+    "storySource": "user",
+    "sentence": "con una calma que le dio hasta admiración",
+    "targetWord": "admiración",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "obstáculo",
+  "sentence": "Un [[obstáculo]] así no se resiste discutiendo",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "something in the way",
+   "options": [
+    "something in the way",
+    "someone in charge",
+    "somewhere to wait",
+    "something worth having"
+   ],
+   "audioClip": {
+    "storySlug": "el-tari-guarda-un-nombre",
+    "storySource": "user",
+    "sentence": "Un obstáculo así no se resiste discutiendo",
+    "targetWord": "obstáculo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "modesta",
+  "sentence": "Se compró una casa _____, sin nada de lujo por dentro.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "modesta",
+   "options": [
+    "modesta",
+    "lejana",
+    "alquilada",
+    "antigua"
+   ],
+   "translation": "She bought a _____ house, with no luxury at all inside.",
+   "optionTranslations": [
+    "modest",
+    "far-off",
+    "rented",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "el-tari-guarda-un-nombre",
+    "storySource": "user",
+    "sentence": "Se compró una casa modesta, sin nada de lujo por dentro.",
+    "targetWord": "modesta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pintada",
+  "sentence": "La puerta estaba recién _____ y manchaba al tocarla.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pintada",
+   "options": [
+    "pintada",
+    "cerrada",
+    "rota",
+    "abierta"
+   ],
+   "translation": "The door was freshly _____ and it marked when you touched it.",
+   "optionTranslations": [
+    "painted",
+    "closed",
+    "broken",
+    "open"
+   ],
+   "audioClip": {
+    "storySlug": "el-tari-guarda-un-nombre",
+    "storySource": "user",
+    "sentence": "La puerta estaba recién pintada y manchaba al tocarla.",
+    "targetWord": "pintada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "resistir",
+  "sentence": "no [[se resiste]] discutiendo",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be fought",
+   "options": [
+    "to be fought",
+    "to be priced",
+    "to be noticed",
+    "to be repeated"
+   ],
+   "audioClip": {
+    "storySlug": "el-tari-guarda-un-nombre",
+    "storySource": "user",
+    "sentence": "no se resiste discutiendo",
+    "targetWord": "se resiste",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tallar",
+  "sentence": "el hombre que [[talló]] el ekeko de verdad",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to carve",
+   "options": [
+    "to carve",
+    "to paint",
+    "to sell",
+    "to copy"
+   ],
+   "audioClip": {
+    "storySlug": "el-tari-guarda-un-nombre",
+    "storySource": "user",
+    "sentence": "el hombre que talló el ekeko de verdad",
+    "targetWord": "talló",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "registrar",
+  "sentence": "[[Registró]] el nombre detrás del papel",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to write down",
+   "options": [
+    "to write down",
+    "to ask for",
+    "to read out",
+    "to hand back"
+   ],
+   "audioClip": {
+    "storySlug": "el-tari-guarda-un-nombre",
+    "storySource": "user",
+    "sentence": "Registró el nombre detrás del papel",
+    "targetWord": "Registró",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "distinguir",
+  "sentence": "figuritas que no se [[distinguían]] entre sí",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to tell apart",
+   "options": [
+    "to tell apart",
+    "to line up",
+    "to pick out",
+    "to add up"
+   ],
+   "audioClip": {
+    "storySlug": "el-tari-guarda-un-nombre",
+    "storySource": "user",
+    "sentence": "figuritas que no se distinguían entre sí",
+    "targetWord": "distinguían",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "recompensa",
+  "sentence": "No era una [[recompensa]] ni un logro",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a reward",
+   "options": [
+    "a reward",
+    "a bargain",
+    "a lesson",
+    "a surprise"
+   ],
+   "audioClip": {
+    "storySlug": "el-tari-guarda-un-nombre",
+    "storySource": "user",
+    "sentence": "No era una recompensa ni un logro",
+    "targetWord": "recompensa",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "logro",
+  "sentence": "No era una recompensa ni un [[logro]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an achievement",
+   "options": [
+    "an achievement",
+    "an accident",
+    "an excuse",
+    "an answer"
+   ],
+   "audioClip": {
+    "storySlug": "el-tari-guarda-un-nombre",
+    "storySource": "user",
+    "sentence": "No era una recompensa ni un logro",
+    "targetWord": "logro",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sin duda",
+  "sentence": "Era, [[sin duda]], lo único del día que le servía",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "without question",
+   "options": [
+    "without question",
+    "for a change",
+    "by chance",
+    "in the end"
+   ],
+   "audioClip": {
+    "storySlug": "el-tari-guarda-un-nombre",
+    "storySource": "user",
+    "sentence": "Era, sin duda, lo único del día que le servía",
+    "targetWord": "sin duda",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de verdad",
+  "sentence": "Esa sí era [[de verdad]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the real thing",
+   "options": [
+    "the real thing",
+    "the last one",
+    "the cheap one",
+    "the usual one"
+   ],
+   "audioClip": {
+    "storySlug": "el-tari-guarda-un-nombre",
+    "storySource": "user",
+    "sentence": "Esa sí era de verdad",
+    "targetWord": "de verdad",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

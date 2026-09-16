@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "cuero,basura,aro,cuchilla",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "cuero",
+     "answer": "hide leather",
+     "options": [
+      "hide leather",
+      "rubbish",
+      "a drum rim",
+      "a wide blade"
+     ]
+    },
+    {
+     "word": "basura",
+     "answer": "rubbish",
+     "options": [
+      "hide leather",
+      "rubbish",
+      "a drum rim",
+      "a wide blade"
+     ]
+    },
+    {
+     "word": "aro",
+     "answer": "a drum rim",
+     "options": [
+      "hide leather",
+      "rubbish",
+      "a drum rim",
+      "a wide blade"
+     ]
+    },
+    {
+     "word": "cuchilla",
+     "answer": "a wide blade",
+     "options": [
+      "hide leather",
+      "rubbish",
+      "a drum rim",
+      "a wide blade"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "baqueta",
+  "sentence": "Una [[baqueta]] golpeaba el aro y marcaba la prisa",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a drumstick",
+   "options": [
+    "a drumstick",
+    "a hand brush",
+    "a metal pin",
+    "a tuning key"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-se-tira-cada-verano",
+    "storySource": "user",
+    "sentence": "Una baqueta golpeaba el aro y marcaba la prisa",
+    "targetWord": "baqueta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "toque",
+  "sentence": "Ahora te debo un [[toque]], y eso no se paga",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a drumming session",
+   "options": [
+    "a drumming session",
+    "a written receipt",
+    "a day of work",
+    "a length of hide"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-se-tira-cada-verano",
+    "storySource": "user",
+    "sentence": "Ahora te debo un toque, y eso no se paga",
+    "targetWord": "toque",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tamboril",
+  "sentence": "Volvió al [[tamboril]] sin decir más",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the candombe drum",
+   "options": [
+    "the candombe drum",
+    "the candombe dance",
+    "the candombe song",
+    "the candombe night"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-se-tira-cada-verano",
+    "storySource": "user",
+    "sentence": "Volvió al tamboril sin decir más",
+    "targetWord": "tamboril",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "propuesta",
+  "sentence": "Volvió al galpón que olía a cuero quemado con una [[propuesta]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an offer",
+   "options": [
+    "an offer",
+    "a warning",
+    "a doubt",
+    "a favour"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-se-tira-cada-verano",
+    "storySource": "user",
+    "sentence": "Volvió al galpón que olía a cuero quemado con una propuesta",
+    "targetWord": "propuesta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "oportunidad",
+  "sentence": "En todo caso, es tu [[oportunidad]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a chance",
+   "options": [
+    "a chance",
+    "a mistake",
+    "a duty",
+    "a habit"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-se-tira-cada-verano",
+    "storySource": "user",
+    "sentence": "En todo caso, es tu oportunidad",
+    "targetWord": "oportunidad",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "riesgo",
+  "sentence": "Ella ya lo sospechaba y aceptó el [[riesgo]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a risk",
+   "options": [
+    "a risk",
+    "a price",
+    "a delay",
+    "a rule"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-se-tira-cada-verano",
+    "storySource": "user",
+    "sentence": "Ella ya lo sospechaba y aceptó el riesgo",
+    "targetWord": "riesgo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "fina",
+  "sentence": "Para cortar el pescado usa una hoja _____, no una gruesa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fina",
+   "options": [
+    "fina",
+    "larga",
+    "limpia",
+    "nueva"
+   ],
+   "translation": "To cut the fish use a _____ blade, not a thick one.",
+   "optionTranslations": [
+    "thin",
+    "long",
+    "clean",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-se-tira-cada-verano",
+    "storySource": "user",
+    "sentence": "Para cortar el pescado usa una hoja fina, no una gruesa.",
+    "targetWord": "fina",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "carga",
+  "sentence": "Subió con la _____ a la espalda hasta el galpón.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "carga",
+   "options": [
+    "carga",
+    "llave",
+    "carta",
+    "receta"
+   ],
+   "translation": "She went up with the _____ on her back to the shed.",
+   "optionTranslations": [
+    "load",
+    "key",
+    "letter",
+    "recipe"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-se-tira-cada-verano",
+    "storySource": "user",
+    "sentence": "Subió con la carga a la espalda hasta el galpón.",
+    "targetWord": "carga",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "regalar",
+  "sentence": "No lo [[regalo]], contestó la lonjera",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to give away free",
+   "options": [
+    "to give away free",
+    "to sell off cheap",
+    "to lend for a day",
+    "to keep for later"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-se-tira-cada-verano",
+    "storySource": "user",
+    "sentence": "No lo regalo, contestó la lonjera",
+    "targetWord": "regalo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "convencer",
+  "sentence": "no la quiso [[convencer]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to talk her round",
+   "options": [
+    "to talk her round",
+    "to help her out",
+    "to warn her off",
+    "to hear her out"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-se-tira-cada-verano",
+    "storySource": "user",
+    "sentence": "no la quiso convencer",
+    "targetWord": "convencer",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sospechar",
+  "sentence": "Ella ya lo [[sospechaba]] y aceptó el riesgo",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to suspect",
+   "options": [
+    "to suspect",
+    "to forget",
+    "to announce",
+    "to arrange"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-se-tira-cada-verano",
+    "storySource": "user",
+    "sentence": "Ella ya lo sospechaba y aceptó el riesgo",
+    "targetWord": "sospechaba",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "celebrar",
+  "sentence": "La lonjera no [[celebró]] el trato",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make a fuss of",
+   "options": [
+    "to make a fuss of",
+    "to write down",
+    "to think over",
+    "to turn down"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-se-tira-cada-verano",
+    "storySource": "user",
+    "sentence": "La lonjera no celebró el trato",
+    "targetWord": "celebró",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "doblar",
+  "sentence": "Ella [[dobló]] el cuero y lo cargó hasta su casa",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to fold",
+   "options": [
+    "to fold",
+    "to cut",
+    "to wash",
+    "to hang"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-se-tira-cada-verano",
+    "storySource": "user",
+    "sentence": "Ella dobló el cuero y lo cargó hasta su casa",
+    "targetWord": "dobló",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "deber",
+  "sentence": "Ahora te [[debo]] un toque",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to owe",
+   "options": [
+    "to owe",
+    "to promise",
+    "to charge",
+    "to forget"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-se-tira-cada-verano",
+    "storySource": "user",
+    "sentence": "Ahora te debo un toque",
+    "targetWord": "debo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "disculparse",
+  "sentence": "no [[se disculpó]] por el gasto",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to apologise",
+   "options": [
+    "to apologise",
+    "to explain",
+    "to complain",
+    "to boast"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-se-tira-cada-verano",
+    "storySource": "user",
+    "sentence": "no se disculpó por el gasto",
+    "targetWord": "se disculpó",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "así de fácil",
+  "sentence": "Si querés el viejo, pagás el nuevo. [[Así de fácil]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "that simple",
+   "options": [
+    "that simple",
+    "that costly",
+    "that strange",
+    "that slow"
+   ],
+   "audioClip": {
+    "storySlug": "lo-que-se-tira-cada-verano",
+    "storySource": "user",
+    "sentence": "Si querés el viejo, pagás el nuevo. Así de fácil.",
+    "targetWord": "Así de fácil",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

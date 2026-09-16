@@ -1,0 +1,426 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "taller,engrudo,seda,hilo",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "taller",
+     "answer": "a workshop",
+     "options": [
+      "a workshop",
+      "flour paste",
+      "tissue paper",
+      "kite line"
+     ]
+    },
+    {
+     "word": "engrudo",
+     "answer": "flour paste",
+     "options": [
+      "a workshop",
+      "flour paste",
+      "tissue paper",
+      "kite line"
+     ]
+    },
+    {
+     "word": "seda",
+     "answer": "tissue paper",
+     "options": [
+      "a workshop",
+      "flour paste",
+      "tissue paper",
+      "kite line"
+     ]
+    },
+    {
+     "word": "hilo",
+     "answer": "kite line",
+     "options": [
+      "a workshop",
+      "flour paste",
+      "tissue paper",
+      "kite line"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cueca",
+  "sentence": "Había [[cueca]] abajo y viento arriba",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the national dance of Chile",
+   "options": [
+    "the national dance of Chile",
+    "the harvest song of Peru",
+    "the street fair of Bolivia",
+    "the drum march of Uruguay"
+   ],
+   "audioClip": {
+    "storySlug": "el-volantin-vuela-una-vez",
+    "storySource": "user",
+    "sentence": "Había cueca abajo y viento arriba",
+    "targetWord": "cueca",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "altura",
+  "sentence": "soltó hilo hasta perderle la [[altura]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "how high it was",
+   "options": [
+    "how high it was",
+    "how fast it flew",
+    "how far it went",
+    "how long it lasted"
+   ],
+   "audioClip": {
+    "storySlug": "el-volantin-vuela-una-vez",
+    "storySource": "user",
+    "sentence": "soltó hilo hasta perderle la altura",
+    "targetWord": "altura",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fracasar",
+  "sentence": "[[Fracasar]] salía caro",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to fail",
+   "options": [
+    "to fail",
+    "to wait",
+    "to argue",
+    "to leave"
+   ],
+   "audioClip": {
+    "storySlug": "el-volantin-vuela-una-vez",
+    "storySource": "user",
+    "sentence": "Fracasar salía caro",
+    "targetWord": "Fracasar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "satisfacer",
+  "sentence": "con una calma que no la [[satisfacía]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to satisfy",
+   "options": [
+    "to satisfy",
+    "to interest",
+    "to surprise",
+    "to worry"
+   ],
+   "audioClip": {
+    "storySlug": "el-volantin-vuela-una-vez",
+    "storySource": "user",
+    "sentence": "con una calma que no la satisfacía",
+    "targetWord": "satisfacía",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "progresar",
+  "sentence": "aunque algo [[progresaba]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come along",
+   "options": [
+    "to come along",
+    "to fall back",
+    "to hold still",
+    "to break down"
+   ],
+   "audioClip": {
+    "storySlug": "el-volantin-vuela-una-vez",
+    "storySource": "user",
+    "sentence": "aunque algo progresaba",
+    "targetWord": "progresaba",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "melancolía",
+  "sentence": "Le llegó una [[melancolía]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a quiet sadness",
+   "options": [
+    "a quiet sadness",
+    "a sharp fright",
+    "a deep pride",
+    "a slow anger"
+   ],
+   "audioClip": {
+    "storySlug": "el-volantin-vuela-una-vez",
+    "storySource": "user",
+    "sentence": "Le llegó una melancolía",
+    "targetWord": "melancolía",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "empatía",
+  "sentence": "Escuchó a la vecina sin juzgarla, con mucha _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "empatía",
+   "options": [
+    "empatía",
+    "prisa",
+    "hambre",
+    "razón"
+   ],
+   "translation": "She listened to her neighbour without judging, with much _____.",
+   "optionTranslations": [
+    "empathy",
+    "hurry",
+    "hunger",
+    "reason"
+   ],
+   "audioClip": {
+    "storySlug": "el-volantin-vuela-una-vez",
+    "storySource": "user",
+    "sentence": "Escuchó a la vecina sin juzgarla, con mucha empatía.",
+    "targetWord": "empatía",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "suerte",
+  "sentence": "Encontró el anillo en la arena; fue pura _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "suerte",
+   "options": [
+    "suerte",
+    "lluvia",
+    "sombra",
+    "madera"
+   ],
+   "translation": "She found the ring in the sand; it was pure _____.",
+   "optionTranslations": [
+    "luck",
+    "rain",
+    "shade",
+    "wood"
+   ],
+   "audioClip": {
+    "storySlug": "el-volantin-vuela-una-vez",
+    "storySource": "user",
+    "sentence": "Encontró el anillo en la arena; fue pura suerte.",
+    "targetWord": "suerte",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "contener",
+  "sentence": "La [[contuvo]] con empatía por el que cortó",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hold back",
+   "options": [
+    "to hold back",
+    "to give in",
+    "to pass on",
+    "to call up"
+   ],
+   "audioClip": {
+    "storySlug": "el-volantin-vuela-una-vez",
+    "storySource": "user",
+    "sentence": "La contuvo con empatía por el que cortó",
+    "targetWord": "contuvo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "enrollar",
+  "sentence": "[[Enrolló]] el hilo en la mano",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to wind up",
+   "options": [
+    "to wind up",
+    "to cut off",
+    "to throw out",
+    "to hang up"
+   ],
+   "audioClip": {
+    "storySlug": "el-volantin-vuela-una-vez",
+    "storySource": "user",
+    "sentence": "Enrolló el hilo en la mano",
+    "targetWord": "Enrolló",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "soltar",
+  "sentence": "Ella [[soltó]] hilo hasta perderle la altura",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to let out",
+   "options": [
+    "to let out",
+    "to pull in",
+    "to tie up",
+    "to buy more"
+   ],
+   "audioClip": {
+    "storySlug": "el-volantin-vuela-una-vez",
+    "storySource": "user",
+    "sentence": "Ella soltó hilo hasta perderle la altura",
+    "targetWord": "soltó",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fiel",
+  "sentence": "El volantinero miró desde atrás, [[fiel]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "loyal",
+   "options": [
+    "loyal",
+    "curious",
+    "restless",
+    "doubtful"
+   ],
+   "audioClip": {
+    "storySlug": "el-volantin-vuela-una-vez",
+    "storySource": "user",
+    "sentence": "El volantinero miró desde atrás, fiel",
+    "targetWord": "fiel",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "norte",
+  "sentence": "cosa efímera, hacia el [[norte]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the north",
+   "options": [
+    "the north",
+    "the south",
+    "the coast",
+    "the border"
+   ],
+   "audioClip": {
+    "storySlug": "el-volantin-vuela-una-vez",
+    "storySource": "user",
+    "sentence": "cosa efímera, hacia el norte",
+    "targetWord": "norte",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "desesperado",
+  "sentence": "No fue a buscarlo, ni [[desesperada]] ni contenta",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "desperate",
+   "options": [
+    "desperate",
+    "proud",
+    "sleepy",
+    "grateful"
+   ],
+   "audioClip": {
+    "storySlug": "el-volantin-vuela-una-vez",
+    "storySource": "user",
+    "sentence": "No fue a buscarlo, ni desesperada ni contenta",
+    "targetWord": "desesperada",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "calma",
+  "sentence": "con una [[calma]] que no la satisfacía",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "calm",
+   "options": [
+    "calm",
+    "skill",
+    "speed",
+    "care"
+   ],
+   "audioClip": {
+    "storySlug": "el-volantin-vuela-una-vez",
+    "storySource": "user",
+    "sentence": "con una calma que no la satisfacía",
+    "targetWord": "calma",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vuelta sobre vuelta",
+  "sentence": "Enrolló el hilo en la mano, [[vuelta sobre vuelta]]",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "loop after loop",
+   "options": [
+    "loop after loop",
+    "end to end",
+    "side by side",
+    "bit by bit"
+   ],
+   "audioClip": {
+    "storySlug": "el-volantin-vuela-una-vez",
+    "storySource": "user",
+    "sentence": "Enrolló el hilo en la mano, vuelta sobre vuelta",
+    "targetWord": "vuelta sobre vuelta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]
