@@ -14,14 +14,16 @@
  * Uso:  DPL_AUDIO_FULL_OK=1 NODE_OPTIONS="--conditions=react-server" \
  *         npx tsx scripts/_narraUnaA2.ts <slug>
  */
-import { config } from "dotenv";
-config({ path: ".env.local", quiet: true });
-config({ path: ".env", quiet: true });
+// PRIMERO, y de efecto lateral: los import se izan, asi que un config() de
+// dotenv escrito aqui arriba corre DESPUES de cargarse elevenlabs.ts y su
+// cliente de OpenAI se queda a null. Ver scripts/_loadEnv.ts.
+import "./_loadEnv";
 
 import { PrismaClient } from "../src/generated/prisma";
 import { generateAndUploadMultiVoiceAudio } from "../src/lib/elevenlabs";
 import { generateWordTimingsForStory } from "../src/lib/audioWordTimings";
 import { rapidasDe, informe } from "./checkNarrationPace";
+import { checkMasterCoverage } from "./coverageWhisperCheck";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -33,6 +35,7 @@ import { VOZ_POR_TEMA_FR_B1 } from "./_frB1Voces";
 import { VOZ_POR_TEMA_DE_A1_FRIENDS } from "./_deA1FriendsVoces";
 import { VOZ_POR_TEMA_DE_A0_FRIENDS } from "./_deA0FriendsVoces";
 import { VOZ_POR_TEMA_IT_A0_FRIENDS } from "./_itA0FriendsVoces";
+import { VOZ_POR_TEMA_ES_A2_FRIENDS } from "./_esA2FriendsVoces";
 
 // Ampliado el 2026-09-07 para el B1 latam (pedir-una-vez): --journey b1-latam
 // usa su journey, su mapa de voces y su bundle de glosas; sin flag, el A2.
@@ -45,10 +48,11 @@ const PERFILES: Record<string, { journey: string; voces: Record<string, string>;
   "de-a1-friends": { journey: "cmu0dqr6y0007j8o52i1s3gf7", voces: VOZ_POR_TEMA_DE_A1_FRIENDS, bundle: "german-friends-a1", language: "german" },
   "de-a0-friends": { journey: "cmu047bkz0007326jsgeptkox", voces: VOZ_POR_TEMA_DE_A0_FRIENDS, bundle: "german-friends-a0", language: "german" },
   "it-a0-friends": { journey: "cmu0dpa3i0007j80ugstn0jf0", voces: VOZ_POR_TEMA_IT_A0_FRIENDS, bundle: "italian-friends-italy-a0", language: "italian" },
+  "es-a2-friends": { journey: "cmu36dk1d0007j8p7grgcyiok", voces: VOZ_POR_TEMA_ES_A2_FRIENDS, bundle: "spanish-friends-spain-a2", language: "spanish" },
 };
 const pi = process.argv.indexOf("--journey");
 const PERFIL = PERFILES[pi >= 0 ? process.argv[pi + 1] : "a2"];
-if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam | fr-a0 | fr-a2-friends | fr-b1-friends | de-a1-friends | de-a0-friends | it-a0-friends");
+if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam | fr-a0 | fr-a2-friends | fr-b1-friends | de-a1-friends | de-a0-friends | it-a0-friends | es-a2-friends");
 const JOURNEY = PERFIL.journey;
 
 const prisma = new PrismaClient();
@@ -173,5 +177,21 @@ const prisma = new PrismaClient();
     });
     const rapidas = rapidasDe((fin?.audioSegments as any) ?? [], (fin?.audioFragments as any) ?? []);
     console.log(informe(s.slug ?? "", rapidas));
+  }
+
+  // COBERTURA DEL MASTER (whisper local, gratis, sin ElevenLabs). Los gates
+  // que corren durante la sintesis miran UN fragmento cada uno; este vuelve a
+  // oir el MASTER entero y es el unico que ve un hueco o un duplicado nacido
+  // del empalme. Reporta y no toca nada: re-tirar lo decide el usuario
+  // (2026-09-16, la narracion ya no re-tira sola). Si whisper no esta
+  // disponible avisa en vez de tumbar la narracion, igual que _rerollSection.
+  try {
+    console.log("\ncobertura del master (whisper local)...");
+    const cov = await checkMasterCoverage(result.url, s.text, PERFIL.language ?? "spanish", s.title);
+    console.log(`cobertura: ${cov.ok ? "OK" : "FALLA"}`);
+    for (const g of cov.gaps) console.log(`  HUECO: ${g.textWords.join(" ")}`);
+    for (const d of cov.duplicates) console.log(`  DUPLICADO: ${d.words.join(" ")}`);
+  } catch (e: any) {
+    console.warn(`  candado de cobertura saltado: ${e?.message?.slice(0, 160) ?? e}`);
   }
 })().finally(() => prisma.$disconnect());

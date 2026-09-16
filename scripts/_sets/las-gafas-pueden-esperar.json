@@ -118,22 +118,22 @@
   },
   {
     "type": "meaning_in_context",
-    "word": "llegar a fin de mes",
-    "sentence": "No [[llego a fin de mes]].",
+    "word": "el taller",
+    "sentence": "El [[taller]] me ha cobrado doscientos euros.",
     "payload": {
       "prompt": "Choose the meaning in context.",
-      "answer": "make ends meet",
+      "answer": "a car repair garage",
       "options": [
-        "make ends meet",
-        "finish the job",
-        "arrive on time",
-        "pay in cash"
+        "a car repair garage",
+        "a clothes shop",
+        "a bank office",
+        "a music school"
       ],
       "audioClip": {
         "storySlug": "las-gafas-pueden-esperar",
         "storySource": "user",
-        "sentence": "No llego a fin de mes.",
-        "targetWord": "llego a fin de mes",
+        "sentence": "El taller me ha cobrado doscientos euros.",
+        "targetWord": "taller",
         "language": "spanish"
       }
     }
@@ -363,29 +363,29 @@
   },
   {
     "type": "fill_blank",
-    "word": "deberte",
-    "sentence": "Prefiero pagar todo yo mismo, así que no quiero _____ dinero.",
+    "word": "recibo",
+    "sentence": "Rubén miró el _____ y no lo tocó.",
     "payload": {
       "prompt": "Complete the sentence.",
-      "answer": "deberte",
+      "answer": "recibo",
       "options": [
-        "deberte",
-        "prestarte",
-        "pedirte",
-        "darte"
+        "recibo",
+        "billete",
+        "regalo",
+        "café"
       ],
-      "translation": "I'd rather pay everything myself, so I don't want to _____ money.",
+      "translation": "Rubén looked at the _____ and did not touch it.",
       "optionTranslations": [
-        "owe you",
-        "lend you",
-        "ask you for",
-        "give you"
+        "receipt",
+        "banknote",
+        "present",
+        "coffee"
       ],
       "audioClip": {
         "storySlug": "las-gafas-pueden-esperar",
         "storySource": "user",
-        "sentence": "Prefiero pagar todo yo mismo, así que no quiero deberte dinero.",
-        "targetWord": "deberte",
+        "sentence": "Rubén miró el recibo y no lo tocó.",
+        "targetWord": "recibo",
         "language": "spanish"
       }
     },

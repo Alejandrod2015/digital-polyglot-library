@@ -1,0 +1,456 @@
+[
+ {
+  "topic": "driving-and-cars",
+  "slotIndex": 0,
+  "title": "La batería no cabe",
+  "slug": "la-bateria-no-cabe",
+  "synopsis": "The neighbours of the garage are tired of the noise, and the band needs to move the drums to a new practice room. Rubén's small car is not enough, so Lorena breaks a rule at work and borrows the driving school car. It is only for a few minutes, but in the city a few minutes can be too long.",
+  "text": "Un sábado, Olga, una gruista del ayuntamiento, daba vueltas con su grúa. Lorena y Rubén tenían un problema: el bombo no cabía en el coche pequeño de Rubén. Los vecinos se quejaban del ruido y Rubén encontró un local de ensayo al otro lado del río.\n\n“Mi jefa no me deja usar el coche de la autoescuela fuera de clase”, avisó Lorena. Rubén levantó la vista del móvil, sorprendido. “Es sábado y tu jefa no está. Diez minutos, Lore.”\n\nCargaron el bombo, y el platillo hizo una raya blanca en la puerta. A Lorena se le puso roja la cara. Condujo hasta el local y aparcó cerca, en la zona de carga y descarga.\n\n“Solo un poco, mientras subimos todo”, prometió Rubén. Veinte minutos después, Olga levantaba el coche con la grúa, con su chaleco amarillo. “¡Es el coche de mi trabajo!”, gritó Lorena. “Lo siento, ya no puedo bajarlo”, contestó Olga sin mirarla.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "caber",
+    "anchor": false,
+    "surface": "cabía",
+    "definition": "To fit; to have enough space inside something, like a car."
+   },
+   {
+    "type": "adjective",
+    "word": "pequeño",
+    "anchor": false,
+    "surface": "pequeño",
+    "definition": "Small; not big, with little space inside it."
+   },
+   {
+    "type": "verb",
+    "word": "quejarse",
+    "anchor": false,
+    "surface": "quejaban",
+    "definition": "To complain; to say that something, like a noise, is bad."
+   },
+   {
+    "type": "noun",
+    "word": "el ensayo",
+    "anchor": true,
+    "surface": "ensayo",
+    "definition": "A practice; the time when a band plays together to get better."
+   },
+   {
+    "type": "verb",
+    "word": "dejar",
+    "anchor": false,
+    "surface": "deja",
+    "definition": "To let; to give someone permission to do something."
+   },
+   {
+    "type": "expression",
+    "word": "fuera de",
+    "anchor": false,
+    "surface": "fuera de",
+    "definition": "Outside of; not during a certain time, like working hours."
+   },
+   {
+    "type": "verb",
+    "word": "cargar",
+    "anchor": false,
+    "surface": "Cargaron",
+    "definition": "To load; to put heavy things inside a car or a truck."
+   },
+   {
+    "type": "adjective",
+    "word": "sorprendido",
+    "anchor": false,
+    "surface": "sorprendido",
+    "definition": "Surprised; feeling that something is strange because you did not expect it."
+   },
+   {
+    "type": "noun",
+    "word": "el platillo",
+    "anchor": true,
+    "surface": "platillo",
+    "definition": "A cymbal; the round metal plate of a drum set."
+   },
+   {
+    "type": "expression",
+    "word": "dar vueltas",
+    "anchor": false,
+    "surface": "daba vueltas",
+    "definition": "To go round and round; to drive through the same streets again and again."
+   },
+   {
+    "type": "verb",
+    "word": "bajar",
+    "anchor": false,
+    "surface": "bajarlo",
+    "definition": "To bring something down to a lower place, like a car from a truck."
+   },
+   {
+    "type": "verb",
+    "word": "conducir",
+    "anchor": false,
+    "surface": "Condujo",
+    "definition": "To drive; to control a car and move it on the road."
+   },
+   {
+    "type": "verb",
+    "word": "aparcar",
+    "anchor": false,
+    "surface": "aparcó",
+    "definition": "To park; to leave a car in a place and stop there."
+   },
+   {
+    "type": "noun",
+    "word": "la grúa",
+    "anchor": true,
+    "surface": "grúa",
+    "register": "cultural",
+    "definition": "A tow truck; the city truck that takes a badly parked car away."
+   },
+   {
+    "type": "adverb",
+    "word": "después",
+    "anchor": false,
+    "surface": "después",
+    "definition": "Later; after some time has passed since something else happened."
+   },
+   {
+    "type": "noun",
+    "word": "el chaleco",
+    "anchor": true,
+    "surface": "chaleco",
+    "definition": "A vest; a jacket without sleeves, often bright for safety at work."
+   },
+   {
+    "type": "adjective",
+    "word": "amarillo",
+    "anchor": false,
+    "surface": "amarillo",
+    "definition": "Yellow; the bright colour of the sun or a lemon."
+   },
+   {
+    "type": "noun",
+    "word": "el trabajo",
+    "anchor": true,
+    "surface": "trabajo",
+    "definition": "Work; the place and the job where a person earns money."
+   },
+   {
+    "type": "verb",
+    "word": "gritar",
+    "anchor": false,
+    "surface": "gritó",
+    "definition": "To shout; to speak very loudly because you are angry or scared."
+   },
+   {
+    "type": "expression",
+    "word": "sin mirar",
+    "anchor": false,
+    "surface": "sin mirarla",
+    "definition": "Without looking at someone; keeping your eyes on something else."
+   }
+  ],
+  "arcType": "mini-cliffhanger"
+ },
+ {
+  "topic": "money-and-loans",
+  "slotIndex": 1,
+  "title": "Las gafas pueden esperar",
+  "slug": "las-gafas-pueden-esperar",
+  "synopsis": "Lorena has saved money for months to buy new glasses, and she also has to make the first payment for the band's amplifier. At the shop, Rubén arrives with bad news about his money this month. Lorena makes a quick decision, and her friend has to accept something that hurts his pride.",
+  "text": "Sus gafas viejas tenían un cristal rayado, y Lorena ahorraba desde junio para unas nuevas. El viernes fue a la óptica con ese dinero y con el primer plazo del amplificador.\n\nRubén llegó tarde y se sentó a su lado. “No llego a fin de mes, Lore. El taller me ha cobrado doscientos euros por el coche”, confesó en voz baja.\n\nLorena contó los billetes con calma. Luego pagó los dos plazos, su mitad y la de Rubén, y miró las gafas nuevas del escaparate. “Mis gafas pueden esperar”, le dijo a Raquel, que le trajo un café sin preguntar nada.\n\nRubén miró el recibo y no lo tocó, con la boca seca. “No quiero deberte dinero”, dijo al final. “No es un regalo. Me lo devuelves en septiembre, y ya está”, contestó Lorena, y le dio un golpe suave en el brazo.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "ahorrar",
+    "anchor": false,
+    "surface": "ahorraba",
+    "definition": "To save money; to keep money and not spend it."
+   },
+   {
+    "type": "expression",
+    "word": "desde junio",
+    "anchor": false,
+    "surface": "desde junio",
+    "definition": "Since June; starting in June and continuing until now."
+   },
+   {
+    "type": "noun",
+    "word": "el viernes",
+    "anchor": true,
+    "surface": "viernes",
+    "definition": "Friday; the day of the week that comes before the weekend."
+   },
+   {
+    "type": "adjective",
+    "word": "primero",
+    "anchor": false,
+    "surface": "primer",
+    "definition": "First; the one that comes before all the others in order."
+   },
+   {
+    "type": "expression",
+    "word": "a su lado",
+    "anchor": false,
+    "surface": "a su lado",
+    "definition": "Next to her; in the place just beside another person."
+   },
+   {
+    "type": "noun",
+    "word": "el taller",
+    "anchor": false,
+    "surface": "taller",
+    "definition": "A garage; the workshop where a mechanic repairs cars."
+   },
+   {
+    "type": "verb",
+    "word": "cobrar",
+    "anchor": false,
+    "surface": "cobrado",
+    "definition": "To charge; to ask someone to pay money for a service."
+   },
+   {
+    "type": "expression",
+    "word": "con calma",
+    "anchor": false,
+    "surface": "con calma",
+    "definition": "Calmly; slowly and without nerves, taking the time you need."
+   },
+   {
+    "type": "noun",
+    "word": "la mitad",
+    "anchor": true,
+    "surface": "mitad",
+    "definition": "Half; one of two equal parts of something, like a payment."
+   },
+   {
+    "type": "adjective",
+    "word": "nuevo",
+    "anchor": false,
+    "surface": "nuevas",
+    "definition": "New; bought recently and never used before by anyone."
+   },
+   {
+    "type": "verb",
+    "word": "mirar",
+    "anchor": false,
+    "surface": "miró",
+    "definition": "To look at something or someone with your eyes."
+   },
+   {
+    "type": "expression",
+    "word": "sin preguntar nada",
+    "anchor": false,
+    "surface": "sin preguntar nada",
+    "definition": "Without asking anything; quietly, without wanting to know more."
+   },
+   {
+    "type": "adjective",
+    "word": "seco",
+    "anchor": false,
+    "surface": "seca",
+    "definition": "Dry; with no water, like your mouth when you are nervous."
+   },
+   {
+    "type": "noun",
+    "word": "el recibo",
+    "anchor": false,
+    "surface": "recibo",
+    "definition": "A receipt; the paper a shop gives you with what you paid on it."
+   },
+   {
+    "type": "expression",
+    "word": "al final",
+    "anchor": false,
+    "surface": "al final",
+    "definition": "In the end; after some time, when something finally happens."
+   },
+   {
+    "type": "adjective",
+    "word": "suave",
+    "anchor": false,
+    "surface": "suave",
+    "definition": "Soft, gentle; done with little force, in a kind way."
+   },
+   {
+    "type": "noun",
+    "word": "septiembre",
+    "anchor": true,
+    "surface": "septiembre",
+    "definition": "September; the ninth month of the year, at the end of summer."
+   },
+   {
+    "type": "expression",
+    "word": "y ya está",
+    "anchor": false,
+    "surface": "y ya está",
+    "definition": "And that is it; used to say that nothing more is needed."
+   },
+   {
+    "type": "noun",
+    "word": "el golpe",
+    "anchor": true,
+    "surface": "golpe",
+    "definition": "A hit; a quick touch with the hand, here a friendly one."
+   },
+   {
+    "type": "verb",
+    "word": "querer",
+    "anchor": false,
+    "surface": "quiero",
+    "definition": "To want; to wish to have or to do something."
+   }
+  ],
+  "arcType": "reframe-turn"
+ },
+ {
+  "topic": "clothes-and-looks",
+  "slotIndex": 1,
+  "title": "Rubén sin barba",
+  "slug": "ruben-sin-barba",
+  "synopsis": "On the day of the band photo, Lorena and the tattoo artist wait at the studio door. A man they do not recognise walks towards them. Rubén has changed his face to look like the young drummer from the old picture, but the result is not what he expected, and Lorena has another idea.",
+  "text": "En la puerta del estudio, Lorena esperó a Rubén. Sergio ya estaba preparado con la cámara. Por la calle venía un hombre sin barba, con una camiseta negra. El sol de septiembre calentaba la acera.\n\n“¿Rubén? ¡Pareces otro!”, dijo Lorena. Sergio, sorprendido, bajó la cámara. “Estás más guapo, pero no te reconozco”, añadió.\n\n“Quería parecer el de 2012”, explicó Rubén, y se tocó la cara. “Hoy me he afeitado y en el espejo no me reconocía. ¿Y si la foto sale mal?”\n\nLorena buscó en su móvil la foto de 2012. Allí estaban los dos. Rubén era delgado y tenía el pelo largo, y Lorena llevaba la chaqueta roja.\n\n“Ya no somos esos chicos, Rubén. Hemos cambiado, y está bien”, insistió Lorena. “Siéntate aquí y hacemos la foto de ahora, juntos.”\n\nRubén se sentó a su lado, todavía tocándose la cara. Los dos se reían en la foto nueva, más que en 2012.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "la cámara",
+    "anchor": true,
+    "surface": "cámara",
+    "definition": "A camera; the machine you use to take photos."
+   },
+   {
+    "type": "noun",
+    "word": "el hombre",
+    "anchor": true,
+    "surface": "hombre",
+    "definition": "A man; an adult male person, here someone Lorena does not recognise."
+   },
+   {
+    "type": "noun",
+    "word": "la barba",
+    "anchor": true,
+    "surface": "barba",
+    "definition": "A beard; the hair that grows on a man's face."
+   },
+   {
+    "type": "noun",
+    "word": "la camiseta",
+    "anchor": true,
+    "surface": "camiseta",
+    "definition": "A T-shirt; a light shirt with short sleeves and no buttons."
+   },
+   {
+    "type": "adjective",
+    "word": "negro",
+    "anchor": false,
+    "surface": "negra",
+    "definition": "Black; the darkest colour, like the sky at night."
+   },
+   {
+    "type": "expression",
+    "word": "parecer otro",
+    "anchor": false,
+    "surface": "Pareces otro",
+    "definition": "To look like a different person; to look very changed."
+   },
+   {
+    "type": "adjective",
+    "word": "guapo",
+    "anchor": false,
+    "surface": "guapo",
+    "definition": "Good-looking; nice to look at, attractive to other people."
+   },
+   {
+    "type": "verb",
+    "word": "reconocer",
+    "anchor": false,
+    "surface": "reconozco",
+    "definition": "To recognise; to know who someone is when you see them."
+   },
+   {
+    "type": "verb",
+    "word": "tocarse",
+    "anchor": false,
+    "surface": "se tocó",
+    "definition": "To touch a part of your own body with your hand."
+   },
+   {
+    "type": "adverb",
+    "word": "hoy",
+    "anchor": false,
+    "surface": "Hoy",
+    "definition": "Today; on this day, not yesterday or tomorrow."
+   },
+   {
+    "type": "verb",
+    "word": "afeitarse",
+    "anchor": false,
+    "surface": "afeitado",
+    "definition": "To shave; to cut the hair on your face with a razor."
+   },
+   {
+    "type": "adverb",
+    "word": "allí",
+    "anchor": false,
+    "surface": "Allí",
+    "definition": "There; in that place, a bit far from the speaker."
+   },
+   {
+    "type": "expression",
+    "word": "los dos",
+    "anchor": false,
+    "surface": "los dos",
+    "definition": "Both of them; the two people together, one and the other."
+   },
+   {
+    "type": "noun",
+    "word": "el pelo",
+    "anchor": true,
+    "surface": "pelo",
+    "definition": "Hair; the soft lines that grow on the top of your head."
+   },
+   {
+    "type": "adjective",
+    "word": "largo",
+    "anchor": false,
+    "surface": "largo",
+    "definition": "Long; measuring a lot from one end to the other."
+   },
+   {
+    "type": "noun",
+    "word": "el chico",
+    "anchor": true,
+    "surface": "chicos",
+    "definition": "A young man; a boy or a man who is not old."
+   },
+   {
+    "type": "verb",
+    "word": "cambiar",
+    "anchor": false,
+    "surface": "cambiado",
+    "definition": "To change; to become different from how you were before."
+   },
+   {
+    "type": "expression",
+    "word": "hacer la foto",
+    "anchor": false,
+    "surface": "hacemos la foto",
+    "definition": "To take the photo; to use a camera to make a picture of people."
+   },
+   {
+    "type": "expression",
+    "word": "de ahora",
+    "anchor": false,
+    "surface": "de ahora",
+    "definition": "Of now; from the present time, not from the past."
+   },
+   {
+    "type": "adjective",
+    "word": "juntos",
+    "anchor": false,
+    "surface": "juntos",
+    "definition": "Together; with each other, at the same time and place."
+   }
+  ],
+  "arcType": "late-reveal"
+ }
+]

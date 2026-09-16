@@ -25,14 +25,17 @@ const MODEL = path.join(
 // todavia que probar en seco (0 historias narradas), a diferencia del aleman
 // (probado contra 3 masters del Friends DE C1 ya publicado). "-l it" es el
 // codigo whisper.cpp estandar; se revisa contra la primera muestra real.
-const WHISPER_LANG: Record<string, string> = { german: "de", italian: "it" };
+//
+// El espanol se anadio el 2026-09-17, antes de narrar el Friends ES A2: con
+// "-l fr" whisper transcribe el espanol como si fuera frances y el candado
+// reporta la historia entera como hueco, que es peor que no tenerlo.
+const WHISPER_LANG: Record<string, string> = { german: "de", italian: "it", spanish: "es" };
 export function whisperLangFor(journeyLanguage?: string | null): string {
   return (journeyLanguage && WHISPER_LANG[journeyLanguage]) || "fr";
 }
+const NUMBER_LANG: Record<string, NumberLang> = { german: "de", italian: "it", spanish: "es" };
 export function numberLangFor(journeyLanguage?: string | null): NumberLang {
-  if (journeyLanguage === "german") return "de";
-  if (journeyLanguage === "italian") return "it";
-  return "fr";
+  return (journeyLanguage && NUMBER_LANG[journeyLanguage]) || "fr";
 }
 
 type RawWord = { text: string; start: number; end: number };
