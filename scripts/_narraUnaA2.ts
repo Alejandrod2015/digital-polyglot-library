@@ -22,6 +22,7 @@ import { PrismaClient } from "../src/generated/prisma";
 import { generateAndUploadMultiVoiceAudio } from "../src/lib/elevenlabs";
 import { generateWordTimingsForStory } from "../src/lib/audioWordTimings";
 import { rapidasDe, informe } from "./checkNarrationPace";
+import { checkMasterCoverage } from "./coverageWhisperCheck";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -31,6 +32,7 @@ import { VOZ_POR_TEMA_FR_A0 } from "./_frA0Voces";
 import { VOZ_POR_TEMA_FR_A2 } from "./_frA2Voces";
 import { VOZ_POR_TEMA_FR_B1 } from "./_frB1Voces";
 import { VOZ_POR_TEMA_DE_A1_FRIENDS } from "./_deA1FriendsVoces";
+import { VOZ_POR_TEMA_ES_A2_FRIENDS } from "./_esA2FriendsVoces";
 
 // Ampliado el 2026-09-07 para el B1 latam (pedir-una-vez): --journey b1-latam
 // usa su journey, su mapa de voces y su bundle de glosas; sin flag, el A2.
@@ -41,10 +43,11 @@ const PERFILES: Record<string, { journey: string; voces: Record<string, string>;
   "fr-a2-friends": { journey: "cmu04ereh000732z7px7naqa2", voces: VOZ_POR_TEMA_FR_A2, bundle: "french-friends-france-a2", language: "french" },
   "fr-b1-friends": { journey: "cmu0doigc0007j8e292tycths", voces: VOZ_POR_TEMA_FR_B1, bundle: "french-friends-france-b1", language: "french" },
   "de-a1-friends": { journey: "cmu0dqr6y0007j8o52i1s3gf7", voces: VOZ_POR_TEMA_DE_A1_FRIENDS, bundle: "german-friends-a1", language: "german" },
+  "es-a2-friends": { journey: "cmu36dk1d0007j8p7grgcyiok", voces: VOZ_POR_TEMA_ES_A2_FRIENDS, bundle: "spanish-friends-spain-a2", language: "spanish" },
 };
 const pi = process.argv.indexOf("--journey");
 const PERFIL = PERFILES[pi >= 0 ? process.argv[pi + 1] : "a2"];
-if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam | fr-a0 | fr-a2-friends | fr-b1-friends | de-a1-friends");
+if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam | fr-a0 | fr-a2-friends | fr-b1-friends | de-a1-friends | es-a2-friends");
 const JOURNEY = PERFIL.journey;
 
 const prisma = new PrismaClient();
@@ -169,5 +172,21 @@ const prisma = new PrismaClient();
     });
     const rapidas = rapidasDe((fin?.audioSegments as any) ?? [], (fin?.audioFragments as any) ?? []);
     console.log(informe(s.slug ?? "", rapidas));
+  }
+
+  // COBERTURA DEL MASTER (whisper local, gratis, sin ElevenLabs). Los gates
+  // que corren durante la sintesis miran UN fragmento cada uno; este vuelve a
+  // oir el MASTER entero y es el unico que ve un hueco o un duplicado nacido
+  // del empalme. Reporta y no toca nada: re-tirar lo decide el usuario
+  // (2026-09-16, la narracion ya no re-tira sola). Si whisper no esta
+  // disponible avisa en vez de tumbar la narracion, igual que _rerollSection.
+  try {
+    console.log("\ncobertura del master (whisper local)...");
+    const cov = await checkMasterCoverage(result.url, s.text, PERFIL.language ?? "spanish", s.title);
+    console.log(`cobertura: ${cov.ok ? "OK" : "FALLA"}`);
+    for (const g of cov.gaps) console.log(`  HUECO: ${g.textWords.join(" ")}`);
+    for (const d of cov.duplicates) console.log(`  DUPLICADO: ${d.words.join(" ")}`);
+  } catch (e: any) {
+    console.warn(`  candado de cobertura saltado: ${e?.message?.slice(0, 160) ?? e}`);
   }
 })().finally(() => prisma.$disconnect());
