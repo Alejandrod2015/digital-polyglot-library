@@ -6,10 +6,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        {"word":"le balcon","answer":"a balcony","options":["a balcony","a cloud","a company","a shower"]},
-        {"word":"le nuage","answer":"a cloud","options":["a balcony","a cloud","a company","a shower"]},
-        {"word":"l'entreprise","answer":"a company","options":["a balcony","a cloud","a company","a shower"]},
-        {"word":"la douche","answer":"a shower","options":["a balcony","a cloud","a company","a shower"]}
+        {
+          "word": "le balcon",
+          "answer": "a balcony",
+          "options": [
+            "a balcony",
+            "a cloud",
+            "a company",
+            "a shower"
+          ]
+        },
+        {
+          "word": "le nuage",
+          "answer": "a cloud",
+          "options": [
+            "a balcony",
+            "a cloud",
+            "a company",
+            "a shower"
+          ]
+        },
+        {
+          "word": "l'entreprise",
+          "answer": "a company",
+          "options": [
+            "a balcony",
+            "a cloud",
+            "a company",
+            "a shower"
+          ]
+        },
+        {
+          "word": "la douche",
+          "answer": "a shower",
+          "options": [
+            "a balcony",
+            "a cloud",
+            "a company",
+            "a shower"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -21,8 +57,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "autumn",
-      "options": ["autumn","winter","summer","spring"],
-      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"L'automne est doux cette année.","targetWord":"L'automne","language":"french"}
+      "options": [
+        "autumn",
+        "winter",
+        "summer",
+        "spring"
+      ],
+      "audioClip": {
+        "storySlug": "une-chemise-pour-lundi",
+        "storySource": "user",
+        "sentence": "L'automne est doux cette année.",
+        "targetWord": "L'automne",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/33cb584d16aef52e.mp3"
+      }
     }
   },
   {
@@ -32,8 +80,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "well dressed",
-      "options": ["well dressed","very late","well rested","very hungry"],
-      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Il veut être bien habillé pour son premier jour.","targetWord":"bien habillé","language":"french"}
+      "options": [
+        "well dressed",
+        "very late",
+        "well rested",
+        "very hungry"
+      ],
+      "audioClip": {
+        "storySlug": "une-chemise-pour-lundi",
+        "storySource": "user",
+        "sentence": "Il veut être bien habillé pour son premier jour.",
+        "targetWord": "bien habillé",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/63c7b1b3b9c1b8a1.mp3"
+      }
     }
   },
   {
@@ -43,8 +103,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "light drizzle",
-      "options": ["light drizzle","strong wind","bright sun","heavy snow"],
-      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Ici, il y a le crachin.","targetWord":"le crachin","language":"french"}
+      "options": [
+        "light drizzle",
+        "strong wind",
+        "bright sun",
+        "heavy snow"
+      ],
+      "audioClip": {
+        "storySlug": "une-chemise-pour-lundi",
+        "storySource": "user",
+        "sentence": "Ici, il y a le crachin.",
+        "targetWord": "le crachin",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0cb77e5654692153.mp3"
+      }
     }
   },
   {
@@ -54,8 +126,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "and yet",
-      "options": ["and yet","therefore","never","sometimes"],
-      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Pourtant, ça séchait dehors à Strasbourg.","targetWord":"Pourtant","language":"french"}
+      "options": [
+        "and yet",
+        "therefore",
+        "never",
+        "sometimes"
+      ],
+      "audioClip": {
+        "storySlug": "une-chemise-pour-lundi",
+        "storySource": "user",
+        "sentence": "Pourtant, ça séchait dehors à Strasbourg.",
+        "targetWord": "Pourtant",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bab6079332f814a5.mp3"
+      }
     }
   },
   {
@@ -65,8 +149,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "damp",
-      "options": ["damp","dry","clean","torn"],
-      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Sa chemise est humide.","targetWord":"humide","language":"french"}
+      "options": [
+        "damp",
+        "dry",
+        "clean",
+        "torn"
+      ],
+      "audioClip": {
+        "storySlug": "une-chemise-pour-lundi",
+        "storySource": "user",
+        "sentence": "Sa chemise est humide.",
+        "targetWord": "humide",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/addfafed901762de.mp3"
+      }
     }
   },
   {
@@ -76,8 +172,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "made it wet",
-      "options": ["made it wet","dried it completely","torn it","burned it"],
-      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Le crachin l'a mouillée.","targetWord":"mouillée","language":"french"}
+      "options": [
+        "made it wet",
+        "dried it completely",
+        "torn it",
+        "burned it"
+      ],
+      "audioClip": {
+        "storySlug": "une-chemise-pour-lundi",
+        "storySource": "user",
+        "sentence": "Le crachin l'a mouillée.",
+        "targetWord": "mouillée",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bf1a715b14ba209e.mp3"
+      }
     }
   },
   {
@@ -87,8 +195,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "the wrong way",
-      "options": ["the wrong way","very quickly","on purpose","very well"],
-      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"J'ai tout fait de travers.","targetWord":"de travers","language":"french"}
+      "options": [
+        "the wrong way",
+        "very quickly",
+        "on purpose",
+        "very well"
+      ],
+      "audioClip": {
+        "storySlug": "une-chemise-pour-lundi",
+        "storySource": "user",
+        "sentence": "J'ai tout fait de travers.",
+        "targetWord": "de travers",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/798dd4d7f7ccebeb.mp3"
+      }
     }
   },
   {
@@ -98,8 +218,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "in our home",
-      "options": ["in our home","at the office","in the street","at school"],
-      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Chez nous, le linge sèche dedans.","targetWord":"Chez nous","language":"french"}
+      "options": [
+        "in our home",
+        "at the office",
+        "in the street",
+        "at school"
+      ],
+      "audioClip": {
+        "storySlug": "une-chemise-pour-lundi",
+        "storySource": "user",
+        "sentence": "Chez nous, le linge sèche dedans.",
+        "targetWord": "Chez nous",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d245e9fcf7f57b43.mp3"
+      }
     }
   },
   {
@@ -109,8 +241,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "in the end",
-      "options": ["in the end","right away","never","at first"],
-      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Finalement, le mot lui plaît.","targetWord":"Finalement","language":"french"}
+      "options": [
+        "in the end",
+        "right away",
+        "never",
+        "at first"
+      ],
+      "audioClip": {
+        "storySlug": "une-chemise-pour-lundi",
+        "storySource": "user",
+        "sentence": "Finalement, le mot lui plaît.",
+        "targetWord": "Finalement",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a7b75e9e8ceabeb8.mp3"
+      }
     }
   },
   {
@@ -120,8 +264,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a drying rack",
-      "options": ["a drying rack","a mirror","a lamp","a chair"],
-      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Elle installe un tancarville au-dessus de la douche.","targetWord":"un tancarville","language":"french"}
+      "options": [
+        "a drying rack",
+        "a mirror",
+        "a lamp",
+        "a chair"
+      ],
+      "audioClip": {
+        "storySlug": "une-chemise-pour-lundi",
+        "storySource": "user",
+        "sentence": "Elle installe un tancarville au-dessus de la douche.",
+        "targetWord": "un tancarville",
+        "language": "french"
+      }
     },
     "featured": false
   },
@@ -132,8 +287,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "especially",
-      "options": ["especially","never","rarely","once"],
-      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Le linge sèche dedans, surtout en automne.","targetWord":"surtout","language":"french"}
+      "options": [
+        "especially",
+        "never",
+        "rarely",
+        "once"
+      ],
+      "audioClip": {
+        "storySlug": "une-chemise-pour-lundi",
+        "storySource": "user",
+        "sentence": "Le linge sèche dedans, surtout en automne.",
+        "targetWord": "surtout",
+        "language": "french"
+      }
     },
     "featured": false
   },
@@ -144,8 +310,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "himself",
-      "options": ["himself","together with her","for the last time","by accident"],
-      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Il met lui-même le linge au tancarville.","targetWord":"lui-même","language":"french"}
+      "options": [
+        "himself",
+        "together with her",
+        "for the last time",
+        "by accident"
+      ],
+      "audioClip": {
+        "storySlug": "une-chemise-pour-lundi",
+        "storySource": "user",
+        "sentence": "Il met lui-même le linge au tancarville.",
+        "targetWord": "lui-même",
+        "language": "french"
+      }
     },
     "featured": false
   },
@@ -156,8 +333,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "pleases him",
-      "options": ["pleases him","scares him","tires him","bores him"],
-      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Le mot lui plaît.","targetWord":"lui plaît","language":"french"}
+      "options": [
+        "pleases him",
+        "scares him",
+        "tires him",
+        "bores him"
+      ],
+      "audioClip": {
+        "storySlug": "une-chemise-pour-lundi",
+        "storySource": "user",
+        "sentence": "Le mot lui plaît.",
+        "targetWord": "lui plaît",
+        "language": "french"
+      }
     },
     "featured": false
   },
@@ -168,10 +356,27 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "tomber",
-      "options": ["tomber","chanter","monter","brûler"],
+      "options": [
+        "tomber",
+        "chanter",
+        "monter",
+        "brûler"
+      ],
       "translation": "The sky is grey: the rain is going to _____.",
-      "optionTranslations": ["fall","sing","rise","burn"],
-      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Le ciel est gris: la pluie va tomber.","targetWord":"tomber","language":"french"}
+      "optionTranslations": [
+        "fall",
+        "sing",
+        "rise",
+        "burn"
+      ],
+      "audioClip": {
+        "storySlug": "une-chemise-pour-lundi",
+        "storySource": "user",
+        "sentence": "Le ciel est gris: la pluie va tomber.",
+        "targetWord": "tomber",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/feb3243c198d609d.mp3"
+      }
     },
     "featured": false
   },
@@ -182,10 +387,27 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "touche",
-      "options": ["touche","lave","achète","coupe"],
+      "options": [
+        "touche",
+        "lave",
+        "achète",
+        "coupe"
+      ],
       "translation": "He _____ his shirt: it's wet.",
-      "optionTranslations": ["touches","washes","buys","cuts"],
-      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Il touche sa chemise: elle est mouillée.","targetWord":"touche","language":"french"}
+      "optionTranslations": [
+        "touches",
+        "washes",
+        "buys",
+        "cuts"
+      ],
+      "audioClip": {
+        "storySlug": "une-chemise-pour-lundi",
+        "storySource": "user",
+        "sentence": "Il touche sa chemise: elle est mouillée.",
+        "targetWord": "touche",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e474384c26269252.mp3"
+      }
     },
     "featured": false
   },
@@ -196,10 +418,27 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "remarque",
-      "options": ["remarque","lave","porte","vend"],
+      "options": [
+        "remarque",
+        "lave",
+        "porte",
+        "vend"
+      ],
       "translation": "Nobody _____ that his shirt isn't dry.",
-      "optionTranslations": ["notices","washes","wears","sells"],
-      "audioClip": {"storySlug":"une-chemise-pour-lundi","storySource":"user","sentence":"Personne ne remarque que sa chemise n'est pas sèche.","targetWord":"remarque","language":"french"}
+      "optionTranslations": [
+        "notices",
+        "washes",
+        "wears",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "une-chemise-pour-lundi",
+        "storySource": "user",
+        "sentence": "Personne ne remarque que sa chemise n'est pas sèche.",
+        "targetWord": "remarque",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/40a8b744b58cbca0.mp3"
+      }
     },
     "featured": false
   }

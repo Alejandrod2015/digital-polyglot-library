@@ -6,10 +6,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        {"word":"la vie","answer":"life","options":["life","stairs","a sheet of paper","music"]},
-        {"word":"l'escalier","answer":"stairs","options":["life","stairs","a sheet of paper","music"]},
-        {"word":"la feuille","answer":"a sheet of paper","options":["life","stairs","a sheet of paper","music"]},
-        {"word":"la musique","answer":"music","options":["life","stairs","a sheet of paper","music"]}
+        {
+          "word": "la vie",
+          "answer": "life",
+          "options": [
+            "life",
+            "stairs",
+            "a sheet of paper",
+            "music"
+          ]
+        },
+        {
+          "word": "l'escalier",
+          "answer": "stairs",
+          "options": [
+            "life",
+            "stairs",
+            "a sheet of paper",
+            "music"
+          ]
+        },
+        {
+          "word": "la feuille",
+          "answer": "a sheet of paper",
+          "options": [
+            "life",
+            "stairs",
+            "a sheet of paper",
+            "music"
+          ]
+        },
+        {
+          "word": "la musique",
+          "answer": "music",
+          "options": [
+            "life",
+            "stairs",
+            "a sheet of paper",
+            "music"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -21,8 +57,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "time for the speeches",
-      "options": ["time for the speeches","time to eat","time to dance","time to leave"],
-      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"C'est l'heure des discours.","targetWord":"l'heure des discours","language":"french"}
+      "options": [
+        "time for the speeches",
+        "time to eat",
+        "time to dance",
+        "time to leave"
+      ],
+      "audioClip": {
+        "storySlug": "un-discours-sans-lumiere",
+        "storySource": "user",
+        "sentence": "C'est l'heure des discours.",
+        "targetWord": "l'heure des discours",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d25d2b1055d04c57.mp3"
+      }
     }
   },
   {
@@ -32,8 +80,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "takes the floor",
-      "options": ["takes the floor","leaves the room","sits down","starts crying"],
-      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Elle prend la parole devant tout le monde.","targetWord":"prend la parole","language":"french"}
+      "options": [
+        "takes the floor",
+        "leaves the room",
+        "sits down",
+        "starts crying"
+      ],
+      "audioClip": {
+        "storySlug": "un-discours-sans-lumiere",
+        "storySource": "user",
+        "sentence": "Elle prend la parole devant tout le monde.",
+        "targetWord": "prend la parole",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/06437ca5560e0960.mp3"
+      }
     }
   },
   {
@@ -43,8 +103,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "in her hand",
-      "options": ["in her hand","on the table","in her bag","on the floor"],
-      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Elle tient sa feuille à la main.","targetWord":"à la main","language":"french"}
+      "options": [
+        "in her hand",
+        "on the table",
+        "in her bag",
+        "on the floor"
+      ],
+      "audioClip": {
+        "storySlug": "un-discours-sans-lumiere",
+        "storySource": "user",
+        "sentence": "Elle tient sa feuille à la main.",
+        "targetWord": "à la main",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c7e80d4e3cd7ff29.mp3"
+      }
     }
   },
   {
@@ -54,8 +126,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "everything goes out",
-      "options": ["everything goes out","everything gets louder","everyone laughs","everyone leaves"],
-      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Soudain, tout s'éteint: la musique, les lumières.","targetWord":"tout s'éteint","language":"french"}
+      "options": [
+        "everything goes out",
+        "everything gets louder",
+        "everyone laughs",
+        "everyone leaves"
+      ],
+      "audioClip": {
+        "storySlug": "un-discours-sans-lumiere",
+        "storySource": "user",
+        "sentence": "Soudain, tout s'éteint: la musique, les lumières.",
+        "targetWord": "tout s'éteint",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c740c08a75b9a5c1.mp3"
+      }
     }
   },
   {
@@ -65,8 +149,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "in total darkness",
-      "options": ["in total darkness","in bright light","in complete silence","in heavy rain"],
-      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Dans le noir complet, les gens rient.","targetWord":"Dans le noir complet","language":"french"}
+      "options": [
+        "in total darkness",
+        "in bright light",
+        "in complete silence",
+        "in heavy rain"
+      ],
+      "audioClip": {
+        "storySlug": "un-discours-sans-lumiere",
+        "storySource": "user",
+        "sentence": "Dans le noir complet, les gens rient.",
+        "targetWord": "Dans le noir complet",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b379c9362d2cae1a.mp3"
+      }
     }
   },
   {
@@ -76,8 +172,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "takes care of",
-      "options": ["takes care of","is afraid of","talks about","sells"],
-      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Il s'occupe du vieux tableau électrique.","targetWord":"s'occupe du","language":"french"}
+      "options": [
+        "takes care of",
+        "is afraid of",
+        "talks about",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "un-discours-sans-lumiere",
+        "storySource": "user",
+        "sentence": "Il s'occupe du vieux tableau électrique.",
+        "targetWord": "s'occupe du",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a5094fd74c0dd6e2.mp3"
+      }
     }
   },
   {
@@ -87,8 +195,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "without a microphone",
-      "options": ["without a microphone","with a loud voice","in the dark","in a hurry"],
-      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Elle parle sans micro.","targetWord":"sans micro","language":"french"}
+      "options": [
+        "without a microphone",
+        "with a loud voice",
+        "in the dark",
+        "in a hurry"
+      ],
+      "audioClip": {
+        "storySlug": "un-discours-sans-lumiere",
+        "storySource": "user",
+        "sentence": "Elle parle sans micro.",
+        "targetWord": "sans micro",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/899400b5824e86ca.mp3"
+      }
     }
   },
   {
@@ -98,8 +218,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "cries with joy",
-      "options": ["cries with joy","laughs out loud","falls asleep","runs away"],
-      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Elle pleure de joie.","targetWord":"pleure de joie","language":"french"}
+      "options": [
+        "cries with joy",
+        "laughs out loud",
+        "falls asleep",
+        "runs away"
+      ],
+      "audioClip": {
+        "storySlug": "un-discours-sans-lumiere",
+        "storySource": "user",
+        "sentence": "Elle pleure de joie.",
+        "targetWord": "pleure de joie",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/08c934ec86b826d9.mp3"
+      }
     }
   },
   {
@@ -109,8 +241,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "tonight",
-      "options": ["tonight","tomorrow","last week","every year"],
-      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Ce soir, je te raconte tout.","targetWord":"Ce soir","language":"french"}
+      "options": [
+        "tonight",
+        "tomorrow",
+        "last week",
+        "every year"
+      ],
+      "audioClip": {
+        "storySlug": "un-discours-sans-lumiere",
+        "storySource": "user",
+        "sentence": "Ce soir, je te raconte tout.",
+        "targetWord": "Ce soir",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ebc8145d132229a.mp3"
+      }
     }
   },
   {
@@ -120,8 +264,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "in the middle of",
-      "options": ["in the middle of","at the end of","before","after"],
-      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Au milieu de la blague, tout s'éteint.","targetWord":"Au milieu de","language":"french"}
+      "options": [
+        "in the middle of",
+        "at the end of",
+        "before",
+        "after"
+      ],
+      "audioClip": {
+        "storySlug": "un-discours-sans-lumiere",
+        "storySource": "user",
+        "sentence": "Au milieu de la blague, tout s'éteint.",
+        "targetWord": "Au milieu de",
+        "language": "french"
+      }
     },
     "featured": false
   },
@@ -132,8 +287,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "in the distance",
-      "options": ["in the distance","right beside him","above his head","behind the door"],
-      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Au loin, il entend une voix.","targetWord":"Au loin","language":"french"}
+      "options": [
+        "in the distance",
+        "right beside him",
+        "above his head",
+        "behind the door"
+      ],
+      "audioClip": {
+        "storySlug": "un-discours-sans-lumiere",
+        "storySource": "user",
+        "sentence": "Au loin, il entend une voix.",
+        "targetWord": "Au loin",
+        "language": "french"
+      }
     },
     "featured": false
   },
@@ -144,8 +310,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "black hands",
-      "options": ["black hands","cold hands","empty hands","tired eyes"],
-      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Il revient avec les mains noires.","targetWord":"les mains noires","language":"french"}
+      "options": [
+        "black hands",
+        "cold hands",
+        "empty hands",
+        "tired eyes"
+      ],
+      "audioClip": {
+        "storySlug": "un-discours-sans-lumiere",
+        "storySource": "user",
+        "sentence": "Il revient avec les mains noires.",
+        "targetWord": "les mains noires",
+        "language": "french"
+      }
     },
     "featured": false
   },
@@ -156,8 +333,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "the stage",
-      "options": ["the stage","the door","the kitchen","the garden"],
-      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Il court derrière la scène.","targetWord":"la scène","language":"french"}
+      "options": [
+        "the stage",
+        "the door",
+        "the kitchen",
+        "the garden"
+      ],
+      "audioClip": {
+        "storySlug": "un-discours-sans-lumiere",
+        "storySource": "user",
+        "sentence": "Il court derrière la scène.",
+        "targetWord": "la scène",
+        "language": "french"
+      }
     },
     "featured": false
   },
@@ -168,10 +356,27 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "sauvé",
-      "options": ["sauvé","oublié","cassé","cherché"],
+      "options": [
+        "sauvé",
+        "oublié",
+        "cassé",
+        "cherché"
+      ],
       "translation": "You missed the speech, but you _____ the party.",
-      "optionTranslations": ["saved","forgot","broke","looked for"],
-      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Tu as raté le discours, mais tu as sauvé la fête.","targetWord":"sauvé","language":"french"}
+      "optionTranslations": [
+        "saved",
+        "forgot",
+        "broke",
+        "looked for"
+      ],
+      "audioClip": {
+        "storySlug": "un-discours-sans-lumiere",
+        "storySource": "user",
+        "sentence": "Tu as raté le discours, mais tu as sauvé la fête.",
+        "targetWord": "sauvé",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2a8c183db9459bfd.mp3"
+      }
     },
     "featured": false
   },
@@ -182,10 +387,27 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "embrasse",
-      "options": ["embrasse","oublie","quitte","cherche"],
+      "options": [
+        "embrasse",
+        "oublie",
+        "quitte",
+        "cherche"
+      ],
       "translation": "She's happy, so she _____ him.",
-      "optionTranslations": ["kisses","forgets","leaves","looks for"],
-      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Elle est contente, alors elle l'embrasse.","targetWord":"embrasse","language":"french"}
+      "optionTranslations": [
+        "kisses",
+        "forgets",
+        "leaves",
+        "looks for"
+      ],
+      "audioClip": {
+        "storySlug": "un-discours-sans-lumiere",
+        "storySource": "user",
+        "sentence": "Elle est contente, alors elle l'embrasse.",
+        "targetWord": "embrasse",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7657a6dfb224d21d.mp3"
+      }
     },
     "featured": false
   },
@@ -196,10 +418,27 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "honneur",
-      "options": ["honneur","problème","secret","cadeau"],
+      "options": [
+        "honneur",
+        "problème",
+        "secret",
+        "cadeau"
+      ],
       "translation": "Receiving this prize is a great _____ for her.",
-      "optionTranslations": ["honor","problem","secret","gift"],
-      "audioClip": {"storySlug":"un-discours-sans-lumiere","storySource":"user","sentence":"Recevoir ce prix est un grand honneur pour elle.","targetWord":"honneur","language":"french"}
+      "optionTranslations": [
+        "honor",
+        "problem",
+        "secret",
+        "gift"
+      ],
+      "audioClip": {
+        "storySlug": "un-discours-sans-lumiere",
+        "storySource": "user",
+        "sentence": "Recevoir ce prix est un grand honneur pour elle.",
+        "targetWord": "honneur",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/53d59ed0b6410c99.mp3"
+      }
     },
     "featured": false
   }

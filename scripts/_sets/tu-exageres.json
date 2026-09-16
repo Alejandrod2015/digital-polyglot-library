@@ -6,10 +6,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        {"word":"le canapé","answer":"a couch","options":["a couch","a song","a text message","a bunch of flowers"]},
-        {"word":"la chanson","answer":"a song","options":["a couch","a song","a text message","a bunch of flowers"]},
-        {"word":"le message","answer":"a text message","options":["a couch","a song","a text message","a bunch of flowers"]},
-        {"word":"le bouquet","answer":"a bunch of flowers","options":["a couch","a song","a text message","a bunch of flowers"]}
+        {
+          "word": "le canapé",
+          "answer": "a couch",
+          "options": [
+            "a couch",
+            "a song",
+            "a text message",
+            "a bunch of flowers"
+          ]
+        },
+        {
+          "word": "la chanson",
+          "answer": "a song",
+          "options": [
+            "a couch",
+            "a song",
+            "a text message",
+            "a bunch of flowers"
+          ]
+        },
+        {
+          "word": "le message",
+          "answer": "a text message",
+          "options": [
+            "a couch",
+            "a song",
+            "a text message",
+            "a bunch of flowers"
+          ]
+        },
+        {
+          "word": "le bouquet",
+          "answer": "a bunch of flowers",
+          "options": [
+            "a couch",
+            "a song",
+            "a text message",
+            "a bunch of flowers"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -21,8 +57,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "angry",
-      "options": ["angry","happy","sleepy","bored"],
-      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Ses yeux sont en colère, mais elle reste calme.","targetWord":"en colère","language":"french"}
+      "options": [
+        "angry",
+        "happy",
+        "sleepy",
+        "bored"
+      ],
+      "audioClip": {
+        "storySlug": "tu-exageres",
+        "storySource": "user",
+        "sentence": "Ses yeux sont en colère, mais elle reste calme.",
+        "targetWord": "en colère",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/418d11d0b70ffe24.mp3"
+      }
     }
   },
   {
@@ -32,8 +80,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "are exaggerating",
-      "options": ["are exaggerating","are joking","are lying","are shouting"],
-      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Ce n'est rien, tu exagères un peu.","targetWord":"exagères","language":"french"}
+      "options": [
+        "are exaggerating",
+        "are joking",
+        "are lying",
+        "are shouting"
+      ],
+      "audioClip": {
+        "storySlug": "tu-exageres",
+        "storySource": "user",
+        "sentence": "Ce n'est rien, tu exagères un peu.",
+        "targetWord": "exagères",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/26f0fe10a0054025.mp3"
+      }
     }
   },
   {
@@ -43,8 +103,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "disappointed",
-      "options": ["disappointed","excited","surprised","relieved"],
-      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Il ne vient pas: elle est déçue.","targetWord":"déçue","language":"french"}
+      "options": [
+        "disappointed",
+        "excited",
+        "surprised",
+        "relieved"
+      ],
+      "audioClip": {
+        "storySlug": "tu-exageres",
+        "storySource": "user",
+        "sentence": "Il ne vient pas: elle est déçue.",
+        "targetWord": "déçue",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f449471bb8eef8f.mp3"
+      }
     }
   },
   {
@@ -54,8 +126,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "sleeps badly",
-      "options": ["sleeps badly","sleeps well","falls asleep quickly","wakes up refreshed"],
-      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Inquiet, il dort mal sur le canapé.","targetWord":"dort mal","language":"french"}
+      "options": [
+        "sleeps badly",
+        "sleeps well",
+        "falls asleep quickly",
+        "wakes up refreshed"
+      ],
+      "audioClip": {
+        "storySlug": "tu-exageres",
+        "storySource": "user",
+        "sentence": "Inquiet, il dort mal sur le canapé.",
+        "targetWord": "dort mal",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7d77d93d5b32d2fe.mp3"
+      }
     }
   },
   {
@@ -65,8 +149,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "hurt, offended",
-      "options": ["hurt, offended","happy, pleased","tired, sleepy","calm, relaxed"],
-      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Vexée, elle part dans la chambre.","targetWord":"Vexée","language":"french"}
+      "options": [
+        "hurt, offended",
+        "happy, pleased",
+        "tired, sleepy",
+        "calm, relaxed"
+      ],
+      "audioClip": {
+        "storySlug": "tu-exageres",
+        "storySource": "user",
+        "sentence": "Vexée, elle part dans la chambre.",
+        "targetWord": "Vexée",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f3f0476fc0b62097.mp3"
+      }
     }
   },
   {
@@ -76,8 +172,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "don't understand at all",
-      "options": ["don't understand at all","understand everything","remember everything","forget nothing"],
-      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Tu ne comprends vraiment rien, dit-elle.","targetWord":"comprends vraiment rien","language":"french"}
+      "options": [
+        "don't understand at all",
+        "understand everything",
+        "remember everything",
+        "forget nothing"
+      ],
+      "audioClip": {
+        "storySlug": "tu-exageres",
+        "storySource": "user",
+        "sentence": "Tu ne comprends vraiment rien, dit-elle.",
+        "targetWord": "comprends vraiment rien",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/59fef4e6b6bdc414.mp3"
+      }
     }
   },
   {
@@ -87,8 +195,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "two hours later",
-      "options": ["two hours later","two minutes later","the next morning","the day before"],
-      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Deux heures plus tard, personne ne dit rien.","targetWord":"Deux heures plus tard","language":"french"}
+      "options": [
+        "two hours later",
+        "two minutes later",
+        "the next morning",
+        "the day before"
+      ],
+      "audioClip": {
+        "storySlug": "tu-exageres",
+        "storySource": "user",
+        "sentence": "Deux heures plus tard, personne ne dit rien.",
+        "targetWord": "Deux heures plus tard",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b38ad22a3e99491.mp3"
+      }
     }
   },
   {
@@ -98,8 +218,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "at noon",
-      "options": ["at noon","at midnight","in the evening","at dawn"],
-      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"À midi, il arrive avec un bouquet.","targetWord":"À midi","language":"french"}
+      "options": [
+        "at noon",
+        "at midnight",
+        "in the evening",
+        "at dawn"
+      ],
+      "audioClip": {
+        "storySlug": "tu-exageres",
+        "storySource": "user",
+        "sentence": "À midi, il arrive avec un bouquet.",
+        "targetWord": "À midi",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d1df992d39f44267.mp3"
+      }
     }
   },
   {
@@ -109,8 +241,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "voice",
-      "options": ["voice","face","hand","name"],
-      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Sa voix reste calme, malgré la colère.","targetWord":"voix","language":"french"}
+      "options": [
+        "voice",
+        "face",
+        "hand",
+        "name"
+      ],
+      "audioClip": {
+        "storySlug": "tu-exageres",
+        "storySource": "user",
+        "sentence": "Sa voix reste calme, malgré la colère.",
+        "targetWord": "voix",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a7e75847127724a2.mp3"
+      }
     }
   },
   {
@@ -120,8 +264,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "the last straw",
-      "options": ["the last straw","a nice compliment","a small joke","a good idea"],
-      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"C'est la phrase de trop.","targetWord":"la phrase de trop","language":"french"}
+      "options": [
+        "the last straw",
+        "a nice compliment",
+        "a small joke",
+        "a good idea"
+      ],
+      "audioClip": {
+        "storySlug": "tu-exageres",
+        "storySource": "user",
+        "sentence": "C'est la phrase de trop.",
+        "targetWord": "la phrase de trop",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/60043b0585ea9fea.mp3"
+      }
     },
     "featured": false
   },
@@ -132,8 +288,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "blanket",
-      "options": ["blanket","pillow","mattress","curtain"],
-      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Il dort sous une vieille couverture.","targetWord":"couverture","language":"french"}
+      "options": [
+        "blanket",
+        "pillow",
+        "mattress",
+        "curtain"
+      ],
+      "audioClip": {
+        "storySlug": "tu-exageres",
+        "storySource": "user",
+        "sentence": "Il dort sous une vieille couverture.",
+        "targetWord": "couverture",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b66b0a16dcd79b9e.mp3"
+      }
     },
     "featured": false
   },
@@ -144,8 +312,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "flowers",
-      "options": ["flowers","letters","gifts","cookies"],
-      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Il reçoit encore des fleurs rouges.","targetWord":"fleurs","language":"french"}
+      "options": [
+        "flowers",
+        "letters",
+        "gifts",
+        "cookies"
+      ],
+      "audioClip": {
+        "storySlug": "tu-exageres",
+        "storySource": "user",
+        "sentence": "Il reçoit encore des fleurs rouges.",
+        "targetWord": "fleurs",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c8d4825a5357a488.mp3"
+      }
     },
     "featured": false
   },
@@ -156,8 +336,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "always the same",
-      "options": ["always the same","never the same","sometimes new","only once"],
-      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Des fleurs, toujours des fleurs.","targetWord":"toujours des","language":"french"}
+      "options": [
+        "always the same",
+        "never the same",
+        "sometimes new",
+        "only once"
+      ],
+      "audioClip": {
+        "storySlug": "tu-exageres",
+        "storySource": "user",
+        "sentence": "Des fleurs, toujours des fleurs.",
+        "targetWord": "toujours des",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ddefefe494b73c30.mp3"
+      }
     },
     "featured": false
   },
@@ -168,10 +360,27 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "insisté",
-      "options": ["insisté","dormi","chanté","payé"],
+      "options": [
+        "insisté",
+        "dormi",
+        "chanté",
+        "payé"
+      ],
       "translation": "He doesn't want to, but she _____.",
-      "optionTranslations": ["insisted","slept","sang","paid"],
-      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Il ne veut pas, mais elle a insisté.","targetWord":"insisté","language":"french"}
+      "optionTranslations": [
+        "insisted",
+        "slept",
+        "sang",
+        "paid"
+      ],
+      "audioClip": {
+        "storySlug": "tu-exageres",
+        "storySource": "user",
+        "sentence": "Il ne veut pas, mais elle a insisté.",
+        "targetWord": "insisté",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/22f297a9c052ef74.mp3"
+      }
     },
     "featured": false
   },
@@ -182,10 +391,27 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "promis",
-      "options": ["promis","oublié","caché","vendu"],
+      "options": [
+        "promis",
+        "oublié",
+        "caché",
+        "vendu"
+      ],
       "translation": "He says he'll come: he _____ it.",
-      "optionTranslations": ["promised","forgot","hid","sold"],
-      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Il dit qu'il va venir: il l'a promis.","targetWord":"promis","language":"french"}
+      "optionTranslations": [
+        "promised",
+        "forgot",
+        "hid",
+        "sold"
+      ],
+      "audioClip": {
+        "storySlug": "tu-exageres",
+        "storySource": "user",
+        "sentence": "Il dit qu'il va venir: il l'a promis.",
+        "targetWord": "promis",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e9d96f961662f23.mp3"
+      }
     },
     "featured": false
   },
@@ -196,10 +422,27 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "cherché",
-      "options": ["cherché","jeté","payé","fermé"],
+      "options": [
+        "cherché",
+        "jeté",
+        "payé",
+        "fermé"
+      ],
       "translation": "He can't find her: he _____ her everywhere.",
-      "optionTranslations": ["looked for","threw away","paid for","closed"],
-      "audioClip": {"storySlug":"tu-exageres","storySource":"user","sentence":"Il ne la trouve pas: il l'a cherché partout.","targetWord":"cherché","language":"french"}
+      "optionTranslations": [
+        "looked for",
+        "threw away",
+        "paid for",
+        "closed"
+      ],
+      "audioClip": {
+        "storySlug": "tu-exageres",
+        "storySource": "user",
+        "sentence": "Il ne la trouve pas: il l'a cherché partout.",
+        "targetWord": "cherché",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e87d5972aad9cf6.mp3"
+      }
     },
     "featured": false
   }
