@@ -139,22 +139,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "Bankkaufmann",
-  "sentence": "Er ist [[Bankkaufmann]], aber er spielt am Wochenende Schlagzeug.",
+  "word": "Stimme",
+  "sentence": "Ihre [[Stimme]] ist ganz leise.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a bank clerk",
+   "answer": "a voice",
    "options": [
-    "a bank clerk",
-    "a teacher",
-    "a cook",
-    "a singer"
+    "a voice",
+    "a name",
+    "a song",
+    "a face"
    ],
    "audioClip": {
     "storySlug": "tims-trommelstocke",
     "storySource": "user",
-    "sentence": "Er ist Bankkaufmann, aber er spielt am Wochenende Schlagzeug.",
-    "targetWord": "Bankkaufmann",
+    "sentence": "Ihre Stimme ist ganz leise.",
+    "targetWord": "Stimme",
     "language": "german"
    }
   }
