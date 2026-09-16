@@ -334,7 +334,7 @@
   {
     "type": "fill_blank",
     "word": "pronto",
-    "sentence": "Si sales ahora, llegarás _____.",
+    "sentence": "Está muy cerca: si sales ahora, llegarás _____.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "pronto",
@@ -344,7 +344,7 @@
         "nunca",
         "enfadado"
       ],
-      "translation": "If you leave now, you'll arrive _____.",
+      "translation": "It's very close: if you leave now, you'll arrive _____.",
       "optionTranslations": [
         "soon",
         "late",
@@ -354,7 +354,7 @@
       "audioClip": {
         "storySlug": "yo-tambien-tenia-miedo",
         "storySource": "user",
-        "sentence": "Si sales ahora, llegarás pronto.",
+        "sentence": "Está muy cerca: si sales ahora, llegarás pronto.",
         "targetWord": "pronto",
         "language": "spanish"
       }

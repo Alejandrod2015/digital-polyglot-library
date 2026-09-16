@@ -274,7 +274,7 @@
   {
     "type": "fill_blank",
     "word": "Aquí",
-    "sentence": "_____ tienes el dinero que te debía.",
+    "sentence": "_____ tienes, en la mano, el dinero que te debía.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "Aquí",
@@ -284,7 +284,7 @@
         "Nunca",
         "Siempre"
       ],
-      "translation": "_____ is the money I owed you.",
+      "translation": "_____ is, in your hand, the money I owed you.",
       "optionTranslations": [
         "Here",
         "There",
@@ -294,7 +294,7 @@
       "audioClip": {
         "storySlug": "ruben-vende-la-moto",
         "storySource": "user",
-        "sentence": "Aquí tienes el dinero que te debía.",
+        "sentence": "Aquí tienes, en la mano, el dinero que te debía.",
         "targetWord": "Aquí",
         "language": "spanish"
       }
@@ -364,7 +364,7 @@
   {
     "type": "fill_blank",
     "word": "metió",
-    "sentence": "Antes de salir, él _____ las llaves en el bolso.",
+    "sentence": "Antes de salir, él _____ las llaves para no perderlas.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "metió",
@@ -374,7 +374,7 @@
         "vendió",
         "tiró"
       ],
-      "translation": "Before leaving, he _____ the keys in the bag.",
+      "translation": "Before leaving, he _____ the keys so as not to lose them.",
       "optionTranslations": [
         "put",
         "lost",
@@ -384,7 +384,7 @@
       "audioClip": {
         "storySlug": "ruben-vende-la-moto",
         "storySource": "user",
-        "sentence": "Antes de salir, él metió las llaves en el bolso.",
+        "sentence": "Antes de salir, él metió las llaves para no perderlas.",
         "targetWord": "metió",
         "language": "spanish"
       }

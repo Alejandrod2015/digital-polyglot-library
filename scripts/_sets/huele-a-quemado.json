@@ -274,7 +274,7 @@
   {
     "type": "fill_blank",
     "word": "probó",
-    "sentence": "Quiso saber si sonaba bien y lo _____.",
+    "sentence": "Quiso saber si sonaba bien, así que lo _____ un minuto.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "probó",
@@ -284,7 +284,7 @@
         "rompió",
         "devolvió"
       ],
-      "translation": "He wanted to know if it sounded good, so he _____ it.",
+      "translation": "He wanted to know if it sounded good, so he _____ it for a minute.",
       "optionTranslations": [
         "tried",
         "bought",
@@ -294,7 +294,7 @@
       "audioClip": {
         "storySlug": "huele-a-quemado",
         "storySource": "user",
-        "sentence": "Quiso saber si sonaba bien y lo probó.",
+        "sentence": "Quiso saber si sonaba bien, así que lo probó un minuto.",
         "targetWord": "probó",
         "language": "spanish"
       }
@@ -424,7 +424,7 @@
   {
     "type": "fill_blank",
     "word": "a plazos",
-    "sentence": "No tenía todo el dinero, así que pagó _____.",
+    "sentence": "No tenía todo el dinero, y pagó _____, poco a poco.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "a plazos",
@@ -434,7 +434,7 @@
         "en efectivo",
         "por error"
       ],
-      "translation": "She didn't have all the money, so she paid _____.",
+      "translation": "She didn't have all the money, and paid _____, little by little.",
       "optionTranslations": [
         "in instalments",
         "in advance",
@@ -444,7 +444,7 @@
       "audioClip": {
         "storySlug": "huele-a-quemado",
         "storySource": "user",
-        "sentence": "No tenía todo el dinero, así que pagó a plazos.",
+        "sentence": "No tenía todo el dinero, y pagó a plazos, poco a poco.",
         "targetWord": "a plazos",
         "language": "spanish"
       }

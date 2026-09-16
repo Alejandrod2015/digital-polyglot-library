@@ -394,7 +394,7 @@
   {
     "type": "fill_blank",
     "word": "Sacó",
-    "sentence": "Del bolsillo, él _____ una moneda.",
+    "sentence": "Del bolsillo, él _____ una moneda y la puso en su mano.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "Sacó",
@@ -404,7 +404,7 @@
         "Escondió",
         "Pintó"
       ],
-      "translation": "From his pocket, he _____ a coin.",
+      "translation": "From his pocket, he _____ a coin and put it in his hand.",
       "optionTranslations": [
         "took out",
         "lost",
@@ -414,7 +414,7 @@
       "audioClip": {
         "storySlug": "tocamos-otra-vez",
         "storySource": "user",
-        "sentence": "Del bolsillo, él sacó una moneda.",
+        "sentence": "Del bolsillo, él sacó una moneda y la puso en su mano.",
         "targetWord": "Sacó",
         "language": "spanish"
       }

@@ -304,7 +304,7 @@
   {
     "type": "fill_blank",
     "word": "encontró",
-    "sentence": "Después de buscar mucho, él _____ las gafas.",
+    "sentence": "Después de buscar mucho, por fin él _____ las gafas.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "encontró",
@@ -314,7 +314,7 @@
         "vendió",
         "perdió"
       ],
-      "translation": "After a long search, he _____ the glasses.",
+      "translation": "After searching a lot, he finally _____ the glasses.",
       "optionTranslations": [
         "found",
         "broke",
@@ -324,7 +324,7 @@
       "audioClip": {
         "storySlug": "jaime-lo-grabo-todo",
         "storySource": "user",
-        "sentence": "Después de buscar mucho, él encontró las gafas.",
+        "sentence": "Después de buscar mucho, por fin él encontró las gafas.",
         "targetWord": "encontró",
         "language": "spanish"
       }

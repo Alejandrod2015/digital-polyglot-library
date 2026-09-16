@@ -274,7 +274,7 @@
   {
     "type": "fill_blank",
     "word": "caía",
-    "sentence": "La nieve _____ despacio sobre el pueblo.",
+    "sentence": "La nieve _____ despacio, cubriendo el suelo del pueblo.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "caía",
@@ -284,7 +284,7 @@
         "soplaba",
         "volaba"
       ],
-      "translation": "The snow was _____ slowly over the village.",
+      "translation": "The snow was _____ slowly, covering the ground of the village.",
       "optionTranslations": [
         "falling",
         "shining",
@@ -294,7 +294,7 @@
       "audioClip": {
         "storySlug": "la-ultima-cancion",
         "storySource": "user",
-        "sentence": "La nieve caía despacio sobre el pueblo.",
+        "sentence": "La nieve caía despacio, cubriendo el suelo del pueblo.",
         "targetWord": "caía",
         "language": "spanish"
       }

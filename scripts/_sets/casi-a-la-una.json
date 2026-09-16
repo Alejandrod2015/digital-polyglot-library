@@ -274,7 +274,7 @@
   {
     "type": "fill_blank",
     "word": "empezó",
-    "sentence": "La película _____ tarde por un problema técnico.",
+    "sentence": "El público esperaba sentado cuando la película _____ tarde.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "empezó",
@@ -284,7 +284,7 @@
         "cambió",
         "paró"
       ],
-      "translation": "The film _____ late because of a technical problem.",
+      "translation": "The audience was sitting and waiting when the film _____ late.",
       "optionTranslations": [
         "started",
         "ended",
@@ -294,7 +294,7 @@
       "audioClip": {
         "storySlug": "casi-a-la-una",
         "storySource": "user",
-        "sentence": "La película empezó tarde por un problema técnico.",
+        "sentence": "El público esperaba sentado cuando la película empezó tarde.",
         "targetWord": "empezó",
         "language": "spanish"
       }

@@ -274,27 +274,27 @@
   {
     "type": "fill_blank",
     "word": "venía",
-    "sentence": "Cada mañana, él _____ tarde y su jefe se enfadaba.",
+    "sentence": "Cada mañana, él _____ tarde a la oficina y fichaba el último.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "venía",
       "options": [
         "venía",
-        "salía",
-        "llamaba",
-        "corría"
+        "dormía",
+        "desayunaba",
+        "trabajaba"
       ],
-      "translation": "Every morning, he _____ late and his boss got angry.",
+      "translation": "Every morning, he _____ late to the office and clocked in last.",
       "optionTranslations": [
         "came",
-        "left",
-        "called",
-        "ran"
+        "slept",
+        "had breakfast",
+        "worked"
       ],
       "audioClip": {
         "storySlug": "olga-no-tiene-prisa",
         "storySource": "user",
-        "sentence": "Cada mañana, él venía tarde y su jefe se enfadaba.",
+        "sentence": "Cada mañana, él venía tarde a la oficina y fichaba el último.",
         "targetWord": "venía",
         "language": "spanish"
       }
@@ -424,27 +424,27 @@
   {
     "type": "fill_blank",
     "word": "lento",
-    "sentence": "El tráfico iba tan _____ que llegamos tarde.",
+    "sentence": "El tráfico iba tan _____ que tardamos una hora en cruzar.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "lento",
       "options": [
         "lento",
         "rápido",
-        "tranquilo",
-        "peligroso"
+        "ruidoso",
+        "ordenado"
       ],
-      "translation": "The traffic was so _____ that we arrived late.",
+      "translation": "The traffic was so _____ that it took us an hour to cross.",
       "optionTranslations": [
         "slow",
         "fast",
-        "calm",
-        "dangerous"
+        "noisy",
+        "orderly"
       ],
       "audioClip": {
         "storySlug": "olga-no-tiene-prisa",
         "storySource": "user",
-        "sentence": "El tráfico iba tan lento que llegamos tarde.",
+        "sentence": "El tráfico iba tan lento que tardamos una hora en cruzar.",
         "targetWord": "lento",
         "language": "spanish"
       }

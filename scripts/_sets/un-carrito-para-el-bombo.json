@@ -304,7 +304,7 @@
   {
     "type": "fill_blank",
     "word": "llevar",
-    "sentence": "No podía _____ tantas bolsas él solo.",
+    "sentence": "Las bolsas eran muy pesadas: no podía _____ tantas él solo.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "llevar",
@@ -314,7 +314,7 @@
         "encontrar",
         "contar"
       ],
-      "translation": "He couldn't _____ so many bags by himself.",
+      "translation": "The bags were very heavy: he couldn't _____ so many alone.",
       "optionTranslations": [
         "carry",
         "sell",
@@ -324,7 +324,7 @@
       "audioClip": {
         "storySlug": "un-carrito-para-el-bombo",
         "storySource": "user",
-        "sentence": "No podía llevar tantas bolsas él solo.",
+        "sentence": "Las bolsas eran muy pesadas: no podía llevar tantas él solo.",
         "targetWord": "llevar",
         "language": "spanish"
       }

@@ -274,7 +274,7 @@
   {
     "type": "fill_blank",
     "word": "enseñó",
-    "sentence": "Con orgullo, ella le _____ su nuevo coche.",
+    "sentence": "Ella le _____ su nuevo coche, señalando cada detalle.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "enseñó",
@@ -284,7 +284,7 @@
         "prestó",
         "escondió"
       ],
-      "translation": "Proudly, she _____ him her new car.",
+      "translation": "She _____ him her new car, pointing out every detail.",
       "optionTranslations": [
         "showed",
         "sold",
@@ -294,7 +294,7 @@
       "audioClip": {
         "storySlug": "ahora-le-llaman-rana",
         "storySource": "user",
-        "sentence": "Con orgullo, ella le enseñó su nuevo coche.",
+        "sentence": "Ella le enseñó su nuevo coche, señalando cada detalle.",
         "targetWord": "enseñó",
         "language": "spanish"
       }
@@ -304,7 +304,7 @@
   {
     "type": "fill_blank",
     "word": "devolvió",
-    "sentence": "Al terminar, él le _____ el libro.",
+    "sentence": "Al terminar de leerlo, él le _____ el libro a su dueña.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "devolvió",
@@ -314,7 +314,7 @@
         "perdió",
         "vendió"
       ],
-      "translation": "When finished, he _____ her the book.",
+      "translation": "When he finished reading it, he _____ the book to its owner.",
       "optionTranslations": [
         "gave back",
         "read",
@@ -324,7 +324,7 @@
       "audioClip": {
         "storySlug": "ahora-le-llaman-rana",
         "storySource": "user",
-        "sentence": "Al terminar, él le devolvió el libro.",
+        "sentence": "Al terminar de leerlo, él le devolvió el libro a su dueña.",
         "targetWord": "devolvió",
         "language": "spanish"
       }
@@ -334,7 +334,7 @@
   {
     "type": "fill_blank",
     "word": "oía",
-    "sentence": "Desde la cocina, ella _____ la música.",
+    "sentence": "Desde la cocina, ella _____ la música que sonaba en la radio.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "oía",
@@ -344,7 +344,7 @@
         "olía",
         "sentía"
       ],
-      "translation": "From the kitchen, she could _____ the music.",
+      "translation": "From the kitchen, she could _____ the music playing on the radio.",
       "optionTranslations": [
         "hear",
         "see",
@@ -354,7 +354,7 @@
       "audioClip": {
         "storySlug": "ahora-le-llaman-rana",
         "storySource": "user",
-        "sentence": "Desde la cocina, ella oía la música.",
+        "sentence": "Desde la cocina, ella oía la música que sonaba en la radio.",
         "targetWord": "oía",
         "language": "spanish"
       }
@@ -364,7 +364,7 @@
   {
     "type": "fill_blank",
     "word": "borramos",
-    "sentence": "¿_____ la foto o la dejamos?",
+    "sentence": "¿_____ la foto para siempre, o la dejamos ahí?",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "borramos",
@@ -374,7 +374,7 @@
         "buscamos",
         "vendemos"
       ],
-      "translation": "Shall we _____ the photo or leave it?",
+      "translation": "Shall we _____ the photo forever, or leave it there?",
       "optionTranslations": [
         "delete",
         "print",
@@ -384,7 +384,7 @@
       "audioClip": {
         "storySlug": "ahora-le-llaman-rana",
         "storySource": "user",
-        "sentence": "Borramos la foto o la dejamos.",
+        "sentence": "Borramos la foto para siempre, o la dejamos ahí.",
         "targetWord": "borramos",
         "language": "spanish"
       }
@@ -394,7 +394,7 @@
   {
     "type": "fill_blank",
     "word": "volvemos",
-    "sentence": "Después del verano, _____ al trabajo.",
+    "sentence": "Después del verano, todos _____ al trabajo, como cada año.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "volvemos",
@@ -404,7 +404,7 @@
         "llegamos tarde",
         "nos perdemos"
       ],
-      "translation": "After summer, we _____ to work.",
+      "translation": "After summer, everyone _____ to work, like every year.",
       "optionTranslations": [
         "go back",
         "say goodbye",
@@ -414,7 +414,7 @@
       "audioClip": {
         "storySlug": "ahora-le-llaman-rana",
         "storySource": "user",
-        "sentence": "Después del verano, volvemos al trabajo.",
+        "sentence": "Después del verano, todos volvemos al trabajo, como cada año.",
         "targetWord": "volvemos",
         "language": "spanish"
       }

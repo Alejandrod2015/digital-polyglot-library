@@ -364,7 +364,7 @@
   {
     "type": "fill_blank",
     "word": "afeitado",
-    "sentence": "Se miró la cara: se había _____.",
+    "sentence": "Se miró la cara y notó la piel suave: se había _____.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "afeitado",
@@ -374,7 +374,7 @@
         "vestido",
         "peinado"
       ],
-      "translation": "He looked at his face: he had _____.",
+      "translation": "He looked at his face and noticed smooth skin: he had _____.",
       "optionTranslations": [
         "shaved",
         "showered",
@@ -384,7 +384,7 @@
       "audioClip": {
         "storySlug": "ruben-sin-barba",
         "storySource": "user",
-        "sentence": "Se miró la cara: se había afeitado.",
+        "sentence": "Se miró la cara y notó la piel suave: se había afeitado.",
         "targetWord": "afeitado",
         "language": "spanish"
       }
@@ -394,27 +394,27 @@
   {
     "type": "fill_blank",
     "word": "cambiado",
-    "sentence": "Con el pelo corto, él había _____ mucho.",
+    "sentence": "Con el pelo corto, él había _____ mucho, y nadie lo reconocía.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "cambiado",
       "options": [
         "cambiado",
-        "crecido",
-        "envejecido",
-        "mejorado"
+        "llorado",
+        "cantado",
+        "bailado"
       ],
-      "translation": "With short hair, Rubén had _____ a lot.",
+      "translation": "With short hair, he had _____ a lot, and nobody recognised him.",
       "optionTranslations": [
         "changed",
-        "grown",
-        "aged",
-        "improved"
+        "cried",
+        "sung",
+        "danced"
       ],
       "audioClip": {
         "storySlug": "ruben-sin-barba",
         "storySource": "user",
-        "sentence": "Con el pelo corto, él había cambiado mucho.",
+        "sentence": "Con el pelo corto, él había cambiado mucho, y nadie lo reconocía.",
         "targetWord": "cambiado",
         "language": "spanish"
       }

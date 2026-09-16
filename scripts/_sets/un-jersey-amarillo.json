@@ -274,7 +274,7 @@
   {
     "type": "fill_blank",
     "word": "pensó",
-    "sentence": "Miró el armario, se cruzó de brazos y _____ un momento.",
+    "sentence": "Miró el armario, se llevó la mano a la barbilla y _____.",
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "pensó",
@@ -284,7 +284,7 @@
         "durmió",
         "esperó"
       ],
-      "translation": "She looked at the wardrobe, crossed her arms, and _____ for a moment.",
+      "translation": "She looked at the wardrobe, put her hand to her chin, and _____.",
       "optionTranslations": [
         "thought",
         "laughed",
@@ -294,7 +294,7 @@
       "audioClip": {
         "storySlug": "un-jersey-amarillo",
         "storySource": "user",
-        "sentence": "Miró el armario, se cruzó de brazos y pensó un momento.",
+        "sentence": "Miró el armario, se llevó la mano a la barbilla y pensó.",
         "targetWord": "pensó",
         "language": "spanish"
       }
