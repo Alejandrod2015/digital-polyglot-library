@@ -103,6 +103,20 @@
       "autoPort": false
     },
     {
+      "_comment": "Este worktree (it-a0-friends-audio): muestra de voz del Friends IT A0 con el texto delante. Borrar al cerrar el journey.",
+      "name": "it-a0-friends-audio-3010",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev:web",
+        "--",
+        "--port",
+        "3010"
+      ],
+      "port": 3010,
+      "autoPort": false
+    },
+    {
       "name": "ads-preview",
       "runtimeExecutable": "python3",
       "runtimeArgs": [
