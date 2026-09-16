@@ -1,0 +1,26 @@
+{
+  "tipo": "Cultural", "nivel": "b1", "variante": "LATAM",
+  "registro": "seco y contable, de quien mide todo en ventas perdidas; la ternura entra por debajo, nunca dicha",
+  "espina": "Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto en el mercado de La Paz, y cada pieza esta hecha para no durar. El tema 1 es la primera, y la que le ensena la regla.",
+  "recursos": "causalidad explicita, contraste entre lo que se espera y lo que pesa, ironia de situacion sin sarcasmo, gancho final en gesto concreto; nada figurado por encima de B1",
+  "historias": [
+    { "slot": "1",
+      "quiere": "el ekeko tallado a mano del unico tallador que abre el veinticuatro a mediodia, como primera de las siete piezas",
+      "impide": "ese mediodia es la mejor hora de venta de su propio puesto, y hay cien personas en la fila",
+      "cuesta": "el mediodia del veinticuatro entero, que es la mejor venta de su ano y no vuelve",
+      "cambia": "consigue el ekeko y le pesa menos de lo que esperaba; deja de estar segura de para que lo queria",
+      "emocion": "euforia de la fila que se convierte en decepcion; el gesto es pasarlo de una mano a la otra sin guardarlo" },
+    { "slot": "2",
+      "quiere": "que la yatiri challe el ekeko, porque una pieza challada es lo que nadie mas puede traer",
+      "impide": "la challa se hace sobre el deseo de una persona con nombre, y hay que decirlo en voz alta",
+      "cuesta": "da el nombre de Ulises porque no puede decir en voz alta que es para vender; con eso la pieza deja de ser mercancia",
+      "cambia": "el ekeko queda challado a nombre de Ulises y ya no es de ella",
+      "emocion": "verguenza tapada con prisa; el gesto es soltar el nombre rapido y mirar la serpentina del suelo" },
+    { "slot": "3",
+      "quiere": "una segunda pieza igual antes de que se acabe el veinticuatro",
+      "impide": "el tallador no talla mas este ano y lo que queda en la feria es de fabrica",
+      "cuesta": "se lleva una de fabrica sabiendo que no vale, y con eso pierde la idea de que las siete piezas se compran",
+      "cambia": "en vez de una pieza se lleva el nombre del tallador escrito, que es lo primero que de verdad le sirve",
+      "emocion": "derrota tranquila, sin drama; el gesto es escribir el nombre y doblar el papel dentro del tari" }
+  ]
+}

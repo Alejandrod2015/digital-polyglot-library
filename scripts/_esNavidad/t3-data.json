@@ -1,0 +1,405 @@
+[
+  {
+    "topic": "vigils-and-waiting",
+    "slotIndex": 1,
+    "title": "El aserrín no se guarda",
+    "slug": "el-aserrin-no-se-guarda",
+    "arcType": "daily-encounter",
+    "synopsis": "Alondra llega a Antigua buscando la tercera de sus siete piezas, con un encargo sencillo en la cabeza: pagar una alfombra pequena ya hecha, o que se la hagan a medida. En el patio donde tinen el aserrin le explican que eso no existe, porque la alfombra no es una cosa antes de ser una calle. Ella insiste de la unica manera que se le ocurre, que es arrodillarse a trabajar sin que nadie se lo pida.",
+    "text": "Olía a aserrín y a pino. Quien tiñe es Saúl, teñidor de Antigua, Guatemala, revolviendo un balde.\n\n“Dime un precio y la pago ahora”, ofreció. “No hay hecha, ni la va a haber”, contestó él. “Se hace en la calle y a las siete la barren.”\n\nCreyó que subía el precio. Aquí la alfombra es efímera por vocación. La procesión que la pisa no la valora menos.\n\nEl conjunto trabajaba por familias, y la creencia era simple. La herencia se transmitía sin hablar. Era evidente quién era experto: el aprendiz cernía, el veterano dibujaba.\n\nNadie la invitó a esa jornada, y fue sensata: no insistió. “¿Puedo?”, preguntó. “Si sabes teñir, sí. Hay que ser hábil”, dijo Saúl. “Si no, mira y no estorbes.”\n\nAprovechó la ocasión y se puso a teñir, atenta. Cooperar ahí no se pide ni se paga: no hay recompensa.\n\nDos cucuruchos pasaron respetando el turno. Saúl la miró sin admiración, testigo de que era constante, y siguió cerniendo el rojo.",
+    "vocab": [
+      {
+        "word": "aserrín",
+        "surface": "aserrín",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "fine wood dust, dyed and poured to make street carpets"
+      },
+      {
+        "word": "pino",
+        "surface": "pino",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "pine needles spread on the ground for a procession"
+      },
+      {
+        "word": "teñir",
+        "surface": "teñidor",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the person who colours the sawdust for the street carpets"
+      },
+      {
+        "word": "cucurucho",
+        "surface": "cucuruchos",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "a man in a purple robe who carries the procession float"
+      },
+      {
+        "word": "balde",
+        "surface": "balde",
+        "type": "noun",
+        "definition": "a round open pot with a handle for carrying water"
+      },
+      {
+        "word": "barrer",
+        "surface": "barren",
+        "type": "verb",
+        "definition": "to clean a floor by pushing the dirt along with a brush"
+      },
+      {
+        "word": "efímero",
+        "surface": "efímera",
+        "type": "adjective",
+        "definition": "lasting a very short time and then gone for good"
+      },
+      {
+        "word": "vocación",
+        "surface": "vocación",
+        "type": "noun",
+        "definition": "the pull towards a kind of work you feel is yours"
+      },
+      {
+        "word": "procesión",
+        "surface": "procesión",
+        "type": "noun",
+        "definition": "a slow line of people walking together for a feast"
+      },
+      {
+        "word": "valorar",
+        "surface": "valora",
+        "type": "verb",
+        "definition": "to hold a thing as worth something, and say so"
+      },
+      {
+        "word": "constante",
+        "surface": "constante",
+        "type": "adjective",
+        "definition": "keeping at the same thing without stopping or slowing"
+      },
+      {
+        "word": "herencia",
+        "surface": "herencia",
+        "type": "noun",
+        "definition": "what one older group hands down to the next one"
+      },
+      {
+        "word": "transmitir",
+        "surface": "transmitía",
+        "type": "verb",
+        "definition": "to pass a thing on from one person to another"
+      },
+      {
+        "word": "evidente",
+        "surface": "evidente",
+        "type": "adjective",
+        "definition": "so clear that nobody has to explain it to you"
+      },
+      {
+        "word": "experto",
+        "surface": "experto",
+        "type": "noun",
+        "definition": "a person who knows a job better than the rest"
+      },
+      {
+        "word": "sensato",
+        "surface": "sensata",
+        "type": "adjective",
+        "definition": "thinking clearly, and not doing anything foolish at all"
+      },
+      {
+        "word": "hábil",
+        "surface": "hábil",
+        "type": "adjective",
+        "definition": "good with the hands, quick and clean at working"
+      },
+      {
+        "word": "atento",
+        "surface": "atenta",
+        "type": "adjective",
+        "definition": "watching closely so that nothing gets past you"
+      },
+      {
+        "word": "cooperar",
+        "surface": "Cooperar",
+        "type": "verb",
+        "definition": "to work together with others towards the same end"
+      },
+      {
+        "word": "testigo",
+        "surface": "testigo",
+        "type": "noun",
+        "definition": "a person who was there and saw it happen"
+      }
+    ]
+  },
+  {
+    "topic": "vigils-and-waiting",
+    "slotIndex": 2,
+    "title": "Nadie duerme el jueves",
+    "slug": "nadie-duerme-el-jueves",
+    "arcType": "harmonic-close",
+    "synopsis": "Una alfombra de veinte metros se termina a las cinco de la manana y la luz buena no llega hasta las seis, que es justo cuando ya hay gente encima. Alondra hace la cuenta y decide quedarse la noche entera para conseguir su imagen, sin calcular que quedarse implica arrodillarse y trabajar. La noche de rodillas le cambia la pregunta que traia, y lo nota cuando ya es tarde para deshacerlo.",
+    "text": "Media alfombra faltaba y la calle olía a incienso. Saúl no había parado.\n\n“Ponte aquí y no te muevas”, le dijo, y le prestaron plantilla y cepillo, adelante del molde. “El pétalo va al final, cuando no hay viento. No antes.”\n\nSaúl le explicó que la luz no servía antes de las seis. Alondra calculó el instante, ni un minuto antes.\n\n“¿Y si no llega la luz a tiempo?”, preguntó. “Entonces no hay foto”, respondió él. “La alfombra no es para la foto. Hay que ser cuidadosa, nada más.”\n\nNadie le pidió que se quedara. La consecuencia era obvia y decidió evitarla velando. Trabajó con la disciplina del que cobra. Hubo que tolerar el obstáculo, las rodillas.\n\nHabía que ser precisa con cada franja. A las cuatro logró reflexionar sin pena. La vigilia no era la espera de la alfombra: era la alfombra.\n\nSe esforzó hasta las cinco, tenaz. El resultado quedó en las circunstancias más humildes. Saúl no dijo nada. Estar ahí era un privilegio.",
+    "vocab": [
+      {
+        "word": "incienso",
+        "surface": "incienso",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "resin burnt in church so that the smoke smells sweet"
+      },
+      {
+        "word": "pétalo",
+        "surface": "pétalo",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "one loose leaf of a flower, laid on the carpet"
+      },
+      {
+        "word": "vigilia",
+        "surface": "vigilia",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "a whole night spent awake for a religious feast"
+      },
+      {
+        "word": "plantilla",
+        "surface": "plantilla",
+        "type": "noun",
+        "definition": "a cut sheet you lay down to copy a shape through"
+      },
+      {
+        "word": "cepillo",
+        "surface": "cepillo",
+        "type": "noun",
+        "definition": "a tool with stiff hairs for cleaning or spreading"
+      },
+      {
+        "word": "calcular",
+        "surface": "calculó",
+        "type": "verb",
+        "definition": "to work out a number or a time in your head"
+      },
+      {
+        "word": "consecuencia",
+        "surface": "consecuencia",
+        "type": "noun",
+        "definition": "what follows from a thing that has already happened"
+      },
+      {
+        "word": "obvio",
+        "surface": "obvia",
+        "type": "adjective",
+        "definition": "so plain that nobody needs to point it out"
+      },
+      {
+        "word": "evitar",
+        "surface": "evitarla",
+        "type": "verb",
+        "definition": "to keep a thing from happening to you at all"
+      },
+      {
+        "word": "velar",
+        "surface": "velando",
+        "type": "verb",
+        "definition": "to stay awake at night watching over something"
+      },
+      {
+        "word": "preciso",
+        "surface": "precisa",
+        "type": "adjective",
+        "definition": "exact, with no part of it even slightly off"
+      },
+      {
+        "word": "cuidadoso",
+        "surface": "cuidadosa",
+        "type": "adjective",
+        "definition": "doing a thing slowly so that nothing goes wrong"
+      },
+      {
+        "word": "franja",
+        "surface": "franja",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "a long narrow band of one colour in the carpet"
+      },
+      {
+        "word": "reflexionar",
+        "surface": "reflexionar",
+        "type": "verb",
+        "definition": "to think a thing over slowly and with care"
+      },
+      {
+        "word": "esforzarse",
+        "surface": "Se esforzó",
+        "type": "verb",
+        "definition": "to put real work into a thing that is hard"
+      },
+      {
+        "word": "tenaz",
+        "surface": "tenaz",
+        "type": "adjective",
+        "definition": "not giving up, however long a thing takes"
+      },
+      {
+        "word": "resultado",
+        "surface": "resultado",
+        "type": "noun",
+        "definition": "what a piece of work turns out to be at the end"
+      },
+      {
+        "word": "circunstancia",
+        "surface": "circunstancia",
+        "type": "noun",
+        "definition": "the way things happen to be around you then"
+      },
+      {
+        "word": "lograr",
+        "surface": "logró",
+        "type": "verb",
+        "definition": "to manage to do a thing after real effort"
+      },
+      {
+        "word": "ni un minuto antes",
+        "surface": "ni un minuto antes",
+        "type": "expression",
+        "definition": "exactly then, and not the smallest bit earlier"
+      }
+    ]
+  },
+  {
+    "topic": "vigils-and-waiting",
+    "slotIndex": 3,
+    "title": "Pasan encima a las seis",
+    "slug": "pasan-encima-a-las-seis",
+    "arcType": "late-reveal",
+    "synopsis": "La procesion sale puntual y tarda cuarenta minutos en deshacer lo que costo una noche entera de rodillas, y Alondra lo mira desde la acera sin sacar el telefono del bolsillo. Despues barren y no queda nada que comprar, que fotografiar ni que llevarse. Lo unico que sale de ese barrio es una cosa de madera que ella tenia delante desde el primer dia y no habia mirado ni una vez.",
+    "text": "A las seis menos diez ya sonaba la marcha, y Saúl despertó a Alondra.\n\nEl anda venía despacio. Vio el primer pie borrar una esquina y el segundo el resto.\n\nEl capirote morado no era práctico. Nadie diría que era lógico defenderlo. Cuarenta minutos duró la procesión.\n\n“¿No te da lástima todo esto?”, preguntó Alondra. “Da más lástima guardarla”, dijo Saúl. “Lo que se guarda se echa a perder. Mañana hacemos otra.”\n\nA las siete la calle estaba barrida y el patio vacío, sin ventaja. “Ahora sí no hay nada, y está bien”, dijo él, sin pena. Era el logro, no el sacrificio.\n\nA Alondra le quedaba una memoria y ninguna imagen. Identificó los moldes. Entendió que abandonar la foto fue el motivo.\n\nLa nostalgia le llegó con retraso, con afecto y una ternura rara. Los moldes eran, sin duda, lo único útil que seguía entero.\n\nDevolvió la plantilla. “Véndeme uno, el más viejo”, pidió. “Regalado”, dijo Saúl. “Pero el número me lo pides tú.”",
+    "vocab": [
+      {
+        "word": "capirote",
+        "surface": "capirote",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the tall pointed hood worn in a Holy Week procession"
+      },
+      {
+        "word": "despertar",
+        "surface": "despertó",
+        "type": "verb",
+        "definition": "to make somebody stop sleeping and open their eyes"
+      },
+      {
+        "word": "marcha",
+        "surface": "marcha",
+        "type": "noun",
+        "definition": "the slow funeral music a band plays in the procession",
+        "register": "cultural"
+      },
+      {
+        "word": "práctico",
+        "surface": "práctico",
+        "type": "adjective",
+        "definition": "useful and easy to handle in real everyday life"
+      },
+      {
+        "word": "morado",
+        "surface": "morado",
+        "type": "adjective",
+        "definition": "the colour you get mixing blue and red together"
+      },
+      {
+        "word": "lógico",
+        "surface": "lógico",
+        "type": "adjective",
+        "definition": "following from the facts in a way that makes sense"
+      },
+      {
+        "word": "ventaja",
+        "surface": "ventaja",
+        "type": "noun",
+        "definition": "the good side that one person has over another"
+      },
+      {
+        "word": "sacrificio",
+        "surface": "sacrificio",
+        "type": "noun",
+        "definition": "a good thing you give up to get another one"
+      },
+      {
+        "word": "memoria",
+        "surface": "memoria",
+        "type": "noun",
+        "definition": "what your head keeps of a thing that happened"
+      },
+      {
+        "word": "imagen",
+        "surface": "imagen",
+        "type": "noun",
+        "definition": "a picture of a thing, on paper or in your head"
+      },
+      {
+        "word": "abandonar",
+        "surface": "abandonar",
+        "type": "verb",
+        "definition": "to leave a plan or a thing and not come back"
+      },
+      {
+        "word": "motivo",
+        "surface": "motivo",
+        "type": "noun",
+        "definition": "the reason why a person does what they do"
+      },
+      {
+        "word": "nostalgia",
+        "surface": "nostalgia",
+        "type": "noun",
+        "definition": "the soft sad pull of a thing that is over"
+      },
+      {
+        "word": "útil",
+        "surface": "útil",
+        "type": "adjective",
+        "definition": "good for doing a job that you actually need done"
+      },
+      {
+        "word": "afecto",
+        "surface": "afecto",
+        "type": "noun",
+        "definition": "a warm quiet liking for a person you know"
+      },
+      {
+        "word": "identificar",
+        "surface": "Identificó",
+        "type": "verb",
+        "definition": "to pick a thing out and know what it is"
+      },
+      {
+        "word": "entero",
+        "surface": "entero",
+        "type": "adjective",
+        "definition": "whole, with no piece of it missing or broken"
+      },
+      {
+        "word": "regalado",
+        "surface": "Regalado",
+        "type": "adjective",
+        "definition": "given for free, without asking any money for it"
+      },
+      {
+        "word": "pedir",
+        "surface": "pides",
+        "type": "verb",
+        "definition": "to ask somebody to give you a thing"
+      },
+      {
+        "word": "con retraso",
+        "surface": "con retraso",
+        "type": "expression",
+        "definition": "later than it was supposed to arrive or happen"
+      }
+    ]
+  }
+]

@@ -1,0 +1,406 @@
+[
+  {
+    "topic": "turns-and-belonging",
+    "slotIndex": 1,
+    "title": "El repique no tiene dueño",
+    "slug": "el-repique-no-tiene-dueno",
+    "arcType": "late-reveal",
+    "synopsis": "Alondra viaja a Montevideo con el costo del pasaje ya pagado y una idea que le parece simple: comprar un tambor retirado y llevarselo al puesto como segunda de las siete piezas. En el galpon de la comparsa descubre que ahi nadie es dueno de nada, que el instrumento pertenece al grupo entero, y que hay reglas que no bajan de precio por mucho que ella insista.",
+    "text": "Alondra llegó a Montevideo, Uruguay, con el costo del pasaje ya pagado. En el galpón está Mayra, una lonjera del barrio, que templa la lonja al fuego lento. El golpe debe sonar parejo o el ritmo se cae.\n\nJunto a la fogata, que huele a papel quemado, la comparsa se viste. Por lo menos veinte tambores esperaban en fila, cada uno con su piel gastada. “¿Cuál querés, el chico o el repique?”, preguntó Mayra sin levantar la vista.\n\n“El que ya no usen, el que esté por tirar”, dijo Alondra. “Ninguno. El tambor es de la cuerda, no del que lo toca. Vos podés ser miembro, pero dueña no. Pertenecer no se compra con plata.”\n\nEn el candombe hay una jerarquía. El aprendiz carga y el veterano manda. La lealtad pesa más que el oficio.\n\nA Alondra le costó integrar eso. Esa noche miró la comparsa desde la vereda, respetando un conjunto que la dejaba afuera, con Mayra adentro y con la decepción de enero.",
+    "vocab": [
+      {
+        "word": "fogata",
+        "surface": "fogata",
+        "type": "noun",
+        "definition": "a small open fire lit outdoors by a group"
+      },
+      {
+        "word": "lonja",
+        "surface": "lonja",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the hide stretched over a candombe drum to make its sound"
+      },
+      {
+        "word": "golpe",
+        "surface": "golpe",
+        "type": "noun",
+        "definition": "a single hit, and the sound that the hit makes"
+      },
+      {
+        "word": "piel",
+        "surface": "piel",
+        "type": "noun",
+        "definition": "the skin of an animal, taken off and worked"
+      },
+      {
+        "word": "repique",
+        "surface": "repique",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the middle candombe drum, the one that improvises"
+      },
+      {
+        "word": "tambor",
+        "surface": "tambor",
+        "type": "noun",
+        "definition": "an instrument you hit with your hand or a stick"
+      },
+      {
+        "word": "cuerda",
+        "surface": "cuerda",
+        "type": "noun",
+        "definition": "in candombe, the whole line of drummers playing together"
+      },
+      {
+        "word": "miembro",
+        "surface": "miembro",
+        "type": "noun",
+        "definition": "one person who belongs to a group or a club"
+      },
+      {
+        "word": "candombe",
+        "surface": "candombe",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "Afro-Uruguayan drum music and the parade built around it"
+      },
+      {
+        "word": "jerarquía",
+        "surface": "jerarquía",
+        "type": "noun",
+        "definition": "the order that says who is above whom in a group"
+      },
+      {
+        "word": "aprendiz",
+        "surface": "aprendiz",
+        "type": "noun",
+        "definition": "a person still learning a trade from the others"
+      },
+      {
+        "word": "veterano",
+        "surface": "veterano",
+        "type": "noun",
+        "definition": "somebody who has done this for many years already"
+      },
+      {
+        "word": "lealtad",
+        "surface": "lealtad",
+        "type": "noun",
+        "definition": "staying with your group even when it costs you"
+      },
+      {
+        "word": "ritmo",
+        "surface": "ritmo",
+        "type": "noun",
+        "definition": "the regular beat that music moves along on"
+      },
+      {
+        "word": "integrar",
+        "surface": "integrar",
+        "type": "verb",
+        "definition": "to take a new idea in and make it part of you"
+      },
+      {
+        "word": "respetar",
+        "surface": "respetando",
+        "type": "verb",
+        "definition": "to treat somebody or something as worth your care"
+      },
+      {
+        "word": "conjunto",
+        "surface": "conjunto",
+        "type": "noun",
+        "definition": "a set of people or things taken as one whole"
+      },
+      {
+        "word": "comparsa",
+        "surface": "comparsa",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the neighbourhood group that parades with drums and dancers"
+      },
+      {
+        "word": "vereda",
+        "surface": "vereda",
+        "type": "noun",
+        "definition": "the raised path at the side of a street"
+      },
+      {
+        "word": "pasaje",
+        "surface": "pasaje",
+        "type": "noun",
+        "definition": "the ticket you buy to travel, and what it costs"
+      }
+    ]
+  },
+  {
+    "topic": "turns-and-belonging",
+    "slotIndex": 2,
+    "title": "Lo que se tira cada verano",
+    "slug": "lo-que-se-tira-cada-verano",
+    "arcType": "reframe-turn",
+    "synopsis": "Si el tambor no se vende queda el cuero gastado que la cuerda cambia cada verano, y Alondra cree haber encontrado el hueco por el que su segunda pieza va a caber. La condicion que le ponen no se discute y no baja: para llevarse lo que sobra hay que pagar lo que falta. El trato se cierra de pie y le cuesta el viaje siguiente, aunque nadie en el galpon parezca darle importancia.",
+    "text": "El cuero viejo se cambia cada verano y termina en la basura. Alondra volvió al galpón de Mayra, que olía a cuero quemado, con una propuesta. “Te compro el que sacan, el que ya no sirve”, ofreció.\n\n“No lo regalo”, contestó Mayra. “Si querés el viejo, pagás el nuevo. Así de fácil.”\n\nUlises lo pensó en voz baja, discreto como siempre, y no la quiso convencer. “Puede que no valga el esfuerzo”, avisó él. “En todo caso, es tu oportunidad.”\n\nMayra le explicó que no habría otra. Alondra ya lo sospechaba y aceptó el riesgo. Una baqueta golpeaba el aro y marcaba la prisa. Mayra no celebró el trato, ni molesta ni contenta.\n\nCortó la lonja vieja con una cuchilla fina. “Ahora te debo un toque, y eso no se paga”, dijo. Volvió al tamboril sin decir más.\n\nAlondra dobló el cuero en cuatro. Lo cargó dos calles, tolerando la carga. Fue prudente por primera vez y no se disculpó con Ulises por el gasto.",
+    "vocab": [
+      {
+        "word": "cuero",
+        "surface": "cuero",
+        "type": "noun",
+        "definition": "the treated skin of an animal, used to make things"
+      },
+      {
+        "word": "basura",
+        "surface": "basura",
+        "type": "noun",
+        "definition": "the things that get thrown away because nobody wants them"
+      },
+      {
+        "word": "propuesta",
+        "surface": "propuesta",
+        "type": "noun",
+        "definition": "an offer you put to somebody, hoping that they accept"
+      },
+      {
+        "word": "regalar",
+        "surface": "regalo",
+        "type": "verb",
+        "definition": "to give something away without asking for any money"
+      },
+      {
+        "word": "convencer",
+        "surface": "convencer",
+        "type": "verb",
+        "definition": "to make somebody believe that you are right"
+      },
+      {
+        "word": "sospechar",
+        "surface": "sospechaba",
+        "type": "verb",
+        "definition": "to think something is true without being sure yet"
+      },
+      {
+        "word": "oportunidad",
+        "surface": "oportunidad",
+        "type": "noun",
+        "definition": "a good moment to do a thing, before it goes"
+      },
+      {
+        "word": "riesgo",
+        "surface": "riesgo",
+        "type": "noun",
+        "definition": "the chance that a thing ends badly for you"
+      },
+      {
+        "word": "baqueta",
+        "surface": "baqueta",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the stick a candombe drummer holds in one hand"
+      },
+      {
+        "word": "aro",
+        "surface": "aro",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the wooden rim around the top of a drum"
+      },
+      {
+        "word": "celebrar",
+        "surface": "celebró",
+        "type": "verb",
+        "definition": "to show other people that you are happy about something"
+      },
+      {
+        "word": "cuchilla",
+        "surface": "cuchilla",
+        "type": "noun",
+        "definition": "a wide flat blade used for cutting heavy material"
+      },
+      {
+        "word": "fino",
+        "surface": "fina",
+        "type": "adjective",
+        "definition": "very thin, and sharp because of being so thin"
+      },
+      {
+        "word": "doblar",
+        "surface": "dobló",
+        "type": "verb",
+        "definition": "to fold a thing over so that it takes less room"
+      },
+      {
+        "word": "deber",
+        "surface": "debo",
+        "type": "verb",
+        "definition": "to owe somebody a thing you have to give back"
+      },
+      {
+        "word": "toque",
+        "surface": "toque",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "a session of candombe drumming played through the streets"
+      },
+      {
+        "word": "tamboril",
+        "surface": "tamboril",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the Uruguayan word for the candombe drum itself"
+      },
+      {
+        "word": "disculparse",
+        "surface": "disculpó",
+        "type": "verb",
+        "definition": "to say sorry to somebody for what you did"
+      },
+      {
+        "word": "carga",
+        "surface": "carga",
+        "type": "noun",
+        "definition": "the weight that a person has to carry along"
+      },
+      {
+        "word": "así de fácil",
+        "surface": "Así de fácil",
+        "type": "expression",
+        "definition": "there is nothing more to be discussed about it"
+      }
+    ]
+  },
+  {
+    "topic": "turns-and-belonging",
+    "slotIndex": 3,
+    "title": "Un tambor frío no suena",
+    "slug": "un-tambor-frio-no-suena",
+    "arcType": "harmonic-close",
+    "synopsis": "Con la lonja nueva pagada de su bolsillo, Alondra siente que ya se gano un lugar y pide el tambor entero para llevarselo. Mayra no le dice que no: le presta un sitio en la fila y la deja salir con la comparsa. Lo que pasa esa noche delante de todo el barrio le ensena mejor que cualquier discusion por que esa pieza no se puede sacar de ahi.",
+    "text": "Al tercer día Alondra buscó a Mayra con el cuero doblado bajo el brazo y una idea vergonzosa.\n\n“Ya pagué la lonja”, empezó. “Véndeme el tambor y me voy.” “Mejor salí con nosotros”, contestó Mayra. “Si lo hacés sonar, hablamos.”\n\nLe prestaron un chico templado en la fogata y un lugar al final. Alondra lo colgó. Esperó el instante con disciplina, sin que nadie le explicara nada.\n\nEl redoble empezó adelante, pasó por el repique y bajó con el ritmo. Alondra pegó. No sirvió.\n\nEl tambor sonó apagado y vacío, sin nada de candombe adentro. Dos tamborileros se dieron vuelta y ella quedó fuera de todo.\n\n“No lo templaste”, le explicó Mayra, sin desprecio. “El cuero frío no suena. Eso no se compra, se aprende. Volvé el año que viene.”\n\n“Ya sé. Lo pagué igual”, dijo Alondra. Devolvió el instrumento con las dos manos, renunció sin discutirlo y tardó en reaccionar. Antes de irse registró el teléfono detrás del mismo papel, debajo del primero.",
+    "vocab": [
+      {
+        "word": "colgar",
+        "surface": "colgó",
+        "type": "verb",
+        "definition": "to hang a thing from a strap or from a hook"
+      },
+      {
+        "word": "instante",
+        "surface": "instante",
+        "type": "noun",
+        "definition": "a very short piece of time, almost nothing at all"
+      },
+      {
+        "word": "disciplina",
+        "surface": "disciplina",
+        "type": "noun",
+        "definition": "doing the hard part without needing to be told twice"
+      },
+      {
+        "word": "redoble",
+        "surface": "redoble",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "a fast run of drumbeats rolling through the line"
+      },
+      {
+        "word": "adelante",
+        "surface": "adelante",
+        "type": "adverb",
+        "definition": "in front, further towards the head of a line"
+      },
+      {
+        "word": "pegar",
+        "surface": "pegó",
+        "type": "verb",
+        "definition": "to hit a thing once, or many times in a row"
+      },
+      {
+        "word": "apagado",
+        "surface": "apagado",
+        "type": "adjective",
+        "definition": "dull and without any life, said of a sound"
+      },
+      {
+        "word": "vacío",
+        "surface": "vacío",
+        "type": "adjective",
+        "definition": "with nothing inside, and sounding that way too"
+      },
+      {
+        "word": "tamborilero",
+        "surface": "tamborileros",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "a person who plays the drum in a candombe line"
+      },
+      {
+        "word": "darse vuelta",
+        "surface": "se dieron vuelta",
+        "type": "expression",
+        "definition": "to turn your body round to look behind you"
+      },
+      {
+        "word": "templar",
+        "surface": "templaste",
+        "type": "verb",
+        "register": "cultural",
+        "definition": "to heat a drum hide over fire until it sounds right"
+      },
+      {
+        "word": "desprecio",
+        "surface": "desprecio",
+        "type": "noun",
+        "definition": "the feeling that somebody is worth nothing to you"
+      },
+      {
+        "word": "instrumento",
+        "surface": "instrumento",
+        "type": "noun",
+        "definition": "an object made to produce music when you play it"
+      },
+      {
+        "word": "devolver",
+        "surface": "devolvió",
+        "type": "verb",
+        "definition": "to give a thing back to the person it belongs to"
+      },
+      {
+        "word": "discutir",
+        "surface": "discutirlo",
+        "type": "verb",
+        "definition": "to argue about a thing instead of simply accepting it"
+      },
+      {
+        "word": "reaccionar",
+        "surface": "reaccionar",
+        "type": "verb",
+        "definition": "to do or say something after what has just happened"
+      },
+      {
+        "word": "vergonzoso",
+        "surface": "vergonzosa",
+        "type": "adjective",
+        "definition": "making the person go red in front of others"
+      },
+      {
+        "word": "prestar",
+        "surface": "prestaron",
+        "type": "verb",
+        "definition": "to let somebody use your thing for a while"
+      },
+      {
+        "word": "debajo",
+        "surface": "debajo",
+        "type": "adverb",
+        "definition": "in a lower place than the thing just mentioned"
+      },
+      {
+        "word": "fuera de todo",
+        "surface": "fuera de todo",
+        "type": "expression",
+        "definition": "not fitting with anything else around it at all"
+      }
+    ]
+  }
+]

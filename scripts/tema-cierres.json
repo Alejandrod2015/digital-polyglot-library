@@ -6337,5 +6337,692 @@
         }
       ]
     }
+  },
+  "cmu410zep000732szrw94t2sl#endings-and-forgiveness": {
+    "cerrado": "2026-09-16T13:49:11.459Z",
+    "hash": "e3e1e18047f07e76",
+    "historias": [
+      "endings-and-forgiveness#1 aldo-se-lo-vende-sin-mas",
+      "endings-and-forgiveness#2 el-testamento-la-nombra",
+      "endings-and-forgiveness#3 quemarlo-salio-mas-barato"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"de ultimo dia: ruido de petardos, gente que hace cuentas del ano en voz alta y se rie de si misma; el unico momento serio dura un minuto\", espina \"Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto, y cada pieza esta hecha para no durar. La septima existe para arder a medianoche. Esta vez nadie le dice que no: se la venden, y el problema es lo que la venta deja sin quemar a una cuadra entera.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 87% (solo avisa)",
+      "acotacion dominante bajo tope (\"dijo\" 17%)",
+      "arranques de parrafo variados (mas repetido \"aldo\", 12%)",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.07 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 56/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en ES. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Cultural",
+      "nivel": "b1",
+      "variante": "LATAM",
+      "registro": "de ultimo dia: ruido de petardos, gente que hace cuentas del ano en voz alta y se rie de si misma; el unico momento serio dura un minuto",
+      "espina": "Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto, y cada pieza esta hecha para no durar. La septima existe para arder a medianoche. Esta vez nadie le dice que no: se la venden, y el problema es lo que la venta deja sin quemar a una cuadra entera.",
+      "recursos": "vuelta de tuerca sobre el patron del journey (aqui SI se la venden), testamento como voz colectiva, humor de barrio, cierre de journey sin gancho; nada figurado por encima de B1",
+      "metodo_nuevo": {
+        "por_que": "En el tema 6 se cayeron 11 de las 30 superficies y los tres marcadores de banda salieron a cero, siempre por lo mismo: los ecos y el condicional viven en la narracion, y la narracion es lo que se convierte en dialogo al pelear la banda de citado.",
+        "regla": "Las 30 superficies y los tres marcadores de banda van DENTRO de las replicas desde el primer borrador. Lo que esta en boca de un personaje no se lo lleva la conversion.",
+        "banda_en_dialogo": "condicional en 'yo lo quemaria igual'; subjuntivo imperfecto en 'si pudiera'; el estilo indirecto es el unico que no cabe en una replica y va en una sola frase de narrador, protegida."
+      },
+      "escalera_reservada": {
+        "objetivo": "cola acumulada 64% o menos al cerrar el journey; 30 superficies EXACTAS de los temas 1 a 6, todas dentro de replicas",
+        "historia_1": [
+          "ocasión",
+          "riesgo",
+          "suerte",
+          "calma",
+          "honesto",
+          "útil",
+          "entero",
+          "motivo",
+          "lógico",
+          "evidente"
+        ],
+        "historia_2": [
+          "herencia",
+          "memoria",
+          "afecto",
+          "compasión",
+          "sacrificio",
+          "ventaja",
+          "beneficio",
+          "obvia",
+          "sensata",
+          "experto"
+        ],
+        "historia_3": [
+          "límite",
+          "frágil",
+          "solución",
+          "dificultad",
+          "principal",
+          "esencial",
+          "significativo",
+          "así de fácil",
+          "hábil",
+          "legal"
+        ]
+      },
+      "aperturas": {
+        "estado": "de 18 historias: nombre desnudo 3, lugar o tiempo 3, cantidad 4, articulo definido 3, articulo indefinido 2, subordinada 3. Con 21 el tope sube a 7 y el posesivo sigue a cero.",
+        "historia_1": "posesivo (Su)",
+        "historia_2": "articulo indefinido (Un)",
+        "historia_3": "nombre desnudo (Alondra)"
+      },
+      "cierres": "La 1 cierra sobre Aldo, la 2 en linea citada del testamento y la 3 en imagen de fuego. Ninguna con la formula 'no era X, era Y' ni con Alondra recogiendo un resto.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "el monigote del vecindario, la septima y ultima de sus piezas",
+          "impide": "nada; por primera vez en siete fiestas se lo venden sin discutir, y ese es el problema",
+          "cuesta": "paga y se lo lleva, y con eso deja a la cuadra sin su Ano Viejo despues de cuarenta anos seguidos",
+          "cambia": "descubre que conseguir la pieza le sale mas caro que no conseguirla",
+          "emocion": "triunfo que se enfria en dos minutos; el gesto es no soltar el monigote aunque le pese"
+        },
+        {
+          "slot": "2",
+          "quiere": "quedarse con la pieza y ademas quedar bien con la cuadra",
+          "impide": "el escribano lee el testamento del ano delante de todos y en el testamento sale ella",
+          "cuesta": "la lectura publica, que no es cruel pero es exacta",
+          "cambia": "entiende que el monigote no es de Aldo ni suyo: es de la cuadra que lo va a quemar",
+          "emocion": "verguenza que no puede tapar con dinero; el gesto es aplaudir el testamento con todos"
+        },
+        {
+          "slot": "3",
+          "quiere": "cerrar el ano con algo que llevarse a casa",
+          "impide": "a medianoche el monigote arde, y ese es el punto entero de la fiesta",
+          "cuesta": "la septima pieza, y con ella la idea con la que salio de su mercado hace un ano",
+          "cambia": "quema el monigote con la cuadra y vuelve con seis telefonos, que es lo que de verdad sirve",
+          "emocion": "alivio limpio, sin triunfo; el gesto es mirar arder y no sacar el telefono"
+        }
+      ]
+    }
+  },
+  "cmu410zep000732szrw94t2sl#hosting-and-processions": {
+    "cerrado": "2026-09-16T13:34:22.111Z",
+    "hash": "e972505250dd36e4",
+    "historias": [
+      "hosting-and-processions#1 la-pinata-se-rompe-entera",
+      "hosting-and-processions#2 tres-veces-te-dicen-no",
+      "hosting-and-processions#3 siete-picos-y-una-venda"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"de puerta y de calle en diciembre: mitad canto y mitad negociacion, con frio afuera y ruido adentro; las frases mas cortas son las que se dicen desde el umbral\", espina \"Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto, y cada pieza esta hecha para no durar. La sexta esta hecha de papel y barro y existe para que la rompan a palos: entera no es una pinata, es un adorno.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"le\" 17%)",
+      "arranques de parrafo variados (mas repetido \"perla\", 18%)",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista ?): la-pinata-se-rompe-entera, tres-veces-te-dicen-no, siete-picos-y-una-venda",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.05 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 57/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en ES. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Cultural",
+      "nivel": "b1",
+      "variante": "LATAM",
+      "registro": "de puerta y de calle en diciembre: mitad canto y mitad negociacion, con frio afuera y ruido adentro; las frases mas cortas son las que se dicen desde el umbral",
+      "espina": "Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto, y cada pieza esta hecha para no durar. La sexta esta hecha de papel y barro y existe para que la rompan a palos: entera no es una pinata, es un adorno.",
+      "recursos": "contraste entre el rito y el negocio, regla dicha dentro de dialogo y solo una por historia, humor seco de vecindad, cierre en objeto, en otro personaje y en imagen; nada figurado por encima de B1",
+      "anti_patrones": {
+        "de_la_lectura_de_las_doce": "Ninguna historia abre con Alondra ofreciendo comprar una pieza. Ninguna cierra con la formula 'no era X, era Y'. La sexta pieza NO es madera vieja que sobrevive (temas 3 y 4 lo hicieron los dos seguidos): es papel y barro, y se rompe. Ningun titulo empieza por Nadie. Una sola sentencia de oficio por historia y siempre dentro de dialogo. Ulises no viaja en este tema.",
+        "nuevo_del_tema_5": "El tema 5 cerro con Alondra recogiendo un resto en la mano (el hilo). Aqui no se lleva ningun resto: lo que sale del tema es una letania escrita por Perla, que es texto y no objeto."
+      },
+      "escalera_reservada": {
+        "objetivo": "cola acumulada 64% o menos al cerrar; 30 superficies EXACTAS de los temas 1 a 5 vuelven en el cuerpo. Todas son SUPERFICIES, no lemas: el error del tema 5 no se repite.",
+        "historia_1": [
+          "ocasión",
+          "irritado",
+          "creencia",
+          "regalo",
+          "celebró",
+          "evidente",
+          "obvia",
+          "señaló",
+          "frágil",
+          "honesto"
+        ],
+        "historia_2": [
+          "se negó",
+          "humildes",
+          "vergonzosa",
+          "desprecio",
+          "reaccionar",
+          "precisa",
+          "testigo",
+          "compasión",
+          "multitud",
+          "calma"
+        ],
+        "historia_3": [
+          "ternura",
+          "privilegio",
+          "apuntó",
+          "convencer",
+          "así de fácil",
+          "debajo",
+          "memoria",
+          "afecto",
+          "persistir",
+          "cooperar"
+        ],
+        "por_que": "Mismo metodo que dio 71,7, 67,5 y 65,7. El rendimiento por eco baja porque el denominador crece 60 por tema; con 30 por tema el journey deberia acabar cerca del 62%."
+      },
+      "aperturas": {
+        "estado": "de 15 historias: nombre desnudo 3, lugar o tiempo 3, cantidad 3, articulo definido 2, articulo indefinido 2, subordinada 2. Con 18 el tope sube a 6.",
+        "historia_1": "articulo definido (La)",
+        "historia_2": "subordinada delante (Aunque)",
+        "historia_3": "cantidad o pronombre (Siete)"
+      },
+      "cierres": "La 1 cierra en el objeto roto, la 2 sobre Perla y la 3 en imagen de calle. Ninguna con Alondra mas un gesto y lo que siente, y ninguna recogiendo un resto del suelo.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "una pinata de siete picos entera para colgarla en el puesto, como sexta de las siete piezas",
+          "impide": "las nueve pinatas de la novena estan hechas para romperse, una por noche, y no se guarda ninguna",
+          "cuesta": "paga las nueve por adelantado para que le aparten la ultima, y la ultima tambien se rompe",
+          "cambia": "ve que una pinata entera deja de ser una pinata",
+          "emocion": "impaciencia que se convierte en curiosidad; el gesto es recoger un pico de papel del suelo y volver a soltarlo"
+        },
+        {
+          "slot": "2",
+          "quiere": "entender por que el barrio paga por una fiesta en la que le cierran la puerta",
+          "impide": "para entenderlo hay que ir afuera, y afuera te niegan la entrada tres veces porque asi es el rito",
+          "cuesta": "dos horas de frio en la calle pidiendo posada y la sensacion, muy real, de que le cierran de verdad",
+          "cambia": "entiende que la negativa ES la fiesta y no un obstaculo de la fiesta",
+          "emocion": "verguenza que pasa a risa; el gesto es cantar la segunda estrofa sin mirar el papel"
+        },
+        {
+          "slot": "3",
+          "quiere": "llevarse una pinata sin romper, la ultima, la del veinticuatro",
+          "impide": "Perla no vende ninguna entera, y la del veinticuatro la rompe siempre alguien de la vecindad",
+          "cuesta": "renuncia a la pieza y ademas rompe ella la ultima, delante de todos, con los ojos vendados",
+          "cambia": "Perla le escribe la letania de afuera en un papel, que es lo unico que se puede sacar de una posada",
+          "emocion": "alegria sin triunfo; el gesto es cantar la primera linea en la calle y que alguien abra una puerta"
+        }
+      ]
+    }
+  },
+  "cmu410zep000732szrw94t2sl#stalls-and-crowds": {
+    "cerrado": "2026-09-16T13:48:43.880Z",
+    "hash": "50c5b2f4bb53c62c",
+    "historias": [
+      "stalls-and-crowds#1 sin-patente-no-hay-puesto",
+      "stalls-and-crowds#2 el-hilo-curado-corta-todo",
+      "stalls-and-crowds#3 el-volantin-vuela-una-vez"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"de feria y de viento: ruido de fondo, frases cortadas por la multitud, y numeros de negocio dichos de pie; nadie esta quieto\", espina \"Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto en el mercado de La Paz, y cada pieza esta hecha para no durar. La quinta esta hecha de papel y vara, existe para que el viento y otro hilo la corten, y no dura ni una tarde.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dijo\" 20%)",
+      "arranques de parrafo variados (mas repetido \"el\", 21%)",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista ?): sin-patente-no-hay-puesto, el-hilo-curado-corta-todo, el-volantin-vuela-una-vez",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.00 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 60/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en ES. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Cultural",
+      "nivel": "b1",
+      "variante": "LATAM",
+      "registro": "de feria y de viento: ruido de fondo, frases cortadas por la multitud, y numeros de negocio dichos de pie; nadie esta quieto",
+      "espina": "Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto en el mercado de La Paz, y cada pieza esta hecha para no durar. La quinta esta hecha de papel y vara, existe para que el viento y otro hilo la corten, y no dura ni una tarde.",
+      "recursos": "contraste entre comprar y volar, regla dicha por quien la vive, numeros de negocio como argumento, cierre en imagen concreta; nada figurado por encima de B1",
+      "lectura_de_las_doce": {
+        "cuando": "antes de escribir el tema 5",
+        "patrones_que_cruzan_los_cuatro_temas": [
+          "1. La misma escena abre los cuatro temas: Alondra ofrece comprar y el artesano se niega en una replica corta. Dos son casi la misma frase: 'Te la pago hecha, del tamano que quieras' (3.1) y 'Te la pago hecha, del tamano que sea' (4.1).",
+          "2. Formula de cierre 'no era X, era Y' en cinco de las doce: no era una recompensa ni un logro; era el logro, no el sacrificio; el sacrificio no era el peso, era no parar; la vigilia no era la espera, era la alfombra; el impacto no dejo evidencia.",
+          "3. 'Nadie' abre tres de los doce titulos y cuatro frases de narrador. Es un tic.",
+          "4. El artesano sentencia una regla en presente gnomico en las doce; leidas seguidas suenan a proverbios encadenados.",
+          "5. Ulises hace lo mismo cada vez: avisa en voz baja que no vale la pena y luego calla y carga.",
+          "6. Los temas 3 y 4 cierran los dos con MADERA VIEJA gastada que sobrevive (el molde, el armazon). Son casi el mismo objeto."
+        ],
+        "que_hace_el_tema_5_para_romperlos": "Sin escena de oferta de compra en la apertura (la negociacion llega por un permiso, no por una pieza). Ninguna historia cierra con 'no era X, era Y'. Ningun titulo empieza por Nadie. La quinta pieza es de papel y se pierde en el aire: no es madera y no sobrevive. Ulises no viaja en este tema, asi que su tic no aparece. Las sentencias de oficio se reparten: solo una por historia y siempre dentro de dialogo."
+      },
+      "escalera_reservada": {
+        "objetivo": "cola acumulada 63% o menos al cerrar; 30 superficies EXACTAS de los temas 1 a 4 vuelven en el cuerpo",
+        "historia_1": [
+          "carpa",
+          "tamaño",
+          "modesta",
+          "calculó",
+          "consecuencia",
+          "obvia",
+          "lógico",
+          "útil",
+          "límite",
+          "señaló"
+        ],
+        "historia_2": [
+          "cuerda",
+          "frágil",
+          "pegó",
+          "cuchilla",
+          "impacto",
+          "imprudente",
+          "evitarla",
+          "precisa",
+          "soportar",
+          "apagado"
+        ],
+        "historia_3": [
+          "artificial",
+          "imitación",
+          "réplica",
+          "distinguían",
+          "dobló",
+          "colgó",
+          "efímera",
+          "entero",
+          "guardar",
+          "tirar"
+        ],
+        "por_que": "Con 25 el tema 4 cerro en 67,5%. El chat de planificacion decidio subir a 30 y no tocar ni las 20 plazas nuevas ni la banda de citado. Las 30 entran en el esqueleto antes de la prosa."
+      },
+      "aperturas": {
+        "estado": "de 12 historias: nombre desnudo 3, lugar o tiempo 3, articulo definido 2, cantidad 2, articulo indefinido 1, subordinada 1. Con 15 el tope sube a 5.",
+        "historia_1": "articulo indefinido (Un)",
+        "historia_2": "subordinada delante (Mientras)",
+        "historia_3": "cantidad o pronombre (Cuatro)"
+      },
+      "cierres": "La 1 cierra en el papel del permiso, la 2 sobre Gerardo y la 3 en una imagen concreta, el hilo cortado recogido en la mano. Ninguna con 'no era X, era Y'.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "comprar doscientos volantines para revenderlos en el mercado de La Paz",
+          "impide": "vender en la ramada necesita patente municipal, y la que hay va a nombre de Gerardo",
+          "cuesta": "paga la mitad de una patente que no llega a tiempo, y el dinero no vuelve",
+          "cambia": "entiende que lo que se vende ahi no es el volantin, es el sitio",
+          "emocion": "impaciencia de comerciante que choca con un mostrador; el gesto es doblar el papel del permiso y guardarlo igual"
+        },
+        {
+          "slot": "2",
+          "quiere": "probar que los volantines se venden y se llevan enteros",
+          "impide": "alguien encumbra con hilo curado, que en Chile es delito, y corta todo lo que pasa",
+          "cuesta": "doce volantines rotos en una tarde y el genero que habia adelantado",
+          "cambia": "ve que el valor del volantin esta en volarlo, no en tenerlo",
+          "emocion": "indignacion que se le pasa al entender el peligro; el gesto es no recoger los restos"
+        },
+        {
+          "slot": "3",
+          "quiere": "llevarse uno intacto a Bolivia, aunque sea uno solo",
+          "impide": "un volantin existe para que lo corten; guardado no es un volantin, es papel con vara",
+          "cuesta": "cancela el pedido de los doscientos y pierde la temporada entera de septiembre",
+          "cambia": "hace uno con Gerardo, lo encumbra ella, se lo cortan, y se lleva el hilo",
+          "emocion": "calma rara despues de perder; el gesto es enrollar el hilo cortado en la mano y no decir nada"
+        }
+      ]
+    }
+  },
+  "cmu410zep000732szrw94t2sl#turns-and-belonging": {
+    "cerrado": "2026-09-16T13:33:41.342Z",
+    "hash": "9433155102577af4",
+    "historias": [
+      "turns-and-belonging#1 el-repique-no-tiene-dueno",
+      "turns-and-belonging#2 lo-que-se-tira-cada-verano",
+      "turns-and-belonging#3 un-tambor-frio-no-suena"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"mas fisico y mas corto de frase que el tema 1: fuego, cuero y turnos; lo que se discute se discute de pie\", espina \"Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto en el mercado de La Paz, y cada pieza esta hecha para no durar. La segunda es un tambor, y el tambor no tiene dueno: es de la cuerda.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dijo\" 30%)",
+      "arranques de parrafo variados (mas repetido \"el\", 22%)",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.15 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 52/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: turns-and-belonging (Mayra, Alondra)"
+    ],
+    "plan": {
+      "tipo": "Cultural",
+      "nivel": "b1",
+      "variante": "LATAM",
+      "registro": "mas fisico y mas corto de frase que el tema 1: fuego, cuero y turnos; lo que se discute se discute de pie",
+      "espina": "Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto en el mercado de La Paz, y cada pieza esta hecha para no durar. La segunda es un tambor, y el tambor no tiene dueno: es de la cuerda.",
+      "recursos": "contraste entre comprar y pertenecer, regla dicha en boca de otro y no por el narrador, humor seco de oficio, gancho final en gesto; nada figurado por encima de B1",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "comprar un tambor retirado de la comparsa para el puesto, como segunda de las siete piezas",
+          "impide": "el tambor pertenece a la cuerda, no a quien lo toca, y eso no se negocia con dinero",
+          "cuesta": "la noche del desfile, que mira desde la vereda sin intentar nada, y el viaje ya pagado",
+          "cambia": "entiende que hay piezas cuyo dueno no es una persona",
+          "emocion": "extraneza ante una regla que no se compra; el gesto es mirar la fila de tambores contra la pared"
+        },
+        {
+          "slot": "2",
+          "quiere": "al menos la lonja vieja, el cuero gastado que la cuerda cambia cada ano",
+          "impide": "cambiar la lonja cuesta dinero y la comparsa no lo tiene guardado",
+          "cuesta": "paga la lonja nueva entera, que era el presupuesto del viaje siguiente",
+          "cambia": "se lleva el cuero viejo, y con el una deuda que nadie le reclama",
+          "emocion": "satisfaccion que dura poco; el gesto es doblar el cuero y que no quepa en el bolso"
+        },
+        {
+          "slot": "3",
+          "quiere": "el tambor entero, ahora que ya pago la lonja y cree tener derecho",
+          "impide": "el lugar en la fila es prestado y ella no sabe templar: el tambor frio no suena",
+          "cuesta": "el ridiculo delante de la cuerda entera, y con el la idea de que la pieza se compra",
+          "cambia": "se va con el cuero viejo y el telefono de Mayra, que es la segunda de las seis fichas que juntara",
+          "emocion": "verguenza que se vuelve algo mas limpio; el gesto es devolver el tambor con las dos manos"
+        }
+      ]
+    }
+  },
+  "cmu410zep000732szrw94t2sl#vigils-and-waiting": {
+    "cerrado": "2026-09-16T13:48:11.853Z",
+    "hash": "0d8efa3b8d89f3a7",
+    "historias": [
+      "vigils-and-waiting#1 el-aserrin-no-se-guarda",
+      "vigils-and-waiting#2 nadie-duerme-el-jueves",
+      "vigils-and-waiting#3 pasan-encima-a-las-seis"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"en voz baja y de noche, con frases largas de trabajo y cortas de cansancio; nadie levanta la voz porque al lado hay gente rezando\", espina \"Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto en el mercado de La Paz, y cada pieza esta hecha para no durar. La tercera no existe como objeto: se hace en el suelo de noche y a las seis de la manana la pisan.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dijo\" 33%)",
+      "arranques de parrafo variados (mas repetido \"el\", 14%)",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.02 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 58/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Cultural",
+      "nivel": "b1",
+      "variante": "LATAM",
+      "registro": "en voz baja y de noche, con frases largas de trabajo y cortas de cansancio; nadie levanta la voz porque al lado hay gente rezando",
+      "espina": "Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto en el mercado de La Paz, y cada pieza esta hecha para no durar. La tercera no existe como objeto: se hace en el suelo de noche y a las seis de la manana la pisan.",
+      "recursos": "contraste entre lo que cuesta y lo que dura, regla dicha por quien la vive, humor de cansancio, cierre en objeto y en voz ajena; nada figurado por encima de B1",
+      "escalera_reservada": {
+        "objetivo": "cola acumulada 72% o menos al cerrar el tema; 25 superficies EXACTAS de los temas 1 y 2 vuelven en el cuerpo",
+        "historia_1": [
+          "molde",
+          "aprendiz",
+          "veterano",
+          "conjunto",
+          "jornada",
+          "ocasión",
+          "creencia",
+          "admiración"
+        ],
+        "historia_2": [
+          "instante",
+          "disciplina",
+          "tolerar",
+          "obstáculo",
+          "pena",
+          "humildes",
+          "prestaron",
+          "adelante",
+          "respetando"
+        ],
+        "historia_3": [
+          "logro",
+          "recompensa",
+          "sin duda",
+          "de verdad",
+          "ternura",
+          "devolvió",
+          "vacío",
+          "privilegio"
+        ],
+        "por_que": "El tema 2 cerro con la cola en 81% porque los ecos se metieron al final, con las tres historias ya en el techo de palabras. Aqui se reservan ANTES: las 25 entran en el esqueleto, y la prosa se escribe alrededor."
+      },
+      "cierres": "Ninguna de las tres cierra como las seis anteriores (Alondra + un gesto pequeno + lo que siente). La 1 cierra sobre Saul, la 2 sobre la calle y la 3 en una linea citada.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "comprar una alfombra hecha, o encargar una pequena para el puesto, como tercera de las siete piezas",
+          "impide": "la alfombra no existe como objeto: se hace en el suelo de la calle y se barre a las siete",
+          "cuesta": "ofrece una tarde entera de trabajo a cambio y nadie se la pidio; pierde la tarde y no consigue nada",
+          "cambia": "entiende que esta vez la pieza ni siquiera existe todavia",
+          "emocion": "desconcierto que tapa con eficiencia; el gesto es ponerse a tenir aserrin sin que la inviten"
+        },
+        {
+          "slot": "2",
+          "quiere": "al menos una fotografia de la alfombra entera antes de que amanezca",
+          "impide": "la alfombra no se termina hasta las cinco y la luz no llega hasta las seis, cuando ya hay gente encima",
+          "cuesta": "dos noches sin dormir y el turno de su propio puesto, que en La Paz sigue cerrado",
+          "cambia": "trabaja toda la noche en una alfombra que no es suya y deja de pensar en la foto",
+          "emocion": "cansancio que se vuelve calma; el gesto es dejar el telefono en el bolsillo y no sacarlo"
+        },
+        {
+          "slot": "3",
+          "quiere": "guardar algo de la alfombra despues de que pase la procesion",
+          "impide": "a las seis pasan por encima y a las siete no queda nada; ese es el punto de la fiesta",
+          "cuesta": "acepta un molde de madera en vez de la pieza, y con eso renuncia a la idea de llevarse una alfombra",
+          "cambia": "se lleva el molde y el tercer telefono, y por primera vez lo pide ella",
+          "emocion": "alivio incomodo; el gesto es pedir el numero antes de que se lo ofrezcan"
+        }
+      ]
+    }
+  },
+  "cmu410zep000732szrw94t2sl#weight-and-endurance": {
+    "cerrado": "2026-09-16T13:34:00.137Z",
+    "hash": "abd1387d2f96283a",
+    "historias": [
+      "weight-and-endurance#1 la-silleta-dura-un-dia",
+      "weight-and-endurance#2 nadie-carga-sin-dos-anos",
+      "weight-and-endurance#3 lo-que-queda-es-el-armazon"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"de cuerpo y de cuentas: kilos, centimetros, anos de oficio; frases cortas cuando algo pesa y largas cuando alguien explica\", espina \"Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto en el mercado de La Paz, y cada pieza esta hecha para no durar. La cuarta son flores cortadas esa manana: dura un dia, y lo unico que sobrevive es la madera de abajo.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dijo\" 27%)",
+      "arranques de parrafo variados (mas repetido \"una\", 13%)",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.08 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 57/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 35/60 plazas por encima de A1/A2 (58%, suelo 60%) · referencias medidas: C1 publicados 70% y 81%, B2 latam 67% · de nivel: clavel, silleta, invernadero, variedad, tallo, preparación, desventaja, perjuicio",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: weight-and-endurance (Alondra, Brenda)"
+    ],
+    "plan": {
+      "tipo": "Cultural",
+      "nivel": "b1",
+      "variante": "LATAM",
+      "registro": "de cuerpo y de cuentas: kilos, centimetros, anos de oficio; frases cortas cuando algo pesa y largas cuando alguien explica",
+      "espina": "Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto en el mercado de La Paz, y cada pieza esta hecha para no durar. La cuarta son flores cortadas esa manana: dura un dia, y lo unico que sobrevive es la madera de abajo.",
+      "recursos": "contraste entre lo que se ve y lo que pesa, regla dicha por quien la carga, numeros concretos como argumento, cierre en objeto y en voz ajena; nada figurado por encima de B1",
+      "escalera_reservada": {
+        "objetivo": "cola acumulada 65% o menos al cerrar el tema; 25 superficies EXACTAS de los temas 1, 2 y 3 vuelven en el cuerpo",
+        "historia_1": [
+          "propuesta",
+          "tamaño",
+          "cargado",
+          "herencia",
+          "experto",
+          "oportunidad",
+          "constante",
+          "obstáculo"
+        ],
+        "historia_2": [
+          "disciplina",
+          "riesgo",
+          "técnica",
+          "hábil",
+          "tenaz",
+          "colgó",
+          "cuerda",
+          "piel",
+          "pegó"
+        ],
+        "historia_3": [
+          "resultado",
+          "sacrificio",
+          "ventaja",
+          "entero",
+          "práctico",
+          "lealtad",
+          "jerarquía",
+          "miembro"
+        ],
+        "por_que": "Mismo metodo que dio 71,7% en el tema 3: las superficies entran en el esqueleto y la prosa se escribe alrededor. Ademas, doce plazas propias del tema (silleta, silletero, armazon, cargadera, ladera, finca, lesion, resistencia, tecnica, limite, fatiga, soportar) vuelven en otra historia del mismo tema."
+      },
+      "aperturas": {
+        "por_que": "journey-opening-shape clasifica por la PRIMERA PALABRA en buckets y con 12 historias el tope es 4. Hoy van: nombre desnudo 3, lugar o tiempo 3, articulo definido 2, cantidad 1. Se eligen tres buckets vacios o casi, para no chocar a mitad de guardado.",
+        "historia_1": "articulo indefinido (Una)",
+        "historia_2": "subordinada delante (Cuando)",
+        "historia_3": "cantidad o pronombre (Dos)"
+      },
+      "cierres": "Ninguna cierra con Alondra mas un gesto y lo que siente. La 1 cierra en el objeto vacio, la 2 sobre Ulises y la 3 en linea citada de Brenda.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "comprar una silleta armada y llevarsela, como cuarta de las siete piezas",
+          "impide": "las flores se cortan esa misma manana y la silleta entera vive un dia",
+          "cuesta": "paga las flores de una silleta que nunca va a ser suya",
+          "cambia": "descubre que debajo de las flores hay una madera que si dura",
+          "emocion": "impaciencia que se convierte en curiosidad; el gesto es agacharse a mirar el armazon en vez de las flores"
+        },
+        {
+          "slot": "2",
+          "quiere": "cargar una silleta para entender por que no se vende",
+          "impide": "el peso, y que cargar se aprende de anos, no de una tarde",
+          "cuesta": "se lesiona la espalda y no va a poder cargar cajas en dos meses, que es de lo que vive su puesto",
+          "cambia": "entiende que lo que compra un cliente no es el objeto sino los anos que hay debajo",
+          "emocion": "orgullo herido tapado con tecnica; el gesto es no soltar la cargadera delante de Brenda"
+        },
+        {
+          "slot": "3",
+          "quiere": "acompanar el desfile y llevarse algo al final",
+          "impide": "no puede cargar, y al terminar el desfile la silleta se deshace esa misma noche",
+          "cuesta": "camina el desfile entero al lado, sin cargar, delante de todo el mundo",
+          "cambia": "Brenda le da el armazon viejo, que es lo unico del oficio que pasa de una persona a otra",
+          "emocion": "alivio con verguenza debajo; el gesto es cargar el armazon vacio, que si puede"
+        }
+      ]
+    }
+  },
+  "cmu410zep000732szrw94t2sl#wishes-and-bargaining": {
+    "cerrado": "2026-09-16T11:51:58.539Z",
+    "hash": "0cffc03d874e24e7",
+    "historias": [
+      "wishes-and-bargaining#1 el-ekeko-no-espera",
+      "wishes-and-bargaining#2 nadie-challa-para-vender",
+      "wishes-and-bargaining#3 el-tari-guarda-un-nombre"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"seco y contable, de quien mide todo en ventas perdidas; la ternura entra por debajo, nunca dicha\", espina \"Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto en el mercado de La Paz, y cada pieza esta hecha para no durar. El tema 1 es la primera, y la que le ensena la regla.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dijo\" 25%)",
+      "arranques de parrafo variados (mas repetido \"la\", 19%)",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 3 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.02 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 59/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Cultural",
+      "nivel": "b1",
+      "variante": "LATAM",
+      "registro": "seco y contable, de quien mide todo en ventas perdidas; la ternura entra por debajo, nunca dicha",
+      "espina": "Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto en el mercado de La Paz, y cada pieza esta hecha para no durar. El tema 1 es la primera, y la que le ensena la regla.",
+      "recursos": "causalidad explicita, contraste entre lo que se espera y lo que pesa, ironia de situacion sin sarcasmo, gancho final en gesto concreto; nada figurado por encima de B1",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "el ekeko tallado a mano del unico tallador que abre el veinticuatro a mediodia, como primera de las siete piezas",
+          "impide": "ese mediodia es la mejor hora de venta de su propio puesto, y hay cien personas en la fila",
+          "cuesta": "el mediodia del veinticuatro entero, que es la mejor venta de su ano y no vuelve",
+          "cambia": "consigue el ekeko y le pesa menos de lo que esperaba; deja de estar segura de para que lo queria",
+          "emocion": "euforia de la fila que se convierte en decepcion; el gesto es pasarlo de una mano a la otra sin guardarlo"
+        },
+        {
+          "slot": "2",
+          "quiere": "que la yatiri challe el ekeko, porque una pieza challada es lo que nadie mas puede traer",
+          "impide": "la challa se hace sobre el deseo de una persona con nombre, y hay que decirlo en voz alta",
+          "cuesta": "da el nombre de Ulises porque no puede decir en voz alta que es para vender; con eso la pieza deja de ser mercancia",
+          "cambia": "el ekeko queda challado a nombre de Ulises y ya no es de ella",
+          "emocion": "verguenza tapada con prisa; el gesto es soltar el nombre rapido y mirar la serpentina del suelo"
+        },
+        {
+          "slot": "3",
+          "quiere": "una segunda pieza igual antes de que se acabe el veinticuatro",
+          "impide": "el tallador no talla mas este ano y lo que queda en la feria es de fabrica",
+          "cuesta": "se lleva una de fabrica sabiendo que no vale, y con eso pierde la idea de que las siete piezas se compran",
+          "cambia": "en vez de una pieza se lleva el nombre del tallador escrito, que es lo primero que de verdad le sirve",
+          "emocion": "derrota tranquila, sin drama; el gesto es escribir el nombre y doblar el papel dentro del tari"
+        }
+      ]
+    }
   }
 }

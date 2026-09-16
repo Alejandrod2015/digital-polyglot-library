@@ -1,0 +1,34 @@
+{
+  "tipo": "Cultural", "nivel": "b1", "variante": "LATAM",
+  "registro": "en voz baja y de noche, con frases largas de trabajo y cortas de cansancio; nadie levanta la voz porque al lado hay gente rezando",
+  "espina": "Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto en el mercado de La Paz, y cada pieza esta hecha para no durar. La tercera no existe como objeto: se hace en el suelo de noche y a las seis de la manana la pisan.",
+  "recursos": "contraste entre lo que cuesta y lo que dura, regla dicha por quien la vive, humor de cansancio, cierre en objeto y en voz ajena; nada figurado por encima de B1",
+  "escalera_reservada": {
+    "objetivo": "cola acumulada 72% o menos al cerrar el tema; 25 superficies EXACTAS de los temas 1 y 2 vuelven en el cuerpo",
+    "historia_1": ["molde", "aprendiz", "veterano", "conjunto", "jornada", "ocasión", "creencia", "admiración"],
+    "historia_2": ["instante", "disciplina", "tolerar", "obstáculo", "pena", "humildes", "prestaron", "adelante", "respetando"],
+    "historia_3": ["logro", "recompensa", "sin duda", "de verdad", "ternura", "devolvió", "vacío", "privilegio"],
+    "por_que": "El tema 2 cerro con la cola en 81% porque los ecos se metieron al final, con las tres historias ya en el techo de palabras. Aqui se reservan ANTES: las 25 entran en el esqueleto, y la prosa se escribe alrededor."
+  },
+  "cierres": "Ninguna de las tres cierra como las seis anteriores (Alondra + un gesto pequeno + lo que siente). La 1 cierra sobre Saul, la 2 sobre la calle y la 3 en una linea citada.",
+  "historias": [
+    { "slot": "1",
+      "quiere": "comprar una alfombra hecha, o encargar una pequena para el puesto, como tercera de las siete piezas",
+      "impide": "la alfombra no existe como objeto: se hace en el suelo de la calle y se barre a las siete",
+      "cuesta": "ofrece una tarde entera de trabajo a cambio y nadie se la pidio; pierde la tarde y no consigue nada",
+      "cambia": "entiende que esta vez la pieza ni siquiera existe todavia",
+      "emocion": "desconcierto que tapa con eficiencia; el gesto es ponerse a tenir aserrin sin que la inviten" },
+    { "slot": "2",
+      "quiere": "al menos una fotografia de la alfombra entera antes de que amanezca",
+      "impide": "la alfombra no se termina hasta las cinco y la luz no llega hasta las seis, cuando ya hay gente encima",
+      "cuesta": "dos noches sin dormir y el turno de su propio puesto, que en La Paz sigue cerrado",
+      "cambia": "trabaja toda la noche en una alfombra que no es suya y deja de pensar en la foto",
+      "emocion": "cansancio que se vuelve calma; el gesto es dejar el telefono en el bolsillo y no sacarlo" },
+    { "slot": "3",
+      "quiere": "guardar algo de la alfombra despues de que pase la procesion",
+      "impide": "a las seis pasan por encima y a las siete no queda nada; ese es el punto de la fiesta",
+      "cuesta": "acepta un molde de madera en vez de la pieza, y con eso renuncia a la idea de llevarse una alfombra",
+      "cambia": "se lleva el molde y el tercer telefono, y por primera vez lo pide ella",
+      "emocion": "alivio incomodo; el gesto es pedir el numero antes de que se lo ofrezcan" }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "tipo": "Cultural", "nivel": "b1", "variante": "LATAM",
+  "registro": "de puerta y de calle en diciembre: mitad canto y mitad negociacion, con frio afuera y ruido adentro; las frases mas cortas son las que se dicen desde el umbral",
+  "espina": "Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto, y cada pieza esta hecha para no durar. La sexta esta hecha de papel y barro y existe para que la rompan a palos: entera no es una pinata, es un adorno.",
+  "recursos": "contraste entre el rito y el negocio, regla dicha dentro de dialogo y solo una por historia, humor seco de vecindad, cierre en objeto, en otro personaje y en imagen; nada figurado por encima de B1",
+  "anti_patrones": {
+    "de_la_lectura_de_las_doce": "Ninguna historia abre con Alondra ofreciendo comprar una pieza. Ninguna cierra con la formula 'no era X, era Y'. La sexta pieza NO es madera vieja que sobrevive (temas 3 y 4 lo hicieron los dos seguidos): es papel y barro, y se rompe. Ningun titulo empieza por Nadie. Una sola sentencia de oficio por historia y siempre dentro de dialogo. Ulises no viaja en este tema.",
+    "nuevo_del_tema_5": "El tema 5 cerro con Alondra recogiendo un resto en la mano (el hilo). Aqui no se lleva ningun resto: lo que sale del tema es una letania escrita por Perla, que es texto y no objeto."
+  },
+  "escalera_reservada": {
+    "objetivo": "cola acumulada 64% o menos al cerrar; 30 superficies EXACTAS de los temas 1 a 5 vuelven en el cuerpo. Todas son SUPERFICIES, no lemas: el error del tema 5 no se repite.",
+    "historia_1": ["ocasión", "irritado", "creencia", "regalo", "celebró", "evidente", "obvia", "señaló", "frágil", "honesto"],
+    "historia_2": ["se negó", "humildes", "vergonzosa", "desprecio", "reaccionar", "precisa", "testigo", "compasión", "multitud", "calma"],
+    "historia_3": ["ternura", "privilegio", "apuntó", "convencer", "así de fácil", "debajo", "memoria", "afecto", "persistir", "cooperar"],
+    "por_que": "Mismo metodo que dio 71,7, 67,5 y 65,7. El rendimiento por eco baja porque el denominador crece 60 por tema; con 30 por tema el journey deberia acabar cerca del 62%."
+  },
+  "aperturas": {
+    "estado": "de 15 historias: nombre desnudo 3, lugar o tiempo 3, cantidad 3, articulo definido 2, articulo indefinido 2, subordinada 2. Con 18 el tope sube a 6.",
+    "historia_1": "articulo definido (La)",
+    "historia_2": "subordinada delante (Aunque)",
+    "historia_3": "cantidad o pronombre (Siete)"
+  },
+  "cierres": "La 1 cierra en el objeto roto, la 2 sobre Perla y la 3 en imagen de calle. Ninguna con Alondra mas un gesto y lo que siente, y ninguna recogiendo un resto del suelo.",
+  "historias": [
+    { "slot": "1",
+      "quiere": "una pinata de siete picos entera para colgarla en el puesto, como sexta de las siete piezas",
+      "impide": "las nueve pinatas de la novena estan hechas para romperse, una por noche, y no se guarda ninguna",
+      "cuesta": "paga las nueve por adelantado para que le aparten la ultima, y la ultima tambien se rompe",
+      "cambia": "ve que una pinata entera deja de ser una pinata",
+      "emocion": "impaciencia que se convierte en curiosidad; el gesto es recoger un pico de papel del suelo y volver a soltarlo" },
+    { "slot": "2",
+      "quiere": "entender por que el barrio paga por una fiesta en la que le cierran la puerta",
+      "impide": "para entenderlo hay que ir afuera, y afuera te niegan la entrada tres veces porque asi es el rito",
+      "cuesta": "dos horas de frio en la calle pidiendo posada y la sensacion, muy real, de que le cierran de verdad",
+      "cambia": "entiende que la negativa ES la fiesta y no un obstaculo de la fiesta",
+      "emocion": "verguenza que pasa a risa; el gesto es cantar la segunda estrofa sin mirar el papel" },
+    { "slot": "3",
+      "quiere": "llevarse una pinata sin romper, la ultima, la del veinticuatro",
+      "impide": "Perla no vende ninguna entera, y la del veinticuatro la rompe siempre alguien de la vecindad",
+      "cuesta": "renuncia a la pieza y ademas rompe ella la ultima, delante de todos, con los ojos vendados",
+      "cambia": "Perla le escribe la letania de afuera en un papel, que es lo unico que se puede sacar de una posada",
+      "emocion": "alegria sin triunfo; el gesto es cantar la primera linea en la calle y que alguien abra una puerta" }
+  ]
+}

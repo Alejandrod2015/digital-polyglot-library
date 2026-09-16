@@ -1,0 +1,44 @@
+{
+  "tipo": "Cultural", "nivel": "b1", "variante": "LATAM",
+  "registro": "de ultimo dia: ruido de petardos, gente que hace cuentas del ano en voz alta y se rie de si misma; el unico momento serio dura un minuto",
+  "espina": "Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto, y cada pieza esta hecha para no durar. La septima existe para arder a medianoche. Esta vez nadie le dice que no: se la venden, y el problema es lo que la venta deja sin quemar a una cuadra entera.",
+  "recursos": "vuelta de tuerca sobre el patron del journey (aqui SI se la venden), testamento como voz colectiva, humor de barrio, cierre de journey sin gancho; nada figurado por encima de B1",
+  "metodo_nuevo": {
+    "por_que": "En el tema 6 se cayeron 11 de las 30 superficies y los tres marcadores de banda salieron a cero, siempre por lo mismo: los ecos y el condicional viven en la narracion, y la narracion es lo que se convierte en dialogo al pelear la banda de citado.",
+    "regla": "Las 30 superficies y los tres marcadores de banda van DENTRO de las replicas desde el primer borrador. Lo que esta en boca de un personaje no se lo lleva la conversion.",
+    "banda_en_dialogo": "condicional en 'yo lo quemaria igual'; subjuntivo imperfecto en 'si pudiera'; el estilo indirecto es el unico que no cabe en una replica y va en una sola frase de narrador, protegida."
+  },
+  "escalera_reservada": {
+    "objetivo": "cola acumulada 64% o menos al cerrar el journey; 30 superficies EXACTAS de los temas 1 a 6, todas dentro de replicas",
+    "historia_1": ["ocasión", "riesgo", "suerte", "calma", "honesto", "útil", "entero", "motivo", "lógico", "evidente"],
+    "historia_2": ["herencia", "memoria", "afecto", "compasión", "sacrificio", "ventaja", "beneficio", "obvia", "sensata", "experto"],
+    "historia_3": ["límite", "frágil", "solución", "dificultad", "principal", "esencial", "significativo", "así de fácil", "hábil", "legal"]
+  },
+  "aperturas": {
+    "estado": "de 18 historias: nombre desnudo 3, lugar o tiempo 3, cantidad 4, articulo definido 3, articulo indefinido 2, subordinada 3. Con 21 el tope sube a 7 y el posesivo sigue a cero.",
+    "historia_1": "posesivo (Su)",
+    "historia_2": "articulo indefinido (Un)",
+    "historia_3": "nombre desnudo (Alondra)"
+  },
+  "cierres": "La 1 cierra sobre Aldo, la 2 en linea citada del testamento y la 3 en imagen de fuego. Ninguna con la formula 'no era X, era Y' ni con Alondra recogiendo un resto.",
+  "historias": [
+    { "slot": "1",
+      "quiere": "el monigote del vecindario, la septima y ultima de sus piezas",
+      "impide": "nada; por primera vez en siete fiestas se lo venden sin discutir, y ese es el problema",
+      "cuesta": "paga y se lo lleva, y con eso deja a la cuadra sin su Ano Viejo despues de cuarenta anos seguidos",
+      "cambia": "descubre que conseguir la pieza le sale mas caro que no conseguirla",
+      "emocion": "triunfo que se enfria en dos minutos; el gesto es no soltar el monigote aunque le pese" },
+    { "slot": "2",
+      "quiere": "quedarse con la pieza y ademas quedar bien con la cuadra",
+      "impide": "el escribano lee el testamento del ano delante de todos y en el testamento sale ella",
+      "cuesta": "la lectura publica, que no es cruel pero es exacta",
+      "cambia": "entiende que el monigote no es de Aldo ni suyo: es de la cuadra que lo va a quemar",
+      "emocion": "verguenza que no puede tapar con dinero; el gesto es aplaudir el testamento con todos" },
+    { "slot": "3",
+      "quiere": "cerrar el ano con algo que llevarse a casa",
+      "impide": "a medianoche el monigote arde, y ese es el punto entero de la fiesta",
+      "cuesta": "la septima pieza, y con ella la idea con la que salio de su mercado hace un ano",
+      "cambia": "quema el monigote con la cuadra y vuelve con seis telefonos, que es lo que de verdad sirve",
+      "emocion": "alivio limpio, sin triunfo; el gesto es mirar arder y no sacar el telefono" }
+  ]
+}
