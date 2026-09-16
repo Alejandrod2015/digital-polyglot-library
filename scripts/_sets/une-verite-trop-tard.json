@@ -1,206 +1,442 @@
 [
- {
-  "type": "match_meaning",
-  "word": "la cafétéria,les symptômes,la force,la clé à molette",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {"word": "la cafétéria", "answer": "a cafeteria", "options": ["a cafeteria", "symptoms", "strength", "an adjustable wrench"]},
-    {"word": "les symptômes", "answer": "symptoms", "options": ["a cafeteria", "symptoms", "strength", "an adjustable wrench"]},
-    {"word": "la force", "answer": "strength", "options": ["a cafeteria", "symptoms", "strength", "an adjustable wrench"]},
-    {"word": "la clé à molette", "answer": "an adjustable wrench", "options": ["a cafeteria", "symptoms", "strength", "an adjustable wrench"]}
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "avoué",
-  "sentence": "Il a finalement _____ qu'il avait menti.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "avoué",
-   "options": ["avoué", "nié", "inventé", "oublié"],
-   "translation": "He finally _____ that he had lied.",
-   "optionTranslations": ["admitted", "denied", "invented", "forgotten"],
-   "audioClip": {"language": "french", "sentence": "Il a finalement avoué qu'il avait menti.", "storySlug": "une-verite-trop-tard", "targetWord": "avoué", "storySource": "user"}
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "gêne",
-  "sentence": "Ce bruit me _____ énormément pour travailler.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "gêne",
-   "options": ["gêne", "aide", "plaît", "manque"],
-   "translation": "This noise _____ me a lot when I try to work.",
-   "optionTranslations": ["bothers", "helps", "pleases", "is missing to"],
-   "audioClip": {"language": "french", "sentence": "Ce bruit me gêne énormément pour travailler.", "storySlug": "une-verite-trop-tard", "targetWord": "gêne", "storySource": "user"}
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "traversé",
-  "sentence": "Elle a _____ la rue sans regarder.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "traversé",
-   "options": ["traversé", "fermé", "peint", "décoré"],
-   "translation": "She _____ the street without looking.",
-   "optionTranslations": ["crossed", "closed", "painted", "decorated"],
-   "audioClip": {"language": "french", "sentence": "Elle a traversé la rue sans regarder.", "storySlug": "une-verite-trop-tard", "targetWord": "traversé", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "cerné",
-  "sentence": "Après cette nuit blanche, il avait les yeux [[cernés]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "with dark circles",
-   "options": ["with dark circles", "very bright", "half closed", "full of tears"],
-   "audioClip": {"language": "french", "sentence": "Après cette nuit blanche, il avait les yeux cernés.", "storySlug": "une-verite-trop-tard", "targetWord": "cernés", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "sans détour",
-  "sentence": "Elle m'a dit la vérité [[sans détour]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "bluntly, directly",
-   "options": ["bluntly, directly", "after a long story", "in a whisper", "with a joke"],
-   "audioClip": {"language": "french", "sentence": "Elle m'a dit la vérité sans détour.", "storySlug": "une-verite-trop-tard", "targetWord": "sans détour", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "gentil",
-  "sentence": "Il a été très [[gentil]] avec moi aujourd'hui.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "kind",
-   "options": ["kind", "rude", "strict", "silent"],
-   "audioClip": {"language": "french", "sentence": "Il a été très gentil avec moi aujourd'hui.", "storySlug": "une-verite-trop-tard", "targetWord": "gentil", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "écouter",
-  "sentence": "Son ami l'a [[écouté]] jusqu'au bout.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "listened to",
-   "options": ["listened to", "interrupted", "avoided", "criticized"],
-   "audioClip": {"language": "french", "sentence": "Son ami l'a écouté jusqu'au bout.", "storySlug": "une-verite-trop-tard", "targetWord": "écouté", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "tendre",
-  "sentence": "Il lui a [[tendu]] la main pour l'aider.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "held out",
-   "options": ["held out", "hidden", "broken", "washed"],
-   "audioClip": {"language": "french", "sentence": "Il lui a tendu la main pour l'aider.", "storySlug": "une-verite-trop-tard", "targetWord": "tendu", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "raconter",
-  "sentence": "Il lui a [[raconté]] toute l'histoire en détail.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "told",
-   "options": ["told", "hidden", "written", "sold"],
-   "audioClip": {"language": "french", "sentence": "Il lui a raconté toute l'histoire en détail.", "storySlug": "une-verite-trop-tard", "targetWord": "raconté", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "passer ses nuits",
-  "sentence": "Pendant ses études, il [[passait ses nuits]] à réviser.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "used to spend his nights",
-   "options": ["used to spend his nights", "used to sleep all day", "used to forget everything", "used to travel a lot"],
-   "audioClip": {"language": "french", "sentence": "Pendant ses études, il passait ses nuits à réviser.", "storySlug": "une-verite-trop-tard", "targetWord": "passait ses nuits", "storySource": "user"}
+  {
+    "type": "match_meaning",
+    "word": "la cafétéria,les symptômes,la force,la clé à molette",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "la cafétéria",
+          "answer": "a cafeteria",
+          "options": [
+            "a cafeteria",
+            "symptoms",
+            "strength",
+            "an adjustable wrench"
+          ]
+        },
+        {
+          "word": "les symptômes",
+          "answer": "symptoms",
+          "options": [
+            "a cafeteria",
+            "symptoms",
+            "strength",
+            "an adjustable wrench"
+          ]
+        },
+        {
+          "word": "la force",
+          "answer": "strength",
+          "options": [
+            "a cafeteria",
+            "symptoms",
+            "strength",
+            "an adjustable wrench"
+          ]
+        },
+        {
+          "word": "la clé à molette",
+          "answer": "an adjustable wrench",
+          "options": [
+            "a cafeteria",
+            "symptoms",
+            "strength",
+            "an adjustable wrench"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "en rester là",
-  "sentence": "On [[en reste là]], d'accord?",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "leave it at that",
-   "options": ["leave it at that", "start all over", "talk about it more", "ask for money"],
-   "audioClip": {"language": "french", "sentence": "On en reste là, d'accord?", "storySlug": "une-verite-trop-tard", "targetWord": "en reste là", "storySource": "user"}
+  {
+    "type": "fill_blank",
+    "word": "avoué",
+    "sentence": "Il a finalement _____ qu'il avait menti.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "avoué",
+      "options": [
+        "avoué",
+        "nié",
+        "inventé",
+        "oublié"
+      ],
+      "translation": "He finally _____ that he had lied.",
+      "optionTranslations": [
+        "admitted",
+        "denied",
+        "invented",
+        "forgotten"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Il a finalement avoué qu'il avait menti.",
+        "storySlug": "une-verite-trop-tard",
+        "targetWord": "avoué",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f214836d36bdb054.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "la gorge serrée",
-  "sentence": "Elle a annoncé la nouvelle [[la gorge serrée]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "with a tight throat",
-   "options": ["with a tight throat", "with a big laugh", "without any emotion", "very calmly"],
-   "audioClip": {"language": "french", "sentence": "Elle a annoncé la nouvelle la gorge serrée.", "storySlug": "une-verite-trop-tard", "targetWord": "la gorge serrée", "storySource": "user"}
+  {
+    "type": "fill_blank",
+    "word": "gêne",
+    "sentence": "Ce bruit me _____ énormément pour travailler.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gêne",
+      "options": [
+        "gêne",
+        "aide",
+        "plaît",
+        "manque"
+      ],
+      "translation": "This noise _____ me a lot when I try to work.",
+      "optionTranslations": [
+        "bothers",
+        "helps",
+        "pleases",
+        "is missing to"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Ce bruit me gêne énormément pour travailler.",
+        "storySlug": "une-verite-trop-tard",
+        "targetWord": "gêne",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cbbf4f7666b32212.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "fin",
-  "sentence": "Une pluie [[fine]] tombait sur la ville.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "light, fine",
-   "options": ["light, fine", "heavy, strong", "warm", "dirty"],
-   "audioClip": {"language": "french", "sentence": "Une pluie fine tombait sur la ville.", "storySlug": "une-verite-trop-tard", "targetWord": "fine", "storySource": "user"}
+  {
+    "type": "fill_blank",
+    "word": "traversé",
+    "sentence": "Elle a _____ la rue sans regarder.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "traversé",
+      "options": [
+        "traversé",
+        "fermé",
+        "peint",
+        "décoré"
+      ],
+      "translation": "She _____ the street without looking.",
+      "optionTranslations": [
+        "crossed",
+        "closed",
+        "painted",
+        "decorated"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Elle a traversé la rue sans regarder.",
+        "storySlug": "une-verite-trop-tard",
+        "targetWord": "traversé",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/42b2ec9b50c49f24.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "chercher des excuses",
-  "sentence": "Au lieu de [[chercher des excuses]], il a réparé son erreur.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "looking for excuses",
-   "options": ["looking for excuses", "asking for money", "calling the police", "reading the news"],
-   "audioClip": {"language": "french", "sentence": "Au lieu de chercher des excuses, il a réparé son erreur.", "storySlug": "une-verite-trop-tard", "targetWord": "chercher d'excuses", "storySource": "user"}
+  {
+    "type": "meaning_in_context",
+    "word": "cerné",
+    "sentence": "Après cette nuit blanche, il avait les yeux [[cernés]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "with dark circles",
+      "options": [
+        "with dark circles",
+        "very bright",
+        "half closed",
+        "full of tears"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Après cette nuit blanche, il avait les yeux cernés.",
+        "storySlug": "une-verite-trop-tard",
+        "targetWord": "cernés",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/28022ea18a56be27.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "commencer",
-  "sentence": "Il est temps de [[commencer]] le projet.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "start",
-   "options": ["start", "finish", "cancel", "forget"],
-   "audioClip": {"language": "french", "sentence": "Il est temps de commencer le projet.", "storySlug": "une-verite-trop-tard", "targetWord": "commencer", "storySource": "user"}
+  {
+    "type": "meaning_in_context",
+    "word": "sans détour",
+    "sentence": "Elle m'a dit la vérité [[sans détour]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bluntly, directly",
+      "options": [
+        "bluntly, directly",
+        "after a long story",
+        "in a whisper",
+        "with a joke"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Elle m'a dit la vérité sans détour.",
+        "storySlug": "une-verite-trop-tard",
+        "targetWord": "sans détour",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e375d1979aa0ba01.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "conclure",
-  "sentence": "Après le débat, la présidente a [[conclu]] la réunion.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "concluded",
-   "options": ["concluded", "started", "cancelled", "recorded"],
-   "audioClip": {"language": "french", "sentence": "Après le débat, la présidente a conclu la réunion.", "storySlug": "une-verite-trop-tard", "targetWord": "conclu", "storySource": "user"}
+  {
+    "type": "meaning_in_context",
+    "word": "gentil",
+    "sentence": "Il a été très [[gentil]] avec moi aujourd'hui.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "kind",
+      "options": [
+        "kind",
+        "rude",
+        "strict",
+        "silent"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Il a été très gentil avec moi aujourd'hui.",
+        "storySlug": "une-verite-trop-tard",
+        "targetWord": "gentil",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/03e2339324885ef8.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "écouter",
+    "sentence": "Son ami l'a [[écouté]] jusqu'au bout.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "listened to",
+      "options": [
+        "listened to",
+        "interrupted",
+        "avoided",
+        "criticized"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Son ami l'a écouté jusqu'au bout.",
+        "storySlug": "une-verite-trop-tard",
+        "targetWord": "écouté",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7664e6987f958469.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tendre",
+    "sentence": "Il lui a [[tendu]] la main pour l'aider.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "held out",
+      "options": [
+        "held out",
+        "hidden",
+        "broken",
+        "washed"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Il lui a tendu la main pour l'aider.",
+        "storySlug": "une-verite-trop-tard",
+        "targetWord": "tendu",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/365dc12ecdd7f1ce.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "raconter",
+    "sentence": "Il lui a [[raconté]] toute l'histoire en détail.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "told",
+      "options": [
+        "told",
+        "hidden",
+        "written",
+        "sold"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Il lui a raconté toute l'histoire en détail.",
+        "storySlug": "une-verite-trop-tard",
+        "targetWord": "raconté",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3aea0e7afb623eba.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "passer ses nuits",
+    "sentence": "Pendant ses études, il [[passait ses nuits]] à réviser.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "used to spend his nights",
+      "options": [
+        "used to spend his nights",
+        "used to sleep all day",
+        "used to forget everything",
+        "used to travel a lot"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Pendant ses études, il passait ses nuits à réviser.",
+        "storySlug": "une-verite-trop-tard",
+        "targetWord": "passait ses nuits",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en rester là",
+    "sentence": "On [[en reste là]], d'accord?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "leave it at that",
+      "options": [
+        "leave it at that",
+        "start all over",
+        "talk about it more",
+        "ask for money"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "On en reste là, d'accord?",
+        "storySlug": "une-verite-trop-tard",
+        "targetWord": "en reste là",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la gorge serrée",
+    "sentence": "Elle a annoncé la nouvelle [[la gorge serrée]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "with a tight throat",
+      "options": [
+        "with a tight throat",
+        "with a big laugh",
+        "without any emotion",
+        "very calmly"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Elle a annoncé la nouvelle la gorge serrée.",
+        "storySlug": "une-verite-trop-tard",
+        "targetWord": "la gorge serrée",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fin",
+    "sentence": "Une pluie [[fine]] tombait sur la ville.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "light, fine",
+      "options": [
+        "light, fine",
+        "heavy, strong",
+        "warm",
+        "dirty"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Une pluie fine tombait sur la ville.",
+        "storySlug": "une-verite-trop-tard",
+        "targetWord": "fine",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chercher des excuses",
+    "sentence": "Au lieu de [[chercher des excuses]], il a réparé son erreur.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "looking for excuses",
+      "options": [
+        "looking for excuses",
+        "asking for money",
+        "calling the police",
+        "reading the news"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Au lieu de chercher des excuses, il a réparé son erreur.",
+        "storySlug": "une-verite-trop-tard",
+        "targetWord": "chercher d'excuses",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "commencer",
+    "sentence": "Il est temps de [[commencer]] le projet.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "start",
+      "options": [
+        "start",
+        "finish",
+        "cancel",
+        "forget"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Il est temps de commencer le projet.",
+        "storySlug": "une-verite-trop-tard",
+        "targetWord": "commencer",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conclure",
+    "sentence": "Après le débat, la présidente a [[conclu]] la réunion.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "concluded",
+      "options": [
+        "concluded",
+        "started",
+        "cancelled",
+        "recorded"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Après le débat, la présidente a conclu la réunion.",
+        "storySlug": "une-verite-trop-tard",
+        "targetWord": "conclu",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  }
 ]

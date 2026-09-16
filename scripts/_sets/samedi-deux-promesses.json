@@ -1,206 +1,442 @@
 [
- {
-  "type": "match_meaning",
-  "word": "les urgences,la vis,l'escabeau,le pansement",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {"word": "les urgences", "answer": "the ER", "options": ["the ER", "a screw", "a stepladder", "a bandage"]},
-    {"word": "la vis", "answer": "a screw", "options": ["the ER", "a screw", "a stepladder", "a bandage"]},
-    {"word": "l'escabeau", "answer": "a stepladder", "options": ["the ER", "a screw", "a stepladder", "a bandage"]},
-    {"word": "le pansement", "answer": "a bandage", "options": ["the ER", "a screw", "a stepladder", "a bandage"]}
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "inventé",
-  "sentence": "Pour ne pas avouer la vérité, il a _____ une excuse.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "inventé",
-   "options": ["inventé", "répété", "oublié", "corrigé"],
-   "translation": "To avoid admitting the truth, he _____ an excuse.",
-   "optionTranslations": ["made up", "repeated", "forgot", "corrected"],
-   "audioClip": {"language": "french", "sentence": "Pour ne pas avouer la vérité, il a inventé une excuse.", "storySlug": "samedi-deux-promesses", "targetWord": "inventé", "storySource": "user"}
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "devras",
-  "sentence": "Tu me _____ un service, un jour.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "devras",
-   "options": ["devras", "offriras", "prêteras", "vendras"],
-   "translation": "You'll _____ me a favor, one day.",
-   "optionTranslations": ["owe", "offer", "lend", "sell"],
-   "audioClip": {"language": "french", "sentence": "Tu me devras un service, un jour.", "storySlug": "samedi-deux-promesses", "targetWord": "devras", "storySource": "user"}
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "délicieux",
-  "sentence": "Ce gâteau au chocolat est absolument _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "délicieux",
-   "options": ["délicieux", "froid", "cher", "salé"],
-   "translation": "This chocolate cake is absolutely _____.",
-   "optionTranslations": ["delicious", "cold", "expensive", "salty"],
-   "audioClip": {"language": "french", "sentence": "Ce gâteau au chocolat est absolument délicieux.", "storySlug": "samedi-deux-promesses", "targetWord": "délicieux", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "le pouce",
-  "sentence": "Il s'est fait mal [[au pouce]] en bricolant.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "thumb",
-   "options": ["thumb", "knee", "ear", "elbow"],
-   "audioClip": {"language": "french", "sentence": "Il s'est fait mal au pouce en bricolant.", "storySlug": "samedi-deux-promesses", "targetWord": "pouce", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "se rendre compte",
-  "sentence": "Il [[s'est rendu compte]] de son erreur trop tard.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "realized",
-   "options": ["realized", "forgotten", "celebrated", "denied"],
-   "audioClip": {"language": "french", "sentence": "Il s'est rendu compte de son erreur trop tard.", "storySlug": "samedi-deux-promesses", "targetWord": "s'est rendu compte", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "malade comme un chien",
-  "sentence": "Après ce repas, il s'est senti [[malade comme un chien]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "sick as a dog",
-   "options": ["sick as a dog", "happy as a child", "strong as a bull", "calm as a lake"],
-   "audioClip": {"language": "french", "sentence": "Après ce repas, il s'est senti malade comme un chien.", "storySlug": "samedi-deux-promesses", "targetWord": "malade comme un chien", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "faible",
-  "sentence": "Après la maladie, sa voix était encore [[faible]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "weak",
-   "options": ["weak", "loud", "clear", "happy"],
-   "audioClip": {"language": "french", "sentence": "Après la maladie, sa voix était encore faible.", "storySlug": "samedi-deux-promesses", "targetWord": "faible", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "entouré",
-  "sentence": "Le petit chat était [[entouré]] d'une couverture chaude.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "wrapped, surrounded",
-   "options": ["wrapped, surrounded", "left alone", "completely lost", "very dirty"],
-   "audioClip": {"language": "french", "sentence": "Le petit chat était entouré d'une couverture chaude.", "storySlug": "samedi-deux-promesses", "targetWord": "entouré", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "promettre",
-  "sentence": "Je te l'ai [[promis]], je le ferai.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "promised",
-   "options": ["promised", "refused", "denied", "suggested"],
-   "audioClip": {"language": "french", "sentence": "Je te l'ai promis, je le ferai.", "storySlug": "samedi-deux-promesses", "targetWord": "promis", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "à la fois",
-  "sentence": "Elle ne peut pas être à deux endroits [[à la fois]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "at the same time",
-   "options": ["at the same time", "for a long time", "without any reason", "by pure chance"],
-   "audioClip": {"language": "french", "sentence": "Elle ne peut pas être à deux endroits à la fois.", "storySlug": "samedi-deux-promesses", "targetWord": "à la fois", "storySource": "user"}
+  {
+    "type": "match_meaning",
+    "word": "les urgences,la vis,l'escabeau,le pansement",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "les urgences",
+          "answer": "the ER",
+          "options": [
+            "the ER",
+            "a screw",
+            "a stepladder",
+            "a bandage"
+          ]
+        },
+        {
+          "word": "la vis",
+          "answer": "a screw",
+          "options": [
+            "the ER",
+            "a screw",
+            "a stepladder",
+            "a bandage"
+          ]
+        },
+        {
+          "word": "l'escabeau",
+          "answer": "a stepladder",
+          "options": [
+            "the ER",
+            "a screw",
+            "a stepladder",
+            "a bandage"
+          ]
+        },
+        {
+          "word": "le pansement",
+          "answer": "a bandage",
+          "options": [
+            "the ER",
+            "a screw",
+            "a stepladder",
+            "a bandage"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "bidon",
-  "sentence": "Cette excuse est complètement [[bidon]], je ne te crois pas.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "fake",
-   "options": ["fake", "true", "interesting", "rare"],
-   "audioClip": {"language": "french", "sentence": "Cette excuse est complètement bidon, je ne te crois pas.", "storySlug": "samedi-deux-promesses", "targetWord": "bidon", "storySource": "user"}
+  {
+    "type": "fill_blank",
+    "word": "inventé",
+    "sentence": "Pour ne pas avouer la vérité, il a _____ une excuse.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "inventé",
+      "options": [
+        "inventé",
+        "répété",
+        "oublié",
+        "corrigé"
+      ],
+      "translation": "To avoid admitting the truth, he _____ an excuse.",
+      "optionTranslations": [
+        "made up",
+        "repeated",
+        "forgot",
+        "corrected"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Pour ne pas avouer la vérité, il a inventé une excuse.",
+        "storySlug": "samedi-deux-promesses",
+        "targetWord": "inventé",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/65a4958fd24a99b5.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "avoir la tête ailleurs",
-  "sentence": "Pendant la réunion, il avait [[la tête ailleurs]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "his mind elsewhere",
-   "options": ["his mind elsewhere", "a big headache", "a great idea", "no time at all"],
-   "audioClip": {"language": "french", "sentence": "Pendant la réunion, il avait la tête ailleurs.", "storySlug": "samedi-deux-promesses", "targetWord": "la tête ailleurs", "storySource": "user"}
+  {
+    "type": "fill_blank",
+    "word": "devras",
+    "sentence": "Tu me _____ un service, un jour.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "devras",
+      "options": [
+        "devras",
+        "offriras",
+        "prêteras",
+        "vendras"
+      ],
+      "translation": "You'll _____ me a favor, one day.",
+      "optionTranslations": [
+        "owe",
+        "offer",
+        "lend",
+        "sell"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Tu me devras un service, un jour.",
+        "storySlug": "samedi-deux-promesses",
+        "targetWord": "devras",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7a50ccb252d24275.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "droit",
-  "sentence": "Elle a rangé les étagères bien [[droites]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "straight",
-   "options": ["straight", "crooked", "broken", "empty"],
-   "audioClip": {"language": "french", "sentence": "Elle a rangé les étagères bien droites.", "storySlug": "samedi-deux-promesses", "targetWord": "droites", "storySource": "user"}
+  {
+    "type": "fill_blank",
+    "word": "délicieux",
+    "sentence": "Ce gâteau au chocolat est absolument _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "délicieux",
+      "options": [
+        "délicieux",
+        "froid",
+        "cher",
+        "salé"
+      ],
+      "translation": "This chocolate cake is absolutely _____.",
+      "optionTranslations": [
+        "delicious",
+        "cold",
+        "expensive",
+        "salty"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Ce gâteau au chocolat est absolument délicieux.",
+        "storySlug": "samedi-deux-promesses",
+        "targetWord": "délicieux",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/19172396640e3d0d.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "mission accomplie",
-  "sentence": "Le colis est arrivé à temps: [[mission accomplie]]!",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "job done",
-   "options": ["job done", "big problem", "total failure", "try again"],
-   "audioClip": {"language": "french", "sentence": "Le colis est arrivé à temps: mission accomplie!", "storySlug": "samedi-deux-promesses", "targetWord": "Mission accomplie", "storySource": "user"}
+  {
+    "type": "meaning_in_context",
+    "word": "le pouce",
+    "sentence": "Il s'est fait mal [[au pouce]] en bricolant.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thumb",
+      "options": [
+        "thumb",
+        "knee",
+        "ear",
+        "elbow"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Il s'est fait mal au pouce en bricolant.",
+        "storySlug": "samedi-deux-promesses",
+        "targetWord": "pouce",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c2e1a135e9c55db9.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "mon pauvre",
-  "sentence": "Tu as raté ton train, [[mon pauvre]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "you poor thing",
-   "options": ["you poor thing", "you lucky one", "you liar", "you genius"],
-   "audioClip": {"language": "french", "sentence": "Tu as raté ton train, mon pauvre.", "storySlug": "samedi-deux-promesses", "targetWord": "mon pauvre", "storySource": "user"}
+  {
+    "type": "meaning_in_context",
+    "word": "se rendre compte",
+    "sentence": "Il [[s'est rendu compte]] de son erreur trop tard.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "realized",
+      "options": [
+        "realized",
+        "forgotten",
+        "celebrated",
+        "denied"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Il s'est rendu compte de son erreur trop tard.",
+        "storySlug": "samedi-deux-promesses",
+        "targetWord": "s'est rendu compte",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c93a1046c9aabf24.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "sans goût",
-  "sentence": "Cette soupe est [[sans goût]], il faut du sel.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "tasteless",
-   "options": ["tasteless", "delicious", "too spicy", "too salty"],
-   "audioClip": {"language": "french", "sentence": "Cette soupe est sans goût, il faut du sel.", "storySlug": "samedi-deux-promesses", "targetWord": "sans goût", "storySource": "user"}
+  {
+    "type": "meaning_in_context",
+    "word": "malade comme un chien",
+    "sentence": "Après ce repas, il s'est senti [[malade comme un chien]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sick as a dog",
+      "options": [
+        "sick as a dog",
+        "happy as a child",
+        "strong as a bull",
+        "calm as a lake"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Après ce repas, il s'est senti malade comme un chien.",
+        "storySlug": "samedi-deux-promesses",
+        "targetWord": "malade comme un chien",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/82e05b0025d08335.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "faible",
+    "sentence": "Après la maladie, sa voix était encore [[faible]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "weak",
+      "options": [
+        "weak",
+        "loud",
+        "clear",
+        "happy"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Après la maladie, sa voix était encore faible.",
+        "storySlug": "samedi-deux-promesses",
+        "targetWord": "faible",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d86ed8488d16a4df.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entouré",
+    "sentence": "Le petit chat était [[entouré]] d'une couverture chaude.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wrapped, surrounded",
+      "options": [
+        "wrapped, surrounded",
+        "left alone",
+        "completely lost",
+        "very dirty"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Le petit chat était entouré d'une couverture chaude.",
+        "storySlug": "samedi-deux-promesses",
+        "targetWord": "entouré",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/df929be8189aa6f2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "promettre",
+    "sentence": "Je te l'ai [[promis]], je le ferai.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "promised",
+      "options": [
+        "promised",
+        "refused",
+        "denied",
+        "suggested"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Je te l'ai promis, je le ferai.",
+        "storySlug": "samedi-deux-promesses",
+        "targetWord": "promis",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/15b8fe3fab7b5c75.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "à la fois",
+    "sentence": "Elle ne peut pas être à deux endroits [[à la fois]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at the same time",
+      "options": [
+        "at the same time",
+        "for a long time",
+        "without any reason",
+        "by pure chance"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Elle ne peut pas être à deux endroits à la fois.",
+        "storySlug": "samedi-deux-promesses",
+        "targetWord": "à la fois",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bidon",
+    "sentence": "Cette excuse est complètement [[bidon]], je ne te crois pas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fake",
+      "options": [
+        "fake",
+        "true",
+        "interesting",
+        "rare"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Cette excuse est complètement bidon, je ne te crois pas.",
+        "storySlug": "samedi-deux-promesses",
+        "targetWord": "bidon",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avoir la tête ailleurs",
+    "sentence": "Pendant la réunion, il avait [[la tête ailleurs]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "his mind elsewhere",
+      "options": [
+        "his mind elsewhere",
+        "a big headache",
+        "a great idea",
+        "no time at all"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Pendant la réunion, il avait la tête ailleurs.",
+        "storySlug": "samedi-deux-promesses",
+        "targetWord": "la tête ailleurs",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "droit",
+    "sentence": "Elle a rangé les étagères bien [[droites]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "straight",
+      "options": [
+        "straight",
+        "crooked",
+        "broken",
+        "empty"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Elle a rangé les étagères bien droites.",
+        "storySlug": "samedi-deux-promesses",
+        "targetWord": "droites",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mission accomplie",
+    "sentence": "Le colis est arrivé à temps: [[mission accomplie]]!",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "job done",
+      "options": [
+        "job done",
+        "big problem",
+        "total failure",
+        "try again"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Le colis est arrivé à temps: mission accomplie!",
+        "storySlug": "samedi-deux-promesses",
+        "targetWord": "Mission accomplie",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mon pauvre",
+    "sentence": "Tu as raté ton train, [[mon pauvre]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "you poor thing",
+      "options": [
+        "you poor thing",
+        "you lucky one",
+        "you liar",
+        "you genius"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Tu as raté ton train, mon pauvre.",
+        "storySlug": "samedi-deux-promesses",
+        "targetWord": "mon pauvre",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sans goût",
+    "sentence": "Cette soupe est [[sans goût]], il faut du sel.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tasteless",
+      "options": [
+        "tasteless",
+        "delicious",
+        "too spicy",
+        "too salty"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Cette soupe est sans goût, il faut du sel.",
+        "storySlug": "samedi-deux-promesses",
+        "targetWord": "sans goût",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  }
 ]
