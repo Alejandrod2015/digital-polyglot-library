@@ -3,7 +3,12 @@ import type Stripe from "stripe";
 import type { BillingEntitlement } from "@/generated/prisma";
 import { getEffectivePlanFromEntitlement } from "@/lib/billing";
 
-const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
+// Perezoso (2026-09-17): ver el mismo comentario en src/lib/betaReleases.ts.
+let _clerkClient: ReturnType<typeof createClerkClient> | null = null;
+function getClerkClient() {
+  if (!_clerkClient) _clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
+  return _clerkClient;
+}
 
 export async function syncClerkPlanFromEntitlement(
   userId: string,
@@ -13,7 +18,7 @@ export async function syncClerkPlanFromEntitlement(
   const trialStartedAt =
     entitlement?.source === "stripe" ? entitlement.startedAt?.toISOString() ?? null : null;
 
-  await clerkClient.users.updateUserMetadata(userId, {
+  await getClerkClient().users.updateUserMetadata(userId, {
     publicMetadata: {
       plan: effectivePlan,
       trialStartedAt,
@@ -46,7 +51,7 @@ export async function syncClerkStripeSubscription(args: {
 }) {
   const { userId, plan, subscription, stripeCustomerId, stripeSubscriptionId } = args;
 
-  await clerkClient.users.updateUserMetadata(userId, {
+  await getClerkClient().users.updateUserMetadata(userId, {
     publicMetadata: {
       plan,
       trialStartedAt: new Date(
@@ -80,7 +85,7 @@ export async function syncClerkStripeCancellation(args: {
 }) {
   const { userId, plan, subscription } = args;
 
-  await clerkClient.users.updateUserMetadata(userId, {
+  await getClerkClient().users.updateUserMetadata(userId, {
     publicMetadata: {
       plan,
       trialStartedAt: new Date(

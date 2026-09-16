@@ -12,7 +12,15 @@ import { sendBetaEmail } from "@/lib/betaProgram";
 import { isApnsConfigured, sendApnsPush } from "@/lib/apnsPush";
 import type { BetaRelease } from "@/generated/prisma";
 
-const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
+// Perezoso (2026-09-17): leer process.env aqui, en scope de carga, dejaba el
+// cliente construido con el entorno vacio en cualquier script que cargue
+// dotenv DESPUES de importar este modulo (los import se izan, el config()
+// corre tarde). Ver scripts/_loadEnv.ts y el test loadEnvScopeReads.test.ts.
+let _clerkClient: ReturnType<typeof createClerkClient> | null = null;
+function getClerkClient() {
+  if (!_clerkClient) _clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
+  return _clerkClient;
+}
 
 type StoredToken = { provider?: string; token?: string };
 
@@ -32,7 +40,7 @@ function asStringArray(v: unknown): string[] {
 async function tokensForUsers(userIds: string[]): Promise<string[]> {
   const tokens = new Set<string>();
   const results = await Promise.all(
-    userIds.map((id) => clerkClient.users.getUser(id).catch(() => null)),
+    userIds.map((id) => getClerkClient().users.getUser(id).catch(() => null)),
   );
   for (const user of results) {
     if (!user) continue;

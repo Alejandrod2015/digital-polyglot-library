@@ -515,9 +515,19 @@ export function pickModelForVoice(
   return ELEVENLABS_MODEL_V2;
 }
 
-const openai = process.env.OPENAI_API_KEY
-  ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
-  : null;
+// Perezoso (2026-09-17): este `null` es justo el fallo que
+// scripts/_loadEnv.ts vino a arreglar. Leido en scope de carga, cualquier
+// script que cargue dotenv DESPUES de importar este modulo (los import se
+// izan) veia el entorno vacio y perdia audioSegments en silencio, con un
+// aviso ("Missing OPENAI_API_KEY") que parece inofensivo. Ver
+// src/lib/__tests__/loadEnvScopeReads.test.ts.
+let _openai: OpenAI | null | undefined;
+function getOpenAI(): OpenAI | null {
+  if (_openai === undefined) {
+    _openai = process.env.OPENAI_API_KEY ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY }) : null;
+  }
+  return _openai;
+}
 
 function hashSeed(input: string): number {
   let hash = 0;
@@ -2139,6 +2149,7 @@ async function transcribeAudioSegments(
   filename: string,
   narrationText: string
 ): Promise<{ audioSegments: AudioSegment[]; transcriptText: string | null }> {
+  const openai = getOpenAI();
   if (!openai) {
     console.warn("[audio-segments] Missing OPENAI_API_KEY, skipping segment generation");
     return { audioSegments: [], transcriptText: null };

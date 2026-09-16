@@ -36,7 +36,12 @@ import {
   toNumber,
 } from "@/lib/journeyProgress";
 
-const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
+// Perezoso (2026-09-17): ver el mismo comentario en src/lib/betaReleases.ts.
+let _clerkClient: ReturnType<typeof createClerkClient> | null = null;
+function getClerkClient() {
+  if (!_clerkClient) _clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
+  return _clerkClient;
+}
 
 /** Tipo de notificación bajo el que se filtra el opt-in del usuario. */
 export const BRIDGE_NOTIFICATION_KEY = "new_content" as const;
@@ -311,7 +316,7 @@ async function openedNextUserIds(pair: BridgePair, userIds: string[]): Promise<S
 }
 
 async function getIosTokens(userId: string): Promise<{ tokens: string[]; androidOnly: boolean; optedIn: boolean }> {
-  const user = await clerkClient.users.getUser(userId);
+  const user = await getClerkClient().users.getUser(userId);
   const publicMeta = (user.publicMetadata as Record<string, unknown>) ?? {};
   const prefs = normalizeNotificationPrefs(
     publicMeta.notificationPrefs,

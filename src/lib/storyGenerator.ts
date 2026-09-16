@@ -301,7 +301,12 @@ function parseStoryPayload(content: string): unknown {
   return typeof parsed === "string" ? (JSON.parse(parsed) as unknown) : parsed;
 }
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
+// Perezoso (2026-09-17): ver el comentario en src/lib/betaReleases.ts.
+let _openai: OpenAI | null = null;
+function getOpenAI(): OpenAI {
+  if (!_openai) _openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
+  return _openai;
+}
 
 /**
  * Generate a story with the same high-quality logic used by the Sanity studio.
@@ -516,7 +521,7 @@ Return ONLY valid JSON:
 }
 `;
 
-    const response = await openai.chat.completions.create({
+    const response = await getOpenAI().chat.completions.create({
       model: "gpt-4o-mini",
       temperature: attempt === 0 ? 0.8 : 0.6,
       messages: [
@@ -573,7 +578,7 @@ Return ONLY valid JSON:
       continue;
     }
 
-    const improvedVocab = await improveVocabDefinitions(openai, {
+    const improvedVocab = await improveVocabDefinitions(getOpenAI(), {
       items: sanitizeGeneratedVocab(raw.vocab, text, language),
       language,
       level: learnerProfile,

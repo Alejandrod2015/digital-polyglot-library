@@ -8,7 +8,12 @@
 
 import { createClerkClient } from "@clerk/backend";
 
-const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
+// Perezoso (2026-09-17): ver el mismo comentario en src/lib/betaReleases.ts.
+let _clerkClient: ReturnType<typeof createClerkClient> | null = null;
+function getClerkClient() {
+  if (!_clerkClient) _clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
+  return _clerkClient;
+}
 
 export type MetricsUserIdentity = { name: string | null; email: string | null };
 
@@ -33,7 +38,7 @@ export async function resolveUserIdentities(
         return;
       }
       try {
-        const user = await clerkClient.users.getUser(userId);
+        const user = await getClerkClient().users.getUser(userId);
         const identity: MetricsUserIdentity = {
           name: [user.firstName, user.lastName].filter(Boolean).join(" ") || null,
           email: user.emailAddresses[0]?.emailAddress ?? null,

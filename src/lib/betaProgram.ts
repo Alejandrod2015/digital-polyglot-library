@@ -33,7 +33,12 @@ import { buildPersonalEmail } from "@/lib/emails/personal";
 import { publicBaseUrl } from "@/lib/emails/publicBaseUrl";
 import type { BetaSignup } from "@/generated/prisma";
 
-const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
+// Perezoso (2026-09-17): ver el mismo comentario en src/lib/betaReleases.ts.
+let _clerkClient: ReturnType<typeof createClerkClient> | null = null;
+function getClerkClient() {
+  if (!_clerkClient) _clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
+  return _clerkClient;
+}
 
 /** Plan a tester holds while the beta runs. Restored by the cron if clobbered. */
 export const BETA_PLAN = "premium";
@@ -749,7 +754,7 @@ export async function backfillBetaTesterLinks(
       .filter((e): e is string => Boolean(e));
     for (const email of Array.from(new Set(candidates))) {
       try {
-        const found = await clerkClient.users.getUserList({ emailAddress: [email], limit: 1 });
+        const found = await getClerkClient().users.getUserList({ emailAddress: [email], limit: 1 });
         const user = found.data[0];
         if (!user) continue;
         await linkClerkUserToBetaSignup({ email, userId: user.id });
@@ -765,9 +770,9 @@ export async function backfillBetaTesterLinks(
 }
 
 export async function grantBetaPlan(userId: string): Promise<void> {
-  const user = await clerkClient.users.getUser(userId);
+  const user = await getClerkClient().users.getUser(userId);
   const current = user.publicMetadata ?? {};
-  await clerkClient.users.updateUserMetadata(userId, {
+  await getClerkClient().users.updateUserMetadata(userId, {
     publicMetadata: {
       ...current,
       plan: BETA_PLAN,
@@ -782,7 +787,7 @@ export async function grantBetaPlan(userId: string): Promise<void> {
 }
 
 export async function revokeBetaPlan(userId: string): Promise<void> {
-  const user = await clerkClient.users.getUser(userId);
+  const user = await getClerkClient().users.getUser(userId);
   const current = (user.publicMetadata ?? {}) as Record<string, unknown>;
 
   // Never downgrade someone who has paid. If a real entitlement exists, the
@@ -791,7 +796,7 @@ export async function revokeBetaPlan(userId: string): Promise<void> {
   const hasPaidPlan =
     entitlement !== null && ["active", "trialing", "in_grace_period"].includes(entitlement.status);
 
-  await clerkClient.users.updateUserMetadata(userId, {
+  await getClerkClient().users.updateUserMetadata(userId, {
     publicMetadata: {
       ...current,
       ...(hasPaidPlan ? {} : { plan: "free" }),

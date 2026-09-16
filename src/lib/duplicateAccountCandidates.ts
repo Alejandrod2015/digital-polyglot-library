@@ -16,7 +16,12 @@
  */
 import { createClerkClient } from "@clerk/backend";
 
-const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
+// Perezoso (2026-09-17): ver el mismo comentario en src/lib/betaReleases.ts.
+let _clerkClient: ReturnType<typeof createClerkClient> | null = null;
+function getClerkClient() {
+  if (!_clerkClient) _clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
+  return _clerkClient;
+}
 
 const SIGNUP_WINDOW_MS = 48 * 60 * 60 * 1000;
 const USER_SCAN_LIMIT = 500;
@@ -68,7 +73,7 @@ function primaryProvider(user: { externalAccounts: Array<{ provider: string }>; 
 /** IPs vistas en las sesiones de un usuario. Solo se pide para pares que ya calificaron por tiempo, para no golpear la API de Clerk por cada usuario de la base. */
 async function sessionIps(userId: string): Promise<Set<string>> {
   try {
-    const { data } = await clerkClient.sessions.getSessionList({ userId });
+    const { data } = await getClerkClient().sessions.getSessionList({ userId });
     const ips = new Set<string>();
     for (const s of data) {
       const ip = (s.latestActivity as { ipAddress?: string } | null)?.ipAddress;
@@ -81,7 +86,7 @@ async function sessionIps(userId: string): Promise<Set<string>> {
 }
 
 export async function findDuplicateCandidates(): Promise<DuplicateCandidate[]> {
-  const { data: users } = await clerkClient.users.getUserList({
+  const { data: users } = await getClerkClient().users.getUserList({
     limit: USER_SCAN_LIMIT,
     orderBy: "-created_at",
   });

@@ -8,7 +8,12 @@ import { prisma } from "@/lib/prisma";
 import { releaseStageReport, type ReleaseStageReport } from "@/lib/releaseStage";
 import releaseReadiness from "@/data/releaseReadiness.json";
 
-const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY ?? "" });
+// Perezoso (2026-09-17): ver el mismo comentario en src/lib/betaReleases.ts.
+let _clerkClient: ReturnType<typeof createClerkClient> | null = null;
+function getClerkClient() {
+  if (!_clerkClient) _clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY ?? "" });
+  return _clerkClient;
+}
 
 // Internal users to exclude from "real user" metrics. Three sources,
 // combined and deduped:
@@ -40,7 +45,7 @@ async function getInternalUserIds(): Promise<string[]> {
   let emailResolved: string[] = [];
   if (emails.length && process.env.CLERK_SECRET_KEY) {
     try {
-      const res = await clerkClient.users.getUserList({
+      const res = await getClerkClient().users.getUserList({
         emailAddress: emails,
         limit: 200,
       });
@@ -57,7 +62,7 @@ type ClerkNameRow = { id: string; firstName: string | null; lastName: string | n
 async function getClerkNames(userIds: string[]): Promise<Map<string, ClerkNameRow>> {
   if (!userIds.length || !process.env.CLERK_SECRET_KEY) return new Map();
   try {
-    const res = await clerkClient.users.getUserList({ userId: userIds, limit: 200 });
+    const res = await getClerkClient().users.getUserList({ userId: userIds, limit: 200 });
     return new Map(
       res.data.map((u) => [
         u.id,
