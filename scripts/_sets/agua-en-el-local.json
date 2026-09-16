@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "la mesa,el restaurante,la ventana,la tormenta",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "la mesa",
+          "answer": "a table",
+          "options": [
+            "a table",
+            "a restaurant",
+            "a window",
+            "a storm"
+          ]
+        },
+        {
+          "word": "el restaurante",
+          "answer": "a restaurant",
+          "options": [
+            "a table",
+            "a restaurant",
+            "a window",
+            "a storm"
+          ]
+        },
+        {
+          "word": "la ventana",
+          "answer": "a window",
+          "options": [
+            "a table",
+            "a restaurant",
+            "a window",
+            "a storm"
+          ]
+        },
+        {
+          "word": "la tormenta",
+          "answer": "a storm",
+          "options": [
+            "a table",
+            "a restaurant",
+            "a window",
+            "a storm"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la Plaza Mayor",
+    "sentence": "Las ventanas daban a la [[Plaza Mayor]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Salamanca's main square",
+      "options": [
+        "Salamanca's main square",
+        "a small park",
+        "a train station",
+        "a quiet street"
+      ],
+      "audioClip": {
+        "storySlug": "agua-en-el-local",
+        "storySource": "user",
+        "sentence": "Las ventanas daban a la Plaza Mayor.",
+        "targetWord": "Plaza Mayor",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tener miedo",
+    "sentence": "[[Tenía miedo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "was afraid",
+      "options": [
+        "was afraid",
+        "was happy",
+        "was bored",
+        "was hungry"
+      ],
+      "audioClip": {
+        "storySlug": "agua-en-el-local",
+        "storySource": "user",
+        "sentence": "Tenía miedo.",
+        "targetWord": "Tenía miedo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nunca",
+    "sentence": "[[Nunca]] se lo conté a nadie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "never",
+      "options": [
+        "never",
+        "always",
+        "sometimes",
+        "once"
+      ],
+      "audioClip": {
+        "storySlug": "agua-en-el-local",
+        "storySource": "user",
+        "sentence": "Nunca se lo conté a nadie.",
+        "targetWord": "Nunca",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a nadie",
+    "sentence": "Nunca se lo conté [[a nadie]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to nobody",
+      "options": [
+        "to nobody",
+        "to everybody",
+        "to Rubén",
+        "to her mother"
+      ],
+      "audioClip": {
+        "storySlug": "agua-en-el-local",
+        "storySource": "user",
+        "sentence": "Nunca se lo conté a nadie.",
+        "targetWord": "a nadie",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gracias por",
+    "sentence": "[[Gracias por]] contármelo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thank you for",
+      "options": [
+        "thank you for",
+        "sorry for",
+        "goodbye for",
+        "please, for"
+      ],
+      "audioClip": {
+        "storySlug": "agua-en-el-local",
+        "storySource": "user",
+        "sentence": "Gracias por contármelo.",
+        "targetWord": "Gracias por",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin prisa",
+    "sentence": "Él esperaba [[sin prisa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without hurry",
+      "options": [
+        "without hurry",
+        "in a hurry",
+        "with anger",
+        "very quietly"
+      ],
+      "audioClip": {
+        "storySlug": "agua-en-el-local",
+        "storySource": "user",
+        "sentence": "Él esperaba sin prisa.",
+        "targetWord": "sin prisa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lluvia",
+    "sentence": "Fuera sonaba la [[lluvia]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "rain",
+      "options": [
+        "rain",
+        "wind",
+        "thunder",
+        "music"
+      ],
+      "audioClip": {
+        "storySlug": "agua-en-el-local",
+        "storySource": "user",
+        "sentence": "Fuera sonaba la lluvia.",
+        "targetWord": "lluvia",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de pronto",
+    "sentence": "[[De pronto]], la plaza estaba vacía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "suddenly",
+      "options": [
+        "suddenly",
+        "slowly",
+        "later",
+        "as always"
+      ],
+      "audioClip": {
+        "storySlug": "agua-en-el-local",
+        "storySource": "user",
+        "sentence": "De pronto, la plaza estaba vacía.",
+        "targetWord": "De pronto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vacío",
+    "sentence": "La plaza estaba [[vacía]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "empty",
+      "options": [
+        "empty",
+        "full",
+        "noisy",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "agua-en-el-local",
+        "storySource": "user",
+        "sentence": "La plaza estaba vacía.",
+        "targetWord": "vacía",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "justo entonces",
+    "sentence": "[[Justo entonces]] el móvil empezó a moverse.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "just then",
+      "options": [
+        "just then",
+        "much later",
+        "the day before",
+        "every day"
+      ],
+      "audioClip": {
+        "storySlug": "agua-en-el-local",
+        "storySource": "user",
+        "sentence": "Justo entonces el móvil empezó a moverse.",
+        "targetWord": "Justo entonces",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "me voy",
+    "sentence": "Ya es tarde y tengo que volver a casa: _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "me voy",
+      "options": [
+        "me voy",
+        "me duermo",
+        "como",
+        "trabajo"
+      ],
+      "translation": "It's late already and I have to go home: _____.",
+      "optionTranslations": [
+        "I'm leaving",
+        "I'm falling asleep",
+        "I'm eating",
+        "I'm working"
+      ],
+      "audioClip": {
+        "storySlug": "agua-en-el-local",
+        "storySource": "user",
+        "sentence": "Ya es tarde y tengo que volver a casa: me voy.",
+        "targetWord": "me voy",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "fui",
+    "sentence": "Tuve miedo y _____ a casa caminando despacio.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fui",
+      "options": [
+        "fui",
+        "corrí",
+        "llamé",
+        "escribí"
+      ],
+      "translation": "I was scared and _____ home walking slowly.",
+      "optionTranslations": [
+        "went",
+        "ran",
+        "called",
+        "wrote"
+      ],
+      "audioClip": {
+        "storySlug": "agua-en-el-local",
+        "storySource": "user",
+        "sentence": "Tuve miedo y fui a casa caminando despacio.",
+        "targetWord": "fui",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cogió",
+    "sentence": "Con cuidado, él le _____ la mano para cruzar la calle.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cogió",
+      "options": [
+        "cogió",
+        "lavó",
+        "besó",
+        "soltó"
+      ],
+      "translation": "Gently, he _____ her hand to cross the street.",
+      "optionTranslations": [
+        "took",
+        "washed",
+        "kissed",
+        "let go of"
+      ],
+      "audioClip": {
+        "storySlug": "agua-en-el-local",
+        "storySource": "user",
+        "sentence": "Con cuidado, él le cogió la mano para cruzar la calle.",
+        "targetWord": "cogió",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "entra",
+    "sentence": "¡Cuidado, _____ agua por la ventana y va a mojar el suelo!",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "entra",
+      "options": [
+        "entra",
+        "sale",
+        "hierve",
+        "se congela"
+      ],
+      "translation": "Careful, water is _____ through the window and it's going to wet the floor!",
+      "optionTranslations": [
+        "coming in",
+        "going out",
+        "boiling",
+        "freezing"
+      ],
+      "audioClip": {
+        "storySlug": "agua-en-el-local",
+        "storySource": "user",
+        "sentence": "Cuidado, entra agua por la ventana y va a mojar el suelo.",
+        "targetWord": "entra",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "mojan",
+    "sentence": "Está lloviendo: cierra la ventana o se _____ los libros.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mojan",
+      "options": [
+        "mojan",
+        "pierden",
+        "rompen",
+        "ensucian"
+      ],
+      "translation": "It's raining: close the window or the books will _____.",
+      "optionTranslations": [
+        "get wet",
+        "get lost",
+        "break",
+        "get dirty"
+      ],
+      "audioClip": {
+        "storySlug": "agua-en-el-local",
+        "storySource": "user",
+        "sentence": "Está lloviendo: cierra la ventana o se mojan los libros.",
+        "targetWord": "mojan",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "salió corriendo",
+    "sentence": "Al oír la noticia, ella _____ de la sala.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "salió corriendo",
+      "options": [
+        "salió corriendo",
+        "caminó despacio",
+        "se durmió",
+        "se quedó callada"
+      ],
+      "translation": "On hearing the news, she _____ out of the room.",
+      "optionTranslations": [
+        "ran out",
+        "walked slowly",
+        "fell asleep",
+        "stayed quiet"
+      ],
+      "audioClip": {
+        "storySlug": "agua-en-el-local",
+        "storySource": "user",
+        "sentence": "Al oír la noticia, ella salió corriendo de la sala.",
+        "targetWord": "salió corriendo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

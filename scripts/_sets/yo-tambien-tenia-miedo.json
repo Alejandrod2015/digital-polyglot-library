@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "la feria,la cerveza,la gente,la voz",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "la feria",
+          "answer": "a fair",
+          "options": [
+            "a fair",
+            "beer",
+            "people",
+            "the voice"
+          ]
+        },
+        {
+          "word": "la cerveza",
+          "answer": "beer",
+          "options": [
+            "a fair",
+            "beer",
+            "people",
+            "the voice"
+          ]
+        },
+        {
+          "word": "la gente",
+          "answer": "people",
+          "options": [
+            "a fair",
+            "beer",
+            "people",
+            "the voice"
+          ]
+        },
+        {
+          "word": "la voz",
+          "answer": "the voice",
+          "options": [
+            "a fair",
+            "beer",
+            "people",
+            "the voice"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "respirar hondo",
+    "sentence": "Ella [[respiró hondo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "took a deep breath",
+      "options": [
+        "took a deep breath",
+        "held her breath",
+        "fell asleep",
+        "laughed loudly"
+      ],
+      "audioClip": {
+        "storySlug": "yo-tambien-tenia-miedo",
+        "storySource": "user",
+        "sentence": "Ella respiró hondo.",
+        "targetWord": "respiró hondo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "era el momento",
+    "sentence": "[[Era el momento]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "it was the moment",
+      "options": [
+        "it was the moment",
+        "it was too late",
+        "it was a joke",
+        "it was forbidden"
+      ],
+      "audioClip": {
+        "storySlug": "yo-tambien-tenia-miedo",
+        "storySource": "user",
+        "sentence": "Era el momento.",
+        "targetWord": "Era el momento",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "levantar la cabeza",
+    "sentence": "Él [[levantó la cabeza]], sorprendido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lifted his head",
+      "options": [
+        "lifted his head",
+        "closed his eyes",
+        "turned around",
+        "stood up"
+      ],
+      "audioClip": {
+        "storySlug": "yo-tambien-tenia-miedo",
+        "storySource": "user",
+        "sentence": "Él levantó la cabeza, sorprendido.",
+        "targetWord": "levantó la cabeza",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tan",
+    "sentence": "El escenario era [[tan]] grande.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "so",
+      "options": [
+        "so",
+        "a little",
+        "never",
+        "almost"
+      ],
+      "audioClip": {
+        "storySlug": "yo-tambien-tenia-miedo",
+        "storySource": "user",
+        "sentence": "El escenario era tan grande.",
+        "targetWord": "tan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grande",
+    "sentence": "El escenario era tan [[grande]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "big",
+      "options": [
+        "big",
+        "small",
+        "dark",
+        "noisy"
+      ],
+      "audioClip": {
+        "storySlug": "yo-tambien-tenia-miedo",
+        "storySource": "user",
+        "sentence": "El escenario era tan grande.",
+        "targetWord": "grande",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "durante un rato",
+    "sentence": "Él no dijo nada [[durante un rato]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "for a while",
+      "options": [
+        "for a while",
+        "for a year",
+        "forever",
+        "for a second"
+      ],
+      "audioClip": {
+        "storySlug": "yo-tambien-tenia-miedo",
+        "storySource": "user",
+        "sentence": "Él no dijo nada durante un rato.",
+        "targetWord": "durante un rato",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por eso",
+    "sentence": "[[Por eso]] aquella noche toqué tan rápido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "that is why",
+      "options": [
+        "that is why",
+        "even so",
+        "just in case",
+        "by the way"
+      ],
+      "audioClip": {
+        "storySlug": "yo-tambien-tenia-miedo",
+        "storySource": "user",
+        "sentence": "Por eso aquella noche toqué tan rápido.",
+        "targetWord": "Por eso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a la vez",
+    "sentence": "Lloraba y se reía [[a la vez]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at the same time",
+      "options": [
+        "at the same time",
+        "one after the other",
+        "never together",
+        "by mistake"
+      ],
+      "audioClip": {
+        "storySlug": "yo-tambien-tenia-miedo",
+        "storySource": "user",
+        "sentence": "Lloraba y se reía a la vez.",
+        "targetWord": "a la vez",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "valiente",
+    "sentence": "Eres [[valiente]], Lore.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "brave",
+      "options": [
+        "brave",
+        "funny",
+        "lucky",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "yo-tambien-tenia-miedo",
+        "storySource": "user",
+        "sentence": "Eres valiente, Lore.",
+        "targetWord": "valiente",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mojado",
+    "sentence": "Dijo él, con la ropa [[mojada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wet",
+      "options": [
+        "wet",
+        "clean",
+        "new",
+        "torn"
+      ],
+      "audioClip": {
+        "storySlug": "yo-tambien-tenia-miedo",
+        "storySource": "user",
+        "sentence": "Dijo él, con la ropa mojada.",
+        "targetWord": "mojada",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "abrazó",
+    "sentence": "Al verla llorar, él la _____ fuerte y no la soltó.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "abrazó",
+      "options": [
+        "abrazó",
+        "dejó",
+        "llamó",
+        "miró"
+      ],
+      "translation": "On seeing her cry, he _____ her tight and didn't let go.",
+      "optionTranslations": [
+        "hugged",
+        "left",
+        "called",
+        "watched"
+      ],
+      "audioClip": {
+        "storySlug": "yo-tambien-tenia-miedo",
+        "storySource": "user",
+        "sentence": "Al verla llorar, él la abrazó fuerte y no la soltó.",
+        "targetWord": "abrazó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "terminar",
+    "sentence": "Quería _____ el trabajo pronto, sin quedarse hasta tarde.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "terminar",
+      "options": [
+        "terminar",
+        "empezar",
+        "vender",
+        "esconder"
+      ],
+      "translation": "He wanted to _____ the work soon, without staying late.",
+      "optionTranslations": [
+        "finish",
+        "start",
+        "sell",
+        "hide"
+      ],
+      "audioClip": {
+        "storySlug": "yo-tambien-tenia-miedo",
+        "storySource": "user",
+        "sentence": "Quería terminar el trabajo pronto, sin quedarse hasta tarde.",
+        "targetWord": "terminar",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pronto",
+    "sentence": "Está muy cerca: si sales ahora, llegarás _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pronto",
+      "options": [
+        "pronto",
+        "tarde",
+        "nunca",
+        "enfadado"
+      ],
+      "translation": "It's very close: if you leave now, you'll arrive _____.",
+      "optionTranslations": [
+        "soon",
+        "late",
+        "never",
+        "angry"
+      ],
+      "audioClip": {
+        "storySlug": "yo-tambien-tenia-miedo",
+        "storySource": "user",
+        "sentence": "Está muy cerca: si sales ahora, llegarás pronto.",
+        "targetWord": "pronto",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "lloraba",
+    "sentence": "La película era tan triste que se le llenaron los ojos: _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lloraba",
+      "options": [
+        "lloraba",
+        "reía",
+        "dormía",
+        "salía"
+      ],
+      "translation": "The film was so sad that her eyes filled with tears and she _____.",
+      "optionTranslations": [
+        "cried",
+        "laughed",
+        "slept",
+        "left"
+      ],
+      "audioClip": {
+        "storySlug": "yo-tambien-tenia-miedo",
+        "storySource": "user",
+        "sentence": "La película era tan triste que se le llenaron los ojos: lloraba.",
+        "targetWord": "lloraba",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "empezó a llover",
+    "sentence": "Estábamos en el parque cuando cayeron las primeras gotas y _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "empezó a llover",
+      "options": [
+        "empezó a llover",
+        "se hizo de noche",
+        "hizo frío",
+        "paró de llover"
+      ],
+      "translation": "We were in the park when the first drops fell and it _____.",
+      "optionTranslations": [
+        "started raining",
+        "got dark",
+        "got cold",
+        "stopped raining"
+      ],
+      "audioClip": {
+        "storySlug": "yo-tambien-tenia-miedo",
+        "storySource": "user",
+        "sentence": "Estábamos en el parque cuando cayeron las primeras gotas y empezó a llover.",
+        "targetWord": "empezó a llover",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "se quedó casi vacía",
+    "sentence": "Cuando acabó la fiesta, la calle _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "se quedó casi vacía",
+      "options": [
+        "se quedó casi vacía",
+        "se llenó de gente",
+        "se puso muy ruidosa",
+        "se cerró al tráfico"
+      ],
+      "translation": "When the party ended, the street _____.",
+      "optionTranslations": [
+        "was left almost empty",
+        "filled up with people",
+        "got very noisy",
+        "was closed to traffic"
+      ],
+      "audioClip": {
+        "storySlug": "yo-tambien-tenia-miedo",
+        "storySource": "user",
+        "sentence": "Cuando acabó la fiesta, la calle se quedó casi vacía.",
+        "targetWord": "se quedó casi vacía",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

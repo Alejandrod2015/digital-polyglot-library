@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "el paraguas,la mochila,la orilla,aquella noche",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "el paraguas",
+          "answer": "an umbrella",
+          "options": [
+            "an umbrella",
+            "a backpack",
+            "a river bank",
+            "that night"
+          ]
+        },
+        {
+          "word": "la mochila",
+          "answer": "a backpack",
+          "options": [
+            "an umbrella",
+            "a backpack",
+            "a river bank",
+            "that night"
+          ]
+        },
+        {
+          "word": "la orilla",
+          "answer": "a river bank",
+          "options": [
+            "an umbrella",
+            "a backpack",
+            "a river bank",
+            "that night"
+          ]
+        },
+        {
+          "word": "aquella noche",
+          "answer": "that night",
+          "options": [
+            "an umbrella",
+            "a backpack",
+            "a river bank",
+            "that night"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fino",
+    "sentence": "Una lluvia [[fina]] caía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fine, light",
+      "options": [
+        "fine, light",
+        "heavy",
+        "cold",
+        "loud"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-cancion",
+        "storySource": "user",
+        "sentence": "Una lluvia fina caía.",
+        "targetWord": "fina",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dar la señal",
+    "sentence": "Ella [[dio la señal]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gave the signal",
+      "options": [
+        "gave the signal",
+        "gave the money",
+        "gave the answer",
+        "gave the umbrella"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-cancion",
+        "storySource": "user",
+        "sentence": "Ella dio la señal.",
+        "targetWord": "dio la señal",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mejor",
+    "sentence": "La segunda canción sonó [[mejor]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "better",
+      "options": [
+        "better",
+        "worse",
+        "louder",
+        "shorter"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-cancion",
+        "storySource": "user",
+        "sentence": "La segunda canción sonó mejor.",
+        "targetWord": "mejor",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "con los ojos abiertos",
+    "sentence": "Cantó [[con los ojos abiertos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "with open eyes",
+      "options": [
+        "with open eyes",
+        "with closed eyes",
+        "with a smile",
+        "without moving"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-cancion",
+        "storySource": "user",
+        "sentence": "Cantó con los ojos abiertos.",
+        "targetWord": "con los ojos abiertos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonar bien",
+    "sentence": "[[Suena bien]], Lore.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sounds good",
+      "options": [
+        "sounds good",
+        "sounds strange",
+        "sounds sad",
+        "sounds far away"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-cancion",
+        "storySource": "user",
+        "sentence": "Suena bien, Lore.",
+        "targetWord": "Suena bien",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "para siempre",
+    "sentence": "La guitarra se calló [[para siempre]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "forever",
+      "options": [
+        "forever",
+        "for a while",
+        "for a year",
+        "by mistake"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-cancion",
+        "storySource": "user",
+        "sentence": "La guitarra se calló para siempre.",
+        "targetWord": "para siempre",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin miedo",
+    "sentence": "Volvió a casa [[sin miedo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without fear",
+      "options": [
+        "without fear",
+        "without money",
+        "without a coat",
+        "without talking"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-cancion",
+        "storySource": "user",
+        "sentence": "Volvió a casa sin miedo.",
+        "targetWord": "sin miedo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en la espalda",
+    "sentence": "Llevaba la guitarra [[en la espalda]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on his back",
+      "options": [
+        "on his back",
+        "in his hand",
+        "in his bag",
+        "on his head"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-cancion",
+        "storySource": "user",
+        "sentence": "Llevaba la guitarra en la espalda.",
+        "targetWord": "en la espalda",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "terminado",
+    "sentence": "La canción ya está [[terminada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "finished",
+      "options": [
+        "finished",
+        "beautiful",
+        "new",
+        "too long"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-cancion",
+        "storySource": "user",
+        "sentence": "La canción ya está terminada.",
+        "targetWord": "terminada",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "como nosotros",
+    "sentence": "Suena [[como nosotros]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "like us",
+      "options": [
+        "like us",
+        "like nobody",
+        "like a stranger",
+        "like before"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-cancion",
+        "storySource": "user",
+        "sentence": "Suena como nosotros.",
+        "targetWord": "como nosotros",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "caía",
+    "sentence": "La nieve _____ despacio, cubriendo el suelo del pueblo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "caía",
+      "options": [
+        "caía",
+        "brillaba",
+        "soplaba",
+        "volaba"
+      ],
+      "translation": "The snow was _____ slowly, covering the ground of the village.",
+      "optionTranslations": [
+        "falling",
+        "shining",
+        "blowing",
+        "flying"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-cancion",
+        "storySource": "user",
+        "sentence": "La nieve caía despacio, cubriendo el suelo del pueblo.",
+        "targetWord": "caía",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "aplaudía",
+    "sentence": "Cuando acabó la canción, el público _____ con las manos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aplaudía",
+      "options": [
+        "aplaudía",
+        "se iba",
+        "dormía",
+        "gritaba"
+      ],
+      "translation": "When the song ended, the audience _____ with their hands.",
+      "optionTranslations": [
+        "clapped",
+        "left",
+        "slept",
+        "shouted"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-cancion",
+        "storySource": "user",
+        "sentence": "Cuando acabó la canción, el público aplaudía con las manos.",
+        "targetWord": "aplaudía",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bailaba",
+    "sentence": "Con la música sonando, ella _____ feliz en la fiesta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bailaba",
+      "options": [
+        "bailaba",
+        "comía",
+        "leía",
+        "lloraba"
+      ],
+      "translation": "With the music playing, she was _____ happily at the party.",
+      "optionTranslations": [
+        "dancing",
+        "eating",
+        "reading",
+        "crying"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-cancion",
+        "storySource": "user",
+        "sentence": "Con la música sonando, ella bailaba feliz en la fiesta.",
+        "targetWord": "bailaba",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "calló",
+    "sentence": "El profesor levantó la mano, y la clase se _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "calló",
+      "options": [
+        "calló",
+        "enfadó",
+        "aplaudió",
+        "bailó"
+      ],
+      "translation": "The teacher raised his hand, and the class went _____.",
+      "optionTranslations": [
+        "quiet",
+        "angry",
+        "clapped",
+        "danced"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-cancion",
+        "storySource": "user",
+        "sentence": "El profesor levantó la mano, y la clase se calló.",
+        "targetWord": "calló",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "acompañó",
+    "sentence": "Como llovía, él la _____ con su paraguas hasta la puerta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "acompañó",
+      "options": [
+        "acompañó",
+        "esperó",
+        "llamó",
+        "olvidó"
+      ],
+      "translation": "Since it was raining, he _____ her with his umbrella to the door.",
+      "optionTranslations": [
+        "walked with",
+        "waited for",
+        "called",
+        "forgot"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-cancion",
+        "storySource": "user",
+        "sentence": "Como llovía, él la acompañó con su paraguas hasta la puerta.",
+        "targetWord": "acompañó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "se presentó",
+    "sentence": "Al llegar a la fiesta, ella _____ y dio su nombre.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "se presentó",
+      "options": [
+        "se presentó",
+        "se despidió",
+        "se sentó",
+        "se fue"
+      ],
+      "translation": "On arriving at the party, she _____ and gave her name.",
+      "optionTranslations": [
+        "introduced herself",
+        "said goodbye",
+        "sat down",
+        "left"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-cancion",
+        "storySource": "user",
+        "sentence": "Al llegar a la fiesta, ella se presentó y dio su nombre.",
+        "targetWord": "se presentó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

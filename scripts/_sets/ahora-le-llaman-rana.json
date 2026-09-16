@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "el semáforo,la alumna,la sirena,el jefe",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "el semáforo",
+          "answer": "a traffic light",
+          "options": [
+            "a traffic light",
+            "a student",
+            "a siren",
+            "the boss"
+          ]
+        },
+        {
+          "word": "la alumna",
+          "answer": "a student",
+          "options": [
+            "a traffic light",
+            "a student",
+            "a siren",
+            "the boss"
+          ]
+        },
+        {
+          "word": "la sirena",
+          "answer": "a siren",
+          "options": [
+            "a traffic light",
+            "a student",
+            "a siren",
+            "the boss"
+          ]
+        },
+        {
+          "word": "el jefe",
+          "answer": "the boss",
+          "options": [
+            "a traffic light",
+            "a student",
+            "a siren",
+            "the boss"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en rojo",
+    "sentence": "Un semáforo [[en rojo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on red",
+      "options": [
+        "on red",
+        "on green",
+        "broken",
+        "very old"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-le-llaman-rana",
+        "storySource": "user",
+        "sentence": "Un semáforo en rojo.",
+        "targetWord": "en rojo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "visita",
+    "sentence": "Muchas [[visitas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "views",
+      "options": [
+        "views",
+        "comments",
+        "likes",
+        "minutes"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-le-llaman-rana",
+        "storySource": "user",
+        "sentence": "Muchas visitas.",
+        "targetWord": "visitas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "triste",
+    "sentence": "El batería más [[triste]] de Salamanca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sad",
+      "options": [
+        "sad",
+        "happy",
+        "famous",
+        "young"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-le-llaman-rana",
+        "storySource": "user",
+        "sentence": "El batería más triste de Salamanca.",
+        "targetWord": "triste",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mediodía",
+    "sentence": "A [[mediodía]], ella llamó a él.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "midday",
+      "options": [
+        "midday",
+        "midnight",
+        "dawn",
+        "evening"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-le-llaman-rana",
+        "storySource": "user",
+        "sentence": "A mediodía, ella llamó a él.",
+        "targetWord": "mediodía",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hasta",
+    "sentence": "[[Hasta]] el jefe me llama así.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "even",
+      "options": [
+        "even",
+        "only",
+        "never",
+        "almost"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-le-llaman-rana",
+        "storySource": "user",
+        "sentence": "Hasta el jefe me llama así.",
+        "targetWord": "Hasta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esta vez",
+    "sentence": "[[Esta vez]] estamos juntos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "this time",
+      "options": [
+        "this time",
+        "last time",
+        "never again",
+        "every time"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-le-llaman-rana",
+        "storySource": "user",
+        "sentence": "Esta vez estamos juntos.",
+        "targetWord": "Esta vez",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "debajo",
+    "sentence": "Escribió [[debajo]] del vídeo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "under, below",
+      "options": [
+        "under, below",
+        "above",
+        "next to",
+        "inside"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-le-llaman-rana",
+        "storySource": "user",
+        "sentence": "Escribió debajo del vídeo.",
+        "targetWord": "debajo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saber",
+    "sentence": "La gente [[sabe]] que volvemos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "knows",
+      "options": [
+        "knows",
+        "forgets",
+        "doubts",
+        "hopes"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-le-llaman-rana",
+        "storySource": "user",
+        "sentence": "La gente sabe que volvemos.",
+        "targetWord": "sabe",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llegar",
+    "sentence": "La chica que no [[llegó]] al escenario.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "arrived",
+      "options": [
+        "arrived",
+        "sang",
+        "left",
+        "waited"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-le-llaman-rana",
+        "storySource": "user",
+        "sentence": "La chica que no llegó al escenario.",
+        "targetWord": "llegó",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "compartir",
+    "sentence": "Todo el barrio lo [[comparte]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shares",
+      "options": [
+        "shares",
+        "forgets",
+        "hides",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-le-llaman-rana",
+        "storySource": "user",
+        "sentence": "Todo el barrio lo comparte.",
+        "targetWord": "comparte",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "enseñó",
+    "sentence": "Ella le _____ su nuevo coche, señalando cada detalle.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "enseñó",
+      "options": [
+        "enseñó",
+        "vendió",
+        "prestó",
+        "escondió"
+      ],
+      "translation": "She _____ him her new car, pointing out every detail.",
+      "optionTranslations": [
+        "showed",
+        "sold",
+        "lent",
+        "hid"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-le-llaman-rana",
+        "storySource": "user",
+        "sentence": "Ella le enseñó su nuevo coche, señalando cada detalle.",
+        "targetWord": "enseñó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "devolvió",
+    "sentence": "Al terminar de leerlo, él le _____ el libro a su dueña.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "devolvió",
+      "options": [
+        "devolvió",
+        "leyó",
+        "perdió",
+        "vendió"
+      ],
+      "translation": "When he finished reading it, he _____ the book to its owner.",
+      "optionTranslations": [
+        "gave back",
+        "read",
+        "lost",
+        "sold"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-le-llaman-rana",
+        "storySource": "user",
+        "sentence": "Al terminar de leerlo, él le devolvió el libro a su dueña.",
+        "targetWord": "devolvió",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "oía",
+    "sentence": "Desde la cocina, ella _____ la música que sonaba en la radio.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "oía",
+      "options": [
+        "oía",
+        "veía",
+        "olía",
+        "sentía"
+      ],
+      "translation": "From the kitchen, she could _____ the music playing on the radio.",
+      "optionTranslations": [
+        "hear",
+        "see",
+        "smell",
+        "feel"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-le-llaman-rana",
+        "storySource": "user",
+        "sentence": "Desde la cocina, ella oía la música que sonaba en la radio.",
+        "targetWord": "oía",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "borramos",
+    "sentence": "¿_____ la foto para siempre, o la dejamos ahí?",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "borramos",
+      "options": [
+        "borramos",
+        "imprimimos",
+        "buscamos",
+        "vendemos"
+      ],
+      "translation": "Shall we _____ the photo forever, or leave it there?",
+      "optionTranslations": [
+        "delete",
+        "print",
+        "find",
+        "sell"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-le-llaman-rana",
+        "storySource": "user",
+        "sentence": "Borramos la foto para siempre, o la dejamos ahí.",
+        "targetWord": "borramos",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "volvemos",
+    "sentence": "Después del verano, todos _____ al trabajo, como cada año.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "volvemos",
+      "options": [
+        "volvemos",
+        "nos despedimos",
+        "llegamos tarde",
+        "nos perdemos"
+      ],
+      "translation": "After summer, everyone _____ to work, like every year.",
+      "optionTranslations": [
+        "go back",
+        "say goodbye",
+        "arrive late",
+        "get lost"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-le-llaman-rana",
+        "storySource": "user",
+        "sentence": "Después del verano, todos volvemos al trabajo, como cada año.",
+        "targetWord": "volvemos",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sale mal",
+    "sentence": "Si no ensayas, todo _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sale mal",
+      "options": [
+        "sale mal",
+        "sale rápido",
+        "cuesta dinero",
+        "tarda tiempo"
+      ],
+      "translation": "If you don't rehearse, everything _____.",
+      "optionTranslations": [
+        "goes wrong",
+        "goes fast",
+        "costs money",
+        "takes time"
+      ],
+      "audioClip": {
+        "storySlug": "ahora-le-llaman-rana",
+        "storySource": "user",
+        "sentence": "Si no ensayas, todo sale mal.",
+        "targetWord": "sale mal",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "el libro,la aplicación,la cita,el río",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "el libro",
+          "answer": "a book",
+          "options": [
+            "a book",
+            "an app",
+            "a date",
+            "a river"
+          ]
+        },
+        {
+          "word": "la aplicación",
+          "answer": "an app",
+          "options": [
+            "a book",
+            "an app",
+            "a date",
+            "a river"
+          ]
+        },
+        {
+          "word": "la cita",
+          "answer": "a date",
+          "options": [
+            "a book",
+            "an app",
+            "a date",
+            "a river"
+          ]
+        },
+        {
+          "word": "el río",
+          "answer": "a river",
+          "options": [
+            "a book",
+            "an app",
+            "a date",
+            "a river"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cinco minutos tarde",
+    "sentence": "Ella llegó [[cinco minutos tarde]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "five minutes late",
+      "options": [
+        "five minutes late",
+        "five minutes early",
+        "an hour late",
+        "on time"
+      ],
+      "audioClip": {
+        "storySlug": "raul-lee-poesia",
+        "storySource": "user",
+        "sentence": "Ella llegó cinco minutos tarde.",
+        "targetWord": "cinco minutos tarde",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tímido",
+    "sentence": "Él era un poco [[tímido]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shy",
+      "options": [
+        "shy",
+        "rude",
+        "angry",
+        "loud"
+      ],
+      "audioClip": {
+        "storySlug": "raul-lee-poesia",
+        "storySource": "user",
+        "sentence": "Él era un poco tímido.",
+        "targetWord": "tímido",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "simpático",
+    "sentence": "Él era [[simpático]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "friendly, nice",
+      "options": [
+        "friendly, nice",
+        "boring",
+        "serious",
+        "strange"
+      ],
+      "audioClip": {
+        "storySlug": "raul-lee-poesia",
+        "storySource": "user",
+        "sentence": "Él era simpático.",
+        "targetWord": "simpático",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agua",
+    "sentence": "Pidió [[agua]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "water",
+      "options": [
+        "water",
+        "wine",
+        "coffee",
+        "juice"
+      ],
+      "audioClip": {
+        "storySlug": "raul-lee-poesia",
+        "storySource": "user",
+        "sentence": "Pidió agua.",
+        "targetWord": "agua",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "me suena",
+    "sentence": "Tu cara [[me suena]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "looks familiar",
+      "options": [
+        "looks familiar",
+        "looks strange",
+        "looks sad",
+        "looks angry"
+      ],
+      "audioClip": {
+        "storySlug": "raul-lee-poesia",
+        "storySource": "user",
+        "sentence": "Tu cara me suena.",
+        "targetWord": "me suena",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "un mal día",
+    "sentence": "Todo el mundo tiene [[un mal día]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bad day",
+      "options": [
+        "a bad day",
+        "a free day",
+        "a long day",
+        "a busy day"
+      ],
+      "audioClip": {
+        "storySlug": "raul-lee-poesia",
+        "storySource": "user",
+        "sentence": "Todo el mundo tiene un mal día.",
+        "targetWord": "un mal día",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nada más",
+    "sentence": "Lo escuchó sin preguntar [[nada más]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nothing else",
+      "options": [
+        "nothing else",
+        "everything",
+        "one thing",
+        "too much"
+      ],
+      "audioClip": {
+        "storySlug": "raul-lee-poesia",
+        "storySource": "user",
+        "sentence": "Lo escuchó sin preguntar nada más.",
+        "targetWord": "nada más",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poco a poco",
+    "sentence": "Hablaron [[poco a poco]] de libros.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "little by little",
+      "options": [
+        "little by little",
+        "very fast",
+        "in silence",
+        "by mistake"
+      ],
+      "audioClip": {
+        "storySlug": "raul-lee-poesia",
+        "storySource": "user",
+        "sentence": "Hablaron poco a poco de libros.",
+        "targetWord": "poco a poco",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vale",
+    "sentence": "Lorena contestó: “[[Vale]].”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "okay",
+      "options": [
+        "okay",
+        "never",
+        "maybe",
+        "goodbye"
+      ],
+      "audioClip": {
+        "storySlug": "raul-lee-poesia",
+        "storySource": "user",
+        "sentence": "Vale.",
+        "targetWord": "Vale",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "soy yo",
+    "sentence": "Sí, [[soy yo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "it's me",
+      "options": [
+        "it's me",
+        "it's not me",
+        "it's her",
+        "who is it"
+      ],
+      "audioClip": {
+        "storySlug": "raul-lee-poesia",
+        "storySource": "user",
+        "sentence": "Sí, soy yo.",
+        "targetWord": "soy yo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "conocían",
+    "sentence": "Antes de la cita, no se _____: era su primera charla.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "conocían",
+      "options": [
+        "conocían",
+        "gustaban",
+        "entendían",
+        "fiaban"
+      ],
+      "translation": "Before the date, they didn't _____ each other: it was their first talk.",
+      "optionTranslations": [
+        "know",
+        "like",
+        "understand",
+        "trust"
+      ],
+      "audioClip": {
+        "storySlug": "raul-lee-poesia",
+        "storySource": "user",
+        "sentence": "Antes de la cita, no se conocían: era su primera charla.",
+        "targetWord": "conocían",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "hablaron",
+    "sentence": "Los amigos _____ toda la tarde por teléfono.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "hablaron",
+      "options": [
+        "hablaron",
+        "caminaron",
+        "leyeron",
+        "esperaron"
+      ],
+      "translation": "The friends _____ on the phone all afternoon.",
+      "optionTranslations": [
+        "talked",
+        "walked",
+        "read",
+        "waited"
+      ],
+      "audioClip": {
+        "storySlug": "raul-lee-poesia",
+        "storySource": "user",
+        "sentence": "Los amigos hablaron toda la tarde por teléfono.",
+        "targetWord": "hablaron",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "leyó",
+    "sentence": "Antes de dormir, ella _____ un poema, pasando las páginas del libro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "leyó",
+      "options": [
+        "leyó",
+        "escribió",
+        "cantó",
+        "olvidó"
+      ],
+      "translation": "Before sleeping, she _____ a poem, turning the pages of the book.",
+      "optionTranslations": [
+        "read",
+        "wrote",
+        "sang",
+        "forgot"
+      ],
+      "audioClip": {
+        "storySlug": "raul-lee-poesia",
+        "storySource": "user",
+        "sentence": "Antes de dormir, ella leyó un poema, pasando las páginas del libro.",
+        "targetWord": "leyó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "invito",
+    "sentence": "¿Te _____ a cenar esta noche?",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "invito",
+      "options": [
+        "invito",
+        "llamo",
+        "veo",
+        "espero"
+      ],
+      "translation": "Can I _____ you to dinner tonight?",
+      "optionTranslations": [
+        "invite",
+        "call",
+        "see",
+        "wait for"
+      ],
+      "audioClip": {
+        "storySlug": "raul-lee-poesia",
+        "storySource": "user",
+        "sentence": "¿Te invito a cenar esta noche?",
+        "targetWord": "invito",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "despedirse",
+    "sentence": "Antes de irse para siempre, quiso _____ de todos con un abrazo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "despedirse",
+      "options": [
+        "despedirse",
+        "saludar",
+        "disculparse",
+        "reírse"
+      ],
+      "translation": "Before leaving forever, he wanted to _____ everyone with a hug.",
+      "optionTranslations": [
+        "say goodbye",
+        "say hello",
+        "apologise",
+        "laugh"
+      ],
+      "audioClip": {
+        "storySlug": "raul-lee-poesia",
+        "storySource": "user",
+        "sentence": "Antes de irse para siempre, quiso despedirse de todos con un abrazo.",
+        "targetWord": "despedirse",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "en la otra orilla",
+    "sentence": "Cruzaron el puente y llegaron _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "en la otra orilla",
+      "options": [
+        "en la otra orilla",
+        "a la estación",
+        "muy tarde",
+        "sin dinero"
+      ],
+      "translation": "They crossed the bridge and arrived _____.",
+      "optionTranslations": [
+        "on the other bank",
+        "at the station",
+        "very late",
+        "without money"
+      ],
+      "audioClip": {
+        "storySlug": "raul-lee-poesia",
+        "storySource": "user",
+        "sentence": "Cruzaron el puente y llegaron en la otra orilla.",
+        "targetWord": "en la otra orilla",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

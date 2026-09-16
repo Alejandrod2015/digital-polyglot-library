@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "el viernes,la mitad,septiembre,el golpe",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "el viernes",
+          "answer": "Friday",
+          "options": [
+            "Friday",
+            "half",
+            "September",
+            "a tap, hit"
+          ]
+        },
+        {
+          "word": "la mitad",
+          "answer": "half",
+          "options": [
+            "Friday",
+            "half",
+            "September",
+            "a tap, hit"
+          ]
+        },
+        {
+          "word": "septiembre",
+          "answer": "September",
+          "options": [
+            "Friday",
+            "half",
+            "September",
+            "a tap, hit"
+          ]
+        },
+        {
+          "word": "el golpe",
+          "answer": "a tap, hit",
+          "options": [
+            "Friday",
+            "half",
+            "September",
+            "a tap, hit"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desde junio",
+    "sentence": "Ahorraba [[desde junio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "since June",
+      "options": [
+        "since June",
+        "since yesterday",
+        "for one day",
+        "until June"
+      ],
+      "audioClip": {
+        "storySlug": "las-gafas-pueden-esperar",
+        "storySource": "user",
+        "sentence": "Ahorraba desde junio.",
+        "targetWord": "desde junio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "primero",
+    "sentence": "El [[primer]] plazo del amplificador.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "first",
+      "options": [
+        "first",
+        "last",
+        "only",
+        "second"
+      ],
+      "audioClip": {
+        "storySlug": "las-gafas-pueden-esperar",
+        "storySource": "user",
+        "sentence": "El primer plazo del amplificador.",
+        "targetWord": "primer",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a su lado",
+    "sentence": "Él se sentó [[a su lado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "next to her",
+      "options": [
+        "next to her",
+        "far from her",
+        "behind her",
+        "in front of her"
+      ],
+      "audioClip": {
+        "storySlug": "las-gafas-pueden-esperar",
+        "storySource": "user",
+        "sentence": "Él se sentó a su lado.",
+        "targetWord": "a su lado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llegar a fin de mes",
+    "sentence": "No [[llego a fin de mes]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "make ends meet",
+      "options": [
+        "make ends meet",
+        "finish the job",
+        "arrive on time",
+        "pay in cash"
+      ],
+      "audioClip": {
+        "storySlug": "las-gafas-pueden-esperar",
+        "storySource": "user",
+        "sentence": "No llego a fin de mes.",
+        "targetWord": "llego a fin de mes",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "con calma",
+    "sentence": "Ella contó los billetes [[con calma]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "calmly",
+      "options": [
+        "calmly",
+        "in a hurry",
+        "with anger",
+        "with fear"
+      ],
+      "audioClip": {
+        "storySlug": "las-gafas-pueden-esperar",
+        "storySource": "user",
+        "sentence": "Ella contó los billetes con calma.",
+        "targetWord": "con calma",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nuevo",
+    "sentence": "Miró las gafas [[nuevas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "new",
+      "options": [
+        "new",
+        "broken",
+        "expensive",
+        "small"
+      ],
+      "audioClip": {
+        "storySlug": "las-gafas-pueden-esperar",
+        "storySource": "user",
+        "sentence": "Miró las gafas nuevas.",
+        "targetWord": "nuevas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin preguntar nada",
+    "sentence": "Le trajo un café [[sin preguntar nada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without asking anything",
+      "options": [
+        "without asking anything",
+        "without saying thanks",
+        "after asking twice",
+        "while complaining"
+      ],
+      "audioClip": {
+        "storySlug": "las-gafas-pueden-esperar",
+        "storySource": "user",
+        "sentence": "Le trajo un café sin preguntar nada.",
+        "targetWord": "sin preguntar nada",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "seco",
+    "sentence": "Miró el recibo, con la boca [[seca]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dry",
+      "options": [
+        "dry",
+        "open",
+        "full",
+        "red"
+      ],
+      "audioClip": {
+        "storySlug": "las-gafas-pueden-esperar",
+        "storySource": "user",
+        "sentence": "Miró el recibo, con la boca seca.",
+        "targetWord": "seca",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al final",
+    "sentence": "“No quiero deberte dinero”, dijo [[al final]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in the end",
+      "options": [
+        "in the end",
+        "at the start",
+        "by mistake",
+        "out loud"
+      ],
+      "audioClip": {
+        "storySlug": "las-gafas-pueden-esperar",
+        "storySource": "user",
+        "sentence": "No quiero deberte dinero, dijo al final.",
+        "targetWord": "al final",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "y ya está",
+    "sentence": "Me lo devuelves en septiembre, [[y ya está]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "and that is it",
+      "options": [
+        "and that is it",
+        "and I'm still angry",
+        "and I'll forget it",
+        "and we'll see"
+      ],
+      "audioClip": {
+        "storySlug": "las-gafas-pueden-esperar",
+        "storySource": "user",
+        "sentence": "Me lo devuelves en septiembre, y ya está.",
+        "targetWord": "y ya está",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "ahorraba",
+    "sentence": "Cada mes, ella _____ un poco en una hucha, sin gastarlo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ahorraba",
+      "options": [
+        "ahorraba",
+        "gastaba",
+        "regalaba",
+        "prestaba"
+      ],
+      "translation": "Every month, she _____ a little in a piggy bank, without spending it.",
+      "optionTranslations": [
+        "saved",
+        "spent",
+        "gave away",
+        "lent"
+      ],
+      "audioClip": {
+        "storySlug": "las-gafas-pueden-esperar",
+        "storySource": "user",
+        "sentence": "Cada mes, ella ahorraba un poco en una hucha, sin gastarlo.",
+        "targetWord": "ahorraba",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cobrado",
+    "sentence": "El taller le ha _____ demasiado por la reparación.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cobrado",
+      "options": [
+        "cobrado",
+        "pagado",
+        "prestado",
+        "perdonado"
+      ],
+      "translation": "The garage has _____ him too much for the repair.",
+      "optionTranslations": [
+        "charged",
+        "paid",
+        "lent",
+        "forgiven"
+      ],
+      "audioClip": {
+        "storySlug": "las-gafas-pueden-esperar",
+        "storySource": "user",
+        "sentence": "El taller le ha cobrado demasiado por la reparación.",
+        "targetWord": "cobrado",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "miró",
+    "sentence": "Ella _____ el reloj varias veces y suspiró, nerviosa por la hora.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "miró",
+      "options": [
+        "miró",
+        "rompió",
+        "vendió",
+        "escondió"
+      ],
+      "translation": "She _____ at the clock several times and sighed, nervous about the time.",
+      "optionTranslations": [
+        "looked",
+        "broke",
+        "sold",
+        "hid"
+      ],
+      "audioClip": {
+        "storySlug": "las-gafas-pueden-esperar",
+        "storySource": "user",
+        "sentence": "Ella miró el reloj varias veces y suspiró, nerviosa por la hora.",
+        "targetWord": "miró",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "deberte",
+    "sentence": "Prefiero pagar todo yo mismo, así que no quiero _____ dinero.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "deberte",
+      "options": [
+        "deberte",
+        "prestarte",
+        "pedirte",
+        "darte"
+      ],
+      "translation": "I'd rather pay everything myself, so I don't want to _____ money.",
+      "optionTranslations": [
+        "owe you",
+        "lend you",
+        "ask you for",
+        "give you"
+      ],
+      "audioClip": {
+        "storySlug": "las-gafas-pueden-esperar",
+        "storySource": "user",
+        "sentence": "Prefiero pagar todo yo mismo, así que no quiero deberte dinero.",
+        "targetWord": "deberte",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "suave",
+    "sentence": "Bromeando, le dio un golpe _____ en el brazo, casi sin tocarlo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "suave",
+      "options": [
+        "suave",
+        "fuerte",
+        "frío",
+        "ruidoso"
+      ],
+      "translation": "Joking, he gave him a _____ tap on the arm, barely touching him.",
+      "optionTranslations": [
+        "gentle",
+        "hard",
+        "cold",
+        "loud"
+      ],
+      "audioClip": {
+        "storySlug": "las-gafas-pueden-esperar",
+        "storySource": "user",
+        "sentence": "Bromeando, le dio un golpe suave en el brazo, casi sin tocarlo.",
+        "targetWord": "suave",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "quiero",
+    "sentence": "Nadie me lo pidió, pero _____ pagar mi parte, no la tuya.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "quiero",
+      "options": [
+        "quiero",
+        "olvido",
+        "rechazo",
+        "prometo"
+      ],
+      "translation": "Nobody asked me to, but I _____ to pay my share, not yours.",
+      "optionTranslations": [
+        "want",
+        "forget",
+        "refuse",
+        "promise"
+      ],
+      "audioClip": {
+        "storySlug": "las-gafas-pueden-esperar",
+        "storySource": "user",
+        "sentence": "Nadie me lo pidió, pero quiero pagar mi parte, no la tuya.",
+        "targetWord": "quiero",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "la cámara,la barba,la camiseta,el pelo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "la cámara",
+          "answer": "a camera",
+          "options": [
+            "a camera",
+            "a beard",
+            "a T-shirt",
+            "hair"
+          ]
+        },
+        {
+          "word": "la barba",
+          "answer": "a beard",
+          "options": [
+            "a camera",
+            "a beard",
+            "a T-shirt",
+            "hair"
+          ]
+        },
+        {
+          "word": "la camiseta",
+          "answer": "a T-shirt",
+          "options": [
+            "a camera",
+            "a beard",
+            "a T-shirt",
+            "hair"
+          ]
+        },
+        {
+          "word": "el pelo",
+          "answer": "hair",
+          "options": [
+            "a camera",
+            "a beard",
+            "a T-shirt",
+            "hair"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hombre",
+    "sentence": "Por la calle venía un [[hombre]] sin barba.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a man",
+      "options": [
+        "a man",
+        "a boy",
+        "a woman",
+        "a child"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-sin-barba",
+        "storySource": "user",
+        "sentence": "Por la calle venía un hombre sin barba.",
+        "targetWord": "hombre",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "negro",
+    "sentence": "Llevaba una camiseta [[negra]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "black",
+      "options": [
+        "black",
+        "white",
+        "red",
+        "blue"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-sin-barba",
+        "storySource": "user",
+        "sentence": "Llevaba una camiseta negra.",
+        "targetWord": "negra",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parecer otro",
+    "sentence": "¡[[Pareces otro]]!",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "you look like a different person",
+      "options": [
+        "you look like a different person",
+        "you look sick",
+        "you look tired",
+        "you look the same"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-sin-barba",
+        "storySource": "user",
+        "sentence": "Pareces otro.",
+        "targetWord": "Pareces otro",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guapo",
+    "sentence": "Estás más [[guapo]] que antes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "good-looking",
+      "options": [
+        "good-looking",
+        "taller",
+        "younger",
+        "thinner"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-sin-barba",
+        "storySource": "user",
+        "sentence": "Estás más guapo que antes.",
+        "targetWord": "guapo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "allí",
+    "sentence": "[[Allí]] estaban los amigos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "there",
+      "options": [
+        "there",
+        "here",
+        "nowhere",
+        "everywhere"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-sin-barba",
+        "storySource": "user",
+        "sentence": "Allí estaban los amigos.",
+        "targetWord": "Allí",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "los dos",
+    "sentence": "Allí estaban [[los dos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "both of them",
+      "options": [
+        "both of them",
+        "only one",
+        "neither one",
+        "three of them"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-sin-barba",
+        "storySource": "user",
+        "sentence": "Allí estaban los dos.",
+        "targetWord": "los dos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "largo",
+    "sentence": "Él tenía el pelo [[largo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "long",
+      "options": [
+        "long",
+        "short",
+        "curly",
+        "grey"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-sin-barba",
+        "storySource": "user",
+        "sentence": "Él tenía el pelo largo.",
+        "targetWord": "largo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chico",
+    "sentence": "Ya no somos esos [[chicos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "young men, boys",
+      "options": [
+        "young men, boys",
+        "old men",
+        "teachers",
+        "strangers"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-sin-barba",
+        "storySource": "user",
+        "sentence": "Ya no somos esos chicos.",
+        "targetWord": "chicos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de ahora",
+    "sentence": "Hacemos la foto [[de ahora]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "of now",
+      "options": [
+        "of now",
+        "of yesterday",
+        "of always",
+        "of never"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-sin-barba",
+        "storySource": "user",
+        "sentence": "Hacemos la foto de ahora.",
+        "targetWord": "de ahora",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "juntos",
+    "sentence": "Hacemos la foto de ahora, [[juntos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "together",
+      "options": [
+        "together",
+        "alone",
+        "apart",
+        "far away"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-sin-barba",
+        "storySource": "user",
+        "sentence": "Hacemos la foto de ahora, juntos.",
+        "targetWord": "juntos",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "reconozco",
+    "sentence": "Te cambió mucho la cara y no te _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "reconozco",
+      "options": [
+        "reconozco",
+        "veo",
+        "oigo",
+        "creo"
+      ],
+      "translation": "Your face changed so much that I don't _____ you.",
+      "optionTranslations": [
+        "recognise",
+        "see",
+        "hear",
+        "believe"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-sin-barba",
+        "storySource": "user",
+        "sentence": "Te cambió mucho la cara y no te reconozco.",
+        "targetWord": "reconozco",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "se tocó",
+    "sentence": "Para saber si le dolía, se _____ la mejilla con cuidado.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "se tocó",
+      "options": [
+        "se tocó",
+        "se lavó",
+        "se cubrió",
+        "se rascó"
+      ],
+      "translation": "To find out if it hurt, he _____ his cheek carefully.",
+      "optionTranslations": [
+        "touched",
+        "washed",
+        "covered",
+        "scratched"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-sin-barba",
+        "storySource": "user",
+        "sentence": "Para saber si le dolía, se tocó la mejilla con cuidado.",
+        "targetWord": "se tocó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "hoy",
+    "sentence": "_____ es mi cumpleaños, no mañana.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "hoy",
+      "options": [
+        "hoy",
+        "ayer",
+        "mañana",
+        "nunca"
+      ],
+      "translation": "_____ is my birthday, not tomorrow.",
+      "optionTranslations": [
+        "today",
+        "yesterday",
+        "tomorrow",
+        "never"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-sin-barba",
+        "storySource": "user",
+        "sentence": "Hoy es mi cumpleaños, no mañana.",
+        "targetWord": "hoy",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "afeitado",
+    "sentence": "Se miró la cara y notó la piel suave: se había _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "afeitado",
+      "options": [
+        "afeitado",
+        "duchado",
+        "vestido",
+        "peinado"
+      ],
+      "translation": "He looked at his face and noticed smooth skin: he had _____.",
+      "optionTranslations": [
+        "shaved",
+        "showered",
+        "dressed",
+        "combed his hair"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-sin-barba",
+        "storySource": "user",
+        "sentence": "Se miró la cara y notó la piel suave: se había afeitado.",
+        "targetWord": "afeitado",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cambiado",
+    "sentence": "Con el pelo corto, él había _____ mucho, y nadie lo reconocía.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cambiado",
+      "options": [
+        "cambiado",
+        "llorado",
+        "cantado",
+        "bailado"
+      ],
+      "translation": "With short hair, he had _____ a lot, and nobody recognised him.",
+      "optionTranslations": [
+        "changed",
+        "cried",
+        "sung",
+        "danced"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-sin-barba",
+        "storySource": "user",
+        "sentence": "Con el pelo corto, él había cambiado mucho, y nadie lo reconocía.",
+        "targetWord": "cambiado",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "hacemos la foto",
+    "sentence": "Sonreíd, que ahora _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "hacemos la foto",
+      "options": [
+        "hacemos la foto",
+        "nos vamos",
+        "comemos",
+        "cantamos"
+      ],
+      "translation": "Smile, because now we're _____.",
+      "optionTranslations": [
+        "taking the photo",
+        "leaving",
+        "eating",
+        "singing"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-sin-barba",
+        "storySource": "user",
+        "sentence": "Sonreíd, que ahora hacemos la foto.",
+        "targetWord": "hacemos la foto",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

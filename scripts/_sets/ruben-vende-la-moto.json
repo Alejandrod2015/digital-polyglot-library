@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "la moto,el domingo,el lunes,el zapato",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "la moto",
+          "answer": "a motorbike",
+          "options": [
+            "a motorbike",
+            "Sunday",
+            "Monday",
+            "a shoe"
+          ]
+        },
+        {
+          "word": "el domingo",
+          "answer": "Sunday",
+          "options": [
+            "a motorbike",
+            "Sunday",
+            "Monday",
+            "a shoe"
+          ]
+        },
+        {
+          "word": "el lunes",
+          "answer": "Monday",
+          "options": [
+            "a motorbike",
+            "Sunday",
+            "Monday",
+            "a shoe"
+          ]
+        },
+        {
+          "word": "el zapato",
+          "answer": "a shoe",
+          "options": [
+            "a motorbike",
+            "Sunday",
+            "Monday",
+            "a shoe"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entre los dos",
+    "sentence": "Con la guitarra [[entre los dos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "between the two of them",
+      "options": [
+        "between the two of them",
+        "far from both",
+        "only for one",
+        "behind them"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-vende-la-moto",
+        "storySource": "user",
+        "sentence": "Con la guitarra entre los dos.",
+        "targetWord": "entre los dos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Zamora",
+    "sentence": "Un chico de [[Zamora]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a city near Salamanca",
+      "options": [
+        "a city near Salamanca",
+        "a city in France",
+        "a beach town",
+        "the capital of Spain"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-vende-la-moto",
+        "storySource": "user",
+        "sentence": "Un chico de Zamora.",
+        "targetWord": "Zamora",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pagar en efectivo",
+    "sentence": "Y [[pagó en efectivo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "paid in cash",
+      "options": [
+        "paid in cash",
+        "paid by card",
+        "paid nothing",
+        "paid too much"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-vende-la-moto",
+        "storySource": "user",
+        "sentence": "Y pagó en efectivo.",
+        "targetWord": "pagó en efectivo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "encima",
+    "sentence": "Lo dejó [[encima]] del amplificador.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on top",
+      "options": [
+        "on top",
+        "under",
+        "inside",
+        "far from"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-vende-la-moto",
+        "storySource": "user",
+        "sentence": "Lo dejó encima del amplificador.",
+        "targetWord": "encima",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ir en autobús",
+    "sentence": "Ahora [[voy en autobús]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "go by bus",
+      "options": [
+        "go by bus",
+        "go by bike",
+        "go on foot",
+        "go by train"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-vende-la-moto",
+        "storySource": "user",
+        "sentence": "Ahora voy en autobús.",
+        "targetWord": "voy en autobús",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estudiante",
+    "sentence": "Como un [[estudiante]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a student",
+      "options": [
+        "a student",
+        "a tourist",
+        "a teacher",
+        "a driver"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-vende-la-moto",
+        "storySource": "user",
+        "sentence": "Como un estudiante.",
+        "targetWord": "estudiante",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "no pasa nada",
+    "sentence": "[[No pasa nada]], de verdad.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "it is fine",
+      "options": [
+        "it is fine",
+        "it is terrible",
+        "it is expensive",
+        "it is forbidden"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-vende-la-moto",
+        "storySource": "user",
+        "sentence": "No pasa nada, de verdad.",
+        "targetWord": "No pasa nada",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de verdad",
+    "sentence": "No pasa nada, [[de verdad]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "really",
+      "options": [
+        "really",
+        "maybe",
+        "never",
+        "almost"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-vende-la-moto",
+        "storySource": "user",
+        "sentence": "No pasa nada, de verdad.",
+        "targetWord": "de verdad",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "que nunca",
+    "sentence": "Sonaba más fuerte [[que nunca]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "than ever",
+      "options": [
+        "than ever",
+        "than before",
+        "than usual",
+        "than anyone"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-vende-la-moto",
+        "storySource": "user",
+        "sentence": "Sonaba más fuerte que nunca.",
+        "targetWord": "que nunca",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin dinero",
+    "sentence": "[[Sin dinero]], pero feliz.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without money",
+      "options": [
+        "without money",
+        "without friends",
+        "without music",
+        "without time"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-vende-la-moto",
+        "storySource": "user",
+        "sentence": "Sin dinero, pero feliz.",
+        "targetWord": "Sin dinero",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Aquí",
+    "sentence": "_____ tienes, en la mano, el dinero que te debía.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Aquí",
+      "options": [
+        "Aquí",
+        "Allí",
+        "Nunca",
+        "Siempre"
+      ],
+      "translation": "_____ is, in your hand, the money I owed you.",
+      "optionTranslations": [
+        "Here",
+        "There",
+        "Never",
+        "Always"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-vende-la-moto",
+        "storySource": "user",
+        "sentence": "Aquí tienes, en la mano, el dinero que te debía.",
+        "targetWord": "Aquí",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Ahora",
+    "sentence": "_____, después de la mudanza, vivo en otra ciudad.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Ahora",
+      "options": [
+        "Ahora",
+        "Nunca",
+        "También",
+        "Casi"
+      ],
+      "translation": "_____, after the move, I live in another city.",
+      "optionTranslations": [
+        "Now",
+        "Never",
+        "Also",
+        "Almost"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-vende-la-moto",
+        "storySource": "user",
+        "sentence": "Ahora, después de la mudanza, vivo en otra ciudad.",
+        "targetWord": "Ahora",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dibujó",
+    "sentence": "Con un lápiz, ella _____ un gato.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dibujó",
+      "options": [
+        "dibujó",
+        "lavó",
+        "nombró",
+        "encontró"
+      ],
+      "translation": "With a pencil, she _____ a cat.",
+      "optionTranslations": [
+        "drew",
+        "washed",
+        "named",
+        "found"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-vende-la-moto",
+        "storySource": "user",
+        "sentence": "Con un lápiz, ella dibujó un gato.",
+        "targetWord": "dibujó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "metió",
+    "sentence": "Antes de salir, él _____ las llaves para no perderlas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "metió",
+      "options": [
+        "metió",
+        "perdió",
+        "vendió",
+        "tiró"
+      ],
+      "translation": "Before leaving, he _____ the keys so as not to lose them.",
+      "optionTranslations": [
+        "put",
+        "lost",
+        "sold",
+        "threw"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-vende-la-moto",
+        "storySource": "user",
+        "sentence": "Antes de salir, él metió las llaves para no perderlas.",
+        "targetWord": "metió",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dentro",
+    "sentence": "El gato es pequeño y duerme _____ de la caja, no fuera.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dentro",
+      "options": [
+        "dentro",
+        "encima",
+        "al lado",
+        "lejos"
+      ],
+      "translation": "The cat is small and sleeps _____ the box, not outside.",
+      "optionTranslations": [
+        "inside",
+        "on top of",
+        "next to",
+        "far from"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-vende-la-moto",
+        "storySource": "user",
+        "sentence": "El gato es pequeño y duerme dentro de la caja, no fuera.",
+        "targetWord": "dentro",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "feliz",
+    "sentence": "Aunque llovía, se sentía _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "feliz",
+      "options": [
+        "feliz",
+        "cansado",
+        "enfermo",
+        "frío"
+      ],
+      "translation": "Even though it was raining, he felt _____.",
+      "optionTranslations": [
+        "happy",
+        "tired",
+        "ill",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "ruben-vende-la-moto",
+        "storySource": "user",
+        "sentence": "Aunque llovía, se sentía feliz.",
+        "targetWord": "feliz",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

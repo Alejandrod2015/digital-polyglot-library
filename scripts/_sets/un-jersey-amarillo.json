@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "el armario,la ropa,la tienda,el jersey",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "el armario",
+          "answer": "a wardrobe",
+          "options": [
+            "a wardrobe",
+            "clothes",
+            "a shop",
+            "a jumper"
+          ]
+        },
+        {
+          "word": "la ropa",
+          "answer": "clothes",
+          "options": [
+            "a wardrobe",
+            "clothes",
+            "a shop",
+            "a jumper"
+          ]
+        },
+        {
+          "word": "la tienda",
+          "answer": "a shop",
+          "options": [
+            "a wardrobe",
+            "clothes",
+            "a shop",
+            "a jumper"
+          ]
+        },
+        {
+          "word": "el jersey",
+          "answer": "a jumper",
+          "options": [
+            "a wardrobe",
+            "clothes",
+            "a shop",
+            "a jumper"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "una semana después",
+    "sentence": "[[Una semana después]], ella abrió el armario.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a week later",
+      "options": [
+        "a week later",
+        "a day later",
+        "a month later",
+        "a year later"
+      ],
+      "audioClip": {
+        "storySlug": "un-jersey-amarillo",
+        "storySource": "user",
+        "sentence": "Una semana después, ella abrió el armario.",
+        "targetWord": "Una semana después",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de segunda mano",
+    "sentence": "Fue a una tienda [[de segunda mano]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "second-hand",
+      "options": [
+        "second-hand",
+        "very expensive",
+        "brand new",
+        "closed"
+      ],
+      "audioClip": {
+        "storySlug": "un-jersey-amarillo",
+        "storySource": "user",
+        "sentence": "Fue a una tienda de segunda mano.",
+        "targetWord": "de segunda mano",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin mirar atrás",
+    "sentence": "Salió [[sin mirar atrás]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without looking back",
+      "options": [
+        "without looking back",
+        "without saying a word",
+        "very slowly",
+        "full of doubts"
+      ],
+      "audioClip": {
+        "storySlug": "un-jersey-amarillo",
+        "storySource": "user",
+        "sentence": "Salió sin mirar atrás.",
+        "targetWord": "sin mirar atrás",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ligero",
+    "sentence": "La bolsa era [[ligera]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "light",
+      "options": [
+        "light",
+        "heavy",
+        "full",
+        "dirty"
+      ],
+      "audioClip": {
+        "storySlug": "un-jersey-amarillo",
+        "storySource": "user",
+        "sentence": "La bolsa era ligera.",
+        "targetWord": "ligera",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ancho",
+    "sentence": "El jersey era [[ancho]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wide, loose",
+      "options": [
+        "wide, loose",
+        "tight",
+        "short",
+        "thin"
+      ],
+      "audioClip": {
+        "storySlug": "un-jersey-amarillo",
+        "storySource": "user",
+        "sentence": "El jersey era ancho.",
+        "targetWord": "ancho",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cómodo",
+    "sentence": "El jersey era [[cómodo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "comfortable",
+      "options": [
+        "comfortable",
+        "fashionable",
+        "expensive",
+        "colourful"
+      ],
+      "audioClip": {
+        "storySlug": "un-jersey-amarillo",
+        "storySource": "user",
+        "sentence": "El jersey era cómodo.",
+        "targetWord": "cómodo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barato",
+    "sentence": "El jersey era [[barato]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cheap",
+      "options": [
+        "cheap",
+        "expensive",
+        "old",
+        "dirty"
+      ],
+      "audioClip": {
+        "storySlug": "un-jersey-amarillo",
+        "storySource": "user",
+        "sentence": "El jersey era barato.",
+        "targetWord": "barato",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "todo el mundo",
+    "sentence": "Lo comparte [[todo el mundo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "everybody",
+      "options": [
+        "everybody",
+        "nobody",
+        "only one friend",
+        "a few people"
+      ],
+      "audioClip": {
+        "storySlug": "un-jersey-amarillo",
+        "storySource": "user",
+        "sentence": "Lo comparte todo el mundo.",
+        "targetWord": "todo el mundo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sábado",
+    "sentence": "El [[sábado]] salió el programa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Saturday",
+      "options": [
+        "Saturday",
+        "Sunday",
+        "Monday",
+        "Friday"
+      ],
+      "audioClip": {
+        "storySlug": "un-jersey-amarillo",
+        "storySource": "user",
+        "sentence": "El sábado salió el programa.",
+        "targetWord": "sábado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "feo",
+    "sentence": "El jersey es [[feo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ugly",
+      "options": [
+        "ugly",
+        "pretty",
+        "new",
+        "small"
+      ],
+      "audioClip": {
+        "storySlug": "un-jersey-amarillo",
+        "storySource": "user",
+        "sentence": "El jersey es feo.",
+        "targetWord": "feo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pensó",
+    "sentence": "Miró el armario, se llevó la mano a la barbilla y _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pensó",
+      "options": [
+        "pensó",
+        "rio",
+        "durmió",
+        "esperó"
+      ],
+      "translation": "She looked at the wardrobe, put her hand to her chin, and _____.",
+      "optionTranslations": [
+        "thought",
+        "laughed",
+        "slept",
+        "waited"
+      ],
+      "audioClip": {
+        "storySlug": "un-jersey-amarillo",
+        "storySource": "user",
+        "sentence": "Miró el armario, se llevó la mano a la barbilla y pensó.",
+        "targetWord": "pensó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "decidió",
+    "sentence": "Después de pensarlo mucho, al final ella _____ vender la chaqueta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "decidió",
+      "options": [
+        "decidió",
+        "olvidó",
+        "intentó",
+        "quiso"
+      ],
+      "translation": "After thinking about it a lot, in the end she _____ to sell the jacket.",
+      "optionTranslations": [
+        "decided",
+        "forgot",
+        "tried",
+        "wanted"
+      ],
+      "audioClip": {
+        "storySlug": "un-jersey-amarillo",
+        "storySource": "user",
+        "sentence": "Después de pensarlo mucho, al final ella decidió vender la chaqueta.",
+        "targetWord": "decidió",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "compró",
+    "sentence": "Con su propio dinero, _____ un jersey amarillo en la tienda.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "compró",
+      "options": [
+        "compró",
+        "vendió",
+        "robó",
+        "devolvió"
+      ],
+      "translation": "With her own money, she _____ a yellow jumper at the shop.",
+      "optionTranslations": [
+        "bought",
+        "sold",
+        "stole",
+        "returned"
+      ],
+      "audioClip": {
+        "storySlug": "un-jersey-amarillo",
+        "storySource": "user",
+        "sentence": "Con su propio dinero, compró un jersey amarillo en la tienda.",
+        "targetWord": "compró",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "enseguida",
+    "sentence": "Vio el mensaje y llamó _____, sin esperar ni un minuto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "enseguida",
+      "options": [
+        "enseguida",
+        "luego",
+        "por error",
+        "en voz baja"
+      ],
+      "translation": "She saw the message and called _____, without waiting even a minute.",
+      "optionTranslations": [
+        "right away",
+        "later",
+        "by mistake",
+        "quietly"
+      ],
+      "audioClip": {
+        "storySlug": "un-jersey-amarillo",
+        "storySource": "user",
+        "sentence": "Vio el mensaje y llamó enseguida, sin esperar ni un minuto.",
+        "targetWord": "enseguida",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pones",
+    "sentence": "La próxima vez que haga frío, tú te _____ el jersey.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pones",
+      "options": [
+        "pones",
+        "lavas",
+        "pierdes",
+        "vendes"
+      ],
+      "translation": "Next time it's cold, you _____ the jumper.",
+      "optionTranslations": [
+        "put on",
+        "wash",
+        "lose",
+        "sell"
+      ],
+      "audioClip": {
+        "storySlug": "un-jersey-amarillo",
+        "storySource": "user",
+        "sentence": "La próxima vez que haga frío, tú te pones el jersey.",
+        "targetWord": "pones",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "queda bien",
+    "sentence": "El jersey es feo, pero me _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "queda bien",
+      "options": [
+        "queda bien",
+        "queda mal",
+        "queda grande",
+        "queda pequeño"
+      ],
+      "translation": "The jumper is ugly, but it _____ on me.",
+      "optionTranslations": [
+        "looks good",
+        "looks bad",
+        "is too big",
+        "is too small"
+      ],
+      "audioClip": {
+        "storySlug": "un-jersey-amarillo",
+        "storySource": "user",
+        "sentence": "El jersey es feo, pero me queda bien.",
+        "targetWord": "queda bien",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

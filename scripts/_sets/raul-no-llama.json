@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "la biblioteca,la poesía,el novio,la vida",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "la biblioteca",
+          "answer": "a library",
+          "options": [
+            "a library",
+            "poetry",
+            "a boyfriend",
+            "life"
+          ]
+        },
+        {
+          "word": "la poesía",
+          "answer": "poetry",
+          "options": [
+            "a library",
+            "poetry",
+            "a boyfriend",
+            "life"
+          ]
+        },
+        {
+          "word": "el novio",
+          "answer": "a boyfriend",
+          "options": [
+            "a library",
+            "poetry",
+            "a boyfriend",
+            "life"
+          ]
+        },
+        {
+          "word": "la vida",
+          "answer": "life",
+          "options": [
+            "a library",
+            "poetry",
+            "a boyfriend",
+            "life"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tres días después",
+    "sentence": "[[Tres días después]], los dos tenían el local seco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "three days later",
+      "options": [
+        "three days later",
+        "three days before",
+        "three weeks later",
+        "the next day"
+      ],
+      "audioClip": {
+        "storySlug": "raul-no-llama",
+        "storySource": "user",
+        "sentence": "Tres días después, los dos tenían el local seco.",
+        "targetWord": "Tres días después",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en silencio",
+    "sentence": "El móvil seguía [[en silencio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in silence",
+      "options": [
+        "in silence",
+        "very loud",
+        "broken",
+        "charging"
+      ],
+      "audioClip": {
+        "storySlug": "raul-no-llama",
+        "storySource": "user",
+        "sentence": "El móvil seguía en silencio.",
+        "targetWord": "en silencio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por la tarde",
+    "sentence": "[[Por la tarde]], ella fue a la biblioteca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in the afternoon",
+      "options": [
+        "in the afternoon",
+        "in the morning",
+        "at night",
+        "at midnight"
+      ],
+      "audioClip": {
+        "storySlug": "raul-no-llama",
+        "storySource": "user",
+        "sentence": "Por la tarde, ella fue a la biblioteca.",
+        "targetWord": "Por la tarde",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al ver",
+    "sentence": "Sonrió [[al verla]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "when he saw her",
+      "options": [
+        "when he saw her",
+        "when he called her",
+        "when he lost her",
+        "when he forgot her"
+      ],
+      "audioClip": {
+        "storySlug": "raul-no-llama",
+        "storySource": "user",
+        "sentence": "Sonrió al verla.",
+        "targetWord": "al verla",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tampoco",
+    "sentence": "[[Tampoco]] quiero eso para ti.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "not... either",
+      "options": [
+        "not... either",
+        "always",
+        "only",
+        "maybe"
+      ],
+      "audioClip": {
+        "storySlug": "raul-no-llama",
+        "storySource": "user",
+        "sentence": "Tampoco quiero eso para ti.",
+        "targetWord": "Tampoco",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "para ti",
+    "sentence": "Tampoco quiero eso [[para ti]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "for you",
+      "options": [
+        "for you",
+        "for me",
+        "for nobody",
+        "for everyone"
+      ],
+      "audioClip": {
+        "storySlug": "raul-no-llama",
+        "storySource": "user",
+        "sentence": "Tampoco quiero eso para ti.",
+        "targetWord": "para ti",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "noche",
+    "sentence": "Esa [[noche]] le contó a él la mitad.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "night",
+      "options": [
+        "night",
+        "morning",
+        "week",
+        "hour"
+      ],
+      "audioClip": {
+        "storySlug": "raul-no-llama",
+        "storySource": "user",
+        "sentence": "Esa noche le contó a él la mitad.",
+        "targetWord": "noche",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lo de",
+    "sentence": "[[Lo de]] 2012 lo guardó para las Ferias.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the thing about",
+      "options": [
+        "the thing about",
+        "the fear of",
+        "the end of",
+        "the price of"
+      ],
+      "audioClip": {
+        "storySlug": "raul-no-llama",
+        "storySource": "user",
+        "sentence": "Lo de 2012 lo guardó para las Ferias.",
+        "targetWord": "Lo de",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a veces",
+    "sentence": "[[A veces]] todo pesa menos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sometimes",
+      "options": [
+        "sometimes",
+        "always",
+        "never",
+        "rarely"
+      ],
+      "audioClip": {
+        "storySlug": "raul-no-llama",
+        "storySource": "user",
+        "sentence": "A veces todo pesa menos.",
+        "targetWord": "a veces",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esa noche",
+    "sentence": "[[Esa noche]] le contó a él la mitad.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "that night",
+      "options": [
+        "that night",
+        "that morning",
+        "the next day",
+        "a week later"
+      ],
+      "audioClip": {
+        "storySlug": "raul-no-llama",
+        "storySource": "user",
+        "sentence": "Esa noche le contó a él la mitad.",
+        "targetWord": "Esa noche",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "seguía",
+    "sentence": "El teléfono _____ apagado todo el día.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "seguía",
+      "options": [
+        "seguía",
+        "sonaba",
+        "vibraba",
+        "brillaba"
+      ],
+      "translation": "The phone _____ off all day.",
+      "optionTranslations": [
+        "stayed",
+        "rang",
+        "vibrated",
+        "shone"
+      ],
+      "audioClip": {
+        "storySlug": "raul-no-llama",
+        "storySource": "user",
+        "sentence": "El teléfono seguía apagado todo el día.",
+        "targetWord": "seguía",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "gustas",
+    "sentence": "Me _____ mucho, y no solo como amigo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gustas",
+      "options": [
+        "gustas",
+        "molestas",
+        "preocupas",
+        "aburres"
+      ],
+      "translation": "I _____ you a lot, and not just as a friend.",
+      "optionTranslations": [
+        "like",
+        "annoy",
+        "worry",
+        "bore"
+      ],
+      "audioClip": {
+        "storySlug": "raul-no-llama",
+        "storySource": "user",
+        "sentence": "Me gustas mucho, y no solo como amigo.",
+        "targetWord": "gustas",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "entiendo",
+    "sentence": "No sé por qué lo hiciste, pero ahora lo _____ perfectamente.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "entiendo",
+      "options": [
+        "entiendo",
+        "olvido",
+        "dudo",
+        "niego"
+      ],
+      "translation": "I don't know why you did it, but now I _____ it perfectly.",
+      "optionTranslations": [
+        "understand",
+        "forget",
+        "doubt",
+        "deny"
+      ],
+      "audioClip": {
+        "storySlug": "raul-no-llama",
+        "storySource": "user",
+        "sentence": "No sé por qué lo hiciste, pero ahora lo entiendo perfectamente.",
+        "targetWord": "entiendo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "estás bien",
+    "sentence": "Nunca sonríes últimamente. ¿_____?",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "estás bien",
+      "options": [
+        "estás bien",
+        "estás feliz",
+        "estás emocionado",
+        "estás orgulloso"
+      ],
+      "translation": "You never smile lately. Are you _____?",
+      "optionTranslations": [
+        "okay",
+        "happy",
+        "excited",
+        "proud"
+      ],
+      "audioClip": {
+        "storySlug": "raul-no-llama",
+        "storySource": "user",
+        "sentence": "Nunca sonríes últimamente. ¿Estás bien?",
+        "targetWord": "estás bien",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "claro",
+    "sentence": "“¿Vienes?” “_____, allí estaré.”",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "claro",
+      "options": [
+        "claro",
+        "nunca",
+        "quizás",
+        "casi"
+      ],
+      "translation": "'Are you coming?' '_____, I'll be there.'",
+      "optionTranslations": [
+        "of course",
+        "never",
+        "maybe",
+        "almost"
+      ],
+      "audioClip": {
+        "storySlug": "raul-no-llama",
+        "storySource": "user",
+        "sentence": "Claro, allí estaré.",
+        "targetWord": "claro",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "menos",
+    "sentence": "Con ayuda, el trabajo pesa _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "menos",
+      "options": [
+        "menos",
+        "más",
+        "igual",
+        "doble"
+      ],
+      "translation": "With help, the work weighs _____.",
+      "optionTranslations": [
+        "less",
+        "more",
+        "the same",
+        "double"
+      ],
+      "audioClip": {
+        "storySlug": "raul-no-llama",
+        "storySource": "user",
+        "sentence": "Con ayuda, el trabajo pesa menos.",
+        "targetWord": "menos",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

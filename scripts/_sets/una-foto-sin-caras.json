@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "el perfil,la pantalla,la contraseña,el garaje",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "el perfil",
+          "answer": "a profile",
+          "options": [
+            "a profile",
+            "a screen",
+            "a password",
+            "a garage"
+          ]
+        },
+        {
+          "word": "la pantalla",
+          "answer": "a screen",
+          "options": [
+            "a profile",
+            "a screen",
+            "a password",
+            "a garage"
+          ]
+        },
+        {
+          "word": "la contraseña",
+          "answer": "a password",
+          "options": [
+            "a profile",
+            "a screen",
+            "a password",
+            "a garage"
+          ]
+        },
+        {
+          "word": "el garaje",
+          "answer": "a garage",
+          "options": [
+            "a profile",
+            "a screen",
+            "a password",
+            "a garage"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "red social",
+    "sentence": "Un perfil en una [[red social]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "social media",
+      "options": [
+        "social media",
+        "a newspaper",
+        "a bank account",
+        "a phone call"
+      ],
+      "audioClip": {
+        "storySlug": "una-foto-sin-caras",
+        "storySource": "user",
+        "sentence": "Un perfil en una red social.",
+        "targetWord": "red social",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "detrás",
+    "sentence": "Estaba [[detrás]], con el móvil cerca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "behind",
+      "options": [
+        "behind",
+        "in front",
+        "above",
+        "far away"
+      ],
+      "audioClip": {
+        "storySlug": "una-foto-sin-caras",
+        "storySource": "user",
+        "sentence": "Estaba detrás, con el móvil cerca.",
+        "targetWord": "detrás",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerca",
+    "sentence": "El móvil demasiado [[cerca]] de la cara.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "near",
+      "options": [
+        "near",
+        "far",
+        "above",
+        "below"
+      ],
+      "audioClip": {
+        "storySlug": "una-foto-sin-caras",
+        "storySource": "user",
+        "sentence": "El móvil demasiado cerca de la cara.",
+        "targetWord": "cerca",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tres veces",
+    "sentence": "Se equivocó [[tres veces]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "three times",
+      "options": [
+        "three times",
+        "once",
+        "many times",
+        "never"
+      ],
+      "audioClip": {
+        "storySlug": "una-foto-sin-caras",
+        "storySource": "user",
+        "sentence": "Se equivocó tres veces.",
+        "targetWord": "tres veces",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en la mano",
+    "sentence": "Con el móvil [[en la mano]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in his hand",
+      "options": [
+        "in his hand",
+        "in his pocket",
+        "on the table",
+        "in his bag"
+      ],
+      "audioClip": {
+        "storySlug": "una-foto-sin-caras",
+        "storySource": "user",
+        "sentence": "Con el móvil en la mano.",
+        "targetWord": "en la mano",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Ferias",
+    "sentence": "¡Yo estuve en las [[Ferias]] de 2012!",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Salamanca's September festival",
+      "options": [
+        "Salamanca's September festival",
+        "a football match",
+        "a wedding",
+        "a concert in Madrid"
+      ],
+      "audioClip": {
+        "storySlug": "una-foto-sin-caras",
+        "storySource": "user",
+        "sentence": "Yo estuve en las Ferias de 2012.",
+        "targetWord": "Ferias",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "viejo",
+    "sentence": "Él sacó un móvil [[viejo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "old",
+      "options": [
+        "old",
+        "new",
+        "broken",
+        "expensive"
+      ],
+      "audioClip": {
+        "storySlug": "una-foto-sin-caras",
+        "storySource": "user",
+        "sentence": "Él sacó un móvil viejo.",
+        "targetWord": "viejo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frío",
+    "sentence": "Fuera hacía [[frío]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cold",
+      "options": [
+        "cold",
+        "heat",
+        "wind",
+        "rain"
+      ],
+      "audioClip": {
+        "storySlug": "una-foto-sin-caras",
+        "storySource": "user",
+        "sentence": "Fuera hacía frío.",
+        "targetWord": "frío",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entonces",
+    "sentence": "[[Entonces]] alguien golpeó la puerta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "then",
+      "options": [
+        "then",
+        "never",
+        "always",
+        "yesterday"
+      ],
+      "audioClip": {
+        "storySlug": "una-foto-sin-caras",
+        "storySource": "user",
+        "sentence": "Entonces alguien golpeó la puerta.",
+        "targetWord": "Entonces",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quedar",
+    "sentence": "La pantalla [[quedó]] rota.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ended up",
+      "options": [
+        "ended up",
+        "looked",
+        "sounded",
+        "felt"
+      ],
+      "audioClip": {
+        "storySlug": "una-foto-sin-caras",
+        "storySource": "user",
+        "sentence": "La pantalla quedó rota.",
+        "targetWord": "quedó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "abrió",
+    "sentence": "Con la llave, ella _____ la puerta, entró y encendió la luz.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "abrió",
+      "options": [
+        "abrió",
+        "cerró",
+        "pintó",
+        "encontró"
+      ],
+      "translation": "With the key, she _____ the door, went in and turned on the light.",
+      "optionTranslations": [
+        "opened",
+        "closed",
+        "painted",
+        "found"
+      ],
+      "audioClip": {
+        "storySlug": "una-foto-sin-caras",
+        "storySource": "user",
+        "sentence": "Con la llave, ella abrió la puerta, entró y encendió la luz.",
+        "targetWord": "abrió",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "contestó",
+    "sentence": "El teléfono sonó y él _____ enseguida: “Diga.”",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "contestó",
+      "options": [
+        "contestó",
+        "colgó",
+        "perdió",
+        "tiró"
+      ],
+      "translation": "The phone rang and he _____ right away: 'Hello?'",
+      "optionTranslations": [
+        "answered",
+        "hung up",
+        "lost",
+        "threw"
+      ],
+      "audioClip": {
+        "storySlug": "una-foto-sin-caras",
+        "storySource": "user",
+        "sentence": "El teléfono sonó y él contestó enseguida: Diga.",
+        "targetWord": "contestó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "se cayó",
+    "sentence": "El vidrio del cuadro _____ y se rompió en pedazos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "se cayó",
+      "options": [
+        "se cayó",
+        "flotó",
+        "desapareció",
+        "brilló"
+      ],
+      "translation": "The picture's glass _____ and broke into pieces.",
+      "optionTranslations": [
+        "fell",
+        "floated",
+        "disappeared",
+        "shone"
+      ],
+      "audioClip": {
+        "storySlug": "una-foto-sin-caras",
+        "storySource": "user",
+        "sentence": "El vidrio del cuadro se cayó y se rompió en pedazos.",
+        "targetWord": "se cayó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "funciona",
+    "sentence": "El coche es viejo, pero el motor todavía _____ bien.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "funciona",
+      "options": [
+        "funciona",
+        "cuesta",
+        "brilla",
+        "se mueve"
+      ],
+      "translation": "The car is old, but the engine still _____ well.",
+      "optionTranslations": [
+        "works",
+        "costs",
+        "shines",
+        "moves"
+      ],
+      "audioClip": {
+        "storySlug": "una-foto-sin-caras",
+        "storySource": "user",
+        "sentence": "El coche es viejo, pero el motor todavía funciona bien.",
+        "targetWord": "funciona",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "salió",
+    "sentence": "La foto _____ borrosa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "salió",
+      "options": [
+        "salió",
+        "desapareció",
+        "costó",
+        "pesó"
+      ],
+      "translation": "The photo _____ blurry.",
+      "optionTranslations": [
+        "turned out",
+        "disappeared",
+        "cost",
+        "weighed"
+      ],
+      "audioClip": {
+        "storySlug": "una-foto-sin-caras",
+        "storySource": "user",
+        "sentence": "La foto salió borrosa.",
+        "targetWord": "salió",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "escribió",
+    "sentence": "Con mucho cuidado, ella _____ su nombre en el papel.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "escribió",
+      "options": [
+        "escribió",
+        "dijo",
+        "cantó",
+        "olvidó"
+      ],
+      "translation": "Very carefully, she _____ her name on the paper.",
+      "optionTranslations": [
+        "wrote",
+        "said",
+        "sang",
+        "forgot"
+      ],
+      "audioClip": {
+        "storySlug": "una-foto-sin-caras",
+        "storySource": "user",
+        "sentence": "Con mucho cuidado, ella escribió su nombre en el papel.",
+        "targetWord": "escribió",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "la historia,el euro,la tarjeta,la sala",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "la historia",
+          "answer": "a story",
+          "options": [
+            "a story",
+            "a euro",
+            "a bank card",
+            "a room"
+          ]
+        },
+        {
+          "word": "el euro",
+          "answer": "a euro",
+          "options": [
+            "a story",
+            "a euro",
+            "a bank card",
+            "a room"
+          ]
+        },
+        {
+          "word": "la tarjeta",
+          "answer": "a bank card",
+          "options": [
+            "a story",
+            "a euro",
+            "a bank card",
+            "a room"
+          ]
+        },
+        {
+          "word": "la sala",
+          "answer": "a room",
+          "options": [
+            "a story",
+            "a euro",
+            "a bank card",
+            "a room"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a las ocho",
+    "sentence": "[[A las ocho]], ella ya estaba en el depósito.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at eight o'clock",
+      "options": [
+        "at eight o'clock",
+        "at noon",
+        "at midnight",
+        "at nine"
+      ],
+      "audioClip": {
+        "storySlug": "olga-no-tiene-prisa",
+        "storySource": "user",
+        "sentence": "A las ocho, ella ya estaba en el depósito.",
+        "targetWord": "A las ocho",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "medio",
+    "sentence": "Él venía detrás, [[medio]] dormido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "half",
+      "options": [
+        "half",
+        "very",
+        "never",
+        "almost never"
+      ],
+      "audioClip": {
+        "storySlug": "olga-no-tiene-prisa",
+        "storySource": "user",
+        "sentence": "Él venía detrás, medio dormido.",
+        "targetWord": "medio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lleno",
+    "sentence": "La sala estaba [[llena]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "full",
+      "options": [
+        "full",
+        "empty",
+        "clean",
+        "closed"
+      ],
+      "audioClip": {
+        "storySlug": "olga-no-tiene-prisa",
+        "storySource": "user",
+        "sentence": "La sala estaba llena.",
+        "targetWord": "llena",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "todo el barrio",
+    "sentence": "Lo sabe [[todo el barrio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the whole neighbourhood",
+      "options": [
+        "the whole neighbourhood",
+        "nobody",
+        "only Olga",
+        "the police"
+      ],
+      "audioClip": {
+        "storySlug": "olga-no-tiene-prisa",
+        "storySource": "user",
+        "sentence": "Lo sabe todo el barrio.",
+        "targetWord": "todo el barrio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a nombre de",
+    "sentence": "Está [[a nombre de]] la autoescuela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in the name of",
+      "options": [
+        "in the name of",
+        "far from",
+        "close to",
+        "instead of"
+      ],
+      "audioClip": {
+        "storySlug": "olga-no-tiene-prisa",
+        "storySource": "user",
+        "sentence": "Está a nombre de la autoescuela.",
+        "targetWord": "a nombre de",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dos veces",
+    "sentence": "Repitió la historia [[dos veces]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "twice",
+      "options": [
+        "twice",
+        "once",
+        "three times",
+        "many times"
+      ],
+      "audioClip": {
+        "storySlug": "olga-no-tiene-prisa",
+        "storySource": "user",
+        "sentence": "Repitió la historia dos veces.",
+        "targetWord": "dos veces",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al otro lado",
+    "sentence": "[[Al otro lado]] no se oía nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on the other side",
+      "options": [
+        "on the other side",
+        "in the car",
+        "at home",
+        "outside"
+      ],
+      "audioClip": {
+        "storySlug": "olga-no-tiene-prisa",
+        "storySource": "user",
+        "sentence": "Al otro lado no se oía nada.",
+        "targetWord": "Al otro lado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "casi",
+    "sentence": "Dijo, [[casi]] sonriendo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "almost",
+      "options": [
+        "almost",
+        "never",
+        "always",
+        "finally"
+      ],
+      "audioClip": {
+        "storySlug": "olga-no-tiene-prisa",
+        "storySource": "user",
+        "sentence": "Dijo, casi sonriendo.",
+        "targetWord": "Casi",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "próximo",
+    "sentence": "La [[próxima]] vez, aparca en la zona azul.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "next",
+      "options": [
+        "next",
+        "last",
+        "first",
+        "every"
+      ],
+      "audioClip": {
+        "storySlug": "olga-no-tiene-prisa",
+        "storySource": "user",
+        "sentence": "La próxima vez, aparca en la zona azul.",
+        "targetWord": "próxima",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "zona azul",
+    "sentence": "Aparca en la [[zona azul]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "blue zone (paid parking)",
+      "options": [
+        "blue zone (paid parking)",
+        "a private garage",
+        "a bus lane",
+        "a pedestrian street"
+      ],
+      "audioClip": {
+        "storySlug": "olga-no-tiene-prisa",
+        "storySource": "user",
+        "sentence": "Aparca en la zona azul.",
+        "targetWord": "zona azul",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "venía",
+    "sentence": "Cada mañana, él _____ tarde a la oficina y fichaba el último.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "venía",
+      "options": [
+        "venía",
+        "dormía",
+        "desayunaba",
+        "trabajaba"
+      ],
+      "translation": "Every morning, he _____ late to the office and clocked in last.",
+      "optionTranslations": [
+        "came",
+        "slept",
+        "had breakfast",
+        "worked"
+      ],
+      "audioClip": {
+        "storySlug": "olga-no-tiene-prisa",
+        "storySource": "user",
+        "sentence": "Cada mañana, él venía tarde a la oficina y fichaba el último.",
+        "targetWord": "venía",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Siéntate",
+    "sentence": "_____ y ponte cómoda, esto va a tardar un rato.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Siéntate",
+      "options": [
+        "Siéntate",
+        "Date prisa",
+        "Cállate",
+        "Levántate"
+      ],
+      "translation": "_____ and get comfortable, this is going to take a while.",
+      "optionTranslations": [
+        "Sit down",
+        "Hurry up",
+        "Be quiet",
+        "Stand up"
+      ],
+      "audioClip": {
+        "storySlug": "olga-no-tiene-prisa",
+        "storySource": "user",
+        "sentence": "Siéntate y ponte cómoda, esto va a tardar un rato.",
+        "targetWord": "Siéntate",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "mandó",
+    "sentence": "La jefa _____ el papel por correo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mandó",
+      "options": [
+        "mandó",
+        "perdió",
+        "firmó",
+        "leyó"
+      ],
+      "translation": "The boss _____ the paper by mail.",
+      "optionTranslations": [
+        "sent",
+        "lost",
+        "signed",
+        "read"
+      ],
+      "audioClip": {
+        "storySlug": "olga-no-tiene-prisa",
+        "storySource": "user",
+        "sentence": "La jefa mandó el papel por correo.",
+        "targetWord": "mandó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pagó",
+    "sentence": "Nadie tenía efectivo, así que ella _____ con tarjeta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pagó",
+      "options": [
+        "pagó",
+        "esperó",
+        "preguntó",
+        "salió"
+      ],
+      "translation": "Nobody had cash, so she _____ by card.",
+      "optionTranslations": [
+        "paid",
+        "waited",
+        "asked",
+        "left"
+      ],
+      "audioClip": {
+        "storySlug": "olga-no-tiene-prisa",
+        "storySource": "user",
+        "sentence": "Nadie tenía efectivo, así que ella pagó con tarjeta.",
+        "targetWord": "pagó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sonriendo",
+    "sentence": "Se despidió _____ un poco, con los ojos brillantes de alegría.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sonriendo",
+      "options": [
+        "sonriendo",
+        "llorando",
+        "gritando",
+        "corriendo"
+      ],
+      "translation": "She said goodbye, _____ a little, with eyes shining with joy.",
+      "optionTranslations": [
+        "smiling",
+        "crying",
+        "shouting",
+        "running"
+      ],
+      "audioClip": {
+        "storySlug": "olga-no-tiene-prisa",
+        "storySource": "user",
+        "sentence": "Se despidió sonriendo un poco, con los ojos brillantes de alegría.",
+        "targetWord": "sonriendo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "lento",
+    "sentence": "El tráfico iba tan _____ que tardamos una hora en cruzar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lento",
+      "options": [
+        "lento",
+        "rápido",
+        "ruidoso",
+        "ordenado"
+      ],
+      "translation": "The traffic was so _____ that it took us an hour to cross.",
+      "optionTranslations": [
+        "slow",
+        "fast",
+        "noisy",
+        "orderly"
+      ],
+      "audioClip": {
+        "storySlug": "olga-no-tiene-prisa",
+        "storySource": "user",
+        "sentence": "El tráfico iba tan lento que tardamos una hora en cruzar.",
+        "targetWord": "lento",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]
