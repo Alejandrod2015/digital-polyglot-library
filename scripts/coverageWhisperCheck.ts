@@ -121,18 +121,41 @@ export async function transcribeMaster(masterUrl: string, whisperLang = "fr"): P
 }
 
 /**
+ * Palabras de referencia en el ORDEN en que la sintesis las dice: el titulo
+ * primero (fragmento [0] del master, siempre) y despues el cuerpo, con el
+ * mismo separador de parrafo que usa `generateAndUploadMultiVoiceAudio`.
+ * `title` es opcional para no romper una llamada vieja que ya concatenaba
+ * el titulo dentro de `text` a mano.
+ *
+ * WHY (2026-09-16, journey-planning): sin el titulo, una historia que HACE
+ * ECO de su propio titulo en el dialogo (recurso narrativo real, no un
+ * error) sale con un "duplicado" falso: el candado oye el titulo UNA vez
+ * (como titulo) y OTRA (como eco en el cuerpo) pero solo contaba la del
+ * cuerpo contra el texto, asi que 2 oidas contra 1 esperada disparaba el
+ * gate. Paso en el Friends IT A0 (un-segreto-tra-noi-due) y ya habia pasado
+ * antes, sin arreglarse, en el FR A2 ("La sauce ne tient pas", "Il y a douze
+ * ans"): las tres veces se descarto a mano en vez de corregir la libreria.
+ */
+export function referenceWordsFor(title: string | undefined, text: string): string[] {
+  const full = title ? `${title}\n\n${text}` : text;
+  return full.split(/\s+/).map(norm).filter(Boolean);
+}
+
+/**
  * `journeyLanguage` es el `Journey.language` ("german", "french", ...);
  * decide el `-l` de whisper y la tabla de numeros (ver whisperLangFor /
  * numberLangFor arriba). Sin argumento, frances: el comportamiento de
- * siempre para los journeys que ya llamaban esto sin idioma.
+ * siempre para los journeys que ya llamaban esto sin idioma. `title`
+ * opcional: ver `referenceWordsFor`.
  */
 export async function checkMasterCoverage(
   masterUrl: string,
   referenceText: string,
-  journeyLanguage?: string | null
+  journeyLanguage?: string | null,
+  title?: string
 ): Promise<CoverageResult> {
   const heard = await transcribeMaster(masterUrl, whisperLangFor(journeyLanguage));
-  const textWords = referenceText.split(/\s+/).map(norm).filter(Boolean);
+  const textWords = referenceWordsFor(title, referenceText);
   const heardWords = heard.map((w) => norm(w.text)).filter(Boolean);
   return checkCoverage(textWords, heardWords, numberLangFor(journeyLanguage));
 }

@@ -253,10 +253,9 @@ async function main() {
   // master viejo antes de terminar: mejor el master anterior (con sus
   // defectos ya conocidos) que uno nuevo roto.
   console.log("\ncomprobando cobertura del master completo (whisper local)...");
-  const refText = `${story.title}. ${story.text}`;
   let cobertura;
   try {
-    cobertura = await checkMasterCoverage(r.audioUrl, refText, story.journey.language);
+    cobertura = await checkMasterCoverage(r.audioUrl, story.text, story.journey.language, story.title);
   } catch (e) {
     console.warn(`  candado de cobertura saltado (whisper no disponible): ${e instanceof Error ? e.message : e}`);
     cobertura = null;
