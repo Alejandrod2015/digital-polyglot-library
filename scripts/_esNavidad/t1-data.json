@@ -1,0 +1,407 @@
+[
+  {
+    "topic": "wishes-and-bargaining",
+    "slotIndex": 1,
+    "title": "El ekeko no espera",
+    "slug": "el-ekeko-no-espera",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "Alondra necesita siete piezas de siete fiestas distintas para conservar su puesto en el mercado, y la primera tiene que ser un ekeko tallado a mano. El unico tallador que le sirve abre su mesa el veinticuatro de enero a mediodia en punto, que es exactamente la mejor hora de venta de su propio puesto. Elige la fila y pierde la manana. Cuando por fin tiene la figurita en la mano, le pesa mucho menos de lo que ella esperaba.",
+    "text": "Alondra, una vendedora de artesanía de fiesta, llevaba tres horas en la fila de la alasita, que olía a papel cortado. Por lo menos cien personas esperaban antes. Ulises es el hombre que arregla lo que llega roto en el mercado, y esa jornada le cuidaba el puesto.\n\nLa llamó irritado. “Estoy solo aquí y se me juntó la gente”, dijo él. “El tallador abre a mediodía en punto y esta ocasión no vuelve hasta enero”, contestó Alondra. “Pertenecer a esta cola es el costo.”\n\nA las doce le pusieron el ekeko en la mano. Tenía bombín y aguayo. Iba cargado de sacos, del tamaño de un puño.\n\n“¿Y eso paga el esfuerzo?”, preguntó Ulises al verla llegar. Pesaba tan poco que a Alondra se le fueron las ganas de mirarlo.\n\n“En todo caso, ya está escogido y no se devuelve”, dijo ella, con una decepción y una pena que no supo explicar. Pasó la figurita de una mano a la otra y no la guardó.",
+    "vocab": [
+      {
+        "word": "alasita",
+        "surface": "alasita",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "La Paz fair of miniatures that opens on January twenty-fourth"
+      },
+      {
+        "word": "fila",
+        "surface": "fila",
+        "type": "noun",
+        "definition": "a line of people waiting one behind the other"
+      },
+      {
+        "word": "por lo menos",
+        "surface": "Por lo menos",
+        "type": "expression",
+        "definition": "not less than this number, and possibly quite a few more"
+      },
+      {
+        "word": "jornada",
+        "surface": "jornada",
+        "type": "noun",
+        "definition": "a whole working day, counted from start to finish"
+      },
+      {
+        "word": "irritado",
+        "surface": "irritado",
+        "type": "adjective",
+        "definition": "annoyed in a small way that shows in the voice"
+      },
+      {
+        "word": "a mediodía en punto",
+        "surface": "a mediodía en punto",
+        "type": "expression",
+        "register": "cultural",
+        "definition": "exactly at twelve, when Alasita wishes are said to start working"
+      },
+      {
+        "word": "ocasión",
+        "surface": "ocasión",
+        "type": "noun",
+        "definition": "a moment when something can be done, and then it passes"
+      },
+      {
+        "word": "pertenecer",
+        "surface": "Pertenecer",
+        "type": "verb",
+        "definition": "to be part of a group and be accepted inside it"
+      },
+      {
+        "word": "costo",
+        "surface": "costo",
+        "type": "noun",
+        "definition": "what a thing takes from you, in money or in time"
+      },
+      {
+        "word": "ekeko",
+        "surface": "ekeko",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "Andean figure of plenty, loaded with tiny goods and money"
+      },
+      {
+        "word": "bombín",
+        "surface": "bombín",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "round hard hat worn by Aymara women and by the ekeko"
+      },
+      {
+        "word": "aguayo",
+        "surface": "aguayo",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "woven Andean cloth used to carry things on the back"
+      },
+      {
+        "word": "cargado",
+        "surface": "cargado",
+        "type": "adjective",
+        "definition": "loaded with a lot of weight or a lot of things"
+      },
+      {
+        "word": "tamaño",
+        "surface": "tamaño",
+        "type": "noun",
+        "definition": "how big or small a thing is when you compare it"
+      },
+      {
+        "word": "gana",
+        "surface": "ganas",
+        "type": "noun",
+        "definition": "the wish to do something right now, the appetite for it"
+      },
+      {
+        "word": "pena",
+        "surface": "pena",
+        "type": "noun",
+        "definition": "a small sad feeling about how something turned out"
+      },
+      {
+        "word": "esfuerzo",
+        "surface": "esfuerzo",
+        "type": "noun",
+        "definition": "the hard work you put into something that is difficult"
+      },
+      {
+        "word": "en todo caso",
+        "surface": "En todo caso",
+        "type": "expression",
+        "definition": "whatever happens, this part is already settled and true"
+      },
+      {
+        "word": "escoger",
+        "surface": "escogido",
+        "type": "verb",
+        "definition": "to take one thing and leave the other ones behind"
+      },
+      {
+        "word": "decepción",
+        "surface": "decepción",
+        "type": "noun",
+        "definition": "the flat feeling when a thing is less than you hoped"
+      }
+    ]
+  },
+  {
+    "topic": "wishes-and-bargaining",
+    "slotIndex": 2,
+    "title": "Nadie challa para vender",
+    "slug": "nadie-challa-para-vender",
+    "arcType": "reframe-turn",
+    "synopsis": "Una pieza sin bendecir es un adorno cualquiera, y Alondra quiere llevar al mercado lo unico que sus competidores no pueden copiar. Para eso hace la fila de la yatiri con el ekeko bajo el brazo. Lo que no habia calculado es que la bendicion se hace sobre el deseo de una persona con nombre, y que hay que decir ese nombre en voz alta, delante de quien este mirando.",
+    "text": "Bajo la carpa, Alondra esperaba con el ekeko bajo el brazo. El suelo estaba lleno de serpentina y mistura, y olía a alcohol.\n\nUlises la había acompañado, discreto como siempre. “Puede que no te lo challe”, dijo. “Se trata del deseo de alguien, no de una caja de cosas para vender.”\n\n“Yo pago y ya”, se negó Alondra, molesta. “Una creencia así me cuesta media venta del año.” Supuso que bastaría con callarse.\n\nLa yatiri levantó la vista. Prudente, sin prisa, preguntó de quién era la figurita, como quien da un privilegio.\n\n“¿Estás segura?”, soltó él. “De él”, contestó Alondra, y apuntó a Ulises antes de pensarlo. Mejor dicho: antes de tolerar la idea de decirlo en voz alta.\n\nDuró poco. Alcohol, pétalos y unas palabras humildes a nombre de Ulises. “Ya no es tuyo”, avisó él, sin burla. Alondra renunció a la pieza sin decirlo. Al salir, él la llevaba en el bolsillo con una ternura que a ella le pesó.",
+    "vocab": [
+      {
+        "word": "carpa",
+        "surface": "carpa",
+        "type": "noun",
+        "definition": "a large cloth tent put up outdoors for a market"
+      },
+      {
+        "word": "serpentina",
+        "surface": "serpentina",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "paper streamer thrown over a new thing to bless it"
+      },
+      {
+        "word": "mistura",
+        "surface": "mistura",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "mix of coloured confetti thrown in an Andean blessing"
+      },
+      {
+        "word": "discreto",
+        "surface": "discreto",
+        "type": "adjective",
+        "definition": "quiet about himself, never making a scene in public"
+      },
+      {
+        "word": "puede que",
+        "surface": "Puede que",
+        "type": "expression",
+        "definition": "it is possible, though nobody can be sure yet"
+      },
+      {
+        "word": "challar",
+        "surface": "challe",
+        "type": "verb",
+        "register": "cultural",
+        "definition": "to bless a new object with alcohol, petals and confetti"
+      },
+      {
+        "word": "se trata de",
+        "surface": "Se trata del",
+        "type": "expression",
+        "definition": "the real subject here is this one, and not that one"
+      },
+      {
+        "word": "negarse",
+        "surface": "se negó",
+        "type": "verb",
+        "definition": "to refuse to do or to accept what is being asked"
+      },
+      {
+        "word": "molesto",
+        "surface": "molesta",
+        "type": "adjective",
+        "definition": "bothered and a little angry about what just happened"
+      },
+      {
+        "word": "creencia",
+        "surface": "creencia",
+        "type": "noun",
+        "definition": "something a person holds as true without needing any proof"
+      },
+      {
+        "word": "suponer",
+        "surface": "Supuso",
+        "type": "verb",
+        "definition": "to take something as true before you actually check it"
+      },
+      {
+        "word": "yatiri",
+        "surface": "yatiri",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "Aymara ritual specialist, the only one who may bless miniatures"
+      },
+      {
+        "word": "prudente",
+        "surface": "Prudente",
+        "type": "adjective",
+        "definition": "careful, taking her time before she says anything"
+      },
+      {
+        "word": "privilegio",
+        "surface": "privilegio",
+        "type": "noun",
+        "definition": "a right or favour that is not given to everybody"
+      },
+      {
+        "word": "apuntar",
+        "surface": "apuntó",
+        "type": "verb",
+        "definition": "to point at somebody or something with your finger"
+      },
+      {
+        "word": "mejor dicho",
+        "surface": "Mejor dicho",
+        "type": "expression",
+        "definition": "a phrase that corrects what the speaker has just said"
+      },
+      {
+        "word": "tolerar",
+        "surface": "tolerar",
+        "type": "verb",
+        "definition": "to put up with something that you do not like"
+      },
+      {
+        "word": "humilde",
+        "surface": "humildes",
+        "type": "adjective",
+        "definition": "modest and small, without any show of importance"
+      },
+      {
+        "word": "renunciar",
+        "surface": "renunció",
+        "type": "verb",
+        "definition": "to give up a thing you wanted and stop claiming it"
+      },
+      {
+        "word": "ternura",
+        "surface": "ternura",
+        "type": "noun",
+        "definition": "a soft warm feeling towards somebody you care about"
+      }
+    ]
+  },
+  {
+    "topic": "wishes-and-bargaining",
+    "slotIndex": 3,
+    "title": "El tari guarda un nombre",
+    "slug": "el-tari-guarda-un-nombre",
+    "arcType": "late-reveal",
+    "synopsis": "Con la primera pieza ya perdida, a Alondra le queda media tarde para conseguir otra igual antes de que se acabe el veinticuatro de enero. Camina la feria entera dos veces y lo que encuentra es siempre lo mismo, copias salidas del mismo molde y vendidas sin ninguna verguenza. La solucion que se lleva a casa no es una pieza, y tarda un rato largo en darse cuenta de que vale bastante mas.",
+    "text": "La feria cerraba a las seis y Alondra la caminó dos veces sin contestarle a Ulises. Todo lo que quedaba era artificial: figuritas que no se distinguían entre sí, salidas del mismo molde, con la misma sonrisa pintada. Olía a plástico.\n\n“Esto es una imitación, y usted lo sabe igual que yo”, le dijo a un vendedor. “No, caserito, es una réplica, y se vende igual. Usted verá”, contestó él, con una calma que le dio hasta admiración.\n\nCompró una, modesta, sabiendo que no valía. Un obstáculo así no se resiste discutiendo: se paga y se sigue. “Me traje el nombre del hombre que talló la primera”, le dijo por fin a Ulises. “Esa sí era de verdad. Lo demás es copia de copia.”\n\nBuscaba un objeto genuino, y lo genuino era el tallador. Registró el nombre detrás del papel del vendedor y lo guardó dentro del tari.\n\nNo era una recompensa ni un logro. Era, sin duda, lo primero del día que le servía.",
+    "vocab": [
+      {
+        "word": "artificial",
+        "surface": "artificial",
+        "type": "adjective",
+        "definition": "made by a machine to look like the real thing"
+      },
+      {
+        "word": "molde",
+        "surface": "molde",
+        "type": "noun",
+        "definition": "hollow shape used to make many copies of one object"
+      },
+      {
+        "word": "pintado",
+        "surface": "pintada",
+        "type": "adjective",
+        "definition": "covered with colour that was put on with a brush"
+      },
+      {
+        "word": "imitación",
+        "surface": "imitación",
+        "type": "noun",
+        "definition": "a copy made to pass for something better than it is"
+      },
+      {
+        "word": "vendedor",
+        "surface": "vendedor",
+        "type": "noun",
+        "definition": "a person whose work is selling things to the public"
+      },
+      {
+        "word": "caserito",
+        "surface": "caserito",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "friendly word Andean sellers and buyers use for each other"
+      },
+      {
+        "word": "réplica",
+        "surface": "réplica",
+        "type": "noun",
+        "definition": "a copy that is sold openly as a copy, not hidden"
+      },
+      {
+        "word": "admiración",
+        "surface": "admiración",
+        "type": "noun",
+        "definition": "respect you feel for how well somebody does something"
+      },
+      {
+        "word": "modesto",
+        "surface": "modesta",
+        "type": "adjective",
+        "definition": "plain and cheap, without anything special about it"
+      },
+      {
+        "word": "obstáculo",
+        "surface": "obstáculo",
+        "type": "noun",
+        "definition": "something in the way that stops you getting ahead"
+      },
+      {
+        "word": "resistir",
+        "surface": "resiste",
+        "type": "verb",
+        "definition": "to push back against something instead of giving in"
+      },
+      {
+        "word": "genuino",
+        "surface": "genuino",
+        "type": "adjective",
+        "definition": "real and honest, exactly what it says it is"
+      },
+      {
+        "word": "tallar",
+        "surface": "talló",
+        "type": "verb",
+        "register": "cultural",
+        "definition": "to cut a shape out of wood or stone by hand"
+      },
+      {
+        "word": "registrar",
+        "surface": "Registró",
+        "type": "verb",
+        "definition": "to write something down so that it is not lost"
+      },
+      {
+        "word": "distinguir",
+        "surface": "distinguían",
+        "type": "verb",
+        "definition": "to see the difference between two things that look alike"
+      },
+      {
+        "word": "tari",
+        "surface": "tari",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "small square Andean cloth used to wrap blessed miniatures"
+      },
+      {
+        "word": "recompensa",
+        "surface": "recompensa",
+        "type": "noun",
+        "definition": "something good you get back for what you did"
+      },
+      {
+        "word": "logro",
+        "surface": "logro",
+        "type": "noun",
+        "definition": "a thing you managed to achieve after real effort"
+      },
+      {
+        "word": "sin duda",
+        "surface": "sin duda",
+        "type": "expression",
+        "definition": "with no doubt at all about it being so"
+      },
+      {
+        "word": "de verdad",
+        "surface": "de verdad",
+        "type": "expression",
+        "definition": "really, and not only in appearance or in words"
+      }
+    ]
+  }
+]
