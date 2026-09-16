@@ -6041,6 +6041,112 @@
       ]
     }
   },
+  "cmu410zep000732szrw94t2sl#weight-and-endurance": {
+    "cerrado": "2026-09-16T12:50:34.001Z",
+    "hash": "1efbed684ac89d64",
+    "historias": [
+      "weight-and-endurance#1 la-silleta-dura-un-dia",
+      "weight-and-endurance#2 nadie-carga-sin-dos-anos",
+      "weight-and-endurance#3 lo-que-queda-es-el-armazon"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"de cuerpo y de cuentas: kilos, centimetros, anos de oficio; frases cortas cuando algo pesa y largas cuando alguien explica\", espina \"Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto en el mercado de La Paz, y cada pieza esta hecha para no durar. La cuarta son flores cortadas esa manana: dura un dia, y lo unico que sobrevive es la madera de abajo.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dijo\" 27%)",
+      "arranques de parrafo variados (mas repetido \"una\", 13%)",
+      "gate de conjunto sobre el tema: 11/19 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 12 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.08 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 57/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 35/60 plazas por encima de A1/A2 (58%, suelo 60%) · referencias medidas: C1 publicados 70% y 81%, B2 latam 67% · de nivel: clavel, silleta, invernadero, variedad, tallo, preparación, desventaja, perjuicio",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: weight-and-endurance (Alondra, Brenda)"
+    ],
+    "plan": {
+      "tipo": "Cultural",
+      "nivel": "b1",
+      "variante": "LATAM",
+      "registro": "de cuerpo y de cuentas: kilos, centimetros, anos de oficio; frases cortas cuando algo pesa y largas cuando alguien explica",
+      "espina": "Alondra tiene que llevar siete piezas de siete fiestas para conservar su puesto en el mercado de La Paz, y cada pieza esta hecha para no durar. La cuarta son flores cortadas esa manana: dura un dia, y lo unico que sobrevive es la madera de abajo.",
+      "recursos": "contraste entre lo que se ve y lo que pesa, regla dicha por quien la carga, numeros concretos como argumento, cierre en objeto y en voz ajena; nada figurado por encima de B1",
+      "escalera_reservada": {
+        "objetivo": "cola acumulada 65% o menos al cerrar el tema; 25 superficies EXACTAS de los temas 1, 2 y 3 vuelven en el cuerpo",
+        "historia_1": [
+          "propuesta",
+          "tamaño",
+          "cargado",
+          "herencia",
+          "experto",
+          "oportunidad",
+          "constante",
+          "obstáculo"
+        ],
+        "historia_2": [
+          "disciplina",
+          "riesgo",
+          "técnica",
+          "hábil",
+          "tenaz",
+          "colgó",
+          "cuerda",
+          "piel",
+          "pegó"
+        ],
+        "historia_3": [
+          "resultado",
+          "sacrificio",
+          "ventaja",
+          "entero",
+          "práctico",
+          "lealtad",
+          "jerarquía",
+          "miembro"
+        ],
+        "por_que": "Mismo metodo que dio 71,7% en el tema 3: las superficies entran en el esqueleto y la prosa se escribe alrededor. Ademas, doce plazas propias del tema (silleta, silletero, armazon, cargadera, ladera, finca, lesion, resistencia, tecnica, limite, fatiga, soportar) vuelven en otra historia del mismo tema."
+      },
+      "aperturas": {
+        "por_que": "journey-opening-shape clasifica por la PRIMERA PALABRA en buckets y con 12 historias el tope es 4. Hoy van: nombre desnudo 3, lugar o tiempo 3, articulo definido 2, cantidad 1. Se eligen tres buckets vacios o casi, para no chocar a mitad de guardado.",
+        "historia_1": "articulo indefinido (Una)",
+        "historia_2": "subordinada delante (Cuando)",
+        "historia_3": "cantidad o pronombre (Dos)"
+      },
+      "cierres": "Ninguna cierra con Alondra mas un gesto y lo que siente. La 1 cierra en el objeto vacio, la 2 sobre Ulises y la 3 en linea citada de Brenda.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "comprar una silleta armada y llevarsela, como cuarta de las siete piezas",
+          "impide": "las flores se cortan esa misma manana y la silleta entera vive un dia",
+          "cuesta": "paga las flores de una silleta que nunca va a ser suya",
+          "cambia": "descubre que debajo de las flores hay una madera que si dura",
+          "emocion": "impaciencia que se convierte en curiosidad; el gesto es agacharse a mirar el armazon en vez de las flores"
+        },
+        {
+          "slot": "2",
+          "quiere": "cargar una silleta para entender por que no se vende",
+          "impide": "el peso, y que cargar se aprende de anos, no de una tarde",
+          "cuesta": "se lesiona la espalda y no va a poder cargar cajas en dos meses, que es de lo que vive su puesto",
+          "cambia": "entiende que lo que compra un cliente no es el objeto sino los anos que hay debajo",
+          "emocion": "orgullo herido tapado con tecnica; el gesto es no soltar la cargadera delante de Brenda"
+        },
+        {
+          "slot": "3",
+          "quiere": "acompanar el desfile y llevarse algo al final",
+          "impide": "no puede cargar, y al terminar el desfile la silleta se deshace esa misma noche",
+          "cuesta": "camina el desfile entero al lado, sin cargar, delante de todo el mundo",
+          "cambia": "Brenda le da el armazon viejo, que es lo unico del oficio que pasa de una persona a otra",
+          "emocion": "alivio con verguenza debajo; el gesto es cargar el armazon vacio, que si puede"
+        }
+      ]
+    }
+  },
   "cmu410zep000732szrw94t2sl#wishes-and-bargaining": {
     "cerrado": "2026-09-16T11:51:58.539Z",
     "hash": "0cffc03d874e24e7",

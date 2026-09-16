@@ -1,0 +1,407 @@
+[
+  {
+    "topic": "weight-and-endurance",
+    "slotIndex": 1,
+    "title": "La silleta dura un día",
+    "slug": "la-silleta-dura-un-dia",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "Alondra sube a Santa Elena con la cuarta de sus siete piezas ya decidida en la cabeza, y con Ulises detras cargando las cajas vacias. Lo que encuentra en la finca no es un taller sino un invernadero, y una mujer que corta las flores esa misma manana porque manana ya no sirven. La propuesta que trae se le deshace en la mano antes de terminar de decirla.",
+    "text": "Una ladera olía a clavel cortado cuando llegó Alondra. Brenda es silletera de Santa Elena y armaba la silleta sobre una esterilla.\n\n“Te compro esta, del tamaño que sea”, fue la propuesta de Alondra. “Mañana ya está muerta”, contestó Brenda sin levantarse. “Se cortan hoy y hoy se arman. Quince variedades, y el tallo manda. Lo que compra la gente no es la flor.”\n\n“¿Y entonces qué es?”, preguntó Alondra.\n\nEn el invernadero de la finca un experto lo nota. El tallo cargado de agua dura; el frágil no.\n\nLa preparación empieza en la semilla. Ulises calculó la desventaja de esa oportunidad y no le gustó.\n\nPagó igual las flores de una pieza ajena, sin perjuicio para nadie. “La herencia no son las flores”, dijo Brenda. Le dio la vuelta al montaje.\n\nDebajo había un armazón de madera con patas cortas, gastado, constante como un obstáculo. Ese es el entorno del oficio. Se agachó a mirar ese armazón y ya no miró las flores.",
+    "vocab": [
+      {
+        "word": "ladera",
+        "surface": "ladera",
+        "type": "noun",
+        "definition": "the sloping side of a hill or of a mountain"
+      },
+      {
+        "word": "clavel",
+        "surface": "clavel",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "a strong small flower grown for these Andean parades"
+      },
+      {
+        "word": "silleta",
+        "surface": "silleta",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "a wooden back frame covered with flowers for the parade"
+      },
+      {
+        "word": "esterilla",
+        "surface": "esterilla",
+        "type": "noun",
+        "definition": "a thin mat you lay on the ground to work on"
+      },
+      {
+        "word": "invernadero",
+        "surface": "invernadero",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "a glass or plastic house where flowers are grown"
+      },
+      {
+        "word": "finca",
+        "surface": "finca",
+        "type": "noun",
+        "definition": "a piece of land in the country with a house on it"
+      },
+      {
+        "word": "variedad",
+        "surface": "variedades",
+        "type": "noun",
+        "definition": "one of the different kinds inside the same group"
+      },
+      {
+        "word": "tallo",
+        "surface": "tallo",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the green stem that holds a flower up"
+      },
+      {
+        "word": "frágil",
+        "surface": "frágil",
+        "type": "adjective",
+        "definition": "breaking easily, so you have to handle it softly"
+      },
+      {
+        "word": "preparación",
+        "surface": "preparación",
+        "type": "noun",
+        "definition": "all the work you do before the real thing starts"
+      },
+      {
+        "word": "semilla",
+        "surface": "semilla",
+        "type": "noun",
+        "definition": "the small hard thing a plant grows out of"
+      },
+      {
+        "word": "desventaja",
+        "surface": "desventaja",
+        "type": "noun",
+        "definition": "the bad side that one choice has against another"
+      },
+      {
+        "word": "perjuicio",
+        "surface": "perjuicio",
+        "type": "noun",
+        "definition": "the harm that a thing does to somebody else"
+      },
+      {
+        "word": "armazón",
+        "surface": "armazón",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the bare wooden frame that carries the whole load"
+      },
+      {
+        "word": "pata",
+        "surface": "patas",
+        "type": "noun",
+        "definition": "one of the legs a thing stands on when set down"
+      },
+      {
+        "word": "montaje",
+        "surface": "montaje",
+        "type": "noun",
+        "definition": "the way the parts of a thing are put together"
+      },
+      {
+        "word": "entorno",
+        "surface": "entorno",
+        "type": "noun",
+        "definition": "everything that is around a person or a thing"
+      },
+      {
+        "word": "agacharse",
+        "surface": "se agachó",
+        "type": "verb",
+        "definition": "to bend your body down towards the ground"
+      },
+      {
+        "word": "ajeno",
+        "surface": "ajena",
+        "type": "adjective",
+        "definition": "belonging to somebody else and not to you"
+      },
+      {
+        "word": "dar la vuelta",
+        "surface": "le dio la vuelta",
+        "type": "expression",
+        "definition": "to turn a thing over so the other side shows"
+      }
+    ]
+  },
+  {
+    "topic": "weight-and-endurance",
+    "slotIndex": 2,
+    "title": "Nadie carga sin dos años",
+    "slug": "nadie-carga-sin-dos-anos",
+    "arcType": "reframe-turn",
+    "synopsis": "Si la silleta no se vende, a Alondra le queda entender por que, y para eso se le ocurre cargar una. Brenda le presta la cargadera y le explica la unica tecnica que hay, que es no confiar en la espalda. Lo que Alondra averigua esa tarde le cuesta los dos meses siguientes de su propio puesto, en un mercado que queda a tres mil kilometros.",
+    "text": "Cuando Alondra pidió cargar la silleta, Brenda no se rio.\n\n“Una monumental pesa entre noventa y ciento veinte”, avisó. “Esta es tradicional y pesa menos. No la vas a levantar sola.”\n\nLe colgó la cargadera y le pasó la cuerda por la frente. Apretaba caliente. “La técnica es de piernas”, dijo Brenda. “El armazón sólido soporta; la piel de la espalda no aguantaría.”\n\n“Dos años”, repitió. “Nadie carga sin dos años.” La resistencia y la nuca se hacen igual. La fatiga llega mucho antes que el límite.\n\nLa levantó veinte pasos, hábil y tenaz, con su disciplina. Fue imprudente: enfrentar ese riesgo una tarde, como si el cuerpo se acostumbrara solo.\n\nAlgo le pegó por dentro a la altura de la cintura. Tuvo que soltar. El impacto no dejó evidencia. Fue una lesión de las que no se ven.\n\nDos meses sin cargar cajas, y su puesto vive de eso. La frustración duró la bajada. Ulises llevó las cajas callado.",
+    "vocab": [
+      {
+        "word": "cargadera",
+        "surface": "cargadera",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the wide strap that holds the frame on your back"
+      },
+      {
+        "word": "monumental",
+        "surface": "monumental",
+        "type": "adjective",
+        "register": "cultural",
+        "definition": "the biggest kind of silleta, judged by size and weight"
+      },
+      {
+        "word": "tradicional",
+        "surface": "tradicional",
+        "type": "adjective",
+        "register": "cultural",
+        "definition": "the oldest kind of silleta, small and full of garden flowers"
+      },
+      {
+        "word": "nuca",
+        "surface": "nuca",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the back of the neck, where the strap rests"
+      },
+      {
+        "word": "acostumbrarse",
+        "surface": "se acostumbra",
+        "type": "verb",
+        "definition": "to get used to a thing until it stops hurting you"
+      },
+      {
+        "word": "apretar",
+        "surface": "apretaba",
+        "type": "verb",
+        "definition": "to press hard against a thing and hold it tight"
+      },
+      {
+        "word": "sólido",
+        "surface": "sólido",
+        "type": "adjective",
+        "definition": "firm and strong, not moving or breaking under weight"
+      },
+      {
+        "word": "soportar",
+        "surface": "soporta",
+        "type": "verb",
+        "definition": "to hold a weight up without giving way at all"
+      },
+      {
+        "word": "resistencia",
+        "surface": "resistencia",
+        "type": "noun",
+        "definition": "how long a body can keep going under a load"
+      },
+      {
+        "word": "fatiga",
+        "surface": "fatiga",
+        "type": "noun",
+        "definition": "the heavy tiredness that comes after hard work"
+      },
+      {
+        "word": "límite",
+        "surface": "límite",
+        "type": "noun",
+        "definition": "the point where a person or a thing cannot go further"
+      },
+      {
+        "word": "imprudente",
+        "surface": "imprudente",
+        "type": "adjective",
+        "definition": "taking a risk that a careful person would not take"
+      },
+      {
+        "word": "enfrentar",
+        "surface": "enfrentar",
+        "type": "verb",
+        "definition": "to go towards a hard thing instead of away from it"
+      },
+      {
+        "word": "cintura",
+        "surface": "cintura",
+        "type": "noun",
+        "definition": "the narrow part of the body above the hips"
+      },
+      {
+        "word": "impacto",
+        "surface": "impacto",
+        "type": "noun",
+        "definition": "the effect a sudden blow or event leaves behind"
+      },
+      {
+        "word": "evidencia",
+        "surface": "evidencia",
+        "type": "noun",
+        "definition": "the facts that show that something is really true"
+      },
+      {
+        "word": "lesión",
+        "surface": "lesión",
+        "type": "noun",
+        "definition": "damage done to a part of your own body"
+      },
+      {
+        "word": "frustración",
+        "surface": "frustración",
+        "type": "noun",
+        "definition": "the anger of wanting a thing and not managing it"
+      },
+      {
+        "word": "bajada",
+        "surface": "bajada",
+        "type": "noun",
+        "definition": "the walk down from a higher place to a lower one"
+      },
+      {
+        "word": "de las que no se ven",
+        "surface": "de las que no se ven",
+        "type": "expression",
+        "definition": "of the kind that leaves no mark on the outside"
+      }
+    ]
+  },
+  {
+    "topic": "weight-and-endurance",
+    "slotIndex": 3,
+    "title": "Lo que queda es el armazón",
+    "slug": "lo-que-queda-es-el-armazon",
+    "arcType": "late-reveal",
+    "synopsis": "La cuarta pieza no se compra y Alondra tarda el desfile entero en entender por que. Camina al lado de Brenda con la espalda inutil y las manos vacias delante de media ciudad, viendo cargar a gente que lleva cuarenta anos haciendolo. Esa noche las flores se tiran y la madera se lava, y lo que le ofrecen al final no es un objeto barato sino un encargo que tendra que cumplir sin que nadie lo compruebe.",
+    "text": "Dos mil silleteros salieron con la luz. Alondra caminó por la ladera con las manos vacías.\n\nEl desfile tiene jerarquía: adelante los mayores, detrás los nuevos. Ser miembro se hereda. La lealtad se mide en desfiles.\n\nBrenda cargó la silleta dos horas sin soltar. El resultado se veía: el sacrificio no era el peso, era no parar. Persistir tiene un beneficio que no se cobra.\n\n“¿Y mañana?”, preguntó Alondra. “Mañana se tira todo, no queda ni una”, contestó Brenda. “La madera se lava y se guarda. Eso permite empezar.”\n\nEsa noche las flores acabaron marchitas en la era.\n\nSu influencia no venía del premio, sino de cuarenta agostos seguidos.\n\n“Llévate ese”, dijo, y señaló el armazón viejo de la pared. “Ya no lo uso. Tiene cuarenta desfiles encima.”\n\nAlondra lo cargó sin ventaja, vacío, resistente y entero. Menos resentida de lo que esperaba, casi ilusionada, y era lo único práctico.\n\n“Una cosa más”, agregó, sin compasión. “Cuando pregunten por la silleta, cuentas de quién era.”",
+    "vocab": [
+      {
+        "word": "silletero",
+        "surface": "silleteros",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "a person who carries a flower frame in the parade"
+      },
+      {
+        "word": "heredar",
+        "surface": "hereda",
+        "type": "verb",
+        "definition": "to get a thing or a place from the family before you"
+      },
+      {
+        "word": "marchito",
+        "surface": "marchitas",
+        "type": "adjective",
+        "register": "cultural",
+        "definition": "dried out and drooping, said of flowers already cut"
+      },
+      {
+        "word": "resentido",
+        "surface": "resentida",
+        "type": "adjective",
+        "register": "",
+        "definition": "still angry about a thing that was done to you"
+      },
+      {
+        "word": "señalar",
+        "surface": "señaló",
+        "type": "verb",
+        "definition": "to show where a thing is with your hand or finger"
+      },
+      {
+        "word": "persistir",
+        "surface": "Persistir",
+        "type": "verb",
+        "definition": "to keep going when stopping would be much easier"
+      },
+      {
+        "word": "beneficio",
+        "surface": "beneficio",
+        "type": "noun",
+        "definition": "the good that a person gets out of a thing"
+      },
+      {
+        "word": "influencia",
+        "surface": "influencia",
+        "type": "noun",
+        "definition": "the power to change how other people act or think"
+      },
+      {
+        "word": "compasión",
+        "surface": "compasión",
+        "type": "noun",
+        "definition": "the feeling of being sorry for somebody who suffers"
+      },
+      {
+        "word": "resistente",
+        "surface": "resistente",
+        "type": "adjective",
+        "definition": "made to last under use without breaking down"
+      },
+      {
+        "word": "permitir",
+        "surface": "permite",
+        "type": "verb",
+        "definition": "to let a thing happen instead of stopping it"
+      },
+      {
+        "word": "premio",
+        "surface": "premio",
+        "type": "noun",
+        "definition": "what the winner of a contest is given at the end"
+      },
+      {
+        "word": "lavar",
+        "surface": "lava",
+        "type": "verb",
+        "definition": "to clean a thing by putting water on it"
+      },
+      {
+        "word": "guardar",
+        "surface": "guarda",
+        "type": "verb",
+        "definition": "to put a thing away in a safe place for later"
+      },
+      {
+        "word": "tirar",
+        "surface": "tira",
+        "type": "verb",
+        "definition": "to throw a thing away because it is no use"
+      },
+      {
+        "word": "agosto",
+        "surface": "agostos",
+        "type": "noun",
+        "definition": "the eighth month, when this parade takes place"
+      },
+      {
+        "word": "ilusionado",
+        "surface": "ilusionada",
+        "type": "adjective",
+        "definition": "quietly hopeful about a thing that may still come"
+      },
+      {
+        "word": "mayor",
+        "surface": "mayores",
+        "type": "noun",
+        "definition": "the ones who have been doing this the longest"
+      },
+      {
+        "word": "parar",
+        "surface": "parar",
+        "type": "verb",
+        "definition": "to stop moving or stop doing what you were doing"
+      },
+      {
+        "word": "cuarenta desfiles encima",
+        "surface": "cuarenta desfiles encima",
+        "type": "expression",
+        "definition": "having been used in that many parades already"
+      }
+    ]
+  }
+]
