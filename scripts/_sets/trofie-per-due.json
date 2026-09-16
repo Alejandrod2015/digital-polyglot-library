@@ -1,0 +1,452 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "le trofie,la bottiglia d'acqua,la barba,il vassoio",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "le trofie",
+          "answer": "trofie pasta",
+          "options": [
+            "trofie pasta",
+            "a bottle of water",
+            "a beard",
+            "a tray"
+          ]
+        },
+        {
+          "word": "la bottiglia d'acqua",
+          "answer": "a bottle of water",
+          "options": [
+            "trofie pasta",
+            "a bottle of water",
+            "a beard",
+            "a tray"
+          ]
+        },
+        {
+          "word": "la barba",
+          "answer": "a beard",
+          "options": [
+            "trofie pasta",
+            "a bottle of water",
+            "a beard",
+            "a tray"
+          ]
+        },
+        {
+          "word": "il vassoio",
+          "answer": "a tray",
+          "options": [
+            "trofie pasta",
+            "a bottle of water",
+            "a beard",
+            "a tray"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "stanco",
+    "sentence": "Entra in terrazza, [[stanco]].",
+    "payload": {
+      "answer": "tired",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "tired",
+        "happy",
+        "hungry",
+        "cold"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Entra in terrazza, stanco.",
+        "storySlug": "trofie-per-due",
+        "targetWord": "stanco",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/17b4cf9e03d293f9.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "che profumo",
+    "sentence": "[[Che profumo]]! Chi fa il pesto?",
+    "payload": {
+      "answer": "what a lovely smell",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "what a lovely smell",
+        "what a mess",
+        "what a pity",
+        "what a surprise"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Che profumo! Chi fa il pesto?",
+        "storySlug": "trofie-per-due",
+        "targetWord": "Che profumo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a1e4fc0aeca3d3a0.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lentamente",
+    "sentence": "Mangia [[lentamente]] e chiude gli occhi.",
+    "payload": {
+      "answer": "slowly",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "slowly",
+        "quickly",
+        "loudly",
+        "badly"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Mangia lentamente e chiude gli occhi.",
+        "storySlug": "trofie-per-due",
+        "targetWord": "lentamente",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/151d4269b1008d81.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chiudere gli occhi",
+    "sentence": "Mangia lentamente e [[chiude gli occhi]].",
+    "payload": {
+      "answer": "to close your eyes",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to close your eyes",
+        "to open your mouth",
+        "to shake your head",
+        "to raise your hand"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Mangia lentamente e chiude gli occhi.",
+        "storySlug": "trofie-per-due",
+        "targetWord": "chiude gli occhi",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/151d4269b1008d81.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "buono",
+    "sentence": "Il pesto è molto [[buono]].",
+    "payload": {
+      "answer": "good (to eat)",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "good (to eat)",
+        "bad",
+        "cold",
+        "spicy"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Il pesto è molto buono.",
+        "storySlug": "trofie-per-due",
+        "targetWord": "buono",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36db6f1cf0c55205.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lo stomaco chiuso",
+    "sentence": "Ha [[lo stomaco chiuso]] per il dispiacere.",
+    "payload": {
+      "answer": "a closed, upset stomach",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a closed, upset stomach",
+        "a big smile",
+        "a warm heart",
+        "a light head"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Ha lo stomaco chiuso per il dispiacere.",
+        "storySlug": "trofie-per-due",
+        "targetWord": "stomaco chiuso",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cf0ce386f6302bd7.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "accanto",
+    "sentence": "Posa i pezzi [[accanto]] ai piatti.",
+    "payload": {
+      "answer": "next to",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "next to",
+        "far from",
+        "above",
+        "under"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Posa i pezzi accanto ai piatti.",
+        "storySlug": "trofie-per-due",
+        "targetWord": "accanto",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6f6fe119d688aed6.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a lungo",
+    "sentence": "Guarda i due pezzi [[a lungo]].",
+    "payload": {
+      "answer": "for a long time",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "for a long time",
+        "for one second",
+        "once a year",
+        "from far away"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Guarda i due pezzi a lungo.",
+        "storySlug": "trofie-per-due",
+        "targetWord": "a lungo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5aebe4b0625248cf.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "non importa",
+    "sentence": "[[Non importa]], dice lui piano.",
+    "payload": {
+      "answer": "it doesn't matter",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "it doesn't matter",
+        "it's terrible",
+        "it's my fault",
+        "it's a secret"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Non importa, dice lui piano.",
+        "storySlug": "trofie-per-due",
+        "targetWord": "Non importa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f5d17dd382029099.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la lacrima",
+    "sentence": "Asciuga una [[lacrima]] dal viso.",
+    "payload": {
+      "answer": "a tear",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a tear",
+        "a stain",
+        "a scratch",
+        "a bruise"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Asciuga una lacrima dal viso.",
+        "storySlug": "trofie-per-due",
+        "targetWord": "lacrima",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "il piatto",
+    "sentence": "Davanti a lei ci sono due [[piatti]] di trofie.",
+    "payload": {
+      "answer": "plates",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "plates",
+        "glasses",
+        "spoons",
+        "napkins"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Davanti a lei ci sono due piatti di trofie.",
+        "storySlug": "trofie-per-due",
+        "targetWord": "piatti",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "l'appetito",
+    "sentence": "Ha un grande [[appetito]] da marinaio.",
+    "payload": {
+      "answer": "appetite",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "appetite",
+        "a big secret",
+        "a bad memory",
+        "a strong voice"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Ha un grande appetito da marinaio.",
+        "storySlug": "trofie-per-due",
+        "targetWord": "appetito",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "appena",
+    "sentence": "Sorride [[appena]], ma è triste.",
+    "payload": {
+      "answer": "only just",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "only just",
+        "constantly",
+        "loudly",
+        "angrily"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Sorride appena, ma è triste.",
+        "storySlug": "trofie-per-due",
+        "targetWord": "appena",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sospira",
+    "sentence": "È stanco del lavoro e _____ forte.",
+    "payload": {
+      "answer": "sospira",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "sospira",
+        "canta",
+        "ride",
+        "grida"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "È stanco del lavoro e sospira forte.",
+        "storySlug": "trofie-per-due",
+        "targetWord": "sospira",
+        "storySource": "user"
+      },
+      "translation": "He's tired of work, and he _____ deeply.",
+      "optionTranslations": [
+        "sighs",
+        "sings",
+        "laughs",
+        "shouts"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "asciuga",
+    "sentence": "Ha le mani bagnate e le _____ con un asciugamano.",
+    "payload": {
+      "answer": "asciuga",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "asciuga",
+        "lava",
+        "sporca",
+        "taglia"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Ha le mani bagnate e le asciuga con un asciugamano.",
+        "storySlug": "trofie-per-due",
+        "targetWord": "asciuga",
+        "storySource": "user"
+      },
+      "translation": "His hands are wet, and he _____ them with a towel.",
+      "optionTranslations": [
+        "dries",
+        "washes",
+        "dirties",
+        "cuts"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "riempie",
+    "sentence": "Ha sete e _____ il bicchiere d'acqua.",
+    "payload": {
+      "answer": "riempie",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "riempie",
+        "svuota",
+        "rompe",
+        "lava"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Ha sete e riempie il bicchiere d'acqua.",
+        "storySlug": "trofie-per-due",
+        "targetWord": "riempie",
+        "storySource": "user"
+      },
+      "translation": "He's thirsty and _____ the glass with water.",
+      "optionTranslations": [
+        "fills",
+        "empties",
+        "breaks",
+        "washes"
+      ]
+    },
+    "featured": false
+  }
+]

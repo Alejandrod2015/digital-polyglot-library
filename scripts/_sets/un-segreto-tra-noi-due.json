@@ -1,0 +1,475 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "il fidanzato,la torcia,un giorno,la prima volta",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "il fidanzato",
+          "answer": "a boyfriend",
+          "options": [
+            "a boyfriend",
+            "a torch",
+            "one day",
+            "the first time"
+          ]
+        },
+        {
+          "word": "la torcia",
+          "answer": "a torch",
+          "options": [
+            "a boyfriend",
+            "a torch",
+            "one day",
+            "the first time"
+          ]
+        },
+        {
+          "word": "un giorno",
+          "answer": "one day",
+          "options": [
+            "a boyfriend",
+            "a torch",
+            "one day",
+            "the first time"
+          ]
+        },
+        {
+          "word": "la prima volta",
+          "answer": "the first time",
+          "options": [
+            "a boyfriend",
+            "a torch",
+            "one day",
+            "the first time"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "è tutto buio",
+    "sentence": "[[È tutto buio]] nell'ascensore.",
+    "payload": {
+      "answer": "it's all dark",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "it's all dark",
+        "it's very bright",
+        "it's very hot",
+        "it's very quiet"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "È tutto buio nell'ascensore.",
+        "storySlug": "un-segreto-tra-noi-due",
+        "targetWord": "È tutto buio",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0b3303cf1896c040.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fino a dieci",
+    "sentence": "Respira forte e conta [[fino a dieci]].",
+    "payload": {
+      "answer": "up to ten",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "up to ten",
+        "for one minute",
+        "until midnight",
+        "twice"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Respira forte e conta fino a dieci.",
+        "storySlug": "un-segreto-tra-noi-due",
+        "targetWord": "fino a dieci",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6be26a0727609d87.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tranquillo",
+    "sentence": "[[Tranquilla]], il palazzo è forte.",
+    "payload": {
+      "answer": "calm",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "calm",
+        "hurry up",
+        "be quiet",
+        "wake up"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Tranquilla, il palazzo è forte.",
+        "storySlug": "un-segreto-tra-noi-due",
+        "targetWord": "Tranquilla",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9462ac17cd5b669a.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "spesso",
+    "sentence": "La vede [[spesso]] con un amico.",
+    "payload": {
+      "answer": "often",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "often",
+        "never",
+        "rarely",
+        "once"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "La vede spesso con un amico.",
+        "storySlug": "un-segreto-tra-noi-due",
+        "targetWord": "spesso",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5b735bf077da9efb.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amare",
+    "sentence": "Io [[amo]] questa persona da anni.",
+    "payload": {
+      "answer": "to love",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to love",
+        "to forget",
+        "to fear",
+        "to doubt"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Io amo questa persona da anni.",
+        "storySlug": "un-segreto-tra-noi-due",
+        "targetWord": "amo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/805760ea15847b2b.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sapere",
+    "sentence": "Lui non lo [[sa]] ancora.",
+    "payload": {
+      "answer": "to know",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to know",
+        "to want",
+        "to hope",
+        "to forget"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Lui non lo sa ancora.",
+        "storySlug": "un-segreto-tra-noi-due",
+        "targetWord": "sa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/37bf39e94af3799c.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ad alta voce",
+    "sentence": "Parla [[ad alta voce]], sincera.",
+    "payload": {
+      "answer": "out loud",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "out loud",
+        "in a whisper",
+        "in silence",
+        "with a smile"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Parla ad alta voce, sincera.",
+        "storySlug": "un-segreto-tra-noi-due",
+        "targetWord": "ad alta voce",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cbfa3a8b6f2bbabe.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tra noi due",
+    "sentence": "È un segreto [[tra noi due]].",
+    "payload": {
+      "answer": "between the two of us",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "between the two of us",
+        "known by everyone",
+        "written in a letter",
+        "told to a friend"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "È un segreto tra noi due.",
+        "storySlug": "un-segreto-tra-noi-due",
+        "targetWord": "tra noi due",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/29754216aaf7406e.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mai",
+    "sentence": "Lo dici a lui, oppure [[mai]].",
+    "payload": {
+      "answer": "never",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "never",
+        "today",
+        "always",
+        "soon"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Lo dici a lui, oppure mai.",
+        "storySlug": "un-segreto-tra-noi-due",
+        "targetWord": "mai",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6906b710a907b9fe.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le guance calde",
+    "sentence": "Esce dall'ascensore con [[le guance calde]].",
+    "payload": {
+      "answer": "warm cheeks",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "warm cheeks",
+        "wet hair",
+        "cold hands",
+        "tired eyes"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Esce dall'ascensore con le guance calde.",
+        "storySlug": "un-segreto-tra-noi-due",
+        "targetWord": "guance calde",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fermarsi",
+    "sentence": "L'ascensore [[si ferma]] all'improvviso.",
+    "payload": {
+      "answer": "to stop",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to stop",
+        "to fall",
+        "to shine",
+        "to grow"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "L'ascensore si ferma all'improvviso.",
+        "storySlug": "un-segreto-tra-noi-due",
+        "targetWord": "si ferma",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "stretto",
+    "sentence": "L'ascensore è molto [[stretto]].",
+    "payload": {
+      "answer": "narrow",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "narrow",
+        "wide",
+        "tall",
+        "clean"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "L'ascensore è molto stretto.",
+        "storySlug": "un-segreto-tra-noi-due",
+        "targetWord": "stretto",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bloccato",
+    "sentence": "L'ascensore è [[bloccato]] tra due piani.",
+    "payload": {
+      "answer": "stuck",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "stuck",
+        "clean",
+        "fast",
+        "open"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "L'ascensore è bloccato tra due piani.",
+        "storySlug": "un-segreto-tra-noi-due",
+        "targetWord": "bloccato",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sussurrare",
+    "sentence": "Lei [[sussurra]] piano, senza fretta.",
+    "payload": {
+      "answer": "to whisper",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to whisper",
+        "to shout",
+        "to sing",
+        "to laugh"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Lei sussurra piano, senza fretta.",
+        "storySlug": "un-segreto-tra-noi-due",
+        "targetWord": "sussurra",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "conta",
+    "sentence": "Ha paura del buio e _____ fino a dieci.",
+    "payload": {
+      "answer": "conta",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "conta",
+        "canta",
+        "corre",
+        "dorme"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Ha paura del buio e conta fino a dieci.",
+        "storySlug": "un-segreto-tra-noi-due",
+        "targetWord": "conta",
+        "storySource": "user"
+      },
+      "translation": "She's afraid of the dark, and she _____ to ten.",
+      "optionTranslations": [
+        "counts",
+        "sings",
+        "runs",
+        "sleeps"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "accende",
+    "sentence": "Non vede niente e _____ la torcia del telefono.",
+    "payload": {
+      "answer": "accende",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "accende",
+        "spegne",
+        "rompe",
+        "perde"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Non vede niente e accende la torcia del telefono.",
+        "storySlug": "un-segreto-tra-noi-due",
+        "targetWord": "accende",
+        "storySource": "user"
+      },
+      "translation": "She can't see anything, and _____ the phone's torch.",
+      "optionTranslations": [
+        "switches on",
+        "switches off",
+        "breaks",
+        "loses"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "esce",
+    "sentence": "L'ascensore si apre e lei _____ al quinto piano.",
+    "payload": {
+      "answer": "esce",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "esce",
+        "entra",
+        "sale",
+        "scende"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "L'ascensore si apre e lei esce al quinto piano.",
+        "storySlug": "un-segreto-tra-noi-due",
+        "targetWord": "esce",
+        "storySource": "user"
+      },
+      "translation": "The elevator opens and she _____ at the fifth floor.",
+      "optionTranslations": [
+        "exits",
+        "enters",
+        "goes up",
+        "goes down"
+      ]
+    },
+    "featured": false
+  }
+]

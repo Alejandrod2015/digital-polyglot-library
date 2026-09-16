@@ -1,0 +1,452 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "la camicia,le campane,il sollievo,le briciole",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "la camicia",
+          "answer": "a shirt with buttons",
+          "options": [
+            "a shirt with buttons",
+            "bells",
+            "relief",
+            "crumbs"
+          ]
+        },
+        {
+          "word": "le campane",
+          "answer": "bells",
+          "options": [
+            "a shirt with buttons",
+            "bells",
+            "relief",
+            "crumbs"
+          ]
+        },
+        {
+          "word": "il sollievo",
+          "answer": "relief",
+          "options": [
+            "a shirt with buttons",
+            "bells",
+            "relief",
+            "crumbs"
+          ]
+        },
+        {
+          "word": "le briciole",
+          "answer": "crumbs",
+          "options": [
+            "a shirt with buttons",
+            "bells",
+            "relief",
+            "crumbs"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pettinato",
+    "sentence": "Ha i capelli [[pettinati]] e puliti.",
+    "payload": {
+      "answer": "combed",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "combed",
+        "wet",
+        "short",
+        "messy"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Ha i capelli pettinati e puliti.",
+        "storySlug": "due-piatti-come-sempre",
+        "targetWord": "pettinati",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8a9259a8908974d9.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "come sempre",
+    "sentence": "Pranzano in terrazza, [[come sempre]].",
+    "payload": {
+      "answer": "as always",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "as always",
+        "for the first time",
+        "never again",
+        "by chance"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Pranzano in terrazza, come sempre.",
+        "storySlug": "due-piatti-come-sempre",
+        "targetWord": "Come sempre",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c1a06bdf3b250d91.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "timido",
+    "sentence": "Chiede scusa, un po' [[timido]].",
+    "payload": {
+      "answer": "shy",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "shy",
+        "angry",
+        "proud",
+        "tired"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Chiede scusa, un po' timido.",
+        "storySlug": "due-piatti-come-sempre",
+        "targetWord": "timido",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e0110b87d04fbb01.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "difficile",
+    "sentence": "È [[difficile]], ma lei sorride.",
+    "payload": {
+      "answer": "difficult",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "difficult",
+        "easy",
+        "cheap",
+        "fast"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "È difficile, ma lei sorride.",
+        "storySlug": "due-piatti-come-sempre",
+        "targetWord": "difficile",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5a1f376ca2025e70.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fare male",
+    "sentence": "[[Le fa male]], ma è giusto.",
+    "payload": {
+      "answer": "to hurt",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to hurt",
+        "it makes her happy",
+        "it costs a lot",
+        "it takes a long time"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Le fa male, ma è giusto.",
+        "storySlug": "due-piatti-come-sempre",
+        "targetWord": "Le fa male",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bfb42fc432fee939.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "giusto",
+    "sentence": "Strappare il tovagliolo è [[giusto]].",
+    "payload": {
+      "answer": "right",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "right",
+        "wrong",
+        "funny",
+        "strange"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Strappare il tovagliolo è giusto.",
+        "storySlug": "due-piatti-come-sempre",
+        "targetWord": "giusto",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8d22790100969c69.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "e basta",
+    "sentence": "Siamo amici, [[e basta]].",
+    "payload": {
+      "answer": "and that is all",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "and that is all",
+        "and much more",
+        "and nothing else works",
+        "and it's complicated"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Siamo amici, e basta.",
+        "storySlug": "due-piatti-come-sempre",
+        "targetWord": "e basta",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f33fd20154bdcd82.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "domenica prossima",
+    "sentence": "[[Domenica prossima]] fa il pesto lui.",
+    "payload": {
+      "answer": "next Sunday",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "next Sunday",
+        "last Sunday",
+        "some Saturday",
+        "one morning"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Domenica prossima fa il pesto lui.",
+        "storySlug": "due-piatti-come-sempre",
+        "targetWord": "domenica prossima",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dbe36b8ed60c3b79.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verde",
+    "sentence": "La pianta nei vasi è [[verde]].",
+    "payload": {
+      "answer": "green",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "green",
+        "dry",
+        "dead",
+        "small"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "La pianta nei vasi è verde.",
+        "storySlug": "due-piatti-come-sempre",
+        "targetWord": "verde",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3d7fa28b0bc354ed.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ogni domenica",
+    "sentence": "Pranzano insieme [[ogni domenica]].",
+    "payload": {
+      "answer": "every Sunday",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "every Sunday",
+        "only once",
+        "on Fridays",
+        "in the mornings"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Pranzano insieme ogni domenica.",
+        "storySlug": "due-piatti-come-sempre",
+        "targetWord": "ogni domenica",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "uno davanti all'altra",
+    "sentence": "Pranzano al sole, [[uno davanti all'altra]].",
+    "payload": {
+      "answer": "face to face",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "face to face",
+        "back to back",
+        "far apart",
+        "side by side"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Pranzano al sole, uno davanti all'altra.",
+        "storySlug": "due-piatti-come-sempre",
+        "targetWord": "uno davanti all'altra",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "una domenica dopo",
+    "sentence": "[[Una domenica dopo]], torna con due piatti.",
+    "payload": {
+      "answer": "one Sunday later",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "one Sunday later",
+        "the same afternoon",
+        "a year before",
+        "every single week"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Una domenica dopo, torna con due piatti.",
+        "storySlug": "due-piatti-come-sempre",
+        "targetWord": "Una domenica dopo",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "leggero",
+    "sentence": "Il vento è [[leggero]] oggi.",
+    "payload": {
+      "answer": "light",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "light",
+        "strong",
+        "cold",
+        "wet"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Il vento è leggero oggi.",
+        "storySlug": "due-piatti-come-sempre",
+        "targetWord": "leggero",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "strappa",
+    "sentence": "Non le serve più e lo _____ in due.",
+    "payload": {
+      "answer": "strappa",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "strappa",
+        "piega",
+        "lava",
+        "colora"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Non le serve più e lo strappa in due.",
+        "storySlug": "due-piatti-come-sempre",
+        "targetWord": "strappa",
+        "storySource": "user"
+      },
+      "translation": "She doesn't need it anymore, and she _____ it in two.",
+      "optionTranslations": [
+        "tears",
+        "folds",
+        "washes",
+        "colors"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cresce",
+    "sentence": "Con l'acqua e il sole, la pianta _____.",
+    "payload": {
+      "answer": "cresce",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "cresce",
+        "muore",
+        "vola",
+        "parla"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Con l'acqua e il sole, la pianta cresce.",
+        "storySlug": "due-piatti-come-sempre",
+        "targetWord": "cresce",
+        "storySource": "user"
+      },
+      "translation": "With water and sun, the plant _____.",
+      "optionTranslations": [
+        "grows",
+        "dies",
+        "flies",
+        "talks"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "mastica",
+    "sentence": "Mangia piano e _____ bene ogni boccone.",
+    "payload": {
+      "answer": "mastica",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "mastica",
+        "beve",
+        "taglia",
+        "conta"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Mangia piano e mastica bene ogni boccone.",
+        "storySlug": "due-piatti-come-sempre",
+        "targetWord": "mastica",
+        "storySource": "user"
+      },
+      "translation": "He eats slowly and _____ every bite well.",
+      "optionTranslations": [
+        "chews",
+        "drinks",
+        "cuts",
+        "counts"
+      ]
+    },
+    "featured": false
+  }
+]

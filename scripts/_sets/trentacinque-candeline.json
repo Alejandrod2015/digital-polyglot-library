@@ -1,0 +1,452 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "le fragole,il nastro,gli orecchini,il maglione",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "le fragole",
+          "answer": "strawberries",
+          "options": [
+            "strawberries",
+            "a ribbon",
+            "earrings",
+            "a jumper"
+          ]
+        },
+        {
+          "word": "il nastro",
+          "answer": "a ribbon",
+          "options": [
+            "strawberries",
+            "a ribbon",
+            "earrings",
+            "a jumper"
+          ]
+        },
+        {
+          "word": "gli orecchini",
+          "answer": "earrings",
+          "options": [
+            "strawberries",
+            "a ribbon",
+            "earrings",
+            "a jumper"
+          ]
+        },
+        {
+          "word": "il maglione",
+          "answer": "a jumper",
+          "options": [
+            "strawberries",
+            "a ribbon",
+            "earrings",
+            "a jumper"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tramontare",
+    "sentence": "Il sole [[tramonta]] e il cielo è rosa.",
+    "payload": {
+      "answer": "to set (the sun)",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to set (the sun)",
+        "to rise",
+        "to disappear behind clouds",
+        "to shine brighter"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Il sole tramonta e il cielo è rosa.",
+        "storySlug": "trentacinque-candeline",
+        "targetWord": "tramonta",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ccc367de461ca30.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "una per una",
+    "sentence": "Accende le candeline [[una per una]].",
+    "payload": {
+      "answer": "one by one",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "one by one",
+        "all at once",
+        "two at a time",
+        "very quickly"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Accende le candeline una per una.",
+        "storySlug": "trentacinque-candeline",
+        "targetWord": "una per una",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/07a43e040c82bf9a.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "questo è per te",
+    "sentence": "[[Questo è per te]], dice lui.",
+    "payload": {
+      "answer": "this is for you",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "this is for you",
+        "this is for everyone",
+        "this is a secret",
+        "this is not important"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Questo è per te, dice lui.",
+        "storySlug": "trentacinque-candeline",
+        "targetWord": "questo è per te",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e67ca46c485ced82.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arrossire",
+    "sentence": "Riceve il regalo e [[arrossisce]].",
+    "payload": {
+      "answer": "to blush",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to blush",
+        "to sneeze",
+        "to fall asleep",
+        "to yawn"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Riceve il regalo e arrossisce.",
+        "storySlug": "trentacinque-candeline",
+        "targetWord": "arrossisce",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a9b304fbb7ec0dee.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mantenere",
+    "sentence": "Lui [[mantiene]] la sua promessa.",
+    "payload": {
+      "answer": "to keep a promise",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to keep a promise",
+        "to forget his promise",
+        "to break his promise",
+        "to change his mind"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Lui mantiene la sua promessa.",
+        "storySlug": "trentacinque-candeline",
+        "targetWord": "mantiene",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b1ee612cf11d4d5b.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sto bene",
+    "sentence": "[[Sto bene]], non sono nervosa.",
+    "payload": {
+      "answer": "I am fine",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "I am fine",
+        "I'm very sick",
+        "I'm very sad",
+        "I'm very hungry"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Sto bene, non sono nervosa.",
+        "storySlug": "trentacinque-candeline",
+        "targetWord": "Sto bene",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d2535e1e8ab33649.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "torno subito",
+    "sentence": "[[Torno subito]], aspetta qui.",
+    "payload": {
+      "answer": "I will be right back",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "I will be right back",
+        "I'm never coming back",
+        "I'll be an hour",
+        "I'm leaving forever"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Torno subito, aspetta qui.",
+        "storySlug": "trentacinque-candeline",
+        "targetWord": "Torno subito",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a9d8630261d21805.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "andare in casa",
+    "sentence": "Lei [[va in casa]] e apre il cassetto.",
+    "payload": {
+      "answer": "to go inside",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to go inside",
+        "to go outside",
+        "to go up the stairs",
+        "to go to the terrace"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Lei va in casa e apre il cassetto.",
+        "storySlug": "trentacinque-candeline",
+        "targetWord": "va in casa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/62ba357ce228d54d.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "in quattro",
+    "sentence": "Il tovagliolo è piegato [[in quattro]].",
+    "payload": {
+      "answer": "in four (folded)",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "in four (folded)",
+        "cut in half",
+        "rolled up",
+        "thrown away"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Il tovagliolo è piegato in quattro.",
+        "storySlug": "trentacinque-candeline",
+        "targetWord": "in quattro",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ccfad0b37c15754e.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la scusa",
+    "sentence": "Non ha più una [[scusa]].",
+    "payload": {
+      "answer": "an excuse",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "an excuse",
+        "a plan",
+        "a photograph",
+        "a secret"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Non ha più una scusa.",
+        "storySlug": "trentacinque-candeline",
+        "targetWord": "scusa",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vicino alla torta",
+    "sentence": "Mette il tovagliolo [[vicino alla torta]].",
+    "payload": {
+      "answer": "next to the cake",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "next to the cake",
+        "inside the drawer",
+        "under the chair",
+        "behind the door"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Mette il tovagliolo vicino alla torta.",
+        "storySlug": "trentacinque-candeline",
+        "targetWord": "vicino alla torta",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "emozionato",
+    "sentence": "Alice arrossisce, [[emozionata]].",
+    "payload": {
+      "answer": "moved",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "moved",
+        "bored",
+        "angry",
+        "confused"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Alice arrossisce, emozionata.",
+        "storySlug": "trentacinque-candeline",
+        "targetWord": "emozionata",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "il desiderio",
+    "sentence": "Chiude gli occhi ed esprime un [[desiderio]].",
+    "payload": {
+      "answer": "a wish",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a wish",
+        "a doubt",
+        "a complaint",
+        "an excuse"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Chiude gli occhi ed esprime un desiderio.",
+        "storySlug": "trentacinque-candeline",
+        "targetWord": "desiderio",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Esprimi",
+    "sentence": "Chiudi gli occhi e _____ un desiderio.",
+    "payload": {
+      "answer": "Esprimi",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "Esprimi",
+        "Dimentica",
+        "Rifiuta",
+        "Nascondi"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Chiudi gli occhi e Esprimi un desiderio.",
+        "storySlug": "trentacinque-candeline",
+        "targetWord": "Esprimi",
+        "storySource": "user"
+      },
+      "translation": "Close your eyes and _____ a wish.",
+      "optionTranslations": [
+        "make",
+        "forget",
+        "refuse",
+        "hide"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Leggi",
+    "sentence": "Prendi il foglio e _____ ad alta voce.",
+    "payload": {
+      "answer": "Leggi",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "Leggi",
+        "Piega",
+        "Brucia",
+        "Nascondi"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Prendi il foglio e Leggi ad alta voce.",
+        "storySlug": "trentacinque-candeline",
+        "targetWord": "Leggi",
+        "storySource": "user"
+      },
+      "translation": "Take the paper and _____ aloud.",
+      "optionTranslations": [
+        "read",
+        "fold",
+        "burn",
+        "hide"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "brillano",
+    "sentence": "Sono nuovi e _____ alla luce.",
+    "payload": {
+      "answer": "brillano",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "brillano",
+        "cadono",
+        "spariscono",
+        "puzzano"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Sono nuovi e brillano alla luce.",
+        "storySlug": "trentacinque-candeline",
+        "targetWord": "brillano",
+        "storySource": "user"
+      },
+      "translation": "They're new and _____ in the light.",
+      "optionTranslations": [
+        "shine",
+        "fall",
+        "disappear",
+        "smell bad"
+      ]
+    },
+    "featured": false
+  }
+]

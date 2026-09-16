@@ -1,0 +1,452 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "il coraggio,i gabbiani,il fazzoletto,secco",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "il coraggio",
+          "answer": "courage",
+          "options": [
+            "courage",
+            "seagulls",
+            "a tissue",
+            "dry"
+          ]
+        },
+        {
+          "word": "i gabbiani",
+          "answer": "seagulls",
+          "options": [
+            "courage",
+            "seagulls",
+            "a tissue",
+            "dry"
+          ]
+        },
+        {
+          "word": "il fazzoletto",
+          "answer": "a tissue",
+          "options": [
+            "courage",
+            "seagulls",
+            "a tissue",
+            "dry"
+          ]
+        },
+        {
+          "word": "secco",
+          "answer": "dry",
+          "options": [
+            "courage",
+            "seagulls",
+            "a tissue",
+            "dry"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "giallo",
+    "sentence": "La carta è [[gialla]] e vecchia.",
+    "payload": {
+      "answer": "yellow",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "yellow",
+        "white",
+        "red",
+        "dark"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "La carta è gialla e vecchia.",
+        "storySlug": "ti-voglio-bene-ma",
+        "targetWord": "gialla",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1415bab36e4a0a69.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alzare gli occhi",
+    "sentence": "Lui [[alza gli occhi]] e guarda.",
+    "payload": {
+      "answer": "to look up",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to look up",
+        "to close your eyes",
+        "to shake your head",
+        "to turn around"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Lui alza gli occhi e guarda.",
+        "storySlug": "ti-voglio-bene-ma",
+        "targetWord": "alza gli occhi",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85ecb49fa5f43693.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lo so",
+    "sentence": "[[Lo so]] già, non dirlo.",
+    "payload": {
+      "answer": "I know",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "I know",
+        "I forget",
+        "I doubt it",
+        "I hope so"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Lo so già, non dirlo.",
+        "storySlug": "ti-voglio-bene-ma",
+        "targetWord": "Lo so",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/32190183f1c833fe.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "un respiro profondo",
+    "sentence": "Trova coraggio con [[un respiro profondo]].",
+    "payload": {
+      "answer": "a deep breath",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a deep breath",
+        "a loud laugh",
+        "a long walk",
+        "a short nap"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Trova coraggio con un respiro profondo.",
+        "storySlug": "ti-voglio-bene-ma",
+        "targetWord": "respiro profondo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/527c1e4d431ac374.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "da tanti anni",
+    "sentence": "[[Da tanti anni]] pensa a lui.",
+    "payload": {
+      "answer": "for many years",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "for many years",
+        "for one hour",
+        "since yesterday",
+        "for a week"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Da tanti anni pensa a lui.",
+        "storySlug": "ti-voglio-bene-ma",
+        "targetWord": "Da tanti anni",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2f68809a062a6690.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sincero",
+    "sentence": "È [[sincera]]: dice la verità.",
+    "payload": {
+      "answer": "sincere",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "sincere",
+        "shy",
+        "tired",
+        "jealous"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "È sincera: dice la verità.",
+        "storySlug": "ti-voglio-bene-ma",
+        "targetWord": "sincera",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0a87231977fb88ff.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lontano",
+    "sentence": "[[Lontano]], i gabbiani volano sul mare.",
+    "payload": {
+      "answer": "far away",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "far away",
+        "nearby",
+        "above",
+        "below"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Lontano, i gabbiani volano sul mare.",
+        "storySlug": "ti-voglio-bene-ma",
+        "targetWord": "Lontano",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d8a9e4ff6efdc4a9.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ti voglio bene",
+    "sentence": "Gli dice: '[[ti voglio bene]], ma non ti amo'.",
+    "payload": {
+      "answer": "I care for you",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "I care for you",
+        "I don't know you",
+        "I'm angry with you",
+        "I miss my home"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Gli dice: ti voglio bene, ma non ti amo.",
+        "storySlug": "ti-voglio-bene-ma",
+        "targetWord": "ti voglio bene",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d66cf0580f028bc.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "il silenzio",
+    "sentence": "C'è un [[silenzio]] strano.",
+    "payload": {
+      "answer": "silence",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "silence",
+        "noise",
+        "music",
+        "laughter"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "C'è un silenzio strano.",
+        "storySlug": "ti-voglio-bene-ma",
+        "targetWord": "silenzio",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d3c18d20031d05cf.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "accarezzare",
+    "sentence": "Lui le [[accarezza]] i capelli.",
+    "payload": {
+      "answer": "to stroke",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to stroke",
+        "to cut",
+        "to pull",
+        "to tie"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Lui le accarezza i capelli.",
+        "storySlug": "ti-voglio-bene-ma",
+        "targetWord": "accarezza",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fino a sera",
+    "sentence": "Resta con lei [[fino a sera]].",
+    "payload": {
+      "answer": "until evening",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "until evening",
+        "for one minute",
+        "since morning",
+        "every week"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Resta con lei fino a sera.",
+        "storySlug": "ti-voglio-bene-ma",
+        "targetWord": "fino a sera",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "il tovagliolo",
+    "sentence": "Matteo apre il [[tovagliolo]] sul tavolo.",
+    "payload": {
+      "answer": "napkin",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "napkin",
+        "blanket",
+        "envelope",
+        "newspaper"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Matteo apre il tovagliolo sul tavolo.",
+        "storySlug": "ti-voglio-bene-ma",
+        "targetWord": "tovagliolo",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pallido",
+    "sentence": "È [[pallido]] e triste.",
+    "payload": {
+      "answer": "pale",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "pale",
+        "cheerful",
+        "sunburnt",
+        "sleepy"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "È pallido e triste.",
+        "storySlug": "ti-voglio-bene-ma",
+        "targetWord": "pallido",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "piange",
+    "sentence": "Sente una grande tristezza e _____.",
+    "payload": {
+      "answer": "piange",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "piange",
+        "ride",
+        "balla",
+        "canta"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Sente una grande tristezza e piange.",
+        "storySlug": "ti-voglio-bene-ma",
+        "targetWord": "piange",
+        "storySource": "user"
+      },
+      "translation": "She feels very sad and _____.",
+      "optionTranslations": [
+        "cries",
+        "laughs",
+        "dances",
+        "sings"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "va via",
+    "sentence": "Il taxi arriva e lui _____ subito.",
+    "payload": {
+      "answer": "va via",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "va via",
+        "resta qui",
+        "si addormenta",
+        "si arrabbia"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Il taxi arriva e lui va via subito.",
+        "storySlug": "ti-voglio-bene-ma",
+        "targetWord": "va via",
+        "storySource": "user"
+      },
+      "translation": "The taxi arrives and he _____ right away.",
+      "optionTranslations": [
+        "leaves",
+        "stays here",
+        "falls asleep",
+        "gets angry"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "muove",
+    "sentence": "C'è vento forte che _____ le foglie.",
+    "payload": {
+      "answer": "muove",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "muove",
+        "taglia",
+        "colora",
+        "conta"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "C'è vento forte che muove le foglie.",
+        "storySlug": "ti-voglio-bene-ma",
+        "targetWord": "muove",
+        "storySource": "user"
+      },
+      "translation": "There's a strong wind that _____ the leaves.",
+      "optionTranslations": [
+        "moves",
+        "cuts",
+        "colors",
+        "counts"
+      ]
+    },
+    "featured": false
+  }
+]

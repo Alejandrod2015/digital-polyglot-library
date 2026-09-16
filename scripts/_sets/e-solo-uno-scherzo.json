@@ -1,0 +1,452 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "il soffio,lo scherzo,vecchio,certo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "il soffio",
+          "answer": "a puff of air",
+          "options": [
+            "a puff of air",
+            "a joke",
+            "old",
+            "of course"
+          ]
+        },
+        {
+          "word": "lo scherzo",
+          "answer": "a joke",
+          "options": [
+            "a puff of air",
+            "a joke",
+            "old",
+            "of course"
+          ]
+        },
+        {
+          "word": "vecchio",
+          "answer": "old",
+          "options": [
+            "a puff of air",
+            "a joke",
+            "old",
+            "of course"
+          ]
+        },
+        {
+          "word": "certo",
+          "answer": "of course",
+          "options": [
+            "a puff of air",
+            "a joke",
+            "old",
+            "of course"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "restare",
+    "sentence": "Sulla terrazza [[restano]] dieci pezzi di torta.",
+    "payload": {
+      "answer": "to be left, to remain",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to be left, to remain",
+        "to disappear",
+        "to break",
+        "to arrive"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Sulla terrazza restano dieci pezzi di torta.",
+        "storySlug": "e-solo-uno-scherzo",
+        "targetWord": "restano",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bbd99aa55c8bced4.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "spegnere",
+    "sentence": "Lei [[spegne]] le candeline con un soffio.",
+    "payload": {
+      "answer": "to blow out",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to blow out",
+        "to light",
+        "to break",
+        "to open"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Lei spegne le candeline con un soffio.",
+        "storySlug": "e-solo-uno-scherzo",
+        "targetWord": "spegne",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a6ec762b2a25333e.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sopra",
+    "sentence": "[[Sopra]] ci sono due firme sul tovagliolo.",
+    "payload": {
+      "answer": "on top",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "on top",
+        "underneath",
+        "far away",
+        "inside"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Sopra ci sono due firme sul tovagliolo.",
+        "storySlug": "e-solo-uno-scherzo",
+        "targetWord": "Sopra",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cf09731da478c63e.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "leggere ad alta voce",
+    "sentence": "Lui [[legge ad alta voce]] e ride.",
+    "payload": {
+      "answer": "to read aloud",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to read aloud",
+        "to whisper",
+        "to write quickly",
+        "to listen carefully"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Lui legge ad alta voce e ride.",
+        "storySlug": "e-solo-uno-scherzo",
+        "targetWord": "legge ad alta voce",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a4b6ec329a25adc8.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ridere",
+    "sentence": "Lui [[ride]] troppo forte.",
+    "payload": {
+      "answer": "to laugh",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to laugh",
+        "to cry",
+        "to shout",
+        "to sigh"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Lui ride troppo forte.",
+        "storySlug": "e-solo-uno-scherzo",
+        "targetWord": "ride",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/da5c9c2a0e7da638.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sposarsi",
+    "sentence": "Se siamo soli, [[ci sposiamo]].",
+    "payload": {
+      "answer": "to get married",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to get married",
+        "to travel together",
+        "to move away",
+        "to argue"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Se siamo soli, ci sposiamo.",
+        "storySlug": "e-solo-uno-scherzo",
+        "targetWord": "ci sposiamo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2071a9e2376af310.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "battere forte",
+    "sentence": "Il cuore le [[batte forte]].",
+    "payload": {
+      "answer": "to beat hard (heart)",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to beat hard (heart)",
+        "to feel cold",
+        "to fall asleep",
+        "to stay calm"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Il cuore le batte forte.",
+        "storySlug": "e-solo-uno-scherzo",
+        "targetWord": "batte forte",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c5db9fb1336bac60.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quasi",
+    "sentence": "Tu hai [[quasi]] trentacinque anni.",
+    "payload": {
+      "answer": "almost",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "almost",
+        "exactly",
+        "never",
+        "always"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Tu hai quasi trentacinque anni.",
+        "storySlug": "e-solo-uno-scherzo",
+        "targetWord": "quasi",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a6ee560173c1352f.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guardare",
+    "sentence": "Lei [[guarda]] il vecchio tovagliolo.",
+    "payload": {
+      "answer": "to look at",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to look at",
+        "to throw away",
+        "to fold",
+        "to hide"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Lei guarda il vecchio tovagliolo.",
+        "storySlug": "e-solo-uno-scherzo",
+        "targetWord": "guarda",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/433516c053a76e14.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "troppo",
+    "sentence": "Lei ride [[troppo]] forte.",
+    "payload": {
+      "answer": "too much",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "too much",
+        "a little",
+        "never",
+        "always"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Lei ride troppo forte.",
+        "storySlug": "e-solo-uno-scherzo",
+        "targetWord": "troppo",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "piegare",
+    "sentence": "Lui [[piega]] il tovagliolo di carta.",
+    "payload": {
+      "answer": "to fold",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to fold",
+        "to burn",
+        "to wash",
+        "to throw away"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Lui piega il tovagliolo di carta.",
+        "storySlug": "e-solo-uno-scherzo",
+        "targetWord": "piega",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tenere",
+    "sentence": "Lo [[tieni]] tu, per favore?",
+    "payload": {
+      "answer": "to keep, to hold on to",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to keep, to hold on to",
+        "to sell",
+        "to lose",
+        "to break"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Lo tieni tu, per favore?",
+        "storySlug": "e-solo-uno-scherzo",
+        "targetWord": "tieni",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sempre",
+    "sentence": "Io perdo [[sempre]] tutto.",
+    "payload": {
+      "answer": "always",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "always",
+        "never",
+        "sometimes",
+        "rarely"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Io perdo sempre tutto.",
+        "storySlug": "e-solo-uno-scherzo",
+        "targetWord": "sempre",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "nasconde",
+    "sentence": "Ha tanta vergogna e _____ la faccia dietro un libro.",
+    "payload": {
+      "answer": "nasconde",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "nasconde",
+        "gira",
+        "lava",
+        "disegna"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Ha tanta vergogna e nasconde la faccia dietro un libro.",
+        "storySlug": "e-solo-uno-scherzo",
+        "targetWord": "nasconde",
+        "storySource": "user"
+      },
+      "translation": "When she's very ashamed, she _____ her face behind a book.",
+      "optionTranslations": [
+        "hides",
+        "turns",
+        "washes",
+        "draws"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "perdo",
+    "sentence": "Sono disordinato e _____ sempre le chiavi.",
+    "payload": {
+      "answer": "perdo",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "perdo",
+        "trovo",
+        "compro",
+        "pulisco"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Sono disordinato e perdo sempre le chiavi.",
+        "storySlug": "e-solo-uno-scherzo",
+        "targetWord": "perdo",
+        "storySource": "user"
+      },
+      "translation": "I'm messy and I always _____ my keys.",
+      "optionTranslations": [
+        "lose",
+        "find",
+        "buy",
+        "clean"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pesa",
+    "sentence": "La borsa ha tanti libri e _____ molto.",
+    "payload": {
+      "answer": "pesa",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "pesa",
+        "brilla",
+        "scotta",
+        "odora"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "La borsa ha tanti libri e pesa molto.",
+        "storySlug": "e-solo-uno-scherzo",
+        "targetWord": "pesa",
+        "storySource": "user"
+      },
+      "translation": "The bag has a lot of books and _____ a lot.",
+      "optionTranslations": [
+        "is heavy",
+        "shines",
+        "is hot",
+        "smells"
+      ]
+    },
+    "featured": false
+  }
+]

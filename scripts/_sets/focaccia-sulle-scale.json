@@ -1,0 +1,452 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "la soglia,la tuta,il lavoro,la crepa",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "la soglia",
+          "answer": "a doorway",
+          "options": [
+            "a doorway",
+            "a tracksuit",
+            "work",
+            "a crack"
+          ]
+        },
+        {
+          "word": "la tuta",
+          "answer": "a tracksuit",
+          "options": [
+            "a doorway",
+            "a tracksuit",
+            "work",
+            "a crack"
+          ]
+        },
+        {
+          "word": "il lavoro",
+          "answer": "work",
+          "options": [
+            "a doorway",
+            "a tracksuit",
+            "work",
+            "a crack"
+          ]
+        },
+        {
+          "word": "la crepa",
+          "answer": "a crack",
+          "options": [
+            "a doorway",
+            "a tracksuit",
+            "work",
+            "a crack"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "il secondo piano",
+    "sentence": "Scende al [[secondo piano]].",
+    "payload": {
+      "answer": "the second floor",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "the second floor",
+        "the ground floor",
+        "the top floor",
+        "the basement"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Scende al secondo piano.",
+        "storySlug": "focaccia-sulle-scale",
+        "targetWord": "secondo piano",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6e5daaa8309ac509.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tremare",
+    "sentence": "Davanti alla porta [[trema]] un po'.",
+    "payload": {
+      "answer": "to shake",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to shake",
+        "to smile",
+        "to sing",
+        "to knock"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Davanti alla porta trema un po'.",
+        "storySlug": "focaccia-sulle-scale",
+        "targetWord": "trema",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/af2da937d4c3bd8d.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "due volte",
+    "sentence": "Bussa [[due volte]] alla porta.",
+    "payload": {
+      "answer": "twice",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "twice",
+        "once",
+        "many times",
+        "never"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Bussa due volte alla porta.",
+        "storySlug": "focaccia-sulle-scale",
+        "targetWord": "due volte",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5c62e4424c2028cb.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "il disordine",
+    "sentence": "Dietro di lui c'è [[disordine]].",
+    "payload": {
+      "answer": "a mess",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a mess",
+        "light",
+        "silence",
+        "food"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Dietro di lui c'è disordine.",
+        "storySlug": "focaccia-sulle-scale",
+        "targetWord": "disordine",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0bab3a4bf222762e.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cattivo",
+    "sentence": "Non voleva essere [[cattiva]] con lui.",
+    "payload": {
+      "answer": "mean",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "mean",
+        "kind",
+        "honest",
+        "tired"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Non voleva essere cattiva con lui.",
+        "storySlug": "focaccia-sulle-scale",
+        "targetWord": "cattiva",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f95a610d61c7c10e.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quindici anni fa",
+    "sentence": "Il patto è di [[quindici anni fa]].",
+    "payload": {
+      "answer": "fifteen years ago",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "fifteen years ago",
+        "fifteen minutes ago",
+        "next year",
+        "in fifteen days"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Il patto è di quindici anni fa.",
+        "storySlug": "focaccia-sulle-scale",
+        "targetWord": "quindici anni fa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a22f5adefda6c4cb.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aprire la bocca",
+    "sentence": "[[Apre la bocca]] per dire la verità.",
+    "payload": {
+      "answer": "to open your mouth",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to open your mouth",
+        "to close your eyes",
+        "to shake your hand",
+        "to raise your arm"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Apre la bocca per dire la verità.",
+        "storySlug": "focaccia-sulle-scale",
+        "targetWord": "apre la bocca",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/365ae85f594fc6be.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la verità",
+    "sentence": "Invece la [[verità]] resta dentro.",
+    "payload": {
+      "answer": "the truth",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "the truth",
+        "the secret plan",
+        "the birthday gift",
+        "the phone number"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Invece la verità resta dentro.",
+        "storySlug": "focaccia-sulle-scale",
+        "targetWord": "verità",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ca13e6a4678b12b.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la colpa",
+    "sentence": "Non è [[colpa]] tua, dice lui.",
+    "payload": {
+      "answer": "fault",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "fault",
+        "an idea",
+        "a promise",
+        "a surprise"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Non è colpa tua, dice lui.",
+        "storySlug": "focaccia-sulle-scale",
+        "targetWord": "colpa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3059b25c5ee11b0f.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la bugia",
+    "sentence": "È una [[bugia]] piccola, ma pesa.",
+    "payload": {
+      "answer": "a lie",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a lie",
+        "a small gift",
+        "a good memory",
+        "a nice smell"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "È una bugia piccola, ma pesa.",
+        "storySlug": "focaccia-sulle-scale",
+        "targetWord": "bugia",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tendere la mano",
+    "sentence": "Poi lui [[tende la mano]].",
+    "payload": {
+      "answer": "to hold out your hand",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to hold out your hand",
+        "to close the door",
+        "to raise his voice",
+        "to turn around"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Poi lui tende la mano.",
+        "storySlug": "focaccia-sulle-scale",
+        "targetWord": "tende la mano",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la pace",
+    "sentence": "[[Pace]]. Non parlo più del patto.",
+    "payload": {
+      "answer": "peace",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "peace",
+        "money",
+        "luck",
+        "silence"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Pace. Non parlo più del patto.",
+        "storySlug": "focaccia-sulle-scale",
+        "targetWord": "Pace",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "promesso",
+    "sentence": "Mai più. [[Promesso]].",
+    "payload": {
+      "answer": "promise, I promise",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "promise, I promise",
+        "I doubt it",
+        "forget it",
+        "maybe"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Mai più. Promesso.",
+        "storySlug": "focaccia-sulle-scale",
+        "targetWord": "Promesso",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "brontola",
+    "sentence": "Non mangia da ore e lo stomaco gli _____.",
+    "payload": {
+      "answer": "brontola",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "brontola",
+        "canta",
+        "ride",
+        "dorme"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Non mangia da ore e lo stomaco gli brontola.",
+        "storySlug": "focaccia-sulle-scale",
+        "targetWord": "brontola",
+        "storySource": "user"
+      },
+      "translation": "He hasn't eaten for hours, and his stomach _____.",
+      "optionTranslations": [
+        "rumbles",
+        "sings",
+        "laughs",
+        "sleeps"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "annusa",
+    "sentence": "Sente un buon profumo e lo _____ con piacere.",
+    "payload": {
+      "answer": "annusa",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "annusa",
+        "assaggia",
+        "tocca",
+        "guarda"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Sente un buon profumo e lo annusa con piacere.",
+        "storySlug": "focaccia-sulle-scale",
+        "targetWord": "annusa",
+        "storySource": "user"
+      },
+      "translation": "He smells something nice, and he _____ it with pleasure.",
+      "optionTranslations": [
+        "smells",
+        "tastes",
+        "touches",
+        "looks at"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dividono",
+    "sentence": "Hanno solo una focaccia e la _____ in due.",
+    "payload": {
+      "answer": "dividono",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "dividono",
+        "mangiano",
+        "vendono",
+        "buttano"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Hanno solo una focaccia e la dividono in due.",
+        "storySlug": "focaccia-sulle-scale",
+        "targetWord": "dividono",
+        "storySource": "user"
+      },
+      "translation": "They only have one focaccia, and they _____ it in two.",
+      "optionTranslations": [
+        "divide",
+        "eat",
+        "sell",
+        "throw away"
+      ]
+    },
+    "featured": false
+  }
+]

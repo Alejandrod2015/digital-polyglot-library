@@ -1,0 +1,452 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "il pesto,il fornaio,la focacceria,le olive",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "il pesto",
+          "answer": "pesto",
+          "options": [
+            "pesto",
+            "a baker",
+            "a focaccia shop",
+            "olives"
+          ]
+        },
+        {
+          "word": "il fornaio",
+          "answer": "a baker",
+          "options": [
+            "pesto",
+            "a baker",
+            "a focaccia shop",
+            "olives"
+          ]
+        },
+        {
+          "word": "la focacceria",
+          "answer": "a focaccia shop",
+          "options": [
+            "pesto",
+            "a baker",
+            "a focaccia shop",
+            "olives"
+          ]
+        },
+        {
+          "word": "le olive",
+          "answer": "olives",
+          "options": [
+            "pesto",
+            "a baker",
+            "a focaccia shop",
+            "olives"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "di mattina",
+    "sentence": "Il fornaio lavora [[di mattina]] presto.",
+    "payload": {
+      "answer": "in the morning",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "in the morning",
+        "in the evening",
+        "at midnight",
+        "on weekends"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Il fornaio lavora di mattina presto.",
+        "storySlug": "il-pesto-vuole-pazienza",
+        "targetWord": "di mattina",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/47c9b8e262234b09.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alle due",
+    "sentence": "Matteo arriva [[alle due]].",
+    "payload": {
+      "answer": "at two o'clock",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "at two o'clock",
+        "at midnight",
+        "at six",
+        "at ten"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Matteo arriva alle due.",
+        "storySlug": "il-pesto-vuole-pazienza",
+        "targetWord": "alle due",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/af73d619533b46dc.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "va bene",
+    "sentence": "[[Va bene]], ti insegno io.",
+    "payload": {
+      "answer": "all right",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "all right",
+        "it's impossible",
+        "it's a shame",
+        "never mind"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Va bene, ti insegno io.",
+        "storySlug": "il-pesto-vuole-pazienza",
+        "targetWord": "Va bene",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/339afac86e7ff608.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la pazienza",
+    "sentence": "Il pesto vuole [[pazienza]].",
+    "payload": {
+      "answer": "patience",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "patience",
+        "money",
+        "luck",
+        "courage"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Il pesto vuole pazienza.",
+        "storySlug": "il-pesto-vuole-pazienza",
+        "targetWord": "pazienza",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d48a6148b8ac6712.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "insegnare",
+    "sentence": "Ti [[insegno]] a fare il pesto.",
+    "payload": {
+      "answer": "to teach",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to teach",
+        "to sell",
+        "to buy",
+        "to forget"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Ti insegno a fare il pesto.",
+        "storySlug": "il-pesto-vuole-pazienza",
+        "targetWord": "insegno",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/81aa7ae7b38feb70.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la domenica libera",
+    "sentence": "La sua [[domenica libera]] comincia al banco.",
+    "payload": {
+      "answer": "a free Sunday",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a free Sunday",
+        "a busy Monday",
+        "a long trip",
+        "a quiet evening"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "La sua domenica libera comincia al banco.",
+        "storySlug": "il-pesto-vuole-pazienza",
+        "targetWord": "domenica libera",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/abe31fac094aa821.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "volere fare",
+    "sentence": "Oggi lo [[vuole fare]] lei stessa.",
+    "payload": {
+      "answer": "to want to do",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to want to do",
+        "to refuse to do",
+        "to forget to do",
+        "to be afraid to do"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Oggi lo vuole fare lei stessa.",
+        "storySlug": "il-pesto-vuole-pazienza",
+        "targetWord": "vuole fare",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/039854ad86f3562c.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le ciabatte",
+    "sentence": "Scende in [[ciabatte]], ancora assonnata.",
+    "payload": {
+      "answer": "slippers",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "slippers",
+        "boots",
+        "gloves",
+        "a hat"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Scende in ciabatte, ancora assonnata.",
+        "storySlug": "il-pesto-vuole-pazienza",
+        "targetWord": "ciabatte",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/212106ee1b334c2d.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agitato",
+    "sentence": "È un po' [[agitata]] per il tempo.",
+    "payload": {
+      "answer": "anxious",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "anxious",
+        "calm",
+        "sleepy",
+        "bored"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "È un po' agitata per il tempo.",
+        "storySlug": "il-pesto-vuole-pazienza",
+        "targetWord": "agitata",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2e0b586730d322b2.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avere sonno",
+    "sentence": "[[Ha sonno]] e sbadiglia.",
+    "payload": {
+      "answer": "to be sleepy",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to be sleepy",
+        "to be hungry",
+        "to be angry",
+        "to be cold"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Ha sonno e sbadiglia.",
+        "storySlug": "il-pesto-vuole-pazienza",
+        "targetWord": "Ha sonno",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la teglia",
+    "sentence": "Sul banco ci sono [[teglie]] di focaccia.",
+    "payload": {
+      "answer": "baking trays",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "baking trays",
+        "bottles of wine",
+        "bags of bread",
+        "baskets of fruit"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Sul banco ci sono teglie di focaccia.",
+        "storySlug": "il-pesto-vuole-pazienza",
+        "targetWord": "teglie",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dorato",
+    "sentence": "La focaccia è [[dorata]] e calda.",
+    "payload": {
+      "answer": "golden",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "golden",
+        "burnt",
+        "cold",
+        "salty"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "La focaccia è dorata e calda.",
+        "storySlug": "il-pesto-vuole-pazienza",
+        "targetWord": "dorata",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "il rosmarino",
+    "sentence": "La focaccia ha olive e [[rosmarino]].",
+    "payload": {
+      "answer": "rosemary",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "rosemary",
+        "sugar",
+        "chocolate",
+        "lemon"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "La focaccia ha olive e rosmarino.",
+        "storySlug": "il-pesto-vuole-pazienza",
+        "targetWord": "rosmarino",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "impasta",
+    "sentence": "Ogni mattina il fornaio _____ il pane a mano.",
+    "payload": {
+      "answer": "impasta",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "impasta",
+        "taglia",
+        "vende",
+        "pesa"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Ogni mattina il fornaio impasta il pane a mano.",
+        "storySlug": "il-pesto-vuole-pazienza",
+        "targetWord": "impasta",
+        "storySource": "user"
+      },
+      "translation": "Every morning the baker _____ the bread by hand.",
+      "optionTranslations": [
+        "kneads",
+        "cuts",
+        "sells",
+        "weighs"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sbadiglia",
+    "sentence": "Ha sonno e _____ più volte.",
+    "payload": {
+      "answer": "sbadiglia",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "sbadiglia",
+        "canta",
+        "ride",
+        "corre"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Ha sonno e sbadiglia più volte.",
+        "storySlug": "il-pesto-vuole-pazienza",
+        "targetWord": "sbadiglia",
+        "storySource": "user"
+      },
+      "translation": "She's sleepy, and she _____ several times.",
+      "optionTranslations": [
+        "yawns",
+        "sings",
+        "laughs",
+        "runs"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "serve",
+    "sentence": "Alle sette il fornaio apre e _____ i primi clienti.",
+    "payload": {
+      "answer": "serve",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "serve",
+        "paga",
+        "saluta",
+        "conta"
+      ],
+      "audioClip": {
+        "language": "italian",
+        "sentence": "Alle sette il fornaio apre e serve i primi clienti.",
+        "storySlug": "il-pesto-vuole-pazienza",
+        "targetWord": "serve",
+        "storySource": "user"
+      },
+      "translation": "At seven the baker opens, and he _____ the first customers.",
+      "optionTranslations": [
+        "serves",
+        "pays",
+        "greets",
+        "counts"
+      ]
+    },
+    "featured": false
+  }
+]
