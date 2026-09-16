@@ -6,10 +6,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        {"word":"la casserole","answer":"a saucepan","options":["a saucepan","fire, heat","oil","a lemon"]},
-        {"word":"le feu","answer":"fire, heat","options":["a saucepan","fire, heat","oil","a lemon"]},
-        {"word":"l'huile","answer":"oil","options":["a saucepan","fire, heat","oil","a lemon"]},
-        {"word":"le citron","answer":"a lemon","options":["a saucepan","fire, heat","oil","a lemon"]}
+        {
+          "word": "la casserole",
+          "answer": "a saucepan",
+          "options": [
+            "a saucepan",
+            "fire, heat",
+            "oil",
+            "a lemon"
+          ]
+        },
+        {
+          "word": "le feu",
+          "answer": "fire, heat",
+          "options": [
+            "a saucepan",
+            "fire, heat",
+            "oil",
+            "a lemon"
+          ]
+        },
+        {
+          "word": "l'huile",
+          "answer": "oil",
+          "options": [
+            "a saucepan",
+            "fire, heat",
+            "oil",
+            "a lemon"
+          ]
+        },
+        {
+          "word": "le citron",
+          "answer": "a lemon",
+          "options": [
+            "a saucepan",
+            "fire, heat",
+            "oil",
+            "a lemon"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -21,8 +57,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "beurre blanc sauce",
-      "options": ["beurre blanc sauce","tomato sauce","chocolate cream","apple jam"],
-      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Elle prépare le beurre blanc pour le poisson.","targetWord":"beurre blanc","language":"french"}
+      "options": [
+        "beurre blanc sauce",
+        "tomato sauce",
+        "chocolate cream",
+        "apple jam"
+      ],
+      "audioClip": {
+        "storySlug": "la-sauce-ne-tient-pas",
+        "storySource": "user",
+        "sentence": "Elle prépare le beurre blanc pour le poisson.",
+        "targetWord": "beurre blanc",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c8c22b4ea93ca8b7.mp3"
+      }
     }
   },
   {
@@ -32,8 +80,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "on low heat",
-      "options": ["on low heat","on high heat","in cold water","without any heat"],
-      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Il faut tourner à feu doux.","targetWord":"à feu doux","language":"french"}
+      "options": [
+        "on low heat",
+        "on high heat",
+        "in cold water",
+        "without any heat"
+      ],
+      "audioClip": {
+        "storySlug": "la-sauce-ne-tient-pas",
+        "storySource": "user",
+        "sentence": "Il faut tourner à feu doux.",
+        "targetWord": "à feu doux",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0923b00184b80162.mp3"
+      }
     }
   },
   {
@@ -43,8 +103,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "no problem",
-      "options": ["no problem","big problem","not now","of course not"],
-      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Pas de problème, répond-il.","targetWord":"Pas de problème","language":"french"}
+      "options": [
+        "no problem",
+        "big problem",
+        "not now",
+        "of course not"
+      ],
+      "audioClip": {
+        "storySlug": "la-sauce-ne-tient-pas",
+        "storySource": "user",
+        "sentence": "Pas de problème, répond-il.",
+        "targetWord": "Pas de problème",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/afd552e08d5da9e9.mp3"
+      }
     }
   },
   {
@@ -54,8 +126,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "the sauce",
-      "options": ["the sauce","the soup","the salad","the bread"],
-      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"La sauce se sépare en deux.","targetWord":"La sauce","language":"french"}
+      "options": [
+        "the sauce",
+        "the soup",
+        "the salad",
+        "the bread"
+      ],
+      "audioClip": {
+        "storySlug": "la-sauce-ne-tient-pas",
+        "storySource": "user",
+        "sentence": "La sauce se sépare en deux.",
+        "targetWord": "La sauce",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4af638d00d68c969.mp3"
+      }
     }
   },
   {
@@ -65,8 +149,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "with horror",
-      "options": ["with horror","with a smile","with pride","with patience"],
-      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Il regarde la casserole avec horreur.","targetWord":"avec horreur","language":"french"}
+      "options": [
+        "with horror",
+        "with a smile",
+        "with pride",
+        "with patience"
+      ],
+      "audioClip": {
+        "storySlug": "la-sauce-ne-tient-pas",
+        "storySource": "user",
+        "sentence": "Il regarde la casserole avec horreur.",
+        "targetWord": "avec horreur",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/33e3b0f422e83c21.mp3"
+      }
     }
   },
   {
@@ -76,8 +172,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "something burning",
-      "options": ["something burning","something sweet","something fresh","something salty"],
-      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Ça sent le brûlé.","targetWord":"le brûlé","language":"french"}
+      "options": [
+        "something burning",
+        "something sweet",
+        "something fresh",
+        "something salty"
+      ],
+      "audioClip": {
+        "storySlug": "la-sauce-ne-tient-pas",
+        "storySource": "user",
+        "sentence": "Ça sent le brûlé.",
+        "targetWord": "le brûlé",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/da2c593377f2d43e.mp3"
+      }
     }
   },
   {
@@ -87,8 +195,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "won't hold together",
-      "options": ["won't hold together","tastes amazing","is too cold","is ready"],
-      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"La sauce ne tient pas.","targetWord":"ne tient pas","language":"french"}
+      "options": [
+        "won't hold together",
+        "tastes amazing",
+        "is too cold",
+        "is ready"
+      ],
+      "audioClip": {
+        "storySlug": "la-sauce-ne-tient-pas",
+        "storySource": "user",
+        "sentence": "La sauce ne tient pas.",
+        "targetWord": "ne tient pas",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8325abab2d194422.mp3"
+      }
     }
   },
   {
@@ -98,8 +218,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "worse",
-      "options": ["worse","better","nothing","less"],
-      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"À l'hôpital, elle voit pire tous les jours.","targetWord":"pire","language":"french"}
+      "options": [
+        "worse",
+        "better",
+        "nothing",
+        "less"
+      ],
+      "audioClip": {
+        "storySlug": "la-sauce-ne-tient-pas",
+        "storySource": "user",
+        "sentence": "À l'hôpital, elle voit pire tous les jours.",
+        "targetWord": "pire",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/20fda7e44a48af80.mp3"
+      }
     }
   },
   {
@@ -109,8 +241,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "help out",
-      "options": ["help out","take a break","ask a question","leave the kitchen"],
-      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Il veut donner un coup de main.","targetWord":"donner un coup de main","language":"french"}
+      "options": [
+        "help out",
+        "take a break",
+        "ask a question",
+        "leave the kitchen"
+      ],
+      "audioClip": {
+        "storySlug": "la-sauce-ne-tient-pas",
+        "storySource": "user",
+        "sentence": "Il veut donner un coup de main.",
+        "targetWord": "donner un coup de main",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c3cd3cd60e8d87cb.mp3"
+      }
     }
   },
   {
@@ -120,8 +264,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "at work",
-      "options": ["at work","at home","on vacation","in the car"],
-      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Il tourne vite, comme au travail.","targetWord":"au travail","language":"french"}
+      "options": [
+        "at work",
+        "at home",
+        "on vacation",
+        "in the car"
+      ],
+      "audioClip": {
+        "storySlug": "la-sauce-ne-tient-pas",
+        "storySource": "user",
+        "sentence": "Il tourne vite, comme au travail.",
+        "targetWord": "au travail",
+        "language": "french"
+      }
     },
     "featured": false
   },
@@ -132,8 +287,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "red-faced",
-      "options": ["red-faced","pale-faced","smiling","sleepy"],
-      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Il a le visage rouge de chaleur.","targetWord":"le visage rouge","language":"french"}
+      "options": [
+        "red-faced",
+        "pale-faced",
+        "smiling",
+        "sleepy"
+      ],
+      "audioClip": {
+        "storySlug": "la-sauce-ne-tient-pas",
+        "storySource": "user",
+        "sentence": "Il a le visage rouge de chaleur.",
+        "targetWord": "le visage rouge",
+        "language": "french"
+      }
     },
     "featured": false
   },
@@ -144,8 +310,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "every day",
-      "options": ["every day","once a year","this morning only","on Sundays"],
-      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Elle voit ce genre de chose tous les jours.","targetWord":"tous les jours","language":"french"}
+      "options": [
+        "every day",
+        "once a year",
+        "this morning only",
+        "on Sundays"
+      ],
+      "audioClip": {
+        "storySlug": "la-sauce-ne-tient-pas",
+        "storySource": "user",
+        "sentence": "Elle voit ce genre de chose tous les jours.",
+        "targetWord": "tous les jours",
+        "language": "french"
+      }
     },
     "featured": false
   },
@@ -156,8 +333,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "turn up the heat",
-      "options": ["turn up the heat","add more salt","wash the pot","open the window"],
-      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Il ne faut pas monter le feu.","targetWord":"monter le feu","language":"french"}
+      "options": [
+        "turn up the heat",
+        "add more salt",
+        "wash the pot",
+        "open the window"
+      ],
+      "audioClip": {
+        "storySlug": "la-sauce-ne-tient-pas",
+        "storySource": "user",
+        "sentence": "Il ne faut pas monter le feu.",
+        "targetWord": "monter le feu",
+        "language": "french"
+      }
     },
     "featured": false
   },
@@ -168,10 +356,27 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "rapidement",
-      "options": ["rapidement","doucement","rarement","calmement"],
+      "options": [
+        "rapidement",
+        "doucement",
+        "rarement",
+        "calmement"
+      ],
       "translation": "He stirs too _____ and the butter overheats.",
-      "optionTranslations": ["quickly","slowly","rarely","calmly"],
-      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Il tourne trop rapidement et le beurre chauffe trop vite.","targetWord":"rapidement","language":"french"}
+      "optionTranslations": [
+        "quickly",
+        "slowly",
+        "rarely",
+        "calmly"
+      ],
+      "audioClip": {
+        "storySlug": "la-sauce-ne-tient-pas",
+        "storySource": "user",
+        "sentence": "Il tourne trop rapidement et le beurre chauffe trop vite.",
+        "targetWord": "rapidement",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/940b36bad92dda1f.mp3"
+      }
     },
     "featured": false
   },
@@ -182,10 +387,27 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "sépare",
-      "options": ["sépare","mélange","réchauffe","referme"],
+      "options": [
+        "sépare",
+        "mélange",
+        "réchauffe",
+        "referme"
+      ],
       "translation": "The butter and the water: the sauce _____.",
-      "optionTranslations": ["separates","mixes together","reheats","closes again"],
-      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Le beurre et l'eau: la sauce se sépare.","targetWord":"sépare","language":"french"}
+      "optionTranslations": [
+        "separates",
+        "mixes together",
+        "reheats",
+        "closes again"
+      ],
+      "audioClip": {
+        "storySlug": "la-sauce-ne-tient-pas",
+        "storySource": "user",
+        "sentence": "Le beurre et l'eau: la sauce se sépare.",
+        "targetWord": "sépare",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bd105ed88bb1a268.mp3"
+      }
     },
     "featured": false
   },
@@ -196,10 +418,27 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "revient",
-      "options": ["revient","part","pleure","tombe"],
+      "options": [
+        "revient",
+        "part",
+        "pleure",
+        "tombe"
+      ],
       "translation": "She goes out, then she _____ without shouting.",
-      "optionTranslations": ["comes back","leaves","cries","falls"],
-      "audioClip": {"storySlug":"la-sauce-ne-tient-pas","storySource":"user","sentence":"Elle sort, puis elle revient sans crier.","targetWord":"revient","language":"french"}
+      "optionTranslations": [
+        "comes back",
+        "leaves",
+        "cries",
+        "falls"
+      ],
+      "audioClip": {
+        "storySlug": "la-sauce-ne-tient-pas",
+        "storySource": "user",
+        "sentence": "Elle sort, puis elle revient sans crier.",
+        "targetWord": "revient",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/41b1308e61e46252.mp3"
+      }
     },
     "featured": false
   }

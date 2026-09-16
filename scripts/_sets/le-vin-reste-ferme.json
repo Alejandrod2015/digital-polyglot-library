@@ -6,10 +6,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        {"word":"l'hôpital","answer":"the hospital","options":["the hospital","wine","a sideboard","fish"]},
-        {"word":"le vin","answer":"wine","options":["the hospital","wine","a sideboard","fish"]},
-        {"word":"le buffet","answer":"a sideboard","options":["the hospital","wine","a sideboard","fish"]},
-        {"word":"le poisson","answer":"fish","options":["the hospital","wine","a sideboard","fish"]}
+        {
+          "word": "l'hôpital",
+          "answer": "the hospital",
+          "options": [
+            "the hospital",
+            "wine",
+            "a sideboard",
+            "fish"
+          ]
+        },
+        {
+          "word": "le vin",
+          "answer": "wine",
+          "options": [
+            "the hospital",
+            "wine",
+            "a sideboard",
+            "fish"
+          ]
+        },
+        {
+          "word": "le buffet",
+          "answer": "a sideboard",
+          "options": [
+            "the hospital",
+            "wine",
+            "a sideboard",
+            "fish"
+          ]
+        },
+        {
+          "word": "le poisson",
+          "answer": "fish",
+          "options": [
+            "the hospital",
+            "wine",
+            "a sideboard",
+            "fish"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -21,8 +57,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "in the suburbs",
-      "options": ["in the suburbs","in the city center","at the beach","in the mountains"],
-      "audioClip": {"storySlug":"le-vin-reste-ferme","storySource":"user","sentence":"Ça sent le poisson dans la banlieue.","targetWord":"dans la banlieue","language":"french"}
+      "options": [
+        "in the suburbs",
+        "in the city center",
+        "at the beach",
+        "in the mountains"
+      ],
+      "audioClip": {
+        "storySlug": "le-vin-reste-ferme",
+        "storySource": "user",
+        "sentence": "Ça sent le poisson dans la banlieue.",
+        "targetWord": "dans la banlieue",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7800d5dffa39f5e1.mp3"
+      }
     }
   },
   {
@@ -32,8 +80,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "worried",
-      "options": ["worried","happy","tired","hungry"],
-      "audioClip": {"storySlug":"le-vin-reste-ferme","storySource":"user","sentence":"Il est très inquiet avant de rencontrer la famille.","targetWord":"inquiet","language":"french"}
+      "options": [
+        "worried",
+        "happy",
+        "tired",
+        "hungry"
+      ],
+      "audioClip": {
+        "storySlug": "le-vin-reste-ferme",
+        "storySource": "user",
+        "sentence": "Il est très inquiet avant de rencontrer la famille.",
+        "targetWord": "inquiet",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa2f507ec39a9f6b.mp3"
+      }
     }
   },
   {
@@ -43,8 +103,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "make a good impression",
-      "options": ["make a good impression","arrive very late","eat very fast","stay very quiet"],
-      "audioClip": {"storySlug":"le-vin-reste-ferme","storySource":"user","sentence":"Il veut faire bonne impression.","targetWord":"faire bonne impression","language":"french"}
+      "options": [
+        "make a good impression",
+        "arrive very late",
+        "eat very fast",
+        "stay very quiet"
+      ],
+      "audioClip": {
+        "storySlug": "le-vin-reste-ferme",
+        "storySource": "user",
+        "sentence": "Il veut faire bonne impression.",
+        "targetWord": "faire bonne impression",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f8869ed566f2ef1c.mp3"
+      }
     }
   },
   {
@@ -54,8 +126,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "strict",
-      "options": ["strict","funny","shy","lazy"],
-      "audioClip": {"storySlug":"le-vin-reste-ferme","storySource":"user","sentence":"Elle est infirmière, un peu sévère.","targetWord":"sévère","language":"french"}
+      "options": [
+        "strict",
+        "funny",
+        "shy",
+        "lazy"
+      ],
+      "audioClip": {
+        "storySlug": "le-vin-reste-ferme",
+        "storySource": "user",
+        "sentence": "Elle est infirmière, un peu sévère.",
+        "targetWord": "sévère",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8bf713ded8c74f53.mp3"
+      }
     }
   },
   {
@@ -65,8 +149,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "please, go ahead",
-      "options": ["please, go ahead","wait outside","come back later","not today"],
-      "audioClip": {"storySlug":"le-vin-reste-ferme","storySource":"user","sentence":"Entrez, je vous en prie.","targetWord":"je vous en prie","language":"french"}
+      "options": [
+        "please, go ahead",
+        "wait outside",
+        "come back later",
+        "not today"
+      ],
+      "audioClip": {
+        "storySlug": "le-vin-reste-ferme",
+        "storySource": "user",
+        "sentence": "Entrez, je vous en prie.",
+        "targetWord": "je vous en prie",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1ecc466034eeefff.mp3"
+      }
     }
   },
   {
@@ -76,8 +172,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "job",
-      "options": ["job","family","vacation","garden"],
-      "audioClip": {"storySlug":"le-vin-reste-ferme","storySource":"user","sentence":"Elle parle surtout de son métier.","targetWord":"métier","language":"french"}
+      "options": [
+        "job",
+        "family",
+        "vacation",
+        "garden"
+      ],
+      "audioClip": {
+        "storySlug": "le-vin-reste-ferme",
+        "storySource": "user",
+        "sentence": "Elle parle surtout de son métier.",
+        "targetWord": "métier",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8b9a0692ac325958.mp3"
+      }
     }
   },
   {
@@ -87,8 +195,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "can't wait any longer",
-      "options": ["can't wait any longer","doesn't want to know","forgets the question","refuses to answer"],
-      "audioClip": {"storySlug":"le-vin-reste-ferme","storySource":"user","sentence":"Il n'y tient plus et pose la question.","targetWord":"n'y tient plus","language":"french"}
+      "options": [
+        "can't wait any longer",
+        "doesn't want to know",
+        "forgets the question",
+        "refuses to answer"
+      ],
+      "audioClip": {
+        "storySlug": "le-vin-reste-ferme",
+        "storySource": "user",
+        "sentence": "Il n'y tient plus et pose la question.",
+        "targetWord": "n'y tient plus",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/73fa020c61778b02.mp3"
+      }
     }
   },
   {
@@ -98,8 +218,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "custom",
-      "options": ["custom","secret","mistake","gift"],
-      "audioClip": {"storySlug":"le-vin-reste-ferme","storySource":"user","sentence":"C'est une coutume de la famille.","targetWord":"coutume","language":"french"}
+      "options": [
+        "custom",
+        "secret",
+        "mistake",
+        "gift"
+      ],
+      "audioClip": {
+        "storySlug": "le-vin-reste-ferme",
+        "storySource": "user",
+        "sentence": "C'est une coutume de la famille.",
+        "targetWord": "coutume",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9c26f2c813911581.mp3"
+      }
     }
   },
   {
@@ -109,8 +241,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "we'll see",
-      "options": ["we'll see","of course not","right now","never again"],
-      "audioClip": {"storySlug":"le-vin-reste-ferme","storySource":"user","sentence":"On verra, répond-elle, et ça le rassure.","targetWord":"On verra","language":"french"}
+      "options": [
+        "we'll see",
+        "of course not",
+        "right now",
+        "never again"
+      ],
+      "audioClip": {
+        "storySlug": "le-vin-reste-ferme",
+        "storySource": "user",
+        "sentence": "On verra, répond-elle, et ça le rassure.",
+        "targetWord": "On verra",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/47dec48b7230d68e.mp3"
+      }
     }
   },
   {
@@ -120,8 +264,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "Riesling wine",
-      "options": ["Riesling wine","apple juice","black coffee","orange soda"],
-      "audioClip": {"storySlug":"le-vin-reste-ferme","storySource":"user","sentence":"Il offre une bouteille de riesling.","targetWord":"riesling","language":"french"}
+      "options": [
+        "Riesling wine",
+        "apple juice",
+        "black coffee",
+        "orange soda"
+      ],
+      "audioClip": {
+        "storySlug": "le-vin-reste-ferme",
+        "storySource": "user",
+        "sentence": "Il offre une bouteille de riesling.",
+        "targetWord": "riesling",
+        "language": "french"
+      }
     },
     "featured": false
   },
@@ -132,8 +287,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "Muscadet wine",
-      "options": ["Muscadet wine","sparkling water","hot tea","fresh milk"],
-      "audioClip": {"storySlug":"le-vin-reste-ferme","storySource":"user","sentence":"À table, on boit du muscadet.","targetWord":"muscadet","language":"french"}
+      "options": [
+        "Muscadet wine",
+        "sparkling water",
+        "hot tea",
+        "fresh milk"
+      ],
+      "audioClip": {
+        "storySlug": "le-vin-reste-ferme",
+        "storySource": "user",
+        "sentence": "À table, on boit du muscadet.",
+        "targetWord": "muscadet",
+        "language": "french"
+      }
     },
     "featured": false
   },
@@ -144,8 +310,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "use the informal tu",
-      "options": ["use the informal tu","shake hands","sing a song","eat dessert"],
-      "audioClip": {"storySlug":"le-vin-reste-ferme","storySource":"user","sentence":"Ici, on ne se dit tu pas au premier dimanche.","targetWord":"se dit tu","language":"french"}
+      "options": [
+        "use the informal tu",
+        "shake hands",
+        "sing a song",
+        "eat dessert"
+      ],
+      "audioClip": {
+        "storySlug": "le-vin-reste-ferme",
+        "storySource": "user",
+        "sentence": "Ici, on ne se dit tu pas au premier dimanche.",
+        "targetWord": "se dit tu",
+        "language": "french"
+      }
     },
     "featured": false
   },
@@ -156,8 +333,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "still unopened",
-      "options": ["still unopened","already empty","completely broken","very expensive"],
-      "audioClip": {"storySlug":"le-vin-reste-ferme","storySource":"user","sentence":"Le vin rentre avec lui, toujours fermé.","targetWord":"toujours fermé","language":"french"}
+      "options": [
+        "still unopened",
+        "already empty",
+        "completely broken",
+        "very expensive"
+      ],
+      "audioClip": {
+        "storySlug": "le-vin-reste-ferme",
+        "storySource": "user",
+        "sentence": "Le vin rentre avec lui, toujours fermé.",
+        "targetWord": "toujours fermé",
+        "language": "french"
+      }
     },
     "featured": false
   },
@@ -168,10 +356,27 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "accueille",
-      "options": ["accueille","cherche","oublie","critique"],
+      "options": [
+        "accueille",
+        "cherche",
+        "oublie",
+        "critique"
+      ],
       "translation": "She _____ the guests at the door with a smile.",
-      "optionTranslations": ["welcomes","looks for","forgets","criticizes"],
-      "audioClip": {"storySlug":"le-vin-reste-ferme","storySource":"user","sentence":"Elle accueille les invités à la porte avec un sourire.","targetWord":"accueille","language":"french"}
+      "optionTranslations": [
+        "welcomes",
+        "looks for",
+        "forgets",
+        "criticizes"
+      ],
+      "audioClip": {
+        "storySlug": "le-vin-reste-ferme",
+        "storySource": "user",
+        "sentence": "Elle accueille les invités à la porte avec un sourire.",
+        "targetWord": "accueille",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/21f44965dd40e8e2.mp3"
+      }
     },
     "featured": false
   },
@@ -182,10 +387,27 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "bavarde",
-      "options": ["bavarde","dort","travaille","pleure"],
+      "options": [
+        "bavarde",
+        "dort",
+        "travaille",
+        "pleure"
+      ],
       "translation": "During the meal, she _____ with everyone.",
-      "optionTranslations": ["chats","sleeps","works","cries"],
-      "audioClip": {"storySlug":"le-vin-reste-ferme","storySource":"user","sentence":"Pendant le repas, elle bavarde avec tout le monde.","targetWord":"bavarde","language":"french"}
+      "optionTranslations": [
+        "chats",
+        "sleeps",
+        "works",
+        "cries"
+      ],
+      "audioClip": {
+        "storySlug": "le-vin-reste-ferme",
+        "storySource": "user",
+        "sentence": "Pendant le repas, elle bavarde avec tout le monde.",
+        "targetWord": "bavarde",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8ee8f7f07e4552c5.mp3"
+      }
     },
     "featured": false
   },
@@ -196,10 +418,27 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "rassure",
-      "options": ["rassure","inquiète","fatigue","ennuie"],
+      "options": [
+        "rassure",
+        "inquiète",
+        "fatigue",
+        "ennuie"
+      ],
       "translation": "That answer _____ him a bit.",
-      "optionTranslations": ["reassures","worries","tires","bores"],
-      "audioClip": {"storySlug":"le-vin-reste-ferme","storySource":"user","sentence":"Cette réponse le rassure un peu.","targetWord":"rassure","language":"french"}
+      "optionTranslations": [
+        "reassures",
+        "worries",
+        "tires",
+        "bores"
+      ],
+      "audioClip": {
+        "storySlug": "le-vin-reste-ferme",
+        "storySource": "user",
+        "sentence": "Cette réponse le rassure un peu.",
+        "targetWord": "rassure",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e46d1d59945acb23.mp3"
+      }
     },
     "featured": false
   }

@@ -6,10 +6,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        {"word":"la chaise","answer":"a chair","options":["a chair","courage","an uncle","an aunt"]},
-        {"word":"le courage","answer":"courage","options":["a chair","courage","an uncle","an aunt"]},
-        {"word":"l'oncle","answer":"an uncle","options":["a chair","courage","an uncle","an aunt"]},
-        {"word":"la tante","answer":"an aunt","options":["a chair","courage","an uncle","an aunt"]}
+        {
+          "word": "la chaise",
+          "answer": "a chair",
+          "options": [
+            "a chair",
+            "courage",
+            "an uncle",
+            "an aunt"
+          ]
+        },
+        {
+          "word": "le courage",
+          "answer": "courage",
+          "options": [
+            "a chair",
+            "courage",
+            "an uncle",
+            "an aunt"
+          ]
+        },
+        {
+          "word": "l'oncle",
+          "answer": "an uncle",
+          "options": [
+            "a chair",
+            "courage",
+            "an uncle",
+            "an aunt"
+          ]
+        },
+        {
+          "word": "la tante",
+          "answer": "an aunt",
+          "options": [
+            "a chair",
+            "courage",
+            "an uncle",
+            "an aunt"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -21,8 +57,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "one more thing",
-      "options": ["one more thing","nothing else","the same thing","too many things"],
-      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Encore une chose! annonce-t-elle.","targetWord":"Encore une chose","language":"french"}
+      "options": [
+        "one more thing",
+        "nothing else",
+        "the same thing",
+        "too many things"
+      ],
+      "audioClip": {
+        "storySlug": "trois-phrases-au-micro",
+        "storySource": "user",
+        "sentence": "Encore une chose! annonce-t-elle.",
+        "targetWord": "Encore une chose",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fff1c9f967a64ca1.mp3"
+      }
     }
   },
   {
@@ -32,8 +80,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "say a few words",
-      "options": ["say a few words","sing a whole song","dance with everyone","pour the drinks"],
-      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Tu viens dire quelques mots?","targetWord":"dire quelques mots","language":"french"}
+      "options": [
+        "say a few words",
+        "sing a whole song",
+        "dance with everyone",
+        "pour the drinks"
+      ],
+      "audioClip": {
+        "storySlug": "trois-phrases-au-micro",
+        "storySource": "user",
+        "sentence": "Tu viens dire quelques mots?",
+        "targetWord": "dire quelques mots",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/15d6d5feca53a62e.mp3"
+      }
     }
   },
   {
@@ -43,8 +103,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "turns toward",
-      "options": ["turns toward","walks away from","laughs at","waits for"],
-      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Toute la salle se tourne vers lui.","targetWord":"se tourne vers","language":"french"}
+      "options": [
+        "turns toward",
+        "walks away from",
+        "laughs at",
+        "waits for"
+      ],
+      "audioClip": {
+        "storySlug": "trois-phrases-au-micro",
+        "storySource": "user",
+        "sentence": "Toute la salle se tourne vers lui.",
+        "targetWord": "se tourne vers",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3fce33399b2b683f.mp3"
+      }
     }
   },
   {
@@ -54,8 +126,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "speaking in front of",
-      "options": ["speaking in front of","dancing with","singing for","cooking for"],
-      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Parler devant cent personnes lui fait peur.","targetWord":"Parler devant","language":"french"}
+      "options": [
+        "speaking in front of",
+        "dancing with",
+        "singing for",
+        "cooking for"
+      ],
+      "audioClip": {
+        "storySlug": "trois-phrases-au-micro",
+        "storySource": "user",
+        "sentence": "Parler devant cent personnes lui fait peur.",
+        "targetWord": "Parler devant",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/28a29c7eb8893ead.mp3"
+      }
     }
   },
   {
@@ -65,8 +149,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "raises her glass",
-      "options": ["raises her glass","closes her eyes","leaves the table","drops her fork"],
-      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Elle lève son verre pour lui donner du courage.","targetWord":"lève son verre","language":"french"}
+      "options": [
+        "raises her glass",
+        "closes her eyes",
+        "leaves the table",
+        "drops her fork"
+      ],
+      "audioClip": {
+        "storySlug": "trois-phrases-au-micro",
+        "storySource": "user",
+        "sentence": "Elle lève son verre pour lui donner du courage.",
+        "targetWord": "lève son verre",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d37f4db726d4889.mp3"
+      }
     }
   },
   {
@@ -76,8 +172,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "voice shakes",
-      "options": ["voice shakes","voice is loud","voice is calm","voice disappears"],
-      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Sa voix tremble quand il parle.","targetWord":"voix tremble","language":"french"}
+      "options": [
+        "voice shakes",
+        "voice is loud",
+        "voice is calm",
+        "voice disappears"
+      ],
+      "audioClip": {
+        "storySlug": "trois-phrases-au-micro",
+        "storySource": "user",
+        "sentence": "Sa voix tremble quand il parle.",
+        "targetWord": "voix tremble",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/774483ceabb2337b.mp3"
+      }
     }
   },
   {
@@ -87,8 +195,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "I feel part of the family",
-      "options": ["I feel part of the family","I feel completely alone","I feel very tired","I feel a little sick"],
-      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Pour la première fois, je me sens de la famille.","targetWord":"je me sens de la famille","language":"french"}
+      "options": [
+        "I feel part of the family",
+        "I feel completely alone",
+        "I feel very tired",
+        "I feel a little sick"
+      ],
+      "audioClip": {
+        "storySlug": "trois-phrases-au-micro",
+        "storySource": "user",
+        "sentence": "Pour la première fois, je me sens de la famille.",
+        "targetWord": "je me sens de la famille",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5936eff2ac040568.mp3"
+      }
     }
   },
   {
@@ -98,8 +218,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "long live the newlyweds",
-      "options": ["long live the newlyweds","goodnight everyone","welcome home","happy birthday"],
-      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Vive les mariés! crie tout le monde.","targetWord":"Vive les mariés","language":"french"}
+      "options": [
+        "long live the newlyweds",
+        "goodnight everyone",
+        "welcome home",
+        "happy birthday"
+      ],
+      "audioClip": {
+        "storySlug": "trois-phrases-au-micro",
+        "storySource": "user",
+        "sentence": "Vive les mariés! crie tout le monde.",
+        "targetWord": "Vive les mariés",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/83761650e0b24166.mp3"
+      }
     }
   },
   {
@@ -109,8 +241,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "shouts bravo",
-      "options": ["shouts bravo","falls asleep","leaves quietly","starts crying"],
-      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Un oncle crie bravo depuis sa chaise.","targetWord":"crie bravo","language":"french"}
+      "options": [
+        "shouts bravo",
+        "falls asleep",
+        "leaves quietly",
+        "starts crying"
+      ],
+      "audioClip": {
+        "storySlug": "trois-phrases-au-micro",
+        "storySource": "user",
+        "sentence": "Un oncle crie bravo depuis sa chaise.",
+        "targetWord": "crie bravo",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b817ea8e843db9fa.mp3"
+      }
     }
   },
   {
@@ -120,8 +264,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a hundred people",
-      "options": ["a hundred people","ten friends","one child","no one"],
-      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Il doit parler devant cent personnes.","targetWord":"cent personnes","language":"french"}
+      "options": [
+        "a hundred people",
+        "ten friends",
+        "one child",
+        "no one"
+      ],
+      "audioClip": {
+        "storySlug": "trois-phrases-au-micro",
+        "storySource": "user",
+        "sentence": "Il doit parler devant cent personnes.",
+        "targetWord": "cent personnes",
+        "language": "french"
+      }
     },
     "featured": false
   },
@@ -132,8 +287,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "want to talk to",
-      "options": ["want to talk to","want to dance with","want to leave","want to sleep"],
-      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Les cousins veulent parler à lui.","targetWord":"veulent parler à","language":"french"}
+      "options": [
+        "want to talk to",
+        "want to dance with",
+        "want to leave",
+        "want to sleep"
+      ],
+      "audioClip": {
+        "storySlug": "trois-phrases-au-micro",
+        "storySource": "user",
+        "sentence": "Les cousins veulent parler à lui.",
+        "targetWord": "veulent parler à",
+        "language": "french"
+      }
     },
     "featured": false
   },
@@ -144,8 +310,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "at the end of",
-      "options": ["at the end of","at the beginning of","in the middle of","right before"],
-      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"À la fin de la soirée, il a dix numéros.","targetWord":"À la fin de","language":"french"}
+      "options": [
+        "at the end of",
+        "at the beginning of",
+        "in the middle of",
+        "right before"
+      ],
+      "audioClip": {
+        "storySlug": "trois-phrases-au-micro",
+        "storySource": "user",
+        "sentence": "À la fin de la soirée, il a dix numéros.",
+        "targetWord": "À la fin de",
+        "language": "french"
+      }
     },
     "featured": false
   },
@@ -156,8 +333,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "the last dance",
-      "options": ["the last dance","the first song","the whole party","the wedding cake"],
-      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Il rate la dernière danse.","targetWord":"la dernière danse","language":"french"}
+      "options": [
+        "the last dance",
+        "the first song",
+        "the whole party",
+        "the wedding cake"
+      ],
+      "audioClip": {
+        "storySlug": "trois-phrases-au-micro",
+        "storySource": "user",
+        "sentence": "Il rate la dernière danse.",
+        "targetWord": "la dernière danse",
+        "language": "french"
+      }
     },
     "featured": false
   },
@@ -168,10 +356,27 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "reprend",
-      "options": ["reprend","casse","cherche","ferme"],
+      "options": [
+        "reprend",
+        "casse",
+        "cherche",
+        "ferme"
+      ],
       "translation": "She _____ the microphone to announce a surprise.",
-      "optionTranslations": ["takes back","breaks","looks for","closes"],
-      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Elle reprend le micro pour annoncer une surprise.","targetWord":"reprend","language":"french"}
+      "optionTranslations": [
+        "takes back",
+        "breaks",
+        "looks for",
+        "closes"
+      ],
+      "audioClip": {
+        "storySlug": "trois-phrases-au-micro",
+        "storySource": "user",
+        "sentence": "Elle reprend le micro pour annoncer une surprise.",
+        "targetWord": "reprend",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/75993a030ebaed89.mp3"
+      }
     },
     "featured": false
   },
@@ -182,10 +387,27 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "numéros",
-      "options": ["numéros","cadeaux","photos","gâteaux"],
+      "options": [
+        "numéros",
+        "cadeaux",
+        "photos",
+        "gâteaux"
+      ],
       "translation": "He goes home with ten new _____ in his phone.",
-      "optionTranslations": ["phone numbers","gifts","photos","cakes"],
-      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Il rentre avec dix nouveaux numéros dans son téléphone.","targetWord":"numéros","language":"french"}
+      "optionTranslations": [
+        "phone numbers",
+        "gifts",
+        "photos",
+        "cakes"
+      ],
+      "audioClip": {
+        "storySlug": "trois-phrases-au-micro",
+        "storySource": "user",
+        "sentence": "Il rentre avec dix nouveaux numéros dans son téléphone.",
+        "targetWord": "numéros",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5358ddcd06ae7be7.mp3"
+      }
     },
     "featured": false
   },
@@ -196,10 +418,27 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "Bonsoir",
-      "options": ["Bonsoir","Merci","Pardon","Adieu"],
+      "options": [
+        "Bonsoir",
+        "Merci",
+        "Pardon",
+        "Adieu"
+      ],
       "translation": "“_____, my name is Paul”, he says into the mic.",
-      "optionTranslations": ["Good evening","Thank you","Sorry","Farewell"],
-      "audioClip": {"storySlug":"trois-phrases-au-micro","storySource":"user","sentence":"Bonsoir, je m'appelle Paul, dit-il au micro.","targetWord":"Bonsoir","language":"french"}
+      "optionTranslations": [
+        "Good evening",
+        "Thank you",
+        "Sorry",
+        "Farewell"
+      ],
+      "audioClip": {
+        "storySlug": "trois-phrases-au-micro",
+        "storySource": "user",
+        "sentence": "Bonsoir, je m'appelle Paul, dit-il au micro.",
+        "targetWord": "Bonsoir",
+        "language": "french",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/342e6e0421710671.mp3"
+      }
     },
     "featured": false
   }

@@ -102,6 +102,21 @@ const LANGS: Record<string, { prev: string; next: string; prevQ: string; nextQ: 
     // Las interrogativas con partícula caen solas; solo las de sí/no suben.
     wh: /(\bche cosa\b|\bche\b|\bchi\b|\bcome\b|\bquando\b|\bdove\b|\bquale\b|\bquali\b|\bquanto\b|\bquanta\b|\bquanti\b|\bquante\b|\bperché\b)/i,
   },
+  // Francés (2026-09-16, Friends FR A2 Nantes). Mismo criterio que arriba: el
+  // framing va en francés para que ElevenLabs no arrastre el acento de otra
+  // lengua a la frase que importa.
+  fr: {
+    prev: "Maintenant, écoute cette phrase.",
+    next: "Très bien. Passons à la suivante.",
+    prevQ: "Il a une question et demande :",
+    nextQ: "Elle lui répond aussitôt.",
+    whisper: "fr", scribe: "fra",
+    // Las interrogativas con marca (qui/que/quoi/comment/quand/où/quel.../
+    // combien/pourquoi, incluidas las formas con "est-ce que/qui") caen solas;
+    // las de sí/no (con o sin "est-ce que", o por inversión: "Viens-tu ?")
+    // no matchean aquí y suben, igual que en el resto de idiomas.
+    wh: /(\bqu'est-ce qu(?:e|i)\b|\bqui est-ce qu(?:e|i)\b|\bpourquoi\b|\bcomment\b|\bquand\b|\boù\b|\bcombien\b|\bquel(?:le)?s?\b|\bqui\b|\bque\b|\bquoi\b)/i,
+  },
 };
 // El idioma del framing (previous_text/next_text), del STT y de los gates se
 // DERIVA de la historia (`journey.language`) en `resolveRenderLang`, NO de un
