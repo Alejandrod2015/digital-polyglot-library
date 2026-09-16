@@ -30,7 +30,7 @@ config({ path: ".env.local", quiet: true });
 config({ path: ".env", quiet: true });
 import crypto from "node:crypto";
 import { spawn } from "node:child_process";
-import { mkdtempSync, readFileSync, writeFileSync, rmSync, mkdirSync } from "node:fs";
+import { mkdtempSync, readFileSync, writeFileSync, rmSync, mkdirSync, existsSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { PrismaClient } from "../src/generated/prisma";
@@ -222,9 +222,21 @@ async function normalise(raw: Buffer, outPath: string): Promise<number> {
 // transcribed token END vs is there loud audio after it. Threshold measured on
 // 31 labeled mole clips: artifacts sat at -7.6 and -12.4 dB max-volume after
 // the last token; every clean clip was ≤ -25.0 dB. -20 splits with margin.
-// Uses local whisper.cpp (brew install whisper-cpp + ggml-base at
-// ~/.cache/whisper/); if missing, the gate is skipped with a warning.
-const WHISPER_MODEL = join(process.env.HOME || "", ".cache", "whisper", "ggml-base.bin");
+// Uses local whisper.cpp (brew install whisper-cpp). Prefers ggml-base at
+// ~/.cache/whisper/; if that is not installed, falls back to the ggml-small
+// model kept for the Python pipeline (scripts/tts/whisper-models/), which is
+// MORE accurate than base, only slower. Never silent about which one ran:
+// printed once per invocation (2026-09-16, gate needed for a language with no
+// base model on disk). If neither exists, the gate is skipped with a warning.
+const WHISPER_MODEL_CANDIDATES = [
+  { path: join(process.env.HOME || "", ".cache", "whisper", "ggml-base.bin"), label: "ggml-base" },
+  { path: join(__dirname, "tts", "whisper-models", "ggml-small.bin"), label: "ggml-small (fallback, sin ggml-base)" },
+];
+function resolveWhisperModel(): { path: string; label: string } | null {
+  for (const c of WHISPER_MODEL_CANDIDATES) if (existsSync(c.path)) return c;
+  return null;
+}
+let whisperModelAnnounced = false;
 const TAIL_MAX_DB = -20;
 let tailGateWarned = false;
 function spawnCapture(cmd: string, args: string[]): Promise<{ code: number; out: string; err: string }> {
@@ -241,7 +253,10 @@ async function tailClean(mp3Path: string): Promise<{ ok: boolean; db: number | n
     await ff(["-y", "-loglevel", "error", "-i", mp3Path, "-ar", "16000", "-ac", "1", wav]);
     let json: any;
     try {
-      const r = await spawnCapture("whisper-cli", ["-m", WHISPER_MODEL, "-l", LANG.whisper, "-np", "-ojf", "-of", join(dir, "a"), wav]);
+      const model = resolveWhisperModel();
+      if (!model) throw new Error("ni ggml-base ni ggml-small (fallback) presentes");
+      if (!whisperModelAnnounced) { whisperModelAnnounced = true; console.log(`tail gate: midiendo con ${model.label}`); }
+      const r = await spawnCapture("whisper-cli", ["-m", model.path, "-l", LANG.whisper, "-np", "-ojf", "-of", join(dir, "a"), wav]);
       if (r.code !== 0) throw new Error(r.err.slice(0, 120));
       json = JSON.parse(readFileSync(join(dir, "a.json"), "utf8"));
     } catch (err) {
