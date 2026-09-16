@@ -140,7 +140,7 @@
  {
   "type": "meaning_in_context",
   "word": "Stimme",
-  "sentence": "Die [[Stimme]] von Anna ist seit Jahren still.",
+  "sentence": "Ihre [[Stimme]] ist ganz leise.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "a voice",
@@ -153,7 +153,7 @@
    "audioClip": {
     "storySlug": "tims-trommelstocke",
     "storySource": "user",
-    "sentence": "Die Stimme von Anna ist seit Jahren still.",
+    "sentence": "Ihre Stimme ist ganz leise.",
     "targetWord": "Stimme",
     "language": "german"
    }
