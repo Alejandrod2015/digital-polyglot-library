@@ -1,206 +1,442 @@
 [
- {
-  "type": "match_meaning",
-  "word": "la Braderie,le médecin généraliste,le dérailleur,la ponceuse",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {"word": "la Braderie", "answer": "the giant Lille flea market", "options": ["the giant Lille flea market", "a family doctor", "a bike gear part", "a sanding tool"]},
-    {"word": "le médecin généraliste", "answer": "a family doctor", "options": ["the giant Lille flea market", "a family doctor", "a bike gear part", "a sanding tool"]},
-    {"word": "le dérailleur", "answer": "a bike gear part", "options": ["the giant Lille flea market", "a family doctor", "a bike gear part", "a sanding tool"]},
-    {"word": "la ponceuse", "answer": "a sanding tool", "options": ["the giant Lille flea market", "a family doctor", "a bike gear part", "a sanding tool"]}
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "sentait",
-  "sentence": "La cuisine _____ le pain chaud.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "sentait",
-   "options": ["sentait", "cassait", "coûtait", "pesait"],
-   "translation": "The kitchen _____ of warm bread.",
-   "optionTranslations": ["smelled", "broke", "cost", "weighed"],
-   "audioClip": {"language": "french", "sentence": "La cuisine sentait le pain chaud.", "storySlug": "des-mains-qui-tremblent", "targetWord": "sentait", "storySource": "user"}
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "craquer",
-  "sentence": "À force de trop travailler, elle a fini par _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "craquer",
-   "options": ["craquer", "réussir", "voyager", "économiser"],
-   "translation": "From working too much, she finally _____.",
-   "optionTranslations": ["broke down", "succeeded", "traveled", "saved money"],
-   "audioClip": {"language": "french", "sentence": "À force de trop travailler, elle a fini par craquer.", "storySlug": "des-mains-qui-tremblent", "targetWord": "craquer", "storySource": "user"}
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "ralentir",
-  "sentence": "Sur cette route étroite, il faut _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "ralentir",
-   "options": ["ralentir", "accélérer", "klaxonner", "tourner"],
-   "translation": "On this narrow road, you need to _____.",
-   "optionTranslations": ["slow down", "speed up", "honk", "turn"],
-   "audioClip": {"language": "french", "sentence": "Sur cette route étroite, il faut ralentir.", "storySlug": "des-mains-qui-tremblent", "targetWord": "ralentir", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "la sueur",
-  "sentence": "Après le sport, sa chemise était couverte de [[sueur]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "sweat",
-   "options": ["sweat", "water", "paint", "flour"],
-   "audioClip": {"language": "french", "sentence": "Après le sport, sa chemise était couverte de sueur.", "storySlug": "des-mains-qui-tremblent", "targetWord": "sueur", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "le cabinet",
-  "sentence": "Le docteur reçoit ses patients dans [[son cabinet]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "his office",
-   "options": ["his office", "his car", "his kitchen", "his garden"],
-   "audioClip": {"language": "french", "sentence": "Le docteur reçoit ses patients dans son cabinet.", "storySlug": "des-mains-qui-tremblent", "targetWord": "cabinet", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "régler",
-  "sentence": "Le technicien [[réglait]] la machine avant de partir.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "was adjusting",
-   "options": ["was adjusting", "was selling", "was painting", "was hiding"],
-   "audioClip": {"language": "french", "sentence": "Le technicien réglait la machine avant de partir.", "storySlug": "des-mains-qui-tremblent", "targetWord": "réglait", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "se reposer",
-  "sentence": "Après ce voyage fatigant, elle [[se reposera]] tout le week-end.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "will rest",
-   "options": ["will rest", "will cook", "will travel again", "will work more"],
-   "audioClip": {"language": "french", "sentence": "Après ce voyage fatigant, elle se reposera tout le week-end.", "storySlug": "des-mains-qui-tremblent", "targetWord": "reposera", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "secouer la tête",
-  "sentence": "Quand on lui a proposé, il a [[secoué la tête]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "shook his head",
-   "options": ["shook his head", "nodded his head", "closed his eyes", "raised his hand"],
-   "audioClip": {"language": "french", "sentence": "Quand on lui a proposé, il a secoué la tête.", "storySlug": "des-mains-qui-tremblent", "targetWord": "secoué la tête", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "pourtant",
-  "sentence": "Il pleuvait, [[pourtant]] elle est sortie sans parapluie.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "yet, even so",
-   "options": ["yet, even so", "because of that", "before that", "never"],
-   "audioClip": {"language": "french", "sentence": "Il pleuvait, pourtant elle est sortie sans parapluie.", "storySlug": "des-mains-qui-tremblent", "targetWord": "Pourtant", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "les vitesses",
-  "sentence": "Sur ce vélo, il y a beaucoup de [[vitesses]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "gears",
-   "options": ["gears", "wheels", "lights", "brakes"],
-   "audioClip": {"language": "french", "sentence": "Sur ce vélo, il y a beaucoup de vitesses.", "storySlug": "des-mains-qui-tremblent", "targetWord": "vitesses", "storySource": "user"}
+  {
+    "type": "match_meaning",
+    "word": "la Braderie,le médecin généraliste,le dérailleur,la ponceuse",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "la Braderie",
+          "answer": "the giant Lille flea market",
+          "options": [
+            "the giant Lille flea market",
+            "a family doctor",
+            "a bike gear part",
+            "a sanding tool"
+          ]
+        },
+        {
+          "word": "le médecin généraliste",
+          "answer": "a family doctor",
+          "options": [
+            "the giant Lille flea market",
+            "a family doctor",
+            "a bike gear part",
+            "a sanding tool"
+          ]
+        },
+        {
+          "word": "le dérailleur",
+          "answer": "a bike gear part",
+          "options": [
+            "the giant Lille flea market",
+            "a family doctor",
+            "a bike gear part",
+            "a sanding tool"
+          ]
+        },
+        {
+          "word": "la ponceuse",
+          "answer": "a sanding tool",
+          "options": [
+            "the giant Lille flea market",
+            "a family doctor",
+            "a bike gear part",
+            "a sanding tool"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "par jour",
-  "sentence": "Elle travaille dix heures [[par jour]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a day",
-   "options": ["a day", "a week", "a year", "a month"],
-   "audioClip": {"language": "french", "sentence": "Elle travaille dix heures par jour.", "storySlug": "des-mains-qui-tremblent", "targetWord": "par jour", "storySource": "user"}
+  {
+    "type": "fill_blank",
+    "word": "sentait",
+    "sentence": "La cuisine _____ le pain chaud.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sentait",
+      "options": [
+        "sentait",
+        "cassait",
+        "coûtait",
+        "pesait"
+      ],
+      "translation": "The kitchen _____ of warm bread.",
+      "optionTranslations": [
+        "smelled",
+        "broke",
+        "cost",
+        "weighed"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "La cuisine sentait le pain chaud.",
+        "storySlug": "des-mains-qui-tremblent",
+        "targetWord": "sentait",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/47f019366d5761bf.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "trembler",
-  "sentence": "De froid, ses mains [[tremblaient]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "were shaking",
-   "options": ["were shaking", "were warm", "were clean", "were empty"],
-   "audioClip": {"language": "french", "sentence": "De froid, ses mains tremblaient.", "storySlug": "des-mains-qui-tremblent", "targetWord": "tremblaient", "storySource": "user"}
+  {
+    "type": "fill_blank",
+    "word": "craquer",
+    "sentence": "À force de trop travailler, elle a fini par _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "craquer",
+      "options": [
+        "craquer",
+        "réussir",
+        "voyager",
+        "économiser"
+      ],
+      "translation": "From working too much, she finally _____.",
+      "optionTranslations": [
+        "broke down",
+        "succeeded",
+        "traveled",
+        "saved money"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "À force de trop travailler, elle a fini par craquer.",
+        "storySlug": "des-mains-qui-tremblent",
+        "targetWord": "craquer",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/31f827e3e0c6798b.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "en souriant",
-  "sentence": "Elle a dit au revoir [[en souriant]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "while smiling",
-   "options": ["while smiling", "while crying", "while running", "while shouting"],
-   "audioClip": {"language": "french", "sentence": "Elle a dit au revoir en souriant.", "storySlug": "des-mains-qui-tremblent", "targetWord": "en souriant", "storySource": "user"}
+  {
+    "type": "fill_blank",
+    "word": "ralentir",
+    "sentence": "Sur cette route étroite, il faut _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ralentir",
+      "options": [
+        "ralentir",
+        "accélérer",
+        "klaxonner",
+        "tourner"
+      ],
+      "translation": "On this narrow road, you need to _____.",
+      "optionTranslations": [
+        "slow down",
+        "speed up",
+        "honk",
+        "turn"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Sur cette route étroite, il faut ralentir.",
+        "storySlug": "des-mains-qui-tremblent",
+        "targetWord": "ralentir",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8cfab1ece9260c0a.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "à ce rythme",
-  "sentence": "[[À ce rythme]], le travail sera fini demain.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "at this rate",
-   "options": ["at this rate", "never", "by chance", "last year"],
-   "audioClip": {"language": "french", "sentence": "À ce rythme, le travail sera fini demain.", "storySlug": "des-mains-qui-tremblent", "targetWord": "À ce rythme", "storySource": "user"}
+  {
+    "type": "meaning_in_context",
+    "word": "la sueur",
+    "sentence": "Après le sport, sa chemise était couverte de [[sueur]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sweat",
+      "options": [
+        "sweat",
+        "water",
+        "paint",
+        "flour"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Après le sport, sa chemise était couverte de sueur.",
+        "storySlug": "des-mains-qui-tremblent",
+        "targetWord": "sueur",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d0e6d070b5620730.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "se passer de",
-  "sentence": "Sans internet, on ne peut plus [[s'en passer]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "do without it",
-   "options": ["do without it", "buy it easily", "fix it fast", "sell it again"],
-   "audioClip": {"language": "french", "sentence": "Sans internet, on ne peut plus s'en passer.", "storySlug": "des-mains-qui-tremblent", "targetWord": "s'en passer", "storySource": "user"}
+  {
+    "type": "meaning_in_context",
+    "word": "le cabinet",
+    "sentence": "Le docteur reçoit ses patients dans [[son cabinet]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "his office",
+      "options": [
+        "his office",
+        "his car",
+        "his kitchen",
+        "his garden"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Le docteur reçoit ses patients dans son cabinet.",
+        "storySlug": "des-mains-qui-tremblent",
+        "targetWord": "cabinet",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/418d7664f206b1eb.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "rallumer",
-  "sentence": "Après la coupure, il a [[rallumé]] l'ordinateur.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "switched back on",
-   "options": ["switched back on", "thrown away", "sold", "broken"],
-   "audioClip": {"language": "french", "sentence": "Après la coupure, il a rallumé l'ordinateur.", "storySlug": "des-mains-qui-tremblent", "targetWord": "rallumé", "storySource": "user"}
+  {
+    "type": "meaning_in_context",
+    "word": "régler",
+    "sentence": "Le technicien [[réglait]] la machine avant de partir.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "was adjusting",
+      "options": [
+        "was adjusting",
+        "was selling",
+        "was painting",
+        "was hiding"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Le technicien réglait la machine avant de partir.",
+        "storySlug": "des-mains-qui-tremblent",
+        "targetWord": "réglait",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d2fa020ad6340df.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "se reposer",
+    "sentence": "Après ce voyage fatigant, elle [[se reposera]] tout le week-end.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "will rest",
+      "options": [
+        "will rest",
+        "will cook",
+        "will travel again",
+        "will work more"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Après ce voyage fatigant, elle se reposera tout le week-end.",
+        "storySlug": "des-mains-qui-tremblent",
+        "targetWord": "reposera",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2caaaee98534441b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "secouer la tête",
+    "sentence": "Quand on lui a proposé, il a [[secoué la tête]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shook his head",
+      "options": [
+        "shook his head",
+        "nodded his head",
+        "closed his eyes",
+        "raised his hand"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Quand on lui a proposé, il a secoué la tête.",
+        "storySlug": "des-mains-qui-tremblent",
+        "targetWord": "secoué la tête",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5e30ac796757c4dc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pourtant",
+    "sentence": "Il pleuvait, [[pourtant]] elle est sortie sans parapluie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "yet, even so",
+      "options": [
+        "yet, even so",
+        "because of that",
+        "before that",
+        "never"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Il pleuvait, pourtant elle est sortie sans parapluie.",
+        "storySlug": "des-mains-qui-tremblent",
+        "targetWord": "Pourtant",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/784bc7e71a0609e1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "les vitesses",
+    "sentence": "Sur ce vélo, il y a beaucoup de [[vitesses]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gears",
+      "options": [
+        "gears",
+        "wheels",
+        "lights",
+        "brakes"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Sur ce vélo, il y a beaucoup de vitesses.",
+        "storySlug": "des-mains-qui-tremblent",
+        "targetWord": "vitesses",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "par jour",
+    "sentence": "Elle travaille dix heures [[par jour]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a day",
+      "options": [
+        "a day",
+        "a week",
+        "a year",
+        "a month"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Elle travaille dix heures par jour.",
+        "storySlug": "des-mains-qui-tremblent",
+        "targetWord": "par jour",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "trembler",
+    "sentence": "De froid, ses mains [[tremblaient]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "were shaking",
+      "options": [
+        "were shaking",
+        "were warm",
+        "were clean",
+        "were empty"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "De froid, ses mains tremblaient.",
+        "storySlug": "des-mains-qui-tremblent",
+        "targetWord": "tremblaient",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en souriant",
+    "sentence": "Elle a dit au revoir [[en souriant]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "while smiling",
+      "options": [
+        "while smiling",
+        "while crying",
+        "while running",
+        "while shouting"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Elle a dit au revoir en souriant.",
+        "storySlug": "des-mains-qui-tremblent",
+        "targetWord": "en souriant",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "à ce rythme",
+    "sentence": "[[À ce rythme]], le travail sera fini demain.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at this rate",
+      "options": [
+        "at this rate",
+        "never",
+        "by chance",
+        "last year"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "À ce rythme, le travail sera fini demain.",
+        "storySlug": "des-mains-qui-tremblent",
+        "targetWord": "À ce rythme",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "se passer de",
+    "sentence": "Sans internet, on ne peut plus [[s'en passer]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "do without it",
+      "options": [
+        "do without it",
+        "buy it easily",
+        "fix it fast",
+        "sell it again"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Sans internet, on ne peut plus s'en passer.",
+        "storySlug": "des-mains-qui-tremblent",
+        "targetWord": "s'en passer",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rallumer",
+    "sentence": "Après la coupure, il a [[rallumé]] l'ordinateur.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "switched back on",
+      "options": [
+        "switched back on",
+        "thrown away",
+        "sold",
+        "broken"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Après la coupure, il a rallumé l'ordinateur.",
+        "storySlug": "des-mains-qui-tremblent",
+        "targetWord": "rallumé",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  }
 ]

@@ -1,206 +1,442 @@
 [
- {
-  "type": "match_meaning",
-  "word": "le prospectus,le recyclage,pluvieux,ordinaire",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {"word": "le prospectus", "answer": "a flyer", "options": ["a flyer", "recycling", "rainy", "ordinary"]},
-    {"word": "le recyclage", "answer": "recycling", "options": ["a flyer", "recycling", "rainy", "ordinary"]},
-    {"word": "pluvieux", "answer": "rainy", "options": ["a flyer", "recycling", "rainy", "ordinary"]},
-    {"word": "ordinaire", "answer": "ordinary", "options": ["a flyer", "recycling", "rainy", "ordinary"]}
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "osait",
-  "sentence": "Personne n'_____ prendre la parole en premier.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "osait",
-   "options": ["osait", "refusait", "évitait", "oubliait"],
-   "translation": "Nobody _____ to speak up first.",
-   "optionTranslations": ["dared", "refused", "avoided", "forgot"],
-   "audioClip": {"language": "french", "sentence": "Personne n'osait prendre la parole en premier.", "storySlug": "cinq-cents-prospectus", "targetWord": "osait", "storySource": "user"}
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "constatait",
-  "sentence": "Chaque matin, elle _____ que la porte était ouverte.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "constatait",
-   "options": ["constatait", "fermait", "peignait", "cherchait"],
-   "translation": "Every morning, she _____ that the door was open.",
-   "optionTranslations": ["noticed", "closed", "painted", "looked for"],
-   "audioClip": {"language": "french", "sentence": "Chaque matin, elle constatait que la porte était ouverte.", "storySlug": "cinq-cents-prospectus", "targetWord": "constatait", "storySource": "user"}
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "résumé",
-  "sentence": "Le professeur a _____ la leçon en une phrase.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "résumé",
-   "options": ["résumé", "oublié", "copié", "chanté"],
-   "translation": "The teacher _____ the lesson in one sentence.",
-   "optionTranslations": ["summarized", "forgot", "copied", "sang"],
-   "audioClip": {"language": "french", "sentence": "Le professeur a résumé la leçon en une phrase.", "storySlug": "cinq-cents-prospectus", "targetWord": "résumé", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "se débarrasser de",
-  "sentence": "Il faut [[se débarrasser des]] vieux papiers dans le garage.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to get rid of",
-   "options": ["to get rid of", "to look for", "to sell quickly", "to repair"],
-   "audioClip": {"language": "french", "sentence": "Il faut se débarrasser des vieux papiers dans le garage.", "storySlug": "cinq-cents-prospectus", "targetWord": "se débarrasser des", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "imprimé",
-  "sentence": "Ces papiers sont [[imprimés]] des deux côtés.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "printed",
-   "options": ["printed", "folded", "painted", "torn"],
-   "audioClip": {"language": "french", "sentence": "Ces papiers sont imprimés des deux côtés.", "storySlug": "cinq-cents-prospectus", "targetWord": "imprimés", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "au bout du rouleau",
-  "sentence": "Après trois nuits sans dormir, il était [[au bout du rouleau]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "completely exhausted",
-   "options": ["completely exhausted", "full of energy", "very happy", "a little bored"],
-   "audioClip": {"language": "french", "sentence": "Après trois nuits sans dormir, il était au bout du rouleau.", "storySlug": "cinq-cents-prospectus", "targetWord": "au bout du rouleau", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "je n'en peux plus",
-  "sentence": "[[Je n'en peux plus]], j'ai besoin de dormir.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "I can't take it anymore",
-   "options": ["I can't take it anymore", "I'm very happy today", "I love my job", "I want more coffee"],
-   "audioClip": {"language": "french", "sentence": "Je n'en peux plus, j'ai besoin de dormir.", "storySlug": "cinq-cents-prospectus", "targetWord": "Je n'en peux plus", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "se tuer au travail",
-  "sentence": "Il ne faut pas [[se tuer au travail]] pour réussir.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to work yourself to death",
-   "options": ["to work yourself to death", "to arrive on time", "to ask for help", "to take a break"],
-   "audioClip": {"language": "french", "sentence": "Il ne faut pas se tuer au travail pour réussir.", "storySlug": "cinq-cents-prospectus", "targetWord": "se tuer au travail", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "sans regret",
-  "sentence": "Elle a quitté son travail [[sans regret]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "without regret",
-   "options": ["without regret", "with great sadness", "after a fight", "without warning"],
-   "audioClip": {"language": "french", "sentence": "Elle a quitté son travail sans regret.", "storySlug": "cinq-cents-prospectus", "targetWord": "sans regret", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "en pile",
-  "sentence": "Les journaux étaient [[en pile]] sur la table.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "in a stack",
-   "options": ["in a stack", "in the trash", "under the bed", "in the mail"],
-   "audioClip": {"language": "french", "sentence": "Les journaux étaient en pile sur la table.", "storySlug": "cinq-cents-prospectus", "targetWord": "en pile", "storySource": "user"}
+  {
+    "type": "match_meaning",
+    "word": "le prospectus,le recyclage,pluvieux,ordinaire",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "le prospectus",
+          "answer": "a flyer",
+          "options": [
+            "a flyer",
+            "recycling",
+            "rainy",
+            "ordinary"
+          ]
+        },
+        {
+          "word": "le recyclage",
+          "answer": "recycling",
+          "options": [
+            "a flyer",
+            "recycling",
+            "rainy",
+            "ordinary"
+          ]
+        },
+        {
+          "word": "pluvieux",
+          "answer": "rainy",
+          "options": [
+            "a flyer",
+            "recycling",
+            "rainy",
+            "ordinary"
+          ]
+        },
+        {
+          "word": "ordinaire",
+          "answer": "ordinary",
+          "options": [
+            "a flyer",
+            "recycling",
+            "rainy",
+            "ordinary"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "plus tôt que prévu",
-  "sentence": "Le train est arrivé [[plus tôt que prévu]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "earlier than expected",
-   "options": ["earlier than expected", "later than expected", "exactly on time", "much too late"],
-   "audioClip": {"language": "french", "sentence": "Le train est arrivé plus tôt que prévu.", "storySlug": "cinq-cents-prospectus", "targetWord": "plus tôt que prévu", "storySource": "user"}
+  {
+    "type": "fill_blank",
+    "word": "osait",
+    "sentence": "Personne n'_____ prendre la parole en premier.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "osait",
+      "options": [
+        "osait",
+        "refusait",
+        "évitait",
+        "oubliait"
+      ],
+      "translation": "Nobody _____ to speak up first.",
+      "optionTranslations": [
+        "dared",
+        "refused",
+        "avoided",
+        "forgot"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Personne n'osait prendre la parole en premier.",
+        "storySlug": "cinq-cents-prospectus",
+        "targetWord": "osait",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/79c7255e5b7298ba.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "par cœur",
-  "sentence": "Elle connaît ce poème [[par cœur]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "by heart",
-   "options": ["by heart", "by chance", "by mistake", "by phone"],
-   "audioClip": {"language": "french", "sentence": "Elle connaît ce poème par cœur.", "storySlug": "cinq-cents-prospectus", "targetWord": "par cœur", "storySource": "user"}
+  {
+    "type": "fill_blank",
+    "word": "constatait",
+    "sentence": "Chaque matin, elle _____ que la porte était ouverte.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "constatait",
+      "options": [
+        "constatait",
+        "fermait",
+        "peignait",
+        "cherchait"
+      ],
+      "translation": "Every morning, she _____ that the door was open.",
+      "optionTranslations": [
+        "noticed",
+        "closed",
+        "painted",
+        "looked for"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Chaque matin, elle constatait que la porte était ouverte.",
+        "storySlug": "cinq-cents-prospectus",
+        "targetWord": "constatait",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f3354b4a45f6505b.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "avoir des vertiges",
-  "sentence": "En haut de la tour, il [[avait des vertiges]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "felt dizzy",
-   "options": ["felt dizzy", "felt hungry", "felt proud", "felt bored"],
-   "audioClip": {"language": "french", "sentence": "En haut de la tour, il avait des vertiges.", "storySlug": "cinq-cents-prospectus", "targetWord": "avait des vertiges", "storySource": "user"}
+  {
+    "type": "fill_blank",
+    "word": "résumé",
+    "sentence": "Le professeur a _____ la leçon en une phrase.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "résumé",
+      "options": [
+        "résumé",
+        "oublié",
+        "copié",
+        "chanté"
+      ],
+      "translation": "The teacher _____ the lesson in one sentence.",
+      "optionTranslations": [
+        "summarized",
+        "forgot",
+        "copied",
+        "sang"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Le professeur a résumé la leçon en une phrase.",
+        "storySlug": "cinq-cents-prospectus",
+        "targetWord": "résumé",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1ba5f9bb80b90ba9.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "passer la soirée à",
-  "sentence": "Ils ont [[passé la soirée à]] ranger la maison.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "spent the evening doing",
-   "options": ["spent the evening doing", "forgotten completely about", "refused to start", "finished quickly"],
-   "audioClip": {"language": "french", "sentence": "Ils ont passé la soirée à ranger la maison.", "storySlug": "cinq-cents-prospectus", "targetWord": "passé la soirée à", "storySource": "user"}
+  {
+    "type": "meaning_in_context",
+    "word": "se débarrasser de",
+    "sentence": "Il faut [[se débarrasser des]] vieux papiers dans le garage.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get rid of",
+      "options": [
+        "to get rid of",
+        "to look for",
+        "to sell quickly",
+        "to repair"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Il faut se débarrasser des vieux papiers dans le garage.",
+        "storySlug": "cinq-cents-prospectus",
+        "targetWord": "se débarrasser des",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9d01b2de0e3e73d.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "le droit de",
-  "sentence": "Chacun a le [[droit de]] dire non.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the right to",
-   "options": ["the right to", "the fear of", "the habit of", "the memory of"],
-   "audioClip": {"language": "french", "sentence": "Chacun a le droit de dire non.", "storySlug": "cinq-cents-prospectus", "targetWord": "droit de", "storySource": "user"}
+  {
+    "type": "meaning_in_context",
+    "word": "imprimé",
+    "sentence": "Ces papiers sont [[imprimés]] des deux côtés.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "printed",
+      "options": [
+        "printed",
+        "folded",
+        "painted",
+        "torn"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Ces papiers sont imprimés des deux côtés.",
+        "storySlug": "cinq-cents-prospectus",
+        "targetWord": "imprimés",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d759be1f6c3d466.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "dire stop",
-  "sentence": "À un moment, il faut savoir [[dire stop]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to say stop",
-   "options": ["to say stop", "to say yes", "to keep going", "to say nothing"],
-   "audioClip": {"language": "french", "sentence": "À un moment, il faut savoir dire stop.", "storySlug": "cinq-cents-prospectus", "targetWord": "dire stop", "storySource": "user"}
+  {
+    "type": "meaning_in_context",
+    "word": "au bout du rouleau",
+    "sentence": "Après trois nuits sans dormir, il était [[au bout du rouleau]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "completely exhausted",
+      "options": [
+        "completely exhausted",
+        "full of energy",
+        "very happy",
+        "a little bored"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Après trois nuits sans dormir, il était au bout du rouleau.",
+        "storySlug": "cinq-cents-prospectus",
+        "targetWord": "au bout du rouleau",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ae1449716402ea0.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "je n'en peux plus",
+    "sentence": "[[Je n'en peux plus]], j'ai besoin de dormir.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "I can't take it anymore",
+      "options": [
+        "I can't take it anymore",
+        "I'm very happy today",
+        "I love my job",
+        "I want more coffee"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Je n'en peux plus, j'ai besoin de dormir.",
+        "storySlug": "cinq-cents-prospectus",
+        "targetWord": "Je n'en peux plus",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1ccc7527f021fba9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "se tuer au travail",
+    "sentence": "Il ne faut pas [[se tuer au travail]] pour réussir.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to work yourself to death",
+      "options": [
+        "to work yourself to death",
+        "to arrive on time",
+        "to ask for help",
+        "to take a break"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Il ne faut pas se tuer au travail pour réussir.",
+        "storySlug": "cinq-cents-prospectus",
+        "targetWord": "se tuer au travail",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4354e3a3bb306e27.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sans regret",
+    "sentence": "Elle a quitté son travail [[sans regret]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without regret",
+      "options": [
+        "without regret",
+        "with great sadness",
+        "after a fight",
+        "without warning"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Elle a quitté son travail sans regret.",
+        "storySlug": "cinq-cents-prospectus",
+        "targetWord": "sans regret",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5e5c8dc7cc595e93.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en pile",
+    "sentence": "Les journaux étaient [[en pile]] sur la table.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in a stack",
+      "options": [
+        "in a stack",
+        "in the trash",
+        "under the bed",
+        "in the mail"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Les journaux étaient en pile sur la table.",
+        "storySlug": "cinq-cents-prospectus",
+        "targetWord": "en pile",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plus tôt que prévu",
+    "sentence": "Le train est arrivé [[plus tôt que prévu]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "earlier than expected",
+      "options": [
+        "earlier than expected",
+        "later than expected",
+        "exactly on time",
+        "much too late"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Le train est arrivé plus tôt que prévu.",
+        "storySlug": "cinq-cents-prospectus",
+        "targetWord": "plus tôt que prévu",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "par cœur",
+    "sentence": "Elle connaît ce poème [[par cœur]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "by heart",
+      "options": [
+        "by heart",
+        "by chance",
+        "by mistake",
+        "by phone"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Elle connaît ce poème par cœur.",
+        "storySlug": "cinq-cents-prospectus",
+        "targetWord": "par cœur",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avoir des vertiges",
+    "sentence": "En haut de la tour, il [[avait des vertiges]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "felt dizzy",
+      "options": [
+        "felt dizzy",
+        "felt hungry",
+        "felt proud",
+        "felt bored"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "En haut de la tour, il avait des vertiges.",
+        "storySlug": "cinq-cents-prospectus",
+        "targetWord": "avait des vertiges",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "passer la soirée à",
+    "sentence": "Ils ont [[passé la soirée à]] ranger la maison.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "spent the evening doing",
+      "options": [
+        "spent the evening doing",
+        "forgotten completely about",
+        "refused to start",
+        "finished quickly"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Ils ont passé la soirée à ranger la maison.",
+        "storySlug": "cinq-cents-prospectus",
+        "targetWord": "passé la soirée à",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le droit de",
+    "sentence": "Chacun a le [[droit de]] dire non.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the right to",
+      "options": [
+        "the right to",
+        "the fear of",
+        "the habit of",
+        "the memory of"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Chacun a le droit de dire non.",
+        "storySlug": "cinq-cents-prospectus",
+        "targetWord": "droit de",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dire stop",
+    "sentence": "À un moment, il faut savoir [[dire stop]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to say stop",
+      "options": [
+        "to say stop",
+        "to say yes",
+        "to keep going",
+        "to say nothing"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "À un moment, il faut savoir dire stop.",
+        "storySlug": "cinq-cents-prospectus",
+        "targetWord": "dire stop",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  }
 ]

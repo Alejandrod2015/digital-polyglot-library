@@ -1,206 +1,442 @@
 [
- {
-  "type": "match_meaning",
-  "word": "le titre,le compresseur,furieux,nulle part",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {"word": "le titre", "answer": "a headline", "options": ["a headline", "an air compressor", "furious", "nowhere"]},
-    {"word": "le compresseur", "answer": "an air compressor", "options": ["a headline", "an air compressor", "furious", "nowhere"]},
-    {"word": "furieux", "answer": "furious", "options": ["a headline", "an air compressor", "furious", "nowhere"]},
-    {"word": "nulle part", "answer": "nowhere", "options": ["a headline", "an air compressor", "furious", "nowhere"]}
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "occupait",
-  "sentence": "Cette table _____ tout le coin de la pièce.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "occupait",
-   "options": ["occupait", "cassait", "quittait", "peignait"],
-   "translation": "This table _____ the whole corner of the room.",
-   "optionTranslations": ["took up", "broke", "left", "painted"],
-   "audioClip": {"language": "french", "sentence": "Cette table occupait tout le coin de la pièce.", "storySlug": "son-nom-n-y-est-pas", "targetWord": "occupait", "storySource": "user"}
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "devinait",
-  "sentence": "À travers le brouillard, on _____ à peine la route.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "devinait",
-   "options": ["devinait", "fermait", "dessinait", "comptait"],
-   "translation": "Through the fog, you could barely _____ the road.",
-   "optionTranslations": ["make out", "close", "draw", "count"],
-   "audioClip": {"language": "french", "sentence": "À travers le brouillard, on devinait à peine la route.", "storySlug": "son-nom-n-y-est-pas", "targetWord": "devinait", "storySource": "user"}
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "tordait",
-  "sentence": "Elle _____ le tissu pour en sortir l'eau.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "tordait",
-   "options": ["tordait", "lavait", "pliait", "coupait"],
-   "translation": "She _____ the cloth to squeeze the water out.",
-   "optionTranslations": ["was wringing", "was washing", "was folding", "was cutting"],
-   "audioClip": {"language": "french", "sentence": "Elle tordait le tissu pour en sortir l'eau.", "storySlug": "son-nom-n-y-est-pas", "targetWord": "tordait", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "apparaître",
-  "sentence": "Son nom n'[[apparaissait]] nulle part dans l'article.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "appeared",
-   "options": ["appeared", "disappeared", "was written twice", "was underlined"],
-   "audioClip": {"language": "french", "sentence": "Son nom n'apparaissait nulle part dans l'article.", "storySlug": "son-nom-n-y-est-pas", "targetWord": "apparaissait", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "content de soi",
-  "sentence": "Tu as l'air bien [[content de toi]] aujourd'hui.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "pleased with yourself",
-   "options": ["pleased with yourself", "angry at yourself", "worried about others", "tired of everything"],
-   "audioClip": {"language": "french", "sentence": "Tu as l'air bien content de toi aujourd'hui.", "storySlug": "son-nom-n-y-est-pas", "targetWord": "content de toi", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "plus rien",
-  "sentence": "Après cette phrase, il n'a dit [[plus rien]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "nothing more",
-   "options": ["nothing more", "much more", "something new", "a little more"],
-   "audioClip": {"language": "french", "sentence": "Après cette phrase, il n'a dit plus rien.", "storySlug": "son-nom-n-y-est-pas", "targetWord": "plus rien", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "autant que",
-  "sentence": "Il travaille [[autant que]] son collègue.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "as much as",
-   "options": ["as much as", "less than", "more than", "instead of"],
-   "audioClip": {"language": "french", "sentence": "Il travaille autant que son collègue.", "storySlug": "son-nom-n-y-est-pas", "targetWord": "autant que", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "faire la une",
-  "sentence": "Cette histoire incroyable [[faisait la une]] du journal.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "was the front-page story",
-   "options": ["was the front-page story", "was completely forgotten", "was on page twenty", "was never printed"],
-   "audioClip": {"language": "french", "sentence": "Cette histoire incroyable faisait la une du journal.", "storySlug": "son-nom-n-y-est-pas", "targetWord": "faisait la une", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "se souvenir de",
-  "sentence": "Il [[s'est souvenu de]] son premier jour de travail.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "remembered",
-   "options": ["remembered", "forgotten completely", "hidden from", "explained to"],
-   "audioClip": {"language": "french", "sentence": "Il s'est souvenu de son premier jour de travail.", "storySlug": "son-nom-n-y-est-pas", "targetWord": "s'est souvenu de", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "adresser la parole",
-  "sentence": "Il refuse de lui [[adresser la parole]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "speak to him",
-   "options": ["speak to him", "write to him", "listen to him", "pay him"],
-   "audioClip": {"language": "french", "sentence": "Il refuse de lui adresser la parole.", "storySlug": "son-nom-n-y-est-pas", "targetWord": "adresser la parole", "storySource": "user"}
+  {
+    "type": "match_meaning",
+    "word": "le titre,le compresseur,furieux,nulle part",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "le titre",
+          "answer": "a headline",
+          "options": [
+            "a headline",
+            "an air compressor",
+            "furious",
+            "nowhere"
+          ]
+        },
+        {
+          "word": "le compresseur",
+          "answer": "an air compressor",
+          "options": [
+            "a headline",
+            "an air compressor",
+            "furious",
+            "nowhere"
+          ]
+        },
+        {
+          "word": "furieux",
+          "answer": "furious",
+          "options": [
+            "a headline",
+            "an air compressor",
+            "furious",
+            "nowhere"
+          ]
+        },
+        {
+          "word": "nulle part",
+          "answer": "nowhere",
+          "options": [
+            "a headline",
+            "an air compressor",
+            "furious",
+            "nowhere"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "le mien",
-  "sentence": "Ce vélo n'est pas [[le mien]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "mine",
-   "options": ["mine", "yours", "broken", "new"],
-   "audioClip": {"language": "french", "sentence": "Ce vélo n'est pas le mien.", "storySlug": "son-nom-n-y-est-pas", "targetWord": "le mien", "storySource": "user"}
+  {
+    "type": "fill_blank",
+    "word": "occupait",
+    "sentence": "Cette table _____ tout le coin de la pièce.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "occupait",
+      "options": [
+        "occupait",
+        "cassait",
+        "quittait",
+        "peignait"
+      ],
+      "translation": "This table _____ the whole corner of the room.",
+      "optionTranslations": [
+        "took up",
+        "broke",
+        "left",
+        "painted"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Cette table occupait tout le coin de la pièce.",
+        "storySlug": "son-nom-n-y-est-pas",
+        "targetWord": "occupait",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e244e0f0988c2905.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "mon vieux",
-  "sentence": "Ça va aller, [[mon vieux]], ne t'inquiète pas.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "old friend",
-   "options": ["old friend", "dear madam", "little one", "boss"],
-   "audioClip": {"language": "french", "sentence": "Ça va aller, mon vieux, ne t'inquiète pas.", "storySlug": "son-nom-n-y-est-pas", "targetWord": "mon vieux", "storySource": "user"}
+  {
+    "type": "fill_blank",
+    "word": "devinait",
+    "sentence": "À travers le brouillard, on _____ à peine la route.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "devinait",
+      "options": [
+        "devinait",
+        "fermait",
+        "dessinait",
+        "comptait"
+      ],
+      "translation": "Through the fog, you could barely _____ the road.",
+      "optionTranslations": [
+        "make out",
+        "close",
+        "draw",
+        "count"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "À travers le brouillard, on devinait à peine la route.",
+        "storySlug": "son-nom-n-y-est-pas",
+        "targetWord": "devinait",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2431973a35155a6f.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "se donner de l'importance",
-  "sentence": "Il parlait fort pour [[se donner de l'importance]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "make himself look important",
-   "options": ["make himself look important", "hide from everyone", "help his colleagues", "stay completely silent"],
-   "audioClip": {"language": "french", "sentence": "Il parlait fort pour se donner de l'importance.", "storySlug": "son-nom-n-y-est-pas", "targetWord": "se donner de l'importance", "storySource": "user"}
+  {
+    "type": "fill_blank",
+    "word": "tordait",
+    "sentence": "Elle _____ le tissu pour en sortir l'eau.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tordait",
+      "options": [
+        "tordait",
+        "lavait",
+        "pliait",
+        "coupait"
+      ],
+      "translation": "She _____ the cloth to squeeze the water out.",
+      "optionTranslations": [
+        "was wringing",
+        "was washing",
+        "was folding",
+        "was cutting"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Elle tordait le tissu pour en sortir l'eau.",
+        "storySlug": "son-nom-n-y-est-pas",
+        "targetWord": "tordait",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1ac426747a81c8b5.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "la honte aux joues",
-  "sentence": "Il a quitté la salle [[la honte aux joues]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "cheeks burning with shame",
-   "options": ["cheeks burning with shame", "full of confidence", "laughing loudly", "completely calm"],
-   "audioClip": {"language": "french", "sentence": "Il a quitté la salle la honte aux joues.", "storySlug": "son-nom-n-y-est-pas", "targetWord": "la honte aux joues", "storySource": "user"}
+  {
+    "type": "meaning_in_context",
+    "word": "apparaître",
+    "sentence": "Son nom n'[[apparaissait]] nulle part dans l'article.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "appeared",
+      "options": [
+        "appeared",
+        "disappeared",
+        "was written twice",
+        "was underlined"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Son nom n'apparaissait nulle part dans l'article.",
+        "storySlug": "son-nom-n-y-est-pas",
+        "targetWord": "apparaissait",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8fa0eea43e0ac285.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "de l'autre côté de",
-  "sentence": "[[De l'autre côté de]] la rue, il y a une boulangerie.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "on the other side of",
-   "options": ["on the other side of", "right in the middle of", "far away from", "on top of"],
-   "audioClip": {"language": "french", "sentence": "De l'autre côté de la rue, il y a une boulangerie.", "storySlug": "son-nom-n-y-est-pas", "targetWord": "De l'autre côté de", "storySource": "user"}
+  {
+    "type": "meaning_in_context",
+    "word": "content de soi",
+    "sentence": "Tu as l'air bien [[content de toi]] aujourd'hui.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pleased with yourself",
+      "options": [
+        "pleased with yourself",
+        "angry at yourself",
+        "worried about others",
+        "tired of everything"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Tu as l'air bien content de toi aujourd'hui.",
+        "storySlug": "son-nom-n-y-est-pas",
+        "targetWord": "content de toi",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/49d26f67f4134ea7.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "étrangler",
-  "sentence": "De colère, elle avait envie de tout [[étrangler]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to strangle",
-   "options": ["to strangle", "to hug", "to paint", "to sell"],
-   "audioClip": {"language": "french", "sentence": "De colère, elle avait envie de tout étrangler.", "storySlug": "son-nom-n-y-est-pas", "targetWord": "étrangler", "storySource": "user"}
+  {
+    "type": "meaning_in_context",
+    "word": "plus rien",
+    "sentence": "Après cette phrase, il n'a dit [[plus rien]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nothing more",
+      "options": [
+        "nothing more",
+        "much more",
+        "something new",
+        "a little more"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Après cette phrase, il n'a dit plus rien.",
+        "storySlug": "son-nom-n-y-est-pas",
+        "targetWord": "plus rien",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c71aef39e6775d9b.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "autant que",
+    "sentence": "Il travaille [[autant que]] son collègue.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "as much as",
+      "options": [
+        "as much as",
+        "less than",
+        "more than",
+        "instead of"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Il travaille autant que son collègue.",
+        "storySlug": "son-nom-n-y-est-pas",
+        "targetWord": "autant que",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2489fedb05bc3727.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "faire la une",
+    "sentence": "Cette histoire incroyable [[faisait la une]] du journal.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "was the front-page story",
+      "options": [
+        "was the front-page story",
+        "was completely forgotten",
+        "was on page twenty",
+        "was never printed"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Cette histoire incroyable faisait la une du journal.",
+        "storySlug": "son-nom-n-y-est-pas",
+        "targetWord": "faisait la une",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7085fe24c6b209fc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "se souvenir de",
+    "sentence": "Il [[s'est souvenu de]] son premier jour de travail.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "remembered",
+      "options": [
+        "remembered",
+        "forgotten completely",
+        "hidden from",
+        "explained to"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Il s'est souvenu de son premier jour de travail.",
+        "storySlug": "son-nom-n-y-est-pas",
+        "targetWord": "s'est souvenu de",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/41c6f1a44979c8d4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "adresser la parole",
+    "sentence": "Il refuse de lui [[adresser la parole]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "speak to him",
+      "options": [
+        "speak to him",
+        "write to him",
+        "listen to him",
+        "pay him"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Il refuse de lui adresser la parole.",
+        "storySlug": "son-nom-n-y-est-pas",
+        "targetWord": "adresser la parole",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le mien",
+    "sentence": "Ce vélo n'est pas [[le mien]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "mine",
+      "options": [
+        "mine",
+        "yours",
+        "broken",
+        "new"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Ce vélo n'est pas le mien.",
+        "storySlug": "son-nom-n-y-est-pas",
+        "targetWord": "le mien",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mon vieux",
+    "sentence": "Ça va aller, [[mon vieux]], ne t'inquiète pas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "old friend",
+      "options": [
+        "old friend",
+        "dear madam",
+        "little one",
+        "boss"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Ça va aller, mon vieux, ne t'inquiète pas.",
+        "storySlug": "son-nom-n-y-est-pas",
+        "targetWord": "mon vieux",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "se donner de l'importance",
+    "sentence": "Il parlait fort pour [[se donner de l'importance]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "make himself look important",
+      "options": [
+        "make himself look important",
+        "hide from everyone",
+        "help his colleagues",
+        "stay completely silent"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Il parlait fort pour se donner de l'importance.",
+        "storySlug": "son-nom-n-y-est-pas",
+        "targetWord": "se donner de l'importance",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la honte aux joues",
+    "sentence": "Il a quitté la salle [[la honte aux joues]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cheeks burning with shame",
+      "options": [
+        "cheeks burning with shame",
+        "full of confidence",
+        "laughing loudly",
+        "completely calm"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Il a quitté la salle la honte aux joues.",
+        "storySlug": "son-nom-n-y-est-pas",
+        "targetWord": "la honte aux joues",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de l'autre côté de",
+    "sentence": "[[De l'autre côté de]] la rue, il y a une boulangerie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on the other side of",
+      "options": [
+        "on the other side of",
+        "right in the middle of",
+        "far away from",
+        "on top of"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "De l'autre côté de la rue, il y a une boulangerie.",
+        "storySlug": "son-nom-n-y-est-pas",
+        "targetWord": "De l'autre côté de",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "étrangler",
+    "sentence": "De colère, elle avait envie de tout [[étrangler]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to strangle",
+      "options": [
+        "to strangle",
+        "to hug",
+        "to paint",
+        "to sell"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "De colère, elle avait envie de tout étrangler.",
+        "storySlug": "son-nom-n-y-est-pas",
+        "targetWord": "étrangler",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  }
 ]

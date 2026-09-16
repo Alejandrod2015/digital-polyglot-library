@@ -1,206 +1,442 @@
 [
- {
-  "type": "match_meaning",
-  "word": "l'estaminet,le welsh,la promotion,l'atelier",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {"word": "l'estaminet", "answer": "a small northern café", "options": ["a small northern café", "a cheese-and-beer dish", "a promotion at work", "a small workshop"]},
-    {"word": "le welsh", "answer": "a cheese-and-beer dish", "options": ["a small northern café", "a cheese-and-beer dish", "a promotion at work", "a small workshop"]},
-    {"word": "la promotion", "answer": "a promotion at work", "options": ["a small northern café", "a cheese-and-beer dish", "a promotion at work", "a small workshop"]},
-    {"word": "l'atelier", "answer": "a small workshop", "options": ["a small northern café", "a cheese-and-beer dish", "a promotion at work", "a small workshop"]}
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "licencier",
-  "sentence": "L'entreprise va _____ dix employés ce mois-ci.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "licencier",
-   "options": ["licencier", "embaucher", "féliciter", "payer"],
-   "translation": "The company is going to _____ ten employees this month.",
-   "optionTranslations": ["lay off", "hire", "congratulate", "pay"],
-   "audioClip": {"language": "french", "sentence": "L'entreprise va licencier dix employés ce mois-ci.", "storySlug": "la-tournee-jamais-offerte", "targetWord": "licencier", "storySource": "user"}
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "prudent",
-  "sentence": "Sur cette route glissante, sois _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "prudent",
-   "options": ["prudent", "rapide", "bruyant", "drôle"],
-   "translation": "On this slippery road, be _____.",
-   "optionTranslations": ["careful", "fast", "loud", "funny"],
-   "audioClip": {"language": "french", "sentence": "Sur cette route glissante, sois prudent.", "storySlug": "la-tournee-jamais-offerte", "targetWord": "prudent", "storySource": "user"}
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "déplacé",
-  "sentence": "Faire cette blague à l'enterrement était vraiment _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "déplacé",
-   "options": ["déplacé", "drôle", "utile", "poli"],
-   "translation": "Making that joke at the funeral was really _____.",
-   "optionTranslations": ["inappropriate", "funny", "useful", "polite"],
-   "audioClip": {"language": "french", "sentence": "Faire cette blague à l'enterrement était vraiment déplacé.", "storySlug": "la-tournee-jamais-offerte", "targetWord": "déplacé", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "le chômage",
-  "sentence": "Après cette annonce, il craignait [[le chômage]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "unemployment",
-   "options": ["unemployment", "a promotion", "a vacation", "a raise"],
-   "audioClip": {"language": "french", "sentence": "Après cette annonce, il craignait le chômage.", "storySlug": "la-tournee-jamais-offerte", "targetWord": "chômage", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "offrir une tournée",
-  "sentence": "Pour fêter sa victoire, il a voulu [[offrir une tournée]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "buy a round of drinks",
-   "options": ["buy a round of drinks", "cancel the party", "leave early", "sell his car"],
-   "audioClip": {"language": "french", "sentence": "Pour fêter sa victoire, il a voulu offrir une tournée.", "storySlug": "la-tournee-jamais-offerte", "targetWord": "offrir une tournée", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ce soir-là",
-  "sentence": "[[Ce soir-là]], personne ne s'attendait à une telle nouvelle.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "that evening",
-   "options": ["that evening", "every evening", "next year", "this morning"],
-   "audioClip": {"language": "french", "sentence": "Ce soir-là, personne ne s'attendait à une telle nouvelle.", "storySlug": "la-tournee-jamais-offerte", "targetWord": "Ce soir-là", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "garder pour soi",
-  "sentence": "Il a [[gardé pour lui]] cette mauvaise nouvelle.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "kept to himself",
-   "options": ["kept to himself", "shared with everyone", "forgotten completely", "written down"],
-   "audioClip": {"language": "french", "sentence": "Il a gardé pour lui cette mauvaise nouvelle.", "storySlug": "la-tournee-jamais-offerte", "targetWord": "gardé pour lui", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "se sentir coupable",
-  "sentence": "Après cette dispute, il s'est [[senti coupable]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "felt guilty",
-   "options": ["felt guilty", "felt proud", "felt bored", "felt hungry"],
-   "audioClip": {"language": "french", "sentence": "Après cette dispute, il s'est senti coupable.", "storySlug": "la-tournee-jamais-offerte", "targetWord": "senti coupable", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "hocher la tête",
-  "sentence": "Il a [[hoché la tête]] pour dire oui.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "nodded his head",
-   "options": ["nodded his head", "shaken his head", "turned his back", "closed his eyes"],
-   "audioClip": {"language": "french", "sentence": "Il a hoché la tête pour dire oui.", "storySlug": "la-tournee-jamais-offerte", "targetWord": "hoché la tête", "storySource": "user"}
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "la serviette en papier",
-  "sentence": "Il a écrit son numéro sur [[une serviette en papier]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a paper napkin",
-   "options": ["a paper napkin", "a metal plate", "a plastic cup", "a wooden table"],
-   "audioClip": {"language": "french", "sentence": "Il a écrit son numéro sur une serviette en papier.", "storySlug": "la-tournee-jamais-offerte", "targetWord": "serviette en papier", "storySource": "user"}
+  {
+    "type": "match_meaning",
+    "word": "l'estaminet,le welsh,la promotion,l'atelier",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "l'estaminet",
+          "answer": "a small northern café",
+          "options": [
+            "a small northern café",
+            "a cheese-and-beer dish",
+            "a promotion at work",
+            "a small workshop"
+          ]
+        },
+        {
+          "word": "le welsh",
+          "answer": "a cheese-and-beer dish",
+          "options": [
+            "a small northern café",
+            "a cheese-and-beer dish",
+            "a promotion at work",
+            "a small workshop"
+          ]
+        },
+        {
+          "word": "la promotion",
+          "answer": "a promotion at work",
+          "options": [
+            "a small northern café",
+            "a cheese-and-beer dish",
+            "a promotion at work",
+            "a small workshop"
+          ]
+        },
+        {
+          "word": "l'atelier",
+          "answer": "a small workshop",
+          "options": [
+            "a small northern café",
+            "a cheese-and-beer dish",
+            "a promotion at work",
+            "a small workshop"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "la boule au ventre",
-  "sentence": "Il est entré dans le bureau [[la boule au ventre]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "with a knot in his stomach",
-   "options": ["with a knot in his stomach", "with a big smile", "completely calm", "half asleep"],
-   "audioClip": {"language": "french", "sentence": "Il est entré dans le bureau la boule au ventre.", "storySlug": "la-tournee-jamais-offerte", "targetWord": "la boule au ventre", "storySource": "user"}
+  {
+    "type": "fill_blank",
+    "word": "licencier",
+    "sentence": "L'entreprise va _____ dix employés ce mois-ci.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "licencier",
+      "options": [
+        "licencier",
+        "embaucher",
+        "féliciter",
+        "payer"
+      ],
+      "translation": "The company is going to _____ ten employees this month.",
+      "optionTranslations": [
+        "lay off",
+        "hire",
+        "congratulate",
+        "pay"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "L'entreprise va licencier dix employés ce mois-ci.",
+        "storySlug": "la-tournee-jamais-offerte",
+        "targetWord": "licencier",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/51faadc999b3d40b.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "avoir du mal à",
-  "sentence": "Elle [[avait du mal à]] cacher sa joie.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "found it hard to",
-   "options": ["found it hard to", "found it easy to", "refused completely to", "loved deeply to"],
-   "audioClip": {"language": "french", "sentence": "Elle avait du mal à cacher sa joie.", "storySlug": "la-tournee-jamais-offerte", "targetWord": "avait du mal à", "storySource": "user"}
+  {
+    "type": "fill_blank",
+    "word": "prudent",
+    "sentence": "Sur cette route glissante, sois _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "prudent",
+      "options": [
+        "prudent",
+        "rapide",
+        "bruyant",
+        "drôle"
+      ],
+      "translation": "On this slippery road, be _____.",
+      "optionTranslations": [
+        "careful",
+        "fast",
+        "loud",
+        "funny"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Sur cette route glissante, sois prudent.",
+        "storySlug": "la-tournee-jamais-offerte",
+        "targetWord": "prudent",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/709172653ba4bed1.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "rire jaune",
-  "sentence": "Devant cette blague sur lui-même, il a [[ri jaune]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "gave a forced laugh",
-   "options": ["gave a forced laugh", "laughed with real joy", "started to cry", "stayed completely silent"],
-   "audioClip": {"language": "french", "sentence": "Devant cette blague sur lui-même, il a ri jaune.", "storySlug": "la-tournee-jamais-offerte", "targetWord": "ri jaune", "storySource": "user"}
+  {
+    "type": "fill_blank",
+    "word": "déplacé",
+    "sentence": "Faire cette blague à l'enterrement était vraiment _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "déplacé",
+      "options": [
+        "déplacé",
+        "drôle",
+        "utile",
+        "poli"
+      ],
+      "translation": "Making that joke at the funeral was really _____.",
+      "optionTranslations": [
+        "inappropriate",
+        "funny",
+        "useful",
+        "polite"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Faire cette blague à l'enterrement était vraiment déplacé.",
+        "storySlug": "la-tournee-jamais-offerte",
+        "targetWord": "déplacé",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a2572fb368caac1f.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "rêver de",
-  "sentence": "Depuis toute petite, elle [[rêvait d']]ouvrir un magasin.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "used to dream of",
-   "options": ["used to dream of", "used to be afraid of", "used to complain about", "used to forget about"],
-   "audioClip": {"language": "french", "sentence": "Depuis toute petite, elle rêvait d'ouvrir un magasin.", "storySlug": "la-tournee-jamais-offerte", "targetWord": "rêvait d'", "storySource": "user"}
+  {
+    "type": "meaning_in_context",
+    "word": "le chômage",
+    "sentence": "Après cette annonce, il craignait [[le chômage]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "unemployment",
+      "options": [
+        "unemployment",
+        "a promotion",
+        "a vacation",
+        "a raise"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Après cette annonce, il craignait le chômage.",
+        "storySlug": "la-tournee-jamais-offerte",
+        "targetWord": "chômage",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/faefe456864f1178.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "griffonner",
-  "sentence": "Elle a [[griffonné]] une note rapide sur le coin de la page.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "scribbled",
-   "options": ["scribbled", "printed", "typed", "erased"],
-   "audioClip": {"language": "french", "sentence": "Elle a griffonné une note rapide sur le coin de la page.", "storySlug": "la-tournee-jamais-offerte", "targetWord": "griffonné", "storySource": "user"}
+  {
+    "type": "meaning_in_context",
+    "word": "offrir une tournée",
+    "sentence": "Pour fêter sa victoire, il a voulu [[offrir une tournée]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "buy a round of drinks",
+      "options": [
+        "buy a round of drinks",
+        "cancel the party",
+        "leave early",
+        "sell his car"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Pour fêter sa victoire, il a voulu offrir une tournée.",
+        "storySlug": "la-tournee-jamais-offerte",
+        "targetWord": "offrir une tournée",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a60bc54ad48b0d97.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "une seule fois",
-  "sentence": "Il n'a jamais menti, pas [[une seule fois]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "even once",
-   "options": ["even once", "every single day", "several times", "very often"],
-   "audioClip": {"language": "french", "sentence": "Il n'a jamais menti, pas une seule fois.", "storySlug": "la-tournee-jamais-offerte", "targetWord": "une seule fois", "storySource": "user"}
+  {
+    "type": "meaning_in_context",
+    "word": "ce soir-là",
+    "sentence": "[[Ce soir-là]], personne ne s'attendait à une telle nouvelle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "that evening",
+      "options": [
+        "that evening",
+        "every evening",
+        "next year",
+        "this morning"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Ce soir-là, personne ne s'attendait à une telle nouvelle.",
+        "storySlug": "la-tournee-jamais-offerte",
+        "targetWord": "Ce soir-là",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1381e8923a699d9e.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "garder pour soi",
+    "sentence": "Il a [[gardé pour lui]] cette mauvaise nouvelle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "kept to himself",
+      "options": [
+        "kept to himself",
+        "shared with everyone",
+        "forgotten completely",
+        "written down"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Il a gardé pour lui cette mauvaise nouvelle.",
+        "storySlug": "la-tournee-jamais-offerte",
+        "targetWord": "gardé pour lui",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d478f99ab4733133.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "se sentir coupable",
+    "sentence": "Après cette dispute, il s'est [[senti coupable]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "felt guilty",
+      "options": [
+        "felt guilty",
+        "felt proud",
+        "felt bored",
+        "felt hungry"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Après cette dispute, il s'est senti coupable.",
+        "storySlug": "la-tournee-jamais-offerte",
+        "targetWord": "senti coupable",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4946b1ab936de7ad.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hocher la tête",
+    "sentence": "Il a [[hoché la tête]] pour dire oui.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nodded his head",
+      "options": [
+        "nodded his head",
+        "shaken his head",
+        "turned his back",
+        "closed his eyes"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Il a hoché la tête pour dire oui.",
+        "storySlug": "la-tournee-jamais-offerte",
+        "targetWord": "hoché la tête",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dba5370117a9760a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la serviette en papier",
+    "sentence": "Il a écrit son numéro sur [[une serviette en papier]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a paper napkin",
+      "options": [
+        "a paper napkin",
+        "a metal plate",
+        "a plastic cup",
+        "a wooden table"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Il a écrit son numéro sur une serviette en papier.",
+        "storySlug": "la-tournee-jamais-offerte",
+        "targetWord": "serviette en papier",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la boule au ventre",
+    "sentence": "Il est entré dans le bureau [[la boule au ventre]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "with a knot in his stomach",
+      "options": [
+        "with a knot in his stomach",
+        "with a big smile",
+        "completely calm",
+        "half asleep"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Il est entré dans le bureau la boule au ventre.",
+        "storySlug": "la-tournee-jamais-offerte",
+        "targetWord": "la boule au ventre",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avoir du mal à",
+    "sentence": "Elle [[avait du mal à]] cacher sa joie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "found it hard to",
+      "options": [
+        "found it hard to",
+        "found it easy to",
+        "refused completely to",
+        "loved deeply to"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Elle avait du mal à cacher sa joie.",
+        "storySlug": "la-tournee-jamais-offerte",
+        "targetWord": "avait du mal à",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rire jaune",
+    "sentence": "Devant cette blague sur lui-même, il a [[ri jaune]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gave a forced laugh",
+      "options": [
+        "gave a forced laugh",
+        "laughed with real joy",
+        "started to cry",
+        "stayed completely silent"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Devant cette blague sur lui-même, il a ri jaune.",
+        "storySlug": "la-tournee-jamais-offerte",
+        "targetWord": "ri jaune",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rêver de",
+    "sentence": "Depuis toute petite, elle [[rêvait d']]ouvrir un magasin.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "used to dream of",
+      "options": [
+        "used to dream of",
+        "used to be afraid of",
+        "used to complain about",
+        "used to forget about"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Depuis toute petite, elle rêvait d'ouvrir un magasin.",
+        "storySlug": "la-tournee-jamais-offerte",
+        "targetWord": "rêvait d'",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "griffonner",
+    "sentence": "Elle a [[griffonné]] une note rapide sur le coin de la page.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "scribbled",
+      "options": [
+        "scribbled",
+        "printed",
+        "typed",
+        "erased"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Elle a griffonné une note rapide sur le coin de la page.",
+        "storySlug": "la-tournee-jamais-offerte",
+        "targetWord": "griffonné",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "une seule fois",
+    "sentence": "Il n'a jamais menti, pas [[une seule fois]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "even once",
+      "options": [
+        "even once",
+        "every single day",
+        "several times",
+        "very often"
+      ],
+      "audioClip": {
+        "language": "french",
+        "sentence": "Il n'a jamais menti, pas une seule fois.",
+        "storySlug": "la-tournee-jamais-offerte",
+        "targetWord": "une seule fois",
+        "storySource": "user"
+      }
+    },
+    "featured": false
+  }
 ]
