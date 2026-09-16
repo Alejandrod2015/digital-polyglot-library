@@ -321,6 +321,27 @@ const NUM_WORDS: Record<string, number> = {
   cent: 100, cien: 100, cento: 100, hundert: 100, mille: 1000, mil: 1000,
 };
 
+// El italiano compone 21-99 PEGADO, sin guion ("ventuno", "trentacinque"), asi
+// que el split por "-" de numValue() no los separa: sin esto, cualquier
+// frase con una edad o una cantidad de dos cifras ("compie trentacinque
+// anni") quemaba las MAX_TRIES intentos completas contra un falso "miss" del
+// STT (Scribe normaliza a cifra, "trentacinque" nunca hace match con "35").
+// Confirmado en produccion (Friends IT A0, una-torta-per-dodici: "oggi" y
+// "compiere gli anni" fallaron las 4 tomas hasta anadir esto). Elision de
+// vocal en uno/otto ("venti"+"uno" -> "ventuno"), igual que
+// coverageCheckLib.ts canonNumbers() para el mismo idioma.
+(function addItalianCompounds() {
+  const units = ["", "uno", "due", "tre", "quattro", "cinque", "sei", "sette", "otto", "nove"];
+  const tens: Record<number, string> = { 20: "venti", 30: "trenta", 40: "quaranta", 50: "cinquanta", 60: "sessanta", 70: "settanta", 80: "ottanta", 90: "novanta" };
+  for (const [tenStr, tenWord] of Object.entries(tens)) {
+    const ten = Number(tenStr);
+    for (let u = 1; u <= 9; u++) {
+      const word = (u === 1 || u === 8) ? tenWord.slice(0, -1) + units[u] : tenWord + units[u];
+      NUM_WORDS[word] = ten + u;
+    }
+  }
+})();
+
 /** Valor de una palabra-número, incluidos los compuestos con guion
  *  ("vingt-deux" = 22, "veintidós" no hace falta: va suelto). */
 function numValue(w: string): number | null {
