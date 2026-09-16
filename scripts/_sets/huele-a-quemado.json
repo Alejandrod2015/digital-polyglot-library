@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "el escaparate,las gafas,el sonido,la oferta",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "el escaparate",
+          "answer": "a shop window",
+          "options": [
+            "a shop window",
+            "glasses",
+            "a sound",
+            "an offer"
+          ]
+        },
+        {
+          "word": "las gafas",
+          "answer": "glasses",
+          "options": [
+            "a shop window",
+            "glasses",
+            "a sound",
+            "an offer"
+          ]
+        },
+        {
+          "word": "el sonido",
+          "answer": "a sound",
+          "options": [
+            "a shop window",
+            "glasses",
+            "a sound",
+            "an offer"
+          ]
+        },
+        {
+          "word": "la oferta",
+          "answer": "an offer",
+          "options": [
+            "a shop window",
+            "glasses",
+            "a sound",
+            "an offer"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en medio de",
+    "sentence": "Se quemó [[en medio de]] una canción.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in the middle of",
+      "options": [
+        "in the middle of",
+        "at the end of",
+        "instead of",
+        "next to"
+      ],
+      "audioClip": {
+        "storySlug": "huele-a-quemado",
+        "storySource": "user",
+        "sentence": "Se quemó en medio de una canción.",
+        "targetWord": "en medio de",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la calle Toro",
+    "sentence": "La óptica estaba en la [[calle Toro]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a street in Salamanca",
+      "options": [
+        "a street in Salamanca",
+        "a square in Madrid",
+        "a market in Sevilla",
+        "a park in Valencia"
+      ],
+      "audioClip": {
+        "storySlug": "huele-a-quemado",
+        "storySource": "user",
+        "sentence": "La óptica estaba en la calle Toro.",
+        "targetWord": "calle Toro",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de pelo castaño",
+    "sentence": "Ella era una óptica [[de pelo castaño]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "with brown hair",
+      "options": [
+        "with brown hair",
+        "with grey hair",
+        "with curly hair",
+        "with short hair"
+      ],
+      "audioClip": {
+        "storySlug": "huele-a-quemado",
+        "storySource": "user",
+        "sentence": "Ella era una óptica de pelo castaño.",
+        "targetWord": "de pelo castaño",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la canción",
+    "sentence": "Se quemó en medio de una [[canción]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a song",
+      "options": [
+        "a song",
+        "a dance",
+        "a poem",
+        "a joke"
+      ],
+      "audioClip": {
+        "storySlug": "huele-a-quemado",
+        "storySource": "user",
+        "sentence": "Se quemó en medio de una canción.",
+        "targetWord": "canción",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nervioso",
+    "sentence": "Él estaba un poco [[nervioso]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nervous",
+      "options": [
+        "nervous",
+        "angry",
+        "tired",
+        "bored"
+      ],
+      "audioClip": {
+        "storySlug": "huele-a-quemado",
+        "storySource": "user",
+        "sentence": "Él estaba un poco nervioso.",
+        "targetWord": "nervioso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de atrás",
+    "sentence": "Ella abrió la puerta [[de atrás]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at the back",
+      "options": [
+        "at the back",
+        "at the front",
+        "upstairs",
+        "outside"
+      ],
+      "audioClip": {
+        "storySlug": "huele-a-quemado",
+        "storySource": "user",
+        "sentence": "Ella abrió la puerta de atrás.",
+        "targetWord": "de atrás",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "limpio",
+    "sentence": "El sonido salió fuerte y [[limpio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clean, clear",
+      "options": [
+        "clean, clear",
+        "quiet",
+        "broken",
+        "strange"
+      ],
+      "audioClip": {
+        "storySlug": "huele-a-quemado",
+        "storySource": "user",
+        "sentence": "El sonido salió fuerte y limpio.",
+        "targetWord": "limpio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "un buen precio",
+    "sentence": "Es [[un buen precio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a good price",
+      "options": [
+        "a good price",
+        "a bad price",
+        "a fixed price",
+        "a secret price"
+      ],
+      "audioClip": {
+        "storySlug": "huele-a-quemado",
+        "storySource": "user",
+        "sentence": "Es un buen precio.",
+        "targetWord": "un buen precio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tanto",
+    "sentence": "No tenían [[tanto]] dinero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "so much",
+      "options": [
+        "so much",
+        "so little",
+        "any",
+        "enough"
+      ],
+      "audioClip": {
+        "storySlug": "huele-a-quemado",
+        "storySource": "user",
+        "sentence": "No tenían tanto dinero.",
+        "targetWord": "tanto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al mes",
+    "sentence": "Podéis pagarlo [[al mes]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "per month",
+      "options": [
+        "per month",
+        "per week",
+        "per year",
+        "per day"
+      ],
+      "audioClip": {
+        "storySlug": "huele-a-quemado",
+        "storySource": "user",
+        "sentence": "Podéis pagarlo al mes.",
+        "targetWord": "al mes",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "probó",
+    "sentence": "Quiso saber si sonaba bien y lo _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "probó",
+      "options": [
+        "probó",
+        "compró",
+        "rompió",
+        "devolvió"
+      ],
+      "translation": "He wanted to know if it sounded good, so he _____ it.",
+      "optionTranslations": [
+        "tried",
+        "bought",
+        "broke",
+        "returned"
+      ],
+      "audioClip": {
+        "storySlug": "huele-a-quemado",
+        "storySource": "user",
+        "sentence": "Quiso saber si sonaba bien y lo probó.",
+        "targetWord": "probó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cuesta",
+    "sentence": "¿Cuánto _____ esta guitarra usada?",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cuesta",
+      "options": [
+        "cuesta",
+        "pesa",
+        "mide",
+        "dura"
+      ],
+      "translation": "How much does this used guitar _____?",
+      "optionTranslations": [
+        "cost",
+        "weigh",
+        "measure",
+        "last"
+      ],
+      "audioClip": {
+        "storySlug": "huele-a-quemado",
+        "storySource": "user",
+        "sentence": "¿Cuánto cuesta esta guitarra usada?",
+        "targetWord": "cuesta",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "preguntó",
+    "sentence": "Ella no sabía el precio y _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "preguntó",
+      "options": [
+        "preguntó",
+        "pagó",
+        "adivinó",
+        "olvidó"
+      ],
+      "translation": "She didn't know the price, so she _____.",
+      "optionTranslations": [
+        "asked",
+        "paid",
+        "guessed",
+        "forgot"
+      ],
+      "audioClip": {
+        "storySlug": "huele-a-quemado",
+        "storySource": "user",
+        "sentence": "Ella no sabía el precio y preguntó.",
+        "targetWord": "preguntó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "fuerte",
+    "sentence": "La música sonaba tan _____ que se oía en la calle.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fuerte",
+      "options": [
+        "fuerte",
+        "suave",
+        "lenta",
+        "rara"
+      ],
+      "translation": "The music was so _____ that you could hear it in the street.",
+      "optionTranslations": [
+        "loud",
+        "soft",
+        "slow",
+        "strange"
+      ],
+      "audioClip": {
+        "storySlug": "huele-a-quemado",
+        "storySource": "user",
+        "sentence": "La música sonaba tan fuerte que se oía en la calle.",
+        "targetWord": "fuerte",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "con cuidado",
+    "sentence": "Llevaba el vaso lleno y caminó _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "con cuidado",
+      "options": [
+        "con cuidado",
+        "deprisa",
+        "hacia atrás",
+        "en voz alta"
+      ],
+      "translation": "She was carrying the full glass and walked _____.",
+      "optionTranslations": [
+        "carefully",
+        "quickly",
+        "backwards",
+        "loudly"
+      ],
+      "audioClip": {
+        "storySlug": "huele-a-quemado",
+        "storySource": "user",
+        "sentence": "Llevaba el vaso lleno y caminó con cuidado.",
+        "targetWord": "con cuidado",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "a plazos",
+    "sentence": "No tenía todo el dinero, así que pagó _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "a plazos",
+      "options": [
+        "a plazos",
+        "por adelantado",
+        "en efectivo",
+        "por error"
+      ],
+      "translation": "She didn't have all the money, so she paid _____.",
+      "optionTranslations": [
+        "in instalments",
+        "in advance",
+        "in cash",
+        "by mistake"
+      ],
+      "audioClip": {
+        "storySlug": "huele-a-quemado",
+        "storySource": "user",
+        "sentence": "No tenía todo el dinero, así que pagó a plazos.",
+        "targetWord": "a plazos",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

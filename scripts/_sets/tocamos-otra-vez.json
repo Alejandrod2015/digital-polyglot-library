@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "la ventanilla,el bombero,el grupo,el disco",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "la ventanilla",
+          "answer": "a car window",
+          "options": [
+            "a car window",
+            "a firefighter",
+            "a band",
+            "a CD"
+          ]
+        },
+        {
+          "word": "el bombero",
+          "answer": "a firefighter",
+          "options": [
+            "a car window",
+            "a firefighter",
+            "a band",
+            "a CD"
+          ]
+        },
+        {
+          "word": "el grupo",
+          "answer": "a band",
+          "options": [
+            "a car window",
+            "a firefighter",
+            "a band",
+            "a CD"
+          ]
+        },
+        {
+          "word": "el disco",
+          "answer": "a CD",
+          "options": [
+            "a car window",
+            "a firefighter",
+            "a band",
+            "a CD"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "levantar la vista",
+    "sentence": "[[Levantó la vista]] y vio a él.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "looked up",
+      "options": [
+        "looked up",
+        "closed her eyes",
+        "ran away",
+        "waved"
+      ],
+      "audioClip": {
+        "storySlug": "tocamos-otra-vez",
+        "storySource": "user",
+        "sentence": "Levantó la vista y vio a él.",
+        "targetWord": "Levantó la vista",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "otra vez",
+    "sentence": "¿Tocamos [[otra vez]]?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "again",
+      "options": [
+        "again",
+        "never again",
+        "for the first time",
+        "by chance"
+      ],
+      "audioClip": {
+        "storySlug": "tocamos-otra-vez",
+        "storySource": "user",
+        "sentence": "Tocamos otra vez.",
+        "targetWord": "otra vez",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ponerse rojo",
+    "sentence": "A ella [[se le puso roja]] la cara.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "went red",
+      "options": [
+        "went red",
+        "went pale",
+        "went numb",
+        "went cold"
+      ],
+      "audioClip": {
+        "storySlug": "tocamos-otra-vez",
+        "storySource": "user",
+        "sentence": "A ella se le puso roja la cara.",
+        "targetWord": "se le puso roja",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "clase",
+    "sentence": "Tengo [[clase]] hasta la tarde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lesson",
+      "options": [
+        "a lesson",
+        "a party",
+        "a meeting",
+        "a trip"
+      ],
+      "audioClip": {
+        "storySlug": "tocamos-otra-vez",
+        "storySource": "user",
+        "sentence": "Tengo clase hasta la tarde.",
+        "targetWord": "clase",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rana",
+    "sentence": "Un disco con una [[rana]] dibujada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "frog",
+      "options": [
+        "frog",
+        "a bird",
+        "a fish",
+        "a flower"
+      ],
+      "audioClip": {
+        "storySlug": "tocamos-otra-vez",
+        "storySource": "user",
+        "sentence": "Un disco con una rana dibujada.",
+        "targetWord": "rana",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "único",
+    "sentence": "Es la [[única]] copia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "only",
+      "options": [
+        "only",
+        "first",
+        "best",
+        "cheapest"
+      ],
+      "audioClip": {
+        "storySlug": "tocamos-otra-vez",
+        "storySource": "user",
+        "sentence": "Es la única copia.",
+        "targetWord": "única",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en voz baja",
+    "sentence": "Añadió [[en voz baja]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "quietly",
+      "options": [
+        "quietly",
+        "very loudly",
+        "in anger",
+        "while laughing"
+      ],
+      "audioClip": {
+        "storySlug": "tocamos-otra-vez",
+        "storySource": "user",
+        "sentence": "Añadió en voz baja.",
+        "targetWord": "en voz baja",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin decir nada",
+    "sentence": "Guardó el disco [[sin decir nada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without saying a word",
+      "options": [
+        "without saying a word",
+        "while shouting",
+        "after asking twice",
+        "with a big smile"
+      ],
+      "audioClip": {
+        "storySlug": "tocamos-otra-vez",
+        "storySource": "user",
+        "sentence": "Guardó el disco sin decir nada.",
+        "targetWord": "sin decir nada",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quedarse quieto",
+    "sentence": "Él [[se quedó quieto]] en la acera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stayed still",
+      "options": [
+        "stayed still",
+        "ran away",
+        "started dancing",
+        "fell asleep"
+      ],
+      "audioClip": {
+        "storySlug": "tocamos-otra-vez",
+        "storySource": "user",
+        "sentence": "Él se quedó quieto en la acera.",
+        "targetWord": "se quedó quieto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "buscar",
+    "sentence": "[[Buscan]] grupos para las Ferias.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "are looking for",
+      "options": [
+        "are looking for",
+        "are selling",
+        "are paying",
+        "are forgetting"
+      ],
+      "audioClip": {
+        "storySlug": "tocamos-otra-vez",
+        "storySource": "user",
+        "sentence": "Buscan grupos para las Ferias.",
+        "targetWord": "Buscan",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "golpeó",
+    "sentence": "El viento _____ la ventana toda la noche.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "golpeó",
+      "options": [
+        "golpeó",
+        "abrió",
+        "limpió",
+        "pintó"
+      ],
+      "translation": "The wind _____ the window all night.",
+      "optionTranslations": [
+        "hit",
+        "opened",
+        "cleaned",
+        "painted"
+      ],
+      "audioClip": {
+        "storySlug": "tocamos-otra-vez",
+        "storySource": "user",
+        "sentence": "El viento golpeó la ventana toda la noche.",
+        "targetWord": "golpeó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "explicando",
+    "sentence": "El profesor seguía _____ el ejercicio.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "explicando",
+      "options": [
+        "explicando",
+        "copiando",
+        "perdiendo",
+        "olvidando"
+      ],
+      "translation": "The teacher kept _____ the exercise.",
+      "optionTranslations": [
+        "explaining",
+        "copying",
+        "losing",
+        "forgetting"
+      ],
+      "audioClip": {
+        "storySlug": "tocamos-otra-vez",
+        "storySource": "user",
+        "sentence": "El profesor seguía explicando el ejercicio.",
+        "targetWord": "explicando",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Traía",
+    "sentence": "Cuando llegó, _____ flores para todos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Traía",
+      "options": [
+        "Traía",
+        "Vendía",
+        "Dibujaba",
+        "Escondía"
+      ],
+      "translation": "When he arrived, he _____ flowers for everyone.",
+      "optionTranslations": [
+        "was bringing",
+        "was selling",
+        "was drawing",
+        "was hiding"
+      ],
+      "audioClip": {
+        "storySlug": "tocamos-otra-vez",
+        "storySource": "user",
+        "sentence": "Cuando llegó, traía flores para todos.",
+        "targetWord": "Traía",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "apretó",
+    "sentence": "Con miedo, ella _____ la mano de su amigo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "apretó",
+      "options": [
+        "apretó",
+        "lavó",
+        "besó",
+        "soltó"
+      ],
+      "translation": "With fear, she _____ her friend's hand.",
+      "optionTranslations": [
+        "squeezed",
+        "washed",
+        "kissed",
+        "let go of"
+      ],
+      "audioClip": {
+        "storySlug": "tocamos-otra-vez",
+        "storySource": "user",
+        "sentence": "Con miedo, ella apretó la mano de su amigo.",
+        "targetWord": "apretó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Sacó",
+    "sentence": "Del bolsillo, él _____ una moneda.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Sacó",
+      "options": [
+        "Sacó",
+        "Perdió",
+        "Escondió",
+        "Pintó"
+      ],
+      "translation": "From his pocket, he _____ a coin.",
+      "optionTranslations": [
+        "took out",
+        "lost",
+        "hid",
+        "painted"
+      ],
+      "audioClip": {
+        "storySlug": "tocamos-otra-vez",
+        "storySource": "user",
+        "sentence": "Del bolsillo, él sacó una moneda.",
+        "targetWord": "Sacó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "guardó",
+    "sentence": "Ella _____ la carta en un cajón.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "guardó",
+      "options": [
+        "guardó",
+        "quemó",
+        "leyó",
+        "perdió"
+      ],
+      "translation": "She _____ the letter in a drawer.",
+      "optionTranslations": [
+        "kept",
+        "burned",
+        "read",
+        "lost"
+      ],
+      "audioClip": {
+        "storySlug": "tocamos-otra-vez",
+        "storySource": "user",
+        "sentence": "Ella guardó la carta en un cajón.",
+        "targetWord": "guardó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

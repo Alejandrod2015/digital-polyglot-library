@@ -1,0 +1,484 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "el altavoz,el cable,el ritmo,la jefa",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "el altavoz",
+          "answer": "a speaker",
+          "options": [
+            "a speaker",
+            "a cable",
+            "rhythm",
+            "the boss"
+          ]
+        },
+        {
+          "word": "el cable",
+          "answer": "a cable",
+          "options": [
+            "a speaker",
+            "a cable",
+            "rhythm",
+            "the boss"
+          ]
+        },
+        {
+          "word": "el ritmo",
+          "answer": "rhythm",
+          "options": [
+            "a speaker",
+            "a cable",
+            "rhythm",
+            "the boss"
+          ]
+        },
+        {
+          "word": "la jefa",
+          "answer": "the boss",
+          "options": [
+            "a speaker",
+            "a cable",
+            "rhythm",
+            "the boss"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "el Barrio del Oeste",
+    "sentence": "El garaje estaba en el [[Barrio del Oeste]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a Salamanca neighbourhood",
+      "options": [
+        "a Salamanca neighbourhood",
+        "the city centre",
+        "a nearby village",
+        "the train station"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-hay-sabados-libres",
+        "storySource": "user",
+        "sentence": "El garaje estaba en el Barrio del Oeste.",
+        "targetWord": "Barrio del Oeste",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enorme",
+    "sentence": "Unos altavoces [[enormes]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "very big",
+      "options": [
+        "very big",
+        "very old",
+        "very cheap",
+        "very quiet"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-hay-sabados-libres",
+        "storySource": "user",
+        "sentence": "Unos altavoces enormes.",
+        "targetWord": "enormes",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llegar tarde",
+    "sentence": "Ella [[llegó tarde]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "arrived late",
+      "options": [
+        "arrived late",
+        "arrived early",
+        "never arrived",
+        "arrived alone"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-hay-sabados-libres",
+        "storySource": "user",
+        "sentence": "Ella llegó tarde.",
+        "targetWord": "llegó tarde",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "preparado",
+    "sentence": "¿Estás [[preparado]]?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ready",
+      "options": [
+        "ready",
+        "tired",
+        "lost",
+        "worried"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-hay-sabados-libres",
+        "storySource": "user",
+        "sentence": "¿Estás preparado?",
+        "targetWord": "preparado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "melodía",
+    "sentence": "La [[melodía]] volvió entera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the tune",
+      "options": [
+        "the tune",
+        "the noise",
+        "the silence",
+        "the applause"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-hay-sabados-libres",
+        "storySource": "user",
+        "sentence": "La melodía volvió entera.",
+        "targetWord": "melodía",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "todavía",
+    "sentence": "[[Todavía]] te acuerdas de todo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "still",
+      "options": [
+        "still",
+        "never",
+        "rarely",
+        "almost"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-hay-sabados-libres",
+        "storySource": "user",
+        "sentence": "Todavía te acuerdas de todo.",
+        "targetWord": "Todavía",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "necesitar",
+    "sentence": "[[Necesitamos]] ensayar jueves y sábados.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "need",
+      "options": [
+        "need",
+        "forget",
+        "hate",
+        "avoid"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-hay-sabados-libres",
+        "storySource": "user",
+        "sentence": "Necesitamos ensayar jueves y sábados.",
+        "targetWord": "Necesitamos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pensar en",
+    "sentence": "Ella [[pensó en]] sus alumnos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thought about",
+      "options": [
+        "thought about",
+        "forgot about",
+        "laughed at",
+        "called"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-hay-sabados-libres",
+        "storySource": "user",
+        "sentence": "Ella pensó en sus alumnos.",
+        "targetWord": "pensó en",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ya no",
+    "sentence": "[[Ya no]] puedo los sábados.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "not any more",
+      "options": [
+        "not any more",
+        "always",
+        "sometimes",
+        "maybe"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-hay-sabados-libres",
+        "storySource": "user",
+        "sentence": "Ya no puedo los sábados.",
+        "targetWord": "Ya no",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despacio",
+    "sentence": "Ella escribió [[despacio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slowly",
+      "options": [
+        "slowly",
+        "quickly",
+        "badly",
+        "in secret"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-hay-sabados-libres",
+        "storySource": "user",
+        "sentence": "Ella escribió despacio.",
+        "targetWord": "despacio",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "olía",
+    "sentence": "La cocina _____ a pan recién hecho.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "olía",
+      "options": [
+        "olía",
+        "sonaba",
+        "parecía",
+        "sentía"
+      ],
+      "translation": "The kitchen _____ of freshly baked bread.",
+      "optionTranslations": [
+        "smelled",
+        "sounded",
+        "looked",
+        "felt"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-hay-sabados-libres",
+        "storySource": "user",
+        "sentence": "La cocina olía a pan recién hecho.",
+        "targetWord": "olía",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Perdona",
+    "sentence": "_____, no quería molestarte.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Perdona",
+      "options": [
+        "Perdona",
+        "Gracias",
+        "Adiós",
+        "Enhorabuena"
+      ],
+      "translation": "_____, I didn't mean to bother you.",
+      "optionTranslations": [
+        "Sorry",
+        "Thanks",
+        "Goodbye",
+        "Congratulations"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-hay-sabados-libres",
+        "storySource": "user",
+        "sentence": "Perdona, no quería molestarte.",
+        "targetWord": "Perdona",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Enchufaron",
+    "sentence": "_____ la lámpara y se hizo la luz.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Enchufaron",
+      "options": [
+        "Enchufaron",
+        "Rompieron",
+        "Vendieron",
+        "Pintaron"
+      ],
+      "translation": "They _____ the lamp and the light came on.",
+      "optionTranslations": [
+        "plugged in",
+        "broke",
+        "sold",
+        "painted"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-hay-sabados-libres",
+        "storySource": "user",
+        "sentence": "Enchufaron la lámpara y se hizo la luz.",
+        "targetWord": "Enchufaron",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "se equivocó",
+    "sentence": "Al escribir el número, ella _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "se equivocó",
+      "options": [
+        "se equivocó",
+        "se dio prisa",
+        "se rio",
+        "se paró"
+      ],
+      "translation": "While writing the number, she _____.",
+      "optionTranslations": [
+        "made a mistake",
+        "hurried",
+        "laughed",
+        "stopped"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-hay-sabados-libres",
+        "storySource": "user",
+        "sentence": "Al escribir el número, ella se equivocó.",
+        "targetWord": "se equivocó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "riéndose",
+    "sentence": "Contó el chiste _____ mucho.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "riéndose",
+      "options": [
+        "riéndose",
+        "llorando",
+        "gritando",
+        "cantando"
+      ],
+      "translation": "He told the joke, _____ a lot.",
+      "optionTranslations": [
+        "laughing",
+        "crying",
+        "shouting",
+        "singing"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-hay-sabados-libres",
+        "storySource": "user",
+        "sentence": "Contó el chiste riéndose mucho.",
+        "targetWord": "riéndose",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "acuerdas",
+    "sentence": "¿Todavía te _____ de su nombre?",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "acuerdas",
+      "options": [
+        "acuerdas",
+        "quejas",
+        "ríes",
+        "olvidas"
+      ],
+      "translation": "Do you still _____ his name?",
+      "optionTranslations": [
+        "remember",
+        "complain about",
+        "laugh at",
+        "forget"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-hay-sabados-libres",
+        "storySource": "user",
+        "sentence": "¿Todavía te acuerdas de su nombre?",
+        "targetWord": "acuerdas",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "firmó",
+    "sentence": "Antes de irse, él _____ el contrato.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "firmó",
+      "options": [
+        "firmó",
+        "leyó",
+        "perdió",
+        "rompió"
+      ],
+      "translation": "Before leaving, he _____ the contract.",
+      "optionTranslations": [
+        "signed",
+        "read",
+        "lost",
+        "broke"
+      ],
+      "audioClip": {
+        "storySlug": "ya-no-hay-sabados-libres",
+        "storySource": "user",
+        "sentence": "Antes de irse, él firmó el contrato.",
+        "targetWord": "firmó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

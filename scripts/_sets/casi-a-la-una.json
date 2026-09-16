@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "el piso,el Tormes,la universidad,la batería",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "el piso",
+          "answer": "a flat",
+          "options": [
+            "a flat",
+            "the Tormes river",
+            "university",
+            "the drums"
+          ]
+        },
+        {
+          "word": "el Tormes",
+          "answer": "the Tormes river",
+          "options": [
+            "a flat",
+            "the Tormes river",
+            "university",
+            "the drums"
+          ]
+        },
+        {
+          "word": "la universidad",
+          "answer": "university",
+          "options": [
+            "a flat",
+            "the Tormes river",
+            "university",
+            "the drums"
+          ]
+        },
+        {
+          "word": "la batería",
+          "answer": "the drums",
+          "options": [
+            "a flat",
+            "the Tormes river",
+            "university",
+            "the drums"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por fin",
+    "sentence": "[[Por fin]], empezó la primera canción.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at last",
+      "options": [
+        "at last",
+        "never again",
+        "by mistake",
+        "too soon"
+      ],
+      "audioClip": {
+        "storySlug": "casi-a-la-una",
+        "storySource": "user",
+        "sentence": "Por fin, empezó la primera canción.",
+        "targetWord": "Por fin",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "joven",
+    "sentence": "Su voz sonaba [[joven]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "young",
+      "options": [
+        "young",
+        "tired",
+        "sad",
+        "angry"
+      ],
+      "audioClip": {
+        "storySlug": "casi-a-la-una",
+        "storySource": "user",
+        "sentence": "Su voz sonaba joven.",
+        "targetWord": "joven",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "un nudo en la garganta",
+    "sentence": "Sintió [[un nudo en la garganta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lump in her throat",
+      "options": [
+        "a lump in her throat",
+        "a pain in her arm",
+        "a headache",
+        "hunger"
+      ],
+      "audioClip": {
+        "storySlug": "casi-a-la-una",
+        "storySource": "user",
+        "sentence": "Sintió un nudo en la garganta.",
+        "targetWord": "un nudo en la garganta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "demasiado",
+    "sentence": "Él tocaba [[demasiado]] rápido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "too much",
+      "options": [
+        "too much",
+        "a little",
+        "never",
+        "exactly"
+      ],
+      "audioClip": {
+        "storySlug": "casi-a-la-una",
+        "storySource": "user",
+        "sentence": "Él tocaba demasiado rápido.",
+        "targetWord": "demasiado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "como siempre",
+    "sentence": "Demasiado rápido, [[como siempre]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "as always",
+      "options": [
+        "as always",
+        "just this once",
+        "by accident",
+        "never before"
+      ],
+      "audioClip": {
+        "storySlug": "casi-a-la-una",
+        "storySource": "user",
+        "sentence": "Demasiado rápido, como siempre.",
+        "targetWord": "como siempre",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "roto",
+    "sentence": "Una cuerda estaba [[rota]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "broken",
+      "options": [
+        "broken",
+        "new",
+        "tight",
+        "loose"
+      ],
+      "audioClip": {
+        "storySlug": "casi-a-la-una",
+        "storySource": "user",
+        "sentence": "Una cuerda estaba rota.",
+        "targetWord": "rota",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dormido",
+    "sentence": "Él contestó medio [[dormido]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "asleep",
+      "options": [
+        "asleep",
+        "awake",
+        "angry",
+        "happy"
+      ],
+      "audioClip": {
+        "storySlug": "casi-a-la-una",
+        "storySource": "user",
+        "sentence": "Él contestó medio dormido.",
+        "targetWord": "dormido",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lo siento",
+    "sentence": "[[Lo siento]], era la única copia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "I'm sorry",
+      "options": [
+        "I'm sorry",
+        "good news",
+        "no problem",
+        "of course"
+      ],
+      "audioClip": {
+        "storySlug": "casi-a-la-una",
+        "storySource": "user",
+        "sentence": "Lo siento, era la única copia.",
+        "targetWord": "Lo siento",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "no importa",
+    "sentence": "[[No importa]], Lore.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "it doesn't matter",
+      "options": [
+        "it doesn't matter",
+        "it's terrible",
+        "it's my fault",
+        "it's expensive"
+      ],
+      "audioClip": {
+        "storySlug": "casi-a-la-una",
+        "storySource": "user",
+        "sentence": "No importa, Lore.",
+        "targetWord": "No importa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuerda",
+    "sentence": "Una [[cuerda]] estaba rota.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a string",
+      "options": [
+        "a string",
+        "a wire",
+        "a rope",
+        "a wheel"
+      ],
+      "audioClip": {
+        "storySlug": "casi-a-la-una",
+        "storySource": "user",
+        "sentence": "Una cuerda estaba rota.",
+        "targetWord": "cuerda",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "empezó",
+    "sentence": "La película _____ tarde por un problema técnico.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "empezó",
+      "options": [
+        "empezó",
+        "terminó",
+        "cambió",
+        "paró"
+      ],
+      "translation": "The film _____ late because of a technical problem.",
+      "optionTranslations": [
+        "started",
+        "ended",
+        "changed",
+        "stopped"
+      ],
+      "audioClip": {
+        "storySlug": "casi-a-la-una",
+        "storySource": "user",
+        "sentence": "La película empezó tarde por un problema técnico.",
+        "targetWord": "empezó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "intentó",
+    "sentence": "Ella _____ abrir la puerta, pero estaba cerrada.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "intentó",
+      "options": [
+        "intentó",
+        "olvidó",
+        "rechazó",
+        "logró"
+      ],
+      "translation": "She _____ to open the door, but it was locked.",
+      "optionTranslations": [
+        "tried",
+        "forgot",
+        "refused",
+        "managed"
+      ],
+      "audioClip": {
+        "storySlug": "casi-a-la-una",
+        "storySource": "user",
+        "sentence": "Ella intentó abrir la puerta, pero estaba cerrada.",
+        "targetWord": "intentó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "recordaban",
+    "sentence": "Sus manos ya no _____ la canción.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "recordaban",
+      "options": [
+        "recordaban",
+        "tocaban",
+        "oían",
+        "sabían"
+      ],
+      "translation": "Her hands no longer _____ the song.",
+      "optionTranslations": [
+        "remembered",
+        "played",
+        "heard",
+        "knew"
+      ],
+      "audioClip": {
+        "storySlug": "casi-a-la-una",
+        "storySource": "user",
+        "sentence": "Sus manos ya no recordaban la canción.",
+        "targetWord": "recordaban",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "repitió",
+    "sentence": "El profesor _____ la pregunta muchas veces.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "repitió",
+      "options": [
+        "repitió",
+        "olvidó",
+        "escribió",
+        "contestó"
+      ],
+      "translation": "The teacher _____ the question many times.",
+      "optionTranslations": [
+        "repeated",
+        "forgot",
+        "wrote",
+        "answered"
+      ],
+      "audioClip": {
+        "storySlug": "casi-a-la-una",
+        "storySource": "user",
+        "sentence": "El profesor repitió la pregunta muchas veces.",
+        "targetWord": "repitió",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "llamó",
+    "sentence": "Antes de salir, ella lo _____ por teléfono.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "llamó",
+      "options": [
+        "llamó",
+        "esperó",
+        "escribió",
+        "siguió"
+      ],
+      "translation": "Before leaving, she _____ him on the phone.",
+      "optionTranslations": [
+        "called",
+        "waited for",
+        "wrote to",
+        "followed"
+      ],
+      "audioClip": {
+        "storySlug": "casi-a-la-una",
+        "storySource": "user",
+        "sentence": "Antes de salir, ella lo llamó por teléfono.",
+        "targetWord": "llamó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "tardó",
+    "sentence": "Como no encontraba las palabras, _____ mucho en responder.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tardó",
+      "options": [
+        "tardó",
+        "dudó",
+        "insistió",
+        "pensó"
+      ],
+      "translation": "Since he couldn't find the words, he _____ a long time to answer.",
+      "optionTranslations": [
+        "took",
+        "hesitated",
+        "insisted",
+        "thought"
+      ],
+      "audioClip": {
+        "storySlug": "casi-a-la-una",
+        "storySource": "user",
+        "sentence": "Como no encontraba las palabras, tardó mucho en responder.",
+        "targetWord": "tardó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

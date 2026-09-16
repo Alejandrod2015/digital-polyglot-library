@@ -1,0 +1,461 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "el ensayo,el platillo,el chaleco,el trabajo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "el ensayo",
+          "answer": "a band practice",
+          "options": [
+            "a band practice",
+            "a cymbal",
+            "a vest",
+            "work"
+          ]
+        },
+        {
+          "word": "el platillo",
+          "answer": "a cymbal",
+          "options": [
+            "a band practice",
+            "a cymbal",
+            "a vest",
+            "work"
+          ]
+        },
+        {
+          "word": "el chaleco",
+          "answer": "a vest",
+          "options": [
+            "a band practice",
+            "a cymbal",
+            "a vest",
+            "work"
+          ]
+        },
+        {
+          "word": "el trabajo",
+          "answer": "work",
+          "options": [
+            "a band practice",
+            "a cymbal",
+            "a vest",
+            "work"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pequeño",
+    "sentence": "El bombo no cabía en el coche [[pequeño]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "small",
+      "options": [
+        "small",
+        "big",
+        "new",
+        "broken"
+      ],
+      "audioClip": {
+        "storySlug": "la-bateria-no-cabe",
+        "storySource": "user",
+        "sentence": "El bombo no cabía en el coche pequeño.",
+        "targetWord": "pequeño",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fuera de",
+    "sentence": "No puede usar el coche [[fuera de]] clase.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "outside of",
+      "options": [
+        "outside of",
+        "during",
+        "instead of",
+        "because of"
+      ],
+      "audioClip": {
+        "storySlug": "la-bateria-no-cabe",
+        "storySource": "user",
+        "sentence": "No puede usar el coche fuera de clase.",
+        "targetWord": "fuera de",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sorprendido",
+    "sentence": "Él levantó la vista, [[sorprendido]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "surprised",
+      "options": [
+        "surprised",
+        "angry",
+        "tired",
+        "proud"
+      ],
+      "audioClip": {
+        "storySlug": "la-bateria-no-cabe",
+        "storySource": "user",
+        "sentence": "Él levantó la vista, sorprendido.",
+        "targetWord": "sorprendido",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hacer una raya",
+    "sentence": "El platillo [[hizo una raya]] en la puerta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "made a scratch",
+      "options": [
+        "made a scratch",
+        "made a hole",
+        "made a sound",
+        "made a mess"
+      ],
+      "audioClip": {
+        "storySlug": "la-bateria-no-cabe",
+        "storySource": "user",
+        "sentence": "El platillo hizo una raya en la puerta.",
+        "targetWord": "hizo una raya",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "zona de carga y descarga",
+    "sentence": "Aparcó en la [[zona de carga y descarga]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the loading and unloading zone",
+      "options": [
+        "the loading and unloading zone",
+        "a private garage",
+        "a bus stop",
+        "a bike lane"
+      ],
+      "audioClip": {
+        "storySlug": "la-bateria-no-cabe",
+        "storySource": "user",
+        "sentence": "Aparcó en la zona de carga y descarga.",
+        "targetWord": "zona de carga y descarga",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "después",
+    "sentence": "Poco [[después]], ella levantaba el coche.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "later",
+      "options": [
+        "later",
+        "before",
+        "yesterday",
+        "never"
+      ],
+      "audioClip": {
+        "storySlug": "la-bateria-no-cabe",
+        "storySource": "user",
+        "sentence": "Poco después, ella levantaba el coche.",
+        "targetWord": "después",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amarillo",
+    "sentence": "Ella llevaba un chaleco [[amarillo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "yellow",
+      "options": [
+        "yellow",
+        "red",
+        "green",
+        "white"
+      ],
+      "audioClip": {
+        "storySlug": "la-bateria-no-cabe",
+        "storySource": "user",
+        "sentence": "Ella llevaba un chaleco amarillo.",
+        "targetWord": "amarillo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin mirar",
+    "sentence": "Ella contestó [[sin mirarla]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without looking at her",
+      "options": [
+        "without looking at her",
+        "while smiling at her",
+        "after calling her",
+        "before helping her"
+      ],
+      "audioClip": {
+        "storySlug": "la-bateria-no-cabe",
+        "storySource": "user",
+        "sentence": "Ella contestó sin mirarla.",
+        "targetWord": "sin mirarla",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quejarse",
+    "sentence": "Los vecinos se [[quejaban]] del ruido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "were complaining",
+      "options": [
+        "were complaining",
+        "were laughing",
+        "were dancing",
+        "were sleeping"
+      ],
+      "audioClip": {
+        "storySlug": "la-bateria-no-cabe",
+        "storySource": "user",
+        "sentence": "Los vecinos se quejaban del ruido.",
+        "targetWord": "quejaban",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "deja",
+    "sentence": "Su jefa no le _____ usar el coche.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "deja",
+      "options": [
+        "deja",
+        "vende",
+        "arregla",
+        "presta"
+      ],
+      "translation": "Her boss doesn't _____ her use the car.",
+      "optionTranslations": [
+        "let",
+        "sell",
+        "fix",
+        "lend"
+      ],
+      "audioClip": {
+        "storySlug": "la-bateria-no-cabe",
+        "storySource": "user",
+        "sentence": "Su jefa no le deja usar el coche.",
+        "targetWord": "deja",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cabía",
+    "sentence": "El sofá era enorme y no _____ por la puerta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cabía",
+      "options": [
+        "cabía",
+        "pesaba",
+        "costaba",
+        "brillaba"
+      ],
+      "translation": "The sofa was huge and didn't _____ through the door.",
+      "optionTranslations": [
+        "fit",
+        "weigh",
+        "cost",
+        "shine"
+      ],
+      "audioClip": {
+        "storySlug": "la-bateria-no-cabe",
+        "storySource": "user",
+        "sentence": "El sofá era enorme y no cabía por la puerta.",
+        "targetWord": "cabía",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Cargaron",
+    "sentence": "_____ las cajas entre los amigos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Cargaron",
+      "options": [
+        "Cargaron",
+        "Contaron",
+        "Pintaron",
+        "Perdieron"
+      ],
+      "translation": "_____ the boxes between the friends.",
+      "optionTranslations": [
+        "loaded",
+        "counted",
+        "painted",
+        "lost"
+      ],
+      "audioClip": {
+        "storySlug": "la-bateria-no-cabe",
+        "storySource": "user",
+        "sentence": "Cargaron las cajas entre los amigos.",
+        "targetWord": "Cargaron",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bajarlo",
+    "sentence": "El piano pesaba mucho y no pudieron _____ solos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bajarlo",
+      "options": [
+        "bajarlo",
+        "venderlo",
+        "arreglarlo",
+        "pintarlo"
+      ],
+      "translation": "The piano was very heavy, and they couldn't _____ alone.",
+      "optionTranslations": [
+        "bring it down",
+        "sell it",
+        "fix it",
+        "paint it"
+      ],
+      "audioClip": {
+        "storySlug": "la-bateria-no-cabe",
+        "storySource": "user",
+        "sentence": "El piano pesaba mucho y no pudieron bajarlo solos.",
+        "targetWord": "bajarlo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Condujo",
+    "sentence": "Como no había autobús, ella _____ hasta el pueblo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Condujo",
+      "options": [
+        "Condujo",
+        "Caminó",
+        "Voló",
+        "Nadó"
+      ],
+      "translation": "Since there was no bus, she _____ to the village.",
+      "optionTranslations": [
+        "drove",
+        "walked",
+        "flew",
+        "swam"
+      ],
+      "audioClip": {
+        "storySlug": "la-bateria-no-cabe",
+        "storySource": "user",
+        "sentence": "Como no había autobús, ella condujo hasta el pueblo.",
+        "targetWord": "Condujo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "aparcó",
+    "sentence": "No había sitio, así que _____ lejos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aparcó",
+      "options": [
+        "aparcó",
+        "esperó",
+        "caminó",
+        "gritó"
+      ],
+      "translation": "There was no space, so she _____ far away.",
+      "optionTranslations": [
+        "parked",
+        "waited",
+        "walked",
+        "shouted"
+      ],
+      "audioClip": {
+        "storySlug": "la-bateria-no-cabe",
+        "storySource": "user",
+        "sentence": "No había sitio, así que aparcó lejos.",
+        "targetWord": "aparcó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "gritó",
+    "sentence": "Al ver el coche, ella _____ de sorpresa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gritó",
+      "options": [
+        "gritó",
+        "rio",
+        "lloró",
+        "susurró"
+      ],
+      "translation": "On seeing the car, she _____ in surprise.",
+      "optionTranslations": [
+        "shouted",
+        "laughed",
+        "cried",
+        "whispered"
+      ],
+      "audioClip": {
+        "storySlug": "la-bateria-no-cabe",
+        "storySource": "user",
+        "sentence": "Al ver el coche, ella gritó de sorpresa.",
+        "targetWord": "gritó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

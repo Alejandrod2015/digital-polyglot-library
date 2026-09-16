@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "el cargador,el escenario,la cantante,el concierto",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "el cargador",
+          "answer": "a charger",
+          "options": [
+            "a charger",
+            "the stage",
+            "the singer",
+            "a concert"
+          ]
+        },
+        {
+          "word": "el escenario",
+          "answer": "the stage",
+          "options": [
+            "a charger",
+            "the stage",
+            "the singer",
+            "a concert"
+          ]
+        },
+        {
+          "word": "la cantante",
+          "answer": "the singer",
+          "options": [
+            "a charger",
+            "the stage",
+            "the singer",
+            "a concert"
+          ]
+        },
+        {
+          "word": "el concierto",
+          "answer": "a concert",
+          "options": [
+            "a charger",
+            "the stage",
+            "the singer",
+            "a concert"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por todas partes",
+    "sentence": "Buscaron un cargador [[por todas partes]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "everywhere",
+      "options": [
+        "everywhere",
+        "nowhere",
+        "in one place",
+        "under the bed"
+      ],
+      "audioClip": {
+        "storySlug": "jaime-lo-grabo-todo",
+        "storySource": "user",
+        "sentence": "Buscaron un cargador por todas partes.",
+        "targetWord": "por todas partes",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "solo",
+    "sentence": "[[Solo]] estaba él.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "only",
+      "options": [
+        "only",
+        "almost",
+        "never",
+        "always"
+      ],
+      "audioClip": {
+        "storySlug": "jaime-lo-grabo-todo",
+        "storySource": "user",
+        "sentence": "Solo estaba él.",
+        "targetWord": "Solo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "delgado",
+    "sentence": "Él era joven y [[delgado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thin",
+      "options": [
+        "thin",
+        "tall",
+        "strong",
+        "old"
+      ],
+      "audioClip": {
+        "storySlug": "jaime-lo-grabo-todo",
+        "storySource": "user",
+        "sentence": "Él era joven y delgado.",
+        "targetWord": "delgado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "primera fila",
+    "sentence": "Yo estaba en [[primera fila]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the front row",
+      "options": [
+        "the front row",
+        "the back row",
+        "the stage",
+        "the exit"
+      ],
+      "audioClip": {
+        "storySlug": "jaime-lo-grabo-todo",
+        "storySource": "user",
+        "sentence": "Yo estaba en primera fila.",
+        "targetWord": "primera fila",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "luego",
+    "sentence": "[[Luego]] empezó solo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "then, later",
+      "options": [
+        "then, later",
+        "never",
+        "before",
+        "always"
+      ],
+      "audioClip": {
+        "storySlug": "jaime-lo-grabo-todo",
+        "storySource": "user",
+        "sentence": "Luego empezó solo.",
+        "targetWord": "Luego",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rápido",
+    "sentence": "Tocaba demasiado [[rápido]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fast",
+      "options": [
+        "fast",
+        "slow",
+        "loud",
+        "badly"
+      ],
+      "audioClip": {
+        "storySlug": "jaime-lo-grabo-todo",
+        "storySource": "user",
+        "sentence": "Tocaba demasiado rápido.",
+        "targetWord": "rápido",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dolor",
+    "sentence": "Con un [[dolor]] en el pecho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pain",
+      "options": [
+        "pain",
+        "a smile",
+        "a song",
+        "a memory"
+      ],
+      "audioClip": {
+        "storySlug": "jaime-lo-grabo-todo",
+        "storySource": "user",
+        "sentence": "Con un dolor en el pecho.",
+        "targetWord": "dolor",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barrio",
+    "sentence": "Vive todavía en el [[barrio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "neighbourhood",
+      "options": [
+        "neighbourhood",
+        "the countryside",
+        "another city",
+        "the beach"
+      ],
+      "audioClip": {
+        "storySlug": "jaime-lo-grabo-todo",
+        "storySource": "user",
+        "sentence": "Vive todavía en el barrio.",
+        "targetWord": "barrio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mucha gente",
+    "sentence": "[[Mucha gente]] de aquel concierto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lot of people",
+      "options": [
+        "a lot of people",
+        "nobody",
+        "only Jaime",
+        "a few friends"
+      ],
+      "audioClip": {
+        "storySlug": "jaime-lo-grabo-todo",
+        "storySource": "user",
+        "sentence": "Mucha gente de aquel concierto.",
+        "targetWord": "Mucha gente",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "un poco",
+    "sentence": "Él tardó [[un poco]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a little",
+      "options": [
+        "a little",
+        "a long time",
+        "never",
+        "immediately"
+      ],
+      "audioClip": {
+        "storySlug": "jaime-lo-grabo-todo",
+        "storySource": "user",
+        "sentence": "Él tardó un poco.",
+        "targetWord": "un poco",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "puso",
+    "sentence": "Ella _____ las llaves sobre la mesa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "puso",
+      "options": [
+        "puso",
+        "escondió",
+        "tiró",
+        "vendió"
+      ],
+      "translation": "She _____ the keys on the table.",
+      "optionTranslations": [
+        "put",
+        "hid",
+        "threw",
+        "sold"
+      ],
+      "audioClip": {
+        "storySlug": "jaime-lo-grabo-todo",
+        "storySource": "user",
+        "sentence": "Ella puso las llaves sobre la mesa.",
+        "targetWord": "puso",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "encontró",
+    "sentence": "Después de buscar mucho, él _____ las gafas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "encontró",
+      "options": [
+        "encontró",
+        "rompió",
+        "vendió",
+        "perdió"
+      ],
+      "translation": "After a long search, he _____ the glasses.",
+      "optionTranslations": [
+        "found",
+        "broke",
+        "sold",
+        "lost"
+      ],
+      "audioClip": {
+        "storySlug": "jaime-lo-grabo-todo",
+        "storySource": "user",
+        "sentence": "Después de buscar mucho, él encontró las gafas.",
+        "targetWord": "encontró",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "contó",
+    "sentence": "Ella _____ toda la historia sin parar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "contó",
+      "options": [
+        "contó",
+        "escribió",
+        "olvidó",
+        "cantó"
+      ],
+      "translation": "She _____ the whole story without stopping.",
+      "optionTranslations": [
+        "told",
+        "wrote",
+        "forgot",
+        "sang"
+      ],
+      "audioClip": {
+        "storySlug": "jaime-lo-grabo-todo",
+        "storySource": "user",
+        "sentence": "Ella contó toda la historia sin parar.",
+        "targetWord": "contó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "esperó",
+    "sentence": "Él _____ media hora en la puerta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "esperó",
+      "options": [
+        "esperó",
+        "cantó",
+        "durmió",
+        "trabajó"
+      ],
+      "translation": "He _____ half an hour at the door.",
+      "optionTranslations": [
+        "waited",
+        "sang",
+        "slept",
+        "worked"
+      ],
+      "audioClip": {
+        "storySlug": "jaime-lo-grabo-todo",
+        "storySource": "user",
+        "sentence": "Él esperó media hora en la puerta.",
+        "targetWord": "esperó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "tocaba",
+    "sentence": "De joven, ella _____ el piano cada tarde.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tocaba",
+      "options": [
+        "tocaba",
+        "vendía",
+        "pintaba",
+        "arreglaba"
+      ],
+      "translation": "As a young girl, she _____ the piano every afternoon.",
+      "optionTranslations": [
+        "played",
+        "sold",
+        "painted",
+        "fixed"
+      ],
+      "audioClip": {
+        "storySlug": "jaime-lo-grabo-todo",
+        "storySource": "user",
+        "sentence": "De joven, ella tocaba el piano cada tarde.",
+        "targetWord": "tocaba",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "subo",
+    "sentence": "¿_____ la foto a internet o no?",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "subo",
+      "options": [
+        "subo",
+        "borro",
+        "busco",
+        "imprimo"
+      ],
+      "translation": "Shall I _____ the photo to the internet or not?",
+      "optionTranslations": [
+        "upload",
+        "delete",
+        "find",
+        "print"
+      ],
+      "audioClip": {
+        "storySlug": "jaime-lo-grabo-todo",
+        "storySource": "user",
+        "sentence": "Subo la foto a internet o no.",
+        "targetWord": "subo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "el carrito,el supermercado,el bar,el centro",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "el carrito",
+          "answer": "a shopping trolley",
+          "options": [
+            "a shopping trolley",
+            "a supermarket",
+            "a bar",
+            "the centre"
+          ]
+        },
+        {
+          "word": "el supermercado",
+          "answer": "a supermarket",
+          "options": [
+            "a shopping trolley",
+            "a supermarket",
+            "a bar",
+            "the centre"
+          ]
+        },
+        {
+          "word": "el bar",
+          "answer": "a bar",
+          "options": [
+            "a shopping trolley",
+            "a supermarket",
+            "a bar",
+            "the centre"
+          ]
+        },
+        {
+          "word": "el centro",
+          "answer": "the centre",
+          "options": [
+            "a shopping trolley",
+            "a supermarket",
+            "a bar",
+            "the centre"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "con los brazos cruzados",
+    "sentence": "La jefa esperaba [[con los brazos cruzados]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "with arms crossed",
+      "options": [
+        "with arms crossed",
+        "with a big smile",
+        "with her eyes closed",
+        "running fast"
+      ],
+      "audioClip": {
+        "storySlug": "un-carrito-para-el-bombo",
+        "storySource": "user",
+        "sentence": "La jefa esperaba con los brazos cruzados.",
+        "targetWord": "con los brazos cruzados",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desde ese día",
+    "sentence": "[[Desde ese día]], ya no podía llevar el coche.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "from that day",
+      "options": [
+        "from that day",
+        "for one hour",
+        "every other day",
+        "the day before"
+      ],
+      "audioClip": {
+        "storySlug": "un-carrito-para-el-bombo",
+        "storySource": "user",
+        "sentence": "Desde ese día, ya no podía llevar el coche.",
+        "targetWord": "Desde ese día",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por la noche",
+    "sentence": "[[Por la noche]], él la llamó.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at night",
+      "options": [
+        "at night",
+        "at noon",
+        "early morning",
+        "all week"
+      ],
+      "audioClip": {
+        "storySlug": "un-carrito-para-el-bombo",
+        "storySource": "user",
+        "sentence": "Por la noche, él la llamó.",
+        "targetWord": "Por la noche",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tener una idea",
+    "sentence": "[[Tengo una idea]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "I have an idea",
+      "options": [
+        "I have an idea",
+        "I have a problem",
+        "I have no time",
+        "I have a question"
+      ],
+      "audioClip": {
+        "storySlug": "un-carrito-para-el-bombo",
+        "storySource": "user",
+        "sentence": "Tengo una idea.",
+        "targetWord": "Tengo una idea",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por primera vez",
+    "sentence": "Ella sonrió [[por primera vez]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "for the first time",
+      "options": [
+        "for the first time",
+        "for the last time",
+        "many times",
+        "never"
+      ],
+      "audioClip": {
+        "storySlug": "un-carrito-para-el-bombo",
+        "storySource": "user",
+        "sentence": "Ella sonrió por primera vez.",
+        "targetWord": "por primera vez",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Puente Romano",
+    "sentence": "Cruzaron el [[Puente Romano]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the Roman bridge",
+      "options": [
+        "the Roman bridge",
+        "a new highway",
+        "a wooden bridge",
+        "a train station"
+      ],
+      "audioClip": {
+        "storySlug": "un-carrito-para-el-bombo",
+        "storySource": "user",
+        "sentence": "Cruzaron el Puente Romano.",
+        "targetWord": "Puente Romano",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cansado",
+    "sentence": "Contestó ella, [[cansada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tired",
+      "options": [
+        "tired",
+        "happy",
+        "angry",
+        "bored"
+      ],
+      "audioClip": {
+        "storySlug": "un-carrito-para-el-bombo",
+        "storySource": "user",
+        "sentence": "Contestó ella, cansada.",
+        "targetWord": "cansada",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "piedra",
+    "sentence": "Todo sonaba sobre las [[piedras]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stones",
+      "options": [
+        "stones",
+        "the grass",
+        "the water",
+        "the sand"
+      ],
+      "audioClip": {
+        "storySlug": "un-carrito-para-el-bombo",
+        "storySource": "user",
+        "sentence": "Todo sonaba sobre las piedras.",
+        "targetWord": "piedras",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "más que",
+    "sentence": "Esto pesa [[más que]] en 2012.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "more than",
+      "options": [
+        "more than",
+        "less than",
+        "the same as",
+        "instead of"
+      ],
+      "audioClip": {
+        "storySlug": "un-carrito-para-el-bombo",
+        "storySource": "user",
+        "sentence": "Esto pesa más que en 2012.",
+        "targetWord": "más que",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abierto",
+    "sentence": "El local los esperaba con la puerta [[abierta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "open",
+      "options": [
+        "open",
+        "closed",
+        "broken",
+        "painted"
+      ],
+      "audioClip": {
+        "storySlug": "un-carrito-para-el-bombo",
+        "storySource": "user",
+        "sentence": "El local los esperaba con la puerta abierta.",
+        "targetWord": "abierta",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pidió",
+    "sentence": "Al llegar, ella _____ un café.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pidió",
+      "options": [
+        "pidió",
+        "hizo",
+        "tiró",
+        "olvidó"
+      ],
+      "translation": "On arriving, she _____ a coffee.",
+      "optionTranslations": [
+        "asked for",
+        "made",
+        "spilled",
+        "forgot"
+      ],
+      "audioClip": {
+        "storySlug": "un-carrito-para-el-bombo",
+        "storySource": "user",
+        "sentence": "Al llegar, ella pidió un café.",
+        "targetWord": "pidió",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "llevar",
+    "sentence": "No podía _____ tantas bolsas él solo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "llevar",
+      "options": [
+        "llevar",
+        "vender",
+        "encontrar",
+        "contar"
+      ],
+      "translation": "He couldn't _____ so many bags by himself.",
+      "optionTranslations": [
+        "carry",
+        "sell",
+        "find",
+        "count"
+      ],
+      "audioClip": {
+        "storySlug": "un-carrito-para-el-bombo",
+        "storySource": "user",
+        "sentence": "No podía llevar tantas bolsas él solo.",
+        "targetWord": "llevar",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cruzaron",
+    "sentence": "Sin mirar, los amigos _____ la calle.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cruzaron",
+      "options": [
+        "cruzaron",
+        "limpiaron",
+        "pintaron",
+        "midieron"
+      ],
+      "translation": "Without looking, the friends _____ the street.",
+      "optionTranslations": [
+        "crossed",
+        "cleaned",
+        "painted",
+        "measured"
+      ],
+      "audioClip": {
+        "storySlug": "un-carrito-para-el-bombo",
+        "storySource": "user",
+        "sentence": "Sin mirar, los amigos cruzaron la calle.",
+        "targetWord": "cruzaron",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sonaba",
+    "sentence": "El teléfono _____ sin parar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sonaba",
+      "options": [
+        "sonaba",
+        "vibraba",
+        "brillaba",
+        "se movía"
+      ],
+      "translation": "The phone _____ nonstop.",
+      "optionTranslations": [
+        "rang",
+        "vibrated",
+        "shone",
+        "moved"
+      ],
+      "audioClip": {
+        "storySlug": "un-carrito-para-el-bombo",
+        "storySource": "user",
+        "sentence": "El teléfono sonaba sin parar.",
+        "targetWord": "sonaba",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pesa",
+    "sentence": "Esta maleta _____ demasiado para el avión.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pesa",
+      "options": [
+        "pesa",
+        "cuesta",
+        "mide",
+        "brilla"
+      ],
+      "translation": "This suitcase _____ too much for the plane.",
+      "optionTranslations": [
+        "weighs",
+        "costs",
+        "measures",
+        "shines"
+      ],
+      "audioClip": {
+        "storySlug": "un-carrito-para-el-bombo",
+        "storySource": "user",
+        "sentence": "Esta maleta pesa demasiado para el avión.",
+        "targetWord": "pesa",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "también",
+    "sentence": "Ella toca la guitarra, y yo _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "también",
+      "options": [
+        "también",
+        "nunca",
+        "mal",
+        "solo"
+      ],
+      "translation": "She plays guitar, and I do _____.",
+      "optionTranslations": [
+        "too",
+        "never",
+        "badly",
+        "alone"
+      ],
+      "audioClip": {
+        "storySlug": "un-carrito-para-el-bombo",
+        "storySource": "user",
+        "sentence": "Ella toca la guitarra, y yo también.",
+        "targetWord": "también",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

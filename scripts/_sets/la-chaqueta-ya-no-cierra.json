@@ -1,0 +1,454 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "el estudio,el programa,la chaqueta,el dibujo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "el estudio",
+          "answer": "a studio",
+          "options": [
+            "a studio",
+            "a programme",
+            "a jacket",
+            "a drawing"
+          ]
+        },
+        {
+          "word": "el programa",
+          "answer": "a programme",
+          "options": [
+            "a studio",
+            "a programme",
+            "a jacket",
+            "a drawing"
+          ]
+        },
+        {
+          "word": "la chaqueta",
+          "answer": "a jacket",
+          "options": [
+            "a studio",
+            "a programme",
+            "a jacket",
+            "a drawing"
+          ]
+        },
+        {
+          "word": "el dibujo",
+          "answer": "a drawing",
+          "options": [
+            "a studio",
+            "a programme",
+            "a jacket",
+            "a drawing"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aquella tarde",
+    "sentence": "[[Aquella tarde]] tenía varios clientes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "that afternoon",
+      "options": [
+        "that afternoon",
+        "that morning",
+        "every afternoon",
+        "the next day"
+      ],
+      "audioClip": {
+        "storySlug": "la-chaqueta-ya-no-cierra",
+        "storySource": "user",
+        "sentence": "Aquella tarde tenía varios clientes.",
+        "targetWord": "Aquella tarde",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lleno de",
+    "sentence": "Con los brazos [[llenos de]] dibujos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "full of",
+      "options": [
+        "full of",
+        "empty of",
+        "covered in paint",
+        "tired of"
+      ],
+      "audioClip": {
+        "storySlug": "la-chaqueta-ya-no-cierra",
+        "storySource": "user",
+        "sentence": "Con los brazos llenos de dibujos.",
+        "targetWord": "llenos de",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "raro",
+    "sentence": "Varios clientes [[raros]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "strange, unusual",
+      "options": [
+        "strange, unusual",
+        "friendly",
+        "young",
+        "rich"
+      ],
+      "audioClip": {
+        "storySlug": "la-chaqueta-ya-no-cierra",
+        "storySource": "user",
+        "sentence": "Varios clientes raros.",
+        "targetWord": "raros",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esta mañana",
+    "sentence": "[[Esta mañana]] me he probado mi chaqueta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "this morning",
+      "options": [
+        "this morning",
+        "last night",
+        "next week",
+        "yesterday"
+      ],
+      "audioClip": {
+        "storySlug": "la-chaqueta-ya-no-cierra",
+        "storySource": "user",
+        "sentence": "Esta mañana me he probado mi chaqueta.",
+        "targetWord": "esta mañana",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rojo",
+    "sentence": "Mi chaqueta [[roja]] de 2012.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "red",
+      "options": [
+        "red",
+        "blue",
+        "black",
+        "yellow"
+      ],
+      "audioClip": {
+        "storySlug": "la-chaqueta-ya-no-cierra",
+        "storySource": "user",
+        "sentence": "Mi chaqueta roja de 2012.",
+        "targetWord": "roja",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cremallera",
+    "sentence": "Tiré de la [[cremallera]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the zip",
+      "options": [
+        "the zip",
+        "the button",
+        "the pocket",
+        "the sleeve"
+      ],
+      "audioClip": {
+        "storySlug": "la-chaqueta-ya-no-cierra",
+        "storySource": "user",
+        "sentence": "Tiré de la cremallera.",
+        "targetWord": "cremallera",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "con atención",
+    "sentence": "Él la escuchó [[con atención]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "attentively",
+      "options": [
+        "attentively",
+        "without interest",
+        "with anger",
+        "very briefly"
+      ],
+      "audioClip": {
+        "storySlug": "la-chaqueta-ya-no-cierra",
+        "storySource": "user",
+        "sentence": "Él la escuchó con atención.",
+        "targetWord": "con atención",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brillante",
+    "sentence": "Con los ojos [[brillantes]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shining",
+      "options": [
+        "shining",
+        "closed",
+        "red",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "la-chaqueta-ya-no-cierra",
+        "storySource": "user",
+        "sentence": "Con los ojos brillantes.",
+        "targetWord": "brillantes",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "diez minutos después",
+    "sentence": "[[Diez minutos después]], les enseñó una rana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ten minutes later",
+      "options": [
+        "ten minutes later",
+        "ten minutes before",
+        "an hour later",
+        "the next day"
+      ],
+      "audioClip": {
+        "storySlug": "la-chaqueta-ya-no-cierra",
+        "storySource": "user",
+        "sentence": "Diez minutos después, les enseñó una rana.",
+        "targetWord": "Diez minutos después",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "delante de",
+    "sentence": "La rana estaba [[delante de]] una batería.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in front of",
+      "options": [
+        "in front of",
+        "behind",
+        "on top of",
+        "far from"
+      ],
+      "audioClip": {
+        "storySlug": "la-chaqueta-ya-no-cierra",
+        "storySource": "user",
+        "sentence": "La rana estaba delante de una batería.",
+        "targetWord": "delante de",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cierra",
+    "sentence": "La ventana no _____ bien por el frío.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cierra",
+      "options": [
+        "cierra",
+        "abre",
+        "rompe",
+        "brilla"
+      ],
+      "translation": "The window doesn't _____ properly because of the cold.",
+      "optionTranslations": [
+        "close",
+        "open",
+        "break",
+        "shine"
+      ],
+      "audioClip": {
+        "storySlug": "la-chaqueta-ya-no-cierra",
+        "storySource": "user",
+        "sentence": "La ventana no cierra bien por el frío.",
+        "targetWord": "cierra",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Tiré",
+    "sentence": "_____ de la cuerda con fuerza.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Tiré",
+      "options": [
+        "Tiré",
+        "Corté",
+        "Até",
+        "Encontré"
+      ],
+      "translation": "I _____ the rope hard.",
+      "optionTranslations": [
+        "pulled",
+        "cut",
+        "tied",
+        "found"
+      ],
+      "audioClip": {
+        "storySlug": "la-chaqueta-ya-no-cierra",
+        "storySource": "user",
+        "sentence": "Tiré de la cuerda con fuerza.",
+        "targetWord": "Tiré",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "se rompió",
+    "sentence": "El vaso cayó al suelo y _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "se rompió",
+      "options": [
+        "se rompió",
+        "desapareció",
+        "brilló",
+        "flotó"
+      ],
+      "translation": "The glass fell to the floor and _____.",
+      "optionTranslations": [
+        "broke",
+        "disappeared",
+        "shone",
+        "floated"
+      ],
+      "audioClip": {
+        "storySlug": "la-chaqueta-ya-no-cierra",
+        "storySource": "user",
+        "sentence": "El vaso cayó al suelo y se rompió.",
+        "targetWord": "se rompió",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "escuchó",
+    "sentence": "Ella _____ la canción con los ojos cerrados.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "escuchó",
+      "options": [
+        "escuchó",
+        "cantó",
+        "escribió",
+        "olvidó"
+      ],
+      "translation": "She _____ the song with her eyes closed.",
+      "optionTranslations": [
+        "listened to",
+        "sang",
+        "wrote",
+        "forgot"
+      ],
+      "audioClip": {
+        "storySlug": "la-chaqueta-ya-no-cierra",
+        "storySource": "user",
+        "sentence": "Ella escuchó la canción con los ojos cerrados.",
+        "targetWord": "escuchó",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "rápidamente",
+    "sentence": "Al oír el ruido, salió _____ de casa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rápidamente",
+      "options": [
+        "rápidamente",
+        "silenciosamente",
+        "felizmente",
+        "sola"
+      ],
+      "translation": "On hearing the noise, she left home _____.",
+      "optionTranslations": [
+        "quickly",
+        "quietly",
+        "happily",
+        "alone"
+      ],
+      "audioClip": {
+        "storySlug": "la-chaqueta-ya-no-cierra",
+        "storySource": "user",
+        "sentence": "Al oír el ruido, salió rápidamente de casa.",
+        "targetWord": "rápidamente",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Esa soy yo",
+    "sentence": "Miró la foto vieja y dijo: “_____.”",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Esa soy yo",
+      "options": [
+        "Esa soy yo",
+        "Eso no es cierto",
+        "Eso es nuevo",
+        "Qué gracioso"
+      ],
+      "translation": "She looked at the old photo and said, \"_____.\"",
+      "optionTranslations": [
+        "that's me",
+        "that's not true",
+        "that's new",
+        "how funny"
+      ],
+      "audioClip": {
+        "storySlug": "la-chaqueta-ya-no-cierra",
+        "storySource": "user",
+        "sentence": "Miró la foto vieja y dijo: Esa soy yo.",
+        "targetWord": "Esa soy yo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

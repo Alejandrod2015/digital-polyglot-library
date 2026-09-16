@@ -1,0 +1,212 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "el micrófono,la caseta,la nube,la plaza",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {"word": "el micrófono", "answer": "a microphone", "options": ["a microphone", "a festival booth", "a cloud", "a square"]},
+        {"word": "la caseta", "answer": "a festival booth", "options": ["a microphone", "a festival booth", "a cloud", "a square"]},
+        {"word": "la nube", "answer": "a cloud", "options": ["a microphone", "a festival booth", "a cloud", "a square"]},
+        {"word": "la plaza", "answer": "a square", "options": ["a microphone", "a festival booth", "a cloud", "a square"]}
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "junto a",
+    "sentence": "El escenario estaba [[junto al]] río.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "next to",
+      "options": ["next to", "far from", "above", "under"],
+      "audioClip": {"storySlug": "tocais-los-ultimos", "storySource": "user", "sentence": "El escenario estaba junto al río.", "targetWord": "junto al", "language": "spanish"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lejos de",
+    "sentence": "[[Lejos de]] la Plaza Mayor.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "far from",
+      "options": ["far from", "next to", "inside", "above"],
+      "audioClip": {"storySlug": "tocais-los-ultimos", "storySource": "user", "sentence": "Lejos de la Plaza Mayor.", "targetWord": "Lejos de", "language": "spanish"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "temprano",
+    "sentence": "Llegaron [[temprano]] con el carrito.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "early",
+      "options": ["early", "late", "alone", "tired"],
+      "audioClip": {"storySlug": "tocais-los-ultimos", "storySource": "user", "sentence": "Llegaron temprano con el carrito.", "targetWord": "temprano", "language": "spanish"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ponerse negro",
+    "sentence": "El cielo [[se puso negro]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "turned black",
+      "options": ["turned black", "turned blue", "cleared up", "started raining"],
+      "audioClip": {"storySlug": "tocais-los-ultimos", "storySource": "user", "sentence": "El cielo se puso negro.", "targetWord": "se puso negro", "language": "spanish"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cielo",
+    "sentence": "El [[cielo]] se puso negro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the sky",
+      "options": ["the sky", "the sea", "the street", "the mountain"],
+      "audioClip": {"storySlug": "tocais-los-ultimos", "storySource": "user", "sentence": "El cielo se puso negro.", "targetWord": "cielo", "language": "spanish"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tener que",
+    "sentence": "La prueba [[tiene que]] esperar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "has to",
+      "options": ["has to", "wants to", "forgets to", "refuses to"],
+      "audioClip": {"storySlug": "tocais-los-ultimos", "storySource": "user", "sentence": "La prueba tiene que esperar.", "targetWord": "tiene que", "language": "spanish"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "último",
+    "sentence": "Tocáis los [[últimos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "last",
+      "options": ["last", "first", "only", "best"],
+      "audioClip": {"storySlug": "tocais-los-ultimos", "storySource": "user", "sentence": "Tocáis los últimos.", "targetWord": "últimos", "language": "spanish"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a las once",
+    "sentence": "Tocáis los últimos, [[a las once]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at eleven o'clock",
+      "options": ["at eleven o'clock", "at eight o'clock", "at midnight", "at noon"],
+      "audioClip": {"storySlug": "tocais-los-ultimos", "storySource": "user", "sentence": "Tocáis los últimos, a las once.", "targetWord": "a las once", "language": "spanish"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a lo lejos",
+    "sentence": "Miró la plaza [[a lo lejos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in the distance",
+      "options": ["in the distance", "very closely", "from inside", "every day"],
+      "audioClip": {"storySlug": "tocais-los-ultimos", "storySource": "user", "sentence": "Miró la plaza a lo lejos.", "targetWord": "a lo lejos", "language": "spanish"}
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desde allí",
+    "sentence": "[[Desde allí]] se veían las luces.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "from there",
+      "options": ["from there", "from home", "from the phone", "from memory"],
+      "audioClip": {"storySlug": "tocais-los-ultimos", "storySource": "user", "sentence": "Desde allí se veían las luces.", "targetWord": "Desde allí", "language": "spanish"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "veían",
+    "sentence": "Desde la ventana se _____ las montañas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "veían",
+      "options": ["veían", "oían", "tocaban", "pintaban"],
+      "translation": "From the window you could _____ the mountains.",
+      "optionTranslations": ["see", "hear", "touch", "paint"],
+      "audioClip": {"storySlug": "tocais-los-ultimos", "storySource": "user", "sentence": "Desde la ventana se veían las montañas.", "targetWord": "veían", "language": "spanish"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "paraba",
+    "sentence": "El ruido no _____ en toda la noche.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "paraba",
+      "options": ["paraba", "empezaba", "cambiaba", "desaparecía"],
+      "translation": "The noise wouldn't _____ all night.",
+      "optionTranslations": ["stop", "start", "change", "disappear"],
+      "audioClip": {"storySlug": "tocais-los-ultimos", "storySource": "user", "sentence": "El ruido no paraba en toda la noche.", "targetWord": "paraba", "language": "spanish"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "mover",
+    "sentence": "No pudo _____ la mesa él solo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mover",
+      "options": ["mover", "levantar", "pintar", "vender"],
+      "translation": "He couldn't _____ the table by himself.",
+      "optionTranslations": ["move", "lift", "paint", "sell"],
+      "audioClip": {"storySlug": "tocais-los-ultimos", "storySource": "user", "sentence": "No pudo mover la mesa él solo.", "targetWord": "mover", "language": "spanish"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "respiró",
+    "sentence": "Antes de hablar, _____ hondo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "respiró",
+      "options": ["respiró", "pensó", "esperó", "sonrió"],
+      "translation": "Before speaking, she _____ deeply.",
+      "optionTranslations": ["breathed", "thought", "waited", "smiled"],
+      "audioClip": {"storySlug": "tocais-los-ultimos", "storySource": "user", "sentence": "Antes de hablar, respiró hondo.", "targetWord": "respiró", "language": "spanish"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Con lluvia o sin lluvia",
+    "sentence": "El concierto sigue, _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Con lluvia o sin lluvia",
+      "options": ["Con lluvia o sin lluvia", "Solo si hace sol", "Solo una hora", "Solo con entrada"],
+      "translation": "The concert goes on, _____.",
+      "optionTranslations": ["rain or no rain", "only if it's sunny", "only for an hour", "only with a ticket"],
+      "audioClip": {"storySlug": "tocais-los-ultimos", "storySource": "user", "sentence": "El concierto sigue, con lluvia o sin lluvia.", "targetWord": "Con lluvia o sin lluvia", "language": "spanish"}
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "ya no queda nadie",
+    "sentence": "A esa hora, _____ en la calle.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ya no queda nadie",
+      "options": ["ya no queda nadie", "hay mucha gente", "hay mucho ruido", "las tiendas están abiertas"],
+      "translation": "At that hour, _____ in the street.",
+      "optionTranslations": ["there's nobody left", "there are many people", "it's very noisy", "the shops are open"],
+      "audioClip": {"storySlug": "tocais-los-ultimos", "storySource": "user", "sentence": "A esa hora, ya no queda nadie en la calle.", "targetWord": "ya no queda nadie", "language": "spanish"}
+    },
+    "featured": false
+  }
+]
