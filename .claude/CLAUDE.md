@@ -492,37 +492,42 @@ that ALWAYS runs before any Bash command. It does two things:
    271, `docs/` 197, las páginas generadas de `public/` 880 y la BD seis
    etiquetas de nivel. Una regla sin gate no es una regla.
 
-9. **Gate de temas (BLOQUEANTE, 2026-08-17).** Un tema de journey nombra el
-   dominio léxico de sus tres historias y sale de lo que los usuarios
-   ESCRIBIERON (`BetaSignup.motivation` / `.applicationReason`), no del molde
-   de un curso de principiante. `assertTopicsGrounded`
-   (`src/lib/topicEvidence.ts`) TIRA si un tema no cita, literalmente, una
-   motivación que exista en la base. El hook `.claude/safety/pre-topic-guard.sh`
-   BLOQUEA cualquier ejecución que escriba en la tabla de temas sin llamarla;
-   lee también el `.ts` invocado, no solo la línea de comando. Leer y consultar
-   temas pasa sin gate.
+9. **Temas: las motivaciones beta son PISTA, no filtro (2026-09-15; antes
+   gate BLOQUEANTE desde el 2026-08-17).** Un tema de journey nombra el
+   dominio léxico de sus tres historias. Lo que los usuarios ESCRIBIERON
+   (`BetaSignup.motivation` / `.applicationReason`) sirve para inspirar temas y
+   para ver qué dominios tienen gente detrás; ningún tema tiene que citar a un
+   beta para existir. `assertTopicsGrounded` (`src/lib/topicEvidence.ts`)
+   imprime el informe (qué tema cita qué motivación y cuáles van sin pista) y
+   AVISA de los temas sin cita, sin tirar; `reportTopicEvidence` devuelve ese
+   informe sin imprimir. El hook `.claude/safety/pre-topic-guard.sh` AVISA, sin
+   bloquear, cuando se escriben temas sin pasar por el informe. La demanda por
+   idioma sigue valiendo para decidir QUÉ journey crear; lo que cambia es que
+   el CONTENIDO de sus temas no depende de lo que haya escrito un beta.
 
-   WHY: el 2026-08-17, montando el Friends ES/Spain A1, dos de los siete temas
-   salieron de los datos y los otros cinco del molde: el bar, la compra, los
-   horarios, la casa y la farmacia. "Chemist & Doctor" prometía un médico que
-   no aparecía en ninguna historia y "Shops & Markets" repetía dos temas que el
-   A0 del mismo idioma ya cubría. El fallo solo se ve leyendo los siete juntos,
-   y para entonces ya hay 21 historias escritas y a punto de pagar su audio.
+   WHY (2026-09-15, decisión del usuario, literal): "La motivación de unos
+   cuántos beta testers no puede ser un filtro, solo una pista." y "Lo que
+   dicen los testers solo debe servir como pista, más no filtro." Con pocos
+   solicitantes por idioma, exigir una cita por tema convertía a dos o tres
+   personas en quienes decidían siete temas.
 
-   **`motivation` es un DESPLEGABLE, no texto libre** (2026-08-19): los seis
-   valores viven en `src/lib/betaMotivations.ts` (`BETA_MOTIVATIONS`), los
-   importa el formulario, y el portón los DESCARTA del corpus. Solo cuentan lo
-   escrito por la opción "Other" y `applicationReason`, y una cita necesita 3
-   palabras y 15 caracteres. WHY: los siete temas de un Expat francés pasaron
-   citando seis de ellos la misma cadena "move abroad"; un clic de dos palabras
-   valía por siete decisiones de contenido.
+   Lo que se conserva del gate anterior, porque sigue siendo cierto: el molde
+   de curso de principiante no es un tema (el 2026-08-17 cinco de los siete
+   temas del Friends ES/Spain A1 salieron de ahí, y "Chemist & Doctor" prometía
+   un médico que no aparecía en ninguna historia), y los siete temas se leen
+   juntos antes de escribir historias. En el informe, `motivation` es un
+   DESPLEGABLE (`BETA_MOTIVATIONS`, `src/lib/betaMotivations.ts`): sus clics no
+   cuentan como pista, solo lo escrito por "Other" y `applicationReason`, y una
+   cita necesita 3 palabras y 15 caracteres.
 
-   Las reglas de NOMBRE (ampersand y no "And", **etiqueta en inglés, salvo el
-   préstamo que ya ES inglés y no tiene equivalente, como "tapas"**, sin país, sin artículo
-   inicial, 2-4 palabras, Title Case, un slug = un label global, slug derivado
-   del nombre, filas nuevas con `isUniversal: false`) siguen viviendo en
-   `project_topic_naming_rule` y `project_topic_labels_mechanics`; el gate solo
-   comprueba la EVIDENCIA, que es lo que no estaba comprobando nadie.
+   Las reglas de NOMBRE no cambian (ampersand y no "And", **etiqueta en
+   inglés, salvo el préstamo que ya ES inglés y no tiene equivalente, como
+   "tapas"**, sin país, sin artículo inicial, 2-4 palabras, Title Case, un
+   slug = un label global, slug derivado del nombre, filas nuevas con
+   `isUniversal: false`) y viven en `project_topic_naming_rule` y
+   `project_topic_labels_mechanics`. Las comprobables desde la cadena (2-4
+   palabras, "&", país, artículo, Title Case, slug derivado) SÍ tiran en
+   `assertTopicsGrounded`.
 
 If the guard blocks a non-push command, **DO NOT** add
 `CLAUDE_AUTHORIZED=1` on your own to bypass it. That flag is for the
