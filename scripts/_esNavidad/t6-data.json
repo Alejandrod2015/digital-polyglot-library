@@ -1,0 +1,409 @@
+[
+  {
+    "topic": "hosting-and-processions",
+    "slotIndex": 1,
+    "title": "La piñata se rompe entera",
+    "slug": "la-pinata-se-rompe-entera",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "En la vecindad hay nueve posadas seguidas y una pinata por noche, y Alondra llega el dieciseis con la sexta de sus siete piezas ya pensada: una de siete picos, entera, colgada del techo de su puesto. Paga las nueve por adelantado para que le aparten la ultima. La dificultad no esta en el precio ni en el transporte, y tarda tres noches en verla.",
+    "text": "La vecindad entera olía a ponche. En el taller está Perla, una piñatera del barrio, que arma nueve para nueve noches seguidas.\n\n“Te aparto la del veinticuatro”, ofreció, sin celebrarlo. “Pero se rompe igual, como las otras ocho.”\n\nAlondra pagó las nueve por adelantado, con una creencia simple: quien paga elige.\n\nArmar una es una tarea de dos días y el trabajo es frecuente.\n\nLa rutina no cambia: barro, papel, siete picos.\n\nPerla es la responsable de que haya una cada posada.\n\n“¿Y no me guardas una sin romper, una sola?”, insistió, ya irritado el tono.\n\n“Ahí está la dificultad”, señaló Perla. “Tu solución es guardarla. La mía es que aguante tres palos y no más.”\n\nEsa es la parte principal del oficio; lo demás es secundario.\n\n“Una piñata entera no obedece a nada”, fue honesta, y la consecuencia era obvia. “El barro frágil no tiene otra capacidad que esa.”\n\nAlondra recogió del suelo un pico de papel y lo volvió a soltar.",
+    "vocab": [
+      {
+        "word": "vecindad",
+        "surface": "vecindad",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "a block of small flats built around one shared yard"
+      },
+      {
+        "word": "ponche",
+        "surface": "ponche",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "hot fruit drink served on these December nights"
+      },
+      {
+        "word": "piñata",
+        "surface": "piñata",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "a clay pot in paper, filled and then broken with sticks"
+      },
+      {
+        "word": "posada",
+        "surface": "posada",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "one of the nine December parties of asking for lodging"
+      },
+      {
+        "word": "pico",
+        "surface": "picos",
+        "type": "noun",
+        "definition": "one of the points that stick out of a shape",
+        "register": "cultural"
+      },
+      {
+        "word": "barro",
+        "surface": "barro",
+        "type": "noun",
+        "definition": "wet earth that goes hard when it has dried"
+      },
+      {
+        "word": "tarea",
+        "surface": "tarea",
+        "type": "noun",
+        "definition": "a piece of work that somebody has to finish"
+      },
+      {
+        "word": "rutina",
+        "surface": "rutina",
+        "type": "noun",
+        "definition": "the same order of things, done day after day"
+      },
+      {
+        "word": "responsable",
+        "surface": "responsable",
+        "type": "noun",
+        "definition": "the one who has to answer for how a thing goes"
+      },
+      {
+        "word": "principal",
+        "surface": "principal",
+        "type": "adjective",
+        "definition": "the most important one out of a whole group"
+      },
+      {
+        "word": "simple",
+        "surface": "simple",
+        "type": "adjective",
+        "definition": "with nothing complicated added on to it at all"
+      },
+      {
+        "word": "dificultad",
+        "surface": "dificultad",
+        "type": "noun",
+        "definition": "the part of a thing that makes it hard to do"
+      },
+      {
+        "word": "solución",
+        "surface": "solución",
+        "type": "noun",
+        "definition": "the way out of a problem once you have seen it"
+      },
+      {
+        "word": "obedecer",
+        "surface": "obedece",
+        "type": "verb",
+        "definition": "to do what a rule or a person says you must"
+      },
+      {
+        "word": "capacidad",
+        "surface": "capacidad",
+        "type": "noun",
+        "definition": "how much a thing can hold or a person can do"
+      },
+      {
+        "word": "aguantar",
+        "surface": "aguante",
+        "type": "verb",
+        "definition": "to hold out under something heavy or hard"
+      },
+      {
+        "word": "frecuente",
+        "surface": "frecuente",
+        "type": "adjective",
+        "definition": "happening again and again over a short time",
+        "register": ""
+      },
+      {
+        "word": "secundario",
+        "surface": "secundario",
+        "type": "adjective",
+        "definition": "coming second in importance, after the main thing",
+        "register": ""
+      },
+      {
+        "word": "elegir",
+        "surface": "elige",
+        "type": "verb",
+        "definition": "to take one thing and leave the other ones"
+      },
+      {
+        "word": "por adelantado",
+        "surface": "por adelantado",
+        "type": "expression",
+        "definition": "paid before the thing has been given to you"
+      }
+    ]
+  },
+  {
+    "topic": "hosting-and-processions",
+    "slotIndex": 2,
+    "title": "Tres veces te dicen no",
+    "slug": "tres-veces-te-dicen-no",
+    "arcType": "reframe-turn",
+    "synopsis": "Alondra no entiende que un barrio entero pague por una fiesta cuya parte principal consiste en que le cierren la puerta en la cara. Perla le da la unica respuesta que sirve, que es mandarla afuera con una vela y la mitad del canto que va en la calle. Dos horas mas tarde la situacion se le ha dado vuelta sola.",
+    "text": "Aunque llevaba tres noches mirando, Alondra no entendía el argumento de Perla.\n\n“Afuera se pide y adentro se niega”, le explicó. “Tres veces seguidas. A la cuarta abren y ya está.”\n\n“¿Y la gente paga por eso?”, preguntó, con una perspectiva de mercado que ahí no servía.\n\nPerla le explicó que no habría otra forma de entenderlo y le puso una vela en la mano. La mandó con los peregrinos, doce y no una multitud.\n\nHacía frío y la idea seguía confusa. Cantaron la primera estrofa desde el umbral.\n\n“Aquí no es mesón, sigan adelante”, cantaron adentro. La negativa fue precisa y sin desprecio. “Ignorar la primera es lo básico”, le sopló Perla desde adentro. “Afrontar la segunda es lo esencial.”\n\nA la segunda Alondra ya no se sintió vergonzosa. A la tercera se rio, testigo de una situación inusual.\n\nTardó en reaccionar cuando abrieron.\n\nPerla la recibió con calma de anfitriona. Reservada como siempre, le sirvió ponche con compasión de los pies mojados.",
+    "vocab": [
+      {
+        "word": "peregrino",
+        "surface": "peregrinos",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the people who walk outside asking to be let in"
+      },
+      {
+        "word": "estrofa",
+        "surface": "estrofa",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "one block of lines inside a song or a poem"
+      },
+      {
+        "word": "anfitriona",
+        "surface": "anfitriona",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the woman whose house is receiving the guests tonight"
+      },
+      {
+        "word": "umbral",
+        "surface": "umbral",
+        "type": "noun",
+        "definition": "the line on the floor right under a door"
+      },
+      {
+        "word": "negativa",
+        "surface": "negativa",
+        "type": "noun",
+        "definition": "the answer no, given clearly to a request"
+      },
+      {
+        "word": "argumento",
+        "surface": "argumento",
+        "type": "noun",
+        "definition": "the reason somebody gives to prove a point"
+      },
+      {
+        "word": "perspectiva",
+        "surface": "perspectiva",
+        "type": "noun",
+        "definition": "the way one person sees a thing from where they are"
+      },
+      {
+        "word": "situación",
+        "surface": "situación",
+        "type": "noun",
+        "definition": "how things stand around you at one moment"
+      },
+      {
+        "word": "servir",
+        "surface": "sirvió",
+        "type": "verb",
+        "definition": "to put food or drink in front of somebody"
+      },
+      {
+        "word": "mojado",
+        "surface": "mojados",
+        "type": "adjective",
+        "definition": "wet through, with the water gone right into it"
+      },
+      {
+        "word": "afrontar",
+        "surface": "afrontar",
+        "type": "verb",
+        "definition": "to go towards a hard thing instead of away from it"
+      },
+      {
+        "word": "ignorar",
+        "surface": "Ignorar",
+        "type": "verb",
+        "definition": "to act as if a thing or a person were not there"
+      },
+      {
+        "word": "confuso",
+        "surface": "confusa",
+        "type": "adjective",
+        "definition": "not clear, so you cannot tell what it means"
+      },
+      {
+        "word": "básico",
+        "surface": "básico",
+        "type": "adjective",
+        "definition": "the first and simplest part of something bigger"
+      },
+      {
+        "word": "esencial",
+        "surface": "esencial",
+        "type": "adjective",
+        "definition": "so important that without it the whole thing fails"
+      },
+      {
+        "word": "inusual",
+        "surface": "inusual",
+        "type": "adjective",
+        "definition": "not the way that things normally happen at all"
+      },
+      {
+        "word": "reservado",
+        "surface": "reservada",
+        "type": "adjective",
+        "definition": "keeping your feelings to yourself in front of others"
+      },
+      {
+        "word": "vela",
+        "surface": "vela",
+        "type": "noun",
+        "definition": "a stick of wax with a thread that burns"
+      },
+      {
+        "word": "recibir",
+        "surface": "recibió",
+        "type": "verb",
+        "definition": "to take somebody into your house as a guest"
+      },
+      {
+        "word": "a la cuarta",
+        "surface": "A la cuarta",
+        "type": "expression",
+        "definition": "on the fourth time of trying the very same thing"
+      }
+    ]
+  },
+  {
+    "topic": "hosting-and-processions",
+    "slotIndex": 3,
+    "title": "Siete picos y una venda",
+    "slug": "siete-picos-y-una-venda",
+    "arcType": "late-reveal",
+    "synopsis": "Queda la del veinticuatro, la ultima y la mas grande, y Alondra todavia cree que puede sacarla de ahi sin romper. Perla no le dice que no: le pone el palo en la mano y la venda en los ojos delante de toda la vecindad. Lo que se lleva a casa esa noche no cabe en una caja y sin embargo es lo unico que esta tradicion deja sacar.",
+    "text": "Siete picos tenía la del veinticuatro, y Perla la colgó más alto que las otras ocho.\n\n“Te la vendo rota o no te la vendo”, dijo, con esa ternura suya de no ceder nunca. “Y la rompes tú, delante de todos.”\n\nAlondra no intentó convencerla de que cediera. Le pusieron la venda, la giraron y le dieron el palo, sin ninguna consideración.\n\nFalló dos veces. Al tercero el barro cedió: colación, caña y cacahuates, y debajo medio patio, lo habitual.\n\n“Así de fácil”, se rio alguien desde el fondo. “Y eso que no veía nada.” Alondra se quitó la venda con la cara caliente.\n\nPerla apuntó la letanía de afuera en una servilleta. “La clásica, la de la calle”, explicó. “La de adentro no la necesitas.” No quiso detallar más.\n\n“Planificar esto no sirve”, agregó, creativa hasta en eso. “Se canta y ya.”\n\nSalió cantando a media voz, en tono aproximado. Un portón se abrió dos casas más allá, por cooperar. Fue significativo.",
+    "vocab": [
+      {
+        "word": "venda",
+        "surface": "venda",
+        "type": "noun",
+        "definition": "a cloth tied over the eyes so that you cannot see"
+      },
+      {
+        "word": "ceder",
+        "surface": "ceder",
+        "type": "verb",
+        "definition": "to give way after holding out for a while"
+      },
+      {
+        "word": "girar",
+        "surface": "giraron",
+        "type": "verb",
+        "definition": "to turn a person or a thing round on the spot"
+      },
+      {
+        "word": "fallar",
+        "surface": "Falló",
+        "type": "verb",
+        "definition": "to miss the thing that you were aiming at"
+      },
+      {
+        "word": "colación",
+        "surface": "colación",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the hard coloured sweets thrown from a broken piñata"
+      },
+      {
+        "word": "cacahuate",
+        "surface": "cacahuates",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the nut that grows under the ground, eaten salted"
+      },
+      {
+        "word": "letanía",
+        "surface": "letanía",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "the sung request and answer of these December nights"
+      },
+      {
+        "word": "servilleta",
+        "surface": "servilleta",
+        "type": "noun",
+        "definition": "a small paper or cloth for your hands at table"
+      },
+      {
+        "word": "portón",
+        "surface": "portón",
+        "type": "noun",
+        "definition": "a big heavy door that a cart could pass through"
+      },
+      {
+        "word": "consideración",
+        "surface": "consideración",
+        "type": "noun",
+        "definition": "care taken not to make things hard for other people"
+      },
+      {
+        "word": "planificar",
+        "surface": "Planificar",
+        "type": "verb",
+        "definition": "to decide the steps before you start doing them"
+      },
+      {
+        "word": "detallar",
+        "surface": "detallar",
+        "type": "verb",
+        "definition": "to give all the small parts of a thing one by one"
+      },
+      {
+        "word": "creativo",
+        "surface": "creativa",
+        "type": "adjective",
+        "definition": "good at making new things out of very simple ones"
+      },
+      {
+        "word": "habitual",
+        "surface": "habitual",
+        "type": "adjective",
+        "definition": "done so often that nobody stops to think about it"
+      },
+      {
+        "word": "clásico",
+        "surface": "clásica",
+        "type": "adjective",
+        "definition": "the old form that everybody knows and expects"
+      },
+      {
+        "word": "aproximado",
+        "surface": "aproximado",
+        "type": "adjective",
+        "definition": "close to right, but not exactly right at all"
+      },
+      {
+        "word": "caliente",
+        "surface": "caliente",
+        "type": "adjective",
+        "definition": "hot to the touch, said also of a red face"
+      },
+      {
+        "word": "significativo",
+        "surface": "significativo",
+        "type": "adjective",
+        "definition": "meaning more than it seems to mean at first"
+      },
+      {
+        "word": "caña",
+        "surface": "caña",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "lengths of sugar cane thrown in with the sweets"
+      },
+      {
+        "word": "a media voz",
+        "surface": "a media voz",
+        "type": "expression",
+        "definition": "quietly, without letting the voice come out fully"
+      }
+    ]
+  }
+]
