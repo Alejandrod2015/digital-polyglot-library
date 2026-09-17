@@ -22738,5 +22738,1043 @@
    "g": "side; à côté de: next to (le côté)",
    "t": "noun"
   }
+ },
+ "italian-friends-italy-a0": {
+  "pezzi": {
+   "g": "pieces (pezzo)",
+   "t": "noun"
+  },
+  "candeline": {
+   "g": "little candles (candelina)",
+   "t": "noun"
+  },
+  "soffio": {
+   "g": "puff, blow of breath",
+   "t": "noun"
+  },
+  "firme": {
+   "g": "signatures (firma)",
+   "t": "noun"
+  },
+  "alta": {
+   "g": "loud, high (fem.)",
+   "t": "adjective"
+  },
+  "soli": {
+   "g": "alone (pl.)",
+   "t": "adjective"
+  },
+  "sposiamo": {
+   "g": "we get married (sposarsi)",
+   "t": "verb"
+  },
+  "firmato": {
+   "g": "signed (firmare)",
+   "t": "verb"
+  },
+  "scherzo": {
+   "g": "joke",
+   "t": "noun"
+  },
+  "nasconde": {
+   "g": "hides (nascondere)",
+   "t": "verb"
+  },
+  "certo": {
+   "g": "of course, certainly",
+   "t": "adverb"
+  },
+  "tieni": {
+   "g": "you hold, keep (tenere)",
+   "t": "verb"
+  },
+  "perdo": {
+   "g": "I lose (perdere)",
+   "t": "verb"
+  },
+  "cardigan": {
+   "g": "cardigan",
+   "t": "noun"
+  },
+  "derby": {
+   "g": "local rivalry match, derby",
+   "t": "noun"
+  },
+  "genoa": {
+   "g": "Genoa (the football club)",
+   "t": "noun"
+  },
+  "gioca": {
+   "g": "plays (giocare)",
+   "t": "verb"
+  },
+  "sampdoria": {
+   "g": "Sampdoria (the football club)",
+   "t": "noun"
+  },
+  "tifano": {
+   "g": "they support, root for (tifare)",
+   "t": "verb"
+  },
+  "tassista": {
+   "g": "taxi driver",
+   "t": "noun"
+  },
+  "divano": {
+   "g": "sofa",
+   "t": "noun"
+  },
+  "televisione": {
+   "g": "television",
+   "t": "noun"
+  },
+  "samp": {
+   "g": "Samp, Sampdoria's nickname",
+   "t": "noun"
+  },
+  "voi": {
+   "g": "you (plural)",
+   "t": "pronoun"
+  },
+  "perdete": {
+   "g": "you (pl.) lose (perdere)",
+   "t": "verb"
+  },
+  "squadra": {
+   "g": "team",
+   "t": "noun"
+  },
+  "incrocia": {
+   "g": "crosses (incrociare)",
+   "t": "verb"
+  },
+  "facciamo": {
+   "g": "we do, make (fare)",
+   "t": "verb"
+  },
+  "scommessa": {
+   "g": "bet",
+   "t": "noun"
+  },
+  "tua": {
+   "g": "your (fem. sing.)",
+   "t": "adjective"
+  },
+  "maglia": {
+   "g": "jersey, shirt",
+   "t": "noun"
+  },
+  "focaccia": {
+   "g": "focaccia (flatbread)",
+   "t": "noun"
+  },
+  "appetito": {
+   "g": "appetite",
+   "t": "noun"
+  },
+  "mese": {
+   "g": "month",
+   "t": "noun"
+  },
+  "tende": {
+   "g": "holds out, extends (tendere)",
+   "t": "verb"
+  },
+  "partita": {
+   "g": "match, game",
+   "t": "noun"
+  },
+  "lanterna": {
+   "g": "lantern",
+   "t": "noun"
+  },
+  "piatti": {
+   "g": "plates (piatto)",
+   "t": "noun"
+  },
+  "bastano": {
+   "g": "are enough (bastare)",
+   "t": "verb"
+  },
+  "collega": {
+   "g": "colleague",
+   "t": "noun"
+  },
+  "apparecchia": {
+   "g": "sets the table (apparecchiare)",
+   "t": "verb"
+  },
+  "storie": {
+   "g": "stories (storia)",
+   "t": "noun"
+  },
+  "simpatica": {
+   "g": "nice, likeable (fem.)",
+   "t": "adjective"
+  },
+  "spesso": {
+   "g": "often",
+   "t": "adverb"
+  },
+  "vuoi": {
+   "g": "you want (volere)",
+   "t": "verb"
+  },
+  "brindare": {
+   "g": "to toast",
+   "t": "verb"
+  },
+  "brindisi": {
+   "g": "toast (raising a glass)",
+   "t": "noun"
+  },
+  "noi": {
+   "g": "we",
+   "t": "pronoun"
+  },
+  "sai": {
+   "g": "you know (sapere)",
+   "t": "verb"
+  },
+  "patto": {
+   "g": "pact, deal",
+   "t": "noun"
+  },
+  "posa": {
+   "g": "puts down (posare)",
+   "t": "verb"
+  },
+  "scherza": {
+   "g": "jokes (scherzare)",
+   "t": "verb"
+  },
+  "vergogna": {
+   "g": "shame, embarrassment",
+   "t": "noun"
+  },
+  "divertente": {
+   "g": "fun, funny",
+   "t": "adjective"
+  },
+  "parli": {
+   "g": "you talk (parlare)",
+   "t": "verb"
+  },
+  "capisci": {
+   "g": "you understand (capire)",
+   "t": "verb"
+  },
+  "arrabbiata": {
+   "g": "angry (fem.)",
+   "t": "adjective"
+  },
+  "esce": {
+   "g": "goes out, exits (uscire)",
+   "t": "verb"
+  },
+  "sbatte": {
+   "g": "slams (sbattere)",
+   "t": "verb"
+  },
+  "scale": {
+   "g": "stairs (scala)",
+   "t": "noun"
+  },
+  "parlo": {
+   "g": "I talk (parlare)",
+   "t": "verb"
+  },
+  "so": {
+   "g": "I know (sapere)",
+   "t": "verb"
+  },
+  "coraggio": {
+   "g": "courage",
+   "t": "noun"
+  },
+  "respiro": {
+   "g": "breath",
+   "t": "noun"
+  },
+  "profondo": {
+   "g": "deep",
+   "t": "adjective"
+  },
+  "amo": {
+   "g": "I love (amare)",
+   "t": "verb"
+  },
+  "tanti": {
+   "g": "many (masc. pl.)",
+   "t": "adjective"
+  },
+  "sincera": {
+   "g": "sincere, honest (fem.)",
+   "t": "adjective"
+  },
+  "strano": {
+   "g": "strange",
+   "t": "adjective"
+  },
+  "gabbiani": {
+   "g": "seagulls (gabbiano)",
+   "t": "noun"
+  },
+  "pallido": {
+   "g": "pale",
+   "t": "adjective"
+  },
+  "piange": {
+   "g": "cries (piangere)",
+   "t": "verb"
+  },
+  "singhiozza": {
+   "g": "sobs (singhiozzare)",
+   "t": "verb"
+  },
+  "lacrime": {
+   "g": "tears (lacrima)",
+   "t": "noun"
+  },
+  "fazzoletto": {
+   "g": "handkerchief, tissue",
+   "t": "noun"
+  },
+  "bugia": {
+   "g": "lie",
+   "t": "noun"
+  },
+  "accarezza": {
+   "g": "strokes, caresses (accarezzare)",
+   "t": "verb"
+  },
+  "fredde": {
+   "g": "cold (fem. pl.)",
+   "t": "adjective"
+  },
+  "pigiama": {
+   "g": "pajamas",
+   "t": "noun"
+  },
+  "sardegna": {
+   "g": "Sardinia",
+   "t": "noun"
+  },
+  "settimana": {
+   "g": "week",
+   "t": "noun"
+  },
+  "sveglia": {
+   "g": "awake (fem.)",
+   "t": "adjective"
+  },
+  "paura": {
+   "g": "fear",
+   "t": "noun"
+  },
+  "giù": {
+   "g": "down",
+   "t": "adverb"
+  },
+  "vicolo": {
+   "g": "alley",
+   "t": "noun"
+  },
+  "clacson": {
+   "g": "car horn",
+   "t": "noun"
+  },
+  "scusa": {
+   "g": "sorry, excuse me",
+   "t": "expression"
+  },
+  "bacia": {
+   "g": "kisses (baciare)",
+   "t": "verb"
+  },
+  "quinto": {
+   "g": "fifth",
+   "t": "adjective"
+  },
+  "sonno": {
+   "g": "sleepiness, sleep",
+   "t": "noun"
+  },
+  "spritz": {
+   "g": "spritz (Italian aperitif)",
+   "t": "noun"
+  },
+  "sparire": {
+   "g": "to disappear",
+   "t": "verb"
+  },
+  "incontra": {
+   "g": "meets (incontrare)",
+   "t": "verb"
+  },
+  "spazzatura": {
+   "g": "trash, garbage",
+   "t": "noun"
+  },
+  "delfini": {
+   "g": "dolphins (delfino)",
+   "t": "noun"
+  },
+  "difetto": {
+   "g": "flaw, defect",
+   "t": "noun"
+  },
+  "siete": {
+   "g": "you (pl.) are (essere)",
+   "t": "verb"
+  },
+  "bussa": {
+   "g": "knocks (bussare)",
+   "t": "verb"
+  },
+  "rose": {
+   "g": "roses (rosa)",
+   "t": "noun"
+  },
+  "finito": {
+   "g": "finished, over",
+   "t": "adjective"
+  },
+  "fissa": {
+   "g": "stares at (fissare)",
+   "t": "verb"
+  },
+  "notizia": {
+   "g": "news, piece of news",
+   "t": "noun"
+  },
+  "ridere": {
+   "g": "to laugh",
+   "t": "verb"
+  },
+  "povero": {
+   "g": "poor (pitiable)",
+   "t": "adjective"
+  },
+  "davvero": {
+   "g": "really, truly",
+   "t": "adverb"
+  },
+  "servono": {
+   "g": "are needed, are of use (servire)",
+   "t": "verb"
+  },
+  "vaso": {
+   "g": "vase, pot",
+   "t": "noun"
+  },
+  "sbagliati": {
+   "g": "wrong (masc. pl.)",
+   "t": "adjective"
+  },
+  "strofina": {
+   "g": "rubs, wipes (strofinare)",
+   "t": "verb"
+  },
+  "okay": {
+   "g": "okay",
+   "t": "expression"
+  },
+  "metti": {
+   "g": "you put (mettere)",
+   "t": "verb"
+  },
+  "gruppo": {
+   "g": "group",
+   "t": "noun"
+  },
+  "patatine": {
+   "g": "chips, crisps",
+   "t": "noun"
+  },
+  "aspettano": {
+   "g": "they wait for (aspettare)",
+   "t": "verb"
+  },
+  "telecomando": {
+   "g": "remote control",
+   "t": "noun"
+  },
+  "indossa": {
+   "g": "wears (indossare)",
+   "t": "verb"
+  },
+  "gol": {
+   "g": "goal (in football)",
+   "t": "noun"
+  },
+  "finita": {
+   "g": "over, finished (fem.)",
+   "t": "adjective"
+  },
+  "compro": {
+   "g": "I buy (comprare)",
+   "t": "verb"
+  },
+  "importa": {
+   "g": "matters (importare)",
+   "t": "verb"
+  },
+  "palio": {
+   "g": "prize at stake",
+   "t": "noun"
+  },
+  "quarto": {
+   "g": "fourth",
+   "t": "adjective"
+  },
+  "buio": {
+   "g": "dark",
+   "t": "adjective"
+  },
+  "architetta": {
+   "g": "architect (female)",
+   "t": "noun"
+  },
+  "bloccato": {
+   "g": "stuck, blocked",
+   "t": "adjective"
+  },
+  "fidanzato": {
+   "g": "boyfriend",
+   "t": "noun"
+  },
+  "dici": {
+   "g": "you say (dire)",
+   "t": "verb"
+  },
+  "sussurra": {
+   "g": "whispers (sussurrare)",
+   "t": "verb"
+  },
+  "guance": {
+   "g": "cheeks (guancia)",
+   "t": "noun"
+  },
+  "calde": {
+   "g": "warm (fem. pl.)",
+   "t": "adjective"
+  },
+  "biologa": {
+   "g": "biologist (female)",
+   "t": "noun"
+  },
+  "acquario": {
+   "g": "aquarium",
+   "t": "noun"
+  },
+  "studia": {
+   "g": "studies (studiare)",
+   "t": "verb"
+  },
+  "messaggio": {
+   "g": "message",
+   "t": "noun"
+  },
+  "disastro": {
+   "g": "disaster",
+   "t": "noun"
+  },
+  "carina": {
+   "g": "cute, pretty (fem.)",
+   "t": "adjective"
+  },
+  "appena": {
+   "g": "just, barely",
+   "t": "adverb"
+  },
+  "scrivi": {
+   "g": "you write (scrivere)",
+   "t": "verb"
+  },
+  "brava": {
+   "g": "good, skilled (fem.)",
+   "t": "adjective"
+  },
+  "infermiera": {
+   "g": "nurse (female)",
+   "t": "noun"
+  },
+  "compie": {
+   "g": "turns (an age) (compiere)",
+   "t": "verb"
+  },
+  "ah": {
+   "g": "ah",
+   "t": "expression"
+  },
+  "festa": {
+   "g": "party",
+   "t": "noun"
+  },
+  "vengono": {
+   "g": "they come (venire)",
+   "t": "verb"
+  },
+  "forchette": {
+   "g": "forks (forchetta)",
+   "t": "noun"
+  },
+  "auguri": {
+   "g": "best wishes, congratulations",
+   "t": "noun"
+  },
+  "desiderio": {
+   "g": "wish",
+   "t": "noun"
+  },
+  "accese": {
+   "g": "lit (fem. pl., from accendere)",
+   "t": "adjective"
+  },
+  "mezzogiorno": {
+   "g": "noon, midday",
+   "t": "noun"
+  },
+  "pinoli": {
+   "g": "pine nuts",
+   "t": "noun"
+  },
+  "mortaio": {
+   "g": "mortar (for grinding)",
+   "t": "noun"
+  },
+  "bel": {
+   "g": "beautiful, nice (before masc. noun)",
+   "t": "adjective"
+  },
+  "aglio": {
+   "g": "garlic",
+   "t": "noun"
+  },
+  "basilico": {
+   "g": "basil",
+   "t": "noun"
+  },
+  "pestello": {
+   "g": "pestle",
+   "t": "noun"
+  },
+  "schiaccia": {
+   "g": "crushes (schiacciare)",
+   "t": "verb"
+  },
+  "ricomincia": {
+   "g": "starts over (ricominciare)",
+   "t": "verb"
+  },
+  "cerchio": {
+   "g": "circle",
+   "t": "noun"
+  },
+  "giusto": {
+   "g": "right, correct",
+   "t": "adjective"
+  },
+  "pesto": {
+   "g": "pesto",
+   "t": "noun"
+  },
+  "focacceria": {
+   "g": "focaccia bakery",
+   "t": "noun"
+  },
+  "lavandino": {
+   "g": "sink",
+   "t": "noun"
+  },
+  "bagnato": {
+   "g": "wet",
+   "t": "adjective"
+  },
+  "rotto": {
+   "g": "broken",
+   "t": "adjective"
+  },
+  "trofie": {
+   "g": "trofie (a type of pasta)",
+   "t": "noun"
+  },
+  "barba": {
+   "g": "beard",
+   "t": "noun"
+  },
+  "vassoio": {
+   "g": "tray",
+   "t": "noun"
+  },
+  "colpa": {
+   "g": "fault, blame",
+   "t": "noun"
+  },
+  "sospira": {
+   "g": "sighs (sospirare)",
+   "t": "verb"
+  },
+  "suoi": {
+   "g": "his, her (masc. pl.)",
+   "t": "adjective"
+  },
+  "lacrima": {
+   "g": "tear",
+   "t": "noun"
+  },
+  "terra": {
+   "g": "earth, ground",
+   "t": "noun"
+  },
+  "pergola": {
+   "g": "pergola",
+   "t": "noun"
+  },
+  "fango": {
+   "g": "mud",
+   "t": "noun"
+  },
+  "ovunque": {
+   "g": "everywhere",
+   "t": "adverb"
+  },
+  "scopa": {
+   "g": "broom",
+   "t": "noun"
+  },
+  "tempeste": {
+   "g": "storms (tempesta)",
+   "t": "noun"
+  },
+  "notte": {
+   "g": "night",
+   "t": "noun"
+  },
+  "tanta": {
+   "g": "so much, a lot of (fem.)",
+   "t": "adjective"
+  },
+  "petto": {
+   "g": "chest",
+   "t": "noun"
+  },
+  "nulla": {
+   "g": "nothing",
+   "t": "pronoun"
+  },
+  "pianta": {
+   "g": "plant",
+   "t": "noun"
+  },
+  "mettono": {
+   "g": "they put (mettere)",
+   "t": "verb"
+  },
+  "arrivo": {
+   "g": "I'm coming, I arrive (arrivare)",
+   "t": "verb"
+  },
+  "ciabatte": {
+   "g": "slippers",
+   "t": "noun"
+  },
+  "sbadiglia": {
+   "g": "yawns (sbadigliare)",
+   "t": "verb"
+  },
+  "fornaio": {
+   "g": "baker",
+   "t": "noun"
+  },
+  "impasta": {
+   "g": "kneads dough (impastare)",
+   "t": "verb"
+  },
+  "dalle": {
+   "g": "from the (fem. pl.)",
+   "t": "preposition"
+  },
+  "teglie": {
+   "g": "baking trays (teglia)",
+   "t": "noun"
+  },
+  "buongiorno": {
+   "g": "good morning",
+   "t": "expression"
+  },
+  "agitata": {
+   "g": "agitated, anxious (fem.)",
+   "t": "adjective"
+  },
+  "pazienza": {
+   "g": "patience",
+   "t": "noun"
+  },
+  "lavori": {
+   "g": "you work (lavorare)",
+   "t": "verb"
+  },
+  "insegno": {
+   "g": "I teach (insegnare)",
+   "t": "verb"
+  },
+  "soglia": {
+   "g": "threshold, doorway",
+   "t": "noun"
+  },
+  "tuta": {
+   "g": "tracksuit",
+   "t": "noun"
+  },
+  "disordine": {
+   "g": "mess, disorder",
+   "t": "noun"
+  },
+  "cattiva": {
+   "g": "mean, unkind (fem.)",
+   "t": "adjective"
+  },
+  "arrabbi": {
+   "g": "you get angry (arrabbiarsi)",
+   "t": "verb"
+  },
+  "sto": {
+   "g": "I am, I'm doing (stare)",
+   "t": "verb"
+  },
+  "turni": {
+   "g": "shifts (turno)",
+   "t": "noun"
+  },
+  "brontola": {
+   "g": "grumbles, growls (brontolare)",
+   "t": "verb"
+  },
+  "annusa": {
+   "g": "sniffs (annusare)",
+   "t": "verb"
+  },
+  "pace": {
+   "g": "peace",
+   "t": "noun"
+  },
+  "promesso": {
+   "g": "promised (promettere)",
+   "t": "verb"
+  },
+  "dividono": {
+   "g": "they share, divide (dividere)",
+   "t": "verb"
+  },
+  "vera": {
+   "g": "real, true (fem.)",
+   "t": "adjective"
+  },
+  "crepa": {
+   "g": "crack",
+   "t": "noun"
+  },
+  "tramonta": {
+   "g": "sets, goes down (of the sun) (tramontare)",
+   "t": "verb"
+  },
+  "fragole": {
+   "g": "strawberries (fragola)",
+   "t": "noun"
+  },
+  "esprimi": {
+   "g": "express (esprimere, command)",
+   "t": "verb"
+  },
+  "nastro": {
+   "g": "ribbon",
+   "t": "noun"
+  },
+  "rosso": {
+   "g": "red",
+   "t": "adjective"
+  },
+  "orecchini": {
+   "g": "earrings",
+   "t": "noun"
+  },
+  "arrossisce": {
+   "g": "blushes (arrossire)",
+   "t": "verb"
+  },
+  "emozionata": {
+   "g": "moved, touched (fem.)",
+   "t": "adjective"
+  },
+  "mantiene": {
+   "g": "keeps, maintains (mantenere)",
+   "t": "verb"
+  },
+  "maglione": {
+   "g": "sweater",
+   "t": "noun"
+  },
+  "leggi": {
+   "g": "read (leggere, command)",
+   "t": "verb"
+  },
+  "allerta": {
+   "g": "alert",
+   "t": "noun"
+  },
+  "ospedale": {
+   "g": "hospital",
+   "t": "noun"
+  },
+  "vasi": {
+   "g": "pots, vases (vaso)",
+   "t": "noun"
+  },
+  "cadono": {
+   "g": "fall (cadere)",
+   "t": "verb"
+  },
+  "prendo": {
+   "g": "I take (prendere)",
+   "t": "verb"
+  },
+  "prendi": {
+   "g": "you take (prendere)",
+   "t": "verb"
+  },
+  "tuono": {
+   "g": "thunder",
+   "t": "noun"
+  },
+  "andiamo": {
+   "g": "let's go (andare)",
+   "t": "verb"
+  },
+  "pericoloso": {
+   "g": "dangerous",
+   "t": "adjective"
+  },
+  "pianerottolo": {
+   "g": "landing (of a staircase)",
+   "t": "noun"
+  },
+  "asciugamani": {
+   "g": "towels (asciugamano)",
+   "t": "noun"
+  },
+  "nelle": {
+   "g": "in the (fem. pl.)",
+   "t": "preposition"
+  },
+  "pranzano": {
+   "g": "they have lunch (pranzare)",
+   "t": "verb"
+  },
+  "spento": {
+   "g": "off, switched off",
+   "t": "adjective"
+  },
+  "neri": {
+   "g": "black (masc. pl.)",
+   "t": "adjective"
+  },
+  "fate": {
+   "g": "you (pl.) make, do (fare)",
+   "t": "verb"
+  },
+  "guardo": {
+   "g": "I look (guardare)",
+   "t": "verb"
+  },
+  "gonfi": {
+   "g": "puffy, swollen (masc. pl.)",
+   "t": "adjective"
+  },
+  "cuscino": {
+   "g": "cushion, pillow",
+   "t": "noun"
+  },
+  "davanzale": {
+   "g": "windowsill",
+   "t": "noun"
+  },
+  "labbro": {
+   "g": "lip",
+   "t": "noun"
+  },
+  "ragione": {
+   "g": "reason (avere ragione: to be right)",
+   "t": "noun"
+  },
+  "scendi": {
+   "g": "go down (scendere, command)",
+   "t": "verb"
+  },
+  "chiedi": {
+   "g": "ask (chiedere, command)",
+   "t": "verb"
+  },
+  "consiglio": {
+   "g": "advice",
+   "t": "noun"
+  },
+  "camicia": {
+   "g": "shirt",
+   "t": "noun"
+  },
+  "pettinati": {
+   "g": "combed (masc. pl.)",
+   "t": "adjective"
+  },
+  "pranziamo": {
+   "g": "we have lunch (pranzare)",
+   "t": "verb"
+  },
+  "timido": {
+   "g": "shy",
+   "t": "adjective"
+  },
+  "strappa": {
+   "g": "tears, rips (strappare)",
+   "t": "verb"
+  },
+  "patti": {
+   "g": "pacts, deals (patto)",
+   "t": "noun"
+  },
+  "suonano": {
+   "g": "ring (suonare)",
+   "t": "verb"
+  },
+  "campane": {
+   "g": "bells (campana)",
+   "t": "noun"
+  },
+  "cresce": {
+   "g": "grows (crescere)",
+   "t": "verb"
+  },
+  "mastica": {
+   "g": "chews (masticare)",
+   "t": "verb"
+  },
+  "sollievo": {
+   "g": "relief",
+   "t": "noun"
+  },
+  "briciole": {
+   "g": "crumbs (briciola)",
+   "t": "noun"
+  },
+  "segna": {
+   "g": "scores (segnare)",
+   "t": "verb"
+  },
+  "abito": {
+   "g": "I live (abitare)",
+   "t": "verb"
+  }
  }
 }
