@@ -154,8 +154,14 @@ export async function GET(request: NextRequest) {
     }
     const exercises = buildTopicCheckpointPracticeSession(source.items.map(withPracticeVoice));
     const answers = Object.fromEntries(
+      // El checkpoint no reparte speaking (su plan no lo incluye) ni match
+      // tiene una respuesta unica, asi que solo los de respuesta unica entran
+      // en el mapa de respuestas.
       exercises
-        .filter((exercise) => exercise.type !== "match_meaning")
+        .filter(
+          (exercise): exercise is Extract<typeof exercise, { answer: string }> =>
+            exercise.type !== "match_meaning" && exercise.type !== "speaking"
+        )
         .map((exercise) => [exercise.id, exercise.answer])
     );
 

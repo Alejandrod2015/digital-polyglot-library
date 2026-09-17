@@ -34,6 +34,12 @@ const ALLOWED_EVENT_TYPES = new Set([
   "practice_recommended_mode_opened",
   "practice_session_started",
   "practice_session_completed",
+  // Los dos turnos hablados que NO llegan a jugarse. Ninguno puntua ni cuenta
+  // como sesion, y se miden por separado porque son problemas distintos: el
+  // primero es un permiso que el usuario nego, el segundo es un idioma que su
+  // telefono no sabe reconocer, y solo el segundo se arregla desde aqui.
+  "speaking_skipped_no_mic",
+  "speaking_skipped_no_recognizer",
   "reminder_scheduled",
   "reminder_tapped",
   "reminder_destination_opened",

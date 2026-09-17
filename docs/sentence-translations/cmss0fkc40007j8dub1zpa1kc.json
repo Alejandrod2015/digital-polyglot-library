@@ -1,0 +1,2122 @@
+{
+  "_comoSeUsa": "Formato NUEVO: la clave es la oracion. Para guardar: npx tsx scripts/saveSentenceTranslations.ts docs/sentence-translations/<journeyId>.json",
+  "_migrado": "Convertido desde el formato por palabra por scripts/_migraTraducciones.ts. Las oraciones que quedaron sin traducir viven en <journeyId>.todo2.json.",
+  "journeyId": "cmss0fkc40007j8dub1zpa1kc",
+  "journeyName": "Traveler",
+  "language": "italian",
+  "variant": "italy",
+  "stories": [
+    {
+      "storySlug": "niente-spalle-scoperte",
+      "storyTitle": "Niente spalle scoperte",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "Marta arriva davanti alla chiesa con il vestito senza maniche e il biglietto in mano.",
+          "words": [
+            "chiesa",
+            "vestito",
+            "manica"
+          ],
+          "translation": "Marta arrives at the church in a sleeveless dress, her ticket in her hand."
+        },
+        {
+          "sentence": "Un uomo all'ingresso la ferma e indica un cartello con due disegni.",
+          "words": [
+            "ingresso",
+            "disegno"
+          ],
+          "translation": "A man at the entrance stops her and points to a sign with two drawings."
+        },
+        {
+          "sentence": "Il disegno dice che dentro le braccia stanno coperte.",
+          "words": [
+            "braccio"
+          ],
+          "translation": "The drawing says that arms stay covered inside."
+        },
+        {
+          "sentence": "Marta apre lo zaino e trova soltanto un ombrello e una bottiglia.",
+          "words": [
+            "aprire",
+            "trovare",
+            "ombrello",
+            "bottiglia"
+          ],
+          "translation": "Marta opens her backpack and finds only an umbrella and a bottle."
+        },
+        {
+          "sentence": "L'uomo tira fuori da una scatola una sciarpa di carta azzurra.",
+          "words": [
+            "scatola",
+            "sciarpa",
+            "azzurro"
+          ],
+          "translation": "The man pulls a light blue paper scarf out of a box."
+        },
+        {
+          "sentence": "Lei se la mette addosso e passa senza pagare niente in più.",
+          "words": [
+            "addosso"
+          ],
+          "translation": "She puts it on over her clothes and goes in without paying anything extra."
+        },
+        {
+          "sentence": "Dentro la chiesa l'aria è fresca e il silenzio arriva prima degli occhi.",
+          "words": [
+            "aria",
+            "silenzio",
+            "occhio"
+          ],
+          "translation": "Inside the church the air is cool, and the silence reaches you before your eyes do."
+        },
+        {
+          "sentence": "Le candele bruciano davanti a un affresco scuro e molto antico.",
+          "words": [
+            "candela",
+            "bruciare",
+            "affresco",
+            "antico"
+          ],
+          "translation": "Candles burn in front of a dark, very old fresco."
+        },
+        {
+          "sentence": "Marta cammina piano, perché il pavimento manda un suono lungo.",
+          "words": [
+            "pavimento"
+          ],
+          "translation": "Marta walks softly, because the floor gives off a long sound."
+        },
+        {
+          "sentence": "All'uscita lei restituisce la sciarpa dentro la stessa scatola di legno.",
+          "words": [
+            "uscita"
+          ],
+          "translation": "On the way out she puts the scarf back in the same wooden box."
+        },
+        {
+          "sentence": "L'uomo la piega bene e la lascia pronta per la turista dopo.",
+          "words": [
+            "piegare"
+          ],
+          "translation": "The man folds it neatly and leaves it ready for the next tourist."
+        },
+        {
+          "sentence": "La regola sta scritta soltanto in due disegni, e a tutti basta.",
+          "words": [
+            "regola"
+          ],
+          "translation": "The rule is written in just two drawings, and that is enough for everyone."
+        }
+      ]
+    },
+    {
+      "storySlug": "i-gradini-non-finiscono-mai",
+      "storyTitle": "I gradini non finiscono mai",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "La fila per la cupola gira intorno alla piazza e non sembra muoversi.",
+          "words": [
+            "cupola",
+            "muoversi"
+          ],
+          "translation": "The line for the dome wraps around the square and does not seem to move."
+        },
+        {
+          "sentence": "Marta compra il biglietto sul telefono e aspetta il suo turno al sole.",
+          "words": [
+            "telefono",
+            "turno"
+          ],
+          "translation": "Marta buys the ticket on her phone and waits her turn in the sun."
+        },
+        {
+          "sentence": "Un avviso all'entrata ricorda che dentro non c'è nessun ascensore.",
+          "words": [
+            "avviso",
+            "ricordare",
+            "ascensore"
+          ],
+          "translation": "A notice at the entrance reminds you that there is no lift inside."
+        },
+        {
+          "sentence": "La scala sale stretta fra due muri e nessuno può passare avanti.",
+          "words": [
+            "scala"
+          ],
+          "translation": "The staircase is narrow as it climbs between two walls, and nobody can get past."
+        },
+        {
+          "sentence": "Ogni tanto qualcuno si ferma per respirare e blocca tutta la coda.",
+          "words": [
+            "qualcuno",
+            "respirare",
+            "bloccare"
+          ],
+          "translation": "Every so often someone stops to breathe and blocks the whole line."
+        },
+        {
+          "sentence": "Marta conta i gradini fino a cento, poi lascia perdere.",
+          "words": [
+            "gradino"
+          ],
+          "translation": "Marta counts the steps up to a hundred, then gives up."
+        },
+        {
+          "sentence": "In cima il vento arriva forte e la città diventa piccola e rossa.",
+          "words": [
+            "cima",
+            "vento",
+            "città",
+            "diventare",
+            "rosso"
+          ],
+          "translation": "At the top the wind hits hard, and the city turns small and red."
+        },
+        {
+          "sentence": "I tetti stanno tutti vicini, con le antenne e i panni stesi.",
+          "words": [
+            "tetto",
+            "panno"
+          ],
+          "translation": "The roofs all sit close together, with antennas and laundry hung out to dry."
+        },
+        {
+          "sentence": "Marta appoggia le mani sul muretto e respira con la bocca aperta.",
+          "words": [
+            "muretto",
+            "bocca"
+          ],
+          "translation": "Marta rests her hands on the low wall and breathes with her mouth open."
+        },
+        {
+          "sentence": "La discesa è peggio della salita, perché le gambe tremano un poco.",
+          "words": [
+            "discesa",
+            "salita",
+            "tremare"
+          ],
+          "translation": "Going down is worse than going up, because your legs shake a little."
+        },
+        {
+          "sentence": "La cupola da sotto adesso sembra molto più bassa.",
+          "words": [
+            "basso"
+          ],
+          "translation": "From below, the dome now looks much lower."
+        }
+      ]
+    },
+    {
+      "storySlug": "la-piazza-si-riempie-alle-sei",
+      "storyTitle": "La piazza si riempie alle sei",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "Alle cinque la piazza è vuota e il sole batte sulle pietre gialle.",
+          "words": [
+            "sole",
+            "battere",
+            "pietra"
+          ],
+          "translation": "At five the square is empty and the sun beats down on the yellow stones."
+        },
+        {
+          "sentence": "Due ragazzi giocano a pallone davanti alla fontana spenta.",
+          "words": [
+            "ragazzo",
+            "giocare",
+            "pallone",
+            "fontana",
+            "spento",
+            "avanti"
+          ],
+          "translation": "Two young men play football in front of the fountain, with the water switched off."
+        },
+        {
+          "sentence": "Marta si siede su una panchina e guarda le famiglie che arrivano.",
+          "words": [
+            "panchina",
+            "famiglia"
+          ],
+          "translation": "Marta sits down on a bench and watches the families arriving."
+        },
+        {
+          "sentence": "Verso le sei le serrande si alzano e i tavolini escono dai bar.",
+          "words": [
+            "serranda"
+          ],
+          "translation": "Around six the metal shutters go up and the little tables come out of the bars."
+        },
+        {
+          "sentence": "I cani al guinzaglio e le voci alte riempiono la piazza, senza nessun segnale.",
+          "words": [
+            "cane",
+            "guinzaglio",
+            "voce",
+            "segnale"
+          ],
+          "translation": "Dogs on their leads and loud voices fill the square, with no signal at all."
+        },
+        {
+          "sentence": "Marta compra un gelato e cammina insieme agli altri, senza una direzione.",
+          "words": [
+            "gelato",
+            "direzione"
+          ],
+          "translation": "Marta buys an ice cream and walks along with everyone else, with no direction."
+        },
+        {
+          "sentence": "Tutti girano intorno alla stessa fontana, avanti e indietro, molto lentamente.",
+          "words": [
+            "indietro"
+          ],
+          "translation": "Everyone circles the same fountain, back and forth, very slowly."
+        },
+        {
+          "sentence": "Nessuno qui sembra avere un posto dove andare di corsa.",
+          "words": [
+            "di corsa"
+          ],
+          "translation": "Nobody here seems to have anywhere to be in a rush."
+        },
+        {
+          "sentence": "Alle otto la piazza si svuota, come per un accordo segreto.",
+          "words": [
+            "svuotarsi",
+            "accordo",
+            "segreto"
+          ],
+          "translation": "At eight the square empties, as if by some secret agreement."
+        },
+        {
+          "sentence": "La passeggiata non ha un orario scritto, però tutti lo conoscono.",
+          "words": [
+            "passeggiata"
+          ],
+          "translation": "The evening walk has no written timetable, and yet everyone knows it."
+        },
+        {
+          "sentence": "Nessun tavolino sta fuori e nessuno cammina sotto i portici.",
+          "words": [
+            "portico"
+          ],
+          "translation": "Not one table is outside, and nobody walks under the arcades."
+        }
+      ]
+    },
+    {
+      "storySlug": "il-caffe-si-beve-in-piedi",
+      "storyTitle": "Il caffè si beve in piedi",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "Teo entra in un bar dei Quartieri Spagnoli e si siede a un tavolino piccolo.",
+          "words": [
+            "bar",
+            "sedersi",
+            "tavolino"
+          ],
+          "translation": "Teo walks into a cafe in the Quartieri Spagnoli and sits down at a small table."
+        },
+        {
+          "sentence": "Il cameriere arriva subito e porta il caffè con un bicchiere d'acqua fredda.",
+          "words": [
+            "cameriere",
+            "portare",
+            "bicchiere",
+            "freddo"
+          ],
+          "translation": "The waiter comes over at once and brings the coffee with a glass of cold water."
+        },
+        {
+          "sentence": "Il conto sul piattino dice due euro e cinquanta.",
+          "words": [
+            "conto",
+            "piattino"
+          ],
+          "translation": "The bill on the saucer says two euros fifty."
+        },
+        {
+          "sentence": "Al banco, accanto a lui, tre uomini bevono lo stesso caffè in piedi.",
+          "words": [
+            "banco",
+            "bere",
+            "in piedi"
+          ],
+          "translation": "At the counter next to him, three men drink the same coffee standing up."
+        },
+        {
+          "sentence": "Loro pagano un euro e dieci e restano dentro il bar due minuti.",
+          "words": [
+            "pagare",
+            "restare"
+          ],
+          "translation": "They pay one euro ten and stay inside the cafe for two minutes."
+        },
+        {
+          "sentence": "Teo legge il listino sul muro e trova due prezzi diversi.",
+          "words": [
+            "listino",
+            "prezzo",
+            "diverso"
+          ],
+          "translation": "Teo reads the price list on the wall and finds two different prices."
+        },
+        {
+          "sentence": "Il cameriere spiega che il tavolino costa, mentre il banco no.",
+          "words": [
+            "spiegare"
+          ],
+          "translation": "The waiter explains that the table costs extra, while the counter does not."
+        },
+        {
+          "sentence": "“Al tavolino è un altro servizio”, dice, e non sembra dispiaciuto.",
+          "words": [
+            "servizio"
+          ],
+          "translation": "“At a table it is a different service,” he says, and he does not seem sorry."
+        },
+        {
+          "sentence": "Teo paga senza discutere e guarda ancora quegli uomini in piedi.",
+          "words": [
+            "discutere"
+          ],
+          "translation": "Teo pays without arguing and looks again at those men standing up."
+        },
+        {
+          "sentence": "Il giorno dopo Teo entra nello stesso bar e va dritto al banco.",
+          "words": [
+            "dritto"
+          ],
+          "translation": "The next day Teo walks into the same cafe and goes straight to the counter."
+        },
+        {
+          "sentence": "Beve il caffè in due sorsi, con il gomito appoggiato sul marmo.",
+          "words": [
+            "sorso",
+            "gomito",
+            "marmo"
+          ],
+          "translation": "He drinks the coffee in two sips, with his elbow resting on the marble."
+        },
+        {
+          "sentence": "Il sapore è lo stesso, e al banco nessuno porta il conto.",
+          "words": [
+            "sapore"
+          ],
+          "translation": "The taste is the same, and at the counter nobody brings you a bill."
+        }
+      ]
+    },
+    {
+      "storySlug": "prima-si-paga-poi-si-beve",
+      "storyTitle": "Prima si paga, poi si beve",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "Alla cassa del bar c'è una fila lunga e nessuno tiene in mano una tazza.",
+          "words": [
+            "cassa",
+            "tazza"
+          ],
+          "translation": "There is a long queue at the cafe till, and nobody is holding a cup."
+        },
+        {
+          "sentence": "Teo si mette in coda dietro una signora con un cane piccolo.",
+          "words": [
+            "coda"
+          ],
+          "translation": "Teo joins the queue behind a lady with a small dog."
+        },
+        {
+          "sentence": "La cassiera chiede che cosa vuole prima di battere lo scontrino.",
+          "words": [
+            "cassiera",
+            "volere",
+            "scontrino"
+          ],
+          "translation": "The cashier asks what he wants before ringing up the receipt."
+        },
+        {
+          "sentence": "Teo ordina un cornetto e un caffè e riceve un foglietto lungo e stretto.",
+          "words": [
+            "ordinare",
+            "cornetto",
+            "ricevere",
+            "foglietto"
+          ],
+          "translation": "Teo orders a croissant and a coffee and receives a long, narrow slip of paper."
+        },
+        {
+          "sentence": "Poi porta lo scontrino al banco e lo appoggia vicino alla macchina.",
+          "words": [
+            "appoggiare"
+          ],
+          "translation": "Then he takes the receipt to the counter and rests it next to the machine."
+        },
+        {
+          "sentence": "Il barista legge il foglietto e comincia a lavorare senza parlare.",
+          "words": [
+            "barista",
+            "leggere"
+          ],
+          "translation": "The barista reads the slip and starts working without a word."
+        },
+        {
+          "sentence": "La macchina fa un rumore forte e riempie la tazzina soltanto a metà.",
+          "words": [
+            "riempire",
+            "tazzina"
+          ],
+          "translation": "The machine makes a loud noise and fills the tiny cup only halfway."
+        },
+        {
+          "sentence": "Il barista mette lo zucchero accanto, con un cucchiaino e un tovagliolo.",
+          "words": [
+            "zucchero",
+            "cucchiaino",
+            "tovagliolo"
+          ],
+          "translation": "The barista puts the sugar beside it, with a teaspoon and a napkin."
+        },
+        {
+          "sentence": "Il cornetto arriva caldo e lascia le dita unte di zucchero.",
+          "words": [
+            "caldo",
+            "dito"
+          ],
+          "translation": "The croissant comes out hot and leaves your fingers greasy with sugar."
+        },
+        {
+          "sentence": "Un turista salta la cassa e ordina direttamente al banco, ma nessuno lo serve.",
+          "words": [
+            "turista",
+            "saltare",
+            "servire",
+            "direttamente"
+          ],
+          "translation": "A tourist skips the till and orders directly at the counter, but nobody serves him."
+        },
+        {
+          "sentence": "Teo lo guarda e riconosce se stesso di quindici minuti prima.",
+          "words": [
+            "riconoscere"
+          ],
+          "translation": "Teo watches him and recognises himself from fifteen minutes earlier."
+        }
+      ]
+    },
+    {
+      "storySlug": "il-caffe-sospeso",
+      "storyTitle": "Il caffè sospeso",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "Teo chiede al barista che cosa significa quel cartello giallo e vecchio.",
+          "words": [
+            "giallo",
+            "significare",
+            "cartello",
+            "vecchio"
+          ],
+          "translation": "Teo asks the barista what that old yellow sign means."
+        },
+        {
+          "sentence": "Sul muro del bar c'è un foglio scritto a mano con due parole soltanto.",
+          "words": [
+            "parola"
+          ],
+          "translation": "On the wall of the cafe there is a handwritten sheet with only two words."
+        },
+        {
+          "sentence": "Il barista alza le spalle e continua a pulire la macchina.",
+          "words": [
+            "alzare",
+            "spalla",
+            "pulire"
+          ],
+          "translation": "The barista shrugs his shoulders and goes on cleaning the machine."
+        },
+        {
+          "sentence": "Un uomo con il cappotto blu paga due caffè e ne beve uno solo.",
+          "words": [
+            "cappotto",
+            "blu"
+          ],
+          "translation": "A man in a blue coat pays for two coffees and drinks only one."
+        },
+        {
+          "sentence": "Il barista fa un segno con la penna sul quaderno accanto alla cassa.",
+          "words": [
+            "segno",
+            "penna",
+            "quaderno"
+          ],
+          "translation": "The barista makes a mark with his pen in the notebook next to the till."
+        },
+        {
+          "sentence": "L'uomo esce in fretta, senza salutare e senza guardare nessuno.",
+          "words": [
+            "uscire",
+            "in fretta",
+            "salutare"
+          ],
+          "translation": "The man goes out in a hurry, without saying goodbye and without looking at anyone."
+        },
+        {
+          "sentence": "“Il secondo caffè resta qui, per chi oggi non ha soldi”, dice il barista.",
+          "words": [
+            "soldi"
+          ],
+          "translation": "“The second coffee stays here, for whoever has no money today,” says the barista."
+        },
+        {
+          "sentence": "Teo guarda il quaderno aperto e conta sette segni sotto la data di oggi.",
+          "words": [
+            "aperto",
+            "data"
+          ],
+          "translation": "Teo looks at the open notebook and counts seven marks under today's date."
+        },
+        {
+          "sentence": "Nessuno scrive il nome di chi paga e di chi beve.",
+          "words": [
+            "scrivere",
+            "nome"
+          ],
+          "translation": "Nobody writes down the name of who pays and who drinks."
+        },
+        {
+          "sentence": "Prima di uscire Teo lascia due monete in più sul piattino del caffè.",
+          "words": [
+            "lasciare"
+          ],
+          "translation": "Before going out, Teo leaves two extra coins on the coffee saucer."
+        },
+        {
+          "sentence": "Il barista fa un segno nuovo e non dice neanche grazie.",
+          "words": [
+            "grazie"
+          ],
+          "translation": "The barista makes a new mark and does not even say thank you."
+        },
+        {
+          "sentence": "A Napoli il caffè si offre anche a chi non c'è ancora.",
+          "words": [
+            "offrire",
+            "ancora"
+          ],
+          "translation": "In Naples, coffee is offered even to someone who is not there yet."
+        }
+      ]
+    },
+    {
+      "storySlug": "qui-non-ce-la-bolognese",
+      "storyTitle": "Qui non c'è la bolognese",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "Irene entra in una trattoria vicino alle due torri e legge il menu appeso alla porta.",
+          "words": [
+            "trattoria",
+            "torre",
+            "menu"
+          ],
+          "translation": "Irene walks into a small family restaurant near the two towers and reads the menu hung on the door."
+        },
+        {
+          "sentence": "Dentro ci sono sei tavoli con la tovaglia a quadretti e nessun turista.",
+          "words": [
+            "tavolo",
+            "tovaglia"
+          ],
+          "translation": "Inside there are six tables with checked tablecloths and not a single tourist."
+        },
+        {
+          "sentence": "Un uomo con il grembiule bianco le indica il posto accanto alla finestra.",
+          "words": [
+            "grembiule",
+            "bianco",
+            "posto",
+            "finestra"
+          ],
+          "translation": "A man in a white apron points her to the seat by the window."
+        },
+        {
+          "sentence": "Irene cerca gli spaghetti alla bolognese e non li trova da nessuna parte.",
+          "words": [
+            "spaghetti"
+          ],
+          "translation": "Irene looks for spaghetti bolognese and cannot find it anywhere."
+        },
+        {
+          "sentence": "L'oste sorride e spiega che a Bologna il ragù sta sopra le tagliatelle.",
+          "words": [
+            "oste",
+            "sorridere",
+            "ragù",
+            "tagliatelle"
+          ],
+          "translation": "The innkeeper smiles and explains that in Bologna the ragù goes on the tagliatelle."
+        },
+        {
+          "sentence": "Le tagliatelle arrivano larghe, gialle e coperte di un ragù denso.",
+          "words": [
+            "largo",
+            "coperto",
+            "denso"
+          ],
+          "translation": "The tagliatelle comes out wide and yellow, covered in a thick ragù."
+        },
+        {
+          "sentence": "Irene gira la forchetta piano e sente la carne, il burro e il pomodoro.",
+          "words": [
+            "girare",
+            "forchetta",
+            "carne",
+            "burro"
+          ],
+          "translation": "Irene turns her fork slowly and tastes the meat, the butter and the tomato."
+        },
+        {
+          "sentence": "Il piatto è piccolo, però lei mangia lentamente per farlo durare.",
+          "words": [
+            "lentamente"
+          ],
+          "translation": "The plate is small, but she eats slowly to make it last."
+        },
+        {
+          "sentence": "L'oste torna e domanda se va tutto bene, con le mani dietro la schiena.",
+          "words": [
+            "domandare",
+            "schiena"
+          ],
+          "translation": "The innkeeper comes back and asks if everything is fine, hands behind his back."
+        },
+        {
+          "sentence": "Il nome del piatto è sbagliato, la fame no.",
+          "words": [
+            "fame"
+          ],
+          "translation": "The name of the dish is wrong; the hunger is not."
+        }
+      ]
+    },
+    {
+      "storySlug": "il-coperto-si-paga-sempre",
+      "storyTitle": "Il coperto si paga sempre",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "In fondo alla pagina del menu c'è una riga piccola con due parole e un numero.",
+          "words": [
+            "riga",
+            "pagina"
+          ],
+          "translation": "At the bottom of the menu page there is a small line with two words and a number."
+        },
+        {
+          "sentence": "Irene domanda al cameriere che cosa copre esattamente quel prezzo.",
+          "words": [
+            "coprire",
+            "esattamente"
+          ],
+          "translation": "Irene asks the waiter what exactly that price covers."
+        },
+        {
+          "sentence": "Lui risponde con calma: il pane, la tovaglia e il lavoro dei camerieri.",
+          "words": [
+            "rispondere",
+            "calma",
+            "pane"
+          ],
+          "translation": "He answers calmly: the bread, the tablecloth and the waiters' work."
+        },
+        {
+          "sentence": "Il cestino del pane arriva pieno, con due tipi di pane e un grissino lungo.",
+          "words": [
+            "cestino",
+            "pieno",
+            "tipo",
+            "grissino",
+            "lungo"
+          ],
+          "translation": "The bread basket comes full, with two kinds of bread and one long breadstick."
+        },
+        {
+          "sentence": "Nessuno qui considera il pane un errore della cucina.",
+          "words": [
+            "errore",
+            "cucina"
+          ],
+          "translation": "Nobody here treats the bread as a mistake from the kitchen."
+        },
+        {
+          "sentence": "Alla fine il conto mostra una riga per il coperto e nessuna riga per la mancia.",
+          "words": [
+            "mostrare",
+            "mancia"
+          ],
+          "translation": "In the end the bill shows a line for the cover charge and no line for the tip."
+        },
+        {
+          "sentence": "Irene lascia due monete sul piattino, per abitudine straniera, e il cameriere ringrazia sorpreso.",
+          "words": [
+            "abitudine",
+            "straniero",
+            "ringraziare",
+            "sorpreso"
+          ],
+          "translation": "Irene leaves two coins on the saucer, a foreign habit, and the waiter thanks her, surprised."
+        },
+        {
+          "sentence": "La mancia in Italia non è un obbligo, è una piccola sorpresa.",
+          "words": [
+            "obbligo"
+          ],
+          "translation": "In Italy the tip is not a duty; it is a small surprise."
+        },
+        {
+          "sentence": "Un ristorante scrive “coperto zero” a lettere grandi, quasi con orgoglio.",
+          "words": [
+            "ristorante",
+            "lettera",
+            "orgoglio"
+          ],
+          "translation": "One restaurant writes “no cover charge” in big letters, almost with pride."
+        },
+        {
+          "sentence": "In quel posto, però, il pane si paga a parte.",
+          "words": [
+            "a parte"
+          ],
+          "translation": "In that place, though, the bread is paid for separately."
+        }
+      ]
+    },
+    {
+      "storySlug": "il-conto-non-arriva-da-solo",
+      "storyTitle": "Il conto non arriva da solo",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "Irene finisce il secondo piatto e aspetta con la borsa già sulle ginocchia.",
+          "words": [
+            "finire",
+            "secondo",
+            "ginocchio"
+          ],
+          "translation": "Irene finishes her second course and waits with her bag already on her knees."
+        },
+        {
+          "sentence": "Il cameriere passa tre volte, riempie l'acqua e non porta altro.",
+          "words": [
+            "volta",
+            "acqua",
+            "riempire"
+          ],
+          "translation": "The waiter goes by three times, tops up the water and brings nothing else."
+        },
+        {
+          "sentence": "I clienti accanto parlano da un'ora davanti a due bicchieri vuoti.",
+          "words": [
+            "cliente",
+            "parlare",
+            "vuoto"
+          ],
+          "translation": "The customers next to her have been talking for an hour over two empty glasses."
+        },
+        {
+          "sentence": "In Italia nessuno spinge fuori chi finisce di mangiare.",
+          "words": [
+            "spingere",
+            "mangiare"
+          ],
+          "translation": "In Italy nobody pushes you out once you have finished eating."
+        },
+        {
+          "sentence": "Il tavolo resta della stessa persona fino al momento che decide lei.",
+          "words": [
+            "persona",
+            "decidere"
+          ],
+          "translation": "The table stays with the same person until the moment she decides."
+        },
+        {
+          "sentence": "Irene guarda l'orologio e capisce che il problema è suo.",
+          "words": [
+            "orologio"
+          ],
+          "translation": "Irene looks at the clock and realises the problem is hers."
+        },
+        {
+          "sentence": "Lei alza la mano e dice tre parole al cameriere che passa vicino.",
+          "words": [
+            "mano"
+          ],
+          "translation": "She raises her hand and says three words to the waiter passing nearby."
+        },
+        {
+          "sentence": "“Il conto, per favore”, e il conto arriva dopo un minuto.",
+          "words": [
+            "per favore"
+          ],
+          "translation": "“The bill, please,” and the bill arrives a minute later."
+        },
+        {
+          "sentence": "Il cameriere sembra contento, perché adesso conosce la risposta.",
+          "words": [
+            "contento",
+            "conoscere",
+            "risposta"
+          ],
+          "translation": "The waiter looks happy, because now he knows the answer."
+        },
+        {
+          "sentence": "Irene paga in contanti e infila lo scontrino sotto il bicchiere.",
+          "words": [
+            "contanti"
+          ],
+          "translation": "Irene pays in cash and slips the receipt under the glass."
+        },
+        {
+          "sentence": "Fuori la piazza è piena di gente che cammina senza fretta.",
+          "words": [
+            "piazza",
+            "gente",
+            "camminare",
+            "fretta"
+          ],
+          "translation": "Outside, the square is full of people walking with no hurry."
+        },
+        {
+          "sentence": "I clienti accanto restano seduti, con i bicchieri vuoti e il tempo gratis.",
+          "words": [
+            "gratis"
+          ],
+          "translation": "The customers next to her stay seated, with empty glasses and time that costs nothing."
+        }
+      ]
+    },
+    {
+      "storySlug": "a-palermo-si-dice-arancina",
+      "storyTitle": "A Palermo si dice arancina",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "Il banco della friggitoria sta all'angolo del mercato, sotto un tendone verde.",
+          "words": [
+            "friggitoria",
+            "angolo",
+            "mercato",
+            "tendone",
+            "verde"
+          ],
+          "translation": "The fried food stall stands on the corner of the market, under a big green awning."
+        },
+        {
+          "sentence": "Nico indica una palla di riso dorata e la chiama arancino, come a Catania.",
+          "words": [
+            "palla",
+            "riso",
+            "dorato",
+            "chiamare"
+          ],
+          "translation": "Nico points at a golden rice ball and calls it arancino, the way they do in Catania."
+        },
+        {
+          "sentence": "La signora dietro il banco lo corregge subito, senza cattiveria.",
+          "words": [
+            "correggere",
+            "cattiveria"
+          ],
+          "translation": "The woman behind the counter corrects him at once, with no unkindness."
+        },
+        {
+          "sentence": "“Qui è arancina, femminile, perché sembra una piccola arancia”, dice lei.",
+          "words": [
+            "femminile",
+            "arancia"
+          ],
+          "translation": "“Here it is arancina, feminine, because it looks like a little orange,” she says."
+        },
+        {
+          "sentence": "Un uomo in fila alza il dito e difende invece la parola arancino.",
+          "words": [
+            "difendere"
+          ],
+          "translation": "A man in the queue raises a finger and defends the word arancino instead."
+        },
+        {
+          "sentence": "Il mercato intero sembra pronto a litigare per una vocale.",
+          "words": [
+            "intero",
+            "pronto",
+            "litigare",
+            "vocale"
+          ],
+          "translation": "The whole market seems ready to fight over one vowel."
+        },
+        {
+          "sentence": "Nico paga due euro e riceve la palla calda dentro un foglio di carta.",
+          "words": [
+            "carta"
+          ],
+          "translation": "Nico pays two euros and gets the hot ball wrapped in a sheet of paper."
+        },
+        {
+          "sentence": "Dentro ci sono riso giallo, ragù, piselli e un cuore di formaggio.",
+          "words": [
+            "pisello",
+            "cuore",
+            "formaggio"
+          ],
+          "translation": "Inside there is yellow rice, ragù, peas and a heart of cheese."
+        },
+        {
+          "sentence": "Lui morde piano e capisce che il nome adesso conta poco.",
+          "words": [
+            "mordere"
+          ],
+          "translation": "He bites slowly and understands that the name matters little now."
+        },
+        {
+          "sentence": "“Torna domani e chiedila con la a”, dice, quasi come un ordine.",
+          "words": [
+            "domani",
+            "ordine"
+          ],
+          "translation": "“Come back tomorrow and ask for it with the a,” she says, almost like an order."
+        }
+      ]
+    },
+    {
+      "storySlug": "nessuno-ha-spiccioli",
+      "storyTitle": "Nessuno ha spiccioli",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "Nico compra tre limoni a una bancarella e paga con una banconota grande.",
+          "words": [
+            "limone",
+            "bancarella",
+            "banconota",
+            "comprare"
+          ],
+          "translation": "Nico buys three lemons at a market stall and pays with a big banknote."
+        },
+        {
+          "sentence": "Il venditore guarda il foglio, poi guarda Nico, poi guarda il cielo.",
+          "words": [
+            "venditore",
+            "cielo"
+          ],
+          "translation": "The seller looks at the note, then looks at Nico, then looks at the sky."
+        },
+        {
+          "sentence": "Cinquanta euro per tre limoni sono troppi per chiunque.",
+          "words": [
+            "chiunque"
+          ],
+          "translation": "Fifty euros for three lemons is too much for anyone."
+        },
+        {
+          "sentence": "Il venditore chiama il vicino di banco e domanda se ha spiccioli.",
+          "words": [
+            "vicino",
+            "spiccioli"
+          ],
+          "translation": "The seller calls over the neighbour at the next stall and asks if he has small change."
+        },
+        {
+          "sentence": "Il vicino apre un barattolo di latta e conta poche monete piccole.",
+          "words": [
+            "barattolo",
+            "latta",
+            "poco"
+          ],
+          "translation": "The neighbour opens a tin jar and counts a few small coins."
+        },
+        {
+          "sentence": "Nessuno in tutto il mercato tiene il resto per una banconota così.",
+          "words": [
+            "resto",
+            "tenere"
+          ],
+          "translation": "Nobody in the whole market keeps change for a note like that."
+        },
+        {
+          "sentence": "Alla fine il venditore mette i limoni in un sacchetto e alza le spalle.",
+          "words": [
+            "spalla"
+          ],
+          "translation": "In the end the seller puts the lemons in a bag and shrugs his shoulders."
+        },
+        {
+          "sentence": "“Paghi domani, quando hai spiccioli”, dice, e serve la signora dietro.",
+          "words": [
+            "avere"
+          ],
+          "translation": "“Pay tomorrow, when you have small change,” he says, and serves the woman behind."
+        },
+        {
+          "sentence": "Nico resta fermo con i limoni in mano e la banconota intatta.",
+          "words": [
+            "fermo",
+            "intatto"
+          ],
+          "translation": "Nico stands still with the lemons in his hand and the note untouched."
+        },
+        {
+          "sentence": "Il giorno dopo Nico torna al banco con le monete contate nel pugno.",
+          "words": [
+            "giorno",
+            "tornare",
+            "pugno"
+          ],
+          "translation": "The next day Nico comes back to the stall with the coins counted in his fist."
+        },
+        {
+          "sentence": "Il venditore lo riconosce da lontano e ride prima ancora di parlare.",
+          "words": [
+            "lontano",
+            "ridere"
+          ],
+          "translation": "The seller recognises him from far away and laughs before he even speaks."
+        },
+        {
+          "sentence": "A Ballarò la fiducia costa meno di un caffè.",
+          "words": [
+            "fiducia",
+            "costare"
+          ],
+          "translation": "At Ballarò, trust costs less than a coffee."
+        }
+      ]
+    },
+    {
+      "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+      "storyTitle": "Il prezzo lo dice il pescivendolo",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "Sulle cassette di pesce non c'è nessun cartello con i numeri.",
+          "words": [
+            "cassetta",
+            "pesce"
+          ],
+          "translation": "There is no sign with numbers on the crates of fish."
+        },
+        {
+          "sentence": "Nico guarda le sarde sopra il ghiaccio e non sa quanto costano.",
+          "words": [
+            "sarda",
+            "ghiaccio",
+            "sapere"
+          ],
+          "translation": "Nico looks at the sardines on the ice and does not know what they cost."
+        },
+        {
+          "sentence": "Il pescivendolo urla il prezzo per tutta la strada, ogni pochi secondi.",
+          "words": [
+            "pescivendolo",
+            "urlare",
+            "secondo"
+          ],
+          "translation": "The fishmonger shouts the price down the whole street, every few seconds."
+        },
+        {
+          "sentence": "Nico domanda quanto costa mezzo chilo di sarde fresche.",
+          "words": [
+            "mezzo",
+            "chilo",
+            "fresco"
+          ],
+          "translation": "Nico asks how much half a kilo of fresh sardines costs."
+        },
+        {
+          "sentence": "L'uomo pesa il pesce sulla bilancia e guarda il numero.",
+          "words": [
+            "pesare",
+            "bilancia"
+          ],
+          "translation": "The man weighs the fish on the scales and looks at the number."
+        },
+        {
+          "sentence": "Il pescivendolo dice una cifra tonda e aggiunge il prezzemolo gratis.",
+          "words": [
+            "cifra",
+            "tondo",
+            "prezzemolo"
+          ],
+          "translation": "The fishmonger says a round figure and throws in the parsley for free."
+        },
+        {
+          "sentence": "Poi toglie un euro, senza spiegare il motivo.",
+          "words": [
+            "togliere"
+          ],
+          "translation": "Then he takes a euro off, without explaining why."
+        },
+        {
+          "sentence": "Una signora accanto tratta con calma e ottiene lo stesso sconto.",
+          "words": [
+            "trattare",
+            "ottenere",
+            "sconto"
+          ],
+          "translation": "A woman next to him bargains calmly and gets the same discount."
+        },
+        {
+          "sentence": "Il pescivendolo scrive il totale sul bordo del bancone con un pennarello.",
+          "words": [
+            "totale",
+            "bordo",
+            "bancone",
+            "pennarello"
+          ],
+          "translation": "The fishmonger writes the total on the edge of the counter with a marker pen."
+        },
+        {
+          "sentence": "Nico paga e porta via il pacchetto freddo, con il ghiaccio dentro.",
+          "words": [
+            "pacchetto"
+          ],
+          "translation": "Nico pays and carries away the cold parcel, with the ice inside."
+        }
+      ]
+    },
+    {
+      "storySlug": "due-baci-e-basta",
+      "storyTitle": "Due baci e basta",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "Dario entra nella casa di un amico romano e trova otto persone in cucina.",
+          "words": [
+            "casa",
+            "amico",
+            "romano"
+          ],
+          "translation": "Dario walks into the house of a Roman friend and finds eight people in the kitchen."
+        },
+        {
+          "sentence": "Una donna gli prende le braccia e gli dà un bacio su ogni guancia.",
+          "words": [
+            "donna",
+            "dare",
+            "bacio",
+            "guancia"
+          ],
+          "translation": "A woman takes him by the arms and gives him a kiss on each cheek."
+        },
+        {
+          "sentence": "Lui resta fermo, con il vino ancora in mano.",
+          "words": [
+            "vino"
+          ],
+          "translation": "He stands there frozen, with the wine still in his hand."
+        },
+        {
+          "sentence": "In pochi minuti tutti lo salutano allo stesso modo, senza chiedere il permesso.",
+          "words": [
+            "modo",
+            "permesso"
+          ],
+          "translation": "Within a few minutes everyone greets him the same way, without asking permission."
+        },
+        {
+          "sentence": "Dario prova a stringere la mano al primo uomo e sbaglia il ritmo.",
+          "words": [
+            "provare",
+            "stringere",
+            "sbagliare",
+            "ritmo"
+          ],
+          "translation": "Dario tries to shake the first man's hand and gets the rhythm wrong."
+        },
+        {
+          "sentence": "L'uomo ride e spiega che la mano si usa soltanto in ufficio.",
+          "words": [
+            "usare",
+            "ufficio"
+          ],
+          "translation": "The man laughs and explains that the handshake is only used at the office."
+        },
+        {
+          "sentence": "“Due baci: prima la guancia destra, poi la sinistra”, dice la donna.",
+          "words": [
+            "destro",
+            "sinistro"
+          ],
+          "translation": "“Two kisses: the right cheek first, then the left,” says the woman."
+        },
+        {
+          "sentence": "Dario ripete il movimento con la persona dopo e lo fa quasi bene.",
+          "words": [
+            "ripetere",
+            "movimento"
+          ],
+          "translation": "Dario repeats the movement with the next person and almost gets it right."
+        },
+        {
+          "sentence": "Nessuno conta i baci, però tutti sentono quando sono finiti.",
+          "words": [
+            "sentire"
+          ],
+          "translation": "Nobody counts the kisses, and yet everyone feels when they are over."
+        },
+        {
+          "sentence": "Alla fine della sera Dario saluta di nuovo tutti, uno per uno.",
+          "words": [
+            "sera",
+            "di nuovo"
+          ],
+          "translation": "At the end of the evening Dario says goodbye to everyone again, one by one."
+        },
+        {
+          "sentence": "La stessa donna gli dice ciao e gli dà altri due baci.",
+          "words": [
+            "ciao"
+          ],
+          "translation": "The same woman says hi to him and gives him two more kisses."
+        },
+        {
+          "sentence": "Sedici baci in una serata sono il suo nuovo normale.",
+          "words": [
+            "serata"
+          ],
+          "translation": "Sixteen kisses in one evening are his new normal."
+        }
+      ]
+    },
+    {
+      "storySlug": "nessuno-mangia-da-solo-qui",
+      "storyTitle": "Nessuno mangia da solo qui",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "Dario ordina una birra al banco e apre il libro sul tavolino di fuori.",
+          "words": [
+            "birra",
+            "libro",
+            "ordinare"
+          ],
+          "translation": "Dario orders a beer at the counter and opens his book at the little table outside."
+        },
+        {
+          "sentence": "Un uomo con il cappello si siede davanti a lui, senza chiedere niente.",
+          "words": [
+            "cappello"
+          ],
+          "translation": "A man in a hat sits down across from him, without asking anything."
+        },
+        {
+          "sentence": "Il tavolo ha quattro sedie e soltanto due persone.",
+          "words": [
+            "sedia"
+          ],
+          "translation": "The table has four chairs and only two people."
+        },
+        {
+          "sentence": "L'uomo domanda da dove viene Dario e quanti giorni resta a Roma.",
+          "words": [
+            "venire",
+            "domanda"
+          ],
+          "translation": "The man asks where Dario comes from and how many days he is staying in Rome."
+        },
+        {
+          "sentence": "L'uomo continua tranquillo, perché una domanda tira l'altra.",
+          "words": [
+            "continuare",
+            "tranquillo",
+            "tirare"
+          ],
+          "translation": "The man carries on calmly, because one question leads to another."
+        },
+        {
+          "sentence": "Dopo dieci minuti il libro resta chiuso, con il segnalibro dentro.",
+          "words": [
+            "chiuso",
+            "segnalibro"
+          ],
+          "translation": "After ten minutes the book stays closed, with the bookmark inside."
+        },
+        {
+          "sentence": "Dario racconta il suo lavoro, la sua città e il viaggio in treno.",
+          "words": [
+            "raccontare",
+            "lavoro",
+            "viaggio"
+          ],
+          "translation": "Dario tells him about his job, his city and the train journey."
+        },
+        {
+          "sentence": "L'uomo ascolta e offre la seconda birra senza avvisare nessuno.",
+          "words": [
+            "ascoltare",
+            "avvisare"
+          ],
+          "translation": "The man listens and offers the second beer without warning anyone."
+        },
+        {
+          "sentence": "Quando Dario si alza, l'uomo gli stringe la mano e dice finalmente il suo nome.",
+          "words": [
+            "alzarsi",
+            "finalmente"
+          ],
+          "translation": "When Dario stands up, the man shakes his hand and at last says his name."
+        },
+        {
+          "sentence": "Loro non si scambiano il numero e forse non si incontrano mai più.",
+          "words": [
+            "scambiare",
+            "numero",
+            "forse",
+            "incontrare"
+          ],
+          "translation": "They do not exchange numbers, and maybe they will never meet again."
+        },
+        {
+          "sentence": "L'uomo resta seduto e aspetta un'altra ora di compagnia.",
+          "words": [
+            "ora",
+            "compagnia"
+          ],
+          "translation": "The man stays seated and waits for another hour of company."
+        }
+      ]
+    },
+    {
+      "storySlug": "ci-vediamo-a-trastevere",
+      "storyTitle": "Ci vediamo a Trastevere",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "“Ci vediamo verso le nove a Trastevere”, dice Livia al telefono.",
+          "words": [
+            "ci vediamo",
+            "verso",
+            "telefono"
+          ],
+          "translation": "“See you around nine in Trastevere,” Livia says on the phone."
+        },
+        {
+          "sentence": "Dario arriva alle nove esatte davanti alla fontana e non trova nessuno.",
+          "words": [
+            "esatto",
+            "arrivare",
+            "fontana"
+          ],
+          "translation": "Dario arrives at nine exactly in front of the fountain and finds nobody there."
+        },
+        {
+          "sentence": "Le piazze intorno sono piene e si somigliano tutte.",
+          "words": [
+            "somigliarsi",
+            "intorno",
+            "pieno"
+          ],
+          "translation": "The squares around are full and they all look alike."
+        },
+        {
+          "sentence": "Alle nove e venti Livia arriva senza fretta, con le scarpe basse e il sorriso largo.",
+          "words": [
+            "scarpa",
+            "sorriso",
+            "largo"
+          ],
+          "translation": "At twenty past nine Livia turns up in no hurry, in flat shoes and with a wide smile."
+        },
+        {
+          "sentence": "Lei spiega che verso le nove significa fra le nove e le dieci.",
+          "words": [
+            "significare"
+          ],
+          "translation": "She explains that around nine means between nine and ten."
+        },
+        {
+          "sentence": "Loro camminano nei vicoli stretti, sotto i panni stesi e le luci gialle.",
+          "words": [
+            "vicolo",
+            "steso"
+          ],
+          "translation": "They walk through the narrow alleys, under laundry hung out to dry and yellow lights."
+        },
+        {
+          "sentence": "Ogni saluto dura poco, però nessuno guarda mai l'orologio.",
+          "words": [
+            "saluto"
+          ],
+          "translation": "Every greeting is short, and yet nobody ever looks at the clock."
+        },
+        {
+          "sentence": "Dario capisce che questa frase non è una promessa esatta.",
+          "words": [
+            "frase",
+            "promessa"
+          ],
+          "translation": "Dario understands that this sentence is not an exact promise."
+        },
+        {
+          "sentence": "Dario ripete ci vediamo, gentile, con la porta del bar ancora aperta.",
+          "words": [
+            "gentile",
+            "porta"
+          ],
+          "translation": "Dario politely repeats see you, with the cafe door still open."
+        },
+        {
+          "sentence": "Livia saluta tre persone in cinque minuti e si ferma ogni volta.",
+          "words": [
+            "minuto",
+            "fermarsi"
+          ],
+          "translation": "Livia greets three people in five minutes and stops every time."
+        },
+        {
+          "sentence": "Alla fine della serata Livia dice ci vediamo, senza indicare un giorno.",
+          "words": [
+            "indicare",
+            "fine"
+          ],
+          "translation": "At the end of the evening Livia says see you, without naming a day."
+        },
+        {
+          "sentence": "Dario guarda l'orologio e decide di non dire niente.",
+          "words": [
+            "decidere"
+          ],
+          "translation": "Dario looks at the clock and decides to say nothing."
+        }
+      ]
+    },
+    {
+      "storySlug": "il-traghetto-non-aspetta-nessuno",
+      "storyTitle": "Il traghetto non aspetta nessuno",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "Il traghetto per l'isola parte alle sette e venti dal molo piccolo.",
+          "words": [
+            "traghetto",
+            "isola",
+            "molo"
+          ],
+          "translation": "The ferry to the island leaves at seven twenty from the small pier."
+        },
+        {
+          "sentence": "Un marinaio tira già la corda dalla banchina.",
+          "words": [
+            "marinaio",
+            "corda",
+            "banchina"
+          ],
+          "translation": "A sailor is already pulling in the rope from the quay."
+        },
+        {
+          "sentence": "Lei salta a bordo e il motore comincia a spingere l'acqua indietro.",
+          "words": [
+            "saltare",
+            "a bordo",
+            "motore"
+          ],
+          "translation": "She jumps on board and the engine starts pushing the water backwards."
+        },
+        {
+          "sentence": "Il porto diventa piccolo in due minuti, con le case gialle e rosa.",
+          "words": [
+            "porto",
+            "rosa"
+          ],
+          "translation": "The harbour shrinks in two minutes, with its yellow and pink houses."
+        },
+        {
+          "sentence": "Un uomo vende caffè in bicchierini di plastica e cammina fra i sedili.",
+          "words": [
+            "bicchierino",
+            "plastica",
+            "sedile"
+          ],
+          "translation": "A man sells coffee in tiny plastic cups and walks between the seats."
+        },
+        {
+          "sentence": "Le onde battono contro il fianco della barca e bagnano i primi posti.",
+          "words": [
+            "onda",
+            "fianco",
+            "barca",
+            "bagnare"
+          ],
+          "translation": "The waves hit the side of the boat and soak the front seats."
+        },
+        {
+          "sentence": "Gaia sposta lo zaino e ride insieme agli altri passeggeri.",
+          "words": [
+            "spostare",
+            "passeggero"
+          ],
+          "translation": "Gaia moves her backpack and laughs along with the other passengers."
+        },
+        {
+          "sentence": "L'isola appare dietro uno scoglio, bassa e verde sopra il mare.",
+          "words": [
+            "apparire",
+            "scoglio",
+            "mare"
+          ],
+          "translation": "The island appears behind a rock, low and green above the sea."
+        },
+        {
+          "sentence": "Il traghetto rallenta e la sirena avvisa il porto piccolo.",
+          "words": [
+            "sirena"
+          ],
+          "translation": "The ferry slows down and the horn warns the small harbour."
+        },
+        {
+          "sentence": "Due minuti di ritardo cambiano tutta la giornata.",
+          "words": [
+            "giornata"
+          ],
+          "translation": "Two minutes of delay change the whole day."
+        }
+      ]
+    },
+    {
+      "storySlug": "la-spiaggia-libera-e-piccola",
+      "storyTitle": "La spiaggia libera è piccola",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "Le file di ombrelloni arancioni coprono quasi tutta la sabbia della baia.",
+          "words": [
+            "ombrellone",
+            "arancione",
+            "sabbia",
+            "baia"
+          ],
+          "translation": "Rows of orange beach umbrellas cover almost all the sand in the bay."
+        },
+        {
+          "sentence": "Fra due stabilimenti resta una striscia di spiaggia senza niente sopra.",
+          "words": [
+            "stabilimento",
+            "striscia",
+            "spiaggia"
+          ],
+          "translation": "Between two beach clubs a strip of beach is left with nothing on it."
+        },
+        {
+          "sentence": "Gaia stende l'asciugamano lì, fra due famiglie e una barca vecchia.",
+          "words": [
+            "stendere",
+            "asciugamano"
+          ],
+          "translation": "Gaia spreads out her towel there, between two families and an old boat."
+        },
+        {
+          "sentence": "Un bagnino spiega che il lettino costa venti euro per tutta la giornata.",
+          "words": [
+            "bagnino",
+            "lettino"
+          ],
+          "translation": "A lifeguard explains that a sunbed costs twenty euros for the whole day."
+        },
+        {
+          "sentence": "Sulla spiaggia libera invece non si paga, però lo spazio è poco.",
+          "words": [
+            "libero",
+            "spazio"
+          ],
+          "translation": "On the free beach, though, you pay nothing, but there is little space."
+        },
+        {
+          "sentence": "Il mare qui è uguale, con lo stesso colore e le stesse onde.",
+          "words": [
+            "uguale",
+            "colore"
+          ],
+          "translation": "The sea here is the same, with the same colour and the same waves."
+        },
+        {
+          "sentence": "Gaia nuota fino allo scoglio e torna con i capelli pieni di sale.",
+          "words": [
+            "nuotare",
+            "capello",
+            "sale"
+          ],
+          "translation": "Gaia swims out to the rock and comes back with her hair full of salt."
+        },
+        {
+          "sentence": "Un ragazzo le presta una bottiglia d'acqua dolce per la faccia.",
+          "words": [
+            "prestare",
+            "dolce",
+            "faccia"
+          ],
+          "translation": "A young man lends her a bottle of fresh water for her face."
+        },
+        {
+          "sentence": "Alle due la striscia libera è piena e la sabbia scotta troppo.",
+          "words": [
+            "scottare"
+          ],
+          "translation": "By two the free strip is full and the sand burns too much."
+        },
+        {
+          "sentence": "Gaia raccoglie l'asciugamano e passa davanti agli ombrelloni ancora vuoti.",
+          "words": [
+            "raccogliere"
+          ],
+          "translation": "Gaia picks up her towel and walks past the beach umbrellas, still empty."
+        },
+        {
+          "sentence": "Venti euro comprano l'ombra, non il mare.",
+          "words": [
+            "ombra"
+          ],
+          "translation": "Twenty euros buy the shade, not the sea."
+        },
+        {
+          "sentence": "Le persone stanno vicine e nessuno sembra darci peso.",
+          "words": [
+            "peso"
+          ],
+          "translation": "People sit close together and nobody seems to mind."
+        }
+      ]
+    },
+    {
+      "storySlug": "alle-sette-il-mare-e-gelato",
+      "storyTitle": "Alle sette il mare è gelato",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "Presto, di mattino, la baia è vuota e il sole non arriva ancora sull'acqua.",
+          "words": [
+            "mattino",
+            "ancora"
+          ],
+          "translation": "Early in the morning the bay is empty and the sun does not reach the water yet."
+        },
+        {
+          "sentence": "Gaia scende gli scalini di pietra fino alla piattaforma di legno.",
+          "words": [
+            "scendere",
+            "scalino",
+            "piattaforma",
+            "legno",
+            "pietra"
+          ],
+          "translation": "Gaia goes down the stone steps to the wooden platform."
+        },
+        {
+          "sentence": "Il mare è liscio come un vetro e sembra quasi fermo.",
+          "words": [
+            "liscio",
+            "vetro"
+          ],
+          "translation": "The sea is smooth as glass and looks almost still."
+        },
+        {
+          "sentence": "Lei mette un piede dentro e lo toglie subito, perché l'acqua è gelata.",
+          "words": [
+            "piede",
+            "gelato"
+          ],
+          "translation": "She puts one foot in and pulls it straight out, because the water is freezing."
+        },
+        {
+          "sentence": "Due donne nuotano già lontano, con le cuffie colorate in testa.",
+          "words": [
+            "cuffia",
+            "colorato",
+            "testa"
+          ],
+          "translation": "Two women are already swimming far out, with colourful swimming caps on their heads."
+        },
+        {
+          "sentence": "Loro parlano tranquille mentre girano intorno alla boa.",
+          "words": [
+            "boa"
+          ],
+          "translation": "They chat calmly as they swim around the buoy."
+        },
+        {
+          "sentence": "Gaia entra piano, un pezzo alla volta, e trema per un minuto intero.",
+          "words": [
+            "pezzo",
+            "tremare"
+          ],
+          "translation": "Gaia goes in slowly, a bit at a time, and shivers for a whole minute."
+        },
+        {
+          "sentence": "Poi il corpo si abitua e il freddo diventa una cosa normale.",
+          "words": [
+            "corpo",
+            "abituarsi",
+            "freddo"
+          ],
+          "translation": "Then the body gets used to it and the cold becomes something normal."
+        },
+        {
+          "sentence": "Il fondo si vede benissimo, con i sassi bianchi e i pesci piccoli.",
+          "words": [
+            "fondo",
+            "benissimo",
+            "sasso"
+          ],
+          "translation": "You can see the bottom very well, with the white stones and the little fish."
+        },
+        {
+          "sentence": "Alle nove arrivano le prime barche e l'acqua perde il vetro.",
+          "words": [
+            "perdere"
+          ],
+          "translation": "At nine the first boats come in and the water loses its glassy surface."
+        },
+        {
+          "sentence": "Gaia esce e si asciuga sopra la pietra già calda.",
+          "words": [
+            "asciugarsi"
+          ],
+          "translation": "Gaia gets out and dries off on the already warm stone."
+        }
+      ]
+    },
+    {
+      "storySlug": "la-macchinetta-gialla",
+      "storyTitle": "La macchinetta gialla",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "Rosa compra il biglietto alla biglietteria automatica della stazione e mette il foglio nella tasca.",
+          "words": [
+            "biglietto",
+            "foglio",
+            "stazione",
+            "tasca",
+            "mettere"
+          ],
+          "translation": "Rosa buys her ticket at the machine in the station and puts the printed sheet in her pocket."
+        },
+        {
+          "sentence": "Il treno per Firenze parte tra dieci minuti dal binario cinque, in fondo a destra.",
+          "words": [
+            "partire",
+            "binario"
+          ],
+          "translation": "The train to Florence leaves in ten minutes from platform five, at the far right."
+        },
+        {
+          "sentence": "Lei cammina veloce con la valigia pesante e cerca la sua carrozza.",
+          "words": [
+            "valigia",
+            "pesante",
+            "cercare",
+            "carrozza"
+          ],
+          "translation": "She walks fast with her heavy suitcase and looks for her carriage."
+        },
+        {
+          "sentence": "Un uomo con il giubbotto arancione la ferma prima della porta del treno.",
+          "words": [
+            "giubbotto",
+            "fermare"
+          ],
+          "translation": "A man in an orange jacket stops her before the train door."
+        },
+        {
+          "sentence": "Lui indica una macchinetta gialla vicino al muro e non dice altro.",
+          "words": [
+            "indicare",
+            "muro",
+            "macchinetta"
+          ],
+          "translation": "He points at a little yellow machine near the wall and says nothing else."
+        },
+        {
+          "sentence": "Rosa guarda il suo biglietto e non capisce che cosa manca.",
+          "words": [
+            "capire",
+            "mancare"
+          ],
+          "translation": "Rosa looks at her ticket and does not understand what is missing."
+        },
+        {
+          "sentence": "L'uomo prende il foglio, lo mette dentro la macchinetta e aspetta un rumore corto.",
+          "words": [
+            "aspettare",
+            "rumore"
+          ],
+          "translation": "The man takes the sheet, puts it into the machine and waits for a short noise."
+        },
+        {
+          "sentence": "La macchinetta stampa l'ora sopra il numero del treno e restituisce il biglietto.",
+          "words": [
+            "stampare",
+            "restituire"
+          ],
+          "translation": "The machine prints the time above the train number and gives the ticket back."
+        },
+        {
+          "sentence": "“Adesso è valido”, dice lui, e torna subito al suo lavoro.",
+          "words": [
+            "valido"
+          ],
+          "translation": "“Now it is valid,” he says, and goes straight back to his work."
+        },
+        {
+          "sentence": "Rosa sale sul treno e tiene il biglietto stampato in mano per tutto il viaggio.",
+          "words": [
+            "salire"
+          ],
+          "translation": "Rosa gets on the train and holds the stamped ticket in her hand the whole journey."
+        },
+        {
+          "sentence": "Il controllore passa dopo pochi minuti e guarda soltanto l'ora sul foglio.",
+          "words": [
+            "controllore"
+          ],
+          "translation": "The inspector comes by a few minutes later and looks only at the time on the sheet."
+        }
+      ]
+    },
+    {
+      "storySlug": "il-regionale-ferma-dappertutto",
+      "storyTitle": "Il regionale ferma dappertutto",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "Rosa guarda il tabellone e sceglie il treno più economico per Firenze.",
+          "words": [
+            "tabellone",
+            "scegliere",
+            "economico"
+          ],
+          "translation": "Rosa looks at the departures board and chooses the cheapest train to Florence."
+        },
+        {
+          "sentence": "Il regionale costa la metà del treno veloce e parte dallo stesso binario.",
+          "words": [
+            "metà",
+            "veloce"
+          ],
+          "translation": "The local train costs half of the fast one and leaves from the same platform."
+        },
+        {
+          "sentence": "Lei sale con la valigia e trova un posto vicino al finestrino.",
+          "words": [
+            "finestrino"
+          ],
+          "translation": "She gets on with her suitcase and finds a seat by the window."
+        },
+        {
+          "sentence": "Il treno parte in orario, però si ferma in ogni paese piccolo.",
+          "words": [
+            "orario",
+            "paese"
+          ],
+          "translation": "The train leaves on time, but it stops in every small town."
+        },
+        {
+          "sentence": "Salgono studenti con lo zaino, signore con le borse della spesa e un ragazzo con la bicicletta.",
+          "words": [
+            "zaino",
+            "borsa",
+            "spesa",
+            "bicicletta"
+          ],
+          "translation": "Students get on with backpacks, women with shopping bags and a young man with a bicycle."
+        },
+        {
+          "sentence": "Rosa conta le fermate e capisce che il viaggio dura tre ore.",
+          "words": [
+            "contare",
+            "fermata",
+            "durare"
+          ],
+          "translation": "Rosa counts the stops and works out that the journey lasts three hours."
+        },
+        {
+          "sentence": "Fuori dal finestrino passano campi gialli, case basse e colline piene di ulivi.",
+          "words": [
+            "campo",
+            "collina",
+            "ulivo"
+          ],
+          "translation": "Yellow fields, low houses and hills full of olive trees go by outside the window."
+        },
+        {
+          "sentence": "Una signora accanto a lei apre un sacchetto di carta e offre un panino a Rosa.",
+          "words": [
+            "sacchetto",
+            "offrire"
+          ],
+          "translation": "A woman next to her opens a paper bag and offers Rosa a sandwich."
+        },
+        {
+          "sentence": "Rosa accetta e mangia piano, mentre il treno rallenta un'altra volta.",
+          "words": [
+            "accettare",
+            "rallentare"
+          ],
+          "translation": "Rosa accepts and eats slowly, while the train slows down once again."
+        },
+        {
+          "sentence": "Il treno arriva a Firenze con quaranta minuti di ritardo e nessuno sembra sorpreso.",
+          "words": [
+            "ritardo"
+          ],
+          "translation": "The train reaches Florence forty minutes late and nobody seems surprised."
+        },
+        {
+          "sentence": "Rosa scende sul marciapiede con le gambe stanche e la testa leggera.",
+          "words": [
+            "marciapiede",
+            "stanco"
+          ],
+          "translation": "Rosa steps down onto the platform with tired legs and a light head."
+        }
+      ]
+    },
+    {
+      "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+      "storyTitle": "I biglietti li vende il tabaccaio",
+      "level": "a1",
+      "language": "italian",
+      "variant": "italy",
+      "sentences": [
+        {
+          "sentence": "La macchina dei biglietti alla fermata è rotta e lampeggia una luce rossa.",
+          "words": [
+            "rotto",
+            "lampeggiare",
+            "luce"
+          ],
+          "translation": "The ticket machine at the stop is broken and a red light is flashing."
+        },
+        {
+          "sentence": "L'autobus per il museo passa fra cinque minuti e Rosa non ha nessun biglietto.",
+          "words": [
+            "autobus",
+            "museo"
+          ],
+          "translation": "The bus to the museum comes in five minutes and Rosa has no ticket."
+        },
+        {
+          "sentence": "Lei chiede aiuto a un ragazzo con il casco sotto il braccio.",
+          "words": [
+            "chiedere",
+            "aiuto",
+            "casco",
+            "braccio"
+          ],
+          "translation": "She asks for help from a young man with a helmet under his arm."
+        },
+        {
+          "sentence": "Il ragazzo indica una porta stretta dall'altra parte della strada, con una T bianca sopra.",
+          "words": [
+            "stretto",
+            "strada"
+          ],
+          "translation": "The young man points at a narrow door across the street, with a white T above it."
+        },
+        {
+          "sentence": "“Il tabaccaio vende i biglietti”, dice lui, e attraversa insieme a lei.",
+          "words": [
+            "tabaccaio",
+            "attraversare"
+          ],
+          "translation": "“The tobacconist sells the tickets,” he says, and crosses over with her."
+        },
+        {
+          "sentence": "Dentro il negozio ci sono giornali, caramelle, francobolli e una fila corta.",
+          "words": [
+            "negozio",
+            "caramella",
+            "francobollo",
+            "fila"
+          ],
+          "translation": "Inside the shop there are newspapers, sweets, stamps and a short queue."
+        },
+        {
+          "sentence": "Il tabaccaio prende un blocchetto e stacca due biglietti sottili senza fare domande.",
+          "words": [
+            "blocchetto",
+            "staccare",
+            "sottile"
+          ],
+          "translation": "The tobacconist takes a pad and tears off two thin tickets without asking anything."
+        },
+        {
+          "sentence": "Rosa paga con una moneta e infila i biglietti dentro il portafoglio.",
+          "words": [
+            "moneta",
+            "infilare",
+            "portafoglio"
+          ],
+          "translation": "Rosa pays with a coin and slips the tickets into her wallet."
+        },
+        {
+          "sentence": "Fuori l'autobus arriva puntuale e apre le porte davanti alla fermata.",
+          "words": [
+            "puntuale"
+          ],
+          "translation": "Outside, the bus arrives on time and opens its doors at the stop."
+        },
+        {
+          "sentence": "Rosa sale, cerca la macchinetta accanto all'autista e stampa il biglietto da sola.",
+          "words": [
+            "autista"
+          ],
+          "translation": "Rosa gets on, finds the little machine next to the driver and stamps her ticket herself."
+        }
+      ]
+    }
+  ]
+}

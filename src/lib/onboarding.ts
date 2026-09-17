@@ -46,6 +46,12 @@ export type OnboardingPracticePrefs = {
   interests: readonly string[];
   learningGoal: OnboardingGoal | null;
   dailyMinutes: number | null;
+  /** Piloto del ejercicio hablado (2026-09-14). Solo el plan `polyglot` lo
+   *  habilita; sin esto el slot de speaking no entra en la sesión mixta y el
+   *  resto de usuarios nunca ve un ejercicio que la ruta les negaría con un
+   *  403. La web pasa siempre `false`: el micrófono del navegador queda fuera
+   *  del piloto. */
+  speakingEnabled?: boolean;
 };
 
 const GOAL_TOPIC_HINTS: Record<OnboardingGoal, string[]> = {

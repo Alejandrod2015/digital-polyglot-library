@@ -25,6 +25,12 @@ export type MobileFavoriteItem = {
    *  ni Modal. Null cuando la palabra no tiene ejercicio meaning con clip. */
   wordClipUrl?: string | null;
   wordVoiceId?: string | null;
+  /** Traducciones al ingles de las frases de la HISTORIA de esta palabra,
+   *  indexadas por oracion normalizada, adjuntadas por /api/mobile/favorites.
+   *  Viaja el mapa entero porque la frase que el ejercicio pinta no se conoce
+   *  en el servidor; quien pinta busca la suya y, si no casa, no ensena nada.
+   *  Falta en los favoritos de la cache local vieja, y ahi no se pinta nada. */
+  sentenceTranslations?: Record<string, string> | null;
   /** Voice the source story was narrated with. Populated by the
    *  /api/mobile/practice/due endpoint for Studio journeys; catalog
    *  stories leave this null so the TTS endpoint falls back to the

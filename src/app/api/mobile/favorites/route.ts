@@ -7,6 +7,7 @@ import { getActiveMobileSession } from "@/lib/mobileSession";
 import { prisma } from "@/lib/prisma";
 import { extractExampleSentence } from "@/lib/exampleSentence";
 import { getCuratedExampleMap, curatedKey } from "@/lib/curatedExamples";
+import { buildSentenceTranslationMap } from "@/lib/sentenceTranslation";
 
 type FavoriteBody = {
   word: string;
@@ -110,8 +111,12 @@ export async function GET(req: NextRequest): Promise<Response> {
       wordVoiceId: string | null;
     }
   >;
+  // OJO: este mapa solo tiene las palabras CON clip. La traducción de la frase
+  // NO puede vivir aquí: se leía dentro de este bucle, así que una palabra sin
+  // ejercicio (o con ejercicio pero sin clip) no llegaba nunca a la columna. Va
+  // en `translationsByKey`, que se arma por HISTORIA y se indexa por ORACIÓN.
   const collectClips = (
-    exercises: { word: string | null; payload: unknown }[]
+    exercises: { type: string; word: string | null; payload: unknown }[]
   ): ClipMap => {
     const m: ClipMap = new Map();
     for (const ex of exercises) {
@@ -138,6 +143,10 @@ export async function GET(req: NextRequest): Promise<Response> {
   // Historia viva = JourneyStory publicada + journey no archived/draft.
   const LIVE_JOURNEY: Prisma.JourneyWhereInput = { status: { notIn: ["archived", "draft"] } };
   const liveByKey = new Map<string, ClipMap>(); // key: el storySlug original
+  // Traducciones de frase por historia y ORACIÓN normalizada: la columna
+  // escrita a mano más el `fill_blank` de reserva. Separado de los clips A
+  // PROPÓSITO; ver el comentario de `collectClips`.
+  const translationsByKey = new Map<string, Map<string, string>>();
   // #4/#7c (audit 2026-07-24): idioma de la historia por key, para RELLENAR
   // favorite.language cuando es null (favoritos guardados sin idioma). Sin esto,
   // word-tts/sentence-tts defaulteaban a 'es' → acento equivocado en palabras
@@ -150,12 +159,24 @@ export async function GET(req: NextRequest): Promise<Response> {
       select: {
         id: true,
         journey: { select: { language: true } },
-        practiceSet: { select: { exercises: { select: { word: true, payload: true } } } },
+        practiceSet: {
+          select: {
+            sentenceTranslations: true,
+            exercises: { select: { type: true, word: true, payload: true } },
+          },
+        },
       },
     });
     for (const r of rows) {
       const key = `${JOURNEY_PREFIX}${r.id}`;
       liveByKey.set(key, collectClips(r.practiceSet?.exercises ?? []));
+      translationsByKey.set(
+        key,
+        buildSentenceTranslationMap({
+          column: r.practiceSet?.sentenceTranslations,
+          exercises: r.practiceSet?.exercises ?? [],
+        })
+      );
       langByKey.set(key, r.journey?.language ?? null);
     }
   }
@@ -165,12 +186,24 @@ export async function GET(req: NextRequest): Promise<Response> {
       select: {
         slug: true,
         journey: { select: { language: true } },
-        practiceSet: { select: { exercises: { select: { word: true, payload: true } } } },
+        practiceSet: {
+          select: {
+            sentenceTranslations: true,
+            exercises: { select: { type: true, word: true, payload: true } },
+          },
+        },
       },
     });
     for (const r of jrows) {
       if (r.slug) {
         liveByKey.set(r.slug, collectClips(r.practiceSet?.exercises ?? []));
+        translationsByKey.set(
+          r.slug,
+          buildSentenceTranslationMap({
+            column: r.practiceSet?.sentenceTranslations,
+            exercises: r.practiceSet?.exercises ?? [],
+          })
+        );
         langByKey.set(r.slug, r.journey?.language ?? null);
       }
     }
@@ -199,10 +232,19 @@ export async function GET(req: NextRequest): Promise<Response> {
     // `wordClipUrl` (palabra pre-horneada) alimenta meaning y match sin runtime.
     // #7: adjuntar `voiceId` (narración) SIEMPRE que exista, no solo cuando hay
     // clip de oración (antes desincronizaba la voz para meaning/context).
+    // Las traducciones de frase van FUERA del `if (clip)`: dependen de la
+    // HISTORIA, no de que esa palabra tenga ejercicio curado con audio. Y viaja
+    // el MAPA entero de la historia, no una cadena: el cliente no sabe aquí qué
+    // frase acabará pintando (la del favorito, la del texto, la del curado), y
+    // elegirla en el servidor era justo el bug. Quien pinta, resuelve.
+    const sentenceTranslations = Object.fromEntries(
+      translationsByKey.get(f.storySlug) ?? new Map<string, string>()
+    );
     return [
       {
         ...f,
         language,
+        sentenceTranslations,
         ...(clip
           ? {
               ...(clip.clipUrl ? { clipUrl: clip.clipUrl } : {}),

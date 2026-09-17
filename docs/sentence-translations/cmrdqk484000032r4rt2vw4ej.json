@@ -1,0 +1,2506 @@
+{
+  "_comoSeUsa": "Formato NUEVO: la clave es la oracion. Para guardar: npx tsx scripts/saveSentenceTranslations.ts docs/sentence-translations/<journeyId>.json",
+  "_migrado": "Convertido desde el formato por palabra por scripts/_migraTraducciones.ts. Las oraciones que quedaron sin traducir viven en <journeyId>.todo2.json.",
+  "journeyId": "cmrdqk484000032r4rt2vw4ej",
+  "journeyName": "Friends",
+  "language": "spanish",
+  "variant": "latam",
+  "stories": [
+    {
+      "storySlug": "marina-llega-con-visaje",
+      "storyTitle": "Marina llega con visaje",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "Marina entró al apartamento con cara de que traía un chisme bien jugoso.",
+          "words": [
+            "jugoso"
+          ],
+          "translation": "Marina walked into the apartment looking like she was carrying some seriously juicy gossip."
+        },
+        {
+          "sentence": "“Parce, suelte ese aparato, que esto está muy bacano”, le soltó ella.",
+          "words": [
+            "parce",
+            "bacano"
+          ],
+          "translation": "“Buddy, put that thing down, this is really good stuff,” she blurted at him."
+        },
+        {
+          "sentence": "Según Marina, alguien del edificio andaba en un enredo tremendo con una vecina.",
+          "words": [
+            "enredo"
+          ],
+          "translation": "According to Marina, someone in the building was caught up in a huge mess with a neighbor."
+        },
+        {
+          "sentence": "Valeria salió de la cocina con un tinto y se sentó a chismosear también.",
+          "words": [
+            "tinto",
+            "chismosear"
+          ],
+          "translation": "Valeria came out of the kitchen with a little black coffee and sat down to gossip too."
+        },
+        {
+          "sentence": "“Cuente, cuente, no me deje en ascuas”, la apuró, toda intrigada.",
+          "words": [
+            "tener en ascuas"
+          ],
+          "translation": "“Tell me, tell me, don't leave me hanging,” she pressed, dying to know."
+        },
+        {
+          "sentence": "Marina bajó la voz como si fuera un secreto de Estado y arrancó con todo el visaje.",
+          "words": [
+            "visaje"
+          ],
+          "translation": "Marina lowered her voice as if it were a state secret and launched in with all the drama."
+        },
+        {
+          "sentence": "Habló de mensajes escondidos, de una fiesta a las malas y de un man sospechoso.",
+          "words": [
+            "a las malas",
+            "man",
+            "de una"
+          ],
+          "translation": "She talked about hidden messages, a party thrown on the sly, and a suspicious guy."
+        },
+        {
+          "sentence": "Julián por fin soltó el celular, ya bien enganchado en el cuento.",
+          "words": [
+            "enganchado"
+          ],
+          "translation": "Julián finally put his phone down, by then completely hooked on the story."
+        },
+        {
+          "sentence": "Se quedó callada un momentico, atando cabos con cara de susto.",
+          "words": [
+            "momentico",
+            "atar cabos"
+          ],
+          "translation": "She went quiet for a little second, putting the pieces together with a scared look on her face."
+        },
+        {
+          "sentence": "“Pare ahí”, los frenó de una, entre la risa y el sofocón.",
+          "words": [
+            "sofocón"
+          ],
+          "translation": "“Stop right there,” she cut them off at once, half laughing and half flustered."
+        },
+        {
+          "sentence": "Marina, toda achantada, juró que ella solo repetía lo que le habían rajado.",
+          "words": [
+            "achantado",
+            "rajar"
+          ],
+          "translation": "Marina, red faced, swore she was only repeating the dirt other people had spilled to her."
+        },
+        {
+          "sentence": "Al final se rieron un buen rato del teléfono roto en que se volvió el parche.",
+          "words": [
+            "teléfono roto",
+            "parche"
+          ],
+          "translation": "In the end they laughed for a good while at the game of telephone their friend group had turned into."
+        },
+        {
+          "sentence": "De boca en boca, una reunión familiar se había vuelto un escándalo de telenovela.",
+          "words": [
+            "de boca en boca"
+          ],
+          "translation": "Passed from mouth to mouth, a family get together had turned into a soap opera scandal."
+        },
+        {
+          "sentence": "Así aprendieron que el mejor chisme casi siempre es puro cuento inflado.",
+          "words": [
+            "inflado"
+          ],
+          "translation": "That is how they learned that the best gossip is almost always pure blown up nonsense."
+        }
+      ]
+    },
+    {
+      "storySlug": "la-lengua-de-julian",
+      "storyTitle": "La lengua de Julián",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "Julián llegó del camello bien cascado y con un guayabo del sábado que no lo dejaba.",
+          "words": [
+            "camello",
+            "cascado",
+            "guayabo"
+          ],
+          "translation": "Julián came home from work completely wrecked, with a hangover from Saturday that would not let go."
+        },
+        {
+          "sentence": "Se tiró en el sofá jurando que esa noche no salía ni amarrado.",
+          "words": [
+            "amarrado"
+          ],
+          "translation": "He flopped onto the couch swearing that he was not going out that night, not for anything."
+        },
+        {
+          "sentence": "“No me manden a rumbear, parceros, que vengo muerto”, pidió con voz de trapo.",
+          "words": [
+            "rumbear"
+          ],
+          "translation": "“Don't send me out partying, guys, I'm dead on my feet,” he pleaded in a worn out voice."
+        },
+        {
+          "sentence": "Pero el parche insistió, y a las dos polas ya estaba prendido y hablando hasta por los codos.",
+          "words": [
+            "pola",
+            "prendido",
+            "hablar hasta por los codos"
+          ],
+          "translation": "But the crew insisted, and two beers in he was already buzzed and talking nonstop."
+        },
+        {
+          "sentence": "Entre risas y guaro, la lengua se le fue soltando más de la cuenta.",
+          "words": [
+            "guaro",
+            "más de la cuenta"
+          ],
+          "translation": "Between the laughing and the aguardiente, his tongue loosened up more than it should have."
+        },
+        {
+          "sentence": "El cuarto entero se quedó callado, y Julián sintió el frío de la embarrada.",
+          "words": [
+            "embarrada"
+          ],
+          "translation": "The whole room went silent, and Julián felt the chill of the blunder he had just made."
+        },
+        {
+          "sentence": "Trató de echar para atrás, pero ya el chisme estaba servido en bandeja.",
+          "words": [
+            "servido en bandeja"
+          ],
+          "translation": "He tried to backpedal, but the gossip was already served up on a platter."
+        },
+        {
+          "sentence": "Uno del parche, más sapo que otra cosa, se relamió con la primicia.",
+          "words": [
+            "sapo",
+            "relamerse",
+            "primicia"
+          ],
+          "translation": "One of the crew, a snitch more than anything, licked his lips over the scoop."
+        },
+        {
+          "sentence": "Sabía que había metido las patas hasta el fondo.",
+          "words": [
+            "meter las patas"
+          ],
+          "translation": "He knew he had put his foot in it all the way."
+        },
+        {
+          "sentence": "Llamó a Marina con el corazón en la mano para confesar antes de que le llegara por otro lado.",
+          "words": [
+            "con el corazón en la mano"
+          ],
+          "translation": "He called Marina with his heart in his hand to confess before she heard it from someone else."
+        },
+        {
+          "sentence": "Cuando por fin se calló, Marina soltó una risa que lo descolocó por completo.",
+          "words": [
+            "descolocar"
+          ],
+          "translation": "When he finally stopped talking, Marina let out a laugh that threw him completely off."
+        },
+        {
+          "sentence": "“Tranquilo, güevón, ese secreto me lo inventé yo”, le confesó sin culpa.",
+          "words": [
+            "güevón"
+          ],
+          "translation": "“Relax, dummy, I made that secret up myself,” she confessed without a shred of guilt."
+        },
+        {
+          "sentence": "La lección le quedó grabada: al que tiene la lengua floja, tarde o temprano lo cazan.",
+          "words": [
+            "lengua floja",
+            "cazar"
+          ],
+          "translation": "The lesson stuck with him: sooner or later, a loose tongue gets its owner caught."
+        }
+      ]
+    },
+    {
+      "storySlug": "el-domingo-se-arregla",
+      "storyTitle": "El domingo se arregla",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "Nadie quería seguir bravo, porque la mamera de andar peleados ya cansaba a todos.",
+          "words": [
+            "bravo",
+            "mamera"
+          ],
+          "translation": "Nobody wanted to stay angry, because the drag of being at odds was wearing everyone down."
+        },
+        {
+          "sentence": "“Hablemos sin rodeos y cuadremos esta vaina de una vez”, propuso ella.",
+          "words": [
+            "sin rodeos",
+            "vaina",
+            "cuadrar"
+          ],
+          "translation": "“Let's talk straight and sort this thing out once and for all,” she proposed."
+        },
+        {
+          "sentence": "Julián fue el primero en dar la cara y reconocer que había hablado de más.",
+          "words": [
+            "dar la cara"
+          ],
+          "translation": "Julián was the first to face up to it and admit he had said too much."
+        },
+        {
+          "sentence": "Marina admitió que su prueba de la lengua floja tampoco había estado muy chévere.",
+          "words": [
+            "chévere"
+          ],
+          "translation": "Marina admitted that her loose tongue test had not been very cool either."
+        },
+        {
+          "sentence": "El domingo, el parche se juntó en casa de Valeria con arepa y chocolate caliente.",
+          "words": [
+            "arepa"
+          ],
+          "translation": "On Sunday the crew got together at Valeria's place with arepas and hot chocolate."
+        },
+        {
+          "sentence": "Valeria, que odiaba los pleitos, hacía de juez para que nadie se pasara de listo.",
+          "words": [
+            "pleito",
+            "pasarse de listo"
+          ],
+          "translation": "Valeria, who hated quarrels, played judge so that nobody would get away with being a smart aleck."
+        },
+        {
+          "sentence": "Poco a poco, la bravura se volvió recocha y risa floja.",
+          "words": [
+            "recocha",
+            "risa floja"
+          ],
+          "translation": "Little by little, the anger turned into horsing around and helpless giggles."
+        },
+        {
+          "sentence": "“Marica, ya, dejemos esta bobada quieta”, soltó Julián estirando la mano.",
+          "words": [
+            "marica",
+            "bobada"
+          ],
+          "translation": "“Come on, man, let's drop this silly thing,” blurted Julián, holding out his hand."
+        },
+        {
+          "sentence": "El parche entero respiró, como si le hubieran quitado un bulto de encima.",
+          "words": [
+            "quitarse un bulto de encima"
+          ],
+          "translation": "The whole crew breathed out, as if a weight had been lifted off their shoulders."
+        },
+        {
+          "sentence": "Sellaron el trato con un brindis de chocolate, chocando las tazas como si fueran polas.",
+          "words": [
+            "sellar el trato"
+          ],
+          "translation": "They sealed the deal with a chocolate toast, clinking the mugs as if they were beers."
+        },
+        {
+          "sentence": "Se despidieron con la panza llena de arepa y el corazón liviano.",
+          "words": [
+            "liviano"
+          ],
+          "translation": "They said goodbye with their bellies full of arepas and their hearts light."
+        },
+        {
+          "sentence": "Acordaron una regla nueva para el grupo, medio en serio y medio en chiste.",
+          "words": [
+            "medio en serio"
+          ],
+          "translation": "They agreed on a new rule for the group, half seriously and half as a joke."
+        },
+        {
+          "sentence": "Lo que se hablara en el parche se quedaba en el parche, sin soltar prenda por fuera.",
+          "words": [
+            "soltar prenda"
+          ],
+          "translation": "Whatever was said in the group stayed in the group, with nothing given away outside."
+        },
+        {
+          "sentence": "Marina se la apretó e hicieron las paces con un abrazo de esos que valen más que mil perdones.",
+          "words": [
+            "hacer las paces"
+          ],
+          "translation": "Marina shook it and they made up with one of those hugs worth more than a thousand apologies."
+        }
+      ]
+    },
+    {
+      "storySlug": "le-toca-a-mateo",
+      "storyTitle": "Le toca a Mateo",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "Ninguno quería quedar como el codo del cuento, pero a todos les daba hueva soltar la lana.",
+          "words": [
+            "codo",
+            "hueva",
+            "lana"
+          ],
+          "translation": "Nobody wanted to end up as the cheapskate of the story, but they were all too lazy to hand over the cash."
+        },
+        {
+          "sentence": "Esa noche le tocaba a Mateo, y el muy vivales llevaba días anunciando que andaba corto.",
+          "words": [
+            "vivales",
+            "andar corto"
+          ],
+          "translation": "That night it was Mateo's turn, and the sly one had spent days announcing that he was broke."
+        },
+        {
+          "sentence": "Llegaron los tacos y las chelas, y él se puso a contar las monedas de su cartera con una lentitud sospechosa.",
+          "words": [
+            "chela"
+          ],
+          "translation": "The tacos and the beers arrived, and he started counting the coins in his wallet with suspicious slowness."
+        },
+        {
+          "sentence": "Renata lo cachó de inmediato.",
+          "words": [
+            "cachar"
+          ],
+          "translation": "Renata caught him at it right away."
+        },
+        {
+          "sentence": "“No mames, güey, ni que fueras a quebrar”, le soltó.",
+          "words": [
+            "no mames",
+            "güey"
+          ],
+          "translation": "“Come on, dude, it's not like you're about to go broke,” she shot back."
+        },
+        {
+          "sentence": "Siguió choteándolo, y Pablo levantó la vista del celular para sumarse.",
+          "words": [
+            "chotear"
+          ],
+          "translation": "She kept ribbing him, and Pablo looked up from his phone to join in."
+        },
+        {
+          "sentence": "Alguien propuso lo de siempre: hacer vaquita y terminar con el asunto.",
+          "words": [
+            "vaquita"
+          ],
+          "translation": "Someone suggested the usual: chip in together and be done with it."
+        },
+        {
+          "sentence": "Pero Mateo se puso a echar choro sobre que él ya había pagado la vez pasada, que le tocaba a otro, que las cuentas no cuadraban.",
+          "words": [
+            "echar choro"
+          ],
+          "translation": "But Mateo started spinning a line about how he had paid last time, how it was someone else's turn, how the numbers did not add up."
+        },
+        {
+          "sentence": "Pura mamada, y nadie le creyó una palabra.",
+          "words": [
+            "mamada"
+          ],
+          "translation": "Pure nonsense, and nobody believed a word of it."
+        },
+        {
+          "sentence": "Ya los había tranzado igual el mes anterior.",
+          "words": [
+            "tranzar"
+          ],
+          "translation": "He had pulled the same trick on them the month before."
+        },
+        {
+          "sentence": "Intentó zafarse diciendo que había dejado la cartera en el coche.",
+          "words": [
+            "zafarse"
+          ],
+          "translation": "He tried to wriggle out of it saying he had left his wallet in the car."
+        },
+        {
+          "sentence": "Sofía no dijo nada; lo dejó cotorrear un rato, dejándolo enredarse solito.",
+          "words": [
+            "cotorrear"
+          ],
+          "translation": "Sofía said nothing; she let him ramble on for a while and tangle himself up on his own."
+        },
+        {
+          "sentence": "Cuando lo tuvo montado en la mentira, le sacó la sopa: el sábado había ganado una apuesta y traía dinero de sobra.",
+          "words": [
+            "sacar la sopa",
+            "de sobra"
+          ],
+          "translation": "Once she had him deep in the lie, she got the truth out of him: on Saturday he had won a bet and was carrying money to spare."
+        },
+        {
+          "sentence": "“Eres un cabrón”, se rió Renata.",
+          "words": [
+            "cabrón"
+          ],
+          "translation": "“You are such a rascal,” Renata laughed."
+        },
+        {
+          "sentence": "La mesa se le vino encima con pura carrilla.",
+          "words": [
+            "carrilla"
+          ],
+          "translation": "The whole table came down on him with nonstop teasing."
+        },
+        {
+          "sentence": "No hubo defensa posible, así que al pinche Mateo no le quedó de otra que aflojar.",
+          "words": [
+            "pinche",
+            "aflojar",
+            "no quedar de otra"
+          ],
+          "translation": "There was no possible defense, so damn Mateo had no choice left but to pay up."
+        },
+        {
+          "sentence": "Así se cerraba otro jueves: el que se hacía pato pagaba, y encima aguantaba la burla hasta el jueves siguiente.",
+          "words": [
+            "hacerse pato"
+          ],
+          "translation": "So another Thursday wrapped up: whoever played dumb paid, and then put up with the teasing until the following Thursday."
+        }
+      ]
+    },
+    {
+      "storySlug": "ahorita-salgo",
+      "storyTitle": "Ahorita salgo",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "En la banda de Sofía todos sabían que el reloj de Renata funcionaba distinto.",
+          "words": [
+            "banda"
+          ],
+          "translation": "Everyone in Sofía's crew knew that Renata's clock ran on its own time."
+        },
+        {
+          "sentence": "Cuando decía “ahorita salgo”, había que sumarle una hora, a veces dos.",
+          "words": [
+            "ahorita"
+          ],
+          "translation": "When she said “I'm heading out right now,” you had to add an hour, sometimes two."
+        },
+        {
+          "sentence": "Esa noche los demás llevaban rato echando raíces en la esquina, muertos de frío.",
+          "words": [
+            "echar raíces",
+            "muerto de frío",
+            "llevar rato"
+          ],
+          "translation": "That night the others had been putting down roots on the corner for a while, freezing to death."
+        },
+        {
+          "sentence": "Neta, era la reina de llegar tarde, y el grupo lo había convertido en deporte.",
+          "words": [
+            "neta"
+          ],
+          "translation": "Honestly, she was the queen of showing up late, and the group had turned it into a sport."
+        },
+        {
+          "sentence": "Cuando por fin apareció la morra, Mateo la recibió con una cara de falsa sorpresa.",
+          "words": [
+            "morra"
+          ],
+          "translation": "When the girl finally showed up, Mateo greeted her with a face of fake surprise."
+        },
+        {
+          "sentence": "“¿Qué pedo, ya te acordaste de nosotros?”, anunció, para que lo oyera toda la cuadra.",
+          "words": [
+            "qué pedo"
+          ],
+          "translation": "“What's up, did you finally remember we exist?” he announced, loud enough for the whole block to hear."
+        },
+        {
+          "sentence": "A Mateo nunca se le iba la oportunidad de vacilar.",
+          "words": [
+            "vacilar"
+          ],
+          "translation": "Mateo never let a chance to tease someone slip by."
+        },
+        {
+          "sentence": "Los demás se sumaron igual de gachos, cada uno con su versión del mismo chiste.",
+          "words": [
+            "gacho"
+          ],
+          "translation": "The others piled on just as mean, each with his own version of the same joke."
+        },
+        {
+          "sentence": "Pablo estuvo especialmente culero, contando la vez que los dejó afuera de un cine.",
+          "words": [
+            "culero"
+          ],
+          "translation": "Pablo was especially nasty, telling about the time she left them standing outside a movie theater."
+        },
+        {
+          "sentence": "Renata, sin despeinarse, sacó su pretexto de siempre: el tráfico, el trabajo, la vida.",
+          "words": [
+            "sin despeinarse"
+          ],
+          "translation": "Renata, without missing a beat, pulled out her usual excuse: traffic, work, life."
+        },
+        {
+          "sentence": "Dijo que le había tocado chambear hasta tarde, como siempre.",
+          "words": [
+            "chambear"
+          ],
+          "translation": "She said she had had to work late, as always."
+        },
+        {
+          "sentence": "Ya nadie se lo creía, porque los había plantado demasiadas veces como para tener crédito.",
+          "words": [
+            "plantar"
+          ],
+          "translation": "Nobody believed her anymore, because she had stood them up too many times to have any credit left."
+        },
+        {
+          "sentence": "Lo raro es que esta vez no se defendió ni armó bronca.",
+          "words": [
+            "bronca"
+          ],
+          "translation": "The strange part is that this time she did not defend herself or pick a fight."
+        },
+        {
+          "sentence": "Lo que ninguno sabía es que traía una movida preparada desde el lunes.",
+          "words": [
+            "movida"
+          ],
+          "translation": "What none of them knew is that she had a plan ready since Monday."
+        },
+        {
+          "sentence": "Dejó que la siguieran agandallando un rato más, tranquila, esperando su momento.",
+          "words": [
+            "agandallar"
+          ],
+          "translation": "She let them keep piling on her a while longer, calm, waiting for her moment."
+        },
+        {
+          "sentence": "“Está bien chido”, admitió Mateo, sin poder disimular.",
+          "words": [
+            "chido"
+          ],
+          "translation": "“That is really cool,” Mateo admitted, unable to hide it."
+        },
+        {
+          "sentence": "Los apantalló a los tres de una sola vez, con un movimiento bien chingón.",
+          "words": [
+            "apantallar",
+            "chingón"
+          ],
+          "translation": "She dazzled all three of them at once, with one seriously badass move."
+        },
+        {
+          "sentence": "El reventón terminó a las cuatro y amanecieron crudos, arrepentidos y felices.",
+          "words": [
+            "reventón",
+            "crudo"
+          ],
+          "translation": "The party ended at four and they woke up hungover, regretful and happy."
+        },
+        {
+          "sentence": "Renata se rifó, y por una semana entera nadie le dijo nada de su reloj.",
+          "words": [
+            "rifarse"
+          ],
+          "translation": "Renata came through, and for a whole week nobody said a word about her clock."
+        },
+        {
+          "sentence": "“¿Qué pedo, ya te acordaste de nosotros?”",
+          "words": [
+            "qué pedo"
+          ],
+          "translation": "“What's up, did you finally remember we exist?”"
+        }
+      ]
+    },
+    {
+      "storySlug": "diez-intentos",
+      "storyTitle": "Diez intentos",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "Después de tantos jueves juntos, a Sofía se le ocurrió una idea medio cursi: tomarse una foto de los cuatro para colgarla en el refri.",
+          "words": [
+            "cursi",
+            "refri"
+          ],
+          "translation": "After so many Thursdays together, Sofía came up with a slightly cheesy idea: taking a photo of the four of them to stick on the fridge."
+        },
+        {
+          "sentence": "Lo que nadie imaginó es que algo tan simple se iba a volver semejante desmadre.",
+          "words": [
+            "desmadre"
+          ],
+          "translation": "What nobody imagined is that something so simple would turn into such total chaos."
+        },
+        {
+          "sentence": "Mateo se aventó una pose de portada de disco que nadie le había pedido, convencido de que era el galán del grupo.",
+          "words": [
+            "aventarse",
+            "galán"
+          ],
+          "translation": "Mateo threw himself into an album cover pose nobody had asked for, convinced he was the group's heartthrob."
+        },
+        {
+          "sentence": "Se puso hasta adelante, con una cara de mamón que dio risa.",
+          "words": [
+            "mamón",
+            "hasta adelante"
+          ],
+          "translation": "He planted himself right at the front, with a smug face that made everyone laugh."
+        },
+        {
+          "sentence": "Ahí estaba, parado como el mero mero, cuando en realidad se veía bastante chafa.",
+          "words": [
+            "el mero mero",
+            "chafa"
+          ],
+          "translation": "There he was, standing like the top dog, when he actually looked pretty cheap."
+        },
+        {
+          "sentence": "“Te ves bien naco”, le dijo Pablo, sin piedad.",
+          "words": [
+            "naco"
+          ],
+          "translation": "“You look so tacky,” Pablo told him, showing no mercy."
+        },
+        {
+          "sentence": "Renata apuraba desde atrás, muerta de hambre, diciendo que se estaban clavando demasiado.",
+          "words": [
+            "clavarse",
+            "muerto de hambre"
+          ],
+          "translation": "Renata kept rushing them from the back, starving, saying they were getting way too obsessed with it."
+        },
+        {
+          "sentence": "La cagada llegó cuando apoyaron el celular en una silla, corrieron a la marca, y resultó que nadie sabía usar el temporizador.",
+          "words": [
+            "cagada"
+          ],
+          "translation": "The screw up came when they propped the phone on a chair, ran to their spots, and it turned out nobody knew how to use the timer."
+        },
+        {
+          "sentence": "Qué oso.",
+          "words": [
+            "qué oso"
+          ],
+          "translation": "How embarrassing."
+        },
+        {
+          "sentence": "Se chutaron diez intentos antes de que saliera una decente.",
+          "words": [
+            "chutarse"
+          ],
+          "translation": "They sat through ten attempts before a decent one came out."
+        },
+        {
+          "sentence": "“Órale, ahora sí, todos quietos”, gritaba Sofía cada vez, y cada vez se movía alguien.",
+          "words": [
+            "órale"
+          ],
+          "translation": "“All right, now for real, everybody hold still,” Sofía shouted every time, and every time somebody moved."
+        },
+        {
+          "sentence": "“Ya, compa, es una foto, no una boda”, le contestaba Mateo desde el fondo.",
+          "words": [
+            "compa"
+          ],
+          "translation": "“Come on, buddy, it's a photo, not a wedding,” Mateo answered from the back."
+        },
+        {
+          "sentence": "La décima quedó toda chueca, con la mesa inclinada y medio mantel de protagonista.",
+          "words": [
+            "chueco"
+          ],
+          "translation": "The tenth one came out completely crooked, with the table tilted and half a tablecloth stealing the show."
+        },
+        {
+          "sentence": "De perdis, esa sí los agarró a los cuatro viendo a la cámara, y a esas alturas ya les valía madres.",
+          "words": [
+            "de perdis",
+            "valer madres"
+          ],
+          "translation": "At least that one caught all four of them looking at the camera, and by that point they could not care less."
+        },
+        {
+          "sentence": "Al final eso era el grupo: cuates con los que uno la riega, hace pendejadas y termina contento de haberlo hecho.",
+          "words": [
+            "cuate",
+            "regarla",
+            "pendejada"
+          ],
+          "translation": "In the end that was the group: friends you mess up with, do stupid things with, and end up glad you did."
+        }
+      ]
+    },
+    {
+      "storySlug": "camila-no-da-mas",
+      "storyTitle": "Camila no da más",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "Camila entró al bar tirándose en la silla, hecha pelota, y largó todo de una.",
+          "words": [
+            "hecho pelota",
+            "largar"
+          ],
+          "translation": "Camila walked into the bar, dropped into her chair completely wrecked, and let it all out at once."
+        },
+        {
+          "sentence": "“Che, no doy más con este laburo, boludo”, disparó antes de acomodarse bien.",
+          "words": [
+            "no dar más",
+            "laburo",
+            "boludo"
+          ],
+          "translation": "“I can't take this job anymore, dude,” she fired off before even settling in."
+        },
+        {
+          "sentence": "Según ella, el jefe le mandaba un quilombo tras otro sin respiro ni un gracias.",
+          "words": [
+            "quilombo"
+          ],
+          "translation": "According to her, the boss sent her one mess after another with no break and no thanks."
+        },
+        {
+          "sentence": "Se quedaba renegando hasta tarde, reventada, mientras los demás rajaban a horario.",
+          "words": [
+            "renegar",
+            "reventado"
+          ],
+          "translation": "She stayed late grumbling and grinding away, burnt out, while everyone else took off on time."
+        },
+        {
+          "sentence": "Encima el sueldo era una miseria, y con ese mango no le alcanzaba para nada.",
+          "words": [
+            "mango"
+          ],
+          "translation": "On top of that the pay was pitiful, and with that kind of money she could not cover anything."
+        },
+        {
+          "sentence": "Tomás la bancó en silencio, dejándola descargar todo el bajón sin interrumpir.",
+          "words": [
+            "bancar",
+            "bajón"
+          ],
+          "translation": "Tomás stood by her in silence, letting her unload the whole low mood without interrupting."
+        },
+        {
+          "sentence": "Flor le acercó una birra y le dijo que se despachara con confianza.",
+          "words": [
+            "despacharse"
+          ],
+          "translation": "Flor slid her a beer and told her to let it all out freely."
+        },
+        {
+          "sentence": "“Está todo mal, es un garrón, me quiero borrar de ahí”, cerró Camila.",
+          "words": [
+            "garrón",
+            "borrarse"
+          ],
+          "translation": "“Everything is wrong, it's a raw deal, I want out of there,” Camila finished."
+        },
+        {
+          "sentence": "Se pasó tres semanas al horno, sin dormir, sacando el laburo adelante.",
+          "words": [
+            "al horno"
+          ],
+          "translation": "She spent three weeks in the thick of it, not sleeping, pushing the work through."
+        },
+        {
+          "sentence": "Flor la frenó en seco con una pregunta que la dejó pensando.",
+          "words": [
+            "frenar en seco"
+          ],
+          "translation": "Flor stopped her dead with a question that left her thinking."
+        },
+        {
+          "sentence": "“Pará, ¿y por qué te daría el cliente más importante a vos, si te odia?”",
+          "words": [
+            "pará"
+          ],
+          "translation": "“Hold on, why would he give the most important client to you, if he hates you?”"
+        },
+        {
+          "sentence": "El viejo la felicitaba por el proyecto y la ascendía a jefa de área.",
+          "words": [
+            "viejo"
+          ],
+          "translation": "The old man congratulated her on the project and promoted her to head of the department."
+        },
+        {
+          "sentence": "El maltrato no era maltrato, era una prueba de fuego que había pasado.",
+          "words": [
+            "prueba de fuego"
+          ],
+          "translation": "The mistreatment was not mistreatment, it was a trial by fire that she had passed."
+        },
+        {
+          "sentence": "El bajón se le dio vuelta y de golpe todo tenía otro sentido.",
+          "words": [
+            "dar vuelta"
+          ],
+          "translation": "Her low mood flipped right around, and suddenly everything made a different kind of sense."
+        }
+      ]
+    },
+    {
+      "storySlug": "el-psicologo-de-la-barra",
+      "storyTitle": "El psicólogo de la barra",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "Flor llegó bajoneada y Tomás se ofreció de psicólogo improvisado de la barra.",
+          "words": [
+            "bajoneado"
+          ],
+          "translation": "Flor arrived feeling down and Tomás offered himself as the bar's improvised therapist."
+        },
+        {
+          "sentence": "“Contame todo, flaca, que para eso están los amigos”, dijo, muy pancho.",
+          "words": [
+            "contame",
+            "flaco",
+            "pancho"
+          ],
+          "translation": "“Tell me everything, girl, that's what friends are for,” he said, totally relaxed."
+        },
+        {
+          "sentence": "Flor arrancó a contar que el chabón que le gustaba era un careta total.",
+          "words": [
+            "chabón",
+            "careta"
+          ],
+          "translation": "Flor started telling them that the guy she liked was a complete fake."
+        },
+        {
+          "sentence": "La había dejado colgada dos veces y encima chamuyaba a otras minas al mismo tiempo.",
+          "words": [
+            "dejar colgado",
+            "chamuyar",
+            "mina"
+          ],
+          "translation": "He had left her hanging twice and was sweet talking other women at the same time."
+        },
+        {
+          "sentence": "“Es un forro, sacátelo de la cabeza ya”, sentenció Tomás con autoridad.",
+          "words": [
+            "forro"
+          ],
+          "translation": "“He's a jerk, get him out of your head right now,” Tomás declared with authority."
+        },
+        {
+          "sentence": "El pibe se mandó una teoría larguísima sobre cómo funcionaba el amor.",
+          "words": [
+            "pibe",
+            "mandarse"
+          ],
+          "translation": "The kid launched into an endless theory about how love actually works."
+        },
+        {
+          "sentence": "“Vos tenés que hacerte la difícil, no le des bola tan fácil”, le aconsejaba.",
+          "words": [
+            "dar bola"
+          ],
+          "translation": "“You have to play hard to get, don't give him attention so easily,” he advised."
+        },
+        {
+          "sentence": "“Si te busca, que labure para conseguirte, no le regales nada”, agregaba convencido.",
+          "words": [
+            "laburar"
+          ],
+          "translation": "“If he wants you, let him work for it, don't hand him anything,” he added, convinced."
+        },
+        {
+          "sentence": "“Sos un genio, Tomás, ¿de dónde sacás toda esta posta?”, le preguntó agradecida.",
+          "words": [
+            "posta"
+          ],
+          "translation": "“You're a genius, Tomás, where do you get all this real wisdom?” she asked, grateful."
+        },
+        {
+          "sentence": "“¿En serio este te está dando consejos de mujeres?”, tiró sin filtro.",
+          "words": [
+            "tirar",
+            "sin filtro"
+          ],
+          "translation": "“Seriously, this one is giving you advice about women?” she tossed out with no filter."
+        },
+        {
+          "sentence": "Pero Camila ya estaba lanzada y soltó la bomba sin piedad ninguna.",
+          "words": [
+            "lanzado",
+            "soltar la bomba"
+          ],
+          "translation": "But Camila was on a roll now and dropped the bomb without any mercy at all."
+        },
+        {
+          "sentence": "“Flor, este pibe no tuvo una cita en toda su vida, es más solo que perro en la calle.”",
+          "words": [
+            "más solo que perro en la calle"
+          ],
+          "translation": "“Flor, this kid has never had a single date in his life; he's lonelier than a stray dog.”"
+        },
+        {
+          "sentence": "“Sos un genio, Tomás, ¿de dónde sacás toda esta posta?”",
+          "words": [
+            "posta"
+          ],
+          "translation": "“You're a genius, Tomás, where do you get all this real wisdom?”"
+        },
+        {
+          "sentence": "“¿En serio este te está dando consejos de mujeres?”",
+          "words": [
+            "tirar"
+          ],
+          "translation": "“Seriously, this one is giving you advice about women?”"
+        },
+        {
+          "sentence": ", tiró sin filtro.",
+          "words": [
+            "sin filtro"
+          ],
+          "translation": ", she tossed out with no filter."
+        }
+      ]
+    },
+    {
+      "storySlug": "el-mismo-chabon",
+      "storyTitle": "El mismo chabón",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "En la previa, con música y escabio, Camila y Flor se pusieron a largar todo.",
+          "words": [
+            "previa",
+            "escabio"
+          ],
+          "translation": "At the warm up party, with music and booze, Camila and Flor started spilling everything."
+        },
+        {
+          "sentence": "“Estoy re mal, piba, conocí un pibe soñado”, arrancó Camila con una sonrisa boba.",
+          "words": [
+            "re",
+            "piba"
+          ],
+          "translation": "“I'm in really bad shape, girl, I met a dream guy,” Camila began with a goofy smile."
+        },
+        {
+          "sentence": "Flor casi salta de la silla, porque ella también venía embalada con alguien.",
+          "words": [
+            "embalado"
+          ],
+          "translation": "Flor almost jumped out of her chair, because she was swept up with someone too."
+        },
+        {
+          "sentence": "Camila contó que el suyo era alto, canchero y con una labia impresionante.",
+          "words": [
+            "canchero",
+            "labia"
+          ],
+          "translation": "Camila said hers was tall, effortlessly cool and with an impressive gift of the gab."
+        },
+        {
+          "sentence": "Siguieron comparando entre risas, sin darse cuenta del bardo que se venía encima.",
+          "words": [
+            "bardo"
+          ],
+          "translation": "They kept comparing notes between laughs, without noticing the trouble coming their way."
+        },
+        {
+          "sentence": "Los dos pibes las habían invitado al mismo bar, con el mismo verso trillado.",
+          "words": [
+            "verso"
+          ],
+          "translation": "The two guys had invited them to the same bar, with the same worn out line."
+        },
+        {
+          "sentence": "Hasta la remera que describían, azul con letras blancas, era idéntica.",
+          "words": [
+            "remera"
+          ],
+          "translation": "Even the shirt they described, blue with white lettering, was identical."
+        },
+        {
+          "sentence": "Flor se quedó dura, con el vaso a mitad de camino de la boca.",
+          "words": [
+            "quedarse duro"
+          ],
+          "translation": "Flor froze stiff, with her glass halfway to her mouth."
+        },
+        {
+          "sentence": "El pibe soñado de cada una era un chamuyero serial que las verseaba en paralelo.",
+          "words": [
+            "chamuyero",
+            "versear"
+          ],
+          "translation": "Each one's dream guy was the same serial smooth talker feeding both of them lies at once."
+        },
+        {
+          "sentence": "La previa alegre se pinchó de golpe con la calentura subiendo.",
+          "words": [
+            "pincharse",
+            "calentura"
+          ],
+          "translation": "The cheerful warm up deflated all at once as the anger rose."
+        },
+        {
+          "sentence": "Después del cachetazo inicial, las dos se miraron y la calentura cambió de destino.",
+          "words": [
+            "cachetazo"
+          ],
+          "translation": "After that first slap in the face, the two looked at each other and their fury changed targets."
+        },
+        {
+          "sentence": "En vez de pelearse entre ellas, se aliaron contra el forro con una sonrisa peligrosa.",
+          "words": [
+            "aliarse"
+          ],
+          "translation": "Instead of fighting each other, they teamed up against the jerk with a dangerous smile."
+        },
+        {
+          "sentence": "Si el pibe quería jugar con las dos, iba a cobrarla doble.",
+          "words": [
+            "cobrarla"
+          ],
+          "translation": "If the guy wanted to play with both of them, he was going to pay double."
+        },
+        {
+          "sentence": "Armaron un plan de venganza ahí mismo, entre carcajadas y trago va trago viene.",
+          "words": [
+            "venganza"
+          ],
+          "translation": "They put together a revenge plan right there, between roars of laughter and round after round."
+        },
+        {
+          "sentence": "Nada cura un desamor tan rápido como una amiga con sed de revancha.",
+          "words": [
+            "revancha"
+          ],
+          "translation": "Nothing cures heartbreak faster than a friend thirsty for payback."
+        }
+      ]
+    },
+    {
+      "storySlug": "todo-es-weon",
+      "storyTitle": "Todo es weón",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "“Resulta que el weón llegó con la weá, y le pasó la otra weá al otro weón”, contaba entusiasmado.",
+          "words": [
+            "weón",
+            "weá"
+          ],
+          "translation": "“So the dude showed up with the thing, and passed the other thing to the other dude,” he told them excitedly."
+        },
+        {
+          "sentence": "Nico se cagaba de la risa con el weveo cuático que se armaba.",
+          "words": [
+            "weveo",
+            "cagarse de la risa",
+            "cuático"
+          ],
+          "translation": "Nico was dying of laughter at the over the top banter going on."
+        },
+        {
+          "sentence": "“Oye, no se te entiende ni una cuando hablái así, po”, lo cortó ella.",
+          "words": [
+            "po",
+            "hablái",
+            "ni una"
+          ],
+          "translation": "“Hey, nobody can understand a single word when you talk like that,” she cut in."
+        },
+        {
+          "sentence": "Para Javiera, hablar así de enredado era la cosa más fome del mundo.",
+          "words": [
+            "fome"
+          ],
+          "translation": "For Javiera, talking in such a tangled way was the dullest thing in the world."
+        },
+        {
+          "sentence": "Encontraba que puro weón y pura weá dejaban la conversación como las pelotas.",
+          "words": [
+            "como las pelotas"
+          ],
+          "translation": "She thought all that dude and thingy business left the conversation in a complete mess."
+        },
+        {
+          "sentence": "Pensaba que hablaban en clave a propósito para latear a los de afuera.",
+          "words": [
+            "latear"
+          ],
+          "translation": "She thought they spoke in code on purpose to bore anyone outside the group."
+        },
+        {
+          "sentence": "Benjamín, lejos de achuntarle al reclamo, siguió con su historia igual de vaga.",
+          "words": [
+            "achuntar"
+          ],
+          "translation": "Benjamín, far from getting her complaint right, went on with his story just as vague."
+        },
+        {
+          "sentence": "A pesar de que no se decía ningún nombre, los dos se entendían regio.",
+          "words": [
+            "regio"
+          ],
+          "translation": "Even though no name was ever said, the two of them understood each other perfectly."
+        },
+        {
+          "sentence": "La weá y el weón cambiaban de significado según el tono y la mueca de la cara.",
+          "words": [
+            "mueca"
+          ],
+          "translation": "The thing and the dude changed meaning depending on the tone and the face you pulled."
+        },
+        {
+          "sentence": "“Ah, ya, ¿entonces el weón ese hizo la weá con la otra weona?”, lanzó al tiro.",
+          "words": [
+            "al tiro"
+          ],
+          "translation": "“Oh right, so that dude did the thing with the other girl?” she fired back straight away."
+        },
+        {
+          "sentence": "De tanto weviar juntos, tenían un código que nadie de afuera pillaba.",
+          "words": [
+            "pillar"
+          ],
+          "translation": "From so much messing around together, they had a code nobody outside ever caught on to."
+        },
+        {
+          "sentence": "Para entrar al weveo no hay que buscarle la lógica, sino sentirle la talla.",
+          "words": [
+            "talla"
+          ],
+          "translation": "To get into the banter you don't look for the logic, you feel out the joke."
+        },
+        {
+          "sentence": "En la terraza, mirando el lago del sur, Benjamín arrancó una historia bien choro.",
+          "words": [
+            "choro"
+          ],
+          "translation": "On the terrace, looking out at the southern lake, Benjamín launched into a really cool story."
+        },
+        {
+          "sentence": "Era un idioma secreto medio brígido, que se leía más por la actitud que por la palabra.",
+          "words": [
+            "brígido"
+          ],
+          "translation": "It was a secret language, a bit hardcore, read more through attitude than through the words."
+        },
+        {
+          "sentence": "Ahí Javiera se avivó de algo raro que la dejó pensando un buen rato.",
+          "words": [
+            "avivarse"
+          ],
+          "translation": "That's when Javiera caught on to something odd that left her thinking for quite a while."
+        },
+        {
+          "sentence": ", lanzó al tiro.",
+          "words": [
+            "al tiro"
+          ],
+          "translation": ", she fired back straight away."
+        }
+      ]
+    },
+    {
+      "storySlug": "el-carrete-del-sabado",
+      "storyTitle": "El carrete del sábado",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "El sábado armaron carrete en la casa de Javiera, cada uno poniendo su parte.",
+          "words": [
+            "carrete"
+          ],
+          "translation": "On Saturday they threw a party at Javiera's place, each one chipping in their share."
+        },
+        {
+          "sentence": "“Yo llevo el copete, no se preocupen, tengo un pituto filete”, prometió Benjamín.",
+          "words": [
+            "copete",
+            "pituto",
+            "filete"
+          ],
+          "translation": "“I'll bring the booze, don't worry, I've got a great connection,” Benjamín promised."
+        },
+        {
+          "sentence": "El problema es que andaba pato, sin un peso partido por la mitad.",
+          "words": [
+            "andar pato"
+          ],
+          "translation": "The problem is that he was flat broke, without half a coin to his name."
+        },
+        {
+          "sentence": "Nico lo miró con desconfianza, porque ya conocía sus promesas al lote.",
+          "words": [
+            "al lote"
+          ],
+          "translation": "Nico looked at him with distrust, because he knew his sloppy promises all too well."
+        },
+        {
+          "sentence": "“Seguro, cabro, mira que si llegái sin nada, te funamos delante de todos”, lo picó.",
+          "words": [
+            "llegái",
+            "funar",
+            "cabro"
+          ],
+          "translation": "“Sure, dude, watch out, if you turn up empty handed we'll call you out in front of everyone,” he needled."
+        },
+        {
+          "sentence": "Benjamín engrupió jurando que el trago estaba asegurado.",
+          "words": [
+            "engrupir"
+          ],
+          "translation": "Benjamín sweet talked his way out, swearing the drinks were guaranteed."
+        },
+        {
+          "sentence": "La idea era simple: un amigo de un amigo le conseguía el copete a precio de risa.",
+          "words": [
+            "a precio de risa"
+          ],
+          "translation": "The idea was simple: a friend of a friend would get him the booze dirt cheap."
+        },
+        {
+          "sentence": "Con ese pituto pensaba quedar como rey sin gastar casi nada de lucas.",
+          "words": [
+            "lucas",
+            "quedar como rey"
+          ],
+          "translation": "With that connection he planned to come off like a king without spending much cash."
+        },
+        {
+          "sentence": "“Este gil nos cagó, apuesto que se quedó pegado en otra parte”, reclamó Nico.",
+          "words": [
+            "pegado",
+            "cagar",
+            "gil"
+          ],
+          "translation": "“This fool screwed us over, I bet he got stuck somewhere else,” Nico complained."
+        },
+        {
+          "sentence": "El ambiente se estaba poniendo penca, con puro ambiente pesao y nada que tomar.",
+          "words": [
+            "penca",
+            "pesao"
+          ],
+          "translation": "The mood was turning lousy, with a heavy vibe all around and nothing to drink."
+        },
+        {
+          "sentence": "La cosa pintaba para desastre, y ella ya se imaginaba el ridículo delante de todos.",
+          "words": [
+            "pintar para"
+          ],
+          "translation": "The whole thing was shaping up to be a disaster, and she was already picturing the embarrassment in front of everyone."
+        },
+        {
+          "sentence": "El carrete estaba a un pelo de convertirse en el fracaso del año.",
+          "words": [
+            "a un pelo"
+          ],
+          "translation": "The party was a hair away from becoming the flop of the year."
+        },
+        {
+          "sentence": "Todos se quedaron callados, mirando hacia la entrada con el alma en un hilo.",
+          "words": [
+            "con el alma en un hilo"
+          ],
+          "translation": "Everyone went quiet, staring at the doorway with their hearts in their throats."
+        }
+      ]
+    },
+    {
+      "storySlug": "el-asado-a-la-orilla",
+      "storyTitle": "El asado a la orilla",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "El último día del verano, hicieron un asado a la orilla del lago, y quedó la escoba.",
+          "words": [
+            "asado",
+            "quedar la escoba"
+          ],
+          "translation": "On the last day of summer, they had an asado by the lake, and it got wild."
+        },
+        {
+          "sentence": "Benjamín se puso a cargo de la parrilla, jurando que la carne le salía seca.",
+          "words": [
+            "parrilla",
+            "seco"
+          ],
+          "translation": "Benjamín took charge of the grill, swearing that his meat always came out perfect."
+        },
+        {
+          "sentence": "Nico y Javiera lo weviaban: de seco no tenía ni el apodo.",
+          "words": [
+            "apodo",
+            "weviar"
+          ],
+          "translation": "Nico and Javiera teased him: he was not an ace, not even in name."
+        },
+        {
+          "sentence": "Contra todo pronóstico y por pura cuea, la carne salió en su punto y quedó rica.",
+          "words": [
+            "en su punto",
+            "cuea"
+          ],
+          "translation": "Against all odds and by sheer dumb luck, the meat came out just right and tasted great."
+        },
+        {
+          "sentence": "Entre choripán, un terremoto y un pisco, el grupo se instaló a disfrutar la tarde.",
+          "words": [
+            "choripán",
+            "terremoto",
+            "pisco"
+          ],
+          "translation": "Between choripán, a terremoto and a pisco, the group settled in to enjoy the afternoon."
+        },
+        {
+          "sentence": "Todos se rieron ya medio curados, pero por dentro sabían que ese deseo era la firme.",
+          "words": [
+            "curao",
+            "la firme"
+          ],
+          "translation": "They all laughed, half drunk by then, but deep down they knew that wish was the honest truth."
+        },
+        {
+          "sentence": "Cada anécdota venía con su carcajada, pero también con un dejo de nostalgia.",
+          "words": [
+            "dejo"
+          ],
+          "translation": "Every story came with its burst of laughter, but also with a trace of nostalgia."
+        },
+        {
+          "sentence": "Pronto cada uno agarraría para su lado, con la pega y la vida tirando fuerte.",
+          "words": [
+            "agarrar para su lado",
+            "pega"
+          ],
+          "translation": "Soon each of them would head their own way, with work and life pulling hard."
+        },
+        {
+          "sentence": "La idea de que el grupo se separara les apretó el pecho a todos.",
+          "words": [
+            "apretar el pecho"
+          ],
+          "translation": "The idea of the group splitting up made every one of their chests ache."
+        },
+        {
+          "sentence": "“Igual pase lo que pase, ustedes son mi gente, cachái”, dijo mirando el lago.",
+          "words": [
+            "cachái"
+          ],
+          "translation": "“Whatever happens, you people are my people, you know,” he said looking at the lake."
+        },
+        {
+          "sentence": "“Por el weveo eterno, aunque estemos viejos y con guata”, declaró con solemnidad falsa.",
+          "words": [
+            "guata"
+          ],
+          "translation": "“To endless banter, even when we are old and have bellies,” he declared with fake solemnity."
+        },
+        {
+          "sentence": "Un weveo no tiene que durar para siempre; le basta con dejar huella.",
+          "words": [
+            "dejar huella"
+          ],
+          "translation": "A good time does not have to last forever; leaving a mark is enough."
+        }
+      ]
+    },
+    {
+      "storySlug": "rodrigo-se-lo-busco",
+      "storyTitle": "Rodrigo se lo buscó",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "Los sábados, la palomilla de Nayeli se juntaba en el zócalo de Oaxaca a echar relajo hasta que dolía la panza.",
+          "words": [
+            "palomilla",
+            "relajo"
+          ],
+          "translation": "On Saturdays, Nayeli's crew met up in the zócalo in Oaxaca to fool around until their stomachs hurt."
+        },
+        {
+          "sentence": "En ese grupo, el que se picaba por una broma ya había perdido.",
+          "words": [
+            "picarse"
+          ],
+          "translation": "In that group, whoever took a joke personally had already lost."
+        },
+        {
+          "sentence": "Esa tarde el blanco fue Rodrigo, que llegó estrenando unos tenis bien fresas.",
+          "words": [
+            "fresa"
+          ],
+          "translation": "That afternoon the target was Rodrigo, who showed up in some very posh new sneakers."
+        },
+        {
+          "sentence": "Itzel arrancó luego luego, diciendo que con esos tenis ya se sentía muy fifí.",
+          "words": [
+            "luego luego",
+            "fifí"
+          ],
+          "translation": "Itzel started in right away, saying that with those sneakers he already felt very upper class."
+        },
+        {
+          "sentence": "El vato aguantó vara sin enojarse, porque defenderse solo lo iba a hundir más.",
+          "words": [
+            "vato",
+            "aguantar vara"
+          ],
+          "translation": "The guy took it without getting angry, because defending himself would only sink him further."
+        },
+        {
+          "sentence": "En lugar de rajarse, les siguió la corriente e inventó que los tenis eran de oro.",
+          "words": [
+            "rajarse",
+            "seguir la corriente"
+          ],
+          "translation": "Instead of backing down, he played along and made up that the sneakers were made of gold."
+        },
+        {
+          "sentence": "Cuando Nayeli le preguntó si ya se sentía muy salsa, Rodrigo soltó una carcajada.",
+          "words": [
+            "salsa"
+          ],
+          "translation": "When Nayeli asked if he was feeling like a real hotshot now, Rodrigo burst out laughing."
+        },
+        {
+          "sentence": "“Nomás me tienen envidia de la buena”, contestó, bien quitado de la pena.",
+          "words": [
+            "quitado de la pena"
+          ],
+          "translation": "“You're all just good and jealous of me,” he answered, without a care in the world."
+        },
+        {
+          "sentence": "Itzel no lo soltó y le preguntó de dónde había sacado tanto billete de repente.",
+          "words": [
+            "billete"
+          ],
+          "translation": "Itzel would not let it go and asked where he had suddenly got so much cash."
+        },
+        {
+          "sentence": "Rodrigo se hizo el occiso un buen rato, dándole vueltas al asunto.",
+          "words": [
+            "hacerse el occiso"
+          ],
+          "translation": "Rodrigo played dumb for quite a while, going around and around the subject."
+        },
+        {
+          "sentence": "Resulta que se había apalabrado un jale de guía en una mezcalería del centro.",
+          "words": [
+            "jale"
+          ],
+          "translation": "It turned out he had lined up a gig as a guide at a mezcal bar downtown."
+        },
+        {
+          "sentence": "Se había puesto las pilas durante meses para ahorrar y estrenar en forma.",
+          "words": [
+            "ponerse las pilas"
+          ],
+          "translation": "He had gotten his act together for months to save up and start off properly."
+        },
+        {
+          "sentence": "“Entonces ya la armaste, mano”, le dijo Nayeli con harto orgullo.",
+          "words": [
+            "armarla",
+            "mano"
+          ],
+          "translation": "“So you pulled it off, bro,” Nayeli told him with a lot of pride."
+        },
+        {
+          "sentence": "Itzel, más práctica, de volada preguntó si había descuento para la raza.",
+          "words": [
+            "de volada",
+            "raza"
+          ],
+          "translation": "Itzel, more practical, asked right away if there was a discount for the crew."
+        },
+        {
+          "sentence": "Rodrigo prometió llevarlos a todos de gorra en su primer recorrido de mezcal.",
+          "words": [
+            "de gorra"
+          ],
+          "translation": "Rodrigo promised to take them all for free on his first mezcal tour."
+        },
+        {
+          "sentence": "Brindaron con unas caguamas heladas por el trabajo del que tanto se habían burlado.",
+          "words": [
+            "caguama"
+          ],
+          "translation": "They toasted with some ice cold big bottles of beer to the job they had mocked so much."
+        },
+        {
+          "sentence": "Esa tarde la carrilla terminó, como casi siempre, en puro apapacho.",
+          "words": [
+            "apapacho"
+          ],
+          "translation": "That afternoon the teasing ended, as it almost always did, in pure affection."
+        }
+      ]
+    },
+    {
+      "storySlug": "itzel-no-sabe-nada",
+      "storyTitle": "Itzel no sabe nada",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "Traía un plan entre manos y no aguantaba las ganas de presumirlo.",
+          "words": [
+            "entre manos",
+            "presumir"
+          ],
+          "translation": "He had a plan up his sleeve and could not wait to show it off."
+        },
+        {
+          "sentence": "Sin que Itzel lo pescara, le hizo una seña a Nayeli para que se acercara.",
+          "words": [
+            "pescar",
+            "seña"
+          ],
+          "translation": "Without Itzel catching on, he signaled to Nayeli to come closer."
+        },
+        {
+          "sentence": "“Le eché los perros a mi cuate para que salga con Itzel”, le confesó en voz baja.",
+          "words": [
+            "echar los perros"
+          ],
+          "translation": "“I worked on my buddy so he would ask Itzel out,” he confessed in a low voice."
+        },
+        {
+          "sentence": "Nayeli abrió los ojos, entre emocionada y asustada por el borlote que se venía.",
+          "words": [
+            "borlote"
+          ],
+          "translation": "Nayeli's eyes went wide, half excited and half scared by the commotion coming."
+        },
+        {
+          "sentence": "“Si se entera, nos va a poner una madriza”, bromeó Nayeli en voz bajita.",
+          "words": [
+            "madriza"
+          ],
+          "translation": "“If she finds out, she's going to beat us senseless,” Nayeli joked in a tiny voice."
+        },
+        {
+          "sentence": "Rodrigo se lavó las manos diciendo que él solo era el mensajero del asunto.",
+          "words": [
+            "lavarse las manos"
+          ],
+          "translation": "Rodrigo washed his hands of it, saying he was only the messenger here."
+        },
+        {
+          "sentence": "Aun así, el muy necio ya había apalabrado todo para el viernes en la noche.",
+          "words": [
+            "apalabrar",
+            "necio"
+          ],
+          "translation": "Even so, the stubborn one had already arranged everything for Friday night."
+        },
+        {
+          "sentence": "Su amigo, un chavo medio tímido, prometió caer al bar sin falta.",
+          "words": [
+            "chavo",
+            "caer"
+          ],
+          "translation": "His friend, a fairly shy young guy, promised to drop by the bar without fail."
+        },
+        {
+          "sentence": "Lo que nadie sabía era si Itzel iba a querer pelarlo siquiera.",
+          "words": [
+            "pelar"
+          ],
+          "translation": "What nobody knew was whether Itzel would even give him the time of day."
+        },
+        {
+          "sentence": "Itzel andaba de buenas, sin sospechar la encerrona que le tenían montada.",
+          "words": [
+            "andar de buenas",
+            "encerrona"
+          ],
+          "translation": "Itzel was in a good mood, with no idea about the trap they had set for her."
+        },
+        {
+          "sentence": "Rodrigo checaba la puerta cada dos minutos, sudando frío por dentro.",
+          "words": [
+            "checar"
+          ],
+          "translation": "Rodrigo checked the door every two minutes, sweating cold on the inside."
+        },
+        {
+          "sentence": "Rodrigo empezó a temer que su amigo se hubiera arrugado a última hora.",
+          "words": [
+            "arrugarse"
+          ],
+          "translation": "Rodrigo started to fear that his friend had chickened out at the last minute."
+        },
+        {
+          "sentence": "La cosa se estaba poniendo bien cañón para su reputación.",
+          "words": [
+            "estar cañón"
+          ],
+          "translation": "Things were getting seriously rough for his reputation."
+        },
+        {
+          "sentence": "Justo cuando iba a cantar la retirada, la puerta se abrió de golpe.",
+          "words": [
+            "cantar la retirada"
+          ],
+          "translation": "Just as he was about to call the whole thing off, the door swung open."
+        },
+        {
+          "sentence": "Itzel se quedó tiesa, y el bar entero contuvo el aliento.",
+          "words": [
+            "quedarse tieso"
+          ],
+          "translation": "Itzel froze on the spot, and the whole bar held its breath."
+        }
+      ]
+    },
+    {
+      "storySlug": "cafe-y-pan-de-yema",
+      "storyTitle": "Café y pan de yema",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "El domingo siguiente, la bola se juntó tranquila en casa de Nayeli, con café y pan de yema.",
+          "words": [
+            "bola",
+            "pan de yema"
+          ],
+          "translation": "The next Sunday the gang met up quietly at Nayeli's place, with coffee and sweet egg bread."
+        },
+        {
+          "sentence": "No hubo carrilla esta vez, porque Itzel andaba con el ánimo por los suelos.",
+          "words": [
+            "ánimo por los suelos"
+          ],
+          "translation": "There was no teasing this time, because Itzel's spirits were down on the floor."
+        },
+        {
+          "sentence": "La habían corrido del trabajo el jueves, así nomás, sin avisar.",
+          "words": [
+            "correr",
+            "así nomás"
+          ],
+          "translation": "They had fired her from her job on Thursday, just like that, with no warning."
+        },
+        {
+          "sentence": "Nayeli, sin hacer preguntas, le sirvió un tejate bien frío y se sentó a su lado.",
+          "words": [
+            "tejate"
+          ],
+          "translation": "Nayeli, without asking questions, poured her a very cold tejate and sat down beside her."
+        },
+        {
+          "sentence": "Rodrigo llegó cargado de tlayudas, diciendo que nadie llora con la panza llena.",
+          "words": [
+            "tlayuda",
+            "panza llena",
+            "cargado"
+          ],
+          "translation": "Rodrigo showed up loaded with tlayudas, saying nobody cries on a full stomach."
+        },
+        {
+          "sentence": "Así funcionaba entre ellos, como una guelaguetza: hoy por ti, mañana por mí.",
+          "words": [
+            "guelaguetza"
+          ],
+          "translation": "It worked like that among them, like a guelaguetza: today for you, tomorrow for me."
+        },
+        {
+          "sentence": "Cuando a uno se le caía el mundo, los demás le hacían el paro sin que lo pidiera.",
+          "words": [
+            "hacer el paro"
+          ],
+          "translation": "When someone's world fell apart, the others stepped in to help without being asked."
+        },
+        {
+          "sentence": "No era lástima, era puro cariño del bueno.",
+          "words": [
+            "cariño del bueno"
+          ],
+          "translation": "It was not pity, it was pure genuine affection."
+        },
+        {
+          "sentence": "Itzel intentó disculparse por aguarles el domingo con sus penas.",
+          "words": [
+            "aguar"
+          ],
+          "translation": "Itzel tried to apologize for spoiling their Sunday with her troubles."
+        },
+        {
+          "sentence": "“Híjole, ni te disculpes, para eso estamos”, la cortó Rodrigo de inmediato.",
+          "words": [
+            "híjole"
+          ],
+          "translation": "“Oh please, don't even apologize, that's what we're here for,” Rodrigo cut in at once."
+        },
+        {
+          "sentence": "“Ni modo que te dejáramos sola”, remató Nayeli con cariño.",
+          "words": [
+            "ni modo"
+          ],
+          "translation": "“As if we were going to leave you alone,” Nayeli finished off warmly."
+        },
+        {
+          "sentence": "Uno tenía un conecte, otro conocía a alguien que jalaba gente, y así.",
+          "words": [
+            "conecte",
+            "jalar"
+          ],
+          "translation": "One had a contact, another knew someone who was hiring people, and so on."
+        },
+        {
+          "sentence": "Para la tarde, Itzel ya se reía otra vez con las puntadas de Rodrigo.",
+          "words": [
+            "puntada"
+          ],
+          "translation": "By the afternoon, Itzel was laughing again at Rodrigo's witty cracks."
+        },
+        {
+          "sentence": "La casa de Nayeli olía a pan, a café y a buena onda.",
+          "words": [
+            "buena onda"
+          ],
+          "translation": "Nayeli's house smelled of bread, coffee and good vibes."
+        },
+        {
+          "sentence": "Un amigo de a de veras se reconoce así: aparece con tlayudas justo cuando el mundo se te cae.",
+          "words": [
+            "de a de veras"
+          ],
+          "translation": "That is how you spot a real friend: he shows up with tlayudas right when your world falls apart."
+        }
+      ]
+    },
+    {
+      "storySlug": "pilar-no-entiende-nada",
+      "storyTitle": "Pilar no entiende nada",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "En el paradero, esperando la combi bajo el cielo gris de Lima, Diego saludó a Pilar a toda velocidad.",
+          "words": [
+            "paradero",
+            "combi"
+          ],
+          "translation": "At the bus stop, waiting for the minibus under the gray Lima sky, Diego greeted Pilar at full speed."
+        },
+        {
+          "sentence": "La recibió con un “Asu”, un “habla causa” y un “todo piña” que le salieron de corrido.",
+          "words": [
+            "asu",
+            "habla causa",
+            "piña"
+          ],
+          "translation": "He greeted her with a “Whoa,” a “hey buddy” and an “it's all rotten luck” that came out in one breath."
+        },
+        {
+          "sentence": "Entre tanta palabra nueva, empezó a cachear algo curioso en cómo hablaban.",
+          "words": [
+            "cachear"
+          ],
+          "translation": "Among so many new words, she started to catch on to something curious in how they spoke."
+        },
+        {
+          "sentence": "Beto se sumó al toque, tirando más jerga encima como si nada.",
+          "words": [
+            "al toque"
+          ],
+          "translation": "Beto joined in right away, piling on more slang as if it were nothing."
+        },
+        {
+          "sentence": "“Tranquila, es floro nomás, no te paltees por la firme”, le dijo entre risas.",
+          "words": [
+            "floro",
+            "paltearse",
+            "por la firme"
+          ],
+          "translation": "“Relax, it's just smooth talk, honestly, don't get flustered,” he told her, laughing."
+        },
+        {
+          "sentence": "Pero cada palabra rara la hundía más en el roche de no entender nada.",
+          "words": [
+            "roche"
+          ],
+          "translation": "But every strange word sank her deeper into the shame of understanding nothing."
+        },
+        {
+          "sentence": "Diego notó su cara de lorna perdida y quiso echarle una mano rápido.",
+          "words": [
+            "lorna"
+          ],
+          "translation": "Diego noticed her lost and clueless face and wanted to give her a hand fast."
+        },
+        {
+          "sentence": "Le fue traduciendo despacio que causa y pata querían decir amigo del alma.",
+          "words": [
+            "pata"
+          ],
+          "translation": "He slowly explained that both of those words meant a friend of the soul."
+        },
+        {
+          "sentence": "Pilar asentía, todavía sintiéndose la más monse del paradero.",
+          "words": [
+            "monse"
+          ],
+          "translation": "Pilar nodded along, still feeling like the most clueless person at the bus stop."
+        },
+        {
+          "sentence": "De pronto se le prendió el foco y una sonrisa pícara le cruzó la cara.",
+          "words": [
+            "prenderse el foco"
+          ],
+          "translation": "Suddenly the lightbulb went on and a mischievous smile crossed her face."
+        },
+        {
+          "sentence": "Había cachado que la jerga limeña voltea las palabras para despistar al de afuera.",
+          "words": [
+            "cachado"
+          ],
+          "translation": "She had figured out that Lima slang flips words around to throw off any outsider."
+        },
+        {
+          "sentence": "La chibola que hace un rato no pescaba nada les acababa de ganar en su propio juego.",
+          "words": [
+            "chibola"
+          ],
+          "translation": "The kid who had not caught a thing a moment ago had just beaten them at their own game."
+        },
+        {
+          "sentence": "Beto, muerto de risa, soltó que esa germa era una mostra.",
+          "words": [
+            "germa",
+            "mostro"
+          ],
+          "translation": "Beto, dying of laughter, blurted out that this girl was something amazing."
+        },
+        {
+          "sentence": "Para entrar de verdad a una yunta, hay que aprender a hablarles en su propio código.",
+          "words": [
+            "yunta"
+          ],
+          "translation": "To really get into a tight crew, you have to learn to speak to them in their own code."
+        }
+      ]
+    },
+    {
+      "storySlug": "almuerzo-en-el-jato",
+      "storyTitle": "Almuerzo en el jato",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "Al mediodía, Beto invitó a la chochera a su jato a jamear algo rico.",
+          "words": [
+            "chochera",
+            "jato",
+            "jamear"
+          ],
+          "translation": "At midday, Beto invited the gang over to his place to eat something tasty."
+        },
+        {
+          "sentence": "“Pasen, causas, siéntanse en su casa, que ya casi sale el ceviche”, los recibió contento.",
+          "words": [
+            "ceviche"
+          ],
+          "translation": "“Come in, guys, make yourselves at home, the ceviche is almost ready,” he welcomed them happily."
+        },
+        {
+          "sentence": "La cocina olía a limón y cebolla, y a todos se les hizo agua la boca.",
+          "words": [
+            "hacérsele agua la boca"
+          ],
+          "translation": "The kitchen smelled of lime and onion, and everyone's mouth started watering."
+        },
+        {
+          "sentence": "Diego llegó misio como siempre, pero con un hambre de la gran flauta.",
+          "words": [
+            "misio",
+            "de la gran flauta"
+          ],
+          "translation": "Diego arrived dead broke as always, but with a monstrous hunger."
+        },
+        {
+          "sentence": "“Broder, sírveme harto que ando sin un sol en el bolsillo”, pidió sin roche.",
+          "words": [
+            "broder",
+            "harto",
+            "sol"
+          ],
+          "translation": "“Bro, give me a big helping, I don't have a single coin in my pocket,” he asked without shame."
+        },
+        {
+          "sentence": "Los patas la aplaudieron, orgullosos de cómo la chibola iba agarrando calle.",
+          "words": [
+            "agarrar calle"
+          ],
+          "translation": "The guys applauded her, proud of how the kid was getting street smart."
+        },
+        {
+          "sentence": "Diego juraba que una vez se comió veinte anticuchos con ají, y nadie le creía.",
+          "words": [
+            "anticucho",
+            "ají"
+          ],
+          "translation": "Diego swore that he once ate twenty anticuchos with chili, and nobody believed him."
+        },
+        {
+          "sentence": "“No florees tanto, pues, que a ti te llena medio plato”, lo picó Pilar.",
+          "words": [
+            "florear",
+            "picar"
+          ],
+          "translation": "“Don't lay it on so thick, half a plate fills you up,” Pilar needled him."
+        },
+        {
+          "sentence": "Total, no tenían apuro, solo estaban matando el rato y haciendo hora.",
+          "words": [
+            "matar el rato"
+          ],
+          "translation": "Anyway, they were in no rush, just killing time and letting the hours pass."
+        },
+        {
+          "sentence": "Era un almuerzo del montón, nada del otro mundo, sin planes ni pretensiones.",
+          "words": [
+            "del montón",
+            "nada del otro mundo"
+          ],
+          "translation": "It was an ordinary lunch, nothing out of this world, with no plans or pretensions."
+        },
+        {
+          "sentence": "Entre bocado y bocado, empezó la sobremesa con puros cuentos exagerados.",
+          "words": [
+            "sobremesa"
+          ],
+          "translation": "Between bites, the after lunch chat began, all of it wildly exaggerated stories."
+        },
+        {
+          "sentence": "Pilar, que ya iba cachando la jerga, soltó un par de palabras nuevas como yapa.",
+          "words": [
+            "yapa"
+          ],
+          "translation": "Pilar, who was picking up the slang by now, threw in a couple of new words as a bonus."
+        }
+      ]
+    },
+    {
+      "storySlug": "la-chibola-nos-supero",
+      "storyTitle": "La chibola nos superó",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "Semanas después, Pilar ya manejaba la jerga mejor que sus propios maestros.",
+          "words": [
+            "manejar",
+            "maestro",
+            "pro"
+          ],
+          "translation": "Weeks later, Pilar handled the slang better than her own teachers did."
+        },
+        {
+          "sentence": "Lo que empezó como pura confusión en el paradero se había vuelto su cancha.",
+          "words": [
+            "cancha"
+          ],
+          "translation": "What started as pure confusion at the bus stop had become her home turf."
+        },
+        {
+          "sentence": "En plena reunión, la novata soltó una frase tan cerrada que los dejó botados.",
+          "words": [
+            "dejar botado"
+          ],
+          "translation": "Right in the middle of the gathering, the rookie dropped a phrase so closed off it left them stranded."
+        },
+        {
+          "sentence": "Mezcló palabras al revés, apócopes y muletillas que ni ellos habían escuchado antes.",
+          "words": [
+            "muletilla"
+          ],
+          "translation": "She mixed backwards words, clipped forms and filler tics that not even they had heard before."
+        },
+        {
+          "sentence": "Diego admitió con un “Oe” que no había cacheado ni michi de dónde había sacado esa.",
+          "words": [
+            "oe",
+            "ni michi"
+          ],
+          "translation": "Diego admitted with a “Hey” that he had not understood a single bit of where she got that one."
+        },
+        {
+          "sentence": "Beto trató de responderle con la misma moneda, tirando su mejor floro.",
+          "words": [
+            "con la misma moneda"
+          ],
+          "translation": "Beto tried to pay her back in the same coin, throwing out his best smooth talk."
+        },
+        {
+          "sentence": "Pero Pilar le devolvió otra frase todavía más enredada, sin despeinarse siquiera.",
+          "words": [
+            "enredado"
+          ],
+          "translation": "But Pilar fired back an even more tangled phrase, without even breaking a sweat."
+        },
+        {
+          "sentence": "El maestro terminó monse, rascándose la cabeza como el peor novato.",
+          "words": [
+            "novato"
+          ],
+          "translation": "The master ended up clueless, scratching his head like the worst beginner."
+        },
+        {
+          "sentence": "La cosa se volvió un duelo de jerga en plena mesa del jato.",
+          "words": [
+            "duelo"
+          ],
+          "translation": "The whole thing turned into a slang showdown right at the table in his house."
+        },
+        {
+          "sentence": "Diego, que se creía el más pro del grupo, tuvo que bajar la cabeza.",
+          "words": [
+            "bajar la cabeza"
+          ],
+          "translation": "Diego, who thought he was the best in the group, had to bow his head."
+        },
+        {
+          "sentence": "“Ya, me rindo, tú ganas, eres una crack, chata”, declaró entre risas.",
+          "words": [
+            "crack",
+            "chato"
+          ],
+          "translation": "“All right, I give up, you win, you're an absolute ace, sweetheart,” he declared through laughter."
+        },
+        {
+          "sentence": "Beto levantó la mano de Pilar como a una campeona de box.",
+          "words": [
+            "campeona"
+          ],
+          "translation": "Beto raised Pilar's hand like the hand of a boxing champion."
+        },
+        {
+          "sentence": "La chibola que llegó sin cachear nada ahora era la reina indiscutible.",
+          "words": [
+            "indiscutible"
+          ],
+          "translation": "The kid who arrived without understanding a thing was now the undisputed queen."
+        },
+        {
+          "sentence": "Pilar disfrutó el momento, pero no se achoró ni se le subió a la cabeza.",
+          "words": [
+            "subírsele a la cabeza",
+            "achorarse"
+          ],
+          "translation": "Pilar enjoyed the moment, but she did not get cocky or let it go to her head."
+        },
+        {
+          "sentence": "Cada uno disparaba palabras más raras, buscando dejar al otro sin respuesta.",
+          "words": [
+            "disparar"
+          ],
+          "translation": "Each of them fired off stranger words, trying to leave the other with no answer."
+        }
+      ]
+    },
+    {
+      "storySlug": "el-corte-nuevo-de-andres",
+      "storyTitle": "El corte nuevo de Andrés",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "En la esquina del barrio, con el picó sonando durísimo, se armaba la reunión de siempre.",
+          "words": [
+            "picó"
+          ],
+          "translation": "On the neighborhood corner, with the picó blasting away, the usual gathering came together."
+        },
+        {
+          "sentence": "Andrés apareció estrenando corte y caminando bien fresco, como si la calle fuera suya.",
+          "words": [
+            "fresco"
+          ],
+          "translation": "Andrés showed up with a brand new haircut, walking all easy, as if the street were his."
+        },
+        {
+          "sentence": "Apenas lo vio, Daniela le soltó un “Ombe” y le preguntó por ese peinado tan tieso, mane.",
+          "words": [
+            "ombe",
+            "tieso",
+            "mane"
+          ],
+          "translation": "The moment she saw him, Daniela let out a “Come on” and asked about that stiff hairdo, dude."
+        },
+        {
+          "sentence": "Yuly se rió de una y le siguió montando chercha sin piedad.",
+          "words": [
+            "montar chercha"
+          ],
+          "translation": "Yuly laughed at once and kept ribbing him without mercy."
+        },
+        {
+          "sentence": "Entre risas, remató con un “Eche”: ese corte se lo había hecho el barbero con los ojos cerrados.",
+          "words": [
+            "eche"
+          ],
+          "translation": "Between laughs, she finished with a “Wow”: the barber had given him that cut with his eyes closed."
+        },
+        {
+          "sentence": "El pelao arrancó con un “Ajá” y prometió, con toda la confianza, que “hoy sí caigo parado con alguna china”.",
+          "words": [
+            "ajá",
+            "caer parado",
+            "china",
+            "pelao"
+          ],
+          "translation": "The kid started with a “Well then” and promised, full of confidence, that “tonight I really do land on my feet with some girl.”"
+        },
+        {
+          "sentence": "Según ellas, el man llevaba meses tirándose los peros y quedándose siempre solo.",
+          "words": [
+            "tirarse los peros"
+          ],
+          "translation": "According to them, the guy had spent months chatting girls up and always ending up alone."
+        },
+        {
+          "sentence": "Cada vacilada suya terminaba en calabaza, y el barrio entero lo sabía de sobra.",
+          "words": [
+            "quedar en calabaza"
+          ],
+          "translation": "Every flirty attempt of his ended in nothing, and the whole neighborhood knew it well."
+        },
+        {
+          "sentence": "“Bueno, picaflor, muéstranos entonces cómo se hace, a ver si no te enredas”, lo retó.",
+          "words": [
+            "enredarse",
+            "picaflor"
+          ],
+          "translation": "“All right, lover boy, show us how it's done then, let's see if you don't fumble it,” she challenged him."
+        },
+        {
+          "sentence": "Yuly le pasó una birra fría para darle valor antes del intento.",
+          "words": [
+            "birra"
+          ],
+          "translation": "Yuly handed him a cold beer to give him courage before the attempt."
+        },
+        {
+          "sentence": "Andrés se tomó la birra de un solo trago y se acomodó el cuello de la camisa.",
+          "words": [
+            "acomodarse"
+          ],
+          "translation": "Andrés drank the beer in one gulp and straightened his shirt collar."
+        },
+        {
+          "sentence": "Justo pasó una vecina, y Andrés le lanzó su mejor sonrisa de conquistador.",
+          "words": [
+            "conquistador"
+          ],
+          "translation": "A neighbor happened to walk by, and Andrés flashed her his best charmer's smile."
+        },
+        {
+          "sentence": "Andrés, lejos de arrecharse, se pasó la mano por el pelo bien orgulloso.",
+          "words": [
+            "arrecharse"
+          ],
+          "translation": "Andrés, far from getting worked up, ran his hand through his hair, proud as could be."
+        },
+        {
+          "sentence": "Daniela le montó más chercha para sacarlo de casillas.",
+          "words": [
+            "sacar de casillas"
+          ],
+          "translation": "Daniela teased him harder to push him over the edge."
+        }
+      ]
+    },
+    {
+      "storySlug": "andres-en-la-pista",
+      "storyTitle": "Andrés en la pista",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "El sábado la parranda estaba a millón, con champeta pegada y birras bien frías.",
+          "words": [
+            "a millón",
+            "champeta"
+          ],
+          "translation": "On Saturday the party was going full blast, with champeta pounding and ice cold beers."
+        },
+        {
+          "sentence": "Andrés no le quitaba el ojo a una traga que bailaba sabroso en la mitad de la pista.",
+          "words": [
+            "traga",
+            "bailar sabroso"
+          ],
+          "translation": "Andrés could not take his eyes off a crush of his dancing with real flavor in the middle of the floor."
+        },
+        {
+          "sentence": "“Ahí está tu momento, galán, no la vayas a embarrar”, le dijo Yuly dándole un codazo.",
+          "words": [
+            "embarrarla",
+            "codazo"
+          ],
+          "translation": "“There's your moment, handsome, don't go and ruin it,” Yuly told him with a nudge of her elbow."
+        },
+        {
+          "sentence": "Recordaba el corte tieso y el papelón con la vecina.",
+          "words": [
+            "papelón"
+          ],
+          "translation": "She remembered the stiff haircut and the embarrassing scene with the neighbor."
+        },
+        {
+          "sentence": "“Esto lo tengo que ver, vale, va a ser un show”, le comentó a Yuly.",
+          "words": [
+            "vale",
+            "show"
+          ],
+          "translation": "“I have to see this, buddy, it's going to be a spectacle,” he said to Yuly."
+        },
+        {
+          "sentence": "Andrés se metió a la pista moviéndose bien descoordinada.",
+          "words": [
+            "descoordinado"
+          ],
+          "translation": "Andrés got onto the dance floor moving completely out of sync."
+        },
+        {
+          "sentence": "El parche entero se dobló de la risa al verlo hacer semejante ridiculez.",
+          "words": [
+            "ridiculez"
+          ],
+          "translation": "The whole group doubled over laughing at the sight of such an absurd display."
+        },
+        {
+          "sentence": "La traga lo miró de arriba abajo, como si lo fuera a dejar en ridículo.",
+          "words": [
+            "dejar en ridículo"
+          ],
+          "translation": "The girl looked him up and down, as if she were about to humiliate him."
+        },
+        {
+          "sentence": "En vez de irse, se acercó y le empezó a marcar el paso con paciencia.",
+          "words": [
+            "marcar el paso"
+          ],
+          "translation": "Instead of walking off, she came closer and started guiding his steps patiently."
+        },
+        {
+          "sentence": "Andrés no lo podía creer y por poco se queda congelado de la dicha.",
+          "words": [
+            "congelado"
+          ],
+          "translation": "Andrés could not believe it and almost froze stiff with sheer joy."
+        },
+        {
+          "sentence": "Poco a poco fue agarrando el ritmo, llevado por la mano de la china.",
+          "words": [
+            "agarrar el ritmo"
+          ],
+          "translation": "Little by little he got the hang of the rhythm, led by the girl's hand."
+        },
+        {
+          "sentence": "El perdedor de siempre estaba bailando pegado con la traga más buenona de la fiesta.",
+          "words": [
+            "buenona"
+          ],
+          "translation": "The usual loser was dancing close with the best looking girl at the party."
+        },
+        {
+          "sentence": "Yuly, todavía en shock, murmuró un “No joda” y admitió que el milagro existía.",
+          "words": [
+            "no joda"
+          ],
+          "translation": "Yuly, still in shock, muttered a “Come on” and admitted that miracles do exist."
+        },
+        {
+          "sentence": "Cuando terminó la canción, Andrés volvió al parche caminando en las nubes.",
+          "words": [
+            "en las nubes"
+          ],
+          "translation": "When the song ended, Andrés walked back to the group on air."
+        },
+        {
+          "sentence": "No dijo nada, solo levantó las cejas con una cara de triunfo insoportable.",
+          "words": [
+            "insoportable"
+          ],
+          "translation": "He said nothing, he just raised his eyebrows with an unbearably triumphant look."
+        },
+        {
+          "sentence": "Daniela y Yuly se quedaron con la boca abierta, sin saber si reírse o aplaudir.",
+          "words": [
+            "quedarse con la boca abierta"
+          ],
+          "translation": "Daniela and Yuly were left open mouthed, not knowing whether to laugh or applaud."
+        }
+      ]
+    },
+    {
+      "storySlug": "llega-el-guachiman",
+      "storyTitle": "Llega el guachimán",
+      "level": "c1",
+      "language": "spanish",
+      "variant": "latam",
+      "sentences": [
+        {
+          "sentence": "Ya de madrugada, con las birras calientes y medio mundo jincho, la parranda iba de salida.",
+          "words": [
+            "jincho"
+          ],
+          "translation": "By the small hours, with warm beers and half the crowd wasted, the party was winding down."
+        },
+        {
+          "sentence": "Andrés por fin tenía el cuadre con la china y no lo pensaba soltar.",
+          "words": [
+            "cuadre"
+          ],
+          "translation": "Andrés finally had something going with the girl and he was not about to let it go."
+        },
+        {
+          "sentence": "La china se reía de sus chistes malos y le seguía el juego con gusto.",
+          "words": [
+            "seguir el juego"
+          ],
+          "translation": "The girl laughed at his bad jokes and played along happily."
+        },
+        {
+          "sentence": "“Míralo, el bobo por fin la está haciendo bien”, susurró Daniela sin poder creerlo.",
+          "words": [
+            "bobo"
+          ],
+          "translation": "“Look at him, the big dummy is finally doing it right,” Daniela whispered, unable to believe it."
+        },
+        {
+          "sentence": "Yuly cruzó los dedos, rogando que Andrés no fuera a embarrarla en el último minuto.",
+          "words": [
+            "cruzar los dedos"
+          ],
+          "translation": "Yuly crossed her fingers, praying that Andrés would not blow it at the last minute."
+        },
+        {
+          "sentence": "Andrés bajó la voz y se armó de valor para lanzar la pregunta clave.",
+          "words": [
+            "armarse de valor"
+          ],
+          "translation": "Andrés lowered his voice and worked up the courage to ask the key question."
+        },
+        {
+          "sentence": "Estaba a nada de conseguir el número, con el corazón latiendo a mil.",
+          "words": [
+            "a mil"
+          ],
+          "translation": "He was a breath away from getting her number, with his heart pounding wildly."
+        },
+        {
+          "sentence": "Justo en ese momento apareció el guachimán del edificio con cara de pocos amigos.",
+          "words": [
+            "guachimán",
+            "cara de pocos amigos"
+          ],
+          "translation": "Right at that moment the building's security guard appeared with a face like thunder."
+        },
+        {
+          "sentence": "“Se acabó la rumba, muchachos, a bajarle al ruido ya mismo”, ladró de mal genio.",
+          "words": [
+            "rumba",
+            "bajarle",
+            "mal genio"
+          ],
+          "translation": "“The party is over, kids, turn that noise down right now,” he barked in a foul mood."
+        },
+        {
+          "sentence": "La música se cortó de golpe y todo el mundo pegó el grito al cielo.",
+          "words": [
+            "pegar el grito al cielo"
+          ],
+          "translation": "The music cut off all at once and everybody cried out in protest."
+        },
+        {
+          "sentence": "El guachimán se plantó entre Andrés y la china, como un muro imposible.",
+          "words": [
+            "plantarse",
+            "muro"
+          ],
+          "translation": "The guard planted himself between Andrés and the girl, like an impossible wall."
+        },
+        {
+          "sentence": "Andrés le rogó con la mirada un minuto más, uno solo.",
+          "words": [
+            "rogar"
+          ],
+          "translation": "Andrés begged him with his eyes for one more minute, just one."
+        },
+        {
+          "sentence": "Andrés se quedó con la mano estirada y el número a medio dar, sin saber si lo alcanzó a agarrar.",
+          "words": [
+            "a medio dar",
+            "alcanzar"
+          ],
+          "translation": "Andrés was left with his hand out and the number half given, not knowing if she managed to catch it."
+        },
+        {
+          "sentence": "La conversación fluía sabroso, y por primera vez el pelao no estaba dañando el momento.",
+          "words": [
+            "dañar"
+          ],
+          "translation": "The conversation was flowing nicely, and for the first time the kid was not ruining the moment."
+        },
+        {
+          "sentence": "Pero el hombre no estaba para vacilar y empezó a espantar a la gente sin piedad.",
+          "words": [
+            "espantar"
+          ],
+          "translation": "But the man was in no mood for joking and started shooing people away without mercy."
+        }
+      ]
+    }
+  ]
+}

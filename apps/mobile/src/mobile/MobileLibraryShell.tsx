@@ -62,7 +62,7 @@ import { DownloadProgressRing } from "./DownloadProgressRing";
 import { getCoverUrl } from "./coverUrl";
 import { NextActionGlow } from "./NextActionGlow";
 import { PracticeOrbit, type PracticeModeKey as OrbitModeKey } from "./PracticeOrbit";
-import { PracticeSpeaking } from "./PracticeSpeaking";
+import { useSpeakingRecorder } from "./useSpeakingRecorder";
 import { PulseDots } from "./PulseDots";
 import { HomeSkeleton } from "./HomeSkeleton";
 import { ALL_LANGUAGES, LanguageFlag, regionFamily } from "./LanguageFlag";
@@ -199,6 +199,12 @@ import {
   type PracticeAudioClip,
   type PracticeFavoriteItem,
 } from "../../../../src/lib/practiceExercises";
+// G4: la calificacion del turno hablado, compartida con sus tests. Vive en
+// `src/lib` para que un test la pueda medir sin arrancar Expo.
+import {
+  gradeSentence,
+  isSpeakingTurnAlreadyResolved,
+} from "../../../../src/lib/speakingGrading";
 import { TalkingPointsBrowse } from "./TalkingPointsBrowse";
 import {
   fetchTalkingIndex,
@@ -982,7 +988,7 @@ type ProgressStat = {
   icon: React.ComponentProps<typeof Feather>["name"];
 };
 
-type PracticeModeKey = "meaning" | "context" | "listening" | "match";
+type PracticeModeKey = "meaning" | "context" | "listening" | "match" | "speaking";
 
 /**
  * Modo a nivel de SESIÓN. Una tanda mixta reparte los cuatro modos, así que
@@ -1045,7 +1051,44 @@ type PracticeMatchExercise = {
   }>;
 };
 
-type PracticeExercise = PracticeMultipleChoiceExercise | PracticeMatchExercise;
+/**
+ * Quinto tipo: UN turno hablado. No tiene opciones ni respuesta que elegir, asi
+ * que no puede colarse en ningun guard de `multiple-choice`; lleva `favorite`
+ * con la misma forma que los demas para que el SRS, la tarjeta de resultados y
+ * la metrica lo traten como a cualquier otro ejercicio sin caso aparte.
+ */
+type PracticeSpeakingExercise = {
+  id: string;
+  mode: "speaking";
+  kind: "speaking";
+  prompt: string;
+  helper: string;
+  word: string;
+  surface: string | null;
+  /** Pista en pantalla: la traduccion en ingles. La palabra en el idioma meta
+   *  NO se muestra hasta despues de calificar; se prueba recuperarla. */
+  translation: string;
+  /** Frase COMPLETA; se ensena en el fallo, con su audio. */
+  sentence: string;
+  /** La misma frase con `_____` que pinta `fill_blank`: lo que se lee y suena. */
+  blanked: string;
+  /** Traduccion al ingles de la frase; solo se ensena al resolver. */
+  sentenceTranslation: string | null;
+  storySlug: string;
+  language: string;
+  voiceId: string | null;
+  /** El mismo clip que lleva `fill_blank`. */
+  audioClip?: PracticeAudioClip | null;
+  favorite: Pick<
+    PracticeFavoriteItem,
+    "word" | "translation" | "wordType" | "exampleSentence" | "language" | "storySlug" | "storyTitle" | "sourcePath"
+  >;
+};
+
+type PracticeExercise =
+  | PracticeMultipleChoiceExercise
+  | PracticeMatchExercise
+  | PracticeSpeakingExercise;
 type ReviewScore = "again" | "good";
 type StoryAudioData = {
   audioUrl: string | null;
@@ -1137,6 +1180,60 @@ const PRACTICE_MODE_CARDS: PracticeModeCard[] = [
  * necesitan carta para los dos momentos en los que no hay ejercicio en curso
  * del que sacar el chrome: mientras carga y en la pantalla de resultado.
  */
+/**
+ * Segundos para contestar un turno hablado. Decision del usuario el
+ * 2026-09-14: diez. La cuenta arranca cuando TERMINA el audio de la frase, no
+ * al pintar, porque el reloj no puede correr mientras el usuario escucha.
+ */
+const SPEAKING_ANSWER_SECONDS = 10;
+
+/** Anillo de progreso del boton de micro: 168 px de diametro, trazo de 6. */
+const SPEAKING_RING_SIZE = 168;
+const SPEAKING_RING_RADIUS = 78;
+const SPEAKING_RING_CIRCUMFERENCE = 2 * Math.PI * SPEAKING_RING_RADIUS;
+
+/**
+ * El hueco de la frase es un SUBRAYADO, no un cuadro: un recuadro relleno
+ * parecia un campo de formulario vacio en medio de una frase, y lo que hace
+ * falta es la raya sobre la que se escribe.
+ *
+ * `createFillBlankExercise` deja el hueco como una corrida de `_`, asi que se
+ * parte por ahi y se intercala la raya. El ancho lo marca la palabra que falta
+ * (11 px por letra, minimo 48) para que el hueco no delate una palabra corta
+ * siendo enorme ni ahogue una larga.
+ */
+function speakingBlankWidth(answer: string): number {
+  return Math.max(48, 11 * answer.trim().length);
+}
+
+function renderSpeakingBlank(blanked: string, answer: string): React.ReactNode {
+  const partes = blanked.split(/_{3,}/);
+  if (partes.length === 1) return blanked;
+  return partes.map((parte, index) => (
+    <Text key={`blank-${index}`}>
+      {parte}
+      {index < partes.length - 1 ? (
+        <View style={[styles.speakingBlankSlot, { width: speakingBlankWidth(answer) }]} />
+      ) : null}
+    </Text>
+  ));
+}
+
+// Speaking no se elige a mano (no esta en MODE_ORDER de la orbita), pero SI
+// necesita su tarjeta: el chrome de la sesion sale del ejercicio en curso via
+// `activePracticeCard`, y sin fila aqui la pantalla entera se quedaria en
+// blanco al llegar al slot hablado.
+const SPEAKING_PRACTICE_CARD: PracticeModeCard = {
+  key: "speaking",
+  title: "Speaking",
+  eyebrow: "Say it out loud",
+  detail: "Hear the sentence and say the missing word.",
+  caption: "Best for pulling a word out of memory and off your tongue.",
+  accent: "#f8c15c",
+  background: "#8a5a10",
+  icon: "mic",
+};
+
 const MIXED_PRACTICE_CARD: PracticeModeCard = {
   key: "mixed",
   title: "Practice",
@@ -1600,6 +1697,7 @@ function buildPracticeFavorites(items: MobileFavoriteItem[]): PracticeFavoriteIt
       // Clip PRE-HORNEADO de la PALABRA (meaning + match): ElevenLabs sin runtime.
       wordClipUrl: item.wordClipUrl ?? null,
       wordVoiceId: item.wordVoiceId ?? null,
+      sentenceTranslations: item.sentenceTranslations ?? null,
     }));
 }
 
@@ -1682,6 +1780,34 @@ function mapSharedExerciseToMobile(exercise: ReturnType<typeof buildPracticeSess
           sourcePath: null,
         },
       };
+    case "speaking":
+      return {
+        id: exercise.id,
+        mode: "speaking",
+        kind: "speaking",
+        prompt: "Say the missing word out loud.",
+        helper: "Tap the mic, say the word, tap again to send.",
+        word: exercise.word,
+        surface: exercise.surface ?? null,
+        translation: exercise.translation,
+        sentence: exercise.sentence,
+        blanked: exercise.blanked,
+        sentenceTranslation: exercise.sentenceTranslation ?? null,
+        storySlug: exercise.storySlug,
+        language: exercise.language,
+        voiceId: exercise.voiceId ?? null,
+        audioClip: exercise.audioClip ?? null,
+        favorite: {
+          word: exercise.word,
+          translation: exercise.translation,
+          wordType: null,
+          exampleSentence: exercise.sentence,
+          language: exercise.language,
+          storySlug: exercise.storySlug,
+          storyTitle: null,
+          sourcePath: null,
+        },
+      };
     case "match_meaning":
       return {
         id: exercise.id,
@@ -1713,6 +1839,8 @@ type PracticeBuildPrefs = {
   interests: readonly string[];
   learningGoal: OnboardingGoal | null;
   dailyMinutes: number | null;
+  /** Piloto del ejercicio hablado: solo el plan `polyglot`. */
+  speakingEnabled?: boolean;
 };
 
 /** Orden con el que entran las palabras a cualquier tanda: dues primero,
@@ -1791,7 +1919,7 @@ function buildExercisesWithDistractors(
   targets: PracticeFavoriteItem[],
   pool: PracticeFavoriteItem[],
   modes: PracticeModeKey[],
-  prefs?: { interests: readonly string[]; learningGoal: OnboardingGoal | null; dailyMinutes: number | null }
+  prefs?: PracticeBuildPrefs
 ): PracticeExercise[] {
   const targetKeys = new Set(targets.map((item) => normalizePracticeWord(item.word)));
   const companions = pool.filter(
@@ -1840,6 +1968,9 @@ function getRecommendedPracticeModeFromItems(source: PracticeFavoriteItem[]): Pr
     context: 0,
     listening: 0,
     match: 0,
+    // Speaking nunca se recomienda como modo de una tanda: es UN slot de la
+    // sesion mixta, y una tanda entera hablada no esta en el piloto.
+    speaking: 0,
   };
 
   for (const item of dueItems) {
@@ -2436,7 +2567,6 @@ export function MobileLibraryShell(args: {
   // seconds so the glow is attention-grabbing but not permanent.
   const [highlightedNextStoryId, setHighlightedNextStoryId] = useState<string | null>(null);
   const [speakingPracticePromptId, setSpeakingPracticePromptId] = useState<string | null>(null);
-  const [speakingPracticeOpen, setSpeakingPracticeOpen] = useState(false);
   const [playingPracticeClipId, setPlayingPracticeClipId] = useState<string | null>(null);
   const [playingHqPracticeClipId, setPlayingHqPracticeClipId] = useState<string | null>(null);
   // Id del ejercicio context cuyo audio de reveal terminó de sonar.
@@ -2688,6 +2818,24 @@ export function MobileLibraryShell(args: {
   const isCompactMeaningViewport = viewportHeight < 880;
   const isTightMeaningViewport = viewportHeight < 780;
   const [practiceReviewScores, setPracticeReviewScores] = useState<Record<string, ReviewScore>>({});
+  // Ejercicio hablado (piloto). Ya no hay pregunta que pedir ni nada que
+  // esperar del servidor: la frase con hueco viene en el propio ejercicio y el
+  // veredicto se decide aqui.
+  const speakingRecorder = useSpeakingRecorder();
+  const [speakingPhase, setSpeakingPhase] = useState<"ready" | "listening" | "done">("ready");
+  const [speakingSecondsLeft, setSpeakingSecondsLeft] = useState(SPEAKING_ANSWER_SECONDS);
+  const [speakingCountdownRunning, setSpeakingCountdownRunning] = useState(false);
+  /** Id del turno hablado YA resuelto. Ver `isSpeakingTurnAlreadyResolved`. */
+  const speakingResolvedForRef = useRef<string | null>(null);
+  // Los dos anillos que laten alrededor del boton, desfasados medio ciclo.
+  const speakingPulseA = useRef(new Animated.Value(0)).current;
+  const speakingPulseB = useRef(new Animated.Value(0)).current;
+  const [speakingHeard, setSpeakingHeard] = useState("");
+  /** Dijo la palabra pero no suficiente frase: el fallo se explica distinto. */
+  const [speakingWordOnly, setSpeakingWordOnly] = useState(false);
+  const [speakingError, setSpeakingError] = useState("");
+  /** El silencio da UN reintento sin penalizar; el segundo vacio es fallo. */
+  const [speakingEmptyRetried, setSpeakingEmptyRetried] = useState(false);
   const [practiceCheckpointToken, setPracticeCheckpointToken] = useState<string | null>(null);
   const [practiceCheckpointResponses, setPracticeCheckpointResponses] = useState<Record<string, string>>({});
   const [practiceCheckpointSaveState, setPracticeCheckpointSaveState] = useState<
@@ -3391,7 +3539,6 @@ export function MobileLibraryShell(args: {
     if (progressSheetOpen) { setProgressSheetOpen(false); return true; }
     if (legalSheetOpen) { setLegalSheetOpen(false); return true; }
     if (timePickerOpen) { setTimePickerOpen(false); return true; }
-    if (speakingPracticeOpen) { setSpeakingPracticeOpen(false); return true; }
     if (topicPreviewOpen) { setTopicPreviewOpen(null); return true; }
     if (levelTestOfferOpen) { setLevelTestOfferOpen(null); return true; }
     // Reader open → back to the story list.
@@ -5722,8 +5869,12 @@ export function MobileLibraryShell(args: {
       interests: preferences.interests,
       learningGoal: preferences.learningGoal,
       dailyMinutes: preferences.dailyMinutes,
+      // Piloto: solo el plan `polyglot`. Es la capa de CLIENTE del gate; la
+      // ruta ademas devuelve 403 a cualquier otro plan. Sin esto el slot
+      // entraria en la sesion mixta de gente que no puede resolverlo.
+      speakingEnabled: effectivePlan === "polyglot",
     }),
-    [preferences.dailyMinutes, preferences.interests, preferences.learningGoal]
+    [effectivePlan, preferences.dailyMinutes, preferences.interests, preferences.learningGoal]
   );
   // Scope practice to the active journey language so changing language
   // anywhere (Favorites pill, Explore picker, Practice flag) actually
@@ -5888,9 +6039,16 @@ export function MobileLibraryShell(args: {
   const activePracticeCard =
     PRACTICE_MODE_CARDS.find(
       (card) => card.key === (currentPracticeExercise?.mode ?? activePracticeMode)
-    ) ?? (activePracticeMode === "mixed" ? MIXED_PRACTICE_CARD : null);
+    ) ??
+    (currentPracticeExercise?.kind === "speaking" || activePracticeMode === "speaking"
+      ? SPEAKING_PRACTICE_CARD
+      : null) ??
+    (activePracticeMode === "mixed" ? MIXED_PRACTICE_CARD : null);
   const currentPracticeFavoriteItem = useMemo<MobileFavoriteItem | null>(() => {
-    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return null;
+    // Speaking entra aqui igual que multiple-choice: lleva `favorite` y su
+    // palabra tiene que poder guardarse desde la cabecera de la sesion. Solo
+    // `match` queda fuera, porque son cuatro palabras a la vez y no una.
+    if (!currentPracticeExercise || currentPracticeExercise.kind === "match") return null;
     return {
       word: currentPracticeExercise.favorite.word,
       translation: currentPracticeExercise.favorite.translation,
@@ -9257,6 +9415,15 @@ export function MobileLibraryShell(args: {
     if (practicePaused) return;
     const current = practiceExercises[practiceIndex];
     if (!current) return;
+
+    // El turno hablado necesita mas aire que un multiple-choice: en pantalla
+    // hay transcripcion, la palabra recien revelada y una linea de feedback.
+    // Con 1,5 s el usuario no llega a leer lo que dijo.
+    if (current.kind === "speaking") {
+      const id = setTimeout(() => advancePractice(), 4000);
+      return () => clearTimeout(id);
+    }
+
     if (current.kind !== "multiple-choice" && current.kind !== "match") return;
 
     if (current.kind === "multiple-choice" && current.mode === "context") {
@@ -9378,8 +9545,16 @@ export function MobileLibraryShell(args: {
     if (practiceComplete) return;
     if (practicePaused) return;
     if (!currentPracticeExercise) return;
-    if (currentPracticeExercise.kind !== "multiple-choice") return;
-    if (currentPracticeExercise.mode !== "context") return;
+    // Contexto y hablado: los dos ensenan la frase COMPLETA al revelar y los
+    // dos la suenan. En el hablado es ademas la unica forma de oir bien lo que
+    // habia que decir cuando se ha fallado.
+    if (currentPracticeExercise.kind === "match") return;
+    if (
+      currentPracticeExercise.kind === "multiple-choice" &&
+      currentPracticeExercise.mode !== "context"
+    ) {
+      return;
+    }
     if (!currentPracticeExercise.audioClip) return;
     const exId = currentPracticeExercise.id;
     // Race guard: this effect re-runs whenever currentPracticeExercise
@@ -9508,6 +9683,24 @@ export function MobileLibraryShell(args: {
       })();
     };
     for (const ex of ahead) {
+      // El turno hablado suena la FRASE entera, igual que el de contexto, y es
+      // el que mas sufre la espera: su frase casi nunca tiene clip
+      // pre-horneado, asi que la primera reproduccion se sintetiza entera
+      // (ElevenLabs, ffmpeg y R2) mientras el usuario mira un boton mudo.
+      // Precargarlo desde el ejercicio ANTERIOR quita esa espera entera.
+      if (ex.kind === "speaking") {
+        const clipHablado = ex.audioClip;
+        const frase = clipHablado?.sentence?.trim();
+        if (frase) {
+          queueWarm(
+            frase,
+            clipHablado?.language ?? ex.language ?? activeJourneyLanguage ?? "italian",
+            clipHablado?.voiceId ?? ex.voiceId ?? undefined,
+            clipHablado?.cachedUrl ?? clipHablado?.clipUrl ?? null
+          );
+        }
+        continue;
+      }
       if (ex.kind !== "multiple-choice") continue;
       const clip = ex.audioClip;
       // #4: derivar del journey en vez de hardcodear un idioma; "italian" queda
@@ -9775,6 +9968,297 @@ export function MobileLibraryShell(args: {
       isCorrect && getPracticeComboTier(practiceSessionStreak + 1) >= 1
     );
   }
+
+  // Ejercicio hablado: la frase con hueco, el micro y el veredicto.
+  //
+  // No hay nada que pedirle a nadie. La frase con `_____` y su clip vienen en
+  // el propio ejercicio (son los de `fill_blank`), el reconocimiento lo pone
+  // el sistema operativo y la comparacion es local. Un turno entero sin salir
+  // del telefono, salvo el audio de la frase, que ya estaba cacheado en R2.
+
+  const currentSpeakingExercise =
+    currentPracticeExercise?.kind === "speaking" ? currentPracticeExercise : null;
+
+  /**
+   * Cuando el dispositivo no reconoce ese idioma, el slot se cambia por uno de
+   * `context` sobre la misma palabra: el builder ya sabe armarlo y la frase es
+   * la misma, asi que el usuario no nota un hueco en la tanda.
+   */
+  const replaceSpeakingWithContext = useCallback(
+    (exercise: PracticeSpeakingExercise) => {
+      const pool = practiceSeedItems ?? buildPracticeFavorites(journeyScopedFavoriteWords);
+      const target = pool.find(
+        (item) => normalizePracticeWord(item.word) === normalizePracticeWord(exercise.word)
+      );
+      const replacement = target
+        ? buildExercisesWithDistractors(
+            [target],
+            pool,
+            ["context", "meaning"],
+            onboardingPracticePrefs
+          )[0]
+        : undefined;
+      setPracticeExercises((current) => {
+        const index = current.findIndex((ex) => ex.id === exercise.id);
+        if (index < 0) return current;
+        const next = [...current];
+        if (replacement) next[index] = replacement;
+        else next.splice(index, 1);
+        return next;
+      });
+    },
+    [journeyScopedFavoriteWords, onboardingPracticePrefs, practiceSeedItems]
+  );
+
+  // Estado limpio al entrar en cada turno hablado.
+  useEffect(() => {
+    if (!currentSpeakingExercise?.id) return;
+    setSpeakingPhase("ready");
+    setSpeakingHeard("");
+    setSpeakingWordOnly(false);
+    setSpeakingError("");
+    setSpeakingEmptyRetried(false);
+    setSpeakingSecondsLeft(SPEAKING_ANSWER_SECONDS);
+    setSpeakingCountdownRunning(false);
+    speakingResolvedForRef.current = null;
+  }, [currentSpeakingExercise?.id]);
+
+  // ─── Cuenta atras del turno hablado ──────────────────────────────
+  //
+  // Tres effects y una regla: el reloj no corre mientras el usuario escucha.
+  //
+  // (1) ARRANQUE. Al terminar el audio de la frase, no al pintar: el tiempo
+  //     de contestar empieza cuando hay algo que contestar. Si la palabra no
+  //     tiene clip, o el audio falla, `contextAudioFinishedFor` se publica
+  //     igual y el reloj arranca en cuanto se pinta.
+  useEffect(() => {
+    const ex = currentSpeakingExercise;
+    if (!ex) return;
+    // Ya resuelto: `advancePractice` devuelve `practiceRevealed` a false al
+    // cerrar la sesion SIN avanzar el indice, asi que mirar solo eso reabriria
+    // el reloj encima de la pantalla de resultados.
+    if (isSpeakingTurnAlreadyResolved(speakingResolvedForRef.current, ex.id)) return;
+    if (practiceRevealed || practiceCountdownActive) return;
+    if (speakingCountdownRunning) return;
+    // Ya arranco y se paro (se esta grabando): no se rearma.
+    if (speakingSecondsLeft < SPEAKING_ANSWER_SECONDS) return;
+    if (speakingRecorder.isRecording) return;
+    const esperaAudio = Boolean(ex.audioClip) && contextAudioFinishedFor !== ex.id;
+    if (esperaAudio) return;
+    setSpeakingCountdownRunning(true);
+  }, [
+    currentSpeakingExercise,
+    contextAudioFinishedFor,
+    practiceRevealed,
+    practiceCountdownActive,
+    speakingCountdownRunning,
+    speakingSecondsLeft,
+    speakingRecorder.isRecording,
+  ]);
+
+  // (2) TICK. Se congela con la pausa de la sesion, como los otros relojes.
+  useEffect(() => {
+    if (!speakingCountdownRunning) return;
+    if (practicePaused || practiceRevealed) return;
+    if (speakingSecondsLeft <= 0) return;
+    const id = setTimeout(() => {
+      setSpeakingSecondsLeft((value) => Math.max(0, value - 1));
+    }, 1000);
+    return () => clearTimeout(id);
+  }, [speakingCountdownRunning, practicePaused, practiceRevealed, speakingSecondsLeft]);
+
+  // (3) CERO sin haber hablado: cuenta como fallo, con la frase completa y su
+  //     audio, y de ahi sigue el auto-avance normal. El temporizador generico
+  //     de 15 s de la sesion NO aplica a este tipo; este lo sustituye.
+  useEffect(() => {
+    if (!speakingCountdownRunning) return;
+    if (speakingSecondsLeft > 0) return;
+    if (practiceRevealed) return;
+    const ex = currentSpeakingExercise;
+    if (!ex) return;
+    setSpeakingCountdownRunning(false);
+    setSpeakingHeard("");
+    setSpeakingWordOnly(false);
+    setSpeakingPhase("done");
+    resolveSpeakingAnswer(ex, false);
+  }, [speakingCountdownRunning, speakingSecondsLeft, practiceRevealed, currentSpeakingExercise]);
+
+  // Latido de los dos anillos del boton de micro. Solo corre mientras hay
+  // turno hablado sin revelar; parado, no gasta frames de fondo.
+  useEffect(() => {
+    if (!currentSpeakingExercise?.id || practiceRevealed) {
+      speakingPulseA.stopAnimation();
+      speakingPulseB.stopAnimation();
+      speakingPulseA.setValue(0);
+      speakingPulseB.setValue(0);
+      return;
+    }
+    const cicloA = Animated.loop(
+      Animated.timing(speakingPulseA, {
+        toValue: 1,
+        duration: 1600,
+        easing: Easing.out(Easing.ease),
+        useNativeDriver: true,
+      })
+    );
+    const cicloB = Animated.loop(
+      Animated.timing(speakingPulseB, {
+        toValue: 1,
+        duration: 1600,
+        easing: Easing.out(Easing.ease),
+        useNativeDriver: true,
+      })
+    );
+    cicloA.start();
+    // Medio ciclo de desfase, para que siempre haya un anillo saliendo.
+    const desfase = setTimeout(() => cicloB.start(), 800);
+    return () => {
+      clearTimeout(desfase);
+      cicloA.stop();
+      cicloB.stop();
+      speakingPulseA.setValue(0);
+      speakingPulseB.setValue(0);
+    };
+  }, [currentSpeakingExercise?.id, practiceRevealed, speakingPulseA, speakingPulseB]);
+
+  // Al salir del slot hablado (o de la sesion) se corta el turno en seco.
+  const speakingRecorderCancel = speakingRecorder.cancel;
+  useEffect(() => {
+    if (currentSpeakingExercise?.id) return;
+    speakingRecorderCancel();
+  }, [currentSpeakingExercise?.id, speakingRecorderCancel]);
+
+  /**
+   * Mismo contrato que `resolvePracticeMultipleChoiceAnswer`: nota de SRS,
+   * marcador, racha de la sesion y sonido de feedback. Sin esto el turno
+   * hablado se veria pero no contaria para nada.
+   */
+  function resolveSpeakingAnswer(current: PracticeSpeakingExercise, isCorrect: boolean) {
+    // CANDADO. Un turno se resuelve UNA vez, y aqui se cierra la puerta a las
+    // tres vias que apuntan a este mismo sitio: el reloj de contestar, el
+    // resultado del reconocedor y su parada automatica.
+    if (isSpeakingTurnAlreadyResolved(speakingResolvedForRef.current, current.id)) return;
+    speakingResolvedForRef.current = current.id;
+    // Y se apagan las dos que pueden seguir vivas: el reloj deja de correr y
+    // el microfono se aborta sin entregar resultado.
+    setSpeakingCountdownRunning(false);
+    speakingRecorder.cancel();
+
+    practiceAnswerT0Ref.current = Date.now();
+    revealedSlotIdRef.current = current.id;
+    setPracticeRevealed(true);
+    setPracticeTimedOut(false);
+    setPracticeReviewScores((currentScores) => ({
+      ...currentScores,
+      [normalizePracticeWord(current.favorite.word)]: isCorrect ? "good" : "again",
+    }));
+    if (isCorrect) {
+      setPracticeScore((value) => value + 1);
+      setPracticeLastResult("correct");
+      setPracticeSessionStreak((value) => value + 1);
+    } else {
+      setPracticeLastResult("wrong");
+      setPracticeSessionStreak(0);
+    }
+    void playPracticeFeedbackSound(
+      isCorrect,
+      isCorrect && getPracticeComboTier(practiceSessionStreak + 1) >= 1
+    );
+  }
+
+  /** Nada reconocido: UN reintento sin penalizar, el segundo ya cuenta. */
+  function handleSpeakingEmpty(exercise: PracticeSpeakingExercise) {
+    if (!speakingEmptyRetried) {
+      setSpeakingEmptyRetried(true);
+      setSpeakingError("I couldn't hear you. One more try.");
+      setSpeakingPhase("ready");
+      return;
+    }
+    setSpeakingHeard("");
+    setSpeakingWordOnly(false);
+    setSpeakingPhase("done");
+    resolveSpeakingAnswer(exercise, false);
+  }
+
+  function startSpeakingTurn() {
+    const exercise = currentSpeakingExercise;
+    if (!exercise) return;
+    setSpeakingError("");
+    // El audio de la frase no puede seguir sonando con el micro abierto.
+    void stopPracticeHqClip("speaking-start");
+    void stopPracticeContextClip();
+    getOptionalSpeechModule()?.stop();
+
+    void (async () => {
+      const result = await speakingRecorder.start(exercise.language, {
+        onFinal: (heard) => {
+          setSpeakingHeard(heard);
+          setSpeakingError("");
+          setSpeakingPhase("done");
+          // G4: la palabra Y al menos la mitad del resto de la frase. Decir la
+          // palabra suelta ya no basta; el ejercicio pide hablar.
+          const verdict = gradeSentence(heard, exercise.word, exercise.surface, exercise.sentence);
+          setSpeakingWordOnly(verdict.wordSaid && !verdict.correct);
+          resolveSpeakingAnswer(exercise, verdict.correct);
+        },
+        onFailure: (code) => {
+          if (code === "not-allowed" || code === "service-not-allowed") {
+            // Permiso denegado: el ejercicio se salta SIN nota y la sesion
+            // sigue. No es un fallo del usuario.
+            void trackPracticeMetric("speaking_skipped_no_mic", {
+              mode: "speaking",
+              word: exercise.word,
+            });
+            advancePractice();
+            return;
+          }
+          if (code === "language-not-supported") {
+            void trackPracticeMetric("speaking_skipped_no_recognizer", {
+              mode: "speaking",
+              word: exercise.word,
+              language: exercise.language,
+            });
+            replaceSpeakingWithContext(exercise);
+            return;
+          }
+          handleSpeakingEmpty(exercise);
+        },
+      });
+
+      if (result.ok) {
+        // El reloj se detiene aqui: a partir de ahora manda el tope de la
+        // grabacion (12 s en el hook), no el de contestar.
+        setSpeakingCountdownRunning(false);
+        setSpeakingPhase("listening");
+        return;
+      }
+      if (result.reason === "denied") {
+        void trackPracticeMetric("speaking_skipped_no_mic", {
+          mode: "speaking",
+          word: exercise.word,
+        });
+        advancePractice();
+        return;
+      }
+      if (result.reason === "unavailable") {
+        void trackPracticeMetric("speaking_skipped_no_recognizer", {
+          mode: "speaking",
+          word: exercise.word,
+          language: exercise.language,
+        });
+        replaceSpeakingWithContext(exercise);
+        return;
+      }
+      setSpeakingPhase("ready");
+      setSpeakingError("Couldn't start listening. Try again.");
+    })();
+  }
+
+  /** Parar a mano: el resultado final llega por los callbacks de arriba. */
+  function submitSpeakingTurn() {
+    speakingRecorder.stop();
+  }
+
 
   function triggerPracticeComboToast(nextStreak: number) {
     const tier = getPracticeComboTier(nextStreak);
@@ -10153,8 +10637,8 @@ export function MobileLibraryShell(args: {
       // que no lo hacian, y en iOS eso significa que suenan con el modo que
       // dejara el ultimo que lo toco: si venia de un modo con
       // allowsRecordingIOS true, la salida se enruta al auricular y el sonido
-      // queda inaudible. PracticeSpeaking ya documenta la invariante ("la ruta
-      // normal de playback, que SIEMPRE lo pone en false").
+      // queda inaudible. `useSpeakingRecorder` documenta la invariante: la
+      // ruta normal de playback SIEMPRE lo pone en false.
       //
       // CORRECCION 2026-08-06: aqui decia "en Android estos flags son no-ops,
       // el fallo solo se nota en iPhone". Es FALSO, y era deduccion mia a
@@ -11197,7 +11681,7 @@ export function MobileLibraryShell(args: {
 
   async function playPracticeContextClipHqOnly() {
     showDebug(`playHqOnly entry exId=${currentPracticeExercise?.id?.slice(-6)} kind=${currentPracticeExercise?.kind}`);
-    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") { showDebug("playHqOnly skip: not multiple-choice"); return; }
+    if (!currentPracticeExercise || currentPracticeExercise.kind === "match") { showDebug("playHqOnly skip: match no lleva clip"); return; }
     const clip = currentPracticeExercise.audioClip;
     if (!clip?.sentence) { showDebug("playHqOnly skip: no clip.sentence"); return; }
     if (playingHqPracticeClipId === currentPracticeExercise.id) {
@@ -11298,7 +11782,13 @@ export function MobileLibraryShell(args: {
     }
 
     const exIdAtPlay = currentPracticeExercise.id;
-    const isContextAtPlay = currentPracticeExercise.mode === "context";
+    // Publican "el audio termino" el ejercicio de contexto (que lo usa para
+    // el auto-avance) y el hablado (que arranca ahi su cuenta atras). En los
+    // dos casos el aviso se manda tambien cuando el audio FALLA, para que
+    // nadie se quede esperando a un sonido que no va a llegar.
+    const isContextAtPlay =
+      currentPracticeExercise.mode === "context" ||
+      currentPracticeExercise.kind === "speaking";
 
     try {
       await Audio.setAudioModeAsync({
@@ -11404,7 +11894,9 @@ export function MobileLibraryShell(args: {
    * who want to hear the line in the narrator's voice (with ambient).
    */
   async function playPracticeContextClipBest() {
-    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
+    // `match` es el unico tipo sin `audioClip`; el hablado lleva el mismo que
+    // `fill_blank`, asi que suena por esta misma ruta y no por una paralela.
+    if (!currentPracticeExercise || currentPracticeExercise.kind === "match") return;
     const clip = currentPracticeExercise.audioClip;
     if (!clip) return;
     try {
@@ -11417,7 +11909,7 @@ export function MobileLibraryShell(args: {
   }
 
   async function playPracticeContextClip() {
-    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
+    if (!currentPracticeExercise || currentPracticeExercise.kind === "match") return;
     const clip = currentPracticeExercise.audioClip;
     if (!clip) return;
 
@@ -12147,7 +12639,15 @@ export function MobileLibraryShell(args: {
   }, [favoriteWords, practiceExercises]);
 
   async function trackPracticeMetric(
-    eventType: "practice_session_started" | "practice_session_completed",
+    eventType:
+      | "practice_session_started"
+      | "practice_session_completed"
+      // Los dos turnos hablados que NO llegan a jugarse y no puntuan: el que
+      // se salta porque el usuario nego el permiso, y el que cae a `context`
+      // porque el dispositivo no reconoce ese idioma. Son problemas distintos
+      // y se miden por separado.
+      | "speaking_skipped_no_mic"
+      | "speaking_skipped_no_recognizer",
     extra?: Record<string, unknown>
   ) {
     if (!sessionToken || !activePracticeSeedFavorite) return;
@@ -12297,6 +12797,10 @@ export function MobileLibraryShell(args: {
   useEffect(() => {
     practiceStartTrackedRef.current = false;
     practiceCompletionTrackedRef.current = false;
+    // El id del turno hablado es `speaking:<palabra>`, asi que repetir la tanda
+    // con la misma palabra reusa el id y el effect de reset por ejercicio no
+    // llega a correr. Sin limpiar aqui, el turno nacería ya resuelto.
+    speakingResolvedForRef.current = null;
   }, [activePracticeMode, practiceExercises.length]);
 
   useEffect(() => {
@@ -13978,7 +14482,7 @@ export function MobileLibraryShell(args: {
   // pool general cuando dueItems está vacío.
   const orbitModeBreakdown = useMemo(() => {
     if (duePracticeItems.length === 0) {
-      return { meaning: 0, context: 0, listening: 0, match: 0 };
+      return { meaning: 0, context: 0, listening: 0, match: 0, speaking: 0 };
     }
     const sizeFor = (mode: OrbitModeKey) =>
       buildPracticeExercisesFromItems(duePracticeItems, mode, false, onboardingPracticePrefs).length;
@@ -13987,6 +14491,11 @@ export function MobileLibraryShell(args: {
       context: sizeFor("context"),
       listening: sizeFor("listening"),
       match: sizeFor("match"),
+      // Con el plan `polyglot` cuenta como cualquier otra skill. Sin el sale
+      // CERO por partida doble: `speakingEnabled` es false en las prefs, asi
+      // que `sizeFor` ya devolveria 0, y ademas la orbita no pinta su tarjeta.
+      // Nadie que no pueda resolverlo lo ve en el anillo ni en la rejilla.
+      speaking: sizeFor("speaking"),
     };
   }, [duePracticeItems, onboardingPracticePrefs]);
 
@@ -14107,30 +14616,10 @@ export function MobileLibraryShell(args: {
             onEmptyTap={() => setSaveWordsHintVisible(true)}
             reviewSoonCount={reviewSoon.count}
             reviewSoonMinutes={reviewSoon.minutes}
+            // Misma condicion que abre el slot de la sesion mixta: el piloto
+            // hablado es del plan `polyglot` y de nadie mas.
+            speakingEnabled={effectivePlan === "polyglot"}
           />
-          {effectivePlan === "polyglot" ? (
-            <Pressable
-              onPress={() => setSpeakingPracticeOpen(true)}
-              accessibilityRole="button"
-              accessibilityLabel="Open Speak with AI"
-              testID="qa-practice-speaking-entry"
-              style={({ pressed }) => [
-                styles.speakingEntryCard,
-                pressed ? styles.speakingEntryCardPressed : null,
-              ]}
-            >
-              <View style={styles.speakingEntryIcon}>
-                <Feather name="mic" size={20} color="#f8c15c" />
-              </View>
-              <View style={{ flex: 1 }}>
-                <Text style={styles.speakingEntryTitle}>Speak with AI</Text>
-                <Text style={styles.speakingEntrySubtitle}>
-                  Answer one question out loud
-                </Text>
-              </View>
-              <Feather name="chevron-right" size={20} color="#9cb0c9" />
-            </Pressable>
-          ) : null}
         </>
       )}
     </>
@@ -14142,8 +14631,29 @@ export function MobileLibraryShell(args: {
   // declarados más abajo. Sin esto el "next-step CTA" del result card
   // dispararía ReferenceError por TDZ.
   const renderPracticeSessionView = () => {
+    // El turno hablado tiene SU reloj (10 s, arranca al acabar el audio), pero
+    // se enseña con la insignia y la barra de siempre: que cada tipo invente
+    // su forma de mostrar el tiempo es lo que hacia la pastilla, y sobraba.
+    const isSpeakingSlot = currentPracticeExercise?.kind === "speaking";
+    const timerSecondsLeft = isSpeakingSlot ? speakingSecondsLeft : practiceTimerRemaining;
+    const timerTotalSeconds = isSpeakingSlot
+      ? SPEAKING_ANSWER_SECONDS
+      : currentPracticeExercise?.kind === "match"
+        ? 20
+        : 15;
     const timerVisualColor =
-      practiceTimerRemaining <= 2 ? "#ff5f5f" : practiceTimerRemaining <= 5 ? "#ff9a57" : "#f8c15c";
+      timerSecondsLeft <= 2 ? "#ff5f5f" : timerSecondsLeft <= 5 ? "#ff9a57" : "#f8c15c";
+    /**
+     * Cuando NO se enseña el tiempo. En el hablado hay dos momentos mas que en
+     * los otros tipos: mientras se graba (ahi manda el tope del microfono, no
+     * el de contestar) y en cuanto se responde.
+     */
+    const timerHidden =
+      practiceCountdownActive ||
+      practiceComplete ||
+      practiceLaunchLoading ||
+      (isSpeakingSlot &&
+        (practiceRevealed || speakingRecorder.isRecording || speakingPhase !== "ready"));
     return activePracticeMode && activePracticeCard ? (
       <View
         style={[
@@ -14245,13 +14755,13 @@ export function MobileLibraryShell(args: {
               </View>
             </View>
             {(() => {
-              // Badge "Xs" arriba a la derecha. Visible para
-              // multiple-choice (10 s) y para match (20 s). En match se
-              // oculta cuando todos los pares ya están matched para no
-              // distraer en los últimos 1-2 segundos antes del auto-advance.
-              if (practiceCountdownActive || practiceComplete || practiceLaunchLoading) return null;
+              // Badge "Xs" arriba a la derecha. Visible para multiple-choice
+              // (15 s), match (20 s) y el hablado (10 s). En match se oculta
+              // cuando todos los pares ya están matched para no distraer en
+              // los últimos 1-2 segundos antes del auto-advance.
+              if (timerHidden) return null;
               const kind = currentPracticeExercise?.kind;
-              if (kind !== "multiple-choice" && kind !== "match") return null;
+              if (kind !== "multiple-choice" && kind !== "match" && kind !== "speaking") return null;
               if (kind === "match" && currentPracticeExercise && matchedWords.length >= currentPracticeExercise.pairs.length) {
                 return null;
               }
@@ -14263,30 +14773,30 @@ export function MobileLibraryShell(args: {
                   ]}
                 >
                   <Text style={[styles.practiceTimerBadgeText, { color: timerVisualColor }]}>
-                    {practiceTimerRemaining}s
+                    {timerSecondsLeft}s
                   </Text>
                 </View>
               );
             })()}
           </View>
 
-          {/* Barra de timer del ejercicio: multiple-choice = 10 s,
-              match = 20 s. Misma regla de visibilidad que el badge. */}
+          {/* Barra de timer del ejercicio: multiple-choice = 15 s,
+              match = 20 s, hablado = 10 s. Misma regla de visibilidad que
+              el badge, y el mismo par de valores. */}
           {(() => {
-            if (practiceCountdownActive || practiceComplete || practiceLaunchLoading) return null;
+            if (timerHidden) return null;
             const kind = currentPracticeExercise?.kind;
-            if (kind !== "multiple-choice" && kind !== "match") return null;
+            if (kind !== "multiple-choice" && kind !== "match" && kind !== "speaking") return null;
             if (kind === "match" && currentPracticeExercise && matchedWords.length >= currentPracticeExercise.pairs.length) {
               return null;
             }
-            const totalSec = kind === "match" ? 20 : 15;
             return (
               <View style={styles.practiceTimerBarTrack}>
                 <View
                   style={[
                     styles.practiceTimerBarFill,
                     {
-                      width: `${Math.max(0, Math.min(100, (practiceTimerRemaining / totalSec) * 100))}%`,
+                      width: `${Math.max(0, Math.min(100, (timerSecondsLeft / timerTotalSeconds) * 100))}%`,
                       backgroundColor: timerVisualColor,
                     },
                   ]}
@@ -15167,6 +15677,218 @@ export function MobileLibraryShell(args: {
                   </View>
                     );
                   })()
+                ) : currentPracticeExercise.kind === "speaking" ? (
+                  (() => {
+                    const ex = currentPracticeExercise;
+                    const audioActive =
+                      playingPracticeClipId === ex.id || playingHqPracticeClipId === ex.id;
+                    const audioLoading = loadingPracticeAudioId === ex.id;
+                    // El anillo se VACIA con la cuenta atras: `strokeDashoffset`
+                    // va de 0 (entero) a la circunferencia (vacio).
+                    const ringOffset =
+                      SPEAKING_RING_CIRCUMFERENCE *
+                      (1 - Math.max(0, Math.min(1, speakingSecondsLeft / SPEAKING_ANSWER_SECONDS)));
+                    return (
+                  <View style={styles.speakingShell}>
+                    {/* Tarjeta ambar: SOLO la frase. Es lo unico que el usuario
+                        tiene que leer mientras piensa la palabra. */}
+                    <View style={styles.speakingSentenceCard}>
+                      <Text style={styles.speakingSentenceText}>
+                        {practiceRevealed
+                          ? ex.sentence
+                          : renderSpeakingBlank(ex.blanked, ex.surface || ex.word)}
+                      </Text>
+                      <Pressable
+                        onPress={() => void playPracticeContextClipBest()}
+                        disabled={audioLoading}
+                        accessibilityRole="button"
+                        accessibilityLabel="Play the sentence again"
+                        testID="qa-speaking-replay"
+                        style={styles.speakingReplayButton}
+                      >
+                        {audioLoading ? (
+                          <ActivityIndicator size="small" color="#2a1a05" />
+                        ) : (
+                          <Feather
+                            name={audioActive ? "volume-2" : "play"}
+                            size={12}
+                            color="#2a1a05"
+                          />
+                        )}
+                        {/* Tres estados, no dos: decir PLAYING mientras se
+                            sintetiza la frase era mentir durante varios
+                            segundos de silencio. */}
+                        <Text style={styles.speakingReplayText}>
+                          {audioLoading
+                            ? "LOADING AUDIO"
+                            : audioActive
+                              ? "PLAYING"
+                              : "PLAY AGAIN"}
+                        </Text>
+                      </Pressable>
+                    </View>
+
+                    {speakingPhase === "done" || practiceRevealed ? (
+                      <>
+                        <View style={styles.speakingAnswerCard}>
+                          <Text style={styles.speakingCardLabel}>YOU SAID</Text>
+                          <Text style={styles.speakingAnswerText}>
+                            {speakingHeard || "I couldn't hear you."}
+                          </Text>
+                          {/* La traduccion de la FRASE, como segunda linea de
+                              esta misma tarjeta: lo que dijiste y lo que
+                              significa, juntos. Sin traduccion no se pinta ni
+                              la etiqueta. */}
+                          {ex.sentenceTranslation ? (
+                            <>
+                              <Text style={styles.speakingMeaningLabel}>MEANING</Text>
+                              <Text style={styles.speakingSentenceTranslation}>
+                                {ex.sentenceTranslation}
+                              </Text>
+                            </>
+                          ) : null}
+                        </View>
+                        <View
+                          style={[
+                            styles.speakingRevealCard,
+                            practiceLastResult === "correct"
+                              ? styles.speakingRevealCardOk
+                              : styles.speakingRevealCardWrong,
+                          ]}
+                        >
+                          <Feather
+                            name={practiceLastResult === "correct" ? "check" : "x"}
+                            size={16}
+                            color={practiceLastResult === "correct" ? "#86efac" : "#fb7185"}
+                          />
+                          {/* La palabra se revela SOLO ahora. */}
+                          <Text style={styles.speakingRevealWord}>{ex.word}</Text>
+                        </View>
+                        {speakingWordOnly ? (
+                          // Dijo la palabra y se quedo ahi. Merece un fallo
+                          // distinto del de no haberla dicho: sabia la palabra.
+                          <Text style={styles.speakingHintNote}>
+                            You said the word. Now try the whole sentence.
+                          </Text>
+                        ) : null}
+                      </>
+                    ) : (
+                      /* El microfono vive en el CUERPO, centrado, no en el pie:
+                         es el protagonista de la pantalla y el pie solo guarda
+                         el boton de avanzar. */
+                      <View style={styles.speakingMicWrap}>
+                        <View style={styles.speakingMicStage}>
+                          <Svg
+                            width={SPEAKING_RING_SIZE}
+                            height={SPEAKING_RING_SIZE}
+                            style={StyleSheet.absoluteFill}
+                          >
+                            <Circle
+                              cx={SPEAKING_RING_SIZE / 2}
+                              cy={SPEAKING_RING_SIZE / 2}
+                              r={SPEAKING_RING_RADIUS}
+                              fill="none"
+                              stroke="rgba(255,255,255,0.08)"
+                              strokeWidth={6}
+                            />
+                            <Circle
+                              cx={SPEAKING_RING_SIZE / 2}
+                              cy={SPEAKING_RING_SIZE / 2}
+                              r={SPEAKING_RING_RADIUS}
+                              fill="none"
+                              stroke="#f8c15c"
+                              strokeWidth={6}
+                              strokeLinecap="round"
+                              strokeDasharray={`${SPEAKING_RING_CIRCUMFERENCE}`}
+                              strokeDashoffset={ringOffset}
+                              transform={`rotate(-90 ${SPEAKING_RING_SIZE / 2} ${SPEAKING_RING_SIZE / 2})`}
+                            />
+                          </Svg>
+                          {/* Dos anillos que laten, desfasados medio ciclo. */}
+                          <Animated.View
+                            pointerEvents="none"
+                            style={[
+                              styles.speakingMicPulse,
+                              {
+                                opacity: speakingPulseA.interpolate({
+                                  inputRange: [0, 1],
+                                  outputRange: [0.55, 0],
+                                }),
+                                transform: [
+                                  {
+                                    scale: speakingPulseA.interpolate({
+                                      inputRange: [0, 1],
+                                      outputRange: [1, 1.9],
+                                    }),
+                                  },
+                                ],
+                              },
+                            ]}
+                          />
+                          <Animated.View
+                            pointerEvents="none"
+                            style={[
+                              styles.speakingMicPulse,
+                              {
+                                opacity: speakingPulseB.interpolate({
+                                  inputRange: [0, 1],
+                                  outputRange: [0.55, 0],
+                                }),
+                                transform: [
+                                  {
+                                    scale: speakingPulseB.interpolate({
+                                      inputRange: [0, 1],
+                                      outputRange: [1, 1.9],
+                                    }),
+                                  },
+                                ],
+                              },
+                            ]}
+                          />
+                          <Pressable
+                            onPress={
+                              speakingRecorder.isRecording || speakingPhase === "listening"
+                                ? submitSpeakingTurn
+                                : startSpeakingTurn
+                            }
+                            accessibilityRole="button"
+                            accessibilityLabel={
+                              speakingRecorder.isRecording || speakingPhase === "listening"
+                                ? "Stop listening and check"
+                                : "Say the missing word"
+                            }
+                            testID={
+                              speakingRecorder.isRecording || speakingPhase === "listening"
+                                ? "qa-speaking-stop"
+                                : "qa-speaking-record"
+                            }
+                            style={styles.speakingMicButton}
+                          >
+                            <Feather
+                              name={
+                                speakingRecorder.isRecording || speakingPhase === "listening"
+                                  ? "square"
+                                  : "mic"
+                              }
+                              size={28}
+                              color="#2a1a05"
+                            />
+                          </Pressable>
+                        </View>
+                        <Text style={styles.speakingMicCaption}>
+                          {speakingRecorder.isRecording || speakingPhase === "listening"
+                            ? "TAP WHEN YOU ARE DONE"
+                            : "TAP AND SAY THE WHOLE SENTENCE"}
+                        </Text>
+                      </View>
+                    )}
+
+                    {speakingError ? (
+                      <Text style={styles.speakingErrorText}>{speakingError}</Text>
+                    ) : null}
+                  </View>
+                    );
+                  })()
                 ) : (() => {
                   const totalPairs = currentPracticeExercise.pairs.length;
                   const matchedCount = matchedWords.length;
@@ -15491,6 +16213,11 @@ export function MobileLibraryShell(args: {
                   >
                     <Text style={[styles.inlineButtonText, styles.primaryButtonText, styles.practiceMeaningFooterButtonText]}>Check answer</Text>
                   </Pressable>
+                ) : currentPracticeExercise.kind === "speaking" ? (
+                  // El microfono del turno hablado vive en el CUERPO, centrado
+                  // bajo la tarjeta ambar. Aqui no queda nada: el pie solo
+                  // guarda el boton de avanzar, que pinta la rama de arriba.
+                  null
                 ) : currentPracticeExercise.kind === "match" ? (() => {
                   // Match footer: sólo hint. El veredicto se dispara
                   // solo desde el effect de auto-validación (~350 ms
@@ -20021,27 +20748,6 @@ export function MobileLibraryShell(args: {
         vocabWords={selectedBookVocabList.map((item) => item.word)}
         aboutText={selectedBook.description?.trim() || selectedBook.subtitle?.trim() || "No description available yet."}
       />
-    );
-  }
-
-  if (speakingPracticeOpen) {
-    const speakingLanguage =
-      activeJourney?.language ??
-      activeJourneyLanguage ??
-      preferences.targetLanguages[0] ??
-      settingsPrimaryLanguage ??
-      "Spanish";
-    const speakingLevel = preferences.preferredLevel || "Intermediate";
-    return (
-      <View style={{ flex: 1, paddingTop: 32 }}>
-        <PracticeSpeaking
-          baseUrl={mobileConfig.apiBaseUrl}
-          token={sessionToken ?? null}
-          language={speakingLanguage}
-          level={speakingLevel}
-          onClose={() => setSpeakingPracticeOpen(false)}
-        />
-      </View>
     );
   }
 
@@ -26217,42 +26923,6 @@ const styles = StyleSheet.create({
     paddingTop: 32,
     paddingBottom: 22,
   },
-  speakingEntryCard: {
-    marginTop: 16,
-    marginHorizontal: 20,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 12,
-    backgroundColor: "#152844",
-    borderColor: "#2d476b",
-    borderWidth: 1,
-    borderRadius: 16,
-    paddingVertical: 14,
-    paddingHorizontal: 16,
-  },
-  speakingEntryCardPressed: {
-    opacity: 0.85,
-    transform: [{ scale: 0.99 }],
-  },
-  speakingEntryIcon: {
-    width: 40,
-    height: 40,
-    borderRadius: 12,
-    backgroundColor: "rgba(248,193,92,0.18)",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  speakingEntryTitle: {
-    color: "#ffffff",
-    fontSize: 15,
-    fontWeight: "900",
-  },
-  speakingEntrySubtitle: {
-    color: "#9cb0c9",
-    fontSize: 12,
-    fontWeight: "600",
-    marginTop: 2,
-  },
   practiceSessionShellCompact: {
     paddingHorizontal: 16,
     paddingTop: 24,
@@ -27343,6 +28013,168 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     alignItems: "center",
     justifyContent: "center",
+  },
+  // Ejercicio hablado. Coral, el mismo acento que la orbita le da al modo.
+  // Turno hablado, diseno "Ambar" (elegido por el usuario entre mockups el
+  // 2026-09-14). Los valores salen del mockup, no de aproximarlos.
+  speakingShell: {
+    flex: 1,
+    gap: 18,
+  },
+  // La tarjeta ambar lleva SOLO la frase: es lo unico que hay que leer
+  // mientras se piensa la palabra.
+  speakingSentenceCard: {
+    borderRadius: 28,
+    backgroundColor: "#f8c15c",
+    paddingVertical: 24,
+    paddingHorizontal: 22,
+    gap: 16,
+    alignItems: "flex-start",
+    // Sin sombra: la de color del diseno se veia en el telefono como un halo
+    // amarillo debajo de la tarjeta, no como profundidad.
+  },
+  speakingSentenceText: {
+    color: "#2a1a05",
+    fontSize: 28,
+    fontWeight: "900",
+    lineHeight: 34,
+    letterSpacing: -0.3,
+  },
+  /** El hueco: la raya sobre la que se escribe, sin fondo.
+   *  `height` 24 y no 30: con 30 el View empujaba la linea y rompia el
+   *  `lineHeight` de 34 de la frase, que es lo que la mantiene legible en dos
+   *  y tres lineas. El ancho lo pone `speakingBlankWidth`. */
+  speakingBlankSlot: {
+    height: 24,
+    borderBottomWidth: 4,
+    borderBottomColor: "rgba(42,26,5,0.55)",
+    marginHorizontal: 3,
+  },
+  speakingReplayButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderRadius: 999,
+    backgroundColor: "rgba(42,26,5,0.14)",
+  },
+  speakingReplayText: {
+    color: "#2a1a05",
+    fontSize: 10,
+    fontWeight: "900",
+    letterSpacing: 1,
+  },
+  speakingMicWrap: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 14,
+  },
+  speakingMicStage: {
+    width: 168,
+    height: 168,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  speakingMicPulse: {
+    position: "absolute",
+    width: 112,
+    height: 112,
+    borderRadius: 999,
+    backgroundColor: "rgba(248,193,92,0.28)",
+  },
+  speakingMicButton: {
+    width: 112,
+    height: 112,
+    borderRadius: 999,
+    backgroundColor: "#f8c15c",
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: "#f8c15c",
+    shadowOpacity: 0.35,
+    shadowRadius: 20,
+    shadowOffset: { width: 0, height: 16 },
+    elevation: 10,
+  },
+  speakingMicCaption: {
+    color: "#9cb0c9",
+    fontSize: 10,
+    fontWeight: "800",
+    letterSpacing: 1.3,
+  },
+  speakingAnswerCard: {
+    marginTop: 14,
+    backgroundColor: "rgba(255,255,255,0.04)",
+    borderColor: "rgba(255,255,255,0.06)",
+    borderWidth: 1,
+    borderRadius: 16,
+    padding: 14,
+  },
+  speakingCardLabel: {
+    color: "#9cb0c9",
+    fontSize: 10,
+    fontWeight: "800",
+    letterSpacing: 1.3,
+    marginBottom: 5,
+  },
+  speakingAnswerText: {
+    color: "#e8eefb",
+    fontSize: 16,
+    fontWeight: "600",
+    lineHeight: 22,
+  },
+  speakingRevealCard: {
+    marginTop: 10,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    borderWidth: 1,
+    borderRadius: 16,
+    paddingVertical: 12,
+    paddingHorizontal: 14,
+  },
+  speakingRevealCardOk: {
+    backgroundColor: "rgba(134,239,172,0.10)",
+    borderColor: "rgba(134,239,172,0.30)",
+  },
+  speakingRevealCardWrong: {
+    backgroundColor: "rgba(251,113,133,0.10)",
+    borderColor: "rgba(251,113,133,0.30)",
+  },
+  speakingRevealWord: {
+    color: "#ffffff",
+    fontSize: 20,
+    fontWeight: "900",
+    flexShrink: 1,
+  },
+  speakingMeaningLabel: {
+    color: "#9cb0c9",
+    fontSize: 10,
+    fontWeight: "800",
+    letterSpacing: 1.3,
+    marginTop: 12,
+    marginBottom: 5,
+  },
+  speakingSentenceTranslation: {
+    color: "#cdd9ec",
+    fontSize: 14,
+    fontWeight: "600",
+    fontStyle: "italic",
+    lineHeight: 20,
+  },
+  speakingHintNote: {
+    marginTop: 10,
+    color: "#f8c15c",
+    fontSize: 13,
+    fontWeight: "700",
+    lineHeight: 18,
+  },
+  speakingErrorText: {
+    marginTop: 10,
+    color: "#ffd2d2",
+    fontSize: 13,
+    fontWeight: "600",
   },
   practiceFooterHint: {
     color: "rgba(226,232,244,0.74)",

@@ -58,6 +58,16 @@ import {
   type OnboardingPracticePrefs,
 } from "@/lib/onboarding";
 import { isStandaloneSourcePath } from "@/lib/storySource";
+
+/**
+ * Los modos que la web SI ensena. El turno hablado es un piloto de MOVIL: pide
+ * microfono del telefono y la voz del personaje, y la web queda fuera a
+ * proposito (spec, seccion 7). El alias hace que el compilador lo recuerde por
+ * nosotros en cada Record y en cada switch de esta pagina.
+ */
+type WebPracticeMode = Exclude<PracticeMode, "speaking">;
+/** Un ejercicio de los que esta pagina sabe pintar. */
+type WebPracticeExercise = Exclude<PracticeExercise, { type: "speaking" }>;
 import { PRACTICE_FROM_APP_KEY } from "@/lib/practiceNavigation";
 import { PracticeExitConfirm } from "@/components/PracticeExitConfirm";
 import { PracticeCountdown } from "@/components/PracticeCountdown";
@@ -267,7 +277,7 @@ function timerDurationForExercise(exercise: PracticeExercise | null): number {
   return exercise?.type === "match_meaning" ? 20 : 15;
 }
 
-function getModeLabel(mode: PracticeMode): string {
+function getModeLabel(mode: WebPracticeMode): string {
   switch (mode) {
     case "meaning":
       return "Meaning";
@@ -290,7 +300,7 @@ const matchColorClasses = [
 ];
 
 const modeThemeByMode: Record<
-  PracticeMode,
+  WebPracticeMode,
   {
     title: string;
     eyebrow: string;
@@ -420,7 +430,7 @@ export default function PracticePage() {
   // country accent (RULE: see src/lib/practiceVoice.ts). Null until loaded.
   const [narratorVoiceId, setNarratorVoiceId] = useState<string | null>(null);
   const [loadState, setLoadState] = useState<LoadState>("loading");
-  const [selectedMode, setSelectedMode] = useState<PracticeMode | null>(null);
+  const [selectedMode, setSelectedMode] = useState<WebPracticeMode | null>(null);
   const [exerciseIndex, setExerciseIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [matchAnswers, setMatchAnswers] = useState<Record<string, string>>({});
@@ -429,7 +439,7 @@ export default function PracticePage() {
   const [score, setScore] = useState(0);
   const [sessionComplete, setSessionComplete] = useState(false);
   const [showExitConfirm, setShowExitConfirm] = useState(false);
-  const [pendingCountdownMode, setPendingCountdownMode] = useState<PracticeMode | null>(null);
+  const [pendingCountdownMode, setPendingCountdownMode] = useState<WebPracticeMode | null>(null);
   // Fires once: when the user arrives from the end-of-story "Start practice"
   // prompt, we open the session directly instead of leaving them on the
   // dashboard hub (the intent is to practice THAT story, not browse the hub).
@@ -523,7 +533,7 @@ export default function PracticePage() {
   // one). Story practice only filters the curated set to a single type when a
   // mode is explicit; otherwise it runs the WHOLE curated set as one mixed
   // session (what "just finished the story" should feel like).
-  const explicitStoryMode: PracticeMode | null =
+  const explicitStoryMode: WebPracticeMode | null =
     requestedModeParam === "meaning" ||
     requestedModeParam === "context" ||
     requestedModeParam === "listening" ||
@@ -560,6 +570,9 @@ export default function PracticePage() {
       interests,
       learningGoal: typeof metadata.learningGoal === "string" ? (metadata.learningGoal as OnboardingGoal) : null,
       dailyMinutes: typeof metadata.dailyMinutes === "number" ? metadata.dailyMinutes : null,
+      // El turno hablado es un piloto de movil: necesita microfono y la voz
+      // del personaje. Aqui se apaga, asi que el slot ni se arma.
+      speakingEnabled: false,
     };
   }, [user]);
   const trackUiMetric = useCallback(
@@ -925,7 +938,7 @@ export default function PracticePage() {
     // play browser TTS and show vocab-derived distractors, so only use it when
     // there is no curated set for this story. A selected mode filters the
     // curated set by exercise type so the mode tabs keep working.
-    const modeType: Record<PracticeMode, PracticeExercise["type"]> = {
+    const modeType: Record<WebPracticeMode, WebPracticeExercise["type"]> = {
       meaning: "meaning_in_context",
       context: "fill_blank",
       listening: "listen_choose",
@@ -947,13 +960,22 @@ export default function PracticePage() {
     // curated exercises regardless of any auto-selected mode.
     const pickPool =
       isStoryPractice && prefabExercises.length > 0 && !isJourneyCheckpoint ? prefabExercises : base;
-    let result = base;
+    // Cinturon y tirantes: `speakingEnabled: false` ya impide que el builder
+    // arme el slot, pero un set CURADO podria traer uno guardado y la pagina no
+    // sabe pintarlo. Se filtra aqui, que es por donde pasa todo.
+    let result: WebPracticeExercise[] = base.filter(
+      (ex): ex is WebPracticeExercise => ex.type !== "speaking"
+    );
     if (onlyExerciseParam != null && onlyExerciseParam !== "") {
       const picks = onlyExerciseParam
         .split(",")
         .map((s) => Number(s.trim()))
         .filter((n) => Number.isInteger(n) && n >= 0 && n < pickPool.length);
-      if (picks.length) result = picks.map((i) => pickPool[i]);
+      if (picks.length) {
+        result = picks
+          .map((i) => pickPool[i])
+          .filter((ex): ex is WebPracticeExercise => ex.type !== "speaking");
+      }
     }
     return result;
   }, [explicitStoryMode, isJourneyCheckpoint, isStoryPractice, onboardingPracticePrefs, onlyExerciseParam, orderedFavorites, prefabExercises, selectedMode]);
@@ -1008,7 +1030,7 @@ export default function PracticePage() {
     [savedWords, storyPracticeSlug],
   );
 
-  const inferredModeFromExercise: PracticeMode | null =
+  const inferredModeFromExercise: WebPracticeMode | null =
     currentExercise?.type === "meaning_in_context"
       ? "meaning"
       : currentExercise?.type === "fill_blank"
@@ -1040,7 +1062,7 @@ export default function PracticePage() {
   // aquí (deep link de historia o de journey). Ahí la entrada extra sobra: no
   // hay selector de modo al que volver, y encima descuadraba la cuenta de la
   // salida, que es lo que montaba el bucle de más abajo.
-  const openSession = useCallback((mode: PracticeMode, opts?: { pushHistory?: boolean }) => {
+  const openSession = useCallback((mode: WebPracticeMode, opts?: { pushHistory?: boolean }) => {
     if (typeof window !== "undefined" && opts?.pushHistory !== false) {
       window.history.pushState({ practiceSession: true }, "", window.location.href);
     }
@@ -1134,8 +1156,10 @@ export default function PracticePage() {
       if (!user) return;
 
       const firstExerciseWithStorySlug = exercises.find(
-        (exercise): exercise is Extract<PracticeExercise, { storySlug?: string | null }> =>
-          "storySlug" in exercise && typeof exercise.storySlug === "string" && exercise.storySlug.trim().length > 0
+        (exercise): exercise is Extract<WebPracticeExercise, { storySlug?: string | null }> =>
+          "storySlug" in exercise &&
+          typeof (exercise as { storySlug?: unknown }).storySlug === "string" &&
+          ((exercise as { storySlug: string }).storySlug).trim().length > 0
       );
 
       try {
@@ -2182,7 +2206,7 @@ export default function PracticePage() {
   };
 
   const modeCards = (Object.entries(modeThemeByMode) as Array<
-    [PracticeMode, (typeof modeThemeByMode)[PracticeMode]]
+    [WebPracticeMode, (typeof modeThemeByMode)[WebPracticeMode]]
   >).map(([mode, theme]) => ({
     mode,
     ...theme,
@@ -2213,10 +2237,10 @@ export default function PracticePage() {
     .map((item) => item.label)
     .filter((value, index, array) => array.indexOf(value) === index)
     .slice(0, 4);
-  const checkpointMissedMode = useMemo<PracticeMode | null>(() => {
+  const checkpointMissedMode = useMemo<WebPracticeMode | null>(() => {
     if (!isJourneyCheckpoint || checkpointMissedItems.length === 0) return null;
 
-    const counts: Record<PracticeMode, number> = {
+    const counts: Record<WebPracticeMode, number> = {
       meaning: 0,
       context: 0,
       listening: 0,
@@ -2233,7 +2257,7 @@ export default function PracticePage() {
       else if (exercise.type === "listen_choose") counts.listening += 1;
     }
 
-    const ranked = (Object.entries(counts) as Array<[PracticeMode, number]>)
+    const ranked = (Object.entries(counts) as Array<[WebPracticeMode, number]>)
       .filter(([, count]) => count > 0)
       .sort((a, b) => b[1] - a[1]);
 
@@ -2243,11 +2267,11 @@ export default function PracticePage() {
     () => sortPracticeItemsByOnboarding(getDuePracticeItems(scopedFavorites), onboardingPracticePrefs, true),
     [scopedFavorites, onboardingPracticePrefs]
   );
-  const reviewRecommendedMode = useMemo<PracticeMode>(() => {
+  const reviewRecommendedMode = useMemo<WebPracticeMode>(() => {
     if (checkpointMissedMode) return checkpointMissedMode;
     if (dueFavorites.length === 0) return "meaning";
 
-    const counts: Record<PracticeMode, number> = {
+    const counts: Record<WebPracticeMode, number> = {
       meaning: 0,
       context: 0,
       listening: 0,
@@ -2260,7 +2284,7 @@ export default function PracticePage() {
       if (item.storySlug || item.language) counts.listening += 1;
     }
 
-    const ranked = (Object.entries(counts) as Array<[PracticeMode, number]>)
+    const ranked = (Object.entries(counts) as Array<[WebPracticeMode, number]>)
       .filter(([mode]) => mode !== "match")
       .sort((a, b) => b[1] - a[1]);
 

@@ -59,6 +59,26 @@ function buildPayload(ex: PracticeExercise): { word: string; sentence: string; p
         sentence: "",
         payload: { prompt: ex.prompt, pairs: ex.pairs },
       };
+    // Los sets curados no generan speaking en el piloto (el builder solo lo
+    // arma con `speakingEnabled`, que aqui no se pasa). El caso existe porque
+    // el switch es exhaustivo: sin el, anadir un tipo rompe el build en vez de
+    // avisar aqui, y el dia que Studio guarde preguntas habladas la forma del
+    // payload ya esta decidida.
+    case "speaking":
+      return {
+        word: ex.word,
+        sentence: ex.sentence,
+        payload: {
+          translation: ex.translation,
+          sentence: ex.sentence,
+          // El hueco viaja guardado: es lo que se lee y lo que suena, y
+          // recalcularlo al leer el set podria dar otro distinto.
+          blanked: ex.blanked,
+          sentenceTranslation: ex.sentenceTranslation ?? null,
+          storySlug: ex.storySlug,
+          language: ex.language,
+        },
+      };
   }
 }
 

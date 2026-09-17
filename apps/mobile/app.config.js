@@ -6,6 +6,7 @@ dotenv.config({ path: path.resolve(__dirname, "../../.env.local") });
 const DEFAULT_PRODUCTION_APP_URL = "https://reader.digitalpolyglot.com";
 const DEFAULT_PRODUCTION_CLERK_PUBLISHABLE_KEY = "pk_live_Y2xlcmsuZGlnaXRhbHBvbHlnbG90LmNvbSQ";
 const deviceApiBaseUrl = process.env.EXPO_PUBLIC_DEVICE_API_BASE_URL?.trim() ?? "";
+const envApiBaseUrl = process.env.EXPO_PUBLIC_API_BASE_URL?.trim() ?? "";
 const buildProfile = process.env.EAS_BUILD_PROFILE?.trim().toLowerCase() ?? "";
 const nodeEnv = process.env.NODE_ENV?.trim().toLowerCase() ?? "";
 const xcodeConfiguration = process.env.CONFIGURATION?.trim().toLowerCase() ?? "";
@@ -36,8 +37,25 @@ function resolveApiBaseUrl() {
 
 function resolveClerkPublishableKey(apiBaseUrl) {
   const raw = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY?.trim() ?? "";
-  const targetApiBaseUrl = deviceApiBaseUrl || apiBaseUrl;
-  const isProductionApi = targetApiBaseUrl === DEFAULT_PRODUCTION_APP_URL || isProductionBuild;
+  // Apuntar el aparato a otro servidor es opt-in y explicito: o
+  // EXPO_PUBLIC_DEVICE_API_BASE_URL, o EXPO_PUBLIC_API_BASE_URL (que en
+  // src/config.ts manda sobre extra.apiBaseUrl).
+  const apiOverride = deviceApiBaseUrl || envApiBaseUrl;
+  const targetApiBaseUrl = apiOverride || apiBaseUrl;
+
+  // La clave LIVE se fuerza porque la API es la de PRODUCCION, no porque el
+  // build sea Release. Las dos cosas se habian mezclado en un OR, y por eso
+  // una Release apuntada al servidor local del Mac salia con la clave de
+  // produccion: el login iba contra la instancia live de Clerk y el servidor
+  // local, que usa la de desarrollo, no reconocia la sesion. La variable de
+  // override existe justo para eso, y ese OR la anulaba.
+  //
+  // Sin override no cambia NADA: una Release normal sigue resolviendo la API a
+  // produccion y saliendo con la clave de produccion, incluso si el .env.local
+  // tiene una NEXT_PUBLIC_APP_URL de desarrollo.
+  const isProductionApi = apiOverride
+    ? targetApiBaseUrl === DEFAULT_PRODUCTION_APP_URL
+    : targetApiBaseUrl === DEFAULT_PRODUCTION_APP_URL || isProductionBuild;
   const isTestKey = raw.startsWith("pk_test_") || raw.startsWith("test_");
 
   if (isProductionApi && (!raw || isTestKey)) {
@@ -118,6 +136,21 @@ const config = {
     ],
     // Solo hace algo cuando el build apunta a un http:// local; ver el plugin.
     "./plugins/allow-local-cleartext",
+    // Reconocimiento de voz del SISTEMA para el ejercicio hablado
+    // (SFSpeechRecognizer en iOS, SpeechRecognizer en Android). Es modulo
+    // nativo: exige prebuild y build local, y no habla con ningun servicio
+    // nuestro. El plugin escribe las dos claves de permiso de iOS y el
+    // RECORD_AUDIO de Android, ademas del filtro de visibilidad de paquetes
+    // que Android 11+ necesita para ver el servicio de reconocimiento.
+    [
+      "expo-speech-recognition",
+      {
+        microphonePermission:
+          "Digital Polyglot uses the microphone so you can answer practice exercises out loud.",
+        speechRecognitionPermission:
+          "Digital Polyglot uses speech recognition to check the word you just said. Your speech is processed on your device or by the system and is never stored.",
+      },
+    ],
     [
       "expo-splash-screen",
       {
@@ -188,6 +221,13 @@ const config = {
     buildNumber: "318",
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
+      // El plugin de expo-speech-recognition tambien las escribe; van aqui
+      // ademas porque el proyecto iOS versionado se construye con xcodebuild
+      // sin pasar por prebuild, y ahi manda el Info.plist del repo.
+      NSMicrophoneUsageDescription:
+        "Digital Polyglot uses the microphone so you can answer practice exercises out loud.",
+      NSSpeechRecognitionUsageDescription:
+        "Digital Polyglot uses speech recognition to check the word you just said. Your speech is processed on your device or by the system and is never stored.",
       // Background audio: story playback keeps sounding when the app is
       // backgrounded or the screen is locked (audiobook-style). Must stay
       // in sync with ios/DigitalPolyglot/Info.plist (the committed native

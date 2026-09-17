@@ -8,6 +8,7 @@ import {
 import { normalizeVocabType } from "@/lib/vocabTypes";
 import { getSegmentIdFromSourcePath, getStorySource, isStandaloneSourcePath } from "@/lib/storySource";
 import { splitSentences } from "@/lib/exampleSentence";
+import { lookupSentenceTranslation } from "@/lib/sentenceTranslation";
 
 export type PracticeFavoriteItem = {
   word: string;
@@ -26,6 +27,13 @@ export type PracticeFavoriteItem = {
   language?: string | null;
   nextReviewAt?: string | null;
   practiceSource?: "curriculum" | "user_saved" | "both" | null;
+  /** Traducciones al ingles de las frases de la HISTORIA de la que sale esta
+   *  palabra, indexadas por `normalizeSentenceKey`. Viaja el mapa entero y no
+   *  una cadena porque quien sabe que frase se va a pintar es el ejercicio, no
+   *  el servidor: el turno hablado busca la SUYA y, si no casa exacto, no
+   *  ensena nada. Con una cadena por palabra, la etiqueta MEANING mostraba la
+   *  traduccion de otra oracion. */
+  sentenceTranslations?: Record<string, string> | null;
   /** Voice the source story was narrated with, when known. */
   voiceId?: string | null;
   /** Pre-baked practice sentence-clip URL for this word, joined server-side from
@@ -53,7 +61,8 @@ export type PracticeMode =
   | "meaning"
   | "context"
   | "listening"
-  | "match";
+  | "match"
+  | "speaking";
 
 export type FillBlankExercise = {
   id: string;
@@ -156,11 +165,42 @@ export type PracticeAudioClip = {
   wordVoiceId?: string | null;
 };
 
+/**
+ * Quinto tipo de ejercicio: `fill_blank` DICHO EN VOZ ALTA.
+ *
+ * Misma frase con hueco y mismo clip que el ejercicio de contexto; lo unico
+ * que cambia es que la respuesta entra por el microfono en vez de por una
+ * opcion. El reconocimiento lo pone el sistema operativo del telefono y la
+ * calificacion es local, asi que no hay ruta, ni tabla, ni clave de nadie.
+ */
+export type SpeakingExercise = {
+  type: "speaking";
+  id: string;
+  word: string;
+  surface?: string | null;
+  /** Pista en pantalla: la traduccion en ingles. La palabra en el idioma meta
+   *  no se muestra hasta despues de calificar. */
+  translation: string;
+  /** Frase COMPLETA de la historia; se ensena en el fallo, con su audio. */
+  sentence: string;
+  /** La misma frase con `_____` en el hueco que pinta `fill_blank`. */
+  blanked: string;
+  storySlug: string;
+  language: string;
+  voiceId?: string | null;
+  /** Traduccion al ingles de la frase; se ensena SOLO al resolver. */
+  sentenceTranslation?: string | null;
+  /** El mismo clip que lleva `fill_blank`: el pre-horneado si existe, y si no
+   *  lo que el cliente pida a `sentence-tts` con la voz de la historia. */
+  audioClip?: PracticeAudioClip | null;
+};
+
 export type PracticeExercise =
   | FillBlankExercise
   | MeaningContextExercise
   | ListenChooseExercise
-  | MatchMeaningExercise;
+  | MatchMeaningExercise
+  | SpeakingExercise;
 
 function normalizeText(value?: string | null): string {
   return typeof value === "string" ? value.trim() : "";
@@ -526,6 +566,29 @@ function getDistractorMeanings(
 // palabra para recuperar el balance de modos.
 const MAX_EXERCISE_SENTENCE_CHARS = 100;
 
+/**
+ * Tope de palabras de la frase del ejercicio HABLADO, y solo del hablado.
+ *
+ * El tope de 100 caracteres de arriba mide la pantalla; este mide el aliento.
+ * Una frase que se lee bien en tres lineas puede ser imposible de decir de un
+ * tiron, y el turno hablado pide justamente eso.
+ *
+ * Por que 12 y no 15 (2026-09-14): el 15 no cambiaba nada. Lo que el usuario
+ * tuvo delante en el telefono fueron oraciones de 15 palabras y 99 caracteres,
+ * o sea justo por debajo de los dos topes, y le siguieron pareciendo largas.
+ * Un tope que no descarta lo que molesta no es un tope. La base medida sobre
+ * 681 favoritos de journey (mediana 13, p75 21) dice ademas que 15 dejaba
+ * pasar la mediana entera.
+ *
+ * La palabra que no llega no se pierde: el slot lo rellena otro modo.
+ */
+const SPEAKING_MAX_WORDS = 12;
+
+function wordCount(sentence: string): number {
+  const trimmed = sentence.trim();
+  return trimmed ? trimmed.split(/\s+/).length : 0;
+}
+
 // REGLA (usuario, 2026-07-24): context/meaning se arma SOLO si la exampleSentence
 // ya es UNA sola oración completa y limpia dentro del tope, SIN necesidad de
 // cortar/extraer nada (nada de splitting heurístico para rescatar un trozo). Si
@@ -533,7 +596,7 @@ const MAX_EXERCISE_SENTENCE_CHARS = 100;
 // o pasa el tope, devolvemos null → esa palabra va a listening/match (solo
 // necesitan la palabra). El split dialogue-aware se usa únicamente para CONTAR
 // (¿es exactamente 1 oración?), nunca para elegir un pedazo.
-function singleCleanSentence(item: PracticeFavoriteItem): string | null {
+export function singleCleanSentence(item: PracticeFavoriteItem): string | null {
   const raw = normalizeText(item.exampleSentence);
   if (!raw) return null;
   if (raw.length > MAX_EXERCISE_SENTENCE_CHARS) return null;
@@ -642,7 +705,7 @@ function stripOrphanLeadingPunctuation(sentence: string): string {
   return first !== upper ? upper + cleaned.slice(1) : cleaned;
 }
 
-function getContextSentence(item: PracticeFavoriteItem): string {
+export function getContextSentence(item: PracticeFavoriteItem): string {
   const sentence = normalizeText(item.exampleSentence);
   if (!sentence) return "";
 
@@ -858,6 +921,70 @@ function createListenChooseExercise(
 }
 
 /**
+ * G1 y G2 salen GRATIS al apoyarse en `fill_blank`.
+ *
+ * El hueco, el clip y el rechazo de las frases que no sirven ya estan
+ * resueltos ahi: `createFillBlankExercise` tira la frase donde la palabra
+ * aparece dos veces, la que no deja dos palabras de contexto alrededor del
+ * hueco y la que no tiene forma limpia. Reimplementar ese criterio aqui era
+ * garantizar que los dos se separaran. Si el de contexto dice que no, este
+ * tampoco.
+ *
+ * No se filtra por `sourcePath`: el lector de journey del movil guarda los
+ * favoritos con `sourcePath` de LIBRO (`/books/standalone-stories/...`) y el
+ * slug como pseudo-slug `journey-<JourneyStory.id>`. Un filtro por `/books/`
+ * descartaba 776 de los 844 favoritos reales, o sea casi todos los que el
+ * ejercicio tenia que cubrir.
+ */
+export function createSpeakingExercise(
+  item: PracticeFavoriteItem,
+  pool: PracticeFavoriteItem[]
+): SpeakingExercise | null {
+  if (!normalizeText(item.storySlug)) return null;
+
+  const word = normalizeText(item.word);
+  const translation = normalizeText(item.translation);
+  const language = normalizeText(item.language);
+  // La pista en pantalla es la TRADUCCION en ingles; sin ella el ejercicio
+  // pediria una palabra que no ha nombrado. Sin idioma no hay locale que
+  // darle al reconocedor del sistema.
+  if (!word || !translation || !language) return null;
+
+  const fillBlank = createFillBlankExercise(item, pool);
+  if (!fillBlank) return null;
+
+  // La frase COMPLETA, la que se ensena en el fallo. `fill_blank` guarda en
+  // `sentence` la version con el hueco, asi que la entera se recompone del
+  // mismo sitio del que la saca el.
+  //
+  // Sin frase de reserva a proposito: si no hay UNA oracion limpia, el turno
+  // hablado no existe para esta palabra y el slot lo rellena otro modo. Caer a
+  // `getContextSentence` devolvia el fragmento entero, y de ahi salian las
+  // frases kilometricas.
+  const sentence = singleCleanSentence(item);
+  if (!sentence) return null;
+  // Y aunque sea limpia, tiene que poder decirse de un tiron.
+  if (wordCount(sentence) > SPEAKING_MAX_WORDS) return null;
+
+  return {
+    type: "speaking",
+    id: `speaking:${normalizeKey(item.word)}`,
+    word,
+    surface: normalizeText(item.surface) || null,
+    translation,
+    sentence,
+    blanked: fillBlank.sentence,
+    storySlug: normalizeText(item.storySlug),
+    language,
+    voiceId: normalizeText(item.voiceId) || null,
+    // La traduccion se resuelve contra la frase que ESTE ejercicio pinta, y
+    // solo si casa exacto (ya normalizada). Sin coincidencia, null.
+    sentenceTranslation: lookupSentenceTranslation(item.sentenceTranslations, sentence),
+    audioClip: fillBlank.audioClip ?? null,
+  };
+}
+
+/**
  * Una traduccion que CONTIENE la propia palabra convierte el match en un
  * regalo: la tarjeta de significado lleva escrita la respuesta.
  *
@@ -1000,6 +1127,21 @@ export function buildPracticeSession(
   const languageAwarePool = uniqueByWord([...source, ...catalogPool]);
   const exercises: PracticeExercise[] = [];
 
+  // SPEAKING: piloto de plan `polyglot`. El slot no existe si el cliente no
+  // lo habilita. La web pasa siempre `false`: el microfono del navegador queda
+  // fuera del piloto.
+  if (mode === "speaking") {
+    if (!prefs?.speakingEnabled) return [];
+    for (const item of uniqueByWord(source)) {
+      if (exercises.length >= 10) break;
+      const exercise = createSpeakingExercise(item, languageAwarePool);
+      if (!exercise) continue;
+      if (exercises.some((existing) => existing.id === exercise.id)) continue;
+      exercises.push(exercise);
+    }
+    return exercises;
+  }
+
   if (mode === "match") {
     let remaining = uniqueByWord(source);
     for (let i = 0; i < 3 && exercises.length < 10; i += 1) {
@@ -1066,14 +1208,23 @@ function getExerciseAnchor(exercise: PracticeExercise): string {
       return normalizeKey(exercise.answer);
     case "match_meaning":
       return normalizeKey(exercise.pairs.map((pair) => pair.word).join("|"));
+    case "speaking":
+      return normalizeKey(exercise.word);
   }
 }
 
 /**
- * Reparto canónico de una sesión MIXTA: 4 contexto, 3 significado, 2 escucha
- * y 1 emparejar. Es el plan que ya servía el set curado de cada historia; vive
- * aquí para que el móvil pueda usar el mismo sin importar `storyPracticeSets`
- * (que arrastra prisma) y para que los dos no puedan derivar.
+ * Reparto canónico de una sesión MIXTA: 3 contexto, 3 significado, 2 escucha,
+ * 1 emparejar y 1 hablado. Es el plan que ya servía el set curado de cada
+ * historia; vive aquí para que el móvil pueda usar el mismo sin importar
+ * `storyPracticeSets` (que arrastra prisma) y para que los dos no puedan
+ * derivar.
+ *
+ * El slot 8 era el TERCER contexto y ahora es el de speaking (piloto,
+ * 2026-09-14). Cuando el cliente no habilita speaking, `buildPracticeSession`
+ * devuelve cero ejercicios para ese modo y el relleno del final de
+ * `buildMixedPracticeSession` recupera el hueco con los cuatro modos de
+ * siempre: la sesión de quien no tiene el piloto sigue siendo de 10.
  */
 export const MIXED_PRACTICE_PLAN: PracticeMode[] = [
   "context",
@@ -1083,7 +1234,7 @@ export const MIXED_PRACTICE_PLAN: PracticeMode[] = [
   "meaning",
   "listening",
   "match",
-  "context",
+  "speaking",
   "meaning",
   "context",
 ];
@@ -1149,11 +1300,16 @@ export function buildTopicCheckpointPracticeSession(items: PracticeFavoriteItem[
   );
 }
 
-export function getRecommendedPracticeModeFromOnboarding(
+/**
+ * Generico en el fallback a proposito: nunca devuelve "speaking" (el sesgo de
+ * onboarding solo conoce meaning, context y listening), asi que quien le pasa
+ * un modo restringido recupera ese mismo tipo y no tiene que castear.
+ */
+export function getRecommendedPracticeModeFromOnboarding<M extends PracticeMode>(
   items: PracticeFavoriteItem[],
-  fallback: PracticeMode,
+  fallback: M,
   prefs?: OnboardingPracticePrefs
-): PracticeMode {
+): M | "meaning" | "context" | "listening" {
   if (!prefs) return fallback;
   const bias = getPracticeModeBias(prefs);
   if (!bias) return fallback;

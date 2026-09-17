@@ -22,7 +22,7 @@ import Svg, { Circle, G } from "react-native-svg";
  * con play. Versión Duolingo-like del Daily Goal ring.
  */
 
-export type PracticeModeKey = "meaning" | "context" | "listening" | "match";
+export type PracticeModeKey = "meaning" | "context" | "listening" | "match" | "speaking";
 
 export type PracticeOrbitProps = {
   topicLabel: string | null;
@@ -57,6 +57,10 @@ export type PracticeOrbitProps = {
   reviewSoonCount?: number;
   /** Minutes until the soonest of those reviews, for the caption. */
   reviewSoonMinutes?: number | null;
+  /** Piloto del ejercicio hablado: solo el plan `polyglot`. Cuando es false, su
+   *  tarjeta no se pinta y el modo no cuenta como skill, igual que su slot no
+   *  entra en la sesion mixta. */
+  speakingEnabled?: boolean;
 };
 
 const MODE_COLORS: Record<PracticeModeKey, string> = {
@@ -64,6 +68,7 @@ const MODE_COLORS: Record<PracticeModeKey, string> = {
   context: "#86efac", // verde menta
   listening: "#f0abfc", // rosa
   match: "#7dd3fc", // cyan
+  speaking: "#f8c15c", // ambar, el color del turno hablado desde el 2026-09-14
 };
 
 // Uniform card fill for all four skills. Each card used to fill with
@@ -74,11 +79,15 @@ const MODE_COLORS: Record<PracticeModeKey, string> = {
 // icon chip and glow, so the ring-segment match is preserved.
 const SKILL_CARD_BG = "rgba(255,255,255,0.05)";
 
-const MODE_ICONS: Record<PracticeModeKey, "zap" | "message-circle" | "headphones" | "link"> = {
+const MODE_ICONS: Record<
+  PracticeModeKey,
+  "zap" | "message-circle" | "headphones" | "link" | "mic"
+> = {
   meaning: "zap",
   context: "message-circle",
   listening: "headphones",
   match: "link",
+  speaking: "mic",
 };
 
 const MODE_LABELS: Record<PracticeModeKey, string> = {
@@ -86,9 +95,15 @@ const MODE_LABELS: Record<PracticeModeKey, string> = {
   context: "Context",
   listening: "Listening",
   match: "Match",
+  speaking: "Speaking",
 };
 
-const MODE_ORDER: PracticeModeKey[] = ["meaning", "context", "listening", "match"];
+// Los modos que se pueden elegir a mano. `speaking` entra para poder hacer una
+// tanda ENTERA hablada: probar diez turnos seguidos pasando por diez sesiones
+// mixtas no es una prueba, es una tarde. Solo se pinta con el plan `polyglot`
+// (`speakingEnabled`), la misma condicion que abre el slot de la mixta, asi que
+// para todos los demas la rejilla sigue siendo el 2x2 de siempre.
+const MODE_ORDER: PracticeModeKey[] = ["meaning", "context", "listening", "match", "speaking"];
 
 // Ring un poco más chico que la versión inicial (240 → 210) para
 // que con el grid 2x2 de skill cards quepa todo el contenido sin
@@ -116,20 +131,21 @@ type RingSegment = {
 };
 
 function buildRingSegments(
-  breakdown: Record<PracticeModeKey, number>
+  breakdown: Record<PracticeModeKey, number>,
+  modes: PracticeModeKey[] = MODE_ORDER
 ): RingSegment[] {
   // Cada segmento ocupa una porción del ring proporcional a su count.
   // Dejamos un gap pequeño entre segmentos para que se lean separados.
   // El "total" del anillo se deriva del breakdown mismo (suma) en vez
   // de venir como prop externa; así el `count/total` siempre cuadra
   // independiente de la semántica del breakdown (palabras vs ejercicios).
-  const total = MODE_ORDER.reduce((sum, mode) => sum + (breakdown[mode] ?? 0), 0);
+  const total = modes.reduce((sum, mode) => sum + (breakdown[mode] ?? 0), 0);
   const GAP_DEG = 4;
-  const totalGapDeg = GAP_DEG * MODE_ORDER.filter((m) => breakdown[m] > 0).length;
+  const totalGapDeg = GAP_DEG * modes.filter((m) => breakdown[m] > 0).length;
   const usableDeg = 360 - totalGapDeg;
   const segments: RingSegment[] = [];
   let cursorDeg = -90; // arrancar arriba (12 en punto)
-  for (const mode of MODE_ORDER) {
+  for (const mode of modes) {
     const count = breakdown[mode];
     if (count <= 0) continue;
     const fraction = total > 0 ? count / total : 0;
@@ -274,10 +290,17 @@ export function PracticeOrbit({
   onEmptyTap,
   reviewSoonCount = 0,
   reviewSoonMinutes,
+  speakingEnabled = false,
 }: PracticeOrbitProps) {
+  // Una sola lista manda sobre el anillo, el recuento de skills y la rejilla,
+  // para que no puedan desincronizarse.
+  const visibleModes = useMemo(
+    () => (speakingEnabled ? MODE_ORDER : MODE_ORDER.filter((mode) => mode !== "speaking")),
+    [speakingEnabled]
+  );
   const segments = useMemo(
-    () => buildRingSegments(modeBreakdown),
-    [modeBreakdown]
+    () => buildRingSegments(modeBreakdown, visibleModes),
+    [modeBreakdown, visibleModes]
   );
 
   // Animaciones del anillo + orbe central (look "videogame"):
@@ -470,7 +493,7 @@ export function PracticeOrbit({
           <>
             ~{estimateSessionMinutes(totalDue)} min
             {" · "}
-            {MODE_ORDER.filter((m) => modeBreakdown[m] > 0).length} skills
+            {visibleModes.filter((m) => modeBreakdown[m] > 0).length} skills
             {" · +"}{xpReward} XP
           </>
         )}
@@ -482,7 +505,7 @@ export function PracticeOrbit({
           la verde al verde, etc. Reemplaza al row horizontal de
           tarjetitas chiquitas que se cortaba bajo la tab bar. */}
       <View style={styles.skillGrid}>
-        {MODE_ORDER.map((mode) => (
+        {visibleModes.map((mode) => (
           <SkillCard
             key={mode}
             mode={mode}

@@ -33,7 +33,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>332</string>
+	<string>336</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSMinimumSystemVersion</key>
@@ -49,8 +49,12 @@
 	</dict>
 	<key>NSFaceIDUsageDescription</key>
 	<string>Allow $(PRODUCT_NAME) to access your Face ID biometric data.</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Digital Polyglot connects to a development server on your local network while testing.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Allow $(PRODUCT_NAME) to access your microphone</string>
+	<string>Digital Polyglot uses the microphone so you can answer practice exercises out loud.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Digital Polyglot uses speech recognition to check the word you just said. Your speech is processed on your device or by the system and is never stored.</string>
 	<key>RCTNewArchEnabled</key>
 	<false/>
 	<key>UIBackgroundModes</key>
