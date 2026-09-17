@@ -15,7 +15,8 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { isStudioMember } from "@/lib/studio-access";
-import { uploadPublicObject, isObjectStorageConfigured } from "@/lib/objectStorage";
+import { uploadAudioObject, isObjectStorageConfigured } from "@/lib/objectStorage";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -100,7 +101,7 @@ export async function POST(
 
   const buffer = Buffer.from(await file.arrayBuffer());
   const key = `media/generated/audio/practice-${exerciseId}-${Date.now()}.${extFromType(type)}`;
-  const uploaded = await uploadPublicObject({
+  const uploaded = await uploadAudioObject({
     key,
     body: buffer,
     contentType: type,
@@ -114,7 +115,7 @@ export async function POST(
     data: { audioUrl: uploaded.url },
   });
 
-  return NextResponse.json({
+  return NextResponse.json(signAudioUrlsDeep({
     exercise: {
       id: updated.id,
       orderIndex: updated.orderIndex,
@@ -124,5 +125,5 @@ export async function POST(
       audioUrl: updated.audioUrl,
       payload: updated.payload,
     },
-  });
+  }));
 }

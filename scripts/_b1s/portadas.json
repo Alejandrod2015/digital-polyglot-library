@@ -1,0 +1,233 @@
+[
+ {
+  "topic": "rooms-and-landlords",
+  "label": "Rooms & Landlords",
+  "place": "Granada, España",
+  "names": [
+   "CELIA",
+   "EMILIO"
+  ],
+  "sheet": "Character model sheet for a story series, flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills with no gradients and no texture, plain pure white background, landscape 16:9.\n\nExactly 2 adult characters, drawn as a reference sheet: top row shows both full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same two as head-and-shoulders close-ups.\n\nLEFT is CELIA: woman, exactly 34 years old, slim build, medium height, a head shorter than EMILIO, light olive skin, dark brown straight hair cut level with the jaw WITH a straight blunt fringe, no facial hair, no glasses; wears a mustard-yellow knitted cardigan over a plain white round-neck t-shirt, dark indigo jeans and white canvas trainers.\n\nRIGHT is EMILIO: man, exactly 52 years old, clearly a man in his early fifties and not elderly, heavy build with a round belly, a head taller than CELIA, tanned skin, short salt-and-pepper hair combed back with a receding hairline, WITHOUT fringe, thick black moustache and no beard, no glasses; wears an olive-green quilted work jacket open over a light blue collared shirt, brown cotton trousers and dark brown leather shoes.\n\nGenerous white margin around every figure, no props, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "la-cerradura-la-cambio-yo",
+    "title": "La cerradura la cambio yo",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: A small rented room on the top floor of an old building in the Albaicín, Granada, late morning, hard white sun through one small window. EMILIO stands beside an old wooden wardrobe whose door hangs slightly open, bending to jiggle a wall socket; CELIA stands in the doorway with her arms crossed, calmly studying the wardrobe door. A bare mattress on an iron bed frame and a small electric heater in the corner. Wide shot from inside the room, both full body.",
+    "note": ""
+   },
+   {
+    "slug": "la-manta-del-altillo",
+    "title": "La manta del altillo",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The narrow hallway of the same flat at night, lit by one bare flickering bulb. CELIA stands on tiptoe pulling a folded brown wool blanket down from a high wooden cupboard above a door; EMILIO stands below holding a stiff wooden scrubbing brush and running one finger along a dusty shelf. Three empty wire hangers on a wall hook and a damp cable hanging from the ceiling. Low-angle medium shot looking up at the two of them.",
+    "note": ""
+   },
+   {
+    "slug": "el-techo-de-los-tres",
+    "title": "El techo de los tres",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The entrance hall of an old apartment block in Granada, late afternoon. EMILIO raises one hand high as if casting a vote; CELIA stands next to him holding a closed laptop against her chest and a sheet of paper folded in half. Green ceramic wall tiles, a row of closed metal letterboxes with blank plain fronts, and a dark damp stain on the ceiling above them. High-angle shot from the stairs above, both waist-up or fuller.",
+    "note": "Berta no sale: el tema solo tiene dos personajes fijos."
+   }
+  ]
+ },
+ {
+  "topic": "jobs-and-wages",
+  "label": "Jobs & Wages",
+  "place": "Granada, España",
+  "names": [
+   "CELIA",
+   "NURIA"
+  ],
+  "sheet": "Character model sheet for a story series, flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills with no gradients and no texture, plain pure white background, landscape 16:9.\n\nExactly 2 adult characters, drawn as a reference sheet: top row shows both full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same two as head-and-shoulders close-ups.\n\nLEFT is CELIA: woman, exactly 34 years old, slim build, medium height, a little taller than NURIA, light olive skin, dark brown straight hair cut level with the jaw WITH a straight blunt fringe, no facial hair, no glasses; wears a mustard-yellow knitted cardigan over a plain white round-neck t-shirt, dark indigo jeans and white canvas trainers.\n\nRIGHT is NURIA: woman, exactly 47 years old, stocky and broad-shouldered, a little shorter than CELIA, very pale skin with freckles, very short copper-red hair cropped above the ears, WITHOUT fringe, no facial hair, round black-framed glasses; wears a burgundy blazer over a black crew-neck top, charcoal-grey trousers and black flat shoes.\n\nGenerous white margin around every figure, no props, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "el-precio-que-existe",
+    "title": "El precio que existe",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: A small translation office in central Granada, morning. NURIA sits calmly behind a wooden desk stacked with closed cardboard folders, her hands folded on the desk; CELIA stands across the desk holding a pen and a sheet of paper folded in half, about to decide. A green desk lamp, a potted plant and a tall window with open wooden shutters. Medium shot from the side, both in profile.",
+    "note": ""
+   },
+   {
+    "slug": "cobro-tarde-y-pago-pronto",
+    "title": "Cobro tarde y pago pronto",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: CELIA's small kitchen in Granada, evening, flat October light through the window. CELIA sits alone at a small round table, chin resting on one hand, calm and thinking, a closed blue folder and a mug of tea in front of her. A bowl of oranges, a gas stove with a steel pot and a wooden chair pushed in. Wide shot from the kitchen doorway, CELIA waist-up or fuller.",
+    "note": "Emilio no sale; la escena es el final, sola en la cocina."
+   },
+   {
+    "slug": "el-descansillo-aconseja",
+    "title": "El descansillo aconseja",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The stair landing of an old building in Granada, mid-morning, light from a small arched window. CELIA stands by the black iron railing holding a mobile phone to her ear with the screen turned away, a closed laptop under her other arm, listening and nodding. Terracotta floor tiles, a potted geranium on the windowsill and a closed wooden door. Over-the-shoulder shot from the stairs below, CELIA waist-up.",
+    "note": "Nuria es la voz del telefono y Emilio no sale."
+   }
+  ]
+ },
+ {
+  "topic": "meetings-and-deadlines",
+  "label": "Meetings & Deadlines",
+  "place": "Granada, España",
+  "names": [
+   "CELIA",
+   "ROSA"
+  ],
+  "sheet": "Character model sheet for a story series, flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills with no gradients and no texture, plain pure white background, landscape 16:9.\n\nExactly 2 adult characters, drawn as a reference sheet: top row shows both full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same two as head-and-shoulders close-ups.\n\nLEFT is CELIA: woman, exactly 34 years old, slim build, medium height, clearly shorter than ROSA, light olive skin, dark brown straight hair cut level with the jaw WITH a straight blunt fringe, no facial hair, no glasses; wears a mustard-yellow knitted cardigan over a plain white round-neck t-shirt, dark indigo jeans and white canvas trainers.\n\nRIGHT is ROSA: woman, exactly 41 years old, tall and long-limbed, clearly taller than CELIA, warm brown skin clearly darker than CELIA's, long black curly hair worn loose well past the shoulders, WITHOUT fringe, no facial hair, no glasses, small gold stud earrings; wears a teal button-up blouse, light grey tailored trousers and tan ankle boots.\n\nGenerous white margin around every figure, no props, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "la-reunion-de-un-punto",
+    "title": "La reunión de un punto",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: A small meeting room in an agency office in Granada, morning. ROSA stands at the head of a long table with a closed cardboard folder under her arm, explaining with one hand raised; CELIA sits at the table with a closed laptop and a paper cup of coffee, glancing at her wristwatch. A glass water jug, a row of empty chairs and a window with blinds half down. Wide shot from the far end of the table.",
+    "note": ""
+   },
+   {
+    "slug": "la-ventana-del-rellano",
+    "title": "La ventana del rellano",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: CELIA's small flat at eight in the morning. CELIA sits alone at a desk by the window, the laptop open with its back to the viewer so the screen cannot be seen, a cold cup of coffee beside it, looking out of the window with a thoughtful frown. A desk lamp, a stack of closed books and a chair with a scarf over it. Low-angle shot from behind the laptop lid, CELIA waist-up.",
+    "note": "Rosa y Emilio no salen."
+   },
+   {
+    "slug": "manana-y-yo-sola",
+    "title": "Mañana y yo sola",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The small kitchenette of the agency office, afternoon. ROSA leans against the counter holding a coffee cup, speaking kindly and reassuringly; CELIA stands facing her, holding her phone closed against her chest, worried. A coffee machine, a sink with two mugs and a window onto Granada rooftops. Medium two-shot at eye level, both waist-up.",
+    "note": ""
+   }
+  ]
+ },
+ {
+  "topic": "repeating-and-rephrasing",
+  "label": "Repeating & Rephrasing",
+  "place": "Granada, España",
+  "names": [
+   "CELIA",
+   "QUIQUE"
+  ],
+  "sheet": "Character model sheet for a story series, flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills with no gradients and no texture, plain pure white background, landscape 16:9.\n\nExactly 2 adult characters, drawn as a reference sheet: top row shows both full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same two as head-and-shoulders close-ups.\n\nLEFT is CELIA: woman, exactly 34 years old, slim build, medium height, clearly shorter than QUIQUE, light olive skin, dark brown straight hair cut level with the jaw WITH a straight blunt fringe, no facial hair, no glasses; wears a mustard-yellow knitted cardigan over a plain white round-neck t-shirt, dark indigo jeans and white canvas trainers.\n\nRIGHT is QUIQUE: man, exactly 30 years old, lean and wiry, clearly taller than CELIA, fair skin, close-cropped black hair, WITHOUT fringe, short full black beard, no glasses; wears navy-blue work overalls with no logos or badges, a grey long-sleeved t-shirt underneath, bright orange work gloves and black safety boots.\n\nGenerous white margin around every figure, no props, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "el-piloto-azul",
+    "title": "El piloto azul",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The narrow kitchen of an old flat in Granada, five in the afternoon. QUIQUE crouches in front of an open wall cupboard with a gas boiler and a small blue pilot flame, pointing at a copper pipe with his gloved hand and looking back over his shoulder; CELIA stands just behind him holding a pen, leaning in, attentive and a little unsure. A red toolbox on the tiled floor and a folded tea towel on the counter. Medium shot from the side at crouching height.",
+    "note": ""
+   },
+   {
+    "slug": "a-ver-si-te-sigo",
+    "title": "A ver si te sigo",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The entrance hall of the building, morning, the floor still wet and shining. CELIA crouches to pick up a closed white envelope from the floor, smiling to herself, a bag of groceries beside the door. Green wall tiles, closed metal letterboxes with blank plain fronts and a mop bucket in the corner. Wide shot at floor level from across the hall, CELIA full body.",
+    "note": "Emilio no sale."
+   },
+   {
+    "slug": "la-fecha-que-decide",
+    "title": "La fecha que decide",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The hallway of CELIA's flat, midday. CELIA leans her forehead against a cool whitewashed wall with her eyes closed, holding a phone to her ear with the screen facing the wall, patient and determined. A coat rack with a green scarf and a small window with a flowerpot. Profile shot with CELIA in the foreground, waist-up.",
+    "note": "Emilio es la voz del telefono; no sale."
+   }
+  ]
+ },
+ {
+  "topic": "sayings-and-nicknames",
+  "label": "Sayings & Nicknames",
+  "place": "Granada, España",
+  "names": [
+   "CELIA",
+   "EMILIO"
+  ],
+  "sheet": "Character model sheet for a story series, flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills with no gradients and no texture, plain pure white background, landscape 16:9.\n\nExactly 2 adult characters, drawn as a reference sheet: top row shows both full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same two as head-and-shoulders close-ups.\n\nLEFT is CELIA: woman, exactly 34 years old, slim build, medium height, a head shorter than EMILIO, light olive skin, dark brown straight hair cut level with the jaw WITH a straight blunt fringe, no facial hair, no glasses; wears a mustard-yellow knitted cardigan over a plain white round-neck t-shirt, dark indigo jeans and white canvas trainers.\n\nRIGHT is EMILIO: man, exactly 52 years old, clearly a man in his early fifties and not elderly, heavy build with a round belly, a head taller than CELIA, tanned skin, short salt-and-pepper hair combed back with a receding hairline, WITHOUT fringe, thick black moustache and no beard, no glasses; wears an olive-green quilted work jacket open over a light blue collared shirt, brown cotton trousers and dark brown leather shoes.\n\nGenerous white margin around every figure, no props, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "lo-de-chispa",
+    "title": "Lo de Chispa",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The ground floor of the building beside an old lift with a closed metal door, evening. CELIA waits by the lift laughing with one hand over her mouth; EMILIO stands by the closed blank letterboxes calling up the stairs with one hand cupped at his mouth. Two shopping bags on the bottom step and a potted aspidistra. Wide shot from the street door.",
+    "note": "Paco no sale: el tema solo tiene dos personajes fijos."
+   },
+   {
+    "slug": "un-favor-sin-pedir",
+    "title": "Un favor sin pedir",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The entrance hall on a Monday morning. EMILIO mops the tiled floor with a grey mop and a yellow bucket, frowning and not looking up; CELIA stands on the bottom stair, one hand raised as if about to speak, puzzled. Wet shining tiles and a closed black rubbish bag by the door. Medium shot at eye level, EMILIO in front and CELIA behind him.",
+    "note": ""
+   },
+   {
+    "slug": "mira-la-apuntadora",
+    "title": "Mira, la Apuntadora",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The staircase of the building, late afternoon. EMILIO leans out from beside the letterboxes holding a closed envelope, grinning and pointing at her; CELIA stands on a cold stone step holding a small closed notebook and a key, smiling back. Blank closed letterboxes and an iron stair rail. Low-angle shot from the bottom of the stairs.",
+    "note": ""
+   }
+  ]
+ },
+ {
+  "topic": "deals-and-estimates",
+  "label": "Deals & Estimates",
+  "place": "Granada, España",
+  "names": [
+   "CELIA",
+   "TOÑO"
+  ],
+  "sheet": "Character model sheet for a story series, flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills with no gradients and no texture, plain pure white background, landscape 16:9.\n\nExactly 2 adult characters, drawn as a reference sheet: top row shows both full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same two as head-and-shoulders close-ups.\n\nLEFT is CELIA: woman, exactly 34 years old, slim build, medium height, about the same height as TOÑO, light olive skin, dark brown straight hair cut level with the jaw WITH a straight blunt fringe, no facial hair, no glasses; wears a mustard-yellow knitted cardigan over a plain white round-neck t-shirt, dark indigo jeans and white canvas trainers.\n\nRIGHT is TOÑO: man, exactly 45 years old, stocky and muscular, about the same height as CELIA, tanned skin, completely shaved head, short full black beard and thick black eyebrows, no glasses; wears a plain bright orange t-shirt with no logo, dark grey work trousers with black knee pads and tan work boots.\n\nGenerous white margin around every figure, no props, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "el-tejado-a-la-mitad",
+    "title": "El tejado a la mitad",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: A sunny empty narrow street in the Realejo, Granada, morning. TOÑO pulls an aluminium ladder off the roof of a plain white van with no lettering, a carpenter's pencil behind his ear; CELIA stands on the pavement holding two sheets of paper folded in half, frowning, confused. Whitewashed walls, red roof tiles above them and a stack of bricks on the pavement. Wide shot from across the street, both full body.",
+    "note": ""
+   },
+   {
+    "slug": "la-rebaja-en-mano",
+    "title": "La rebaja en mano",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: CELIA's small flat, Tuesday afternoon. CELIA sits alone at a table with a straight back and a firm expression, holding a phone to her ear with the screen facing away and one hand flat on a sheet of paper folded in half. A glass of water, a potted plant and the back of an empty chair. Frontal medium shot, CELIA waist-up.",
+    "note": "Loli es la voz del telefono; no sale."
+   },
+   {
+    "slug": "lo-pongo-por-escrito",
+    "title": "Lo pongo por escrito",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The entrance hall of the building, evening. CELIA pins a sheet of paper folded in half onto an otherwise empty cork board with a red drawing pin, calm and satisfied. Green wall tiles, closed blank letterboxes below the board and a pen clipped to her cardigan pocket. High-angle over-the-shoulder shot from behind her, CELIA waist-up.",
+    "note": "Emilio y el vecino del tercero no salen."
+   }
+  ]
+ },
+ {
+  "topic": "trust-and-rumours",
+  "label": "Trust & Rumours",
+  "place": "Granada, España",
+  "names": [
+   "CELIA",
+   "SOLE"
+  ],
+  "sheet": "Character model sheet for a story series, flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills with no gradients and no texture, plain pure white background, landscape 16:9.\n\nExactly 2 adult characters, drawn as a reference sheet: top row shows both full body from head to feet, standing straight, front view, neutral expression; bottom row shows the same two as head-and-shoulders close-ups.\n\nLEFT is CELIA: woman, exactly 34 years old, slim build, medium height, clearly taller than SOLE, light olive skin, dark brown straight hair cut level with the jaw WITH a straight blunt fringe, no facial hair, no glasses; wears a mustard-yellow knitted cardigan over a plain white round-neck t-shirt, dark indigo jeans and white canvas trainers.\n\nRIGHT is SOLE: woman, exactly 50 years old, clearly a woman of fifty and not elderly, short and plump, clearly shorter than CELIA, very pale skin, short spiky platinum-blonde dyed hair, WITHOUT fringe, no facial hair, no glasses, large gold hoop earrings; wears a bright red padded gilet over a purple jumper, black leggings and white trainers.\n\nGenerous white margin around every figure, no props, no scenery, no shadows on the background, and absolutely no text, labels or numbers anywhere in the image.",
+  "stories": [
+   {
+    "slug": "palabra-por-palabra",
+    "title": "Palabra por palabra",
+    "slot": 1,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The ground-floor landing outside the downstairs flat, midday. SOLE stands with a bag of groceries at her feet and her hands on her hips, asking a blunt question; CELIA stands frozen at her own front door with a key half-turned in the lock, looking back at her. Terracotta floor tiles, an iron stair rail and a doormat. Wide shot at eye level, both full body.",
+    "note": ""
+   },
+   {
+    "slug": "la-voz-mas-rapida",
+    "title": "La voz más rápida",
+    "slot": 2,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: A landing two floors up, afternoon. CELIA stands in front of a closed wooden flat door, knocking on it with her open palm, lips pressed together, determined. A plain brass door handle, a doormat and a small potted plant beside the door. Profile shot with CELIA in the foreground, waist-up.",
+    "note": "Emilio no sale."
+   },
+   {
+    "slug": "poco-y-de-oidas",
+    "title": "Poco y de oídas",
+    "slot": 3,
+    "prompt": "LOCK: The image provided is the cast sheet for this story. KEEP every character's face, hair, facial hair, body build, height difference, skin tone and clothing IDENTICAL to the sheet; only pose, framing, light and background change. Draw only the characters the scene names. No text, letters or numbers anywhere in the image.\n\nSTYLE: Flat cel-shaded editorial illustration, thick clean outlines, vivid saturated colour, flat colour fills, no gradients, no texture, no painterly shading, 16:9 landscape.\n\nFRAMING: the characters occupy the middle third of the frame, waist-up or fuller, and the illustration fills the entire canvas edge to edge with no borders or empty margins.\n\nSCENE: The stairwell of the building, evening, cold light from the open street door below. SOLE comes down the stairs carrying two shopping bags, leaning in and whispering; CELIA stands on the landing holding her key, calmly shaking her head. An iron stair rail and terracotta steps. High-angle shot from the flight of stairs above.",
+    "note": ""
+   }
+  ]
+ }
+]

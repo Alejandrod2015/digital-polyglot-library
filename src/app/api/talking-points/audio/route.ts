@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { generateAndUploadAudio } from "@/lib/elevenlabs";
 import { getPiece } from "@/lib/talkingPoints";
+import { signAudioUrl } from "@/lib/mediaSigning";
 
 // Renders the narration for one Talking Points piece.
 //
@@ -64,7 +65,7 @@ export async function POST(req: Request) {
   return NextResponse.json({
     slug: piece.slug,
     voiceId: result.voiceId,
-    url: result.url,
+    url: signAudioUrl(result.url),
     segments: result.audioSegments.length,
     audioQa: result.audioQa,
   });

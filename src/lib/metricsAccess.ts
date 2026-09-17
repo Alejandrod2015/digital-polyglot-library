@@ -2,6 +2,7 @@ import { createClerkClient } from "@clerk/backend";
 import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest } from "next/server";
 import { getStudioMembers, isStudioMember } from "@/lib/studio-access";
+import { isInternalDomain } from "@/lib/internalAccounts";
 
 const clerkClient = createClerkClient({
   secretKey: process.env.CLERK_SECRET_KEY!,
@@ -64,6 +65,7 @@ export async function getInternalUserIds(): Promise<string[]> {
     }
   }
 
+  // Una sola pasada por Clerk que recoge dos exclusiones.
   // Cuentas marcadas en Clerk como fuera de la analítica
   // (`publicMetadata.analyticsExcluded`). La bandera ya existía y la
   // respetaban el pixel de Meta y GA4, pero el panel no la miraba: la cuenta
@@ -78,6 +80,19 @@ export async function getInternalUserIds(): Promise<string[]> {
       for (const user of page.data) {
         const meta = (user.publicMetadata ?? {}) as Record<string, unknown>;
         if (meta.analyticsExcluded === true) ids.push(user.id);
+        // Y el dominio de la empresa, la MISMA regla que el ingest de
+        // metricas aplica al sellar cada fila con `internal`. Las dos
+        // definiciones llevaban meses divergiendo: una cuenta
+        // @digitalpolyglot.com que no estuviera en `studio_members`
+        // quedaba marcada como interna en su propia fila y aun asi contaba
+        // como usuario activo en el panel. El 2026-09-16 dos de ellas
+        // salieron dentro del DAU. Se aprovecha esta misma pagina, asi que
+        // no cuesta ni una peticion mas.
+        const email =
+          user.primaryEmailAddress?.emailAddress ??
+          user.emailAddresses?.[0]?.emailAddress ??
+          null;
+        if (isInternalDomain(email)) ids.push(user.id);
       }
       if (page.data.length < 100) break;
     }

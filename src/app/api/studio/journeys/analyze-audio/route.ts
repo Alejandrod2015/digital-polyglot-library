@@ -4,6 +4,8 @@ import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
 import { analyzeExistingAudio, buildAudioNarrationText } from "@/lib/elevenlabs";
 
+import { signAudioUrl } from "@/lib/mediaSigning";
+
 export const maxDuration = 120;
 
 export async function POST(request: Request) {
@@ -28,7 +30,8 @@ export async function POST(request: Request) {
   if (!story.title || !story.text) return NextResponse.json({ error: "Story needs title and text" }, { status: 400 });
 
   try {
-    const response = await fetch(story.audioUrl);
+    // La QA se baja el mp3 aqui mismo, asi que va por la URL firmada.
+    const response = await fetch(signAudioUrl(story.audioUrl) ?? story.audioUrl);
     if (!response.ok) throw new Error(`Failed to download audio: ${response.status}`);
 
     const audioBuffer = Buffer.from(await response.arrayBuffer());

@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a1",
+  "variante": "france",
+  "registro": "practico y contenido, con papeles, mostradores y ayuda que Amélie aprende a aceptar solo cuando la pide",
+  "espina": "Amélie quiere entrar en un circulo nuevo de Paris sin depender de Marc para entender cada paso practico.",
+  "recursos": "A1 narrado con presente, futur proche minimo, parce que, mais, il faut, pouvoir, vouloir, preguntas cortas, habla citada en banda 25-35%, una sola ancla sensorial por historia y vocabulario administrativo usado como accion.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Amélie quiere confirmar sola una cita municipal para demostrar que puede manejar el tramite sin Marc.",
+      "impide": "El formulario pide un justificatif y Amélie no entiende que documento sirve.",
+      "cuesta": "Pierde la comodidad de dejar que Marc traduzca y acepta quedar como principiante delante de Nadine.",
+      "cambia": "Pregunta ella misma y obtiene una respuesta clara a su nombre.",
+      "emocion": "Siente verguenza porque Marc la mira con ganas de ayudar; baja el movil, respira y pregunta ella."
+    },
+    {
+      "slot": "2",
+      "quiere": "Amélie quiere llevar el dossier correcto para no retrasar el plan de la tarde.",
+      "impide": "Marc anade papeles de mas y Nadine cambia la hora de la cita.",
+      "cuesta": "Pierde una caminata que queria hacer con Marc junto al canal.",
+      "cambia": "Aprende a elegir lo necesario y deja fuera un papel inutil aunque Marc insista.",
+      "emocion": "Se enfada porque la ayuda de Marc la hace sentir pequena; alinea los papeles y le dice que espere."
+    },
+    {
+      "slot": "3",
+      "quiere": "Amélie quiere salir del guichet con una respuesta simple y volver tranquila.",
+      "impide": "El agente encuentra un error minimo en la direccion y Marc propone volver otro dia.",
+      "cuesta": "Pierde el tren comodo y paga mas por terminar el tramite ella misma.",
+      "cambia": "Corrige la linea, firma y acepta el coste de terminar sin esconderse.",
+      "emocion": "Le tiembla la mano al escribir porque teme fallar otra vez; mira a Marc, sonríe poco y corrige la linea."
+    }
+  ]
+}

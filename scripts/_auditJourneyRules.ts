@@ -19,7 +19,7 @@ async function main() {
   const nivel = (j?.levels ?? [])[0] ?? "";
   const todas: JourneyStoryInput[] = filas.map((f) => ({
     slug: f.slug ?? `${f.topic}#${f.slotIndex}`, title: f.title ?? "", text: f.text!,
-    vocab: f.vocab as never, language: j?.language ?? undefined, level: nivel,
+    vocab: f.vocab as never, language: j?.language ?? undefined, level: nivel, topic: f.topic,
   }));
   const realPeople = (await p.betaSignup.findMany({ select: { email: true } }))
     .flatMap((b) => String(b.email ?? "").split("@")[0].split(/[._\-+0-9]+/))

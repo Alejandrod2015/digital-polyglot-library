@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "canapé,couverture,porte,dormir",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "canapé",
+     "answer": "long soft seat where people sit or sleep",
+     "options": [
+      "long soft seat where people sit or sleep",
+      "warm cloth used on a bed or sofa",
+      "flat thing you open to enter a room",
+      "to rest at night with your eyes closed"
+     ]
+    },
+    {
+     "word": "couverture",
+     "answer": "warm cloth used on a bed or sofa",
+     "options": [
+      "long soft seat where people sit or sleep",
+      "warm cloth used on a bed or sofa",
+      "flat thing you open to enter a room",
+      "to rest at night with your eyes closed"
+     ]
+    },
+    {
+     "word": "porte",
+     "answer": "flat thing you open to enter a room",
+     "options": [
+      "long soft seat where people sit or sleep",
+      "warm cloth used on a bed or sofa",
+      "flat thing you open to enter a room",
+      "to rest at night with your eyes closed"
+     ]
+    },
+    {
+     "word": "dormir",
+     "answer": "to rest at night with your eyes closed",
+     "options": [
+      "long soft seat where people sit or sleep",
+      "warm cloth used on a bed or sofa",
+      "flat thing you open to enter a room",
+      "to rest at night with your eyes closed"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "soir",
+  "sentence": "Tu dors ici ce [[soir]], propose quelqu'un.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "part of the day after afternoon and before night",
+   "options": [
+    "part of the day after afternoon and before night",
+    "long soft seat where people sit or sleep",
+    "warm cloth used on a bed or sofa",
+    "flat thing you open to enter a room"
+   ],
+   "audioClip": {
+    "storySlug": "chez-camille",
+    "storySource": "user",
+    "sentence": "Tu dors ici ce soir, propose quelqu'un.",
+    "targetWord": "soir",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "serviette",
+  "sentence": "quelqu'un prend la [[serviette]] pliée.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cloth or paper used to dry or clean hands",
+   "options": [
+    "cloth or paper used to dry or clean hands",
+    "long soft seat where people sit or sleep",
+    "warm cloth used on a bed or sofa",
+    "flat thing you open to enter a room"
+   ],
+   "audioClip": {
+    "storySlug": "chez-camille",
+    "storySource": "user",
+    "sentence": "quelqu'un prend la serviette pliée.",
+    "targetWord": "serviette",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "table",
+  "sentence": "Sur la [[table]], il y a du savon et un verre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "piece of furniture where people put things or eat",
+   "options": [
+    "piece of furniture where people put things or eat",
+    "long soft seat where people sit or sleep",
+    "warm cloth used on a bed or sofa",
+    "flat thing you open to enter a room"
+   ],
+   "audioClip": {
+    "storySlug": "chez-camille",
+    "storySource": "user",
+    "sentence": "Sur la table, il y a du savon et un verre.",
+    "targetWord": "table",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "verre",
+  "sentence": "Sur la table, il y a du savon et un [[verre]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "small cup used for drinking water or juice",
+   "options": [
+    "small cup used for drinking water or juice",
+    "long soft seat where people sit or sleep",
+    "warm cloth used on a bed or sofa",
+    "flat thing you open to enter a room"
+   ],
+   "audioClip": {
+    "storySlug": "chez-camille",
+    "storySource": "user",
+    "sentence": "Sur la table, il y a du savon et un verre.",
+    "targetWord": "verre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "main",
+  "sentence": "La [[main]] d'quelqu'un se serre parce qu'elle a peur de gêner.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "body part at the end of your arm",
+   "options": [
+    "body part at the end of your arm",
+    "long soft seat where people sit or sleep",
+    "warm cloth used on a bed or sofa",
+    "flat thing you open to enter a room"
+   ],
+   "audioClip": {
+    "storySlug": "chez-camille",
+    "storySource": "user",
+    "sentence": "La main d'quelqu'un se serre parce qu'elle a peur de gêner.",
+    "targetWord": "main",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "peur",
+  "sentence": "La main d'quelqu'un se serre parce qu'elle a [[peur]] de gêner.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bad feeling when something may go wrong soon",
+   "options": [
+    "bad feeling when something may go wrong soon",
+    "long soft seat where people sit or sleep",
+    "warm cloth used on a bed or sofa",
+    "flat thing you open to enter a room"
+   ],
+   "audioClip": {
+    "storySlug": "chez-camille",
+    "storySource": "user",
+    "sentence": "La main d'quelqu'un se serre parce qu'elle a peur de gêner.",
+    "targetWord": "peur",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "faire",
+  "sentence": "Elle [[fait]] un pli dans la serviette.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to do or make something in a simple way",
+   "options": [
+    "to do or make something in a simple way",
+    "long soft seat where people sit or sleep",
+    "warm cloth used on a bed or sofa",
+    "flat thing you open to enter a room"
+   ],
+   "audioClip": {
+    "storySlug": "chez-camille",
+    "storySource": "user",
+    "sentence": "Elle fait un pli dans la serviette.",
+    "targetWord": "fait",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "devoir",
+  "sentence": "Puis elle ajoute: Je [[dois]] avoir la clef.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to need to do or have something now",
+   "options": [
+    "to need to do or have something now",
+    "long soft seat where people sit or sleep",
+    "warm cloth used on a bed or sofa",
+    "flat thing you open to enter a room"
+   ],
+   "audioClip": {
+    "storySlug": "chez-camille",
+    "storySource": "user",
+    "sentence": "Puis elle ajoute: Je dois avoir la clef.",
+    "targetWord": "dois",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "avoir",
+  "sentence": "Puis elle ajoute: Je dois [[avoir]] la clef.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to own, hold, or need something right now",
+   "options": [
+    "to own, hold, or need something right now",
+    "long soft seat where people sit or sleep",
+    "warm cloth used on a bed or sofa",
+    "flat thing you open to enter a room"
+   ],
+   "audioClip": {
+    "storySlug": "chez-camille",
+    "storySource": "user",
+    "sentence": "Puis elle ajoute: Je dois avoir la clef.",
+    "targetWord": "avoir",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "non",
+  "sentence": "[[Non]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "word used to say that something is not true",
+   "options": [
+    "word used to say that something is not true",
+    "long soft seat where people sit or sleep",
+    "warm cloth used on a bed or sofa",
+    "flat thing you open to enter a room"
+   ],
+   "audioClip": {
+    "storySlug": "chez-camille",
+    "storySource": "user",
+    "sentence": "Non.",
+    "targetWord": "Non",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jaune",
+  "sentence": "quelqu'un pose la clef [[jaune]] dans sa main.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "having the bright color of lemons or sun",
+   "options": [
+    "having the bright color of lemons or sun",
+    "long soft seat where people sit or sleep",
+    "warm cloth used on a bed or sofa",
+    "flat thing you open to enter a room"
+   ],
+   "audioClip": {
+    "storySlug": "chez-camille",
+    "storySource": "user",
+    "sentence": "quelqu'un pose la clef jaune dans sa main.",
+    "targetWord": "jaune",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "couloir",
+  "sentence": "Dans le [[couloir]], quelqu'un demande: Demain, petit déjeuner?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "long narrow place between rooms in a building",
+   "options": [
+    "long narrow place between rooms in a building",
+    "long soft seat where people sit or sleep",
+    "warm cloth used on a bed or sofa",
+    "flat thing you open to enter a room"
+   ],
+   "audioClip": {
+    "storySlug": "chez-camille",
+    "storySource": "user",
+    "sentence": "Dans le couloir, quelqu'un demande: Demain, petit déjeuner?",
+    "targetWord": "couloir",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "demain",
+  "sentence": "Dans le couloir, quelqu'un demande: [[Demain]], petit déjeuner?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the day after today, not this same day",
+   "options": [
+    "the day after today, not this same day",
+    "long soft seat where people sit or sleep",
+    "warm cloth used on a bed or sofa",
+    "flat thing you open to enter a room"
+   ],
+   "audioClip": {
+    "storySlug": "chez-camille",
+    "storySource": "user",
+    "sentence": "Dans le couloir, quelqu'un demande: Demain, petit déjeuner?",
+    "targetWord": "Demain",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "Oui",
+  "sentence": "quelqu'un garde la clef et répond: _____, mais pas trop tôt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Oui",
+   "options": [
+    "Oui",
+    "Non",
+    "tôt",
+    "canapé"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "word used to say that something is true",
+    "word used to say that something is not true",
+    "early in the day or before the usual time",
+    "long soft seat where people sit or sleep"
+   ],
+   "audioClip": {
+    "storySlug": "chez-camille",
+    "storySource": "user",
+    "sentence": "quelqu'un garde la clef et répond: Oui, mais pas trop tôt.",
+    "targetWord": "Oui",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "tôt",
+  "sentence": "quelqu'un garde la clef et répond: Oui, mais pas trop _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tôt",
+   "options": [
+    "tôt",
+    "Non",
+    "Oui",
+    "canapé"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "early in the day or before the usual time",
+    "word used to say that something is not true",
+    "word used to say that something is true",
+    "long soft seat where people sit or sleep"
+   ],
+   "audioClip": {
+    "storySlug": "chez-camille",
+    "storySource": "user",
+    "sentence": "quelqu'un garde la clef et répond: Oui, mais pas trop tôt.",
+    "targetWord": "tôt",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "répond",
+  "sentence": "C'est beaucoup, _____ quelqu'un.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "répond",
+   "options": [
+    "répond",
+    "dors",
+    "fait",
+    "dois"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "to say words after someone asks something aloud",
+    "to rest at night with your eyes closed",
+    "to do or make something in a simple way",
+    "to need to do or have something now"
+   ],
+   "audioClip": {
+    "storySlug": "chez-camille",
+    "storySource": "user",
+    "sentence": "C'est beaucoup, répond quelqu'un.",
+    "targetWord": "répond",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

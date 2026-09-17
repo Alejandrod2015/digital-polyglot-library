@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a1",
+  "variante": "france",
+  "registro": "confianza tranquila, dudas pequenas, apoyo entre adultos y frases claras que no prometen demasiado",
+  "espina": "Amélie quiere pedir seguridad sin convertir a sus amigos en salvavidas ni borrar su propia voz.",
+  "recursos": "A1 narrado con presente, futur proche minimo, parce que, mais, quand, il faut, pouvoir, vouloir, devoir, preguntas cortas, habla citada en banda 25-35%, una sola ancla sensorial por historia y vocabulario concreto de estudio, cuerpo y ciudad.",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "Amélie quiere comprobar un mensaje dificil sin que Marc lo corrija entero.",
+      "impide": "Sophie le ofrece ayuda muy directa y Amélie teme desaparecer de la frase.",
+      "cuesta": "Pierde la seguridad de una version perfecta y conserva una frase imperfecta suya.",
+      "cambia": "Pide una confirmacion limitada: solo si se entiende.",
+      "emocion": "Siente la mano tensa sobre el cahier, mira la luz de la mesa y sostiene la pregunta."
+    },
+    {
+      "slot": "2",
+      "quiere": "Amélie quiere confiar en que Marc la espere sin pedir una promesa grande.",
+      "impide": "Marc ofrece quedarse todo el dia y eso vuelve la ayuda demasiado pesada.",
+      "cuesta": "Pierde la fantasia de apoyo total y acepta una ayuda mas pequena.",
+      "cambia": "Pide que la espere diez minutos, no que cargue con toda la tarde.",
+      "emocion": "Se le aprieta el pecho, pero habla antes de asentir por miedo."
+    },
+    {
+      "slot": "3",
+      "quiere": "Amélie quiere decir una duda delante de Sophie y Mathieu.",
+      "impide": "La sala esta amable, pero todos parecen seguros y ella no.",
+      "cuesta": "Pierde la imagen de alumna facil y acepta necesitar repeticion.",
+      "cambia": "Pide una segunda explicacion sin pedir perdon.",
+      "emocion": "Nota la luz blanca en los papeles y deja de esconder el cahier."
+    }
+  ]
+}

@@ -5,9 +5,7 @@ import { usePathname } from "next/navigation";
 import { useAuth } from "@clerk/nextjs";
 import Sidebar from "../components/Sidebar";
 import MobileTabBar from "@/components/MobileTabBar";
-import InstallAppHint from "@/components/InstallAppHint";
 import BackNavigationHandler from "@/components/BackNavigationHandler";
-import FeedbackButton from "@/components/FeedbackButton";
 import NavigationTimingTracker from "@/components/NavigationTimingTracker";
 import ThemeController from "@/components/ThemeController";
 import GA4Tracker from "@/components/GA4Tracker";
@@ -129,9 +127,7 @@ export default function AppShell({
       <CookieConsentBanner requiresConsentOptIn={requiresConsentOptIn} />
 
       <>
-        <InstallAppHint />
         <MobileTabBar />
-        <FeedbackButton />
       </>
     </>
   );

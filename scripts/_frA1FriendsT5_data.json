@@ -1,0 +1,455 @@
+[
+  {
+    "topic": "invites-and-boundaries",
+    "slotIndex": 0,
+    "title": "Une fête courte",
+    "slug": "une-fete-courte",
+    "synopsis": "Mathieu invites Amélie to a small party after a meeting, and Marc is ready to say yes for the whole day. Amélie wants to join without staying too long, so she gives one clear end time before the invitation grows around her in front of everyone.",
+    "arcType": "mini-cliffhanger",
+    "text": "Après la réunion, Amélie, une libraire de Paris, attend avec Marc. Mathieu est un journaliste de Paris et les invite. Une lumière reste sur son pantalon bleu. La pièce est pleine.\n\n“Dimanche, on fait une fête ici”, dit Mathieu. “Un ami vient, une collègue aussi.” Marc sourit déjà. “On peut rester longtemps.”\n\nAmélie aime les gens, mais le plan devient difficile. Elle espère recevoir une place sans donner toute sa journée. Son silence dure.\n\nMathieu montre la fête sur son agenda. “Tu veux essayer?” Amélie répond: “Oui, mais deux heures seulement.” Marc tient une robe, un pull et un chapeau.\n\nMarc se tait enfin. Mathieu sourit. “Alors tu viens peu, mais tu viens.” Amélie dit: “Oui. C’est assez fort pour moi.” Elle regarde sa montre rapide, perd le oui facile, mais garde son ami près ici.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "inviter",
+        "surface": "invite",
+        "register": "neutral",
+        "definition": "to ask someone to come to an event"
+      },
+      {
+        "type": "noun",
+        "word": "pantalon",
+        "surface": "pantalon",
+        "register": "neutral",
+        "definition": "clothing worn on the legs and waist today"
+      },
+      {
+        "type": "adjective",
+        "word": "plein",
+        "surface": "pleine",
+        "register": "neutral",
+        "definition": "full, with many people or things inside today"
+      },
+      {
+        "type": "noun",
+        "word": "dimanche",
+        "surface": "Dimanche",
+        "register": "neutral",
+        "definition": "day of the week after Saturday and before Monday"
+      },
+      {
+        "type": "noun",
+        "word": "fête",
+        "surface": "fête",
+        "register": "neutral",
+        "definition": "happy event where people meet or celebrate together"
+      },
+      {
+        "type": "noun",
+        "word": "ami",
+        "surface": "ami",
+        "register": "neutral",
+        "definition": "person someone knows well and likes today today"
+      },
+      {
+        "type": "noun",
+        "word": "collègue",
+        "surface": "collègue",
+        "register": "neutral",
+        "definition": "person who works with another person today today"
+      },
+      {
+        "type": "verb",
+        "word": "aimer",
+        "surface": "aime",
+        "register": "neutral",
+        "definition": "to like or love someone or something today"
+      },
+      {
+        "type": "noun",
+        "word": "gens",
+        "surface": "gens",
+        "register": "neutral",
+        "definition": "people in general, without saying exact names today"
+      },
+      {
+        "type": "adjective",
+        "word": "difficile",
+        "surface": "difficile",
+        "register": "neutral",
+        "definition": "not easy to do, understand, or accept today"
+      },
+      {
+        "type": "verb",
+        "word": "espérer",
+        "surface": "espère",
+        "register": "neutral",
+        "definition": "to want something good to happen later today"
+      },
+      {
+        "type": "verb",
+        "word": "recevoir",
+        "surface": "recevoir",
+        "register": "neutral",
+        "definition": "to get something that another person gives today"
+      },
+      {
+        "type": "noun",
+        "word": "place",
+        "surface": "place",
+        "register": "neutral",
+        "definition": "specific spot where someone can be or sit"
+      },
+      {
+        "type": "noun",
+        "word": "montre",
+        "surface": "montre",
+        "register": "neutral",
+        "definition": "small clock worn on the wrist or carried"
+      },
+      {
+        "type": "adjective",
+        "word": "rapide",
+        "surface": "rapide",
+        "register": "neutral",
+        "definition": "fast, or moving in little time today today"
+      },
+      {
+        "type": "noun",
+        "word": "robe",
+        "surface": "robe",
+        "register": "neutral",
+        "definition": "clothing for the body, often one piece today"
+      },
+      {
+        "type": "noun",
+        "word": "pull",
+        "surface": "pull",
+        "register": "neutral",
+        "definition": "warm clothing worn over the upper body today"
+      },
+      {
+        "type": "noun",
+        "word": "chapeau",
+        "surface": "chapeau",
+        "register": "neutral",
+        "definition": "thing worn on the head outside today today"
+      },
+      {
+        "type": "verb",
+        "word": "essayer",
+        "surface": "essayer",
+        "register": "neutral",
+        "definition": "to do something to see if it works"
+      },
+      {
+        "type": "adjective",
+        "word": "fort",
+        "surface": "fort",
+        "register": "neutral",
+        "definition": "strong, or having much force or power today"
+      }
+    ]
+  },
+  {
+    "topic": "invites-and-boundaries",
+    "slotIndex": 1,
+    "title": "Un thé possible",
+    "slug": "un-the-possible",
+    "synopsis": "Amélie wants to invite Mathieu for a drink after work without making the invitation feel like a duty. Marc speaks too quickly and makes it larger, so she takes the sentence back and leaves Mathieu room to say no without making the friendship strange today.",
+    "arcType": "juxtaposition-discovery",
+    "text": "Le matin, Amélie attend devant la librairie. Mathieu arrive avec une chemise propre et un journal plié. Sur la vitrine, une lumière touche le portefeuille dans sa main.\n\nAmélie veut parler du thé. Marc parle trop vite. “Elle veut te voir demain au café.” Amélie enlève ses lunettes et regarde son crayon.\n\nSur le bureau, une gomme et une lettre attendent dans son carnet. Amélie oublie ses mots un instant, puis respire.\n\n“Non, je veux demander autrement”, dit-elle. Mathieu reste poli. Marc ferme la bouche. Elle montre la phrase.\n\n“Mathieu, tu peux venir boire un thé, si tu veux.” Mathieu sourit. “Je dois téléphoner d’abord.”\n\nAmélie répond: “Alors tu peux envoyer un mot après.” Marc lève les mains. Elle réussit une invitation plus timide, avec de la place calme aujourd’hui ici.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "matin",
+        "surface": "matin",
+        "register": "neutral",
+        "definition": "early part of the day before noon today"
+      },
+      {
+        "type": "noun",
+        "word": "librairie",
+        "surface": "librairie",
+        "register": "neutral",
+        "definition": "shop where people buy books and notebooks today"
+      },
+      {
+        "type": "noun",
+        "word": "chemise",
+        "surface": "chemise",
+        "register": "neutral",
+        "definition": "clothing for the upper body with buttons today"
+      },
+      {
+        "type": "adjective",
+        "word": "propre",
+        "surface": "propre",
+        "register": "neutral",
+        "definition": "clean, not dirty, or belonging to someone today"
+      },
+      {
+        "type": "noun",
+        "word": "journal",
+        "surface": "journal",
+        "register": "neutral",
+        "definition": "paper or website with news and articles today"
+      },
+      {
+        "type": "noun",
+        "word": "portefeuille",
+        "surface": "portefeuille",
+        "register": "neutral",
+        "definition": "small flat thing used to carry money today"
+      },
+      {
+        "type": "noun",
+        "word": "lunettes",
+        "surface": "lunettes",
+        "register": "neutral",
+        "definition": "two glass pieces worn to see better today"
+      },
+      {
+        "type": "noun",
+        "word": "crayon",
+        "surface": "crayon",
+        "register": "neutral",
+        "definition": "tool used to write or draw, often gray"
+      },
+      {
+        "type": "adjective",
+        "word": "poli",
+        "surface": "poli",
+        "register": "neutral",
+        "definition": "showing good manners with other people today today"
+      },
+      {
+        "type": "noun",
+        "word": "bureau",
+        "surface": "bureau",
+        "register": "neutral",
+        "definition": "table for work, or room used for work"
+      },
+      {
+        "type": "noun",
+        "word": "gomme",
+        "surface": "gomme",
+        "register": "neutral",
+        "definition": "small thing used to remove pencil marks today"
+      },
+      {
+        "type": "noun",
+        "word": "lettre",
+        "surface": "lettre",
+        "register": "neutral",
+        "definition": "written message sent to another person today today"
+      },
+      {
+        "type": "noun",
+        "word": "phrase",
+        "surface": "phrase",
+        "register": "neutral",
+        "definition": "group of words with a complete meaning today"
+      },
+      {
+        "type": "verb",
+        "word": "oublier",
+        "surface": "oublie",
+        "register": "neutral",
+        "definition": "to not remember something at a moment today"
+      },
+      {
+        "type": "noun",
+        "word": "thé",
+        "surface": "thé",
+        "register": "neutral",
+        "definition": "hot drink made from leaves and water today"
+      },
+      {
+        "type": "verb",
+        "word": "envoyer",
+        "surface": "envoyer",
+        "register": "neutral",
+        "definition": "to make a message or object go somewhere"
+      },
+      {
+        "type": "adjective",
+        "word": "timide",
+        "surface": "timide",
+        "register": "neutral",
+        "definition": "quiet or nervous with other people today today"
+      },
+      {
+        "type": "verb",
+        "word": "téléphoner",
+        "surface": "téléphoner",
+        "register": "neutral",
+        "definition": "to speak with someone using a phone today"
+      },
+      {
+        "type": "verb",
+        "word": "réussir",
+        "surface": "réussit",
+        "register": "neutral",
+        "definition": "to do something well or with success today"
+      },
+      {
+        "type": "preposition",
+        "word": "après",
+        "surface": "après",
+        "register": "neutral",
+        "definition": "later than something or following it in time"
+      }
+    ]
+  },
+  {
+    "topic": "invites-and-boundaries",
+    "slotIndex": 2,
+    "title": "Le pantalon noir",
+    "slug": "le-pantalon-noir",
+    "synopsis": "After the first party, the group invites Amélie to continue at another bar, and Mathieu thinks she only needs encouragement. Amélie wants to protect her evening, so she refuses the second invitation and offers another day without leaving the friendship or the group today again.",
+    "arcType": "reframe-turn",
+    "text": "Quand la fête finit tôt, Amélie sort. Une ombre sombre tombe sur les chaussures de Mathieu. Il montre le bar, puis le joli pantalon de Marc.\n\n“On va danser là-bas?”, demande Mathieu. Marc attend la réponse d’Amélie. Elle est contente, mais fatiguée. Son cœur veut le salon tranquille.\n\nMathieu veut être gentil. “Tu peux chanter, ou seulement jouer avec nous.” Amélie pense à son lit, à son pyjama et à sa chambre.\n\nElle sourit devant le bar. “Merci, mais non pour ce soir.” Marc ne parle pas. Mathieu reste gentil et baisse la main. “Je suis trop rapide?”\n\n“Un peu”, répond Amélie. “Mais samedi, je peux courir au parc avec vous.” Mathieu dit: “Alors samedi.” Elle laisse un bar, pas l’amitié, et garde la musique pour plus tard.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "terminer",
+        "surface": "finit",
+        "register": "neutral",
+        "definition": "to finish doing something completely at the end"
+      },
+      {
+        "type": "adjective",
+        "word": "sombre",
+        "surface": "sombre",
+        "register": "neutral",
+        "definition": "dark, with little light around people today today"
+      },
+      {
+        "type": "noun",
+        "word": "chaussure",
+        "surface": "chaussures",
+        "register": "neutral",
+        "definition": "thing worn on a foot outside the home"
+      },
+      {
+        "type": "noun",
+        "word": "bar",
+        "surface": "bar",
+        "register": "neutral",
+        "definition": "place where people drink with other people today"
+      },
+      {
+        "type": "verb",
+        "word": "danser",
+        "surface": "danser",
+        "register": "neutral",
+        "definition": "to move the body to music today today"
+      },
+      {
+        "type": "adjective",
+        "word": "content",
+        "surface": "contente",
+        "register": "neutral",
+        "definition": "happy or pleased about something right now today"
+      },
+      {
+        "type": "adjective",
+        "word": "fatigué",
+        "surface": "fatiguée",
+        "register": "neutral",
+        "definition": "needing rest because the body has little energy"
+      },
+      {
+        "type": "noun",
+        "word": "cœur",
+        "surface": "cœur",
+        "register": "neutral",
+        "definition": "part inside the chest, or deep feelings today"
+      },
+      {
+        "type": "noun",
+        "word": "salon",
+        "surface": "salon",
+        "register": "neutral",
+        "definition": "room in a home where people sit today"
+      },
+      {
+        "type": "adjective",
+        "word": "tranquille",
+        "surface": "tranquille",
+        "register": "neutral",
+        "definition": "calm and quiet, without worry or hurry today"
+      },
+      {
+        "type": "adjective",
+        "word": "gentil",
+        "surface": "gentil",
+        "register": "neutral",
+        "definition": "kind and pleasant with other people today today"
+      },
+      {
+        "type": "verb",
+        "word": "chanter",
+        "surface": "chanter",
+        "register": "neutral",
+        "definition": "to make music with the voice today today"
+      },
+      {
+        "type": "verb",
+        "word": "jouer",
+        "surface": "jouer",
+        "register": "neutral",
+        "definition": "to play a game, sport, or music today"
+      },
+      {
+        "type": "noun",
+        "word": "lit",
+        "surface": "lit",
+        "register": "neutral",
+        "definition": "furniture where a person sleeps at night today"
+      },
+      {
+        "type": "noun",
+        "word": "pyjama",
+        "surface": "pyjama",
+        "register": "neutral",
+        "definition": "clothes worn for sleeping at night today today"
+      },
+      {
+        "type": "noun",
+        "word": "chambre",
+        "surface": "chambre",
+        "register": "neutral",
+        "definition": "room where a person usually sleeps today today"
+      },
+      {
+        "type": "adjective",
+        "word": "joli",
+        "surface": "joli",
+        "register": "neutral",
+        "definition": "nice or pretty to look at today today"
+      },
+      {
+        "type": "verb",
+        "word": "courir",
+        "surface": "courir",
+        "register": "neutral",
+        "definition": "to move fast on foot with steps today"
+      },
+      {
+        "type": "noun",
+        "word": "amitié",
+        "surface": "amitié",
+        "register": "neutral",
+        "definition": "friendly relationship between people who like each other"
+      },
+      {
+        "type": "noun",
+        "word": "musique",
+        "surface": "musique",
+        "register": "neutral",
+        "definition": "sounds that people sing, play, or enjoy today"
+      }
+    ]
+  }
+]

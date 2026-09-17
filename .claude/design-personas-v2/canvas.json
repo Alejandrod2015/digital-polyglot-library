@@ -1,0 +1,37 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1680,
+      "h": 1000
+    },
+    {
+      "file": "Contraste.dc.html",
+      "x": 1760,
+      "y": 0,
+      "w": 900,
+      "h": 760
+    },
+    {
+      "file": "Secundarias.dc.html",
+      "x": 0,
+      "y": 1080,
+      "w": 1680,
+      "h": 420
+    }
+  ],
+  "annotations": [
+    {
+      "id": "base",
+      "x": 1760,
+      "y": 840,
+      "w": 900,
+      "text": "Base: 48 solicitudes reales de la beta (fuera dos filas de prueba), 21 cuentas creadas, 1.133 toques de vocabulario, 83 practicas terminadas y 60 audios completos.\n\nLos subtotales de las siete columnas suman esos totales exactos. Nadie ha pagado todavia por la app: la unica compra probada son dos libros de papel."
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}

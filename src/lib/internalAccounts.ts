@@ -23,9 +23,14 @@ const TTL_MS = 60_000;
 /** El dominio de la empresa. Todo correo suyo es de casa, este o no en el Studio. */
 const INTERNAL_DOMAIN = "@digitalpolyglot.com";
 
-/** Interno por dominio, sin consultar la base: no depende de dar a nadie de alta. */
-function isInternalDomain(email: string): boolean {
-  return email.endsWith(INTERNAL_DOMAIN);
+/**
+ * Interno por dominio, sin consultar la base: no depende de dar a nadie de
+ * alta. Se EXPORTA porque el panel de metricas tiene que aplicar exactamente
+ * esta regla y no una copia suya: ver `getInternalUserIds`.
+ */
+export function isInternalDomain(email: string | null | undefined): boolean {
+  const e = email?.trim().toLowerCase();
+  return Boolean(e) && (e as string).endsWith(INTERNAL_DOMAIN);
 }
 
 let cache: Set<string> | null = null;

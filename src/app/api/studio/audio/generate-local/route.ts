@@ -8,10 +8,11 @@ import { join } from "node:path";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
 import { multiVoiceGuardError } from "@/lib/multiVoiceGuard";
-import { uploadPublicObject } from "@/lib/objectStorage";
+import { uploadAudioObject } from "@/lib/objectStorage";
 import { buildAudioNarrationText } from "@/lib/elevenlabs";
 import { findVoice, DEFAULT_VOICE_BY_LANGUAGE } from "@/lib/voiceCatalog";
 import { trimAudioBoundariesByAlignment } from "@/lib/audioBoundaryTrim";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 export const maxDuration = 300;
 
@@ -299,7 +300,7 @@ export async function POST(request: Request) {
           },
         });
       }
-      return NextResponse.json({ ok: true, audioUrl: result.url, filename: result.filename, isPreview, via: "modal" });
+      return NextResponse.json(signAudioUrlsDeep({ ok: true, audioUrl: result.url, filename: result.filename, isPreview, via: "modal" }));
     }
 
     if (!localEnabled) {
@@ -377,13 +378,13 @@ export async function POST(request: Request) {
       }
     }
 
-    const uploaded = await uploadPublicObject({
+    const uploaded = await uploadAudioObject({
       key: `media/generated/audio/${filename}`,
       body: buffer,
       contentType: "audio/mpeg",
     });
     if (!uploaded?.url) {
-      throw new Error("MEDIA_STORAGE upload failed (uploadPublicObject returned null). Check MEDIA_STORAGE_* env vars.");
+      throw new Error("MEDIA_STORAGE upload failed (uploadAudioObject returned null). Check MEDIA_STORAGE_* env vars.");
     }
 
     if (isPreview) {
@@ -410,7 +411,7 @@ export async function POST(request: Request) {
       });
     }
 
-    return NextResponse.json({ ok: true, audioUrl: uploaded.url, filename, isPreview });
+    return NextResponse.json(signAudioUrlsDeep({ ok: true, audioUrl: uploaded.url, filename, isPreview }));
   } catch (error) {
     console.error("[studio/audio/generate-local] failed:", error);
     if (!isPreview) {

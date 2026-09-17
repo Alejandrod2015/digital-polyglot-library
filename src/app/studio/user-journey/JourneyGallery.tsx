@@ -31,7 +31,8 @@ const ACTS: Act[] = [
       { n: "01", img: "j01", label: "Bienvenida", title: "La promesa, en la primera pantalla", body: "Al abrir la app, el usuario ve la propuesta central y las formas de entrar: Google, Facebook o email. Un solo objetivo en foco: empezar." },
       { n: "02", img: "j02", label: "Onboarding", title: "Elige qué quieres aprender", body: "Paso 1 de 4. El primer idioma se vuelve el journey inicial; el resto queda listo en el selector. Selección múltiple, cero fricción." },
       { n: "03", img: "j03", label: "Test de nivel", title: "Empieza en el nivel correcto", body: "Un quiz opcional de 10 preguntas para ubicar al usuario: ni aburrido ni perdido. 'Hola, ___ Ana' con soy/estoy/hay/es." },
-      { n: "04", img: "j04", label: "Tour guiado", title: "Un tour que señala cada zona", body: "Coachmarks que aparecen sobre el Home al entrar (4 pasos), señalando cada zona: Journey, Explore, Practice y Favorites." },
+      { n: "04", img: "j04", label: "Tour guiado", title: "Un tour que señala cada zona", body: "Coachmarks que aparecen sobre el Home al entrar (5 pasos), señalando cada zona: Journey, Progress, Practice, Favorites y Menu." },
+      { n: "04b", img: "j04b_handoff", label: "Cortina de carga", title: "Una pantalla, no cuatro", body: "Entre la última pregunta del onboarding y el journey montado hay tres escrituras y una carga. Esta cortina las cubre con una checklist animada, así el usuario nunca ve el Home vacío a medio construir." },
     ],
   },
   {

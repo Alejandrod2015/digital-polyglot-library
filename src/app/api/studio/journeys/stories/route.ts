@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
 import { effectiveAudioStatus } from "@/lib/staleAudioLock";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 /**
  * GET /api/studio/journeys/stories?journeyId=xxx; get all stories for a journey
@@ -36,7 +37,12 @@ export async function GET(request: NextRequest) {
   // curso para siempre (paso el 2026-07-22 con 18 historias, 6 dias).
   const ahora = Date.now();
   return NextResponse.json(
-    stories.map((s) => ({ ...s, audioStatus: effectiveAudioStatus(s.audioStatus, s.updatedAt, ahora) }))
+    signAudioUrlsDeep(
+      stories.map((s) => ({
+        ...s,
+        audioStatus: effectiveAudioStatus(s.audioStatus, s.updatedAt, ahora),
+      }))
+    )
   );
 }
 
@@ -96,5 +102,5 @@ export async function POST(request: Request) {
     },
   });
 
-  return NextResponse.json(story);
+  return NextResponse.json(signAudioUrlsDeep(story));
 }

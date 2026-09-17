@@ -5,6 +5,17 @@
 // La caché guarda nombre y correo juntos porque salen de la MISMA llamada a
 // Clerk: pedir el nombre aparte doblaría las peticiones para leer un campo
 // que ya venía en la respuesta.
+//
+// Dos cosas que costaron una investigación el 2026-09-16 y que el diseño de
+// aquí tiene que sostener:
+//
+//  1. Una cuenta BORRADA sigue teniendo filas en `UserMetric`, así que su id
+//     llega hasta aquí y Clerk no la conoce. Eso no es lo mismo que un fallo
+//     de red, y quien pinta la respuesta necesita poder decir la diferencia:
+//     por eso `status`, y no un `null` que sirve para las dos cosas.
+//  2. Un fallo PASAJERO (429, 500, red) no se cachea. Antes sí, y como la
+//     caché no caduca, un solo hipo dejaba a una persona real sin nombre
+//     hasta el siguiente despliegue de esa instancia.
 
 import { createClerkClient } from "@clerk/backend";
 
@@ -15,14 +26,41 @@ function getClerkClient() {
   return _clerkClient;
 }
 
-export type MetricsUserIdentity = { name: string | null; email: string | null };
+/**
+ * `ok`: Clerk contestó y la cuenta existe.
+ * `deleted`: Clerk contestó y la cuenta no existe. Sus métricas son historia.
+ * `unavailable`: no se pudo preguntar. Puede que la cuenta esté perfectamente.
+ */
+export type MetricsIdentityStatus = "ok" | "deleted" | "unavailable";
 
+export type MetricsUserIdentity = {
+  name: string | null;
+  email: string | null;
+  status: MetricsIdentityStatus;
+};
+
+/** Solo se cachea lo que no va a cambiar solo: `ok` y `deleted`. */
 const userCache = new Map<string, MetricsUserIdentity>();
+
+/** Cuántos ids caben en una consulta de lista de Clerk. */
+const BATCH = 100;
+
+function chunk<T>(items: T[], size: number): T[][] {
+  const out: T[][] = [];
+  for (let i = 0; i < items.length; i += size) out.push(items.slice(i, i + size));
+  return out;
+}
 
 /**
  * Nombre y correo de cada id. Quien entró con código por correo o con Apple
  * escondiendo el nombre no deja `firstName` en Clerk, y entonces el nombre es
  * null y manda el correo.
+ *
+ * Se pide por LOTES (`getUserList` con hasta 100 ids) en vez de un `getUser`
+ * por persona: nueve nombres eran nueve peticiones, y ese volumen es
+ * justamente el que se come el límite de Clerk y provoca el caso 2 de arriba.
+ * Los ids que el lote no devuelve son los que Clerk no conoce, que es la
+ * definición de cuenta borrada.
  */
 export async function resolveUserIdentities(
   userIds: string[],
@@ -30,13 +68,15 @@ export async function resolveUserIdentities(
   const unique = Array.from(new Set(userIds.filter(Boolean)));
   const byUserId = new Map<string, MetricsUserIdentity>();
 
+  const pendientes: string[] = [];
+  for (const userId of unique) {
+    const cached = userCache.get(userId);
+    if (cached) byUserId.set(userId, cached);
+    else pendientes.push(userId);
+  }
+
   await Promise.all(
-    unique.map(async (userId) => {
-      const cached = userCache.get(userId);
-      if (cached) {
-        byUserId.set(userId, cached);
-        return;
-      }
+    chunk(pendientes, BATCH).map(async (lote) => {
       try {
         const user = await getClerkClient().users.getUser(userId);
         const identity: MetricsUserIdentity = {
@@ -58,9 +98,6 @@ export async function resolveUserIdentities(
         if (status !== 404) {
           console.warn("resolveUserIdentities: failed to resolve Clerk user", userId, error);
         }
-        const vacia: MetricsUserIdentity = { name: null, email: null };
-        userCache.set(userId, vacia);
-        byUserId.set(userId, vacia);
       }
     }),
   );

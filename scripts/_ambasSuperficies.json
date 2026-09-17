@@ -1,0 +1,64 @@
+{
+  "generadoEl": "2026-09-06T01:31:56.308Z",
+  "criterio": "userIds con eventos app (metadata.platform ios/android) Y eventos web en dp_user_metrics_v1; email via EmailPreference, excluyendo unsubscribedAll",
+  "destinatarios": [
+    {
+      "userId": "user_3HqyhvG8phofQud3oZ9BtJg1W1f",
+      "email": "vincentpearson@sky.com",
+      "via": "BetaFeedback"
+    },
+    {
+      "userId": "user_3Hi9T8MR11DSrVdbhZlKHENjnp4",
+      "email": "christoph.koehner@googlemail.com",
+      "via": "BetaFeedback"
+    },
+    {
+      "userId": "user_3IH5pefMD0Iu0bjW41bw0iUIN4p",
+      "email": "gshaddox@comcast.net",
+      "via": "BetaFeedback"
+    },
+    {
+      "userId": "user_3I51mDBTlCZ9AnZATpiKIKqGTfz",
+      "email": "steffen.dias@gmx.de",
+      "via": "BetaFeedback"
+    },
+    {
+      "userId": "user_3I6XLCVh1hIhdvY4uPQKpi9KfkR",
+      "email": "dovedivine2015@gmail.com",
+      "via": "BetaFeedback"
+    },
+    {
+      "userId": "user_3IIeFMkweNPg7lBPkCxLqhJy3zq",
+      "email": "ty@tystober.com",
+      "via": "BetaFeedback"
+    }
+  ],
+  "sinEmailResuelto": [
+    "user_3B1nqxzOztcX9NyHjQ702rWIIT2",
+    "user_3I7CXE0J8nKb1msZPr6b94Ud0ut",
+    "user_3ImNFDH3DNRT9A1iXKfC4KQw6vm",
+    "user_3HpEI2IViDaTlm0W2c1xIZ4jfxZ",
+    "user_3IUs116k4n28lhlmSRJ73dHXdCj",
+    "user_3I6BRYVGSEmh0oa8kUzp2iHJsEe",
+    "user_33kv65uluOGVgWUcp98iEfIEZxW",
+    "user_33kGTw6oo7WW2spchkl7y52txtK",
+    "user_3IunlX8H0AielZRWzTCXpmj76mF",
+    "user_35bx8bp96tC2VLIOScMS76hA4TM",
+    "user_3IBw9u3Usd2RwOL2X7bwwJM8f5d",
+    "user_3IGzQwJemaveliro8RQDmZep9wg",
+    "user_3AsE6Hx9lrhCoSlktTw7pAJ7PIa",
+    "user_3I8JRVVccQ6HHe0rvTEeTkrUitg",
+    "user_3IYqpKB8RIzZLIRkfGsTeREQtUy",
+    "user_3HmBigHoIHvdsfLvlFJ9SgmKBZI",
+    "user_3FDc7lnrvVPg5UyOlU4ckcf7Wf7",
+    "user_3HpiQ2RQrAH3VRFvGNIKJj6LvnT",
+    "user_3IY1Q7bTdnYxYtcNG07n17FKdDT",
+    "user_3Hp1q2KB0Ym5d7CIxaxS2Ypat5x",
+    "user_3DpbjVE5wl6uw8VBOvUtGv9GRha",
+    "user_3Hp1momaFZl0HxWBBvNrzWluReK",
+    "user_3IDLn8xU20ImHPWymMHzZu9LlrY",
+    "user_3I0WtJC3bnRe0glp4a3wpiweNm5",
+    "user_344A1pqLKmmqGdz7aKOydl24YWN"
+  ],
+  "nota": "Los userIds sin email se resuelven al enviar, con el CLERK_SECRET_KEY de PROD (el local es sk_test y sus usuarios no son los reales): clerkClient.users.getUser(id).emailAddresses. EmailPreference esta casi vacia (5 filas sin userId) y no sirve de mapa."
+}

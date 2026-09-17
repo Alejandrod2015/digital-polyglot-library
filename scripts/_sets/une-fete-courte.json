@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "inviter,pantalon,plein,dimanche",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "inviter",
+     "answer": "to ask someone to come to an event",
+     "options": [
+      "to ask someone to come to an event",
+      "clothing worn on the legs and waist today",
+      "full, with many people or things inside today",
+      "day of the week after Saturday and before Monday"
+     ]
+    },
+    {
+     "word": "pantalon",
+     "answer": "clothing worn on the legs and waist today",
+     "options": [
+      "to ask someone to come to an event",
+      "clothing worn on the legs and waist today",
+      "full, with many people or things inside today",
+      "day of the week after Saturday and before Monday"
+     ]
+    },
+    {
+     "word": "plein",
+     "answer": "full, with many people or things inside today",
+     "options": [
+      "to ask someone to come to an event",
+      "clothing worn on the legs and waist today",
+      "full, with many people or things inside today",
+      "day of the week after Saturday and before Monday"
+     ]
+    },
+    {
+     "word": "dimanche",
+     "answer": "day of the week after Saturday and before Monday",
+     "options": [
+      "to ask someone to come to an event",
+      "clothing worn on the legs and waist today",
+      "full, with many people or things inside today",
+      "day of the week after Saturday and before Monday"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fête",
+  "sentence": "Dimanche, on fait une [[fête]] ici, dit Mathieu.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "happy event where people meet or celebrate together",
+   "options": [
+    "happy event where people meet or celebrate together",
+    "to ask someone to come to an event",
+    "clothing worn on the legs and waist today",
+    "full, with many people or things inside today"
+   ],
+   "audioClip": {
+    "storySlug": "une-fete-courte",
+    "storySource": "user",
+    "sentence": "Dimanche, on fait une fête ici, dit Mathieu.",
+    "targetWord": "fête",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ami",
+  "sentence": "Un [[ami]] vient, une collègue aussi.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "person someone knows well and likes today today",
+   "options": [
+    "person someone knows well and likes today today",
+    "to ask someone to come to an event",
+    "clothing worn on the legs and waist today",
+    "full, with many people or things inside today"
+   ],
+   "audioClip": {
+    "storySlug": "une-fete-courte",
+    "storySource": "user",
+    "sentence": "Un ami vient, une collègue aussi.",
+    "targetWord": "ami",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "collègue",
+  "sentence": "Un ami vient, une [[collègue]] aussi.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "person who works with another person today today",
+   "options": [
+    "person who works with another person today today",
+    "to ask someone to come to an event",
+    "clothing worn on the legs and waist today",
+    "full, with many people or things inside today"
+   ],
+   "audioClip": {
+    "storySlug": "une-fete-courte",
+    "storySource": "user",
+    "sentence": "Un ami vient, une collègue aussi.",
+    "targetWord": "collègue",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aimer",
+  "sentence": "quelqu'un [[aime]] les gens, mais le plan devient difficile.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to like or love someone or something today",
+   "options": [
+    "to like or love someone or something today",
+    "to ask someone to come to an event",
+    "clothing worn on the legs and waist today",
+    "full, with many people or things inside today"
+   ],
+   "audioClip": {
+    "storySlug": "une-fete-courte",
+    "storySource": "user",
+    "sentence": "quelqu'un aime les gens, mais le plan devient difficile.",
+    "targetWord": "aime",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gens",
+  "sentence": "quelqu'un aime les [[gens]], mais le plan devient difficile.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "people in general, without saying exact names today",
+   "options": [
+    "people in general, without saying exact names today",
+    "to ask someone to come to an event",
+    "clothing worn on the legs and waist today",
+    "full, with many people or things inside today"
+   ],
+   "audioClip": {
+    "storySlug": "une-fete-courte",
+    "storySource": "user",
+    "sentence": "quelqu'un aime les gens, mais le plan devient difficile.",
+    "targetWord": "gens",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "difficile",
+  "sentence": "quelqu'un aime les gens, mais le plan devient [[difficile]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "not easy to do, understand, or accept today",
+   "options": [
+    "not easy to do, understand, or accept today",
+    "to ask someone to come to an event",
+    "clothing worn on the legs and waist today",
+    "full, with many people or things inside today"
+   ],
+   "audioClip": {
+    "storySlug": "une-fete-courte",
+    "storySource": "user",
+    "sentence": "quelqu'un aime les gens, mais le plan devient difficile.",
+    "targetWord": "difficile",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "espérer",
+  "sentence": "Elle [[espère]] recevoir une place sans donner toute sa journée.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to want something good to happen later today",
+   "options": [
+    "to want something good to happen later today",
+    "to ask someone to come to an event",
+    "clothing worn on the legs and waist today",
+    "full, with many people or things inside today"
+   ],
+   "audioClip": {
+    "storySlug": "une-fete-courte",
+    "storySource": "user",
+    "sentence": "Elle espère recevoir une place sans donner toute sa journée.",
+    "targetWord": "espère",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "recevoir",
+  "sentence": "Elle espère [[recevoir]] une place sans donner toute sa journée.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to get something that another person gives today",
+   "options": [
+    "to get something that another person gives today",
+    "to ask someone to come to an event",
+    "clothing worn on the legs and waist today",
+    "full, with many people or things inside today"
+   ],
+   "audioClip": {
+    "storySlug": "une-fete-courte",
+    "storySource": "user",
+    "sentence": "Elle espère recevoir une place sans donner toute sa journée.",
+    "targetWord": "recevoir",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "place",
+  "sentence": "Elle espère recevoir une [[place]] sans donner toute sa journée.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "specific spot where someone can be or sit",
+   "options": [
+    "specific spot where someone can be or sit",
+    "to ask someone to come to an event",
+    "clothing worn on the legs and waist today",
+    "full, with many people or things inside today"
+   ],
+   "audioClip": {
+    "storySlug": "une-fete-courte",
+    "storySource": "user",
+    "sentence": "Elle espère recevoir une place sans donner toute sa journée.",
+    "targetWord": "place",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "montre",
+  "sentence": "Mathieu [[montre]] la fête sur son agenda.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "small clock worn on the wrist or carried",
+   "options": [
+    "small clock worn on the wrist or carried",
+    "to ask someone to come to an event",
+    "clothing worn on the legs and waist today",
+    "full, with many people or things inside today"
+   ],
+   "audioClip": {
+    "storySlug": "une-fete-courte",
+    "storySource": "user",
+    "sentence": "Mathieu montre la fête sur son agenda.",
+    "targetWord": "montre",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rapide",
+  "sentence": "Elle regarde sa montre [[rapide]], perd le oui facile, mais garde son ami près.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fast, or moving in little time today today",
+   "options": [
+    "fast, or moving in little time today today",
+    "to ask someone to come to an event",
+    "clothing worn on the legs and waist today",
+    "full, with many people or things inside today"
+   ],
+   "audioClip": {
+    "storySlug": "une-fete-courte",
+    "storySource": "user",
+    "sentence": "Elle regarde sa montre rapide, perd le oui facile, mais garde son ami près.",
+    "targetWord": "rapide",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "robe",
+  "sentence": "quelqu'un tient une [[robe]], un pull et un chapeau.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clothing for the body, often one piece today",
+   "options": [
+    "clothing for the body, often one piece today",
+    "to ask someone to come to an event",
+    "clothing worn on the legs and waist today",
+    "full, with many people or things inside today"
+   ],
+   "audioClip": {
+    "storySlug": "une-fete-courte",
+    "storySource": "user",
+    "sentence": "quelqu'un tient une robe, un pull et un chapeau.",
+    "targetWord": "robe",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pull",
+  "sentence": "quelqu'un tient une robe, un [[pull]] et un chapeau.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "warm clothing worn over the upper body today",
+   "options": [
+    "warm clothing worn over the upper body today",
+    "to ask someone to come to an event",
+    "clothing worn on the legs and waist today",
+    "full, with many people or things inside today"
+   ],
+   "audioClip": {
+    "storySlug": "une-fete-courte",
+    "storySource": "user",
+    "sentence": "quelqu'un tient une robe, un pull et un chapeau.",
+    "targetWord": "pull",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "chapeau",
+  "sentence": "quelqu'un tient une robe, un pull et un _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chapeau",
+   "options": [
+    "chapeau",
+    "pantalon",
+    "Dimanche",
+    "fête"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "thing worn on the head outside today today",
+    "clothing worn on the legs and waist today",
+    "day of the week after Saturday and before Monday",
+    "happy event where people meet or celebrate together"
+   ],
+   "audioClip": {
+    "storySlug": "une-fete-courte",
+    "storySource": "user",
+    "sentence": "quelqu'un tient une robe, un pull et un chapeau.",
+    "targetWord": "chapeau",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "essayer",
+  "sentence": "Tu veux _____?",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "essayer",
+   "options": [
+    "essayer",
+    "invite",
+    "aime",
+    "espère"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "to do something to see if it works",
+    "to ask someone to come to an event",
+    "to like or love someone or something today",
+    "to want something good to happen later today"
+   ],
+   "audioClip": {
+    "storySlug": "une-fete-courte",
+    "storySource": "user",
+    "sentence": "Tu veux essayer?",
+    "targetWord": "essayer",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "fort",
+  "sentence": "C’est assez _____ pour moi.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fort",
+   "options": [
+    "fort",
+    "pleine",
+    "difficile",
+    "rapide"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "strong, or having much force or power today",
+    "full, with many people or things inside today",
+    "not easy to do, understand, or accept today",
+    "fast, or moving in little time today today"
+   ],
+   "audioClip": {
+    "storySlug": "une-fete-courte",
+    "storySource": "user",
+    "sentence": "C’est assez fort pour moi.",
+    "targetWord": "fort",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

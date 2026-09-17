@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "femme,papier,blanc,jour",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "femme",
+     "answer": "adult female person, not a girl or child",
+     "options": [
+      "adult female person, not a girl or child",
+      "thin material people write or print words on",
+      "having the color of milk or clean paper",
+      "one day on a calendar or in a week"
+     ]
+    },
+    {
+     "word": "papier",
+     "answer": "thin material people write or print words on",
+     "options": [
+      "adult female person, not a girl or child",
+      "thin material people write or print words on",
+      "having the color of milk or clean paper",
+      "one day on a calendar or in a week"
+     ]
+    },
+    {
+     "word": "blanc",
+     "answer": "having the color of milk or clean paper",
+     "options": [
+      "adult female person, not a girl or child",
+      "thin material people write or print words on",
+      "having the color of milk or clean paper",
+      "one day on a calendar or in a week"
+     ]
+    },
+    {
+     "word": "jour",
+     "answer": "one day on a calendar or in a week",
+     "options": [
+      "adult female person, not a girl or child",
+      "thin material people write or print words on",
+      "having the color of milk or clean paper",
+      "one day on a calendar or in a week"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mot",
+  "sentence": "Olivier montre deux [[mots]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "small unit of language with a meaning inside",
+   "options": [
+    "small unit of language with a meaning inside",
+    "adult female person, not a girl or child",
+    "thin material people write or print words on",
+    "having the color of milk or clean paper"
+   ],
+   "audioClip": {
+    "storySlug": "le-mardi-choisi",
+    "storySource": "user",
+    "sentence": "Olivier montre deux mots.",
+    "targetWord": "mots",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mardi",
+  "sentence": "[[Mardi]] ou vendredi.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "day of the week after Monday and before Wednesday",
+   "options": [
+    "day of the week after Monday and before Wednesday",
+    "adult female person, not a girl or child",
+    "thin material people write or print words on",
+    "having the color of milk or clean paper"
+   ],
+   "audioClip": {
+    "storySlug": "le-mardi-choisi",
+    "storySource": "user",
+    "sentence": "Mardi ou vendredi.",
+    "targetWord": "Mardi",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vendredi",
+  "sentence": "Mardi ou [[vendredi]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "day of the week after Thursday and before Saturday",
+   "options": [
+    "day of the week after Thursday and before Saturday",
+    "adult female person, not a girl or child",
+    "thin material people write or print words on",
+    "having the color of milk or clean paper"
+   ],
+   "audioClip": {
+    "storySlug": "le-mardi-choisi",
+    "storySource": "user",
+    "sentence": "Mardi ou vendredi.",
+    "targetWord": "vendredi",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "promettre",
+  "sentence": "Vendredi, elle a [[promis]] un après-midi libre à Marseille.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to say that you will surely do something",
+   "options": [
+    "to say that you will surely do something",
+    "adult female person, not a girl or child",
+    "thin material people write or print words on",
+    "having the color of milk or clean paper"
+   ],
+   "audioClip": {
+    "storySlug": "le-mardi-choisi",
+    "storySource": "user",
+    "sentence": "Vendredi, elle a promis un après-midi libre à Marseille.",
+    "targetWord": "promis",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "après-midi",
+  "sentence": "Vendredi, elle a promis un [[après-midi]] libre à Marseille.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "part of the day after noon and before evening",
+   "options": [
+    "part of the day after noon and before evening",
+    "adult female person, not a girl or child",
+    "thin material people write or print words on",
+    "having the color of milk or clean paper"
+   ],
+   "audioClip": {
+    "storySlug": "le-mardi-choisi",
+    "storySource": "user",
+    "sentence": "Vendredi, elle a promis un après-midi libre à Marseille.",
+    "targetWord": "après-midi",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "semaine",
+  "sentence": "Cette [[semaine]] est difficile, et elle le sait.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "seven days from Monday to Sunday together now",
+   "options": [
+    "seven days from Monday to Sunday together now",
+    "adult female person, not a girl or child",
+    "thin material people write or print words on",
+    "having the color of milk or clean paper"
+   ],
+   "audioClip": {
+    "storySlug": "le-mardi-choisi",
+    "storySource": "user",
+    "sentence": "Cette semaine est difficile, et elle le sait.",
+    "targetWord": "semaine",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aller",
+  "sentence": "Mardi, elle [[va]] fermer son café plus tôt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to move or be going somewhere soon today",
+   "options": [
+    "to move or be going somewhere soon today",
+    "adult female person, not a girl or child",
+    "thin material people write or print words on",
+    "having the color of milk or clean paper"
+   ],
+   "audioClip": {
+    "storySlug": "le-mardi-choisi",
+    "storySource": "user",
+    "sentence": "Mardi, elle va fermer son café plus tôt.",
+    "targetWord": "va",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "écrire",
+  "sentence": "Ici, [[écrit]] compte vraiment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make words on paper or a screen",
+   "options": [
+    "to make words on paper or a screen",
+    "adult female person, not a girl or child",
+    "thin material people write or print words on",
+    "having the color of milk or clean paper"
+   ],
+   "audioClip": {
+    "storySlug": "le-mardi-choisi",
+    "storySource": "user",
+    "sentence": "Ici, écrit compte vraiment.",
+    "targetWord": "écrit",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "seconde",
+  "sentence": "Ici, maintenant, Olivier attend une [[seconde]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "very short unit of time on a clock",
+   "options": [
+    "very short unit of time on a clock",
+    "adult female person, not a girl or child",
+    "thin material people write or print words on",
+    "having the color of milk or clean paper"
+   ],
+   "audioClip": {
+    "storySlug": "le-mardi-choisi",
+    "storySource": "user",
+    "sentence": "Ici, maintenant, Olivier attend une seconde.",
+    "targetWord": "seconde",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ici",
+  "sentence": "Ici, [[Ici]] compte vraiment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in this place, not another place nearby today",
+   "options": [
+    "in this place, not another place nearby today",
+    "adult female person, not a girl or child",
+    "thin material people write or print words on",
+    "having the color of milk or clean paper"
+   ],
+   "audioClip": {
+    "storySlug": "le-mardi-choisi",
+    "storySource": "user",
+    "sentence": "Ici, Ici compte vraiment.",
+    "targetWord": "Ici",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "maintenant",
+  "sentence": "Ici, [[maintenant]], Olivier attend une seconde.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at this time, not before or later today",
+   "options": [
+    "at this time, not before or later today",
+    "adult female person, not a girl or child",
+    "thin material people write or print words on",
+    "having the color of milk or clean paper"
+   ],
+   "audioClip": {
+    "storySlug": "le-mardi-choisi",
+    "storySource": "user",
+    "sentence": "Ici, maintenant, Olivier attend une seconde.",
+    "targetWord": "maintenant",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "peut-être",
+  "sentence": "[[Peut-être]] que c'est assez.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "maybe, when something is possible but not sure",
+   "options": [
+    "maybe, when something is possible but not sure",
+    "adult female person, not a girl or child",
+    "thin material people write or print words on",
+    "having the color of milk or clean paper"
+   ],
+   "audioClip": {
+    "storySlug": "le-mardi-choisi",
+    "storySource": "user",
+    "sentence": "Peut-être que c'est assez.",
+    "targetWord": "Peut-être",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "assez",
+  "sentence": "Peut-être que c'est [[assez]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "enough, or as much as is needed now",
+   "options": [
+    "enough, or as much as is needed now",
+    "adult female person, not a girl or child",
+    "thin material people write or print words on",
+    "having the color of milk or clean paper"
+   ],
+   "audioClip": {
+    "storySlug": "le-mardi-choisi",
+    "storySource": "user",
+    "sentence": "Peut-être que c'est assez.",
+    "targetWord": "assez",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "sans",
+  "sentence": "Tu peux choisir _____ tout expliquer.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sans",
+   "options": [
+    "sans",
+    "femme",
+    "papier",
+    "blanc"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "with no person, thing, or action included now",
+    "adult female person, not a girl or child",
+    "thin material people write or print words on",
+    "having the color of milk or clean paper"
+   ],
+   "audioClip": {
+    "storySlug": "le-mardi-choisi",
+    "storySource": "user",
+    "sentence": "Tu peux choisir sans tout expliquer.",
+    "targetWord": "sans",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "dis",
+  "sentence": "Mais ne _____ pas que c'est un beau plan.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dis",
+   "options": [
+    "dis",
+    "promis",
+    "va",
+    "écrit"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "to speak words to another person aloud now",
+    "to say that you will surely do something",
+    "to move or be going somewhere soon today",
+    "to make words on paper or a screen"
+   ],
+   "audioClip": {
+    "storySlug": "le-mardi-choisi",
+    "storySource": "user",
+    "sentence": "Mais ne dis pas que c'est un beau plan.",
+    "targetWord": "dis",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "plan",
+  "sentence": "Mais ne dis pas que c'est un beau _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "plan",
+   "options": [
+    "plan",
+    "femme",
+    "papier",
+    "jour"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "idea for what will happen or be done",
+    "adult female person, not a girl or child",
+    "thin material people write or print words on",
+    "one day on a calendar or in a week"
+   ],
+   "audioClip": {
+    "storySlug": "le-mardi-choisi",
+    "storySource": "user",
+    "sentence": "Mais ne dis pas que c'est un beau plan.",
+    "targetWord": "plan",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

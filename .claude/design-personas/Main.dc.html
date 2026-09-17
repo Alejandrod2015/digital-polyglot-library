@@ -1,0 +1,237 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <style>
+    body { margin: 0; font-family: Nunito, system-ui, sans-serif; }
+    a { color: #7dd3fc; } a:hover { color: #bae6fd; }
+  </style>
+</helmet>
+
+<div style="width: 1680px; min-height: 1000px; background: #050d1a; color: #e7ecf3; padding: 56px 56px 64px; display: flex; flex-direction: column; gap: 40px; box-sizing: border-box;">
+
+  <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 28px;">
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #7d8aa3;">Digital Polyglot / beta</div>
+      <div style="font-size: 52px; font-weight: 900; letter-spacing: -0.02em; line-height: 1;">Personas</div>
+      <div style="font-size: 16px; color: #b9c4d6; max-width: 62ch;">Cuatro compradores principales, salidos de la respuesta a "Why are you learning?" en 48 solicitudes reales, cruzada con lo que cada uno hizo dentro de la app.</div>
+    </div>
+    <div style="display: flex; gap: 40px; font-family: 'JetBrains Mono', ui-monospace, monospace;">
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <div style="font-size: 30px; font-weight: 700; color: #e7ecf3;">48</div>
+        <div style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #7d8aa3;">solicitudes</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <div style="font-size: 30px; font-weight: 700; color: #e7ecf3;">21</div>
+        <div style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #7d8aa3;">cuentas</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <div style="font-size: 30px; font-weight: 700; color: #e7ecf3;">1.133</div>
+        <div style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #7d8aa3;">toques</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <div style="font-size: 30px; font-weight: 700; color: #fb923c;">0</div>
+        <div style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #7d8aa3;">han pagado</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; align-items: stretch;">
+
+    <!-- 1 -->
+    <div style="background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-top: 3px solid #bef264; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 18px;">
+      <div style="display: flex; align-items: flex-start; gap: 12px;">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#bef264" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;">
+          <circle cx="8.5" cy="8" r="3.2"></circle>
+          <path d="M3 20c0-3 2.4-5.2 5.5-5.2S14 17 14 20"></path>
+          <circle cx="17" cy="9.5" r="2.4"></circle>
+          <path d="M14.6 20c0-2.4 1.3-4 3.4-4 1.6 0 2.7.9 3.2 2.3"></path>
+        </svg>
+        <div style="font-size: 19px; font-weight: 900; line-height: 1.15;">El que aprende por alguien que ya conoce</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d8aa3;"><span>Tamaño</span><span style="color: #b9c4d6;">10 de 48</span></div>
+          <div style="height: 8px; background: rgba(255,255,255,0.07); border-radius: 4px; overflow: hidden;"><div style="width: 21%; height: 100%; background: rgba(190,242,100,0.45); border-radius: 4px;"></div></div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d8aa3;"><span>Uso real</span><span style="color: #bef264;">620 toques</span></div>
+          <div style="height: 8px; background: rgba(255,255,255,0.07); border-radius: 4px; overflow: hidden;"><div style="width: 55%; height: 100%; background: #bef264; border-radius: 4px;"></div></div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 5px;">
+        <div style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d8aa3;">Su dolor</div>
+        <div style="font-size: 14px; color: #e7ecf3;">Depende de otro para hablar con gente suya, y lo que traducen por él no suena a él.</div>
+      </div>
+
+      <div style="border-left: 2px solid rgba(190,242,100,0.5); padding-left: 12px; font-size: 14px; font-style: italic; color: #b9c4d6; line-height: 1.4;">"I don't want to call my boyfriend over every time she needs something. I'm WAY funnier then him. His grandmother is 91, so I feel like I'm on a time crunch."</div>
+
+      <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 14px;">
+        <div style="display: flex; flex-direction: column; gap: 3px;">
+          <div style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d8aa3;">Lo empuja</div>
+          <div style="font-size: 13px; color: #e7ecf3;">La próxima visita o llamada con esa persona.</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 3px;">
+          <div style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d8aa3;">Lo frena</div>
+          <div style="font-size: 13px; color: #e7ecf3;">Alguien cercano le traduce gratis.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div style="background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-top: 3px solid #7dd3fc; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 18px;">
+      <div style="display: flex; align-items: flex-start; gap: 12px;">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7dd3fc" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;">
+          <rect x="3" y="7.5" width="13" height="10" rx="2"></rect>
+          <path d="M7 7.5V5.8c0-.7.6-1.3 1.3-1.3h2.4c.7 0 1.3.6 1.3 1.3v1.7"></path>
+          <path d="M17.5 12.5h4"></path>
+          <path d="M19.5 10.5l2 2-2 2"></path>
+        </svg>
+        <div style="font-size: 19px; font-weight: 900; line-height: 1.15;">El que se muda dentro de unos meses</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d8aa3;"><span>Tamaño</span><span style="color: #b9c4d6;">5 de 48</span></div>
+          <div style="height: 8px; background: rgba(255,255,255,0.07); border-radius: 4px; overflow: hidden;"><div style="width: 10%; height: 100%; background: rgba(125,211,252,0.45); border-radius: 4px;"></div></div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d8aa3;"><span>Uso real</span><span style="color: #7dd3fc;">333 toques</span></div>
+          <div style="height: 8px; background: rgba(255,255,255,0.07); border-radius: 4px; overflow: hidden;"><div style="width: 29%; height: 100%; background: #7dd3fc; border-radius: 4px;"></div></div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 5px;">
+        <div style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d8aa3;">Su dolor</div>
+        <div style="font-size: 14px; color: #e7ecf3;">Años de apps y clases sin ganar confianza, y abandona todo lo que empieza.</div>
+      </div>
+
+      <div style="border-left: 2px solid rgba(125,211,252,0.5); padding-left: 12px; font-size: 14px; font-style: italic; color: #b9c4d6; line-height: 1.4;">"I've used Rosetta Stone, Mango languages, and DuoLingo for years. I've even taken courses but still struggle feeling confident with my comprehension."</div>
+
+      <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 14px;">
+        <div style="display: flex; flex-direction: column; gap: 3px;">
+          <div style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d8aa3;">Lo empuja</div>
+          <div style="font-size: 13px; color: #e7ecf3;">Una fecha real: se muda en 6 a 8 meses.</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 3px;">
+          <div style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d8aa3;">Lo frena</div>
+          <div style="font-size: 13px; color: #e7ecf3;">Teme volver a dejarlo a la tercera semana.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div style="background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-top: 3px solid #fcd34d; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 18px;">
+      <div style="display: flex; align-items: flex-start; gap: 12px;">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fcd34d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;">
+          <path d="M3.5 19h17"></path>
+          <rect x="5" y="11" width="3.6" height="8"></rect>
+          <rect x="10.2" y="7" width="3.6" height="12"></rect>
+          <rect x="15.4" y="13" width="3.6" height="6"></rect>
+          <path d="M17.2 9.5V4.6"></path>
+          <path d="M15.4 6.4l1.8-1.8 1.8 1.8"></path>
+        </svg>
+        <div style="font-size: 19px; font-weight: 900; line-height: 1.15;">El que no quiere perder el nivel que tiene</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d8aa3;"><span>Tamaño</span><span style="color: #b9c4d6;">1 de 48</span></div>
+          <div style="height: 8px; background: rgba(255,255,255,0.07); border-radius: 4px; overflow: hidden;"><div style="width: 2%; height: 100%; background: rgba(252,211,77,0.45); border-radius: 4px;"></div></div>
+          <div style="font-size: 12px; color: #7d8aa3; line-height: 1.35;">Solo una lo escribió: la opción del desplegable es del 23 de agosto y nadie la ha marcado aún. Detrás hay 19 solicitudes por encima de principiante.</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d8aa3;"><span>Uso real</span><span style="color: #fcd34d;">80 toques</span></div>
+          <div style="height: 8px; background: rgba(255,255,255,0.07); border-radius: 4px; overflow: hidden;"><div style="width: 7%; height: 100%; background: #fcd34d; border-radius: 4px;"></div></div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 5px;">
+        <div style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d8aa3;">Su dolor</div>
+        <div style="font-size: 14px; color: #e7ecf3;">Se le enfría algo que costó años, y casi todo el mercado es para empezar de cero.</div>
+      </div>
+
+      <div style="border-left: 2px solid rgba(252,211,77,0.5); padding-left: 12px; font-size: 14px; font-style: italic; color: #b9c4d6; line-height: 1.4;">"I really enjoy story-based learning to maintain and practice my level of Spanish and I am always looking for more resources to do so."</div>
+
+      <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 14px;">
+        <div style="display: flex; flex-direction: column; gap: 3px;">
+          <div style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d8aa3;">Lo empuja</div>
+          <div style="font-size: 13px; color: #e7ecf3;">El miedo a oxidarse. Ya paga por esto en libros y clases.</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 3px;">
+          <div style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d8aa3;">Lo frena</div>
+          <div style="font-size: 13px; color: #e7ecf3;">El catálogo no tiene B1 ni B2.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div style="background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-top: 3px solid #fb923c; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 18px;">
+      <div style="display: flex; align-items: flex-start; gap: 12px;">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;">
+          <rect x="3.5" y="5" width="17" height="15" rx="2"></rect>
+          <path d="M3.5 9.5h17"></path>
+          <path d="M8 3.5v3"></path>
+          <path d="M16 3.5v3"></path>
+          <path d="M10.4 13.4l3.2 3.2"></path>
+          <path d="M13.6 13.4l-3.2 3.2"></path>
+        </svg>
+        <div style="font-size: 19px; font-weight: 900; line-height: 1.15;">El que viajará algún día</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d8aa3;"><span>Tamaño</span><span style="color: #fb923c;">17 de 48</span></div>
+          <div style="height: 8px; background: rgba(255,255,255,0.07); border-radius: 4px; overflow: hidden;"><div style="width: 35%; height: 100%; background: rgba(251,146,60,0.45); border-radius: 4px;"></div></div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d8aa3;"><span>Uso real</span><span style="color: #b9c4d6;">45 toques</span></div>
+          <div style="height: 8px; background: rgba(255,255,255,0.07); border-radius: 4px; overflow: hidden;"><div style="width: 4%; height: 100%; background: #fb923c; border-radius: 4px;"></div></div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 5px;">
+        <div style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d8aa3;">Su dolor</div>
+        <div style="font-size: 14px; color: #e7ecf3;">Años de clases y apps sin llegar a hablar, y nada en su vida le obliga a practicar hoy.</div>
+      </div>
+
+      <div style="border-left: 2px solid rgba(251,146,60,0.5); padding-left: 12px; font-size: 14px; font-style: italic; color: #b9c4d6; line-height: 1.4;">"Spanish classes in high school and college and apps haven't worked for me."</div>
+
+      <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 14px;">
+        <div style="display: flex; flex-direction: column; gap: 3px;">
+          <div style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d8aa3;">Lo empuja</div>
+          <div style="font-size: 13px; color: #e7ecf3;">Nada con fecha: ninguno de los 17 escribió una.</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 3px;">
+          <div style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d8aa3;">Lo frena</div>
+          <div style="font-size: 13px; color: #e7ecf3;">El traductor del móvil le resuelve el viaje gratis.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #56627a;">
+    <span>Base: 48 solicitudes reales, 21 cuentas, 1.133 toques de vocabulario.</span>
+    <span style="color: #7d8aa3;">Citas literales, sin corregir la ortografía.</span>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

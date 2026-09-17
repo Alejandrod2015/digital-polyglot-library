@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 
 import { prisma } from "@/lib/prisma";
 import { isStudioMember } from "@/lib/studio-access";
+import { signAudioUrl } from "@/lib/mediaSigning";
 
 export const dynamic = "force-dynamic";
 
@@ -46,8 +47,12 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Story has no audio" }, { status: 404 });
   }
 
+  // El proxy baja los bytes el mismo, asi que necesita la URL firmada: tras
+  // la purga, la publica ya no sirve nada.
+  const fetchTarget = signAudioUrl(target) ?? target;
+
   const range = request.headers.get("range");
-  const upstream = await fetch(target, {
+  const upstream = await fetch(fetchTarget, {
     headers: range ? { Range: range } : {},
     cache: "no-store",
   });

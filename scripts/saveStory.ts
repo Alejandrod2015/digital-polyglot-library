@@ -21,6 +21,7 @@
  * que nada más cambia (ver cada bloque para el porqué):
  *   --typography-only   migración de comillas
  *   --title-only        acortar un título que se corta en la tarjeta
+ *   --definition-only   corregir la definición de una entrada de vocabulario
  *
  * ORDEN DE TEMAS (2026-09-05): antes de escribir nada comprueba que el tema
  * ANTERIOR del journey tenga cierre vigente en scripts/tema-cierres.json
@@ -117,6 +118,14 @@ function slugify(s: string): string {
   // exigencia de que el RESTO de la historia cumpla el estándar de hoy, que
   // es deuda anterior y ajena al cambio. Ver el bloque `titleOnly`.
   const titleOnly = flag("title-only");
+  // MODO SOLO-DEFINICION (2026-09-17). La glosa que sale al tocar una palabra
+  // no se oye en el audio ni toca el cuerpo: es la unica pieza de contenido
+  // que se puede corregir sin reescribir nada. Aqui tampoco basta con una
+  // comprobacion mecanica, asi que la definicion nueva pasa el check
+  // canonico `vocab-definitions`; lo que se levanta es la exigencia de que el
+  // RESTO de la historia cumpla el estandar de hoy, deuda anterior y ajena al
+  // cambio. Ver el bloque `definitionOnly`.
+  const definitionOnly = flag("definition-only");
   // TRINQUETE (2026-08-26). El gate de conjunto es absoluto: exige que las 21
   // historias cumplan el estandar de HOY. Un journey escrito antes de una
   // regla queda congelado para siempre, sin poder recibir ni la correccion de
@@ -487,6 +496,71 @@ function slugify(s: string): string {
         console.log(`  ✓ ${p.slug}`);
       }
       console.log(`[title-only] ${plan.length} títulos actualizados.`);
+    } finally {
+      await prisma.$disconnect();
+    }
+    return;
+  }
+
+  if (definitionOnly) {
+    if (!journeyId) { console.error("FAIL: --definition-only requiere --journey <id>."); process.exit(2); }
+    const prisma = new PrismaClient();
+    try {
+      type Cambio = { slug: string; palabra: string; antes: string; ahora: string };
+      const plan: { id: string; slug: string; vocab: unknown; cambios: Cambio[] }[] = [];
+      const problemas: string[] = [];
+      for (const d of stories) {
+        const slot = await prisma.journeyStory.findFirst({
+          where: { journeyId, topic: d.topic, slotIndex: d.slotIndex },
+          select: { id: true, slug: true, title: true, text: true, synopsis: true, vocab: true, arcType: true },
+        });
+        if (!slot) { problemas.push(`sin slot para ${d.topic}#${d.slotIndex}`); continue; }
+        const nombre = slot.slug ?? slot.id;
+        const igual = (a: unknown, b: unknown) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+        // Todo lo que no sea una definición tiene que llegar idéntico.
+        for (const campo of ["title", "text", "synopsis", "arcType"] as const) {
+          if (d[campo] !== undefined && !igual(d[campo], slot[campo])) {
+            problemas.push(`${nombre}: .${campo} no coincide con la base; --definition-only solo cambia definiciones`);
+          }
+        }
+        if (d.slug !== undefined && d.slug !== slot.slug) problemas.push(`${nombre}: el slug cambiaría`);
+
+        const antes = (slot.vocab as unknown as Array<Record<string, unknown>>) ?? [];
+        const ahora = (d.vocab as unknown as Array<Record<string, unknown>>) ?? [];
+        if (antes.length !== ahora.length) { problemas.push(`${nombre}: el vocabulario cambia de tamaño (${antes.length} -> ${ahora.length})`); continue; }
+        const cambios: Cambio[] = [];
+        for (let i = 0; i < antes.length; i++) {
+          const a = { ...antes[i] }, b = { ...ahora[i] };
+          const defA = String(a.definition ?? ""), defB = String(b.definition ?? "");
+          delete a.definition; delete b.definition;
+          if (!igual(a, b)) { problemas.push(`${nombre}: la entrada ${i} ("${String(antes[i].word)}") cambia en algo que no es la definición`); continue; }
+          if (defA !== defB) cambios.push({ slug: nombre, palabra: String(antes[i].word), antes: defA, ahora: defB });
+        }
+        if (!cambios.length) continue;
+
+        // La definición nueva pasa por el validador CANÓNICO; se exige su check.
+        const r = await validateGeneratedStory(
+          { ...d, title: slot.title ?? d.title, slug: slot.slug ?? undefined },
+          { language: ctx.language, level: ctx.level, variant: ctx.variant } as never
+        );
+        const malos = r.checks.filter((c) => c.id === "vocab-definitions" && c.status === "fail");
+        if (malos.length) { for (const c of malos) problemas.push(`${nombre}: [${c.id}] ${c.detail ?? c.label}`); continue; }
+        plan.push({ id: slot.id, slug: nombre, vocab: d.vocab, cambios });
+      }
+      if (problemas.length) {
+        console.error(`✗ [definition-only] ${problemas.length} problema(s). NOTHING WRITTEN.`);
+        for (const p of problemas) console.error(`   FAIL ${p}`);
+        process.exit(1);
+      }
+      const total = plan.reduce((n, p) => n + p.cambios.length, 0);
+      console.log(`[definition-only] ${total} definición(es) que cambiar en ${plan.length} historia(s).`);
+      for (const p of plan) for (const c of p.cambios) console.log(`  · ${c.slug} "${c.palabra}": "${c.antes}" -> "${c.ahora}"`);
+      if (dry) { console.log("--dry: no DB write."); return; }
+      for (const p of plan) {
+        await prisma.journeyStory.update({ where: { id: p.id }, data: { vocab: p.vocab as never } });
+        console.log(`  ✓ ${p.slug}`);
+      }
+      console.log(`[definition-only] ${total} definición(es) actualizadas.`);
     } finally {
       await prisma.$disconnect();
     }

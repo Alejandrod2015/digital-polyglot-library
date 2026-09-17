@@ -7,6 +7,7 @@ import { generateWordTimingsForStory } from "@/lib/audioWordTimings";
 import { multiVoiceGuardError } from "@/lib/multiVoiceGuard";
 import { auditTopicArc } from "@/lib/auditTopicArc";
 import { judgeTopicContinuity } from "@/lib/judgeTopicContinuity";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 export const maxDuration = 300;
 
@@ -204,8 +205,8 @@ export async function POST(request: Request) {
       );
     }
 
-    return NextResponse.json({ ok: true, audioUrl, audioQa, alignmentApplied,
-      contentMisses, rewriteNeeded: describeContentMisses(contentMisses) || undefined });
+    return NextResponse.json(signAudioUrlsDeep({ ok: true, audioUrl, audioQa, alignmentApplied,
+      contentMisses, rewriteNeeded: describeContentMisses(contentMisses) || undefined }));
   } catch (error) {
     console.error("[journeys/audio] Failed:", error);
     await prisma.journeyStory.update({ where: { id: storyId }, data: { audioStatus: "failed" } }).catch(() => {});

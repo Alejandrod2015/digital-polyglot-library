@@ -22,10 +22,11 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 
 import { prisma } from "@/lib/prisma";
-import { uploadPublicObject } from "@/lib/objectStorage";
+import { uploadAudioObject } from "@/lib/objectStorage";
 import { generateWordTimingsForStory } from "@/lib/audioWordTimings";
 import { DEFAULT_AMBIENT_VOLUME, DEFAULT_NARRATION_TEMPO, parseDialogueSegments } from "@/lib/elevenlabs";
 import { coerceAudioSegments } from "@/lib/audioSegments";
+import { signAudioUrl } from "@/lib/mediaSigning";
 
 // A sentence segment that opens with "Name: " is a spoken character turn;
 // continuation sentences of the same turn carry no label, so speaker is
@@ -152,7 +153,9 @@ function resolveAmbientPath(tag: string | null | undefined, language: string | n
 }
 
 async function downloadToBuffer(url: string): Promise<Buffer> {
-  const r = await fetch(url);
+  // El audio vive en el bucket privado: se baja con la URL firmada, no
+  // con la canonica que guarda la base.
+  const r = await fetch(signAudioUrl(url) ?? url);
   if (!r.ok) throw new Error(`download failed ${r.status} for ${url}`);
   return Buffer.from(await r.arrayBuffer());
 }
@@ -278,7 +281,7 @@ export async function applyNarrationPostProcess(
       .replace(/\.mp3$/, "")
       .replace(/_atempo[\d.]+_\d+$/, "");
     const newFilename = `${baseName}_atempo${tempo}_${Date.now()}.mp3`;
-    const uploaded = await uploadPublicObject({
+    const uploaded = await uploadAudioObject({
       key: `media/generated/audio/${newFilename}`,
       body: processed,
       contentType: "audio/mpeg",

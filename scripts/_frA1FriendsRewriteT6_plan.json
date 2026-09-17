@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a1",
+  "variante": "france",
+  "registro": "confianza entre amigos, con reparaciones pequenas y calma explicita",
+  "espina": "Amelie aprende a pedir seguridad concreta sin entregar su voz ni exigir una promesa enorme.",
+  "recursos": "cuaderno, espera de diez minutos, tarjeta de duda, gestos fisicos simples",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "enviar una frase al grupo y saber si se entiende",
+      "impide": "Marc quiere corregirlo todo",
+      "cuesta": "renuncia a la version perfecta",
+      "cambia": "pide una comprobacion limitada a Sophie",
+      "emocion": "nervios ante el cahier, alivio al guardar la frase"
+    },
+    {
+      "slot": "2",
+      "quiere": "tener apoyo antes de entrar a hablar",
+      "impide": "Marc ofrece demasiado apoyo",
+      "cuesta": "entra sola despues de diez minutos",
+      "cambia": "pide una ayuda pequena y medible",
+      "emocion": "cuerpo tenso, mano que se abre cuando acepta el limite"
+    },
+    {
+      "slot": "3",
+      "quiere": "nombrar una duda sin romper la amistad",
+      "impide": "la tarjeta hace visible lo que queria callar",
+      "cuesta": "pierde la apariencia de tranquilidad",
+      "cambia": "usa la carte para pedir una respuesta honesta",
+      "emocion": "duda en la mano, calma cuando el grupo no se rompe"
+    }
+  ]
+}

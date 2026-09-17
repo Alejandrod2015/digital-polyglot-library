@@ -11,6 +11,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { isStudioMember } from "@/lib/studio-access";
 import { sanitizePracticeSentence } from "@/lib/sanitizePracticeSentence";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 async function gate(): Promise<NextResponse | null> {
   const { userId } = await auth();
@@ -69,7 +70,7 @@ export async function PATCH(
     },
   });
 
-  return NextResponse.json({
+  return NextResponse.json(signAudioUrlsDeep({
     exercise: {
       id: updated.id,
       orderIndex: updated.orderIndex,
@@ -80,5 +81,5 @@ export async function PATCH(
       payload: updated.payload,
       featured: updated.featured,
     },
-  });
+  }));
 }

@@ -6,6 +6,9 @@ import { getMobileSessionFromRequest } from '@/lib/mobileSession';
 import { prisma } from '@/lib/prisma';
 import { getStandaloneStoriesBySlugs } from '@/lib/standaloneStories';
 import { getStandaloneStoryAudioSegments } from '@/lib/standaloneStoryAudioSegments';
+import { canHearStorySlug, type AudioViewer } from '@/lib/audioAccess';
+import { getEffectivePlanForUserId } from '@/lib/effectiveAccess';
+import { signAudioUrlsDeep } from '@/lib/mediaSigning';
 
 export async function GET(req: NextRequest) {
   try {
@@ -52,18 +55,31 @@ export async function GET(req: NextRequest) {
       }
       const pseudoIds = Array.from(journeyIdsFromPseudoSlugs.keys());
 
-      const [userStories, journeyStoriesBySlug, journeyStoriesById] = await Promise.all([
-        prisma.userStory.findMany({
-          where: {
-            slug: { in: slugs },
-            ...(effectiveUserId ? { OR: [{ public: true }, { userId: effectiveUserId }] } : { public: true }),
-          },
-          select: {
-            slug: true,
-            audioUrl: true,
-            audioSegments: true,
-          },
-        }),
+      // Muro 2026-09 en la API: el plan efectivo decide que audio sale.
+      // Anonimo = "free" (solo la historia del dia); sin esto cualquier
+      // GET sin sesion se llevaba los audioUrl de todo journey publicado.
+      const viewer: AudioViewer = {
+        userId: effectiveUserId,
+        plan: await getEffectivePlanForUserId(effectiveUserId),
+      };
+
+      const [userStories, journeyStoriesBySlugRaw, journeyStoriesById] = await Promise.all([
+        // Las historias creadas por usuarios solo salen con sesion: las
+        // propias siempre; las publicas de otros, como hasta ahora para
+        // quien esta logueado. El anonimo no recibe ninguna.
+        effectiveUserId
+          ? prisma.userStory.findMany({
+              where: {
+                slug: { in: slugs },
+                OR: [{ public: true }, { userId: effectiveUserId }],
+              },
+              select: {
+                slug: true,
+                audioUrl: true,
+                audioSegments: true,
+              },
+            })
+          : Promise.resolve([] as Array<{ slug: string | null; audioUrl: string | null; audioSegments: unknown }>),
         // También consultamos JourneyStory porque las historias del
         // Studio Journey (p.ej. los diálogos alemanes A1) viven ahí
         // y no en UserStory. Sin esto, el botón "Story" del práctico
@@ -104,12 +120,27 @@ export async function GET(req: NextRequest) {
           : Promise.resolve([] as Array<{ id: string; slug: string | null; audioUrl: string | null; audioSegments: unknown; audioFragments: unknown }>),
       ]);
 
+      // El gate se evalua sobre el slug REAL del JourneyStory (el pseudo-slug
+      // `journey-{id}` no existe en la tabla de journeys).
+      const journeyStoriesBySlug: typeof journeyStoriesBySlugRaw = [];
+      for (const story of journeyStoriesBySlugRaw) {
+        if (story.slug && (await canHearStorySlug(viewer, story.slug))) {
+          journeyStoriesBySlug.push(story);
+        }
+      }
+      const journeyStoriesByIdHearable: typeof journeyStoriesById = [];
+      for (const story of journeyStoriesById) {
+        if (story.slug && (await canHearStorySlug(viewer, story.slug))) {
+          journeyStoriesByIdHearable.push(story);
+        }
+      }
+
       // Para los matches por ID, sustituimos el slug retornado por el
       // pseudo-slug original que el cliente envió, así su lookup en
       // `userStoryAudioBySlug[slug]` encuentra la entrada.
       const journeyStories = [
         ...journeyStoriesBySlug,
-        ...journeyStoriesById.map((s) => ({
+        ...journeyStoriesByIdHearable.map((s) => ({
           slug: journeyIdsFromPseudoSlugs.get(s.id) ?? s.slug,
           audioUrl: s.audioUrl,
           audioSegments: s.audioSegments,
@@ -148,6 +179,7 @@ export async function GET(req: NextRequest) {
           const sanityStories = await getStandaloneStoriesBySlugs(unmatched);
           for (const story of sanityStories) {
             if (!story.slug || seen.has(story.slug)) continue;
+            if (!(await canHearStorySlug(viewer, story.slug))) continue;
             const audioUrl = story.audioUrl;
             if (typeof audioUrl !== "string" || !audioUrl.trim()) continue;
             const segments = getStandaloneStoryAudioSegments(story.slug);
@@ -173,12 +205,12 @@ export async function GET(req: NextRequest) {
         const m = slug.match(suffixPattern);
         if (m && m[1]) stripCandidates.set(m[1], slug);
       }
-      if (stripCandidates.size > 0) {
+      if (stripCandidates.size > 0 && effectiveUserId) {
         const stripped = Array.from(stripCandidates.keys());
         const recoveredUserStories = await prisma.userStory.findMany({
           where: {
             slug: { in: stripped },
-            ...(effectiveUserId ? { OR: [{ public: true }, { userId: effectiveUserId }] } : { public: true }),
+            OR: [{ public: true }, { userId: effectiveUserId }],
           },
           select: { slug: true, audioUrl: true, audioSegments: true },
         });
@@ -191,10 +223,11 @@ export async function GET(req: NextRequest) {
         }
       }
 
-      return NextResponse.json({ stories: merged });
+      return NextResponse.json(signAudioUrlsDeep({ stories: merged }));
     }
 
-    // 🔹 Si viene un id → devolver solo esa historia
+    // 🔹 Si viene un id → devolver solo esa historia (la propia o una pública;
+    // el id es un cuid pero eso no es un control de acceso)
     if (storyId) {
       const story = await getUserStoryById(storyId);
 
@@ -202,7 +235,21 @@ export async function GET(req: NextRequest) {
         return NextResponse.json({ error: 'Story not found' }, { status: 404 });
       }
 
-      return NextResponse.json({ story });
+      // PUBLIC_USER_STORY_SELECT no trae `public`/`userId`; se consultan aparte.
+      const ownership = await prisma.userStory.findUnique({
+        where: { id: storyId },
+        select: { public: true, userId: true },
+      });
+      if (!ownership?.public) {
+        const { userId } = await auth();
+        const mobileSession = getMobileSessionFromRequest(req);
+        const viewerId = userId ?? mobileSession?.sub ?? null;
+        if (!viewerId || viewerId !== ownership?.userId) {
+          return NextResponse.json({ error: 'Story not found' }, { status: 404 });
+        }
+      }
+
+      return NextResponse.json(signAudioUrlsDeep({ story }));
     }
 
     if (mine && latestForCreate) {
@@ -263,7 +310,7 @@ export async function GET(req: NextRequest) {
       });
 
       const canonicalStory = story ? await getUserStoryById(story.id) : null;
-      return NextResponse.json({ story: canonicalStory ?? null });
+      return NextResponse.json(signAudioUrlsDeep({ story: canonicalStory ?? null }));
     }
 
     if (mine) {
@@ -304,13 +351,13 @@ export async function GET(req: NextRequest) {
         },
       });
 
-      return NextResponse.json({ stories });
+      return NextResponse.json(signAudioUrlsDeep({ stories }));
     }
 
     // 🔹 Si no hay id → devolver lista general
     const stories = await getPublicUserStories();
 
-    return NextResponse.json({ stories });
+    return NextResponse.json(signAudioUrlsDeep({ stories }));
   } catch (error) {
     console.error('Error fetching user stories:', error);
     return NextResponse.json(
@@ -392,7 +439,7 @@ export async function PUT(req: NextRequest) {
       console.warn('[create-story-mirror] Update sync failed:', mirrorError);
     }
 
-    return NextResponse.json({ story: updated });
+    return NextResponse.json(signAudioUrlsDeep({ story: updated }));
   } catch (error) {
     console.error('Error updating user story:', error);
     return NextResponse.json(

@@ -1,0 +1,455 @@
+[
+  {
+    "topic": "trust-and-doubts",
+    "slotIndex": 0,
+    "title": "Le cahier ouvert",
+    "slug": "le-cahier-ouvert",
+    "synopsis": "Sophie helps Amélie check a short text after a group workshop, and Marc wants to correct every line. Amélie only wants to know if people understand her, so she keeps one imperfect sentence and asks for limited reassurance before sending anything to the group first.",
+    "arcType": "harmonic-close",
+    "text": "Sophie est une enseignante de Paris et ferme la classe après le cours. Amélie, une libraire de Paris, garde son cahier ouvert. La lumière reste sur la table.\n\nMarc regarde la phrase. “Je peux aider.” Sophie montre le livre. “D’abord, Amélie étudie.” Amélie devient nerveuse devant la prof.\n\nLe texte parle d’un rendez-vous. Il n’est pas mauvais. Amélie veut une leçon petite, pas une note nouvelle écrite par les autres. Sophie reste près de l’école sans prendre le crayon. La matière reste simple, mais la voix d’Amélie tremble.\n\nAmélie lève la main. “Je veux demander une chose. On comprend?” Sophie répond: “Oui. La question est claire. Je regarde seulement le sens.” Marc pose le stylo.\n\nUn élève adulte passe près du tableau avec une craie. Sophie sourit. “Tu peux travailler avec cette phrase, et tu peux la garder.” Amélie répond: “Alors je la garde. Je comprends.” Elle perd la version parfaite, mais garde son cahier.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "enseignant",
+        "surface": "enseignante",
+        "register": "neutral",
+        "definition": "person whose work is helping others learn today"
+      },
+      {
+        "type": "noun",
+        "word": "classe",
+        "surface": "classe",
+        "register": "neutral",
+        "definition": "room or group where people learn together today"
+      },
+      {
+        "type": "noun",
+        "word": "cours",
+        "surface": "cours",
+        "register": "neutral",
+        "definition": "time when a teacher helps people learn today"
+      },
+      {
+        "type": "noun",
+        "word": "cahier",
+        "surface": "cahier",
+        "register": "neutral",
+        "definition": "small book used for writing notes in class"
+      },
+      {
+        "type": "verb",
+        "word": "étudier",
+        "surface": "étudie",
+        "register": "neutral",
+        "definition": "to learn by reading, writing, or practicing today"
+      },
+      {
+        "type": "noun",
+        "word": "livre",
+        "surface": "livre",
+        "register": "neutral",
+        "definition": "object with pages that people read today today"
+      },
+      {
+        "type": "noun",
+        "word": "école",
+        "surface": "école",
+        "register": "neutral",
+        "definition": "place where people go to learn today today"
+      },
+      {
+        "type": "adjective",
+        "word": "nerveux",
+        "surface": "nerveuse",
+        "register": "neutral",
+        "definition": "worried or tense before something happens today today"
+      },
+      {
+        "type": "noun",
+        "word": "prof",
+        "surface": "prof",
+        "register": "neutral",
+        "definition": "teacher, in a common short spoken form today"
+      },
+      {
+        "type": "noun",
+        "word": "texte",
+        "surface": "texte",
+        "register": "neutral",
+        "definition": "written words that someone can read today today"
+      },
+      {
+        "type": "adjective",
+        "word": "mauvais",
+        "surface": "mauvais",
+        "register": "neutral",
+        "definition": "not good, useful, pleasant, or correct today today"
+      },
+      {
+        "type": "noun",
+        "word": "leçon",
+        "surface": "leçon",
+        "register": "neutral",
+        "definition": "part of a class where someone learns today"
+      },
+      {
+        "type": "noun",
+        "word": "note",
+        "surface": "note",
+        "register": "neutral",
+        "definition": "short written word, mark, or school result today"
+      },
+      {
+        "type": "noun",
+        "word": "craie",
+        "surface": "craie",
+        "register": "neutral",
+        "definition": "white or colored stick used on a board today"
+      },
+      {
+        "type": "noun",
+        "word": "question",
+        "surface": "question",
+        "register": "neutral",
+        "definition": "words used to ask for an answer today"
+      },
+      {
+        "type": "noun",
+        "word": "élève",
+        "surface": "élève",
+        "register": "neutral",
+        "definition": "person who learns with a teacher today today"
+      },
+      {
+        "type": "noun",
+        "word": "tableau",
+        "surface": "tableau",
+        "register": "neutral",
+        "definition": "board or picture on a wall today today"
+      },
+      {
+        "type": "verb",
+        "word": "travailler",
+        "surface": "travailler",
+        "register": "neutral",
+        "definition": "to do a job or study activity today"
+      },
+      {
+        "type": "noun",
+        "word": "version",
+        "surface": "version",
+        "register": "neutral",
+        "definition": "form of something that is different from another form"
+      },
+      {
+        "type": "noun",
+        "word": "matière",
+        "surface": "matière",
+        "register": "neutral",
+        "definition": "school subject or material someone studies today today"
+      }
+    ]
+  },
+  {
+    "topic": "trust-and-doubts",
+    "slotIndex": 1,
+    "title": "Dix minutes",
+    "slug": "dix-minutes",
+    "synopsis": "Marc offers to wait all afternoon while Amélie speaks with Sophie, but the offer feels too large. Amélie wants support without being carried, so she asks for only ten minutes and keeps the rest of the meeting as her own choice today, in a smaller way.",
+    "arcType": "late-reveal",
+    "text": "Le corps d’Amélie se tend devant la porte. Marc attend avec Sophie dans le couloir. Une lumière blanche tombe sur son bras, son doigt et son œil.\n\nSophie compte sur ses doigts. “Tu veux dix minutes, pas plus?” Marc propose: “Je reste tout l’après-midi.” Amélie secoue la tête. Sa peau reste calme.\n\n“Non. C’est trop.” Sophie regarde sa bouche, puis son oreille. Amélie veut parler seule, et son pied faible bouge.\n\nSon ventre est lourd, et son dos touche le mur. Elle pense à sa lèvre qui cherche les mots. “Tu peux attendre dix minutes avec ma dent et ma langue?”, demande-t-elle.\n\nMarc répond: “Dix, oui, je peux faire ça.” Sophie ajoute: “C’est clair.” La main d’Amélie s’ouvre, et son estomac se serre. Marc regarde la porte. “Après dix minutes, je reste ici. Tu entres seule.”\n\nMarc touche son épaule, puis son genou bouge vers la sortie. “Je reviens après”, répond-elle. Cette petite aide suffit.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "corps",
+        "surface": "corps",
+        "register": "neutral",
+        "definition": "whole physical part of a person today today"
+      },
+      {
+        "type": "noun",
+        "word": "bras",
+        "surface": "bras",
+        "register": "neutral",
+        "definition": "body part between the shoulder and hand today"
+      },
+      {
+        "type": "noun",
+        "word": "doigt",
+        "surface": "doigt",
+        "register": "neutral",
+        "definition": "one of the parts at the end of a hand"
+      },
+      {
+        "type": "noun",
+        "word": "œil",
+        "surface": "œil",
+        "register": "neutral",
+        "definition": "body part used for seeing things today today"
+      },
+      {
+        "type": "noun",
+        "word": "bouche",
+        "surface": "bouche",
+        "register": "neutral",
+        "definition": "part of the face used to speak or eat"
+      },
+      {
+        "type": "noun",
+        "word": "oreille",
+        "surface": "oreille",
+        "register": "neutral",
+        "definition": "body part used for hearing sounds today today"
+      },
+      {
+        "type": "noun",
+        "word": "ventre",
+        "surface": "ventre",
+        "register": "neutral",
+        "definition": "front middle part of the body below the chest"
+      },
+      {
+        "type": "noun",
+        "word": "dos",
+        "surface": "dos",
+        "register": "neutral",
+        "definition": "back part of the body from neck to waist"
+      },
+      {
+        "type": "noun",
+        "word": "lèvre",
+        "surface": "lèvre",
+        "register": "neutral",
+        "definition": "one of the two soft edges of the mouth"
+      },
+      {
+        "type": "noun",
+        "word": "dent",
+        "surface": "dent",
+        "register": "neutral",
+        "definition": "hard white part in the mouth used for eating"
+      },
+      {
+        "type": "noun",
+        "word": "langue",
+        "surface": "langue",
+        "register": "neutral",
+        "definition": "part inside the mouth used for speech and taste"
+      },
+      {
+        "type": "noun",
+        "word": "dix",
+        "surface": "dix",
+        "register": "neutral",
+        "definition": "the number after nine and before eleven today"
+      },
+      {
+        "type": "noun",
+        "word": "épaule",
+        "surface": "épaule",
+        "register": "neutral",
+        "definition": "body part between the arm and neck today"
+      },
+      {
+        "type": "noun",
+        "word": "genou",
+        "surface": "genou",
+        "register": "neutral",
+        "definition": "middle part of the leg that bends today"
+      },
+      {
+        "type": "noun",
+        "word": "sortie",
+        "surface": "sortie",
+        "register": "neutral",
+        "definition": "way or moment for leaving a place today"
+      },
+      {
+        "type": "noun",
+        "word": "peau",
+        "surface": "peau",
+        "register": "neutral",
+        "definition": "outer part that covers a person’s body today"
+      },
+      {
+        "type": "noun",
+        "word": "pied",
+        "surface": "pied",
+        "register": "neutral",
+        "definition": "body part at the end of a leg"
+      },
+      {
+        "type": "adjective",
+        "word": "faible",
+        "surface": "faible",
+        "register": "neutral",
+        "definition": "not strong, or with little force today today"
+      },
+      {
+        "type": "noun",
+        "word": "estomac",
+        "surface": "estomac",
+        "register": "neutral",
+        "definition": "body part inside where food goes today today"
+      },
+      {
+        "type": "noun",
+        "word": "aide",
+        "surface": "aide",
+        "register": "neutral",
+        "definition": "support that makes something easier to do today"
+      }
+    ]
+  },
+  {
+    "topic": "trust-and-doubts",
+    "slotIndex": 2,
+    "title": "La carte du doute",
+    "slug": "la-carte-du-doute",
+    "synopsis": "Sophie explains a plan for the next meeting, and everyone seems sure except Amélie. She wants to hide the doubt, but she asks for the route again and discovers that reassurance can be a small repeated explanation in public, without shame or apology today too.",
+    "arcType": "mini-cliffhanger",
+    "text": "Devant le musée, Sophie montre une carte. Amélie écoute avec Marc. La lumière tombe sur le fleuve et la mer dessinée.\n\n“On passe par la banque, puis par le théâtre”, explique Sophie. Elle ajoute: “Après, on va près de la forêt et de l’église.”\n\nTous semblent calmes. Elle voit la plage, la montagne et la rivière sur le plan, mais le chemin se mélange dans sa tête. Le papier reste ouvert.\n\nAmélie montre un coin. “Je peux demander encore? Je ne comprends pas le lac ici, ni le port, ni le château, ni l’aéroport.” Sophie répond: “Oui, on regarde ensemble.”\n\nMarc ne parle pas pour elle. Sophie montre le village, puis le champ, la ferme et la boucherie. Amélie voit aussi la tour. Elle garde la carte ouverte.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "musée",
+        "surface": "musée",
+        "register": "neutral",
+        "definition": "place where people see art or old things"
+      },
+      {
+        "type": "noun",
+        "word": "fleuve",
+        "surface": "fleuve",
+        "register": "neutral",
+        "definition": "large river that goes to the sea today"
+      },
+      {
+        "type": "noun",
+        "word": "mer",
+        "surface": "mer",
+        "register": "neutral",
+        "definition": "large area of salt water near land today"
+      },
+      {
+        "type": "noun",
+        "word": "banque",
+        "surface": "banque",
+        "register": "neutral",
+        "definition": "place where people keep or get money today"
+      },
+      {
+        "type": "noun",
+        "word": "théâtre",
+        "surface": "théâtre",
+        "register": "neutral",
+        "definition": "place where people watch actors on a stage"
+      },
+      {
+        "type": "noun",
+        "word": "forêt",
+        "surface": "forêt",
+        "register": "neutral",
+        "definition": "large place with many trees together today today"
+      },
+      {
+        "type": "noun",
+        "word": "plage",
+        "surface": "plage",
+        "register": "neutral",
+        "definition": "sandy place beside the sea or a lake"
+      },
+      {
+        "type": "noun",
+        "word": "montagne",
+        "surface": "montagne",
+        "register": "neutral",
+        "definition": "very high natural place above the land today"
+      },
+      {
+        "type": "noun",
+        "word": "rivière",
+        "surface": "rivière",
+        "register": "neutral",
+        "definition": "natural line of water smaller than a river"
+      },
+      {
+        "type": "verb",
+        "word": "mélanger",
+        "surface": "mélange",
+        "register": "neutral",
+        "definition": "to put things together so they become mixed"
+      },
+      {
+        "type": "noun",
+        "word": "lac",
+        "surface": "lac",
+        "register": "neutral",
+        "definition": "large area of water with land around it"
+      },
+      {
+        "type": "noun",
+        "word": "village",
+        "surface": "village",
+        "register": "neutral",
+        "definition": "small place where people live outside a city"
+      },
+      {
+        "type": "noun",
+        "word": "champ",
+        "surface": "champ",
+        "register": "neutral",
+        "definition": "open land where plants grow or animals stay"
+      },
+      {
+        "type": "noun",
+        "word": "ferme",
+        "surface": "ferme",
+        "register": "neutral",
+        "definition": "place in the country where food or animals are grown"
+      },
+      {
+        "type": "noun",
+        "word": "boucherie",
+        "surface": "boucherie",
+        "register": "neutral",
+        "definition": "shop where people buy meat today today today"
+      },
+      {
+        "type": "noun",
+        "word": "église",
+        "surface": "église",
+        "register": "neutral",
+        "definition": "religious building where people meet or pray today"
+      },
+      {
+        "type": "noun",
+        "word": "château",
+        "surface": "château",
+        "register": "neutral",
+        "definition": "large old building where important people lived today"
+      },
+      {
+        "type": "noun",
+        "word": "tour",
+        "surface": "tour",
+        "register": "neutral",
+        "definition": "very tall building or part of a building"
+      },
+      {
+        "type": "noun",
+        "word": "port",
+        "surface": "port",
+        "register": "neutral",
+        "definition": "place near water where boats arrive today today"
+      },
+      {
+        "type": "noun",
+        "word": "aéroport",
+        "surface": "aéroport",
+        "register": "neutral",
+        "definition": "place where planes arrive and leave today today"
+      }
+    ]
+  }
+]

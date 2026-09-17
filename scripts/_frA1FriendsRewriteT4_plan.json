@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a1",
+  "variante": "france",
+  "registro": "pertenencia social cotidiana, con gestos pequenos en espacios compartidos",
+  "espina": "Amelie deja de ser la invitada de Marc y empieza a ocupar un lugar propio en la mesa.",
+  "recursos": "hall, silla, tarjeta, objetos concretos de grupo, frases breves de limite",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "dejar una nota en el hall para encontrar al grupo",
+      "impide": "Marc quiere colocarla por ella",
+      "cuesta": "pierde la comodidad de esconderse detras de Marc",
+      "cambia": "escribe ella la nota bajo el cuatro",
+      "emocion": "mano lenta antes del trazo, alivio cuando nadie habla por ella"
+    },
+    {
+      "slot": "2",
+      "quiere": "sentarse en una mesa donde no conoce a todos",
+      "impide": "la silla guardada la hace sentirse observada",
+      "cuesta": "renuncia a irse al parque",
+      "cambia": "hace una pregunta en voz alta y se queda",
+      "emocion": "toca la madera para calmarse, luego acepta la place"
+    },
+    {
+      "slot": "3",
+      "quiere": "caminar con Marc sin que el nombre del lugar pese demasiado",
+      "impide": "Marc usa una palabra grande demasiado pronto",
+      "cuesta": "corrige a un amigo que quiere cuidarla",
+      "cambia": "elige una palabra mas pequena: carte calme",
+      "emocion": "garganta cerrada, mano sobre la carte"
+    }
+  ]
+}

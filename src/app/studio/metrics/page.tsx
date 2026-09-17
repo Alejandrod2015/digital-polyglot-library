@@ -383,7 +383,7 @@ export default function MetricsDashboard() {
   }
 
   function renderActiveSection() {
-    if (section === "overview") return <ResumenView data={data} />;
+    if (section === "overview") return <ResumenView data={data} cohort={cohort} />;
     if (section === "engagement") return <EngagementView data={data} />;
     if (section === "funnels") return <FunnelsView data={data} />;
 
@@ -1149,7 +1149,8 @@ function retentionPerson(
   users?: Record<string, RetentionUserPayload>,
 ): HoverPerson {
   const u = users?.[userId];
-  const label = u?.name || u?.email || userId.slice(-8);
+  // Nunca un trozo de id: ver `kpiUserLabel`.
+  const label = u?.name || u?.email || "Sin identificar";
   const seconds = u?.listenedSeconds ?? 0;
   return {
     id: userId,

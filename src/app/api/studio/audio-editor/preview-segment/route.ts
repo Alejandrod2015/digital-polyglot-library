@@ -13,10 +13,12 @@ import {
   DEFAULT_VOICE_SETTINGS,
   softenPunctuationForTts,
 } from "@/lib/elevenlabs";
-import { uploadPublicObject } from "@/lib/objectStorage";
+import { uploadAudioObject } from "@/lib/objectStorage";
 import { deriveAudioEditorBlocks, findBlockForChar } from "@/lib/audioEditorBlocks";
 import { mergeVoiceProvenance, readVoiceProvenance } from "@/lib/voiceProvenance";
 import { computeNarratorOffIntervals, buildAmbientStage } from "@/lib/narrationPostProcess";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
+import { signAudioUrl } from "@/lib/mediaSigning";
 
 export const maxDuration = 300;
 
@@ -91,7 +93,9 @@ function resolveAmbientPath(tag: string | null | undefined, language: string | n
 }
 
 async function downloadToBuffer(url: string): Promise<Buffer> {
-  const r = await fetch(url);
+  // El audio vive en el bucket privado: se baja con la URL firmada, no
+  // con la canonica que guarda la base.
+  const r = await fetch(signAudioUrl(url) ?? url);
   if (!r.ok) throw new Error(`download failed ${r.status} for ${url}`);
   return Buffer.from(await r.arrayBuffer());
 }
@@ -565,7 +569,7 @@ export async function POST(request: Request) {
         .replace(/_edit\d+$/, "");
       newDryFilename = `${baseDryName}_edit${Date.now()}.mp3`;
       const dryBuf = readFileSync(splicedDryPath);
-      const dryUpload = await uploadPublicObject({
+      const dryUpload = await uploadAudioObject({
         key: `media/generated/audio/${newDryFilename}`,
         body: dryBuf,
         contentType: "audio/mpeg",
@@ -581,7 +585,7 @@ export async function POST(request: Request) {
       .replace(/\.mp3$/, "")
       .replace(/_edit\d+$/, "");
     const newFilename = `${baseName}_edit${Date.now()}.mp3`;
-    const uploaded = await uploadPublicObject({
+    const uploaded = await uploadAudioObject({
       key: `media/generated/audio/${newFilename}`,
       body: processed,
       contentType: "audio/mpeg",
@@ -611,7 +615,7 @@ export async function POST(request: Request) {
       },
     });
 
-    return NextResponse.json({
+    return NextResponse.json(signAudioUrlsDeep({
       ok: true,
       audioUrlPreview: uploaded.url,
       audioFilenamePreview: newFilename,
@@ -623,7 +627,7 @@ export async function POST(request: Request) {
         textLength: segmentText.length,
         newSegmentDurationSec: newDuration,
       },
-    });
+    }));
   } catch (err) {
     return NextResponse.json(
       { error: err instanceof Error ? err.message : "Pipeline failed" },

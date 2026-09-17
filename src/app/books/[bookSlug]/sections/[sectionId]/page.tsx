@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { books } from "@/data/books";
 import Player from "@/components/Player";
+import { signCatalogAudioUrl } from "@/lib/mediaSigning";
 
 interface SectionPageProps {
   params: Promise<{
@@ -44,7 +45,7 @@ export default async function SectionPage({ params }: SectionPageProps) {
       {hasSectionAudio ? (
         <div className="fixed bottom-0 left-0 right-0 z-50 md:ml-64">
           <Player
-            src={section.audio}
+            src={signCatalogAudioUrl(section.audio) ?? ""}
             bookSlug={book.slug}
             storySlug={section.slug}
             prevStorySlug={prevStorySlug}

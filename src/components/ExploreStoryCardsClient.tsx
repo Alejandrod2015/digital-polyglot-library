@@ -14,7 +14,6 @@ type ExploreStoryCardItem = {
   region?: string;
   level: string;
   topic?: string;
-  audioSrc?: string;
 };
 
 type Props = {

@@ -53,6 +53,39 @@ const NOTES: Record<
     ],
     signOff: ["Alejandro", "Founder, Digital Polyglot"],
   },
+  // Ben wrote one line from his iPhone: "Cant open from testflight. Its
+  // prompting me for a code". App Store Connect says his tester record is
+  // INVITED, so Apple's invitation is alive and simply never accepted, and
+  // TestFlight shows the redeem screen until it is.
+  //
+  // Two things this note deliberately does NOT do:
+  //   1. It does not ask him what his Apple ID is. He wrote one line from a
+  //      phone; the term is Apple's vocabulary, not his. The last paragraph
+  //      catches the wrong-address case without making him name anything.
+  //   2. It does not claim the invitation is sitting in his inbox. We resent
+  //      it and we can say that; what is in his mailbox is not ours to assert.
+  "testflight-code-prompt": {
+    subject: "Your TestFlight invite, resent",
+    paragraphs: [
+      "Sorry about that, and nothing you did wrong: TestFlight only shows the app once the invitation has been accepted, and until then all it offers you is that code box. Not the first impression we wanted you to have.",
+      "We have just sent the invitation again. It arrives from TestFlight, from Apple rather than from us, so look for that name. Tap View in TestFlight inside it and you are in. No code anywhere.",
+      "If it has not shown up in ten minutes, or it lands in a different inbox from this one, just say so and we will send it wherever you like.",
+      "Thank you for writing instead of giving up on it. That is exactly what we hoped testers would do.",
+    ],
+    signOff: "Alejandro",
+  },
+  // Bob wrote from the feedback form: "I was hoping for European Portuguese.
+  // Thanks though." We invited him by mistake while only Brazilian
+  // Portuguese exists. The date is the user's commitment (2026-09-10), not
+  // ours to soften or move.
+  "european-portuguese": {
+    subject: "European Portuguese is on its way",
+    paragraphs: [
+      "Thanks for letting us know, and for giving the beta a try. You're right: everything we have in Portuguese so far is Brazilian.",
+      "We're working on European Portuguese stories right now, and they'll be ready by the end of September.",
+    ],
+    signOff: "Alejandro",
+  },
 };
 
 const email = process.argv[2];

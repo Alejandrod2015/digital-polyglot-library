@@ -12,6 +12,7 @@ import { getEffectivePlanForUserId } from "@/lib/effectiveAccess";
 import { getDailyStories } from "@/lib/dailyJourneyStory";
 import { isEntitledPlan, type EffectivePlan } from "@domain/access";
 import { prisma } from "@/lib/prisma";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 export const runtime = "nodejs";
 
@@ -95,17 +96,17 @@ export async function GET(req: NextRequest) {
     if (idsParam) {
       const ids = Array.from(new Set(idsParam.split(",").map((item) => item.trim()).filter(Boolean)));
       const stories = await lockStoriesForPlan(await getStandaloneStoriesByIds(ids), plan);
-      return withSourceHeader(NextResponse.json({ stories }));
+      return withSourceHeader(NextResponse.json(signAudioUrlsDeep({ stories })));
     }
 
     if (slugsParam) {
       const slugs = Array.from(new Set(slugsParam.split(",").map((item) => item.trim()).filter(Boolean)));
       const stories = await lockStoriesForPlan(await getStandaloneStoriesBySlugs(slugs), plan);
-      return withSourceHeader(NextResponse.json({ stories }));
+      return withSourceHeader(NextResponse.json(signAudioUrlsDeep({ stories })));
     }
 
     const stories = await lockStoriesForPlan(await getPublishedStandaloneStories(), plan);
-    return withSourceHeader(NextResponse.json({ stories }));
+    return withSourceHeader(NextResponse.json(signAudioUrlsDeep({ stories })));
   } catch (error) {
     console.error("Error fetching standalone stories:", error);
     return NextResponse.json({ error: "Failed to load standalone stories" }, { status: 500 });

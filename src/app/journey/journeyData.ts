@@ -662,7 +662,6 @@ export type JourneySlugSource = {
 
 export function buildJourneySlugMap(journeys: JourneySlugSource[]): Map<string, string> {
   const slugByJourneyId = new Map<string, string>();
-  const renderable = journeys.filter((j) => (j.stories?.length ?? 0) > 0);
   const langCodeOf = (j: JourneySlugSource) =>
     slugifyTrackLabel(formatLanguageCode(j.language ?? ""));
   const nameSlugOf = (j: JourneySlugSource) =>
@@ -687,8 +686,8 @@ export function buildJourneySlugMap(journeys: JourneySlugSource[]): Map<string, 
   // Guard only against the degenerate case of two journeys sharing
   // language+name+variant+level: append a short, stable id fragment.
   const baseCount = new Map<string, number>();
-  for (const j of renderable) baseCount.set(baseOf(j), (baseCount.get(baseOf(j)) ?? 0) + 1);
-  for (const j of renderable) {
+  for (const j of journeys) baseCount.set(baseOf(j), (baseCount.get(baseOf(j)) ?? 0) + 1);
+  for (const j of journeys) {
     const base = baseOf(j);
     slugByJourneyId.set(
       j.id,

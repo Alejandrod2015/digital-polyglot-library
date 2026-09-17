@@ -24,7 +24,8 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 
 import { alignAudioOnModal } from "@/lib/audioWordTimings";
-import { uploadPublicObject, getPublicObjectUrl } from "@/lib/objectStorage";
+import { uploadAudioObject, getPublicObjectUrl } from "@/lib/objectStorage";
+import { signAudioUrl } from "@/lib/mediaSigning";
 
 export type TrimAudioBoundariesArgs = {
   audioBuffer: Buffer;
@@ -60,7 +61,7 @@ export async function trimAudioBoundariesByAlignment(
   // 1. Upload temporal a R2 para que aeneas tenga URL pública.
   const tempKey = `media/multivoice-align-temp/${cryptoRandomKey()}.mp3`;
   try {
-    await uploadPublicObject({
+    await uploadAudioObject({
       key: tempKey,
       body: args.audioBuffer,
       contentType: "audio/mpeg",
@@ -69,7 +70,9 @@ export async function trimAudioBoundariesByAlignment(
     console.warn(`[audio-boundary-trim] temp upload failed: ${msg(err)}`);
     return null;
   }
-  const audioUrl = getPublicObjectUrl(tempKey);
+  // Igual que en el alineado: Modal se baja el archivo, asi que la URL va
+  // firmada.
+  const audioUrl = signAudioUrl(getPublicObjectUrl(tempKey));
   if (!audioUrl) {
     console.warn("[audio-boundary-trim] temp URL not resolvable");
     return null;
@@ -132,7 +135,7 @@ export async function trimAudioBoundariesByAlignment(
   //    un silencio limpio y predecible.
   const trimmed = await spliceChunksWithFfmpeg(args.audioBuffer, chunks, replacementSilence);
 
-  // Cleanup temp upload; best-effort. uploadPublicObject no expone
+  // Cleanup temp upload; best-effort. uploadAudioObject no expone
   // delete; el objeto vive en R2 hasta cleanup manual periódico.
   // Nombre con prefijo `media/multivoice-align-temp/` lo hace fácil
   // de barrer.

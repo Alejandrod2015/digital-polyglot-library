@@ -20,8 +20,13 @@ const COLUMNAS: Array<{ key: Columna; label: string; prev: keyof MetricsPerUserR
   { key: "practices", label: "Prácticas", prev: "prevPractices", decimales: 0 },
 ];
 
+/**
+ * Nunca un trozo de id: se lee como si fuera el nombre de alguien. Mismo
+ * criterio que `kpiUserLabel` en la tarjeta del DAU, y por el mismo caso
+ * (2026-09-16, dos cuentas borradas con filas de metricas vivas).
+ */
 function nombre(u: MetricsPerUserRow): string {
-  return u.name || u.email || u.userId.slice(-8);
+  return u.name || u.email || "Sin identificar";
 }
 
 /** La variación, ya redondeada. Sin cambio devuelve null y no se pinta nada. */

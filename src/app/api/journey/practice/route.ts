@@ -22,6 +22,7 @@ import { getMobileSessionFromRequest } from "@/lib/mobileSession";
 import { getEffectivePlanForUserId } from "@/lib/effectiveAccess";
 import { isEntitledPlan } from "@domain/access";
 import { prisma } from "@/lib/prisma";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 function getProgressKeyFromSourcePath(sourcePath: string, storySlug: string): string | null {
   const normalizedPath = sourcePath.trim();
@@ -178,8 +179,8 @@ export async function GET(request: NextRequest) {
         label: source.topic.label,
         storyCount: source.topic.storyCount,
       },
-      items: source.items.map(withPracticeVoice),
-      exercises,
+      items: signAudioUrlsDeep(source.items.map(withPracticeVoice)),
+      exercises: signAudioUrlsDeep(exercises),
       checkpointToken: createJourneyCheckpointToken({
         variantId: variant,
         levelId,
@@ -207,6 +208,6 @@ export async function GET(request: NextRequest) {
       totalCount: topicPracticeItems.length,
       focusWords: dueTopicItems.slice(0, 3).map((item) => item.word),
     },
-    items: topicPracticeItems.map(withPracticeVoice),
+    items: signAudioUrlsDeep(topicPracticeItems.map(withPracticeVoice)),
   });
 }

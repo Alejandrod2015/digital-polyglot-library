@@ -5,7 +5,8 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 
 import { prisma } from "@/lib/prisma";
-import { uploadPublicObject } from "@/lib/objectStorage";
+import { uploadAudioObject } from "@/lib/objectStorage";
+import { signAudioUrl } from "@/lib/mediaSigning";
 import { spliceOnModal } from "@/lib/audioEditorSplice";
 import { boundariesOnVoice, measureMaster } from "@/lib/audioSilenceBoundaries";
 
@@ -156,7 +157,9 @@ export function coerceFragments(value: unknown): StoredFragment[] | null {
 }
 
 async function download(url: string): Promise<Buffer> {
-  const res = await fetch(url);
+  // El audio vive en el bucket privado: se baja con la URL firmada, no con la
+  // canonica que guarda la base.
+  const res = await fetch(signAudioUrl(url) ?? url);
   if (!res.ok) throw new Error(`Descarga de sección falló: HTTP ${res.status} (${url})`);
   return Buffer.from(await res.arrayBuffer());
 }
@@ -190,7 +193,7 @@ async function rebuildAndPersist(args: {
   const ts = Date.now();
   const master = await robustConcat(buffers);
   const masterName = `${base}_multivoice_${ts}.mp3`;
-  const masterUpload = await uploadPublicObject({
+  const masterUpload = await uploadAudioObject({
     key: `media/generated/audio/${masterName}`,
     body: master,
     contentType: "audio/mpeg",
@@ -353,7 +356,7 @@ async function applyInPlace(args: {
     const newMaster = await spliceInPlace(Buffer.from(await download(story.audioUrl!)), sectionBuffer, frag.startSec, frag.endSec);
     const tmp = mkdtempSync(join(tmpdir(), "dur-"));
     try { const p = join(tmp, "s.mp3"); writeFileSync(p, sectionBuffer); newDur = ffprobeDurationFile(p); } finally { rmSync(tmp, { recursive: true, force: true }); }
-    const up = await uploadPublicObject({ key: `media/generated/audio/${masterName}`, body: newMaster, contentType: "audio/mpeg" });
+    const up = await uploadAudioObject({ key: `media/generated/audio/${masterName}`, body: newMaster, contentType: "audio/mpeg" });
     if (!up?.url) throw new Error("Subida del master a R2 falló");
     newMasterUrl = up.url;
   }
@@ -401,7 +404,7 @@ export async function replaceSectionAndRebuild(args: {
     .replace(/\.mp3$/, "")
     .replace(/_multivoice.*$/, "")
     .replace(/[^a-zA-Z0-9_-]/g, "_");
-  const secUpload = await uploadPublicObject({
+  const secUpload = await uploadAudioObject({
     key: `media/generated/audio/sections/${base}_sec${String(args.fragmentIndex).padStart(2, "0")}_re${Date.now()}.mp3`,
     body: sectionBuffer,
     contentType: "audio/mpeg",

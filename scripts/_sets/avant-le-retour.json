@@ -1,0 +1,456 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "billet,nouveau,facile,autre",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "billet",
+     "answer": "paper or phone proof for a trip today",
+     "options": [
+      "paper or phone proof for a trip today",
+      "new, not the one used before today here",
+      "easy, not hard to do or use now",
+      "different from this one or the first one"
+     ]
+    },
+    {
+     "word": "nouveau",
+     "answer": "new, not the one used before today here",
+     "options": [
+      "paper or phone proof for a trip today",
+      "new, not the one used before today here",
+      "easy, not hard to do or use now",
+      "different from this one or the first one"
+     ]
+    },
+    {
+     "word": "facile",
+     "answer": "easy, not hard to do or use now",
+     "options": [
+      "paper or phone proof for a trip today",
+      "new, not the one used before today here",
+      "easy, not hard to do or use now",
+      "different from this one or the first one"
+     ]
+    },
+    {
+     "word": "autre",
+     "answer": "different from this one or the first one",
+     "options": [
+      "paper or phone proof for a trip today",
+      "new, not the one used before today here",
+      "easy, not hard to do or use now",
+      "different from this one or the first one"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "voyage",
+  "sentence": "Il y a un autre [[voyage]] long à vingt heures.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "trip from one place to another place today",
+   "options": [
+    "trip from one place to another place today",
+    "paper or phone proof for a trip today",
+    "new, not the one used before today here",
+    "easy, not hard to do or use now"
+   ],
+   "audioClip": {
+    "storySlug": "avant-le-retour",
+    "storySource": "user",
+    "sentence": "Il y a un autre voyage long à vingt heures.",
+    "targetWord": "voyage",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "long",
+  "sentence": "Il y a un autre voyage [[long]] à vingt heures.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "having a lot of length or time today",
+   "options": [
+    "having a lot of length or time today",
+    "paper or phone proof for a trip today",
+    "new, not the one used before today here",
+    "easy, not hard to do or use now"
+   ],
+   "audioClip": {
+    "storySlug": "avant-le-retour",
+    "storySource": "user",
+    "sentence": "Il y a un autre voyage long à vingt heures.",
+    "targetWord": "long",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cou",
+  "sentence": "Le [[cou]] d'quelqu'un pique parce qu'elle veut protester et rester bonne amie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "body part between the head and shoulders today",
+   "options": [
+    "body part between the head and shoulders today",
+    "paper or phone proof for a trip today",
+    "new, not the one used before today here",
+    "easy, not hard to do or use now"
+   ],
+   "audioClip": {
+    "storySlug": "avant-le-retour",
+    "storySource": "user",
+    "sentence": "Le cou d'quelqu'un pique parce qu'elle veut protester et rester bonne amie.",
+    "targetWord": "cou",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bon",
+  "sentence": "Le cou d'quelqu'un pique parce qu'elle veut protester et rester [[bonne]] amie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "good, kind, or right for a situation now",
+   "options": [
+    "good, kind, or right for a situation now",
+    "paper or phone proof for a trip today",
+    "new, not the one used before today here",
+    "easy, not hard to do or use now"
+   ],
+   "audioClip": {
+    "storySlug": "avant-le-retour",
+    "storySource": "user",
+    "sentence": "Le cou d'quelqu'un pique parce qu'elle veut protester et rester bonne amie.",
+    "targetWord": "bonne",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "eau",
+  "sentence": "Elle boit de l'[[eau]] et regarde quelqu'un.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clear liquid people drink or wash with daily",
+   "options": [
+    "clear liquid people drink or wash with daily",
+    "paper or phone proof for a trip today",
+    "new, not the one used before today here",
+    "easy, not hard to do or use now"
+   ],
+   "audioClip": {
+    "storySlug": "avant-le-retour",
+    "storySource": "user",
+    "sentence": "Elle boit de l'eau et regarde quelqu'un.",
+    "targetWord": "eau",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "route",
+  "sentence": "Elle pense à la [[route]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "road or way used to go somewhere today",
+   "options": [
+    "road or way used to go somewhere today",
+    "paper or phone proof for a trip today",
+    "new, not the one used before today here",
+    "easy, not hard to do or use now"
+   ],
+   "audioClip": {
+    "storySlug": "avant-le-retour",
+    "storySource": "user",
+    "sentence": "Elle pense à la route.",
+    "targetWord": "route",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tard",
+  "sentence": "Tu changes [[tard]], souffle quelqu'un.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "late, after the planned or expected time today",
+   "options": [
+    "late, after the planned or expected time today",
+    "paper or phone proof for a trip today",
+    "new, not the one used before today here",
+    "easy, not hard to do or use now"
+   ],
+   "audioClip": {
+    "storySlug": "avant-le-retour",
+    "storySource": "user",
+    "sentence": "Tu changes tard, souffle quelqu'un.",
+    "targetWord": "tard",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "reculer",
+  "sentence": "Olivier [[recule]] vers la porte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to move back away from someone nearby now",
+   "options": [
+    "to move back away from someone nearby now",
+    "paper or phone proof for a trip today",
+    "new, not the one used before today here",
+    "easy, not hard to do or use now"
+   ],
+   "audioClip": {
+    "storySlug": "avant-le-retour",
+    "storySource": "user",
+    "sentence": "Olivier recule vers la porte.",
+    "targetWord": "recule",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dehors",
+  "sentence": "[[Dehors]], le vent froid et sec passe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "outside, not inside a room or building now",
+   "options": [
+    "outside, not inside a room or building now",
+    "paper or phone proof for a trip today",
+    "new, not the one used before today here",
+    "easy, not hard to do or use now"
+   ],
+   "audioClip": {
+    "storySlug": "avant-le-retour",
+    "storySource": "user",
+    "sentence": "Dehors, le vent froid et sec passe.",
+    "targetWord": "Dehors",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vent",
+  "sentence": "Dehors, le [[vent]] froid et sec passe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "moving air that people feel outside today here",
+   "options": [
+    "moving air that people feel outside today here",
+    "paper or phone proof for a trip today",
+    "new, not the one used before today here",
+    "easy, not hard to do or use now"
+   ],
+   "audioClip": {
+    "storySlug": "avant-le-retour",
+    "storySource": "user",
+    "sentence": "Dehors, le vent froid et sec passe.",
+    "targetWord": "vent",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sec",
+  "sentence": "Dehors, le vent froid et [[sec]] passe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dry, with little or no water on it",
+   "options": [
+    "dry, with little or no water on it",
+    "paper or phone proof for a trip today",
+    "new, not the one used before today here",
+    "easy, not hard to do or use now"
+   ],
+   "audioClip": {
+    "storySlug": "avant-le-retour",
+    "storySource": "user",
+    "sentence": "Dehors, le vent froid et sec passe.",
+    "targetWord": "sec",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "avant",
+  "sentence": "[[avant]] la réponse, quelqu'un l'arrête d'une main.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "earlier than a moment or event today again",
+   "options": [
+    "earlier than a moment or event today again",
+    "paper or phone proof for a trip today",
+    "new, not the one used before today here",
+    "easy, not hard to do or use now"
+   ],
+   "audioClip": {
+    "storySlug": "avant-le-retour",
+    "storySource": "user",
+    "sentence": "avant la réponse, quelqu'un l'arrête d'une main.",
+    "targetWord": "avant",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "changement",
+  "sentence": "Mais on va dire les [[changements]] avant.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "change from one plan or state to another",
+   "options": [
+    "change from one plan or state to another",
+    "paper or phone proof for a trip today",
+    "new, not the one used before today here",
+    "easy, not hard to do or use now"
+   ],
+   "audioClip": {
+    "storySlug": "avant-le-retour",
+    "storySource": "user",
+    "sentence": "Mais on va dire les changements avant.",
+    "targetWord": "changements",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pendant",
+  "sentence": "quelqu'un lit la règle sur le billet: Avant, pas [[pendant]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "during the time that something happens right now",
+   "options": [
+    "during the time that something happens right now",
+    "paper or phone proof for a trip today",
+    "new, not the one used before today here",
+    "easy, not hard to do or use now"
+   ],
+   "audioClip": {
+    "storySlug": "avant-le-retour",
+    "storySource": "user",
+    "sentence": "quelqu'un lit la règle sur le billet: Avant, pas pendant.",
+    "targetWord": "pendant",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "règle",
+  "sentence": "quelqu'un lit la _____ sur le billet: Avant, pas pendant.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "règle",
+   "options": [
+    "règle",
+    "billet",
+    "voyage",
+    "cou"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "clear idea about what people must do together",
+    "paper or phone proof for a trip today",
+    "trip from one place to another place today",
+    "body part between the head and shoulders today"
+   ],
+   "audioClip": {
+    "storySlug": "avant-le-retour",
+    "storySource": "user",
+    "sentence": "quelqu'un lit la règle sur le billet: Avant, pas pendant.",
+    "targetWord": "règle",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "avec",
+  "sentence": "quelqu'un arrive _____ Olivier et une nouvelle heure.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "avec",
+   "options": [
+    "avec",
+    "pendant",
+    "Pour",
+    "billet"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "together with another person or thing nearby today",
+    "during the time that something happens right now",
+    "shows who or what something is meant for",
+    "paper or phone proof for a trip today"
+   ],
+   "audioClip": {
+    "storySlug": "avant-le-retour",
+    "storySource": "user",
+    "sentence": "quelqu'un arrive avec Olivier et une nouvelle heure.",
+    "targetWord": "avec",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "Pour",
+  "sentence": "Le billet d'quelqu'un est sur la table du café, _____ Marseille.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Pour",
+   "options": [
+    "Pour",
+    "pendant",
+    "avec",
+    "billet"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "shows who or what something is meant for",
+    "during the time that something happens right now",
+    "together with another person or thing nearby today",
+    "paper or phone proof for a trip today"
+   ],
+   "audioClip": {
+    "storySlug": "avant-le-retour",
+    "storySource": "user",
+    "sentence": "Le billet d'quelqu'un est sur la table du café, Pour Marseille.",
+    "targetWord": "Pour",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

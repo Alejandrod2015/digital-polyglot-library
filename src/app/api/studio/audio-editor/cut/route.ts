@@ -7,8 +7,10 @@ import { join } from "node:path";
 
 import { prisma } from "@/lib/prisma";
 import { isStudioMember } from "@/lib/studio-access";
-import { uploadPublicObject } from "@/lib/objectStorage";
+import { uploadAudioObject } from "@/lib/objectStorage";
 import { mergeVoiceProvenance, readVoiceProvenance } from "@/lib/voiceProvenance";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
+import { signAudioUrl } from "@/lib/mediaSigning";
 
 export const maxDuration = 120;
 
@@ -83,7 +85,9 @@ function ffprobeDuration(filePath: string): Promise<number> {
 }
 
 async function downloadToBuffer(url: string): Promise<Buffer> {
-  const r = await fetch(url);
+  // El audio vive en el bucket privado: se baja con la URL firmada, no
+  // con la canonica que guarda la base.
+  const r = await fetch(signAudioUrl(url) ?? url);
   if (!r.ok) throw new Error(`download failed ${r.status} for ${url}`);
   return Buffer.from(await r.arrayBuffer());
 }
@@ -219,7 +223,7 @@ export async function POST(request: Request) {
       .replace(/\.mp3$/, "")
       .replace(/_(edit|cut)\d+$/, "");
     const newFilename = `${baseName}_cut${Date.now()}.mp3`;
-    const uploaded = await uploadPublicObject({
+    const uploaded = await uploadAudioObject({
       key: `media/generated/audio/${newFilename}`,
       body: readFileSync(mixedOutPath),
       contentType: "audio/mpeg",
@@ -234,7 +238,7 @@ export async function POST(request: Request) {
       writeFileSync(dryInPath, await downloadToBuffer(drySource));
       await cutFile(dryInPath, startSec, endSec, dryOutPath);
       const newDryFilename = `${baseName}_cut${Date.now()}_dry.mp3`;
-      const dryUpload = await uploadPublicObject({
+      const dryUpload = await uploadAudioObject({
         key: `media/generated/audio/${newDryFilename}`,
         body: readFileSync(dryOutPath),
         contentType: "audio/mpeg",
@@ -256,13 +260,13 @@ export async function POST(request: Request) {
       },
     });
 
-    return NextResponse.json({
+    return NextResponse.json(signAudioUrlsDeep({
       ok: true,
       audioUrlPreview: uploaded.url,
       audioFilenamePreview: newFilename,
       removedSec: endSec - startSec,
       dryStemCut: !!drySource,
-    });
+    }));
   } catch (err) {
     return NextResponse.json(
       { error: err instanceof Error ? err.message : "Cut pipeline failed" },

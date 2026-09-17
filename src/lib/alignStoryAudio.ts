@@ -9,6 +9,7 @@
 // under tsx, which `server-only` (pulled in by lib/prisma) otherwise blocks.
 
 import { extractStoryPlainText, stripSpeakerLabels } from "./storyPlainText";
+import { signAudioUrl } from "./mediaSigning";
 import {
   AUDIO_WORD_TIMINGS_VERSION,
   type AudioWordTimingsPayload,
@@ -80,7 +81,8 @@ export async function alignAudioOnModal(args: {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       _token: token,
-      audioUrl: args.audioUrl,
+      // Modal se baja el mp3 por su cuenta, asi que recibe la URL firmada.
+      audioUrl: signAudioUrl(args.audioUrl) ?? args.audioUrl,
       text: args.plainText,
       language: mappedLanguage,
     }),

@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "musée,fleuve,mer,banque",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "musée",
+     "answer": "place where people see art or old things",
+     "options": [
+      "place where people see art or old things",
+      "large river that goes to the sea today",
+      "large area of salt water near land today",
+      "place where people keep or get money today"
+     ]
+    },
+    {
+     "word": "fleuve",
+     "answer": "large river that goes to the sea today",
+     "options": [
+      "place where people see art or old things",
+      "large river that goes to the sea today",
+      "large area of salt water near land today",
+      "place where people keep or get money today"
+     ]
+    },
+    {
+     "word": "mer",
+     "answer": "large area of salt water near land today",
+     "options": [
+      "place where people see art or old things",
+      "large river that goes to the sea today",
+      "large area of salt water near land today",
+      "place where people keep or get money today"
+     ]
+    },
+    {
+     "word": "banque",
+     "answer": "place where people keep or get money today",
+     "options": [
+      "place where people see art or old things",
+      "large river that goes to the sea today",
+      "large area of salt water near land today",
+      "place where people keep or get money today"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "théâtre",
+  "sentence": "On passe par la banque, puis par le [[théâtre]], explique Sophie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "place where people watch actors on a stage",
+   "options": [
+    "place where people watch actors on a stage",
+    "place where people see art or old things",
+    "large river that goes to the sea today",
+    "large area of salt water near land today"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-du-doute",
+    "storySource": "user",
+    "sentence": "On passe par la banque, puis par le théâtre, explique Sophie.",
+    "targetWord": "théâtre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "forêt",
+  "sentence": "Elle ajoute: Après, on va près de la [[forêt]] et de l’église.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "large place with many trees together today today",
+   "options": [
+    "large place with many trees together today today",
+    "place where people see art or old things",
+    "large river that goes to the sea today",
+    "large area of salt water near land today"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-du-doute",
+    "storySource": "user",
+    "sentence": "Elle ajoute: Après, on va près de la forêt et de l’église.",
+    "targetWord": "forêt",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "plage",
+  "sentence": "Elle voit la [[plage]], la montagne et la rivière sur le plan, mais le.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sandy place beside the sea or a lake",
+   "options": [
+    "sandy place beside the sea or a lake",
+    "place where people see art or old things",
+    "large river that goes to the sea today",
+    "large area of salt water near land today"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-du-doute",
+    "storySource": "user",
+    "sentence": "Elle voit la plage, la montagne et la rivière sur le plan, mais le.",
+    "targetWord": "plage",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "montagne",
+  "sentence": "Elle voit la plage, la [[montagne]] et la rivière sur le plan, mais le.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "very high natural place above the land today",
+   "options": [
+    "very high natural place above the land today",
+    "place where people see art or old things",
+    "large river that goes to the sea today",
+    "large area of salt water near land today"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-du-doute",
+    "storySource": "user",
+    "sentence": "Elle voit la plage, la montagne et la rivière sur le plan, mais le.",
+    "targetWord": "montagne",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rivière",
+  "sentence": "Elle voit la plage, la montagne et la [[rivière]] sur le plan, mais le.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "natural line of water smaller than a river",
+   "options": [
+    "natural line of water smaller than a river",
+    "place where people see art or old things",
+    "large river that goes to the sea today",
+    "large area of salt water near land today"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-du-doute",
+    "storySource": "user",
+    "sentence": "Elle voit la plage, la montagne et la rivière sur le plan, mais le.",
+    "targetWord": "rivière",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mélanger",
+  "sentence": "Il ne faut pas [[mélanger]] les cartes.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to put things together so they become mixed",
+   "options": [
+    "to put things together so they become mixed",
+    "place where people see art or old things",
+    "large river that goes to the sea today",
+    "large area of salt water near land today"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-du-doute",
+    "storySource": "user",
+    "sentence": "Il ne faut pas mélanger les cartes.",
+    "targetWord": "mélanger",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lac",
+  "sentence": "Je ne comprends pas le [[lac]] ici, ni le port, ni le château, ni.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "large area of water with land around it",
+   "options": [
+    "large area of water with land around it",
+    "place where people see art or old things",
+    "large river that goes to the sea today",
+    "large area of salt water near land today"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-du-doute",
+    "storySource": "user",
+    "sentence": "Je ne comprends pas le lac ici, ni le port, ni le château, ni.",
+    "targetWord": "lac",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "village",
+  "sentence": "Sophie montre le [[village]], puis le champ, la ferme et la boucherie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "small place where people live outside a city",
+   "options": [
+    "small place where people live outside a city",
+    "place where people see art or old things",
+    "large river that goes to the sea today",
+    "large area of salt water near land today"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-du-doute",
+    "storySource": "user",
+    "sentence": "Sophie montre le village, puis le champ, la ferme et la boucherie.",
+    "targetWord": "village",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "champ",
+  "sentence": "Sophie montre le village, puis le [[champ]], la ferme et la boucherie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "open land where plants grow or animals stay",
+   "options": [
+    "open land where plants grow or animals stay",
+    "place where people see art or old things",
+    "large river that goes to the sea today",
+    "large area of salt water near land today"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-du-doute",
+    "storySource": "user",
+    "sentence": "Sophie montre le village, puis le champ, la ferme et la boucherie.",
+    "targetWord": "champ",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ferme",
+  "sentence": "Sophie montre le village, puis le champ, la [[ferme]] et la boucherie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "place in the country where food or animals are grown",
+   "options": [
+    "place in the country where food or animals are grown",
+    "place where people see art or old things",
+    "large river that goes to the sea today",
+    "large area of salt water near land today"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-du-doute",
+    "storySource": "user",
+    "sentence": "Sophie montre le village, puis le champ, la ferme et la boucherie.",
+    "targetWord": "ferme",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "boucherie",
+  "sentence": "Sophie montre le village, puis le champ, la ferme et la [[boucherie]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shop where people buy meat today today today",
+   "options": [
+    "shop where people buy meat today today today",
+    "place where people see art or old things",
+    "large river that goes to the sea today",
+    "large area of salt water near land today"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-du-doute",
+    "storySource": "user",
+    "sentence": "Sophie montre le village, puis le champ, la ferme et la boucherie.",
+    "targetWord": "boucherie",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "église",
+  "sentence": "Ici, [[église]] compte vraiment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "religious building where people meet or pray today",
+   "options": [
+    "religious building where people meet or pray today",
+    "place where people see art or old things",
+    "large river that goes to the sea today",
+    "large area of salt water near land today"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-du-doute",
+    "storySource": "user",
+    "sentence": "Ici, église compte vraiment.",
+    "targetWord": "église",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "château",
+  "sentence": "Je ne comprends pas le lac ici, ni le port, ni le [[château]], ni.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "large old building where important people lived today",
+   "options": [
+    "large old building where important people lived today",
+    "place where people see art or old things",
+    "large river that goes to the sea today",
+    "large area of salt water near land today"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-du-doute",
+    "storySource": "user",
+    "sentence": "Je ne comprends pas le lac ici, ni le port, ni le château, ni.",
+    "targetWord": "château",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "tour",
+  "sentence": "quelqu'un voit aussi la _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tour",
+   "options": [
+    "tour",
+    "musée",
+    "fleuve",
+    "mer"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "very tall building or part of a building",
+    "place where people see art or old things",
+    "large river that goes to the sea today",
+    "large area of salt water near land today"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-du-doute",
+    "storySource": "user",
+    "sentence": "quelqu'un voit aussi la tour.",
+    "targetWord": "tour",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "port",
+  "sentence": "Je ne comprends pas le lac ici, ni le _____, ni le.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "port",
+   "options": [
+    "port",
+    "musée",
+    "fleuve",
+    "mer"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "place near water where boats arrive today today",
+    "place where people see art or old things",
+    "large river that goes to the sea today",
+    "large area of salt water near land today"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-du-doute",
+    "storySource": "user",
+    "sentence": "Je ne comprends pas le lac ici, ni le port, ni le.",
+    "targetWord": "port",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "aéroport",
+  "sentence": "Le taxi attend à l'_____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aéroport",
+   "options": [
+    "aéroport",
+    "musée",
+    "fleuve",
+    "mer"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "place where planes arrive and leave today today",
+    "place where people see art or old things",
+    "large river that goes to the sea today",
+    "large area of salt water near land today"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-du-doute",
+    "storySource": "user",
+    "sentence": "Le taxi attend à l'aéroport.",
+    "targetWord": "aéroport",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

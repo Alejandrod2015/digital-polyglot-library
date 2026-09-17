@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "enseignant,classe,cours,cahier",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "enseignant",
+     "answer": "person whose work is helping others learn today",
+     "options": [
+      "person whose work is helping others learn today",
+      "room or group where people learn together today",
+      "time when a teacher helps people learn today",
+      "small book used for writing notes in class"
+     ]
+    },
+    {
+     "word": "classe",
+     "answer": "room or group where people learn together today",
+     "options": [
+      "person whose work is helping others learn today",
+      "room or group where people learn together today",
+      "time when a teacher helps people learn today",
+      "small book used for writing notes in class"
+     ]
+    },
+    {
+     "word": "cours",
+     "answer": "time when a teacher helps people learn today",
+     "options": [
+      "person whose work is helping others learn today",
+      "room or group where people learn together today",
+      "time when a teacher helps people learn today",
+      "small book used for writing notes in class"
+     ]
+    },
+    {
+     "word": "cahier",
+     "answer": "small book used for writing notes in class",
+     "options": [
+      "person whose work is helping others learn today",
+      "room or group where people learn together today",
+      "time when a teacher helps people learn today",
+      "small book used for writing notes in class"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "étudier",
+  "sentence": "Ici, [[étudie]] compte vraiment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to learn by reading, writing, or practicing today",
+   "options": [
+    "to learn by reading, writing, or practicing today",
+    "person whose work is helping others learn today",
+    "room or group where people learn together today",
+    "time when a teacher helps people learn today"
+   ],
+   "audioClip": {
+    "storySlug": "le-cahier-ouvert",
+    "storySource": "user",
+    "sentence": "Ici, étudie compte vraiment.",
+    "targetWord": "étudie",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "livre",
+  "sentence": "Sophie montre le [[livre]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "object with pages that people read today today",
+   "options": [
+    "object with pages that people read today today",
+    "person whose work is helping others learn today",
+    "room or group where people learn together today",
+    "time when a teacher helps people learn today"
+   ],
+   "audioClip": {
+    "storySlug": "le-cahier-ouvert",
+    "storySource": "user",
+    "sentence": "Sophie montre le livre.",
+    "targetWord": "livre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "école",
+  "sentence": "Ici, [[école]] compte vraiment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "place where people go to learn today today",
+   "options": [
+    "place where people go to learn today today",
+    "person whose work is helping others learn today",
+    "room or group where people learn together today",
+    "time when a teacher helps people learn today"
+   ],
+   "audioClip": {
+    "storySlug": "le-cahier-ouvert",
+    "storySource": "user",
+    "sentence": "Ici, école compte vraiment.",
+    "targetWord": "école",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nerveux",
+  "sentence": "quelqu'un devient [[nerveuse]] devant la prof.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "worried or tense before something happens today today",
+   "options": [
+    "worried or tense before something happens today today",
+    "person whose work is helping others learn today",
+    "room or group where people learn together today",
+    "time when a teacher helps people learn today"
+   ],
+   "audioClip": {
+    "storySlug": "le-cahier-ouvert",
+    "storySource": "user",
+    "sentence": "quelqu'un devient nerveuse devant la prof.",
+    "targetWord": "nerveuse",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prof",
+  "sentence": "quelqu'un devient nerveuse devant la [[prof]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "teacher, in a common short spoken form today",
+   "options": [
+    "teacher, in a common short spoken form today",
+    "person whose work is helping others learn today",
+    "room or group where people learn together today",
+    "time when a teacher helps people learn today"
+   ],
+   "audioClip": {
+    "storySlug": "le-cahier-ouvert",
+    "storySource": "user",
+    "sentence": "quelqu'un devient nerveuse devant la prof.",
+    "targetWord": "prof",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "texte",
+  "sentence": "Le [[texte]] parle d’un rendez-vous.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "written words that someone can read today today",
+   "options": [
+    "written words that someone can read today today",
+    "person whose work is helping others learn today",
+    "room or group where people learn together today",
+    "time when a teacher helps people learn today"
+   ],
+   "audioClip": {
+    "storySlug": "le-cahier-ouvert",
+    "storySource": "user",
+    "sentence": "Le texte parle d’un rendez-vous.",
+    "targetWord": "texte",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mauvais",
+  "sentence": "Il n’est pas [[mauvais]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "not good, useful, pleasant, or correct today today",
+   "options": [
+    "not good, useful, pleasant, or correct today today",
+    "person whose work is helping others learn today",
+    "room or group where people learn together today",
+    "time when a teacher helps people learn today"
+   ],
+   "audioClip": {
+    "storySlug": "le-cahier-ouvert",
+    "storySource": "user",
+    "sentence": "Il n’est pas mauvais.",
+    "targetWord": "mauvais",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "leçon",
+  "sentence": "quelqu'un veut une [[leçon]] petite, pas une note nouvelle écrite par les autres.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "part of a class where someone learns today",
+   "options": [
+    "part of a class where someone learns today",
+    "person whose work is helping others learn today",
+    "room or group where people learn together today",
+    "time when a teacher helps people learn today"
+   ],
+   "audioClip": {
+    "storySlug": "le-cahier-ouvert",
+    "storySource": "user",
+    "sentence": "quelqu'un veut une leçon petite, pas une note nouvelle écrite par les autres.",
+    "targetWord": "leçon",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "note",
+  "sentence": "quelqu'un veut une leçon petite, pas une [[note]] nouvelle écrite par les autres.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "short written word, mark, or school result today",
+   "options": [
+    "short written word, mark, or school result today",
+    "person whose work is helping others learn today",
+    "room or group where people learn together today",
+    "time when a teacher helps people learn today"
+   ],
+   "audioClip": {
+    "storySlug": "le-cahier-ouvert",
+    "storySource": "user",
+    "sentence": "quelqu'un veut une leçon petite, pas une note nouvelle écrite par les autres.",
+    "targetWord": "note",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "craie",
+  "sentence": "Un élève adulte passe près du tableau avec une [[craie]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "white or colored stick used on a board today",
+   "options": [
+    "white or colored stick used on a board today",
+    "person whose work is helping others learn today",
+    "room or group where people learn together today",
+    "time when a teacher helps people learn today"
+   ],
+   "audioClip": {
+    "storySlug": "le-cahier-ouvert",
+    "storySource": "user",
+    "sentence": "Un élève adulte passe près du tableau avec une craie.",
+    "targetWord": "craie",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "question",
+  "sentence": "La [[question]] est claire.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "words used to ask for an answer today",
+   "options": [
+    "words used to ask for an answer today",
+    "person whose work is helping others learn today",
+    "room or group where people learn together today",
+    "time when a teacher helps people learn today"
+   ],
+   "audioClip": {
+    "storySlug": "le-cahier-ouvert",
+    "storySource": "user",
+    "sentence": "La question est claire.",
+    "targetWord": "question",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "élève",
+  "sentence": "Ici, [[élève]] compte vraiment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "person who learns with a teacher today today",
+   "options": [
+    "person who learns with a teacher today today",
+    "person whose work is helping others learn today",
+    "room or group where people learn together today",
+    "time when a teacher helps people learn today"
+   ],
+   "audioClip": {
+    "storySlug": "le-cahier-ouvert",
+    "storySource": "user",
+    "sentence": "Ici, élève compte vraiment.",
+    "targetWord": "élève",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tableau",
+  "sentence": "Un élève adulte passe près du [[tableau]] avec une craie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "board or picture on a wall today today",
+   "options": [
+    "board or picture on a wall today today",
+    "person whose work is helping others learn today",
+    "room or group where people learn together today",
+    "time when a teacher helps people learn today"
+   ],
+   "audioClip": {
+    "storySlug": "le-cahier-ouvert",
+    "storySource": "user",
+    "sentence": "Un élève adulte passe près du tableau avec une craie.",
+    "targetWord": "tableau",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "travailler",
+  "sentence": "Tu peux _____ avec cette phrase, et tu peux la garder.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "travailler",
+   "options": [
+    "travailler",
+    "étudie",
+    "enseignante",
+    "classe"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "to do a job or study activity today",
+    "to learn by reading, writing, or practicing today",
+    "person whose work is helping others learn today",
+    "room or group where people learn together today"
+   ],
+   "audioClip": {
+    "storySlug": "le-cahier-ouvert",
+    "storySource": "user",
+    "sentence": "Tu peux travailler avec cette phrase, et tu peux la garder.",
+    "targetWord": "travailler",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "version",
+  "sentence": "Elle perd la _____ parfaite, mais garde son cahier.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "version",
+   "options": [
+    "version",
+    "enseignante",
+    "classe",
+    "cours"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "form of something that is different from another form",
+    "person whose work is helping others learn today",
+    "room or group where people learn together today",
+    "time when a teacher helps people learn today"
+   ],
+   "audioClip": {
+    "storySlug": "le-cahier-ouvert",
+    "storySource": "user",
+    "sentence": "Elle perd la version parfaite, mais garde son cahier.",
+    "targetWord": "version",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "matière",
+  "sentence": "La _____ reste simple, mais la voix d’quelqu'un tremble.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "matière",
+   "options": [
+    "matière",
+    "enseignante",
+    "classe",
+    "cours"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "school subject or material someone studies today today",
+    "person whose work is helping others learn today",
+    "room or group where people learn together today",
+    "time when a teacher helps people learn today"
+   ],
+   "audioClip": {
+    "storySlug": "le-cahier-ouvert",
+    "storySource": "user",
+    "sentence": "La matière reste simple, mais la voix d’quelqu'un tremble.",
+    "targetWord": "matière",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

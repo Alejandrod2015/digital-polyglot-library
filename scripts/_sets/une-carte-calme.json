@@ -1,0 +1,456 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "rue,marcher,avenue,pharmacie",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "rue",
+     "answer": "road in a town with buildings along it",
+     "options": [
+      "road in a town with buildings along it",
+      "to move on foot from place to place",
+      "wide city street, often with trees or shops",
+      "shop where people buy medicine and health items"
+     ]
+    },
+    {
+     "word": "marcher",
+     "answer": "to move on foot from place to place",
+     "options": [
+      "road in a town with buildings along it",
+      "to move on foot from place to place",
+      "wide city street, often with trees or shops",
+      "shop where people buy medicine and health items"
+     ]
+    },
+    {
+     "word": "avenue",
+     "answer": "wide city street, often with trees or shops",
+     "options": [
+      "road in a town with buildings along it",
+      "to move on foot from place to place",
+      "wide city street, often with trees or shops",
+      "shop where people buy medicine and health items"
+     ]
+    },
+    {
+     "word": "pharmacie",
+     "answer": "shop where people buy medicine and health items",
+     "options": [
+      "road in a town with buildings along it",
+      "to move on foot from place to place",
+      "wide city street, often with trees or shops",
+      "shop where people buy medicine and health items"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "poste",
+  "sentence": "Ils passent devant la pharmacie, puis devant la [[poste]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "place where people send letters and packages today",
+   "options": [
+    "place where people send letters and packages today",
+    "road in a town with buildings along it",
+    "to move on foot from place to place",
+    "wide city street, often with trees or shops"
+   ],
+   "audioClip": {
+    "storySlug": "une-carte-calme",
+    "storySource": "user",
+    "sentence": "Ils passent devant la pharmacie, puis devant la poste.",
+    "targetWord": "poste",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cinéma",
+  "sentence": "La lumière tombe sur le [[cinéma]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "place where people watch films on a large screen",
+   "options": [
+    "place where people watch films on a large screen",
+    "road in a town with buildings along it",
+    "to move on foot from place to place",
+    "wide city street, often with trees or shops"
+   ],
+   "audioClip": {
+    "storySlug": "une-carte-calme",
+    "storySource": "user",
+    "sentence": "La lumière tombe sur le cinéma.",
+    "targetWord": "cinéma",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "restaurant",
+  "sentence": "quelqu'un regarde le [[restaurant]] et l'hôtel.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "place where people pay to eat prepared meals",
+   "options": [
+    "place where people pay to eat prepared meals",
+    "road in a town with buildings along it",
+    "to move on foot from place to place",
+    "wide city street, often with trees or shops"
+   ],
+   "audioClip": {
+    "storySlug": "une-carte-calme",
+    "storySource": "user",
+    "sentence": "quelqu'un regarde le restaurant et l'hôtel.",
+    "targetWord": "restaurant",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hôtel",
+  "sentence": "quelqu'un regarde le restaurant et l'[[hôtel]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "place where travelers pay to sleep for nights",
+   "options": [
+    "place where travelers pay to sleep for nights",
+    "road in a town with buildings along it",
+    "to move on foot from place to place",
+    "wide city street, often with trees or shops"
+   ],
+   "audioClip": {
+    "storySlug": "une-carte-calme",
+    "storySource": "user",
+    "sentence": "quelqu'un regarde le restaurant et l'hôtel.",
+    "targetWord": "hôtel",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vivre",
+  "sentence": "quelqu'un dit: Tu [[vis]] ici maintenant.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be alive or have a home somewhere",
+   "options": [
+    "to be alive or have a home somewhere",
+    "road in a town with buildings along it",
+    "to move on foot from place to place",
+    "wide city street, often with trees or shops"
+   ],
+   "audioClip": {
+    "storySlug": "une-carte-calme",
+    "storySource": "user",
+    "sentence": "quelqu'un dit: Tu vis ici maintenant.",
+    "targetWord": "vis",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "maison",
+  "sentence": "Le mot [[maison]] arrive trop vite.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "place where someone lives and feels at home",
+   "options": [
+    "place where someone lives and feels at home",
+    "road in a town with buildings along it",
+    "to move on foot from place to place",
+    "wide city street, often with trees or shops"
+   ],
+   "audioClip": {
+    "storySlug": "une-carte-calme",
+    "storySource": "user",
+    "sentence": "Le mot maison arrive trop vite.",
+    "targetWord": "maison",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "promenade",
+  "sentence": "Elle voulait une [[promenade]] simple, avec un pont, un arbre et le ciel gris.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "walk taken for pleasure or fresh air outside",
+   "options": [
+    "walk taken for pleasure or fresh air outside",
+    "road in a town with buildings along it",
+    "to move on foot from place to place",
+    "wide city street, often with trees or shops"
+   ],
+   "audioClip": {
+    "storySlug": "une-carte-calme",
+    "storySource": "user",
+    "sentence": "Elle voulait une promenade simple, avec un pont, un arbre et le ciel gris.",
+    "targetWord": "promenade",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pont",
+  "sentence": "Elle voulait une promenade simple, avec un [[pont]], un arbre et le ciel gris.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "structure over water or roads that people cross",
+   "options": [
+    "structure over water or roads that people cross",
+    "road in a town with buildings along it",
+    "to move on foot from place to place",
+    "wide city street, often with trees or shops"
+   ],
+   "audioClip": {
+    "storySlug": "une-carte-calme",
+    "storySource": "user",
+    "sentence": "Elle voulait une promenade simple, avec un pont, un arbre et le ciel gris.",
+    "targetWord": "pont",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "arbre",
+  "sentence": "Elle voulait une promenade simple, avec un pont, un [[arbre]] et le ciel gris.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tall plant with a hard trunk and branches",
+   "options": [
+    "tall plant with a hard trunk and branches",
+    "road in a town with buildings along it",
+    "to move on foot from place to place",
+    "wide city street, often with trees or shops"
+   ],
+   "audioClip": {
+    "storySlug": "une-carte-calme",
+    "storySource": "user",
+    "sentence": "Elle voulait une promenade simple, avec un pont, un arbre et le ciel gris.",
+    "targetWord": "arbre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ciel",
+  "sentence": "Elle voulait une promenade simple, avec un pont, un arbre et le [[ciel]] gris.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "space above the earth where clouds appear today",
+   "options": [
+    "space above the earth where clouds appear today",
+    "road in a town with buildings along it",
+    "to move on foot from place to place",
+    "wide city street, often with trees or shops"
+   ],
+   "audioClip": {
+    "storySlug": "une-carte-calme",
+    "storySource": "user",
+    "sentence": "Elle voulait une promenade simple, avec un pont, un arbre et le ciel gris.",
+    "targetWord": "ciel",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "voix",
+  "sentence": "quelqu'un baisse la [[voix]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sound a person makes when speaking or singing",
+   "options": [
+    "sound a person makes when speaking or singing",
+    "road in a town with buildings along it",
+    "to move on foot from place to place",
+    "wide city street, often with trees or shops"
+   ],
+   "audioClip": {
+    "storySlug": "une-carte-calme",
+    "storySource": "user",
+    "sentence": "quelqu'un baisse la voix.",
+    "targetWord": "voix",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "carte",
+  "sentence": "J'ai besoin d'une [[carte]], pas d'un grand mot.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "paper or screen showing streets or places today",
+   "options": [
+    "paper or screen showing streets or places today",
+    "road in a town with buildings along it",
+    "to move on foot from place to place",
+    "wide city street, often with trees or shops"
+   ],
+   "audioClip": {
+    "storySlug": "une-carte-calme",
+    "storySource": "user",
+    "sentence": "J'ai besoin d'une carte, pas d'un grand mot.",
+    "targetWord": "carte",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tramway",
+  "sentence": "Près du [[tramway]], une fleur pousse entre deux pierres.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "electric city train that runs along streets today",
+   "options": [
+    "electric city train that runs along streets today",
+    "road in a town with buildings along it",
+    "to move on foot from place to place",
+    "wide city street, often with trees or shops"
+   ],
+   "audioClip": {
+    "storySlug": "une-carte-calme",
+    "storySource": "user",
+    "sentence": "Près du tramway, une fleur pousse entre deux pierres.",
+    "targetWord": "tramway",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fleur",
+  "sentence": "Près du tramway, une [[fleur]] pousse entre deux pierres.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "colored part of a plant, often with scent",
+   "options": [
+    "colored part of a plant, often with scent",
+    "road in a town with buildings along it",
+    "to move on foot from place to place",
+    "wide city street, often with trees or shops"
+   ],
+   "audioClip": {
+    "storySlug": "une-carte-calme",
+    "storySource": "user",
+    "sentence": "Près du tramway, une fleur pousse entre deux pierres.",
+    "targetWord": "fleur",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "pierres",
+  "sentence": "Près du tramway, une fleur pousse entre deux _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pierres",
+   "options": [
+    "pierres",
+    "rue",
+    "avenue",
+    "pharmacie"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "hard natural piece of rock from the ground",
+    "road in a town with buildings along it",
+    "wide city street, often with trees or shops",
+    "shop where people buy medicine and health items"
+   ],
+   "audioClip": {
+    "storySlug": "une-carte-calme",
+    "storySource": "user",
+    "sentence": "Près du tramway, une fleur pousse entre deux pierres.",
+    "targetWord": "pierres",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "taxi",
+  "sentence": "Un _____ passe, puis un vélo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "taxi",
+   "options": [
+    "taxi",
+    "rue",
+    "avenue",
+    "pharmacie"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "car with a driver paid to take passengers",
+    "road in a town with buildings along it",
+    "wide city street, often with trees or shops",
+    "shop where people buy medicine and health items"
+   ],
+   "audioClip": {
+    "storySlug": "une-carte-calme",
+    "storySource": "user",
+    "sentence": "Un taxi passe, puis un vélo.",
+    "targetWord": "taxi",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "vélo",
+  "sentence": "Un taxi passe, puis un _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vélo",
+   "options": [
+    "vélo",
+    "rue",
+    "avenue",
+    "pharmacie"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "two wheeled vehicle moved by a person's feet",
+    "road in a town with buildings along it",
+    "wide city street, often with trees or shops",
+    "shop where people buy medicine and health items"
+   ],
+   "audioClip": {
+    "storySlug": "une-carte-calme",
+    "storySource": "user",
+    "sentence": "Un taxi passe, puis un vélo.",
+    "targetWord": "vélo",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

@@ -21,7 +21,8 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 
 import type { AudioSegment } from "@/lib/audioSegments";
-import { getPublicObjectUrl, uploadPublicObject } from "@/lib/objectStorage";
+import { getPublicObjectUrl, uploadAudioObject } from "@/lib/objectStorage";
+import { signAudioUrl } from "@/lib/mediaSigning";
 
 const CLIP_VERSION = "v1";
 
@@ -71,10 +72,14 @@ export async function cutSegmentClipsForStory(args: {
         continue;
       }
       const key = `media/practice-clips/${args.storyId}/${segment.id}-${CLIP_VERSION}.mp3`;
+      // La url CANONICA es la que se guarda; la firmada solo sirve para
+      // sondear si el clip ya existe. Guardar una firmada dejaria en la base
+      // un enlace que caduca en 24 h.
       const existingUrl = getPublicObjectUrl(key);
       if (!args.force && existingUrl) {
         // Probe HEAD: if it already exists in R2, reuse.
-        const head = await fetch(existingUrl, { method: "HEAD" }).catch(() => null);
+        const probeUrl = signAudioUrl(existingUrl) ?? existingUrl;
+        const head = await fetch(probeUrl, { method: "HEAD" }).catch(() => null);
         if (head?.ok) {
           updatedSegments.push({ ...segment, clipUrl: existingUrl });
           skipped += 1;
@@ -90,7 +95,7 @@ export async function cutSegmentClipsForStory(args: {
           tmpDir: dir,
           segmentId: segment.id,
         });
-        const upload = await uploadPublicObject({
+        const upload = await uploadAudioObject({
           key,
           body: clipBuf,
           contentType: "audio/mpeg",

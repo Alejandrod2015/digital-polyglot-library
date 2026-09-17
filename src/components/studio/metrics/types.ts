@@ -50,6 +50,11 @@ export type MetricsKpiUser = {
   userId: string;
   name: string | null;
   email: string | null;
+  /**
+   * Si Clerk conoce la cuenta. Falta en respuestas cacheadas viejas, donde
+   * se trata como `unavailable`: no saber no es lo mismo que estar borrada.
+   */
+  identityStatus?: "ok" | "deleted" | "unavailable";
   /** Eventos suyos en la ventana de la tarjeta: hoy en DAU, 7d en WAU. */
   events: number;
   /** Minutos de audio en esa ventana. Falta en respuestas cacheadas viejas. */

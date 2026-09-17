@@ -3,6 +3,7 @@ import PracticeSetEditor from "@/components/studio/PracticeSetEditor";
 import { prisma } from "@/lib/prisma";
 import { requireStudioUser } from "@/lib/requireStudioUser";
 import { notFound } from "next/navigation";
+import { signAudioUrl, signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 type Props = {
   params: Promise<{ storyId: string }>;
@@ -71,8 +72,8 @@ export default async function StoryPracticeSetPage({ params }: Props) {
                   type: e.type,
                   word: e.word,
                   sentence: e.sentence,
-                  audioUrl: e.audioUrl,
-                  payload: e.payload as Record<string, unknown>,
+                  audioUrl: signAudioUrl(e.audioUrl),
+                  payload: signAudioUrlsDeep(e.payload as Record<string, unknown>),
                 })),
               }
             : null

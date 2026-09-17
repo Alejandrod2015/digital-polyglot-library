@@ -6,6 +6,7 @@ import { prisma } from "@/lib/prisma";
 import { getInternalUserIds, isMetricsAccessAllowed } from "@/lib/metricsAccess";
 import { buildMetricsUserScope, parseMetricsCohort } from "@/lib/metricsCohort";
 import { resolveUserEmails, resolveUserIdentities } from "@/lib/metricsUserEmails";
+import type { MetricsIdentityStatus } from "@/lib/metricsUserEmails";
 import { localDayKey, startOfLocalDay, startOfLocalDaysAgo } from "@/lib/metricsTime";
 import { ACTIVITY_EVENT_WHERE, isProgressEvent } from "@/lib/metricsActivity";
 import { books } from "@/data/books";
@@ -97,6 +98,8 @@ type MetricsKpiUser = {
   userId: string;
   name: string | null;
   email: string | null;
+  /** Si Clerk conoce la cuenta. `deleted` es la que ya no existe. */
+  identityStatus: MetricsIdentityStatus;
   /** Eventos suyos en la ventana de la tarjeta (hoy en DAU, 7d en WAU). */
   events: number;
   /** Minutos de audio en esa ventana: lo que un recuento de eventos no dice. */
@@ -1880,7 +1883,7 @@ export async function GET(req: NextRequest): Promise<Response> {
   const wauRaw = wauRows as unknown as KpiRawRow[];
   const kpiIdentities = needsOverviewData
     ? await resolveUserIdentities([...wauRaw, ...dauRaw].map((r) => r.userId))
-    : new Map<string, { name: string | null; email: string | null }>();
+    : new Map<string, { name: string | null; email: string | null; status: MetricsIdentityStatus }>();
   const toKpiUsers = (rows: KpiRawRow[]): MetricsKpiUser[] => {
     type Acc = { events: number; last: Date; minutos: number };
     const porPersona = new Map<string, Acc>();
@@ -1912,6 +1915,7 @@ export async function GET(req: NextRequest): Promise<Response> {
           userId,
           name: who?.name ?? null,
           email: who?.email ?? null,
+          identityStatus: who?.status ?? "unavailable",
           events: acc.events,
           minutes: Math.round(acc.minutos * 10) / 10,
           lastAt: acc.last.toISOString(),
@@ -1997,7 +2001,7 @@ export async function GET(req: NextRequest): Promise<Response> {
   const antes = resumePorPersona(filasAntes as FilaCruda[]);
   const identidadesPerUser = needsAudienceData
     ? await resolveUserIdentities(Array.from(ahora.keys()))
-    : new Map<string, { name: string | null; email: string | null }>();
+    : new Map<string, { name: string | null; email: string | null; status: MetricsIdentityStatus }>();
   const perUser: MetricsPerUserRow[] = Array.from(ahora.entries())
     .map(([userId, r]) => {
       const antesR = antes.get(userId);

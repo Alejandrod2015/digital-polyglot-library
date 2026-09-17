@@ -1,0 +1,456 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "immeuble,manteau,déjeuner,commencer",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "immeuble",
+     "answer": "large building with several city homes inside it",
+     "options": [
+      "large building with several city homes inside it",
+      "warm piece of clothing worn outside in cold weather",
+      "meal eaten in the middle of the day",
+      "to start or begin doing something right now"
+     ]
+    },
+    {
+     "word": "manteau",
+     "answer": "warm piece of clothing worn outside in cold weather",
+     "options": [
+      "large building with several city homes inside it",
+      "warm piece of clothing worn outside in cold weather",
+      "meal eaten in the middle of the day",
+      "to start or begin doing something right now"
+     ]
+    },
+    {
+     "word": "déjeuner",
+     "answer": "meal eaten in the middle of the day",
+     "options": [
+      "large building with several city homes inside it",
+      "warm piece of clothing worn outside in cold weather",
+      "meal eaten in the middle of the day",
+      "to start or begin doing something right now"
+     ]
+    },
+    {
+     "word": "commencer",
+     "answer": "to start or begin doing something right now",
+     "options": [
+      "large building with several city homes inside it",
+      "warm piece of clothing worn outside in cold weather",
+      "meal eaten in the middle of the day",
+      "to start or begin doing something right now"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bientôt",
+  "sentence": "Le déjeuner commence [[bientôt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "soon, after only a short time later today",
+   "options": [
+    "soon, after only a short time later today",
+    "large building with several city homes inside it",
+    "warm piece of clothing worn outside in cold weather",
+    "meal eaten in the middle of the day"
+   ],
+   "audioClip": {
+    "storySlug": "la-clef-dedans",
+    "storySource": "user",
+    "sentence": "Le déjeuner commence bientôt.",
+    "targetWord": "bientôt",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bruit",
+  "sentence": "La porte fait un [[bruit]] sec derrière elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sound that a person can hear nearby now",
+   "options": [
+    "sound that a person can hear nearby now",
+    "large building with several city homes inside it",
+    "warm piece of clothing worn outside in cold weather",
+    "meal eaten in the middle of the day"
+   ],
+   "audioClip": {
+    "storySlug": "la-clef-dedans",
+    "storySource": "user",
+    "sentence": "La porte fait un bruit sec derrière elle.",
+    "targetWord": "bruit",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "visage",
+  "sentence": "Puis son [[visage]] change.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "front part of the head with eyes and mouth",
+   "options": [
+    "front part of the head with eyes and mouth",
+    "large building with several city homes inside it",
+    "warm piece of clothing worn outside in cold weather",
+    "meal eaten in the middle of the day"
+   ],
+   "audioClip": {
+    "storySlug": "la-clef-dedans",
+    "storySource": "user",
+    "sentence": "Puis son visage change.",
+    "targetWord": "visage",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dedans",
+  "sentence": "La clef est [[dedans]], souffle-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "inside a place or thing, not outside it",
+   "options": [
+    "inside a place or thing, not outside it",
+    "large building with several city homes inside it",
+    "warm piece of clothing worn outside in cold weather",
+    "meal eaten in the middle of the day"
+   ],
+   "audioClip": {
+    "storySlug": "la-clef-dedans",
+    "storySource": "user",
+    "sentence": "La clef est dedans, souffle-t-elle.",
+    "targetWord": "dedans",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "écouter",
+  "sentence": "Ici, [[écoute]] compte vraiment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hear and pay attention to someone nearby",
+   "options": [
+    "to hear and pay attention to someone nearby",
+    "large building with several city homes inside it",
+    "warm piece of clothing worn outside in cold weather",
+    "meal eaten in the middle of the day"
+   ],
+   "audioClip": {
+    "storySlug": "la-clef-dedans",
+    "storySource": "user",
+    "sentence": "Ici, écoute compte vraiment.",
+    "targetWord": "écoute",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "calme",
+  "sentence": "quelqu'un écoute et reste [[calme]] parce que son erreur prend toute la matinée.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quiet and not upset or excited right now",
+   "options": [
+    "quiet and not upset or excited right now",
+    "large building with several city homes inside it",
+    "warm piece of clothing worn outside in cold weather",
+    "meal eaten in the middle of the day"
+   ],
+   "audioClip": {
+    "storySlug": "la-clef-dedans",
+    "storySource": "user",
+    "sentence": "quelqu'un écoute et reste calme parce que son erreur prend toute la matinée.",
+    "targetWord": "calme",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "savoir",
+  "sentence": "Elle [[sait]] une chose: elle peut payer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to know a fact or understand something clearly",
+   "options": [
+    "to know a fact or understand something clearly",
+    "large building with several city homes inside it",
+    "warm piece of clothing worn outside in cold weather",
+    "meal eaten in the middle of the day"
+   ],
+   "audioClip": {
+    "storySlug": "la-clef-dedans",
+    "storySource": "user",
+    "sentence": "Elle sait une chose: elle peut payer.",
+    "targetWord": "sait",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pouvoir",
+  "sentence": "Elle sait une chose: elle [[peut]] payer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be able to do something right now",
+   "options": [
+    "to be able to do something right now",
+    "large building with several city homes inside it",
+    "warm piece of clothing worn outside in cold weather",
+    "meal eaten in the middle of the day"
+   ],
+   "audioClip": {
+    "storySlug": "la-clef-dedans",
+    "storySource": "user",
+    "sentence": "Elle sait une chose: elle peut payer.",
+    "targetWord": "peut",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "payer",
+  "sentence": "Elle sait une chose: elle peut [[payer]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to give money for something you receive today",
+   "options": [
+    "to give money for something you receive today",
+    "large building with several city homes inside it",
+    "warm piece of clothing worn outside in cold weather",
+    "meal eaten in the middle of the day"
+   ],
+   "audioClip": {
+    "storySlug": "la-clef-dedans",
+    "storySource": "user",
+    "sentence": "Elle sait une chose: elle peut payer.",
+    "targetWord": "payer",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "expliquer",
+  "sentence": "quelqu'un [[explique]]: Je suis désolée.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make an idea or problem clear now",
+   "options": [
+    "to make an idea or problem clear now",
+    "large building with several city homes inside it",
+    "warm piece of clothing worn outside in cold weather",
+    "meal eaten in the middle of the day"
+   ],
+   "audioClip": {
+    "storySlug": "la-clef-dedans",
+    "storySource": "user",
+    "sentence": "quelqu'un explique: Je suis désolée.",
+    "targetWord": "explique",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "téléphone",
+  "sentence": "quelqu'un regarde son [[téléphone]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thing used to call people or send messages",
+   "options": [
+    "thing used to call people or send messages",
+    "large building with several city homes inside it",
+    "warm piece of clothing worn outside in cold weather",
+    "meal eaten in the middle of the day"
+   ],
+   "audioClip": {
+    "storySlug": "la-clef-dedans",
+    "storySource": "user",
+    "sentence": "quelqu'un regarde son téléphone.",
+    "targetWord": "téléphone",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "refuser",
+  "sentence": "Elle ne [[refuse]] pas d'attendre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to say no to something offered or asked",
+   "options": [
+    "to say no to something offered or asked",
+    "large building with several city homes inside it",
+    "warm piece of clothing worn outside in cold weather",
+    "meal eaten in the middle of the day"
+   ],
+   "audioClip": {
+    "storySlug": "la-clef-dedans",
+    "storySource": "user",
+    "sentence": "Elle ne refuse pas d'attendre.",
+    "targetWord": "refuse",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "finir",
+  "sentence": "Le problème [[finit]] ici, souffle quelqu'un.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come to the end of something now",
+   "options": [
+    "to come to the end of something now",
+    "large building with several city homes inside it",
+    "warm piece of clothing worn outside in cold weather",
+    "meal eaten in the middle of the day"
+   ],
+   "audioClip": {
+    "storySlug": "la-clef-dedans",
+    "storySource": "user",
+    "sentence": "Le problème finit ici, souffle quelqu'un.",
+    "targetWord": "finit",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "histoire",
+  "sentence": "Le serrurier ouvre enfin, sans entrer dans l'[[histoire]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "events told or written for someone to follow",
+   "options": [
+    "events told or written for someone to follow",
+    "large building with several city homes inside it",
+    "warm piece of clothing worn outside in cold weather",
+    "meal eaten in the middle of the day"
+   ],
+   "audioClip": {
+    "storySlug": "la-clef-dedans",
+    "storySource": "user",
+    "sentence": "Le serrurier ouvre enfin, sans entrer dans l'histoire.",
+    "targetWord": "histoire",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "quitter",
+  "sentence": "Je peux _____ Paris maintenant, répond-elle.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "quitter",
+   "options": [
+    "quitter",
+    "commence",
+    "écoute",
+    "sait"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "to leave a place or person behind now",
+    "to start or begin doing something right now",
+    "to hear and pay attention to someone nearby",
+    "to know a fact or understand something clearly"
+   ],
+   "audioClip": {
+    "storySlug": "la-clef-dedans",
+    "storySource": "user",
+    "sentence": "Je peux quitter Paris maintenant, répond-elle.",
+    "targetWord": "quitter",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "mange",
+  "sentence": "_____ compte ici.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mange",
+   "options": [
+    "mange",
+    "commence",
+    "écoute",
+    "sait"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "to put food in your mouth and eat",
+    "to start or begin doing something right now",
+    "to hear and pay attention to someone nearby",
+    "to know a fact or understand something clearly"
+   ],
+   "audioClip": {
+    "storySlug": "la-clef-dedans",
+    "storySource": "user",
+    "sentence": "mange compte ici.",
+    "targetWord": "mange",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "boulangerie",
+  "sentence": "quelqu'un montre la _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "boulangerie",
+   "options": [
+    "boulangerie",
+    "immeuble",
+    "manteau",
+    "déjeuner"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "shop where people buy bread and small cakes",
+    "large building with several city homes inside it",
+    "warm piece of clothing worn outside in cold weather",
+    "meal eaten in the middle of the day"
+   ],
+   "audioClip": {
+    "storySlug": "la-clef-dedans",
+    "storySource": "user",
+    "sentence": "quelqu'un montre la boulangerie.",
+    "targetWord": "boulangerie",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

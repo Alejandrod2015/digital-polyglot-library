@@ -1,0 +1,34 @@
+{
+  "tipo": "Friends",
+  "nivel": "a1",
+  "variante": "france",
+  "registro": "invitaciones sociales con limites claros y una tension romantica ligera",
+  "espina": "Amelie aprende a aceptar planes sin entregar todo su tiempo ni su comodidad.",
+  "recursos": "fiesta corta, te posible, ropa para salir, respuestas breves y limites visibles",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "aceptar una fiesta sin quedarse todo el dia",
+      "impide": "Marc responde demasiado rapido por ella",
+      "cuesta": "pierde el si facil que agradaba a todos",
+      "cambia": "da una hora de salida clara",
+      "emocion": "silencio largo, luego alivio al mirar la montre"
+    },
+    {
+      "slot": "2",
+      "quiere": "invitar a Mathieu a tomar te sin obligarlo",
+      "impide": "Marc agranda la invitacion",
+      "cuesta": "acepta que Mathieu puede decir no",
+      "cambia": "hace una invitacion pequena y abierta",
+      "emocion": "olvida las palabras, respira y recupera la frase"
+    },
+    {
+      "slot": "3",
+      "quiere": "salir con ropa propia, no para agradar",
+      "impide": "las opiniones del grupo empujan la eleccion",
+      "cuesta": "renuncia al disfraz social perfecto",
+      "cambia": "elige el pantalon negro por comodidad",
+      "emocion": "duda ante el espejo, calma al nombrar su limite"
+    }
+  ]
+}

@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "matin,librairie,chemise,propre",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "matin",
+     "answer": "early part of the day before noon today",
+     "options": [
+      "early part of the day before noon today",
+      "shop where people buy books and notebooks today",
+      "clothing for the upper body with buttons today",
+      "clean, not dirty, or belonging to someone today"
+     ]
+    },
+    {
+     "word": "librairie",
+     "answer": "shop where people buy books and notebooks today",
+     "options": [
+      "early part of the day before noon today",
+      "shop where people buy books and notebooks today",
+      "clothing for the upper body with buttons today",
+      "clean, not dirty, or belonging to someone today"
+     ]
+    },
+    {
+     "word": "chemise",
+     "answer": "clothing for the upper body with buttons today",
+     "options": [
+      "early part of the day before noon today",
+      "shop where people buy books and notebooks today",
+      "clothing for the upper body with buttons today",
+      "clean, not dirty, or belonging to someone today"
+     ]
+    },
+    {
+     "word": "propre",
+     "answer": "clean, not dirty, or belonging to someone today",
+     "options": [
+      "early part of the day before noon today",
+      "shop where people buy books and notebooks today",
+      "clothing for the upper body with buttons today",
+      "clean, not dirty, or belonging to someone today"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "journal",
+  "sentence": "Mathieu arrive avec une chemise propre et un [[journal]] plié.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "paper or website with news and articles today",
+   "options": [
+    "paper or website with news and articles today",
+    "early part of the day before noon today",
+    "shop where people buy books and notebooks today",
+    "clothing for the upper body with buttons today"
+   ],
+   "audioClip": {
+    "storySlug": "un-the-possible",
+    "storySource": "user",
+    "sentence": "Mathieu arrive avec une chemise propre et un journal plié.",
+    "targetWord": "journal",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "portefeuille",
+  "sentence": "Sur la vitrine, une lumière touche le [[portefeuille]] dans sa main.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "small flat thing used to carry money today",
+   "options": [
+    "small flat thing used to carry money today",
+    "early part of the day before noon today",
+    "shop where people buy books and notebooks today",
+    "clothing for the upper body with buttons today"
+   ],
+   "audioClip": {
+    "storySlug": "un-the-possible",
+    "storySource": "user",
+    "sentence": "Sur la vitrine, une lumière touche le portefeuille dans sa main.",
+    "targetWord": "portefeuille",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lunettes",
+  "sentence": "quelqu'un enlève ses [[lunettes]] et regarde son crayon.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "two glass pieces worn to see better today",
+   "options": [
+    "two glass pieces worn to see better today",
+    "early part of the day before noon today",
+    "shop where people buy books and notebooks today",
+    "clothing for the upper body with buttons today"
+   ],
+   "audioClip": {
+    "storySlug": "un-the-possible",
+    "storySource": "user",
+    "sentence": "quelqu'un enlève ses lunettes et regarde son crayon.",
+    "targetWord": "lunettes",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "crayon",
+  "sentence": "quelqu'un enlève ses lunettes et regarde son [[crayon]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tool used to write or draw, often gray",
+   "options": [
+    "tool used to write or draw, often gray",
+    "early part of the day before noon today",
+    "shop where people buy books and notebooks today",
+    "clothing for the upper body with buttons today"
+   ],
+   "audioClip": {
+    "storySlug": "un-the-possible",
+    "storySource": "user",
+    "sentence": "quelqu'un enlève ses lunettes et regarde son crayon.",
+    "targetWord": "crayon",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "poli",
+  "sentence": "Mathieu reste [[poli]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "showing good manners with other people today today",
+   "options": [
+    "showing good manners with other people today today",
+    "early part of the day before noon today",
+    "shop where people buy books and notebooks today",
+    "clothing for the upper body with buttons today"
+   ],
+   "audioClip": {
+    "storySlug": "un-the-possible",
+    "storySource": "user",
+    "sentence": "Mathieu reste poli.",
+    "targetWord": "poli",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bureau",
+  "sentence": "Sur le [[bureau]], une gomme et une lettre attendent dans son carnet.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "table for work, or room used for work",
+   "options": [
+    "table for work, or room used for work",
+    "early part of the day before noon today",
+    "shop where people buy books and notebooks today",
+    "clothing for the upper body with buttons today"
+   ],
+   "audioClip": {
+    "storySlug": "un-the-possible",
+    "storySource": "user",
+    "sentence": "Sur le bureau, une gomme et une lettre attendent dans son carnet.",
+    "targetWord": "bureau",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gomme",
+  "sentence": "Sur le bureau, une [[gomme]] et une lettre attendent dans son carnet.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "small thing used to remove pencil marks today",
+   "options": [
+    "small thing used to remove pencil marks today",
+    "early part of the day before noon today",
+    "shop where people buy books and notebooks today",
+    "clothing for the upper body with buttons today"
+   ],
+   "audioClip": {
+    "storySlug": "un-the-possible",
+    "storySource": "user",
+    "sentence": "Sur le bureau, une gomme et une lettre attendent dans son carnet.",
+    "targetWord": "gomme",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lettre",
+  "sentence": "Sur le bureau, une gomme et une [[lettre]] attendent dans son carnet.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "written message sent to another person today today",
+   "options": [
+    "written message sent to another person today today",
+    "early part of the day before noon today",
+    "shop where people buy books and notebooks today",
+    "clothing for the upper body with buttons today"
+   ],
+   "audioClip": {
+    "storySlug": "un-the-possible",
+    "storySource": "user",
+    "sentence": "Sur le bureau, une gomme et une lettre attendent dans son carnet.",
+    "targetWord": "lettre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "phrase",
+  "sentence": "Elle montre la [[phrase]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "group of words with a complete meaning today",
+   "options": [
+    "group of words with a complete meaning today",
+    "early part of the day before noon today",
+    "shop where people buy books and notebooks today",
+    "clothing for the upper body with buttons today"
+   ],
+   "audioClip": {
+    "storySlug": "un-the-possible",
+    "storySource": "user",
+    "sentence": "Elle montre la phrase.",
+    "targetWord": "phrase",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "oublier",
+  "sentence": "quelqu'un [[oublie]] ses mots un instant, puis respire.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to not remember something at a moment today",
+   "options": [
+    "to not remember something at a moment today",
+    "early part of the day before noon today",
+    "shop where people buy books and notebooks today",
+    "clothing for the upper body with buttons today"
+   ],
+   "audioClip": {
+    "storySlug": "un-the-possible",
+    "storySource": "user",
+    "sentence": "quelqu'un oublie ses mots un instant, puis respire.",
+    "targetWord": "oublie",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "thé",
+  "sentence": "Ici, [[thé]] compte vraiment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hot drink made from leaves and water today",
+   "options": [
+    "hot drink made from leaves and water today",
+    "early part of the day before noon today",
+    "shop where people buy books and notebooks today",
+    "clothing for the upper body with buttons today"
+   ],
+   "audioClip": {
+    "storySlug": "un-the-possible",
+    "storySource": "user",
+    "sentence": "Ici, thé compte vraiment.",
+    "targetWord": "thé",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "envoyer",
+  "sentence": "quelqu'un répond: Alors tu peux [[envoyer]] un mot après.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make a message or object go somewhere",
+   "options": [
+    "to make a message or object go somewhere",
+    "early part of the day before noon today",
+    "shop where people buy books and notebooks today",
+    "clothing for the upper body with buttons today"
+   ],
+   "audioClip": {
+    "storySlug": "un-the-possible",
+    "storySource": "user",
+    "sentence": "quelqu'un répond: Alors tu peux envoyer un mot après.",
+    "targetWord": "envoyer",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "timide",
+  "sentence": "Elle réussit une invitation plus [[timide]], avec de la place calme aujourd’hui ici.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quiet or nervous with other people today today",
+   "options": [
+    "quiet or nervous with other people today today",
+    "early part of the day before noon today",
+    "shop where people buy books and notebooks today",
+    "clothing for the upper body with buttons today"
+   ],
+   "audioClip": {
+    "storySlug": "un-the-possible",
+    "storySource": "user",
+    "sentence": "Elle réussit une invitation plus timide, avec de la place calme aujourd’hui ici.",
+    "targetWord": "timide",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "téléphoner",
+  "sentence": "Je dois _____ d’abord.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "téléphoner",
+   "options": [
+    "téléphoner",
+    "oublie",
+    "envoyer",
+    "réussit"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "to speak with someone using a phone today",
+    "to not remember something at a moment today",
+    "to make a message or object go somewhere",
+    "to do something well or with success today"
+   ],
+   "audioClip": {
+    "storySlug": "un-the-possible",
+    "storySource": "user",
+    "sentence": "Je dois téléphoner d’abord.",
+    "targetWord": "téléphoner",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "réussit",
+  "sentence": "Elle _____ une invitation plus timide, avec de la place calme aujourd’hui.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "réussit",
+   "options": [
+    "réussit",
+    "oublie",
+    "envoyer",
+    "téléphoner"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "to do something well or with success today",
+    "to not remember something at a moment today",
+    "to make a message or object go somewhere",
+    "to speak with someone using a phone today"
+   ],
+   "audioClip": {
+    "storySlug": "un-the-possible",
+    "storySource": "user",
+    "sentence": "Elle réussit une invitation plus timide, avec de la place calme aujourd’hui.",
+    "targetWord": "réussit",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "après",
+  "sentence": "quelqu'un répond: Alors tu peux envoyer un mot _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "après",
+   "options": [
+    "après",
+    "matin",
+    "librairie",
+    "chemise"
+   ],
+   "translation": "Complete the sentence: _____.",
+   "optionTranslations": [
+    "later than something or following it in time",
+    "early part of the day before noon today",
+    "shop where people buy books and notebooks today",
+    "clothing for the upper body with buttons today"
+   ],
+   "audioClip": {
+    "storySlug": "un-the-possible",
+    "storySource": "user",
+    "sentence": "quelqu'un répond: Alors tu peux envoyer un mot après.",
+    "targetWord": "après",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

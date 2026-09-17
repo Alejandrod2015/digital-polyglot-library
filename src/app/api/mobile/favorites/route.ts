@@ -274,7 +274,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     };
   });
 
-  return NextResponse.json(final);
+  return NextResponse.json(signAudioUrlsDeep(final));
 }
 
 export async function POST(req: NextRequest): Promise<Response> {

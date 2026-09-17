@@ -14,6 +14,7 @@ import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
 import { generateAndUploadAudio } from "@/lib/elevenlabs";
 import { multiVoiceGuardError } from "@/lib/multiVoiceGuard";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 export const maxDuration = 300;
 
@@ -81,9 +82,9 @@ export async function POST(_req: NextRequest, { params }: Params) {
   revalidatePath(`/studio/catalog-books`);
   revalidatePath(`/stories/${updated.slug}`);
 
-  return NextResponse.json({
+  return NextResponse.json(signAudioUrlsDeep({
     story: { id: updated.id, audioUrl: updated.audioUrl },
     filename: result.filename,
     voiceId: result.voiceId,
-  });
+  }));
 }

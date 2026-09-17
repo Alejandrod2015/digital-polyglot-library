@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>DPL ad scenes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../src/components/marketing/LandingPage.module.css" />
+<style>
+  /* Lienzo del anuncio. Las clases del telefono, del lector y de Word Quest
+   * salen TAL CUAL de LandingPage.module.css, que es un CSS plano: se enlaza
+   * y las clases valen sin el hash de los CSS Modules. Aqui solo vive lo que
+   * el anuncio añade encima (titular, marco del lienzo, CTA, catalogo). */
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; background: #051834;
+    font-family: Nunito, system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  body { width: var(--w); height: var(--h); overflow: hidden; }
+  .page {
+    width: var(--w); height: var(--h); min-height: 0;
+    /* El fondo llega a los bordes; el CONTENIDO se queda dentro de la franja
+     * de seguridad, que es lo que las superposiciones de Meta no tapan. */
+    padding: var(--safeTop) 0 var(--safeBottom);
+    display: flex; flex-direction: column; align-items: center;
+    position: relative; overflow: hidden;
+    font-family: Nunito, system-ui, sans-serif;
+  }
+
+  .adHead {
+    text-align: center; padding: 0 30px;
+    z-index: 3; flex: 0 0 auto;
+  }
+
+  /* ---- Plantilla clara ----
+   * La pantalla del telefono es oscura y no cambia: sobre crema resalta mas
+   * que sobre el azul. Solo cambian el fondo y el titular; el acento deja de
+   * ser texto amarillo (ilegible en claro) y pasa a ser la MISMA pastilla
+   * dorada del karaoke, que ademas ata el titular con lo que hace la app. */
+  .adLight {
+    background-color: #f6f4ee;
+    background-image:
+      radial-gradient(ellipse 70% 42% at 50% 2%, rgba(252, 211, 77, 0.28) 0%, transparent 62%),
+      linear-gradient(180deg, #fdfbf5 0%, #f3f0e7 55%, #eae5d8 100%);
+  }
+  .adLight .adHook { color: #0a2340; }
+  .adLight .adHook .lime {
+    color: #0a2340; background: #fcd34d;
+    padding: 1px 9px 3px; margin-inline: -2px; border-radius: 9px;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  }
+  .adLight .adSub { color: rgba(10, 35, 64, 0.56); }
+  .adLight .adPhoneWrap::before {
+    background: radial-gradient(circle, rgba(252, 211, 77, 0.40) 0%, transparent 62%);
+  }
+  .adLight .adPhoneWrap::after {
+    background: radial-gradient(circle, rgba(125, 211, 252, 0.34) 0%, transparent 62%);
+  }
+  .adLight .phone {
+    box-shadow:
+      0 0 0 1.5px rgba(255, 255, 255, 0.10) inset,
+      0 44px 74px -26px rgba(10, 35, 64, 0.40),
+      0 22px 44px -18px rgba(10, 35, 64, 0.24);
+  }
+
+  /* ---- Plantilla escritorio ----
+   * El fondo es una foto (Flux, 1080x1920) con la columna central vacia, que
+   * es donde cae el telefono. Encima, un velo calido que solo oscurece la
+   * franja del titular: la madera se sigue viendo y el texto se lee. */
+  .adDesk {
+    background-color: #6b4a22;
+    background-image:
+      linear-gradient(180deg, rgba(26, 14, 3, 0.80) 0%, rgba(26, 14, 3, 0.62) 20%, rgba(26, 14, 3, 0.22) 38%, rgba(26, 14, 3, 0) 56%),
+      url("../../qa/ads/bg-desk.png");
+    /* La foto se acerca: a tamano completo la taza salia mas grande que el
+     * telefono, que es justo al reves de lo que pasa en una mesa de verdad. */
+    background-size: cover, 150%;
+    background-position: center, 50% 38%;
+  }
+  /* En 4:5 el 150% dejaba el cuadro en madera pelada: sin taza y sin gafas no
+   * hay mesa, solo una textura. A tamano completo vuelven los objetos. */
+  .adDesk.ratio45 {
+    background-size: cover, cover;
+    background-position: center, 50% 34%;
+  }
+  .adDesk .adPhoneWrap::before, .adDesk .adPhoneWrap::after { display: none; }
+  .adDesk .adHook { color: #ffffff; text-shadow: 0 2px 16px rgba(20, 10, 0, 0.55); }
+  /* Amarillo sobre roble se pierde: la pastilla se invierte, azul con letra
+   * dorada, que son los dos colores de la marca. */
+  .adDesk .adHook .lime {
+    color: #fcd34d; background: #0a2340;
+    padding: 1px 9px 3px; margin-inline: -2px; border-radius: 9px;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  }
+  .adDesk .adSub { color: rgba(255, 255, 255, 0.86); text-shadow: 0 2px 12px rgba(20, 10, 0, 0.5); }
+  /* Sombra DIRIGIDA: en la foto la luz entra por arriba a la izquierda y la
+   * taza tira su sombra abajo a la derecha. La del telefono tiene que caer
+   * igual, y con un contacto corto pegado al canto. */
+  /* Un reflejo de cristal muy flojo: es la pista que hace que un movil plano
+   * parezca un aparato de verdad debajo de una ventana. */
+  .adDesk .phone::after {
+    content: ""; position: absolute; inset: 0; z-index: 30; pointer-events: none;
+    border-radius: 35px;
+    background: linear-gradient(118deg,
+      rgba(255, 255, 255, 0.10) 0%,
+      rgba(255, 255, 255, 0.045) 20%,
+      rgba(255, 255, 255, 0) 44%);
+  }
+  .adDesk .phone {
+    box-shadow:
+      0 0 0 1.5px rgba(255, 255, 255, 0.10) inset,
+      30px 40px 58px -18px rgba(28, 14, 2, 0.58),
+      12px 16px 22px -8px rgba(28, 14, 2, 0.50),
+      4px 5px 6px -2px rgba(28, 14, 2, 0.45);
+  }
+
+  .adHook {
+    margin: 0; font-weight: 900;
+    /* 1,1 apretaba las dos lineas: la cola de la "y" de la primera se metia
+     * dentro de la pastilla de la segunda. */
+    font-size: var(--hookSize); line-height: 1.26; letter-spacing: -0.035em;
+    color: #fff;
+  }
+  .adSub {
+    margin: 12px 0 0; font-weight: 800; letter-spacing: -0.01em;
+    font-size: var(--subSize); line-height: 1.35; color: rgba(255,255,255,0.60);
+  }
+  .adPhoneWrap {
+    position: relative; flex: 0 0 auto; margin-top: var(--phoneTop);
+    width: 100%; display: flex; justify-content: center;
+    height: calc(580px * var(--scale));
+  }
+  .adPhoneWrap::before, .adPhoneWrap::after {
+    content: ""; position: absolute; border-radius: 50%; filter: blur(48px); z-index: 0;
+  }
+  .adPhoneWrap::before {
+    width: 420px; height: 420px; left: 50%; top: 8%; transform: translateX(-58%);
+    background: radial-gradient(circle, rgba(252,211,77,0.20) 0%, transparent 62%);
+  }
+  .adPhoneWrap::after {
+    width: 340px; height: 340px; left: 50%; top: 42%; transform: translateX(-12%);
+    background: radial-gradient(circle, rgba(125,211,252,0.20) 0%, transparent 62%);
+  }
+  .phoneScaler { transform: scale(var(--scale)); transform-origin: top center; z-index: 1; }
+
+
+  /* ---- A: telefono a sangre. Se agranda y se sale por abajo; a cambio, el
+   * reproductor queda fuera de cuadro y la tarjeta sube a pegarse al texto. */
+  .adScroll .adPhoneWrap { overflow: hidden; }
+  .adScroll .vocabPanel { bottom: auto; }
+  /* Ni portada ni titulo: con la historia ya empezada, los dos han quedado
+   * arriba y no se ven. Ademas el texto y la tarjeta suben lo justo para
+   * caber en la franja aunque el aparato se salga por abajo. El reproductor
+   * SI se queda: es lo que llena la parte de abajo. */
+  .adScroll .coverWarm,
+  .adScroll .readerTitleCentered { display: none; }
+
+  /* ---- B y C: sin marco de telefono ---- */
+  .bWrap {
+    flex: 0 0 auto; width: 100%; padding: 0 34px; z-index: 3;
+    display: flex; flex-direction: column; align-items: center; gap: 13px;
+  }
+  .bArt {
+    width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block;
+    border-radius: 20px; box-shadow: 0 26px 50px -22px rgba(10, 35, 64, 0.42);
+  }
+  .bMeta { display: flex; align-items: center; gap: 10px; align-self: flex-start; }
+  .bMetaArt { width: 46px; height: 46px; border-radius: 12px; object-fit: cover; display: block; }
+  .bMetaTitle { font-size: 15px; font-weight: 900; color: #0a2340; letter-spacing: -0.02em; }
+  .bMetaSub {
+    font-size: 11px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(10, 35, 64, 0.42);
+  }
+  .bText {
+    width: 100%; font-weight: 800; color: #0a2340; letter-spacing: -0.015em;
+  }
+  .layType .bText { font-size: 25px; line-height: 1.4; }
+
+  /* C: el texto va SOBRE la portada, como el pie de una foto. Asi la
+   * ilustracion manda y el bloque entero cabe en la franja. */
+  .bArtBox { position: relative; width: 100%; border-radius: 22px; overflow: hidden;
+    box-shadow: 0 26px 50px -22px rgba(10, 35, 64, 0.42); }
+  .layCover .bArt { aspect-ratio: 5 / 4; border-radius: 0; box-shadow: none; }
+  .bScrim { position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 4%, rgba(6, 20, 38, 0.62) 30%, rgba(6, 20, 38, 0.93) 62%, rgba(6, 20, 38, 0.97) 100%); }
+  .layCover .bText { position: absolute; left: 22px; right: 22px; bottom: 20px;
+    color: #ffffff; font-size: 20px; line-height: 1.42;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45); }
+  /* Sobre ilustracion, el texto apagado necesita mas cuerpo que sobre crema. */
+  .layCover .bwDim { opacity: 0.62; }
+  .bw {
+    display: inline-block; padding: 0 5px; margin-inline: -5px; border-radius: 7px;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .bwGold { background: #fcd34d; color: #0a2340; }
+  .bwSky { background: #1e8fae; color: #ffffff; }
+  .bwGreen { background: #2e8d6b; color: #ffffff; }
+  .bwDim { opacity: 0.42; }
+  .bBreak { display: block; height: 14px; }
+  .bCard {
+    width: 100%; border-radius: 20px; padding: 15px 18px 17px;
+    background: #ffffff; border: 1px solid rgba(10, 35, 64, 0.10);
+    box-shadow: 0 22px 44px -20px rgba(10, 35, 64, 0.32);
+  }
+  .bCardWord { font-size: 24px; font-weight: 900; color: #0a2340; letter-spacing: -0.03em; }
+  .bCardPos {
+    display: inline-block; margin: 8px 0 10px; padding: 3px 9px; border-radius: 7px;
+    background: rgba(30, 143, 174, 0.12); color: #14708a;
+    font-size: 11px; font-weight: 900; letter-spacing: 0.12em;
+  }
+  .bCardDef { margin: 0; font-size: 16px; font-weight: 700; line-height: 1.4; color: rgba(10, 35, 64, 0.78); }
+  .bBar { width: 100%; height: 5px; border-radius: 999px; background: rgba(10, 35, 64, 0.12); overflow: hidden; }
+  .bBarFill { height: 100%; background: #2563eb; border-radius: 999px; }
+
+  /* Anillo de toque: se lee como un dedo y no como un salto. */
+
+  /* ---- Practice: los cuatro ejercicios (escena 50) ----
+   * Espejo de src/app/practice: tarjeta 2x2 con acento, frase con hueco y
+   * traduccion, boton grande de escucha y tablero de parejas. */
+  .p4Stage { position: relative; flex: 1; min-height: 0; margin-top: 2px; }
+  .p4Layer { position: absolute; inset: 0; display: flex; flex-direction: column; }
+  .p4Word3 { font-size: 30px; white-space: nowrap; }
+  .p4Grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; flex: 1; min-height: 0; }
+  .p4Opt {
+    position: relative; background-color: rgba(18, 32, 65, 0.85);
+    border: 1.5px solid rgba(255, 255, 255, 0.06); border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    padding: 16px 8px 8px;
+  }
+  .p4OptText { color: rgba(226, 232, 240, 0.95); font-weight: 800; line-height: 1.25; }
+  .p4OptDef .p4OptText { font-size: 12.5px; }
+  .p4OptWord .p4OptText { font-size: 16px; font-weight: 900; }
+  .p4Check {
+    position: absolute; top: 6px; right: 6px; width: 16px; height: 16px; border-radius: 50%;
+    display: none; align-items: center; justify-content: center;
+    background: rgba(22, 163, 74, 0.2); color: #34d399; box-shadow: inset 0 0 0 1px rgba(52, 211, 153, 0.45);
+  }
+  .p4OptOk { border-color: #6ee7b7; background-color: rgba(110, 231, 183, 0.18); }
+  .p4OptOk .p4Check { display: flex; }
+  .p4Sentence { background: rgba(255, 255, 255, 0.06); border-radius: 14px; padding: 12px 10px; margin-top: 2px; }
+  .wqSent { margin: 7px 14px 9px; text-align: center; font-size: 11.5px; font-weight: 800; line-height: 1.35; color: rgba(255,255,255,0.7); }
+  .wqSentHit { color: #fcd34d; }
+  .p4SentText { margin: 0; text-align: center; color: #fff; font-weight: 900; font-size: 14px; line-height: 1.4; letter-spacing: -0.01em; }
+  .p4Blank { color: rgba(255, 255, 255, 0.45); letter-spacing: 0.02em; }
+  .p4BlankOk { color: #6ee7b7; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; letter-spacing: 0; }
+  .p4Trans { margin: 6px 4px 10px; text-align: center; font-size: 9.5px; font-style: italic; color: rgba(255, 255, 255, 0.45); line-height: 1.35; }
+  .p4TBlank { white-space: nowrap; }
+  .p4TBlankOk { color: rgba(255, 255, 255, 0.8); font-weight: 800; font-style: normal; }
+  .p4Listen { position: relative; height: 92px; margin-top: 8px; }
+  .p4Play, .p4Wave {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: 70px; height: 70px; border-radius: 50%;
+  }
+  .p4Play {
+    display: flex; align-items: center; justify-content: center; color: #93c5fd;
+    background: rgba(59, 130, 246, 0.2); border: 2px solid rgba(96, 165, 250, 0.55);
+    box-shadow: 0 0 28px rgba(96, 165, 250, 0.35);
+  }
+  .p4Play svg { width: 30px; height: 30px; }
+  .p4PlayOn { background: rgba(59, 130, 246, 0.34); color: #dbeafe; }
+  .p4Wave { border: 2px solid rgba(147, 197, 253, 0.9); opacity: 0; }
+  .p4ListenLabel { margin: 2px 0 10px; text-align: center; font-size: 9px; font-weight: 900; letter-spacing: 0.2em; color: rgba(255, 255, 255, 0.7); }
+  .p4MatchHead { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 2px 0 6px; }
+  .p4MatchHead span { text-align: center; font-size: 8.5px; font-weight: 800; letter-spacing: 0.18em; color: rgba(255, 255, 255, 0.45); }
+  .p4Match { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4, 1fr); gap: 7px; flex: 1; min-height: 0; }
+  .p4Pair {
+    display: flex; align-items: center; justify-content: center; text-align: center; padding: 4px 6px;
+    border-radius: 13px; border: 1.5px solid rgba(255, 255, 255, 0.08); background: rgba(18, 32, 65, 0.85);
+    color: rgba(226, 232, 240, 0.95);
+  }
+  .p4Word .p4PairText { font-size: 15px; font-weight: 800; letter-spacing: -0.01em; }
+  .p4Mean .p4PairText { font-size: 12px; font-weight: 700; }
+
+  .comboLayer { position: absolute; inset: 0; }
+  .adHead.hasHook2 { display: grid; }
+  .adHead.hasHook2 > .adHook { grid-area: 1 / 1; }
+
+  .adTapRing {
+    position: absolute; width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(255,255,255,0.20); border: 2px solid rgba(255,255,255,0.8);
+    z-index: 20; pointer-events: none; transform: translate(-50%, -50%);
+  }
+
+  /* El texto se atenua mientras la tarjeta manda. Es realce del ANUNCIO. */
+  /* Una expresion de varias palabras es UN realce, no tres pegados: el fondo
+   * lo pinta la tirada entera, con sus espacios dentro. Las palabras de dentro
+   * van sin fondo propio, y el color sale del TIPO de palabra, igual que en el
+   * lector (globals.css). */
+  .vrun {
+    /* Como en el lector: 0.15em a cada lado y SIN margen negativo. Con
+     * margen negativo dos pastillas seguidas se comian el espacio y se
+     * solapaban. */
+    padding: 0 0.15em; border-radius: 4px; color: #ffffff;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  }
+  .vrun .w { background: none; color: inherit; }
+  /* Los parrafos del lector se separan de verdad, como en la app: el salto
+   * era un span vacio sin estilo y no se veia. */
+  .paraBreak { display: block; height: 0; margin-top: 11px; }
+  /* Texto que sigue al fragmento: se ve igual que el resto, no suena y no se
+   * resalta. */
+  .wTail { display: block; margin-top: 11px; font-weight: 900; }
+  .vrunVerb       { background-color: rgba(248, 113, 113, 0.6); }
+  .vrunNoun       { background-color: rgba(56, 189, 248, 0.65); }
+  .vrunAdjective  { background-color: rgba(52, 211, 153, 0.6); }
+  .vrunAdverb     { background-color: rgba(167, 139, 250, 0.65); }
+  .vrunExpression { background-color: rgba(244, 114, 182, 0.6); }
+  .vrunOther      { background-color: rgba(148, 163, 184, 0.55); }
+
+  /* Con el texto ya desplazado, la linea que sale por arriba se desvanece en
+   * vez de cortarse a cuchillo: asi se lee como un scroll y no como un fallo. */
+  .adScrolled { -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 16px, #000 100%); }
+  /* A sangre el texto llega hasta el reproductor: se corta antes y se
+   * desvanece por los dos lados, arriba lo que ya paso y abajo lo que viene. */
+  .adScroll .readerBody {
+    -webkit-mask-image: linear-gradient(180deg, #000 0, #000 calc(100% - 20px), transparent 100%);
+  }
+  .adScroll .readerBody.adScrolled {
+    -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 16px, #000 calc(100% - 20px), transparent 100%);
+  }
+
+  .adDim { opacity: 0.38; transition: opacity 0.2s ease; }
+
+  /* ---- Pantalla de catalogo (escena 4) ---- */
+  .adCat { position: absolute; inset: 0; padding: 46px 13px 0; display: flex; flex-direction: column; overflow: hidden; }
+  .adCatTop { display: flex; align-items: baseline; justify-content: space-between; padding: 6px 2px 9px; }
+  .adCatTitle { font-size: 17px; font-weight: 900; letter-spacing: -0.03em; color: #fff; margin: 0; }
+  .adCatCount { font-size: 9.5px; font-weight: 900; letter-spacing: 0.1em; color: rgba(255,255,255,0.42); text-transform: uppercase; }
+  .adChips { display: flex; gap: 5px; padding-bottom: 9px; overflow: hidden; }
+  .adChip {
+    display: inline-flex; align-items: center; gap: 4px; white-space: nowrap;
+    padding: 4px 8px; border-radius: 999px; font-size: 9.5px; font-weight: 900;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+    color: rgba(255,255,255,0.6);
+  }
+  .adChipOn { background: rgba(252,211,77,0.14); border-color: rgba(252,211,77,0.42); color: #fcd34d; }
+  .adGridWrap {
+    position: relative; flex: 1; overflow: hidden;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 6%, #000 84%, transparent 100%);
+  }
+  .adGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+  .adCard { border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+  .adCardImg { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; background: #0b2247; }
+  .adCardBody { padding: 7px 8px 9px; }
+  .adCardTitle { font-size: 10px; font-weight: 900; line-height: 1.25; color: #fff; height: 25px; overflow: hidden; }
+  .adCardMeta { display: flex; align-items: center; gap: 5px; margin-top: 6px; }
+  .adLevel { font-size: 8px; font-weight: 900; letter-spacing: 0.08em; padding: 2px 5px; border-radius: 5px; background: rgba(125,211,252,0.14); color: #7dd3fc; }
+  .adPlace { font-size: 9px; font-weight: 800; color: rgba(255,255,255,0.48); }
+</style>
+</head>
+<body>
+<div class="page" id="root"></div>
+<script src="./adStories.js"></script>
+<script src="./adScenes.js"></script>
+<script src="./socialScenes.js"></script>
+<script src="./socialFormats.js"></script>
+</body>
+</html>
