@@ -292,6 +292,13 @@
       "source": "memory:project_audio_splice_seam_residue.md"
     },
     {
+      "id": "project_f0_gate_was_blind_to_monosyllables",
+      "domain": "audio",
+      "rule": "\"El gate F0 exigía 10 frames sonoros y por eso no medía palabras de una sílaba: hasta el 2026-09-16 dejó pasar monosílabas dichas como pregunta en todos los journeys\"",
+      "gate": "process",
+      "source": "memory:project_f0_gate_was_blind_to_monosyllables.md"
+    },
+    {
       "id": "project_ios_audio_session_after_speech_recognition",
       "domain": "audio",
       "rule": "Tras reconocer voz en iOS el audio sale bajo y tapado; expo-av no puede restaurar la sesión (no fija el modo y cachea la categoría); se restaura con setCategoryIOS del módulo de reconocimiento",
@@ -810,6 +817,13 @@
       "source": "CLAUDE.md"
     },
     {
+      "id": "feedback_ask_before_deleting_old_worktree",
+      "domain": "journey",
+      "rule": "\"OLD_ se pone en cuanto un chat termina su fase, no solo al cerrarlo; preguntar antes de borrar su worktree; y no borrar los chats de un journey que aun no esta publicado\"",
+      "gate": "process",
+      "source": "memory:feedback_ask_before_deleting_old_worktree.md"
+    },
+    {
       "id": "feedback_journey_table_after_every_topic",
       "domain": "journey",
       "rule": "\"La tabla del journey se entrega sola al cerrar cada tema, sin que el usuario la pida\"",
@@ -1090,6 +1104,13 @@
       "source": "memory:project_planning_handoff_2026_09_14.md"
     },
     {
+      "id": "project_planning_handoff_2026_09_17",
+      "domain": "journey",
+      "rule": "\"Estado del chat de planificacion Journey-planning-2 el 2026-09-17: ES A2 narrando 12/21, integracion de 69 commits sin push, QA de oido caido, limpieza de chats OLD\"",
+      "gate": "process",
+      "source": "memory:project_planning_handoff_2026_09_17.md"
+    },
+    {
       "id": "project_story_id_two_forms",
       "domain": "journey",
       "rule": "La misma historia de journey tiene dos ids (journey:<id> y journey-<id>); comparar en crudo nunca casa",
@@ -1230,18 +1251,18 @@
       "source": "memory:feedback_a0_true_floor.md"
     },
     {
+      "id": "feedback_act_when_already_authorized",
+      "domain": "process",
+      "rule": "\"Si el usuario ya dijo que sí a ese tipo de cambio, se hace; no se vuelve a preguntar '¿lo hago?'\"",
+      "gate": "process",
+      "source": "memory:feedback_act_when_already_authorized.md"
+    },
+    {
       "id": "feedback_answer_short_by_default",
       "domain": "process",
       "rule": "\"Responder CORTO por defecto: la respuesta y ya. Incluye resúmenes de 2 líneas, propuestas de 1 línea, listas de N puntos = N líneas y preguntas de 1-2 líneas\"",
       "gate": "stop-word-budget-guard.sh",
       "source": "memory:feedback_answer_short_by_default.md"
-    },
-    {
-      "id": "feedback_ask_before_deleting_old_worktree",
-      "domain": "process",
-      "rule": "\"Al cerrar un chat con OLD_, preguntar al usuario si se puede borrar su worktree; nunca borrarlo por iniciativa propia\"",
-      "gate": "process",
-      "source": "memory:feedback_ask_before_deleting_old_worktree.md"
     },
     {
       "id": "feedback_city_country_comma",
