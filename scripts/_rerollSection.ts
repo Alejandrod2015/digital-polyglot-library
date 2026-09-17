@@ -41,6 +41,7 @@ import {
 import { assertVoiceApproved } from "../src/lib/approvedVoices";
 import { coerceFragments, replaceSectionAndRebuild } from "../src/lib/audioEditorSections";
 import { checkMasterCoverage } from "./coverageWhisperCheck";
+import { boundariesOnVoice, measureMaster } from "../src/lib/audioSilenceBoundaries";
 
 const execFileAsync = promisify(execFile);
 const prisma = new PrismaClient();
@@ -132,26 +133,31 @@ async function main() {
   // de lo que dura. Las tomas nuevas sonaban limpias por separado; era el
   // corte lo que rompía.
   //
-  // Antes de gastar una sola llamada de TTS, se compara la duración real del
-  // máster con el final del último fragmento. Si no cuadran, se aborta: mejor
-  // no corregir que dejarlo peor.
+  // Antes de gastar una sola llamada de TTS se comprueba que las DOS FRONTERAS
+  // DE ESTE FRAGMENTO caen en silencio del máster. Antes se comparaba la
+  // duración del máster con el final del último fragmento, y ese número mide
+  // otra cosa: la COLA DE SILENCIO del máster. Toda historia recién narrada
+  // trae ahí un segundo largo, así que el guard bloqueaba en seco arreglos
+  // perfectamente seguros (2026-09-09, `no-voy-a-llegar-tarde`) mientras dejaba
+  // pasar fronteras desplazadas en mitad del audio, que es el defecto real.
+  // Lo definitivo lo comprueba `assertCorteEnSilencio` dentro del empalme; esto
+  // es el mismo criterio adelantado, para no pagar el TTS de un corte que
+  // luego se va a rechazar.
   {
-    const { stdout: durOut } = await execFileAsync("ffprobe", [
-      "-v", "error", "-show_entries", "format=duration", "-of", "default=nw=1:nk=1", story.audioUrl!,
-    ]);
-    const masterDur = Number(durOut);
-    const lastEnd = Math.max(...frags.map((f) => Number(f.endSec)));
-    const drift = masterDur - lastEnd;
-    if (Number.isFinite(masterDur) && Math.abs(drift) > 0.3) {
+    // El final del master cuenta como frontera: ver src/lib/audioSilenceBoundaries.ts.
+    const m = measureMaster(story.audioUrl!);
+    const sils = m.silences;
+    const malas = boundariesOnVoice({
+      silences: sils, startSec: Number(frag.startSec), endSec: Number(frag.endSec), durationSec: m.durationSec,
+    });
+    if (sils.length && malas.length) {
       throw new Error(
-        `OFFSETS DESFASADOS: el máster dura ${masterDur.toFixed(2)}s y el último fragmento acaba en ` +
-        `${lastEnd.toFixed(2)}s (desfase ${drift.toFixed(2)}s). Los tiempos guardados no describen ESTE audio, ` +
-        `así que el corte caería fuera del silencio y partiría una palabra por la mitad. Es lo que dejó ` +
-        `restos "l--" / "n--" / "tas--" en siete historias el 2026-08-17. Re-mide los fragmentos contra el ` +
-        `máster actual antes de re-tirar (scripts/_remeasureFragments.ts).`
+        `FRONTERA SOBRE VOZ: ${malas.map(([q, t]) => `${q} ${t.toFixed(2)}s`).join(", ")} del fragmento ${index}. ` +
+        `Cortar ahí partiría una palabra o dejaría cola de la toma vieja, que es lo que dejó restos "l--" / ` +
+        `"n--" / "tas--" en siete historias el 2026-08-17. Re-mide primero: scripts/_remeasureFragments.ts.`
       );
     }
-    console.log(`offsets  desfase ${drift.toFixed(2)}s frente al máster (tolerancia 0.30s) ✓`);
+    console.log(`fronteras del fragmento ${index} en silencio ✓ (${sils.length} silencios en el máster)`);
   }
 
   const apiKey = process.env.ELEVENLABS_API_KEY;
