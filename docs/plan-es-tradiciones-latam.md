@@ -78,6 +78,54 @@ no lo disimulo:** de las siete, cuatro caen entre enero y abril. El orden por
 calendario se elige igual porque coloca la navidena en el sexto peldano (que es
 donde la campana de diciembre la quiere) y deja el cierre en una hoguera.
 
+## Decision del 2026-09-17: los siete temas se rehacen, una tradicion por pais
+
+El usuario cambia el criterio de los siete temas. Ya no son siete capas
+portables envueltas en siete tradiciones: son **las tradiciones mas conocidas
+fuera de LATAM, una o dos por pais, y solo de paises donde ya hay voz**. Navidad
+y Ano Nuevo entran por nombre propio, que fue la peticion literal.
+
+| # | Pais | Tradicion | Voz de pais aprobada | Tema escrito que sirve |
+|---|---|---|---|---|
+| 1 | Mexico | **Navidad**: las posadas, 16 al 24 de diciembre | si, Cesar Barona (MX) | si, `hosting-and-processions` |
+| 2 | Mexico | Dia de Muertos, 1 y 2 de noviembre | si | no |
+| 3 | Colombia | **Ano Nuevo**: el muneco de Ano Viejo, 31 de diciembre | si, Hernando (CO) | no |
+| 4 | Colombia | Feria de las Flores, los silleteros, agosto | si | si, `weight-and-endurance` |
+| 5 | Peru | Inti Raymi, Cusco, 24 de junio | si, Terry (PE) | no |
+| 6 | Peru | el Senor de los Milagros, Lima, octubre | si | no |
+| 7 | Chile | Fiestas Patrias, el 18 de septiembre | **no**, solo voces LATAM genericas | si, `stalls-and-crowds` |
+
+Lo que se cae y por que:
+
+- **Bolivia (Alasita), Uruguay (las Llamadas), Guatemala (Semana Santa) y
+  Ecuador (el Ano Viejo)**: fuera del criterio de "pais principal con voz". El
+  Ano Viejo no se pierde como material, se muda a Colombia, que quema el mismo
+  muneco el 31.
+- **Argentina**: no tiene ninguna fiesta con fecha que se conozca fuera. Lo
+  reconocible de Argentina (tango, mate, asado, futbol) no es una celebracion, y
+  el asado en particular es comida diaria. Se probo la Vendimia de Mendoza y el
+  usuario la descarto por desconocida. Argentina queda fuera y Peru y Mexico
+  repiten.
+- **Cinco de Mayo**: se celebra sobre todo en Estados Unidos, en Mexico casi
+  solo en Puebla, y ademas Mexico ya lleva Navidad y Dia de Muertos.
+
+Coste medido sobre lo que hay: de los siete temas escritos **sobreviven tres**
+(Navidad, silleteros y Fiestas Patrias) y hay que rehacer **cuatro temas, doce
+historias**. Las tres que sobreviven conservan su slug, su texto y su cierre.
+
+Pendiente antes de tocar la base:
+
+1. Nombres de tema nuevos para los cuatro que entran, con la regla de siempre
+   (etiqueta en ingles, 2 a 4 palabras, sin pais, un slug igual a un label
+   global) y libres en las 342 filas de `Topic`.
+2. `assertTopicsGrounded` sobre los siete, que exige una motivacion literal de
+   un usuario por tema.
+3. Voz de Chile, o narrar el 18 con una voz LATAM generica. El audio va al final
+   del journey, asi que no bloquea el texto.
+4. Las glosas que se esten construyendo en `claude/es-b1-cultural-glosas` se
+   quedan viejas para las doce historias que se rehagan.
+
+
 ### En que se diferencia cada tema de lo que ya se ensena
 
 Los dos rivales reales, medidos leyendo su vocab:
