@@ -510,9 +510,16 @@ export function validateJourneyStories(
     ctx.plazasDelJourney === undefined
       ? !parcial
       : stories.length >= ctx.plazasDelJourney;
-  const pushSetEscalera = (id: string, label: string, ok: boolean, detail?: string) => {
-    if (journeyEntero) return push(id, label, ok, detail);
-    out.push({ id, label, status: "pending-set", detail: enEspera(ok ? undefined : detail) });
+  const pushSetEscalera = (
+    id: string, label: string, ok: boolean, detail?: string,
+    magnitud?: { valor: number; mejor: "alta" | "baja" },
+  ) => {
+    if (journeyEntero) {
+      push(id, label, ok, detail);
+      if (magnitud) out[out.length - 1].magnitud = magnitud;
+      return;
+    }
+    out.push({ id, label, status: "pending-set", detail: enEspera(ok ? undefined : detail), magnitud });
   };
   const noImplSetEscalera = (id: string, label: string, why: string) => {
     if (journeyEntero) return noImpl(id, label, why);
