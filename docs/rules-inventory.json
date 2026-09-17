@@ -2122,7 +2122,7 @@
       "id": "feedback_gloss_in_context",
       "domain": "vocab",
       "rule": "\"Glosa en contexto: la definicion sale de la frase de la historia, no del diccionario; una copia trae el sentido del journey de origen y hay que releerla contra la oracion donde cae\"",
-      "gate": "none",
+      "gate": "scripts/checkGlossContextReal.ts",
       "source": "memory:feedback_gloss_in_context.md"
     },
     {
