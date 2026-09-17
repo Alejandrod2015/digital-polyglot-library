@@ -216,6 +216,20 @@
         "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library--claude-worktrees-angry-lovelace-b6095d/caecbf0a-46e6-4d3a-bb3e-b642da77d28c/scratchpad/vocescl"
       ],
       "port": 8921
+    },
+    {
+      "_comment": "Puerto propio del worktree del ES_Latam_B1_Traveler. Borrar al cerrar el journey.",
+      "name": "next-dev-3011",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev:web",
+        "--",
+        "--port",
+        "3011"
+      ],
+      "port": 3011,
+      "autoPort": false
     }
   ]
 }

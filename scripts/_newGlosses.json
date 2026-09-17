@@ -23776,5 +23776,951 @@
    "g": "I live (abitare)",
    "t": "verb"
   }
+ },
+ "spanish-traveler-latam-b1": {
+  "cuadernillo": {
+   "g": "small notebook the foreman writes the work in",
+   "t": "noun"
+  },
+  "mecánico": {
+   "g": "mechanic, the person who repairs engines",
+   "t": "noun"
+  },
+  "adelanta": {
+   "g": "comes earlier than expected",
+   "t": "verb"
+  },
+  "cortante": {
+   "g": "said sharply, cutting the other person off",
+   "t": "adjective"
+  },
+  "hubieras": {
+   "g": "if you had (past subjunctive of haber)",
+   "t": "verb"
+  },
+  "hubiera": {
+   "g": "if I or he had (past subjunctive of haber)",
+   "t": "verb"
+  },
+  "bajara": {
+   "g": "came down (past subjunctive of bajar)",
+   "t": "verb"
+  },
+  "quisiste": {
+   "g": "you wanted (past of querer)",
+   "t": "verb"
+  },
+  "ocurren": {
+   "g": "come to mind, occur to someone",
+   "t": "verb"
+  },
+  "inventadas": {
+   "g": "made up, not true",
+   "t": "adjective"
+  },
+  "alcanza": {
+   "g": "reaches, catches up with",
+   "t": "verb"
+  },
+  "cinto": {
+   "g": "belt where the pruning tool hangs",
+   "t": "noun"
+  },
+  "zonda": {
+   "g": "hot dry wind of western Argentina",
+   "t": "noun"
+  },
+  "brotes": {
+   "g": "new shoots on the vine",
+   "t": "noun"
+  },
+  "exijo": {
+   "g": "I demand, I ask for firmly",
+   "t": "verb"
+  },
+  "llegues": {
+   "g": "you arrive (subjunctive of llegar)",
+   "t": "verb"
+  },
+  "avisá": {
+   "g": "let me know (voseo command of avisar)",
+   "t": "verb"
+  },
+  "puesto": {
+   "g": "put in place; also a market stall",
+   "t": "noun"
+  },
+  "jornal": {
+   "g": "a day's pay for a day's work",
+   "t": "noun"
+  },
+  "vendado": {
+   "g": "wrapped in a bandage",
+   "t": "adjective"
+  },
+  "podría": {
+   "g": "could, would be able to",
+   "t": "verb"
+  },
+  "cumplir": {
+   "g": "to keep a promise",
+   "t": "verb"
+  },
+  "cumplo": {
+   "g": "I keep my promise",
+   "t": "verb"
+  },
+  "cumplirse": {
+   "g": "to be kept, said of a promise",
+   "t": "verb"
+  },
+  "prometido": {
+   "g": "promised, what was promised",
+   "t": "verb"
+  },
+  "prometé": {
+   "g": "promise (voseo command of prometer)",
+   "t": "verb"
+  },
+  "están": {
+   "g": "they are, right now",
+   "t": "verb"
+  },
+  "podadas": {
+   "g": "pruned, already cut back",
+   "t": "adjective"
+  },
+  "podar": {
+   "g": "to cut back the vines in winter",
+   "t": "verb"
+  },
+  "poda": {
+   "g": "the winter pruning of the vines",
+   "t": "noun"
+  },
+  "sarmientos": {
+   "g": "the cut vine branches",
+   "t": "noun"
+  },
+  "amontonados": {
+   "g": "piled up in a heap",
+   "t": "adjective"
+  },
+  "contraté": {
+   "g": "I hired",
+   "t": "verb"
+  },
+  "changarines": {
+   "g": "day labourers hired for one job",
+   "t": "noun"
+  },
+  "reemplazaran": {
+   "g": "they replaced (past subjunctive)",
+   "t": "verb"
+  },
+  "salió": {
+   "g": "came out, turned out",
+   "t": "verb"
+  },
+  "reclame": {
+   "g": "complains or demands (subjunctive)",
+   "t": "verb"
+  },
+  "saldo": {
+   "g": "I settle, I pay off",
+   "t": "verb"
+  },
+  "jornadas": {
+   "g": "full days of work",
+   "t": "noun"
+  },
+  "mías": {
+   "g": "mine, belonging to me",
+   "t": "pronoun"
+  },
+  "justifica": {
+   "g": "gives reasons for what she did",
+   "t": "verb"
+  },
+  "lastimada": {
+   "g": "hurt, injured",
+   "t": "adjective"
+  },
+  "sacaran": {
+   "g": "they took out (past subjunctive)",
+   "t": "verb"
+  },
+  "cuartel": {
+   "g": "a block of vines in the vineyard",
+   "t": "noun"
+  },
+  "agotada": {
+   "g": "worn out, with no strength left",
+   "t": "adjective"
+  },
+  "estabas": {
+   "g": "you were",
+   "t": "verb"
+  },
+  "racimos": {
+   "g": "bunches of grapes",
+   "t": "noun"
+  },
+  "yemas": {
+   "g": "buds on the vine",
+   "t": "noun"
+  },
+  "mide": {
+   "g": "measures",
+   "t": "verb"
+  },
+  "finca": {
+   "g": "a farm estate, here a vineyard",
+   "t": "noun"
+  },
+  "capataz": {
+   "g": "foreman in charge of the field crew",
+   "t": "noun"
+  },
+  "contado": {
+   "g": "counted",
+   "t": "verb"
+  },
+  "vides": {
+   "g": "grapevines",
+   "t": "noun"
+  },
+  "cerradas": {
+   "g": "closed, still shut",
+   "t": "adjective"
+  },
+  "así": {
+   "g": "like this, in this way",
+   "t": "adverb"
+  },
+  "adelantara": {
+   "g": "came early (past subjunctive of adelantar)",
+   "t": "verb"
+  },
+  "perdería": {
+   "g": "would be lost",
+   "t": "verb"
+  },
+  "anotado": {
+   "g": "written down on a list",
+   "t": "verb"
+  },
+  "entregás": {
+   "g": "you hand it in (voseo of entregar)",
+   "t": "verb"
+  },
+  "calculado": {
+   "g": "worked out with numbers",
+   "t": "verb"
+  },
+  "calculaste": {
+   "g": "you worked it out (past of calcular)",
+   "t": "verb"
+  },
+  "puse": {
+   "g": "I put",
+   "t": "verb"
+  },
+  "atraso": {
+   "g": "delay, being behind schedule",
+   "t": "noun"
+  },
+  "tendrías": {
+   "g": "you would have",
+   "t": "verb"
+  },
+  "tendría": {
+   "g": "would have",
+   "t": "verb"
+  },
+  "pediría": {
+   "g": "would ask for",
+   "t": "verb"
+  },
+  "falta": {
+   "g": "is missing, is not enough",
+   "t": "verb"
+  },
+  "faltar": {
+   "g": "to be missing, to not turn up",
+   "t": "verb"
+  },
+  "madrugo": {
+   "g": "I get up very early",
+   "t": "verb"
+  },
+  "avisarle": {
+   "g": "to let him or her know",
+   "t": "verb"
+  },
+  "greca": {
+   "g": "tall metal coffee machine of a Colombian cafe",
+   "t": "noun"
+  },
+  "vieja": {
+   "g": "old, worn by years of use",
+   "t": "adjective"
+  },
+  "bahareque": {
+   "g": "wall of cane and mud, typical of the coffee region",
+   "t": "noun"
+  },
+  "opina": {
+   "g": "says what he or she thinks",
+   "t": "verb"
+  },
+  "aconsejaría": {
+   "g": "would advise",
+   "t": "verb"
+  },
+  "quitara": {
+   "g": "took away (past subjunctive of quitar)",
+   "t": "verb"
+  },
+  "aguapanela": {
+   "g": "hot drink of water and raw cane sugar",
+   "t": "noun"
+  },
+  "resolverlo": {
+   "g": "to sort it out",
+   "t": "verb"
+  },
+  "arrepentirse": {
+   "g": "to be sorry later about a choice",
+   "t": "verb"
+  },
+  "carriel": {
+   "g": "leather shoulder bag worn by men in Caldas",
+   "t": "noun"
+  },
+  "discute": {
+   "g": "argues about it",
+   "t": "verb"
+  },
+  "pasilla": {
+   "g": "lower grade coffee beans left after sorting",
+   "t": "noun"
+  },
+  "dure": {
+   "g": "lasts longer (subjunctive of durar)",
+   "t": "verb"
+  },
+  "tostión": {
+   "g": "the roasting of the coffee, and its smell",
+   "t": "noun"
+  },
+  "delata": {
+   "g": "gives away what she is hiding",
+   "t": "verb"
+  },
+  "guadua": {
+   "g": "thick Colombian bamboo used for building",
+   "t": "noun"
+  },
+  "arrieros": {
+   "g": "muleteers who moved goods through the mountains",
+   "t": "noun"
+  },
+  "bajan": {
+   "g": "come down from the hills",
+   "t": "verb"
+  },
+  "willys": {
+   "g": "the old jeep that carries coffee on these roads",
+   "t": "noun"
+  },
+  "cafetal": {
+   "g": "field on the hillside where coffee grows",
+   "t": "noun"
+  },
+  "trapiche": {
+   "g": "small mill that presses cane into panela",
+   "t": "noun"
+  },
+  "mazamorra": {
+   "g": "thick drink of boiled corn",
+   "t": "noun"
+  },
+  "señala": {
+   "g": "points at it with the hand",
+   "t": "verb"
+  },
+  "cambiado": {
+   "g": "changed, made different",
+   "t": "verb"
+  },
+  "dirá": {
+   "g": "will say",
+   "t": "verb"
+  },
+  "cobrarlo": {
+   "g": "to charge for it",
+   "t": "verb"
+  },
+  "amarra": {
+   "g": "ties it with rope",
+   "t": "verb"
+  },
+  "chócolo": {
+   "g": "fresh sweet corn on the cob",
+   "t": "noun"
+  },
+  "cabuya": {
+   "g": "rough plant string for tying loads",
+   "t": "noun"
+  },
+  "andas": {
+   "g": "heavy wooden platforms carried in procession",
+   "t": "noun"
+  },
+  "cofradía": {
+   "g": "neighbourhood group that carries the platform",
+   "t": "noun"
+  },
+  "bordadora": {
+   "g": "woman whose work is embroidering",
+   "t": "noun"
+  },
+  "mantos": {
+   "g": "embroidered cloths that cover the figure",
+   "t": "noun"
+  },
+  "operarse": {
+   "g": "to have an operation",
+   "t": "verb"
+  },
+  "aliso": {
+   "g": "pale Andean wood used by carvers",
+   "t": "noun"
+  },
+  "sencilla": {
+   "g": "simple, without difficult parts",
+   "t": "adjective"
+  },
+  "operación": {
+   "g": "the operation a doctor performs",
+   "t": "noun"
+  },
+  "apúntelo": {
+   "g": "write it down (formal command)",
+   "t": "verb"
+  },
+  "aguja": {
+   "g": "needle for sewing",
+   "t": "noun"
+  },
+  "terciopelo": {
+   "g": "thick soft cloth used for the mantles",
+   "t": "noun"
+  },
+  "hilo": {
+   "g": "thread pulled through with a needle",
+   "t": "noun"
+  },
+  "coser": {
+   "g": "to sew cloth with needle and thread",
+   "t": "verb"
+  },
+  "junten": {
+   "g": "gather together (subjunctive of juntarse)",
+   "t": "verb"
+  },
+  "cargadores": {
+   "g": "the men who carry the platform on their shoulders",
+   "t": "noun"
+  },
+  "ojalá": {
+   "g": "I hope so, let us hope",
+   "t": "expression"
+  },
+  "diría": {
+   "g": "would say",
+   "t": "verb"
+  },
+  "entrega": {
+   "g": "delivery of the finished work",
+   "t": "noun"
+  },
+  "pagan": {
+   "g": "they pay",
+   "t": "verb"
+  },
+  "retablo": {
+   "g": "small wooden box with carved figures, from Ayacucho",
+   "t": "noun"
+  },
+  "capilla": {
+   "g": "very small church",
+   "t": "noun"
+  },
+  "cargado": {
+   "g": "already lifted, with the weight taken",
+   "t": "adjective"
+  },
+  "pollera": {
+   "g": "wide long skirt worn in Andean towns",
+   "t": "noun"
+  },
+  "mayordomo": {
+   "g": "neighbour in charge of the procession for a year",
+   "t": "noun"
+  },
+  "anotó": {
+   "g": "wrote the name down",
+   "t": "verb"
+  },
+  "anotando": {
+   "g": "writing names down on the list",
+   "t": "verb"
+  },
+  "reparte": {
+   "g": "shares out, spreads the weight",
+   "t": "verb"
+  },
+  "medida": {
+   "g": "the exact size a piece has to have",
+   "t": "noun"
+  },
+  "bastidor": {
+   "g": "wooden frame that holds the cloth tight",
+   "t": "noun"
+  },
+  "humedad": {
+   "g": "damp in the air of an old house",
+   "t": "noun"
+  },
+  "muertas": {
+   "g": "dead, said of animals",
+   "t": "adjective"
+  },
+  "amanecen": {
+   "g": "are found there when morning comes",
+   "t": "verb"
+  },
+  "alambre": {
+   "g": "thin metal wire that closes a field",
+   "t": "noun"
+  },
+  "cerco": {
+   "g": "fence of posts and wire around a field",
+   "t": "noun"
+  },
+  "cercos": {
+   "g": "fences around the fields",
+   "t": "noun"
+  },
+  "campos": {
+   "g": "open country fields of the island",
+   "t": "noun"
+  },
+  "agacha": {
+   "g": "bends down towards the ground",
+   "t": "verb"
+  },
+  "quiltro": {
+   "g": "mongrel dog, the common farm dog in Chile",
+   "t": "noun"
+  },
+  "vega": {
+   "g": "low wet grassland where sheep feed",
+   "t": "noun"
+  },
+  "mañanas": {
+   "g": "mornings, one after another",
+   "t": "noun"
+  },
+  "pisada": {
+   "g": "the mark one paw or foot leaves",
+   "t": "noun"
+  },
+  "tepual": {
+   "g": "thick wet wood of tepa trees, typical of Chiloe",
+   "t": "noun"
+  },
+  "póngalo": {
+   "g": "put it down in writing (formal command)",
+   "t": "verb"
+  },
+  "luma": {
+   "g": "very hard southern wood used for tools",
+   "t": "noun"
+  },
+  "aparece": {
+   "g": "shows up, appears on the page",
+   "t": "verb"
+  },
+  "sienta": {
+   "g": "sits down",
+   "t": "verb"
+  },
+  "cuida": {
+   "g": "looks after, takes care of",
+   "t": "verb"
+  },
+  "mató": {
+   "g": "killed",
+   "t": "verb"
+  },
+  "enferma": {
+   "g": "ill, not healthy",
+   "t": "adjective"
+  },
+  "sanas": {
+   "g": "healthy, with nothing wrong",
+   "t": "adjective"
+  },
+  "saca": {
+   "g": "takes it out",
+   "t": "verb"
+  },
+  "arregló": {
+   "g": "repaired, fixed",
+   "t": "verb"
+  },
+  "milcaos": {
+   "g": "flat potato cakes eaten in Chiloe",
+   "t": "noun"
+  },
+  "correa": {
+   "g": "long strap of a bag",
+   "t": "noun"
+  },
+  "soltarla": {
+   "g": "to let go of it",
+   "t": "verb"
+  },
+  "oveja": {
+   "g": "sheep",
+   "t": "noun"
+  },
+  "usa": {
+   "g": "uses",
+   "t": "verb"
+  },
+  "ni": {
+   "g": "not even, nor",
+   "t": "conjunction"
+  },
+  "voy": {
+   "g": "I go, I am going to",
+   "t": "verb"
+  },
+  "vender": {
+   "g": "to sell",
+   "t": "verb"
+  },
+  "llevo": {
+   "g": "I take, I carry",
+   "t": "verb"
+  },
+  "juicio": {
+   "g": "a court case with lawyers and papers",
+   "t": "noun"
+  },
+  "teniendo": {
+   "g": "having, keeping",
+   "t": "verb"
+  },
+  "valían": {
+   "g": "were worth",
+   "t": "verb"
+  },
+  "vemos": {
+   "g": "we see, we meet",
+   "t": "verb"
+  },
+  "pellín": {
+   "g": "hard red heartwood of the southern beech",
+   "t": "noun"
+  },
+  "suelta": {
+   "g": "says it out abruptly; also lets go",
+   "t": "verb"
+  },
+  "fié": {
+   "g": "I lent on trust",
+   "t": "verb"
+  },
+  "dé": {
+   "g": "gives (subjunctive of dar)",
+   "t": "verb"
+  },
+  "tenga": {
+   "g": "has (subjunctive of tener)",
+   "t": "verb"
+  },
+  "baja": {
+   "g": "low, said of the tide",
+   "t": "adjective"
+  },
+  "conforme": {
+   "g": "satisfied with what you got",
+   "t": "adjective"
+  },
+  "peleo": {
+   "g": "I fight, I argue",
+   "t": "verb"
+  },
+  "tasó": {
+   "g": "put a money value on it",
+   "t": "verb"
+  },
+  "palenque": {
+   "g": "round ring where the cockfights are held",
+   "t": "noun"
+  },
+  "apuestas": {
+   "g": "bets, money put on who will win",
+   "t": "noun"
+  },
+  "métase": {
+   "g": "get in, join the bet (formal command)",
+   "t": "verb"
+  },
+  "fío": {
+   "g": "I lend on trust, to be paid later",
+   "t": "verb"
+  },
+  "perdiera": {
+   "g": "lost (past subjunctive of perder)",
+   "t": "verb"
+  },
+  "fiaron": {
+   "g": "they lent on trust",
+   "t": "verb"
+  },
+  "cruzada": {
+   "g": "placed across, from one side to the other",
+   "t": "adjective"
+  },
+  "pase": {
+   "g": "come by (formal command of pasar)",
+   "t": "verb"
+  },
+  "cerré": {
+   "g": "I closed",
+   "t": "verb"
+  },
+  "tempranito": {
+   "g": "nice and early, in the warm Mexican way",
+   "t": "adverb"
+  },
+  "carguen": {
+   "g": "they load up (subjunctive of cargar)",
+   "t": "verb"
+  },
+  "contaron": {
+   "g": "they told me",
+   "t": "verb"
+  },
+  "gané": {
+   "g": "I won",
+   "t": "verb"
+  },
+  "responda": {
+   "g": "answers for it (subjunctive of responder)",
+   "t": "verb"
+  },
+  "existió": {
+   "g": "existed, was there for a while",
+   "t": "verb"
+  },
+  "nombrarla": {
+   "g": "to name it out loud",
+   "t": "verb"
+  },
+  "ayudante": {
+   "g": "the person who works beside you and helps",
+   "t": "noun"
+  },
+  "pasame": {
+   "g": "pass me (voseo command of pasar)",
+   "t": "verb"
+  },
+  "podrías": {
+   "g": "you could (voseo and tuteo alike)",
+   "t": "verb"
+  },
+  "cambiarle": {
+   "g": "to change something about it",
+   "t": "verb"
+  },
+  "sea": {
+   "g": "is (subjunctive of ser); also even if",
+   "t": "verb"
+  },
+  "cambie": {
+   "g": "changes (subjunctive of cambiar)",
+   "t": "verb"
+  },
+  "sobra": {
+   "g": "is left over, more than needed",
+   "t": "verb"
+  },
+  "sobran": {
+   "g": "are left over, more than needed",
+   "t": "verb"
+  },
+  "cayote": {
+   "g": "sweet squash jam of the Argentine northwest",
+   "t": "noun"
+  },
+  "ajenas": {
+   "g": "belonging to somebody else",
+   "t": "adjective"
+  },
+  "panaderías": {
+   "g": "bakeries",
+   "t": "noun"
+  },
+  "panadero": {
+   "g": "the person whose work is baking bread",
+   "t": "noun"
+  },
+  "quieta": {
+   "g": "still, not moving",
+   "t": "adjective"
+  },
+  "reconoce": {
+   "g": "knows it again, recognises it",
+   "t": "verb"
+  },
+  "buenísimo": {
+   "g": "really very good",
+   "t": "adjective"
+  },
+  "igualito": {
+   "g": "exactly the same, said with a push of meaning",
+   "t": "adjective"
+  },
+  "horno": {
+   "g": "the big bakery oven",
+   "t": "noun"
+  },
+  "nueces": {
+   "g": "walnuts, put inside the sweet bread",
+   "t": "noun"
+  },
+  "chapa": {
+   "g": "sheet of metal that heats up by the oven",
+   "t": "noun"
+  },
+  "sube": {
+   "g": "raises, goes up",
+   "t": "verb"
+  },
+  "inventa": {
+   "g": "makes up something nobody made before",
+   "t": "verb"
+  },
+  "copiaste": {
+   "g": "you copied it",
+   "t": "verb"
+  },
+  "mejoré": {
+   "g": "I made it better",
+   "t": "verb"
+  },
+  "mejoraste": {
+   "g": "you made it better",
+   "t": "verb"
+  },
+  "dijiste": {
+   "g": "you said",
+   "t": "verb"
+  },
+  "haberme": {
+   "g": "to have me, as in you could have told me",
+   "t": "verb"
+  },
+  "ponele": {
+   "g": "let us say, all right then (Argentine)",
+   "t": "expression"
+  },
+  "vidriera": {
+   "g": "shop window, in the Argentine word",
+   "t": "noun"
+  },
+  "tejas": {
+   "g": "curved clay roof tiles of the old town",
+   "t": "noun"
+  },
+  "cuñado": {
+   "g": "brother in law",
+   "t": "noun"
+  },
+  "siga": {
+   "g": "come in (the polite Colombian invitation)",
+   "t": "verb"
+  },
+  "volvimos": {
+   "g": "we turned it into, we made it",
+   "t": "verb"
+  },
+  "dormía": {
+   "g": "used to sleep",
+   "t": "verb"
+  },
+  "necesitaba": {
+   "g": "needed",
+   "t": "verb"
+  },
+  "alacena": {
+   "g": "built in kitchen cupboard",
+   "t": "noun"
+  },
+  "zaguán": {
+   "g": "covered entrance passage of an old house",
+   "t": "noun"
+  },
+  "chontaduro": {
+   "g": "orange palm fruit sold in the streets of the Cauca",
+   "t": "noun"
+  },
+  "envolvió": {
+   "g": "wrapped it up for the trip",
+   "t": "verb"
+  },
+  "pipián": {
+   "g": "peanut and potato filling that Popayan is famous for",
+   "t": "noun"
+  },
+  "centímetros": {
+   "g": "centimetres, a very small distance",
+   "t": "noun"
+  },
+  "carantanta": {
+   "g": "crisp maize sheet eaten with soup in Cauca",
+   "t": "noun"
+  },
+  "separado": {
+   "g": "on its own, not mixed in",
+   "t": "adjective"
+  },
+  "terminen": {
+   "g": "finish it (subjunctive of terminar)",
+   "t": "verb"
+  },
+  "acaban": {
+   "g": "they finish it off",
+   "t": "verb"
+  },
+  "sancocho": {
+   "g": "thick Sunday soup the whole family eats",
+   "t": "noun"
+  },
+  "corrigieron": {
+   "g": "they corrected it",
+   "t": "verb"
+  },
+  "manto": {
+   "g": "embroidered cloth that covers the figure in the procession",
+   "t": "noun"
+  }
  }
 }

@@ -1,0 +1,479 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "palenque,feria,corredor,puesto",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "palenque",
+          "answer": "the ring where cockfights are held",
+          "options": [
+            "the ring where cockfights are held",
+            "the yearly town fair",
+            "the man who takes the bets",
+            "a small stall at the fair"
+          ]
+        },
+        {
+          "word": "feria",
+          "answer": "the yearly town fair",
+          "options": [
+            "the ring where cockfights are held",
+            "the yearly town fair",
+            "the man who takes the bets",
+            "a small stall at the fair"
+          ]
+        },
+        {
+          "word": "corredor",
+          "answer": "the man who takes the bets",
+          "options": [
+            "the ring where cockfights are held",
+            "the yearly town fair",
+            "the man who takes the bets",
+            "a small stall at the fair"
+          ]
+        },
+        {
+          "word": "puesto",
+          "answer": "a small stall at the fair",
+          "options": [
+            "the ring where cockfights are held",
+            "the yearly town fair",
+            "the man who takes the bets",
+            "a small stall at the fair"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "permiso",
+    "sentence": "El [[permiso]] del puesto se paga el domingo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the licence",
+      "options": [
+        "the licence",
+        "the rent of the house",
+        "the ticket to the ring",
+        "the wage of the day"
+      ],
+      "audioClip": {
+        "storySlug": "el-gallo-colorado",
+        "storySource": "journey",
+        "sentence": "El permiso del puesto se paga el domingo.",
+        "targetWord": "permiso",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1718e1ecd2ddd6cc.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/40420f708e83a0d8b770.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "faltan",
+    "sentence": "Al permiso le _____ doscientos y la feria se acaba.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "faltan",
+      "options": [
+        "faltan",
+        "sobran",
+        "pagan",
+        "cobran"
+      ],
+      "translation": "For the permit he is _____ two hundred and the fair is ending.",
+      "optionTranslations": [
+        "short by",
+        "over by",
+        "paid",
+        "charged"
+      ],
+      "audioClip": {
+        "storySlug": "el-gallo-colorado",
+        "storySource": "journey",
+        "sentence": "Al permiso le faltan doscientos y la feria se acaba.",
+        "targetWord": "faltan",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5287edc4b4d35ba6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dar fiado",
+    "sentence": "“Yo le [[fío]] los doscientos y me paga el domingo.”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "I lend it to you on trust",
+      "options": [
+        "I lend it to you on trust",
+        "I owe you that much",
+        "I charge you extra",
+        "I keep it for you"
+      ],
+      "audioClip": {
+        "storySlug": "el-gallo-colorado",
+        "storySource": "journey",
+        "sentence": "“Yo le fío los doscientos y me paga el domingo.”",
+        "targetWord": "dar fiado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/17aa8aebc054328a.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/914685daf6a45dbd5e15.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "meterse",
+    "sentence": "“[[Métase]], don Hugo”, le suelta el corredor.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "get in on it",
+      "options": [
+        "get in on it",
+        "step aside",
+        "pay up",
+        "keep quiet"
+      ],
+      "audioClip": {
+        "storySlug": "el-gallo-colorado",
+        "storySource": "journey",
+        "sentence": "“Métase, don Hugo”, le suelta el corredor.",
+        "targetWord": "meterse",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cea673cde1f634e3.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/9a76c515f74ea7f8ac1b.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "boleto",
+    "sentence": "Toma el [[boleto]] y lo dobla en cuatro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the betting slip",
+      "options": [
+        "the betting slip",
+        "the coin",
+        "the hat",
+        "the licence"
+      ],
+      "audioClip": {
+        "storySlug": "el-gallo-colorado",
+        "storySource": "journey",
+        "sentence": "Toma el boleto y lo dobla en cuatro.",
+        "targetWord": "boleto",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a330f20b360a8ca1.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/7fc1e746eaaa5021de19.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "dobla",
+    "sentence": "Toma el boleto y lo _____ en cuatro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dobla",
+      "options": [
+        "dobla",
+        "rompe",
+        "paga",
+        "suelta"
+      ],
+      "translation": "He takes the slip and _____ it in four.",
+      "optionTranslations": [
+        "folds",
+        "tears",
+        "pays",
+        "lets go of"
+      ],
+      "audioClip": {
+        "storySlug": "el-gallo-colorado",
+        "storySource": "journey",
+        "sentence": "Toma el boleto y lo dobla en cuatro.",
+        "targetWord": "dobla",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a5ae09520946368e.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "suelta",
+    "sentence": "No lo _____ en toda la pelea del gallo colorado.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "suelta",
+      "options": [
+        "suelta",
+        "dobla",
+        "cobra",
+        "esconde"
+      ],
+      "translation": "He does not _____ it for the whole fight of the red bird.",
+      "optionTranslations": [
+        "let go of",
+        "fold",
+        "charge",
+        "hide"
+      ],
+      "audioClip": {
+        "storySlug": "el-gallo-colorado",
+        "storySource": "journey",
+        "sentence": "No lo suelta en toda la pelea del gallo colorado.",
+        "targetWord": "suelta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/31c421f99d2f4a8e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pelea",
+    "sentence": "No suelta el boleto en toda la [[pelea]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the fight",
+      "options": [
+        "the fight",
+        "the fair",
+        "the queue",
+        "the night"
+      ],
+      "audioClip": {
+        "storySlug": "el-gallo-colorado",
+        "storySource": "journey",
+        "sentence": "No suelta el boleto en toda la pelea.",
+        "targetWord": "pelea",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/69c2082badb0c5e8.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/fff19bf8690d368f8f4c.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "deuda",
+    "sentence": "Esa [[cuenta]] le da vueltas desde el jueves.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "that debt",
+      "options": [
+        "that debt",
+        "that story",
+        "that hour",
+        "that stall"
+      ],
+      "audioClip": {
+        "storySlug": "el-gallo-colorado",
+        "storySource": "journey",
+        "sentence": "Esa cuenta le da vueltas desde el jueves.",
+        "targetWord": "deuda",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b108039759a62d0e.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/44350c37b0984036b76f.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "espalda",
+    "sentence": "Siente el ruido como una mano en la [[espalda]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "his back",
+      "options": [
+        "his back",
+        "his shoulder",
+        "his face",
+        "his arm"
+      ],
+      "audioClip": {
+        "storySlug": "el-gallo-colorado",
+        "storySource": "journey",
+        "sentence": "Siente el ruido como una mano en la espalda.",
+        "targetWord": "espalda",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/638b99c4cba7264d7a64.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ruido",
+    "sentence": "Siente el [[ruido]] como una mano en la espalda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the noise",
+      "options": [
+        "the noise",
+        "the heat",
+        "the smell",
+        "the light"
+      ],
+      "audioClip": {
+        "storySlug": "el-gallo-colorado",
+        "storySource": "journey",
+        "sentence": "Siente el ruido como una mano en la espalda.",
+        "targetWord": "ruido",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/bf61d92bace6a3d575e2.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esconderse",
+    "sentence": "“Delante de quien sea, aquí nadie se [[esconde]].”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hides",
+      "options": [
+        "hides",
+        "pays",
+        "wins",
+        "complains"
+      ],
+      "audioClip": {
+        "storySlug": "el-gallo-colorado",
+        "storySource": "journey",
+        "sentence": "“Delante de quien sea, aquí nadie se esconde.”",
+        "targetWord": "esconderse",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2cd4abdebfe3310d8ca7.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "repite",
+    "sentence": "Le _____ a Brenda cada noche que él no juega.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "repite",
+      "options": [
+        "repite",
+        "fía",
+        "dobla",
+        "suelta"
+      ],
+      "translation": "He _____ to Brenda every night that he does not gamble.",
+      "optionTranslations": [
+        "repeats",
+        "lends",
+        "folds",
+        "lets go"
+      ],
+      "audioClip": {
+        "storySlug": "el-gallo-colorado",
+        "storySource": "journey",
+        "sentence": "Le repite a Brenda cada noche que él no juega.",
+        "targetWord": "repite",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ba06d93a04286b75.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "empezar",
+    "sentence": "“Yo no juego, y no voy a _____ ahora.”",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "empezar",
+      "options": [
+        "empezar",
+        "cobrar",
+        "doblar",
+        "fiar"
+      ],
+      "translation": "“I do not gamble, and I am not going to _____ now.”",
+      "optionTranslations": [
+        "start",
+        "charge",
+        "fold",
+        "lend"
+      ],
+      "audioClip": {
+        "storySlug": "el-gallo-colorado",
+        "storySource": "journey",
+        "sentence": "“Yo no juego, y no voy a empezar ahora.”",
+        "targetWord": "empezar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e5983bc56582b312.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gallo",
+    "sentence": "El [[gallo]] colorado gana y la noche cambia para Hugo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the rooster",
+      "options": [
+        "the rooster",
+        "the caller",
+        "the stall",
+        "the crowd"
+      ],
+      "audioClip": {
+        "storySlug": "el-gallo-colorado",
+        "storySource": "journey",
+        "sentence": "El gallo colorado gana y la noche cambia para Hugo.",
+        "targetWord": "gallo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2752a5cd87a5cc746575.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "colorado",
+    "sentence": "El gallo [[colorado]] gana la pelea de esa noche.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "red",
+      "options": [
+        "red",
+        "young",
+        "big",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "el-gallo-colorado",
+        "storySource": "journey",
+        "sentence": "El gallo colorado gana la pelea de esa noche.",
+        "targetWord": "colorado",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/73df349303c75ec47bfe.mp3",
+        "wordVoiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    },
+    "featured": false
+  }
+]

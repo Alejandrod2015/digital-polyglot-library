@@ -670,7 +670,21 @@ function slugify(s: string): string {
       // sintagma que dice qué es), ese bloque no puede llevar habla citada.
       // Abrir directamente con diálogo es legítimo y no dispara nada.
       const primerBloque = blocks[0] ?? "";
-      const presenta = /\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+,\s+(um|uma)\s+\w+|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+\s+é\s+(um|uma)\s+\w+/.test(primerBloque);
+      // El detector nacio mirando SOLO al portugues (`Nome, uma professora`), asi
+      // que en espanol no saltaba nunca y el defecto volvio tal cual el
+      // 2026-09-04: "Valentina Sosa, que hace la poda en una finca de Mendoza"
+      // salio pegado a "¿Para cuando me la entregas?" en la primera historia del
+      // B1 latam. Ahora cubre las tres formas de presentar que usa el corpus, en
+      // portugues y en espanol: aposicion con articulo (`Nombre, una podadora`),
+      // copula (`Nombre es una podadora`) y relativa (`Nombre, que hace la
+      // poda`), mas la aposicion sin articulo (`Nombre, podadora de una finca`).
+      const NOMBRE = "[A-ZÁÉÍÓÚÂÊÔÃÕÑÇ][a-záéíóúâêôãõñç]+";
+      const presenta = new RegExp(
+        `\\b${NOMBRE},\\s+(um|uma|un|una|el|la)\\s+\\w+` +
+        `|\\b${NOMBRE}\\s+(é|es)\\s+(um|uma|un|una)\\s+\\w+` +
+        `|\\b${NOMBRE},\\s+que\\s+\\w+` +
+        `|\\b${NOMBRE}\\s+${NOMBRE},\\s+\\w+(a|o|or|ora|ista|ero|era)\\s+de\\b`,
+      ).test(primerBloque);
       if (presenta && /[“”]/.test(primerBloque)) {
         hardFails.push({
           id: "narrator-intro-block-shared", label: "", status: "fail",
@@ -805,6 +819,9 @@ function slugify(s: string): string {
     let todas: JourneyStoryInput[] = [];
     /** Huecos que el journey declara (temas x 3). Decide si el conjunto esta completo. */
     let esperadas = 0;
+    // Plazas TOTALES del journey (21 en un 7x3), escritas o no. Vive fuera del
+    // try porque el gate de conjunto la necesita: ver `plazasDelJourney`.
+    let plazasJourney = 0;
     const base: JourneyStoryInput[] = [];
     let realPeople: string[] | undefined;
     try {
@@ -818,6 +835,7 @@ function slugify(s: string): string {
       const filas = (await p3.journeyStory.findMany({
         where: { journeyId }, select: { slug: true, title: true, text: true, vocab: true, topic: true, slotIndex: true },
       })).sort((a, b) => (orden.indexOf(a.topic) - orden.indexOf(b.topic)) || (a.slotIndex - b.slotIndex));
+      plazasJourney = filas.length;
       const vistos = new Set<string>();
       for (const f of filas) {
         const k = `${f.topic}#${f.slotIndex}`;
@@ -877,9 +895,13 @@ function slugify(s: string): string {
       const tipoJourney = (await p3.journey.findUnique({
         where: { id: journeyId }, select: { typeSlug: true },
       }))?.typeSlug ?? null;
+      // Las plazas TOTALES, no las escritas: la escalera de recirculacion las
+      // necesita para saber si el journey esta entero. Ver el comentario de
+      // `pushSetEscalera` en validateJourneyStories.
       const jc = validateJourneyStories(todas, {
         language: ctx.language, level: ctx.level, realPeople, conjuntoCompleto: completo,
         journeyType: tipoJourney, journeyId,
+        plazasDelJourney: plazasJourney || undefined,
       });
       const malos = jc.filter((c) => c.status === "fail" || c.status === "not-implemented");
       const enEspera = jc.filter((c) => c.status === "pending-set");

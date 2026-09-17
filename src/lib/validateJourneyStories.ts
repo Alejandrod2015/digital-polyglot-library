@@ -445,6 +445,14 @@ export function validateJourneyStories(
      *  primera historia del journey esta entre ellas. Ninguna se juzga.
      *  Puerto de 96bbd127 (rama del Friends FR A0), que no llego a main. */
     previas?: Array<{ text: string }>;
+    /**
+     * Plazas TOTALES del journey (21 en un 7x3), no las escritas. La escalera
+     * de recirculacion es lo unico que se mide sobre el journey ENTERO: una
+     * palabra que entra en la historia 9 no ha tenido ninguna posterior donde
+     * volver, asi que juzgarla a medio camino la suspende por construccion.
+     * Sin este dato, la escalera se queda en espera.
+     */
+    plazasDelJourney?: number;
   }
 ): JourneyCheck[] {
   const out: JourneyCheck[] = [];
@@ -484,6 +492,27 @@ export function validateJourneyStories(
   };
   const noImplSet = (id: string, label: string, why: string) => {
     if (!parcial) return noImpl(id, label, why);
+    out.push({ id, label, status: "pending-set", detail: enEspera(why) });
+  };
+  // La escalera de recirculacion NO se juzga con el umbral de siete historias
+  // que vale para el resto del conjunto: es una propiedad del journey entero.
+  // Con 9 de 21 escritas, las 42 plazas del tema recien cerrado tienen cero
+  // reencuentros posibles y hunden la media pase lo que pase; el 1,4 de B1 se
+  // calibro sobre un journey COMPLETO (el ES/spain, 1,43). Hasta que estan
+  // todas las plazas escritas queda en espera, listada, nunca saltada en
+  // silencio. (2026-09-05, decision del usuario montando el ES/latam B1: el
+  // tema 3 no se podia guardar por una media que solo puede subir escribiendo
+  // los temas siguientes.)
+  const journeyEntero =
+    ctx.plazasDelJourney === undefined
+      ? !parcial
+      : stories.length >= ctx.plazasDelJourney;
+  const pushSetEscalera = (id: string, label: string, ok: boolean, detail?: string) => {
+    if (journeyEntero) return push(id, label, ok, detail);
+    out.push({ id, label, status: "pending-set", detail: enEspera(ok ? undefined : detail) });
+  };
+  const noImplSetEscalera = (id: string, label: string, why: string) => {
+    if (journeyEntero) return noImpl(id, label, why);
     out.push({ id, label, status: "pending-set", detail: enEspera(why) });
   };
 
@@ -860,10 +889,10 @@ export function validateJourneyStories(
   const TOPE_ANCLADAS = 0.30;
   const suelo = MEDIA_MINIMA[level];
   if (suelo === undefined) {
-    noImplSet("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
+    noImplSetEscalera("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
       `El catalogo no da un liston medido para ${level || "?"}; poner uno seria inventarlo.`);
   } else if (!stories.some((s) => s.vocab && s.vocab.length)) {
-    noImplSet("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
+    noImplSetEscalera("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
       "Las historias llegaron sin vocab.");
   } else {
     const tok = (t: string) => (t.toLowerCase().match(/\p{L}+/gu) ?? []);
@@ -912,7 +941,7 @@ export function validateJourneyStories(
     if (!marca) {
       const media = todas.reduce((a, b) => a + b.n, 0) / todas.length;
       const unaVez = todas.filter((x) => x.n <= 1).length;
-      pushSet("journey-vocab-recirculation", `Cada plaza de vocab se reencuentra (media ${suelo} o mas en ${level})`,
+      pushSetEscalera("journey-vocab-recirculation", `Cada plaza de vocab se reencuentra (media ${suelo} o mas en ${level})`,
         media >= suelo,
         `media ${media.toFixed(2)} encuentros por plaza (ideal 4, liston de los buenos ${suelo}) · ${unaVez}/${todas.length} salen una sola vez · sin marcar ancladas`);
     } else {
@@ -932,7 +961,7 @@ export function validateJourneyStories(
       const cola = port.length ? unaVez / port.length : 0;
       const topeCola = TOPE_COLA_POR_NIVEL[level];
       const okCola = topeCola === undefined || cola <= topeCola;
-      pushSet("journey-vocab-recirculation",
+      pushSetEscalera("journey-vocab-recirculation",
         `Las portables se reencuentran (media ${pide} o mas en ${level}), las ancladas no pasan del ${Math.round(TOPE_ANCLADAS * 100)}% y la cola no pasa del ${topeCola === undefined ? "?" : Math.round(topeCola * 100)}%`,
         okMedia && okCuota && okCola,
         `portables: media ${media.toFixed(2)} sobre ${port.length} plazas · ${unaVez} salen una sola vez` +

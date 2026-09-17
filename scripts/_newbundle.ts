@@ -13,7 +13,7 @@
  *  project_levels_raised_2026_09_10). Con --journey se ignoran
  *  language/variant/levels/typeSlug para elegir el journey y se usan solo
  *  para la fila del bundle; los slugs salen EXCLUSIVAMENTE de ese id. */
-import { config } from "dotenv"; config({ path: ".env.local", quiet: true });
+import { config } from "dotenv"; config({ path: ".env.local", quiet: true }); config({ path: ".env", quiet: true });
 import { PrismaClient } from "../src/generated/prisma";
 const p = new PrismaClient();
 async function main(){

@@ -1,0 +1,467 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "cerco,quiltro,vega,alambre",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cerco",
+          "answer": "the fence around a field",
+          "options": [
+            "the fence around a field",
+            "a Chilean mongrel dog",
+            "the low wet grassland",
+            "the thin metal wire"
+          ]
+        },
+        {
+          "word": "quiltro",
+          "answer": "a Chilean mongrel dog",
+          "options": [
+            "the fence around a field",
+            "a Chilean mongrel dog",
+            "the low wet grassland",
+            "the thin metal wire"
+          ]
+        },
+        {
+          "word": "vega",
+          "answer": "the low wet grassland",
+          "options": [
+            "the fence around a field",
+            "a Chilean mongrel dog",
+            "the low wet grassland",
+            "the thin metal wire"
+          ]
+        },
+        {
+          "word": "alambre",
+          "answer": "the thin metal wire",
+          "options": [
+            "the fence around a field",
+            "a Chilean mongrel dog",
+            "the low wet grassland",
+            "the thin metal wire"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parte",
+    "sentence": "Ximena se agacha a abrir el [[parte]] en el barro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the official report",
+      "options": [
+        "the official report",
+        "the gate",
+        "the notebook",
+        "the payment"
+      ],
+      "audioClip": {
+        "storySlug": "la-casilla-en-blanco",
+        "storySource": "journey",
+        "sentence": "Ximena se agacha a abrir el parte en el barro.",
+        "targetWord": "parte",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e7f2450559341ab2.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/7afb730c39e8e25d6a4a.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "agacha",
+    "sentence": "Ximena se _____ a abrir el parte junto al cerco.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "agacha",
+      "options": [
+        "agacha",
+        "levanta",
+        "aleja",
+        "apura"
+      ],
+      "translation": "Ximena _____ down to open the report by the fence.",
+      "optionTranslations": [
+        "bends",
+        "stands up",
+        "moves away",
+        "hurries"
+      ],
+      "audioClip": {
+        "storySlug": "la-casilla-en-blanco",
+        "storySource": "journey",
+        "sentence": "Ximena se agacha a abrir el parte junto al cerco.",
+        "targetWord": "agacha",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5cdc6fb0a7ba4f60.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "marca",
+    "sentence": "Ella conoce la [[marca]] que deja ese perro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the sign it leaves",
+      "options": [
+        "the sign it leaves",
+        "the name it has",
+        "the price it costs",
+        "the noise it makes"
+      ],
+      "audioClip": {
+        "storySlug": "la-casilla-en-blanco",
+        "storySource": "journey",
+        "sentence": "Ella conoce la marca que deja ese perro.",
+        "targetWord": "marca",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb0a13b97c8b79cd.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/5a125ec49da206066c1c.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pisada",
+    "sentence": "Deja siempre la misma [[pisada]] torcida en el barro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pawprint",
+      "options": [
+        "pawprint",
+        "fence post",
+        "sheep",
+        "shadow"
+      ],
+      "audioClip": {
+        "storySlug": "la-casilla-en-blanco",
+        "storySource": "journey",
+        "sentence": "Deja siempre la misma pisada torcida en el barro.",
+        "targetWord": "pisada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aef3a01e40697f9a.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/33fa2c6fa78a6d757d84.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "torcido",
+    "sentence": "Deja la misma pisada [[torcida]] todas las mañanas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "crooked",
+      "options": [
+        "crooked",
+        "fresh",
+        "deep",
+        "small"
+      ],
+      "audioClip": {
+        "storySlug": "la-casilla-en-blanco",
+        "storySource": "journey",
+        "sentence": "Deja la misma pisada torcida todas las mañanas.",
+        "targetWord": "torcido",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/efff86f2c1268188.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/e1f00ac962e1d94aa062.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "casilla",
+    "sentence": "El parte se va con la _____ del dueño en blanco.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "casilla",
+      "options": [
+        "casilla",
+        "marca",
+        "pisada",
+        "oveja"
+      ],
+      "translation": "The report goes off with the owner's _____ left blank.",
+      "optionTranslations": [
+        "box",
+        "mark",
+        "pawprint",
+        "sheep"
+      ],
+      "audioClip": {
+        "storySlug": "la-casilla-en-blanco",
+        "storySource": "journey",
+        "sentence": "El parte se va con la casilla del dueño en blanco.",
+        "targetWord": "casilla",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a26329e3d39f5473.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en blanco",
+    "sentence": "La casilla del dueño se queda [[en blanco]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "empty",
+      "options": [
+        "empty",
+        "signed",
+        "crossed out",
+        "copied"
+      ],
+      "audioClip": {
+        "storySlug": "la-casilla-en-blanco",
+        "storySource": "journey",
+        "sentence": "La casilla del dueño se queda en blanco.",
+        "targetWord": "en blanco",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa36b14c4681ac79.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/fe8da7f01a95201e8cfd.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "línea",
+    "sentence": "Guarda el cuaderno antes de terminar la _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "línea",
+      "options": [
+        "línea",
+        "tapa",
+        "marca",
+        "vega"
+      ],
+      "translation": "She closes the notebook before finishing the _____.",
+      "optionTranslations": [
+        "line",
+        "cover",
+        "mark",
+        "grassland"
+      ],
+      "audioClip": {
+        "storySlug": "la-casilla-en-blanco",
+        "storySource": "journey",
+        "sentence": "Guarda el cuaderno antes de terminar la línea.",
+        "targetWord": "línea",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9d42356d51caa91.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barro",
+    "sentence": "El vecino espera en el [[barro]], con el viento en contra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the mud",
+      "options": [
+        "the mud",
+        "the doorway",
+        "the truck",
+        "the shade"
+      ],
+      "audioClip": {
+        "storySlug": "la-casilla-en-blanco",
+        "storySource": "journey",
+        "sentence": "El vecino espera en el barro, con el viento en contra.",
+        "targetWord": "barro",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1e9482e29ee1fe57.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/1b658e312647f535e64f.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "anoche",
+    "sentence": "“Fue perro, y no fue [[anoche]]”, contesta Ximena.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "last night",
+      "options": [
+        "last night",
+        "this morning",
+        "last week",
+        "just now"
+      ],
+      "audioClip": {
+        "storySlug": "la-casilla-en-blanco",
+        "storySource": "journey",
+        "sentence": "“Fue perro, y no fue anoche”, contesta Ximena.",
+        "targetWord": "anoche",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2ad7656782af405efbfa.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tapa",
+    "sentence": "La [[tapa]] de luma se cierra de golpe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the cover",
+      "options": [
+        "the cover",
+        "the fence",
+        "the door",
+        "the box"
+      ],
+      "audioClip": {
+        "storySlug": "la-casilla-en-blanco",
+        "storySource": "journey",
+        "sentence": "La tapa de luma se cierra de golpe.",
+        "targetWord": "tapa",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/53238e43a503f210d5c1.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vecino",
+    "sentence": "El [[vecino]] espera de pie y no dice el nombre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the neighbour",
+      "options": [
+        "the neighbour",
+        "the vet",
+        "the owner",
+        "the buyer"
+      ],
+      "audioClip": {
+        "storySlug": "la-casilla-en-blanco",
+        "storySource": "journey",
+        "sentence": "El vecino espera de pie y no dice el nombre.",
+        "targetWord": "vecino",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/d23e614ac67d3b6c42be.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "viento",
+    "sentence": "Espera en el barro con el [[viento]] frío en contra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the wind",
+      "options": [
+        "the wind",
+        "the rain",
+        "the sun",
+        "the noise"
+      ],
+      "audioClip": {
+        "storySlug": "la-casilla-en-blanco",
+        "storySource": "journey",
+        "sentence": "Espera en el barro con el viento frío en contra.",
+        "targetWord": "viento",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/4670e7f2bc6927d2a698.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oveja",
+    "sentence": "Dos [[ovejas]] muertas amanecen junto al alambre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sheep",
+      "options": [
+        "sheep",
+        "dogs",
+        "cows",
+        "birds"
+      ],
+      "audioClip": {
+        "storySlug": "la-casilla-en-blanco",
+        "storySource": "journey",
+        "sentence": "Dos ovejas muertas amanecen junto al alambre.",
+        "targetWord": "oveja",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/a18be724f49e295f6877.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al lado",
+    "sentence": "“Yo tengo que seguir viviendo [[al lado]].”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "next door",
+      "options": [
+        "next door",
+        "far away",
+        "on my own",
+        "in town"
+      ],
+      "audioClip": {
+        "storySlug": "la-casilla-en-blanco",
+        "storySource": "journey",
+        "sentence": "“Yo tengo que seguir viviendo al lado.”",
+        "targetWord": "al lado",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/3d40324567ff19a66a04.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ayer",
+    "sentence": "“Esto pasó [[ayer]] temprano”, dice ella.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "yesterday",
+      "options": [
+        "yesterday",
+        "today",
+        "last month",
+        "tonight"
+      ],
+      "audioClip": {
+        "storySlug": "la-casilla-en-blanco",
+        "storySource": "journey",
+        "sentence": "“Esto pasó ayer temprano”, dice ella.",
+        "targetWord": "ayer",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/6f9f6ad5bf7e3ff8b87b.mp3",
+        "wordVoiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    },
+    "featured": false
+  }
+]

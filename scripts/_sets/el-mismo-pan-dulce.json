@@ -1,0 +1,467 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "empanada,factura,horno,nuez",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "empanada",
+          "answer": "the small filled pastry of Tucuman",
+          "options": [
+            "the small filled pastry of Tucuman",
+            "the sweet pastries of the afternoon",
+            "the big bakery oven",
+            "the nut inside the sweet bread"
+          ]
+        },
+        {
+          "word": "factura",
+          "answer": "the sweet pastries of the afternoon",
+          "options": [
+            "the small filled pastry of Tucuman",
+            "the sweet pastries of the afternoon",
+            "the big bakery oven",
+            "the nut inside the sweet bread"
+          ]
+        },
+        {
+          "word": "horno",
+          "answer": "the big bakery oven",
+          "options": [
+            "the small filled pastry of Tucuman",
+            "the sweet pastries of the afternoon",
+            "the big bakery oven",
+            "the nut inside the sweet bread"
+          ]
+        },
+        {
+          "word": "nuez",
+          "answer": "the nut inside the sweet bread",
+          "options": [
+            "the small filled pastry of Tucuman",
+            "the sweet pastries of the afternoon",
+            "the big bakery oven",
+            "the nut inside the sweet bread"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "muerde",
+    "sentence": "Silvana _____ el pan dulce y se queda quieta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "muerde",
+      "options": [
+        "muerde",
+        "amasa",
+        "cobra",
+        "guarda"
+      ],
+      "translation": "Silvana _____ the sweet bread and goes still.",
+      "optionTranslations": [
+        "bites into",
+        "kneads",
+        "charges for",
+        "keeps"
+      ],
+      "audioClip": {
+        "storySlug": "el-mismo-pan-dulce",
+        "storySource": "journey",
+        "sentence": "Silvana muerde el pan dulce y se queda quieta.",
+        "targetWord": "muerde",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3f949b5fafb0a61a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reconocer",
+    "sentence": "Silvana [[reconoce]] su propia receta antes de tragar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "recognises",
+      "options": [
+        "recognises",
+        "copies",
+        "explains",
+        "orders"
+      ],
+      "audioClip": {
+        "storySlug": "el-mismo-pan-dulce",
+        "storySource": "journey",
+        "sentence": "Silvana reconoce su propia receta antes de tragar.",
+        "targetWord": "reconocer",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/56cc6284283810bb.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/99341d0bc8c7000d0a0d.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tragar",
+    "sentence": "Reconoce su propia receta antes de _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tragar",
+      "options": [
+        "tragar",
+        "amasar",
+        "cobrar",
+        "hornear"
+      ],
+      "translation": "She knows her own recipe before _____.",
+      "optionTranslations": [
+        "swallowing",
+        "kneading",
+        "charging",
+        "baking"
+      ],
+      "audioClip": {
+        "storySlug": "el-mismo-pan-dulce",
+        "storySource": "journey",
+        "sentence": "Reconoce su propia receta antes de tragar.",
+        "targetWord": "tragar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e9a31406c10a83b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "receta",
+    "sentence": "Habla de cualquier cosa que no sea la [[receta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the recipe",
+      "options": [
+        "the recipe",
+        "the price",
+        "the oven",
+        "the family"
+      ],
+      "audioClip": {
+        "storySlug": "el-mismo-pan-dulce",
+        "storySource": "journey",
+        "sentence": "Habla de cualquier cosa que no sea la receta.",
+        "targetWord": "receta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f24d2de9dac3c133.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/19265ea1ee48515869bb.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "darse cuenta",
+    "sentence": "Sube la voz sin [[darse cuenta]] delante de todos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without noticing",
+      "options": [
+        "without noticing",
+        "without paying",
+        "without stopping",
+        "without eating"
+      ],
+      "audioClip": {
+        "storySlug": "el-mismo-pan-dulce",
+        "storySource": "journey",
+        "sentence": "Sube la voz sin darse cuenta delante de todos.",
+        "targetWord": "darse cuenta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ebbd66f2ca16db1d.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/adb65ba6f0f277e15c3e.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "admitir",
+    "sentence": "En esa mesa subir la voz es [[admitirlo]] todo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "admitting it",
+      "options": [
+        "admitting it",
+        "denying it",
+        "forgetting it",
+        "explaining it"
+      ],
+      "audioClip": {
+        "storySlug": "el-mismo-pan-dulce",
+        "storySource": "journey",
+        "sentence": "En esa mesa subir la voz es admitirlo todo.",
+        "targetWord": "admitir",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c086751d084b573.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/7f275881c653d608f33b.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "levantar la mesa",
+    "sentence": "Nadie [[levanta la mesa]] temprano ese día.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clears the table",
+      "options": [
+        "clears the table",
+        "sets the table",
+        "leaves the house",
+        "pays the bill"
+      ],
+      "audioClip": {
+        "storySlug": "el-mismo-pan-dulce",
+        "storySource": "journey",
+        "sentence": "Nadie levanta la mesa temprano ese día.",
+        "targetWord": "levantar la mesa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1e3152858d2389ce.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/952fbc1fd89042e11a89.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de frente",
+    "sentence": "Adrián no vuelve a mirarla [[de frente]] en todo el almuerzo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "straight in the eye",
+      "options": [
+        "straight in the eye",
+        "from the kitchen",
+        "across the street",
+        "with a smile"
+      ],
+      "audioClip": {
+        "storySlug": "el-mismo-pan-dulce",
+        "storySource": "journey",
+        "sentence": "Adrián no vuelve a mirarla de frente en todo el almuerzo.",
+        "targetWord": "de frente",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bbd24d5c25d7aaa9.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/badeae5e50ab737e7a23.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "gasto",
+    "sentence": "Habla del _____ y de la chapa que se calienta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gasto",
+      "options": [
+        "gasto",
+        "plato",
+        "año",
+        "almuerzo"
+      ],
+      "translation": "He talks about the _____ and the metal sheet that heats up.",
+      "optionTranslations": [
+        "cost",
+        "plate",
+        "year",
+        "lunch"
+      ],
+      "audioClip": {
+        "storySlug": "el-mismo-pan-dulce",
+        "storySource": "journey",
+        "sentence": "Habla del gasto y de la chapa que se calienta.",
+        "targetWord": "gasto",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4cf7edf33b980e5e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "almuerzo",
+    "sentence": "No vuelve a mirarla de frente en todo el [[almuerzo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the lunch",
+      "options": [
+        "the lunch",
+        "the morning",
+        "the shift",
+        "the week"
+      ],
+      "audioClip": {
+        "storySlug": "el-mismo-pan-dulce",
+        "storySource": "journey",
+        "sentence": "No vuelve a mirarla de frente en todo el almuerzo.",
+        "targetWord": "almuerzo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/b676ee9a7574e35fe26b.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gas",
+    "sentence": "Él habla del horno nuevo y del [[gas]] que gasta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the gas",
+      "options": [
+        "the gas",
+        "the flour",
+        "the queue",
+        "the recipe"
+      ],
+      "audioClip": {
+        "storySlug": "el-mismo-pan-dulce",
+        "storySource": "journey",
+        "sentence": "Él habla del horno nuevo y del gas que gasta.",
+        "targetWord": "gas",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/afbd84d1fabba26f80fc.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "igualito",
+    "sentence": "“Está buenísimo. [[Igualito]] al mío”, le suelta ella.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "exactly like",
+      "options": [
+        "exactly like",
+        "much better than",
+        "nothing like",
+        "cheaper than"
+      ],
+      "audioClip": {
+        "storySlug": "el-mismo-pan-dulce",
+        "storySource": "journey",
+        "sentence": "“Está buenísimo. Igualito al mío”, le suelta ella.",
+        "targetWord": "igualito",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f2acce0063ace92e1305.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plato",
+    "sentence": "Los [[platos]] quedan puestos y nadie se levanta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the plates",
+      "options": [
+        "the plates",
+        "the chairs",
+        "the bags",
+        "the ovens"
+      ],
+      "audioClip": {
+        "storySlug": "el-mismo-pan-dulce",
+        "storySource": "journey",
+        "sentence": "Los platos quedan puestos y nadie se levanta.",
+        "targetWord": "plato",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2befb198c27bf4dcc5d1.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "año",
+    "sentence": "“Yo le puse las nueces el [[año]] pasado”, dice Silvana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "year",
+      "options": [
+        "year",
+        "Sunday",
+        "summer",
+        "month"
+      ],
+      "audioClip": {
+        "storySlug": "el-mismo-pan-dulce",
+        "storySource": "journey",
+        "sentence": "“Yo le puse las nueces el año pasado”, dice Silvana.",
+        "targetWord": "año",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f3e46e920d8af206ec9c.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cosa",
+    "sentence": "Habla de cualquier [[cosa]] que no sea la receta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "anything",
+      "options": [
+        "anything",
+        "nobody",
+        "somewhere",
+        "sometimes"
+      ],
+      "audioClip": {
+        "storySlug": "el-mismo-pan-dulce",
+        "storySource": "journey",
+        "sentence": "Habla de cualquier cosa que no sea la receta.",
+        "targetWord": "cosa",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/abec83b161572da3a12f.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nuevo",
+    "sentence": "Él habla del horno [[nuevo]] para no hablar del pan.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "new",
+      "options": [
+        "new",
+        "broken",
+        "cold",
+        "borrowed"
+      ],
+      "audioClip": {
+        "storySlug": "el-mismo-pan-dulce",
+        "storySource": "journey",
+        "sentence": "Él habla del horno nuevo para no hablar del pan.",
+        "targetWord": "nuevo",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/80493be6bdcc1fd90b25.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    },
+    "featured": false
+  }
+]

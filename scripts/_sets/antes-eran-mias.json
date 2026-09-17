@@ -1,0 +1,467 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "vereda,vidriera,mate,pan dulce",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "vereda",
+          "answer": "the pavement, in Argentine Spanish",
+          "options": [
+            "the pavement, in Argentine Spanish",
+            "the shop window",
+            "the bitter herb drink of the north",
+            "the sweet holiday bread"
+          ]
+        },
+        {
+          "word": "vidriera",
+          "answer": "the shop window",
+          "options": [
+            "the pavement, in Argentine Spanish",
+            "the shop window",
+            "the bitter herb drink of the north",
+            "the sweet holiday bread"
+          ]
+        },
+        {
+          "word": "mate",
+          "answer": "the bitter herb drink of the north",
+          "options": [
+            "the pavement, in Argentine Spanish",
+            "the shop window",
+            "the bitter herb drink of the north",
+            "the sweet holiday bread"
+          ]
+        },
+        {
+          "word": "pan dulce",
+          "answer": "the sweet holiday bread",
+          "options": [
+            "the pavement, in Argentine Spanish",
+            "the shop window",
+            "the bitter herb drink of the north",
+            "the sweet holiday bread"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "amasa",
+    "sentence": "Nazario _____ al lado y no dice nada.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "amasa",
+      "options": [
+        "amasa",
+        "cobra",
+        "cruza",
+        "toca"
+      ],
+      "translation": "Nazario _____ beside him and says nothing.",
+      "optionTranslations": [
+        "kneads",
+        "charges",
+        "crosses",
+        "touches"
+      ],
+      "audioClip": {
+        "storySlug": "antes-eran-mias",
+        "storySource": "journey",
+        "sentence": "Nazario amasa al lado y no dice nada.",
+        "targetWord": "amasa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/06ce8981f41d0930.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "masa",
+    "sentence": "Cuenta las bolsas con las manos en la [[masa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the dough",
+      "options": [
+        "the dough",
+        "the window",
+        "the counter",
+        "the money"
+      ],
+      "audioClip": {
+        "storySlug": "antes-eran-mias",
+        "storySource": "journey",
+        "sentence": "Cuenta las bolsas con las manos en la masa.",
+        "targetWord": "masa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2331693b7d92670a.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/6fb06df308c86b773504.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuñada",
+    "sentence": "Su [[cuñada]] vende el doble que él desde hace dos años.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "his sister-in-law",
+      "options": [
+        "his sister-in-law",
+        "his assistant",
+        "his neighbour",
+        "his daughter"
+      ],
+      "audioClip": {
+        "storySlug": "antes-eran-mias",
+        "storySource": "journey",
+        "sentence": "Su cuñada vende el doble que él desde hace dos años.",
+        "targetWord": "cuñada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9698433629c065cc.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/e5a6f789002b3bbdb332.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ayudante",
+    "sentence": "Nazario es su [[ayudante]] desde hace cinco años.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "his assistant",
+      "options": [
+        "his assistant",
+        "his brother",
+        "his landlord",
+        "his customer"
+      ],
+      "audioClip": {
+        "storySlug": "antes-eran-mias",
+        "storySource": "journey",
+        "sentence": "Nazario es su ayudante desde hace cinco años.",
+        "targetWord": "ayudante",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/82ac6a908d5153c9.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/094e7e646bac876bbb51.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cruza",
+    "sentence": "La gente _____ la calle sin mirar la vidriera de acá.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cruza",
+      "options": [
+        "cruza",
+        "amasa",
+        "cobra",
+        "toca"
+      ],
+      "translation": "People _____ the street without looking at the window on this side.",
+      "optionTranslations": [
+        "cross",
+        "knead",
+        "charge",
+        "touch"
+      ],
+      "audioClip": {
+        "storySlug": "antes-eran-mias",
+        "storySource": "journey",
+        "sentence": "La gente cruza la calle sin mirar la vidriera de acá.",
+        "targetWord": "cruza",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d715d3fd0314835c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "envidia",
+    "sentence": "Adrián no dice [[envidia]] en toda la noche.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "envy",
+      "options": [
+        "envy",
+        "hunger",
+        "tiredness",
+        "shame"
+      ],
+      "audioClip": {
+        "storySlug": "antes-eran-mias",
+        "storySource": "journey",
+        "sentence": "Adrián no dice envidia en toda la noche.",
+        "targetWord": "envidia",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c7ac79fb2dc3258a.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/a165506e24674514bf92.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en voz baja",
+    "sentence": "“Once”, cuenta Adrián [[en voz baja]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "under his breath",
+      "options": [
+        "under his breath",
+        "out of the window",
+        "at the door",
+        "to the customers"
+      ],
+      "audioClip": {
+        "storySlug": "antes-eran-mias",
+        "storySource": "journey",
+        "sentence": "“Once”, cuenta Adrián en voz baja.",
+        "targetWord": "en voz baja",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4fd2f0f9d7a2bd28.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2ece5c9a9bd767183b26.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "razón",
+    "sentence": "Decirlo sería darle la [[razón]] a ella.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "admitting she is right",
+      "options": [
+        "admitting she is right",
+        "giving her the money",
+        "asking her for help",
+        "telling her the recipe"
+      ],
+      "audioClip": {
+        "storySlug": "antes-eran-mias",
+        "storySource": "journey",
+        "sentence": "Decirlo sería darle la razón a ella.",
+        "targetWord": "razón",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7f73b9f8bca294e6.mp3",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/cab27ed004025d79250e.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tocar",
+    "sentence": "El cayote se queda ahí sin _____ hasta las nueve.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tocar",
+      "options": [
+        "tocar",
+        "amasar",
+        "cruzar",
+        "cobrar"
+      ],
+      "translation": "The squash jam sits there without being _____ until nine.",
+      "optionTranslations": [
+        "touched",
+        "kneaded",
+        "crossed",
+        "charged"
+      ],
+      "audioClip": {
+        "storySlug": "antes-eran-mias",
+        "storySource": "journey",
+        "sentence": "El cayote se queda ahí sin tocar hasta las nueve.",
+        "targetWord": "tocar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8917035089802041.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frío",
+    "sentence": "Cuenta las bolsas con el mate [[frío]] al lado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gone cold",
+      "options": [
+        "gone cold",
+        "freshly made",
+        "very sweet",
+        "half full"
+      ],
+      "audioClip": {
+        "storySlug": "antes-eran-mias",
+        "storySource": "journey",
+        "sentence": "Cuenta las bolsas con el mate frío al lado.",
+        "targetWord": "frío",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/7d9676b3af8c9b32a9b8.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ventana",
+    "sentence": "Desde la [[ventana]] se ven las bolsas de allá.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the window",
+      "options": [
+        "the window",
+        "the door",
+        "the counter",
+        "the oven"
+      ],
+      "audioClip": {
+        "storySlug": "antes-eran-mias",
+        "storySource": "journey",
+        "sentence": "Desde la ventana se ven las bolsas de allá.",
+        "targetWord": "ventana",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/eb0f255f3a4c648a5273.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "panadería",
+    "sentence": "Adrián trabaja de noche en una [[panadería]] de esquina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bakery",
+      "options": [
+        "a bakery",
+        "a cafe",
+        "a market",
+        "a workshop"
+      ],
+      "audioClip": {
+        "storySlug": "antes-eran-mias",
+        "storySource": "journey",
+        "sentence": "Adrián trabaja de noche en una panadería de esquina.",
+        "targetWord": "panadería",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/21539e44dd4bcf514b72.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bolsa",
+    "sentence": "Once [[bolsas]] salen de allá en media hora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bags",
+      "options": [
+        "bags",
+        "loaves",
+        "coins",
+        "customers"
+      ],
+      "audioClip": {
+        "storySlug": "antes-eran-mias",
+        "storySource": "journey",
+        "sentence": "Once bolsas salen de allá en media hora.",
+        "targetWord": "bolsa",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/bb2e6acac5bf8fd84e97.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "harina",
+    "sentence": "“Pasame la [[harina]]”, corta Nazario sin levantar la vista.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the flour",
+      "options": [
+        "the flour",
+        "the water",
+        "the tray",
+        "the knife"
+      ],
+      "audioClip": {
+        "storySlug": "antes-eran-mias",
+        "storySource": "journey",
+        "sentence": "“Pasame la harina”, corta Nazario sin levantar la vista.",
+        "targetWord": "harina",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/51d0671819e2aff27080.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "media hora",
+    "sentence": "Once bolsas en [[media hora]], y antes eran cuatro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "half an hour",
+      "options": [
+        "half an hour",
+        "half a day",
+        "a whole night",
+        "a week"
+      ],
+      "audioClip": {
+        "storySlug": "antes-eran-mias",
+        "storySource": "journey",
+        "sentence": "Once bolsas en media hora, y antes eran cuatro.",
+        "targetWord": "media hora",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/323d5600e1cafaccc348.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sábado",
+    "sentence": "Los [[sábados]] eran suyos antes de que ella cambiara la masa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Saturdays",
+      "options": [
+        "Saturdays",
+        "mornings",
+        "winters",
+        "holidays"
+      ],
+      "audioClip": {
+        "storySlug": "antes-eran-mias",
+        "storySource": "journey",
+        "sentence": "Los sábados eran suyos antes de que ella cambiara la masa.",
+        "targetWord": "sábado",
+        "language": "spanish",
+        "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/3a521ecc5168646d31e3.mp3",
+        "wordVoiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    },
+    "featured": false
+  }
+]
