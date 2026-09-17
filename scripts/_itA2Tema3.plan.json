@@ -1,0 +1,34 @@
+{
+  "tipo": "Traveler",
+  "nivel": "A2",
+  "variante": "italy",
+  "registro": "cotidiano, claro, práctico",
+  "espina": "Teo y Rosa aprenden a bajar la tensión cuando una habitación no es perfecta y a convertirla en una base cómoda de viaje.",
+  "recursos": "camera, letto, bagno, acqua lenta, frase sulla porta, ritorno serale",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "descansar en una habitación sencilla",
+      "impide": "el letto parece demasiado duro",
+      "cuesta": "Teo tiene que aceptar una solución pequeña",
+      "cambia": "la habitación deja de ser un problema y se vuelve usable",
+      "emocion": "alivio"
+    },
+    {
+      "slot": "2",
+      "quiere": "prepararse para salir por la mañana",
+      "impide": "el bagno funciona lentamente",
+      "cuesta": "esperan en vez de reclamar de inmediato",
+      "cambia": "entienden el ritmo de la casa",
+      "emocion": "humor"
+    },
+    {
+      "slot": "3",
+      "quiere": "salir tranquilos y saber volver",
+      "impide": "la puerta tiene una regla simple que deben leer",
+      "cuesta": "Teo tiene que observar antes de actuar",
+      "cambia": "la stanza se convierte en una base segura",
+      "emocion": "calma"
+    }
+  ]
+}

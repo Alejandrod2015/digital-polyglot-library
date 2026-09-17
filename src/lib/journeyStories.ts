@@ -126,6 +126,7 @@ function readerStatusWhere() {
     "cmt70xfyt000l3283gxd70wck", // Traveler ES A2 spain (en obra, 2026-08)
     "cmu0dpa3i0007j80ugstn0jf0", // Friends IT A0 italy (narracion en curso, 2026-09)
     "cmu36dk1d0007j8p7grgcyiok", // Friends ES A2 spain (narracion en curso, 2026-09)
+    "cmt5wqsf7000032ghesowd0jy", // Traveler IT A2 italy (en obra, 2026-09)
   ];
   return process.env.NODE_ENV !== "production"
     ? { OR: [{ status: "published" as const }, { journeyId: { in: PREVIEW_JOURNEY_IDS } }] }

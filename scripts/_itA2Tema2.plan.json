@@ -1,0 +1,34 @@
+{
+  "tipo": "Traveler",
+  "nivel": "A2",
+  "variante": "italy",
+  "registro": "cotidiano, claro, práctico",
+  "espina": "Teo y Rosa aprenden a usar el teléfono como una herramienta de viaje, no como el centro del viaje.",
+  "recursos": "bar, teléfono, horario, librería, puente, llamada breve",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "confirmar la habitación y seguir el viaje",
+      "impide": "el teléfono falla con un dato pequeño",
+      "cuesta": "tienen que parar quince minutos y no ponerse nerviosos",
+      "cambia": "Teo acepta que una pausa también resuelve",
+      "emocion": "alivio"
+    },
+    {
+      "slot": "2",
+      "quiere": "guardar un horario de autobús",
+      "impide": "la foto sale gris y poco clara",
+      "cuesta": "dejan de insistir con el teléfono",
+      "cambia": "aceptan una solución más simple con papel y penna",
+      "emocion": "humor"
+    },
+    {
+      "slot": "3",
+      "quiere": "hacer una llamada familiar antes de cenar",
+      "impide": "el teléfono prende solo en el puente",
+      "cuesta": "Teo limita la llamada a tres frases",
+      "cambia": "el teléfono vuelve al zaino y la cena recupera el centro",
+      "emocion": "calma"
+    }
+  ]
+}

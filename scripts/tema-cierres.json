@@ -1,4 +1,269 @@
 {
+  "cmt5wqsf7000032ghesowd0jy#forest-and-hiking": {
+    "cerrado": "2026-09-12T17:35:14.988Z",
+    "hash": "91e8f757ae5553e1",
+    "historias": [
+      "forest-and-hiking#1 il-sentiero-basso",
+      "forest-and-hiking#2 la-nebbia-leggera",
+      "forest-and-hiking#3 il-rifugio-apre"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"cotidiano, claro, práctico\", espina \"Teo y Rosa aprenden que caminar en Italia no es llegar rápido, sino leer el ritmo del lugar.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"ammette\" 20%)",
+      "arranques de parrafo variados (mas repetido \"teo\", 38%)",
+      "densidad 8.4 palabras por oracion (techo 13 en a2)",
+      "seguidilla 16/39 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.08 encuentros por plaza (ideal 4, liston de los buenos 1.3) · 56/61 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en IT no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "A2",
+      "variante": "italy",
+      "registro": "cotidiano, claro, práctico",
+      "espina": "Teo y Rosa aprenden que caminar en Italia no es llegar rápido, sino leer el ritmo del lugar.",
+      "recursos": "sentiero, nebbia, fattoria, lago, rifugio, pausa con panini",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "llegar rápido al rifugio",
+          "impide": "el sentiero pide un ritmo más lento",
+          "cuesta": "Teo debe soltar la prisa familiar",
+          "cambia": "acepta caminar paso a paso",
+          "emocion": "alivio"
+        },
+        {
+          "slot": "2",
+          "quiere": "seguir la ruta sin perderse",
+          "impide": "la nebbia hace que el camino parezca menos claro",
+          "cuesta": "Teo debe confiar en señales simples",
+          "cambia": "la paura se vuelve pequeña y casi cómica",
+          "emocion": "humor"
+        },
+        {
+          "slot": "3",
+          "quiere": "comer apenas llega al rifugio",
+          "impide": "la cucina todavía no está lista",
+          "cuesta": "Teo espera sin convertirlo en problema",
+          "cambia": "entiende que la pausa también es parte del viaje",
+          "emocion": "calma"
+        }
+      ]
+    },
+    "avisos": [
+      "registro repetido: los dos temas anteriores de este journey tambien se cerraron con \"cotidiano, claro, práctico\". Tres seguidos con el mismo tono no es una voz, es una decision que no se tomo."
+    ]
+  },
+  "cmt5wqsf7000032ghesowd0jy#phones-and-signal": {
+    "cerrado": "2026-09-12T16:56:42.320Z",
+    "hash": "42cfc75ced37a40e",
+    "historias": [
+      "phones-and-signal#1 quindici-minuti",
+      "phones-and-signal#2 la-foto-grigia",
+      "phones-and-signal#3 tre-frasi"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"cotidiano, claro, práctico\", espina \"Teo y Rosa aprenden a usar el teléfono como una herramienta de viaje, no como el centro del viaje.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 88% (solo avisa)",
+      "acotacion dominante bajo tope (\"risponde\" 38%)",
+      "arranques de parrafo variados (mas repetido \"teo\", 17%)",
+      "densidad 6.6 palabras por oracion (techo 13 en a2)",
+      "seguidilla 13/43 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.18 encuentros por plaza (ideal 4, liston de los buenos 1.3) · 50/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en IT no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "A2",
+      "variante": "italy",
+      "registro": "cotidiano, claro, práctico",
+      "espina": "Teo y Rosa aprenden a usar el teléfono como una herramienta de viaje, no como el centro del viaje.",
+      "recursos": "bar, teléfono, horario, librería, puente, llamada breve",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "confirmar la habitación y seguir el viaje",
+          "impide": "el teléfono falla con un dato pequeño",
+          "cuesta": "tienen que parar quince minutos y no ponerse nerviosos",
+          "cambia": "Teo acepta que una pausa también resuelve",
+          "emocion": "alivio"
+        },
+        {
+          "slot": "2",
+          "quiere": "guardar un horario de autobús",
+          "impide": "la foto sale gris y poco clara",
+          "cuesta": "dejan de insistir con el teléfono",
+          "cambia": "aceptan una solución más simple con papel y penna",
+          "emocion": "humor"
+        },
+        {
+          "slot": "3",
+          "quiere": "hacer una llamada familiar antes de cenar",
+          "impide": "el teléfono prende solo en el puente",
+          "cuesta": "Teo limita la llamada a tres frases",
+          "cambia": "el teléfono vuelve al zaino y la cena recupera el centro",
+          "emocion": "calma"
+        }
+      ]
+    }
+  },
+  "cmt5wqsf7000032ghesowd0jy#roads-and-driving": {
+    "cerrado": "2026-09-12T16:50:05.412Z",
+    "hash": "9794dd5875f71829",
+    "historias": [
+      "roads-and-driving#1 davanti-allhotel",
+      "roads-and-driving#2 la-strada-ruvida",
+      "roads-and-driving#3 la-pausa-verde"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"cotidiano, claro, sin argot\", espina \"Marco y Chiara aprenden a viajar en coche sin convertir cada pequeño problema en una aventura enorme.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"marco\", 23%)",
+      "densidad 8.4 palabras por oracion (techo 13 en a2)",
+      "seguidilla 12/40 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 1.10 encuentros por plaza (ideal 4, liston de los buenos 1.3) · 56/60 salen una sola vez · sin marcar ancladas",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en IT no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "A2",
+      "variante": "italy",
+      "registro": "cotidiano, claro, sin argot",
+      "espina": "Marco y Chiara aprenden a viajar en coche sin convertir cada pequeño problema en una aventura enorme.",
+      "recursos": "coche, hotel, carretera, pausa de viaje, decisiones simples",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "dejar el coche bien al llegar al hotel",
+          "impide": "no están seguros de dónde se puede aparcar",
+          "cuesta": "tienen que preguntar y moverse con calma",
+          "cambia": "entienden que pedir ayuda evita ansiedad",
+          "emocion": "alivio"
+        },
+        {
+          "slot": "2",
+          "quiere": "tomar una ruta bonita fuera de la autostrada",
+          "impide": "la carretera es más lenta y ruvida de lo esperado",
+          "cuesta": "aceptan ir despacio en lugar de corregir todo",
+          "cambia": "la ruta imperfecta deja de ser un error",
+          "emocion": "confianza"
+        },
+        {
+          "slot": "3",
+          "quiere": "hacer una pausa antes de seguir viaje",
+          "impide": "no hay una comida especial ni un plan perfecto",
+          "cuesta": "renuncian a llegar rápido al centro",
+          "cambia": "eligen un ritmo más humano para continuar",
+          "emocion": "calma"
+        }
+      ]
+    }
+  },
+  "cmt5wqsf7000032ghesowd0jy#rooms-and-keys": {
+    "cerrado": "2026-09-12T17:16:30.471Z",
+    "hash": "5e2c97524c0acb49",
+    "historias": [
+      "rooms-and-keys#1 il-letto-duro",
+      "rooms-and-keys#2 il-bagno-lento",
+      "rooms-and-keys#3 la-frase-piccola"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"cotidiano, claro, práctico\", espina \"Teo y Rosa aprenden a bajar la tensión cuando una habitación no es perfecta y a convertirla en una base cómoda de viaje.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"osserva\" 29%)",
+      "arranques de parrafo variados (mas repetido \"teo\", 27%)",
+      "densidad 8.2 palabras por oracion (techo 13 en a2)",
+      "seguidilla 14/42 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-worth-teaching: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Solo hay lexico graduado hasta C1 en espanol; en IT no se puede medir la utilidad de una plaza.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "A2",
+      "variante": "italy",
+      "registro": "cotidiano, claro, práctico",
+      "espina": "Teo y Rosa aprenden a bajar la tensión cuando una habitación no es perfecta y a convertirla en una base cómoda de viaje.",
+      "recursos": "camera, letto, bagno, acqua lenta, frase sulla porta, ritorno serale",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "descansar en una habitación sencilla",
+          "impide": "el letto parece demasiado duro",
+          "cuesta": "Teo tiene que aceptar una solución pequeña",
+          "cambia": "la habitación deja de ser un problema y se vuelve usable",
+          "emocion": "alivio"
+        },
+        {
+          "slot": "2",
+          "quiere": "prepararse para salir por la mañana",
+          "impide": "el bagno funciona lentamente",
+          "cuesta": "esperan en vez de reclamar de inmediato",
+          "cambia": "entienden el ritmo de la casa",
+          "emocion": "humor"
+        },
+        {
+          "slot": "3",
+          "quiere": "salir tranquilos y saber volver",
+          "impide": "la puerta tiene una regla simple que deben leer",
+          "cuesta": "Teo tiene que observar antes de actuar",
+          "cambia": "la stanza se convierte en una base segura",
+          "emocion": "calma"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
+  },
   "cmt5x67ze000l320cpgunu5vi#deals-and-estimates": {
     "cerrado": "2026-09-11T07:14:15.859Z",
     "hash": "18d0b19357eb8db4",

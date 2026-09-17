@@ -1,0 +1,348 @@
+[
+  {
+    "topic": "phones-and-signal",
+    "slotIndex": 1,
+    "title": "Quindici minuti",
+    "slug": "quindici-minuti",
+    "arcType": "daily-encounter",
+    "synopsis": "Teo e Rosa entrano in un bar per confermare l'arrivo senza trasformare il telefono in un problema. La storia è leggera perché la difficoltà resta piccola: copiare un numero, correggere una lettera, aspettare pochi minuti, bere qualcosa e poi tornare alla strada con calma insieme.",
+    "text": "Dalla finestra del bar entra una luce calma. Teo è un ragazzo di Torino e posa il telefono con una faccia seria.\n\nChi conta è Rosa, con un dito sul bicchiere. “Quindici minuti, poi torniamo in strada.”\n\nTeo copia un numero sulla tastiera. Sbaglia una lettera, aspetta un secondo e riprova. Il messaggio non parte, ma il telefono non è morto.\n\n“È una cosa piccola”, aggiunge Rosa. “Non serve correre, e non serve fare quella faccia.”\n\nTeo guarda il menù verde e trova la riga giusta. Scrive di nuovo, più lento del solito. Questa volta arriva una risposta dall'albergo.\n\n“Camera confermata”, domanda lui. “Siamo veloci?”\n\n“Siamo abbastanza veloci”, risponde Rosa. “E siamo ancora seduti, che è meglio. Il telefono ha capito anche senza paura.”\n\nFuori passa un autobus. Teo mette il telefono nella borsa e prende il biglietto per la fermata vicina. Prima di uscire beve un sorso d'acqua e respira.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "finestra",
+        "definition": "a glass opening in a wall for air and light"
+      },
+      {
+        "type": "noun",
+        "word": "faccia",
+        "definition": "the front part of the head with eyes and mouth"
+      },
+      {
+        "type": "noun",
+        "word": "quindici",
+        "definition": "the number that comes after fourteen and before sixteen"
+      },
+      {
+        "type": "noun",
+        "word": "minuto",
+        "surface": "minuti",
+        "definition": "one of the sixty small parts of an hour"
+      },
+      {
+        "type": "noun",
+        "word": "numero",
+        "definition": "a sign or word that shows how many things"
+      },
+      {
+        "type": "noun",
+        "word": "tastiera",
+        "definition": "the keys used to write on a phone or computer"
+      },
+      {
+        "type": "noun",
+        "word": "lettera",
+        "definition": "one written sign used to make a word"
+      },
+      {
+        "type": "noun",
+        "word": "secondo",
+        "definition": "one of the sixty small parts of a minute"
+      },
+      {
+        "type": "adjective",
+        "word": "piccolo",
+        "surface": "piccola",
+        "definition": "small in size, amount, or importance for today"
+      },
+      {
+        "type": "verb",
+        "word": "correre",
+        "definition": "to run or move very fast on foot"
+      },
+      {
+        "type": "noun",
+        "word": "menù",
+        "definition": "a list of food and drinks in a bar or restaurant"
+      },
+      {
+        "type": "adjective",
+        "word": "verde",
+        "definition": "the color of grass, leaves, and many plants"
+      },
+      {
+        "type": "adjective",
+        "word": "lento",
+        "definition": "slow, not moving or happening very fast today"
+      },
+      {
+        "type": "noun",
+        "word": "risposta",
+        "definition": "an answer to a question, message, or problem"
+      },
+      {
+        "type": "adjective",
+        "word": "veloce",
+        "surface": "veloci",
+        "definition": "fast, moving or happening in very little time"
+      },
+      {
+        "type": "adverb",
+        "word": "abbastanza",
+        "definition": "enough, or as much as a person needs"
+      },
+      {
+        "type": "adjective",
+        "word": "seduto",
+        "surface": "seduti",
+        "definition": "sitting, with the body on a chair or seat"
+      },
+      {
+        "type": "adverb",
+        "word": "meglio",
+        "definition": "better, in a more useful or good way"
+      },
+      {
+        "type": "noun",
+        "word": "fermata",
+        "definition": "a place where a bus or tram stops"
+      },
+      {
+        "type": "verb",
+        "word": "bere",
+        "surface": "beve",
+        "definition": "to drink water, coffee, or another liquid slowly"
+      }
+    ]
+  },
+  {
+    "topic": "phones-and-signal",
+    "slotIndex": 2,
+    "title": "La foto grigia",
+    "slug": "la-foto-grigia",
+    "arcType": "reframe-turn",
+    "synopsis": "Rosa prova a fotografare un orario in una libreria, ma l'immagine resta poco chiara e Teo vorrebbe insistere con il telefono. Una studentessa propone carta e penna. La scena funziona perché la soluzione meno moderna è anche quella più utile, più umana e più veloce.",
+    "text": "La libreria è fresca e quasi vuota. Sulla parete c'è un orario dell'autobus, ma la foto di Rosa resta grigia.\n\nTeo alza il telefono. “Aspetta. Provo da questa sedia.”\n\n“Da quella sedia diventa solo più brutta”, risponde Rosa.\n\nUna studentessa apre un quaderno e prende una penna blu. “Posso scrivere le ore.”\n\nTeo guarda il telefono, poi guarda lei. “Va bene. Oggi il telefono perde.”\n\nLa studentessa scrive: nove, dieci, dodici.\n\nPoi aggiunge una domanda: mercato o piazza? Rosa indica la piazza con il dito.\n\n“Piazza, e grazie. Così non perdiamo il prossimo autobus della sera.”\n\nFuori, il sole cade sulla strada. Teo mette il foglio nella borsa vuota, vicino al libro, e aspetta quasi un minuto.\n\n“Questa tecnologia si chiama penna”, chiede lui.\n\n“E funziona”, risponde Rosa.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "libreria",
+        "definition": "a shop where people buy books and notebooks"
+      },
+      {
+        "type": "adverb",
+        "word": "vicino",
+        "definition": "near, not far from a person or thing"
+      },
+      {
+        "type": "noun",
+        "word": "sera",
+        "definition": "the part of the day after afternoon and before night"
+      },
+      {
+        "type": "noun",
+        "word": "autobus",
+        "definition": "a large road vehicle that carries many people"
+      },
+      {
+        "type": "adjective",
+        "word": "grigio",
+        "surface": "grigia",
+        "definition": "the color between white and black in a picture"
+      },
+      {
+        "type": "noun",
+        "word": "sedia",
+        "definition": "a seat for one person with a back"
+      },
+      {
+        "type": "adjective",
+        "word": "brutto",
+        "surface": "brutta",
+        "definition": "not nice to see, hear, or use today"
+      },
+      {
+        "type": "noun",
+        "word": "studentessa",
+        "definition": "a female student in school or at university"
+      },
+      {
+        "type": "noun",
+        "word": "quaderno",
+        "definition": "a book with empty pages for writing notes"
+      },
+      {
+        "type": "noun",
+        "word": "penna",
+        "definition": "a small tool used to write with ink"
+      },
+      {
+        "type": "adjective",
+        "word": "blu",
+        "definition": "the color of a clear sky or deep sea"
+      },
+      {
+        "type": "noun",
+        "word": "telefono",
+        "definition": "a phone used to call or send messages"
+      },
+      {
+        "type": "noun",
+        "word": "nove",
+        "definition": "the number that comes after eight and before ten"
+      },
+      {
+        "type": "noun",
+        "word": "dieci",
+        "definition": "the number that comes after nine and before eleven"
+      },
+      {
+        "type": "noun",
+        "word": "dodici",
+        "definition": "the number that comes after eleven and before thirteen"
+      },
+      {
+        "type": "noun",
+        "word": "domanda",
+        "definition": "a question that asks for an answer from someone"
+      },
+      {
+        "type": "noun",
+        "word": "piazza",
+        "definition": "an open public place in a town or city"
+      },
+      {
+        "type": "adjective",
+        "word": "vuoto",
+        "surface": "vuota",
+        "definition": "empty, with nothing or almost nothing inside it"
+      },
+      {
+        "type": "verb",
+        "word": "aspettare",
+        "surface": "aspetta",
+        "definition": "to stay somewhere until time passes or things happen"
+      },
+      {
+        "type": "adverb",
+        "word": "quasi",
+        "definition": "almost, but not completely or not exactly today"
+      }
+    ]
+  },
+  {
+    "topic": "phones-and-signal",
+    "slotIndex": 3,
+    "title": "Tre frasi",
+    "slug": "tre-frasi",
+    "arcType": "harmonic-close",
+    "synopsis": "Teo deve fare una chiamata prima di cena, ma il telefono prende solo sul ponte. Rosa gli propone una regola semplice: dire tre frasi e poi rimettere via lo schermo. La chiusura è buona perché il telefono torna a essere uno strumento, non il centro della serata.",
+    "text": "Sul ponte la notte porta freddo sulla mano. Teo controlla il telefono: una linea sola. Deve chiamare la zia prima di cena.\n\nRosa guarda l'acqua scura sotto di loro. “Tre frasi. Siamo arrivati, stiamo bene, mangiamo tardi.”\n\n“E se lei parla mezz'ora?” chiede Teo.\n\n“Allora tu resti gentile, ma corto.”\n\nTeo si mette nel punto più alto. Una nuvola copre il cielo, poi il telefono prende. La zia risponde subito.\n\n“Ciao. Tutto bene”, chiede lui. “Siamo in città. Domani scrivo.”\n\nRosa conta con quattro dita e sorride. Teo ascolta ancora un secondo, poi chiude la chiamata con calma, come sempre chiede lei.\n\n“Quasi tre frasi”, chiede Teo.\n\n“Abbastanza. Adesso telefono nello zaino.”\n\nLui obbedisce. Per una volta, lo schermo resta nero e la cena viene prima. I due tornano verso le luci del paese.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "freddo",
+        "definition": "low temperature that people can feel on the body"
+      },
+      {
+        "type": "noun",
+        "word": "ponte",
+        "definition": "a road or path over water or another road"
+      },
+      {
+        "type": "adjective",
+        "word": "scuro",
+        "surface": "scura",
+        "definition": "dark, with little light or color around them"
+      },
+      {
+        "type": "noun",
+        "word": "tre",
+        "definition": "the number that comes after two and before four"
+      },
+      {
+        "type": "adverb",
+        "word": "bene",
+        "definition": "well, in a good or correct way today"
+      },
+      {
+        "type": "adverb",
+        "word": "tardi",
+        "definition": "late, after the expected or usual time today"
+      },
+      {
+        "type": "adjective",
+        "word": "gentile",
+        "definition": "kind and polite to other people in speech"
+      },
+      {
+        "type": "noun",
+        "word": "metà",
+        "surface": "mezz'ora",
+        "definition": "one of two equal parts of something whole"
+      },
+      {
+        "type": "adverb",
+        "word": "solo",
+        "surface": "sola",
+        "definition": "only one, or without other people or things"
+      },
+      {
+        "type": "adjective",
+        "word": "alto",
+        "definition": "high or tall compared with other things nearby"
+      },
+      {
+        "type": "adverb",
+        "word": "subito",
+        "definition": "immediately, with no wait or delay at all"
+      },
+      {
+        "type": "adjective",
+        "word": "tutto",
+        "definition": "all of something, with nothing left outside it"
+      },
+      {
+        "type": "noun",
+        "word": "quattro",
+        "definition": "the number that comes after three and before five"
+      },
+      {
+        "type": "verb",
+        "word": "ascoltare",
+        "surface": "ascolta",
+        "definition": "to hear someone or something with real attention"
+      },
+      {
+        "type": "noun",
+        "word": "zaino",
+        "definition": "a bag people carry on their back outside"
+      },
+      {
+        "type": "adverb",
+        "word": "abbastanza",
+        "definition": "enough, or as much as a person needs"
+      },
+      {
+        "type": "adverb",
+        "word": "sempre",
+        "definition": "always, at all times or every single time"
+      },
+      {
+        "type": "adverb",
+        "word": "poi",
+        "definition": "then, after another action or moment in time"
+      },
+      {
+        "type": "adjective",
+        "word": "nero",
+        "definition": "the color of night or very dark things"
+      },
+      {
+        "type": "noun",
+        "word": "paese",
+        "definition": "a small town or village where people live"
+      }
+    ]
+  }
+]

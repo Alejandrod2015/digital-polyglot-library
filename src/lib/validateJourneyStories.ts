@@ -144,10 +144,11 @@ const HABLA_POR_IDIOMA: Record<string, string> = {
       "cuenta|conto|contó|explica|explico|explicó|repite|repitio|repitió|avisa|aviso|avisó|" +
       "grita|grito|gritó|llama|llamo|llamó|pide|pidio|pidió|insiste|insistio|insistió|" +
       "agrega|agrego|agregó|escribe|escribio|escribió|suelta|solto|soltó|corrige|corrigio|corrigió",
-  // Italiano (2026-09-14, Friends IT A0 de Genova). Sin esta lista castOf caia
-  // en la alemana y el reparto salia VACIO, el mismo fallo de PT, FR y ES. Solo
-  // presente: el suelo A0 italiano no admite pasado en la narracion.
-  IT: "dice|chiede|domanda|risponde|aggiunge|spiega|ripete|grida|urla|scrive|racconta|promette|ride|chiama|propone|legge|sussurra|continua|conferma|saluta",
+  // Italiano (2026-09-14, Friends IT A0 de Genova; ampliado 2026-09-17 con el
+  // IT A2). Sin esta lista castOf caia en la alemana y el reparto salia
+  // VACIO, el mismo fallo de PT, FR y ES. Union de los verbos de habla del A0
+  // (presente, suelo A0) y los que anadio el A2 (corregge, decide, indica).
+  IT: "dice|chiede|domanda|risponde|aggiunge|spiega|ripete|grida|urla|scrive|racconta|promette|ride|chiama|propone|legge|sussurra|continua|conferma|saluta|corregge|decide|indica",
 };
 function castOf(stories: JourneyStoryInput[], lang: string): string[] {
   const HABLA = HABLA_POR_IDIOMA[lang] ?? HABLA_POR_IDIOMA.DE;
@@ -287,22 +288,28 @@ const FORMAS_ES: Array<[string, (n: string) => RegExp]> = [
 ];
 
 /**
- * Las tres formas aprobadas en ITALIANO (2026-09-14), las mismas tres de
- * [[feedback_introduce_characters]]:
+ * Formas aprobadas en ITALIANO (2026-09-14, ampliadas 2026-09-17 con lo que
+ * trajo el IT A2), las de [[feedback_introduce_characters]]:
  *
  *   dopo il luogo  Sul pianerottolo c'e Riccardo, un tassista del terzo piano.
  *   aposicion      Alice, un'infermiera di Genova, porta una torta in terrazza.
  *   con essere     Matteo e un marinaio e il suo migliore amico.
+ *   chi            Chi porta la torta e Alice.
+ *   nome e ruolo   Matteo lavora al porto. (verbo mas amplio que "con essere")
  *
  * "dopo il luogo" va PRIMERO porque tambien casa como aposicion: si no, la
  * variedad contaria dos formas distintas como la misma.
  */
 const DET_IT = "(?:un|uno|una|un'|il|lo|la|l'|i|gli|le)";
 const NUC_IT = "(?:[a-zà-ù']+\\s+){0,3}[a-zà-ù']+";
+const VERBO_SER_IT =
+  "(?:è|era|fa|lavora|vende|vive|studia|guida|prepara|serve|scrive|porta|tiene|aiuta)";
 const FORMAS_IT: Array<[string, (n: string) => RegExp]> = [
   ["dopo il luogo", (n) => new RegExp(`(?<!\\p{L})(?:c'è|ci sono|è|arriva|aspetta)\\s+${n},\\s+${DET_IT}\\s*${NUC_IT}`, "iu")],
   ["aposicion", (n) => new RegExp(`(?<!\\p{L})${n},\\s+${DET_IT}\\s*${NUC_IT}`, "iu")],
   ["con essere", (n) => new RegExp(`(?<!\\p{L})${n}\\s+è\\s+${DET_IT}\\s*${NUC_IT}`, "iu")],
+  ["chi", (n) => new RegExp(`\\bChi\\s+[a-zà-ù']+(?:\\s+[a-zà-ù']+){0,3}\\s+è\\s+${n}(?!\\p{L})`, "iu")],
+  ["nome e ruolo", (n) => new RegExp(`(?<!\\p{L})${n}\\s+(?:${VERBO_SER_IT})(?!\\p{L})`, "iu")],
 ];
 
 const FORMAS_POR_IDIOMA: Record<string, Array<[string, (n: string) => RegExp]>> = {
@@ -362,7 +369,10 @@ function openingShapeES(text: string): string {
   return "otra";
 }
 
-/** Forma de la apertura en ITALIANO (2026-09-14), puerto del espanol. */
+/** Forma de la apertura en ITALIANO (2026-09-14), puerto del espanol. Se
+ *  mantiene esta version (no la de rescate/codex-it-a2) porque el Friends
+ *  IT A0 ya se cerro y midio contra ELLA; cambiar las etiquetas ahora
+ *  reclasificaria en silencio sus temas ya cerrados. */
 function openingShapeIT(text: string): string {
   const f = sentences(text)[0] ?? "";
   const w = (f.split(/\s+/)[0] ?? "").replace(/[.,:;]$/, "");
@@ -373,6 +383,7 @@ function openingShapeIT(text: string): string {
   if (/^(In|Nel|Nella|Nei|Nelle|Sul|Sulla|Sui|Sulle|Sotto|Sopra|Dentro|Fuori|Davanti|Dietro|Dopo|Prima|Tra|Fra|Al|Alla|Allo|Ai|Alle|A|Da|Dal|Dalla|Con|Per|Oggi|Ieri|Stasera|Stamattina|Adesso|Ora|Qui|Lì|Là|Giù|Su)$/.test(w)) return "lugar o tiempo delante";
   if (/^(Nessuno|Qualcuno|Tutti|Tutte|Ogni|Due|Tre|Quattro|Cinque|Sei|Sette|Otto|Nove|Dieci|Venti|Mezzo|Mezza|Niente)$/.test(w)) return "cantidad o pronombre";
   if (/^(Quando|Mentre|Anche|Se|Appena)$/.test(w)) return "subordinada delante";
+  if (/^Chi\b/.test(f)) return "chi + verbo";
   if (/^\p{Lu}\p{Ll}+$/u.test(w)) return "sustantivo o nombre desnudo";
   return "otra";
 }
@@ -529,9 +540,11 @@ export function validateJourneyStories(
     }
     const tope = Math.max(2, Math.ceil(stories.length / 3));
     const pasadas = [...porForma].filter(([, v]) => v.length > tope);
+    const peor = Math.max(0, ...[...porForma.values()].map((v) => v.length));
     push("journey-opening-shape", `Ninguna forma de apertura en mas de ${tope} historias`,
       pasadas.length === 0,
       pasadas.map(([k, v]) => `${k}: ${v.length} (${v.slice(0, 4).join(", ")}...)`).join(" · "));
+    out[out.length - 1].magnitud = { valor: peor, mejor: "baja" };
   }
 
   // ── 5. Cierres a solas ──────────────────────────────────────
