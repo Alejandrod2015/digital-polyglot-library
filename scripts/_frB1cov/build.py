@@ -98,7 +98,7 @@ T = [
   ("une-blague-mal-repetee", "Une blague mal répétée", 2,
    f"In the back corner of {ATELIER} in the evening, a wall half painted in fresh grey over old white, a dripping paintbrush on the floor. AURELIEN stands with his arms spread, upset; ELODIE stands facing him, biting her lip, apologetic. Close medium shot against the painted wall, both waist up.", "Florian no sale. Rincon del fondo (pared pintada), no el banco de trabajo."),
   ("des-comptes-bien-tenus", "Des comptes bien tenus", 3,
-   f"At {ESTAMINET}, evening, the bar busier than before. FLORIAN stands behind the counter, relieved, drying a glass; AURELIEN stands at the bar facing him, having just finished speaking, a little exposed but steady. Medium shot, both waist up.", "Elodie no sale en primer plano: aplaude al fondo, fuera del cuadro principal."),
+   f"At {ESTAMINET}, evening, a row of full beer glasses and empty plates lined up along the bar top between them, signs of a good night's trade. FLORIAN stands behind the counter, relieved, drying a glass; AURELIEN stands at the bar facing him, having just finished speaking, a little exposed but steady. Medium shot, both waist up.", "1a tirada salio con la barra vacia, igual que la 16: el LOCK prohibe gente de mas y Flux no puede sugerir 'mas animado' sin ella. Se cambia a props (vasos llenos, platos vacios) para mostrar movimiento sin depender de una multitud ni de Elodie fuera de cuadro."),
  ]),
  ("stress-and-burnout", "Stress & Burnout", ["AURELIEN", "ELODIE", "QUENTIN"], [
   ("des-mains-qui-tremblent", "Des mains qui tremblent", 1,
