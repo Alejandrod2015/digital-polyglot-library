@@ -243,6 +243,45 @@
         "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library--claude-worktrees-angry-lovelace-b6095d/33cc47a4-0e3f-4f8c-a464-e6df4fe5664c/scratchpad/mural"
       ],
       "port": 8922
+    },
+    {
+      "_comment": "Muestra de narracion del Friends ES Spain A2 (Salamanca) con el texto delante. Borrar al cerrar el journey.",
+      "name": "muestra-es-a2-8923",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8923",
+        "--directory",
+        "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library/5013d473-2516-4de7-9d36-d31ed4d46b1f/scratchpad/muestra"
+      ],
+      "port": 8923
+    },
+    {
+      "_comment": "Muestra de narracion del Friends ES Spain A2 (Salamanca), tema 6. Borrar al cerrar el journey.",
+      "name": "muestra-es-a2-8924",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8924",
+        "--directory",
+        "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library/5013d473-2516-4de7-9d36-d31ed4d46b1f/scratchpad/muestra6"
+      ],
+      "port": 8924
+    },
+    {
+      "_comment": "Muestra de narracion del Friends ES Spain A2 (Salamanca), tema 7. Borrar al cerrar el journey.",
+      "name": "muestra-es-a2-8925",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8925",
+        "--directory",
+        "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library/5013d473-2516-4de7-9d36-d31ed4d46b1f/scratchpad/muestra7"
+      ],
+      "port": 8925
     }
   ]
 }
