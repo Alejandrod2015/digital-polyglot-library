@@ -487,9 +487,13 @@ async function loadPersistedExercises(
   // cada par para que suene en la voz correcta, sin depender de rebuild mobile.
   const journeyVoice = await prisma.journeyStory.findFirst({
     where: { slug: storySlug },
-    select: { voiceId: true, practiceVoiceId: true },
+    select: { voiceId: true, practiceVoiceId: true, journey: { select: { language: true } } },
   }).catch(() => null);
   const storyVoiceId = journeyVoice?.practiceVoiceId?.trim() || journeyVoice?.voiceId || null;
+  // Idioma del journey para los pares de match. Sin el, la web llamaba a
+  // word-tts sin `language` y el endpoint asumia espanol: "binario" (IT) con
+  // fonetica ajena (2026-09-17). El mobile ya mandaba el idioma del journey.
+  const storyLanguage = journeyVoice?.journey?.language ?? null;
 
   const out: PracticeExercise[] = [];
   for (const row of set.exercises) {
@@ -606,6 +610,7 @@ async function loadPersistedExercises(
             options: deranged,
             voiceId: (typeof raw.voiceId === "string" && raw.voiceId) || storyVoiceId,
             wordVoiceId: (typeof raw.wordVoiceId === "string" && raw.wordVoiceId) || storyVoiceId,
+            language: (typeof raw.language === "string" && raw.language) || storyLanguage,
           };
         });
         out.push({
