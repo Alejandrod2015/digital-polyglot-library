@@ -15,6 +15,8 @@
  *   npx tsx scripts/journeysTable.ts --idioma spanish  solo un idioma (--language
  *                                                      tambien vale, y acepta
  *                                                      "portugues", "es", "de"...)
+ *   npx tsx scripts/journeysTable.ts --ids a,b,c       solo esos journeys (los que
+ *                                                      un chat tiene a su cargo)
  *   npx tsx scripts/journeysTable.ts --crudo           la linea de barras de antes
  *
  * La salida del catalogo es MARKDOWN (tabla GitHub), igual que las dos tablas
@@ -86,6 +88,20 @@ const idiomaPedido = (): string | undefined => {
 const filtroIdioma = () => {
   const l = idiomaPedido();
   return l ? { language: l } : {};
+};
+/**
+ * Filtro por lista de ids, para "la tabla de los journeys que tienes a cargo".
+ * Se anade el 2026-09-17 por el mismo motivo que el de idioma: el chat de
+ * planificacion lleva un subconjunto de journeys y recortar la salida completa
+ * a ojo esta prohibido.
+ */
+const idsPedidos = (): string[] | undefined => {
+  const raw = arg("ids");
+  return raw ? raw.split(",").map((x) => x.trim()).filter(Boolean) : undefined;
+};
+const filtroIds = () => {
+  const ids = idsPedidos();
+  return ids ? { id: { in: ids } } : {};
 };
 
 /**
@@ -201,7 +217,7 @@ const mode = (arr: (string | null)[]) => {
  */
 async function main() {
   const js = await p.journey.findMany({
-    where: { status: { in: ESTADOS() }, ...filtroIdioma() }, // live + draft; archived solo con --archived
+    where: { status: { in: ESTADOS() }, ...filtroIdioma(), ...filtroIds() }, // live + draft; archived solo con --archived
     select: {
       id: true, name: true, language: true, variant: true, status: true, levels: true,
       topics: true, storiesPerTopic: true,
@@ -232,11 +248,17 @@ async function main() {
   const crudo = flag("crudo");
   if (idioma && js.length === 0)
     throw new Error(`ningun journey live+draft con idioma "${idioma}"`);
+  const ids = idsPedidos();
+  if (ids) {
+    const faltan = ids.filter((id) => !js.some((j) => j.id === id));
+    if (faltan.length) throw new Error(`ids sin journey live+draft: ${faltan.join(", ")}`);
+  }
   console.log(
     (flag("archived")
       ? "AVISO: incluye ARCHIVED porque se pidio con --archived. Sin ese flag, solo live + draft."
       : "live + draft (los archivados quedan fuera; --archived los incluye)") +
-    (idioma ? ` · filtrado: idioma ${idioma}` : "") + (crudo ? "" : "\n")
+    (idioma ? ` · filtrado: idioma ${idioma}` : "") +
+    (ids ? ` · filtrado: ${ids.length} journeys por id` : "") + (crudo ? "" : "\n")
   );
   if (crudo) {
     console.log("Estado|Idioma|Variante|Tipo|Nivel|Estructura|Estilo|%Citado|NoNativos|Voz narrador|Voz práctica|Hist.pub|Narr|Covers|Ambient|Clips");
