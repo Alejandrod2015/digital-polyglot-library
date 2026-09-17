@@ -10,12 +10,12 @@ import json
 C = {
  "ANNA": "woman, exactly 33 years old, slim build, medium height, fair skin, dark-blonde hair falling to the shoulders, WITHOUT fringe, no glasses; wears an olive-green cotton jacket over a plain white t-shirt, dark blue jeans and brown leather ankle boots",
  "JAN": "man, exactly 34 years old, stocky build, a head taller than ANNA, fair skin, short brown hair, short neat brown beard, no glasses; wears a navy-blue knit sweater over a white collared shirt, dark blue jeans and brown leather boots",
- "NELE": "woman, exactly 32 years old, athletic build, a little shorter than ANNA, light skin, short black hair in a chin-length bob, WITHOUT fringe, round tortoiseshell glasses; wears a mustard-yellow blouse, dark grey trousers and white canvas sneakers",
+ "NELE": "woman, exactly 32 years old, athletic build, a little shorter than ANNA, light skin, short black hair in a chin-length bob swept fully behind both ears, forehead completely bare with no hair falling forward, round tortoiseshell glasses; wears a mustard-yellow blouse, dark grey trousers and white canvas sneakers",
  "FELIX": "man, exactly 35 years old, slim build, as tall as JAN, fair skin, short curly blond hair, WITHOUT fringe, clean-shaven, no glasses; wears a plain grey t-shirt, black trousers and black sneakers",
  "JOHANNA": "woman, exactly 30 years old, sturdy build, a little taller than ANNA, fair skin with light freckles, long red hair in a single thick braid over one shoulder, WITHOUT fringe, no glasses; wears blue denim dungarees over a plain white long-sleeved top and brown leather boots",
  "TIM": "man, exactly 34 years old, muscular build, a little shorter than JAN, light-tanned skin, shaved bald head, short stubble, no glasses; wears a red-and-black checked flannel shirt, dark blue jeans and black boots",
  "LUISA": "woman, exactly 31 years old, curvy build, the same height as ANNA, olive skin, long brown hair pulled back in a low bun, WITHOUT fringe, no glasses; wears a black apron over a plain red t-shirt, dark trousers and black clogs",
- "NIKLAS": "man, exactly 36 years old, heavy build with a round belly, a little shorter than JAN, ruddy fair skin, short dark-grey hair with early streaks of grey, clean-shaven, thin rectangular black-framed glasses; wears a brown wool sweater over a checked shirt collar, grey trousers and brown leather loafers",
+ "NIKLAS": "man, exactly 36 years old and looking no older than that, heavy build with a round belly, a little shorter than JAN, smooth unwrinkled face, ruddy fair skin, short brown hair with no grey at all, clean-shaven, thin rectangular black-framed glasses; wears a brown wool sweater over a checked shirt collar, grey trousers and brown leather loafers",
 }
 POS = {2: ["LEFT", "RIGHT"], 3: ["LEFT", "CENTER", "RIGHT"]}
 
