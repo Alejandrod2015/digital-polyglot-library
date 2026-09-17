@@ -81,7 +81,20 @@ function runFfmpeg(args: string[]): Promise<void> {
 // Light loudness normalisation + a short tail pad so the last phoneme decays
 // naturally instead of cutting on the final sample. No tempo change: the
 // client owns playback rate.
+// Sin ffmpeg (Vercel no lo trae; sentence-tts ya cae a crudo por lo mismo)
+// devolvemos el mp3 tal cual: una palabra sin normalizar suena; un 500 no.
+// Hasta el 2026-09-17 este spawn tiraba en produccion y TODA palabra que no
+// tuviera clip prehorneado se quedaba muda (cero clips runtime en R2 para
+// it/fr/pt/de).
 async function normalizeWord(rawMp3: Buffer): Promise<Buffer> {
+  try {
+    return await normalizeWordWithFfmpeg(rawMp3);
+  } catch {
+    return rawMp3;
+  }
+}
+
+async function normalizeWordWithFfmpeg(rawMp3: Buffer): Promise<Buffer> {
   const workDir = mkdtempSync(join(tmpdir(), "word-tts-"));
   const inPath = join(workDir, "in.mp3");
   const outPath = join(workDir, "out.mp3");
@@ -106,6 +119,26 @@ async function normalizeWord(rawMp3: Buffer): Promise<Buffer> {
     return readFileSync(outPath);
   } finally {
     rmSync(workDir, { recursive: true, force: true });
+  }
+}
+
+// Clips PRE-HORNEADOS de palabra (_genWordClips.ts / _genMatchClips.ts):
+// misma voz y misma palabra, con marco declarativo en el idioma y gate F0.
+// La practica por tema del journey no lleva wordClipUrl en sus items, asi que
+// sin esta sonda una palabra ya pagada se volvia a sintetizar (o, sin ffmpeg,
+// se quedaba muda). w5 es la receta actual; w4 la de los clips de match.
+const PREBAKED_WORD_CLIP_VERSIONS = ["w5", "w4"];
+function prebakedWordClipKey(version: string, voiceId: string, word: string): string {
+  const hash = crypto.createHash("sha256").update(`${version}|${voiceId}|${word.toLowerCase()}`).digest("hex").slice(0, 20);
+  return `media/practice/word-clip/${hash}.mp3`;
+}
+
+async function probeObject(url: string): Promise<boolean> {
+  try {
+    const head = await fetch(url, { method: "HEAD" });
+    return head.ok;
+  } catch {
+    return false;
   }
 }
 
@@ -188,19 +221,23 @@ export async function POST(request: NextRequest) {
     renderVoiceId = elVoiceId;
   }
 
+  // 1) Clip prehorneado (F0-gated) con la voz pedida.
+  for (const version of PREBAKED_WORD_CLIP_VERSIONS) {
+    const prebakedUrl = getPublicObjectUrl(prebakedWordClipKey(version, renderVoiceId, word));
+    if (!prebakedUrl) continue;
+    const probeUrl = signAudioUrl(prebakedUrl) ?? prebakedUrl;
+    if (await probeObject(probeUrl)) return NextResponse.json({ url: probeUrl, cached: true });
+  }
+
+  // 2) Cache propio de esta ruta.
   const key = cacheKey(renderVoiceId, word, langCode);
   const publicUrl = getPublicObjectUrl(key);
   if (publicUrl) {
-    try {
-      // El HEAD va contra la URL FIRMADA: con el audio en el bucket privado,
-      // sondear la publica daria 403 y volveriamos a sintetizar un clip que
-      // ya existe, que es gastar creditos por nada.
-      const probeUrl = signAudioUrl(publicUrl) ?? publicUrl;
-      const head = await fetch(probeUrl, { method: "HEAD" });
-      if (head.ok) return NextResponse.json({ url: probeUrl, cached: true });
-    } catch {
-      // Fall through to generation.
-    }
+    // El HEAD va contra la URL FIRMADA: con el audio en el bucket privado,
+    // sondear la publica daria 403 y volveriamos a sintetizar un clip que
+    // ya existe, que es gastar creditos por nada.
+    const probeUrl = signAudioUrl(publicUrl) ?? publicUrl;
+    if (await probeObject(probeUrl)) return NextResponse.json({ url: probeUrl, cached: true });
   }
 
   const apiKey = process.env.ELEVENLABS_API_KEY;
