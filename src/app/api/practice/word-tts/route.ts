@@ -19,7 +19,8 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { getMobileSessionFromRequest } from "@/lib/mobileSession";
 import { DEFAULT_VOICE_SETTINGS, softenPunctuationForTts } from "@/lib/elevenlabs";
-import { getPublicObjectUrl, uploadPublicObject } from "@/lib/objectStorage";
+import { getPublicObjectUrl, uploadAudioObject } from "@/lib/objectStorage";
+import { signAudioUrl } from "@/lib/mediaSigning";
 
 export const maxDuration = 120;
 
@@ -191,8 +192,12 @@ export async function POST(request: NextRequest) {
   const publicUrl = getPublicObjectUrl(key);
   if (publicUrl) {
     try {
-      const head = await fetch(publicUrl, { method: "HEAD" });
-      if (head.ok) return NextResponse.json({ url: publicUrl, cached: true });
+      // El HEAD va contra la URL FIRMADA: con el audio en el bucket privado,
+      // sondear la publica daria 403 y volveriamos a sintetizar un clip que
+      // ya existe, que es gastar creditos por nada.
+      const probeUrl = signAudioUrl(publicUrl) ?? publicUrl;
+      const head = await fetch(probeUrl, { method: "HEAD" });
+      if (head.ok) return NextResponse.json({ url: probeUrl, cached: true });
     } catch {
       // Fall through to generation.
     }
@@ -228,7 +233,7 @@ export async function POST(request: NextRequest) {
       );
     }
     const normalized = await normalizeWord(Buffer.from(await ttsRes.arrayBuffer()));
-    const uploaded = await uploadPublicObject({
+    const uploaded = await uploadAudioObject({
       key,
       body: normalized,
       contentType: "audio/mpeg",
@@ -236,7 +241,7 @@ export async function POST(request: NextRequest) {
     if (!uploaded?.url) {
       return NextResponse.json({ error: "R2 upload failed" }, { status: 500 });
     }
-    return NextResponse.json({ url: uploaded.url, cached: false });
+    return NextResponse.json({ url: signAudioUrl(uploaded.url), cached: false });
   } catch (err) {
     return NextResponse.json(
       { error: err instanceof Error ? err.message : "word-tts failed" },

@@ -22,6 +22,7 @@ import { NextResponse, type NextRequest } from "next/server";
 
 import { getActiveMobileSession } from "@/lib/mobileSession";
 import type { Plan } from "@domain/access";
+import { signAudioUrl } from "@/lib/mediaSigning";
 import {
   canAccessTalkingPoints,
   getEntriesByCategory,
@@ -67,7 +68,7 @@ export async function GET(req: NextRequest): Promise<Response> {
         body: piece.body,
         vocab: piece.vocab,
         sources: piece.sources,
-        audioUrl: piece.audioUrl ?? null,
+        audioUrl: signAudioUrl(piece.audioUrl ?? null),
         audioWordTimings: piece.audioWordTimings ?? null,
         photo: piece.photo ?? null,
       },

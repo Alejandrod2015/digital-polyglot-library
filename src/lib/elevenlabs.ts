@@ -4,9 +4,10 @@ import crypto from "node:crypto";
 import { buildAudioSegmentsFromTranscript, type AudioSegment, type TranscriptSegment } from "@/lib/audioSegments";
 import { analyzeDeliveryQuality, analyzeTranscriptQuality, type AudioQaResult } from "@/lib/audioQa";
 import { alignAudioOnModal } from "@/lib/audioWordTimings";
-import { getPublicObjectUrl, uploadPublicObject } from "@/lib/objectStorage";
+import { getPublicObjectUrl, uploadAudioObject } from "@/lib/objectStorage";
 import { assertVoiceApproved } from "@/lib/approvedVoices";
 import { assertNarradorPermitido } from "@/lib/bannedNarrators";
+import { signAudioUrl } from "@/lib/mediaSigning";
 
 // Default ElevenLabs voice settings used across all journey TTS calls.
 //   stability=0.9        más alta que 0.8 anterior. Bajaba la incidencia
@@ -700,7 +701,7 @@ export async function generateAndUploadAudio(
 
     console.log("[elevenlabs] ⬆ Uploading audio...");
 
-    const uploaded = await uploadPublicObject({
+    const uploaded = await uploadAudioObject({
       key: `media/generated/audio/${filename}`,
       body: buffer,
       contentType: "audio/mpeg",
@@ -968,7 +969,7 @@ async function alignTrimSegment(args: {
 
   // 1. Upload raw para que aeneas pueda leerlo via URL pública.
   try {
-    await uploadPublicObject({
+    await uploadAudioObject({
       key: cacheKey,
       body: rawBuffer,
       contentType: "audio/mpeg",
@@ -977,7 +978,9 @@ async function alignTrimSegment(args: {
     console.warn(`[elevenlabs] align upload-raw failed: ${err instanceof Error ? err.message : err}`);
     return null;
   }
-  const audioUrl = getPublicObjectUrl(cacheKey);
+  // Modal descarga el mp3 el mismo, asi que necesita la URL firmada: el
+  // bucket privado no sirve nada sin firma.
+  const audioUrl = signAudioUrl(getPublicObjectUrl(cacheKey));
   if (!audioUrl) {
     console.warn("[elevenlabs] align skipped: cache URL not resolvable");
     return null;
@@ -1058,7 +1061,7 @@ async function alignTrimSegment(args: {
 
   // 5. Re-upload trimmed to the same cache key (overwrite the raw).
   try {
-    await uploadPublicObject({
+    await uploadAudioObject({
       key: cacheKey,
       body: trimmedBuffer,
       contentType: "audio/mpeg",
@@ -1188,7 +1191,7 @@ async function ttsSegment(args: {
   const cacheKey = multivoiceSegmentCacheKey(args.voiceId, softened, model, args.voiceSettings, args.disableStitching);
 
   const readCache = async (): Promise<Buffer | null> => {
-    const cacheUrl = getPublicObjectUrl(cacheKey);
+    const cacheUrl = signAudioUrl(getPublicObjectUrl(cacheKey));
     if (!cacheUrl) return null;
     try {
       const head = await fetch(cacheUrl, { method: "HEAD" });
@@ -1292,7 +1295,7 @@ async function ttsSegment(args: {
     // Cache write para el fallback (alignTrimSegment ya escribió en
     // el caso happy-path).
     try {
-      await uploadPublicObject({
+      await uploadAudioObject({
         key: cacheKey,
         body: cleanedBuffer,
         contentType: "audio/mpeg",
@@ -1308,7 +1311,7 @@ async function ttsSegment(args: {
 
   const writeCacheBuffer = async (body: Buffer): Promise<void> => {
     try {
-      await uploadPublicObject({ key: cacheKey, body, contentType: "audio/mpeg" });
+      await uploadAudioObject({ key: cacheKey, body, contentType: "audio/mpeg" });
     } catch (err) {
       console.warn(`[elevenlabs] anti-uptalk cache write failed: ${err instanceof Error ? err.message : err}`);
     }
@@ -1882,7 +1885,7 @@ export async function generateAndUploadMultiVoiceAudio(args: {
       const secName = `${sectionBase}_sec${String(i).padStart(2, "0")}_${sectionTs}.mp3`;
       let secUrl: string | null = null;
       try {
-        const up = await uploadPublicObject({
+        const up = await uploadAudioObject({
           key: `media/generated/audio/sections/${secName}`,
           body: audioBuffers[i],
           contentType: "audio/mpeg",
@@ -1943,7 +1946,7 @@ export async function generateAndUploadMultiVoiceAudio(args: {
   if (args.ambientPath) {
     dryFilename = `${baseFilename}_multivoice_dry_${ts}.mp3`;
     try {
-      const dryUpload = await uploadPublicObject({
+      const dryUpload = await uploadAudioObject({
         key: `media/generated/audio/${dryFilename}`,
         body: normalized,
         contentType: "audio/mpeg",
@@ -1972,7 +1975,7 @@ export async function generateAndUploadMultiVoiceAudio(args: {
   );
 
   console.log("[elevenlabs] ⬆ Uploading multi-voice audio...");
-  const uploaded = await uploadPublicObject({
+  const uploaded = await uploadAudioObject({
     key: `media/generated/audio/${filename}`,
     body: combined,
     contentType: "audio/mpeg",

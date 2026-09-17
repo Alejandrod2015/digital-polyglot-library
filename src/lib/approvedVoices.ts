@@ -84,6 +84,16 @@ export const APPROVED_VOICES: Record<string, ApprovedVoice> = {
   // entró en su día porque la lista se sembró solo con journeys publicados.
   // Confirmada por el usuario el 2026-08-23 para narrar y practicar Expat FR A0.
   ucMmKRQbfDEYyb2IIGax: { note: "Aurore FR (parisina, f); narradora + práctica de Expat FR A0 y Traveler FR A0; user-approved 2026-07-07, reconfirmada 2026-08-23" },
+
+  // ── Primera voz de Puerto Rico del proyecto. Aprobada por el usuario el
+  // 2026-09-15 tras oír la audición de 9 candidatas con tag "puerto rican"
+  // del shared library (public/_pr-voz/index.html).
+  cryPG4aBcWsmW2cCIXjB: { note: "Veronica - Puerto Rican Spanish (F, mediana edad); user-approved 2026-09-15" },
+
+  // ── Primera voz de Republica Dominicana del proyecto. Aprobada por el
+  // usuario el 2026-09-17 tras revisar 3 candidatas con acento "dominican"
+  // del shared library (previews gratis, sin audicion en HTML dedicado).
+  awOajHsqRllBLH3sYn6Z: { note: "Makemcie (DO, m, mediana edad); use_case narrative_story; user-approved 2026-09-17" },
 };
 
 export function isVoiceApproved(voiceId: string | null | undefined): boolean {

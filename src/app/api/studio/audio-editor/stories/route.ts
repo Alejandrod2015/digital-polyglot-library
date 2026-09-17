@@ -6,6 +6,7 @@ import { isStudioMember } from "@/lib/studio-access";
 import { coerceAudioWordTimings } from "@/lib/audioWordTimings";
 import { deriveAudioEditorBlocks, deriveBlocksFromFragments } from "@/lib/audioEditorBlocks";
 import { resolveVoiceNames, stripVoicePrefix } from "@/lib/audioEditorVoiceNames";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 /**
  * GET /api/studio/audio-editor/stories
@@ -144,7 +145,7 @@ export async function GET(request: Request) {
     const titlePrevSectionUrl = titleOffset === 1 ? rawFragments[0]?.prevUrl ?? null : null;
     const narratorCleanId = stripVoicePrefix(narratorVoiceId);
 
-    return NextResponse.json({
+    return NextResponse.json(signAudioUrlsDeep({
       story: {
         id: story.id,
         slug: story.slug,
@@ -185,7 +186,7 @@ export async function GET(request: Request) {
         // of surfacing the raw spawn error.
         serverCanSplice: !process.env.VERCEL,
       },
-    });
+    }));
   }
 
   // List mode.
@@ -240,5 +241,5 @@ export async function GET(request: Request) {
     })
     .filter((x): x is NonNullable<typeof x> => x !== null);
 
-  return NextResponse.json({ stories });
+  return NextResponse.json(signAudioUrlsDeep({ stories }));
 }

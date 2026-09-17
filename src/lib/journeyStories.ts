@@ -123,6 +123,13 @@ function readerStatusWhere() {
     "cmsvz6mz9000732gsgsfer0ko", // Friends ES A1 spain (in progress)
     "cmt09ehi60000320qf9efrypu", // Expat FR A0 lyon (en obra, 2026-08)
     "cmt70xfyt000l3283gxd70wck", // Traveler ES A2 spain (en obra, 2026-08)
+    "cmt5wqsf7000032ghesowd0jy", // Traveler IT A2 italy (en obra, 2026-09)
+    "cmtwz1iop000l32jybeo2jg4x", // Friends FR A1 france (en obra, 2026-09)
+    "cmu047bkz0007326jsgeptkox", // Friends DE A0 germany (en obra, 2026-09)
+    "cmu04ereh000732z7px7naqa2", // Friends FR A2 france (en obra, 2026-09)
+    "cmu0dpa3i0007j80ugstn0jf0", // Friends IT A0 italy (en obra, 2026-09)
+    "cmu0dqr6y0007j8o52i1s3gf7", // Friends DE A1 germany (en obra, 2026-09)
+    "cmu0doigc0007j8e292tycths", // Friends FR B1 france (en obra, 2026-09)
   ];
   return process.env.NODE_ENV !== "production"
     ? { OR: [{ status: "published" as const }, { journeyId: { in: PREVIEW_JOURNEY_IDS } }] }

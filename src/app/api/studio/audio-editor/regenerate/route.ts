@@ -7,6 +7,7 @@ import { DEFAULT_NARRATION_TEMPO, DEFAULT_VOICE_SETTINGS, softenPunctuationForTt
 import { spliceFragmentIntoMaster } from "@/lib/audioEditorSplice";
 import { replaceSectionAndRebuild } from "@/lib/audioEditorSections";
 import { isVoiceApproved } from "@/lib/approvedVoices";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 export const maxDuration = 120;
 
@@ -202,7 +203,7 @@ export async function POST(request: Request) {
         data: { audioEditorRegenCounts: nextCounts },
       });
 
-      return NextResponse.json({
+      return NextResponse.json(signAudioUrlsDeep({
         ok: true,
         sectionReplaced: true,
         audioUrl: r.audioUrl,
@@ -210,7 +211,7 @@ export async function POST(request: Request) {
         prevSectionUrl: r.prevSectionUrl,
         regensUsed: newUsed,
         regenLimit: MAX_REGENS_PER_SEGMENT,
-      });
+      }));
     } catch (err) {
       return NextResponse.json({ error: err instanceof Error ? err.message : "Error reemplazando la sección" }, { status: 502 });
     }
@@ -244,5 +245,5 @@ export async function POST(request: Request) {
     data: { audioUrlPreview: result.url, audioFilenamePreview: result.filename },
   });
 
-  return NextResponse.json({ ok: true, audioUrlPreview: result.url, audioFilenamePreview: result.filename });
+  return NextResponse.json(signAudioUrlsDeep({ ok: true, audioUrlPreview: result.url, audioFilenamePreview: result.filename }));
 }

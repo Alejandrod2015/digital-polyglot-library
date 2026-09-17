@@ -1,6 +1,7 @@
 import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 /**
  * GET /api/studio/validar/stories
@@ -53,5 +54,5 @@ export async function GET() {
     },
   });
 
-  return NextResponse.json({ stories });
+  return NextResponse.json(signAudioUrlsDeep({ stories }));
 }

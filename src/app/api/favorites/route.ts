@@ -11,6 +11,7 @@ import { getSegmentIdFromSourcePath, isStandaloneSourcePath } from "@/lib/storyS
 import { prisma } from "@/lib/prisma";
 import { extractExampleSentence } from "@/lib/exampleSentence";
 import { getCuratedExampleMap, curatedKey } from "@/lib/curatedExamples";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 const bookLanguageBySlug = new Map<string, string>();
 const storyLanguageBySlug = new Map<string, string>();
@@ -224,7 +225,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       };
     });
 
-    return NextResponse.json(enriched);
+    return NextResponse.json(signAudioUrlsDeep(enriched));
   } catch (err: unknown) {
     console.error("❌ Error en GET /api/favorites:", err);
     return NextResponse.json({ error: "Database error" }, { status: 500 });

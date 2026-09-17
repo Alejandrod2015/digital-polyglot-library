@@ -7,6 +7,7 @@ import { inferTopicFromText } from "@/lib/topicClassifier";
 import { improveVocabDefinitions } from "@/lib/vocabQuality";
 import { isInvalidMultiwordVocab, normalizeToken, splitWordTokens } from "@/lib/vocabSelection";
 import { resolveCanonicalVocabEntry } from "@/lib/vocabWordNormalization";
+import { INTERNAL_AUDIO_TOKEN_HEADER, mintInternalAudioToken } from "@/lib/internalApiAuth";
 import {
   HARD_STORY_WORDS_MAX,
   MIN_STORY_WORDS,
@@ -25,6 +26,7 @@ import {
 } from "@/lib/vocabValidation";
 import { getMobileSessionFromRequest } from "@/lib/mobileSession";
 import { prisma } from "@/lib/prisma";
+import { signAudioUrl } from "@/lib/mediaSigning";
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
 
 type StoryJSON = {
@@ -1166,7 +1168,10 @@ Return ONLY valid JSON:
 
       fetch(`${appUrl}/api/audio/generate`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          [INTERNAL_AUDIO_TOKEN_HEADER]: mintInternalAudioToken(savedStory.id),
+        },
         body: JSON.stringify({
           storyId: savedStory.id,
           text: normalizedText,
@@ -1196,7 +1201,7 @@ Return ONLY valid JSON:
         focus: savedStory.focus,
         topic: savedStory.topic,
         audioStatus: savedStory.audioStatus,
-        audioUrl: savedStory.audioUrl,
+        audioUrl: signAudioUrl(savedStory.audioUrl),
         coverUrl: savedStory.coverUrl,
       },
     });

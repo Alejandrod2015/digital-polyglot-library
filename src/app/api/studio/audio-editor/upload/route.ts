@@ -5,6 +5,7 @@ import { prisma } from "@/lib/prisma";
 import { isStudioMember } from "@/lib/studio-access";
 import { spliceFragmentIntoMaster } from "@/lib/audioEditorSplice";
 import { replaceSectionAndRebuild } from "@/lib/audioEditorSections";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 export const maxDuration = 120;
 
@@ -82,13 +83,13 @@ export async function POST(request: Request) {
   if (sectionMode) {
     try {
       const r = await replaceSectionAndRebuild({ storyId, fragmentIndex, newSectionBuffer: fragment });
-      return NextResponse.json({
+      return NextResponse.json(signAudioUrlsDeep({
         ok: true,
         sectionReplaced: true,
         audioUrl: r.audioUrl,
         sectionUrl: r.sectionUrl,
         prevSectionUrl: r.prevSectionUrl,
-      });
+      }));
     } catch (err) {
       return NextResponse.json({ error: err instanceof Error ? err.message : "Error reemplazando la sección" }, { status: 502 });
     }
@@ -123,5 +124,5 @@ export async function POST(request: Request) {
     data: { audioUrlPreview: result.url, audioFilenamePreview: result.filename },
   });
 
-  return NextResponse.json({ ok: true, audioUrlPreview: result.url, audioFilenamePreview: result.filename });
+  return NextResponse.json(signAudioUrlsDeep({ ok: true, audioUrlPreview: result.url, audioFilenamePreview: result.filename }));
 }

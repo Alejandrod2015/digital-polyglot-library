@@ -12,6 +12,7 @@ import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
 import { generateAndUploadAudio } from "@/lib/elevenlabs";
 import { multiVoiceGuardError } from "@/lib/multiVoiceGuard";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 async function requireStudio(): Promise<boolean> {
   const { userId } = await auth();
@@ -69,9 +70,9 @@ export async function POST(_req: NextRequest, { params }: Params) {
   revalidatePath(`/studio/standalone-stories/${id}`);
   revalidatePath("/studio/standalone-stories");
 
-  return NextResponse.json({
+  return NextResponse.json(signAudioUrlsDeep({
     story: { id: updated.id, audioUrl: updated.audioUrl },
     filename: result.filename,
     voiceId: result.voiceId,
-  });
+  }));
 }

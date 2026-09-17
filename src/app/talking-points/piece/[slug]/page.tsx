@@ -7,6 +7,7 @@ import type { Plan } from "@domain/access";
 import { canAccessTalkingPoints, getPiece } from "@/lib/talkingPoints";
 import PieceClient from "./PieceClient";
 import { getTapGlossesForSlug } from "@/lib/tapGlosses";
+import { signAudioUrl } from "@/lib/mediaSigning";
 
 // Plan-gated, so it reads the session and cannot be prerendered. Same stance
 // as the story route.
@@ -49,5 +50,7 @@ export default async function PiecePage({
   // Las glosas se consultan aqui, en el servidor: PieceClient es de cliente y
   // la tabla no se lee desde el navegador.
   const glosses = (await getTapGlossesForSlug(slug)) ?? {};
-  return <PieceClient topic={found.topic} piece={found.piece} glosses={glosses} />;
+  // PieceClient es de cliente y no puede firmar: el mp3 le llega ya firmado.
+  const piece = { ...found.piece, audioUrl: signAudioUrl(found.piece.audioUrl) ?? undefined };
+  return <PieceClient topic={found.topic} piece={piece} glosses={glosses} />;
 }

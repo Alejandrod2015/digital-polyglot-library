@@ -15,6 +15,7 @@ import { buildPracticeItemsFromStory, parseLooseVocab } from "@/lib/storyPractic
 import { buildPracticeSession, mergePracticeItemsByWord, type PracticeExercise, type PracticeFavoriteItem } from "@/lib/practiceExercises";
 import { coerceAudioWordTimings } from "@/lib/audioWordTimings";
 import type { AudioWordTimingsPayload } from "@domain";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 /**
  * Aeneas word-level alignment for a story. Tries JourneyStory first
@@ -249,8 +250,9 @@ export async function GET(request: NextRequest) {
     : persistedExercises;
 
   return NextResponse.json({
-    items,
-    exercises: exercises && exercises.length > 0 ? exercises : undefined,
+    items: signAudioUrlsDeep(items),
+    exercises:
+      exercises && exercises.length > 0 ? signAudioUrlsDeep(exercises) : undefined,
     poolCount,
     nextStory,
     narratorVoiceId: storyVoiceId,

@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import Link from "next/link";
-import { BookCheck, Crosshair, Headphones, Zap } from "lucide-react";
+import { BookCheck, Crosshair, Flame, Headphones, Zap } from "lucide-react";
 
 type ProgressPayload = {
   minutesListened: number;
@@ -143,38 +143,39 @@ export default function ProgressPage() {
     return Math.ceil((((d.getTime() - yearStart.getTime()) / 86400000) + 1) / 7);
   })();
 
-  // Ring geometry (220px outer, 200px inner).
-  const ringSize = 220;
-  const ringR = 100;
+  // Ring geometry (compact so the whole page fits one screen, no scroll).
+  const ringSize = 132;
+  const ringR = 59;
   const ringC = 2 * Math.PI * ringR;
   const ringDash = (Math.max(0, Math.min(1, progress.gamification.levelProgress)) * ringC);
 
   const levelXpNow = progress.gamification.totalXp - progress.gamification.levelStartXp;
   const levelXpMax = progress.gamification.nextLevelXp - progress.gamification.levelStartXp;
   const weeklyStoriesPercent = weeklyPercent;
-  const totalXpDisplay = progress.gamification.totalXp >= 1000
-    ? `${(progress.gamification.totalXp / 1000).toFixed(1).replace(".", ",")}`
-    : `${progress.gamification.totalXp}`;
+  const totalXpDisplay = progress.gamification.totalXp.toLocaleString("es-ES");
+  const levelProgressPercent = Math.round(
+    Math.max(0, Math.min(1, progress.gamification.levelProgress)) * 100
+  );
 
   return (
-    <div className="px-5 pb-24 pt-8 sm:px-8 mx-auto text-[var(--foreground)]" style={{ maxWidth: 480 }}>
+    <div className="px-5 pb-20 pt-4 sm:px-8 mx-auto text-[var(--foreground)]" style={{ maxWidth: 480 }}>
       {/* ── Top row: PROGRESS eyebrow + Week tag ── */}
-      <div className="flex items-baseline justify-between mb-6">
+      <div className="flex items-baseline justify-between mb-4">
         <p className="text-[11px] font-extrabold uppercase tracking-[0.32em] text-white/55">Progress</p>
         <span className="text-[13px] font-bold text-white/75">
           Week {weekNumber} · {now.getFullYear()}
         </span>
       </div>
 
-      {/* ── Ring with day streak in the center ── */}
-      <div className="flex justify-center mb-6">
+      {/* ── Ring with level progress in the center ── */}
+      <div className="flex justify-center mb-3">
         <div className="relative" style={{ width: ringSize, height: ringSize }}>
           {/* Soft outer halo */}
           <div
             aria-hidden
             className="absolute inset-0 rounded-full"
             style={{
-              boxShadow: "0 0 60px rgba(190, 242, 100, 0.18), 0 0 120px rgba(190, 242, 100, 0.08)",
+              boxShadow: "0 0 40px rgba(190, 242, 100, 0.16), 0 0 80px rgba(190, 242, 100, 0.06)",
             }}
           />
           <svg
@@ -190,7 +191,7 @@ export default function ProgressPage() {
               r={ringR}
               fill="var(--card-bg)"
               stroke="rgba(190, 242, 100, 0.18)"
-              strokeWidth={6}
+              strokeWidth={5}
             />
             <circle
               cx={ringSize / 2}
@@ -198,102 +199,114 @@ export default function ProgressPage() {
               r={ringR}
               fill="none"
               stroke="#bef264"
-              strokeWidth={6}
+              strokeWidth={5}
               strokeLinecap="round"
               strokeDasharray={`${ringDash} ${ringC}`}
-              style={{ filter: "drop-shadow(0 0 8px rgba(190,242,100,0.5))" }}
+              style={{ filter: "drop-shadow(0 0 6px rgba(190,242,100,0.5))" }}
             />
           </svg>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
             <span
               className="font-black leading-none"
-              style={{ fontSize: 72, color: "var(--foreground)" }}
+              style={{ fontSize: 36, color: "var(--foreground)" }}
             >
-              {progress.gamification.dailyStreak}
+              {levelProgressPercent}%
             </span>
-            <div className="mt-2 inline-flex items-center gap-1.5 text-[#fb923c] text-[13px] font-extrabold tracking-[0.18em]">
-              <Zap size={13} fill="currentColor" strokeWidth={0} />
-              DAY STREAK
+            <div className="mt-1.5 inline-flex items-center gap-1 text-[#bef264] text-[11px] font-extrabold tracking-[0.14em]">
+              <Zap size={11} fill="currentColor" strokeWidth={0} />
+              LEVEL {progress.gamification.currentLevel}
             </div>
           </div>
         </div>
       </div>
 
-      {/* ── Level chip ── */}
-      <div className="flex justify-center mb-7">
+      {/* ── Level + streak chips ── */}
+      <div className="flex justify-center items-center gap-2 mb-4 flex-wrap">
         <div
-          className="inline-flex items-center gap-2 rounded-full px-4 py-2.5"
+          className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5"
           style={{
             background: "rgba(190, 242, 100, 0.08)",
             border: "1px solid rgba(190, 242, 100, 0.35)",
           }}
         >
-          <Zap size={14} fill="#bef264" strokeWidth={0} />
-          <span className="text-[#bef264] font-extrabold text-[13px] tracking-[0.14em]">
-            LEVEL {progress.gamification.currentLevel} · {levelXpNow}/{levelXpMax} XP
+          <Zap size={12} fill="#bef264" strokeWidth={0} />
+          <span className="text-[#bef264] font-extrabold text-[12px] tracking-[0.1em]">
+            {levelXpNow}/{levelXpMax} XP
+          </span>
+        </div>
+        <div
+          className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5"
+          style={{
+            background: "rgba(251, 146, 60, 0.08)",
+            border: "1px solid rgba(251, 146, 60, 0.35)",
+          }}
+        >
+          <Flame size={12} fill="#fb923c" strokeWidth={0} />
+          <span className="text-[#fb923c] font-extrabold text-[12px] tracking-[0.1em]">
+            {progress.gamification.dailyStreak} DAY STREAK
           </span>
         </div>
       </div>
 
       {/* ── 2×2 stat grid ── */}
-      <div className="grid grid-cols-2 gap-3 mb-6">
-        <div className="rounded-[20px] border border-white/8 bg-white/[0.025] p-4">
-          <div className="flex items-center gap-1.5 mb-2 text-[#bef264] text-[11px] font-extrabold uppercase tracking-[0.18em]">
-            <Zap size={11} fill="currentColor" strokeWidth={0} />
+      <div className="grid grid-cols-2 gap-2 mb-4">
+        <div className="rounded-2xl border border-white/8 bg-white/[0.025] p-3">
+          <div className="flex items-center gap-1.5 mb-1 text-[#bef264] text-[10px] font-extrabold uppercase tracking-[0.14em]">
+            <Zap size={10} fill="currentColor" strokeWidth={0} />
             Total XP
           </div>
-          <p className="text-white text-[34px] font-black leading-none">{totalXpDisplay}</p>
-          <p className="mt-1 text-white/55 text-[12px]">+{progress.gamification.todayXp} today</p>
+          <p className="text-white text-[24px] font-black leading-none">{totalXpDisplay}</p>
+          <p className="mt-1 text-white/55 text-[11px]">+{progress.gamification.todayXp} today</p>
         </div>
 
-        <div className="rounded-[20px] border border-white/8 bg-white/[0.025] p-4">
-          <div className="flex items-center gap-1.5 mb-2 text-[#7dd3fc] text-[11px] font-extrabold uppercase tracking-[0.18em]">
-            <Crosshair size={11} />
+        <div className="rounded-2xl border border-white/8 bg-white/[0.025] p-3">
+          <div className="flex items-center gap-1.5 mb-1 text-[#7dd3fc] text-[10px] font-extrabold uppercase tracking-[0.14em]">
+            <Crosshair size={10} />
             Accuracy
           </div>
-          <p className="text-white text-[34px] font-black leading-none">{progress.practiceAccuracy}%</p>
-          <p className="mt-1 text-white/55 text-[12px]">
+          <p className="text-white text-[24px] font-black leading-none">{progress.practiceAccuracy}%</p>
+          <p className="mt-1 text-white/55 text-[11px]">
             {progress.practiceSessionsCompleted} session{progress.practiceSessionsCompleted === 1 ? "" : "s"}
           </p>
         </div>
 
-        <div className="rounded-[20px] border border-white/8 bg-white/[0.025] p-4">
-          <div className="flex items-center gap-1.5 mb-2 text-[#a78bfa] text-[11px] font-extrabold uppercase tracking-[0.18em]">
-            <BookCheck size={11} />
+        <div className="rounded-2xl border border-white/8 bg-white/[0.025] p-3">
+          <div className="flex items-center gap-1.5 mb-1 text-[#a78bfa] text-[10px] font-extrabold uppercase tracking-[0.14em]">
+            <BookCheck size={10} />
             Words
           </div>
-          <p className="text-white text-[34px] font-black leading-none">{progress.wordsLearned}</p>
-          <p className="mt-1 text-white/55 text-[12px]">learned all-time</p>
+          <p className="text-white text-[24px] font-black leading-none">{progress.wordsLearned}</p>
+          <p className="mt-1 text-white/55 text-[11px]">learned all-time</p>
         </div>
 
-        <div className="rounded-[20px] border border-white/8 bg-white/[0.025] p-4">
-          <div className="flex items-center gap-1.5 mb-2 text-[#fcd34d] text-[11px] font-extrabold uppercase tracking-[0.18em]">
-            <Headphones size={11} />
+        <div className="rounded-2xl border border-white/8 bg-white/[0.025] p-3">
+          <div className="flex items-center gap-1.5 mb-1 text-[#fcd34d] text-[10px] font-extrabold uppercase tracking-[0.14em]">
+            <Headphones size={10} />
             Minutes
           </div>
-          <p className="text-white text-[34px] font-black leading-none">{progress.minutesListened}</p>
-          <p className="mt-1 text-white/55 text-[12px]">
+          <p className="text-white text-[24px] font-black leading-none">{progress.minutesListened}</p>
+          <p className="mt-1 text-white/55 text-[11px]">
             {progress.storiesFinished} {progress.storiesFinished === 1 ? "story" : "stories"}
           </p>
         </div>
       </div>
 
       {/* ── This week ── */}
-      <div className="rounded-[20px] border border-white/8 bg-white/[0.025] p-4 mb-6">
-        <div className="flex items-baseline justify-between mb-3">
-          <p className="text-[#7dd3fc] text-[11px] font-extrabold uppercase tracking-[0.22em]">This week</p>
-          <span className="text-white/55 text-[12px]">Resets Sun</span>
+      <div className="rounded-2xl border border-white/8 bg-white/[0.025] p-3">
+        <div className="flex items-baseline justify-between mb-2">
+          <p className="text-[#7dd3fc] text-[10px] font-extrabold uppercase tracking-[0.18em]">This week</p>
+          <span className="text-white/55 text-[11px]">Resets Sun</span>
         </div>
-        <div className="flex items-baseline justify-between mb-1.5">
-          <span className="inline-flex items-center gap-2 text-white font-extrabold text-[15px]">
-            <span className="text-[#bef264] text-lg leading-none">+</span> Stories
+        <div className="flex items-baseline justify-between mb-1">
+          <span className="inline-flex items-center gap-1.5 text-white font-extrabold text-[13px]">
+            <span className="text-[#bef264] text-base leading-none">+</span> Stories
           </span>
-          <span className="text-[15px] font-extrabold">
+          <span className="text-[13px] font-extrabold">
             <span className="text-[#bef264]">{progress.weeklyStoriesFinished}</span>
             <span className="text-white/55"> / {progress.weeklyGoalStories}</span>
           </span>
         </div>
-        <div className="h-2 rounded-full overflow-hidden bg-white/8">
+        <div className="h-1.5 rounded-full overflow-hidden bg-white/8">
           <div
             className="h-full rounded-full"
             style={{
@@ -303,16 +316,16 @@ export default function ProgressPage() {
           />
         </div>
 
-        <div className="flex items-baseline justify-between mb-1.5 mt-4">
-          <span className="inline-flex items-center gap-2 text-white font-extrabold text-[15px]">
-            <span className="text-[#fcd34d] text-lg leading-none">♪</span> Minutes
+        <div className="flex items-baseline justify-between mb-1 mt-2.5">
+          <span className="inline-flex items-center gap-1.5 text-white font-extrabold text-[13px]">
+            <span className="text-[#fcd34d] text-base leading-none">♪</span> Minutes
           </span>
-          <span className="text-[15px] font-extrabold">
+          <span className="text-[13px] font-extrabold">
             <span className="text-[#fcd34d]">{progress.weeklyMinutesListened}</span>
             <span className="text-white/55"> / {progress.weeklyGoalMinutes}</span>
           </span>
         </div>
-        <div className="h-2 rounded-full overflow-hidden bg-white/8">
+        <div className="h-1.5 rounded-full overflow-hidden bg-white/8">
           <div
             className="h-full rounded-full"
             style={{
@@ -322,16 +335,16 @@ export default function ProgressPage() {
           />
         </div>
 
-        <div className="flex items-baseline justify-between mb-1.5 mt-4">
-          <span className="inline-flex items-center gap-2 text-white font-extrabold text-[15px]">
-            <span className="text-[#7dd3fc] text-lg leading-none">◎</span> Practice
+        <div className="flex items-baseline justify-between mb-1 mt-2.5">
+          <span className="inline-flex items-center gap-1.5 text-white font-extrabold text-[13px]">
+            <span className="text-[#7dd3fc] text-base leading-none">◎</span> Practice
           </span>
-          <span className="text-[15px] font-extrabold">
+          <span className="text-[13px] font-extrabold">
             <span className="text-[#7dd3fc]">{progress.weeklyPracticeSessions}</span>
             <span className="text-white/55"> / {progress.weeklyGoalPracticeSessions}</span>
           </span>
         </div>
-        <div className="h-2 rounded-full overflow-hidden bg-white/8">
+        <div className="h-1.5 rounded-full overflow-hidden bg-white/8">
           <div
             className="h-full rounded-full"
             style={{

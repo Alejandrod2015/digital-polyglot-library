@@ -26,8 +26,9 @@ import { getTapGlossesForSlug } from "@/lib/tapGlosses";
 import EndOfStoryPracticePrompt from "@/components/EndOfStoryPracticePrompt";
 import JourneyStoryReadTracker from "@/components/JourneyStoryReadTracker";
 import { getStandaloneStoryBySlug } from "@/lib/standaloneStories";
-import { getJourneyStoryBySlug } from "@/lib/journeyStories";
+import { getJourneyStoryByIdOrSlug, getJourneyStoryBySlug } from "@/lib/journeyStories";
 import { getStandaloneStoryAudioSegments } from "@/lib/standaloneStoryAudioSegments";
+import { signAudioUrl } from "@/lib/mediaSigning";
 import {
   isSanityAssetUrl,
   resolvePublicMediaUrl,
@@ -155,6 +156,29 @@ function parseJourneyReturnContext(returnTo?: string | null): {
 }
 
 async function getStoryPagePayload(slug: string): Promise<StoryPayload | null> {
+  const journeyIdRoute = /^journey[:-]/.test(slug);
+  if (journeyIdRoute) {
+    const journeyStory = await getJourneyStoryByIdOrSlug(slug);
+    if (journeyStory) {
+      return {
+        id: journeyStory.id,
+        slug: journeyStory.slug,
+        title: journeyStory.title,
+        text: journeyStory.text,
+        vocab: journeyStory.vocabRaw,
+        audioUrl: journeyStory.audioUrl,
+        audioStatus: null,
+        language: journeyStory.language,
+        region: journeyStory.region,
+        level: journeyStory.level,
+        coverUrl: journeyStory.coverUrl,
+        source: "standalone",
+        isJourney: true,
+        audioSegments: null,
+      };
+    }
+  }
+
   const polyglotStory = await prisma.userStory.findUnique({
     where: { slug },
   });
@@ -298,7 +322,17 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
     }
   }
 
-  if (resolvedStory.slug !== slug) {
+  // Punto unico de firma de esta pagina: todas las fuentes (journey, mirror
+  // de CreateStory, standalone de Sanity) confluyen en resolvedStory, asi que
+  // firmar aqui cubre el Player y el boton de guardar sin repetir la llamada
+  // en los siete constructores de payload.
+  const signedAudioUrl = signAudioUrl(resolvedStory.audioUrl);
+  if (signedAudioUrl !== resolvedStory.audioUrl) {
+    resolvedStory = { ...resolvedStory, audioUrl: signedAudioUrl };
+  }
+
+  const isJourneyIdRoute = /^journey[:-]/.test(slug);
+  if (resolvedStory.slug !== slug && !isJourneyIdRoute) {
     redirect(`/stories/${resolvedStory.slug}`);
   }
 
@@ -311,9 +345,15 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
   // preview y esta consulta devolvía null, así que las marcas alineadas no
   // llegaban nunca al lector. En producción el filtro sigue siendo
   // published-only, que es lo que era antes.
+  const resolvedJourneyStoryId = resolvedStory.id.startsWith("journey-")
+    ? resolvedStory.id.replace(/^journey-/, "")
+    : null;
+  const journeyStoryWhere = resolvedJourneyStoryId
+    ? { id: resolvedJourneyStoryId, ...STORY_STATUS_WHERE }
+    : { slug: resolvedStory.slug, ...STORY_STATUS_WHERE };
   const journeyStoryRow = await prisma.journeyStory
     .findFirst({
-      where: { slug, ...STORY_STATUS_WHERE },
+      where: journeyStoryWhere,
       select: { audioWordTimings: true },
     })
     .catch(() => null);
@@ -323,7 +363,7 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
   const karaokeGate = checkKaraokeUsable(
     slug,
     coerceAudioWordTimings(audioWordTimings),
-    story?.text ? extractStoryPlainText(story.text) : null
+    resolvedStory?.text ? extractStoryPlainText(resolvedStory.text) : null
   );
   const hasWordTimings = karaokeGate.usable;
 
@@ -486,8 +526,11 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
                   puede darle: apuntar al play de un reproductor bloqueado
                   seria peor que no decir nada. */}
               {hasFullAccess ? <OnboardingPlayCoachmark kind="journey" /> : null}
+              {/* Sin acceso, la URL del mp3 NO baja al cliente: antes viajaba
+                  en el HTML aunque el play estuviera bloqueado, y con eso
+                  bastaba un view-source para descargar el audio. */}
               <Player
-                src={resolvedStory.audioUrl}
+                src={hasFullAccess ? resolvedStory.audioUrl : ""}
                 bookSlug={resolvedStory.source}
                 storySlug={resolvedStory.slug}
                 canPlay={hasFullAccess}

@@ -594,10 +594,6 @@ export default function JourneyClient({
     levels.forEach((level, levelIndex) => {
       const isLevelUnlocked = levelIndex < unlockedLevelCount;
       for (const [topicIndex, topic] of level.topics.entries()) {
-        // Skip empty topics inside unlocked levels; they only add noise
-        // (banner with no rows). Locked levels keep their empty topics so
-        // the user sees the upcoming map of what's gated.
-        if (isLevelUnlocked && topic.stories.length === 0) continue;
         const isPremium = isLevelUnlocked && isPremiumTopic(levelIndex, topicIndex);
         const stories = topic.stories.map((story) => {
           const isStoryComplete = isJourneyStoryComplete(story, completedStoryKeySet);

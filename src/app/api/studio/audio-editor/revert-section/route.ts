@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 
 import { isStudioMember } from "@/lib/studio-access";
 import { revertSection } from "@/lib/audioEditorSections";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 export const maxDuration = 120;
 
@@ -34,7 +35,7 @@ export async function POST(request: Request) {
 
   try {
     const r = await revertSection({ storyId: body.storyId, fragmentIndex: body.fragmentIndex });
-    return NextResponse.json({ ok: true, audioUrl: r.audioUrl, sectionUrl: r.sectionUrl, prevSectionUrl: r.prevSectionUrl });
+    return NextResponse.json(signAudioUrlsDeep({ ok: true, audioUrl: r.audioUrl, sectionUrl: r.sectionUrl, prevSectionUrl: r.prevSectionUrl }));
   } catch (err) {
     return NextResponse.json({ error: err instanceof Error ? err.message : "Error al revertir la sección" }, { status: 502 });
   }

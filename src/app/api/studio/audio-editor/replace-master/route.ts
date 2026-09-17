@@ -3,7 +3,8 @@ import { NextResponse } from "next/server";
 
 import { prisma } from "@/lib/prisma";
 import { isStudioMember } from "@/lib/studio-access";
-import { uploadPublicObject } from "@/lib/objectStorage";
+import { uploadAudioObject } from "@/lib/objectStorage";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 export const maxDuration = 120;
 
@@ -81,7 +82,7 @@ export async function POST(request: Request) {
 
   let uploaded: { url: string } | null;
   try {
-    uploaded = await uploadPublicObject({
+    uploaded = await uploadAudioObject({
       key: `media/generated/audio/${newFilename}`,
       body: Buffer.from(await file.arrayBuffer()),
       contentType: "audio/mpeg",
@@ -103,5 +104,5 @@ export async function POST(request: Request) {
     data: { audioUrlPreview: uploaded.url, audioFilenamePreview: newFilename },
   });
 
-  return NextResponse.json({ ok: true, audioUrlPreview: uploaded.url, audioFilenamePreview: newFilename });
+  return NextResponse.json(signAudioUrlsDeep({ ok: true, audioUrlPreview: uploaded.url, audioFilenamePreview: newFilename }));
 }

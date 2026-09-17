@@ -7,6 +7,7 @@ import { getActiveMobileSession } from "@/lib/mobileSession";
 import { prisma } from "@/lib/prisma";
 import { extractExampleSentence } from "@/lib/exampleSentence";
 import { getCuratedExampleMap, curatedKey } from "@/lib/curatedExamples";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 type FavoriteBody = {
   word: string;
@@ -232,7 +233,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     };
   });
 
-  return NextResponse.json(final);
+  return NextResponse.json(signAudioUrlsDeep(final));
 }
 
 export async function POST(req: NextRequest): Promise<Response> {

@@ -514,6 +514,13 @@ const PREVIEW_JOURNEY_IDS = [
   "cmtpls1l20007j8epwgcs6e1h", // Traveler ES B2 latam (en obra, 2026-09)
   "cmtrcpgso00073232h8vaf7na", // Traveler PT-BR B1 (en obra, 2026-09)
   "cmrqn1s5s000032tj3kq0gykb", // Friends ES C1 argentina (en obra, 2026-08)
+  "cmt5wqsf7000032ghesowd0jy", // Traveler IT A2 italy (en obra, 2026-09)
+  "cmtwz1iop000l32jybeo2jg4x", // Friends FR A1 france (en obra, 2026-09)
+  "cmu047bkz0007326jsgeptkox", // Friends DE A0 germany (en obra, 2026-09)
+  "cmu04ereh000732z7px7naqa2", // Friends FR A2 france (en obra, 2026-09)
+  "cmu0dpa3i0007j80ugstn0jf0", // Friends IT A0 italy (en obra, 2026-09)
+  "cmu0dqr6y0007j8o52i1s3gf7", // Friends DE A1 germany (en obra, 2026-09)
+  "cmu0doigc0007j8e292tycths", // Friends FR B1 france (en obra, 2026-09)
 ];
 const PREVIEW_DRAFTS = process.env.NODE_ENV !== "production";
 export const JOURNEY_STATUS_WHERE: Prisma.JourneyWhereInput = PREVIEW_DRAFTS
@@ -658,7 +665,6 @@ export type JourneySlugSource = {
 
 export function buildJourneySlugMap(journeys: JourneySlugSource[]): Map<string, string> {
   const slugByJourneyId = new Map<string, string>();
-  const renderable = journeys.filter((j) => (j.stories?.length ?? 0) > 0);
   const langCodeOf = (j: JourneySlugSource) =>
     slugifyTrackLabel(formatLanguageCode(j.language ?? ""));
   const nameSlugOf = (j: JourneySlugSource) =>
@@ -683,8 +689,8 @@ export function buildJourneySlugMap(journeys: JourneySlugSource[]): Map<string, 
   // Guard only against the degenerate case of two journeys sharing
   // language+name+variant+level: append a short, stable id fragment.
   const baseCount = new Map<string, number>();
-  for (const j of renderable) baseCount.set(baseOf(j), (baseCount.get(baseOf(j)) ?? 0) + 1);
-  for (const j of renderable) {
+  for (const j of journeys) baseCount.set(baseOf(j), (baseCount.get(baseOf(j)) ?? 0) + 1);
+  for (const j of journeys) {
     const base = baseOf(j);
     slugByJourneyId.set(
       j.id,

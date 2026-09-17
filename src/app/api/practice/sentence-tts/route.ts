@@ -27,9 +27,10 @@ import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { getMobileSessionFromRequest } from "@/lib/mobileSession";
-import { getPublicObjectUrl, uploadPublicObject } from "@/lib/objectStorage";
+import { getPublicObjectUrl, uploadAudioObject } from "@/lib/objectStorage";
 import { DEFAULT_VOICE_SETTINGS, softenPunctuationForTts } from "@/lib/elevenlabs";
 import { assertVoiceApproved, isVoiceApproved } from "@/lib/approvedVoices";
+import { signAudioUrl, signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 export const maxDuration = 120;
 
@@ -106,8 +107,11 @@ async function renderSentenceWithElevenLabs(
   const cachedUrl = getPublicObjectUrl(key);
   if (cachedUrl) {
     try {
-      const head = await fetch(cachedUrl, { method: "HEAD" });
-      if (head.ok) return NextResponse.json({ url: cachedUrl, cached: true, voiceId });
+      // El sondeo va contra la URL FIRMADA: con el clip en el bucket privado,
+      // un HEAD a la publica daria 403 y re-sintetizariamos algo que ya esta.
+      const probeUrl = signAudioUrl(cachedUrl) ?? cachedUrl;
+      const head = await fetch(probeUrl, { method: "HEAD" });
+      if (head.ok) return NextResponse.json(signAudioUrlsDeep({ url: probeUrl, cached: true, voiceId }));
     } catch {
       // Fall through to generation.
     }
@@ -149,12 +153,14 @@ async function renderSentenceWithElevenLabs(
       "-af", "loudnorm=I=-16:LRA=11:TP=-1.5,apad=pad_dur=0.15",
       "-codec:a", "libmp3lame", "-b:a", "128k", outPath,
     ]);
-    const uploaded = await uploadPublicObject({ key, body: readFileSync(outPath), contentType: "audio/mpeg" });
-    if (uploaded?.url) return NextResponse.json({ url: uploaded.url, cached: false, voiceId });
+    const uploaded = await uploadAudioObject({ key, body: readFileSync(outPath), contentType: "audio/mpeg" });
+    if (uploaded?.url)
+      return NextResponse.json(signAudioUrlsDeep({ url: uploaded.url, cached: false, voiceId }));
     return NextResponse.json({ error: "R2 upload failed" }, { status: 500 });
   } catch {
-    const uploaded = await uploadPublicObject({ key, body: raw, contentType: "audio/mpeg" });
-    if (uploaded?.url) return NextResponse.json({ url: uploaded.url, cached: false, voiceId });
+    const uploaded = await uploadAudioObject({ key, body: raw, contentType: "audio/mpeg" });
+    if (uploaded?.url)
+      return NextResponse.json(signAudioUrlsDeep({ url: uploaded.url, cached: false, voiceId }));
     return NextResponse.json({ error: "R2 upload failed" }, { status: 500 });
   } finally {
     rmSync(workDir, { recursive: true, force: true });

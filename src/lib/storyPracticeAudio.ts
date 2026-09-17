@@ -14,7 +14,8 @@ import { spawn } from "node:child_process";
 import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { uploadPublicObject, getPublicObjectUrl } from "@/lib/objectStorage";
+import { uploadAudioObject, getPublicObjectUrl } from "@/lib/objectStorage";
+import { signAudioUrl } from "@/lib/mediaSigning";
 
 const CACHE_VERSION = "v4";
 
@@ -62,7 +63,9 @@ async function appendTrailingSilence(sourceUrl: string, padSec: number): Promise
   const inp = join(work, "in.mp3");
   const out = join(work, "out.mp3");
   try {
-    const r = await fetch(sourceUrl);
+    // sourceUrl puede venir de Modal (ajena) o de nuestro bucket privado: el
+    // firmador deja pasar la primera y firma la segunda.
+    const r = await fetch(signAudioUrl(sourceUrl) ?? sourceUrl);
     if (!r.ok) throw new Error(`download ${r.status}`);
     writeFileSync(inp, Buffer.from(await r.arrayBuffer()));
     await runFfmpeg([
@@ -124,10 +127,12 @@ export async function generateExerciseAudio(args: GenerateExerciseAudioArgs): Pr
   // Skip cache when forced; editor wants a fresh take regardless of
   // whether the text changed.
   if (!args.force) {
+    // Se devuelve la url CANONICA (la que acaba en la base); la firmada solo
+    // sirve para sondear que el clip ya esta subido.
     const cachedUrl = getPublicObjectUrl(key);
     if (cachedUrl) {
       try {
-        const head = await fetch(cachedUrl, { method: "HEAD" });
+        const head = await fetch(signAudioUrl(cachedUrl) ?? cachedUrl, { method: "HEAD" });
         if (head.ok) return cachedUrl;
       } catch { /* fall through to regen */ }
     }
@@ -154,7 +159,7 @@ export async function generateExerciseAudio(args: GenerateExerciseAudioArgs): Pr
   // cache-key location. If padding fails, fall back to the raw mp3.
   try {
     const padded = await appendTrailingSilence(modalResp.url, 0.15);
-    const uploaded = await uploadPublicObject({
+    const uploaded = await uploadAudioObject({
       key,
       body: padded,
       contentType: "audio/mpeg",

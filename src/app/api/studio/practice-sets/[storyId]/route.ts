@@ -12,6 +12,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { isStudioMember } from "@/lib/studio-access";
 import { buildAndPersistStoryPracticeSet } from "@/lib/storyPracticeSets";
+import { signAudioUrl, signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 async function gate(): Promise<NextResponse | null> {
   const { userId } = await auth();
@@ -42,8 +43,8 @@ function serialize(set: NonNullable<Awaited<ReturnType<typeof loadSet>>>) {
       type: e.type,
       word: e.word,
       sentence: e.sentence,
-      audioUrl: e.audioUrl,
-      payload: e.payload,
+      audioUrl: signAudioUrl(e.audioUrl),
+      payload: signAudioUrlsDeep(e.payload),
       featured: e.featured,
     })),
   };

@@ -628,15 +628,18 @@ export default function Player({
     const togglePlay = async () => {
     const a = audioRef.current;
     if (!a) return;
-    if (!hasPlayableAudio) return;
 
     // 🔒 Si no tiene permiso para reproducir, avisamos al gate y salimos.
+    // Va ANTES del check de src: a un lector bloqueado ya no le mandamos
+    // la URL del audio, y aun asi el tap en play debe abrir el paywall.
     if (!canPlay) {
       if (typeof window !== "undefined") {
         window.dispatchEvent(new CustomEvent("audio-locked-play"));
       }
       return;
     }
+
+    if (!hasPlayableAudio) return;
 
     if (isPlaying) {
       a.pause();
@@ -715,7 +718,10 @@ export default function Player({
     return `${minutes}:${seconds}`;
   };
 
-  if (!hasPlayableAudio) {
+  // Sin audio no hay player… salvo que este bloqueado por plan: a un lector
+  // sin acceso ya no le baja la URL (src vacio) y aun asi el dock debe verse
+  // para que el tap en play abra el paywall.
+  if (!hasPlayableAudio && canPlay) {
     return null;
   }
 
@@ -724,7 +730,8 @@ export default function Player({
       ref={dockMeasureRef}
       className="relative w-full rounded-t-xl border-t border-[var(--player-border-top)] bg-[var(--bg-player)] px-4 py-3 text-[var(--foreground)] shadow-2xl backdrop-blur md:ml-64 md:w-[calc(100%-16rem)]"
     >
-      <audio ref={audioRef} src={resolvedSrc} preload="metadata" />
+      {/* src="" haria que el navegador pidiera la propia pagina como audio */}
+      <audio ref={audioRef} src={resolvedSrc || undefined} preload="metadata" />
 
       {/* waveform de progreso */}
       <div className="flex items-center gap-3 text-sm text-[var(--muted)] mb-2">

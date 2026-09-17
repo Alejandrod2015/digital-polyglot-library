@@ -23,6 +23,7 @@ import {
   resolvePublicMediaUrl,
   shouldBypassImageOptimization,
 } from "@/lib/publicMedia";
+import { signCatalogAudioUrl } from "@/lib/mediaSigning";
 import { canAccessStoryContent, resolveEffectivePlan } from "@domain/access";
 import { getLockedStoryPreviewHtml } from "@domain/lockedStoryPreview";
 import { getCatalogStory } from "@/lib/catalog";
@@ -314,7 +315,7 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
         <div className="fixed bottom-0 left-0 right-0 z-50 bg-transparent">
           <OnboardingPlayCoachmark />
           <Player
-            src={story.audio}
+            src={hasFullAccess ? signCatalogAudioUrl(story.audio) ?? "" : ""}
             bookSlug={book.slug}
             storySlug={story.slug}
             canPlay={hasFullAccess}

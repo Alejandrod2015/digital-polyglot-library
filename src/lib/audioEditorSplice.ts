@@ -4,7 +4,8 @@ import { mkdtempSync, writeFileSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
-import { uploadPublicObject } from "@/lib/objectStorage";
+import { uploadAudioObject } from "@/lib/objectStorage";
+import { signAudioUrl } from "@/lib/mediaSigning";
 
 // Crossfade at each splice seam; matches CROSSFADE_SEC in preview-segment
 // and SPLICE_CROSSFADE_SEC in the Modal endpoint so every splice sounds alike.
@@ -72,7 +73,9 @@ function ffprobeDuration(filePath: string): Promise<number> {
 }
 
 async function downloadToBuffer(url: string): Promise<Buffer> {
-  const res = await fetch(url);
+  // El audio vive en el bucket privado: se baja con la URL firmada, no
+  // con la canonica que guarda la base.
+  const res = await fetch(signAudioUrl(url) ?? url);
   if (!res.ok) throw new Error(`Descarga del master falló: HTTP ${res.status}`);
   return Buffer.from(await res.arrayBuffer());
 }
@@ -233,7 +236,7 @@ export async function spliceFragmentIntoMaster(args: {
     return spliceOnModal({ ...args, process: process_ });
   }
   const spliced = await spliceLocally({ ...args, process: process_ });
-  const uploaded = await uploadPublicObject({
+  const uploaded = await uploadAudioObject({
     key: `media/generated/audio/${args.filename}`,
     body: spliced,
     contentType: "audio/mpeg",

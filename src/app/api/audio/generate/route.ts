@@ -2,6 +2,11 @@ import { NextResponse } from "next/server";
 import { generateAndUploadAudio } from "@/lib/elevenlabs";
 import { prisma } from "@/lib/prisma";
 import { syncCreateStoryMirror } from "@/lib/createStoryMirror";
+import {
+  INTERNAL_AUDIO_TOKEN_HEADER,
+  verifyInternalAudioToken,
+} from "@/lib/internalApiAuth";
+import { signAudioUrl } from "@/lib/mediaSigning";
 
 export async function POST(req: Request) {
   let storyId: string | undefined;
@@ -21,6 +26,12 @@ export async function POST(req: Request) {
         { error: "Missing required fields" },
         { status: 400 }
       );
+    }
+
+    // Solo el fetch interno de generate-story puede disparar sintesis: cada
+    // llamada gasta creditos de ElevenLabs y este endpoint estaba abierto.
+    if (!verifyInternalAudioToken(storyId, req.headers.get(INTERNAL_AUDIO_TOKEN_HEADER))) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
     console.log("[audio-job] Generating audio for story:", storyId);
@@ -63,7 +74,9 @@ export async function POST(req: Request) {
 
     return NextResponse.json({
       message: "Audio generated",
-      audioUrl: audioResult.url,
+      // La base guarda la url canonica (audioResult.url); al cliente le sale
+      // firmada. Las dos son la misma pista, distinta puerta.
+      audioUrl: signAudioUrl(audioResult.url),
       audioSegments: audioResult.audioSegments,
       filename: audioResult.filename,
     });

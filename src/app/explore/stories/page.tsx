@@ -8,7 +8,7 @@ import {
   isJourneyAssignedStandaloneStory,
 } from "@/lib/standaloneStories";
 import { getPublishedJourneyStories } from "@/lib/journeyStories";
-import { resolveCatalogAudioUrl, resolvePublicMediaUrl } from "@/lib/publicMedia";
+import { resolvePublicMediaUrl } from "@/lib/publicMedia";
 export const revalidate = 300;
 
 type ExploreStoriesPageProps = {
@@ -25,7 +25,6 @@ type StoryItem = {
   region?: string;
   level: string;
   coverUrl: string;
-  audioSrc?: string;
   topic?: string;
   topics: string[];
 };
@@ -106,8 +105,6 @@ function extractStories(): StoryItem[] {
       const storyCover = storyCoverRaw
         ? resolvePublicMediaUrl(storyCoverRaw) ?? storyCoverRaw
         : bookCover;
-      const rawAudio = typeof story.audio === "string" ? story.audio.trim() : "";
-      const storyAudio = resolveCatalogAudioUrl(rawAudio);
       const storyTopics = [
         ...toTopicList(story.topic),
         ...toTopicList(story.tags),
@@ -124,7 +121,6 @@ function extractStories(): StoryItem[] {
         region: storyRegion,
         level: storyLevel,
         coverUrl: storyCover,
-        audioSrc: storyAudio,
         topic: typeof story.topic === "string" ? story.topic : book.topic,
         topics: storyTopics,
       });
@@ -163,7 +159,6 @@ export default async function ExploreStoriesPage({ searchParams }: ExploreStorie
       region: story.region ?? undefined,
       level: story.level ?? "",
       coverUrl: story.coverUrl?.trim() ? story.coverUrl : "/covers/default.jpg",
-      audioSrc: story.audioUrl ?? undefined,
       topic: story.topic ?? undefined,
       topics: [...toTopicList(story.topic), ...toTopicList(story.theme)],
     })),
@@ -180,7 +175,6 @@ export default async function ExploreStoriesPage({ searchParams }: ExploreStorie
       region: story.region ?? undefined,
       level: story.level ?? "",
       coverUrl: story.coverUrl?.trim() ? story.coverUrl : "/covers/default.jpg",
-      audioSrc: story.audioUrl ?? undefined,
       topic: story.topic ?? undefined,
       topics: [...toTopicList(story.topic), ...toTopicList(story.theme)],
     })),
@@ -225,7 +219,6 @@ export default async function ExploreStoriesPage({ searchParams }: ExploreStorie
             region: story.region,
             level: story.level,
             topic: story.topic,
-            audioSrc: story.audioSrc,
           }))}
         />
       )}

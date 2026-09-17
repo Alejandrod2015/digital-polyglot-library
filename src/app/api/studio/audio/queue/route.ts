@@ -2,6 +2,7 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
+import { signAudioUrlsDeep } from "@/lib/mediaSigning";
 
 export async function GET() {
   const { userId } = await auth();
@@ -40,5 +41,5 @@ export async function GET() {
     take: 500,
   });
 
-  return NextResponse.json({ stories });
+  return NextResponse.json(signAudioUrlsDeep({ stories }));
 }
